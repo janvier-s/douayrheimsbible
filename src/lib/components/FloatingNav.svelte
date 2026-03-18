@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { ALL_BOOKS } from '$lib/data/books';
-	import { goto } from '$app/navigation';
 
 	export let bookSlug: string;
 	export let chapterNum: number;
@@ -11,11 +10,6 @@
 	let expandedBook: string | null = bookSlug || null;
 
 	$: filteredBooks = ALL_BOOKS.filter((b) => b.testament === activeTestament);
-
-	function navigateTo(slug: string, chapter: number) {
-		goto(`/odr/${slug}/${chapter}`);
-		onClose();
-	}
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') onClose();
@@ -58,7 +52,6 @@
 				<button
 					class="w-full text-left px-md py-xs hover:bg-interactive hover:bg-opacity-10 transition-colors duration-fast
                  {book.slug === bookSlug ? 'text-interactive font-medium' : 'text-foreground'}"
-					data-active-book={book.slug === bookSlug}
 					on:click={() => (expandedBook = expandedBook === book.slug ? null : book.slug)}
 				>
 					{book.odrName}
@@ -67,17 +60,16 @@
 				{#if expandedBook === book.slug}
 					<div class="px-md pb-xs grid grid-cols-8 gap-1">
 						{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
-							<button
-								class="text-xs py-1 rounded hover:bg-interactive hover:text-white transition-colors duration-fast
+							<a
+								href="/odr/{book.slug}/{ch}"
+								on:click={onClose}
+								class="text-xs py-1 rounded hover:bg-interactive hover:text-white transition-colors duration-fast text-center block
                        {book.slug === bookSlug && ch === chapterNum
 									? 'bg-interactive text-white'
 									: 'text-muted'}"
-								data-chapter={ch}
-								data-active-chapter={book.slug === bookSlug && ch === chapterNum ? ch : undefined}
-								on:click={() => navigateTo(book.slug, ch)}
 							>
 								{ch}
-							</button>
+							</a>
 						{/each}
 					</div>
 				{/if}

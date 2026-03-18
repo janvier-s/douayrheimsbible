@@ -105,8 +105,10 @@
 		}
 	}
 
+	let scrollReady = false;
+
 	function onScroll() {
-		if (!browser || !$prefs.infiniteScroll) return;
+		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
 		if (scrollY < 300) loadPrevChapter();
@@ -116,6 +118,9 @@
 	onMount(() => {
 		observeHeadings();
 		window.addEventListener('scroll', onScroll, { passive: true });
+		setTimeout(() => {
+			scrollReady = true;
+		}, 600);
 	});
 
 	onDestroy(() => {

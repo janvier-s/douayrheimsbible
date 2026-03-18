@@ -21,38 +21,46 @@
 	}
 </script>
 
-<header
-	class="sticky top-0 z-50 bg-background border-b border-border px-md py-sm flex items-center gap-md font-ui"
->
-	<a href="/" class="font-ui font-medium text-foreground hover:text-interactive text-sm shrink-0">
-		ODR Bible
-	</a>
+<header class="sticky top-0 z-50 bg-background border-b border-border px-md py-sm font-ui">
+	<div class="flex items-center">
+		<!-- Left: logo + nav trigger -->
+		<div class="flex items-center gap-md shrink-0">
+			<a href="/" class="font-ui font-medium text-foreground hover:text-interactive text-sm">
+				ODR Bible
+			</a>
+			<button
+				class="text-sm text-interactive hover:underline"
+				on:click={() => (navOpen = !navOpen)}
+			>
+				{navLabel}
+			</button>
+		</div>
 
-	<button
-		class="text-sm text-interactive hover:underline shrink-0"
-		on:click={() => (navOpen = !navOpen)}
-	>
-		{navLabel}
-	</button>
+		<!-- Center: search -->
+		<div class="flex-1 flex justify-center px-md">
+			<div class="w-full max-w-sm">
+				<SearchBar />
+			</div>
+		</div>
 
-	<div class="flex-1 max-w-md">
-		<SearchBar />
+		<!-- Right: prefs + theme -->
+		<div class="flex items-center gap-xs shrink-0">
+			<button
+				class="text-muted hover:text-foreground text-sm px-sm"
+				title="Reading preferences"
+				on:click={() => (prefsOpen = !prefsOpen)}
+			>
+				Aa
+			</button>
+			<button
+				class="text-muted hover:text-foreground text-sm"
+				title="Toggle dark mode"
+				on:click={toggleTheme}
+			>
+				◑
+			</button>
+		</div>
 	</div>
-
-	<button
-		class="text-muted hover:text-foreground text-sm px-sm"
-		title="Reading preferences"
-		on:click={() => (prefsOpen = !prefsOpen)}
-	>
-		Aa
-	</button>
-	<button
-		class="text-muted hover:text-foreground text-sm"
-		title="Toggle dark mode"
-		on:click={toggleTheme}
-	>
-		◑
-	</button>
 </header>
 
 {#if navOpen}

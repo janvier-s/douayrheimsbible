@@ -6,9 +6,24 @@
 		{
 			id: 'libre-baskerville',
 			label: 'Libre Baskerville',
-			stack: "'Libre Baskerville', Georgia, serif"
+			stack: "'Libre Baskerville', Georgia, serif",
+			gfUrl:
+				'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
 		},
-		{ id: 'gelasio', label: 'Gelasio', stack: "'Gelasio', Georgia, serif" },
+		{
+			id: 'linux-libertine',
+			label: 'Linux Libertine',
+			stack: "'Linux Libertine', 'Linux Libertine O', Georgia, serif",
+			gfUrl:
+				'https://fonts.bunny.net/css?family=linux-libertine:400,400i,700,700i&display=swap'
+		},
+		{
+			id: 'atkinson-hyperlegible',
+			label: 'Atkinson Hyperlegible',
+			stack: "'Atkinson Hyperlegible', sans-serif",
+			gfUrl:
+				'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap'
+		},
 		{ id: 'inter', label: 'Inter', stack: "'Inter', sans-serif" },
 		{ id: 'lexend', label: 'Lexend', stack: "'Lexend', sans-serif" }
 	];
@@ -18,15 +33,12 @@
 		if (!font) return;
 		prefs.update((p) => ({ ...p, fontFamily: id }));
 		document.documentElement.style.setProperty('--font-reader', font.stack);
-		if (id !== 'fs-brabo-pro') {
-			const name = font.label.replace(' ', '+');
-			if (!document.querySelector(`link[data-gf="${id}"]`)) {
-				const link = document.createElement('link');
-				link.rel = 'stylesheet';
-				link.href = `https://fonts.googleapis.com/css2?family=${name}&display=swap`;
-				link.dataset.gf = id;
-				document.head.appendChild(link);
-			}
+		if ('gfUrl' in font && font.gfUrl && !document.querySelector(`link[data-gf="${id}"]`)) {
+			const link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.href = font.gfUrl as string;
+			link.dataset.gf = id;
+			document.head.appendChild(link);
 		}
 	}
 

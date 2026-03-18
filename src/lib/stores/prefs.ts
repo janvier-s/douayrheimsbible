@@ -19,7 +19,7 @@ const DEFAULTS: ReadingPrefs = {
 	infiniteScroll: true,
 	fontSize: 16,
 	lineHeight: 1.8,
-	fontFamily: 'fs-brabo-pro',
+	fontFamily: 'libre-baskerville',
 	darkMode: false,
 	bionicReading: false,
 	dyslexiaFont: false
