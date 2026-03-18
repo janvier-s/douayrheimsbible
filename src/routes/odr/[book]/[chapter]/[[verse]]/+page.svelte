@@ -51,11 +51,16 @@
 		container?.querySelectorAll('[data-chapter-heading]').forEach((el) => observer!.observe(el));
 	}
 
+	function hasChapter(slug: string, ch: number): boolean {
+		return chapters.some((c) => c.bookMeta.slug === slug && c.chapter.chapter === ch);
+	}
+
 	async function loadNextChapter() {
 		if (loadingNext) return;
 		const last = chapters[chapters.length - 1];
 		const nextChNum = last.chapter.chapter + 1;
 		if (nextChNum > last.totalChapters) return;
+		if (hasChapter(last.bookMeta.slug, nextChNum)) return;
 
 		loadingNext = true;
 		try {
@@ -80,6 +85,7 @@
 		const first = chapters[0];
 		const prevChNum = first.chapter.chapter - 1;
 		if (prevChNum < 1) return;
+		if (hasChapter(first.bookMeta.slug, prevChNum)) return;
 
 		loadingPrev = true;
 		const scrollY = window.scrollY;
@@ -134,7 +140,7 @@
 </svelte:head>
 
 <main bind:this={container} class="max-w-[750px] mx-auto px-md py-xl">
-	{#each chapters as item (item.bookMeta.slug + '-' + item.chapter.chapter)}
+	{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
 		<section>
 			<div
 				data-chapter-heading
@@ -146,6 +152,7 @@
 				chapter={item.chapter}
 				targetVerse={item.chapter.chapter === data.chapter.chapter ? data.targetVerse : undefined}
 				totalChapters={item.totalChapters}
+				showNav={i === chapters.length - 1}
 			/>
 		</section>
 	{/each}

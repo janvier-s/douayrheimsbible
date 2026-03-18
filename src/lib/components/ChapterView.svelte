@@ -6,6 +6,7 @@
 	export let chapter: Chapter;
 	export let targetVerse: number | undefined;
 	export let totalChapters: number;
+	export let showNav: boolean = true;
 
 	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
 	$: nextChapter = chapter.chapter < totalChapters ? chapter.chapter + 1 : null;
@@ -31,20 +32,23 @@
 	/>
 </article>
 
-<!-- Chapter navigation -->
-<nav class="flex justify-between items-center mt-2xl py-lg border-t border-border font-ui text-sm">
-	{#if prevChapter}
-		<a href="/odr/{bookMeta.slug}/{prevChapter}" class="text-interactive hover:underline">
-			‹ Chapter {prevChapter}
-		</a>
-	{:else}
-		<span></span>
-	{/if}
-	{#if nextChapter}
-		<a href="/odr/{bookMeta.slug}/{nextChapter}" class="text-interactive hover:underline">
-			Chapter {nextChapter} ›
-		</a>
-	{:else}
-		<span></span>
-	{/if}
-</nav>
+{#if showNav}
+	<nav
+		class="flex justify-between items-center mt-2xl py-lg border-t border-border font-ui text-sm"
+	>
+		{#if prevChapter}
+			<a href="/odr/{bookMeta.slug}/{prevChapter}" class="text-interactive hover:underline">
+				‹ Chapter {prevChapter}
+			</a>
+		{:else}
+			<span></span>
+		{/if}
+		{#if nextChapter}
+			<a href="/odr/{bookMeta.slug}/{nextChapter}" class="text-interactive hover:underline">
+				Chapter {nextChapter} ›
+			</a>
+		{:else}
+			<span></span>
+		{/if}
+	</nav>
+{/if}

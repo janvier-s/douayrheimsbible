@@ -13,7 +13,7 @@
 
 	function applyBionic(text: string, enabled: boolean): string {
 		if (!enabled) return text;
-		return textVide(text);
+		return textVide(text, { fixationPoint: 1 });
 	}
 
 	onMount(() => {

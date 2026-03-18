@@ -25,11 +25,21 @@ const DEFAULTS: ReadingPrefs = {
 	dyslexiaFont: false
 };
 
+const PREFS_VERSION = 2;
+
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
 	try {
 		const stored = localStorage.getItem('reading-prefs');
-		return stored ? { ...DEFAULTS, ...JSON.parse(stored) } : DEFAULTS;
+		if (!stored) return DEFAULTS;
+		const parsed = JSON.parse(stored) as ReadingPrefs & { _v?: number };
+		// v2 migration: fs-brabo-pro was the old default; upgrade to libre-baskerville
+		if ((!parsed._v || parsed._v < PREFS_VERSION) && parsed.fontFamily === 'fs-brabo-pro') {
+			parsed.fontFamily = 'libre-baskerville';
+		}
+		parsed._v = PREFS_VERSION;
+		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
+		return { ...DEFAULTS, ...parsed };
 	} catch {
 		return DEFAULTS;
 	}

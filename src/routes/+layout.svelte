@@ -36,5 +36,7 @@
 
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
 	<TopBar {bookSlug} {chapterNum} />
-	<slot />
+	{#key $page.url.pathname}
+		<slot />
+	{/key}
 </div>
