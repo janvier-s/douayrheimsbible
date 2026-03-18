@@ -141,7 +141,7 @@
 
 <main bind:this={container} class="max-w-[750px] mx-auto px-md py-xl">
 	{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
-		<section>
+		<section class={i > 0 ? 'pt-2xl' : ''}>
 			<div
 				data-chapter-heading
 				data-book-slug={item.bookMeta.slug}
