@@ -1,0 +1,9 @@
+# Generated static data
+static/data/
+
+# Build output
+build/
+.svelte-kit/
+
+# Dependencies
+node_modules/
