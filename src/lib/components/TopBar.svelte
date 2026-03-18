@@ -12,7 +12,6 @@
 
 	$: bookMeta = getBookBySlug(bookSlug);
 	$: navLabel = bookMeta ? `${bookMeta.odrName} ${chapterNum}` : 'Go to…';
-
 </script>
 
 <header
