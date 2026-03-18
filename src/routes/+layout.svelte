@@ -4,9 +4,22 @@
 	import TopBar from '$lib/components/TopBar.svelte';
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
+	import { readingPosition } from '$lib/stores/reading';
 
-	$: bookSlug = $page.params.book ?? '';
-	$: chapterNum = $page.params.chapter ?? '';
+	// Reset store on every SvelteKit navigation so the label stays in sync.
+	// The chapter page's onMount then immediately sets the correct value.
+	$: if ($page.params.book) {
+		readingPosition.set({
+			bookSlug: $page.params.book,
+			chapter: parseInt($page.params.chapter ?? '1', 10)
+		});
+	}
+
+	// Driven by the store — updates both on navigation and during infinite scroll.
+	$: bookSlug = $readingPosition?.bookSlug ?? $page.params.book ?? '';
+	$: chapterNum = $readingPosition
+		? String($readingPosition.chapter)
+		: ($page.params.chapter ?? '');
 
 	const FONT_STACKS: Record<string, string> = {
 		'fs-brabo-pro': "'FS Brabo Pro', Georgia, serif",

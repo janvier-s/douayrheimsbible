@@ -6,6 +6,7 @@
 	import { loadBook, getChapter } from '$lib/data/loader';
 	import { debounce } from '$lib/utils/scroll';
 	import { prefs } from '$lib/stores/prefs';
+	import { readingPosition } from '$lib/stores/reading';
 	import type { Chapter, BookMeta } from '$lib/data/types';
 
 	export let data: PageData;
@@ -29,6 +30,7 @@
 		if (ch !== currentChapter) {
 			currentChapter = ch;
 			history.replaceState({}, '', `/odr/${slug}/${ch}`);
+			readingPosition.set({ bookSlug: slug, chapter: ch });
 		}
 	}, 200);
 
@@ -122,6 +124,7 @@
 	}
 
 	onMount(() => {
+		readingPosition.set({ bookSlug: data.bookMeta.slug, chapter: data.chapter.chapter });
 		observeHeadings();
 		window.addEventListener('scroll', onScroll, { passive: true });
 		setTimeout(() => {
@@ -141,7 +144,7 @@
 
 <main bind:this={container} class="max-w-[750px] mx-auto px-md py-xl">
 	{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
-		<section class={i > 0 ? 'pt-2xl' : ''}>
+		<section class={i > 0 ? 'pt-[49px]' : ''}>
 			<div
 				data-chapter-heading
 				data-book-slug={item.bookMeta.slug}

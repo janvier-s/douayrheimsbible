@@ -19,7 +19,7 @@
 	<h2 class="font-reader text-3xl mb-md">Chapter {chapter.chapter}</h2>
 
 	{#if chapter.summary && chapter.summary !== '---'}
-		<p class="text-muted font-reader italic mb-lg text-sm leading-relaxed">
+		<p class="text-subtle font-reader italic mb-lg text-base leading-[var(--line-height-reader)]">
 			{chapter.summary}
 		</p>
 	{/if}

@@ -9,6 +9,7 @@ export default {
 				panel: 'var(--color-panel)',
 				foreground: 'var(--color-text)',
 				muted: 'var(--color-muted)',
+				subtle: 'var(--color-subtle)',
 				interactive: 'var(--color-interactive)',
 				border: 'var(--color-border)'
 			},
