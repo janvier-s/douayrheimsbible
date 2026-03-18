@@ -14,8 +14,7 @@
 			id: 'linux-libertine',
 			label: 'Linux Libertine',
 			stack: "'Linux Libertine', 'Linux Libertine O', Georgia, serif",
-			gfUrl:
-				'https://fonts.bunny.net/css?family=linux-libertine:400,400i,700,700i&display=swap'
+			gfUrl: 'https://fonts.bunny.net/css?family=linux-libertine:400,400i,700,700i&display=swap'
 		},
 		{
 			id: 'atkinson-hyperlegible',
