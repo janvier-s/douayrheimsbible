@@ -8,6 +8,15 @@ const ODR_SOURCE = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR', 'ODR'
 const OUT_DIR = join(PROJECT_ROOT, 'static', 'data', 'odr');
 
 async function main() {
+	// Source data lives in SCRIPTURA (local only) — skip gracefully on CI where
+	// static/data/odr/ is already committed and doesn't need regeneration.
+	try {
+		await readdir(ODR_SOURCE);
+	} catch {
+		console.log(`Source not found at ${ODR_SOURCE} — skipping (using committed data).`);
+		return;
+	}
+
 	await mkdir(OUT_DIR, { recursive: true });
 
 	const files = await readdir(ODR_SOURCE);
