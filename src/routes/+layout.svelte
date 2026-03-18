@@ -1,7 +1,13 @@
 <script lang="ts">
 	import '../app.css';
+	import TopBar from '$lib/components/TopBar.svelte';
+	import { page } from '$app/stores';
 
-	let { children } = $props();
+	$: bookSlug = $page.params.book ?? '';
+	$: chapterNum = $page.params.chapter ?? '';
 </script>
 
-{@render children()}
+<div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
+	<TopBar {bookSlug} {chapterNum} />
+	<slot />
+</div>
