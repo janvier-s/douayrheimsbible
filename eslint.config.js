@@ -3,6 +3,7 @@ import svelte from 'eslint-plugin-svelte';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import svelteParser from 'svelte-eslint-parser';
+import globals from 'globals';
 
 export default [
 	js.configs.recommended,
@@ -11,7 +12,8 @@ export default [
 		plugins: { '@typescript-eslint': tsPlugin },
 		languageOptions: {
 			parser: tsParser,
-			parserOptions: { sourceType: 'module', ecmaVersion: 2020 }
+			parserOptions: { sourceType: 'module', ecmaVersion: 2020 },
+			globals: { ...globals.browser, ...globals.node }
 		},
 		rules: {
 			...tsPlugin.configs.recommended.rules
@@ -26,7 +28,8 @@ export default [
 				parser: tsParser,
 				sourceType: 'module',
 				ecmaVersion: 2020
-			}
+			},
+			globals: { ...globals.browser }
 		},
 		rules: {
 			...svelte.configs.recommended.rules
