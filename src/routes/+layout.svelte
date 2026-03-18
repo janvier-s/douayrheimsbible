@@ -44,6 +44,11 @@
 			const stack = FONT_STACKS[p.fontFamily];
 			if (stack) document.documentElement.style.setProperty('--font-reader', stack);
 		}
+		// Restore theme
+		const savedTheme = localStorage.getItem('theme');
+		if (savedTheme && savedTheme !== 'light') {
+			document.documentElement.setAttribute('data-theme', savedTheme);
+		}
 	});
 </script>
 

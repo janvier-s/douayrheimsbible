@@ -34,7 +34,7 @@
 
 <!-- Nav panel -->
 <div
-	class="fixed top-14 left-md z-50 bg-panel border border-border rounded-md shadow-lg w-80 max-h-[70vh] flex flex-col font-ui text-sm"
+	class="fixed top-[53px] left-lg z-50 bg-panel border border-border rounded-sm shadow-xl w-72 max-h-[72vh] flex flex-col font-ui text-sm"
 	role="dialog"
 	aria-label="Bible navigation"
 >
@@ -42,10 +42,10 @@
 	<div class="flex border-b border-border shrink-0">
 		{#each ['OT', 'NT'] as Testament[] as t}
 			<button
-				class="flex-1 py-sm font-medium transition-colors duration-fast
+				class="flex-1 py-sm text-[11px] uppercase tracking-[0.15em] font-medium transition-colors duration-fast
                {activeTestament === t
 					? 'text-interactive border-b-2 border-interactive'
-					: 'text-muted hover:text-foreground'}"
+					: 'text-subtle hover:text-foreground'}"
 				on:click={() => {
 					activeTestament = t;
 				}}
@@ -60,23 +60,26 @@
 		{#each filteredBooks as book}
 			<div>
 				<button
-					class="w-full text-left px-md py-xs hover:bg-interactive hover:bg-opacity-10 transition-colors duration-fast
-                 {book.slug === bookSlug ? 'text-interactive font-medium' : 'text-foreground'}"
+					class="w-full text-left px-md py-[7px] text-[13px] hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
+                 {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
 					on:click={() => toggleBook(book.slug)}
 				>
 					{book.odrName}
 				</button>
 
 				{#if expandedBooks.has(book.slug)}
-					<div class="px-md pb-xs grid grid-cols-8 gap-1" transition:slide={{ duration: 150 }}>
+					<div
+						class="px-md pb-sm pt-xs grid grid-cols-8 gap-[3px]"
+						transition:slide={{ duration: 150 }}
+					>
 						{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 							<a
 								href="/odr/{book.slug}/{ch}"
 								on:click={onClose}
-								class="text-xs py-1 rounded hover:bg-interactive hover:text-white transition-colors duration-fast text-center block
+								class="text-[11px] py-[5px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums
                        {book.slug === bookSlug && ch === chapterNum
 									? 'bg-interactive text-white'
-									: 'text-muted'}"
+									: 'text-subtle'}"
 							>
 								{ch}
 							</a>

@@ -11,28 +11,28 @@
 	let prefsOpen = false;
 
 	$: bookMeta = getBookBySlug(bookSlug);
-	$: navLabel = bookMeta ? `${bookMeta.odrName} ${chapterNum} ▾` : 'Go to…';
+	$: navLabel = bookMeta ? `${bookMeta.odrName} ${chapterNum}` : 'Go to…';
 
-	function toggleTheme() {
-		const current = document.documentElement.getAttribute('data-theme');
-		const next = current === 'dark' ? 'light' : 'dark';
-		document.documentElement.setAttribute('data-theme', next);
-		localStorage.setItem('theme', next);
-	}
 </script>
 
-<header class="sticky top-0 z-50 bg-background border-b border-border px-md py-sm font-ui">
+<header
+	class="sticky top-0 z-50 bg-glass backdrop-blur-sm border-b border-border px-lg py-sm font-ui"
+>
 	<div class="flex items-center">
 		<!-- Left: logo + nav trigger -->
 		<div class="flex items-center gap-md shrink-0">
-			<a href="/" class="font-ui font-medium text-foreground hover:text-interactive text-sm">
+			<a
+				href="/"
+				class="font-ui text-[11px] uppercase tracking-[0.2em] font-medium text-foreground hover:text-interactive transition-colors duration-fast"
+			>
 				ODR Bible
 			</a>
 			<button
-				class="text-sm text-interactive hover:underline"
+				class="text-[13px] text-subtle hover:text-interactive transition-colors duration-fast flex items-center gap-[5px]"
 				on:click={() => (navOpen = !navOpen)}
 			>
 				{navLabel}
+				<span class="text-[10px] opacity-60">{navOpen ? '▴' : '▾'}</span>
 			</button>
 		</div>
 
@@ -43,21 +43,14 @@
 			</div>
 		</div>
 
-		<!-- Right: prefs + theme -->
-		<div class="flex items-center gap-xs shrink-0">
+		<!-- Right: prefs -->
+		<div class="flex items-center shrink-0">
 			<button
-				class="text-muted hover:text-foreground text-sm px-sm"
+				class="text-subtle hover:text-foreground text-[13px] transition-colors duration-fast px-xs"
 				title="Reading preferences"
 				on:click={() => (prefsOpen = !prefsOpen)}
 			>
 				Aa
-			</button>
-			<button
-				class="text-muted hover:text-foreground text-sm"
-				title="Toggle dark mode"
-				on:click={toggleTheme}
-			>
-				◑
 			</button>
 		</div>
 	</div>
@@ -73,7 +66,7 @@
 
 {#if prefsOpen}
 	<div
-		class="fixed top-14 right-md bg-panel border border-border rounded-md shadow-md p-md z-50 w-72 font-ui"
+		class="fixed top-[53px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 	>
 		<ReadingPrefs />
 	</div>

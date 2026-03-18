@@ -11,7 +11,8 @@ export default {
 				muted: 'var(--color-muted)',
 				subtle: 'var(--color-subtle)',
 				interactive: 'var(--color-interactive)',
-				border: 'var(--color-border)'
+				border: 'var(--color-border)',
+				glass: 'var(--color-bg-glass)'
 			},
 			fontFamily: {
 				reader: 'var(--font-reader)',

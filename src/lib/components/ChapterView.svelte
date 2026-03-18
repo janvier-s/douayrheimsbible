@@ -13,10 +13,17 @@
 </script>
 
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
-	<h1 class="font-ui text-muted text-sm uppercase tracking-wider mb-sm">
-		{bookMeta.odrName}
-	</h1>
-	<h2 class="font-reader text-3xl mb-md">Chapter {chapter.chapter}</h2>
+	<header class="mb-xl">
+		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
+			{bookMeta.odrName}
+		</p>
+		<h1
+			class="font-reader italic text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
+		>
+			Chapter {chapter.chapter}
+		</h1>
+		<div class="w-10 h-px bg-interactive opacity-70"></div>
+	</header>
 
 	{#if chapter.summary && chapter.summary !== '---'}
 		<p class="text-subtle font-reader italic mb-lg text-base leading-[var(--line-height-reader)]">
@@ -33,19 +40,25 @@
 </article>
 
 {#if showNav}
-	<nav
-		class="flex justify-between items-center mt-2xl py-lg border-t border-border font-ui text-sm"
-	>
+	<nav class="flex justify-between items-start mt-xl pt-lg border-t border-border font-ui">
 		{#if prevChapter}
-			<a href="/odr/{bookMeta.slug}/{prevChapter}" class="text-interactive hover:underline">
-				‹ Chapter {prevChapter}
+			<a
+				href="/odr/{bookMeta.slug}/{prevChapter}"
+				class="group flex flex-col gap-[3px] text-subtle hover:text-interactive transition-colors duration-fast"
+			>
+				<span class="text-[10px] uppercase tracking-[0.2em]">Previous</span>
+				<span class="text-sm">Chapter {prevChapter}</span>
 			</a>
 		{:else}
 			<span></span>
 		{/if}
 		{#if nextChapter}
-			<a href="/odr/{bookMeta.slug}/{nextChapter}" class="text-interactive hover:underline">
-				Chapter {nextChapter} ›
+			<a
+				href="/odr/{bookMeta.slug}/{nextChapter}"
+				class="group flex flex-col gap-[3px] text-right text-subtle hover:text-interactive transition-colors duration-fast"
+			>
+				<span class="text-[10px] uppercase tracking-[0.2em]">Next</span>
+				<span class="text-sm">Chapter {nextChapter}</span>
 			</a>
 		{:else}
 			<span></span>

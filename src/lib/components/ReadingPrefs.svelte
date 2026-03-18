@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
 
 	const FONTS = [
@@ -27,6 +28,29 @@
 		{ id: 'lexend', label: 'Lexend', stack: "'Lexend', sans-serif" }
 	];
 
+	const THEMES = [
+		{ id: 'light', label: 'Default', group: 'Light' },
+		{ id: 'sepia', label: 'Sepia', group: 'Light' },
+		{ id: 'dark', label: 'Dark', group: 'Dark' },
+		{ id: 'oled', label: 'OLED Black', group: 'Dark' }
+	];
+
+	let currentTheme = 'light';
+
+	onMount(() => {
+		currentTheme = document.documentElement.getAttribute('data-theme') ?? 'light';
+	});
+
+	function setTheme(id: string) {
+		currentTheme = id;
+		if (id === 'light') {
+			document.documentElement.removeAttribute('data-theme');
+		} else {
+			document.documentElement.setAttribute('data-theme', id);
+		}
+		localStorage.setItem('theme', id);
+	}
+
 	function setFont(id: string) {
 		const font = FONTS.find((f) => f.id === id);
 		if (!font) return;
@@ -52,7 +76,10 @@
 		} else {
 			const font = FONTS.find((f) => f.id === $prefs.fontFamily);
 			document.documentElement.style.setProperty('--font-reader', font?.stack ?? 'serif');
-			document.documentElement.style.setProperty('--font-ui', "'Graphik LCG', sans-serif");
+			document.documentElement.style.setProperty(
+				'--font-ui',
+				"'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+			);
 		}
 	}
 </script>
@@ -114,6 +141,26 @@
 				<option value={f.id}>{f.label}</option>
 			{/each}
 			<option value="grace">Grace Dyslexic MD (dyslexia-friendly)</option>
+		</select>
+	</div>
+
+	<div>
+		<span class="text-muted block mb-xs">Theme</span>
+		<select
+			class="w-full border border-border rounded-sm p-xs bg-background text-foreground"
+			value={currentTheme}
+			on:change={(e) => setTheme((e.target as HTMLSelectElement).value)}
+		>
+			<optgroup label="Light">
+				{#each THEMES.filter((t) => t.group === 'Light') as t}
+					<option value={t.id}>{t.label}</option>
+				{/each}
+			</optgroup>
+			<optgroup label="Dark">
+				{#each THEMES.filter((t) => t.group === 'Dark') as t}
+					<option value={t.id}>{t.label}</option>
+				{/each}
+			</optgroup>
 		</select>
 	</div>
 

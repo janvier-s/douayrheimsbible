@@ -39,16 +39,17 @@
 @tailwind utilities;
 
 :root {
-	--color-bg: #f5f0e8;
-	--color-panel: #fdfcfa;
-	--color-text: #1a1a1a;
-	--color-muted: #6b6b6b;
+	--color-bg: #f6f1e8;
+	--color-panel: #fefcf8;
+	--color-text: #1c1710;
+	--color-muted: #7a7265;
+	--color-subtle: #9e9388;
 	--color-interactive: #990033;
-	--color-subtle: #939393;
-	--color-border: #e5e0d8;
+	--color-border: #e4dcd0;
+	--color-bg-glass: rgba(246, 241, 232, 0.94);
 
 	--font-reader: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-	--font-ui: 'Graphik LCG', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-ui: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 	--font-size-reader: 16px;
 	--line-height-reader: 1.8;
@@ -57,13 +58,54 @@
 	--duration-standard: 300ms;
 }
 
+[data-theme='sepia'] {
+	--color-bg: #f2e8d8;
+	--color-panel: #f9f2e6;
+	--color-text: #2c1e10;
+	--color-muted: #8c7560;
+	--color-subtle: #a89070;
+	--color-interactive: #8b2500;
+	--color-border: #d8c8b0;
+	--color-bg-glass: rgba(242, 232, 216, 0.94);
+}
+
 [data-theme='dark'] {
-	--color-bg: #1e1e1e;
-	--color-panel: #2a2a2a;
-	--color-text: #d4d4d4;
-	--color-muted: #6b6b6b;
-	--color-interactive: #990033;
-	--color-border: #3a3a3a;
+	--color-bg: #110d0a;
+	--color-panel: #1c1511;
+	--color-text: #e8ddd0;
+	--color-muted: #8a7f73;
+	--color-subtle: #a09689;
+	--color-interactive: #c03050;
+	--color-border: #2d2219;
+	--color-bg-glass: rgba(17, 13, 10, 0.94);
+}
+
+[data-theme='oled'] {
+	--color-bg: #000000;
+	--color-panel: #0f0f0f;
+	--color-text: #e0e0e0;
+	--color-muted: #666666;
+	--color-subtle: #888888;
+	--color-interactive: #c03050;
+	--color-border: #1f1f1f;
+	--color-bg-glass: rgba(0, 0, 0, 0.96);
+}
+
+/* Typography baseline */
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+::selection {
+	background-color: rgba(153, 0, 51, 0.13);
+}
+
+.font-reader {
+	font-feature-settings:
+		'liga' 1,
+		'kern' 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
