@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { slide } from 'svelte/transition';
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let bookSlug: string;
@@ -7,9 +8,18 @@
 
 	type Testament = 'OT' | 'NT';
 	let activeTestament: Testament = ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT';
-	let expandedBook: string | null = bookSlug || null;
+	let expandedBooks = new Set<string>(bookSlug ? [bookSlug] : []);
 
 	$: filteredBooks = ALL_BOOKS.filter((b) => b.testament === activeTestament);
+
+	function toggleBook(slug: string) {
+		if (expandedBooks.has(slug)) {
+			expandedBooks.delete(slug);
+		} else {
+			expandedBooks.add(slug);
+		}
+		expandedBooks = expandedBooks;
+	}
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') onClose();
@@ -37,7 +47,6 @@
 					: 'text-muted hover:text-foreground'}"
 				on:click={() => {
 					activeTestament = t;
-					expandedBook = null;
 				}}
 			>
 				{t === 'OT' ? 'Old Testament' : 'New Testament'}
@@ -52,13 +61,13 @@
 				<button
 					class="w-full text-left px-md py-xs hover:bg-interactive hover:bg-opacity-10 transition-colors duration-fast
                  {book.slug === bookSlug ? 'text-interactive font-medium' : 'text-foreground'}"
-					on:click={() => (expandedBook = expandedBook === book.slug ? null : book.slug)}
+					on:click={() => toggleBook(book.slug)}
 				>
 					{book.odrName}
 				</button>
 
-				{#if expandedBook === book.slug}
-					<div class="px-md pb-xs grid grid-cols-8 gap-1">
+				{#if expandedBooks.has(book.slug)}
+					<div class="px-md pb-xs grid grid-cols-8 gap-1" transition:slide={{ duration: 150 }}>
 						{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 							<a
 								href="/odr/{book.slug}/{ch}"
