@@ -2,6 +2,7 @@
 	import { getBookBySlug } from '$lib/data/books';
 	import FloatingNav from './FloatingNav.svelte';
 	import SearchBar from './SearchBar.svelte';
+	import ReadingPrefs from './ReadingPrefs.svelte';
 
 	export let bookSlug: string;
 	export let chapterNum: string;
@@ -64,8 +65,8 @@
 
 {#if prefsOpen}
 	<div
-		class="fixed top-14 right-md bg-panel border border-border rounded-md shadow-md p-md z-50 w-72"
+		class="fixed top-14 right-md bg-panel border border-border rounded-md shadow-md p-md z-50 w-72 font-ui"
 	>
-		<p class="text-sm text-muted">Reading preferences (coming soon)</p>
+		<ReadingPrefs />
 	</div>
 {/if}
