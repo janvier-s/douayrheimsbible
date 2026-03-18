@@ -13,12 +13,13 @@
 	$: filteredBooks = ALL_BOOKS.filter((b) => b.testament === activeTestament);
 
 	function toggleBook(slug: string) {
-		if (expandedBooks.has(slug)) {
-			expandedBooks.delete(slug);
+		const next = new Set(expandedBooks);
+		if (next.has(slug)) {
+			next.delete(slug);
 		} else {
-			expandedBooks.add(slug);
+			next.add(slug);
 		}
-		expandedBooks = expandedBooks;
+		expandedBooks = next;
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
