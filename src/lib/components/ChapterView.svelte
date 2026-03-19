@@ -13,13 +13,11 @@
 </script>
 
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
-	<header class="mb-xl">
+	<header class="mb-[35px]">
 		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
 			{bookMeta.odrName}
 		</p>
-		<h1
-			class="font-reader italic text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
-		>
+		<h1 class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm">
 			Chapter {chapter.chapter}
 		</h1>
 		<div class="w-10 h-px bg-interactive opacity-70"></div>

@@ -27,7 +27,7 @@
 		bind:value
 		type="search"
 		aria-label="Search"
-		placeholder="Search or go to verse…"
+		placeholder="Go to chapter or verse (e.g. John 15)"
 		class="w-full bg-panel border border-border rounded-sm px-sm py-xs text-sm font-ui
            text-foreground placeholder:text-muted focus:outline-none focus:border-interactive
            transition-colors duration-fast"

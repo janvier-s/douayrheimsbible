@@ -29,10 +29,10 @@
 	];
 
 	const THEMES = [
-		{ id: 'light', label: 'Default', group: 'Light' },
-		{ id: 'sepia', label: 'Sepia', group: 'Light' },
-		{ id: 'dark', label: 'Dark', group: 'Dark' },
-		{ id: 'oled', label: 'OLED Black', group: 'Dark' }
+		{ id: 'light', label: 'Light', group: 'Light', bg: '#f6f1e8' },
+		{ id: 'sepia', label: 'Sepia', group: 'Light', bg: '#f2e8d8' },
+		{ id: 'dark', label: 'Dark', group: 'Dark', bg: '#1c1511' },
+		{ id: 'oled', label: 'OLED', group: 'Dark', bg: '#000000' }
 	];
 
 	let currentTheme = 'light';
@@ -78,7 +78,7 @@
 			document.documentElement.style.setProperty('--font-reader', font?.stack ?? 'serif');
 			document.documentElement.style.setProperty(
 				'--font-ui',
-				"'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+				"'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 			);
 		}
 	}
@@ -146,22 +146,24 @@
 
 	<div>
 		<span class="text-muted block mb-xs">Theme</span>
-		<select
-			class="w-full border border-border rounded-sm p-xs bg-background text-foreground"
-			value={currentTheme}
-			on:change={(e) => setTheme((e.target as HTMLSelectElement).value)}
-		>
-			<optgroup label="Light">
-				{#each THEMES.filter((t) => t.group === 'Light') as t}
-					<option value={t.id}>{t.label}</option>
-				{/each}
-			</optgroup>
-			<optgroup label="Dark">
-				{#each THEMES.filter((t) => t.group === 'Dark') as t}
-					<option value={t.id}>{t.label}</option>
-				{/each}
-			</optgroup>
-		</select>
+		<div class="flex gap-[6px]">
+			{#each THEMES as t}
+				<button
+					title={t.label}
+					on:click={() => setTheme(t.id)}
+					class="flex-1 flex flex-col items-center gap-[5px] py-[6px] rounded-[3px] border transition-colors duration-fast text-[10px] font-medium
+						{currentTheme === t.id
+						? 'border-interactive text-interactive'
+						: 'border-border text-muted hover:border-interactive hover:text-interactive'}"
+				>
+					<span
+						class="w-5 h-5 rounded-full border border-border shadow-sm block"
+						style="background: {t.bg};"
+					></span>
+					{t.label}
+				</button>
+			{/each}
+		</div>
 	</div>
 
 	<label class="flex items-center gap-sm cursor-pointer">

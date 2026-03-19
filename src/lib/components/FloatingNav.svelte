@@ -56,7 +56,7 @@
 	</div>
 
 	<!-- Book list -->
-	<div class="overflow-y-auto flex-1 py-xs">
+	<div class="overflow-y-auto flex-1 py-xs nav-scroll">
 		{#each filteredBooks as book}
 			<div>
 				<button
@@ -90,3 +90,23 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	.nav-scroll {
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-border) transparent;
+	}
+	.nav-scroll::-webkit-scrollbar {
+		width: 4px;
+	}
+	.nav-scroll::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	.nav-scroll::-webkit-scrollbar-thumb {
+		background: var(--color-border);
+		border-radius: 2px;
+	}
+	.nav-scroll::-webkit-scrollbar-thumb:hover {
+		background: var(--color-subtle);
+	}
+</style>
