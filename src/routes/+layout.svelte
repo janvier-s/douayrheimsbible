@@ -26,7 +26,7 @@
 		'fs-brabo-pro': "'FS Brabo Pro', Georgia, serif",
 		sentinel: "'Sentinel', Georgia, serif",
 		'century-old-style': "'Century Old Style', Georgia, serif",
-		'atkinson-hyperlegible': "'Atkinson Hyperlegible', sans-serif",
+		verdana: 'Verdana, Geneva, sans-serif',
 		helvetica: "'Helvetica Neue', Helvetica, Arial, sans-serif",
 		lexend: "'Lexend', sans-serif"
 	};
