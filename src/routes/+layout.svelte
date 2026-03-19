@@ -23,12 +23,18 @@
 
 	const FONT_STACKS: Record<string, string> = {
 		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
-		'fs-brabo-pro': "'FS Brabo Pro', Georgia, serif",
 		sentinel: "'Sentinel', Georgia, serif",
 		'century-old-style': "'Century Old Style', Georgia, serif",
 		verdana: 'Verdana, Geneva, sans-serif',
-		helvetica: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+		'ibm-plex-sans': "'IBM Plex Sans', sans-serif",
 		lexend: "'Lexend', sans-serif"
+	};
+
+	const GF_URLS: Record<string, string> = {
+		'libre-baskerville':
+			'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap',
+		'ibm-plex-sans':
+			'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap'
 	};
 
 	onMount(() => {
@@ -44,6 +50,15 @@
 		} else {
 			const stack = FONT_STACKS[p.fontFamily];
 			if (stack) document.documentElement.style.setProperty('--font-reader', stack);
+			// Inject Google Fonts link so the selector button renders in the correct font immediately
+			const gfUrl = GF_URLS[p.fontFamily];
+			if (gfUrl && !document.querySelector(`link[data-gf="${p.fontFamily}"]`)) {
+				const link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.href = gfUrl;
+				link.dataset.gf = p.fontFamily;
+				document.head.appendChild(link);
+			}
 		}
 		// app.html script handles pre-paint theme; sync post-hydration
 		const savedTheme = localStorage.getItem('theme');

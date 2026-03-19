@@ -10,7 +10,6 @@
 			gfUrl:
 				'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
 		},
-		{ id: 'fs-brabo-pro', label: 'FS Brabo Pro', stack: "'FS Brabo Pro', Georgia, serif" },
 		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
 		{
 			id: 'century-old-style',
@@ -19,9 +18,11 @@
 		},
 		{ id: 'verdana', label: 'Verdana', stack: 'Verdana, Geneva, sans-serif' },
 		{
-			id: 'helvetica',
-			label: 'Helvetica',
-			stack: "'Helvetica Neue', Helvetica, Arial, sans-serif"
+			id: 'ibm-plex-sans',
+			label: 'IBM Plex Sans',
+			stack: "'IBM Plex Sans', sans-serif",
+			gfUrl:
+				'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap'
 		},
 		{ id: 'lexend', label: 'Lexend', stack: "'Lexend', sans-serif" }
 	];
