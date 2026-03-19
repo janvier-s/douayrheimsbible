@@ -54,20 +54,55 @@
 	font-style: normal;
 	font-display: swap;
 }
+@font-face {
+	font-family: 'Sentinel';
+	src: url('/fonts/Sentinel-Book.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Sentinel';
+	src: url('/fonts/Sentinel-Book-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Sentinel';
+	src: url('/fonts/Sentinel-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Sentinel';
+	src: url('/fonts/Sentinel-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Sentinel';
+	src: url('/fonts/Sentinel-Bold-Italic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-	--color-bg: #f6f1e8;
-	--color-panel: #fefcf8;
+	--color-bg: #f8f5ef;
+	--color-panel: #ffffff;
 	--color-text: #1c1710;
 	--color-muted: #56504a;
 	--color-subtle: #706860;
 	--color-interactive: #990033;
 	--color-border: #e4dcd0;
-	--color-bg-glass: rgba(246, 241, 232, 0.94);
+	--color-bg-glass: rgba(248, 245, 239, 0.94);
 
 	--font-reader: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 	--font-ui: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -110,6 +145,19 @@
 	--color-interactive: #c03050;
 	--color-border: #1f1f1f;
 	--color-bg-glass: rgba(0, 0, 0, 0.96);
+}
+
+@media (prefers-color-scheme: dark) {
+	[data-theme='auto'] {
+		--color-bg: #110d0a;
+		--color-panel: #1c1511;
+		--color-text: #e8ddd0;
+		--color-muted: #8a7f73;
+		--color-subtle: #a09689;
+		--color-interactive: #c03050;
+		--color-border: #2d2219;
+		--color-bg-glass: rgba(17, 13, 10, 0.94);
+	}
 }
 
 /* Typography baseline */

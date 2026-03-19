@@ -26,7 +26,10 @@
 </script>
 
 {#if $prefs.paragraphView}
-	<p class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]">
+	<p
+		class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
+		class:text-justify={$prefs.justifiedText}
+	>
 		{#each verses as v (v.verse)}
 			{#if $prefs.showVerseNumbers}
 				<sup class="text-subtle font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
@@ -59,6 +62,7 @@
 				{/if}
 				<p
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
+					class:text-justify={$prefs.justifiedText}
 				>
 					{#if $prefs.bionicReading}
 						{@html applyBionic(v.text, true)}

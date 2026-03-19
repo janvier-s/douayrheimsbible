@@ -5,6 +5,7 @@ export interface ReadingPrefs {
 	showVerseNumbers: boolean;
 	paragraphView: boolean;
 	infiniteScroll: boolean;
+	justifiedText: boolean;
 	fontSize: number;
 	lineHeight: number;
 	fontFamily: string;
@@ -17,6 +18,7 @@ const DEFAULTS: ReadingPrefs = {
 	showVerseNumbers: true,
 	paragraphView: false,
 	infiniteScroll: true,
+	justifiedText: false,
 	fontSize: 16,
 	lineHeight: 1.8,
 	fontFamily: 'libre-baskerville',

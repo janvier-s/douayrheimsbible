@@ -12,10 +12,9 @@
 				'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
 		},
 		{
-			id: 'linux-libertine',
-			label: 'Linux Libertine',
-			stack: "'Linux Libertine', 'Linux Libertine O', Georgia, serif",
-			gfUrl: 'https://fonts.bunny.net/css?family=linux-libertine:400,400i,700,700i&display=swap'
+			id: 'sentinel',
+			label: 'Sentinel',
+			stack: "'Sentinel', Georgia, serif"
 		},
 		{
 			id: 'atkinson-hyperlegible',
@@ -24,15 +23,43 @@
 			gfUrl:
 				'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap'
 		},
-		{ id: 'inter', label: 'Inter', stack: "'Inter', sans-serif" },
+		{
+			id: 'helvetica',
+			label: 'Helvetica',
+			stack: "'Helvetica Neue', Helvetica, Arial, sans-serif"
+		},
 		{ id: 'lexend', label: 'Lexend', stack: "'Lexend', sans-serif" }
 	];
 
 	const THEMES = [
-		{ id: 'light', label: 'Light', bg: '#f6f1e8', fg: '#1c1710' },
-		{ id: 'sepia', label: 'Sepia', bg: '#f2e8d8', fg: '#2c1e10' },
-		{ id: 'dark', label: 'Dark', bg: '#1c1511', fg: '#e8ddd0' },
-		{ id: 'oled', label: 'OLED', bg: '#000000', fg: '#e0e0e0' }
+		{
+			id: 'light',
+			label: 'Light',
+			bg: '#f8f5ef',
+			fg: '#1c1710',
+			lines: '#c8bfb0'
+		},
+		{
+			id: 'sepia',
+			label: 'Sepia',
+			bg: '#f2e8d8',
+			fg: '#2c1e10',
+			lines: '#c0a888'
+		},
+		{
+			id: 'dark',
+			label: 'Dark',
+			bg: '#1c1511',
+			fg: '#e8ddd0',
+			lines: '#3d2e22'
+		},
+		{
+			id: 'auto',
+			label: 'Auto',
+			bg: null,
+			fg: null,
+			lines: null
+		}
 	];
 
 	let currentTheme = 'light';
@@ -92,7 +119,7 @@
 
 <div class="space-y-md text-sm font-ui">
 	<label class="block">
-		<span class="text-muted block mb-xs">Font size: {$prefs.fontSize}px</span>
+		<span class="block mb-xs">Font size: {$prefs.fontSize}px</span>
 		<input
 			type="range"
 			min="12"
@@ -109,7 +136,7 @@
 	</label>
 
 	<div>
-		<span class="text-muted block mb-xs">Line spacing</span>
+		<span class="block mb-xs">Line spacing</span>
 		<div class="flex gap-xs">
 			{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.0 }] as opt}
 				<button
@@ -129,7 +156,7 @@
 	</div>
 
 	<div class="relative">
-		<span class="text-muted block mb-xs">Font</span>
+		<span class="block mb-xs">Font</span>
 		<button
 			class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
 			style="font-family: {activeFontStack};"
@@ -171,20 +198,52 @@
 		{/if}
 	</div>
 
+	<!-- ESV-style theme cards -->
 	<div>
-		<span class="text-muted block mb-xs">Theme</span>
+		<span class="block mb-xs">Theme</span>
 		<div class="flex gap-[6px]">
 			{#each THEMES as t}
-				<button
-					title={t.label}
-					on:click={() => setTheme(t.id)}
-					style="background: {t.bg}; color: {t.fg};"
-					class="flex-1 flex flex-col items-center justify-center gap-[4px] py-[10px] rounded-[3px] border-2 transition-colors duration-fast text-[11px] font-medium
-						{currentTheme === t.id ? 'border-interactive' : 'border-transparent'}"
-				>
-					<span class="text-[18px] font-reader leading-none">Aa</span>
-					{t.label}
-				</button>
+				{#if t.bg !== null}
+					<button
+						title={t.label}
+						on:click={() => setTheme(t.id)}
+						class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
+							{currentTheme === t.id ? 'border-interactive' : 'border-transparent'}"
+						style="background: {t.bg};"
+					>
+						<div class="theme-card-inner p-[7px]">
+							<div class="flex items-baseline gap-[3px] mb-[5px]">
+								<span class="font-reader text-[15px] leading-none font-bold" style="color: {t.fg};"
+									>A</span
+								>
+								<span
+									class="block h-[1.5px] flex-1 rounded-full"
+									style="background: {t.fg}; opacity: 0.5;"
+								></span>
+							</div>
+							<div class="space-y-[3px]">
+								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+								<span class="block h-[1.5px] w-[70%] rounded-full" style="background: {t.lines};"
+								></span>
+							</div>
+						</div>
+					</button>
+				{:else}
+					<!-- Auto card -->
+					<button
+						title="Auto (follows system)"
+						on:click={() => setTheme('auto')}
+						class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast bg-panel
+							{currentTheme === 'auto' ? 'border-interactive' : 'border-border'}"
+					>
+						<div
+							class="theme-card-inner p-[7px] flex items-center justify-center h-full text-[11px] font-medium text-foreground"
+						>
+							Auto
+						</div>
+					</button>
+				{/if}
 			{/each}
 		</div>
 	</div>
@@ -200,7 +259,18 @@
 				}))}
 			class="accent-interactive"
 		/>
-		<span>Show verse numbers</span>
+		<span>Verse numbers</span>
+	</label>
+
+	<label class="flex items-center gap-sm cursor-pointer">
+		<input
+			type="checkbox"
+			checked={$prefs.justifiedText}
+			on:change={(e) =>
+				prefs.update((p) => ({ ...p, justifiedText: (e.target as HTMLInputElement).checked }))}
+			class="accent-interactive"
+		/>
+		<span>Justified text</span>
 	</label>
 
 	<label class="flex items-center gap-sm cursor-pointer">
@@ -237,3 +307,15 @@
 		<span class:opacity-40={$prefs.dyslexiaFont}>Bionic Reading</span>
 	</label>
 </div>
+
+<style>
+	.theme-card {
+		aspect-ratio: 3 / 4;
+	}
+	.theme-card-inner {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+</style>

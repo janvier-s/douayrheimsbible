@@ -32,7 +32,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div
-	class="fixed top-[61px] left-1/2 -translate-x-1/2 z-50 bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
+	class="fixed top-[90px] left-1/2 -translate-x-1/2 z-50 bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
 	role="dialog"
 	aria-label="Bible navigation"
 	transition:fly={{ y: -6, duration: 160, easing: cubicOut }}
@@ -70,7 +70,7 @@
 								<a
 									href="/odr/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-light
+									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-interactive text-white'
 										: 'text-subtle'}"
@@ -100,7 +100,7 @@
 								<a
 									href="/odr/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-light
+									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-interactive text-white'
 										: 'text-subtle'}"
