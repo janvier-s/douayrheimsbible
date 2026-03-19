@@ -31,8 +31,12 @@ async function main() {
 		// Skip non-book files (e.g. 00-intro.json)
 		if (!data.book) continue;
 
-		// Derive slug: strip leading NN- prefix
-		const slug = file.replace(/^\d+-/, '').replace('.json', '');
+		// Derive slug: strip leading NN- prefix, normalise known spelling variants
+		const rawSlug = file.replace(/^\d+-/, '').replace('.json', '');
+		const SLUG_MAP: Record<string, string> = {
+			'prayer-of-manasseh': 'prayer-of-manasses'
+		};
+		const slug = SLUG_MAP[rawSlug] ?? rawSlug;
 
 		await writeFile(join(OUT_DIR, `${slug}.json`), JSON.stringify(data));
 		count++;

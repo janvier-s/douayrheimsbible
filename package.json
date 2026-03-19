@@ -43,6 +43,7 @@
 		"vitest": "^4.1.0"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"bible-passage-reference-parser": "^3.2.0",
 		"text-vide": "^1.8.4"
 	}
