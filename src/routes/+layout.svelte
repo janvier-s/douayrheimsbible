@@ -26,15 +26,15 @@
 		sentinel: "'Sentinel', Georgia, serif",
 		'century-old-style': "'Century Old Style', Georgia, serif",
 		verdana: 'Verdana, Geneva, sans-serif',
-		'ibm-plex-sans': "'IBM Plex Sans', sans-serif",
+		'libre-franklin': "'Libre Franklin', sans-serif",
 		lexend: "'Lexend', sans-serif"
 	};
 
 	const GF_URLS: Record<string, string> = {
 		'libre-baskerville':
 			'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap',
-		'ibm-plex-sans':
-			'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap'
+		'libre-franklin':
+			'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap'
 	};
 
 	onMount(() => {

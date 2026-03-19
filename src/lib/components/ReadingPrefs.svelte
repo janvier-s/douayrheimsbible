@@ -18,11 +18,11 @@
 		},
 		{ id: 'verdana', label: 'Verdana', stack: 'Verdana, Geneva, sans-serif' },
 		{
-			id: 'ibm-plex-sans',
-			label: 'IBM Plex Sans',
-			stack: "'IBM Plex Sans', sans-serif",
+			id: 'libre-franklin',
+			label: 'Libre Franklin',
+			stack: "'Libre Franklin', sans-serif",
 			gfUrl:
-				'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&display=swap'
+				'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap'
 		},
 		{ id: 'lexend', label: 'Lexend', stack: "'Lexend', sans-serif" }
 	];
