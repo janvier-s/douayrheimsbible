@@ -44,7 +44,7 @@
 	<!-- Row 2: reading controls -->
 	<div
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center"
-		style="height: 40px;"
+		style="height: 60px;"
 	>
 		<!-- Left: translation selector -->
 		<div class="relative shrink-0">
@@ -91,7 +91,7 @@
 		<!-- Center: chapter nav — absolutely centered, accent-colored -->
 		<div class="absolute left-1/2 -translate-x-1/2">
 			<button
-				class="flex items-center gap-[7px] px-[12px] py-[5px] rounded-[3px] transition-colors duration-fast
+				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-interactive text-white' : 'text-interactive hover:bg-interactive hover:text-white'}"
 				on:click={() => {
 					navOpen = !navOpen;
@@ -99,14 +99,14 @@
 					translationOpen = false;
 				}}
 			>
-				<span class="text-[15px] font-medium">{navLabel}</span>
+				<span class="text-[16px] font-medium">{navLabel}</span>
 				<span class="text-[12px] opacity-70 leading-none">{navOpen ? '▲' : '▼'}</span>
 			</button>
 		</div>
 
 		<!-- Right: reading prefs -->
 		<button
-			class="ml-auto px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium shrink-0
+			class="ml-auto px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium shrink-0
 				{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
 			title="Text options"
 			on:click={() => {
