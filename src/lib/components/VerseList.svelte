@@ -47,9 +47,7 @@
 				bind:this={verseEls[v.verse]}
 				id="v{v.verse}"
 				class="flex gap-sm"
-				class:border-l-2={targetVerse === v.verse}
-				class:border-interactive={targetVerse === v.verse}
-				class:pl-[10px]={targetVerse === v.verse}
+				class:verse-target={targetVerse === v.verse}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
 			>
 				{#if $prefs.showVerseNumbers}
@@ -72,3 +70,10 @@
 		{/each}
 	</ol>
 {/if}
+
+<style>
+	/* Inset box-shadow draws the red left line without affecting box model or content alignment */
+	.verse-target {
+		box-shadow: inset 3px 0 0 var(--color-interactive);
+	}
+</style>

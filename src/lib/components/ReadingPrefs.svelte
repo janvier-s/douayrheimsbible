@@ -131,7 +131,7 @@
 	<div class="relative">
 		<span class="text-muted block mb-xs">Font</span>
 		<button
-			class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px]"
+			class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
 			style="font-family: {activeFontStack};"
 			on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
 		>
@@ -144,7 +144,7 @@
 			>
 				{#each FONTS as f}
 					<button
-						class="w-full text-left px-sm py-[9px] text-[14px] hover:bg-interactive hover:text-white transition-colors duration-fast
+						class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-interactive hover:text-white transition-colors duration-fast
 							{activeFontId === f.id ? 'text-interactive' : 'text-foreground'}"
 						style="font-family: {f.stack};"
 						on:click={() => {
@@ -157,7 +157,7 @@
 					</button>
 				{/each}
 				<button
-					class="w-full text-left px-sm py-[9px] text-[14px] hover:bg-interactive hover:text-white transition-colors duration-fast border-t border-border
+					class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-interactive hover:text-white transition-colors duration-fast border-t border-border
 						{activeFontId === 'grace' ? 'text-interactive' : 'text-foreground'}"
 					style="font-family: 'Grace Dyslexic MD', sans-serif;"
 					on:click={() => {

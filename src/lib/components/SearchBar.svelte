@@ -40,7 +40,7 @@
 		aria-label="Search"
 		placeholder="Go to chapter or verse (e.g. John 15)"
 		class="w-full bg-panel border border-border rounded-sm pl-[32px] pr-sm py-xs text-sm font-ui
-           text-foreground placeholder:text-subtle/50 placeholder:font-thin
+           text-foreground placeholder:text-subtle/50 placeholder:font-light
            focus:placeholder:text-transparent focus:outline-none focus:border-interactive
            transition-colors duration-fast"
 	/>

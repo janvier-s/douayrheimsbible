@@ -65,7 +65,7 @@
 						{book.odrName}
 					</button>
 					{#if expandedBooks.has(book.slug)}
-						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-8 gap-[4px]">
+						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]">
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="/odr/{book.slug}/{ch}"
@@ -95,7 +95,7 @@
 						{book.odrName}
 					</button>
 					{#if expandedBooks.has(book.slug)}
-						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-8 gap-[4px]">
+						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]">
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="/odr/{book.slug}/{ch}"

@@ -56,25 +56,35 @@
 		<!-- Right: search + translation + prefs -->
 		<div class="shrink-0 flex items-center justify-end gap-[12px]">
 			<!-- Inline search -->
-			<div class="w-[400px]">
+			<div class="w-[350px]">
 				<SearchBar />
 			</div>
 
 			<!-- Translation badge -->
 			<div class="relative">
 				<button
-					class="text-[11px] font-semibold tracking-[0.1em] uppercase px-[8px] py-[5px] rounded-[3px] border transition-colors duration-fast
+					class="flex items-center gap-[8px] px-[10px] py-[6px] rounded-[3px] border transition-colors duration-fast
 						{translationOpen
 						? 'bg-interactive text-white border-interactive'
-						: 'border-border text-muted hover:border-interactive hover:text-interactive'}"
-					title="Translation"
+						: 'border-border hover:border-interactive hover:text-interactive text-foreground'}"
 					on:click={() => {
 						translationOpen = !translationOpen;
 						prefsOpen = false;
 						navOpen = false;
 					}}
 				>
-					ODR
+					<div class="text-left">
+						<div
+							class="text-[9px] uppercase tracking-[0.15em] leading-none mb-[2px]
+								{translationOpen ? 'text-white/70' : 'text-subtle'}"
+						>
+							Translation
+						</div>
+						<div class="text-[13px] font-medium leading-none">ODR</div>
+					</div>
+					<span class="text-[10px] {translationOpen ? 'text-white/70' : 'text-subtle'}"
+						>{translationOpen ? '▲' : '▼'}</span
+					>
 				</button>
 				{#if translationOpen}
 					<div
