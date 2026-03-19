@@ -14,15 +14,16 @@ describe('prefs store', () => {
 		expect(p.bionicReading).toBe(false);
 	});
 
-	it('enabling dyslexia font disables bionic reading', () => {
+	it('bionic reading and dyslexia font can both be enabled simultaneously', () => {
 		prefs.update((p) => ({ ...p, bionicReading: true }));
 		prefs.update((p) => ({ ...p, dyslexiaFont: true }));
-		expect(get(prefs).bionicReading).toBe(false);
+		expect(get(prefs).bionicReading).toBe(true);
+		expect(get(prefs).dyslexiaFont).toBe(true);
 	});
 
-	it('enabling bionic reading disables dyslexia font', () => {
+	it('enabling bionic reading does not disable dyslexia font', () => {
 		prefs.update((p) => ({ ...p, dyslexiaFont: true }));
 		prefs.update((p) => ({ ...p, bionicReading: true }));
-		expect(get(prefs).dyslexiaFont).toBe(false);
+		expect(get(prefs).dyslexiaFont).toBe(true);
 	});
 });
