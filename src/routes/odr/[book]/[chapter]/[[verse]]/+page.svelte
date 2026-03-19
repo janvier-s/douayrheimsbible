@@ -75,6 +75,8 @@
 				];
 				await tick();
 				observeHeadings();
+				// Cascade: if still near bottom after appending, keep loading
+				onScroll();
 			}
 		} catch {
 			// silently ignore
@@ -105,6 +107,8 @@
 				const newHeight = document.documentElement.scrollHeight;
 				window.scrollTo(0, scrollY + (newHeight - oldHeight));
 				observeHeadings();
+				// Cascade: if still near top after prepending, keep loading
+				onScroll();
 			}
 		} catch {
 			// silently ignore
@@ -119,9 +123,9 @@
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
-		if (scrollY + innerHeight > docHeight - 300) {
+		if (scrollY + innerHeight > docHeight - 400) {
 			loadNextChapter();
-		} else if (scrollY < 300) {
+		} else if (scrollY < 400) {
 			loadPrevChapter();
 		}
 	}
@@ -132,8 +136,8 @@
 		window.addEventListener('scroll', onScroll, { passive: true });
 		setTimeout(() => {
 			scrollReady = true;
-			// Proactively check position so prev chapter loads immediately
-			// if the user is already at the top (can't scroll further up to trigger it).
+			// Proactively check position so prev/next chapter loads immediately
+			// when already at an edge (e.g. after navigating to a verse).
 			onScroll();
 		}, 600);
 	});

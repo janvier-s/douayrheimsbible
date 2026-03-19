@@ -251,12 +251,11 @@
 		<input
 			type="checkbox"
 			checked={$prefs.bionicReading}
-			disabled={$prefs.dyslexiaFont}
 			on:change={(e) =>
 				prefs.update((p) => ({ ...p, bionicReading: (e.target as HTMLInputElement).checked }))}
 			class="accent-interactive"
 		/>
-		<span class:opacity-40={$prefs.dyslexiaFont}>Bionic Reading</span>
+		<span>Bionic Reading</span>
 	</label>
 </div>
 

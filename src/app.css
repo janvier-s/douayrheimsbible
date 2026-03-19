@@ -126,14 +126,14 @@
 }
 
 [data-theme='dark'] {
-	--color-bg: #110d0a;
-	--color-panel: #1c1511;
+	--color-bg: #111113;
+	--color-panel: #1c1c1f;
 	--color-text: #e8ddd0;
-	--color-muted: #8a7f73;
-	--color-subtle: #a09689;
+	--color-muted: #8a8690;
+	--color-subtle: #a09ca8;
 	--color-interactive: #c03050;
-	--color-border: #2d2219;
-	--color-bg-glass: rgba(17, 13, 10, 0.94);
+	--color-border: #2e2b32;
+	--color-bg-glass: rgba(17, 17, 19, 0.94);
 }
 
 [data-theme='oled'] {
@@ -149,14 +149,14 @@
 
 @media (prefers-color-scheme: dark) {
 	[data-theme='auto'] {
-		--color-bg: #110d0a;
-		--color-panel: #1c1511;
+		--color-bg: #111113;
+		--color-panel: #1c1c1f;
 		--color-text: #e8ddd0;
-		--color-muted: #8a7f73;
-		--color-subtle: #a09689;
+		--color-muted: #8a8690;
+		--color-subtle: #a09ca8;
 		--color-interactive: #c03050;
-		--color-border: #2d2219;
-		--color-bg-glass: rgba(17, 13, 10, 0.94);
+		--color-border: #2e2b32;
+		--color-bg-glass: rgba(17, 17, 19, 0.94);
 	}
 }
 

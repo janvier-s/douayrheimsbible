@@ -58,10 +58,7 @@ function createPrefs() {
 		},
 		update(fn: (p: ReadingPrefs) => ReadingPrefs) {
 			update((p) => {
-				let next = fn(p);
-				// Mutual exclusion: bionic and dyslexia font can't both be on
-				if (next.dyslexiaFont && !p.dyslexiaFont) next = { ...next, bionicReading: false };
-				if (next.bionicReading && !p.bionicReading) next = { ...next, dyslexiaFont: false };
+				const next = fn(p);
 				if (browser) localStorage.setItem('reading-prefs', JSON.stringify(next));
 				return next;
 			});

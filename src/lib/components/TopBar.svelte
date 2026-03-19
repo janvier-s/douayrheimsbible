@@ -36,7 +36,7 @@
 			</span>
 		</a>
 		<div class="flex-1"></div>
-		<div class="w-[280px]">
+		<div class="w-[380px]">
 			<SearchBar />
 		</div>
 	</div>
@@ -90,10 +90,13 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav — absolutely centered -->
+		<!-- Center: chapter nav — absolutely centered, accent-colored -->
 		<div class="absolute left-1/2 -translate-x-1/2">
 			<button
-				class="flex items-center gap-[6px] px-[12px] py-[5px] rounded-[3px] border border-border hover:border-interactive hover:text-interactive transition-colors duration-fast text-foreground"
+				class="flex items-center gap-[6px] px-[12px] py-[5px] rounded-[3px] border transition-colors duration-fast
+					{navOpen
+					? 'bg-interactive text-white border-interactive'
+					: 'border-interactive text-interactive hover:bg-interactive hover:text-white'}"
 				on:click={() => {
 					navOpen = !navOpen;
 					prefsOpen = false;
@@ -101,21 +104,22 @@
 				}}
 			>
 				<span class="text-[14px] font-medium">{navLabel}</span>
-				<span class="text-[11px] text-subtle leading-none">{navOpen ? '▲' : '▼'}</span>
+				<span class="text-[11px] opacity-70 leading-none">{navOpen ? '▲' : '▼'}</span>
 			</button>
 		</div>
 
 		<!-- Right: reading prefs -->
 		<button
-			class="ml-auto w-[28px] h-[28px] flex items-center justify-center rounded-[3px] text-muted hover:text-interactive transition-colors duration-fast text-[12px] font-semibold shrink-0"
-			title="Reading preferences"
+			class="ml-auto px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium shrink-0
+				{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
+			title="Text options"
 			on:click={() => {
 				prefsOpen = !prefsOpen;
 				translationOpen = false;
 				navOpen = false;
 			}}
 		>
-			Aa
+			Text options
 		</button>
 	</div>
 </header>

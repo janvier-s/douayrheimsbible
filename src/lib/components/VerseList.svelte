@@ -30,7 +30,7 @@
 		class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 		class:text-justify={$prefs.justifiedText}
 	>
-		{#each verses as v (v.verse)}
+		{#each verses as v, i (i)}
 			{#if $prefs.showVerseNumbers}
 				<sup class="text-subtle font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
 					>{v.verse}</sup
@@ -45,7 +45,7 @@
 	</p>
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
-		{#each verses as v (v.verse)}
+		{#each verses as v, i (i)}
 			<li
 				bind:this={verseEls[v.verse]}
 				id="v{v.verse}"
