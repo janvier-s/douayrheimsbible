@@ -146,23 +146,31 @@
 
 	<div>
 		<span class="text-muted block mb-xs">Theme</span>
-		<div class="flex gap-[6px]">
+		<div class="flex gap-[6px] mb-[10px]">
 			{#each THEMES as t}
 				<button
 					title={t.label}
 					on:click={() => setTheme(t.id)}
-					class="flex-1 flex flex-col items-center gap-[5px] py-[6px] rounded-[3px] border transition-colors duration-fast text-[10px] font-medium
+					class="flex-1 flex flex-col items-center gap-[5px] py-[7px] rounded-[3px] border transition-colors duration-fast text-[10px] font-medium
 						{currentTheme === t.id
 						? 'border-interactive text-interactive'
 						: 'border-border text-muted hover:border-interactive hover:text-interactive'}"
 				>
 					<span
-						class="w-5 h-5 rounded-full border border-border shadow-sm block"
+						class="w-7 h-7 rounded-full border border-border shadow-sm block"
 						style="background: {t.bg};"
 					></span>
 					{t.label}
 				</button>
 			{/each}
+		</div>
+		<!-- Font preview -->
+		<div class="rounded-[3px] border border-border bg-background px-[14px] py-[12px] space-y-[6px]">
+			<p class="text-[22px] font-reader leading-tight text-foreground">ABCDEFGHIJKLM</p>
+			<p class="text-[22px] font-reader leading-tight text-foreground">abcdefghijklm</p>
+			<p class="text-[13px] font-reader text-subtle leading-relaxed mt-[4px]">
+				In the beginning God created heaven, and earth.
+			</p>
 		</div>
 	</div>
 

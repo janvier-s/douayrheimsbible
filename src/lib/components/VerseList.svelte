@@ -51,7 +51,7 @@
 			>
 				{#if $prefs.showVerseNumbers}
 					<span
-						class="text-subtle font-ui text-[11px] select-none w-6 shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
+						class="text-subtle font-ui text-[13px] select-none w-6 shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
 					>
 						{v.verse}
 					</span>

@@ -9,7 +9,6 @@
 
 	let navOpen = false;
 	let prefsOpen = false;
-	let searchOpen = false;
 	let translationOpen = false;
 
 	$: bookMeta = getBookBySlug(bookSlug);
@@ -18,7 +17,6 @@
 	function closeAll() {
 		navOpen = false;
 		prefsOpen = false;
-		searchOpen = false;
 		translationOpen = false;
 	}
 </script>
@@ -29,7 +27,7 @@
 >
 	<div class="flex items-center h-full gap-md">
 		<!-- Left: logo -->
-		<div class="shrink-0 w-[160px]">
+		<div class="shrink-0 w-[150px]">
 			<a href="/" class="flex items-center gap-[6px] group" on:click={closeAll}>
 				<span class="text-interactive text-[15px] leading-none select-none">✠</span>
 				<span
@@ -43,21 +41,25 @@
 		<!-- Center: nav trigger -->
 		<div class="flex-1 flex justify-center">
 			<button
-				class="flex items-center gap-[6px] px-[14px] py-[6px] rounded-[3px] border border-border hover:border-interactive hover:text-interactive transition-colors duration-fast text-foreground"
+				class="flex items-center gap-[7px] px-[14px] py-[6px] rounded-[3px] border border-border hover:border-interactive hover:text-interactive transition-colors duration-fast text-foreground"
 				on:click={() => {
 					navOpen = !navOpen;
 					prefsOpen = false;
-					searchOpen = false;
 					translationOpen = false;
 				}}
 			>
 				<span class="text-[15px] font-medium">{navLabel}</span>
-				<span class="text-[11px] text-subtle">{navOpen ? '▴' : '▾'}</span>
+				<span class="text-[13px] text-subtle leading-none">{navOpen ? '▲' : '▼'}</span>
 			</button>
 		</div>
 
-		<!-- Right: translation + search + prefs -->
-		<div class="shrink-0 w-[160px] flex items-center justify-end gap-[2px]">
+		<!-- Right: search + translation + prefs -->
+		<div class="shrink-0 w-[260px] flex items-center justify-end gap-xs">
+			<!-- Inline search -->
+			<div class="w-[160px]">
+				<SearchBar />
+			</div>
+
 			<!-- Translation badge -->
 			<div class="relative">
 				<button
@@ -69,7 +71,6 @@
 					on:click={() => {
 						translationOpen = !translationOpen;
 						prefsOpen = false;
-						searchOpen = false;
 						navOpen = false;
 					}}
 				>
@@ -93,27 +94,12 @@
 				{/if}
 			</div>
 
-			<!-- Search toggle -->
-			<button
-				class="w-[32px] h-[32px] flex items-center justify-center rounded-[3px] text-muted hover:text-interactive transition-colors duration-fast text-[16px]"
-				title="Search"
-				on:click={() => {
-					searchOpen = !searchOpen;
-					prefsOpen = false;
-					translationOpen = false;
-					navOpen = false;
-				}}
-			>
-				⌕
-			</button>
-
 			<!-- Reading prefs -->
 			<button
 				class="w-[32px] h-[32px] flex items-center justify-center rounded-[3px] text-muted hover:text-interactive transition-colors duration-fast text-[13px] font-semibold"
 				title="Reading preferences"
 				on:click={() => {
 					prefsOpen = !prefsOpen;
-					searchOpen = false;
 					translationOpen = false;
 					navOpen = false;
 				}}
@@ -132,24 +118,16 @@
 	/>
 {/if}
 
-{#if searchOpen}
-	<div
-		class="fixed top-[53px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-80 font-ui"
-	>
-		<SearchBar />
-	</div>
-{/if}
-
 {#if prefsOpen}
 	<div
-		class="fixed top-[53px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
+		class="fixed top-[61px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 	>
 		<ReadingPrefs />
 	</div>
 {/if}
 
-<!-- Backdrop to close dropdowns -->
-{#if navOpen || prefsOpen || searchOpen || translationOpen}
+<!-- Backdrop -->
+{#if navOpen || prefsOpen || translationOpen}
 	<div
 		class="fixed inset-0 z-40"
 		role="presentation"

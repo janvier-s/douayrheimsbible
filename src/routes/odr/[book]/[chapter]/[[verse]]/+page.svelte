@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
 	import type { PageData } from './$types';
 	import ChapterView from '$lib/components/ChapterView.svelte';
@@ -73,7 +73,8 @@
 					...chapters,
 					{ bookMeta: last.bookMeta, chapter: nextCh, totalChapters: last.totalChapters }
 				];
-				setTimeout(observeHeadings, 100);
+				await tick();
+				observeHeadings();
 			}
 		} catch {
 			// silently ignore
@@ -100,11 +101,10 @@
 					{ bookMeta: first.bookMeta, chapter: prevCh, totalChapters: first.totalChapters },
 					...chapters
 				];
-				setTimeout(() => {
-					const newHeight = document.documentElement.scrollHeight;
-					window.scrollTo(0, scrollY + (newHeight - oldHeight));
-				}, 50);
-				setTimeout(observeHeadings, 100);
+				await tick();
+				const newHeight = document.documentElement.scrollHeight;
+				window.scrollTo(0, scrollY + (newHeight - oldHeight));
+				observeHeadings();
 			}
 		} catch {
 			// silently ignore
@@ -119,8 +119,11 @@
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
-		if (scrollY < 300) loadPrevChapter();
-		if (scrollY + innerHeight > docHeight - 300) loadNextChapter();
+		if (scrollY + innerHeight > docHeight - 300) {
+			loadNextChapter();
+		} else if (scrollY < 300) {
+			loadPrevChapter();
+		}
 	}
 
 	onMount(() => {
