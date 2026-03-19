@@ -25,10 +25,11 @@
 			const sentenceCase = match.charAt(0) + match.slice(1).toLowerCase();
 			return `<span class="sc">${sentenceCase}</span>`;
 		});
-		// 3. Remaining standalone names
-		text = text.replace(/\bJESUS\b/g, '<span class="sc">Jesus</span>');
-		text = text.replace(/\bMARY\b/g, '<span class="sc">Mary</span>');
-		text = text.replace(/\bCHRIST\b/g, '<span class="sc">Christ</span>');
+		// 3. Any remaining standalone all-caps word (3+ chars) → title case + small-caps
+		text = text.replace(/\b[A-Z]{3,}\b/g, (match) => {
+			const titleCase = match.charAt(0) + match.slice(1).toLowerCase();
+			return `<span class="sc">${titleCase}</span>`;
+		});
 		return text;
 	}
 
