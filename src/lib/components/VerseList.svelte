@@ -16,6 +16,14 @@
 		return textVide(text, { fixationPoint: 4 });
 	}
 
+	function applySmallCaps(text: string): string {
+		return text.replace(/\bJESUS\b/g, '<span class="jesus">Jesus</span>');
+	}
+
+	function renderVerse(text: string): string {
+		return applySmallCaps($prefs.bionicReading ? applyBionic(text, true) : text);
+	}
+
 	// afterNavigate fires after SvelteKit finishes its own scroll restoration,
 	// so this reliably wins over the browser's scroll-to-top behaviour.
 	afterNavigate(() => {
@@ -36,11 +44,7 @@
 					>{v.verse}</sup
 				>
 			{/if}
-			{#if $prefs.bionicReading}
-				{@html applyBionic(v.text, true)}{' '}
-			{:else}
-				{v.text}{' '}
-			{/if}
+			{@html renderVerse(v.text)}{' '}
 		{/each}
 	</p>
 {:else}
@@ -64,11 +68,7 @@
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
 				>
-					{#if $prefs.bionicReading}
-						{@html applyBionic(v.text, true)}
-					{:else}
-						{v.text}
-					{/if}
+					{@html renderVerse(v.text)}
 				</p>
 			</li>
 		{/each}
@@ -76,8 +76,11 @@
 {/if}
 
 <style>
-	/* Inset box-shadow draws the red left line without affecting box model or content alignment */
 	.verse-target {
 		box-shadow: inset 3px 0 0 var(--color-interactive);
+	}
+
+	:global(.jesus) {
+		font-variant: small-caps;
 	}
 </style>
