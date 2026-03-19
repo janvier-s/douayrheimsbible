@@ -11,11 +11,7 @@
 				'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
 		},
 		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
-		{
-			id: 'century-old-style',
-			label: 'Century Old Style',
-			stack: "'Century Old Style', Georgia, serif"
-		},
+		{ id: 'sabon-next-lt', label: 'Sabon Next LT', stack: "'Sabon Next LT', Georgia, serif" },
 		{ id: 'verdana', label: 'Verdana', stack: 'Verdana, Geneva, sans-serif' },
 		{
 			id: 'libre-franklin',

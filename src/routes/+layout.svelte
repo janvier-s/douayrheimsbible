@@ -24,7 +24,7 @@
 	const FONT_STACKS: Record<string, string> = {
 		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
 		sentinel: "'Sentinel', Georgia, serif",
-		'century-old-style': "'Century Old Style', Georgia, serif",
+		'sabon-next-lt': "'Sabon Next LT', Georgia, serif",
 		verdana: 'Verdana, Geneva, sans-serif',
 		'libre-franklin': "'Libre Franklin', sans-serif",
 		lexend: "'Lexend', sans-serif"

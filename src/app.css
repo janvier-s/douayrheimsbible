@@ -76,24 +76,31 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Century Old Style';
-	src: url('/fonts/CenturyOldStyle-Regular.woff2') format('woff2');
+	font-family: 'Sabon Next LT';
+	src: url('/fonts/SabonNextLT-Regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Century Old Style';
-	src: url('/fonts/CenturyOldStyle-Italic.woff2') format('woff2');
+	font-family: 'Sabon Next LT';
+	src: url('/fonts/SabonNextLT-Italic.woff2') format('woff2');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Century Old Style';
-	src: url('/fonts/CenturyOldStyle-Bold.woff2') format('woff2');
+	font-family: 'Sabon Next LT';
+	src: url('/fonts/SabonNextLT-Bold.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Sabon Next LT';
+	src: url('/fonts/SabonNextLT-BoldItalic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
 	font-display: swap;
 }
 
