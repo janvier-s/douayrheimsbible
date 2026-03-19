@@ -10,6 +10,20 @@
 
 	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
 	$: nextChapter = chapter.chapter < totalChapters ? chapter.chapter + 1 : null;
+
+	let activeVerse: number | undefined = targetVerse;
+	$: if (targetVerse !== undefined) activeVerse = targetVerse;
+
+	function linkifySummary(text: string): string {
+		return text.replace(/℣\.(\d+)/g, (_, n) => {
+			return `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref">℣.${n}</a>`;
+		});
+	}
+
+	function handleSummaryClick(e: MouseEvent) {
+		const el = (e.target as HTMLElement).closest('[data-verse]') as HTMLElement | null;
+		if (el?.dataset.verse) activeVerse = parseInt(el.dataset.verse);
+	}
 </script>
 
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
@@ -24,14 +38,18 @@
 	</header>
 
 	{#if chapter.summary && chapter.summary !== '---'}
-		<p class="text-subtle font-reader italic mb-lg text-base leading-[var(--line-height-reader)]">
-			{chapter.summary}
+		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+		<p
+			class="text-subtle font-reader italic mb-lg text-base leading-[var(--line-height-reader)]"
+			on:click={handleSummaryClick}
+		>
+			{@html linkifySummary(chapter.summary)}
 		</p>
 	{/if}
 
 	<VerseList
 		verses={chapter.verses}
-		{targetVerse}
+		targetVerse={activeVerse}
 		bookSlug={bookMeta.slug}
 		chapterNum={chapter.chapter}
 	/>
@@ -63,3 +81,14 @@
 		{/if}
 	</nav>
 {/if}
+
+<style>
+	:global(.summary-verse-ref) {
+		color: var(--color-interactive);
+		cursor: pointer;
+		text-decoration: none;
+	}
+	:global(.summary-verse-ref:hover) {
+		text-decoration: underline;
+	}
+</style>

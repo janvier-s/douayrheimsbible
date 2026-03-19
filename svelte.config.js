@@ -14,7 +14,8 @@ const config = {
 			}
 		}),
 		prerender: {
-			handleHttpError: 'warn'
+			handleHttpError: 'warn',
+			handleMissingId: 'warn'
 		}
 	}
 };
