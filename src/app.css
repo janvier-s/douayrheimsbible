@@ -123,6 +123,10 @@ body {
 	background-color: rgba(153, 0, 51, 0.13);
 }
 
+.font-ui {
+	font-weight: 300;
+}
+
 .font-reader {
 	font-feature-settings:
 		'liga' 1,

@@ -54,9 +54,9 @@
 		</div>
 
 		<!-- Right: search + translation + prefs -->
-		<div class="shrink-0 w-[260px] flex items-center justify-end gap-xs">
+		<div class="shrink-0 flex items-center justify-end gap-[12px]">
 			<!-- Inline search -->
-			<div class="w-[160px]">
+			<div class="w-[400px]">
 				<SearchBar />
 			</div>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 	import { textVide } from 'text-vide';
 	import { prefs } from '$lib/stores/prefs';
 	import type { Verse } from '$lib/data/types';
@@ -16,9 +16,11 @@
 		return textVide(text, { fixationPoint: 4 });
 	}
 
-	onMount(() => {
+	// afterNavigate fires after SvelteKit finishes its own scroll restoration,
+	// so this reliably wins over the browser's scroll-to-top behaviour.
+	afterNavigate(() => {
 		if (targetVerse && verseEls[targetVerse]) {
-			verseEls[targetVerse].scrollIntoView({ behavior: 'smooth', block: 'center' });
+			verseEls[targetVerse].scrollIntoView({ behavior: 'instant', block: 'center' });
 		}
 	});
 </script>
@@ -45,8 +47,9 @@
 				bind:this={verseEls[v.verse]}
 				id="v{v.verse}"
 				class="flex gap-sm"
-				class:bg-interactive={targetVerse === v.verse}
-				class:bg-opacity-10={targetVerse === v.verse}
+				class:border-l-2={targetVerse === v.verse}
+				class:border-interactive={targetVerse === v.verse}
+				class:pl-[10px]={targetVerse === v.verse}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
 			>
 				{#if $prefs.showVerseNumbers}

@@ -132,6 +132,9 @@
 		window.addEventListener('scroll', onScroll, { passive: true });
 		setTimeout(() => {
 			scrollReady = true;
+			// Proactively check position so prev chapter loads immediately
+			// if the user is already at the top (can't scroll further up to trigger it).
+			onScroll();
 		}, 600);
 	});
 

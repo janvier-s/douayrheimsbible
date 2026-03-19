@@ -58,7 +58,7 @@
 			{#each otBooks as book}
 				<div>
 					<button
-						class="w-full text-left px-[16px] py-[9px] text-[16px] font-light hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
+						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
                  {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
 						on:click={() => toggleBook(book.slug)}
 					>
@@ -70,7 +70,7 @@
 								<a
 									href="/odr/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[7px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-light
+									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-light
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-interactive text-white'
 										: 'text-subtle'}"
@@ -88,7 +88,7 @@
 			{#each ntBooks as book}
 				<div>
 					<button
-						class="w-full text-left px-[16px] py-[9px] text-[16px] font-light hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
+						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
                  {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
 						on:click={() => toggleBook(book.slug)}
 					>
@@ -100,7 +100,7 @@
 								<a
 									href="/odr/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[7px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-light
+									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-light
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-interactive text-white'
 										: 'text-subtle'}"

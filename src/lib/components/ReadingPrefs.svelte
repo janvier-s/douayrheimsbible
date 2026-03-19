@@ -36,6 +36,12 @@
 	];
 
 	let currentTheme = 'light';
+	let fontDropdownOpen = false;
+
+	$: activeFontId = $prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily;
+	$: activeFont = FONTS.find((f) => f.id === activeFontId);
+	$: activeFontStack =
+		activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit');
 
 	onMount(() => {
 		currentTheme = document.documentElement.getAttribute('data-theme') ?? 'light';
@@ -122,26 +128,47 @@
 		</div>
 	</div>
 
-	<div>
+	<div class="relative">
 		<span class="text-muted block mb-xs">Font</span>
-		<select
-			class="w-full border border-border rounded-sm p-xs bg-background text-foreground"
-			value={$prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily}
-			on:change={(e) => {
-				const v = (e.target as HTMLSelectElement).value;
-				if (v === 'grace') {
-					setDyslexia(true);
-				} else {
-					setDyslexia(false);
-					setFont(v);
-				}
-			}}
+		<button
+			class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px]"
+			style="font-family: {activeFontStack};"
+			on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
 		>
-			{#each FONTS as f}
-				<option value={f.id}>{f.label}</option>
-			{/each}
-			<option value="grace">Grace Dyslexic MD (dyslexia-friendly)</option>
-		</select>
+			<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span>
+			<span class="text-[10px] text-subtle font-ui">{fontDropdownOpen ? '▲' : '▼'}</span>
+		</button>
+		{#if fontDropdownOpen}
+			<div
+				class="absolute left-0 right-0 top-[calc(100%+2px)] bg-panel border border-border rounded-sm shadow-lg z-10 overflow-hidden"
+			>
+				{#each FONTS as f}
+					<button
+						class="w-full text-left px-sm py-[9px] text-[14px] hover:bg-interactive hover:text-white transition-colors duration-fast
+							{activeFontId === f.id ? 'text-interactive' : 'text-foreground'}"
+						style="font-family: {f.stack};"
+						on:click={() => {
+							setDyslexia(false);
+							setFont(f.id);
+							fontDropdownOpen = false;
+						}}
+					>
+						{f.label}
+					</button>
+				{/each}
+				<button
+					class="w-full text-left px-sm py-[9px] text-[14px] hover:bg-interactive hover:text-white transition-colors duration-fast border-t border-border
+						{activeFontId === 'grace' ? 'text-interactive' : 'text-foreground'}"
+					style="font-family: 'Grace Dyslexic MD', sans-serif;"
+					on:click={() => {
+						setDyslexia(true);
+						fontDropdownOpen = false;
+					}}
+				>
+					Grace Dyslexic MD
+				</button>
+			</div>
+		{/if}
 	</div>
 
 	<div>
