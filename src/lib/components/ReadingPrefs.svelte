@@ -11,7 +11,13 @@
 				'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
 		},
 		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
-		{ id: 'sabon-next-lt', label: 'Sabon Next LT', stack: "'Sabon Next LT', Georgia, serif" },
+		{
+			id: 'source-serif-4',
+			label: 'Source Serif 4',
+			stack: "'Source Serif 4', Georgia, serif",
+			gfUrl:
+				'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap'
+		},
 		{ id: 'verdana', label: 'Verdana', stack: 'Verdana, Geneva, sans-serif' },
 		{
 			id: 'libre-franklin',
