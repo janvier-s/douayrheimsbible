@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="auto">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -13,8 +13,7 @@
 		<script>
 			(function () {
 				const stored = localStorage.getItem('theme');
-				const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-				document.documentElement.setAttribute('data-theme', stored || system);
+				document.documentElement.setAttribute('data-theme', stored || 'auto');
 			})();
 		</script>
 		<!-- Google Fonts / Bunny Fonts -->

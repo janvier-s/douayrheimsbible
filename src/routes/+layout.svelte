@@ -22,11 +22,11 @@
 		: ($page.params.chapter ?? '');
 
 	const FONT_STACKS: Record<string, string> = {
-		'fs-brabo-pro': "'FS Brabo Pro', Georgia, serif",
 		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
+		'fs-brabo-pro': "'FS Brabo Pro', Georgia, serif",
+		sentinel: "'Sentinel', Georgia, serif",
 		'atkinson-hyperlegible': "'Atkinson Hyperlegible', sans-serif",
-		'linux-libertine': "'Linux Libertine', 'Linux Libertine O', Georgia, serif",
-		inter: "'Inter', sans-serif",
+		helvetica: "'Helvetica Neue', Helvetica, Arial, sans-serif",
 		lexend: "'Lexend', sans-serif"
 	};
 
@@ -44,11 +44,9 @@
 			const stack = FONT_STACKS[p.fontFamily];
 			if (stack) document.documentElement.style.setProperty('--font-reader', stack);
 		}
-		// Restore theme (app.html script handles pre-paint; this syncs data-theme attr post-hydration)
+		// app.html script handles pre-paint theme; sync post-hydration
 		const savedTheme = localStorage.getItem('theme');
-		if (savedTheme && savedTheme !== 'light') {
-			document.documentElement.setAttribute('data-theme', savedTheme);
-		}
+		document.documentElement.setAttribute('data-theme', savedTheme || 'auto');
 	});
 </script>
 

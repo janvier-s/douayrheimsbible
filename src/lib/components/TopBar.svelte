@@ -35,9 +35,7 @@
 				Douay-Rheims
 			</span>
 		</a>
-
 		<div class="flex-1"></div>
-
 		<div class="w-[280px]">
 			<SearchBar />
 		</div>
@@ -48,18 +46,49 @@
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center"
 		style="height: 40px;"
 	>
-		<!-- Left: reading prefs -->
-		<button
-			class="w-[28px] h-[28px] flex items-center justify-center rounded-[3px] text-muted hover:text-interactive transition-colors duration-fast text-[12px] font-semibold shrink-0"
-			title="Reading preferences"
-			on:click={() => {
-				prefsOpen = !prefsOpen;
-				translationOpen = false;
-				navOpen = false;
-			}}
-		>
-			Aa
-		</button>
+		<!-- Left: translation selector -->
+		<div class="relative shrink-0">
+			<button
+				class="flex items-center gap-[8px] px-[10px] py-[4px] rounded-[3px] border transition-colors duration-fast
+					{translationOpen
+					? 'bg-interactive text-white border-interactive'
+					: 'border-border hover:border-interactive hover:text-interactive text-foreground'}"
+				on:click={() => {
+					translationOpen = !translationOpen;
+					prefsOpen = false;
+					navOpen = false;
+				}}
+			>
+				<div class="text-left">
+					<div
+						class="text-[9px] uppercase tracking-[0.15em] leading-none mb-[2px]
+							{translationOpen ? 'text-white/70' : 'text-subtle'}"
+					>
+						Translation
+					</div>
+					<div class="text-[13px] font-medium leading-none">ODR</div>
+				</div>
+				<span class="text-[10px] {translationOpen ? 'text-white/70' : 'text-subtle'} leading-none">
+					{translationOpen ? '▲' : '▼'}
+				</span>
+			</button>
+			{#if translationOpen}
+				<div
+					class="absolute top-[calc(100%+8px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-50 w-56 font-ui text-sm"
+				>
+					<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-medium">
+						Translation
+					</p>
+					<div
+						class="flex items-center justify-between px-sm py-[7px] rounded-sm bg-interactive/10"
+					>
+						<span class="text-foreground font-medium text-[13px]">Original Douay-Rheims</span>
+						<span class="text-[10px] text-interactive font-semibold tracking-[0.1em]">✓</span>
+					</div>
+					<p class="text-[11px] text-subtle mt-sm px-sm">More translations coming soon.</p>
+				</div>
+			{/if}
+		</div>
 
 		<!-- Center: chapter nav — absolutely centered -->
 		<div class="absolute left-1/2 -translate-x-1/2">
@@ -76,41 +105,18 @@
 			</button>
 		</div>
 
-		<!-- Right: translation -->
-		<div class="ml-auto relative">
-			<button
-				class="flex items-center gap-[5px] px-[10px] py-[5px] rounded-[3px] border transition-colors duration-fast text-[13px] font-medium
-					{translationOpen
-					? 'bg-interactive text-white border-interactive'
-					: 'border-border hover:border-interactive hover:text-interactive text-foreground'}"
-				on:click={() => {
-					translationOpen = !translationOpen;
-					prefsOpen = false;
-					navOpen = false;
-				}}
-			>
-				<span>ODR</span>
-				<span class="text-[10px] {translationOpen ? 'text-white/70' : 'text-subtle'}"
-					>{translationOpen ? '▲' : '▼'}</span
-				>
-			</button>
-			{#if translationOpen}
-				<div
-					class="absolute top-[calc(100%+8px)] right-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-50 w-56 font-ui text-sm"
-				>
-					<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-medium">
-						Translation
-					</p>
-					<div
-						class="flex items-center justify-between px-sm py-[7px] rounded-sm bg-interactive bg-opacity-8"
-					>
-						<span class="text-foreground font-medium text-[13px]">Original Douay-Rheims</span>
-						<span class="text-[10px] text-interactive font-semibold tracking-[0.1em]">✓</span>
-					</div>
-					<p class="text-[11px] text-subtle mt-sm px-sm">More translations coming soon.</p>
-				</div>
-			{/if}
-		</div>
+		<!-- Right: reading prefs -->
+		<button
+			class="ml-auto w-[28px] h-[28px] flex items-center justify-center rounded-[3px] text-muted hover:text-interactive transition-colors duration-fast text-[12px] font-semibold shrink-0"
+			title="Reading preferences"
+			on:click={() => {
+				prefsOpen = !prefsOpen;
+				translationOpen = false;
+				navOpen = false;
+			}}
+		>
+			Aa
+		</button>
 	</div>
 </header>
 
@@ -124,7 +130,7 @@
 
 {#if prefsOpen}
 	<div
-		class="fixed top-[90px] left-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
+		class="fixed top-[90px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 	>
 		<ReadingPrefs />
 	</div>

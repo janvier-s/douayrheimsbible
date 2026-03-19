@@ -3,7 +3,6 @@
 	import { prefs } from '$lib/stores/prefs';
 
 	const FONTS = [
-		{ id: 'fs-brabo-pro', label: 'FS Brabo Pro', stack: "'FS Brabo Pro', Georgia, serif" },
 		{
 			id: 'libre-baskerville',
 			label: 'Libre Baskerville',
@@ -11,11 +10,8 @@
 			gfUrl:
 				'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
 		},
-		{
-			id: 'sentinel',
-			label: 'Sentinel',
-			stack: "'Sentinel', Georgia, serif"
-		},
+		{ id: 'fs-brabo-pro', label: 'FS Brabo Pro', stack: "'FS Brabo Pro', Georgia, serif" },
+		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
 		{
 			id: 'atkinson-hyperlegible',
 			label: 'Atkinson Hyperlegible',
@@ -32,37 +28,13 @@
 	];
 
 	const THEMES = [
-		{
-			id: 'light',
-			label: 'Light',
-			bg: '#f8f5ef',
-			fg: '#1c1710',
-			lines: '#c8bfb0'
-		},
-		{
-			id: 'sepia',
-			label: 'Sepia',
-			bg: '#f2e8d8',
-			fg: '#2c1e10',
-			lines: '#c0a888'
-		},
-		{
-			id: 'dark',
-			label: 'Dark',
-			bg: '#1c1511',
-			fg: '#e8ddd0',
-			lines: '#3d2e22'
-		},
-		{
-			id: 'auto',
-			label: 'Auto',
-			bg: null,
-			fg: null,
-			lines: null
-		}
+		{ id: 'light', label: 'Light', bg: '#f8f5ef', fg: '#1c1710', lines: '#c8bfb0' },
+		{ id: 'sepia', label: 'Sepia', bg: '#f2e8d8', fg: '#2c1e10', lines: '#c0a888' },
+		{ id: 'dark', label: 'Dark', bg: '#1c1511', fg: '#e8ddd0', lines: '#3d2e22' },
+		{ id: 'oled', label: 'OLED', bg: '#000000', fg: '#e0e0e0', lines: '#2a2a2a' }
 	];
 
-	let currentTheme = 'light';
+	let currentTheme = 'auto';
 	let fontDropdownOpen = false;
 
 	$: activeFontId = $prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily;
@@ -71,16 +43,12 @@
 		activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit');
 
 	onMount(() => {
-		currentTheme = document.documentElement.getAttribute('data-theme') ?? 'light';
+		currentTheme = document.documentElement.getAttribute('data-theme') ?? 'auto';
 	});
 
 	function setTheme(id: string) {
 		currentTheme = id;
-		if (id === 'light') {
-			document.documentElement.removeAttribute('data-theme');
-		} else {
-			document.documentElement.setAttribute('data-theme', id);
-		}
+		document.documentElement.setAttribute('data-theme', id);
 		localStorage.setItem('theme', id);
 	}
 
@@ -141,7 +109,7 @@
 			{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.0 }] as opt}
 				<button
 					class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
-                 {$prefs.lineHeight === opt.value
+						{$prefs.lineHeight === opt.value
 						? 'bg-interactive text-white border-interactive'
 						: 'border-border text-muted hover:text-foreground'}"
 					on:click={() => {
@@ -203,47 +171,31 @@
 		<span class="block mb-xs">Theme</span>
 		<div class="flex gap-[6px]">
 			{#each THEMES as t}
-				{#if t.bg !== null}
-					<button
-						title={t.label}
-						on:click={() => setTheme(t.id)}
-						class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
-							{currentTheme === t.id ? 'border-interactive' : 'border-transparent'}"
-						style="background: {t.bg};"
-					>
-						<div class="theme-card-inner p-[7px]">
-							<div class="flex items-baseline gap-[3px] mb-[5px]">
-								<span class="font-reader text-[15px] leading-none font-bold" style="color: {t.fg};"
-									>A</span
-								>
-								<span
-									class="block h-[1.5px] flex-1 rounded-full"
-									style="background: {t.fg}; opacity: 0.5;"
-								></span>
-							</div>
-							<div class="space-y-[3px]">
-								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
-								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
-								<span class="block h-[1.5px] w-[70%] rounded-full" style="background: {t.lines};"
-								></span>
-							</div>
+				<button
+					title={t.label}
+					on:click={() => setTheme(t.id)}
+					class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
+						{currentTheme === t.id ? 'border-interactive' : 'border-transparent'}"
+					style="background: {t.bg};"
+				>
+					<div class="theme-card-inner p-[7px]">
+						<div class="flex items-baseline gap-[3px] mb-[5px]">
+							<span class="font-reader text-[15px] leading-none font-bold" style="color: {t.fg};"
+								>A</span
+							>
+							<span
+								class="block h-[1.5px] flex-1 rounded-full"
+								style="background: {t.fg}; opacity: 0.5;"
+							></span>
 						</div>
-					</button>
-				{:else}
-					<!-- Auto card -->
-					<button
-						title="Auto (follows system)"
-						on:click={() => setTheme('auto')}
-						class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast bg-panel
-							{currentTheme === 'auto' ? 'border-interactive' : 'border-border'}"
-					>
-						<div
-							class="theme-card-inner p-[7px] flex items-center justify-center h-full text-[11px] font-medium text-foreground"
-						>
-							Auto
+						<div class="space-y-[3px]">
+							<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+							<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+							<span class="block h-[1.5px] w-[70%] rounded-full" style="background: {t.lines};"
+							></span>
 						</div>
-					</button>
-				{/if}
+					</div>
+				</button>
 			{/each}
 		</div>
 	</div>
