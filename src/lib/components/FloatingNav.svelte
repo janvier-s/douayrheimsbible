@@ -75,7 +75,7 @@
 								<a
 									href="/odr/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
+									class="text-[16px] py-[8px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-interactive text-white'
 										: 'text-subtle'}"
@@ -105,7 +105,7 @@
 								<a
 									href="/odr/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[9px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
+									class="text-[16px] py-[8px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-interactive text-white'
 										: 'text-subtle'}"
