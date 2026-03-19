@@ -49,10 +49,8 @@
 		<!-- Left: translation selector -->
 		<div class="relative shrink-0">
 			<button
-				class="flex items-center gap-[8px] px-[10px] py-[4px] rounded-[3px] border transition-colors duration-fast
-					{translationOpen
-					? 'bg-interactive text-white border-interactive'
-					: 'border-border hover:border-interactive hover:text-interactive text-foreground'}"
+				class="flex items-center gap-[8px] px-[10px] py-[4px] rounded-[3px] transition-colors duration-fast
+					{translationOpen ? 'bg-interactive text-white' : 'text-foreground hover:text-interactive'}"
 				on:click={() => {
 					translationOpen = !translationOpen;
 					prefsOpen = false;
@@ -93,18 +91,16 @@
 		<!-- Center: chapter nav — absolutely centered, accent-colored -->
 		<div class="absolute left-1/2 -translate-x-1/2">
 			<button
-				class="flex items-center gap-[6px] px-[12px] py-[5px] rounded-[3px] border transition-colors duration-fast
-					{navOpen
-					? 'bg-interactive text-white border-interactive'
-					: 'border-interactive text-interactive hover:bg-interactive hover:text-white'}"
+				class="flex items-center gap-[7px] px-[12px] py-[5px] rounded-[3px] transition-colors duration-fast
+					{navOpen ? 'bg-interactive text-white' : 'text-interactive hover:bg-interactive hover:text-white'}"
 				on:click={() => {
 					navOpen = !navOpen;
 					prefsOpen = false;
 					translationOpen = false;
 				}}
 			>
-				<span class="text-[14px] font-medium">{navLabel}</span>
-				<span class="text-[11px] opacity-70 leading-none">{navOpen ? '▲' : '▼'}</span>
+				<span class="text-[15px] font-medium">{navLabel}</span>
+				<span class="text-[12px] opacity-70 leading-none">{navOpen ? '▲' : '▼'}</span>
 			</button>
 		</div>
 

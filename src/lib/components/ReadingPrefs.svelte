@@ -30,7 +30,7 @@
 	const THEMES = [
 		{ id: 'light', label: 'Light', bg: '#f8f5ef', fg: '#1c1710', lines: '#c8bfb0' },
 		{ id: 'sepia', label: 'Sepia', bg: '#f2e8d8', fg: '#2c1e10', lines: '#c0a888' },
-		{ id: 'dark', label: 'Dark', bg: '#1c1511', fg: '#e8ddd0', lines: '#3d2e22' },
+		{ id: 'dark', label: 'Dark', bg: '#111113', fg: '#e8ddd0', lines: '#2e2b32' },
 		{ id: 'oled', label: 'OLED', bg: '#000000', fg: '#e0e0e0', lines: '#2a2a2a' }
 	];
 
@@ -108,7 +108,7 @@
 		<div class="flex gap-xs">
 			{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.0 }] as opt}
 				<button
-					class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+					class="flex-1 py-xs border rounded-sm text-xs font-light transition-colors duration-fast
 						{$prefs.lineHeight === opt.value
 						? 'bg-interactive text-white border-interactive'
 						: 'border-border text-muted hover:text-foreground'}"

@@ -41,7 +41,7 @@
 	<div class="flex border-b border-border shrink-0">
 		{#each ['OT', 'NT'] as Testament[] as t}
 			<button
-				class="flex-1 py-[10px] text-[12px] uppercase tracking-[0.15em] font-medium transition-colors duration-fast
+				class="flex-1 py-[15px] text-[12px] uppercase tracking-[0.15em] font-medium transition-colors duration-fast
                {activeTestament === t
 					? 'text-interactive border-b-2 border-interactive'
 					: 'text-subtle hover:text-foreground'}"
@@ -56,7 +56,12 @@
 	<div class="flex-1 flex flex-col min-h-0">
 		<div class="overflow-y-auto flex-1 py-[6px] nav-scroll" class:hidden={activeTestament !== 'OT'}>
 			{#each otBooks as book}
-				<div>
+				<div
+					class:border-t={book.slug === 'prayer-of-manasses'}
+					class:border-border={book.slug === 'prayer-of-manasses'}
+					class:mt-[6px]={book.slug === 'prayer-of-manasses'}
+					class:pt-[6px]={book.slug === 'prayer-of-manasses'}
+				>
 					<button
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
                  {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
