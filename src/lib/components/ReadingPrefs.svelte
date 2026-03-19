@@ -29,10 +29,10 @@
 	];
 
 	const THEMES = [
-		{ id: 'light', label: 'Light', group: 'Light', bg: '#f6f1e8' },
-		{ id: 'sepia', label: 'Sepia', group: 'Light', bg: '#f2e8d8' },
-		{ id: 'dark', label: 'Dark', group: 'Dark', bg: '#1c1511' },
-		{ id: 'oled', label: 'OLED', group: 'Dark', bg: '#000000' }
+		{ id: 'light', label: 'Light', bg: '#f6f1e8', fg: '#1c1710' },
+		{ id: 'sepia', label: 'Sepia', bg: '#f2e8d8', fg: '#2c1e10' },
+		{ id: 'dark', label: 'Dark', bg: '#1c1511', fg: '#e8ddd0' },
+		{ id: 'oled', label: 'OLED', bg: '#000000', fg: '#e0e0e0' }
 	];
 
 	let currentTheme = 'light';
@@ -146,31 +146,19 @@
 
 	<div>
 		<span class="text-muted block mb-xs">Theme</span>
-		<div class="flex gap-[6px] mb-[10px]">
+		<div class="flex gap-[6px]">
 			{#each THEMES as t}
 				<button
 					title={t.label}
 					on:click={() => setTheme(t.id)}
-					class="flex-1 flex flex-col items-center gap-[5px] py-[7px] rounded-[3px] border transition-colors duration-fast text-[10px] font-medium
-						{currentTheme === t.id
-						? 'border-interactive text-interactive'
-						: 'border-border text-muted hover:border-interactive hover:text-interactive'}"
+					style="background: {t.bg}; color: {t.fg};"
+					class="flex-1 flex flex-col items-center justify-center gap-[4px] py-[10px] rounded-[3px] border-2 transition-colors duration-fast text-[11px] font-medium
+						{currentTheme === t.id ? 'border-interactive' : 'border-transparent'}"
 				>
-					<span
-						class="w-7 h-7 rounded-full border border-border shadow-sm block"
-						style="background: {t.bg};"
-					></span>
+					<span class="text-[18px] font-reader leading-none">Aa</span>
 					{t.label}
 				</button>
 			{/each}
-		</div>
-		<!-- Font preview -->
-		<div class="rounded-[3px] border border-border bg-background px-[14px] py-[12px] space-y-[6px]">
-			<p class="text-[22px] font-reader leading-tight text-foreground">ABCDEFGHIJKLM</p>
-			<p class="text-[22px] font-reader leading-tight text-foreground">abcdefghijklm</p>
-			<p class="text-[13px] font-reader text-subtle leading-relaxed mt-[4px]">
-				In the beginning God created heaven, and earth.
-			</p>
 		</div>
 	</div>
 

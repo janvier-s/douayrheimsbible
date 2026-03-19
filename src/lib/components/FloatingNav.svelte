@@ -45,22 +45,16 @@
                {activeTestament === t
 					? 'text-interactive border-b-2 border-interactive'
 					: 'text-subtle hover:text-foreground'}"
-				on:click={() => {
-					activeTestament = t;
-				}}
+				on:click={() => (activeTestament = t)}
 			>
 				{t === 'OT' ? 'Old Testament' : 'New Testament'}
 			</button>
 		{/each}
 	</div>
 
-	<!-- Book lists — both always in DOM so scroll positions are preserved -->
-	<div class="flex-1 relative overflow-hidden">
-		<!-- Old Testament -->
-		<div
-			class="overflow-y-auto absolute inset-0 py-[6px] nav-scroll"
-			class:hidden={activeTestament !== 'OT'}
-		>
+	<!-- Both lists always in DOM — hidden preserves each testament's scroll position -->
+	<div class="flex-1 flex flex-col min-h-0">
+		<div class="overflow-y-auto flex-1 py-[6px] nav-scroll" class:hidden={activeTestament !== 'OT'}>
 			{#each otBooks as book}
 				<div>
 					<button
@@ -70,7 +64,6 @@
 					>
 						{book.odrName}
 					</button>
-
 					{#if expandedBooks.has(book.slug)}
 						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-8 gap-[4px]">
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
@@ -91,11 +84,7 @@
 			{/each}
 		</div>
 
-		<!-- New Testament -->
-		<div
-			class="overflow-y-auto absolute inset-0 py-[6px] nav-scroll"
-			class:hidden={activeTestament !== 'NT'}
-		>
+		<div class="overflow-y-auto flex-1 py-[6px] nav-scroll" class:hidden={activeTestament !== 'NT'}>
 			{#each ntBooks as book}
 				<div>
 					<button
@@ -105,7 +94,6 @@
 					>
 						{book.odrName}
 					</button>
-
 					{#if expandedBooks.has(book.slug)}
 						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-8 gap-[4px]">
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}

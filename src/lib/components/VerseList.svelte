@@ -27,7 +27,7 @@
 	<p class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]">
 		{#each verses as v (v.verse)}
 			{#if $prefs.showVerseNumbers}
-				<sup class="text-subtle font-ui text-[10px] select-none mr-[3px] tabular-nums"
+				<sup class="text-subtle font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
 					>{v.verse}</sup
 				>
 			{/if}
@@ -51,7 +51,7 @@
 			>
 				{#if $prefs.showVerseNumbers}
 					<span
-						class="text-subtle font-ui text-[13px] select-none w-6 shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
+						class="text-subtle font-ui text-[13px] font-thin select-none w-6 shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
 					>
 						{v.verse}
 					</span>
