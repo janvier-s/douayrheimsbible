@@ -25,6 +25,7 @@
 		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
 		'fs-brabo-pro': "'FS Brabo Pro', Georgia, serif",
 		sentinel: "'Sentinel', Georgia, serif",
+		'century-old-style': "'Century Old Style', Georgia, serif",
 		'atkinson-hyperlegible': "'Atkinson Hyperlegible', sans-serif",
 		helvetica: "'Helvetica Neue', Helvetica, Arial, sans-serif",
 		lexend: "'Lexend', sans-serif"

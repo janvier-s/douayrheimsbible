@@ -13,6 +13,11 @@
 		{ id: 'fs-brabo-pro', label: 'FS Brabo Pro', stack: "'FS Brabo Pro', Georgia, serif" },
 		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
 		{
+			id: 'century-old-style',
+			label: 'Century Old Style',
+			stack: "'Century Old Style', Georgia, serif"
+		},
+		{
 			id: 'atkinson-hyperlegible',
 			label: 'Atkinson Hyperlegible',
 			stack: "'Atkinson Hyperlegible', sans-serif",
