@@ -17,7 +17,19 @@
 	}
 
 	function applySmallCaps(text: string): string {
-		return text.replace(/\bJESUS\b/g, '<span class="jesus">Jesus</span>');
+		// 1. JESUS CHRIST / CHRIST JESUS — only JESUS gets small-caps
+		text = text.replace(/\bJESUS CHRIST\b/g, '<span class="sc">Jesus</span> Christ');
+		text = text.replace(/\bCHRIST JESUS\b/g, 'Christ <span class="sc">Jesus</span>');
+		// 2. Multi-word all-caps runs (2+ consecutive ALL-CAPS words) → sentence case + small-caps span
+		text = text.replace(/\b[A-Z]{2,}(?:\s+[A-Z]{2,})+\b/g, (match) => {
+			const sentenceCase = match.charAt(0) + match.slice(1).toLowerCase();
+			return `<span class="sc">${sentenceCase}</span>`;
+		});
+		// 3. Remaining standalone names
+		text = text.replace(/\bJESUS\b/g, '<span class="sc">Jesus</span>');
+		text = text.replace(/\bMARY\b/g, '<span class="sc">Mary</span>');
+		text = text.replace(/\bCHRIST\b/g, '<span class="sc">Christ</span>');
+		return text;
 	}
 
 	function renderVerse(text: string): string {
@@ -80,7 +92,7 @@
 		box-shadow: inset 3px 0 0 var(--color-interactive);
 	}
 
-	:global(.jesus) {
+	:global(.sc) {
 		font-variant: small-caps;
 	}
 </style>
