@@ -44,9 +44,24 @@
 
 	<!-- Row 2: reading controls -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[10px]"
 		style="height: 60px;"
 	>
+		<!-- Mode toggle -->
+		<div
+			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
+		>
+			<span class="px-[9px] py-[5px] bg-interactive text-white border-r border-interactive"
+				>Reading</span
+			>
+			<a
+				href="/compare/{bookSlug}/{chapterNum}"
+				class="px-[9px] py-[5px] text-subtle hover:text-foreground transition-colors duration-fast"
+			>
+				Compare
+			</a>
+		</div>
+
 		<!-- Left: translation selector -->
 		<div class="relative shrink-0">
 			<button

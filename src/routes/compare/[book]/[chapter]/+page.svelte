@@ -55,13 +55,13 @@
 
 <CompareBar {bookMeta} chapterNum={chapter.chapter} />
 
-<!-- Fixed carousel arrows — only when >MAX_COLS translations active -->
+<!-- Fixed carousel arrows — vertical rectangles, only when >MAX_COLS translations active -->
 {#if needsScroll}
 	<button
 		on:click={() => compareStore.scrollBy(-1)}
 		disabled={!canScrollLeft}
 		aria-label="Previous translation"
-		class="fixed left-[12px] top-1/2 -translate-y-1/2 z-40 w-[36px] h-[36px] flex items-center justify-center rounded-full bg-panel border border-border shadow-lg text-[18px] transition-all duration-fast
+		class="fixed left-[8px] top-1/2 -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] bg-panel border border-border shadow-md text-[22px] transition-all duration-fast
 			{canScrollLeft
 			? 'text-foreground hover:text-interactive hover:border-interactive'
 			: 'opacity-20 pointer-events-none'}"
@@ -72,7 +72,7 @@
 		on:click={() => compareStore.scrollBy(1)}
 		disabled={!canScrollRight}
 		aria-label="Next translation"
-		class="fixed right-[12px] top-1/2 -translate-y-1/2 z-40 w-[36px] h-[36px] flex items-center justify-center rounded-full bg-panel border border-border shadow-lg text-[18px] transition-all duration-fast
+		class="fixed right-[8px] top-1/2 -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] bg-panel border border-border shadow-md text-[22px] transition-all duration-fast
 			{canScrollRight
 			? 'text-foreground hover:text-interactive hover:border-interactive'
 			: 'opacity-20 pointer-events-none'}"
@@ -81,26 +81,35 @@
 	</button>
 {/if}
 
-<div class="mx-auto" style="max-width: {containerMaxWidth};">
+<!-- Table container — border-x provides outer left/right edges; bg-background outside contrasts with bg-panel inside cells -->
+<div class="mx-auto border-x border-t border-border" style="max-width: {containerMaxWidth};">
 	<!-- Sticky column headers — draggable to reorder -->
 	<div
-		class="sticky top-[94px] z-20 bg-panel border-b-2 border-border grid"
+		class="sticky top-[110px] z-20 border-b-2 border-border grid"
 		style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
 	>
-		{#each displayedCols as t (t.id)}
+		{#each displayedCols as t, colIdx (t.id)}
 			<div
 				draggable="true"
+				role="columnheader"
+				aria-label={t.label}
+				tabindex="0"
 				on:dragstart={(e) => onColDragStart(e, t.id)}
 				on:dragover={(e) => onColDragOver(e, t.id)}
 				on:dragend={onColDragEnd}
-				class="px-[20px] py-[10px] border-r border-border last:border-r-0 flex items-baseline justify-between gap-[8px] cursor-grab active:cursor-grabbing select-none
+				class="px-[20px] py-[13px] flex items-center justify-between gap-[8px] cursor-grab active:cursor-grabbing select-none bg-panel
+					{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}
 					{draggingId === t.id ? 'opacity-50' : ''}"
 			>
-				<div class="min-w-0">
-					<span class="text-[12px] font-semibold text-foreground leading-none truncate block">
-						{t.fullHeader ? t.label : t.abbr}
-					</span>
-					<span class="text-[10px] text-subtle">{t.year}</span>
+				<div class="flex items-center gap-[9px] min-w-0">
+					<!-- Drag handle indicator -->
+					<span class="text-subtle/35 text-[12px] leading-none shrink-0" aria-hidden="true">⠿</span>
+					<div class="min-w-0">
+						<span class="text-[12px] font-semibold text-foreground leading-none truncate block">
+							{t.label}
+						</span>
+						<span class="text-[10px] text-subtle mt-[2px] block">{t.year}</span>
+					</div>
 				</div>
 				{#if !t.live}
 					<span
@@ -119,8 +128,11 @@
 			class="grid border-b border-border"
 			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
 		>
-			{#each displayedCols as t (t.id)}
-				<div class="px-[20px] py-[14px] border-r border-border last:border-r-0">
+			{#each displayedCols as t, colIdx (t.id)}
+				<div
+					class="px-[20px] py-[14px] bg-panel
+						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
+				>
 					{#if t.id === 'odr'}
 						<p class="font-reader italic text-subtle text-[13px] leading-relaxed">
 							{chapter.summary}
@@ -134,9 +146,10 @@
 	<!-- Verse grid: one cell per (verse × column) — CSS grid auto-flow aligns rows -->
 	<div class="grid" style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));">
 		{#each chapter.verses as v (v.verse)}
-			{#each displayedCols as t (t.id)}
+			{#each displayedCols as t, colIdx (t.id)}
 				<div
-					class="px-[20px] py-[8px] border-r border-b border-border last:border-r-0 font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
+					class="px-[20px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]
+						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 					class:text-justify={$prefs.justifiedText}
 				>
 					{#if t.live}

@@ -45,43 +45,61 @@
 
 	<!-- Row 2: compare controls -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px]"
-		style="height: 44px;"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[14px]"
+		style="height: 60px;"
 	>
+		<!-- Mode toggle -->
+		<div
+			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
+		>
+			<a
+				href="/odr/{bookMeta.slug}/{chapterNum}"
+				class="px-[9px] py-[5px] text-subtle hover:text-foreground border-r border-border transition-colors duration-fast"
+			>
+				Reading
+			</a>
+			<span class="px-[9px] py-[5px] bg-interactive text-white">Compare</span>
+		</div>
+
 		<!-- Translation chips — desktop -->
-		<div class="hidden md:flex items-center gap-[5px] shrink-0">
-			{#each TRANSLATIONS as t (t.id)}
-				{@const disabled = t.ntOnly && isOT}
-				{@const active = $compareStore.visible.has(t.id)}
-				<div class="relative group/tip">
-					<button
-						on:click={() => compareStore.toggle(t.id, isOT)}
-						{disabled}
-						class="px-[9px] py-[3px] rounded-[3px] text-[11px] font-medium uppercase tracking-[0.1em] border transition-colors duration-fast
-							{disabled
-							? 'border-border text-border cursor-not-allowed'
-							: active
-								? 'bg-interactive text-white border-interactive'
-								: 'border-border text-subtle hover:text-foreground hover:border-foreground/30'}"
-					>
-						{t.abbr}
-					</button>
-					{#if disabled}
-						<div
-							class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-[6px] px-[8px] py-[4px] bg-foreground text-background text-[11px] rounded-[3px] whitespace-nowrap opacity-0 group-hover/tip:opacity-100 transition-opacity duration-fast z-50"
+		<div class="hidden md:flex flex-col justify-center gap-[5px] shrink-0">
+			<span class="text-[9px] uppercase tracking-[0.15em] text-subtle leading-none font-medium"
+				>Translations</span
+			>
+			<div class="flex items-center gap-[5px]">
+				{#each TRANSLATIONS as t (t.id)}
+					{@const disabled = t.ntOnly && isOT}
+					{@const active = $compareStore.visible.has(t.id)}
+					<div class="relative group/tip">
+						<button
+							on:click={() => compareStore.toggle(t.id, isOT)}
+							{disabled}
+							class="px-[9px] py-[3px] rounded-[3px] text-[11px] font-medium uppercase tracking-[0.1em] border transition-colors duration-fast
+								{disabled
+								? 'border-border text-border cursor-not-allowed'
+								: active
+									? 'bg-interactive text-white border-interactive'
+									: 'border-border text-subtle hover:text-foreground hover:border-foreground/30'}"
 						>
-							New Testament only
+							{t.abbr}
+						</button>
+						{#if disabled}
 							<div
-								class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[4px] border-l-transparent border-r-transparent border-t-foreground"
-							></div>
-						</div>
-					{/if}
-				</div>
-			{/each}
+								class="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-[6px] px-[8px] py-[4px] bg-foreground text-background text-[11px] rounded-[3px] whitespace-nowrap opacity-0 group-hover/tip:opacity-100 transition-opacity duration-fast z-50"
+							>
+								New Testament only
+								<div
+									class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[4px] border-l-transparent border-r-transparent border-t-foreground"
+								></div>
+							</div>
+						{/if}
+					</div>
+				{/each}
+			</div>
 		</div>
 
 		<!-- Translation dropdown — mobile -->
-		<div class="md:hidden relative">
+		<div class="md:hidden relative shrink-0">
 			<button
 				class="flex items-center gap-[6px] px-[10px] py-[4px] rounded-[3px] border border-border text-[12px] font-medium transition-colors duration-fast
 					{mobileTransOpen
@@ -123,13 +141,10 @@
 			{/if}
 		</div>
 
-		<!-- Divider -->
-		<div class="w-px h-[20px] bg-border shrink-0"></div>
-
-		<!-- Chapter nav (centered) -->
-		<div class="flex-1 flex justify-center">
+		<!-- Chapter nav (absolutely centered) -->
+		<div class="absolute left-1/2 -translate-x-1/2">
 			<button
-				class="flex items-center gap-[7px] px-[12px] py-[5px] rounded-[3px] transition-colors duration-fast
+				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-interactive text-white' : 'text-interactive hover:bg-interactive hover:text-white'}"
 				on:click={() => {
 					navOpen = !navOpen;
@@ -137,36 +152,33 @@
 					mobileTransOpen = false;
 				}}
 			>
-				<span class="text-[14px] font-medium">{navLabel}</span>
+				<span class="text-[16px] font-medium">{navLabel}</span>
 				<span class="text-[11px] opacity-70 leading-none">{navOpen ? '▲' : '▼'}</span>
 			</button>
 		</div>
 
-		<!-- Divider -->
-		<div class="w-px h-[20px] bg-border shrink-0"></div>
-
-		<!-- Summary toggle -->
-		<button
-			on:click={() => compareStore.toggleSummary()}
-			class="shrink-0 text-[12px] font-medium transition-colors duration-fast
-				{$compareStore.showSummary ? 'text-interactive' : 'text-muted hover:text-foreground'}"
-		>
-			Summary: {$compareStore.showSummary ? 'on' : 'off'}
-		</button>
-
-		<!-- Text options -->
-		<button
-			class="ml-[4px] px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium shrink-0
-				{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
-			title="Text options"
-			on:click={() => {
-				prefsOpen = !prefsOpen;
-				navOpen = false;
-				mobileTransOpen = false;
-			}}
-		>
-			Text options
-		</button>
+		<!-- Right: summary toggle + text options -->
+		<div class="ml-auto flex items-center gap-[8px] shrink-0">
+			<button
+				on:click={() => compareStore.toggleSummary()}
+				class="text-[12px] font-medium transition-colors duration-fast
+					{$compareStore.showSummary ? 'text-interactive' : 'text-muted hover:text-foreground'}"
+			>
+				Summary: {$compareStore.showSummary ? 'on' : 'off'}
+			</button>
+			<button
+				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium
+					{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
+				title="Text options"
+				on:click={() => {
+					prefsOpen = !prefsOpen;
+					navOpen = false;
+					mobileTransOpen = false;
+				}}
+			>
+				Text options
+			</button>
+		</div>
 	</div>
 </header>
 
@@ -182,7 +194,7 @@
 {#if prefsOpen}
 	<div
 		transition:slide={{ duration: 180 }}
-		class="fixed top-[94px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
+		class="fixed top-[110px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 	>
 		<ReadingPrefs />
 	</div>
