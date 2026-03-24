@@ -11,6 +11,7 @@ export default {
 				muted: 'var(--color-muted)',
 				subtle: 'var(--color-subtle)',
 				interactive: 'var(--color-interactive)',
+				accent: 'var(--color-accent)',
 				border: 'var(--color-border)',
 				glass: 'var(--color-bg-glass)'
 			},

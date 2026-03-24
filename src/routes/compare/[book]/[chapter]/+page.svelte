@@ -8,6 +8,8 @@
 	export let data: PageData;
 
 	$: ({ bookMeta, chapter } = data);
+	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
+	$: nextChapter = chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null;
 
 	// Derived view state from store
 	$: orderedTranslations = $compareStore.order.map(
@@ -81,8 +83,38 @@
 	</button>
 {/if}
 
+<!-- Chapter prev / next — above table -->
+<div
+	class="mx-auto flex justify-between items-center mt-[12px] px-[4px] font-ui"
+	style="max-width: {containerMaxWidth};"
+>
+	{#if prevChapter}
+		<a
+			href="/compare/{bookMeta.slug}/{prevChapter}"
+			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+		>
+			<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
+		</a>
+	{:else}
+		<span></span>
+	{/if}
+	{#if nextChapter}
+		<a
+			href="/compare/{bookMeta.slug}/{nextChapter}"
+			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+		>
+			Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
+		</a>
+	{:else}
+		<span></span>
+	{/if}
+</div>
+
 <!-- Table container — border-x provides outer left/right edges; bg-background outside contrasts with bg-panel inside cells -->
-<div class="mx-auto border-x border-t border-border" style="max-width: {containerMaxWidth};">
+<div
+	class="mx-auto border-x border-t border-border mt-[8px]"
+	style="max-width: {containerMaxWidth};"
+>
 	<!-- Sticky column headers — draggable to reorder -->
 	<div
 		class="sticky top-[110px] z-20 border-b-2 border-border grid"
@@ -105,10 +137,12 @@
 					<!-- Drag handle indicator -->
 					<span class="text-subtle/35 text-[12px] leading-none shrink-0" aria-hidden="true">⠿</span>
 					<div class="min-w-0 font-ui">
-						<span class="text-[13px] font-semibold text-foreground leading-none truncate block">
+						<span
+							class="text-[13px] font-semibold text-foreground leading-none truncate block mt-[5px]"
+						>
 							{t.label}
 						</span>
-						<span class="text-[11px] text-subtle mt-[2px] block">{t.year}</span>
+						<span class="text-[11px] text-subtle mt-[5px] block">{t.year}</span>
 					</div>
 				</div>
 				{#if !t.live}
@@ -173,4 +207,31 @@
 			{/each}
 		{/each}
 	</div>
+</div>
+
+<!-- Chapter prev / next — below table -->
+<div
+	class="mx-auto flex justify-between items-center mt-[12px] mb-[40px] px-[4px] font-ui"
+	style="max-width: {containerMaxWidth};"
+>
+	{#if prevChapter}
+		<a
+			href="/compare/{bookMeta.slug}/{prevChapter}"
+			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+		>
+			<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
+		</a>
+	{:else}
+		<span></span>
+	{/if}
+	{#if nextChapter}
+		<a
+			href="/compare/{bookMeta.slug}/{nextChapter}"
+			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+		>
+			Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
+		</a>
+	{:else}
+		<span></span>
+	{/if}
 </div>

@@ -92,7 +92,7 @@
 
 <style>
 	.verse-target {
-		box-shadow: inset 3px 0 0 var(--color-interactive);
+		box-shadow: inset 3px 0 0 var(--color-accent);
 	}
 
 	:global(.sc) {

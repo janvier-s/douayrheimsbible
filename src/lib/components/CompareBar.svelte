@@ -30,8 +30,7 @@
 		style="height: 50px;"
 	>
 		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
-			<span class="text-interactive text-[15px] leading-none select-none" aria-hidden="true">✠</span
-			>
+			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 			<span
 				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-interactive transition-colors duration-fast"
 			>
@@ -161,10 +160,11 @@
 		<div class="shrink-0 flex items-center gap-[20px]">
 			<button
 				on:click={() => compareStore.toggleSummary()}
-				class="text-[12px] font-medium transition-colors duration-fast
-					{$compareStore.showSummary ? 'text-interactive' : 'text-muted hover:text-foreground'}"
+				class="text-[12px] font-medium text-muted hover:text-foreground transition-colors duration-fast"
 			>
-				Summary: {$compareStore.showSummary ? 'on' : 'off'}
+				Summary: <span class={$compareStore.showSummary ? 'text-interactive' : ''}
+					>{$compareStore.showSummary ? 'on' : 'off'}</span
+				>
 			</button>
 			<button
 				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium

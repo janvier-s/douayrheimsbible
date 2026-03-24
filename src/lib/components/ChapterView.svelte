@@ -44,6 +44,31 @@
 	}
 </script>
 
+{#if showNav}
+	<nav class="flex justify-between items-center mb-lg font-ui">
+		{#if prevChapter}
+			<a
+				href="/odr/{bookMeta.slug}/{prevChapter}"
+				class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
+			>
+				<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
+			</a>
+		{:else}
+			<span></span>
+		{/if}
+		{#if nextChapter}
+			<a
+				href="/odr/{bookMeta.slug}/{nextChapter}"
+				class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
+			>
+				Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
+			</a>
+		{:else}
+			<span></span>
+		{/if}
+	</nav>
+{/if}
+
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
 	<header class="mb-[35px]">
 		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
@@ -52,7 +77,7 @@
 		<h1 class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm">
 			Chapter {chapter.chapter}
 		</h1>
-		<div class="w-10 h-px bg-interactive opacity-70"></div>
+		<div class="w-10 h-px bg-accent opacity-70"></div>
 	</header>
 
 	{#if chapter.summary && chapter.summary !== '---'}

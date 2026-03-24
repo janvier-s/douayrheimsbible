@@ -46,7 +46,9 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div
-	class="fixed top-[90px] left-1/2 -translate-x-1/2 z-50 bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
+	class="fixed {compareMode
+		? 'top-[110px]'
+		: 'top-[90px]'} left-1/2 -translate-x-1/2 z-50 bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
 	role="dialog"
 	aria-label="Bible navigation"
 	transition:fly={{ y: -6, duration: 160, easing: cubicOut }}
@@ -57,7 +59,7 @@
 			<button
 				class="flex-1 py-[15px] text-[12px] uppercase tracking-[0.15em] font-medium transition-colors duration-fast
                {activeTestament === t
-					? 'text-interactive border-b-2 border-interactive'
+					? 'bg-background text-foreground border-b-2 border-interactive'
 					: 'text-subtle hover:text-foreground'}"
 				on:click={() => (activeTestament = t)}
 			>
@@ -82,8 +84,10 @@
 				>
 					<button
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
-						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
-                 {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
+						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
+                 {book.slug === bookSlug
+							? 'text-foreground bg-border/40 hover:bg-interactive hover:text-white'
+							: 'text-foreground hover:bg-interactive/10'}"
 						on:click={() => toggleBook(book.slug)}
 					>
 						{book.odrName}
@@ -120,8 +124,10 @@
 				<div>
 					<button
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
-						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
-                 {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
+						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
+                 {book.slug === bookSlug
+							? 'text-foreground bg-border/40 hover:bg-interactive hover:text-white'
+							: 'text-foreground hover:bg-interactive/10'}"
 						on:click={() => toggleBook(book.slug)}
 					>
 						{book.odrName}
