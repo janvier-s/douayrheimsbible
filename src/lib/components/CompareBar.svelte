@@ -30,7 +30,8 @@
 		style="height: 50px;"
 	>
 		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
-			<span class="text-interactive text-[15px] leading-none select-none" aria-hidden="true">✠</span>
+			<span class="text-interactive text-[15px] leading-none select-none" aria-hidden="true">✠</span
+			>
 			<span
 				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-interactive transition-colors duration-fast"
 			>
