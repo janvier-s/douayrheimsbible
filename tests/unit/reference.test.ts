@@ -40,7 +40,7 @@ describe('resolveReference', () => {
 		expect(r).not.toBeNull();
 		const resolved = resolveReference(r!);
 		expect(resolved?.slug).toBe('1-kings');
-		expect(resolved?.url).toBe('/odr/1-kings/1/1');
+		expect(resolved?.url).toBe('/odr/1-kings/1#v1');
 	});
 
 	it('book-only resolves to chapter 1', () => {
