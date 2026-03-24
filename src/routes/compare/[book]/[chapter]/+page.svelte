@@ -117,7 +117,7 @@
 >
 	<!-- Sticky column headers — draggable to reorder -->
 	<div
-		class="sticky top-[110px] z-20 border-b-2 border-border grid"
+		class="sticky top-[var(--header-height)] z-20 border-b-2 border-border grid"
 		style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
 	>
 		{#each displayedCols as t, colIdx (t.id)}
@@ -197,11 +197,12 @@
 					{:else}
 						<!-- Invisible text preserves row height to match ODR column -->
 						{#if $prefs.showVerseNumbers}
-							<sup class="font-ui text-[10px] font-thin select-none mr-[4px] invisible"
-								>{v.verse}</sup
+							<sup
+								class="font-ui text-[10px] font-thin select-none mr-[4px] invisible"
+								aria-hidden="true">{v.verse}</sup
 							>
 						{/if}
-						<span class="invisible">{v.text}</span>
+						<span class="invisible" aria-hidden="true">{v.text}</span>
 					{/if}
 				</div>
 			{/each}

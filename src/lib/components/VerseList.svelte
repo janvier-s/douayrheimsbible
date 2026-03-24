@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { textVide } from 'text-vide';
 	import DOMPurify from 'isomorphic-dompurify';
 	import { prefs } from '$lib/stores/prefs';
 	import type { Verse } from '$lib/data/types';
@@ -12,9 +11,21 @@
 
 	let verseEls: Record<number, HTMLElement> = {};
 
-	function applyBionic(text: string, enabled: boolean): string {
-		if (!enabled) return text;
-		return textVide(text, { fixationPoint: 4 });
+	// Lazy-load text-vide only when bionic reading is first enabled
+	let textVideFn: ((text: string, opts: object) => string) | null = null;
+	let bionicReady = false;
+	$: if ($prefs.bionicReading && !textVideFn) {
+		import('text-vide').then((m) => {
+			textVideFn = m.textVide;
+			bionicReady = true;
+		});
+	} else if (!$prefs.bionicReading) {
+		bionicReady = false;
+	}
+
+	function applyBionic(text: string): string {
+		if (!textVideFn) return text;
+		return textVideFn(text, { fixationPoint: 4 });
 	}
 
 	function applySmallCaps(text: string): string {
@@ -35,7 +46,7 @@
 	}
 
 	function renderVerse(text: string, bionic: boolean): string {
-		const html = applySmallCaps(bionic ? applyBionic(text, true) : text);
+		const html = applySmallCaps(bionic ? applyBionic(text) : text);
 		return DOMPurify.sanitize(html, { ALLOWED_TAGS: ['span', 'b'], ALLOWED_ATTR: ['class'] });
 	}
 
@@ -59,7 +70,7 @@
 					>{v.verse}</sup
 				>
 			{/if}
-			{@html renderVerse(v.text, $prefs.bionicReading)}{' '}
+			{@html renderVerse(v.text, $prefs.bionicReading && bionicReady)}{' '}
 		{/each}
 	</p>
 {:else}
@@ -83,7 +94,7 @@
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
 				>
-					{@html renderVerse(v.text, $prefs.bionicReading)}
+					{@html renderVerse(v.text, $prefs.bionicReading && bionicReady)}
 				</p>
 			</li>
 		{/each}

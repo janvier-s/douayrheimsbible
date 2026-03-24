@@ -194,7 +194,7 @@
 {#if prefsOpen}
 	<div
 		transition:slide={{ duration: 180 }}
-		class="fixed top-[110px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
+		class="fixed top-[var(--header-height)] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 	>
 		<ReadingPrefs />
 	</div>

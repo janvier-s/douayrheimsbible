@@ -91,6 +91,8 @@
 	--color-border: #e4dcd0;
 	--color-bg-glass: rgba(248, 245, 239, 0.94);
 
+	--header-height: 110px;
+
 	--font-reader: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 	--font-ui: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 

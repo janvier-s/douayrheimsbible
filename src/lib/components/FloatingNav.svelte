@@ -46,9 +46,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div
-	class="fixed {compareMode
-		? 'top-[110px]'
-		: 'top-[90px]'} left-1/2 -translate-x-1/2 z-50 bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
+	class="fixed top-[var(--header-height)] left-1/2 -translate-x-1/2 z-50 bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
 	role="dialog"
 	aria-label="Bible navigation"
 	transition:fly={{ y: -6, duration: 160, easing: cubicOut }}

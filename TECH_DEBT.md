@@ -2,6 +2,8 @@
 
 Items deferred from the March 2026 code review. Criticals and quick wins have been resolved.
 
+**Resolved since initial filing:** M-2, M-7, M-9, M-11, M-12, M-13
+
 ---
 
 ## Medium Items
