@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getBookBySlug } from '$lib/data/books';
+	import { slide } from 'svelte/transition';
 	import FloatingNav from './FloatingNav.svelte';
 	import SearchBar from './SearchBar.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
@@ -72,6 +73,7 @@
 			</button>
 			{#if translationOpen}
 				<div
+					transition:slide={{ duration: 180 }}
 					class="absolute top-[calc(100%+8px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-50 w-56 font-ui text-sm"
 				>
 					<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-medium">
@@ -130,6 +132,7 @@
 
 {#if prefsOpen}
 	<div
+		transition:slide={{ duration: 180 }}
 		class="fixed top-[90px] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 	>
 		<ReadingPrefs />
