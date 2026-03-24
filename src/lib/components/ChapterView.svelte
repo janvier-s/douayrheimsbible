@@ -28,7 +28,14 @@
 		const n = parseInt(el.dataset.verse);
 		activeVerse = n;
 		await tick();
-		document.getElementById('v' + n)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		// Scope to this chapter's article — multiple chapters may be in DOM (infinite scroll)
+		const article = document.querySelector(
+			`[data-book="${bookMeta.slug}"][data-chapter="${chapter.chapter}"]`
+		);
+		(article?.querySelector('#v' + n) as HTMLElement | null)?.scrollIntoView({
+			behavior: 'smooth',
+			block: 'center'
+		});
 	}
 </script>
 

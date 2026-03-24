@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { fly } from 'svelte/transition';
+	import { fly, slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { ALL_BOOKS } from '$lib/data/books';
 
@@ -86,7 +86,10 @@
 						{book.odrName}
 					</button>
 					{#if expandedBooks.has(book.slug)}
-						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]">
+						<div
+							transition:slide={{ duration: 180 }}
+							class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]"
+						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="/odr/{book.slug}/{ch}"
@@ -121,7 +124,10 @@
 						{book.odrName}
 					</button>
 					{#if expandedBooks.has(book.slug)}
-						<div class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]">
+						<div
+							transition:slide={{ duration: 180 }}
+							class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]"
+						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="/odr/{book.slug}/{ch}"
