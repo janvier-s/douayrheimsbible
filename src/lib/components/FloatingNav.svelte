@@ -116,8 +116,8 @@
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
-							? 'text-accent bg-accent/8 hover:bg-accent hover:text-white'
-							: 'text-foreground hover:bg-accent/10'}"
+							? 'text-accent bg-border hover:bg-border'
+							: 'text-foreground hover:bg-border hover:text-accent'}"
 						on:click={() => toggleBook(book.slug)}
 					>
 						{book.odrName}
@@ -156,8 +156,8 @@
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
-							? 'text-accent bg-accent/8 hover:bg-accent hover:text-white'
-							: 'text-foreground hover:bg-accent/10'}"
+							? 'text-accent bg-border hover:bg-border'
+							: 'text-foreground hover:bg-border hover:text-accent'}"
 						on:click={() => toggleBook(book.slug)}
 					>
 						{book.odrName}

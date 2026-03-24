@@ -65,7 +65,7 @@
 		<div class="relative shrink-0">
 			<button
 				class="flex items-center gap-[8px] px-[10px] py-[4px] rounded-[3px] transition-colors duration-fast
-					{translationOpen ? 'bg-interactive text-white' : 'text-foreground hover:text-interactive'}"
+					{translationOpen ? 'bg-accent text-white' : 'text-foreground hover:text-accent'}"
 				on:click={() => {
 					translationOpen = !translationOpen;
 					prefsOpen = false;
@@ -93,11 +93,9 @@
 					<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-medium">
 						Translation
 					</p>
-					<div
-						class="flex items-center justify-between px-sm py-[7px] rounded-sm bg-interactive/10"
-					>
+					<div class="flex items-center justify-between px-sm py-[7px] rounded-sm bg-accent/10">
 						<span class="text-foreground font-medium text-[13px]">Original Douay-Rheims</span>
-						<span class="text-[10px] text-interactive font-semibold tracking-[0.1em]">✓</span>
+						<span class="text-[10px] text-accent font-semibold tracking-[0.1em]">✓</span>
 					</div>
 					<p class="text-[11px] text-subtle mt-sm px-sm">More translations coming soon.</p>
 				</div>
