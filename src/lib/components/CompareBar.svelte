@@ -48,7 +48,7 @@
 			>
 				Reading
 			</a>
-			<span class="px-[9px] py-[5px] bg-accent text-white">Compare</span>
+			<span class="px-[9px] py-[5px] bg-interactive text-white">Compare</span>
 		</div>
 		<div class="w-[380px]">
 			<SearchBar />
@@ -77,7 +77,7 @@
 								{disabled
 								? 'border-border text-border cursor-not-allowed'
 								: active
-									? 'bg-accent text-white border-accent'
+									? 'bg-interactive text-white border-interactive'
 									: 'border-border text-subtle hover:text-foreground hover:border-foreground/30'}"
 						>
 							{t.abbr}
@@ -101,7 +101,9 @@
 		<div class="md:hidden relative shrink-0">
 			<button
 				class="flex items-center gap-[6px] px-[10px] py-[4px] rounded-[3px] border border-border text-[12px] font-medium transition-colors duration-fast
-					{mobileTransOpen ? 'bg-accent text-white border-accent' : 'text-foreground hover:text-accent'}"
+					{mobileTransOpen
+					? 'bg-interactive text-white border-interactive'
+					: 'text-foreground hover:text-accent'}"
 				on:click={() => {
 					mobileTransOpen = !mobileTransOpen;
 					navOpen = false;
