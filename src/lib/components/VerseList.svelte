@@ -33,8 +33,8 @@
 		return text;
 	}
 
-	function renderVerse(text: string): string {
-		return applySmallCaps($prefs.bionicReading ? applyBionic(text, true) : text);
+	function renderVerse(text: string, bionic: boolean): string {
+		return applySmallCaps(bionic ? applyBionic(text, true) : text);
 	}
 
 	// afterNavigate fires after SvelteKit finishes its own scroll restoration,
@@ -57,7 +57,7 @@
 					>{v.verse}</sup
 				>
 			{/if}
-			{@html renderVerse(v.text)}{' '}
+			{@html renderVerse(v.text, $prefs.bionicReading)}{' '}
 		{/each}
 	</p>
 {:else}
@@ -81,7 +81,7 @@
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
 				>
-					{@html renderVerse(v.text)}
+					{@html renderVerse(v.text, $prefs.bionicReading)}
 				</p>
 			</li>
 		{/each}

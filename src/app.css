@@ -154,7 +154,8 @@ body {
 }
 
 ::selection {
-	background-color: rgba(153, 0, 51, 0.13);
+	background-color: color-mix(in srgb, var(--color-interactive) 35%, transparent);
+	color: var(--color-text);
 }
 
 .font-ui {

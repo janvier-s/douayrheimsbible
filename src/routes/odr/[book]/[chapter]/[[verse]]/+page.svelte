@@ -3,7 +3,8 @@
 	import { browser } from '$app/environment';
 	import type { PageData } from './$types';
 	import ChapterView from '$lib/components/ChapterView.svelte';
-	import { loadBook, getChapter } from '$lib/data/loader';
+	import { loadBook, getChapter, getChapterCount } from '$lib/data/loader';
+	import { ALL_BOOKS } from '$lib/data/books';
 	import { debounce } from '$lib/utils/scroll';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -88,26 +89,35 @@
 	async function loadPrevChapter() {
 		if (loadingPrev) return;
 		const first = chapters[0];
-		const prevChNum = first.chapter.chapter - 1;
-		if (prevChNum < 1) return;
-		if (hasChapter(first.bookMeta.slug, prevChNum)) return;
+
+		let targetBookMeta = first.bookMeta;
+		let prevChNum = first.chapter.chapter - 1;
+
+		if (prevChNum < 1) {
+			const bookIndex = ALL_BOOKS.findIndex((b) => b.slug === first.bookMeta.slug);
+			if (bookIndex <= 0) return; // Genesis — no previous book
+			targetBookMeta = ALL_BOOKS[bookIndex - 1];
+			prevChNum = targetBookMeta.chapters; // last chapter of previous book
+		}
+
+		if (hasChapter(targetBookMeta.slug, prevChNum)) return;
 
 		loadingPrev = true;
 		const scrollY = window.scrollY;
 		const oldHeight = document.documentElement.scrollHeight;
 		try {
-			const bookData = await loadBook(first.bookMeta.slug, fetch);
+			const bookData = await loadBook(targetBookMeta.slug, fetch);
 			const prevCh = getChapter(bookData, prevChNum);
+			const totalChs = getChapterCount(bookData);
 			if (prevCh) {
 				chapters = [
-					{ bookMeta: first.bookMeta, chapter: prevCh, totalChapters: first.totalChapters },
+					{ bookMeta: targetBookMeta, chapter: prevCh, totalChapters: totalChs },
 					...chapters
 				];
 				await tick();
 				const newHeight = document.documentElement.scrollHeight;
 				window.scrollTo(0, scrollY + (newHeight - oldHeight));
 				observeHeadings();
-				// Cascade: if still near top after prepending, keep loading
 				onScroll();
 			}
 		} catch {

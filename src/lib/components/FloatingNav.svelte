@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount, tick } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { ALL_BOOKS } from '$lib/data/books';
@@ -23,6 +24,16 @@
 		}
 		expandedBooks = next;
 	}
+
+	let otContainer: HTMLElement;
+	let ntContainer: HTMLElement;
+
+	onMount(async () => {
+		await tick();
+		const container = activeTestament === 'OT' ? otContainer : ntContainer;
+		const active = container?.querySelector('[data-active-book]') as HTMLElement | null;
+		active?.scrollIntoView({ block: 'center', behavior: 'instant' });
+	});
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') onClose();
@@ -54,7 +65,11 @@
 
 	<!-- Both lists always in DOM — hidden preserves each testament's scroll position -->
 	<div class="flex-1 flex flex-col min-h-0">
-		<div class="overflow-y-auto flex-1 py-[6px] nav-scroll" class:hidden={activeTestament !== 'OT'}>
+		<div
+			bind:this={otContainer}
+			class="overflow-y-auto flex-1 py-[6px] nav-scroll"
+			class:hidden={activeTestament !== 'OT'}
+		>
 			{#each otBooks as book}
 				<div
 					class:border-t={book.slug === 'prayer-of-manasses'}
@@ -63,6 +78,7 @@
 					class:pt-[6px]={book.slug === 'prayer-of-manasses'}
 				>
 					<button
+						data-active-book={book.slug === bookSlug ? 'true' : undefined}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
                  {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
 						on:click={() => toggleBook(book.slug)}
@@ -89,10 +105,15 @@
 			{/each}
 		</div>
 
-		<div class="overflow-y-auto flex-1 py-[6px] nav-scroll" class:hidden={activeTestament !== 'NT'}>
+		<div
+			bind:this={ntContainer}
+			class="overflow-y-auto flex-1 py-[6px] nav-scroll"
+			class:hidden={activeTestament !== 'NT'}
+		>
 			{#each ntBooks as book}
 				<div>
 					<button
+						data-active-book={book.slug === bookSlug ? 'true' : undefined}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium hover:bg-interactive hover:bg-opacity-8 transition-colors duration-fast
                  {book.slug === bookSlug ? 'text-interactive' : 'text-foreground'}"
 						on:click={() => toggleBook(book.slug)}
