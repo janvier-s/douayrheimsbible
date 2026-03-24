@@ -69,7 +69,9 @@
 </script>
 
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
-	<TopBar {bookSlug} {chapterNum} />
+	{#if !$page.url.pathname.startsWith('/compare')}
+		<TopBar {bookSlug} {chapterNum} />
+	{/if}
 	{#key $page.url.pathname}
 		<slot />
 	{/key}

@@ -1,111 +1,48 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { prefs } from '$lib/stores/prefs';
+	import { compareStore, TRANSLATIONS, MAX_COLS } from '$lib/stores/compare';
+	import type { TranslationId } from '$lib/stores/compare';
+	import CompareBar from '$lib/components/CompareBar.svelte';
 
 	export let data: PageData;
 
-	$: ({ bookMeta, chapter, totalChapters } = data);
-	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
-	$: nextChapter = chapter.chapter < totalChapters ? chapter.chapter + 1 : null;
-	$: isOT = bookMeta.testament === 'OT';
+	$: ({ bookMeta, chapter } = data);
 
-	const ALL_TRANSLATIONS = [
-		{
-			id: 'odr',
-			label: 'Original Douay-Rheims',
-			abbr: 'ODR',
-			year: '1609',
-			live: true,
-			ntOnly: false
-		},
-		{
-			id: 'drc',
-			label: 'Douay-Rheims Challoner',
-			abbr: 'DRC',
-			year: '1752',
-			live: false,
-			ntOnly: false
-		},
-		{ id: 'knox', label: 'Knox Bible', abbr: 'Knox', year: '1955', live: false, ntOnly: false },
-		{
-			id: 'conf',
-			label: 'Confraternity NT',
-			abbr: 'Conf',
-			year: '1941',
-			live: false,
-			ntOnly: true
-		},
-		{
-			id: 'cpdv',
-			label: 'Catholic Public Domain Version',
-			abbr: 'CPDV',
-			year: '2009',
-			live: false,
-			ntOnly: false
-		},
-		{
-			id: 'kjv',
-			label: 'King James Version',
-			abbr: 'KJV',
-			year: '1611',
-			live: false,
-			ntOnly: false
-		},
-		{ id: 'vul', label: 'Vulgate', abbr: 'Vul', year: '~405', live: false, ntOnly: false }
-	] as const;
-
-	type TranslationId = (typeof ALL_TRANSLATIONS)[number]['id'];
-
-	let translationOrder: TranslationId[] = ALL_TRANSLATIONS.map((t) => t.id);
-	let visibleSet = new Set<TranslationId>(['odr', 'drc']);
-	let showSummary = true;
-	let columnOffset = 0;
-	const MAX_COLS = 5;
-
-	$: orderedTranslations = translationOrder.map((id) => ALL_TRANSLATIONS.find((t) => t.id === id)!);
-	$: activeCols = orderedTranslations.filter((t) => visibleSet.has(t.id));
-	$: displayedCols = activeCols.slice(columnOffset, columnOffset + MAX_COLS);
-	$: canScrollLeft = columnOffset > 0;
-	$: canScrollRight = columnOffset + MAX_COLS < activeCols.length;
+	// Derived view state from store
+	$: orderedTranslations = $compareStore.order.map((id) => TRANSLATIONS.find((t) => t.id === id)!);
+	$: activeCols = orderedTranslations.filter((t) => $compareStore.visible.has(t.id));
+	$: displayedCols = activeCols.slice(
+		$compareStore.columnOffset,
+		$compareStore.columnOffset + MAX_COLS
+	);
 	$: needsScroll = activeCols.length > MAX_COLS;
+	$: canScrollLeft = $compareStore.columnOffset > 0;
+	$: canScrollRight = $compareStore.columnOffset + MAX_COLS < activeCols.length;
 
-	function toggleTranslation(id: TranslationId) {
-		const t = ALL_TRANSLATIONS.find((x) => x.id === id)!;
-		if (t.ntOnly && isOT) return;
-		const next = new Set(visibleSet);
-		if (next.has(id)) {
-			if (next.size > 1) next.delete(id);
-		} else {
-			next.add(id);
-		}
-		visibleSet = next;
-		// Clamp offset so we don't show empty columns
-		const newActive = orderedTranslations.filter((t) => next.has(t.id));
-		if (columnOffset + MAX_COLS > newActive.length) {
-			columnOffset = Math.max(0, newActive.length - MAX_COLS);
-		}
-	}
+	// Max-width scales with column count so few columns aren't stretched
+	$: containerMaxWidth = `${Math.min(displayedCols.length * 360, 1800)}px`;
 
-	// Drag-to-reorder on toggle chips
+	// Drag-to-reorder columns
 	let draggingId: TranslationId | null = null;
 
-	function onDragStart(e: DragEvent, id: TranslationId) {
+	function onColDragStart(e: DragEvent, id: TranslationId) {
 		draggingId = id;
 		if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
 	}
 
-	function onDragOver(e: DragEvent, id: TranslationId) {
+	function onColDragOver(e: DragEvent, id: TranslationId) {
 		e.preventDefault();
 		if (!draggingId || draggingId === id) return;
-		const newOrder = [...translationOrder];
+		const newOrder = [...$compareStore.order];
 		const from = newOrder.indexOf(draggingId);
 		const to = newOrder.indexOf(id);
 		newOrder.splice(from, 1);
 		newOrder.splice(to, 0, draggingId);
-		translationOrder = newOrder;
+		compareStore.reorder(newOrder);
 	}
 
-	function onDragEnd() {
+	function onColDragEnd() {
 		draggingId = null;
 	}
 </script>
@@ -114,125 +51,54 @@
 	<title>{bookMeta.odrName} {chapter.chapter} — Compare Translations</title>
 </svelte:head>
 
-<div class="min-h-screen font-ui">
-	<!-- Controls bar: translation toggles + options -->
-	<div
-		class="sticky top-[90px] z-30 bg-glass backdrop-blur-sm border-b border-border px-lg"
-		style="min-height: 48px;"
+<CompareBar {bookMeta} chapterNum={chapter.chapter} />
+
+<!-- Fixed carousel arrows — only when >MAX_COLS translations active -->
+{#if needsScroll}
+	<button
+		on:click={() => compareStore.scrollBy(-1)}
+		disabled={!canScrollLeft}
+		aria-label="Previous translation"
+		class="fixed left-[12px] top-1/2 -translate-y-1/2 z-40 w-[36px] h-[36px] flex items-center justify-center rounded-full bg-panel border border-border shadow-lg text-[18px] transition-all duration-fast
+			{canScrollLeft
+			? 'text-foreground hover:text-interactive hover:border-interactive'
+			: 'opacity-20 pointer-events-none'}"
 	>
-		<div class="flex items-center justify-center gap-md" style="min-height: 48px;">
-			<!-- Scroll left -->
-			{#if needsScroll}
-				<button
-					on:click={() => (columnOffset = Math.max(0, columnOffset - 1))}
-					disabled={!canScrollLeft}
-					class="shrink-0 w-[26px] h-[26px] flex items-center justify-center rounded-[3px] border border-border text-[14px] transition-colors duration-fast
-						{canScrollLeft
-						? 'text-foreground hover:text-interactive hover:border-interactive'
-						: 'text-border pointer-events-none'}"
-				>
-					‹
-				</button>
-			{/if}
+		‹
+	</button>
+	<button
+		on:click={() => compareStore.scrollBy(1)}
+		disabled={!canScrollRight}
+		aria-label="Next translation"
+		class="fixed right-[12px] top-1/2 -translate-y-1/2 z-40 w-[36px] h-[36px] flex items-center justify-center rounded-full bg-panel border border-border shadow-lg text-[18px] transition-all duration-fast
+			{canScrollRight
+			? 'text-foreground hover:text-interactive hover:border-interactive'
+			: 'opacity-20 pointer-events-none'}"
+	>
+		›
+	</button>
+{/if}
 
-			<!-- Translation chips (draggable) -->
-			<div class="flex items-center gap-[6px] flex-wrap justify-center">
-				{#each orderedTranslations as t (t.id)}
-					{@const disabled = t.ntOnly && isOT}
-					{@const active = visibleSet.has(t.id)}
-					<button
-						draggable="true"
-						on:dragstart={(e) => onDragStart(e, t.id)}
-						on:dragover={(e) => onDragOver(e, t.id)}
-						on:dragend={onDragEnd}
-						on:click={() => toggleTranslation(t.id)}
-						title={disabled ? `${t.label} — New Testament only` : t.label}
-						class="px-[10px] py-[4px] rounded-[3px] text-[11px] font-medium uppercase tracking-[0.1em] border transition-colors duration-fast select-none cursor-grab active:cursor-grabbing
-							{disabled
-							? 'border-border text-border pointer-events-none'
-							: active
-								? 'bg-interactive text-white border-interactive'
-								: 'border-border text-subtle hover:text-foreground hover:border-foreground/30'}"
-					>
-						{t.abbr}
-					</button>
-				{/each}
-			</div>
-
-			<!-- Scroll right -->
-			{#if needsScroll}
-				<button
-					on:click={() => (columnOffset = Math.min(activeCols.length - MAX_COLS, columnOffset + 1))}
-					disabled={!canScrollRight}
-					class="shrink-0 w-[26px] h-[26px] flex items-center justify-center rounded-[3px] border border-border text-[14px] transition-colors duration-fast
-						{canScrollRight
-						? 'text-foreground hover:text-interactive hover:border-interactive'
-						: 'text-border pointer-events-none'}"
-				>
-					›
-				</button>
-			{/if}
-
-			<!-- Divider -->
-			<div class="w-px h-[20px] bg-border shrink-0"></div>
-
-			<!-- Chapter nav -->
-			<div class="flex items-center gap-[2px] shrink-0">
-				<a
-					href={prevChapter ? `/compare/${bookMeta.slug}/${prevChapter}` : undefined}
-					class="w-[26px] h-[26px] flex items-center justify-center rounded-[3px] text-[14px] transition-colors duration-fast
-						{prevChapter ? 'text-foreground hover:text-interactive' : 'text-border pointer-events-none'}"
-					aria-label="Previous chapter"
-				>
-					‹
-				</a>
-				<span
-					class="text-[12px] font-medium text-foreground px-[4px] whitespace-nowrap select-none"
-				>
-					{bookMeta.odrName}
-					{chapter.chapter}
-				</span>
-				<a
-					href={nextChapter ? `/compare/${bookMeta.slug}/${nextChapter}` : undefined}
-					class="w-[26px] h-[26px] flex items-center justify-center rounded-[3px] text-[14px] transition-colors duration-fast
-						{nextChapter ? 'text-foreground hover:text-interactive' : 'text-border pointer-events-none'}"
-					aria-label="Next chapter"
-				>
-					›
-				</a>
-			</div>
-
-			<!-- Divider -->
-			<div class="w-px h-[20px] bg-border shrink-0"></div>
-
-			<!-- Summary toggle -->
-			<button
-				on:click={() => (showSummary = !showSummary)}
-				class="shrink-0 px-[8px] py-[3px] rounded-[3px] text-[11px] border transition-colors duration-fast
-					{showSummary
-					? 'border-interactive text-interactive'
-					: 'border-border text-subtle hover:text-foreground'}"
-				title="Toggle chapter summaries"
-			>
-				Summary
-			</button>
-		</div>
-	</div>
-
-	<!-- Sticky column headers — same grid as verse body -->
+<div class="mx-auto" style="max-width: {containerMaxWidth};">
+	<!-- Sticky column headers — draggable to reorder -->
 	<div
-		class="sticky top-[138px] z-20 bg-panel border-b-2 border-border grid"
+		class="sticky top-[94px] z-20 bg-panel border-b-2 border-border grid"
 		style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
 	>
 		{#each displayedCols as t (t.id)}
 			<div
-				class="px-[20px] py-[10px] border-r border-border last:border-r-0 flex items-baseline justify-between gap-[8px]"
+				draggable="true"
+				on:dragstart={(e) => onColDragStart(e, t.id)}
+				on:dragover={(e) => onColDragOver(e, t.id)}
+				on:dragend={onColDragEnd}
+				class="px-[20px] py-[10px] border-r border-border last:border-r-0 flex items-baseline justify-between gap-[8px] cursor-grab active:cursor-grabbing select-none
+					{draggingId === t.id ? 'opacity-50' : ''}"
 			>
 				<div class="min-w-0">
-					<span class="text-[12px] font-semibold text-foreground leading-none"
-						>{['odr', 'drc', 'cpdv'].includes(t.id) ? t.label : t.abbr}</span
-					>
-					<span class="text-[10px] text-subtle ml-[5px]">{t.year}</span>
+					<span class="text-[12px] font-semibold text-foreground leading-none truncate block">
+						{t.fullHeader ? t.label : t.abbr}
+					</span>
+					<span class="text-[10px] text-subtle">{t.year}</span>
 				</div>
 				{#if !t.live}
 					<span
@@ -245,15 +111,15 @@
 		{/each}
 	</div>
 
-	<!-- Summary row (only ODR has one for now) -->
-	{#if showSummary && chapter.summary && chapter.summary !== '---'}
+	<!-- Summary row -->
+	{#if $compareStore.showSummary && chapter.summary && chapter.summary !== '---'}
 		<div
 			class="grid border-b border-border"
 			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
 		>
 			{#each displayedCols as t (t.id)}
-				<div class="px-[20px] py-[16px] border-r border-border last:border-r-0">
-					{#if t.live && t.id === 'odr'}
+				<div class="px-[20px] py-[14px] border-r border-border last:border-r-0">
+					{#if t.id === 'odr'}
 						<p class="font-reader italic text-subtle text-[13px] leading-relaxed">
 							{chapter.summary}
 						</p>
@@ -263,12 +129,12 @@
 		</div>
 	{/if}
 
-	<!-- Verse grid: verses × translations, CSS grid auto-flow for alignment -->
+	<!-- Verse grid: one cell per (verse × column) — CSS grid auto-flow aligns rows -->
 	<div class="grid" style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));">
 		{#each chapter.verses as v (v.verse)}
 			{#each displayedCols as t (t.id)}
 				<div
-					class="px-[20px] py-[7px] border-r border-b border-border last:border-r-0 font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
+					class="px-[20px] py-[8px] border-r border-b border-border last:border-r-0 font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 					class:text-justify={$prefs.justifiedText}
 				>
 					{#if t.live}
@@ -280,9 +146,9 @@
 						{/if}
 						{v.text}
 					{:else}
-						<!-- Invisible placeholder preserving row height -->
+						<!-- Invisible text preserves row height to match ODR column -->
 						{#if $prefs.showVerseNumbers}
-							<sup class="text-transparent font-ui text-[10px] font-thin select-none mr-[4px]"
+							<sup class="font-ui text-[10px] font-thin select-none mr-[4px] invisible"
 								>{v.verse}</sup
 							>
 						{/if}

@@ -7,6 +7,9 @@
 	export let bookSlug: string;
 	export let chapterNum: number;
 	export let onClose: () => void;
+	export let compareMode: boolean = false;
+
+	$: base = compareMode ? '/compare' : '/odr';
 
 	type Testament = 'OT' | 'NT';
 	let activeTestament: Testament = ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT';
@@ -92,7 +95,7 @@
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
-									href="/odr/{book.slug}/{ch}"
+									href="{base}/{book.slug}/{ch}"
 									on:click={onClose}
 									class="text-[16px] py-[8px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
@@ -130,7 +133,7 @@
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
-									href="/odr/{book.slug}/{ch}"
+									href="{base}/{book.slug}/{ch}"
 									on:click={onClose}
 									class="text-[16px] py-[8px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
