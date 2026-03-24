@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { tick } from 'svelte';
+	import DOMPurify from 'isomorphic-dompurify';
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import VerseList from './VerseList.svelte';
 
@@ -16,8 +17,12 @@
 	$: if (targetVerse !== undefined) activeVerse = targetVerse;
 
 	function linkifySummary(text: string): string {
-		return text.replace(/℣\.(\d+)/g, (_, n) => {
+		const html = text.replace(/℣\.(\d+)/g, (_, n) => {
 			return `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref">℣.${n}</a>`;
+		});
+		return DOMPurify.sanitize(html, {
+			ALLOWED_TAGS: ['a'],
+			ALLOWED_ATTR: ['href', 'data-verse', 'class']
 		});
 	}
 

@@ -108,7 +108,7 @@ function createCompareStore() {
 				} else {
 					next.add(id);
 				}
-				const activeCount = s.order.filter((id) => next.has(id)).length;
+				const activeCount = s.order.filter((tid) => next.has(tid)).length;
 				const offset = Math.min(s.columnOffset, Math.max(0, activeCount - MAX_COLS));
 				return { ...s, visible: next, columnOffset: offset };
 			});

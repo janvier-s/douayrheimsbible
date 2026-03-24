@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { debounce } from '$lib/utils/scroll';
+import { debounce } from '$lib/utils/debounce';
 
 describe('debounce', () => {
 	it('fires only once within the delay window', async () => {

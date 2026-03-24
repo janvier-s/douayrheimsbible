@@ -5,7 +5,7 @@
 	import ChapterView from '$lib/components/ChapterView.svelte';
 	import { loadBook, getChapter, getChapterCount } from '$lib/data/loader';
 	import { ALL_BOOKS } from '$lib/data/books';
-	import { debounce } from '$lib/utils/scroll';
+	import { debounce } from '$lib/utils/debounce';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import type { Chapter, BookMeta } from '$lib/data/types';

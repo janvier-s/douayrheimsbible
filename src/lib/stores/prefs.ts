@@ -9,7 +9,6 @@ export interface ReadingPrefs {
 	fontSize: number;
 	lineHeight: number;
 	fontFamily: string;
-	darkMode: boolean;
 	bionicReading: boolean;
 	dyslexiaFont: boolean;
 }
@@ -22,22 +21,25 @@ const DEFAULTS: ReadingPrefs = {
 	fontSize: 16,
 	lineHeight: 1.8,
 	fontFamily: 'libre-baskerville',
-	darkMode: false,
 	bionicReading: false,
 	dyslexiaFont: false
 };
 
-const PREFS_VERSION = 2;
+const PREFS_VERSION = 3;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
 	try {
 		const stored = localStorage.getItem('reading-prefs');
 		if (!stored) return DEFAULTS;
-		const parsed = JSON.parse(stored) as ReadingPrefs & { _v?: number };
+		const parsed = JSON.parse(stored) as ReadingPrefs & { _v?: number; darkMode?: boolean };
 		// v2 migration: fs-brabo-pro was the old default; upgrade to libre-baskerville
-		if ((!parsed._v || parsed._v < PREFS_VERSION) && parsed.fontFamily === 'fs-brabo-pro') {
+		if ((!parsed._v || parsed._v < 2) && parsed.fontFamily === 'fs-brabo-pro') {
 			parsed.fontFamily = 'libre-baskerville';
+		}
+		// v3 migration: darkMode removed; theme is now stored separately under 'theme' key
+		if (!parsed._v || parsed._v < 3) {
+			delete parsed.darkMode;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

@@ -29,9 +29,3 @@ export interface BookMeta {
 	/** Whether this book has Confraternity data (NT only) */
 	hasConfraternity: boolean;
 }
-
-export interface ResolvedReference {
-	slug: string;
-	chapter: number;
-	verse?: number;
-}
