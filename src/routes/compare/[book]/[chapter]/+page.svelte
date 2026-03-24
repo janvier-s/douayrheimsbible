@@ -91,7 +91,7 @@
 	{#if prevChapter}
 		<a
 			href="/compare/{bookMeta.slug}/{prevChapter}"
-			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+			class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 		>
 			<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
 		</a>
@@ -101,7 +101,7 @@
 	{#if nextChapter}
 		<a
 			href="/compare/{bookMeta.slug}/{nextChapter}"
-			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+			class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 		>
 			Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
 		</a>
@@ -218,7 +218,7 @@
 	{#if prevChapter}
 		<a
 			href="/compare/{bookMeta.slug}/{prevChapter}"
-			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+			class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 		>
 			<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
 		</a>
@@ -228,7 +228,7 @@
 	{#if nextChapter}
 		<a
 			href="/compare/{bookMeta.slug}/{nextChapter}"
-			class="flex items-center gap-[5px] text-subtle hover:text-interactive transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
+			class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 		>
 			Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
 		</a>

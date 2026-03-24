@@ -32,7 +32,7 @@
 		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
 			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 			<span
-				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-interactive transition-colors duration-fast"
+				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
 			>
 				Douay-Rheims
 			</span>
@@ -48,7 +48,7 @@
 			>
 				Reading
 			</a>
-			<span class="px-[9px] py-[5px] bg-interactive text-white">Compare</span>
+			<span class="px-[9px] py-[5px] bg-accent text-white">Compare</span>
 		</div>
 		<div class="w-[380px]">
 			<SearchBar />
@@ -77,7 +77,7 @@
 								{disabled
 								? 'border-border text-border cursor-not-allowed'
 								: active
-									? 'bg-interactive text-white border-interactive'
+									? 'bg-accent text-white border-accent'
 									: 'border-border text-subtle hover:text-foreground hover:border-foreground/30'}"
 						>
 							{t.abbr}
@@ -101,9 +101,7 @@
 		<div class="md:hidden relative shrink-0">
 			<button
 				class="flex items-center gap-[6px] px-[10px] py-[4px] rounded-[3px] border border-border text-[12px] font-medium transition-colors duration-fast
-					{mobileTransOpen
-					? 'bg-interactive text-white border-interactive'
-					: 'text-foreground hover:text-interactive'}"
+					{mobileTransOpen ? 'bg-accent text-white border-accent' : 'text-foreground hover:text-accent'}"
 				on:click={() => {
 					mobileTransOpen = !mobileTransOpen;
 					navOpen = false;
@@ -130,7 +128,7 @@
 								checked={$compareStore.visible.has(t.id)}
 								{disabled}
 								on:change={() => compareStore.toggle(t.id, isOT)}
-								class="accent-interactive"
+								class="accent-accent"
 							/>
 							<span class="text-[13px] text-foreground">{t.abbr}</span>
 							<span class="text-[11px] text-subtle ml-auto">{t.year}</span>
@@ -162,13 +160,13 @@
 				on:click={() => compareStore.toggleSummary()}
 				class="text-[12px] font-medium text-muted hover:text-foreground transition-colors duration-fast"
 			>
-				Summary: <span class={$compareStore.showSummary ? 'text-interactive' : ''}
+				Summary: <span class={$compareStore.showSummary ? 'text-accent' : ''}
 					>{$compareStore.showSummary ? 'on' : 'off'}</span
 				>
 			</button>
 			<button
 				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium
-					{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
+					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 				title="Text options"
 				on:click={() => {
 					prefsOpen = !prefsOpen;

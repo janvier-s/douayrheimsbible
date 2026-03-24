@@ -20,7 +20,7 @@
 	</p>
 	<a
 		href="/odr/genesis/1"
-		class="inline-flex items-center gap-[6px] px-[20px] py-[10px] border border-border rounded-[3px] text-[14px] text-muted hover:text-interactive hover:border-interactive transition-colors duration-fast"
+		class="inline-flex items-center gap-[6px] px-[20px] py-[10px] border border-border rounded-[3px] text-[14px] text-muted hover:text-accent hover:border-accent transition-colors duration-fast"
 	>
 		← Return to Genesis 1
 	</a>

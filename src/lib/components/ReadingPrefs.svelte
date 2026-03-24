@@ -101,7 +101,7 @@
 				prefs.update((p) => ({ ...p, fontSize: v }));
 				document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
 			}}
-			class="w-full accent-interactive"
+			class="w-full accent-accent"
 		/>
 	</label>
 
@@ -112,7 +112,7 @@
 				<button
 					class="flex-1 py-xs border rounded-sm text-xs font-light transition-colors duration-fast
 						{$prefs.lineHeight === opt.value
-						? 'bg-interactive text-white border-interactive'
+						? 'bg-accent text-white border-accent'
 						: 'border-border text-muted hover:text-foreground'}"
 					on:click={() => {
 						prefs.update((p) => ({ ...p, lineHeight: opt.value }));
@@ -141,8 +141,8 @@
 			>
 				{#each FONTS as f}
 					<button
-						class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-interactive hover:text-white transition-colors duration-fast
-							{activeFontId === f.id ? 'text-interactive' : 'text-foreground'}"
+						class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast
+							{activeFontId === f.id ? 'text-accent' : 'text-foreground'}"
 						style="font-family: {f.stack};"
 						on:click={() => {
 							setDyslexia(false);
@@ -154,8 +154,8 @@
 					</button>
 				{/each}
 				<button
-					class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-interactive hover:text-white transition-colors duration-fast border-t border-border
-						{activeFontId === 'grace' ? 'text-interactive' : 'text-foreground'}"
+					class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast border-t border-border
+						{activeFontId === 'grace' ? 'text-accent' : 'text-foreground'}"
 					style="font-family: 'Grace Dyslexic MD', sans-serif;"
 					on:click={() => {
 						setDyslexia(true);
@@ -177,7 +177,7 @@
 					title={t.label}
 					on:click={() => setTheme(t.id)}
 					class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
-						{currentTheme === t.id ? 'border-interactive' : 'border-transparent'}"
+						{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
 					style="background: {t.bg};"
 				>
 					<div class="theme-card-inner p-[7px]">
@@ -211,7 +211,7 @@
 					...p,
 					showVerseNumbers: (e.target as HTMLInputElement).checked
 				}))}
-			class="accent-interactive"
+			class="accent-accent"
 		/>
 		<span>Verse numbers</span>
 	</label>
@@ -222,7 +222,7 @@
 			checked={$prefs.justifiedText}
 			on:change={(e) =>
 				prefs.update((p) => ({ ...p, justifiedText: (e.target as HTMLInputElement).checked }))}
-			class="accent-interactive"
+			class="accent-accent"
 		/>
 		<span>Justified text</span>
 	</label>
@@ -233,7 +233,7 @@
 			checked={$prefs.paragraphView}
 			on:change={(e) =>
 				prefs.update((p) => ({ ...p, paragraphView: (e.target as HTMLInputElement).checked }))}
-			class="accent-interactive"
+			class="accent-accent"
 		/>
 		<span>Paragraph view</span>
 	</label>
@@ -244,7 +244,7 @@
 			checked={$prefs.infiniteScroll}
 			on:change={(e) =>
 				prefs.update((p) => ({ ...p, infiniteScroll: (e.target as HTMLInputElement).checked }))}
-			class="accent-interactive"
+			class="accent-accent"
 		/>
 		<span>Infinite scroll</span>
 	</label>
@@ -255,7 +255,7 @@
 			checked={$prefs.bionicReading}
 			on:change={(e) =>
 				prefs.update((p) => ({ ...p, bionicReading: (e.target as HTMLInputElement).checked }))}
-			class="accent-interactive"
+			class="accent-accent"
 		/>
 		<span>Bionic Reading</span>
 	</label>

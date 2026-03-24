@@ -31,7 +31,7 @@
 		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
 			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 			<span
-				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-interactive transition-colors duration-fast"
+				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
 			>
 				Douay-Rheims
 			</span>
@@ -41,9 +41,7 @@
 		<div
 			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
 		>
-			<span class="px-[9px] py-[5px] bg-interactive text-white border-r border-interactive"
-				>Reading</span
-			>
+			<span class="px-[9px] py-[5px] bg-accent text-white border-r border-accent">Reading</span>
 			<a
 				href="/compare/{bookSlug}/{chapterNum}"
 				class="px-[9px] py-[5px] text-subtle hover:text-foreground transition-colors duration-fast"
@@ -65,7 +63,7 @@
 		<div class="relative shrink-0">
 			<button
 				class="flex items-center gap-[8px] px-[10px] py-[4px] rounded-[3px] transition-colors duration-fast
-					{translationOpen ? 'bg-interactive text-white' : 'text-foreground hover:text-interactive'}"
+					{translationOpen ? 'bg-accent text-white' : 'text-foreground hover:text-accent'}"
 				on:click={() => {
 					translationOpen = !translationOpen;
 					prefsOpen = false;
@@ -93,11 +91,9 @@
 					<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-medium">
 						Translation
 					</p>
-					<div
-						class="flex items-center justify-between px-sm py-[7px] rounded-sm bg-interactive/10"
-					>
+					<div class="flex items-center justify-between px-sm py-[7px] rounded-sm bg-accent/10">
 						<span class="text-foreground font-medium text-[13px]">Original Douay-Rheims</span>
-						<span class="text-[10px] text-interactive font-semibold tracking-[0.1em]">✓</span>
+						<span class="text-[10px] text-accent font-semibold tracking-[0.1em]">✓</span>
 					</div>
 					<p class="text-[11px] text-subtle mt-sm px-sm">More translations coming soon.</p>
 				</div>
@@ -123,7 +119,7 @@
 		<!-- Right: reading prefs -->
 		<button
 			class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium shrink-0
-				{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
+				{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 			title="Text options"
 			on:click={() => {
 				prefsOpen = !prefsOpen;
