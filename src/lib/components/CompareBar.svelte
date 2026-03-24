@@ -26,7 +26,7 @@
 <header class="sticky top-0 z-50 font-ui">
 	<!-- Row 1: branding + search -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-md"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px]"
 		style="height: 50px;"
 	>
 		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
@@ -38,16 +38,6 @@
 			</span>
 		</a>
 		<div class="flex-1"></div>
-		<div class="w-[380px]">
-			<SearchBar />
-		</div>
-	</div>
-
-	<!-- Row 2: compare controls -->
-	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[14px]"
-		style="height: 60px;"
-	>
 		<!-- Mode toggle -->
 		<div
 			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
@@ -60,7 +50,16 @@
 			</a>
 			<span class="px-[9px] py-[5px] bg-interactive text-white">Compare</span>
 		</div>
+		<div class="w-[380px]">
+			<SearchBar />
+		</div>
+	</div>
 
+	<!-- Row 2: compare controls -->
+	<div
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[14px]"
+		style="height: 60px;"
+	>
 		<!-- Translation chips — desktop -->
 		<div class="hidden md:flex flex-col justify-center gap-[5px] shrink-0">
 			<span class="text-[9px] uppercase tracking-[0.15em] text-subtle leading-none font-medium"
@@ -157,28 +156,28 @@
 			</button>
 		</div>
 
-		<!-- Right: summary toggle + text options -->
-		<div class="ml-auto flex items-center gap-[8px] shrink-0">
-			<button
-				on:click={() => compareStore.toggleSummary()}
-				class="text-[12px] font-medium transition-colors duration-fast
-					{$compareStore.showSummary ? 'text-interactive' : 'text-muted hover:text-foreground'}"
-			>
-				Summary: {$compareStore.showSummary ? 'on' : 'off'}
-			</button>
-			<button
-				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium
-					{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
-				title="Text options"
-				on:click={() => {
-					prefsOpen = !prefsOpen;
-					navOpen = false;
-					mobileTransOpen = false;
-				}}
-			>
-				Text options
-			</button>
-		</div>
+		<!-- Summary toggle (positioned left of right edge) -->
+		<button
+			on:click={() => compareStore.toggleSummary()}
+			class="ml-[28px] shrink-0 text-[12px] font-medium transition-colors duration-fast
+				{$compareStore.showSummary ? 'text-interactive' : 'text-muted hover:text-foreground'}"
+		>
+			Summary: {$compareStore.showSummary ? 'on' : 'off'}
+		</button>
+
+		<!-- Text options (far right) -->
+		<button
+			class="ml-auto px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium shrink-0
+				{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
+			title="Text options"
+			on:click={() => {
+				prefsOpen = !prefsOpen;
+				navOpen = false;
+				mobileTransOpen = false;
+			}}
+		>
+			Text options
+		</button>
 	</div>
 </header>
 

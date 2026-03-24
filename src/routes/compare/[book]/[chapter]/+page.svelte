@@ -61,10 +61,10 @@
 		on:click={() => compareStore.scrollBy(-1)}
 		disabled={!canScrollLeft}
 		aria-label="Previous translation"
-		class="fixed left-[8px] top-1/2 -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] bg-panel border border-border shadow-md text-[22px] transition-all duration-fast
+		class="fixed left-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
 			{canScrollLeft
-			? 'text-foreground hover:text-interactive hover:border-interactive'
-			: 'opacity-20 pointer-events-none'}"
+			? 'bg-interactive text-white border border-interactive/40 shadow-lg hover:brightness-110'
+			: 'opacity-0 pointer-events-none'}"
 	>
 		‹
 	</button>
@@ -72,10 +72,10 @@
 		on:click={() => compareStore.scrollBy(1)}
 		disabled={!canScrollRight}
 		aria-label="Next translation"
-		class="fixed right-[8px] top-1/2 -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] bg-panel border border-border shadow-md text-[22px] transition-all duration-fast
+		class="fixed right-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
 			{canScrollRight
-			? 'text-foreground hover:text-interactive hover:border-interactive'
-			: 'opacity-20 pointer-events-none'}"
+			? 'bg-interactive text-white border border-interactive/40 shadow-lg hover:brightness-110'
+			: 'opacity-0 pointer-events-none'}"
 	>
 		›
 	</button>

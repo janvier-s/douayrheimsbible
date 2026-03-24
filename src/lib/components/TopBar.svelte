@@ -25,7 +25,7 @@
 <header class="sticky top-0 z-50 font-ui">
 	<!-- Row 1: branding + search -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-md"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px]"
 		style="height: 50px;"
 	>
 		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
@@ -37,16 +37,6 @@
 			</span>
 		</a>
 		<div class="flex-1"></div>
-		<div class="w-[380px]">
-			<SearchBar />
-		</div>
-	</div>
-
-	<!-- Row 2: reading controls -->
-	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[10px]"
-		style="height: 60px;"
-	>
 		<!-- Mode toggle -->
 		<div
 			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
@@ -61,7 +51,16 @@
 				Compare
 			</a>
 		</div>
+		<div class="w-[380px]">
+			<SearchBar />
+		</div>
+	</div>
 
+	<!-- Row 2: reading controls -->
+	<div
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[10px]"
+		style="height: 60px;"
+	>
 		<!-- Left: translation selector -->
 		<div class="relative shrink-0">
 			<button

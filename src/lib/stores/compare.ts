@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-export type TranslationId = 'odr' | 'drc' | 'knox' | 'conf' | 'cpdv' | 'kjv' | 'vul';
+export type TranslationId = 'odr' | 'drc' | 'conf' | 'knox' | 'cpdv' | 'kjv' | 'vul';
 
 export interface Translation {
 	id: TranslationId;
@@ -32,21 +32,21 @@ export const TRANSLATIONS: Translation[] = [
 		fullHeader: true
 	},
 	{
-		id: 'knox',
-		label: 'Knox Bible',
-		abbr: 'Knox',
-		year: '1955',
-		live: false,
-		ntOnly: false,
-		fullHeader: false
-	},
-	{
 		id: 'conf',
 		label: 'Confraternity NT',
 		abbr: 'Conf',
 		year: '1941',
 		live: false,
 		ntOnly: true,
+		fullHeader: false
+	},
+	{
+		id: 'knox',
+		label: 'Knox Bible',
+		abbr: 'Knox',
+		year: '1955',
+		live: false,
+		ntOnly: false,
 		fullHeader: false
 	},
 	{
