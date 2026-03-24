@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import { prefs } from '$lib/stores/prefs';
 	import { compareStore, TRANSLATIONS, MAX_COLS } from '$lib/stores/compare';
-	import type { TranslationId } from '$lib/stores/compare';
+	import type { TranslationId, Translation } from '$lib/stores/compare';
 	import CompareBar from '$lib/components/CompareBar.svelte';
 
 	export let data: PageData;
@@ -10,8 +10,10 @@
 	$: ({ bookMeta, chapter } = data);
 
 	// Derived view state from store
-	$: orderedTranslations = $compareStore.order.map((id) => TRANSLATIONS.find((t) => t.id === id)!);
-	$: activeCols = orderedTranslations.filter((t) => $compareStore.visible.has(t.id));
+	$: orderedTranslations = $compareStore.order.map(
+		(id: TranslationId) => TRANSLATIONS.find((t: Translation) => t.id === id)!
+	);
+	$: activeCols = orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id));
 	$: displayedCols = activeCols.slice(
 		$compareStore.columnOffset,
 		$compareStore.columnOffset + MAX_COLS
