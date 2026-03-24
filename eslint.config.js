@@ -32,7 +32,12 @@ export default [
 			globals: { ...globals.browser }
 		},
 		rules: {
-			...svelte.configs.recommended.rules
+			...svelte.configs.recommended.rules,
+			'no-unused-vars': 'off',
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{ argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
+			]
 		}
 	},
 	{
