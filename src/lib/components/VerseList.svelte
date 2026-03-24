@@ -12,7 +12,7 @@
 	let verseEls: Record<number, HTMLElement> = {};
 
 	// Lazy-load text-vide only when bionic reading is first enabled
-	let textVideFn: ((text: string, opts: object) => string) | null = null;
+	let textVideFn: ((_text: string, _opts: object) => string) | null = null;
 	let bionicReady = false;
 	$: if ($prefs.bionicReading && !textVideFn) {
 		import('text-vide').then((m) => {
