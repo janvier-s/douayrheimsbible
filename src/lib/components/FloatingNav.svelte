@@ -59,7 +59,7 @@
 			<button
 				class="flex-1 py-[15px] text-[12px] uppercase tracking-[0.15em] font-medium transition-colors duration-fast
                {activeTestament === t
-					? 'bg-background text-foreground border-b-2 border-interactive'
+					? 'bg-background text-accent border-b-2 border-accent'
 					: 'text-subtle hover:text-foreground'}"
 				on:click={() => (activeTestament = t)}
 			>
@@ -86,8 +86,8 @@
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
-							? 'text-foreground bg-border/40 hover:bg-interactive hover:text-white'
-							: 'text-foreground hover:bg-interactive/10'}"
+							? 'text-accent bg-accent/8 hover:bg-accent hover:text-white'
+							: 'text-foreground hover:bg-accent/10'}"
 						on:click={() => toggleBook(book.slug)}
 					>
 						{book.odrName}
@@ -101,9 +101,9 @@
 								<a
 									href="{base}/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[8px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
+									class="text-[16px] py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
-										? 'bg-interactive text-white'
+										? 'bg-accent text-white'
 										: 'text-subtle'}"
 								>
 									{ch}
@@ -126,8 +126,8 @@
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
-							? 'text-foreground bg-border/40 hover:bg-interactive hover:text-white'
-							: 'text-foreground hover:bg-interactive/10'}"
+							? 'text-accent bg-accent/8 hover:bg-accent hover:text-white'
+							: 'text-foreground hover:bg-accent/10'}"
 						on:click={() => toggleBook(book.slug)}
 					>
 						{book.odrName}
@@ -141,9 +141,9 @@
 								<a
 									href="{base}/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[8px] rounded-[2px] hover:bg-interactive hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
+									class="text-[16px] py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
                        {book.slug === bookSlug && ch === chapterNum
-										? 'bg-interactive text-white'
+										? 'bg-accent text-white'
 										: 'text-subtle'}"
 								>
 									{ch}

@@ -108,7 +108,7 @@
 		<div class="flex-1 flex justify-center">
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
-					{navOpen ? 'bg-interactive text-white' : 'text-interactive hover:bg-interactive hover:text-white'}"
+					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
 				on:click={() => {
 					navOpen = !navOpen;
 					prefsOpen = false;
