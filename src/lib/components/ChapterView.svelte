@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import VerseList from './VerseList.svelte';
 
@@ -20,9 +21,14 @@
 		});
 	}
 
-	function handleSummaryClick(e: MouseEvent) {
+	async function handleSummaryClick(e: MouseEvent) {
 		const el = (e.target as HTMLElement).closest('[data-verse]') as HTMLElement | null;
-		if (el?.dataset.verse) activeVerse = parseInt(el.dataset.verse);
+		if (!el?.dataset.verse) return;
+		e.preventDefault();
+		const n = parseInt(el.dataset.verse);
+		activeVerse = n;
+		await tick();
+		document.getElementById('v' + n)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 	}
 </script>
 

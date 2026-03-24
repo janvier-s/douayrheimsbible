@@ -101,7 +101,7 @@ export function resolveReference(ref: ParsedReference): ResolvedRef | null {
 	if (!slug) return null;
 
 	const url = ref.verse
-		? `/odr/${slug}/${ref.chapter}/${ref.verse}`
+		? `/odr/${slug}/${ref.chapter}#v${ref.verse}`
 		: `/odr/${slug}/${ref.chapter}`;
 
 	return { slug, chapter: ref.chapter, verse: ref.verse, url };
