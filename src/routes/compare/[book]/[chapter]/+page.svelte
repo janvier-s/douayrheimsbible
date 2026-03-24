@@ -63,7 +63,7 @@
 		aria-label="Previous translation"
 		class="fixed left-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
 			{canScrollLeft
-			? 'bg-interactive text-white border border-interactive/40 shadow-lg hover:brightness-110'
+			? 'bg-[#696666] text-white border border-[#696666]/30 shadow-lg hover:bg-[#555252]'
 			: 'opacity-0 pointer-events-none'}"
 	>
 		‹
@@ -74,7 +74,7 @@
 		aria-label="Next translation"
 		class="fixed right-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
 			{canScrollRight
-			? 'bg-interactive text-white border border-interactive/40 shadow-lg hover:brightness-110'
+			? 'bg-[#696666] text-white border border-[#696666]/30 shadow-lg hover:bg-[#555252]'
 			: 'opacity-0 pointer-events-none'}"
 	>
 		›
@@ -104,11 +104,11 @@
 				<div class="flex items-center gap-[9px] min-w-0">
 					<!-- Drag handle indicator -->
 					<span class="text-subtle/35 text-[12px] leading-none shrink-0" aria-hidden="true">⠿</span>
-					<div class="min-w-0">
-						<span class="text-[12px] font-semibold text-foreground leading-none truncate block">
+					<div class="min-w-0 font-ui">
+						<span class="text-[13px] font-semibold text-foreground leading-none truncate block">
 							{t.label}
 						</span>
-						<span class="text-[10px] text-subtle mt-[2px] block">{t.year}</span>
+						<span class="text-[11px] text-subtle mt-[2px] block">{t.year}</span>
 					</div>
 				</div>
 				{#if !t.live}

@@ -57,7 +57,7 @@
 
 	<!-- Row 2: compare controls -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[14px]"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[14px]"
 		style="height: 60px;"
 	>
 		<!-- Translation chips — desktop -->
@@ -140,8 +140,8 @@
 			{/if}
 		</div>
 
-		<!-- Chapter nav (absolutely centered) -->
-		<div class="absolute left-1/2 -translate-x-1/2">
+		<!-- Center: chapter nav (flex-1 centered, no absolute overlay) -->
+		<div class="flex-1 flex justify-center">
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-interactive text-white' : 'text-interactive hover:bg-interactive hover:text-white'}"
@@ -156,28 +156,28 @@
 			</button>
 		</div>
 
-		<!-- Summary toggle (positioned left of right edge) -->
-		<button
-			on:click={() => compareStore.toggleSummary()}
-			class="ml-[28px] shrink-0 text-[12px] font-medium transition-colors duration-fast
-				{$compareStore.showSummary ? 'text-interactive' : 'text-muted hover:text-foreground'}"
-		>
-			Summary: {$compareStore.showSummary ? 'on' : 'off'}
-		</button>
-
-		<!-- Text options (far right) -->
-		<button
-			class="ml-auto px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium shrink-0
-				{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
-			title="Text options"
-			on:click={() => {
-				prefsOpen = !prefsOpen;
-				navOpen = false;
-				mobileTransOpen = false;
-			}}
-		>
-			Text options
-		</button>
+		<!-- Right: summary + text options -->
+		<div class="shrink-0 flex items-center gap-[20px]">
+			<button
+				on:click={() => compareStore.toggleSummary()}
+				class="text-[12px] font-medium transition-colors duration-fast
+					{$compareStore.showSummary ? 'text-interactive' : 'text-muted hover:text-foreground'}"
+			>
+				Summary: {$compareStore.showSummary ? 'on' : 'off'}
+			</button>
+			<button
+				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium
+					{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
+				title="Text options"
+				on:click={() => {
+					prefsOpen = !prefsOpen;
+					navOpen = false;
+					mobileTransOpen = false;
+				}}
+			>
+				Text options
+			</button>
+		</div>
 	</div>
 </header>
 

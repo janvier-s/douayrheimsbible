@@ -58,7 +58,7 @@
 
 	<!-- Row 2: reading controls -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg relative flex items-center gap-[10px]"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px]"
 		style="height: 60px;"
 	>
 		<!-- Left: translation selector -->
@@ -104,8 +104,8 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav — absolutely centered, accent-colored -->
-		<div class="absolute left-1/2 -translate-x-1/2">
+		<!-- Center: chapter nav — flex-1 centered (avoids absolute overlay click issues) -->
+		<div class="flex-1 flex justify-center">
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-interactive text-white' : 'text-interactive hover:bg-interactive hover:text-white'}"
@@ -122,7 +122,7 @@
 
 		<!-- Right: reading prefs -->
 		<button
-			class="ml-auto px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium shrink-0
+			class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium shrink-0
 				{prefsOpen ? 'bg-interactive text-white' : 'text-muted hover:text-interactive'}"
 			title="Text options"
 			on:click={() => {
