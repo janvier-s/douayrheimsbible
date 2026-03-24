@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { browser } from '$app/environment';
 
 export type TranslationId = 'odr' | 'drc' | 'conf' | 'knox' | 'cpdv' | 'kjv' | 'vul';
 
@@ -87,11 +88,48 @@ interface CompareState {
 	columnOffset: number;
 }
 
+const STORAGE_KEY = 'compareStore_v1';
+
+function loadFromStorage(): Partial<Pick<CompareState, 'order' | 'visible'>> {
+	if (!browser) return {};
+	try {
+		const raw = localStorage.getItem(STORAGE_KEY);
+		if (!raw) return {};
+		const parsed = JSON.parse(raw) as { order?: string[]; visible?: string[] };
+		const validIds = new Set(TRANSLATIONS.map((t) => t.id));
+		const order = (parsed.order ?? []).filter((id): id is TranslationId =>
+			validIds.has(id as TranslationId)
+		);
+		const visible = new Set(
+			(parsed.visible ?? []).filter((id): id is TranslationId => validIds.has(id as TranslationId))
+		);
+		if (order.length === TRANSLATIONS.length && visible.size > 0) {
+			return { order, visible };
+		}
+	} catch {
+		// ignore malformed data
+	}
+	return {};
+}
+
+function saveToStorage(state: CompareState) {
+	if (!browser) return;
+	try {
+		localStorage.setItem(
+			STORAGE_KEY,
+			JSON.stringify({ order: state.order, visible: [...state.visible] })
+		);
+	} catch {
+		// ignore quota errors
+	}
+}
+
 function createCompareStore() {
 	const defaultOrder: TranslationId[] = TRANSLATIONS.map((t) => t.id);
+	const saved = loadFromStorage();
 	const { subscribe, update } = writable<CompareState>({
-		order: defaultOrder,
-		visible: new Set(['odr', 'drc']),
+		order: saved.order ?? defaultOrder,
+		visible: saved.visible ?? new Set(['odr', 'drc']),
 		showSummary: true,
 		columnOffset: 0
 	});
@@ -110,11 +148,17 @@ function createCompareStore() {
 				}
 				const activeCount = s.order.filter((tid) => next.has(tid)).length;
 				const offset = Math.min(s.columnOffset, Math.max(0, activeCount - MAX_COLS));
-				return { ...s, visible: next, columnOffset: offset };
+				const nextState = { ...s, visible: next, columnOffset: offset };
+				saveToStorage(nextState);
+				return nextState;
 			});
 		},
 		reorder(newOrder: TranslationId[]) {
-			update((s) => ({ ...s, order: newOrder }));
+			update((s) => {
+				const nextState = { ...s, order: newOrder };
+				saveToStorage(nextState);
+				return nextState;
+			});
 		},
 		scrollBy(delta: number) {
 			update((s) => {

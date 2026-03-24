@@ -41,6 +41,36 @@
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') onClose();
 	}
+
+	function focusTrap(node: HTMLElement) {
+		const FOCUSABLE =
+			'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+		const first = () => node.querySelectorAll<HTMLElement>(FOCUSABLE)[0];
+		const last = () => {
+			const els = node.querySelectorAll<HTMLElement>(FOCUSABLE);
+			return els[els.length - 1];
+		};
+
+		function onKeydown(e: KeyboardEvent) {
+			if (e.key !== 'Tab') return;
+			if (e.shiftKey) {
+				if (document.activeElement === first()) {
+					e.preventDefault();
+					last()?.focus();
+				}
+			} else {
+				if (document.activeElement === last()) {
+					e.preventDefault();
+					first()?.focus();
+				}
+			}
+		}
+
+		node.addEventListener('keydown', onKeydown);
+		// Move focus into the dialog on mount
+		first()?.focus();
+		return { destroy: () => node.removeEventListener('keydown', onKeydown) };
+	}
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -49,7 +79,9 @@
 	class="fixed top-[var(--header-height)] left-1/2 -translate-x-1/2 z-50 bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
 	role="dialog"
 	aria-label="Bible navigation"
+	aria-modal="true"
 	transition:fly={{ y: -6, duration: 160, easing: cubicOut }}
+	use:focusTrap
 >
 	<!-- OT / NT tabs -->
 	<div class="flex border-b border-border shrink-0">
