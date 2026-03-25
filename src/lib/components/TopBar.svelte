@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { getBookBySlug } from '$lib/data/books';
 	import { slide } from 'svelte/transition';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
+	import { prefs } from '$lib/stores/prefs';
 	import FloatingNav from './FloatingNav.svelte';
 	import SearchBar from './SearchBar.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
@@ -20,6 +23,20 @@
 		prefsOpen = false;
 		translationOpen = false;
 	}
+
+	function setMode(mode: 'reading' | 'study' | 'compare') {
+		if (mode === 'compare') {
+			goto(`/compare/${bookSlug}/${chapterNum}`);
+			return;
+		}
+		prefs.update((p) => ({ ...p, readingMode: mode }));
+		if ($page.url.pathname.startsWith('/compare')) {
+			goto(`/odr/${bookSlug}/${chapterNum}`);
+		}
+	}
+
+	$: isCompare = $page.url.pathname.startsWith('/compare');
+	$: activeMode = isCompare ? 'compare' : $prefs.readingMode;
 </script>
 
 <header class="sticky top-0 z-50 font-ui">
@@ -41,15 +58,16 @@
 		<div
 			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
 		>
-			<span class="px-[9px] py-[5px] bg-interactive text-white border-r border-interactive"
-				>Reading</span
-			>
-			<a
-				href="/compare/{bookSlug}/{chapterNum}"
-				class="px-[9px] py-[5px] text-subtle hover:text-foreground transition-colors duration-fast"
-			>
-				Compare
-			</a>
+			{#each [['reading', 'Reading'], ['study', 'Study'], ['compare', 'Compare']] as [mode, label]}
+				<button
+					class="px-[9px] py-[5px] transition-colors duration-fast
+						{activeMode === mode ? 'bg-interactive text-white' : 'text-subtle hover:text-foreground'}
+						{mode !== 'compare' ? 'border-r border-border' : ''}"
+					on:click={() => setMode(mode as 'reading' | 'study' | 'compare')}
+				>
+					{label}
+				</button>
+			{/each}
 		</div>
 		<div class="w-[380px]">
 			<SearchBar />
