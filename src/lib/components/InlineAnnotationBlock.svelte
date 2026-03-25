@@ -8,18 +8,14 @@
 
 <div class="annotation-wrapper">
 	<div class="annotation-inner">
-		<div
-			class="my-[6px] rounded-sm border border-border bg-panel px-[10px] py-[8px] text-sm font-ui space-y-[5px]"
-		>
+		<div class="annotation-block">
 			{#each annotations as ann}
-				<div class="flex gap-[6px] items-baseline leading-snug">
-					<span class="text-accent font-semibold text-[11px] shrink-0 min-w-[16px]">
-						({ann.marker})
-					</span>
+				<div class="ann-row">
+					<span class="ann-marker">{ann.marker}</span>
 					{#if isCrossRef(ann.marker)}
-						<span class="italic text-subtle text-[13px]">{ann.text}</span>
+						<span class="ann-crossref">{ann.text}</span>
 					{:else}
-						<span class="text-foreground text-[13px]">{ann.text}</span>
+						<span class="ann-note">{ann.text}</span>
 					{/if}
 				</div>
 			{/each}
@@ -33,8 +29,8 @@
 		grid-template-rows: 0fr;
 		opacity: 0;
 		transition:
-			grid-template-rows 250ms ease,
-			opacity 250ms ease;
+			grid-template-rows 280ms ease,
+			opacity 280ms ease;
 	}
 
 	:global([data-mode='study']) .annotation-wrapper {
@@ -44,5 +40,45 @@
 
 	.annotation-inner {
 		overflow: hidden;
+	}
+
+	.annotation-block {
+		margin: 4px 0 8px 0;
+		padding: 7px 10px 7px 12px;
+		border-left: 2px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+		background: color-mix(in srgb, var(--color-accent) 4%, transparent);
+		border-radius: 0 3px 3px 0;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.ann-row {
+		display: flex;
+		gap: 7px;
+		align-items: baseline;
+		line-height: 1.45;
+	}
+
+	.ann-marker {
+		font-family: var(--font-ui);
+		font-size: 10px;
+		font-weight: 600;
+		color: var(--color-accent);
+		flex-shrink: 0;
+		min-width: 14px;
+	}
+
+	.ann-note {
+		font-family: var(--font-ui);
+		font-size: 12px;
+		color: var(--color-muted);
+	}
+
+	.ann-crossref {
+		font-family: var(--font-ui);
+		font-size: 12px;
+		color: var(--color-subtle);
+		font-style: italic;
 	}
 </style>

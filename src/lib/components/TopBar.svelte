@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { getBookBySlug } from '$lib/data/books';
 	import { slide } from 'svelte/transition';
-	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
 	import FloatingNav from './FloatingNav.svelte';
@@ -31,13 +30,9 @@
 			return;
 		}
 		prefs.update((p) => ({ ...p, readingMode: mode }));
-		if ($page.url.pathname.startsWith('/compare')) {
-			goto(`/odr/${bookSlug}/${chapterNum}`);
-		}
 	}
 
-	$: isCompare = $page.url.pathname.startsWith('/compare');
-	$: activeMode = isCompare ? 'compare' : $prefs.readingMode;
+	$: activeMode = $prefs.readingMode;
 </script>
 
 <header class="sticky top-0 z-50 font-ui">

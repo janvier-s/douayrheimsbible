@@ -71,7 +71,7 @@
 		if (ch !== currentChapter) {
 			currentChapter = ch;
 			history.replaceState({}, '', `/odr/${slug}/${ch}`);
-			readingPosition.set({ bookSlug: slug, chapter: ch });
+			readingPosition.set({ bookSlug: slug, chapter: ch, routeBase: '/odr' });
 		}
 	}, 200);
 
@@ -175,7 +175,11 @@
 	}
 
 	onMount(async () => {
-		readingPosition.set({ bookSlug: data.bookMeta.slug, chapter: data.chapter.chapter });
+		readingPosition.set({
+			bookSlug: data.bookMeta.slug,
+			chapter: data.chapter.chapter,
+			routeBase: '/odr'
+		});
 		observeHeadings();
 		window.addEventListener('scroll', onScroll, { passive: true });
 		try {

@@ -10,6 +10,7 @@
 	export let targetVerse: number | undefined;
 	export let totalChapters: number;
 	export let showNav: boolean = true;
+	export let routeBase: string = '/odr';
 
 	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
 
@@ -82,7 +83,7 @@
 	<nav class="flex justify-between items-center mb-lg font-ui">
 		{#if prevNav}
 			<a
-				href="/odr/{prevNav.slug}/{prevNav.ch}"
+				href="{routeBase}/{prevNav.slug}/{prevNav.ch}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
 			>
 				<span class="text-[16px] leading-none">‹</span>
@@ -99,7 +100,7 @@
 		{/if}
 		{#if nextNav}
 			<a
-				href="/odr/{nextNav.slug}/{nextNav.ch}"
+				href="{routeBase}/{nextNav.slug}/{nextNav.ch}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
 			>
 				<span class="flex flex-col items-end leading-tight">

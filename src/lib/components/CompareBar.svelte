@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import { goto } from '$app/navigation';
+	import { prefs } from '$lib/stores/prefs';
+	import { readingPosition } from '$lib/stores/reading';
 	import FloatingNav from './FloatingNav.svelte';
 	import SearchBar from './SearchBar.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
@@ -8,6 +11,14 @@
 
 	export let bookMeta: BookMeta;
 	export let chapterNum: number;
+
+	// Return URLs derived from the last known reading position (includes routeBase).
+	// Falls back to ODR if no position recorded (e.g. user landed directly on /compare).
+	$: _base = $readingPosition?.routeBase ?? '/odr';
+	$: _slug = $readingPosition?.bookSlug ?? bookMeta.slug;
+	$: _ch = $readingPosition?.chapter ?? chapterNum;
+	$: readingHref = `${_base}/${_slug}/${_ch}`;
+	$: studyHref = $readingPosition ? `${_base}/${_slug}/${_ch}` : null;
 
 	let navOpen = false;
 	let prefsOpen = false;
@@ -43,11 +54,22 @@
 			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
 		>
 			<a
-				href="/odr/{bookMeta.slug}/{chapterNum}"
+				href={readingHref}
 				class="px-[9px] py-[5px] text-subtle hover:text-foreground border-r border-border transition-colors duration-fast"
 			>
 				Reading
 			</a>
+			{#if studyHref}
+				<button
+					class="px-[9px] py-[5px] text-subtle hover:text-foreground border-r border-border transition-colors duration-fast"
+					on:click={() => {
+						prefs.update((p) => ({ ...p, readingMode: 'study' }));
+						goto(studyHref);
+					}}
+				>
+					Study
+				</button>
+			{/if}
 			<span class="px-[9px] py-[5px] bg-interactive text-white">Compare</span>
 		</div>
 		<div class="w-[380px]">
