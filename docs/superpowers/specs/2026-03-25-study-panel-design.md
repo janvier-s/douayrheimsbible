@@ -34,21 +34,21 @@ TopBar subscribes to `$prefs.readingMode` to reflect active state. Clicking Stud
 ┌─────────────────────────────────────────┬──╫──┬──────────────────┐
 │                                         │     │                  │
 │         Reading text column             │  ⟺  │   Study Panel    │
-│         (flex: 1, min-width: 0)         │     │  (default 340px) │
+│         (flex: 1, min-width: 0)         │     │  (default 33vw) │
 │                                         │     │                  │
 └─────────────────────────────────────────┴─────┴──────────────────┘
 ```
 
 - **Flex row** in `+page.svelte` wrapping the existing `<main>` and `<StudyPanel>`
 - **Drag divider** — a `<div>` between the two columns with `cursor: col-resize`; `mousedown` on divider → `mousemove` on `window` → `mouseup` on `window` to release. Width writes to `prefs.studyPanelWidth` are debounced using the existing `$lib/utils/debounce` utility to avoid per-pixel localStorage writes
-- Panel width: default `340px`, min `240px`, max `50vw`; persisted in `prefs.studyPanelWidth`
+- Panel width: default `33vw`, min `240px`, max `50vw`; persisted in `prefs.studyPanelWidth`
 - No close button on the panel — switching back to Reading mode hides it
 - **Scroll model:** `window` scroll is preserved. The panel is `position: sticky; top: 0; height: 100vh; overflow-y: auto` so it stays in view while the user scrolls the text. The existing infinite scroll `IntersectionObserver` and `window.scrollY` logic in `+page.svelte` is unchanged.
 
 ### Mode transition animation
 
 **Reading → Study:**
-1. Panel animates from `max-width: 0` to `max-width: 340px` (`250ms ease`) — this causes the flex layout to narrow the text column simultaneously as the panel grows
+1. Panel animates from `max-width: 0` to `max-width: 33vw` (`250ms ease`) — this causes the flex layout to narrow the text column simultaneously as the panel grows
 2. Panel opacity fades from `0` to `1` over the same `250ms`
 3. Inline annotation blocks expand into view (see §4 for animation details)
 
@@ -222,7 +222,7 @@ New fields, bump `PREFS_VERSION` to `5`:
 interface ReadingPrefs {
   // existing fields ...
   readingMode: 'reading' | 'study'; // default 'reading'
-  studyPanelWidth: number;           // pixels, default 340
+  studyPanelWidth: string;           // CSS width value, default '33vw'
 }
 ```
 
@@ -231,7 +231,7 @@ Migration snippet following the existing `_v` pattern:
 ```ts
 if (!parsed._v || parsed._v < 5) {
   parsed.readingMode = 'reading';
-  parsed.studyPanelWidth = 340;
+  parsed.studyPanelWidth = '33vw';
 }
 ```
 
