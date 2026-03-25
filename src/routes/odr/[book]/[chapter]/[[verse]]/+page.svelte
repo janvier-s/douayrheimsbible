@@ -229,8 +229,16 @@
 		</div>
 	</main>
 
-	{#if $prefs.readingMode === 'study'}
-		<!-- Drag divider -->
+	<!-- Animated panel container -->
+	<div
+		class="flex shrink-0 overflow-hidden"
+		style="max-width: {$prefs.readingMode === 'study'
+			? $prefs.studyPanelWidth
+			: '0'}; opacity: {$prefs.readingMode === 'study'
+			? '1'
+			: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"
+	>
+		<!-- Drag divider (inside so it slides with panel) -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
@@ -238,12 +246,8 @@
 		></div>
 
 		<!-- Study panel -->
-		<div
-			bind:this={panelEl}
-			style="width: {$prefs.studyPanelWidth}"
-			class="shrink-0 overflow-hidden"
-		>
+		<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0">
 			<StudyPanel bookData={currentBookData} />
 		</div>
-	{/if}
+	</div>
 </div>
