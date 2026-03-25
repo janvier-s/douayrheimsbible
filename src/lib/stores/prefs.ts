@@ -11,6 +11,8 @@ export interface ReadingPrefs {
 	fontFamily: string;
 	bionicReading: boolean;
 	dyslexiaFont: boolean;
+	readingMode: 'reading' | 'study';
+	studyPanelWidth: string; // CSS width value e.g. '33vw' or '420px'
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -22,10 +24,12 @@ const DEFAULTS: ReadingPrefs = {
 	lineHeight: 1.8,
 	fontFamily: 'libre-baskerville',
 	bionicReading: false,
-	dyslexiaFont: false
+	dyslexiaFont: false,
+	readingMode: 'reading',
+	studyPanelWidth: '33vw'
 };
 
-const PREFS_VERSION = 4;
+const PREFS_VERSION = 5;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -45,6 +49,11 @@ function loadPrefs(): ReadingPrefs {
 		if (!parsed._v || parsed._v < 4) {
 			if (parsed.fontFamily === 'lexend') parsed.fontFamily = 'montserrat';
 			if (parsed.fontFamily === 'verdana') parsed.fontFamily = 'noto-sans';
+		}
+		// v5 migration: add readingMode and studyPanelWidth
+		if (!parsed._v || parsed._v < 5) {
+			parsed.readingMode = 'reading';
+			parsed.studyPanelWidth = '33vw';
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
