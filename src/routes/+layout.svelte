@@ -6,16 +6,9 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 
-	// Reset store on every SvelteKit navigation so the label stays in sync.
-	// The chapter page's onMount then immediately sets the correct value.
-	$: if ($page.params.book) {
-		readingPosition.set({
-			bookSlug: $page.params.book,
-			chapter: parseInt($page.params.chapter ?? '1', 10)
-		});
-	}
-
-	// Driven by the store — updates both on navigation and during infinite scroll.
+	// $page.params is the primary source on navigation.
+	// readingPosition is only set by the ODR page during infinite scroll,
+	// which may advance to a chapter/book not reflected in the URL params.
 	$: bookSlug = $readingPosition?.bookSlug ?? $page.params.book ?? '';
 	$: chapterNum = $readingPosition
 		? String($readingPosition.chapter)

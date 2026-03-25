@@ -6,6 +6,12 @@
 	import { loadBook, getChapter, getChapterCount } from '$lib/data/loader';
 	import { ALL_BOOKS } from '$lib/data/books';
 	import { debounce } from '$lib/utils/debounce';
+	import {
+		shouldLoadNext,
+		shouldLoadPrev,
+		createChapterObserver,
+		observeChapterHeadings
+	} from '$lib/utils/infiniteScroll';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import type { Chapter, BookMeta } from '$lib/data/types';
@@ -38,20 +44,10 @@
 	let observer: IntersectionObserver | null = null;
 
 	function observeHeadings() {
-		observer?.disconnect();
-		observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						const slug = (entry.target as HTMLElement).dataset.bookSlug ?? data.bookMeta.slug;
-						const ch = parseInt((entry.target as HTMLElement).dataset.chapterNum ?? '0', 10);
-						if (ch > 0) updateUrl(slug, ch);
-					}
-				}
-			},
-			{ rootMargin: '0px 0px -80% 0px', threshold: 0 }
-		);
-		container?.querySelectorAll('[data-chapter-heading]').forEach((el) => observer!.observe(el));
+		if (!observer) {
+			observer = createChapterObserver((slug, ch) => updateUrl(slug, ch));
+		}
+		if (container) observeChapterHeadings(container, observer);
 	}
 
 	function hasChapter(slug: string, ch: number): boolean {
@@ -133,9 +129,9 @@
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
-		if (scrollY + innerHeight > docHeight - 400) {
+		if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
 			loadNextChapter();
-		} else if (scrollY < 400) {
+		} else if (shouldLoadPrev(scrollY)) {
 			loadPrevChapter();
 		}
 	}

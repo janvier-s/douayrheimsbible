@@ -2,7 +2,7 @@
 
 Items deferred from the March 2026 code review. Criticals and quick wins have been resolved.
 
-**Resolved since initial filing:** M-2, M-6, M-7, M-8, M-9, M-10, M-11, M-12, M-13
+**Resolved since initial filing:** M-2, M-3, M-5, M-6, M-7, M-8, M-9, M-10, M-11, M-12, M-13
 
 ---
 
@@ -35,27 +35,6 @@ Items deferred from the March 2026 code review. Criticals and quick wins have be
 **Issue:** `readingPosition` is reset on every navigation from layout params, then set again from `onMount`. This causes a two-phase update and can flash the wrong chapter label during navigation.
 **Action:** Drive label entirely from `$page.params` without a writable store, or derive it purely in the layout via a reactive statement.
 **Effort:** 2–3 hours
-
-### M-6 — Compare store: `visible` Set is not localStorage-persisted
-
-**File:** `src/lib/stores/compare.ts`
-**Issue:** The set of visible translations resets to `{odr, drc}` on every page load. Users who picked a different set lose their choice on navigation.
-**Action:** Persist `visible` and `order` to `localStorage` (same pattern as `prefs` store).
-**Effort:** 2–3 hours
-
-### M-8 — No error boundary / 404 handling for bad slugs
-
-**Files:** `src/routes/odr/[book]/[chapter]/+page.ts`, compare route
-**Issue:** If someone navigates to `/odr/nonexistent/99`, the loader crashes with an unhandled rejection. There is no `+error.svelte` page.
-**Action:** Add `src/routes/+error.svelte`, and add `error(404, ...)` throws to the loaders when `getBookBySlug` returns null or chapter is out of range.
-**Effort:** 2 hours
-
-### M-10 — `FloatingNav`: keyboard trap not implemented
-
-**File:** `src/lib/components/FloatingNav.svelte`
-**Issue:** The floating nav is a modal-like overlay but does not trap keyboard focus. Screen reader users can tab past it into obscured background content.
-**Action:** Add a focus trap (Svelte `use:focusTrap` action or `focus-trap` library). Also add `Escape` key handler to close.
-**Effort:** 2 hours
 
 ---
 
