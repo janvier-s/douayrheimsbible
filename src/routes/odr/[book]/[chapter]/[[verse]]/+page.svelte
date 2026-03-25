@@ -14,7 +14,8 @@
 	} from '$lib/utils/infiniteScroll';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
-	import type { Chapter, BookMeta } from '$lib/data/types';
+	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
+	import StudyPanel from '$lib/components/StudyPanel.svelte';
 
 	export let data: PageData;
 
@@ -32,6 +33,39 @@
 	let currentChapter = data.chapter.chapter;
 	let loadingNext = false;
 	let loadingPrev = false;
+
+	// Study panel resize
+	let panelEl: HTMLElement;
+	let isDragging = false;
+	let dragStartX = 0;
+	let dragStartWidth = 0;
+
+	const savePanelWidth = debounce((w: string) => {
+		prefs.update((p) => ({ ...p, studyPanelWidth: w }));
+	}, 200);
+
+	function onDividerMousedown(e: MouseEvent) {
+		isDragging = true;
+		dragStartX = e.clientX;
+		dragStartWidth = panelEl.offsetWidth;
+		e.preventDefault();
+	}
+
+	function onMousemove(e: MouseEvent) {
+		if (!isDragging) return;
+		const delta = dragStartX - e.clientX; // dragging left = panel grows
+		const newWidth = Math.min(Math.max(dragStartWidth + delta, 240), window.innerWidth * 0.5);
+		panelEl.style.width = `${newWidth}px`;
+		savePanelWidth(`${newWidth}px`);
+	}
+
+	function onMouseup() {
+		isDragging = false;
+	}
+
+	// bookDataMap caches full BookData (including intros) keyed by book slug
+	let bookDataMap: Record<string, BookData> = {};
+	$: currentBookData = bookDataMap[chapters[0]?.bookMeta.slug] ?? null;
 
 	const updateUrl = debounce((slug: string, ch: number) => {
 		if (ch !== currentChapter) {
@@ -64,6 +98,8 @@
 		loadingNext = true;
 		try {
 			const bookData = await loadBook(last.bookMeta.slug, fetch);
+			bookDataMap[last.bookMeta.slug] = bookData;
+			bookDataMap = { ...bookDataMap };
 			const nextCh = getChapter(bookData, nextChNum);
 			if (nextCh) {
 				chapters = [
@@ -103,6 +139,8 @@
 		const oldHeight = document.documentElement.scrollHeight;
 		try {
 			const bookData = await loadBook(targetBookMeta.slug, fetch);
+			bookDataMap[targetBookMeta.slug] = bookData;
+			bookDataMap = { ...bookDataMap };
 			const prevCh = getChapter(bookData, prevChNum);
 			const totalChs = getChapterCount(bookData);
 			if (prevCh) {
@@ -136,10 +174,17 @@
 		}
 	}
 
-	onMount(() => {
+	onMount(async () => {
 		readingPosition.set({ bookSlug: data.bookMeta.slug, chapter: data.chapter.chapter });
 		observeHeadings();
 		window.addEventListener('scroll', onScroll, { passive: true });
+		try {
+			const initialBook = await loadBook(data.bookMeta.slug, fetch);
+			bookDataMap[data.bookMeta.slug] = initialBook;
+			bookDataMap = { ...bookDataMap };
+		} catch {
+			/* silently ignore */
+		}
 		setTimeout(() => {
 			scrollReady = true;
 			// Proactively check position so prev/next chapter loads immediately
@@ -158,21 +203,47 @@
 	<title>{data.bookMeta.odrName} {data.chapter.chapter} — ODR Bible</title>
 </svelte:head>
 
-<main bind:this={container} class="max-w-[750px] mx-auto px-md py-xl">
-	{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
-		<section class={i > 0 ? 'pt-[49px]' : ''}>
-			<div
-				data-chapter-heading
-				data-book-slug={item.bookMeta.slug}
-				data-chapter-num={item.chapter.chapter}
-			></div>
-			<ChapterView
-				bookMeta={item.bookMeta}
-				chapter={item.chapter}
-				targetVerse={item.chapter.chapter === data.chapter.chapter ? data.targetVerse : undefined}
-				totalChapters={item.totalChapters}
-				showNav={true}
-			/>
-		</section>
-	{/each}
-</main>
+<svelte:window on:mousemove={onMousemove} on:mouseup={onMouseup} />
+
+<div class="flex items-start" data-mode={$prefs.readingMode}>
+	<main bind:this={container} class="flex-1 min-w-0 px-md py-xl">
+		<div class="max-w-[750px] mx-auto">
+			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
+				<section class={i > 0 ? 'pt-[49px]' : ''}>
+					<div
+						data-chapter-heading
+						data-book-slug={item.bookMeta.slug}
+						data-chapter-num={item.chapter.chapter}
+					></div>
+					<ChapterView
+						bookMeta={item.bookMeta}
+						chapter={item.chapter}
+						targetVerse={item.chapter.chapter === data.chapter.chapter
+							? data.targetVerse
+							: undefined}
+						totalChapters={item.totalChapters}
+						showNav={true}
+					/>
+				</section>
+			{/each}
+		</div>
+	</main>
+
+	{#if $prefs.readingMode === 'study'}
+		<!-- Drag divider -->
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<div
+			class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
+			on:mousedown={onDividerMousedown}
+		></div>
+
+		<!-- Study panel -->
+		<div
+			bind:this={panelEl}
+			style="width: {$prefs.studyPanelWidth}"
+			class="shrink-0 overflow-hidden"
+		>
+			<StudyPanel bookData={currentBookData} />
+		</div>
+	{/if}
+</div>
