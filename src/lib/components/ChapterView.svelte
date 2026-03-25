@@ -19,14 +19,14 @@
 					slug: bookMeta.slug,
 					ch: chapter.chapter - 1,
 					label: `Ch. ${chapter.chapter - 1}`,
-					fullLabel: `Chapter ${chapter.chapter - 1}`
+					chLabel: null
 				}
 			: bookIndex > 0
 				? {
 						slug: ALL_BOOKS[bookIndex - 1].slug,
 						ch: ALL_BOOKS[bookIndex - 1].chapters,
 						label: ALL_BOOKS[bookIndex - 1].odrName,
-						fullLabel: ALL_BOOKS[bookIndex - 1].odrName
+						chLabel: `Ch. ${ALL_BOOKS[bookIndex - 1].chapters}`
 					}
 				: null;
 
@@ -36,14 +36,14 @@
 					slug: bookMeta.slug,
 					ch: chapter.chapter + 1,
 					label: `Ch. ${chapter.chapter + 1}`,
-					fullLabel: `Chapter ${chapter.chapter + 1}`
+					chLabel: null
 				}
 			: bookIndex < ALL_BOOKS.length - 1
 				? {
 						slug: ALL_BOOKS[bookIndex + 1].slug,
 						ch: 1,
 						label: ALL_BOOKS[bookIndex + 1].odrName,
-						fullLabel: ALL_BOOKS[bookIndex + 1].odrName
+						chLabel: 'Ch. 1'
 					}
 				: null;
 
@@ -78,28 +78,34 @@
 	}
 </script>
 
-{#if showNav}
+{#if showNav && prevNav}
 	<nav class="flex justify-between items-center mb-lg font-ui">
-		{#if prevNav}
-			<a
-				href="/odr/{prevNav.slug}/{prevNav.ch}"
-				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
-			>
-				<span class="text-[16px] leading-none">‹</span>
-				{prevNav.label}
-			</a>
-		{:else}
-			<span></span>
-		{/if}
+		<a
+			href="/odr/{prevNav.slug}/{prevNav.ch}"
+			class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
+		>
+			<span class="text-[16px] leading-none">‹</span>
+			<span class="flex flex-col leading-tight">
+				<span>{prevNav.label}</span>
+				{#if prevNav.chLabel}
+					<span class="text-[10px] normal-case tracking-normal opacity-70">{prevNav.chLabel}</span>
+				{/if}
+			</span>
+		</a>
 		{#if nextNav}
 			<a
 				href="/odr/{nextNav.slug}/{nextNav.ch}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
 			>
-				{nextNav.label} <span class="text-[16px] leading-none">›</span>
+				<span class="flex flex-col items-end leading-tight">
+					<span>{nextNav.label}</span>
+					{#if nextNav.chLabel}
+						<span class="text-[10px] normal-case tracking-normal opacity-70">{nextNav.chLabel}</span
+						>
+					{/if}
+				</span>
+				<span class="text-[16px] leading-none">›</span>
 			</a>
-		{:else}
-			<span></span>
 		{/if}
 	</nav>
 {/if}
@@ -132,33 +138,6 @@
 		chapterNum={chapter.chapter}
 	/>
 </article>
-
-{#if showNav}
-	<nav class="flex justify-between items-start mt-xl pt-lg border-t border-border font-ui">
-		{#if prevNav}
-			<a
-				href="/odr/{prevNav.slug}/{prevNav.ch}"
-				class="group flex flex-col gap-[3px] text-subtle hover:text-accent transition-colors duration-fast"
-			>
-				<span class="text-[10px] uppercase tracking-[0.2em]">Previous</span>
-				<span class="text-sm">{prevNav.fullLabel}</span>
-			</a>
-		{:else}
-			<span></span>
-		{/if}
-		{#if nextNav}
-			<a
-				href="/odr/{nextNav.slug}/{nextNav.ch}"
-				class="group flex flex-col gap-[3px] text-right text-subtle hover:text-accent transition-colors duration-fast"
-			>
-				<span class="text-[10px] uppercase tracking-[0.2em]">Next</span>
-				<span class="text-sm">{nextNav.fullLabel}</span>
-			</a>
-		{:else}
-			<span></span>
-		{/if}
-	</nav>
-{/if}
 
 <style>
 	:global(.summary-verse-ref) {
