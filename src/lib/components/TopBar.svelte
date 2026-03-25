@@ -10,6 +10,7 @@
 
 	export let bookSlug: string;
 	export let chapterNum: string;
+	export let hasStudyMode = false;
 
 	let navOpen = false;
 	let prefsOpen = false;
@@ -58,7 +59,7 @@
 		<div
 			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
 		>
-			{#each [['reading', 'Reading'], ['study', 'Study'], ['compare', 'Compare']] as [mode, label]}
+			{#each [['reading', 'Reading'], ...(hasStudyMode ? [['study', 'Study']] : []), ['compare', 'Compare']] as [mode, label]}
 				<button
 					class="px-[9px] py-[5px] transition-colors duration-fast
 						{activeMode === mode ? 'bg-interactive text-white' : 'text-subtle hover:text-foreground'}
