@@ -3,6 +3,7 @@
 	import DOMPurify from 'isomorphic-dompurify';
 	import { prefs } from '$lib/stores/prefs';
 	import type { Verse } from '$lib/data/types';
+	import InlineAnnotationBlock from './InlineAnnotationBlock.svelte';
 
 	export let verses: Verse[];
 	export let targetVerse: number | undefined;
@@ -97,6 +98,9 @@
 					{@html renderVerse(v.text, $prefs.bionicReading && bionicReady)}
 				</p>
 			</li>
+			{#if $prefs.readingMode === 'study' && v.inlineAnnotations && v.inlineAnnotations.length > 0}
+				<InlineAnnotationBlock annotations={v.inlineAnnotations} />
+			{/if}
 		{/each}
 	</ol>
 {/if}
