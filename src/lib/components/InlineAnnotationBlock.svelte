@@ -8,7 +8,9 @@
 
 <div class="annotation-wrapper">
 	<div class="annotation-inner">
-		<div class="my-[6px] rounded-sm border border-border bg-panel px-[10px] py-[8px] text-sm font-ui space-y-[5px]">
+		<div
+			class="my-[6px] rounded-sm border border-border bg-panel px-[10px] py-[8px] text-sm font-ui space-y-[5px]"
+		>
 			{#each annotations as ann}
 				<div class="flex gap-[6px] items-baseline leading-snug">
 					<span class="text-accent font-semibold text-[11px] shrink-0 min-w-[16px]">
