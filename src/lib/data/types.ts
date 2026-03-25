@@ -1,12 +1,35 @@
+export interface InlineAnnotation {
+	marker: string; // letter ('a','b') = footnote; digit ('1','2') = cross-ref
+	text: string;
+}
+
+export interface Annotation {
+	chapter: number;
+	verse: number;
+	page: number;
+	title: string;
+	text: string;
+	annotations?: InlineAnnotation[];
+}
+
+export interface BookIntro {
+	title: string;
+	text: string;
+	annotations?: InlineAnnotation[];
+	default?: boolean;
+}
+
 export interface Verse {
 	verse: number;
 	text: string;
+	inlineAnnotations?: InlineAnnotation[];
 }
 
 export interface Chapter {
 	chapter: number;
 	summary: string;
 	verses: Verse[];
+	annotations?: Annotation[];
 }
 
 export interface BookData {
@@ -14,6 +37,7 @@ export interface BookData {
 	version_abbr: string;
 	date: string;
 	chapters: Chapter[];
+	intros?: BookIntro[];
 }
 
 export interface BookMeta {
@@ -28,4 +52,9 @@ export interface BookMeta {
 	chapters: number;
 	/** Whether this book has Confraternity data (NT only) */
 	hasConfraternity: boolean;
+}
+
+/** Returns true if the marker is a cross-reference (numeric), false if footnote (letter) */
+export function isCrossRef(marker: string): boolean {
+	return /^\d+$/.test(marker);
 }
