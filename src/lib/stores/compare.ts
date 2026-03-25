@@ -70,9 +70,9 @@ export const TRANSLATIONS: Translation[] = [
 	},
 	{
 		id: 'vul',
-		label: 'Vulgate',
+		label: 'Clementine Vulgate',
 		abbr: 'Vul',
-		year: '~405',
+		year: '1592',
 		live: false,
 		ntOnly: false,
 		fullHeader: false

@@ -13,12 +13,19 @@
 		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
 		{
 			id: 'source-serif-4',
-			label: 'Source Serif 4',
+			label: 'Source Serif',
 			stack: "'Source Serif 4', Georgia, serif",
 			gfUrl:
 				'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap'
 		},
-		{ id: 'verdana', label: 'Verdana', stack: 'Verdana, Geneva, sans-serif' },
+		{
+			id: 'noto-sans',
+			label: 'Noto Sans',
+			stack: "'Noto Sans', sans-serif",
+			gfUrl:
+				'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap',
+			dividerBefore: true
+		},
 		{
 			id: 'libre-franklin',
 			label: 'Libre Franklin',
@@ -26,7 +33,13 @@
 			gfUrl:
 				'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap'
 		},
-		{ id: 'lexend', label: 'Lexend', stack: "'Lexend', sans-serif" }
+		{
+			id: 'montserrat',
+			label: 'Montserrat',
+			stack: "'Montserrat', sans-serif",
+			gfUrl:
+				'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap'
+		}
 	];
 
 	const THEMES = [
@@ -110,10 +123,10 @@
 		<div class="flex gap-xs">
 			{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.0 }] as opt}
 				<button
-					class="flex-1 py-xs border rounded-sm text-xs font-light transition-colors duration-fast
+					class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
 						{$prefs.lineHeight === opt.value
 						? 'bg-accent text-white border-accent'
-						: 'border-border text-muted hover:text-foreground'}"
+						: 'border-border text-foreground hover:text-accent'}"
 					on:click={() => {
 						prefs.update((p) => ({ ...p, lineHeight: opt.value }));
 						document.documentElement.style.setProperty('--line-height-reader', String(opt.value));
@@ -140,6 +153,9 @@
 				class="absolute left-0 right-0 top-[calc(100%+2px)] bg-panel border border-border rounded-sm shadow-lg z-10 overflow-hidden"
 			>
 				{#each FONTS as f}
+					{#if f.dividerBefore}
+						<div class="border-t border-border my-[3px]"></div>
+					{/if}
 					<button
 						class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast
 							{activeFontId === f.id ? 'text-accent' : 'text-foreground'}"

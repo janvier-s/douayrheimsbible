@@ -18,9 +18,9 @@
 		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
 		sentinel: "'Sentinel', Georgia, serif",
 		'source-serif-4': "'Source Serif 4', Georgia, serif",
-		verdana: 'Verdana, Geneva, sans-serif',
+		'noto-sans': "'Noto Sans', sans-serif",
 		'libre-franklin': "'Libre Franklin', sans-serif",
-		lexend: "'Lexend', sans-serif"
+		montserrat: "'Montserrat', sans-serif"
 	};
 
 	const GF_URLS: Record<string, string> = {
@@ -29,7 +29,11 @@
 		'source-serif-4':
 			'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap',
 		'libre-franklin':
-			'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap'
+			'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap',
+		'noto-sans':
+			'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap',
+		montserrat:
+			'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap'
 	};
 
 	onMount(() => {

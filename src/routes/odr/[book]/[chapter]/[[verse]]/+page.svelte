@@ -171,7 +171,7 @@
 				chapter={item.chapter}
 				targetVerse={item.chapter.chapter === data.chapter.chapter ? data.targetVerse : undefined}
 				totalChapters={item.totalChapters}
-				showNav={i === chapters.length - 1}
+				showNav={true}
 			/>
 		</section>
 	{/each}

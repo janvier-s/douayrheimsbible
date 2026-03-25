@@ -2,6 +2,7 @@
 	import { tick } from 'svelte';
 	import DOMPurify from 'isomorphic-dompurify';
 	import type { BookMeta, Chapter } from '$lib/data/types';
+	import { ALL_BOOKS } from '$lib/data/books';
 	import VerseList from './VerseList.svelte';
 
 	export let bookMeta: BookMeta;
@@ -10,8 +11,41 @@
 	export let totalChapters: number;
 	export let showNav: boolean = true;
 
-	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
-	$: nextChapter = chapter.chapter < totalChapters ? chapter.chapter + 1 : null;
+	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
+
+	$: prevNav =
+		chapter.chapter > 1
+			? {
+					slug: bookMeta.slug,
+					ch: chapter.chapter - 1,
+					label: `Ch. ${chapter.chapter - 1}`,
+					fullLabel: `Chapter ${chapter.chapter - 1}`
+				}
+			: bookIndex > 0
+				? {
+						slug: ALL_BOOKS[bookIndex - 1].slug,
+						ch: ALL_BOOKS[bookIndex - 1].chapters,
+						label: ALL_BOOKS[bookIndex - 1].odrName,
+						fullLabel: ALL_BOOKS[bookIndex - 1].odrName
+					}
+				: null;
+
+	$: nextNav =
+		chapter.chapter < totalChapters
+			? {
+					slug: bookMeta.slug,
+					ch: chapter.chapter + 1,
+					label: `Ch. ${chapter.chapter + 1}`,
+					fullLabel: `Chapter ${chapter.chapter + 1}`
+				}
+			: bookIndex < ALL_BOOKS.length - 1
+				? {
+						slug: ALL_BOOKS[bookIndex + 1].slug,
+						ch: 1,
+						label: ALL_BOOKS[bookIndex + 1].odrName,
+						fullLabel: ALL_BOOKS[bookIndex + 1].odrName
+					}
+				: null;
 
 	let activeVerse: number | undefined = targetVerse;
 	$: if (targetVerse !== undefined) activeVerse = targetVerse;
@@ -46,22 +80,23 @@
 
 {#if showNav}
 	<nav class="flex justify-between items-center mb-lg font-ui">
-		{#if prevChapter}
+		{#if prevNav}
 			<a
-				href="/odr/{bookMeta.slug}/{prevChapter}"
+				href="/odr/{prevNav.slug}/{prevNav.ch}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
 			>
-				<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
+				<span class="text-[16px] leading-none">‹</span>
+				{prevNav.label}
 			</a>
 		{:else}
 			<span></span>
 		{/if}
-		{#if nextChapter}
+		{#if nextNav}
 			<a
-				href="/odr/{bookMeta.slug}/{nextChapter}"
+				href="/odr/{nextNav.slug}/{nextNav.ch}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
 			>
-				Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
+				{nextNav.label} <span class="text-[16px] leading-none">›</span>
 			</a>
 		{:else}
 			<span></span>
@@ -100,24 +135,24 @@
 
 {#if showNav}
 	<nav class="flex justify-between items-start mt-xl pt-lg border-t border-border font-ui">
-		{#if prevChapter}
+		{#if prevNav}
 			<a
-				href="/odr/{bookMeta.slug}/{prevChapter}"
+				href="/odr/{prevNav.slug}/{prevNav.ch}"
 				class="group flex flex-col gap-[3px] text-subtle hover:text-accent transition-colors duration-fast"
 			>
 				<span class="text-[10px] uppercase tracking-[0.2em]">Previous</span>
-				<span class="text-sm">Chapter {prevChapter}</span>
+				<span class="text-sm">{prevNav.fullLabel}</span>
 			</a>
 		{:else}
 			<span></span>
 		{/if}
-		{#if nextChapter}
+		{#if nextNav}
 			<a
-				href="/odr/{bookMeta.slug}/{nextChapter}"
+				href="/odr/{nextNav.slug}/{nextNav.ch}"
 				class="group flex flex-col gap-[3px] text-right text-subtle hover:text-accent transition-colors duration-fast"
 			>
 				<span class="text-[10px] uppercase tracking-[0.2em]">Next</span>
-				<span class="text-sm">Chapter {nextChapter}</span>
+				<span class="text-sm">{nextNav.fullLabel}</span>
 			</a>
 		{:else}
 			<span></span>

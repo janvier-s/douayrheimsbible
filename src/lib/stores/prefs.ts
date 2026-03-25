@@ -25,7 +25,7 @@ const DEFAULTS: ReadingPrefs = {
 	dyslexiaFont: false
 };
 
-const PREFS_VERSION = 3;
+const PREFS_VERSION = 4;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -40,6 +40,11 @@ function loadPrefs(): ReadingPrefs {
 		// v3 migration: darkMode removed; theme is now stored separately under 'theme' key
 		if (!parsed._v || parsed._v < 3) {
 			delete parsed.darkMode;
+		}
+		// v4 migration: lexend → montserrat, verdana → noto-sans
+		if (!parsed._v || parsed._v < 4) {
+			if (parsed.fontFamily === 'lexend') parsed.fontFamily = 'montserrat';
+			if (parsed.fontFamily === 'verdana') parsed.fontFamily = 'noto-sans';
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
