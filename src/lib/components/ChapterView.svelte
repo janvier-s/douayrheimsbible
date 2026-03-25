@@ -78,20 +78,25 @@
 	}
 </script>
 
-{#if showNav && prevNav}
+{#if showNav && (prevNav || nextNav)}
 	<nav class="flex justify-between items-center mb-lg font-ui">
-		<a
-			href="/odr/{prevNav.slug}/{prevNav.ch}"
-			class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
-		>
-			<span class="text-[16px] leading-none">‹</span>
-			<span class="flex flex-col leading-tight">
-				<span>{prevNav.label}</span>
-				{#if prevNav.chLabel}
-					<span class="text-[10px] normal-case tracking-normal opacity-70">{prevNav.chLabel}</span>
-				{/if}
-			</span>
-		</a>
+		{#if prevNav}
+			<a
+				href="/odr/{prevNav.slug}/{prevNav.ch}"
+				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
+			>
+				<span class="text-[16px] leading-none">‹</span>
+				<span class="flex flex-col leading-tight">
+					<span>{prevNav.label}</span>
+					{#if prevNav.chLabel}
+						<span class="text-[10px] normal-case tracking-normal opacity-70">{prevNav.chLabel}</span
+						>
+					{/if}
+				</span>
+			</a>
+		{:else}
+			<span></span>
+		{/if}
 		{#if nextNav}
 			<a
 				href="/odr/{nextNav.slug}/{nextNav.ch}"
