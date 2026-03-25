@@ -24,8 +24,8 @@
 	$: canScrollLeft = $compareStore.columnOffset > 0;
 	$: canScrollRight = $compareStore.columnOffset + MAX_COLS < activeCols.length;
 
-	// Max-width scales with column count so few columns aren't stretched
-	$: containerMaxWidth = `${Math.min(displayedCols.length * 360, 1800)}px`;
+	// Max-width scales with column count (405px per col → 2 cols = 810px)
+	$: containerMaxWidth = `${Math.min(displayedCols.length * 405, 1800)}px`;
 
 	// Drag-to-reorder columns
 	let draggingId: TranslationId | null = null;
@@ -142,7 +142,13 @@
 						>
 							{t.label}
 						</span>
-						<span class="text-[11px] text-subtle mt-[5px] block">{t.year}</span>
+						<span class="text-[11px] text-subtle mt-[3px] block">{t.year}</span>
+						{#if t.micro}
+							<span
+								class="text-[9px] uppercase tracking-[0.12em] text-accent/70 mt-[2px] block font-medium"
+								>{t.micro}</span
+							>
+						{/if}
 					</div>
 				</div>
 				{#if !t.live}
@@ -182,26 +188,20 @@
 		{#each chapter.verses as v (v.verse)}
 			{#each displayedCols as t, colIdx (t.id)}
 				<div
-					class="px-[20px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]
+					class="px-[20px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[8px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 					class:text-justify={$prefs.justifiedText}
 				>
+					{#if $prefs.showVerseNumbers}
+						<span
+							class="text-subtle font-ui text-[10px] font-thin select-none shrink-0 tabular-nums pt-[0.25em] text-right w-5"
+							class:invisible={!t.live}
+							aria-hidden={!t.live}>{v.verse}</span
+						>
+					{/if}
 					{#if t.live}
-						{#if $prefs.showVerseNumbers}
-							<sup
-								class="text-subtle font-ui text-[10px] font-thin select-none mr-[4px] tabular-nums"
-								>{v.verse}</sup
-							>
-						{/if}
-						{v.text}
+						<span>{v.text}</span>
 					{:else}
-						<!-- Invisible text preserves row height to match ODR column -->
-						{#if $prefs.showVerseNumbers}
-							<sup
-								class="font-ui text-[10px] font-thin select-none mr-[4px] invisible"
-								aria-hidden="true">{v.verse}</sup
-							>
-						{/if}
 						<span class="invisible" aria-hidden="true">{v.text}</span>
 					{/if}
 				</div>

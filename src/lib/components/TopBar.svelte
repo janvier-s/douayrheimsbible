@@ -52,7 +52,7 @@
 		<div class="flex-1"></div>
 		<!-- Mode toggle -->
 		<div
-			class="flex items-center text-[11px] font-medium uppercase tracking-[0.1em] rounded-[3px] border border-border overflow-hidden shrink-0"
+			class="flex items-center text-[11px] font-medium rounded-[3px] border border-border overflow-hidden shrink-0"
 		>
 			{#each [['reading', 'Reading'], ...(hasStudyMode ? [['study', 'Study']] : []), ['compare', 'Compare']] as [mode, label]}
 				<button

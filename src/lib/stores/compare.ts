@@ -10,10 +10,23 @@ export interface Translation {
 	year: string;
 	live: boolean;
 	ntOnly: boolean;
-	fullHeader: boolean; // show full label in column header
+	fullHeader: boolean;
+	/** Short contextual label shown below the title in column headers */
+	micro?: string;
 }
 
+// Historical order
 export const TRANSLATIONS: Translation[] = [
+	{
+		id: 'vul',
+		label: 'Clementine Vulgate',
+		abbr: 'Vul',
+		year: '1592',
+		live: false,
+		ntOnly: false,
+		fullHeader: false,
+		micro: 'Source Text'
+	},
 	{
 		id: 'odr',
 		label: 'Original Douay-Rheims',
@@ -21,7 +34,18 @@ export const TRANSLATIONS: Translation[] = [
 		year: '1609',
 		live: true,
 		ntOnly: false,
-		fullHeader: true
+		fullHeader: true,
+		micro: 'Primary Translation'
+	},
+	{
+		id: 'kjv',
+		label: 'King James Version',
+		abbr: 'KJV',
+		year: '1611',
+		live: false,
+		ntOnly: false,
+		fullHeader: false,
+		micro: 'Influenced Challoner Revision'
 	},
 	{
 		id: 'drc',
@@ -30,7 +54,8 @@ export const TRANSLATIONS: Translation[] = [
 		year: '1752',
 		live: false,
 		ntOnly: false,
-		fullHeader: true
+		fullHeader: true,
+		micro: 'Revision'
 	},
 	{
 		id: 'conf',
@@ -58,24 +83,6 @@ export const TRANSLATIONS: Translation[] = [
 		live: false,
 		ntOnly: false,
 		fullHeader: true
-	},
-	{
-		id: 'kjv',
-		label: 'King James Version',
-		abbr: 'KJV',
-		year: '1611',
-		live: false,
-		ntOnly: false,
-		fullHeader: false
-	},
-	{
-		id: 'vul',
-		label: 'Clementine Vulgate',
-		abbr: 'Vul',
-		year: '1592',
-		live: false,
-		ntOnly: false,
-		fullHeader: false
 	}
 ];
 
@@ -88,7 +95,8 @@ interface CompareState {
 	columnOffset: number;
 }
 
-const STORAGE_KEY = 'compareStore_v1';
+// Bump version to reset cached order after historical reordering
+const STORAGE_KEY = 'compareStore_v2';
 
 function loadFromStorage(): Partial<Pick<CompareState, 'order' | 'visible'>> {
 	if (!browser) return {};
