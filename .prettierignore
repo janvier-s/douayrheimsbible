@@ -1,3 +1,7 @@
+# Internal docs and brainstorm files
+docs/
+.superpowers/
+
 # Generated static data
 static/data/
 
