@@ -33,12 +33,13 @@
 			]
 		},
 		{
-			heading: 'Project',
+			heading: 'About',
 			links: [
-				{ label: 'About', href: '/about' },
+				{ label: 'About the Translation', href: '/about' },
+				{ label: 'History', href: '/history' },
+				{ label: 'The Challoner Revision', href: '/challoner-revision' },
 				{ label: 'Download JSON', href: '/download' },
-				{ label: 'API', href: '/api' },
-				{ label: 'Contributing', href: '/contributing' }
+				{ label: 'API', href: '/api' }
 			]
 		},
 		{
@@ -96,8 +97,10 @@
 
 	<!-- Attribution -->
 	<div class="footer-attribution">
-		<p>Original Douay-Rheims Bible, 1609–1610</p>
-		<p>Translated from the Latin Vulgate by English Catholic exiles at Douai and Rheims</p>
+		<p>The Original Douay-Rheims Bible, 1582–1610</p>
+		<p>
+			Faithfully translated from the Latin Vulgate by English Catholic exiles at Douai and Rheims
+		</p>
 	</div>
 </footer>
 

@@ -33,6 +33,11 @@ export function GET() {
 	urls.push(entry('/books/old-testament', '0.7', 'monthly'));
 	urls.push(entry('/books/new-testament', '0.7', 'monthly'));
 
+	// Content pages
+	urls.push(entry('/about', '0.9', 'monthly'));
+	urls.push(entry('/history', '0.9', 'monthly'));
+	urls.push(entry('/challoner-revision', '0.9', 'monthly'));
+
 	// Static pages
 	urls.push(entry('/search', '0.6', 'monthly'));
 
