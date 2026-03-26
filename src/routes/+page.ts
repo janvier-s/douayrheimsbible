@@ -1,4 +1,6 @@
 import type { PageLoad } from './$types';
+
+export const prerender = true;
 import { error } from '@sveltejs/kit';
 import { loadBook, getChapter } from '$lib/data/loader';
 import { getBookBySlug } from '$lib/data/books';
