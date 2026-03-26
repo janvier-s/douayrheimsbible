@@ -14,6 +14,7 @@
 	} from '$lib/utils/infiniteScroll';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
+	import { createPanelResize } from '$lib/utils/panelResize';
 	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
 	import StudyPanel from './StudyPanel.svelte';
 	import PageFooter from './PageFooter.svelte';
@@ -44,33 +45,9 @@
 	let loadingPrev = false;
 
 	// Study panel resize
+	const resize = createPanelResize();
 	let panelEl: HTMLElement;
-	let isDragging = false;
-	let dragStartX = 0;
-	let dragStartWidth = 0;
-
-	const savePanelWidth = debounce((w: string) => {
-		prefs.update((p) => ({ ...p, studyPanelWidth: w }));
-	}, 200);
-
-	function onDividerMousedown(e: MouseEvent) {
-		isDragging = true;
-		dragStartX = e.clientX;
-		dragStartWidth = panelEl.offsetWidth;
-		e.preventDefault();
-	}
-
-	function onMousemove(e: MouseEvent) {
-		if (!isDragging) return;
-		const delta = dragStartX - e.clientX;
-		const newWidth = Math.min(Math.max(dragStartWidth + delta, 240), window.innerWidth * 0.5);
-		panelEl.style.width = `${newWidth}px`;
-		savePanelWidth(`${newWidth}px`);
-	}
-
-	function onMouseup() {
-		isDragging = false;
-	}
+	$: if (panelEl) resize.bindPanel(panelEl);
 
 	let bookDataMap: Record<string, BookData> = {};
 	$: currentBookData = bookDataMap[$readingPosition?.bookSlug ?? initialBookMeta.slug] ?? null;
@@ -89,8 +66,10 @@
 		if (container) observeChapterHeadings(container, observer);
 	}
 
+	let loadedChapterKeys = new Set([`${initialBookMeta.slug}-${initialChapter.chapter}`]);
+
 	function hasChapter(slug: string, ch: number): boolean {
-		return chapters.some((c) => c.bookMeta.slug === slug && c.chapter.chapter === ch);
+		return loadedChapterKeys.has(`${slug}-${ch}`);
 	}
 
 	async function loadNextChapter() {
@@ -103,10 +82,10 @@
 		loadingNext = true;
 		try {
 			const bookData = await loadBook(last.bookMeta.slug, fetch);
-			bookDataMap[last.bookMeta.slug] = bookData;
-			bookDataMap = { ...bookDataMap };
+			bookDataMap = { ...bookDataMap, [last.bookMeta.slug]: bookData };
 			const nextCh = getChapter(bookData, nextChNum);
 			if (nextCh) {
+				loadedChapterKeys.add(`${last.bookMeta.slug}-${nextChNum}`);
 				chapters = [
 					...chapters,
 					{ bookMeta: last.bookMeta, chapter: nextCh, totalChapters: last.totalChapters }
@@ -143,11 +122,11 @@
 		const oldHeight = document.documentElement.scrollHeight;
 		try {
 			const bookData = await loadBook(targetBookMeta.slug, fetch);
-			bookDataMap[targetBookMeta.slug] = bookData;
-			bookDataMap = { ...bookDataMap };
+			bookDataMap = { ...bookDataMap, [targetBookMeta.slug]: bookData };
 			const prevCh = getChapter(bookData, prevChNum);
 			const totalChs = getChapterCount(bookData);
 			if (prevCh) {
+				loadedChapterKeys.add(`${targetBookMeta.slug}-${prevChNum}`);
 				chapters = [
 					{ bookMeta: targetBookMeta, chapter: prevCh, totalChapters: totalChs },
 					...chapters
@@ -199,15 +178,13 @@
 		window.addEventListener('scroll', onScroll, { passive: true });
 		try {
 			const initialBook = await loadBook(initialBookMeta.slug, fetch);
-			bookDataMap[initialBookMeta.slug] = initialBook;
-			bookDataMap = { ...bookDataMap };
+			bookDataMap = { ...bookDataMap, [initialBookMeta.slug]: initialBook };
 		} catch (e) {
 			console.warn('Failed to preload book data:', e);
 		}
-		setTimeout(() => {
-			scrollReady = true;
-			onScrollCheck();
-		}, 600);
+		await tick();
+		scrollReady = true;
+		onScrollCheck();
 	});
 
 	onDestroy(() => {
@@ -219,7 +196,7 @@
 	});
 </script>
 
-<svelte:window on:mousemove={onMousemove} on:mouseup={onMouseup} />
+<svelte:window on:mousemove={resize.onMousemove} on:mouseup={resize.onMouseup} />
 
 <div class="flex items-start" data-mode={$prefs.readingMode}>
 	<main bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
@@ -256,7 +233,7 @@
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
-			on:mousedown={onDividerMousedown}
+			on:mousedown={resize.onDividerMousedown}
 		></div>
 		<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0 h-full">
 			<StudyPanel bookData={currentBookData} />

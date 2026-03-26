@@ -9,7 +9,9 @@
 	let windowWidth = 1024;
 
 	// Clamp so the tooltip never bleeds off screen edges
-	$: left = Math.min(Math.max(anchorX, 170), windowWidth - 170);
+	const TOOLTIP_WIDTH = 300;
+	const CLAMP_EDGE = TOOLTIP_WIDTH / 2 + 20;
+	$: left = Math.min(Math.max(anchorX, CLAMP_EDGE), windowWidth - CLAMP_EDGE);
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />

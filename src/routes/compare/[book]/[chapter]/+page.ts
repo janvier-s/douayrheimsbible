@@ -19,6 +19,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	return {
 		bookMeta,
 		chapter,
-		totalChapters: bookData.chapters.length
+		totalChapters: bookData.chapters.length,
+		showLayoutTopBar: false
 	};
 };

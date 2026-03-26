@@ -63,19 +63,23 @@ function loadPrefs(): ReadingPrefs {
 	}
 }
 
+function savePrefs(p: ReadingPrefs) {
+	if (browser) localStorage.setItem('reading-prefs', JSON.stringify({ ...p, _v: PREFS_VERSION }));
+}
+
 function createPrefs() {
 	const { subscribe, set, update } = writable<ReadingPrefs>(loadPrefs());
 
 	return {
 		subscribe,
 		set(p: ReadingPrefs) {
-			if (browser) localStorage.setItem('reading-prefs', JSON.stringify(p));
+			savePrefs(p);
 			set(p);
 		},
 		update(fn: (p: ReadingPrefs) => ReadingPrefs) {
 			update((p) => {
 				const next = fn(p);
-				if (browser) localStorage.setItem('reading-prefs', JSON.stringify(next));
+				savePrefs(next);
 				return next;
 			});
 		}

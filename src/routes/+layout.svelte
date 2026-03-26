@@ -66,7 +66,7 @@
 </script>
 
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
-	{#if !$page.url.pathname.startsWith('/compare') && $page.url.pathname !== '/'}
+	{#if $page.data.showLayoutTopBar !== false}
 		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />
 	{/if}
 	<slot />

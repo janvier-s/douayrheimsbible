@@ -23,7 +23,10 @@
 
 	$: {
 		const idx = intros.findIndex((i) => i.default);
-		studyPanel.update((s) => ({ ...s, activeIntroIndex: idx >= 0 ? idx : 0 }));
+		const target = idx >= 0 ? idx : 0;
+		if ($studyPanel.activeIntroIndex !== target) {
+			studyPanel.update((s) => ({ ...s, activeIntroIndex: target }));
+		}
 	}
 
 	$: currentChapterNum = $readingPosition?.chapter ?? 1;

@@ -30,9 +30,10 @@
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
-		if (e.key === 'Escape') openMarker = null;
+		if (openMarker && e.key === 'Escape') openMarker = null;
 	}
 
+	$: sanitizedHtml = renderText(text);
 	$: activeAnnotation = annotations.find((a) => a.marker === openMarker) ?? null;
 	$: footnoteCount = annotations.length;
 </script>
@@ -42,7 +43,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <div class="relative" on:click={handleTextClick} role="presentation">
 	<div class="prose-text font-reader text-[13px] leading-relaxed text-foreground">
-		{@html renderText(text)}
+		{@html sanitizedHtml}
 	</div>
 
 	{#if openMarker && activeAnnotation}
