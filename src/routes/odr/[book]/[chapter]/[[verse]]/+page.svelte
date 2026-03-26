@@ -16,6 +16,7 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
 	import StudyPanel from '$lib/components/StudyPanel.svelte';
+	import PageFooter from '$lib/components/PageFooter.svelte';
 
 	export let data: PageData;
 
@@ -230,6 +231,16 @@
 					/>
 				</section>
 			{/each}
+
+			{#if !$prefs.infiniteScroll}
+				{@const last = chapters[chapters.length - 1]}
+				<PageFooter
+					bookMeta={last.bookMeta}
+					chapterNum={last.chapter.chapter}
+					totalChapters={last.totalChapters}
+					routeBase="/odr"
+				/>
+			{/if}
 		</div>
 	</main>
 

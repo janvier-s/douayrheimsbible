@@ -3,7 +3,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import FloatingNav from './FloatingNav.svelte';
-	import SearchBar from './SearchBar.svelte';
+	import SpotlightSearch from './SpotlightSearch.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
 	import { compareStore, TRANSLATIONS } from '$lib/stores/compare';
 	import type { BookMeta } from '$lib/data/types';
@@ -44,8 +44,10 @@
 	}
 </script>
 
+<SpotlightSearch bind:open={searchOpen} />
+
 <header class="sticky top-0 z-50 font-ui">
-	<!-- Row 1: branding + search -->
+	<!-- Row 1: branding + mode + search -->
 	<div
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
 		style="height: 50px;"
@@ -68,22 +70,17 @@
 		<!-- Spacer (desktop only) -->
 		<div class="hidden md:flex flex-1"></div>
 
-		<!-- Mode toggle with sliding pill -->
-		<div
-			class="mode-toggle relative flex items-center text-[11px] font-medium rounded-[3px] border border-border overflow-hidden shrink-0"
-		>
+		<!-- Mode toggle — segmented control, no internal borders -->
+		<div class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0">
 			<div
 				class="mode-pill"
 				style="width: {100 / toggleCount}%; transform: translateX({activeToggleIdx * 100}%);"
 			></div>
-			{#each toggleItems as item, i}
+			{#each toggleItems as item, i (item.label)}
 				{#if item.href}
-					<!-- svelte-ignore a11y-missing-attribute -->
 					<a
 						href={item.href}
-						class="mode-btn flex-1 relative z-10 px-[9px] py-[5px] transition-colors duration-fast whitespace-nowrap
-							{i < toggleCount - 1 ? 'border-r border-border' : ''}
-							text-subtle hover:text-foreground"
+						class="mode-btn flex-1 relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap text-subtle hover:text-foreground"
 						on:click={() => {
 							if (item.study) prefs.update((p) => ({ ...p, readingMode: 'study' }));
 						}}
@@ -92,7 +89,7 @@
 					</a>
 				{:else}
 					<span
-						class="mode-btn flex-1 relative z-10 px-[9px] py-[5px] text-white whitespace-nowrap"
+						class="mode-btn flex-1 relative z-10 px-[10px] py-[5px] text-white whitespace-nowrap"
 					>
 						{item.label}
 					</span>
@@ -100,19 +97,12 @@
 			{/each}
 		</div>
 
-		<!-- Search bar: hidden on mobile -->
-		<div class="hidden md:block w-[380px]">
-			<SearchBar />
-		</div>
-
-		<!-- Search icon: mobile only -->
+		<!-- Search icon (always visible) -->
 		<button
-			class="md:hidden ml-auto shrink-0 flex items-center justify-center w-[32px] h-[32px] rounded-[3px] transition-colors duration-fast
-				{searchOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+			class="ml-auto md:ml-0 shrink-0 flex items-center justify-center w-[30px] h-[30px]
+				rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
 			aria-label="Search"
-			on:click={() => {
-				searchOpen = !searchOpen;
-			}}
+			on:click={() => (searchOpen = true)}
 		>
 			<svg
 				width="15"
@@ -121,22 +111,13 @@
 				fill="none"
 				stroke="currentColor"
 				stroke-width="1.5"
+				stroke-linecap="round"
 			>
 				<circle cx="6.5" cy="6.5" r="4.5" />
 				<line x1="10" y1="10" x2="14" y2="14" />
 			</svg>
 		</button>
 	</div>
-
-	<!-- Mobile search bar (slide down) -->
-	{#if searchOpen}
-		<div
-			transition:slide={{ duration: 180 }}
-			class="bg-glass backdrop-blur-sm border-b border-border px-lg py-[8px] md:hidden"
-		>
-			<SearchBar />
-		</div>
-	{/if}
 
 	<!-- Row 2: compare controls -->
 	<div
@@ -294,16 +275,23 @@
 {/if}
 
 <style>
+	.mode-toggle {
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		overflow: hidden;
+		background: color-mix(in srgb, var(--color-border) 35%, transparent);
+	}
 	.mode-pill {
 		position: absolute;
 		top: 0;
+		bottom: 0;
 		left: 0;
-		height: 100%;
 		background: var(--color-interactive);
-		transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition: transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
 		pointer-events: none;
 	}
 	.mode-btn {
 		min-width: 0;
+		font-size: 11px;
 	}
 </style>

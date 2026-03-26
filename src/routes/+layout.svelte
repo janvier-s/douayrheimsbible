@@ -71,7 +71,7 @@
 		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />
 	{/if}
 	{#key $page.url.pathname}
-		<div transition:fade={{ duration: 180 }}>
+		<div in:fade={{ duration: 140 }}>
 			<slot />
 		</div>
 	{/key}
