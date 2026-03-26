@@ -232,15 +232,14 @@
 				</section>
 			{/each}
 
-			{#if !$prefs.infiniteScroll}
-				{@const last = chapters[chapters.length - 1]}
-				<PageFooter
-					bookMeta={last.bookMeta}
-					chapterNum={last.chapter.chapter}
-					totalChapters={last.totalChapters}
-					routeBase="/odr"
-				/>
-			{/if}
+			{@const last = chapters[chapters.length - 1]}
+			<PageFooter
+				bookMeta={last.bookMeta}
+				chapterNum={last.chapter.chapter}
+				totalChapters={last.totalChapters}
+				routeBase="/odr"
+				showNav={!$prefs.infiniteScroll}
+			/>
 		</div>
 	</main>
 

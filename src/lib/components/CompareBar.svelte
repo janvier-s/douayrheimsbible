@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { slide } from 'svelte/transition';
+	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import FloatingNav from './FloatingNav.svelte';
@@ -27,6 +29,38 @@
 	];
 	$: toggleCount = toggleItems.length;
 	$: activeToggleIdx = toggleCount - 1; // Compare is always last
+
+	// pendingIdx lets the pill animate before navigation fires
+	let pendingIdx = -1;
+	$: displayIdx = pendingIdx >= 0 ? pendingIdx : activeToggleIdx;
+
+	// Pill measurement
+	let toggleEl: HTMLElement;
+	let pillLeft = 0;
+	let pillWidth = 0;
+
+	async function measurePill(idx: number) {
+		await tick();
+		if (!toggleEl) return;
+		const btns = toggleEl.querySelectorAll<HTMLElement>('.mode-btn');
+		const btn = btns[idx >= 0 ? idx : 0];
+		if (!btn) return;
+		pillLeft = btn.offsetLeft;
+		pillWidth = btn.offsetWidth;
+	}
+
+	$: if (toggleEl) measurePill(displayIdx);
+
+	async function handleToggleClick(
+		item: { label: string; href: string | null; study: boolean },
+		idx: number
+	) {
+		if (item.active || !item.href) return;
+		pendingIdx = idx;
+		await new Promise<void>((r) => setTimeout(r, 210));
+		if (item.study) prefs.update((p) => ({ ...p, readingMode: 'study' }));
+		goto(item.href);
+	}
 
 	let navOpen = false;
 	let prefsOpen = false;
@@ -70,30 +104,25 @@
 		<!-- Spacer (desktop only) -->
 		<div class="hidden md:flex flex-1"></div>
 
-		<!-- Mode toggle — segmented control, no internal borders -->
-		<div class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0">
-			<div
-				class="mode-pill"
-				style="width: {100 / toggleCount}%; transform: translateX({activeToggleIdx * 100}%);"
-			></div>
-			{#each toggleItems as item (item.label)}
-				{#if item.href}
-					<a
-						href={item.href}
-						class="mode-btn flex-1 relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap text-subtle hover:text-foreground"
-						on:click={() => {
-							if (item.study) prefs.update((p) => ({ ...p, readingMode: 'study' }));
-						}}
-					>
-						{item.label}
-					</a>
-				{:else}
-					<span
-						class="mode-btn flex-1 relative z-10 px-[10px] py-[5px] text-white whitespace-nowrap"
-					>
-						{item.label}
-					</span>
-				{/if}
+		<!-- Mode toggle — pill measured from actual button bounds -->
+		<div
+			bind:this={toggleEl}
+			class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0"
+		>
+			{#if pillWidth > 0}
+				<div
+					class="mode-pill"
+					style="transform: translateX({pillLeft}px); width: {pillWidth}px;"
+				></div>
+			{/if}
+			{#each toggleItems as item, i (item.label)}
+				<button
+					class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
+						{displayIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
+					on:click={() => handleToggleClick(item, i)}
+				>
+					{item.label}
+				</button>
 			{/each}
 		</div>
 
@@ -121,7 +150,7 @@
 
 	<!-- Row 2: compare controls -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[14px]"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[14px] relative"
 		style="height: 60px;"
 	>
 		<!-- Translation chips — desktop -->
@@ -204,8 +233,8 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav (flex-1 centered, no absolute overlay) -->
-		<div class="flex-1 flex justify-center">
+		<!-- Center: chapter nav — absolutely centered so unequal sides don't shift it -->
+		<div class="absolute left-1/2 -translate-x-1/2">
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
@@ -221,17 +250,17 @@
 		</div>
 
 		<!-- Right: summary + text options -->
-		<div class="shrink-0 flex items-center gap-[10px] md:gap-[20px]">
+		<div class="ml-auto shrink-0 flex items-center gap-[10px] md:gap-[20px]">
 			<button
 				on:click={() => compareStore.toggleSummary()}
-				class="hidden sm:block text-[12px] font-medium text-muted hover:text-foreground transition-colors duration-fast"
+				class="hidden sm:block text-[13px] font-medium text-muted hover:text-foreground transition-colors duration-fast"
 			>
 				Summary: <span class={$compareStore.showSummary ? 'text-accent' : ''}
 					>{$compareStore.showSummary ? 'on' : 'off'}</span
 				>
 			</button>
 			<button
-				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[12px] font-medium
+				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 				title="Text options"
 				on:click={() => {
@@ -287,11 +316,12 @@
 		bottom: 0;
 		left: 0;
 		background: var(--color-interactive);
-		transition: transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
+		transition:
+			transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1),
+			width 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
 		pointer-events: none;
 	}
 	.mode-btn {
-		min-width: 0;
 		font-size: 11px;
 	}
 </style>

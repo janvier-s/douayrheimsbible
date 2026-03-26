@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { getBookBySlug } from '$lib/data/books';
 	import { slide } from 'svelte/transition';
 	import { goto } from '$app/navigation';
@@ -25,14 +26,7 @@
 		translationOpen = false;
 	}
 
-	function setMode(mode: 'reading' | 'study' | 'compare') {
-		if (mode === 'compare') {
-			goto(`/compare/${bookSlug}/${chapterNum}`);
-			return;
-		}
-		prefs.update((p) => ({ ...p, readingMode: mode }));
-	}
-
+	// ── Mode toggle ─────────────────────────────────────────────────────────────
 	$: activeMode = $prefs.readingMode;
 	$: modes = [
 		['reading', 'Reading'],
@@ -41,6 +35,38 @@
 	] as [string, string][];
 	$: modeCount = modes.length;
 	$: activeModeIdx = modes.findIndex(([m]) => m === activeMode);
+
+	// pendingIdx lets the pill animate toward Compare before navigation fires
+	let pendingIdx = -1;
+	$: displayIdx = pendingIdx >= 0 ? pendingIdx : activeModeIdx;
+
+	// Pill measurement
+	let toggleEl: HTMLElement;
+	let pillLeft = 0;
+	let pillWidth = 0;
+
+	async function measurePill(idx: number) {
+		await tick();
+		if (!toggleEl) return;
+		const btns = toggleEl.querySelectorAll<HTMLElement>('.mode-btn');
+		const btn = btns[idx >= 0 ? idx : 0];
+		if (!btn) return;
+		pillLeft = btn.offsetLeft;
+		pillWidth = btn.offsetWidth;
+	}
+
+	$: if (toggleEl) measurePill(displayIdx);
+
+	async function setMode(mode: 'reading' | 'study' | 'compare') {
+		if (mode === 'compare') {
+			pendingIdx = modeCount - 1; // slide pill to Compare position first
+			await new Promise<void>((r) => setTimeout(r, 210));
+			goto(`/compare/${bookSlug}/${chapterNum}`);
+			return;
+		}
+		pendingIdx = -1;
+		prefs.update((p) => ({ ...p, readingMode: mode }));
+	}
 </script>
 
 <SpotlightSearch bind:open={searchOpen} />
@@ -69,18 +95,18 @@
 		<!-- Spacer (desktop only) -->
 		<div class="hidden md:flex flex-1"></div>
 
-		<!-- Mode toggle — segmented control, no internal borders -->
-		<div class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0">
-			{#if activeModeIdx >= 0}
+		<!-- Mode toggle — pill measured from actual button bounds -->
+		<div bind:this={toggleEl} class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0">
+			{#if pillWidth > 0}
 				<div
 					class="mode-pill"
-					style="width: {100 / modeCount}%; transform: translateX({activeModeIdx * 100}%);"
+					style="transform: translateX({pillLeft}px); width: {pillWidth}px;"
 				></div>
 			{/if}
 			{#each modes as [mode, label], i (mode)}
 				<button
-					class="mode-btn flex-1 relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
-						{activeModeIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
+					class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
+						{displayIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
 					on:click={() => setMode(mode as 'reading' | 'study' | 'compare')}
 				>
 					{label}
@@ -88,7 +114,7 @@
 			{/each}
 		</div>
 
-		<!-- Search icon (always visible) -->
+		<!-- Search icon -->
 		<button
 			class="ml-auto md:ml-0 shrink-0 flex items-center justify-center w-[30px] h-[30px]
 				rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
@@ -112,7 +138,7 @@
 
 	<!-- Row 2: reading controls -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px]"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
 		style="height: 60px;"
 	>
 		<!-- Left: translation selector -->
@@ -156,8 +182,8 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav -->
-		<div class="flex-1 flex justify-center">
+		<!-- Center: chapter nav — absolutely centered so unequal sides don't shift it -->
+		<div class="absolute left-1/2 -translate-x-1/2">
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
@@ -172,20 +198,22 @@
 			</button>
 		</div>
 
-		<!-- Right: reading prefs -->
-		<button
-			class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium shrink-0
-				{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
-			title="Text options"
-			on:click={() => {
-				prefsOpen = !prefsOpen;
-				translationOpen = false;
-				navOpen = false;
-			}}
-		>
-			<span class="hidden sm:inline">Text options</span>
-			<span class="sm:hidden">Aa</span>
-		</button>
+		<!-- Right: reading prefs (ml-auto pushes to right) -->
+		<div class="ml-auto shrink-0">
+			<button
+				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
+					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
+				title="Text options"
+				on:click={() => {
+					prefsOpen = !prefsOpen;
+					translationOpen = false;
+					navOpen = false;
+				}}
+			>
+				<span class="hidden sm:inline">Text options</span>
+				<span class="sm:hidden">Aa</span>
+			</button>
+		</div>
 	</div>
 </header>
 
@@ -206,7 +234,6 @@
 	</div>
 {/if}
 
-<!-- Backdrop for dropdowns -->
 {#if navOpen || prefsOpen || translationOpen}
 	<div
 		class="fixed inset-0 z-40"
@@ -228,13 +255,13 @@
 		top: 0;
 		bottom: 0;
 		left: 0;
-		/* width set via inline style as 100%/count */
 		background: var(--color-interactive);
-		transition: transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
+		transition:
+			transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1),
+			width 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
 		pointer-events: none;
 	}
 	.mode-btn {
-		min-width: 0;
 		font-size: 11px;
 	}
 </style>
