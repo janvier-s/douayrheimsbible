@@ -34,7 +34,7 @@
 			</p>
 
 			<h1 class="hero-title">
-				<span class="hero-title-the">The</span>
+				<span class="hero-title-the">The original</span>
 				<span class="hero-title-main">Douay-Rheims</span>
 				<span class="hero-title-sub">Bible</span>
 			</h1>
@@ -42,13 +42,13 @@
 			<p class="hero-origin">Translated from the Latin Vulgate · 1582–1610</p>
 
 			<p class="hero-desc">
-				The first complete English Catholic translation of Sacred Scripture, rendered faithfully
+				The first complete English Catholic translation of Sacred Scripture, faithfully rendered
 				from the Latin Vulgate by English exiles at Douai and Rheims.
 			</p>
 
 			<p class="hero-note">
 				This is the original pre-Challoner text, as first published by the English College at Douai
-				and Rheims, before Bishop Challoner's 18th-century revisions.
+				and Rheims, prior to Bishop Challoner’s 18th-century revisions.
 			</p>
 			<p class="hero-note-minor">
 				Spelling and punctuation lightly modernized; the translation itself is unaltered.
@@ -75,8 +75,8 @@
 					loading="eager"
 				/>
 				<figcaption class="hero-caption">
-					Rheims New Testament, 1582 ·<br />Title page &amp; The Holy Gospel of Iesus Christ
-					According to Matthew
+					Rheims New Testament of 1582<br />The Holy Gospel of Jesus Christ According to Saint
+					Matthew
 				</figcaption>
 			</figure>
 		</div>
@@ -320,10 +320,10 @@
 		font-size: 10px;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
-		color: var(--color-subtle);
+		color: var(--color-foreground);
 		text-align: center;
-		opacity: 0.7;
 		font-weight: 300;
+		line-height: 2;
 	}
 
 	.hero-scroll-hint {

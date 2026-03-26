@@ -29,7 +29,7 @@
 	// ── Mode toggle ─────────────────────────────────────────────────────────────
 	$: activeMode = $prefs.readingMode;
 	$: modes = [
-		['reading', 'Reading'],
+		['reading', 'Read'],
 		...(hasStudyMode ? [['study', 'Study']] : []),
 		['compare', 'Compare']
 	] as [string, string][];
@@ -110,6 +110,7 @@
 				<button
 					class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
 						{displayIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
+					aria-pressed={displayIdx === i}
 					on:click={() => setMode(mode as 'reading' | 'study' | 'compare')}
 				>
 					{label}
@@ -149,6 +150,8 @@
 			<button
 				class="flex items-center gap-[8px] px-[10px] py-[4px] rounded-[3px] transition-colors duration-fast
 					{translationOpen ? 'bg-accent text-white' : 'text-foreground hover:text-accent'}"
+				aria-expanded={translationOpen}
+				aria-haspopup="listbox"
 				on:click={() => {
 					translationOpen = !translationOpen;
 					prefsOpen = false;
@@ -164,7 +167,10 @@
 					</div>
 					<div class="text-[13px] font-medium leading-none">ODR</div>
 				</div>
-				<span class="text-[10px] {translationOpen ? 'text-white/70' : 'text-subtle'} leading-none">
+				<span
+					class="text-[10px] {translationOpen ? 'text-white/70' : 'text-subtle'} leading-none"
+					aria-hidden="true"
+				>
 					{translationOpen ? '▲' : '▼'}
 				</span>
 			</button>
@@ -190,6 +196,9 @@
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
+				aria-expanded={navOpen}
+				aria-haspopup="dialog"
+				aria-label="Navigate — {navLabel}"
 				on:click={() => {
 					navOpen = !navOpen;
 					prefsOpen = false;
@@ -197,7 +206,9 @@
 				}}
 			>
 				<span class="text-[16px] font-medium">{navLabel}</span>
-				<span class="text-[12px] opacity-70 leading-none">{navOpen ? '▲' : '▼'}</span>
+				<span class="text-[12px] opacity-70 leading-none" aria-hidden="true"
+					>{navOpen ? '▲' : '▼'}</span
+				>
 			</button>
 		</div>
 
@@ -206,14 +217,16 @@
 			<button
 				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
-				title="Text options"
+				aria-expanded={prefsOpen}
+				aria-haspopup="dialog"
+				aria-label="Reading options"
 				on:click={() => {
 					prefsOpen = !prefsOpen;
 					translationOpen = false;
 					navOpen = false;
 				}}
 			>
-				<span class="hidden sm:inline">Text options</span>
+				<span class="hidden sm:inline">Reading options</span>
 				<span class="sm:hidden">Aa</span>
 			</button>
 		</div>

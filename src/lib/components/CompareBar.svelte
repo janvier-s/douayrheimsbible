@@ -23,7 +23,7 @@
 
 	// Build toggle items: Reading, [Study], Compare (always active/last)
 	$: _rawItems = [
-		{ label: 'Reading', href: readingHref, study: false, active: false },
+		{ label: 'Read', href: readingHref, study: false, active: false },
 		...(studyHref ? [{ label: 'Study', href: studyHref, study: true, active: false }] : []),
 		{ label: 'Compare', href: null, study: false, active: true }
 	];
@@ -266,14 +266,14 @@
 			<button
 				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
-				title="Text options"
+				aria-label="Reading options"
 				on:click={() => {
 					prefsOpen = !prefsOpen;
 					navOpen = false;
 					mobileTransOpen = false;
 				}}
 			>
-				<span class="hidden sm:inline">Text options</span>
+				<span class="hidden sm:inline">Reading options</span>
 				<span class="sm:hidden">Aa</span>
 			</button>
 		</div>
