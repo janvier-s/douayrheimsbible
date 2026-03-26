@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
+	import { replaceState } from '$app/navigation';
 	import type { PageData } from './$types';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import ChapterView from '$lib/components/ChapterView.svelte';
@@ -74,7 +75,7 @@
 			currentBookSlug = slug;
 			currentChapterNum = ch;
 		}
-		history.replaceState({}, '', `/odr/${slug}/${ch}`);
+		replaceState(`/odr/${slug}/${ch}`, {});
 		readingPosition.set({ bookSlug: slug, chapter: ch, routeBase: '/odr' });
 	}, 200);
 
@@ -173,9 +174,9 @@
 		const docHeight = document.documentElement.scrollHeight;
 		if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
 			loadNextChapter();
-		} else if (shouldLoadPrev(scrollY)) {
-			loadPrevChapter();
 		}
+		// No loadPrevChapter on homepage — the hero sits above the reader,
+		// and scrolling back before Genesis 1 is handled by returning to the hero.
 	}
 
 	onMount(async () => {

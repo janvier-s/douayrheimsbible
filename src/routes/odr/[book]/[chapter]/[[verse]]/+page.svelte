@@ -2,6 +2,7 @@
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { browser } from '$app/environment';
+	import { replaceState } from '$app/navigation';
 	import type { PageData } from './$types';
 	import ChapterView from '$lib/components/ChapterView.svelte';
 	import { loadBook, getChapter, getChapterCount } from '$lib/data/loader';
@@ -72,7 +73,7 @@
 	const updateUrl = debounce((slug: string, ch: number) => {
 		if (ch !== currentChapter) {
 			currentChapter = ch;
-			history.replaceState({}, '', `/odr/${slug}/${ch}`);
+			replaceState(`/odr/${slug}/${ch}`, {});
 			readingPosition.set({ bookSlug: slug, chapter: ch, routeBase: '/odr' });
 		}
 	}, 200);

@@ -4,6 +4,7 @@
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { ALL_BOOKS } from '$lib/data/books';
 	import VerseList from './VerseList.svelte';
+	import VerseTooltip from './VerseTooltip.svelte';
 
 	export let bookMeta: BookMeta;
 	export let chapter: Chapter;
@@ -50,6 +51,49 @@
 
 	let activeVerse: number | undefined = targetVerse;
 	$: if (targetVerse !== undefined) activeVerse = targetVerse;
+
+	// Verse tooltip
+	let tooltipVerse: number | null = null;
+	let tooltipX = 0;
+	let tooltipY = 0;
+	let tooltipCloseTimer: ReturnType<typeof setTimeout> | null = null;
+
+	$: tooltipText =
+		tooltipVerse != null ? (chapter.verses.find((v) => v.verse === tooltipVerse)?.text ?? '') : '';
+
+	function cancelClose() {
+		if (tooltipCloseTimer) {
+			clearTimeout(tooltipCloseTimer);
+			tooltipCloseTimer = null;
+		}
+	}
+
+	function scheduleClose() {
+		cancelClose();
+		tooltipCloseTimer = setTimeout(() => (tooltipVerse = null), 120);
+	}
+
+	function handleSummaryMouseover(e: MouseEvent) {
+		const el = (e.target as HTMLElement).closest('.summary-verse-ref') as HTMLElement | null;
+		if (!el) return;
+		cancelClose();
+		tooltipVerse = parseInt(el.dataset.verse ?? '0');
+		const rect = el.getBoundingClientRect();
+		tooltipX = rect.left + rect.width / 2;
+		tooltipY = rect.top;
+	}
+
+	function handleSummaryMouseout() {
+		scheduleClose();
+	}
+
+	function handleTooltipMouseout() {
+		scheduleClose();
+	}
+
+	function handleTooltipMouseover() {
+		cancelClose();
+	}
 
 	function linkifySummary(text: string): string {
 		const html = text.replace(/℣\.(\d+)/g, (_, n) => {
@@ -132,9 +176,22 @@
 		<p
 			class="text-subtle font-reader italic mb-lg text-base leading-[var(--line-height-reader)]"
 			on:click={handleSummaryClick}
+			on:mouseover={handleSummaryMouseover}
+			on:mouseout={handleSummaryMouseout}
 		>
 			{@html linkifySummary(chapter.summary)}
 		</p>
+	{/if}
+
+	{#if tooltipVerse != null && tooltipText}
+		<VerseTooltip
+			verseNum={tooltipVerse}
+			verseText={tooltipText}
+			anchorX={tooltipX}
+			anchorY={tooltipY}
+			on:mouseover={handleTooltipMouseover}
+			on:mouseout={handleTooltipMouseout}
+		/>
 	{/if}
 
 	<VerseList
