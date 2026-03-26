@@ -8,18 +8,10 @@
 	$: pageUrl = `https://douayrheimsbible.pages.dev/odr/${data.bookMeta.slug}/${data.chapter.chapter}`;
 	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} — Douay-Rheims Bible`;
 	$: pageDesc = `Read ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} in the original Douay-Rheims Bible (1582–1610). Pre-Challoner English Catholic translation from the Latin Vulgate.${data.chapter.summary && data.chapter.summary !== '---' ? ` ${data.chapter.summary.slice(0, 120)}` : ''}`;
-</script>
 
-<svelte:head>
-	<title>{pageTitle}</title>
-	<meta name="description" content={pageDesc} />
-	<link rel="canonical" href={pageUrl} />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content={pageTitle} />
-	<meta property="og:description" content={pageDesc} />
-	<meta property="og:url" content={pageUrl} />
-	<meta property="og:site_name" content="Douay-Rheims Bible" />
-	{@html `<script type="application/ld+json">${JSON.stringify({
+	const scriptOpen = '<' + 'script type="application/ld+json">';
+	const scriptClose = '</' + 'script>';
+	$: jsonLdTag = `${scriptOpen}${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'Article',
 		name: `${data.bookMeta.odrName} Chapter ${data.chapter.chapter}`,
@@ -50,7 +42,19 @@
 				{ '@type': 'ListItem', position: 3, name: `Chapter ${data.chapter.chapter}`, item: pageUrl }
 			]
 		}
-	})}</script>`}
+	})}${scriptClose}`;
+</script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDesc} />
+	<link rel="canonical" href={pageUrl} />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:description" content={pageDesc} />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="og:site_name" content="Douay-Rheims Bible" />
+	{@html jsonLdTag}
 </svelte:head>
 
 <div in:fade={{ duration: 140 }}>
