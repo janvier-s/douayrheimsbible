@@ -29,6 +29,10 @@ export function GET() {
 		}
 	}
 
+	// Book index pages
+	urls.push(entry('/books/old-testament', '0.7', 'monthly'));
+	urls.push(entry('/books/new-testament', '0.7', 'monthly'));
+
 	// Static pages
 	urls.push(entry('/search', '0.6', 'monthly'));
 

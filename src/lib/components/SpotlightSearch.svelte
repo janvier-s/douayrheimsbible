@@ -70,6 +70,9 @@
 	<!-- Panel -->
 	<div
 		class="spotlight-panel"
+		role="dialog"
+		aria-label="Search"
+		aria-modal="true"
 		in:fly={{ y: -10, duration: 200, easing: cubicOut }}
 		out:fly={{ y: -6, duration: 130, easing: cubicOut }}
 	>
@@ -82,6 +85,7 @@
 				stroke="currentColor"
 				stroke-width="1.7"
 				stroke-linecap="round"
+				aria-hidden="true"
 			>
 				<circle cx="8.5" cy="8.5" r="5.5" />
 				<line x1="13" y1="13" x2="18" y2="18" />

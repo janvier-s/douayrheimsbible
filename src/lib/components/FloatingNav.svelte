@@ -84,9 +84,12 @@
 	use:focusTrap
 >
 	<!-- OT / NT tabs -->
-	<div class="flex border-b border-border shrink-0">
+	<div class="flex border-b border-border shrink-0" role="tablist" aria-label="Testament">
 		{#each ['OT', 'NT'] as Testament[] as t}
 			<button
+				role="tab"
+				aria-selected={activeTestament === t}
+				tabindex={activeTestament === t ? 0 : -1}
 				class="flex-1 py-[15px] text-[12px] uppercase tracking-[0.15em] font-medium transition-colors duration-fast
                {activeTestament === t
 					? 'bg-background text-accent border-b-2 border-accent'
@@ -114,6 +117,7 @@
 				>
 					<button
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
+						aria-expanded={expandedBooks.has(book.slug)}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
 							? 'text-accent bg-border hover:bg-border'
@@ -154,6 +158,7 @@
 				<div>
 					<button
 						data-active-book={book.slug === bookSlug ? 'true' : undefined}
+						aria-expanded={expandedBooks.has(book.slug)}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
 							? 'text-accent bg-border hover:bg-border'

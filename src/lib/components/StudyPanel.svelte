@@ -48,9 +48,15 @@
 		</div>
 
 		<!-- Tabs with sliding underline -->
-		<div class="tab-row relative flex px-[4px] gap-[2px]">
+		<div
+			class="tab-row relative flex px-[4px] gap-[2px]"
+			role="tablist"
+			aria-label="Study panel sections"
+		>
 			{#each ['intro', 'commentary'] as const as tab}
 				<button
+					role="tab"
+					aria-selected={$studyPanel.activeTab === tab}
 					class="tab-btn flex-1 pb-[9px] pt-[2px]"
 					class:tab-active={$studyPanel.activeTab === tab}
 					on:click={() => studyPanel.update((s) => ({ ...s, activeTab: tab }))}

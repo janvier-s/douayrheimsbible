@@ -296,6 +296,8 @@
 	<div
 		transition:slide={{ duration: 180 }}
 		class="fixed top-[var(--header-height)] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
+		role="dialog"
+		aria-label="Reading options"
 	>
 		<ReadingPrefs />
 	</div>
