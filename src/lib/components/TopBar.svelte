@@ -96,7 +96,10 @@
 		<div class="hidden md:flex flex-1"></div>
 
 		<!-- Mode toggle — pill measured from actual button bounds -->
-		<div bind:this={toggleEl} class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0">
+		<div
+			bind:this={toggleEl}
+			class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0"
+		>
 			{#if pillWidth > 0}
 				<div
 					class="mode-pill"
