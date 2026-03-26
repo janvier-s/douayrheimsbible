@@ -22,11 +22,12 @@
 	$: studyHref = $readingPosition ? `${_base}/${_slug}/${_ch}` : null;
 
 	// Build toggle items: Reading, [Study], Compare (always active/last)
-	$: toggleItems = [
+	$: _rawItems = [
 		{ label: 'Reading', href: readingHref, study: false, active: false },
 		...(studyHref ? [{ label: 'Study', href: studyHref, study: true, active: false }] : []),
 		{ label: 'Compare', href: null, study: false, active: true }
 	];
+	$: toggleItems = _rawItems.map((item, idx) => ({ ...item, idx }));
 	$: toggleCount = toggleItems.length;
 	$: activeToggleIdx = toggleCount - 1; // Compare is always last
 
@@ -51,12 +52,14 @@
 
 	$: if (toggleEl) measurePill(displayIdx);
 
-	async function handleToggleClick(
-		item: { label: string; href: string | null; study: boolean },
-		idx: number
-	) {
+	async function handleToggleClick(item: {
+		label: string;
+		href: string | null;
+		study: boolean;
+		idx: number;
+	}) {
 		if (item.active || !item.href) return;
-		pendingIdx = idx;
+		pendingIdx = item.idx;
 		await new Promise<void>((r) => setTimeout(r, 210));
 		if (item.study) prefs.update((p) => ({ ...p, readingMode: 'study' }));
 		goto(item.href);
@@ -115,11 +118,11 @@
 					style="transform: translateX({pillLeft}px); width: {pillWidth}px;"
 				></div>
 			{/if}
-			{#each toggleItems as item, i (item.label)}
+			{#each toggleItems as item (item.label)}
 				<button
 					class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
-						{displayIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
-					on:click={() => handleToggleClick(item, i)}
+						{displayIdx === item.idx ? 'text-white' : 'text-subtle hover:text-foreground'}"
+					on:click={() => handleToggleClick(item)}
 				>
 					{item.label}
 				</button>
