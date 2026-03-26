@@ -62,7 +62,7 @@
 		if (item.active || !item.href) return;
 		pendingIdx = item.idx;
 		await new Promise<void>((r) => setTimeout(r, 210));
-		if (item.study) prefs.update((p) => ({ ...p, readingMode: 'study' }));
+		prefs.update((p) => ({ ...p, readingMode: item.study ? 'study' : 'reading' }));
 		goto(item.href);
 	}
 
