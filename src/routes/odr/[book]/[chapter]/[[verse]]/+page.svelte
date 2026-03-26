@@ -67,7 +67,7 @@
 
 	// bookDataMap caches full BookData (including intros) keyed by book slug
 	let bookDataMap: Record<string, BookData> = {};
-	$: currentBookData = bookDataMap[chapters[0]?.bookMeta.slug] ?? null;
+	$: currentBookData = bookDataMap[$readingPosition?.bookSlug ?? data.bookMeta.slug] ?? null;
 
 	const updateUrl = debounce((slug: string, ch: number) => {
 		if (ch !== currentChapter) {
@@ -238,16 +238,17 @@
 			</div>
 		</main>
 
-		<!-- Animated panel container -->
+		<!-- Animated panel container — sticky here so overflow:clip is on the sticky el, not an ancestor -->
 		<div
-			class="flex shrink-0 [overflow:clip]"
-			style="max-width: {$prefs.readingMode === 'study'
+			class="shrink-0 sticky flex [overflow:clip]"
+			style="top: var(--header-height); height: calc(100vh - var(--header-height)); max-width: {$prefs.readingMode ===
+			'study'
 				? $prefs.studyPanelWidth
 				: '0'}; opacity: {$prefs.readingMode === 'study'
 				? '1'
 				: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"
 		>
-			<!-- Drag divider (inside so it slides with panel) -->
+			<!-- Drag divider -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div
 				class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
@@ -255,7 +256,7 @@
 			></div>
 
 			<!-- Study panel -->
-			<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0">
+			<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0 h-full">
 				<StudyPanel bookData={currentBookData} />
 			</div>
 		</div>

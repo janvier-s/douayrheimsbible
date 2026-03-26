@@ -91,7 +91,7 @@
 				bind:this={inputEl}
 				bind:value
 				type="text"
-				placeholder="Go to verse — e.g. John 3:16 or Genesis 1"
+				placeholder="Go to verse — e.g. Matthew 16:18 or Genesis 1"
 				class="spotlight-input"
 				on:keydown={handleInputKey}
 				autocomplete="off"

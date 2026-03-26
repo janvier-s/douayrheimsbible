@@ -35,8 +35,7 @@
 </script>
 
 <aside
-	class="panel-root sticky overflow-hidden border-l border-border bg-panel flex flex-col font-ui"
-	style="top: var(--header-height); height: calc(100vh - var(--header-height));"
+	class="panel-root h-full overflow-hidden border-l border-border bg-panel flex flex-col font-ui"
 	aria-label="Study panel"
 >
 	<!-- Panel identity bar -->
