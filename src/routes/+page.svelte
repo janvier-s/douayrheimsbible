@@ -1,209 +1,13 @@
 <script lang="ts">
-	import { onMount, onDestroy, tick } from 'svelte';
-	import { browser } from '$app/environment';
-	import { replaceState } from '$app/navigation';
 	import type { PageData } from './$types';
 	import TopBar from '$lib/components/TopBar.svelte';
-	import ChapterView from '$lib/components/ChapterView.svelte';
-	import { loadBook, getChapter, getChapterCount } from '$lib/data/loader';
-	import { ALL_BOOKS } from '$lib/data/books';
-	import { debounce } from '$lib/utils/debounce';
-	import {
-		shouldLoadNext,
-		shouldLoadPrev,
-		createChapterObserver,
-		observeChapterHeadings
-	} from '$lib/utils/infiniteScroll';
-	import { prefs } from '$lib/stores/prefs';
+	import BibleReader from '$lib/components/BibleReader.svelte';
 	import { readingPosition } from '$lib/stores/reading';
-	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
-	import StudyPanel from '$lib/components/StudyPanel.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
 
 	export let data: PageData;
 
-	interface LoadedChapter {
-		bookMeta: BookMeta;
-		chapter: Chapter;
-		totalChapters: number;
-	}
-
-	let chapters: LoadedChapter[] = [
-		{ bookMeta: data.bookMeta, chapter: data.chapter, totalChapters: data.totalChapters }
-	];
-
-	let container: HTMLElement;
-	let currentBookSlug = data.bookMeta.slug;
-	let currentChapterNum = data.chapter.chapter;
-	let loadingNext = false;
-	let loadingPrev = false;
-
-	// Study panel resize
-	let panelEl: HTMLElement;
-	let isDragging = false;
-	let dragStartX = 0;
-	let dragStartWidth = 0;
-
-	const savePanelWidth = debounce((w: string) => {
-		prefs.update((p) => ({ ...p, studyPanelWidth: w }));
-	}, 200);
-
-	function onDividerMousedown(e: MouseEvent) {
-		isDragging = true;
-		dragStartX = e.clientX;
-		dragStartWidth = panelEl.offsetWidth;
-		e.preventDefault();
-	}
-
-	function onMousemove(e: MouseEvent) {
-		if (!isDragging) return;
-		const delta = dragStartX - e.clientX;
-		const newWidth = Math.min(Math.max(dragStartWidth + delta, 240), window.innerWidth * 0.5);
-		panelEl.style.width = `${newWidth}px`;
-		savePanelWidth(`${newWidth}px`);
-	}
-
-	function onMouseup() {
-		isDragging = false;
-	}
-
-	let bookDataMap: Record<string, BookData> = {};
-	$: currentBookData = bookDataMap[currentBookSlug] ?? null;
-
-	const updatePosition = debounce((slug: string, ch: number) => {
-		if (slug !== currentBookSlug || ch !== currentChapterNum) {
-			currentBookSlug = slug;
-			currentChapterNum = ch;
-		}
-		replaceState(`/odr/${slug}/${ch}`, {});
-		readingPosition.set({ bookSlug: slug, chapter: ch, routeBase: '/odr' });
-	}, 200);
-
-	let observer: IntersectionObserver | null = null;
-
-	function observeHeadings() {
-		if (!observer) {
-			observer = createChapterObserver((slug, ch) => updatePosition(slug, ch));
-		}
-		if (container) observeChapterHeadings(container, observer);
-	}
-
-	function hasChapter(slug: string, ch: number): boolean {
-		return chapters.some((c) => c.bookMeta.slug === slug && c.chapter.chapter === ch);
-	}
-
-	async function loadNextChapter() {
-		if (loadingNext) return;
-		const last = chapters[chapters.length - 1];
-		const nextChNum = last.chapter.chapter + 1;
-		if (nextChNum > last.totalChapters) return;
-		if (hasChapter(last.bookMeta.slug, nextChNum)) return;
-
-		loadingNext = true;
-		try {
-			const bookData = await loadBook(last.bookMeta.slug, fetch);
-			bookDataMap[last.bookMeta.slug] = bookData;
-			bookDataMap = { ...bookDataMap };
-			const nextCh = getChapter(bookData, nextChNum);
-			if (nextCh) {
-				chapters = [
-					...chapters,
-					{ bookMeta: last.bookMeta, chapter: nextCh, totalChapters: last.totalChapters }
-				];
-				await tick();
-				observeHeadings();
-				onScroll();
-			}
-		} catch {
-			// silently ignore
-		} finally {
-			loadingNext = false;
-		}
-	}
-
-	async function loadPrevChapter() {
-		if (loadingPrev) return;
-		const first = chapters[0];
-
-		let targetBookMeta = first.bookMeta;
-		let prevChNum = first.chapter.chapter - 1;
-
-		if (prevChNum < 1) {
-			const bookIndex = ALL_BOOKS.findIndex((b) => b.slug === first.bookMeta.slug);
-			if (bookIndex <= 0) return;
-			targetBookMeta = ALL_BOOKS[bookIndex - 1];
-			prevChNum = targetBookMeta.chapters;
-		}
-
-		if (hasChapter(targetBookMeta.slug, prevChNum)) return;
-
-		loadingPrev = true;
-		const scrollY = window.scrollY;
-		const oldHeight = document.documentElement.scrollHeight;
-		try {
-			const bookData = await loadBook(targetBookMeta.slug, fetch);
-			bookDataMap[targetBookMeta.slug] = bookData;
-			bookDataMap = { ...bookDataMap };
-			const prevCh = getChapter(bookData, prevChNum);
-			const totalChs = getChapterCount(bookData);
-			if (prevCh) {
-				chapters = [
-					{ bookMeta: targetBookMeta, chapter: prevCh, totalChapters: totalChs },
-					...chapters
-				];
-				await tick();
-				const newHeight = document.documentElement.scrollHeight;
-				window.scrollTo(0, scrollY + (newHeight - oldHeight));
-				observeHeadings();
-				onScroll();
-			}
-		} catch {
-			// silently ignore
-		} finally {
-			loadingPrev = false;
-		}
-	}
-
-	$: last = chapters[chapters.length - 1];
-
-	let scrollReady = false;
-
-	function onScroll() {
-		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
-		const { scrollY, innerHeight } = window;
-		const docHeight = document.documentElement.scrollHeight;
-		if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
-			loadNextChapter();
-		}
-		// No loadPrevChapter on homepage — the hero sits above the reader,
-		// and scrolling back before Genesis 1 is handled by returning to the hero.
-	}
-
-	onMount(async () => {
-		readingPosition.set({
-			bookSlug: data.bookMeta.slug,
-			chapter: data.chapter.chapter,
-			routeBase: '/odr'
-		});
-		observeHeadings();
-		window.addEventListener('scroll', onScroll, { passive: true });
-		try {
-			const initialBook = await loadBook(data.bookMeta.slug, fetch);
-			bookDataMap[data.bookMeta.slug] = initialBook;
-			bookDataMap = { ...bookDataMap };
-		} catch {
-			/* silently ignore */
-		}
-		setTimeout(() => {
-			scrollReady = true;
-			onScroll();
-		}, 600);
-	});
-
-	onDestroy(() => {
-		observer?.disconnect();
-		if (browser) window.removeEventListener('scroll', onScroll);
-	});
+	$: bookSlug = $readingPosition?.bookSlug ?? data.bookMeta.slug;
+	$: chapterNum = $readingPosition ? String($readingPosition.chapter) : '1';
 </script>
 
 <svelte:head>
@@ -213,8 +17,6 @@
 		content="Read the Douay-Rheims Bible online — the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore Challoner's annotations."
 	/>
 </svelte:head>
-
-<svelte:window on:mousemove={onMousemove} on:mouseup={onMouseup} />
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
@@ -242,6 +44,14 @@
 			<p class="hero-desc">
 				The first complete English Catholic translation of Sacred Scripture, rendered faithfully
 				from the Latin Vulgate by English exiles at Douai and Rheims.
+			</p>
+
+			<p class="hero-note">
+				This is the original pre-Challoner text, as first published by the English College at Douai
+				and Rheims, before Bishop Challoner's 18th-century revisions.
+			</p>
+			<p class="hero-note-minor">
+				Spelling and punctuation lightly modernized; the translation itself is unaltered.
 			</p>
 
 			<button
@@ -276,56 +86,13 @@
 
 <!-- ═══════════ READER ═══════════ -->
 <div id="reader">
-	<TopBar bookSlug={currentBookSlug} chapterNum={String(currentChapterNum)} hasStudyMode={true} />
-
-	<div class="flex items-start" data-mode={$prefs.readingMode}>
-		<main bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
-			<div class="max-w-[750px] mx-auto">
-				{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
-					<section class={i > 0 ? 'pt-[49px]' : ''}>
-						<div
-							data-chapter-heading
-							data-book-slug={item.bookMeta.slug}
-							data-chapter-num={item.chapter.chapter}
-						></div>
-						<ChapterView
-							bookMeta={item.bookMeta}
-							chapter={item.chapter}
-							targetVerse={undefined}
-							totalChapters={item.totalChapters}
-							showNav={true}
-						/>
-					</section>
-				{/each}
-			</div>
-		</main>
-
-		<div
-			class="shrink-0 sticky flex [overflow:clip]"
-			style="top: var(--header-height); height: calc(100vh - var(--header-height)); max-width: {$prefs.readingMode ===
-			'study'
-				? $prefs.studyPanelWidth
-				: '0'}; opacity: {$prefs.readingMode === 'study'
-				? '1'
-				: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"
-		>
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div
-				class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
-				on:mousedown={onDividerMousedown}
-			></div>
-			<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0 h-full">
-				<StudyPanel bookData={currentBookData} />
-			</div>
-		</div>
-	</div>
-
-	<PageFooter
-		bookMeta={last.bookMeta}
-		chapterNum={last.chapter.chapter}
-		totalChapters={last.totalChapters}
+	<TopBar {bookSlug} {chapterNum} hasStudyMode={true} />
+	<BibleReader
+		initialBookMeta={data.bookMeta}
+		initialChapter={data.chapter}
+		initialTotalChapters={data.totalChapters}
+		enablePrevScroll={false}
 		routeBase="/odr"
-		showNav={!$prefs.infiniteScroll}
 	/>
 </div>
 
@@ -336,7 +103,7 @@
 		min-height: 100svh;
 		display: flex;
 		flex-direction: column;
-		overflow: hidden;
+		overflow: clip;
 		background: var(--color-background);
 	}
 
@@ -455,7 +222,26 @@
 		font-size: 1.05rem;
 		line-height: 1.75;
 		color: var(--color-muted);
+		margin: 0 0 12px;
+		max-width: 460px;
+	}
+
+	.hero-note {
+		font-family: var(--font-reader);
+		font-size: 1.05rem;
+		line-height: 1.75;
+		color: var(--color-muted);
 		margin: 0 0 36px;
+		max-width: 460px;
+	}
+
+	.hero-note-minor {
+		font-family: var(--font-reader);
+		font-size: 0.85rem;
+		font-style: italic;
+		line-height: 1.6;
+		color: var(--color-subtle);
+		margin: -24px 0 36px;
 		max-width: 460px;
 	}
 
@@ -486,6 +272,18 @@
 
 	.hero-cta-arrow {
 		font-size: 14px;
+		display: inline-block;
+		animation: bounce 1.2s ease-in-out infinite;
+	}
+
+	@keyframes bounce {
+		0%,
+		100% {
+			transform: translateY(-1px);
+		}
+		50% {
+			transform: translateY(2px);
+		}
 	}
 
 	.hero-right {

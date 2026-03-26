@@ -1,13 +1,18 @@
 <!-- src/lib/components/AnnotatedText.svelte -->
 <script lang="ts">
+	import DOMPurify from 'isomorphic-dompurify';
 	import type { InlineAnnotation } from '$lib/data/types';
 
 	export let text: string;
 	export let annotations: InlineAnnotation[] = [];
 
 	function renderText(raw: string): string {
-		return raw.replace(/\[(\w+)\]/g, (_, marker) => {
+		const html = raw.replace(/\[(\w+)\]/g, (_, marker) => {
 			return `<button class="annotated-marker" data-marker="${marker}">${marker}</button>`;
+		});
+		return DOMPurify.sanitize(html, {
+			ALLOWED_TAGS: ['button'],
+			ALLOWED_ATTR: ['class', 'data-marker']
 		});
 	}
 

@@ -6,9 +6,13 @@
 	export let anchorX: number;
 	export let anchorY: number;
 
+	let windowWidth = 1024;
+
 	// Clamp so the tooltip never bleeds off screen edges
-	$: left = Math.min(Math.max(anchorX, 170), window.innerWidth - 170);
+	$: left = Math.min(Math.max(anchorX, 170), windowWidth - 170);
 </script>
+
+<svelte:window bind:innerWidth={windowWidth} />
 
 <div
 	class="tooltip"
