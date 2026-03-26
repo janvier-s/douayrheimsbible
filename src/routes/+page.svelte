@@ -16,6 +16,19 @@
 		name="description"
 		content="Read the Douay-Rheims Bible online — the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore Challoner's annotations."
 	/>
+	<link rel="canonical" href="https://douayrheimsbible.pages.dev/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="The Douay-Rheims Bible — English Catholic Scripture" />
+	<meta
+		property="og:description"
+		content="The first complete English Catholic translation of Sacred Scripture, faithfully rendered from the Latin Vulgate. Read the original pre-Challoner text online."
+	/>
+	<meta property="og:url" content="https://douayrheimsbible.pages.dev/" />
+	<meta
+		property="og:image"
+		content="https://douayrheimsbible.pages.dev/images/dr-1582-rheims.webp"
+	/>
+	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <!-- ═══════════ HERO ═══════════ -->

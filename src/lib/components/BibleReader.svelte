@@ -214,6 +214,7 @@
 						targetVerse={item.chapter.chapter === initialChapter.chapter ? targetVerse : undefined}
 						totalChapters={item.totalChapters}
 						showNav={true}
+						headingLevel={i === 0 ? 'h1' : 'h2'}
 					/>
 				</section>
 			{/each}

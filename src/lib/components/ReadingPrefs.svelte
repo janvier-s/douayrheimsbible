@@ -143,10 +143,14 @@
 		<button
 			class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
 			style="font-family: {activeFontStack};"
+			aria-expanded={fontDropdownOpen}
+			aria-haspopup="listbox"
 			on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
 		>
 			<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span>
-			<span class="text-[10px] text-subtle font-ui">{fontDropdownOpen ? '▲' : '▼'}</span>
+			<span class="text-[10px] text-subtle font-ui" aria-hidden="true"
+				>{fontDropdownOpen ? '▲' : '▼'}</span
+			>
 		</button>
 		{#if fontDropdownOpen}
 			<div

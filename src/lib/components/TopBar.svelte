@@ -60,7 +60,8 @@
 	async function setMode(mode: 'reading' | 'study' | 'compare') {
 		if (mode === 'compare') {
 			pendingIdx = modeCount - 1; // slide pill to Compare position first
-			await new Promise<void>((r) => setTimeout(r, 210));
+			const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
+			await new Promise<void>((r) => setTimeout(r, delay));
 			goto(`/compare/${bookSlug}/${chapterNum}`);
 			return;
 		}

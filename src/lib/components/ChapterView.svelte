@@ -11,6 +11,7 @@
 	export let totalChapters: number;
 	export let showNav: boolean = true;
 	export let routeBase: string = '/odr';
+	export let headingLevel: 'h1' | 'h2' = 'h1';
 
 	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
 
@@ -161,9 +162,12 @@
 		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
 			{bookMeta.odrName}
 		</p>
-		<h1 class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm">
+		<svelte:element
+			this={headingLevel}
+			class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
+		>
 			Chapter {chapter.chapter}
-		</h1>
+		</svelte:element>
 		<div class="w-10 h-px bg-accent opacity-70"></div>
 	</header>
 

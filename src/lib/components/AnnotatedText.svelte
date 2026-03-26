@@ -37,24 +37,27 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
-<div class="relative" on:click={handleTextClick} role="presentation">
+<div class="relative" on:click={handleTextClick}>
 	<div class="prose-text font-reader text-[13px] leading-relaxed text-foreground">
 		{@html sanitizedHtml}
 	</div>
 
-	{#if openMarker && activeAnnotation}
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div class="popover" role="tooltip">
+	<div class="popover" role="status" aria-live="polite" aria-atomic="true">
+		{#if openMarker && activeAnnotation}
 			<span class="popover-marker">{openMarker}</span>
 			<span class="popover-text">{activeAnnotation.text}</span>
-		</div>
-	{/if}
+		{/if}
+	</div>
 </div>
 
 {#if footnoteCount > 0}
 	<div class="notes-section">
-		<button class="notes-toggle" on:click={() => (footnotesExpanded = !footnotesExpanded)}>
-			<span class="notes-toggle-icon">{footnotesExpanded ? '▲' : '▼'}</span>
+		<button
+			class="notes-toggle"
+			aria-expanded={footnotesExpanded}
+			on:click={() => (footnotesExpanded = !footnotesExpanded)}
+		>
+			<span class="notes-toggle-icon" aria-hidden="true">{footnotesExpanded ? '▲' : '▼'}</span>
 			{footnoteCount} note{footnoteCount > 1 ? 's' : ''}
 		</button>
 

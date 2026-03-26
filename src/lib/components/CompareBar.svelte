@@ -61,7 +61,8 @@
 	}) {
 		if (item.active || !item.href) return;
 		pendingIdx = item.idx;
-		await new Promise<void>((r) => setTimeout(r, 210));
+		const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
+		await new Promise<void>((r) => setTimeout(r, delay));
 		prefs.update((p) => ({ ...p, readingMode: item.study ? 'study' : 'reading' }));
 		goto(item.href);
 	}
@@ -208,7 +209,7 @@
 				}}
 			>
 				Translations
-				<span class="text-[10px] opacity-70">{mobileTransOpen ? '▲' : '▼'}</span>
+				<span class="text-[10px] opacity-70" aria-hidden="true">{mobileTransOpen ? '▲' : '▼'}</span>
 			</button>
 			{#if mobileTransOpen}
 				<div
@@ -249,7 +250,9 @@
 				}}
 			>
 				<span class="text-[16px] font-medium">{navLabel}</span>
-				<span class="text-[11px] opacity-70 leading-none">{navOpen ? '▲' : '▼'}</span>
+				<span class="text-[11px] opacity-70 leading-none" aria-hidden="true"
+					>{navOpen ? '▲' : '▼'}</span
+				>
 			</button>
 		</div>
 
