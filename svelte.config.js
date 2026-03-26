@@ -15,7 +15,7 @@ const config = {
 		}),
 		prerender: {
 			handleHttpError: 'warn',
-			handleMissingId: 'fail'
+			handleMissingId: 'warn'
 		}
 	}
 };

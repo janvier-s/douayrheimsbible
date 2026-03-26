@@ -20,7 +20,7 @@
 	/>
 </svelte:head>
 
-<main class="max-w-[750px] mx-auto px-md pt-[40px] pb-xl font-ui">
+<main id="main-content" class="max-w-[750px] mx-auto px-md pt-[40px] pb-xl font-ui">
 	<header class="mb-[40px]">
 		<p class="text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">Douay-Rheims Bible</p>
 		<h1 class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm">

@@ -231,10 +231,18 @@
 			? '1'
 			: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"
 	>
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 		<div
-			class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
+			role="separator"
+			aria-orientation="vertical"
+			aria-label="Resize study panel"
+			tabindex="0"
+			class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 focus:bg-accent/30 transition-colors duration-fast self-stretch outline-none"
 			on:mousedown={resize.onDividerMousedown}
+			on:touchstart={resize.onTouchStart}
+			on:touchmove={resize.onTouchMove}
+			on:touchend={resize.onTouchEnd}
+			on:keydown={resize.onKeydown}
 		></div>
 		<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0 h-full">
 			<StudyPanel bookData={currentBookData} />
