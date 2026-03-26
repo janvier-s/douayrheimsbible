@@ -76,7 +76,7 @@
 				class="mode-pill"
 				style="width: {100 / toggleCount}%; transform: translateX({activeToggleIdx * 100}%);"
 			></div>
-			{#each toggleItems as item, i (item.label)}
+			{#each toggleItems as item (item.label)}
 				{#if item.href}
 					<a
 						href={item.href}
