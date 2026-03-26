@@ -162,6 +162,8 @@
 		}
 	}
 
+	$: last = chapters[chapters.length - 1];
+
 	let scrollReady = false;
 
 	function onScroll() {
@@ -232,7 +234,6 @@
 				</section>
 			{/each}
 
-			{@const last = chapters[chapters.length - 1]}
 			<PageFooter
 				bookMeta={last.bookMeta}
 				chapterNum={last.chapter.chapter}

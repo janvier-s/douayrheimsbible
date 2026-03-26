@@ -56,6 +56,7 @@
 		label: string;
 		href: string | null;
 		study: boolean;
+		active: boolean;
 		idx: number;
 	}) {
 		if (item.active || !item.href) return;
