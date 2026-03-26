@@ -11,6 +11,10 @@
 	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
 	$: nextChapter = chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null;
 
+	// Responsive column cap: 2 on mobile, MAX_COLS on desktop
+	let innerWidth = 0;
+	$: effectiveMax = innerWidth > 0 && innerWidth < 768 ? 2 : MAX_COLS;
+
 	// Derived view state from store
 	$: orderedTranslations = $compareStore.order.map(
 		(id: TranslationId) => TRANSLATIONS.find((t: Translation) => t.id === id)!
@@ -18,11 +22,11 @@
 	$: activeCols = orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id));
 	$: displayedCols = activeCols.slice(
 		$compareStore.columnOffset,
-		$compareStore.columnOffset + MAX_COLS
+		$compareStore.columnOffset + effectiveMax
 	);
-	$: needsScroll = activeCols.length > MAX_COLS;
+	$: needsScroll = activeCols.length > effectiveMax;
 	$: canScrollLeft = $compareStore.columnOffset > 0;
-	$: canScrollRight = $compareStore.columnOffset + MAX_COLS < activeCols.length;
+	$: canScrollRight = $compareStore.columnOffset + effectiveMax < activeCols.length;
 
 	// Max-width scales with column count (405px per col → 2 cols = 810px)
 	$: containerMaxWidth = `${Math.min(displayedCols.length * 405, 1800)}px`;
@@ -50,6 +54,8 @@
 		draggingId = null;
 	}
 </script>
+
+<svelte:window bind:innerWidth />
 
 <svelte:head>
 	<title>{bookMeta.odrName} {chapter.chapter} — Compare Translations</title>
@@ -188,7 +194,7 @@
 		{#each chapter.verses as v (v.verse)}
 			{#each displayedCols as t, colIdx (t.id)}
 				<div
-					class="px-[20px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[8px]
+					class="px-[5px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[8px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 					class:text-justify={$prefs.justifiedText}
 				>

@@ -20,9 +20,19 @@
 	$: readingHref = `${_base}/${_slug}/${_ch}`;
 	$: studyHref = $readingPosition ? `${_base}/${_slug}/${_ch}` : null;
 
+	// Build toggle items: Reading, [Study], Compare (always active/last)
+	$: toggleItems = [
+		{ label: 'Reading', href: readingHref, study: false, active: false },
+		...(studyHref ? [{ label: 'Study', href: studyHref, study: true, active: false }] : []),
+		{ label: 'Compare', href: null, study: false, active: true }
+	];
+	$: toggleCount = toggleItems.length;
+	$: activeToggleIdx = toggleCount - 1; // Compare is always last
+
 	let navOpen = false;
 	let prefsOpen = false;
 	let mobileTransOpen = false;
+	let searchOpen = false;
 
 	$: isOT = bookMeta.testament === 'OT';
 	$: navLabel = `${bookMeta.odrName} ${chapterNum}`;
@@ -31,16 +41,23 @@
 		navOpen = false;
 		prefsOpen = false;
 		mobileTransOpen = false;
+		searchOpen = false;
 	}
 </script>
 
 <header class="sticky top-0 z-50 font-ui">
 	<!-- Row 1: branding + search -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px]"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
 		style="height: 50px;"
 	>
-		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
+		<!-- Logo: absolute-centered on mobile, in-flow on desktop -->
+		<a
+			href="/"
+			class="flex items-center gap-[6px] group shrink-0
+				   max-md:absolute max-md:left-1/2 max-md:-translate-x-1/2 max-md:pointer-events-auto"
+			on:click={closeAll}
+		>
 			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 			<span
 				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
@@ -48,34 +65,79 @@
 				Douay-Rheims
 			</span>
 		</a>
-		<div class="flex-1"></div>
-		<!-- Mode toggle -->
+
+		<!-- Spacer (desktop only) -->
+		<div class="hidden md:flex flex-1"></div>
+
+		<!-- Mode toggle with sliding pill -->
 		<div
-			class="flex items-center text-[11px] font-medium rounded-[3px] border border-border overflow-hidden shrink-0"
+			class="mode-toggle relative flex items-center text-[11px] font-medium rounded-[3px] border border-border overflow-hidden shrink-0"
 		>
-			<a
-				href={readingHref}
-				class="px-[9px] py-[5px] text-subtle hover:text-foreground border-r border-border transition-colors duration-fast"
-			>
-				Reading
-			</a>
-			{#if studyHref}
-				<button
-					class="px-[9px] py-[5px] text-subtle hover:text-foreground border-r border-border transition-colors duration-fast"
-					on:click={() => {
-						prefs.update((p) => ({ ...p, readingMode: 'study' }));
-						goto(studyHref);
-					}}
-				>
-					Study
-				</button>
-			{/if}
-			<span class="px-[9px] py-[5px] bg-interactive text-white">Compare</span>
+			<div
+				class="mode-pill"
+				style="width: {100 / toggleCount}%; transform: translateX({activeToggleIdx * 100}%);"
+			></div>
+			{#each toggleItems as item, i}
+				{#if item.href}
+					<!-- svelte-ignore a11y-missing-attribute -->
+					<a
+						href={item.href}
+						class="mode-btn flex-1 relative z-10 px-[9px] py-[5px] transition-colors duration-fast whitespace-nowrap
+							{i < toggleCount - 1 ? 'border-r border-border' : ''}
+							text-subtle hover:text-foreground"
+						on:click={() => {
+							if (item.study) prefs.update((p) => ({ ...p, readingMode: 'study' }));
+						}}
+					>
+						{item.label}
+					</a>
+				{:else}
+					<span
+						class="mode-btn flex-1 relative z-10 px-[9px] py-[5px] text-white whitespace-nowrap"
+					>
+						{item.label}
+					</span>
+				{/if}
+			{/each}
 		</div>
-		<div class="w-[380px]">
+
+		<!-- Search bar: hidden on mobile -->
+		<div class="hidden md:block w-[380px]">
 			<SearchBar />
 		</div>
+
+		<!-- Search icon: mobile only -->
+		<button
+			class="md:hidden ml-auto shrink-0 flex items-center justify-center w-[32px] h-[32px] rounded-[3px] transition-colors duration-fast
+				{searchOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+			aria-label="Search"
+			on:click={() => {
+				searchOpen = !searchOpen;
+			}}
+		>
+			<svg
+				width="15"
+				height="15"
+				viewBox="0 0 15 15"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.5"
+			>
+				<circle cx="6.5" cy="6.5" r="4.5" />
+				<line x1="10" y1="10" x2="14" y2="14" />
+			</svg>
+		</button>
 	</div>
+
+	<!-- Mobile search bar (slide down) -->
+	{#if searchOpen}
+		<div
+			transition:slide={{ duration: 180 }}
+			class="bg-glass backdrop-blur-sm border-b border-border px-lg py-[8px] md:hidden"
+		>
+			<SearchBar />
+		</div>
+	{/if}
 
 	<!-- Row 2: compare controls -->
 	<div
@@ -179,10 +241,10 @@
 		</div>
 
 		<!-- Right: summary + text options -->
-		<div class="shrink-0 flex items-center gap-[20px]">
+		<div class="shrink-0 flex items-center gap-[10px] md:gap-[20px]">
 			<button
 				on:click={() => compareStore.toggleSummary()}
-				class="text-[12px] font-medium text-muted hover:text-foreground transition-colors duration-fast"
+				class="hidden sm:block text-[12px] font-medium text-muted hover:text-foreground transition-colors duration-fast"
 			>
 				Summary: <span class={$compareStore.showSummary ? 'text-accent' : ''}
 					>{$compareStore.showSummary ? 'on' : 'off'}</span
@@ -198,7 +260,8 @@
 					mobileTransOpen = false;
 				}}
 			>
-				Text options
+				<span class="hidden sm:inline">Text options</span>
+				<span class="sm:hidden">Aa</span>
 			</button>
 		</div>
 	</div>
@@ -230,3 +293,18 @@
 		on:keydown={() => {}}
 	></div>
 {/if}
+
+<style>
+	.mode-pill {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background: var(--color-interactive);
+		transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+		pointer-events: none;
+	}
+	.mode-btn {
+		min-width: 0;
+	}
+</style>

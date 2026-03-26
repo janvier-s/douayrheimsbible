@@ -235,7 +235,7 @@
 
 	<!-- Animated panel container -->
 	<div
-		class="flex shrink-0 overflow-hidden"
+		class="flex shrink-0 [overflow:clip]"
 		style="max-width: {$prefs.readingMode === 'study'
 			? $prefs.studyPanelWidth
 			: '0'}; opacity: {$prefs.readingMode === 'study'

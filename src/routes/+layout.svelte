@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import '../app.css';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import { page } from '$app/stores';
@@ -70,6 +71,8 @@
 		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />
 	{/if}
 	{#key $page.url.pathname}
-		<slot />
+		<div transition:fade={{ duration: 180 }}>
+			<slot />
+		</div>
 	{/key}
 </div>

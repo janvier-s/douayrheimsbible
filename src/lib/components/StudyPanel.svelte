@@ -41,8 +41,7 @@
 >
 	<!-- Panel identity bar -->
 	<div class="panel-header shrink-0 flex flex-col">
-		<div class="flex items-center justify-center px-[14px] pt-[11px] pb-[10px] gap-[8px]">
-			<span class="spine-mark" aria-hidden="true"></span>
+		<div class="flex items-center justify-center px-[14px] pt-[11px] pb-[10px]">
 			<span class="panel-title">Study Notes</span>
 		</div>
 
@@ -121,15 +120,6 @@
 
 <style>
 	/* ─── Identity bar ──────────────────────────────── */
-	.spine-mark {
-		display: block;
-		width: 3px;
-		height: 13px;
-		border-radius: 2px;
-		background: var(--color-accent);
-		flex-shrink: 0;
-	}
-
 	.panel-title {
 		font-size: 10px;
 		text-transform: uppercase;

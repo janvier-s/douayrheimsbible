@@ -14,6 +14,7 @@
 	let navOpen = false;
 	let prefsOpen = false;
 	let translationOpen = false;
+	let searchOpen = false;
 
 	$: bookMeta = getBookBySlug(bookSlug);
 	$: navLabel = bookMeta ? `${bookMeta.odrName} ${chapterNum}` : 'Go to…';
@@ -22,6 +23,7 @@
 		navOpen = false;
 		prefsOpen = false;
 		translationOpen = false;
+		searchOpen = false;
 	}
 
 	function setMode(mode: 'reading' | 'study' | 'compare') {
@@ -33,15 +35,28 @@
 	}
 
 	$: activeMode = $prefs.readingMode;
+	$: modes = [
+		['reading', 'Reading'],
+		...(hasStudyMode ? [['study', 'Study']] : []),
+		['compare', 'Compare']
+	] as [string, string][];
+	$: modeCount = modes.length;
+	$: activeModeIdx = modes.findIndex(([m]) => m === activeMode);
 </script>
 
 <header class="sticky top-0 z-50 font-ui">
 	<!-- Row 1: branding + search -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px]"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
 		style="height: 50px;"
 	>
-		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
+		<!-- Logo: absolute-centered on mobile, in-flow on desktop -->
+		<a
+			href="/"
+			class="flex items-center gap-[6px] group shrink-0
+				   max-md:absolute max-md:left-1/2 max-md:-translate-x-1/2 max-md:pointer-events-auto"
+			on:click={closeAll}
+		>
 			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 			<span
 				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
@@ -49,26 +64,73 @@
 				Douay-Rheims
 			</span>
 		</a>
-		<div class="flex-1"></div>
+
+		<!-- Spacer (desktop only) -->
+		<div class="hidden md:flex flex-1"></div>
+
 		<!-- Mode toggle -->
 		<div
-			class="flex items-center text-[11px] font-medium rounded-[3px] border border-border overflow-hidden shrink-0"
+			class="mode-toggle relative flex items-center text-[11px] font-medium rounded-[3px] border border-border overflow-hidden shrink-0"
 		>
-			{#each [['reading', 'Reading'], ...(hasStudyMode ? [['study', 'Study']] : []), ['compare', 'Compare']] as [mode, label]}
+			<!-- Sliding pill -->
+			{#if activeModeIdx >= 0}
+				<div
+					class="mode-pill"
+					style="width: {100 / modeCount}%; transform: translateX({activeModeIdx * 100}%);"
+				></div>
+			{/if}
+			{#each modes as [mode, label], i}
 				<button
-					class="px-[9px] py-[5px] transition-colors duration-fast
-						{activeMode === mode ? 'bg-interactive text-white' : 'text-subtle hover:text-foreground'}
-						{mode !== 'compare' ? 'border-r border-border' : ''}"
+					class="mode-btn flex-1 relative z-10 px-[9px] py-[5px] transition-colors duration-fast whitespace-nowrap
+						{i < modeCount - 1 ? 'border-r border-border' : ''}
+						{activeModeIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
 					on:click={() => setMode(mode as 'reading' | 'study' | 'compare')}
 				>
 					{label}
 				</button>
 			{/each}
 		</div>
-		<div class="w-[380px]">
+
+		<!-- Search bar: hidden on mobile -->
+		<div class="hidden md:block w-[380px]">
 			<SearchBar />
 		</div>
+
+		<!-- Search icon: mobile only -->
+		<button
+			class="md:hidden ml-auto shrink-0 flex items-center justify-center w-[32px] h-[32px] rounded-[3px] transition-colors duration-fast
+				{searchOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+			aria-label="Search"
+			on:click={() => {
+				searchOpen = !searchOpen;
+				navOpen = false;
+				prefsOpen = false;
+				translationOpen = false;
+			}}
+		>
+			<svg
+				width="15"
+				height="15"
+				viewBox="0 0 15 15"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.5"
+			>
+				<circle cx="6.5" cy="6.5" r="4.5" />
+				<line x1="10" y1="10" x2="14" y2="14" />
+			</svg>
+		</button>
 	</div>
+
+	<!-- Mobile search bar (slide down) -->
+	{#if searchOpen}
+		<div
+			transition:slide={{ duration: 180 }}
+			class="bg-glass backdrop-blur-sm border-b border-border px-lg py-[8px] md:hidden"
+		>
+			<SearchBar />
+		</div>
+	{/if}
 
 	<!-- Row 2: reading controls -->
 	<div
@@ -143,7 +205,8 @@
 				navOpen = false;
 			}}
 		>
-			Text options
+			<span class="hidden sm:inline">Text options</span>
+			<span class="sm:hidden">Aa</span>
 		</button>
 	</div>
 </header>
@@ -174,3 +237,18 @@
 		on:keydown={() => {}}
 	></div>
 {/if}
+
+<style>
+	.mode-pill {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background: var(--color-interactive);
+		transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+		pointer-events: none;
+	}
+	.mode-btn {
+		min-width: 0;
+	}
+</style>

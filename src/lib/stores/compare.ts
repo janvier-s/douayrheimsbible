@@ -35,7 +35,7 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: true,
-		micro: 'Primary Translation'
+		micro: 'First English Vulgate Translation'
 	},
 	{
 		id: 'kjv',
@@ -55,7 +55,7 @@ export const TRANSLATIONS: Translation[] = [
 		live: false,
 		ntOnly: false,
 		fullHeader: true,
-		micro: 'Revision'
+		micro: 'Standard Revised Edition'
 	},
 	{
 		id: 'conf',
@@ -64,7 +64,8 @@ export const TRANSLATIONS: Translation[] = [
 		year: '1941',
 		live: false,
 		ntOnly: true,
-		fullHeader: false
+		fullHeader: false,
+		micro: 'Modest Revision of Douay NT'
 	},
 	{
 		id: 'knox',
@@ -73,7 +74,8 @@ export const TRANSLATIONS: Translation[] = [
 		year: '1955',
 		live: false,
 		ntOnly: false,
-		fullHeader: false
+		fullHeader: false,
+		micro: 'Literary Vulgate Translation'
 	},
 	{
 		id: 'cpdv',
@@ -82,7 +84,8 @@ export const TRANSLATIONS: Translation[] = [
 		year: '2009',
 		live: false,
 		ntOnly: false,
-		fullHeader: true
+		fullHeader: true,
+		micro: 'Modern Vulgate Translation'
 	}
 ];
 
