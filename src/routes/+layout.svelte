@@ -65,6 +65,7 @@
 	});
 </script>
 
+<a href="#main-content" class="skip-link">Skip to reading</a>
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
 	{#if $page.data.showLayoutTopBar !== false}
 		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />

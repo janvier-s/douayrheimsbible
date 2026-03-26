@@ -242,7 +242,9 @@
 		class="fixed inset-0 z-40"
 		role="presentation"
 		on:click={closeAll}
-		on:keydown={() => {}}
+		on:keydown={(e) => {
+			if (e.key === 'Escape') closeAll();
+		}}
 	></div>
 {/if}
 

@@ -97,11 +97,11 @@
 
 	function linkifySummary(text: string): string {
 		const html = text.replace(/℣\.(\d+)/g, (_, n) => {
-			return `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref">℣.${n}</a>`;
+			return `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}">℣.${n}</a>`;
 		});
 		return DOMPurify.sanitize(html, {
 			ALLOWED_TAGS: ['a'],
-			ALLOWED_ATTR: ['href', 'data-verse', 'class']
+			ALLOWED_ATTR: ['href', 'data-verse', 'class', 'aria-label']
 		});
 	}
 
@@ -178,6 +178,8 @@
 			on:click={handleSummaryClick}
 			on:mouseover={handleSummaryMouseover}
 			on:mouseout={handleSummaryMouseout}
+			on:focusin={handleSummaryMouseover}
+			on:focusout={() => scheduleClose()}
 		>
 			{@html linkifySummary(chapter.summary)}
 		</p>

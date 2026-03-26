@@ -199,7 +199,7 @@
 <svelte:window on:mousemove={resize.onMousemove} on:mouseup={resize.onMouseup} />
 
 <div class="flex items-start" data-mode={$prefs.readingMode}>
-	<main bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
+	<main id="main-content" bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
 		<div class="max-w-[750px] mx-auto">
 			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
 				<section class={i > 0 ? 'pt-[49px]' : ''}>
