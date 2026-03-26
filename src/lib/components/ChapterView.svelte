@@ -159,18 +159,9 @@
 
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
 	<header class="mb-[35px]">
-		<nav
-			aria-label="Breadcrumb"
-			class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm"
-		>
-			<a
-				href="/books/{bookMeta.testament === 'OT' ? 'old-testament' : 'new-testament'}"
-				class="hover:text-accent transition-colors duration-fast"
-				>{bookMeta.testament === 'OT' ? 'OT' : 'NT'}</a
-			>
-			<span aria-hidden="true" class="mx-[6px] opacity-50">›</span>
-			<span>{bookMeta.odrName}</span>
-		</nav>
+		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
+			{bookMeta.odrName}
+		</p>
 		<svelte:element
 			this={headingLevel}
 			class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"

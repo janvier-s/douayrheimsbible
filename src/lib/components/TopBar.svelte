@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { tick } from 'svelte';
 	import { getBookBySlug } from '$lib/data/books';
 	import { slide } from 'svelte/transition';
 	import { goto } from '$app/navigation';
@@ -7,6 +6,7 @@
 	import FloatingNav from './FloatingNav.svelte';
 	import SpotlightSearch from './SpotlightSearch.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
+	import ModeToggle from './ModeToggle.svelte';
 
 	export let bookSlug: string;
 	export let chapterNum: string;
@@ -27,46 +27,26 @@
 	}
 
 	// ── Mode toggle ─────────────────────────────────────────────────────────────
-	$: activeMode = $prefs.readingMode;
-	$: modes = [
-		['reading', 'Read'],
-		...(hasStudyMode ? [['study', 'Study']] : []),
-		['compare', 'Compare']
-	] as [string, string][];
-	$: modeCount = modes.length;
-	$: activeModeIdx = modes.findIndex(([m]) => m === activeMode);
+	$: modeItems = [
+		{ key: 'reading', label: 'Read' },
+		...(hasStudyMode ? [{ key: 'study', label: 'Study' }] : []),
+		{ key: 'compare', label: 'Compare' }
+	];
+	$: activeModeIdx = modeItems.findIndex((m) => m.key === $prefs.readingMode);
 
-	// pendingIdx lets the pill animate toward Compare before navigation fires
 	let pendingIdx = -1;
-	$: displayIdx = pendingIdx >= 0 ? pendingIdx : activeModeIdx;
 
-	// Pill measurement
-	let toggleEl: HTMLElement;
-	let pillLeft = 0;
-	let pillWidth = 0;
-
-	async function measurePill(idx: number) {
-		await tick();
-		if (!toggleEl) return;
-		const btns = toggleEl.querySelectorAll<HTMLElement>('.mode-btn');
-		const btn = btns[idx >= 0 ? idx : 0];
-		if (!btn) return;
-		pillLeft = btn.offsetLeft;
-		pillWidth = btn.offsetWidth;
-	}
-
-	$: if (toggleEl) measurePill(displayIdx);
-
-	async function setMode(mode: 'reading' | 'study' | 'compare') {
-		if (mode === 'compare') {
-			pendingIdx = modeCount - 1; // slide pill to Compare position first
+	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
+		const { key, index } = e.detail;
+		if (key === 'compare') {
+			pendingIdx = index;
 			const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
 			await new Promise<void>((r) => setTimeout(r, delay));
 			goto(`/compare/${bookSlug}/${chapterNum}`);
 			return;
 		}
 		pendingIdx = -1;
-		prefs.update((p) => ({ ...p, readingMode: mode }));
+		prefs.update((p) => ({ ...p, readingMode: key as 'reading' | 'study' }));
 	}
 </script>
 
@@ -96,28 +76,12 @@
 		<!-- Spacer (desktop only) -->
 		<div class="hidden md:flex flex-1"></div>
 
-		<!-- Mode toggle — pill measured from actual button bounds -->
-		<div
-			bind:this={toggleEl}
-			class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0"
-		>
-			{#if pillWidth > 0}
-				<div
-					class="mode-pill"
-					style="transform: translateX({pillLeft}px); width: {pillWidth}px;"
-				></div>
-			{/if}
-			{#each modes as [mode, label], i (mode)}
-				<button
-					class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
-						{displayIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
-					aria-pressed={displayIdx === i}
-					on:click={() => setMode(mode as 'reading' | 'study' | 'compare')}
-				>
-					{label}
-				</button>
-			{/each}
-		</div>
+		<ModeToggle
+			items={modeItems}
+			activeIndex={activeModeIdx}
+			pendingIndex={pendingIdx}
+			on:select={handleModeSelect}
+		/>
 
 		<!-- Search icon -->
 		<button
@@ -263,26 +227,3 @@
 		}}
 	></div>
 {/if}
-
-<style>
-	.mode-toggle {
-		border: 1px solid var(--color-border);
-		border-radius: 4px;
-		overflow: hidden;
-		background: color-mix(in srgb, var(--color-border) 35%, transparent);
-	}
-	.mode-pill {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		background: var(--color-interactive);
-		transition:
-			transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1),
-			width 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
-		pointer-events: none;
-	}
-	.mode-btn {
-		font-size: 11px;
-	}
-</style>

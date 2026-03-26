@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { tick } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
@@ -7,6 +6,7 @@
 	import FloatingNav from './FloatingNav.svelte';
 	import SpotlightSearch from './SpotlightSearch.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
+	import ModeToggle from './ModeToggle.svelte';
 	import { compareStore, TRANSLATIONS } from '$lib/stores/compare';
 	import type { BookMeta } from '$lib/data/types';
 
@@ -21,50 +21,25 @@
 	$: readingHref = `${_base}/${_slug}/${_ch}`;
 	$: studyHref = $readingPosition ? `${_base}/${_slug}/${_ch}` : null;
 
-	// Build toggle items: Reading, [Study], Compare (always active/last)
-	$: _rawItems = [
-		{ label: 'Read', href: readingHref, study: false, active: false },
-		...(studyHref ? [{ label: 'Study', href: studyHref, study: true, active: false }] : []),
-		{ label: 'Compare', href: null, study: false, active: true }
+	// Build toggle items
+	$: modeItems = [
+		{ key: 'reading', label: 'Read' },
+		...(studyHref ? [{ key: 'study', label: 'Study' }] : []),
+		{ key: 'compare', label: 'Compare' }
 	];
-	$: toggleItems = _rawItems.map((item, idx) => ({ ...item, idx }));
-	$: toggleCount = toggleItems.length;
-	$: activeToggleIdx = toggleCount - 1; // Compare is always last
+	$: activeModeIdx = modeItems.length - 1; // Compare is always active here
 
-	// pendingIdx lets the pill animate before navigation fires
 	let pendingIdx = -1;
-	$: displayIdx = pendingIdx >= 0 ? pendingIdx : activeToggleIdx;
 
-	// Pill measurement
-	let toggleEl: HTMLElement;
-	let pillLeft = 0;
-	let pillWidth = 0;
-
-	async function measurePill(idx: number) {
-		await tick();
-		if (!toggleEl) return;
-		const btns = toggleEl.querySelectorAll<HTMLElement>('.mode-btn');
-		const btn = btns[idx >= 0 ? idx : 0];
-		if (!btn) return;
-		pillLeft = btn.offsetLeft;
-		pillWidth = btn.offsetWidth;
-	}
-
-	$: if (toggleEl) measurePill(displayIdx);
-
-	async function handleToggleClick(item: {
-		label: string;
-		href: string | null;
-		study: boolean;
-		active: boolean;
-		idx: number;
-	}) {
-		if (item.active || !item.href) return;
-		pendingIdx = item.idx;
+	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
+		const { key, index } = e.detail;
+		const href = key === 'reading' ? readingHref : key === 'study' ? studyHref : null;
+		if (!href) return;
+		pendingIdx = index;
 		const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
 		await new Promise<void>((r) => setTimeout(r, delay));
-		prefs.update((p) => ({ ...p, readingMode: item.study ? 'study' : 'reading' }));
-		goto(item.href);
+		prefs.update((p) => ({ ...p, readingMode: key === 'study' ? 'study' : 'reading' }));
+		goto(href);
 	}
 
 	let navOpen = false;
@@ -109,27 +84,12 @@
 		<!-- Spacer (desktop only) -->
 		<div class="hidden md:flex flex-1"></div>
 
-		<!-- Mode toggle — pill measured from actual button bounds -->
-		<div
-			bind:this={toggleEl}
-			class="mode-toggle relative flex items-center text-[11px] font-medium shrink-0"
-		>
-			{#if pillWidth > 0}
-				<div
-					class="mode-pill"
-					style="transform: translateX({pillLeft}px); width: {pillWidth}px;"
-				></div>
-			{/if}
-			{#each toggleItems as item (item.label)}
-				<button
-					class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
-						{displayIdx === item.idx ? 'text-white' : 'text-subtle hover:text-foreground'}"
-					on:click={() => handleToggleClick(item)}
-				>
-					{item.label}
-				</button>
-			{/each}
-		</div>
+		<ModeToggle
+			items={modeItems}
+			activeIndex={activeModeIdx}
+			pendingIndex={pendingIdx}
+			on:select={handleModeSelect}
+		/>
 
 		<!-- Search icon (always visible) -->
 		<button
@@ -313,26 +273,3 @@
 		}}
 	></div>
 {/if}
-
-<style>
-	.mode-toggle {
-		border: 1px solid var(--color-border);
-		border-radius: 4px;
-		overflow: hidden;
-		background: color-mix(in srgb, var(--color-border) 35%, transparent);
-	}
-	.mode-pill {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		background: var(--color-interactive);
-		transition:
-			transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1),
-			width 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
-		pointer-events: none;
-	}
-	.mode-btn {
-		font-size: 11px;
-	}
-</style>
