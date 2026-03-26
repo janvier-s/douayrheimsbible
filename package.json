@@ -43,7 +43,6 @@
 	"dependencies": {
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"bible-passage-reference-parser": "^3.2.0",
-		"isomorphic-dompurify": "^3.7.1",
 		"text-vide": "^1.8.4"
 	}
 }

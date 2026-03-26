@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import DOMPurify from 'isomorphic-dompurify';
 	import { prefs } from '$lib/stores/prefs';
 	import type { Verse } from '$lib/data/types';
 	import InlineAnnotationBlock from './InlineAnnotationBlock.svelte';
@@ -47,8 +46,8 @@
 	}
 
 	function renderVerse(text: string, bionic: boolean): string {
-		const html = applySmallCaps(bionic ? applyBionic(text) : text);
-		return DOMPurify.sanitize(html, { ALLOWED_TAGS: ['span', 'b'], ALLOWED_ATTR: ['class'] });
+		// HTML is constructed by our own applySmallCaps/applyBionic from trusted build-time JSON
+		return applySmallCaps(bionic ? applyBionic(text) : text);
 	}
 
 	// afterNavigate fires after SvelteKit finishes its own scroll restoration,
