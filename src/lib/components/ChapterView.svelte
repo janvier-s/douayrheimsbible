@@ -73,7 +73,7 @@
 		tooltipCloseTimer = setTimeout(() => (tooltipVerse = null), 120);
 	}
 
-	function handleSummaryMouseover(e: MouseEvent) {
+	function handleSummaryMouseover(e: MouseEvent | FocusEvent) {
 		const el = (e.target as HTMLElement).closest('.summary-verse-ref') as HTMLElement | null;
 		if (!el) return;
 		cancelClose();
@@ -172,7 +172,7 @@
 	</header>
 
 	{#if chapter.summary && chapter.summary !== '---'}
-		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions a11y_mouse_events_have_key_events -->
 		<p
 			class="text-subtle font-reader italic mb-lg text-base leading-[var(--line-height-reader)]"
 			on:click={handleSummaryClick}
@@ -193,6 +193,8 @@
 			anchorY={tooltipY}
 			on:mouseover={handleTooltipMouseover}
 			on:mouseout={handleTooltipMouseout}
+			on:focusin={handleTooltipMouseover}
+			on:focusout={handleTooltipMouseout}
 		/>
 	{/if}
 

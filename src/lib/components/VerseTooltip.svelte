@@ -16,6 +16,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
+<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 <div
 	class="tooltip"
 	style="left: {left}px; top: {anchorY}px;"
@@ -23,6 +24,8 @@
 	role="tooltip"
 	on:mouseover
 	on:mouseout
+	on:focusin
+	on:focusout
 >
 	<!-- Top rule -->
 	<div class="rule"></div>
