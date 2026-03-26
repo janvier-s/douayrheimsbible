@@ -69,6 +69,9 @@
 					src="/images/dr-1582-rheims.webp"
 					alt="Title page and opening of Matthew — Rheims New Testament, 1582"
 					class="hero-img"
+					width="1400"
+					height="1087"
+					fetchpriority="high"
 					loading="eager"
 				/>
 				<figcaption class="hero-caption">

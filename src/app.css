@@ -1,12 +1,5 @@
 @font-face {
 	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Thin.woff2') format('woff2');
-	font-weight: 100;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Gotham';
 	src: url('/fonts/Gotham-Light.woff2') format('woff2');
 	font-weight: 300;
 	font-style: normal;
@@ -51,27 +44,6 @@
 	font-family: 'Sentinel';
 	src: url('/fonts/Sentinel-Book-Italic.woff2') format('woff2');
 	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Sentinel';
-	src: url('/fonts/Sentinel-Medium.woff2') format('woff2');
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Sentinel';
-	src: url('/fonts/Sentinel-Bold.woff2') format('woff2');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Sentinel';
-	src: url('/fonts/Sentinel-Bold-Italic.woff2') format('woff2');
-	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
 }

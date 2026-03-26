@@ -208,7 +208,7 @@
 					>
 						{#if $prefs.showVerseNumbers}
 							<span
-								class="text-subtle font-ui text-[10px] font-thin select-none shrink-0 tabular-nums pt-[0.25em] text-right w-5"
+								class="text-subtle font-ui text-[10px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-5"
 								class:invisible={!t.live}
 								aria-hidden={!t.live}>{v.verse}</span
 							>

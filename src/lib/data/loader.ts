@@ -1,10 +1,19 @@
 import type { BookData, Chapter } from './types';
 
-/** Fetches the full book JSON (cached by browser + CDN after first load) */
-export async function loadBook(slug: string, fetch: typeof globalThis.fetch): Promise<BookData> {
-	const res = await fetch(`/data/odr/${slug}.json`);
-	if (!res.ok) throw new Error(`Book not found: ${slug}`);
-	return res.json() as Promise<BookData>;
+const bookCache = new Map<string, Promise<BookData>>();
+
+/** Fetches the full book JSON with in-memory deduplication (also cached by browser + CDN) */
+export function loadBook(slug: string, fetch: typeof globalThis.fetch): Promise<BookData> {
+	if (!bookCache.has(slug)) {
+		bookCache.set(
+			slug,
+			fetch(`/data/odr/${slug}.json`).then((res) => {
+				if (!res.ok) throw new Error(`Book not found: ${slug}`);
+				return res.json() as Promise<BookData>;
+			})
+		);
+	}
+	return bookCache.get(slug)!;
 }
 
 /** Extracts a single chapter from a loaded book */
