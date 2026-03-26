@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import '../app.css';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import { page } from '$app/stores';
@@ -70,9 +69,5 @@
 	{#if !$page.url.pathname.startsWith('/compare')}
 		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />
 	{/if}
-	{#key $page.url.pathname}
-		<div in:fade={{ duration: 140 }}>
-			<slot />
-		</div>
-	{/key}
+	<slot />
 </div>

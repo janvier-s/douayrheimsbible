@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy, tick } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import { browser } from '$app/environment';
 	import type { PageData } from './$types';
 	import ChapterView from '$lib/components/ChapterView.svelte';
@@ -212,57 +213,60 @@
 
 <svelte:window on:mousemove={onMousemove} on:mouseup={onMouseup} />
 
-<div class="flex items-start" data-mode={$prefs.readingMode}>
-	<main bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
-		<div class="max-w-[750px] mx-auto">
-			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
-				<section class={i > 0 ? 'pt-[49px]' : ''}>
-					<div
-						data-chapter-heading
-						data-book-slug={item.bookMeta.slug}
-						data-chapter-num={item.chapter.chapter}
-					></div>
-					<ChapterView
-						bookMeta={item.bookMeta}
-						chapter={item.chapter}
-						targetVerse={item.chapter.chapter === data.chapter.chapter
-							? data.targetVerse
-							: undefined}
-						totalChapters={item.totalChapters}
-						showNav={true}
-					/>
-				</section>
-			{/each}
+<div in:fade={{ duration: 140 }}>
+	<div class="flex items-start" data-mode={$prefs.readingMode}>
+		<main bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
+			<div class="max-w-[750px] mx-auto">
+				{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
+					<section class={i > 0 ? 'pt-[49px]' : ''}>
+						<div
+							data-chapter-heading
+							data-book-slug={item.bookMeta.slug}
+							data-chapter-num={item.chapter.chapter}
+						></div>
+						<ChapterView
+							bookMeta={item.bookMeta}
+							chapter={item.chapter}
+							targetVerse={item.chapter.chapter === data.chapter.chapter
+								? data.targetVerse
+								: undefined}
+							totalChapters={item.totalChapters}
+							showNav={true}
+						/>
+					</section>
+				{/each}
+			</div>
+		</main>
 
-			<PageFooter
-				bookMeta={last.bookMeta}
-				chapterNum={last.chapter.chapter}
-				totalChapters={last.totalChapters}
-				routeBase="/odr"
-				showNav={!$prefs.infiniteScroll}
-			/>
-		</div>
-	</main>
-
-	<!-- Animated panel container -->
-	<div
-		class="flex shrink-0 [overflow:clip]"
-		style="max-width: {$prefs.readingMode === 'study'
-			? $prefs.studyPanelWidth
-			: '0'}; opacity: {$prefs.readingMode === 'study'
-			? '1'
-			: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"
-	>
-		<!-- Drag divider (inside so it slides with panel) -->
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<!-- Animated panel container -->
 		<div
-			class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
-			on:mousedown={onDividerMousedown}
-		></div>
+			class="flex shrink-0 [overflow:clip]"
+			style="max-width: {$prefs.readingMode === 'study'
+				? $prefs.studyPanelWidth
+				: '0'}; opacity: {$prefs.readingMode === 'study'
+				? '1'
+				: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"
+		>
+			<!-- Drag divider (inside so it slides with panel) -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div
+				class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 transition-colors duration-fast self-stretch"
+				on:mousedown={onDividerMousedown}
+			></div>
 
-		<!-- Study panel -->
-		<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0">
-			<StudyPanel bookData={currentBookData} />
+			<!-- Study panel -->
+			<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0">
+				<StudyPanel bookData={currentBookData} />
+			</div>
 		</div>
 	</div>
+
+	<!-- Footer outside flex — always full-width and viewport-centered -->
+	<PageFooter
+		bookMeta={last.bookMeta}
+		chapterNum={last.chapter.chapter}
+		totalChapters={last.totalChapters}
+		routeBase="/odr"
+		showNav={!$prefs.infiniteScroll}
+	/>
 </div>
