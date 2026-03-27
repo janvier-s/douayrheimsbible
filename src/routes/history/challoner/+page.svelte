@@ -49,19 +49,19 @@
 	<h2>What He Changed</h2>
 
 	<p>
-		Challoner's revision was far more extensive than a simple modernisation of spelling. Working
+		Challoner's revision was far more extensive than a simple modernization of spelling. Working
 		with the Carmelite friar Francis Blyth, he undertook several kinds of changes:
 	</p>
 
 	<ul>
 		<li>
-			<strong>Simplified vocabulary:</strong> The original's distinctive Latinate terms (<em
-				>supersubstantial</em
-			>, <em>longanimity</em>, <em>benignity</em>) were replaced with more familiar English
-			equivalents.
+			<strong>Simplified vocabulary:</strong> The original's distinctive Latinate terms were
+			replaced with more familiar English equivalents: <em>exinanited</em> (Philippians 2:7) became
+			"emptied himself," <em>contristate</em> (Ephesians 4:30) became "grieve," and
+			<em>longanimity</em> (Romans 2:4) became "longsuffering."
 		</li>
 		<li>
-			<strong>Modernised phrasing:</strong> Archaic constructions and obsolete expressions were rewritten
+			<strong>Modernized phrasing:</strong> Archaic constructions and obsolete expressions were rewritten
 			for clarity.
 		</li>
 		<li>
@@ -155,7 +155,7 @@
 		that the revisions "almost amounted to a new translation," and that Challoner's version was
 		"even nearer to the Protestant than it is to the Douay" in phraseology and diction, despite both
 		being translations of the same Latin Vulgate. In many passages, the Challoner text reads so
-		differently from Gregory Martin's original that they are barely recognisable as the same work.
+		differently from Gregory Martin's original that they are barely recognizable as the same work.
 	</p>
 
 	<blockquote>
@@ -180,14 +180,14 @@
 	</p>
 
 	<p>
-		The original text reflects a different philosophy of translation, one that prioritised fidelity
+		The original text reflects a different philosophy of translation, one that prioritized fidelity
 		to the Latin source even at the cost of readability. Where Challoner smoothed and simplified,
 		Martin and his colleagues preserved the texture of the Vulgate: its cadences, its theological
 		precision, its occasionally difficult beauty.
 	</p>
 
 	<p>
-		This site presents that original text, with only light modernisation of spelling and
+		This site presents that original text, with only light modernization of spelling and
 		punctuation. The translation itself, Gregory Martin's translation, is unaltered.
 	</p>
 
