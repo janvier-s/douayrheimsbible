@@ -140,10 +140,10 @@
 		These three criteria work together as a single interpretive discipline. Pope Leo XIV, in his
 		2026 catechesis on <em>Dei Verbum</em>, drew on Benedict XVI's formulation to express their
 		unity: <q>Authentic biblical hermeneutics can only be had within the faith of the Church.</q>
-		The practical test for any reading comes from Augustine, cited in that same catechesis: a
-		convincing interpretation is one that builds up <q>the twofold love of God and neighbor.</q> Where
-		an interpretation serves charity and deepens faith, the reader is on firm ground; where it divides,
-		isolates, or abstracts the text from the community that lives by it, something has gone wrong.
+		The practical test for any reading comes from Augustine, cited in that same catechesis: a convincing
+		interpretation is one that builds up <q>the twofold love of God and neighbor.</q> Where an interpretation
+		serves charity and deepens faith, the reader is on firm ground; where it divides, isolates, or abstracts
+		the text from the community that lives by it, something has gone wrong.
 	</p>
 
 	<p>
