@@ -111,36 +111,100 @@
 	<h2>Examples of Changes</h2>
 
 	<p>
-		The scope of Challoner's alterations becomes clear when specific passages are compared side by
-		side. In nearly every case, the original's Latinate precision gives way to smoother, more
-		familiar English:
+		The scope of Challoner's alterations becomes clear when specific passages are set alongside the
+		Vulgate Latin that both translators were working from. In nearly every case, Martin's English
+		mirrors Jerome's Latin word for word; that fidelity is precisely why Challoner felt it needed to
+		change.
 	</p>
 
 	<h3>Ephesians 3:6</h3>
 	<blockquote>
-		Original: "coheires and concorporate and comparticipant"<br />
-		Challoner: "fellow heirs, and of the same body, and copartners"
+		<strong>Vulgate:</strong>
+		<em
+			>gentes esse cohæredes, et concorporales, et comparticipes promissionis ejus in Christo Jesu
+			per Evangelium</em
+		><br />
+		<strong>Literally:</strong> the Gentiles to be co-heirs, and co-bodied, and co-partakers of his
+		promise in Christ Jesus through the Gospel<br />
+		<strong>Original:</strong> "The Gentiles to be coheirs and concorporate and comparticipant of
+		his promise in Christ Jesus by the Gospel"<br />
+		<strong>Challoner:</strong> "That the Gentiles should be fellow heirs, and of the same body, and co-partners
+		of his promise in Christ Jesus, by the gospel"
 	</blockquote>
+
+	<p>
+		Martin coined "concorporate" directly from Jerome's <em>concorporales</em> and "comparticipant"
+		from <em>comparticipes</em> — words that have no prior existence in English but map exactly onto the
+		Latin compounds. Challoner dissolved them into natural phrases.
+	</p>
 
 	<h3>Ephesians 3:9</h3>
 	<blockquote>
-		Original: "illuminate all men, what is the dispensation of the sacrament hidden from worlds"<br
-		/>
-		Challoner: "enlighten all men, that they may see what is the dispensation of the mystery which hath
-		been hidden from eternity"
+		<strong>Vulgate:</strong>
+		<em
+			>et illuminare omnes, quæ sit dispensatio sacramenti absconditi a sæculis in Deo, qui omnia
+			creavit</em
+		><br />
+		<strong>Literally:</strong> and to enlighten all, what is the dispensation of the mystery hidden
+		from the ages in God, who created all things<br />
+		<strong>Original:</strong> "and to illuminate all men what is the dispensation of the sacrament
+		hidden from worlds in God, who created all things"<br />
+		<strong>Challoner:</strong> "and to enlighten all men, that they may see what is the dispensation
+		of the mystery which hath been hidden from eternity in God, who created all things"
 	</blockquote>
+
+	<p>
+		Two changes in a single verse. Jerome used <em>sacramentum</em> throughout his translation to
+		render the Greek μυστήριον; Martin followed the Latin word and gave "sacrament." Challoner
+		returned to the Greek meaning and gave "mystery." Jerome's <em>a sæculis</em> (literally "from the
+		ages" or "from the worlds") became Martin's literal "from worlds" and Challoner's smoother "from eternity."
+	</p>
 
 	<h3>Romans 8:15</h3>
 	<blockquote>
-		Original: "the spirit of servitude again in fear"<br />
-		Challoner: "the spirit of bondage again in fear"
+		<strong>Vulgate:</strong>
+		<em
+			>Non enim accepistis spiritum servitutis iterum in timore, sed accepistis spiritum adoptionis
+			filiorum, in quo clamamus: Abba (Pater)</em
+		><br />
+		<strong>Literally:</strong> For you have not received the spirit of servitude again in fear, but
+		you have received the spirit of adoption of sons, in whom we cry: Abba (Father)<br />
+		<strong>Original:</strong> "you have not received the spirit of servitude again in fear; but you
+		have received the spirit of adoption of sons, wherein we cry: Abba, (Father)"<br />
+		<strong>Challoner:</strong> "you have not received the spirit of bondage again in fear; but you have
+		received the spirit of adoption of sons, whereby we cry: Abba (Father)"
 	</blockquote>
+
+	<p>
+		A single word changed: <em>servitutis</em> (servitude) became "bondage." Martin's choice is a direct
+		rendering of the Latin; Challoner's is the more natural English idiom for the same idea.
+	</p>
 
 	<h3>Isaiah 40:22</h3>
 	<blockquote>
-		Original: "He that sitteth upon the compass of the earth"<br />
-		Challoner: "It is he that sitteth upon the globe of the earth"
+		<strong>Vulgate:</strong>
+		<em
+			>Qui sedet super gyrum terræ, et habitatores ejus sunt quasi locustæ; qui extendit velut
+			nihilum cælos, et expandit eos sicut tabernaculum ad inhabitandum</em
+		><br />
+		<strong>Literally:</strong> Who sits above the circle of the earth, and its inhabitants are as
+		locusts; who stretches out the heavens as nothing, and spreads them out as a tent for dwelling<br
+		/>
+		<strong>Original:</strong> "He that sitteth upon the compass of the earth, and the inhabitants
+		thereof are as locusts: he that stretcheth out the heavens as nothing, and spreadeth them as a
+		tent to dwell in"<br />
+		<strong>Challoner:</strong> "It is he that sitteth upon the globe of the earth, and the inhabitants
+		thereof are as locusts: he that stretcheth out the heavens as nothing, and spreadeth them out as a
+		tent to dwell in"
 	</blockquote>
+
+	<p>
+		<em>Gyrus</em> (from the Greek γῦρος) means a ring, a circle, or a circular arc; it does not
+		denote a sphere. Martin's "compass," understood in its older sense of a circular arc or circuit,
+		renders
+		<em>gyrum</em> faithfully. Challoner's "globe" introduces a three-dimensional object Jerome's Latin
+		does not specify.
+	</p>
 
 	<p>
 		These are not isolated cases. Cardinal Wiseman went further than Newman, declaring that "to call
