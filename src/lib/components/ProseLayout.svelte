@@ -219,7 +219,6 @@
 
 	.prose-body :global(a) {
 		color: var(--color-accent-text);
-		text-decoration: underline;
 		text-underline-offset: 3px;
 		text-decoration-color: color-mix(in srgb, var(--color-accent-text) 40%, transparent);
 		transition: text-decoration-color 150ms ease;
