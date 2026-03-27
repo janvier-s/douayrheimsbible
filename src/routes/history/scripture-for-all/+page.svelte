@@ -198,12 +198,12 @@
 	</p>
 
 	<p>
-		Jerome, whose Latin Vulgate made Scripture accessible to the Western Church for a millennium,
-		wrote to his correspondents with the urgency of a teacher who knew what was being missed: "Read
-		assiduously and learn as much as you can. Let sleep find you holding your Bible, and when your
-		head nods, let it fall on the sacred page." His maxim that "ignorance of the Scriptures is
-		ignorance of Christ" passed from his letters into <em>Dei Verbum</em> itself and from there into the
-		Catechism (CCC 133).
+		Saint Jerome, whose Latin Vulgate made Scripture accessible to the Western Church for a
+		millennium, wrote to his correspondents with the urgency of a teacher who knew what was being
+		missed: "Read assiduously and learn as much as you can. Let sleep find you holding your Bible,
+		and when your head nods, let it fall on the sacred page." His maxim that "ignorance of the
+		Scriptures is ignorance of Christ" passed from his letters into <em>Dei Verbum</em> itself and from
+		there into the Catechism (CCC 133).
 	</p>
 
 	<p>
@@ -234,7 +234,7 @@
 		Third Sunday in Ordinary Time, as a day specifically devoted to the celebration, study, and
 		living of Scripture.
 		<q>The Bible is the book of the Lord's people,</q> Francis wrote, "who, in listening to it, move from
-		dispersion and division towards unity." He invoked Jerome's maxim again: "Ignorance of the Scriptures
+		dispersion and division towards unity." He invoked Saint Jerome's maxim again: "Ignorance of the Scriptures
 		is ignorance of Christ." The Catechism makes the same appeal (CCC 133), and the section on prayer
 		returns to it: "The Church strongly urges all the Christian faithful to learn the surpassing knowledge
 		of Jesus Christ by frequent reading of the divine Scriptures" (CCC 2653).
@@ -246,11 +246,11 @@
 		successive weeks. He opened the series with the document's first theological note, that God
 		"spoke to men as friends," and developed it across addresses on the unity of Scripture and
 		Tradition as a single living deposit, on the dual authorship of inspired texts, on the Church as
-		Scripture's natural home, and on the inexhaustibility of God's Word. Jerome's maxim returned in
-		each session. Augustine's observation passed through the series as well: "There is only one Word
-		that sounds on the lips of many saints." The catechesis, delivered to the faithful assembled in
-		Saint Peter's Square, demonstrated in its very form what <em>Dei Verbum</em> had taught: the Word
-		of God addressed to all, in the presence of all, for the life of all.
+		Scripture's natural home, and on the inexhaustibility of God's Word. Saint Jerome's maxim
+		returned in each session. Augustine's observation passed through the series as well: "There is
+		only one Word that sounds on the lips of many saints." The catechesis, delivered to the faithful
+		assembled in Saint Peter's Square, demonstrated in its very form what <em>Dei Verbum</em> had taught:
+		the Word of God addressed to all, in the presence of all, for the life of all.
 	</p>
 
 	<h2>Scripture and This Site</h2>
@@ -335,7 +335,7 @@
 		font-family: var(--font-reader);
 		font-size: var(--font-size-reader);
 		line-height: var(--line-height-reader);
-		color: var(--color-muted);
+		color: var(--color-text);
 	}
 
 	.criteria-list li:last-child,

@@ -8,6 +8,57 @@
 
 	let prefsOpen = false;
 	let wrapperEl: HTMLElement;
+	let articleEl: HTMLElement;
+
+	// TOC
+	type TocItem = { id: string; text: string };
+	let tocItems: TocItem[] = [];
+	let activeId = '';
+	let scrollRaf = 0;
+
+	function slugify(text: string): string {
+		return text
+			.toLowerCase()
+			.replace(/[^\w\s-]/g, '')
+			.replace(/\s+/g, '-')
+			.replace(/-+/g, '-')
+			.trim();
+	}
+
+	function buildToc() {
+		if (!articleEl) return;
+		const headings = Array.from(articleEl.querySelectorAll('h2'));
+		const items: TocItem[] = [];
+		for (const h of headings) {
+			const text = (h.textContent || '').trim();
+			if (!h.id) h.id = slugify(text);
+			if (text === 'Sources') {
+				h.classList.add('sources-heading');
+				continue;
+			}
+			items.push({ id: h.id, text });
+		}
+		tocItems = items;
+		if (tocItems.length > 0) activeId = tocItems[0].id;
+	}
+
+	function updateActiveId() {
+		if (!articleEl) return;
+		const headings = articleEl.querySelectorAll('h2[id]');
+		const threshold = window.innerHeight * 0.2;
+		let current = '';
+		for (const h of Array.from(headings)) {
+			const id = (h as HTMLElement).id;
+			if (id === 'sources') continue;
+			if (h.getBoundingClientRect().top <= threshold) current = id;
+		}
+		if (current) activeId = current;
+	}
+
+	function onScroll() {
+		cancelAnimationFrame(scrollRaf);
+		scrollRaf = requestAnimationFrame(updateActiveId);
+	}
 
 	// Bionic reading
 	let textVideFn: ((text: string, opts: object) => string) | null = null;
@@ -51,11 +102,15 @@
 	onMount(() => {
 		document.addEventListener('mousedown', handleOutside);
 		document.addEventListener('keydown', handleKey);
+		buildToc();
+		window.addEventListener('scroll', onScroll, { passive: true });
 	});
 
 	onDestroy(() => {
 		document.removeEventListener('mousedown', handleOutside);
 		document.removeEventListener('keydown', handleKey);
+		window.removeEventListener('scroll', onScroll);
+		cancelAnimationFrame(scrollRaf);
 	});
 </script>
 
@@ -72,32 +127,48 @@
 			aria-expanded={prefsOpen}
 			on:click={() => (prefsOpen = !prefsOpen)}
 		>
-			Aa
+			Reading options
 		</button>
 		<ProseReadingPrefs {prefsOpen} />
 	</div>
 </nav>
 
-<main id="main-content" class="prose-page">
-	<header class="prose-header">
-		<a href="/" class="prose-eyebrow">
-			<span aria-hidden="true">✠</span> Douay-Rheims Bible
-		</a>
-		<h1 class="prose-title">{title}</h1>
-		{#if subtitle}
-			<p class="prose-subtitle">{subtitle}</p>
-		{/if}
-		<div class="prose-rule"></div>
-	</header>
+<div class="prose-outer">
+	<main id="main-content" class="prose-page">
+		<header class="prose-header">
+			<a href="/" class="prose-eyebrow">
+				<span aria-hidden="true">✠</span> Douay-Rheims Bible
+			</a>
+			<h1 class="prose-title">{title}</h1>
+			{#if subtitle}
+				<p class="prose-subtitle">{subtitle}</p>
+			{/if}
+			<div class="prose-rule"></div>
+		</header>
 
-	<article
-		class="prose-body"
-		class:prose-body--justified={$prefs.justifiedText}
-		use:bionicAction={$prefs.bionicReading}
-	>
-		<slot />
-	</article>
-</main>
+		<article
+			class="prose-body"
+			class:prose-body--justified={$prefs.justifiedText}
+			use:bionicAction={$prefs.bionicReading}
+			bind:this={articleEl}
+		>
+			<slot />
+		</article>
+	</main>
+
+	{#if tocItems.length > 1}
+		<aside class="prose-toc" aria-label="Table of contents">
+			<p class="toc-label">Contents</p>
+			<ul class="toc-list">
+				{#each tocItems as item}
+					<li class="toc-item" class:toc-item--active={activeId === item.id}>
+						<a href="#{item.id}">{item.text}</a>
+					</li>
+				{/each}
+			</ul>
+		</aside>
+	{/if}
+</div>
 
 <style>
 	.prose-nav {
@@ -113,14 +184,14 @@
 
 	.prefs-btn {
 		font-family: var(--font-ui);
-		font-size: 12px;
-		font-weight: 700;
-		letter-spacing: 0.05em;
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.04em;
 		color: var(--color-muted);
 		background: transparent;
 		border: 1px solid var(--color-border);
 		border-radius: 4px;
-		padding: 4px 10px;
+		padding: 5px 12px;
 		cursor: pointer;
 		transition:
 			color 150ms ease,
@@ -143,7 +214,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.22em;
 		font-weight: 600;
-		color: var(--color-foreground);
+		color: var(--color-text);
 		transition: color 150ms ease;
 	}
 
@@ -156,9 +227,17 @@
 		color: var(--color-accent);
 	}
 
+	/* Layout */
+	.prose-outer {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
 	.prose-page {
+		flex: 1;
+		min-width: 0;
 		max-width: 700px;
-		margin: 0 auto;
 		padding: 48px 24px 80px;
 	}
 
@@ -209,7 +288,7 @@
 		font-family: var(--font-reader);
 		font-size: var(--font-size-reader);
 		line-height: var(--line-height-reader);
-		color: var(--color-foreground);
+		color: var(--color-text);
 	}
 
 	.prose-body--justified :global(p) {
@@ -247,11 +326,35 @@
 		padding-left: 20px;
 		margin: 28px 0;
 		font-style: italic;
-		color: var(--color-subtle);
+		color: var(--color-text);
 	}
 
 	.prose-body :global(blockquote strong) {
 		font-style: normal;
+	}
+
+	/* Challoner comparison blockquotes */
+	.prose-body :global(.comparison) {
+		font-style: normal;
+	}
+
+	.prose-body :global(.comparison strong) {
+		display: block;
+		font-size: 9px;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		color: var(--color-accent-text);
+		font-weight: 600;
+		margin-top: 18px;
+		margin-bottom: 4px;
+	}
+
+	.prose-body :global(.comparison strong:first-child) {
+		margin-top: 0;
+	}
+
+	.prose-body :global(.comparison br) {
+		display: none;
 	}
 
 	.prose-body :global(a) {
@@ -274,6 +377,23 @@
 
 	.prose-body :global(li) {
 		margin-bottom: 8px;
+	}
+
+	/* Sources section */
+	.prose-body :global(.sources-heading) {
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		color: var(--color-muted);
+		margin-top: 56px;
+		margin-bottom: 12px;
+		line-height: 1.4;
+	}
+
+	.prose-body :global(.sources-heading ~ ul) {
+		color: var(--color-muted);
+		font-size: 0.85rem;
 	}
 
 	.prose-body :global(hr) {
@@ -335,5 +455,75 @@
 		background: color-mix(in srgb, var(--color-accent) 82%, black);
 		color: #fff;
 		text-decoration: none;
+	}
+
+	/* TOC */
+	.prose-toc {
+		flex-shrink: 0;
+		width: 188px;
+		position: sticky;
+		top: 48px;
+		align-self: flex-start;
+		padding: 56px 0 80px 40px;
+		border-left: 1px solid var(--color-border);
+		opacity: 0;
+		transform: translateX(8px);
+		animation: toc-enter 400ms ease 200ms forwards;
+	}
+
+	@keyframes toc-enter {
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.toc-label {
+		font-family: var(--font-ui);
+		font-size: 9px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.24em;
+		color: var(--color-accent-text);
+		margin: 0 0 14px;
+		opacity: 0.8;
+	}
+
+	.toc-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.toc-item a {
+		display: block;
+		font-family: var(--font-ui);
+		font-size: 11px;
+		line-height: 1.55;
+		padding: 5px 0;
+		color: var(--color-muted);
+		text-decoration: none;
+		opacity: 0.55;
+		transition:
+			color 220ms ease,
+			opacity 220ms ease;
+	}
+
+	.toc-item a:hover {
+		color: var(--color-text);
+		opacity: 0.85;
+	}
+
+	.toc-item--active a {
+		color: var(--color-accent-text);
+		opacity: 1;
+	}
+
+	@media (max-width: 1080px) {
+		.prose-toc {
+			display: none;
+		}
 	}
 </style>

@@ -114,12 +114,12 @@
 	<p>
 		The scope of Challoner's alterations becomes clear when specific passages are set alongside the
 		Vulgate Latin that both translators were working from. In nearly every case, Martin's English
-		mirrors Jerome's Latin word for word; that fidelity is precisely why Challoner felt it needed to
-		change.
+		mirrors Saint Jerome's Latin word for word; that fidelity is precisely why Challoner felt it
+		needed to change.
 	</p>
 
 	<h3>Ephesians 3:6</h3>
-	<blockquote>
+	<blockquote class="comparison">
 		<strong>Vulgate:</strong>
 		<em
 			>gentes esse cohæredes, et concorporales, et comparticipes promissionis ejus in Christo Jesu
@@ -134,13 +134,13 @@
 	</blockquote>
 
 	<p>
-		Martin coined "concorporate" directly from Jerome's <em>concorporales</em> and "comparticipant"
-		from <em>comparticipes</em> — words that have no prior existence in English but map exactly onto the
-		Latin compounds. Challoner dissolved them into natural phrases.
+		Martin coined "concorporate" directly from Saint Jerome's <em>concorporales</em> and
+		"comparticipant" from <em>comparticipes</em> — words that have no prior existence in English but map
+		exactly onto the Latin compounds. Challoner dissolved them into natural phrases.
 	</p>
 
 	<h3>Ephesians 3:9</h3>
-	<blockquote>
+	<blockquote class="comparison">
 		<strong>Vulgate:</strong>
 		<em
 			>et illuminare omnes, quæ sit dispensatio sacramenti absconditi a sæculis in Deo, qui omnia
@@ -155,14 +155,15 @@
 	</blockquote>
 
 	<p>
-		Two changes in a single verse. Jerome used <em>sacramentum</em> throughout his translation to
-		render the Greek μυστήριον; Martin followed the Latin word and gave "sacrament." Challoner
-		returned to the Greek meaning and gave "mystery." Jerome's <em>a sæculis</em> (literally "from the
-		ages" or "from the worlds") became Martin's literal "from worlds" and Challoner's smoother "from eternity."
+		Two changes in a single verse. Saint Jerome used <em>sacramentum</em> throughout his translation
+		to render the Greek μυστήριον; Martin followed the Latin word and gave "sacrament." Challoner
+		returned to the Greek meaning and gave "mystery." Saint Jerome's <em>a sæculis</em> (literally "from
+		the ages" or "from the worlds") became Martin's literal "from worlds" and Challoner's smoother "from
+		eternity."
 	</p>
 
 	<h3>Romans 8:15</h3>
-	<blockquote>
+	<blockquote class="comparison">
 		<strong>Vulgate:</strong>
 		<em
 			>Non enim accepistis spiritum servitutis iterum in timore, sed accepistis spiritum adoptionis
@@ -182,7 +183,7 @@
 	</p>
 
 	<h3>Isaiah 40:22</h3>
-	<blockquote>
+	<blockquote class="comparison">
 		<strong>Vulgate:</strong>
 		<em
 			>Qui sedet super gyrum terræ, et habitatores ejus sunt quasi locustæ; qui extendit velut
@@ -203,8 +204,8 @@
 		<em>Gyrus</em> (from the Greek γῦρος) means a ring, a circle, or a circular arc; it does not
 		denote a sphere. Martin's "compass," understood in its older sense of a circular arc or circuit,
 		renders
-		<em>gyrum</em> faithfully. Challoner's "globe" introduces a three-dimensional object Jerome's Latin
-		does not specify.
+		<em>gyrum</em> faithfully. Challoner's "globe" introduces a three-dimensional object Saint Jerome's
+		Latin does not specify.
 	</p>
 
 	<p>
@@ -223,7 +224,7 @@
 		from Gregory Martin's original that they are barely recognizable as the same work.
 	</p>
 
-	<blockquote>
+	<blockquote class="comparison">
 		Nearly every "Douay-Rheims Bible" in print today is actually the Douay-Rheims-Challoner
 		revision, not the original text of 1582 and 1609–1610.
 	</blockquote>
