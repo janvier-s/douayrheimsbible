@@ -180,7 +180,7 @@
 
 	.article-link::before {
 		content: counter(article-counter);
-		font-family: var(--font-ui);
+		font-family: var(--font-reader);
 		font-size: 11px;
 		font-weight: 600;
 		color: var(--color-accent);
@@ -206,6 +206,7 @@
 
 	.article-desc {
 		display: block;
+		grid-column: 2;
 		font-family: var(--font-reader);
 		font-size: 0.95rem;
 		line-height: 1.65;
