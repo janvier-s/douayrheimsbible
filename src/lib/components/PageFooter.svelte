@@ -37,6 +37,7 @@
 			links: [
 				{ label: 'About the Translation', href: '/about' },
 				{ label: 'History of the DR Bible', href: '/history' },
+				{ label: 'Articles', href: '/articles' },
 				{ label: 'The Challoner Revision', href: '/history/challoner' },
 				{ label: 'Download JSON', href: '/download' },
 				{ label: 'API', href: '/api' }
