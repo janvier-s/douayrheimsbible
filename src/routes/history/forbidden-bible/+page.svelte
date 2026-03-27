@@ -11,14 +11,14 @@
 	<title>A Bible Forbidden to Its Own Readers</title>
 	<meta
 		name="description"
-		content="Catholics who produced the English New Testament at Rheims were forbidden to read it without a licence. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
+		content="Catholics who produced the English New Testament at Rheims were forbidden to read it without a license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/forbidden-bible" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="A Bible Forbidden to Its Own Readers" />
 	<meta
 		property="og:description"
-		content="Catholics who produced the Rheims New Testament were forbidden to read it without a licence. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
+		content="Catholics who produced the Rheims New Testament were forbidden to read it without a license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/forbidden-bible" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -26,7 +26,7 @@
 
 <ProseLayout
 	title="A Bible Forbidden to Its Own Readers"
-	subtitle="Catholics who produced the English New Testament at Rheims were forbidden to read it without a special licence. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
+	subtitle="Catholics who produced the English New Testament at Rheims were forbidden to read it without a special license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
 >
 	<h2>Two Prohibitions</h2>
 
@@ -39,7 +39,7 @@
 	<p>
 		A second restriction applied simultaneously, distinct in character and origin. Even among
 		Catholics, even in France where the book was printed, no Catholic was permitted to read the
-		Rheims New Testament without first obtaining a licence from the proper ecclesiastical
+		Rheims New Testament without first obtaining a license from the proper ecclesiastical
 		authorities. The licensing requirement reflected a settled position of the Church on how
 		Scripture should be received and read.
 	</p>
@@ -97,7 +97,7 @@
 		consistently affirmed element of Catholic discipline. Cotton's conclusion was straightforward:
 		the principle "that Vernacular Translations of the Bible are not necessary for the Laity, and
 		ought not to be conceded to them without the express permission of a bishop or priest, has long
-		been a recognised dogma of that Church."
+		been a recognized dogma of that Church."
 	</p>
 
 	<h2>The Translators' Own Position</h2>
@@ -105,12 +105,12 @@
 	<p>
 		The Rheims translators stated their position plainly: they had produced a vernacular Scripture
 		from pastoral necessity rather than from any belief that the laity had an inherent right to it.
-		The preface said so directly: they acted "not from choice, but from necessity." The growing
-		circulation of Protestant English Bibles among Catholics had forced a response. Unless the
-		Church furnished its own English translation, its members would be reading Protestant versions
-		shaped by Protestant theological assumptions. The Rheims New Testament was produced as a
-		pastoral corrective, accompanied by the annotations that supplied the doctrinal guidance its
-		authors considered inseparable from any proper reading of the text.
+		The preface said so directly: they acted <q>not from choice, but from necessity.</q> The growing circulation
+		of Protestant English Bibles among Catholics had forced a response. Unless the Church furnished its
+		own English translation, its members would be reading Protestant versions shaped by Protestant theological
+		assumptions. The Rheims New Testament was produced as a pastoral corrective, accompanied by the annotations
+		that supplied the doctrinal guidance its authors considered inseparable from any proper reading of
+		the text.
 	</p>
 
 	<p>
@@ -146,9 +146,9 @@
 		Cardinal Wiseman, writing in 1853, addressed the question directly. Asked why the Catholic
 		Church did not give the Bible indiscriminately to all, he acknowledged forthrightly the real
 		difference between Catholic and Protestant approaches. He would not deny that the two positions
-		were antagonistic: "They are antagonistic: and we glory in avowing it." Faith came from hearing,
-		he argued, not from reading; the Church's authority was exercised through the living voice of
-		her teachers, not through paper and ink distributed without guidance.
+		were antagonistic: <q>They are antagonistic: and we glory in avowing it.</q> Faith came from hearing,
+		he argued, not from reading; the Church's authority was exercised through the living voice of her
+		teachers, not through paper and ink distributed without guidance.
 	</p>
 
 	<p>

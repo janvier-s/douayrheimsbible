@@ -114,9 +114,10 @@
 	</p>
 
 	<p>
-		Catholic translators, <em>Divino Afflante Spiritu</em> made clear, should now work where their scholarship
-		could reach most deeply: from the texts as the inspired writers composed them. The biblical scholar
-		Raymond Brown later described the encyclical as a "Magna Carta for biblical progress."
+		Catholic translators, <em>Divino Afflante Spiritu</em> made clear, should now work where their
+		scholarship could reach most deeply: from the texts as the inspired writers composed them. The
+		biblical scholar Raymond Brown later described the encyclical as a
+		<q>Magna Carta for biblical progress.</q>
 	</p>
 
 	<h2>The Translations That Followed</h2>
@@ -136,8 +137,8 @@
 		American Bible followed in 1970, produced by the Catholic Biblical Association working from
 		original texts. The Second Vatican Council's constitution on divine revelation,
 		<em>Dei Verbum</em> (1965), had in the meantime affirmed the direction
-		<em>Divino Afflante Spiritu</em> had set, calling for "suitable and correct translations" made "from
-		the original texts of the sacred books" and encouraging scholarly cooperation across confessional
+		<em>Divino Afflante Spiritu</em> had set, calling for <q>suitable and correct translations</q> made
+		"from the original texts of the sacred books" and encouraging scholarly cooperation across confessional
 		lines in producing them. These translations marked the practical completion of the shift the 1943
 		encyclical had authorized.
 	</p>

@@ -34,7 +34,7 @@
 		When Richard Challoner revised the Douay-Rheims between 1749 and 1777, he produced not one text
 		but several, each differing from the last, each published anonymously, with no mechanism for
 		determining which should be considered definitive. By the time he died in 1781, the Catholic
-		English Bible existed in at least three distinct Challoner versions, none formally authorised,
+		English Bible existed in at least three distinct Challoner versions, none formally authorized,
 		none identical with the others.
 	</p>
 
@@ -60,19 +60,19 @@
 		edition he could locate, published his findings at the Oxford University Press in 1855. His
 		preface captured the problem with precision. Educated men, he wrote, whether Protestant or
 		Catholic, allowed themselves to speak of "the Douay Bible" or "the Rhemish Testament" as though
-		all copies of Holy Scripture circulating among Roman Catholics represented one and the same
-		text, accompanied by one and the same body of notes. They did not. Cotton's chronological list
-		ran to nearly three hundred entries spanning more than two and a half centuries.
+		all copies of Holy Scripture circulating among Catholics represented one and the same text,
+		accompanied by one and the same body of notes. They did not. Cotton's chronological list ran to
+		nearly three hundred entries spanning more than two and a half centuries.
 	</p>
 
 	<p>
 		By the mid-nineteenth century, Cotton identified four competing text traditions in active use.
 		The Murray and Denvir line, followed in Ireland, traced its descent from Challoner's earlier
 		editions. The Wiseman and Haydock line, used in England and America, followed either Dr. Troy's
-		revision or the later Challoner texts. The Haydock Bible, edited by the Rev. G.L. Haydock and
-		published in Manchester in 1811-12, was notable for restoring the original Rhemish annotations
-		of 1582 that Challoner had removed. Gibson's editions, published in Liverpool from 1816,
-		represented yet another editorial position.
+		revision or the later Challoner texts. The Haydock Bible, edited by the Rev. George Leo Haydock
+		and published in Manchester in 1811-12, was notable for restoring the original Rhemish
+		annotations of 1582 that Challoner had removed. Gibson's editions, published in Liverpool from
+		1816, represented yet another editorial position.
 	</p>
 
 	<h2>The Roman Catholic Bible Society</h2>
@@ -100,13 +100,13 @@
 	<h2>Independent Translators</h2>
 
 	<p>
-		Individual scholars meanwhile attempted fresh translations. Dr. Geddes, a Roman Catholic priest,
-		began a new translation from the original languages in 1792, concluding after reflection that
-		patching and piecing what had already been pieced and patched would produce only a strange
-		composition. He did not complete it. Dr. Lingard, the historian, translated the four Gospels in
-		1836. Bishop Francis Patrick Kenrick of Philadelphia produced a complete translation of the New
-		Testament and Apocalypse in 1849, followed by volumes of the Old Testament: a substantial
-		scholarly achievement that received little official recognition from Rome.
+		Individual scholars meanwhile attempted fresh translations. Dr. Geddes, a Catholic priest, began
+		a new translation from the original languages in 1792, concluding after reflection that patching
+		and piecing what had already been pieced and patched would produce only a strange composition.
+		He did not complete it. Dr. Lingard, the historian, translated the four Gospels in 1836. Bishop
+		Francis Patrick Kenrick of Philadelphia produced a complete translation of the New Testament and
+		Apocalypse in 1849, followed by volumes of the Old Testament: a substantial scholarly
+		achievement that received little official recognition from Rome.
 	</p>
 
 	<h2>An Abuse of Terms</h2>
@@ -118,12 +118,12 @@
 	</p>
 
 	<p>
-		Cotton's concluding question was direct: whether there existed at that moment any authorised
-		standard text of the Roman Catholic English Bible, or any such thing as a uniform interpretation
-		of it. His answer was implicit in every page of his chronological list. There was not. What
-		passed under the name of the Douay-Rheims Bible was a family of related texts, shaped by
-		successive editors over two and a half centuries, each one departing further from the original
-		work of Gregory Martin and his colleagues at Rheims.
+		Cotton's concluding question was direct: whether there existed at that moment any authorized
+		standard text of the Catholic English Bible, or any such thing as a uniform interpretation of
+		it. His answer was implicit in every page of his chronological list. There was not. What passed
+		under the name of the Douay-Rheims Bible was a family of related texts, shaped by successive
+		editors over two and a half centuries, each one departing further from the original work of
+		Gregory Martin and his colleagues at Rheims.
 	</p>
 
 	<p>
@@ -135,9 +135,9 @@
 	<h2>Sources</h2>
 	<ul>
 		<li>
-			Cardinal John Henry Newman, "On the Rheims and Douay Version of Holy Scripture," in <em
-				>Essays Critical and Historical</em
-			> — primary source for Newman's analysis of the post-Challoner text traditions
+			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
+			<em>Essays Critical and Historical</em> — primary source for Newman's analysis of the post-Challoner
+			text traditions
 		</li>
 		<li>
 			Rev. Henry Cotton, <em

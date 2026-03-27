@@ -73,7 +73,7 @@
 		The Rheims New Testament's handling of the Greek Article drew admiration from scholars long
 		after its publication. William Moulton, examining the text carefully, found more than forty
 		instances where the Rheims New Testament alone, among all English versions from Tyndale to the
-		Authorised Version, correctly represents the Greek Article. He noted that this was remarkable
+		Authorized Version, correctly represents the Greek Article. He noted that this was remarkable
 		given that the other translators were certainly known to and used by the Rheims scholars: "They
 		make no allusion in their preface to any indebtedness to preceding translators, but of the fact
 		there can be no doubt."
@@ -121,7 +121,7 @@
 
 	<p>
 		H. H. Hoare, arriving at the same conclusion from a different direction, wrote that "the Douai
-		Version has one great merit, which is wanting in our Authorised Version, namely, that it holds
+		Version has one great merit, which is wanting in our Authorized Version, namely, that it holds
 		fast to the principle of uniformity in its renderings whenever this principle is not prejudicial
 		to the sense. Moreover, for serious students, it is just the uncompromising fidelity of the
 		translators to their Vulgate, which in its New Testament carries us back to the Old Latin
@@ -142,9 +142,8 @@
 			page — one quarter of Gospel amendments adopted Rheims readings
 		</li>
 		<li>
-			Cardinal John Henry Newman, "On the Rheims and Douay Version of Holy Scripture," in <em
-				>Essays Critical and Historical</em
-			>
+			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
+			<em>Essays Critical and Historical</em>
 		</li>
 	</ul>
 

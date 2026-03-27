@@ -77,10 +77,11 @@
 	</ul>
 
 	<p>
-		Cardinal Newman observed that Challoner's finished text "approximates to the Protestant version"
-		in its phrasing and diction, a consequence of his simplifications rather than any stated
-		intention. The Catholic Dictionary noted the same: "he has sacrificed force and vividness in
-		some of his changes."
+		Cardinal Newman observed that Challoner's finished text <q
+			>approximates to the Protestant version</q
+		>
+		in its phrasing and diction, a consequence of his simplifications rather than any stated intention.
+		The Catholic Dictionary noted the same: "he has sacrificed force and vividness in some of his changes."
 	</p>
 
 	<h2>Multiple Editions</h2>
@@ -216,10 +217,10 @@
 
 	<p>
 		The cumulative effect of Challoner's changes was dramatic. Cardinal John Henry Newman observed
-		that the revisions "almost amounted to a new translation," and that Challoner's version was
-		"even nearer to the Protestant than it is to the Douay" in phraseology and diction, despite both
-		being translations of the same Latin Vulgate. In many passages, the Challoner text reads so
-		differently from Gregory Martin's original that they are barely recognizable as the same work.
+		that the revisions <q>almost amounted to a new translation,</q> and that Challoner's version was
+		<q>even nearer to the Protestant than it is to the Douay</q> in phraseology and diction, despite both
+		being translations of the same Latin Vulgate. In many passages, the Challoner text reads so differently
+		from Gregory Martin's original that they are barely recognizable as the same work.
 	</p>
 
 	<blockquote>
@@ -258,9 +259,8 @@
 	<h2>Sources</h2>
 	<ul>
 		<li>
-			Cardinal John Henry Newman, "On the Rheims and Douay Version of Holy Scripture," in <em
-				>Essays Critical and Historical</em
-			>
+			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
+			<em>Essays Critical and Historical</em>
 		</li>
 		<li>
 			Henry Barker, <em

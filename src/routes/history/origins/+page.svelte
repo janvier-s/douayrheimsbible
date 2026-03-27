@@ -35,7 +35,7 @@
 		himself head of the Church in England. What followed was a sustained campaign of religious
 		transformation that intensified under Edward VI and, after a brief Catholic restoration under
 		Mary I, became permanent under Elizabeth I. The Elizabethan Act of Supremacy of 1559 and the
-		subsequent penal laws criminalised Catholic worship, the celebration of Mass, and the priesthood
+		subsequent penal laws criminalized Catholic worship, the celebration of Mass, and the priesthood
 		itself.
 	</p>
 
@@ -123,7 +123,7 @@
 
 	<p>
 		The completed Douay-Rheims Bible entered a hostile environment. In England, possessing it was a
-		criminal offence. Yet its influence extended beyond Catholic circles. The translators of the
+		criminal offense. Yet its influence extended beyond Catholic circles. The translators of the
 		King James Version, published just one year after the Douai Old Testament in 1611, acknowledged
 		the Rheims New Testament in their preface and drew upon it significantly. Scholarship has shown
 		that roughly a quarter of the proposed revisions to the Gospels in the KJV adopted readings from
@@ -131,7 +131,7 @@
 	</p>
 
 	<p>
-		The Douay-Rheims remained the sole authorised English Bible for Catholics for over three
+		The Douay-Rheims remained the sole authorized English Bible for Catholics for over three
 		centuries. In the mid-eighteenth century, Bishop Richard Challoner would undertake a
 		<a href="/history/challoner">substantial revision</a> that made the text more accessible to contemporary
 		readers, though at the cost of much of Martin's distinctive Latinate character.
@@ -157,9 +157,8 @@
 			>
 		</li>
 		<li>
-			Cardinal John Henry Newman, "On the Rheims and Douay Version of Holy Scripture," in <em
-				>Essays Critical and Historical</em
-			>
+			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
+			<em>Essays Critical and Historical</em>
 		</li>
 	</ul>
 

@@ -91,11 +91,12 @@
 	</p>
 
 	<p>
-		The document describes Sacred Scripture as "the pure and everlasting source of spiritual life"
-		and calls for it to nourish the faithful alongside the Eucharist. Both form, in <em
-			>Dei Verbum</em
-		>'s image, a single table: "the bread of life" from the table of God's word and from the table
-		of Christ's body.
+		The document describes Sacred Scripture as <q
+			>the pure and everlasting source of spiritual life</q
+		>
+		and calls for it to nourish the faithful alongside the Eucharist. Both form, in
+		<em>Dei Verbum</em>'s image, a single table: "the bread of life" from the table of God's word
+		and from the table of Christ's body.
 	</p>
 
 	<h2>How to Read: The Church's Guidance</h2>
@@ -118,10 +119,11 @@
 	<p>
 		The second criterion is reading each text within the content and unity of the whole of
 		Scripture. No verse stands alone. The Old and New Testaments form a single revelation: as Saint
-		Augustine wrote, "the New Testament lies hidden in the Old and the Old is unveiled in the New."
-		Reading Scripture within its whole prevents both the isolation of proof texts and the misreading
-		of difficult passages whose meaning becomes clear only in relation to the rest of what God has
-		revealed.
+		Augustine wrote, <q
+			>the New Testament lies hidden in the Old and the Old is unveiled in the New.</q
+		>
+		Reading Scripture within its whole prevents both the isolation of proof texts and the misreading of
+		difficult passages whose meaning becomes clear only in relation to the rest of what God has revealed.
 	</p>
 
 	<p>
@@ -137,10 +139,10 @@
 	<p>
 		These three criteria work together as a single interpretive discipline. Pope Leo XIV, in his
 		2026 catechesis on <em>Dei Verbum</em>, drew on Benedict XVI's formulation to express their
-		unity: "Authentic biblical hermeneutics can only be had within the faith of the Church." The
-		practical test for any reading comes from Augustine, cited in that same catechesis: a convincing
-		interpretation is one that builds up "the twofold love of God and neighbor." Where an
-		interpretation serves charity and deepens faith, the reader is on firm ground; where it divides,
+		unity: <q>Authentic biblical hermeneutics can only be had within the faith of the Church.</q>
+		The practical test for any reading comes from Augustine, cited in that same catechesis: a
+		convincing interpretation is one that builds up <q>the twofold love of God and neighbor.</q> Where
+		an interpretation serves charity and deepens faith, the reader is on firm ground; where it divides,
 		isolates, or abstracts the text from the community that lives by it, something has gone wrong.
 	</p>
 
@@ -172,10 +174,10 @@
 
 	<p>
 		Pope Benedict XVI, in his 2010 apostolic exhortation <em>Verbum Domini</em>, endorsed
-		<em>lectio divina</em> as a privileged method for encountering the living Word. Drawing on Saint Gregory
-		the Great, he quoted: "The divine words grow together with the one who reads them." The practice,
-		Benedict wrote, allows Scripture to become not simply a word from the past but a living and timely
-		word addressed to the particular reader in the particular moment of their life.
+		<em>lectio divina</em> as a privileged method for encountering the living Word. Drawing on Saint
+		Gregory the Great, he quoted: <q>The divine words grow together with the one who reads them.</q> The
+		practice, Benedict wrote, allows Scripture to become not simply a word from the past but a living
+		and timely word addressed to the particular reader in the particular moment of their life.
 	</p>
 
 	<h2>A Tradition of Encouragement</h2>
@@ -200,9 +202,11 @@
 		John Chrysostom, who preached through entire books of Scripture to his congregations in Antioch
 		and Constantinople, wrote that "it is not possible ever to exhaust the mind of the Scriptures.
 		It is a well that has no bottom." Gregory the Great described the Bible in a phrase that has
-		stayed in the tradition ever since: "a river in which a lamb may wade and an elephant may swim."
-		Its depths are inexhaustible; its shallows are accessible to everyone. "Learn the heart of God
-		from the word of God," he wrote to a friend.
+		stayed in the tradition ever since: <q
+			>a river in which a lamb may wade and an elephant may swim.</q
+		>
+		Its depths are inexhaustible; its shallows are accessible to everyone. "Learn the heart of God from
+		the word of God," he wrote to a friend.
 	</p>
 
 	<h2>The Continuing Call</h2>
@@ -218,13 +222,14 @@
 
 	<p>
 		In 2019, Pope Francis went further in a practical direction. His apostolic letter
-		<em>Aperuit Illis</em> instituted the Sunday of the Word of God, celebrated each year on the Third
-		Sunday in Ordinary Time, as a day specifically devoted to the celebration, study, and living of Scripture.
-		"The Bible is the book of the Lord's people," Francis wrote, "who, in listening to it, move from dispersion
-		and division towards unity." He invoked Jerome's maxim again: "Ignorance of the Scriptures is ignorance
-		of Christ." The Catechism makes the same appeal (CCC 133), and the section on prayer returns to it:
-		"The Church strongly urges all the Christian faithful to learn the surpassing knowledge of Jesus Christ
-		by frequent reading of the divine Scriptures" (CCC 2653).
+		<em>Aperuit Illis</em> instituted the Sunday of the Word of God, celebrated each year on the
+		Third Sunday in Ordinary Time, as a day specifically devoted to the celebration, study, and
+		living of Scripture.
+		<q>The Bible is the book of the Lord's people,</q> Francis wrote, "who, in listening to it, move from
+		dispersion and division towards unity." He invoked Jerome's maxim again: "Ignorance of the Scriptures
+		is ignorance of Christ." The Catechism makes the same appeal (CCC 133), and the section on prayer
+		returns to it: "The Church strongly urges all the Christian faithful to learn the surpassing knowledge
+		of Jesus Christ by frequent reading of the divine Scriptures" (CCC 2653).
 	</p>
 
 	<p>
@@ -271,13 +276,12 @@
 			Pope Francis, <em>Aperuit Illis</em> (2019) — institution of the Sunday of the Word of God
 		</li>
 		<li>
-			Saint Jerome — "Ignorance of the Scriptures is ignorance of Christ"; cited in <em
-				>Dei Verbum</em
-			> 25 and CCC 133
+			Saint Jerome — <q>Ignorance of the Scriptures is ignorance of Christ</q>; cited in
+			<em>Dei Verbum</em> 25 and CCC 133
 		</li>
 		<li>
-			Saint Gregory the Great — "Learn the heart of God from the word of God"; "The divine words
-			grow together with the one who reads them"; cited in <em>Verbum Domini</em> 30
+			Saint Gregory the Great — <q>Learn the heart of God from the word of God</q>; "The divine
+			words grow together with the one who reads them"; cited in <em>Verbum Domini</em> 30
 		</li>
 		<li>
 			Pope Leo XIV, General Audiences of January 14, 21, 28 and February 4, 11, 2026 — catechesis
