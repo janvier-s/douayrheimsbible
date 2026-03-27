@@ -69,7 +69,7 @@
 				<span class="article-title">A Bible of Arguments: The Annotations</span>
 				<span class="article-desc"
 					>The Rheims annotations were a sustained, learned assault on Protestant Scripture that
-					mobilised England's scholarly apparatus in response and spread the text further than its
+					mobilized England's scholarly apparatus in response and spread the text further than its
 					authors had managed.</span
 				>
 			</a>
@@ -79,7 +79,7 @@
 				<span class="article-title">A Bible Forbidden to Its Own Readers</span>
 				<span class="article-desc"
 					>Catholics who produced the English New Testament at Rheims were forbidden to read it
-					without a special licence. The history of the Church's restrictions on vernacular
+					without a special license. The history of the Church's restrictions on vernacular
 					Scripture.</span
 				>
 			</a>
@@ -117,6 +117,15 @@
 				<span class="article-desc"
 					>From Maryland in 1634 to the Catholic communities of the nineteenth century, how this
 					Bible crossed the Atlantic and took root in a new world.</span
+				>
+			</a>
+		</li>
+		<li class="article-item">
+			<a href="/history/original-tongues" class="article-link">
+				<span class="article-title">From the Authentic Latin to the Original Tongues</span>
+				<span class="article-desc"
+					>How the Church moved, over four centuries, from requiring the Vulgate as the basis for
+					all translation to mandating direct use of the Hebrew and Greek originals.</span
 				>
 			</a>
 		</li>

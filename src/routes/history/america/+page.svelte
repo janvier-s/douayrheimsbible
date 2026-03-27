@@ -142,7 +142,7 @@
 	<p>
 		<a href="/history/after-challoner">← After Challoner: A Bible in Dispute</a>
 		&nbsp;&nbsp;·&nbsp;&nbsp;
-		<a href="/history">History of the Douay-Rheims Bible →</a>
+		<a href="/history/original-tongues">From the Authentic Latin to the Original Tongues →</a>
 	</p>
 </ProseLayout>
 
