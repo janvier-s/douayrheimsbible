@@ -1,6 +1,11 @@
 <script lang="ts">
+	import { prefs } from '$lib/stores/prefs';
+	import ProseReadingPrefs from '$lib/components/ProseReadingPrefs.svelte';
+
 	export let title: string;
 	export let subtitle: string = '';
+
+	let prefsOpen = false;
 </script>
 
 <nav class="prose-nav">
@@ -8,6 +13,18 @@
 		<span class="prose-nav-cross" aria-hidden="true">✠</span>
 		<span>Douay-Rheims</span>
 	</a>
+	<div class="prose-nav-right">
+		<button
+			class="prefs-btn"
+			class:prefs-btn--open={prefsOpen}
+			aria-label="Reading options"
+			aria-expanded={prefsOpen}
+			on:click={() => (prefsOpen = !prefsOpen)}
+		>
+			Aa
+		</button>
+		<ProseReadingPrefs bind:open={prefsOpen} />
+	</div>
 </nav>
 
 <main id="main-content" class="prose-page">
@@ -22,7 +39,7 @@
 		<div class="prose-rule"></div>
 	</header>
 
-	<article class="prose-body">
+	<article class="prose-body" class:prose-body--justified={$prefs.justifiedText}>
 		<slot />
 	</article>
 </main>
@@ -32,6 +49,33 @@
 		padding: 22px 48px;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
+	}
+
+	.prose-nav-right {
+		position: relative;
+	}
+
+	.prefs-btn {
+		font-family: var(--font-ui);
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		color: var(--color-muted);
+		background: transparent;
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		padding: 4px 10px;
+		cursor: pointer;
+		transition:
+			color 150ms ease,
+			border-color 150ms ease;
+	}
+
+	.prefs-btn:hover,
+	.prefs-btn--open {
+		color: var(--color-accent-text);
+		border-color: var(--color-accent-text);
 	}
 
 	.prose-nav-link {
@@ -108,9 +152,14 @@
 
 	.prose-body {
 		font-family: var(--font-reader);
-		font-size: 1.05rem;
-		line-height: 1.85;
+		font-size: var(--font-size-reader);
+		line-height: var(--line-height-reader);
 		color: var(--color-foreground);
+	}
+
+	.prose-body--justified :global(p) {
+		text-align: justify;
+		hyphens: auto;
 	}
 
 	.prose-body :global(h2) {
@@ -179,6 +228,7 @@
 	.prose-body :global(q),
 	.prose-body :global(cite) {
 		font-style: italic;
+		quotes: none;
 	}
 
 	.prose-body :global(hr + p) {

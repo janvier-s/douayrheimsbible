@@ -157,11 +157,23 @@
 
 	<p>
 		Hoare extended the argument to something larger: the Vulgate itself. Jerome's Latin, he argued,
-		was "the venerable source from which the Church has drawn the largest part of its ecclesiastical
-		vocabulary." Terms now so familiar as to be taken for granted, from "Scripture" and "communion"
-		to "grace," "sanctification," "justification," "salvation," "penance," "sacrament," and
-		"eternity," all derive from Jerome's translation.
+		was <q
+			>the venerable source from which the Church has drawn the largest part of its ecclesiastical
+			vocabulary.</q
+		> Terms now so familiar as to be taken for granted all derive from Jerome's translation:
 	</p>
+
+	<ul>
+		<li><q>Scripture</q></li>
+		<li><q>communion</q></li>
+		<li><q>grace</q></li>
+		<li><q>sanctification</q></li>
+		<li><q>justification</q></li>
+		<li><q>salvation</q></li>
+		<li><q>penance</q></li>
+		<li><q>sacrament</q></li>
+		<li><q>eternity</q></li>
+	</ul>
 
 	<p>
 		Westcott, who had little sympathy for the Douay method overall, conceded the vocabulary

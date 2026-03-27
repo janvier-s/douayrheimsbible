@@ -107,34 +107,34 @@
 		govern Catholic interpretation of Scripture.
 	</p>
 
-	<p>
-		The first is attention to what the human authors genuinely intended. Sacred Scripture speaks
-		through human writers, and those writers had particular intentions, spoke in particular literary
-		forms, and addressed particular audiences. "Truth is differently presented and expressed in the
-		various types of historical writing, in prophetical and poetical texts, and in other forms of
-		literary expression" (CCC 110). A passage of Hebrew poetry is read differently from a legal
-		code; a prophetic oracle calls for different attention than a genealogy.
-	</p>
-
-	<p>
-		The second criterion is reading each text within the content and unity of the whole of
-		Scripture. No verse stands alone. The Old and New Testaments form a single revelation: as Saint
-		Augustine wrote, <q
-			>the New Testament lies hidden in the Old and the Old is unveiled in the New.</q
-		>
-		Reading Scripture within its whole prevents both the isolation of proof texts and the misreading of
-		difficult passages whose meaning becomes clear only in relation to the rest of what God has revealed.
-	</p>
-
-	<p>
-		The third criterion is reading Scripture within the living Tradition of the whole Church. The
-		Catechism (CCC 113) draws on the Fathers in expressing this: "Sacred Scripture is written
-		principally in the Church's heart rather than in documents and records; for the Church carries
-		in her Tradition the living memorial of God's Word." The Magisterium serves as the authoritative
-		interpreter of Scripture, not because the Church stands over the Word of God, but because it
-		serves it: Scripture, Tradition, and the Magisterium are so bound together that none can stand
-		without the others.
-	</p>
+	<ol class="criteria-list">
+		<li>
+			<strong>Attention to authorial intent.</strong> Sacred Scripture speaks through human writers
+			with particular intentions, literary forms, and audiences.
+			<q
+				>Truth is differently presented and expressed in the various types of historical writing, in
+				prophetical and poetical texts, and in other forms of literary expression</q
+			> (CCC 110). A passage of Hebrew poetry is read differently from a legal code; a prophetic oracle
+			calls for different attention than a genealogy.
+		</li>
+		<li>
+			<strong>Reading within the unity of Scripture.</strong> No verse stands alone. The Old and New
+			Testaments form a single revelation: as Saint Augustine wrote,
+			<q>the New Testament lies hidden in the Old and the Old is unveiled in the New.</q>
+			Reading Scripture within its whole prevents both the isolation of proof texts and the misreading
+			of difficult passages whose meaning becomes clear only in relation to the rest of what God has revealed.
+		</li>
+		<li>
+			<strong>Reading within the living Tradition of the Church.</strong> The Catechism (CCC 113)
+			draws on the Fathers in expressing this:
+			<q
+				>Sacred Scripture is written principally in the Church's heart rather than in documents and
+				records; for the Church carries in her Tradition the living memorial of God's Word.</q
+			>
+			The Magisterium serves as the authoritative interpreter of Scripture, not because it stands over
+			the Word of God, but because it serves it.
+		</li>
+	</ol>
 
 	<p>
 		These three criteria work together as a single interpretive discipline. Pope Leo XIV, in his
@@ -161,16 +161,24 @@
 		the Word of God.
 	</p>
 
-	<p>
-		Its structure is simple and its rhythm unhurried. The first movement, <em>lectio</em>, is
-		attentive reading: taking a passage slowly, allowing the words to land, not rushing past
-		difficulty. The second, <em>meditatio</em>, is meditation: staying with a phrase or image that
-		arrests the attention, turning it in the mind, listening for what it opens. The third,
-		<em>oratio</em>, is prayer: speaking to God from what has been heard, bringing the text into
-		direct conversation with the life of the reader. The fourth, <em>contemplatio</em>, is
-		contemplation: resting in God's presence, beyond words, in the quiet that reading and prayer
-		have prepared.
-	</p>
+	<ol class="lectio-list">
+		<li>
+			<em>Lectio</em> — attentive reading: taking a passage slowly, allowing the words to land, not rushing
+			past difficulty.
+		</li>
+		<li>
+			<em>Meditatio</em> — meditation: staying with a phrase or image that arrests the attention, turning
+			it in the mind, listening for what it opens.
+		</li>
+		<li>
+			<em>Oratio</em> — prayer: speaking to God from what has been heard, bringing the text into direct
+			conversation with the life of the reader.
+		</li>
+		<li>
+			<em>Contemplatio</em> — contemplation: resting in God's presence, beyond words, in the quiet that
+			reading and prayer have prepared.
+		</li>
+	</ol>
 
 	<p>
 		Pope Benedict XVI, in his 2010 apostolic exhortation <em>Verbum Domini</em>, endorsed
@@ -305,3 +313,47 @@
 	routeBase="/odr"
 	showNav={false}
 />
+
+<style>
+	.criteria-list,
+	.lectio-list {
+		list-style: none;
+		padding: 0;
+		margin: 24px 0;
+		counter-reset: item-counter;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.criteria-list li,
+	.lectio-list li {
+		counter-increment: item-counter;
+		padding: 20px 0 20px 48px;
+		border-top: 1px solid var(--color-border);
+		position: relative;
+		font-family: var(--font-reader);
+		font-size: var(--font-size-reader);
+		line-height: var(--line-height-reader);
+		color: var(--color-muted);
+	}
+
+	.criteria-list li:last-child,
+	.lectio-list li:last-child {
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.criteria-list li::before,
+	.lectio-list li::before {
+		content: counter(item-counter);
+		position: absolute;
+		left: 0;
+		top: 20px;
+		font-family: var(--font-reader);
+		font-size: 11px;
+		font-weight: 600;
+		color: var(--color-accent-text);
+		letter-spacing: 0.1em;
+		line-height: calc(var(--line-height-reader) * var(--font-size-reader));
+	}
+</style>
