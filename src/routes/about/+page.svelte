@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>About the Douay-Rheims Bible — English Catholic Scripture, 1582–1610</title>
+	<title>About the Douay-Rheims Bible: English Catholic Scripture, 1582-1610</title>
 	<meta
 		name="description"
 		content="The Douay-Rheims Bible is the first complete English Catholic translation of Sacred Scripture, rendered from the Latin Vulgate by English exiles at Douai and Rheims between 1582 and 1610."
@@ -50,15 +50,15 @@
 		first cohort of students at St John's College, Oxford, alongside his close friend Edmund
 		Campion, who would later be martyred for the faith. Martin began translating in October 1578,
 		working at a pace of roughly two chapters per day, and is believed to have completed the entire
-		Bible by around July 1580 — an extraordinary feat of sustained scholarship.
+		Bible by around July 1580, an extraordinary feat of sustained scholarship.
 	</p>
 
 	<p>
 		His work was proofread and revised by William Allen, the founder of the English College at
 		Douai, together with Richard Bristow and Thomas Worthington, who also prepared the extensive
-		theological annotations that accompanied the text. Martin himself did not live to see his Old
-		Testament published — he died of tuberculosis on 28 October 1582, the same year the New
-		Testament appeared, at approximately forty years of age.
+		theological annotations that accompanied the text. Martin did not live to see his Old Testament
+		published. He died of tuberculosis on 28 October 1582, the same year the New Testament appeared,
+		at approximately forty years of age.
 	</p>
 
 	<h2>The Source Text</h2>
@@ -67,17 +67,18 @@
 		The translators worked from the Latin Vulgate, the ancient Latin translation that the Council of
 		Trent had declared the authoritative text for Catholic use. They also consulted the original
 		Hebrew and Greek manuscripts for accuracy. This approach gave the translation a distinctively
-		Latinate vocabulary — words like <em>supersubstantial</em>, <em>longanimity</em>, and
-		<em>benignity</em> — which, while theologically precise, could make the text challenging for casual
-		readers. The translators included a glossary to explain these terms.
+		Latinate vocabulary, with words like <em>supersubstantial</em>, <em>longanimity</em>, and
+		<em>benignity</em> appearing throughout. The Catholic Encyclopedia described the result as "so full
+		of Latinisms as to be in places hardly intelligible." The translators included a glossary to explain
+		these terms, acknowledging the difficulty.
 	</p>
 
 	<p>
 		The translators did not work from a single Greek manuscript tradition. In places their Vulgate
-		source preserves readings that align with older manuscript families — for example, at James
-		2:20, the original Douay-Rheims reads "idle" (from the Greek <em>arge</em>), a reading found in
-		the Codex Amiatinus, rather than "dead" (<em>nekra</em>) as found in Erasmus's Textus Receptus
-		and most Protestant translations.
+		source preserves readings that align with older manuscript families. For example, at James 2:20,
+		the original Douay-Rheims reads "idle" (from the Greek <em>arge</em>), a reading found in the
+		Codex Amiatinus, rather than "dead" (<em>nekra</em>) found in Erasmus's Textus Receptus and most
+		Protestant translations.
 	</p>
 
 	<h2>Why It Was Created</h2>
@@ -86,7 +87,7 @@
 		By the late sixteenth century, several Protestant English translations of the Bible were already
 		in circulation, including the Geneva Bible and the Bishops' Bible. Catholic scholars recognised
 		the need for an English translation that was doctrinally sound, theologically precise, and
-		faithful to the Vulgate tradition — one that could serve English-speaking Catholics who were
+		faithful to the Vulgate tradition, one that could serve English-speaking Catholics who were
 		increasingly cut off from Latin liturgical texts.
 	</p>
 
@@ -111,8 +112,10 @@
 		significantly. Research by Ward Allen in 1969 found that in the revision of the Gospels, roughly
 		one quarter of the proposed amendments adopted readings from the Rheims text. The Rheims
 		translation was made widely available to Protestant scholars through William Fulke's 1589
-		parallel edition, which printed both texts side by side — ironically intended as a refutation
-		but serving instead as a convenient reference.
+		parallel edition, which printed both texts side by side. Fulke intended this as a refutation,
+		but it served instead as a convenient reference for the KJV committee. Saint John Henry Newman
+		later observed that the relationship between the two translations was closer than either
+		tradition liked to acknowledge.
 	</p>
 
 	<h2>Catholic Significance</h2>
@@ -128,11 +131,11 @@
 
 	<p>
 		This site presents the original pre-Challoner text of the Douay-Rheims Bible, as first published
-		in 1582 and 1609–1610. This is not the more commonly encountered Challoner revision of the
-		mid-eighteenth century, which altered the text so extensively that Cardinal Newman observed the
-		changes "almost amounted to a new translation." The original text is significantly more Latinate
-		in its vocabulary and closer to the Vulgate in its phrasing. Spelling and punctuation have been
-		lightly modernised, but the translation itself is unaltered.
+		in 1582 and 1609-1610. Nearly every "Douay-Rheims Bible" in print today is actually Bishop
+		Challoner's mid-eighteenth-century revision, which altered the text so extensively that Cardinal
+		Newman observed the changes "almost amounted to a new translation." The original text is
+		significantly more Latinate in its vocabulary and closer to the Vulgate in its phrasing.
+		Spelling and punctuation have been lightly modernised, but the translation itself is unaltered.
 	</p>
 
 	<p>

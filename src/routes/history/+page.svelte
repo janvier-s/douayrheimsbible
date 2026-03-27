@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>History of the Douay-Rheims Bible — From Exile to Scripture</title>
+	<title>History of the Douay-Rheims Bible: From Exile to Scripture</title>
 	<meta
 		name="description"
 		content="How English Catholic scholars in exile during the Reformation produced the first complete English Catholic Bible, from the founding of the English College at Douai in 1568 to the publication of the complete Bible in 1610."
@@ -40,8 +40,8 @@
 	</p>
 
 	<p>
-		The consequences for Catholics who refused to conform were severe. Recusancy — the refusal to
-		attend Church of England services — brought heavy fines and imprisonment. Functioning as a
+		The consequences for Catholics who refused to conform were severe. Recusancy (the refusal to
+		attend Church of England services) brought heavy fines and imprisonment. Functioning as a
 		Catholic priest in England constituted legal high treason, punishable by execution. By the end
 		of Elizabeth's reign in 1603, an estimated two hundred Catholics had been put to death for their
 		faith.
@@ -78,7 +78,7 @@
 		In 1578, political unrest in the Low Countries forced the college to relocate temporarily to
 		Rheims. It was here, in October 1578, that Martin began his monumental work of translating the
 		entire Bible from the Latin Vulgate into English. Working with extraordinary discipline —
-		translating roughly two chapters each day — he is believed to have completed the entire text by
+		translating roughly two chapters each day. He is believed to have completed the entire text by
 		July 1580, a span of less than two years.
 	</p>
 
@@ -97,7 +97,7 @@
 	<p>
 		The New Testament was published first, in 1582, while the college was still at Rheims. It
 		appeared in quarto format in a print run of only a few hundred copies, accompanied by dense
-		annotations. The text was distinctive for its heavily Latinate vocabulary — a deliberate choice
+		annotations. The text was distinctive for its heavily Latinate vocabulary, a deliberate choice
 		reflecting the translators' fidelity to the Vulgate and their conviction that certain
 		theological concepts were best expressed in terms closely derived from the Latin.
 	</p>
@@ -114,7 +114,7 @@
 	<p>
 		Although Martin had completed the Old Testament translation by 1580, financial difficulties
 		prevented its publication for nearly three decades. It finally appeared in two quarto volumes
-		from Douai — Genesis through Job in 1609, and Psalms through 2 Maccabees (together with the
+		from Douai: Genesis through Job in 1609, and Psalms through 2 Maccabees (together with the
 		apocryphal books) in 1610. By this time the college had returned to Douai from Rheims, which is
 		why the complete work bears the names of both cities.
 	</p>
@@ -134,7 +134,7 @@
 		The Douay-Rheims remained the sole authorised English Bible for Catholics for over three
 		centuries. In the mid-eighteenth century, Bishop Richard Challoner would undertake a
 		<a href="/challoner-revision">substantial revision</a> that made the text more accessible to contemporary
-		readers — though at the cost of much of Martin's distinctive Latinate character.
+		readers, though at the cost of much of Martin's distinctive Latinate character.
 	</p>
 
 	<p>

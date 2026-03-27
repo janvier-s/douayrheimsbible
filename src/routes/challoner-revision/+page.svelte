@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>The Challoner Revision — How the Douay-Rheims Bible Was Transformed</title>
+	<title>The Challoner Revision: How the Douay-Rheims Bible Was Transformed</title>
 	<meta
 		name="description"
 		content="Bishop Richard Challoner's 18th-century revision of the Douay-Rheims Bible changed the text so extensively that Cardinal Newman said it 'almost amounted to a new translation.' Learn what changed and why."
@@ -55,9 +55,10 @@
 
 	<ul>
 		<li>
-			<strong>Simplified vocabulary:</strong> The original's distinctive Latinate terms —
-			<em>supersubstantial</em>, <em>longanimity</em>, <em>benignity</em> — were replaced with more familiar
-			English equivalents.
+			<strong>Simplified vocabulary:</strong> The original's distinctive Latinate terms (<em
+				>supersubstantial</em
+			>, <em>longanimity</em>, <em>benignity</em>) were replaced with more familiar English
+			equivalents.
 		</li>
 		<li>
 			<strong>Modernised phrasing:</strong> Archaic constructions and obsolete expressions were rewritten
@@ -71,8 +72,8 @@
 		<li>
 			<strong>Approximated the King James Version:</strong> Many of Challoner's revisions brought the
 			text closer to the phrasing of the KJV, which had by then become the dominant English Bible. This
-			was a pragmatic choice — KJV phrasing had become the standard register of biblical English, and
-			Challoner saw no reason to differ where doctrine was not at stake.
+			was a pragmatic choice. KJV phrasing had become the standard register of biblical English, and Challoner
+			saw no reason to differ where doctrine was not at stake.
 		</li>
 		<li>
 			<strong>Stripped the annotations:</strong> The original's extensive theological notes, designed
@@ -151,10 +152,9 @@
 	<p>
 		The cumulative effect of Challoner's changes was dramatic. Cardinal John Henry Newman observed
 		that the revisions "almost amounted to a new translation," and that Challoner's version was
-		"even nearer to the Protestant than it is to the Douay" in phraseology and diction — despite
-		both being translations of the same Latin Vulgate. This is not an exaggeration — in many
-		passages, the Challoner text reads so differently from Gregory Martin's original that they are
-		barely recognisable as the same work.
+		"even nearer to the Protestant than it is to the Douay" in phraseology and diction, despite both
+		being translations of the same Latin Vulgate. In many passages, the Challoner text reads so
+		differently from Gregory Martin's original that they are barely recognisable as the same work.
 	</p>
 
 	<blockquote>
@@ -164,8 +164,8 @@
 
 	<p>
 		This distinction is often overlooked. When Catholics speak of "the Douay-Rheims Bible," they
-		almost invariably mean Challoner's version. The original text — with its Latinate richness, its
-		close fidelity to the Vulgate, and its extensive polemical annotations — has been largely
+		almost invariably mean Challoner's version. The original text, with its Latinate richness, its
+		close fidelity to the Vulgate, and its extensive polemical annotations, has been largely
 		forgotten.
 	</p>
 
@@ -173,21 +173,21 @@
 
 	<p>
 		The pre-Challoner Douay-Rheims is not merely an antiquarian curiosity. It is the work of men who
-		translated under extraordinary circumstances — scholars in exile, some of whom would be
-		martyred, producing a translation of the entire Bible in under two years while simultaneously
-		training priests for a mission that could cost them their lives.
+		translated under extraordinary circumstances: scholars in exile, some of whom would be martyred,
+		producing a translation of the entire Bible in under two years while simultaneously training
+		priests for a mission that could cost them their lives.
 	</p>
 
 	<p>
 		The original text reflects a different philosophy of translation, one that prioritised fidelity
 		to the Latin source even at the cost of readability. Where Challoner smoothed and simplified,
-		Martin and his colleagues preserved the texture of the Vulgate — its cadences, its theological
+		Martin and his colleagues preserved the texture of the Vulgate: its cadences, its theological
 		precision, its occasionally difficult beauty.
 	</p>
 
 	<p>
 		This site presents that original text, with only light modernisation of spelling and
-		punctuation. The translation itself — Gregory Martin's translation — is unaltered.
+		punctuation. The translation itself, Gregory Martin's translation, is unaltered.
 	</p>
 
 	<hr />
