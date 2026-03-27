@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'What Bible did American Catholics use in the nineteenth century?',
+			a: "American Catholics used the Douay-Rheims-Challoner Bible, in editions published by American Catholic publishers beginning in the early nineteenth century. The Fitzpatrick edition (1838) and Archbishop Kenrick's translation (1849-1860) were among the most significant American Catholic Bible publications of the period."
+		},
+		{
+			q: 'Was the Douay-Rheims Bible important for Catholic immigrants to America?',
+			a: 'Yes. For millions of Irish, German, and other Catholic immigrants who arrived in the United States in the nineteenth century, the Douay-Rheims was the Bible of their faith. It served as a marker of Catholic identity in a Protestant-majority country and remained the standard Catholic Bible for English-speaking Americans until the mid-twentieth century.'
+		},
+		{
+			q: 'When did American Catholics stop using the Douay-Rheims?',
+			a: "The Douay-Rheims began to be displaced by new Catholic translations following Pope Pius XII's 1943 encyclical Divino Afflante Spiritu, which authorized translation from the original Hebrew and Greek. The Confraternity Bible (begun 1941) and later the New American Bible (1970) gradually replaced the Douay-Rheims in liturgical and popular use."
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +28,21 @@
 		name="description"
 		content="From Maryland in 1634 to the Catholic communities of the nineteenth century: how the Douay-Rheims Bible crossed the Atlantic and accompanied American Catholics through their first centuries."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/america" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/america" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="The Douay-Rheims Bible in America" />
 	<meta
 		property="og:description"
 		content="From Maryland in 1634 to the nineteenth century: how the Douay-Rheims crossed the Atlantic and took root in American Catholic life."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/america" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/america" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="The Douay-Rheims in America"
 	subtitle="From Maryland in 1634 to the Catholic communities of the nineteenth century, how this Bible crossed the Atlantic and took root in a new world."
+	faqItems={FAQ}
 >
 	<h2>Maryland, 1634</h2>
 

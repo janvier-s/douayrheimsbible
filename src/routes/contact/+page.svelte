@@ -7,7 +7,7 @@
 <svelte:head>
 	<title>Contact — Douay-Rheims Bible</title>
 	<meta name="description" content="Get in touch with the Douay-Rheims Bible project." />
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/contact" />
+	<link rel="canonical" href="https://douayrheimsbible.net/contact" />
 </svelte:head>
 
 <ProseLayout title="Contact">

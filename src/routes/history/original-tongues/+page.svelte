@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'Why did the Catholic Church move away from the Latin Vulgate as its translation source?',
+			a: "Pope Pius XII's 1943 encyclical Divino Afflante Spiritu authorized Catholic scholars to translate from the original Hebrew and Greek manuscripts, a shift that had been resisted for centuries. The encyclical recognized that advances in textual scholarship — ancient manuscripts unavailable to Jerome, improved Greek and Hebrew scholarship — made original-language translation more accurate, not less reverent."
+		},
+		{
+			q: 'What is the Clementine Vulgate?',
+			a: "The Clementine Vulgate is the standard edition of the Latin Vulgate published in 1592 under Pope Clement VIII, following the Council of Trent's mandate for an authoritative Latin text. It became the normative text for Catholic use for over three centuries and was the edition against which the Challoner revision of the Douay-Rheims was checked."
+		},
+		{
+			q: 'Is the Latin Vulgate still used in the Catholic Church?',
+			a: 'The Vulgate remains the official Latin text of the Catholic Church. The Nova Vulgata (New Vulgate), published in 1979, is a revised edition the Church uses for official Latin liturgical texts. However, vernacular translations for pastoral use are now typically made from the original Hebrew and Greek rather than from the Latin.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -15,7 +30,7 @@
 		name="description"
 		content="How the Catholic Church moved, over four centuries, from requiring the Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals, from Trent to Divino Afflante Spiritu to Liturgiam Authenticam."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/original-tongues" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/original-tongues" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -25,13 +40,14 @@
 		property="og:description"
 		content="How the Church moved from requiring the Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/original-tongues" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/original-tongues" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="From the Authentic Latin to the Original Tongues"
 	subtitle="How the Church moved, over four centuries, from requiring the Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals."
+	faqItems={FAQ}
 >
 	<h2>What Trent Actually Said</h2>
 

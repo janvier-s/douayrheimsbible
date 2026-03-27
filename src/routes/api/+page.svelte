@@ -10,7 +10,7 @@
 		name="description"
 		content="Access the original Douay-Rheims Bible text programmatically via a simple JSON API."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/api" />
+	<link rel="canonical" href="https://douayrheimsbible.net/api" />
 </svelte:head>
 
 <ProseLayout

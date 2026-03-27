@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'Are there differences between different printed editions of the Douay-Rheims Bible?',
+			a: 'Yes. After Challoner, further revisions were made by his successors and by American publishers in the nineteenth century, accumulating additional changes beyond what Challoner himself introduced. Cardinal Wiseman questioned whether "Douay-Rheims" remained an accurate name for the heavily revised text. Different printed editions today may differ in specific readings.'
+		},
+		{
+			q: 'What is the Douay-Rheims-Challoner Bible?',
+			a: 'It is the name sometimes used to distinguish Challoner\'s revision from Gregory Martin\'s original translation. Most Bibles marketed as "Douay-Rheims" are actually Douay-Rheims-Challoner, a distinction that matters because the two texts differ substantially in vocabulary, style, and degree of Latinity.'
+		},
+		{
+			q: "Did anyone challenge the authenticity of Challoner's revised text?",
+			a: 'Cardinal Wiseman and other scholars raised questions about how far successive revisions had distorted the original, and whether the name "Douay-Rheims" any longer accurately described the text in common use. But no systematic effort to restore the original was made at the institutional level; the Challoner text simply became the standard.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +28,21 @@
 		name="description"
 		content="The proliferation of competing Catholic Bible editions after Challoner, and why Cardinal Wiseman declared that calling any of them the Douay-Rheims was an abuse of terms."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/after-challoner" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/after-challoner" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="After Challoner: A Bible in Dispute" />
 	<meta
 		property="og:description"
 		content="The competing Catholic Bible editions after Challoner, and why the name Douay-Rheims became, in Wiseman's words, an abuse of terms."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/after-challoner" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/after-challoner" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="After Challoner: A Bible in Dispute"
 	subtitle="The proliferation of competing editions after Challoner, and why Cardinal Wiseman declared the name Douay-Rheims an abuse of terms."
+	faqItems={FAQ}
 >
 	<h2>Multiple Editions, No Single Text</h2>
 

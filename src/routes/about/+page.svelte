@@ -5,6 +5,25 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const ABOUT_FAQ = [
+		{
+			q: 'What is the Douay-Rheims Bible?',
+			a: 'The Douay-Rheims Bible is the first complete English Catholic translation of Sacred Scripture, produced between 1582 and 1610 by English scholars living in exile in France and the Spanish Netherlands. It was translated primarily by Gregory Martin from the Latin Vulgate, with revisions by William Allen and Richard Bristow. It predates the King James Bible by nearly three decades.'
+		},
+		{
+			q: 'Is the Douay-Rheims Bible still used by Catholics today?',
+			a: 'The Douay-Rheims remains in use by traditional Catholics who prefer a formal-equivalence translation that preserves the theological vocabulary of the Latin Vulgate. It is not the official lectionary Bible used at Mass, but it is widely read for private study and prayer.'
+		},
+		{
+			q: 'How is the Douay-Rheims different from other English Bible translations?',
+			a: 'The Douay-Rheims is distinctive in three ways: it was translated from the Latin Vulgate rather than directly from the Hebrew and Greek; it preserves many Latinate theological terms such as "longsuffering," "supersubstantial," and "penance" that other translations render more loosely; and it reflects the doctrinal tradition of the Catholic Church through both its translation choices and its extensive annotations.'
+		},
+		{
+			q: 'Which version of the Douay-Rheims is presented on this site?',
+			a: "This site presents the original pre-Challoner text as first published in 1582 (New Testament) and 1609-1610 (Old Testament). Most printed Douay-Rheims Bibles today are Bishop Challoner's eighteenth-century revision, which altered the text so extensively that Cardinal Newman called it nearly a new translation. This site restores Gregory Martin's original."
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +32,21 @@
 		name="description"
 		content="The Douay-Rheims Bible is the first complete English Catholic translation of Sacred Scripture, rendered from the Latin Vulgate by English exiles at Douai and Rheims between 1582 and 1610."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/about" />
+	<link rel="canonical" href="https://douayrheimsbible.net/about" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="About the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="The first complete English Catholic translation of Sacred Scripture, faithfully rendered from the Latin Vulgate by English scholars in exile."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/about" />
+	<meta property="og:url" content="https://douayrheimsbible.net/about" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="About the Douay-Rheims Bible"
 	subtitle="The first complete English Catholic translation of Sacred Scripture, rendered faithfully from the Latin Vulgate by English scholars in exile."
+	faqItems={ABOUT_FAQ}
 >
 	<h2>What Is the Douay-Rheims Bible?</h2>
 

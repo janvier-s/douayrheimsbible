@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'Why does the Douay-Rheims Bible have so many footnotes?',
+			a: 'The annotations were a deliberate response to the Protestant Reformation. The translators knew their Bible would be read in the context of active religious controversy, and they designed the notes to defend Catholic doctrine verse by verse — addressing specific Protestant arguments, explaining sacramental theology, and guiding readers through passages that Reformers had interpreted differently.'
+		},
+		{
+			q: 'Who wrote the annotations in the Douay-Rheims Bible?',
+			a: 'The notes were written primarily by Richard Bristow and Thomas Worthington, working alongside William Allen at the English College. Gregory Martin translated the text; the annotations were a collaborative editorial addition intended to make the translation useful for Catholic readers navigating Protestant arguments.'
+		},
+		{
+			q: 'Are the Douay-Rheims annotations still available to read?',
+			a: 'Bishop Challoner largely removed the original annotations in his eighteenth-century revision, which is why they survive primarily in scholarly editions of the original text. This site presents the original pre-Challoner text; readers interested in the full annotations should consult facsimile editions of the 1582 New Testament or the 1609-1610 Old Testament.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +28,21 @@
 		name="description"
 		content="The notes that accompanied the Douay-Rheims New Testament were a sustained, learned theological engagement with Protestant readings of Scripture that drove a Protestant response lasting decades."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/annotations" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/annotations" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="A Bible of Arguments: The Annotations of the Douay-Rheims" />
 	<meta
 		property="og:description"
 		content="The annotations of the Douay-Rheims were a sustained theological engagement with Protestant readings of Scripture. How they shaped the Bible and its reception."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/annotations" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/annotations" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="A Bible of Arguments: The Annotations"
 	subtitle="The notes that accompanied the Rheims New Testament were a sustained, scholarly engagement with Protestant readings of Scripture, and they changed everything about how the book was received."
+	faqItems={FAQ}
 >
 	<h2>The Notes as Purpose</h2>
 

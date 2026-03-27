@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'Was the Douay-Rheims Bible illegal in England?',
+			a: 'Possession of Catholic texts, including the Douay-Rheims Bible, was illegal in Elizabethan England. The recusancy laws criminalized Catholic worship and practice; importing or possessing Catholic books was punishable by fine or imprisonment. Many copies were seized and destroyed, which is why early editions are now rare.'
+		},
+		{
+			q: 'Did Catholics need special permission to read the Douay-Rheims Bible?',
+			a: 'Yes — and the requirement came from Catholic authorities, not only Protestant law. The preface to the 1582 Rheims New Testament stated that readers should obtain a license from a confessor or pastor before reading it privately. This reflected a pastoral concern: unsupported private reading of Scripture, in an environment saturated with Protestant polemic, was seen as a real risk for ordinary Catholics without theological formation.'
+		},
+		{
+			q: 'Why would the Catholic Church restrict access to its own Bible translation?',
+			a: 'The restriction was not about suppressing Scripture but about protecting readers from harm. The 1582 preface warned against the proliferation of tendentious Protestant translations and the danger that private readers, encountering Scripture without guidance, would absorb Protestant interpretations embedded in those translations. The license requirement was meant to ensure readers had access to pastoral support alongside the text.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +28,21 @@
 		name="description"
 		content="Catholics who produced the English New Testament at Rheims were forbidden to read it without a license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/forbidden-bible" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/forbidden-bible" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="A Bible Forbidden to Its Own Readers" />
 	<meta
 		property="og:description"
 		content="Catholics who produced the Rheims New Testament were forbidden to read it without a license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/forbidden-bible" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/forbidden-bible" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="A Bible Forbidden to Its Own Readers"
 	subtitle="Catholics who produced the English New Testament at Rheims were forbidden to read it without a special license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
+	faqItems={FAQ}
 >
 	<h2>Two Prohibitions</h2>
 

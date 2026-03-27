@@ -3,7 +3,7 @@ import { ALL_BOOKS } from '$lib/data/books';
 // Translation prefixes with live data — add entries here as translations are imported
 const LIVE_TRANSLATIONS = ['odr'] as const;
 
-const SITE = 'https://douayrheimsbible.pages.dev';
+const SITE = 'https://douayrheimsbible.net';
 
 export const prerender = true;
 
@@ -36,7 +36,18 @@ export function GET() {
 	// Content pages
 	urls.push(entry('/about', '0.9', 'monthly'));
 	urls.push(entry('/history', '0.9', 'monthly'));
-	urls.push(entry('/challoner-revision', '0.9', 'monthly'));
+	urls.push(entry('/history/origins', '0.9', 'monthly'));
+	urls.push(entry('/history/translation-philosophy', '0.9', 'monthly'));
+	urls.push(entry('/history/rheims-1582', '0.9', 'monthly'));
+	urls.push(entry('/history/annotations', '0.9', 'monthly'));
+	urls.push(entry('/history/forbidden-bible', '0.9', 'monthly'));
+	urls.push(entry('/history/influence-on-kjv', '0.9', 'monthly'));
+	urls.push(entry('/history/challoner', '0.9', 'monthly'));
+	urls.push(entry('/history/after-challoner', '0.9', 'monthly'));
+	urls.push(entry('/history/america', '0.9', 'monthly'));
+	urls.push(entry('/history/original-tongues', '0.9', 'monthly'));
+	urls.push(entry('/history/scripture-for-all', '0.9', 'monthly'));
+	urls.push(entry('/challoner-revision', '0.8', 'monthly'));
 
 	// Static pages
 	urls.push(entry('/search', '0.6', 'monthly'));

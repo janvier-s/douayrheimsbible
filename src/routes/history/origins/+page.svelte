@@ -5,6 +5,25 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const ORIGINS_FAQ = [
+		{
+			q: 'Where was the Douay-Rheims Bible translated?',
+			a: 'The New Testament was translated and published at Rheims (modern Reims) in northern France in 1582, while the English College was residing there temporarily. The Old Testament was completed and published at Douai in 1609 and 1610, giving the translation its composite name.'
+		},
+		{
+			q: 'Why did Catholic scholars translate the Bible in exile?',
+			a: 'The English Reformation made the practice of Catholicism illegal in England. The English College at Douai was founded by William Allen in 1568 to train priests for the English mission. Translation of the Bible was part of that mission: Catholics in England needed Scripture in their own language but had only Protestant translations available to them.'
+		},
+		{
+			q: 'Who was Gregory Martin?',
+			a: "Gregory Martin (c. 1542-1582) was an Oxford-trained scholar and a founding student of St John's College alongside Edmund Campion. He joined the English College at Douai and undertook the entire Bible translation — approximately two chapters per day — completing the draft around 1580. He died of tuberculosis in October 1582, the same year the New Testament appeared."
+		},
+		{
+			q: 'How long did it take to translate the Douay-Rheims Bible?',
+			a: 'Gregory Martin began translating in October 1578 and completed the draft of the entire Bible by around July 1580 — roughly twenty months. Publication was delayed by funding difficulties: the New Testament appeared in 1582, but the Old Testament was not printed until 1609-1610.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +32,21 @@
 		name="description"
 		content="How English Catholic scholars in exile during the Reformation produced the first complete English Catholic Bible, from the founding of the English College at Douai in 1568 to the publication of the complete Bible in 1610."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/origins" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/origins" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="Born in Exile: The Origins of the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="How English Catholic scholars in exile produced the first complete English Catholic Bible."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/origins" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/origins" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="Born in Exile: The Origins of the Douay-Rheims Bible"
 	subtitle="How a community of English Catholic exiles, driven from their homeland by persecution, produced the first complete English Catholic translation of Sacred Scripture."
+	faqItems={ORIGINS_FAQ}
 >
 	<h2>The English Reformation</h2>
 

@@ -5,6 +5,25 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'What did Bishop Challoner change in the Douay-Rheims Bible?',
+			a: 'Challoner simplified the Latinate vocabulary, modernized archaic phrasing, revised some renderings against both the Vulgate and the original Greek and Hebrew, and removed most of the original annotations. The changes were extensive enough that Cardinal Newman said they "almost amounted to a new translation" and that Challoner\'s version was "even nearer to the Protestant than it is to the Douay" in phraseology.'
+		},
+		{
+			q: 'Is the Douay-Rheims Bible in print today the same as the original?',
+			a: "No. Nearly every Douay-Rheims Bible in print today is actually Bishop Challoner's eighteenth-century revision (1749-1752), not Gregory Martin's original 1582 and 1609-1610 text. The two differ significantly in vocabulary, style, and character. This site presents the original pre-Challoner text."
+		},
+		{
+			q: 'When did Bishop Challoner revise the Douay-Rheims?',
+			a: 'Challoner produced several editions: the New Testament was revised in 1749, followed by a complete Bible in 1750, and a further New Testament revision in 1752. Each edition differed from the last, and all were published anonymously.'
+		},
+		{
+			q: 'Why did Challoner revise the Douay-Rheims Bible?',
+			a: 'By the mid-eighteenth century, the original text was over 150 years old. Its heavily Latinate vocabulary and archaic phrasing made it increasingly inaccessible to ordinary Catholic readers. Challoner set out to make the Bible readable for the Catholics of his day, succeeding in that practical goal but at the cost of the distinctive character of the original.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +32,21 @@
 		name="description"
 		content="Bishop Richard Challoner's 18th-century revision of the Douay-Rheims Bible changed the text so extensively that Cardinal Newman said it almost amounted to a new translation. Learn what changed and why."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/challoner" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/challoner" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="The Challoner Revision of the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="How Bishop Challoner transformed the original Douay-Rheims text, and why the distinction matters."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/challoner" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/challoner" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="The Challoner Revision"
 	subtitle="How Bishop Richard Challoner transformed the Douay-Rheims Bible in the eighteenth century, and why the distinction between the original and the revision matters."
+	faqItems={FAQ}
 >
 	<h2>Bishop Richard Challoner</h2>
 

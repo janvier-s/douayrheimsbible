@@ -6,6 +6,100 @@
 
 	export let title: string;
 	export let subtitle: string = '';
+	export let ogImage: string = 'https://douayrheimsbible.net/images/dr-1582-rheims.webp';
+	export let datePublished: string | undefined = undefined;
+	export let faqItems: Array<{ q: string; a: string }> = [];
+
+	const SITE = 'https://douayrheimsbible.net';
+
+	const PATH_LABELS: Record<string, string> = {
+		about: 'About',
+		history: 'History',
+		origins: 'Origins',
+		'translation-philosophy': 'Translation Philosophy',
+		'rheims-1582': 'Rheims 1582',
+		annotations: 'Annotations',
+		'forbidden-bible': 'Forbidden Bible',
+		'influence-on-kjv': 'Influence on the KJV',
+		challoner: 'The Challoner Revision',
+		'after-challoner': 'After Challoner',
+		america: 'America',
+		'original-tongues': 'Original Tongues',
+		'scripture-for-all': 'Scripture for All'
+	};
+
+	$: canonicalUrl = SITE + $page.url.pathname;
+
+	$: breadcrumbItems = (() => {
+		const parts = $page.url.pathname.split('/').filter(Boolean);
+		const items: Array<{ name: string; item: string }> = [{ name: 'Home', item: SITE + '/' }];
+		let current = SITE;
+		for (let i = 0; i < parts.length - 1; i++) {
+			current += '/' + parts[i];
+			const label = PATH_LABELS[parts[i]] ?? parts[i];
+			items.push({ name: label, item: current });
+		}
+		if (parts.length > 0) items.push({ name: title, item: canonicalUrl });
+		return items;
+	})();
+
+	const scriptOpen = '<' + 'script type="application/ld+json">';
+	const scriptClose = '</' + 'script>';
+
+	$: articleSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: title,
+		description: subtitle || title,
+		url: canonicalUrl,
+		image: ogImage,
+		...(datePublished ? { datePublished } : {}),
+		author: {
+			'@type': 'Organization',
+			name: 'Douay-Rheims Bible',
+			url: SITE
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'Douay-Rheims Bible',
+			url: SITE,
+			logo: { '@type': 'ImageObject', url: SITE + '/favicon-96x96.png' }
+		},
+		isPartOf: { '@type': 'WebSite', name: 'Douay-Rheims Bible', url: SITE }
+	};
+
+	$: breadcrumbSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: breadcrumbItems.map((item, i) => ({
+			'@type': 'ListItem',
+			position: i + 1,
+			name: item.name,
+			item: item.item
+		}))
+	};
+
+	$: faqSchema =
+		faqItems.length > 0
+			? {
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: faqItems.map(({ q, a }) => ({
+						'@type': 'Question',
+						name: q,
+						acceptedAnswer: { '@type': 'Answer', text: a }
+					}))
+				}
+			: null;
+
+	$: jsonLdHtml =
+		scriptOpen +
+		JSON.stringify(articleSchema) +
+		scriptClose +
+		scriptOpen +
+		JSON.stringify(breadcrumbSchema) +
+		scriptClose +
+		(faqSchema ? scriptOpen + JSON.stringify(faqSchema) + scriptClose : '');
 
 	const NAV_ARTICLES = [
 		{ path: '/about', label: 'About' },
@@ -147,6 +241,15 @@
 	});
 </script>
 
+<svelte:head>
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={subtitle || title} />
+	<meta name="twitter:image" content={ogImage} />
+	<meta property="og:image" content={ogImage} />
+	{@html jsonLdHtml}
+</svelte:head>
+
 <nav class="prose-nav">
 	<a href="/" class="prose-nav-link">
 		<span class="prose-nav-cross" aria-hidden="true">✠</span>
@@ -186,6 +289,18 @@
 	>
 		<slot />
 	</article>
+
+	{#if faqItems.length > 0}
+		<section class="prose-faq" aria-label="Frequently asked questions">
+			<h2 class="prose-faq-heading">Frequently Asked Questions</h2>
+			{#each faqItems as { q, a }}
+				<div class="faq-item">
+					<p class="faq-question">{q}</p>
+					<p class="faq-answer">{a}</p>
+				</div>
+			{/each}
+		</section>
+	{/if}
 </main>
 
 <aside class="prose-toc" aria-label="Table of contents">
@@ -606,5 +721,44 @@
 		.prose-toc {
 			display: none;
 		}
+	}
+
+	/* FAQ section */
+	.prose-faq {
+		margin-top: 56px;
+		border-top: 1px solid var(--color-border);
+		padding-top: 32px;
+	}
+
+	.prose-faq-heading {
+		font-family: var(--font-ui);
+		font-size: 9px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.24em;
+		color: var(--color-muted);
+		margin: 0 0 24px;
+	}
+
+	.faq-item {
+		padding: 20px 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.faq-question {
+		font-family: var(--font-reader);
+		font-size: var(--font-size-reader);
+		font-weight: 700;
+		color: var(--color-heading, var(--color-text));
+		margin: 0 0 10px;
+		line-height: 1.4;
+	}
+
+	.faq-answer {
+		font-family: var(--font-reader);
+		font-size: var(--font-size-reader);
+		line-height: var(--line-height-reader);
+		color: var(--color-text);
+		margin: 0;
 	}
 </style>

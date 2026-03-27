@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'When was the Douay-Rheims New Testament published?',
+			a: 'The New Testament was published in 1582 in Rheims, France, where the English College had temporarily relocated from Douai. The Old Testament followed in two volumes from Douai in 1609 and 1610.'
+		},
+		{
+			q: 'Was the 1582 Rheims New Testament the first English Catholic Bible?',
+			a: 'It was the first printed English Catholic New Testament and remains one of the most historically significant English Bible translations. Earlier manuscript translations by Catholics existed, but the Rheims New Testament was the first designed for wide circulation and explicitly addressed to Catholic readers.'
+		},
+		{
+			q: 'Why was there a gap of nearly thirty years between the 1582 New Testament and the 1609 Old Testament?',
+			a: 'Funding. The English College was financially precarious, dependent on pensions from the Spanish crown and voluntary donations. The New Testament was published with difficulty in 1582; the resources for printing the much longer Old Testament were not available until almost thirty years later.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,7 +28,7 @@
 		name="description"
 		content="The political world that greeted the Rheims New Testament in 1582: Campion's execution, England's anti-Roman fever, and the Protestant refutation that spread the Catholic Bible further than its authors expected."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/rheims-1582" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/rheims-1582" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -23,13 +38,14 @@
 		property="og:description"
 		content="The political world that greeted the Rheims New Testament in 1582, and the refutation that spread it further."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/rheims-1582" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/rheims-1582" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="Published in a Time of Crisis"
 	subtitle="The political world that greeted the Rheims New Testament in 1582, and the Protestant refutation that spread it further than its authors could have imagined."
+	faqItems={FAQ}
 >
 	<h2>England in 1582</h2>
 

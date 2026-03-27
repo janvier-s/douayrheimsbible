@@ -7,7 +7,7 @@
 <svelte:head>
 	<title>Privacy Policy — Douay-Rheims Bible</title>
 	<meta name="description" content="Privacy policy for the Douay-Rheims Bible website." />
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/privacy" />
+	<link rel="canonical" href="https://douayrheimsbible.net/privacy" />
 </svelte:head>
 
 <ProseLayout title="Privacy Policy">

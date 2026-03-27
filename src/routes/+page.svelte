@@ -8,27 +8,70 @@
 
 	$: bookSlug = $readingPosition?.bookSlug ?? data.bookMeta.slug;
 	$: chapterNum = $readingPosition ? String($readingPosition.chapter) : '1';
+
+	const scriptOpen = '<' + 'script type="application/ld+json">';
+	const scriptClose = '</' + 'script>';
+	const SITE = 'https://douayrheimsbible.net';
+	const websiteSchema =
+		scriptOpen +
+		JSON.stringify({
+			'@context': 'https://schema.org',
+			'@graph': [
+				{
+					'@type': 'WebSite',
+					'@id': SITE + '/#website',
+					url: SITE,
+					name: 'Douay-Rheims Bible',
+					description:
+						'The original pre-Challoner Douay-Rheims Bible online — the first complete English Catholic translation of Sacred Scripture, 1582–1610.',
+					potentialAction: {
+						'@type': 'SearchAction',
+						target: { '@type': 'EntryPoint', urlTemplate: SITE + '/search?q={search_term_string}' },
+						'query-input': 'required name=search_term_string'
+					}
+				},
+				{
+					'@type': 'Organization',
+					'@id': SITE + '/#organization',
+					url: SITE,
+					name: 'Douay-Rheims Bible',
+					logo: {
+						'@type': 'ImageObject',
+						url: SITE + '/favicon-96x96.png',
+						width: 96,
+						height: 96
+					},
+					sameAs: []
+				}
+			]
+		}) +
+		scriptClose;
 </script>
 
 <svelte:head>
 	<title>The Douay-Rheims Bible — English Catholic Scripture, 1582–1610</title>
 	<meta
 		name="description"
-		content="Read the Douay-Rheims Bible online — the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore Challoner's annotations."
+		content="Read the Douay-Rheims Bible online — the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore the original pre-Challoner text."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/" />
+	<link rel="canonical" href="https://douayrheimsbible.net/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="The Douay-Rheims Bible — English Catholic Scripture" />
 	<meta
 		property="og:description"
 		content="The first complete English Catholic translation of Sacred Scripture, faithfully rendered from the Latin Vulgate. Read the original pre-Challoner text online."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/" />
-	<meta
-		property="og:image"
-		content="https://douayrheimsbible.pages.dev/images/dr-1582-rheims.webp"
-	/>
+	<meta property="og:url" content="https://douayrheimsbible.net/" />
+	<meta property="og:image" content="https://douayrheimsbible.net/images/dr-1582-rheims.webp" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="The Douay-Rheims Bible — English Catholic Scripture" />
+	<meta
+		name="twitter:description"
+		content="The first complete English Catholic translation of Sacred Scripture, faithfully rendered from the Latin Vulgate. Read the original pre-Challoner text online."
+	/>
+	<meta name="twitter:image" content="https://douayrheimsbible.net/images/dr-1582-rheims.webp" />
+	{@html websiteSchema}
 </svelte:head>
 
 <!-- ═══════════ HERO ═══════════ -->

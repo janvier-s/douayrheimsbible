@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'Does the Catholic Church encourage Catholics to read the Bible?',
+			a: 'Yes, emphatically. The Second Vatican Council\'s Dei Verbum (1965) called for "easy access to Sacred Scripture" for all the faithful and quoted Saint Jerome\'s maxim: "Ignorance of the Scriptures is ignorance of Christ." Pope Benedict XVI\'s Verbum Domini (2010) and Pope Francis\'s Aperuit Illis (2019) — which instituted the Sunday of the Word of God — have continued and deepened this invitation.'
+		},
+		{
+			q: 'What is lectio divina?',
+			a: "Lectio divina (divine reading) is the ancient monastic practice of slow, prayerful Scripture reading. It moves through four movements: lectio (attentive reading), meditatio (meditation), oratio (prayer arising from the text), and contemplatio (contemplative rest in God's presence). Pope Benedict XVI endorsed it in Verbum Domini as a privileged method for encountering the living Word."
+		},
+		{
+			q: 'Did the Catholic Church ever restrict Bible reading?',
+			a: 'In certain periods, yes. The 1582 Rheims New Testament preface required readers to obtain a license from a confessor before reading it privately. These restrictions were pastoral responses to specific historical crises — the proliferation of tendentious Protestant translations — rather than opposition to Scripture reading in principle. The trajectory of Catholic teaching has moved consistently toward wider access and warmer encouragement.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,7 +28,7 @@
 		name="description"
 		content="How the Catholic Church actively encourages all the faithful to read Scripture, from Dei Verbum's open invitation to the Church's guidance on how to read: with attention to literary forms, Tradition, and the Magisterium, and through the ancient practice of Lectio Divina."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/scripture-for-all" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/scripture-for-all" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -23,13 +38,14 @@
 		property="og:description"
 		content="How the Church moved from regulated access to active encouragement, and how Catholics are invited to read Scripture today."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/scripture-for-all" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/scripture-for-all" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="A Bible Open to All"
 	subtitle="How the Catholic Church encourages all the faithful to read Scripture, and the guidance it offers for reading well."
+	faqItems={FAQ}
 >
 	<h2>From Caution to Invitation</h2>
 

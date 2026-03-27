@@ -1,0 +1,49 @@
+# Douay-Rheims Bible
+
+> douayrheimsbible.net presents the original pre-Challoner Douay-Rheims Bible (1582–1610), the first complete English Catholic translation of Sacred Scripture, rendered from the Latin Vulgate by English scholars in exile. The text is Gregory Martin's original translation, with light modernization of spelling and punctuation only. This is NOT Bishop Challoner's eighteenth-century revision — it is the earlier, more Latinate, and less widely known original.
+
+## Key Pages
+
+- [About](https://douayrheimsbible.net/about): Overview of the Douay-Rheims Bible — its origins, translators, source text, Catholic significance, and the distinction from the Challoner revision
+- [History](https://douayrheimsbible.net/history): Series of eleven articles covering the complete history of the Douay-Rheims Bible from its origins to the present
+- [Read the Bible](https://douayrheimsbible.net/odr/genesis/1): Full text of the original Douay-Rheims Bible online, all 73 books, searchable and readable
+
+## History Articles
+
+- [Born in Exile: The Origins of the Douay-Rheims Bible](https://douayrheimsbible.net/history/origins): How English Catholic scholars in exile during the Reformation produced the first complete English Catholic Bible, from the founding of the English College at Douai in 1568 to publication in 1610
+- [A Translation from the Authentic Latin](https://douayrheimsbible.net/history/translation-philosophy): Why the translators chose literal fidelity to the Latin Vulgate over readability, and what that means for the text's distinctive vocabulary
+- [Published in a Time of Crisis](https://douayrheimsbible.net/history/rheims-1582): The 1582 Rheims New Testament — its publication context, physical form, and reception
+- [A Bible of Arguments: The Annotations](https://douayrheimsbible.net/history/annotations): The extensive theological notes designed to defend Catholic doctrine against Protestant readings
+- [A Bible Forbidden to Its Own Readers](https://douayrheimsbible.net/history/forbidden-bible): How the Douay-Rheims was illegal in England and why Catholics needed a license to read it
+- [How the Douay-Rheims Shaped the King James Bible](https://douayrheimsbible.net/history/influence-on-kjv): The specific debt the 1611 King James Version owes to the Catholic Rheims New Testament
+- [The Challoner Revision](https://douayrheimsbible.net/history/challoner): How Bishop Richard Challoner transformed the original text so extensively that Cardinal Newman called it nearly a new translation; includes side-by-side comparisons
+- [After Challoner: A Bible in Dispute](https://douayrheimsbible.net/history/after-challoner): Further revisions after Challoner and the scholarly debate over whether the result can still be called the Douay-Rheims
+- [The Douay-Rheims in America](https://douayrheimsbible.net/history/america): The role of the Douay-Rheims in American Catholic history, from immigrant communities to twentieth-century displacement
+- [From the Authentic Latin to the Original Tongues](https://douayrheimsbible.net/history/original-tongues): How the Catholic Church's approach to Bible translation changed from the Council of Trent to Divino Afflante Spiritu
+- [A Bible Open to All](https://douayrheimsbible.net/history/scripture-for-all): How the Catholic Church encourages all the faithful to read Scripture, from Dei Verbum to lectio divina
+
+## About the Translation
+
+**Translator**: Gregory Martin (principal), with William Allen, Richard Bristow, Thomas Worthington
+**Source text**: Latin Vulgate (Clementine edition)
+**New Testament published**: 1582, Rheims (Reims), France
+**Old Testament published**: 1609–1610, Douai, Spanish Netherlands
+**Canon**: 73 books (Catholic canon, including deuterocanonical books)
+**Translation style**: Formal equivalence; strongly Latinate vocabulary
+
+The translation predates the King James Bible (1611) and influenced it significantly — roughly one quarter of proposed amendments to the Gospels in the KJV revision process adopted readings from the Rheims text.
+
+## What Makes This Site Distinctive
+
+Most printed and online "Douay-Rheims" Bibles are actually Bishop Challoner's revision of 1749–1752, which altered the original so extensively that Cardinal Newman said the changes "almost amounted to a new translation." This site restores Gregory Martin's original text, which is:
+
+- More Latinate in vocabulary (e.g., "supersubstantial," "longanimity," "concorporate")
+- Closer in phrasing to the Latin Vulgate
+- Accompanied by the original annotations in the historical articles
+
+## Technical
+
+- Full text of 73 books available at /odr/{book-slug}/{chapter}
+- Compare tool at /compare/{book-slug}/{chapter}
+- JSON/text download at /download
+- Search at /search

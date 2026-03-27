@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'Did the King James Bible copy from the Douay-Rheims?',
+			a: "Not copied, but significantly influenced. The King James translators explicitly acknowledged the Rheims New Testament in their 1611 preface and demonstrably used it. Scholarly research has found that in the revision of the Gospels alone, roughly one quarter of proposed amendments adopted readings from the Rheims text. The Catholic Bible's influence on the Protestant masterpiece was substantial."
+		},
+		{
+			q: 'What specific phrases did the King James Bible take from the Douay-Rheims?',
+			a: 'Among the best-documented examples: "long-suffering" (from the Rheims longanimitas), and numerous phrasings in the Pauline epistles. William Fulke\'s 1589 parallel edition, printed to refute the Rheims text, inadvertently gave KJV translators a convenient reference to the Catholic rendering of every verse.'
+		},
+		{
+			q: 'How did the Rheims New Testament become available to Protestant translators?',
+			a: "William Fulke, a Protestant polemicist, printed a parallel edition in 1589 that placed the Rheims New Testament alongside the Bishops' Bible line by line, intending to expose and refute Catholic translation choices. This edition circulated widely among Protestant clergy and scholars, making the Rheims text accessible to the very committee that would produce the King James Bible twenty years later."
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,20 +28,21 @@
 		name="description"
 		content="The specific debt the King James Version owes to the Catholic Rheims New Testament: phrases, vocabulary, and Greek Article accuracy that passed from the Catholic Bible into the Protestant masterpiece."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/influence-on-kjv" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/influence-on-kjv" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="How the Douay-Rheims Shaped the King James Bible" />
 	<meta
 		property="og:description"
 		content="The specific debt the King James Version owes to the Rheims New Testament, in phrases, vocabulary, and scholarly precision."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/influence-on-kjv" />
+	<meta property="og:url" content="https://douayrheimsbible.net/history/influence-on-kjv" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
 	title="How the Douay-Rheims Shaped the King James Bible"
 	subtitle="The specific debt the King James Version owes to the Catholic Bible, in phrases, in vocabulary, and in scholarly precision."
+	faqItems={FAQ}
 >
 	<h2>The Refutation That Became a Reference</h2>
 

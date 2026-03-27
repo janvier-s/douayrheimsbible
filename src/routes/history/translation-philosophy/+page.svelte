@@ -5,6 +5,21 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 
 	export let data: PageData;
+
+	const FAQ = [
+		{
+			q: 'Why does the Douay-Rheims use unusual vocabulary like "supersubstantial" and "longsuffering"?',
+			a: 'The translators deliberately preserved Latin theological terms rather than substitute familiar paraphrases. Gregory Martin argued that key theological concepts carried precision in the Vulgate Latin that would be lost in simpler English. Words like "supersubstantial" (from supersubstantialem in Matthew 6:11) preserve a doctrinal nuance that "daily" — the Protestant rendering — does not.'
+		},
+		{
+			q: 'Was the Douay-Rheims translated from Latin or from the original languages?',
+			a: 'Primarily from the Latin Vulgate, which the Council of Trent had declared the authoritative text for Catholic use. The translators did consult the Hebrew and Greek originals for comparison, but they regarded the Vulgate as the normative text. This gives the translation a distinctively Latinate character compared with versions translated directly from the original languages.'
+		},
+		{
+			q: 'What is a formal equivalence Bible translation?',
+			a: 'Formal equivalence prioritizes preserving the structure, vocabulary, and word order of the source text, even at some cost to natural English idiom. The Douay-Rheims takes this approach to an extreme: its translators aimed to reflect the Latin text so faithfully that a reader could use the English to understand the Latin. The result preserves details that freer translations smooth away.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -13,7 +28,7 @@
 		name="description"
 		content="Why the Douay-Rheims translators chose Saint Jerome's Latin Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/translation-philosophy" />
+	<link rel="canonical" href="https://douayrheimsbible.net/history/translation-philosophy" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -25,7 +40,7 @@
 	/>
 	<meta
 		property="og:url"
-		content="https://douayrheimsbible.pages.dev/history/translation-philosophy"
+		content="https://douayrheimsbible.net/history/translation-philosophy"
 	/>
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
@@ -33,6 +48,7 @@
 <ProseLayout
 	title="A Translation from the Authentic Latin"
 	subtitle="Why the Douay-Rheims translators chose Saint Jerome's Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
+	faqItems={FAQ}
 >
 	<h2>The Choice That Defined the Translation</h2>
 
