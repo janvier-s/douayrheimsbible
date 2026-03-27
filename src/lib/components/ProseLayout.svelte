@@ -9,6 +9,7 @@
 
 	const NAV_ARTICLES = [
 		{ path: '/about', label: 'About' },
+		{ path: '/history', label: 'History' },
 		{ path: '/history/origins', label: 'Origins' },
 		{ path: '/history/translation-philosophy', label: 'Translation' },
 		{ path: '/history/rheims-1582', label: 'Rheims 1582' },
@@ -465,7 +466,6 @@
 	.prose-body :global(hr + p a:last-of-type) {
 		margin-left: auto;
 		text-align: right;
-		flex-direction: row-reverse;
 	}
 
 	.prose-body :global(.nav-icon) {
@@ -503,12 +503,12 @@
 		position: fixed;
 		right: 24px;
 		top: 72px;
-		width: 196px;
+		width: 200px;
 		max-height: calc(100vh - 96px);
 		overflow-y: auto;
 		scrollbar-width: thin;
 		scrollbar-color: var(--color-border) transparent;
-		padding: 0;
+		padding: 24px 0 0;
 		opacity: 0;
 		transform: translateX(8px);
 		animation: toc-enter 400ms ease 300ms forwards;
@@ -547,12 +547,12 @@
 
 	.toc-nav-link {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 13px;
 		line-height: 1.5;
 		padding: 4px 0;
-		color: var(--color-muted);
+		color: var(--color-subtle);
 		text-decoration: none;
-		opacity: 0.6;
+		opacity: 0.85;
 		transition:
 			color 220ms ease,
 			opacity 220ms ease;
@@ -560,7 +560,7 @@
 
 	.toc-nav-link:hover {
 		color: var(--color-text);
-		opacity: 0.9;
+		opacity: 1;
 	}
 
 	.toc-nav-link--active {
@@ -581,12 +581,12 @@
 	.toc-section-item a {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 12px;
 		line-height: 1.55;
 		padding: 3px 0;
-		color: var(--color-muted);
+		color: var(--color-subtle);
 		text-decoration: none;
-		opacity: 0.55;
+		opacity: 0.75;
 		transition:
 			color 220ms ease,
 			opacity 220ms ease;
@@ -594,7 +594,7 @@
 
 	.toc-section-item a:hover {
 		color: var(--color-text);
-		opacity: 0.85;
+		opacity: 1;
 	}
 
 	.toc-section-item--active a {

@@ -5,6 +5,13 @@
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
+	import { afterNavigate } from '$app/navigation';
+
+	afterNavigate(({ from, to, type }) => {
+		if (type === 'popstate') return;
+		if (from?.url.pathname === to?.url.pathname) return;
+		window.scrollTo(0, 0);
+	});
 
 	// $page.params is the primary source on navigation.
 	// readingPosition is only set by the ODR page during infinite scroll,
