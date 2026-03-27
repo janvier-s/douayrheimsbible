@@ -36,7 +36,7 @@
 			heading: 'About',
 			links: [
 				{ label: 'About the Translation', href: '/about' },
-				{ label: 'History', href: '/history' },
+				{ label: 'History of the DR Bible', href: '/history' },
 				{ label: 'The Challoner Revision', href: '/challoner-revision' },
 				{ label: 'Download JSON', href: '/download' },
 				{ label: 'API', href: '/api' }

@@ -147,7 +147,7 @@
 	<hr />
 
 	<p>
-		<a href="/odr/genesis/1">Begin reading in Genesis →</a>
+		<a href="/history">History of the Douay-Rheims Bible →</a>
 	</p>
 </ProseLayout>
 

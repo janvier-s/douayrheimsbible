@@ -3,11 +3,18 @@
 	export let subtitle: string = '';
 </script>
 
+<nav class="prose-nav">
+	<a href="/" class="prose-nav-link">
+		<span class="prose-nav-cross" aria-hidden="true">✠</span>
+		<span>Douay-Rheims</span>
+	</a>
+</nav>
+
 <main id="main-content" class="prose-page">
 	<header class="prose-header">
-		<p class="prose-eyebrow">
+		<a href="/" class="prose-eyebrow">
 			<span aria-hidden="true">✠</span> Douay-Rheims Bible
-		</p>
+		</a>
 		<h1 class="prose-title">{title}</h1>
 		{#if subtitle}
 			<p class="prose-subtitle">{subtitle}</p>
@@ -21,6 +28,35 @@
 </main>
 
 <style>
+	.prose-nav {
+		padding: 22px 48px;
+		display: flex;
+		align-items: center;
+	}
+
+	.prose-nav-link {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		text-decoration: none;
+		font-family: var(--font-ui);
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.22em;
+		font-weight: 600;
+		color: var(--color-foreground);
+		transition: color 150ms ease;
+	}
+
+	.prose-nav-link:hover {
+		color: var(--color-accent);
+	}
+
+	.prose-nav-cross {
+		font-size: 14px;
+		color: var(--color-accent);
+	}
+
 	.prose-page {
 		max-width: 700px;
 		margin: 0 auto;
