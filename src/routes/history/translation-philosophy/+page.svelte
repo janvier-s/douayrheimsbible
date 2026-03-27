@@ -64,11 +64,14 @@
 	<h2>The Title Page States It Plainly</h2>
 
 	<p>
-		The Rheims New Testament announced this choice on its cover: "The New Testament of Jesus Christ
-		translated faithfully into English out of the authentical Latin according to the best corrected
-		copies of the same diligently conferred with the Greek and other editions in divers languages."
-		The Douay Old Testament said the same: "The Holie Bible faithfully translated into English out
-		of the authentical Latin."
+		The Rheims New Testament announced this choice on its cover:
+		<q
+			>The New Testament of Jesus Christ translated faithfully into English out of the authentical
+			Latin according to the best corrected copies of the same diligently conferred with the Greek
+			and other editions in divers languages.</q
+		>
+		The Douay Old Testament said the same:
+		<q>The Holie Bible faithfully translated into English out of the authentical Latin.</q>
 	</p>
 
 	<p>
@@ -106,13 +109,17 @@
 
 	<p>
 		The passage from Ephesians illustrates this most vividly. Chapter three, verses eight through
-		ten, in the Rheims: "To me the least of all the sainctes is given this grace, among the Gentils
-		to euangelise the unsearchable riches of Christ and to illuminate al men what is the
-		dispensation of the sacrament hidden from worlds in God, who created al things; that the
-		manifold wisdom of God may be notified to the Princes and Potestats in the Celestials by the
-		Church, according to the prefinition of worlds which he made in Christ Jesus our Lord." Every
-		choice preserves the Latin term; "Potestats," "prefinition," and "sacrament" each anchor the
-		English reader to the Vulgate and prevent any drift toward Protestant equivalents.
+		ten, in the Rheims:
+		<q
+			>To me the least of all the sainctes is given this grace, among the Gentils to euangelise the
+			unsearchable riches of Christ and to illuminate al men what is the dispensation of the
+			sacrament hidden from worlds in God, who created al things; that the manifold wisdom of God
+			may be notified to the Princes and Potestats in the Celestials by the Church, according to the
+			prefinition of worlds which he made in Christ Jesus our Lord.</q
+		>
+		Every choice preserves the Latin term;
+		<q>Potestats,</q> <q>prefinition,</q> and <q>sacrament</q> each anchor the English reader to the Vulgate
+		and prevent any drift toward Protestant equivalents.
 	</p>
 
 	<p>
