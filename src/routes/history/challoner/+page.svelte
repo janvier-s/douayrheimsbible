@@ -208,9 +208,9 @@
 	</p>
 
 	<p>
-		These are not isolated cases. Cardinal Wiseman went further than Newman, declaring that "to call
-		it any longer the Douay or Rheimish Version is an abuse of terms. It has been altered and
-		modified till scarce any verse remains as it was originally published."
+		These are not isolated cases. By the time Challoner's successors had added their own revisions,
+		the accumulated distance from Gregory Martin's original would lead Cardinal Wiseman to question
+		whether the name "Douay-Rheims" still applied at all, a question taken up in the next article.
 	</p>
 
 	<h2>Almost a New Translation</h2>

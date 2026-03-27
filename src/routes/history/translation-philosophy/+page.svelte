@@ -149,9 +149,7 @@
 	</p>
 
 	<p>
-		Moulton found more than forty instances where the Rheims New Testament alone, among all English
-		versions from Tyndale to the Authorized Version, correctly represents the Greek Article. The
-		care these Oxford classicists brought to the Latin text was real scholarship, even when its
+		The care these Oxford classicists brought to the Latin text was real scholarship, even when its
 		results were unreadable.
 	</p>
 
@@ -179,22 +177,16 @@
 		Westcott, who had little sympathy for the Douay method overall, conceded the vocabulary
 		argument: the language of the translation, whatever its stylistic failures, "is enriched by the
 		bold reduction of innumerable Latin words to English service." The Rheims translators were the
-		most rigorous carriers of Jerome's vocabulary into English, and through their influence on the
-		King James translators, those terms became the common inheritance of English-speaking
-		Christianity.
+		most rigorous carriers of Jerome's vocabulary into English.
 	</p>
 
 	<h2>A Measured Assessment</h2>
 
 	<p>
-		Hoare's conclusion was measured and fair. The Rheims edition holds "fast to the principle of
-		uniformity in its renderings whenever this principle is not prejudicial to the sense. Moreover,
-		for serious students, it is just the uncompromising fidelity of the translators to their
-		Vulgate, which in its New Testament carries us back to the Old Latin rendering of Greek
-		manuscripts current in the middle of the second century, that gives to the Rheims Edition so
-		considerable a value for the purposes of textual criticism. But were we under no other
-		obligation to the editors than that they helped to encourage a better acquaintance with Jerome's
-		Vulgate, our debt to them would still be great."
+		Hoare's conclusion was measured and fair: the Rheims edition's uncompromising fidelity to the
+		Vulgate, whatever its stylistic cost, carries the reader back to the Old Latin rendering of
+		Greek manuscripts current in the middle of the second century, giving it a value for textual
+		criticism that no later revision preserves.
 	</p>
 
 	<p>

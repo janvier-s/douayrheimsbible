@@ -104,11 +104,9 @@
 	</p>
 
 	<p>
-		Fulke took up the task instead. His 1589 parallel edition answered the annotations methodically:
-		he set the entire Rheims New Testament alongside the Bishops' Bible in facing columns, then
-		refuted the Catholic annotations one by one, intending to expose and discredit them; the effect
-		was to make the annotations, together with the text they defended, available to every serious
-		Protestant biblical scholar in England.
+		Fulke took up the task instead. His 1589 parallel edition printed the Rheims text alongside the
+		Bishops' Bible and argued against the Catholic annotations one by one. In printing what he
+		refuted, he spread the Rheims text and its arguments throughout Protestant England.
 	</p>
 
 	<h2>A Peculiar Immortality</h2>

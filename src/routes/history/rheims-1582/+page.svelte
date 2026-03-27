@@ -99,14 +99,11 @@
 	<h2>The Question of Access</h2>
 
 	<p>
-		The translators were also mindful of a long tradition within the Catholic Church regarding
-		vernacular Scripture. The fourteenth canon of the Council of Toulouse, held in 1229, had
-		prohibited the laity from possessing the Old or New Testament in the vernacular tongue,
-		permitting only a Psalter, a Breviary, or the Hours of the Virgin Mary. The Rheims translators
-		did not abandon this tradition: even as they produced an English New Testament, they required
-		that Catholic readers obtain a special license before reading it. As Paris Simms later observed,
-		"no Catholic was permitted to read it until he had obtained a special license from the proper
-		authorities."
+		Even as they produced an English New Testament, the translators required Catholic readers to
+		obtain a special license before reading it. As Paris Simms later observed, "no Catholic was
+		permitted to read it until he had obtained a special license from the proper authorities." The
+		Church's longstanding position on vernacular Scripture, and the theology behind that
+		requirement, is taken up in a later article in this series.
 	</p>
 
 	<p>
@@ -132,18 +129,12 @@
 	<h2>The Refutation That Spread It</h2>
 
 	<p>
-		The response that spread the Rheims text most widely was the one Fulke published in 1589. Rather
-		than simply arguing against the Catholic translation, Fulke printed the entire Rheims New
-		Testament alongside the Bishops' Bible in parallel columns, then answered the Catholic
-		annotations one by one. His intention was to expose and discredit. The effect was to place the
-		Rheims text in the hands of every Protestant biblical scholar in England.
-	</p>
-
-	<p>
-		Fulke's parallel edition passed through four printings. When the translators of the King James
-		Version gathered in 1604, it was among the most widely circulated English New Testaments. The
-		Catholic Bible had become, without anyone planning it that way, one of the working texts of the
-		Protestant masterpiece. That influence is the subject of the next article in this collection.
+		The most consequential response was Fulke's 1589 parallel edition, which printed the entire
+		Rheims New Testament alongside the Bishops' Bible and argued against the Catholic annotations
+		one by one. Passing through four printings, it placed the Rheims text in Protestant hands across
+		England; by the time the King James translators gathered in 1604, it was among the most widely
+		circulated New Testaments in the country. The consequences of that distribution are taken up in
+		the next article.
 	</p>
 
 	<h2>Sources</h2>
