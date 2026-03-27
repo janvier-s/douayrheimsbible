@@ -31,5 +31,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: '3.99.0'
-          command: pages deploy .svelte-kit/cloudflare --project-name=douayrheimsbible --branch=main
+          command: pages deploy --project-name=douayrheimsbible --branch=main
