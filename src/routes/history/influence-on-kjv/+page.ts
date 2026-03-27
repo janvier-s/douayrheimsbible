@@ -5,4 +5,3 @@ export const prerender = true;
 export const load: PageLoad = () => {
 	return { showLayoutTopBar: false };
 };
-
