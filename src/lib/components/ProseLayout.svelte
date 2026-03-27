@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
 	import ProseReadingPrefs from '$lib/components/ProseReadingPrefs.svelte';
 
@@ -6,6 +7,27 @@
 	export let subtitle: string = '';
 
 	let prefsOpen = false;
+	let wrapperEl: HTMLElement;
+
+	function handleOutside(e: MouseEvent) {
+		if (prefsOpen && wrapperEl && !wrapperEl.contains(e.target as Node)) {
+			prefsOpen = false;
+		}
+	}
+
+	function handleKey(e: KeyboardEvent) {
+		if (e.key === 'Escape') prefsOpen = false;
+	}
+
+	onMount(() => {
+		document.addEventListener('mousedown', handleOutside);
+		document.addEventListener('keydown', handleKey);
+	});
+
+	onDestroy(() => {
+		document.removeEventListener('mousedown', handleOutside);
+		document.removeEventListener('keydown', handleKey);
+	});
 </script>
 
 <nav class="prose-nav">
@@ -13,7 +35,7 @@
 		<span class="prose-nav-cross" aria-hidden="true">✠</span>
 		<span>Douay-Rheims</span>
 	</a>
-	<div class="prose-nav-right">
+	<div class="prose-nav-right" bind:this={wrapperEl}>
 		<button
 			class="prefs-btn"
 			class:prefs-btn--open={prefsOpen}
@@ -23,7 +45,7 @@
 		>
 			Aa
 		</button>
-		<ProseReadingPrefs bind:open={prefsOpen} />
+		<ProseReadingPrefs {prefsOpen} />
 	</div>
 </nav>
 

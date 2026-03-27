@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
 
-	export let open = false;
+	export let prefsOpen = false;
 
 	const FONTS = [
 		{
@@ -54,7 +54,6 @@
 
 	let currentTheme = 'auto';
 	let fontDropdownOpen = false;
-	let panelEl: HTMLElement;
 
 	$: activeFontId = $prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily;
 	$: activeFont = FONTS.find((f) => f.id === activeFontId);
@@ -102,31 +101,10 @@
 			);
 		}
 	}
-
-	function onKeydown(e: KeyboardEvent) {
-		if (e.key === 'Escape') open = false;
-	}
-
-	function onClickOutside(e: MouseEvent) {
-		if (open && panelEl && !panelEl.contains(e.target as Node)) {
-			open = false;
-		}
-	}
-
-	onMount(() => {
-		currentTheme = document.documentElement.getAttribute('data-theme') ?? 'auto';
-		document.addEventListener('mousedown', onClickOutside);
-		document.addEventListener('keydown', onKeydown);
-	});
-
-	onDestroy(() => {
-		document.removeEventListener('mousedown', onClickOutside);
-		document.removeEventListener('keydown', onKeydown);
-	});
 </script>
 
-{#if open}
-	<div class="prefs-panel" bind:this={panelEl}>
+{#if prefsOpen}
+	<div class="prefs-panel">
 		<div class="prefs-section">
 			<span class="prefs-label">Theme</span>
 			<div class="theme-row">
@@ -197,7 +175,7 @@
 					style="font-family: {activeFontStack};"
 					aria-expanded={fontDropdownOpen}
 					aria-haspopup="listbox"
-					on:click|stopPropagation={() => (fontDropdownOpen = !fontDropdownOpen)}
+					on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
 				>
 					<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span>
 					<span class="chevron" aria-hidden="true">{fontDropdownOpen ? '▲' : '▼'}</span>
@@ -238,7 +216,7 @@
 			</div>
 		</div>
 
-		<div class="prefs-section toggles">
+		<div class="prefs-section">
 			<label class="toggle-row">
 				<input
 					type="checkbox"
@@ -449,12 +427,6 @@
 	.font-divider {
 		border-top: 1px solid var(--color-border);
 		margin: 3px 0;
-	}
-
-	.toggles {
-		gap: 8px;
-		display: flex;
-		flex-direction: column;
 	}
 
 	.toggle-row {
