@@ -256,11 +256,11 @@
 	<h2>Scripture and This Site</h2>
 
 	<p>
-		The text on this site is Gregory Martin's original translation, produced in exile and published
-		between 1582 and 1610, with only light modernization of spelling. It is a particular and
-		distinctive rendering of Sacred Scripture, deeply shaped by its historical moment and by the
-		translators' philosophical commitment to the Vulgate. It is one way of hearing the Word of God
-		in English.
+		The text on this site is Gregory Martin's original Douai-Rheims translation, produced in exile
+		and published between 1582 and 1610, with only light modernization of spelling. It is a
+		particular and distinctive rendering of Sacred Scripture, deeply shaped by its historical moment
+		and by the translators' philosophical commitment to the Vulgate. It is one way of hearing the
+		Word of God in English.
 	</p>
 
 	<p>

@@ -1,10 +1,26 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import ProseReadingPrefs from '$lib/components/ProseReadingPrefs.svelte';
 
 	export let title: string;
 	export let subtitle: string = '';
+
+	const NAV_ARTICLES = [
+		{ path: '/about', label: 'About' },
+		{ path: '/history/origins', label: 'Origins' },
+		{ path: '/history/translation-philosophy', label: 'Translation' },
+		{ path: '/history/rheims-1582', label: 'Rheims 1582' },
+		{ path: '/history/annotations', label: 'Annotations' },
+		{ path: '/history/forbidden-bible', label: 'Forbidden Bible' },
+		{ path: '/history/influence-on-kjv', label: 'Influence on KJV' },
+		{ path: '/history/challoner', label: 'Challoner Revision' },
+		{ path: '/history/after-challoner', label: 'After Challoner' },
+		{ path: '/history/america', label: 'America' },
+		{ path: '/history/original-tongues', label: 'Original Tongues' },
+		{ path: '/history/scripture-for-all', label: 'Scripture for All' }
+	];
 
 	let prefsOpen = false;
 	let wrapperEl: HTMLElement;
@@ -40,6 +56,21 @@
 		}
 		tocItems = items;
 		if (tocItems.length > 0) activeId = tocItems[0].id;
+	}
+
+	function buildNav() {
+		if (!articleEl) return;
+		const navLinks = Array.from(articleEl.querySelectorAll('hr + p a')) as HTMLAnchorElement[];
+		for (const link of navLinks) {
+			const text = (link.textContent || '').trim();
+			if (text.startsWith('←')) {
+				const label = text.slice(1).trim();
+				link.innerHTML = `<span class="nav-icon" aria-hidden="true">←</span><span class="nav-text">${label}</span>`;
+			} else if (text.endsWith('→')) {
+				const label = text.slice(0, -1).trim();
+				link.innerHTML = `<span class="nav-text">${label}</span><span class="nav-icon" aria-hidden="true">→</span>`;
+			}
+		}
 	}
 
 	function updateActiveId() {
@@ -103,6 +134,7 @@
 		document.addEventListener('mousedown', handleOutside);
 		document.addEventListener('keydown', handleKey);
 		buildToc();
+		buildNav();
 		window.addEventListener('scroll', onScroll, { passive: true });
 	});
 
@@ -133,42 +165,50 @@
 	</div>
 </nav>
 
-<div class="prose-outer">
-	<main id="main-content" class="prose-page">
-		<header class="prose-header">
-			<a href="/" class="prose-eyebrow">
-				<span aria-hidden="true">✠</span> Douay-Rheims Bible
-			</a>
-			<h1 class="prose-title">{title}</h1>
-			{#if subtitle}
-				<p class="prose-subtitle">{subtitle}</p>
-			{/if}
-			<div class="prose-rule"></div>
-		</header>
+<main id="main-content" class="prose-page">
+	<header class="prose-header">
+		<a href="/" class="prose-eyebrow">
+			<span aria-hidden="true">✠</span> Douay-Rheims Bible
+		</a>
+		<h1 class="prose-title">{title}</h1>
+		{#if subtitle}
+			<p class="prose-subtitle">{subtitle}</p>
+		{/if}
+		<div class="prose-rule"></div>
+	</header>
 
-		<article
-			class="prose-body"
-			class:prose-body--justified={$prefs.justifiedText}
-			use:bionicAction={$prefs.bionicReading}
-			bind:this={articleEl}
-		>
-			<slot />
-		</article>
-	</main>
+	<article
+		class="prose-body"
+		class:prose-body--justified={$prefs.justifiedText}
+		use:bionicAction={$prefs.bionicReading}
+		bind:this={articleEl}
+	>
+		<slot />
+	</article>
+</main>
 
-	{#if tocItems.length > 1}
-		<aside class="prose-toc" aria-label="Table of contents">
-			<p class="toc-label">Contents</p>
-			<ul class="toc-list">
-				{#each tocItems as item}
-					<li class="toc-item" class:toc-item--active={activeId === item.id}>
-						<a href="#{item.id}">{item.text}</a>
-					</li>
-				{/each}
-			</ul>
-		</aside>
-	{/if}
-</div>
+<aside class="prose-toc" aria-label="Table of contents">
+	<p class="toc-label">Contents</p>
+	<ul class="toc-nav">
+		{#each NAV_ARTICLES as article}
+			{@const isCurrent = $page.url.pathname === article.path}
+			<li class="toc-nav-item" class:toc-nav-item--current={isCurrent}>
+				<a href={article.path} class="toc-nav-link" class:toc-nav-link--active={isCurrent}>
+					{article.label}
+				</a>
+				{#if isCurrent && tocItems.length > 0}
+					<ul class="toc-sections">
+						{#each tocItems as item}
+							<li class="toc-section-item" class:toc-section-item--active={activeId === item.id}>
+								<a href="#{item.id}">{item.text}</a>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</li>
+		{/each}
+	</ul>
+</aside>
 
 <style>
 	.prose-nav {
@@ -228,16 +268,9 @@
 	}
 
 	/* Layout */
-	.prose-outer {
-		display: flex;
-		align-items: flex-start;
-		justify-content: center;
-	}
-
 	.prose-page {
-		flex: 1;
-		min-width: 0;
 		max-width: 700px;
+		margin: 0 auto;
 		padding: 48px 24px 80px;
 	}
 
@@ -308,7 +341,7 @@
 
 	.prose-body :global(h3) {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 12px;
 		text-transform: uppercase;
 		letter-spacing: 0.2em;
 		color: var(--color-heading, var(--color-accent-text));
@@ -340,7 +373,7 @@
 
 	.prose-body :global(.comparison strong) {
 		display: block;
-		font-size: 9px;
+		font-size: 10px;
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
 		color: var(--color-accent-text);
@@ -409,6 +442,7 @@
 		quotes: none;
 	}
 
+	/* Prev / next navigation */
 	.prose-body :global(hr + p) {
 		display: flex;
 		justify-content: space-between;
@@ -419,7 +453,9 @@
 	}
 
 	.prose-body :global(hr + p a) {
-		display: block;
+		display: flex;
+		align-items: center;
+		gap: 8px;
 		font-size: 1rem;
 		max-width: calc(50% - 12px);
 		line-height: 1.4;
@@ -427,8 +463,13 @@
 	}
 
 	.prose-body :global(hr + p a:last-of-type) {
-		text-align: right;
 		margin-left: auto;
+		text-align: right;
+		flex-direction: row-reverse;
+	}
+
+	.prose-body :global(.nav-icon) {
+		flex-shrink: 0;
 	}
 
 	.prose-body :global(.cta-btn) {
@@ -459,16 +500,18 @@
 
 	/* TOC */
 	.prose-toc {
-		flex-shrink: 0;
-		width: 188px;
-		position: sticky;
-		top: 48px;
-		align-self: flex-start;
-		padding: 56px 0 80px 40px;
-		border-left: 1px solid var(--color-border);
+		position: fixed;
+		right: 24px;
+		top: 72px;
+		width: 196px;
+		max-height: calc(100vh - 96px);
+		overflow-y: auto;
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-border) transparent;
+		padding: 0;
 		opacity: 0;
 		transform: translateX(8px);
-		animation: toc-enter 400ms ease 200ms forwards;
+		animation: toc-enter 400ms ease 300ms forwards;
 	}
 
 	@keyframes toc-enter {
@@ -485,11 +528,11 @@
 		text-transform: uppercase;
 		letter-spacing: 0.24em;
 		color: var(--color-accent-text);
-		margin: 0 0 14px;
+		margin: 0 0 12px;
 		opacity: 0.8;
 	}
 
-	.toc-list {
+	.toc-nav {
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -497,12 +540,50 @@
 		flex-direction: column;
 	}
 
-	.toc-item a {
+	.toc-nav-item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.toc-nav-link {
+		font-family: var(--font-ui);
+		font-size: 12px;
+		line-height: 1.5;
+		padding: 4px 0;
+		color: var(--color-muted);
+		text-decoration: none;
+		opacity: 0.6;
+		transition:
+			color 220ms ease,
+			opacity 220ms ease;
+	}
+
+	.toc-nav-link:hover {
+		color: var(--color-text);
+		opacity: 0.9;
+	}
+
+	.toc-nav-link--active {
+		color: var(--color-accent-text);
+		opacity: 1;
+		font-weight: 600;
+	}
+
+	.toc-sections {
+		list-style: none;
+		padding: 4px 0 8px 10px;
+		margin: 0;
+		border-left: 1px solid var(--color-border);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.toc-section-item a {
 		display: block;
 		font-family: var(--font-ui);
 		font-size: 11px;
 		line-height: 1.55;
-		padding: 5px 0;
+		padding: 3px 0;
 		color: var(--color-muted);
 		text-decoration: none;
 		opacity: 0.55;
@@ -511,17 +592,17 @@
 			opacity 220ms ease;
 	}
 
-	.toc-item a:hover {
+	.toc-section-item a:hover {
 		color: var(--color-text);
 		opacity: 0.85;
 	}
 
-	.toc-item--active a {
+	.toc-section-item--active a {
 		color: var(--color-accent-text);
 		opacity: 1;
 	}
 
-	@media (max-width: 1080px) {
+	@media (max-width: 1120px) {
 		.prose-toc {
 			display: none;
 		}

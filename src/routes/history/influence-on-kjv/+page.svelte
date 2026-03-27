@@ -50,12 +50,12 @@
 
 	<p>The debt repays close attention. A sample from three chapters, taken by chance:</p>
 	<ul>
-		<li>Matthew 26:26 — <q>blessed</q> appears first in the Rheims; the KJV keeps it.</li>
-		<li>Matthew 26:30 — <q>hymn</q> is the Rheims word; the KJV follows.</li>
-		<li>Matthew 26:63 — <q>adjure</q> enters English through the Rheims; the KJV follows.</li>
-		<li>James 1:5 — <q>upbraideth not</q> appears first in the Rheims and passes into the KJV.</li>
-		<li>James 1:21 — <q>engrafted word</q> is the Rheims phrase; the KJV adopts it.</li>
-		<li>James 1:26 — <q>bridleth not</q> is the Rheims word; the KJV follows.</li>
+		<li>Matthew 26:26 <q>blessed</q> appears first in the Rheims; the KJV keeps it.</li>
+		<li>Matthew 26:30 <q>hymn</q> is the Rheims word; the KJV follows.</li>
+		<li>Matthew 26:63 <q>adjure</q> enters English through the Rheims; the KJV follows.</li>
+		<li>James 1:5 <q>upbraideth not</q> appears first in the Rheims and passes into the KJV.</li>
+		<li>James 1:21 <q>engrafted word</q> is the Rheims phrase; the KJV adopts it.</li>
+		<li>James 1:26 <q>bridleth not</q> is the Rheims word; the KJV follows.</li>
 	</ul>
 	<p>
 		As Barker noted, examining those three chapters yielded such results that <q
@@ -96,19 +96,19 @@
 	<p>
 		Beyond individual phrases, the Rheims New Testament contributed something more lasting:
 		vocabulary. The words through which English speakers discuss Christian faith entered the
-		language through Jerome's Vulgate, and entered English through translations that followed the
-		Vulgate closely. H. H. Hoare, writing on the English Bible versions, listed the terms that
-		Jerome gave to the Church: "Scripture, communion, grace, sanctification, justification, spirit,
-		salvation, glory, congregation, penance, propitiation, conversion, election, sacrament,
-		elements, discipline, eternity." All come from Jerome's Bible. The Rheims translators were the
-		most rigorous carriers of this vocabulary into English, and through their influence on the KJV
-		translators, these terms became the common inheritance of English-speaking Christianity.
+		language through Saint Jerome's Vulgate, and entered English through translations that followed
+		the Vulgate closely. H. H. Hoare, writing on the English Bible versions, listed the terms that
+		Saint Jerome gave to the Church: "Scripture, communion, grace, sanctification, justification,
+		spirit, salvation, glory, congregation, penance, propitiation, conversion, election, sacrament,
+		elements, discipline, eternity." All come from Saint Jerome's Bible. The Rheims translators were
+		the most rigorous carriers of this vocabulary into English, and through their influence on the
+		KJV translators, these terms became the common inheritance of English-speaking Christianity.
 	</p>
 
 	<p>
 		Hoare drew a fair conclusion: "were we under no other obligation to the editors than that they
-		helped to encourage a better acquaintance with Jerome's Vulgate, our debt to them would still be
-		great."
+		helped to encourage a better acquaintance with Saint Jerome's Vulgate, our debt to them would
+		still be great."
 	</p>
 
 	<h2>A Measured Assessment</h2>

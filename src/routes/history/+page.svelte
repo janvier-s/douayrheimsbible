@@ -50,8 +50,8 @@
 			<a href="/history/translation-philosophy" class="article-link">
 				<span class="article-title">A Translation from the Authentic Latin</span>
 				<span class="article-desc"
-					>Why the translators chose Jerome's Vulgate over the original Greek and Hebrew, and what
-					their fierce fidelity to that choice gave and cost them.</span
+					>Why the translators chose Saint Jerome's Vulgate over the original Greek and Hebrew, and
+					what their fierce fidelity to that choice gave and cost them.</span
 				>
 			</a>
 		</li>
@@ -193,7 +193,7 @@
 		font-family: var(--font-reader);
 		font-size: 1.15rem;
 		font-weight: 700;
-		color: var(--color-text);
+		color: var(--color-accent-text);
 		letter-spacing: -0.01em;
 		line-height: 1.3;
 		margin-bottom: 6px;

@@ -127,9 +127,9 @@
 	</p>
 
 	<p>
-		The text presented on this site is Martin's original: the pre-Challoner Douay-Rheims, the
-		translation that all subsequent editors took as their starting point and that none of them left
-		unchanged.
+		The text presented on this site is Martin's original: the first edition pre-Challoner
+		Douay-Rheims, the translation that all subsequent editors took as their starting point and that
+		none of them left unchanged.
 	</p>
 
 	<h2>Sources</h2>

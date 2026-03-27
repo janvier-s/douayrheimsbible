@@ -172,7 +172,7 @@ ends: the publication moment and its political world.
 - The Greek Article accuracy: Moulton found 40+ instances where the Rheims NT alone
   among all English versions correctly handles the Greek Article
 - The vocabulary legacy: "Scripture," "communion," "grace," "sanctification,"
-  "justification," "sacrament," "eternity" — all from Jerome's Vulgate, carried
+  "justification," "sacrament," "eternity" — all from Saint Jerome's Vulgate, carried
   into English via the Rheims translation
 - Hoare's assessment: "no other English version will prove more instructive to the
   student who will take the pains to separate what is good and useful from what is

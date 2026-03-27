@@ -44,24 +44,24 @@
 
 	<p>
 		This was a practical judgment, not a claim of textual perfection. The Council fathers were not
-		declaring Jerome's Latin superior to the Hebrew and Greek from which it was translated. The
-		decree said as much: the Vulgate was declared authentic "without depreciating the Hebrew or the
-		Septuagint or any other version then in circulation." Its authority was what later theologians
-		would call juridical rather than critical. The Vulgate was the established, approved standard
-		for the Latin Church, the text on which centuries of liturgy, preaching, and theological
-		argument had been built. That history gave it a settled, practical authority for the life of the
-		Western Church. The Council confirmed that authority; it did not pronounce on questions of
-		textual scholarship.
+		declaring Saint Jerome's Latin superior to the Hebrew and Greek from which it was translated.
+		The decree said as much: the Vulgate was declared authentic "without depreciating the Hebrew or
+		the Septuagint or any other version then in circulation." Its authority was what later
+		theologians would call juridical rather than critical. The Vulgate was the established, approved
+		standard for the Latin Church, the text on which centuries of liturgy, preaching, and
+		theological argument had been built. That history gave it a settled, practical authority for the
+		life of the Western Church. The Council confirmed that authority; it did not pronounce on
+		questions of textual scholarship.
 	</p>
 
 	<p>
 		The Douay-Rheims translation, produced by Gregory Martin and his colleagues in the 1580s and
 		finished in 1610, embodied this principle with unusual rigor. Their translation followed the
-		Vulgate word for word wherever possible, preserving Jerome's Latin in English with a literalism
-		that prioritized theological precision over readability. The Challoner revision and the long
-		succession of editions that followed all worked from the same base. For nearly three centuries
-		after Trent, no authorized Catholic translation in English worked directly from the Hebrew or
-		Greek.
+		Vulgate word for word wherever possible, preserving Saint Jerome's Latin in English with a
+		literalism that prioritized theological precision over readability. The Challoner revision and
+		the long succession of editions that followed all worked from the same base. For nearly three
+		centuries after Trent, no authorized Catholic translation in English worked directly from the
+		Hebrew or Greek.
 	</p>
 
 	<h2>The Nineteenth-Century Opening</h2>
@@ -88,7 +88,8 @@
 	<h2>Divino Afflante Spiritu (1943)</h2>
 
 	<p>
-		On September 30, 1943, the feast of Jerome, Pope Pius XII issued <em>Divino Afflante Spiritu</em
+		On September 30, 1943, the feast of Saint Jerome, Pope Pius XII issued <em
+			>Divino Afflante Spiritu</em
 		>. It marked the fiftieth anniversary of <em>Providentissimus Deus</em>, and it completed what
 		Leo XIII had begun.
 	</p>
@@ -155,9 +156,9 @@
 
 	<p>
 		The Vulgate remained what it had always been: the liturgical text of the Latin Rite, a monument
-		to Jerome's scholarship, and the medium through which Western Christianity had read and prayed
-		with Scripture for over a thousand years. What changed was its role in the production of new
-		translations. The Church's judgment, confirmed over a century of encyclicals and conciliar
+		to Saint Jerome's scholarship, and the medium through which Western Christianity had read and
+		prayed with Scripture for over a thousand years. What changed was its role in the production of
+		new translations. The Church's judgment, confirmed over a century of encyclicals and conciliar
 		documents, was that translators should begin with the texts as God's human authors wrote them.
 	</p>
 
@@ -168,9 +169,9 @@
 		the moment when Trent's decree was still new and its implications still being worked out, by
 		scholars whose philosophical commitment to the Vulgate ran deeper than any institutional
 		requirement. Gregory Martin and his colleagues at Rheims believed, with considerable
-		justification, that the Latinate texture of Jerome's translation conveyed theological meaning
-		that more idiomatic English would lose. Their literalism was a considered choice as much as a
-		constraint.
+		justification, that the Latinate texture of Saint Jerome's translation conveyed theological
+		meaning that more idiomatic English would lose. Their literalism was a considered choice as much
+		as a constraint.
 	</p>
 
 	<p>
@@ -181,9 +182,9 @@
 		Trent's decree, the same thing. The Church has since made clear that the inspired texts are the
 		Hebrew, Aramaic, and Greek originals, and that translators should work from those sources. That
 		development does not diminish what Martin and his colleagues produced. It locates their work in
-		its proper historical context, as the defining achievement of a tradition that ran from Jerome's
-		Latin to the English of the Reformation era and shaped Catholic worship and scholarship for four
-		centuries.
+		its proper historical context, as the defining achievement of a tradition that ran from Saint
+		Jerome's Latin to the English of the Reformation era and shaped Catholic worship and scholarship
+		for four centuries.
 	</p>
 
 	<h2>Sources</h2>

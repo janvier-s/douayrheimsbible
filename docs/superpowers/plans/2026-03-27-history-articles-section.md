@@ -240,6 +240,7 @@ The hub uses `ProseLayout`. The article list goes inside the slot.
 		line-height: 1.3;
 		margin-bottom: 6px;
 		transition: color 150ms ease;
+		text-decoration: underline;
 	}
 
 	.article-link:hover .article-title {
@@ -544,22 +545,22 @@ The prose body is largely preserved from `/challoner-revision/+page.svelte`. Cha
 
 	<ul>
 		<li>
-			<strong>Simplified vocabulary:</strong> The original's distinctive Latinate terms (<em
+			<strong>Simplified vocabulary:</strong> <br/>The original's distinctive Latinate terms (<em
 				>supersubstantial</em
 			>, <em>longanimity</em>, <em>benignity</em>) were replaced with more familiar English
 			equivalents.
 		</li>
 		<li>
-			<strong>Modernised phrasing:</strong> Archaic constructions and obsolete expressions were
+			<strong>Modernised phrasing:</strong> <br/>Archaic constructions and obsolete expressions were
 			rewritten for clarity.
 		</li>
 		<li>
-			<strong>Corrected against multiple sources:</strong> Challoner checked the translation against
+			<strong>Corrected against multiple sources:</strong> <br/>Challoner checked the translation against
 			the Clementine Vulgate, as well as the original Greek and Hebrew manuscripts, incorporating
 			improvements from modern textual scholarship.
 		</li>
 		<li>
-			<strong>Stripped the annotations:</strong> The original's extensive theological notes, designed
+			<strong>Stripped the annotations:</strong> <br/>The original's extensive theological notes, designed
 			to counter Reformation arguments, were largely removed, producing a compact single-volume
 			edition that was far more practical for everyday use.
 		</li>
@@ -1066,18 +1067,18 @@ Sources: Barker (primary), existing `/about` page (brief mention only — this a
 	<p>
 		Beyond individual phrases, the Rheims New Testament contributed something more lasting:
 		vocabulary. The words through which English speakers discuss Christian faith entered the
-		language through Jerome's Vulgate, and entered English through translations that followed the
+		language through Saint Jerome's Vulgate, and entered English through translations that followed the
 		Vulgate closely. H. H. Hoare, writing on the English Bible versions, listed the terms that
-		Jerome gave to the Church: "Scripture, communion, grace, sanctification, justification, spirit,
+		Saint Jerome gave to the Church: "Scripture, communion, grace, sanctification, justification, spirit,
 		salvation, glory, congregation, penance, propitiation, conversion, election, sacrament,
-		elements, discipline, eternity." All come from Jerome's Bible. The Rheims translators were the
+		elements, discipline, eternity." All come from Saint Jerome's Bible. The Rheims translators were the
 		most rigorous carriers of this vocabulary into English, and through their influence on the KJV
 		translators, these terms became the common inheritance of English-speaking Christianity.
 	</p>
 
 	<p>
 		Hoare drew a fair conclusion: "were we under no other obligation to the editors than that they
-		helped to encourage a better acquaintance with Jerome's Vulgate, our debt to them would still
+		helped to encourage a better acquaintance with Saint Jerome's Vulgate, our debt to them would still
 		be great."
 	</p>
 
@@ -1288,7 +1289,7 @@ Sources: Newman (primary), Cotton (primary), Barker.
 	</p>
 
 	<p>
-		The text presented on this site is Martin's original: the pre-Challoner Douay-Rheims, the
+		The text presented on this site is Martin's original: the first edition pre-Challoner Douay-Rheims, the
 		translation that all subsequent editors took as their starting point and that none of them left
 		unchanged.
 	</p>

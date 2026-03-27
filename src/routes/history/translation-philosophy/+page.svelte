@@ -11,7 +11,7 @@
 	<title>A Translation from the Authentic Latin: The Language of the Douay-Rheims</title>
 	<meta
 		name="description"
-		content="Why the Douay-Rheims translators chose Jerome's Latin Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
+		content="Why the Douay-Rheims translators chose Saint Jerome's Latin Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/translation-philosophy" />
 	<meta property="og:type" content="article" />
@@ -21,7 +21,7 @@
 	/>
 	<meta
 		property="og:description"
-		content="Why the Douay-Rheims translators chose Jerome's Vulgate over the original languages, and what that choice gave and cost them."
+		content="Why the Douay-Rheims translators chose Saint Jerome's Vulgate over the original languages, and what that choice gave and cost them."
 	/>
 	<meta
 		property="og:url"
@@ -32,7 +32,7 @@
 
 <ProseLayout
 	title="A Translation from the Authentic Latin"
-	subtitle="Why the Douay-Rheims translators chose Jerome's Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
+	subtitle="Why the Douay-Rheims translators chose Saint Jerome's Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
 >
 	<h2>The Choice That Defined the Translation</h2>
 
@@ -46,9 +46,9 @@
 	</p>
 
 	<p>
-		Martin took a different path. He translated from Jerome's Latin Vulgate, the version that had
-		been the Bible of the Western Church for eleven centuries. When scholars pointed to the Greek
-		manuscripts and suggested their rendering was more accurate, the response of the Rheims
+		Martin took a different path. He translated from Saint Jerome's Latin Vulgate, the version that
+		had been the Bible of the Western Church for eleven centuries. When scholars pointed to the
+		Greek manuscripts and suggested their rendering was more accurate, the response of the Rheims
 		translators was direct: "The Latin Vulgate was the more preferable version, as it was the
 		version of the Church, while the Greek text had for centuries been in the hands of heretics, and
 		subject to their corruptions."
@@ -154,30 +154,30 @@
 	</p>
 
 	<p>
-		Hoare extended the argument to something larger: the Vulgate itself. Jerome's Latin, he argued,
-		was <q
+		Hoare extended the argument to something larger: the Vulgate itself. Saint Jerome's Latin, he
+		argued, was <q
 			>the venerable source from which the Church has drawn the largest part of its ecclesiastical
 			vocabulary.</q
-		> Terms now so familiar as to be taken for granted all derive from Jerome's translation:
+		> Terms now so familiar as to be taken for granted all derive from Saint Jerome's translation:
 	</p>
 
 	<ul>
 		<li><q>Scripture</q></li>
-		<li><q>communion</q></li>
-		<li><q>grace</q></li>
-		<li><q>sanctification</q></li>
-		<li><q>justification</q></li>
-		<li><q>salvation</q></li>
-		<li><q>penance</q></li>
-		<li><q>sacrament</q></li>
-		<li><q>eternity</q></li>
+		<li><q>Communion</q></li>
+		<li><q>Grace</q></li>
+		<li><q>Sanctification</q></li>
+		<li><q>Justification</q></li>
+		<li><q>Salvation</q></li>
+		<li><q>Penance</q></li>
+		<li><q>Sacrament</q></li>
+		<li><q>Eternity</q></li>
 	</ul>
 
 	<p>
 		Westcott, who had little sympathy for the Douay method overall, conceded the vocabulary
 		argument: the language of the translation, whatever its stylistic failures, "is enriched by the
 		bold reduction of innumerable Latin words to English service." The Rheims translators were the
-		most rigorous carriers of Jerome's vocabulary into English.
+		most rigorous carriers of Saint Jerome's vocabulary into English.
 	</p>
 
 	<h2>A Measured Assessment</h2>
@@ -192,8 +192,8 @@
 	<p>
 		The Douay-Rheims Bible was frequently obscure, occasionally barbarous, and persistently
 		difficult. It was also, in its way, a monument: to the Vulgate tradition, to the vocabulary
-		Jerome gave the Church, and to the willingness of its translators to sacrifice readability in
-		the service of a fidelity they considered non-negotiable.
+		Saint Jerome gave the Church, and to the willingness of its translators to sacrifice readability
+		in the service of a fidelity they considered non-negotiable.
 	</p>
 
 	<h2>Sources</h2>

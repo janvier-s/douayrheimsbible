@@ -176,12 +176,12 @@
 	</p>
 
 	<p>
-		The book presented on this site is Gregory Martin's original translation: printed in 1582 for
-		readers who needed a licence to open it, smuggled across the Channel for Catholics who could be
-		imprisoned for possessing it, and refuted by Protestants who in doing so spread it further than
-		its authors had managed. It stands as a document of one of the most contested moments in the
-		history of Scripture in the English language, produced by scholars whose commitment to Scripture
-		and to the Church's teaching authority they understood as inseparable.
+		The book presented on this site is Gregory Martin's original first edition translation: printed
+		in 1582 for readers who needed a licence to open it, smuggled across the Channel for Catholics
+		who could be imprisoned for possessing it, and refuted by Protestants who in doing so spread it
+		further than its authors had managed. It stands as a document of one of the most contested
+		moments in the history of Scripture in the English language, produced by scholars whose
+		commitment to Scripture and to the Church's teaching authority they understood as inseparable.
 	</p>
 
 	<h2>Sources</h2>
