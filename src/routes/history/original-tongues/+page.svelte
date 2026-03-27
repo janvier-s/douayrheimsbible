@@ -208,7 +208,7 @@
 	<p>
 		<a href="/history/america">← The Douay-Rheims in America</a>
 		&nbsp;&nbsp;·&nbsp;&nbsp;
-		<a href="/history">History of the Douay-Rheims Bible →</a>
+		<a href="/history/scripture-for-all">A Bible Open to All →</a>
 	</p>
 </ProseLayout>
 

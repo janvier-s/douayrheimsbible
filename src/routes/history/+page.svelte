@@ -129,6 +129,15 @@
 				>
 			</a>
 		</li>
+		<li class="article-item">
+			<a href="/history/scripture-for-all" class="article-link">
+				<span class="article-title">A Bible Open to All</span>
+				<span class="article-desc"
+					>How the Catholic Church actively encourages all the faithful to read Scripture, the
+					guidance it offers for reading well, and the ancient practice of Lectio Divina.</span
+				>
+			</a>
+		</li>
 	</ol>
 </ProseLayout>
 
