@@ -57,6 +57,15 @@
 	<h2>Dei Verbum: The Open Door</h2>
 
 	<p>
+		Before <em>Dei Verbum</em> says anything about access or translation, it establishes the theological
+		ground for everything that follows. Divine revelation, the Council declares at the outset, is not
+		the transmission of doctrines from a remote authority but an address from a friend. God, as the document
+		puts it, "spoke to men as friends" (DV 2), drawing humanity into a relationship of intimacy rather
+		than mere instruction. Reading Scripture is re-entering that address; the reader is not a student
+		working through a text but a friend receiving a word spoken personally to them.
+	</p>
+
+	<p>
 		The twenty-fifth article of <em>Dei Verbum</em> is among the most directly pastoral passages in the
 		documents of Vatican II. It addresses every member of the Church, from scholars to the faithful in
 		the pews, and it speaks without qualification:
@@ -123,6 +132,16 @@
 		interpreter of Scripture, not because the Church stands over the Word of God, but because it
 		serves it: Scripture, Tradition, and the Magisterium are so bound together that none can stand
 		without the others.
+	</p>
+
+	<p>
+		These three criteria work together as a single interpretive discipline. Pope Leo XIV, in his
+		2026 catechesis on <em>Dei Verbum</em>, drew on Benedict XVI's formulation to express their
+		unity: "Authentic biblical hermeneutics can only be had within the faith of the Church." The
+		practical test for any reading comes from Augustine, cited in that same catechesis: a convincing
+		interpretation is one that builds up "the twofold love of God and neighbor." Where an
+		interpretation serves charity and deepens faith, the reader is on firm ground; where it divides,
+		isolates, or abstracts the text from the community that lives by it, something has gone wrong.
 	</p>
 
 	<p>
@@ -208,6 +227,19 @@
 		by frequent reading of the divine Scriptures" (CCC 2653).
 	</p>
 
+	<p>
+		In 2026, Pope Leo XIV devoted his weekly general audiences to a sustained catechesis on
+		<em>Dei Verbum</em>, working through the Council's vision of Scripture and Tradition over
+		successive weeks. He opened the series with the document's first theological note, that God
+		"spoke to men as friends," and developed it across addresses on the unity of Scripture and
+		Tradition as a single living deposit, on the dual authorship of inspired texts, on the Church as
+		Scripture's natural home, and on the inexhaustibility of God's Word. Jerome's maxim returned in
+		each session. Augustine's observation passed through the series as well: "There is only one Word
+		that sounds on the lips of many saints." The catechesis, delivered to the faithful assembled in
+		Saint Peter's Square, demonstrated in its very form what <em>Dei Verbum</em> had taught: the Word
+		of God addressed to all, in the presence of all, for the life of all.
+	</p>
+
 	<h2>Scripture and This Site</h2>
 
 	<p>
@@ -246,6 +278,10 @@
 		<li>
 			Saint Gregory the Great — "Learn the heart of God from the word of God"; "The divine words
 			grow together with the one who reads them"; cited in <em>Verbum Domini</em> 30
+		</li>
+		<li>
+			Pope Leo XIV, General Audiences of January 14, 21, 28 and February 4, 11, 2026 — catechesis
+			series on <em>Dei Verbum</em>
 		</li>
 	</ul>
 
