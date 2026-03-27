@@ -11,14 +11,14 @@
 	<title>A Bible of Arguments: The Annotations of the Douay-Rheims</title>
 	<meta
 		name="description"
-		content="The notes that accompanied the Douay-Rheims New Testament were not commentary but combat — a sustained, learned assault on Protestant translations that a Catholic priest described as virulent."
+		content="The notes that accompanied the Douay-Rheims New Testament were a sustained, learned theological engagement with Protestant readings of Scripture that drove a Protestant response lasting decades."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.pages.dev/history/annotations" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="A Bible of Arguments: The Annotations of the Douay-Rheims" />
 	<meta
 		property="og:description"
-		content="The notes of the Douay-Rheims were not commentary but combat, described by a Catholic priest as virulent. How they shaped the Bible and its reception."
+		content="The annotations of the Douay-Rheims were a sustained theological engagement with Protestant readings of Scripture. How they shaped the Bible and its reception."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.pages.dev/history/annotations" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -26,7 +26,7 @@
 
 <ProseLayout
 	title="A Bible of Arguments: The Annotations"
-	subtitle="The notes that accompanied the Rheims New Testament were not commentary. They were a sustained, scholarly assault on Protestant readings of Scripture, and they changed everything about how the book was received."
+	subtitle="The notes that accompanied the Rheims New Testament were a sustained, scholarly engagement with Protestant readings of Scripture, and they changed everything about how the book was received."
 >
 	<h2>The Notes as Purpose</h2>
 
@@ -39,10 +39,9 @@
 	</p>
 
 	<p>
-		The notes were not, in any ordinary sense, commentary. They were an argument: a sustained,
-		learned, and at times ferocious engagement with the entire Protestant reading of Scripture,
-		mounted from positions of considerable scholarship by men who knew they were writing for an
-		illegal book in a hostile country.
+		The notes were a sustained, learned, and at times ferocious engagement with the entire
+		Protestant reading of Scripture, mounted from positions of considerable scholarship by men who
+		knew they were writing for an illegal book in a hostile country.
 	</p>
 
 	<h2>Their Character</h2>
@@ -58,10 +57,10 @@
 	</p>
 
 	<p>
-		These are strong words, and the annotations earned them. To every disputed text — on the primacy
-		of Rome, on the sacraments, on justification, on the authority of tradition alongside Scripture
-		— the notes arrived with formidable apparatus: Latin citations, patristic authority, logical
-		argument, and, threading through all of it, a fierce contempt for Protestant interpretation.
+		These are strong words, and the annotations earned them. To every disputed text, whether on the
+		primacy of Rome, on the sacraments, on justification, or on the authority of tradition alongside
+		Scripture, the notes arrived with formidable apparatus: Latin citations, patristic authority,
+		logical argument, and a fierce refusal to concede any ground to Protestant interpretation.
 		Cotton observed that "it would be difficult to find a more studied series of deliberate insults,
 		than these Notes contain: and where could such sentiments and language be more out of place and
 		more indecent, than in a professed commentary on the Gospel of Jesus Christ?"
@@ -70,11 +69,11 @@
 	<h2>Designed as a Doctrinal System</h2>
 
 	<p>
-		The notes were not an afterthought. Richard Bristow and Cardinal Allen prepared them while
-		Gregory Martin translated the text. The work of annotating was as much their production as the
-		translation itself. The argument for each of the distinctive doctrines of Rome —
-		transubstantiation, purgatory, the real presence, the authority of tradition alongside Scripture
-		— was worked out at length beside every disputable passage.
+		Richard Bristow and Cardinal Allen had prepared the annotations concurrently while Gregory
+		Martin translated the text; the work of annotating was as much their production as the
+		translation itself. The argument for each of the distinctive doctrines of Rome, including
+		transubstantiation, purgatory, the real presence, and the authority of tradition alongside
+		Scripture, was worked out at length beside every disputable passage.
 	</p>
 
 	<p>
@@ -107,9 +106,9 @@
 	<p>
 		Fulke took up the task instead. His 1589 parallel edition answered the annotations methodically:
 		he set the entire Rheims New Testament alongside the Bishops' Bible in facing columns, then
-		refuted the Catholic annotations one by one. His intention was to expose and discredit. The
-		effect was to make the annotations, together with the text they defended, available to every
-		serious Protestant biblical scholar in England.
+		refuted the Catholic annotations one by one, intending to expose and discredit them; the effect
+		was to make the annotations, together with the text they defended, available to every serious
+		Protestant biblical scholar in England.
 	</p>
 
 	<h2>A Peculiar Immortality</h2>

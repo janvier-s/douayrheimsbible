@@ -39,10 +39,10 @@
 	<p>
 		Gregory Martin and his colleagues at Rheims faced a foundational question before they wrote a
 		single word of their translation: which text should they translate from? The Protestant Bibles
-		that had flooded England for the previous half-century — Tyndale's, Coverdale's, the Geneva
-		Bible — were all made directly from the Hebrew Old Testament and the Greek New Testament. Their
-		translators treated the original languages as the ultimate authority, and their work carried the
-		freshness that comes from that decision.
+		that had flooded England for the previous half-century, including Tyndale's, Coverdale's, and
+		the Geneva Bible, were all made directly from the Hebrew Old Testament and the Greek New
+		Testament. Their translators treated the original languages as the ultimate authority, and their
+		work carried the freshness that comes from that decision.
 	</p>
 
 	<p>
@@ -55,8 +55,8 @@
 	</p>
 
 	<p>
-		This was not obscurantism. It was a theological argument. The Council of Trent had declared the
-		Vulgate "authentic," the only text to be used in public readings, disputations, and Church
+		The choice was a theological argument, grounded in the Council of Trent's declaration that the
+		Vulgate was "authentic," the only text to be used in public readings, disputations, and Church
 		proceedings. For Martin and Allen, this was dispositive. The Church was the custodian of
 		Scripture; her Bible was the Bible.
 	</p>
@@ -83,7 +83,7 @@
 		The price of this decision became visible at certain passages where the Latin text itself was
 		obscure. Psalm 57:10 in the Rheims reads: "Before your thorns did understand the old Briar; as
 		living so in wrath he swalloweth them." Bishop Westcott, examining the passage much later, found
-		it impossible to construe — it had been rendered literally from a corrupted Latin text. The
+		it impossible to construe; it had been rendered literally from a corrupted Latin text. The
 		Revised Version of 1881 would eventually make the passage intelligible: the image is of a
 		cooking fire scattered by desert wind before it heats the pot. Martin's rendering follows the
 		Latin faithfully; the Latin, in this instance, had ceased to make sense.
@@ -92,7 +92,7 @@
 	<p>
 		This was the unavoidable consequence of his method. Mombert's summary was blunt: the Douay Bible
 		was "a faithful translation of the revision of a bad Latin version made from the Greek
-		translation of the Hebrew original" — three removes from the source.
+		translation of the Hebrew original": a translation three removes from its source.
 	</p>
 
 	<h2>A Deliberate Philosophy</h2>
@@ -111,8 +111,8 @@
 		dispensation of the sacrament hidden from worlds in God, who created al things; that the
 		manifold wisdom of God may be notified to the Princes and Potestats in the Celestials by the
 		Church, according to the prefinition of worlds which he made in Christ Jesus our Lord." Every
-		choice preserves the Latin term: "Potestats," "prefinition," "sacrament" — each anchors the
-		English reader to the Vulgate and prevents any drift toward Protestant equivalents.
+		choice preserves the Latin term; "Potestats," "prefinition," and "sacrament" each anchor the
+		English reader to the Vulgate and prevent any drift toward Protestant equivalents.
 	</p>
 
 	<p>
@@ -130,7 +130,7 @@
 		collection. "By their fruits you shall know them" (Matthew 7:16). "Liberty of the glory of the
 		children of God" (Romans 8:21). "Holiness of the truth" (Ephesians 4:24). In the first chapter
 		of St James alone, the Rheims gave English its "upbraideth not," its "engrafted word," its
-		"bridleth not" — all adopted by the King James translators.
+		"bridleth not," all adopted by the King James translators.
 	</p>
 
 	<p>
@@ -141,12 +141,11 @@
 	</p>
 
 	<p>
-		Hoare extended the argument to something larger: the Vulgate itself. Jerome's Bible was, he
-		wrote, "the venerable source from which the Church has drawn the largest part of its
-		ecclesiastical vocabulary. Terms now so familiar as to arouse no curiosity as to their origin —
-		'Scripture,' 'communion,' 'grace,' 'sanctification,' 'justification,' 'spirit,' 'salvation,'
-		'glory,' 'congregation,' 'penance,' 'propitiation,' 'conversion,' 'election,' 'sacrament,'
-		'elements,' 'discipline,' 'eternity' — all come from Jerome's Bible."
+		Hoare extended the argument to something larger: the Vulgate itself. Jerome's Latin, he argued,
+		was "the venerable source from which the Church has drawn the largest part of its ecclesiastical
+		vocabulary." Terms now so familiar as to be taken for granted, from "Scripture" and "communion"
+		to "grace," "sanctification," "justification," "salvation," "penance," "sacrament," and
+		"eternity," all derive from Jerome's translation.
 	</p>
 
 	<p>
