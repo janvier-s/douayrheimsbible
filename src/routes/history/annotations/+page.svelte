@@ -50,10 +50,10 @@
 		Henry Cotton catalogued the volume with characteristic precision. The annotations, he wrote,
 		were "vindicating the translation, fiercely asserting all the peculiar doctrines of the Court of
 		Rome, and employing the most bitter and contumelious terms in speaking of Protestants, and their
-		doctrines, and their versions of Scripture." Dr. Geddes, himself a Roman Catholic priest,
-		described them as "virulent Annotations against the Protestant Religion, and manifestly
-		calculated to support a system, not of genuine Catholicity, but of transalpine Popery." The
-		Protestant scholar Mombert called them "ferocious," "savage," and "fanatical."
+		doctrines, and their versions of Scripture." Dr. Geddes, himself a Catholic priest, described
+		them as "virulent Annotations against the Protestant Religion, and manifestly calculated to
+		support a system, not of genuine Catholicity, but of transalpine Popery." The Protestant scholar
+		Mombert called them "ferocious," "savage," and "fanatical."
 	</p>
 
 	<p>
@@ -94,7 +94,7 @@
 	<h2>Protestant England's Response</h2>
 
 	<p>
-		Protestant England, reading these notes, recognised them as a serious challenge. Thomas
+		Protestant England, reading these notes, recognized them as a serious challenge. Thomas
 		Cartwright, professor of divinity at Cambridge and leader of the Puritan party, was engaged by
 		the Earl of Leicester and Sir Francis Walsingham as early as 1583 to write against the Rheims
 		version specifically. Archbishop Whitgift, who had little sympathy for Cartwright's Puritanism
@@ -115,7 +115,7 @@
 
 	<p>
 		The annotations were the most controversial part of the work: the part that drove Protestant
-		England to mobilise its scholarly apparatus in response. They were also, through that response,
+		England to mobilize its scholarly apparatus in response. They were also, through that response,
 		what spread the Rheims text so widely. Fulke's refutation required him to print the notes he was
 		arguing against. In trying to bury the Catholic argument, he preserved it in a form that would
 		circulate through four printings.
@@ -147,7 +147,7 @@
 			Henry Barker, <em
 				>English Bible Versions: A Tercentenary Memorial of the King James Version</em
 			>
-			— source for Geddes's and Mombert's characterisations of the annotations
+			— source for Geddes's and Mombert's characterizations of the annotations
 		</li>
 		<li>
 			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>

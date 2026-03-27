@@ -844,7 +844,7 @@ Sources: Barker, Simms, Cotton.
 		Protestant accusation to the contrary. The notes that accompanied the text left little to the
 		imagination. They defended Catholic doctrine at every disputed point, attacked Protestant
 		translations with considerable force, and spared neither Queen Elizabeth nor the Reformers of
-		Germany, Switzerland, and France. Dr. Geddes, himself a Roman Catholic priest, later described
+		Germany, Switzerland, and France. Dr. Geddes, himself a Catholic priest, later described
 		the annotations as "virulent," directed against the Protestant religion and calculated to
 		support a system, as he put it, of "transalpine Popery."
 	</p>
@@ -1221,7 +1221,7 @@ Sources: Newman (primary), Cotton (primary), Barker.
 		edition he could locate, published his findings at the Oxford University Press in 1855. His
 		preface captured the problem with precision. Educated men, he wrote, whether Protestant or
 		Catholic, allowed themselves to speak of "the Douay Bible" or "the Rhemish Testament" as though
-		all copies of Holy Scripture circulating among Roman Catholics represented one and the same
+		all copies of Holy Scripture circulating among Catholics represented one and the same
 		text, accompanied by one and the same body of notes. They did not. Cotton's chronological list
 		ran to nearly three hundred entries spanning more than two and a half centuries.
 	</p>

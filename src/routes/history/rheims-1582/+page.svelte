@@ -63,13 +63,13 @@
 
 	<p>
 		Without this Approbation the translation had no standing in Catholic eyes. It also marked a
-		claim: the Rheims version was the legitimate, authorised word of God in English, against every
+		claim: the Rheims version was the legitimate, authorized word of God in English, against every
 		Protestant accusation to the contrary. The notes that accompanied the text left little to the
 		imagination. They defended Catholic doctrine at every disputed point, attacked Protestant
 		translations with considerable force, and spared neither Queen Elizabeth nor the Reformers of
-		Germany, Switzerland, and France. Dr. Geddes, himself a Roman Catholic priest, later described
-		the annotations as "virulent," directed against the Protestant religion and calculated to
-		support a system, as he put it, of "transalpine Popery."
+		Germany, Switzerland, and France. Dr. Geddes, himself a Catholic priest, later described the
+		annotations as "virulent," directed against the Protestant religion and calculated to support a
+		system, as he put it, of "transalpine Popery."
 	</p>
 
 	<h2>Martin's Companion Work</h2>
@@ -85,7 +85,7 @@
 	</p>
 
 	<p>
-		Martin wrote as a man in exile, translating in the knowledge that his work was a capital offence
+		Martin wrote as a man in exile, translating in the knowledge that his work was a capital offense
 		in his own country and that those who carried it there faced imprisonment or worse. Elizabeth's
 		government treated the Rheims New Testament as a seditious document. Priests found carrying
 		copies were imprisoned. The Crown's searchers seized copies wherever they were found. Those who
@@ -100,7 +100,7 @@
 		prohibited the laity from possessing the Old or New Testament in the vernacular tongue,
 		permitting only a Psalter, a Breviary, or the Hours of the Virgin Mary. The Rheims translators
 		did not abandon this tradition: even as they produced an English New Testament, they required
-		that Catholic readers obtain a special licence before reading it. As Paris Simms later observed,
+		that Catholic readers obtain a special license before reading it. As Paris Simms later observed,
 		"no Catholic was permitted to read it until he had obtained a special license from the proper
 		authorities."
 	</p>
@@ -116,7 +116,7 @@
 
 	<p>
 		Protestant England responded with vigour. William Fulke, Master of Pembroke Hall at Cambridge,
-		published his <em>Defence of the Sincere and True Translations of the Holy Scriptures</em> in
+		published his <em>Defense of the Sincere and True Translations of the Holy Scriptures</em> in
 		1583, a direct and rapid answer to Martin's <em>Discovery of Corruptions</em>. Thomas
 		Cartwright, engaged at the instigation of Secretary Walsingham, was commissioned to prepare a
 		more systematic refutation of the New Testament itself, though Archbishop Whitgift eventually

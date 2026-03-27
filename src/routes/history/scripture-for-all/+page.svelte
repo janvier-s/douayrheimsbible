@@ -192,9 +192,9 @@
 
 	<p>
 		The Church's encouragement of Scripture reading is not a modern development. It runs through the
-		entire tradition, from the Fathers forward. The passages in which Jerome, Chrysostom, and
-		Gregory urged their contemporaries to read Scripture regularly and with persistence are among
-		the warmest and most direct in patristic literature.
+		entire tradition, from the Fathers forward. The passages in which Saint Jerome, Saint John
+		Chrysostom, and Pope Saint Gregory the Great urged their contemporaries to read Scripture
+		regularly and with persistence are among the warmest and most direct in patristic literature.
 	</p>
 
 	<p>
@@ -207,10 +207,10 @@
 	</p>
 
 	<p>
-		John Chrysostom, who preached through entire books of Scripture to his congregations in Antioch
-		and Constantinople, wrote that "it is not possible ever to exhaust the mind of the Scriptures.
-		It is a well that has no bottom." Gregory the Great described the Bible in a phrase that has
-		stayed in the tradition ever since: <q
+		Saint John Chrysostom, who preached through entire books of Scripture to his congregations in
+		Antioch and Constantinople, wrote that "it is not possible ever to exhaust the mind of the
+		Scriptures. It is a well that has no bottom." Gregory the Great described the Bible in a phrase
+		that has stayed in the tradition ever since: <q
 			>a river in which a lamb may wade and an elephant may swim.</q
 		>
 		Its depths are inexhaustible; its shallows are accessible to everyone. "Learn the heart of God from
@@ -266,8 +266,8 @@
 	<p>
 		The Church's invitation, expressed in <em>Dei Verbum</em> and confirmed in every subsequent magisterial
 		document on Scripture, is to read. Whatever translation the reader uses, whatever method they bring
-		to the text, the counsel of Jerome, Chrysostom, Gregory, and the Council fathers is the same: open
-		the book, come without haste, and let the words do their work.
+		to the text, the counsel of Saint Jerome, Saint Chrysostom, Pope Saint Gregory the Great, and the
+		Council fathers is the same: open the book, come without haste, and let the words do their work.
 	</p>
 
 	<h2>Sources</h2>

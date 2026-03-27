@@ -1,0 +1,271 @@
+<h2>How should intro annotations display?</h2>
+<p class="subtitle">The intro text has bracketed markers [1][2] with short margin notes. How should they render in the panel?</p>
+
+<style>
+  .mock-panel {
+    background: #fff;
+    border: 1px solid #e4dcd0;
+    border-radius: 6px;
+    font-family: sans-serif;
+    overflow: hidden;
+    width: 320px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mock-tabs {
+    display: flex;
+    border-bottom: 1px solid #e4dcd0;
+    background: #f8f5ef;
+    flex-shrink: 0;
+  }
+  .mock-tab {
+    padding: 7px 11px;
+    font-size: 10px;
+    color: #706860;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .mock-tab.active {
+    color: #a62c2c;
+    border-bottom: 2px solid #a62c2c;
+    margin-bottom: -1px;
+  }
+  .mock-body {
+    padding: 14px 16px;
+    font-size: 12px;
+    color: #2c2318;
+    line-height: 1.65;
+    font-family: Georgia, serif;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .mock-title {
+    font-size: 10px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #a62c2c;
+    margin-bottom: 10px;
+  }
+  .marker-ref {
+    color: #a62c2c;
+    font-size: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    vertical-align: super;
+    cursor: pointer;
+  }
+
+  /* Option A: footnotes at bottom */
+  .footnote-list {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid #e4dcd0;
+  }
+  .footnote-item {
+    display: flex;
+    gap: 6px;
+    font-size: 11px;
+    color: #56504a;
+    font-family: sans-serif;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .footnote-num {
+    color: #a62c2c;
+    font-weight: bold;
+    flex-shrink: 0;
+    min-width: 14px;
+  }
+
+  /* Option B: inline expand */
+  .inline-note {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    background: #f8f5ef;
+    border: 1px solid #e4dcd0;
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 10.5px;
+    font-family: sans-serif;
+    color: #56504a;
+    margin: 0 2px;
+    vertical-align: baseline;
+    line-height: 1.5;
+  }
+  .inline-note-marker {
+    color: #a62c2c;
+    font-weight: bold;
+    font-size: 10px;
+  }
+
+  /* Option C: two-column */
+  .two-col-body {
+    padding: 14px 0;
+    display: flex;
+    gap: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+  .col-text {
+    flex: 1;
+    padding: 0 12px;
+    font-size: 11.5px;
+    line-height: 1.65;
+    font-family: Georgia, serif;
+    color: #2c2318;
+    border-right: 1px solid #e4dcd0;
+    overflow-y: auto;
+  }
+  .col-notes {
+    width: 100px;
+    padding: 0 10px;
+    font-size: 10px;
+    font-family: sans-serif;
+    color: #706860;
+    line-height: 1.45;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+  .col-note-item {
+    margin-bottom: 10px;
+  }
+  .col-note-num {
+    color: #a62c2c;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1px;
+  }
+
+  /* Option D: tooltip/highlight on click */
+  .tooltip-wrap { position: relative; display: inline; }
+  .tooltip-bubble {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2a2a2a;
+    color: #f0ebe4;
+    font-family: sans-serif;
+    font-size: 10px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+    line-height: 1.4;
+  }
+  .tooltip-bubble::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #2a2a2a;
+  }
+
+  .cards { gap: 24px; flex-wrap: wrap; }
+  .card-image { padding: 0 !important; overflow: visible !important; display: flex; justify-content: center; background: #f0ece6; padding: 16px !important; }
+</style>
+
+<div class="cards">
+
+  <!-- Option A: Footnotes at bottom -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-panel">
+        <div class="mock-tabs">
+          <div class="mock-tab active">Intro</div>
+          <div class="mock-tab">Notes</div>
+          <div class="mock-tab">Cross-refs</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-title">Argument of Genesis</div>
+          <p>This first Book of holy Scripture, called <em>Genesis</em>, was written by Moyses,<sup class="marker-ref">[1]</sup> when he was designed by God to instruct and rule the children of Israel. The Author and authority of all which five books<sup class="marker-ref">[2]</sup> were ever acknowledged by the faithful.</p>
+          <div class="footnote-list">
+            <div class="footnote-item"><span class="footnote-num">[1]</span><span>Genesis written by Moyses.</span></div>
+            <div class="footnote-item"><span class="footnote-num">[2]</span><span>Always authentical.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Footnotes below text</h3>
+      <p>Notes collected at the bottom, separated by a rule. Familiar scholarly format. Always visible — no interaction needed to read them.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Inline expanded pill -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-panel">
+        <div class="mock-tabs">
+          <div class="mock-tab active">Intro</div>
+          <div class="mock-tab">Notes</div>
+          <div class="mock-tab">Cross-refs</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-title">Argument of Genesis</div>
+          <p>This first Book of holy Scripture, called <em>Genesis</em>, was written by Moyses, <span class="inline-note"><span class="inline-note-marker">[1]</span> Genesis written by Moyses.</span> when he was designed by God. The Author and authority <span class="inline-note"><span class="inline-note-marker">[2]</span> Always authentical.</span> were ever acknowledged.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Inline pill</h3>
+      <p>Note text expands inline where the marker sits — no jumping around. Breaks reading flow slightly but keeps context tight.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Two-column (original margin note feel) -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-panel" style="min-height: 220px;">
+        <div class="mock-tabs">
+          <div class="mock-tab active">Intro</div>
+          <div class="mock-tab">Notes</div>
+          <div class="mock-tab">Cross-refs</div>
+        </div>
+        <div class="two-col-body">
+          <div class="col-text">
+            <div class="mock-title" style="padding:0;">Argument of Genesis</div>
+            <p style="margin-top:8px;">This first Book of holy Scripture, called <em>Genesis</em>, was written by Moyses,<sup class="marker-ref">[1]</sup> when designed by God to instruct the children of Israel. The Author and authority of these books<sup class="marker-ref">[2]</sup> were acknowledged.</p>
+          </div>
+          <div class="col-notes">
+            <div class="col-note-item"><span class="col-note-num">[1]</span>Genesis written by Moyses.</div>
+            <div class="col-note-item"><span class="col-note-num">[2]</span>Always authentical.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Two-column (margin notes)</h3>
+      <p>Faithfully reproduces the original PDF layout. Notes sit beside the text they annotate. Feels like the source document. Tight on narrow panels.</p>
+    </div>
+  </div>
+
+  <!-- Option D: Tooltip on hover/click -->
+  <div class="card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-panel">
+        <div class="mock-tabs">
+          <div class="mock-tab active">Intro</div>
+          <div class="mock-tab">Notes</div>
+          <div class="mock-tab">Cross-refs</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-title">Argument of Genesis</div>
+          <p>This first Book of holy Scripture, called <em>Genesis</em>, was written by Moyses, <span class="tooltip-wrap"><sup class="marker-ref" style="text-decoration:underline dotted;">[1]</sup><span class="tooltip-bubble">Genesis written by Moyses.</span></span> when he was designed by God to instruct and rule the children of Israel. The Author<sup class="marker-ref">[2]</sup> and authority of these books were ever acknowledged.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>D — Tooltip on tap/hover</h3>
+      <p>Notes appear in a small popover when you tap the marker. Clean reading surface, no visual clutter. Notes require interaction to read.</p>
+    </div>
+  </div>
+
+</div>

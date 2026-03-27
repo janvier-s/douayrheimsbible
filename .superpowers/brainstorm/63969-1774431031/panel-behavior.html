@@ -1,0 +1,130 @@
+<h2>How should the study panel open?</h2>
+<p class="subtitle">This affects the reading experience on desktop — pick the feel that's right.</p>
+
+<style>
+  .mock-app { display: flex; flex-direction: column; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; background: #f8f5ef; font-family: Georgia, serif; height: 240px; }
+  .mock-topbar { background: #2a2a2a; height: 32px; display: flex; align-items: center; padding: 0 12px; gap: 8px; }
+  .mock-topbar-dot { width: 8px; height: 8px; border-radius: 50%; background: #a62c2c; }
+  .mock-topbar-title { color: #ccc; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-family: sans-serif; }
+  .mock-body { display: flex; flex: 1; overflow: hidden; }
+  .mock-text { padding: 14px 18px; line-height: 1.7; font-size: 12px; color: #1c1710; flex: 1; overflow: hidden; }
+  .mock-text p { margin: 0 0 8px; }
+  .mock-text .verse-num { color: #a62c2c; font-size: 10px; font-weight: bold; margin-right: 3px; }
+  .mock-text .fn { color: #a62c2c; font-size: 9px; cursor: pointer; vertical-align: super; }
+  .mock-panel { background: #fff; border-left: 1px solid #e4dcd0; display: flex; flex-direction: column; }
+  .mock-panel-tabs { display: flex; border-bottom: 1px solid #e4dcd0; background: #f8f5ef; }
+  .mock-panel-tab { padding: 6px 10px; font-size: 10px; font-family: sans-serif; color: #706860; cursor: pointer; }
+  .mock-panel-tab.active { color: #a62c2c; border-bottom: 2px solid #a62c2c; }
+  .mock-panel-body { padding: 10px 12px; font-size: 11px; color: #56504a; font-family: sans-serif; line-height: 1.5; flex: 1; }
+  .mock-panel-title { font-size: 13px; font-weight: 600; color: #a62c2c; margin-bottom: 6px; font-family: Georgia, serif; }
+  .mock-overlay-panel { position: absolute; right: 0; top: 0; bottom: 0; background: #fff; border-left: 1px solid #e4dcd0; box-shadow: -4px 0 12px rgba(0,0,0,0.12); display: flex; flex-direction: column; }
+  .mock-body-relative { display: flex; flex: 1; overflow: hidden; position: relative; }
+  .mock-dim { position: absolute; inset: 0; background: rgba(0,0,0,0.15); }
+  .cards { gap: 20px; }
+  .card-image { padding: 0 !important; overflow: hidden; }
+</style>
+
+<div class="cards">
+
+  <!-- Option A: Sidebar pushes content -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-app">
+        <div class="mock-topbar">
+          <div class="mock-topbar-dot"></div>
+          <div class="mock-topbar-title">Douay-Rheims · Genesis 1</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-text" style="max-width: 55%;">
+            <p><span class="verse-num">1</span> In the beginning God created heaven and earth.<span class="fn">†</span></p>
+            <p><span class="verse-num">2</span> And the earth was void and empty…</p>
+            <p><span class="verse-num">3</span> And God said: Be light made. And light was made.</p>
+          </div>
+          <div class="mock-panel" style="width: 45%;">
+            <div class="mock-panel-tabs">
+              <div class="mock-panel-tab active">Intro</div>
+              <div class="mock-panel-tab">Notes</div>
+              <div class="mock-panel-tab">Outline</div>
+            </div>
+            <div class="mock-panel-body">
+              <div class="mock-panel-title">Genesis</div>
+              <p>The Book of Genesis is the first book of the Hebrew Bible and the Christian Old Testament…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Persistent sidebar</h3>
+      <p>Panel opens alongside the text, pushing it left. Reading column narrows. Panel stays open as you scroll. Best on wide screens.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Drawer overlays -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-app" style="position: relative;">
+        <div class="mock-topbar">
+          <div class="mock-topbar-dot"></div>
+          <div class="mock-topbar-title">Douay-Rheims · Genesis 1</div>
+        </div>
+        <div class="mock-body-relative">
+          <div class="mock-text" style="padding: 14px 18px;">
+            <p><span class="verse-num">1</span> In the beginning God created heaven and earth.<span class="fn">†</span></p>
+            <p><span class="verse-num">2</span> And the earth was void and empty…</p>
+            <p><span class="verse-num">3</span> And God said: Be light made. And light was made.</p>
+          </div>
+          <div class="mock-dim"></div>
+          <div class="mock-overlay-panel" style="width: 42%;">
+            <div class="mock-panel-tabs">
+              <div class="mock-panel-tab active">Intro</div>
+              <div class="mock-panel-tab">Notes</div>
+              <div class="mock-panel-tab">Outline</div>
+            </div>
+            <div class="mock-panel-body">
+              <div class="mock-panel-title">Genesis</div>
+              <p>The Book of Genesis is the first book of the Hebrew Bible…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Overlay drawer</h3>
+      <p>Panel slides over the text with a dim backdrop. Reading column stays full-width. Closes on backdrop click or Escape. More modal in feel.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Bottom sheet on mobile, sidebar on desktop -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-app">
+        <div class="mock-topbar">
+          <div class="mock-topbar-dot"></div>
+          <div class="mock-topbar-title">Douay-Rheims · Genesis 1</div>
+        </div>
+        <div class="mock-body" style="flex-direction: column;">
+          <div class="mock-text" style="padding: 10px 18px; flex: 1;">
+            <p><span class="verse-num">1</span> In the beginning God created heaven and earth.<span class="fn">†</span></p>
+            <p><span class="verse-num">2</span> And the earth was void and empty…</p>
+          </div>
+          <div class="mock-panel" style="width: 100%; border-left: none; border-top: 1px solid #e4dcd0; height: 90px;">
+            <div class="mock-panel-tabs">
+              <div class="mock-panel-tab active">Intro</div>
+              <div class="mock-panel-tab">Notes</div>
+              <div class="mock-panel-tab">Outline</div>
+            </div>
+            <div class="mock-panel-body" style="padding: 6px 12px;">
+              <p>The Book of Genesis is the first book of the Hebrew Bible…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Sidebar desktop / sheet mobile</h3>
+      <p>Persistent sidebar on wide screens, slides up as a bottom sheet on mobile. Adapts to context. Most complex but best cross-device.</p>
+    </div>
+  </div>
+
+</div>

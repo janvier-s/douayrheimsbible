@@ -120,7 +120,7 @@
 						aria-expanded={expandedBooks.has(book.slug)}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
-							? 'text-accent bg-border hover:bg-border'
+							? 'text-accent bg-background hover:bg-border'
 							: 'text-foreground hover:bg-border hover:text-accent'}"
 						on:click={() => toggleBook(book.slug)}
 					>
@@ -161,7 +161,7 @@
 						aria-expanded={expandedBooks.has(book.slug)}
 						class="w-full text-left px-[16px] py-[9px] text-[16px] font-medium transition-colors duration-fast
                  {book.slug === bookSlug
-							? 'text-accent bg-border hover:bg-border'
+							? 'text-accent bg-background hover:bg-border'
 							: 'text-foreground hover:bg-border hover:text-accent'}"
 						on:click={() => toggleBook(book.slug)}
 					>

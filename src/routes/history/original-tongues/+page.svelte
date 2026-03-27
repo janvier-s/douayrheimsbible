@@ -146,9 +146,9 @@
 	<h2>Liturgiam Authenticam (2001)</h2>
 
 	<p>
-		In 2001, Pope John Paul II's instruction <em>Liturgiam Authenticam</em> made the requirement
-		explicit and binding. New liturgical translations were to be made "directly from the original
-		texts" in Hebrew, Aramaic, or Greek. The <em>Nova Vulgata</em>, a revised Latin edition
+		In 2001, Pope Saint John Paul II's instruction <em>Liturgiam Authenticam</em> made the
+		requirement explicit and binding. New liturgical translations were to be made "directly from the
+		original texts" in Hebrew, Aramaic, or Greek. The <em>Nova Vulgata</em>, a revised Latin edition
 		completed in 1979, was designated as an "auxiliary tool," useful for confirming canonical verses
 		and maintaining continuity with Latin liturgical tradition, but no longer the translation base.
 	</p>
@@ -197,7 +197,7 @@
 			and the clarification of Trent's "authentic"
 		</li>
 		<li>Second Vatican Council, <em>Dei Verbum</em> (1965)</li>
-		<li>Pope John Paul II, <em>Liturgiam Authenticam</em> (2001)</li>
+		<li>Pope Saint John Paul II, <em>Liturgiam Authenticam</em> (2001)</li>
 		<li>
 			Raymond E. Brown, cited in scholarship on <em>Divino Afflante Spiritu</em> — "Magna Carta for biblical
 			progress"
