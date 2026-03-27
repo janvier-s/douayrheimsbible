@@ -168,7 +168,7 @@
 	<p>
 		<a href="/history">← History of the Douay-Rheims Bible</a>
 		&nbsp;&nbsp;·&nbsp;&nbsp;
-		<a href="/history/rheims-1582">Published in a Time of Crisis →</a>
+		<a href="/history/translation-philosophy">A Translation from the Authentic Latin →</a>
 	</p>
 </ProseLayout>
 

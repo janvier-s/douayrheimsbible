@@ -151,7 +151,7 @@
 	<hr />
 
 	<p>
-		<a href="/history/rheims-1582">← Published in a Time of Crisis</a>
+		<a href="/history/forbidden-bible">← A Bible Forbidden to Its Own Readers</a>
 		&nbsp;&nbsp;·&nbsp;&nbsp;
 		<a href="/history/challoner">The Challoner Revision →</a>
 	</p>

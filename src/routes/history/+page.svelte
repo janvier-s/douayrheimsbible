@@ -47,11 +47,40 @@
 			</a>
 		</li>
 		<li class="article-item">
+			<a href="/history/translation-philosophy" class="article-link">
+				<span class="article-title">A Translation from the Authentic Latin</span>
+				<span class="article-desc"
+					>Why the translators chose Jerome's Vulgate over the original Greek and Hebrew, and what
+					their fierce fidelity to that choice gave and cost them.</span
+				>
+			</a>
+		</li>
+		<li class="article-item">
 			<a href="/history/rheims-1582" class="article-link">
 				<span class="article-title">Published in a Time of Crisis</span>
 				<span class="article-desc"
 					>The political world that greeted the Rheims New Testament in 1582, and the Protestant
 					refutation that spread it further than its authors could have imagined.</span
+				>
+			</a>
+		</li>
+		<li class="article-item">
+			<a href="/history/annotations" class="article-link">
+				<span class="article-title">A Bible of Arguments: The Annotations</span>
+				<span class="article-desc"
+					>The Rheims annotations were a sustained, learned assault on Protestant Scripture that
+					mobilised England's scholarly apparatus in response and spread the text further than its
+					authors had managed.</span
+				>
+			</a>
+		</li>
+		<li class="article-item">
+			<a href="/history/forbidden-bible" class="article-link">
+				<span class="article-title">A Bible Forbidden to Its Own Readers</span>
+				<span class="article-desc"
+					>Catholics who produced the English New Testament at Rheims were forbidden to read it
+					without a special licence. The history of the Church's restrictions on vernacular
+					Scripture.</span
 				>
 			</a>
 		</li>

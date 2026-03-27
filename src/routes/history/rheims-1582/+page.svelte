@@ -165,9 +165,9 @@
 	<hr />
 
 	<p>
-		<a href="/history/origins">← Born in Exile: The Origins of the Douay-Rheims Bible</a>
+		<a href="/history/translation-philosophy">← A Translation from the Authentic Latin</a>
 		&nbsp;&nbsp;·&nbsp;&nbsp;
-		<a href="/history/influence-on-kjv">How the Douay-Rheims Shaped the King James Bible →</a>
+		<a href="/history/annotations">A Bible of Arguments: The Annotations →</a>
 	</p>
 </ProseLayout>
 
