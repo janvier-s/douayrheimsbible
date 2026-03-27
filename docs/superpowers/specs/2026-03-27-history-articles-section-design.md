@@ -105,8 +105,31 @@ Each article includes at the bottom:
 
 - A `←` link to the previous article in the collection (or back to hub on first)
 - A `→` link to the next article in the collection (or to hub on last)
+- A **Sources** section listing the works drawn upon for that article
 
 This replaces the existing `← History · Challoner →` pattern on the current pages.
+
+## Sources Section (per article)
+
+Every article ends with a `<h2>Sources</h2>` section before the prev/next nav.
+List only the sources actually used for that article's content. Format as an
+unordered list. For each source include: author, title (italicised), and enough
+bibliographic detail to be useful (year, publisher where known). Example:
+
+```html
+<h2>Sources</h2>
+<ul>
+  <li>Henry Barker, <em>English Bible Versions: A Tercentenary Memorial</em></li>
+  <li>Paris Marion Simms, <em>The Bible in America: Versions that have Played
+      Their Part</em></li>
+  <li>Rev. Henry Cotton, <em>Rhemes and Doway</em> (Oxford University Press, 1855)</li>
+  <li>Cardinal John Henry Newman, "On the Rheims and Douay Version of Holy
+      Scripture," collected in <em>Essays Critical and Historical</em></li>
+</ul>
+```
+
+Articles 1 and 4 (moved from existing pages) also receive a Sources section
+written for the first time, drawing on whatever the original content cited.
 
 ## Articles
 
@@ -162,8 +185,19 @@ influence. This article goes substantially deeper with specific evidence and quo
 
 ### 4. The Challoner Revision
 **Slug:** `/history/challoner`
-**Source:** Existing `/challoner-revision` page content — moved, prose body unchanged
-**Changes needed:** New canonical URL, new prev/next navigation row
+**Source:** Existing `/challoner-revision` page content — moved, with one correction
+**Changes needed:** New canonical URL, new prev/next navigation row, KJV claim corrected
+
+**KJV claim correction:** The existing page states Challoner "approximated the King
+James Version" as a deliberate pragmatic choice. The sources do not support this
+framing. Newman says Challoner's text "approximates to the Protestant version" —
+describing the result, not the method. The Catholic Dictionary (via Barker) says the
+same. There is no evidence in the sources that Challoner used the KJV as a reference.
+The implementation must remove or rephrase the bullet point "Approximated the King
+James Version" and the surrounding editorial commentary. The observable fact (his
+text ended up closer to the KJV in phrasing) may be noted, but the causal claim
+(he deliberately drew on it) must not be stated unless a source explicitly says so.
+
 **Covers:** Challoner's biography, what he changed, multiple editions, examples,
 Newman's "almost a new translation," Wiseman's "abuse of terms," why the original matters
 
