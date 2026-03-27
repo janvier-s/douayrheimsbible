@@ -144,11 +144,7 @@
 		translation came to exist, see <a href="/history">History of the Douay-Rheims Bible</a>.
 	</p>
 
-	<hr />
-
-	<p>
-		<a href="/history">History of the Douay-Rheims Bible →</a>
-	</p>
+	<a href="/history" class="cta-btn">History of the Douay-Rheims Bible →</a>
 </ProseLayout>
 
 <PageFooter

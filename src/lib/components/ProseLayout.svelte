@@ -183,7 +183,7 @@
 		font-family: var(--font-reader);
 		font-size: clamp(2rem, 4vw, 2.8rem);
 		font-weight: 700;
-		color: var(--color-foreground);
+		color: var(--color-heading, var(--color-text));
 		letter-spacing: -0.02em;
 		line-height: 1.15;
 		margin: 0 0 12px;
@@ -232,14 +232,14 @@
 		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.2em;
-		color: var(--color-accent-text);
+		color: var(--color-heading, var(--color-accent-text));
 		font-weight: 600;
 		margin: 40px 0 12px;
 	}
 
 	.prose-body :global(p) {
 		margin: 0 0 20px;
-		color: var(--color-muted);
+		color: var(--color-text);
 	}
 
 	.prose-body :global(blockquote) {
@@ -269,7 +269,7 @@
 	.prose-body :global(ol) {
 		margin: 0 0 20px;
 		padding-left: 24px;
-		color: var(--color-muted);
+		color: var(--color-text);
 	}
 
 	.prose-body :global(li) {
@@ -299,14 +299,41 @@
 	}
 
 	.prose-body :global(hr + p a) {
+		display: block;
 		font-size: 1rem;
 		max-width: calc(50% - 12px);
 		line-height: 1.4;
-		white-space: normal;
+		text-align: left;
 	}
 
 	.prose-body :global(hr + p a:last-of-type) {
 		text-align: right;
 		margin-left: auto;
+	}
+
+	.prose-body :global(.cta-btn) {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 11px 20px;
+		background: var(--color-accent);
+		color: #fff;
+		text-decoration: none;
+		font-family: var(--font-ui);
+		font-size: 12px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		border-radius: 2px;
+		margin-top: 40px;
+		transition:
+			background 150ms ease,
+			opacity 150ms ease;
+	}
+
+	.prose-body :global(.cta-btn:hover) {
+		background: color-mix(in srgb, var(--color-accent) 82%, black);
+		color: #fff;
+		text-decoration: none;
 	}
 </style>

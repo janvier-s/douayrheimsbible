@@ -193,7 +193,7 @@
 		font-family: var(--font-reader);
 		font-size: 1.15rem;
 		font-weight: 700;
-		color: var(--color-foreground);
+		color: var(--color-text);
 		letter-spacing: -0.01em;
 		line-height: 1.3;
 		margin-bottom: 6px;
@@ -202,6 +202,8 @@
 
 	.article-link:hover .article-title {
 		color: var(--color-accent-text);
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 
 	.article-desc {

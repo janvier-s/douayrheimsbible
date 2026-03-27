@@ -109,6 +109,7 @@
 	--color-accent-text: #c15050;
 	--color-border: #2e2b32;
 	--color-bg-glass: rgba(17, 17, 19, 0.94);
+	--color-heading: #c5bbb0;
 }
 
 [data-theme='oled'] {
