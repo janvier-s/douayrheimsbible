@@ -56,10 +56,14 @@
 		The volume arrived with a formal Approbation signed by four doctors of the Church at Rheims. In
 		measured Latin, it declared that the translation contained nothing contrary to Catholic doctrine
 		and nothing contrary to civil peace, and that it served the true faith, the common good, and the
-		integrity of Christian life. The four signatories were Pierre Remigius, Archdeacon of Rheims;
-		Hubert Morus, Dean of the Rheims Chapter; Johannes le Bespits, Theologian and Chancellor of the
-		University of Rheims; and Guillaume Balbus, Professor of Theology at the Rheims College.
+		integrity of Christian life. The four signatories were:
 	</p>
+	<ul>
+		<li>Pierre Remigius, Archdeacon of Rheims</li>
+		<li>Hubert Morus, Dean of the Rheims Chapter</li>
+		<li>Johannes le Bespits, Theologian and Chancellor of the University of Rheims</li>
+		<li>Guillaume Balbus, Professor of Theology at the Rheims College</li>
+	</ul>
 
 	<p>
 		Without this Approbation the translation had no standing in Catholic eyes. It also marked a

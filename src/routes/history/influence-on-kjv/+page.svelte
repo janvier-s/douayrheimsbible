@@ -48,15 +48,19 @@
 
 	<h2>The Specific Borrowings</h2>
 
+	<p>The debt repays close attention. A sample from three chapters, taken by chance:</p>
+	<ul>
+		<li>Matthew 26:26 — <q>blessed</q> appears first in the Rheims; the KJV keeps it.</li>
+		<li>Matthew 26:30 — <q>hymn</q> is the Rheims word; the KJV follows.</li>
+		<li>Matthew 26:63 — <q>adjure</q> enters English through the Rheims; the KJV follows.</li>
+		<li>James 1:5 — <q>upbraideth not</q> appears first in the Rheims and passes into the KJV.</li>
+		<li>James 1:21 — <q>engrafted word</q> is the Rheims phrase; the KJV adopts it.</li>
+		<li>James 1:26 — <q>bridleth not</q> is the Rheims word; the KJV follows.</li>
+	</ul>
 	<p>
-		The debt repays close attention. At Matthew 26:26, "blessed" appears first in the Rheims; the
-		King James Version keeps it. At Matthew 26:30, "hymn" is the Rheims word; the KJV follows. At
-		Matthew 26:63, "adjure" enters English through the Rheims New Testament, and the KJV follows it
-		there. In the first chapter of St James alone, "upbraideth not" (verse 5), "engrafted word"
-		(verse 21), and "bridleth not" (verse 26) all appear first in the Rheims and pass directly into
-		the King James Version. As Barker noted, examining three chapters taken by chance yielded such
-		results that "the reader will not doubt that very many examples of the same description might be
-		produced."
+		As Barker noted, examining those three chapters yielded such results that <q
+			>the reader will not doubt that very many examples of the same description might be produced.</q
+		>
 	</p>
 
 	<p>

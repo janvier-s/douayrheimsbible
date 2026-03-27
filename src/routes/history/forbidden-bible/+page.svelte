@@ -89,15 +89,22 @@
 		over the following centuries.
 	</p>
 
+	<p>Cotton documented the chain of subsequent confirmations:</p>
+	<ul>
+		<li>Council of Trent, 1564</li>
+		<li>Pope Clement VIII, 1596</li>
+		<li>Pope Benedict XIV, 1757</li>
+		<li>Pope Pius VII, 1816</li>
+		<li>Pope Leo XII, 1824</li>
+		<li>Pope Gregory XVI, 1844</li>
+	</ul>
 	<p>
-		Cotton documented the chain of subsequent confirmations: the Council of Trent in 1564; Pope
-		Clement VIII in 1596; Benedict XIV in 1757; Pius VII in 1816; Leo XII in 1824; and Gregory XVI
-		in 1844. Throughout the entire period in which the Douay-Rheims Bible was being translated,
-		published, revised, and read, the restriction on unguided vernacular Bible reading remained a
-		consistently affirmed element of Catholic discipline. Cotton's conclusion was straightforward:
-		the principle "that Vernacular Translations of the Bible are not necessary for the Laity, and
-		ought not to be conceded to them without the express permission of a bishop or priest, has long
-		been a recognized dogma of that Church."
+		Throughout the entire period in which the Douay-Rheims Bible was being translated, published,
+		revised, and read, the restriction on unguided vernacular Bible reading remained a consistently
+		affirmed element of Catholic discipline. Cotton's conclusion was straightforward: the principle
+		"that Vernacular Translations of the Bible are not necessary for the Laity, and ought not to be
+		conceded to them without the express permission of a bishop or priest, has long been a
+		recognized dogma of that Church."
 	</p>
 
 	<h2>The Translators' Own Position</h2>

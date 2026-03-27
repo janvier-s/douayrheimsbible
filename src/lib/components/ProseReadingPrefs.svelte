@@ -45,7 +45,6 @@
 	];
 
 	const THEMES = [
-		{ id: 'auto', label: 'Auto', bg: '#f8f5ef', fg: '#1c1710', lines: '#c8bfb0' },
 		{ id: 'light', label: 'Light', bg: '#f8f5ef', fg: '#1c1710', lines: '#c8bfb0' },
 		{ id: 'sepia', label: 'Sepia', bg: '#f2e8d8', fg: '#2c1e10', lines: '#c0a888' },
 		{ id: 'dark', label: 'Dark', bg: '#111113', fg: '#e8ddd0', lines: '#2e2b32' },
@@ -229,6 +228,18 @@
 				/>
 				<span>Justified text</span>
 			</label>
+			<label class="toggle-row">
+				<input
+					type="checkbox"
+					checked={$prefs.bionicReading}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							bionicReading: (e.target as HTMLInputElement).checked
+						}))}
+				/>
+				<span>Bionic reading</span>
+			</label>
 		</div>
 	</div>
 {/if}
@@ -346,7 +357,7 @@
 		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
-		color: var(--color-foreground);
+		color: var(--color-muted);
 		background: transparent;
 		cursor: pointer;
 		transition:

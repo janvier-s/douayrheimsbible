@@ -302,7 +302,7 @@
 	<p>
 		<a href="/history/original-tongues">← From the Authentic Latin to the Original Tongues</a>
 		&nbsp;&nbsp;·&nbsp;&nbsp;
-		<a href="/history">History of the Douay-Rheims Bible →</a>
+		<a href="/odr/genesis/1">Begin reading the Douay-Rheims Bible →</a>
 	</p>
 </ProseLayout>
 

@@ -9,6 +9,35 @@
 	let prefsOpen = false;
 	let wrapperEl: HTMLElement;
 
+	// Bionic reading
+	let textVideFn: ((text: string, opts: object) => string) | null = null;
+
+	function bionicAction(node: HTMLElement, enabled: boolean) {
+		let original: string | null = null;
+
+		async function apply(on: boolean) {
+			if (on) {
+				if (!textVideFn) {
+					const m = await import('text-vide');
+					textVideFn = m.textVide;
+				}
+				if (original === null) original = node.innerHTML;
+				node.innerHTML = textVideFn(original, { fixationPoint: 4 });
+			} else if (original !== null) {
+				node.innerHTML = original;
+				original = null;
+			}
+		}
+
+		apply(enabled);
+		return {
+			update: (on: boolean) => apply(on),
+			destroy: () => {
+				if (original !== null) node.innerHTML = original;
+			}
+		};
+	}
+
 	function handleOutside(e: MouseEvent) {
 		if (prefsOpen && wrapperEl && !wrapperEl.contains(e.target as Node)) {
 			prefsOpen = false;
@@ -61,7 +90,11 @@
 		<div class="prose-rule"></div>
 	</header>
 
-	<article class="prose-body" class:prose-body--justified={$prefs.justifiedText}>
+	<article
+		class="prose-body"
+		class:prose-body--justified={$prefs.justifiedText}
+		use:bionicAction={$prefs.bionicReading}
+	>
 		<slot />
 	</article>
 </main>
@@ -188,7 +221,7 @@
 		font-family: var(--font-reader);
 		font-size: 1.6rem;
 		font-weight: 700;
-		color: var(--color-foreground);
+		color: var(--color-heading, var(--color-text));
 		letter-spacing: -0.01em;
 		margin: 56px 0 16px;
 		line-height: 1.25;
@@ -215,6 +248,10 @@
 		margin: 28px 0;
 		font-style: italic;
 		color: var(--color-subtle);
+	}
+
+	.prose-body :global(blockquote strong) {
+		font-style: normal;
 	}
 
 	.prose-body :global(a) {
@@ -255,13 +292,21 @@
 	.prose-body :global(hr + p) {
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
-		flex-wrap: wrap;
-		gap: 6px 32px;
-		margin-top: 4px;
+		align-items: flex-start;
+		font-size: 0;
+		margin-top: 12px;
+		gap: 24px;
 	}
 
 	.prose-body :global(hr + p a) {
-		white-space: nowrap;
+		font-size: 1rem;
+		max-width: calc(50% - 12px);
+		line-height: 1.4;
+		white-space: normal;
+	}
+
+	.prose-body :global(hr + p a:last-of-type) {
+		text-align: right;
+		margin-left: auto;
 	}
 </style>
