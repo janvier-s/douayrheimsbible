@@ -38,10 +38,7 @@
 		property="og:description"
 		content="Why the Douay-Rheims translators chose Saint Jerome's Vulgate over the original languages, and what that choice gave and cost them."
 	/>
-	<meta
-		property="og:url"
-		content="https://douayrheimsbible.net/history/translation-philosophy"
-	/>
+	<meta property="og:url" content="https://douayrheimsbible.net/history/translation-philosophy" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
