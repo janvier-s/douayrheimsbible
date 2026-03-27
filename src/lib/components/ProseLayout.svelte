@@ -14,6 +14,7 @@
 
 	const PATH_LABELS: Record<string, string> = {
 		about: 'About',
+		articles: 'Articles',
 		history: 'History',
 		origins: 'Origins',
 		'translation-philosophy': 'Translation Philosophy',
@@ -103,6 +104,7 @@
 
 	const NAV_ARTICLES = [
 		{ path: '/about', label: 'About' },
+		{ path: '/articles', label: 'Articles' },
 		{ path: '/history', label: 'History' },
 		{ path: '/history/origins', label: 'Origins' },
 		{ path: '/history/translation-philosophy', label: 'Translation' },
