@@ -127,15 +127,23 @@
 
 	<p>
 		The same method that produced the Latinisms also produced some of the finest translations in the
-		collection. "By their fruits you shall know them" (Matthew 7:16). "Liberty of the glory of the
-		children of God" (Romans 8:21). "Holiness of the truth" (Ephesians 4:24). In the first chapter
-		of St James alone, the Rheims gave English its "upbraideth not," its "engrafted word," its
-		"bridleth not," all adopted by the King James translators.
+		collection:
+	</p>
+
+	<ul>
+		<li><q>By their fruits you shall know them</q> (Matthew 7:16)</li>
+		<li><q>Liberty of the glory of the children of God</q> (Romans 8:21)</li>
+		<li><q>Holiness of the truth</q> (Ephesians 4:24)</li>
+	</ul>
+
+	<p>
+		In the first chapter of St James alone, the Rheims gave English its "upbraideth not," its
+		"engrafted word," its "bridleth not," all adopted by the King James translators.
 	</p>
 
 	<p>
 		Moulton found more than forty instances where the Rheims New Testament alone, among all English
-		versions from Tyndale to the Authorised Version, correctly represents the Greek Article. The
+		versions from Tyndale to the Authorized Version, correctly represents the Greek Article. The
 		care these Oxford classicists brought to the Latin text was real scholarship, even when its
 		results were unreadable.
 	</p>

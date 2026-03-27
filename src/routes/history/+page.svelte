@@ -183,7 +183,7 @@
 		font-family: var(--font-reader);
 		font-size: 11px;
 		font-weight: 600;
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 		letter-spacing: 0.1em;
 		padding-top: 4px;
 	}
@@ -201,7 +201,7 @@
 	}
 
 	.article-link:hover .article-title {
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 	}
 
 	.article-desc {
@@ -211,5 +211,6 @@
 		font-size: 0.95rem;
 		line-height: 1.65;
 		color: var(--color-muted);
+		text-decoration: none;
 	}
 </style>

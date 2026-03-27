@@ -128,7 +128,7 @@
 		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.2em;
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 		font-weight: 600;
 		margin: 40px 0 12px;
 	}
@@ -147,15 +147,15 @@
 	}
 
 	.prose-body :global(a) {
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 		text-decoration: underline;
 		text-underline-offset: 3px;
-		text-decoration-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+		text-decoration-color: color-mix(in srgb, var(--color-accent-text) 40%, transparent);
 		transition: text-decoration-color 150ms ease;
 	}
 
 	.prose-body :global(a:hover) {
-		text-decoration-color: var(--color-accent);
+		text-decoration-color: var(--color-accent-text);
 	}
 
 	.prose-body :global(ul),
@@ -174,5 +174,23 @@
 		height: 1px;
 		background: var(--color-border);
 		margin: 40px 0;
+	}
+
+	.prose-body :global(q),
+	.prose-body :global(cite) {
+		font-style: italic;
+	}
+
+	.prose-body :global(hr + p) {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 6px 32px;
+		margin-top: 4px;
+	}
+
+	.prose-body :global(hr + p a) {
+		white-space: nowrap;
 	}
 </style>
