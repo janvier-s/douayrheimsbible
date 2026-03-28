@@ -10,7 +10,7 @@
 	afterNavigate(({ from, to, type }) => {
 		if (type === 'popstate') return;
 		if (from?.url.pathname === to?.url.pathname) return;
-		requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, 0)));
+		requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'instant' })));
 	});
 
 	// $page.params is the primary source on navigation.
