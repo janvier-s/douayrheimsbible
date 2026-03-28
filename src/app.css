@@ -206,3 +206,40 @@ body {
 		transition-duration: 0.01ms !important;
 	}
 }
+
+/* ─── Article figure placeholders ─── */
+.article-figure {
+	margin: 2rem 0;
+}
+
+.article-figure-placeholder {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	background: color-mix(in srgb, var(--color-foreground) 4%, transparent);
+	border: 1px dashed color-mix(in srgb, var(--color-foreground) 20%, transparent);
+	border-radius: 2px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.article-figure-placeholder::before {
+	content: attr(data-label);
+	font-family: var(--font-ui);
+	font-size: 0.75rem;
+	color: color-mix(in srgb, var(--color-foreground) 40%, transparent);
+	text-align: center;
+	max-width: 40ch;
+	line-height: 1.5;
+}
+
+.article-figure figcaption {
+	margin-top: 0.5rem;
+	font-family: var(--font-ui);
+	font-size: 0.75rem;
+	color: var(--color-subtle);
+	text-align: center;
+	line-height: 1.5;
+}

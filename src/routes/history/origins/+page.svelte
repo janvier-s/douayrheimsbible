@@ -85,6 +85,16 @@
 		first to die was Cuthbert Mayne, put to death in 1577.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Engraving or architectural view of the English College at Douai"
+		></div>
+		<figcaption>
+			The English College at Douai, founded 1568, where English Catholic scholars gathered in exile
+		</figcaption>
+	</figure>
+
 	<h2>Gregory Martin and the Translation</h2>
 
 	<p>
@@ -121,6 +131,16 @@
 		reflecting the translators' fidelity to the Vulgate and their conviction that certain
 		theological concepts were best expressed in terms closely derived from the Latin.
 	</p>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Title page of the Rheims New Testament, 1582"
+		></div>
+		<figcaption>
+			Title page of the Rheims New Testament (1582), the first English Catholic New Testament
+		</figcaption>
+	</figure>
 
 	<p>
 		Gregory Martin did not long survive his achievement. He had contracted tuberculosis, and died on

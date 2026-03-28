@@ -70,6 +70,17 @@
 		of Catholic life.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Photograph of the Second Vatican Council in session at St Peter's Basilica, or the opening page of Dei Verbum (November 18, 1965)"
+		></div>
+		<figcaption>
+			The Second Vatican Council (1962–1965), whose Dogmatic Constitution <em>Dei Verbum</em> opened Scripture
+			to all the faithful
+		</figcaption>
+	</figure>
+
 	<h2>Dei Verbum: The Open Door</h2>
 
 	<p>
@@ -205,6 +216,17 @@
 	</p>
 
 	<h2>A Tradition of Encouragement</h2>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Portrait or mosaic of Saint Jerome in his study, or a page from his Latin Vulgate manuscript"
+		></div>
+		<figcaption>
+			Saint Jerome (c. 347–420), whose Latin Vulgate made Scripture accessible to the Western Church
+			and whose letters urged all the faithful to read it
+		</figcaption>
+	</figure>
 
 	<p>
 		The Church's encouragement of Scripture reading is not a modern development. It runs through the

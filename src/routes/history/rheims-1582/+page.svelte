@@ -66,6 +66,17 @@
 		whole feeling of England was anti-Roman." The translators knew it. They published anyway.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Portrait of Edmund Campion (c. 1540–1581), Jesuit priest executed at Tyburn the year before the Rheims New Testament appeared"
+		></div>
+		<figcaption>
+			Edmund Campion, executed at Tyburn in 1581, whose arrest and death framed the world into which
+			the Rheims New Testament was published
+		</figcaption>
+	</figure>
+
 	<h2>The Approbation</h2>
 
 	<p>
@@ -143,6 +154,17 @@
 	</p>
 
 	<h2>The Refutation That Spread It</h2>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Title page or opening spread of William Fulke's 1589 parallel edition of the Rheims New Testament and the Bishops' Bible"
+		></div>
+		<figcaption>
+			William Fulke's parallel edition (1589), which spread the Rheims text throughout Protestant
+			England
+		</figcaption>
+	</figure>
 
 	<p>
 		The most consequential response was Fulke's 1589 parallel edition, which printed the entire

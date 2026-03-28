@@ -74,6 +74,17 @@
 		Scripture; her Bible was the Bible.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Title page of the Rheims New Testament (1582) showing the words 'translated faithfully into English out of the authentical Latin'"
+		></div>
+		<figcaption>
+			Title page of the Rheims New Testament (1582), declaring the Vulgate as the translation's
+			authority
+		</figcaption>
+	</figure>
+
 	<h2>The Title Page States It Plainly</h2>
 
 	<p>

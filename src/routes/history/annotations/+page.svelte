@@ -60,6 +60,17 @@
 		knew they were writing for an illegal book in a hostile country.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Page from the 1582 Rheims New Testament showing the dense marginal and interlinear annotations alongside the biblical text"
+		></div>
+		<figcaption>
+			A page from the 1582 Rheims New Testament, with the theological annotations that defined the
+			translation's polemical character
+		</figcaption>
+	</figure>
+
 	<h2>Their Character</h2>
 
 	<p>

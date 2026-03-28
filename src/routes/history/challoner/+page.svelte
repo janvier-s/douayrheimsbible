@@ -66,6 +66,17 @@
 		of his own day.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Portrait of Bishop Richard Challoner (1691–1781), Vicar Apostolic of the London District"
+		></div>
+		<figcaption>
+			Bishop Richard Challoner, whose revisions of 1749–1752 transformed the Douay-Rheims into the
+			form most Catholics know today
+		</figcaption>
+	</figure>
+
 	<h2>What He Changed</h2>
 
 	<p>

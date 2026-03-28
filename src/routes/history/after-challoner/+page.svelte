@@ -71,6 +71,17 @@
 
 	<h2>Cotton's Catalogue</h2>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Title page or frontispiece of Henry Cotton's 'Rhemes and Doway' (Oxford University Press, 1855), cataloguing nearly 300 Catholic English Bible editions"
+		></div>
+		<figcaption>
+			Henry Cotton's <em>Rhemes and Doway</em> (1855), the authoritative catalogue of every Catholic English
+			Bible edition from 1582 to the mid-nineteenth century
+		</figcaption>
+	</figure>
+
 	<p>
 		Henry Cotton, an Archdeacon of Cashel who spent years cataloguing every Catholic English Bible
 		edition he could locate, published his findings at the Oxford University Press in 1855. His

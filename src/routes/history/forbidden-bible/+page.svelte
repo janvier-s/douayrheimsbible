@@ -123,6 +123,17 @@
 		recognized dogma of that Church."
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Preface page of the 1582 Rheims New Testament, where the translators state they acted 'not from choice, but from necessity'"
+		></div>
+		<figcaption>
+			Preface of the 1582 Rheims New Testament, in which the translators explain their reasons for
+			producing a vernacular Scripture
+		</figcaption>
+	</figure>
+
 	<h2>The Translators' Own Position</h2>
 
 	<p>

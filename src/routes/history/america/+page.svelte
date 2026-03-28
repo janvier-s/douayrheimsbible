@@ -63,6 +63,17 @@
 		colony whose charter had promised religious tolerance.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Historical illustration or map of the Maryland settlement, 1634, showing the arrival of Lord Baltimore's colonists at the Chesapeake"
+		></div>
+		<figcaption>
+			The founding of Maryland (1634), the first English Catholic colony in America, where the
+			Douay-Rheims Bible entered American life
+		</figcaption>
+	</figure>
+
 	<h2>Two Bibles Made in Exile</h2>
 
 	<p>
@@ -103,6 +114,17 @@
 	</p>
 
 	<h2>Bishop Kenrick's Translation</h2>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Portrait of Bishop Francis Patrick Kenrick, or title page of his 1849 New Testament (New York)"
+		></div>
+		<figcaption>
+			Bishop Francis Patrick Kenrick, whose 1849 New Testament was the first major American Catholic
+			biblical translation
+		</figcaption>
+	</figure>
 
 	<p>
 		Bishop Francis Patrick Kenrick of Philadelphia, later Archbishop of Baltimore, undertook a

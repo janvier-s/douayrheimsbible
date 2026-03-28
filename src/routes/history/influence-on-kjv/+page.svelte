@@ -62,6 +62,17 @@
 		anyone planning it that way, one of the working texts of the Protestant masterpiece.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Title page of William Fulke's parallel edition (1589), showing the Rheims and Bishops' Bible in double columns"
+		></div>
+		<figcaption>
+			William Fulke's parallel edition (1589), which placed the Rheims text in Protestant hands and
+			made it available to the King James translators
+		</figcaption>
+	</figure>
+
 	<h2>The Specific Borrowings</h2>
 
 	<p>The debt repays close attention. A sample from three chapters, taken by chance:</p>
