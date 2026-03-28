@@ -44,6 +44,7 @@
 	};
 
 	onMount(() => {
+		history.scrollRestoration = 'manual';
 		const p = $prefs;
 		document.documentElement.style.setProperty('--font-size-reader', `${p.fontSize}px`);
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));

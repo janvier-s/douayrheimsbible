@@ -104,7 +104,6 @@
 		(faqSchema ? scriptOpen + JSON.stringify(faqSchema) + scriptClose : '');
 
 	const NAV_ARTICLES = [
-		{ path: '/articles', label: 'Articles' },
 		{ path: '/history', label: 'History' },
 		{ path: '/history/about', label: 'About' },
 		{ path: '/history/origins', label: 'Origins' },
