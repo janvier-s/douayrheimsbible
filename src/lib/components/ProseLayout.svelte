@@ -260,13 +260,14 @@
 	</a>
 	<div class="prose-nav-right" bind:this={wrapperEl}>
 		<button
-			class="prefs-btn"
-			class:prefs-btn--open={prefsOpen}
+			class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium font-ui
+				{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 			aria-label="Reading options"
 			aria-expanded={prefsOpen}
 			on:click={() => (prefsOpen = !prefsOpen)}
 		>
-			Reading options
+			<span class="hidden sm:inline">Reading options</span>
+			<span class="sm:hidden">Aa</span>
 		</button>
 		<ProseReadingPrefs {prefsOpen} />
 	</div>
@@ -342,28 +343,6 @@
 
 	.prose-nav-right {
 		position: relative;
-	}
-
-	.prefs-btn {
-		font-family: var(--font-ui);
-		font-size: 11px;
-		font-weight: 600;
-		letter-spacing: 0.04em;
-		color: var(--color-muted);
-		background: transparent;
-		border: 1px solid var(--color-border);
-		border-radius: 4px;
-		padding: 5px 12px;
-		cursor: pointer;
-		transition:
-			color 150ms ease,
-			border-color 150ms ease;
-	}
-
-	.prefs-btn:hover,
-	.prefs-btn--open {
-		color: var(--color-accent-text);
-		border-color: var(--color-accent-text);
 	}
 
 	.prose-nav-link {

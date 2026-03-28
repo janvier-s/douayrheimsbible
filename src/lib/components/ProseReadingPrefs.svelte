@@ -103,36 +103,11 @@
 </script>
 
 {#if prefsOpen}
-	<div class="prefs-panel">
-		<div class="prefs-section">
-			<span class="prefs-label">Theme</span>
-			<div class="theme-row">
-				{#each THEMES as t}
-					<button
-						title={t.label}
-						on:click={() => setTheme(t.id)}
-						class="theme-card"
-						class:active={currentTheme === t.id}
-						style="background: {t.bg};"
-					>
-						<div class="theme-inner">
-							<div class="theme-preview-row">
-								<span class="theme-a" style="color: {t.fg};">A</span>
-								<span class="theme-line" style="background: {t.fg};"></span>
-							</div>
-							<div class="theme-lines">
-								<span class="theme-rule" style="background: {t.lines};"></span>
-								<span class="theme-rule" style="background: {t.lines};"></span>
-								<span class="theme-rule short" style="background: {t.lines};"></span>
-							</div>
-						</div>
-					</button>
-				{/each}
-			</div>
-		</div>
-
-		<div class="prefs-section">
-			<span class="prefs-label">Size: {$prefs.fontSize}px</span>
+	<div
+		class="absolute top-[calc(100%+8px)] right-0 bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui space-y-md text-sm"
+	>
+		<label class="block">
+			<span class="block mb-xs">Font size: {$prefs.fontSize}px</span>
 			<input
 				type="range"
 				min="12"
@@ -144,17 +119,19 @@
 					prefs.update((p) => ({ ...p, fontSize: v }));
 					document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
 				}}
-				class="size-slider"
+				class="w-full accent-accent"
 			/>
-		</div>
+		</label>
 
-		<div class="prefs-section">
-			<span class="prefs-label">Spacing</span>
-			<div class="btn-row">
+		<div>
+			<span class="block mb-xs">Line spacing</span>
+			<div class="flex gap-xs">
 				{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.1 }] as opt}
 					<button
-						class="pill-btn"
-						class:active={$prefs.lineHeight === opt.value}
+						class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+							{$prefs.lineHeight === opt.value
+							? 'bg-accent text-white border-accent'
+							: 'border-border text-foreground hover:text-accent'}"
 						on:click={() => {
 							prefs.update((p) => ({ ...p, lineHeight: opt.value }));
 							document.documentElement.style.setProperty('--line-height-reader', String(opt.value));
@@ -166,292 +143,127 @@
 			</div>
 		</div>
 
-		<div class="prefs-section">
-			<span class="prefs-label">Font</span>
-			<div class="font-dropdown-wrap">
-				<button
-					class="font-btn"
-					style="font-family: {activeFontStack};"
-					aria-expanded={fontDropdownOpen}
-					aria-haspopup="listbox"
-					on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
+		<div class="relative">
+			<span class="block mb-xs">Font</span>
+			<button
+				class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
+				style="font-family: {activeFontStack};"
+				aria-expanded={fontDropdownOpen}
+				aria-haspopup="listbox"
+				on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
+			>
+				<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span>
+				<span class="text-[10px] text-subtle font-ui" aria-hidden="true"
+					>{fontDropdownOpen ? '▲' : '▼'}</span
 				>
-					<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span>
-					<span class="chevron" aria-hidden="true">{fontDropdownOpen ? '▲' : '▼'}</span>
-				</button>
-				{#if fontDropdownOpen}
-					<div class="font-list" role="listbox">
-						{#each FONTS as f}
-							{#if f.dividerBefore}
-								<div class="font-divider"></div>
-							{/if}
-							<button
-								class="font-option"
-								class:selected={activeFontId === f.id}
-								style="font-family: {f.stack};"
-								on:click={() => {
-									setDyslexia(false);
-									setFont(f.id);
-									fontDropdownOpen = false;
-								}}
-							>
-								{f.label}
-							</button>
-						{/each}
-						<div class="font-divider"></div>
+			</button>
+			{#if fontDropdownOpen}
+				<div
+					class="absolute left-0 right-0 top-[calc(100%+2px)] bg-panel border border-border rounded-sm shadow-lg z-10 overflow-hidden"
+				>
+					{#each FONTS as f}
+						{#if f.dividerBefore}
+							<div class="border-t border-border my-[3px]"></div>
+						{/if}
 						<button
-							class="font-option"
-							class:selected={activeFontId === 'grace'}
-							style="font-family: 'Grace Dyslexic MD', sans-serif;"
+							class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast
+								{activeFontId === f.id ? 'text-accent' : 'text-foreground'}"
+							style="font-family: {f.stack};"
 							on:click={() => {
-								setDyslexia(true);
+								setDyslexia(false);
+								setFont(f.id);
 								fontDropdownOpen = false;
 							}}
 						>
-							Grace Dyslexic MD
+							{f.label}
 						</button>
-					</div>
-				{/if}
+					{/each}
+					<button
+						class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast border-t border-border
+							{activeFontId === 'grace' ? 'text-accent' : 'text-foreground'}"
+						style="font-family: 'Grace Dyslexic MD', sans-serif;"
+						on:click={() => {
+							setDyslexia(true);
+							fontDropdownOpen = false;
+						}}
+					>
+						Grace Dyslexic MD
+					</button>
+				</div>
+			{/if}
+		</div>
+
+		<div>
+			<span class="block mb-xs">Theme</span>
+			<div class="flex gap-[6px]">
+				{#each THEMES as t}
+					<button
+						title={t.label}
+						on:click={() => setTheme(t.id)}
+						class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
+							{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
+						style="background: {t.bg};"
+					>
+						<div class="theme-card-inner p-[7px]">
+							<div class="flex items-baseline gap-[3px] mb-[5px]">
+								<span class="font-reader text-[15px] leading-none font-bold" style="color: {t.fg};"
+									>A</span
+								>
+								<span
+									class="block h-[1.5px] flex-1 rounded-full"
+									style="background: {t.fg}; opacity: 0.5;"
+								></span>
+							</div>
+							<div class="space-y-[3px]">
+								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+								<span class="block h-[1.5px] w-[70%] rounded-full" style="background: {t.lines};"
+								></span>
+							</div>
+						</div>
+					</button>
+				{/each}
 			</div>
 		</div>
 
-		<div class="prefs-section">
-			<label class="toggle-row">
-				<input
-					type="checkbox"
-					checked={$prefs.justifiedText}
-					on:change={(e) =>
-						prefs.update((p) => ({
-							...p,
-							justifiedText: (e.target as HTMLInputElement).checked
-						}))}
-				/>
-				<span>Justified text</span>
-			</label>
-			<label class="toggle-row">
-				<input
-					type="checkbox"
-					checked={$prefs.bionicReading}
-					on:change={(e) =>
-						prefs.update((p) => ({
-							...p,
-							bionicReading: (e.target as HTMLInputElement).checked
-						}))}
-				/>
-				<span>Bionic reading</span>
-			</label>
-		</div>
+		<label class="flex items-center gap-sm cursor-pointer">
+			<input
+				type="checkbox"
+				checked={$prefs.justifiedText}
+				on:change={(e) =>
+					prefs.update((p) => ({
+						...p,
+						justifiedText: (e.target as HTMLInputElement).checked
+					}))}
+				class="accent-accent"
+			/>
+			<span>Justified text</span>
+		</label>
+
+		<label class="flex items-center gap-sm cursor-pointer">
+			<input
+				type="checkbox"
+				checked={$prefs.bionicReading}
+				on:change={(e) =>
+					prefs.update((p) => ({
+						...p,
+						bionicReading: (e.target as HTMLInputElement).checked
+					}))}
+				class="accent-accent"
+			/>
+			<span>Bionic Reading</span>
+		</label>
 	</div>
 {/if}
 
 <style>
-	.prefs-panel {
-		position: absolute;
-		top: calc(100% + 8px);
-		right: 0;
-		width: 240px;
-		background: var(--color-panel);
-		border: 1px solid var(--color-border);
-		border-radius: 6px;
-		box-shadow:
-			0 4px 16px rgba(0, 0, 0, 0.12),
-			0 1px 4px rgba(0, 0, 0, 0.08);
-		padding: 16px;
-		z-index: 100;
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-	}
-
-	.prefs-label {
-		display: block;
-		font-family: var(--font-ui);
-		font-size: 10px;
-		text-transform: uppercase;
-		letter-spacing: 0.18em;
-		color: var(--color-muted);
-		font-weight: 600;
-		margin-bottom: 8px;
-	}
-
-	.theme-row {
-		display: flex;
-		gap: 6px;
-	}
-
 	.theme-card {
-		flex: 1;
 		aspect-ratio: 3 / 4;
-		border-radius: 4px;
-		border: 2px solid transparent;
-		overflow: hidden;
-		transition: border-color 150ms ease;
-		cursor: pointer;
 	}
-
-	.theme-card.active {
-		border-color: var(--color-accent);
-	}
-
-	.theme-inner {
+	.theme-card-inner {
 		height: 100%;
-		padding: 6px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		gap: 4px;
-	}
-
-	.theme-preview-row {
-		display: flex;
-		align-items: baseline;
-		gap: 3px;
-		margin-bottom: 4px;
-	}
-
-	.theme-a {
-		font-size: 14px;
-		font-weight: 700;
-		line-height: 1;
-	}
-
-	.theme-line {
-		flex: 1;
-		height: 1.5px;
-		border-radius: 1px;
-		opacity: 0.5;
-	}
-
-	.theme-lines {
-		display: flex;
-		flex-direction: column;
-		gap: 3px;
-	}
-
-	.theme-rule {
-		display: block;
-		height: 1.5px;
-		border-radius: 1px;
-	}
-
-	.theme-rule.short {
-		width: 70%;
-	}
-
-	.size-slider {
-		width: 100%;
-		accent-color: var(--color-accent);
-	}
-
-	.btn-row {
-		display: flex;
-		gap: 6px;
-	}
-
-	.pill-btn {
-		flex: 1;
-		padding: 5px 0;
-		border: 1px solid var(--color-border);
-		border-radius: 3px;
-		font-family: var(--font-ui);
-		font-size: 11px;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: var(--color-muted);
-		background: transparent;
-		cursor: pointer;
-		transition:
-			background 150ms ease,
-			color 150ms ease,
-			border-color 150ms ease;
-	}
-
-	.pill-btn.active {
-		background: var(--color-accent);
-		border-color: var(--color-accent);
-		color: #fff;
-	}
-
-	.font-dropdown-wrap {
-		position: relative;
-	}
-
-	.font-btn {
-		width: 100%;
-		border: 1px solid var(--color-border);
-		border-radius: 3px;
-		padding: 7px 10px;
-		background: var(--color-bg);
-		color: var(--color-foreground);
-		font-size: 14px;
-		font-weight: 500;
-		text-align: left;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		cursor: pointer;
-	}
-
-	.chevron {
-		font-size: 10px;
-		color: var(--color-muted);
-		font-family: var(--font-ui);
-	}
-
-	.font-list {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: calc(100% + 2px);
-		background: var(--color-panel);
-		border: 1px solid var(--color-border);
-		border-radius: 3px;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-		z-index: 10;
-		overflow: hidden;
-	}
-
-	.font-option {
-		width: 100%;
-		text-align: left;
-		padding: 9px 10px;
-		font-size: 14px;
-		font-weight: 500;
-		color: var(--color-foreground);
-		background: transparent;
-		border: none;
-		cursor: pointer;
-		transition:
-			background 150ms ease,
-			color 150ms ease;
-	}
-
-	.font-option:hover {
-		background: var(--color-accent);
-		color: #fff;
-	}
-
-	.font-option.selected {
-		color: var(--color-accent-text);
-	}
-
-	.font-divider {
-		border-top: 1px solid var(--color-border);
-		margin: 3px 0;
-	}
-
-	.toggle-row {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		cursor: pointer;
-		font-family: var(--font-ui);
-		font-size: 12px;
-		color: var(--color-foreground);
-	}
-
-	.toggle-row input {
-		accent-color: var(--color-accent);
-		cursor: pointer;
 	}
 </style>
