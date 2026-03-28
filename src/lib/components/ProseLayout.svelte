@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
 	import ProseReadingPrefs from '$lib/components/ProseReadingPrefs.svelte';
 
@@ -236,6 +237,7 @@
 	});
 
 	onDestroy(() => {
+		if (!browser) return;
 		document.removeEventListener('mousedown', handleOutside);
 		document.removeEventListener('keydown', handleKey);
 		window.removeEventListener('scroll', onScroll);
