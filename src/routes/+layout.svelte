@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
 	import '../app.css';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import { page } from '$app/stores';
@@ -7,11 +7,10 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import { afterNavigate } from '$app/navigation';
 
-	afterNavigate(async ({ from, to, type }) => {
+	afterNavigate(({ from, to, type }) => {
 		if (type === 'popstate') return;
 		if (from?.url.pathname === to?.url.pathname) return;
-		await tick();
-		window.scrollTo(0, 0);
+		requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, 0)));
 	});
 
 	// $page.params is the primary source on navigation.
@@ -45,7 +44,6 @@
 	};
 
 	onMount(() => {
-		history.scrollRestoration = 'manual';
 		const p = $prefs;
 		document.documentElement.style.setProperty('--font-size-reader', `${p.fontSize}px`);
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));
