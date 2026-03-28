@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import '../app.css';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import { page } from '$app/stores';
@@ -7,9 +7,10 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import { afterNavigate } from '$app/navigation';
 
-	afterNavigate(({ from, to, type }) => {
+	afterNavigate(async ({ from, to, type }) => {
 		if (type === 'popstate') return;
 		if (from?.url.pathname === to?.url.pathname) return;
+		await tick();
 		window.scrollTo(0, 0);
 	});
 
