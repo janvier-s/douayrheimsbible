@@ -13,7 +13,7 @@
 		},
 		{
 			q: 'Did Catholics need special permission to read the Douay-Rheims Bible?',
-			a: 'Yes — and the requirement came from Catholic authorities, not only Protestant law. The preface to the 1582 Rheims New Testament stated that readers should obtain a license from a confessor or pastor before reading it privately. This reflected a pastoral concern: unsupported private reading of Scripture, in an environment saturated with Protestant polemic, was seen as a real risk for ordinary Catholics without theological formation.'
+			a: 'Yes. The requirement also came from Catholic authorities, not only Protestant law. The preface to the 1582 Rheims New Testament stated that readers should obtain a license from a confessor or pastor before reading it privately. This reflected a pastoral concern: unsupported private reading of Scripture, in an environment saturated with Protestant polemic, was seen as a real risk for ordinary Catholics without theological formation.'
 		},
 		{
 			q: 'Why would the Catholic Church restrict access to its own Bible translation?',

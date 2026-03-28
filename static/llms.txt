@@ -4,7 +4,7 @@
 
 ## Key Pages
 
-- [About](https://douayrheimsbible.net/about): Overview of the Douay-Rheims Bible — its origins, translators, source text, Catholic significance, and the distinction from the Challoner revision
+- [About](https://douayrheimsbible.net/history/about): Overview of the Douay-Rheims Bible — its origins, translators, source text, Catholic significance, and the distinction from the Challoner revision
 - [History](https://douayrheimsbible.net/history): Series of eleven articles covering the complete history of the Douay-Rheims Bible from its origins to the present
 - [Read the Bible](https://douayrheimsbible.net/odr/genesis/1): Full text of the original Douay-Rheims Bible online, all 73 books, searchable and readable
 

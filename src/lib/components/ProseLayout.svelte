@@ -103,9 +103,9 @@
 		(faqSchema ? scriptOpen + JSON.stringify(faqSchema) + scriptClose : '');
 
 	const NAV_ARTICLES = [
-		{ path: '/about', label: 'About' },
 		{ path: '/articles', label: 'Articles' },
 		{ path: '/history', label: 'History' },
+		{ path: '/history/about', label: 'About' },
 		{ path: '/history/origins', label: 'Origins' },
 		{ path: '/history/translation-philosophy', label: 'Translation' },
 		{ path: '/history/rheims-1582', label: 'Rheims 1582' },
@@ -296,10 +296,13 @@
 		<section class="prose-faq" aria-label="Frequently asked questions">
 			<h2 class="prose-faq-heading">Frequently Asked Questions</h2>
 			{#each faqItems as { q, a }}
-				<div class="faq-item">
-					<p class="faq-question">{q}</p>
+				<details class="faq-item">
+					<summary class="faq-question">
+						{q}
+						<span class="faq-icon" aria-hidden="true"></span>
+					</summary>
 					<p class="faq-answer">{a}</p>
-				</div>
+				</details>
 			{/each}
 		</section>
 	{/if}
@@ -743,17 +746,45 @@
 	}
 
 	.faq-item {
-		padding: 20px 0;
 		border-bottom: 1px solid var(--color-border);
 	}
 
+	.faq-item[open] .faq-icon::after {
+		content: '−';
+	}
+
 	.faq-question {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 16px;
+		list-style: none;
+		cursor: pointer;
+		padding: 20px 0;
 		font-family: var(--font-reader);
 		font-size: var(--font-size-reader);
 		font-weight: 700;
 		color: var(--color-heading, var(--color-text));
-		margin: 0 0 10px;
 		line-height: 1.4;
+		user-select: none;
+	}
+
+	.faq-question::-webkit-details-marker {
+		display: none;
+	}
+
+	.faq-icon {
+		flex-shrink: 0;
+		font-family: var(--font-ui);
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 1;
+		color: var(--color-accent);
+		transition: transform 180ms ease;
+	}
+
+	.faq-icon::after {
+		content: '+';
 	}
 
 	.faq-answer {
@@ -761,6 +792,18 @@
 		font-size: var(--font-size-reader);
 		line-height: var(--line-height-reader);
 		color: var(--color-text);
-		margin: 0;
+		margin: 0 0 20px;
+		animation: faq-reveal 180ms ease;
+	}
+
+	@keyframes faq-reveal {
+		from {
+			opacity: 0;
+			transform: translateY(-4px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 </style>

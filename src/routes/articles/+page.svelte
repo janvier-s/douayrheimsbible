@@ -14,7 +14,7 @@
 		},
 		{
 			q: 'Why does the Catholic Bible have more books than the Protestant Bible?',
-			a: 'The Catholic canon includes seven books — Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach (Ecclesiasticus), and Baruch — that were removed from the Protestant canon during the Reformation, largely under the influence of Martin Luther, who placed them in a separate appendix. The Catholic Church has recognized these deuterocanonical books as Scripture since before the New Testament era.'
+			a: 'The Catholic canon includes seven books (Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach, and Baruch) that were removed from the Protestant canon during the Reformation, largely under the influence of Martin Luther, who placed them in a separate appendix. The Catholic Church has recognized these deuterocanonical books as Scripture since before the New Testament era.'
 		}
 	];
 

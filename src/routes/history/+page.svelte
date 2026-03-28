@@ -38,6 +38,15 @@
 
 	<ol class="article-list">
 		<li class="article-item">
+			<a href="/history/about" class="article-link">
+				<span class="article-title">About the Douay-Rheims Bible</span>
+				<span class="article-desc"
+					>What it is, who translated it, why it was created, and how to distinguish the original
+					from the Challoner revision.</span
+				>
+			</a>
+		</li>
+		<li class="article-item">
 			<a href="/history/origins" class="article-link">
 				<span class="article-title">Born in Exile: The Origins of the Douay-Rheims Bible</span>
 				<span class="article-desc"

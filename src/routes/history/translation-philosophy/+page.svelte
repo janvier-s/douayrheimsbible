@@ -9,7 +9,7 @@
 	const FAQ = [
 		{
 			q: 'Why does the Douay-Rheims use unusual vocabulary like "supersubstantial" and "longsuffering"?',
-			a: 'The translators deliberately preserved Latin theological terms rather than substitute familiar paraphrases. Gregory Martin argued that key theological concepts carried precision in the Vulgate Latin that would be lost in simpler English. Words like "supersubstantial" (from supersubstantialem in Matthew 6:11) preserve a doctrinal nuance that "daily" — the Protestant rendering — does not.'
+			a: 'The translators deliberately preserved Latin theological terms rather than substitute familiar paraphrases. Gregory Martin argued that key theological concepts carried precision in the Vulgate Latin that would be lost in simpler English. Words like "supersubstantial" (from supersubstantialem in Matthew 6:11) preserve a doctrinal nuance that "daily" (the Protestant rendering) does not.'
 		},
 		{
 			q: 'Was the Douay-Rheims translated from Latin or from the original languages?',

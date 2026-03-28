@@ -9,7 +9,7 @@
 	const FAQ = [
 		{
 			q: 'Does the Catholic Church encourage Catholics to read the Bible?',
-			a: 'Yes, emphatically. The Second Vatican Council\'s Dei Verbum (1965) called for "easy access to Sacred Scripture" for all the faithful and quoted Saint Jerome\'s maxim: "Ignorance of the Scriptures is ignorance of Christ." Pope Benedict XVI\'s Verbum Domini (2010) and Pope Francis\'s Aperuit Illis (2019) — which instituted the Sunday of the Word of God — have continued and deepened this invitation.'
+			a: 'Yes, emphatically. The Second Vatican Council\'s Dei Verbum (1965) called for "easy access to Sacred Scripture" for all the faithful and quoted Saint Jerome\'s maxim: "Ignorance of the Scriptures is ignorance of Christ." Pope Benedict XVI\'s Verbum Domini (2010) and Pope Francis\'s Aperuit Illis (2019, which instituted the Sunday of the Word of God) have continued and deepened this invitation.'
 		},
 		{
 			q: 'What is lectio divina?',
@@ -17,7 +17,7 @@
 		},
 		{
 			q: 'Did the Catholic Church ever restrict Bible reading?',
-			a: 'In certain periods, yes. The 1582 Rheims New Testament preface required readers to obtain a license from a confessor before reading it privately. These restrictions were pastoral responses to specific historical crises — the proliferation of tendentious Protestant translations — rather than opposition to Scripture reading in principle. The trajectory of Catholic teaching has moved consistently toward wider access and warmer encouragement.'
+			a: 'In certain periods, yes. The 1582 Rheims New Testament preface required readers to obtain a license from a confessor before reading it privately. These restrictions were pastoral responses to specific historical crises (the proliferation of tendentious Protestant translations) rather than opposition to Scripture reading in principle. The trajectory of Catholic teaching has moved consistently toward wider access and warmer encouragement.'
 		}
 	];
 </script>
