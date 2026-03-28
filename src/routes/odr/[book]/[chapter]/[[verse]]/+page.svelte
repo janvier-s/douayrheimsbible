@@ -11,37 +11,62 @@
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
+	const SITE = 'https://douayrheimsbible.net';
+	const bookId = SITE + '/#douay-rheims-bible';
 	$: jsonLdTag = `${scriptOpen}${JSON.stringify({
 		'@context': 'https://schema.org',
-		'@type': 'Article',
-		name: `${data.bookMeta.odrName} Chapter ${data.chapter.chapter}`,
-		headline: pageTitle,
-		description: pageDesc,
-		url: pageUrl,
-		isPartOf: {
-			'@type': 'Book',
-			name: 'The Douay-Rheims Bible',
-			inLanguage: 'en',
-			datePublished: '1610'
-		},
-		breadcrumb: {
-			'@type': 'BreadcrumbList',
-			itemListElement: [
-				{
-					'@type': 'ListItem',
-					position: 1,
-					name: 'Home',
-					item: 'https://douayrheimsbible.net/'
+		'@graph': [
+			{
+				'@type': 'Book',
+				'@id': bookId,
+				name: 'The Douay-Rheims Bible',
+				alternateName: ['Douay Bible', 'Rheims Bible', 'Original Douay-Rheims'],
+				inLanguage: 'en',
+				datePublished: '1610',
+				publisher: {
+					'@type': 'Organization',
+					name: 'English College in Douai'
 				},
-				{
-					'@type': 'ListItem',
-					position: 2,
-					name: data.bookMeta.odrName,
-					item: `https://douayrheimsbible.net/odr/${data.bookMeta.slug}/1`
+				translationOfWork: {
+					'@type': 'Book',
+					name: 'Latin Vulgate',
+					inLanguage: 'la'
 				},
-				{ '@type': 'ListItem', position: 3, name: `Chapter ${data.chapter.chapter}`, item: pageUrl }
-			]
-		}
+				description:
+					'The first complete English Catholic translation of Sacred Scripture, rendered from the Latin Vulgate and published at Rheims (New Testament, 1582) and Douai (Old Testament, 1609\u20131610). This is the original pre-Challoner text, prior to Bishop Challoner\u2019s extensive revision of 1749\u20131752.'
+			},
+			{
+				'@type': 'Article',
+				name: `${data.bookMeta.odrName} Chapter ${data.chapter.chapter}`,
+				headline: pageTitle,
+				description: pageDesc,
+				url: pageUrl,
+				isPartOf: { '@id': bookId },
+				breadcrumb: {
+					'@type': 'BreadcrumbList',
+					itemListElement: [
+						{
+							'@type': 'ListItem',
+							position: 1,
+							name: 'Home',
+							item: SITE + '/'
+						},
+						{
+							'@type': 'ListItem',
+							position: 2,
+							name: data.bookMeta.odrName,
+							item: `${SITE}/odr/${data.bookMeta.slug}/1`
+						},
+						{
+							'@type': 'ListItem',
+							position: 3,
+							name: `Chapter ${data.chapter.chapter}`,
+							item: pageUrl
+						}
+					]
+				}
+			}
+		]
 	})}${scriptClose}`;
 </script>
 
