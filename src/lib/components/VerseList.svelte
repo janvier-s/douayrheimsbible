@@ -25,9 +25,16 @@
 
 	function applyBionic(text: string): string {
 		if (!textVideFn) return text;
-		const opts: Record<string, unknown> = { fixationPoint: $prefs.bionicFixation ?? 3 };
-		if (($prefs.bionicSaccade ?? 0) > 0) opts.saccadeInterval = $prefs.bionicSaccade;
-		return textVideFn(text, opts);
+		const fixation = $prefs.bionicFixation ?? 3;
+		const saccade = $prefs.bionicSaccade ?? 0;
+		const bionic = textVideFn(text, { fixationPoint: fixation });
+		if (saccade === 0) return bionic;
+		// text-vide has no saccade support — strip bold from non-interval words manually
+		let n = 0;
+		return bionic.replace(/<b>([^<]*)<\/b>/g, (_match, inner) => {
+			n++;
+			return n % (saccade + 1) === 1 ? `<b>${inner}</b>` : inner;
+		});
 	}
 
 	function applySmallCaps(text: string): string {
@@ -120,13 +127,13 @@
 	:global(.bionic-fade) {
 		color: color-mix(
 			in srgb,
-			var(--color-foreground) calc(var(--bionic-opacity, 0.4) * 100%),
+			var(--color-text) calc(var(--bionic-opacity, 0.4) * 100%),
 			transparent
 		);
 	}
 
 	:global(.bionic-fade b) {
 		font-weight: var(--bionic-bold-weight, 700);
-		color: var(--color-foreground);
+		color: var(--color-text);
 	}
 </style>

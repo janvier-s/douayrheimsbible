@@ -3,6 +3,7 @@
 	import { fly, slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { ALL_BOOKS } from '$lib/data/books';
+	import { prefs } from '$lib/stores/prefs';
 
 	export let bookSlug: string;
 	export let chapterNum: number;
@@ -40,6 +41,21 @@
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') onClose();
+	}
+
+	function bookLabel(odrName: string, modernName: string): string {
+		return $prefs.modernBookNames ? modernName : odrName;
+	}
+
+	function protPsalmNum(n: number): string {
+		if (n <= 8) return String(n);
+		if (n === 9) return '9\u201310';
+		if (n >= 10 && n <= 112) return String(n + 1);
+		if (n === 113) return '114\u2013115';
+		if (n === 114 || n === 115) return '116';
+		if (n >= 116 && n <= 145) return String(n + 1);
+		if (n === 146 || n === 147) return '147';
+		return String(n);
 	}
 
 	function focusTrap(node: HTMLElement) {
@@ -124,23 +140,29 @@
 							: 'text-foreground hover:bg-border hover:text-accent'}"
 						on:click={() => toggleBook(book.slug)}
 					>
-						{book.odrName}
+						{bookLabel(book.odrName, book.modernName)}
 					</button>
 					{#if expandedBooks.has(book.slug)}
 						<div
 							transition:slide={{ duration: 180 }}
-							class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]"
+							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
+							class:grid={true}
+							class:grid-cols-7={!($prefs.showPsalmNumbers && book.slug === 'psalms')}
+							class:grid-cols-5={$prefs.showPsalmNumbers && book.slug === 'psalms'}
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="{base}/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
+									class="py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium leading-tight
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-accent text-white'
 										: 'text-subtle'}"
 								>
-									{ch}
+									<span class="block text-[14px]">{ch}</span>
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms'}
+										<span class="block text-[9px] opacity-60">{protPsalmNum(ch)}</span>
+									{/if}
 								</a>
 							{/each}
 						</div>
@@ -165,23 +187,29 @@
 							: 'text-foreground hover:bg-border hover:text-accent'}"
 						on:click={() => toggleBook(book.slug)}
 					>
-						{book.odrName}
+						{bookLabel(book.odrName, book.modernName)}
 					</button>
 					{#if expandedBooks.has(book.slug)}
 						<div
 							transition:slide={{ duration: 180 }}
-							class="px-[16px] pb-[10px] pt-[4px] grid grid-cols-7 gap-[4px]"
+							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
+							class:grid={true}
+							class:grid-cols-7={!($prefs.showPsalmNumbers && book.slug === 'psalms')}
+							class:grid-cols-5={$prefs.showPsalmNumbers && book.slug === 'psalms'}
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="{base}/{book.slug}/{ch}"
 									on:click={onClose}
-									class="text-[16px] py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium
+									class="py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium leading-tight
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-accent text-white'
 										: 'text-subtle'}"
 								>
-									{ch}
+									<span class="block text-[14px]">{ch}</span>
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms'}
+										<span class="block text-[9px] opacity-60">{protPsalmNum(ch)}</span>
+									{/if}
 								</a>
 							{/each}
 						</div>
