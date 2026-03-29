@@ -54,21 +54,22 @@
 					}
 				: null;
 
-	function getProtestantPsalmNum(n: number): string {
-		if (n <= 8) return String(n);
+	function getProtestantPsalmNum(n: number): string | null {
+		if (n <= 8) return null;
 		if (n === 9) return '9\u201310';
 		if (n >= 10 && n <= 112) return String(n + 1);
 		if (n === 113) return '114\u2013115';
 		if (n === 114 || n === 115) return '116';
 		if (n >= 116 && n <= 145) return String(n + 1);
 		if (n === 146 || n === 147) return '147';
-		return String(n);
+		return null;
 	}
 
-	$: psalmLabel =
-		$prefs.showPsalmNumbers && bookMeta.slug === 'psalms'
-			? ` (Prot. ${getProtestantPsalmNum(chapter.chapter)})`
-			: '';
+	$: psalmLabel = (() => {
+		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return '';
+		const prot = getProtestantPsalmNum(chapter.chapter);
+		return prot ? ` (Prot. ${prot})` : '';
+	})();
 
 	let activeVerse: number | undefined = targetVerse;
 	$: if (targetVerse !== undefined) activeVerse = targetVerse;

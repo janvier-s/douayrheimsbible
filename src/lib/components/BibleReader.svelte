@@ -192,6 +192,7 @@
 
 	onDestroy(() => {
 		observer?.disconnect();
+		updatePosition.cancel();
 		if (browser) {
 			window.removeEventListener('scroll', onScroll);
 			if (scrollRaf) cancelAnimationFrame(scrollRaf);

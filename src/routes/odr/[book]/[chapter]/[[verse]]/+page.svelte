@@ -83,11 +83,13 @@
 </svelte:head>
 
 <div in:fade={{ duration: 140 }}>
-	<BibleReader
-		initialBookMeta={data.bookMeta}
-		initialChapter={data.chapter}
-		initialTotalChapters={data.totalChapters}
-		targetVerse={data.targetVerse}
-		routeBase="/odr"
-	/>
+	{#key data.bookMeta.slug + '-' + data.chapter.chapter}
+		<BibleReader
+			initialBookMeta={data.bookMeta}
+			initialChapter={data.chapter}
+			initialTotalChapters={data.totalChapters}
+			targetVerse={data.targetVerse}
+			routeBase="/odr"
+		/>
+	{/key}
 </div>

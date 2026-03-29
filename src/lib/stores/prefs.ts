@@ -20,7 +20,7 @@ export interface ReadingPrefs {
 	columnWidth: 'narrow' | 'default' | 'wide';
 	bionicFixation: number; // 1–5
 	bionicSaccade: number; // 0–4
-	bionicOpacity: number; // 0.1–0.8
+	bionicOpacity: number; // 0–0.8
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -41,7 +41,7 @@ const DEFAULTS: ReadingPrefs = {
 	columnWidth: 'default',
 	bionicFixation: 3,
 	bionicSaccade: 0,
-	bionicOpacity: 0.4
+	bionicOpacity: 0
 };
 
 const PREFS_VERSION = 6;
@@ -78,7 +78,7 @@ function loadPrefs(): ReadingPrefs {
 			parsed.columnWidth = 'default';
 			parsed.bionicFixation = 3;
 			parsed.bionicSaccade = 0;
-			parsed.bionicOpacity = 0.4;
+			parsed.bionicOpacity = 0;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
