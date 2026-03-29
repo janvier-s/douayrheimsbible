@@ -111,235 +111,273 @@
 		const isSans = SANS_FONTS.includes(id);
 		document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
 	}
+
+	let activeTab: 'text' | 'reading' = 'text';
 </script>
 
 {#if prefsOpen}
 	<div
-		class="absolute top-[calc(100%+8px)] right-0 bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui space-y-md text-sm"
+		class="absolute top-[calc(100%+8px)] right-0 bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui text-sm"
 	>
-		<label class="block">
-			<span class="block mb-xs">Font size: {$prefs.fontSize}px</span>
-			<input
-				type="range"
-				min="12"
-				max="20"
-				step="1"
-				value={$prefs.fontSize}
-				on:input={(e) => {
-					const v = parseInt((e.target as HTMLInputElement).value);
-					prefs.update((p) => ({ ...p, fontSize: v }));
-					document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
-				}}
-				class="w-full accent-accent"
-			/>
-		</label>
-
-		<div>
-			<span class="block mb-xs">Line spacing</span>
-			<div class="flex gap-xs">
-				{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.1 }] as opt}
-					<button
-						class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
-							{$prefs.lineHeight === opt.value
-							? 'bg-accent text-white border-accent'
-							: 'border-border text-foreground hover:text-accent'}"
-						on:click={() => {
-							prefs.update((p) => ({ ...p, lineHeight: opt.value }));
-							document.documentElement.style.setProperty('--line-height-reader', String(opt.value));
-						}}
-					>
-						{opt.label}
-					</button>
-				{/each}
-			</div>
-		</div>
-
-		<div class="relative">
-			<span class="block mb-xs">Font</span>
-			<button
-				class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
-				style="font-family: {activeFontStack};"
-				aria-expanded={fontDropdownOpen}
-				aria-haspopup="listbox"
-				on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
-			>
-				<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span>
-				<span class="text-[10px] text-subtle font-ui" aria-hidden="true"
-					>{fontDropdownOpen ? '▲' : '▼'}</span
+		<!-- Tab bar -->
+		<div class="flex border-b border-border mb-md -mx-md px-md">
+			{#each [{ id: 'text', label: 'Text' }, { id: 'reading', label: 'Reading' }] as tab}
+				<button
+					class="flex-1 py-[8px] text-[11px] uppercase tracking-[0.12em] font-semibold transition-colors duration-fast border-b-2 -mb-px
+						{activeTab === tab.id
+						? 'border-accent text-accent'
+						: 'border-transparent text-subtle hover:text-foreground'}"
+					on:click={() => (activeTab = tab.id as typeof activeTab)}
 				>
-			</button>
-			{#if fontDropdownOpen}
-				<div
-					class="absolute left-0 right-0 top-[calc(100%+2px)] bg-panel border border-border rounded-sm shadow-lg z-10 overflow-hidden"
-				>
-					{#each FONTS as f}
-						{#if f.dividerBefore}
-							<div class="border-t border-border my-[3px]"></div>
-						{/if}
-						<button
-							class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast
-								{activeFontId === f.id ? 'text-accent' : 'text-foreground'}"
-							style="font-family: {f.stack};"
-							on:click={() => {
-								setDyslexia(false);
-								setFontWithBionic(f.id);
-								fontDropdownOpen = false;
-							}}
-						>
-							{f.label}
-						</button>
-					{/each}
-					<button
-						class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast border-t border-border
-							{activeFontId === 'grace' ? 'text-accent' : 'text-foreground'}"
-						style="font-family: 'Grace Dyslexic MD', sans-serif;"
-						on:click={() => {
-							setDyslexia(true);
-							fontDropdownOpen = false;
-						}}
-					>
-						Grace Dyslexic MD
-					</button>
-				</div>
-			{/if}
+					{tab.label}
+				</button>
+			{/each}
 		</div>
 
-		<div>
-			<span class="block mb-xs">Theme</span>
-			<div class="flex gap-[6px]">
-				{#each THEMES as t}
-					<button
-						title={t.label}
-						on:click={() => setTheme(t.id)}
-						class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
-							{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
-						style="background: {t.bg};"
-					>
-						<div class="theme-card-inner p-[7px]">
-							<div class="flex items-baseline gap-[3px] mb-[5px]">
-								<span class="font-reader text-[15px] leading-none font-bold" style="color: {t.fg};"
-									>A</span
-								>
-								<span
-									class="block h-[1.5px] flex-1 rounded-full"
-									style="background: {t.fg}; opacity: 0.5;"
-								></span>
-							</div>
-							<div class="space-y-[3px]">
-								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
-								<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
-								<span class="block h-[1.5px] w-[70%] rounded-full" style="background: {t.lines};"
-								></span>
-							</div>
-						</div>
-					</button>
-				{/each}
-			</div>
-		</div>
-
-		<label class="flex items-center gap-sm cursor-pointer">
-			<input
-				type="checkbox"
-				checked={$prefs.justifiedText}
-				on:change={(e) =>
-					prefs.update((p) => ({
-						...p,
-						justifiedText: (e.target as HTMLInputElement).checked
-					}))}
-				class="accent-accent"
-			/>
-			<span>Justified text</span>
-		</label>
-
-		<label class="flex items-center gap-sm cursor-pointer">
-			<input
-				type="checkbox"
-				checked={$prefs.bionicReading}
-				on:change={(e) =>
-					prefs.update((p) => ({
-						...p,
-						bionicReading: (e.target as HTMLInputElement).checked
-					}))}
-				class="accent-accent"
-			/>
-			<span>Bionic Reading</span>
-		</label>
-
-		{#if $prefs.bionicReading}
-			<div class="pl-[20px] space-y-sm">
+		<!-- Text tab -->
+		{#if activeTab === 'text'}
+			<div class="space-y-md">
 				<label class="block">
-					<span class="block mb-xs text-subtle">Fixation: {$prefs.bionicFixation ?? 3}</span>
+					<span class="block mb-xs">Font size: {$prefs.fontSize}px</span>
 					<input
 						type="range"
-						min="1"
-						max="5"
+						min="12"
+						max="20"
 						step="1"
-						value={$prefs.bionicFixation ?? 3}
-						on:input={(e) =>
-							prefs.update((p) => ({
-								...p,
-								bionicFixation: parseInt((e.target as HTMLInputElement).value)
-							}))}
-						class="w-full accent-accent"
-					/>
-				</label>
-				<label class="block">
-					<span class="block mb-xs text-subtle">Saccade interval: {$prefs.bionicSaccade ?? 0}</span>
-					<input
-						type="range"
-						min="0"
-						max="4"
-						step="1"
-						value={$prefs.bionicSaccade ?? 0}
-						on:input={(e) =>
-							prefs.update((p) => ({
-								...p,
-								bionicSaccade: parseInt((e.target as HTMLInputElement).value)
-							}))}
-						class="w-full accent-accent"
-					/>
-				</label>
-				<label class="block">
-					<span class="block mb-xs text-subtle"
-						>Non-bold opacity: {Math.round(($prefs.bionicOpacity ?? 0.4) * 100)}%</span
-					>
-					<input
-						type="range"
-						min="0.1"
-						max="0.8"
-						step="0.05"
-						value={$prefs.bionicOpacity ?? 0.4}
+						value={$prefs.fontSize}
 						on:input={(e) => {
-							const v = parseFloat((e.target as HTMLInputElement).value);
-							prefs.update((p) => ({ ...p, bionicOpacity: v }));
-							document.documentElement.style.setProperty('--bionic-opacity', String(v));
+							const v = parseInt((e.target as HTMLInputElement).value);
+							prefs.update((p) => ({ ...p, fontSize: v }));
+							document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
 						}}
 						class="w-full accent-accent"
 					/>
 				</label>
+
+				<div>
+					<span class="block mb-xs">Line spacing</span>
+					<div class="flex gap-xs">
+						{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.1 }] as opt}
+							<button
+								class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+							{$prefs.lineHeight === opt.value
+									? 'bg-accent text-white border-accent'
+									: 'border-border text-foreground hover:text-accent'}"
+								on:click={() => {
+									prefs.update((p) => ({ ...p, lineHeight: opt.value }));
+									document.documentElement.style.setProperty(
+										'--line-height-reader',
+										String(opt.value)
+									);
+								}}
+							>
+								{opt.label}
+							</button>
+						{/each}
+					</div>
+				</div>
+
+				<div class="relative">
+					<span class="block mb-xs">Font</span>
+					<button
+						class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
+						style="font-family: {activeFontStack};"
+						aria-expanded={fontDropdownOpen}
+						aria-haspopup="listbox"
+						on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
+					>
+						<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span
+						>
+						<span class="text-[10px] text-subtle font-ui" aria-hidden="true"
+							>{fontDropdownOpen ? '▲' : '▼'}</span
+						>
+					</button>
+					{#if fontDropdownOpen}
+						<div
+							class="absolute left-0 right-0 top-[calc(100%+2px)] bg-panel border border-border rounded-sm shadow-lg z-10 overflow-hidden"
+						>
+							{#each FONTS as f}
+								{#if f.dividerBefore}
+									<div class="border-t border-border my-[3px]"></div>
+								{/if}
+								<button
+									class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast
+								{activeFontId === f.id ? 'text-accent' : 'text-foreground'}"
+									style="font-family: {f.stack};"
+									on:click={() => {
+										setDyslexia(false);
+										setFontWithBionic(f.id);
+										fontDropdownOpen = false;
+									}}
+								>
+									{f.label}
+								</button>
+							{/each}
+							<button
+								class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast border-t border-border
+							{activeFontId === 'grace' ? 'text-accent' : 'text-foreground'}"
+								style="font-family: 'Grace Dyslexic MD', sans-serif;"
+								on:click={() => {
+									setDyslexia(true);
+									fontDropdownOpen = false;
+								}}
+							>
+								Grace Dyslexic MD
+							</button>
+						</div>
+					{/if}
+				</div>
+
+				<div>
+					<span class="block mb-xs">Theme</span>
+					<div class="flex gap-[6px]">
+						{#each THEMES as t}
+							<button
+								title={t.label}
+								on:click={() => setTheme(t.id)}
+								class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
+							{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
+								style="background: {t.bg};"
+							>
+								<div class="theme-card-inner p-[7px]">
+									<div class="flex items-baseline gap-[3px] mb-[5px]">
+										<span
+											class="font-reader text-[15px] leading-none font-bold"
+											style="color: {t.fg};">A</span
+										>
+										<span
+											class="block h-[1.5px] flex-1 rounded-full"
+											style="background: {t.fg}; opacity: 0.5;"
+										></span>
+									</div>
+									<div class="space-y-[3px]">
+										<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"
+										></span>
+										<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"
+										></span>
+										<span
+											class="block h-[1.5px] w-[70%] rounded-full"
+											style="background: {t.lines};"
+										></span>
+									</div>
+								</div>
+							</button>
+						{/each}
+					</div>
+				</div>
 			</div>
 		{/if}
 
-		<div class="border-t border-border pt-md">
-			<span class="block mb-xs">Column width</span>
-			<div class="flex gap-xs">
-				{#each [{ label: 'Narrow', value: 'narrow' }, { label: 'Default', value: 'default' }, { label: 'Wide', value: 'wide' }] as opt}
-					<button
-						class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
-							{$prefs.columnWidth === opt.value
-							? 'bg-accent text-white border-accent'
-							: 'border-border text-foreground hover:text-accent'}"
-						on:click={() =>
+		<!-- Reading tab -->
+		{#if activeTab === 'reading'}
+			<div class="space-y-md">
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={$prefs.justifiedText}
+						on:change={(e) =>
 							prefs.update((p) => ({
 								...p,
-								columnWidth: opt.value as 'narrow' | 'default' | 'wide'
+								justifiedText: (e.target as HTMLInputElement).checked
 							}))}
-					>
-						{opt.label}
-					</button>
-				{/each}
+						class="accent-accent"
+					/>
+					<span>Justified text</span>
+				</label>
+
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={$prefs.bionicReading}
+						on:change={(e) =>
+							prefs.update((p) => ({
+								...p,
+								bionicReading: (e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<span>Bionic Reading</span>
+				</label>
+
+				{#if $prefs.bionicReading}
+					<div class="pl-[20px] space-y-sm">
+						<label class="block">
+							<span class="block mb-xs text-subtle">Fixation: {$prefs.bionicFixation ?? 3}</span>
+							<input
+								type="range"
+								min="1"
+								max="5"
+								step="1"
+								value={$prefs.bionicFixation ?? 3}
+								on:input={(e) =>
+									prefs.update((p) => ({
+										...p,
+										bionicFixation: parseInt((e.target as HTMLInputElement).value)
+									}))}
+								class="w-full accent-accent"
+							/>
+						</label>
+						<label class="block">
+							<span class="block mb-xs text-subtle"
+								>Saccade interval: {$prefs.bionicSaccade ?? 0}</span
+							>
+							<input
+								type="range"
+								min="0"
+								max="4"
+								step="1"
+								value={$prefs.bionicSaccade ?? 0}
+								on:input={(e) =>
+									prefs.update((p) => ({
+										...p,
+										bionicSaccade: parseInt((e.target as HTMLInputElement).value)
+									}))}
+								class="w-full accent-accent"
+							/>
+						</label>
+						<label class="block">
+							<span class="block mb-xs text-subtle"
+								>Non-bold opacity: {Math.round(($prefs.bionicOpacity ?? 0.4) * 100)}%</span
+							>
+							<input
+								type="range"
+								min="0.1"
+								max="0.8"
+								step="0.05"
+								value={$prefs.bionicOpacity ?? 0.4}
+								on:input={(e) => {
+									const v = parseFloat((e.target as HTMLInputElement).value);
+									prefs.update((p) => ({ ...p, bionicOpacity: v }));
+									document.documentElement.style.setProperty('--bionic-opacity', String(v));
+								}}
+								class="w-full accent-accent"
+							/>
+						</label>
+					</div>
+				{/if}
+
+				<div class="border-t border-border pt-md">
+					<span class="block mb-xs">Column width</span>
+					<div class="flex gap-xs">
+						{#each [{ label: 'Narrow', value: 'narrow' }, { label: 'Default', value: 'default' }, { label: 'Wide', value: 'wide' }] as opt}
+							<button
+								class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+							{$prefs.columnWidth === opt.value
+									? 'bg-accent text-white border-accent'
+									: 'border-border text-foreground hover:text-accent'}"
+								on:click={() =>
+									prefs.update((p) => ({
+										...p,
+										columnWidth: opt.value as 'narrow' | 'default' | 'wide'
+									}))}
+							>
+								{opt.label}
+							</button>
+						{/each}
+					</div>
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 {/if}
 
