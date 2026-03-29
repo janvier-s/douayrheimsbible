@@ -36,7 +36,7 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
 <div class="relative" on:click={handleTextClick}>
 	<div class="prose-text font-reader text-[13px] leading-relaxed text-foreground">
 		{@html sanitizedHtml}

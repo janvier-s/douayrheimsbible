@@ -1,10 +1,7 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
 	import PageFooter from '$lib/components/PageFooter.svelte';
 	import { ALL_BOOKS } from '$lib/data/books';
-
-	export let data: PageData;
 
 	const FAQ = [
 		{
