@@ -25,7 +25,9 @@
 
 	function applyBionic(text: string): string {
 		if (!textVideFn) return text;
-		return textVideFn(text, { fixationPoint: 4 });
+		const opts: Record<string, unknown> = { fixationPoint: $prefs.bionicFixation ?? 3 };
+		if (($prefs.bionicSaccade ?? 0) > 0) opts.saccadeInterval = $prefs.bionicSaccade;
+		return textVideFn(text, opts);
 	}
 
 	function applySmallCaps(text: string): string {
@@ -63,6 +65,7 @@
 	<p
 		class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 		class:text-justify={$prefs.justifiedText}
+		class:bionic-fade={$prefs.bionicReading && bionicReady}
 	>
 		{#each verses as v, i (i)}
 			{#if $prefs.showVerseNumbers}
@@ -93,6 +96,7 @@
 				<p
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
+					class:bionic-fade={$prefs.bionicReading && bionicReady}
 				>
 					{@html renderVerse(v.text, $prefs.bionicReading && bionicReady)}
 				</p>
@@ -111,5 +115,18 @@
 
 	:global(.sc) {
 		font-variant: small-caps;
+	}
+
+	:global(.bionic-fade) {
+		color: color-mix(
+			in srgb,
+			var(--color-foreground) calc(var(--bionic-opacity, 0.4) * 100%),
+			transparent
+		);
+	}
+
+	:global(.bionic-fade b) {
+		font-weight: var(--bionic-bold-weight, 700);
+		color: var(--color-foreground);
 	}
 </style>

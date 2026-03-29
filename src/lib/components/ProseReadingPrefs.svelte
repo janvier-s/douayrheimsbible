@@ -91,6 +91,7 @@
 				"'Grace Dyslexic MD', sans-serif"
 			);
 			document.documentElement.style.setProperty('--font-ui', "'Grace Dyslexic MD', sans-serif");
+			document.documentElement.style.setProperty('--bionic-bold-weight', '900');
 		} else {
 			const font = FONTS.find((f) => f.id === $prefs.fontFamily);
 			document.documentElement.style.setProperty('--font-reader', font?.stack ?? 'serif');
@@ -98,7 +99,17 @@
 				'--font-ui',
 				"'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 			);
+			const isSans = SANS_FONTS.includes($prefs.fontFamily);
+			document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
 		}
+	}
+
+	const SANS_FONTS = ['noto-sans', 'libre-franklin', 'montserrat'];
+
+	function setFontWithBionic(id: string) {
+		setFont(id);
+		const isSans = SANS_FONTS.includes(id);
+		document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
 	}
 </script>
 
@@ -171,7 +182,7 @@
 							style="font-family: {f.stack};"
 							on:click={() => {
 								setDyslexia(false);
-								setFont(f.id);
+								setFontWithBionic(f.id);
 								fontDropdownOpen = false;
 							}}
 						>
@@ -253,6 +264,82 @@
 			/>
 			<span>Bionic Reading</span>
 		</label>
+
+		{#if $prefs.bionicReading}
+			<div class="pl-[20px] space-y-sm">
+				<label class="block">
+					<span class="block mb-xs text-subtle">Fixation: {$prefs.bionicFixation ?? 3}</span>
+					<input
+						type="range"
+						min="1"
+						max="5"
+						step="1"
+						value={$prefs.bionicFixation ?? 3}
+						on:input={(e) =>
+							prefs.update((p) => ({
+								...p,
+								bionicFixation: parseInt((e.target as HTMLInputElement).value)
+							}))}
+						class="w-full accent-accent"
+					/>
+				</label>
+				<label class="block">
+					<span class="block mb-xs text-subtle">Saccade interval: {$prefs.bionicSaccade ?? 0}</span>
+					<input
+						type="range"
+						min="0"
+						max="4"
+						step="1"
+						value={$prefs.bionicSaccade ?? 0}
+						on:input={(e) =>
+							prefs.update((p) => ({
+								...p,
+								bionicSaccade: parseInt((e.target as HTMLInputElement).value)
+							}))}
+						class="w-full accent-accent"
+					/>
+				</label>
+				<label class="block">
+					<span class="block mb-xs text-subtle"
+						>Non-bold opacity: {Math.round(($prefs.bionicOpacity ?? 0.4) * 100)}%</span
+					>
+					<input
+						type="range"
+						min="0.1"
+						max="0.8"
+						step="0.05"
+						value={$prefs.bionicOpacity ?? 0.4}
+						on:input={(e) => {
+							const v = parseFloat((e.target as HTMLInputElement).value);
+							prefs.update((p) => ({ ...p, bionicOpacity: v }));
+							document.documentElement.style.setProperty('--bionic-opacity', String(v));
+						}}
+						class="w-full accent-accent"
+					/>
+				</label>
+			</div>
+		{/if}
+
+		<div class="border-t border-border pt-md">
+			<span class="block mb-xs">Column width</span>
+			<div class="flex gap-xs">
+				{#each [{ label: 'Narrow', value: 'narrow' }, { label: 'Default', value: 'default' }, { label: 'Wide', value: 'wide' }] as opt}
+					<button
+						class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+							{$prefs.columnWidth === opt.value
+							? 'bg-accent text-white border-accent'
+							: 'border-border text-foreground hover:text-accent'}"
+						on:click={() =>
+							prefs.update((p) => ({
+								...p,
+								columnWidth: opt.value as 'narrow' | 'default' | 'wide'
+							}))}
+					>
+						{opt.label}
+					</button>
+				{/each}
+			</div>
+		</div>
 	</div>
 {/if}
 

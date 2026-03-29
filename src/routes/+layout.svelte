@@ -45,10 +45,15 @@
 			'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap'
 	};
 
+	const SANS_FONTS_LAYOUT = ['noto-sans', 'libre-franklin', 'montserrat'];
+
 	onMount(() => {
 		const p = $prefs;
 		document.documentElement.style.setProperty('--font-size-reader', `${p.fontSize}px`);
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));
+		document.documentElement.style.setProperty('--bionic-opacity', String(p.bionicOpacity ?? 0.4));
+		const isSans = SANS_FONTS_LAYOUT.includes(p.fontFamily) || p.dyslexiaFont;
+		document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
 		if (p.dyslexiaFont) {
 			document.documentElement.style.setProperty(
 				'--font-reader',

@@ -13,6 +13,14 @@ export interface ReadingPrefs {
 	dyslexiaFont: boolean;
 	readingMode: 'reading' | 'study';
 	studyPanelWidth: string; // CSS width value e.g. '33vw' or '420px'
+	// v6
+	modernBookNames: boolean;
+	showPsalmNumbers: boolean;
+	showChapterNav: boolean;
+	columnWidth: 'narrow' | 'default' | 'wide';
+	bionicFixation: number; // 1–5
+	bionicSaccade: number; // 0–4
+	bionicOpacity: number; // 0.1–0.8
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -26,10 +34,17 @@ const DEFAULTS: ReadingPrefs = {
 	bionicReading: false,
 	dyslexiaFont: false,
 	readingMode: 'reading',
-	studyPanelWidth: '33vw'
+	studyPanelWidth: '33vw',
+	modernBookNames: false,
+	showPsalmNumbers: false,
+	showChapterNav: true,
+	columnWidth: 'default',
+	bionicFixation: 3,
+	bionicSaccade: 0,
+	bionicOpacity: 0.4
 };
 
-const PREFS_VERSION = 5;
+const PREFS_VERSION = 6;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -54,6 +69,16 @@ function loadPrefs(): ReadingPrefs {
 		if (!parsed._v || parsed._v < 5) {
 			parsed.readingMode = 'reading';
 			parsed.studyPanelWidth = '33vw';
+		}
+		// v6 migration: add new display and bionic preferences
+		if (!parsed._v || parsed._v < 6) {
+			parsed.modernBookNames = false;
+			parsed.showPsalmNumbers = false;
+			parsed.showChapterNav = true;
+			parsed.columnWidth = 'default';
+			parsed.bionicFixation = 3;
+			parsed.bionicSaccade = 0;
+			parsed.bionicOpacity = 0.4;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

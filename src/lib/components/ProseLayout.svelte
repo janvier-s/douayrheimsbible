@@ -30,6 +30,11 @@
 		'scripture-for-all': 'Scripture for All'
 	};
 
+	const PROSE_WIDTHS = { narrow: 580, default: 700, wide: 860 };
+	const PROSE_SUBTITLE_WIDTHS = { narrow: 460, default: 560, wide: 680 };
+	$: proseWidth = PROSE_WIDTHS[$prefs.columnWidth] ?? 700;
+	$: proseSubtitleWidth = PROSE_SUBTITLE_WIDTHS[$prefs.columnWidth] ?? 560;
+
 	$: canonicalUrl = SITE + $page.url.pathname;
 
 	$: breadcrumbItems = (() => {
@@ -191,26 +196,32 @@
 	// Bionic reading
 	let textVideFn: ((text: string, opts: object) => string) | null = null;
 
-	function bionicAction(node: HTMLElement, enabled: boolean) {
+	type BionicParams = { enabled: boolean; fixation: number; saccade: number };
+
+	function bionicAction(node: HTMLElement, params: BionicParams) {
 		let original: string | null = null;
 
-		async function apply(on: boolean) {
-			if (on) {
+		async function apply({ enabled, fixation, saccade }: BionicParams) {
+			if (enabled) {
 				if (!textVideFn) {
 					const m = await import('text-vide');
 					textVideFn = m.textVide;
 				}
 				if (original === null) original = node.innerHTML;
-				node.innerHTML = textVideFn(original, { fixationPoint: 4 });
+				const opts: Record<string, unknown> = { fixationPoint: fixation };
+				if (saccade > 0) opts.saccadeInterval = saccade;
+				node.innerHTML = textVideFn(original, opts);
+				node.classList.add('bionic-fade');
 			} else if (original !== null) {
 				node.innerHTML = original;
 				original = null;
+				node.classList.remove('bionic-fade');
 			}
 		}
 
-		apply(enabled);
+		apply(params);
 		return {
-			update: (on: boolean) => apply(on),
+			update: (p: BionicParams) => apply(p),
 			destroy: () => {
 				if (original !== null) node.innerHTML = original;
 			}
@@ -273,14 +284,14 @@
 	</div>
 </nav>
 
-<main id="main-content" class="prose-page">
+<main id="main-content" class="prose-page" style="max-width: {proseWidth}px;">
 	<header class="prose-header">
 		<a href="/" class="prose-eyebrow">
 			<span aria-hidden="true">✠</span> Douay-Rheims Bible
 		</a>
 		<h1 class="prose-title">{title}</h1>
 		{#if subtitle}
-			<p class="prose-subtitle">{subtitle}</p>
+			<p class="prose-subtitle" style="max-width: {proseSubtitleWidth}px;">{subtitle}</p>
 		{/if}
 		<div class="prose-rule"></div>
 	</header>
@@ -288,7 +299,11 @@
 	<article
 		class="prose-body"
 		class:prose-body--justified={$prefs.justifiedText}
-		use:bionicAction={$prefs.bionicReading}
+		use:bionicAction={{
+			enabled: $prefs.bionicReading,
+			fixation: $prefs.bionicFixation ?? 3,
+			saccade: $prefs.bionicSaccade ?? 0
+		}}
 		bind:this={articleEl}
 	>
 		<slot />

@@ -4,6 +4,7 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 	import VerseList from './VerseList.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
+	import { prefs } from '$lib/stores/prefs';
 
 	export let bookMeta: BookMeta;
 	export let chapter: Chapter;
@@ -14,6 +15,10 @@
 	export let headingLevel: 'h1' | 'h2' = 'h1';
 
 	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
+
+	function bookLabel(bm: BookMeta): string {
+		return $prefs.modernBookNames ? bm.modernName : bm.odrName;
+	}
 
 	$: prevNav =
 		chapter.chapter > 1
@@ -27,7 +32,7 @@
 				? {
 						slug: ALL_BOOKS[bookIndex - 1].slug,
 						ch: ALL_BOOKS[bookIndex - 1].chapters,
-						label: ALL_BOOKS[bookIndex - 1].odrName,
+						label: bookLabel(ALL_BOOKS[bookIndex - 1]),
 						chLabel: `Ch. ${ALL_BOOKS[bookIndex - 1].chapters}`
 					}
 				: null;
@@ -44,10 +49,26 @@
 				? {
 						slug: ALL_BOOKS[bookIndex + 1].slug,
 						ch: 1,
-						label: ALL_BOOKS[bookIndex + 1].odrName,
+						label: bookLabel(ALL_BOOKS[bookIndex + 1]),
 						chLabel: 'Ch. 1'
 					}
 				: null;
+
+	function getProtestantPsalmNum(n: number): string {
+		if (n <= 8) return String(n);
+		if (n === 9) return '9\u201310';
+		if (n >= 10 && n <= 112) return String(n + 1);
+		if (n === 113) return '114\u2013115';
+		if (n === 114 || n === 115) return '116';
+		if (n >= 116 && n <= 145) return String(n + 1);
+		if (n === 146 || n === 147) return '147';
+		return String(n);
+	}
+
+	$: psalmLabel =
+		$prefs.showPsalmNumbers && bookMeta.slug === 'psalms'
+			? ` (Prot. ${getProtestantPsalmNum(chapter.chapter)})`
+			: '';
 
 	let activeVerse: number | undefined = targetVerse;
 	$: if (targetVerse !== undefined) activeVerse = targetVerse;
@@ -160,13 +181,13 @@
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
 	<header class="mb-[35px]">
 		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
-			{bookMeta.odrName}
+			{bookLabel(bookMeta)}
 		</p>
 		<svelte:element
 			this={headingLevel}
 			class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
 		>
-			Chapter {chapter.chapter}
+			Chapter {chapter.chapter}{psalmLabel}
 		</svelte:element>
 		<div class="w-10 h-px bg-accent opacity-70"></div>
 	</header>

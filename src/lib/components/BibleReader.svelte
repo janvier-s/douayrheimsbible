@@ -146,6 +146,9 @@
 
 	$: last = chapters[chapters.length - 1];
 
+	const COLUMN_WIDTHS = { narrow: 600, default: 750, wide: 920 };
+	$: columnMaxWidth = COLUMN_WIDTHS[$prefs.columnWidth] ?? 750;
+
 	let scrollReady = false;
 	let scrollRaf = 0;
 
@@ -200,7 +203,7 @@
 
 <div class="flex items-start" data-mode={$prefs.readingMode}>
 	<main id="main-content" bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
-		<div class="max-w-[750px] mx-auto">
+		<div style="max-width: {columnMaxWidth}px;" class="mx-auto">
 			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
 				<section class={i > 0 ? 'pt-[49px]' : ''}>
 					<div
@@ -213,7 +216,7 @@
 						chapter={item.chapter}
 						targetVerse={item.chapter.chapter === initialChapter.chapter ? targetVerse : undefined}
 						totalChapters={item.totalChapters}
-						showNav={true}
+						showNav={$prefs.showChapterNav}
 						headingLevel={i === 0 ? 'h1' : 'h2'}
 					/>
 				</section>
