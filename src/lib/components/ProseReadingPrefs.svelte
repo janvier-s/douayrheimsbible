@@ -271,6 +271,27 @@
 		<!-- Reading tab -->
 		{#if activeTab === 'reading'}
 			<div class="space-y-md">
+				<div>
+					<span class="block mb-xs">Column width</span>
+					<div class="flex gap-xs">
+						{#each [{ label: 'Narrow', value: 'narrow' }, { label: 'Default', value: 'default' }, { label: 'Wide', value: 'wide' }] as opt}
+							<button
+								class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+									{$prefs.columnWidth === opt.value
+									? 'bg-accent text-white border-accent'
+									: 'border-border text-foreground hover:text-accent'}"
+								on:click={() =>
+									prefs.update((p) => ({
+										...p,
+										columnWidth: opt.value as 'narrow' | 'default' | 'wide'
+									}))}
+							>
+								{opt.label}
+							</button>
+						{/each}
+					</div>
+				</div>
+
 				<label class="flex items-center gap-sm cursor-pointer">
 					<input
 						type="checkbox"
@@ -355,27 +376,6 @@
 						</label>
 					</div>
 				{/if}
-
-				<div class="border-t border-border pt-md">
-					<span class="block mb-xs">Column width</span>
-					<div class="flex gap-xs">
-						{#each [{ label: 'Narrow', value: 'narrow' }, { label: 'Default', value: 'default' }, { label: 'Wide', value: 'wide' }] as opt}
-							<button
-								class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
-							{$prefs.columnWidth === opt.value
-									? 'bg-accent text-white border-accent'
-									: 'border-border text-foreground hover:text-accent'}"
-								on:click={() =>
-									prefs.update((p) => ({
-										...p,
-										columnWidth: opt.value as 'narrow' | 'default' | 'wide'
-									}))}
-							>
-								{opt.label}
-							</button>
-						{/each}
-					</div>
-				</div>
 			</div>
 		{/if}
 	</div>

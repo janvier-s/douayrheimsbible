@@ -260,20 +260,6 @@
 	<!-- Reading tab -->
 	{#if activeTab === 'reading'}
 		<div class="space-y-md">
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.justifiedText}
-					on:change={(e) =>
-						prefs.update((p) => ({
-							...p,
-							justifiedText: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Justified text</span>
-			</label>
-
 			<div>
 				<span class="block mb-xs">Column width</span>
 				<div class="flex gap-xs">
@@ -294,6 +280,48 @@
 					{/each}
 				</div>
 			</div>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
+					checked={$prefs.justifiedText}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							justifiedText: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>Justified text</span>
+			</label>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
+					checked={$prefs.infiniteScroll}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							infiniteScroll: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>Infinite scroll</span>
+			</label>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
+					checked={$prefs.showChapterNav ?? true}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							showChapterNav: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>Chapter navigation</span>
+			</label>
 
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
@@ -397,34 +425,6 @@
 					class="accent-accent"
 				/>
 				<span>Paragraph view</span>
-			</label>
-
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.infiniteScroll}
-					on:change={(e) =>
-						prefs.update((p) => ({
-							...p,
-							infiniteScroll: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Infinite scroll</span>
-			</label>
-
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.showChapterNav ?? true}
-					on:change={(e) =>
-						prefs.update((p) => ({
-							...p,
-							showChapterNav: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Chapter navigation</span>
 			</label>
 
 			<label class="flex items-center gap-sm cursor-pointer">
