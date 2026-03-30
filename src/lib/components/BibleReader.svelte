@@ -8,7 +8,6 @@
 	import { debounce } from '$lib/utils/debounce';
 	import {
 		shouldLoadNext,
-		shouldLoadPrev,
 		createChapterObserver,
 		observeChapterHeadings
 	} from '$lib/utils/infiniteScroll';
@@ -153,7 +152,7 @@
 	let scrollReady = false;
 	let scrollRaf = 0;
 	let preloadTimer = 0;
-	// Prevents preloading from firing immediately after navigation.
+	// Prevents checkRollingPreload from firing immediately after navigation.
 	// Time-based (300ms) to outlast the layout's afterNavigate double-rAF (~33ms).
 	let navCooldownUntil = 0;
 
@@ -185,10 +184,12 @@
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
+		// Prev loading is handled entirely by checkRollingPreload (reactive on
+		// readingPosition + chapters). Calling loadPrevChapter here too caused a
+		// cascade: each prepend + scroll compensation triggers a new scroll event,
+		// onScrollCheck sees scrollY < 400 again, and fires another loadPrevChapter.
 		if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
 			loadNextChapter();
-		} else if (shouldLoadPrev(scrollY) && Date.now() > navCooldownUntil) {
-			loadPrevChapter();
 		}
 	}
 
