@@ -168,7 +168,15 @@
 			(c) => c.bookMeta.slug === pos.bookSlug && c.chapter.chapter === pos.chapter
 		);
 		if (idx === -1) return;
-		if (chapters.length - 1 - idx < 2) loadNextChapter();
+		// Load one direction at a time — never both concurrently.
+		// loadPrevChapter adjusts scroll height; if loadNextChapter is also running
+		// its tick() hasn't flushed yet, so oldHeight would be stale and scroll
+		// compensation would overshoot. The reactive re-fires after each load
+		// completes, so the other direction gets picked up on the next cycle.
+		if (chapters.length - 1 - idx < 2) {
+			loadNextChapter();
+			return;
+		}
 		if (idx < 2) loadPrevChapter();
 	}
 	$: ($readingPosition, chapters, checkRollingPreload());
