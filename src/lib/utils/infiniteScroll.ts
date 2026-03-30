@@ -5,11 +5,6 @@ export function shouldLoadNext(scrollY: number, innerHeight: number, docHeight: 
 	return scrollY + innerHeight > docHeight - SCROLL_THRESHOLD;
 }
 
-/** True when the user is within threshold of the top of the document. */
-export function shouldLoadPrev(scrollY: number): boolean {
-	return scrollY < SCROLL_THRESHOLD;
-}
-
 /**
  * Creates an IntersectionObserver that fires `onVisible(bookSlug, chapter)`
  * whenever a `[data-chapter-heading]` element scrolls into the top 20% of
@@ -32,11 +27,20 @@ export function createChapterObserver(
 	);
 }
 
-/** (Re-)observes all `[data-chapter-heading]` elements inside `container`. */
-export function observeChapterHeadings(
-	container: HTMLElement,
-	observer: IntersectionObserver
-): void {
-	observer.disconnect();
+/** Observes all `[data-chapter-heading]` elements inside `container`. */
+export function observeAllHeadings(container: HTMLElement, observer: IntersectionObserver): void {
 	container.querySelectorAll('[data-chapter-heading]').forEach((el) => observer.observe(el));
+}
+
+/** Observes a single new chapter heading by slug + chapter number. */
+export function observeNewHeading(
+	container: HTMLElement,
+	observer: IntersectionObserver,
+	bookSlug: string,
+	chapterNum: number
+): void {
+	const el = container.querySelector(
+		`[data-chapter-heading][data-book-slug="${bookSlug}"][data-chapter-num="${chapterNum}"]`
+	);
+	if (el) observer.observe(el);
 }

@@ -3,18 +3,19 @@
 	import { browser } from '$app/environment';
 	import { replaceState } from '$app/navigation';
 	import ChapterView from './ChapterView.svelte';
-	import { loadBook, getChapter, getChapterCount } from '$lib/data/loader';
+	import { loadBook, getChapter, getCachedBook } from '$lib/data/loader';
 	import { ALL_BOOKS } from '$lib/data/books';
 	import { debounce } from '$lib/utils/debounce';
 	import {
 		shouldLoadNext,
 		createChapterObserver,
-		observeChapterHeadings
+		observeAllHeadings,
+		observeNewHeading
 	} from '$lib/utils/infiniteScroll';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { createPanelResize } from '$lib/utils/panelResize';
-	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
+	import type { Chapter, BookMeta } from '$lib/data/types';
 	import StudyPanel from './StudyPanel.svelte';
 	import PageFooter from './PageFooter.svelte';
 
@@ -51,8 +52,11 @@
 	let panelEl: HTMLElement;
 	$: if (panelEl) resize.bindPanel(panelEl);
 
-	let bookDataMap: Record<string, BookData> = {};
-	$: currentBookData = bookDataMap[$readingPosition?.bookSlug ?? initialBookMeta.slug] ?? null;
+	// Bumped after each loadBook resolves, so the reactive below re-evaluates.
+	let bookCacheTick = 0;
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	$: currentBookData =
+		bookCacheTick >= 0 ? getCachedBook($readingPosition?.bookSlug ?? initialBookMeta.slug) : null;
 
 	const updatePosition = debounce((slug: string, ch: number) => {
 		replaceState(`${routeBase}/${slug}/${ch}`, {});
@@ -61,17 +65,40 @@
 
 	let observer: IntersectionObserver | null = null;
 
-	function observeHeadings() {
+	function ensureObserver(): IntersectionObserver {
 		if (!observer) {
 			observer = createChapterObserver((slug, ch) => updatePosition(slug, ch));
 		}
-		if (container) observeChapterHeadings(container, observer);
+		return observer;
 	}
 
-	let loadedChapterKeys = new Set([`${initialBookMeta.slug}-${initialChapter.chapter}`]);
+	const MAX_CHAPTERS = 5;
 
 	function hasChapter(slug: string, ch: number): boolean {
-		return loadedChapterKeys.has(`${slug}-${ch}`);
+		return chapters.some((c) => c.bookMeta.slug === slug && c.chapter.chapter === ch);
+	}
+
+	/** Drop chapters from the front (above viewport). Compensate scroll. */
+	async function pruneFront(count: number) {
+		if (count <= 0 || !container) return;
+		const sections = container.querySelectorAll(':scope > div > section');
+		let removedHeight = 0;
+		for (let i = 0; i < count && i < sections.length; i++) {
+			removedHeight += sections[i].getBoundingClientRect().height;
+		}
+		// The new first section loses its pt-[49px] when it becomes index 0.
+		if (count < sections.length) removedHeight += 49;
+
+		const scrollY = window.scrollY;
+		chapters = chapters.slice(count);
+		await tick();
+		window.scrollTo({ top: Math.max(0, scrollY - removedHeight), behavior: 'instant' });
+	}
+
+	/** Drop chapters from the back (oldest-loaded above viewport). No scroll compensation. */
+	function pruneBack(count: number) {
+		if (count <= 0) return;
+		chapters = chapters.slice(0, chapters.length - count);
 	}
 
 	async function loadNextChapter() {
@@ -84,16 +111,18 @@
 		loadingAny = true;
 		try {
 			const bookData = await loadBook(last.bookMeta.slug, fetch);
-			bookDataMap = { ...bookDataMap, [last.bookMeta.slug]: bookData };
+			bookCacheTick++;
 			const nextCh = getChapter(bookData, nextChNum);
 			if (nextCh) {
-				loadedChapterKeys.add(`${last.bookMeta.slug}-${nextChNum}`);
 				chapters = [
 					...chapters,
 					{ bookMeta: last.bookMeta, chapter: nextCh, totalChapters: last.totalChapters }
 				];
 				await tick();
-				observeHeadings();
+				observeNewHeading(container, ensureObserver(), last.bookMeta.slug, nextChNum);
+				// Prune chapters far above the viewport to cap DOM size.
+				const excess = chapters.length - MAX_CHAPTERS;
+				if (excess > 0) await pruneFront(excess);
 			}
 		} catch (e) {
 			console.warn('Failed to load chapter:', e);
@@ -101,9 +130,6 @@
 			loadingAny = false;
 		}
 		// Chain: after releasing the mutex, check if another load is needed.
-		// The reactive alone can't do this — it fires mid-async (before tick),
-		// sees loadingAny=true and bails. Explicit call here ensures the cascade
-		// continues once the DOM is fully settled.
 		checkRollingPreload();
 	}
 
@@ -126,11 +152,10 @@
 		loadingAny = true;
 		try {
 			const bookData = await loadBook(targetBookMeta.slug, fetch);
-			bookDataMap = { ...bookDataMap, [targetBookMeta.slug]: bookData };
+			bookCacheTick++;
 			const prevCh = getChapter(bookData, prevChNum);
-			const totalChs = getChapterCount(bookData);
+			const totalChs = bookData.chapters.length;
 			if (prevCh) {
-				loadedChapterKeys.add(`${targetBookMeta.slug}-${prevChNum}`);
 				// Measure immediately before DOM mutation — after tick() below,
 				// newHeight - oldHeight equals exactly the prepended chapter's height.
 				const scrollY = window.scrollY;
@@ -142,7 +167,10 @@
 				await tick();
 				const newHeight = document.documentElement.scrollHeight;
 				window.scrollTo({ top: scrollY + (newHeight - oldHeight), behavior: 'instant' });
-				observeHeadings();
+				observeNewHeading(container, ensureObserver(), targetBookMeta.slug, prevChNum);
+				// Prune chapters far below the viewport to cap DOM size.
+				const excess = chapters.length - MAX_CHAPTERS;
+				if (excess > 0) pruneBack(excess);
 			}
 		} catch (e) {
 			console.warn('Failed to load chapter:', e);
@@ -160,14 +188,14 @@
 
 	let scrollReady = false;
 	let scrollRaf = 0;
-	let preloadTimer = 0;
+	let preloadTimer: ReturnType<typeof setTimeout> | null = null;
 	// Prevents checkRollingPreload from firing immediately after navigation.
 	// Time-based (300ms) to outlast the layout's afterNavigate double-rAF (~33ms).
 	let navCooldownUntil = 0;
 
-	// Rolling pre-load: keep 2 chapters loaded ahead and 2 behind the current reading
-	// position. Re-runs whenever readingPosition advances or a new chapter loads.
-	// loadingNext / loadingPrev flags and hasChapter guard prevent duplicate fetches.
+	// Rolling pre-load: keep 2 chapters ahead and 2 behind the current reading
+	// position. Reacts to readingPosition changes only — NOT chapters. The chain
+	// call after each load's finally{} handles the "keep loading" cascade.
 	function checkRollingPreload() {
 		if (!browser || !$prefs.infiniteScroll || !scrollReady || !$readingPosition) return;
 		if (Date.now() <= navCooldownUntil) return;
@@ -184,7 +212,7 @@
 		}
 		if (idx < 2) loadPrevChapter();
 	}
-	$: ($readingPosition, chapters, checkRollingPreload());
+	$: ($readingPosition, checkRollingPreload());
 
 	function onScrollCheck() {
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
@@ -213,11 +241,11 @@
 			chapter: initialChapter.chapter,
 			routeBase
 		});
-		observeHeadings();
+		observeAllHeadings(container, ensureObserver());
 		window.addEventListener('scroll', onScroll, { passive: true });
 		try {
-			const initialBook = await loadBook(initialBookMeta.slug, fetch);
-			bookDataMap = { ...bookDataMap, [initialBookMeta.slug]: initialBook };
+			await loadBook(initialBookMeta.slug, fetch);
+			bookCacheTick++;
 		} catch (e) {
 			console.warn('Failed to preload book data:', e);
 		}
