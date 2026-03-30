@@ -40,8 +40,11 @@
 	];
 
 	let container: HTMLElement;
-	let loadingNext = false;
-	let loadingPrev = false;
+	// Single mutex — next and prev never run concurrently.
+	// loadPrevChapter measures scrollHeight for compensation; a concurrent
+	// loadNextChapter's tick() may not have flushed yet, leaving oldHeight stale
+	// and causing scroll overshoot. Serializing all loads avoids this entirely.
+	let loadingAny = false;
 
 	// Study panel resize
 	const resize = createPanelResize();
@@ -72,13 +75,13 @@
 	}
 
 	async function loadNextChapter() {
-		if (loadingNext) return;
+		if (loadingAny) return;
 		const last = chapters[chapters.length - 1];
 		const nextChNum = last.chapter.chapter + 1;
 		if (nextChNum > last.totalChapters) return;
 		if (hasChapter(last.bookMeta.slug, nextChNum)) return;
 
-		loadingNext = true;
+		loadingAny = true;
 		try {
 			const bookData = await loadBook(last.bookMeta.slug, fetch);
 			bookDataMap = { ...bookDataMap, [last.bookMeta.slug]: bookData };
@@ -95,12 +98,17 @@
 		} catch (e) {
 			console.warn('Failed to load chapter:', e);
 		} finally {
-			loadingNext = false;
+			loadingAny = false;
 		}
+		// Chain: after releasing the mutex, check if another load is needed.
+		// The reactive alone can't do this — it fires mid-async (before tick),
+		// sees loadingAny=true and bails. Explicit call here ensures the cascade
+		// continues once the DOM is fully settled.
+		checkRollingPreload();
 	}
 
 	async function loadPrevChapter() {
-		if (loadingPrev || !enablePrevScroll) return;
+		if (loadingAny || !enablePrevScroll) return;
 		const first = chapters[0];
 
 		let targetBookMeta = first.bookMeta;
@@ -115,7 +123,7 @@
 
 		if (hasChapter(targetBookMeta.slug, prevChNum)) return;
 
-		loadingPrev = true;
+		loadingAny = true;
 		try {
 			const bookData = await loadBook(targetBookMeta.slug, fetch);
 			bookDataMap = { ...bookDataMap, [targetBookMeta.slug]: bookData };
@@ -123,9 +131,8 @@
 			const totalChs = getChapterCount(bookData);
 			if (prevCh) {
 				loadedChapterKeys.add(`${targetBookMeta.slug}-${prevChNum}`);
-				// Capture scroll state immediately before the DOM mutation so any
-				// concurrent loadNextChapter that settled during the await above is
-				// already reflected in oldHeight — prevents scroll overshoot.
+				// Measure immediately before DOM mutation — after tick() below,
+				// newHeight - oldHeight equals exactly the prepended chapter's height.
 				const scrollY = window.scrollY;
 				const oldHeight = document.documentElement.scrollHeight;
 				chapters = [
@@ -134,14 +141,16 @@
 				];
 				await tick();
 				const newHeight = document.documentElement.scrollHeight;
-				window.scrollTo(0, scrollY + (newHeight - oldHeight));
+				window.scrollTo({ top: scrollY + (newHeight - oldHeight), behavior: 'instant' });
 				observeHeadings();
 			}
 		} catch (e) {
 			console.warn('Failed to load chapter:', e);
 		} finally {
-			loadingPrev = false;
+			loadingAny = false;
 		}
+		// Chain: same reason as loadNextChapter above.
+		checkRollingPreload();
 	}
 
 	$: last = chapters[chapters.length - 1];
@@ -167,11 +176,8 @@
 			(c) => c.bookMeta.slug === pos.bookSlug && c.chapter.chapter === pos.chapter
 		);
 		if (idx === -1) return;
-		// Load one direction at a time — never both concurrently.
-		// loadPrevChapter adjusts scroll height; if loadNextChapter is also running
-		// its tick() hasn't flushed yet, so oldHeight would be stale and scroll
-		// compensation would overshoot. The reactive re-fires after each load
-		// completes, so the other direction gets picked up on the next cycle.
+		// Prioritise next; loadingAny mutex ensures only one runs at a time.
+		// After each finishes it calls checkRollingPreload() to pick up the other.
 		if (chapters.length - 1 - idx < 2) {
 			loadNextChapter();
 			return;
