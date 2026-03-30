@@ -7,7 +7,6 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 	import { debounce } from '$lib/utils/debounce';
 	import {
-		SCROLL_THRESHOLD,
 		shouldLoadNext,
 		shouldLoadPrev,
 		createChapterObserver,
@@ -152,18 +151,32 @@
 
 	let scrollReady = false;
 	let scrollRaf = 0;
-	// Prevents loadPrevChapter from firing at scrollY=0 immediately after navigation.
-	// Cleared once the user scrolls past SCROLL_THRESHOLD, proving intentional upward scroll.
-	let navCooldown = true;
+	// Prevents preloading from firing immediately after navigation.
+	// Time-based (300ms) to outlast the layout's afterNavigate double-rAF (~33ms).
+	let navCooldownUntil = 0;
+
+	// Rolling pre-load: whenever the current reading position or the chapters array
+	// changes, ensure 2 chapters are loaded ahead and 2 behind. The loadingNext /
+	// loadingPrev flags and hasChapter guard in each loader prevent duplicate fetches.
+	$: if (scrollReady && $readingPosition && chapters.length && Date.now() > navCooldownUntil) {
+		const idx = chapters.findIndex(
+			(c) =>
+				c.bookMeta.slug === $readingPosition.bookSlug &&
+				c.chapter.chapter === $readingPosition.chapter
+		);
+		if (idx !== -1) {
+			if (chapters.length - 1 - idx < 2) loadNextChapter();
+			if (idx < 2) loadPrevChapter();
+		}
+	}
 
 	function onScrollCheck() {
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
-		if (scrollY > SCROLL_THRESHOLD) navCooldown = false;
 		if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
 			loadNextChapter();
-		} else if (!navCooldown && shouldLoadPrev(scrollY)) {
+		} else if (shouldLoadPrev(scrollY) && Date.now() > navCooldownUntil) {
 			loadPrevChapter();
 		}
 	}
@@ -191,15 +204,20 @@
 			console.warn('Failed to preload book data:', e);
 		}
 		await tick();
-		// Scroll to top before setting scrollReady. Without this, scrollY is still
-		// the OLD page's position when onScrollCheck runs, which clears navCooldown
-		// (because old scrollY > SCROLL_THRESHOLD), then the layout's afterNavigate
-		// scrollTo(0) fires a scroll event that triggers loadPrevChapter.
-		// By scrolling to 0 first, the layout's subsequent scrollTo is a no-op
-		// (position unchanged → no scroll event), and navCooldown stays true.
+		// Scroll to top before setting scrollReady so the layout's afterNavigate
+		// double-rAF scrollTo(0) becomes a no-op (position unchanged → no scroll event).
 		if (browser) window.scrollTo({ top: 0, behavior: 'instant' });
+		// Block loadPrevChapter for 300ms — covers the ~33ms afterNavigate double-rAF
+		// and any microtask/rAF jitter, while still allowing free infinite scroll up
+		// once the page has settled.
+		navCooldownUntil = Date.now() + 300;
 		scrollReady = true;
-		onScrollCheck();
+		onScrollCheck(); // scroll-based check (mostly for shouldLoadNext near bottom)
+		// After cooldown, nudge the reactive rolling pre-load by re-assigning chapters.
+		// This triggers the $: block above which will load 2 prev + 2 next from current position.
+		setTimeout(() => {
+			chapters = chapters;
+		}, 310);
 	});
 
 	onDestroy(() => {
