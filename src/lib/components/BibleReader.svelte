@@ -92,7 +92,6 @@
 				];
 				await tick();
 				observeHeadings();
-				onScroll();
 			}
 		} catch (e) {
 			console.warn('Failed to load chapter:', e);
@@ -135,7 +134,6 @@
 				const newHeight = document.documentElement.scrollHeight;
 				window.scrollTo(0, scrollY + (newHeight - oldHeight));
 				observeHeadings();
-				onScroll();
 			}
 		} catch (e) {
 			console.warn('Failed to load chapter:', e);
@@ -151,6 +149,7 @@
 
 	let scrollReady = false;
 	let scrollRaf = 0;
+	let preloadTimer = 0;
 	// Prevents preloading from firing immediately after navigation.
 	// Time-based (300ms) to outlast the layout's afterNavigate double-rAF (~33ms).
 	let navCooldownUntil = 0;
@@ -214,7 +213,7 @@
 		navCooldownUntil = Date.now() + 300;
 		scrollReady = true;
 		onScrollCheck(); // scroll-based check (mostly for shouldLoadNext near bottom)
-		setTimeout(() => checkRollingPreload(), 310); // kick off pre-load after cooldown expires
+		preloadTimer = setTimeout(() => checkRollingPreload(), 310); // kick off pre-load after cooldown expires
 	});
 
 	onDestroy(() => {
@@ -223,6 +222,7 @@
 		if (browser) {
 			window.removeEventListener('scroll', onScroll);
 			if (scrollRaf) cancelAnimationFrame(scrollRaf);
+			if (preloadTimer) clearTimeout(preloadTimer);
 		}
 	});
 </script>
