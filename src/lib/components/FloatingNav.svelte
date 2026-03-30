@@ -160,7 +160,7 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms'}
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && protPsalmNum(ch) !== null}
 										<span class="block text-[9px] opacity-60">{protPsalmNum(ch)}</span>
 									{/if}
 								</a>
@@ -207,7 +207,7 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms'}
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && protPsalmNum(ch) !== null}
 										<span class="block text-[9px] opacity-60">{protPsalmNum(ch)}</span>
 									{/if}
 								</a>

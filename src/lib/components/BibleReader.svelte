@@ -187,7 +187,16 @@
 		}
 		await tick();
 		scrollReady = true;
-		onScrollCheck();
+		// Only check shouldLoadNext on mount — shouldLoadPrev at scrollY=0
+		// after {#key} remount + scroll-to-top spuriously prepends the prev
+		// chapter and shifts scroll, causing nav to land "close but not there".
+		if (browser && $prefs.infiniteScroll) {
+			const { scrollY, innerHeight } = window;
+			const docHeight = document.documentElement.scrollHeight;
+			if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
+				loadNextChapter();
+			}
+		}
 	});
 
 	onDestroy(() => {

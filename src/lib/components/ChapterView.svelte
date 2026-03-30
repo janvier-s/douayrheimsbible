@@ -65,10 +65,9 @@
 		return null;
 	}
 
-	$: psalmLabel = (() => {
-		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return '';
-		const prot = getProtestantPsalmNum(chapter.chapter);
-		return prot ? ` (Prot. ${prot})` : '';
+	$: hebrewPsalmNum = (() => {
+		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return null;
+		return getProtestantPsalmNum(chapter.chapter);
 	})();
 
 	let activeVerse: number | undefined = targetVerse;
@@ -188,7 +187,10 @@
 			this={headingLevel}
 			class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
 		>
-			Chapter {chapter.chapter}{psalmLabel}
+			Chapter {chapter.chapter}{#if hebrewPsalmNum}<span
+					class="text-[1.1rem] text-subtle font-ui ml-[6px] tracking-normal"
+					>({hebrewPsalmNum})</span
+				>{/if}
 		</svelte:element>
 		<div class="w-10 h-px bg-accent opacity-70"></div>
 	</header>

@@ -41,7 +41,7 @@ const DEFAULTS: ReadingPrefs = {
 	columnWidth: 'default',
 	bionicFixation: 3,
 	bionicSaccade: 0,
-	bionicOpacity: 0
+	bionicOpacity: 1
 };
 
 const PREFS_VERSION = 6;
@@ -78,7 +78,7 @@ function loadPrefs(): ReadingPrefs {
 			parsed.columnWidth = 'default';
 			parsed.bionicFixation = 3;
 			parsed.bionicSaccade = 0;
-			parsed.bionicOpacity = 0;
+			parsed.bionicOpacity = 1;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

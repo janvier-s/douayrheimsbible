@@ -358,14 +358,14 @@
 						</label>
 						<label class="block">
 							<span class="block mb-xs text-subtle"
-								>Non-bold opacity: {Math.round(($prefs.bionicOpacity ?? 0) * 100)}%</span
+								>Non-bold opacity: {Math.round(($prefs.bionicOpacity ?? 1) * 100)}%</span
 							>
 							<input
 								type="range"
 								min="0"
-								max="0.8"
+								max="1"
 								step="0.05"
-								value={$prefs.bionicOpacity ?? 0}
+								value={$prefs.bionicOpacity ?? 1}
 								on:input={(e) => {
 									const v = parseFloat((e.target as HTMLInputElement).value);
 									prefs.update((p) => ({ ...p, bionicOpacity: v }));
