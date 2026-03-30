@@ -191,6 +191,13 @@
 			console.warn('Failed to preload book data:', e);
 		}
 		await tick();
+		// Scroll to top before setting scrollReady. Without this, scrollY is still
+		// the OLD page's position when onScrollCheck runs, which clears navCooldown
+		// (because old scrollY > SCROLL_THRESHOLD), then the layout's afterNavigate
+		// scrollTo(0) fires a scroll event that triggers loadPrevChapter.
+		// By scrolling to 0 first, the layout's subsequent scrollTo is a no-op
+		// (position unchanged → no scroll event), and navCooldown stays true.
+		if (browser) window.scrollTo({ top: 0, behavior: 'instant' });
 		scrollReady = true;
 		onScrollCheck();
 	});
