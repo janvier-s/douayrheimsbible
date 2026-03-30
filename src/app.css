@@ -144,6 +144,31 @@
 	}
 }
 
+/* Firefox/Gecko: backdrop-filter is expensive during scroll — use opaque fallback */
+@supports (-moz-appearance: none) {
+	:root {
+		--color-bg-glass: #f8f5ef;
+	}
+	[data-theme='sepia'] {
+		--color-bg-glass: #f2e8d8;
+	}
+	[data-theme='dark'] {
+		--color-bg-glass: #111113;
+	}
+	[data-theme='oled'] {
+		--color-bg-glass: #000000;
+	}
+	@media (prefers-color-scheme: dark) {
+		[data-theme='auto'] {
+			--color-bg-glass: #111113;
+		}
+	}
+	.backdrop-blur-sm {
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+	}
+}
+
 html {
 	background-color: var(--color-bg);
 	scroll-behavior: smooth;
