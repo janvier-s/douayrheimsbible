@@ -117,8 +117,6 @@
 		if (hasChapter(targetBookMeta.slug, prevChNum)) return;
 
 		loadingPrev = true;
-		const scrollY = window.scrollY;
-		const oldHeight = document.documentElement.scrollHeight;
 		try {
 			const bookData = await loadBook(targetBookMeta.slug, fetch);
 			bookDataMap = { ...bookDataMap, [targetBookMeta.slug]: bookData };
@@ -126,6 +124,11 @@
 			const totalChs = getChapterCount(bookData);
 			if (prevCh) {
 				loadedChapterKeys.add(`${targetBookMeta.slug}-${prevChNum}`);
+				// Capture scroll state immediately before the DOM mutation so any
+				// concurrent loadNextChapter that settled during the await above is
+				// already reflected in oldHeight — prevents scroll overshoot.
+				const scrollY = window.scrollY;
+				const oldHeight = document.documentElement.scrollHeight;
 				chapters = [
 					{ bookMeta: targetBookMeta, chapter: prevCh, totalChapters: totalChs },
 					...chapters
