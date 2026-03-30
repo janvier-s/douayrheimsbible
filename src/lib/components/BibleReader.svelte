@@ -7,6 +7,7 @@
 	import { ALL_BOOKS } from '$lib/data/books';
 	import { debounce } from '$lib/utils/debounce';
 	import {
+		SCROLL_THRESHOLD,
 		shouldLoadNext,
 		shouldLoadPrev,
 		createChapterObserver,
@@ -151,14 +152,18 @@
 
 	let scrollReady = false;
 	let scrollRaf = 0;
+	// Prevents loadPrevChapter from firing at scrollY=0 immediately after navigation.
+	// Cleared once the user scrolls past SCROLL_THRESHOLD, proving intentional upward scroll.
+	let navCooldown = true;
 
 	function onScrollCheck() {
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
+		if (scrollY > SCROLL_THRESHOLD) navCooldown = false;
 		if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
 			loadNextChapter();
-		} else if (shouldLoadPrev(scrollY)) {
+		} else if (!navCooldown && shouldLoadPrev(scrollY)) {
 			loadPrevChapter();
 		}
 	}
@@ -187,16 +192,7 @@
 		}
 		await tick();
 		scrollReady = true;
-		// Only check shouldLoadNext on mount — shouldLoadPrev at scrollY=0
-		// after {#key} remount + scroll-to-top spuriously prepends the prev
-		// chapter and shifts scroll, causing nav to land "close but not there".
-		if (browser && $prefs.infiniteScroll) {
-			const { scrollY, innerHeight } = window;
-			const docHeight = document.documentElement.scrollHeight;
-			if (shouldLoadNext(scrollY, innerHeight, docHeight)) {
-				loadNextChapter();
-			}
-		}
+		onScrollCheck();
 	});
 
 	onDestroy(() => {

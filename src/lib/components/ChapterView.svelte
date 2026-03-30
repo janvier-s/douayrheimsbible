@@ -54,7 +54,7 @@
 					}
 				: null;
 
-	function getProtestantPsalmNum(n: number): string | null {
+	function getHebPsalmNum(n: number): string | null {
 		if (n <= 8) return null;
 		if (n === 9) return '9\u201310';
 		if (n >= 10 && n <= 112) return String(n + 1);
@@ -67,7 +67,7 @@
 
 	$: hebrewPsalmNum = (() => {
 		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return null;
-		return getProtestantPsalmNum(chapter.chapter);
+		return getHebPsalmNum(chapter.chapter);
 	})();
 
 	let activeVerse: number | undefined = targetVerse;

@@ -19,7 +19,7 @@
 
 	$: bookMeta = getBookBySlug(bookSlug);
 
-	function getProtestantPsalmNum(n: number): string | null {
+	function getHebPsalmNum(n: number): string | null {
 		if (n <= 8) return null;
 		if (n === 9) return '9\u201310';
 		if (n >= 10 && n <= 112) return String(n + 1);
@@ -38,7 +38,7 @@
 
 	$: psalmSuffix = (() => {
 		if (!$prefs.showPsalmNumbers || bookMeta?.slug !== 'psalms' || !chapterNum) return '';
-		const prot = getProtestantPsalmNum(parseInt(chapterNum, 10));
+		const prot = getHebPsalmNum(parseInt(chapterNum, 10));
 		return prot ? ` (${prot})` : '';
 	})();
 

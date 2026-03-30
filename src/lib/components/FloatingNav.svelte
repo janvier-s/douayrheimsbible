@@ -47,7 +47,7 @@
 		return $prefs.modernBookNames ? modernName : odrName;
 	}
 
-	function protPsalmNum(n: number): string | null {
+	function hebPsalmNum(n: number): string | null {
 		if (n <= 8) return null;
 		if (n === 9) return '9\u201310';
 		if (n >= 10 && n <= 112) return String(n + 1);
@@ -160,8 +160,8 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && protPsalmNum(ch) !== null}
-										<span class="block text-[9px] opacity-60">{protPsalmNum(ch)}</span>
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && hebPsalmNum(ch) !== null}
+										<span class="block text-[9px] opacity-60">{hebPsalmNum(ch)}</span>
 									{/if}
 								</a>
 							{/each}
@@ -207,8 +207,8 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && protPsalmNum(ch) !== null}
-										<span class="block text-[9px] opacity-60">{protPsalmNum(ch)}</span>
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && hebPsalmNum(ch) !== null}
+										<span class="block text-[9px] opacity-60">{hebPsalmNum(ch)}</span>
 									{/if}
 								</a>
 							{/each}
