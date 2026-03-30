@@ -155,20 +155,21 @@
 	// Time-based (300ms) to outlast the layout's afterNavigate double-rAF (~33ms).
 	let navCooldownUntil = 0;
 
-	// Rolling pre-load: whenever the current reading position or the chapters array
-	// changes, ensure 2 chapters are loaded ahead and 2 behind. The loadingNext /
-	// loadingPrev flags and hasChapter guard in each loader prevent duplicate fetches.
-	$: if (scrollReady && $readingPosition && chapters.length && Date.now() > navCooldownUntil) {
+	// Rolling pre-load: keep 2 chapters loaded ahead and 2 behind the current reading
+	// position. Re-runs whenever readingPosition advances or a new chapter loads.
+	// loadingNext / loadingPrev flags and hasChapter guard prevent duplicate fetches.
+	function checkRollingPreload() {
+		if (!browser || !$prefs.infiniteScroll || !scrollReady || !$readingPosition) return;
+		if (Date.now() <= navCooldownUntil) return;
+		const pos = $readingPosition;
 		const idx = chapters.findIndex(
-			(c) =>
-				c.bookMeta.slug === $readingPosition.bookSlug &&
-				c.chapter.chapter === $readingPosition.chapter
+			(c) => c.bookMeta.slug === pos.bookSlug && c.chapter.chapter === pos.chapter
 		);
-		if (idx !== -1) {
-			if (chapters.length - 1 - idx < 2) loadNextChapter();
-			if (idx < 2) loadPrevChapter();
-		}
+		if (idx === -1) return;
+		if (chapters.length - 1 - idx < 2) loadNextChapter();
+		if (idx < 2) loadPrevChapter();
 	}
+	$: ($readingPosition, chapters, checkRollingPreload());
 
 	function onScrollCheck() {
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
@@ -213,11 +214,7 @@
 		navCooldownUntil = Date.now() + 300;
 		scrollReady = true;
 		onScrollCheck(); // scroll-based check (mostly for shouldLoadNext near bottom)
-		// After cooldown, nudge the reactive rolling pre-load by re-assigning chapters.
-		// This triggers the $: block above which will load 2 prev + 2 next from current position.
-		setTimeout(() => {
-			chapters = chapters;
-		}, 310);
+		setTimeout(() => checkRollingPreload(), 310); // kick off pre-load after cooldown expires
 	});
 
 	onDestroy(() => {
