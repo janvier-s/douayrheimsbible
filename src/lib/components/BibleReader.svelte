@@ -54,7 +54,6 @@
 
 	// Bumped after each loadBook resolves, so the reactive below re-evaluates.
 	let bookCacheTick = 0;
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	$: currentBookData =
 		bookCacheTick >= 0 ? getCachedBook($readingPosition?.bookSlug ?? initialBookMeta.slug) : null;
 

@@ -49,6 +49,7 @@
 	$: {
 		const key = `${currentBookSlug}/${currentChapterNum}`;
 		if (key !== lastAnnotationKey && currentBookSlug) {
+			// eslint-disable-next-line no-useless-assignment
 			lastAnnotationKey = key;
 			annotationsLoading = true;
 			annotations = null;
