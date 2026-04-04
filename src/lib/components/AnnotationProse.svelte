@@ -5,7 +5,6 @@
 	export let text: string;
 	export let notes: AnnotationNote[] = [];
 
-	/** Split on \n\n for paragraph breaks, render <mn> as clickable superscript, keep <i>. */
 	function renderParagraphs(raw: string): string[] {
 		return raw
 			.split('\n\n')
@@ -20,40 +19,71 @@
 			);
 	}
 
-	let openMn: string | null = null;
-	let popoverStyle = '';
+	const POPOVER_WIDTH = 300;
+	const GAP = 10;
 
-	async function handleClick(e: MouseEvent) {
+	let openMn: string | null = null;
+
+	interface PopoverState {
+		style: string;
+		arrowLeft: number;
+		above: boolean;
+	}
+	let popover: PopoverState | null = null;
+
+	function calcPopover(btn: HTMLElement): PopoverState {
+		const rect = btn.getBoundingClientRect();
+		const markerCX = rect.left + rect.width / 2;
+		const spaceBelow = window.innerHeight - rect.bottom;
+		const above = spaceBelow < 130;
+
+		// Clamp so popover never clips left or right edge (12px margin each side)
+		const idealLeft = markerCX - POPOVER_WIDTH / 2;
+		const left = Math.min(Math.max(idealLeft, 12), window.innerWidth - POPOVER_WIDTH - 12);
+
+		// Arrow points at marker center, clamped within popover bounds
+		const arrowLeft = Math.round(Math.min(Math.max(markerCX - left, 10), POPOVER_WIDTH - 10));
+
+		const style = above
+			? `left:${left}px; bottom:${window.innerHeight - rect.top + GAP}px; width:${POPOVER_WIDTH}px;`
+			: `left:${left}px; top:${rect.bottom + GAP}px; width:${POPOVER_WIDTH}px;`;
+
+		return { style, arrowLeft, above };
+	}
+
+	function dismiss() {
+		openMn = null;
+		popover = null;
+	}
+
+	function handleClick(e: MouseEvent) {
 		const btn = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
 		if (!btn) {
-			openMn = null;
+			dismiss();
 			return;
 		}
 		const mn = btn.dataset.mn ?? null;
-		openMn = openMn === mn ? null : mn;
-		if (openMn) {
-			const rect = btn.getBoundingClientRect();
-			const spaceBelow = window.innerHeight - rect.bottom;
-			const maxH = Math.min(200, spaceBelow > 80 ? spaceBelow - 16 : rect.top - 16);
-			if (spaceBelow > 80) {
-				// Show below the marker
-				popoverStyle = `position:fixed; top:${rect.bottom + 6}px; left:${rect.left}px; max-height:${maxH}px;`;
-			} else {
-				// Flip above the marker
-				popoverStyle = `position:fixed; bottom:${window.innerHeight - rect.top + 6}px; left:${rect.left}px; max-height:${maxH}px;`;
-			}
+		if (openMn === mn) {
+			dismiss();
+			return;
 		}
+		openMn = mn;
+		popover = calcPopover(btn);
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
-		if (openMn && e.key === 'Escape') openMn = null;
+		if (openMn && e.key === 'Escape') dismiss();
+	}
+
+	function handleScroll() {
+		if (openMn) dismiss();
 	}
 
 	$: paragraphs = renderParagraphs(text);
 	$: activeNote = notes.find((n) => String(n.marker) === openMn) ?? null;
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} on:scroll={handleScroll} />
 
 <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
 <div class="annotation-prose" on:click={handleClick}>
@@ -63,13 +93,13 @@
 		</p>
 	{/each}
 
-	{#if openMn && activeNote}
+	{#if openMn && activeNote && popover}
 		<div
 			class="mn-popover"
-			role="status"
+			class:mn-popover-above={popover.above}
+			role="tooltip"
 			aria-live="polite"
-			aria-atomic="true"
-			style={popoverStyle}
+			style="position:fixed; {popover.style} --arrow-left:{popover.arrowLeft}px;"
 		>
 			<span class="mn-popover-marker">{openMn}</span>
 			<span class="mn-popover-text">{@html activeNote.text}</span>
@@ -105,39 +135,84 @@
 		opacity: 0.75;
 	}
 
+	/* Tooltip */
 	.mn-popover {
 		background: var(--color-text);
 		color: var(--color-bg);
 		font-size: 13px;
 		font-family: var(--font-ui);
 		line-height: 1.5;
-		border-radius: 4px;
-		padding: 8px 11px;
+		border-radius: 6px;
+		padding: 9px 12px;
 		box-shadow:
-			0 4px 16px rgba(0, 0, 0, 0.2),
-			0 1px 4px rgba(0, 0, 0, 0.12);
-		z-index: 100;
-		max-width: 320px;
+			0 8px 24px rgba(0, 0, 0, 0.25),
+			0 2px 6px rgba(0, 0, 0, 0.15);
+		max-height: 200px;
 		overflow-y: auto;
-		width: max-content;
+		z-index: 100;
+		animation: tooltip-in 120ms ease-out both;
+	}
+
+	/* Caret — absolute within the fixed popover box */
+	.mn-popover::before {
+		content: '';
+		position: absolute;
+		left: var(--arrow-left, 12px);
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		/* Default: pointing up (popover is below marker) */
+		top: -6px;
+		border-bottom: 7px solid var(--color-text);
+	}
+
+	/* Flipped: pointing down (popover is above marker) */
+	.mn-popover-above::before {
+		top: unset;
+		bottom: -6px;
+		border-bottom: none;
+		border-top: 7px solid var(--color-text);
+	}
+
+	@keyframes tooltip-in {
+		from {
+			opacity: 0;
+			transform: translateY(-3px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.mn-popover-above {
+		animation-name: tooltip-in-above;
+	}
+
+	@keyframes tooltip-in-above {
+		from {
+			opacity: 0;
+			transform: translateY(3px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	.mn-popover-marker {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
 		color: var(--color-accent);
 		font-size: 9px;
 		font-weight: 700;
 		margin-right: 6px;
-		vertical-align: baseline;
 	}
 
 	.mn-popover-text {
 		opacity: 0.9;
 	}
 
-	/* Allow <i> tags in annotation prose to render as italic */
 	.annotation-prose :global(i) {
 		font-style: italic;
 	}
