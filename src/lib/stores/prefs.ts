@@ -21,6 +21,9 @@ export interface ReadingPrefs {
 	bionicFixation: number; // 1–5
 	bionicSaccade: number; // 0–4
 	bionicOpacity: number; // 0–0.8
+	// v7
+	syncStudyScroll: boolean;
+	showItalics: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -41,10 +44,12 @@ const DEFAULTS: ReadingPrefs = {
 	columnWidth: 'default',
 	bionicFixation: 3,
 	bionicSaccade: 0,
-	bionicOpacity: 1
+	bionicOpacity: 1,
+	syncStudyScroll: true,
+	showItalics: true
 };
 
-const PREFS_VERSION = 6;
+const PREFS_VERSION = 7;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -79,6 +84,11 @@ function loadPrefs(): ReadingPrefs {
 			parsed.bionicFixation = 3;
 			parsed.bionicSaccade = 0;
 			parsed.bionicOpacity = 1;
+		}
+		// v7 migration: add study sync and italics toggle
+		if (!parsed._v || parsed._v < 7) {
+			parsed.syncStudyScroll = true;
+			parsed.showItalics = true;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
