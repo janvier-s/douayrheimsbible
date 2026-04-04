@@ -80,8 +80,16 @@
 	let tooltipY = 0;
 	let tooltipCloseTimer: ReturnType<typeof setTimeout> | null = null;
 
-	$: tooltipText =
-		tooltipVerse != null ? (chapter.verses.find((v) => v.verse === tooltipVerse)?.text ?? '') : '';
+	$: tooltipText = (() => {
+		if (tooltipVerse == null) return '';
+		const raw = chapter.verses.find((v) => v.verse === tooltipVerse)?.text ?? '';
+		return raw
+			.replace(/<cr>[^<]*<\/cr>/g, '')
+			.replace(/<na>[^<]*<\/na>/g, '')
+			.replace(/<\/?i>/g, '')
+			.replace(/  +/g, ' ')
+			.trim();
+	})();
 
 	function cancelClose() {
 		if (tooltipCloseTimer) {
