@@ -1,5 +1,6 @@
 <!-- src/lib/components/AnnotationProse.svelte -->
 <script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
 	import type { AnnotationNote } from '$lib/data/types';
 
 	export let text: string;
@@ -23,37 +24,26 @@
 	const GAP = 10;
 
 	let openMn: string | null = null;
+	let popoverStyle = '';
+	let above = false;
 
-	interface PopoverState {
-		style: string;
-		arrowLeft: number;
-		above: boolean;
-	}
-	let popover: PopoverState | null = null;
-
-	function calcPopover(btn: HTMLElement): PopoverState {
+	function calcPopover(btn: HTMLElement): string {
 		const rect = btn.getBoundingClientRect();
 		const markerCX = rect.left + rect.width / 2;
 		const spaceBelow = window.innerHeight - rect.bottom;
-		const above = spaceBelow < 130;
+		above = spaceBelow < 130;
 
-		// Clamp so popover never clips left or right edge (12px margin each side)
 		const idealLeft = markerCX - POPOVER_WIDTH / 2;
 		const left = Math.min(Math.max(idealLeft, 12), window.innerWidth - POPOVER_WIDTH - 12);
 
-		// Arrow points at marker center, clamped within popover bounds
-		const arrowLeft = Math.round(Math.min(Math.max(markerCX - left, 10), POPOVER_WIDTH - 10));
-
-		const style = above
+		return above
 			? `left:${left}px; bottom:${window.innerHeight - rect.top + GAP}px; width:${POPOVER_WIDTH}px;`
 			: `left:${left}px; top:${rect.bottom + GAP}px; width:${POPOVER_WIDTH}px;`;
-
-		return { style, arrowLeft, above };
 	}
 
 	function dismiss() {
 		openMn = null;
-		popover = null;
+		popoverStyle = '';
 	}
 
 	function handleClick(e: MouseEvent) {
@@ -68,22 +58,26 @@
 			return;
 		}
 		openMn = mn;
-		popover = calcPopover(btn);
+		popoverStyle = calcPopover(btn);
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
 		if (openMn && e.key === 'Escape') dismiss();
 	}
 
-	function handleScroll() {
-		if (openMn) dismiss();
-	}
+	// Capture-phase scroll catches panel internal scroll, not just window scroll
+	onMount(() => {
+		document.addEventListener('scroll', dismiss, true);
+	});
+	onDestroy(() => {
+		document.removeEventListener('scroll', dismiss, true);
+	});
 
 	$: paragraphs = renderParagraphs(text);
 	$: activeNote = notes.find((n) => String(n.marker) === openMn) ?? null;
 </script>
 
-<svelte:window on:keydown={handleKeydown} on:scroll={handleScroll} />
+<svelte:window on:keydown={handleKeydown} />
 
 <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
 <div class="annotation-prose" on:click={handleClick}>
@@ -93,13 +87,13 @@
 		</p>
 	{/each}
 
-	{#if openMn && activeNote && popover}
+	{#if openMn && activeNote && popoverStyle}
 		<div
 			class="mn-popover"
-			class:mn-popover-above={popover.above}
+			class:mn-popover-above={above}
 			role="tooltip"
 			aria-live="polite"
-			style="position:fixed; {popover.style} --arrow-left:{popover.arrowLeft}px;"
+			style="position:fixed; {popoverStyle}"
 		>
 			<span class="mn-popover-marker">{openMn}</span>
 			<span class="mn-popover-text">{@html activeNote.text}</span>
@@ -135,7 +129,6 @@
 		opacity: 0.75;
 	}
 
-	/* Tooltip */
 	.mn-popover {
 		background: var(--color-text);
 		color: var(--color-bg);
@@ -153,27 +146,8 @@
 		animation: tooltip-in 120ms ease-out both;
 	}
 
-	/* Caret — absolute within the fixed popover box */
-	.mn-popover::before {
-		content: '';
-		position: absolute;
-		left: var(--arrow-left, 12px);
-		transform: translateX(-50%);
-		width: 0;
-		height: 0;
-		border-left: 6px solid transparent;
-		border-right: 6px solid transparent;
-		/* Default: pointing up (popover is below marker) */
-		top: -6px;
-		border-bottom: 7px solid var(--color-text);
-	}
-
-	/* Flipped: pointing down (popover is above marker) */
-	.mn-popover-above::before {
-		top: unset;
-		bottom: -6px;
-		border-bottom: none;
-		border-top: 7px solid var(--color-text);
+	.mn-popover-above {
+		animation-name: tooltip-in-above;
 	}
 
 	@keyframes tooltip-in {
@@ -185,10 +159,6 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
-	}
-
-	.mn-popover-above {
-		animation-name: tooltip-in-above;
 	}
 
 	@keyframes tooltip-in-above {
