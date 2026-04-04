@@ -188,7 +188,7 @@
 			role="tablist"
 			aria-label="Study panel sections"
 		>
-			{#each ['intro', 'commentary'] as tab}
+			{#each ['intro', 'commentary'] as const as tab}
 				<button
 					role="tab"
 					aria-selected={$studyPanel.activeTab === tab}
