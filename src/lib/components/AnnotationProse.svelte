@@ -21,8 +21,9 @@
 	}
 
 	let openMn: string | null = null;
+	let popoverStyle = '';
 
-	function handleClick(e: MouseEvent) {
+	async function handleClick(e: MouseEvent) {
 		const btn = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
 		if (!btn) {
 			openMn = null;
@@ -30,6 +31,18 @@
 		}
 		const mn = btn.dataset.mn ?? null;
 		openMn = openMn === mn ? null : mn;
+		if (openMn) {
+			const rect = btn.getBoundingClientRect();
+			const spaceBelow = window.innerHeight - rect.bottom;
+			const maxH = Math.min(200, spaceBelow > 80 ? spaceBelow - 16 : rect.top - 16);
+			if (spaceBelow > 80) {
+				// Show below the marker
+				popoverStyle = `position:fixed; top:${rect.bottom + 6}px; left:${rect.left}px; max-height:${maxH}px;`;
+			} else {
+				// Flip above the marker
+				popoverStyle = `position:fixed; bottom:${window.innerHeight - rect.top + 6}px; left:${rect.left}px; max-height:${maxH}px;`;
+			}
+		}
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -51,7 +64,13 @@
 	{/each}
 
 	{#if openMn && activeNote}
-		<div class="mn-popover" role="status" aria-live="polite" aria-atomic="true">
+		<div
+			class="mn-popover"
+			role="status"
+			aria-live="polite"
+			aria-atomic="true"
+			style={popoverStyle}
+		>
 			<span class="mn-popover-marker">{openMn}</span>
 			<span class="mn-popover-text">{@html activeNote.text}</span>
 		</div>
@@ -87,10 +106,9 @@
 	}
 
 	.mn-popover {
-		margin-top: 6px;
 		background: var(--color-text);
 		color: var(--color-bg);
-		font-size: 11px;
+		font-size: 13px;
 		font-family: var(--font-ui);
 		line-height: 1.5;
 		border-radius: 4px;
@@ -98,6 +116,10 @@
 		box-shadow:
 			0 4px 16px rgba(0, 0, 0, 0.2),
 			0 1px 4px rgba(0, 0, 0, 0.12);
+		z-index: 100;
+		max-width: 320px;
+		overflow-y: auto;
+		width: max-content;
 	}
 
 	.mn-popover-marker {
