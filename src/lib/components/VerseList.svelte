@@ -188,8 +188,9 @@
 			{#if $prefs.showVerseNumbers}
 				<sup
 					class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
-					class:text-accent={isStudy && v.has_annotation}
-					class:text-subtle={!isStudy || !v.has_annotation}>{v.verse}</sup
+					class:text-subtle={!isStudy || !v.has_annotation}
+					style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
+					>{v.verse}</sup
 				>
 			{/if}
 			{@html renderVerse(v.text, bionic, isStudy, showItalics)}{' '}
@@ -212,8 +213,8 @@
 				{#if $prefs.showVerseNumbers}
 					<span
 						class="font-ui text-[13px] font-thin select-none w-6 shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
-						class:text-accent={isStudy && v.has_annotation}
 						class:text-subtle={!isStudy || !v.has_annotation}
+						style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
 					>
 						{v.verse}
 					</span>
@@ -275,21 +276,30 @@
 		color: var(--color-text);
 	}
 
-	/* Study marker superscript — accent colored, no background */
+	/* Study marker superscript — colored badge so they're visible even when
+	   the parent <p> has text-decoration which bleeds through child elements */
 	:global(.study-marker) {
-		color: var(--color-accent);
-		font-size: 9px;
+		font-size: 8px;
 		font-family: var(--font-ui);
+		font-weight: 600;
 		vertical-align: super;
 		line-height: 1;
 		cursor: pointer;
 		border: none;
-		background: none;
-		padding: 0 1px;
+		padding: 1px 3px;
 		margin: 0 1px;
+		border-radius: 2px;
+		/* Default: cross-ref color */
+		color: var(--color-accent);
+		background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+	}
+
+	:global(.study-marker[data-marker-type='note']) {
+		color: #e56868;
+		background: color-mix(in srgb, #e56868 14%, transparent);
 	}
 
 	:global(.study-marker:hover) {
-		text-decoration: underline;
+		opacity: 0.75;
 	}
 </style>

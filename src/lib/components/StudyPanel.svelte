@@ -276,7 +276,7 @@
 									<div class="sub-section-header">Notes</div>
 									{#each currentChapterData.summary_notes as sn}
 										<div class="note-row" data-panel-id="panel-0-note-{sn.marker}">
-											<span class="note-marker">[{sn.marker}]</span>
+											<span class="note-marker">{sn.marker}</span>
 											<span class="note-text">{sn.text}</span>
 										</div>
 									{/each}
@@ -289,7 +289,7 @@
 									<div class="sub-section-header">Cross-references</div>
 									{#each section.verseData.cross_refs as cr, ci}
 										<div class="cr-row" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
-											<span class="cr-marker">[{ci + 1}]</span>
+											<span class="cr-marker">{ci + 1}</span>
 											<span class="cr-text">{cr.text}</span>
 										</div>
 									{/each}
@@ -302,7 +302,7 @@
 									<div class="sub-section-header">Notes</div>
 									{#each section.verseData.notes as note}
 										<div class="note-row" data-panel-id="panel-{section.verse}-note-{note.label}">
-											<span class="note-marker">({note.label})</span>
+											<span class="note-marker">{note.label}</span>
 											<span class="note-text">{@html note.text}</span>
 										</div>
 									{/each}
@@ -424,7 +424,7 @@
 
 	/* ─── Content ───────────────────────────────────── */
 	.content-block {
-		padding: 16px 18px;
+		padding: 16px 52px;
 	}
 
 	.content-eyebrow {
@@ -458,7 +458,7 @@
 		letter-spacing: 0.15em;
 		color: var(--color-subtle);
 		font-weight: 500;
-		padding: 12px 18px 6px;
+		padding: 12px 52px 6px;
 		user-select: none;
 	}
 
@@ -467,10 +467,26 @@
 		top: 0;
 		background: var(--color-panel);
 		z-index: 1;
+		text-align: center;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #2e2b32;
+		font-weight: 400;
+		color: var(--color-accent);
+	}
+
+	@supports (backdrop-filter: blur(1px)) {
+		@media screen and (-webkit-min-device-pixel-ratio: 0) {
+			.verse-section-header-sticky {
+				background: color-mix(in srgb, var(--color-panel) 80%, transparent);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+			}
+		}
 	}
 
 	.sub-section {
-		padding: 4px 18px 12px;
+		padding: 4px 52px 12px;
 	}
 
 	.sub-section-header {
