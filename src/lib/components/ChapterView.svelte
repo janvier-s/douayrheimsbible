@@ -118,9 +118,13 @@
 	}
 
 	function linkifySummary(text: string, isStudy: boolean): string {
-		// Summary text is from trusted build-time JSON; we only inject our own tags
-		let t = text.replace(/℣\.(\d+)/g, (_, n) => {
-			return `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}">℣.${n}</a>`;
+		// Summary text is from trusted build-time JSON; we only inject our own tags.
+		// Match verse-number references in summary text: a digit-sequence followed by
+		// ". " that appears after whitespace or a semicolon (e.g. "8. Then placing…").
+		// Also handles any pre-existing ℣.N patterns.
+		let t = text.replace(/(^|[\s;,])(\d+)\.\s+/g, (_, sep, n) => {
+			const link = `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}"><span class="verse-ref-glyph">℣.</span>${n}</a> `;
+			return sep + link;
 		});
 		if (isStudy) {
 			// Render <na>[N]</na> as clickable accent superscript
@@ -258,11 +262,17 @@
 
 <style>
 	:global(.summary-verse-ref) {
-		color: var(--color-interactive);
+		color: color-mix(in srgb, var(--color-interactive) 75%, var(--color-text));
 		cursor: pointer;
 		text-decoration: none;
+		font-variant-numeric: tabular-nums;
 	}
 	:global(.summary-verse-ref:hover) {
 		text-decoration: underline;
+	}
+	@media (max-width: 640px) {
+		:global(.verse-ref-glyph) {
+			display: none;
+		}
 	}
 </style>
