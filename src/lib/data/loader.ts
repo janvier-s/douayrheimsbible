@@ -1,4 +1,4 @@
-import type { BookData, Chapter } from './types';
+import type { BookData, Chapter, ChapterAnnotations } from './types';
 
 const bookCache = new Map<string, Promise<BookData>>();
 const resolvedCache = new Map<string, BookData>();
@@ -24,4 +24,25 @@ export function getCachedBook(slug: string): BookData | null {
 /** Extracts a single chapter from a loaded book */
 export function getChapter(book: BookData, chapterNum: number): Chapter | undefined {
 	return book.chapters.find((c) => c.chapter === chapterNum);
+}
+
+// ── Annotation sidecar (lazy-loaded per chapter) ─────────────────
+
+const annotationCache = new Map<string, Promise<ChapterAnnotations | null>>();
+
+/** Fetches annotation sidecar for a chapter, with in-memory caching. Returns null on 404. */
+export function loadAnnotations(
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<ChapterAnnotations | null> {
+	const key = `${slug}/${chapter}`;
+	if (!annotationCache.has(key)) {
+		const path = `/data/odr/${slug}/annotations/${String(chapter).padStart(3, '0')}.json`;
+		const promise = fetch(path).then((res) =>
+			res.ok ? (res.json() as Promise<ChapterAnnotations>) : null
+		);
+		annotationCache.set(key, promise);
+	}
+	return annotationCache.get(key)!;
 }
