@@ -48,9 +48,9 @@
 	let loadingAny = false;
 
 	// Study panel resize — liveWidth keeps outer container in sync during drag (no transition lag)
-	let liveWidth = $prefs.studyPanelWidth;
+	let liveWidth = '';
 	const resize = createPanelResize((w) => (liveWidth = w));
-	$: liveWidth = $prefs.studyPanelWidth;
+	$: if (!resize.isDragging) liveWidth = $prefs.studyPanelWidth;
 	let panelEl: HTMLElement;
 	$: if (panelEl) resize.bindPanel(panelEl);
 
