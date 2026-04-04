@@ -5,6 +5,7 @@
 	import VerseList from './VerseList.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { prefs } from '$lib/stores/prefs';
+	import { studyPanel } from '$lib/stores/studyPanel';
 
 	export let bookMeta: BookMeta;
 	export let chapter: Chapter;
@@ -116,21 +117,46 @@
 		cancelClose();
 	}
 
-	function linkifySummary(text: string): string {
-		// Summary text is from trusted build-time JSON; we only inject our own <a> tags
-		return text.replace(/℣\.(\d+)/g, (_, n) => {
+	function linkifySummary(text: string, isStudy: boolean): string {
+		// Summary text is from trusted build-time JSON; we only inject our own tags
+		let t = text.replace(/℣\.(\d+)/g, (_, n) => {
 			return `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}">℣.${n}</a>`;
 		});
+		if (isStudy) {
+			// Render <na>[N]</na> as clickable accent superscript
+			t = t.replace(
+				/<na>(\[(\d+)\])<\/na>/g,
+				(_, full, n) =>
+					`<button class="study-marker" data-summary-note="${n}" aria-label="Summary note ${n}">${full}</button>`
+			);
+		} else {
+			// Strip <na> tags and content in reading mode
+			t = t.replace(/<na>[^<]*<\/na>/g, '');
+			t = t.replace(/  +/g, ' ').trim();
+		}
+		return t;
 	}
 
 	async function handleSummaryClick(e: MouseEvent) {
+		// Summary note marker click → scroll panel to summary section
+		const noteBtn = (e.target as HTMLElement).closest('[data-summary-note]') as HTMLElement | null;
+		if (noteBtn) {
+			e.preventDefault();
+			const marker = noteBtn.dataset.summaryNote ?? '';
+			studyPanel.update((s) => ({
+				...s,
+				activeTab: 'commentary',
+				scrollTrigger: { verse: 0, type: 'note', marker }
+			}));
+			return;
+		}
+
 		const el = (e.target as HTMLElement).closest('[data-verse]') as HTMLElement | null;
 		if (!el?.dataset.verse) return;
 		e.preventDefault();
 		const n = parseInt(el.dataset.verse);
 		activeVerse = n;
 		await tick();
-		// Scope to this chapter's article — multiple chapters may be in DOM (infinite scroll)
 		const article = document.querySelector(
 			`[data-book="${bookMeta.slug}"][data-chapter="${chapter.chapter}"]`
 		);
@@ -205,7 +231,7 @@
 			on:focusin={handleSummaryMouseover}
 			on:focusout={() => scheduleClose()}
 		>
-			{@html linkifySummary(chapter.summary)}
+			{@html linkifySummary(chapter.summary, $prefs.readingMode === 'study')}
 		</p>
 	{/if}
 
