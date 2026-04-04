@@ -71,15 +71,15 @@
 		color: #e56868;
 		font-size: 9px;
 		font-family: var(--font-ui);
+		font-weight: 400;
 		vertical-align: super;
 		line-height: 1;
 		cursor: pointer;
 		border: none;
-		background: none;
-		padding: 0 1px;
+		background: #29191b;
+		padding: 1px 3px;
 		margin: 0 1px;
-		text-decoration: underline;
-		text-underline-offset: 2px;
+		border-radius: 2px;
 	}
 
 	:global(.mn-marker:hover) {

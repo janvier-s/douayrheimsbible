@@ -473,6 +473,7 @@
 		border-bottom: 1px solid #2e2b32;
 		font-weight: 400;
 		color: var(--color-accent);
+		margin-bottom: 20px;
 	}
 
 	@supports (backdrop-filter: blur(1px)) {
@@ -487,6 +488,10 @@
 
 	.sub-section {
 		padding: 4px 52px 12px;
+	}
+
+	.sub-section:last-child {
+		padding-bottom: 17px;
 	}
 
 	.sub-section-header {
