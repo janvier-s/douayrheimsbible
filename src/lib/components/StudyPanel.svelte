@@ -510,7 +510,7 @@
 		font-family: var(--font-ui);
 		font-size: 10px;
 		font-weight: 600;
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 		flex-shrink: 0;
 		min-width: 18px;
 	}
@@ -535,7 +535,7 @@
 		font-family: var(--font-ui);
 		font-size: 10px;
 		font-weight: 600;
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 		flex-shrink: 0;
 		min-width: 18px;
 	}

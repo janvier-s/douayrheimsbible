@@ -297,14 +297,8 @@
 		padding: 1px 3px;
 		margin: 0 1px;
 		border-radius: 2px;
-		/* Default: cross-ref color */
-		color: var(--color-accent);
-		background: color-mix(in srgb, var(--color-accent) 14%, transparent);
-	}
-
-	:global(.study-marker[data-marker-type='note']) {
-		color: #e56868;
-		background: color-mix(in srgb, #e56868 14%, transparent);
+		color: var(--color-accent-text);
+		background: color-mix(in srgb, var(--color-accent-text) 14%, transparent);
 	}
 
 	:global(.study-marker:hover) {

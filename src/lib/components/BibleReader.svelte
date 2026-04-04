@@ -47,12 +47,25 @@
 	// and causing scroll overshoot. Serializing all loads avoids this entirely.
 	let loadingAny = false;
 
-	// Study panel resize — liveWidth keeps outer container in sync during drag (no transition lag)
+	// Study panel resize
+	// liveWidth drives the outer container's max-width in real time.
+	// panelDragging disables the max-width transition so the container
+	// tracks the cursor with zero lag instead of chasing it with a 250ms ease.
+	// The inner panel width is managed exclusively via direct DOM (resize utility)
+	// to avoid Svelte's style binding overwriting the drag position on each
+	// debounce tick ($prefs.studyPanelWidth updates every 200ms during drag).
 	let liveWidth = '';
-	const resize = createPanelResize((w) => (liveWidth = w));
-	$: if (!resize.isDragging) liveWidth = $prefs.studyPanelWidth;
+	let panelDragging = false;
+	const resize = createPanelResize(
+		(w) => (liveWidth = w),
+		(d) => (panelDragging = d)
+	);
+	$: if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
 	let panelEl: HTMLElement;
 	$: if (panelEl) resize.bindPanel(panelEl);
+	// Sync inner panel width when not dragging (initial render + settings changes).
+	// During drag, the resize utility sets panelEl.style.width directly.
+	$: if (panelEl && !panelDragging) panelEl.style.width = $prefs.studyPanelWidth;
 
 	// Bumped after each loadBook resolves, so the reactive below re-evaluates.
 	let bookCacheTick = 0;
@@ -305,9 +318,9 @@
 		style="top: var(--header-height); height: calc(100vh - var(--header-height)); max-width: {$prefs.readingMode ===
 		'study'
 			? liveWidth
-			: '0'}; opacity: {$prefs.readingMode === 'study'
-			? '1'
-			: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"
+			: '0'}; opacity: {$prefs.readingMode === 'study' ? '1' : '0'}; transition: {panelDragging
+			? 'opacity 250ms ease'
+			: 'max-width 250ms ease, opacity 250ms ease'};"
 	>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 		<div
@@ -315,14 +328,14 @@
 			aria-orientation="vertical"
 			aria-label="Resize study panel"
 			tabindex="0"
-			class="w-[5px] shrink-0 cursor-col-resize hover:bg-accent/20 focus:bg-accent/30 transition-colors duration-fast self-stretch outline-none"
+			class="w-[5px] shrink-0 cursor-col-resize hover:bg-[rgba(128,128,128,0.2)] focus:bg-[rgba(128,128,128,0.3)] transition-colors duration-fast self-stretch outline-none"
 			on:mousedown={resize.onDividerMousedown}
 			on:touchstart={resize.onTouchStart}
 			on:touchmove={resize.onTouchMove}
 			on:touchend={resize.onTouchEnd}
 			on:keydown={resize.onKeydown}
 		></div>
-		<div bind:this={panelEl} style="width: {$prefs.studyPanelWidth};" class="shrink-0 h-full">
+		<div bind:this={panelEl} class="shrink-0 h-full">
 			<StudyPanel bookData={currentBookData} />
 		</div>
 	</div>

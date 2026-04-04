@@ -3,7 +3,10 @@ import { prefs } from '$lib/stores/prefs';
 
 const MIN_WIDTH = 240;
 
-export function createPanelResize(onLiveWidth?: (w: string) => void) {
+export function createPanelResize(
+	onLiveWidth?: (w: string) => void,
+	onDragChange?: (dragging: boolean) => void
+) {
 	let panelEl: HTMLElement;
 	let isDragging = false;
 	let dragStartX = 0;
@@ -25,6 +28,19 @@ export function createPanelResize(onLiveWidth?: (w: string) => void) {
 		savePanelWidth(px);
 	}
 
+	function startDrag(clientX: number) {
+		isDragging = true;
+		dragStartX = clientX;
+		dragStartWidth = panelEl.offsetWidth;
+		onDragChange?.(true);
+	}
+
+	function endDrag() {
+		if (!isDragging) return;
+		isDragging = false;
+		onDragChange?.(false);
+	}
+
 	return {
 		bindPanel(el: HTMLElement) {
 			panelEl = el;
@@ -34,9 +50,7 @@ export function createPanelResize(onLiveWidth?: (w: string) => void) {
 		},
 		// Mouse
 		onDividerMousedown(e: MouseEvent) {
-			isDragging = true;
-			dragStartX = e.clientX;
-			dragStartWidth = panelEl.offsetWidth;
+			startDrag(e.clientX);
 			e.preventDefault();
 		},
 		onMousemove(e: MouseEvent) {
@@ -45,13 +59,11 @@ export function createPanelResize(onLiveWidth?: (w: string) => void) {
 			setWidth(dragStartWidth + delta);
 		},
 		onMouseup() {
-			isDragging = false;
+			endDrag();
 		},
 		// Touch
 		onTouchStart(e: TouchEvent) {
-			isDragging = true;
-			dragStartX = e.touches[0].clientX;
-			dragStartWidth = panelEl.offsetWidth;
+			startDrag(e.touches[0].clientX);
 		},
 		onTouchMove(e: TouchEvent) {
 			if (!isDragging) return;
@@ -59,7 +71,7 @@ export function createPanelResize(onLiveWidth?: (w: string) => void) {
 			setWidth(dragStartWidth + delta);
 		},
 		onTouchEnd() {
-			isDragging = false;
+			endDrag();
 		},
 		// Keyboard (arrow keys adjust by step)
 		onKeydown(e: KeyboardEvent) {
