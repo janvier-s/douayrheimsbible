@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel } from '$lib/stores/studyPanel';
@@ -132,7 +132,10 @@
 
 	let verseObserver: IntersectionObserver | null = null;
 
-	onMount(() => {
+	onMount(async () => {
+		mounted = true;
+		// Let the reactive {#each} re-render with isStudy=true before observing.
+		await tick();
 		if (!browser) return;
 		verseObserver = new IntersectionObserver(
 			(entries) => {
@@ -173,7 +176,12 @@
 		}
 	});
 
-	$: isStudy = $prefs.readingMode === 'study';
+	// mounted gate: keeps isStudy false during SSR/pre-render (where readingMode
+	// defaults to 'reading'), so the hydrated HTML matches the pre-rendered HTML.
+	// After onMount fires, isStudy flips to the real value → triggers {#each}
+	// re-render → renderStudyMarkers runs and injects the marker buttons.
+	let mounted = false;
+	$: isStudy = mounted && $prefs.readingMode === 'study';
 	$: showItalics = $prefs.showItalics;
 	$: bionic = $prefs.bionicReading && bionicReady;
 </script>
