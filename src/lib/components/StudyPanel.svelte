@@ -501,7 +501,7 @@
 
 	.cr-text {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 14px;
 		color: var(--color-subtle);
 		font-style: italic;
 	}
@@ -526,7 +526,7 @@
 
 	.note-text {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 14px;
 		color: var(--color-muted);
 	}
 
@@ -547,10 +547,10 @@
 	}
 
 	.annotation-title {
-		font-size: 13px;
+		font-size: 14px;
 		font-weight: 600;
-		color: var(--color-accent);
-		margin-bottom: 6px;
+		color: var(--color-accent-text);
+		margin: 10px 0 8px;
 		font-family: var(--font-reader);
 		font-style: italic;
 	}

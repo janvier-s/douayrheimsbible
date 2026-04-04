@@ -69,19 +69,19 @@
 	function renderStudyMarkers(text: string): string {
 		return text
 			.replace(
-				/<cr>(\[(\d+)\])<\/cr>/g,
-				(_, full, n) =>
-					`<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" aria-label="Cross-reference ${n}">${full}</button>`
+				/<cr>\[(\d+)\]<\/cr>/g,
+				(_, n) =>
+					`<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" aria-label="Cross-reference ${n}">${n}</button>`
 			)
 			.replace(
-				/<na>(\((\w+)\))<\/na>/g,
-				(_, full, l) =>
-					`<button class="study-marker" data-marker-type="note" data-marker="${l}" aria-label="Note ${l}">${full}</button>`
+				/<na>\((\w+)\)<\/na>/g,
+				(_, l) =>
+					`<button class="study-marker" data-marker-type="note" data-marker="${l}" aria-label="Note ${l}">${l}</button>`
 			)
 			.replace(
-				/<na>(\[(\d+)\])<\/na>/g,
-				(_, full, n) =>
-					`<button class="study-marker" data-marker-type="note" data-marker="${n}" aria-label="Note ${n}">${full}</button>`
+				/<na>\[(\d+)\]<\/na>/g,
+				(_, n) =>
+					`<button class="study-marker" data-marker-type="note" data-marker="${n}" aria-label="Note ${n}">${n}</button>`
 			);
 	}
 
@@ -241,11 +241,16 @@
 		cursor: pointer;
 	}
 
-	.verse-annotated:hover p {
+	.verse-annotated p {
 		text-decoration: underline;
 		text-decoration-style: dotted;
 		text-underline-offset: 3px;
-		text-decoration-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+		text-decoration-color: color-mix(in srgb, var(--color-accent-text) 60%, transparent);
+	}
+
+	.verse-annotated:hover p {
+		text-decoration-style: solid;
+		text-decoration-color: var(--color-accent-text);
 	}
 
 	.verse-annotated:hover {

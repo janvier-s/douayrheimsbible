@@ -45,7 +45,7 @@
 <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
 <div class="annotation-prose" on:click={handleClick}>
 	{#each paragraphs as para}
-		<p class="font-reader text-[13px] leading-relaxed text-foreground">
+		<p class="font-reader text-[14px] leading-[1.83] text-foreground">
 			{@html para}
 		</p>
 	{/each}
@@ -68,7 +68,7 @@
 	}
 
 	:global(.mn-marker) {
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 		font-size: 9px;
 		font-family: var(--font-ui);
 		vertical-align: super;
@@ -78,11 +78,11 @@
 		background: none;
 		padding: 0 1px;
 		margin: 0 1px;
-		transition: opacity 150ms ease;
+		text-decoration: underline;
 	}
 
 	:global(.mn-marker:hover) {
-		text-decoration: underline;
+		opacity: 0.75;
 	}
 
 	.mn-popover {

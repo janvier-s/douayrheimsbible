@@ -47,8 +47,10 @@
 	// and causing scroll overshoot. Serializing all loads avoids this entirely.
 	let loadingAny = false;
 
-	// Study panel resize
-	const resize = createPanelResize();
+	// Study panel resize — liveWidth keeps outer container in sync during drag (no transition lag)
+	let liveWidth = $prefs.studyPanelWidth;
+	const resize = createPanelResize((w) => (liveWidth = w));
+	$: liveWidth = $prefs.studyPanelWidth;
 	let panelEl: HTMLElement;
 	$: if (panelEl) resize.bindPanel(panelEl);
 
@@ -302,7 +304,7 @@
 		class="shrink-0 sticky flex [overflow:clip]"
 		style="top: var(--header-height); height: calc(100vh - var(--header-height)); max-width: {$prefs.readingMode ===
 		'study'
-			? $prefs.studyPanelWidth
+			? liveWidth
 			: '0'}; opacity: {$prefs.readingMode === 'study'
 			? '1'
 			: '0'}; transition: max-width 250ms ease, opacity 250ms ease;"

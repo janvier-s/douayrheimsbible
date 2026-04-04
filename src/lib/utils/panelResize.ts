@@ -3,7 +3,7 @@ import { prefs } from '$lib/stores/prefs';
 
 const MIN_WIDTH = 240;
 
-export function createPanelResize() {
+export function createPanelResize(onLiveWidth?: (w: string) => void) {
 	let panelEl: HTMLElement;
 	let isDragging = false;
 	let dragStartX = 0;
@@ -19,8 +19,10 @@ export function createPanelResize() {
 
 	function setWidth(w: number) {
 		const clamped = Math.min(Math.max(w, MIN_WIDTH), maxWidth());
-		panelEl.style.width = `${clamped}px`;
-		savePanelWidth(`${clamped}px`);
+		const px = `${clamped}px`;
+		panelEl.style.width = px;
+		onLiveWidth?.(px);
+		savePanelWidth(px);
 	}
 
 	return {
