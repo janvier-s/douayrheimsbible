@@ -10,7 +10,7 @@ const config = {
 				// Only send dynamic routes to the Worker; pre-rendered ODR pages
 				// are served as static assets, avoiding the _routes.json limit.
 				include: ['/*'],
-				exclude: ['/odr/*/*', '/data/*', '/_app/*', '/fonts/*', '/favicon*', '/apple*', '/site*']
+				exclude: ['/', '/odr/*/*', '/data/*', '/_app/*', '/fonts/*', '/favicon*', '/apple*', '/site*']
 			}
 		}),
 		prerender: {
