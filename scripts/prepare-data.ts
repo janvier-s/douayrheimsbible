@@ -46,4 +46,7 @@ async function main() {
 	console.log(`\nPrepared ${count} books → ${OUT_DIR}`);
 }
 
-main().catch(console.error);
+main().catch((e) => {
+	console.error(e);
+	process.exit(1);
+});
