@@ -1,15 +1,19 @@
 {
-  "book": "Josue",
-  "version_abbr": "ODR",
-  "date": "1609",
+  "book": "josue",
+  "book_title": null,
+  "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "Josue encouraged by our Lord ℣.10 admonisheth the people to prepare themselves to pass over Jordan, ℣.12 and all the able men of the tribes of Ruben, Gad, and half Manasses, to march armed before the rest. ℣.16 All promise to do whatsoever he commandeth.",
       "verses": [
         {
           "verse": 1,
-          "text": "And it came to pass after the death of Moyses the servant of our Lord, that our Lord spake to Josue the son of Nun, the minister of Moyses, and said to him:"
+          "text": "And <cr>[1]</cr> it came to pass after the death of Moyses the servant of our Lord, that our Lord spake to Josue the son of Nun, the minister of Moyses, and said to him:",
+          "cross_refs": [
+            {
+              "text": "The first part. Of the passage of Israel over Jordan."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -21,7 +25,7 @@
         },
         {
           "verse": 4,
-          "text": "From the desert and Libanus unto the great river Euphrates, all the land of the Hethites unto the great sea against the going down of the sun, shall be your border."
+          "text": "From the desert and Libanus unto the great river Euphrates, all the land of the Hetheites unto the great sea against the going down of the sun, shall be your border."
         },
         {
           "verse": 5,
@@ -49,7 +53,13 @@
         },
         {
           "verse": 11,
-          "text": "Prepare for your selves victuals: for after the third day you shall pass over Jordan, and shall enter to possess the Land which our Lord your God will give you."
+          "text": "Prepare for yourselves <na>(a)</na> victuals: for after the third day you shall pass over Jordan, and shall enter to possess the Land which our Lord your God will give you.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Besides Manna, which yet ceased not, they might if they would provide other meat: prefiguring that in the primitive Church, it should be lawful to use legal ceremonies with evangelical rites for a time, till the old law were buried with honour."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -79,11 +89,11 @@
           "verse": 18,
           "text": "He that shall gainsay thy mouth, and not obey all thy words that thou shalt command him, let him die. Thou only take courage, and do manfully."
         }
-      ]
+      ],
+      "summary": "Josue encouraged by our Lord 10. admonisheth the people to prepare themselves to pass over Jordan, 12. and all the able men of the tribes of Ruben, Gad, and half Manasses, to march armed before the rest. 16. All promise to do whatsoever he commandeth."
     },
     {
       "chapter": 2,
-      "summary": "Two discoverers sent into Hiericho are hid and concealed by Rahab: ℣.8 and upon promise of like safety to her whole family, ℣.21 she helpeth them secretly away.",
       "verses": [
         {
           "verse": 1,
@@ -99,7 +109,13 @@
         },
         {
           "verse": 4,
-          "text": "And the woman taking the men, hid them, & said: I confess they came to me, but I knew not whence they were:"
+          "text": "And the woman taking the men, hid them, & said: I confess they came to me, but <na>(b)</na> I knew not whence they were:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Notwithstanding this officious lie, (which is a venial sin) S. Paul, Heb. 11. and S. James (c. 2.) testify, that she was justified by her faith in God, and by good works towards these men. S. Aug. cont. Mendac. c. 17. See Annot. Iac. 2. v. 25."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -119,11 +135,11 @@
         },
         {
           "verse": 9,
-          "text": "I know that the Lord hath given this Land to you: for your terror is fallen upon us, & all the inhabitants of the Land are become faint."
+          "text": "Iknow that the Lord hath given this Land to you: for your terror is fallen upon us, & all the inhabitants of the Land are become faint."
         },
         {
           "verse": 10,
-          "text": "We have heard that the Lord dried up the water of the Red sea at your entering, when you came out of Ægypt: and what things you did to the two kings of the Amorrhites, that were beyond Jordan, Sehon and Og, whom you slew."
+          "text": "We have heard that the Lord dried up the water of the Red sea at your entering, when you came out of Aegypt: and what things you did to the two kings of the Amorrheites, that were beyond Jordan, Sehon and Og, whom you slew."
         },
         {
           "verse": 11,
@@ -147,7 +163,7 @@
         },
         {
           "verse": 16,
-          "text": "And she said to them: Go up to the mountains, lest perhaps they meet you returning: and there, lie hid three days, till they return, and so you shall go on your way."
+          "text": "And she said to them: Go up to the mountains, lest perhaps they meet you returning: and there^ lie hid three days, till they return, and so you shall go on your way."
         },
         {
           "verse": 17,
@@ -181,11 +197,11 @@
           "verse": 24,
           "text": "and said: Our Lord hath delivered all this land into our hands, and all the inhabitants thereof are overthrown with fear."
         }
-      ]
+      ],
+      "summary": "Two discoverers sent into Hiericho are hid and concealed by Rahab: 8. and upon promise of like safety to her whole family, 21. she helpeth them secretly away."
     },
     {
       "chapter": 3,
-      "summary": "After three days abode by the banks of Jordan, ℣.3 the Priests with the Ark of God entering first into the river, ℣.15 the upper part miraculously standeth and swelleth, the lower running away, they go into the mid channel, and there stay, whiles all the people pass over dry foot.",
       "verses": [
         {
           "verse": 1,
@@ -197,7 +213,17 @@
         },
         {
           "verse": 3,
-          "text": "and began to proclaim: When you shall see the ark of covenant of our Lord your God, and the Priests of the Levitical stock carrying it, rise you also, & follow them going before:"
+          "text": "and began to proclaim: <na>(a)</na> When you shall see the ark of covenant of our Lord your God, and <na>(b)</na> the Priests of the Levitical stock carrying it, rise you also, & follow them going before:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "In place of the cloud and pillar of fire, the ark is now carried for their guide & direction."
+            },
+            {
+              "label": "b",
+              "text": "It pertained to the Levites' office to carry the ark, Num. 4. but in this special service & miraculous passage the Priests did carry it: so the greater may do the office of the less, not contrarywise."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -205,7 +231,7 @@
         },
         {
           "verse": 5,
-          "text": "And Josue said to the people: Be sanctified, for to morrow our Lord will do among you marvelous things."
+          "text": "And Josue said to the people: Be sanctified, for tomorrow our Lord will do among you marvelous things."
         },
         {
           "verse": 6,
@@ -213,11 +239,18 @@
         },
         {
           "verse": 7,
-          "text": "And our Lord said to Josue: This day will I begin to exalt thee before all Israel: that they may know as I was with Moyses, so am I with thee also."
+          "text": "And our Lord said to Josue: This day will I begin to exalt thee before all Israel: <na>(c)</na> that they may know as I was with Moyses, so am I with thee also.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "God shewed by this miracle, that Josue had special commission from him, & that under his government the people should prosper."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "And do thou command the Priests, that carry the ark of the testament, and say to them: When you shall be entered into part of the water of Jordan, stand in it."
+          "text": "And do thou command the Priests, that carry the ark of the testament, and say to them: When you shall be entered into part of the water of Jordan, stand in it.",
+          "has_annotation": true
         },
         {
           "verse": 9,
@@ -225,7 +258,7 @@
         },
         {
           "verse": 10,
-          "text": "And again he said: In this you shall know that our Lord the living God is in the midst of you, and shall destroy in your sight the Chananite and Hethite, the Hevite and Pherezite, the Gergesite also and the Jebusite, and the Amorrhite."
+          "text": "And again he said: In this you shall know that our Lord the living God is in the midst of you, and shall destroy in your sight the Chananite and Hetheite, the Heveite and Pherezite, the Gergesite also and the Jebusite, and the Amorrhite."
         },
         {
           "verse": 11,
@@ -255,19 +288,23 @@
           "verse": 17,
           "text": "And the people went against Jericho: and the Priests that carried the ark of the covenant of our Lord, stood girded upon the dry ground in the midst of Jordan, and all the people passed over through the dry channel."
         }
-      ]
+      ],
+      "summary": "After three days abode by the banks of Jordan, 3. the Priests with the Ark of God entering first into the river, 15. the upper part miraculously standeth and swelleth, the lower running away, they go into the mid channel, and there stay, whiles all the people pass over dry foot."
     },
     {
       "chapter": 4,
-      "summary": "In memory of their miraculous passage, twelve chief men, of the twelve tribes, take so many great stones from the midst of Jordan, ℣.9 and put other twelve, where the Priests stood with the ark. ℣.18 The waters return to their former course. And the twelve stones are erected for a monument.",
       "verses": [
         {
           "verse": 1,
-          "text": "Who being passed over, our Lord said to Josue: tribe:"
+          "text": "Who being passed over, our Lord said to Josue:"
         },
         {
-          "verse": 32,
-          "text": "& command them that they take Choose twelve men, one in every up out of the midst of the channel of Jordan, where the feet of the Priests stood, twelve most hard stones, which you shall put in the place of the camp, where you shall pitch tents this night."
+          "verse": 2,
+          "text": "Choose twelve men, one in every tribe:"
+        },
+        {
+          "verse": 3,
+          "text": "& command them that they take up out of the midst of the channel of Jordan, where the feet of the Priests stood, twelve most hard stones, which you shall put in the place of the camp, where you shall pitch tents this night."
         },
         {
           "verse": 4,
@@ -279,7 +316,13 @@
         },
         {
           "verse": 6,
-          "text": "that it may be a sign among you: and when your children shall ask you to morrow, saying: What mean these stones?"
+          "text": "that it may be <na>(a)</na> a sign among you: and when your children shall ask you tomorrow, saying: What mean these stones?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Is not the form of a cross as convenient a sign, to put Christians in mind, how our Saviour redeemed us, as these stones were to the Jews, how God brought their fathers over Jordan?"
+            }
+          ]
         },
         {
           "verse": 7,
@@ -339,7 +382,7 @@
         },
         {
           "verse": 21,
-          "text": "and said to the children of Israel: When your children shall ask their fathers to morrow, and shall say to them: What mean these stones?"
+          "text": "and said to the children of Israel: When your children shall ask their fathers tomorrow, and shall say to them: What mean these stones?"
         },
         {
           "verse": 22,
@@ -357,19 +400,29 @@
           "verse": 25,
           "text": "that all the people of the earth may learn the most strong hand of our Lord, that you also may fear our Lord your God."
         }
-      ]
+      ],
+      "summary": "In memory of their miraculous passage, twelve chief men, of the twelve tribes, take so many great stones from the midst of Jordan, 9. and put other twelve, where the Priests stood with the ark. 18. The waters return to their former course. And the twelve stones are erected for a monument."
     },
     {
       "chapter": 5,
-      "summary": "The kings of Chanaan are sore affrighted with the news of Israel's passage over Jordan. ℣.2 Circumcision is again commanded, and observed, which had been omitted in the desert forty years. ℣.10 They make their Pasch. ℣.12 Manna ceaseth. ℣.13 And an Angel appeareth to Josue.",
       "verses": [
         {
           "verse": 1,
-          "text": "Therefore after that all the kings of the Ammorrhites, which dwelt beyond Jordan at the west side, and all the kings of Chanaan, which possessed the places nigh to the great sea, had heard that our Lord had dried the streams of Jordan before the children of Israel, till they passed over, their heart failed, and there remained no spirit in them, fearing the entering of the children of Israel."
+          "text": "Therefore after that all the kings of the Ammorrheites, which dwelt beyond Jordan at the west side, and all the kings of Chanaan, which possessed the places nigh to the great sea, had heard that our Lord had dried the streams of Jordan before the children of Israel, till they passed over, their heart failed, and there remained no spirit in them, fearing the entering of the children of Israel."
         },
         {
           "verse": 2,
-          "text": "At that time our Lord said to Josue: Make thee knives of stone, and circumcise the second time the children of Israel."
+          "text": "At that time our Lord said <na>(a)</na> to Josue: Make thee knives of stone, and circumcise <na>(b)</na> the second time the children of Israel.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "See annotations c. 3. v. 8."
+            },
+            {
+              "label": "b",
+              "text": "Circumcision had been omitted forty years, whiles they were in the desert, always uncertain when to march, & so it is now commanded the second time."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -377,7 +430,7 @@
         },
         {
           "verse": 4,
-          "text": "And this is the cause of the second circumcision: All the people, that came out of Ægypt of the malekind, all the fighting men died in the desert by the long circuits of the way,"
+          "text": "And this is the cause of the second circumcision: All the people, that came out of Aegypt of the malekind, all the fighting men died in the desert by the long circuits of the way,"
         },
         {
           "verse": 5,
@@ -397,7 +450,7 @@
         },
         {
           "verse": 9,
-          "text": "And our Lord said to Josue: This day have I taken away the reproach of Ægypt from you. And the name of that place was called Galgal, until this present day."
+          "text": "And our Lord said to Josue: This day have I taken away the reproach of Aegypt from you. And the name of that place was called Galgal, until this present day."
         },
         {
           "verse": 10,
@@ -405,7 +458,12 @@
         },
         {
           "verse": 11,
-          "text": "and they did eat of the corn of the Land the next day, azyme loaves and polent of the same year."
+          "text": "and they did eat of the corn of the Land the next day, azyme loaves and <cr>[1]</cr> polent of the same year.",
+          "cross_refs": [
+            {
+              "text": "* Frumenty."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -417,21 +475,29 @@
         },
         {
           "verse": 14,
-          "text": "Who answered: No: but I am a prince of the host of our Lord, and now I come."
+          "text": "Who answered: No: but I am a <na>(c)</na> prince of the host of our Lord, and now I come.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Not God, but of God's host."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "Josue fell flat on the ground. And adoring he said: What speaketh my Lord to his servant?"
+          "text": "Josue fell flat on the ground. And adoring he said: What speaketh my Lord to his servant?",
+          "has_annotation": true
         },
         {
           "verse": 16,
-          "text": "Loose, saith he, thy shoe from thy feet: for the place wherein thou dost stand, is holy, And Josue did as it was commanded him."
+          "text": "Loose, saith he, thy shoe from thy feet: for the place wherein thou dost stand, is holy, And Josue did as it was commanded him.",
+          "has_annotation": true
         }
-      ]
+      ],
+      "summary": "The kings of Chanaan are sore affrighted with the news of Israel's passage over Jordan. 2. Circumcision is again commanded, and observed, which had been omitted in the desert forty years. 10. They make their Pasch. 12. Manna ceaseth. 13. And an Angel appeareth to Josue."
     },
     {
       "chapter": 6,
-      "summary": "Some Priests carrying the ark, others sounding Jubilee trumpets, armed men going before, and the rest of the people following, go every day once, six days together, and the seventh day seven times, round about Jericho. ℣.16 At last all making a great shout, the walls fall down, and they entering in kill and destroy all (℣.22 saving Rahab and her kindred.) The gold, silver, brass, and iron are brought into the treasury. ℣.26 And he is cursed that shall build the city again.",
       "verses": [
         {
           "verse": 1,
@@ -443,7 +509,13 @@
         },
         {
           "verse": 3,
-          "text": "Go round about the city all you that be men of war once a day: so shall you do six days."
+          "text": "<na>(a)</na> Go round about the city all you that be men of war once a day: so shall you do six days.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God appointed this long and solemn procession, to the end it might appear that the walls of Jericho fell not by chance, not by force of man's industry, but by the mighty hand of God."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -495,7 +567,7 @@
         },
         {
           "verse": 16,
-          "text": "And when in the seventh going about, the priests sounded with the trumpets, Josue said to all Israel: Make a shout, for our Lord hath delivered to you the city:"
+          "text": "And when in the seventh going about^ the priests sounded with the trumpets, Josue said to all Israel: Make a shout, for our Lord hath delivered to you the city:"
         },
         {
           "verse": 17,
@@ -503,7 +575,13 @@
         },
         {
           "verse": 18,
-          "text": "But you, beware you touch not ought of those things, that are commanded, and be guilty of prevarication, and all the camp of Israel be under sin, and be troubled."
+          "text": "But you, beware you touch not ought of those things, that are commanded, and be guilty of prevarication, and <na>(b)</na> all the camp of Israel be under sin, and be troubled.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Many are held guilty of sin, and are justly punished for the fact of one or few, either because they consented or concealed, or neglected to punish the offenders: or else they suffer temporal affliction for their warning to abhor sin, & for increase of their merit. S. Aug. q. 8. & 9. in Josue."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -535,17 +613,29 @@
         },
         {
           "verse": 26,
-          "text": "Cursed be the man before our Lord, that shall raise up and build the city of Jericho. In his first born lay he the foundations thereof, and in the last of his children set he up the gates thereof."
+          "text": "<na>(c)</na> Cursed be the man before our Lord, that shall raise up and build the city of Jericho. In his first born lay he the foundations thereof, and in the last of his children set he up the gates thereof.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Hiel fell into this curse for repairing Jericho. 3. Reg. 16. v. 34."
+            }
+          ]
         },
         {
           "verse": 27,
           "text": "Our Lord therefore was with Josue, and his name was bruited in all the earth."
         }
+      ],
+      "summary": "Some Priests carrying the ark, others sounding Jubilee trumpets, armed men going before, and the rest of the people following, go every day once, six days together, and the seventh day seven times, round about Jericho. 16. At last all making a great shout, the walls fall down, and they entering in kill and destroy all (22. saving Rahab and her kindred.) The gold, silver, brass, and iron are brought into the treasury. 26. And he is cursed that shall build the city again. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The second part. Of conquering the Land of promise."
+        }
       ]
     },
     {
       "chapter": 7,
-      "summary": "For the sin of Achan, reserving secretly to himself certain money, and other precious things, the Israelites are beaten in battle. ℣.13 But the offender being found out, and stoned to death, God's wrath is turned from them.",
       "verses": [
         {
           "verse": 1,
@@ -565,7 +655,13 @@
         },
         {
           "verse": 5,
-          "text": "were strucken of the men of the city of Hai, and there fell of them six and thirty men: and the adversaries pursued them from the gate as far as Sabarim, and they struck them flying away by the descent: and the heart of the people was much afraid, and melted like unto water."
+          "text": "were strucken of the men of the city of Hai, and there fell of them <na>(a)</na> six and thirty men: and the adversaries pursued them from the gate as far as Sabarim, and they struck them flying away by the descent: and the heart of the people was much afraid, and melted like unto water.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "So God tempered his punishment that but few were slain, & afterwards gave the town to the Israelites without loss of any of their men."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -585,7 +681,13 @@
         },
         {
           "verse": 10,
-          "text": "And our Lord said to Josue: Arise, why liest thou flat on the ground?"
+          "text": "And our Lord said to Josue: Arise^ <na>(b)</na> why liest thou flat on the ground?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Prayer will not avail till justice be first done."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -597,7 +699,7 @@
         },
         {
           "verse": 13,
-          "text": "Arise, sanctify the people, and say to them: Be sanctified against to morrow, for thus saith our Lord God of Israel: There is anathema in the midst of thee, o Israel: thou canst not stand before thine enemies, till he be destroyed out of thee that is contaminated with this wicked fact."
+          "text": "Arise, sanctify the people, and say to them: Be sanctified against tomorrow, for thus saith our Lord God of Israel: There is anathema in the midst of thee, o Israel: thou canst not stand before thine enemies, till he be destroyed out of thee that is contaminated with this wicked fact."
         },
         {
           "verse": 14,
@@ -651,11 +753,11 @@
           "verse": 26,
           "text": "And they gathered together upon him a great heap of stones, which remaineth until this present day. And the fury of our Lord was averted from them. And the name of that place was called, the valley of Achor, until this day."
         }
-      ]
+      ],
+      "summary": "For the sin of Achan, reserving secretly to himself certain money, and other precious things, the Israelites are beaten in battle. 13. But the offender being found out, and stoned to death, God's wrath is turned from them."
     },
     {
       "chapter": 8,
-      "summary": "By stratagem of an ambushment the city of Hai is taken and burned, and all the inhabitants slain. ℣.20 The king hanged. ℣.30 An altar built, Sacrifice offered, ℣.32 the law written in stones, the people blessed, and the blessings and cursings read before them all.",
       "verses": [
         {
           "verse": 1,
@@ -663,7 +765,13 @@
         },
         {
           "verse": 2,
-          "text": "And thou shalt do to the city of Hai, and to the king thereof, as thou hast done to Jericho, and to the king thereof: but the prey and all the cattle you shall spoil for your selves: lay ambushments to the city behind it."
+          "text": "And thou shalt do to the city of Hai, and to the king thereof, as thou hast done to Jericho, and to the king thereof: but the prey and all the cattle you shall spoil for yourselves: <na>(a)</na> lay ambushments to the city behind it.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Deceits & stratagems are lawful in just war; but not falsehood, nor breach of promise. S. Aug. q. 10. in Iosue."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -703,7 +811,13 @@
         },
         {
           "verse": 12,
-          "text": "And five thousand men had he chosen, and set in the ambushments between Bethel and Hai, on the West side of the same city:"
+          "text": "And <na>(b)</na> five thousand men had he chosen, and set in the ambushments between Bethel and Hai, on the West side of the same city:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "These five thousand were of the thirty thousand, which were first sent. v. 3. The other 25000 joined with Iosue's troop, & entered into the city."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -719,15 +833,27 @@
         },
         {
           "verse": 16,
-          "text": "But they cried aloud together, & encouraging one an other, pursued them. And when they were gone from the city,"
+          "text": "But they cried aloud together, & encouraging one another, pursued them. And when they were gone from the city,"
         },
         {
           "verse": 17,
-          "text": "and not one remained in the city of Hai and Bethel that pursued not Israel (even as they had rushed out leaving the towns open)"
+          "text": "and <na>(c)</na> not one remained in the city of Hai and Bethel that pursued not Israel (even as they had rushed out leaving the towns open,)",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Not one fit to bear arms was left."
+            }
+          ]
         },
         {
           "verse": 18,
-          "text": "our Lord said to Josue: Lift up the shield, that is in thy hand, against the city of Hai, for I will deliver it to thee."
+          "text": "our Lord said to Josue: <na>(d)</na> Lift up the shield, that is in thy hand, against the city of Hai, for I will deliver it to thee.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "He lifted his shield upon a long pike or lance, that it might be seen afar off."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -763,7 +889,7 @@
         },
         {
           "verse": 27,
-          "text": "And the cattle and the prey of the city, the children of Israel divided among them, as our Lord had commanded Josue."
+          "text": "And the cattle and the prey of the city the children of Israel divided among them, as our Lord had commanded Josue."
         },
         {
           "verse": 28,
@@ -787,7 +913,18 @@
         },
         {
           "verse": 33,
-          "text": "And all the people, and the ancients, and the Princes and judges stood on both sides of the ark, in the sight of the Priests that carried the ark of the covenant of our Lord, as well the stranger as also the man of the same country. The half part of them beside mount Garizim, and half beside mount Hebal, as Moyses the servant of our Lord had commanded. And first indeed he blessed the people of Israel."
+          "text": "And all the people, and the ancients, and the Princes and judges stood on both sides of the ark, in the sight of the Priests that carried the ark of the covenant of our Lord, as well the stranger as also the man of the same country. The half part of them beside mount Garizim <cr>[1]</cr> , and half beside mount Hebal, as Moyses the servant of our Lord had commanded. And first indeed he <na>(e)</na> blessed the people of Israel.",
+          "cross_refs": [
+            {
+              "text": "Deut. 27."
+            }
+          ],
+          "notes": [
+            {
+              "label": "e",
+              "text": "All superiors may bless their subjects, Princes their people, & parents their children."
+            }
+          ]
         },
         {
           "verse": 34,
@@ -797,15 +934,15 @@
           "verse": 35,
           "text": "Nothing of those things, which Moyses had commanded, did he leave untouched, but he repeated all things before all the multitude of Israel, the women and children and strangers, that dwelt among them."
         }
-      ]
+      ],
+      "summary": "By stratagem of an ambushment the city of Hai is taken and burned, and all the inhabitants slain. 20. The king hanged. 30. An altar built, Sacrifice offered, 32. the law written in stones, the people blessed, and the blessings and cursings read before them all."
     },
     {
       "chapter": 9,
-      "summary": "Other nations fearing Israel join their forces to fight against them, ℣.3 but the Gabaonites send Ambassadors, feigning craftily to come far off, ℣.14 with whom Josue and the ancients of Israel make league binding it by oath. ℣.16 Within three days they are detected to be near inhabitants. Whereupon the people murmur against their Princes. Who yet for their oath, let the Gabaonites live, ℣.20 only making them and their progeny perpetual servants, to cut wood, and carry water.",
       "verses": [
         {
           "verse": 1,
-          "text": "Which things being heard, all the kings beyond Jordan, that dwelt in the mountains and champion countries, in the places by the sea side and the shore of the great sea, they also that dwelt beside Libanus, the Hethite and Amorrhite, the Chananite, the Pherezite, and the Hevite, and the Jebusite,"
+          "text": "Which things being heard, all the kings beyond Jordan, that dwelt in the mountains and champion countries, in the places by the sea side and the shore of the great sea, they also that dwelt beside Libanus, the Hetheite and Amorrhite, the Chananite, the Pherezite, and the Heveite, and the Jebusite,"
         },
         {
           "verse": 2,
@@ -829,7 +966,7 @@
         },
         {
           "verse": 7,
-          "text": "Lest perhaps you dwell in the Land which is due to us by lot, and we can not enter a league with you."
+          "text": "Lest perhaps you dwell in the Land which is due to us by lot, and we cannot enter a league with you."
         },
         {
           "verse": 8,
@@ -837,11 +974,11 @@
         },
         {
           "verse": 9,
-          "text": "They answered: From a very far country are thy servants come, in the name of the Lord thy God. For we have heard the same of his might, all things that he did in Ægypt,"
+          "text": "They answered: From a very far country are thy servants come, in the name of the Lord thy God. For we have heard the fame of his might, all things that he did in Aegypt,"
         },
         {
           "verse": 10,
-          "text": "and to the two kings of the Amorrhites that were beyond Jordan, Sehon the king of Hesebon, and Og the king of Basan, that were in Astaroth,"
+          "text": "and to the two kings of the Amorrheites that were beyond Jordan, Sehon the king of Hesebon, and Og the king of Basan, that were in Astaroth,"
         },
         {
           "verse": 11,
@@ -857,7 +994,13 @@
         },
         {
           "verse": 14,
-          "text": "They took therefore of their victuals, & asked not the mouth of our Lord."
+          "text": "They took therefore of their victuals, & <na>(a)</na> asked not the mouth of our Lord.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "In such a case they ought to have consulted God, to wit, the high-Priest putting on the Ephod & Rationale, should have prayed at the door of the tabernacle, where our Lord appointed to speak unto him. Exo. 29. v. 42. It was also ordained. Num. 27. v. 21. that Eleazar should consult our Lord, when any things was to be done by Iosue, which omitting to do they were deceived by these Gabaonites."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -897,7 +1040,7 @@
         },
         {
           "verse": 24,
-          "text": "Who answered: It was told us thy servants, that the Lord thy God had promised Moyses his servants, that he would deliver you all the Land and would destroy all the inhabitants thereof. Therefore we feared exceedingly and provided for our lives, compelled by your terror, and we took this counsel."
+          "text": "Who answered: It was told us thy servants, that the Lord thy God had promised Moyses his servant, that he would deliver you all the Land and would destroy all the inhabitants thereof. Therefore we feared exceedingly and provided for our lives, compelled by your terror, and we took this counsel."
         },
         {
           "verse": 25,
@@ -909,13 +1052,19 @@
         },
         {
           "verse": 27,
-          "text": "And he decreed in that day, that they should be in the ministry of all the people, and of the altar of our Lord, hewing wood, and carrying water, until this present time, in the place which our Lord had chosen."
+          "text": "And he decreed in that day, that <na>(b)</na> they should be in the ministry of all the people, and of the altar of our Lord, hewing wood, and carrying water, until this present time, in the place which our Lord had chosen.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In these Gabaonites of Chanaan's race was fulfilled Noe's prophecy Gen. 9. that Chanaan should be a servant to his brethren ."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Other nations fearing Israel join their forces to fight against them, 3. but the Gabaonites send Ambassadors, feigning craftily to come far off, 14. with whom Josue and the ancients of Israel make league binding it by oath. 16. Within three days they are detected to be near inhabitants. Whereupon the people murmur against their Princes. Who yet for their oath, let the Gabaonites live, 20. only making them and their progeny perpetual servants, to cut wood, and carry water."
     },
     {
       "chapter": 10,
-      "summary": "Five kings of the Amorrheites besieging Gabaon, because it is confederate with Israel, ℣.6 Josue with his army defeateth theirs, killing and pursuing them. ℣.11 Many also are slain with hail stones. ℣.12 At the prayer of Josue the sun and moon stand still the space of one day. ℣.22 The five kings are hanged on gibbets. ℣.29 He taketh also and subdueth diverse cities ℣.40 and countries.",
       "verses": [
         {
           "verse": 1,
@@ -935,11 +1084,11 @@
         },
         {
           "verse": 5,
-          "text": "Therefore the five kings of the Amorrhites being assembled went up: the king of Jerusalem, the king of Hebron, the king of Jerimoth, the king of Lachis, the king of Eglon, together with their hosts, & camped about Gabaon, assaulting it."
+          "text": "Therefore the five kings of the Amorrheites being assembled went up: the king of Jerusalem, the king of Hebron, the king of Jerimoth, the king of Lachis, the king of Eglon, together with their hosts, & camped about Gabaon, assaulting it."
         },
         {
           "verse": 6,
-          "text": "But the inhabitants of the city Gabaon which was besieged, sent to Josue, who then abode in the camp at Galgal, and said to him: withdraw not thy hands from the help of thy servants: come up quickly & deliver us, and bring aid: for there are assembled against us all the kings of the Amorrhites, which dwell in the mountains,"
+          "text": "But the inhabitants of the city Gabaon which was besieged, sent to Josue, who then abode in the camp at Galgal, and said to him: withdraw not thy hands from the help of thy servants: come up quickly & deliver us, and bring aid: for there are assembled against us all the kings of the Amorrheites, which dwell in the mountains,"
         },
         {
           "verse": 7,
@@ -963,7 +1112,13 @@
         },
         {
           "verse": 12,
-          "text": "Then spake Josue to our Lord in the day, that he delivered the Amorrhite in the sight of Israel, & said before them: Thou sun against Gabaon move not, and thou Moon against the valley of Aialon."
+          "text": "Then spake Josue to our Lord in the day, that he delivered the Amorrhite in the sight of Israel, & said before them: Thou sun against Gabaon move not, and thou <na>(a)</na> Moon against the valley of Aialon.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Josue did think if the moon moved the sun also must necessarily move, so he obtained the stay of both."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -971,7 +1126,17 @@
         },
         {
           "verse": 14,
-          "text": "There was not before nor after so long a day, our Lord obeying the voice of a man, and fighting for Israel."
+          "text": "There was not before nor <na>(b)</na> after so long a day, our Lord <na>(c)</na> obeying the voice of a man, and fighting for Israel.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Till after the time this book was written."
+            },
+            {
+              "label": "c",
+              "text": "God condescending to work so great a miracle at the instance of his servant."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -995,7 +1160,13 @@
         },
         {
           "verse": 20,
-          "text": "The adversaries therefore being slain with a great slaughter, and almost consumed to utter destruction, they that could escape from Israel entered into fenced cities."
+          "text": "The adversaries therefore being slain with a great slaughter, and almost consumed to utter destruction, they that could escape from Israel <na>(d)</na> entered into fenced cities.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "God so disposed, that they should not conquer all in one year: lest the land had been brought into a wilderness, and beasts increased against them Exod. 23. v. 29. Morally it signifieth, that the children of God must be exercised in tribulations & mortification lest vices grow in them. Procop. in Exod."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1047,7 +1218,7 @@
         },
         {
           "verse": 33,
-          "text": "At that time went up Horam the king of Gazar, to aid Lachis: whom Josue struck with all his people to utter destruction."
+          "text": "At that time went up Horam the king of Gazer, to aid Lachis: whom Josue struck with all his people to utter destruction."
         },
         {
           "verse": 34,
@@ -1083,17 +1254,17 @@
         },
         {
           "verse": 42,
-          "text": "and all their kings and countries he took and wasted at one assault: for our Lord the God of Israel fought for him."
+          "text": "and all their kings, and countries he took and wasted at one assault: for our Lord the God of Israel fought for him."
         },
         {
           "verse": 43,
           "text": "And he returned with all Israel to the place of the camp in Galgal."
         }
-      ]
+      ],
+      "summary": "Five kings of the Amorrheites besieging Gabaon, because it is confederate with Israel, 6. Josue with his army defeateth theirs, killing and pursuing them. 11. Many also are slain with hail stones. 12. At the prayer of Josue the sun and moon stand still the space of one day. 22. The five kings are hanged on gibbets. 29. He taketh also and subdueth diverse cities 40. and countries."
     },
     {
       "chapter": 11,
-      "summary": "Jabin a more principal king summoneth other kings to join with him against Israel. ℣.6 Josue animated with God's promise of victory, ℣.7 overthroweth them all, ℣.16 subdueth their country: ℣.12 killeth also many of the giant's stock.",
       "verses": [
         {
           "verse": 1,
@@ -1105,7 +1276,7 @@
         },
         {
           "verse": 3,
-          "text": "the Chananite also on the East and West, and the Amorrhite and Hethite and Pherezite and Jebusite in the mountains: the Hevite also which dwelt at the foot of Hermon in the Land of Maspha."
+          "text": "the Chananite also on the East and West, and the Amorrhite and Hetheite and Pherezite and Jebusite in the mountains: the Heveite also which dwelt at the foot of Hermon in the Land of Maspha."
         },
         {
           "verse": 4,
@@ -1117,7 +1288,7 @@
         },
         {
           "verse": 6,
-          "text": "And our Lord said to Josue: Fear them not: for to morrow this self-same hour will I deliver all these to be wounded in the sight of Israel: their horses thou shalt houghsinew, and their chariots thou shalt burn with fire."
+          "text": "And our Lord said to Josue: Fear them not: for tomorrow this self-same hour will I deliver all these to be wounded in the sight of Israel: their horses thou shalt houghsinew, and their chariots thou shalt burn with fire."
         },
         {
           "verse": 7,
@@ -1145,11 +1316,11 @@
         },
         {
           "verse": 13,
-          "text": "Except the cities that were situated on hills and higher ground, the rest Israel burnt: one only, Asor, very well fenced he consumed with fire."
+          "text": "Except the cities that were situated on hills and higher ground, the rest Israel burnt: one only^ Asor^ very well fenced he consumed with fire."
         },
         {
           "verse": 14,
-          "text": "And all the prey of these cities and the cattle, the children of Israel divided among themselves, all the men being slain."
+          "text": "And all the prey of these cities and the cattle^ the children of Israel divided among themselves, all the men being slain."
         },
         {
           "verse": 15,
@@ -1165,15 +1336,27 @@
         },
         {
           "verse": 18,
-          "text": "A great time did Josue fight against these kings."
+          "text": "<na>(a)</na> A great time did Josue fight against these kings.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "These wars continued near seven years, as appeareth chap. 14. v. 10."
+            }
+          ]
         },
         {
           "verse": 19,
-          "text": "There was not a city that did deliver it-self to the children of Israel, except the Hevite, which dwelt in Gabaon: for he took all by fight."
+          "text": "There was not a city that did deliver it-self to the children of Israel, except the Heveite, which dwelt in Gabaon: for he took all by fight."
         },
         {
           "verse": 20,
-          "text": "For it was the sentence of our Lord, that their hearts should be indurate and they should fight against Israel, and fall, and should not deserve any clemency, and should perish, as our Lord had commanded Moyses."
+          "text": "For it was <na>(b)</na> the sentence of our Lord, that their hearts should be indurate and they should fight against Israel, and fall, and should not deserve any clemency, and should perish, as our Lord had commanded Moyses.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "For their enormous sins God left them in their own reprobate sense, not imposing necessity of sinning, but permitting them to indurate their own hearts. See Annot. Exod. 7."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1185,13 +1368,19 @@
         },
         {
           "verse": 23,
-          "text": "Josue therefore took all the Land, as our Lord spake to Moyses, and delivered it in possession to the children of Israel, according to their parts and tribes: and the Land rested from battles."
+          "text": "Josue therefore took all the Land, as our Lord spake to Moyses, and delivered it in possession to the children of Israel, according to their parts and tribes: and <na>(c)</na> the Land rested from battles.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Hence-forth they had not general wars, but diverse tribes had particular, as appeareth cap. 15. &c."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Jabin a more principal king summoneth other kings to join with him against Israel. 6. Josue animated with God's promise of victory, 7. overthroweth them all, 16. subdueth their country: 12. killeth also many of the giant's stock."
     },
     {
       "chapter": 12,
-      "summary": "Besides Sehon and Og, kings of Hesebon and Basan slain by Moyses, ℣.7 are reckoned thirty one kings slain by Josue.",
       "verses": [
         {
           "verse": 1,
@@ -1199,7 +1388,7 @@
         },
         {
           "verse": 2,
-          "text": "Sehon the king of the Amorrhites, which dwelt in Hesebon, had dominion from Aroer, which is situated upon the bank of the torrent Arnon, & of the middle part in the valley, and of half Galaad, as far as the torrent Jaboc, which is the border of the children of Ammon:"
+          "text": "Sehon the king of the Amorrheites, which dwelt in Hesebon, had dominion from Aroer, which is situated upon the bank of the torrent Arnon, & of the middle part in the valley, and of half Galaad, as far as the torrent Iaboc, which is the border of the children of Ammon:"
         },
         {
           "verse": 3,
@@ -1207,7 +1396,12 @@
         },
         {
           "verse": 4,
-          "text": "The border of Og the king of Basan, of the remnant of the Raphaims who dwelt in Astaroth, and in Edrai, and had dominion in mount Hermon, and in Salecha, and in all Basan, unto the borders"
+          "text": "<cr>[1]</cr> The border of Og the king of Basan, of the remnant of the Raphaims who dwelt in Astaroth, and in Edrai, and had dominion in mount Hermon, and in Salecha, and in all Basan, unto the borders",
+          "cross_refs": [
+            {
+              "text": "Num. 21. Deut. 3."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1223,7 +1417,7 @@
         },
         {
           "verse": 8,
-          "text": "as well in the mountains as in the plain and champion countries. In Asedoth, and in the wilderness, and in the South was the Hethite & the Amorrhite, the Chananite, and the Pherezite, the Hevite and the Jebusite."
+          "text": "as well in the mountains as in the plain and champion countries. In Asedoth, and in the wilderness, and in the South was the Hetheite & the Amorrhite, the Chananite, and the Pherezite, the Heveite and the Jebusite."
         },
         {
           "verse": 9,
@@ -1279,7 +1473,7 @@
         },
         {
           "verse": 22,
-          "text": "the king of Cades one, the king of Jachanan one,"
+          "text": "the king of Cades one, the king of Iachanan one,"
         },
         {
           "verse": 23,
@@ -1287,17 +1481,28 @@
         },
         {
           "verse": 24,
-          "text": "the king of Thersa one: all the kings thirty one."
+          "text": "the king of Thersa one: all the kings <na>(a)</na> thirty one.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Moyses slew two Kings, and Iosue thirty one."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Besides Sehon and Og, kings of Hesebon and Basan slain by Moyses, 7. are reckoned thirty one kings slain by Josue."
     },
     {
       "chapter": 13,
-      "summary": "God commandeth Josue to divide the land (describing the limits thereof) amongst nine tribes and a half, ℣.8 with a recapitulation of the parts already given, on the other side Jordan to the other two tribes and a half. The tribe of Levi (℣.14 & ℣.33) hath their provision in other manner.",
       "verses": [
         {
           "verse": 1,
-          "text": "Josue was old, and striken in age, and our Lord said to him: Thou art old, and of a great age, and there is a very large country left, which is not yet divided by lot:"
+          "text": "Josue <cr>[1]</cr> was old, and striken in age, and our Lord said to him: Thou art old, and of a great age, and there is a very large country left, which is not yet divided by lot:",
+          "cross_refs": [
+            {
+              "text": "The third part. Partition of the land among nine tribes and a half."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1305,11 +1510,11 @@
         },
         {
           "verse": 3,
-          "text": "From the troubled river that watereth Ægypt, unto the borders of Accaron against the North: the Land of Chanaan, which is divided unto five lords of the Philisthiims, the Gazites, the Azotians, the Ascalonites, the Gethites, and the Accaronites."
+          "text": "From the troubled river, that watereth Aegypt, unto the borders of Accaron against the North: the Land of Chanaan, which is divided unto five lords of the Philisthiims, the Gazeites, the Azotians, the Ascalonites, the Getheites, and the Accaronites."
         },
         {
           "verse": 4,
-          "text": "But on the South side are the Hevites, all the Land of Chanaan, and Maara of the Sidonians as far as Apheca, and the borders of the Amorrhite,"
+          "text": "But on the South side are the Heveites, all the Land of Chanaan, and Maara of the Sidonians as far as Apheca, and the borders of the Amorrhite,"
         },
         {
           "verse": 5,
@@ -1317,7 +1522,13 @@
         },
         {
           "verse": 6,
-          "text": "Of all that dwell in the mountain from Libanus, unto the Waters Maserephoth, and all the Sidonians. I am he that will destroy them from the face of the children of Israel. Let it come therefore into a portion of the inheritance of Israel, as I have commanded thee."
+          "text": "Of all that dwell in the mountain from Libanus, unto the Waters Maserephoth, and all the Sidonians. I am he that will destroy them from the face of the children of Israel. <na>(a)</na> Let it come therefore into a portion of the inheritance of Israel, as I have commanded thee.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "These parts are designed though not yet conquered."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -1329,7 +1540,7 @@
         },
         {
           "verse": 9,
-          "text": "From Aroer, which is situate on the bank of the torrent Arnon, and in the midst of the valley, and all the champion of Medaba, as far as Didon:"
+          "text": "From Aroer, which is situate on the bank of the torrent Arnon, and in the midst of the valley, and all the champion of Medaba, as far as Dibon:"
         },
         {
           "verse": 10,
@@ -1377,7 +1588,7 @@
         },
         {
           "verse": 21,
-          "text": "and all the champion cities, and all the Kingdoms of Sehon the king of the Amorrhite, that reigned in Hesebon, whom Moyses struck with the Princes of Madian: the Hevite, and Recem, and Sur, and Hur, and Rebe, Dukes of Sehon inhabitants of the Land."
+          "text": "and all the champion cities, and all the Kingdoms of Sehon the king of the Amorrhite, that reigned in Hesebon, whom Moyses struck with the Princes of Madian: the Heveite, and Recem, and Sur, and Hur, and Rebe^ Dukes of Sehon inhabitants of the Land."
         },
         {
           "verse": 22,
@@ -1393,7 +1604,13 @@
         },
         {
           "verse": 25,
-          "text": "The border of Jaser, and all the cities of Galaad, and the half part of the Land of the children of Ammon: as far as Aroer, which is against Rabba:"
+          "text": "The border of Jaser, and all the cities of Galaad, and the half part of the Land of <na>(b)</na> the children of Ammon: as far as Aroer, which is against Rabba:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "This part the Amorrheites had taken and possessed; otherwise the Israelites were prohibited to take any thing from the Ammonites. Deut. 2."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -1427,15 +1644,15 @@
           "verse": 33,
           "text": "But to the tribe of Levi he gave no possession: because our Lord the God of Israel himself is their possession, as he spake to them."
         }
-      ]
+      ],
+      "summary": "God commandeth Josue to divide the land (describing the limits thereof) amongst nine tribes and a half, 8. with a recapitulation of the parts already given, on the other side Jordan to the other two tribes and a half. The tribe of Levi (v. 14. & 33.) hath their provision in other manner."
     },
     {
       "chapter": 14,
-      "summary": "Caleb of the tribe of Juda (seeing some knew their lots already, and that the whole land was now to be divided) ℣.6 demandeth, according to God's promise made by Moyses (for his true and good report of the same land, when he with others viewed it) that Hebron be given him and his seed to inherit, ℣.13 which Josue confirmeth unto him.",
       "verses": [
         {
           "verse": 1,
-          "text": "This is it, which the children of Israel possessed in the Land of Chanan, which Eleazar the Priest, and Josue the son of Nun, and the Princes of the families by the tribes of Israel gave to them:"
+          "text": "This is it, which the children of Israel possessed in the Land of Chanaan, which Eleazar the Priest, and Josue the son of Nun, and the Princes of the families by the tribes of Israel gave to them:"
         },
         {
           "verse": 2,
@@ -1447,7 +1664,13 @@
         },
         {
           "verse": 4,
-          "text": "but into their place succeeded the children of Joseph divided into two tribes, of Manasses and Ephraim: neither did the Levites receive other portion in the Land, but cities to inhabit, and their suburbs to feed their beasts and cattle."
+          "text": "but <na>(c)</na> into their place succeeded the children of Joseph divided into two tribes, of Manasses and Ephraim: neither did the Levites receive other portion in the Land, but cities to inhabit, and their suburbs to feed their beasts and cattle.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The Levites having their portions in other manner, yet there were twelve tribes to receive portions, by reason that Jacob adopted Joseph's two sons. Gen. 48."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1471,15 +1694,27 @@
         },
         {
           "verse": 10,
-          "text": "Our Lord therefore hath granted me life, as he promised until this present day. It is forty and five years, since our Lord spake this word to Moyses, when Israel walked through the wilderness: this day am I eighty and five years old,"
+          "text": "Our Lord therefore hath granted me life, as he promised until this present day. It is <na>(d)</na> forty and five years, since our Lord spake this word to Moyses, when Israel walked through the wilderness: this day am I eighty and five years old,",
+          "notes": [
+            {
+              "label": "d",
+              "text": "After the viewing of the land Num. 13. the Israelites remained in the desert 38. years: so they were near seven years in wars."
+            }
+          ]
         },
         {
           "verse": 11,
-          "text": "so lufty, as I was at that time when I was sent to view: the strength of that time continueth in me until this day, as well to fight as to go."
+          "text": "so lusty, as I was at that time when I was sent to view: the strength of that time continueth in me until this day, as well to fight as to go."
         },
         {
           "verse": 12,
-          "text": "Give me therefore this mountain, which our Lord promised, thy self also hearing it, wherein are the Enacims, and great cities and fenced: if perhaps our Lord be with me, and I shall be able to destroy them, as he promised me."
+          "text": "Give me therefore this mountain, which our Lord promised, thyself also hearing it, wherein are the Enacims, and great cities and fenced: <na>(e)</na> if perhaps our Lord be with me, and I shall be able to destroy them, as he promised me.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "God's promise is ever sure on his part, but because it is conditional, if we serve him sincerely, our will being free, he saith: If perhaps our Lord be with me."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1487,17 +1722,29 @@
         },
         {
           "verse": 14,
-          "text": "And from thence-forth Hebron belonged to Caleb the son of Jephone the Cenezeite, until this present day: because he followed our Lord the God of Israel."
+          "text": "And from thence-forth <na>(f)</na> Hebron belonged to Caleb the son of Jephone the Cenezeite, until this present day: because he followed our Lord the God of Israel.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Only the country of Hebron was given to Caleb, for the city itself and suburbs belonged to the Priests. c. 21. v. 11."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "The name of Hebron before was called Cariath Arbe: Adam the greatest among the Enacims was laid there: and the Land ceased from battles."
+          "text": "The name of Hebron before was called Cariath Arbe: Adam the greatest among the Enacims was laid there: and <na>(g)</na> the Land ceased from battles.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "See before chap. 11. v. 23."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Caleb of the tribe of Juda (seeing some knew their lots already, and that the whole land was now to be divided) 6. demandeth, according to God's promise made by Moyses (for his true and good report of the same land, when he with others viewed it) that Hebron be given him and his seed to inherit, 13. which Josue confirmeth unto him."
     },
     {
       "chapter": 15,
-      "summary": "The borders of the lot of Juda, ℣.13 including Caleb's particular inheritance (℣.16 out of which he giveth Cariath Sepher, and his daughter to Othoniel, for winning it:) ℣.21 with the names of the cities thereof, ℣.63 the Jebuseite yet dwelling with Juda in Hierusalem.",
       "verses": [
         {
           "verse": 1,
@@ -1513,7 +1760,7 @@
         },
         {
           "verse": 4,
-          "text": "and thence passing through into Asemona, & reaching to the Torrent of Ægypt: and the borders thereof shall be the great sea. This shall be the end of the south coast."
+          "text": "and thence passing through into Asemona, & reaching to the Torrent of Aegypt: and the borders thereof shall be the great sea. This shall be the end of the south coast."
         },
         {
           "verse": 5,
@@ -1529,7 +1776,7 @@
         },
         {
           "verse": 8,
-          "text": "And it ascendeth by the Valley of the sun of Ennom on the side of the Jebusite toward the South, this is Jerusalem: and thence rearing it-self to the top of the mountain, which is against Geennom toward the West in the top of the Valley of Raphaim against the North."
+          "text": "And it ascendeth by the Valley of the son of Ennom on the side of the Jebusite toward the South, this is Jerusalem: and thence rearing it-self to the top of the mountain, which is against Geennom toward the West in the top of the Valley of Raphaim against the North."
         },
         {
           "verse": 9,
@@ -1537,11 +1784,11 @@
         },
         {
           "verse": 10,
-          "text": "And it compasseth from Baala against the West, unto mount Seir: and passeth by the side of mount Jarim toward the North into Cheslon: and goeth down into Bethsames, and passeth into Thamna."
+          "text": "And it compasseth from Baala against the West, unto mount Seir: and passeth by the side of mount Iarim toward the North into Cheslon: and goeth down into Bethsames, and passeth into Thamna."
         },
         {
           "verse": 11,
-          "text": "And it reacheth toward the North coast of a part of Accaron at the side: and bendeth to Sechrona, and passeth mount Baala: and cometh into Jebneel, and is shut up with the end of the great sea toward the West."
+          "text": "And it reacheth toward the North coast of a part of Accaron at the side: and bendeth to Sechrona, and passeth mount Baala: and cometh into Iebneel, and is shut up with the end of the great sea toward the West."
         },
         {
           "verse": 12,
@@ -1565,7 +1812,13 @@
         },
         {
           "verse": 17,
-          "text": "And Othoniel the son of Cenez, the younger brother of Caleb took it: & he gave him Axa his daughter to wife."
+          "text": "And Othoniel the son of Cenez, the younger brother of Caleb took it: & he gave him <na>(a)</na> Axa his daughter to wife.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Though it was prohibited that the nephew should marry his aunt, yet the uncle was not expressly forbid to marry his niece by Moyses' law. Levit. 18. And albeit there is the same degree of consanguinity, yet not the same inconvenience, by reason the same person remaineth subject, that was inferior before marriage."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1573,7 +1826,13 @@
         },
         {
           "verse": 19,
-          "text": "But she answered: Give me a blessing: A South and dry Land thou hast given me, join also a watery. Caleb therefore gave her a watery ground above & beneath."
+          "text": "But she answered: Give me a blessing: <na>(b)</na> A South and dry Land thou hast given me, join also a watery. Caleb therefore gave her a watery ground above & beneath.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Because ordinarily the south part of the world is more dry and barren than other parts, a barren place is called a south land, in respect of more fertile ground."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1581,7 +1840,7 @@
         },
         {
           "verse": 21,
-          "text": "And the cities from the uttermost parts of the children of Judas by the borders of Edom on the South were Cabseel and Eder and Jagur,"
+          "text": "And the cities from the uttermost parts of the children of Judas by the borders of Edom on the South were Cabseel and Eder and Iagur,"
         },
         {
           "verse": 22,
@@ -1589,7 +1848,7 @@
         },
         {
           "verse": 23,
-          "text": "and Cades, and Asor, and Jethnan,"
+          "text": "and Cades, and Asor, and Iethnan,"
         },
         {
           "verse": 24,
@@ -1649,7 +1908,7 @@
         },
         {
           "verse": 38,
-          "text": "Delean and Masepha and Jecthel,"
+          "text": "Delean and Masepha and Iecthel,"
         },
         {
           "verse": 39,
@@ -1669,7 +1928,7 @@
         },
         {
           "verse": 43,
-          "text": "Jephtha and Esna and Nesib,"
+          "text": "Iephtha and Esna and Nesib,"
         },
         {
           "verse": 44,
@@ -1685,7 +1944,7 @@
         },
         {
           "verse": 47,
-          "text": "Azotus with the towns & villages thereof. Gaza with the towns & villages thereof, unto the torrent of Ægypt, & the great sea is the border thereof."
+          "text": "Azotus with the towns & villages thereof. Gaza with the towns & villages thereof, unto the torrent of Aegypt, & the great sea is the border thereof."
         },
         {
           "verse": 48,
@@ -1709,7 +1968,7 @@
         },
         {
           "verse": 53,
-          "text": "& Janum & Beth-thaphua & Apheca,"
+          "text": "& Ianum & Beth thaphua & Apheca,"
         },
         {
           "verse": 54,
@@ -1717,11 +1976,11 @@
         },
         {
           "verse": 55,
-          "text": "Maon and Carmel and Ziph and Jota,"
+          "text": "Maon and Carmel and Ziph and Iota,"
         },
         {
           "verse": 56,
-          "text": "Jezrael & Jucadam and Zanoe,"
+          "text": "Jezrael & Iucadam and Zanoe,"
         },
         {
           "verse": 57,
@@ -1741,7 +2000,7 @@
         },
         {
           "verse": 61,
-          "text": "In the desert Beth- araba, Meddin, and Sachacha,"
+          "text": "In the desert Beth-araba, Meddin, and Sachacha,"
         },
         {
           "verse": 62,
@@ -1749,17 +2008,29 @@
         },
         {
           "verse": 63,
-          "text": "But the Jebusite the inhabitant of Jerusalem, the children of Judas could not destroy: and the Jebusite dwelt with the children of Judas in Jerusalem until this present day."
+          "text": "But the Jebusite the inhabitant of Jerusalem^ the children of Judas <na>(c)</na> could not destroy: and the Jebusite dwelt with the children of Judas in Jerusalem until this present day.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The Jebuseites kept a strong castle in Jerusalem till King David took it from them. 2. Reg. 5."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "The borders of the lot of Juda, 13. including Caleb's particular inheritance (16. out of which he giveth Cariath Sepher, and his daughter to Othoniel, for winning it:) 21. with the names of the cities thereof, 63. the Jebuseite yet dwelling with Juda in Hierusalem."
     },
     {
       "chapter": 16,
-      "summary": "The tribe of Ephraim (younger son of Joseph) receive their lot. ℣.10 The Chananeite yet dwelleth with them paying tribute.",
       "verses": [
         {
           "verse": 1,
-          "text": "The lot also of the children of Joseph fell from Jordan against Jericho and the Waters thereof, on the east: the wilderness which goeth up from Jericho to the mountain of Bethel:"
+          "text": "The lot also of <na>(a)</na> the children of Joseph fell from Jordan against Jericho and the Waters thereof, on the east: the wilderness which goeth up from Jericho to the mountain of Bethel:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Ruben for the sin of incest losing the privileges of birthright (Gen. 49.) Priesthood was given to Levi, the Kingdom to Juda, and double portion to Joseph. Paraph. Chald."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1767,7 +2038,7 @@
         },
         {
           "verse": 3,
-          "text": "And descendeth Westward, by the border of Jephleti, unto the borders of Beth horon the lower, and to Gazer: and their countries are ended by the great sea:"
+          "text": "And descendeth Westward, by the border of Iephleti, unto the borders of Beth horon the lower, and to Gazer: and their countries are ended by the great sea:"
         },
         {
           "verse": 4,
@@ -1797,11 +2068,11 @@
           "verse": 10,
           "text": "and the children of Ephraim slew not the Chananite, which dwelt in Gazer: and the Chananite dwelt in the midst of Ephraim until this day tributary."
         }
-      ]
+      ],
+      "summary": "The tribe of Ephraim (younger son of Joseph) receive their lot. 10. The Chananeite yet dwelleth with them paying tribute."
     },
     {
       "chapter": 17,
-      "summary": "The half tribe of Manasses (eldest son of Joseph) receive their lot, ℣.3 including the daughters of Salphaad: ℣.14 with an enlargement of inheritance to the same tribes of Ephraim and Manasses.",
       "verses": [
         {
           "verse": 1,
@@ -1833,7 +2104,13 @@
         },
         {
           "verse": 8,
-          "text": "For in the lot of Manasses was fallen the Land of Taphua, which is beside the borders of Manasses, the childrens of Ephraim."
+          "text": "For in the lot of Manasses was fallen the Land of Taphua, <na>(a)</na> which is beside the borders of Manasses, the childrens of Ephraim.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The land or territory of Taphua falling to the lot of Manasses, yet Taphua (that is the city itself) was the childrens of Ephraim."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1841,7 +2118,7 @@
         },
         {
           "verse": 10,
-          "text": "so that the possession of Ephraim is on the south, and on the North of Manasses, and the sea incloseth both, and they be joined one to an other in the tribe of Aser on the North, and in the tribe of Issachar on the East."
+          "text": "so that the possession of Ephraim is on the south, and on the North of Manasses, and the sea encloseth both, and they be joined one to another in the tribe of Aser on the North, and in the tribe of Issachar on the East."
         },
         {
           "verse": 11,
@@ -1849,7 +2126,13 @@
         },
         {
           "verse": 12,
-          "text": "Neither could the children of Manasses overthrow the cities, but the Chananite began to dwell in his Land."
+          "text": "Neither could the children of Manasses overthrow the cities, but the Chananite began to dwell in <na>(b)</na> his Land.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The Chananeite remained in the Land of Manasses for a time."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1865,7 +2148,7 @@
         },
         {
           "verse": 16,
-          "text": "To whom the children of Joseph answered: We can not go up to the mountains, whereas the Chananites that dwell in the champion country, wherein are situated Bethsan with the towns thereof and Jezrael possessing the midst of the valley, use iron chariots."
+          "text": "To whom the children of Joseph answered: We cannot go up to the mountains, whereas the Chananites that dwell in the champion country, wherein are situated Bethsan with the towns thereof and Jezrael possessing the midst of the valley, use iron chariots."
         },
         {
           "verse": 17,
@@ -1875,11 +2158,11 @@
           "verse": 18,
           "text": "but thou shalt pass to the mountain, and shalt cut and make glades for thee to inhabit: and mayest proceed farther, when thou hast subverted the Chananite, whom thou sayest to have iron chariots, and to be very strong."
         }
-      ]
+      ],
+      "summary": "The half tribe of Manasses (eldest son of Joseph) receive their lot, 3. including the daughters of Salphaad: 14. with an enlargement of inheritance to the same tribes of Ephraim and Manasses."
     },
     {
       "chapter": 18,
-      "summary": "From the camp of Israel in Silo surveyers are sent to divide the rest of the Land into seven parts, for the seven tribes yet without portions. ℣.10 Which being done, Josue casteth lots for them, ℣.11 and the first lot falleth to Benjamin, ℣.12 whose part is described by the limits, ℣.21 with the names of the principal cities.",
       "verses": [
         {
           "verse": 1,
@@ -1895,7 +2178,13 @@
         },
         {
           "verse": 4,
-          "text": "Choose of every tribe three men, that I may send them, and they may go and circuit the Land, and mark it out according to the number of every multitude: and report unto me that which they have marked out."
+          "text": "Choose of every tribe three men, that I may send them, and they may go and circuit the Land, and mark it out according to the number <na>(a)</na> of every multitude: and report unto me that which they have marked out.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Not equal but proportionable parts were assigned, for so it was commanded, Num. 26. v. 54. To the greater number to give a greater portion, and to the fewer a less."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1903,7 +2192,13 @@
         },
         {
           "verse": 6,
-          "text": "The Land in the midst between these, mark out into seven parts: and you shall come hither to me, that before our Lord your God, I may cast the lot for you:"
+          "text": "The Land in the midst between these^ mark out into seven parts: and you shall come hither to me, that <na>(b)</na> before our Lord your God^ I may cast the lot for you:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "After the portions were appointed by men's industry & discretion, God confirmed the same by lot, to take away all occasion of discontentment."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -1987,17 +2282,17 @@
         },
         {
           "verse": 27,
-          "text": "and Recem, Jarephel and Tharela,"
+          "text": "and Recem, Iarephel and Tharela,"
         },
         {
           "verse": 28,
           "text": "and Sela, Eleph, and Jebus, which is Jerusalem, Gabaath and Cariath: fourteen cities, and their towns. This is the possession of the children of Benjamin by their families."
         }
-      ]
+      ],
+      "summary": "From the camp of Israel in Silo surveyers are sent to divide the rest of the Land into seven parts, for the seven tribes yet without portions. 10. Which being done, Josue casteth lots for them, 11. and the first lot falleth to Benjamin, 12. whose part is described by the limits, 21. with the names of the principal cities."
     },
     {
       "chapter": 19,
-      "summary": "The second lot falleth to the tribe of Simeon, the situation of whose inheritance is described, with the names of their principal cities. ℣.10 The third in like sort to Zabulon. ℣.17 The fourth to Issachar. ℣.24 The fifth to Aser. ℣.32 The sixth to Nephthali. ℣.40 And the seventh to Dan. ℣.49 All the Land being distributed among the bribes, with common consent they give a special city to Josue, in the midst of them.",
       "verses": [
         {
           "verse": 1,
@@ -2041,11 +2336,11 @@
         },
         {
           "verse": 11,
-          "text": "And it went up from the sea and Merala, and came into Debbaseth: as far as the torrent, which is against Jeconam."
+          "text": "And it went up from the sea and Merala, and came into Debbaseth: as far as the torrent, which is against Ieconam."
         },
         {
           "verse": 12,
-          "text": "And it returneth from Sared against the East into the ends of Caseleth thabor: and it goeth out to Dabereth, and riseth up against Japhie."
+          "text": "And it returneth from Sared against the East into the ends of Ceseleth thabor: and it goeth out to Dabereth, and riseth up against Iaphie."
         },
         {
           "verse": 13,
@@ -2053,11 +2348,11 @@
         },
         {
           "verse": 14,
-          "text": "And it compasseth to the North of Hanathon: & the issues thereof are the valley Jephtahel,"
+          "text": "And it compasseth to the North of Hanathon: & the issues thereof are the valley Iephtahel,"
         },
         {
           "verse": 15,
-          "text": "& Cateth & Naalol & Semeron & Jerala & Bethlehem: twelve cities, & their towns."
+          "text": "& Cateth & Naalol & Semeron & Ierala & Bethlehem: twelve cities, & their towns."
         },
         {
           "verse": 16,
@@ -2105,7 +2400,7 @@
         },
         {
           "verse": 27,
-          "text": "And it returneth against the east of Bethdagon: and passeth along to Zabulon and the Valley Jephthael against the North into Bethemec and Nehiel. And it goeth out to the left side of Cabul,"
+          "text": "And it returneth against the east of Bethdagon: and passeth along to Zabulon and the Valley Iephthael against the North into Bethemec and Nehiel. And it goeth out to the left side of Cabul,"
         },
         {
           "verse": 28,
@@ -2129,7 +2424,7 @@
         },
         {
           "verse": 33,
-          "text": "and the border began from Heleph and Elon into Saanaim, and Adami, which is Neceb, and Jebnael unto Lecum: and their issues unto Jordan:"
+          "text": "and the border began from Heleph and Elon into Saanaim, and Adami, which is Neceb, and Iebnael unto Lecum: and their issues unto Jordan:"
         },
         {
           "verse": 34,
@@ -2149,7 +2444,7 @@
         },
         {
           "verse": 38,
-          "text": "and Jeron and Magdalel, Horem and Bethanath and Bethsames: nineteen cities and their towns."
+          "text": "and Ieron and Magdalel, Horem and Bethanath and Bethsames: nineteen cities and their towns."
         },
         {
           "verse": 39,
@@ -2165,7 +2460,7 @@
         },
         {
           "verse": 42,
-          "text": "Selebin & Aialon and Jethela,"
+          "text": "Selebin & Aialon and Iethela,"
         },
         {
           "verse": 43,
@@ -2181,7 +2476,7 @@
         },
         {
           "verse": 46,
-          "text": "and Mejarcon & Arecon, with the border that looketh toward Joppe,"
+          "text": "and Meiarcon & Arecon, with the border that looketh toward Joppe,"
         },
         {
           "verse": 47,
@@ -2193,7 +2488,13 @@
         },
         {
           "verse": 49,
-          "text": "And when he had made an end of dividing the Land by lot to every one by their tribes, the children of Israel gave possession to Josue the son of Nun in the midst of them,"
+          "text": "And when he had made an end of dividing the Land by lot to every one by their tribes, <na>(a)</na> the children of Israel gave possession to Josue the son of Nun in the midst of them,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Of modesty Iosue would not assign to himself any place, but the whole people freely granted his request."
+            }
+          ]
         },
         {
           "verse": 50,
@@ -2203,11 +2504,11 @@
           "verse": 51,
           "text": "These are the possessions, which Eleazar the Priest, and Josue the son of Nun, and the Princes of the families and of the tribes of the children of Israel, divided by lot in Silo, before our Lord at the door of the tabernacle of testimony, and they parted the Land."
         }
-      ]
+      ],
+      "summary": "The second lot falleth to the tribe of Simeon, the situation of whose inheritance is described, with the names of their principal cities. 10. The third in like sort to Zabulon. 17. The fourth to Issachar. 24. The fifth to Aser. 32. The sixth to Nephthali. 40. And the seventh to Dan. 49. All the Land being distributed among the tribes, with common consent they give a special city to Josue, in the midst of them."
     },
     {
       "chapter": 20,
-      "summary": "six cities of refuge for such as commit casual manslaughter are named. ℣.6 In which remaining till the death of the high Priest, they may then return to their proper dwelling place, and be safe.",
       "verses": [
         {
           "verse": 1,
@@ -2223,7 +2524,13 @@
         },
         {
           "verse": 4,
-          "text": "When he shall be fled to one of these cities, he shall stand before the gate of the city & shall speak to the ancients of that city those things that may prove himself innocent: & so they shall receive him, and give him place to inhabit."
+          "text": "When he shall be fled to one of these cities, he shall stand before the gate of the city & shall speak to the ancients of that city <na>(a)</na> those things that may prove himself innocent: & so they shall receive him, and give him place to inhabit.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "At first entering it sufficed to allege in general his innocency, but after he must be tried in particular."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -2245,11 +2552,11 @@
           "verse": 9,
           "text": "These cities were appointed to all the children of Israel, and to the strangers, that dwelt among them: that he might fly to them which unwittingly had strucken a soul, and might not die in the hand of the kinsman, coveting to revenge the blood shed, until he might stand before the people to declare his cause."
         }
-      ]
+      ],
+      "summary": "six cities of refuge for such as commit casual manslaughter are named. 6. In which remaining till the death of the high Priest, they may then return to their proper dwelling place, and be safe."
     },
     {
       "chapter": 21,
-      "summary": "Cities with suburbs are assigned to the tribe of Levi. ℣.4 To the sons of Caath by the line of Aaron being Priests, thirteen. ℣.5 To the rest of Caath's progeny, being Levites, ten. ℣.6 To the sons of Gerson Levites, thirteen. ℣.7 To the sons of Merari Levites (℣.34 of a lower degree) twelve; ℣.9 with the names of all the cities: ℣.39 in all forty eight. ℣.41 So God's promise is fully performed having given the whole Land to Israel in peaceable possession.",
       "verses": [
         {
           "verse": 1,
@@ -2257,7 +2564,7 @@
         },
         {
           "verse": 2,
-          "text": "and they spake to them in Silo of the Land of Chanaan, and said: Our Lord commanded by the hand of Moyses, that cities should be given us to inhabit, and their, suburbs to feed cattle."
+          "text": "and they spake to them in Silo of the Land of Chanaan, and said: Our Lord commanded by the hand of Moyses, that cities should be given us to inhabit, and their suburbs to feed cattle."
         },
         {
           "verse": 3,
@@ -2285,7 +2592,7 @@
         },
         {
           "verse": 9,
-          "text": "Of the tribes of the children of Judas & Simeon, Josue gave cities: whose names be these,"
+          "text": "Of the tribes of the children of Judas & Simeon^ Josue gave cities: whose names be these,"
         },
         {
           "verse": 10,
@@ -2313,7 +2620,7 @@
         },
         {
           "verse": 16,
-          "text": "and Ain, & Jeta, and Bethsames, with the suburbs thereof: nine cities of two tribes, as hath been said."
+          "text": "and Ain, & Ieta, and Bethsames, with the suburbs thereof: nine cities of two tribes, as hath been said."
         },
         {
           "verse": 17,
@@ -2365,7 +2672,7 @@
         },
         {
           "verse": 29,
-          "text": "and Jaramoth, & Engannim, with their suburbs, four cities."
+          "text": "and Iaramoth, & Engannim, with their suburbs, four cities."
         },
         {
           "verse": 30,
@@ -2385,7 +2692,7 @@
         },
         {
           "verse": 34,
-          "text": "And to the children of Merari Levites of the inferior degree by their families was given of the tribe of Zabulon, Jecnam and Cartha"
+          "text": "And to the children of Merari Levites of the inferior degree by their families was given of the tribe of Zabulon, Iecnam and Cartha"
         },
         {
           "verse": 35,
@@ -2393,7 +2700,7 @@
         },
         {
           "verse": 36,
-          "text": "Of the tribe of Ruben beyond Jordan against Jericho the cities of refuge, Bosor in the wilderness, Misor and Jaser and Jethson and Mephaath, four cities with their suburbs."
+          "text": "Of the tribe of Ruben beyond Jordan against Jericho the cities of refuge, Bosor in the wilderness, Misor and Jaser and Iethson and Mephaath, four cities with their suburbs."
         },
         {
           "verse": 37,
@@ -2413,7 +2720,13 @@
         },
         {
           "verse": 41,
-          "text": "And our Lord God gave to Israel all the Land, that he had sworn he would give to their fathers: and they possessed it, and dwelt in it."
+          "text": "And our Lord God gave to Israel <na>(a)</na> all the Land, that he had sworn he would give to their fathers: and they possessed it, and dwelt in it.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God gave all the land in due time, but not all at once, for the causes expressed Exo. 23. v. 29. Deut. 7. v. 22."
+            }
+          ]
         },
         {
           "verse": 42,
@@ -2423,11 +2736,11 @@
           "verse": 43,
           "text": "Not so much certes as one word, which he had promised, that he would perform unto them, was frustrate, but all things were accomplished in deeds."
         }
-      ]
+      ],
+      "summary": "Cities with suburbs are assigned to the tribe of Levi. 4. To the sons of Caath by the line of Aaron being Priests, thirteen. 5. To the rest of Caath's progeny, being Levites, ten. 6. To the sons of Gerson Levites, thirteen. 7. To the sons of Merari Levites (34. of a lower degree) twelve; 9. with the names of all the cities: 39. in all forty eight. 41. So God's promise is fully performed having given the whole Land to Israel in peaceable possession."
     },
     {
       "chapter": 22,
-      "summary": "The tribes of Ruben and Gad, and half Manasses return to their possessions. ℣.10 Who building an altar by the side of Jordan, the other tribes suspect that they will make a schism, and therefore purpose to fight against them. ℣.13 But first sending an ambassage to admonish them, ℣.21 they answer that they made not an altar for sacrifice, but only for a monument, that notwithstanding they dwell on the other side of Jordan, yet they are of the same people of God ℣.30 wherewith all Israel is satisfied.",
       "verses": [
         {
           "verse": 1,
@@ -2447,11 +2760,23 @@
         },
         {
           "verse": 5,
-          "text": "always so that you keep attentively, and in work fulfill the commandment, and the law which Moyses the servant of our Lord commanded you, that you love our Lord your God, and walk in all his ways, and observe all his commandments, and cleave to him, and serve him in all your heart, and in all your soul."
+          "text": "<na>(a)</na> always so that you keep attentively, and in work fulfill the commandment, and the law which Moyses the servant of our Lord commanded you, that you love our Lord your God, and walk in all his ways, and observe all his commandments, and cleave to him, and serve him in all your heart, and in all your soul.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "It pertaineth to all magistrates and other superiors, to admonish their subjects of their duty towards God, before all other things."
+            }
+          ]
         },
         {
           "verse": 6,
-          "text": "And Josue blessed them, and dismissed them. Who returned into their tabernacles."
+          "text": "And Josue <na>(b)</na> blessed them, and dismissed them. Who returned into their tabernacles.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "All superiors may impart blessing to their subjects."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -2471,7 +2796,13 @@
         },
         {
           "verse": 11,
-          "text": "Which thing when the children of Israel had heard, and certain messengers had reported to them that the children of Ruben, and Gad, and the half tribe of Manasses had builded and altar in the Land of Chanaan, upon the little banks of Jordan, against the children of Israel:"
+          "text": "<na>(a)</na> Which thing when the children of Israel had heard, and certain messengers had reported to them that the children of Ruben, and Gad, and the half tribe of Manasses had builded and altar in the Land of Chanaan, upon the little banks of Jordan, against the children of Israel:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "So it behoveth all the servants of God to see in time, that no schism be made, and therefore orderly to inquire of every shew of evil. 1. Thes. 5."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -2495,11 +2826,23 @@
         },
         {
           "verse": 17,
-          "text": "Is it a small thing to you that you sinned in Beelphegor, and until this present day the spot of this abomination abideth in us? And many of the people fell dead."
+          "text": "Is it a small thing to <na>(b)</na> you that you sinned in Beelphegor, and until this present day the spot of this abomination abideth in us? And many of the people fell dead.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Sins past are imputed to such as fall again as aggravating their new sins by reason of more ingratitude."
+            }
+          ]
         },
         {
           "verse": 18,
-          "text": "And you to day have forsaken our Lord, and to morrow his wrath will rage against all Israel."
+          "text": "And you today have forsaken our Lord, and tomorrow his wrath will rage <na>(c)</na> against all Israel.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "As before chap. 7. so if these had been culpable all Israel might fear to be punished, except justice were done upon the offenders."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -2523,7 +2866,7 @@
         },
         {
           "verse": 24,
-          "text": "and not rather with that meaning and deliberation, that we said: To morrow your children will say to our children: What have you to do with our Lord the God of Israel?"
+          "text": "and not rather with that meaning and deliberation, that we said: Tomorrow your children will say to our children: What have you to do with our Lord the God of Israel?"
         },
         {
           "verse": 25,
@@ -2531,11 +2874,17 @@
         },
         {
           "verse": 26,
-          "text": "and said: Let us build us an altar, not for holocausts, nor to offer victims,"
+          "text": "and said: Let us build us an altar, <na>(d)</na> not for holocausts, nor to offer victims,",
+          "notes": [
+            {
+              "label": "d",
+              "text": "In the law of Moyses was one only altar for sacrifice, for the whole people of God, to avoid schism and idolatry. Now in the Church (being in all nations) are many altars, & but one only Sacrifice prefigured by all the former, as S. Augustine teacheth li. 17. c. 20. de civit. S. Leo. Ser. 8 de Passione."
+            }
+          ]
         },
         {
           "verse": 27,
-          "text": "but for a testimony between us and you, and our issue and your progeny, that we may serve our Lord, and it may be our right to offer both holocausts, and victims, and pacific hosts: and that your children to morrow say not to our children: You have no part in our Lord."
+          "text": "but for a testimony between us and you, and our issue and your progeny, that we may serve our Lord, and it may be our right to offer both holocausts, and victims, and pacific hosts: and that your children tomorrow say not to our children: You have no part in our Lord."
         },
         {
           "verse": 28,
@@ -2565,11 +2914,17 @@
           "verse": 34,
           "text": "And the children of Ruben, & the children of Gad called the altar which they had built, Our testimony, that our Lord he is God."
         }
+      ],
+      "summary": "The tribes of Ruben and Gad, and half Manasses return to their possessions. 10. Who building an altar by the side of Jordan, the other tribes suspect that they will make a schism, and therefore purpose to fight against them. 13. But first sending an ambassage to admonish them, 21. they answer that they made not an altar for sacrifice, but only for a monument, that notwithstanding they dwell on the other side of Jordan, yet they are of the same people of God 30. wherewith all Israel is satisfied. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The fourth part. Two tribes & a half return to their possessions; Iosue's godly admonitions; and his, and Eleazar's death."
+        }
       ]
     },
     {
       "chapter": 23,
-      "summary": "Josue being old admonisheth the people to keep God's commandments, ℣.12 and to avoid marriages, and all society with gentiles, lest falling to idolatry God as certainly punish them, as he hath been beneficial and bountiful to them.",
       "verses": [
         {
           "verse": 1,
@@ -2581,7 +2936,13 @@
         },
         {
           "verse": 3,
-          "text": "and you see all things, that our Lord your God hath done to all the nations round about, how himself hath fought for you:"
+          "text": "and you see all things, that our Lord your God hath done to all the nations round about, <na>(a)</na> how himself hath fought for you:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God fought for the Israelites three manner of ways: sometimes alone they not fighting at all; as when the Aegyptians were drowned in the red sea: sometimes, they doing his commandments he apparently assisted them, as in the siege of Jericho, the walls miraculously fell down (c. 6.) & hail stones killed their enemies (c. 10.) but most times invisibly, as well by giving them courage, as by striking their enemies with terror. And all these ways God also fighteth for his servants in spiritual wars against the devil, the flesh, and the world."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -2635,11 +2996,11 @@
           "verse": 16,
           "text": "because you have transgressed the covenant of our Lord your God, which he hath made with you, and have served strange gods, and adored them: quickly and in haste shall the fury of our Lord rise against you, and you shall be taken away from this excellent Land, which he hath delivered to you."
         }
-      ]
+      ],
+      "summary": "Josue being old admonisheth the people to keep God's commandments, 12. and to avoid marriages, and all society with gentiles, lest falling to idolatry God as certainly punish them, as he hath been beneficial and bountiful to them."
     },
     {
       "chapter": 24,
-      "summary": "Inconsideration of diverse principal benefits here recited, ℣.14 Josue exhorteth the people to serve God sincerely, seeing it is in their choice to do well or evil. ℣.16 They promise all true service and obedience to God. ℣.25 Whereupon he reneweth the pact between God and them, writing it in the volume of the law, and erecting a great stone in testimony. ℣.29 He dieth and is buried in mount Ephraim. ℣.32 Joseph's bones are buried in Sichem. ℣.33 Eliazar the high-Priest also dieth and is buried in Ephraim.",
       "verses": [
         {
           "verse": 1,
@@ -2647,27 +3008,34 @@
         },
         {
           "verse": 2,
-          "text": "and to the people he spake in this manner: Thus saith our Lord the God of Israel: Beyond the river did your fathers dwell from the beginning, Thare the father of Abraham, and of Nachor: and they served strange gods."
+          "text": "and to the people he spake in this manner: Thus saith our Lord the God of Israel: Beyond the river did your fathers dwell from the beginning, Thare the father of Abraham, and <na>(a)</na> of Nachor: and they served strange gods.",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "a",
+              "text": "The Israelites descended also of Nachor, by Rebecca, his son's daughter, the wife of Isaac. Gen. 24."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "I took therefore your father Abraham from the coasts of Mesopotamia, and brought him into the Land of Chanaan, and multiplied his seed,"
+          "text": "Itook therefore your father Abraham from the coasts of Mesopotamia, and brought him into the Land of Chanaan, and multiplied his seed,"
         },
         {
           "verse": 4,
-          "text": "and gave him Isaac: & again to him I gave Jacob and Esau. Of whom, to Esau I gave mount Seir to possess: but Jacob & his children went down into Ægypt."
+          "text": "and gave him Isaac: & again to him I gave Jacob and Esau. Of whom, to Esau I gave mount Seir to possess: but Jacob & his children went down into Aegypt."
         },
         {
           "verse": 5,
-          "text": "And I sent Moyses & Aaron, & struck Ægypt with many signs and wonders."
+          "text": "And I sent Moyses & Aaron, & struck Aegypt with many signs and wonders."
         },
         {
           "verse": 6,
-          "text": "And I brought you and your fathers out of Ægypt, and you came to the sea: and the Ægyptians pursued your fathers with chariots and horsemen, as far as the Red sea."
+          "text": "And I brought you and your fathers out of Aegypt, and you came to the sea: and the Aegyptians pursued your fathers with chariots and horsemen, as far as the Red sea."
         },
         {
           "verse": 7,
-          "text": "And the children of Israel cried to the Lord: who did put darkness between you and the Ægyptians, and brought the sea upon them, & overwhelmed them. Your eyes saw all things I did in Ægypt, and you dwelt in the wilderness a great time:"
+          "text": "And the children of Israel cried to the Lord: who did put darkness between you and the Aegyptians, and brought the sea upon them, & overwhelmed them. Your eyes saw all things I did in Aegypt, and you dwelt in the wilderness a great time:"
         },
         {
           "verse": 8,
@@ -2683,11 +3051,11 @@
         },
         {
           "verse": 11,
-          "text": "And you passed Jordan, and came to Jericho. And the men of that city fought against you, the Amorrhite, and Pherezite, and Chananite, & the Hethite, and Gergesite, and the Hevite, and Jebusite: & I delivered them into your hands."
+          "text": "And you passed Jordan, and came to Jericho. And the men of that city fought against you, the Amorrhite, and Pherezite, and Chananite, & the Hetheite, and Gergesite, and the Heveite, and Jebusite: & I delivered them into your hands."
         },
         {
           "verse": 12,
-          "text": "And I sent before you hornets: and I cast them forth out of their places, the two kings of the Amorrhites, not in thy sword and bow."
+          "text": "And I sent before you hornets: and I cast them forth out of their places, the two kings of the Amorrheites, not in thy sword and bow."
         },
         {
           "verse": 13,
@@ -2695,11 +3063,17 @@
         },
         {
           "verse": 14,
-          "text": "Now therefore fear our lord and serve him with a perfect and very true heart: and take away the gods, which your fathers served in Mesopotamia and in Ægypt, and serve our Lord."
+          "text": "Now therefore fear our lord and serve him with a perfect and very true heart: and <na>(a)</na> take away the gods, which your fathers served in Mesopotamia and in Aegypt, and serve our Lord.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Iosue being a Prophet saw some of their hearts inclined to idols, though exteriorly they then had none among them. S. Aug. q. 29. in Iosue."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "But if it like you not to serve our Lord, choice is given you: choose this day that which pleaseth you, whom you ought especially to serve, whether the gods, which your fathers served in Mesopotamia, or the gods of the Amorrhites, in whose Land you dwell: but I and my house will serve our Lord."
+          "text": "But if it like you not to serve our Lord, choice is given you: choose this day that which pleaseth you, whom you ought especially to serve, whether the gods, which your fathers served in Mesopotamia, or the gods of the Amorrheites, in whose Land you dwell: but I and my house will serve our Lord."
         },
         {
           "verse": 16,
@@ -2707,7 +3081,7 @@
         },
         {
           "verse": 17,
-          "text": "Our Lord God he brought us and our fathers out of the Land of Ægypt, out of the house of servitude: and did in our sight great signs, & kept us in all the way by the which we walked, & among all the peoples, through which we passed."
+          "text": "Our Lord God he brought us and our fathers out of the Land of Aegypt, out of the house of servitude: and did in our sight great signs, & kept us in all the way by the which we walked, & among all the peoples, through which we passed."
         },
         {
           "verse": 18,
@@ -2715,7 +3089,7 @@
         },
         {
           "verse": 19,
-          "text": "And Josue said to the people: You can not serve our Lord: for God is holy, and a mighty emulator, neither will he pardon your wickedness & sins."
+          "text": "And Josue said to the people: You cannot serve our Lord: for God is holy, and a mighty emulator, neither will he pardon your wickedness & sins."
         },
         {
           "verse": 20,
@@ -2727,7 +3101,7 @@
         },
         {
           "verse": 22,
-          "text": "And Josue said to the people: You are witnesses, that your selves have chosen to you our Lord for to serve him. And they answered: Witnesses."
+          "text": "And Josue said to the people: You are witnesses, that yourselves have chosen to you our Lord for to serve him. And they answered: Witnesses."
         },
         {
           "verse": 23,
@@ -2739,7 +3113,13 @@
         },
         {
           "verse": 25,
-          "text": "Josue therefore in that day made a covenant, and proposed to the people precepts and judgments in Sichem."
+          "text": "Josue therefore in that day <na>(b)</na> made a covenant, and proposed to the people precepts and judgments in Sichem.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "This renovation of the same covenant prefigured the law of the new Testament. S. Aug. q. 30. in Iosue."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -2747,7 +3127,13 @@
         },
         {
           "verse": 27,
-          "text": "and said to all the people: Behold this stone shall be a testimony for you, that it hath heard all the words of our Lord, which he hath spoken to you: lest perhaps hereafter you will deny, and lie to our Lord your God."
+          "text": "and said to all the people: Behold this stone shall be a testimony for you, that <na>(c)</na> it hath heard all the words of our Lord, which he hath spoken to you: lest perhaps hereafter you will deny, and lie to our Lord your God.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "To the more confusion of reasonable creatures willfully offending, unsensible things are made witnesses, because they ever obey God's will, which is the best manner of hearing. Theod. q. 19. in Iosue."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -2755,11 +3141,18 @@
         },
         {
           "verse": 29,
-          "text": "And after these things, Josue the Son of Nun the servant of our Lord died, being an hundred and ten years old:"
+          "text": "<na>(d)</na> And after these things^ Josue the Son of Nun the servant of our Lord died, being an hundred and ten years old:",
+          "notes": [
+            {
+              "label": "d",
+              "text": "If Iosue writ the rest of this book, then Samuel added these last verses. Hist. schol."
+            }
+          ]
         },
         {
           "verse": 30,
-          "text": "and they buried him in the coasts of his possession in Thamnathsare, which is situated in the mountain of Ephraim, on the North part of mount Gaas."
+          "text": "and they buried him in the coasts of his possession in Thamnathsare, which is situated in the mountain of Ephraim, on the North part of mount Gaas.",
+          "has_annotation": true
         },
         {
           "verse": 31,
@@ -2767,13 +3160,25 @@
         },
         {
           "verse": 32,
-          "text": "The bones also of Joseph which the children of Israel had taken out of Ægypt, they buried in Sichem, in part of the field, which Jacob had bought of the sons of Hemor the father of Sichem, for a hundred young ewes, and it was in the possession of the sons of Joseph."
+          "text": "The <na>(e)[1]</na> bones also of Joseph which the children of Israel had taken out of Aegypt, they buried in Sichem, in part of the field, which Jacob had bought of the sons of Hemor the father of Sichem, for a hundred young ewes, and it was in the possession of the sons of Joseph.",
+          "cross_refs": [
+            {
+              "text": "Gen. 50. Exo. 13."
+            }
+          ],
+          "notes": [
+            {
+              "label": "e",
+              "text": "Joseph's Mausoleum (or famous sepulchre) remained in Sichem in S. Hierom's time as he witnesseth. Tradit. Hebra. in Gen. prope finem."
+            }
+          ]
         },
         {
           "verse": 33,
           "text": "Eleazar also the son of Aaron died: and they buried him in Gabaath of Phinees his son, which was given him in mount Ephraim."
         }
-      ]
+      ],
+      "summary": "In consideration of diverse principal benefits here recited, 14. Josue exhorteth the people to serve God sincerely, seeing it is in their choice to do well or evil. 16. They promise all true service and obedience to God. 25. Whereupon he reneweth the pact between God and them, writing it in the volume of the law, and erecting a great stone in testimony. 29. He dieth and is buried in mount Ephraim. 32. Joseph's bones are buried in Sichem. 33. Eliazar the high-Priest also dieth and is buried in Ephraim."
     }
   ]
 }

@@ -1,15 +1,19 @@
 {
-  "book": "1 Kings",
-  "version_abbr": "ODR",
-  "date": "1609",
+  "book": "1-kings",
+  "book_title": null,
+  "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "Elcana having two wives, the one called Anna, is barren, and for the same is reproached by the other, called Phenenna. ℣.9 Anna voweth, and prayeth for a man child, ℣.19 conceiveth and beareth a son, calleth him Samuel: ℣.24 and presenteth him to the service of God in Silo.",
       "verses": [
         {
           "verse": 1,
-          "text": "There was a man of Ramathaimsophim, of mount Ephraim, & his name Elcana, the son of Jeroham, the son of Eliu, the son of Thohu, the son of Suph, an Ephraite:"
+          "text": "There <cr>[1]</cr> was a man of Ramathaimsophim, of mount Ephraim, & his name Elcana, the son of Jeroham, the son of Eliu, the son of Thohu, the son of Suph, an Ephraite:",
+          "cross_refs": [
+            {
+              "text": "The first part. Of the governments of Heli and Samuel, and of changing the state into a Kingdom."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -49,7 +53,13 @@
         },
         {
           "verse": 11,
-          "text": "and she vowed a vow, saying: O Lord of hosts, if regarding thou wilt behold the affliction of thy servant, and wilt be mindful of me, and not forget thy handmaid, and wilt give unto thy servant a man child: I will give him to our Lord all the days of his life, & the razor shall not come upon his head."
+          "text": "and she vowed a vow, saying: O Lord of hosts, if regarding thou wilt behold the affliction of thy servant, and wilt be mindful of me, and not forget thy handmaid, and wilt give unto thy servant a man child: I <na>(a)</na> will give him to our Lord all the days of his life, & the razor shall not come upon his head.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This child being of the tribe of Levi, though not of Aaron's stock, was lawfully vowed to the service of the tabernacle, by his parents, during his childhood, but coming to years of discretion he was at his own election to continue or to depart. If he had been of any other tribe, he must have been redeemed. Levit. 27."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -94,48 +104,41 @@
         {
           "verse": 22,
           "text": "and Anna went not up: for she said to her husband: I will not go till the infant be weaned, and till I may bring him, that he may appear before the sight of our Lord, and may remain there continually."
-        },
+        }
+      ],
+      "summary": "Elcana having two wives, the one called Anna, is barren, and for the same is reproached by the other, called Phenenna. 9. Anna voweth, and prayeth for a man child, 19. conceiveth and beareth a son, calleth him Samuel: 24. and presenteth him to the service of God in Silo. <na>[1]</na>",
+      "summary_notes": [
         {
-          "verse": 23,
-          "text": "And Elcana her husband said to her. Do that which seemeth good to thee, and tarry till thou wean him: and I pray that our Lord fulfill his word. The woman therefore tarried, and gave her son suck, till she removed him from the milk."
-        },
-        {
-          "verse": 24,
-          "text": "And she brought him with her, after she had weaned him, with three calves, & three bushels of meal, and a flagon of wine, and she brought him to the house of our Lord in Silo. But the child was yet a little infant:"
-        },
-        {
-          "verse": 25,
-          "text": "and they immolated a calf, and offered the child to Heli."
-        },
-        {
-          "verse": 26,
-          "text": "And Anna said: I beseech thee my Lord, thy soul liveth my Lord: I am that woman, which stood before thee here praying our Lord."
-        },
-        {
-          "verse": 27,
-          "text": "For this child did I pray, and our Lord hath given me my petition, which I asked him."
-        },
-        {
-          "verse": 28,
-          "text": "Therefore I also have given him to our Lord all the days, which he shall live, that he may be applied to our Lord. And they adored our Lord there. And Anna prayed, and said"
+          "marker": 1,
+          "text": "These books are read at Matins from the feast of the B. Trinity until the first Sunday of August."
         }
       ]
     },
     {
       "chapter": 2,
-      "summary": "Anna giveth thanks in a Canticle. ℣.11 The sons of Heli grievously sinning are reprehended, but not duly corrected by their father. ℣.21 Anna beareth three sons more, and two daughters. ℣.27 Heli is threatened, ℣.34 and the death of his two sons foretold.",
       "verses": [
         {
           "verse": 1,
-          "text": "My heart hath rejoiced in our Lord, and my horn is exalted in my God: my mouth is dilated upon mine enemies: because I have joyed in thy salvation."
+          "text": "My <cr>[1]</cr> heart hath rejoiced in our Lord, and my horn is exalted in my God: my mouth is dilated upon mine enemies: because I have joyed in thy salvation.",
+          "cross_refs": [
+            {
+              "text": "The Canticle at Lauds on Wednesday."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "There is none holy as our Lord is: for neither is there an other beside thee, and there is none so strong as our God."
+          "text": "There is none holy as our Lord is: for neither is there another beside thee, and there is none so strong as our God."
         },
         {
           "verse": 3,
-          "text": "Do not multiply to speak high things boasting, let old matters depart from your mouth: because our Lord is a God of all knowledge, and to him cogitations are prepared."
+          "text": "Do not multiply to speak high things boasting, <na>(a)</na> let old matters depart from your mouth: because our Lord is a God of all knowledge, and to him cogitations are prepared.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Leave off to praise idols, as ye have accustomed to do."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -143,7 +146,17 @@
         },
         {
           "verse": 5,
-          "text": "They that before were filled have hired out themselves for bread: and the hungry are filled, until the barren woman bare very many: and she that had many children was weakened."
+          "text": "They that before were filled have hired out themselves for bread: and the hungry are filled, until <na>(b)</na> the barren woman bare very many: and <na>(c)</na> she that had many children was weakened.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The Church of Gentiles."
+            },
+            {
+              "label": "c",
+              "text": "The Synagogue of the Jews. S. Aug. li. 17. 5. 4. civit."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -163,7 +176,13 @@
         },
         {
           "verse": 10,
-          "text": "Our Lord shall his adversaries fear: & upon them shall he thunder in the heavens: our Lord shall judge the ends of the earth, & shall give empire to his King, and shall exalt the horn of his Christ."
+          "text": "Our Lord shall his adversaries fear: & upon them shall he thunder in the heavens: our Lord shall judge the ends of <na>(d)</na> the earth, & shall give empire to his King, and shall exalt the horn of his Christ.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Neither David nor Salomon, much less any other King, possessed or judged the ends of the earth: but Christ's inheritance reacheth to the ends of the earth. Psal. 2. v. 8."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -187,7 +206,7 @@
         },
         {
           "verse": 16,
-          "text": "And he that immolated said to him: Let the fat first be burnt to day according to the manner, and take unto thee how much soever thy soul desireth. Who answering said to him: Not so: for thou shalt give it now, or else I will take it away by force."
+          "text": "And he that immolated said to him: Let the fat first be burnt today according to the manner, and take unto thee how much soever thy soul desireth. Who answering said to him: Not so: for thou shalt give it now, or else I will take it away by force."
         },
         {
           "verse": 17,
@@ -223,7 +242,17 @@
         },
         {
           "verse": 25,
-          "text": "If man shall sin against man, God may be pacified toward him: but if a man shall sin against our Lord who shall pray for him? And they heard not the voice of their father, because our Lord would kill them."
+          "text": "If man shall sin against man, God may be pacified toward him: but if a man shall sin against our Lord^ <na>(e)</na> who shall pray for him? And they heard not the voice of their father, <na>(f)</na> because our Lord would kill them.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Sins directly against God, and that hinder his service, are more hardly remitted: but none at all are irremissible before death, because during life every one may truly repent, if he will: & to all true penitents God promiseth remission of sins Ezech. 33."
+            },
+            {
+              "label": "f",
+              "text": "Gods determination to punish took not away their freewill, but for their obstinacy he left them to themselves, without his grace, & so justly punished them. See S. Aug. l. 5. cont. Iulian. c. 3."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -231,7 +260,7 @@
         },
         {
           "verse": 27,
-          "text": "And there came a man of God to Heli, and said to him: Thus saith our Lord: Was not I openly revealed to thy father's house, when they were in Ægypt in the house of Pharao?"
+          "text": "And there came a man of God to Heli, and said to him: Thus saith our Lord: Was not I openly revealed to thy father's house, when they were in Aegypt in the house of Pharao?"
         },
         {
           "verse": 28,
@@ -251,7 +280,13 @@
         },
         {
           "verse": 32,
-          "text": "And thou shalt see whom thou enviest in the temple, in all prosperities of Israel, and there shall not be an old man in thy house for ever."
+          "text": "And thou shalt see <na>(g)</na> whom thou enviest in the temple, in all prosperities of Israel, and there shall not be an old man in thy house for ever.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "This was fulfilled as in the figure in Samuel, not wholly, for priesthood still remained in the line of Aaron, as appeareth in Achias, Abiathar, & Sadoc. ch. 14. 22. & 1. Reg. 8. but perfectly in Christ. S. Beda. qq. in 1. Reg. c. 2."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -269,15 +304,21 @@
           "verse": 36,
           "text": "And it shall come to pass, that whosoever shall remain in thy house, shall come that he may be prayed for, and shall offer a piece of silver, and a manchet of bread, and shall say: Leave me I beseech thee to one priestly part, that I may eat a morsel of bread."
         }
-      ]
+      ],
+      "summary": "Anna giveth thanks in a Canticle. 11. The sons of Heli grievously sinning are reprehended, but not duly corrected by their father. 21. Anna beareth three sons more, and two daughters. 27. Heli is threatened, 34. and the death of his two sons foretold."
     },
     {
       "chapter": 3,
-      "summary": "Samuel thrice called upon in sleep by vision from God, repaireth to Heli, ℣.10 the fourth time our Lord revealeth to him the evil, that shall fall to Heli and his house. ℣.16 Which he, being requested, declareth to Heli.",
       "verses": [
         {
           "verse": 1,
-          "text": "And the child Samuel ministered to our Lord before Heli, and the word of our Lord was precious in those days, there was no vision manifest."
+          "text": "And the child Samuel ministered to our Lord before Heli, and the word of our Lord was <na>(a)</na> precious in those days, there was no vision manifest.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Rare things are called precious, and so the gift of prophecy is here termed, which was then granted to few."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -285,7 +326,13 @@
         },
         {
           "verse": 3,
-          "text": "before the lamp of God was extinguished, Samuel slept in the temple of our Lord, where the ark of God was."
+          "text": "<na>(b)</na> before the lamp of God was extinguished, Samuel slept in the temple of our Lord, where the ark of God was.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "This vision happened early in the morning, before the time of dressing the lamps, when some were put out and others light."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -329,7 +376,7 @@
         },
         {
           "verse": 14,
-          "text": "Therefore have I sworn to the house of Heli that the iniquity of his house can not be expiated with victims and gifts for ever."
+          "text": "Therefore have I sworn to the house of Heli that the iniquity of his house cannot be expiated with victims and gifts for ever."
         },
         {
           "verse": 15,
@@ -341,7 +388,7 @@
         },
         {
           "verse": 17,
-          "text": "And he asked him: What is the word, that our Lord hath spoken to thee? I beseech thee conceal it not from me. These things do God to thee, and these, do he add, if thou shalt hide from me a word of all the words, which were said to thee."
+          "text": "And he asked him: What is the word, that our Lord hath spoken to thee? I beseech thee conceal it not from me. These things do God to thee, and these do he add, if thou shalt hide from me a word of all the words, which were said to thee."
         },
         {
           "verse": 18,
@@ -359,11 +406,11 @@
           "verse": 21,
           "text": "And our Lord added to appear in Silo, because our Lord had been revealed to Samuel in Silo, according to the word of our Lord. And the word of Samuel came to pass to all Israel."
         }
-      ]
+      ],
+      "summary": "Samuel thrice called upon in sleep by vision from God, repaireth to Heli, 10. the fourth time our Lord revealeth to him the evil, that shall fall to Heli and his house. 16. Which he, being requested, declareth to Heli."
     },
     {
       "chapter": 4,
-      "summary": "The Israelites are beaten in battle by the Philisthiims. ℣.3 Who for their better protection and comfort, fetch the Ark of God into the camp: ℣.10 but are beaten again, the Ark taken, and with many others the two sons of Heli are slain. ℣.13 All which Heli understanding falleth from his seat, and breaketh his neck: ℣.19 also his daughter in law presently travailing of child is delivered of a son.",
       "verses": [
         {
           "verse": 1,
@@ -375,7 +422,13 @@
         },
         {
           "verse": 3,
-          "text": "And the people returned to the camp: & the ancients of Israel said: Why hath our Lord struck us to day before the Philisthiims? Let us fetch unto us the ark of the covenant of our Lord from Silo, and let it come into the midst of us, that it may save us from the hand of our enemies."
+          "text": "And the people returned to the camp: & the ancients of Israel said: Why hath our Lord struck us today before the Philisthiims? <na>(a)</na> Let us fetch unto us the ark of the covenant of our Lord from Silo, and let it come into the midst of us, that it may save us from the hand of our enemies.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Their confidence of help from God, by presence of the ark, was good & commendable, but their sins deserved to be punished."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -387,7 +440,7 @@
         },
         {
           "verse": 6,
-          "text": "And the Philisthiims heard the voice of the cry, & said: What is this voice of a great cry in the camp of the Hebrews? And they knew that the ark of our lord was come into the camp"
+          "text": "And the Philisthiims heard the voice of the cry, & said: What is this voice of a great cry in the camp of the Hebrews? And they knew that the ark of our lord was come into the camp."
         },
         {
           "verse": 7,
@@ -395,7 +448,7 @@
         },
         {
           "verse": 8,
-          "text": "Woe to us: for there was no so great rejoicing yesterday and the day before: woe to us. Who shall keep us from the hand of these high gods? These be the gods that struck Ægypt with all plague, in the desert."
+          "text": "Woe to us: for there was no so great rejoicing yesterday and the day before: woe to us. Who shall keep us from the hand of these high gods? These be the gods that struck Aegypt with all plague, in the desert."
         },
         {
           "verse": 9,
@@ -435,11 +488,17 @@
         },
         {
           "verse": 18,
-          "text": "And when he had named the ark of God, he fell from his stool backward beside the door, & his neck being broken he died. For he was an old man, & of a great age: & he judged Israel forty years."
+          "text": "And when he had <na>(a)</na> named the ark of God, he fell from his stool backward beside the door, & his neck being broken he died. For he was an old man, & of a great age: & he judged Israel forty years.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This zeal of religion in Heli towards the ark, is a great sign that he died in good state, though he was temporally punished for not correcting his sons."
+            }
+          ]
         },
         {
           "verse": 19,
-          "text": "And his daughter in law, the wife of Phinees, was great with child, & nigh to be delivered: & hearing the report that the ark of God was taken, & her father in law was dead, & her husband, she bowed her self & was delivered: for sudden pains were fallen upon her."
+          "text": "And his daughter in law, the wife of Phinees, was great with child, & nigh to be delivered: & hearing the report that the ark of God was taken, & her father in law was dead, & her husband, she bowed herself & was delivered: for sudden pains were fallen upon her."
         },
         {
           "verse": 20,
@@ -453,11 +512,11 @@
           "verse": 22,
           "text": "and she said: The glory is translated from Israel, for that the ark of God was taken."
         }
-      ]
+      ],
+      "summary": "The Israelites are beaten in battle by the Philisthiims. 3. Who for their better protection and comfort, fetch the Ark of God into the camp: 10. but are beaten again, the Ark taken, and with many others the two sons of Heli are slain. 13. All which Heli understanding falleth from his seat, and breaketh his neck: 19. also his daughter in law presently travailing of child is delivered of a son."
     },
     {
       "chapter": 5,
-      "summary": "Dagon falleth down twice in presence of the Ark, his head and hands broken off. ℣.6 The Philisthiims being sore plagued in all their cities where the ark cometh, ℣.11 determine to send it back to the Israelites.",
       "verses": [
         {
           "verse": 1,
@@ -469,7 +528,13 @@
         },
         {
           "verse": 3,
-          "text": "And when the Azotians had risen early the next day, behold Dagon, lay flat on the ground before the ark of our Lord: and they took Dagon, and restored him into his place."
+          "text": "And when the Azotians had risen early the next day, behold <na>(a)</na> Dagon, lay flat on the ground before the ark of our Lord: and they took Dagon, and restored him into his place.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "So soon as Christ's Gospel or Testament came among the Gentiles, all false gods and idolatry fell down. S. Beda. qq. in 1. Reg. c. 3."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -485,15 +550,21 @@
         },
         {
           "verse": 7,
-          "text": "And the men of Azotus seeing this manner of plague, said: Let not the ark of the God of Israel tarry with us: because his hand is sore upon us, and upon Dagon our God."
+          "text": "And the men of Azotus seeing this manner of plague, said: Let not the ark of the God of Israel tarry with us: because his hand is sore upon us, and <na>(b)</na> upon Dagon our god.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The ark being a holy thing, as Relics are, was terrible to their false god, the devil, so the Relics of S. Babilas overthrew the false god Apollo. As S. Chrysost. testifieth at large. li. cont. Gentiles, to. 5."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "And sending they gathered together all the Princes of the Philisthiims to them, and said: What shall we do with the ark of the God of Israel? And the Gethites answered: Let the ark of the God of Israel be carried about, and they carried about the ark of the God of Israel."
+          "text": "And sending they gathered together all the Princes of the Philisthiims to them, and said: What shall we do with the ark of the God of Israel? And the Getheites answered: Let the ark of the God of Israel be carried about, and they carried about the ark of the God of Israel."
         },
         {
           "verse": 9,
-          "text": "And they carrying it about, the hand of our Lord was made through every city by an exceeding great slaughter: and it struck the men of every city, from little unto great, and they had emeroids in their secret parts. And the Gethites took counsel, and made themselves stools of skins."
+          "text": "And they carrying it about, the hand of our Lord was made through every city by an exceeding great slaughter: and it struck the men of every city, from little unto great, and they had emeroids in their secret parts. And the Getheites took counsel, and made themselves stools of skins."
         },
         {
           "verse": 10,
@@ -507,11 +578,11 @@
           "verse": 12,
           "text": "For there was made the fear of death in every city, and the hand of God exceeding grievous. The men also that had not died, were strucken in the secret part of the buttocks: and the howling of every city went up into heaven."
         }
-      ]
+      ],
+      "summary": "Dagon falleth down twice in presence of the Ark, his head and hands broken off. 6. The Philisthiims being sore plagued in all their cities where the ark cometh, 11. determine to send it back to the Israelites."
     },
     {
       "chapter": 6,
-      "summary": "The Ark is sent back with five emeroids and five mice of gold, upon a new wain drawn by two milch kine: ℣.13 which coming directly to Bethsames are sacrificed, the wain serving for fire, the Levites keep the Ark. ℣.19 Many others are slain looking of curiosity into it.",
       "verses": [
         {
           "verse": 1,
@@ -519,7 +590,7 @@
         },
         {
           "verse": 2,
-          "text": "And the Philisthiims called the Priests and soothsayers, saying: What shall we do with the ark of the Lord? Tell us how we may send it back into his place. Who said:"
+          "text": "And the Philisthiims called the priests and soothsayers, saying: What shall we do with the ark of the Lord? Tell us how we may send it back into his place. Who said:"
         },
         {
           "verse": 3,
@@ -535,7 +606,13 @@
         },
         {
           "verse": 6,
-          "text": "Why do you harden your hearts, as Ægypt and Pharao did harden their heart? Did not he after he was strucken them dismiss them, and they departed?"
+          "text": "Why do you harden your hearts, as <na>(a)</na> Aegypt and Pharao did harden their heart? Did not he after he was strucken them dismiss them, and they departed?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Obstinate sinners do harden their own hearts, not God, but by suffering them so to do. See Annot. Exod. 7."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -543,7 +620,7 @@
         },
         {
           "verse": 8,
-          "text": "And you shall take the ark of the Lord, and put it in the wain, and the vessels of gold, which you have paid him for sin, you shall put into a little casket at the side thereof: and dismiss it that it may go."
+          "text": "And you shall take the ark of the Lord, and put it in the wain, and the vessels of gold, which you have payed him for sin, you shall put into a little casket at the side thereof: and dismiss it that it may go."
         },
         {
           "verse": 9,
@@ -587,7 +664,13 @@
         },
         {
           "verse": 19,
-          "text": "But he struck of the men of Bethsames, for that they had seen the ark of our Lord: and he struck of the people seventy men, and fifty thousand of the common people. And the people mourned, because our Lord had strucken the common people with a great plague."
+          "text": "But he struck of the men of Bethsames, for that they had <na>(b)</na> seen the ark of our Lord: and he struck of the people seventy men, and fifty thousand of the common people. And the people mourned, because our Lord had strucken the common people with a great plague.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "As the ark was terrible to the infidels (chap. 5.) so also to those that believed right, but used it not reverently."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -597,15 +680,21 @@
           "verse": 21,
           "text": "And they sent messengers to the inhabitants of Cariathiarim, saying: The Philistiims have brought back the ark of our Lord, come & fetch it back unto you."
         }
-      ]
+      ],
+      "summary": "The Ark is sent back with five emeroids and five mice of gold, upon a new wain drawn by two milch kine: 13. which coming directly to Bethsames are sacrificed, the wain serving for fire, the Levites keep the Ark. 19. Many others are slain looking of curiosity into it."
     },
     {
       "chapter": 7,
-      "summary": "The Ark is brought to the house of Abinadab in Gabaa, ℣.3 By Samuel's exhortation, the people cast away the idols and serve only God. ℣.12 Samuel offering sacrifice and praying, Israel prevaileth against the Philisthiims.",
       "verses": [
         {
           "verse": 1,
-          "text": "Therefore the men of Cariathiarim came, and brought back the ark of our Lord, and carried it into the house of Abinadab in Gabaa: and Eleazar his son they sanctified, that he might keep the ark of our Lord."
+          "text": "Therefore the men of Cariathiarim came, and <na>(a)</na> brought back the ark of our Lord, and carried it into the house of Abinadab in Gabaa: and Eleazar his son they sanctified, that he might keep the ark of our Lord.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "These men knowing that the presence of the ark was good for them (though the Bethsamites had been punished for their irreverence towards it) feared not to receive and keep it."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -653,11 +742,17 @@
         },
         {
           "verse": 13,
-          "text": "And the Philisthiims were humbled, neither added they any more to come into the border of Israel. Therefore the hand of our Lord was made upon the Philistiims, all the days of Samuel."
+          "text": "And the Philisthiims were humbled, neither added they any more to come into the borders of Israel. Therefore the hand of our Lord was made upon the Philistiims, all the days of Samuel."
         },
         {
           "verse": 14,
-          "text": "And the cities, which the Philistiims had taken from Israel, were rendered to Israel, from Accaron unto Geth, and their borders: and he delivered Israel from the hand of the Philistiims, and there was peace between Israel and the Amorrhite."
+          "text": "And the cities, which the Philistiims had taken from Israel, were rendered to Israel, from Accaron unto Geth, and their borders: and he delivered Israel from the hand of the Philistiims, and there was peace between Israel and the <na>(b)</na> Amorrheite.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "That is to say, the Philisthiims, who were one of the seven nations of Chanaan, which God commanded his people to destroy, commonly called the Amorrheites."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -669,13 +764,13 @@
         },
         {
           "verse": 17,
-          "text": "And he returned into Ramatha: for there, was his house, and there he judged Israel: he built also there an altar to our Lord."
+          "text": "And he returned into Ramatha: for there was his house, and there he judged Israel: he built also there an altar to our Lord."
         }
-      ]
+      ],
+      "summary": "The Ark is brought to the house of Abinadab in Gabaa, 3. By Samuel's exhortation, the people cast away the idols and serve only God. 12. Samuel offering sacrifice and praying, Israel prevaileth against the Philisthiims."
     },
     {
       "chapter": 8,
-      "summary": "Samuel growing old, and his sons for bribes perverting judgement, the people require to have a king. ℣.7 To whom by God's commandments, Samuel foresheweth the law of a king, to make them cease from their demand; ℣.19 but they persist therein.",
       "verses": [
         {
           "verse": 1,
@@ -691,7 +786,13 @@
         },
         {
           "verse": 4,
-          "text": "Therefore all the ancients of Israel being assembled, came to Samuel into Ramatha."
+          "text": "<na>(a)</na> Therefore all the ancients of Israel being assembled, came to Samuel into Ramatha.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Heli his sons grievously offending in their office before (chap. 2.) and now Samuel's sons also perverting judgement gave occasion to the people to demand a King, to judge their temporal causes rightly, not declining to wrong for bribes."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -703,15 +804,22 @@
         },
         {
           "verse": 7,
-          "text": "And our Lord said to Samuel: Hear the voice of the people in all things which they speak to thee. For they have not rejected thee, but me, that I should not reign over them."
+          "text": "And our Lord said to Samuel: Hear the voice of the people in all things which they speak to thee. For they have not rejected thee, but me, that I should not reign over them.",
+          "has_annotation": true
         },
         {
           "verse": 8,
-          "text": "According to all their works, which they have done from the day that I brought them out of Ægypt until this day: as they have forsaken me, and served strange gods, so do they also unto thee."
+          "text": "According to all their works, which they have done from the day that I brought them out of Aegypt until this day: as they have forsaken me, and served strange gods, so do they also unto thee."
         },
         {
           "verse": 9,
-          "text": "Now therefore hear their voice: but yet testify to them, and foretell them the right of the king, that shall reign over them."
+          "text": "Now therefore hear their voice: but yet testify to them, and foretell them the <na>(b)</na> right of the king, that shall reign over them.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Misphat signifieth manner, fashion, or proceeding."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -719,7 +827,8 @@
         },
         {
           "verse": 11,
-          "text": "and said: This shall be the right of the king, that shall reign over you: Your sons he will take, & put in his chariots, and will make them unto him the horsemen, and running footmen before his chariots,"
+          "text": "and said: This shall be the right of the king, that shall reign over you: Your sons he will take, & put in his chariots, and will make them unto him the horsemen, and running footmen before his chariots,",
+          "has_annotation": true
         },
         {
           "verse": 12,
@@ -747,7 +856,18 @@
         },
         {
           "verse": 18,
-          "text": "And you shall cry in that day from the face of the king, which you have chosen you: and our Lord will not hear you in that day, because you desired unto your selves a king."
+          "text": "And you shall cry in that day from the face of the king, which you have chosen you: and our Lord <na>(c)[1]</na> will not hear you in that day, because you desired unto yourselves a king.",
+          "cross_refs": [
+            {
+              "text": "Exod. 19. Deut. 17. Iudic. 2. v. 16."
+            }
+          ],
+          "notes": [
+            {
+              "label": "c",
+              "text": "God always heareth those that truly repent for their sins, but doth not always deliver them from afflictions, which are due for offences, or profitable for probation and merit of his children."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -765,15 +885,20 @@
           "verse": 22,
           "text": "And our Lord said to Samuel: Hear their voice, and appoint a king over them. And Samuel said to the men of Israel: Let every man go into his city."
         }
-      ]
+      ],
+      "summary": "Samuel growing old, and his sons for bribes perverting judgement, the people require to have a king. 7. To whom by God's commandments, Samuel foresheweth the law of a king, to make them cease from their demand; 19. but they persist therein."
     },
     {
       "chapter": 9,
-      "summary": "Saul by occasion of seeking his father's asses cometh to Samuel. ℣.15 Who had a revelation of his coming, and a commandment to anoint him. ℣.22 He is entertained and lodged with Samuel.",
       "verses": [
         {
           "verse": 1,
-          "text": "And there was a man of Benjamin named Cis, the son of Abiel, the son of Seor, the son of Bechorath, the son of Aphia, the son of a man of Jemini, valiant in strength."
+          "text": "And <cr>[1]</cr> there was a man of Benjamin named Cis, the son of Abiel, the son of Seor, the son of Bechorath, the son of Aphia, the son of a man of Jemini, valiant in strength.",
+          "cross_refs": [
+            {
+              "text": "The second part. The election, anointing, and government of King Saul."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -805,7 +930,13 @@
         },
         {
           "verse": 9,
-          "text": "(For in time past in Israel so every man spake, going to consult God, Come, and let us go to the seer. For he that at this day is called a Prophet, in time past was called a seer.)"
+          "text": "(For in time past in Israel so every man spake, going to consult God, Come, and let us go to the seer. For he that at this day is called a Prophet, in time past was called <na>(a)</na> a seer.)",
+          "notes": [
+            {
+              "label": "a",
+              "text": "One that by divine inspiration foreseeth things to come."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -833,7 +964,13 @@
         },
         {
           "verse": 16,
-          "text": "This very hour, that now is, to morrow will I send to thee a man of the Land of Benjamin, and thou shalt anoint him ruler over my people of Israel: & he shall save my people from the hand of the Philistiims: because I have respected my people, for their cry is come to me."
+          "text": "This very hour, that now is, tomorrow will I send to thee a man of the Land of Benjamin, and thou shalt anoint him ruler over my people of Israel: & he shall save my people from the hand of the Philistiims: because I have respected my people, for <na>(b)</na> their cry is come to me.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Oppression of innocents cryeth to heaven."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -845,7 +982,7 @@
         },
         {
           "verse": 19,
-          "text": "And Samuel answered Saul, saying: I am the seer, go up before me into the excelse, that you may eat with me to day, & I will dismiss thee in the morning: and all things that are in thy heart, will I tell thee."
+          "text": "And Samuel answered Saul, saying: I am the seer, go up before me into the excelse, that you may eat with me today, & I will dismiss thee in the morning: and all things that are in thy heart, will I tell thee."
         },
         {
           "verse": 20,
@@ -853,7 +990,7 @@
         },
         {
           "verse": 21,
-          "text": "And Saul answering, said: Am not I, the son of Jemini of the least tribe of Israel, and my kindred the last among all the families of the tribe of Benjamin? Why therefore hast thou spoken this word to me?"
+          "text": "And Saul answering, said: Am not I the son of Jemini of the least tribe of Israel, and my kindred the last among all the families of the tribe of Benjamin? Why therefore hast thou spoken this word to me?"
         },
         {
           "verse": 22,
@@ -879,15 +1016,25 @@
           "verse": 27,
           "text": "And when they came down in the uttermost part of the city, Samuel said to Saul: Speak to the servant that he go before us, and pass: but stay thou a little while, that I may tell thee the word of our Lord."
         }
-      ]
+      ],
+      "summary": "Saul by occasion of seeking his father's asses cometh to Samuel. 15. Who had a revelation of his coming, and a commandment to anoint him. 22. He is entertained and lodged with Samuel."
     },
     {
       "chapter": 10,
-      "summary": "Saul is anointed King, and confirmed by signs that his ordinance is of God. ℣.10 He prophesieth, which the people doth admire. ℣.17 Samuel calleth the people together, for appointing a king, the lot falleth on Saul. ℣.25 And the law of the king is again mentioned.",
       "verses": [
         {
           "verse": 1,
-          "text": "And Samuel took a little vessel of oil, and poured upon his head, and kissed him, and said: Behold, our Lord hath anointed thee upon his inheritance to be Prince, and thou shalt deliver his people out of the hands of their enemies, that are round about them. And this shall be a sign unto thee, that God hath anointed thee to be Prince."
+          "text": "And Samuel took <na>(a)</na> a little vessel of <na>(b)</na> oil, and poured upon his head, and kissed him, and said: Behold, our Lord hath anointed thee upon his inheritance to be Prince, and thou shalt deliver his people out of the hands of their enemies, that are round about them. And this shall be a sign unto thee, that God hath anointed thee to be Prince.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "S. Gregory here noteth, that such as are place in height of government are anointed with oil, which signifieth mercy, light, and curing of others."
+            },
+            {
+              "label": "b",
+              "text": "But the little vessel foreshewed that Saul not persevering in grace, should be deposed from his kingdom. li. 4. c. 5. in 1. Reg. 10."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -895,7 +1042,7 @@
         },
         {
           "verse": 3,
-          "text": "And when thou shalt depart thence, and pass farther, and shalt come to the oak Thabor, three men going up to God into Bethel shall find thee there, on carrying three kids, and an other three manchets of bread, and an other carrying a flagon of wine."
+          "text": "And when thou shalt depart thence, and pass farther, and shalt come to the oak Thabor, three men going up to God into Bethel shall find thee there, one carrying three kids, and another three manchets of bread, and another carrying a flagon of wine."
         },
         {
           "verse": 4,
@@ -907,7 +1054,7 @@
         },
         {
           "verse": 6,
-          "text": "And the Spirit of our Lord shall seize upon thee, and thou shalt prophesy with them, and shalt be changed into an other man."
+          "text": "And the Spirit of our Lord shall seize upon thee, and thou shalt prophesy with them, and shalt be changed into another man."
         },
         {
           "verse": 7,
@@ -915,23 +1062,47 @@
         },
         {
           "verse": 8,
-          "text": "And thou shalt go down before me into Galgala (for I will come down to thee) that thou mayest offer oblation, and immolate pacific victims: seven days shalt thou expect, till I come to thee, & I will shew thee what thou must do."
+          "text": "And thou shalt go down before me into Galgala (for I will come down to thee) that thou mayest offer oblation, and immolate pacific victims: <na>(c)</na> seven days shalt thou expect, till I come to thee, & I will shew thee what thou must do.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Samuel enjoineth obedience to Saul to try his humility. S. Greg. li. 4. c. 5. in 1. Reg. 10."
+            }
+          ]
         },
         {
           "verse": 9,
-          "text": "Therefore when he had turned away his shoulder to depart from Samuel, God changed unto him another heart, and all these things came in that day."
+          "text": "Therefore when he had turned away his shoulder to depart from Samuel, God <na>(d)</na> changed unto him another heart, and all these things came in that day.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "God gave him peculiar grace for executing the office of a King."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "And they came to the foresaid hill, and behold a troop of Prophets meeting him: & the Spirit of our Lord seized upon him, and he prophesied in the midst of them."
+          "text": "And they came to the foresaid hill, and behold a troop of Prophets meeting him: & the <na>(e)</na> Spirit of our Lord seized upon him, and he prophesied in the midst of them.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "By and by also the gift of prophecy."
+            }
+          ]
         },
         {
           "verse": 11,
-          "text": "And all that had known him yesterday and the day before, seeing that he was with the prophets, & did prophesy, said to each other: What thing hath happened to the son of Cis? What, is Saul also among the Prophets?"
+          "text": "And all that had known him yesterday and the day before, seeing that he was with the prophets, & did prophesy, said to each other: What thing hath happened to the son of Cis? What^ is Saul also among the Prophets?"
         },
         {
           "verse": 12,
-          "text": "And one answered an other, saying: And who is there father? Therefore it was turned into a proverb: What, is Saul also among the Prophets?"
+          "text": "And one answered another, saying: And who is <na>(f)</na> there father? Therefore it was turned into a proverb: What^ is Saul also among the Prophets?",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Their superior."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -955,7 +1126,7 @@
         },
         {
           "verse": 18,
-          "text": "And said to the children of Israel: Thus saith our Lord the God of Israel: I brought Israel out of Ægypt, and delivered you from the hand of the Ægyptians, and from the hand of all the kings which afflicted you."
+          "text": "And said to the children of Israel: Thus saith our Lord the God of Israel: I brought Israel out of Aegypt, and delivered you from the hand of the Aegyptians, and from the hand of all the kings which afflicted you."
         },
         {
           "verse": 19,
@@ -963,7 +1134,13 @@
         },
         {
           "verse": 20,
-          "text": "And Samuel brought all the tribes of Israel, and the lot fell on the tribe of Benjamin."
+          "text": "And Samuel brought all the tribes of Israel, and the <na>(g)</na> lot fell on the tribe of Benjamin.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "By lot the people were assured that the election was of God. S. Greg. ibidem."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -993,11 +1170,11 @@
           "verse": 27,
           "text": "But the children of Belial said: What, shall this fellow be able to save us? And they despised him, & brought him not presents: but he dissembled as though he heard not."
         }
-      ]
+      ],
+      "summary": "Saul is anointed King, and confirmed by signs that his ordinance is of God. 10. He prophesieth, which the people doth admire. 17. Samuel calleth the people together, for appointing a king, the lot falleth on Saul. 25. And the law of the king is again mentioned."
     },
     {
       "chapter": 11,
-      "summary": "Ammonites fighting against Jabes Galaad, and the city ready to yield, ℣.5 Saul gathereth an army, ℣.11 overthroweth the enemy, ℣.14 and is established king.",
       "verses": [
         {
           "verse": 1,
@@ -1033,11 +1210,17 @@
         },
         {
           "verse": 9,
-          "text": "And they said to the messengers that came: Thus shall you say to the men, that are in Jabes Galaad: To morrow, when the sun shall wax hot, you shall have relief. The messengers therefore came, & told the men of Jabes: Who were glad."
+          "text": "And they said to the messengers that came: Thus shall you say to the men, that are in Jabes Galaad: Tomorrow, when the sun shall wax hot, you shall have relief. The messengers therefore came, & told the men of Jabes: Who were glad."
         },
         {
           "verse": 10,
-          "text": "And they said: In the morning we will come forth to you: & you shall do to us whatsoever shall please you."
+          "text": "And they said: In the morning <na>(a)</na> we will come forth to you: & you shall do to us whatsoever shall please you.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "As the men of Jabes deluded their enemies by equivocation, so speaking that they were otherwise understood than they meant: so the servants of God being tempted with concupiscence of gluttony (signified by Naas ) must deceive their carnal appetite, by promising to satisfy the desire of the flesh, but in deed keep such temperance, as they may kill the concupiscence, and not be killed by it. S. Greg. li. 5. c. 1. in 1. Reg. 11."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1059,11 +1242,11 @@
           "verse": 15,
           "text": "And all the people went into Galgal, and there they made Saul king before our Lord in Galgal, and they immolated there pacific victims before our Lord. And Saul rejoiced there, and all the men of Israel exceedingly."
         }
-      ]
+      ],
+      "summary": "Ammonites fighting against Jabes Galaad, and the city ready to yield, 5. Saul gathereth an army, 11. overthroweth the enemy, 14. and is established king."
     },
     {
       "chapter": 12,
-      "summary": "Samuel being justified by the people for his good behaviour, ℣.6 chargeth them with ingratitude towards God, ℣.14 admonishing them, and shewing by a sign, that they offended in demanding a king. ℣.20 Exhorteth them now to serve God, promiseth to pray for them,279 and forewarneth that they shall receive as they deserve.",
       "verses": [
         {
           "verse": 1,
@@ -1083,11 +1266,17 @@
         },
         {
           "verse": 5,
-          "text": "And he said to them: Witness is our Lord against you, and witness is his Christ in this day, that you have not found any thing in my hand. And they said: Witness."
+          "text": "And he said to them: Witness is our Lord against you, and witness is his <na>(a)</na> Christ in this day, that you have not found any thing in my hand. And they said: Witness.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The anointed King."
+            }
+          ]
         },
         {
           "verse": 6,
-          "text": "And Samuel said to the people: Our Lord who made Moyses & Aaron, & brought our fathers out of the Land of Ægypt is present."
+          "text": "And Samuel said to the people: Our Lord who made Moyses & Aaron, & brought our fathers out of the Land of Aegypt is present."
         },
         {
           "verse": 7,
@@ -1095,11 +1284,11 @@
         },
         {
           "verse": 8,
-          "text": "how Jacob entered into Ægypt, and your fathers cried to our Lord: and our Lord sent Moyses and Aaron, and brought your fathers out of Ægypt: and placed them in this place."
+          "text": "how Jacob entered into Aegypt, and your fathers cried to our Lord: and our Lord sent Moyses and Aaron, and brought your fathers out of Aegypt: and placed them in this place."
         },
         {
           "verse": 9,
-          "text": "Who forgat our Lord their God, and he delivered them in the hand of Sisara master of the host of Hasor, and in the hand of the Philisthiims, and in the hand of the king of Moab, and they fought against them"
+          "text": "Who forgat our Lord their God, and he delivered them in the hand of Sisara master of the host of Hasor, and in the hand of the Philisthiims, and in the hand of the king of Moab, and they fought against them."
         },
         {
           "verse": 10,
@@ -1107,11 +1296,22 @@
         },
         {
           "verse": 11,
-          "text": "And our Lord sent Jerobaal, & Badan, & Jephte, & Samuel, and delivered you from the hand of your enemies round about, & you dwelt securely."
+          "text": "And our Lord sent Jerobaal, & <cr>[1]</cr> Badan, & Jephte, & Samuel, and delivered you from the hand of your enemies round about, & you dwelt securely.",
+          "cross_refs": [
+            {
+              "text": "mighty Samson"
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "But you seeing that Naas, king of the children of Ammon was come against you, you said to me: Not so, but a king shall reign over us: whereas our Lord your God did reign among you."
+          "text": "But you seeing that Naas, king of the children of Ammon was come against you, you said to me: <na>(b)</na> Not so, but a king shall reign over us: whereas our Lord your God did reign among you.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "They meant that they would not be ruled & protected as hitherto they had been, by Dukes & Judges ordained & sent immediately by God, but would have a King to reign over them: imagining that so they should be better protected, and defended from foreign enemies: wherein they preferred their own conceit & judgement before God's disposition, and therefore this sin is often here inculcated, and much reprehended. S. Greg. l. 5. c. 2. in 1. Reg. 12."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1123,7 +1323,12 @@
         },
         {
           "verse": 15,
-          "text": "But if you will not hear the voice of our Lord, but shall exasperate his words, the hand of our Lord shall be upon you, & upon your fathers."
+          "text": "But if you will not hear the voice of our Lord, but shall exasperate his words, the hand of our Lord shall be upon you, & upon your <cr>[1]</cr> fathers.",
+          "cross_refs": [
+            {
+              "text": "governors. S. Greg."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1131,19 +1336,39 @@
         },
         {
           "verse": 17,
-          "text": "Is it not wheat harvest to day? I will call upon our Lord, & he will give noises & rain: and you shall know, & see that you have done great evil to your selves in the sight of our Lord, desiring a king over you."
+          "text": "Is it not wheat harvest today? I will call upon our Lord, & he will give",
+          "cross_refs": [
+            {
+              "text": "noises & rain: and you shall know, & see that you have done great evil to yourselves in the sight of our Lord, desiring a king over you."
+            },
+            {
+              "text": "thunder."
+            }
+          ]
         },
         {
           "verse": 18,
-          "text": "And Samuel cried to our Lord, & our Lord gave noises & rain in that day"
+          "text": "And Samuel cried to our Lord, & our Lord gave noises & rain in that day."
         },
         {
           "verse": 19,
-          "text": "And all the people feared exceedingly our Lord and Samuel. And all the people said to Samuel: Pray for thy servants to our Lord thy God, that we die not. For we have added evil to all our sins, that we desired unto us a king."
+          "text": "And all the people feared exceedingly our Lord and <na>(c)</na> Samuel. And all the people said to Samuel: Pray for thy servants to our Lord thy God, that we die not. For we have added evil to all our sins, that we desired unto us a king.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The feared God so much the more, because they feared also his servant."
+            }
+          ]
         },
         {
           "verse": 20,
-          "text": "And Samuel said to the people: Fear not, you have done all this evil: but yet depart not from the back of our Lord, but serve our Lord in all your heart."
+          "text": "And Samuel said to the people: Fear not, you have done all this evil: but yet depart not from the <na>(d)</na> back of our Lord, but serve our Lord in all your heart.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "For sinners to come before God's face were presumption, not to come to his back, or to depart from thence, were desperation. So Mary Magdalene with fear & hope approached & tarried at Christ's back. loco citato."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1165,15 +1390,25 @@
           "verse": 25,
           "text": "But if you shall persevere in malice, both you and your king shall perish together."
         }
-      ]
+      ],
+      "summary": "Samuel being justified by the people for his good behaviour, 6. chargeth them with ingratitude towards God, 14. admonishing them, and shewing by a sign, that they offended in demanding a king. 20. Exhorteth them now to serve God, promiseth to pray for them, and forewarneth that they shall receive as they deserve."
     },
     {
       "chapter": 13,
-      "summary": "Saul and Jonathas prevail in battle against the Philisthiims. ℣.5 Who increasing their forces, the Israelites for fear fly away and hide themselves. ℣.8 Samuel not coming to the camp, Saul presumeth to offer sacrifice, ℣.11 for which Samuel reproveth him, and declareth that his Kingdom shall be translated to an other. ℣.17 The Philisthiims oppress the Israelites, and deprive them of armour.",
       "verses": [
         {
           "verse": 1,
-          "text": "A child of one year was Saul when he began to reign, and two years he reigned over Israel."
+          "text": "Achild of <na>(a)</na> one year was Saul when he began to reign, and <na>(b)</na> two years he reigned over Israel.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Saul beginning to reign was innocent & humble as a child of one year."
+            },
+            {
+              "label": "b",
+              "text": "And in that state reigned the first two years. S. Greg. in hunc locum."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1217,11 +1452,21 @@
         },
         {
           "verse": 12,
-          "text": "I said: Now will the Philisthiims come down to me into Galga, and I have not pacified the face of our Lord. Compelled by necessity, I offered the holocaust."
+          "text": "Isaid: Now will the Philisthiims come down to me into Galgal, and I have not pacified the face of our Lord. Compelled by necessity, I offered the holocaust."
         },
         {
           "verse": 13,
-          "text": "And Samuel said to Saul: Thou hast done foolishly, neither hast thou kept the commandments of our Lord thy God, which he commanded thee. Which if thou hadst not done, even now had our Lord prepared thy Kingdom over Israel for ever,"
+          "text": "And Samuel said to Saul: Thou hast <na>(c)</na> done foolishly, neither hast thou kept the commandments of our Lord thy God, which he commanded thee. Which <na>(d)</na> if thou hadst not done, even now had our Lord prepared thy Kingdom over Israel for ever,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "He offended in offering sacrifice, being neither a Priest, nor extraordinarily allowed to do that office, and for this & other faults was deposed."
+            },
+            {
+              "label": "d",
+              "text": "God's foresight of sin, & preordination to punish it, taketh not away freewill, nor possibility of well doing, nor of reward. S. Aug. li. 3. c. 4. de lib. arbit."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -1241,7 +1486,7 @@
         },
         {
           "verse": 18,
-          "text": "Moreover an other went by the way of Bethhoron, and the third had turned it-self to the way of the border, in the valley Seboim against the desert."
+          "text": "Moreover another went by the way of Bethhoron, and the third had turned it-self to the way of the border, in the valley Seboim against the desert."
         },
         {
           "verse": 19,
@@ -1249,7 +1494,7 @@
         },
         {
           "verse": 20,
-          "text": "All Israel therefore went down to the Philisthiims, that every man might whet his plough culter, and spade, and axe, and rake."
+          "text": "All Israel therefore went down to the Philisthiims, that every man might whet his plough coulter, and spade, and axe, and rake."
         },
         {
           "verse": 21,
@@ -1263,11 +1508,11 @@
           "verse": 23,
           "text": "And the station of the Philisthiims went forth, to pass up into Machmas."
         }
-      ]
+      ],
+      "summary": "Saul and Jonathas prevail in battle against the Philisthiims. 5. Who increasing their forces, the Israelites for fear fly away and hide themselves. 8. Samuel not coming to the camp, Saul presumeth to offer sacrifice, 11. for which Samuel reproveth him, and declareth that his Kingdom shall be translated to another. 17. The Philisthiims oppress the Israelites, and deprive them of armour."
     },
     {
       "chapter": 14,
-      "summary": "Jonathas trusting in God, accompanied with one man, his father not knowing, goeth into the Philisthiim's camp, killeth twenty men, and troubleth their whole army. ℣.16 Saul understanding the same, approacheth with his army, and they get a great victory. ℣.24 But Saul having commanded under pain of death, that none should eat till night, Jonathas for tasting a little honey (though ignorant of the prohibition) is judged to die. ℣.45 But the people oppose themselves, and deliver him from death. ℣.47 Saul prospereth in his Kingdom, with his family.",
       "verses": [
         {
           "verse": 1,
@@ -1307,7 +1552,13 @@
         },
         {
           "verse": 10,
-          "text": "But if they shall say: Come up to us: let us go up, because our Lord hath delivered them in our hands, this shall be a sign unto us."
+          "text": "But if they shall say: Come up to us: let us go up, because our Lord hath delivered them in our hands, <na>(a)</na> this shall be a sign unto us.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Ominous speeches are proved by this and some other examples to be sometimes of God, though sometimes this kind of observation is superstitious. As before is noted, Gen. 24."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1335,7 +1586,7 @@
         },
         {
           "verse": 17,
-          "text": "And Saul said to the people, which was with him: Enquire, and see who is gone from us. And when they had sought, it was found that Jonathas was not present and his esquire."
+          "text": "And Saul said to the people, which was with him: Inquire, and see who is gone from us. And when they had sought, it was found that Jonathas was not present and his esquire."
         },
         {
           "verse": 18,
@@ -1343,7 +1594,13 @@
         },
         {
           "verse": 19,
-          "text": "And when Saul spake to the Priest, there arose a great tumult in the camp of the Philisthiims: and it grew by little and little, and sounded more clearly. And Saul said to the Priest: Draw together thy hand."
+          "text": "And when Saul spake to the Priest, there arose a great tumult in the camp of the Philisthiims: and it grew by little and little, and sounded more clearly. And Saul said to the Priest: <na>(b)</na> Draw together thy hand.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Pray no more nor expect no longer: so they proceeded to battle without further warrant."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1383,7 +1640,13 @@
         },
         {
           "verse": 29,
-          "text": "And Jonathas said: My father hath troubled the land: your selves have seen that mine eyes are illuminated, because I have tasted a little of this honey:"
+          "text": "And Jonathas said: <na>(c)</na> My father hath troubled the land: yourselves have seen that mine eyes are illuminated, because I have tasted a little of this honey:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Jonathas was excused by ignorance, & by necessity; and therefore was justly delivered by the people; and his father offended, in not excepting the case of necessity, & through more eager zeal of revenge, than he had warrant from God, whose answer he would not expect. v. 19."
+            }
+          ]
         },
         {
           "verse": 30,
@@ -1395,7 +1658,13 @@
         },
         {
           "verse": 32,
-          "text": "and being turned to the prey took sheep, and oxen, and calves, and slew them on the ground: and the people did eat with blood."
+          "text": "and being turned to the prey took sheep, and oxen, and calves, and slew them on the ground: and the people did eat <na>(d)</na> with blood.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Whereof followed also another sin, that the people fainting for lack of meat did eat flesh with the blood, contrary to the law."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -1403,7 +1672,7 @@
         },
         {
           "verse": 34,
-          "text": "And Saul said: Disperse your selves among the common people, and tell them that every man bring me his oxe and ram, and kill ye them upon this same, and eat, and you shall not sin to our Lord eating with blood. All the people therefore brought every man his oxe in his hand until night: and slew them there."
+          "text": "And Saul said: Disperse yourselves among the common people, and tell them that every man bring me his oxe and ram, and kill ye them upon this same, and eat, and you shall not sin to our Lord eating with blood. All the people therefore brought every man his oxe in his hand until night: and slew them there."
         },
         {
           "verse": 35,
@@ -1415,11 +1684,17 @@
         },
         {
           "verse": 37,
-          "text": "And Saul consulted our Lord: Shall I pursue the Philistiims? Wilt thou deliver them into the hands of Israel? And he answered him not in that day."
+          "text": "And Saul consulted our Lord: Shall I pursue the Philistiims? Wilt thou deliver them into the hands of Israel? And <na>(e)</na> he answered him not in that day.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Before, v. 19. Saul would not expect God's answer: now therefore God will not answer him."
+            }
+          ]
         },
         {
           "verse": 38,
-          "text": "And Saul said: Bring hither all the corners of the people: and know, and see by whom this sin hath chanced to day."
+          "text": "And Saul said: Bring hither all the corners of the people: and know, and see by whom this sin hath chanced today."
         },
         {
           "verse": 39,
@@ -1435,7 +1710,13 @@
         },
         {
           "verse": 42,
-          "text": "And Saul said: Cast ye lot between me, and Jonathas my son. And Jonathas was taken."
+          "text": "And Saul said: Cast ye lot between me, and Jonathas my son. And <na>(f)</na> Jonathas was taken.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Jonathas was found to have transgressed the unadvised commandment, but Saul himself was in a greater fault of rash proceeding, & undiscreet commanding."
+            }
+          ]
         },
         {
           "verse": 43,
@@ -1447,7 +1728,7 @@
         },
         {
           "verse": 45,
-          "text": "And the people said to Saul: Shall Jonathas then die, which hath made this great salvation in Israel? This is unlawful: our Lord liveth, if there shall fall a hair from his head upon the ground, because with God hath he wrought to day. The people therefore delivered Jonathas, that he should not die."
+          "text": "And the people said to Saul: Shall Jonathas then die, which hath made this great salvation in Israel? This is unlawful: our Lord liveth, if there shall fall a hair from his head upon the ground, because with God hath he wrought today. The people therefore delivered Jonathas, that he should not die."
         },
         {
           "verse": 46,
@@ -1463,7 +1744,7 @@
         },
         {
           "verse": 49,
-          "text": "And the sons of Saul, were Jonathas and Jesui. And Melchisua: and the names of his two daughters, the name of the first born Merob, and the name of the younger Michol."
+          "text": "And the sons of Saul, were Jonathas and Jesui, and Melchisua: and the names of his two daughters, the name of the first born Merob, and the name of the younger Michol."
         },
         {
           "verse": 50,
@@ -1477,11 +1758,11 @@
           "verse": 52,
           "text": "And there was mighty battle against the Philisthians all the days of Saul. For whomsoever Saul had seen a valiant man, and fit for battle, he joined him to himself."
         }
-      ]
+      ],
+      "summary": "Jonathas trusting in God, accompanied with one man, his father not knowing, goeth into the Philisthiims' camp, killeth twenty men, and troubleth their whole army. 16. Saul understanding the same, approacheth with his army, and they get a great victory. 24. But Saul having commanded under pain of death, that none should eat till night, Jonathas for tasting a little honey (though ignorant of the prohibition) is judged to die. 45. But the people oppose themselves, and deliver him from death. 47. Saul prospereth in his Kingdom, with his family."
     },
     {
       "chapter": 15,
-      "summary": "Saul is commanded utterly to destroy the Amalecites, ℣.8 but he taking Agag their king spareth his life, & chief of the prey. ℣.10 For which disobedience (℣.20 though pretending that the best things were reserved for sacrifice) he is deposed from his Kingdom. ℣.24 Then acknowledgeth his fault. ℣.32 Samuel cutteth Agag in pieces, ℣.35 and mourneth for Saul.",
       "verses": [
         {
           "verse": 1,
@@ -1489,11 +1770,21 @@
         },
         {
           "verse": 2,
-          "text": "Thus saith the Lord of hosts: I have recounted whatsoever Amalec hath done to Israel: how he resisted them in the way when they came up out of Ægypt."
+          "text": "Thus saith the Lord of hosts: I have recounted whatsoever Amalec hath done to Israel: how he resisted them in the way when they came up out of Aegypt."
         },
         {
           "verse": 3,
-          "text": "Now therefore go, and strike Amalec, and destroy all that he hath: spare him not, and covet not ought of his things: but kill from man unto woman, both child & suckling, oxe and sheep, camel and ass."
+          "text": "Now therefore go, and <na>(a)</na> strike Amalec, and <na>(b)</na> destroy all that he hath: spare him not, and covet not ought of his things: but kill from man unto woman, both child & suckling, oxe and sheep, camel and ass.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Amalec is strucken when the flesh is chastised by abstinence."
+            },
+            {
+              "label": "b",
+              "text": "Destroyed when the mind is restrained from unclean cogitations. S. Greg. li. 6. c. 1. in 1. Reg. 15."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -1505,11 +1796,11 @@
         },
         {
           "verse": 6,
-          "text": "And Saul said to the Cinite: Go ye, retire & depart from Amalec: lest perhaps I wrap thee in with him, for thou hast done mercy with all the children of Israel, when they descended out of Ægypt. And the Cinite departed out of the midst of Amalec."
+          "text": "And Saul said to the Cineite: Go ye, retire & depart from Amalec: lest perhaps I wrap thee in with him, for thou hast done mercy with all the children of Israel, when they descended out of Aegypt. And the Cineite departed out of the midst of Amalec."
         },
         {
           "verse": 7,
-          "text": "And Saul struck Amalec from Hevila, until thou come to Sur, which is over-against Ægypt."
+          "text": "And Saul struck Amalec from Hevila, until thou come to Sur, which is over-against Aegypt."
         },
         {
           "verse": 8,
@@ -1549,7 +1840,13 @@
         },
         {
           "verse": 17,
-          "text": "And Samuel said: When thou wast a little one in thine own eyes, was thou not made chief in the tribes of Israel? And our Lord anointed thee to be king over Israel,"
+          "text": "And Samuel said: When thou wast a little one in thine own eyes, <na>(c)</na> was thou not made chief in the tribes of Israel? And our Lord anointed thee to be king over Israel,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "When Saul was humble he was exalted, now being proud he is rejected."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1565,11 +1862,17 @@
         },
         {
           "verse": 21,
-          "text": "But the people took of the prey, sheep and oxen, the principal of those things which were slain, to immolate to our Lord their God in Galgal."
+          "text": "But the people took of the prey^ sheep and oxen, the principal of those things which were slain, to immolate to our Lord their God in Galgal."
         },
         {
           "verse": 22,
-          "text": "And Samuel said: why? Will our Lord have holocausts and victims, and not rather that the voice of our Lord be obeyed? For BETTER IS OBEDIENCE THAN VICTIMS: and to harken rather than to offer the fat of rams."
+          "text": "And Samuel said: why? Will our Lord have holocausts and victims, and not rather that the voice of our Lord be obeyed? For <na>(d)</na> BETTER IS OBEDIENCE THAN VICTIMS: and to harken rather than to offer the fat of rams.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "By ordinary sacrifices, we give our external goods to God, by obedience we give ourselves. S. Greg. l. 6. c. 2. in 1. Reg. 15."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -1621,17 +1924,28 @@
         },
         {
           "verse": 35,
-          "text": "And Samuel saw Saul no more unto the day of his death: but yet Samuel lamented Saul because it repented our Lord that he had appointed him king over Israel."
+          "text": "And Samuel saw Saul no more unto the day of his death: but yet Samuel lamented Saul because it <na>(e)</na> repented our Lord that he had appointed him king over Israel.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "God is said improperly to repent, when he altereth the thing that he did before. S. Amb. li. de Noe c. 4."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Saul is commanded utterly to destroy the Amalecites, 8. but he taking Agag their king spareth his life, & chief of the prey. 10. For which disobedience (20. though pretending that the best things were reserved for sacrifice) he is deposed from his Kingdom. 24. Then acknowledgeth his fault. 32. Samuel cutteth Agag in pieces, 35. and mourneth for Saul."
     },
     {
       "chapter": 16,
-      "summary": "Samuel by God's commandment anointeth David king. ℣.14 God's spirit parteth from Saul, and a wicked spirit vexeth him. ℣.16 The vexation is mitigated by David's playing on a harp.",
       "verses": [
         {
           "verse": 1,
-          "text": "And our Lord said to Samuel: How long dost thou mourn Saul, whom I have rejected that he rule not over Israel? Fill thy horn with oil, and come, that I may send thee to Isai the Bethlehemite: for I have provided me a king among his sons."
+          "text": "And <cr>[1]</cr> our Lord said to Samuel: How long dost thou mourn Saul, whom I have rejected that he rule not over Israel? Fill thy horn with oil, and come, that I may send thee to Isai the Bethlehemite: for I have provided me a king among his sons.",
+          "cross_refs": [
+            {
+              "text": "The third part. David's anointing, his virtues, & persecution."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1655,7 +1969,8 @@
         },
         {
           "verse": 7,
-          "text": "And our Lord said to Samuel: Respect not his countenance, nor the tallness of his stature: because I have rejected him, neither do I judge according to the look of man: for man seeth those things which appear, but our Lord beholdeth the heart."
+          "text": "And our Lord said to Samuel: Respect not his countenance, nor the tallness of his stature: because I have rejected him, neither do I judge according to the look of man: for man seeth those things which appear, but our Lord beholdeth the heart.",
+          "has_annotation": true
         },
         {
           "verse": 8,
@@ -1683,7 +1998,13 @@
         },
         {
           "verse": 14,
-          "text": "And the Spirit of our Lord departed from Saul, and a wicked spirit vexed him, from our Lord."
+          "text": "And the Spirit of our Lord departed from Saul, and a wicked spirit vexed him, <na>(a)</na> from our Lord.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "By God's permission. S. Aug. li. 2. q. 1. ad Simplician. S. Beda qq. in 1. Reg. c. 5."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1691,7 +2012,13 @@
         },
         {
           "verse": 16,
-          "text": "Let our Lord command, and thy servants which are before thee will seek a man skilful to play on the harp, that when the evil spirit of our Lord shall take thee, he may play with his hand, and thou bear it more easily."
+          "text": "Let our Lord command, and thy servants which are before thee will seek a man skillful to <na>(b)</na> play on the harp, that when the evil spirit of our Lord shall take thee, he may play with his hand, and thou bear it more easily.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Naturally (as these men truly judged music helpeth some disposition of humours, & draweth also the mind from so vehement apprehension of afflictions: but here it seemeth more probable that God supernaturally relieved Saul by David's playing on the harp, together with his sincere devotion, for more manifest condemnation of the one, and justification of the other. Glos. ordin. S. Greg."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -1699,7 +2026,7 @@
         },
         {
           "verse": 18,
-          "text": "And one of the servants answering, said: Behold I have seen the son of Isai the Bethlehemite skilful to play, and very valiant in strength, and a warlike man, and wise in his words, & a beautiful man: and our Lord is with him."
+          "text": "And one of the servants answering, said: Behold I have seen the son of Isai the Bethlehemite skillful to play, and very valiant in strength, and a warlike man, and wise in his words, & a beautiful man: and our Lord is with him."
         },
         {
           "verse": 19,
@@ -1721,11 +2048,11 @@
           "verse": 23,
           "text": "Therefore whensoever the evil spirit of our Lord caught Saul, David took his harp, & struck with his hand, & Saul was refreshed, and waxed better, for the evil spirit departed from him."
         }
-      ]
+      ],
+      "summary": "Samuel by God's commandment anointeth David king. 14. God's spirit parteth from Saul, and a wicked spirit vexeth him. 16. The vexation is mitigated by David's playing on a harp."
     },
     {
       "chapter": 17,
-      "summary": "Goliath a Philistian challengeth any one of Israel to combat. ℣.12 David being sent by his father to visit his brethren, ℣.23 and hearing all Israel so reproachfully provoked, offereth to undertake the challenge: ℣.34 shewing by former acts that he dare accept it. ℣.37 And so by God's special help wherein he trusteth, ℣.49 overthroweth the challenger with a stone of his sling, and cutteth off his head with his own sword. ℣.51 the Philisthiims flying are slain, and David bringeth the man's head to Saul.",
       "verses": [
         {
           "verse": 1,
@@ -1741,7 +2068,13 @@
         },
         {
           "verse": 4,
-          "text": "And there came forth a man that was a bastard from the camp of the Philistians, named Goliath, of Geth, in height six cubits and a palm:"
+          "text": "And there came forth a man that was a bastard from the camp of the Philistians, named <na>(a)</na> Goliath, of Geth, in height six cubits and a palm:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This bold & impudent challenger signifieth the devil, or any arch-heretic, that provoketh the Church of God: but is overcome by the humble of heart and confident in God, & slain with his own weapon."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1749,7 +2082,7 @@
         },
         {
           "verse": 6,
-          "text": "and he had brassen boots on his thighs, and a target of brass covered his shoulders."
+          "text": "and he had brazen boots on his thighs, and a target of brass covered his shoulders."
         },
         {
           "verse": 7,
@@ -1773,7 +2106,7 @@
         },
         {
           "verse": 12,
-          "text": "And there was David the son of a man that was an Ephrathite, of whom there was mention before, of Bethlehem Juda, whose name was Isai, who had eight sons, and he was in the days of Saul an old man, and aged among men."
+          "text": "And there was David the son of a man that was an Ephratheite, of whom there was mention before, of Bethlehem Juda, whose name was Isai, who had eight sons, and he was in the days of Saul an old man, and aged among men."
         },
         {
           "verse": 13,
@@ -1825,7 +2158,13 @@
         },
         {
           "verse": 25,
-          "text": "And some one of Israel said: Have you seen this man that came up, to defy Israel he came up? The man therefore that shall strike him, the king will give him his daughter, and he will make his father's house without tribute in Israel."
+          "text": "And some one of Israel said: Have you seen this man that came up, to defy Israel he came up? The man therefore <na>(b)</na> that shall strike him, the king will give him his daughter, and he will make his father's house without tribute in Israel.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Christ overcoming the devil received the Church to his spouse. S. Greg."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -1845,7 +2184,7 @@
         },
         {
           "verse": 30,
-          "text": "And he went a little aside from him to an other, and said the self-same word. And the people answered him as before."
+          "text": "And he went a little aside from him to another, and said the self-same word. And the people answered him as before."
         },
         {
           "verse": 31,
@@ -1861,7 +2200,12 @@
         },
         {
           "verse": 34,
-          "text": "And David said to Saul: Thy servant did feed his father's flock, and there came a lion, or a bear, and took a ram out of the midst of the flock:"
+          "text": "And David said to Saul: Thy servant did feed his father's flock, and there came a lion, <cr>[1]</cr> or a bear, and took a ram out of the midst of the flock:",
+          "cross_refs": [
+            {
+              "text": "* or, for and. v. 36. 37."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -1869,7 +2213,13 @@
         },
         {
           "verse": 36,
-          "text": "For both the lion and the bear did I thy servant kill: therefore this uncircumcised Philistian also shall be as it were one of them. Now will I go & take away the reproach of the people: for who is this uncircumcised Philistian, which hath been so hardy to curse the host of the living God?"
+          "text": "For <na>(c)</na> both the lion and the bear did I thy servant kill: therefore this uncircumcised Philistian also shall be as it were one of them. Now will I go & take away the reproach of the people: for who is this uncircumcised Philistian, which hath been so hardy to curse the host of the living God?",
+          "notes": [
+            {
+              "label": "c",
+              "text": "He that hath overcome the spirit of pride & of carnality (signified by a lion & a bear) is able also to overcome the devil."
+            }
+          ]
         },
         {
           "verse": 37,
@@ -1881,11 +2231,11 @@
         },
         {
           "verse": 39,
-          "text": "David therefore being girded with his sword over his raiment, began to prove if he could go armed: for he was not accustomed. And David said to Saul: I can not go so, because I am not used, & he laid them off."
+          "text": "David therefore being girded with his sword over his raiment, began to prove if he could go armed: for he was not accustomed. And David said to Saul: I cannot go so, because I am not used, & he laid them off."
         },
         {
           "verse": 40,
-          "text": "And he took his staff, which he had always in his hands, & he chose him five most bright stones out of the torrent, and cast them into the shepherds scrip, which he had with him, & he took a sling in his hand, & went forth against the Philistian."
+          "text": "And he took his staff, which he had always in his hands, & he chose him five most bright stones out of the torrent, and cast them into the shepherd's scrip, which he had with him, & he took a sling in his hand, & went forth against the Philistian."
         },
         {
           "verse": 41,
@@ -1897,7 +2247,7 @@
         },
         {
           "verse": 43,
-          "text": "And the Philistian said to David: Why, am I a dog, that thou comest to me with a staff? And the Philistian cursed David in his gods,"
+          "text": "And the Philistian said to David: Why^ am I a dog, that thou comest to me with a staff? And the Philistian cursed David in his gods,"
         },
         {
           "verse": 44,
@@ -1909,7 +2259,7 @@
         },
         {
           "verse": 46,
-          "text": "this day, and our Lord shall give thee in my hand, & shall strike thee, and take away thy head from thee: and I shall give the carcasses of the camp of the Philisthiims this day to the fowls of the air, and to the beasts of the earth: that all the earth may know that there is a God in Israel."
+          "text": "this day, and our Lord shall give thee in my hand, & shall strike thee, and take away thy head from thee: and I shall give the carcasses of the camp of the Philisthiims this day, to the fowls of the air, and to the beasts of the earth: that all the earth may know that there is a God in Israel."
         },
         {
           "verse": 47,
@@ -1921,7 +2271,13 @@
         },
         {
           "verse": 49,
-          "text": "And he put his hand into his scrip, and took one stone, and cast it with the sling, and fetching it about struck the Philistian in the forehead, and he fell on his face upon the earth."
+          "text": "And he put his hand into his scrip, and took one stone, and cast it with the sling, and fetching it about struck the Philistian in <na>(d)</na> the forehead, and he fell on his face upon the earth.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Pride having impudency of the forehead, is overthrown by humility of Christ's cross: whose sign therefore we carry in our forehead. S. Aug. li. 50. homil. ho. 31."
+            }
+          ]
         },
         {
           "verse": 50,
@@ -1945,7 +2301,13 @@
         },
         {
           "verse": 55,
-          "text": "And at the same time that Saul saw David going forth against the Philistian, he said to Abner the Prince of the army: Of what stock is this young man descended, Abner? And Abner said: Thy soul liveth, o king, if I know."
+          "text": "And at the same time that Saul saw David going forth against the Philistian, he said to Abner the Prince of the army: <na>(e)</na> Of what stock is this young man descended, Abner? And Abner said: Thy soul liveth, o king, if I know.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Saul knew not David, being perhaps in a shepherd's habit: though he had not long before served & pleased him well. Ch. 16. v. 21."
+            }
+          ]
         },
         {
           "verse": 56,
@@ -1959,11 +2321,11 @@
           "verse": 58,
           "text": "And Saul said to him: O young man, of what progeny art thou? And David said: I am the son of thy servant Isai the Bethlehemite."
         }
-      ]
+      ],
+      "summary": "Goliath a Philistian challengeth any one of Israel to combat. 12. David being sent by his father to visit his brethren, 23. and hearing all Israel so reproachfully provoked, offereth to undertake the challenge: 34. shewing by former acts that he dare accept it. 37. And so by God's special help wherein he trusteth, 49. overthroweth the challenger with a stone of his sling, and cutteth off his head with his own sword. 51. the Philisthiims flying are slain, and David bringeth the man's head to Saul."
     },
     {
       "chapter": 18,
-      "summary": "David and Jonathas enter league of friendship. ℣.6 Saul hearing David praised above himself is offended, ℣.10 and vexed with an evil spirit attempteth twice to kill him: ℣.17 Promiseth to give him his eldest daughter in marriage, but giveth her to an other, ℣.20 and giveth him the younger, thereby to overthrow him: ℣.25 putting him also in more danger, by requiring of him an hundred prepuces of Philisthiims. ℣.27 David bringeth him two hundred, and his fame increaseth.",
       "verses": [
         {
           "verse": 1,
@@ -1987,7 +2349,13 @@
         },
         {
           "verse": 6,
-          "text": "Moreover when David returned, after he struck the Philistian, the women came forth from all the tribes of Israel, singing & dancing to Saul the king, in timbrels of joy, & in cornets."
+          "text": "Moreover <na>(a)</na> when David returned, after he struck the Philistian, the women came forth from all the tribes of Israel, singing & dancing to Saul the king, in timbrels of joy, & in cornets.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This happened not immediately after the victory against Goliath, but when David had dwelt some time in Saul's house, & was very grateful to him, & to all the court & people."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -1995,7 +2363,13 @@
         },
         {
           "verse": 8,
-          "text": "And Saul was exceeding angry, & this word was displeasant in his eyes, and he said: They have given David ten thousand, & to me they have given a thousand: what remaineth for him but only the Kingdom?"
+          "text": "And Saul was <na>(b)</na> exceeding angry, & this word was displeasant in his eyes, and he said: They have given David ten thousand, & to me they have given a thousand: what remaineth for him but only the Kingdom?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "When the praises of one import diminishing of another, he that is proud, as Saul now was, is moved to envy & malice, more & more as the virtues of the other & his praises do increase."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -2085,11 +2459,11 @@
           "verse": 30,
           "text": "And the Princes of the Philistians went forth: and from the beginning of their going forth, David behaved himself more wisely, than all the servants of Saul, and his name was made renowned exceedingly."
         }
-      ]
+      ],
+      "summary": "David and Jonathas enter league of friendship. 6. Saul hearing David praised above himself is offended, 10. and vexed with an evil spirit, attempteth twice to kill him: 17. Promiseth to give him his eldest daughter in marriage, but giveth her to another, 20. and giveth him the younger, thereby to overthrow him: 25. putting him also in more danger, by requiring of him an hundred prepuces of Philisthiims. 27. David bringeth him two hundred, and his fame increaseth."
     },
     {
       "chapter": 19,
-      "summary": "Saul intending to kill David is pacified by Jonathas. ℣.9 Nevertheless attempteth again to kill him, and missing his purpose, ℣.11 sendeth soldiers to take and bring him back that he may be slain, but Michol his wife helpeth him away, and excuseth her self to her father, as if she had done it for fear. ℣.18 David and Samuel flying into Najoth. ℣.20 Again Saul sendeth soldiers after them three times, and they all do prophesy. ℣.22 Then himself pursueth David, and also prophesieth.",
       "verses": [
         {
           "verse": 1,
@@ -2097,7 +2471,7 @@
         },
         {
           "verse": 2,
-          "text": "And Jonathas told David, saying: Saul my father seeketh to kill thee: wherefore look to thy self I beseech thee in the morning, and thou shalt abide secretly, and shalt be hid."
+          "text": "And Jonathas told David, saying: Saul my father seeketh to kill thee: wherefore look to thyself I beseech thee in the morning, and thou shalt abide secretly, and shalt be hid."
         },
         {
           "verse": 3,
@@ -2117,7 +2491,7 @@
         },
         {
           "verse": 7,
-          "text": "Jonathas herefore called David and shewed him all these words, and Jonathas brought in David to Saul, and he was before him, as he had been yesterday and the day before."
+          "text": "Jonathas therefore called David and shewed him all these words, and Jonathas brought in David to Saul, and he was before him, as he had been yesterday and the day before."
         },
         {
           "verse": 8,
@@ -2133,7 +2507,7 @@
         },
         {
           "verse": 11,
-          "text": "Saul therefore sent of his guard into David's house, that they should keep him, & that he might be killed in the morning: Which when Michol his wife had told David, saying: Unless thou save thy self this night, to morrow thou shalt die:"
+          "text": "Saul therefore sent of his guard into David's house, that they should keep him, & that he might be killed in the morning: Which when Michol his wife had told David, saying: Unless thou save thyself this night, tomorrow thou shalt die:"
         },
         {
           "verse": 12,
@@ -2141,7 +2515,13 @@
         },
         {
           "verse": 13,
-          "text": "And Michol took a statua, and put it upon the bed, and a hairy skin of goats she laid at the head thereof, and covered it with garments."
+          "text": "And Michol took <na>(a)</na> a statua, and put it upon the bed, and a hairy skin of goats she laid at the head thereof, and covered it with garments.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This statua or image cannot import an idol, as the same word teraphim doth. Gen. 31. for here no idolatry at all was committed, but a right office done by the wife towards her husband. The same word also signifieth religious things belonging to God's service."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2181,17 +2561,23 @@
         },
         {
           "verse": 23,
-          "text": "And he went into Najoth in Ramatha, and the Spirit of our Lord came upon him, and he walked going, and he prophesied till he came into Najoth in Ramatha."
+          "text": "And he went into Najoth in Ramatha, and the Spirit of our Lord came upon him, and he walked going, and he <na>(b)</na> prophesied till he came into Najoth in Ramatha.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Saul and his messengers had not the gift of prophecy, as godly Prophets had by an inherent habit, but transitory, as Balaam's ass had faculty to speak at one time, but did not afterward speak any more. S. Aug. l. 2. q. 1. ad Simplician."
+            }
+          ]
         },
         {
           "verse": 24,
-          "text": "And he stripped himself of his garments, and prophesied with the rest before Samuel, and sang naked all that day and night. Whereupon there went out also a proverb: What, is Saul also among the Prophets."
+          "text": "And he stripped himself of his garments, and prophesied with the rest before Samuel, and sang naked all that day and night. Whereupon there went out also a proverb: What^ is Saul also among the Prophets."
         }
-      ]
+      ],
+      "summary": "Saul intending to kill David is pacified by Jonathas. 9. Nevertheless attempteth again to kill him, and missing his purpose, 11. sendeth soldiers to take and bring him back that he may be slain, but Michol his wife helpeth him away, and excuseth herself to her father, as if she had done it for fear. 18. David and Samuel flying into Najoth. 20. Again Saul sendeth soldiers after them three times, and they all do prophesy. 22. Then himself pursueth David, and also prophesieth."
     },
     {
       "chapter": 20,
-      "summary": "Jonathas comforteth David, ℣.3 confirmeth their former league. ℣.18 By an appointed sign (℣.24 endeavouring first, but in vain, to pacify his father) ℣.35 certifieth David of his father's malice against him. ℣.41 They meet again secretly, and sorrowfully part each from other.",
       "verses": [
         {
           "verse": 1,
@@ -2211,7 +2597,7 @@
         },
         {
           "verse": 5,
-          "text": "And David said to Jonathas: Behold the calends are to morrow, and I after the manner am wont to sit beside the king to eat: dismiss me therefore that I may be hid in the field until the evening of the third day."
+          "text": "And David said to Jonathas: Behold the calends are tomorrow, and I after the manner am wont to sit beside the king to eat: dismiss me therefore that I may be hid in the field until the evening of the third day."
         },
         {
           "verse": 6,
@@ -2239,7 +2625,7 @@
         },
         {
           "verse": 12,
-          "text": "Jonathas said to David: Lord God of Israel, if I shall search out my father's meaning, to morrow or the day after, and some good thing be upon David, and I send not immediately unto thee, and make thee know thereof,"
+          "text": "Jonathas said to David: Lord God of Israel, if I shall search out my father's meaning, tomorrow or the day after, and some good thing be upon David, and I send not immediately unto thee, and make thee know thereof,"
         },
         {
           "verse": 13,
@@ -2263,19 +2649,19 @@
         },
         {
           "verse": 18,
-          "text": "And Jonathas said to him: To morrow are the calends, and thou shalt be asked for:"
+          "text": "And Jonathas said to him: Tomorrow are the calends, and thou shalt be asked for:"
         },
         {
           "verse": 19,
-          "text": "for thy sitting will be inquired of till after to morrow. Thou shalt therefore go down in haste, and shalt come to the place, where thou must be hid in the day, when it is lawful to work, and thou shalt sit beside the stone which is named Ezel."
+          "text": "for thy sitting will be inquired of till after tomorrow. Thou shalt therefore go down in haste, and shalt come to the place, where thou must be hid in the day, when it is lawful to work, and thou shalt sit beside the stone which is named Ezel."
         },
         {
           "verse": 20,
-          "text": "And I will shoot three arrows near it, and will shoot as it were exercising my self at a mark."
+          "text": "And I will shoot three arrows near it, and will shoot as it were exercising myself at a mark."
         },
         {
           "verse": 21,
-          "text": "I will send also a boy saying to him: Go, and fetch me the arrows."
+          "text": "Iwill send also a boy saying to him: Go, and fetch me the arrows."
         },
         {
           "verse": 22,
@@ -2299,7 +2685,7 @@
         },
         {
           "verse": 27,
-          "text": "And when the second day was come after the calends, again David's place appeared empty. And Saul said to Jonathas his son: Why came not the son of Isai neither yesterday nor to day to eat?"
+          "text": "And when the second day was come after the calends, again David's place appeared empty. And Saul said to Jonathas his son: Why came not the son of Isai neither yesterday nor today to eat?"
         },
         {
           "verse": 28,
@@ -2335,7 +2721,7 @@
         },
         {
           "verse": 36,
-          "text": "and said to his boy: Go, & fetch me the arrows, which I shoot. And when the boy had run, he shot an other arrow beyond the boy."
+          "text": "and said to his boy: Go, & fetch me the arrows, which I shoot. And when the boy had run, he shot another arrow beyond the boy."
         },
         {
           "verse": 37,
@@ -2355,7 +2741,7 @@
         },
         {
           "verse": 41,
-          "text": "And when the boy was gone, David rose out of the place, which did bend to the South, and falling flat on the ground, adored thrice: & kissing one an other, they wept together, but David more."
+          "text": "And when the boy was gone, David rose out of the place, which did bend to the South, and falling flat on the ground, adored thrice: & kissing one another, they wept together, but David more."
         },
         {
           "verse": 42,
@@ -2365,11 +2751,11 @@
           "verse": 43,
           "text": "And David arose, and departed: but Jonathas also entered into the City."
         }
-      ]
+      ],
+      "summary": "Jonathas comforteth David, 3. confirmeth their former league. 18. By an appointed sign (24. endeavouring first, but in vain, to pacify his father) 35. certifieth David of his father's malice against him. 41. They meet again secretly, and sorrowfully part each from other."
     },
     {
       "chapter": 21,
-      "summary": "In case of necessity Achimelech the Priest giveth hallowed bread to David, ℣.8 also the sword which he had taken from Goliath. ℣.10 Then David going to Achis king of Geth, is forced to feign himself mad.",
       "verses": [
         {
           "verse": 1,
@@ -2385,11 +2771,17 @@
         },
         {
           "verse": 4,
-          "text": "And the Priest answered David, saying: I have no lay breads at hand, but only holy bread, if the servants be clean, especially from women?"
+          "text": "And the Priest answered David, saying: I have no <na>(a)</na> lay breads at hand, but only holy bread, if the servants be clean, especially from women?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Distinction of common & holy bread. Also an example of dispensation in case of necessity."
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "And David answered the Priest, and said to him: And truly, if the matter be concerning women, we have refrained our selves from yesterday and the day before, when we came forth, and the vessels of the servants were holy. Moreover this way is polluted, but it also shall be sanctified this day in the vessels."
+          "text": "And David answered the Priest, and said to him: And truly, if the matter be concerning women, we have refrained ourselves from yesterday and the day before, when we came forth, and the vessels of the servants were holy. Moreover this way is polluted, but it also shall be sanctified this day in the vessels."
         },
         {
           "verse": 6,
@@ -2397,7 +2789,7 @@
         },
         {
           "verse": 7,
-          "text": "And there was there a certain man of the servants of Saul that day, within the tabernacle of our Lord, & his name was Doeg an Idumite, the mightiest of Saul's pastors."
+          "text": "And there was there a certain man of the servants of Saul that day, within the tabernacle of our Lord, & his name was Doeg an Idumeite, the mightiest of Saul's pastors."
         },
         {
           "verse": 8,
@@ -2421,7 +2813,13 @@
         },
         {
           "verse": 13,
-          "text": "And he changed his countenance before them, and slipt down between their hands and he stumbled at the doors of the gate, and his spittle ran down upon his beard."
+          "text": "And he <na>(b)</na> changed his countenance before them, and slipt down between their hands: and he stumbled at the doors of the gate, and his spittle ran down upon his beard.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "David most wisely in such distress feigned himself to be a fool. By which the Holy Ghost mystically signified that Christ should do such things not of fear but of divine wisdom, as he should be counted a fool. Mar. 3. v. 21. Luc. 23. v. 11. 1 Cor. 1. v. 23. S. Beda Quest. in 1. Reg. c. 14."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2431,11 +2829,11 @@
           "verse": 15,
           "text": "Do we lack mad men, that you have brought in this fellow, to play the mad man in my presence? Shall this man enter into my house?"
         }
-      ]
+      ],
+      "summary": "In case of necessity Achimelech the Priest giveth hallowed bread to David, 8. also the sword which he had taken from Goliath. 10. Then David going to Achis king of Geth, is forced to feign himself mad."
     },
     {
       "chapter": 22,
-      "summary": "David with a great retinue goeth to king of Moab, ℣.5 but by advice of Gad the Prophet returneth into Juda. ℣.6 Saul lamenting that many conspire against him, ℣.9 Doeg accuseth Achimelech, ℣.14 who justifieth both David and himself. ℣.16 He and all the Priests with much people in Nobe are slain by Saul's commandment. ℣.20 only Abiathar escaping flyeth to David.",
       "verses": [
         {
           "verse": 1,
@@ -2471,7 +2869,7 @@
         },
         {
           "verse": 9,
-          "text": "And Doeg the Idumite which stood by, and was the chief among the servants of Saul, answering, I saw, quoth he, the son of Isai in Nobe with Achimelech the son of Achitob the Priest."
+          "text": "And Doeg the Idumeite which stood by, and was the chief among the servants of Saul, answering, I saw, quoth he, the son of Isai in Nobe with Achimelech the son of Achitob the Priest."
         },
         {
           "verse": 10,
@@ -2503,11 +2901,21 @@
         },
         {
           "verse": 17,
-          "text": "And the king said to the couriers, that stood about him. Turn your selves, and kill the Priests of our Lord, for their hand is with David, knowing that he was fled, and they told me not. And the king's servants would not extend their hands upon the Priests of our Lord."
+          "text": "And the king said to the couriers, that stood about him. Turn yourselves, and kill the Priests of our Lord, <na>(c)</na> for their hand is with David, knowing that he was fled, and they told me not. And <na>(d)</na> the king's servants would not extend their hands upon the Priests of our Lord.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Saul unjustly condemning David, condemned also all those that justified him."
+            },
+            {
+              "label": "d",
+              "text": "Seeing so manifest injustice & cruelty, they obeyed God rather than man."
+            }
+          ]
         },
         {
           "verse": 18,
-          "text": "And the king said to Doeg: Turn thou, and run upon the Priests. And Doeg the Idumite being turned, ran upon the Priests, and murdered in that day eighty five men revested with an ephod of linen."
+          "text": "And the king said to Doeg: Turn thou, and run upon the Priests. And Doeg the Idumeite being turned, ran upon the Priests, and murdered in that day eighty five men revested with an ephod of linen."
         },
         {
           "verse": 19,
@@ -2523,17 +2931,17 @@
         },
         {
           "verse": 22,
-          "text": "And David said to Abiathar: I knew in that day when Doeg the Idumite was there, without doubt he would tell Saul, I am guilty of all the souls of thy father."
+          "text": "And David said to Abiathar: I knew in that day when Doeg the Idumeite was there, without doubt he would tell Saul, I am guilty of all the souls of thy father."
         },
         {
           "verse": 23,
           "text": "Abide with me, fear not: if any man shall seek my life, he shall seek thy life also, and with me thou shall be preserved."
         }
-      ]
+      ],
+      "summary": "David with a great retinue goeth to king of Moab, 5. but by advice of Gad the Prophet, returneth into Juda. 6. Saul lamenting that many conspire against him, 9. Doeg accuseth Achimelech, 14. who justifieth both David and himself. 16. He and all the Priests with much people in Nobe are slain by Saul's commandment. 20. only Abiathar escaping flyeth to David."
     },
     {
       "chapter": 23,
-      "summary": "The city of Ceila oppugned by the Philisthiims is relieved by David. ℣.7 who fearing to be there betrayed, ℣.13 flyeth into the desert of Ziph. ℣.16 Jonathas repaireth secretly to him, and they confirm again their former league. ℣.19 The Ziphians promise to betray David: ℣.27 but Saul leaveth for a while to persecute him, being forced to defend the land from the Philistians invading it.",
       "verses": [
         {
           "verse": 1,
@@ -2569,7 +2977,13 @@
         },
         {
           "verse": 9,
-          "text": "Which when David understood, that Saul secretly prepared evil against him, he said to Abiathar the Priest: Apply the Ephod."
+          "text": "Which when David understood, that Saul secretly prepared evil against him, he said to Abiathar the Priest: <na>(a)</na> Apply the Ephod.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "By this it appeareth that David consulted God by the high priest: and the high priest for this purpose joined the priestly ornament called Ephod to the Rationale , and so had revelation from God. Exo. 28. Levit. 8."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -2581,7 +2995,13 @@
         },
         {
           "verse": 12,
-          "text": "And David said: Will the men of Ceila deliver me, and the men that are with me, into the hands of Saul? And our Lord said: They will deliver thee."
+          "text": "And David said: Will the men of Ceila deliver me, and the men that are with me, into the hands of Saul? And our Lord said: <na>(b)</na> They will deliver thee.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Conditionally: If thou tarry here."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -2609,7 +3029,7 @@
         },
         {
           "verse": 19,
-          "text": "And the Ziphites went up unto Saul in Gabaa, saying: Lo, doth not David lie hid with us in the most safe places of the wood, in the hill Hachila, which is on the right hand of the desert?"
+          "text": "And the Zipheites went up unto Saul in Gabaa, saying: Lo, doth not David lie hid with us in the most safe places of the wood, in the hill Hachila, which is on the right hand of the desert?"
         },
         {
           "verse": 20,
@@ -2647,11 +3067,11 @@
           "verse": 28,
           "text": "Saul therefore returned leaving off to pursue David, and he went to meet the Philistians. For this cause they called that place, The Rock dividing."
         }
-      ]
+      ],
+      "summary": "The city of Ceila oppugned by the Philisthiims is relieved by David. 7. who fearing to be there betrayed, 13. flyeth into the desert of Ziph. 16. Jonathas repaireth secretly to him, and they confirm again their former league. 19 The Ziphians promise to betray David: 27. but Saul leaveth for a while to persecute him, being forced to defend the land from the Philistians invading it."
     },
     {
       "chapter": 24,
-      "summary": "Saul chancing to come into a cave, David being hid with others in the same place, only cutteth the skirt of his cloak, ℣.5 which after shewing, Saul acknowledgeth his fault, and ceaseth for a time to persecute him.",
       "verses": [
         {
           "verse": 1,
@@ -2675,11 +3095,23 @@
         },
         {
           "verse": 6,
-          "text": "After this David's heart struck him, for that he had cut off the hem of Saul's cloak."
+          "text": "After this <na>(a)</na> David's heart struck him, for that he had cut off the hem of Saul's cloak.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Atender conscience had scruple of a small doubt which was no sin: a large conscience sticketh at nothing."
+            }
+          ]
         },
         {
           "verse": 7,
-          "text": "And he said to his men: Our Lord be merciful unto me, that I do not this thing to my master the anointed of our Lord, that I should lay my hand upon him, because he is the anointed of our Lord."
+          "text": "And he said to his men: Our Lord be merciful unto me, <na>(b)</na> that I do not this thing to my master the anointed of our Lord, that I should lay my hand upon him, because he is the anointed of our Lord.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Saul being anointed King by God's appointment, could not lawfully be slain by his subjects without like ordinance from God. For though David was also already anointed, yet that was not to reign presently, but when Saul should die, or otherwise be taken away."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -2745,11 +3177,11 @@
           "verse": 23,
           "text": "And David sware to Saul. Saul therefore went into his house: and David and his men went up into safer places."
         }
-      ]
+      ],
+      "summary": "Saul chancing to come into a cave, David being hid with others in the same place, only cutteth the skirt of his cloak, 5. which after shewing, Saul acknowledgeth his fault, and ceaseth for a time to persecute him."
     },
     {
       "chapter": 25,
-      "summary": "Samuel dieth & is mourned. ℣.3 David requesting, ℣.10 and not obtaining victuals of Nabal, ℣.13 threateneth to kill him. ℣.14 But his wife Abigail prudently preventeth the revenge, ℣.18 by sending victuals, ℣.23 and giving good words. ℣.37 All which when Nabal understandeth, he fainteth, and after ten days dieth. ℣.39 David marrieth Abigail: also Achinoam: ℣.44 and his wife Michol is given to an other.",
       "verses": [
         {
           "verse": 1,
@@ -2773,11 +3205,11 @@
         },
         {
           "verse": 6,
-          "text": "And you shall say: Peace be to my brethren, and to thee, and peace to thy house, and to all whatsoever thou hast, be peace."
+          "text": "And you shall say: Peace be to my brethren, and to thee, and peace to thy house, and to all whatsoever thou hast^ be peace."
         },
         {
           "verse": 7,
-          "text": "I have heard, that thy shepherds which were with us in the desert did shear: we have never molested them, neither hath ought been wanting to them at any time of the flock, all the time that they were with us in Carmel."
+          "text": "Ihave heard, that thy shepherds which were with us in the desert did shear: we have never molested them, neither hath ought been wanting to them at any time of the flock, all the time that they were with us in Carmel."
         },
         {
           "verse": 8,
@@ -2817,7 +3249,13 @@
         },
         {
           "verse": 17,
-          "text": "Wherefore consider, and think what thou hast to do, for malice is accomplished against thy husband, & against thy house, and he is the son of Belial, so that no man can speak to him."
+          "text": "Wherefore consider, and think what thou hast to do, for <na>(a)</na> malice is accomplished against thy husband, & against thy house, and he is the son of Belial, so that no man can speak to him.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Not a malicious mind, such as Saul bore unjustly against David, but punishment is decreed against Nabal, for not only denying a reasonable request, but also for so reproachful an answer."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -2833,7 +3271,13 @@
         },
         {
           "verse": 21,
-          "text": "And David said: In vain verity have I preserved all things that were this man's in the desert, and there perished nothing of all that pertained to him, & he hath rendered me evil for good."
+          "text": "And David said: In vain verily have I preserved all things that were this man's in the desert, and there perished nothing of all that pertained to him, & he hath rendered me <na>(b)</na> evil for good.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Evil words for courteous usage heretofore, and for late gentle entreating by messengers."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -2845,7 +3289,7 @@
         },
         {
           "verse": 24,
-          "text": "and fell at his feet, & said: In me my Lord be this iniquity: let thy handmaid speak I beseech thee in thine ears: and hear the words of thy servant."
+          "text": "and fell at his feet, & said: In me my lord be this iniquity: let thy handmaid speak I beseech thee in thine ears: and hear the words of thy servant."
         },
         {
           "verse": 25,
@@ -2865,7 +3309,13 @@
         },
         {
           "verse": 29,
-          "text": "For if a man shall rise, persecuting thee, & seeking thy life, the life of my lord shall be kept, as in the bundle of the living, with our Lord thy God: Moreover the life of thine enemies shall be whurled, as in the violence, and whurl of a sling."
+          "text": "For if a man shall rise, persecuting thee, & seeking thy life, the life of my lord shall be kept, as in the <na>(c)</na> bundle of the living, with our Lord thy God: Moreover the life of thine enemies shall be whurled, as in the violence, and whurl of a sling.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Things tied in bundles are stronger and more secure, than single and loose."
+            }
+          ]
         },
         {
           "verse": 30,
@@ -2873,7 +3323,7 @@
         },
         {
           "verse": 31,
-          "text": "this shall not be an occasion of sobbing to thee, and a scruple of heart to my Lord, that thou hast shed innocent blood, or thy self hast revenged thy self: and when our Lord hath bestowed these benefits upon my lord, thou shalt remember thy handmaid."
+          "text": "this shall not be an occasion of sobbing to thee, and a scruple of heart to my lord, that thou hast shed innocent blood, or thyself hast revenged thyself: and when our Lord hath bestowed these benefits upon my lord, thou shalt remember thy handmaid."
         },
         {
           "verse": 32,
@@ -2881,7 +3331,7 @@
         },
         {
           "verse": 33,
-          "text": "and blessed be thou, which hast stayed me to day, that I might not go to blood, and revenge me with mine own hand."
+          "text": "and blessed be thou, which hast stayed me today, that I might not go to blood, and revenge me with mine own hand."
         },
         {
           "verse": 34,
@@ -2927,15 +3377,15 @@
           "verse": 44,
           "text": "But Saul gave Michol his daughter David's wife to Phalti, the son of Lais, who was of Gallim."
         }
-      ]
+      ],
+      "summary": "Samuel dieth & is mourned. 3. David requesting, 10. and not obtaining victuals of Nabal, 13. threateneth to kill him. 14. But his wife Abigail prudently preventeth the revenge, 18. by sending victuals, 23. and giving good words. 37. All which when Nabal understandeth, he fainteth, and after ten days dieth. 39. David marrieth Abigail: also Achinoam: 44. and his wife Michol is given to another."
     },
     {
       "chapter": 26,
-      "summary": "The Ziphians bewraying the place, Saul besiegeth David: ℣.5 who by night going where Saul and his men are asleep, ℣.9 hurteth him not: ℣.12 but taketh from him his spear and bottle of water ℣.14 & sheweth what he hath done. ℣.21 Saul again confesseth his fault, and promiseth peace.",
       "verses": [
         {
           "verse": 1,
-          "text": "And there came Ziphites unto Saul in Gabaa, saying: Behold David is hid in the hill Hachila, which is over-against the wilderness."
+          "text": "And there came Zipheites unto Saul in Gabaa, saying: Behold David is hid in the hill Hachila, which is over-against the wilderness."
         },
         {
           "verse": 2,
@@ -2955,7 +3405,7 @@
         },
         {
           "verse": 6,
-          "text": "David spake to Achimelech the Hethite, and Abisai the son of Sarvia the brother of Joab, saying: Who will go down with me to Saul into the camp? And Abisai said: I will go with thee."
+          "text": "David spake to Achimelech the Hetheite, and Abisai the son of Sarvia the brother of Joab, saying: Who will go down with me to Saul into the camp? And Abisai said: I will go with thee."
         },
         {
           "verse": 7,
@@ -2967,7 +3417,13 @@
         },
         {
           "verse": 9,
-          "text": "And David said to Abisai: Kill him not: for who shall extend his hand upon the anointed of our Lord, & shall be innocent?"
+          "text": "And David said to Abisai: Kill him not: for <na>(a)</na> who shall extend his hand upon the anointed of our Lord, & shall be innocent?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "David is resolute, and often repeateth, that it is not lawful for private subjects to kill their Prince, no although himself was anointed to succeed."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -2975,11 +3431,17 @@
         },
         {
           "verse": 11,
-          "text": "Our Lord be merciful unto me, that I extend not my hand upon the anointed of our Lord. Now therefore take the spear which is at his head, and cup of water & let us go."
+          "text": "Our Lord be merciful unto me, that I extend not my hand upon the anointed of our Lord. Now therefore take the spear which is at his head, and cup of water, & let us go."
         },
         {
           "verse": 12,
-          "text": "David therefore took the spear, and cup of water, which was at Saul's head, and they went away: and there was none that saw, or understood, or awaked, but all slept, because the dead sleep of our lord had fallen upon them."
+          "text": "David therefore took the spear, and cup of water, which was at Saul's head, and they went away: and there was none that saw, or understood, or awaked, but all slept, because the dead sleep <na>(b)</na> of our Lord had fallen upon them.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "God's providence sent this extraordinary sleep, and inspired David to do this fact, for more justification of his innocency."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -2987,7 +3449,7 @@
         },
         {
           "verse": 14,
-          "text": "David cried to the people, and to Abner the son of Ner, saying: Wilt thou not answer, Abner? And Abner answering said: Who art thou, that criest & disquietest the king?"
+          "text": "David cried to the people, and to Abner the son of Ner, saying: Wilt thou not answer, Abner? And Abner answering said: Who art thou, that cryest & disquietest the king?"
         },
         {
           "verse": 15,
@@ -3015,7 +3477,7 @@
         },
         {
           "verse": 21,
-          "text": "And Saul said: I have sinned, return my son David, for I will no more do thee evil, for that my life hath been precious in thine eyes to day: for it appeareth that I have done foolishly, & have been ignorant of very many things."
+          "text": "And Saul said: I have sinned, return my son David, for I will no more do thee evil, for that my life hath been precious in thine eyes today: for it appeareth that I have done foolishly, & have been ignorant of very many things."
         },
         {
           "verse": 22,
@@ -3027,17 +3489,17 @@
         },
         {
           "verse": 24,
-          "text": "And as thy life hath been magnified to day in mine eyes, so be my life magnified in the eyes of our Lord, and deliver he me from all distress."
+          "text": "And as thy life hath been magnified today in mine eyes, so be my life magnified in the eyes of our Lord, and deliver he me from all distress."
         },
         {
           "verse": 25,
           "text": "Saul therefore said to David: Blessed art thou my son David: and truly doing thou shalt do, and prevailing thou shalt prevail. And David went into his way, and Saul returned into his place."
         }
-      ]
+      ],
+      "summary": "The Ziphians bewraying the place, Saul besiegeth David: 5. who by night going where Saul and his men are asleep, 9. hurteth him not: 12. but taketh from him his spear and bottle of water 14. & sheweth what he hath done. 21. Saul again confesseth his fault, and promiseth peace."
     },
     {
       "chapter": 27,
-      "summary": "David for more security goeth again to Achis king of Geth, ℣.5 obtaineth of him the city of Siceleg (℣.6 by which means it becometh subject to the kings of Juda) ℣.8 and maketh preys upon the enemies of king Achis.",
       "verses": [
         {
           "verse": 1,
@@ -3061,7 +3523,7 @@
         },
         {
           "verse": 6,
-          "text": "Achis therefore gave him in that day Siceleg: for which cause Siceleg became the king's of Juda until this day."
+          "text": "Achis therefore gave him in that day Siceleg: for which cause Siceleg became the kings' of Juda until this day."
         },
         {
           "verse": 7,
@@ -3069,7 +3531,13 @@
         },
         {
           "verse": 8,
-          "text": "And David went up, and his men, and drave preys out of Gessuri, and Gerzi, and from the Amalecites: for these villages were inhabited in the land in old time, as men go to Sur, as far as the Land of Ægypt."
+          "text": "And David went up, and his men, and drave preys out of <na>(a)</na> Gessuri, and Gerzi, and from the Amalecites: for these villages were inhabited in the land in old time, as men go to Sur, as far as the Land of Aegypt.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "These countries were neither subject to the Philistiims nor to the Israelites, and were also of those nations whom God had commanded to destroy, dwelling within the land of Chanaan. Deut. 25."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -3077,7 +3545,7 @@
         },
         {
           "verse": 10,
-          "text": "And Achis said to him: Whom hast thou set upon to day? David answered: Against the south of Juda, and against the south of Jeramiel, and against the south of Ceni."
+          "text": "And Achis said to him: Whom hast thou set upon today? David answered: Against the south of Juda, and against the south of Ieramiel, and against the south of Ceni."
         },
         {
           "verse": 11,
@@ -3087,15 +3555,20 @@
           "verse": 12,
           "text": "Achis therefore did credit David, saying: Many evils hath he wrought against his people Israel: Therefore he shall be my servant for ever."
         }
-      ]
+      ],
+      "summary": "David for more security goeth again to Achis king of Geth, 5. obtaineth of him the city of Siceleg (6. by which means it becometh subject to the kings of Juda) 8. and maketh preys upon the enemies of king Achis."
     },
     {
       "chapter": 28,
-      "summary": "The Philistians fighting against Saul, David promiseth fidelity to Achis. ℣.3 Saul destroyeth magicians, ℣.6 but God not answering him, ℣.7 seeketh a woman that hath a Pythonical spirit, ℣.12 & willeth her to raise up Samuel. ℣.15 Who appearing foretelleth him, that he, and his sons shall die the next day.",
       "verses": [
         {
           "verse": 1,
-          "text": "And it came to pass that in those days the Philisthiims gathered together their companies, that they might be prepared to battle against Israel: and Achis said to David: Knowing know thou now, that thou shalt go forth with me in the camp, thou, and thy men."
+          "text": "And <cr>[1]</cr> it came to pass that in those days the Philisthiims gathered together their companies, that they might be prepared to battle against Israel: and Achis said to David: Knowing know thou now, that thou shalt go forth with me in the camp, thou, and thy men.",
+          "cross_refs": [
+            {
+              "text": "The fourth part. Of the ruin of Saul, and exaltation of David."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3127,11 +3600,11 @@
         },
         {
           "verse": 9,
-          "text": "And the woman said to him: Lo, thou knowest what great things Saul hath done, and how he hath razed the magicians and soothsayers out of the land: why therefore dost thou lie in wait for my life, that I may be slain?"
+          "text": "And the woman said to him: Lo, thou knowest what great things Saul hath done, and how he hath rased the magicians and soothsayers out of the land: why therefore dost thou lie in wait for my life, that I may be slain?"
         },
         {
           "verse": 10,
-          "text": "And Saul sware unto her in our Lord, saying: Our Lord lliveth, there shall no evil happen unto thee for this thing."
+          "text": "And Saul sware unto her in our Lord, saying: Our Lord liveth, there shall no evil happen unto thee for this thing."
         },
         {
           "verse": 11,
@@ -3143,11 +3616,29 @@
         },
         {
           "verse": 13,
-          "text": "And the king said to her: Fear not: what sawest thou? And the woman said to Saul: I saw gods coming out of the earth."
+          "text": "And the king said to her: Fear not: what sawest thou? And the woman said to Saul: I saw <na>(a)</na> gods coming out of the earth.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Not many but one excellent person, an old man comely in apparel."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "And he said to her: What manner of form hath he? Who said: An old man is come up, and he is clothed with a mantle. And Saul understood that it was Samuel, and he bowed himself upon his face on the earth, and adored."
+          "text": "And he said to her: What manner of form hath he? Who said: An old man is come up, and he is clothed with a mantle. And Saul <cr>[1]</cr> understood that it was Samuel, and he bowed himself upon his face on the earth, and <na>(b)</na> adored.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "* iadagh, cognovit, knew."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "Saul adored not Samuel with divine honour, but with dulia, reverence due to a blessed soul."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -3167,7 +3658,13 @@
         },
         {
           "verse": 19,
-          "text": "And our Lord will give Israel also with thee into the hands of the Philisthiims: and to morrow thou and thy sons shall be with me: yea the camp also of Israel will our Lord deliver into the hands of the Philisthiims."
+          "text": "And our Lord will give Israel also with thee into the hands of the Philisthiims: and tomorrow thou and thy sons shall be <na>(c)</na> with me: yea the camp also of Israel will our Lord deliver into the hands of the Philisthiims.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "In state of the dead in another world, not in the same particular state."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -3193,15 +3690,15 @@
           "verse": 25,
           "text": "and set before Saul, and before his servants, who when they had eaten rose up, and walked all that night."
         }
-      ]
+      ],
+      "summary": "The Philistians fighting against Saul, David promiseth fidelity to Achis. 3. Saul destroyeth magicians, 6. but God not answering him, 7. seeketh a woman that hath a Pythonical spirit, 12. & willeth her to raise up Samuel. 15. Who appearing foretelleth him, that he, and his sons shall die the next day."
     },
     {
       "chapter": 29,
-      "summary": "David going with the Philisthiims towards the war, the Princes urge and force the king to send him back.",
       "verses": [
         {
           "verse": 1,
-          "text": "Therefore all the companies of the Philisthiims were gathered together into Aphec: and Israel also camped upon the fountain, which was in Jezrahel."
+          "text": "T"
         },
         {
           "verse": 2,
@@ -3209,7 +3706,13 @@
         },
         {
           "verse": 3,
-          "text": "And the Princes of the Philisthiims said to Achis: What mean these Hebrews? And Achis said to the Princes of the Philisthiims: Do you not know David, which was the servant of Saul the king of Israel, and is with me many days, or years, and I have not found any thing in him, since the day that he fled to me, until this day?"
+          "text": "And the Princes of the Philisthiims said to Achis: What mean these Hebrews? And Achis said to the Princes of the Philisthiims: Do you not know David, which was the servant of Saul the king of Israel, and is with me many days, or <na>(a)</na> years, and I have not found any thing in him, since the day that he fled to me, until this day?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "He speaketh by amplification, to make his fact seem more reasonable: whereas the time of David's abode with him was but four months. ch. 27. v. 7."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -3243,11 +3746,11 @@
           "verse": 11,
           "text": "David therefore arose in the night, he and his men, that they might set forward in the morning, and return to the land of the Philisthiims: and the Philisthiims went up into Jezrahel."
         }
-      ]
+      ],
+      "summary": "David going with the Philisthiims towards the war, the Princes urge and force the king to send him back."
     },
     {
       "chapter": 30,
-      "summary": "David returning to Siceleg, findeth it burned and spoiled, and himself in danger of the people: ℣.7 By our Lord's warrant he pursueth the enemy, ℣.11 taketh a guide: ℣.17 recovereth all that was taken away: ℣.22 and rewardeth the soldiers, also those that stayed with the baggage, ℣.25 making it a law for the time to come, that the keepers of the baggage shall have like share with those that fight in battle.",
       "verses": [
         {
           "verse": 1,
@@ -3267,7 +3770,7 @@
         },
         {
           "verse": 5,
-          "text": "For the two wives also of David were led away captive, Achinoam the Jezraelite, and Abigail the wife of Nabal of Carmel."
+          "text": "For the two wives also of David were led away captive, Achinoam the Iezraelite, and Abigail the wife of Nabal of Carmel."
         },
         {
           "verse": 6,
@@ -3275,7 +3778,13 @@
         },
         {
           "verse": 7,
-          "text": "And he said to Abiathar the Priest the son of Achimelech: Apply unto me the Ephod. And Abiathar applied the Ephod to David,"
+          "text": "And he said to Abiathar the Priest the son of Achimelech: Apply <na>(a)</na> unto me the Ephod. And Abiathar applied the Ephod to David,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Consult our Lord for me: so David by the Priest's mediation, was instructed what to do."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -3291,7 +3800,7 @@
         },
         {
           "verse": 11,
-          "text": "And they found an Ægyptian in the field, and brought him to David: and they gave him bread to eat, and water to drink,"
+          "text": "And they found an Aegyptian in the field, and brought him to David: and they gave him bread to eat, and water to drink,"
         },
         {
           "verse": 12,
@@ -3299,7 +3808,7 @@
         },
         {
           "verse": 13,
-          "text": "David therefore said to him. Whose art thou? Or whence? And wither goest thou? Who said: I am a young man of Ægypt, the servant of an Amalecite: and my master hath left me, because I began to be sick three days agone."
+          "text": "David therefore said to him. Whose art thou? Or whence? And wither goest thou? Who said: I am a young man of Aegypt, the servant of an Amalecite: and my master hath left me, because I began to be sick three days agone."
         },
         {
           "verse": 14,
@@ -3347,7 +3856,13 @@
         },
         {
           "verse": 25,
-          "text": "And this hath been done from that day, and ever after it was decreed, and ordained as a law in Israel."
+          "text": "And this hath been done from that day, and ever after <na>(b)</na> it was decreed, and ordained as a law in Israel.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "It is not against God's commandment, Deut. 4. & 12. to make new laws, so they be conformable & not contrary to God's former laws."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -3373,11 +3888,11 @@
           "verse": 31,
           "text": "and them in Hebron, and to the rest that were in those places, in the which David had tarried, and his men."
         }
-      ]
+      ],
+      "summary": "David returning to Siceleg, findeth it burned and spoiled, and himself in danger of the people: 7. By our Lord's warrant he pursueth the enemy, 11. taketh a guide: 17. recovereth all that was taken away: 22. and rewardeth the soldiers, also those that stayed with the baggage, 25. making it a law for the time to come, that the keepers of the baggage shall have like share with those that fight in battle."
     },
     {
       "chapter": 31,
-      "summary": "Saul with his sons are slain in battle. ℣.7 The Philisthiims possess the place, and hang the dead bodies on a wall, ℣.11 but valiant men of Jabes Galaad take them away, and burn them, bury their bones, and fast seven days.",
       "verses": [
         {
           "verse": 1,
@@ -3393,7 +3908,13 @@
         },
         {
           "verse": 4,
-          "text": "And Saul said to his esquire: Draw out thy sword, and strike me: lest perhaps these uncircumcised come, and kill me, mocking me. And his esquire would not: for he was frighted with exceeding fear. Saul therefore caught his sword, and fell upon it."
+          "text": "And Saul said to his esquire: Draw out thy sword, and strike me: lest perhaps these uncircumcised come, and kill me, mocking me. And his esquire would not: for he was frighted with exceeding fear. <na>(a)</na> Saul therefore caught his sword, and fell upon it.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Saul killing himself after that he was wounded by his enemies, signifieth those that being overcome by tentations desperately persist, & willfully die in their sin. S. Greg. ho. 10."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -3421,17 +3942,24 @@
         },
         {
           "verse": 11,
-          "text": "Which when the inhabiters of Jabes Galaad had heard whatsoever the Philisthiims had done to Saul,"
+          "text": "Which when <na>(b)</na> the inhabiters of Jabes Galaad had heard whatsoever the Philisthiims had done to Saul,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "These men are commendable for gratitude towards Saul, who had delivered them, ch. 11. for a work of mercy in burying the dead: for piety towards their king and princes, and for fortitude in achieving so heroical an act."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "all the most valiant men arose, and walked all the night, and took the body of Saul, and the bodies of his sons, from the wall of Bethsam: and they came to Jabes Galaad, and burnt them them there:"
+          "text": "all the most valiant men arose, and walked all the night, and took the body of Saul, and the bodies of his sons, from the wall of Bethsam: and they came to Jabes Galaad, and burnt them there:"
         },
         {
           "verse": 13,
           "text": "and they took their bones, and buried them in the wood of Jabes, and fasted seven days."
         }
-      ]
+      ],
+      "summary": "Saul with his sons are slain in battle. 7. The Philisthiims possess the place, and hang the dead bodies on a wall, 11. but valiant men of Jabes Galaad take them away, and burn them, bury their bones, and fast seven days."
     }
   ]
 }

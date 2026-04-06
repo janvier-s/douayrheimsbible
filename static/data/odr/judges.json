@@ -1,19 +1,30 @@
 {
-  "book": "Judges",
-  "version_abbr": "ODR",
-  "date": "1609",
+  "book": "judges",
+  "book_title": "THE BOOK OF JUDGES",
+  "hebrew_title": "IN HEBREW SOPHETIM.",
   "chapters": [
     {
       "chapter": 1,
-      "summary": "Under a general captain of the tribe of Juda, assisted by the tribe of Simeon, Israel subdueth diverse cities of the gentiles. ( ℣.12 Othoniel taking Cariath Sepher possesseth it, and marrieth Caleb's daughter, obtaining also addition of her dowry.) ℣.21 Jebuseites yet dwell in Hierusalem with Benjamin, ℣.27 and the Chananeites with diverse of the tribes.",
       "verses": [
         {
           "verse": 1,
-          "text": "After the death of Josue Israel consulted our Lord, saying: Who shall go up before us against the , the children of Chananite, & shall be captain of the war?"
+          "text": "After the death of Josue^ the children of Israel <na>(a)</na> consulted our Lord, saying: Who shall go up before us against the Chananite, & shall be captain of the war?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The manner of consulting our Lord was by the High-Priest praying in the tabernacle. Exod. 29. v. 42."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And our Lord said: Judas shall go up: behold I have delivered the Land into his hands."
+          "text": "And our Lord said: <na>(b)</na> Judas shall go up: behold I have delivered the Land into his hands.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The first general captain after Josue, and diverse of the Judges, were of the tribe of Juda, but not all, as appeareth in this book."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -33,7 +44,7 @@
         },
         {
           "verse": 7,
-          "text": "And Adonibezec said: Seventy kings having the extreme parts of their hands and feet cut off, gathered up the relics of meats under my table: as I have done, so hath God repaid me. And they brought him into Jerusalem, and there he died."
+          "text": "And Adonibezec said: Seventy kings having the extreme parts of their hands and feet cut off, gathered up the relics of meats under my table: as I have done, so hath God repayed me. And they brought him into Jerusalem, and there he died."
         },
         {
           "verse": 8,
@@ -69,7 +80,7 @@
         },
         {
           "verse": 16,
-          "text": "And the children of the Cinite the cousin of Moyses went up from the city of palms, with the children of Judas into the desert of his lot, which is at the south side of Arad, & dwelt with him."
+          "text": "And the children of the Cineite the cousin of Moyses went up from the city of palms, with the children of Judas into the desert of his lot, which is at the south side of Arad, & dwelt with him."
         },
         {
           "verse": 17,
@@ -81,7 +92,13 @@
         },
         {
           "verse": 19,
-          "text": "And our Lord was with Judas, & he possessed the mountains: neither could he destroy the inhabitants of the valley, because they had many hooked chariots."
+          "text": "And our Lord was with Judas, & he possessed the mountains: neither could he destroy the inhabitants of the valley, because they had many <na>(a)</na> hooked chariots.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Strong weapons crooked like sickles, made fast to the chariots which cut in pieces, men, horses, and other chariots that came in their way."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -113,7 +130,7 @@
         },
         {
           "verse": 27,
-          "text": "Manasses also destroyed not Bethsan, and Thanac with their little towns, and the inhabitants of Dor, and Jeblaam, and Mageddo with their little towns. And the chananite began to dwell with them."
+          "text": "Manasses also destroyed not Bethsan, and Thanac with their little towns, and the inhabitants of Dor, and Jeblaam, and Mageddo with their little towns. And the Chananeite began to dwell with them."
         },
         {
           "verse": 28,
@@ -151,15 +168,27 @@
           "verse": 36,
           "text": "And the border of the Amorrhite was from the Ascent of the Scorpion, the rock, and the higher places."
         }
+      ],
+      "summary": "Under a general captain of the tribe of Juda, assisted by the tribe of Simeon, Israel subdueth diverse cities of the gentiles. (12. Othoniel taking Cariath Sepher possesseth it, and marrieth Caleb's daughter, obtaining also addition of her dowry.) 21. Jebuseites yet dwell in Hierusalem with Benjamin, 27. and the Chananeites with diverse of the tribes. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The first part. A general recapitulation of the people's state."
+        }
       ]
     },
     {
       "chapter": 2,
-      "summary": "An Angel reciting many benefits of God towards Israel, and their ingratitude, ℣.4 they weep for their faults. ℣.10 After the death of Josue and other ancients of his time, the people often fall, and repenting are delivered from afflictions: ℣.19 but still fall again worse and worse.",
       "verses": [
         {
           "verse": 1,
-          "text": "And the Angel of our Lord went up from Galgal to the place of weepers, and said: I brought you out of Ægypt, and have brought you into the Land, for the which I sware to your fathers: and I promised that I would not make frustrate my covenant with you for ever:"
+          "text": "And the <na>(a)</na> Angel of our Lord went up from Galgal to the place of weepers, and said: I brought you out of Aegypt, and have brought you into the Land, for the which I sware to your fathers: and I promised that I would not make frustrate my covenant with you for ever:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "An Angel taking the form of a man, as before to Josue (c. 5.) so now appearing to the people, spake to them in the name of God, whose messenger he was."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -175,7 +204,13 @@
         },
         {
           "verse": 5,
-          "text": "And the name of that place was called, the place of weepers, or of tears: and there they immolated hosts to our Lord."
+          "text": "And the name of that place was called, the place of weepers, or of tears: and <na>(b)</na> there they immolated hosts to our Lord.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "By special dispensation sacrifice was sometimes lawfully offered in other places, though the Tabernacle (and afterward the Temple) was the only place commanded. Deut. 12. Iosue. 22. S. Aug. q. 36. in. Iudic."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -203,7 +238,7 @@
         },
         {
           "verse": 12,
-          "text": "And they left our Lord the God of their fathers, that had brought them out of the Land of Ægypt: and followed strange gods, and the gods of the peoples, that dwelt round about them, and adored them: and they provoked our Lord to anger,"
+          "text": "And they left our Lord the God of their fathers, that had brought them out of the Land of Aegypt: and followed strange gods, and the gods of the peoples, that dwelt round about them, and adored them: and they provoked our Lord to anger,"
         },
         {
           "verse": 13,
@@ -219,7 +254,13 @@
         },
         {
           "verse": 16,
-          "text": "And our Lord raised up Judges, that should deliver them from the hands of the wasters: but neither would they hear them,"
+          "text": "And our Lord <na>(c)</na> raised up Judges, that should deliver them from the hands of the wasters: but neither would they hear them,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "These Judges were extraordinarily raised up to deliver the people repenting, when they were fallen into afflictions for their sins."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -239,7 +280,7 @@
         },
         {
           "verse": 21,
-          "text": "I also will not destroy the nations which Josue did let alone, and died:"
+          "text": "Ialso will not destroy the nations which Josue did let alone, and died:"
         },
         {
           "verse": 22,
@@ -249,15 +290,20 @@
           "verse": 23,
           "text": "Our Lord therefore left all these nations, and would not quickly overthrow them, neither delivered them into the hands of Josue."
         }
-      ]
+      ],
+      "summary": "An Angel reciting many benefits of God towards Israel, and their ingratitude, 4. they weep for their faults. 10. After the death of Josue and other ancients of his time, the people often fall, and repenting are delivered from afflictions: 19. but still fall again worse and worse."
     },
     {
       "chapter": 3,
-      "summary": "The people associating themselves with Gentiles, against whom they ought to fight, ℣.8 are invaded by foreign kings: ℣.9 but repenting are delivered by Othoniel ℣.12 Falling again, afflicted, and repenting, ℣.15 are delivered by Aod, ℣.21 secretly killing Eglon their enemy. ℣.31 After him Samgar defendeth Israel against the Philisthims.",
       "verses": [
         {
           "verse": 1,
-          "text": "These are the Nations, which our Lord left, that in them he might instruct Israel, and all that had not known the wars of the Chananites:"
+          "text": "These <cr>[1]</cr> are the Nations, which our Lord left, that in them he might instruct Israel, and all that had not known the wars of the Chananites:",
+          "cross_refs": [
+            {
+              "text": "The second part. Of the common people's often falling to idolatry, their repentance, & delivery."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -265,7 +311,7 @@
         },
         {
           "verse": 3,
-          "text": "the five Princes of the Philisthiims, and the Chananite, and Sidonian, and Hevite, that dwelt in mount Libanus, from mount Baal Hermon to the entering into Emath."
+          "text": "the five Princes of the Philisthiims, and the Chananite, and Sidonian, and Heveite, that dwelt in mount Libanus, from mount Baal Hermon to the entering into Emath."
         },
         {
           "verse": 4,
@@ -273,7 +319,7 @@
         },
         {
           "verse": 5,
-          "text": "Therefore the children of Israel dwelt in the midst of the Chananite, and Hethite, and Amorrhite, and Pherezite, and Hevite, and Jebusite:"
+          "text": "Therefore the children of Israel dwelt in the midst of the Chananite, and Hetheite, and Amorrhite, and Pherezite, and Heveite, and Jebusite:"
         },
         {
           "verse": 6,
@@ -289,7 +335,13 @@
         },
         {
           "verse": 9,
-          "text": "And they cried to our Lord: who raised them up a saviour, & delivered them, to wit, Othoniel the son of Cenez, the younger brother of Caleb:"
+          "text": "And they cried to our Lord: who raised them up <na>(a)</na> a saviour, & delivered them, to wit, Othoniel the son of Cenez, the younger brother of Caleb:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "In many places we see the word saviour , and like titles given to men, as the servants & officers of God, who is the proper and principal Saviour of all. S. Aug. q. 18. in Iudic."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -297,7 +349,13 @@
         },
         {
           "verse": 11,
-          "text": "And the land rested forty years, and Othoniel the son of Cenez died."
+          "text": "And the land rested <na>(b)</na> forty years, and Othoniel the son of Cenez died.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In these 40. years are included the eight years of their servitude, v. 8. & so in the rest of this history, otherwise the number of years agreeth not with the count 3. Reg. 6. v. 1."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -333,7 +391,13 @@
         },
         {
           "verse": 20,
-          "text": "Aod went in to him: and he sat in a summer chamber alone, and he said: A word from God I have to thee. Who forthwith rose out of his throne."
+          "text": "Aod went in to him: and he sat in a summer chamber alone, and he said: <na>(a)</na> A word from God I have to thee. Who forthwith rose out of his throne.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "And having special inspiration from God to do this fact (as S. Augustine noteth upon these words q. 20. in Iudic. ) is not to be imitated by private men. See."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -341,7 +405,7 @@
         },
         {
           "verse": 22,
-          "text": "so mightily that the haft followed the blade in the wound, and was closed up fast with the most fat grease. Neither did he pluck out the dagger, but as he had strucken, so left it in the body: and forthwith by the secret parts of nature the ordure of the belly came forth."
+          "text": "so mightily that the haft followed the blade in the wound, and was closed up fast with the most fat grease. Neither did he pluck out the dagger, but as he had strucken^ so left it in the body: and forthwith by the secret parts of nature the ordure of the belly came forth."
         },
         {
           "verse": 23,
@@ -377,13 +441,13 @@
         },
         {
           "verse": 31,
-          "text": "After him was Samgar the son of Anath, who struck of the Philisthimes six hundred men with the culter of a plough: and he also defended Israel."
+          "text": "After him was Samgar the son of Anath, who struck of the Philisthimes six hundred men with the coulter of a plough: and he also defended Israel."
         }
-      ]
+      ],
+      "summary": "The people associating themselves with Gentiles, against whom they ought to fight, 8. are invaded by foreign kings: 9. but repenting are delivered by Othoniel 12. Falling again, afflicted, and repenting, 15. are delivered by Aod, 21. secretly killing Eglon their enemy. 31. After him Samgar defendeth Israel against the Philisthims."
     },
     {
       "chapter": 4,
-      "summary": "Again the people sinning are oppressed, and crying to God, ℣.4 by direction of Debbora a Prophetess, Barac fighteth against Sisara their enemy. ℣.15 Who strucken with fear, and flying away, ℣.17 Jahel pretending his safety killeth him in her house.",
       "verses": [
         {
           "verse": 1,
@@ -399,7 +463,13 @@
         },
         {
           "verse": 4,
-          "text": "And there was one Debbora a prophetess, the wife of Lapidoth, which judged the people at that time."
+          "text": "And there was one Debbora a prophetess, the wife of Lapidoth, which <na>(a)</na> judged the people at that time.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Being a Prophetess she resolved hard and obscure things, but exercised no jurisdiction in any causes, for that belonged to the Councel of Priests and of seventy ancients, where the high-Priest was the chief Judge. Num. 11. Deut. 17. Spiritually Debbora signified the Church, & Barac Christian Princes, who are directed in their wars, & other actions by spiritual superiors, as Origen, and other ancient writers expound this history."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -411,7 +481,7 @@
         },
         {
           "verse": 7,
-          "text": "and I will bring unto thee in the place of the Torrent Cison, Sisar the Prince of the host of Jabin, and his chariots, and all the multitude, and will deliver them in thy hand."
+          "text": "and I will bring unto thee in the place of the Torrent Cison, Sisara the Prince of the host of Jabin, and his chariots, and all the multitude, and will deliver them in thy hand."
         },
         {
           "verse": 8,
@@ -427,7 +497,7 @@
         },
         {
           "verse": 11,
-          "text": "And Haber the Cinite was in time past departed from the rest of the Cinites his brethren of Hobab, the cousin of Moyses: and had pitched his tents unto the valley, which is called Sennim, and was near Cedes."
+          "text": "And Haber the Cineite was in time past departed from the rest of the Cineites his brethren of Hobab, the cousin of Moyses: and had pitched his tents unto the valley, which is called Sennim, and was near Cedes."
         },
         {
           "verse": 12,
@@ -451,11 +521,11 @@
         },
         {
           "verse": 17,
-          "text": "But Sisara flying came to the tent of Jahel the wife of Haber the Cinite, for there was peace betwixt Jabin the king of Asor, and the house of Haber the Cinite."
+          "text": "But Sisara flying came to the tent of Jahel the wife of Haber the Cineite, for there was peace betwixt Jabin the king of Asor, and the house of Haber the Cineite."
         },
         {
           "verse": 18,
-          "text": "Jahel therefore going forth to meet Sisara, said to him: Come in to me, my Lord, come in, fear not. Who being entered into her tabernacle, and covered of her with a cloak,"
+          "text": "Jahel therefore going forth to meet Sisara, said to him: Come in to me, my lord, come in, fear not. Who being entered into her tabernacle, and covered of her with a cloak,"
         },
         {
           "verse": 19,
@@ -467,7 +537,13 @@
         },
         {
           "verse": 21,
-          "text": "Jahel therefore the wife of Haber took a nail of the tabernacle, taking withal a hammer also: and going in secretly, and with silence she put the nail upon the temple of his head, and striking it with the hammer, fastened it into his brain even to the ground: who joining deep sleep & death together, fainted, and died."
+          "text": "<na>(b)</na> Jahel therefore the wife of Haber took a nail of the tabernacle, taking withal a hammer also: and going in secretly, and with silence she put the nail upon the temple of his head, and striking it with the hammer, fastened it into his brain even to the ground: who joining deep sleep & death together, fainted, and died.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Who is this woman full of confidence, piercing the enemy's head with a nail, but the faith of the Church, destroying the devil's kingdoms with the Cross of Christ? S. Aug. li. 12. c. 32. cont. Faust. Manich. Jahel also prefigured our B. Lady who crushed the serpent's head."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -481,23 +557,35 @@
           "verse": 24,
           "text": "which increased daily, and with strong hand oppressed Jabin the king of Chanaan, till they destroyed him."
         }
-      ]
+      ],
+      "summary": "Again the people sinning are oppressed, and crying to God, 4. by direction of Debbora a Prophetess, Barac fighteth against Sisara their enemy. 15. Who strucken with fear, and flying away, 17. Jahel pretending his safety killeth him in her house."
     },
     {
       "chapter": 5,
-      "summary": "The Canticle of Debbora and Barac giving thanks after their victory.",
       "verses": [
         {
           "verse": 1,
-          "text": "And Debbora and Barac the son of Abinoem sang in that day, saying: Israel have voluntarily offered your lives"
+          "text": "And Debbora and Barac the son of Abinoem sang in that day, saying:"
         },
         {
           "verse": 2,
-          "text": "You that of to peril, bless our Lord."
+          "text": "You that of Israel have voluntarily offered your lives to peril, <na>(a)</na> bless our Lord.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The greater bless the less by imparting spiritual benefits, so God & superiors bless their subjects. Men bless God, & the less their betters, by giving thanks, & praises."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "Hear you kings, and give ear ye Princes: I am, I am she, that will sing to our Lord, I will chant to our Lord the God of Israel."
+          "text": "Hear you kings, and give ear ye Princes: I am, <na>(b)</na> I am she, that will sing to our Lord, I will chant to our Lord the God of Israel.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "She inculcateth that she must so much more praise God for this victory, because he foreshewed it by her, & by her directed the general captain Barac, lest it might be ascribed either to wisdom or valor of any man."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -521,11 +609,17 @@
         },
         {
           "verse": 9,
-          "text": "My heart loveth the Princes of Israel: you that of your own good will, offered your selves to danger, bless our Lord."
+          "text": "My heart loveth the Princes of Israel: you that of your own good will^ offered yourselves to danger, bless our Lord."
         },
         {
           "verse": 10,
-          "text": "You that ride upon your fair asses, and sit in judgment, and walk in the way, speak."
+          "text": "You that ride upon your <na>(c)</na> fair asses, and sit in judgment, and walk in the way, speak.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Those that subdue their bodies to the spirit ride upon fair asses. Origen hom. 6. in c. 5. Iudic."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -581,7 +675,13 @@
         },
         {
           "verse": 24,
-          "text": "Blessed among women be Jahel the wife of Haber the Cinite, and blessed be she in her tabernacle."
+          "text": "<na>(a)</na> Blessed among women be Jahel the wife of Haber the Cineite, and blessed be she in her tabernacle.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Jahel the figure was blessed amongst women: much more the most Holy Virgin Mother of God is blessed above all women."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -589,7 +689,7 @@
         },
         {
           "verse": 26,
-          "text": "Her left hand she put to the nail, and her right hand to the smith’s hammer, and struck Sisara, seeking in his head a place for the wound, and piercing valiantly through his temple."
+          "text": "Her left hand she put to the nail, and her right hand to the smiths' hammer, and struck Sisara, seeking in his head a place for the wound, and piercing valiantly through his temple."
         },
         {
           "verse": 27,
@@ -615,11 +715,11 @@
           "verse": 32,
           "text": "And the Land rested for forty years."
         }
-      ]
+      ],
+      "summary": "The Canticle of Debbora and Barac giving thanks after their victory."
     },
     {
       "chapter": 6,
-      "summary": "The people falling again to sin, are oppressed by the Madianites. ℣.21 An Angel appearing to Gedeon, sendeth him to deliver Israel, ℣.17 confirming his mission by miracle. ℣.25 So he first destroyeth Baal's altar, ℣.34 then gathereth an army against Idolaters. ℣.36 And is assured again of God's protection by two miracles in a fleece of wool.",
       "verses": [
         {
           "verse": 1,
@@ -651,15 +751,21 @@
         },
         {
           "verse": 8,
-          "text": "Who sent unto them a man that was a Prophet, and he spake: Thus saith our Lord the God of Israel: I made you to come up out of Ægypt, and brought you out of the house of servitude,"
+          "text": "Who sent unto them <na>(a)</na> a man that was a Prophet, and he spake: Thus saith our Lord the God of Israel: I made you to come up out of Aegypt, and brought you out of the house of servitude,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "S. Augustine (q. 31. in Iudic.) supposeth that this messenger sent from God called a man and a Prophet (for the form wherein he appeared) was the same Angel which sat under the oak, and sent Gedeon to deliver Israel v. 11. 12. &c."
+            }
+          ]
         },
         {
           "verse": 9,
-          "text": "& delivered you out of the hands of the Ægyptians, and of all the enemies, that afflicted you: and I cast them out at your entering, and delivered you their Land."
+          "text": "& delivered you out of the hands of the Aegyptians, and of all the enemies, that afflicted you: and I cast them out at your entering, and delivered you their Land."
         },
         {
           "verse": 10,
-          "text": "And I said: I, the Lord your God, fear not the gods of the Ammorrhites, in whose land you dwell. And you would not hear my voice."
+          "text": "And I said: I^ the Lord your God, fear not the gods of the Ammorrheites, in whose land you dwell. And you would not hear my voice."
         },
         {
           "verse": 11,
@@ -671,7 +777,7 @@
         },
         {
           "verse": 13,
-          "text": "And Gedeon said to him: I beseech thee my Lord, if our Lord be with us, why have these evils apprehended us? Where are his marvelous works, which our fathers have told us, and said: Out of Ægypt did our Lord bring us? But now our Lord hath forsaken us, and delivered us into the hand of Madian."
+          "text": "And Gedeon said to him: I beseech thee my Lord, if our Lord be with us, why have these evils apprehended us? Where are his marvelous works, which our fathers have told us, and said: Out of Aegypt did our Lord bring us? But now our Lord hath forsaken us, and delivered us into the hand of Madian."
         },
         {
           "verse": 14,
@@ -679,7 +785,7 @@
         },
         {
           "verse": 15,
-          "text": "Who answering said: I beseech thee, my Lord, wherein shall I deliver Israel? Behold my family is the meanest in Manasses, & I, the least in my father's house."
+          "text": "Who answering said: I beseech thee, my Lord, wherein shall I deliver Israel? Behold my family is the meanest in Manasses, & I^ the least in my father's house."
         },
         {
           "verse": 16,
@@ -691,7 +797,13 @@
         },
         {
           "verse": 18,
-          "text": "Neither depart thou hence, till I return to thee, bringing a sacrifice, and offering to thee. Who answered: I will tarry thy coming."
+          "text": "Neither depart thou hence, till I return to thee, bringing a sacrifice, and offering <na>(b)</na> to thee. Who answered: I will tarry thy coming.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "He meant not to offer sacrifice to the Angel, but that either the Angel, or himself in presence of the Angel, should offer it to God: and so indeed the Angel partly directed him what to do, partly executed the office himself, by touching the oblation with his rod: and miraculously bringing fire to consume the sacrifice."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -715,11 +827,17 @@
         },
         {
           "verse": 24,
-          "text": "And Gedeon built there an altar to our Lord, & called it, our Lord's peace, until this present day. And when he was yet in Ephra, which is of the family of Ezri,"
+          "text": "And Gedeon built there <na>(c)</na> an altar to our Lord, & called it, our Lord's peace, until this present day. And when he was yet in Ephra, which is of the family of Ezri,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "An altar for a monument, not for sacrifice."
+            }
+          ]
         },
         {
           "verse": 25,
-          "text": "that night our Lord said to him: Take a bullock of thy father's, and an other bullock of seven years, and thou shalt destroy the altar of Baal, which is thy father's: and cut down the grove, that is about the altar:"
+          "text": "that night our Lord said to him: Take a bullock of thy father's, and another bullock of seven years, and thou shalt destroy the altar of Baal, which is thy father's: and cut down the grove, that is about the altar:"
         },
         {
           "verse": 26,
@@ -735,7 +853,7 @@
         },
         {
           "verse": 29,
-          "text": "They said one to an other: Who hath done this? And when they inquired for the author of the fact, it was said: Gedeon the son of Joas did all these things."
+          "text": "They said one to another: Who hath done this? And when they inquired for the author of the fact, it was said: Gedeon the son of Joas did all these things."
         },
         {
           "verse": 30,
@@ -743,11 +861,17 @@
         },
         {
           "verse": 31,
-          "text": "To whom he answered: Why are you revengers of Baal, that you fight for him? He that is his adversary, let him die before to morrow light appear: if he be God, revenge he himself, on him that hath razed his altar."
+          "text": "To whom he answered: Why are you revengers of Baal, that you fight for him? He that is his adversary, let him die before tomorrow light appear: if he be God, revenge he himself, on him that hath razed his altar."
         },
         {
           "verse": 32,
-          "text": "From that day Gedeon was called Jerobaal, because Joas had said: Let Baal revenge himself on him, that hath razed his altar."
+          "text": "From that day Gedeon was called <na>(d)</na> Jerobaal, because Joas had said: Let Baal revenge himself on him, that hath razed his altar.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "The strength of Baal, or stronger than Baal."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -767,7 +891,13 @@
         },
         {
           "verse": 37,
-          "text": "I will put this fleece of wool on the floor: if there shall be dew in the fleece only, and on all the ground dryness, I shall know that by my hand, as thou hast spoken, thou wilt deliver Israel."
+          "text": "Iwill put this fleece of wool on the floor: if there shall be <na>(e)</na> dew in the fleece only, and on all the ground dryness, I shall know that by my hand, as thou hast spoken, thou wilt deliver Israel.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Dew first in the fleece and after on the ground, signified grace and true religion first in one people, after in all nations. Saint Amb. Ser. 13. de Natal. Dom. Vener. Beda qq. in Iudic. c. 4. Also Christ's Incarnation without detriment of his Mother's virginity, of whose grace all are replenished. S. Bernard ho. 2. in Missus est."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -781,11 +911,11 @@
           "verse": 40,
           "text": "And God did that night as he had requested: and there was dryness in the fleece only, and dew on all the ground."
         }
-      ]
+      ],
+      "summary": "The people falling again to sin, are oppressed by the Madianites. 21. An Angel appearing to Gedeon, sendeth him to deliver Israel, 17. confirming his mission by miracle. 25. So he first destroyeth Baal's altar, 34. then gathereth an army against Idolaters. 36. And is assured again of God's protection by two miracles in a fleece of wool."
     },
     {
       "chapter": 7,
-      "summary": "Gedeon marching with thirty two thousand men, all that are fearful, and that drink water kneeling are dismissed, & only three hundred that drink little remain. ℣.9 By a Madianite's dream Gedeon is encouraged. ℣.16 By a stratagem the enemy is frighted & overthrown. ℣.24 The Ephraites kill Oreb & Zeb.",
       "verses": [
         {
           "verse": 1,
@@ -837,7 +967,13 @@
         },
         {
           "verse": 13,
-          "text": "And when Gedeon was come, one told his neighbour a dream & in this manner he reported that which he had seen: I saw a dream, & there seemed to me as it were a hearth loaf of barley, to roll, & to come into the camp of Madian: and when it was come to the tabernacle, it struck it, and overthrew it, & beat it all flat with the earth."
+          "text": "And when Gedeon was come, one told his neighbour <na>(a)</na> a dream & in this manner he reported that which he had seen: I saw a dream, & there seemed to me as it were a hearth loaf of barley^ to roll, & to come into the camp of Madian: and when it was come to the tabernacle, it struck it, and overthrew it, & beat it all flat with the earth.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Observation of dreams is generally forbid. Levit. 19. v. 26. Deut. 18. v. 10. yet here, and in other places, it is evident, God would have some observed. See Annot. Gen. 40."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -849,7 +985,13 @@
         },
         {
           "verse": 16,
-          "text": "And he divided the three hundred men into three parts, and gave them trumpets in their hands, and empty pitchers, and lamps in the midst of their pitchers."
+          "text": "And he divided the three hundred men into three parts, and gave them trumpets in their hands, and <na>(b)</na> empty pitchers, and lamps in the midst of their pitchers.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "These things were ridiculous (saith Venerab. Beda c. 4. qq. in Iudic. ) if they had not been terrible to the enemies."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -857,11 +999,23 @@
         },
         {
           "verse": 18,
-          "text": "When the trumpet shall sound in my hand, do you also sound and cry together round about the camp: To our Lord & to Gedeon."
+          "text": "When the trumpet shall sound in my hand, do you also sound and cry together round about the camp: To our Lord <na>(c)</na> & to Gedeon.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "It is no derogation to God, that honour is also given to his servants."
+            }
+          ]
         },
         {
           "verse": 19,
-          "text": "And Gedeon went in, & the three hundred that were with him, into part of the camp, the watch of midnight beginning, and raising up the watch men they began to sound with their trumpets, and to clap the pitchers one against an other."
+          "text": "And Gedeon went in, & the three hundred that were with him, into part of the camp, the watch of midnight beginning, and raising up the watch men they began to sound with their <na>(d)</na> trumpets, and to clap the pitchers one against another.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Trumpets signified Preachers of Christ, pitchers the bodies of Martyrs, & lamps their virtues & miracles. Vener. Beda. qq. in Iudic. c. 5."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -873,7 +1027,7 @@
         },
         {
           "verse": 22,
-          "text": "and the three hundred men nevertheless persisted sounding with the trumpets. And our Lord sent in the sword in all the camp, and they murdered one an other,"
+          "text": "and the three hundred men nevertheless persisted sounding with the trumpets. And our Lord sent in the sword in all the camp, and they murdered one another,"
         },
         {
           "verse": 23,
@@ -887,11 +1041,11 @@
           "verse": 25,
           "text": "And two men that were apprehended of Madian, Oreb and Zeb, Oreb he slew in the Rock of Oreb, Zeb in the press of Zeb. And they pursued Madian, carrying the heads of Oreb and Zeb to Gedeon beyond the streams of Jordan."
         }
-      ]
+      ],
+      "summary": "Gedeon marching with thirty two thousand men, all that are fearful, and that drink water kneeling are dismissed, & only three hundred that drink little remain. 9. By a Madianite's dream Gedeon is encouraged. 16. By a stratagem the enemy is frighted & overthrown. 24. The Ephraites kill Oreb & Zeb."
     },
     {
       "chapter": 8,
-      "summary": "The Ephraimites quarrelling because they were not called to the wars, are pacified by Gedeon. ℣.4 The men of Soccoth and Phanuel denying victuals for the camp, Gedeon (in the mean time ℣.10 overthrowing the enemy) ℣.15 revengeth their reproachful contempt, ℣.18 killeth Soccoth and Salmana, ℣.22 refuseth dominion, ℣.24 but receiveth as a gift, the Jewels taken in the prey: ℣.27 maketh thereof an Ephod, which turneth to the ruin of his family. ℣.30 Having seventy sons by his wives, and one by a concubine, dieth in good old age. ℣.33 And the people fall again to idolatry.",
       "verses": [
         {
           "verse": 1,
@@ -899,11 +1053,17 @@
         },
         {
           "verse": 2,
-          "text": "To whom he answered: What could I have done like to that, which you have done? Is not the cluster of Ephraim better than the vintages of Abiezer?"
+          "text": "To whom he answered: <na>(a)</na> What could I have done like to that, which you have done? Is not the cluster of Ephraim better than the vintages of Abiezer?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Asoft answer breaketh anger: hard speech stirreth up fury Prov. 15."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "Into your hands hath our Lord delivered the Princes of Madian, Oreb and Zeb, what, could I have done the like as you have done? Which when he had spoken, their spirit rested, wherewith they did swell against him."
+          "text": "Into your hands hath our Lord delivered the Princes of Madian, Oreb and Zeb, what could I have done the like as you have done? Which when he had spoken, their spirit rested, wherewith they did swell against him."
         },
         {
           "verse": 4,
@@ -935,7 +1095,7 @@
         },
         {
           "verse": 11,
-          "text": "And Gedeon going up by the way of them, that dwelt in tabernacles, on the East side of Nobe, & Jegbaa, struck the camp of the enemies which were secure, and suspected no mischance."
+          "text": "And Gedeon going up by the way of them, that dwelt in tabernacles, on the East side of Nobe, & Iegbaa, struck the camp of the enemies which were secure, and suspected no mischance."
         },
         {
           "verse": 12,
@@ -967,7 +1127,13 @@
         },
         {
           "verse": 19,
-          "text": "To whom he answered: They were my brethren, the sons of my mother. Our Lord liveth, that if you had saved them I would not kill you."
+          "text": "To whom he answered: They were my brethren, the sons of my mother. Our Lord liveth, that if you had saved them <na>(b)</na> I would not kill you.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Zebee and Salmana were not of any of the seven nations whom God commanded to destroy and therefore Gedeon might have spared their lives, if he would."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -979,7 +1145,13 @@
         },
         {
           "verse": 22,
-          "text": "And all the men of Israel said to Gedeon: Rule thou over us, and thy son, and thy son's son: because thou hast delivered us from the hand of Madian."
+          "text": "And all the men of Israel said to Gedeon: <na>(c)</na> Rule thou over us, and thy son, and thy son's son: because thou hast delivered us from the hand of Madian.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Kings may do any thing not contrary to the law: but Judges and Dukes may only do according to the law. Reg. 8."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -995,7 +1167,7 @@
         },
         {
           "verse": 26,
-          "text": "and the weight of the earlets that he desired, was a thousand five hundred sicles of gold, besides the ornaments, and jewels, and purple vesture, which the kings of Madian were wont to use, & besides the golden chains of the camels."
+          "text": "and the weight of the earlets that he desired, was a thousand seven hundred sicles of gold, besides the ornaments, and jewels, and purple vesture, which the kings of Madian were wont to use, & besides the golden chains of the camels."
         },
         {
           "verse": 27,
@@ -1015,7 +1187,13 @@
         },
         {
           "verse": 31,
-          "text": "And his concubine, which he had in Sichem, bare him a son named Abimelec."
+          "text": "And his <na>(d)</na> concubine, which he had in Sichem, bare him a son named Abimelec.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "His handmaid or servant, not a harlot: to wit, such a one as had not the privilege of a wife, as Gen. 25. v. 6."
+            }
+          ]
         },
         {
           "verse": 32,
@@ -1033,15 +1211,21 @@
           "verse": 35,
           "text": "neither did they mercy with the house of Jerobaal Gedeon, according to all the benefits that he had done to Israel."
         }
-      ]
+      ],
+      "summary": "The Ephraimites quarrelling because they were not called to the wars, are pacified by Gedeon. 4. The men of Soccoth and Phanuel denying victuals for the camp, Gedeon (in the mean time 10. overthrowing the enemy) 15. revengeth their reproachful contempt, 18. killeth Soccoth and Salmana, 22. refuseth dominion, 24. but receiveth as a gift, the Jewels taken in the prey: 27. maketh thereof an Ephod, which turneth to the ruin of his family. 30. Having seventy sons by his wives, and one by a concubine, dieth in good old age. 33. And the people fall again to idolatry."
     },
     {
       "chapter": 9,
-      "summary": "Abimelech Gedeon's concubine's son killeth his brethren, ℣.7 only the youngest escapeth, and by a parable expostulateth the injury done to his father's house. ℣.23 Shortly the Sichemites detest Abimelech. ℣.26 Gaal conspireth against him, but is overcome. ℣.50 Finally Abimelech is wounded to death by a woman.",
       "verses": [
         {
           "verse": 1,
-          "text": "And Abimelech the son of Jerobaal went into Sichem to his mother's brethren and spake to them, & to all the kindred of the house of his mother's father, saying:"
+          "text": "And <na>(a)</na> Abimelech the son of Jerobaal went into Sichem to his mother's brethren and spake to them, & to all the kindred of the house of his mother's father, saying:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This son of Gedeon by his servant prefigured Antichrist, who will persecute the Church & reign for a while: but in the end shall be destroyed. S. Beda c. 6. qq. in Iudic."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1065,11 +1249,24 @@
         },
         {
           "verse": 7,
-          "text": "Which being told to Joatham, he went, & stood in the top of mount Garizim: & lifting up his voice, he cried, & said: Hear me ye men of Sichem, so as God may hear you."
+          "text": "Which being told to Joatham, he went, <na>(b)</na> & stood in the top of mount Garizim: & lifting up his voice, he cried, & said: Hear me ye men of Sichem, so as God may hear you.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "True Pastors in the time of Antichrist will still avouch the truth and the right of the Church."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "The trees went to anoint a king over them: & they said to the olive tree: Reign over us."
+          "text": "The trees went to anoint a king over them: & they said to the <na>(c)</na> olive tree: Reign over us.",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "c",
+              "text": "Oil spiritually signifieth the grace of the Holy ghost, making peace of conscience in men's souls towards God."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1077,7 +1274,13 @@
         },
         {
           "verse": 10,
-          "text": "And the trees said to the fig tree: Come, and take the Kingdom over us."
+          "text": "And the trees said to the <na>(d)</na> fig tree: Come, and take the Kingdom over us.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "The sweetness of God's law producing good works."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1085,7 +1288,13 @@
         },
         {
           "verse": 12,
-          "text": "And the trees spake to the vine: Come, and reign over us."
+          "text": "And the trees spake to the <na>(e)</na> vine: Come, and reign over us.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Contemptible in outward shew, but bringing forth liquor of marvelous force; which sort of works God is most delighted withal: and men most admire. Psal. 85."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1093,11 +1302,22 @@
         },
         {
           "verse": 14,
-          "text": "And the trees said to the rhamnus: Come, and reign over us."
+          "text": "And the trees said to <na>(f)</na> the <cr>[1]</cr> rhamnus: Come, and reign over us.",
+          "cross_refs": [
+            {
+              "text": "* brier, bramble or thistle."
+            }
+          ],
+          "notes": [
+            {
+              "label": "f",
+              "text": "The rhamnus signifieth base and ambitious men."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "Who answered them: If indeed you make me your king, Come, and rest under my shadow: but if you mean it not, let there fire issue forth of the rhamnus, & devour the ceders of Libanus."
+          "text": "Who answered them: If indeed you make me your king, Come, and rest under my shadow: but if you mean it not, let there fire issue forth of the rhamnus, & devour the cedars of Libanus."
         },
         {
           "verse": 16,
@@ -1129,7 +1349,13 @@
         },
         {
           "verse": 23,
-          "text": "And our Lord sent a very evil spirit between Abimelech and the inhabitants of Sichem: Who began to detest him,"
+          "text": "And our Lord sent <na>(g)</na> a very evil spirit between Abimelech and the inhabitants of Sichem: Who began to detest him,",
+          "notes": [
+            {
+              "label": "g",
+              "text": "God doth suggest only good cogitations, as remorse of conscience in the Sichemites, for their ingratitude towards Gedeon, and for so wicked and cruel a murder of his sons. Whereupon they began to detest Abimelech, and, so hatred grew between him & them, which is a most evil spirit, but their former sin, not God, was the cause thereof. S. Aug. q. 45. in Iudic."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -1217,7 +1443,13 @@
         },
         {
           "verse": 45,
-          "text": "Moreover Abimelech all the day oppugned the city: which he took, & killed the inhabitants thereof, and destroyed it, so that he sowed salt in it."
+          "text": "Moreover Abimelech all the day oppugned the city: which he took, & killed the inhabitants thereof, and destroyed it, so that he <na>(a)</na> sowed salt in it.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "For more revenge he sowed the city with salt, which maketh ground barren. Theod. q. 17. in lib. Iudic."
+            }
+          ]
         },
         {
           "verse": 46,
@@ -1249,7 +1481,13 @@
         },
         {
           "verse": 53,
-          "text": "and behold one woman casting from above a piece of a millstone, dashed it against the head of Abimelech, and brake his brain."
+          "text": "and behold one woman casting from above a piece of a millstone, <na>(b)</na> dashed it against the head of Abimelech, and brake his brain.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Evils shall betide the unjust man to destruction. Psal. 139."
+            }
+          ]
         },
         {
           "verse": 54,
@@ -1261,17 +1499,17 @@
         },
         {
           "verse": 56,
-          "text": "and God repaid the evil, that Abimelech had done against his father, killing his seventy brethren."
+          "text": "and God repayed the evil, that Abimelech had done against his father, killing his seventy brethren."
         },
         {
           "verse": 57,
           "text": "The Sichemites were also rewarded for that which they had wrought, and the curse of Joatham the son of Jerobaal came upon them."
         }
-      ]
+      ],
+      "summary": "Abimelech Gedeon's concubine's son killeth his brethren, 7. only the youngest escapeth, and by a parable expostulateth the injury done to his father's house. 23. Shortly the Sichemites detest Abimelech. 26. Gaal conspireth against him, but is overcome. 50. Finally Abimelech is wounded to death by a woman."
     },
     {
       "chapter": 10,
-      "summary": "Thola ruleth in Israel twenty three years. ℣.3 Jair twenty two. ℣.6 The people fall again to idolatry, are afflicted by the Philisthimes and Ammonites. ℣.10 They cry to God for help, who biddeth them call for help to the gods whom they have served. ℣.16 But crying still to God, and throwing away their idols, he hath compassion of them.",
       "verses": [
         {
           "verse": 1,
@@ -1295,7 +1533,7 @@
         },
         {
           "verse": 6,
-          "text": "But the children of Israel joining new sins to their old, did evil in the sight of our Lord, & served the idols, Baalim and Astaroth, & the gods of Syria and of Sidon and of Moab and the children of Ammon and of the Philisthiims: and they left our Lord, and did not serve him."
+          "text": "But the children of Israel joining new sins to their old, did evil in the sight of our Lord, & served the idols, Baalim and Astaroth, & the gods of Syria and of Sidon and of Moab and of the children of Ammon and of the Philisthiims: and they left our Lord, and did not serve him."
         },
         {
           "verse": 7,
@@ -1315,11 +1553,11 @@
         },
         {
           "verse": 11,
-          "text": "To whom our Lord spake: Have not the Ægyptians and the Amorrhites, and the children of Ammon and the Philisthiims,"
+          "text": "To whom our Lord spake: Have not the Aegyptians and the Amorrheites, and the children of Ammon and the Philisthiims,"
         },
         {
           "verse": 12,
-          "text": "the Sidonians also and Amalech and Chanaan oppressed you, & you cried to me, and I delivered you out of their hands?"
+          "text": "the Sidonians also and Amalech and Chanaan oppressed you, & you cried to me, and I delivered you out of their hand?"
         },
         {
           "verse": 13,
@@ -1335,7 +1573,13 @@
         },
         {
           "verse": 16,
-          "text": "In saying which things, they threw away out of their coasts all the idols of strange gods, and served our Lord God: who sorrowed for their miseries."
+          "text": "In saying which things, <na>(a)</na> they threw away out of their coasts all the idols of strange gods, and served our Lord God: who sorrowed for their miseries.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Not every one that saith: Lord, Lord , but he that doth the will of God &c. Mat. 7."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -1345,19 +1589,25 @@
           "verse": 18,
           "text": "And the Princes of Galaad said every one to their neighbours: Who of us shall first begin to fight against the children of Ammon, shall be the Duke of the people of Galaad."
         }
-      ]
+      ],
+      "summary": "Thola ruleth in Israel twenty three years. 3. Jair twenty two. 6. The people fall again to idolatry, are afflicted by the Philisthimes and Ammonites. 10. They cry to God for help, who biddeth them call for help to the gods whom they have served. 16. But crying still to God, and throwing away their idols, he hath compassion of them."
     },
     {
       "chapter": 11,
-      "summary": "Jephte rejected by his brethren, is entreated by the ancients of Galaad to return and fight for them against the Ammonites: ℣.12 with whom he first pleadeth the cause of Israel by just reasons ℣.26 and long prescription. But they persisting obstinate, he (℣.30 inconsiderately vowing) ℣.32 overthroweth them, ℣.34 and sacrificeth his only daughter.",
       "verses": [
         {
           "verse": 1,
-          "text": "There was at that time Jephte the Galaadite, a most valiant man & a warrior, the son of a woman that was an harlot, who was born of Galaad."
+          "text": "There was at that time Jephte the Galaadite, a most valiant man & a warrior, the son of a woman that was <na>(a)</na> an harlot, who was born of Galaad.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The Hebrew word zonah signifieth also an Innkeeper ."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And Galaad had a wife of whom he had sons: who after they were grown, cast out Jephte, saying: Thou canst not be heir in the house of our father, because thou art born of an other mother."
+          "text": "And Galaad had a wife of whom he had sons: who after they were grown, cast out Jephte, saying: Thou canst not be heir in the house of our father, because thou art born of another mother."
         },
         {
           "verse": 3,
@@ -1381,7 +1631,13 @@
         },
         {
           "verse": 8,
-          "text": "And the Princes of Galaad said to Jephte: For this cause be we now come to thee, that thou go forth with us, & fight against the children of Ammon, and be the Captain of all that dwell in Galaad."
+          "text": "And the Princes of Galaad said to Jephte: For this cause be we now <na>(b)</na> come to thee, that thou go forth with us, & fight against the children of Ammon, and be the Captain of all that dwell in Galaad.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "If they had not concurred to his expulsion, it might have sufficed to have sent for him, but in this case the ancients judged it meet to go in person, & to entreat him. So Christ was rejected by the Jews, & returneth not to them till in the end of the world they shall seek unto him. S. Aug. q. 49. in Iudic. post medium."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1401,7 +1657,7 @@
         },
         {
           "verse": 13,
-          "text": "To whom he answered: Because Israel took my land when he ascended out of Ægypt, from the coasts of Arnon unto Jaboc and Jordan: now therefore with peace restore the same to me."
+          "text": "To whom he answered: Because Israel took my land when he ascended out of Aegypt, from the coasts of Arnon unto Iaboc and Jordan: now therefore with peace restore the same to me."
         },
         {
           "verse": 14,
@@ -1413,11 +1669,16 @@
         },
         {
           "verse": 16,
-          "text": "but when they ascended out of Ægypt, he walked through the desert unto the Red sea, and came into Cades."
+          "text": "but when they ascended out of Aegypt, he walked through the desert unto the Red sea, and came into Cades."
         },
         {
           "verse": 17,
-          "text": "And he sent messengers to the king of Edom, saying: Suffer me that I may pass through the land. Who would not condescend to his requests. He sent also to the king of Moab, who also himself contemned to give passage. He abode therefore in Cades,"
+          "text": "<cr>[1]</cr> And he sent messengers to the king of Edom, saying: Suffer me that I may pass through the land. Who would not condescend to his requests. He sent also to the king of Moab, who also himself contemned to give passage. He abode therefore in Cades,",
+          "cross_refs": [
+            {
+              "text": "Num. 20."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1425,7 +1686,7 @@
         },
         {
           "verse": 19,
-          "text": "Israel therefore sent messengers to Sehon the king of the Amorrhites, who dwelt in Hesebon, & they said to him: Suffer me to pass through thy land unto the river."
+          "text": "Israel therefore sent messengers to Sehon the king of the Amorrheites, who dwelt in Hesebon, & they said to him: Suffer me to pass through thy land unto the river."
         },
         {
           "verse": 20,
@@ -1437,7 +1698,7 @@
         },
         {
           "verse": 22,
-          "text": "and all the coasts thereof from Arnon unto Jaboc, and from the wilderness unto Jordan."
+          "text": "and all the coasts thereof from Arnon unto Iaboc, and from the wilderness unto Jordan."
         },
         {
           "verse": 23,
@@ -1445,7 +1706,13 @@
         },
         {
           "verse": 24,
-          "text": "Are not those things which Chamos thy god possessed, due to thee by right? But the things that our Lord God hath obtained conqueror, shall come to our possession:"
+          "text": "Are not those things which <na>(c)</na> Chamos thy god possessed, due to thee by right? But the things that our Lord God hath obtained conqueror, shall come to our possession:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "In the opinion of infidels, it seemed that they possessed countries by the help of false gods, and so they thought themselves to have just title. Much more just is the title when God almighty giveth victory of conquest. S. Aut. q. 48. in Iudic."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -1453,7 +1720,13 @@
         },
         {
           "verse": 26,
-          "text": "when he dwelt in Hesebon, & the little towns thereof, & in Aroer, & the towns thereof, or in all the cities near Jordan, for three hundred years. Wherefore have you so long attempted nothing for reclaim?"
+          "text": "when he dwelt in Hesebon, & the little towns thereof, & in Aroer, & the towns thereof, or in all the cities near Jordan, for <na>(d)</na> three hundred years. Wherefore have you so long attempted nothing for reclaim?",
+          "notes": [
+            {
+              "label": "d",
+              "text": "He argueth upon prescription of 300. years being near so much, for there wanted scarce thirty: being from the conquest made by Moyses (Num. 21.) till the time of Jephte about 270. years."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -1473,7 +1746,13 @@
         },
         {
           "verse": 31,
-          "text": "whosoever shalt first come forth out of the doors of my house, and shall meet me returning with peace from the children of Ammon, him will I offer an holocaust to our Lord."
+          "text": "<na>(d)</na> whosoever shalt first come forth out of the doors of my house, and shall meet me returning with peace from the children of Ammon, him will I offer an holocaust to our Lord.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "This vow was unlawful, for the law forbiddeth to offer man or woman in sacrifice. Exo. 34. v. 20. Deut. 12. v. 31."
+            }
+          ]
         },
         {
           "verse": 32,
@@ -1489,7 +1768,7 @@
         },
         {
           "verse": 35,
-          "text": "Whom when he saw, he rent his garments, and said: Woe is me my daughter, thou hast deceived me, and thy self art deceived: for I have opened my mouth to our Lord, and I can do no other thing."
+          "text": "Whom when he saw, he rent his garments, and said: Woe is me my daughter, thou hast deceived me, and thyself art deceived: for I have opened my mouth to our Lord, and I can do no other thing."
         },
         {
           "verse": 36,
@@ -1497,7 +1776,13 @@
         },
         {
           "verse": 37,
-          "text": "And she said to her father: This only grant me which I desire: Suffer me that two months I may go about the mountains, & bewail my virginity with my fellows."
+          "text": "And she said to her father: This only grant me which I desire: Suffer me that two months I may go about the mountains, & <na>(e)</na> bewail my virginity with my fellows.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "In the old testament marriage was ordinarily preferred before single life, but in the new it is better to keep virginity. 1. Cor. 7. v. 38."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -1505,21 +1790,48 @@
         },
         {
           "verse": 39,
-          "text": "And the two months being expired, she returned to her father, and he did to her as he had vowed, who knew not man. Thence-forth a fashion in Israel, and a custom was kept:"
+          "text": "And the two months being expired, she returned to her father, and he did to her as he had vowed, who knew not man. Thence-forth a fashion in Israel, and a custom was kept:",
+          "has_annotation": true
         },
         {
           "verse": 40,
-          "text": "that after the compass of a year the daughters of Israel assemble together, and mourn the daughter of Jephte the Galaadite four days."
+          "text": "that after the compass of a year the daughters of Israel assemble together, and mourn the daughter of Jephte the Galaadite four days. 39. Did to her as he had vowed.] Whether Jephte did well or no in sacrificing his daughter, having vowed to offer in sacrifice whosoever (or whatsoever) should first meed him returning with victory, as it happened she did, is a great and hard question, saith S. Augustine (q. 49. in lib. Iudic.) and not easily decided, the holy scripture neither approving nor reproving his fact. Nevertheless by conference of other scriptures and discourse of reason, he judgeth it most probable that <cr>[1]</cr> Jephte offended in vowing without special warrant from God, to sacrifice, that which by the law was not sacrificable; yet sinned not in performing his vow, but rather pacified God thereby, whose will it seemed to be, that for punishment of his sin he should sacrifice his daughter, because by his divine providence she first met him: and the omission might rather have been for his natural love towards his only child, than for the unlawfulness of the sacrifice: seeing it once pleased God to command Abraham to immolate his son Isaac, though when it came to execution, he forbade the same, appointing another host in place of the child, which here he did not. Neither was it injurious to the daughter, seeing she, as all mankind, must once die when God appointeth. Yea further she offered herself freely (which seemed to be by God's instinct) willing her father to do to her whatsoever he had promised to God. This is the sum of <cr>[2]</cr> S. Augustin's large discourse. Likewise <cr>[3]</cr> S. Ambrose (li. 3. de Officiis c. 12.) supposeth assuredly that this Prince Jephte offended in vowing unadvisedly, for it also repented him, when his daughter first met him: yet that with godly fear and dread he performed to his own bitter pain that which he had promised: instituting an anniversary lamentation of his daughter, for a warning to posterity of more circumspection in making vows. <cr>[4]</cr> S. Hierome also (li. 1. advers. Iovinian.) approveth their opinion that say: It was God's ordinance Jephte should feel the error of his unadvised vow, by the death of his daughter, for a document of others. The very same teacheth <cr>[5]</cr> S. Chrysostome (ho. 14. ad pop. Antioch.) that God would have this error to be thus punished, that others might be warned from vowing the like <cr>[6]</cr> S. Gregory Nazianzen (orat. de Machabaeis) preferring the martyrdom of the seven brothers and their mother, before this sacrifice of Jephte as more advised and more honourable , yet condemneth not this, but recounteth it amongst other commendable acts. <cr>[7]</cr> Theodoret (q. 19. in Iudic.) and all the aforesaid fathers do highly commend the daughter's promptness in offering herself to be sacrificed, which either much extenuated her father's fault, or wholly justified his fact. Thus the ancient fathers moderate their censures. <cr>[8][9]</cr> Yet a new glosser of the English Bible without scruple saith, that by his rash vow, and wicked performance, his victory was defaced : and again, that he was overcome with blind zeal, not considering whether the vow was lawful or no.",
+          "cross_refs": [
+            {
+              "text": "Jephte offended in vowing undiscreetly: But not in performing his vow, as ancient fathers think more probable."
+            },
+            {
+              "text": "S. Augustine."
+            },
+            {
+              "text": "S. Ambrose."
+            },
+            {
+              "text": "S. Hierome."
+            },
+            {
+              "text": "S. Chrysostome."
+            },
+            {
+              "text": "S. Gregory Nazianzen."
+            },
+            {
+              "text": "Theodoret."
+            },
+            {
+              "text": "Protestants' censure."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Jephte rejected by his brethren, is entreated by the ancients of Galaad to return and fight for them against the Ammonites: 12. with whom he first pleadeth the cause of Israel by just reasons 26. and long prescription. But they persisting obstinate, he (30. inconsiderately vowing) 32. overthroweth them, 34. and sacrificeth his only daughter."
     },
     {
       "chapter": 12,
-      "summary": "Ephraites rising against Jephte, forty two thousand of them are slain. ℣.8 Abesan is Judge. ℣.11 After him Ahialon. ℣.13 Then Abdon.",
       "verses": [
         {
           "verse": 1,
-          "text": "But behold in Ephraim there arose a sedition. For they passing against the North, said to Jephte: Going to fight against the children of Ammon, why wouldst thou not call us, that we might go with thee? Therefore we will burn thy house."
+          "text": "B"
         },
         {
           "verse": 2,
@@ -1527,19 +1839,31 @@
         },
         {
           "verse": 3,
-          "text": "Which I seeing put my life in mine own hands, and passed to the children of Ammon, and our Lord delivered them into my hands. What have I deserved, that you rise against me in battle."
+          "text": "Which I seeing <na>(a)</na> put my life in mine own hands, and passed to the children of Ammon, and our Lord delivered them into my hands. What have I deserved, that you rise against me in battle.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "That is, exposed myself to danger trusting to God's help & mine own hands, when others would not assist me."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "Therefore all the men of Galaad being called to him, he fought against Ephraim: and the men of Galaad struck Ephraim, because he had said: Galaad is a fugitive of Ephraim, & dwelleth in the midst of Ephraim & Manasses."
+          "text": "Therefore all the men of Galaad being called to him, he fought against Ephraim: and the men of Galaad struck Ephraim, because he had said: <na>(b)</na> Galaad is a fugitive of Ephraim, & dwelleth in the midst of Ephraim & Manasses.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Jephte being of Manasses' tribe, the Ephraites envied his glory and calumniously objected that he & his followers were fugitives, so raised a tumult to their own loss."
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "And the Galaadites took the fords of Jordan, by the which Ephraim was to return. And when there had come to the same, one of the number of Ephraim, flying, and had said: I beseech you let me pass: The Galaadites said to him: Art thou not an Ephraite? Who saying: I am not:"
+          "text": "And the Galaadites took the fords of Jordan, by the which Ephraim was to return. And when there had come to the same^ one of the number of Ephraim, flying, and had said: I beseech you let me pass: The Galaadites said to him: Art thou not an Ephraite? Who saying: I am not:"
         },
         {
           "verse": 6,
-          "text": "they asked him: Say then Schibboleth, which is interpreted an ear of corn. Who answered, Sibboleth, not being able by the same letter to express, and ear of corn. And immediately being apprehended they killed him in the very passage of Jordan. And there fell at that time of Ephraim two and forty thousand."
+          "text": "they asked him: Say then Schibboleth, which is interpreted an ear of corn. Who answered, Sibboleth, not being able by the same letter to express, an ear of corn. And immediately being apprehended they killed him in the very passage of Jordan. And there fell at that time of Ephraim two and forty thousand."
         },
         {
           "verse": 7,
@@ -1567,7 +1891,7 @@
         },
         {
           "verse": 13,
-          "text": "After him, Abdon judged Israel, the son of Illel a Pharathonite:"
+          "text": "After him^ Abdon judged Israel, the son of Illel a Pharathonite:"
         },
         {
           "verse": 14,
@@ -1577,11 +1901,11 @@
           "verse": 15,
           "text": "and he died, and was buried in Pharathon of the Land of Ephraim, in the mount of Amalec."
         }
-      ]
+      ],
+      "summary": "Ephraites rising against Jephte, forty two thousand of them are slain. 8. Abesan is Judge. 11. After him Ahialon. 13. Then Abdon."
     },
     {
       "chapter": 13,
-      "summary": "The people fall again to idolatry & are afflicted by the Philisthiims. ℣.3 An Angel fortelleth Manue his wife, that she shall have a son, & that he shall be a Nazareite from his birth. ℣.11 Confirmeth the same to Manue. ℣.16 They offer sacrifice to God. ℣.24 The child is born, called Samson, and blessed of God.",
       "verses": [
         {
           "verse": 1,
@@ -1597,11 +1921,23 @@
         },
         {
           "verse": 4,
-          "text": "beware therefore that thou drink not wine & sicer, nor eat any unclean thing:"
+          "text": "beware therefore that thou <na>(a)</na> drink not wine & sicer, nor eat any unclean thing:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Abstinence not only from things unclean by the law, but also from wine and sicer, was a preparation to the child, who should abstain from them all his life."
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "because thou shalt conceive & bear a son, whose head the razor shall not touch: for he shall be a Nazarite of God, from his infancy, and from his mother's womb, and he shall begin to deliver Israel from the hands of the Philistiims."
+          "text": "because thou shalt conceive & bear a son, whose head the razor shall not touch: for he shall be a Nazarite of God, <na>(b)</na> from his infancy, and from his mother's womb, and he shall begin to deliver Israel from the hands of the Philistiims.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Other Nazarites observed a prescript rule of abstinence for a time only. Num. 6. but Samson all his life; as a more perfect figure of Christ."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1609,7 +1945,7 @@
         },
         {
           "verse": 7,
-          "text": "but this is answered: Behold thou shalt conceive and bear a son: beware thou drink not wine nor sicer, and that thou eat not any unclean thing: for the child shall be the Nazarite of God from his infancy, and from his mother's womb until the day of his death."
+          "text": "but this he answered: Behold thou shalt conceive and bear a son: beware thou drink not wine nor sicer, and that thou eat not any unclean thing: for the child shall be the Nazarite of God from his infancy, and from his mother's womb until the day of his death."
         },
         {
           "verse": 8,
@@ -1621,7 +1957,8 @@
         },
         {
           "verse": 10,
-          "text": "hastened, and ran to her husband: and she told him, saying: Behold the man hath appeared to me, whom I saw before."
+          "text": "hastened, and ran to her husband: and she told him, saying: Behold the man hath appeared to me, whom I saw before.",
+          "has_annotation": true
         },
         {
           "verse": 11,
@@ -1641,7 +1978,13 @@
         },
         {
           "verse": 15,
-          "text": "And Manue said to the Angel of our Lord: I beseech thee that thou condescend to my petitions, and let us make to thee a kid of goats."
+          "text": "And Manue said to the Angel of our Lord: I beseech thee that thou condescend to my petitions, and let us <na>(c)</na> make to thee a kid of goats.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Manue taking the Angel for a holy Prophet justly thought he would not admit, nor command any thing but that was lawful. And so did as the Angel appointed him, though he was no Priest, nor the place proper to sacrifice, but by extraordinary dispensation."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1669,7 +2012,13 @@
         },
         {
           "verse": 22,
-          "text": "and he said to his wife: Dying we shall die, because we have seen God."
+          "text": "and he said to his wife: Dying we shall die, because we have seen <na>(a)</na> God.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Though Manue saw not God in his own person, yet seeing him in his messenger feared death. S. Aug. q. 54. in Iudic."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -1683,11 +2032,11 @@
           "verse": 25,
           "text": "And the Spirit of our Lord began to be with him in the camp of Dan betwixt Saraa and Esthaol."
         }
-      ]
+      ],
+      "summary": "The people fall again to idolatry & are afflicted by the Philisthiims. 3. An Angel fortelleth Manue his wife, that she shall have a son, & that he shall be a Nazareite from his birth. 11. Confirmeth the same to Manue. 16. They offer sacrifice to God. 24. The child is born, called Samson, and blessed of God."
     },
     {
       "chapter": 14,
-      "summary": "Samson desirous to marry a Philisthime woman, ℣.5 by the way killeth a lion. ℣.8 In whose mouth after few days, finding honey, ℣.12 he proposeth thereof a riddle to the Philisthiims for a wager: ℣.15 which revealing to his wife, she telleth it to his adversaries. ℣.19 He killeth and spoileth thirty men, so payeth the wager: and his wife taketh an other man.",
       "verses": [
         {
           "verse": 1,
@@ -1699,7 +2048,13 @@
         },
         {
           "verse": 3,
-          "text": "To whom his father and mother said: Is there not a woman among the daughters of thy brethren, and in all my people, that thou wilt take a wife of the Philisthiims, which are uncircumcised? And Samson said to his father: Take this for me: because she hath pleased mine eyes."
+          "text": "To whom his father and mother said: <na>(a)</na> Is there not a woman among the daughters of thy brethren, and in all my people, that thou wilt take a wife of the Philisthiims, which are uncircumcised? And Samson said to his father: Take this for me: because she hath pleased mine eyes.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "It was prohibited (Deut. 7. v. 3.) to make marriage with the Gentiles, but God sometimes dispensed: as here it appeareth he did. v. 4."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -1723,7 +2078,7 @@
         },
         {
           "verse": 9,
-          "text": "Which when he had taken in his hands, he did eat in the way: and coming to his father and mother, he gave them part, who also themselves did eat: neither would he for all that, tell them, that he had taken the honey from the body of the lion."
+          "text": "Which when he had taken in his hands, he did eat in the way: and coming to his father and mother, he gave them part, who also themselves did eat: neither would he for all that^ tell them, that he had taken the honey from the body of the lion."
         },
         {
           "verse": 10,
@@ -1747,7 +2102,13 @@
         },
         {
           "verse": 15,
-          "text": "And when the seventh day was come, they said to the wife of Samson: Speak to thy husband, and use persuasion to him, that he tell thee what the riddle signifieth. Which thing if thou wilt not do, we will burn thee, and thy father's house: have you therefore called us to the bridal that you might spoil us?"
+          "text": "And when the seventh day was come, they said to the wife of Samson: Speak to thy husband, and use persuasion to him, that he tell thee what the riddle signifieth. Which thing <na>(b)</na> if thou wilt not do, we will burn thee, and thy father's house: have you therefore called us to the bridal that you might spoil us?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "By threats, they made her betray her husband: and nevertheless destroyed both her & her father. c. 15. v. 6. so persecutors of the Church deal with such, as treacherously or of frailty serve their turn."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1759,7 +2120,7 @@
         },
         {
           "verse": 18,
-          "text": "And they told it him the seventh day before the going down of the sun: What is sweeter than honey, and what, stronger than a lion? Who said to them: If you had not ploughed with my heifer, you had not found out my proposition."
+          "text": "And they told it him the seventh day before the going down of the sun: What is sweeter than honey, and what stronger than a lion? Who said to them: If you had not ploughed with my heifer, you had not found out my proposition."
         },
         {
           "verse": 19,
@@ -1769,11 +2130,11 @@
           "verse": 20,
           "text": "but his wife took a husband one of his friends and bridal companions."
         }
-      ]
+      ],
+      "summary": "Samson desirous to marry a Philisthime woman, 5. by the way killeth a lion. 8. In whose mouth after few days, finding honey, 12. he proposeth thereof a riddle to the Philisthiims for a wager: 15. which revealing to his wife, she telleth it to his adversaries. 19. He killeth and spoileth thirty men, so payeth the wager: and his wife taketh another man."
     },
     {
       "chapter": 15,
-      "summary": "Samson tying firebands to foxes' tails burneth the Philisthiim's corn. ℣.6 They burn his wife and her father. ℣.8 He beateth them and hideth himself. ℣.10 His own countrymen to get peace with the Philisthiims, take and bind him, so meaning to deliver him. ℣.14 But he breaketh the cords, and with the jaw bone of an ass killeth a thousand of his enemies. ℣.18 Being exceeding dry, is refreshed with water, from the tooth of the same jaw.",
       "verses": [
         {
           "verse": 1,
@@ -1781,7 +2142,7 @@
         },
         {
           "verse": 2,
-          "text": "I thought that thou hadst hated her, and therefore I delivered her to thy friend: but she hath a sister, which is younger & fairer than she, let this be thy wife in stead of her."
+          "text": "Ithought that thou hadst hated her, and therefore I delivered her to thy friend: but she hath a sister, which is younger & fairer than she, let this be thy wife in stead of her."
         },
         {
           "verse": 3,
@@ -1789,7 +2150,13 @@
         },
         {
           "verse": 4,
-          "text": "And he went, and caught three hundred foxes, & he coupled them tail to tail, and tied firebrands in the midst:"
+          "text": "And he went, and <na>(a)</na> caught three hundred foxes, & he coupled them tail to tail, and tied firebrands in the midst:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Being Judge of the people he had help of others to take so many foxes with nets, or otherwise, being great store in that country."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1797,7 +2164,7 @@
         },
         {
           "verse": 6,
-          "text": "And the Philisthiims said: Who hath done this thing? To whom it was said: Samson the son in law of the Thamnathite: because he took his wife, and gave her to an other, he hath wrought these things. And the Philisthiims went up, and burnt both the woman and her father."
+          "text": "And the Philisthiims said: Who hath done this thing? To whom it was said: Samson the son in law of the Thamnatheite: because he took his wife, and gave her to another, he hath wrought these things. And the Philisthiims went up, and burnt both the woman and her father."
         },
         {
           "verse": 7,
@@ -1833,7 +2200,13 @@
         },
         {
           "verse": 15,
-          "text": "And finding a jaw bone, to wit, the jaw bone of an ass, which lay there, catching it he slew therewith a thousand men,"
+          "text": "And finding a jaw bone, to wit, the jaw bone of an ass, which lay there, catching it <na>(b)</na> he slew therewith a thousand men,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Anotorious miracle to kill so many with so mean a weapon without other help of man: And by common reason as uncredible, as the great mysteries of Catholic Religion."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1849,21 +2222,32 @@
         },
         {
           "verse": 19,
-          "text": "Our Lord therefore opened a great tooth in the jaw of the ass, & there issued out of it waters. Which being drunk, he refreshed his spirit, & received strength again. Therefore the name of that place was called: The fountain of him that invocated from the jawbone, until this present day."
+          "text": "Our Lord therefore <na>(c)</na> opened a great tooth in the jaw of the ass, & there issued out of it waters. Which being drunk, he refreshed his spirit, & received strength again. Therefore the name of that place was called: The fountain of him that invocated from the jawbone, until this present day.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "It was a greater miracle to draw water out of a dry bone, than out of the earth or stones: but all things are possible to God, which he pleaseth to do."
+            }
+          ]
         },
         {
           "verse": 20,
           "text": "And he judged Israel in the days of the Philisthiims twenty years."
         }
-      ]
+      ],
+      "summary": "Samson tying firebrands to foxes' tails burneth the Philisthiims' corn. 6. They burn his wife and her father. 8. He beateth them and hideth himself. 10. His own countrymen to get peace with the Philisthiims, take and bind him, so meaning to deliver him. 14. But he breaketh the cords, and with the jaw bone of an ass killeth a thousand of his enemies. 18. Being exceeding dry, is refreshed with water, from the tooth of the same jaw."
     },
     {
       "chapter": 16,
-      "summary": "Samson environed in a city taketh away the gates, and carrieth them on his shoulders into a mountain. ℣.4 Is at last deceived by Dalila, ℣.21 his eyes put out, and scornfully abused. ℣.26 But finally God restoring his strength, he striking two pillars, the house falleth, and with himself killeth three thousand Philisthiims.",
       "verses": [
         {
           "verse": 1,
-          "text": "He went also into Gaza, and saw there a woman that was an harlot, and went in unto her."
+          "text": "He went also into Gaza, and saw there a woman that was <cr>[1]</cr> an harlot, and went in unto her.",
+          "cross_refs": [
+            {
+              "text": "* or an Innkeeper."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1871,7 +2255,13 @@
         },
         {
           "verse": 3,
-          "text": "But Samson slept until midnight, and then arising he took both the leaves of the gates, with their posts and lock, an laying them on his shoulders, carried them to the top of the mountain, which looketh toward Hebron."
+          "text": "But Samson slept until midnight, and then arising he <na>(a)</na> took both the leaves of the gates, with their posts and lock, an laying them on his shoulders, carried them to the top of the mountain, which looketh toward Hebron.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "For such admirable strength the heathenish people thought Samson to be Hercules. S. Aug. li. 18. c. 19. civit. But he was indeed far stronger than they feigned of Hercules, who they said was not able to fight against two: whereas Samson alone killed a thousand with the jaw bone of an ass. c. 15. v. 15."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -1927,7 +2317,13 @@
         },
         {
           "verse": 17,
-          "text": "Then opening the truth of the thing, he said to her: There never came iron upon my head, because I am a Nazarite, that is to say, consecrated to God from my mother's womb: if my head shall be shaven, my strength shall depart from me, and I shall fail, and shall be as other men."
+          "text": "Then opening the truth of the thing, he said to her: There never came iron upon my head, because I am a Nazarite, that is to say, consecrated to God from my mother's womb: if my head shall be shaven, <na>(b)</na> my strength shall depart from me, and I shall fail, and shall be as other men.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Supernatural strength or grace departeth when any leave the rule of their profession."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1939,7 +2335,7 @@
         },
         {
           "verse": 20,
-          "text": "and she said: The Philisthiims upon thee Samson. Who arising from sleep, said in his mind: I will go forth as I did before, and will shake my self, not knowing that our Lord was departed from him."
+          "text": "and she said: The Philisthiims upon thee Samson. Who arising from sleep, said in his mind: I will go forth as I did before, and will shake myself, not knowing that our Lord was departed from him."
         },
         {
           "verse": 21,
@@ -1971,7 +2367,13 @@
         },
         {
           "verse": 28,
-          "text": "But he invocating our Lord, said: Lord God remember me, and restore now to me mine old strength my God, that I may revenge me of mine enemies, and for the loss of two eyes may receive one revenge."
+          "text": "But he invocating our Lord, said: Lord God remember me, and restore now to me mine old strength my God, that I may <na>(c)</na> revenge me of mine enemies, and for the loss of two eyes may receive one revenge.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "He desired to be revenged, not of rancour of mind but of zeal of justice: And so all the elect and glorified Saints desire revenge. Luc. 18. v. 8. Apoc. 6. v. 10."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -1979,29 +2381,41 @@
         },
         {
           "verse": 30,
-          "text": "he said: Let me die with the Philisthiims. And the pillars being strongly shaken, the house fell upon all the Princes, and the rest of the multitude that was there: and he killed many, more dying, than before he had killed living."
+          "text": "he said: Let me die with the Philisthiims. And the pillars being strongly shaken, the house fell upon all the Princes, and the rest of the multitude that was there: and he killed many more dying, than before he had killed living.",
+          "has_annotation": true
         },
         {
           "verse": 31,
           "text": "And his brethren going down and all his kindred, they took his body, and buried it betwixt Saraa and Esthaol in the Sepulchre of his father Manue. And he judged Israel twenty years."
         }
-      ]
+      ],
+      "summary": "Samson environed in a city taketh away the gates, and carrieth them on his shoulders into a mountain. 4. Is at last deceived by Dalila, 21. his eyes put out, and scornfully abused. 26. But finally God restoring his strength, he striking two pillars, the house falleth, and with himself, killeth three thousand Philisthiims."
     },
     {
       "chapter": 17,
-      "summary": "Michas and his mother cause a graven and molten idol to be made of silver. ℣.5 He maketh one of his sons Priest for the idol, ℣.10 and for the same purpose hireth also a Levite.",
       "verses": [
         {
           "verse": 1,
-          "text": "There was at that time a certain man of mount Ephraim named Michas, said to his mother: The thousand and"
+          "text": "There <cr>[1]</cr> was at that time a certain man of mount Ephraim named Michas,",
+          "cross_refs": [
+            {
+              "text": "The third part. Of certain accidents which happened in the time of the Judges."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "who hundred silver pieces, which thou hadst separated to thy self, and concerning the which thou didst swear in my hearing, behold I have, and they are with me. To whom she said: Blessed be my son to the Lord."
+          "text": "who said to his mother: The thousand and hundred silver pieces, which thou hadst separated to thyself, and concerning the which thou didst swear in my hearing, behold I have, and they are with me. To whom she said: Blessed be my son to the Lord."
         },
         {
           "verse": 3,
-          "text": "He therefore rendered them to his mother, who had said to him: I have consecrated and vowed this silver to the Lord, that my son may receive it of my hand, & make a graven and a molten (god) & now I deliver that to thee."
+          "text": "He therefore rendered them to his mother, who had said to him: I have consecrated and vowed this silver to the Lord, that my son may receive it of my hand, & make a graven and <na>(a)</na> a molten (god) & now I deliver that to thee.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "In Hebrew pesel umassecah , in Latin sculptile & conflatile, a graven & molten thing , an image or form made in metal for a god, & so called v. 5. was indeed an idol of Gentility, and nothing at all against sacred Images of Christ and his Saints in the Catholic Church, whereof more is noted Gen. 31. Exod. 20."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -2009,7 +2423,13 @@
         },
         {
           "verse": 5,
-          "text": "Who separated also therein a little house of the god, and made an Ephod, and Theraphim, that is to say, a priestly vestment, and idols: and he filled the hand of one of his sons, and he became his priest."
+          "text": "Who separated also therein a little house of the god, and made an Ephod, and Theraphim, that is to say, a priestly vestment, and idols: and he <na>(b)</na> filled the hand of one of his sons, and he became his priest.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Anointed his hands with oil, as was prescribed Exo. 29. Lev. 8. But such an apish imitation was of no value, where was neither true vocation in the anointed (for he descended not of Aaron, but of Moyses, chap. 18. v. 30. ) nor authority in him that used this ceremony."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -2017,7 +2437,7 @@
         },
         {
           "verse": 7,
-          "text": "There was also an other young man of Bethlehem Juda, of the kindred thereof: & he was a Levite, and dwelt there."
+          "text": "There was also another young man of Bethlehem Juda, of the kindred thereof: & he was a Levite, and dwelt there."
         },
         {
           "verse": 8,
@@ -2041,17 +2461,29 @@
         },
         {
           "verse": 13,
-          "text": "Now I know that God will do me good having a Priest of the Levitical kind."
+          "text": "Now I know that God will do me good <na>(c)</na> having a Priest of the Levitical kind.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "An Apostata Levite was accounted more sufficient than an idolatrical Priest to serve an idol: so he that is a Priest or a Deacon once catholicly consecrated, is a sufficient (yea too sufficient) minister with Protestants."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Michas and his mother cause a graven and molten idol to be made of silver. 5. He maketh one of his sons Priest for the idol, 10. and for the same purpose hireth also a Levite."
     },
     {
       "chapter": 18,
-      "summary": "First sending spies to discover, ℣.11, six hundred armed men of the tribe of Dan go to seek possessions. ℣.14 By the way they take the idol and idolatrical Priest from Michas, ℣.27 surprise the town of Lais, ℣.30 and there set up idolatry.",
       "verses": [
         {
           "verse": 1,
-          "text": "In those days there was not a king in Israel, and the tribe of Dan sought possession for it-self, that it might dwell therein: for until that day it had not received a lot among the other tribes."
+          "text": "In those days there was not a king in Israel, and the tribe of Dan sought possession for it-self, that it might dwell therein: for until that day it had <na>(a)</na> not received a lot among the other tribes.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Their whole portion was assigned (Ios. 19.) but through their own sloth they possessed little of it, so that hitherto the greatest part was not received."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2067,11 +2499,23 @@
         },
         {
           "verse": 5,
-          "text": "And they desired him that he would consult the Lord, that they might know whether they should go on a prosperous journey, and the thing should have effect."
+          "text": "And they desired him that he would consult <na>(b)</na> the Lord, that they might know whether they should go on a prosperous journey, and the thing should have effect.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "They meant the false god which the Apostata Levite served."
+            }
+          ]
         },
         {
           "verse": 6,
-          "text": "Who answered them: Go in peace: The Lord regardeth your way, and the journey that you go."
+          "text": "<na>(c)</na> Who answered them: Go in peace: The Lord regardeth your way, and the journey that you go.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The devil answered, as his manner is, obscurely, sometimes truly and sometimes falsely."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -2167,17 +2611,23 @@
         },
         {
           "verse": 30,
-          "text": "And they set up to themselves the graven idol, and Jonathan the son of Gersam the son of Moyses, and his sons Priests in the tribe of Dan, until the day of their captivity."
+          "text": "And they set up to themselves the <na>(d)</na> graven idol, and Jonathan the son of Gersam the son of Moyses, and his sons Priests in the tribe of Dan, until the day of their captivity.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Pesel, eidolon, sculptile, the graven thing , falsely called God, c. 17. v. 5."
+            }
+          ]
         },
         {
           "verse": 31,
           "text": "And the idol of Michas remained with them all the time that the house of God was in Silo. In those days there was not a king in Israel."
         }
-      ]
+      ],
+      "summary": "First sending spies to discover, 11, six hundred armed men of the tribe of Dan go to seek possessions. 14. By the way they take the idol and idolatrical Priest from Michas, 27. surprise the town of Lais, 30. and there set up idolatry."
     },
     {
       "chapter": 19,
-      "summary": "A Levite bringing homeward his reconciled wife, ℣.15 at Gabaa in the tribe of Benjamin hardly getteth lodging. ℣.25 His wife is there villainously abused by wicked men, and in the morning found dead. ℣.29 Whereupon her husband cutteth her body, and sendeth pieces to every tribe of Israel, requiring them to revenge the wicked fact.",
       "verses": [
         {
           "verse": 1,
@@ -2201,7 +2651,7 @@
         },
         {
           "verse": 6,
-          "text": "And they sat together, & did eat & drink. And the father of the young woman said to his son in law: I beseech thee that thou tarry here to day, and let us make merry together."
+          "text": "And they sat together, & did eat & drink. And the father of the young woman said to his son in law: I beseech thee that thou tarry here today, and let us make merry together."
         },
         {
           "verse": 7,
@@ -2209,15 +2659,21 @@
         },
         {
           "verse": 8,
-          "text": "But when morning was come, the Levite prepared to go his journey. To whom his father in law again: I beseech thee, quoth he, that thou take a little meat, and making thy self strong, till the day be farther spent, afterward thou mayest depart. They did eat therefore together."
+          "text": "But when morning was come, the Levite prepared to go his journey. To whom his father in law again: I beseech thee, quoth he, that thou take a little meat, and making thyself strong, till the day be farther spent, afterward thou mayest depart. They did eat therefore together."
         },
         {
           "verse": 9,
-          "text": "And the young man arose, that he might set forward with his wife and his servant. To whom his father in law spake again: Consider that the day is more declining to the west, and draweth nigh to evening: tarry with me to day also, and spend the day in mirth, and to morrow thou shalt depart that thou mayest go into thy house."
+          "text": "And the young man arose, that he might set forward with his wife and his servant. To whom his father in law spake again: Consider that the day is more declining to the west, and draweth nigh to evening: tarry with me today also, and spend the day in mirth, and tomorrow thou shalt depart that thou mayest go into thy house."
         },
         {
           "verse": 10,
-          "text": "His son in law would not condescend to his words: but forthwith went forward, and came over against Jebus, which by an other name is called Jerusalem, leading with him two asses laden, and his concubine."
+          "text": "His son in law would not condescend to his words: but forthwith went forward, and came over against Jebus, which by another name is called Jerusalem, leading with him two asses laden, and his <na>(a)</na> concubine.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "She was his lawful wife and so called v. 1. & 9. yet also is called concubine because she had no dowry, nor as yet enjoyed the privileges of a mistress in her husband's house."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -2229,7 +2685,7 @@
         },
         {
           "verse": 13,
-          "text": "and when I shall come thither, we will lodge in it, or at the least in the city of Rama"
+          "text": "and when I shall come thither, we will lodge in it, or at the least in the city of Rama."
         },
         {
           "verse": 14,
@@ -2253,7 +2709,7 @@
         },
         {
           "verse": 19,
-          "text": "having straw and hay for provender of the asses, and bread and wine for the use of my self and of thy handmaid, and of the servant that is with me: we lack nothing but lodging."
+          "text": "having straw and hay for provender of the asses, and bread and wine for the use of myself and of thy handmaid, and of the servant that is with me: we lack nothing but lodging."
         },
         {
           "verse": 20,
@@ -2273,7 +2729,7 @@
         },
         {
           "verse": 24,
-          "text": "I have a daughter that is a virgin, & this man hath a concubine, I will brink them forth to you, that you may humble them, and fulfill your lust: only, I beseech you, work not this wickedness against nature on the man."
+          "text": "Ihave a daughter that is a virgin, & this man hath a concubine, I will brink them forth to you, that you may humble them, and fulfill your lust: only, I beseech you, work not this wickedness against nature on the man."
         },
         {
           "verse": 25,
@@ -2281,7 +2737,7 @@
         },
         {
           "verse": 26,
-          "text": "But the woman, when the darkness departed, came to the door of the house, where her Lord lodged, & there fell down."
+          "text": "But the woman, when the darkness departed, came to the door of the house, where her lord lodged, & there fell down."
         },
         {
           "verse": 27,
@@ -2297,13 +2753,13 @@
         },
         {
           "verse": 30,
-          "text": "Which when every one had seen, they cried together: There was never such a thing done in Israel from that day, when our fathers ascended out of Ægypt, until this present time: give sentence, and decree in common what is needful to be done."
+          "text": "Which when every one had seen, they cried together: There was never such a thing done in Israel from that day, when our fathers ascended out of Aegypt, until this present time: give sentence, and decree in common what is needful to be done."
         }
-      ]
+      ],
+      "summary": "A Levite bringing homeward his reconciled wife, 15. at Gabaa in the tribe of Benjamin hardly getteth lodging. 25. His wife is there villainously abused by wicked men, and in the morning found dead. 29. Whereupon her husband cutteth her body, and sendeth pieces to every tribe of Israel, requiring them to revenge the wicked fact."
     },
     {
       "chapter": 20,
-      "summary": " All the other tribes fighting against Benjamin, ℣.13 because they will not punish the malefactors, ℣.21 have the worse, ℣.25 also the second time. ℣.29 But the third time the Benjamites are all slain saving six hundred men.",
       "verses": [
         {
           "verse": 1,
@@ -2327,7 +2783,7 @@
         },
         {
           "verse": 6,
-          "text": "Whom being taken I did cut into pieces, and sent the parts into all the borders of your possession: because never was there so heinous an offense, and so great an abomination done in Israel."
+          "text": "Whom being taken I did cut into pieces, and sent the parts into all the borders of your possession: because never was there so heinous an offence, and so great an abomination done in Israel."
         },
         {
           "verse": 7,
@@ -2355,7 +2811,13 @@
         },
         {
           "verse": 13,
-          "text": "Deliver the men of Gabaa, that have committed this heinous fact, that they may die, and the evil may be taken away out of Israel. Who would not hear the commandment of their brethren the children of Israel:"
+          "text": "Deliver the men of Gabaa, that have committed this heinous fact, <na>(a)</na> that they may die, and the evil may be taken away out of Israel. Who would not hear the commandment of their brethren the children of Israel:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Omission of contempt to punish heinous crimes is a just cause to make war against any people."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2375,7 +2837,13 @@
         },
         {
           "verse": 18,
-          "text": "Who rising came into the house of God, that is, into Silo: and they consulted God, and said: Who shall be in our army General of the battle against the children of Benjamin? To whom our Lord answered: Let Judas be your captain."
+          "text": "Who rising came into the house of God, that is, into Silo: and they consulted God, and said: Who shall be in our army General of the battle against the children of Benjamin? To whom our Lord answered: Let <na>(b)</na> Judas be your captain.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "One of the tribe of Juda."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -2391,11 +2859,23 @@
         },
         {
           "verse": 22,
-          "text": "Again Israel having confidence in their strength and number, set the army in array in the same place, wherein they had fought before:"
+          "text": "Again Israel having confidence <na>(c)</na> in their strength and number, set the army in array in the same place, wherein they had fought before:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Being far more in number, and having the just cause, yet had the worse, because they trusted in their own strength."
+            }
+          ]
         },
         {
           "verse": 23,
-          "text": "yet so that they did first go up and weep before our Lord until night: and consulted him, and said: Shall I proceed any more to fight against the children of Benjamin my brethren, or not? To whom he answered: Go up to them, and enter battle."
+          "text": "yet so that they did first go up and weep before our Lord until night: and consulted him, and said: Shall I proceed any more to fight against the children of Benjamin my brethren, or not? To whom he answered: <na>(d)</na> Go up to them, and enter battle.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "God also punished all Israel by this civil war, for suffering idolatry in the tribe of Dan. Chap. 18. v. 30. which they ought to have punished. Deut. 13. v. 12."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -2415,7 +2895,13 @@
         },
         {
           "verse": 28,
-          "text": "and Phinees the son of Eleazarus the son of Aaron provost of the house. They therefore consulted our Lord, and said: shall we go forth any more to fight against the children of Benjamin our brethren, or rest? To whom our Lord said: Go up, for to morrow I will deliver them into your hands."
+          "text": "and <na>(e)</na> Phinees the son of Eleazarus the son of Aaron provost of the house. They therefore consulted our Lord, and said: shall we go forth any more to fight against the children of Benjamin our brethren, or rest? To whom our Lord said: Go up, for tomorrow I will deliver them into your hands.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "By this it appeareth that this history happened not long after the death of Eleazarus. Ios. 24. v. 33. to whom his son Phinees succeeded in the spiritual Supremacy of the Church."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -2459,7 +2945,7 @@
         },
         {
           "verse": 39,
-          "text": "Which when the children of Israel saw being in the very fight (for the children of Benjamin thought that they fled, and pursued more instantly, having slain thirty men of their army)"
+          "text": "Which when the children of Israel saw being in the very fight (for the children of Benjamin thought that they fled, and pursued more instantly, having slain thirty men of their army.)"
         },
         {
           "verse": 40,
@@ -2483,11 +2969,11 @@
         },
         {
           "verse": 45,
-          "text": "Which when they had seen, that were remaining of Benjamin, they fled into the wilderness, and went on to the rock, the name whereof is Remmon. In that flight also straggling, and going diverse ways, they slew five thousand men. And whereas they went farther, they pursued him, and slew also other two thousand."
+          "text": "Which when they had seen, that were remaining of Benjamin, they fled into the wilderness, and went on to the rock, the name whereof is Remmon. In that flight also straggling, and going diverse ways, they slew five thousand men. And whereas they went farther, they pursued them, and slew also other two thousand."
         },
         {
           "verse": 46,
-          "text": "And so it came to pass, that all which were slain of Benjamin in diverse places, were five and twenty thousand one hundred fighting men, most prompt to wars."
+          "text": "And so it came to pass, that all which were slain of Benjamin in diverse places, were five and twenty thousand fighting men, most prompt to wars."
         },
         {
           "verse": 47,
@@ -2497,11 +2983,11 @@
           "verse": 48,
           "text": "But the children of Israel retiring, struck all the remains of the city with the sword, from men even to beasts, and all the cities and villages of Benjamin the devouring flame did consume."
         }
-      ]
+      ],
+      "summary": "All the other tribes fighting against Benjamin, 13. because they will not punish the malefactors, 21. have the worse, 25. also the second time. 29. But the third time the Benjamites are all slain saving six hundred men."
     },
     {
       "chapter": 21,
-      "summary": "The tribe of Benjamin is repaired ℣.8 by four hundred virgins reserved in the slaughter of Jabes Galaad: ℣.19 and by other virgins taken, that come forth of Silo to dance.",
       "verses": [
         {
           "verse": 1,
@@ -2525,7 +3011,13 @@
         },
         {
           "verse": 6,
-          "text": "And the children of Israel being moved with repentance upon their brother Benjamin, began to say: One tribe is taken away out of Israel,"
+          "text": "And the children of Israel being <na>(a)</na> moved with repentance upon their brother Benjamin, began to say: One tribe is taken away out of Israel,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Lest either justice be over sharp, or mercy too relax, with great art of discretion governors must observe mercy justly advising, and discipline piously chastising. S. Greg. li. 1. Epist. 24."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -2573,7 +3065,7 @@
         },
         {
           "verse": 18,
-          "text": "For our own daughters we can not give them, being bound with an oath & a curse, whereby we said: Cursed be he that shall give to Benjamin any of his daughters to wife."
+          "text": "For our own daughters we cannot give them, being bound with an oath & a curse, whereby we said: Cursed be he that shall give to Benjamin any of his daughters to wife."
         },
         {
           "verse": 19,
@@ -2589,7 +3081,7 @@
         },
         {
           "verse": 22,
-          "text": "And when their father shall come, and their brethren, and shall begin to complain against you, and to chide, we will say to them: Have pity on them: for they took them not away by the right of warriors and conquerors, but when they desired to receive them, you gave them not, and on your part the fault was committed."
+          "text": "And when their fathers shall come, and their brethren, and shall begin to complain against you, and to chide, we will say to them: Have pity on them: for they took them not away by the right of warriors and conquerors, but when they desired to receive them, you gave them not, and on your part the fault was committed."
         },
         {
           "verse": 23,
@@ -2597,9 +3089,124 @@
         },
         {
           "verse": 24,
-          "text": "The children of Israel also returned by their tribes and families into their tabernacles. In those days there was not a king in Israel: but every one did that which seemed right to himself."
+          "text": "The children of Israel also returned by their tribes and families into their tabernacles. In those days there was not a king in Israel: but every one did that <na>(b)</na> which seemed right to himself.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In the time of the Judges the people presumed more to"
+            }
+          ]
+        },
+        {
+          "verse": 1,
+          "text": "The children of Israel sware also in Maspha, and said: None of us shall give of his daughters to the children of Benjamin to wife."
+        },
+        {
+          "verse": 2,
+          "text": "And they came all to the house of God in Silo, and sitting in his sight until evening, lifted up their voice, & with great wailing began to weep saying:"
+        },
+        {
+          "verse": 3,
+          "text": "Wherefore, o Lord God of Israel, is this evil done in thy people, that this day one tribe should be taken away out of us?"
+        },
+        {
+          "verse": 4,
+          "text": "And on the morrow rising early, they built an altar: and offered there holocausts, and pacific victims, and said:"
+        },
+        {
+          "verse": 5,
+          "text": "Who hath not ascended in the host of our Lord of all the tribes of Israel? For they had bound themselves with a great oath, when they were in Maspha, that they should be slain which had been wanting."
+        },
+        {
+          "verse": 6,
+          "text": "And the children of Israel being <na>(a)</na> moved with repentance upon their brother Benjamin, began to say: One tribe is taken away out of Israel,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Lest either justice be over sharp, or mercy too relax, with great art of discretion governors must observe mercy justly advising, and discipline piously chastising. S. Greg. li. 1. Epist. 24."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "Whence shall they take wives? For we have all sworn in common, that we will not give our daughters to them."
+        },
+        {
+          "verse": 8,
+          "text": "Therefore they said: Who is there of all the tribes of Israel, that went not up to our Lord into Maspha? And behold the inhabitants of Jabes Galaad were found not to have been in that army."
+        },
+        {
+          "verse": 9,
+          "text": "(At that time also when they were in Silo, none of them was found there.)"
+        },
+        {
+          "verse": 10,
+          "text": "They sent therefore ten thousand the strongest men, and commanded them: Go, and strike the inhabitants of Jabes Galaad in the edge of the sword, as well their wives as their little ones."
+        },
+        {
+          "verse": 11,
+          "text": "And this shall be it which you shall observe: All of the male kind, and woman that have known men, kill ye, but the virgins reserve."
+        },
+        {
+          "verse": 12,
+          "text": "And there were found of Jabes Galaad four hundred virgins, that knew not man's bed, and they brought them to the camp in Silo, into the Land of Chanaan."
+        },
+        {
+          "verse": 13,
+          "text": "And they sent messengers to the children of Benjamin, that were in the Rock Remmon, & commanded them that they should receive them in peace."
+        },
+        {
+          "verse": 14,
+          "text": "And the children of Benjamin came at that time, and there were given unto them wives of the daughters of Jabes Galaad: but others they found not, which they might give them in like manner."
+        },
+        {
+          "verse": 15,
+          "text": "And all Israel was very sorry, and repented for the killing of one tribe out of Israel."
+        },
+        {
+          "verse": 16,
+          "text": "And the ancients said: What shalt we do to the rest, that have not taken wives? For all the women in Benjamin are dead."
+        },
+        {
+          "verse": 17,
+          "text": "And we must very carefully, and with great study provide, that one tribe be not destroyed out of Israel."
+        },
+        {
+          "verse": 18,
+          "text": "For our own daughters we cannot give them, being bound with an oath & a curse, whereby we said: Cursed be he that shall give to Benjamin any of his daughters to wife."
+        },
+        {
+          "verse": 19,
+          "text": "And they took counsel, and said: Behold there is an anniversary solemnity of our Lord in Silo, which is situate on the North of the city of Bethel, on the East side of the way, that goeth from Bethel to Sichem, & on the South of the town of Lebona."
+        },
+        {
+          "verse": 20,
+          "text": "And they commanded the children of Benjamin and said: Go, and lie hid in the vineyards."
+        },
+        {
+          "verse": 21,
+          "text": "And when you shall see the daughters of Silo come forth after the manner to lead dances, issue forth suddenly out of the vineyards, & catch of them every one his wife, and go into the Land of Benjamin."
+        },
+        {
+          "verse": 22,
+          "text": "And when their fathers shall come, and their brethren, and shall begin to complain against you, and to chide, we will say to them: Have pity on them: for they took them not away by the right of warriors and conquerors, but when they desired to receive them, you gave them not, and on your part the fault was committed."
+        },
+        {
+          "verse": 23,
+          "text": "And the children of Benjamin did as it had been commanded them: and according to their number they took away to themselves of those that led the dances, every one his wife: and they went into their possession, building cities, and dwelling in them."
+        },
+        {
+          "verse": 24,
+          "text": "The children of Israel also returned by their tribes and families into their tabernacles. In those days there was not a king in Israel: but every one did that <na>(b)</na> which seemed right to himself.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In the time of the Judges the people presumed more to"
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "The tribe of Benjamin is repaired 8. by four hundred virgins reserved in the slaughter of Jabes Galaad: 19. and by other virgins taken, that come forth of Silo to dance. The tribe of Benjamin is repaired 8. by four hundred virgins reserved in the slaughter of Jabes Galaad: 19. and by other virgins taken, that come forth of Silo to dance."
     }
   ]
 }

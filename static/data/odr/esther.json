@@ -1,19 +1,28 @@
 {
-  "book": "Esther",
-  "version_abbr": "ODR",
-  "date": "1609",
+  "book": "esther",
+  "book_title": "THE BOOK OF ESTHER",
+  "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "King Assuerus celebrateth a great banquet to shew his glory, ℣.10 calleth queen Vasthi thereto. Who refusing to come, is by advise of his Counsel deposed.",
       "verses": [
         {
           "verse": 1,
-          "text": "In the days of Assuerus, who reigned from India unto Aethiopia over an hundred twenty seven provinces:"
+          "text": "In <cr>[1]</cr> the days of Assuerus, who reigned from India unto Aethiopia over an hundred twenty seven provinces:",
+          "cross_refs": [
+            {
+              "text": "The first part beginneth in the 11. ch."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "when he sat in the throne of his Kingdom, the city Susan was in the beginning of his Kingdom."
+          "text": "when he sat in the throne of his Kingdom, the city Susan was in the beginning of his Kingdom. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "A. B."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -37,7 +46,13 @@
         },
         {
           "verse": 8,
-          "text": "Neither was there that compelled them to drink that would not, but as the king had appointed, making each of his Princes overseer of every table, that every man might take what he would."
+          "text": "<na>(a)</na> Neither was there that compelled them to drink that would not, but as the king had appointed, making each of his Princes overseer of every table, that every man might take what he would.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Modesty & temperance amongst heathen people condemneth Christians that urge men to drink immoderately, & so cause them to be drunk. S. Aug. Ser. 231. 232. de tempore."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -53,7 +68,13 @@
         },
         {
           "verse": 12,
-          "text": "Who refused, and contemned to come at the king's commandment, which he had commanded by the eunuchs. Whereupon the king being wrath, & chaffed with exceeding fury,"
+          "text": "Who refused, and contemned to come at the king's commandment, which he had commanded by the eunuchs. Whereupon the king being wrath, & chaffed with <na>(b)</na> exceeding fury,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The end of immoderate feasting is commonly brawling. Here the King became furious, & the Queen was divorced from him."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -69,7 +90,13 @@
         },
         {
           "verse": 16,
-          "text": "And Mamuchan answered, the king hearing, and the Princes: queen Vasthi hath not only hurt the king, but also all peoples, & Princes, that are in all the provinces of king Assuerus."
+          "text": "And Mamuchan answered, the king hearing, and the Princes: <na>(c)</na> queen Vasthi hath not only hurt the king, but also all peoples, & Princes, that are in all the provinces of king Assuerus.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Brentius approveth the sentence of this parasite, but Iosephus l. 11. c. 6. Macrobius li. 7. c. 1. Saturn. S. Ierome and Rustic. & S. Ambrose l. 1. de Elia c. 14. judge the Queen's refusal lawful, & agreeable to the Persians' laws, which prohibited married women to come in sight of other men in great assemblies: neither had the King just cause to break the law, for pleasing his fancy in his drunken humour. v. 10. Luther also wresteth this example in favour of adultery, par. 2. de divortio. folio 177. Editionis Wittenber. An. 1553."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -81,7 +108,7 @@
         },
         {
           "verse": 19,
-          "text": "If it please thee, let an edict go forth from thy face, and let it be written according to the law of the Persians and of Medes, which is not lawful to be transgressed, that Vasthi come in no more to the king, but an other that is better than she, take her Kingdom."
+          "text": "If it please thee, let an edict go forth from thy face, and let it be written according to the law of the Persians and of Medes, which is not lawful to be transgressed, that Vasthi come in no more to the king, but another that is better than she, take her Kingdom."
         },
         {
           "verse": 20,
@@ -95,11 +122,17 @@
           "verse": 22,
           "text": "and he sent letters to all the Provinces of his Kingdom, as every nation could hear and read, in diverse languages and characters, that the husbands should be Princes and masters in their houses: and that this should be published through all peoples."
         }
+      ],
+      "summary": "King Assuerus celebrateth a great banquet to shew his glory, 10. calleth queen Vasthi thereto. Who refusing to come, is by advise of his Counsel deposed. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "This book is read at matins the last week of September."
+        }
       ]
     },
     {
       "chapter": 2,
-      "summary": "Inquiry being made of the best and fairest virgins, ℣.5 Esther the unknown niece of Mardocheus a Jew, is preferred, ℣.18 and made queen in place of Vasthi; a marriage feast made, and presents given. ℣.21 Mardocheus detecteth traitors, and his service is recorded in the register.",
       "verses": [
         {
           "verse": 1,
@@ -123,15 +156,26 @@
         },
         {
           "verse": 6,
-          "text": "who had been transported from Jerusalem the same time that Nabuchodonosor the king of Babylon transported Jechonias the king of Juda,"
+          "text": "who had been transported from Jerusalem the same time that Nabuchodonosor the king of Babylon transported Jechonias the king of Juda, <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "4. Reg. 24."
+            }
+          ]
         },
         {
           "verse": 7,
-          "text": "who was the foster- father of his brother's daughter Edissa, which by an other name was called Esther: & she had lost both her parents: exceeding beautiful, and of comely face. And her father and mother being dead, Mardocheus adopted her for his daughter."
+          "text": "who was the foster-father of his brother's daughter Edissa, which by another name was called Esther: & she had lost both her parents: exceeding beautiful, and of comely face. And her father and mother being dead, Mardocheus adopted her for his daughter."
         },
         {
           "verse": 8,
-          "text": "And when the king's commandment was bruited abroad, and according to his commandment many fair virgins were brought to Susan, and were delivered to Egeus the eunuch: Esther also among the rest of the maidens was delivered to him, that she might be kept in the number of the women."
+          "text": "And when the king's commandment was bruited abroad, and according to his commandment many fair virgins were brought to Susan, and were delivered to Egeus the eunuch: <na>(a)</na> Esther also among the rest of the maidens was delivered to him, that she might be kept in the number of the women.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Deut. 7. v. 3. Israelites are forbid to marry with Gentiles, yet when there was no danger to be perverted, and great hope of good, Esther by Mardocheus' counsel consented to marry King Assuerus, though otherwise she detested the bed of the incircumcised, and of every stranger. ch. 14. v. 15. K. David also married the King's daughter of Gessur. 2. Reg. 3. v. 3."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -187,25 +231,47 @@
         },
         {
           "verse": 22,
-          "text": "Whereof Mardocheus got notice, & immediately he told it to queen Esther: & she to the king in the name of Mardocheus, who had reported the thing unto her."
+          "text": "Whereof Mardocheus <na>(b)</na> got notice, & immediately he told it to queen Esther: & she to the king in the name of Mardocheus, who had reported the thing unto her.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Mardocheus hearing suspicious words & observing their actions, saw that they intended evil, & informed the King; whereby their treason was discovered. Rab. Calom. & Iosep."
+            }
+          ]
         },
         {
           "verse": 23,
-          "text": "It was examined and found: and they were both hanged on a gibbet. And it was put in the histories, and registered in the chronicles before the king."
+          "text": "It was examined and found: and they were both hanged on a gibbet. And it was put in the histories, and registered in the chronicles before the king. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Cch. 12. v. 1."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Inquiry being made of the best and fairest virgins, 5. Esther the unknown niece of Mardocheus a Jew, is preferred, 18. and made queen in place of Vasthi; a marriage feast made, and presents given. 21. Mardocheus detecteth traitors, and his service is recorded in the register."
     },
     {
       "chapter": 3,
-      "summary": "Aman advanced by the king, is much offended that Mardocheus doth not adore him, ℣.6 and therefore procureth the king's decree, to destroy the whole nation of the Jews.",
       "verses": [
         {
           "verse": 1,
-          "text": "After these things king Assuerus advance Aman the son of Amadathi, which was of the stock of Agag: and he put his throne above all the Princes which he had."
+          "text": "After <cr>[1]</cr> these things king Assuerus advance Aman the son of Amadathi, which was of the stock of Agag: and he put his throne above all the Princes which he had.",
+          "cross_refs": [
+            {
+              "text": "D"
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And all the king's servants, that were in the doors of his palace, bowed their knees, and adored Aman: for so the Emperor had commanded them: only Mardocheus did not bow his knee, nor adore him."
+          "text": "And all the king's servants, that were in the doors of his palace, bowed their knees, and adored Aman: for so the Emperor had commanded them: <na>(a)</na> only Mardocheus did not bow his knee, nor adore him.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Aman exacted such honour as heathen people gave to their less gods, which was also idolatry: for Mardocheus was willing to give him civil honour, even to kiss the steps of his feet, but feared (and refused ) to give Godly honour to him. ch. 13. v. 13. 14. S. Tho. 2. 2. q. 84. a. 1."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -221,15 +287,21 @@
         },
         {
           "verse": 6,
-          "text": "And he counted it a matter of nothing to lay his hands upon Mardocheus alone: for he had heard that he was of the Jews, and he would rather destroy all the nation of the Jews, that were in the Kingdom of Assuerus."
+          "text": "And he counted it a matter of nothing to lay his hands upon Mardocheus alone: for he had heard that he was of the nation of the Jews, and he would rather destroy all the nation of the Jews, that were in the Kingdom of Assuerus."
         },
         {
           "verse": 7,
-          "text": "The first month (which is called Nisan) in the twelfth year of the reign of Assuerus, the lot was cast into a pot which in Hebrew is called Phur, before Aman, in what day and what month the nation of the Jews should be slain: and there came forth the twelfth month, which is called Adar."
+          "text": "The first month (which is called Nisan) in the twelfth year of the reign of Assuerus, the lot was cast into a pot which in Hebrew is called Phur, before Aman, <na>(b)</na> in what day and what month the nation of the Jews should be slain: and there came forth the twelfth month, which is called Adar.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Such is the preposterous fury of rancour, to appoint the day of executing his malice, before he had got the King's decree."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "And Aman said to king Assuerus: There is a people dispersed through all the Provinces of thy kingdom, and separated one from an other, using new laws and ceremonies, moreover also contemning the king's ordinances: And thou knowest very well that it is not expedient for thy kingdom that they wax insolent by liberty."
+          "text": "And Aman said to king Assuerus: There is a people dispersed through all the Provinces of thy kingdom, and separated one from another, using new laws and ceremonies, moreover also contemning the king's ordinances: And thou knowest very well that it is not expedient for thy kingdom that they wax insolent by liberty."
         },
         {
           "verse": 9,
@@ -245,29 +317,55 @@
         },
         {
           "verse": 12,
-          "text": "And the king's scribes were called in the first month, Nisan, the thirteenth day of the same month: and it was written, as Aman had commanded, to all the king's lieutenants, and judges of the Provinces, and of diverse nations, as every nation could read, and hear according to the variety of languages, in the name of king Assuerus: and the letters signed with his ring,"
+          "text": "<cr>[1]</cr> And the king's scribes were called in the first month, Nisan, the thirteenth day of the same month: and it was written, as Aman had commanded, to all the king's lieutenants, and judges of the Provinces, and of diverse nations, as every nation could read, and hear according to the variety of languages, in the name of king Assuerus: and the letters signed with his ring,",
+          "cross_refs": [
+            {
+              "text": "The second part. The Jews' danger to be massacred."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "were sent by the king's posts to all provinces, that they should kill and destroy all the Jews, from boy unto old man, children, and women, in one day, that is, in the thirteenth of the twelfth month, which is called Adar, and should spoil them of their goods."
+          "text": "were sent by the king's posts to all provinces, that they should kill and destroy all the Jews, from boy unto old man, children, and women, in one day, that is, in the thirteenth of the twelfth month, which is called Adar, and should spoil them of their goods. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ech. 13. v. 1."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "And the content of the letters was this, that all Provinces might know, and prepare themselves against the day aforesaid."
+          "text": "<cr>[1]</cr> And <na>(c)</na> the content of the letters was this, that all Provinces might know, and prepare themselves against the day aforesaid.",
+          "cross_refs": [
+            {
+              "text": "F"
+            }
+          ],
+          "notes": [
+            {
+              "label": "c",
+              "text": "The letter at large is in the seven first verses of the 13. ch. of which this is the sum."
+            }
+          ]
         },
         {
           "verse": 15,
           "text": "The posts that were sent, made haste to fulfill the king's commandment. And immediately the edict hung in Susan, the king and Aman feasting, and all the Jews that were in the city weeping."
         }
-      ]
+      ],
+      "summary": "Aman advanced by the king, is much offended that Mardocheus doth not adore him, 6. and therefore procureth the king's decree, to destroy the whole nation of the Jews."
     },
     {
       "chapter": 4,
-      "summary": "All the Jews lament their imminent danger. ℣.5 Mardocheus willeth Esther to entreat the king for their safety. ℣.11 She fearing to go to the king contrary to his law uncalled, ℣.15 yet they all fasting and praying for her, she doth it.",
       "verses": [
         {
           "verse": 1,
-          "text": "Which things when Mardocheus had heard, he rent his garments, and was clothed with sackcloth, sprinkling ashes on his head: and in the street of the midst of the city he cried with a loud voice, shewing the anguish of his mind,"
+          "text": "Which <cr>[1]</cr> things when Mardocheus had heard, he rent his garments, and was clothed with sackcloth, sprinkling ashes on his head: and in the street of the midst of the city he cried with a loud voice, shewing the anguish of his mind,",
+          "cross_refs": [
+            {
+              "text": "The third part. The delivery of the Jews from danger."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -275,7 +373,13 @@
         },
         {
           "verse": 3,
-          "text": "In all Provinces also, towns, and places, to which the king's cruel decree was come, there was great mourning with the Jews, fasting, howling, and weeping, many using sack-cloth and ashes for their couch."
+          "text": "In all Provinces also, towns, and places, to which the king's cruel decree was come, there was <na>(a)</na> great mourning with the Jews, fasting, howling, and weeping, many using sack-cloth and ashes for their couch.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The first & best remedy in distress is to do works of penance for sins committed. 1. Cor. 11. v. 31."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -307,7 +411,7 @@
         },
         {
           "verse": 11,
-          "text": "All the king's servants, and all the Provinces that are under his dominion, know, that whether man, or woman, not called, shall enter in to the king's inner court, he must immediately be slain without all delay: unless perhaps the king stretch forth a golden rod unto him, for a sign of clemency, and so he may live. I therefore, how can I enter in to the king, which now these thirty days have not been called unto him?"
+          "text": "All the king's servants, and all the Provinces that are under his dominion, know, that whether man, or woman, not called, shall enter in to the king's inner court, he must immediately be slain without all delay: unless perhaps the king stretch forth a golden rod unto him, for a sign of clemency, and so he may live. I therefore^ how can I enter in to the king, which now these thirty days have not been called unto him?"
         },
         {
           "verse": 12,
@@ -319,7 +423,13 @@
         },
         {
           "verse": 14,
-          "text": "for if thou wilt now hold thy peace, the Jews shall be delivered by an other occasion: and thou, and thy father's house shall perish. And who knoweth whether thou camest to the Kingdom therefore, that in such a time thou mightest be ready?"
+          "text": "for if thou wilt now hold thy peace, <na>(b)</na> the Jews shall be delivered by another occasion: and thou, and thy father's house shall perish. And who knoweth whether thou camest to the Kingdom therefore, that in such a time thou mightest be ready?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Great confidence in God's help when man's help faileth: & indeed this means by moving the King's heart to grant Esther's petition was God's special work."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -327,25 +437,43 @@
         },
         {
           "verse": 16,
-          "text": "Go, and gather together all the Jews, whom thou shalt find in Susan, and pray ye for me. Eat ye not, and drink not in three days, and three nights: and I with my handmaids in like manner will fast, and then will I go in to the king, doing against the law, not called, and delivering my self to death and to peril."
+          "text": "Go, and gather together all the Jews, whom thou shalt find in Susan, and pray ye for me. Eat ye not, and drink not in three days, and three nights: and I with my handmaids in like manner will fast, and then will I go in to the king, doing against the law, not called, and delivering myself to death and to peril."
         },
         {
           "verse": 17,
-          "text": "Mardocheus therefore went, and did all things that Esther had commanded him."
+          "text": "Mardocheus therefore went, and did all things that Esther had commanded him. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Gch. 15. v. 1."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "All the Jews lament their imminent danger. 5. Mardocheus willeth Esther to entreat the king for their safety. 11. She fearing to go to the king contrary to his law uncalled, 15. yet they all fasting and praying for her, she doth it."
     },
     {
       "chapter": 5,
-      "summary": "Esther standing in the king's sight he calleth her, ℣.4 she requesteth that he and Aman will dine with her. ℣.7 Again she inviteth them. ℣.9 Aman is more incensed against Mardocheus, prepareth high gallows to hang him on.",
       "verses": [
         {
           "verse": 1,
-          "text": "And the third day Esther put on royal garments, and stood in the court of the king's house, which was the inner against the king's hall: but he sat upon his throne in the consistory of the palace, against the door of the house."
+          "text": "And <cr>[1]</cr> the third day Esther put on royal garments, and stood in the court of the king's house, which was the inner against the king's hall: but he sat upon his throne in the consistory of the palace, against the door of the house. <cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "H"
+            },
+            {
+              "text": "Ich. 15. v. 4."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And when he had seen Esther the queen standing, she pleased his eyes, and he put forth toward her the golden rod, which he held in his hand: who going near, kissed the top of his rod."
+          "text": "And when he had seen Esther the queen standing, she pleased his eyes, and he put forth toward her the golden rod, which he held in his hand: who going near, kissed the top of his rod. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "K"
+            }
+          ]
         },
         {
           "verse": 3,
@@ -365,11 +493,17 @@
         },
         {
           "verse": 7,
-          "text": "To whom Esther answered: My petition & requests are these:"
+          "text": "To whom Esther answered: <na>(a)</na> My petition & requests are these:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This prudence in delaying to propose her petition, increased the King's desire to know it, moved him to promise more assuredly, & so bound him the more to accomplish it."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "If I have found grace in the king's sight, and if it please the king to give that which I ask, and to fulfill my petition: let the king and Aman come to the banquet which I have prepared them, and to morrow I will open my will to the king."
+          "text": "If I have found grace in the king's sight, and if it please the king to give that which I ask, and to fulfill my petition: let the king and Aman come to the banquet which I have prepared them, and tomorrow I will open my will to the king."
         },
         {
           "verse": 9,
@@ -385,7 +519,7 @@
         },
         {
           "verse": 12,
-          "text": "And after these things he said: Queen Esther also hath called none other to the banquet with the king, but me: with whom to morrow also I shall dine with the king."
+          "text": "And after these things he said: Queen Esther also hath called none other to the banquet with the king, but me: with whom tomorrow also I shall dine with the king."
         },
         {
           "verse": 13,
@@ -395,15 +529,21 @@
           "verse": 14,
           "text": "And Zares his wife, and the rest of his friends answered him: Command a great beam to be prepared, having fifty cubits in height, and speak in the morning to the king, that Mardocheus may be hanged upon it, and so thou shalt go joyful with the king to the banquet. The counsel pleased him, and he commanded an high gallows to be prepared."
         }
-      ]
+      ],
+      "summary": "Esther standing in the king's sight he calleth her, 4. she requesteth that he and Aman will dine with her. 7. Again she inviteth them. 9. Aman is more incensed against Mardocheus, prepareth high gallows to hang him on."
     },
     {
       "chapter": 6,
-      "summary": "The king hearing the good service of Mardocheus in detecting traitors, read in the chronicle (for which he had yet no reward) ℣.4 commandeth Aman to honour him next to the king, ℣.11 which he performeth.",
       "verses": [
         {
           "verse": 1,
-          "text": "That night the king passed without sleep, and he commanded the histories and chronicles of former times to be brought him. Which when they were read in his presence,"
+          "text": "That night the king <na>(a)</na> passed without sleep, and he commanded the histories and chronicles of former times to be brought him. Which when they were read in his presence,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God's eye which never sleepeth, saw what Aman intended: and for execution of his own divine justice, used this means, by subtracting sleep that time from the King, & inspiring his mind to hear the histories read, and to reward good service, done. Ioseph."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -423,7 +563,13 @@
         },
         {
           "verse": 6,
-          "text": "And when he was come in, he said to him: What ought to be done to the man, whom the king is desirous to honour? But Aman thinking in his heart, and supposing that the king would honour no other but himself,"
+          "text": "And when he was come in, he said to him: What ought to be done to the man, whom the king is desirous to honour? But Aman <na>(b)</na> thinking in his heart, and supposing that the king would honour no other but himself,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Ambitious men are most blind in conceit of their own deserts, and fortunes."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -435,7 +581,7 @@
         },
         {
           "verse": 9,
-          "text": "and let the chief of the king's Princes and nobles hold his horse and going through the street of the city cry and say: So shall he be honoured, whom soever the king will honour."
+          "text": "and let the chief of the king's Princes and nobles hold his horse and going through the street of the city, cry and say: So shall he be honoured, whomsoever the king will honour."
         },
         {
           "verse": 10,
@@ -451,33 +597,45 @@
         },
         {
           "verse": 13,
-          "text": "and he told Zares his wife and his friends all things that had chanced him. To whom the wise men whom he had in counsel, and his wife answered: If Mardocheus be of the Jew's seed, before whom thou hast begun to fall, thou canst not resist him, but thou shalt fall in his sight."
+          "text": "and he told Zares his wife and his friends all things that had chanced him. To whom the wise men whom he had in counsel, and his wife answered: <na>(c)</na> If Mardocheus be of the Jews' seed, before whom thou hast begun to fall, thou canst not resist him, but thou shalt fall in his sight.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Either they had read God's promise to the Jews Gen. 13. 15. &c. or conjectured this by human Prudence."
+            }
+          ]
         },
         {
           "verse": 14,
           "text": "As they were yet speaking, the king's eunuchs came, and compelled him to go quickly to the banquet which the queen had prepared."
         }
-      ]
+      ],
+      "summary": "The king hearing the good service of Mardocheus in detecting traitors, read in the chronicle (for which he had yet no reward) 4. commandeth Aman to honour him next to the king, 11. which he performeth."
     },
     {
       "chapter": 7,
-      "summary": "Esther entertaining the king and Aman again at a feast, is promised to obtain whatsoever she will ask. ℣.3 She demandeth safety for her self, and all the people, against Aman's cruelty, ℣.6 and Aman is hanged on the gallows, which he had prepared for Mardocheus.",
       "verses": [
         {
           "verse": 1,
-          "text": "The king therefore and Aman went in, to drink with the queen. to her also the second day, after he was"
+          "text": "The king therefore and Aman went in, to drink with the queen."
         },
         {
           "verse": 2,
-          "text": "And the king said warm with wine: What is thy petition Esther, that it may be given thee? And what wilt thou, have done? Although thou shalt ask the half part of my Kingdom, thou shalt obtain."
+          "text": "And the king said to her also the second day, after he was warm with wine: What is thy petition Esther, that it may be given thee? And what wilt thou^ have done? Although thou shalt ask the half part of my Kingdom, thou shalt obtain."
         },
         {
           "verse": 3,
-          "text": "To whom she answered: If I have found grace in thine eyes o king, and if it please thee, give me my life for the which I make request, and my people for the which I beseech."
+          "text": "To whom she answered: <na>(a)</na> If I have found grace in thine eyes o king, and if it please thee, give me my life for the which I make request, and my people for the which I beseech.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "After three days fast of all the Jews with prayers and other works of penance, Esther asked & obtained the safety of the whole people, more precious to her than half of the Kingdom."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "For we are delivered I and my people, to be destroyed, murdered, and to perish. And would to God we were sold for bondmen & bond-women: it were a tolerable evil, and mourning I would hold my peace: but now it is our enemy, whose cruelty redoundeth upon the king"
+          "text": "For we are delivered I and my people, to be destroyed, murdered, and to perish. And would to God we were sold for bondmen & bond-women: it were a tolerable evil, and mourning I would hold my peace: but now it is our enemy, whose cruelty redoundeth upon the king."
         },
         {
           "verse": 5,
@@ -485,7 +643,13 @@
         },
         {
           "verse": 6,
-          "text": "And Esther said: It is this Aman our adversary and most wicked enemy. Which he hearing forthwith was astonished, not enduring to bear the countenance of the king and of the queen."
+          "text": "And Esther said: It is this Aman our adversary and most wicked enemy. Which he hearing <na>(b)</na> forthwith was astonished, not enduring to bear the countenance of the king and of the queen.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Horror of a guilty conscience is commonly the first torment of a sinner. S. Chrissocons. 4. de Lagaro."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -497,21 +661,27 @@
         },
         {
           "verse": 9,
-          "text": "And Harbona, one of the eunuchs which stood waiting of the king, said: Behold the gibbet, which he had prepared for Mardocheus, that spake for the king, standeth in Aman's house, having in height fifty cubits."
+          "text": "And Harbona, <na>(c)</na> one of the eunuchs which stood waiting of the king, said: Behold the gibbet, which he had prepared for Mardocheus, that spake for the king, standeth in Aman's house, having in height fifty cubits.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "What little trust in false friendship, when bad men once fall into disgrace."
+            }
+          ]
         },
         {
           "verse": 10,
           "text": "To whom the king said: Hang him upon it. Aman therefore was hanged on the gibbet, which he had prepared for Mardocheus: and the king's wrath ceased."
         }
-      ]
+      ],
+      "summary": "Esther entertaining the king and Aman again at a feast, is promised to obtain whatsoever she will ask. 3. She demandeth safety for herself, and all the people, against Aman's cruelty, 6. and Aman is hanged on the gallows, which he had prepared for Mardocheus."
     },
     {
       "chapter": 8,
-      "summary": "Esther informeth the king that Mardocheus is her uncle, he is advanced in authority, ℣.3 and contrary letters are sent that the Jews be saved, ℣.11 and their enemies slain, ℣.15 Mardocheus is in high honour, and his whole nation is esteemed and feared by other people.",
       "verses": [
         {
           "verse": 1,
-          "text": "That day king Assuerus gave unto Esther the queen the house of Aman the Jew's adversary, and Mardocheus went in before the king's presence. For Esther confessed to him that he was her uncle."
+          "text": "That day king Assuerus gave unto Esther the queen the house of Aman the Jews' adversary, and Mardocheus went in before the king's presence. For Esther confessed to him that he was her uncle."
         },
         {
           "verse": 2,
@@ -519,7 +689,13 @@
         },
         {
           "verse": 3,
-          "text": "Neither content with these things, she fell down at the king's feet, and she wept and speaking to him prayed him, that he would command that the malice of Aman the Agagite, and his most wicked devices, which he had invented against the Jews, should be of none effect."
+          "text": "Neither content with these things, she <na>(a)</na> fell down at the king's feet, and she wept and speaking to him prayed him, that he would command that the malice of Aman the Agagite, and his most wicked devices, which he had invented against the Jews, should be of none effect.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Such honour is due to Kings, yea though they be Infidels, because they have terrestrial majesty and authority from God. And the contrary opinion and behaviour of heretics, which despise Dominion and blaspheme Majesty, is condemned by S. Jude, in his Epistle. v. 8."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -575,17 +751,34 @@
         },
         {
           "verse": 17,
-          "text": "With all peoples, cities, and Provinces, whither soever the king's commandments came, marvelous rejoicing, feasts and banquets, and holy day: in so much that many of the other nation and sect, were joined to their religion and ceremonies. For great terror of the name of the Jews had invaded them all."
+          "text": "With all peoples, cities, and Provinces, whither soever the king's commandments came, marvelous rejoicing, feasts and banquets, and holy day: in so much that many of the other nation and sect, were joined to their religion and ceremonies. For great terror of the name of the Jews had invaded them all. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Lch. 16. v. 1."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Esther informeth the king that Mardocheus is her uncle, he is advanced in authority, 3. and contrary letters are sent that the Jews be saved, 11. and their enemies slain, 15. Mardocheus is in high honour, and his whole nation is esteemed and feared by other people."
     },
     {
       "chapter": 9,
-      "summary": "The Jews kill their enemies which would have killed them, ℣.6 namely the ten sons of Aman are hanged on gallows, ℣.13 more slain the next day. ℣.17 The day following is made holy, and so to be kept every year.",
       "verses": [
         {
           "verse": 1,
-          "text": "Therefore in the thirteenth day of the twelfth month, which we have said now before to be called Adar, when slaughter was prepared for all the Jews, and their enemies gaped after their blood, the case being changed to the contrary, the Jews began to be superiors, and to revenge themselves of their adversaries."
+          "text": "Therefore <cr>[1]</cr> in the thirteenth day of the twelfth month, which we have said now before to be called Adar, when slaughter was prepared for all the Jews, and their enemies gaped after their blood, the case being changed to the contrary, the Jews began to be superiors, and <na>(a)</na> to revenge themselves of their adversaries.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "M"
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Where no more danger remaineth, remission of injuries is more commendable than revenge, but where malice continueth, & new danger may probably ensue, justice is necessary, and afterwards peace may be made more securely. S. Bern. ser. 2. de verb. Apost."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -617,7 +810,7 @@
         },
         {
           "verse": 9,
-          "text": "and Phermesta, and Arisai, and Aridai, and Jezatha."
+          "text": "and Phermesta, and Arisai, and Aridai, and Iezatha."
         },
         {
           "verse": 10,
@@ -629,11 +822,17 @@
         },
         {
           "verse": 12,
-          "text": "Who said to the queen: In the city of Susan the Jews have killed five hundred men, besides the ten sons of Aman: how great a slaughter thinkest thou do they make in all the Provinces? What askest thou more, and what wilth thou that I command to be done?"
+          "text": "Who said to the queen: In the city of Susan the Jews have killed five hundred men, besides the <na>(b)</na> ten sons of Aman: how great a slaughter thinkest thou do they make in all the Provinces? What askest thou more, and what wilt thou that I command to be done?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In the first slaughter Aman's ten sons were slain, & afterwards also hanged. v. 14."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "To whom she answered: If it please the king, let there authority be given to the Jews, that as they have done today in Susan, so also they may do to morrow, and that the ten sons of Aman be hanged on gibbets."
+          "text": "To whom she answered: If it please the king, let there authority be given to the Jews, that as they have done today in Susan, so also they may do tomorrow, and that the ten sons of Aman be hanged on gibbets."
         },
         {
           "verse": 14,
@@ -649,7 +848,12 @@
         },
         {
           "verse": 17,
-          "text": "And the thirteenth day of the month Adar was the first day with them all, of the slaughter, & the fourteenth day they ceased to kill. Which they ordained to be solemn, so that in it at all times afterward they gave themselves to good cheer, mirth and banquets."
+          "text": "And the thirteenth day of the month Adar was the first day with them all^ of the slaughter, & the fourteenth day they ceased to kill. Which they ordained to be solemn, so that in it at all times afterward they gave themselves to good cheer, mirth and banquets. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "The fourth part. Other things following their delivery from danger."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -657,7 +861,7 @@
         },
         {
           "verse": 19,
-          "text": "But those Jews, that abode in towns not walled and villages, ordained the fourteenth day of the month Adar for banquets and joy, so that they rejoice in it, and send one an other portions of banquets and meats."
+          "text": "But those Jews, that abode in towns not walled and villages, ordained the fourteenth day of the month Adar for banquets and joy, so that they rejoice in it, and send one another portions of banquets and meats."
         },
         {
           "verse": 20,
@@ -665,11 +869,17 @@
         },
         {
           "verse": 21,
-          "text": "that they should take the fourteenth and fifteenth day of the month Adar for feasts, and the year always returning should celebrate them with solemn honour:"
+          "text": "that they should take <na>(c)</na> the fourteenth and fifteenth day of the month Adar for feasts, and the year always returning should celebrate them with solemn honour:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The Jews in Susan kept the fifteenth day holy v. 18. those that dwelt in other places kept the fourteenth day."
+            }
+          ]
         },
         {
           "verse": 22,
-          "text": "because in the same days the Jews revenged themselves of their enemies, and mourning and sorrow were turned into mirth and joy, and that these should be days of good cheer and gladness, and they should send one to an other portions of meats, and should give gifts to the poor."
+          "text": "because in the same days the Jews revenged themselves of their enemies, and mourning and sorrow were turned into mirth and joy, and that these should be days of good cheer and gladness, and they should send one to another portions of meats, and should give gifts to the poor."
         },
         {
           "verse": 23,
@@ -689,7 +899,13 @@
         },
         {
           "verse": 27,
-          "text": "and the things that they sustained, and that were afterward changed, the Jews took upon themselves and their seed, & upon all that would be joined to their religion, that it should be lawful for none to pass without solemnity these days: which the writing testifieth, and certain times require; as years continually succeed one an other."
+          "text": "and the things that they sustained, and that were afterward changed, the Jews <na>(d)</na> took upon themselves and their seed, & upon all that would be joined to their religion, that it should be lawful for none to pass without solemnity these days: which the writing testifieth, and certain times require; as years continually succeed one another.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Afeast instituted by Mardocheus was accepted & observed by all the Jews, as a constitution agreeable and not contrary to the law Deut. 4. v. 2. & 12. v. 32."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -711,11 +927,11 @@
           "verse": 32,
           "text": "and all things, which are contained in the history of this Book, which is called Esther."
         }
-      ]
+      ],
+      "summary": "The Jews kill their enemies which would have killed them, 6. namely the ten sons of Aman are hanged on gallows, 13. more slain the next day. 17. The day following is made holy, and so to be kept every year."
     },
     {
       "chapter": 10,
-      "summary": "Assuerus subdueth many countries. ℣.4 Mardocheus understandeth, and declareth his dream. ℣.9 God separateth his people from other nations by a better lot.",
       "verses": [
         {
           "verse": 1,
@@ -727,7 +943,18 @@
         },
         {
           "verse": 3,
-          "text": "and how Mardocheus of the Jew's kindred was second after king Assuerus: and great with the Jews, and acceptable to the people of his brethren, seeking good to his people, and speaking those things, which pertained to the good of his seed."
+          "text": "and how Mardocheus of the Jews' kindred was second after king Assuerus: and great with the Jews, and acceptable to the people of his brethren, seeking good to his people, and speaking those things, which pertained to the good of his seed. That <na>(a)</na> which is in the Hebrew I have expressed most faithfully. And these things that follow, I found written in <cr>[1]</cr> the common edition, which are contained in the Greek tongue and letters; and in the mean time this chapter was extant after the end of the book; which according to our custom, we have marked with an Obelus before it, that is to say, a broach.",
+          "cross_refs": [
+            {
+              "text": "The Greek of the 72. interpreters."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "S. Ierome here advertiseth the reader that he found all hitherto in the Hebrew. And the parcels which follow only in the Septuaginta Greek Edition, which either they translated out of the Hebrew, or added by inspiration of the Holy Ghost."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -735,7 +962,7 @@
         },
         {
           "verse": 5,
-          "text": "I remember the dream that I saw, signifying these very things: neither was any of them frustrate."
+          "text": "Iremember the dream that I saw, signifying these very things: neither was any of them frustrate."
         },
         {
           "verse": 6,
@@ -769,27 +996,54 @@
           "verse": 13,
           "text": "And these days shall be observed in the month of Adar the fourteenth, and fifteenth day of the same month, with all diligence, and joy of the people gathered into one assembly, throughout all the generations here-after of the People of Israel."
         }
-      ]
+      ],
+      "summary": "Assuerus subdueth many countries. 4. Mardocheus understandeth, and declareth his dream. 9. God separateth his people from other nations by a better lot."
     },
     {
       "chapter": 11,
-      "summary": "An Appendix and conclusion of this history. ℣.2 The dream of Mardocheus.",
       "verses": [
         {
           "verse": 1,
-          "text": "In the fourth year when Ptolomee and Cleopatra reigned, Dositheus, which named himself a Priest, and of the Levitical kindred, and Ptolomee his son brought this epistle of Phurim, which they said Lysimachus the son of Ptolomee did interpret in Jerusalem."
+          "text": "In <cr>[1]</cr> the fourth year when Ptolomee and Cleopatra reigned, Dositheus, which named himself a Priest, and of the Levitical kindred, and Ptolomee his son brought this epistle of Phurim, which they said Lysimachus the son of Ptolomee did interpret in Jerusalem.",
+          "cross_refs": [
+            {
+              "text": "The first part. The presage, & occasion of Esther's advancement and Aman's persecuting the Jews. This beginning was in the common edition, which is neither extant in Hebrew, nor with any of"
+            },
+            {
+              "text": "the interpreters."
+            },
+            {
+              "text": "Except the 72."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "In the second year, when Artaxerxes the greatest reigned, in the first day of the month Nisan, Mardocheus the son of Jairi, the son of Semei, the son of Cis, of the tribe of Benjamin,"
+          "text": "<cr>[1]</cr> In the second year, when Artaxerxes the greatest reigned, in the first day of the month Nisan, Mardocheus the son of Jairi, the son of Semei, the son of Cis, of the tribe of Benjamin,",
+          "cross_refs": [
+            {
+              "text": "A"
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "a Jew which dwelt in the city of Susan, a great man and among the first of the king's court, saw a dream."
+          "text": "a Jew which dwelt in the city of Susan, a great man and among the first of the king's court, <na>(a)</na> saw a dream.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Mardocheus had this dream before Aman's advancement, of his own and the people's danger."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "And he was of that number of captives, whom Nabuchodonosor the king of Babylon had transported from Jerusalem with Jechonias the king of Juda:"
+          "text": "<cr>[1]</cr> And he was of that number of captives, whom Nabuchodonosor the king of Babylon had transported from Jerusalem with Jechonias the king of Juda:",
+          "cross_refs": [
+            {
+              "text": "4. Reg. 24."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -797,7 +1051,13 @@
         },
         {
           "verse": 6,
-          "text": "and behold two great dragons, prepared one against an other into battle."
+          "text": "and behold <na>(b)</na> two great dragons, prepared one against another into battle.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Mardocheus was a good dragon, and Aman a bad one."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -813,7 +1073,13 @@
         },
         {
           "verse": 10,
-          "text": "And they cried to God: and they crying, a little fountain grew into a very great river, and abounded into very many waters."
+          "text": "And they cried to God: and they crying, <na>(c)</na> a little fountain grew into a very great river, and abounded into very many waters.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Esther by her fountain of tears and humble supplication, quenched a great flame of Gentiles against the Jews. ch. 10."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -821,17 +1087,27 @@
         },
         {
           "verse": 12,
-          "text": "Which when Mardocheus had seen, and risen out of his bed, he mused what God would do: and he had it fixed in his mind, desirous to know what the dream should signify."
+          "text": "Which when Mardocheus had seen, and risen out of his bed, he mused what God would do: and he had it fixed in his mind, desirous to know what the dream should signify. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Bch. 1. v. 1."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "An Appendix and conclusion of this history. 2. The dream of Mardocheus."
     },
     {
       "chapter": 12,
-      "summary": "The conspiracy of two eunuchs detected by Mardocheus, is repeated, ℣.6 and Aman's malice against him for the same.",
       "verses": [
         {
           "verse": 1,
-          "text": "And he abode that time in the king's court with Bagatha and Thara the king's eunuchs, which were porters of the palace."
+          "text": "And <cr>[1]</cr> he abode that time in the king's court with Bagatha and Thara the king's eunuchs, which were porters of the palace.",
+          "cross_refs": [
+            {
+              "text": "C"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -851,17 +1127,39 @@
         },
         {
           "verse": 6,
-          "text": "But Aman the son of Amadathi the Bugeite was most glorious before the king, and would hurt Mardocheus, and his people, for the two eunuchs of the king, which were put to death. And should spoil their goods."
+          "text": "But Aman the son of Amadathi the Bugeite was most glorious before the king, and would hurt Mardocheus, and his people, <na>(a)</na> for the two eunuchs of the king, which were put to death. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Dch. 3. v. 1. Hitherto the proem. That which followeth was set in that place, where it is written in the volume:"
+            },
+            {
+              "text": "And should spoil their goods. Which we found in the common edition only."
+            },
+            {
+              "text": "ch. 3. v. 3."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Here it appeareth that Aman was a favourer of traitors or perhaps of the same conspiracy."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "The conspiracy of two eunuchs detected by Mardocheus, is repeated, 6. and Aman's malice against him for the same."
     },
     {
       "chapter": 13,
-      "summary": "A copy of the epistle which Aman sent to all provinces to destroy the Jews. ℣.8 And Mardocheus his prayer for the people.",
       "verses": [
         {
           "verse": 1,
-          "text": "And this was the copy of the letter. The most great king Artaxerxes from India unto Aethiopia, to the Princes of an hundred and seven & twenty provinces, and to the captains that are subject to his empire, greeting."
+          "text": "And <cr>[1]</cr> this was the copy of the letter. The most great king Artaxerxes from India unto Aethiopia, to the Princes of an hundred and seven & twenty provinces, and to the captains that are subject to his empire, greeting.",
+          "cross_refs": [
+            {
+              "text": "E"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -869,7 +1167,13 @@
         },
         {
           "verse": 3,
-          "text": "But when I demanded of my counsellers how this might be accomplished, one that excelled the rest in wisdom & fidelity, & was second after the king, Aman by name,"
+          "text": "But when I demanded of my counsellers how this might be accomplished, <na>(a)</na> one that excelled the rest in wisdom & fidelity, & was second after the king, Aman by name,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Great hurt to a King, that is ruled much by one counseller. Salomon teacheth, that Where are many counsellers, cogitations are confirmed. Prov. 15. v. 22."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -885,15 +1189,42 @@
         },
         {
           "verse": 7,
-          "text": "that the wicked men going down to hell in one day, may restore the peace to our empire, which they had disturbed. And Mardocheus going forth, did all things that Esther had commanded him."
+          "text": "that the wicked men going down to hell in one day, may restore the peace to our empire, which they had disturbed. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Fch. 3. v. 14. Hitherto the copy of the letter. That which followeth I found written after that place, where it is read,"
+            },
+            {
+              "text": "And Mardocheus going forth, did all things that Esther had commanded him. yet it is neither in the Hebrew, nor extant with any of"
+            },
+            {
+              "text": "the interpreters."
+            },
+            {
+              "text": "ch. 4. v. 17."
+            },
+            {
+              "text": "* Except the 72."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "But Mardocheus besought our Lord, mindful of all his works,"
+          "text": "<cr>[1]</cr> But Mardocheus besought our Lord, mindful of all his works,",
+          "cross_refs": [
+            {
+              "text": "G"
+            }
+          ]
         },
         {
           "verse": 9,
-          "text": "and said: Lord Lord King omnipotent, for in thy dominion are all things set, and there is none that can resist thy will, if thou determine to save Israel."
+          "text": "<cr>[1]</cr> and said: Lord Lord King omnipotent, for in thy dominion are all things set, and there is none that can resist thy will, if thou determine to save Israel.",
+          "cross_refs": [
+            {
+              "text": "The Epistle on Wednesday in the 2. week of Lent. And in a votive Mass against Pagans."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -921,21 +1252,21 @@
         },
         {
           "verse": 16,
-          "text": "Despise not thy portion, which thou hast redeemed to thy self out of Ægypt."
+          "text": "Despise not thy portion, which thou hast redeemed to thyself out of Aegypt."
         },
         {
           "verse": 17,
-          "text": "Hear my prayer, and be propitious to thy lot and cord, and return our mourning into joy, that living we may praise thy name o Lord, and do not shut the mouths of them that sing to thee."
+          "text": "Hear my prayer, and be propitious to thy lot and cord, and turn our mourning into joy, that living we may praise thy name o Lord, and do not shut the mouths of them that sing to thee."
         },
         {
           "verse": 18,
           "text": "All Israel also with like mind and supplication cried to our Lord, because certain death did hang over them."
         }
-      ]
+      ],
+      "summary": "A copy of the epistle which Aman sent to all provinces to destroy the Jews. 8. And Mardocheus his prayer for the people."
     },
     {
       "chapter": 14,
-      "summary": "Esther prayeth in humility of spirit, that God will deliver the people from the cruelty of Aman.",
       "verses": [
         {
           "verse": 1,
@@ -955,7 +1286,7 @@
         },
         {
           "verse": 5,
-          "text": "I have heard of my father that thou Lord didst take Israel out from all Gentiles, and our fathers out of all their predecessors before, that thou mightest possess an everlasting inheritance, and thou hast done to them as thou hast spoken."
+          "text": "Ihave heard of my father that thou Lord didst take Israel out from all Gentiles, and our fathers out of all their predecessors before, that thou mightest possess an everlasting inheritance, and thou hast done to them as thou hast spoken."
         },
         {
           "verse": 6,
@@ -979,11 +1310,22 @@
         },
         {
           "verse": 11,
-          "text": "Deliver not o Lord thy sceptre to them that are not, lest they laugh at our ruin: but turn their counsel upon them, & destroy him, that hath begun to do cruelly against us."
+          "text": "<cr>[1]</cr> Deliver not o Lord thy sceptre to them <na>(a)</na> that are not, lest they laugh at our ruin: but turn their counsel upon them, & destroy him, that hath begun to do cruelly against us.",
+          "cross_refs": [
+            {
+              "text": "The Church useth this prayer in the offertory the 22. Sunday after Pentecost: as a parcel of holy Scripture."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Idols are nothing in the world. 1. Cor. 8. but bare imaginations of men."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "Remember o Lord: and shew thy self to us in the time of our tribulation, and give me confidence Lord King of gods, and of all power:"
+          "text": "Remember o Lord: and shew thyself to us in the time of our tribulation, and give me confidence Lord King of gods, and of all power:"
         },
         {
           "verse": 13,
@@ -995,7 +1337,13 @@
         },
         {
           "verse": 15,
-          "text": "and knowest that I hate the glory of the wicked, and detest the bed of the uncircumcised, and of every stranger."
+          "text": "and knowest that I hate the glory of the wicked, and <na>(b)</na> detest the bed of the uncircumcised, and of every stranger.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Of herself, nor for worldly glory she desired not to marry a heathen king but for the common good she married him, God dispensing with the law in this behalf. See ch. 2."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1013,15 +1361,20 @@
           "verse": 19,
           "text": "O God strong above all, hear the voice of them, that have no other hope, and deliver us from the hand of the wicked, and deliver me from my fear."
         }
-      ]
+      ],
+      "summary": "Esther prayeth in humility of spirit, that God will deliver the people from the cruelty of Aman."
     },
     {
       "chapter": 15,
-      "summary": "Mardocheus causeth Esther to go to the king and entreat for the people. ℣.10 She is terrified by his countenance, but God turneth his heart, and he calleth her courteously to him.",
       "verses": [
         {
           "verse": 1,
-          "text": "And he commanded her (no doubt but Mardocheus commanded Esther) that she should go unto the king, & make petition for her people and for her country."
+          "text": "And <cr>[1]</cr> he commanded her ( no doubt but Mardocheus commanded Esther ) that she should go unto the king, & make petition for her people and for her country. This also I found added in the common edition.",
+          "cross_refs": [
+            {
+              "text": "G"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1029,11 +1382,27 @@
         },
         {
           "verse": 3,
-          "text": "& do thou invocate our Lord, and speak to the king for us, and deliver us from death."
+          "text": "& do thou invocate our Lord, and speak to the king for us, and deliver us from death. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "* H ch. 13. v. 8. Moreover this also which followeth I found in the common Greek."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "And in the third day she laid away the garments which she wore, and was clothed in her glory."
+          "text": "<cr>[1]</cr> And in the third day she laid away <na>(a)</na> the garments which she wore, and was clothed in her glory.",
+          "cross_refs": [
+            {
+              "text": "I"
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Vestimenta oratus , not ornatus , her praying weed."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1045,11 +1414,17 @@
         },
         {
           "verse": 7,
-          "text": "but the other of the maids followed her Lady, bearing up her garments trailing on the ground."
+          "text": "but the other of the maids followed her lady, bearing up her garments trailing on the ground."
         },
         {
           "verse": 8,
-          "text": "But her self in all her countenance of colour like the rose, also with gracious and shining eyes hid her mind full of sorrow, & exceeding fear."
+          "text": "But herself in all her countenance of colour like the rose, also with gracious and shining eyes <na>(b)</na> hid her mind full of sorrow, & exceeding fear.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Anotable example for Noble women; how to keep their state, and remain nevertheless humble in heart."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1057,11 +1432,11 @@
         },
         {
           "verse": 10,
-          "text": "And when he had lifted up his face, and with burning eyes had shewed the fury of his breath, the queen fell down, & her colour being changed into paleness, she rested her weary head upon her handmaid."
+          "text": "And when he had lifted up his face, and with burning eyes had shewed the fury of his breast, the queen fell down, & her colour being changed into paleness, she rested her weary head upon her handmaid."
         },
         {
           "verse": 11,
-          "text": "And God turned the king's spirit into mildness, & in haste & fearing he lept out of the throne, & holding her up in his arms, till she came to her self, spake her fair with these words:"
+          "text": "And God turned the king's spirit into mildness, & in haste & fearing he lept out of the throne, & holding her up in his arms, till she came to herself, spake her fair with these words:"
         },
         {
           "verse": 12,
@@ -1081,7 +1456,13 @@
         },
         {
           "verse": 16,
-          "text": "Who answered: I saw thee, my lord as an angel of God, and my heart was troubled for the fear of thy glory."
+          "text": "Who answered: I saw thee, my lord, <na>(c)</na> as an angel of God, and my heart was troubled for the fear of thy glory.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "By this comparison of Angels she meant that the King excelled all or most part of men."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -1093,17 +1474,27 @@
         },
         {
           "verse": 19,
-          "text": "But the king was troubled, and all his servants did comfort her."
+          "text": "But the king was troubled, and all his servants did comfort her. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "* K ch. 5. v. 2."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Mardocheus causeth Esther to go to the king and entreat for the people. 10. She is terrified by his countenance, but God turneth his heart, and he calleth her courteously to him."
     },
     {
       "chapter": 16,
-      "summary": "A copy of king Artaxerxes' letters, which he sent for the safety of the Jews, ℣.10 declaring the insolency of Aman, and dutiful service of Mardocheus and Esther, ℣.20 commanding all his Princes to assist the Jews, and with them to celebrate the day which is changed from sorrow to joy.",
       "verses": [
         {
           "verse": 1,
-          "text": "The great king Artaxerxes, from India to Aethiopia, to the dukes and Princes of an hundred twenty seven Provinces, which obey our commandment, sendeth greeting."
+          "text": "The <cr>[1]</cr> great king Artaxerxes, from India to Aethiopia, to the dukes and Princes of an hundred twenty seven Provinces, which obey our commandment, sendeth greeting. The copy of King Artaxerxes' letter, which he sent for the Jews to all the provinces of his kingdom: the which also is not found in the Hebrew volume.",
+          "cross_refs": [
+            {
+              "text": "L"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1127,7 +1518,13 @@
         },
         {
           "verse": 7,
-          "text": "Which thing is proved both out of old histories, and by these things, which are done daily, how the enterprises of kings are depraved by the evil suggestions of certain men."
+          "text": "Which thing is proved both out of old histories, and by these things, which are done daily, how <na>(a)</na> the enterprises of kings are depraved by the evil suggestions of certain men.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "At last this king saw his own error in believing one false counseller overmuch. ch. 13. v. 3."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -1143,7 +1540,13 @@
         },
         {
           "verse": 11,
-          "text": "and found our humanity so great towards him, that he was called our father, & was adored of all, second after the king:"
+          "text": "and found our humanity so great towards him, that he was called <na>(b)</na> our father, & was adored of all^ second after the king:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "ch. 13. v. 6."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -1151,7 +1554,7 @@
         },
         {
           "verse": 13,
-          "text": "For by certain new devises and not heard of before he hath sought to kill Mardocheus, by whose fidelity and benefits we live, and Esther the fellow of our Kingdom with all their nation:"
+          "text": "For by certain new devices and not heard of before he hath sought to kill Mardocheus, by whose fidelity and benefits we live, and Esther the fellow of our Kingdom with all their nation:"
         },
         {
           "verse": 14,
@@ -1187,7 +1590,13 @@
         },
         {
           "verse": 22,
-          "text": "Wherefore count you also this day among other festival days, and celebrate it with all joy, that hereafter also it may be known,"
+          "text": "Wherefore <na>(c)</na> count you also this day among other festival days, and celebrate it with all joy, that hereafter also it may be known,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "As Mardocheus suggested, the King confirmed the observation of a feast in memory of God's benefit, and so both Jews & Gentiles kept it."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -1195,9 +1604,15 @@
         },
         {
           "verse": 24,
-          "text": "And every Province and city, that will not be partaker of this solemnity, let it perish by sword and fire, and let it so be destroyed, that not only men, but also beasts have no access thereto for ever, for an example of contempt, and disobedience."
+          "text": "And every Province and city, that will not be partaker of this solemnity, let it perish by sword and fire, and let it so be destroyed, that not only men, but also beasts have no access thereto for ever, for an example of contempt, and disobedience. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Mch. 9. v. 1."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "A copy of king Artaxerxes' letters, which he sent for the safety of the Jews, 10. declaring the insolency of Aman, and dutiful service of Mardocheus and Esther, 20. commanding all his Princes to assist the Jews, and with them to celebrate the day which is changed from sorrow to joy."
     }
   ]
 }

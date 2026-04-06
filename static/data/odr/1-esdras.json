@@ -1,15 +1,22 @@
 {
-  "book": "1 Esdras",
-  "version_abbr": "ODR",
-  "date": "1609",
+  "book": "1-esdras",
+  "book_title": "THE FIRST BOOK OF ESDRAS",
+  "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "Cyrus king of Persia moved by divine inspiration, releaseth God's people from captivity, with license to return and build the Temple in Jerusalem: ℣.7 restoring the holy vessels, which Nabuchodonosor had taken from thence.",
       "verses": [
         {
           "verse": 1,
-          "text": "In the first year of Cyrus king of the Persians, that the word of our Lord by the mouth of Jeremy might be accomplished, our Lord raised up the spirit of Cyrus king of the Persians: & he made proclamation in all his Kingdom, yea by writing, saying:"
+          "text": "In <cr>[1][2]</cr> the first year of Cyrus king of the Persians, that the word of our Lord by the mouth of Jeremy might be accomplished, our Lord raised up the spirit of Cyrus king of the Persians: & he made proclamation in all his Kingdom, yea by writing, saying:",
+          "cross_refs": [
+            {
+              "text": "The first part. The return of God's people from Babylon."
+            },
+            {
+              "text": "Isa. 44. 45. Jer. 25. 29."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -29,11 +36,17 @@
         },
         {
           "verse": 6,
-          "text": "And all that were round about, did help their hands in vessels of silver & of gold, in substance, and beasts, in furniture, besides those things which they had offered voluntarily."
+          "text": "And all that were round about, <na>(a)</na> did help their hands in vessels of silver & of gold, in substance, and beasts, in furniture, besides those things which they had offered voluntarily.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Liberally gave such things into their hands."
+            }
+          ]
         },
         {
           "verse": 7,
-          "text": "King Cyrus also brought forth the vessels of the temple of our Lord, which Nabuchodonosor had taken out of Jerusalem, & had put them in the temple of his God."
+          "text": "King Cyrus also brought forth the vessels of the temple of our Lord, which Nabuchodonosor had taken out of Jerusalem, & had put them in the temple of his god."
         },
         {
           "verse": 8,
@@ -51,15 +64,21 @@
           "verse": 11,
           "text": "All the vessels of gold & silver, five thousand four hundred: Sassabasar took all, with them that went up from the transmigration of Babylon into Jerusalem."
         }
-      ]
+      ],
+      "summary": "Cyrus king of Persia moved by divine inspiration, releaseth God's people from captivity, with license to return and build the Temple in Jerusalem: 7. restoring the holy vessels, which Nabuchodonosor had taken from thence."
     },
     {
       "chapter": 2,
-      "summary": "The names and number of special men, which returned under the conduct of Zorobabel into Jerusalem: ℣.66 their substance of cattle, ℣.68 and their oblations for the re-edifying of the Temple.",
       "verses": [
         {
           "verse": 1,
-          "text": "And these are the children of the province that went up from the captivity, which Nabuchodonosor the king of Babylon had transported into Babylon, and returned into Jerusalem and Juda, every man into his city."
+          "text": "And <na>(a)</na> these are the children of the province that went up from the captivity, which Nabuchodonosor the king of Babylon had transported into Babylon, and returned into Jerusalem and Juda, every man into his city.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This enumeration of the Israelites, which ascended into Jerusalem, signifieth the Elect which ascend from the militant Church to the triumphant."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -95,7 +114,7 @@
         },
         {
           "verse": 10,
-          "text": "The children of Bani, six hundred forty two."
+          "text": "The children of Bani^ six hundred forty two."
         },
         {
           "verse": 11,
@@ -127,7 +146,7 @@
         },
         {
           "verse": 18,
-          "text": "The children of Jora, an hundred twelve."
+          "text": "The children of Iora, an hundred twelve."
         },
         {
           "verse": 19,
@@ -175,11 +194,11 @@
         },
         {
           "verse": 30,
-          "text": "The children of Megbis, an hundred fifty four."
+          "text": "The children of Megbis, an hundred fifty six."
         },
         {
           "verse": 31,
-          "text": "The children of an other Aelam, a thousand two hundred fifty four."
+          "text": "The children of another Aelam, a thousand two hundred fifty four."
         },
         {
           "verse": 32,
@@ -199,7 +218,7 @@
         },
         {
           "verse": 36,
-          "text": "The Priests: The children of Jadaia in the house of Josue, nine hundred seventy three."
+          "text": "The Priests: The children of Iadaia in the house of Josue, nine hundred seventy three."
         },
         {
           "verse": 37,
@@ -211,7 +230,7 @@
         },
         {
           "verse": 39,
-          "text": "The children of Harim, a thousand and seventy."
+          "text": "The children of Harim, a thousand and seventeen."
         },
         {
           "verse": 40,
@@ -279,7 +298,7 @@
         },
         {
           "verse": 56,
-          "text": "The children of Jala, the children of Dercon, the children of Geddel,"
+          "text": "The children of Iala, the children of Dercon, the children of Geddel,"
         },
         {
           "verse": 57,
@@ -287,7 +306,7 @@
         },
         {
           "verse": 58,
-          "text": "All the Nathinites, & the children of the servants of Salomon, three hundred ninety two."
+          "text": "All the Nathinaites, & the children of the servants of Salomon, three hundred ninety two."
         },
         {
           "verse": 59,
@@ -303,7 +322,13 @@
         },
         {
           "verse": 62,
-          "text": "these sought the writing of their genealogy, and found it not, and they were cast out of the Priesthood."
+          "text": "these sought the writing of their genealogy, and <na>(b)</na> found it not, and they were cast out of the Priesthood.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Such as say they are Priests and cannot shew their vocation, must not exercise that function."
+            }
+          ]
         },
         {
           "verse": 63,
@@ -311,7 +336,13 @@
         },
         {
           "verse": 64,
-          "text": "All the multitude as it were one man, forty two thousand three hundred sixty:"
+          "text": "All the multitude as it were one man, <na>(c)</na> forty two thousand three hundred sixty:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "All above numbered of the tribes of Juda, Benjamin, & Levi, do not amount to 30. thousand three hundred. So in this general number are contained above twelve thousand of other tribes, not recited among the rest, as Rabbi Salomon explicateth the difficulty."
+            }
+          ]
         },
         {
           "verse": 65,
@@ -335,13 +366,13 @@
         },
         {
           "verse": 70,
-          "text": "The Priests therefore and the Levites, and they of the people, and the singing men, and the porters, and the Nathinites dwelt in their cities, and all Israel in their cities."
+          "text": "The Priests therefore and the Levites, and they of the people, and the singing men, and the porters, and the Nathinaites dwelt in their cities, and all Israel in their cities."
         }
-      ]
+      ],
+      "summary": "The names and number of special men, which returned under the conduct of Zorobabel into Jerusalem: 66. their substance of cattle, 68. and their oblations for the re-edifying of the Temple."
     },
     {
       "chapter": 3,
-      "summary": "An Altar is built for sacrifice: ℣.4 The feast of Tabernacles solemnly celebrated. ℣.8 And in the second year (after their return) the Temple is founded with great joy of the people, and mourning of some.",
       "verses": [
         {
           "verse": 1,
@@ -353,7 +384,13 @@
         },
         {
           "verse": 3,
-          "text": "And they placed the altar of God upon his feet, the people of the lands round about putting them in fear, and they offered upon it holocaust to our Lord morning and evening."
+          "text": "And they placed the altar of God upon his feet, the people of the lands round about putting them <na>(a)</na> in fear, and they offered upon it holocaust to our Lord morning and evening.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Notwithstanding the terror of infidels, God's servants took courage to offer sacrifice."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -381,7 +418,13 @@
         },
         {
           "verse": 10,
-          "text": "The temple therefore of our Lord being founded by the masons, the priests stood in their attire with trumpets: and the Levites the children of Asaph in cymbals, to praise God by the hands of David the king of Israel."
+          "text": "The temple therefore of our Lord being founded by the masons, the priests stood in their attire with trumpets: and the Levites the children of Asaph in cymbals, to praise God <na>(b)</na> by the hands of David the king of Israel.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "By the ordinance of David, 1. Par. 25."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -389,17 +432,23 @@
         },
         {
           "verse": 12,
-          "text": "Very many also of the Priests and the Levites, and the Princes of the fathers, and the ancients, that had seen the former temple, when they saw this temple founded, they wept with a loud voice: and many shouting in joy, lifted up their voice."
+          "text": "Very many also of the Priests and the Levites, and the Princes of the fathers, and the ancients, that had seen the former temple, when they saw this temple founded, <na>(c)</na> they wept with a loud voice: and many shouting in joy, lifted up their voice.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "By their weeping they testified that the new temple was not so excellent as the former. And therefore Aggeus' prophecy (c. 2.) cannot be understood of this temple, but of the Church of Christ. S. Aug. li. 18. civit. c. 45."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "Neither could any man discern the voice of the cry of them that rejoiced, and the voice of the weeping of the people: for one with an other the people shouted with a loud cry, and the voice was heard far off."
+          "text": "Neither could any man discern the voice of the cry of them that rejoiced, and the voice of the weeping of the people: for one with another the people shouted with a loud cry, and the voice was heard far off."
         }
-      ]
+      ],
+      "summary": "An Altar is built for sacrifice: 4. The feast of Tabernacles solemnly celebrated. 8. And in the second year (after their return) the Temple is founded with great joy of the people, and mourning of some."
     },
     {
       "chapter": 4,
-      "summary": "The schismatical Samaritans, because they are not admitted to communicate with the Jews, endeavour to hinder the building of the Temple. ℣.5 Which nevertheless proceedeth all the days of king Cyrus: ℣.7 but is hindered by Artaxerxes, till the second year of Darius.",
       "verses": [
         {
           "verse": 1,
@@ -407,11 +456,17 @@
         },
         {
           "verse": 2,
-          "text": "And coming to Zorobabel, & the Princes of the fathers, they said to them: Let us build with you, because even as you, so do we seek your God: Behold we have immolated victims from the days of Asor Haddan the king of Assur, which brought us hither."
+          "text": "And coming to Zorobabel, & the Princes of the fathers, they said to them: Let us build with you, because <na>(a)</na> even as you, so do we seek your God: Behold we have immolated victims from the days of Asor Haddan the king of Assur, which brought us hither.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Schismatics and Heretics may not be admitted to communicate in sacrifice with Catholics."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "And Zorobabel said to them, and Josue, and the rest of the Princes of the fathers of Israel: It is not for you and us to build a house to our God, but we our selves alone will build to the Lord our God, as Cyrus the king of the Persians hath commanded us."
+          "text": "And Zorobabel said to them, and Josue, and the rest of the Princes of the fathers of Israel: It is not for you and us to build a house to our God, but we ourselves alone will build to the Lord our God, as Cyrus the king of the Persians hath commanded us."
         },
         {
           "verse": 4,
@@ -435,11 +490,11 @@
         },
         {
           "verse": 9,
-          "text": "Reum Beelteem, and Samsai scribe, and the rest of their counsellers, the Dineites, and the Apharsathacites, the Terphalites, the Apharsaites, the Erchuites, the Babylonians, the Susanechites, the Dievites, and the Aelamites,"
+          "text": "Reum Beelteem, and Samsai scribe, and the rest of their counsellers, the Dineites, and the Apharsathaceites, the Terphaleites, the Apharsaites, the Erchueites, the Babylonians, the Susanecheites, the Dievites, and the Aelamites,"
         },
         {
           "verse": 10,
-          "text": "and the rest of the Gentiles, which Asenaphar the great and glorious transported: and made them dwell in the cities of Samaria, and in the rest of the countries beyond the River in peace"
+          "text": "and the rest of the Gentiles, which Asenaphar the great and glorious transported: and made them dwell in the cities of Samaria, and in the rest of the countries beyond the River in peace:"
         },
         {
           "verse": 11,
@@ -447,7 +502,7 @@
         },
         {
           "verse": 12,
-          "text": "Be it known to the king, that the Jews, which came up from thee to us, are come into Jerusalem, a rebellious & naughty city, which they build, making the repairs thereof, & repairing the walls."
+          "text": "Be it known to the king, that the Jews, which came up from thee to us, are come into Jerusalem, a rebellious & naughty city, which they build, making the rampires thereof, & repairing the walls."
         },
         {
           "verse": 13,
@@ -455,7 +510,7 @@
         },
         {
           "verse": 14,
-          "text": "But we, mindful of the salt that we have eaten in the palace, and because we count it heinous to see the king's harms, therefore we have sent and certified the king,"
+          "text": "But we^ mindful of the salt that we have eaten in the palace, and because we count it heinous to see the king's harms, therefore we have sent and certified the king,"
         },
         {
           "verse": 15,
@@ -479,7 +534,7 @@
         },
         {
           "verse": 20,
-          "text": "For there have been also most valiant, kings in Jerusalem, which also had dominion over all the country that is beyond the River. They took also tribute, & toll and rents."
+          "text": "For there have been also most valiant kings in Jerusalem, which also had dominion over all the country that is beyond the River. They took also tribute, & toll and rents."
         },
         {
           "verse": 21,
@@ -497,15 +552,15 @@
           "verse": 24,
           "text": "Then was the work of the house of our Lord in Jerusalem intermitted, and was not done until the second year of the reign of Darius the king of the Persians."
         }
-      ]
+      ],
+      "summary": "The schismatical Samaritans, because they are not admitted to communicate with the Jews, endeavour to hinder the building of the Temple. 5. Which nevertheless proceedeth all the days of king Cyrus: 7. but is hindered by Artaxerxes, till the second year of Darius."
     },
     {
       "chapter": 5,
-      "summary": "By the exhortation of Aggæus, and Zacharias, the people proceed in building the Temple. ℣.3 Which their enemies striving to hinder, for decision of the cause, both parties write to king Darius.",
       "verses": [
         {
           "verse": 1,
-          "text": "And there prophesied Aggæus the Prophet, and Zacharias the son of Addo, prophesying to the Jews, that were in Jewry and Jerusalem, in the name of the God of Israel."
+          "text": "And there prophesied Aggaeus the Prophet, and Zacharias the son of Addo, prophesying to the Jews, that were in Jewry and Jerusalem, in the name of the God of Israel."
         },
         {
           "verse": 2,
@@ -521,7 +576,13 @@
         },
         {
           "verse": 5,
-          "text": "And the eye of their God was set upon the ancients of the Jews, and they could not inhibit them. And it pleased them that the matter should be referred to Darius, and then they would satisfy against that accusation."
+          "text": "And <na>(a)</na> the eye of their God was set upon the ancients of the Jews, and they could not inhibit them. And it pleased them that the matter should be referred to Darius, and then they would satisfy against that accusation.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God giving courage to his servants, struck their enemies with terror, & so made them cease from hindering his work as they before intended."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -571,11 +632,11 @@
           "verse": 17,
           "text": "Now therefore if it seem good to the king, let him search in the king's library, which is in Babylon, whether it hath been commanded by Cyrus the king, that the house of God in Jerusalem should be built, and let him send the king's pleasure concerning this thing unto us."
         }
-      ]
+      ],
+      "summary": "By the exhortation of Aggaeus, and Zacharias, the people proceed in building the Temple. 3. Which their enemies striving to hinder, for decision of the cause, both parties write to king Darius."
     },
     {
       "chapter": 6,
-      "summary": "Darius finding in the register, that Cyrus gave license to build the Temple, commandeth that none hinder it: ℣.8 giveth also money towards the charges, and hosts for sacrifice.",
       "verses": [
         {
           "verse": 1,
@@ -591,7 +652,7 @@
         },
         {
           "verse": 4,
-          "text": "three rews of stones unpolished, and so rews of new timber: and the costs shall be given out of the king's house."
+          "text": "three rews of stones unpolished, and so many rews of new timber: and the costs shall be given out of the king's house."
         },
         {
           "verse": 5,
@@ -623,7 +684,7 @@
         },
         {
           "verse": 12,
-          "text": "And the God, that hath made his name to dwell there, destroy all Kingdoms, and the people that shall extend their hand to resist, and to destroy the house of God, that is in Jerusalem. I, Darius have made the decree, which I will to be diligently accomplished."
+          "text": "And the God, that hath made his name to dwell there, destroy all Kingdoms, and the people that shall extend their hand to resist, and to destroy the house of God, that is in Jerusalem. I^ Darius have made the decree, which I will to be diligently accomplished."
         },
         {
           "verse": 13,
@@ -631,7 +692,13 @@
         },
         {
           "verse": 14,
-          "text": "And the ancients of the Jews built, and prospered according to the prophecy of Aggeus the Prophet, and of Zacharias the son of Addo: and they built & set up, the God of Israel commanding, and Cyrus commanding, and Darius, and Artaxerxes the kings of the Persians."
+          "text": "And the ancients of the Jews built, and prospered according to the prophecy of Aggeus the Prophet, and of Zacharias the son of Addo: and they built & set up, the God of Israel commanding, and <na>(a)</na> Cyrus commanding, and Darius, and Artaxerxes the kings of the Persians.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The heart of the King is in the hand of our Lord. Proverb. 21."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -665,15 +732,20 @@
           "verse": 22,
           "text": "And they made the solemnity of Azymes seven days in joy, because our Lord had made them joyful, and had turned the heart of the king of Assur to them, that he should help their hands in the work of the house of our Lord the God of Israel."
         }
-      ]
+      ],
+      "summary": "Darius finding in the register, that Cyrus gave license to build the Temple, commandeth that none hinder it: 8. giveth also money towards the charges, and hosts for sacrifice."
     },
     {
       "chapter": 7,
-      "summary": "Esdras, with many other Priests and Levites, ascendeth to Jerusalem to teach, and assist the people: ℣.11 bringing Artaxerxes' Edict, declareth it to the people, ℣.27 and giveth thanks to God.",
       "verses": [
         {
           "verse": 1,
-          "text": "And after these things in the reign of Artaxerxes king of Persians, Esdras, the son of Saraias, the son of Azarias, the son of Helcias,"
+          "text": "And <cr>[1]</cr> after these things in the reign of Artaxerxes king of Persians, Esdras, the son of Saraias, the son of Azarias, the son of Helcias,",
+          "cross_refs": [
+            {
+              "text": "The second part. Esdras instructeth the people."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -689,11 +761,17 @@
         },
         {
           "verse": 5,
-          "text": "the son of Abisue, the son of Phinees, the son of Eleazer, the son of Aaron the Priest from the beginning:"
+          "text": "the son of Abisue, the son of Phinees, the son of Eleazar, the son of Aaron the Priest from the beginning:"
         },
         {
           "verse": 6,
-          "text": "The same Esdras came up from Babylon, and he was a quick scribe in the law of Moyses, which our Lord God gave to Israel: and the king gave him according to the hand of our Lord his God upon him all his petition."
+          "text": "The same Esdras <na>(a)</na> came up from Babylon, and he was a quick scribe in the law of Moyses, which our Lord God gave to Israel: and the king gave him according to the hand of our Lord his God upon him all his petition.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Esdras came with the first from Babylon (2. Esd. 12.) but returned thither, and now ascended the second time to Jerusalem."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -737,7 +815,7 @@
         },
         {
           "verse": 17,
-          "text": "Take freely, and buy diligently of this money calves, rams, lambs, and the sacrifices and libaments of them, and offer them upon the altar of the temple of your God, that is in Jerusalem."
+          "text": "take freely, and buy diligently of this money calves, rams, lambs, and the sacrifices and libaments of them, and offer them upon the altar of the temple of your God, that is in Jerusalem."
         },
         {
           "verse": 18,
@@ -753,7 +831,7 @@
         },
         {
           "verse": 21,
-          "text": "I, Artaxerxes the king have appointed and decreed to all the keepers of the Common coffer, that are beyond the River, that whatsoever Esdras the Priest, the scribe of the law of God of heaven, shall ask of you, you give it without delay,"
+          "text": "I^ Artaxerxes the king have appointed and decreed to all the keepers of the Common coffer, that are beyond the River, that whatsoever Esdras the Priest, the scribe of the law of God of heaven, shall ask of you, you give it without delay,"
         },
         {
           "verse": 22,
@@ -783,15 +861,21 @@
           "verse": 28,
           "text": "and hath inclined his mercy toward me before the king and his counsellers, and all the mighty princes of the king: and I taking courage by the hand of our Lord my God, which was on me, gathered together out of Israel princes that should go up with me."
         }
-      ]
+      ],
+      "summary": "Esdras, with many other Priests and Levites, ascendeth to Jerusalem to teach, and assist the people: 11. bringing Artaxerxes' Edict, declareth it to the people, 27. and giveth thanks to God."
     },
     {
       "chapter": 8,
-      "summary": "Esdras reciteth those that came with him from Babylon, ℣.21 the fast which he appointed, ℣.33 and how they brought the holy vessels into the Temple.",
       "verses": [
         {
           "verse": 1,
-          "text": "These therefore are the Princes of the families, and the genealogy of them, that came up with me in the reign of Artaxerxes the king out of Babylon."
+          "text": "These therefore are the Princes of the families, and the genealogy of them, that came up with me in the reign of Artaxerxes the king <na>(a)</na> out of Babylon.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This great number which by Esdras' persuasion came from Babylon, signified the great fruit of souls converted from sin by the exhortation of holy preachers. S. Beda li. 2. in Esdr. c. 10."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -835,7 +919,7 @@
         },
         {
           "verse": 12,
-          "text": "Of the children of Azgad, Joanan the son of Eccetan, and with him an hundred and ten men."
+          "text": "Of the children of Azgad, Ioanan the son of Eccetan, and with him an hundred and ten men."
         },
         {
           "verse": 13,
@@ -871,7 +955,13 @@
         },
         {
           "verse": 21,
-          "text": "And I proclaimed there a fast beside the River of Ahava, that we might be afflicted before the Lord our God, and might desire of him a right way for us and our children, and all our substance."
+          "text": "And I proclaimed there <na>(b)</na> a fast beside the River of Ahava, that we might be afflicted before the Lord our God, and might desire of him a right way for us and our children, and all our substance.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "It sufficeth not to part from Babylon (that is, from sin) but we must also do works of satisfaction, and therefore Esdras here proclaimed an extraordinary fast to those that were come from captivity."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -919,7 +1009,7 @@
         },
         {
           "verse": 33,
-          "text": "And in the fourth day the silver was weighed, and the gold, and the vessels in the house of our God by the hand of Meremoth the son of Urias the Priest, and with him Eleazar the son of Phinees, and with them Jozabed the son of Josue, and Noadaia the son of Bennoi, Levites,"
+          "text": "And in the fourth day the silver was weighed, and the gold, and the vessels in the house of our God by the hand of Meremoth the son of Urias the Priest, and with him Eleazar the son of Phinees, and with them Jozabed the son of Josue, and Noadaia the son of Bennoi^ Levites,"
         },
         {
           "verse": 34,
@@ -933,15 +1023,21 @@
           "verse": 36,
           "text": "And they gave the king's edicts to the Princes, that were overseers for the king, and the dukes beyond the River, and they advanced the people and the house of God."
         }
-      ]
+      ],
+      "summary": "Esdras reciteth those that came with him from Babylon, 21. the fast which he appointed, 33. and how they brought the holy vessels into the Temple."
     },
     {
       "chapter": 9,
-      "summary": "For marriages and other association which the Jews had with Gentiles, Esdras lamenteth, ℣.5 and confessing the people's iniquity, prayeth God to conserve them from utter destruction.",
       "verses": [
         {
           "verse": 1,
-          "text": "And after these things were accomplished, the Princes came to me, saying: The people of Israel, and the Priests and Levites are not separated from the people of the lands, and from the abominations of them, to wit, of the Chananeite, and Hetheite, and Pherezeite, and Jebuseite, and of the Ammonites, and Moabites, and the Ægyptians, and Amorrheites."
+          "text": "And after these things were accomplished, the Princes came to me, saying: The people of Israel, and the Priests and Levites <na>(a)</na> are not separated from the people of the lands, and from the abominations of them, to wit, of the Chananeite, and Hetheite, and Pherezeite, and Jebuseite, and of the Ammonites, and Moabites, and the Aegyptians, and Amorrheites.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Malachias the Prophet complaineth also of this fault, c. 2. v. 11. threatening God's punishment both to superiors and subjects for not correcting it. v. 12."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -965,11 +1061,17 @@
         },
         {
           "verse": 7,
-          "text": "from the days of our fathers: yea and we our selves also have sinned grievously unto this day, and in our iniquities have we been delivered, our selves, and our kings, and our Priests, into the hand of the kings of the lands, and into the sword, and into captivity, and into spoil, and into confusion of countenance, as also at this day."
+          "text": "from the days of our fathers: yea and we ourselves also have sinned grievously unto this day, and in our iniquities have we been delivered, ourselves, and our kings, and our Priests, into the hand of the kings of the lands, and into the sword, and into captivity, and into spoil, and into confusion of countenance, as also at this day."
         },
         {
           "verse": 8,
-          "text": "And now as it were a little, and for a moment was our prayer made before the Lord our God, that a remnant might be left us, and a nail might be given us in his holy place, and that our God would illuminate our eyes, and would give us a little life in our bondage."
+          "text": "And now as it were a little, and for a moment was our prayer made before the Lord our God, that a remnant might be left us, and <na>(a)</na> a nail might be given us in his holy place, and that our God would illuminate our eyes, and would give us a little life in our bondage.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "In respect of their great iniquities Esdras presumeth not to ask the conservation of the whole people, but some relics or smallest part, as it were a little post, or a nail of a whole house towards the re-edifying thereof."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -999,11 +1101,11 @@
           "verse": 15,
           "text": "Lord God of Israel thou art just: because we are left, which should be saved as at this day. Behold we are before thee in our sin, for there can be no standing before thee upon this."
         }
-      ]
+      ],
+      "summary": "For marriages and other association which the Jews had with Gentiles, Esdras lamenteth, 5. and confessing the people's iniquity, prayeth God to conserve them from utter destruction."
     },
     {
       "chapter": 10,
-      "summary": "Esdras calling the people together commandeth them to dismiss the strange women, which they have married: ℣.14 appointing officers to see it executed. ℣.18 and reciteth those which had married such women.",
       "verses": [
         {
           "verse": 1,
@@ -1027,7 +1129,13 @@
         },
         {
           "verse": 6,
-          "text": "And Esdras rose up before the house of God, & went to the chamber of Johanan the son of Eliasib, and entered into it: he did eat no bread & drank no water: for he mourned for the transgression of them that were come out of the captivity."
+          "text": "And Esdras rose up before the house of God, & went to the chamber of <na>(a)</na> Johanan the son of Eliasib, and entered into it: he did eat no bread, & drank no water: for he mourned for the transgression of them that were come out of the captivity.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Esdras being extraordinarily sent by God to correct the people, repaireth to the high Priest's son, by his authority calleth the people together, and so proceedeth to make reformation. So S. Paul conferred with other Apostles. Gal. 2."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -1039,7 +1147,13 @@
         },
         {
           "verse": 9,
-          "text": "There assembled therefore all the men of Juda, and Benjamin into Jerusalem within three days, that is the ninth month, the twentieth day of the month: and all the people sat in the street of the house of God, trembling for the sin, and the rain."
+          "text": "There assembled therefore all the men of Juda, and Benjamin into Jerusalem within three days, that is the ninth month, the twentieth day of the month: and all the people sat in the street of the house of God, trembling for the sin, and <na>(b)</na> the rain.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Their sin was punished by over-much rain. v. 13. And so affliction gave them more feeling of their faults."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -1055,7 +1169,7 @@
         },
         {
           "verse": 13,
-          "text": "Nevertheless because there is much people, and a time of rain, and we can not abide to stand without, and it is not a work of one day or two (for we have exceedingly sinned in this thing),"
+          "text": "Nevertheless because there is much people, and a time of rain, and we cannot abide to stand without, and it is not a work of one day or two (for we have exceedingly sinned in this thing),"
         },
         {
           "verse": 14,
@@ -1063,7 +1177,7 @@
         },
         {
           "verse": 15,
-          "text": "Therefore Jonathan the son of Azahel, and Jaazia the son of Thecua were appointed over this, and Mosollam and Sebethai Levites did help them:"
+          "text": "Therefore Jonathan the son of Azahel, and Iaazia the son of Thecua were appointed over this, and Mosollam and Sebethai Levites did help them:"
         },
         {
           "verse": 16,
@@ -1103,7 +1217,7 @@
         },
         {
           "verse": 25,
-          "text": "And of Israel, of the children of Pharos, Remeia, and Jezia, and Melchia, and Miamin, and Eliezer, and Melchia, and Banea."
+          "text": "And of Israel, of the children of Pharos, Remeia, and Iezia, and Melchia, and Miamin, and Eliezer, and Melchia, and Banea."
         },
         {
           "verse": 26,
@@ -1115,7 +1229,7 @@
         },
         {
           "verse": 28,
-          "text": "And of the children of Bebai, Johanan, Hanamia, Zabbai, Athalai."
+          "text": "And of the children of Bebai, Johanan, Hanania, Zabbai, Athalai."
         },
         {
           "verse": 29,
@@ -1131,11 +1245,11 @@
         },
         {
           "verse": 32,
-          "text": "Benjamin, Maloch, Samarias"
+          "text": "Benjamin, Maloch, Samarias."
         },
         {
           "verse": 33,
-          "text": "And of the children of Hasom, Mathanai, Mathatha, Zabad, Eliphelet, Jermai, Manasse, Semei."
+          "text": "And of the children of Hasom, Mathanai, Mathatha, Zabad, Eliphelet, Iermai, Manasse, Semei."
         },
         {
           "verse": 34,
@@ -1151,7 +1265,7 @@
         },
         {
           "verse": 37,
-          "text": "Mathanias, and Mathanai, and Jasi,"
+          "text": "Mathanias, and Mathanai, and Iasi,"
         },
         {
           "verse": 38,
@@ -1175,13 +1289,20 @@
         },
         {
           "verse": 43,
-          "text": "Of the children of Nebo, Jehiel, Mathathias, Zabad, Zabina, Jeddu, and Joel, and Banaia."
+          "text": "Of the children of Nebo, Jehiel, Mathathias, Zabad, Zabina, Ieddu, and Joel, and Banaia."
         },
         {
           "verse": 44,
-          "text": "All these had taken strangers to wife, and there were of them that had born children."
+          "text": "All these had taken strangers to wife, and there were of them that had born <na>(c)</na> children.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Amongst other inconveniences of unlawful marriages one is that children are born illegitimate."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Esdras calling the people together commandeth them to dismiss the strange women, which they have married: 14. appointing officers to see it executed. 18. and reciteth those which had married such women."
     }
   ]
 }

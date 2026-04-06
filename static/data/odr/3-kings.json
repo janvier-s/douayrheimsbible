@@ -1,15 +1,19 @@
 {
-  "book": "3 Kings",
-  "version_abbr": "ODR",
-  "date": "1609",
+  "book": "3-kings",
+  "book_title": "THE THIRD BOOK OF KINGS, ACCORDING TO",
+  "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "King David waxing old, Abisag a Sunamite is brought to him. ℣.5 Adonias pretending to reign, ℣.11 Nathan and Bethsabee obtain ℣.28 that Salomon is declared and anointed king. ℣.41 Whereupon Adonias (his followers parting to their houses) ℣.50 flyeth to the altar in the tabernacle: but upon promise of safety doth homage to Salomon.",
       "verses": [
         {
           "verse": 1,
-          "text": "And king David was old, and had many days of age: & when he was covered with cloths, he was not warmed."
+          "text": "And <cr>[1]</cr> king David was old, and had many days of age: & when he was covered with cloths, he was not warmed.",
+          "cross_refs": [
+            {
+              "text": "The first part. King David's admonitions to his son: and his death."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -33,7 +37,13 @@
         },
         {
           "verse": 7,
-          "text": "And he had talk with Joab the son of Sarvia, and with Abiathar the priest, who furthered Adonias' side."
+          "text": "And he had talk with Joab the son of Sarvia, and with <na>(a)</na> Abiathar the priest, who furthered Adonias' side.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "For this conspiracy Abiathar was deposed. ch. 2. v. 27."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -41,7 +51,7 @@
         },
         {
           "verse": 9,
-          "text": "Adonias therefore having immolated rams and calves, and all fat beasts beside the Stone Zoheleth, which was nigh to the Fountain Rogel, called all his brethren the sons of the king, and all the men of Juda the servants of the king:"
+          "text": "Adonias therefore having immolated rams and calves, and all fat beasts beside the Stone zoheleth, which was nigh to the Fountain Rogel, called all his brethren the sons of the king, and all the men of Juda the servants of the king:"
         },
         {
           "verse": 10,
@@ -57,7 +67,7 @@
         },
         {
           "verse": 13,
-          "text": "Go, & enter into king David, & say to him: Didst not thou my lord king swear to me thy handmaid, saying: Salomon thy son shall reign after me, and he shall sit in my throne? Why then reigneth Adonias?"
+          "text": "Go, & enter in to king David, & say to him: Didst not thou my lord king swear to me thy handmaid, saying: Salomon thy son shall reign after me, and he shall sit in my throne? Why then reigneth Adonias?"
         },
         {
           "verse": 14,
@@ -73,7 +83,7 @@
         },
         {
           "verse": 17,
-          "text": "Who answering said: My lord, thou didst swear to thy handmaid by our Lord thy God, That Salomon thy son shall reign after me, and he shall sit in my throne."
+          "text": "Who answering said: My lord, thou didst swear to thy handmaid by our Lord thy God, that Salomon thy son shall reign after me, and he shall sit in my throne."
         },
         {
           "verse": 18,
@@ -89,11 +99,17 @@
         },
         {
           "verse": 21,
-          "text": "And it shall be when my lord king sleepeth with his fathers, I & my son Salomon shall be sinners."
+          "text": "And it shall be when my lord king sleepeth with his fathers, I & my son Salomon shall be <na>(b)</na> sinners.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Basely esteemed, or punished as offenders upon suspicion or jealousy."
+            }
+          ]
         },
         {
           "verse": 22,
-          "text": "As she was yet spaking with the king, Nathan the Prophet came."
+          "text": "As she was yet speaking with the king, Nathan the Prophet came."
         },
         {
           "verse": 23,
@@ -105,7 +121,7 @@
         },
         {
           "verse": 25,
-          "text": "Because he is gone down to day, and hath immolated oxen, and fatlings, and many rams, and called all the king's sons, and the captains of the army, Abiathar also the Priest: and they eating and drinking before him, and saying: God save the king Adonias:"
+          "text": "Because he is gone down today, and hath immolated oxen, and fatlings, and many rams, and called all the king's sons, and the captains of the army, Abiathar also the Priest: and they eating and drinking before him, and saying: God save the king Adonias:"
         },
         {
           "verse": 26,
@@ -153,7 +169,7 @@
         },
         {
           "verse": 37,
-          "text": "As our Lord hath been with my lord the ling, so be he with Salomon, and make his throne higher than the throne of my lord, king David."
+          "text": "As our Lord hath been with my lord the king, so be he with Salomon, and make his throne higher than the throne of my lord king David."
         },
         {
           "verse": 38,
@@ -181,7 +197,7 @@
         },
         {
           "verse": 44,
-          "text": "and hath sent with him Sadoc the Priest, and Nathan the Prophet, and Banaias the son of Joiada, and Cerethi, and Pherethi, and they have set him upon the king's mule."
+          "text": "and hath sent with him Sadoc the Priest, and Nathan the Prophet, and Banaias the son of Joiada, and Cerethi, and Phelethi, and they have set him upon the king's mule."
         },
         {
           "verse": 45,
@@ -193,7 +209,13 @@
         },
         {
           "verse": 47,
-          "text": "And the king's servants entering in, have blessed our lord, king David, saying: God amplify the name of Salomon above thy name, and magnify his throne above thy throne. And the king adored in his bed:"
+          "text": "And the king's servants entering in, have blessed our lord king David, saying: God amplify the name of Salomon above thy name, and magnify his throne above thy throne. And the king <na>(c)</na> adored in his bed:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "King David did not adore his son as a subject adoreth his Prince, but adored God, giving thanks for this benefit of a successor, as it followeth in the next verse."
+            }
+          ]
         },
         {
           "verse": 48,
@@ -213,17 +235,17 @@
         },
         {
           "verse": 52,
-          "text": "And Salomon said: If he be a good man, there shall not so much as one hair of his, fall upon the ground: but if evil shall be found in him, he shall die."
+          "text": "And Salomon said: If he be a good man, there shall not so much as one hair of his^ fall upon the ground: but if evil shall be found in him, he shall die."
         },
         {
           "verse": 53,
           "text": "King Salomon therefore sent, and brought him out from the altar: and going in he adored king Salomon: and Salomon said to him: Go to thy house."
         }
-      ]
+      ],
+      "summary": "King David waxing old, Abisag a Sunamite is brought to him. 5. Adonias pretending to reign, 11. Nathan and Bethsabee obtain 28. that Salomon is declared and anointed king. 41. Whereupon Adonias (his followers parting to their houses) 50. flyeth to the altar in the tabernacle: but upon promise of safety doth homage to Salomon."
     },
     {
       "chapter": 2,
-      "summary": "David giveth godly precepts to Salomon. ℣.5 Willeth him to punish certain offenders: ℣.10, and dieth. ℣.12 Salomon reigneth ℣.13 Adonias, by intercession of Bethsabee requesteth to have Abisag to wife: ℣.22 but is put to death for demanding her. ℣.26 Abiathar the Priest is banished, and deposed, for conspiring with Adonias. ℣.28 Joab also for the same cause, and former crimes is slain. ℣.35 Semei is confined in Jerusalem, ℣.40 & for transgressing his limits, together with old faults is likewise slain.",
       "verses": [
         {
           "verse": 1,
@@ -231,11 +253,11 @@
         },
         {
           "verse": 2,
-          "text": "I enter into the way of all flesh: take courage, and play the man."
+          "text": "Ienter into the way of all flesh: take courage, and play the man."
         },
         {
           "verse": 3,
-          "text": "And observe the watches of our Lord thy God, that thou walk in his ways, and keep his ceremonies, and his precepts & judgments, and testimonies as is written in the law of Moyses: that thou mayst understand all things which thou doest, and whithersoever thou shalt turn thy self:"
+          "text": "And observe the watches of our Lord thy God, that thou walk in his ways, and keep his ceremonies, and his precepts & judgments, and testimonies as is written in the law of Moyses: that thou mayst understand all things which thou doest, and whithersoever thou shalt turn thyself:"
         },
         {
           "verse": 4,
@@ -271,7 +293,12 @@
         },
         {
           "verse": 12,
-          "text": "And Salomon sat upon the throne of David his father, & his Kingdom was confirmed exceedingly."
+          "text": "<cr>[1]</cr> And Salomon sat upon the throne of David his father, & his Kingdom was confirmed exceedingly.",
+          "cross_refs": [
+            {
+              "text": "The second part. Of Salomon's reign, and acts good and bad."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -291,7 +318,7 @@
         },
         {
           "verse": 17,
-          "text": "And he said: I pray, speak to Salomon the king (for he can not deny thee any thing) that he give me Abisag the Sunamite to wife."
+          "text": "And he said: I pray^ speak to Salomon the king (for he cannot deny thee any thing) that he give me Abisag the Sunamite to wife."
         },
         {
           "verse": 18,
@@ -299,11 +326,17 @@
         },
         {
           "verse": 19,
-          "text": "Bethsabee therefore came to king Salomon, to spake unto him for Adonias: & the king arose to meet her, & adored her, & sat down upon his throne: & a throne was set for the king's mother, who sat on his right hand."
+          "text": "Bethsabee therefore came to king Salomon, to speak unto him for Adonias: & the king arose to meet her, & adored her, & sat down upon his throne: & a throne was set for the king's mother, who sat on his right hand."
         },
         {
           "verse": 20,
-          "text": "And she said to him: One little petition I desire of thee, confound not my face. And the king said to her: My mother ask: for it behoveth not that I turn away thy face."
+          "text": "And she said to him: One little petition I desire of thee, confound not my face. And the king said to her: My mother ask: for <na>(d)</na> it behoveth not that I turn away thy face.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "In all convenient suits it behoveth the son to hear his mother."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -327,11 +360,17 @@
         },
         {
           "verse": 26,
-          "text": "To Abiathar also the priest the king said: Go into Anathoth to thy field, and thou indeed art a man of death: but to day I will not kill thee, because thou didst carry the ark of our Lord God before David my father, & hast sustained labour in all things, wherein my father laboured."
+          "text": "To Abiathar also the priest the king said: Go into Anathoth to thy field, and thou indeed art a man of death: but today I will not kill thee, because thou didst carry the ark of our Lord God before David my father, & hast sustained labour in all things, wherein my father laboured."
         },
         {
           "verse": 27,
-          "text": "Salomon therefore cast out Abiathar, that he should not be the priest of our Lord, that the word of our Lord might be fulfilled, which he spake concerning the house of Heli in Silo."
+          "text": "Salomon therefore <na>(e)</na> cast out Abiathar, that he should not be the priest of our Lord, that the word of our Lord might be fulfilled, which he spake concerning the house of Heli in Silo.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "By special instinct Salomon did this extraordinary fact as a Prophet & minister of God, executing his sentence given before against the house of Heli for the sins of his children, 1. Reg. 2. v. 11. and for Abiathar's proper fault joining with Adonias against Salomon. 3. Reg. 1."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -351,7 +390,7 @@
         },
         {
           "verse": 32,
-          "text": "And our Lord shall render his blood upon his head, because he murdered two just men, and better than himself: and slew them with his sword, my father David not knowing, Abner the son of Ner, general of the warfare of Israel, and Amasa the son of Jether general of the army of Juda:"
+          "text": "And our Lord shall render his blood upon his head, because he murdered two just men, and better than himself: and slew them with his sword, my father David not knowing, Abner the son of Ner^ general of the warfare of Israel, and Amasa the son of Jether general of the army of Juda:"
         },
         {
           "verse": 33,
@@ -363,7 +402,13 @@
         },
         {
           "verse": 35,
-          "text": "And the king appointed Banaias the son of Joiada for him over the army, and Sadoc the priest he placed for Abiathar."
+          "text": "And the king appointed Banaias the son of Joiada for him over the army, and Sadoc the priest he <na>(f)</na> placed for Abiathar.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Salomon was not only a King but also a Prophet. Moreover some secular Princes do nominate superiors, and install them in their seats, yet their jurisdiction is not depending on the Prince, but the Prince to be directed by them. Num. 27. v. 21."
+            }
+          ]
         },
         {
           "verse": 36,
@@ -399,7 +444,7 @@
         },
         {
           "verse": 44,
-          "text": "And the king said to Semei: Thou knowest all the evil, whereof thy heart is privy to thy self, which thou didst to David my father: our Lord hath rendered thy malice upon thy head."
+          "text": "And the king said to Semei: Thou knowest all the evil, whereof thy heart is privy to thyself, which thou didst to David my father: our Lord hath rendered thy malice upon thy head."
         },
         {
           "verse": 45,
@@ -409,15 +454,15 @@
           "verse": 46,
           "text": "The king therefore commanded Banaias the son of Joiada: who going out, struck him, and he died."
         }
-      ]
+      ],
+      "summary": "David giveth godly precepts to Salomon. 5. Willeth him to punish certain offenders: 10, and dieth. 12. Salomon reigneth 13. Adonias, by intercession of Bethsabee requesteth to have Abisag to wife: 22. but is put to death for demanding her. 26. Abiathar the Priest is banished, and deposed, for conspiring with Adonias. 28. Joab also for the same cause, and former crimes is slain. 35. Semei is confined in Jerusalem, 40. & for transgressing his limits, together with old faults is likewise slain."
     },
     {
       "chapter": 3,
-      "summary": "King Salomon marrieth Pharao's sister. Offereth victims in high places. ℣.5 Admonished by God in his sleep to demand what he will, he asketh wisdom to govern his people. ℣.10 Which God granteth him with much riches also and glory. ℣.16 He decideth a controversy between two women contending about a living child and a dead.",
       "verses": [
         {
           "verse": 1,
-          "text": "The kingdom therefore was established in the hand of Salomon, and he was joined in affinity to Pharao the king of Ægypt: for he took his daughter, and brought her into the city of David, until he accomplished building his own house, and the house of our Lord, and the wall of Jerusalem round about."
+          "text": "The kingdom therefore was established in the hand of Salomon, and he was joined in affinity to Pharao the king of Aegypt: for he took his daughter, and brought her into the city of David, until he accomplished building his own house, and the house of our Lord, and the wall of Jerusalem round about."
         },
         {
           "verse": 2,
@@ -445,7 +490,7 @@
         },
         {
           "verse": 8,
-          "text": "And thy servant is in the midst of the people, which thou hast chosen, a people infinite, which can not be numbered and counted for the multitude."
+          "text": "And thy servant is in the midst of the people, which thou hast chosen, a people infinite, which cannot be numbered and counted for the multitude."
         },
         {
           "verse": 9,
@@ -457,7 +502,7 @@
         },
         {
           "verse": 11,
-          "text": "And our Lord said to Salomon: Because thou hast asked this thing, and hast not desired for thy self many days, nor riches, nor the lives of thine enemies, but hast desired wisdom for thy self to discern judgment:"
+          "text": "And our Lord said to Salomon: Because thou hast asked this thing, and hast not desired for thyself many days, nor riches, nor the lives of thine enemies, but hast desired wisdom for thyself to discern judgment:"
         },
         {
           "verse": 12,
@@ -477,7 +522,12 @@
         },
         {
           "verse": 16,
-          "text": "Then came there two women harlots, to the king, and stood before him:"
+          "text": "<cr>[1]</cr> Then came there two women harlots^ to the king, and stood before him:",
+          "cross_refs": [
+            {
+              "text": "The Epistle on Monday in the 4. week of Lent."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -493,7 +543,7 @@
         },
         {
           "verse": 20,
-          "text": "And rising in the dead time of the night, she took my child from the side of me, thy handmaid being asleep, and laid it in her bosom: and her child that was dead, she put in my bosom."
+          "text": "And rising in the dead time of the night, she took my child from the side of me thy handmaid being asleep, and laid it in her bosom: and her child that was dead, she put in my bosom."
         },
         {
           "verse": 21,
@@ -517,7 +567,13 @@
         },
         {
           "verse": 26,
-          "text": "But the woman, whose child was alive, said to the king (for her bowels were moved upon her child) I beseech thee my lord, give her the child alive, and kill it not. On the contrary part she said: be it neither mine, nor thine, but let it be divided."
+          "text": "But the woman, whose child was alive, said to the king (for her bowels were moved upon her child) I beseech thee my lord, give her the child alive, and kill it not. On the contrary part she said: <na>(a)</na> be it neither mine, nor thine, but let it be divided.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "So heretics not being able to prove that their synagogue is the true & permanent Church, would destroy the Catholic and so have none at all."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -527,19 +583,19 @@
           "verse": 28,
           "text": "All Israel therefore heard the judgment that the king had judged, and they feared the king, seeing the wisdom of God to be in him to do judgment."
         }
-      ]
+      ],
+      "summary": "King Salomon marrieth Pharao's sister. Offereth victims in high places. 5. Admonished by God in his sleep to demand what he will, he asketh wisdom to govern his people. 10. Which God granteth him with much riches also and glory. 16. He decideth a controversy between two women contending about a living child and a dead."
     },
     {
       "chapter": 4,
-      "summary": "Chief men of Salomon's Kingdom are recited by their names, and offices. ℣.22 likewise the provision of victuals for his house, ℣.26 and number of his horses. ℣.29 His wisdom excelleth all others. ℣.32 He writ many parables and verses, and learnedly discoursed of all things.",
       "verses": [
         {
           "verse": 1,
-          "text": "And king Salomon was reigning over all Israel: he had: Azarias the son of Sadoc the"
+          "text": "And king Salomon was reigning over all Israel:"
         },
         {
           "verse": 2,
-          "text": "and these were the princes which priest:"
+          "text": "and these were the princes which he had: Azarias the son of Sadoc the priest:"
         },
         {
           "verse": 3,
@@ -607,7 +663,7 @@
         },
         {
           "verse": 19,
-          "text": "Gaber the son of Uri, in the land of Galaad in the land of Sehon the king of the Ammorrhite, & of Og the king of Basan, over all things that were in that Land."
+          "text": "Gaber the son of Uri, in the land of Galaad in the land of Sehon the king of the Ammorrheite, & of Og the king of Basan, over all things that were in that Land."
         },
         {
           "verse": 20,
@@ -615,7 +671,7 @@
         },
         {
           "verse": 21,
-          "text": "And Salomon was in his dominion, having all the Kingdoms with him from the river of the land of the Philisthiims unto the border of Ægypt: of them that offered him presents, & served him all the days of his life."
+          "text": "And Salomon was in his dominion, having all the Kingdoms with him from the river of the land of the Philisthiims unto the border of Aegypt: of them that offered him presents, & served him all the days of his life."
         },
         {
           "verse": 22,
@@ -623,7 +679,7 @@
         },
         {
           "verse": 23,
-          "text": "ten fat oxen and twenty pasture- fed, & a hundred rams, beside the venison of harts, roes, and buffles, and fatted fowl."
+          "text": "ten fat oxen and twenty pasture-fed, & a hundred rams, beside the venison of harts, roes, and buffles, and fatted fowl."
         },
         {
           "verse": 24,
@@ -651,7 +707,7 @@
         },
         {
           "verse": 30,
-          "text": "And the wisdom of Salomon passed the wisdom of all them in the east, and of the Ægyptians,"
+          "text": "And the wisdom of Salomon passed the wisdom of all them in the east, and of the Aegyptians,"
         },
         {
           "verse": 31,
@@ -659,7 +715,13 @@
         },
         {
           "verse": 32,
-          "text": "Salomon also spake three thousand parables: and his songs were a thousand & five."
+          "text": "Salomon also spake <na>(a)</na> three thousand parables: and his songs were a thousand & five.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "These books are not extant."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -669,11 +731,11 @@
           "verse": 34,
           "text": "And there came from all people to hear the wisdom of Salomon, and from all the kings of the earth, which heard his wisdom."
         }
-      ]
+      ],
+      "summary": "Chief men of Salomon's Kingdom are recited by their names, and offices. 22. likewise the provision of victuals for his house, 26. and number of his horses. 29. His wisdom excelleth all others. 32. He writ many parables and verses, and learnedly discoursed of all things."
     },
     {
       "chapter": 5,
-      "summary": "Hiram king of Tyre granteth timber and workmen for building the Temple: Salomon allowing victuals, and paying wages. ℣.13 the number of work men and overseers.",
       "verses": [
         {
           "verse": 1,
@@ -733,7 +795,7 @@
         },
         {
           "verse": 15,
-          "text": "And Salomon had seventy thousand of them that carried burdens, and eighty thousand hewers of stones in the mountains:"
+          "text": "And Salomon had seventy thousand of them that carried burdens, and eighty thousand hewers of stones in the mountain:"
         },
         {
           "verse": 16,
@@ -747,15 +809,15 @@
           "verse": 18,
           "text": "which the masons of Salomon, and masons of Hiram hewed: moreover the Giblians prepared timber and stones, to build the house."
         }
-      ]
+      ],
+      "summary": "Hiram king of Tyre granteth timber and workmen for building the Temple: Salomon allowing victuals, and paying wages. 13. the number of work men and overseers."
     },
     {
       "chapter": 6,
-      "summary": "In the year four hundred and four score, after the Israelites came from Ægypt, Salomon, the fourth year of his reign, beginneth to build the Temple. ℣.2 The principal parts with the greatness, form, and ornaments thereof are described. ℣.38 It is in building seven years.",
       "verses": [
         {
           "verse": 1,
-          "text": "And it came to pass in the four hundred and four score year of the coming forth of the children of Israel out of the Land of Ægypt, in the fourth year, the month Zio (that is the second month) of the reign of Salomon over Israel, he began to build a house to our Lord."
+          "text": "And it came to pass in the four hundred and four score year of the coming forth of the children of Israel out of the Land of Aegypt, in the fourth year, the month Zio (that is the second month) of the reign of Salomon over Israel, he began to build a house to our Lord."
         },
         {
           "verse": 2,
@@ -767,7 +829,12 @@
         },
         {
           "verse": 4,
-          "text": "And he made in the temple oblique windows."
+          "text": "And he made in the temple <cr>[1]</cr> oblique windows.",
+          "cross_refs": [
+            {
+              "text": "Narrow without & broad within."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -779,7 +846,13 @@
         },
         {
           "verse": 7,
-          "text": "And the house when it was built, was built of stones hewed and perfected: and hammer, and hatchet, and all the tool of iron were not heard in the house when it was built."
+          "text": "And the house when it was built, was built of stones hewed and perfected: and hammer, and hatchet, and all the tool of iron were <na>(a)</na> not heard in the house when it was built.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "In perfect people is neither noise of murmur in adversity, nor of boasting in prosperity, but patience and humility with silence."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -815,15 +888,27 @@
         },
         {
           "verse": 16,
-          "text": "And he built lofts of cedar timber of twenty cubits at the hinder part of the temple, from the pavement to the higher parts: and he made the inner house of the oracle to be Sanctum Sanctorum."
+          "text": "And he built lofts of cedar timber of twenty cubits at the hinder part of the temple, from the pavement to the higher parts: and he made the inner house of the oracle to be <na>(b)</na> Sanctum Sanctorum.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Holy of holies or most holy place."
+            }
+          ]
         },
         {
           "verse": 17,
-          "text": "Moreover the temple it self was forty cubits before the doors of the oracle."
+          "text": "Moreover the temple itself was forty cubits before the doors of the oracle."
         },
         {
           "verse": 18,
-          "text": "And all the house was covered within with cedar, having roundels, and the joints thereof cunningly wrought, and the engravings standing out: all things were covered with boards: neither could there a stone appear in the wall at all."
+          "text": "And all the house was covered within with cedar, having roundels, and the joints thereof cunningly wrought, and the engravings standing out: all things were covered with boards: <na>(c)</na> neither could there a stone appear in the wall at all.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Stones in buildings, and bones in living bodies represent the state of religious persons: who being hid in their Monasteries and cells, so much the more fortify the Church, by how much less they appear abroad, because their office is not to teach, but to mourn. S. Bernard. Ser. 64."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -867,7 +952,13 @@
         },
         {
           "verse": 29,
-          "text": "And all the walls of the temple round about he graved with diverse engravings and carving: & he made in them cherubs, and palm trees, and diverse pictures, as it were standing out of the wall, and coming forth."
+          "text": "And all the walls of the temple round about he graved with diverse engravings and carving: & he made in them cherubs, and palm trees, and <na>(d)</na> diverse pictures, as it were standing out of the wall, and coming forth.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "It is a clear case, that all carved and graven pictures, or images were not unlawful, but were religiously made & set in the holy Temple, for the more honour of God."
+            }
+          ]
         },
         {
           "verse": 30,
@@ -887,7 +978,7 @@
         },
         {
           "verse": 34,
-          "text": "and two doors of fir trees, one against an other: and either door was double, & so opened with folding leaves."
+          "text": "and two doors of fir trees, one against another: and either door was double, & so opened with folding leaves."
         },
         {
           "verse": 35,
@@ -899,17 +990,22 @@
         },
         {
           "verse": 37,
-          "text": "In the fourth year was the house of our Lord founded, in the month of Zio:"
+          "text": "In the fourth year was the house of our Lord founded in the month of Zio:"
         },
         {
           "verse": 38,
-          "text": "and in the eleventh year in the month Bul (that is the eight month) the house was perfected in all the works thereof, and in all the implements thereof: and he was building it seven years."
+          "text": "<cr>[1]</cr> and in the eleventh year in the month Bul (that is the eighth month) the house was perfected in all the works thereof, and in all the implements thereof: and he was building it seven years.",
+          "cross_refs": [
+            {
+              "text": "The end of the fourth age."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "In the year four hundred and four score, after the Israelites came from Aegypt, Salomon, the fourth year of his reign, beginneth to build the Temple. 2. The principal parts with the greatness, form, and ornaments thereof are described. 38. It is in building seven years."
     },
     {
       "chapter": 7,
-      "summary": "Salomon's palace, ℣.2 his house in the forest, ℣.8 and the Queen's house is built. ℣.13 Two great brazen pillars: ℣.23 a sea (or laver) ℣.27 ten brazen feet: ℣.38 ten less lavatories, and other vessels, and implements pertaining to the Temple, adorned with images of Angels, and other creatures, are further described.",
       "verses": [
         {
           "verse": 1,
@@ -917,7 +1013,7 @@
         },
         {
           "verse": 2,
-          "text": "He built also the house of the forest of Libanus of an hundred cubits in length, & fifty cubits in breadth, and thirty cubits in height: and four score galleries between pillars of cedar: for he had cut cedar trees into pillars."
+          "text": "He built also the house of the forest of Libanus of an hundred cubits in length, & fifty cubits in breadth, and thirty cubits in height: and four galleries between pillars of cedar: for he had cut cedar trees into pillars."
         },
         {
           "verse": 3,
@@ -933,7 +1029,7 @@
         },
         {
           "verse": 6,
-          "text": "And the porch of the pillars he made of fifty cubits in length, and thirty cubits in breadth: and an other porch before the greater porch: and pillars, and tops upon the pillars."
+          "text": "And the porch of the pillars he made of fifty cubits in length, and thirty cubits in breadth: and another porch before the greater porch: and pillars, and tops upon the pillars."
         },
         {
           "verse": 7,
@@ -993,7 +1089,15 @@
         },
         {
           "verse": 21,
-          "text": "And he set two pillars in the porch of the temple: & when he had erected the pillar on the right hand, he called the name thereof Jachin: in like manner he erected the second pillar, & called the name thereof Booz."
+          "text": "And he set two pillars in the porch of the temple: & when he had erected the pillar on the right hand, he called the name thereof <cr>[1]</cr> Iachin: in like manner he erected the second pillar, & called the name thereof <cr>[2]</cr> Booz.",
+          "cross_refs": [
+            {
+              "text": "* Firmness."
+            },
+            {
+              "text": "* in strength."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -1001,7 +1105,13 @@
         },
         {
           "verse": 23,
-          "text": "He made also a sea of founder's work, of ten cubits from brim to brim, round in compass, the height thereof was of five cubits, and a cord of thirty cubits did compass it round about."
+          "text": "He made also <na>(a)</na> a sea of founder's work, of ten cubits from brim to brim, round in compass, the height thereof was of five cubits, and a cord of thirty cubits did compass it round about.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Avessel so called for the bigness being a great lavatory."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -1013,7 +1123,13 @@
         },
         {
           "verse": 26,
-          "text": "And the thickness of the lavatory was of three ounces: and the brim thereof as it were the brim of a chalice, and the leaf of crisped lily: it contained two thousand bates."
+          "text": "And the thickness of the lavatory was of three ounces: and the brim thereof as it were the brim of a chalice, and the leaf of crisped lily: it contained two thousand <na>(b)</na> bates.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Batus containeth about five gallons: so this vessel contained ten thousand gallons."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -1021,7 +1137,7 @@
         },
         {
           "verse": 28,
-          "text": "And the very work it self of the feet, was entergraven: and entergravings between the jointures."
+          "text": "And the very work itself of the feet, was entergraven: and entergravings between the jointures."
         },
         {
           "verse": 29,
@@ -1029,15 +1145,15 @@
         },
         {
           "verse": 30,
-          "text": "And four wheels at every foot, and axletrees of brass: and at four sides as it were little shoulders under the lavatory cast, looking one against an other."
+          "text": "And four wheels at every foot, and axletrees of brass: and at four sides as it were little shoulders under the lavatory cast, looking one against another."
         },
         {
           "verse": 31,
-          "text": "The mouth also of the lavatory was inward in the top of the head: and that which appeared outward, was of one cubit all round, and together it had one cubit and a half: and in the corners of the pillars were diverse engravings: and the middle enterpillars, square not round."
+          "text": "The mouth also of the lavatory was inward in the top of the head: and that which appeared outward, was of one cubit all round, and together it had one cubit and a half: and in the corners of the pillars were diverse engravings: and the middle enterpillars square not round."
         },
         {
           "verse": 32,
-          "text": "The four wheels also which were at the four corners of a foot, joined one to an other under the foot: one wheel had in height a cubit and a half."
+          "text": "The four wheels also which were at the four corners of a foot, joined one to another under the foot: one wheel had in height a cubit and a half."
         },
         {
           "verse": 33,
@@ -1093,7 +1209,7 @@
         },
         {
           "verse": 46,
-          "text": "In the champion country of Jordan did the king cast those things in a clay ground, between Sacoth & Sarthan."
+          "text": "In the champion country of Jordan did the king cast those things in a clay ground, between Socoth & Sarthan."
         },
         {
           "verse": 47,
@@ -1105,7 +1221,7 @@
         },
         {
           "verse": 49,
-          "text": "and candlesticks of gold, five on the right hand, and five on the left against the oracle, of pure gold: and as it were little flowers, and lamps about of gold: and golden snuffers,"
+          "text": "and candlesticks of gold, five on the right hand, and five on the left against the oracle, of pure gold: and as it were little flowers, and lamps above of gold: and golden snuffers,"
         },
         {
           "verse": 50,
@@ -1113,13 +1229,19 @@
         },
         {
           "verse": 51,
-          "text": "And Salomon perfected all the work that he did in the house of our Lord, and brought in the things that David his father had sanctified, silver and gold, and the vessels, and laid them in the treasures of the house of our Lord."
+          "text": "And Salomon perfected all the work that he did in the house of our Lord, and brought in the things that David his father <na>(c)</na> had sanctified, silver and gold, and the vessels, and laid"
+        }
+      ],
+      "summary": "Salomon's palace, 2. his house in the forest, 8. and the Queen's house is built. 13. Two great brazen pillars: 23. a sea (or laver) 27. ten brazen feet: 38. ten less lavatories, and other vessels, and implements pertaining to the Temple, adorned with images of Angels, and other creatures, are further described. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The beginning of the fifth age."
         }
       ]
     },
     {
       "chapter": 8,
-      "summary": "The ark is brought in, and the temple dedicated. ℣.10 A glorious cloud replenisheth it. ℣.14 Salomon prayeth long to God, ℣.55 blesseth the people, ℣.62 and many victims are offered in this solemn festivity.",
       "verses": [
         {
           "verse": 1,
@@ -1155,7 +1277,13 @@
         },
         {
           "verse": 9,
-          "text": "And in the ark there was nothing else but two tables of stone, which Moyses put in it in Horeb, when our Lord made the covenant with the children of Israel, when they came out of the Land of Ægypt."
+          "text": "And in the ark there was <na>(a)</na> nothing else but two tables of stone, which Moyses put in it in Horeb, when our Lord made the covenant with the children of Israel, when they came out of the Land of Aegypt.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "There was no more within the ark, Deut. 10. but on the out side was the rod of Aaron, Nu. 17. Heb. 9. the golden pot with Manna, Exod. 16. Heb. 9. and the book of the law repeated by Moyses, Deut. 31."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -1175,7 +1303,13 @@
         },
         {
           "verse": 14,
-          "text": "And the king turned his face, and blessed all the Church of Israel: for all the Church of Israel stood."
+          "text": "And the king turned his face, and <na>(b)</na> blessed all the Church of Israel: for all the Church of Israel stood.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Princes bless their people and parents their children."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1183,7 +1317,7 @@
         },
         {
           "verse": 16,
-          "text": "Since the day that I brought my people Israel out of Ægypt, I chose no city of all the tribes of Israel, that a house might be built, and my name might be there: but I chose David to be over my people Israel."
+          "text": "Since the day that I brought my people Israel out of Aegypt, I chose no city of all the tribes of Israel, that a house might be built, and my name might be there: but I chose David to be over my people Israel."
         },
         {
           "verse": 17,
@@ -1203,7 +1337,7 @@
         },
         {
           "verse": 21,
-          "text": "And I have appointed there a place for the ark, wherein the covenant of our Lord is, which he made with our fathers, when they came out of the Land of Ægypt."
+          "text": "And I have appointed there a place for the ark, wherein the covenant of our Lord is, which he made with our fathers, when they came out of the Land of Aegypt."
         },
         {
           "verse": 22,
@@ -1219,7 +1353,13 @@
         },
         {
           "verse": 25,
-          "text": "Now therefore Lord God of Israel, keep unto thy servant David my father the things which thou hast spoken to him, saying: There shall not be taken away of thee a man before me, which sitteth upon the throne of Israel: yet so if thy children shall keep their way, that they walk before me as thou hast walked in my sight."
+          "text": "Now therefore Lord God of Israel, keep unto thy servant David my father the things which thou hast spoken to him, saying: There shall not be taken away of thee a man before me, which sitteth upon the throne of Israel: <na>(c)</na> yet so if thy children shall keep their way, that they walk before me as thou hast walked in my sight.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Salomon knew well God's conditional promise, but persevered not in keeping his commandments, and therefore a great part of the Kingdom was taken from his children, yet the right of the Kingdom of Juda remained to his seed even to Christ our Saviour."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -1227,7 +1367,7 @@
         },
         {
           "verse": 27,
-          "text": "Is it then to be thought that indeed God dwelleth upon the earth? For if heaven, and the heavens of heavens can not contain thee, how much more this house, which I have built?"
+          "text": "Is it then to be thought that indeed God dwelleth upon the earth? For if heaven, and the heavens of heavens cannot contain thee, how much more this house, which I have built?"
         },
         {
           "verse": 28,
@@ -1247,7 +1387,13 @@
         },
         {
           "verse": 32,
-          "text": "thou shalt hear in heaven: and shalt do, and judge thy servants, condemning the impious, and rendering his way upon his head, and justifying the just, and rewarding him according to his justice."
+          "text": "thou shalt hear in heaven: and shalt do, and judge thy servants, condemning the impious, and rendering his way upon his head, and justifying the just, and <na>(d)</na> rewarding him according to his justice.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Reward of good works."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -1287,7 +1433,7 @@
         },
         {
           "verse": 42,
-          "text": "and thy stretched out arm every where) when therefore he shall come, and shall pray in this place,"
+          "text": "and thy stretched out arm every-where) when therefore he shall come, and shall pray in this place,"
         },
         {
           "verse": 43,
@@ -1307,7 +1453,13 @@
         },
         {
           "verse": 47,
-          "text": "and shall do penance in their heart in the place of captivity, and converted shall beseech thee in their captivity, saying: We have sinned, we have done wickedly, we have dealt impiously:"
+          "text": "and shall do penance in their <na>(e)</na> heart in the place of captivity, and converted shall beseech thee in their captivity, saying: We have sinned, we have done wickedly, we have dealt impiously:",
+          "notes": [
+            {
+              "label": "e",
+              "text": "External works of penance, except they proceed from the heart, suffice not for remission of sin."
+            }
+          ]
         },
         {
           "verse": 48,
@@ -1323,7 +1475,7 @@
         },
         {
           "verse": 51,
-          "text": "For they are thy people, and thine inheritance, whom thou hast brought out of the Land of Ægypt, from the midst of the iron furnace."
+          "text": "For they are thy people, and thine inheritance, whom thou hast brought out of the Land of Aegypt, from the midst of the iron furnace."
         },
         {
           "verse": 52,
@@ -1331,7 +1483,7 @@
         },
         {
           "verse": 53,
-          "text": "For thou hast separated them to thee for an inheritance from all the peoples of the earth, as thou hast spoken by Moyses thy servant, when thou didst bring our fathers out of Ægypt, Lord God."
+          "text": "For thou hast separated them to thee for an inheritance from all the peoples of the earth, as thou hast spoken by Moyses thy servant, when thou didst bring our fathers out of Aegypt, Lord God."
         },
         {
           "verse": 54,
@@ -1379,17 +1531,17 @@
         },
         {
           "verse": 65,
-          "text": "Salomon therefore made in the time a solemn festivity, and all Israel with him, a great multitude from the entrance of Emath unto the River of Ægypt, before our Lord God, seven days and seven days, that is, fourteen days."
+          "text": "Salomon therefore made in the time a solemn festivity, and all Israel with him, a great multitude from the entrance of Emath unto the River of Aegypt, before our Lord God, seven days and seven days, that is, fourteen days."
         },
         {
           "verse": 66,
-          "text": "And in the eight day he dismissed the people: Who blessing the king, went into their tabernacles rejoicing, and with a joyful heart for all the good things, that our Lord had done to David his servant, and to Israel his people."
+          "text": "And in the eighth day he dismissed the people: Who blessing the king, went into their tabernacles rejoicing, and with a joyful heart for all the good things, that our Lord had done to David his servant, and to Israel his people."
         }
-      ]
+      ],
+      "summary": "The ark is brought in, and the temple dedicated. 10. A glorious cloud replenisheth it. 14. Salomon prayeth long to God, 55. blesseth the people, 62. and many victims are offered in this solemn festivity."
     },
     {
       "chapter": 9,
-      "summary": "Our Lord appearing again to Salomon, ℣.4 admonisheth him and his people to keep the precepts, ℣.6 threatening punishment if they do not. ℣.10 The king of Tyre receiveth twenty cities of Salomon, but liketh them not. ℣.14 Salomon buildeth more cities and towns. ℣.20 Maketh diverse nations tributary. ℣.24 The Queen repaireth to her house. ℣.25 The king offereth victims thrice every year. ℣.26 And fetcheth gold from Ophir.",
       "verses": [
         {
           "verse": 1,
@@ -1405,11 +1557,17 @@
         },
         {
           "verse": 4,
-          "text": "Thou also if thou wilt walk before me, as thy father walked, in simplicity of heart, and in equity, and wilt do all things, which I have commanded thee, and wilt keep my ordinances and my judgments:"
+          "text": "Thou also if thou wilt walk before me, as thy father walked, <na>(a)</na> in simplicity of heart, and in equity, and wilt do all things, which I have commanded thee, and wilt keep my ordinances and my judgments:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "External worship is not acceptable to God, except it proceed from internal sincerity and devotion. Wherefore S. Augustin saith: God is worshipped in faith, hope, and charity. Enchirid. c. 3."
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "I will set the throne of thy Kingdom over Israel for ever, as I have spoken to David thy father, saying: There shall not be taken away a man of thy stock from the throne of Israel."
+          "text": "Iwill set the throne of thy Kingdom over Israel for ever, as I have spoken to David thy father, saying: There shall not be taken away a man of thy stock from the throne of Israel."
         },
         {
           "verse": 6,
@@ -1417,7 +1575,7 @@
         },
         {
           "verse": 7,
-          "text": "I will take away Israel from the face of the land, which I have given them, and the temple which I have sanctified to my name, I will cast away from my sight, and Israel shall be for a proverb, and for a fable to all peoples."
+          "text": "Iwill take away Israel from the face of the land, which I have given them, and the temple which I have sanctified to my name, I will cast away from my sight, and Israel shall be for a proverb, and for a fable to all peoples."
         },
         {
           "verse": 8,
@@ -1425,7 +1583,7 @@
         },
         {
           "verse": 9,
-          "text": "And they shall answer: Because they have forsaken the Lord their God, which brought their fathers out of the Land of Ægypt, and have followed strange gods, and adored them, and worshipped them: therefore hath the Lord brought upon them all this evil."
+          "text": "And they shall answer: Because they have forsaken the Lord their God, which brought their fathers out of the Land of Aegypt, and have followed strange gods, and adored them, and worshipped them: therefore hath the Lord brought upon them all this evil."
         },
         {
           "verse": 10,
@@ -1433,7 +1591,13 @@
         },
         {
           "verse": 11,
-          "text": "(Hiram the king of Tyre ministering to Salomon cedar trees & fir trees, and gold according to all that he had need) then Salomon gave to Hiram twenty towns in the Land of Galilee."
+          "text": "(Hiram the king of Tyre ministering to Salomon cedar trees & fir trees, and gold according to all that he had need) then Salomon <na>(b)</na> gave to Hiram twenty towns in the Land of Galilee.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Salomon did not sell these cities, for he could not alienate them, but let the King of Tyre have the use and revenues in payment for timber, & for the gold which he sent."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -1441,7 +1605,12 @@
         },
         {
           "verse": 13,
-          "text": "and he said: Are these the cities, which thou hast given me, brother? And he called them the land Chabul, until this day."
+          "text": "and he said: Are these the cities, which thou hast given me, brother? And he called them the land <cr>[1]</cr> Chabul, until this day.",
+          "cross_refs": [
+            {
+              "text": "* dirty or displeasing."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -1453,7 +1622,7 @@
         },
         {
           "verse": 16,
-          "text": "Pharao the king of Ægypt came up and took Gazer, and burnt it with fire: And the Chananite, that dwelt in the city, he slew, and gave it for a dowry to his daughter the wife of Salomon."
+          "text": "Pharao the king of Aegypt came up and took Gazer, and burnt it with fire: And the Chananite, that dwelt in the city, he slew, and gave it for a dowry to his daughter the wife of Salomon."
         },
         {
           "verse": 17,
@@ -1469,7 +1638,7 @@
         },
         {
           "verse": 20,
-          "text": "All the people, that was remaining of the Amorrhites, and Hethites, and Pherezites, and Hevites, and Jebusites, that are not of the children of Israel:"
+          "text": "All the people, that was remaining of the Amorrheites, and Hetheites, and Pherezites, and Heveites, and Jebusites, that are not of the children of Israel:"
         },
         {
           "verse": 21,
@@ -1497,25 +1666,36 @@
         },
         {
           "verse": 27,
-          "text": "And Hiram sent in that navy his men, that were mariners & skilful of the sea, with the servants of Salomon."
+          "text": "And Hiram sent in that navy his men, that were mariners & skillful of the sea, with the servants of Salomon."
         },
         {
           "verse": 28,
           "text": "Who when they were come into Ophir, the gold taken thence of four hundred and twenty talents, they brought to king Salomon."
         }
-      ]
+      ],
+      "summary": "Our Lord appearing again to Salomon, 4. admonisheth him and his people to keep the precepts, 6. threatening punishment if they do not. 10. The king of Tyre receiveth twenty cities of Salomon, but liketh them not. 14. Salomon buildeth more cities and towns. 20. Maketh diverse nations tributary. 24. The Queen repaireth to her house. 25. The king offereth victims thrice every year. 26. And fetcheth gold from Ophir."
     },
     {
       "chapter": 10,
-      "summary": "The Queen of Saba coming to king Salomon, admireth his wisdom, magnificence, and order of government. ℣.10 She giveth and receiveth gifts. ℣.14 Salomon receiveth much gold diverse ways: ℣.16 maketh golden targets, ℣.18 a magnificent throne, ℣.21 and many golden vessels. ℣.25 Many bring him presents. ℣.26 He hath many chariots, horsemen, ℣.27 abundance of silver. ℣.28 Merchants of diverse Kingdoms sell him horses.",
       "verses": [
         {
           "verse": 1,
-          "text": "But the queen of Saba also having heard the fame of Salomon, in the name of our Lord came to prove him in hard propositions."
+          "text": "But <cr>[1]</cr> the queen of <na>(a)</na> Saba also having heard the fame of Salomon, in the name of our Lord came to prove him in hard propositions.",
+          "cross_refs": [
+            {
+              "text": "* A wonderful thing, that a Queen upon fame of a man's wisdom travelled so far to hear him speak, and to see his government. But it was God's inspiration to signify by this figure, that the Church of Christ should be gathered of the Gentiles in all nations. Kings, Queens and most potent Princes also submitting themselves to Christ."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Part of Arabia is called Saba, near to Jury, but this Saba is beyond Arabia, as S. Hierom testifieth in Esaie 60. li. 17. it seemeth to be in Aethiopia: for our Saviour saith Mat. 12. The Queen of the South came from the ends of the earth, to hear the wisdom of Salomon ."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And entering into Jerusalem with a great train, and riches, and camels carrying spices, and gold exceeding infinite, and precious stones, she came to king Salomon, and spake him to all things that she had in her heart."
+          "text": "And entering into Jerusalem with a great train, and riches, and camels carrying spices, and gold exceeding infinite, and precious stones, she came to king Salomon, and spake to him all things that she had in her heart."
         },
         {
           "verse": 3,
@@ -1527,7 +1707,13 @@
         },
         {
           "verse": 5,
-          "text": "and the meats of his table, and the habitations of his servants, and the orders of them that served, and their garments, cup-bearers, and the holocausts which he offered in the house of our Lord: she had no longer spirit,"
+          "text": "and the meats of his table, and the habitations of his servants, and the orders of them that served, and their garments, cup-bearers, and the holocausts which he offered in the house of our Lord: <na>(b)</na> she had no longer spirit,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "As this Queen had no spirit, when she saw Salomon's wisdom, so the Church gathered of gentiles knowing Christ's grace, & finding the masters of Evangelical doctrine, casting away the spirit of pride, and laying off all haughtiness of mind, learned to distrust in herself, and to trust in the great mercy of her King. S. Greg. in Psal. 7. paeniten. to. 2."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1535,7 +1721,7 @@
         },
         {
           "verse": 7,
-          "text": "concerning thy words, and concerning thy wisdom, and I did not believe them that told me, till my self came, and saw with mine eyes, & have proved that the half hath not been told me: greater is thy wisdom, and thy works, than the rumour, which I have heard."
+          "text": "concerning thy words, and concerning thy wisdom, and I did not believe them that told me, till myself came, and saw with mine eyes, & have proved that the half hath not been told me: greater is thy wisdom, and thy works, than the rumour, which I have heard."
         },
         {
           "verse": 8,
@@ -1619,17 +1805,17 @@
         },
         {
           "verse": 28,
-          "text": "And there were horses brought for Salomon out of Ægypt, and Coa, for the king's merchants bought them out of Coa, and brought them at a set price."
+          "text": "And there were horses brought for Salomon out of Aegypt, and Coa, for the king's merchants bought them out of Coa, and brought them at a set price."
         },
         {
           "verse": 29,
-          "text": "And a chariot of four horses came out of Ægypt, for six hundred sicles of silver, and one horse for an hundred and fifty. And after this manner did all the kings of the Hethites and of Syria sell horses."
+          "text": "And a chariot of four horses came out of Aegypt, for six hundred sicles of silver, and one horse for an hundred and fifty. And after this manner did all the kings of the Hetheites, and of Syria sell horses."
         }
-      ]
+      ],
+      "summary": "The Queen of Saba coming to king Salomon, admireth his wisdom, magnificence, and order of government. 10. She giveth and receiveth gifts. 14. Salomon receiveth much gold diverse ways: 16. maketh golden targets, 18. a magnificent throne, 21. and many golden vessels. 25. Many bring him presents. 26. He hath many chariots, horsemen, 27. abundance of silver. 28. Merchants of diverse Kingdoms sell him horses."
     },
     {
       "chapter": 11,
-      "summary": "Salomon loving and marrying many women of diverse nations, is drawn by them to idolatry. ℣.9 God therefore offended suffereth Adad an Idumean, ℣.23 Razon king of Damascus, ℣.26 and Hieroboam his own servant to make war against him. ℣.29 Ahias the Prophet foretelleth Hieroboam, that he shall reign over ten tribes, leaving but two to Salomon's heirs, ℣.38 with promise to prosper, if he serve God. ℣.42 Salomon dieth.",
       "verses": [
         {
           "verse": 1,
@@ -1641,7 +1827,13 @@
         },
         {
           "verse": 3,
-          "text": "And he had wives as it were queens seven hundred, and concubines three hundred: and the women turned away his heart."
+          "text": "And he had wives as it were queens <na>(a)</na> seven hundred, and concubines three hundred: and the women turned away his heart.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Though plurality of wives was then allowed, yet it was forbid to multiply many. Deut. 17."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -1681,15 +1873,30 @@
         },
         {
           "verse": 13,
-          "text": "neither will I take away the whole Kingdom, but one tribe I will give to thy son for David my servant, and Jerusalem, which I have chosen."
+          "text": "neither will I take away the whole Kingdom, but <na>(b)</na> one tribe I will give to thy son for David my servant, and <na>(c)</na> Jerusalem, which I have chosen.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The tribe of Juda."
+            },
+            {
+              "label": "c",
+              "text": "By Jerusalem is understood the tribe of Benjamin, wherein it stood: so there remained two tribes to Salomon's heirs."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "And our Lord raised up an adversary to Salomon, Adad an Idumite of the king's seed, who was in Edom."
+          "text": "And our Lord raised up an adversary to Salomon, Adad an Idumeite of the king's seed, who was in Edom."
         },
         {
           "verse": 15,
-          "text": "For when David was in Idumea, and Joab the general of the warfare was gone up to bury them that were slain, and had slain all male kind in Idumea,"
+          "text": "For when David was in Idumea, and Joab the general of the warfare was gone up to bury them that were slain, and had slain all male kind in Idumea, <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "2. Reg. 8."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1697,11 +1904,11 @@
         },
         {
           "verse": 17,
-          "text": "Adad himself fled, & the men of Idumea of his father's servants with him, to go into Ægypt: and Adad was a little boy."
+          "text": "Adad himself fled, & the men of Idumea of his father's servants with him, to go into Aegypt: and Adad was a little boy."
         },
         {
           "verse": 18,
-          "text": "And when they rose out of Madian, they came into Pharan, and they took with them men of Pharan, and entered into Ægypt to Pharao the king of Ægypt: who gave him a house, and appointed him meats, and assigned him land."
+          "text": "And when they rose out of Madian, they came into Pharan, and they took with them men of Pharan, and entered into Aegypt to Pharao the king of Aegypt: who gave him a house, and appointed him meats, and assigned him land."
         },
         {
           "verse": 19,
@@ -1709,11 +1916,11 @@
         },
         {
           "verse": 20,
-          "text": "And the sister of Taphnes bare him a son Genubath, and Taphnes brought him up in the house of Pharao: & Genubath was dwelling at Pharao’s house with his children."
+          "text": "And the sister of Taphnes bare him a son Genubath, and Taphnes brought him up in the house of Pharao: & Genubath was dwelling at Pharao's house with his children."
         },
         {
           "verse": 21,
-          "text": "And when Adad in Ægypt had heard, that David slept with his fathers, and that Joab the general of the warfare was dead, he said to Pharao: Dismiss me, that I may go into my country."
+          "text": "And when Adad in Aegypt had heard, that David slept with his fathers, and that Joab the general of the warfare was dead, he said to Pharao: Dismiss me, that I may go into my country."
         },
         {
           "verse": 22,
@@ -1721,7 +1928,12 @@
         },
         {
           "verse": 23,
-          "text": "God also raised up to him an adversary, Razon the son of Eliada, who had fled Adarezer the king of Soba his Lord:"
+          "text": "God also raised up to him an adversary, Razon the son of Eliada, who had fled Adarezer the king of Soba his Lord: <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "2. Reg. 10."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -1729,11 +1941,17 @@
         },
         {
           "verse": 25,
-          "text": "and he was an adversary to Israel all the days of Salomon: and this is the evil of Adad, and hatred against Israel, and he reigned in Syria."
+          "text": "and he was an adversary to Israel <na>(d)</na> all the days of Salomon: and this is the evil of Adad, and hatred against Israel, and he reigned in Syria.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "From the time that Salomon fell to idolatry, he was more impugned by three perpetual adversaries, Adad, Razon, and Hieroboam; mystically signifying the flesh, the world, and the devil."
+            }
+          ]
         },
         {
           "verse": 26,
-          "text": "Jeroboam also the son of Nabath, an Ephrathite of Sareda, the servant of Salomon, whose mother was called Serva, a woman widow, lifted up his hand against the king."
+          "text": "Jeroboam also the son of Nabath, an Ephratheite of Sareda, the servant of Salomon, whose mother was called Serva, a woman widow, lifted up his hand against the king."
         },
         {
           "verse": 27,
@@ -1749,7 +1967,13 @@
         },
         {
           "verse": 30,
-          "text": "And Ahias taking his new cloak, wherewith he was covered, cut it into twelve parts."
+          "text": "And Ahias taking his new cloak, wherewith he was covered, <na>(e)</na> cut it into twelve parts.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "This fact confirmed his words, that he spake seriously and feigned not."
+            }
+          ]
         },
         {
           "verse": 31,
@@ -1789,7 +2013,7 @@
         },
         {
           "verse": 40,
-          "text": "Salomon therefore would have killed Jeroboam: who arose, and fled into Ægypt to Sesac the king of Ægypt, and was in Ægypt until the death of Salomon."
+          "text": "Salomon therefore would have killed Jeroboam: who arose, and fled into Aegypt to Sesac the king of Aegypt, and was in Aegypt until the death of Salomon."
         },
         {
           "verse": 41,
@@ -1801,21 +2025,32 @@
         },
         {
           "verse": 43,
-          "text": "And Salomon slept with his fathers, and was buried in the city of David his father, & Roboam his son reigned for him."
+          "text": "And Salomon <na>(f)</na> slept with his fathers, and was buried in the city of David his father, & Roboam his son reigned for him.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Whether he repented and was saved or no, is uncertain."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Salomon loving and marrying many women of diverse nations, is drawn by them to idolatry. 9. God therefore offended suffereth Adad an Idumean, 23. Razon king of Damascus, 26. and Hieroboam his own servant to make war against him. 29. Ahias the Prophet foretelleth Hieroboam, that he shall reign over ten tribes, leaving but two to Salomon's heirs, 38. with promise to prosper, if he serve God. 42. Salomon dieth."
     },
     {
       "chapter": 12,
-      "summary": "Roboam following youngmen's counsel, ℣.16 Jeroboam possesseth ten tribes of his Kingdom. ℣.21 Which he endeavouring to recover by war, is admonished by a Prophet to cease. ℣.26 Hieroboam setteth up golden calves to be adored, making temples, altars, and Priests fit for his purpose.",
       "verses": [
         {
           "verse": 1,
-          "text": "And Roboam came into Sichem: for thither was all Israel gathered together to make him king."
+          "text": "And <cr>[1]</cr> Roboam came into Sichem: for thither was all Israel gathered together to make him king.",
+          "cross_refs": [
+            {
+              "text": "The third part. The division of the Kingdom, Several reigns of certain Kings: and preaching of special Prophets."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "But Jeroboam the son of Nabat, when he was yet in Ægypt fugitive from the face of king Salomon, hearing of his death; returned out of Ægypt."
+          "text": "But Jeroboam the son of Nabat, when he was yet in Aegypt fugitive from the face of king Salomon, hearing of his death; returned out of Aegypt."
         },
         {
           "verse": 3,
@@ -1867,7 +2102,13 @@
         },
         {
           "verse": 15,
-          "text": "And the king condescended not to the people: because our Lord was turned away from him, that he might raise up his word, which he had spoken in the hand of Ahias the Silonite, to Jeroboam the son of Nabat."
+          "text": "And the king condescended not to the people: because our Lord was turned away from him, <na>(a)</na> that he might raise up his word, which he had spoken in the hand of Ahias the Silonite, to Jeroboam the son of Nabat.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This phrase noteth the sequel, not the final cause. As chap. 14. v. 9."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1919,7 +2160,13 @@
         },
         {
           "verse": 28,
-          "text": "And finding out a devise he made two golden calves, and said to them: Go up no more into Jerusalem: Behold thy gods Israel, which brought thee out of the Land of Ægypt."
+          "text": "And finding out <na>(b)</na> a device he made two golden calves, and said to them: Go up no more into Jerusalem: Behold thy gods Israel, which brought thee out of the Land of Aegypt.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Adevilish policy to make a religion conformable to the temporal state."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -1931,25 +2178,43 @@
         },
         {
           "verse": 31,
-          "text": "And he made temples in the excelses, and Priests of the abjects of the people, which were not of the children of Levi."
+          "text": "And he made temples in the excelses, and Priests <na>(c)</na> of the abjects of the people, which were not of the children of Levi.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "For such a religion such Priests were fittest."
+            }
+          ]
         },
         {
           "verse": 32,
-          "text": "And he appointed a solemn day in the eight month, the fifteenth day of the month, after the similitude of the solemnity, that was celebrated in Juda. And going up he made in like manner an altar in Bethel, to immolate to the calves, which he had framed: and he ordained in Bethel priests of the excelses, which he had made."
+          "text": "And he appointed a solemn day in the eighth month, the fifteenth day of the month, after the similitude of the solemnity, that was celebrated in Juda. And going up he made in like manner an altar in Bethel, to immolate to the calves, which he had framed: and he ordained in Bethel priests of the <na>(d)</na> excelses, which he had made.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Places on hills, where they sacrificed calves, and other things to the images of calves."
+            }
+          ]
         },
         {
           "verse": 33,
-          "text": "And he went upon the altar, which he had built in Bethel, the fifteenth day of the eight month, which he had forged out of his own heart: and he made a solemnity to the children of Israel, and went up upon the altar, to burn incense."
+          "text": "And he went upon the altar, which he had built in Bethel, the fifteenth day of the eighth month, which he had forged out of his own heart: and he made a solemnity to the children of Israel, and went up upon the altar, to burn incense."
         }
-      ]
+      ],
+      "summary": "Roboam following youngmen's counsel, 16. Jeroboam possesseth ten tribes of his Kingdom. 21. Which he endeavouring to recover by war, is admonished by a Prophet to cease. 26. Hieroboam setteth up golden calves to be adored, making temples, altars, and Priests fit for his purpose."
     },
     {
       "chapter": 13,
-      "summary": "A Prophet sent from Juda to Bethel foretelleth the birth of Josias, and destruction of Jeroboam's altar, ℣.4 whose hand being suddenly withered, ℣.6 is restored by the Prophet's prayer. ℣.11 The same Prophet is deceived by an other Prophet, and slain by a lion. ℣.33 Jeroboam proceedeth in impiety.",
       "verses": [
         {
           "verse": 1,
-          "text": "And behold a man of God came out of Juda, in the word of our Lord into Bethel, Jeroboam standing upon the altar, and censing."
+          "text": "And behold a man of God came out of Juda, in the word of our Lord into Bethel, Jeroboam <na>(a)</na> standing upon the altar, and censing.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This foreshewing long before the name of a child that should be born, importeth that he should do great things."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1985,7 +2250,7 @@
         },
         {
           "verse": 10,
-          "text": "He departed therefore by an other way, and returned not by the way, that he came into Bethel."
+          "text": "He departed therefore by another way, and returned not by the way, that he came into Bethel."
         },
         {
           "verse": 11,
@@ -2009,7 +2274,7 @@
         },
         {
           "verse": 16,
-          "text": "Who said: I can not return, nor come with thee, neither will I eat bread, nor drink water in this place:"
+          "text": "Who said: I cannot return, nor come with thee, neither will I eat bread, nor drink water in this place:"
         },
         {
           "verse": 17,
@@ -2017,7 +2282,13 @@
         },
         {
           "verse": 18,
-          "text": "Who said to him: I also am a Prophet like to thee: and an Angel hath spoken to me in the word of our Lord, saying: Bring him back with thee into thy house, that he may eat bread, and drink water. He deceived him,"
+          "text": "Who said to him: I also am a Prophet like to thee: and <na>(b)</na> an Angel hath spoken to me in the word of our Lord, saying: Bring him back with thee into thy house, that he may eat bread, and drink water. He deceived him,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "This man of Bethel was indeed a Prophet of God, but in this lied wickedly, and so deceiving the other Prophet, made him to break God's commandment, for which he was slain. Whereupon Hieroboam (whom the wicked Prophet sought to please) was less afraid to proceed in Idolatry."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -2041,7 +2312,13 @@
         },
         {
           "verse": 24,
-          "text": "Who when he was gone, a lion found him in the way, and killed him, and his body was cast forth in the way: and the ass stood by him, and the lion stood by the dead body."
+          "text": "Who when he was gone, a lion found him in the way, and <na>(c)</na> killed him, and his body was cast forth in the way: and the ass stood by him, and the lion stood by the dead body.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Not only the deceiver, but also he that is deceived, is guilty and punishable for breaking God's commandment."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -2057,7 +2334,13 @@
         },
         {
           "verse": 28,
-          "text": "and he was gone, he found his dead body cast forth in the way, and the ass and the lion standing by the corpse: the lion did not eat of the dead body, nor hurt the ass."
+          "text": "and he was gone, he found his dead body cast forth in the way, and the ass and the lion standing by the corpse: the lion <na>(d)</na> did not eat of the dead body, nor hurt the ass.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "By this it appeareth to be God's work and punishment."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -2083,19 +2366,19 @@
           "verse": 34,
           "text": "And for this cause did the house of Jeroboam sin, and was overthrown, and destroyed from the face of the earth."
         }
-      ]
+      ],
+      "summary": "A Prophet sent from Juda to Bethel foretelleth the birth of Josias, and destruction of Jeroboam's altar, 4. whose hand being suddenly withered, 6. is restored by the Prophet's prayer. 11. The same Prophet is deceived by another Prophet, and slain by a lion. 33. Jeroboam proceedeth in impiety."
     },
     {
       "chapter": 14,
-      "summary": "Ahias the Prophet foresheweth the ruin of Hieroboam's family: ℣.12 namely the death of his son, for whom being sick, the mother consulteth the Prophet. ℣.20 Hieroboam dieth, and his son Nadab reigneth. ℣.21 Some also of the people of Juda committing idolatry and other sins, ℣.25 the king of Ægypt invadeth and sacketh Hierusalem. ℣.31 Roboam dieth and his son Abias reigneth.",
       "verses": [
         {
           "verse": 1,
-          "text": "At that time Abia the son of Jeroboam was sick. Arise, and change thy habit, that thou be"
+          "text": "At that time Abia the son of Jeroboam was sick."
         },
         {
           "verse": 2,
-          "text": "And Jeroboam said to his wife: not known to be the wife of Jeroboam, & go into Silo, where Ahias the Prophet is, which spake to me, that I should reign over this people."
+          "text": "And Jeroboam said to his wife: Arise, and change thy habit, that thou be not known to be the wife of Jeroboam, & go into Silo, where Ahias the Prophet is, which spake to me, that I should reign over this people."
         },
         {
           "verse": 3,
@@ -2111,7 +2394,7 @@
         },
         {
           "verse": 6,
-          "text": "Ahias heard the sound of her feet entering in at the door, and said: Come in Jeroboam's wife: Why doest thou feign thy self to be an other woman? But I am sent to thee a heavy messenger."
+          "text": "Ahias heard the sound of her feet entering in at the door, and said: Come in Jeroboam's wife: Why doest thou feign thyself to be another woman? But I am sent to thee a heavy messenger."
         },
         {
           "verse": 7,
@@ -2123,7 +2406,13 @@
         },
         {
           "verse": 9,
-          "text": "but has wrought evil above all, that have been before thee, and hast made thee strange and molten gods, that thou mightest provoke me to anger, and hast rejected me behind thy back:"
+          "text": "but has wrought evil above all, that have been before thee, and hast made thee strange and molten gods, <na>(a)</na> that thou mightest provoke me to anger, and hast rejected me behind thy back:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Jeroboam did not wittingly and of purpose set up false gods, to the end he might provoke God to anger: for his intention only was to keep the people from going to Jerusalem, lest by that occasion they should return to Roboam their lord, King of Juda. ch. 12. v. 27. But by setting up idols he did provoke God consequently to anger. So here and in other places this phrase: that he might provoke: that it might be fulfilled , and the like, signifieth not the final cause, but the sequel of other facts, without direct intention."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -2187,11 +2476,11 @@
         },
         {
           "verse": 25,
-          "text": "And in the fifth year of the reign of Roboam, Sesac the king of Ægypt came up into Jerusalem,"
+          "text": "And in the fifth year of the reign of Roboam, Sesac the king of Aegypt came up into Jerusalem,"
         },
         {
           "verse": 26,
-          "text": "and took the treasures of the house of our Lord, and the king's treasures, and all things he spoiled: the shields also of gold, which Salomon had made:"
+          "text": "and took the treasures of the house of our Lord, and the kings' treasures, and all things he spoiled: the shields also of gold, which Salomon had made:"
         },
         {
           "verse": 27,
@@ -2211,13 +2500,13 @@
         },
         {
           "verse": 31,
-          "text": "And Roboam slept with his fathers, and was buried with them in the city of David: and his mother's name was Naama an Ammonite: and Abias his son reigned for him."
+          "text": "And Roboam slept with his fathers, and was buried with them in the city of David: and his mother's name was Naama an Ammonite: and Abias his son reigned for"
         }
-      ]
+      ],
+      "summary": "Ahias the Prophet foresheweth the ruin of Hieroboam's family: 12. namely the death of his son, for whom being sick, the mother consulteth the Prophet. 20. Hieroboam dieth, and his son Nadab reigneth. 21. Some also of the people of Juda committing idolatry and other sins, 25. the king of Aegypt invadeth and sacketh Hierusalem. 31. Roboam dieth and his son Abias reigneth."
     },
     {
       "chapter": 15,
-      "summary": "Abias reigneth wickedly in Juda three years. ℣.8 After him his son Asa succeeding destroyeth idolatry, reigning forty one years. ℣.16 Who having wars with the king of Israel, maketh league with the king of Syria. ℣.24 Asa dying Josaphat succeedeth. ℣.25 Nadab reigneth wickedly two years in Israel, is then slain by Baasa of the tribe of Issachar, ℣.29 and his whole family is destroyed. ℣.33 Baasa also reigneth wickedly twenty four years.",
       "verses": [
         {
           "verse": 1,
@@ -2237,7 +2526,13 @@
         },
         {
           "verse": 5,
-          "text": "because David had done right in the eyes of our Lord, & had not declined from all things, which he commanded him, all the days of his life, except the matter of Urias the Hethite."
+          "text": "<na>(a)</na> because David had done right in the eyes of our Lord, & had not declined from all things, which he commanded him, all the days of his life, except the matter of Urias the Hetheite.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "David's posterity conserved for his sake."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -2273,7 +2568,13 @@
         },
         {
           "verse": 14,
-          "text": "but the excelses he did not take away. Otherwise the heart of Asa was perfect with our Lord all his days:"
+          "text": "but <na>(b)</na> the excelses he did not take away. Otherwise the heart of Asa was perfect with our Lord all his days:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Those altars which Salomon for his wives that were idolaters Asa destroyed not, but all which Roboam, and Abias had made, or suffered to be made for their own people, he pulled down. Josias afterward destroyed also those which Salomon had made. 2. Paral."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -2317,7 +2618,7 @@
         },
         {
           "verse": 25,
-          "text": "But Nadab the son of Jeroboam reigned over Israel the second year of Asa the King of Juda: and he reigned over Israel two years."
+          "text": "But Nadab the son of Jeroboam reigned over Israel the second year of Asa the king of Juda: and he reigned over Israel two years."
         },
         {
           "verse": 26,
@@ -2325,15 +2626,21 @@
         },
         {
           "verse": 27,
-          "text": "And Baasa the son of Ahias of the house of Issachar, lay in wait against him, & struck him in Gebbethon, which is a city of the Philisthiims: for Nadab &all Israel besieged Gebbethon."
+          "text": "And Baasa the son of Ahias of the house of Issachar, lay in wait against him, & struck him in Gebbethon, which is a city of the Philisthiims: for Nadab & all Israel besieged Gebbethon."
         },
         {
           "verse": 28,
-          "text": "Baasa therefore slew him in the third year of Asa the King of Juda, and reigned for him."
+          "text": "Baasa therefore slew him in the third year of Asa the king of Juda, and reigned for him."
         },
         {
           "verse": 29,
-          "text": "And when he reigned, he struck all the house of Jeroboam: he left not so much as one soul of his seed, till he destroyed him according to the word of our Lord, which he had spoken in the hand of Ahias the Silonite,"
+          "text": "And when he reigned, he struck <na>(c)</na> all the house of Jeroboam: he left not so much as one soul of his seed, till he destroyed him according to the word of our Lord, which he had spoken in the hand of Ahias the Silonite,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The author of schism punished in his posterity."
+            }
+          ]
         },
         {
           "verse": 30,
@@ -2345,21 +2652,21 @@
         },
         {
           "verse": 32,
-          "text": "And there was war between Asa and Baasa the King of Israel all their days."
+          "text": "And there was war between Asa and Baasa the king of Israel all their days."
         },
         {
           "verse": 33,
-          "text": "In the third year of Asa the King of Juda, reigned Baasa the son of Ahias over all Israel in Thersa four & twenty years."
+          "text": "In the third year of Asa the king of Juda, reigned Baasa the son of Ahias over all Israel in Thersa four & twenty years."
         },
         {
           "verse": 34,
           "text": "And he did evil before our Lord, and walked in the ways of Jeroboam, and in his sins, wherewith he made Israel to sin."
         }
-      ]
+      ],
+      "summary": "Abias reigneth wickedly in Juda three years. 8. After him his son Asa succeeding destroyeth idolatry, reigning forty one years. 16. Who having wars with the king of Israel, maketh league with the king of Syria. 24. Asa dying Josaphat succeedeth. 25. Nadab reigneth wickedly two years in Israel, is then slain by Baasa of the tribe of Issachar, 29. and his whole family is destroyed. 33. Baasa also reigneth wickedly twenty four years."
     },
     {
       "chapter": 16,
-      "summary": "Jehu for prophesying the destruction of Baasa and his house, ℣.7 is slain. ℣.8 Yet his son Ela reigneth two years. ℣.9 Then Zambri rebelleth, killeth Ela, and reigneth. ℣.16 Part of the people choosing Amri (Prince of the army) their king, ℣.18 Zambri desperately burneth himself and the king's palace. ℣.21 An other part follow Thebni as king till his death. ℣.23 Amri reigneth twelve years wickedly. ℣.29 His son Achab succeedeth, marrieth Jezabel, and serveth Baal. ℣.34 In the mean time Hiel repaireth Jericho.",
       "verses": [
         {
           "verse": 1,
@@ -2391,7 +2698,7 @@
         },
         {
           "verse": 8,
-          "text": "In the six and twentieth year of Asa the King of Juda, reigned Ela the son of Baasa over Israel in Thersa two years."
+          "text": "In the six and twentieth year of Asa the king of Juda, reigned Ela the son of Baasa over Israel in Thersa two years."
         },
         {
           "verse": 9,
@@ -2399,7 +2706,7 @@
         },
         {
           "verse": 10,
-          "text": "Zambri therefore rushing in, struck and slew him in the seven & twentieth year of Asa the King of Juda, and he reigned for him."
+          "text": "Zambri therefore rushing in, struck and slew him in the seven & twentieth year of Asa the king of Juda, and he reigned for him."
         },
         {
           "verse": 11,
@@ -2423,7 +2730,13 @@
         },
         {
           "verse": 16,
-          "text": "And when they heard that Zambri had rebelled, and slain the king, all Israel made Amri their king, who was General of the warfare over Israel that day, in the camp."
+          "text": "And when they heard that Zambri had rebelled, and slain the king, <na>(a)</na> all Israel made Amri their king, who was General of the warfare over Israel that day, in the camp.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "All those that were in the camp chose their General to be their King, and prevailed therein, though another half of Israel chose & followed another for a time."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -2451,7 +2764,13 @@
         },
         {
           "verse": 23,
-          "text": "In the one and thirtieth year of Asa the king of Juda Amri reigned over Israel, twelve years: in Thersa he reigned six years."
+          "text": "In <na>(b)</na> the one and thirtieth year of Asa the king of Juda^ Amri reigned over Israel, twelve years: in Thersa he reigned six years.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Thebni being then dead he reigned peaceably, for he began his reign the 17. year of Asa. v. 15. & 16. and reigned in all 12. years."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -2495,13 +2814,24 @@
         },
         {
           "verse": 34,
-          "text": "In his days Hiel of Bethel built Jericho: in Abiram his first born he founded it, and in Segub his last he set up the gates thereof: according to the word of our Lord, which he spake in the hand of Josue the son of Nun."
+          "text": "In his days Hiel of Bethel built Jericho: <na>(c)</na> in Abiram his first born he founded it, and in Segub his last he set up the gates thereof: according to the word of our Lord, which he spake in the hand of Josue the son of Nun. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Iosue. 6."
+            }
+          ],
+          "notes": [
+            {
+              "label": "c",
+              "text": "When Hiel began to build Jericho, his eldest son died, so the rest successively, that the last died when he finished the building: because God by the mouth of Josue had forbid the building thereof."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Jehu for prophesying the destruction of Baasa and his house, 7. is slain. 8. Yet his son Ela reigneth two years. 9. Then Zambri rebelleth, killeth Ela, and reigneth. 16. Part of the people choosing Amri (Prince of the army) their king, 18. Zambri desperately burneth himself and the king's palace. 21. Another part follow Thebni as king till his death. 23. Amri reigneth twelve years wickedly. 29. His son Achab succeedeth, marrieth Jezabel, and serveth Baal. 34. In the mean time Hiel repaireth Jericho."
     },
     {
       "chapter": 17,
-      "summary": "Elias by his prayer shutteth the heaven from raining. ℣.2 Is fed by a crow, ℣.8 and by a widow of Sareptha. ℣.13 Whose pot of meal, and barrel of oil diminisheth not. ℣.17 Her son dieth, and is raised to life.",
       "verses": [
         {
           "verse": 1,
@@ -2529,7 +2859,12 @@
         },
         {
           "verse": 7,
-          "text": "But after certain days the torrent was dried: for it had not rained upon the earth."
+          "text": "<cr>[1]</cr> But after certain days the torrent was dried: for it had not rained upon the earth.",
+          "cross_refs": [
+            {
+              "text": "The Epistle on Tuesday in the 2. week of Lent."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -2549,11 +2884,16 @@
         },
         {
           "verse": 12,
-          "text": "who answered: Our Lord thy God liveth, I have no bread, but so much meal in a pot as a hand can hold, and a little oil in a vessel: behold I gather two sticks, that I may go in, and dress it for me & my son, that we may eat, and die."
+          "text": "who answered: Our Lord thy God liveth, I have no bread, but so much meal in a pot as a hand can hold, and a little oil in a vessel: <cr>[1]</cr> behold I gather two sticks, that I may go in, and dress it for me & my son, that we may eat, and die.",
+          "cross_refs": [
+            {
+              "text": "The Epistle on Friday in the 4. week of Lent."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "To whom Elias said: fear not, but go, and do as thou hast said: but first make for me of the same meal a little hearth cake, & bring it to me: & for thy self & thy son thou shalt make afterward."
+          "text": "To whom Elias said: fear not, but go, and do as thou hast said: but first make for me of the same meal a little hearth cake, & bring it to me: & for thyself & thy son thou shalt make afterward."
         },
         {
           "verse": 14,
@@ -2581,7 +2921,13 @@
         },
         {
           "verse": 20,
-          "text": "And he cried to our Lord, and said: O Lord my God, what, the widow also with whom I am after a sort sustained, hast thou afflicted, that thou wouldest kill her son?"
+          "text": "And he cried to our Lord, and said: O Lord my God, <na>(a)</na> what, the widow also with whom I am after a sort sustained, hast thou afflicted, that thou wouldest kill her son?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "To this question (saith S. Augustin) the Prophet answered in spirit: No. For God killed not this child to afflict so good a mother, but to confirm her in true religion & comfort her by raising him from death. So Lazarus died not to remain dead, but to be raised to life, for God's more glory. Ioan. 11. v. 4. S. Aug. li. 2. q. 5. ad Simplicia."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -2599,15 +2945,15 @@
           "verse": 24,
           "text": "And the woman said to Elias: Now, in this I have known that thou art a man of God, and the word of our Lord in thy mouth is true."
         }
-      ]
+      ],
+      "summary": "Elias by his prayer shutteth the heaven from raining. 2. Is fed by a crow, 8. and by a widow of Sareptha. 13. Whose pot of meal, and barrel of oil diminisheth not. 17. Her son dieth, and is raised to life."
     },
     {
       "chapter": 18,
-      "summary": "The third year of famine, Elias meeting the chief governor of Achab's house, hardly persuadeth him to tell Achab, that he is present. ℣.17 Achab blameth Elias; but Elias freely avoucheth that not he, but Achab troubleth Israel. ℣.19 By a miracle four hundred and fifty false prophets are convinced, ℣.40 and are slain. ℣.41 Elias prayeth and it raineth.",
       "verses": [
         {
           "verse": 1,
-          "text": "After many days the word of our Lord came to Elias, the third year, saying: Go, and shew thy self to Achab, that I may give rain upon the face of the earth."
+          "text": "After many days the word of our Lord came to Elias, the third year, saying: Go, and shew thyself to Achab, that I may give rain upon the face of the earth."
         },
         {
           "verse": 2,
@@ -2619,7 +2965,7 @@
         },
         {
           "verse": 4,
-          "text": "For when Jezabel killed the Prophets, of our Lord, he took an hundred Prophets, and hid them by fifty and fifty in caves, and fed them with bread and water."
+          "text": "For when Jezabel killed the Prophets of our Lord, he took an hundred Prophets, and hid them by fifty and fifty in caves, and fed them with bread and water."
         },
         {
           "verse": 5,
@@ -2627,11 +2973,17 @@
         },
         {
           "verse": 6,
-          "text": "And they divided the countries between them, that they might go circuit about them: Achab went one way, and Abdias an other way severally."
+          "text": "And they divided the countries between them, that they might go circuit about them: Achab went one way, and Abdias another way severally."
         },
         {
           "verse": 7,
-          "text": "And when Abdias was in the way, Elias met him: who when he knew him, fell on his face, and said: My lord, art not thou Elias?"
+          "text": "And when Abdias was in the way, Elias met him: who when he knew him, <na>(a)</na> fell on his face, and said: My lord, art not thou Elias?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Abdias adored Elias as the Prophet of God, and a holy man, not with civil honour, for in the world Abdias was the greater person, nor with divine honour, for that had been idolatry. It was therefore religious honour, called dulia , due to spiritual excellency of God's servants."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -2687,7 +3039,13 @@
         },
         {
           "verse": 21,
-          "text": "And Elias coming to all the people, said: How long halt you on two sides? If our Lord be God, follow him: but if Baal, follow him. And the people did not answer him a word."
+          "text": "And Elias coming to all the people, said: <na>(b)</na> How long halt you on two sides? If our Lord be God, follow him: but if Baal, follow him. And the people did not answer him a word.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Such zealous expostulation is necessary to all Neutrals in religion who are neither hot nor cold, but lukewarm , such as Angels detest Apoc. 3."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -2751,7 +3109,13 @@
         },
         {
           "verse": 37,
-          "text": "Hear me Lord, hear me that this people may learn, that thou art our Lord God, and thou hast converted their heart again."
+          "text": "Hear me Lord, hear me <na>(c)</na> that this people may learn, that thou art our Lord God, and thou hast converted their heart again.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "When miracles are attempted for trial of the truth, the devil's power is restrained, & only the truth is testified: Our Lord working withal, & confirming the doctrine with signs following. Marc. ult."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -2775,7 +3139,7 @@
         },
         {
           "verse": 43,
-          "text": "and he said to his servant: Go up, and look toward the sea. Who when he was gone up, and had looked, he said: There is nothing. And again he said to him: Return seven times"
+          "text": "and he said to his servant: Go up, and look toward the sea. Who when he was gone up, and had looked, he said: There is nothing. And again he said to him: Return seven times."
         },
         {
           "verse": 44,
@@ -2789,11 +3153,11 @@
           "verse": 46,
           "text": "and the hand of our Lord was made upon Elias, and his loins girded he ran before Achab, until he came into Jezrahel."
         }
-      ]
+      ],
+      "summary": "The third year of famine, Elias meeting the chief governor of Achab's house, hardly persuadeth him to tell Achab, that he is present. 17. Achab blameth Elias; but Elias freely avoucheth that not he, but Achab troubleth Israel. 19. By a miracle four hundred and fifty false prophets are convinced, 40. and are slain. 41. Elias prayeth and it raineth."
     },
     {
       "chapter": 19,
-      "summary": "Elias flying Jezabel, in the desert eateth a hearth cake and drinketh water, brought by an Angel, and so goeth forty days and nights unto mount Horeb. ℣.9 Lamenting that he alone is left of the Prophets of God, ℣.15 God commandeth him to return to Damascus, and anoint Hazael king of Syria, Jehu king of Israel, and Eliseus a Prophet: ℣.18 and telleth him, there remain seven thousand in Israel, which have not bowed to Baal.",
       "verses": [
         {
           "verse": 1,
@@ -2801,7 +3165,7 @@
         },
         {
           "verse": 2,
-          "text": "And Jezabel sent a message to Elias, saying: These things do the gods to me, and these add they, if this hour to morrow I make not thy soul as the soul of one of them."
+          "text": "And Jezabel sent a message to Elias, saying: These things do the gods to me, and these add they, if this hour tomorrow I make not thy soul as the soul of one of them."
         },
         {
           "verse": 3,
@@ -2809,7 +3173,7 @@
         },
         {
           "verse": 4,
-          "text": "and went forward into the desert, one day's journey. And when he was come, and sat unto a juniper tree, he desired for his soul to die, and said: It sufficeth me Lord, take my soul: for I am not better than my fathers."
+          "text": "and went forward into the desert, one day's journey. And when he was come, and sat under a juniper tree, he desired for his soul to die, and said: It sufficeth me Lord, take my soul: for I am not better than my fathers."
         },
         {
           "verse": 5,
@@ -2833,7 +3197,13 @@
         },
         {
           "verse": 10,
-          "text": "But he answered: With zeal have I been zealous for our Lord the God of hosts, because the children of Israel have forsaken thy covenant: thy altars have they destroyed, and thy Prophets they have slain with the sword, and I alone am left, and they seek my life to take it away."
+          "text": "But he answered: With zeal have I been zealous for our Lord the God of hosts, because the children of Israel have forsaken thy covenant: thy altars have they destroyed, and thy Prophets they have slain with the sword, and <na>(a)</na> I alone am left, and they seek my life to take it away.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Elias knew no other at that instant in the ten tribes, that were not partakers in idolatry; but there were indeed seven thousand (v. 18.) that bowed not their knees to Baal. And the whole Kingdom of Juda observed true religion, where Asa then reigned, and after him Josaphat: both good Kings, chap. 15. v. 11. 22. v. 43. 2. Par. 15. &, 17."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -2853,7 +3223,13 @@
         },
         {
           "verse": 15,
-          "text": "And our Lord said to him: Go, and return into thy way by the desert of Damascus: and when thou art come thither thou shalt anoint Hazael king over Syria,"
+          "text": "And our Lord said to him: Go, and return into thy way by the desert of Damascus: and when thou art come thither thou <na>(b)</na> shalt anoint Hazael king over Syria,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Elias prophesied that these two should be Kings, and cast his cloak over Elizeus. v. 19 Elizeus declared to Hazael that he should be King, 4. Reg. 8. another Prophet anointed Jehu, 4. Reg. 9."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -2879,11 +3255,11 @@
           "verse": 21,
           "text": "And returning from him, he took a yoke of oxen, and killed them, and sod the flesh with the plough of the oxen, and gave to the people, and they did eat: and rising up he departed, and followed Elias, and ministered to him."
         }
-      ]
+      ],
+      "summary": "Elias flying Jezabel, in the desert eateth a hearth cake and drinketh water, brought by an Angel, and so goeth forty days and nights unto mount Horeb. 9. Lamenting that he alone is left of the Prophets of God, 15. God commandeth him to return to Damascus, and anoint Hazael king of Syria, Jehu king of Israel, and Eliseus a Prophet: 18. and telleth him, there remain seven thousand in Israel, which have not bowed to Baal."
     },
     {
       "chapter": 20,
-      "summary": "The Syrians threatening and besieging Samaria, ℣.13 God signifieth by a Prophet to Achab, that he shall have the victory, ℣.20 which he obtaineth: ℣.23 Also the second year fighting in the champion. ℣.31 But saving the king of Syrian's life, and making league with him, ℣.35 one of the children of the Prophets being slain, for not striking when he was so commanded, ℣.37 an other denounceth revenge to Achab; for not killing the Syrian king.",
       "verses": [
         {
           "verse": 1,
@@ -2907,11 +3283,11 @@
         },
         {
           "verse": 6,
-          "text": "To morrow therefore this very hour I will send my servants to thee, and they shall search thy house, and the house of thy servants: and all that pleaseth them, they shall put in their hands, and take away."
+          "text": "Tomorrow therefore this very hour I will send my servants to thee, and they shall search thy house, and the house of thy servants: and all that pleaseth them, they shall put in their hands, and take away."
         },
         {
           "verse": 7,
-          "text": "And the king of Israel called all the ancients of the land, and said: Mark, and see that he seeketh to intrap us. For he sent to me for my wives, and children, and for the silver and gold: and I said not nay."
+          "text": "And the king of Israel called all the ancients of the land, and said: Mark, and see that he seeketh to entrap us. For he sent to me for my wives, and children, and for the silver and gold: and I said not nay."
         },
         {
           "verse": 8,
@@ -2919,7 +3295,7 @@
         },
         {
           "verse": 9,
-          "text": "He therefore answered the messengers of Benadad: Tell my lord the king: All things for the which thou didst send to me thy servant in the beginning I will do: but this thing I can not do."
+          "text": "He therefore answered the messengers of Benadad: Tell my lord the king: All things for the which thou didst send to me thy servant in the beginning I will do: but this thing I cannot do."
         },
         {
           "verse": 10,
@@ -2927,7 +3303,13 @@
         },
         {
           "verse": 11,
-          "text": "And the king of Israel answering, said: Tell him Let not the girded glory as the ungirded."
+          "text": "And the king of Israel answering, said: Tell him <na>(a)</na> Let not the girded glory as the ungirded.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Not at the putting on of armour, is time to boast of victory, but rather at putting it off. Those that are girded & strongly armed do unwisely in trusting their own strength, & contemning their adversaries: for by so doing they are often overthrown. And those that distrusting themselves trust in God, one way or other always prevail. A necessary lesson, both in temporal and spiritual warfare."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -2935,7 +3317,7 @@
         },
         {
           "verse": 13,
-          "text": "And behold a Prophet coming to Achab the king of Israel, said to him: Thus saith our Lord, Hast thou in deed seen all this exceeding great multitude? Behold, I will deliver them into thy hand this day: that thou mayst know, that I am the Lord."
+          "text": "And behold a Prophet coming to Achab the king of Israel, said to him: Thus saith our Lord, Hast thou indeed seen all this exceeding great multitude? Behold, I will deliver them into thy hand this day: that thou mayst know, that I am the Lord."
         },
         {
           "verse": 14,
@@ -2995,7 +3377,13 @@
         },
         {
           "verse": 28,
-          "text": "(And a man of God coming, said to the king of Israel: Thus saith our Lord: Because the Syrians have said: The Lord is God of the mountains, and is not God of the Valleys, I will give all this great multitude into thy hand, and you shall know that I am the Lord.)"
+          "text": "(And a man of God coming, said to the king of Israel: Thus saith our Lord: Because the Syrians have said: The Lord is God of the mountains, and is not God of the Valleys, I will give all this great multitude into thy hand, and <na>(b)</na> you shall know that I am the Lord.)",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Many victories and other benefits were bestowed upon Achab, to make him know God: but he contemning them all remained in his impiety, and finally was slain ch. 22. v. 38."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -3007,7 +3395,7 @@
         },
         {
           "verse": 31,
-          "text": "and his servants said to him: Behold, we have heard that the kings of the house of Israel are merciful: Let us therefore put sackcloths on our loins, and cords on our heads, and go forth to the king of Israel: perhaps he will save our lives"
+          "text": "and his servants said to him: Behold, we have heard that the kings of the house of Israel are merciful: Let us therefore put sackcloths on our loins, and cords on our heads, and go forth to the king of Israel: perhaps he will save our lives."
         },
         {
           "verse": 32,
@@ -3031,7 +3419,7 @@
         },
         {
           "verse": 37,
-          "text": "But finding also an other man, he said to him: Strike me. Who struck him, and wounded him."
+          "text": "But finding also another man, he said to him: Strike me. Who struck him, and wounded him."
         },
         {
           "verse": 38,
@@ -3043,7 +3431,7 @@
         },
         {
           "verse": 40,
-          "text": "And whilst I being troubled turned hither and thither, suddenly he appeared not. And the king of Israel said to him: This is thy judgment, which thy self hast decreed."
+          "text": "And whilst I being troubled turned hither and thither, suddenly he appeared not. And the king of Israel said to him: This is thy judgment, which thyself hast decreed."
         },
         {
           "verse": 41,
@@ -3051,17 +3439,23 @@
         },
         {
           "verse": 42,
-          "text": "Who said to him: Thus saith our Lord Because thou hast let go out of thy hand a man worthy to die, thy life shall be for his life, and thy people for his people."
+          "text": "Who said to him: Thus saith our Lord: <na>(c)</na> Because thou hast let go out of thy hand a man worthy to die, thy life shall be for his life, and thy people for his people.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Foolish pity in sparing a dangerous and common enemy is offensive to God, & severely punished by his justice."
+            }
+          ]
         },
         {
           "verse": 43,
           "text": "The king of Israel therefore returned into his house, contemning to hear, & raging came into Samaria."
         }
-      ]
+      ],
+      "summary": "The Syrians threatening and besieging Samaria, 13. God signifieth by a Prophet to Achab, that he shall have the victory, 20. which he obtaineth: 23. Also the second year fighting in the champion. 31. But saving the king of Syrian's life, and making league with him, 35. one of the children of the Prophets being slain, for not striking when he was so commanded, 37. another denounceth revenge to Achab; for not killing the Syrian king."
     },
     {
       "chapter": 21,
-      "summary": "Naboth for denying his vineyard to king Achab, is by queen Jezabel's commandment falsely accused, and stoned to death. ℣.10 Achab hastening to possess the vineyard, Elias the Prophet threateneth him many evils, ℣.23 and no less to Jezabel: both being obstinate in sin. ℣.27 Yet Achab for fear of punishment, doth external works of penance, and thereby escapeth part of the temporal plagues.",
       "verses": [
         {
           "verse": 1,
@@ -3069,7 +3463,13 @@
         },
         {
           "verse": 2,
-          "text": "Achab therefore spake to Naboth, saying: Give me thy vineyard, that I may make me a garden of herbs, because it is nigh, and joining to my house, and I will give thee for it a better vineyard: or if thou think it more commodious for thee, the price of silver, so much as it is worth."
+          "text": "Achab therefore spake to Naboth, saying: Give me thy vineyard, that I may make me a garden of herbs, because it is nigh, and joining to my house, and <na>(a)</na> I will give thee for it a better vineyard: or if thou think it more commodious for thee, the price of silver, so much as it is worth.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "If no subject were lord of any land, but only at the King's pleasure & Kings were proper lords of all the lands in their Kingdoms, then Achab might have taken Naboth's vineyard; especially giving him a better, or money for it. Neither was it a vain scruple in Naboth, to conserve his ancester's inheritance. For both his denial is here justified, and Achab's extortion condemned. S. Ambrose li. 2. offic. c. 9. counteth Naboth a Martyr, See Annot. 1. Reg. 8."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -3077,7 +3477,7 @@
         },
         {
           "verse": 4,
-          "text": "Achab therefore came into his house with indignation and fretting upon the word that Naboth the Jezrahelite had spoken to him, saying: I will not give thee the inheritance of my fathers. And casting himself upon his bed, he turned away his face to the wall, and did not eat bread."
+          "text": "Achab therefore came into his house with indignation, and fretting upon the word that Naboth the Jezrahelite had spoken to him, saying: I will not give thee the inheritance of my fathers. And casting himself upon his bed, he turned away his face to the wall, and did not eat bread."
         },
         {
           "verse": 5,
@@ -3101,7 +3501,13 @@
         },
         {
           "verse": 10,
-          "text": "and suborn two men the children of Belial against him, and let them bear false testimony: that he hath blessed God and the king: and bring him forth, and stone him, and so let him die."
+          "text": "and suborn two men the children of Belial against him, and let them bear false testimony: that he hath <na>(b)</na> blessed God and the king: and bring him forth, and stone him, and so let him die.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "To avoid horror of blasphemy holy scripture often useth the term blessing for cursing."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -3137,7 +3543,12 @@
         },
         {
           "verse": 19,
-          "text": "and thou shalt speak to him, saying: Thus saith our Lord: Thou hast slain, moreover also thou hast possest. And after these words thou shalt add: Thus saith our Lord: In this place, wherein the dogs have licked the blood of Naboth, they shall lick thy blood also."
+          "text": "and thou shalt speak to him, saying: Thus saith our Lord: Thou hast slain, moreover also thou hast possest. And after these words thou shalt add: Thus saith our Lord: In this place, wherein the dogs have licked the blood of Naboth, they <cr>[1]</cr> shall lick thy blood also.",
+          "cross_refs": [
+            {
+              "text": "* chap. 22. v. 38."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -3161,11 +3572,17 @@
         },
         {
           "verse": 25,
-          "text": "Therefore there was not such an other as Achab, who was sold to do evil in the sight of our Lord: for his wife Jezabel set him on,"
+          "text": "Therefore there was not such another as Achab, who <na>(c)</na> was sold to do evil in the sight of our Lord: for his wife Jezabel set him on,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "So addicted to wickedness, as if he had sold himself to the devil for some temporal profit, or pleasure: In your iniquities you are sold. Isaiae 50. S. Aug. q. 102. c. utro. test. S. Greg. ho. 10. in Ezech."
+            }
+          ]
         },
         {
           "verse": 26,
-          "text": "and he became abominable, in so much that he followed the idols, which the Amorrhites had made, whom our Lord consumed before the face of the children of Israel."
+          "text": "and he became abominable, in so much that he followed the idols, which the Amorrheites had made, whom our Lord consumed before the face of the children of Israel."
         },
         {
           "verse": 27,
@@ -3179,19 +3596,19 @@
           "verse": 29,
           "text": "Hast thou not seen Achab humbled before me? Therefore, because he hath humbled himself for my sake, I will not bring in the evil in his days, but in his son's days will I bring the evil upon his house."
         }
-      ]
+      ],
+      "summary": "Naboth for denying his vineyard to king Achab, is by queen Jezabel's commandment falsely accused, and stoned to death. 10. Achab hastening to possess the vineyard, Elias the Prophet threateneth him many evils, 23. and no less to Jezabel: both being obstinate in sin. 27. Yet Achab for fear of punishment, doth external works of penance, and thereby escapeth part of the temporal plagues."
     },
     {
       "chapter": 22,
-      "summary": "Achab king of Israel consulting and believing false Prophets rather than Micheas a true Prophet, accompanied with Josaphat king of Juda, resolveth to fight against the Syrians for Ramoth Galaad. ℣.26 Committeth Micheas to prison, ℣.29 proceedeth to the war, ℣.34 is slain, and Ochozias succeedeth. ℣.41 Josaphat refuseth to traffic longer with Ochozias, dieth, & his son Joram reigneth. ℣.52 Ochozias followeth the evil steps of his parent.",
       "verses": [
         {
           "verse": 1,
-          "text": "There passed therefore three years without war between Syria and Israel. third year, Josaphat the king of Juda went"
+          "text": "There passed therefore three years without war between Syria and Israel."
         },
         {
           "verse": 2,
-          "text": "And in the down to the king of Israel."
+          "text": "And in the third year, Josaphat the king of Juda went down to the king of Israel."
         },
         {
           "verse": 3,
@@ -3211,7 +3628,13 @@
         },
         {
           "verse": 7,
-          "text": "And Josaphat said: Is there not here some prophet of our Lord, that we may ask by him?"
+          "text": "And Josaphat said: <na>(a)</na> Is there not here some prophet of our Lord, that we may ask by him?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The godly King Josaphat justly suspecting the schismatical false Prophets, advised the other King to consult a true Prophet of God."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -3227,11 +3650,17 @@
         },
         {
           "verse": 11,
-          "text": "And Sedecias the son of Chanaana made himself horns of iron, and said: Thus saith our Lord: With these shalt thou strike Syria, till thou destroy it."
+          "text": "And Sedecias the son of Chanaana made himself <na>(b)</na> horns of iron, and said: Thus saith our Lord: With these shalt thou strike Syria, till thou destroy it.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "False Prophets imitate true Prophets in some exterior things, to make their Prophecies seem more authentical. Such horns appeared in a prophetical vision to Zachary the Prophet. Zach. 1. v. 18."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "And all the prophets in like manner prophesied, saying: Ascend into Ramoth Galaad, and go prosperously, & our Lord will deliver into the king's hands."
+          "text": "And all the prophets in like manner prophesied, saying: Ascend into Ramoth Galaad, and go prosperously, & our Lord will deliver it into the king's hands."
         },
         {
           "verse": 13,
@@ -3243,7 +3672,13 @@
         },
         {
           "verse": 15,
-          "text": "He therefore came to the king, and the king, said to him: Micheas, shall we go into Ramoth Galaad to fight, or sit still? To whom he answered: Ascend, and go prosperously, and our Lord will deliver it into the king's hands."
+          "text": "He therefore came to the king, and the king said to him: Micheas, shall we go into Ramoth Galaad to fight, or sit still? To whom he answered: <na>(c)</na> Ascend, and go prosperously, and our Lord will deliver it into the king's hands.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The Prophet giveth not this for a resolute answer, but seeing the King will go, he prayeth he may go prosperously. And the King conceiveth no otherwise of his answer, and therefore urgeth him to answer resolutely in the next words: I adjure thee &c."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -3263,7 +3698,7 @@
         },
         {
           "verse": 20,
-          "text": "and our Lord said: Who shall deceive Achab the king of Israel, that he may go up, and fall in Ramoth Galaad? And one saith these manner of words, and an other otherwise."
+          "text": "and our Lord said: Who shall deceive Achab the king of Israel, that he may go up, and fall in Ramoth Galaad? And one saith these manner of words, and another otherwise."
         },
         {
           "verse": 21,
@@ -3271,7 +3706,13 @@
         },
         {
           "verse": 22,
-          "text": "And he said: I will go forth, and be a lying spirit in the mouth of all his prophets. And our Lord said: Thou shalt deceive, and shalt prevail: go forth, and do so."
+          "text": "And he said: I will go forth, and be a lying spirit in the mouth of all his prophets. And our Lord said: Thou shalt deceive, and shalt prevail: <na>(d)</na> go forth, and do so.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "The coherence of the text sheweth that God only permitted, but commanded not the devil to deceive Achab. So S. Augustin. li. 2. q. ult. ad Simpli. S. Greg. li. 2. c. 21. Moral. and other fathers explicate this and like places."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -3283,11 +3724,17 @@
         },
         {
           "verse": 25,
-          "text": "And Micheas said: Thou shalt see in that day, when thou shalt enter into thy chamber, within the chamber to be hid."
+          "text": "And Micheas said: Thou shalt see in that day, when thou shalt enter into thy chamber, <na>(e)</na> within the chamber to be hid.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "When this false Prophet heard that the King was slain he hid himself, fearing the King's sons, that they would kill him. Iosephus li. 8. c. 14. Antiq."
+            }
+          ]
         },
         {
           "verse": 26,
-          "text": "And the king of Israel said: Take Micheas, & let him tarry with Amon the governor of the city, and with Joab the son of Amelech,"
+          "text": "And the king of Israel said: Take Micheas, & let him tarry with Amon the governor of the city, and with Joas the son of Amelech,"
         },
         {
           "verse": 27,
@@ -3319,7 +3766,13 @@
         },
         {
           "verse": 34,
-          "text": "And a certain man bent his bow; directing the arrow at all adventure, and by chance he struck the king of Israel between the lungs and the stomach. But he said to his cochere: Turn thy hand, and carry me out of the army, because I am grievously wounded."
+          "text": "And a certain man bent his bow; directing the arrow at all adventure, and <na>(f)</na> by chance he struck the king of Israel between the lungs and the stomach. But he said to his coacher: Turn thy hand, and carry me out of the army, because I am grievously wounded.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "It happened by chance in respect of the archer's intention, but otherwise by God's providence directing his hand. So Achab's crafty persuading Josaphat to put on his kingly attire (v. 30.) himself fighting in vulgar armour, saved him not from just revenge."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -3359,7 +3812,7 @@
         },
         {
           "verse": 44,
-          "text": "But yet he took not away the excelses: for as yet the people did sacrifice, and burnt incense in the exelses."
+          "text": "But yet he took not away the excelses: for as yet the people did sacrifice, and burnt incense in the excelses."
         },
         {
           "verse": 45,
@@ -3401,7 +3854,8 @@
           "verse": 54,
           "text": "He served also Baal, and adored him, and provoked our Lord the God of Israel, according to all things which his father had done."
         }
-      ]
+      ],
+      "summary": "Achab king of Israel consulting and believing false Prophets rather than Micheas a true Prophet, accompanied with Josaphat king of Juda, resolveth to fight against the Syrians for Ramoth Galaad. 26. Committeth Micheas to prison, 29. proceedeth to the war, 34. is slain, and Ochozias succeedeth. 41. Josaphat refuseth to traffic longer with Ochozias; dieth, & his son Joram reigneth. 52. Ochozias followeth the evil steps of his parent."
     }
   ]
 }

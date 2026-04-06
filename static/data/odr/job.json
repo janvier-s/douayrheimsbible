@@ -1,15 +1,20 @@
 {
-  "book": "Job",
-  "version_abbr": "ODR",
-  "date": "1609",
+  "book": "job",
+  "book_title": null,
+  "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "Holy Job offereth sacrifice for every one of his children, ℣.6 whose good estate Satan envying, by God's permission spoileth him of all his goods, and children, ℣.20 for which he being pensive offendeth not, but thanketh God for all.",
       "verses": [
         {
           "verse": 1,
-          "text": "There was a man in the Land of Hus, named Job, and that man was simple, and right, and fearing God, and departing from evil."
+          "text": "There <cr>[1]</cr> was a man in the Land of Hus, named Job, and that man was simple, and right, and fearing God, and departing from evil.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "The first part. The change of Job's prosperous state into affliction."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -25,11 +30,18 @@
         },
         {
           "verse": 5,
-          "text": "And when the days of feasting had passed about in course, Job sent to them, and sanctified them: and rising up early offered holocausts for every one. For he said: Lest perhaps my sons have sinned, and have blessed God in their hearts. So did Job all the days."
+          "text": "And when the days of feasting had passed about in course, Job sent to them, and sanctified them: and rising up early offered holocausts for every one. For he said: Lest perhaps my sons have sinned, and have blessed God in their hearts. So did Job all the days.",
+          "has_annotation": true
         },
         {
           "verse": 6,
-          "text": "But on a certain day when the sons of God were come to assist before our Lord, Satan also was present among them."
+          "text": "But on a certain day when the sons of God were come to assist before our Lord, <na>(a)</na> Satan also was present among them.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Devils appear not in God's sight, but sometime in presence of Angels which represent God. S. Athan. q. 8. ad Antiochum."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -53,7 +65,13 @@
         },
         {
           "verse": 12,
-          "text": "Our Lord therefore said to Satan: behold, all things that he hath, are in thy hand, only upon him extend not thy hand. And Satan went forth from the face of our Lord."
+          "text": "Our Lord therefore said to Satan: <na>(b)</na> behold, all things that he hath, are in thy hand, only upon him extend not thy hand. And Satan went forth from the face of our Lord.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "God doth not directly send evils, but permitteth them to happen to his servants."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -69,15 +87,15 @@
         },
         {
           "verse": 16,
-          "text": "And when he yet spake, an other came, and said: The fire of God fell from heaven, and striking the sheep and the servants hath consumed them, and I only have escaped to tell thee."
+          "text": "And when he yet spake, another came, and said: The fire of God fell from heaven, and striking the sheep and the servants hath consumed them, and I only have escaped to tell thee."
         },
         {
           "verse": 17,
-          "text": "But whilst he also was yet speaking, there came an other and said: The Chaldees made three troops, and have invaded the camels, and taken them, moreover the servants also they have strucken with the sword, and I alone am fled to tell thee."
+          "text": "But whilst he also was yet speaking, there came another and said: The Chaldees made three troops, and have invaded the camels, and taken them, moreover the servants also they have strucken with the sword, and I alone am fled to tell thee."
         },
         {
           "verse": 18,
-          "text": "He yet spake, and behold an other came in, and said: Thy sons and daughters eating and drinking wine in the house of their eldest brother,"
+          "text": "He yet spake, and behold another came in, and said: Thy sons and daughters eating and drinking wine in the house of their eldest brother,"
         },
         {
           "verse": 19,
@@ -89,21 +107,33 @@
         },
         {
           "verse": 21,
-          "text": "and said: Naked came I out of my mother's womb, and naked shall I return thither: Our Lord gave, and our Lord hath taken away: as it hath pleased our Lord, so is it done: the name of our Lord be blessed."
+          "text": "and said: <na>(c)</na> Naked came I out of my mother's womb, and naked shall I return thither: Our Lord gave, and our Lord hath taken away: as it hath pleased our Lord, so is it done: the name of our Lord be blessed.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "By this holy example ancient fathers condemn the senseless Stoics, who are never moved. S. Aug. li. 1. c. 9. civit. S. Paul also reproveth men without affection. Rom. 1. v. 31."
+            }
+          ]
         },
         {
           "verse": 22,
           "text": "In all these things Job sinned not with his lips, neither spake he any foolish thing against God."
         }
+      ],
+      "summary": "Holy Job offereth sacrifice for every one of his children, 6. whose good estate Satan envying, by God's permission spoileth him of all his goods, and children, 20. for which he being pensive offendeth not, but thanketh God for all. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "This book is read the two first weeks of September."
+        }
       ]
     },
     {
       "chapter": 2,
-      "summary": "Satan by God's permission, ℣.7 striketh Job with sores from the sole of his foot to the top of his head. ℣.9 His wife also insulteth against him, but he sinneth not. ℣.11 Three friends coming to visit and comfort him, sit silent by him seven days.",
       "verses": [
         {
           "verse": 1,
-          "text": "And it came to pass when on a certain day the sons of God were come and stood before our Lord, and Satan came among them, and stood in his sight,"
+          "text": "And it came to pass when on a certain day the sons of God were come, and stood before our Lord, and Satan came among them, and stood in his sight,"
         },
         {
           "verse": 2,
@@ -111,7 +141,13 @@
         },
         {
           "verse": 3,
-          "text": "And our Lord, said to Satan: Hast thou considered my servant Job, that there is not the like to him in the earth, a man simple, and right, and fearing God, and departing from evil, and yet retaining innocency? But thou hast moved me against him, that I should afflict him in vain."
+          "text": "And our Lord said to Satan: Hast thou considered my servant Job, that there is not the like to him in the earth, a man <na>(a)</na> simple, and right, and fearing God, and departing from evil, and yet retaining innocency? But thou hast moved me against him, that I should afflict him in vain.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Aman of plain & true dealing mixed with meekness without all guile is called a simple right man. S. Greg. li. 1. Moral. c. 2. & 10."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -127,7 +163,24 @@
         },
         {
           "verse": 7,
-          "text": "Satan therefore going out from the face of our Lord, struck Job with a very sore boil, from the sole of the foot even to the top of his head:"
+          "text": "Satan therefore 11. Job's three friends.] For better intelligence of these conflicts between holy Job and his friends, it may here be observed, that they were indeed his friends, <cr>[1]</cr> as the text simply calleth them: that they believed rightly in God Almighty, and were not idolaters: that they came of friendly good affection to comfort him, though they fell into words of reproving him <cr>[2]</cr> (as S. Gregory teacheth:) they alleged also many excellent divine sentences very truly, which therefore Job reproved not. But they erred in their illations against Job: <cr>[3]</cr> and that of ignorance rather than of set malice, concluding that Job was guilty of some enormous sins, because they saw him so grievously punished, and heard him complain thereof; his own conscience known to him and hid to them (whereof they rashly judged) testifying that he was innocent, in respect of so great crimes. And in this their particular error, though they were not heretics, being not obstinate after that the truth was sufficiently revealed unto them, yet they prefigured heretics, <cr>[4]</cr> endeavouring by one truth",
+          "cross_refs": [
+            {
+              "text": "These visiters of Job were indeed his friends, & professed true religion."
+            },
+            {
+              "text": "li. 3. 6. 24."
+            },
+            {
+              "text": "They erred in Job's particular case."
+            },
+            {
+              "text": "And prefigured Heretics."
+            },
+            {
+              "text": "Li. 5. 18. going out from the face of our Lord, struck Job with a very sore boil, from the sole of the foot even to the top of his head:"
+            }
+          ]
         },
         {
           "verse": 8,
@@ -135,7 +188,13 @@
         },
         {
           "verse": 9,
-          "text": "And his wife said to him: Doest thou yet continue in thy simplicity? Bless God and die."
+          "text": "And <na>(b)</na> his wife said to him: Doest thou yet continue in thy simplicity? Bless God and die.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "His wife persuading him to desperation & blasphemy, signified carnal cogitations, which corrupt the soul inwardly, as afflictions do assault the flesh outwardly. S. Greg. li. 3. c. 24."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -143,7 +202,8 @@
         },
         {
           "verse": 11,
-          "text": "Therefore Job's three friends hearing all the evil, that had chanced to him, came every one out of their place, Eliphaz a Themanite, and Baldad a Suhite, and Sophar a Naamathite. For they had appointed, that coming together they would visit him, and comfort him."
+          "text": "Therefore Job's three friends hearing all the evil, that had chanced to him, came every one out of their place, Eliphaz a Themanite, and Baldad a Suhite, and Sophar a Naamathite. For they had appointed, that coming together they would visit him, and comfort him.",
+          "has_annotation": true
         },
         {
           "verse": 12,
@@ -151,25 +211,37 @@
         },
         {
           "verse": 13,
-          "text": "And they sat with him on the ground seven days and seven nights, and no man spake to him a word: for they saw the pain to be vehement."
+          "text": "And they sat with him on the ground <na>(c)</na> seven days and seven nights, and no man spake to him a word: for they saw the pain to be vehement.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Seven days together every day & night some good part."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Satan by God's permission, 7. striketh Job with sores from the sole of his foot to the top of his head. 9. His wife also insulteth against him, but he sinneth not. 11. Three friends coming to visit and comfort him, sit silent by him seven days."
     },
     {
       "chapter": 3,
-      "summary": "Job lamenteth, describing his own, and the general calamities of man, ℣.13 and shewing how they escape many miseries which either are never born, or die presently after their birth.",
       "verses": [
         {
           "verse": 1,
-          "text": "After these things Job opened his mouth, and cursed his day,"
-        },
-        {
-          "verse": 3,
-          "text": "Perish may the day wherein I was born,"
+          "text": "After these things Job opened his mouth, and <na>(a)</na> cursed his day,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "After so long silence at last Job expresseth his grief before his friends to be so great, that in respect thereof, he justly curseth all evil things as not made by God but adjoined to man's life, being the effects of sin, even from his conception and birth: wishing that whatsoever concurred to his longer afflictions in this life, and hindered his more speedy delivery from dangers and calamities had not been, for so he had been sooner at rest, as God's goodness should dispose of him. All which was a lawful desire & no sin at all. See I. Pineda in c. 2. Iob."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "and spake. & the night wherein it was said: A man is conceived."
+          "text": "and spake."
+        },
+        {
+          "verse": 3,
+          "text": "Perish may the day wherein I was born, & the night wherein it was said: A man is conceived."
         },
         {
           "verse": 4,
@@ -181,7 +253,7 @@
         },
         {
           "verse": 6,
-          "text": "A darksome hurl wind possess that night, be it not counted in the days of the year, nor numbered in the months."
+          "text": "Adarksome hurl wind possess that night, be it not counted in the days of the year, nor numbered in the months."
         },
         {
           "verse": 7,
@@ -263,19 +335,30 @@
           "verse": 26,
           "text": "Have I not dissembled? Have I not kept silence? Have I not been at ease? And indignation is come upon me."
         }
+      ],
+      "summary": "Eliphaz blameth Job as guilty of impatience, arguing thereupon that he was not so perfect in virtue as he seemed, 7. and therefore is now punished by God, who (as Eliphaz falsely supposeth) `afflicteth not innocent men`: 12. alleging for proof an imaginary vision. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The second part. Diverse discourses & disputes about the cause of Job's afflictions."
+        }
       ]
     },
     {
       "chapter": 4,
-      "summary": "Eliphaz blameth Job as guilty of impatience, arguing thereupon that he was not so perfect in virtue as he seemed, ℣.7 and therefore is now punished by God, who (as Eliphaz falsely supposeth) `afflicteth not innocent men`: ℣.12 alleging for proof an imaginary vision.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Eliphaz the Themanite answering, said:"
+          "text": "But <cr>[1]</cr> Eliphaz the Themanite answering, said:",
+          "cross_refs": [
+            {
+              "text": "The first conflict, between Eliphaz & Job."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "perhaps thou wilt take it grievously, but If we shall begin to speak to thee, the word conceived who can hold?"
+          "text": "If we shall begin to speak to thee, perhaps thou wilt take it grievously, but the word conceived who can hold?"
         },
         {
           "verse": 3,
@@ -295,7 +378,13 @@
         },
         {
           "verse": 7,
-          "text": "Remember I beseech thee, who ever being innocent hath perished? Or when have the just been destroyed?"
+          "text": "Remember I beseech thee, who ever being innocent hath <na>(a)</na> perished? Or when have the just been destroyed?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "No innocent ever perished eternally: but innocent Abel was slain temporally, & innumerable others suffer calamities for their greater merit."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -311,11 +400,17 @@
         },
         {
           "verse": 11,
-          "text": "The tiger hath perished, because he had no prey, and the lion's whelps are destroyed."
+          "text": "The tiger hath perished, because he had no prey, and the lions' whelps are destroyed."
         },
         {
           "verse": 12,
-          "text": "Moreover to me there was spoken a secret word, and as it were by stealth hath mine ear received the veins of the whispering thereof."
+          "text": "Moreover <na>(b)</na> to me there was spoken a secret word, and as it were by stealth hath mine ear received the veins of the whispering thereof.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Heretics pretend such obscure visions more to get credit than to edify others. S. Greg. l. 5. c. 18."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -335,7 +430,13 @@
         },
         {
           "verse": 17,
-          "text": "What, shall man be justified in comparison of God, or shall a man be more pure than his maker?"
+          "text": "What, <na>(c)</na> shall man be justified in comparison of God, or shall a man be more pure than his maker?",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Job easily granteth that man may not compare nor contend with God. ch. 9. v. 1. Yet men may be innocent & free from grievous sins."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -357,11 +458,17 @@
     },
     {
       "chapter": 5,
-      "summary": "Eliphaz prosecuteth his discourse to convince Job of great sins, because he is so vehemently afflicted: ℣.17 exhorteth him therefore to acknowledge his sins, so all things shall succeed prosperously.",
       "verses": [
         {
           "verse": 1,
-          "text": "Call therefore if there be that will answer thee, and turn to some of the Saints."
+          "text": "Call therefore <na>(a)</na> if there be that will answer thee, and turn to some of the Saints.",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "a",
+              "text": "This disputer having pretended an imaginary vision from God against Job, now he supposeth that neither God nor other holy person will patronage his cause, nor judge of his cause as he doth, but that all will condemn him of impatience, folly, envy, & other sins."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -369,7 +476,7 @@
         },
         {
           "verse": 3,
-          "text": "I have seen a fool with firm root, and I cursed his beauty by and by."
+          "text": "Ihave seen a fool with firm root, and I cursed his beauty by and by."
         },
         {
           "verse": 4,
@@ -385,7 +492,13 @@
         },
         {
           "verse": 7,
-          "text": "Man is born to labour, and the bird to flight."
+          "text": "<na>(b)</na> Man is born to labour, and the bird to flight.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "This Proverb importeth that a man must not think to pass his life without travail but must get his bread with sweat of his brows , or suffer other calamities."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -405,7 +518,7 @@
         },
         {
           "verse": 12,
-          "text": "Who dissipateth the cogitations of the malignant, that their hands can not accomplish that which they began:"
+          "text": "Who dissipateth the cogitations of the malignant, that their hands cannot accomplish that which they began:"
         },
         {
           "verse": 13,
@@ -433,11 +546,21 @@
         },
         {
           "verse": 19,
-          "text": "In six tribulations he shall deliver thee, and in the seventh evil shall not touch thee."
+          "text": "In <na>(c)</na> six tribulations he shall deliver thee, and in the <na>(d)</na> seventh evil shall not touch thee.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "God's goodness delivereth his servants the space of this laborious life:"
+            },
+            {
+              "label": "d",
+              "text": "And most especially in the hour of death. S. Greg. li. 6. c. 18."
+            }
+          ]
         },
         {
           "verse": 20,
-          "text": "In famine he shall deliver thee from death, and in battle from the hand of the sword."
+          "text": "In famine he shall deliver thee from death, and in battle, from the hand of the sword."
         },
         {
           "verse": 21,
@@ -467,23 +590,24 @@
           "verse": 27,
           "text": "Behold, this is even so, as we have searched out: which thou having heard revolve in thy mind."
         }
-      ]
+      ],
+      "summary": "Eliphaz prosecuteth his discourse to convince Job of great sins, because he is so vehemently afflicted: 17. exhorteth him therefore to acknowledge his sins, so all things shall succeed prosperously."
     },
     {
       "chapter": 6,
-      "summary": "Job answereth the objections of Eliphaz, shewing that indeed the calamity which he suffereth is much greater than his sins deserve; and therefore his lamentation is excusable: ℣.8 wisheth (if it so please God) that he may die: ℣.13 complaineth that his friends are become his adversaries: ℣.16 gravely expostulateth that they reprehend him, ℣.12 and help him not.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Job answering, said: sins were weighed, whereby I have deserved wrath, and the calamity, which I"
+          "text": "But Job answering, said:"
         },
         {
           "verse": 2,
-          "text": "would God my suffer, in a balance."
+          "text": "<na>(a)</na> would God my sins were weighed, whereby I have deserved wrath, and the calamity, which I suffer, in a balance. <na>(a)</na> A man of sincere conscience confesseth the sins whereof he is guilty, yet acknowledgeth not all wherewith others may unjustly charge him."
         },
         {
           "verse": 3,
-          "text": "As the sand of the sea this would appear heavier, wherefore my words also are full of sorrow:"
+          "text": "As the sand of the sea this would appear heavier, wherefore my words also are full of sorrow:",
+          "has_annotation": true
         },
         {
           "verse": 4,
@@ -499,7 +623,7 @@
         },
         {
           "verse": 7,
-          "text": "The things which before, my soul would not touch, now for anguish are my meats."
+          "text": "The things which before my soul would not touch, now for anguish are my meats."
         },
         {
           "verse": 8,
@@ -523,7 +647,7 @@
         },
         {
           "verse": 13,
-          "text": "Behold there is no help for me in my self, and my familiar friends also are departed from me."
+          "text": "Behold there is no help for me in myself, and my familiar friends also are departed from me."
         },
         {
           "verse": 14,
@@ -539,7 +663,18 @@
         },
         {
           "verse": 17,
-          "text": "At the time, when they shall be dissipated they shall perish: & after they wax hot they shall be dissolved out of their place."
+          "text": "At the time, when they shall be dissipated they shall perish: & after 3. As the sand of the sea.] Scarce any figure is more common in holy Scripture than Hyperbole <cr>[1]</cr> : whereby our understanding is drawn to conceive the greatness of things that otherwise surpass vulgar capacity. So Job signifieth here that his calamity being weighed with his sins in a balance, would appear heavier , not precisely in proportion of the number of the sands in the sea, but exceeding much in true comparison. <cr>[2]</cr> Of which superaboundance of pains patiently suffered by holy Job, and other Saints, more than their sins deserved, especially of our B. Saviour, who could not sin, and of our B. Lady, who never sinned, remaineth an infinity treasure of satisfactory works, appliable by the supreme steward of God's Church, Christ's Vicar in earth, for satisfaction of others which have need, and are in the communion of Saints, and perform the conditions appointed. And",
+          "cross_refs": [
+            {
+              "text": "The use of Hyperbole in holy Scripture."
+            },
+            {
+              "text": "Treasure of satisfactory works in the Church."
+            },
+            {
+              "text": "Pardons do apply the suffering of some for the satisfaction of they wax hot they shall be dissolved out of their place."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -547,7 +682,13 @@
         },
         {
           "verse": 19,
-          "text": "Consider ye the paths of Thema, the ways of Saba, and expect a little while."
+          "text": "Consider ye the paths <na>(b)</na> of Thema, the ways of Saba, and expect a little while.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Sandy ways without water."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -567,7 +708,13 @@
         },
         {
           "verse": 24,
-          "text": "Teach ye me, and I will hold my peace: and if I perhaps have been ignorant in any thing, instruct ye me."
+          "text": "<na>(c)</na> Teach ye me, and I will hold my peace: and if I perhaps have been ignorant in any thing, instruct ye me.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Job's adversaries presumed to teach him, but because they erred in their applying of true assertions in his case, which himself understood and not they, he accounted not their discourses for good doctrine."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -593,15 +740,21 @@
           "verse": 30,
           "text": "And you shall not find iniquity in my tongue, neither shall folly sound in my jaws."
         }
-      ]
+      ],
+      "summary": "Job answereth the objections of Eliphaz, shewing that indeed the calamity which he suffereth is much greater than his sins deserve; and therefore his lamentation is excusable: 8. wisheth (if it so please God) that he may die: 13. complaineth that his friends are become his adversaries: 16. gravely expostulateth that they reprehend him, 12. and help him not."
     },
     {
       "chapter": 7,
-      "summary": "Job explicateth diverse calamities of man's life, and namely of his own. ℣.6 supposing it not likely that he shall return to former prosperous state, ℣.15 desireth to die.",
       "verses": [
         {
           "verse": 1,
-          "text": "The life of man upon earth is a warfare, and his days, as the days of an hired man."
+          "text": "The life of man upon earth is a <na>(a)</na> warfare, and his days, as the days of an hired man.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Asoldier must be always ready to endure travail, to be promptly obedient, content to be beaten by his superior without all resistance, upon pain of his life: he is always subject to cares, and to danger of death, & therefore must ever be ready to die."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -609,7 +762,7 @@
         },
         {
           "verse": 3,
-          "text": "so I also have had vain months, & have numbered to my self laborious nights."
+          "text": "so I also have had vain months, & have numbered to myself laborious nights."
         },
         {
           "verse": 4,
@@ -633,7 +786,12 @@
         },
         {
           "verse": 9,
-          "text": "As a cloud is consumed, and passeth away: so he that shall descend to hell shall not ascend."
+          "text": "As a cloud is consumed, and passeth away: so he that shall descend to <cr>[1]</cr> hell shall not ascend.",
+          "cross_refs": [
+            {
+              "text": "* Seol."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -649,11 +807,11 @@
         },
         {
           "verse": 13,
-          "text": "If I say: My little bed shall comfort me, and I shall be relieved speaking with my self in my couch:"
+          "text": "If I say: My little bed shall comfort me, and I shall be relieved speaking with myself in my couch:"
         },
         {
           "verse": 14,
-          "text": "Thou wilt terrify me by dreams, and by visions shake me with horrour."
+          "text": "Thou wilt terrify me by dreams, and by visions shake me with horror."
         },
         {
           "verse": 15,
@@ -661,7 +819,13 @@
         },
         {
           "verse": 16,
-          "text": "I have despaired. I shall now live no longer: Spare me, for my days are nothing."
+          "text": "Ihave despaired. I shall now live no longer: <na>(b)</na> Spare me, for my days are nothing.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Just Job supposing he was at the point of death, prayed God to spare or cease to punish him more, & to accept of that affliction which he had already suffered. So the Church in behalf of souls departed in state of grace prayeth God to spare and cease from further punishing them, and to give them eternal rest."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -677,25 +841,35 @@
         },
         {
           "verse": 20,
-          "text": "I have sinned, what shall I do to thee, o keeper of men? Why hast thou set me contrary to thee, and I am become burdenous to my self?"
+          "text": "Ihave sinned, what shall I do to thee, o keeper of men? Why hast thou set me contrary to thee, and I am become burdenous to myself?"
         },
         {
           "verse": 21,
           "text": "Why doest thou not take away my sin, and why doest thou not take away mine iniquity? Behold now I shall sleep in the dust: and if thou seek me in the morning, I shall not be."
         }
-      ]
+      ],
+      "summary": "Baldad chargeth Job to have spoken unjustly, exhorting him to turn to God, and so he shall prosper better than heretofore: 13. shewing that hypocrites shall not prosper, 20. inferreth (falsely) that God afflicteth not the sincere,"
     },
     {
       "chapter": 8,
-      "summary": "Baldad chargeth Job to have spoken unjustly, exhorting him to turn to God, and so he shall prosper better than heretofore: ℣.13 shewing that hypocrites shall not prosper, ℣.20 inferreth (falsely) that God afflicteth not the sincere, nor helpeth the malignant.",
       "verses": [
         {
+          "verse": 0,
+          "text": "nor helpeth the malignant."
+        },
+        {
           "verse": 1,
-          "text": "But Baldad the Suhite answering, said:"
+          "text": "But Baldad the Suhite answering, said: <na>(a)</na>",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The second conflict. This second disputer charged Job to be obstinate, who indeed was constant in a true settled judgement."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "& shall the spirit of the word of thy mouth How long wilt thou speak such things, be multiplied?"
+          "text": "How long wilt thou speak such things, & shall the spirit of the word of thy mouth be multiplied?"
         },
         {
           "verse": 3,
@@ -723,7 +897,13 @@
         },
         {
           "verse": 9,
-          "text": "(For we are but as yesterday, & are ignorant that our days upon the earth are as a shadow.)"
+          "text": "(For we are but as yesterday, & are ignorant <na>(b)</na> that our days upon the earth are as a shadow.)",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Even thus Heretics imagine Catholics to be ignorant, & therefore fill their mouths and books with things that are not denied, and yet infer much falsehood sophistically applying one truth against another, being themselves ignorant how to reconcile difficulties."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -743,7 +923,7 @@
         },
         {
           "verse": 14,
-          "text": "His folly shall not please him, and his confidence as the spider's web."
+          "text": "His folly shall not please him, and his confidence as the spiders' web."
         },
         {
           "verse": 15,
@@ -781,19 +961,24 @@
     },
     {
       "chapter": 9,
-      "summary": "Job approveth that no man avouching his own justice before God is justified. ℣.22 Teacheth that affliction of the innocent standeth well with God's justice, wisdom, and power.",
       "verses": [
         {
           "verse": 1,
-          "text": "And Job answering, said: is so, and that man is not justified compared with God."
-        },
-        {
-          "verse": 3,
-          "text": "If he will content"
+          "text": "And Job answering, said:"
         },
         {
           "verse": 2,
-          "text": "Indeed I know it with him, he can not answer him one for a thousand."
+          "text": "<na>(a)</na> Indeed I know it is so, and that man is not justified compared with God.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Job here granteth that which was truly said by his adversary, and sheweth how he did wrong apply true doctrine against him, and so still defendeth his own innocency, and just quarrel."
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "If he will content with him, he cannot answer him one for a thousand."
         },
         {
           "verse": 4,
@@ -833,7 +1018,13 @@
         },
         {
           "verse": 13,
-          "text": "God whose wrath no man can resist, and under whom they stoop that carry the world."
+          "text": "God whose wrath no man can resist, and under whom they stoop that <na>(b)</na> carry the world.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Angels move the spheres of heaven."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -841,7 +1032,13 @@
         },
         {
           "verse": 15,
-          "text": "Who although I have any just thing, will not answer, but will beseech my judge."
+          "text": "Who although I have any just thing, will not answer, <na>(c)</na> but will beseech my judge.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Even so S. Paul, though he was not guilty in conscience of any crime, yet he would not therein justify himself: 1. Cor. 4."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -861,7 +1058,7 @@
         },
         {
           "verse": 20,
-          "text": "If I will justify my self, mine own mouth shall condemn me: if I will shew my self innocent, he shall prove me wicked."
+          "text": "If I will justify myself, mine own mouth shall condemn me: if I will shew myself innocent, he shall prove me wicked."
         },
         {
           "verse": 21,
@@ -869,7 +1066,13 @@
         },
         {
           "verse": 22,
-          "text": "One thing there is that I have spoken, both the innocent and the impious he consumeth."
+          "text": "<na>(d)</na> One thing there is that I have spoken, both the innocent and the impious he consumeth.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "This is an assured true assertion, that God afflicteth both good & evil in this life."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -877,7 +1080,7 @@
         },
         {
           "verse": 24,
-          "text": "The earth is given into the hands of the impious, he covereth the face of the judges thereof: and if it be not he, who is it them?"
+          "text": "The earth is given into the hands of the impious, he covereth the face of the judges thereof: and if it be not he, who is it then?"
         },
         {
           "verse": 25,
@@ -893,7 +1096,13 @@
         },
         {
           "verse": 28,
-          "text": "I feared all my works, knowing that thou didst not spare the offender."
+          "text": "I <na>(e)</na> feared all my works, knowing that thou didst not spare the offender.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Fear on man's part, and hope in God, do well consist together. So both presumption and desperation are avoided."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -909,7 +1118,7 @@
         },
         {
           "verse": 32,
-          "text": "For neither I will answer a man that is like my self: nor that may be heard with me equally in judgment."
+          "text": "For neither I will answer a man that is like myself: nor that may be heard with me equally in judgment."
         },
         {
           "verse": 33,
@@ -921,25 +1130,31 @@
         },
         {
           "verse": 35,
-          "text": "I will speak, and will not fear him: for I can not answer fearing."
+          "text": "Iwill speak, and will not fear him: for I cannot answer fearing."
         }
-      ]
+      ],
+      "summary": "Job approveth that no man avouching his own justice before God is justified. 22. Teacheth that affliction of the innocent standeth well with God's justice, wisdom, and power."
     },
     {
       "chapter": 10,
-      "summary": "Job scarce able to speak, yet sheweth that there is no injustice nor ignorance in God, neither is his sin the cause of so great afflictions. ℣.9 Acknowledgeth God's love and benefits towards himself, ℣.15 and dreadeth his strict judgement.",
       "verses": [
         {
           "verse": 1,
-          "text": "My soul is weary of my life, I will let my speech pass against my self. I will speak in the bitterness of my soul."
+          "text": "My soul is weary of my life, I will let my speech pass against myself. I will speak in the bitterness of my soul."
         },
         {
           "verse": 2,
-          "text": "I will say to God: Condemn me not: tell me why thou judgest me so."
+          "text": "Iwill say to God: Condemn me not: tell me why thou judgest me so."
         },
         {
           "verse": 3,
-          "text": "Doth it seem good to thee, if thou calumniate me, and oppress me, the work of thy hands, and help the counsel of the impious?"
+          "text": "Doth it seem good to thee, if thou <na>(a)</na> calumniate me, and oppress me^ the work of thy hands, and help the counsel of the impious?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Holy Job knowing it to be unpossible that God calumniateth any man, inquireth what is the cause why his goodness afflicteth the just."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -959,7 +1174,13 @@
         },
         {
           "verse": 8,
-          "text": "Thy hands have made me, & framed me wholly round-about, & dost thou so suddenly cast me down headlong?"
+          "text": "<na>(b)</na> Thy hands have made me, & framed me wholly round-about, & dost thou so suddenly cast me down headlong?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In that I am thy creature thou mayst justly destroy me: but indeed because I am thy creature thou wilt spare me through thy mercy, giving me thy grace, which if I use well thou wilt also give me eternal rest."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -967,7 +1188,7 @@
         },
         {
           "verse": 10,
-          "text": "Hast thou not as milk milked me, and curdled me as cheese?"
+          "text": "Hast thou not as milk milked me, and curded me as cheese?"
         },
         {
           "verse": 11,
@@ -1003,11 +1224,17 @@
         },
         {
           "verse": 19,
-          "text": "I had been as if I were not, carried from the womb to the grave."
+          "text": "Ihad been as if I were not, carried from the womb to the grave."
         },
         {
           "verse": 20,
-          "text": "Shall not the fewness of my days be ended shortly? suffer me therefore, that I may a little lament my sorrow:"
+          "text": "Shall not the fewness of my days be ended shortly? suffer me <na>(c)</na> therefore, that I may a little lament my sorrow:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Repentance is always necessary, but most especially at the hour of death."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1015,21 +1242,27 @@
         },
         {
           "verse": 22,
-          "text": "A land of misery and darkness, where is the shadow of death, and no order, but everlasting horror inhabiteth."
+          "text": "Aland of misery and darkness, where is the shadow of death, and no order, but everlasting horror inhabiteth."
         }
-      ]
+      ],
+      "summary": "Job scarce able to speak, yet sheweth that there is no injustice nor ignorance in God, neither is his sin the cause of so great afflictions. 9. Acknowledgeth God's love and benefits towards himself, 15. and dreadeth his strict judgement."
     },
     {
       "chapter": 11,
-      "summary": "Sophar imputeth Job's discourse, about the cause of his so great afflictions, to insolency of mind, and loquacity of tongue, persuading him to acknowledge grievous sins, that so he may have the reward of a just man.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Sophar the Naamathite answering, said: things, not hear also? Or shall a man full"
+          "text": "But Sophar the Naamathite answering, said:"
         },
         {
           "verse": 2,
-          "text": "Why, shall he that speaketh many of words be justified?"
+          "text": "Why, shall he that speaketh many things, not hear also? Or <na>(a)</na> shall a man full of words be justified?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Sophar might have applied the vice of much speaking to himself & his fellows, alleging many things which proved not their opinion, whereas Job's allegations proved directly that which he affirmed."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1045,7 +1278,13 @@
         },
         {
           "verse": 6,
-          "text": "That he might shew thee the secrets of wisdom, and that his law is manifold, and thou mightest understand that thou art exacted much lesser things of him than thy iniquity deserveth."
+          "text": "That he might shew thee the secrets of wisdom, and that his law is manifold, and thou mightest understand that thou art exacted much lesser things of him <na>(b)</na> than thy iniquity deserveth.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Job's own conscience affirmed the contrary. ch. 6. v. 3."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -1069,7 +1308,7 @@
         },
         {
           "verse": 12,
-          "text": "A vain man is extolled into pride, & thinketh himself born free as a wild ass's colt."
+          "text": "Avain man is extolled into pride, & thinketh himself born free as a wild ass's colt."
         },
         {
           "verse": 13,
@@ -1077,7 +1316,13 @@
         },
         {
           "verse": 14,
-          "text": "If thou shalt take away from thee the iniquity that is in thy hand, & injustice remain not in thy tabernacle:"
+          "text": "If thou shalt take away from thee the iniquity <na>(c)</na> that is in thy hand, & injustice remain not in thy tabernacle:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "He could not justly confess iniquity which he had not committed."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1089,7 +1334,7 @@
         },
         {
           "verse": 17,
-          "text": "And the brightness as it were of noon days, shall arise to thee at evening: and when thou shalt think thy self consumed, thou shalt rise as the day star."
+          "text": "And the brightness as it were of noon days, shall arise to thee at evening: and when thou shalt think thyself consumed, thou shalt rise as the day star."
         },
         {
           "verse": 18,
@@ -1103,27 +1348,39 @@
           "verse": 20,
           "text": "But the eyes of the impious shall decay, and escape shall fail them, and their hope the abomination of the soul."
         }
+      ],
+      "summary": "Sophar imputeth Job's discourse, about the cause of his so great afflictions, to insolency of mind, and loquacity of tongue, persuading him to acknowledge grievous sins, that so he may have the reward of a just man. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The third conflict."
+        }
       ]
     },
     {
       "chapter": 12,
-      "summary": "Job sheweth the knowledge, which his friends much boasts of, to be the common known doctrine of God's servants. He more truly, and more profoundly discourseth of God's power and wisdom, still defending his own innocency in respect of great sins.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Job answering, said: men alone, & shall wisdom die with you?"
+          "text": "But Job answering, said:"
         },
         {
           "verse": 2,
-          "text": "Are you then"
+          "text": "Are you then men alone, & shall wisdom die with you?"
         },
         {
           "verse": 3,
-          "text": "I also have a heart even as you, neither am I inferior to you: for who is ignorant of these things, which you know?"
+          "text": "Ialso have a heart even as you, neither am I inferior to you: for who is ignorant of these things, which you know?"
         },
         {
           "verse": 4,
-          "text": "He that is mocked of his friend as I, shall invocate God, and he will hear him: for the simplicity of the just man is scorned."
+          "text": "He that is mocked of his friend as I, shall invocate God, and he will hear him: for the <na>(a)</na> simplicity of the just man is scorned.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God suffereth his simple true-meaning servants to be scorned for the time, but afterward the wicked shall be forced to confess, that those whom they derided are worthily in honour before God. Sap. 5. v. 3."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1175,7 +1432,13 @@
         },
         {
           "verse": 17,
-          "text": "He bringeth counsellers to a foolish end, & judges to astonishment."
+          "text": "He bringeth <na>(b)</na> counsellers to a foolish end, & judges to astonishment.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "crafty plotters of devices at last by God's just punishment commit so great absurdities, that the meanest may see their folly."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1209,11 +1472,11 @@
           "verse": 25,
           "text": "They shall grope as in the dark, and not in the light, and he shall make them go amiss as drunken men."
         }
-      ]
+      ],
+      "summary": "Of their words Job confuteth his adversaries, that they have spoken that which they know not: 13. defendeth his own innocency: 22. desiring of God, if he be afflicted for secret sins, that he may know them."
     },
     {
       "chapter": 13,
-      "summary": "Of their words Job confuseth his adversaries, that they have spoken that which they know not: ℣.13 defendeth his own innocency: ℣.22 desiring of God, if he be afflicted for secret sins, that he may know them.",
       "verses": [
         {
           "verse": 1,
@@ -1245,7 +1508,13 @@
         },
         {
           "verse": 8,
-          "text": "Do you take his person, and do you endeavour to judge for God?"
+          "text": "Do you take his person, and do you endeavour <na>(a)</na> to judge for God?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Job's state of sin or innocency was best known to God, next to his own conscience, not at all to his adversaries, that presumed to judge thereof."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1269,7 +1538,13 @@
         },
         {
           "verse": 14,
-          "text": "Why do I tear my flesh with my teeth, and carry my soul in my hands?"
+          "text": "<na>(b)</na> Why do I tear my flesh with my teeth, and carry my soul in my hands?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "It seemed to his adversaries that of desperation he would tear his flesh, and so kill himself, and to be so near death as if one held his soul in his hand ready to let it fall from him."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1285,7 +1560,13 @@
         },
         {
           "verse": 18,
-          "text": "If I shall be judged, I know that I shall be found just."
+          "text": "If I shall be judged, <na>(c)</na> I know that I shall be found just.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "He was in extreme anguish, but still trusted in God."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1305,7 +1586,13 @@
         },
         {
           "verse": 23,
-          "text": "How great iniquities and sins I have, my wicked deeds and my offences shew thou me."
+          "text": "How great iniquities and sins I have, my wicked deeds and my offences <na>(d)</na> shew thou me.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "He denieth that he is guilty in conscience, but desireth to know of God, if he have any hid sins which himself knoweth not."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -1331,11 +1618,16 @@
     },
     {
       "chapter": 14,
-      "summary": "Again Job describeth the miseries of man's life. ℣.3 Nevertheless God's great providence towards him: ℣.7 professeth his belief of the Resurrection.",
       "verses": [
         {
           "verse": 1,
-          "text": "Man born of woman, living a short time, is replenished with many miseries."
+          "text": "Man born of <na>(a)</na> woman, living a short time, is replenished with many miseries.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "All children taking their substance from the mother, and having only a temporal life continually tending to death, cannot but be subject to many miseries: For time it-self though it may seem long, is a limited thing, and is very short, yea hath no proportion in respect of eternity, which is infinite: yet God hath care to bring this weak creature to life eternal."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1351,7 +1643,7 @@
         },
         {
           "verse": 5,
-          "text": "The days of man are short, and the number of his months is with thee, thou hast appointed his limits which can not be passed."
+          "text": "The days of man are short, and the number of his months is with thee, thou hast appointed his limits which cannot be passed."
         },
         {
           "verse": 6,
@@ -1359,7 +1651,7 @@
         },
         {
           "verse": 7,
-          "text": "A tree hath hope: if it be cut, it waxeth green again, and the boughs thereof spring."
+          "text": "Atree hath hope: if it be cut, it waxeth green again, and the boughs thereof spring."
         },
         {
           "verse": 8,
@@ -1395,7 +1687,7 @@
         },
         {
           "verse": 16,
-          "text": "Thou in deed hast numbered my steps: but thou wilt spare my sins."
+          "text": "Thou indeed hast numbered my steps: but thou wilt spare my sins."
         },
         {
           "verse": 17,
@@ -1403,11 +1695,11 @@
         },
         {
           "verse": 18,
-          "text": "A mountain falling slideth down, and a rock is removed out of his place."
+          "text": "Amountain falling slideth down, and a rock is removed out of his place."
         },
         {
           "verse": 19,
-          "text": "Waters make stones hollow, and with inundation, the earth by little and little is consumed: and men therefore thou shalt destroy in like manner."
+          "text": "Waters make stones hollow, and with inundation the earth by little and little is consumed: and men therefore thou shalt destroy in like manner."
         },
         {
           "verse": 20,
@@ -1415,29 +1707,46 @@
         },
         {
           "verse": 21,
-          "text": "Whether his children shall be noble, or unnoble, he shall not understand."
+          "text": "Whether his children shall be noble, or unnoble, he <na>(b)</na> shall not understand.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The parents after death are not afflicted with the state of their children, as they be in this life."
+            }
+          ]
         },
         {
           "verse": 22,
           "text": "But yet his flesh whilst he shall live shall have sorrow, and his soul shall mourn upon himself."
         }
-      ]
+      ],
+      "summary": "Again Job describeth the miseries of man's life. 3. Nevertheless God's great providence towards him: 7. professeth his belief of the Resurrection."
     },
     {
       "chapter": 15,
-      "summary": "Eliphaz again chargeth Job to have spoken presumptuously, and blasphemously: ℣.14 avoucheth that no man is innocent nor just: ℣.20 describing the malediction of the impious and hypocrites.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Eliphaz the Themanite answering, said:"
+          "text": "But <cr>[1]</cr> Eliphaz the Themanite answering, said:",
+          "cross_refs": [
+            {
+              "text": "The fourth conflict."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "speaking into the wind, and fill his Will a wise man answer as it were stomach with burning?"
+          "text": "Will a wise man answer as it were speaking into the wind, and fill his stomach with burning?"
         },
         {
           "verse": 3,
-          "text": "Thou reprovest him in words, that is not equal to thee, & speakest that which is not expedient for thee."
+          "text": "Thou <na>(a)</na> reprovest him in words, that is not equal to thee, & speakest that which is not expedient for thee.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Eliphaz not able to answer Job's solid reasons, raileth against him, as if he were injurious to God, or taught others to cast away fear."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -1481,7 +1790,17 @@
         },
         {
           "verse": 14,
-          "text": "What is man, that he should be without spot, & that the born of a woman should appear just?"
+          "text": "What is man, that he should be <na>(b)</na> without spot, & that the born of a woman should appear <na>(c)</na> just?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "It is a very rare privilege to be without spot."
+            },
+            {
+              "label": "c",
+              "text": "But spot of venial sins may be in a just man."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1493,7 +1812,7 @@
         },
         {
           "verse": 17,
-          "text": "I will shew thee, hear me: that which I have seen I will tell thee."
+          "text": "Iwill shew thee, hear me: that which I have seen I will tell thee."
         },
         {
           "verse": 18,
@@ -1505,7 +1824,13 @@
         },
         {
           "verse": 20,
-          "text": "The impious is proud all his days, and the number of the years of his tyranny is uncertain."
+          "text": "The impious is proud all his days, and <na>(d)</na> the number of the years of his tyranny is uncertain.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "All these miseries are incident to the wicked, but are falsely applied to holy Job, who indeed was just."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1549,7 +1874,7 @@
         },
         {
           "verse": 31,
-          "text": "He shall not believe, vainly deceived with error, that he may be redeemed with any price."
+          "text": "He shall not believe^ vainly deceived with error, that he may be redeemed with any price."
         },
         {
           "verse": 32,
@@ -1567,35 +1892,41 @@
           "verse": 35,
           "text": "He conceived sorrow, and hath brought forth iniquity, and his womb prepareth guiles."
         }
-      ]
+      ],
+      "summary": "Eliphaz again chargeth Job to have spoken presumptuously, and blasphemously: 14. avoucheth that no man is innocent nor just: 20. describing the malediction of the impious and hypocrites."
     },
     {
       "chapter": 16,
-      "summary": "Job moved by his importune friends, ℣.4 expostulateth their severity, ℣.12 further describeth his afflictions, and appealeth to God's judgement, that he suffereth more than his sins deserve.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Job answering said: oftentimes such things, heavy comforters you are all."
-        },
-        {
-          "verse": 3,
-          "text": "Shall words full of wind"
+          "text": "But Job answering said:"
         },
         {
           "verse": 2,
-          "text": "I have heard have an end? Or is any thing troublesome to thee, if thou speak?"
+          "text": "Ihave heard oftentimes such things, <na>(a)</na> heavy comforters you are all.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "True and friendly comforters ought to hear the afflicted with patience, & not unmercifully charge him with crimes which they neither know, nor his conscience is guilty of."
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "Shall words full of wind have an end? Or is any thing troublesome to thee, if thou speak?"
         },
         {
           "verse": 4,
-          "text": "I also could speak things like to you: and would God your soul were for my soul."
+          "text": "Ialso could speak things like to you: and would God your soul were for my soul."
         },
         {
           "verse": 5,
-          "text": "I also would comfort you with words, and would wag my head upon you."
+          "text": "Ialso would comfort you with words, and would wag my head upon you."
         },
         {
           "verse": 6,
-          "text": "I would strengthen you with my mouth, and would move my lips, as sparing you."
+          "text": "Iwould strengthen you with my mouth, and would move my lips, as sparing you."
         },
         {
           "verse": 7,
@@ -1607,7 +1938,13 @@
         },
         {
           "verse": 9,
-          "text": "My wrinkles give testimony against me, and a false speaker is raised up against my face contradicting me."
+          "text": "My wrinkles give testimony against me, and <na>(b)</na> a false speaker is raised up against my face contradicting me.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Agreat affliction, when one full of pain & distress is also forced to defend his own innocency against calumniators."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -1623,7 +1960,7 @@
         },
         {
           "verse": 13,
-          "text": "I sometime that wealthy-one suddenly am broken: he hath held my neck, broken me, and set me to himself as it were a mark."
+          "text": "Isometime that wealthy-one suddenly am broken: he hath held my neck, broken me, and set me to himself as it were a mark."
         },
         {
           "verse": 14,
@@ -1635,7 +1972,7 @@
         },
         {
           "verse": 16,
-          "text": "I have sowed sackcloth upon my skin, and have covered my flesh with ashes."
+          "text": "Ihave sowed sackcloth upon my skin, and have covered my flesh with ashes."
         },
         {
           "verse": 17,
@@ -1643,7 +1980,13 @@
         },
         {
           "verse": 18,
-          "text": "These things have I suffered without the iniquity of my hand, whereas I had clean prayers to God."
+          "text": "These things have I suffered <na>(c)</na> without the iniquity of my hand, whereas I had clean prayers to God.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "As the adversaries still object great iniquity to him, so he yieldeth them the same true answer."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1665,11 +2008,11 @@
           "verse": 23,
           "text": "For behold the short years pass away, and I walk the path, by the which I shall not return."
         }
-      ]
+      ],
+      "summary": "Job moved by his importune friends, 4. expostulateth their severity, 12. further describeth his afflictions, and appealeth to God's judgement, that he suffereth more than his sins deserve."
     },
     {
       "chapter": 17,
-      "summary": "For the grievousness of his pain Job expecteth speedy death, ℣.4 chargeth his friends with folly for holding only remuneration in this life. ℣.6 Himself hopeth happy rest in the other world.",
       "verses": [
         {
           "verse": 1,
@@ -1677,7 +2020,13 @@
         },
         {
           "verse": 2,
-          "text": "I have not sinned, and mine eye abideth in bitterness."
+          "text": "Ihave <na>(a)</na> not sinned, and mine eye abideth in bitterness.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Not having committed such sins as he was charged withal, in this double bitterness of corporal pain & calumniation, his eye was still upon God, expecting to be delivered."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1721,11 +2070,22 @@
         },
         {
           "verse": 13,
-          "text": "If I shall expect, hell is my house, and in darkness I have made my bed."
+          "text": "If I shall expect, <cr>[1]</cr> <na>(b)</na> hell is my house, and in darkness I have made my bed.",
+          "cross_refs": [
+            {
+              "text": "Seol Ἀδὴς Infernus."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "This text sheweth evidently that there was a place of rest called hell."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "I have said to rottenness: Thou art my father, my mother, and my sister, to worms."
+          "text": "Ihave said to rottenness: Thou art my father, my mother, and my sister, to worms."
         },
         {
           "verse": 15,
@@ -1735,11 +2095,17 @@
           "verse": 16,
           "text": "All my things shall descend into most deep hell: there at the least, shall I have rest thinkest thou?"
         }
+      ],
+      "summary": "Baldad setteth upon Job again, charging him with present impatience and former impiety, 6. and that therefore he suffereth worthy punishment. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The fifth conflict."
+        }
       ]
     },
     {
       "chapter": 18,
-      "summary": "Baldad setteth upon Job again, charging him with present impatience and former impiety, ℣.6 and that therefore he suffereth worthy punishment.",
       "verses": [
         {
           "verse": 1,
@@ -1747,7 +2113,13 @@
         },
         {
           "verse": 2,
-          "text": "words? Understand ye first, and so let us How long will ye speak vaunting speak."
+          "text": "How long will <na>(a)</na> ye speak vaunting words? Understand ye first, and so let us speak.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Baldad perceiving Job to speak confidently as the common doctrine of many, opposeth himself nevertheless against him and all that think as he doth, and so speaketh as to many in the plural number, will ye speak , & of himself & his fellows: are we reputed . &c. So holy Job a figure of the Church defended the common cause, his adversaries a figure of heretics speaking some truths mixed false things therewith. S. Greg. li. 14. c. 1."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1819,7 +2191,7 @@
         },
         {
           "verse": 20,
-          "text": "In his day, the last shall be astonished, and horror shall invade the first."
+          "text": "In his day^ the last shall be astonished, and horror shall invade the first."
         },
         {
           "verse": 21,
@@ -1829,19 +2201,18 @@
     },
     {
       "chapter": 19,
-      "summary": "Job lamenteth his friend's cruelty, ℣.6 affirmeth that his so great affliction is not for his sins, ℣.25 and comforteth himself with his undoubted belief of the Resurrection.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Job answering, said: you afflict my soul, and wear me with words?"
-        },
-        {
-          "verse": 3,
-          "text": "Behold, ten times you confound"
+          "text": "But Job answering, said:"
         },
         {
           "verse": 2,
-          "text": "How long do me, and are not ashamed oppressing me."
+          "text": "How long do you afflict my soul, and wear me with words?"
+        },
+        {
+          "verse": 3,
+          "text": "Behold, ten times you confound me, and are not ashamed oppressing me."
         },
         {
           "verse": 4,
@@ -1853,7 +2224,13 @@
         },
         {
           "verse": 6,
-          "text": "At the least now understand ye, that God hath afflicted me not with equal judgment, and hath compassed me with his scourges."
+          "text": "At the least now understand ye, that God hath afflicted me <na>(a)</na> not with equal judgment, and hath compassed me with his scourges.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Blessed Job (saith S. Gregory li. 14. c. 16. 17.) looking sincerely on his own life, saw that his affliction was greater than his sins deserved, & in that respect was not equal: yet it was just, for God being just giveth a just reward: crown of justice as S. Paul speaketh of himself (2. Tim. 4.)"
+            }
+          ]
         },
         {
           "verse": 7,
@@ -1861,7 +2238,7 @@
         },
         {
           "verse": 8,
-          "text": "He hath hedged my path round about and I can not pass, and in my way hath put darkness."
+          "text": "He hath hedged my path round about and I cannot pass, and in my way hath put darkness."
         },
         {
           "verse": 9,
@@ -1893,7 +2270,7 @@
         },
         {
           "verse": 16,
-          "text": "I called my servant, and he did not answer me, with mine own mouth I besought him."
+          "text": "Icalled my servant, and he did not answer me, with mine own mouth I besought him."
         },
         {
           "verse": 17,
@@ -1905,7 +2282,13 @@
         },
         {
           "verse": 19,
-          "text": "My counsellers sometime have abhorred me: & he whom I loved most hath turned against me."
+          "text": "My counsellers sometime have abhorred me: & he <na>(b)</na> whom I loved most hath turned against me.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "All refused holy Job in his affliction, even those whom he had loved most: who therefore ought most to have loved him again."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1929,7 +2312,13 @@
         },
         {
           "verse": 25,
-          "text": "For I know that my Redeemer liveth, & in the last day I shall rise out of the earth."
+          "text": "For <na>(c)</na> I know that my Redeemer liveth, & in the last day I shall rise out of the earth.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "An express profession of his faith of the Resurrection."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -1937,7 +2326,13 @@
         },
         {
           "verse": 27,
-          "text": "Whom I my self shall see, & mine eyes shall behold, & none other: this my hope is laid up in my bosom."
+          "text": "Whom I myself shall see, & mine eyes shall behold, & <na>(d)</na> none other: this my hope is laid up in my bosom.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "We shall rise again, not as one tree riseth in place of another, but the self-same persons, changed in qualities, not in substance."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -1947,19 +2342,24 @@
           "verse": 29,
           "text": "Fly therefore from the face of the sword, because the sword is the revenger of iniquities: and know ye that there is judgment."
         }
-      ]
+      ],
+      "summary": "Job lamenteth of his friends' cruelty, 6. affirmeth that his so great affliction is not for his sins, 25. and comforteth himself with his undoubted belief of the Resurrection."
     },
     {
       "chapter": 20,
-      "summary": "Sophar avoucheth that some wicked men flourish for a time, but are afterward justly plagued. ℣.29 Thereupon condemneth Job as an hypocrite.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Sophar the Naamathite answering, said: succeed one an other, and my mind is rapt"
+          "text": "But <cr>[1]</cr> Sophar the Naamathite answering, said:",
+          "cross_refs": [
+            {
+              "text": "The sixth conflict."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "Therefore my diverse cogitations into sundry things."
+          "text": "Therefore my diverse cogitations succeed one another, and my mind is rapt into sundry things."
         },
         {
           "verse": 3,
@@ -1971,7 +2371,13 @@
         },
         {
           "verse": 5,
-          "text": "That the praise of the impious is short, and the joy of the hypocrite as it were for a moment:"
+          "text": "That the praise of the impious is <na>(a)</na> short, and the joy of the hypocrite as it were for a moment:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "All man's life is short & as a moment in comparison of eternity; but it is not always true that the wicked are shortly punished in respect of this life, as this disputer applieth it to prove Job to be impious. Therefore Job answereth in the next chap. v. 13. That ordinarily the wicked, lead their days (to wit their whole life) in wealth and (then) in a moment go down to hell . So the rest of these men's assertions are for most part true in some sense, but ill applied."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -2015,7 +2421,7 @@
         },
         {
           "verse": 16,
-          "text": "He shall suck the head of asps, and the vipers tongue shall kill him."
+          "text": "He shall suck the head of asps, and the viper's tongue shall kill him."
         },
         {
           "verse": 17,
@@ -2027,11 +2433,11 @@
         },
         {
           "verse": 19,
-          "text": "Because breaking in, he hath made the poor naked: he hath violently taken a house, & built it not."
+          "text": "Because breaking in^ he hath made the poor naked: he hath violently taken a house, & built it not."
         },
         {
           "verse": 20,
-          "text": "Neither is his belly filled: and when he shall have the things he coveted, he can not possess them."
+          "text": "Neither is his belly filled: and when he shall have the things he coveted, he cannot possess them."
         },
         {
           "verse": 21,
@@ -2069,27 +2475,33 @@
           "verse": 29,
           "text": "This is the portion of an impious man from God, & the inheritance of his words from our Lord."
         }
-      ]
+      ],
+      "summary": "Job requiring his friends to hear him, 7. discourseth of the cause, why some evil men prosper all this life."
     },
     {
       "chapter": 21,
-      "summary": "Job requiring his friends to hear him, ℣.7 discourseth of the cause, why some evil men prosper all this life.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Job answering, said: you my words, and do penance."
-        },
-        {
-          "verse": 3,
-          "text": "Bear with me, that I also may speak,"
+          "text": "But Job answering, said:"
         },
         {
           "verse": 2,
-          "text": "Hear I beseech and after my words, if it shall seem good, laugh ye."
+          "text": "Hear I beseech you my words, and do penance."
+        },
+        {
+          "verse": 3,
+          "text": "Bear with me, that I also may speak, and after my words, if it shall seem good, laugh ye."
         },
         {
           "verse": 4,
-          "text": "Is my disputation against man, that I ought not worthily to be sorry?"
+          "text": "Is my disputation <na>(a)</na> against man, that I ought not worthily to be sorry? concerning divine things not human, but of God's providence, and justice, of the resurrection, of eternal life, and punishment.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Though he disputed with three men, yet it was"
+            }
+          ]
         },
         {
           "verse": 5,
@@ -2097,7 +2509,7 @@
         },
         {
           "verse": 6,
-          "text": "And I, when I shall remember, am afraid, and trembling shaketh my flesh."
+          "text": "And I^ when I shall remember, am afraid, and trembling shaketh my flesh."
         },
         {
           "verse": 7,
@@ -2125,7 +2537,17 @@
         },
         {
           "verse": 13,
-          "text": "They lead their days in wealth, and in a moment they go down to hell."
+          "text": "They <na>(b)</na> lead their days in wealth, and in a moment they go down to <na>(c)</na> hell.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "See ch. 20. v. 5."
+            },
+            {
+              "label": "c",
+              "text": "The same word is in Hebrew, Greek, & Latin, for hell, as in the 7. and 17. chap. & other places, which sheweth that besides hell of the damned the resting place also of holy fathers in the old Testament was called by the general name of hell."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2173,7 +2595,7 @@
         },
         {
           "verse": 25,
-          "text": "But an other dieth in bitterness of soul without any riches:"
+          "text": "But another dieth in bitterness of soul without any riches:"
         },
         {
           "verse": 26,
@@ -2205,7 +2627,12 @@
         },
         {
           "verse": 33,
-          "text": "He hath been sweet to the gravel of Cocytus, and after him he shall draw every man, and before him innumerable."
+          "text": "He hath been sweet to the gravel of <cr>[1]</cr> Cocytus, and after him he shall draw every man, and before him innumerable.",
+          "cross_refs": [
+            {
+              "text": "* a river of hell."
+            }
+          ]
         },
         {
           "verse": 34,
@@ -2215,19 +2642,29 @@
     },
     {
       "chapter": 22,
-      "summary": "Eliphaz contendeth that God is not pleased with a just man's afflictions: ℣.5 falsely imputeth enormous crimes to holy Job, ℣.12 and gross errors. ℣.21 Wisheth him therefore to repent, that so he may prosper.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Eliphaz the Themanite answering, said:"
+          "text": "But <cr>[1]</cr> Eliphaz the Themanite answering, said:",
+          "cross_refs": [
+            {
+              "text": "The seventh conflict."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "though he be of perfect knowledge? Can man be compared with God, yea"
+          "text": "Can man be compared with God, yea though he be of perfect knowledge?"
         },
         {
           "verse": 3,
-          "text": "What doth it profit God if thou be just? Or what doest thou advantage him if thy way be unspotted?"
+          "text": "What doth it <na>(a)</na> profit God if thou be just? Or what doest thou advantage him if thy way be unspotted?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Indeed when a just man hath done his duty he is unprofitable to God: but he is profitable to himself, which greatly pleaseth God, who desireth man's good, & it redoundeth to God's glory that he hath such servants. Mat. 5. v. 17."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -2271,7 +2708,13 @@
         },
         {
           "verse": 14,
-          "text": "The clouds are his covert, neither doth he consider our things, and he walketh about the poles of heaven."
+          "text": "The clouds are his covert, <na>(b)</na> neither doth he consider our things, and he walketh about the poles of heaven.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "After imputation of false crimes, this disputer chargeth holy Job also with heathenish error of the Aegyptians, that God hath no providence of men in this world. Aristotel. li. de mundo. textu. 84. So some heretics in their frenzy accuse Catholics of condemned heresies."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -2337,27 +2780,39 @@
           "verse": 30,
           "text": "The innocent shall be saved, but shall be saved in the cleanness of his hands."
         }
-      ]
+      ],
+      "summary": "Eliphaz contendeth that God is not pleased with a just man's afflictions: 5. falsely imputeth enormous crimes to holy Job, 12. and gross errors. 21. Wisheth him therefore to repent, that so he may prosper."
     },
     {
       "chapter": 23,
-      "summary": "Job expecteth help and sentence of God, ℣.6 with just fear, yet with good conscience maintaineth his own innocency.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Job answering, said: talk is in bitterness, and the hand of my plague is aggravated upon my mourning."
+          "text": "But Job answering, said:"
         },
         {
           "verse": 2,
-          "text": "Now also my"
+          "text": "<na>(a)</na> Now also my talk is in bitterness, and the hand of my plague is aggravated upon my mourning.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Whiles he expected some comfort of his friends, they still afflicted him more & more, charging him with false crimes & so aggravating his grief both of body and mind."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "Who will grant me that I may know and find him, & come even to his throne?"
+          "text": "Who will grant me that I may know and find him, & come even to <na>(b)</na> his throne?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Therefore he appealeth to God's judgement seat for sentence."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "I will set judgement before him, and will fill my mouth with accusations."
+          "text": "Iwill set judgement before him, and will fill my mouth with accusations."
         },
         {
           "verse": 5,
@@ -2365,7 +2820,7 @@
         },
         {
           "verse": 6,
-          "text": "I will not that he contend with me with much strength, nor that he oppress me with the weight of his greatness."
+          "text": "Iwill not that he contend with me with much strength, nor that he oppress me with the weight of his greatness."
         },
         {
           "verse": 7,
@@ -2377,7 +2832,7 @@
         },
         {
           "verse": 9,
-          "text": "If to the left hand, what shall I do? I shall not apprehend him: if I turn my self to the right hand, I shall not see him."
+          "text": "If to the left hand, what shall I do? I shall not apprehend him: if I turn myself to the right hand, I shall not see him."
         },
         {
           "verse": 10,
@@ -2397,7 +2852,7 @@
         },
         {
           "verse": 14,
-          "text": "And when he shall have fulfilled his will in me, many things also are at hand with him."
+          "text": "And when he shall have fulfilled his will in me, many other things also are at hand with him."
         },
         {
           "verse": 15,
@@ -2411,15 +2866,21 @@
           "verse": 17,
           "text": "For I have not perished because of the imminent darkness, neither hath the mist covered my face."
         }
-      ]
+      ],
+      "summary": "Job expecteth help and sentence of God, 6. with just fear, yet with good conscience maintaineth his own innocency."
     },
     {
       "chapter": 24,
-      "summary": "God in his providence knoweth when he will punish the wicked, which his true servants know not, much less the impious.",
       "verses": [
         {
           "verse": 1,
-          "text": "Times are not hid from the Omnipotent: but they that know him, know not his days."
+          "text": "Times are not hid from the Omnipotent: but they <na>(a)</na> that know him, know not his days.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God's servants know that he will punish wickedness, but know not when the wicked presume that he will never punish them."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2467,7 +2928,13 @@
         },
         {
           "verse": 13,
-          "text": "They have been rebellious to the light, they have not known his ways, neither did they return by his paths."
+          "text": "They have been <na>(b)</na> rebellious to the light, they have not known his ways, neither did they return by his paths.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Heretics doing and teaching against their own knowledge, are afterward strucken with blindness, that they cannot see the truth. S. Greg. li. 16. c. 20."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2491,7 +2958,13 @@
         },
         {
           "verse": 19,
-          "text": "Let him pass from snow waters to exceeding heat, and his sin even unto hell."
+          "text": "Let him pass <na>(c)</na> from snow waters to exceeding heat, and his sin even unto hell.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Sinners running into both extremes of defect and excess, are likewise punished with contrary torments."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -2507,7 +2980,13 @@
         },
         {
           "verse": 23,
-          "text": "God hath given him place for penance, and he abuseth it unto pride: but his eyes be upon his ways."
+          "text": "God hath given him place for penance, and he <na>(d)</na> abuseth it unto pride: but his eyes be upon his ways.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Man by power of free will often presumeth to spend the time in sinning which God granteth him to do penance, for former sins. Rom. 2."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -2517,19 +2996,24 @@
           "verse": 25,
           "text": "And if it be not so, who can reprove me that I have lied, and set my words before God?"
         }
-      ]
+      ],
+      "summary": "God in his providence knoweth when he will punish the wicked, which his true servants know not, much less the impious."
     },
     {
       "chapter": 25,
-      "summary": "Baldad endeavoureth again to terrify Job with God's judgement, from appealing thereto, and from avouching his own innocency.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Baldad the Suhite answering, said:"
+          "text": "But <cr>[1]</cr> Baldad the Suhite answering, said:",
+          "cross_refs": [
+            {
+              "text": "The eighth conflict."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "maketh concord in his high ones. Power and terror is with him, that"
+          "text": "Power and terror is with him, that maketh concord in his high ones."
         },
         {
           "verse": 3,
@@ -2537,7 +3021,13 @@
         },
         {
           "verse": 4,
-          "text": "Can man be justified compared with God, or the born of a woman appear clean?"
+          "text": "<na>(a)</na> Can man be justified compared with God, or the born of a woman appear clean?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Job answered before, ch. 9. yet blind and obstinate disputers still repeat the same objections."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -2547,23 +3037,35 @@
           "verse": 6,
           "text": "How much more man rottenness, and the son of man a worm?"
         }
-      ]
+      ],
+      "summary": "More and more Job confirmeth his innocency, avouching that God not presently judging, 11. will in time condemn the wicked."
     },
     {
       "chapter": 26,
-      "summary": "Job refuteth his adversary's needless and common arguments, by more sound discoursing of God's power, and wisdom.",
       "verses": [
         {
           "verse": 1,
-          "text": "But Job answering, said: are thou? His that is weak? And doest thou"
+          "text": "But Job answering, said:"
         },
         {
           "verse": 2,
-          "text": "Whose helper hold up the arm of him, that is not strong?"
+          "text": "<na>(a)</na> Whose helper are thou? His that is weak? And doest thou hold up the arm of him, that is not strong?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Job sheweth that neither God needeth man's help:"
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "To whom hast thou given counsel? Perhaps to him, that hath not wisdom, and thy prudence hast thou shewed very great."
+          "text": "To whom hast thou given counsel? Perhaps to him, that hath not wisdom, and <na>(b)</na> thy prudence hast thou shewed very great.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Neither is Baldad's prudence able to help, if there were need."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -2571,7 +3073,13 @@
         },
         {
           "verse": 5,
-          "text": "Behold the giants groan under the waters, & they that dwell with them."
+          "text": "Behold the <na>(c)</na> giants groan under the waters, & they that dwell with them.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Giants were not able to wade in Noe's flood, but were drowned with the rest."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -2603,25 +3111,36 @@
         },
         {
           "verse": 13,
-          "text": "His spirit hath adorned the heavens & his hand being the mid-wife, the winding serpent is brought forth."
+          "text": "His spirit hath adorned the heavens & his hand being the mid-wife, the <na>(d)</na> winding serpent is brought forth.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Not only great things before recited, but also the very least are made by God, and depend upon his providence."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "Lo, these things are said in part, of his ways: and where as we have heard scarce a little drop of his word, who shall be able to behold the thunder of his greatness?"
+          "text": "Lo, these things are said in part of his ways: and where as we have heard scarce a little drop of his word, who shall be able to behold the thunder of his greatness?"
         }
       ]
     },
     {
       "chapter": 27,
-      "summary": "More and more Job confirmeth his innocency, avouching that God not presently judging, ℣.11 will in time condemn the wicked.",
       "verses": [
         {
           "verse": 1,
-          "text": "Job also added, taking his parable, and said: my judgment, and the Omnipotent, which"
+          "text": "Job also added, taking his parable, and said:"
         },
         {
           "verse": 2,
-          "text": "God liveth, who hath taken away hath brought my soul to bitterness."
+          "text": "God liveth, who hath <na>(a)</na> taken away my judgment, and the Omnipotent, which hath brought my soul to bitterness.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God would not as yet have Job's cause judged, but reserved the sentence, for his greater trial in patience."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -2629,7 +3148,13 @@
         },
         {
           "verse": 4,
-          "text": "My lips shall not speak iniquity, neither shall my tongue meditate lying."
+          "text": "My lips shall not speak iniquity, neither shall my tongue meditate <na>(b)</na> lying.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "It were a lie to acknowledge such sins as he had not committed."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -2637,7 +3162,7 @@
         },
         {
           "verse": 6,
-          "text": "My justification which I have begun to hold, I will not forsake for my heart doth not reprehend me in all my life."
+          "text": "My justification which I have begun to hold, I will not forsake: for my heart doth not reprehend me in all my life."
         },
         {
           "verse": 7,
@@ -2657,7 +3182,7 @@
         },
         {
           "verse": 11,
-          "text": "I will teach you by the hand of God, what the Omnipotent hath, neither will I hide it."
+          "text": "Iwill teach you by the hand of God, what the Omnipotent hath, neither will I hide it."
         },
         {
           "verse": 12,
@@ -2689,7 +3214,13 @@
         },
         {
           "verse": 19,
-          "text": "The rich man when he shall sleep shall take away nothing with him: he shall open his eyes, and find nothing."
+          "text": "The rich man <na>(c)</na> when he shall sleep shall take away nothing with him: he shall open his eyes, and find nothing.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Some part of God's judgement falleth on the wicked in this life, but especially at their death. Psal. 75."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -2711,11 +3242,16 @@
     },
     {
       "chapter": 28,
-      "summary": "The marvelous works of God, the author of nature, shew his power and wisdom, ℣.12 and that true riches consist not in temporal creatures, but in wisdom, ℣.28 and fear of God.",
       "verses": [
         {
           "verse": 1,
-          "text": "Silver hath beginnings of her veins, and gold hath a place, wherein it is molten."
+          "text": "Silver hath <na>(a)</na> beginnings of her veins, and gold hath a place, wherein it is molten.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "By these more precious & rare creatures, men ought to consider the Creator, & so not set their rest in them, but in him, which is true wisdom."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2727,7 +3263,13 @@
         },
         {
           "verse": 4,
-          "text": "The torrent divideth from the pilgrim people, them whom the foot of the needy man hath forgotten, and to whom there is no way."
+          "text": "The <na>(b)</na> torrent divideth from the pilgrim people, them whom the foot of the needy man hath forgotten, and to whom there is no way.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Sudden heady waters bursting out do change the ways and passages of men."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -2763,7 +3305,13 @@
         },
         {
           "verse": 13,
-          "text": "Man knoweth not the price thereof, neither is it found in the land of them that live pleasantly."
+          "text": "Man knoweth not the price thereof, <na>(c)</na> neither is it found in the land of them that live pleasantly.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "True wisdom is not in natural things, but in supernatural virtues."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2799,7 +3347,7 @@
         },
         {
           "verse": 22,
-          "text": "Perdition & death have said: With our ears we have heard the same thereof."
+          "text": "Perdition & death have said: With our ears we have heard the fame thereof."
         },
         {
           "verse": 23,
@@ -2823,21 +3371,37 @@
         },
         {
           "verse": 28,
-          "text": "And he said to man: Behold the fear of our Lord, that is wisdom: and to depart from evil, understanding."
+          "text": "And he said to man: Behold <na>(d)</na> the fear of our Lord, that is wisdom: and to <na>(e)</na> depart from evil, understanding.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "When man hath considered God's works, his duty is to fear God."
+            },
+            {
+              "label": "e",
+              "text": "Then to depart from evil & do good."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "The marvelous works of God, the author of nature, shew his power and wisdom, 12. and that true riches consist not in temporal creatures, but in wisdom, 28. and fear of God."
     },
     {
       "chapter": 29,
-      "summary": "Again Job recounteth God's former benefits, as well his grace, whereby he did good works, ℣.5 as temporal prosperity: ℣.9 and wisdom above other Princes.",
       "verses": [
         {
           "verse": 1,
-          "text": "Job also added, taking his parable, and said: according to the former months, according"
+          "text": "Job also added, taking <na>(a)</na> his parable, and said:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Parables are not only similitudes of things, but also pithy and profound sentences, such as Job, Salomon, and other wisest men uttered."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "Who will grant me, that I may be to the days in which God kept me?"
+          "text": "Who will grant me, that I may be according to the former months, according to the days in which God kept me?"
         },
         {
           "verse": 3,
@@ -2885,19 +3449,19 @@
         },
         {
           "verse": 14,
-          "text": "I was clothed with justice: and I revested me with my judgment, as with a garment and crown."
+          "text": "Iwas clothed with justice: and I revested me with my judgment, as with a garment and crown."
         },
         {
           "verse": 15,
-          "text": "I was an eye to the blind, and a foot to the lame."
+          "text": "Iwas an eye to the blind, and a foot to the lame."
         },
         {
           "verse": 16,
-          "text": "I was the father of the poor: and the cause which I knew not, I searched most diligently."
+          "text": "Iwas the father of the poor: and the cause which I knew not, I searched most diligently."
         },
         {
           "verse": 17,
-          "text": "I brake the jaws of the wicked man, and out of his teeth I took away the prey."
+          "text": "Ibrake the jaws of the wicked man, and out of his teeth I took away the prey."
         },
         {
           "verse": 18,
@@ -2929,17 +3493,29 @@
         },
         {
           "verse": 25,
-          "text": "If I would have gone to them, I sat first, and when I sat as a king with his army standing about him, yet was I a comforter of them that mourned."
+          "text": "If I would have gone to them, I sat first, and when I sat <na>(b)</na> as a king with his army standing about him, yet was I a comforter of them that mourned.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "This particles (as) importeth not here a similitude, but rather that he was a very King or supreme Prince, as having supreme authority. v. 7. royal vesture and crown. v. 14. Isidorus li. de vita Sanct. Beda & alij."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Again Job recounteth God's former benefits, as well his grace, whereby he did good works, 5. as temporal prosperity: 9. and wisdom above other Princes."
     },
     {
       "chapter": 30,
-      "summary": "Holy Job sheweth the great change of his temporal estate, from welfare into great calamity.",
       "verses": [
         {
           "verse": 1,
-          "text": "But now they of younger time scorn me, whose fathers I vouchsafed not to put with the dogs of my flock:"
+          "text": "But now they of younger time scorn me, whose fathers I vouchsafed not to put <na>(a)</na> with the dogs of my flock:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Men scarce fit to have care of dogs derided Job in his affliction: so he was contemned of the most contemptible."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2963,7 +3539,7 @@
         },
         {
           "verse": 7,
-          "text": "Who rejoiced among these kind of things, and counted it delicacies to be under the briers."
+          "text": "Who rejoiced among these kind of things, and counted it delicacies to be under the briars."
         },
         {
           "verse": 8,
@@ -2975,7 +3551,13 @@
         },
         {
           "verse": 10,
-          "text": "They abhor me, and fly far from me, and are not afraid to spit in my face."
+          "text": "They abhor me, and fly far from me, and are not afraid <na>(b)</na> to spit in my face.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Our Saviour also suffered this reproach, Mat. 26. In the Hebrew have put , in the plural number, importing plurality of Divine Persons."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -2995,11 +3577,11 @@
         },
         {
           "verse": 15,
-          "text": "I am brought to nothing: as a wind thou hast taken away my desire: and my prosperity hath passed away as a cloud."
+          "text": "Iam brought to nothing: as a wind thou hast taken away my desire: and my prosperity hath passed away as a cloud."
         },
         {
           "verse": 16,
-          "text": "And now my soul withereth in my self, and the days of affliction possess me."
+          "text": "And now my soul withereth in myself, and the days of affliction possess me."
         },
         {
           "verse": 17,
@@ -3011,11 +3593,11 @@
         },
         {
           "verse": 19,
-          "text": "I am compared to dirt, and am resembled to embers and ashes."
+          "text": "Iam compared to durt, and am resembled to imbers and ashes."
         },
         {
           "verse": 20,
-          "text": "I cry to thee, and thou hearest me not: I stand, and thou doest not respect me."
+          "text": "Icry to thee, and thou hearest me not: I stand, and thou doest not respect me."
         },
         {
           "verse": 21,
@@ -3027,7 +3609,13 @@
         },
         {
           "verse": 23,
-          "text": "I know that thou wilt deliver me to death, where a house is appointed for every one that liveth."
+          "text": "Iknow <na>(c)</na> that thou wilt deliver me to death, where a house is appointed for every one that liveth.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Death is a comfort to a just man in tribulation."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -3035,11 +3623,11 @@
         },
         {
           "verse": 25,
-          "text": "I wept sometime upon him that was afflicted, & my soul had compassion on the poor."
+          "text": "Iwept sometime upon him that was afflicted, & my soul had compassion on the poor."
         },
         {
           "verse": 26,
-          "text": "I expected good things, and evils are come upon me: tarried for light, and darkness brake forth."
+          "text": "Iexpected good things, and evils are come upon me: tarried for light, and darkness brake forth."
         },
         {
           "verse": 27,
@@ -3047,11 +3635,17 @@
         },
         {
           "verse": 28,
-          "text": "I went mourning without fury, rising up, I cried in the multitude."
+          "text": "Iwent mourning without fury, rising up, I cried in the multitude."
         },
         {
           "verse": 29,
-          "text": "I was the brother of dragons, and fellow of Ostriches:"
+          "text": "Iwas the <na>(d)</na> brother of dragons, and fellow of Ostriches:",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Like to such beasts as seek solitary places to lament in."
+            }
+          ]
         },
         {
           "verse": 30,
@@ -3061,15 +3655,21 @@
           "verse": 31,
           "text": "My harp is turned into mourning, and my instrument into the voice of weepers."
         }
-      ]
+      ],
+      "summary": "Holy Job reciteth sincerely his own virtues, shewing thereby that he is not punished so grievously for his sins, but by God's providence for some other cause."
     },
     {
       "chapter": 31,
-      "summary": null,
       "verses": [
         {
           "verse": 1,
-          "text": "Holy Job reciteth sincerely his own virtues, shewing thereby that he is not punished so grievously for his sins, but by God's providence for some other cause. I have made a covenant with mine eyes, that I would not so much as think of a virgin."
+          "text": "Ihave <na>(a)</na> made a covenant with mine eyes, that I would not so much as <na>(b)</na> think of a virgin. occasion to carnal concupiscence. <na>(b)</na> By which means, he was also safe from carnal cogitations. S. Greg. li. 21. c. 2.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Whereas there is a continual war between a chaste mind and rebellious flesh, holy Job made his condition of truce between these enemies: that his eye should never give"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3097,7 +3697,7 @@
         },
         {
           "verse": 8,
-          "text": "Let me sow, and let an other eat it: and let my progeny be plucked up by the roots."
+          "text": "Let me sow, and let another eat it: and let my progeny be plucked up by the roots."
         },
         {
           "verse": 9,
@@ -3105,7 +3705,7 @@
         },
         {
           "verse": 10,
-          "text": "Let my wife be the harlot of an other man, and let other men lie with her."
+          "text": "Let my wife be the harlot of another man, and let other men lie with her."
         },
         {
           "verse": 11,
@@ -3133,7 +3733,7 @@
         },
         {
           "verse": 17,
-          "text": "If I have eaten my morsel alone, and the pupil hath not eaten thereof with me"
+          "text": "If I have eaten my morsel alone, and the pupil hath not eaten thereof with me."
         },
         {
           "verse": 18,
@@ -3145,11 +3745,11 @@
         },
         {
           "verse": 20,
-          "text": "If his sides have not blessed me, and he was not warmed with the fleece of my sheep:"
+          "text": "If his sides have not blessed me, and he was not warmed with the fleeces of my sheep:"
         },
         {
           "verse": 21,
-          "text": "If I have lifted up my hand over the pupil, yea when I saw my self in the gate the superior:"
+          "text": "If I have lifted up my hand over the pupil, yea when I saw myself in the gate the superior:"
         },
         {
           "verse": 22,
@@ -3177,7 +3777,13 @@
         },
         {
           "verse": 28,
-          "text": "Which is most great iniquity, and a denial against God the most high?"
+          "text": "Which is <na>(c)</na> most great iniquity, and a denial against God the most high?",
+          "notes": [
+            {
+              "label": "c",
+              "text": "By this demand he provoked his adversaries to produce what they could to convince him of idolatry or denying God, wherewith they indirectly charged him."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -3225,21 +3831,37 @@
         },
         {
           "verse": 40,
-          "text": "For wheat let the briar grow to me, and for barley the thorn."
+          "text": "For wheat let the briar grow to me, and for barley the thorn. <na>(d)</na>",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Job disputed no more with his friends but afterward submitted himself to God, acknowledging some unadvised speech. c. 39. v. 37. c. 42. v. 3. (d) The words of Job are ended."
+            }
+          ]
         }
       ]
     },
     {
       "chapter": 32,
-      "summary": "Eliu a young man, being angry that Job persisted in his opinion, and that his three friends could not convince him, ℣.8 taketh upon him to confute Job, which they could not do.",
       "verses": [
         {
           "verse": 1,
-          "text": "But these three men omitted to answer Job, for that he seemed just to himself."
+          "text": "But <cr>[1]</cr> these three men omitted to answer Job, for that he seemed just to himself.",
+          "cross_refs": [
+            {
+              "text": "The ninth conflict."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And Eliu the son of Barachel a Buzite, of the kindred of Ram, was angry and took indignation: and he was angry against Job, for that he said himself to be just before God."
+          "text": "And <na>(a)</na> Eliu the son of Barachel a Buzite, of the kindred of Ram, was angry and took indignation: and he was angry against Job, for that he said himself to be just before God.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This young man witty & learned, but proud withal, was a figure of the hot and arrogant disputers who will seem to know more than their elders. S. Greg. l. 23. c. 2."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -3279,7 +3901,13 @@
         },
         {
           "verse": 12,
-          "text": "And as long as I thought you said somewhat, I considered: but as I see, here is none of you that can reprove Job, and answer to his words."
+          "text": "And as long as I thought you said somewhat, I considered: but as I see, <na>(b)</na> here is none of you that can reprove Job, and answer to his words.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Anotorious arrogancy to hold himself wiser than any man, either of his own sect, or of his adversaries."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -3287,7 +3915,13 @@
         },
         {
           "verse": 14,
-          "text": "He hath spoken nothing to me, and I will not answer him according to your words."
+          "text": "He hath spoken nothing <na>(c)</na> to me, and I will not answer him according to your words.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Those that neither credit Catholic Doctors, nor yet rely upon their own elders, but every one upon his own private spirit, deny that to pertain to them which is spoken to others in the same errors. S. Greg. l. 23. c. 8."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -3299,7 +3933,7 @@
         },
         {
           "verse": 17,
-          "text": "I also will answer my part, & will shew my knowledge."
+          "text": "Ialso will answer my part, & will shew my knowledge."
         },
         {
           "verse": 18,
@@ -3311,21 +3945,21 @@
         },
         {
           "verse": 20,
-          "text": "I will speak, and take breath a little: I will open my lips, and will answer."
+          "text": "Iwill speak, and take breath a little: I will open my lips, and will answer."
         },
         {
           "verse": 21,
-          "text": "I will not accept the person of a man, & I will not make God equal to man."
+          "text": "Iwill not accept the person of a man, & I will not make God equal to man."
         },
         {
           "verse": 22,
           "text": "For I know not how long I shall continue, and whether after a while my maker will take me away."
         }
-      ]
+      ],
+      "summary": "Eliu endeavoureth to prove by Job's speech that he is unjust: 13. arguing that God (by afflicting him) hath already so judged. 23. But if by an Angel's admonition he repent, all shall be remitted."
     },
     {
       "chapter": 33,
-      "summary": "Eliu endeavoureth to prove by Job's speech that he is unjust: ℣.13 arguing that God (by afflicting him) hath already so judged. ℣.23 But if by an Angel's admonition he repent, all shall be remitted.",
       "verses": [
         {
           "verse": 1,
@@ -3353,7 +3987,13 @@
         },
         {
           "verse": 7,
-          "text": "But yet let not my miracle terrify thee, and let not my eloquence be burdenous to thee."
+          "text": "But yet let not my <na>(a)</na> miracle terrify thee, and let not my eloquence be burdenous to thee.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Arrogant men imagine their own conceits and utterance to be more marvelous than other men's, not knowing how foolish their own pride is. S. Greg. li. 23. c. 16."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -3361,7 +4001,7 @@
         },
         {
           "verse": 9,
-          "text": "I am clean, and without sin: unspotted, and there is no iniquity in me."
+          "text": "Iam clean, and without sin: unspotted, and there is no iniquity in me."
         },
         {
           "verse": 10,
@@ -3381,7 +4021,13 @@
         },
         {
           "verse": 14,
-          "text": "God, speaketh once, and repeateth not the self-same the second time."
+          "text": "God, <na>(b)</na> speaketh once, and repeateth not the self-same the second time.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "It is true that God's will once uttered ought to suffice all men, for he answereth not to each one by a particular speech, but by common speech (or fact) satisfieth all men's questions: whereof S. Gregory noteth this general rule: Vita praecedentium sit forma sequentium: The life of them that go before is made a form (or rule) of them that follow. li. 23. c. 18. &. 19. But Eliu falsely supposed, that God by Job's affliction had declared that he was a wicked man. For indeed God declared the contrary c. 1. v. 1. & 8. c. 2. v. 3."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -3463,15 +4109,14 @@
     },
     {
       "chapter": 34,
-      "summary": "Again Eliu chargeth Job with blasphemy, and other crimes, ℣.10 sheweth the equity of God's judgement: ℣.20 and that all things are subject to God's power and knowledge.",
       "verses": [
         {
           "verse": 1,
-          "text": "Eliu therefore pronouncing spake these words also: and ye learned harken to me:"
+          "text": "Eliu therefore pronouncing spake these words also:"
         },
         {
           "verse": 2,
-          "text": "Hear ye wise men my words:"
+          "text": "Hear ye wise men my words: and ye learned harken to me:"
         },
         {
           "verse": 3,
@@ -3483,7 +4128,13 @@
         },
         {
           "verse": 5,
-          "text": "Because Job said: I am just, and God hath subverted my judgment."
+          "text": "Because Job said: I am just, and God hath <na>(a)</na> subverted my judgment.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Job said not that God subverted judgement (or wrongfully judged) but God hath taken away my judgement. cha. 27. v. 2. that is, deferred to judge my cause."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -3499,11 +4150,17 @@
         },
         {
           "verse": 9,
-          "text": "For he hath said: Man shall not please God although he run with him."
+          "text": "For he hath said: Man shall not please God <na>(b)</na> although he run with him.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Neither did Job say this (c. 9. v. 22.) but Eliu wrested his meaning, that he might have something to reprehend. S. Greg. li. 24. c. 25."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "Therefore ye discrete men hear me, far from God be impiety, and iniquity from the Omnipotent."
+          "text": "Therefore ye discreet men hear me, far from God be impiety, and iniquity from the Omnipotent."
         },
         {
           "verse": 11,
@@ -3515,7 +4172,7 @@
         },
         {
           "verse": 13,
-          "text": "What other hath he appointed over the earth or whom hath he set over the world, which he made?"
+          "text": "What other hath he appointed over the earth? or whom hath he set over the world, which he made?"
         },
         {
           "verse": 14,
@@ -3575,7 +4232,7 @@
         },
         {
           "verse": 28,
-          "text": "That they might cause the cry of the needy man to come to him, & he heard the voice of the poor."
+          "text": "That they might cause the cry of the needy man to come to him, & he hear the voice of the poor."
         },
         {
           "verse": 29,
@@ -3583,7 +4240,13 @@
         },
         {
           "verse": 30,
-          "text": "Who maketh a man that is an hypocrite reign for the sins of the people."
+          "text": "Who maketh a man that is <na>(b)</na> an hypocrite reign for the sins of the people.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Eliu applieth this to Job, as though he had made false shew of virtue which he had not, and that God had suffered him hitherto to reign, or rather to tyrannize for just punishment of his people's sins. But God at last declared that Job was not such a one, ch. 42. v. 7."
+            }
+          ]
         },
         {
           "verse": 31,
@@ -3607,17 +4270,17 @@
         },
         {
           "verse": 36,
-          "text": "O my father, let Job be proved even to the end: cease not from the man of iniquity."
+          "text": "Omy father, let Job be proved even to the end: cease not from the man of iniquity."
         },
         {
           "verse": 37,
           "text": "Who addeth blasphemy upon his sins, let him be restrained in the mean time among us: and then let him provoke God to judgment with his speeches."
         }
-      ]
+      ],
+      "summary": "Again Eliu chargeth Job with blasphemy, and other crimes, 10. sheweth the equity of God's judgement: 20. and that all things are subject to God's power and knowledge."
     },
     {
       "chapter": 35,
-      "summary": "Eliu pretending that Job had said God to be unjust, sheweth that man's piety nor impiety neither profiteth nor disprofiteth God: ℣.13 and that he judgeth all things rightly.",
       "verses": [
         {
           "verse": 1,
@@ -3625,7 +4288,13 @@
         },
         {
           "verse": 2,
-          "text": "that thou saidst: I am juster than God? Doth thy cogitation seem just to thee,"
+          "text": "Doth thy cogitation seem just to thee, that thou saidst: <na>(a)</na> I am juster than God?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Eliu insisteth much in this calumniation: for Job never said, that he was just compared with God , nor juster than God . But that his affliction was greater than his sin. ch. 6. v. 3. c. 23. v. 7. &c."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -3637,7 +4306,13 @@
         },
         {
           "verse": 5,
-          "text": "Look up to heaven and see, and behold the sky, that it is higher than thou."
+          "text": "<na>(b)</na> Look up to heaven and see, and behold the sky, that it is higher than thou.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "These are strong sentences (saith S. Gregory) but they agree not (or be evil applied) to the blessed person of Job. li. 26. c. 7."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -3683,11 +4358,11 @@
           "verse": 16,
           "text": "Therefore Job in vain openeth his mouth, and without knowledge multiplieth words."
         }
-      ]
+      ],
+      "summary": "Eliu pretending that Job had said God to be unjust, sheweth that man's piety nor impiety neither profiteth nor disprofiteth God: 13. and that he judgeth all things rightly."
     },
     {
       "chapter": 36,
-      "summary": "Yet further Eliu sheweth, that God by his power and wisdom giveth to every one that is just. ℣.16 Inferring (falsely) that all Job's affliction is for his sins: ℣.22 discoursing still of God's power, wisdom, and providence.",
       "verses": [
         {
           "verse": 1,
@@ -3695,15 +4370,21 @@
         },
         {
           "verse": 2,
-          "text": "thee: for as yet I have what to speak for Bear with me a little, and I will shew to God."
+          "text": "Bear with me a little, and I will shew to thee: for as yet I have what to speak for God."
         },
         {
           "verse": 3,
-          "text": "I will repeat my knowledge from the beginning, and I will prove my maker just."
+          "text": "Iwill repeat my knowledge from the beginning, and I will prove my maker just."
         },
         {
           "verse": 4,
-          "text": "For indeed my words are without lie, & perfect knowledge shall be proved to thee."
+          "text": "For indeed my words are <na>(a)</na> without lie, & perfect knowledge shall be proved to thee.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "No orator is so vain but he promiseth all truth, & speaketh some to get credit with his auditory."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -3715,7 +4396,13 @@
         },
         {
           "verse": 7,
-          "text": "He shall not take away his eyes from the just man, and he placeth kings in the throne for ever, and there they are extolled."
+          "text": "He shall not take away his eyes from the just man, and he placeth kings in the throne <na>(b)</na> for ever, and there they are extolled.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "If Kings reign well their praise remaineth for ever. v. 11."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -3743,7 +4430,7 @@
         },
         {
           "verse": 14,
-          "text": "Their soul shall die in tempest, and their life, among the effeminate."
+          "text": "Their soul shall die in tempest, and their life, among the effeminates."
         },
         {
           "verse": 15,
@@ -3767,7 +4454,17 @@
         },
         {
           "verse": 20,
-          "text": "Protract not the night, that peoples may come up for them."
+          "text": "<na>(c)</na> Protract not the night, that <na>(d)</na> peoples may come up for them.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The night is drawn long, when tentations are not speedily resisted."
+            },
+            {
+              "label": "d",
+              "text": "whereby still worse & worse cogitations succeed in place of the first. S. Greg. l. 26. c. 38."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -3775,7 +4472,13 @@
         },
         {
           "verse": 22,
-          "text": "Behold, God is high in his strength, and none is like to him among the law givers."
+          "text": "Behold, God is high in his strength, and none is like to him <na>(e)</na> among the law givers.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Above all other Law-givers God is most able to punish transgressors, but most willing & most able to reward the observers. S. Gregory expoundeth this to be a prophecy of Christ our singular Law-giver. l. 27. c. 1."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -3783,7 +4486,7 @@
         },
         {
           "verse": 24,
-          "text": "Remember that thou knowest not his work, whereof men have song."
+          "text": "Remember that thou knowest not his work, whereof men have sung."
         },
         {
           "verse": 25,
@@ -3815,25 +4518,37 @@
         },
         {
           "verse": 32,
-          "text": "In his hands he hideth the light, & commandeth it that it come again."
+          "text": "In his hands <na>(f)</na> he hideth the light, & commandeth it that it come again.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Christ will give the glorious light of heaven, which now is hidden to men that lost terrestrial paradise. ibidem. c. 12."
+            }
+          ]
         },
         {
           "verse": 33,
           "text": "He sheweth his friend thereof, that it is his possession, and that he may ascend to it."
         }
-      ]
+      ],
+      "summary": "Yet further Eliu sheweth, that God by his power and wisdom giveth to every one that is just. 16. Inferring (falsely) that all Job's affliction is for his sins: 22. discoursing still of God's power, wisdom, and providence."
     },
     {
       "chapter": 37,
-      "summary": "Eliu continueth his discourse, shewing God's wisdom, power, and justice, by his marvelous works of Meteors, ℣.14 and use thereof to man's commodity: ℣.18 which the wisest men sufficiently understand not, much less may presume (as he unjustly chargeth Job) to contend with God:",
       "verses": [
         {
           "verse": 1,
-          "text": "Upon this my heart is sore afraid, and is moved out of his place. speech in the terror of his voice, and the"
+          "text": "Upon <na>(a)</na> this my heart is sore afraid, and is moved out of his place.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Consideration of heavenly rewards mentioned in the end of the former chapter, comforteth the afflicted: but thunder and other meteors being figures of God's judgement, strike the heart with terror."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "Hear ye his sound proceeding out of his mouth."
+          "text": "Hear ye his speech in the terror of his voice, and the sound proceeding out of his mouth."
         },
         {
           "verse": 3,
@@ -3861,11 +4576,17 @@
         },
         {
           "verse": 9,
-          "text": "From the inner parts shall a tempest come forth, & cold from Arcturus."
+          "text": "From the inner parts shall a tempest come forth, & cold from <na>(b)</na> Arcturus.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "North wind, or north-pole."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "When God bloweth frost congealeth, and again waters are poured most largely."
+          "text": "When God bloweth^ frost congealeth, and again waters are poured most largely."
         },
         {
           "verse": 11,
@@ -3873,7 +4594,13 @@
         },
         {
           "verse": 12,
-          "text": "Which go round about, whither-soever the will of the governer shall lead them, to all that he shall command them upon the face of the whole earth."
+          "text": "Which go round about, whither-soever the will of <na>(c)</na> the governer shall lead them, to all that he shall command them upon the face of the whole earth.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "God directeth the clouds in the air, as a master mariner governeth a ship."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -3893,7 +4620,7 @@
         },
         {
           "verse": 17,
-          "text": "Are not thy garments hot, when the earth shall be blowen with the South wind?"
+          "text": "Are not thy garments hot, when the earth shall be blown with the South wind?"
         },
         {
           "verse": 18,
@@ -3913,37 +4640,65 @@
         },
         {
           "verse": 22,
-          "text": "From the North gold cometh, & toward God fearful praising."
+          "text": "From the North gold cometh, & toward God <na>(d)</na> fearful praising.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Man not able to praise God sufficiently, praiseth him with fear."
+            }
+          ]
         },
         {
           "verse": 23,
-          "text": "We can not find him worthily: great of strength, and judgment, and justice, and he can not be uttered."
+          "text": "We cannot find him worthily: great of strength, and judgment, and justice, and he cannot be uttered."
         },
         {
           "verse": 24,
-          "text": "Therefore shall men fear him, and all that seem to themselves to be wise, shall not dare to behold him."
+          "text": "Therefore shall men fear him, and all that seem to themselves to be wise, shall not dare to behold him. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Job convinced the former three with sound answers: this last and most arrogant with silence."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Eliu continueth his discourse, shewing God's wisdom, power, and justice, by his marvelous works of Meteors, 14. and use thereof to man's commodity: 18. which the wisest men sufficiently understand not, much less may presume (as he unjustly chargeth Job) to contend with God:"
     },
     {
       "chapter": 38,
-      "summary": "God after terror of a whirlwind, by way of examining his client Job of diverse creatures about their nature, sheweth that no man hath perfect knowledge of them, much less of God's immensity.",
       "verses": [
         {
           "verse": 1,
-          "text": "But our Lord answering Job out of a whirlwind, said: wrappeth in sentences with unskilful"
+          "text": "But <cr>[1]</cr> our Lord answering Job out of a whirlwind, said:",
+          "cross_refs": [
+            {
+              "text": "The third part. The tenth and last dispute. God discusseth the controversy, and giveth sentence for Job."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "Who is this that words?"
+          "text": "Who is this that wrappeth in sentences with unskillful words?"
         },
         {
           "verse": 3,
-          "text": "Gird thy loins as a man: I will ask thee, and answer thou me."
+          "text": "Gird thy loins as a man: I will ask thee, and <na>(a)</na> answer thou me.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Only the Creator hath absolute and perfect knowledge of all creatures. As may appear by induction, or example:"
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "Where wast thou when I laid the foundations of the earth? Tell me if thou hast understanding."
+          "text": "Where wast thou when I laid <na>(b)</na> the foundations of the earth? Tell me if thou hast understanding.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Of the creation of the earth."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -3959,7 +4714,13 @@
         },
         {
           "verse": 8,
-          "text": "Who shut in the sea with doors when it brake forth, proceeding as it were out of a matrice:"
+          "text": "Who shut in the <na>(c)</na> sea with doors when it brake forth, proceeding as it were out of a matrice:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Of the sea,"
+            }
+          ]
         },
         {
           "verse": 9,
@@ -3967,7 +4728,7 @@
         },
         {
           "verse": 10,
-          "text": "I compassed it with my bounds, and put bar and doors."
+          "text": "Icompassed it with my bounds, and put bar and doors."
         },
         {
           "verse": 11,
@@ -3975,7 +4736,13 @@
         },
         {
           "verse": 12,
-          "text": "Didst thou after thy birth command the morning, and shew the dawning his place?"
+          "text": "Didst thou after thy birth command <na>(d)</na> the morning, and shew the dawning his place?",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Distinction of lights,"
+            }
+          ]
         },
         {
           "verse": 13,
@@ -3991,7 +4758,13 @@
         },
         {
           "verse": 16,
-          "text": "Hast thou entered into the depths of the sea, and walked in the lowest parts of the great depth?"
+          "text": "Hast thou entered into <na>(e)</na> the depths of the sea, and walked in the lowest parts of the great depth?",
+          "notes": [
+            {
+              "label": "e",
+              "text": "The depth of the sea,"
+            }
+          ]
         },
         {
           "verse": 17,
@@ -4011,7 +4784,13 @@
         },
         {
           "verse": 21,
-          "text": "Didst thou know then that thou shouldest be born? & didst thou know the number of thy days?"
+          "text": "<na>(f)</na> Didst thou know then that thou shouldest be born? & didst thou know the number of thy days?",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Man's own nativity, and what shall happen after his death,"
+            }
+          ]
         },
         {
           "verse": 22,
@@ -4023,11 +4802,23 @@
         },
         {
           "verse": 24,
-          "text": "What way is the light spread, is heat divided upon the earth?"
+          "text": "What way is the <na>(g)</na> light spread, is heat divided upon the earth?",
+          "notes": [
+            {
+              "label": "g",
+              "text": "The sun's light and heat."
+            }
+          ]
         },
         {
           "verse": 25,
-          "text": "Who gave course to the most vehement shower, and the way of the sounding thunder:"
+          "text": "Who <na>(h)</na> gave course to the most vehement shower, and the way of the sounding thunder:",
+          "notes": [
+            {
+              "label": "h",
+              "text": "Diverse Meteors."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -4051,7 +4842,13 @@
         },
         {
           "verse": 31,
-          "text": "Shalt thou be able to join together the shining stars Pleiades, or canst thou dissipate the circuit of Arcturus?"
+          "text": "Shalt thou be able to join together the shining <na>(i)</na> stars Pleiades, or canst thou dissipate the circuit of Arcturus?",
+          "notes": [
+            {
+              "label": "i",
+              "text": "Stars, and planets."
+            }
+          ]
         },
         {
           "verse": 32,
@@ -4071,11 +4868,26 @@
         },
         {
           "verse": 36,
-          "text": "Who put wisdom in the heart of man or who gave the cock understanding?"
+          "text": "Who put <na>(k)</na> wisdom in the heart of man or who gave the <na>(l)</na> cock understanding?",
+          "notes": [
+            {
+              "label": "k",
+              "text": "Man hath his knowledge from God."
+            },
+            {
+              "label": "l",
+              "text": "And the cock hath skill which man wanteth."
+            }
+          ]
         },
         {
           "verse": 37,
-          "text": "Who shall declare the manner of the heavens, and the harmony of heaven who shall make to sleep?"
+          "text": "Who shall declare the manner of the heavens, and the harmony of heaven who shall make to <cr>[1]</cr> sleep?",
+          "cross_refs": [
+            {
+              "text": "* or rest from motion."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -4083,7 +4895,13 @@
         },
         {
           "verse": 39,
-          "text": "Shalt thou take a prey for the lioness and fill the appetite of her whelps."
+          "text": "<na>(m)</na> Shalt thou take a prey for the lioness and fill the appetite of her whelps?",
+          "notes": [
+            {
+              "label": "m",
+              "text": "In some Editions the 39. chap. beginneth here. Shewing by induction of sensible things (as before of insensible) that only God knoweth the nature of all creatures."
+            }
+          ]
         },
         {
           "verse": 40,
@@ -4093,15 +4911,29 @@
           "verse": 41,
           "text": "Who prepareth for the raven her meat, when her young ones cry to God, wandering about, because they have not meat?"
         }
-      ]
+      ],
+      "summary": "God after terror of a whirlwind, by way of examining his client Job of diverse creatures about their nature, sheweth that no man hath perfect knowledge of them, much less of God's immensity."
     },
     {
       "chapter": 39,
-      "summary": "God Almighty prosecuteth his discourse, shewing his admirable power and providence in living creatures. ℣.24 Whereupon Job acknowledgeth his own oversight in some light words.",
       "verses": [
         {
           "verse": 1,
-          "text": "Hast thou known the time when the wild goats bring forth young among the rocks, or hast thou observed the hinds when they fawn?"
+          "text": "Hast <na>(a)</na> thou known the time when the <na>(b)</na> wild goats bring forth young among the rocks, or hast thou observed the <na>(c)</na> hinds when they fawn?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "By God's marvelous providence appearing in the natural instinct of other creatures man may consider that the same is greater towards him. And therefore God here proposeth the examples of"
+            },
+            {
+              "label": "b",
+              "text": "Wild goats."
+            },
+            {
+              "label": "c",
+              "text": "Hinds."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -4117,7 +4949,13 @@
         },
         {
           "verse": 5,
-          "text": "Who hath dismist the wild ass free, and who hath loosed his bonds?"
+          "text": "Who hath dismist the <na>(d)</na> wild ass free, and who hath loosed his bonds?",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Wild asses."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -4133,7 +4971,13 @@
         },
         {
           "verse": 9,
-          "text": "Will the Rhinoceros serve thee, and will he tarry at thy stall?"
+          "text": "Will the <na>(e)</na> Rhinoceros serve thee, and will he tarry at thy stall?",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Unicorns."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -4149,7 +4993,17 @@
         },
         {
           "verse": 13,
-          "text": "The wing of the Ostrich is like to the wings of the Herodius, and of the hawk."
+          "text": "The wing of the <na>(f)</na> Ostrich is like to the wings of the <na>(g)</na> Herodius, and of the hawk.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Ostriches."
+            },
+            {
+              "label": "g",
+              "text": "Falcons, or Ierfalcons, & other hawks."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -4173,7 +5027,13 @@
         },
         {
           "verse": 19,
-          "text": "Shalt thou give strength to the horse, or put neighing about his neck?"
+          "text": "Shalt thou give strength to the <na>(h)</na> horse, or put neighing about his neck?",
+          "notes": [
+            {
+              "label": "h",
+              "text": "Horses are of singular great courage."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -4201,11 +5061,23 @@
         },
         {
           "verse": 26,
-          "text": "Doth the hawk wax feathered by thy wisdom, spreading her wings to the South?"
+          "text": "Doth the <na>(i)</na> hawk wax feathered by thy wisdom, spreading her wings to the South? Pliny sixteen.",
+          "notes": [
+            {
+              "label": "i",
+              "text": "Hawks; whereof Aristotel saith there be ten kinds:"
+            }
+          ]
         },
         {
           "verse": 27,
-          "text": "Shall the eagle mount at thy commandment, and put her nest in high places?"
+          "text": "Shall the <na>(k)</na> eagle mount at thy commandment, and put her nest in high places?",
+          "notes": [
+            {
+              "label": "k",
+              "text": "Eagles, of most strong sight."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -4233,29 +5105,41 @@
         },
         {
           "verse": 34,
-          "text": "I that have spoken lightly what can I answer? I will put my hand upon my mouth."
+          "text": "Ithat have spoken <na>(l)</na> lightly what can I answer? I will put my hand upon my mouth.",
+          "notes": [
+            {
+              "label": "l",
+              "text": "If we discuss all Job's words (saith S. Gregory.) we shall find nothing wickedly spoken, but only small specie of pride in speaking too much of his own affliction, & too little of God's goodness towards him. li. 23. c. 1."
+            }
+          ]
         },
         {
           "verse": 35,
-          "text": "One thing I have spoken, which I would I had not said: and an other, to the which things I will add no more."
+          "text": "One thing I have spoken, which I would I had not said: and another, to the which things I will add no more."
         }
-      ]
+      ],
+      "summary": "God Almighty prosecuteth his discourse, shewing his admirable power and providence in living creatures. 24. Whereupon Job acknowledgeth his own oversight in some light words."
     },
     {
       "chapter": 40,
-      "summary": "Our Lord further sheweth that man's power, nor justice, is not comparable to God's: ℣.10 as appeareth in overcoming Behemoth ℣.20 and Leviathan.",
       "verses": [
         {
           "verse": 1,
-          "text": "And our Lord answering Job out of the whirlwind, said: I will ask thee, & do thou tell me."
+          "text": "And our Lord answering Job out of the whirlwind, said:"
         },
         {
           "verse": 2,
-          "text": "Gird thy loins as a man:"
+          "text": "Gird thy loins as a man: I will ask thee, & do thou tell me."
         },
         {
           "verse": 3,
-          "text": "Shalt thou make my judgment of none effect: and condemn me, that thou mayst be justified?"
+          "text": "Shalt thou make my <na>(a)</na> judgment of none effect: and condemn me, that thou mayst be justified?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Though Job had truly avouched that his sins deserved not so great afflictions, yet he ought to have acknowledged that God afflicted him justly, for some other cause known to God, but unknown to him: which he not confessing seemed to make God's judgement unjust or of none effect. S. Greg. l. 32. c. 3."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -4263,7 +5147,7 @@
         },
         {
           "verse": 5,
-          "text": "Put beauty about thee, and set up thy self aloft, and be glorious, and put on goodly garments."
+          "text": "Put beauty about thee, and set up thyself aloft, and be glorious, and put on goodly garments."
         },
         {
           "verse": 6,
@@ -4283,7 +5167,13 @@
         },
         {
           "verse": 10,
-          "text": "Behold Behemoth whom I made with thee, shall eat hay as it were an oxe."
+          "text": "Behold <na>(b)</na> Behemoth whom I made with thee, shall eat hay as it were an oxe.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "An Elephant the greatest of all beasts, of long life, strong, meek, temperate, chaste, overcome by the Unicorn, or Dragon, or taken by the nose & led away. How much more doth God's providence give man power to overcome the devil?"
+            }
+          ]
         },
         {
           "verse": 11,
@@ -4323,7 +5213,13 @@
         },
         {
           "verse": 20,
-          "text": "Canst thou draw out the Leviathan with a hook, and with a rope shalt thou tie his tongue?"
+          "text": "Canst thou draw out the <na>(c)</na> Leviathan with a hook, and with a rope shalt thou tie his tongue?",
+          "notes": [
+            {
+              "label": "c",
+              "text": "An huge great fish, perhaps the whale, exceeding man's power to be managed, yet is subject (as also the devil signified thereby) to God's power, & providence."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -4357,23 +5253,29 @@
           "verse": 28,
           "text": "Behold his hope shall frustrate him, and in the sight of all he shall be cast down headlong."
         }
-      ]
+      ],
+      "summary": "Our Lord further sheweth that man's power, nor justice, is not comparable to God's: 10. as appeareth in overcoming Behemoth 20. and Leviathan."
     },
     {
       "chapter": 41,
-      "summary": "Leviathan is further described by the peculiar parts of his body, and terrible composition of all his members.",
       "verses": [
         {
           "verse": 1,
-          "text": "Not as cruel will I raise him: for who can resist my countenance? me before, that I may render unto him? All"
+          "text": "Not as <na>(a)</na> cruel will I raise him: for who can resist my countenance?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God ruleth all his creatures, not with cruelty as a tyrant, but with justice, ease, & power."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "Who hath given things that are under heaven be mine."
+          "text": "Who hath given me before, that I may render unto him? All things that are under heaven be mine."
         },
         {
           "verse": 3,
-          "text": "I will not spare him, and his mighty words, and framed to beseech."
+          "text": "Iwill not spare him, and his mighty words, and framed to beseech."
         },
         {
           "verse": 4,
@@ -4389,11 +5291,11 @@
         },
         {
           "verse": 7,
-          "text": "One is joined to an other, and not so much as any air entereth between them:"
+          "text": "One is joined to another, and not so much as any air entereth between them:"
         },
         {
           "verse": 8,
-          "text": "One shall stick to an other, and holding each other, they shall not be separated."
+          "text": "One shall stick to another, and holding each other, they shall not be separated."
         },
         {
           "verse": 9,
@@ -4417,7 +5319,13 @@
         },
         {
           "verse": 14,
-          "text": "The members of his flesh cleave together one to an other: he shall send lightnings against him, and he shall not be carried to an other place."
+          "text": "The members of his flesh cleave together one to another: <na>(b)</na> he shall send lightnings against him, and he shall not be carried to another place.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "God at last destroyeth him whom man cannot overcome."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -4425,7 +5333,13 @@
         },
         {
           "verse": 16,
-          "text": "When he shall be taken away, the Angels shall fear, and being feared shall be purged."
+          "text": "When he shall be taken away, the <na>(c)</na> Angels shall fear, and being feared shall be purged.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Angels with reverent fear do honour God's power. And valiant mariners and other soldiers are terrified when they see this so huge a fish. Mystically, God's preachers & perfectest servants shall naturally fear the terror of God's judgement."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -4453,33 +5367,45 @@
         },
         {
           "verse": 23,
-          "text": "A path shall shine after him, he shall esteem the depth as waxing old."
+          "text": "Apath shall shine after him, he shall esteem the depth as waxing old."
         },
         {
           "verse": 24,
-          "text": "There is no power upon the earth, that may be compared with him, who is made to fear no man"
+          "text": "There is no power upon the earth, that may be compared with him, who is made to fear no man."
         },
         {
           "verse": 25,
-          "text": "He seeth every high thing, he is king over all the children of pride."
+          "text": "He seeth every high thing, he is <na>(d)</na> king over all the children of pride.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "And the devil reigneth over proud men. S. Greg. li. 34. c. 4. & 17."
+            }
+          ]
         }
-      ]
+      ],
+      "summary": "Holy Job instructed and comforted by God's discourse, acknowledgeth his fault, and craveth pardon for his oversight in speech, or cogitation. 7. God justifieth his cause against his friends. 9. They offer sacrifice for their offence. 10. All things prosper with Job, double to that he had before: 16. and he dieth happily."
     },
     {
       "chapter": 42,
-      "summary": "Holy Job instructed and comforted by God's discourse, acknowledgeth his fault, and craveth pardon for his oversight in speech or cogitation. ℣.7 God justifieth his cause against his friends. ℣.9 They offer sacrifice for their offence. ℣.10 All things prosper with Job, double to that he had before: ℣.16 and he dieth happily.",
       "verses": [
         {
           "verse": 1,
-          "text": "And Job answering our Lord, said: that thou canst do all things, and no cogitation is hid from thee."
-        },
-        {
-          "verse": 3,
-          "text": "Who is this,"
+          "text": "And Job answering our Lord, said:"
         },
         {
           "verse": 2,
-          "text": "I know that concealeth counsel without knowledge? Therefore have I spoken unwisely, and the things that did exceed my knowledge beyond measure."
+          "text": "Iknow that thou canst do all things, and no cogitation is hid from thee."
+        },
+        {
+          "verse": 3,
+          "text": "Who is this, that concealeth counsel without knowledge? Therefore have I spoken <na>(a)</na> unwisely, and the things that did exceed my knowledge beyond measure.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Job here simply acknowledge his error in speaking so much in defence of his own innocency, & so little of God's providence in afflicting him, for his more merit, & God's more glory."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -4491,15 +5417,23 @@
         },
         {
           "verse": 6,
-          "text": "Therefore I reprehend my self, and I do penance in embers and ashes."
+          "text": "Therefore <na>(b)</na> I reprehend myself, and I do penance in imbers and ashes.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Before he defended a truth against his opposite friends, now with more resignation he contented himself with his affliction."
+            }
+          ]
         },
         {
           "verse": 7,
-          "text": "And after our Lord spake these words to Job, he said to Eliphaz the Themanite: My fury is wrath against thee, and against thy two friends, because you have not spoken right before me, as my servant Job."
+          "text": "And after our Lord spake these words to Job, he said to Eliphaz the Themanite: My fury is wrath against thee, and against thy two friends, because you have not spoken right before me, as my servant Job.",
+          "has_annotation": true
         },
         {
           "verse": 8,
-          "text": "Take therefore unto you seven oxen, and seven rams, & go to my servant Job, and offer holocaust for your selves: and my servant Job shall pray for you: his face I will receive, that the folly be not imputed to you: for you have not spoken right things before me, as my servant Job."
+          "text": "Take therefore unto you seven oxen, and seven rams, & go to my servant Job, and offer holocaust for yourselves: and my servant Job shall pray for you: his face I will receive, that the folly be not imputed to you: for you have not spoken right things before me, as my servant Job.",
+          "has_annotation": true
         },
         {
           "verse": 9,
@@ -4507,7 +5441,13 @@
         },
         {
           "verse": 10,
-          "text": "Our Lord also was turned at the penance of Job, when he prayed for his friends. And our Lord added all things whatsoever had been Job's, double."
+          "text": "Our Lord also was turned at the <na>(c)</na> penance of Job, when he prayed for his friends. And our Lord added all things whatsoever had been Job's, double.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Job did penance both for himself and others."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -4519,7 +5459,13 @@
         },
         {
           "verse": 13,
-          "text": "And he had seven sons, and three daughters."
+          "text": "And he had <na>(d)</na> seven sons, and three daughters.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "In that he had all other things double, and children in the same number as before, it is a sign that the former perished not, but died in good state."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -4531,7 +5477,81 @@
         },
         {
           "verse": 16,
-          "text": "And Job lived after these things, an hundred forty years, and he saw his children, and his children's children, unto the fourth generation, and he died an old man, and full of days."
+          "text": "And Job lived after these things, an hundred forty years, and he saw his children, and his children's children, unto the fourth generation, and he died an old man, and full of days. sentence to himself, which God had denounced to his three friends, in the same cause. Much less are Protestants excusable, which not only persist in errors condemned in their own fellows, as in Luther, Calvin, Beza, and others, but also in other old heresies: <cr>[2]</cr> as their doctrine of justification by only faith condemned in the Apostles' time: their denying the ceremonies of Baptism, and the Sacraments of Confirmation, and of Penance, condemned in the Novatians: or that patient sustaining of worldly losses, and other afflictions, such as Job suffered, are not satisfactory, or meritorious works. <cr>[3]</cr> again being heretofore buried.",
+          "cross_refs": [
+            {
+              "text": "S. Aug. de fide & oper. S. Cyprian. li. 4. ep. 2. Apud Euseb. l. 6. c. 35. 8. Take seven oxen, and seven rams.]"
+            },
+            {
+              "text": "In the number of seven is a mystery of perfection and fullness, often used in holy Scripture."
+            },
+            {
+              "text": "For God creating the world & all things therein in six days, rested the seventh."
+            },
+            {
+              "text": "Sevenfold punishment was required for Cain."
+            },
+            {
+              "text": "Seven pairs of clean beasts were conserved in Noe's ark."
+            },
+            {
+              "text": "And in the law the ground rested from tillage the seventh year. With innumerable the like. As S. Gregory in this place, and other Fathers note in their works. Also twice seven victims offered in sacrifice,"
+            },
+            {
+              "text": "import the greatness of these men's offence in accusing Job, and in avouching their false opinion."
+            },
+            {
+              "text": "Numbers mystical."
+            },
+            {
+              "text": "Gen. 2."
+            },
+            {
+              "text": "4"
+            },
+            {
+              "text": "7"
+            },
+            {
+              "text": "Exo. 23. Deut. 15."
+            },
+            {
+              "text": "Great or many sacrifices for great offences. 8. Job shall pray for you.] Neither had so many sacrifices sufficed, as S. Chrysostom observeth, Orat. 5. in Iudaeos, unless Job also had prayed for the offenders."
+            },
+            {
+              "text": "Where we see that both Sacrifice, and the devotion of him that offereth it, have their effects: whereof cometh the distinction used in Schools, of opus operatum, and opus operantis . As it is manifest likewise, that mediation of one man for another, did not derogate from God's benign mercy in the law of nature,"
+            },
+            {
+              "text": "wherein these men lived. Nor now from Christ's mediation, in the law of Grace. 2. Cor. 1. v. 11."
+            },
+            {
+              "text": "Devotion of him that offereth sacrifice increaseth the effect."
+            },
+            {
+              "text": "Prayers of holy men or Saints derogate not from Christ. A BRIEF RECAPITULATION OF THIS STRANGE AND SACRED HISTORY."
+            },
+            {
+              "text": "Why we have made few annotations in this book."
+            },
+            {
+              "text": "For avoiding prolixity (this volume growing great) we have for the most part contracted our Annotations into the margent, making very few others in this book, which otherwise offered much more occasion, as well for explicating hard places, as of other doctrinal and moral instructions. Neither indeed can ordinary Annotations well suffice for understanding of this, and other hard books. But rather large Commentaries are required, such as S. Gregory , and other ancient Fathers, as also F. John de Pineda , and others have lately written; whereto we therefore remit the learned readers. And for the benefit of others of our nation, we shall here briefly recapitulate the sum, and principal points of this holy and admirable history, consisting in a singular holy man's conflicts and glorious victory, against invisible and visible adversaries, both in prosperous and adverse fortune."
+            },
+            {
+              "text": "The argument of this history. First, this holy man Job in all aboundance of wealth and riches,"
+            },
+            {
+              "text": "blessed with many children (ch. 1.) sitting in a princely throne and royal dignity (ch. 29.) in the land of Hus , was not only assaulted with common tentations of the envious enemy,"
+            },
+            {
+              "text": "as all are that live piously in God, but so much the more , as he was more godly, sincerer, and perfecter than other men : yet he never set his heart upon worldly or temporal things , but with all due fear so served God, and parted from evil , that"
+            },
+            {
+              "text": "Job in prosperity was tempted invisibly more than ordinary men of lower state, or less perfection."
+            },
+            {
+              "text": "2. Tim. 3."
+            }
+          ]
         }
       ]
     }

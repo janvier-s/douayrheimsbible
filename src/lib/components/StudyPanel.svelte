@@ -568,7 +568,7 @@
 	}
 
 	.annotation-title {
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: 600;
 		color: var(--color-accent-text);
 		margin: 10px 0 8px;
