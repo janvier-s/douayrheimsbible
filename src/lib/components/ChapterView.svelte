@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { tick } from 'svelte';
+	import { tick, onDestroy } from 'svelte';
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { ALL_BOOKS } from '$lib/data/books';
 	import VerseList from './VerseList.svelte';
@@ -124,6 +124,10 @@
 	function handleTooltipMouseover() {
 		cancelClose();
 	}
+
+	onDestroy(() => {
+		if (tooltipCloseTimer) clearTimeout(tooltipCloseTimer);
+	});
 
 	function linkifySummary(text: string, isStudy: boolean): string {
 		// Summary text is from trusted build-time JSON; we only inject our own tags.

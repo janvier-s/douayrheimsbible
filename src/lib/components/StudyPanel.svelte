@@ -53,13 +53,19 @@
 			lastAnnotationKey = key;
 			annotationsLoading = true;
 			annotations = null;
-			loadAnnotations(currentBookSlug, currentChapterNum, fetch).then((data) => {
-				// Only apply if still the same chapter
-				if (`${currentBookSlug}/${currentChapterNum}` === key) {
-					annotations = data;
-					annotationsLoading = false;
-				}
-			});
+			loadAnnotations(currentBookSlug, currentChapterNum, fetch)
+				.then((data) => {
+					// Only apply if still the same chapter
+					if (`${currentBookSlug}/${currentChapterNum}` === key) {
+						annotations = data;
+						annotationsLoading = false;
+					}
+				})
+				.catch(() => {
+					if (`${currentBookSlug}/${currentChapterNum}` === key) {
+						annotationsLoading = false;
+					}
+				});
 		}
 	}
 
@@ -115,6 +121,9 @@
 
 	let panelScroll: HTMLElement;
 	let sectionEls: Record<number, HTMLElement> = {};
+
+	// Reset stale section element refs whenever the chapter changes
+	$: (currentBookSlug, currentChapterNum, (sectionEls = {}));
 
 	$: if (
 		browser &&

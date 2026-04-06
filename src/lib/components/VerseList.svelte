@@ -290,21 +290,24 @@
 		on:mouseover={isStudy ? handleMarkerMouseover : undefined}
 		on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 	>
-		{#each verses as v, i (i)}
-			{#if $prefs.showVerseNumbers}
-				<sup
-					class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
-					class:text-subtle={!isStudy || !v.has_annotation}
-					style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
-					>{v.verse}</sup
-				>
-			{/if}
-			{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}{' '}
+		{#each verses as v (v.verse)}
+			<!-- inline anchor for intersection observer + scroll target -->
+			<span bind:this={verseEls[v.verse]} id="v{v.verse}" data-verse-num={v.verse}>
+				{#if $prefs.showVerseNumbers}
+					<sup
+						class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
+						class:text-subtle={!isStudy || !v.has_annotation}
+						style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
+						>{v.verse}</sup
+					>
+				{/if}
+				{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}{' '}
+			</span>
 		{/each}
 	</p>
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
-		{#each verses as v, i (i)}
+		{#each verses as v (v.verse)}
 			<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_noninteractive_element_interactions -->
 			<li
 				bind:this={verseEls[v.verse]}

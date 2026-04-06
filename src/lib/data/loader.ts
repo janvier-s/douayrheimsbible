@@ -10,7 +10,10 @@ export function loadBook(slug: string, fetch: typeof globalThis.fetch): Promise<
 			if (!res.ok) throw new Error(`Book not found: ${slug}`);
 			return res.json() as Promise<BookData>;
 		});
-		promise.then((data) => resolvedCache.set(slug, data));
+		promise.then(
+			(data) => resolvedCache.set(slug, data),
+			() => bookCache.delete(slug) // evict on failure so next call retries
+		);
 		bookCache.set(slug, promise);
 	}
 	return bookCache.get(slug)!;
@@ -39,9 +42,12 @@ export function loadAnnotations(
 	const key = `${slug}/${chapter}`;
 	if (!annotationCache.has(key)) {
 		const path = `/data/odr/${slug}/annotations/${String(chapter).padStart(3, '0')}.json`;
-		const promise = fetch(path).then((res) =>
-			res.ok ? (res.json() as Promise<ChapterAnnotations>) : null
-		);
+		const promise = fetch(path).then((res) => {
+			if (res.status === 404) return null; // no annotations for this chapter
+			if (!res.ok) throw new Error(`Failed to load annotations: ${res.status}`);
+			return res.json() as Promise<ChapterAnnotations>;
+		});
+		promise.then(null, () => annotationCache.delete(key)); // evict on failure so next call retries
 		annotationCache.set(key, promise);
 	}
 	return annotationCache.get(key)!;
