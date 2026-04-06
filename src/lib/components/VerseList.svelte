@@ -65,23 +65,24 @@
 		return t;
 	}
 
-	/** Render <cr> and <na> content as clickable accent superscript for study mode. */
-	function renderStudyMarkers(text: string): string {
+	/** Render <cr> and <na> content as clickable accent superscript for study mode.
+	 *  Embeds data-verse so hover can look up content without DOM traversal. */
+	function renderStudyMarkers(text: string, verseNum: number): string {
 		return text
 			.replace(
 				/<cr>\[(\d+)\]<\/cr>/g,
 				(_, n) =>
-					`<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" aria-label="Cross-reference ${n}">${n}</button>`
+					`<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" data-verse="${verseNum}" aria-label="Cross-reference ${n}">${n}</button>`
 			)
 			.replace(
 				/<na>\((\w+)\)<\/na>/g,
 				(_, l) =>
-					`<button class="study-marker" data-marker-type="note" data-marker="${l}" aria-label="Note ${l}">${l}</button>`
+					`<button class="study-marker" data-marker-type="note" data-marker="${l}" data-verse="${verseNum}" aria-label="Note ${l}">${l}</button>`
 			)
 			.replace(
 				/<na>\[(\d+)\]<\/na>/g,
 				(_, n) =>
-					`<button class="study-marker" data-marker-type="note" data-marker="${n}" aria-label="Note ${n}">${n}</button>`
+					`<button class="study-marker" data-marker-type="note" data-marker="${n}" data-verse="${verseNum}" aria-label="Note ${n}">${n}</button>`
 			);
 	}
 
@@ -89,11 +90,12 @@
 		text: string,
 		bionic: boolean,
 		isStudy: boolean,
-		showItalics: boolean
+		showItalics: boolean,
+		verseNum: number
 	): string {
 		let t = text;
 		if (isStudy) {
-			t = renderStudyMarkers(t);
+			t = renderStudyMarkers(t, verseNum);
 		} else {
 			t = stripStudyMarkers(t, showItalics);
 		}
@@ -128,6 +130,87 @@
 		}));
 	}
 
+	// ── Marker hover popover ─────────────────────────────────────────
+
+	const POPOVER_WIDTH = 300;
+	const POPOVER_GAP = 10;
+
+	interface PopoverState {
+		label: string;
+		content: string;
+		type: 'cross_ref' | 'note';
+	}
+
+	let openPopover: PopoverState | null = null;
+	let popoverStyle = '';
+	let popoverAbove = false;
+	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
+
+	function calcPopoverStyle(btn: HTMLElement): string {
+		const rect = btn.getBoundingClientRect();
+		const markerCX = rect.left + rect.width / 2;
+		const spaceBelow = window.innerHeight - rect.bottom;
+		popoverAbove = spaceBelow < 150;
+		const idealLeft = markerCX - POPOVER_WIDTH / 2;
+		const left = Math.min(Math.max(idealLeft, 12), window.innerWidth - POPOVER_WIDTH - 12);
+		return popoverAbove
+			? `left:${left}px; bottom:${window.innerHeight - rect.top + POPOVER_GAP}px; width:${POPOVER_WIDTH}px;`
+			: `left:${left}px; top:${rect.bottom + POPOVER_GAP}px; width:${POPOVER_WIDTH}px;`;
+	}
+
+	function resolveMarkerContent(btn: HTMLElement): PopoverState | null {
+		const type = btn.dataset.markerType as 'cross_ref' | 'note';
+		const marker = btn.dataset.marker ?? '';
+		const verseNum = parseInt(btn.dataset.verse ?? '0');
+		const verse = verseNum > 0 ? verses.find((v) => v.verse === verseNum) : null;
+		if (!verse) return null;
+
+		if (type === 'cross_ref') {
+			const idx = parseInt(marker) - 1;
+			const ref = verse.cross_refs?.[idx];
+			if (!ref) return null;
+			return { label: marker, content: ref.text, type };
+		} else {
+			const note = verse.notes?.find(
+				(n) => n.label === marker || n.label === `(${marker})` || n.label === `[${marker}]`
+			);
+			if (!note) return null;
+			return { label: note.label, content: note.text, type };
+		}
+	}
+
+	function handleMarkerMouseover(e: MouseEvent) {
+		const btn = (e.target as HTMLElement).closest('.study-marker') as HTMLElement | null;
+		if (!btn) return;
+		if (hoverTimer) {
+			clearTimeout(hoverTimer);
+			hoverTimer = null;
+		}
+		const data = resolveMarkerContent(btn);
+		if (!data) return;
+		openPopover = data;
+		popoverStyle = calcPopoverStyle(btn);
+	}
+
+	function handleMarkerMouseout(e: MouseEvent) {
+		const btn = (e.target as HTMLElement).closest('.study-marker') as HTMLElement | null;
+		if (!btn) return;
+		hoverTimer = setTimeout(() => {
+			openPopover = null;
+			popoverStyle = '';
+			hoverTimer = null;
+		}, 80);
+	}
+
+	function dismissPopover() {
+		if (hoverTimer) {
+			clearTimeout(hoverTimer);
+			hoverTimer = null;
+		}
+		openPopover = null;
+		popoverStyle = '';
+	}
+
 	// ── IntersectionObserver for scroll sync ─────────────────────────
 
 	let verseObserver: IntersectionObserver | null = null;
@@ -155,6 +238,8 @@
 		for (const [, el] of Object.entries(verseEls)) {
 			if (el) verseObserver.observe(el);
 		}
+
+		document.addEventListener('scroll', dismissPopover, true);
 	});
 
 	// Re-observe when verses change
@@ -167,6 +252,8 @@
 
 	onDestroy(() => {
 		verseObserver?.disconnect();
+		if (hoverTimer) clearTimeout(hoverTimer);
+		document.removeEventListener('scroll', dismissPopover, true);
 	});
 
 	// Scroll to target verse after navigation
@@ -187,10 +274,13 @@
 </script>
 
 {#if $prefs.paragraphView}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<p
 		class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 		class:text-justify={$prefs.justifiedText}
 		class:bionic-fade={bionic}
+		on:mouseover={isStudy ? handleMarkerMouseover : undefined}
+		on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 	>
 		{#each verses as v, i (i)}
 			{#if $prefs.showVerseNumbers}
@@ -201,7 +291,7 @@
 					>{v.verse}</sup
 				>
 			{/if}
-			{@html renderVerse(v.text, bionic, isStudy, showItalics)}{' '}
+			{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}{' '}
 		{/each}
 	</p>
 {:else}
@@ -233,12 +323,31 @@
 					class:text-justify={$prefs.justifiedText}
 					class:bionic-fade={bionic}
 					on:click={(e) => isStudy && handleMarkerClick(e, v.verse)}
+					on:mouseover={isStudy ? handleMarkerMouseover : undefined}
+					on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 				>
-					{@html renderVerse(v.text, bionic, isStudy, showItalics)}
+					{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}
 				</p>
 			</li>
 		{/each}
 	</ol>
+{/if}
+
+{#if openPopover && popoverStyle}
+	<div
+		class="marker-popover"
+		class:marker-popover-above={popoverAbove}
+		role="tooltip"
+		aria-live="polite"
+		style="position:fixed; {popoverStyle}"
+	>
+		<span class="marker-popover-label"
+			>{openPopover.type === 'cross_ref'
+				? '[' + openPopover.label + ']'
+				: '(' + openPopover.label + ')'}</span
+		>
+		<span class="marker-popover-content">{@html openPopover.content}</span>
+	</div>
 {/if}
 
 <style>
@@ -303,5 +412,65 @@
 
 	:global(.study-marker:hover) {
 		opacity: 0.75;
+	}
+
+	/* Marker hover popover */
+	.marker-popover {
+		background: var(--color-text);
+		color: var(--color-bg);
+		font-size: 13px;
+		font-family: var(--font-ui);
+		line-height: 1.5;
+		border-radius: 6px;
+		padding: 9px 12px;
+		box-shadow:
+			0 8px 24px rgba(0, 0, 0, 0.25),
+			0 2px 6px rgba(0, 0, 0, 0.15);
+		max-height: 200px;
+		overflow-y: auto;
+		z-index: 100;
+		pointer-events: none;
+		animation: marker-tooltip-in 120ms ease-out both;
+	}
+
+	.marker-popover-above {
+		animation-name: marker-tooltip-in-above;
+	}
+
+	@keyframes marker-tooltip-in {
+		from {
+			opacity: 0;
+			transform: translateY(-3px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes marker-tooltip-in-above {
+		from {
+			opacity: 0;
+			transform: translateY(3px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.marker-popover-label {
+		color: var(--color-accent);
+		font-size: 9px;
+		font-weight: 700;
+		margin-right: 6px;
+	}
+
+	.marker-popover-content {
+		opacity: 0.9;
+	}
+
+	.marker-popover :global(i) {
+		font-style: italic;
 	}
 </style>
