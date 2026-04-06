@@ -49,7 +49,7 @@ const DEFAULTS: ReadingPrefs = {
 	showItalics: true
 };
 
-const PREFS_VERSION = 7;
+const PREFS_VERSION = 8;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -89,6 +89,10 @@ function loadPrefs(): ReadingPrefs {
 		if (!parsed._v || parsed._v < 7) {
 			parsed.syncStudyScroll = true;
 			parsed.showItalics = true;
+		}
+		// v8 migration: update default study panel width
+		if (!parsed._v || parsed._v < 8) {
+			parsed.studyPanelWidth = '42.65vw';
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

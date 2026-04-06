@@ -195,18 +195,26 @@
 	function handleMarkerMouseout(e: MouseEvent) {
 		const btn = (e.target as HTMLElement).closest('.study-marker') as HTMLElement | null;
 		if (!btn) return;
+		schedulePopoverDismiss();
+	}
+
+	function schedulePopoverDismiss() {
 		hoverTimer = setTimeout(() => {
 			openPopover = null;
 			popoverStyle = '';
 			hoverTimer = null;
-		}, 80);
+		}, 120);
 	}
 
-	function dismissPopover() {
+	function cancelPopoverDismiss() {
 		if (hoverTimer) {
 			clearTimeout(hoverTimer);
 			hoverTimer = null;
 		}
+	}
+
+	function dismissPopover() {
+		cancelPopoverDismiss();
 		openPopover = null;
 		popoverStyle = '';
 	}
@@ -334,18 +342,17 @@
 {/if}
 
 {#if openPopover && popoverStyle}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="marker-popover"
 		class:marker-popover-above={popoverAbove}
 		role="tooltip"
 		aria-live="polite"
 		style="position:fixed; {popoverStyle}"
+		on:mouseenter={cancelPopoverDismiss}
+		on:mouseleave={schedulePopoverDismiss}
 	>
-		<span class="marker-popover-label"
-			>{openPopover.type === 'cross_ref'
-				? '[' + openPopover.label + ']'
-				: '(' + openPopover.label + ')'}</span
-		>
+		<span class="marker-popover-label">{openPopover.label}</span>
 		<span class="marker-popover-content">{@html openPopover.content}</span>
 	</div>
 {/if}
@@ -419,6 +426,7 @@
 		background: var(--color-text);
 		color: var(--color-bg);
 		font-size: 13px;
+		font-weight: 400;
 		font-family: var(--font-ui);
 		line-height: 1.5;
 		border-radius: 6px;
@@ -429,7 +437,6 @@
 		max-height: 200px;
 		overflow-y: auto;
 		z-index: 100;
-		pointer-events: none;
 		animation: marker-tooltip-in 120ms ease-out both;
 	}
 
