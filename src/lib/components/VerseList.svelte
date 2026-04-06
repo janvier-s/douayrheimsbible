@@ -352,7 +352,6 @@
 		on:mouseenter={cancelPopoverDismiss}
 		on:mouseleave={schedulePopoverDismiss}
 	>
-		<span class="marker-popover-label">{openPopover.label}</span>
 		<span class="marker-popover-content">{@html openPopover.content}</span>
 	</div>
 {/if}
@@ -426,7 +425,7 @@
 		background: var(--color-text);
 		color: var(--color-bg);
 		font-size: 13px;
-		font-weight: 400;
+		font-weight: 300;
 		font-family: var(--font-ui);
 		line-height: 1.5;
 		border-radius: 6px;
@@ -464,13 +463,6 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
-	}
-
-	.marker-popover-label {
-		color: var(--color-accent);
-		font-size: 9px;
-		font-weight: 700;
-		margin-right: 6px;
 	}
 
 	.marker-popover-content {
