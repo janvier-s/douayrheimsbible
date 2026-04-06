@@ -261,7 +261,7 @@
 	onDestroy(() => {
 		verseObserver?.disconnect();
 		if (hoverTimer) clearTimeout(hoverTimer);
-		document.removeEventListener('scroll', dismissPopover, true);
+		if (browser) document.removeEventListener('scroll', dismissPopover, true);
 	});
 
 	// Scroll to target verse after navigation
