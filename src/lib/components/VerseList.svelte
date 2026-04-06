@@ -158,6 +158,13 @@
 			: `left:${left}px; top:${rect.bottom + POPOVER_GAP}px; width:${POPOVER_WIDTH}px;`;
 	}
 
+	/** Split concatenated Bible references onto separate lines.
+	 *  Detects new reference starts: ". " followed by a capital+lowercase word
+	 *  (e.g. "Isa.", "Ezech.") or a digit-prefix book (e.g. "1. Cor.", "2. Reg."). */
+	function splitCrossRefLines(text: string): string {
+		return text.replace(/\.\s+(?=\d+\.\s+[A-Z]|[A-Z][a-z])/g, '.\n').trim();
+	}
+
 	function resolveMarkerContent(btn: HTMLElement): PopoverState | null {
 		const type = btn.dataset.markerType as 'cross_ref' | 'note';
 		const marker = btn.dataset.marker ?? '';
@@ -169,7 +176,7 @@
 			const idx = parseInt(marker) - 1;
 			const ref = verse.cross_refs?.[idx];
 			if (!ref) return null;
-			return { label: marker, content: ref.text, type };
+			return { label: marker, content: splitCrossRefLines(ref.text), type };
 		} else {
 			const note = verse.notes?.find(
 				(n) => n.label === marker || n.label === `(${marker})` || n.label === `[${marker}]`
@@ -470,6 +477,7 @@
 
 	.marker-popover-content {
 		opacity: 0.9;
+		white-space: pre-line;
 	}
 
 	.marker-popover :global(i) {
