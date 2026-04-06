@@ -37,7 +37,7 @@ const DEFAULTS: ReadingPrefs = {
 	bionicReading: false,
 	dyslexiaFont: false,
 	readingMode: 'reading',
-	studyPanelWidth: '50vw',
+	studyPanelWidth: '42.65vw',
 	modernBookNames: false,
 	showPsalmNumbers: false,
 	showChapterNav: true,
