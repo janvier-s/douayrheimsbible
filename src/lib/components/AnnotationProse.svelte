@@ -1,6 +1,7 @@
 <!-- src/lib/components/AnnotationProse.svelte -->
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import { browser } from '$app/environment';
 	import type { AnnotationNote } from '$lib/data/types';
 
 	export let text: string;
@@ -70,7 +71,7 @@
 		document.addEventListener('scroll', dismiss, true);
 	});
 	onDestroy(() => {
-		document.removeEventListener('scroll', dismiss, true);
+		if (browser) document.removeEventListener('scroll', dismiss, true);
 	});
 
 	$: paragraphs = renderParagraphs(text);

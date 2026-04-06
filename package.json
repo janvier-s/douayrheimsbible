@@ -18,6 +18,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@playwright/test": "^1.58.2",
 		"@sveltejs/kit": "^2.50.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
@@ -41,7 +42,6 @@
 		"wrangler": "^4.77.0"
 	},
 	"dependencies": {
-		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"bible-passage-reference-parser": "^3.2.0",
 		"text-vide": "^1.8.4"
 	}
