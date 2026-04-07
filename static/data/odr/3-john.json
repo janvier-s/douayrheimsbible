@@ -20,7 +20,12 @@
         },
         {
           "verse": 4,
-          "text": "Greater <cr>[1]</cr> <alt>thank</alt> have I not of them, than that I may hear my children do walk in truth."
+          "text": "Greater <cr>[1]</cr> <alt>thank</alt> have I not of them, than that I may hear my children do walk in truth.",
+          "cross_refs": [
+            {
+              "text": "pleasure. χαρὰν, χαριν."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -44,7 +49,15 @@
         },
         {
           "verse": 10,
-          "text": "For this cause, if I come, <cr>[1][2]</cr> I will advertise his works which he doeth: with malicious words chatting against us. And as though these things suffice him not, neither himself doth receive the brethren, and them that do receive, he prohibiteth, and casteth out of the Church."
+          "text": "For this cause, if I come, <cr>[1][2]</cr> I will advertise his works which he doeth: with malicious words chatting against us. And as though these things suffice him not, neither himself doth receive the brethren, and them that do receive, he prohibiteth, and casteth out of the Church.",
+          "cross_refs": [
+            {
+              "text": "Iwill rebuke them and make them known to be wicked."
+            },
+            {
+              "text": "c commonebo. ὑπομνήσω"
+            }
+          ]
         },
         {
           "verse": 11,

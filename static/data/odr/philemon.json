@@ -29,7 +29,12 @@
         },
         {
           "verse": 6,
-          "text": "that the communication of thy faith may be made evident in the agnition of all <cr>[1]</cr> good that is in you in Christ <sc>Jesus</sc>."
+          "text": "that the communication of thy faith may be made evident in the agnition of all <cr>[1]</cr> good that is in you in Christ <sc>Jesus</sc>.",
+          "cross_refs": [
+            {
+              "text": "* good work"
+            }
+          ]
         },
         {
           "verse": 7,
@@ -45,7 +50,12 @@
         },
         {
           "verse": 10,
-          "text": "Ibeseech thee for my son whom I have begotten in bands, <cr>[1]</cr> Onesimus,"
+          "text": "Ibeseech thee for my son whom I have begotten in bands, <cr>[1]</cr> Onesimus,",
+          "cross_refs": [
+            {
+              "text": "Col. 4, 9."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -85,7 +95,12 @@
         },
         {
           "verse": 20,
-          "text": "Yea brother. <cr>[1]</cr> God grant I may enjoy thee in our Lord. Refresh my bowels in our Lord."
+          "text": "Yea brother. <cr>[1]</cr> God grant I may enjoy thee in our Lord. Refresh my bowels in our Lord.",
+          "cross_refs": [
+            {
+              "text": "c ὀναίμησ"
+            }
+          ]
         },
         {
           "verse": 21,

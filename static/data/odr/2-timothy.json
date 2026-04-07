@@ -29,7 +29,12 @@
         },
         {
           "verse": 6,
-          "text": "For the which cause I admonish thee that thou resuscitate the <cr>[1]</cr> grace of God, which is in thee by the imposition of my hands."
+          "text": "For the which cause I admonish thee that thou resuscitate the <cr>[1]</cr> grace of God, which is in thee by the imposition of my hands.",
+          "cross_refs": [
+            {
+              "text": "Act. 14, 25."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -41,7 +46,15 @@
         },
         {
           "verse": 9,
-          "text": "who hath delivered and called us by his holy calling, <cr>[1]</cr> not according to our works, but according to his purpose and grace, which was given to us in Christ <sc>Jesus</sc> <cr>[2]</cr> before the secular times."
+          "text": "who hath delivered and called us by his holy calling, <cr>[1]</cr> not according to our works, but according to his purpose and grace, which was given to us in Christ <sc>Jesus</sc> <cr>[2]</cr> before the secular times.",
+          "cross_refs": [
+            {
+              "text": "Tit. 3, 5."
+            },
+            {
+              "text": "Tit. 1, 3."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -49,7 +62,12 @@
         },
         {
           "verse": 11,
-          "text": "wherein <cr>[1]</cr> I am appointed a preacher and Apostle and Master of the Gentiles."
+          "text": "wherein <cr>[1]</cr> I am appointed a preacher and Apostle and Master of the Gentiles.",
+          "cross_refs": [
+            {
+              "text": "1. Timo. 2, 7."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -58,8 +76,13 @@
         },
         {
           "verse": 13,
-          "text": "Have thou a form of sound words, which thou hast heard of me in faith and in the love of Christ <sc>Jesus</sc>.",
-          "has_annotation": true
+          "text": "Have thou a form of sound words, which thou hast heard of me in faith and <cr>[1][2]</cr> in the love of Christ <sc>Jesus</sc>.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "c ἀγάπῃ τῇ ἐν Χριςῷ"
+            }
+          ]
         },
         {
           "verse": 14,
@@ -71,7 +94,12 @@
         },
         {
           "verse": 16,
-          "text": "Our Lord give mercy to the house of Onesiphorus: because he hath often refreshed me, and hath not been ashamed of my chain:"
+          "text": "Our Lord give mercy to <cr>[1]</cr> the house of Onesiphorus: because he hath often refreshed me, and hath <cr>[2]</cr> not been ashamed of my chain:",
+          "cross_refs": [
+            {
+              "text": "2. Tim. 4, 19."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -135,11 +163,21 @@
         },
         {
           "verse": 12,
-          "text": "If we shall sustain, we shall also reign together. <cr>[1]</cr> If we shall deny, he also will deny us."
+          "text": "If we shall sustain, we shall also reign together. <cr>[1]</cr> If we shall deny, he also will deny us.",
+          "cross_refs": [
+            {
+              "text": "Mat. 10."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> If we believe not; he continueth faithful, he cannot deny himself."
+          "text": "<cr>[1]</cr> If we believe not; he continueth faithful, he cannot deny himself.",
+          "cross_refs": [
+            {
+              "text": "Ro. 3, 3."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -152,7 +190,12 @@
         },
         {
           "verse": 16,
-          "text": "But <cr>[1]</cr> profane and vain speeches avoid: for they do much grow to impiety:"
+          "text": "But <cr>[1]</cr> profane and vain speeches avoid: for they do much grow to impiety:",
+          "cross_refs": [
+            {
+              "text": "1. Tim. 6. v. 20."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -183,7 +226,12 @@
         },
         {
           "verse": 23,
-          "text": "And foolish and unlearned questions avoid, knowing that they engender brawls."
+          "text": "And <cr>[1]</cr> foolish and unlearned questions avoid, knowing that they engender brawls.",
+          "cross_refs": [
+            {
+              "text": "Tit. 3, 9."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -191,7 +239,7 @@
         },
         {
           "verse": 25,
-          "text": "with modesty admonishing them that resist the truth: lest sometime God give them repentance to know the truth:"
+          "text": "with modesty admonishing them that resist the truth: lest sometime <cr>[1]</cr> God give them repentance to know the truth:"
         },
         {
           "verse": 26,
@@ -205,7 +253,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> this know thou, that <cr>[1]</cr> in the last days shall approach perilous times."
+          "text": "<sc>And</sc> this know thou, that <cr>[1]</cr> in the last days shall approach perilous times.",
+          "cross_refs": [
+            {
+              "text": "1. Tim. 4, 1."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -235,7 +288,12 @@
         },
         {
           "verse": 8,
-          "text": "But as <cr>[1]</cr> Iannes and Mambres <cr>[2]</cr> resisted Moyses, so these also resist the truth, men corrupted in mind, reprobate concerning the faith."
+          "text": "But as <cr>[1]</cr> Iannes and Mambres <cr>[2]</cr> resisted Moyses, so these also resist the truth, men corrupted in mind, reprobate concerning the faith.",
+          "cross_refs": [
+            {
+              "text": "Exo. 7."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -262,7 +320,12 @@
         },
         {
           "verse": 14,
-          "text": "But thou, continue in those things which thou hast learned, & are committed to thee: knowing of whom thou hast learned;"
+          "text": "But thou, <cr>[1]</cr> continue in those things which thou hast learned, & are committed to thee: knowing of whom thou hast learned;",
+          "cross_refs": [
+            {
+              "text": "depositum. 1. Tim. 6. and 2. Tim. 1."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -270,8 +333,13 @@
         },
         {
           "verse": 16,
-          "text": "All Scripture inspired of God, is profitable to teach, to argue, to correct, to instruct in justice:",
-          "has_annotation": true
+          "text": "<cr>[1]</cr> All Scripture inspired of God, is profitable to teach, to argue, to correct, to instruct in justice:",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "2. Pet. 1, 21."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -285,7 +353,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I <cr>[1]</cr> Testify before God and <sc>Jesus</sc> Christ who shall judge the living and the dead, and by his advent, and his Kingdom:"
+          "text": "I <cr>[1]</cr> Testify before God and <sc>Jesus</sc> Christ who shall judge the living and the dead, and by his advent, and his Kingdom:",
+          "cross_refs": [
+            {
+              "text": "31. 14. August 4."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -327,7 +400,12 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> Luke only is with me. Take Mark, and bring him with thee: for he is profitable to me for the ministry."
+          "text": "<cr>[1]</cr> Luke only is with me. Take Mark, and bring him with thee: for he is profitable to me for the ministry.",
+          "cross_refs": [
+            {
+              "text": "Col. 4, 14."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -355,11 +433,21 @@
         },
         {
           "verse": 18,
-          "text": "Our Lord <alt>hath delivered</alt> me from all evil work: and will save me unto his heavenly Kingdom. To whom be glory for ever and ever. Amen."
+          "text": "Our Lord <cr>[1]</cr> <alt>hath delivered</alt> me from all evil work: and will save me unto his heavenly Kingdom. To whom be glory for ever and ever. Amen.",
+          "cross_refs": [
+            {
+              "text": "will deliver"
+            }
+          ]
         },
         {
           "verse": 19,
-          "text": "Salute Prisca and Aquila, and the house of Onesiphorus."
+          "text": "Salute Prisca and Aquila, and <cr>[1]</cr> the house of Onesiphorus.",
+          "cross_refs": [
+            {
+              "text": "2. Timo. 1, 16."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -367,7 +455,7 @@
         },
         {
           "verse": 21,
-          "text": "Make haste to come before winter. Eubulus and Pudens and Linus and Claudia, and all the brethren, salute thee."
+          "text": "Make haste to come before winter. Eubulus and Pudens and <cr>[1]</cr> Linus and Claudia, and all the brethren, salute thee."
         },
         {
           "verse": 22,

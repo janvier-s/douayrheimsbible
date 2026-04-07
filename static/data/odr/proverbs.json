@@ -13,7 +13,13 @@
         {
           "verse": 2,
           "text": "<na>(a)</na> To know wisdom, and discipline:",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "a",
+              "text": "By these sententious similitudes the studious may better conceive and understand true wisdom, and the virtues belonging thereto."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -21,11 +27,27 @@
         },
         {
           "verse": 4,
-          "text": "that <na>(b)</na> subtility may be given to little ones, knowledge and understanding to the youngman."
+          "text": "that <na>(b)</na> subtility may be given to little ones, knowledge and understanding to the youngman.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "profound & solid wit."
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "the <na>(c)</na> wise man hearing shall be wise: and he that understandeth <na>(d)</na> shall possess governments."
+          "text": "the <na>(c)</na> wise man hearing shall be wise: and he that understandeth <na>(d)</na> shall possess governments.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Not only young men and inexperienced, but also the wise may learn more wisdom by these parables."
+            },
+            {
+              "label": "d",
+              "text": "shall be fit to govern."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -33,11 +55,23 @@
         },
         {
           "verse": 7,
-          "text": "<na>(e)</na> The fear of our Lord is the beginning of wisdom. Fools despise wisdom and doctrine."
+          "text": "<na>(e)</na> The fear of our Lord is the beginning of wisdom. Fools despise wisdom and doctrine.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Fear of our Lord, that is, reverence of his divine Majesty with desire duly to serve him, and never to offend him, is the first degree in ascending to perfect wisdom: which consisteth not only in the understanding but also in action."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "My son, hear the discipline of thy father, and leave not the law of thy mother:"
+          "text": "My son, <na>(f)</na> hear the discipline of thy father, and leave not the law of thy mother:",
+          "notes": [
+            {
+              "label": "f",
+              "text": "The first precept is to learn of our elders."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -45,7 +79,13 @@
         },
         {
           "verse": 10,
-          "text": "My son, if sinners shall entice thee, condescend not to them."
+          "text": "My son, <na>(g)</na> if sinners shall entice thee, condescend not to them.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "The second to resist evil suggestions."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -73,7 +113,13 @@
         },
         {
           "verse": 17,
-          "text": "But a net is cast in vain before the eyes of them that have wings."
+          "text": "But <na>(h)</na> a net is cast in vain before the eyes of them that have wings.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "The proper remedy against such allurements is to be watchful, and to fly from them."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -155,7 +201,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "My son, <na>(a)</na> if thou wilt receive my words, and wilt hide my commandments with thee,"
+          "text": "My son, <na>(a)</na> if thou wilt receive my words, and wilt hide my commandments with thee,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This frequent manner of proposing the way and means to wisdom, If thou wilt receive my words, &c. sheweth most evidently the power of man's free will."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -167,7 +219,13 @@
         },
         {
           "verse": 4,
-          "text": "If thou shalt seek her <na>(b)</na> as money, and as treasures shalt dig her up:"
+          "text": "If thou shalt seek her <na>(b)</na> as money, and as treasures shalt dig her up:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Not every desire, or sleight seeking of wisdom sufficeth, but such laborious seeking is required, as a covetous man seeketh treasure which he knoweth to be hid in the ground."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -191,7 +249,12 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> If wisdom shall enter into thy heart, and knowledge please thy soul:"
+          "text": "<cr>[1]</cr> If wisdom shall enter into thy heart, and knowledge please thy soul:",
+          "cross_refs": [
+            {
+              "text": "Sap. 3. v. 32. 10. v. 9."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -204,7 +267,13 @@
         {
           "verse": 13,
           "text": "who <na>(c)</na> leave the right way, and walk by dark ways:",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "c",
+              "text": "Adescription of perverse sinners especially of heretics."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -250,7 +319,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "My son, <na>(a)</na> forget not my law, and let thy <na>(b)</na> heart keep my precepts."
+          "text": "My son, <na>(a)</na> forget not my law, and let thy <na>(b)</na> heart keep my precepts.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "It availeth little to hear good instructions, except we keep them in memory."
+            },
+            {
+              "label": "b",
+              "text": "not in books only but in the heart:"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -258,7 +337,13 @@
         },
         {
           "verse": 3,
-          "text": "Let not <na>(c)</na> mercy and truth leave thee, put them about thy throat and write them in the tables of thy heart:"
+          "text": "Let not <na>(c)</na> mercy and truth leave thee, put them about thy throat and write them in the tables of thy heart:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "and put them in execution."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -266,7 +351,13 @@
         },
         {
           "verse": 5,
-          "text": "<na>(d)</na> Have confidence in our Lord with all thy heart and lean not upon thine own prudence."
+          "text": "<na>(d)</na> Have confidence in our Lord with all thy heart and lean not upon thine own prudence.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Know also that all thy strength is in God, in whom thou mayst securely trust, not in thine own prudence."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -294,7 +385,13 @@
         },
         {
           "verse": 12,
-          "text": "<na>(e)</na> for whom our Lord loveth he chastiseth: and as a father in the son he pleaseth himself."
+          "text": "<na>(e)</na> for whom our Lord loveth he chastiseth: and as a father in the son he pleaseth himself.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Chastisement and tribulation in those that endeavour to serve God, is a sign of his favour towards them; and therefore his other promises which seem to be temporal, are to be understood of the next life."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -310,7 +407,17 @@
         },
         {
           "verse": 16,
-          "text": "<na>(f)</na> Length of days in her right hand, & in her left hand <na>(g)</na> riches and glory."
+          "text": "<na>(f)</na> Length of days in her right hand, & in her left hand <na>(g)</na> riches and glory.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "God rewardeth as it were with both hands, promising eternal life,"
+            },
+            {
+              "label": "g",
+              "text": "and competent means in this life."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -334,7 +441,13 @@
         },
         {
           "verse": 22,
-          "text": "and there shall be life to thy soul, and <na>(h)</na> grace to thy jaws."
+          "text": "and there shall be life to thy soul, and <na>(h)</na> grace to thy jaws.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "Merit for the words of thy mouth."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -358,7 +471,13 @@
         },
         {
           "verse": 28,
-          "text": "Say not to thy friend: go, and return; and <na>(i)</na> tomorrow I will give to thee: whereas thou mayst give forthwith."
+          "text": "Say not to thy friend: go, and return; and <na>(i)</na> tomorrow I will give to thee: whereas thou mayst give forthwith.",
+          "notes": [
+            {
+              "label": "i",
+              "text": "Alms in season is double worth to that which is deferred long."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -404,7 +523,13 @@
         },
         {
           "verse": 3,
-          "text": "For <na>(a)</na> I also was the son of my father, tender and as the only-begotten in my mother's sight:"
+          "text": "For <na>(a)</na> I also was the son of my father, tender and as the only-begotten in my mother's sight:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "As Salomon was instructed by his father King David, so he teacheth others the right order how to learn wisdom."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -420,7 +545,13 @@
         },
         {
           "verse": 7,
-          "text": "<na>(b)</na> The beginning of wisdom, possess wisdom, and in all thy possession purchase prudence:"
+          "text": "<na>(b)</na> The beginning of wisdom, possess wisdom, and in all thy possession purchase prudence:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The first part of wisdom is to desire it. For nothing hindereth from being just but that justice is not desired. S. Aug. in Psal. 118. v. 20."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -484,7 +615,13 @@
         },
         {
           "verse": 23,
-          "text": "With all guard keep thy <na>(c)</na> heart, because life proceedeth from it."
+          "text": "With all guard keep thy <na>(c)</na> heart, because life proceedeth from it.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "As the heart is the principal part of the body, so the will is the chiefest power of the soul: from which good or evil proceedeth."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -514,11 +651,23 @@
         },
         {
           "verse": 2,
-          "text": "that thou mayst keep <na>(a)</na> cogitations, and thy lips preserve discipline."
+          "text": "that thou mayst keep <na>(a)</na> cogitations, and thy lips preserve discipline.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "To avoid all impiety it is first of all necessary, not to think, speak, nor hear unlawful things."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "Attend not to the deceit of a <na>(b)</na> woman: for the lips of an harlot are as a honey comb distilling, and her throat neater than oil."
+          "text": "Attend not to the deceit of a <na>(b)</na> woman: for the lips of an harlot are as a honey comb distilling, and her throat neater than oil.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "By woman is generally understood concupiscence of what sin soever, as. ch. 1. v. 10. & ch. 3. v. 33. ch. 4. v. 14."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -542,7 +691,17 @@
         },
         {
           "verse": 9,
-          "text": "Give not thy honour <na>(c)</na> to strangers, and thy years to the <na>(d)</na> cruel."
+          "text": "Give not thy honour <na>(c)</na> to strangers, and thy years to the <na>(d)</na> cruel.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The world the flesh and the devil are strangers,"
+            },
+            {
+              "label": "d",
+              "text": "and cruel enemies that render for reward eternal damnation."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -570,11 +729,23 @@
         },
         {
           "verse": 16,
-          "text": "<na>(e)</na> Let thy fountains be derived abroad, and in the streets divide thy waters,"
+          "text": "<na>(e)</na> Let thy fountains be derived abroad, and in the streets divide thy waters,",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Good doctrine is to be imparted to men of sincere intention."
+            }
+          ]
         },
         {
           "verse": 17,
-          "text": "<na>(f)</na> Have them alone, neither let strangers be partakers with thee."
+          "text": "<na>(f)</na> Have them alone, neither let strangers be partakers with thee.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "not to contemners and obstinate infidels."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -608,7 +779,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "My son <na>(a)</na> if thou shalt be surety for thy friend, and hast made fast thy hand to a stranger,"
+          "text": "My son <na>(a)</na> if thou shalt be surety for thy friend, and hast made fast thy hand to a stranger,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The wiseman doth not absolutely dissuade from all manner of suretyship, but from rashly, or unadvisedly answering for others. And especially exhorteth to use all diligence in performing, or causing others to perform that which is promised or covenanted."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -652,7 +829,13 @@
         },
         {
           "verse": 12,
-          "text": "Aman that is an <na>(b)</na> Apostata, a man unprofitable, goeth with perverse mouth,"
+          "text": "Aman that is an <na>(b)</na> Apostata, a man unprofitable, goeth with perverse mouth,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Every one that sinneth wittingly and of malice, refusing to obey God, employeth his mouth, eyes, feet, hands, and all parts with a wicked heart and intention to pervert others: most proper to heretics, apostates from the faith."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -680,7 +863,13 @@
         },
         {
           "verse": 19,
-          "text": "a deceitful witness that uttereth lies, and him that among brethren <na>(c)</na> soweth discords."
+          "text": "a deceitful witness that uttereth lies, and him that among brethren <na>(c)</na> soweth discords.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The former six are all damnable, but this seventh is most detestable, because it is opposite to the chief virtue charity, it breaketh unity, & is the proper sin of the devil."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -712,7 +901,13 @@
         },
         {
           "verse": 27,
-          "text": "<na>(d)</na> Can a man hide fire in his bosom, that his garments burn not?"
+          "text": "<na>(d)</na> Can a man hide fire in his bosom, that his garments burn not? shunned.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "All occasions of sin, especially probable, are to be"
+            }
+          ]
         },
         {
           "verse": 28,
@@ -724,7 +919,13 @@
         },
         {
           "verse": 30,
-          "text": "It is <na>(e)</na> no great fault, when a man shall have stolen: for he stealeth to fill his hungry soul:"
+          "text": "It is <na>(e)</na> no great fault, when a man shall have stolen: for he stealeth to fill his hungry soul:",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Theft is also mortal sin against the seventh commandment, but not so great as adultery."
+            }
+          ]
         },
         {
           "verse": 31,
@@ -754,7 +955,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "My son <na>(a)</na> keep my words, and my precepts hide with thee. Son,"
+          "text": "My son <na>(a)</na> keep my words, and my precepts hide with thee. Son,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Because tentations still occur in this life, and man is frail, good exhortations, and earnest admonitions must also be continually inculcated, as here the wiseman often repeateth and much urgeth the same good and necessary advices to embrace wisdom and to walk still in the way of virtue, especially to flee from vices, and dangers of sin."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -838,7 +1045,13 @@
         },
         {
           "verse": 22,
-          "text": "Immediately he followeth her <na>(b)</na> as an oxe led to be a victim, & as a lamb playing the wanton, and not knowing that he is drawn as a fool to bonds,"
+          "text": "Immediately he followeth her <na>(b)</na> as an oxe led to be a victim, & as a lamb playing the wanton, and not knowing that he is drawn as a fool to bonds,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Sinners after consent given to tentations are as inconsiderate of their own state, & of their peril and ruin, as an oxe when he is led to the shambles, or a bird allured with a bait, that flieth into the snare or net."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -872,7 +1085,13 @@
         },
         {
           "verse": 2,
-          "text": "Standing <na>(a)</na> in the high & lofty tops over the way, in the midst of the paths,"
+          "text": "Standing <na>(a)</na> in the high & lofty tops over the way, in the midst of the paths,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "True wisdom directing to good life & so to eternal salvation, is only found in the visible Church standing upon a mountain, not hid in corners or obscure places."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -912,7 +1131,13 @@
         },
         {
           "verse": 12,
-          "text": "I <na>(b)</na> wisdom dwell in counsel, and am present in learned cogitations."
+          "text": "I <na>(b)</na> wisdom dwell in counsel, and am present in learned cogitations.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "These singular praises pertain to the increated wisdom, God himself, from whom proceedeth wisdom given to men by the Holy Ghost. See Annot. ch. 1. v. 2."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -988,7 +1213,13 @@
         },
         {
           "verse": 31,
-          "text": "playing in the world: & <na>(c)</na> my delights to be with the children of men."
+          "text": "playing in the world: & <na>(c)</na> my delights to be with the children of men.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "God much preferreth man before all other corporal creatures."
+            }
+          ]
         },
         {
           "verse": 32,
@@ -1039,7 +1270,13 @@
         },
         {
           "verse": 5,
-          "text": "Come, eat ye my bread, & drink the wine which I have mingled for you."
+          "text": "Come, <na>(a)</na> eat ye my bread, & drink the wine which I have mingled for you.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "S. Cyprian li. 2. ep. 3. citeth this whole passage of Christ's Sacrifice in the forms of bread and wine."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1051,7 +1288,13 @@
         },
         {
           "verse": 8,
-          "text": "Rebuke not the scorner lest he hate thee. Rebuke a wise man, and he will love thee."
+          "text": "Rebuke <na>(b)</na> not the scorner lest he hate thee. <na>(c)</na> Rebuke a wise man, and he will love thee. better opportunity, lest the offender become worse by our admonition. <na>(c)</na> But when there is hope of good, every one is bound, especially superiors, to correct offenders. S. Aug. li. 1. c. 9. de civit. S. Basil. regulis fuse disput. 158.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Where is no hope of amendment prudence directeth us not to admonish, nor rebuke sinners, lest without any fruit we procure enmity, charity also requireth rather to expect"
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1406,7 +1649,12 @@
         },
         {
           "verse": 12,
-          "text": "The desire of the impious is the <cr>[1]</cr> muniment of the most wicked: but the root of the just shall prosper. <cr>[2]</cr>"
+          "text": "The desire of the impious is the <cr>[1]</cr> muniment of the most wicked: but the root of the just shall prosper. <cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "* defence."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1466,7 +1714,12 @@
         },
         {
           "verse": 27,
-          "text": "The fraudulent man shall not find gain: and the substance of a <cr>[1]</cr> man shall be the price of gold. <cr>[2]</cr>"
+          "text": "The fraudulent man shall not find gain: and the substance of a <cr>[1]</cr> man shall be the price of gold. <cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "* a just man."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -1653,7 +1906,12 @@
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> The childish man shall possess folly, and the prudent shall expect knowledge. <cr>[2]</cr>"
+          "text": "<cr>[1]</cr> The childish man shall possess folly, and the prudent shall expect knowledge. <cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "1. Cor. 14. v. 20."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1681,7 +1939,12 @@
         },
         {
           "verse": 25,
-          "text": "Afaithful witness delivereth souls: and the <cr>[1]</cr> dissembler uttereth lies. <cr>[2]</cr>"
+          "text": "Afaithful witness delivereth souls: and the <cr>[1]</cr> dissembler uttereth lies. <cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "Versipellis a turn-skin, or turn-coat."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -1885,7 +2148,12 @@
         },
         {
           "verse": 5,
-          "text": "Every arrogant man is an abomination to our Lord: although hand shall be to hand he is not <cr>[1]</cr> innocent. <cr>[2]</cr> The beginning of a good way, is to do justice: and it is more acceptable with God, than to immolate hosts. <cr>[3]</cr>"
+          "text": "Every arrogant man is an abomination to our Lord: although hand shall be to hand he is not <cr>[1]</cr> innocent. <cr>[2]</cr> The beginning of a good way, is to do justice: and it is more acceptable with God, than to immolate hosts. <cr>[3]</cr>",
+          "cross_refs": [
+            {
+              "text": "unpunished."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1965,7 +2233,12 @@
         },
         {
           "verse": 25,
-          "text": "There is a way that seemeth to a man right: and the later ends thereof lead to death. <cr>[1][2]</cr>"
+          "text": "There is a way that seemeth to a man right: and the later ends thereof lead to death. <cr>[1][2]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ch. 14. v. 2."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -2135,7 +2408,12 @@
         },
         {
           "verse": 4,
-          "text": "Deep water^ words from the mouth of a <cr>[1]</cr> man: and a stream overflowing the fountain of wisdom. <cr>[2]</cr>"
+          "text": "Deep water^ words from the mouth of a <cr>[1]</cr> man: and a stream overflowing the fountain of wisdom. <cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "a wiseman."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -2926,7 +3204,12 @@
         {
           "verse": 16,
           "text": "For seven <cr>[1]</cr> times shall the just fall, and shall rise again: but the impious shall fall into evil. <cr>[2]</cr>",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Oftentimes. S. Aug. li. 11. c. 31. civit."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -2982,7 +3265,7 @@
         },
         {
           "verse": 30,
-          "text": "Ipassed by the field of a slothful man, and by the vineyard of a foolish man: <cr>[1]</cr>"
+          "text": "Ipassed by the field of a slothful man, and by the vineyard of a foolish man: <cr>[1]</cr> to avoid beggary."
         },
         {
           "verse": 31,
@@ -3043,7 +3326,12 @@
         },
         {
           "verse": 10,
-          "text": "lest perhaps he insult against thee when he heareth, and cease not to upbraid thee. Grace and friendship deliver <cr>[1]</cr> : which keep to thyself, lest thou become reproachful."
+          "text": "lest perhaps he insult against thee when he heareth, and cease not to upbraid thee. Grace and friendship deliver <cr>[1]</cr> : which keep to thyself, lest thou become reproachful.",
+          "cross_refs": [
+            {
+              "text": "From fear."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -3083,7 +3371,12 @@
         },
         {
           "verse": 20,
-          "text": "and that loseth his cloak in the day of cold. Vinegar in <cr>[1]</cr> nitre, he that singeth songs to a naughty heart. <cr>[2]</cr> As a moth the garment, and a worm the wood: so the sadness of a man hurteth the heart. <cr>[3]</cr>"
+          "text": "and that loseth his cloak in the day of cold. Vinegar in <cr>[1]</cr> nitre, he that singeth songs to a naughty heart. <cr>[2]</cr> As a moth the garment, and a worm the wood: so the sadness of a man hurteth the heart. <cr>[3]</cr>",
+          "cross_refs": [
+            {
+              "text": "* A consuming saltish hard earth."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -3091,7 +3384,12 @@
         },
         {
           "verse": 22,
-          "text": "for thou shalt heap hot coals upon his head, and our Lord will reward thee. <cr>[1]</cr>"
+          "text": "for thou shalt heap hot coals upon his head, and our Lord will reward thee. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Rom. 12."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -3345,7 +3643,12 @@
         },
         {
           "verse": 27,
-          "text": "Let the milk of the goats suffice thee for thy meats, and for the necessities of thy house: and for victual to thy hand-maids. <cr>[1][2]</cr>"
+          "text": "Let the milk of the goats suffice thee for thy meats, and for the necessities of thy house: and for victual to thy hand-maids. <cr>[1][2]</cr>",
+          "cross_refs": [
+            {
+              "text": "Matth. 6. v. 33."
+            }
+          ]
         }
       ]
     },
@@ -3589,7 +3892,13 @@
         },
         {
           "verse": 2,
-          "text": "Iam <na>(a)</na> most foolish of men, & the wisdom of men is not with me."
+          "text": "Iam <na>(a)</na> most foolish of men, & the wisdom of men is not with me.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The wisest man best knoweth that he wanteth much of perfect wisdom yet in his humility supposeth, that others have attained somewhat more than himself."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -3597,7 +3906,13 @@
         },
         {
           "verse": 4,
-          "text": "<na>(b)</na> Who hath ascended into heaven and descended? Who hath contained the spirit in his hands? Who hath bound the waters together as in a garment? Who hath raised up all the borders of the earth? What is his name, and what is the name of his son, if thou know?"
+          "text": "<na>(b)</na> Who hath ascended into heaven and descended? Who hath contained the spirit in his hands? Who hath bound the waters together as in a garment? Who hath raised up all the borders of the earth? What is his name, and what is the name of his son, if thou know?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Christ the Son of God is wisdom itself and as the Son of man hath perfect wisdom."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -3621,11 +3936,23 @@
         },
         {
           "verse": 10,
-          "text": "<na>(c)</na> Accuse not a servant to his master, lest perhaps he curse thee, and thou fall."
+          "text": "<na>(c)</na> Accuse not a servant to his master, lest perhaps he curse thee, and thou fall.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Bondslaves are to be pitied, and not affliction added to the afflicted."
+            }
+          ]
         },
         {
           "verse": 11,
-          "text": "There is <na>(d)</na> a generation that curseth their father, and that blesseth not their mother."
+          "text": "There is <na>(d)</na> a generation that curseth their father, and that blesseth not their mother.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Four execrable vices: Ingratitude, Hypocrisy. Insolency: Oppression of the poor."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -3641,7 +3968,17 @@
         },
         {
           "verse": 15,
-          "text": "The horseleech hath two daughters that say: Bring, bring. Three things are unsatiable, the fourth never saith it sufficeth."
+          "text": "The horseleech hath <na>(e)</na> two daughters that say: Bring, bring. Three <na>(e)</na> things are unsatiable, the fourth never saith it sufficeth.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Concupiscence of the flesh, & of the eyes."
+            },
+            {
+              "label": "e",
+              "text": "Envy, Luxury, Avarice, & Ambition."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -3649,7 +3986,13 @@
         },
         {
           "verse": 17,
-          "text": "The eye that scorneth his father, & that despiseth the travail of his mother in bearing him, let the ravens of the torrents pick it out, and the young of the eagle eat it."
+          "text": "The eye that <na>(f)</na> scorneth his father, & that despiseth the travail of his mother in bearing him, let the ravens of the torrents pick it out, and the young of the eagle eat it.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Dishonour of parents shall be severely punished."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -3657,7 +4000,13 @@
         },
         {
           "verse": 19,
-          "text": "The way of an eagle in the air, the way of a serpent upon a rock, the way of a ship in the midst of the sea, and the way of a man in youth."
+          "text": "The way of an eagle in the air, the way of a serpent upon a rock, the way of a ship in the midst of the sea, and <na>(g)</na> the way of a man in youth.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "Young men following carnal appetite, can no more give account of their actions, than of the ways which an eagle, a serpent and a ship have passed."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -3678,7 +4027,13 @@
         },
         {
           "verse": 24,
-          "text": "There are four the least things of the earth, and they are wiser than the wise."
+          "text": "There are <na>(h)</na> four the least things of the earth, and they are wiser than the wise.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "By these examples are commended four virtues, Industry, Prudence, Concord, and Humility."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -3698,7 +4053,13 @@
         },
         {
           "verse": 29,
-          "text": "There are three things which go well, and the fourth that goeth happily."
+          "text": "<na>(i)</na> There are three things which go well, and the fourth that goeth happily.",
+          "notes": [
+            {
+              "label": "i",
+              "text": "Other four Fortitude, Chastity, Order, and Justice."
+            }
+          ]
         },
         {
           "verse": 30,
@@ -3710,11 +4071,23 @@
         },
         {
           "verse": 32,
-          "text": "There is that hath appeared a fool after that he was lifted up on high: for if he had understood, he would have laid his hand upon his mouth."
+          "text": "There is that <na>(k)</na> hath appeared a fool after that he was lifted up on high: for if he had understood, he would have laid his hand upon his mouth.",
+          "notes": [
+            {
+              "label": "k",
+              "text": "Fools ought not to govern."
+            }
+          ]
         },
         {
           "verse": 33,
-          "text": "And he that strongly presseth the paps to wring out milk, straineth out butter, and he that violently cleanseth his nose, wringeth out blood: & he that provoketh angers, bringeth forth discords."
+          "text": "And he that <na>(l)</na> strongly presseth the paps to wring out milk, straineth out butter, and he that violently cleanseth his nose, wringeth out blood: & he that provoketh angers, bringeth forth discords.",
+          "notes": [
+            {
+              "label": "l",
+              "text": "Moderation is necessary in all actions."
+            }
+          ]
         }
       ],
       "summary": "A right wiseman thinketh humbly of himself 4. knowing that God's works are inscrutable, and perfect: 8. desireth truth in all things, & mediocrity in riches. 11. Abhorreth certain sorts of men, 15. & certain execrable things. 18. Noteth certain things hard to be known: 21. other things intolerable, 24. others admirable. 32. The tongue dangerous. <na>[1]</na>",
@@ -3730,7 +4103,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The <na>(a)</na> words of Lamuel the king. The vision wherewith his mother instructed him."
+          "text": "The <na>(a)</na> words of Lamuel the king. The vision wherewith his mother instructed him.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Words pertaining to Salomon, spoken to him by his mother: who here calleth him Lamuel, signifying, God with him."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3758,16 +4137,34 @@
         },
         {
           "verse": 8,
-          "text": "Open thy mouth to <na>(b)</na> the dumb, & to the causes of all the children that pass:"
+          "text": "Open thy mouth to <na>(b)</na> the dumb, & to the causes of all the children that pass:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Doctrine is most profitable to those, that are modestly dumb, more willing to hear than to speak."
+            }
+          ]
         },
         {
           "verse": 9,
-          "text": "open thy mouth, <na>(c)</na> decree that which is just, & judge the needy & poor."
+          "text": "open thy mouth, <na>(c)</na> decree that which is just, & judge the needy & poor.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The chief & most proper office of a King is to do justice."
+            }
+          ]
         },
         {
           "verse": 10,
           "text": "Avaliant woman <na>(d)</na> who shall find? Far, and from the utmost borders is the price of her.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "d",
+              "text": "Awoman of such perfection as is here described, is indeed rare, yet possible to be found."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -3803,7 +4200,13 @@
         },
         {
           "verse": 19,
-          "text": "She hath put her hand to strong things, and her fingers have taken hold of <na>(e)</na> the spindle."
+          "text": "She hath put her hand to strong things, and her fingers have taken hold of <na>(e)</na> the spindle.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Flax on the distaff signifieth purpose to do good works, yarn on the spindle the work well begun, which giveth confidence in God that the same shall be perfect and have due reward."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -3823,7 +4226,13 @@
         },
         {
           "verse": 24,
-          "text": "She <na>(f)</na> made sindon, and sold it, and delivered a girdle to the Chananeite."
+          "text": "She <na>(f)</na> made sindon, and sold it, and delivered a girdle to the Chananeite.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "They make and sell cloth, which learning and observing God's law, do teach it others."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -3847,11 +4256,27 @@
         },
         {
           "verse": 30,
-          "text": "Grace is deceitful, and beauty is vain: the woman that feareth our Lord shall be praised."
+          "text": "<na>(g)</na> Grace is deceitful, and beauty is vain: the woman that feareth our Lord shall be praised.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "External comeliness is not durable: but the fear of God is more worthy of praise."
+            }
+          ]
         },
         {
           "verse": 31,
-          "text": "Give ye to her of the fruit of her hands, and let her works praise her in the gates."
+          "text": "Give ye to her <na>(h)</na> of the fruit of her hands, and let her works praise her <na>(i)</na> in the gates.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "Good works shall be rewarded,"
+            },
+            {
+              "label": "i",
+              "text": "at the tribunal seat of judgement."
+            }
+          ]
         }
       ],
       "summary": "An exhortation to chastity, temperance, 8. and to works of mercy. 10. with praise of a valiant wise woman."

@@ -8,7 +8,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "Then, the testimonies of John Baptist, first to the solemn <i>legacy of the Jews: 29. secondly, when he saw <sc>Jesus</sc> come to him: 35. thirdly, to his own Disciples also, putting them over from himself to <sc>Jesus</sc>. Who made it plainer to them that he is Christ, 40. and so began he also to have Disciples.</i> <cr>[1]</cr> <cr>[1]</cr> The 1. part: <sc>The</sc> <sc>Acts</sc> of Christ before his manifestation, whilst John Baptist was yet baptizing."
+          "text": "Then, the testimonies of John Baptist, first to the solemn <i>legacy of the Jews: 29. secondly, when he saw <sc>Jesus</sc> come to him: 35. thirdly, to his own Disciples also, putting them over from himself to <sc>Jesus</sc>. Who made it plainer to them that he is Christ, 40. and so began he also to have Disciples.</i> <cr>[1]</cr>"
         },
         {
           "verse": 1,
@@ -22,7 +22,12 @@
         {
           "verse": 3,
           "text": "All things were made by him: and without him was made <cr>[1]</cr> <alt>nothing. That which was made</alt>,",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "nothing that was made."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -97,7 +102,15 @@
         },
         {
           "verse": 21,
-          "text": "And they asked him: What then? Art thou <cr>[1]</cr> Elias? And he said: I am not. Art thou <cr>[2][3]</cr> the Prophet? And he answered: No."
+          "text": "And they asked him: What then? Art thou <cr>[1]</cr> Elias? And he said: I am not. Art thou <cr>[2][3]</cr> the Prophet? And he answered: No.",
+          "cross_refs": [
+            {
+              "text": "Mal. 4, 5."
+            },
+            {
+              "text": "Deu. 18, 15."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -105,7 +118,12 @@
         },
         {
           "verse": 23,
-          "text": "He said: <i>I am the voice of one crying in the desert, make straight the way of our Lord,</i> <cr>[1]</cr> as Esaie the Prophet said."
+          "text": "He said: <i>I am the voice of one crying in the desert, make straight the way of our Lord,</i> <cr>[1]</cr> as Esaie the Prophet said.",
+          "cross_refs": [
+            {
+              "text": "Esa. 40, 3."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -117,7 +135,12 @@
         },
         {
           "verse": 26,
-          "text": "John answered them, saying: <cr>[1][2]</cr> I baptize in water; but there hath stood in the midst of you whom you know not."
+          "text": "John answered them, saying: <cr>[1][2]</cr> I baptize in water; but there hath stood in the midst of you whom you know not.",
+          "cross_refs": [
+            {
+              "text": "Mt. 3, 11. Mr. 1, 8. Lu. 3, 16."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -129,7 +152,12 @@
         },
         {
           "verse": 29,
-          "text": "<cr>[1]</cr> The next day John saw <sc>Jesus</sc> coming to him, and he saith: <i>Behold the lamb of God, behold him that taketh away the </i> <cr>[2]</cr> <i>sin of the world.</i> <cr>[3]</cr>"
+          "text": "<cr>[1]</cr> The next day John saw <sc>Jesus</sc> coming to him, and he saith: <i>Behold the lamb of God, behold him that taketh away the </i> <cr>[2]</cr> <i>sin of the world.</i> <cr>[3]</cr>",
+          "cross_refs": [
+            {
+              "text": "sins"
+            }
+          ]
         },
         {
           "verse": 30,
@@ -154,7 +182,7 @@
         },
         {
           "verse": 35,
-          "text": "The next day again John stood, and two of his Disciples."
+          "text": "<cr>[1]</cr> The next day again John stood, and two of his Disciples."
         },
         {
           "verse": 36,
@@ -178,11 +206,16 @@
         },
         {
           "verse": 41,
-          "text": "He findeth first his brother Simon, and saith to him: We have found <sc>Messias</sc>, which is being interpreted, <sc>Christ</sc>."
+          "text": "He findeth first his brother Simon, and saith to him: We have found <cr>[1]</cr> <sc>Messias</sc>, which is being interpreted, <sc>Christ</sc>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 44."
+            }
+          ]
         },
         {
           "verse": 42,
-          "text": "And he brought him to <sc>Jesus</sc>. And <sc>Jesus</sc> looking upon him, said: Thou art Simon the son of Jona: thou shalt be called <i>Cephas,</i> which is interpreted, Peter.",
+          "text": "And he brought him to <sc>Jesus</sc>. And <sc>Jesus</sc> looking upon him, said: Thou art Simon the son of Jona: thou shalt be called <cr>[1]</cr> <i>Cephas,</i> which is interpreted, Peter.",
           "has_annotation": true
         },
         {
@@ -203,7 +236,7 @@
         },
         {
           "verse": 47,
-          "text": "<sc>Jesus</sc> saw Nathanael coming to him, and he saith of him: Behold an Israelite in very deed, in whom there is no guile."
+          "text": "<cr>[1]</cr> <sc>Jesus</sc> saw Nathanael coming to him, and he saith of him: Behold an Israelite in very deed, in whom there is no guile."
         },
         {
           "verse": 48,
@@ -219,7 +252,40 @@
         },
         {
           "verse": 51,
-          "text": "And he saith to him: Amen Amen I say to you, You shall see the Heaven opened, and the Angels of God ascending and descending, upon the Son of man. and as the Arrians after taught. And this first sentence of the Gospel not only the faithful, <cr>[2]</cr> but the Platonics did so admire (as S. Augustine writeth) <cr>[3]</cr> that they wished it to be written in gold. 1. With God.] Because a man might say, If the <sc>Word</sc> were before any thing was created, where or how could he be? The Evangelist preventing that carnal concept, saith first, that the was with God, <cr>[1]</cr> whose bing dependeth not upon time, place, space, or any other creatures, all which were made by him. Secondly, he giveth us to understand, that the <sc>Word</sc> had his proper substance or personality distinct from God the Father, whereby Sabellius the old Heretic is refuted. Thirdly, here is insinuated the order of these two persons, one towards the other, to wit, that the Son is with and of the Father, and not the Father of the Son. Fourthly, you may confute here the blasphemy of Calvin, <cr>[2]</cr> holding the second Person to be God, not as of God the Father, but as of himself. And yet such are the books that our youth now read commonly in England, and that by commandment. 1. God was the word.] Lest any man upon the premises, which set forth the relation and distinction of the second Person from the first, might think that the Father only were God, the Evangelist expressly teacheth, the <sc>Word</sc> to be God. <cr>[1]</cr> For though the words seem to lie otherwise (because we have of purpose so owed the elegancy which the Evangelist himself observed in placing them so, and therefore they stand so both in Greek and Latin) yet indeed the construction is thus, <i>The <sc>Word</sc> was God,</i> <cr>[2]</cr> and (as in his first Epistle the same Apostle writeth) <i>true God:</i> lest any might say (as the Arians did) that he was God indeed, but not truly and naturally, but by common adoption or calling, as good men in the Church be called the sons of God. What wonderful wrangling and tergiversation the Arians used to avoid the evidence of this place, we see in S. Augustine li. 3. de Doct. Christ. c. 2. even such as the Protestants do, <cr>[3]</cr> to avoid the like words, <i>This is my body,</i> concerning the B. Sacrament. 3. By him.] Again, by this he signifieth the eternity, divinity, omnipotency, and equality of the <sc>Word</sc> or Son, <na>◦</na> with God the Father, because by him all things were created. All thins he saith, both visible of this world: and invisible, as Angels and all spiritual creatures. Whereupon it is evident also, that himself is no creature, being the creator of all: neither is sin of his creation, being a defect of a thing, rather than a thing itself, and therefore neither of nor by him. 12. He gave them power.] Free will to receive or acknowledge Christ, & power given to men, if they will, <na>◦</na> to be made by Christ the sons of God: but not forced or drawn thereunto by any necessity. 14. The Word made flesh.] This is the high and divine testimony of Christ's incarnation and that he vouchsaved to become man, For the acknowledging of which inexplicable benefit and giving humble thanks for the same, all Christian people in the world by tradition of the Fathers prostrate themselves or kneel down, <na>◦</na> when they hear it sung or said at the holy Mass, either in this Gospel: or in the Creed by these words, ET <sc>Homo</sc> <sc>Factus</sc> <sc>Est</sc>. 18. No man hath seen.] Never man in this mortality saw God in the very shape and natural form of the divine essence, but men see him only in the shape of visible creatures, <na>◦</na> in or by which it pleaseth him to shew himself unto many diversly in this world: but never in such sort as when he shewed himself in the person of the son of God, being made truly man and conversing with men. 32. The Spirit.] Here is an evident testimony of the third Person in Trinity, <na>◦</na> which is the Holy Ghost: so that in this one Chapter we find expressly against all Heretics, Jews, & Pagans, set forth the truth of the Church's doctrine concerning the whole Trinity. 42. Looking upon him.] This beholding of Simon, insinuateth Christ's designment and preferring of"
+          "text": "And he saith to him: Amen Amen I say to you, You shall see the Heaven opened, and the <cr>[1]</cr> Angels of God ascending and descending, upon the Son of man. and as the Arrians after taught. And this first sentence of the Gospel not only the faithful, <cr>[2]</cr> but the Platonics did so admire (as S. Augustine writeth) <cr>[3]</cr> that they wished it to be written in gold. 1. With God.] Because a man might say, If the <sc>Word</sc> were before any thing was created, where or how could he be? The Evangelist preventing that carnal concept, saith first, that the was with God, <cr>[1]</cr> whose bing dependeth not upon time, place, space, or any other creatures, all which were made by him. Secondly, he giveth us to understand, that the <sc>Word</sc> had his proper substance or personality distinct from God the Father, whereby Sabellius the old Heretic is refuted. Thirdly, here is insinuated the order of these two persons, one towards the other, to wit, that the Son is with and of the Father, and not the Father of the Son. Fourthly, you may confute here the blasphemy of Calvin, <cr>[2]</cr> holding the second Person to be God, not as of God the Father, but as of himself. And yet such are the books that our youth now read commonly in England, and that by commandment. 1. God was the word.] Lest any man upon the premises, which set forth the relation and distinction of the second Person from the first, might think that the Father only were God, the Evangelist expressly teacheth, the <sc>Word</sc> to be God. <cr>[1]</cr> For though the words seem to lie otherwise (because we have of purpose so owed the elegancy which the Evangelist himself observed in placing them so, and therefore they stand so both in Greek and Latin) yet indeed the construction is thus, <i>The <sc>Word</sc> was God,</i> <cr>[2]</cr> and (as in his first Epistle the same Apostle writeth) <i>true God:</i> lest any might say (as the Arians did) that he was God indeed, but not truly and naturally, but by common adoption or calling, as good men in the Church be called the sons of God. What wonderful wrangling and tergiversation the Arians used to avoid the evidence of this place, we see in S. Augustine li. 3. de Doct. Christ. c. 2. even such as the Protestants do, <cr>[3]</cr> to avoid the like words, <i>This is my body,</i> concerning the B. Sacrament. 3. By him.] Again, by this he signifieth the eternity, divinity, omnipotency, and equality of the <sc>Word</sc> or Son, <na>◦</na> with God the Father, because by him all things were created. All thins he saith, both visible of this world: and invisible, as Angels and all spiritual creatures. Whereupon it is evident also, that himself is no creature, being the creator of all: neither is sin of his creation, being a defect of a thing, rather than a thing itself, and therefore neither of nor by him. 12. He gave them power.] Free will to receive or acknowledge Christ, & power given to men, if they will, <na>◦</na> to be made by Christ the sons of God: but not forced or drawn thereunto by any necessity. 14. The Word made flesh.] This is the high and divine testimony of Christ's incarnation and that he vouchsaved to become man, For the acknowledging of which inexplicable benefit and giving humble thanks for the same, all Christian people in the world by tradition of the Fathers prostrate themselves or kneel down, <na>◦</na> when they hear it sung or said at the holy Mass, either in this Gospel: or in the Creed by these words, ET <sc>Homo</sc> <sc>Factus</sc> <sc>Est</sc>. 18. No man hath seen.] Never man in this mortality saw God in the very shape and natural form of the divine essence, but men see him only in the shape of visible creatures, <na>◦</na> in or by which it pleaseth him to shew himself unto many diversly in this world: but never in such sort as when he shewed himself in the person of the son of God, being made truly man and conversing with men. 32. The Spirit.] Here is an evident testimony of the third Person in Trinity, <na>◦</na> which is the Holy Ghost: so that in this one Chapter we find expressly against all Heretics, Jews, & Pagans, set forth the truth of the Church's doctrine concerning the whole Trinity. 42. Looking upon him.] This beholding of Simon, insinuateth Christ's designment and preferring of <cr>[1]</cr> Peter by his new",
+          "cross_refs": [
+            {
+              "text": "Gen. 28, 12."
+            },
+            {
+              "text": "Calv. inst. li. 1. c. 13. sect. 23 & 25."
+            },
+            {
+              "text": "1. Io. c. 5, 20."
+            }
+          ],
+          "notes": [
+            {
+              "label": "◦",
+              "text": "The WORD not a creature but the creator."
+            },
+            {
+              "label": "◦",
+              "text": "Free-will."
+            },
+            {
+              "label": "◦",
+              "text": "Humble kneeling at the solemn words of Christ's incarnation."
+            },
+            {
+              "label": "◦",
+              "text": "How mortal men see God."
+            },
+            {
+              "label": "◦",
+              "text": "The B. Trinity."
+            }
+          ]
         }
       ],
       "summary": "The preface of the Evangelist, commending Christ (as being God the Son incarnate) to the Gentiles, and setting out the blindness of the Jews in not receiving him. 19."
@@ -298,7 +364,12 @@
         },
         {
           "verse": 17,
-          "text": "And his Disciples remembered that it is written: <i>The zeal of thy house hath eaten me.</i> <cr>[1]</cr>"
+          "text": "And his Disciples remembered that it is written: <i>The zeal of thy house hath eaten me.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ps. 68, 10."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -306,7 +377,12 @@
         },
         {
           "verse": 19,
-          "text": "<sc>Jesus</sc> answered and said to them: <cr>[1]</cr> Dissolve this temple, and in three days I will raise it."
+          "text": "<sc>Jesus</sc> answered and said to them: <cr>[1]</cr> Dissolve this temple, and in three days I will raise it.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 61. 27, 40."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -394,7 +470,12 @@
         },
         {
           "verse": 14,
-          "text": "And as <cr>[1]</cr> Moyses exalted the serpent in the desert, so must the Son of man be exalted:"
+          "text": "And as <cr>[1]</cr> Moyses exalted the serpent in the desert, so must the Son of man be exalted:",
+          "cross_refs": [
+            {
+              "text": "Nu. 21, 9."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -443,7 +524,12 @@
         },
         {
           "verse": 26,
-          "text": "And they came to John, and said to him: Rabbi, he that was with thee beyond Jordan, to whom thou didst give testimony, behold he baptizeth, and all come to him."
+          "text": "And they came to John, and said to him: Rabbi, he that was with thee beyond Jordan, to whom <cr>[1]</cr> thou didst give testimony, behold he baptizeth, and all come to him.",
+          "cross_refs": [
+            {
+              "text": "Io. 1, 19."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -451,7 +537,12 @@
         },
         {
           "verse": 28,
-          "text": "Yourselves do bear me witness, that I said, I am not <sc>Christ</sc>; but that I am sent before him."
+          "text": "Yourselves do bear me witness, <cr>[1]</cr> that I said, I am not <sc>Christ</sc>; but that I am sent before him.",
+          "cross_refs": [
+            {
+              "text": "Io. 1, 20."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -498,7 +589,12 @@
         },
         {
           "verse": 2,
-          "text": "(howbeit <cr>[1]</cr> <sc>Jesus</sc> did not baptize, but his Disciples)"
+          "text": "(howbeit <cr>[1]</cr> <sc>Jesus</sc> did not baptize, but his Disciples)",
+          "cross_refs": [
+            {
+              "text": "ep. 108."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -510,7 +606,12 @@
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> He cometh therefore into a city of Samaria which is called Sichar; <cr>[2]</cr> beside the manor that Jacob gave to Joseph his son."
+          "text": "<cr>[1]</cr> He cometh therefore into a city of Samaria which is called Sichar; <cr>[2]</cr> beside the manor that Jacob gave to Joseph his son.",
+          "cross_refs": [
+            {
+              "text": "Gen. 48, 22."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -518,7 +619,12 @@
         },
         {
           "verse": 7,
-          "text": "There cometh <cr>[1]</cr> a woman of Samaria to draw water. <sc>Jesus</sc> said to her: Give me to drink."
+          "text": "There cometh <cr>[1]</cr> a woman of Samaria to draw water. <sc>Jesus</sc> said to her: Give me to drink.",
+          "cross_refs": [
+            {
+              "text": "Aug. tract. 15 in Ioan."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -571,7 +677,12 @@
         {
           "verse": 20,
           "text": "Our Fathers adored in this mountain, and you say, <cr>[1]</cr> that at Jerusalem is the place where men must adore.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Deu. 12, 6. Ps. 121. 13."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -579,7 +690,12 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> You adore that you know not: we adore that we know; for salvation is of the Jews."
+          "text": "<cr>[1]</cr> You adore that you know not: we adore that we know; for salvation is of the Jews.",
+          "cross_refs": [
+            {
+              "text": "4. Reg. 17, 28. 36."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -672,11 +788,21 @@
         },
         {
           "verse": 45,
-          "text": "Therefore <cr>[1]</cr> when he was come into Galilee, the Galilaeans received him, whereas they had seen all things that he had done at Jerusalem in the festival day: for themselves also came to the festival day."
+          "text": "Therefore <cr>[1]</cr> when he was come into Galilee, the Galilaeans received him, whereas they had seen all things that he had done at Jerusalem in the festival day: for themselves also came to the festival day.",
+          "cross_refs": [
+            {
+              "text": "Mt. 4, 12. Mr. 1, 14. Luc. 4, 14."
+            }
+          ]
         },
         {
           "verse": 46,
-          "text": "<cr>[1]</cr> He came again therefore into Cana of Galilee, <cr>[2]</cr> where he made water wine. And there was a certain lord whose son was sick at Capharnaum."
+          "text": "<cr>[1]</cr> He came again therefore into Cana of Galilee, <cr>[2]</cr> where he made water wine. And there was a certain lord whose son was sick at Capharnaum.",
+          "cross_refs": [
+            {
+              "text": "Io. 2, 9."
+            }
+          ]
         },
         {
           "verse": 47,
@@ -708,7 +834,12 @@
         },
         {
           "verse": 54,
-          "text": "This again the second sign did <sc>Jesus</sc>, when he was come from Jewry into Galilee."
+          "text": "This again the <cr>[1]</cr> second sign did <sc>Jesus</sc>, when he was come from Jewry into Galilee.",
+          "cross_refs": [
+            {
+              "text": "Io. 2, 11."
+            }
+          ]
         }
       ],
       "summary": "Leaving Jewry because of the Pharisees, in the way to Galilee he talketh with a Samaritane woman, telling her that he will give water of everlasting life, 16. shewing himself to know men's secrets, 19. preferring the Jews' religion before the Samaritanes', but ours (the Christian Catholic religion) before them both, 25. and uttering unto her that he is Christ. 28. which by her testimony and his preaching very many Samaritanes do believe: he in the mean time foretelling his Disciples, of the harvest he will send them into. 45 The Galilaeans also receive him, where again he worketh his second miracle."
@@ -723,7 +854,15 @@
         {
           "verse": 2,
           "text": "And there is at Jerusalem <alt>upon</alt> <cr>[1]</cr> Probatica a pond which in Hebrew is surnamed <cr>[2]</cr> <alt>Bethsaida</alt>, having five porches.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Probatica Probatica"
+            },
+            {
+              "text": "Bethesda"
+            }
+          ]
         },
         {
           "verse": 3,
@@ -739,7 +878,12 @@
         },
         {
           "verse": 6,
-          "text": "Him when <sc>Jesus</sc> had seen lying, & knew that <cr>[1]</cr> he had now a long time, he saith to him: Wilt thou be made whole?"
+          "text": "Him when <sc>Jesus</sc> had seen lying, & knew that <cr>[1]</cr> he had now a long time, he saith to him: Wilt thou be made whole?",
+          "cross_refs": [
+            {
+              "text": "c multum tempus haberet,"
+            }
+          ]
         },
         {
           "verse": 7,
@@ -812,7 +956,12 @@
         },
         {
           "verse": 24,
-          "text": "Amen, amen I say to you, that he which heareth my word, and believeth him that sent me, hath life everlasting: and he cometh not into judgement, but <cr>[1]</cr> <alt>shall pass</alt> from death into life."
+          "text": "Amen, amen I say to you, that he which heareth my word, and believeth him that sent me, hath life everlasting: and he cometh not into judgement, but <cr>[1]</cr> <alt>shall pass</alt> from death into life.",
+          "cross_refs": [
+            {
+              "text": "is passed."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -848,7 +997,12 @@
         },
         {
           "verse": 33,
-          "text": "<cr>[1]</cr> You sent to John; and he gave testimony to the truth,"
+          "text": "<cr>[1]</cr> You sent to John; and he gave testimony to the truth,",
+          "cross_refs": [
+            {
+              "text": "Io. 1, 19."
+            }
+          ]
         },
         {
           "verse": 34,
@@ -864,7 +1018,12 @@
         },
         {
           "verse": 37,
-          "text": "And the Father that sent me, himself hath <cr>[1]</cr> given testimony of me: neither have you heard his voice at any time, nor seen his shape,"
+          "text": "And the Father that sent me, himself hath <cr>[1]</cr> given testimony of me: neither have you heard his voice at any time, nor seen his shape,",
+          "cross_refs": [
+            {
+              "text": "Mt. 3, 17."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -872,7 +1031,7 @@
         },
         {
           "verse": 39,
-          "text": "Search the <cr>[1]</cr> scriptures, for you think in them to have life everlasting: & the same are they that give testimony of me:",
+          "text": "Search the <cr>[1]</cr> scriptures, for you think in them to have life everlasting: & the same are they that give testimony of me: and good deeds meritorious, diverse rewards in heaven according to diverse merits, & such like.",
           "has_annotation": true
         },
         {
@@ -889,7 +1048,7 @@
         },
         {
           "verse": 43,
-          "text": "Iam come in the name of my Father, and you receive me not: if another shall come in his own name, him you will receive."
+          "text": "Iam come in the name of my Father, and you receive me not: if <cr>[1]</cr> another shall come in his own name, him you will receive. Pope be he, seeing the Jews receive him not?"
         },
         {
           "verse": 44,
@@ -921,7 +1080,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>After</sc> <cr>[1][2]</cr> these things <sc>Jesus</sc> went beyond the sea of Galilee, which is of Tiberias."
+          "text": "<sc>After</sc> <cr>[1][2]</cr> these things <sc>Jesus</sc> went beyond the sea of Galilee, which is of Tiberias.",
+          "cross_refs": [
+            {
+              "text": "Mt. 14, 13. Mar. 6, 32. Lu. 9, 10."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -977,7 +1141,12 @@
         },
         {
           "verse": 15,
-          "text": "<sc>Jesus</sc> therefore when he knew that they would come to take him, and make him king, <cr>[1]</cr> he fled again into the mountain himself alone."
+          "text": "<sc>Jesus</sc> therefore when he knew that they would come to take him, and make him king, <cr>[1]</cr> he fled again into the mountain himself alone.",
+          "cross_refs": [
+            {
+              "text": "Mt. 14, 23. Mr. 6, 46."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -1042,12 +1211,22 @@
         },
         {
           "verse": 31,
-          "text": "Our <cr>[1]</cr> Fathers did eat Manna in the desert as it is written, <i>Bread from Heaven he gave them to eat.</i>"
+          "text": "Our <cr>[1]</cr> Fathers did eat Manna in the desert as it is written, <i>Bread from Heaven he gave them to eat.</i>",
+          "cross_refs": [
+            {
+              "text": "Exo. 16, 4. 14. Ps. 77, 24."
+            }
+          ]
         },
         {
           "verse": 32,
           "text": "<sc>Jesus</sc> therefore said to them: <cr>[1]</cr> Amen, amen I say to you, Moyses gave you not the bread from Heaven, but my Father giveth you the true bread from Heaven.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Amen c. 8. vers. 14."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -1095,12 +1274,17 @@
         },
         {
           "verse": 44,
-          "text": "no man can come to me, unless the Father that sent me, draw him, and I will raise him up in the last day.",
+          "text": "<cr>[1]</cr> no man can come to me, unless the Father that sent me, draw him, and I will raise him up in the last day.",
           "has_annotation": true
         },
         {
           "verse": 45,
-          "text": "It is written in the Prophets: <i>And all shall be docible of God.</i> Every one that hath heard of the Father, & hath learned, cometh to me."
+          "text": "It is written in the Prophets: <i>And all shall be docible of God.</i> <cr>[1]</cr> Every one that hath heard of the Father, & hath learned, cometh to me.",
+          "cross_refs": [
+            {
+              "text": "Esa. 54, 13."
+            }
+          ]
         },
         {
           "verse": 46,
@@ -1125,11 +1309,16 @@
         },
         {
           "verse": 51,
-          "text": "Iam the living bread, that came down from Heaven."
+          "text": "<cr>[1]</cr> I am the living bread, that came down from Heaven."
         },
         {
           "verse": 52,
-          "text": "If any man eat of this bread, he shall live for ever: and the bread which I will give, is my flesh for the life of the world."
+          "text": "If any man eat of this bread, he shall live for ever: and <cr>[1]</cr> the bread which I will give, is my flesh for the life of the world.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 26. Mr. 14, 22. Lu. 22, 19. 1. Cor. 11, 24."
+            }
+          ]
         },
         {
           "verse": 53,
@@ -1148,7 +1337,7 @@
         },
         {
           "verse": 56,
-          "text": "For my flesh, is meat indeed: and my blood is drink indeed.",
+          "text": "<cr>[1]</cr> For my flesh, is meat indeed: and my blood is drink indeed.",
           "has_annotation": true
         },
         {
@@ -1179,8 +1368,13 @@
         },
         {
           "verse": 63,
-          "text": "If then you shall see the Son of man ascend where he was before?",
-          "has_annotation": true
+          "text": "If then you shall see <cr>[1]</cr> the Son of man ascend where he was before?",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Io. 3, 13."
+            }
+          ]
         },
         {
           "verse": 64,
@@ -1219,7 +1413,31 @@
         },
         {
           "verse": 72,
-          "text": "And he meant Judas Iscariot, Simon's son: for this same was to betray him, whereas he was one of the Twelve. 27. Work not the meat.] By their greedy seeking after him for meat of the body, he taketh occasion to draw them to the desire of a more excellent food which he had to give them, and so by little to open unto them the great mean and mystery of the B. Sacrament: which (as he proveth) doth not only far pass their ordinary bread or his marvelous multiplied loaves, but Manna itself, which they thought came from heaven, and so much wondered at it. 32. The true bread.] Though the person of Christ incarnate, even out of the Sacrament also, be meant under the Metaphores of bread and drink from heaven: and our belief in him, be signified by eating and feeding: yet the causes why they should be recommended unto us in such terms, were, that he was to be eaten and drunken indeed in the forms of bread and wine: for the which cause his body on the cross is called <cr>[1]</cr> his bread: & his blood shed on the cross, <cr>[2]</cr> the blood of the grape: no doubt because the same body and blood were in Holy Sacrament to be eaten and drunken. In which speeches, either of Christ's person generally, or peculiarly of the same as in the B. Sacrament, <i>the true bread</i> is not taken properly and specially for that substance which is of corn, and called with us bread: <cr>[3]</cr> but generally for food or meat, and therefore it hath joined with it lightly a term signifying a more excellent sort of sustenance: as, the true bread, the bread of heaven, the bread of life, Supersubstantial bread. in which sort the holy Sacrament which is Christ's body, is both here, and in S. Luke and S. Paul also, <cr>[4]</cr> often called bread, <cr>[5]</cr> even after consecration: not only for that it was made of bread, but because it is bread more truly, <cr>[6]</cr> and by more excellent property and calling, than that which ordinarily is named bread. 44. Draw him] The Father draweth us and teacheth us to come to his Son, and to believe these high and hard mysteries of his incarnation and of feeding us with his own substance in the Sacrament: <cr>[1]</cr> <cr>[2]</cr> not compelling or violently forcing any against their will or without any respect of their consent, as Heretics pretend: but by the sweet internal motions and persuasions of his grace and spirit he wholly maketh us of our own will and liking to consent to the same. 49. Manna, and died.] The Heretics holding the fathers of the old Testament to have eaten of the same meat, and to have had as good Sacraments as we, be here refuted: Christ putting a plain difference in the very substance thereof, and in the graces and effects much more at large. <na>◦</na> Manna was only a figure of the B. Sacrament, though a very excellent figure thereof for many causes. It came in a sort from heaven, our Sacrament more: it was made by God miraculously, our Sacrament more: it was to be eaten for the time of their peregrination, our Sacrament more: it was to every man what he liked best, our Sacrament more: a little thereof served and sufficed as well as much, our Sacrament more: it was reserved for such days as it could not be gathered, and our Sacrament much more: it was kept for a memorial in the ark of the Testament, our Sacrament much more: the discontented and incredulous murmured and gainsaid it, at our Sacrament much more: it sustained their bodies in the desert, our Sacrament both body and soul much more. 53. How can this man?] <i>It came not to their mind that nothing was impossible to God, that wickedly said, How can this man give us his flesh? But we may make great profit of this sin, believing the Mysteries, and taking a lesson, never to say or once think, How? For it is a Jewish word and worthy all punishment.</i> <na>◦</na> So saith <i>S. Cyril. li. 4. c. 13 in Io.</i> Nevertheless if one asked only for desire to learn in humility, as our Lady did touching her having a child in her virginity, then he must take the Angel's answer to her, That it is of the Holy Ghost. so saith S. Damascene <i>li. 4. c. 14.</i> 54. Unless you eat.] <i>Christ commending the Sacrament of the faithful unto us, said, Except you eat &c.</i>"
+          "text": "And he meant Judas Iscariot, Simon's son: for this same was to betray him, whereas he was one of the Twelve. 27. Work not the meat.] By their greedy seeking after him for meat of the body, he taketh occasion to draw them to the desire of a more excellent food which he had to give them, and so by little to open unto them the great mean and mystery of the B. Sacrament: which (as he proveth) doth not only far pass their ordinary bread or his marvelous multiplied loaves, but Manna itself, which they thought came from heaven, and so much wondered at it. 32. The true bread.] Though the person of Christ incarnate, even out of the Sacrament also, be meant under the Metaphores of bread and drink from heaven: and our belief in him, be signified by eating and feeding: yet the causes why they should be recommended unto us in such terms, were, that he was to be eaten and drunken indeed in the forms of bread and wine: for the which cause his body on the cross is called <cr>[1]</cr> his bread: & his blood shed on the cross, <cr>[2]</cr> the blood of the grape: no doubt because the same body and blood were in Holy Sacrament to be eaten and drunken. In which speeches, either of Christ's person generally, or peculiarly of the same as in the B. Sacrament, <i>the true bread</i> is not taken properly and specially for that substance which is of corn, and called with us bread: <cr>[3]</cr> but generally for food or meat, and therefore it hath joined with it lightly a term signifying a more excellent sort of sustenance: as, the true bread, the bread of heaven, the bread of life, Supersubstantial bread. in which sort the holy Sacrament which is Christ's body, is both here, and in S. Luke and S. Paul also, <cr>[4]</cr> often called bread, <cr>[5]</cr> even after consecration: not only for that it was made of bread, but because it is bread more truly, <cr>[6]</cr> and by more excellent property and calling, than that which ordinarily is named bread. 44. Draw him] The Father draweth us and teacheth us to come to his Son, and to believe these high and hard mysteries of his incarnation and of feeding us with his own substance in the Sacrament: <cr>[1]</cr> <cr>[2]</cr> not compelling or violently forcing any against their will or without any respect of their consent, as Heretics pretend: but by the sweet internal motions and persuasions of his grace and spirit he wholly maketh us of our own will and liking to consent to the same. 49. Manna, and died.] The Heretics holding the fathers of the old Testament to have eaten of the same meat, and to have had as good Sacraments as we, be here refuted: Christ putting a plain difference in the very substance thereof, and in the graces and effects much more at large. <na>◦</na> Manna was only a figure of the B. Sacrament, though a very excellent figure thereof for many causes. It came in a sort from heaven, our Sacrament more: it was made by God miraculously, our Sacrament more: it was to be eaten for the time of their peregrination, our Sacrament more: it was to every man what he liked best, our Sacrament more: a little thereof served and sufficed as well as much, our Sacrament more: it was reserved for such days as it could not be gathered, and our Sacrament much more: it was kept for a memorial in the ark of the Testament, our Sacrament much more: the discontented and incredulous murmured and gainsaid it, at our Sacrament much more: it sustained their bodies in the desert, our Sacrament both body and soul much more. 53. How can this man?] <i>It came not to their mind that nothing was impossible to God, that wickedly said, How can this man give us his flesh? But we may make great profit of this sin, believing the Mysteries, and taking a lesson, never to say or once think, How? For it is a Jewish word and worthy all punishment.</i> <na>◦</na> So saith <i>S. Cyril. li. 4. c. 13 in Io.</i> Nevertheless if one asked only for desire to learn in humility, as our Lady did touching her having a child in her virginity, then he must take the Angel's answer to her, That it is of the Holy Ghost. so saith S. Damascene <i>li. 4. c. 14.</i> 54. Unless you eat.] <i>Christ commending the Sacrament of the faithful unto us, said, Except you eat &c.</i> <cr>[1]</cr> The real presence.",
+          "cross_refs": [
+            {
+              "text": "Ierem. 11, 19. Gen. 49, 11."
+            },
+            {
+              "text": "Lu. 24, 35. Act. 2, 42. 20, 7."
+            },
+            {
+              "text": "1. Cor. 10."
+            },
+            {
+              "text": "Aug. cont. duas Ep. Pelag. li. 1. c. 19. & Ser. 2. de verb. Ap. c. 2."
+            }
+          ],
+          "notes": [
+            {
+              "label": "◦",
+              "text": "The manifold preeminences of the B. sacrament above Manna."
+            },
+            {
+              "label": "◦",
+              "text": "In the B. Sacrament, How , is a Jewish word."
+            }
+          ]
         }
       ],
       "summary": "Having with five loaves fed five thousand 16. (walking also the night after upon the sea) 22. on the morrow the people there upon resorting unto him, 27. he preacheth unto them of the Bread which he will give: telling them that he is come from heaven, and therefore able to give such bread as can quicken the world, even his own flesh: and that all his Elect shall believe as much. 60. Many notwithstanding do murmur at this doctrine, yea and become apostataes, though he tell them that they shall see by his Ascension into heaven, that he is descended from heaven, but the Twelve stick unto him, believing that he is God omnipotent, as he said. Among whom also (that no man be scandalized) he signifieth that he foreknoweth which will become a traitor: as among the foresaid, which would become apostataes. <na>[1]</na>",
@@ -1235,11 +1453,27 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>After</sc> <cr>[1]</cr> these things <sc>Jesus</sc> walked <cr>[2]</cr> <alt>into Galilee</alt>, for he would not walk <cr>[3]</cr> <alt>into Jewry</alt>: because the Jews sought to kill him."
+          "text": "<sc>After</sc> <cr>[1]</cr> these things <sc>Jesus</sc> walked <cr>[2]</cr> <alt>into Galilee</alt>, for he would not walk <cr>[3]</cr> <alt>into Jewry</alt>: because the Jews sought to kill him.",
+          "cross_refs": [
+            {
+              "text": "in Galilee"
+            },
+            {
+              "text": "in Jury"
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And the festival day of the Jews, <cr>[1]</cr> <cr>[2]</cr> Scenopegia, was at hand."
+          "text": "And the festival day of the Jews, <cr>[1]</cr> <cr>[2]</cr> Scenopegia, was at hand.",
+          "cross_refs": [
+            {
+              "text": "Lev. 23, 34."
+            },
+            {
+              "text": "Scenopegia (Lev. 23. σκηνῶν ἑορτὴ) feast of Tabernacles See Levit. 23, 34."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1263,7 +1497,12 @@
         },
         {
           "verse": 8,
-          "text": "Go you up to this festival day: <cr>[1]</cr> <alt>I go not up</alt> to this festival day; because my time is not yet accomplished."
+          "text": "Go you up to this festival day: <cr>[1]</cr> <alt>I go not up</alt> to this festival day; because my time is not yet accomplished.",
+          "cross_refs": [
+            {
+              "text": "Iwill not yet go up"
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1303,7 +1542,12 @@
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> He that speaketh of himself, seeketh his own glory. But he that seeketh the glory of him that sent him, he is true, and injustice in him there is not."
+          "text": "<cr>[1]</cr> He that speaketh of himself, seeketh his own glory. But he that seeketh the glory of him that sent him, he is true, and injustice in him there is not.",
+          "cross_refs": [
+            {
+              "text": "August. tract. 29. in Evang. Io."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1311,7 +1555,12 @@
         },
         {
           "verse": 20,
-          "text": "<cr>[1]</cr> Why seek you to kill me? The multitude answered, and said, <cr>[2]</cr> Thou hast a devil, who seeketh to kill thee?"
+          "text": "<cr>[1]</cr> Why seek you to kill me? The multitude answered, and said, <cr>[2]</cr> Thou hast a devil, who seeketh to kill thee?",
+          "cross_refs": [
+            {
+              "text": "Io. 5, 18."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1319,7 +1568,15 @@
         },
         {
           "verse": 22,
-          "text": "Therefore <cr>[1]</cr> Moyses gave you circumcision: not that it is of Moyses, but <cr>[2]</cr> of the fathers, and in the Sabboth you circumcise a man."
+          "text": "Therefore <cr>[1]</cr> Moyses gave you circumcision: not that it is of Moyses, but <cr>[2]</cr> of the fathers, and in the Sabboth you circumcise a man.",
+          "cross_refs": [
+            {
+              "text": "Lev. 12, 3."
+            },
+            {
+              "text": "Gen. 17, 10."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -1359,7 +1616,12 @@
         },
         {
           "verse": 32,
-          "text": "The Pharisees heard the multitude murmuring these things touching him: and the <cr>[1]</cr> <alt>Princes</alt> and Pharisees sent Ministers to apprehend him."
+          "text": "The Pharisees heard the multitude murmuring these things touching him: and the <cr>[1]</cr> <alt>Princes</alt> and Pharisees sent Ministers to apprehend him.",
+          "cross_refs": [
+            {
+              "text": "chief Priests"
+            }
+          ]
         },
         {
           "verse": 33,
@@ -1367,7 +1629,12 @@
         },
         {
           "verse": 34,
-          "text": "<cr>[1]</cr> You seek me, and shall not find: and where I am, you cannot come."
+          "text": "<cr>[1]</cr> You seek me, and shall not find: and where I am, you cannot come.",
+          "cross_refs": [
+            {
+              "text": "Io. 13, 33."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -1379,15 +1646,30 @@
         },
         {
           "verse": 37,
-          "text": "And in the last, the <cr>[1]</cr> great day of the festivity <sc>Jesus</sc> stood and cried, saying: If any man thirst, let him come to me, and drink."
+          "text": "And in the last, the <cr>[1]</cr> great day of the festivity <sc>Jesus</sc> stood and cried, saying: If any man thirst, let him come to me, and drink.",
+          "cross_refs": [
+            {
+              "text": "Lev. 23, 36."
+            }
+          ]
         },
         {
           "verse": 38,
-          "text": "He that believeth in me, as the scripture saith, <i>Out of his belly shall flow rivers of living water.</i> <cr>[1]</cr>"
+          "text": "He that believeth in me, as the scripture saith, <i>Out of his belly shall flow rivers of living water.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ioel. 2, 28."
+            }
+          ]
         },
         {
           "verse": 39,
-          "text": "(And this he said <cr>[1]</cr> of the Spirit that they should receive which believed in him. <cr>[2]</cr> For as yet the Spirit was not given: because <sc>Jesus</sc> was not yet glorified.)"
+          "text": "(And this he said <cr>[1]</cr> of the Spirit that they should receive which believed in him. <cr>[2]</cr> For as yet the Spirit was not given: because <sc>Jesus</sc> was not yet glorified.)",
+          "cross_refs": [
+            {
+              "text": "* Act. 2, 1."
+            }
+          ]
         },
         {
           "verse": 40,
@@ -1399,7 +1681,12 @@
         },
         {
           "verse": 42,
-          "text": "Doth not the <cr>[1]</cr> scripture say: That of the seed of David, and from Bethlehem the town where David was, <sc>Christ</sc> doth come?"
+          "text": "Doth not the <cr>[1]</cr> scripture say: That of the seed of David, and from Bethlehem the town where David was, <sc>Christ</sc> doth come?",
+          "cross_refs": [
+            {
+              "text": "Ps. 131, 11. Mich. 5, 2."
+            }
+          ]
         },
         {
           "verse": 43,
@@ -1431,7 +1718,12 @@
         },
         {
           "verse": 50,
-          "text": "Nicodemus said to them, <cr>[1]</cr> he <cr>[2]</cr> that came to him by night, who was one of them:"
+          "text": "Nicodemus said to them, <cr>[1]</cr> he <cr>[2]</cr> that came to him by night, who was one of them:",
+          "cross_refs": [
+            {
+              "text": "Io. 3, 2."
+            }
+          ]
         },
         {
           "verse": 51,
@@ -1439,7 +1731,12 @@
         },
         {
           "verse": 52,
-          "text": "They answered & said to him: Why, art thou also a Galilaean? Search, <cr>[1]</cr> & see that from Galilee a Prophet riseth not."
+          "text": "They answered & said to him: Why, art thou also a Galilaean? Search, <cr>[1]</cr> & see that from Galilee a Prophet riseth not.",
+          "cross_refs": [
+            {
+              "text": "Search the scriptures"
+            }
+          ]
         },
         {
           "verse": 53,
@@ -1469,7 +1766,12 @@
         },
         {
           "verse": 5,
-          "text": "And <cr>[1]</cr> in the law^ Moyses commanded us to stone such. What sayest thou therefore?"
+          "text": "And <cr>[1]</cr> in the law^ Moyses commanded us to stone such. What sayest thou therefore?",
+          "cross_refs": [
+            {
+              "text": "Lev. 20, 10."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1477,7 +1779,12 @@
         },
         {
           "verse": 7,
-          "text": "When they therefore continued asking him, he lifted up himself, and said to them: <cr>[1]</cr> He that is without sin of you, let him first throw the stone at her."
+          "text": "When they therefore continued asking him, he lifted up himself, and said to them: <cr>[1]</cr> He that is without sin of you, let him first throw the stone at her.",
+          "cross_refs": [
+            {
+              "text": "Cyril in Io. See Annot. Mt. 7, 1."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -1493,7 +1800,12 @@
         },
         {
           "verse": 11,
-          "text": "Who said: No man, Lord. And <sc>Jesus</sc> said: <cr>[1]</cr> Neither will I condemn thee. Go, and now sin no more."
+          "text": "Who said: No man, Lord. And <sc>Jesus</sc> said: <cr>[1]</cr> Neither will I condemn thee. Go, and now sin no more.",
+          "cross_refs": [
+            {
+              "text": "Ep. 54."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -1517,7 +1829,12 @@
         },
         {
           "verse": 17,
-          "text": "And in your law it is written, that <cr>[1]</cr> the testimony of two men is true."
+          "text": "And in your law it is written, that <cr>[1]</cr> the testimony of two men is true.",
+          "cross_refs": [
+            {
+              "text": "Deu. 17, 6. 19, 15."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1586,7 +1903,12 @@
         {
           "verse": 34,
           "text": "<sc>Jesus</sc> answered them: Amen, amen I say to you, that <cr>[1]</cr> every one which committeth sin, is the servant of sin.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Ro. 6, 16. 2. Pet. 2, 19."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -1594,7 +1916,12 @@
         },
         {
           "verse": 36,
-          "text": "If therefore the Son make you free, you shall be <cr>[1]</cr> free indeed."
+          "text": "If therefore the Son make you free, you shall be <cr>[1]</cr> free indeed.",
+          "cross_refs": [
+            {
+              "text": "tract. 41. in Evang. Io."
+            }
+          ]
         },
         {
           "verse": 37,
@@ -1626,7 +1953,12 @@
         },
         {
           "verse": 44,
-          "text": "You are of your father the devil, & the desires of your father you will do. He was a man-killer from the beginning, & he stood not in the verity; because verity is not in him. When he speaketh a lie, he speaketh of his own, because he is a liar, & the father thereof."
+          "text": "You are of your father the devil, & the desires of your father you will do. He was a <cr>[1]</cr> man-killer from the beginning, & he stood not in the verity; because verity is not in him. When he speaketh a lie, he speaketh of his own, because he is a liar, & the father thereof.",
+          "cross_refs": [
+            {
+              "text": "Cont. lit. Petil. li. 2, c. 13."
+            }
+          ]
         },
         {
           "verse": 45,
@@ -1638,7 +1970,7 @@
         },
         {
           "verse": 47,
-          "text": "He that is of God, heareth the words of God. Therefore you hear not, because you are not of God."
+          "text": "<cr>[1]</cr> He that is of God, heareth the words of God. Therefore you hear not, because you are not of God."
         },
         {
           "verse": 48,
@@ -1646,7 +1978,12 @@
         },
         {
           "verse": 49,
-          "text": "<sc>Jesus</sc> answered: I have no devil: but I do honour my Father, and you have dishonoured me."
+          "text": "<sc>Jesus</sc> answered: <cr>[1]</cr> I have no devil: but I do honour my Father, and you have dishonoured me.",
+          "cross_refs": [
+            {
+              "text": "Aug. tract. 43. in Ioan."
+            }
+          ]
         },
         {
           "verse": 50,
@@ -1725,7 +2062,12 @@
         },
         {
           "verse": 7,
-          "text": "and said to him: Go, <cr>[1]</cr> wash in the pool of Siloe, which is interpreted, Sent. He went therefore, and washed; and he came seeing."
+          "text": "and said to him: Go, <cr>[1]</cr> wash in the pool of Siloe, which is interpreted, Sent. He went therefore, and washed; and he came seeing.",
+          "cross_refs": [
+            {
+              "text": "Ambr. li. 3. c. 2. de Sacramentis."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -1794,7 +2136,12 @@
         },
         {
           "verse": 24,
-          "text": "They therefore again called the man that had been blind, and said to him: <cr>[1]</cr> Give glory to God. We know that this man is a sinner."
+          "text": "They therefore again called the man that had been blind, and said to him: <cr>[1]</cr> Give glory to God. We know that this man is a sinner.",
+          "cross_refs": [
+            {
+              "text": "Act. 5. Act. 19."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -1854,7 +2201,7 @@
         },
         {
           "verse": 39,
-          "text": "And <sc>Jesus</sc> said to him: For judgement came I into this world; that they that see not, may see: and they that see, may become blind."
+          "text": "And <sc>Jesus</sc> said to him: For judgement came I into this world; <cr>[1]</cr> that they that see not, may see: and they that see, may become blind."
         },
         {
           "verse": 40,
@@ -1914,11 +2261,21 @@
         {
           "verse": 11,
           "text": "<cr>[1]</cr> I am the good Pastor.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Decemb. 29. Iulij. 7."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> The good Pastor giveth his life for his sheep. But the hireling & he that is not the Pastor, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and flyeth: and the wolf raveneth, and disperseth the sheep."
+          "text": "<cr>[1]</cr> The good Pastor giveth his life for his sheep. But the hireling & he that is not the Pastor, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and flyeth: and the wolf raveneth, and disperseth the sheep.",
+          "cross_refs": [
+            {
+              "text": "Esa. 40, 11. Ezec. 34, 23."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1935,7 +2292,12 @@
         },
         {
           "verse": 16,
-          "text": "And other sheep I have that are not of this fold: them also I must bring, and they shall hear my voice, and there shall be made <cr>[1]</cr> one fold and one Pastor."
+          "text": "And other sheep I have that are not of this fold: them also I must bring, and they shall hear my voice, and there shall be made <cr>[1]</cr> one fold and one Pastor.",
+          "cross_refs": [
+            {
+              "text": "Ezec. 37, 24."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -1943,7 +2305,12 @@
         },
         {
           "verse": 18,
-          "text": "No man taketh it away from me: but <cr>[1]</cr> I yield it of myself. And I have power to yield it: and I have power to take it again. This commandment I received of my Father."
+          "text": "No man taketh it away from me: but <cr>[1]</cr> I yield it of myself. And I have power to yield it: and I have power to take it again. This commandment I received of my Father.",
+          "cross_refs": [
+            {
+              "text": "Esa. 53, 7."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1959,12 +2326,17 @@
         },
         {
           "verse": 22,
-          "text": "And the Dedication was in Jerusalem: and it was winter.",
-          "has_annotation": true
+          "text": "<cr>[1]</cr> And the Dedication was in Jerusalem: and it was winter.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "1. Mach. 4, 56. 59."
+            }
+          ]
         },
         {
           "verse": 23,
-          "text": "And <sc>Jesus</sc> walked in the temple, in Salomon's porch."
+          "text": "<cr>[1]</cr> And <sc>Jesus</sc> walked in the temple, in Salomon's porch."
         },
         {
           "verse": 24,
@@ -1988,12 +2360,22 @@
         },
         {
           "verse": 29,
-          "text": "My Father, that which he hath given me, is greater than all: and no man can pluck them out of the hand of my Father.",
-          "has_annotation": true
+          "text": "<cr>[1]</cr> My Father, that which he hath given me, is greater than all: and no man can pluck them out of the hand of my Father.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "My father that hath given me, &c."
+            }
+          ]
         },
         {
           "verse": 30,
-          "text": "Iand the Father are one."
+          "text": "Iand the Father are <cr>[1]</cr> one.",
+          "cross_refs": [
+            {
+              "text": "c unum."
+            }
+          ]
         },
         {
           "verse": 31,
@@ -2009,7 +2391,12 @@
         },
         {
           "verse": 34,
-          "text": "<sc>Jesus</sc> answered them: Is it not written in your law, that <i>I said, you are gods?</i>"
+          "text": "<sc>Jesus</sc> answered them: Is it not written in your law, that <i>I said, you are gods?</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ps. 81, 6."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -2055,7 +2442,12 @@
         },
         {
           "verse": 2,
-          "text": "(And Mary was she <cr>[1]</cr> that anointed our Lord with ointment, & wiped his feet with her hair: whose brother Lazarus was sick.)"
+          "text": "(And Mary was she <cr>[1]</cr> that anointed our Lord with ointment, & wiped his feet with her hair: whose brother Lazarus was sick.)",
+          "cross_refs": [
+            {
+              "text": "Lu. 7, 37. Mat, 26, 7. Mar. 14, 3. Io. 12, 3."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -2099,7 +2491,12 @@
         },
         {
           "verse": 13,
-          "text": "But <sc>Jesus</sc> spake of his death; & they thought that he spake <cr>[1]</cr> of the sleeping of sleep."
+          "text": "But <sc>Jesus</sc> spake of his death; & they thought that he spake <cr>[1]</cr> of the sleeping of sleep.",
+          "cross_refs": [
+            {
+              "text": "c de dormitione somni."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2195,7 +2592,12 @@
         },
         {
           "verse": 37,
-          "text": "But certain of them said: Could not he that <cr>[1]</cr> opened the eyes of the blind man, make that this man should not die?"
+          "text": "But certain of them said: Could not he that <cr>[1]</cr> opened the eyes of the blind man, make that this man should not die?",
+          "cross_refs": [
+            {
+              "text": "Io. 9, 6."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -2223,7 +2625,12 @@
         },
         {
           "verse": 44,
-          "text": "And forthwith he came forth that had been dead, bound feet and hands with winding bands, and his face was tied with a napkin. <sc>Jesus</sc> said to them: <cr>[1]</cr> Loose him, and let him go."
+          "text": "And forthwith he came forth that had been dead, bound feet and hands with winding bands, and his face was tied with a napkin. <sc>Jesus</sc> said to them: <cr>[1]</cr> Loose him, and let him go.",
+          "cross_refs": [
+            {
+              "text": "li. 7. c. ult. in Io. Tract. 49. in Io."
+            }
+          ]
         },
         {
           "verse": 45,
@@ -2239,7 +2646,12 @@
         },
         {
           "verse": 48,
-          "text": "If we let him alone so, all will believe in him: & the Romans will come, & <cr>[1]</cr> take away our place & nation."
+          "text": "If we let him alone so, all will believe in him: & the Romans will come, & <cr>[1]</cr> take away our place & nation.",
+          "cross_refs": [
+            {
+              "text": "Aug. tract. 49. in Io."
+            }
+          ]
         },
         {
           "verse": 49,
@@ -2282,7 +2694,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Jesus</sc> <cr>[1][2]</cr> therefore six days before the Pasch^ came to Bethania, where Lazarus was, that had been dead, whom <sc>Jesus</sc> raised."
+          "text": "<sc>Jesus</sc> <cr>[1][2]</cr> therefore six days before the Pasch^ came to Bethania, where Lazarus was, that had been dead, whom <sc>Jesus</sc> raised.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 6. Mar. 14, 3."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2290,7 +2707,12 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> Mary therefore took a pound of ointment of right spikenard, precious, and anointed the feet of <sc>Jesus</sc>, and wiped his feet with her hair: and the house was filled of the odour of the ointment."
+          "text": "<cr>[1]</cr> Mary therefore took a pound of ointment of right spikenard, precious, and anointed the feet of <sc>Jesus</sc>, and wiped his feet with her hair: and the house was filled of the odour of the ointment.",
+          "cross_refs": [
+            {
+              "text": "Annot. Mt. 26."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -2308,7 +2730,7 @@
         },
         {
           "verse": 7,
-          "text": "<sc>Jesus</sc> therefore said: Let her alone that she may keep it for the day of my <cr>[1]</cr> burial."
+          "text": "<sc>Jesus</sc> therefore said: Let her alone that she may keep it for the day of my <cr>[1]</cr> burial. bodies of the faithful are here also allowed."
         },
         {
           "verse": 8,
@@ -2332,7 +2754,15 @@
         },
         {
           "verse": 13,
-          "text": "they took the <cr>[1]</cr> boughs of palms, and went forth to meet him, & cried: <i>Hosanna, Blessed is he that cometh in the name of our Lord, the King of Israel.</i> <cr>[2]</cr>"
+          "text": "they took the <cr>[1]</cr> boughs of palms, and went forth to meet him, & cried: <i>Hosanna, Blessed is he that cometh in the name of our Lord, the King of Israel.</i> <cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "* Mt. 21, 7. Mr. 11, 7. Lu. 19, 35."
+            },
+            {
+              "text": "Ps. 117, 26."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2340,7 +2770,12 @@
         },
         {
           "verse": 15,
-          "text": "<i>Fear not daughter of Sion: behold, thy King cometh sitting upon an ass's colt.</i> <cr>[1]</cr>"
+          "text": "<i>Fear not daughter of Sion: behold, thy King cometh sitting upon an ass's colt.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Zach. 9, 9."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -2376,7 +2811,12 @@
         },
         {
           "verse": 24,
-          "text": "<cr>[1]</cr> Amen, amen I say to you, unless the grain of wheat falling into the ground, die: itself remaineth alone. but if it die, it bringeth much fruit."
+          "text": "<cr>[1]</cr> Amen, amen I say to you, unless the grain of wheat falling into the ground, die: itself remaineth alone. but if it die, it bringeth much fruit.",
+          "cross_refs": [
+            {
+              "text": "Febr. 1. Aug. 10."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -2404,11 +2844,21 @@
         },
         {
           "verse": 31,
-          "text": "<cr>[1]</cr> Now is the judgement of the world: now the Prince of this world shall be cast forth."
+          "text": "<cr>[1]</cr> Now is the judgement of the world: now the Prince of this world shall be cast forth.",
+          "cross_refs": [
+            {
+              "text": "Septemb. 14. Exaltatio S. Crucis."
+            }
+          ]
         },
         {
           "verse": 32,
-          "text": "And I, <cr>[1]</cr> if I be exalted from the earth, will draw all things to myself."
+          "text": "And I, <cr>[1]</cr> if I be exalted from the earth, will draw all things to myself.",
+          "cross_refs": [
+            {
+              "text": "Io. 3, 14."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -2432,15 +2882,30 @@
         },
         {
           "verse": 38,
-          "text": "that the saying of Esay the Prophet might be fulfilled, which he said: <i>Lord, who hath believed the hearing of us? and the arm of our Lord to whom hath it been revealed?</i>"
+          "text": "that the saying of Esay the Prophet might be fulfilled, which he said: <i>Lord, who hath believed the hearing of us? and the arm of our Lord to whom hath it been revealed?</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Esa. 53, 1."
+            }
+          ]
         },
         {
           "verse": 39,
-          "text": "Therefore they could not believe, because Esay said again:"
+          "text": "Therefore they <cr>[1]</cr> could not believe, because Esay said again:",
+          "cross_refs": [
+            {
+              "text": "Tract. 33. in Io. Mat. 13. 15. Mar. 4, 12."
+            }
+          ]
         },
         {
           "verse": 40,
-          "text": "<i>He hath blinded their eyes, and indurated their heart: that they may not see with their eyes, nor understand with their heart, and be converted, and I heal them.</i>"
+          "text": "<i>He hath blinded their eyes, and indurated their heart: that they may not see with their eyes, nor understand with their heart, and be converted, and I heal them.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Esa. 6, 9. Mt. 13, 14. Mr. 4, 12. Lu. 8, 10. Act. 28, 27."
+            }
+          ]
         },
         {
           "verse": 41,
@@ -2448,7 +2913,7 @@
         },
         {
           "verse": 42,
-          "text": "But yet of the Princes also many believed in him: but for the Pharisees they did not confess, that they might not be cast out of the Synagogue."
+          "text": "But yet of the Princes also many believed in him: but <cr>[1]</cr> for the Pharisees they did not confess, that they might not be cast out of the Synagogue."
         },
         {
           "verse": 43,
@@ -2500,7 +2965,12 @@
         },
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> before the festival day of Pasch, <sc>Jesus</sc> knowing that his hour was come that he should pass out of this world to his Father: whereas he had loved his that were in the world, unto the end he loved them. <cr>[3]</cr>"
+          "text": "<sc>And</sc> <cr>[1][2]</cr> before the festival day of Pasch, <sc>Jesus</sc> knowing that his hour was come that he should pass out of this world to his Father: whereas he had loved his that were in the world, unto the end he loved them. <cr>[3]</cr>",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 1. Mr. 14, 1. Luc. 22, 1."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2571,7 +3041,12 @@
         },
         {
           "verse": 18,
-          "text": "Ispeak not of you all: I know whom I have chosen. But that the scripture may be fulfilled, <i>He that eateth bread with me shall lift up his heel against me.</i> <cr>[1]</cr>"
+          "text": "Ispeak not of you all: I know whom I have chosen. But that the scripture may be fulfilled, <i>He that eateth bread with me shall lift up his heel against me.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ps. 40, 10."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -2583,7 +3058,12 @@
         },
         {
           "verse": 21,
-          "text": "When <sc>Jesus</sc> had said these things, he was troubled in spirit: and he protested, and said: <cr>[1]</cr> Amen, amen I say to you that one of you shall betray me."
+          "text": "When <sc>Jesus</sc> had said these things, he was troubled in spirit: and he protested, and said: <cr>[1]</cr> Amen, amen I say to you that one of you shall betray me.",
+          "cross_refs": [
+            {
+              "text": "Mat. 26, 18. Mar. 14, 16. Luc. 22, 21."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -2631,12 +3111,22 @@
         },
         {
           "verse": 33,
-          "text": "Little children, yet a little while I am with you. You shall seek me, & as I said to the Jews, whither I go, you cannot come: to you also I say now."
+          "text": "Little children, yet a little while I am with you. You shall seek me, & <cr>[1]</cr> as I said to the Jews, whither I go, you cannot come: to you also I say now.",
+          "cross_refs": [
+            {
+              "text": "Io. 7, 34."
+            }
+          ]
         },
         {
           "verse": 34,
-          "text": "Anew commandment I give to you, That you love one another; as I have loved you, that you also love one another.",
-          "has_annotation": true
+          "text": "<cr>[1]</cr> A new commandment I give to you, That you love one another; as I have loved you, that you also love one another.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "1. Io. 3, 23."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -2648,7 +3138,12 @@
         },
         {
           "verse": 37,
-          "text": "Peter saith to him: Why cannot I follow thee now? I will yield my life for thee."
+          "text": "Peter saith to him: Why cannot I follow thee now? <cr>[1]</cr> I will yield my life for thee.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 35. Mr. 14, 29. Lu. 22, 33."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -2662,11 +3157,21 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Let</sc> <cr>[1]</cr> not your heart be troubled. You believe in God, believe in me also."
+          "text": "<sc>Let</sc> <cr>[1]</cr> not your heart be troubled. You believe in God, believe in me also.",
+          "cross_refs": [
+            {
+              "text": "Maii. 1."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "In my Father's house there be <cr>[1]</cr> many mansions. If not, I would have told you, Because I go to prepare you a place."
+          "text": "In my Father's house there be <cr>[1]</cr> many mansions. If not, I would have told you, Because I go to prepare you a place.",
+          "cross_refs": [
+            {
+              "text": "Hiero. li. 2. adv. Iovin."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -2686,7 +3191,12 @@
         },
         {
           "verse": 7,
-          "text": "If you had known me, my Father also certes you had known: and from hence forth you <cr>[1]</cr> <alt>shall know</alt> him, and you have seen him."
+          "text": "If you had known me, my Father also certes you had known: and from hence forth you <cr>[1]</cr> <alt>shall know</alt> him, and you have seen him.",
+          "cross_refs": [
+            {
+              "text": "do know"
+            }
+          ]
         },
         {
           "verse": 8,
@@ -2698,7 +3208,12 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> Doest thou not believe that I am in the Father, & the Father in me? The words that I speak to you, of myself I speak not. But my Father that abideth in me, he doeth the works."
+          "text": "<cr>[1]</cr> Doest thou not believe that I am in the Father, & the Father in me? The words that I speak to you, of myself I speak not. But my Father that abideth in me, he doeth the works.",
+          "cross_refs": [
+            {
+              "text": "do ye not believe."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -2724,12 +3239,22 @@
         {
           "verse": 16,
           "text": "And I will ask the Father, and he will give you another <cr>[1]</cr> Paraclete, that he may abide with you for ever,",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Paraclete"
+            }
+          ]
         },
         {
           "verse": 17,
           "text": "the Spirit of truth, whom the world cannot receive, because it seeth him not, neither knoweth him, but you <cr>[1]</cr> <alt>know</alt> him: because he shall abide with you, and shall be in you.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "shall know"
+            }
+          ]
         },
         {
           "verse": 18,
@@ -2805,7 +3330,12 @@
         },
         {
           "verse": 3,
-          "text": "Now you are clean for the <cr>[1]</cr> word which I have spoken to you."
+          "text": "Now you are clean for the <cr>[1]</cr> word which I have spoken to you.",
+          "cross_refs": [
+            {
+              "text": "Tract. 80. in Io."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -2843,7 +3373,12 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> This is my precept, that you love one another, as I have loved you."
+          "text": "<cr>[1]</cr> This is my precept, that you love one another, as I have loved you.",
+          "cross_refs": [
+            {
+              "text": "Io. 13, 34."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -2875,7 +3410,12 @@
         },
         {
           "verse": 20,
-          "text": "Remember my word that I said to you: <cr>[1]</cr> The servant is not greater than his Master. If they have persecuted me, you also will they persecute. If they have kept my word, <cr>[2]</cr> yours also will they keep."
+          "text": "Remember my word that I said to you: <cr>[1]</cr> The servant is not greater than his Master. If they have persecuted me, you also will they persecute. If they have kept my word, <cr>[2]</cr> yours also will they keep.",
+          "cross_refs": [
+            {
+              "text": "Io. 13, 16. Mt. 10, 24. Lu. 6, 40."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -2896,12 +3436,22 @@
         },
         {
           "verse": 25,
-          "text": "But that the word may be fulfilled, which is written in their law: <i>That they hated me gratis.</i>"
+          "text": "But that the word may be fulfilled, which is written in their law: <i>That they hated me gratis.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ps. 24, 19."
+            }
+          ]
         },
         {
           "verse": 26,
-          "text": "But when the Paraclete cometh whom I will send you from the Father, the Spirit of truth, which proceedeth from the Father, he shall give testimony of me:",
-          "has_annotation": true
+          "text": "<cr>[1]</cr> But when the Paraclete cometh whom I <cr>[2]</cr> will send you from the Father, the Spirit of truth, which proceedeth from the Father, he shall give testimony of me:",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Act. 2, 1."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -2924,7 +3474,12 @@
         },
         {
           "verse": 2,
-          "text": "Out of the Synagogues they will <cr>[1]</cr> cast you: but the hour cometh, that every one which killeth you, shall think that he doeth service to God."
+          "text": "Out of the Synagogues they will <cr>[1]</cr> cast you: but the hour cometh, that every one which killeth you, shall think that he doeth service to God.",
+          "cross_refs": [
+            {
+              "text": "Excommunicate you Annot. c. 9, 22."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -3010,7 +3565,12 @@
         },
         {
           "verse": 23,
-          "text": "<cr>[1]</cr> And in that day^ me you shall not ask any thing. Amen, amen I say to you, if you ask the Father any thing <cr>[2]</cr> in my name, he will give it you."
+          "text": "<cr>[1]</cr> And in that day^ me you shall not ask any thing. Amen, amen I say to you, if you ask the Father any thing <cr>[2]</cr> in my name, he will give it you.",
+          "cross_refs": [
+            {
+              "text": "Per Christum Dominum nostrum"
+            }
+          ]
         },
         {
           "verse": 24,
@@ -3046,7 +3606,12 @@
         },
         {
           "verse": 32,
-          "text": "Behold the hour cometh, and it is now come, that you shall be scattered every man into his own, and me you shall leave alone: and I am not alone because the Father is with me."
+          "text": "<cr>[1]</cr> Behold the hour cometh, and it is now come, that you shall be scattered every man into his own, and me you shall leave alone: and I am not alone because the Father is with me.",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 31. Mr. 14, 27."
+            }
+          ]
         },
         {
           "verse": 33,
@@ -3101,11 +3666,19 @@
         },
         {
           "verse": 11,
-          "text": "Holy father, keep them in thy name, whom thou hast given me; that they may be one, as also we."
+          "text": "<cr>[1]</cr> Holy father, <cr>[2]</cr> keep them in thy name, whom thou hast given me; that they may be one, as also we."
         },
         {
           "verse": 12,
-          "text": "When I was with them, I kept them in thy name. Those whom thou gavest me, have I kept: and none of them perished, but the son of perdition, that the scripture may be fulfilled."
+          "text": "When I was with them, I kept them in thy name. Those <cr>[1]</cr> whom thou gavest me, have I kept: and none of them perished, but the son of perdition, that the <cr>[2]</cr> scripture may be fulfilled.",
+          "cross_refs": [
+            {
+              "text": "Io. 18. 9."
+            },
+            {
+              "text": "Ps. 40, 10. 108, 8."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -3134,7 +3707,7 @@
         },
         {
           "verse": 19,
-          "text": "And for them I do sanctify myself: that they also may be sanctified in truth."
+          "text": "And for them I do <cr>[1]</cr> sanctify myself: that they also may be sanctified in truth."
         },
         {
           "verse": 20,
@@ -3173,7 +3746,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>When</sc> <cr>[1][2]</cr> <sc>Jesus</sc> had said these things, he went forth with his Disciples beyond the Torrent-Cedron, where was a garden, into the which he entered and his Disciples."
+          "text": "<sc>When</sc> <cr>[1][2]</cr> <sc>Jesus</sc> had said these things, he went forth with his Disciples beyond the Torrent-Cedron, where was a garden, into the which he entered and his Disciples.",
+          "cross_refs": [
+            {
+              "text": "Hippo. Ser. 144. de tempore."
+            },
+            {
+              "text": "Mt. 26, 36. Mr. 14, 32. Lu. 22, 39."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3181,7 +3762,12 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> Judas therefore having received the band of men, and of the chief Priests and Pharisees, ministers, cometh thither with lanterns and torches and weapons."
+          "text": "<cr>[1]</cr> Judas therefore having received the band of men, and of the chief Priests and Pharisees, ministers, cometh thither with lanterns and torches and weapons.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 47. Mr. 14, 43. Luc. 22, 47."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -3205,7 +3791,12 @@
         },
         {
           "verse": 9,
-          "text": "That the word might be fulfilled which he said, <cr>[1]</cr> That of them whom thou hast given me, I have not lost any."
+          "text": "That the word might be fulfilled which he said, <cr>[1]</cr> That of them whom thou hast given me, I have not lost any.",
+          "cross_refs": [
+            {
+              "text": "Io. 17, 12."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -3225,11 +3816,21 @@
         },
         {
           "verse": 14,
-          "text": "And <cr>[1]</cr> Caiphas was he that had given the counsel to the Jews, That it is expedient that one man die for the people."
+          "text": "And <cr>[1]</cr> Caiphas was he that had given the counsel to the Jews, That it is expedient that one man die for the people.",
+          "cross_refs": [
+            {
+              "text": "Io. 11, 49."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> And Simon Peter followed <sc>Jesus</sc>, and another Disciple. And that Disciple was known to the high Priest, and went in with <sc>Jesus</sc> into the court of the high Priest."
+          "text": "<cr>[1]</cr> And Simon Peter followed <sc>Jesus</sc>, and another Disciple. And that Disciple was known to the high Priest, and went in with <sc>Jesus</sc> into the court of the high Priest.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 58. Mr. 14, 54. Lu. 22, 54."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -3237,7 +3838,12 @@
         },
         {
           "verse": 17,
-          "text": "The wench therefore that was portress, saith to Peter: Art not thou also of this man's Disciples? He saith to her, <cr>[1]</cr> I am not."
+          "text": "The wench therefore that was portress, saith to Peter: Art not thou also of this man's Disciples? He saith to her, <cr>[1]</cr> I am not.",
+          "cross_refs": [
+            {
+              "text": "Aug. tract. 113 in Io."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -3281,7 +3887,12 @@
         },
         {
           "verse": 28,
-          "text": "<cr>[1][2]</cr> They therefore bring <sc>Jesus</sc> from Caiphas into the Palace. And it was morning: and they went not in into the Palace, that they might not be contaminated, but that they might eat the Pasch."
+          "text": "<cr>[1][2]</cr> They therefore bring <sc>Jesus</sc> from Caiphas into the Palace. And it was morning: and they went not in into the Palace, that they might not be contaminated, but that they might eat the Pasch.",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 1. Mr. 15, 1. Lu. 23, 1."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -3297,11 +3908,21 @@
         },
         {
           "verse": 32,
-          "text": "<cr>[1]</cr> That the word of <sc>Jesus</sc> might be fulfilled which he said, signifying what death he should die."
+          "text": "<cr>[1]</cr> That the word of <sc>Jesus</sc> might be fulfilled which he said, signifying what death he should die.",
+          "cross_refs": [
+            {
+              "text": "Io. 12, 33. Mt. 20, 19."
+            }
+          ]
         },
         {
           "verse": 33,
-          "text": "<cr>[1]</cr> Pilate therefore went into the Palace again, and called <sc>Jesus</sc>, and said to him: Art thou the King of the Jews?"
+          "text": "<cr>[1]</cr> Pilate therefore went into the Palace again, and called <sc>Jesus</sc>, and said to him: Art thou the King of the Jews?",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 11. Mr. 15, 2. Lu. 23, 4."
+            }
+          ]
         },
         {
           "verse": 34,
@@ -3325,7 +3946,12 @@
         },
         {
           "verse": 39,
-          "text": "<cr>[1]</cr> But you have a custom that I should release one to you in the Pasch: will you therefore that I release unto you the King of the Jews?"
+          "text": "<cr>[1]</cr> But you have a custom that I should release one to you in the Pasch: will you therefore that I release unto you the King of the Jews?",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 15. Mr. 15, 6. Lu. 23, 17."
+            }
+          ]
         },
         {
           "verse": 40,
@@ -3339,7 +3965,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Then</sc> therefore Pilate took <sc>Jesus</sc>, and scourged him. <cr>[1]</cr>"
+          "text": "<sc>Then</sc> therefore Pilate took <sc>Jesus</sc>, and scourged him. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 27. Mr. 15, 16."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3391,7 +4022,12 @@
         },
         {
           "verse": 14,
-          "text": "And it was the Parasceve of Pasch, about the <cr>[1]</cr> sixth hour, and he saith to the Jews: Lo your King."
+          "text": "And it was the Parasceve of Pasch, about the <cr>[1]</cr> sixth hour, and he saith to the Jews: Lo your King.",
+          "cross_refs": [
+            {
+              "text": "Mat. 20. Mar. 15. Luc. 23. Io. 4. Act. 3. & 10."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -3404,7 +4040,12 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> And bearing his own cross he went forth into that which is called the place of Calvary, in Hebrew Golgotha."
+          "text": "<cr>[1]</cr> And bearing his own cross he went forth into that which is called the place of Calvary, in Hebrew Golgotha.",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 33. Mr. 15, 20. Lu. 23, 33."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -3428,11 +4069,24 @@
         },
         {
           "verse": 23,
-          "text": "The <cr>[1]</cr> soldiers therefore when they had crucified him, took his garments (and they made four parts, to every soldier a part) & his coat. And his <cr>[2]</cr> coat was without seam, wrought from the top throughout."
+          "text": "The <cr>[1]</cr> soldiers therefore when they had crucified him, took his garments (and they made four parts, to every soldier a part) & his coat. And his <cr>[2]</cr> coat was without seam, wrought from the top throughout.",
+          "cross_refs": [
+            {
+              "text": "* Mt. 27, 35. Mr. 15, 24. Luc. 23, 34."
+            },
+            {
+              "text": "Cypr. de unit. Ec."
+            }
+          ]
         },
         {
           "verse": 24,
-          "text": "They said therefore one to another: Let us not cut it, but let us cast lots for it whose it shall be. That the scripture might be fulfilled saying: <i>They have parted my garments among them: and upon my vesture they have cast lots.</i> <cr>[1]</cr> And the soldiers did these things."
+          "text": "They said therefore one to another: Let us not cut it, but let us cast lots for it whose it shall be. That the scripture might be fulfilled saying: <i>They have parted my garments among them: and upon my vesture they have cast lots.</i> <cr>[1]</cr> And the soldiers did these things.",
+          "cross_refs": [
+            {
+              "text": "Ps. 21, 19."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -3450,7 +4104,12 @@
         },
         {
           "verse": 28,
-          "text": "<cr>[1]</cr> Afterward <sc>Jesus</sc> knowing that all things were now consummate, that the <cr>[2]</cr> scripture might be fulfilled, he saith, I thirst."
+          "text": "<cr>[1]</cr> Afterward <sc>Jesus</sc> knowing that all things were now consummate, that the <cr>[2]</cr> scripture might be fulfilled, he saith, I thirst.",
+          "cross_refs": [
+            {
+              "text": "Psa. 68, 22."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -3483,19 +4142,39 @@
         },
         {
           "verse": 36,
-          "text": "For these things were done that the scripture might be fulfilled: <i>You shall not break a bone of him.</i>"
+          "text": "For these things were done that the scripture might be fulfilled: <i>You shall not break a bone of him.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Exo. 12, 46."
+            }
+          ]
         },
         {
           "verse": 37,
-          "text": "And again another scripture saith: <i>They shall look on him whom they pierced.</i>"
+          "text": "And again another scripture saith: <i>They shall look on him whom they pierced.</i> <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Zac. 12, 10."
+            }
+          ]
         },
         {
           "verse": 38,
-          "text": "And after these things Joseph of Arimathaea (because he was a Disciple of <sc>Jesus</sc>, but secret for fear of the Jews) desired Pilate that he might take away the body of <sc>Jesus</sc>. And Pilate permitted. He came therefore, & took away the body of <sc>Jesus</sc>."
+          "text": "And after these things <cr>[1]</cr> Joseph of Arimathaea (because he was a Disciple of <sc>Jesus</sc>, but secret for fear of the Jews) desired Pilate that he might take away the body of <sc>Jesus</sc>. And Pilate permitted. He came therefore, & took away the body of <sc>Jesus</sc>.",
+          "cross_refs": [
+            {
+              "text": "* Mt. 27, 57. Mr. 15, 42. Lu. 23, 50."
+            }
+          ]
         },
         {
           "verse": 39,
-          "text": "Nicodemus also came, he that at the first came to <sc>Jesus</sc> by night, bringing a mixture of myrrh and aloes, about an hundred pounds."
+          "text": "<cr>[1]</cr> Nicodemus also came, he that at the first came to <sc>Jesus</sc> by night, bringing a mixture of myrrh and aloes, about an hundred pounds.",
+          "cross_refs": [
+            {
+              "text": "Io. 3, 1. 7, 50."
+            }
+          ]
         },
         {
           "verse": 40,
@@ -3517,7 +4196,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> the <cr>[3]</cr> first of the Sabboth, Mary Magdalene cometh early, when it was yet dark, unto the monument: and she saw the stone taken away from the monument."
+          "text": "<sc>And</sc> <cr>[1][2]</cr> the <cr>[3]</cr> first of the Sabboth, Mary Magdalene cometh early, when it was yet dark, unto the monument: and she saw the stone taken away from the monument.",
+          "cross_refs": [
+            {
+              "text": "Mt. 28, 1. Mr. 16, 1. Lu. 24, 1."
+            },
+            {
+              "text": "Dies Dominica marg. annot. Luc. 24, 1."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3529,7 +4216,12 @@
         },
         {
           "verse": 4,
-          "text": "And both ran together, and that other Disciple did out-run Peter, and came first to the monument. <cr>[1]</cr>"
+          "text": "And both ran together, and that other Disciple did out-run Peter, and came first to the monument. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Luc. 24, 12."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -3557,7 +4249,15 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> But <cr>[2]</cr> Mary stood at the <cr>[3]</cr> monument without, weeping. Therefore as she was weeping, she stooped down, & looked into the monument:"
+          "text": "<cr>[1]</cr> But <cr>[2]</cr> Mary stood at the <cr>[3]</cr> monument without, weeping. Therefore as she was weeping, she stooped down, & looked into the monument:",
+          "cross_refs": [
+            {
+              "text": "Mt. 28, 1. Mr. 16, 5. Luc. 24, 4."
+            },
+            {
+              "text": "S. Hierom ep. 17."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -3589,8 +4289,13 @@
         },
         {
           "verse": 19,
-          "text": "Therefore when it was late that day, the first of the Sabboths, and the doors were shut, where the Disciples were gathered together for fear of the Jews, <sc>Jesus</sc> came and stood in the midst, and saith to them: Peace be to you.",
-          "has_annotation": true
+          "text": "<cr>[1]</cr> Therefore when it was <cr>[2]</cr> late that day, the first of the Sabboths, and the doors were shut, where the Disciples were gathered together for fear of the Jews, <sc>Jesus</sc> came and stood in the midst, and saith to them: Peace be to you.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Mr. 16, 14. Lu. 24, 36. 1. Cor. 15, 5."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -3598,7 +4303,7 @@
         },
         {
           "verse": 21,
-          "text": "He said therefore to them again: Peace be to you. As my Father hath sent me, I also do send you.",
+          "text": "He said therefore to them again: <cr>[1]</cr> Peace be to you. As my Father hath sent me, I also do send you.",
           "has_annotation": true
         },
         {
@@ -3613,7 +4318,12 @@
         },
         {
           "verse": 24,
-          "text": "But Thomas one of the Twelve, who is called Didymus, was not with them when <sc>Jesus</sc> came."
+          "text": "<cr>[1]</cr> But Thomas one of the Twelve, who is called Didymus, was not with them when <sc>Jesus</sc> came.",
+          "cross_refs": [
+            {
+              "text": "Decemb. 21."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -3621,7 +4331,7 @@
         },
         {
           "verse": 26,
-          "text": "And after eight days, again his Disciples were within; and Thomas with them. <sc>Jesus</sc> cometh the doors being shut, and stood in the midst, and said: Peace be to you."
+          "text": "<cr>[1]</cr> And after eight days, again his Disciples were within; and Thomas with them. <sc>Jesus</sc> cometh <cr>[2]</cr> the doors being shut, and stood in the midst, and said: Peace be to you."
         },
         {
           "verse": 27,
@@ -3633,15 +4343,64 @@
         },
         {
           "verse": 29,
-          "text": "<sc>Jesus</sc> saith to him: Because thou hast seen me, Thomas, thou hast believed: Blessed are they that have not seen & have believed."
+          "text": "<sc>Jesus</sc> saith to him: Because thou hast seen me, Thomas, thou hast believed: <cr>[1]</cr> Blessed are they that have not seen & have believed."
         },
         {
           "verse": 30,
-          "text": "Many other signs also did <sc>Jesus</sc> in the sight of his Disciples, which are not written in this Book."
+          "text": "<cr>[1]</cr> Many other signs also did <sc>Jesus</sc> in the sight of his Disciples, which are not written in this Book.",
+          "cross_refs": [
+            {
+              "text": "Io. 21, 25."
+            }
+          ]
         },
         {
           "verse": 31,
-          "text": "And these are written, that you may believe that <sc>Jesus</sc> is <sc>Christ</sc> the Son of God: and that believing, you may have life in his name. body, whole and perfect in all his limbs, length, breadth, and thickness, distinct and diverse from the substance and corpulence of the wood, was in the same proper place that the wood was in, and passed through the same: as he also came out of his mother's womb, the clausure not sturred: and passed through the stone, out of his Sepulcher. By all which the Heretics being plainly reproved, and convinced of infidelity, they boldly deny the plain Scriptures, or so fondly shift themselves from the evidence thereof, that their impudency is specially to be marked in this point. <cr>[1]</cr> Some say, that he came in at the window: some, that the door opened of itself to let him in: some, that to come in, the doors being shut, signifieth no more, but that he came in late in the evening, at what time men use to shut their doors: and such other slights to defend falsehood, against express Scriptures, and against the Apostle's testimony, who therefore took him to be a Spirit, because they saw him stand suddenly in the midst of them, all the house being close shut. And the Fathers all confess that he went in, the doors being shut. See S. Ambrose <i>li. 10 in Lucam c. 24.</i> S. Augustine <i>ep. 3 ad Volusian. & li. 22 de civit. c. 8,</i> & S. Cyril, <i>in Io li. 12, c. 53.</i> & S. Hiero. <i>li. 1 cont. Iovinianum c. 21.</i> We know it is the natural course of God's ordinance, that every body should have but one and his own proper place fitted to the lineaments, quantity, terms and limits of the same: without which naturally the bodies were no where, and consequently not at all, as S. Augustine saith <i>ad Dardanum.</i> <cr>[2]</cr> but that God supernaturally and miraculously cannot by his omnipotency dispose otherwise of his own body, <cr>[3]</cr> than the natural form or quantity or quality thereof require, that is great incredulity, seeing we must believe that he can do so with any other body of mere men or other creatures, the Scripture being plain that he can make a camel pass through a needle's eye, continuing in his natural figure and quantity still: and S. Augustine <cr>[4]</cr> telleth of a woman whose ring fell from her girdle, both being fast and whole: and Rupertus of a Religious man, whose girdle fast buckled fell down before him from his body. <i>De off. Eccl.</i> <na>◦</na> Therefore it is to much unfaithfulness, by rules of place to embar Christ of his will or wisdom to be in the Sacrament how himself list, and on as many altars or places as he liketh. We detest for all that, the wicked heresy of certain Protestants, holding quite contrary to the Zuinglians, that Christ according to his Humanity is in every place where the Divinity is: which is both against faith, and the common rules of nature and divinity. 21. As my Father.] As when he gave them commission to preach and baptise through the world, he made mention of his own power therein: so here before he institute the Sacrament of Penance, and give them authority to remit sins, <na>◦</na> lest the wicked should ask afterward, by what right they do such great functions, he sheweth his Father's commission given to himself, and then in plain terms most amply imparteth the same to his Apostles: that whosoever deny the Apostle's & their successors, the Priests of God's Church, to have right to remit sins, should deny consequently Christ as man to have authority to do the same. 22. He breathed.] He giveth the Holy Ghost in and by an external sign, to his Apostles, not visibly and to all such purposes as afterward at Whitsuntide, <cr>[1]</cr> but for the grace of the Sacrament of Orders, as S. Augustine saith, <cr>[2]</cr> and that none make doubt of the Priest's right in remission of sins, seeing the Holy Ghost is purposely given them to do this same. In which case if any be yet contentious, he must deny the Holy Ghost to be God, and not to have power to remit sins. <i>It is not absurd</i> (saith S. Cyril) <cr>[3]</cr> <i>that they forgive sins, which have the Holy Ghost. For when they remit or retain, the Holy Ghost remitteth or retaineth in them, and that they do two ways, first in Baptism, and then in Penance.</i> As S. Ambrose also <i>(li. 1 c. 7 de poenitentia)</i> refelling the Novatians (a Sect of old Heretics which pretending God's glory as our new Sectaries do, denied that Priests could remit sins"
+          "text": "And these are written, that you may believe that <sc>Jesus</sc> is <sc>Christ</sc> the Son of God: and that believing, you may have life in his name. body, whole and perfect in all his limbs, length, breadth, and thickness, distinct and diverse from the substance and corpulence of the wood, was in the same proper place that the wood was in, and passed through the same: as he also came out of his mother's womb, the clausure not sturred: and passed through the stone, out of his Sepulcher. By all which the Heretics being plainly reproved, and convinced of infidelity, they boldly deny the plain Scriptures, or so fondly shift themselves from the evidence thereof, that their impudency is specially to be marked in this point. correspondent there unto, is proved by other examples in Scriptures.",
+          "cross_refs": [
+            {
+              "text": "li. 10 in Lucam c. 24. ep. 3 ad Volusian. & li. 22 de civit. c. 8, in Io li. 12, c. 53. li. 1 cont. Iovinianum c. 21. ad Dardanum."
+            },
+            {
+              "text": "De off. Eccl."
+            },
+            {
+              "text": "August. ep. 57."
+            },
+            {
+              "text": "Mat. 19. Aug. li. 22. c. 8. de civ. Dei."
+            },
+            {
+              "text": "It is not absurd"
+            },
+            {
+              "text": "that they forgive sins, which have the Holy Ghost. For when they remit or retain, the Holy Ghost remitteth or retaineth in them, and that they do two ways, first in Baptism, and then in Penance. (li. 1 c. 7 de poenitentia)"
+            },
+            {
+              "text": "Augu. q. no. Test. q. 93. Cont. ep. Parmen. li. 2. c. 11."
+            },
+            {
+              "text": "Cyril. li. 12. c. 56. in Io."
+            }
+          ],
+          "notes": [
+            {
+              "label": "◦",
+              "text": "Therefore it is to much unfaithfulness, by rules of place to embar Christ of his will or wisdom to be in the Sacrament how himself list, and on as many altars or places as he liketh. We detest for all that, the wicked heresy of certain Protestants, holding quite contrary to the Zuinglians, that Christ according to his Humanity is in every place where the Divinity is: which is both against faith, and the common rules of nature and divinity."
+            },
+            {
+              "label": "◦",
+              "text": "Ubiquetaries or Brentiani. 21. As my Father.] As when he gave them commission to preach and baptise through the world, he made mention of his own power therein: so here before he institute the Sacrament of Penance, and give them authority to remit sins,"
+            },
+            {
+              "label": "◦",
+              "text": "lest the wicked should ask afterward, by what right they do such great functions, he sheweth his Father's commission given to himself, and then in plain terms most amply imparteth the same to his Apostles: that whosoever deny the Apostle's & their successors, the Priests of God's Church, to have right to remit sins, should deny consequently Christ as man to have authority to do the same."
+            },
+            {
+              "label": "◦",
+              "text": "Christ sheweth his commission & so giveth the Apostles power to remit sins. 22. He breathed.] He giveth the Holy Ghost in and by an external sign, to his Apostles, not visibly and to all such purposes as afterward at Whitsuntide,"
+            }
+          ]
         }
       ],
       "summary": "Upon Easter day his body is missed in the Sepulcher, first by M. Magdalene, 3. secondly by Peter also and John, the winding clothes yet remaining. 11. Then to M. Magdalene, after she had seen two Angels, JESUS also himself appeareth. 18. She having told to the Disciples, he appeareth to them also the same day, and sendeth them as himself was sent, giving them the Holy Ghost to remit and to retain sins. 26. Again upon low Sunday he appeareth to them, letting Thomas see, that he might believe, and commending such as not seeing yet do believe. 30. The effect of this book."
@@ -3675,7 +4434,12 @@
         },
         {
           "verse": 7,
-          "text": "That Disciples therefore whom <sc>Jesus</sc> loved, saith to Peter: It is our Lord. <cr>[1]</cr> Simon Peter when he had heard that it is our Lord, girded his coat unto him (for he was naked) & cast himself into the sea."
+          "text": "That Disciples therefore whom <sc>Jesus</sc> loved, saith to Peter: It is our Lord. <cr>[1]</cr> Simon Peter when he had heard that it is our Lord, girded his coat unto him (for he was naked) & cast himself into the sea.",
+          "cross_refs": [
+            {
+              "text": "tract. 122. in Io. hom. 24. in Evang. li. 2. c. 8 de consid."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -3695,7 +4459,12 @@
         },
         {
           "verse": 12,
-          "text": "<sc>Jesus</sc> saith to them: Come, dine. And none of them that sat at meat <cr>[1]</cr> , durst ask him: Who art thou? knowing that it is our Lord."
+          "text": "<sc>Jesus</sc> saith to them: Come, dine. And none of them that sat at meat <cr>[1]</cr> , durst ask him: Who art thou? knowing that it is our Lord.",
+          "cross_refs": [
+            {
+              "text": "the disciples,"
+            }
+          ]
         },
         {
           "verse": 13,
@@ -3703,7 +4472,12 @@
         },
         {
           "verse": 14,
-          "text": "This now the <cr>[1]</cr> third time <sc>Jesus</sc> was manifested to his Disciples, after he was risen from the dead."
+          "text": "This now the <cr>[1]</cr> third time <sc>Jesus</sc> was manifested to his Disciples, after he was risen from the dead.",
+          "cross_refs": [
+            {
+              "text": "last he appeared, c. 16, 14"
+            }
+          ]
         },
         {
           "verse": 15,
@@ -3711,7 +4485,12 @@
         },
         {
           "verse": 16,
-          "text": "He saith to him again: Simon of John, lovest thou me? He saith to him: Yea Lord, thou knowest that I love thee. He saith to him: <cr>[1]</cr> <sc>Feed</sc> MY <sc>Lambs</sc>."
+          "text": "He saith to him again: Simon of John, lovest thou me? He saith to him: Yea Lord, thou knowest that I love thee. He saith to him: <cr>[1]</cr> <sc>Feed</sc> MY <sc>Lambs</sc>.",
+          "cross_refs": [
+            {
+              "text": "c ποίμαινε feed & rule."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -3729,7 +4508,12 @@
         },
         {
           "verse": 20,
-          "text": "Peter turning, saw that Disciple whom <sc>Jesus</sc> loved, following, <cr>[1]</cr> who also leaned at the supper upon his breast, and said, Lord who is he that shall betray thee?"
+          "text": "Peter turning, saw that Disciple whom <sc>Jesus</sc> loved, following, <cr>[1]</cr> who also leaned at the supper upon his breast, and said, Lord who is he that shall betray thee?",
+          "cross_refs": [
+            {
+              "text": "Io. 13, 23."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -3737,7 +4521,12 @@
         },
         {
           "verse": 22,
-          "text": "<sc>Jesus</sc> saith to him: <cr>[1]</cr> So I will have him to remain till I come, what to thee? follow thou me."
+          "text": "<sc>Jesus</sc> saith to him: <cr>[1]</cr> So I will have him to remain till I come, what to thee? follow thou me.",
+          "cross_refs": [
+            {
+              "text": "in Ps. 45. & ser. 20 in Ps. 118. tract. 124 in Io. If I will If so I will"
+            }
+          ]
         },
         {
           "verse": 23,
@@ -3749,7 +4538,36 @@
         },
         {
           "verse": 25,
-          "text": "But there are many other things also which <sc>Jesus</sc> did: which if they were written in particular, neither the world it-self I think were able to contain those books that should be written. same, as our Adversaries fraudulently pretend. <cr>[2]</cr> <i>It is plain to all men,</i> saith he, <i>that ever read the Gospel, that by our Lord's mouth the charge of the whole Church was committed to S. Peter Prince of the Apostles. For to him it was said, Feed my sheep: for him was the prayer made that his faith should not fail: to him were the keys of heaven given and authority to bind and loose: to him the care of the Church and principally was delivered: and yet he was not called the universal Apostle. This title indeed was offered for the honour of S. Peter Prince of the Apostles, to the Pope of Rome by the holy Councel of Chalcedon: but none of that See did ever use it or consent to take it.</i> Thus much S. Gregory. <cr>[3]</cr> Who though he both practised jurisdiction throughout all Christendom, as other of that See have ever done, and also acknowledged the Principality and Sovereignty to be in Peter and his Successors: yet would he not for just causes use that title subject to vanity & misconstruction. But both he & all the Popes since have rather called themselves, <i>Servos servorum Dei,</i> The Servants of God's servants. Though the word, <i>universal Bishop,</i> in that sense wherein the holy Councel of Chalcedon offered it to the See of Rome, <cr>[4]</cr> was true and Lawful. For that Councel would not have given any Antichristian or unjust title to any man. Only in the B. of Constantinople and other, which in no sense had any right to it, and who usurped it in a very false and tyrannical meaning, it was insolent, unjust, and Antichristian. See also the Epistles of S. Leo the Great concerning his practice of universal jurisdiction, though he refused the title of universal Bishop. And S. Bernard <cr>[5]</cr> (that you may better perceive that the general charge of Christ's sheep was not only given to Peter's person, but also to his successors the Popes of Rome, as S. Chrysostom also before alleged doth testify) writeth thus to Eugenius, Thou art he to whom the keys of heaven are delivered, & to whom the sheep are committed. There be other Porters of heaven, & other Pastors of flocks: but thou hast inherited in more glorious & different sort. For they have every one their particular flock, but to thee all universally, as one flock to one man, are credited: being not only the Pastor of the sheep, but the one Pastor of all the Pastors themselves. <cr>[6]</cr> But thou wilt ask me how I prove that? Even by our Lord's word. for to whom of all, I say not only Bishops, but Apostles, were the sheep so absolutely and without limitation committed? <i>If thou love me Peter, feed my sheep.</i> He saith not, the people of this kingdom or that city, but, <i>my sheep,</i> Without all distinction. So S. Bernard. And hereunto may be added that the second, <i>feed,</i> <cr>[7]</cr> is in Greek a word that signifieth withal to govern and rule, as <i>Ps. 2. Mich. 5. Mat. 2. Apoc. 2.</i> and therefore it is spoken of David also and other temporal Governers (as the Hebrew word answering thereunto) in the <cr>[8]</cr> Scriptures very often, and the Greek in profane writers also. 18. Another shall gird thee.] He Prophesieth of Peter's Martyrdom, and of the kind of death which he should suffer, that was, crucifying. <cr>[1]</cr> Which <cr>[2]</cr> the Heretics fearing that it were a step to prove he was martyred in Rome, deny: whereas the Fathers and ancient writers are as plain in this, as that he was at Rome. <i>Origen apud Euseb. li. 3. c. 1. Euseb. li. 2 c. 24. Hist. Ec. Tertul. de praescript. nu. 14. Aug. tract. 123 in Ioan. Chrysost. Bedae in hunc locum.</i> <sc>The</sc> <sc>Sum</sc>, <sc>And</sc> <sc>The</sc> <sc>Order</sc> OF <sc>The</sc> <sc>Evangelical</sc> <sc>History</sc>: gathered briefly out of all four, even unto Christ's Ascension. Mt. Mr. Lu. Io. 1 <na>◦</na> The preface moving the Reader to receive <sc>Christ</sc>, being the Eternal <sc>Word</sc> of God, the life and the light. 1 The Angel telleth Zacharie of the conception of John Baptist,"
+          "text": "But there are <cr>[1]</cr> many <cr>[2]</cr> other things also which <sc>Jesus</sc> did: which if they were written in particular, neither the world it-self I think were able to contain those books that should be written. same, as our Adversaries fraudulently pretend. <cr>[2]</cr> <i>It is plain to all men,</i> saith he, <i>that ever read the Gospel, that by our Lord's mouth the charge of the whole Church was committed to S. Peter Prince of the Apostles. For to him it was said, Feed my sheep: for him was the prayer made that his faith should not fail: to him were the keys of heaven given and authority to bind and loose: to him the care of the Church and principally was delivered: and yet he was not called the universal Apostle. This title indeed was offered for the honour of S. Peter Prince of the Apostles, to the Pope of Rome by the holy Councel of Chalcedon: but none of that See did ever use it or consent to take it.</i> Thus much S. Gregory. <cr>[3]</cr> Who though he both practised jurisdiction throughout all Christendom, as other of that See have ever done, and also acknowledged the Principality and Sovereignty to be in Peter and his Successors: yet would he not for just causes use that title subject to vanity & misconstruction. But both he & all the Popes since have rather called themselves, <i>Servos servorum Dei,</i> The Servants of God's servants. Though the word, <i>universal Bishop,</i> in that sense wherein the holy Councel of Chalcedon offered it to the See of Rome, <cr>[4]</cr> was true and Lawful. For that Councel would not have given any Antichristian or unjust title to any man. Only in the B. of Constantinople and other, which in no sense had any right to it, and who usurped it in a very false and tyrannical meaning, it was insolent, unjust, and Antichristian. See also the Epistles of S. Leo the Great concerning his practice of universal jurisdiction, though he refused the title of universal Bishop. And S. Bernard <cr>[5]</cr> (that you may better perceive that the general charge of Christ's sheep was not only given to Peter's person, but also to his successors the Popes of Rome, as S. Chrysostom also before alleged doth testify) writeth thus to Eugenius, Thou art he to whom the keys of heaven are delivered, & to whom the sheep are committed. There be other Porters of heaven, & other Pastors of flocks: but thou hast inherited in more glorious & different sort. For they have every one their particular flock, but to thee all universally, as one flock to one man, are credited: being not only the Pastor of the sheep, but the one Pastor of all the Pastors themselves. <cr>[6]</cr> But thou wilt ask me how I prove that? Even by our Lord's word. for to whom of all, I say not only Bishops, but Apostles, were the sheep so absolutely and without limitation committed? <i>If thou love me Peter, feed my sheep.</i> He saith not, the people of this kingdom or that city, but, <i>my sheep,</i> Without all distinction. So S. Bernard. And hereunto may be added that the second, <i>feed,</i> <cr>[7]</cr> is in Greek a word that signifieth withal to govern and rule, as <i>Ps. 2. Mich. 5. Mat. 2. Apoc. 2.</i> and therefore it is spoken of David also and other temporal Governers (as the Hebrew word answering thereunto) in the <cr>[8]</cr> Scriptures very often, and the Greek in profane writers also. 18. Another shall gird thee.] He Prophesieth of Peter's Martyrdom, and of the kind of death which he should suffer, that was, crucifying. <cr>[1]</cr> Which <cr>[2]</cr> the Heretics fearing that it were a step to prove he was martyred in Rome, deny: whereas the Fathers and ancient writers are as plain in this, as that he was at Rome. <i>Origen apud Euseb. li. 3. c. 1. Euseb. li. 2 c. 24. Hist. Ec. Tertul. de praescript. nu. 14. Aug. tract. 123 in Ioan. Chrysost. Bedae in hunc locum.</i> <sc>The</sc> <sc>Sum</sc>, <sc>And</sc> <sc>The</sc> <sc>Order</sc> OF <sc>The</sc> <sc>Evangelical</sc> <sc>History</sc>: gathered briefly out of all four, even unto Christ's Ascension. Mt. Mr. Lu. Io. 1 <na>◦</na> <sc>The</sc> 1. <sc>Part</sc>, containing the Infancy of Christ and the time that he lived",
+          "cross_refs": [
+            {
+              "text": "Io. 20, 30."
+            },
+            {
+              "text": "Grego. li. 4, ep. 76."
+            },
+            {
+              "text": "* See li. 1. ep. 72. 75. li. 2. ep. 37. 45. li. 4. ep. 95. li. 7. ep. 63."
+            },
+            {
+              "text": "Bernard. li. 2, c. 8. de consider."
+            },
+            {
+              "text": "ποίμαινε"
+            },
+            {
+              "text": "* 2. Reg. c. 5. Ps. 77."
+            },
+            {
+              "text": "Beza in hunc locum."
+            }
+          ],
+          "notes": [
+            {
+              "label": "◦",
+              "text": "The preface moving the Reader to receive CHRIST, being the Eternal WORD of God, the life and the light. 1 The Angel telleth Zacharie of the conception of John Baptist, as also S. Leo the great."
+            }
+          ]
         }
       ],
       "summary": "Appearing again in Galilee, where Peter was fishing with his fellows: and causing them after they had all night taken none, to catch a great multitude, which Peter draweth to land, where he also dineth them: 15. He (expressing what this fishing signified) maketh Peter his Vicar, committing unto him the feeding of his lambs and sheep: 18. and revealeth unto him, that he also shall be crucified, to the glory of God, 20. admonishing him to mind that, rather than to be curious about John's death."

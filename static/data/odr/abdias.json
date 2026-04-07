@@ -8,7 +8,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The <cr>[1]</cr> vision of Abdias. Thus saith our Lord God to Edom: We have heard a bruit from our Lord, and he <na>(a)</na> hath sent a legate to the Gentiles: Rise ye, and let us arise against him into battle."
+          "text": "The <cr>[1]</cr> vision of Abdias. Thus saith our Lord God to Edom: We have heard a bruit from our Lord, and he <na>(a)</na> hath sent a legate to the Gentiles: Rise ye, and let us arise against him into battle.",
+          "cross_refs": [
+            {
+              "text": "Iere. 49."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "God directed the cogitations of diverse other Gentiles, to join their forces against the Idumeans."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -32,7 +43,12 @@
         },
         {
           "verse": 7,
-          "text": "Even to the border have they cast thee out: all the men of thy league have mocked thee: the men of thy peace have prevailed against thee: they that eat with thee, shall lay ambushments under thee: there is no wisdom in him. <cr>[1]</cr>"
+          "text": "Even to the border have they cast thee out: all the men of thy league have mocked thee: the men of thy peace have prevailed against thee: they that eat with thee, shall lay ambushments under thee: there is no wisdom in him. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Isa. 29."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -44,7 +60,12 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> For the slaughter, and for the iniquity against thy brother Jacob, confusion shall cover thee, and thou shalt perish for ever."
+          "text": "<cr>[1]</cr> For the slaughter, and for the iniquity against thy brother Jacob, confusion shall cover thee, and thou shalt perish for ever.",
+          "cross_refs": [
+            {
+              "text": "Gen. 27."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -52,7 +73,13 @@
         },
         {
           "verse": 12,
-          "text": "And <na>(b)</na> thou shalt not despise in the day of thy brother, in the day of his peregrination: and thou shalt not rejoice over the children of Juda, in the day of their perdition: & thou shalt not magnify thy mouth in the day of distress."
+          "text": "And <na>(b)</na> thou shalt not despise in the day of thy brother, in the day of his peregrination: and thou shalt not rejoice over the children of Juda, in the day of their perdition: & thou shalt not magnify thy mouth in the day of distress.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "God admonisheth them what they ought not to do, but withal foresheweth that they will despise the Jews their brethren: & will rejoice in their miseries."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -72,7 +99,13 @@
         },
         {
           "verse": 17,
-          "text": "And in <na>(c)</na> mount Sion shall be salvation, and it shall be holy: and the house of Jacob shall possess those that had possessed them."
+          "text": "And in <na>(c)</na> mount Sion shall be salvation, and it shall be holy: and the house of Jacob shall possess those that had possessed them.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Historically all this prosperity was promised to the Jews after their delivery from Babylon, and so much thereof performed as their new sins hindered not, the rest is fulfilled in Christians. S. Ierom. ep. ad Dardan."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -80,7 +113,13 @@
         },
         {
           "verse": 19,
-          "text": "And <na>(d)</na> they that are toward the South, shall inherit the mount of Esau, and they in the champion countries, Philisthiims: and they shall possess the region of Ephraim, and the region of Samaria: and Benjamin shall possess Galaad."
+          "text": "And <na>(d)</na> they that are toward the South, shall inherit the mount of Esau, and they in the champion countries, Philisthiims: and they shall possess the region of Ephraim, and the region of Samaria: and Benjamin shall possess Galaad.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "The rest of this prophecy is only of Christ possessing all nations, To whom all the prophets give testimony that all receive remission of sins by his name believing in him. Act. 10. v. 43. See S. Augustin. li. 18. c. 31. de civit."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -88,7 +127,12 @@
         },
         {
           "verse": 21,
-          "text": "And saviours shall ascend into mount Sion to judge the mount of Esau: and the kingdom shall be to our Lord. <cr>[1]</cr>"
+          "text": "And saviours shall ascend into mount Sion to judge the mount of Esau: and the kingdom shall be to our Lord. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Luc. 1. v. 3."
+            }
+          ]
         }
       ],
       "summary": "ABDIAS born in Sichem, of the tribe of Ephraim, prophesied the same time with Amos; so briefly that his prophecy is not parted into chapters: <na>[1]</na> 1. against the Idumeans; foreshewing their destruction, 10. for their perpetual enmity against the Jews, and confederacy with the Chaldees. 17. The captivity and relaxation of the Jews. And redemption of the whole world by Christ. S. Epiph."

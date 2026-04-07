@@ -20,7 +20,7 @@
         },
         {
           "verse": 4,
-          "text": "as he chose us in him before the constitution of the world, that we should be holy and immaculate in his sight in charity."
+          "text": "as he chose us in him before the constitution of the world, that we should be holy and immaculate <cr>[1]</cr> in his sight in charity."
         },
         {
           "verse": 5,
@@ -28,7 +28,12 @@
         },
         {
           "verse": 6,
-          "text": "unto the praise of the glory of his grace, wherein he hath gratified us in his beloved Son."
+          "text": "unto the praise of the glory of his grace, wherein he hath <cr>[1]</cr> gratified us in his beloved Son.",
+          "cross_refs": [
+            {
+              "text": "c ἐχαρίτωσεν."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -44,7 +49,12 @@
         },
         {
           "verse": 10,
-          "text": "in the dispensation of the fullness of times, to perfit all things in Christ, that are in heaven and in earth, in him."
+          "text": "in the dispensation of the fullness of times, to <cr>[1]</cr> perfit all things in Christ, that are in heaven and in earth, in him.",
+          "cross_refs": [
+            {
+              "text": "c ἀνακεφαλαιώσασθαι."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -56,7 +66,12 @@
         },
         {
           "verse": 13,
-          "text": "in whom you also, when you had heard the word of truth (the Gospel of your salvation) in which also believing you were signed with the holy Spirit of promise,"
+          "text": "in whom you also, when you had heard the word of truth (the Gospel of your salvation) in which also believing you were <cr>[1]</cr> signed with the holy Spirit of promise,",
+          "cross_refs": [
+            {
+              "text": "Act. 8."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -93,12 +108,17 @@
         },
         {
           "verse": 22,
-          "text": "And he hath subdued all things under his feet: and hath made him Head over all the <sc>Church</sc>,",
-          "has_annotation": true
+          "text": "And he hath <cr>[1]</cr> subdued all things under his feet: and hath made him Head over all the <sc>Church</sc>,",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Ps. 8, 8."
+            }
+          ]
         },
         {
           "verse": 23,
-          "text": "which is his body, the fullness of him, which is filled all in all."
+          "text": "which is his body, the <cr>[1]</cr> fullness of him, which is filled all in all."
         }
       ],
       "summary": "He magnifieth the grace of God's eternal predestination and temporal vocation, 11. both of the Jews, 13. and also of the Ephesians being Gentiles. 13. for whose excellent faith and charity he rejoiceth, and continually prayeth for their increase, that they may see more clearly the greatness both of the inheritance in heaven, and also of God's might which helpeth them thereunto: 20. an example of which might they may behold in the supereminent exalting of Christ."
@@ -112,7 +132,12 @@
         },
         {
           "verse": 2,
-          "text": "wherein sometime you walked according to the course of this world, according to the <cr>[1]</cr> prince of the power of this air, of the spirit that now worketh on the children of diffidence,"
+          "text": "wherein sometime you walked according to the course of this world, according to the <cr>[1]</cr> prince of the power of this air, of the spirit that now worketh on the children of diffidence,",
+          "cross_refs": [
+            {
+              "text": "Eph. 6, 12."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -141,7 +166,12 @@
         },
         {
           "verse": 9,
-          "text": "not of works, that no man glory."
+          "text": "<cr>[1]</cr> not of works, that no man glory.",
+          "cross_refs": [
+            {
+              "text": "Aug. de gr. & lib. arbit. c. 8. & seq."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -149,11 +179,21 @@
         },
         {
           "verse": 11,
-          "text": "For the which cause be mindful that sometime you were Gentiles in the flesh, who were called prepuce, of that which is called circumcision in the flesh, made with hand:"
+          "text": "For the which cause be mindful that sometime you were Gentiles in the flesh, who were <cr>[1]</cr> called prepuce, of that which is called circumcision in the flesh, made with hand:",
+          "cross_refs": [
+            {
+              "text": "1. Reg. 17, 26. Ezec. 44, 7."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "who were at that time without Christ, alienated from the conversation of Israel, and strangers of the testaments, having no hope of the promise, and without God in this world."
+          "text": "who were at that time without Christ, alienated from the conversation of Israel, and <cr>[1]</cr> strangers of the testaments, having no hope of the promise, and without God in this world.",
+          "cross_refs": [
+            {
+              "text": "Ro. 9, 4."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -165,7 +205,12 @@
         },
         {
           "verse": 15,
-          "text": "evacuating the law of commandments in decrees: that he may create the two in himself into one new man, making peace,"
+          "text": "evacuating the law of commandments <cr>[1]</cr> in decrees: that he may create the two in himself into one new man, making peace,",
+          "cross_refs": [
+            {
+              "text": "c ἐν δόγμασι."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -177,11 +222,21 @@
         },
         {
           "verse": 18,
-          "text": "For by him we have access both in one Spirit to the Father."
+          "text": "<cr>[1]</cr> For <cr>[2]</cr> by him we have access both in one Spirit to the Father.",
+          "cross_refs": [
+            {
+              "text": "Ro. 5, 2."
+            }
+          ]
         },
         {
           "verse": 19,
-          "text": "Now then you are not strangers and foreigners: but you are citizens of the saints, and the domesticals of God,"
+          "text": "Now then you are not strangers and foreigners: but you are <cr>[1]</cr> citizens of the saints, and the domesticals of God,",
+          "cross_refs": [
+            {
+              "text": "c συμπολῖται."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -232,11 +287,24 @@
         },
         {
           "verse": 8,
-          "text": "To me <cr>[1]</cr> the least of all the saints is given this grace, among the Gentiles to evangelize the unsearchable riches of Christ,"
+          "text": "To me <cr>[1]</cr> the least of all the saints is given this grace, among the Gentiles to evangelize the unsearchable riches of Christ,",
+          "cross_refs": [
+            {
+              "text": "1. Cor. 15, 9."
+            }
+          ]
         },
         {
           "verse": 9,
-          "text": "& to illuminate all men what is the dispensation of the sacrament hidden <cr>[1][2]</cr> from worlds in God, who created all things:"
+          "text": "& to illuminate all men what is the dispensation of the sacrament hidden <cr>[1][2]</cr> from worlds in God, who created all things:",
+          "cross_refs": [
+            {
+              "text": "for ever before"
+            },
+            {
+              "text": "c ἀπὸ τῶν αἰώνων"
+            }
+          ]
         },
         {
           "verse": 10,
@@ -244,7 +312,12 @@
         },
         {
           "verse": 11,
-          "text": "according to the <cr>[1]</cr> prefinition of worlds, which he made in Christ <sc>Jesus</sc> our Lord."
+          "text": "according to the <cr>[1]</cr> prefinition of worlds, which he made in Christ <sc>Jesus</sc> our Lord.",
+          "cross_refs": [
+            {
+              "text": "the eternal praefinition"
+            }
+          ]
         },
         {
           "verse": 12,
@@ -280,7 +353,12 @@
         },
         {
           "verse": 20,
-          "text": "And <cr>[1]</cr> to him that is able to do all things more aboundantly than we desire or understand, according to the power that worketh in us:"
+          "text": "And <cr>[1]</cr> to him that is able to do all things more aboundantly than we desire or understand, according to the power that worketh in us:",
+          "cross_refs": [
+            {
+              "text": "Ro. 16, 25."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -315,15 +393,30 @@
         },
         {
           "verse": 6,
-          "text": "<cr>[1]</cr> One God and Father of all, which is over all, and by all, & in all us."
+          "text": "<cr>[1]</cr> One God and Father of all, which is over all, and by all, & in all us.",
+          "cross_refs": [
+            {
+              "text": "Malac. 2, 10."
+            }
+          ]
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> But <cr>[2]</cr> to every one of us is given grace according to the measure of the donation of Christ."
+          "text": "<cr>[1]</cr> But <cr>[2]</cr> to every one of us is given grace according to the measure of the donation of Christ.",
+          "cross_refs": [
+            {
+              "text": "Ro. 12, 4. 1. Cor. 12, 4."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "For the which he saith: <cr>[1]</cr> <i>Ascending on high he led captivity captive: he gave gifts to men.</i>"
+          "text": "For the which he saith: <cr>[1]</cr> <i>Ascending on high he led captivity captive: he gave gifts to men.</i>",
+          "cross_refs": [
+            {
+              "text": "Ps. 67. 19."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -336,7 +429,12 @@
         {
           "verse": 11,
           "text": "And <cr>[1]</cr> he gave, some Apostles, & some Prophets, & other-some Evangelists, & other-some Pastors & Doctors,",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "1. Cor. 12, 28."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -362,7 +460,12 @@
         },
         {
           "verse": 17,
-          "text": "This therefore I say and testify in our Lord: that now you walk not as also the <cr>[1]</cr> Gentiles walk in the vanity of their sense,"
+          "text": "This therefore I say and testify in our Lord: that now you walk not as also the <cr>[1]</cr> Gentiles walk in the vanity of their sense,",
+          "cross_refs": [
+            {
+              "text": "1. Pet. 4, 3. Ro. 1, 21."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -370,7 +473,12 @@
         },
         {
           "verse": 19,
-          "text": "who despairing, <cr>[1]</cr> have given up themselves to impudicity, unto the operation of all uncleanness, unto avarice."
+          "text": "who despairing, <cr>[1]</cr> have given up themselves to impudicity, unto the operation of all uncleanness, unto avarice.",
+          "cross_refs": [
+            {
+              "text": "Ro. 1, 24."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -382,7 +490,12 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1][2]</cr> Lay you away, according to the old conversation the old man, which is corrupted according to the desires of error."
+          "text": "<cr>[1][2]</cr> Lay you away, according to the old conversation the old man, which is corrupted according to the desires of error.",
+          "cross_refs": [
+            {
+              "text": "Colos. 3, 8. Heb. 12, 1."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -394,11 +507,21 @@
         },
         {
           "verse": 25,
-          "text": "For the which cause laying away lying, <cr>[1]</cr> speak ye truth every one with is neighbour, because we are members one of another."
+          "text": "For the which cause laying away lying, <cr>[1]</cr> speak ye truth every one with is neighbour, because we are members one of another.",
+          "cross_refs": [
+            {
+              "text": "Zach. 8, 16."
+            }
+          ]
         },
         {
           "verse": 26,
-          "text": "<cr>[1]</cr> Be angry and sin not. Let not the sun go down upon your anger."
+          "text": "<cr>[1]</cr> Be angry and sin not. Let not the sun go down upon your anger.",
+          "cross_refs": [
+            {
+              "text": "Ps. 4, 5."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -435,11 +558,21 @@
         },
         {
           "verse": 2,
-          "text": "and <cr>[1]</cr> walk in love, as Christ also loved us, and delivered himself for us an oblation and host to God in an odour of sweetness."
+          "text": "and <cr>[1]</cr> walk in love, as Christ also loved us, and delivered himself for us an oblation and host to God in an odour of sweetness.",
+          "cross_refs": [
+            {
+              "text": "Io. 13, 34."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "But <cr>[1]</cr> fornication and all uncleanness, or avarice let it not so much as be named among you as it becometh Saints:"
+          "text": "But <cr>[1]</cr> fornication and all uncleanness, or avarice let it not so much as be named among you as it becometh Saints:",
+          "cross_refs": [
+            {
+              "text": "Col. 3, 5."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -447,7 +580,12 @@
         },
         {
           "verse": 5,
-          "text": "For understanding^ know you this, that no fornicator, or unclean, or covetous person (which is <cr>[1]</cr> the service of idols) hath inheritance in the Kingdom of Christ and of God."
+          "text": "For understanding^ know you this, that no fornicator, or unclean, or covetous person (which is <cr>[1]</cr> the service of idols) hath inheritance in the Kingdom of Christ and of God.",
+          "cross_refs": [
+            {
+              "text": "3. 5."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -483,11 +621,21 @@
         },
         {
           "verse": 14,
-          "text": "For the which cause he saith: <cr>[1]</cr> <i>Rise thou that sleepest, and arise from the dead: and Christ will illuminate thee.</i>"
+          "text": "For the which cause he saith: <cr>[1]</cr> <i>Rise thou that sleepest, and arise from the dead: and Christ will illuminate thee.</i>",
+          "cross_refs": [
+            {
+              "text": "Esa. 9, 60."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> See therefore, brethren, how you walk warily. Not as unwise, but <cr>[2]</cr> as wise:"
+          "text": "<cr>[1]</cr> See therefore, brethren, how you walk warily. Not as unwise, but <cr>[2]</cr> as wise:",
+          "cross_refs": [
+            {
+              "text": "Col. 4, 5."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -495,7 +643,12 @@
         },
         {
           "verse": 17,
-          "text": "Therefore become not unwise, but understanding what is the will of God."
+          "text": "Therefore become not unwise, but <cr>[1]</cr> understanding what is the will of God.",
+          "cross_refs": [
+            {
+              "text": "Ro. 12, 2."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -515,12 +668,25 @@
         },
         {
           "verse": 22,
-          "text": "Let women be subject to their husbands, as to our Lord:"
+          "text": "<cr>[1]</cr> Let <cr>[2]</cr> women be subject to their husbands, as to our Lord:",
+          "cross_refs": [
+            {
+              "text": "Col. 3, 18. Tit. 2, 5. 1. Pet. 3, 1."
+            }
+          ]
         },
         {
           "verse": 23,
-          "text": "because the man is the head of the woman: as Christ is the head of the <sc>Church</sc>. Himself, the Saviour of his body.",
-          "has_annotation": true
+          "text": "because <cr>[1]</cr> the man is the head of the woman: as Christ is the head of the <cr>[2]</cr> <sc>Church</sc>. Himself, the Saviour of his body.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Gen. 3, 16. 1. Cor. 11, 3."
+            },
+            {
+              "text": "Congregation"
+            }
+          ]
         },
         {
           "verse": 24,
@@ -555,7 +721,12 @@
         },
         {
           "verse": 31,
-          "text": "<i>For this cause shall man leave his father and mother: and shall cleave to his wife, and they shall be two in one flesh.</i>"
+          "text": "<cr>[1]</cr> <i>For this cause shall man leave his father and mother: and shall cleave to his wife, and they shall be two in one flesh.</i>",
+          "cross_refs": [
+            {
+              "text": "Gen. 2, 24. Mat. 19, 5."
+            }
+          ]
         },
         {
           "verse": 32,
@@ -564,7 +735,27 @@
         },
         {
           "verse": 33,
-          "text": "Nevertheless you also every one, let each love his wife as himself: and let the wife fear her husband. 29. As Christ the Church.] <cr>[1]</cr> It is an unspeakable dignity of the <sc>Church</sc>, which the Apostle expresseth often else-where, but specially in this whole passage, to be that creature only for which Christ effectually suffered, to be washed and embrued with water and blood issuing out of his holy side, to be nourished with his own body (for so doth S. Irenaeus expound li. 5. in principio) to be his members, <cr>[2]</cr> to be so joined unto him as the body and members of the same flesh, bone, and substance, to the head; to be loved and cherished of him as wife of husband, yea to be his wife and most dear spouse, taken and formed (as S. Augustine often saith) out of his own side upon the Cross, as Eve our first father Adam's spouse was made of his rib. <i>In Psal. 126. & in Psal. 127. & tract. 9 in Ioan. & tract. 120.</i> In respect of which great dignity and excellency, the same holy father affirmeth the <sc>Church</sc> to be the principal creature <cr>[3]</cr> , and therefore named in the Creed next after the Holy Ghost. and he proveth against the Macedonians, the Holy Ghost to be God, because he is named before the Church in the confession of our faith. Of which incomparable excellency of the Church, so beloved of Christ, and so inseparately joined in marriage with him, if the Heretics of our time had any sense or consideration, they would neither think their contemptible company or congregation to be the glorious spouse of our Lord, <cr>[4]</cr> nor teach that the Church may err, that is to say, may be divorced from her spouse for Idolatry, superstition, Heresy, or other abominations: Whereupon one of these absurdities would ensue, that either Christ may sometimes be without a Church & spouse in earth (as he was all the while there were no Calvinists, if their Church be the spouse of Christ) or else <cr>[5]</cr> if the Catholic Church only is and hath been his wife, and the same have such errors as the Heretics falsely pretend, that his wife so dear and so praised here, is notwithstanding a very whore. Which horrible absurdities prove and convince to any man of common sense, both that the Catholic Church always is, and that it teacheth truth always, and to honour God truly and sincerely always: whatsoever the adulterous generation of Heretics think or blaspheme. 32. This is a great Sacrament.] Marriage a great Sacrament of Christ and his Church prefigured in the first parents. <i>Adam</i> (saith S. Augustine <i>tract. 15 in Io.</i> ) <i>who was a form or figure of him that was to come, yea rather God in him, gave us a great token of a Sacrament. For both he deserved sleeping to take a wife, and of his rib his wife was made unto him: because of Christ sleeping on the Cross the Church was to be made out of his side.</i> In another place he maketh Matrimony a Sacrament of Christ and his Church: in that, that as the married man must forsake father & mother and cleave unto his wife, so Christ as it were left his father, exinaniting himself by his incarnation, & left the Synagogue his mother, & joined himself to the Church. <i>Li. 12 c. 8. cont. Faustum</i> <na>◦</na> In diverse other places he maketh it also a Sacrament, specially in that it is an inseparable bond betwixt two, and that can never be dissolved but by death: signifying Christ's perpetual and indissoluble conjunction with the Church his one only spouse. <i>de Gen. ad lit. li. 9. c. 7. Cont Pelag. de pec. orig. li. 2. c. 34. De fid. et op. c. 7. De bono coniug. c. 7. & 18.</i> And in another place, <i>The good of Marriage</i> (saith he) <i>among the people of God is in the holiness of a Sacrament.</i> De bono coniugali c. 24. Who would have thought such mysteries and Sacraments to be in Marriage, that the joining of man & wife together should represent so great a mystery, if the Apostle himself, & after him this holy father and others, had not noted it? Or who can marvel that the holy Church taketh this to be a Sacrament, <cr>[1]</cr> and to give grace of sanctification to the parties married, that they may live together in mutual fidelity, bring up their children in faith and fear of God, and possess their vessel (as the Apostle speaketh <cr>[2]</cr> ) in sanctification and honour, and not in passion of lust and ignominy, as the Heathen do which know not God, and as our brutish new Masters seem to do that commend marriage above all things so far as it feedeth their concupiscences <cr>[3]</cr> , but for grace,"
+          "text": "Nevertheless you also every one, let each love his wife as himself: and let the wife fear her husband. 29. As Christ the Church.] <cr>[1]</cr> It is an unspeakable dignity of the <sc>Church</sc>, which the Apostle expresseth often else-where, but specially in this whole passage, to be that creature only for which Christ effectually suffered, to be washed and embrued with water and blood issuing out of his holy side, to be nourished with his own body (for so doth S. Irenaeus expound li. 5. in principio) to be his members, <cr>[2]</cr> to be so joined unto him as the body and members of the same flesh, bone, and substance, to the head; to be loved and cherished of him as wife of husband, yea to be his wife and most dear spouse, taken and formed (as S. Augustine often saith) out of his own side upon the Cross, as Eve our first father Adam's spouse was made of his rib. <i>In Psal. 126. & in Psal. 127. & tract. 9 in Ioan. & tract. 120.</i> In respect of which great dignity and excellency, the same holy father affirmeth the <sc>Church</sc> to be the principal creature <cr>[3]</cr> , and therefore named in the Creed next after the Holy Ghost. and he proveth against the Macedonians, the Holy Ghost to be God, because he is named before the Church in the confession of our faith. Of which incomparable excellency of the Church, so beloved of Christ, and so inseparately joined in marriage with him, if the Heretics of our time had any sense or consideration, they would neither think their contemptible company or congregation to be the glorious spouse of our Lord, <cr>[4]</cr> nor teach that the Church may err, that is to say, may be divorced from her spouse for Idolatry, superstition, Heresy, or other abominations: Whereupon one of these absurdities would ensue, that either Christ may sometimes be without a Church & spouse in earth (as he was all the while there were no Calvinists, if their Church be the spouse of Christ) or else <cr>[5]</cr> if the Catholic Church only is and hath been his wife, and the same have such errors as the Heretics falsely pretend, that his wife so dear and so praised here, is notwithstanding a very whore. Which horrible absurdities prove and convince to any man of common sense, both that the Catholic Church always is, and that it teacheth truth always, and to honour God truly and sincerely always: whatsoever the adulterous generation of Heretics think or blaspheme. 32. This is a great Sacrament.] Marriage a great Sacrament of Christ and his Church prefigured in the first parents. <i>Adam</i> (saith S. Augustine <i>tract. 15 in Io.</i> ) <i>who was a form or figure of him that was to come, yea rather God in him, gave us a great token of a Sacrament. For both he deserved sleeping to take a wife, and of his rib his wife was made unto him: because of Christ sleeping on the Cross the Church was to be made out of his side.</i> In another place he maketh Matrimony a Sacrament of Christ and his Church: in that, that as the married man must forsake father & mother and cleave unto his wife, so Christ as it were left his father, exinaniting himself by his incarnation, & left the Synagogue his mother, & joined himself to the Church. <i>Li. 12 c. 8. cont. Faustum</i> <na>◦</na> In diverse other places he maketh it also a Sacrament, specially in that it is an inseparable bond betwixt two, and that can never be dissolved but by death: signifying Christ's perpetual and indissoluble conjunction with the Church his one only spouse. <i>de Gen. ad lit. li. 9. c. 7. Cont Pelag. de pec. orig. li. 2. c. 34. De fid. et op. c. 7. De bono coniug. c. 7. & 18.</i> And in another place, <i>The good of Marriage</i> (saith he) <i>among the people of God is in the holiness of a Sacrament.</i> De bono coniugali c. 24. Who would have thought such mysteries and Sacraments to be in Marriage, that the joining of man & wife together should represent so great a mystery, if the Apostle himself, & after him this holy father and others, had not noted it? Or who can marvel that the holy Church taketh this to be a Sacrament, <cr>[1]</cr> and to give grace of sanctification to the parties married, that they may live together in mutual fidelity, bring up their children in faith and fear of God, and possess their vessel (as the Apostle speaketh <cr>[2]</cr> ) in sanctification and honour, and not in passion of lust and ignominy, as the Heathen do which know not God, and as our brutish new Masters seem to do that commend marriage above all things so far as it feedeth their concupiscences <cr>[3]</cr> , but for grace,",
+          "cross_refs": [
+            {
+              "text": "* Aug. li. 1 de Symb. ad Catech. c. 9."
+            },
+            {
+              "text": "1. Thes. 4."
+            },
+            {
+              "text": "μυστήριον"
+            },
+            {
+              "text": "Sacramentum."
+            }
+          ],
+          "notes": [
+            {
+              "label": "◦",
+              "text": "MATRIMONY a Sacrament."
+            }
+          ]
         }
       ],
       "summary": "He continueth his exhortation to good life, 5. assuring them against all deceivers, that no committer of mortal sin shall be saved: considering that for such sins it is that the heathen shall be damned: 8. & that Christians must rather be the light of all others. 22. Then he cometh in particular and exhorteth husbands and wives to do their duty one towards the other, by the example of Christ and his obedient and beloved spouse the Church."
@@ -578,7 +769,12 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> <i>Honour thy father & thy mother</i> (which is the first commandment in the promise)"
+          "text": "<cr>[1]</cr> <i>Honour thy father & thy mother</i> (which is the first commandment in the promise)",
+          "cross_refs": [
+            {
+              "text": "Col. 3, 20. Exo. 20, 12. Deu. 5, 16."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -590,7 +786,12 @@
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> Servants, be obedient to your lords according to the flesh, with fear and trembling, in the simplicity of your heart, as to Christ:"
+          "text": "<cr>[1]</cr> Servants, be obedient to your lords according to the flesh, with fear and trembling, in the simplicity of your heart, as to Christ:",
+          "cross_refs": [
+            {
+              "text": "Col. 3, 22. Tit. 2, 9. 1. Pet. 2, 8."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -606,7 +807,15 @@
         },
         {
           "verse": 9,
-          "text": "And you masters, do the same things to them, <cr>[1]</cr> remitting threatenings: knowing that both their Lord and yours, is in Heaven: and <cr>[2]</cr> acception of persons is not with him."
+          "text": "And you masters, do the same things to them, <cr>[1]</cr> remitting threatenings: knowing that both their Lord and yours, is in Heaven: and <cr>[2]</cr> acception of persons is not with him.",
+          "cross_refs": [
+            {
+              "text": "b ἀνιέντες"
+            },
+            {
+              "text": "Deu. 10, 17."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -614,11 +823,21 @@
         },
         {
           "verse": 11,
-          "text": "Put you on the <cr>[1]</cr> armour of God, that you may stand against the deceits of the devil."
+          "text": "Put you on the <cr>[1]</cr> armour of God, that you may stand against the deceits of the devil.",
+          "cross_refs": [
+            {
+              "text": "c πανοπλίαν."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "For our wrestling is not against flesh and blood: but against Princes and Potestates, against the <cr>[1]</cr> rectors of the world of this darkness, against the spirituals of wickedness in the celestials."
+          "text": "For our wrestling is not against flesh and blood: but against Princes and Potestates, against the <cr>[1]</cr> rectors of the world of this darkness, against the spirituals of wickedness in the celestials.",
+          "cross_refs": [
+            {
+              "text": "Eph. 2, 2."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -638,7 +857,12 @@
         },
         {
           "verse": 17,
-          "text": "And take unto you the <cr>[1]</cr> helmet of salvation: and the sword of the spirit (which is the word of God)"
+          "text": "And take unto you the <cr>[1]</cr> helmet of salvation: and the sword of the spirit (which is the word of God)",
+          "cross_refs": [
+            {
+              "text": "Esa. 59, 17. 1. Thes. 5, 8."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -662,7 +886,12 @@
         },
         {
           "verse": 23,
-          "text": "Peace to the brethren and <cr>[1]</cr> charity with faith from God the Father, and our Lord <sc>Jesus</sc> Christ."
+          "text": "Peace to the brethren and <cr>[1]</cr> charity with faith from God the Father, and our Lord <sc>Jesus</sc> Christ.",
+          "cross_refs": [
+            {
+              "text": "li. 50. ho. 7."
+            }
+          ]
         },
         {
           "verse": 24,

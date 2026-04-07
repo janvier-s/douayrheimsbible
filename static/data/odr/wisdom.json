@@ -8,7 +8,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Love <cr>[1]</cr> justice, you that judge the earth. Think of our Lord in goodness, and in simplicity of heart seek him:"
+          "text": "Love <cr>[1]</cr> justice, you that judge the earth. Think of our Lord in goodness, and in simplicity of heart seek him:",
+          "cross_refs": [
+            {
+              "text": "3. Reg. 3. Isa. 56. 2. Para. 15."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -16,7 +21,13 @@
         },
         {
           "verse": 3,
-          "text": "For <na>(a)</na> perverse cogitations separate from God: and proved power chasteneth the unwise:"
+          "text": "For <na>(a)</na> perverse cogitations separate from God: and proved power chasteneth the unwise:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Mortal sins are not only committed in deeds & words, but also in thoughts."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -28,7 +39,18 @@
         },
         {
           "verse": 6,
-          "text": "<cr>[1]</cr> For the spirit of wisdom is gentle, and will not deliver <na>(b)</na> the curser from his lips: because God is witness of his reins, and he is a true searcher of his heart, and an hearer of his tongue."
+          "text": "<cr>[1]</cr> For the spirit of wisdom is gentle, and will not deliver <na>(b)</na> the curser from his lips: because God is witness of his reins, and he is a true searcher of his heart, and an hearer of his tongue.",
+          "cross_refs": [
+            {
+              "text": "Gal. 5. v. 22."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "He that maliciously curseth is cursed of God."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -52,7 +74,13 @@
         },
         {
           "verse": 12,
-          "text": "<na>(c)</na> Zeal not death in the error of your life, neither procure ye perdition by the works of your hands."
+          "text": "<na>(c)</na> Zeal not death in the error of your life, neither procure ye perdition by the works of your hands.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Be not cause of your own eternal death by evil life."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -60,7 +88,17 @@
         },
         {
           "verse": 14,
-          "text": "For he created all things to be: and he made the nations of the earth to health: and <na>(d)</na> there is no medicine of destruction in them, <na>(e)</na> nor Kingdom of hell in the earth."
+          "text": "For he created all things to be: and he made the nations of the earth to health: and <na>(d)</na> there is no medicine of destruction in them, <na>(e)</na> nor Kingdom of hell in the earth.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Desperate death delivereth not the wicked from calamities."
+            },
+            {
+              "label": "e",
+              "text": "Neither are any damned whiles they are in this life:"
+            }
+          ]
         },
         {
           "verse": 15,
@@ -68,7 +106,13 @@
         },
         {
           "verse": 16,
-          "text": "But the impious with hands & words have <na>(f)</na> provoked it: and esteeming it a friend, have fallen to decay, and have made covenants with it: because they are worthy to be of the part thereof."
+          "text": "But the impious with hands & words have <na>(f)</na> provoked it: and esteeming it a friend, have fallen to decay, and have made covenants with it: because they are worthy to be of the part thereof.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "But sinners not repenting bring eternal death to themselves."
+            }
+          ]
         }
       ],
       "summary": "Superiors are admonished to do justice, sincerely seeking God: 7. who being everywhere seeth all things. 11. Murmuration, detraction, and lying bring to perdition. 13. God created men to live, but they brought death upon themselves. <na>[1]</na>",
@@ -84,7 +128,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "For they have said thinking with themselves not well: <na>(a)</na> Little, and with tediousness is the time of our life: and in the end of a man there is no recovery, and there is none known that hath returned from hell:"
+          "text": "For they have said thinking with themselves not well: <na>(a)</na> Little, and with tediousness is the time of our life: and in the end of a man there is no recovery, and there is none known that hath returned from hell:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Carnal men thinking the soul to be mortal, and so neither pain nor reward to be after death, fall to these profane thoughts and speeches of infidelity."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -104,7 +154,13 @@
         },
         {
           "verse": 6,
-          "text": "<na>(b)</na> Come therefore, and let us enjoy the good things that are, and let us quickly use the creature as in youth."
+          "text": "<na>(b)</na> Come therefore, and let us enjoy the good things that are, and let us quickly use the creature as in youth.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Of infidelity touching pain or reward after death, proceedeth the Epicures' life."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -120,7 +176,13 @@
         },
         {
           "verse": 10,
-          "text": "Let us <na>(c)</na> oppress the poor just man, and not spare the widow, nor reverence the old man's grey head of long time."
+          "text": "Let us <na>(c)</na> oppress the poor just man, and not spare the widow, nor reverence the old man's grey head of long time.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Infidels are not content to live in riot, but do also envy and persecute the just: whose good examples vex their minds, stirred thereto by the devil."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -128,11 +190,22 @@
         },
         {
           "verse": 12,
-          "text": "<na>(d)</na> Let us therefore circumvent the just, because he is unprofitable to us, and he is contrary to our works, and reproachfully objecteth unto us the sins of the law, and defameth in us the sins of our discipline."
+          "text": "<na>(d)</na> Let us therefore circumvent the just, because he is unprofitable to us, and he is contrary to our works, and reproachfully objecteth unto us the sins of the law, and defameth in us the sins of our discipline.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "An evident prophecy of the Jews' malice persecuting our Saviour. Fulfilled by the chief Priests, Scribes, and Ancients, recorded by the Evangelists. Mat. 27. v. 41. Mar. 14. v. 53."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "He boasteth that he hath the knowledge of God, and nameth himself the son of God. <cr>[1]</cr>"
+          "text": "He boasteth that he hath the knowledge of God, and nameth himself the son of God. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Mat. 27. v. 43."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -168,7 +241,13 @@
         },
         {
           "verse": 22,
-          "text": "And they have not known <na>(e)</na> the sacraments of God, nor hoped for the reward of justice, nor esteemed the honour of holy souls."
+          "text": "And they have not known <na>(e)</na> the sacraments of God, nor hoped for the reward of justice, nor esteemed the honour of holy souls.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Want of believing divine Mysteries, namely the reward of the just, & punishment of the wicked, is cause of dissolute life, and of hatred against the good."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -190,11 +269,28 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But <na>(a)</na> the souls of the just are in the hand of God, and the torment of death shall not touch them."
+          "text": "But <na>(a)</na> the souls of the just are in the hand of God, and the torment of death shall not touch them.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Temporal death of the just, is the way to eternal life. Where damnation (called here the torment of death) shall not touch them."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "<na>(b)[1]</na> They seemed in the eyes of the unwise to die: and their decease was counted affliction:"
+          "text": "<na>(b)[1]</na> They seemed in the eyes of the unwise to die: and their decease was counted affliction:",
+          "cross_refs": [
+            {
+              "text": "Chap. 5. v. 4."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "For albeit Martyrs seem in the eyes of the unwise to die, or to be extinguished, they pass indeed into eternal, and unspeakable glory."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -214,11 +310,22 @@
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> The just shall shine, and as sparks in a place of reeds they shall run abroad."
+          "text": "<cr>[1]</cr> The just shall shine, and as sparks in a place of reeds they shall run abroad.",
+          "cross_refs": [
+            {
+              "text": "Mat. 13. v. 43."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "They <na>(c)</na> shall judge nations, & have dominion over peoples, and their Lord shall reign for ever."
+          "text": "They <na>(c)</na> shall judge nations, & have dominion over peoples, and their Lord shall reign for ever.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "All the just shall approve God's judgement condemning the wicked."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -234,7 +341,13 @@
         },
         {
           "verse": 12,
-          "text": "Their <na>(d)</na> wives are senseless, and their children most wicked."
+          "text": "Their <na>(d)</na> wives are senseless, and their children most wicked.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Literally is understood, that the wives of adulterers, often become adulteresses, & their children wicked. Morally, their sensuality & all their works are wholly corrupted."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -242,7 +355,12 @@
         },
         {
           "verse": 14,
-          "text": "and <cr>[1]</cr> the eunuch that hath not wrought iniquity with his hands, nor thought most wicked things against God: for the chosen gift of faith shall be given to him, and a most acceptable lot in the temple of God."
+          "text": "and <cr>[1]</cr> the eunuch that hath not wrought iniquity with his hands, nor thought most wicked things against God: for the chosen gift of faith shall be given to him, and a most acceptable lot in the temple of God.",
+          "cross_refs": [
+            {
+              "text": "* See. S. Ierom. in Isa. 56. v. 4."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -272,7 +390,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Ohow beautiful is <na>(a)</na> the chaste generation with glory! For the memory thereof is immortal: because it is known both with God and with men."
+          "text": "Ohow beautiful is <na>(a)</na> the chaste generation with glory! For the memory thereof is immortal: because it is known both with God and with men.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Chastity of the body is a singular great virtue, & spiritual chastity of true faith and religion is greater, and more generally commended, as the root and foundation of all virtues. For without faith it is unpossible to please God."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -296,7 +420,13 @@
         },
         {
           "verse": 7,
-          "text": "But <na>(b)</na> the just if he be prevented with death, shall be in a place of refreshing."
+          "text": "But <na>(b)</na> the just if he be prevented with death, shall be in a place of refreshing.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "When soever the just dieth it is profitable for him: & dying young his immaculate life is more commendable than old age in the wicked. v. 16."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -345,7 +475,13 @@
         },
         {
           "verse": 19,
-          "text": "and they shall fall after this without honour, and in contumely among the dead for ever: because he shall break them puffed up <na>(c)</na> without voice, and shall remove them from the foundations, and they shall be made desolate unto the highest degree: and shall be mourning, and the memory of them shall perish."
+          "text": "and they shall fall after this without honour, and in contumely among the dead for ever: because he shall break them puffed up <na>(c)</na> without voice, and shall remove them from the foundations, and they shall be made desolate unto the highest degree: and shall be mourning, and the memory of them shall perish.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The damned shall be without all excuse utterly confounded in their own consciences."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -359,7 +495,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Then shall the just stand in great constancy against those that have afflicted them, and <na>(a)</na> taken away their labours."
+          "text": "Then shall the just stand in great constancy against those that have afflicted them, and <na>(a)</na> taken away their labours.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Wicked men in their false conceipt judge the travails of the just to be vain & fruitless."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -367,11 +509,22 @@
         },
         {
           "verse": 3,
-          "text": "saying within themselves, <na>(b)</na> repenting, and sighing for anguish of spirit: These are they, whom we had sometime in derision, and in a parable of reproach."
+          "text": "saying within themselves, <na>(b)</na> repenting, and sighing for anguish of spirit: These are they, whom we had sometime in derision, and in a parable of reproach.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Repentance of the damned is only for the loss & pain whereinto they are fallen, not of love towards God, or virtue, nor of hate towards sin, & therefore is fruitless bringing no comfort nor help at all, but everlasting torment and anguish of mind."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> We senseless esteemed their life madness, and their end without honour."
+          "text": "<cr>[1]</cr> We senseless esteemed their life madness, and their end without honour.",
+          "cross_refs": [
+            {
+              "text": "Chap. 3. v. 2."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -399,7 +552,12 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> or as a bird, that flyeth through in the air, of which there is no token can be found of her passage, but only a sound of the wings beating the light wind: and by vehemence of going cutting the air, moving the wings she is flown through, and afterward there is no sign found of her way:"
+          "text": "<cr>[1]</cr> or as a bird, that flyeth through in the air, of which there is no token can be found of her passage, but only a sound of the wings beating the light wind: and by vehemence of going cutting the air, moving the wings she is flown through, and afterward there is no sign found of her way:",
+          "cross_refs": [
+            {
+              "text": "Pro. 30. v. 19."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -411,7 +569,13 @@
         },
         {
           "verse": 14,
-          "text": "Such things <na>(c)</na> said they in hell, which sinned:"
+          "text": "Such things <na>(c)</na> said they in hell, which sinned:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "For the certainty of things that shall be, Prophets do very often speak in the pretertense, of things to come, as if they were already past."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -427,7 +591,13 @@
         },
         {
           "verse": 18,
-          "text": "And <na>(d)</na> his zeal will take armour, and he will arm the creature to the revenge of the enemies."
+          "text": "And <na>(d)</na> his zeal will take armour, and he will arm the creature to the revenge of the enemies.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "As the joy of the blessed, so contrarywise the misery of the damned is marvelous great, & for ever unchangeable."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -461,7 +631,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Wisdom <cr>[1]</cr> is better than strength: and a wise man than a strong."
+          "text": "Wisdom <cr>[1]</cr> is better than strength: and a wise man than a strong.",
+          "cross_refs": [
+            {
+              "text": "Eccle. 9. v. 18."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -473,7 +648,18 @@
         },
         {
           "verse": 4,
-          "text": "because the <na>(a)[1]</na> power is given you of our Lord, and strength by the Highest, who will examine your works, and search your cogitations:"
+          "text": "because the <na>(a)[1]</na> power is given you of our Lord, and strength by the Highest, who will examine your works, and search your cogitations:",
+          "cross_refs": [
+            {
+              "text": "Rom. 13. v. 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "All power is from God: & therefore to be respected, though the magistrates sometimes abuse their authority."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -485,7 +671,13 @@
         },
         {
           "verse": 7,
-          "text": "For to the little one mercy is granted: but <na>(b)</na> the mighty shall mightily suffer torments."
+          "text": "For to the little one mercy is granted: but <na>(b)</na> the mighty shall mightily suffer torments.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "As every one's charge is more or less, so his account is easier or harder, and the punishment (if he offend) smaller or greater. S. Gre. ho. 9. in Evang."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -529,7 +721,7 @@
         },
         {
           "verse": 18,
-          "text": "For <na>(c)</na> the beginning of her is the most true desire of discipline."
+          "text": "For <na>(c)</na> the beginning of her is the most true desire of discipline. <na>(c)</na> Wisdom is attained by this gradation, and so from first to last, a resolute desire joineth faithful souls to God. v. 22."
         },
         {
           "verse": 19,
@@ -579,7 +771,17 @@
         },
         {
           "verse": 2,
-          "text": "the time of <na>(a)</na> ten months was I brought together in blood, of the seed of man, and the delectation of <na>(b)</na> sleep concurring."
+          "text": "the time of <na>(a)</na> ten months was I brought together in blood, of the seed of man, and the delectation of <na>(b)</na> sleep concurring.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The perfectest children are born in the beginning of the tenth month."
+            },
+            {
+              "label": "b",
+              "text": "Children in the mother's womb are as in sleep."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -599,11 +801,22 @@
         },
         {
           "verse": 7,
-          "text": "For this cause <na>(c)</na> I wished, and understanding was given me: and I invocated, and the spirit of wisdom came upon me:"
+          "text": "For this cause <na>(c)</na> I wished, and understanding was given me: and I invocated, and the spirit of wisdom came upon me:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Salomon (whose sayings are here recited) prayed for wisdom, & obtained it. 3. Reg. 3."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "and I preferred her before Kingdoms and thrones, and riches I counted to be nothing in comparison of her. <cr>[1]</cr>"
+          "text": "and I preferred her before Kingdoms and thrones, and riches I counted to be nothing in comparison of her. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "3. Reg. 3. v. 9."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -619,7 +832,13 @@
         },
         {
           "verse": 12,
-          "text": "and I rejoiced in all: because <na>(d)</na> this wisdom went before me, and I was ignorant that she is the mother of all these."
+          "text": "and I rejoiced in all: because <na>(d)</na> this wisdom went before me, and I was ignorant that she is the mother of all these.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "God first gave him grace to desire wisdom before all other things, as he explicateth plainly. cap. 8. v. 21."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -639,7 +858,13 @@
         },
         {
           "verse": 17,
-          "text": "For he gave me <na>(e)</na> the true knowledge of those things which are: that I may know the disposition of the round world, and the virtues of the elements,"
+          "text": "For he gave me <na>(e)</na> the true knowledge of those things which are: that I may know the disposition of the round world, and the virtues of the elements,",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Salomon was a most excellent Philosopher."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -659,7 +884,13 @@
         },
         {
           "verse": 22,
-          "text": "For in her is the spirit of understanding, <na>(f)</na> holy, only, manifold, subtile, eloquent, moveable, undefiled, sure, sweet, loving, good, sharp, who nothing hindereth well-doing,"
+          "text": "For in her is the spirit of understanding, <na>(f)</na> holy, only, manifold, subtile, eloquent, moveable, undefiled, sure, sweet, loving, good, sharp, who nothing hindereth well-doing,",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Proper Epithetons of the spirit of wisdom."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -671,11 +902,22 @@
         },
         {
           "verse": 25,
-          "text": "For she <na>(g)</na> is a vapour of the power of God, & a certain sincere emanation of the glory of God omnipotent: and therefore no defiled thing cometh unto her."
+          "text": "For she <na>(g)</na> is a vapour of the power of God, & a certain sincere emanation of the glory of God omnipotent: and therefore no defiled thing cometh unto her.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "See the Annotation, Proverb. 1. v. 2."
+            }
+          ]
         },
         {
           "verse": 26,
-          "text": "For she is the brightness of eternal light, & the unspotted glass of God's majesty, and the image of his goodness. <cr>[1]</cr>"
+          "text": "For she is the brightness of eternal light, & the unspotted glass of God's majesty, and the image of his goodness. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Heb. 1. v. 3."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -707,7 +949,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "She <na>(a)</na> reacheth therefore from end unto end mightily, and disposeth all things sweetly."
+          "text": "She <na>(a)</na> reacheth therefore from end unto end mightily, and disposeth all things sweetly.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God, the increated wisdom is infinite, and wisdom created is also most excellent amongst God's gifts."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -715,7 +963,12 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> She glorifieth her nobility, having consociation with God: yea and the Lord of all hath loved her."
+          "text": "<cr>[1]</cr> She glorifieth her nobility, having consociation with God: yea and the Lord of all hath loved her.",
+          "cross_refs": [
+            {
+              "text": "3. Re. 3."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -739,11 +992,28 @@
         },
         {
           "verse": 9,
-          "text": "<na>(b)[1]</na> I purposed therefore to bring her to me to live together: knowing that she will communicate unto me of good things, and will be a comfort of my cogitation & tediousness."
+          "text": "<na>(b)[1]</na> I purposed therefore to bring her to me to live together: knowing that she will communicate unto me of good things, and will be a comfort of my cogitation & tediousness.",
+          "cross_refs": [
+            {
+              "text": "Prov. 3."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "This is also the speech of Salomon, recited by the writer of this book."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "Ishall have for her sake <na>(c)</na> glory with the multitudes and honour with the ancient being young:"
+          "text": "Ishall have for her sake <na>(c)</na> glory with the multitudes and honour with the ancient being young:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Of Salomon's wisdom, riches, glory, & renowned fame, not only the books of Kings & Paralipomenon, but also our Saviour doth witness. Mat. 6. & 12."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -755,7 +1025,13 @@
         },
         {
           "verse": 13,
-          "text": "Moreover by her I shall have <na>(d)</na> immortality: and I shall leave an eternal memory to them, that shall be after me."
+          "text": "Moreover by her I shall have <na>(d)</na> immortality: and I shall leave an eternal memory to them, that shall be after me.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "It is not certain that Salomon hath immortal glory, but rather by immortality is here understood that his glorious fame remaineth to the end of this world."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -771,7 +1047,13 @@
         },
         {
           "verse": 17,
-          "text": "Thinking these things with myself, and recording in my heart, that <na>(e)</na> immortality is in the kindred of wisdom,"
+          "text": "Thinking these things with myself, and recording in my heart, that <na>(e)</na> immortality is in the kindred of wisdom,",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Nevertheless wisdom of her part giveth life and glory everlasting, to all that persevere to the end of this life."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -783,7 +1065,13 @@
         },
         {
           "verse": 20,
-          "text": "And whereas I was more good, I came to <na>(f)</na> a body undefiled."
+          "text": "And whereas I was more good, I came to <na>(f)</na> a body undefiled.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "It is certain that Salomon was sometime innocent and holy, but was perverted by women. 3. Reg. 11."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -801,7 +1089,12 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> and by thy Wisdom didst appoint man, that he should have dominion of the creature, that was made by thee,"
+          "text": "<cr>[1]</cr> and by thy Wisdom didst appoint man, that he should have dominion of the creature, that was made by thee,",
+          "cross_refs": [
+            {
+              "text": "3. Reg. 3. v. 9. 12."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -821,19 +1114,52 @@
         },
         {
           "verse": 7,
-          "text": "<na>(a)</na> Thou hast chosen me king to thy people, and judge of thy sons and daughters: <cr>[1]</cr>"
+          "text": "<na>(a)</na> Thou hast chosen me king to thy people, and judge of thy sons and daughters: <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "1. Para. 28. v. 5."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Here again it is evident, that the Author reporteth Salomon's speeches."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "and badest me build a temple in thy holy mount, and an altar in the city of thy habitation, a similitude of thy holy tabernacle, which thou didst prepare from the beginning: <cr>[1]</cr>"
+          "text": "and badest me build a temple in thy holy mount, and an altar in the city of thy habitation, a similitude of thy holy tabernacle, which thou didst prepare from the beginning: <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "2. Par. 1. v. 9."
+            }
+          ]
         },
         {
           "verse": 9,
-          "text": "and <na>(b)</na> thy wisdom with thee, which knew thy works, which then also was present when thou madest the round world, and knew what was pleasing to thine eyes, and what was direct in thy precepts. <cr>[1]</cr>"
+          "text": "and <na>(b)</na> thy wisdom with thee, which knew thy works, which then also was present when thou madest the round world, and knew what was pleasing to thine eyes, and what was direct in thy precepts. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Prov. 8. v. 22."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "Wisdom increated is with God, yea is God himself."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "<na>(c)</na> Send her from thy holy heavens, and from the seat of thy greatness, that she may be with me, and may labour with me, that I may know what is acceptable with thee:"
+          "text": "<na>(c)</na> Send her from thy holy heavens, and from the seat of thy greatness, that she may be with me, and may labour with me, that I may know what is acceptable with thee:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Wisdom which is given to men proceedeth from God as a gift created."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -845,7 +1171,13 @@
         },
         {
           "verse": 13,
-          "text": "For <na>(d)</na> who of men is able to know the counsel of God? Or who can think what God will?"
+          "text": "For <na>(d)</na> who of men is able to know the counsel of God? Or who can think what God will? sufficient to govern ourselves, much less others.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Man's wisdom without special wisdom from God is not"
+            }
+          ]
         },
         {
           "verse": 14,
@@ -879,11 +1211,23 @@
       "verses": [
         {
           "verse": 1,
-          "text": "She kept him, <na>(a)</na> that was first made of God father of the world, when he was created alone,"
+          "text": "She kept him, <na>(a)</na> that was first made of God father of the world, when he was created alone,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Adam."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "and she <na>(b)</na> brought him out of his sin, and gave him power to contain all things."
+          "text": "and she <na>(b)</na> brought him out of his sin, and gave him power to contain all things.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "By this it is certain that our first parent Adam truly repented, and had remission of his sin."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -891,19 +1235,47 @@
         },
         {
           "verse": 4,
-          "text": "For whose cause, when water destroyed the earth, wisdom healed it again, governing <na>(c)</na> the just by contemptible wood."
+          "text": "For whose cause, when water destroyed the earth, wisdom healed it again, governing <na>(c)</na> the just by contemptible wood.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Noe."
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "She even in the consent of wickedness, when the nations had confederated themselves, knew <na>(d)</na> the just, and preserved him without blame to God, and in his son's mercy kept the strong."
+          "text": "She even in the consent of wickedness, when the nations had confederated themselves, knew <na>(d)</na> the just, and preserved him without blame to God, and in his son's mercy kept the strong.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Abraham."
+            }
+          ]
         },
         {
           "verse": 6,
-          "text": "She delivered <na>(e)</na> the just, flying from the impious that perished, when the fire came down upon Pentapolis:"
+          "text": "She delivered <na>(e)</na> the just, flying from the impious that perished, when the fire came down upon Pentapolis:",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Lot."
+            }
+          ]
         },
         {
           "verse": 7,
-          "text": "to whom for a witness of their wickedness the desert land standeth smoking, and <na>(f)</na> trees having fruits at uncertain season; and the memory of an incredulous soul a standing <na>(g)</na> pillar of salt."
+          "text": "to whom for a witness of their wickedness the desert land standeth smoking, and <na>(f)</na> trees having fruits at uncertain season; and the memory of an incredulous soul a standing <na>(g)</na> pillar of salt.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "In all trees about Sodom there is only shew of fruit, which when it is touched falleth into dust."
+            },
+            {
+              "label": "g",
+              "text": "Lot's wife an example of inconstancy."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -915,7 +1287,18 @@
         },
         {
           "verse": 10,
-          "text": "And <na>(h)[1]</na> the just flying his brother's wrath, she conducted by the right ways, and shewed him the kingdom of God, and gave him the knowledge of the holy, did honest him in labours, and accomplished his labours."
+          "text": "And <na>(h)[1]</na> the just flying his brother's wrath, she conducted by the right ways, and shewed him the kingdom of God, and gave him the knowledge of the holy, did honest him in labours, and accomplished his labours.",
+          "cross_refs": [
+            {
+              "text": "Gen. 28."
+            }
+          ],
+          "notes": [
+            {
+              "label": "h",
+              "text": "Jacob."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -927,19 +1310,46 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> She forsook not <na>(i)</na> the just being sold, but delivered him from sinners: and she went down with him into the pit,"
+          "text": "<cr>[1]</cr> She forsook not <na>(i)</na> the just being sold, but delivered him from sinners: and she went down with him into the pit,",
+          "cross_refs": [
+            {
+              "text": "Gen. 37."
+            }
+          ],
+          "notes": [
+            {
+              "label": "i",
+              "text": "Joseph."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> and in bands left him not, till she brought him the sceptre of a Kingdom, and might against them that oppressed him: and shewed them to be liars, that spotted him, and gave him eternal glory."
+          "text": "<cr>[1]</cr> and in bands left him not, till she brought him the sceptre of a Kingdom, and might against them that oppressed him: and shewed them to be liars, that spotted him, and gave him eternal glory.",
+          "cross_refs": [
+            {
+              "text": "Gen. 41."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "The <na>(k)</na> just people, and seed without blame she delivered from the nations, that oppressed them."
+          "text": "The <na>(k)</na> just people, and seed without blame she delivered from the nations, that oppressed them.",
+          "notes": [
+            {
+              "label": "k",
+              "text": "God's peculiar people."
+            }
+          ]
         },
         {
           "verse": 16,
-          "text": "<cr>[1]</cr> She entered into the soul of the servant of God, and stood against dreadful kings in wonders and signs."
+          "text": "<cr>[1]</cr> She entered into the soul of the servant of God, and stood against dreadful kings in wonders and signs.",
+          "cross_refs": [
+            {
+              "text": "Exo. 1. Exo. 3."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -947,7 +1357,12 @@
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> and she transported them through the Red sea, and carried them over through a great water."
+          "text": "<cr>[1]</cr> and she transported them through the Red sea, and carried them over through a great water.",
+          "cross_refs": [
+            {
+              "text": "Exo. 14."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -955,7 +1370,12 @@
         },
         {
           "verse": 20,
-          "text": "<cr>[1]</cr> and they sang thy holy name o Lord, and thy victorious hand they praised together:"
+          "text": "<cr>[1]</cr> and they sang thy holy name o Lord, and thy victorious hand they praised together:",
+          "cross_refs": [
+            {
+              "text": "Exo. 12. Exo. 15."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -975,7 +1395,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "She <cr>[1]</cr> directed their works in the hands of a <na>(a)</na> holy Prophet."
+          "text": "She <cr>[1]</cr> directed their works in the hands of a <na>(a)</na> holy Prophet.",
+          "cross_refs": [
+            {
+              "text": "Exo. 16. Exo. 27."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Moyses."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -983,11 +1414,22 @@
         },
         {
           "verse": 3,
-          "text": "They stood against <na>(b)</na> the adversaries, and revenged themselves of the enemies."
+          "text": "They stood against <na>(b)</na> the adversaries, and revenged themselves of the enemies.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The Amalechites. Exo. 17."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> They thirsted, and invocated thee, and water was given them out of a most high rock, and quenching of their thirst out of the hard stone."
+          "text": "<cr>[1]</cr> They thirsted, and invocated thee, and water was given them out of a most high rock, and quenching of their thirst out of the hard stone.",
+          "cross_refs": [
+            {
+              "text": "Num. 20."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1011,7 +1453,17 @@
         },
         {
           "verse": 10,
-          "text": "For when <na>(c)</na> they were tempted, and indeed with mercy taking discipline, they knew how <na>(d)</na> the impious being judged with wrath did suffer torments."
+          "text": "For when <na>(c)</na> they were tempted, and indeed with mercy taking discipline, they knew how <na>(d)</na> the impious being judged with wrath did suffer torments.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "When the Israelites wanted water God gave them abundance out of rocks."
+            },
+            {
+              "label": "d",
+              "text": "But turned the Aegyptians' waters into blood."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1027,15 +1479,33 @@
         },
         {
           "verse": 14,
-          "text": "For when they understood <na>(e)</na> by their punishment that it went well with them, they remembered our Lord, marveling at the end of the event."
+          "text": "For when they understood <na>(e)</na> by their punishment that it went well with them, they remembered our Lord, marveling at the end of the event.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "After affliction the benefit of peace is more grateful."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "<na>(f)</na> For whom before they derided, being cast forth in that wicked laying out to perish, him they marveled at in the end of the event: not thirsting in like manner to the just."
+          "text": "<na>(f)</na> For whom before they derided, being cast forth in that wicked laying out to perish, him they marveled at in the end of the event: not thirsting in like manner to the just.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Moyses was rejected when he judged between his brethren Exod. 2. v. 14. but was afterwards the deliverer of the whole people. Act. 7. v. 45."
+            }
+          ]
         },
         {
           "verse": 16,
-          "text": "But for senseless cogitations of their iniquity, for that <na>(g)</na> some erring did worship dumb serpents and superfluous beasts, thou didst send upon them a multitude of dumb beasts for revenge:"
+          "text": "But for senseless cogitations of their iniquity, for that <na>(g)</na> some erring did worship dumb serpents and superfluous beasts, thou didst send upon them a multitude of dumb beasts for revenge: frogs, sciniphs, flies, and locusts.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "Aegyptians serving beasts for gods, where plagued by"
+            }
+          ]
         },
         {
           "verse": 17,
@@ -1043,7 +1513,12 @@
         },
         {
           "verse": 18,
-          "text": "For thine omnipotent hand, which made the world of invisible matter, was not unable to send upon them a multitude of bears, or fierce lions, <cr>[1]</cr>"
+          "text": "For thine omnipotent hand, which made the world of invisible matter, was not unable to send upon them a multitude of bears, or fierce lions, <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Levi. 26. v. 22. Iere. 8. v. 17."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1071,7 +1546,13 @@
         },
         {
           "verse": 25,
-          "text": "For thou <na>(h)</na> lovest all things that are, and hatest nothing of those which thou hast made: for thou didst not ordain or make any thing hating it."
+          "text": "For thou <na>(h)</na> lovest all things that are, and hatest nothing of those which thou hast made: for thou didst not ordain or make any thing hating it.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "God made no creature evil, as the Manichees foolishly imagined, neither is there any God but one who alone created all things."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -1105,7 +1586,13 @@
         },
         {
           "verse": 5,
-          "text": "and the murderers of their own children without mercy, and eaters of men's bowels, and devourers of blood from the midst <na>(a)</na> of thy sacrament,"
+          "text": "and the murderers of their own children without mercy, and eaters of men's bowels, and devourers of blood from the midst <na>(a)</na> of thy sacrament,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "From the land of Iury, called sacred, because God was there rightly served in the old testament, and man's redemption was wrought there by Christ."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1121,11 +1608,22 @@
         },
         {
           "verse": 9,
-          "text": "Not because thou wast unable in battle to subdue the impious to the just, or with cruel beasts, or with a sharp word to destroy them together: <cr>[1]</cr>"
+          "text": "Not because thou wast unable in battle to subdue the impious to the just, or with cruel beasts, or with a sharp word to destroy them together: <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Exo. 23. Deu. 7."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "but judging by parts thou gavest place of repentance, being not ignorant, that the nation of them is wicked, and their malice <na>(b)</na> natural & that their cogitation could not be changed for ever."
+          "text": "but judging by parts thou gavest place of repentance, being not ignorant, that the nation of them is wicked, and their malice <na>(b)</na> natural & that their cogitation could not be changed for ever.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "By custom malice became as it were natural, after that nature was corrupted."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1157,7 +1655,13 @@
         },
         {
           "verse": 18,
-          "text": "But thou dominatour of power, judgest with tranquility, and with great reverence disposest of us: for <na>(c)</na> it is in thy power when thou wilt, to be able."
+          "text": "But thou dominatour of power, judgest with tranquility, and with great reverence disposest of us: for <na>(c)</na> it is in thy power when thou wilt, to be able.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "God's power being Almighty is only limited by his will."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1181,7 +1685,18 @@
         },
         {
           "verse": 24,
-          "text": "<cr>[1]</cr> For they wandered long in the way of error, esteeming for gods those things, that in beasts <na>(d)</na> are superfluous, living after the manner of senseless infants."
+          "text": "<cr>[1]</cr> For they wandered long in the way of error, esteeming for gods those things, that in beasts <na>(d)</na> are superfluous, living after the manner of senseless infants.",
+          "cross_refs": [
+            {
+              "text": "Rom. 1. v. 23."
+            }
+          ],
+          "notes": [
+            {
+              "label": "d",
+              "text": "Serpents, bats, moles, & like beasts, which seem not only superfluous in the world, but also hurtful, yet were esteemed as gods."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -1193,7 +1708,13 @@
         },
         {
           "verse": 27,
-          "text": "For in what things they suffering took indignation, by those whom they thought gods, when seeing they were destroyed in them, him, whom in time past they denied that they knew, they acknowledged the true God: <na>(e)</na> for the which cause the end also of their condemnation shall come upon them."
+          "text": "For in what things they suffering took indignation, by those whom they thought gods, when seeing they were destroyed in them, him, whom in time past they denied that they knew, they acknowledged the true God: <na>(e)</na> for the which cause the end also of their condemnation shall come upon them.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Knowing him to be the only true God, by whom they saw their false gods destroyed, yet they did not serve him as God."
+            }
+          ]
         }
       ],
       "summary": "God's wisdom and mercy in destroying the wicked inhabitants of Chanaan, by parts (10. that they might have amended) whom he could have slain suddenly. 15. In that God never condemneth the just, 19. his people are instructed to confide in him, 25. and sinners to turn unto him."
@@ -1204,11 +1725,27 @@
         {
           "verse": 1,
           "text": "But all men be vain, in whom there is not the knowledge of God: and of these good things which are seen they could not understand him <na>(a)</na> that is, neither attending to the works have they agnised who was the workman: <cr>[1]</cr>",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Rom. 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "God's most proper name is HE WHICH IS. Exo. 3. v. 14."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> but either the fire, or the wind, or the swift air, or a circle of stars, or exceeding much water, or the sun and moon, they thought to be gods, rulers of the world."
+          "text": "<cr>[1]</cr> but either the fire, or the wind, or the swift air, or a circle of stars, or exceeding much water, or the sun and moon, they thought to be gods, rulers of the world.",
+          "cross_refs": [
+            {
+              "text": "Deut. 4."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1240,11 +1777,27 @@
         },
         {
           "verse": 10,
-          "text": "But they are unhappy, & their hope is among the dead, who have called the works of men's hands gods, gold & silver, the invention of art, and the similitudes of beasts, or an unprofitable stone the work of an old hand."
+          "text": "But they are unhappy, & their hope is among the dead, who have called <na>(b)</na> the works of men's hands gods, gold & silver, the invention of art, and the similitudes of beasts, or an unprofitable stone the work of an old hand. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Isa. 4."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "Seeing no creature how excellent soever, is or may be esteemed a God, it is more foolish to think, an Image, or statua, or any thing framed by man's hands can be God."
+            }
+          ]
         },
         {
           "verse": 11,
-          "text": "Or if an artificer a carpenter, cut straight timber out of the wood, & pare off all the bark thereof cunningly, and using his art diligently frameth a vessel profitable for the common use of this life,"
+          "text": "Or if an artificer a carpenter, cut straight timber out of the wood, & pare off all the bark thereof cunningly, and using his art diligently frameth a vessel profitable for the common use of this life, <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ier. 10."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -1286,7 +1839,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Again another thinking to sail, and beginning to make a journey through the fierce waves, invocateth wood <na>(a)</na> more frail than the wood that carrieth him."
+          "text": "Again another thinking to sail, and beginning to make a journey through the fierce waves, invocateth wood <na>(a)</na> more frail than the wood that carrieth him.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Great madness to invocate a wooden idol more base & commonly more corruptible than the wood of a ship."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1298,7 +1857,13 @@
         },
         {
           "verse": 4,
-          "text": "shewing that thou art able to save out of all things, yea <na>(b)</na> if a man go to the sea without art."
+          "text": "shewing that thou art able to save out of all things, yea <na>(b)</na> if a man go to the sea without art.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "As the Israelites went through the red sea."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1310,7 +1875,17 @@
         },
         {
           "verse": 7,
-          "text": "For <na>(c)</na> blessed is the wood, by the which <na>(d)</na> justice is made."
+          "text": "For <na>(c)</na> blessed is the wood, by the which <na>(d)</na> justice is made.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The author prophetically alludeth to the wood of the Cross, on which our Saviour redeemed mankind."
+            },
+            {
+              "label": "d",
+              "text": "From whose death proceedeth man's justification."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -1330,7 +1905,13 @@
         },
         {
           "verse": 12,
-          "text": "For the beginning <na>(e)</na> of fornication is the devising of idols: and the inventing of them is the corruption of life."
+          "text": "For the beginning <na>(e)</na> of fornication is the devising of idols: and the inventing of them is the corruption of life.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Invention of Idols brought men to spiritual fornications, & corruption of manners."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1343,11 +1924,23 @@
         {
           "verse": 15,
           "text": "For the father being sorrowful with bitter mourning, made unto himself the image of his son quickly taken away: and him, that then was a dead man, now <na>(f)</na> he began to worship as God, and appointed holy things and sacrifices among his servants.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "f",
+              "text": "This first idolatry was only privately exercised by the father and his servants at their master's commandment, by which occasion public idolatry came into the world, wicked custom in time prevailing."
+            }
+          ]
         },
         {
           "verse": 16,
-          "text": "<na>(g)</na> Afterward by succession of time, the wicked custom prevailing, this error was kept as a law, and things graven were worshipped by the commandment of Tyrants."
+          "text": "<na>(g)</na> Afterward by succession of time, the wicked custom prevailing, this error was kept as a law, and things graven were worshipped by the commandment of Tyrants.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "↓"
+            }
+          ]
         },
         {
           "verse": 17,
@@ -1367,7 +1960,13 @@
         },
         {
           "verse": 21,
-          "text": "And this was the deceiving of man's life: because men serving either affection, or kings, gave the name that is not communicable, to stones and wood. <na>(g)</na>"
+          "text": "And this was the deceiving of man's life: because men serving either affection, or kings, gave the name that is not communicable, to stones and wood. <na>(g)</na>",
+          "notes": [
+            {
+              "label": "g",
+              "text": "The name God in the proper signification, cannot be given to any creature."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -1375,7 +1974,13 @@
         },
         {
           "verse": 23,
-          "text": "For <na>(h)</na> either sacrificing their children, or making obscure sacrifices, or having watches full of madness,"
+          "text": "For <na>(h)</na> either sacrificing their children, or making obscure sacrifices, or having watches full of madness,",
+          "notes": [
+            {
+              "label": "h",
+              "text": "Many enormous crimes proceed from idolatry."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -1403,7 +2008,13 @@
         },
         {
           "verse": 30,
-          "text": "Two evil things therefore shall happen to them worthily, because they have thought evil of God, attending to idols, and have sworn unjustly, in guile contemning justice."
+          "text": "<na>(i)</na> Two evil things therefore shall happen to them worthily, because they have thought evil of God, attending to idols, and have sworn unjustly, in guile contemning justice.",
+          "notes": [
+            {
+              "label": "i",
+              "text": "Two sorts of perjury: swearing by false gods, and swearing untruths."
+            }
+          ]
         },
         {
           "verse": 31,
@@ -1445,7 +2056,13 @@
         },
         {
           "verse": 8,
-          "text": "And with vain labour he <na>(a)</na> fashioneth a god of the same clay: he which a little before was made of earth, and a little after returneth back whence he was taken, being exacted the debt of the life which he had."
+          "text": "And with vain labour he <na>(a)</na> fashioneth a god of the same clay: he which a little before was made of earth, and a little after returneth back whence he was taken, being exacted the debt of the life which he had.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Of the diverse sorts of idols and idolaters see our brief Annotation upon the 113. Psal."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1461,7 +2078,13 @@
         },
         {
           "verse": 12,
-          "text": "Yea and <na>(b)</na> they esteemed our life to be a pastime, and the conversation of life made for a gain, & that we must get every way even of evil."
+          "text": "Yea and <na>(b)</na> they esteemed our life to be a pastime, and the conversation of life made for a gain, & that we must get every way even of evil.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Idolaters having forsaken and forgot the only true God, become as Atheists, making their temporal gain of false gods."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1469,7 +2092,13 @@
         },
         {
           "verse": 14,
-          "text": "For all the unwise and unhappy above measure of the soul, proud <na>(c)</na> are the enemies of thy people, and rule over them:"
+          "text": "For all the unwise and unhappy above measure of the soul, proud <na>(c)</na> are the enemies of thy people, and rule over them:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "And so waxing insolent, contemn and persecute the servants of God."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1485,7 +2114,13 @@
         },
         {
           "verse": 18,
-          "text": "But <na>(d)</na> they worship also most miserable beasts: for the senseless things compared to these, are worse than they."
+          "text": "But <na>(d)</na> they worship also most miserable beasts: for the senseless things compared to these, are worse than they.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Some idolaters worshipped brute beasts for gods, as being better than senseless images: but all are abominable."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1499,7 +2134,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "For <na>(a)</na> these things, and <na>(b)</na> by the like to these, they have worthily suffered torments, and were destroyed by a multitude of beasts."
+          "text": "For <na>(a)</na> these things, and <na>(b)</na> by the like to these, they have worthily suffered torments, and were destroyed by a multitude of beasts.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The Aegyptians were plagued for their idolatry."
+            },
+            {
+              "label": "b",
+              "text": "And that by beasts, because they worshipped beasts for gods: and by death of their first-begotten, for their cruelty against God's people."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1511,7 +2156,13 @@
         },
         {
           "verse": 4,
-          "text": "For it behoved that without excuse destruction should come upon them exercising tyranny: <na>(c)</na> but to these only to shew how their enemies were destroyed."
+          "text": "For it behoved that without excuse destruction should come upon them exercising tyranny: <na>(c)</na> but to these only to shew how their enemies were destroyed.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "God punished his own people as a father, for their amendment."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1523,7 +2174,7 @@
         },
         {
           "verse": 7,
-          "text": "For he that turned to it, <na>(d)</na> was not healed by that which he saw, but by thee the Saviour of all:"
+          "text": "For he that turned to it, <na>(d)</na> was not healed by that which he saw, but by thee the Saviour of all: <na>(d)</na> The brazen serpent not by any virtue inherent, but as a sign of God's favour, was the means of curing the people. <i>Num. 21.</i>"
         },
         {
           "verse": 8,
@@ -1563,15 +2214,33 @@
         },
         {
           "verse": 17,
-          "text": "For that which was marvelous in water, which extinguisheth all things, <na>(e)</na> fire more prevailed: for the world is revenger of the just."
+          "text": "For that which was marvelous in water, which extinguisheth all things, <na>(e)</na> fire more prevailed: for the world is revenger of the just.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "With the plague of hail there was also fire mixed, Exo. 9. v. 24. which destroyed the profitable cattle:"
+            }
+          ]
         },
         {
           "verse": 18,
-          "text": "For a certain time, the fire was mitigated, that <na>(f)</na> the beasts which were sent to the impious might not be burnt, but that they seeing might know that by God's judgment they suffer punishment."
+          "text": "For a certain time, the fire was mitigated, that <na>(f)</na> the beasts which were sent to the impious might not be burnt, but that they seeing might know that by God's judgment they suffer punishment.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "But burnt not other beasts, that plagued the Aegyptians."
+            }
+          ]
         },
         {
           "verse": 19,
-          "text": "And at a certain time the fire above his power burnt <na>(g)</na> in water on every side, that it might destroy the nation of a wicked land."
+          "text": "And at a certain time the fire above his power burnt <na>(g)</na> in water on every side, that it might destroy the nation of a wicked land.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "Hail did not extinguish the fire, by God's power above nature."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1579,7 +2248,13 @@
         },
         {
           "verse": 21,
-          "text": "<na>(h)</na> For thy substance did shew thy sweetness which thou hast toward thy children, and serving every man's will, it was turned to that, that every man would."
+          "text": "<na>(h)</na> For thy substance did shew thy sweetness which thou hast toward thy children, and serving every man's will, it was turned to that, that every man would.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "See the miracles of Manna. Annot. Exod. 16."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -1603,7 +2278,13 @@
         },
         {
           "verse": 27,
-          "text": "For that which could not be destroyed by fire, forthwith being <na>(i)</na> heated with a little beam of the sun did melt:"
+          "text": "For that which could not be destroyed by fire, forthwith being <na>(i)</na> heated with a little beam of the sun did melt:",
+          "notes": [
+            {
+              "label": "i",
+              "text": "He speaketh again of Manna."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -1611,7 +2292,13 @@
         },
         {
           "verse": 29,
-          "text": "For the <na>(k)</na> faith of the ungrateful shall melt as winter ice, & shall perish as unprofitable water."
+          "text": "For the <na>(k)</na> faith of the ungrateful shall melt as winter ice, & shall perish as unprofitable water.",
+          "notes": [
+            {
+              "label": "k",
+              "text": "The vain imagination of the wicked, that himself shall be saved, will fail him."
+            }
+          ]
         }
       ],
       "summary": "God plaguing the Aegyptians for idolatry, and cruelty, delivered the Israelites. 5. Chastised them also, but again shewed them mercy; 20. and fed them with Manna."
@@ -1625,7 +2312,18 @@
         },
         {
           "verse": 2,
-          "text": "For whilst the wicked are persuaded that they can rule over the holy nation: fettered with the bands of darkness and <na>(a)</na> long night, shut up under roofs, they have lien fugitives from the everlasting providence. <cr>[1]</cr>"
+          "text": "For whilst the wicked are persuaded that they can rule over the holy nation: fettered with the bands of darkness and <na>(a)</na> long night, shut up under roofs, they have lien fugitives from the everlasting providence. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Exo. 1. & 10."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "Literally the Aegyptians had darkness three days together. Exo. 10. v. 22."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1657,7 +2355,13 @@
         },
         {
           "verse": 10,
-          "text": "For whereas wickedness is fearful, it giveth testimony of condemnation: for <na>(b)</na> a troubled conscience doth always presume cruel things."
+          "text": "For whereas wickedness is fearful, it giveth testimony of condemnation: for <na>(b)</na> a troubled conscience doth always presume cruel things.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Atroubled conscience is a great torment."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1693,7 +2397,13 @@
         },
         {
           "verse": 19,
-          "text": "For <na>(c)</na> all the world was illuminated with a clear light, & none was hindered in their works."
+          "text": "For <na>(c)</na> all the world was illuminated with a clear light, & none was hindered in their works.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "This signified the conversion of all nations to Christ."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1707,7 +2417,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But to thy <na>(a)</na> saints there was very great light, and their voice indeed they heard, but figure they saw not. And because themselves also did not suffer by the same things, they magnified thee:"
+          "text": "But to thy <na>(a)</na> saints there was very great light, and their voice indeed they heard, but figure they saw not. And because themselves also did not suffer by the same things, they magnified thee:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The Church is called holy, because it professeth holiness, and hath always some holy men, & without the Church there is no sanctity."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1723,7 +2439,13 @@
         },
         {
           "verse": 5,
-          "text": "When they decreed to kill the infants of the just: and <na>(b)</na> one child being laid forth, and delivered, thou to the reproving of them, didst take away a multitude of children, and destroyedst them together in the mighty water."
+          "text": "When they decreed to kill the infants of the just: and <na>(b)</na> one child being laid forth, and delivered, thou to the reproving of them, didst take away a multitude of children, and destroyedst them together in the mighty water.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "When the Aegyptians drowned the Hebrews' children, Moyses was saved, and reserved to guide the Israelites, when the Aegyptians were drowned."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1759,7 +2481,13 @@
         },
         {
           "verse": 14,
-          "text": "<na>(c)</na> For when quiet silence contained all things, and the night was in the mid-way of her course,"
+          "text": "<na>(c)</na> For when quiet silence contained all things, and the night was in the mid-way of her course,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Aprophecy of Christ, coming into this world, when there was temporal peace, but extreme darkness of ignorance."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1783,7 +2511,18 @@
         },
         {
           "verse": 20,
-          "text": "But then <na>(d)</na> there touched the just also a tentation of death, and a disturbance of the multitude was made in the wilderness: but thy wrath did not long continue. <cr>[1]</cr>"
+          "text": "But then <na>(d)</na> there touched the just also a tentation of death, and a disturbance of the multitude was made in the wilderness: but thy wrath did not long continue. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Num. 16."
+            }
+          ],
+          "notes": [
+            {
+              "label": "d",
+              "text": "Another example of difference in God's punishing his people for their amendment, and of the obstinate unto their ruin. Exo. 14. v. 28. Num. 16. v. 46."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1813,11 +2552,22 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But upon the impious even to the later end there came wrath without mercy. For <na>(a)</na> he foreknew also the things that should come unto them:"
+          "text": "But upon the impious even to the later end there came wrath without mercy. For <na>(a)</na> he foreknew also the things that should come unto them:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "God foreseeing the Aegyptians' malice, permitted them to persecute his people, but was no way the cause nor author of their sin."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> because when they had permitted that they should depart, and had sent them away with great diligence, they repenting pursued them."
+          "text": "<cr>[1]</cr> because when they had permitted that they should depart, and had sent them away with great diligence, they repenting pursued them.",
+          "cross_refs": [
+            {
+              "text": "Exo. 14."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1857,11 +2607,22 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> For in comfort of their desire, there came up to them the quail from the sea: and vexations came upon the sinners, not without those arguments, which were made before by the force of lightnings: for they suffered justly according to their wickedness."
+          "text": "<cr>[1]</cr> For in comfort of their desire, there came up to them the quail from the sea: and vexations came upon the sinners, not without those arguments, which were made before by the force of lightnings: for they suffered justly according to their wickedness.",
+          "cross_refs": [
+            {
+              "text": "Exo. 16."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "For they instituted a more detestable inhospitality: <na>(b)</na> some certes received not the unknown strangers, and other-some brought the good strangers into servitude."
+          "text": "For they instituted a more detestable inhospitality: <na>(b)</na> some certes received not the unknown strangers, and other-some brought the good strangers into servitude.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The Amorrheites refused to grant them passage. Num. 21. v. 21. The Aegyptians brought them into servitude. Exo. 1."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -1877,7 +2638,13 @@
         },
         {
           "verse": 17,
-          "text": "For whilst the <na>(c)</na> elements are turned in themselves, as in an instrument the sound of the quality is changed, and all keep their sound: wherefore it may be certainly judged by the very sight."
+          "text": "For whilst the <na>(c)</na> elements are turned in themselves, as in an instrument the sound of the quality is changed, and all keep their sound: wherefore it may be certainly judged by the very sight.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "God changing the natural properties of elements, by them wrought justice on sinners. S. Greg. ho. 35. in Evang."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1885,11 +2652,21 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> The fire had force in water above his power, and the water forgot her quenching nature."
+          "text": "<cr>[1]</cr> The fire had force in water above his power, and the water forgot her quenching nature.",
+          "cross_refs": [
+            {
+              "text": "Exo. 9. v. 24."
+            }
+          ]
         },
         {
           "verse": 20,
-          "text": "On the contrary the flames vexed not the flesh of corruptible beasts walking therewith, neither did they melt that good meat, which was easily dissolved even as ice. For in all things thou didst magnify thy people o Lord, and didst honour them, and didst not despise them, at all time, and in every place assisting them. <cr>[1]</cr>"
+          "text": "On the contrary the flames vexed not the flesh of corruptible beasts walking therewith, neither did they melt that good meat, which was easily dissolved even as ice. For in all things thou didst magnify thy people o Lord, and didst honour them, and didst not despise them, at all time, and in every place assisting them. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Exo. 19. v. 21."
+            }
+          ]
         }
       ],
       "summary": "having been plagued before with flies and frogs. 11. Quails were given to the people of Israel. 13. The barbarous not receiving, or evil intreating God's people, were strucken with blindness. 17. And all creatures serve God in punishing the impious and rewarding the godly."

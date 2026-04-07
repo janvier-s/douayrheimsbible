@@ -101,7 +101,12 @@
         },
         {
           "verse": 24,
-          "text": "But to abide in the flesh, <alt>necessary</alt> for you."
+          "text": "But to abide in the flesh, <cr>[1]</cr> <alt>necessary</alt> for you.",
+          "cross_refs": [
+            {
+              "text": "more necessary"
+            }
+          ]
         },
         {
           "verse": 25,
@@ -113,19 +118,39 @@
         },
         {
           "verse": 27,
-          "text": "Only converse ye worthy of the Gospel of Christ: that whether when I come and see you, or else be absent, I may hear of you that you stand in one Spirit, of one mind labouring together to the faith of the Gospel."
+          "text": "Only <cr>[1]</cr> converse ye worthy of the Gospel of Christ: that whether when I come and see you, or else be absent, I may hear of you that you stand in one Spirit, of one mind labouring together to the faith of the Gospel.",
+          "cross_refs": [
+            {
+              "text": "Eph. 4, 1."
+            }
+          ]
         },
         {
           "verse": 28,
-          "text": "And in nothing be ye terrified of the adversaries, which to them is cause of perdition: but to you of salvation, & this of God:"
+          "text": "And in nothing be ye terrified of the adversaries, which to them is <cr>[1]</cr> cause of perdition: but to you of salvation, & this of God:",
+          "cross_refs": [
+            {
+              "text": "ἔνδειξις"
+            }
+          ]
         },
         {
           "verse": 29,
-          "text": "for to you it is given for Christ, not only that you believe in him, but also that you suffer for him,"
+          "text": "for to you <cr>[1]</cr> it is given for Christ, not only that you believe in him, but also that you suffer for him,",
+          "cross_refs": [
+            {
+              "text": "c ἐχαρίσθη"
+            }
+          ]
         },
         {
           "verse": 30,
-          "text": "having the same combat like as you have seen in me, and now <alt>have heard</alt> of me."
+          "text": "having the same combat like as you have seen in me, and now <cr>[1]</cr> <alt>have heard</alt> of me.",
+          "cross_refs": [
+            {
+              "text": "do hear"
+            }
+          ]
         }
       ],
       "summary": "Having signified that he useth to thank God for their virtue, 9. and also to pray for their increase: 12. he certifieth them (for their confirmation & comfort) what good was come through his trouble at Rome, 24. & that he doubteth not (though he rather desire martyrdom) but to come again unto them, 27. exhorting them to live as they ought to do, 28. and namely not to shrink for persecution."
@@ -143,7 +168,12 @@
         },
         {
           "verse": 3,
-          "text": "Nothing by contention, neither by vain glory: but in humility, <cr>[1]</cr> each counting other better than themselves:"
+          "text": "Nothing by contention, neither by vain glory: but in humility, <cr>[1]</cr> each counting other better than themselves:",
+          "cross_refs": [
+            {
+              "text": "Ro. 12, 10. 1. Cor. 10, 24."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -163,7 +193,12 @@
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> He <cr>[2]</cr> humbled himself, made obedient unto death: even the death of the cross."
+          "text": "<cr>[1]</cr> He <cr>[2]</cr> humbled himself, made obedient unto death: even the death of the cross.",
+          "cross_refs": [
+            {
+              "text": "Heb. 2, 9."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -173,7 +208,12 @@
         {
           "verse": 10,
           "text": "that <cr>[1]</cr> in the name of <sc>Jesus</sc> every knee bow of the celestials, terrestrials, and infernals:",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Es. 45, 14. Ro. 14, 11."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -270,11 +310,21 @@
         },
         {
           "verse": 2,
-          "text": "See the dogs, see the evil workers, see the <cr>[1]</cr> concision."
+          "text": "See the dogs, see the evil workers, see the <cr>[1]</cr> concision.",
+          "cross_refs": [
+            {
+              "text": "concision circumcision"
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "For we are the <cr>[1]</cr> circumcision, which in spirit serve God: and we glory in Christ <sc>Jesus</sc>, and not having confidence in the flesh,"
+          "text": "For we are the <cr>[1]</cr> circumcision, which in spirit serve God: and we glory in Christ <sc>Jesus</sc>, and not having confidence in the flesh,",
+          "cross_refs": [
+            {
+              "text": "c κατατομὴ et περιτομὴ"
+            }
+          ]
         },
         {
           "verse": 4,
@@ -282,7 +332,15 @@
         },
         {
           "verse": 5,
-          "text": "circumcised the eighth day, of the stock of Israel, of the tribe of Benjamin, <cr>[1]</cr> an Hebrew of Hebrews: <cr>[2]</cr> according to the Law, a Pharisee:"
+          "text": "circumcised the eighth day, of the stock of Israel, of the tribe of Benjamin, <cr>[1]</cr> an Hebrew of Hebrews: <cr>[2]</cr> according to the Law, a Pharisee:",
+          "cross_refs": [
+            {
+              "text": "2. Cor. 11, 22."
+            },
+            {
+              "text": "Act. 23, 6."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -320,12 +378,22 @@
         },
         {
           "verse": 14,
-          "text": "Ipursue to the mark, <cr>[1]</cr> to the prize of the supernal vocation of God in Christ <sc>Jesus</sc>."
+          "text": "Ipursue to the mark, <cr>[1]</cr> to the prize of the supernal vocation of God in Christ <sc>Jesus</sc>.",
+          "cross_refs": [
+            {
+              "text": "c ad bravium"
+            }
+          ]
         },
         {
           "verse": 15,
           "text": "Let us therefore as many as are perfect, be thus minded: and if you be any otherwise minded, this also God <cr>[1]</cr> <alt>hath revealed</alt> to you.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "will reveal"
+            }
+          ]
         },
         {
           "verse": 16,
@@ -333,11 +401,21 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> Be followers <cr>[2]</cr> of me, brethren, & observe them that walk so as you have our form."
+          "text": "<cr>[1]</cr> Be followers <cr>[2]</cr> of me, brethren, & observe them that walk so as you have our form.",
+          "cross_refs": [
+            {
+              "text": "S. Augustine, S. Benedict, S. Dominic, S. Francis."
+            }
+          ]
         },
         {
           "verse": 18,
-          "text": "For many walk whom often I told you of (and now weeping also I tell you) the enemies of the cross of Christ:"
+          "text": "For <cr>[1]</cr> many walk whom often I told you of (and now weeping also I tell you) the enemies of the cross of Christ:",
+          "cross_refs": [
+            {
+              "text": "Ro. 16, 17."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -365,7 +443,12 @@
         {
           "verse": 2,
           "text": "<cr>[1]</cr> <alt>Euchodia</alt> I desire and Syntyche I beseech to be of one mind in our Lord.",
-          "has_annotation": true
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Euodia"
+            }
+          ]
         },
         {
           "verse": 3,
@@ -381,7 +464,12 @@
         },
         {
           "verse": 6,
-          "text": "Be nothing careful: but <cr>[1]</cr> in every thing by prayer & supplication with thanks-giving let your petitions be known with God."
+          "text": "Be nothing careful: but <cr>[1]</cr> in every thing by prayer & supplication with thanks-giving let your petitions be known with God.",
+          "cross_refs": [
+            {
+              "text": "c ἐν παντὶ τῇ προσευχῇ"
+            }
+          ]
         },
         {
           "verse": 7,
@@ -417,7 +505,7 @@
         },
         {
           "verse": 15,
-          "text": "And you also know, o Philippians, that in the beginning of the Gospel, when I departed from Macedonia, no Church communicated unto me in the account of gift and receit, but you only:"
+          "text": "And you also know, o Philippians, that in the beginning of the Gospel, when I departed from Macedonia, no Church communicated unto me in the account of gift and <cr>[1]</cr> receit, but you only:"
         },
         {
           "verse": 16,
@@ -434,7 +522,12 @@
         },
         {
           "verse": 19,
-          "text": "And my God supply all your lack according to his riches in glory, in Christ <sc>Jesus</sc>."
+          "text": "And my God supply all your <cr>[1]</cr> lack according to his riches in glory, in Christ <sc>Jesus</sc>.",
+          "cross_refs": [
+            {
+              "text": "c χρείαν"
+            }
+          ]
         },
         {
           "verse": 20,

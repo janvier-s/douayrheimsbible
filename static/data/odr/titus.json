@@ -12,7 +12,12 @@
         },
         {
           "verse": 2,
-          "text": "into the hope of life everlasting, which he promised that lieth not, God, <cr>[1]</cr> before the secular times:"
+          "text": "into the hope of life everlasting, which he promised that lieth not, God, <cr>[1]</cr> before the secular times:",
+          "cross_refs": [
+            {
+              "text": "2. Tim. 1, 9."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -29,8 +34,13 @@
         },
         {
           "verse": 6,
-          "text": "if any be without crime, the husband of one wife, having faithful children, not in the accusation of riot, or not obedient.",
-          "has_annotation": true
+          "text": "<cr>[1]</cr> if any be without crime, the husband of one wife, having faithful children, not in the accusation of riot, or not obedient.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "1. Tim. 3, 2."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -54,7 +64,12 @@
         },
         {
           "verse": 12,
-          "text": "One of them said, their own proper prophet, <i>The Cretensians always liars, naughty beasts, slothful bellies.</i>"
+          "text": "One of them said, their own proper prophet, <cr>[1]</cr> <i>The Cretensians always liars, naughty beasts, slothful bellies.</i>",
+          "cross_refs": [
+            {
+              "text": "Epimenides."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -66,7 +81,15 @@
         },
         {
           "verse": 15,
-          "text": "All things are clean to the clean: but to the polluted and to infidels nothing is clean: but polluted are both their mind and conscience."
+          "text": "<cr>[1]</cr> All things are <cr>[2]</cr> clean to the clean: but to the polluted and to infidels nothing is clean: but polluted are both their mind and conscience.",
+          "cross_refs": [
+            {
+              "text": "Rom. 14, 20."
+            },
+            {
+              "text": "Cont. Faust. li. 31. c. 4."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -84,7 +107,12 @@
         },
         {
           "verse": 2,
-          "text": "Old men that they be sober, <cr>[1]</cr> chaste, wise, sound in the faith, in love, in patience."
+          "text": "Old men that they be sober, <cr>[1]</cr> chaste, wise, sound in the faith, in love, in patience.",
+          "cross_refs": [
+            {
+              "text": "c σεμνοὺς pudicos"
+            }
+          ]
         },
         {
           "verse": 3,
@@ -112,7 +140,12 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> Servants to be subject to their masters, in all things pleasing, not gainsaying:"
+          "text": "<cr>[1]</cr> Servants to be subject to their masters, in all things pleasing, not gainsaying:",
+          "cross_refs": [
+            {
+              "text": "Eph. 6, 5. Col. 3, 22. 1. Pet. 2, 18."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -120,7 +153,7 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> For the grace of God our Saviour hath appeared to all men:"
+          "text": "<cr>[1]</cr> For the grace of God our Saviour hath appeared to all men: upon the Circumcision of our Lord."
         },
         {
           "verse": 12,
@@ -128,7 +161,12 @@
         },
         {
           "verse": 13,
-          "text": "expecting the blessed hope and advent of the glory of the great God and our Saviour <sc>Jesus</sc> Christ,"
+          "text": "expecting the blessed hope and <cr>[1]</cr> advent of the glory of the great God and our Saviour <sc>Jesus</sc> Christ,",
+          "cross_refs": [
+            {
+              "text": "c ἐπιφὰνειαν"
+            }
+          ]
         },
         {
           "verse": 14,
@@ -136,7 +174,7 @@
         },
         {
           "verse": 15,
-          "text": "These things speak, and exhort and rebuke with all authority. Let no man contemn thee."
+          "text": "These things speak, and exhort and rebuke <cr>[1]</cr> with all authority. Let no man contemn thee."
         }
       ],
       "summary": "What to preach both to old and young (not only with word but with example also) and to servants. 11. For there are of all sorts in the Church, and they must be instructed accordingly."
@@ -158,11 +196,24 @@
         },
         {
           "verse": 4,
-          "text": "But when <cr>[1]</cr> the benignity and <cr>[2]</cr> kindness toward man of our Saviour God appeared:"
+          "text": "But when <cr>[1]</cr> the benignity and <cr>[2]</cr> kindness toward man of our Saviour God appeared:",
+          "cross_refs": [
+            {
+              "text": "c φιλανθρωπία"
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> not by the works of Justice which we did, but according to his mercy he hath saved us <cr>[2]</cr> by the laver of regeneration and renovation of the Holy Ghost,"
+          "text": "<cr>[1]</cr> not by the works of Justice which we did, but according to his mercy he hath saved us <cr>[2]</cr> by the laver of regeneration and renovation of the Holy Ghost,",
+          "cross_refs": [
+            {
+              "text": "2. Tim. 1, 9."
+            },
+            {
+              "text": "(1. Tim. 4. and 2. Tim. 1.)"
+            }
+          ]
         },
         {
           "verse": 6,
@@ -174,15 +225,25 @@
         },
         {
           "verse": 8,
-          "text": "It is a faithful saying, and of these things I will have thee avouch earnestly: that they which believe in God, be careful to excel in good works. These things be good and profitable for men."
+          "text": "<cr>[1]</cr> It is a faithful saying, and of these things I will have thee avouch earnestly: that they which believe in God, be careful to excel in good works. These things be good and profitable for men.",
+          "cross_refs": [
+            {
+              "text": "1. Tim. 4."
+            }
+          ]
         },
         {
           "verse": 9,
-          "text": "But foolish questions, and genealogies, and contentions, and controversies of the Law avoid. For they are unprofitable and vain."
+          "text": "But <cr>[1]</cr> foolish questions, and genealogies, and contentions, and controversies of the Law avoid. For they are unprofitable and vain.",
+          "cross_refs": [
+            {
+              "text": "2. Tim. 2, 23."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "Aman that is an heretic after the first and second admonition avoid:",
+          "text": "Aman that is an heretic after the first and second <cr>[1]</cr> admonition avoid:",
           "has_annotation": true
         },
         {
@@ -200,11 +261,45 @@
         },
         {
           "verse": 14,
-          "text": "And let our men also learn to excel in good works to necessary uses: that they be not unfruitful."
+          "text": "And let our men also learn <cr>[1]</cr> to excel in good works to necessary uses: that they be not unfruitful.",
+          "cross_refs": [
+            {
+              "text": "c προίςασθαι praeesse."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "All that are with me, salute thee: salute them that love us in the faith. The grace of God be with you all. Amen. 10. A man that is an Heretic.] <cr>[1]</cr> Not every one that erreth in religion, is an Heretic. but he only that after the Church's determination, willfully and stubbornly standeth in his false opinion, not yielding to decree of Councel or the chief Pastors of the Church therein. <i>They</i> (saith S. Augustine <i>ep. 162.</i> ) <i>that defend their sentence (though false and perverse) with no stubborn stomach or obstinate heart, specially if it be such as themselves by bold presumption broached not, but received it of their deceived parents, and do seek the truth warily and carefully, being ready to be reformed if they find it, such are not to be reputed among Heretics.</i> And again <i>li. 18 de Civit. c. 51. </i> <cr>[2]</cr> <i>They that in the Church of Christ have any crazed or perverse opinion, if being admonished to be of a sound and right opinion, they resist obstinately, and will not amend their pestiferous opinions, but persist in defense of them, are thereby become Heretics, and going forth out of the Church, are counted for enemies that exercise us.</i> Again <i>li. 4. de Bapt. cont. Donat. c. 16. He is an Heretic that, when the doctrine of the Catholic faith is made plain and manifest unto him, had rather resist it, and choose that which himself held &c.</i> And in diverse places he declareth that S. Cyprian, though he held an error, yet was no Heretic, because he would not have defended it after a general Councel had declared it to be an error. <i>li. 2. de bapt. c. 4.</i> So Possidonius in the life of S. Augustine <cr>[3]</cr> reporteth, how, after the determination of the See Apostolic that Pelagius' opinion was heretical, all men esteemed Pelagius an Heretic, and the Emperor made laws against him as against an Heretic. Again S. Augustine saith, <i>He is an Heretic in my opinion, that for some temporal commodity, and specially for his glory and principality, coineth or else followeth false or new opinions.</i> de utilit. credendi cap. 1. <cr>[1]</cr> Let our Protestants behold themselves in this glass, and withal let them mark all other properties that old Heretics ever had, and they shall find all definitions and marks of an Heretic to fall upon themselves. And therefore they must not marvel if we warn all Catholic men by the words of the Apostle in this place, to take heed of them, and to shun their preachings, books, conventicles and companies. <cr>[2]</cr> Neither need the people be curious to know what they say, much less to confute them: but they must trust God's Church, which doth refute and condemn them. And it is enough for them to know that they be condemned, as S. Augustine noteth in the later end of his book de heresibus. And S. Cyprian <cr>[3]</cr> saith notably to Antonianus demanding curiously what heresies Novatianus did teach: <i>No matter,</i> saith he, <i>What heresies he hath or preacheth, when he teacheth without,</i> that is to say, out of the Church. 11. Subverted.] <na>◦</na> Heretics be often incorrigible, yet the Church of God ceaseth not by all means possible to revoke them. therefore S. Augustine saith <i>ep. 162. The Heretic himself though swelling with odious and detestable pride, and mad with the frowardness of wicked contention, as We admonish that he be avoided lest he deceive the weaklings and little ones, so we refuse not by all means possible to seek his amendment and reformation.</i> 11. By his own judgement.] <na>◦</na> Other grievous offenders be separated by excommunication from the communion of Saints and the fellowship of God's Church, by the sentence of their Superiors in the same Church: but Heretics more miserable and infortunate than they, run out of the Church of their own accord, and so give sentence against their own souls to damnation."
+          "text": "All that are with me, salute thee: salute them that love us in the faith. The grace of God be with you all. Amen. 10. A man that is an Heretic.] <cr>[1]</cr> Not every one that erreth in religion, is an Heretic. but he only that after the Church's determination, willfully and stubbornly standeth in his false opinion, not yielding to decree of Councel or the chief Pastors of the Church therein. <i>They</i> (saith S. Augustine <i>ep. 162.</i> ) <i>that defend their sentence (though false and perverse) with no stubborn stomach or obstinate heart, specially if it be such as themselves by bold presumption broached not, but received it of their deceived parents, and do seek the truth warily and carefully, being ready to be reformed if they find it, such are not to be reputed among Heretics.</i> And again <i>li. 18 de Civit. c. 51. </i> <cr>[2]</cr> <i>They that in the Church of Christ have any crazed or perverse opinion, if being admonished to be of a sound and right opinion, they resist obstinately, and will not amend their pestiferous opinions, but persist in defense of them, are thereby become Heretics, and going forth out of the Church, are counted for enemies that exercise us.</i> Again <i>li. 4. de Bapt. cont. Donat. c. 16. He is an Heretic that, when the doctrine of the Catholic faith is made plain and manifest unto him, had rather resist it, and choose that which himself held &c.</i> And in diverse places he declareth that S. Cyprian, though he held an error, yet was no Heretic, because he would not have defended it after a general Councel had declared it to be an error. <i>li. 2. de bapt. c. 4.</i> So Possidonius in the life of S. Augustine <cr>[3]</cr> reporteth, how, after the determination of the See Apostolic that Pelagius' opinion was heretical, all men esteemed Pelagius an Heretic, and the Emperor made laws against him as against an Heretic. Again S. Augustine saith, <i>He is an Heretic in my opinion, that for some temporal commodity, and specially for his glory and principality, coineth or else followeth false or new opinions.</i> de utilit. credendi cap. 1.",
+          "cross_refs": [
+            {
+              "text": "Vit. Aug. c. 18."
+            },
+            {
+              "text": "No matter What heresies he hath or preacheth, when he teacheth without"
+            },
+            {
+              "text": "Ep. 52. nu. 7."
+            }
+          ],
+          "notes": [
+            {
+              "label": "◦",
+              "text": "Heretics be often incorrigible, yet the Church of God ceaseth not by all means possible to revoke them. therefore S. Augustine saith ep. 162. The Heretic himself though swelling with odious and detestable pride, and mad with the frowardness of wicked contention, as We admonish that he be avoided lest he deceive the weaklings and little ones, so we refuse not by all means possible to seek his amendment and reformation ."
+            },
+            {
+              "label": "◦",
+              "text": "The Church seeketh the amendment of the most obstinate Heretics. 11. By his own judgement.]"
+            },
+            {
+              "label": "◦",
+              "text": "Other grievous offenders be separated by excommunication from the communion of Saints and the fellowship of God's Church, by the sentence of their Superiors in the same Church: but Heretics more miserable and infortunate than they, run out of the Church of their own accord, and so give sentence against their own souls to damnation."
+            },
+            {
+              "label": "◦",
+              "text": "Heretics cut themselves from the Church."
+            }
+          ]
         }
       ],
       "summary": "To teach them obedience unto Princes, and meekness towards all men, considering that we also were as they, till God of his goodness brought us to Baptism. 8. To teach good works, 9. and to avoid vain questions, 10. and obstinate Heretics."
