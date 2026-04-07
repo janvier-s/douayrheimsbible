@@ -139,7 +139,7 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> For the grace of God our Saviour hath appeared to all men: upon the Circumcision of our Lord."
+          "text": "<cr>[1]</cr> For the grace of God our Saviour hath appeared to all men: <cr>[1]</cr> The Epistle at the first Mass on Christmas day, and upon the Circumcision of our Lord."
         },
         {
           "verse": 12,
@@ -177,24 +177,11 @@
         },
         {
           "verse": 4,
-          "text": "But when <cr>[1]</cr> the benignity and <cr>[2]</cr> kindness toward man of our Saviour God appeared:",
-          "cross_refs": [
-            {
-              "text": "c φιλανθρωπία"
-            }
-          ]
+          "text": "But when <cr>[1]</cr> the benignity and <cr>[2]</cr> kindness toward man of our Saviour God appeared: <cr>[1]</cr> b The Epistle at the 2. Mass on Christmas day, & within the octave, and in the Votive Mass of our B. Lady between Christmas and Candlemas. <cr>[2]</cr> <i>c φιλανθρωπία</i>"
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> not by the works of Justice which we did, but according to his mercy he hath saved us <cr>[2]</cr> by the laver of regeneration and renovation of the Holy Ghost,",
-          "cross_refs": [
-            {
-              "text": "2. Tim. 1, 9."
-            },
-            {
-              "text": "(1. Tim. 4. and 2. Tim. 1.)"
-            }
-          ]
+          "text": "<cr>[1]</cr> not by the works of Justice which we did, but according to his mercy he hath saved us <cr>[2]</cr> by the laver of regeneration and renovation of the Holy Ghost, <cr>[1]</cr> <i>2. Tim. 1, 9.</i> <cr>[2]</cr> As before in the Sacrament of holy Orders <i>(1. Tim. 4. and 2. Tim. 1.)</i> so here it is plain that Baptism giveth grace, & that by it as by an instrumental cause we be saved."
         },
         {
           "verse": 6,
@@ -240,7 +227,36 @@
         },
         {
           "verse": 15,
-          "text": "All that are with me, salute thee: salute them that love us in the faith. The grace of God be with you all. Amen."
+          "text": "All that are with me, salute thee: salute them that love us in the faith. The grace of God be with you all. Amen. 10. A man that is an Heretic.] <cr>[1]</cr> Not every one that erreth in religion, is an Heretic. but he only that after the Church's determination, willfully and stubbornly standeth in his false opinion, not yielding to decree of Councel or the chief Pastors of the Church therein. <i>They</i> (saith S. Augustine <i>ep. 162.</i> ) <i>that defend their sentence (though false and perverse) with no stubborn stomach or obstinate heart, specially if it be such as themselves by bold presumption broached not, but received it of their deceived parents, and do seek the truth warily and carefully, being ready to be reformed if they find it, such are not to be reputed among Heretics.</i> And again <i>li. 18 de Civit. c. 51. </i> <cr>[2]</cr> <i>They that in the Church of Christ have any crazed or perverse opinion, if being admonished to be of a sound and right opinion, they resist obstinately, and will not amend their pestiferous opinions, but persist in defense of them, are thereby become Heretics, and going forth out of the Church, are counted for enemies that exercise us.</i> Again <i>li. 4. de Bapt. cont. Donat. c. 16. He is an Heretic that, when the doctrine of the Catholic faith is made plain and manifest unto him, had rather resist it, and choose that which himself held &c.</i> And in diverse places he declareth that S. Cyprian, though he held an error, yet was no Heretic, because he would not have defended it after a general Councel had declared it to be an error. <i>li. 2. de bapt. c. 4.</i> So Possidonius in the life of S. Augustine <cr>[3]</cr> reporteth, how, after the determination of the See Apostolic that Pelagius' opinion was heretical, all men esteemed Pelagius an Heretic, and the Emperor made laws against him as against an Heretic. Again S. Augustine saith, <i>He is an Heretic in my opinion, that for some temporal commodity, and specially for his glory and principality, coineth or else followeth false or new opinions.</i> de utilit. credendi cap. 1. <cr>[1]</cr> Who is properly and Heretic, & who is not. <cr>[2]</cr> Descriptions or marks how to know an Heretic.",
+          "cross_refs": [
+            {
+              "text": "Vit. Aug. c. 18."
+            },
+            {
+              "text": "No matter What heresies he hath or preacheth, when he teacheth without"
+            },
+            {
+              "text": "Ep. 52. nu. 7."
+            }
+          ],
+          "notes": [
+            {
+              "label": "◦",
+              "text": "Heretics be often incorrigible, yet the Church of God ceaseth not by all means possible to revoke them. therefore S. Augustine saith ep. 162. The Heretic himself though swelling with odious and detestable pride, and mad with the frowardness of wicked contention, as We admonish that he be avoided lest he deceive the weaklings and little ones, so we refuse not by all means possible to seek his amendment and reformation ."
+            },
+            {
+              "label": "◦",
+              "text": "The Church seeketh the amendment of the most obstinate Heretics. 11. By his own judgement.]"
+            },
+            {
+              "label": "◦",
+              "text": "Other grievous offenders be separated by excommunication from the communion of Saints and the fellowship of God's Church, by the sentence of their Superiors in the same Church: but Heretics more miserable and infortunate than they, run out of the Church of their own accord, and so give sentence against their own souls to damnation."
+            },
+            {
+              "label": "◦",
+              "text": "Heretics cut themselves from the Church."
+            }
+          ]
         }
       ],
       "summary": "To teach them obedience unto Princes, and meekness towards all men, considering that we also were as they, till God of his goodness brought us to Baptism. 8. To teach good works, 9. and to avoid vain questions, 10. and obstinate Heretics."

@@ -16,13 +16,7 @@
         },
         {
           "verse": 3,
-          "text": "Upon this <na>(a)</na> tell you to your children, and your children to their children, and their children to another generation.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Prophecies pertain not only to those that then live, when they are uttered, but also to all posterity, even to the end of the world, that it may appear what is fulfilled, and what yet resteth to come in due time."
-            }
-          ]
+          "text": "Upon this <na>(a)</na> tell you to your children, and your children to their children, and their children to another generation. <na>(a)</na> Prophecies pertain not only to those that then live, when they are uttered, but also to all posterity, even to the end of the world, that it may appear what is fulfilled, and what yet resteth to come in due time."
         },
         {
           "verse": 4,
@@ -47,13 +41,7 @@
         },
         {
           "verse": 9,
-          "text": "<na>(b)</na> Sacrifice and libation is perished out of the house of our Lord: the priests our Lord's ministers mourned.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "When Jerusalem was taken, and the Temple destroyed by the Babylonians, the sacrifice necessarily ceased according to this & other Prophecies."
-            }
-          ]
+          "text": "<na>(b)</na> Sacrifice and libation is perished out of the house of our Lord: the priests our Lord's ministers mourned. <na>(b)</na> When Jerusalem was taken, and the Temple destroyed by the Babylonians, the sacrifice necessarily ceased according to this & other Prophecies."
         },
         {
           "verse": 10,
@@ -73,13 +61,7 @@
         },
         {
           "verse": 14,
-          "text": "<na>(c)</na> Sacrifice ye a fast, call an assembly, gather together the ancients, all the inhabitants of the land into the house of your God: and cry ye to our Lord:",
-          "notes": [
-            {
-              "label": "c",
-              "text": "Fasting, praying and other good works of many assembling together, are an especial means to appease God's wrath, provoked by former sins."
-            }
-          ]
+          "text": "Sacrifice ye a fast, call an assembly, gather together the ancients, all the inhabitants of the land into the house of your God: and cry ye to our Lord: Fasting, praying and other good works of many assembling together, are an especial means to appease God's wrath, provoked by former sins."
         },
         {
           "verse": 15,
@@ -91,7 +73,11 @@
         },
         {
           "verse": 17,
-          "text": "The beasts are rotted in their dung, the barns are destroyed, the store-houses are dissipated: because the wheat is confounded."
+          "text": "The beasts are rotted in their dung, the barns"
+        },
+        {
+          "verse": 0,
+          "text": "are destroyed, the store-houses are dissipated: because the wheat is confounded."
         },
         {
           "verse": 18,
@@ -113,17 +99,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Sound <na>(a)</na> ye with the trumpet in Sion, howl in my holy mount, let all the inhabitants of the land be troubled: Because <na>(b)</na> the day of our Lord cometh,",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Prophets do often speak in such phrase as if they admonished the people what to do, when indeed they foreshew what they will do in their distress."
-            },
-            {
-              "label": "b",
-              "text": "In the time when God will suffer affliction to fall upon them for their sins."
-            }
-          ]
+          "text": "Sound <na>(a)</na> ye with the trumpet in Sion, howl in my holy mount, let all the inhabitants of the land be troubled: Because <na>(b)</na> the day of our Lord cometh, Prophets do often speak in such phrase as if they admonished the people what to do, when indeed they foreshew what they will do in their distress. <na>(b)</na> In the time when God will suffer affliction to fall upon them for their sins."
         },
         {
           "verse": 2,
@@ -177,17 +153,7 @@
         },
         {
           "verse": 12,
-          "text": "Now therefore saith our Lord: <na>(c)</na> Convert to me in all your heart, <na>(d)</na> in fasting, & in weeping, and in mourning.",
-          "notes": [
-            {
-              "label": "c",
-              "text": "For better moving the heart to true repentance,"
-            },
-            {
-              "label": "d",
-              "text": "God requireth these external works of penance. And where the same are wanting, at least in will, it is a manifest sign that the heart is not truly penitent. S. Ierom."
-            }
-          ]
+          "text": "Now therefore saith our Lord: <na>(c)</na> Convert to me in all your heart, <na>(d)</na> in fasting, & in weeping, and in mourning. <na>(c)</na> For better moving the heart to true repentance, <na>(d)</na> God requireth these external works of penance. And where the same are wanting, at least in will, it is a manifest sign that the heart is not truly penitent. <i>S. Ierom.</i>"
         },
         {
           "verse": 13,
@@ -216,23 +182,11 @@
         },
         {
           "verse": 18,
-          "text": "Our Lord hath been <na>(e)</na> zealous to his land, & hath spared his people.",
-          "notes": [
-            {
-              "label": "e",
-              "text": "Zeal is an indignation rising of love: when one seeth any person or thing which he loveth contemned or wronged. So God hath zeal for his people, when they are unjustly afflicted, more of the malice of their afflicters than for justice. Yet God suffereth oftentimes his people to be punished for their full correction and for their more merit."
-            }
-          ]
+          "text": "Our Lord hath been <na>(e)</na> zealous to his land, & hath spared his people. <na>(e)</na> Zeal is an indignation rising of love: when one seeth any person or thing which he loveth contemned or wronged. So God hath zeal for his people, when they are unjustly afflicted, more of the malice of their afflicters than for justice. Yet God suffereth oftentimes his people to be punished for their full correction and for their more merit."
         },
         {
           "verse": 19,
-          "text": "And our Lord answered, and said to his people: Behold <na>(f)</na> I will send you corn, and wine, and oil, and you shall be replenished with them: & I will give you no more to be a reproach in the Gentiles.",
-          "notes": [
-            {
-              "label": "f",
-              "text": "So that which God here promiseth by his Prophet, touching his protection and delivery of his people, was not fulfilled till after the seventy years of their captivity, nor then fully, but is verified in those that believe in Christ. And especially after this life, when his glorious Saints shall live in eternal joy."
-            }
-          ]
+          "text": "And our Lord answered, and said to his people: Behold <na>(f)</na> I will send you corn, and wine, and oil, and you shall be replenished with them: & I will give you no more to be a reproach in the Gentiles. <na>(f)</na> So that which God here promiseth by his Prophet, touching his protection and delivery of his people, was not fulfilled till after the seventy years of their captivity, nor then fully, but is verified in those that believe in Christ. And especially after this life, when his glorious Saints shall live in eternal joy."
         },
         {
           "verse": 20,
@@ -268,18 +222,7 @@
         },
         {
           "verse": 28,
-          "text": "And it shall be after this: <na>(g)</na> I will pour out my spirit upon all flesh: and your sons, and your daughters shall prophesy: your ancients shall dream dreams, and your young men shall see visions. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "Isa. 44. Act. 2."
-            }
-          ],
-          "notes": [
-            {
-              "label": "g",
-              "text": "That this is a plain prophecy of the mission of the Holy Ghost performed on Whitsunday, the fiftieth day after Christ's Resurrection, and the tenth after his Ascension, S. Peter teacheth. Act. 2."
-            }
-          ]
+          "text": "And it shall be after this: <na>(g)</na> I will pour out my spirit upon all flesh: and your sons, and your daughters shall prophesy: your ancients shall dream dreams, and your young men shall see visions. <cr>[1]</cr> <na>(g)</na> That this is a plain prophecy of the mission of the Holy Ghost performed on Whitsunday, the fiftieth day after Christ's Resurrection, and the tenth after his Ascension, S. Peter teacheth. <i>Act. 2.</i> <cr>[1]</cr> <i>Isa. 44. Act. 2.</i>"
         },
         {
           "verse": 29,
@@ -310,23 +253,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Because lo <na>(a)</na> in those days, and in that time when I shall convert the captivity of Juda, & Jerusalem,",
-          "notes": [
-            {
-              "label": "a",
-              "text": "S. Ierom & most other expositers understand this chapter of the general Judgement, though some expound it of the relaxation of the Jews from captivity, and of the punishment of their enemies."
-            }
-          ]
+          "text": "Because lo <na>(a)</na> in those days, and in that time when I shall convert the captivity of Juda, & Jerusalem, <na>(a)</na> S. Ierom & most other expositers understand this chapter of the general Judgement, though some expound it of the relaxation of the Jews from captivity, and of the punishment of their enemies."
         },
         {
           "verse": 2,
-          "text": "Iwill gather together all Nations, and will lead them into the valley of <na>(b)</na> Josaphat: and I will plead with them there upon my people, and mine inheritance Israel, whom they have dispersed in the nations, and have divided my land.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "And so Iosaphat is literally understood the place of the east side of Jerusalem between the Temple and mount Olivet whence our Saviour ascended into heaven. Neither is there any reason why the Judgement should rather be in another place, seeing this is expressed by name, signifying, The judgement of our Lord."
-            }
-          ]
+          "text": "Iwill gather together all Nations, and will lead them into the valley of <na>(b)</na> Josaphat: and I will plead with them there upon my people, and mine inheritance Israel, whom they have dispersed in the nations, and have divided my land. <na>(b)</na> And so <i>Iosaphat</i> is literally understood the place of the east side of Jerusalem between the Temple and mount Olivet whence our Saviour ascended into heaven. Neither is there any reason why the Judgement should rather be in another place, seeing this is expressed by name, signifying, <i>The judgement of our Lord.</i>"
         },
         {
           "verse": 3,
@@ -379,18 +310,7 @@
         },
         {
           "verse": 14,
-          "text": "<na>(c)</na> Peoples^ peoples in the valley of concision, because the day of our Lord is nigh in the valley of concision. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "Iere. 21. Amos. 1."
-            }
-          ],
-          "notes": [
-            {
-              "label": "c",
-              "text": "This duplication of the word peoples importeth an innumerable multitude in that valley of concision (also repeated) to signify, that there all God's enemies shall be utterly damned to eternal destruction, as it were cut in pieces, as fuel to the fire of hell. Psal. 128. v. 4. Our just Lord will cut the necks of sinners."
-            }
-          ]
+          "text": "<na>(c)</na> Peoples^ peoples in the valley of concision, because the day of our Lord is nigh in the valley of concision. <cr>[1]</cr> <na>(c)</na> This duplication of the word <i>peoples</i> importeth an innumerable multitude in that valley of <i>concision</i> (also repeated) to signify, that there all God's enemies shall be utterly damned to eternal destruction, as it were cut in pieces, as fuel to the fire of hell. <i>Psal. 128. v. 4. Our just Lord will cut the necks of sinners.</i> <cr>[1]</cr> <i>Iere. 21. Amos. 1.</i>"
         },
         {
           "verse": 15,

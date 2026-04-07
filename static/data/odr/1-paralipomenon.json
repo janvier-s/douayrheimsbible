@@ -1,6 +1,6 @@
 {
   "book": "1-paralipomenon",
-  "book_title": "THE FIRST BOOK OF PARALIPOMENON. IN",
+  "book_title": null,
   "hebrew_title": null,
   "chapters": [
     {
@@ -8,13 +8,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Adam, <na>(a)</na> Seth, Enos,",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Adam had two other sons before Seth, but Cain's race was utterly extinguished by the flood, and Abel had no children."
-            }
-          ]
+          "text": "Adam, <na>(a)</na> Seth, Enos, <na>(a)</na> Adam had two other sons before Seth, but Cain's race was utterly extinguished by the flood, and Abel had no children."
         },
         {
           "verse": 2,
@@ -118,13 +112,7 @@
         },
         {
           "verse": 27,
-          "text": "Abram, this is <na>(b)</na> Abraham.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "As before the right line of Adam to Noe, so here from his son Sem to Abram. For mystery sake God changed his name to Abraham. Gen. 17."
-            }
-          ]
+          "text": "Abram, this is Abraham. As before the right line of Adam to Noe, so here from his son Sem to Abram. For mystery sake God changed his name to Abraham. <i>Gen. 17.</i>"
         },
         {
           "verse": 28,
@@ -247,14 +235,12 @@
       "chapter": 2,
       "verses": [
         {
+          "verse": 0,
+          "text": "1 Paralipomenon 2"
+        },
+        {
           "verse": 1,
-          "text": "And the children of <na>(a)</na> Israel: Ruben, Simeon, Levi, Juda, Issachar, and Zabulon,",
-          "notes": [
-            {
-              "label": "a",
-              "text": "This Patriarch first called Jacob signifying supplanter , was afterward called Israel , that is, Seeing God , or valiant with God. Gen. 35."
-            }
-          ]
+          "text": "And the children of <na>(a)</na> Israel: Ruben, Simeon, Levi, Juda, Issachar, and Zabulon, <na>(a)</na> This Patriarch first called <i>Jacob</i> signifying <i>supplanter</i> , was afterward called <i>Israel</i> , that is, <i>Seeing God</i> , or <i>valiant with God. Gen. 35.</i>"
         },
         {
           "verse": 2,
@@ -278,13 +264,7 @@
         },
         {
           "verse": 7,
-          "text": "And the sons of Charmi: <na>(b)</na> Achar, who troubled Israel, and sinned in the theft of the anathema.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "Either this man had two names, or there is error in the last letter, here, or"
-            }
-          ]
+          "text": "And the sons of Charmi: <na>(b)</na> Achar, who troubled Israel, and sinned in the theft of the anathema. <na>(b)</na> Either this man had two names, or there is error in the last letter, here, or"
         },
         {
           "verse": 8,
@@ -328,13 +308,7 @@
         },
         {
           "verse": 18,
-          "text": "But <na>(c)</na> Caleb the son of Hesron took a wife named Azuba, of whom he begat Jerioth: and her sons were Jaser, and Sobab, and Ardon.",
-          "notes": [
-            {
-              "label": "c",
-              "text": "Otherwise called Calubi. v. 9."
-            }
-          ]
+          "text": "But <na>(c)</na> Caleb the son of Hesron took a wife named Azuba, of whom he begat Jerioth: and her sons were Jaser, and Sobab, and Ardon. <na>(c)</na> Otherwise called Calubi. <i>v. 9.</i>"
         },
         {
           "verse": 19,
@@ -354,13 +328,7 @@
         },
         {
           "verse": 23,
-          "text": "And he took Gessur, and Aram, the towns of Jair, and Canath, and the villages thereof, threescore cities, all these are <na>(d)</na> the sons of Machir the father of Galaad.",
-          "notes": [
-            {
-              "label": "d",
-              "text": "By sons , as often elsewhere, are understood nephews & other offspring."
-            }
-          ]
+          "text": "And he took Gessur, and Aram, the towns of Jair, and Canath, and the villages thereof, threescore cities, all these are <na>(d)</na> the sons of Machir the father of Galaad. <na>(d)</na> By <i>sons</i> , as often elsewhere, are understood nephews & other offspring."
         },
         {
           "verse": 24,
@@ -456,7 +424,7 @@
         },
         {
           "verse": 47,
-          "text": "And the sons of Jahaddai, Regom, and Joathan, and Gesan, and Phalet, and Epha, and Saaph."
+          "text": "And the sons of Jahaddai, Regom, and Joathan, and Gesan, and Phalet, and Epha, and Saaph. 1 Paralipomenon 2"
         },
         {
           "verse": 48,
@@ -489,13 +457,7 @@
         },
         {
           "verse": 54,
-          "text": "The sons of Salma, Bethlehem, and Netophathi, the <na>(e)</na> Crowns of the house of Joab, and the Half of the resting of Sarai.",
-          "notes": [
-            {
-              "label": "e",
-              "text": "Valiant men by whose help Joab got victories and triumphant crowns."
-            }
-          ]
+          "text": "The sons of Salma, Bethlehem, and Netophathi, the <na>(e)</na> Crowns of the house of Joab, and the Half of the resting of Sarai. <na>(e)</na> Valiant men by whose help Joab got victories and triumphant crowns."
         },
         {
           "verse": 55,
@@ -565,13 +527,7 @@
         },
         {
           "verse": 15,
-          "text": "And the sons of Josias were, the firstbegotten Johanam, the second <na>(a)</na> Joakim, the third Sedecias, the fourth Sellum.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "S. Matthew omitteth this Joakim, and counteth Jechonias as the son of Josias. The same Jechonias was also otherwise called Joachin, 4. Reg. 24. v. 6. & 25. v. 27. S. Hierom. li. 1. in Matth."
-            }
-          ]
+          "text": "And the sons of Josias were, the firstbegotten Johanam, the second <na>(a)</na> Joakim, the third Sedecias, the fourth Sellum. <na>(a)</na> S. Matthew omitteth this Joakim, and counteth Jechonias as the son of Josias. The same Jechonias was also otherwise called Joachin, <i>4. Reg. 24. v. 6. & 25. v. 27. S. Hierom. li. 1. in Matth.</i>"
         },
         {
           "verse": 16,
@@ -599,13 +555,7 @@
         },
         {
           "verse": 22,
-          "text": "The son of Sechenias: Semeia, whose sons were Hattus, and Jegaal, and Baria, and Naaria, & Saphat, <na>(b)</na> six in number.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "Semeia with his five sons are counted six sons of Sechenias, though Semeia only was his proper son, the other his nephews. See annotation. ch. 1. num. 3."
-            }
-          ]
+          "text": "The son of Sechenias: Semeia, whose sons were Hattus, and Jegaal, and Baria, and Naaria, & Saphat, <na>(b)</na> six in number. <na>(b)</na> Semeia with his five sons are counted six sons of Sechenias, though Semeia only was his proper son, the other his nephews. <i>See annotation. ch. 1. num. 3.</i>"
         },
         {
           "verse": 23,
@@ -659,13 +609,7 @@
         },
         {
           "verse": 10,
-          "text": "But <na>(a)</na> Jabes invocated the God of Israel, saying: If blessing thou wilt bless me, and wilt enlarge my borders, and thy hand be with me, and thou wilt make that I be not oppressed by malice. And God granted the things that he prayed for.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "In joining a vow to his prayer he imitated holy Jacob. Gen. 28. And they both desired temporal things for the better serving of God, & advancing his glory; especially that they might be assisted with grace not to yield to tentations, nor sin of malice."
-            }
-          ]
+          "text": "But <na>(a)</na> Jabes invocated the God of Israel, saying: If blessing thou wilt bless me, and wilt enlarge my borders, and thy hand be with me, and thou wilt make that I be not oppressed by malice. And God granted the things that he prayed for. <na>(a)</na> In joining a vow to his prayer he imitated holy Jacob. <i>Gen. 28.</i> And they both desired temporal things for the better serving of God, & advancing his glory; especially that they might be assisted with grace not to yield to tentations, nor sin of malice."
         },
         {
           "verse": 11,
@@ -681,13 +625,7 @@
         },
         {
           "verse": 14,
-          "text": "Maonathi begat Ophra, and Saraia begat Joab <na>(b)</na> the father of the Vale of Artificers: for there were artificers.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "Chief lord of the valley; where the artificers dwelt that made the Temple."
-            }
-          ]
+          "text": "Maonathi begat Ophra, and Saraia begat Joab <na>(b)</na> the father of the Vale of Artificers: for there were artificers. <na>(b)</na> Chief lord of the valley; where the artificers dwelt that made the Temple."
         },
         {
           "verse": 15,
@@ -779,7 +717,7 @@
         },
         {
           "verse": 37,
-          "text": "Ziza also the son of Zephei the son of Allon the son of Adaia, the son of Semri the son of Samaia."
+          "text": "Ziza also the son of Zephei the 1 Paralipomenon 4 son of Allon the son of Adaia, the son of Semri the son of Samaia."
         },
         {
           "verse": 38,
@@ -813,13 +751,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Also the sons of Ruben the first-begotten of Israel (for he was his first-begotten: <na>(a)</na> but when he had violated his father's bed, his first-birth-right was given to the sons of Joseph the son of Israel, and he was not reputed for the first-begotten.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "See annotations; Gen. 49. nu. 4."
-            }
-          ]
+          "text": "Also the sons of Ruben the first-begotten of Israel (for he was his first-begotten: <na>(a)</na> but when he had violated his father's bed, his first-birth-right was given to the sons of Joseph the son of Israel, and he was not reputed for the first-begotten. <na>(a)</na> See annotations; <i>Gen. 49. nu. 4.</i>"
         },
         {
           "verse": 2,
@@ -895,13 +827,7 @@
         },
         {
           "verse": 20,
-          "text": "gave them aid. And the Agarenes were delivered into their hands, and all that were with them, because they called upon God when they fought: and he heard them, <na>(b)</na> because they believed in him.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "Of these and the like, S. Paul saith: By faith they overcame Kingdoms. Heb. 11."
-            }
-          ]
+          "text": "gave them aid. And the Agarenes were delivered into their hands, and all that were with them, because they called upon God when they fought: and he heard them, <na>(b)</na> because they believed in him. <na>(b)</na> Of these and the like, S. Paul saith: <i>By faith they</i> 1 Paralipomenon 5 <i>overcame Kingdoms. Heb. 11.</i>"
         },
         {
           "verse": 21,
@@ -947,13 +873,7 @@
         },
         {
           "verse": 4,
-          "text": "<na>(a)</na> Eleazar begat Phinees, and Phinees begat Abisue,",
-          "notes": [
-            {
-              "label": "a",
-              "text": "The lineal succession of High Priests from Aaron to the captivity in Babylon. Nicephorus counteth some others among these. li. 2. c. 4. Iosephus also differeth from this catalogue. li. 10. c. 11."
-            }
-          ]
+          "text": "<na>(a)</na> Eleazar begat Phinees, and Phinees begat Abisue, <na>(a)</na> The lineal succession of High Priests from Aaron to the captivity in Babylon. <i>Nicephorus counteth some others among these. li. 2. c. 4. Iosephus also differeth from this catalogue. li. 10. c. 11.</i>"
         },
         {
           "verse": 5,
@@ -1074,7 +994,7 @@
         },
         {
           "verse": 33,
-          "text": "And these are they, which assisted with their sons, of the sons of Caath, Hemam singing man, the son of Joel, the son of Samuel,"
+          "text": "And these are they, which assisted with their sons, 1 Paralipomenon 6 of the sons of Caath, Hemam singing man, the son of Joel, the son of Samuel,"
         },
         {
           "verse": 34,
@@ -1154,13 +1074,7 @@
         },
         {
           "verse": 53,
-          "text": "<na>(b)</na> Sadoc his son, Achimaas his son.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "In Sadoc. (3. Reg. 2.) the high Priesthood was reduced to the line of Eleazar which by God's ordinance was translated to Heli of Ithamar's line: but still continued in the line of Aaron. The rest of Sadoch's line by Achimaas &c. to Josedech in the captivity appeareth before, v. 9. ad 15."
-            }
-          ]
+          "text": "<na>(b)</na> Sadoc his son, Achimaas his son. <na>(b)</na> In Sadoc. <i>(3. Reg. 2.)</i> the high Priesthood was reduced to the line of Eleazar which by God's ordinance was translated to Heli of Ithamar's line: but still continued in the line of Aaron. The rest of Sadoch's line by Achimaas &c. to Josedech in the captivity appeareth before, <i>v. 9. ad 15.</i>"
         },
         {
           "verse": 54,
@@ -1252,7 +1166,7 @@
         },
         {
           "verse": 76,
-          "text": "Moreover of the tribe of Nephthali, Cedes in Galilee and the suburbs thereof, Hamon with the suburbs thereof, and Cariathaim, and the suburbs thereof."
+          "text": "Moreover of the 1 Paralipomenon 6 tribe of Nephthali, Cedes in Galilee and the suburbs thereof, Hamon with the suburbs thereof, and Cariathaim, and the suburbs thereof."
         },
         {
           "verse": 77,
@@ -1302,13 +1216,7 @@
         },
         {
           "verse": 6,
-          "text": "The sons of Benjamin: Bela, and Bechor, and <na>(a)</na> Jadihel, three.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Gen. 46. this third son is called Asbel: & seven more are there recited. And so in the rest is much difference: but all may be reconciled by such rules as are noted. chap. 1."
-            }
-          ]
+          "text": "The sons of Benjamin: Bela, and Bechor, and <na>(a)</na> Jadihel, three. <na>(a)</na> <i>Gen. 46.</i> this third son is called Asbel: & seven more are there recited. And so in the rest is much difference: but all may be reconciled by such rules as are noted. <i>chap. 1.</i>"
         },
         {
           "verse": 7,
@@ -1356,17 +1264,7 @@
         },
         {
           "verse": 18,
-          "text": "And his sister <na>(b)</na> Queen bare <na>(c)</na> Goodlieman, & Abiezer, & Mohola.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "Molecheth, Regina; Queen."
-            },
-            {
-              "label": "c",
-              "text": "Ishod, Virum decorum , that is, A comely, personable, or goodly man. So we leave the Hebrew names in this place because S. Jerom, and the whole Church doth so in the Latin text, which we translate."
-            }
-          ]
+          "text": "And his sister <na>(b)</na> Queen bare <na>(c)</na> Goodlieman, & Abiezer, & Mohola. <na>(b)</na> <i>Molecheth, Regina; Queen.</i> <na>(c)</na> <i>Ishod, Virum decorum</i> , that is, A comely, personable, or goodly man. So we leave the Hebrew names in this place because S. Jerom, and the whole Church doth so in the Latin text, which we translate."
         },
         {
           "verse": 19,
@@ -1386,7 +1284,7 @@
         },
         {
           "verse": 23,
-          "text": "And he went in unto his wife: who conceived and bare a son, and he called his name Beria, for that he was born in the evils of his house:"
+          "text": "And 1 Paralipomenon 7 he went in unto his wife: who conceived and bare a son, and he called his name Beria, for that he was born in the evils of his house:"
         },
         {
           "verse": 24,
@@ -1596,7 +1494,7 @@
         },
         {
           "verse": 34,
-          "text": "And the son of Jonathas, Meribbaal: and Meribbaal begat Micha."
+          "text": "And the son of Jonathas, Meribbaal: and Meribbaal 1 Paralipomenon 8 begat Micha."
         },
         {
           "verse": 35,
@@ -1630,13 +1528,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "All Israel therefore <na>(a)</na> was numbered: and the sum of them was written in the Book of the kings of Israel & Juda and they were transported into Babylon for their sin.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "The genealogies of all Israel being hitherto recited before their captivity, others are now added which first returned to Jerusalem after their release."
-            }
-          ]
+          "text": "All Israel therefore <na>(a)</na> was numbered: and the sum of them was written in the Book of the kings of Israel & Juda and they were transported into Babylon for their sin. <na>(a)</na> The genealogies of all Israel being hitherto recited before their captivity, others are now added which first returned to Jerusalem after their release."
         },
         {
           "verse": 2,
@@ -1732,7 +1624,7 @@
         },
         {
           "verse": 25,
-          "text": "And their brethren dwelt in villages, & came upon their Sabbaths from time to time."
+          "text": "And their brethren dwelt in 1 Paralipomenon 9 villages, & came upon their Sabbaths from time to time."
         },
         {
           "verse": 26,
@@ -1818,12 +1710,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> the Philisthiims fought against Israel, and the men of Israel fled from the Palesthines, and they fell wounded in mount Gelboe.",
-          "cross_refs": [
-            {
-              "text": "The second part. King Saul and all his family overthrown."
-            }
-          ]
+          "text": "And <cr>[1]</cr> the Philisthiims fought against Israel, and the men of Israel fled from the Palesthines, and they fell wounded in mount Gelboe. <cr>[1]</cr> The second part. King Saul and all his family overthrown."
         },
         {
           "verse": 2,
@@ -1867,17 +1754,11 @@
         },
         {
           "verse": 12,
-          "text": "every one of the valiant men arose, and took the bodies of Saul and of his sons, and brought them into Jabes, & buried their bones under an oak, that was in Jabes, and they fasted seven days."
+          "text": "every one of the valiant men 1 Paralipomenon 10 arose, and took the bodies of Saul and of his sons, and brought them into Jabes, & buried their bones under an oak, that was in Jabes, and they fasted seven days."
         },
         {
           "verse": 13,
-          "text": "Saul therefore died for his iniquities, for that he <na>(a)</na> transgressed the commandment of our Lord which he had commanded, and kept it not: yea and besides also consulted the Pythoness,",
-          "notes": [
-            {
-              "label": "a",
-              "text": "He offered Sacrifice on an Altar without warrant. 1. Reg. 13. And destroyed not the Amalecites, as he was commanded. 1. Reg. 15."
-            }
-          ]
+          "text": "Saul therefore died for his iniquities, for that he <na>(a)</na> transgressed the commandment of our Lord which he had commanded, and kept it not: yea and besides also consulted the Pythoness, <na>(a)</na> He offered Sacrifice on an Altar without warrant. <i>1. Reg. 13.</i> And destroyed not the Amalecites, as he was commanded. <i>1. Reg. 15.</i>"
         },
         {
           "verse": 14,
@@ -1891,12 +1772,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "All <cr>[1]</cr> Israel therefore was gathered together to David in Hebron, saying: We are thy bone, and thy flesh.",
-          "cross_refs": [
-            {
-              "text": "The third part. King David's reign and his special acts."
-            }
-          ]
+          "text": "All <cr>[1]</cr> Israel therefore was gathered together to David in Hebron, saying: We are thy bone, and thy flesh. <cr>[1]</cr> The third part. King David's reign and his special acts."
         },
         {
           "verse": 2,
@@ -1968,7 +1844,7 @@
         },
         {
           "verse": 19,
-          "text": "saying: God forbid that in the sight of my God I should do this, and should drink the blood of these men: because in the peril of their lives they have brought me the water. And for this cause he would not drink. These things did the three most valiants."
+          "text": "saying: God forbid that in the sight of my God I should do this, and should drink the blood of these men: because in the peril of their lives they have brought me the water. And for this cause he would not 1 Paralipomenon 11 drink. These things did the three most valiants."
         },
         {
           "verse": 20,
@@ -1980,13 +1856,7 @@
         },
         {
           "verse": 22,
-          "text": "Banaias the son of Joiada a most valiant man, of Cabseel: who had done many facts, he struck the <na>(a)</na> two Ariel of Moab: & he went down, and slew the lion in the midst of the cistern in the time of snow.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Two stout men of Moab, as if they had been lions. 2. Reg. 23. v. 20."
-            }
-          ]
+          "text": "Banaias the son of Joiada a most valiant man, of Cabseel: who had done many facts, he struck the <na>(a)</na> two Ariel of Moab: & he went down, and slew the lion in the midst of the cistern in the time of snow. <na>(a)</na> Two stout men of Moab, as if they had been lions. <i>2. Reg. 23. v. 20.</i>"
         },
         {
           "verse": 23,
@@ -2148,7 +2018,7 @@
         },
         {
           "verse": 15,
-          "text": "These are they which passed Jordan the first month, when it used to flow over his banks: & they chased away all that dwelt in the valleys toward the east quarter and the west."
+          "text": "These are they which passed Jordan the first month, when it used to flow over his banks: & they chased away all that dwelt in 1 Paralipomenon 12 the valleys toward the east quarter and the west."
         },
         {
           "verse": 16,
@@ -2176,13 +2046,7 @@
         },
         {
           "verse": 22,
-          "text": "Yea & there came every day to David to help him, till it became a great number, as it were <na>(a)</na> the army of God.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "An army of many good men, well disposed in order and concord, is called the army of God , like the great number of Angels, which to us are innumerable. Iob. 25."
-            }
-          ]
+          "text": "Yea & there came every day to David to help him, till it became a great number, as it were <na>(a)</na> the army of God. <na>(a)</na> An army of many good men, well disposed in order and concord, is called <i>the army of God</i> , like the great number of Angels, which to us <i>are innumerable. Iob. 25.</i>"
         },
         {
           "verse": 23,
@@ -2263,6 +2127,10 @@
       "chapter": 13,
       "verses": [
         {
+          "verse": 0,
+          "text": "1 Paralipomenon 13 <i>Obededom.</i>"
+        },
+        {
           "verse": 1,
           "text": "And David took counsel with the tribunes, and centurions, and all the commanders,"
         },
@@ -2312,24 +2180,14 @@
         },
         {
           "verse": 13,
-          "text": "And for this cause he brought it not unto himself, that is, into the city of David, but turned it away into the house of <na>(a)</na> Obededom the <na>(b)</na> Getheite.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Obededom was a Levite, (c. 15. v. 18.) and therefore more meet to keep the ark:"
-            },
-            {
-              "label": "b",
-              "text": "Called a Getheite because he had dwelt in the town of Geth."
-            }
-          ]
+          "text": "And for this cause he brought it not unto himself, that is, into the city of David, but turned it away into the house of <na>(a)</na> Obededom the <na>(b)</na> Getheite. <na>(a)</na> Obededom was a Levite, <i>(c. 15. v. 18.)</i> and therefore more meet to keep the ark: <na>(b)</na> Called a Getheite because he had dwelt in the town of Geth."
         },
         {
           "verse": 14,
           "text": "Therefore the Ark of God remained in the house of Obededom three months: & our Lord blessed his house, and all things that he had"
         }
       ],
-      "summary": "The Ark is brought from Abinadab's house, 8. David and others dancing before it. 9. Oza for touching it is strucken dead. 13. Whereupon David fearing to bring it to Jerusalem, it remaineth three months in the house of Obededom."
+      "summary": "The Ark is brought from Abinadab's house, 8. David and others dancing before it. 9. Oza for touching it is strucken dead. 13. Whereupon David fearing to bring it to Jerusalem, it remaineth three months in the house of"
     },
     {
       "chapter": 14,
@@ -2396,7 +2254,7 @@
         },
         {
           "verse": 16,
-          "text": "David therefore did as God had commanded him, & struck the camp of the Philisthians from Gabaon unto Gazera."
+          "text": "David therefore did as God had 1 Paralipomenon 14 commanded him, & struck the camp of the Philisthians from Gabaon unto Gazera."
         },
         {
           "verse": 17,
@@ -2514,13 +2372,7 @@
         },
         {
           "verse": 27,
-          "text": "Moreover David was clothed with a robe of fine linen, & all the Levites that carried the Ark, and the singing men, and Chonenias the Prince of prophecy among the singers: and David also was clothed with an <na>(a)</na> Ephod of linen.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Another linen garment used by Prophets, such as Samuel did wear being a child. 1. Reg. 2."
-            }
-          ]
+          "text": "Moreover David was clothed with a robe of fine linen, & all the Levites that carried the Ark, and the singing men, and Chonenias the Prince of prophecy among the singers: and David also was clothed with an <na>(a)</na> Ephod of linen. <na>(a)</na> Another linen garment used by Prophets, such as Samuel did wear being a child. <i>1. Reg. 2.</i> 1 Paralipomenon 15"
         },
         {
           "verse": 28,
@@ -2542,13 +2394,7 @@
         },
         {
           "verse": 2,
-          "text": "And when David had finished offering holocausts, and pacifics, he <na>(a)</na> blessed the people in the name of our Lord.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Not only King David being a holy Prophet, but any other Superior might bless his subjects."
-            }
-          ]
+          "text": "And when David had finished offering holocausts, and pacifics, he <na>(a)</na> blessed the people in the name of our Lord. <na>(a)</na> Not only King David being a holy Prophet, but any other Superior might bless his subjects."
         },
         {
           "verse": 3,
@@ -2556,13 +2402,7 @@
         },
         {
           "verse": 4,
-          "text": "And he <na>(b)</na> appointed before the Ark of our Lord of the Levites, that should minister, and should remember his works, and glorify, and praise our Lord the God of Israel:",
-          "notes": [
-            {
-              "label": "b",
-              "text": "That he also disposed certain offices to Levites was by special privilege, which was no prejudice to the high Priest's authority, for superior power is proved by God's institution, rather than by facts, either of good men, which do many things by way of dispensation, or of evil usurping without warrant, that to them pertaineth not. For it is clear that God instituted supreme spiritual power in the high Priest, Deut. 17. And all kings and temporal princes are to receive the law at the Priest's hand, ibidem. v. 18. Eleazar the high Priest was appointed to consult our Lord for Iosue, Nu. 18. Finally by God's ordinance, the law of truth was in the mouth of Priests. Malac. 2."
-            }
-          ]
+          "text": "And he <na>(b)</na> appointed before the Ark of our Lord of the Levites, that should minister, and should remember his works, and glorify, and praise our Lord the God of Israel: <na>(b)</na> That he also disposed certain offices to Levites was by special privilege, which was no prejudice to the high Priest's authority, for superior power is proved by God's institution, rather than by facts, either of good men, which do many things by way of dispensation, or of evil usurping without warrant, that to them pertaineth not. For it is clear that God instituted supreme spiritual power in the high Priest, <i>Deut. 17.</i> And all kings and temporal princes are to receive the law at the Priest's hand, <i>ibidem. v. 18.</i> Eleazar the high Priest was appointed to consult our Lord for Iosue, <i>Nu. 18.</i> Finally by God's ordinance, <i>the law of truth was in the mouth of Priests. Malac. 2.</i>"
         },
         {
           "verse": 5,
@@ -2664,7 +2504,7 @@
         },
         {
           "verse": 27,
-          "text": "Confession and magnificence before him: strength and joy in his place."
+          "text": "Confession and 1 Paralipomenon 16 magnificence before him: strength and joy in his place."
         },
         {
           "verse": 28,
@@ -2779,17 +2619,11 @@
         },
         {
           "verse": 10,
-          "text": "since the days that I gave judges to my people Israel, & humbled all thine enemies. I therefore tell thee, that our Lord will build thee <na>(a)</na> a house.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "That is continue and preserve thy seed, & family, as we see it performed even to the B. Virgin Mary and Christ of the house of David. Mat. 1. Luc. 2. 3."
-            }
-          ]
+          "text": "since the days that I gave judges to my people Israel, & humbled all thine enemies. I therefore tell thee, that our Lord will build thee <na>(a)</na> a house. <na>(a)</na> That is continue and preserve thy seed, & family, as we see it performed even to the B. Virgin Mary and Christ of the house of David. <i>Mat. 1. Luc. 2. 3.</i>"
         },
         {
           "verse": 11,
-          "text": "And when thou shalt have accomplished thy days to go to thy fathers, I will raise up thy seed after thee, which shall be of thy children: and I will establish his Kingdom."
+          "text": "And when thou shalt have accomplished thy days 1 Paralipomenon 17 to go to thy fathers, I will raise up thy seed after thee, which shall be of thy children: and I will establish his Kingdom."
         },
         {
           "verse": 12,
@@ -2863,13 +2697,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And it came to pass after these things, that David struck the Philisthiims, and humbled them, and took away Geth, and her <na>(a)</na> daughters out of the hand of the Philisthiims,",
-          "notes": [
-            {
-              "label": "a",
-              "text": "The lesser towns and villages are commonly called the daughters of some great town or city to which they pertain."
-            }
-          ]
+          "text": "And it came to pass after these things, that David struck the Philisthiims, and humbled them, and took away Geth, and her <na>(a)</na> daughters out of the hand of the Philisthiims, <na>(a)</na> The lesser towns and villages are commonly called the daughters of some great town or city to which they pertain."
         },
         {
           "verse": 2,
@@ -2909,13 +2737,7 @@
         },
         {
           "verse": 11,
-          "text": "But all the vessels also of gold, and silver, and brass^ king David <na>(b)</na> consecrated to our Lord, with the silver and gold, which he had taken out of all the nations, as well of Idumea, and Moab, and the children of Ammon, as of the Philisthiims & Amalec.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "That which is dedicated to sacred use, is consecrated to God."
-            }
-          ]
+          "text": "But all the vessels also of gold, and silver, and brass^ king David <na>(b)</na> consecrated to our Lord, 1 Paralipomenon 18 with the silver and gold, which he had taken out of all the nations, as well of Idumea, and Moab, and the children of Ammon, as of the Philisthiims & Amalec. <na>(b)</na> That which is dedicated to sacred use, is consecrated to God."
         },
         {
           "verse": 12,
@@ -3018,7 +2840,7 @@
         },
         {
           "verse": 17,
-          "text": "Which when it was told David, he gathered together all Israel, and passed Jordan, and fell upon them, & directed his army against him, they fighting on the contrary part."
+          "text": "Which when it was told David, he gathered together all Israel, and passed Jordan, and fell upon them, & directed his army 1 Paralipomenon 19 against him, they fighting on the contrary part."
         },
         {
           "verse": 18,
@@ -3068,25 +2890,14 @@
           "text": "This man blasphemed Israel: and Jonathan the son of Samaa the brother of David struck him. These be the children of Rapha in Geth, which fell by the hand of David and of his servants."
         }
       ],
-      "summary": "King David prospereth in war against the Ammonites, 4. and Philisthiims, 6. among whom Jonathan David's nephew by his brother, killeth a monstrous giant, which had twelve fingers and twelve toes."
+      "summary": "David sinneth in numbering his people, 8. repenteth, and prayeth, yet is punished, many dying of the plague, 15. till God shewing mercy spareth the rest. 16. David accusing himself and excusing the people is commanded by the Angel to offer sacrifice, which he (22. buying ground for an altar) 26. performeth."
     },
     {
       "chapter": 21,
       "verses": [
         {
           "verse": 1,
-          "text": "But <na>(a)[1]</na> Satan rose against Israel: and moved David to number Israel.",
-          "cross_refs": [
-            {
-              "text": "2. Reg. 24."
-            }
-          ],
-          "notes": [
-            {
-              "label": "a",
-              "text": "By God's permission David was tempted and overcome. 2. Reg. 24."
-            }
-          ]
+          "text": "But <na>(a)[1]</na> Satan rose against Israel: and moved David to number Israel. <na>(a)</na> By God's permission David was tempted and overcome. <i>2. Reg. 24.</i> <cr>[1]</cr> <i>2. Reg. 24.</i>"
         },
         {
           "verse": 2,
@@ -3110,17 +2921,11 @@
         },
         {
           "verse": 7,
-          "text": "And that which was commanded displeased God: and he struck Israel."
+          "text": "And that which was commanded displeased God: and he struck Israel. 1 Paralipomenon 21"
         },
         {
           "verse": 8,
-          "text": "And David said to God: I have sinned exceedingly in that I would do this: I beseech thee take away <na>(b)</na> the iniquity of thy servant, because I have done foolishly.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "King David was not without faith, nor hope, and yet was contaminate with iniquity, from which he prayed to be delivered."
-            }
-          ]
+          "text": "And David said to God: I have sinned exceedingly in that I would do this: I beseech thee take away <na>(b)</na> the iniquity of thy servant, because I have done foolishly. <na>(b)</na> King David was not without faith, nor hope, and yet was contaminate with iniquity, from which he prayed to be delivered."
         },
         {
           "verse": 9,
@@ -3197,13 +3002,7 @@
         },
         {
           "verse": 26,
-          "text": "And he built there an altar to our Lord: and he offered holocausts, and pacifics, and he invocated our Lord, and he heard him <na>(c)</na> in fire from heaven upon the altar of holocaust.",
-          "notes": [
-            {
-              "label": "c",
-              "text": "God shewed by sending fire miraculously to burn the sacrifice, that he had heard David's prayer."
-            }
-          ]
+          "text": "And he built there an altar to our Lord: and he offered holocausts, and pacifics, and he invocated our Lord, and he heard him <na>(c)</na> in fire from heaven upon the altar of holocaust. <na>(c)</na> God shewed by sending fire miraculously to burn the sacrifice, that he had heard David's prayer."
         },
         {
           "verse": 27,
@@ -3221,8 +3020,7 @@
           "verse": 30,
           "text": "And David could not go to the altar to pray God there: for he had been frighted with exceeding fear, seeing the sword of the Angel of our Lord."
         }
-      ],
-      "summary": "David sinneth in numbering his people, 8. repenteth, and prayeth, yet is punished, many dying of the plague, 15. till God shewing mercy spareth the rest. 16. David accusing himself and excusing the people is commanded by the Angel to offer sacrifice, which he (22. buying ground for an altar) 26. performeth."
+      ]
     },
     {
       "chapter": 22,
@@ -3261,13 +3059,7 @@
         },
         {
           "verse": 9,
-          "text": "the son, which shall be born to thee, shall be a most quiet man: for I will make him rest from all his enemies round about: and for this cause, he shall be called <na>(a)</na> Peaceable: and I will give peace and quietness in Israel all his days.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Salomon signifieth Peaceable, and therein, as in many other things, prefigured Christ, who amongst other names is called Prince of peace. Isai. 9."
-            }
-          ]
+          "text": "the son, which shall be born to thee, shall be a most quiet man: for I will make him rest from all his enemies round about: and for this cause, he shall be called <na>(a)</na> Peaceable: and I will give peace and quietness in Israel all his days. <na>(a)</na> Salomon signifieth Peaceable, and therein, as in many other things, prefigured Christ, who amongst other names is called <i>Prince of peace. Isai. 9.</i>"
         },
         {
           "verse": 10,
@@ -3310,14 +3102,14 @@
           "text": "Give therefore your heart and your souls, to seek our Lord your God: and arise, and build a sanctuary to our Lord God, that the Ark of the covenant of our Lord, and the vessels consecrated to our Lord, may be brought into the house, which is built to the name of our Lord."
         }
       ],
-      "summary": "Workmen and all necessaries being prepared, 6. David commandeth Salomon to build the Temple, for so God hath appointed. 13. Exhorteth him to serve God, 17. and other principal men to assist him."
+      "summary": "King David being old constituteth Salomon king, 3. disposeth the offices of Levites, 7. to wit, the families of Gerson, 12. of Caath, 21. and of Merari: (26. ceasing to carry the tabernacle.) 27. to serve in the temple."
     },
     {
       "chapter": 23,
       "verses": [
         {
           "verse": 1,
-          "text": "David therefore being old and full of days, made Salomon his son king over Israel"
+          "text": "David therefore being old and full of days, made Salomon his son king over Israel 1 Paralipomenon 23"
         },
         {
           "verse": 2,
@@ -3337,13 +3129,7 @@
         },
         {
           "verse": 6,
-          "text": "And <na>(a)</na> David distributed them by the courses of the children of Levi, to wit, of Gerson, and Caath, and Merari.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Aaron's sons being consecrated Priests according to God's ordinance, Levit. 8. & the Levites to do other offices about the tabernacle, Num. 3. & 4. King David (with Sadoc the high Priest, & other chief men. c. 24. v. 6. ) disposed them by lots which should serve by course, to sing & play on instruments, as well in the tabernacle now resting in Jerusalem, v. 26. as in the Temple when it should be built."
-            }
-          ]
+          "text": "And <na>(a)</na> David distributed them by the courses of the children of Levi, to wit, of Gerson, and Caath, and Merari. <na>(a)</na> Aaron's sons being consecrated Priests according to God's ordinance, <i>Levit. 8.</i> & the Levites to do other offices about the tabernacle, <i>Num. 3. & 4.</i> King David (with Sadoc the high Priest, & other chief men. <i>c. 24. v. 6.</i> ) disposed them by lots which should serve by course, to sing & play on instruments, as well in the tabernacle now resting in Jerusalem, <i>v. 26.</i> as in the Temple when it should be built."
         },
         {
           "verse": 7,
@@ -3449,12 +3235,15 @@
           "verse": 32,
           "text": "And let them keep the observations of the tabernacle of covenant, and the rite of the Sanctuary, and the observance of the children of Aaron their brethren, that they minister in the house of our Lord."
         }
-      ],
-      "summary": "King David being old constituteth Salomon king, 3. disposeth the offices of Levites, 7. to wit, the families of Gerson, 12. of Caath, 21. and of Merari: (26. ceasing to carry the tabernacle.) 27. to serve in the temple."
+      ]
     },
     {
       "chapter": 24,
       "verses": [
+        {
+          "verse": 0,
+          "text": "1 Paralipomenon 24 <i>according to their Priestly function, 20. likewise principal Levites in their offices.</i>"
+        },
         {
           "verse": 1,
           "text": "Moreover to the sons of Aaron these were the partitions: The sons of Aaron: Nadab, and Abiu, and Eleazar, and Ithamar."
@@ -3473,17 +3262,7 @@
         },
         {
           "verse": 5,
-          "text": "Moreover he divided both families between themselves by lots: for there were <na>(a)</na> Princes of the Sanctuary, and Princes <na>(b)</na> of God, as well of the children of Eleazar, as of the children of Ithamar.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "They were called Princes of the Sanctuary in respect of Sacrifices, & other sacred functions."
-            },
-            {
-              "label": "b",
-              "text": "And Princes of God in regard of their spiritual jurisdiction in the Church, or house of God."
-            }
-          ]
+          "text": "Moreover he divided both families between themselves by lots: for there were <na>(a)</na> Princes of the Sanctuary, and Princes <na>(b)</na> of God, as well of the children of Eleazar, as of the children of Ithamar. <na>(a)</na> They were called Princes of the Sanctuary in respect of Sacrifices, & other sacred functions. <na>(b)</na> And Princes of God in regard of their spiritual jurisdiction in the Church, or house of God."
         },
         {
           "verse": 6,
@@ -3590,24 +3369,14 @@
           "text": "And they also did cast lots against their brethren the sons of Aaron before David the king, and Sadoc, and Ahimelech, and the Princes of the Priestly and Levitical families, as well the elder as the younger. Lot divided all equally."
         }
       ],
-      "summary": "King David disposeth sixteen families of Eleazar, and eight of Ithamar, 7. by lots, 19. to serve in the Temple, according to their Priestly function, 20. likewise principal Levites in their offices."
+      "summary": "King David disposeth sixteen families of Eleazar, and eight of Ithamar, 7. by lots, 19. to serve in the Temple,"
     },
     {
       "chapter": 25,
       "verses": [
         {
           "verse": 1,
-          "text": "Therefore David, and the officers of the host separated for the ministry the sons of Asaph, and Heman, and <na>(a)</na> Idithun: which should <na>(b)</na> prophesy on harps, and psalteries, and cymbals, according to their number serving the office dedicated to them.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Otherwise called Ethan, ch. 9. v. 44. c. 15."
-            },
-            {
-              "label": "b",
-              "text": "They played on instruments, Psalms, and Canticles, made by Prophets."
-            }
-          ]
+          "text": "Therefore David, and the officers of the host separated for the ministry the sons of Asaph, and Heman, and <na>(a)</na> Idithun: which should <na>(b)</na> prophesy on harps, and psalteries, and cymbals, according to their number serving the office dedicated to them. <na>(a)</na> Otherwise called Ethan, <i>ch. 9. v. 44. c. 15.</i> <na>(b)</na> They played on instruments, Psalms, and Canticles, made by Prophets. 1 Paralipomenon 25"
         },
         {
           "verse": 2,
@@ -3773,13 +3542,7 @@
         },
         {
           "verse": 10,
-          "text": "And of Hosa, that is, of the sons of Merari: Semri the Prince ( <na>(a)</na> for he had not a first-begotten, and therefore his father made him chief)",
-          "notes": [
-            {
-              "label": "a",
-              "text": "Either his first son was dead, or was not fit to be chief over the rest."
-            }
-          ]
+          "text": "And of Hosa, that is, of the sons of Merari: Semri the Prince ( <na>(a)</na> for he had not a first-begotten, and therefore his father made him chief) 1 Paralipomenon 26 <na>(a)</na> Either his first son was dead, or was not fit to be chief over the rest."
         },
         {
           "verse": 11,
@@ -3843,13 +3606,7 @@
         },
         {
           "verse": 26,
-          "text": "Selemith himself, and his brethren over the treasures of the sanctified holy things, which David the king <na>(b)</na> sanctified, and the Princes of families, and the centurions, and the captains of the host",
-          "notes": [
-            {
-              "label": "b",
-              "text": "Things are sanctified by designation to holy use."
-            }
-          ]
+          "text": "Selemith himself, and his brethren over the treasures of the sanctified holy things, which David the king <na>(b)</na> sanctified, and the Princes of families, and the centurions, and the captains of the host <na>(b)</na> Things are sanctified by designation to holy use."
         },
         {
           "verse": 27,
@@ -3899,7 +3656,7 @@
         },
         {
           "verse": 5,
-          "text": "Captain also of the third company in the third month, was Banaias the son of Joiada the Priest: and in his division four and twenty thousand."
+          "text": "Captain also of the third company in the 1 Paralipomenon 27 third month, was Banaias the son of Joiada the Priest: and in his division four and twenty thousand."
         },
         {
           "verse": 6,
@@ -3971,13 +3728,7 @@
         },
         {
           "verse": 23,
-          "text": "And David <na>(a)</na> would not number them from twenty years downward: because our Lord had said that he would multiply Israel as the stars of heaven.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "King David having heretofore offended in commanding to number the whole people, 2. Reg. 24. would not now attempt to number all (which were indeed innumerable, but only those that were to be disposed of in special services."
-            }
-          ]
+          "text": "And David <na>(a)</na> would not number them from twenty years downward: because our Lord had said that he would multiply Israel as the stars of heaven. <na>(a)</na> King David having heretofore offended in commanding to number the whole people, <i>2. Reg. 24.</i> would not now attempt to number all (which were indeed innumerable, but only those that were to be disposed of in special services."
         },
         {
           "verse": 24,
@@ -4030,6 +3781,10 @@
       "chapter": 28,
       "verses": [
         {
+          "verse": 0,
+          "text": "1 Paralipomenon 28 <i>to serve God sincerely: 10. and to build the temple, describing in what form to make it.</i>"
+        },
+        {
           "verse": 1,
           "text": "David <cr>[1]</cr> therefore called together all the Princes of Israel, the Dukes of the tribes, and the heads of the companies, which ministered to the king: the tribunes also and the centurions, and them that were chief over the substance and possessions of the king, and his sons with the eunuchs, and the mighty, and all the most valiant in the host of Jerusalem.",
           "cross_refs": [
@@ -4053,13 +3808,7 @@
         },
         {
           "verse": 4,
-          "text": "Howbeit our Lord the God of Israel chose me of all the house of my father, to be king over Israel for ever: for <na>(a)</na> of Juda he chose the Princes: moreover of the house of Juda, my father's house: and of the sons of my father, it pleased him to choose me king over all Israel.",
-          "notes": [
-            {
-              "label": "a",
-              "text": "So Jacob prophesied, that the royal sceptre should come to the tribe of Juda, & therein remain till Christ. Gen. 49."
-            }
-          ]
+          "text": "Howbeit our Lord the God of Israel chose me of all the house of my father, to be king over Israel for ever: for <na>(a)</na> of Juda he chose the Princes: moreover of the house of Juda, my father's house: and of the sons of my father, it pleased him to choose me king over all Israel. <na>(a)</na> So Jacob prophesied, that the royal sceptre should come to the tribe of Juda, & therein remain till Christ. <i>Gen. 49.</i>"
         },
         {
           "verse": 5,
@@ -4071,13 +3820,7 @@
         },
         {
           "verse": 7,
-          "text": "And I will confirm his Kingdom for ever, if he shall persevere to do my precepts, and my judgments, as <na>(b)</na> at this day.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "It is here evident, that Salomon was sometime the true servant and child of God, keeping his precepts & as certain, that he fell into great sins, & lost God's grace, & finally it is doubtful in what state he died. 3. Reg. 11. whereby is convinced their vain fancy that think, he who is once the child of God can never fall, nor become a wicked man."
-            }
-          ]
+          "text": "And I will confirm his Kingdom for ever, if he shall persevere to do my precepts, and my judgments, as <na>(b)</na> at this day. <na>(b)</na> It is here evident, that Salomon was sometime the true servant and child of God, keeping his precepts & as certain, that he fell into great sins, & lost God's grace, & finally it is doubtful in what state he died. <i>3. Reg. 11.</i> whereby is convinced their vain fancy that think, he who is once the child of God can never fall, nor become a wicked man."
         },
         {
           "verse": 8,
@@ -4129,14 +3872,14 @@
         },
         {
           "verse": 20,
-          "text": "David also said to Salomon his son: Deal manfully, and take courage, and do it: fear not, and be not dismayed: for our Lord my God will be with thee, and will not leave thee, nor forsake thee, till thou perfit all the work of the ministry of the house of our Lord."
+          "text": "David also said to Salomon his son: Deal manfully, and take courage, and do it: fear not, 1 Paralipomenon 28 and be not dismayed: for our Lord my God will be with thee, and will not leave thee, nor forsake thee, till thou perfit all the work of the ministry of the house of our Lord."
         },
         {
           "verse": 21,
           "text": "Behold the divisions of the Priests and the Levites, for every ministry of the house of our Lord, assist thee, and are ready, and as well the Princes know, as the people, to do all thy precepts."
         }
       ],
-      "summary": "Again king David calling all his states together, with commemoration of God's singular favour in electing him, and Salomon, 8. exhorteth them all, and namely his son to serve God sincerely: 10. and to build the temple, describing in what form to make it."
+      "summary": "Again king David calling all his states together, with commemoration of God's singular favour in electing him, and Salomon, 8. exhorteth them all, and namely his son"
     },
     {
       "chapter": 29,
@@ -4156,13 +3899,7 @@
         },
         {
           "verse": 3,
-          "text": "and above these things, which I have offered into the house of my God, I give <na>(a)</na> of mine own peculiar goods, gold & silver unto the temple of my God, beside those things, which I have prepared for the holy house:",
-          "notes": [
-            {
-              "label": "a",
-              "text": "That which he had already vowed & prepared he counted not his own, and now giveth more to the building & furnishing of the Temple."
-            }
-          ]
+          "text": "and above these things, which I have offered into the house of my God, I give <na>(a)</na> of mine own peculiar goods, gold & silver unto the temple of my God, beside those things, which I have prepared for the holy house: <na>(a)</na> That which he had already vowed & prepared he counted not his own, and now giveth more to the building & furnishing of the Temple."
         },
         {
           "verse": 4,
@@ -4210,13 +3947,7 @@
         },
         {
           "verse": 15,
-          "text": "For we are pilgrims before thee, and strangers, <na>(b)</na> as all our fathers. Our days are as a shadow upon the earth, and there is no abiding.",
-          "notes": [
-            {
-              "label": "b",
-              "text": "As Abraham, Isaac, Jacob & others were strangers in respect of Chanaan: so both they, and also David, Salomon, and all men in this world, are pilgrims in respect of heaven. Heb. 13."
-            }
-          ]
+          "text": "For we are pilgrims before thee, and strangers, <na>(b)</na> as all our fathers. Our days are as a shadow upon the earth, and there is no abiding. <na>(b)</na> As Abraham, Isaac, Jacob & others were strangers in respect of Chanaan: so both they, and also David, Salomon, and all men in this world, are pilgrims in respect of heaven. <i>Heb. 13.</i>"
         },
         {
           "verse": 16,
@@ -4224,7 +3955,7 @@
         },
         {
           "verse": 17,
-          "text": "Iknow my God that thou provest the hearts, and lovest simplicity, wherefore I also in the simplicity of my heart, gladly have offered all these things: and thy people, which is here found, I have seen with great joy offer thee donaries."
+          "text": "Iknow my God that thou provest the hearts, and lovest simplicity, 1 Paralipomenon 29 wherefore I also in the simplicity of my heart, gladly have offered all these things: and thy people, which is here found, I have seen with great joy offer thee donaries."
         },
         {
           "verse": 18,
@@ -4236,13 +3967,7 @@
         },
         {
           "verse": 20,
-          "text": "And David commanded the whole assembly: Bless ye our Lord God. And all the assembly blessed our Lord the God of their fathers: and they <na>(c)</na> bowed themselves, & adored God, and then the king.",
-          "notes": [
-            {
-              "label": "c",
-              "text": "Albeit they did the same exterior act of honour to God and the King: yet in their mind and intention they gave divine honour to God, and civil to the King. See Exod. 20."
-            }
-          ]
+          "text": "And David commanded the whole assembly: Bless ye our Lord God. And all the assembly blessed our Lord the God of their fathers: and they <na>(c)</na> bowed themselves, & adored God, and then the king. <na>(c)</na> Albeit they did the same exterior act of honour to God and the King: yet in their mind and intention they gave divine honour to God, and civil to the King. <i>See Exod. 20.</i>"
         },
         {
           "verse": 21,
@@ -4283,13 +4008,7 @@
         },
         {
           "verse": 29,
-          "text": "But the acts of king David the first and the last are written in the Book of Samuel the Seer, and in the Book of <na>(d)</na> Nathan the Prophet, and in the Volume of Gad the Seer:",
-          "notes": [
-            {
-              "label": "d",
-              "text": "Either Nathan and Gad writ the later part of the first book, and the second book of Kings, or else their books are not now extant."
-            }
-          ]
+          "text": "But the acts of king David the first and the last are written in the Book of Samuel the Seer, and in the Book of <na>(d)</na> Nathan the Prophet, and in the Volume of Gad the Seer: <na>(d)</na> Either Nathan and Gad writ the later part of the first book, and the second book of Kings, or else their books are not now extant."
         },
         {
           "verse": 30,
