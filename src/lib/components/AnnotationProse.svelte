@@ -84,6 +84,17 @@
 		</p>
 	{/each}
 
+	{#if notes && notes.length > 0}
+		<ul class="ann-notes">
+			{#each notes as note}
+				<li class="ann-note-row">
+					<span class="ann-note-marker">{note.marker}</span>
+					<span class="ann-note-text">{@html note.text}</span>
+				</li>
+			{/each}
+		</ul>
+	{/if}
+
 	{#if openMn && activeNote && popoverStyle}
 		<div
 			class="mn-popover"
@@ -126,6 +137,49 @@
 		opacity: 0.75;
 	}
 
+	.annotation-prose :global(i) {
+		font-style: italic;
+	}
+
+	/* Notes list */
+	.ann-notes {
+		list-style: none;
+		margin-top: 10px;
+		padding: 8px 0 0;
+		border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.ann-note-row {
+		display: flex;
+		gap: 7px;
+		align-items: baseline;
+		line-height: 1.45;
+	}
+
+	.ann-note-marker {
+		font-family: var(--font-ui);
+		font-size: 10px;
+		font-weight: 600;
+		color: var(--color-accent-text);
+		flex-shrink: 0;
+		min-width: 14px;
+	}
+
+	.ann-note-text {
+		font-family: var(--font-ui);
+		font-size: 13px;
+		color: var(--color-subtle);
+		font-style: italic;
+	}
+
+	.ann-note-text :global(i) {
+		font-style: italic;
+	}
+
+	/* Popover */
 	.mn-popover {
 		background: var(--color-text);
 		color: var(--color-bg);
@@ -178,9 +232,5 @@
 
 	.mn-popover-text {
 		opacity: 0.9;
-	}
-
-	.annotation-prose :global(i) {
-		font-style: italic;
 	}
 </style>
