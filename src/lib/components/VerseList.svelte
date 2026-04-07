@@ -66,24 +66,33 @@
 	}
 
 	/** Render <cr> and <na> content as clickable accent superscript for study mode.
+	 *  Handles multi-marker patterns like [1][2], [1](d), (a)(a), (a)[1].
 	 *  Embeds data-verse so hover can look up content without DOM traversal. */
 	function renderStudyMarkers(text: string, verseNum: number): string {
-		return text
-			.replace(
-				/<cr>\[(\d+)\]<\/cr>/g,
-				(_, n) =>
-					`<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" data-verse="${verseNum}" aria-label="Cross-reference ${n}">${n}</button>`
-			)
-			.replace(
-				/<na>\((\w+)\)<\/na>/g,
-				(_, l) =>
-					`<button class="study-marker" data-marker-type="note" data-marker="${l}" data-verse="${verseNum}" aria-label="Note ${l}">${l}</button>`
-			)
-			.replace(
-				/<na>\[(\d+)\]<\/na>/g,
-				(_, n) =>
-					`<button class="study-marker" data-marker-type="note" data-marker="${n}" data-verse="${verseNum}" aria-label="Note ${n}">${n}</button>`
-			);
+		function mkCr(n: string) {
+			return `<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" data-verse="${verseNum}" aria-label="Cross-reference ${n}">${n}</button>`;
+		}
+		function mkNote(l: string) {
+			return `<button class="study-marker" data-marker-type="note" data-marker="${l}" data-verse="${verseNum}" aria-label="Note ${l}">${l}</button>`;
+		}
+
+		// <cr> may contain [N] cross-refs and (x) note refs mixed together
+		text = text.replace(/<cr>(.*?)<\/cr>/g, (_, content) => {
+			const buttons: string[] = [];
+			for (const m of content.matchAll(/\[(\d+)\]/g)) buttons.push(mkCr(m[1]));
+			for (const m of content.matchAll(/\((\w+)\)/g)) buttons.push(mkNote(m[1]));
+			return buttons.length > 0 ? buttons.join('') : content;
+		});
+
+		// <na> may contain (x) note refs and [N] refs mixed together
+		text = text.replace(/<na>(.*?)<\/na>/g, (_, content) => {
+			const buttons: string[] = [];
+			for (const m of content.matchAll(/\((\w+)\)/g)) buttons.push(mkNote(m[1]));
+			for (const m of content.matchAll(/\[(\d+)\]/g)) buttons.push(mkNote(m[1]));
+			return buttons.length > 0 ? buttons.join('') : content;
+		});
+
+		return text;
 	}
 
 	function renderVerse(

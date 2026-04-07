@@ -8,17 +8,13 @@
 	export let notes: AnnotationNote[] = [];
 
 	function renderParagraphs(raw: string): string[] {
-		return raw
-			.split('\n\n')
-			.map((p) =>
-				p
-					.trim()
-					.replace(
-						/<mn>\[(\d+)\]<\/mn>/g,
-						(_, n) =>
-							`<button class="mn-marker" data-mn="${n}" aria-label="Marginal note ${n}">${n}</button>`
-					)
-			);
+		return raw.split('\n\n').map((p) =>
+			p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
+				// Normalise [1] → 1 for numeric markers; leave ◦ and others as-is
+				const display = raw.replace(/^\[(\d+)\]$/, '$1');
+				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
+			})
+		);
 	}
 
 	const POPOVER_WIDTH = 300;

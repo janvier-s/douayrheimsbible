@@ -17,7 +17,7 @@ export interface SummaryNote {
 // ── Annotation sidecar types ─────────────────────────────────────
 
 export interface AnnotationNote {
-	marker: number;
+	marker: string | number;
 	text: string;
 }
 
