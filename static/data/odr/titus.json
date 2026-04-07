@@ -1,19 +1,23 @@
 {
-  "book": "Titus",
-  "version_abbr": "ODR",
-  "date": "1582",
+  "book": "titus",
+  "book_title": null,
+  "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "Of what quality the Priests and Bishops must be: ℣.9 namely learned, considering the Judaical seducers of that time. ℣.12 That the Cretensians must be roughly used, to have them continue sound in faith.",
       "verses": [
         {
           "verse": 1,
-          "text": "Paul the servant of God, and an Apostle of JESUS Christ according to the faith of the elect of God and knowledge of the truth: which is according to piety,"
+          "text": "<sc>Paul</sc> the servant of God, and an Apostle of <sc>Jesus</sc> Christ according to the faith of the elect of God and knowledge of the truth: which is according to piety,"
         },
         {
           "verse": 2,
-          "text": "into the hope of life everlasting, which he promised that lieth not, God, before the secular times:"
+          "text": "into the hope of life everlasting, which he promised that lieth not, God, <cr>[1]</cr> before the secular times:",
+          "cross_refs": [
+            {
+              "text": "2. Tim. 1, 9."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -21,15 +25,17 @@
         },
         {
           "verse": 4,
-          "text": "to Titus my beloved son according to the common faith, grace and peace from God the Father, and Christ JESUS our Saviour."
+          "text": "to Titus my beloved son according to the common faith, grace and peace from God the Father, and Christ <sc>Jesus</sc> our Saviour."
         },
         {
           "verse": 5,
-          "text": "For this cause left I thee in Crete, that thou shouldest reform the things that are wanting, and shouldest ordain priests by cities, as I also appointed thee:"
+          "text": "For this cause left I thee in Crete, that thou shouldest reform the things that are wanting, and shouldest ordain priests by cities, as I also appointed thee:",
+          "has_annotation": true
         },
         {
           "verse": 6,
-          "text": "if any be without crime, the husband of one wife, having faithful children, not in the accusation of riot, or not obedient."
+          "text": "if any be without crime, the husband of one wife, having faithful children, not in the accusation of riot, or not obedient. <i>1. Tim. 3, 2.</i>",
+          "has_annotation": true
         },
         {
           "verse": 7,
@@ -53,7 +59,11 @@
         },
         {
           "verse": 12,
-          "text": "One of them said, their own proper prophet, The Cretensians always liars, naughty beasts, slothful bellies."
+          "text": "One of them said, their own proper prophet, <i>The Cretensians always liars, naughty beasts, slothful bellies.</i>"
+        },
+        {
+          "verse": 0,
+          "text": "Epimenides."
         },
         {
           "verse": 13,
@@ -65,25 +75,30 @@
         },
         {
           "verse": 15,
-          "text": "All things are clean to the clean: but to the polluted and to infidels nothing is clean: but polluted are both their mind and conscience."
+          "text": "All things are clean to the clean: but to the polluted and to infidels nothing is clean: but polluted are both their mind and conscience. <i>Rom. 14, 20.</i> He speaketh not of the Church's abstaining from meats sometimes, which is not for any uncleanness in the creatures, but for chastening their bodies: but he meaneth the Jewish superstition, who now being Christians, would not cease to put difference of clean and unclean according to their old law. See S. Augustine <i>Cont. Faust. li. 31. c. 4.</i>"
         },
         {
           "verse": 16,
           "text": "They confess that they know God: but in their works they deny, whereas they be abominable and incredulous and to every good work reprobate."
         }
-      ]
+      ],
+      "summary": "Of what quality the Priests and Bishops must be: 9. namely learned, considering the Judaical seducers of that time. 12. That the Cretensians must be roughly used, to have them continue sound in faith."
     },
     {
       "chapter": 2,
-      "summary": "What to preach both to old and young (not only with word but with example also) and to servants. ℣.11 For there are of all sorts in the Church, and they must be instructed accordingly.",
       "verses": [
         {
           "verse": 1,
-          "text": "But do thou speak the things that become sound doctrine. sober, chaste, wise, sound in the faith, in"
+          "text": "<sc>But</sc> do thou speak the things that become sound doctrine."
         },
         {
           "verse": 2,
-          "text": "Old men that they be love, in patience."
+          "text": "Old men that they be sober, <cr>[1]</cr> chaste, wise, sound in the faith, in love, in patience.",
+          "cross_refs": [
+            {
+              "text": "c σεμνοὺς pudicos"
+            }
+          ]
         },
         {
           "verse": 3,
@@ -99,7 +114,7 @@
         },
         {
           "verse": 6,
-          "text": "Yong men in like manner exhort that they be sober."
+          "text": "Young men in like manner exhort that they be sober."
         },
         {
           "verse": 7,
@@ -111,7 +126,12 @@
         },
         {
           "verse": 9,
-          "text": "Servants to be subject to their masters, in all things pleasing, not gainsaying:"
+          "text": "<cr>[1]</cr> Servants to be subject to their masters, in all things pleasing, not gainsaying:",
+          "cross_refs": [
+            {
+              "text": "Eph. 6, 5. Col. 3, 22. 1. Pet. 2, 18."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -119,7 +139,7 @@
         },
         {
           "verse": 11,
-          "text": "For the grace of God our Saviour hath appeared to all men:"
+          "text": "<cr>[1]</cr> For the grace of God our Saviour hath appeared to all men: upon the Circumcision of our Lord."
         },
         {
           "verse": 12,
@@ -127,7 +147,7 @@
         },
         {
           "verse": 13,
-          "text": "expecting the blessed hope and advent of the glory of the great God and our Saviour JESUS Christ,"
+          "text": "expecting the blessed hope and advent of the glory of the great God and our Saviour <sc>Jesus</sc> Christ, <i>c ἐπιφὰνειαν</i>"
         },
         {
           "verse": 14,
@@ -135,17 +155,17 @@
         },
         {
           "verse": 15,
-          "text": "These things speak, and exhort and rebuke with all authority. Let no man contemn thee."
+          "text": "These things speak, and exhort and rebuke with all authority. Let no man contemn thee. Bishops must be stout and command in God's cause, and the people must in nowise disobey or contemn them."
         }
-      ]
+      ],
+      "summary": "What to preach both to old and young (not only with word but with example also) and to servants. 11. For there are of all sorts in the Church, and they must be instructed accordingly."
     },
     {
       "chapter": 3,
-      "summary": "To teach them obedience unto Princes, and meekness towards all men, considering that we also were as they, till God of his goodness brought us to Baptism. ℣.8 To teach good works, ℣.9 and to avoid vain questions, ℣.10 and obstinate Heretics.",
       "verses": [
         {
           "verse": 1,
-          "text": "Admonish them to be subject to Princes and Potestates, to obey at a word, to be ready to every good work,"
+          "text": "<sc>Admonish</sc> them to be subject to Princes and Potestates, to obey at a word, to be ready to every good work,"
         },
         {
           "verse": 2,
@@ -157,35 +177,54 @@
         },
         {
           "verse": 4,
-          "text": "But when the benignity and kindness toward man of our Saviour God appeared:"
+          "text": "But when <cr>[1]</cr> the benignity and <cr>[2]</cr> kindness toward man of our Saviour God appeared:",
+          "cross_refs": [
+            {
+              "text": "c φιλανθρωπία"
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "not by the works of Justice which we did, but according to his mercy he hath saved us by the laver of regeneration and renovation of the Holy Ghost,"
+          "text": "<cr>[1]</cr> not by the works of Justice which we did, but according to his mercy he hath saved us <cr>[2]</cr> by the laver of regeneration and renovation of the Holy Ghost,",
+          "cross_refs": [
+            {
+              "text": "2. Tim. 1, 9."
+            },
+            {
+              "text": "(1. Tim. 4. and 2. Tim. 1.)"
+            }
+          ]
         },
         {
           "verse": 6,
-          "text": "whom he hath poured upon us aboundantly by JESUS Christ our Saviour:"
+          "text": "whom he hath poured upon us aboundantly by <sc>Jesus</sc> Christ our Saviour:"
         },
         {
           "verse": 7,
-          "text": "that being justified by his grace, we may be heirs according to hope of life everlasting."
+          "text": "that being justified by his"
+        },
+        {
+          "verse": 0,
+          "text": "grace, we may be heirs according to hope of life everlasting."
         },
         {
           "verse": 8,
-          "text": "It is a faithful saying, and of these things I will have thee avouch earnestly: that they which believe in God, be careful to excel in good works. These things be good and profitable for men."
+          "text": "It is a faithful saying, and of these things I will have thee avouch earnestly: that they which believe in God, be careful to excel in good works. These things be good and profitable for men. <i>1. Tim. 4.</i>"
         },
         {
           "verse": 9,
-          "text": "But foolish questions, and genealogies, and contentions, and controversies of the Law avoid. For they are unprofitable and vain."
+          "text": "But foolish questions, and genealogies, and contentions, and controversies of the Law avoid. For they are unprofitable and vain. <i>2. Tim. 2, 23.</i>"
         },
         {
           "verse": 10,
-          "text": "A man that is an heretic after the first and second admonition avoid:"
+          "text": "Aman that is an heretic after the first and second admonition avoid: These admonitions or correptions must be given to such as err, by our Spiritual Governors and Pastors: to whom if they yield not, Christian men must avoid them.",
+          "has_annotation": true
         },
         {
           "verse": 11,
-          "text": "knowing that he that is such an one, is subverted, and sinneth, being condemned by his own judgement."
+          "text": "knowing that he that is such an one, is subverted, and sinneth, being condemned by his own judgement.",
+          "has_annotation": true
         },
         {
           "verse": 12,
@@ -197,13 +236,14 @@
         },
         {
           "verse": 14,
-          "text": "And let our men also learn to excel in good works to necessary uses: that they be not unfruitful."
+          "text": "And let our men also learn to excel in good works to necessary uses: that they be not unfruitful. <i>c προίςασθαι praeesse.</i>"
         },
         {
           "verse": 15,
           "text": "All that are with me, salute thee: salute them that love us in the faith. The grace of God be with you all. Amen."
         }
-      ]
+      ],
+      "summary": "To teach them obedience unto Princes, and meekness towards all men, considering that we also were as they, till God of his goodness brought us to Baptism. 8. To teach good works, 9. and to avoid vain questions, 10. and obstinate Heretics."
     }
   ]
 }

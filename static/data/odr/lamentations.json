@@ -1,5 +1,5 @@
 {
-  "book": "Lamentations",
+  "book": "lamentations",
   "book_title": null,
   "hebrew_title": null,
   "chapters": [
@@ -8,18 +8,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "How <cr>[1][2]</cr> doth the city full of people, sit solitary: how is the lady of the Gentiles become as a widow: the princess of Provinces is made tributary?",
-          "has_annotation": false
+          "text": "How <cr>[1][2]</cr> doth the city full of people, sit solitary: how is the lady of the Gentiles become as a widow: the princess of Provinces is made tributary?"
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> Weeping she hath wept in the night, and her tears are on her cheeks: there is none to comfort her of all her dear ones: all her friends have despised her, and are become her enemies.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Weeping she hath wept in the night, and her tears are on her cheeks: there is none to comfort her of all her dear ones: all her friends have despised her, and are become her enemies."
         },
         {
           "verse": 3,
           "text": "<cr>[1]</cr> Judas is <na>(a)</na> gone into transmigration because of affliction, and the multitude of bondage: she hath dwelt among the Gentiles, neither hath she found rest: all her persecuters have apprehended her within the straits.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -29,13 +26,11 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> The ways of Sion mourn, because there are none that come to the solemnity: all her gates are destroyed: her priests sighing: her virgins loathsome, and herself is oppressed with bitterness.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The ways of Sion mourn, because there are none that come to the solemnity: all her gates are destroyed: her priests sighing: her virgins loathsome, and herself is oppressed with bitterness."
         },
         {
           "verse": 5,
           "text": "<cr>[1]</cr> Her adversaries are made <na>(b)</na> in the head, her enemies are enriched: because our Lord hath spoken upon her for the multitude of her iniquities: her little ones are led into captivity, before the face of the afflicter.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -46,7 +41,6 @@
         {
           "verse": 6,
           "text": "<cr>[1]</cr> And from the daughter of Sion all her beauty is departed: her princes are become as <na>(c)</na> rams not finding pastures: and they are gone without strength before the face of the pursuer.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "c",
@@ -56,18 +50,15 @@
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> Jerusalem hath remembered the days of her affliction, and prevarication of all her things worthy to be desired, which she had from the days of old, when her people fell in the enemy's hand, and there was no helper: the enemies have seen her, and have scorned her sabbaths.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Jerusalem hath remembered the days of her affliction, and prevarication of all her things worthy to be desired, which she had from the days of old, when her people fell in the enemy's hand, and there was no helper: the enemies have seen her, and have scorned her sabbaths."
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> Jerusalem hath sinned a sin, therefore is she made unstable: all that did glorify her, have despised her, because they have seen her ignominy: but she sighing is turned backward.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Jerusalem hath sinned a sin, therefore is she made unstable: all that did glorify her, have despised her, because they have seen her ignominy: but she sighing is turned backward."
         },
         {
           "verse": 9,
           "text": "<cr>[1]</cr> Her <na>(d)</na> filthiness is on her feet, neither hath she remembered her end: she is pulled down exceedingly, not having a comforter: see o Lord mine affliction, because the enemy is exalted.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -77,18 +68,15 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> The enemy hath thrust his hand to all her things worthy to be desired: because she hath seen the Gentiles enter into her sanctuary, of whom thou gavest commandment that they should not enter into thy church.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The enemy hath thrust his hand to all her things worthy to be desired: because she hath seen the Gentiles enter into her sanctuary, of whom thou gavest commandment that they should not enter into thy church."
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> All her people sighing, and seeking bread: they have given all precious things for meat to refresh the soul, see o Lord and consider, because I am become vile.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> All her people sighing, and seeking bread: they have given all precious things for meat to refresh the soul, see o Lord and consider, because I am become vile."
         },
         {
           "verse": 12,
           "text": "<cr>[1]</cr> O all ye that pass by the way, attend, and see if there be sorrow like to my sorrow: because he hath made <na>(e)</na> vintage of me, as our Lord hath spoken in the day of the wrath of his fury.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "e",
@@ -98,38 +86,31 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> From on high he hath cast a fire in my bones, and hath taught me: he hath spread a net for my feet, he hath turned me backward: he hath made me desolate, all the day consumed with sorrow.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> From on high he hath cast a fire in my bones, and hath taught me: he hath spread a net for my feet, he hath turned me backward: he hath made me desolate, all the day consumed with sorrow."
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> The yoke of mine iniquities hath watched: they are folded together in his hand, and put upon my neck: my strength is weakened: our Lord hath given me into the hand, from which I cannot rise.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The yoke of mine iniquities hath watched: they are folded together in his hand, and put upon my neck: my strength is weakened: our Lord hath given me into the hand, from which I cannot rise."
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> Our Lord hath taken away all my magnifical ones out of the midst of me: he hath called a time against me, to destroy mine elect: our Lord hath trodden the winepress to the virgin the daughter of Juda.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord hath taken away all my magnifical ones out of the midst of me: he hath called a time against me, to destroy mine elect: our Lord hath trodden the winepress to the virgin the daughter of Juda."
         },
         {
           "verse": 16,
-          "text": "<cr>[1]</cr> Therefore am I weeping, and mine eye shedding tears: because a comforter is made far from me, converting my soul: my children are become desolate because the enemy hath prevailed.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Therefore am I weeping, and mine eye shedding tears: because a comforter is made far from me, converting my soul: my children are become desolate because the enemy hath prevailed."
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> Sion hath spread forth her hands, there is none to comfort her: our Lord hath commanded against Jacob, round about him are his enemies: Jerusalem is become as a woman polluted with menstruous flowers among them.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Sion hath spread forth her hands, there is none to comfort her: our Lord hath commanded against Jacob, round about him are his enemies: Jerusalem is become as a woman polluted with menstruous flowers among them."
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> Our Lord is just, because I have provoked his mouth to wrath: hear I beseech all ye peoples, and see my sorrow: my virgins, and my young men are gone into captivity.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord is just, because I have provoked his mouth to wrath: hear I beseech all ye peoples, and see my sorrow: my virgins, and my young men are gone into captivity."
         },
         {
           "verse": 19,
           "text": "<cr>[1]</cr> I have called <na>(f)</na> my friends, they have deceived me: my priests and my ancients are consumed in the city: because they have sought meat for themselves, to refresh their soul.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "f",
@@ -140,7 +121,6 @@
         {
           "verse": 20,
           "text": "<cr>[1]</cr> See o Lord that I am in tribulation, my belly is troubled: my heart is overturned in myself, because I am full of bitterness: the sword killeth abroad, and at home it is <na>(g)</na> like death.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "g",
@@ -150,13 +130,11 @@
         },
         {
           "verse": 21,
-          "text": "<cr>[1]</cr> They have heard that I do sigh, and there is none to comfort me: all mine enemies have heard mine evil, they have rejoiced, because thou hast done it: thou hast brought a day of consolation, and they shall be made like to me.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> They have heard that I do sigh, and there is none to comfort me: all mine enemies have heard mine evil, they have rejoiced, because thou hast done it: thou hast brought a day of consolation, and they shall be made like to me."
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> Let all their evil enter in before thee: and vintage them, as thou hast vintaged me for all mine iniquities: for my sighings are many, and my heart is sorrowful.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Let all their evil enter in before thee: and vintage them, as thou hast vintaged me for all mine iniquities: for my sighings are many, and my heart is sorrowful."
         }
       ]
     },
@@ -166,7 +144,6 @@
         {
           "verse": 1,
           "text": "How <cr>[1]</cr> <na>(a)</na> hath our Lord in his fury covered the daughter of Sion with darkness: cast forth the noble one of Israel from heaven to the earth, and hath not remembered the footstool of his feet in the day of his fury.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -176,13 +153,11 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> Our Lord hath cast down headlong, and hath not spared, all the beautiful things of Jacob: he hath destroyed in his fury the munitions of the virgin of Juda, and cast it down to the ground: he hath polluted the kingdom, and the princes thereof.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord hath cast down headlong, and hath not spared, all the beautiful things of Jacob: he hath destroyed in his fury the munitions of the virgin of Juda, and cast it down to the ground: he hath polluted the kingdom, and the princes thereof."
         },
         {
           "verse": 3,
           "text": "<cr>[1]</cr> He hath broken <na>(b)</na> every horn of Israel in the wrath of fury: he hath turned away his right hand backward from the face of the enemy: and he hath kindled in Jacob as it were the fire of a flame devouring round about.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -192,23 +167,19 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> He hath bent his bow as an enemy, he hath fastened his right hand as an adversary: and he hast killed all, that was fair to behold in the tabernacle of the daughter of Sion, he hath poured out his indignation as fire.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath bent his bow as an enemy, he hath fastened his right hand as an adversary: and he hast killed all, that was fair to behold in the tabernacle of the daughter of Sion, he hath poured out his indignation as fire."
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> Our Lord is become as an enemy: he hath cast down Israel headlong, he hath cast down headlong all her walls: he hath destroyed the munitions thereof, and hath replenished in the daughter of Juda the humbled man and humbled woman.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord is become as an enemy: he hath cast down Israel headlong, he hath cast down headlong all her walls: he hath destroyed the munitions thereof, and hath replenished in the daughter of Juda the humbled man and humbled woman."
         },
         {
           "verse": 6,
-          "text": "<cr>[1]</cr> And he hath destroyed his tent as a garden, he hath thrown down his tabernacle: our Lord hath brought festivity and sabbath in Sion to oblivion: and king and priest into reproach, and into the indignation of his fury.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> And he hath destroyed his tent as a garden, he hath thrown down his tabernacle: our Lord hath brought festivity and sabbath in Sion to oblivion: and king and priest into reproach, and into the indignation of his fury."
         },
         {
           "verse": 7,
           "text": "<cr>[1]</cr> Our Lord hath rejected, he <na>(c)</na> hath cursed his sanctification: he hath delivered the walls of the towers thereof into the hand of the enemy: they have made a noise in the house of our Lord, as in a solemn day.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "c",
@@ -218,33 +189,27 @@
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> Our Lord hath meant to destroy the wall of the daughter of Sion: he hath stretched out his cord, and hath not turned away his hand from destruction: and the forewall hath mourned, and the wall is destroyed together.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord hath meant to destroy the wall of the daughter of Sion: he hath stretched out his cord, and hath not turned away his hand from destruction: and the forewall hath mourned, and the wall is destroyed together."
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> Her gates are fastened in the ground: he hath destroyed, and broken her bars: her king and her princes in the Gentiles: there is no law, and her prophets have not found vision from our Lord.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Her gates are fastened in the ground: he hath destroyed, and broken her bars: her king and her princes in the Gentiles: there is no law, and her prophets have not found vision from our Lord."
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> The ancients of the daughter of Sion have sitten on the ground, they have held their peace: they have sprinkled their heads with dust, they are girded with hair cloths, the virgins of Jerusalem have cast down their heads to the ground.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The ancients of the daughter of Sion have sitten on the ground, they have held their peace: they have sprinkled their heads with dust, they are girded with hair cloths, the virgins of Jerusalem have cast down their heads to the ground."
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> Mine eyes have failed for tears, my bowels are troubled: my liver is poured out on the earth, for the destruction of the daughter of my people, when the little one, and the sucking fainted in the streets of the town.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Mine eyes have failed for tears, my bowels are troubled: my liver is poured out on the earth, for the destruction of the daughter of my people, when the little one, and the sucking fainted in the streets of the town."
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> They said to their mothers: Where is wheat and wine? When they fainted as the wounded in the streets of the city: when they yielded up the ghosts in the bosom of their mothers.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> They said to their mothers: Where is wheat and wine? When they fainted as the wounded in the streets of the city: when they yielded up the ghosts in the bosom of their mothers."
         },
         {
           "verse": 13,
           "text": "<cr>[1]</cr> Whereto shall I compare thee? Or whereto shall I liken thee o daughter of Jerusalem: whereto shall I make thee equal, and comfort thee o virgin daughter of Sion? For great is thy destruction <na>(d)</na> as the sea: who shall heal thee?",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -254,38 +219,31 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Thy prophets have seen false and foolish things for thee: neither have they opened thine iniquity, to provoke thee to penance, but they have seen false burdens and banishments for thee.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thy prophets have seen false and foolish things for thee: neither have they opened thine iniquity, to provoke thee to penance, but they have seen false burdens and banishments for thee."
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> All that passed by the way have clapped their hands upon thee: they have hissed, and moved their head upon the daughter of Jerusalem, saying: Is this the city of perfect beauty, the joy of all the earth?",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> All that passed by the way have clapped their hands upon thee: they have hissed, and moved their head upon the daughter of Jerusalem, saying: Is this the city of perfect beauty, the joy of all the earth?"
         },
         {
           "verse": 16,
-          "text": "<cr>[1]</cr> All thine enemies have opened their mouth upon thee: they have hissed, and gnashed with the teeth, and have said: We will devour: Lo this is the day, which we expected: we have found it, we have seen it.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> All thine enemies have opened their mouth upon thee: they have hissed, and gnashed with the teeth, and have said: We will devour: Lo this is the day, which we expected: we have found it, we have seen it."
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> Our Lord hath done the things that he meant, he hath accomplished his word, which he commanded from the days of old: he hath destroyed, and hath not spared, and he hath made the enemy joyful over thee, and hath exalted the horn of thine adversaries.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord hath done the things that he meant, he hath accomplished his word, which he commanded from the days of old: he hath destroyed, and hath not spared, and he hath made the enemy joyful over thee, and hath exalted the horn of thine adversaries."
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> Their heart hath cried to our Lord upon the walls of the daughter of Sion: Shed tears as a torrent by day, and night: give no rest to thyself, neither let the apple of thine eye cease.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Their heart hath cried to our Lord upon the walls of the daughter of Sion: Shed tears as a torrent by day, and night: give no rest to thyself, neither let the apple of thine eye cease."
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> Arise, praise in the night in the beginning of the watches: pour out thy heart as waters before the sight of our Lord: lift up thy hands to him for the life of thy little ones, which have fainted for famine in the head of all high ways.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Arise, praise in the night in the beginning of the watches: pour out thy heart as waters before the sight of our Lord: lift up thy hands to him for the life of thy little ones, which have fainted for famine in the head of all high ways."
         },
         {
           "verse": 20,
           "text": "<cr>[1]</cr> See o Lord, and consider whom thou hast vintaged thus: <na>(e)</na> shall women then eat their own fruit, little ones of the measure of a span? Is the priest, and the prophet slain in the sanctuary of our Lord?",
-          "has_annotation": false,
           "notes": [
             {
               "label": "e",
@@ -296,7 +254,6 @@
         {
           "verse": 21,
           "text": "<cr>[1]</cr> The child and the old man lay on the ground without: my virgins and my youngmen are fallen by the sword: thou hast killed in the day of thy fury: thou hast strucken, <na>(f)</na> neither hast thou had mercy.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "f",
@@ -306,8 +263,7 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> Thou hast called as it were to a solemn day, those that should terrify me round about, and there was none in the day of the fury of our Lord, that escaped and was left: whom I brought up, & nourished, mine enemy hath consumed them.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast called as it were to a solemn day, those that should terrify me round about, and there was none in the day of the fury of our Lord, that escaped and was left: whom I brought up, & nourished, mine enemy hath consumed them."
         }
       ]
     },
@@ -317,7 +273,6 @@
         {
           "verse": 1,
           "text": "The <cr>[1]</cr> man <na>(a)</na> that see my poverty in the rod of his indignation.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -327,23 +282,19 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> He hath led me, and brought me into darkness and not into light.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath led me, and brought me into darkness and not into light."
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> Only against me he hath turned and hath converted his hand all the day.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Only against me he hath turned and hath converted his hand all the day."
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> He hath made my skin old and my flesh, he hath broken my bones.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath made my skin old and my flesh, he hath broken my bones."
         },
         {
           "verse": 5,
           "text": "<cr>[1]</cr> He hath built round about me, and he hath compassed me with <na>(b)</na> gall and <na>(c)</na> labour.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -357,58 +308,47 @@
         },
         {
           "verse": 6,
-          "text": "<cr>[1]</cr> In dark places he hath placed me as the everlasting dead.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> In dark places he hath placed me as the everlasting dead."
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> He hath built round about against me, that I go not forth: he hath aggravated my fetters.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath built round about against me, that I go not forth: he hath aggravated my fetters."
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> Yea and when I shall cry, and ask, he hath excluded my prayer.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Yea and when I shall cry, and ask, he hath excluded my prayer."
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> He hath shut up my ways with square stones, he hath subverted my paths.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath shut up my ways with square stones, he hath subverted my paths."
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> He is become unto me a bear lying in wait: a lion in secret places.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He is become unto me a bear lying in wait: a lion in secret places."
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> He hath subverted my paths, and hath broken me, he hath made me desolate.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath subverted my paths, and hath broken me, he hath made me desolate."
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> He hath bent his bow, and set me as a mark for the arrow.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath bent his bow, and set me as a mark for the arrow."
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> He hath shot in my reins the daughters of his quiver.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath shot in my reins the daughters of his quiver."
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> I am made a derision to all my people, their song all the day.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> I am made a derision to all my people, their song all the day."
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> He hath replenished me with bitterness, he hath inebriated me with wormwood.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He hath replenished me with bitterness, he hath inebriated me with wormwood."
         },
         {
           "verse": 16,
           "text": "<cr>[1]</cr> And he <na>(d)</na> hath broken my teeth by number, he hath fed me with ashes.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -418,13 +358,11 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> And my soul is repelled from peace, I have forgotten good things.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> And my soul is repelled from peace, I have forgotten good things."
         },
         {
           "verse": 18,
           "text": "<cr>[1]</cr> And I said: Mine end is <na>(e)</na> perished, and mine hope from our Lord.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "e",
@@ -434,28 +372,23 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> Remember my poverty, and transgression, the wormwood, and the gall.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Remember my poverty, and transgression, the wormwood, and the gall."
         },
         {
           "verse": 20,
-          "text": "<cr>[1]</cr> Remembering I will be mindful, and my soul shall languish in me.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Remembering I will be mindful, and my soul shall languish in me."
         },
         {
           "verse": 21,
-          "text": "<cr>[1]</cr> Recording this thing in my heart, therefore will I hope.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Recording this thing in my heart, therefore will I hope."
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> The mercies of our Lord that we are not consumed: because his commiserations have not failed.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The mercies of our Lord that we are not consumed: because his commiserations have not failed."
         },
         {
           "verse": 23,
           "text": "<cr>[1](f)</cr> New in the morning, great is thy fidelity.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "f",
@@ -465,18 +398,15 @@
         },
         {
           "verse": 24,
-          "text": "<cr>[1]</cr> Our Lord is my portion, said my soul: therefore will I expect him.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord is my portion, said my soul: therefore will I expect him."
         },
         {
           "verse": 25,
-          "text": "<cr>[1]</cr> Our Lord is good to them that hope in him, to the soul that seeketh him.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord is good to them that hope in him, to the soul that seeketh him."
         },
         {
           "verse": 26,
           "text": "<cr>[1]</cr> It is good to wait with silence for the salvation <na>(g)</na> of God.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "g",
@@ -486,23 +416,19 @@
         },
         {
           "verse": 27,
-          "text": "<cr>[1]</cr> It is good for a man, when he beareth the yoke from his youth.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> It is good for a man, when he beareth the yoke from his youth."
         },
         {
           "verse": 28,
-          "text": "<cr>[1]</cr> He shall sit solitary, and hold his peace: because he hath lifted himself above himself.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He shall sit solitary, and hold his peace: because he hath lifted himself above himself."
         },
         {
           "verse": 29,
-          "text": "<cr>[1]</cr> He shall put his mouth in the dust, if perhaps there be hope.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> He shall put his mouth in the dust, if perhaps there be hope."
         },
         {
           "verse": 30,
           "text": "<cr>[1]</cr> He <na>(h)</na> shall give the cheek to him that striketh him, he shall be filled with reproaches.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "h",
@@ -512,18 +438,15 @@
         },
         {
           "verse": 31,
-          "text": "<cr>[1]</cr> Because our Lord will not reject for ever.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Because our Lord will not reject for ever."
         },
         {
           "verse": 32,
-          "text": "<cr>[1]</cr> Because if he hath rejected, he will also have mercy, according to the multitude of his mercies.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Because if he hath rejected, he will also have mercy, according to the multitude of his mercies."
         },
         {
           "verse": 33,
           "text": "<cr>[1]</cr> For he hath not humbled <na>(i)</na> from his heart, and cast off the children of men.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "i",
@@ -533,28 +456,23 @@
         },
         {
           "verse": 34,
-          "text": "<cr>[1]</cr> To stamp under his feet all the prisoners of the earth.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> To stamp under his feet all the prisoners of the earth."
         },
         {
           "verse": 35,
-          "text": "<cr>[1]</cr> To avert the judgement of a man before the face of the Highest",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> To avert the judgement of a man before the face of the Highest"
         },
         {
           "verse": 36,
-          "text": "<cr>[1]</cr> To pervert a man in his judgement, our Lord hath not known.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> To pervert a man in his judgement, our Lord hath not known."
         },
         {
           "verse": 37,
-          "text": "<cr>[1]</cr> Who is this, that hath commanded it to be done, our Lord not commanding it?",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Who is this, that hath commanded it to be done, our Lord not commanding it?"
         },
         {
           "verse": 38,
           "text": "<cr>[1]</cr> Out of the mouth of the Highest, there shall not proceed neither evil things, <na>(k)</na> nor good.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "k",
@@ -564,48 +482,39 @@
         },
         {
           "verse": 39,
-          "text": "<cr>[1]</cr> What hath the living man murmured, man for his sins?",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> What hath the living man murmured, man for his sins?"
         },
         {
           "verse": 40,
-          "text": "<cr>[1]</cr> Let us search our ways, & seek, and return to our Lord.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Let us search our ways, & seek, and return to our Lord."
         },
         {
           "verse": 41,
-          "text": "<cr>[1]</cr> Let us lift up our hearts with our hands to our Lord into the heavens.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Let us lift up our hearts with our hands to our Lord into the heavens."
         },
         {
           "verse": 42,
-          "text": "<cr>[1]</cr> We have done wickedly, and provoked to wrath: therefore thou art inexorable.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> We have done wickedly, and provoked to wrath: therefore thou art inexorable."
         },
         {
           "verse": 43,
-          "text": "<cr>[1]</cr> Thou hast covered in fury, and hast strucken us: thou hast killed, and not spared.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast covered in fury, and hast strucken us: thou hast killed, and not spared."
         },
         {
           "verse": 44,
-          "text": "<cr>[1]</cr> Thou hast set a cloud before thee, that prayer may not pass.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast set a cloud before thee, that prayer may not pass."
         },
         {
           "verse": 45,
-          "text": "<cr>[1]</cr> Thou hast made me to be rooted out, and abject in the midst of the peoples.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast made me to be rooted out, and abject in the midst of the peoples."
         },
         {
           "verse": 46,
-          "text": "<cr>[1]</cr> All the enemies have opened their mouth upon us.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> All the enemies have opened their mouth upon us."
         },
         {
           "verse": 47,
           "text": "<cr>[1](l)</cr> Prophecy is made unto us, fear, and snare, and destruction.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "l",
@@ -615,63 +524,51 @@
         },
         {
           "verse": 48,
-          "text": "<cr>[1]</cr> Mine eye hath shed streams of waters, in the destruction of the daughter of my people.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Mine eye hath shed streams of waters, in the destruction of the daughter of my people."
         },
         {
           "verse": 49,
-          "text": "<cr>[1]</cr> Mine eye is afflicted, neither hath it been quiet, because there was no rest:",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Mine eye is afflicted, neither hath it been quiet, because there was no rest:"
         },
         {
           "verse": 50,
-          "text": "<cr>[1]</cr> Till our Lord regarded and looked from the heavens.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Till our Lord regarded and looked from the heavens."
         },
         {
           "verse": 51,
-          "text": "<cr>[1]</cr> Mine eye hath spoiled my soul for all the daughters of my city.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Mine eye hath spoiled my soul for all the daughters of my city."
         },
         {
           "verse": 52,
-          "text": "<cr>[1]</cr> Mine enemies in hunting have caught me as a bird, without cause.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Mine enemies in hunting have caught me as a bird, without cause."
         },
         {
           "verse": 53,
-          "text": "<cr>[1]</cr> My life is fallen into the lake, and they have laid a stone upon me.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> My life is fallen into the lake, and they have laid a stone upon me."
         },
         {
           "verse": 54,
-          "text": "<cr>[1]</cr> The waters have flowed over my head: I said: I am undone.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The waters have flowed over my head: I said: I am undone."
         },
         {
           "verse": 55,
-          "text": "<cr>[1]</cr> I have invocated thy name o Lord from the lowest lake.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> I have invocated thy name o Lord from the lowest lake."
         },
         {
           "verse": 56,
-          "text": "<cr>[1]</cr> Thou hast heard my voice: turn not away thine ear from my sobbings, and cries.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast heard my voice: turn not away thine ear from my sobbings, and cries."
         },
         {
           "verse": 57,
-          "text": "<cr>[1]</cr> Thou didst approach in the day, when I invocated thee: thou hast said: Fear not.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou didst approach in the day, when I invocated thee: thou hast said: Fear not."
         },
         {
           "verse": 58,
-          "text": "<cr>[1]</cr> Thou hast judged o Lord the cause of my soul, redeemer of my life.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast judged o Lord the cause of my soul, redeemer of my life."
         },
         {
           "verse": 59,
           "text": "<cr>[1]</cr> Thou hast seen o Lord their iniquity against me: <na>(m)</na> judge my judgement.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "m",
@@ -681,33 +578,27 @@
         },
         {
           "verse": 60,
-          "text": "<cr>[1]</cr> Thou hast seen all their fury, all their cogitations against me.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast seen all their fury, all their cogitations against me."
         },
         {
           "verse": 61,
-          "text": "<cr>[1]</cr> Thou hast heard their reproach o Lord, all their cogitations against me.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou hast heard their reproach o Lord, all their cogitations against me."
         },
         {
           "verse": 62,
-          "text": "<cr>[1]</cr> The lips of them that rise up against me; and their cogitations against me all the day.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The lips of them that rise up against me; and their cogitations against me all the day."
         },
         {
           "verse": 63,
-          "text": "<cr>[1]</cr> See their sitting down, and their rising up, I am their psalm.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> See their sitting down, and their rising up, I am their psalm."
         },
         {
           "verse": 64,
-          "text": "<cr>[1]</cr> Thou shalt render them a recompense o Lord, according to the works of their hands.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou shalt render them a recompense o Lord, according to the works of their hands."
         },
         {
           "verse": 65,
           "text": "<cr>[1]</cr> Thou shalt give them <na>(n)</na> a shield of heart <na>(o)</na> thy labour.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "n",
@@ -721,8 +612,7 @@
         },
         {
           "verse": 66,
-          "text": "<cr>[1]</cr> Thou shalt persecute in fury, and shalt destroy them from under the heavens o Lord.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thou shalt persecute in fury, and shalt destroy them from under the heavens o Lord."
         }
       ]
     },
@@ -732,7 +622,6 @@
         {
           "verse": 1,
           "text": "How <cr>[1]</cr> is <na>(a)</na> the gold darkened, the best colour changed, the stones of the sanctuary dispersed in the head of all streets?",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -742,13 +631,11 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> The noble children of Sion, & they that were clothed with the principal gold: how are they reputed as earthen vessels, the work of the potter's hands?",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The noble children of Sion, & they that were clothed with the principal gold: how are they reputed as earthen vessels, the work of the potter's hands?"
         },
         {
           "verse": 3,
           "text": "<cr>[1]</cr> Yea even <na>(b)</na> the lamiaes have opened their breast, they have given suck to their young, the daughter of my people is cruel, as <na>(c)</na> the ostrich in the desert.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -762,28 +649,23 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> The tongue of the suckling hath cloven to the roof of his mouth for thirst: the little ones have asked bread, and there was none that brake it unto them.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The tongue of the suckling hath cloven to the roof of his mouth for thirst: the little ones have asked bread, and there was none that brake it unto them."
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> They that fed voluptuously, have died in the ways: they that were brought up in scarlet, have embraced the dung.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> They that fed voluptuously, have died in the ways: they that were brought up in scarlet, have embraced the dung."
         },
         {
           "verse": 6,
-          "text": "<cr>[1]</cr> And the iniquity of the daughter of my people is become greater than the sin of Sodom: which was overthrown in a moment, and hands took nothing in her.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> And the iniquity of the daughter of my people is become greater than the sin of Sodom: which was overthrown in a moment, and hands took nothing in her."
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> Her Nazareites whiter than snow, purer than milk, ruddier than the old ivory, fairer than the sapphire.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Her Nazareites whiter than snow, purer than milk, ruddier than the old ivory, fairer than the sapphire."
         },
         {
           "verse": 8,
           "text": "<cr>[1]</cr> Their face is made blacker than coals, and they are <na>(d)</na> not known in the streets: their skin hath cloven to their bones, it is withered, and is made as wood.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -793,13 +675,11 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> It was better with them that were slain with the sword, than with them that were killed by famine: because these pined away consumed by the barrenness of the country.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> It was better with them that were slain with the sword, than with them that were killed by famine: because these pined away consumed by the barrenness of the country."
         },
         {
           "verse": 10,
           "text": "<cr>[1]</cr> The hands of <na>(e)</na> pitiful women have sodden their own children: they were made their meat <na>(f)</na> in the destruction of <na>(g)</na> the daughter of my people.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "e",
@@ -817,18 +697,15 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> Our Lord hath accomplished his fury, he hath poured out the wrath of his indignation: and he hath kindled a fire in Sion, and it hath devoured the foundations thereof.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our Lord hath accomplished his fury, he hath poured out the wrath of his indignation: and he hath kindled a fire in Sion, and it hath devoured the foundations thereof."
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> The kings of the earth, and all the inhabitants of the world did not believe, that the adversary and the enemy should enter in by the gates of Jerusalem.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The kings of the earth, and all the inhabitants of the world did not believe, that the adversary and the enemy should enter in by the gates of Jerusalem."
         },
         {
           "verse": 13,
           "text": "<cr>[1]</cr> For the sins of her <na>(h)</na> prophets, and the iniquities of her priests, which have shed the blood of just men in the midst of her.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "h",
@@ -838,38 +715,31 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> The blind wandered in the streets, they were polluted with blood: and when they could not, they held their skirts.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The blind wandered in the streets, they were polluted with blood: and when they could not, they held their skirts."
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> Depart ye polluted, they cried to them: depart, get ye hence, touch not: for they brawled, & were moved: they said among the Gentiles: He will add no more to dwell among them.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Depart ye polluted, they cried to them: depart, get ye hence, touch not: for they brawled, & were moved: they said among the Gentiles: He will add no more to dwell among them."
         },
         {
           "verse": 16,
-          "text": "<cr>[1]</cr> The face of our Lord hath divided them, he will not add to respect them: they have not reverenced the faces of the priests, neither had they pity on the ancients.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> The face of our Lord hath divided them, he will not add to respect them: they have not reverenced the faces of the priests, neither had they pity on the ancients."
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> Whilst we yet stood, our eyes failed towards our vain help, when we looked attentive to a nation, that was not able to save.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Whilst we yet stood, our eyes failed towards our vain help, when we looked attentive to a nation, that was not able to save."
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> Our steps slipped in the way of our streets, our end draweth near: our days are accomplished, because our end is come.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our steps slipped in the way of our streets, our end draweth near: our days are accomplished, because our end is come."
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> Our persecuters were swifter than the eagles of the heaven: upon the mountains they pursued us, in the desert they lay in wait against us.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Our persecuters were swifter than the eagles of the heaven: upon the mountains they pursued us, in the desert they lay in wait against us."
         },
         {
           "verse": 20,
           "text": "<cr>[1]</cr> The spirit of our mouth <na>(i)</na> Christ our Lord is taken in our sins: to whom we have said: In thy shadow shall we live among the Gentiles.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "i",
@@ -879,13 +749,11 @@
         },
         {
           "verse": 21,
-          "text": "<cr>[1]</cr> Rejoice, and be glad o daughter of Edom, which dwellest in the Land of Hus: to thee also shall the cup come, thou shalt be made drunken, and naked.",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Rejoice, and be glad o daughter of Edom, which dwellest in the Land of Hus: to thee also shall the cup come, thou shalt be made drunken, and naked."
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> Thine iniquity is accomplished o daughter of Sion, he will add no more to transport thee: he hath",
-          "has_annotation": false
+          "text": "<cr>[1]</cr> Thine iniquity is accomplished o daughter of Sion, he will add no more to transport thee: he hath"
         }
       ]
     },
@@ -894,18 +762,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Remember o Lord what is fallen to us: behold, and regard our reproach.",
-          "has_annotation": false
+          "text": "Remember o Lord what is fallen to us: behold, and regard our reproach."
         },
         {
           "verse": 2,
-          "text": "Our inheritance is turned to aliens: our houses to strangers.",
-          "has_annotation": false
+          "text": "Our inheritance is turned to aliens: our houses to strangers."
         },
         {
           "verse": 3,
           "text": "We are made <na>(b)</na> pupils without father: our mothers are as it were widows.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -915,18 +780,15 @@
         },
         {
           "verse": 4,
-          "text": "Our water we have drunk for money: our wood we have bought for a price.",
-          "has_annotation": false
+          "text": "Our water we have drunk for money: our wood we have bought for a price."
         },
         {
           "verse": 5,
-          "text": "We were led by our necks, no rest was given to the weary.",
-          "has_annotation": false
+          "text": "We were led by our necks, no rest was given to the weary."
         },
         {
           "verse": 6,
           "text": "We <na>(c)</na> have given our hand to Aegypt, and to the Assyrians, that we might be filled with bread.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "c",
@@ -936,18 +798,15 @@
         },
         {
           "verse": 7,
-          "text": "Our fathers have sinned, & they are not: and we have borne their iniquities.",
-          "has_annotation": false
+          "text": "Our fathers have sinned, & they are not: and we have borne their iniquities."
         },
         {
           "verse": 8,
-          "text": "Servants have ruled over us: there was none that would redeem us out of their hand.",
-          "has_annotation": false
+          "text": "Servants have ruled over us: there was none that would redeem us out of their hand."
         },
         {
           "verse": 9,
           "text": "In peril of our lives did we fetch us bread, <cr>[1]</cr> at the face of the sword in the desert.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "* in danger of the sword."
@@ -956,23 +815,19 @@
         },
         {
           "verse": 10,
-          "text": "Our skin was burnt as an oven, by reason of the tempests of famine.",
-          "has_annotation": false
+          "text": "Our skin was burnt as an oven, by reason of the tempests of famine."
         },
         {
           "verse": 11,
-          "text": "They humbled the women in Sion, and the virgins in the cities of Juda.",
-          "has_annotation": false
+          "text": "They humbled the women in Sion, and the virgins in the cities of Juda."
         },
         {
           "verse": 12,
-          "text": "The Princes were hanged up by the hand: they did not reverence the faces of the ancients.",
-          "has_annotation": false
+          "text": "The Princes were hanged up by the hand: they did not reverence the faces of the ancients."
         },
         {
           "verse": 13,
           "text": "Young men they abused <na>(d)</na> unchastely: and the children fell <na>(e)</na> in wood.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -986,18 +841,15 @@
         },
         {
           "verse": 14,
-          "text": "The ancients decayed out of the gates: the youngmen out of the choir of the singers.",
-          "has_annotation": false
+          "text": "The ancients decayed out of the gates: the youngmen out of the choir of the singers."
         },
         {
           "verse": 15,
-          "text": "The joy of our heart hath failed, our choir is turned into mourning.",
-          "has_annotation": false
+          "text": "The joy of our heart hath failed, our choir is turned into mourning."
         },
         {
           "verse": 16,
           "text": "The <na>(f)</na> crown of our head is fallen: woe to us, because we have sinned.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "f",
@@ -1007,28 +859,23 @@
         },
         {
           "verse": 17,
-          "text": "Therefore is our heart made sorrowful, therefore are our eyes darkened.",
-          "has_annotation": false
+          "text": "Therefore is our heart made sorrowful, therefore are our eyes darkened."
         },
         {
           "verse": 18,
-          "text": "For mount Sion, because it is perished, foxes have walked on it.",
-          "has_annotation": false
+          "text": "For mount Sion, because it is perished, foxes have walked on it."
         },
         {
           "verse": 19,
-          "text": "But thou o Lord shalt remain for ever, thy throne in generation and to generation.",
-          "has_annotation": false
+          "text": "But thou o Lord shalt remain for ever, thy throne in generation and to generation."
         },
         {
           "verse": 20,
-          "text": "Why wilt thou for ever be forgetful of us? Wilt thou forsake us in length of days?",
-          "has_annotation": false
+          "text": "Why wilt thou for ever be forgetful of us? Wilt thou forsake us in length of days?"
         },
         {
           "verse": 21,
           "text": "<na>(g)</na> Convert us o Lord to thee, and we shall be converted: renew our days, as from the beginning.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "g",
@@ -1039,7 +886,6 @@
         {
           "verse": 22,
           "text": "But rejecting thou hast rejected us, <na>(h)</na> thou art angry against us exceedingly.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "h",

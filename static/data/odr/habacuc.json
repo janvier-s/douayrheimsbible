@@ -1,16 +1,14 @@
 {
-  "book": "Habacuc",
+  "book": "habacuc",
   "book_title": null,
   "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "The Prophet lamenteth the imminent ruin of the people, by the insolent cruelty of the Chaldees: 12. especially for that the holy city shall be ransacked by idolaters and most wicked men.",
       "verses": [
         {
           "verse": 1,
           "text": "The <na>(a)</na> burden that Habacuc the Prophet saw.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -20,23 +18,19 @@
         },
         {
           "verse": 2,
-          "text": "How long o Lord shall I cry, and thou wilt not hear? Shall I cry out to thee suffering violence, and thou wilt not save?",
-          "has_annotation": false
+          "text": "How long o Lord shall I cry, and thou wilt not hear? Shall I cry out to thee suffering violence, and thou wilt not save?"
         },
         {
           "verse": 3,
-          "text": "Why hast thou shewed me iniquity and labour, to see prey and injustice against me? And judgement is made, and contradiction more mighty.",
-          "has_annotation": false
+          "text": "Why hast thou shewed me iniquity and labour, to see prey and injustice against me? And judgement is made, and contradiction more mighty."
         },
         {
           "verse": 4,
-          "text": "For this cause is the law torn, and judgement came not to the end: because the impious prevaileth against the just, therefore doth there come forth perverse judgement.",
-          "has_annotation": false
+          "text": "For this cause is the law torn, and judgement came not to the end: because the impious prevaileth against the just, therefore doth there come forth perverse judgement."
         },
         {
           "verse": 5,
           "text": "<cr>[1]</cr> Behold ye in the nations, and see: marvel, and be astonished: because <na>(b)</na> a work is done in your days, which no man will believe when it shall be told.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Act. 13. v. 41."
@@ -52,7 +46,6 @@
         {
           "verse": 6,
           "text": "Because lo I <na>(c)</na> will raise up the Chaldees, a bitter and swift nation, walking upon the latitude of the earth, to possess tabernacles not their own.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "c",
@@ -62,28 +55,23 @@
         },
         {
           "verse": 7,
-          "text": "It is horrible, & terrible: out of itself shall the judgement, & the burden thereof proceed.",
-          "has_annotation": false
+          "text": "It is horrible, & terrible: out of itself shall the judgement, & the burden thereof proceed."
         },
         {
           "verse": 8,
-          "text": "His horses lighter than leopards, and swifter than evening wolves; and his horsemen shall be spread abroad, for his horsemen shall come from a far, they shall fly as an eagle hastening to eat.",
-          "has_annotation": false
+          "text": "His horses lighter than leopards, and swifter than evening wolves; and his horsemen shall be spread abroad, for his horsemen shall come from a far, they shall fly as an eagle hastening to eat."
         },
         {
           "verse": 9,
-          "text": "All shall come to the prey, their faces a burning wind: and he shall gather together as the sand, captivity.",
-          "has_annotation": false
+          "text": "All shall come to the prey, their faces a burning wind: and he shall gather together as the sand, captivity."
         },
         {
           "verse": 10,
-          "text": "And he shall triumph over kings, and tyrants shall be his laughing stock, and he shall laugh upon every munition, and shall cast up a mount, and shall take it.",
-          "has_annotation": false
+          "text": "And he shall triumph over kings, and tyrants shall be his laughing stock, and he shall laugh upon every munition, and shall cast up a mount, and shall take it."
         },
         {
           "verse": 11,
           "text": "<na>(d)</na> Then shall the spirit be changed, and he shall pass, and fall: this is his strength of his god.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -93,23 +81,19 @@
         },
         {
           "verse": 12,
-          "text": "Why wast thou not from the beginning o Lord my God, my holy one, & we shall not die? Lord thou hast appointed him for judgement: and strong to chastise, thou hast founded him.",
-          "has_annotation": false
+          "text": "Why wast thou not from the beginning o Lord my God, my holy one, & we shall not die? Lord thou hast appointed him for judgement: and strong to chastise, thou hast founded him."
         },
         {
           "verse": 13,
-          "text": "Thine eyes are clean, from seeing evil, and thou canst not look toward iniquity. Why lookest thou not upon them that do unjust things, and holdest thy peace when the impious devoureth him that is more just than himself?",
-          "has_annotation": false
+          "text": "Thine eyes are clean, from seeing evil, and thou canst not look toward iniquity. Why lookest thou not upon them that do unjust things, and holdest thy peace when the impious devoureth him that is more just than himself?"
         },
         {
           "verse": 14,
-          "text": "And thou wilt make them as the fishes of the sea, and as the creeping beast not having a prince.",
-          "has_annotation": false
+          "text": "And thou wilt make them as the fishes of the sea, and as the creeping beast not having a prince."
         },
         {
           "verse": 15,
           "text": "<na>(e)</na> He lifted up all in the hook, he drew it in his train, and gathered it into his net: upon this he will be glad and rejoice.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "e",
@@ -119,13 +103,11 @@
         },
         {
           "verse": 16,
-          "text": "Therefore will he immolate to his train, and he will sacrifice to his net: because by them his portion is fat, & his meat chosen.",
-          "has_annotation": false
+          "text": "Therefore will he immolate to his train, and he will sacrifice to his net: because by them his portion is fat, & his meat chosen."
         },
         {
           "verse": 17,
           "text": "For this cause therefore spreadeth he his train, and always to kill <na>(f)</na> the nations he will not spare.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "f",
@@ -133,37 +115,34 @@
             }
           ]
         }
-      ]
+      ],
+      "summary": "The Prophet lamenteth the imminent ruin of the people, by the insolent cruelty of the Chaldees: 12. especially for that the holy city shall be ransacked by idolaters and most wicked men."
     },
     {
       "chapter": 2,
-      "summary": "The captivity of the two tribes, their relaxation, Christ will assuredly come, though not quickly. 5. Their afflicters (the Chaldees) shall be destroyed; 18. and all other idolaters.",
       "verses": [
         {
           "verse": 1,
           "text": "I <na>(a)[1]</na> will stand upon my watch, and fix my step upon the munition: and I will behold, to see what may be said to me, and what I may answer to him that rebuketh me.",
-          "has_annotation": false,
+          "cross_refs": [
+            {
+              "text": "Isa. 21."
+            }
+          ],
           "notes": [
             {
               "label": "a",
               "text": "The words of the Prophet expecting what God will further reveal unto him."
             }
-          ],
-          "cross_refs": [
-            {
-              "text": "Isa. 21."
-            }
           ]
         },
         {
           "verse": 2,
-          "text": "And our Lord answered me, and said: Write the vision, and make it plain upon tables: that he which runneth may read it over.",
-          "has_annotation": false
+          "text": "And our Lord answered me, and said: Write the vision, and make it plain upon tables: that he which runneth may read it over."
         },
         {
           "verse": 3,
           "text": "Because as yet the vision is far, and it shall appear at the end, and shall not lie: if he shall make tarriance, expect him: because coming he will come, and he <na>(b)</na> will not slack.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -174,7 +153,6 @@
         {
           "verse": 4,
           "text": "Behold he that is incredulous, his soul shall not be right in himself: but <na>(c)</na> the just shall live in his faith.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "c",
@@ -185,7 +163,6 @@
         {
           "verse": 5,
           "text": "And as wine deceiveth him that drinketh: so shall the proud man be, and he shall not be beautified: who as it were hell, hath dilated his soul: and himself as death, and he is not filled: and he hath gathered together unto him all nations, and hath heaped together unto him all peoples. <cr>[1]</cr>",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Ioan. 3. Rom. 1. Gal. 3. Heb. 10."
@@ -194,18 +171,15 @@
         },
         {
           "verse": 6,
-          "text": "Why, shall not all these take up a parable upon him, and a speech of obscure sayings of him: and it be said: Woe to him that multiplieth things not his own? How long also doth he aggravate against himself thick clay?",
-          "has_annotation": false
+          "text": "Why, shall not all these take up a parable upon him, and a speech of obscure sayings of him: and it be said: Woe to him that multiplieth things not his own? How long also doth he aggravate against himself thick clay?"
         },
         {
           "verse": 7,
-          "text": "Why, shall they not rise suddenly, that shall bite thee? And they shall tear thee, be raised up, and thou be for a spoil to them?",
-          "has_annotation": false
+          "text": "Why, shall they not rise suddenly, that shall bite thee? And they shall tear thee, be raised up, and thou be for a spoil to them?"
         },
         {
           "verse": 8,
           "text": "Because thou hast spoiled many nations, all that shall be left of the peoples shall spoil thee: for the blood <na>(d)</na> of man, and the iniquity of the land, of the city, and of all that dwell therein.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -215,13 +189,11 @@
         },
         {
           "verse": 9,
-          "text": "Woe to him that gathereth together naughty avarice to his house, that his nest may be on high, and thinketh he is delivered out of the hand of evil.",
-          "has_annotation": false
+          "text": "Woe to him that gathereth together naughty avarice to his house, that his nest may be on high, and thinketh he is delivered out of the hand of evil."
         },
         {
           "verse": 10,
           "text": "Thou <na>(e)</na> hast thought confusion to thy house, thou hast cut in sunder many peoples, and thy soul hath sinned.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "e",
@@ -231,13 +203,11 @@
         },
         {
           "verse": 11,
-          "text": "Because the stone out of the wall shall cry: and the timber, that is between the junctures of the buildings, shall answer.",
-          "has_annotation": false
+          "text": "Because the stone out of the wall shall cry: and the timber, that is between the junctures of the buildings, shall answer."
         },
         {
           "verse": 12,
           "text": "<cr>[1]</cr> Woe to him that buildeth a city in bloods, and prepareth a city in iniquity.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Ezec. 24. Nahu. 3."
@@ -246,38 +216,31 @@
         },
         {
           "verse": 13,
-          "text": "Why, are not these things from the Lord of hosts? For the peoples shall labour in much fire: and the nations in vain, and they shall faint.",
-          "has_annotation": false
+          "text": "Why, are not these things from the Lord of hosts? For the peoples shall labour in much fire: and the nations in vain, and they shall faint."
         },
         {
           "verse": 14,
-          "text": "Because the earth shall be replenished, that they may know the glory of our Lord, as waters covering the sea.",
-          "has_annotation": false
+          "text": "Because the earth shall be replenished, that they may know the glory of our Lord, as waters covering the sea."
         },
         {
           "verse": 15,
-          "text": "Woe to him that giveth drink to his friend, putting in his gall, and making drunk, that he may behold his nakedness.",
-          "has_annotation": false
+          "text": "Woe to him that giveth drink to his friend, putting in his gall, and making drunk, that he may behold his nakedness."
         },
         {
           "verse": 16,
-          "text": "Thou art filled with ignominy for glory, drink thou also, and be fast a sleep: the cup of the right hand of our Lord shall compass thee, and the vomit of ignominy upon thy glory.",
-          "has_annotation": false
+          "text": "Thou art filled with ignominy for glory, drink thou also, and be fast a sleep: the cup of the right hand of our Lord shall compass thee, and the vomit of ignominy upon thy glory."
         },
         {
           "verse": 17,
-          "text": "Because the iniquity of Libanus shall cover thee, & the wasting of the beasts shall terrify them for the bloods of men, and the iniquity of the land, and of the city, and of all that dwell therein.",
-          "has_annotation": false
+          "text": "Because the iniquity of Libanus shall cover thee, & the wasting of the beasts shall terrify them for the bloods of men, and the iniquity of the land, and of the city, and of all that dwell therein."
         },
         {
           "verse": 18,
-          "text": "What profiteth the thing engraven, that the forger thereof hath graven it, a molten, and a false image? Because the forger thereof hath hoped in his forgery, to make dumb idols.",
-          "has_annotation": false
+          "text": "What profiteth the thing engraven, that the forger thereof hath graven it, a molten, and a false image? Because the forger thereof hath hoped in his forgery, to make dumb idols."
         },
         {
           "verse": 19,
           "text": "Woe unto him that saith to wood: Awake: Arise, to the dumb stone. Why, can it teach? Behold, this same is covered with gold, and silver: and there is no spirit in the bowels thereof. <cr>[1]</cr>",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Psal. 10."
@@ -286,23 +249,21 @@
         },
         {
           "verse": 20,
-          "text": "But our Lord is in his holy temple: let all the earth be silent at his presence.",
-          "has_annotation": false
+          "text": "But our Lord is in his holy temple: let all the earth be silent at his presence."
         }
-      ]
+      ],
+      "summary": "The captivity of the two tribes, their relaxation, Christ will assuredly come, though not quickly. 5. Their afflicters (the Chaldees) shall be destroyed; 18. and all other idolaters."
     },
     {
       "chapter": 3,
       "verses": [
         {
           "verse": 1,
-          "text": "The prayer of Habacuc the prophet for <cr>[1]</cr> ignorances.",
-          "has_annotation": false
+          "text": "The prayer of Habacuc the prophet for <cr>[1]</cr> ignorances."
         },
         {
           "verse": 2,
           "text": "Lord I heard thy hearing, and <na>(a)</na> was afraid. Lord thy work in <na>(b)</na> the midst of years, quicken it: In the midst of years shalt thou make it known: when thou art angry, thou wilt remember mercy.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -317,38 +278,33 @@
         {
           "verse": 3,
           "text": "God will come from <na>(c)</na> the South, and the holy one from mount Pharan: <cr>[1]</cr> His glory shall cover the heavens, and the earth is full of his praise.",
-          "has_annotation": false,
+          "cross_refs": [
+            {
+              "text": "* Sela. See Annot. Ps. 9."
+            }
+          ],
           "notes": [
             {
               "label": "c",
               "text": "From Bethleem which is southward from Jerusalem."
             }
-          ],
-          "cross_refs": [
-            {
-              "text": "* Sela. See Annot. Ps. 9."
-            }
           ]
         },
         {
           "verse": 4,
-          "text": "His brightness shall be as the light, horns in his hands: There is his strength hid.",
-          "has_annotation": false
+          "text": "His brightness shall be as the light, horns in his hands: There is his strength hid."
         },
         {
           "verse": 5,
-          "text": "Before his face shall death go, and the devil shall go forth before his feet.",
-          "has_annotation": false
+          "text": "Before his face shall death go, and the devil shall go forth before his feet."
         },
         {
           "verse": 6,
-          "text": "He stood and measured the earth, he beheld, and dissolved the Gentiles: and the mountains of the world were broken. The hills of the world were bowed, by the ways of his eternity.",
-          "has_annotation": false
+          "text": "He stood and measured the earth, he beheld, and dissolved the Gentiles: and the mountains of the world were broken. The hills of the world were bowed, by the ways of his eternity."
         },
         {
           "verse": 7,
           "text": "For iniquity I saw the tents of Aethiopia, <na>(d)</na> the skins of the land of Madian shall be troubled.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "d",
@@ -358,13 +314,11 @@
         },
         {
           "verse": 8,
-          "text": "Why, wast thou angry with the rivers o Lord? Or was thy fury in the rivers? Or thine indignation in the sea? Who wilt mount upon thy horses, and thy chariots salvation.",
-          "has_annotation": false
+          "text": "Why, wast thou angry with the rivers o Lord? Or was thy fury in the rivers? Or thine indignation in the sea? Who wilt mount upon thy horses, and thy chariots salvation."
         },
         {
           "verse": 9,
           "text": "Raising thou wilt raise up thy bow: the oath to the tribes which thou hast spoken. <cr>[1]</cr> Thou wilt cut the rivers of the earth.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "* Sela."
@@ -373,49 +327,42 @@
         },
         {
           "verse": 10,
-          "text": "The mountains saw thee, and were sorry, the gulf of water passed. The depth gave his voice: the height lifted up his hands.",
-          "has_annotation": false
+          "text": "The mountains saw thee, and were sorry, the gulf of water passed. The depth gave his voice: the height lifted up his hands."
         },
         {
           "verse": 11,
-          "text": "The sun and the moon stood in their habitation, in the light of thine arrows, they shall go in the brightness of thy glittering spear.",
-          "has_annotation": false
+          "text": "The sun and the moon stood in their habitation, in the light of thine arrows, they shall go in the brightness of thy glittering spear."
         },
         {
           "verse": 12,
-          "text": "In fretting thou wilt tread down the earth: in fury thou wilt astonish the Gentiles.",
-          "has_annotation": false
+          "text": "In fretting thou wilt tread down the earth: in fury thou wilt astonish the Gentiles."
         },
         {
           "verse": 13,
           "text": "Thou wentest forth the salvation of thy people: salvation with thy Christ. Thou struckest <na>(e)</na> the head out of the house of the impious, thou hast discovered the foundation even to the neck. <cr>[1]</cr>",
-          "has_annotation": false,
+          "cross_refs": [
+            {
+              "text": "Sela."
+            }
+          ],
           "notes": [
             {
               "label": "e",
               "text": "Antichrist the head of the malignant house, or conventicle, shall be destroyed by Christ. Isa. 11. v. 4. 2. Thes. 2."
             }
-          ],
-          "cross_refs": [
-            {
-              "text": "Sela."
-            }
           ]
         },
         {
           "verse": 14,
-          "text": "Thou hast cursed his sceptres, the head of his warriors, them that come as a whirlwind to disperse me. Their exultation, as his that devoureth the poor in secret.",
-          "has_annotation": false
+          "text": "Thou hast cursed his sceptres, the head of his warriors, them that come as a whirlwind to disperse me. Their exultation, as his that devoureth the poor in secret."
         },
         {
           "verse": 15,
-          "text": "Thou madest a way in the sea for thy horses, in the midst of many waters.",
-          "has_annotation": false
+          "text": "Thou madest a way in the sea for thy horses, in the midst of many waters."
         },
         {
           "verse": 16,
           "text": "Iheard, and my belly was troubled: at the voice my lips trembled. Let rottenness enter in my bones, and swarm under me. That I may rest in <na>(f)</na> the day of tribulation: that I may ascend to our girded people.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "f",
@@ -425,18 +372,15 @@
         },
         {
           "verse": 17,
-          "text": "For the fig-tree shall not flourish: & there shall be no spring in the vines. The work of the olive-tree shall deceive: and the fields shall not yield meat: the cattle shall be cut off from the fold, and there shall be no herd in the stalls.",
-          "has_annotation": false
+          "text": "For the fig-tree shall not flourish: & there shall be no spring in the vines. The work of the olive-tree shall deceive: and the fields shall not yield meat: the cattle shall be cut off from the fold, and there shall be no herd in the stalls."
         },
         {
           "verse": 18,
-          "text": "But I will joy in our Lord: and will rejoice in God my JESUS.",
-          "has_annotation": false
+          "text": "But I will joy in our Lord: and will rejoice in God my JESUS."
         },
         {
           "verse": 19,
-          "text": "God our Lord is my strength: and he will make my feet as of the harts': and upon my high places he the conquerer will lead me singing in psalms.",
-          "has_annotation": false
+          "text": "God our Lord is my strength: and he will make my feet as of the harts': and upon my high places he the conquerer will lead me singing in psalms."
         }
       ]
     }

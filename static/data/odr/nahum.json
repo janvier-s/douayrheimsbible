@@ -1,16 +1,14 @@
 {
-  "book": "Nahum",
+  "book": "nahum",
   "book_title": null,
   "hebrew_title": null,
   "chapters": [
     {
       "chapter": 1,
-      "summary": "Ninive shall be destroyed, not able to escape God's powerful wrath. 9. The Assirians shall not prevail against Jerusalem: 13. but themselves shall be slain.",
       "verses": [
         {
           "verse": 1,
           "text": "The <na>(a)</na> burden of Ninive. The Book of the vision of Nahum the Elceseite.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -20,48 +18,39 @@
         },
         {
           "verse": 2,
-          "text": "God is jealous, & our Lord revenging, our Lord revenging, and having fury: our Lord revenging on his adversaries, and he is angry with his enemies.",
-          "has_annotation": false
+          "text": "God is jealous, & our Lord revenging, our Lord revenging, and having fury: our Lord revenging on his adversaries, and he is angry with his enemies."
         },
         {
           "verse": 3,
-          "text": "Our Lord is patient, and great of strength, and cleansing, he will not make innocent. Our Lord's ways in tempest, & whirlwind, & clouds, the dust of his feet.",
-          "has_annotation": false
+          "text": "Our Lord is patient, and great of strength, and cleansing, he will not make innocent. Our Lord's ways in tempest, & whirlwind, & clouds, the dust of his feet."
         },
         {
           "verse": 4,
-          "text": "Rebuking the sea, & drying it up: & bringing all rivers to a desert. Basan is weakened & Carmel: & the flower of Libanus is faded.",
-          "has_annotation": false
+          "text": "Rebuking the sea, & drying it up: & bringing all rivers to a desert. Basan is weakened & Carmel: & the flower of Libanus is faded."
         },
         {
           "verse": 5,
-          "text": "The mountains were moved at him, and the hills were desolate: and the earth hath trembled at his presence, & the world, & all that dwell therein.",
-          "has_annotation": false
+          "text": "The mountains were moved at him, and the hills were desolate: and the earth hath trembled at his presence, & the world, & all that dwell therein."
         },
         {
           "verse": 6,
-          "text": "Before the face of his indignation who shall stand? & who shall resist in the wrath of his fury? His indignation is poured out as fire: and the rocks are dissolved by him.",
-          "has_annotation": false
+          "text": "Before the face of his indignation who shall stand? & who shall resist in the wrath of his fury? His indignation is poured out as fire: and the rocks are dissolved by him."
         },
         {
           "verse": 7,
-          "text": "Our Lord is good, & strengthening in the day of tribulation: & knowing them that hope in him.",
-          "has_annotation": false
+          "text": "Our Lord is good, & strengthening in the day of tribulation: & knowing them that hope in him."
         },
         {
           "verse": 8,
-          "text": "And in a flood passing by, he will make a consummation of the place thereof: & darkness shall pursue his enemies.",
-          "has_annotation": false
+          "text": "And in a flood passing by, he will make a consummation of the place thereof: & darkness shall pursue his enemies."
         },
         {
           "verse": 9,
-          "text": "What think ye against our Lord? Consummation he will make: there shall not rise double tribulation.",
-          "has_annotation": false
+          "text": "What think ye against our Lord? Consummation he will make: there shall not rise double tribulation."
         },
         {
           "verse": 10,
           "text": "Because as thorns clasp one another: so <na>(b)</na> the feast of them that drink together: they shall be consumed as stubble full of dryness.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -71,23 +60,19 @@
         },
         {
           "verse": 11,
-          "text": "Out of thee shall come forth one that thinketh malice against our Lord in the mind devising prevarication.",
-          "has_annotation": false
+          "text": "Out of thee shall come forth one that thinketh malice against our Lord in the mind devising prevarication."
         },
         {
           "verse": 12,
-          "text": "Thus saith our Lord: If they shall be perfect: and so a great many, so also shall they be shorn, and he shall pass by: I have afflicted thee, and I will afflict thee no more.",
-          "has_annotation": false
+          "text": "Thus saith our Lord: If they shall be perfect: and so a great many, so also shall they be shorn, and he shall pass by: I have afflicted thee, and I will afflict thee no more."
         },
         {
           "verse": 13,
-          "text": "And now I will break his rod from off thy back, & I will burst thy bonds in sunder.",
-          "has_annotation": false
+          "text": "And now I will break his rod from off thy back, & I will burst thy bonds in sunder."
         },
         {
           "verse": 14,
           "text": "And Our Lord will command upon thee, there <na>(c)</na> shall not be sown of thy name any more: out of the house of thy God I will destroy sculptile, & molten, I will put thy grave, because thou art dishonoured. presently after the whole lineage was destroyed. 4. Reg. 19.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "c",
@@ -98,23 +83,21 @@
         {
           "verse": 15,
           "text": "<cr>[1]</cr> Behold upon the mountains the feet of him that Evangelizeth, and preacheth peace: celebrate, o Juda, thy festivities, and render thy vows: because Belial shall no more add to pass through thee, he is wholly perished.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Isa. 52. Rom. 10."
             }
           ]
         }
-      ]
+      ],
+      "summary": "Ninive shall be destroyed, not able to escape God's powerful wrath. 9. The Assirians shall not prevail against Jerusalem: 13. but themselves shall be slain."
     },
     {
       "chapter": 2,
-      "summary": "A description of Ninive's ruin, 5. made ignominious to all nations: 17. foreign soldiers flying away, and all their own terrified.",
       "verses": [
         {
           "verse": 1,
           "text": "He is come up that <na>(a)</na> shall scatter before thee, that shall keep the siege: behold the way, fortify the loins, strengthen force exceedingly.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "a",
@@ -125,7 +108,6 @@
         {
           "verse": 2,
           "text": "Because our Lord hath rendered <na>(b)</na> the pride of Jacob, as the pride of Israel: because the waters have dissipated them, & have marred their branches.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -135,33 +117,27 @@
         },
         {
           "verse": 3,
-          "text": "The buckler of his valiants fiery, the men of the army in scarlets, the reins of the chariot fiery in the day of his preparation, & the drivers are brought asleep.",
-          "has_annotation": false
+          "text": "The buckler of his valiants fiery, the men of the army in scarlets, the reins of the chariot fiery in the day of his preparation, & the drivers are brought asleep."
         },
         {
           "verse": 4,
-          "text": "In the ways they are troubled, the chariots struck one against another in the streets: their appearance are as it were lamps, as it were lightning running to & fro.",
-          "has_annotation": false
+          "text": "In the ways they are troubled, the chariots struck one against another in the streets: their appearance are as it were lamps, as it were lightning running to & fro."
         },
         {
           "verse": 5,
-          "text": "He will remember his valiants, they shall fall in their ways: they shall quickly scale the walls thereof, and a bower shall be prepared.",
-          "has_annotation": false
+          "text": "He will remember his valiants, they shall fall in their ways: they shall quickly scale the walls thereof, and a bower shall be prepared."
         },
         {
           "verse": 6,
-          "text": "The gates of the rivers are opened, and the temple thrown down to the ground.",
-          "has_annotation": false
+          "text": "The gates of the rivers are opened, and the temple thrown down to the ground."
         },
         {
           "verse": 7,
-          "text": "And the soldier is led away captive: and her handmaids were led away mourning as doves, murmuring in their hearts.",
-          "has_annotation": false
+          "text": "And the soldier is led away captive: and her handmaids were led away mourning as doves, murmuring in their hearts."
         },
         {
           "verse": 8,
           "text": "And Ninive <na>(c)</na> her waters as it were a fishpool of waters: but themselves are fled. <na>(d)</na> Stand^ stand, and there is none that will return.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "c",
@@ -176,7 +152,6 @@
         {
           "verse": 9,
           "text": "<cr>[1]</cr> Spoil the silver, spoil the gold: and there is no end of the riches of all vessels that are to be desired.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Isa. 2."
@@ -185,13 +160,11 @@
         },
         {
           "verse": 10,
-          "text": "She is dissipated, and rent, and torn: & pining heart, and dissolution of the knees, and defect in all reins: and the faces of them all as the blackness of a pot.",
-          "has_annotation": false
+          "text": "She is dissipated, and rent, and torn: & pining heart, and dissolution of the knees, and defect in all reins: and the faces of them all as the blackness of a pot."
         },
         {
           "verse": 11,
           "text": "<na>(e)</na> Where is the habitation of lions, and the pasture of lions' whelps, to which the lion went, to go in thither, the lion's whelp, and is there none to make them afraid?",
-          "has_annotation": false,
           "notes": [
             {
               "label": "e",
@@ -201,15 +174,14 @@
         },
         {
           "verse": 12,
-          "text": "The lion hath caught sufficiently for his whelps, and hath killed for his lionesses: and he hath filled his dens with prey, and his couch with ravening.",
-          "has_annotation": false
+          "text": "The lion hath caught sufficiently for his whelps, and hath killed for his lionesses: and he hath filled his dens with prey, and his couch with ravening."
         },
         {
           "verse": 13,
-          "text": "Behold I to thee, saith the Lord of hosts, and I will burn thy chariots even to smoke, and the sword shall eat thy little lions: and I will destroy thy prey out of the land, and the voice of thy messengers shall be heard no more.",
-          "has_annotation": false
+          "text": "Behold I to thee, saith the Lord of hosts, and I will burn thy chariots even to smoke, and the sword shall eat thy little lions: and I will destroy thy prey out of the land, and the voice of thy messengers shall be heard no more."
         }
-      ]
+      ],
+      "summary": "A description of Ninive's ruin, 5. made ignominious to all nations: 17. foreign soldiers flying away, and all their own terrified."
     },
     {
       "chapter": 3,
@@ -217,7 +189,6 @@
         {
           "verse": 1,
           "text": "Woe <cr>[1]</cr> to thee o city <na>(a)</na> of bloods, all of lying full of tearing: spoil shall not depart from thee.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Ezec. 24. Habac. 2."
@@ -232,23 +203,19 @@
         },
         {
           "verse": 2,
-          "text": "The voice of the whip, and the voice of the violence of the wheel, and of the neighing horse, and of the fervent chariot, and of the horseman mounting.",
-          "has_annotation": false
+          "text": "The voice of the whip, and the voice of the violence of the wheel, and of the neighing horse, and of the fervent chariot, and of the horseman mounting."
         },
         {
           "verse": 3,
-          "text": "And of the glistering sword, and of the glittering spear, and of a multitude slain, and of a grievous ruin: neither is there an end of corpses, and they shall fall on their bodies.",
-          "has_annotation": false
+          "text": "And of the glistering sword, and of the glittering spear, and of a multitude slain, and of a grievous ruin: neither is there an end of corpses, and they shall fall on their bodies."
         },
         {
           "verse": 4,
-          "text": "Because of the multitude of the fornications, of the harlot beautiful and grateful, and having sorceries, which hath sold nations in her fornications, and families in her sorceries.",
-          "has_annotation": false
+          "text": "Because of the multitude of the fornications, of the harlot beautiful and grateful, and having sorceries, which hath sold nations in her fornications, and families in her sorceries."
         },
         {
           "verse": 5,
           "text": "<cr>[1]</cr> Behold I to thee, saith the Lord of hosts: and I will discover thy privy parts in thy face, and will shew to the Gentiles thy nakedness, and to kingdoms thine ignominy.",
-          "has_annotation": false,
           "cross_refs": [
             {
               "text": "Isa. 47."
@@ -257,18 +224,15 @@
         },
         {
           "verse": 6,
-          "text": "And I will throw upon thee abominations, and will use thee contumeliously, and will put thee for an example.",
-          "has_annotation": false
+          "text": "And I will throw upon thee abominations, and will use thee contumeliously, and will put thee for an example."
         },
         {
           "verse": 7,
-          "text": "And it shall be, every one that shall see thee, shall leap back from thee, and shall say: Ninive is wasted: who shall shake the head upon thee? Whence shall I seek a comforter for thee?",
-          "has_annotation": false
+          "text": "And it shall be, every one that shall see thee, shall leap back from thee, and shall say: Ninive is wasted: who shall shake the head upon thee? Whence shall I seek a comforter for thee?"
         },
         {
           "verse": 8,
           "text": "Why, art thou better than <na>(b)</na> Alexandria full of peoples, which dwelleth in the rivers? Waters round about it: whose riches, the sea: waters the walls thereof.",
-          "has_annotation": false,
           "notes": [
             {
               "label": "b",
@@ -278,58 +242,47 @@
         },
         {
           "verse": 9,
-          "text": "Aethiopia the strength of it, and Aegypt, and there is no end: Afrike, and the Libyans have been in thine aid.",
-          "has_annotation": false
+          "text": "Aethiopia the strength of it, and Aegypt, and there is no end: Afrike, and the Libyans have been in thine aid."
         },
         {
           "verse": 10,
-          "text": "But she also in transmigration was led into captivity: her little ones were dashed in the head of all ways, and upon her noble ones, they have cast lot, and all her great men were made fast in fetters.",
-          "has_annotation": false
+          "text": "But she also in transmigration was led into captivity: her little ones were dashed in the head of all ways, and upon her noble ones, they have cast lot, and all her great men were made fast in fetters."
         },
         {
           "verse": 11,
-          "text": "Thou also therefore shalt be made drunk, and shalt be despised: and thou shalt seek help of the enemy.",
-          "has_annotation": false
+          "text": "Thou also therefore shalt be made drunk, and shalt be despised: and thou shalt seek help of the enemy."
         },
         {
           "verse": 12,
-          "text": "All thy munitions as figtrees with their green figs: if they be shaken, they will fall into the mouth of the eater.",
-          "has_annotation": false
+          "text": "All thy munitions as figtrees with their green figs: if they be shaken, they will fall into the mouth of the eater."
         },
         {
           "verse": 13,
-          "text": "Behold thy people women in the midst of thee: to thine enemies the gates of thy land with opening shall be opened, fire shall devour thy bars.",
-          "has_annotation": false
+          "text": "Behold thy people women in the midst of thee: to thine enemies the gates of thy land with opening shall be opened, fire shall devour thy bars."
         },
         {
           "verse": 14,
-          "text": "Draw thee water for the siege, build thy munitions: enter into the clay, and tread, making mortar hold the brick.",
-          "has_annotation": false
+          "text": "Draw thee water for the siege, build thy munitions: enter into the clay, and tread, making mortar hold the brick."
         },
         {
           "verse": 15,
-          "text": "There the fire shall eat thee: thou shalt perish by the sword, as a bruke it shall devour thee: be gathered together as the bruke, be multiplied as the locust.",
-          "has_annotation": false
+          "text": "There the fire shall eat thee: thou shalt perish by the sword, as a bruke it shall devour thee: be gathered together as the bruke, be multiplied as the locust."
         },
         {
           "verse": 16,
-          "text": "Thou hast made thy merchandises more than are the stars of heaven: the bruke was spread, and flew away.",
-          "has_annotation": false
+          "text": "Thou hast made thy merchandises more than are the stars of heaven: the bruke was spread, and flew away."
         },
         {
           "verse": 17,
-          "text": "Thy keepers as the locusts: and thy little ones as it were the locusts of locusts, which swarm on the hedges in the day of cold: the sun arose, and they flew away, and their place was not known where they were.",
-          "has_annotation": false
+          "text": "Thy keepers as the locusts: and thy little ones as it were the locusts of locusts, which swarm on the hedges in the day of cold: the sun arose, and they flew away, and their place was not known where they were."
         },
         {
           "verse": 18,
-          "text": "Thy pastors slumbered, o king of Assur, thy princes shall be buried, thy people lay hid in the mountains, and there is none to gather them together.",
-          "has_annotation": false
+          "text": "Thy pastors slumbered, o king of Assur, thy princes shall be buried, thy people lay hid in the mountains, and there is none to gather them together."
         },
         {
           "verse": 19,
-          "text": "Thy destruction is not obscure, thy plague is very sore: all that have heard the fame of thee, have clapped the hand upon thee: for upon whom hath not thy malice passed always?",
-          "has_annotation": false
+          "text": "Thy destruction is not obscure, thy plague is very sore: all that have heard the fame of thee, have clapped the hand upon thee: for upon whom hath not thy malice passed always?"
         }
       ]
     }
