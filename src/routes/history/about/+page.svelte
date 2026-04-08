@@ -27,7 +27,7 @@
 	<title>About the Douay-Rheims Bible: English Catholic Scripture, 1582-1610</title>
 	<meta
 		name="description"
-		content="The Douay-Rheims Bible is the first complete English Catholic translation of Sacred Scripture, rendered from the Latin Vulgate by English exiles at Douai and Rheims between 1582 and 1610."
+		content="The Douay-Rheims Bible is the first complete English Catholic translation of Sacred Scripture, translated by Gregory Martin from the Latin Vulgate. This site presents the original pre-Challoner text of 1582 and 1609-1610."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/about" />
 	<meta property="og:type" content="article" />
@@ -44,6 +44,7 @@
 	title="About the Douay-Rheims Bible"
 	subtitle="The first complete English Catholic translation of Sacred Scripture, rendered faithfully from the Latin Vulgate by English scholars in exile."
 	faqItems={ABOUT_FAQ}
+	datePublished="2024-01-01"
 >
 	<h2>What Is the Douay-Rheims Bible?</h2>
 
@@ -85,9 +86,11 @@
 		Trent had declared the authoritative text for Catholic use. They also consulted the original
 		Hebrew and Greek manuscripts for accuracy. This approach gave the translation a distinctively
 		Latinate vocabulary, with words like <em>supersubstantial</em>, <em>longanimity</em>, and
-		<em>benignity</em> appearing throughout. The Catholic Encyclopedia described the result as "so full
-		of Latinisms as to be in places hardly intelligible." The translators included a glossary to explain
-		these terms, acknowledging the difficulty.
+		<em>benignity</em> appearing throughout. The
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		> described the result as "so full of Latinisms as to be in places hardly intelligible." The translators
+		included a glossary to explain these terms, acknowledging the difficulty.
 	</p>
 
 	<p>
