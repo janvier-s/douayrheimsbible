@@ -134,7 +134,10 @@
 		// Match verse-number references in summary text: a digit-sequence followed by
 		// ". " that appears after whitespace or a semicolon (e.g. "8. Then placing…").
 		// Also handles any pre-existing ℣.N patterns.
-		let t = text.replace(/(^|[\s;,])(\d+)\.\s+/g, (_, sep, n) => {
+		const maxVerse = Math.max(...chapter.verses.map((v) => v.verse), 0);
+		let t = text.replace(/(^|[\s;,])(\d+)\.\s+/g, (match, sep, n) => {
+			const num = parseInt(n, 10);
+			if (num < 1 || num > maxVerse) return match;
 			const link = `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}"><span class="verse-ref-glyph">℣.</span>${n}</a> `;
 			return sep + link;
 		});
