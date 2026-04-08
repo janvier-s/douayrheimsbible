@@ -304,6 +304,7 @@
 		class:text-justify={$prefs.justifiedText}
 		class:bionic-fade={bionic}
 		on:mouseover={isStudy ? handleMarkerMouseover : undefined}
+		on:focus={isStudy ? handleMarkerMouseover : undefined}
 		on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 	>
 		{#each verses as v (v.verse)}
@@ -351,6 +352,7 @@
 					class:bionic-fade={bionic}
 					on:click={(e) => isStudy && handleMarkerClick(e, v.verse)}
 					on:mouseover={isStudy ? handleMarkerMouseover : undefined}
+					on:focus={isStudy ? handleMarkerMouseover : undefined}
 					on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 				>
 					{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}
