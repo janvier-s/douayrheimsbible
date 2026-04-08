@@ -20,17 +20,17 @@
 </script>
 
 <svelte:head>
-	<title>A Bible Forbidden to Its Own Readers</title>
+	<title>A Bible Banned in England: The Douay-Rheims and Elizabethan Recusancy</title>
 	<meta
 		name="description"
-		content="Catholics who produced the English New Testament at Rheims were forbidden to read it without a license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
+		content="Catholics who produced the Douay-Rheims Bible were banned from reading it in England without a license. The Elizabethan recusancy laws, the penalties for possessing Catholic books, and the theology behind the Church's own restrictions."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/forbidden-bible" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="A Bible Forbidden to Its Own Readers" />
+	<meta property="og:title" content="A Bible Banned in England: The Douay-Rheims and Recusancy" />
 	<meta
 		property="og:description"
-		content="Catholics who produced the Rheims New Testament were forbidden to read it without a license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
+		content="The Elizabethan recusancy laws banned the Douay-Rheims in England. The history of those restrictions and the theology behind them."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/forbidden-bible" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -39,14 +39,18 @@
 <ProseLayout
 	title="A Bible Forbidden to Its Own Readers"
 	subtitle="Catholics who produced the English New Testament at Rheims were forbidden to read it without a special license. The history of the Church's restrictions on vernacular Scripture, and the theology that lay behind them."
+	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
 	<h2>Two Prohibitions</h2>
 
 	<p>
-		The Rheims New Testament was published in 1582 for English Catholics who could not lawfully
-		possess it. In England, carrying a copy could mean imprisonment; in documented cases, torture.
-		This was the hostility of a Protestant government toward a Catholic text.
+		The Douay-Rheims Bible entered English life under two simultaneous prohibitions. The first came
+		from the Protestant English state, which made possession of Catholic books a criminal offence.
+		The second came from the Catholic Church itself, which required readers to obtain a license from
+		a confessor before reading the Bible privately. Both prohibitions had their own logic, and
+		understanding them requires knowing something about the world in which the translation was
+		produced.
 	</p>
 
 	<p>
@@ -136,12 +140,13 @@
 	<p>
 		The Rheims translators stated their position plainly: they had produced a vernacular Scripture
 		from pastoral necessity rather than from any belief that the laity had an inherent right to it.
-		The preface said so directly: they acted <q>not from choice, but from necessity.</q> The growing circulation
-		of Protestant English Bibles among Catholics had forced a response. Unless the Church furnished its
-		own English translation, its members would be reading Protestant versions shaped by Protestant theological
-		assumptions. The Rheims New Testament was produced as a pastoral corrective, accompanied by the annotations
-		that supplied the doctrinal guidance its authors considered inseparable from any proper reading of
-		the text.
+		The preface said so directly: they acted <q>not from choice, but from necessity.</q> The growing
+		circulation of Protestant English Bibles among Catholics had forced a response. Unless the
+		Church furnished its own English translation, its members would be reading Protestant versions
+		shaped by Protestant theological assumptions. The Rheims New Testament,
+		<a href="/history/rheims-1582">published in a time of crisis</a>, was produced as a pastoral
+		corrective, accompanied by the annotations that supplied the doctrinal guidance its authors
+		considered inseparable from any proper reading of the text.
 	</p>
 
 	<p>
@@ -192,11 +197,13 @@
 	<h2>The Text and Its Context</h2>
 
 	<p>
-		The Douay-Rheims Bible was produced in this environment. Its translators worked in exile,
-		risking death to bring Scripture to English Catholics in England. Their purpose was to furnish
-		their community not simply with a text but with the word of God in its proper Catholic form,
-		accompanied by the annotations and guidance that would enable it to be received correctly. The
-		licensing requirement that governed its use was part of the same pastoral provision.
+		The Douay-Rheims Bible was produced in this environment. For the context of the translation's
+		creation, see <a href="/history/origins">Born in Exile: The Origins of the Douay-Rheims Bible</a
+		>. Its translators worked in exile, risking death to bring Scripture to English Catholics in
+		England. Their purpose was to furnish their community not simply with a text but with the word
+		of God in its proper Catholic form, accompanied by the annotations and guidance that would
+		enable it to be received correctly. The licensing requirement that governed its use was part of
+		the same pastoral provision.
 	</p>
 
 	<p>
@@ -206,6 +213,49 @@
 		further than its authors had managed. It stands as a document of one of the most contested
 		moments in the history of Scripture in the English language, produced by scholars whose
 		commitment to Scripture and to the Church's teaching authority they understood as inseparable.
+	</p>
+
+	<h2>The Price of Possession</h2>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Illustration of Elizabethan customs officers or pursuivants searching for Catholic books and priests, or a document showing recusancy fines"
+		></div>
+		<figcaption>
+			The enforcement of Elizabethan recusancy laws, which made possession of Catholic texts a
+			criminal matter
+		</figcaption>
+	</figure>
+
+	<p>
+		The danger was concrete and documented. The Elizabethan settlement had imposed legal penalties
+		on Catholics through a succession of Acts: the Act of Uniformity (1559) set a fine of twelve
+		pence for each absence from Anglican Sunday services; the Recusancy Act of 1571 raised the
+		stakes further; and the Act of 1581, passed in the same year that Edmund Campion was arrested
+		and executed, converted recusancy from a civil into a criminal matter and added felony charges
+		for those who harboured priests.
+	</p>
+
+	<p>
+		Catholic books occupied a specific place in this legal framework. They could be seized at ports,
+		confiscated from booksellers, and destroyed. Possession in large quantities could result in
+		prosecution for distributing seditious literature. The result was systematic destruction: copies
+		of the 1582 Rheims New Testament were seized on arrival in England, which is why first editions
+		are now exceptionally rare. The
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		>
+		and Henry Cotton's 1855 bibliography both note that several early printings have never been definitively
+		accounted for and may have been entirely destroyed.
+	</p>
+
+	<p>
+		Those who nonetheless possessed and circulated the Douay-Rheims were taking a legal risk that
+		went well beyond a fine. The atmosphere in which the Bible was distributed was one in which the
+		men who had translated it had already been executed, imprisoned, or driven permanently into
+		exile. The translation was not merely a religious text; in Elizabethan England, it was evidence
+		of allegiance to a faith that the state had declared treasonous.
 	</p>
 
 	<h2>Sources</h2>
