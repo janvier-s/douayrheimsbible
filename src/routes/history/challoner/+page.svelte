@@ -154,7 +154,7 @@
 			>gentes esse cohæredes, et concorporales, et comparticipes promissionis ejus in Christo Jesu
 			per Evangelium</em
 		><br />
-		<strong>Literally transaltion:</strong> the Gentiles to be co-heirs, and co-bodied, and
+		<strong>Literally translation:</strong> the Gentiles to be co-heirs, and co-bodied, and
 		co-partakers of his promise in Christ Jesus through the Gospel<br />
 		<strong>Original:</strong> "The Gentiles to be coheirs and concorporate and comparticipant of
 		his promise in Christ Jesus by the Gospel"<br />
@@ -175,7 +175,7 @@
 			>et illuminare omnes, quæ sit dispensatio sacramenti absconditi a sæculis in Deo, qui omnia
 			creavit</em
 		><br />
-		<strong>Literally transaltion:</strong> and to enlighten all, what is the dispensation of the
+		<strong>Literally translation:</strong> and to enlighten all, what is the dispensation of the
 		mystery hidden from the ages in God, who created all things<br />
 		<strong>Original:</strong> "and to illuminate all men what is the dispensation of the sacrament
 		hidden from worlds in God, who created all things"<br />
@@ -198,7 +198,7 @@
 			>Non enim accepistis spiritum servitutis iterum in timore, sed accepistis spiritum adoptionis
 			filiorum, in quo clamamus: Abba (Pater)</em
 		><br />
-		<strong>Literally transaltion:</strong> For you have not received the spirit of servitude again
+		<strong>Literally translation:</strong> For you have not received the spirit of servitude again
 		in fear, but you have received the spirit of adoption of sons, in whom we cry: Abba (Father)<br
 		/>
 		<strong>Original:</strong> "you have not received the spirit of servitude again in fear; but you
@@ -219,7 +219,7 @@
 			>Qui sedet super gyrum terræ, et habitatores ejus sunt quasi locustæ; qui extendit velut
 			nihilum cælos, et expandit eos sicut tabernaculum ad inhabitandum</em
 		><br />
-		<strong>Literally transaltion:</strong> Who sits above the circle of the earth, and its
+		<strong>Literally translation:</strong> Who sits above the circle of the earth, and its
 		inhabitants are as locusts; who stretches out the heavens as nothing, and spreads them out as a
 		tent for dwelling<br />
 		<strong>Original:</strong> "He that sitteth upon the compass of the earth, and the inhabitants
