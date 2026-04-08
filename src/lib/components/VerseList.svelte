@@ -195,7 +195,7 @@
 		}
 	}
 
-	function handleMarkerMouseover(e: MouseEvent) {
+	function handleMarkerMouseover(e: Event) {
 		const btn = (e.target as HTMLElement).closest('.study-marker') as HTMLElement | null;
 		if (!btn) return;
 		if (hoverTimer) {
@@ -208,7 +208,7 @@
 		popoverStyle = calcPopoverStyle(btn);
 	}
 
-	function handleMarkerMouseout(e: MouseEvent) {
+	function handleMarkerMouseout(e: Event) {
 		const btn = (e.target as HTMLElement).closest('.study-marker') as HTMLElement | null;
 		if (!btn) return;
 		schedulePopoverDismiss();
@@ -306,6 +306,7 @@
 		on:mouseover={isStudy ? handleMarkerMouseover : undefined}
 		on:focus={isStudy ? handleMarkerMouseover : undefined}
 		on:mouseout={isStudy ? handleMarkerMouseout : undefined}
+		on:blur={isStudy ? handleMarkerMouseout : undefined}
 	>
 		{#each verses as v (v.verse)}
 			<!-- inline anchor for intersection observer + scroll target -->
@@ -354,6 +355,7 @@
 					on:mouseover={isStudy ? handleMarkerMouseover : undefined}
 					on:focus={isStudy ? handleMarkerMouseover : undefined}
 					on:mouseout={isStudy ? handleMarkerMouseout : undefined}
+					on:blur={isStudy ? handleMarkerMouseout : undefined}
 				>
 					{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}
 				</p>

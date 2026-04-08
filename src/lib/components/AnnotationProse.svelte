@@ -38,24 +38,37 @@
 			: `left:${left}px; top:${rect.bottom + GAP}px; width:${POPOVER_WIDTH}px;`;
 	}
 
+	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
+
 	function dismiss() {
 		openMn = null;
 		popoverStyle = '';
 	}
 
-	function handleClick(e: MouseEvent) {
+	function scheduleDismiss() {
+		hoverTimer = setTimeout(dismiss, 120);
+	}
+
+	function cancelDismiss() {
+		if (hoverTimer) {
+			clearTimeout(hoverTimer);
+			hoverTimer = null;
+		}
+	}
+
+	function handleMouseover(e: Event) {
 		const btn = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
-		if (!btn) {
-			dismiss();
-			return;
-		}
+		if (!btn) return;
+		cancelDismiss();
 		const mn = btn.dataset.mn ?? null;
-		if (openMn === mn) {
-			dismiss();
-			return;
-		}
 		openMn = mn;
 		popoverStyle = calcPopover(btn);
+	}
+
+	function handleMouseout(e: Event) {
+		const btn = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
+		if (!btn) return;
+		scheduleDismiss();
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -76,8 +89,14 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
-<div class="annotation-prose" on:click={handleClick}>
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div
+	class="annotation-prose"
+	on:mouseover={handleMouseover}
+	on:mouseout={handleMouseout}
+	on:focus={handleMouseover}
+	on:blur={handleMouseout}
+>
 	{#each paragraphs as para}
 		<p class="font-reader text-[16px] leading-[1.83] text-foreground">
 			{@html para}
@@ -101,6 +120,8 @@
 			class:mn-popover-above={above}
 			role="tooltip"
 			aria-live="polite"
+			on:mouseenter={cancelDismiss}
+			on:mouseleave={scheduleDismiss}
 			style="position:fixed; {popoverStyle}"
 		>
 			<span class="mn-popover-marker">{openMn}</span>
