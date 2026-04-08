@@ -67,10 +67,13 @@
 	<h2>The English College at Douai</h2>
 
 	<p>
-		It was against this backdrop that William Allen, a former Fellow of Oriel College, Oxford,
-		conceived a plan to preserve English Catholic scholarship and train priests for the dangerous
-		mission of ministering to Catholics in England. On 29 September 1568, he founded the English
-		College at the University of Douai in the Spanish Netherlands (now northern France).
+		It was against this backdrop that <a
+			href="https://en.wikipedia.org/wiki/William_Allen_(cardinal)">William Allen</a
+		>, a former Fellow of Oriel College, Oxford, conceived a plan to preserve English Catholic
+		scholarship and train priests for the dangerous mission of ministering to Catholics in England.
+		On 29 September 1568, he founded the
+		<a href="https://en.wikipedia.org/wiki/English_College,_Douai">English College</a> at the University
+		of Douai in the Spanish Netherlands (now northern France).
 	</p>
 
 	<p>
@@ -96,11 +99,10 @@
 
 	<p>
 		Among the scholars who gathered at Douai was
-		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
-			>Gregory Martin (c. 1542–1582)</a
-		>, one of the original students at St John's College, Oxford, and a close friend of Edmund
-		Campion. Martin arrived at the college in 1570, was ordained in 1573, and spent two years
-		helping to establish the English College in Rome before returning to the continent.
+		<a href="https://en.wikipedia.org/wiki/Gregory_Martin_(scholar)">Gregory Martin</a> (c. 1542–1582),
+		one of the original students at St John's College, Oxford, and a close friend of Edmund Campion. Martin
+		arrived at the college in 1570, was ordained in 1573, and spent two years helping to establish the
+		English College in Rome before returning to the continent.
 	</p>
 
 	<p>
