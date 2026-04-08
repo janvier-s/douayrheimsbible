@@ -208,6 +208,10 @@
 			>, source for Geddes's and Mombert's characterizations of the annotations
 		</li>
 		<li>
+			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
+			<em>Essays Critical and Historical</em>
+		</li>
+		<li>
 			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>
 		</li>
 	</ul>
