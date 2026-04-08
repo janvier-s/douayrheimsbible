@@ -20,17 +20,20 @@
 </script>
 
 <svelte:head>
-	<title>After Challoner: A Bible in Dispute</title>
+	<title>After Challoner: The Disputed History of Douay-Rheims Bible Editions</title>
 	<meta
 		name="description"
-		content="The proliferation of competing Catholic Bible editions after Challoner, and why Cardinal Wiseman declared that calling any of them the Douay-Rheims was an abuse of terms."
+		content="The proliferation of competing Douay-Rheims Bible editions after Challoner, catalogued by Henry Cotton in 1855, and why Cardinal Wiseman declared the name Douay-Rheims an abuse of terms."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/after-challoner" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="After Challoner: A Bible in Dispute" />
+	<meta
+		property="og:title"
+		content="After Challoner: The Disputed History of Douay-Rheims Editions"
+	/>
 	<meta
 		property="og:description"
-		content="The competing Catholic Bible editions after Challoner, and why the name Douay-Rheims became, in Wiseman's words, an abuse of terms."
+		content="How the Douay-Rheims proliferated into competing editions after Challoner, and why Cardinal Wiseman said the name had become an abuse of terms."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/after-challoner" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -39,16 +42,18 @@
 <ProseLayout
 	title="After Challoner: A Bible in Dispute"
 	subtitle="The proliferation of competing editions after Challoner, and why Cardinal Wiseman declared the name Douay-Rheims an abuse of terms."
+	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
 	<h2>Multiple Editions, No Single Text</h2>
 
 	<p>
-		When Richard Challoner revised the Douay-Rheims between 1749 and 1777, he produced not one text
-		but several, each differing from the last, each published anonymously, with no mechanism for
-		determining which should be considered definitive. By the time he died in 1781, the Catholic
-		English Bible existed in at least three distinct Challoner versions, none formally authorized,
-		none identical with the others.
+		The history of Douay-Rheims Bible editions after Challoner is a history of proliferation without
+		control. When Richard Challoner revised the Douay-Rheims between 1749 and 1777, he produced not
+		one text but several, each differing from the last, each published anonymously, with no
+		mechanism for determining which should be considered definitive. By the time he died in 1781,
+		the Catholic English Bible existed in at least three distinct Challoner versions, none formally
+		authorized, none identical with the others.
 	</p>
 
 	<p>What followed made the situation considerably more complex.</p>
@@ -80,13 +85,14 @@
 	</figure>
 
 	<p>
-		Henry Cotton, an Archdeacon of Cashel who spent years cataloguing every Catholic English Bible
-		edition he could locate, published his findings at the Oxford University Press in 1855. His
-		preface captured the problem with precision. Educated men, he wrote, whether Protestant or
-		Catholic, allowed themselves to speak of "the Douay Bible" or "the Rhemish Testament" as though
-		all copies of Holy Scripture circulating among Catholics represented one and the same text,
-		accompanied by one and the same body of notes. They did not. Cotton's chronological list ran to
-		nearly three hundred entries spanning more than two and a half centuries.
+		<a href="https://archive.org/details/rhemesanddoway00cottuoft">Henry Cotton</a>, an Archdeacon
+		of Cashel who spent years cataloguing every Catholic English Bible edition he could locate,
+		published his findings at the Oxford University Press in 1855. His preface captured the problem
+		with precision. Educated men, he wrote, whether Protestant or Catholic, allowed themselves to
+		speak of "the Douay Bible" or "the Rhemish Testament" as though all copies of Holy Scripture
+		circulating among Catholics represented one and the same text, accompanied by one and the same
+		body of notes. They did not. Cotton's chronological list ran to nearly three hundred entries
+		spanning more than two and a half centuries.
 	</p>
 
 	<p>
@@ -113,12 +119,13 @@
 
 	<p>
 		Cardinal Newman, surveying this landscape in his tract on the Rheims and Douay Version, observed
-		that the Old Testament had remained essentially stable since Challoner's 1750 revision, while
-		the New Testament had become a field of competing readings. Editors were forced to choose
-		between this or that of Challoner's three New Testament texts, or McMahon's revision as refined
-		by Troy. No two editions were identical, yet all were published under the same name. Newman
-		identified approximately one hundred and seventy textual variations in a sample of passages
-		between Challoner's first edition and later versions.
+		that the Old Testament had remained essentially stable since Challoner's 1750 revision as
+		described in <a href="/history/challoner">The Challoner Revision</a>, while the New Testament
+		had become a field of competing readings. Editors were forced to choose between this or that of
+		Challoner's three New Testament texts, or McMahon's revision as refined by Troy. No two editions
+		were identical, yet all were published under the same name. Newman identified approximately one
+		hundred and seventy textual variations in a sample of passages between Challoner's first edition
+		and later versions.
 	</p>
 
 	<h2>Independent Translators</h2>
@@ -153,28 +160,29 @@
 	<p>
 		The text presented on this site is Martin's original: the first edition pre-Challoner
 		Douay-Rheims, the translation that all subsequent editors took as their starting point and that
-		none of them left unchanged.
+		none of them left unchanged. For a full account of what this site presents, see <a
+			href="/history/about">About the Douay-Rheims Bible</a
+		>.
 	</p>
 
 	<h2>Sources</h2>
 	<ul>
 		<li>
 			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em> — primary source for Newman's analysis of the post-Challoner
-			text traditions
+			<em>Essays Critical and Historical</em>; primary source for Newman's analysis of the
+			post-Challoner text traditions
 		</li>
 		<li>
 			Rev. Henry Cotton, <em
 				>Rhemes and Doway: An Attempt to Shew What Has Been Done by Roman Catholics for the
 				Diffusion of the Holy Scriptures in English</em
-			> (Oxford University Press, 1855) — primary source for the chronological edition list, Cotton's
-			preface, and the Roman Catholic Bible Society
+			> (Oxford University Press, 1855); primary source for the chronological edition list, Cotton's preface,
+			and the Roman Catholic Bible Society
 		</li>
 		<li>
 			Henry Barker, <em
 				>English Bible Versions: A Tercentenary Memorial of the King James Version</em
-			>
-			— cites the Catholic Dictionary on McMahon's revision and Wiseman's collected essays
+			>; cites the Catholic Dictionary on McMahon's revision and Wiseman's collected essays
 		</li>
 	</ul>
 
