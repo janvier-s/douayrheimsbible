@@ -18,6 +18,7 @@
 	import type { Chapter, BookMeta } from '$lib/data/types';
 	import StudyPanel from './StudyPanel.svelte';
 	import PageFooter from './PageFooter.svelte';
+	import { isMobile } from '$lib/stores/mobile';
 
 	export let initialBookMeta: BookMeta;
 	export let initialChapter: Chapter;
@@ -61,11 +62,18 @@
 		(d) => (panelDragging = d)
 	);
 	$: if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
+	$: panelMaxWidth = $prefs.readingMode === 'study' ? ($isMobile ? '100%' : liveWidth) : '0';
+	$: panelTransition = panelDragging
+		? 'opacity 250ms ease'
+		: $isMobile
+			? 'opacity 150ms ease'
+			: 'max-width 250ms ease, opacity 250ms ease';
 	let panelEl: HTMLElement;
 	$: if (panelEl) resize.bindPanel(panelEl);
 	// Sync inner panel width when not dragging (initial render + settings changes).
 	// During drag, the resize utility sets panelEl.style.width directly.
-	$: if (panelEl && !panelDragging) panelEl.style.width = $prefs.studyPanelWidth;
+	$: if (panelEl && !panelDragging && !$isMobile) panelEl.style.width = $prefs.studyPanelWidth;
+	$: if (panelEl && $isMobile) panelEl.style.width = '100%';
 
 	// Bumped after each loadBook resolves, so the reactive below re-evaluates.
 	let bookCacheTick = 0;
@@ -290,7 +298,12 @@
 <svelte:window on:mousemove={resize.onMousemove} on:mouseup={resize.onMouseup} />
 
 <div class="flex items-start" data-mode={$prefs.readingMode}>
-	<main id="main-content" bind:this={container} class="flex-1 min-w-0 px-md pt-[20px] pb-xl">
+	<main
+		id="main-content"
+		bind:this={container}
+		class="flex-1 min-w-0 px-md pt-[20px] pb-xl max-md:pb-[80px]"
+		class:hidden={$prefs.readingMode === 'study' && $isMobile}
+	>
 		<div style="max-width: {columnMaxWidth}px;" class="mx-auto">
 			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
 				<section class={i > 0 ? 'pt-[49px]' : ''}>
@@ -315,12 +328,12 @@
 	<!-- Sticky panel container — overflow:clip on the sticky el itself, not an ancestor -->
 	<div
 		class="shrink-0 sticky flex [overflow:clip]"
-		style="top: var(--header-height); height: calc(100vh - var(--header-height)); max-width: {$prefs.readingMode ===
+		style="top: var(--header-height); height: {$isMobile
+			? 'calc(100vh - var(--header-height) - 56px)'
+			: 'calc(100vh - var(--header-height))'}; max-width: {panelMaxWidth}; opacity: {$prefs.readingMode ===
 		'study'
-			? liveWidth
-			: '0'}; opacity: {$prefs.readingMode === 'study' ? '1' : '0'}; transition: {panelDragging
-			? 'opacity 250ms ease'
-			: 'max-width 250ms ease, opacity 250ms ease'};"
+			? '1'
+			: '0'}; transition: {panelTransition};"
 	>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 		<div
@@ -328,7 +341,7 @@
 			aria-orientation="vertical"
 			aria-label="Resize study panel"
 			tabindex="0"
-			class="w-[5px] shrink-0 cursor-col-resize hover:bg-[rgba(128,128,128,0.2)] focus:bg-[rgba(128,128,128,0.3)] transition-colors duration-fast self-stretch outline-none"
+			class="w-[5px] shrink-0 cursor-col-resize hover:bg-[rgba(128,128,128,0.2)] focus:bg-[rgba(128,128,128,0.3)] transition-colors duration-fast self-stretch outline-none max-md:hidden"
 			on:mousedown={resize.onDividerMousedown}
 			on:touchstart={resize.onTouchStart}
 			on:touchmove={resize.onTouchMove}
