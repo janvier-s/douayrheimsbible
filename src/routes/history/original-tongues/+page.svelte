@@ -6,7 +6,7 @@
 	const FAQ = [
 		{
 			q: 'Why did the Catholic Church move away from the Latin Vulgate as its translation source?',
-			a: "Pope Pius XII's 1943 encyclical Divino Afflante Spiritu authorized Catholic scholars to translate from the original Hebrew and Greek manuscripts, a shift that had been resisted for centuries. The encyclical recognized that advances in textual scholarship — ancient manuscripts unavailable to Jerome, improved Greek and Hebrew scholarship — made original-language translation more accurate, not less reverent."
+			a: "Pope Pius XII's 1943 encyclical Divino Afflante Spiritu authorized Catholic scholars to translate from the original Hebrew and Greek manuscripts, a shift that had been resisted for centuries. The encyclical recognized that advances in textual scholarship; ancient manuscripts unavailable to Jerome, improved Greek and Hebrew scholarship; made original-language translation more accurate, not less reverent."
 		},
 		{
 			q: 'What is the Clementine Vulgate?',
@@ -233,14 +233,14 @@
 		</li>
 		<li>Pope Leo XIII, <em>Providentissimus Deus</em> (1893)</li>
 		<li>
-			Pope Pius XII, <em>Divino Afflante Spiritu</em> (1943) — primary source for the encyclical's argument
+			Pope Pius XII, <em>Divino Afflante Spiritu</em> (1943); primary source for the encyclical's argument
 			and the clarification of Trent's "authentic"
 		</li>
 		<li>Second Vatican Council, <em>Dei Verbum</em> (1965)</li>
 		<li>Pope Saint John Paul II, <em>Liturgiam Authenticam</em> (2001)</li>
 		<li>
-			Raymond E. Brown, cited in scholarship on <em>Divino Afflante Spiritu</em> — "Magna Carta for biblical
-			progress"
+			Raymond E. Brown, cited in scholarship on <em>Divino Afflante Spiritu</em>; "Magna Carta for
+			biblical progress"
 		</li>
 	</ul>
 
