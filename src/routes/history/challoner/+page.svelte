@@ -49,11 +49,11 @@
 	<h2>Bishop Richard Challoner</h2>
 
 	<p>
-		Richard Challoner (1691–1781) was a convert to Catholicism who rose to become the Vicar
-		Apostolic of the London District, effectively the senior Catholic bishop in England during one
-		of the most difficult periods for English Catholics. Appointed coadjutor in 1739 and taking full
-		charge in 1758, he shepherded a persecuted community with quiet determination for over four
-		decades.
+		<a href="https://en.wikipedia.org/wiki/Richard_Challoner">Richard Challoner</a> (1691–1781) was a
+		convert to Catholicism who rose to become the Vicar Apostolic of the London District, effectively
+		the senior Catholic bishop in England during one of the most difficult periods for English Catholics.
+		Appointed coadjutor in 1739 and taking full charge in 1758, he shepherded a persecuted community with
+		quiet determination for over four decades.
 	</p>
 
 	<p>
