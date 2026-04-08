@@ -43,18 +43,22 @@
 	title="A Bible Open to All"
 	subtitle="How the Catholic Church encourages all the faithful to read Scripture, and the guidance it offers for reading well."
 	faqItems={FAQ}
+	datePublished="2024-01-01"
 >
 	<h2>From Caution to Invitation</h2>
 
 	<p>
-		An earlier article in this collection described the period when Catholics who produced the
-		Rheims New Testament required their own readers to obtain a license before opening it. That
-		history is real, and it requires explanation, but it does not represent the Church's settled
-		mind on Scripture. The restrictions that marked certain periods were pastoral responses to
-		specific crises: the proliferation of tendentious translations, the fracturing of Christian
-		unity, the real danger that unsupported private reading of Scripture would lead ordinary
-		Catholics into the doctrinal traps that polemicists had carefully laid. When those conditions
-		changed, the restrictions changed with them.
+		Catholic Bible reading has a history more varied than the myth of a Church that kept Scripture
+		from its people. An earlier article in this collection, <a href="/history/forbidden-bible"
+			>A Bible Forbidden to Its Own Readers</a
+		>, described the period when Catholics who produced the Rheims New Testament required their own
+		readers to obtain a license before opening it. That history is real, and it requires
+		explanation, but it does not represent the Church's settled mind on Scripture. The restrictions
+		that marked certain periods were pastoral responses to specific crises: the proliferation of
+		tendentious translations, the fracturing of Christian unity, the real danger that unsupported
+		private reading of Scripture would lead ordinary Catholics into the doctrinal traps that
+		polemicists had carefully laid. When those conditions changed, the restrictions changed with
+		them.
 	</p>
 
 	<p>
@@ -64,7 +68,10 @@
 		opening the way to a new generation of Catholic Bibles. The Second Vatican Council's Dogmatic
 		Constitution on Divine Revelation, <em>Dei Verbum</em>, issued in 1965, brought this trajectory
 		to its fullest expression and placed the Church's invitation to Scripture reading at the center
-		of Catholic life.
+		of Catholic life; as the
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		> records, this development had deep roots in the Church's tradition.
 	</p>
 
 	<figure class="article-figure">
@@ -294,8 +301,9 @@
 		The text on this site is Gregory Martin's original Douai-Rheims translation, produced in exile
 		and published between 1582 and 1610, with only light modernization of spelling. It is a
 		particular and distinctive rendering of Sacred Scripture, deeply shaped by its historical moment
-		and by the translators' philosophical commitment to the Vulgate. It is one way of hearing the
-		Word of God in English.
+		and by the translators' philosophical commitment to the Vulgate. That fidelity is explored in <a
+			href="/history/translation-philosophy">A Translation from the Authentic Latin</a
+		>. It is one way of hearing the Word of God in English.
 	</p>
 
 	<p>
