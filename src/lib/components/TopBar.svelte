@@ -274,6 +274,93 @@
 	</div>
 </header>
 
+<!-- Bottom tab bar — mobile only -->
+<nav
+	class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-glass backdrop-blur-sm border-t border-border font-ui"
+	style="padding-bottom: env(safe-area-inset-bottom);"
+	aria-label="Main navigation"
+>
+	<div class="flex" style="height: 56px;">
+		{#each modeItems as item, i}
+			<button
+				class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
+                    {activeModeIdx === i ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+				aria-label={item.label}
+				aria-pressed={activeModeIdx === i}
+				on:click={() => selectMode(item.key, i)}
+			>
+				{#if item.key === 'reading'}
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<rect x="3" y="2" width="12" height="14" rx="1.5" />
+						<line x1="6" y1="6" x2="12" y2="6" />
+						<line x1="6" y1="9" x2="12" y2="9" />
+						<line x1="6" y1="12" x2="9" y2="12" />
+					</svg>
+				{:else if item.key === 'study'}
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+					>
+						<circle cx="9" cy="9" r="7" />
+						<line x1="9" y1="6" x2="9" y2="9.5" />
+						<circle cx="9" cy="12" r="0.8" fill="currentColor" stroke="none" />
+					</svg>
+				{:else if item.key === 'compare'}
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<line x1="3" y1="9" x2="15" y2="9" />
+						<polyline points="11,5 15,9 11,13" />
+						<polyline points="7,5 3,9 7,13" />
+					</svg>
+				{/if}
+				<span class="text-[8px] uppercase tracking-[0.1em] font-medium">{item.label}</span>
+			</button>
+		{/each}
+		<!-- Search tab -->
+		<button
+			class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast text-subtle hover:text-foreground"
+			aria-label="Search"
+			on:click={() => (searchOpen = true)}
+		>
+			<svg
+				width="18"
+				height="18"
+				viewBox="0 0 18 18"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.5"
+				stroke-linecap="round"
+			>
+				<circle cx="8" cy="8" r="5.5" />
+				<line x1="12" y1="12" x2="16" y2="16" />
+			</svg>
+			<span class="text-[8px] uppercase tracking-[0.1em] font-medium">Search</span>
+		</button>
+	</div>
+</nav>
+
 {#if navOpen}
 	<FloatingNav
 		{bookSlug}
@@ -295,7 +382,7 @@
 
 {#if navOpen || prefsOpen || translationOpen}
 	<div
-		class="fixed inset-0 z-40"
+		class="fixed inset-0 z-[55]"
 		role="presentation"
 		on:click={closeAll}
 		on:keydown={(e) => {
