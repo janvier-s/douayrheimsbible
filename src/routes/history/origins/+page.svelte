@@ -24,17 +24,17 @@
 </script>
 
 <svelte:head>
-	<title>Born in Exile: The Origins of the Douay-Rheims Bible</title>
+	<title>The Origins of the Douay-Rheims Bible | English College Douai, 1582</title>
 	<meta
 		name="description"
-		content="How English Catholic scholars in exile during the Reformation produced the first complete English Catholic Bible, from the founding of the English College at Douai in 1568 to the publication of the complete Bible in 1610."
+		content="How English Catholic scholars at the English College Douai produced the first complete Catholic Bible in English: Gregory Martin's translation, William Allen's leadership, and the 27-year gap between the New and Old Testaments."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/origins" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Born in Exile: The Origins of the Douay-Rheims Bible" />
+	<meta property="og:title" content="The Origins of the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
-		content="How English Catholic scholars in exile produced the first complete English Catholic Bible."
+		content="How English Catholics in exile at Douai and Rheims produced the first complete Catholic English Bible between 1578 and 1610."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/origins" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -44,16 +44,16 @@
 	title="Born in Exile: The Origins of the Douay-Rheims Bible"
 	subtitle="How a community of English Catholic exiles, driven from their homeland by persecution, produced the first complete English Catholic translation of Sacred Scripture."
 	faqItems={ORIGINS_FAQ}
+	datePublished="2024-01-01"
 >
 	<h2>The English Reformation</h2>
 
 	<p>
-		In 1534, Henry VIII severed England's ties with Rome through the Act of Supremacy, declaring
-		himself head of the Church in England. What followed was a sustained campaign of religious
-		transformation that intensified under Edward VI and, after a brief Catholic restoration under
-		Mary I, became permanent under Elizabeth I. The Elizabethan Act of Supremacy of 1559 and the
-		subsequent penal laws criminalized Catholic worship, the celebration of Mass, and the priesthood
-		itself.
+		The origins of the Douay-Rheims Bible lie in the English Reformation's most disruptive
+		consequence: the permanent exile of English Catholic scholars from their own country. When the
+		Acts of Supremacy and Uniformity made the practice of Catholicism illegal in England, the men
+		who would produce this translation had to leave. Their destination was the European continent,
+		and their mission was to keep the Catholic faith alive among the English.
 	</p>
 
 	<p>
@@ -95,10 +95,12 @@
 	<h2>Gregory Martin and the Translation</h2>
 
 	<p>
-		Among the scholars who gathered at Douai was Gregory Martin, one of the original students at St
-		John's College, Oxford, and a close friend of Edmund Campion. Martin arrived at the college in
-		1570, was ordained in 1573, and spent two years helping to establish the English College in Rome
-		before returning to the continent.
+		Among the scholars who gathered at Douai was
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Gregory Martin (c. 1542–1582)</a
+		>, one of the original students at St John's College, Oxford, and a close friend of Edmund
+		Campion. Martin arrived at the college in 1570, was ordained in 1573, and spent two years
+		helping to establish the English College in Rome before returning to the continent.
 	</p>
 
 	<p>
@@ -107,6 +109,12 @@
 		entire Bible from the Latin Vulgate into English. Working with extraordinary discipline,
 		translating roughly two chapters each day, he is believed to have completed the entire text by
 		July 1580, a span of less than two years.
+	</p>
+
+	<p>
+		For the theology behind that choice, see <a href="/history/translation-philosophy"
+			>A Translation from the Authentic Latin</a
+		>.
 	</p>
 
 	<p>
@@ -178,6 +186,45 @@
 		The text presented on this site is Martin's original, as it appeared in 1582 and 1609–1610, with
 		only light modernisation of spelling and punctuation. It is a monument to the faith and
 		scholarship of a community that risked everything to preserve the word of God in English.
+	</p>
+
+	<h2>The Delay</h2>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Map or illustration showing the English College's moves between Douai (1568), Rheims (1578), and back to Douai (1593), with dates of the New Testament (1582) and Old Testament (1609-1610) publications"
+		></div>
+		<figcaption>
+			The English College's moves between Douai and Rheims, and the long interval between the two
+			publications
+		</figcaption>
+	</figure>
+
+	<p>
+		The interval between the New Testament's appearance in 1582 and the Old Testament's publication
+		in 1609-1610 was not a gap in translation but a gap in funding. Gregory Martin completed his
+		draft of the entire Bible, both Testaments, by around July 1580. The New Testament was ready for
+		the press at Rheims shortly afterward. The Old Testament waited.
+	</p>
+
+	<p>
+		The English College had moved from Douai to Rheims in 1578 under pressure from the Spanish
+		authorities who governed the southern Netherlands; it returned to Douai in 1593, after the
+		political climate shifted. These moves consumed resources and administrative energy that might
+		otherwise have supported publication. The death of William Allen in 1594 removed the figure who
+		had driven the original project. The Old Testament manuscripts were carried between cities and
+		eventually prepared for the press by Thomas Worthington, who had become president of the English
+		College. He saw them through publication in 1609 and 1610.
+	</p>
+
+	<p>
+		The twenty-seven-year gap therefore reflects the material conditions of a community in exile:
+		the cost of printing, the disruptions of repeated relocation, and the deaths of the men who had
+		initiated the work. Gregory Martin himself, the translator who had produced the entire text,
+		died on 28 October 1582, the same year his New Testament appeared and more than a
+		quarter-century before his Old Testament followed. For the full story of what happened to this
+		translation after publication, read <a href="/history/challoner">The Challoner Revision</a>.
 	</p>
 
 	<h2>Sources</h2>
