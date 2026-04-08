@@ -177,10 +177,12 @@
 
 	<p>
 		The first American printing of a complete Catholic Bible was organized in Philadelphia in 1790
-		by Mathew Carey, an Irish-born publisher who had emigrated to Pennsylvania in 1784. Carey worked
-		with John Carroll, who had been appointed the first Catholic bishop of the United States that
-		same year, and whose oversight of the young American Church gave him a direct interest in
-		providing an accessible Bible for Catholic immigrants.
+		by <a href="https://en.wikipedia.org/wiki/Mathew_Carey">Mathew Carey</a>, an Irish-born
+		publisher who had emigrated to Pennsylvania in 1784. Carey worked with
+		<a href="https://en.wikipedia.org/wiki/John_Carroll_(archbishop_of_Baltimore)">John Carroll</a>,
+		who had been appointed the first Catholic bishop of the United States that same year, and whose
+		oversight of the young American Church gave him a direct interest in providing an accessible
+		Bible for Catholic immigrants.
 	</p>
 
 	<p>
