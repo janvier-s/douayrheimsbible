@@ -20,17 +20,17 @@
 </script>
 
 <svelte:head>
-	<title>How the Douay-Rheims Shaped the King James Bible</title>
+	<title>How the Douay-Rheims Bible Shaped the King James Version</title>
 	<meta
 		name="description"
-		content="The specific debt the King James Version owes to the Catholic Rheims New Testament: phrases, vocabulary, and Greek Article accuracy that passed from the Catholic Bible into the Protestant masterpiece."
+		content="The documented debt the King James Version owes to the Catholic Douay-Rheims Bible: Ward Allen's 1969 research, Fulke's parallel edition, and the specific phrases and vocabulary the KJV translators borrowed from the Rheims New Testament."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/influence-on-kjv" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="How the Douay-Rheims Shaped the King James Bible" />
+	<meta property="og:title" content="How the Douay-Rheims Bible Shaped the King James Version" />
 	<meta
 		property="og:description"
-		content="The specific debt the King James Version owes to the Rheims New Testament, in phrases, vocabulary, and scholarly precision."
+		content="The specific debt the King James Version owes to the Catholic Douay-Rheims Bible, documented in Ward Allen's 1969 research."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/influence-on-kjv" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -39,24 +39,39 @@
 <ProseLayout
 	title="How the Douay-Rheims Shaped the King James Bible"
 	subtitle="The specific debt the King James Version owes to the Catholic Bible, in phrases, in vocabulary, and in scholarly precision."
+	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
 	<h2>The Refutation That Became a Reference</h2>
 
 	<p>
+		The Douay-Rheims Bible's influence on the King James Version is one of the most unexpected
+		relationships in the history of English Scripture. A Catholic translation, produced by scholars
+		in exile, made in deliberate opposition to Protestant renderings, became one of the working
+		texts of the Protestant masterpiece. This happened through a chain of events that no one
+		planned.
+	</p>
+
+	<p>
 		In 1589, William Fulke, Master of Pembroke Hall at Cambridge, published what he intended as a
 		definitive Protestant refutation of the Rheims New Testament. His method was to set the entire
 		Rheims text alongside the Bishops' Bible in parallel columns, then answer the Catholic
-		annotations one by one. Fulke aimed to discredit. He succeeded instead in making the Rheims text
-		available to every serious Protestant biblical scholar in England.
+		annotations; these were <a href="/history/annotations"
+			>the same annotations discussed in <em>A Bible of Arguments: The Annotations</em></a
+		>. Fulke aimed to discredit. He succeeded instead in making the Rheims text available to every
+		serious Protestant biblical scholar in England.
 	</p>
 
 	<p>
 		When the translators of the King James Version gathered in 1604, Fulke's parallel edition was
-		among the most widely circulated English New Testaments in existence. Ward Allen's research in
-		1969 found that in the Gospels alone, roughly one quarter of the proposed amendments to the text
-		adopted readings first found in the Rheims translation. The Catholic Bible had become, without
-		anyone planning it that way, one of the working texts of the Protestant masterpiece.
+		among the most widely circulated English New Testaments in existence. Ward Allen's research,
+		documented in <a
+			href="https://books.google.fr/books/about/English_Bible_Versions.html?id=WcwsNaXqE-kC"
+			><em>English Bible Versions</em></a
+		>
+		and his 1969 study, found that in the Gospels alone, roughly one quarter of the proposed amendments
+		to the text adopted readings first found in the Rheims translation. The Catholic Bible had become,
+		without anyone planning it that way, one of the working texts of the Protestant masterpiece.
 	</p>
 
 	<figure class="article-figure">
@@ -65,8 +80,9 @@
 			data-label="Title page of William Fulke's parallel edition (1589), showing the Rheims and Bishops' Bible in double columns"
 		></div>
 		<figcaption>
-			William Fulke's parallel edition (1589), which placed the Rheims text in Protestant hands and
-			made it available to the King James translators
+			William Fulke's parallel edition (1589), which placed the <a href="/history/rheims-1582"
+				>1582 Rheims New Testament</a
+			> in Protestant hands and made it available to the King James translators
 		</figcaption>
 	</figure>
 
@@ -86,6 +102,51 @@
 			>the reader will not doubt that very many examples of the same description might be produced.</q
 		>
 	</p>
+
+	<h2>Borrowings from the Epistles</h2>
+
+	<p>
+		The same pattern extends through the Epistles. Ward Allen's research identified Rheims influence
+		across the Pauline letters, where the King James translators repeatedly considered and adopted
+		Rheims readings in their revision notes:
+	</p>
+
+	<ul>
+		<li>
+			Romans 5:11: The Rheims gives "reconciliation," translating the Vulgate's "reconciliationem."
+			The KJV follows.
+		</li>
+		<li>
+			1 Corinthians 13:12: The Rheims gives "face to face" for Jerome's "facie ad faciem." The KJV
+			follows.
+		</li>
+		<li>
+			Hebrews 11:1: The Rheims gives "substance of things to be hoped for" for "substantia
+			sperandarum rerum." The KJV's "substance of things hoped for" is nearly identical.
+		</li>
+		<li>
+			1 Corinthians 13:3: The Rheims gives "charity" for "caritatem" consistently throughout the
+			chapter. The KJV follows in every instance.
+		</li>
+	</ul>
+
+	<p>
+		In each case, the King James translators had access to the Rheims text through Fulke's 1589
+		parallel edition, and the evidence of their revision notes shows them explicitly considering and
+		frequently adopting Rheims readings. The Catholic translation's influence on the Protestant
+		masterpiece is not a matter of inference but of documented revision history.
+	</p>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Side-by-side comparison of the Rheims New Testament and King James Version texts at 1 Corinthians 13, showing the identical 'charity' rendering and other shared phrases"
+		></div>
+		<figcaption>
+			1 Corinthians 13 in the Rheims New Testament (1582) and the King James Version (1611), showing
+			the shared "charity" rendering and the documented borrowings
+		</figcaption>
+	</figure>
 
 	<p>
 		Cardinal Newman later observed that the relationship between the two traditions was closer than
