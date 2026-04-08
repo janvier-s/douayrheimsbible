@@ -57,10 +57,11 @@
 	</p>
 
 	<p>
-		The Council of Trent, in its fourth session in 1546, issued a decree that would govern Catholic
-		biblical translation for nearly four hundred years. It declared that the Vulgate, long used
-		throughout the Western Church, was to be held "as authentic" for "public readings, discourses,
-		disputations, preachings, and explanations."
+		The <a href="https://en.wikipedia.org/wiki/Council_of_Trent">Council of Trent</a>, in its fourth
+		session in 1546, issued a decree that would govern Catholic biblical translation for nearly four
+		hundred years. It declared that the Vulgate, long used throughout the Western Church, was to be
+		held "as authentic" for "public readings, discourses, disputations, preachings, and
+		explanations."
 	</p>
 
 	<p>
