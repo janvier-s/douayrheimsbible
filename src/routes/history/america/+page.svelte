@@ -20,17 +20,20 @@
 </script>
 
 <svelte:head>
-	<title>The Douay-Rheims Bible in America</title>
+	<title>The Douay-Rheims Bible in America: From Maryland to the Nineteenth Century</title>
 	<meta
 		name="description"
-		content="From Maryland in 1634 to the Catholic communities of the nineteenth century: how the Douay-Rheims Bible crossed the Atlantic and accompanied American Catholics through their first centuries."
+		content="How the Douay-Rheims Bible crossed the Atlantic with Maryland's Catholic founders in 1634, and how Bishop Carroll and Mathew Carey established it as the American Catholic Bible with the first American printing in 1790."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/america" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="The Douay-Rheims Bible in America" />
+	<meta
+		property="og:title"
+		content="The Douay-Rheims Bible in America: Maryland to the 19th Century"
+	/>
 	<meta
 		property="og:description"
-		content="From Maryland in 1634 to the nineteenth century: how the Douay-Rheims crossed the Atlantic and took root in American Catholic life."
+		content="How the Douay-Rheims Bible came to America with Maryland's Catholics in 1634 and was first printed in America by Mathew Carey in 1790."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/america" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -39,25 +42,27 @@
 <ProseLayout
 	title="The Douay-Rheims in America"
 	subtitle="From Maryland in 1634 to the Catholic communities of the nineteenth century, how this Bible crossed the Atlantic and took root in a new world."
+	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
 	<h2>Maryland, 1634</h2>
 
 	<p>
-		When Cecelius Calvert, the second Lord Baltimore, led his party of colonists to Maryland in
-		1634, the settlement included Catholic priests. John Shea, the nineteenth-century historian of
-		the Catholic Church in America, believed they brought the Rheims-Douai Bible with them. Whether
-		or not that first crossing carried a copy, the Bible entered American life during those early
-		Maryland years, in the hands of a community that had left England for the freedom to worship
-		openly.
+		The Douay-Rheims Bible in America begins with the founding of Maryland in 1634. When Cecelius
+		Calvert, the second Lord Baltimore, led his party of colonists to the Chesapeake, the settlement
+		included Catholic priests. John Shea, the nineteenth-century historian of the Catholic Church in
+		America, believed they brought the Rheims-Douai Bible with them. Whether or not that first
+		crossing carried a copy, the Bible entered American life during those early Maryland years, in
+		the hands of a community that had left England for the freedom to worship openly.
 	</p>
 
 	<p>
 		Maryland was not exclusively Catholic. Many Protestants settled there as well, and the King
-		James Version came to the colony as naturally as the Rheims-Douai. As Simms noted, "there is as
-		much probability, perhaps, that the King James Version came over in 1634 as there is that the
-		Rheims-Douai came at that time." The two Bibles coexisted, as the two communities did, in a
-		colony whose charter had promised religious tolerance.
+		James Version came to the colony as naturally as the Rheims-Douai. As P. Marion Simms documented
+		in <a href="https://books.google.com.py/books?id=F0dMAAAAIAAJ"><em>The Bible in America</em></a
+		>, "there is as much probability, perhaps, that the King James Version came over in 1634 as
+		there is that the Rheims-Douai came at that time." The two Bibles coexisted, as the two
+		communities did, in a colony whose charter had promised religious tolerance.
 	</p>
 
 	<figure class="article-figure">
@@ -96,12 +101,12 @@
 	<h2>The First American Catholic Bible</h2>
 
 	<p>
-		The first American printing of a Catholic Bible did not appear until 1790, in Philadelphia:
-		Challoner's revised text, published for the American Catholic community that had grown through
-		the colonial period and was finding its footing in a new nation. The first complete American
-		Catholic Bible followed in 1805, also in Philadelphia, published by Mathew Carey, a Catholic
-		immigrant from Ireland who had become one of the most successful publishers in the young
-		republic.
+		The first American printing of a Catholic Bible did not appear until 1790, in Philadelphia: as
+		described in <a href="/history/challoner">The Challoner Revision</a>, Challoner's revised text
+		was published for the American Catholic community that had grown through the colonial period and
+		was finding its footing in a new nation. The first complete American Catholic Bible followed in
+		1805, also in Philadelphia, published by Mathew Carey, a Catholic immigrant from Ireland who had
+		become one of the most successful publishers in the young republic.
 	</p>
 
 	<p>
@@ -144,9 +149,10 @@
 	<p>
 		The Rheims-Douai Bible, in its various editions, accompanied American Catholics through the
 		nineteenth century. Challoner's name was on most title pages. Cardinal Wiseman had declared it
-		an abuse of terms to call any of these editions by the older name. But the communities that read
-		them knew them as the Catholic Bible: the one that had come across the ocean, in one form or
-		another, from the beginning.
+		an abuse of terms to call any of these editions by the older name, a pattern documented in <a
+			href="/history/after-challoner">After Challoner: A Bible in Dispute</a
+		>. But the communities that read them knew them as the Catholic Bible: the one that had come
+		across the ocean, in one form or another, from the beginning.
 	</p>
 
 	<p>
@@ -154,6 +160,45 @@
 		in 1582 and 1609-10. It is the text that preceded all the revisions, the one that Gregory Martin
 		and his colleagues produced in exile, and that was carried, in the hands of priests and
 		laypeople, across the Atlantic to a new world.
+	</p>
+
+	<h2>Bishop Carroll and the First American Edition</h2>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Portrait of Bishop John Carroll (1735–1815), first Catholic bishop of the United States, or the title page of Mathew Carey's 1790 Philadelphia Catholic Bible"
+		></div>
+		<figcaption>
+			John Carroll, first Bishop of Baltimore, who oversaw the first American printing of the
+			Catholic Bible in 1790
+		</figcaption>
+	</figure>
+
+	<p>
+		The first American printing of a complete Catholic Bible was organized in Philadelphia in 1790
+		by Mathew Carey, an Irish-born publisher who had emigrated to Pennsylvania in 1784. Carey worked
+		with John Carroll, who had been appointed the first Catholic bishop of the United States that
+		same year, and whose oversight of the young American Church gave him a direct interest in
+		providing an accessible Bible for Catholic immigrants.
+	</p>
+
+	<p>
+		The 1790 Carey Bible used Challoner's revised text, the only edition then readily available for
+		Catholic readers. It was an immediate success; Carey went on to print further Catholic Bible
+		editions in 1805, 1816, and beyond, and the New York publisher William Swords followed with
+		additional printings through the first decades of the nineteenth century. As
+		<a href="https://books.google.com.py/books?id=F0dMAAAAIAAJ">Simms recorded</a>, by 1831 at least
+		fourteen American editions of the Douay-Rheims had appeared, all derived from Challoner's
+		revision.
+	</p>
+
+	<p>
+		The association between the Douay-Rheims Bible and American Catholic identity was established in
+		these decades. As wave after wave of Irish, German, and Italian Catholic immigrants arrived, the
+		Challoner text came with them, bound in the same editions that Carey's firm had first printed.
+		The original pre-Challoner text of 1582 and 1609-1610, meanwhile, was essentially unknown in
+		America and would remain so for over a century.
 	</p>
 
 	<h2>Sources</h2>
