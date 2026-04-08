@@ -268,8 +268,8 @@
 			chain, Dr. Milner, and Cardinal Wiseman
 		</li>
 		<li>
-			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em> — source
-			for the licensing requirement on Catholic readers of the Rheims NT
+			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>,
+			source for the licensing requirement on Catholic readers of the Rheims NT
 		</li>
 	</ul>
 
