@@ -107,7 +107,6 @@
 		<ul class="ann-notes">
 			{#each notes as note}
 				<li class="ann-note-row">
-					<span class="ann-note-marker">{note.marker}</span>
 					<span class="ann-note-text">{@html note.text}</span>
 				</li>
 			{/each}
