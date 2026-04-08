@@ -264,7 +264,7 @@
 			Rev. Henry Cotton, <em
 				>Rhemes and Doway: An Attempt to Shew What Has Been Done by Roman Catholics for the
 				Diffusion of the Holy Scriptures in English</em
-			> (Oxford University Press, 1855) — primary source for the Council of Toulouse, the papal confirmation
+			> (Oxford University Press, 1855), primary source for the Council of Toulouse, the papal confirmation
 			chain, Dr. Milner, and Cardinal Wiseman
 		</li>
 		<li>
