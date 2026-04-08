@@ -87,7 +87,12 @@
 		style="height: 50px;"
 	>
 		<!-- Logo: in-flow on both mobile and desktop -->
-		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
+		<a
+			href="/"
+			aria-label="Douay-Rheims"
+			class="flex items-center gap-[6px] group shrink-0"
+			on:click={closeAll}
+		>
 			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 			<!-- Desktop: single line -->
 			<span
