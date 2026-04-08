@@ -24,6 +24,8 @@ export interface ReadingPrefs {
 	// v7
 	syncStudyScroll: boolean;
 	showItalics: boolean;
+	// v9
+	showSmallCaps: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -46,10 +48,11 @@ const DEFAULTS: ReadingPrefs = {
 	bionicSaccade: 0,
 	bionicOpacity: 1,
 	syncStudyScroll: true,
-	showItalics: true
+	showItalics: true,
+	showSmallCaps: true
 };
 
-const PREFS_VERSION = 8;
+const PREFS_VERSION = 9;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -93,6 +96,10 @@ function loadPrefs(): ReadingPrefs {
 		// v8 migration: update default study panel width
 		if (!parsed._v || parsed._v < 8) {
 			parsed.studyPanelWidth = '42.65vw';
+		}
+		// v9 migration: add small-caps toggle (on by default)
+		if (!parsed._v || parsed._v < 9) {
+			parsed.showSmallCaps = true;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

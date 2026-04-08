@@ -454,6 +454,34 @@
 				/>
 				<span>Hebrew Psalm numbers</span>
 			</label>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
+					checked={$prefs.showSmallCaps ?? true}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							showSmallCaps: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>Small caps</span>
+			</label>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
+					checked={$prefs.showItalics}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							showItalics: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>Italics (OT quotes in NT)</span>
+			</label>
 		</div>
 	{/if}
 </div>

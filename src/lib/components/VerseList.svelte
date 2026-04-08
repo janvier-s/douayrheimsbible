@@ -100,7 +100,8 @@
 		bionic: boolean,
 		isStudy: boolean,
 		showItalics: boolean,
-		verseNum: number
+		verseNum: number,
+		smallCaps: boolean
 	): string {
 		let t = text;
 		if (isStudy) {
@@ -108,7 +109,8 @@
 		} else {
 			t = stripStudyMarkers(t, showItalics);
 		}
-		return applySmallCaps(bionic ? applyBionic(t) : t);
+		const t2 = bionic ? applyBionic(t) : t;
+		return smallCaps ? applySmallCaps(t2) : t2;
 	}
 
 	// ── Marker click handling ────────────────────────────────────────
@@ -294,6 +296,7 @@
 	let mounted = false;
 	$: isStudy = mounted && $prefs.readingMode === 'study';
 	$: showItalics = $prefs.showItalics;
+	$: showSmallCaps = $prefs.showSmallCaps ?? true;
 	$: bionic = $prefs.bionicReading && bionicReady;
 </script>
 
@@ -319,7 +322,7 @@
 						>{v.verse}</sup
 					>
 				{/if}
-				{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}{' '}
+				{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse, showSmallCaps)}{' '}
 			</span>
 		{/each}
 	</p>
@@ -357,7 +360,7 @@
 					on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 					on:blur={isStudy ? handleMarkerMouseout : undefined}
 				>
-					{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse)}
+					{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse, showSmallCaps)}
 				</p>
 			</li>
 		{/each}
