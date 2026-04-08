@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getBookBySlug } from '$lib/data/books';
-	import { slide } from 'svelte/transition';
+	import { slide, fly } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
 	import FloatingNav from './FloatingNav.svelte';
@@ -373,13 +374,33 @@
 {/if}
 
 {#if prefsOpen}
+	<!-- Desktop panel (unchanged) -->
 	<div
 		transition:slide={{ duration: 180 }}
-		class="fixed top-[var(--header-height)] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
+		class="hidden md:block fixed top-[var(--header-height)] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 		role="dialog"
 		aria-label="Reading options"
 	>
 		<ReadingPrefs />
+	</div>
+
+	<!-- Mobile bottom sheet -->
+	<div
+		transition:fly={{ y: 400, duration: 260, easing: cubicOut }}
+		class="md:hidden fixed inset-x-0 bottom-0 bg-panel border-t border-border rounded-t-xl z-[60] font-ui overflow-y-auto"
+		style="max-height: 85vh; padding-bottom: env(safe-area-inset-bottom);"
+		role="dialog"
+		aria-label="Reading options"
+	>
+		<!-- Drag handle -->
+		<div
+			class="flex justify-center pt-[10px] pb-[6px] sticky top-0 bg-panel border-b border-border z-10"
+		>
+			<div class="w-[32px] h-[4px] bg-border rounded-full"></div>
+		</div>
+		<div class="p-md">
+			<ReadingPrefs />
+		</div>
 	</div>
 {/if}
 
