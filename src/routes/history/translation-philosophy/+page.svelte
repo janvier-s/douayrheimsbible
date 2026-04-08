@@ -268,9 +268,8 @@
 		<li>
 			Henry Barker, <em
 				>English Bible Versions: A Tercentenary Memorial of the King James Version</em
-			>;
-			primary source for the quotations from Moulton, Hoare, Westcott, and Mombert on the Douay-Rheims
-			translation method
+			>; primary source for the quotations from Moulton, Hoare, Westcott, and Mombert on the
+			Douay-Rheims translation method
 		</li>
 		<li>
 			Rev. Henry Cotton, <em
