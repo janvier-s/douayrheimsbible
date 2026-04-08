@@ -143,9 +143,9 @@
 	<h2>An Abuse of Terms</h2>
 
 	<p>
-		Cardinal Wiseman put the situation plainly: "To call it any longer the Douay or Rhemish version
-		is an abuse of terms. It has been altered and modified till scarce any verse remains as it was
-		originally published."
+		<a href="https://en.wikipedia.org/wiki/Nicholas_Wiseman">Cardinal Wiseman</a> put the situation plainly:
+		"To call it any longer the Douay or Rhemish version is an abuse of terms. It has been altered and
+		modified till scarce any verse remains as it was originally published."
 	</p>
 
 	<p>
