@@ -49,8 +49,10 @@
 		from the Protestant English state, which made possession of Catholic books a criminal offence.
 		The second came from the Catholic Church itself, which required readers to obtain a license from
 		a confessor before reading the Bible privately. Both prohibitions had their own logic, and
-		understanding them requires knowing something about the world in which the translation was
-		produced.
+		understanding them requires knowing something about the <a
+			href="https://en.wikipedia.org/wiki/English_Reformation">English Reformation</a
+		>
+		world in which the translation was produced.
 	</p>
 
 	<p>
@@ -232,9 +234,10 @@
 		The danger was concrete and documented. The Elizabethan settlement had imposed legal penalties
 		on Catholics through a succession of Acts: the Act of Uniformity (1559) set a fine of twelve
 		pence for each absence from Anglican Sunday services; the Recusancy Act of 1571 raised the
-		stakes further; and the Act of 1581, passed in the same year that Edmund Campion was arrested
-		and executed, converted recusancy from a civil into a criminal matter and added felony charges
-		for those who harboured priests.
+		stakes further; and the Act of 1581, passed in the same year that <a
+			href="https://en.wikipedia.org/wiki/Edmund_Campion">Edmund Campion</a
+		> was arrested and executed, converted recusancy from a civil into a criminal matter and added felony
+		charges for those who harboured priests.
 	</p>
 
 	<p>
