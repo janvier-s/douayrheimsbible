@@ -194,3 +194,4 @@
 - All outbound links are plain `<a href="...">` with no `target="_blank"`
 - Inline links to other history articles use the article title as anchor text, linked as `<a href="/history/slug">Title</a>`
 - Each article's first inline internal link appears within the first three paragraphs
+- **Image placeholders:** preserve all existing `<figure>` / `article-figure-placeholder` blocks exactly as-is; add a new placeholder for any new substantive section that would naturally carry an image (use the same pattern: `<figure class="article-figure"><div class="article-figure-placeholder" data-label="...descriptive label..."></div><figcaption>...</figcaption></figure>`). Never remove a placeholder.
