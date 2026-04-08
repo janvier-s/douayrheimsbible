@@ -20,20 +20,20 @@
 </script>
 
 <svelte:head>
-	<title>A Translation from the Authentic Latin: The Language of the Douay-Rheims</title>
+	<title>Translated from the Latin Vulgate: The Douay-Rheims Philosophy</title>
 	<meta
 		name="description"
-		content="Why the Douay-Rheims translators chose Saint Jerome's Latin Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
+		content="Why the Douay-Rheims translators chose Saint Jerome's Latin Vulgate over the original Greek and Hebrew, how that choice shaped the translation's vocabulary, and what words like 'supersubstantial,' 'charity,' and 'penance' reveal about their method."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/translation-philosophy" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
-		content="A Translation from the Authentic Latin: The Language of the Douay-Rheims"
+		content="Translated from the Latin Vulgate: The Douay-Rheims Philosophy"
 	/>
 	<meta
 		property="og:description"
-		content="Why the Douay-Rheims translators chose Saint Jerome's Vulgate over the original languages, and what that choice gave and cost them."
+		content="Why the Douay-Rheims translators chose the Vulgate over the original languages, and what their fierce fidelity gave and cost them."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/translation-philosophy" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -42,13 +42,15 @@
 <ProseLayout
 	title="A Translation from the Authentic Latin"
 	subtitle="Why the Douay-Rheims translators chose Saint Jerome's Vulgate over the original Greek and Hebrew, and what their fierce fidelity to that choice gave and cost them."
+	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
 	<h2>The Choice That Defined the Translation</h2>
 
 	<p>
-		Gregory Martin and his colleagues at Rheims faced a foundational question before they wrote a
-		single word of their translation: which text should they translate from? The Protestant Bibles
+		The Douay-Rheims Latin Vulgate translation is the result of a deliberate and theologically
+		grounded choice. Gregory Martin and his colleagues at Rheims faced a foundational question
+		before they wrote a single word: which text should they translate from? The Protestant Bibles
 		that had flooded England for the previous half-century, including Tyndale's, Coverdale's, and
 		the Geneva Bible, were all made directly from the Hebrew Old Testament and the Greek New
 		Testament. Their translators treated the original languages as the ultimate authority, and their
@@ -151,6 +153,45 @@
 		rendering might have introduced ambiguity, he preferred the difficulty of Latin transparency.
 	</p>
 
+	<h2>The Vocabulary That Resulted</h2>
+
+	<p>
+		The practical consequence of translating from the Vulgate was a distinctive English vocabulary,
+		unlike any other Bible translation before or since. Gregory Martin coined or preserved words
+		directly from Saint Jerome's Latin: "exinanited" for Jerome's "exinanivit" at Philippians 2:7,
+		where later translations give "emptied himself"; "concorporate" from "concorporales" at
+		Ephesians 3:6; "comparticipant" from "comparticipes" in the same verse. These are not failures
+		of translation but deliberate choices, carrying the meaning of Jerome's compounds into English
+		as exactly as the language would allow.
+	</p>
+
+	<p>
+		The more familiar Latinate terms have endured. "Charity" for "caritas" in 1 Corinthians 13,
+		where later translations give "love," preserves the specifically theological content of Jerome's
+		word. "Penance" for "paenitentiam," where Protestant translations give "repentance," preserves
+		the sacramental sense the original intended. "Supersubstantial" for the hapax legomenon
+		"supersubstantialem" at Matthew 6:11 preserves a term with no established English equivalent and
+		no easy modern translation. These choices reflect a theology of translation; the text is not to
+		be made easy but to be made accurate, even at the cost of requiring the reader to learn new
+		words. The
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		>
+		noted that the result was "so full of Latinisms as to be in places hardly intelligible," and the translators
+		included a glossary, acknowledging the difficulty openly.
+	</p>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Detail from the 1582 Rheims New Testament showing a passage with distinctive Latinate vocabulary such as 'supersubstantial' or 'exinanited,' with the Latin Vulgate alongside"
+		></div>
+		<figcaption>
+			A passage from the 1582 Rheims New Testament illustrating the Latinate vocabulary that
+			directly reflects the Vulgate source
+		</figcaption>
+	</figure>
+
 	<h2>What the Fidelity Gave</h2>
 
 	<p>
@@ -207,14 +248,19 @@
 		Hoare's conclusion was measured and fair: the Rheims edition's uncompromising fidelity to the
 		Vulgate, whatever its stylistic cost, carries the reader back to the Old Latin rendering of
 		Greek manuscripts current in the middle of the second century, giving it a value for textual
-		criticism that no later revision preserves.
+		criticism that no later revision preserves. As <a href="/history/challoner"
+			>The Challoner Revision</a
+		> shows in detail, subsequent revisions would begin to smooth away this character.
 	</p>
 
 	<p>
 		The Douay-Rheims Bible was frequently obscure, occasionally barbarous, and persistently
 		difficult. It was also, in its way, a monument: to the Vulgate tradition, to the vocabulary
 		Saint Jerome gave the Church, and to the willingness of its translators to sacrifice readability
-		in the service of a fidelity they considered non-negotiable.
+		in the service of a fidelity they considered non-negotiable. This commitment to Jerome's Latin
+		would later shift, as explored further in <a href="/history/original-tongues"
+			>From the Authentic Latin to the Original Tongues</a
+		>, toward translations that drew directly from the Hebrew and Greek.
 	</p>
 
 	<h2>Sources</h2>
@@ -222,8 +268,8 @@
 		<li>
 			Henry Barker, <em
 				>English Bible Versions: A Tercentenary Memorial of the King James Version</em
-			>
-			— primary source for the quotations from Moulton, Hoare, Westcott, and Mombert on the Douay-Rheims
+			>;
+			primary source for the quotations from Moulton, Hoare, Westcott, and Mombert on the Douay-Rheims
 			translation method
 		</li>
 		<li>
