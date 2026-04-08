@@ -237,6 +237,11 @@
 			Pope Pius XII, <em>Divino Afflante Spiritu</em> (1943); primary source for the encyclical's argument
 			and the clarification of Trent's "authentic"
 		</li>
+		<li>
+			Henry Barker, <em
+				>English Bible Versions: A Tercentenary Memorial of the King James Version</em
+			>
+		</li>
 		<li>Second Vatican Council, <em>Dei Verbum</em> (1965)</li>
 		<li>Pope Saint John Paul II, <em>Liturgiam Authenticam</em> (2001)</li>
 		<li>
