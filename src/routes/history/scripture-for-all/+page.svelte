@@ -322,6 +322,10 @@
 			<em>Catechism of the Catholic Church</em>, paragraphs 109–114 (reading Scripture well),
 			131–133 (Scripture in the life of the Church), and 2653 (Scripture and prayer)
 		</li>
+		<li>
+			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
+			<em>Essays Critical and Historical</em>
+		</li>
 		<li>Pope Benedict XVI, <em>Verbum Domini</em> (2010)</li>
 		<li>
 			Pope Francis, <em>Aperuit Illis</em> (2019) — institution of the Sunday of the Word of God
