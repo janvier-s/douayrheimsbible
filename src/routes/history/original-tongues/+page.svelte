@@ -20,22 +20,20 @@
 </script>
 
 <svelte:head>
-	<title
-		>From the Authentic Latin to the Original Tongues: Catholic Bible Translation After Trent</title
-	>
+	<title>From the Vulgate to Hebrew and Greek: Catholic Bible Translation History</title>
 	<meta
 		name="description"
-		content="How the Catholic Church moved, over four centuries, from requiring the Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals, from Trent to Divino Afflante Spiritu to Liturgiam Authenticam."
+		content="How the Catholic Church moved from requiring the Latin Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals, from the Council of Trent through Divino Afflante Spiritu to the present day."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/original-tongues" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
-		content="From the Authentic Latin to the Original Tongues: Catholic Bible Translation After Trent"
+		content="From the Vulgate to Hebrew and Greek: Catholic Bible Translation"
 	/>
 	<meta
 		property="og:description"
-		content="How the Church moved from requiring the Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals."
+		content="How the Church moved from the Vulgate to the original languages: Trent, Divino Afflante Spiritu, and the modern Catholic Bible."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/original-tongues" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -44,9 +42,19 @@
 <ProseLayout
 	title="From the Authentic Latin to the Original Tongues"
 	subtitle="How the Church moved, over four centuries, from requiring the Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals."
+	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
 	<h2>What Trent Actually Said</h2>
+
+	<p>
+		The question of which languages Catholic translators should use has a history spanning four
+		centuries and three major ecclesiastical interventions. The Catholic Bible's relationship to the
+		original Hebrew and Greek of Scripture is not a simple story of progress; it is a story of
+		considered theological reasoning at each stage, from the Council of Trent's endorsement of the
+		Latin Vulgate to Pius XII's 1943 encyclical authorizing direct translation from the original
+		languages.
+	</p>
 
 	<p>
 		The Council of Trent, in its fourth session in 1546, issued a decree that would govern Catholic
@@ -64,17 +72,24 @@
 		standard for the Latin Church, the text on which centuries of liturgy, preaching, and
 		theological argument had been built. That history gave it a settled, practical authority for the
 		life of the Western Church. The Council confirmed that authority; it did not pronounce on
-		questions of textual scholarship.
+		questions of textual scholarship. The Council of Trent's text is discussed in the <a
+			href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		>.
 	</p>
 
 	<p>
 		The Douay-Rheims translation, produced by Gregory Martin and his colleagues in the 1580s and
 		finished in 1610, embodied this principle with unusual rigor. Their translation followed the
-		Vulgate word for word wherever possible, preserving Saint Jerome's Latin in English with a
-		literalism that prioritized theological precision over readability. The Challoner revision and
-		the long succession of editions that followed all worked from the same base. For nearly three
-		centuries after Trent, no authorized Catholic translation in English worked directly from the
-		Hebrew or Greek.
+		Vulgate word for word wherever possible, as explored in <a
+			href="/history/translation-philosophy">A Translation from the Authentic Latin</a
+		>, preserving Saint Jerome's Latin in English with a literalism that prioritized theological
+		precision over readability, as documented in
+		<a href="https://books.google.fr/books/about/English_Bible_Versions.html?id=WcwsNaXqE-kC"
+			><em>English Bible Versions</em></a
+		>. <a href="/history/challoner">The Challoner Revision</a>, and the long succession of editions
+		that followed all worked from the same base. For nearly three centuries after Trent, no
+		authorized Catholic translation in English worked directly from the Hebrew or Greek.
 	</p>
 
 	<h2>The Nineteenth-Century Opening</h2>
