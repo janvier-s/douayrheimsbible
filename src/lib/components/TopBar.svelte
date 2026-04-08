@@ -60,8 +60,7 @@
 
 	let pendingIdx = -1;
 
-	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
-		const { key, index } = e.detail;
+	async function selectMode(key: string, index: number) {
 		if (key === 'compare') {
 			pendingIdx = index;
 			const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
@@ -71,6 +70,11 @@
 		}
 		pendingIdx = -1;
 		prefs.update((p) => ({ ...p, readingMode: key as 'reading' | 'study' }));
+	}
+
+	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
+		const { key, index } = e.detail;
+		await selectMode(key, index);
 	}
 </script>
 
@@ -82,34 +86,43 @@
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
 		style="height: 50px;"
 	>
-		<!-- Logo: absolute-centered on mobile, in-flow on desktop -->
-		<a
-			href="/"
-			class="flex items-center gap-[6px] group shrink-0
-				   max-md:absolute max-md:left-1/2 max-md:-translate-x-1/2"
-			on:click={closeAll}
-		>
+		<!-- Logo: in-flow on both mobile and desktop -->
+		<a href="/" class="flex items-center gap-[6px] group shrink-0" on:click={closeAll}>
 			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
+			<!-- Desktop: single line -->
 			<span
-				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
+				class="hidden md:block text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
 			>
 				Douay-Rheims
+			</span>
+			<!-- Mobile: two lines stacked -->
+			<span class="md:hidden flex flex-col gap-[1px] leading-[1.2]" aria-hidden="true">
+				<span
+					class="text-[7px] uppercase tracking-[0.18em] font-bold text-foreground group-hover:text-accent transition-colors duration-fast"
+					>Douay</span
+				>
+				<span
+					class="text-[7px] uppercase tracking-[0.18em] font-bold text-foreground group-hover:text-accent transition-colors duration-fast"
+					>Rheims</span
+				>
 			</span>
 		</a>
 
 		<!-- Spacer (desktop only) -->
 		<div class="hidden md:flex flex-1"></div>
 
-		<ModeToggle
-			items={modeItems}
-			activeIndex={activeModeIdx}
-			pendingIndex={pendingIdx}
-			on:select={handleModeSelect}
-		/>
+		<div class="hidden md:flex">
+			<ModeToggle
+				items={modeItems}
+				activeIndex={activeModeIdx}
+				pendingIndex={pendingIdx}
+				on:select={handleModeSelect}
+			/>
+		</div>
 
-		<!-- Search icon -->
+		<!-- Search icon — desktop only -->
 		<button
-			class="ml-auto md:ml-0 shrink-0 flex items-center justify-center w-[30px] h-[30px]
+			class="hidden md:flex ml-0 shrink-0 items-center justify-center w-[30px] h-[30px]
 				rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
 			aria-label="Search"
 			on:click={() => (searchOpen = true)}
@@ -125,6 +138,38 @@
 			>
 				<circle cx="6.5" cy="6.5" r="4.5" />
 				<line x1="10" y1="10" x2="14" y2="14" />
+			</svg>
+		</button>
+
+		<!-- Reading options sliders icon — mobile only, Row 1 -->
+		<button
+			class="md:hidden ml-auto shrink-0 flex items-center justify-center w-[30px] h-[30px]
+				rounded-[3px] transition-colors duration-fast
+				{prefsOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+			aria-label="Reading options"
+			aria-expanded={prefsOpen}
+			aria-haspopup="dialog"
+			on:click={() => {
+				prefsOpen = !prefsOpen;
+				translationOpen = false;
+				navOpen = false;
+			}}
+		>
+			<svg
+				width="16"
+				height="14"
+				viewBox="0 0 16 14"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.5"
+				stroke-linecap="round"
+			>
+				<line x1="1" y1="2" x2="15" y2="2" />
+				<line x1="1" y1="7" x2="15" y2="7" />
+				<line x1="1" y1="12" x2="15" y2="12" />
+				<circle cx="5" cy="2" r="2" fill="currentColor" stroke="none" />
+				<circle cx="11" cy="7" r="2" fill="currentColor" stroke="none" />
+				<circle cx="7" cy="12" r="2" fill="currentColor" stroke="none" />
 			</svg>
 		</button>
 	</div>
@@ -180,8 +225,10 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav — absolutely centered so unequal sides don't shift it -->
-		<div class="absolute left-1/2 -translate-x-1/2">
+		<!-- Center: chapter nav — absolute on desktop, flex-1 centered on mobile -->
+		<div
+			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center"
+		>
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
@@ -201,8 +248,8 @@
 			</button>
 		</div>
 
-		<!-- Right: reading prefs (ml-auto pushes to right) -->
-		<div class="ml-auto shrink-0">
+		<!-- Right: reading prefs — desktop only (mobile uses sliders icon in Row 1) -->
+		<div class="hidden md:flex ml-auto shrink-0">
 			<button
 				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
