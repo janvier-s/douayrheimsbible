@@ -223,12 +223,11 @@
 		<li>
 			Henry Barker, <em
 				>English Bible Versions: A Tercentenary Memorial of the King James Version</em
-			>
-			— primary source for the specific KJV borrowings, Moulton, and Hoare
+			>; primary source for the specific KJV borrowings, Moulton, and Hoare
 		</li>
 		<li>
 			Ward Allen, research cited in the existing <a href="/about">About the Douay-Rheims Bible</a>
-			page — one quarter of Gospel amendments adopted Rheims readings
+			page; one quarter of Gospel amendments adopted Rheims readings
 		</li>
 		<li>
 			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
