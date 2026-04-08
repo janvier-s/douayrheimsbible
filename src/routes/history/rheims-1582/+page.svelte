@@ -48,14 +48,14 @@
 	<h2>England in 1582</h2>
 
 	<p>
-		When the Rheims New Testament appeared in 1582, England was a country in a state of declared
-		emergency. The previous year, Edmund Campion, a Jesuit priest and former Fellow of St John's
-		College, Oxford, had been arrested, subjected to torture in the Tower of London, and executed at
-		Tyburn. The papal excommunication of Queen Elizabeth, issued by Pope Saint Pius V in 1570, had
-		placed every English Catholic in an impossible position: loyalty to Rome was framed as treason,
-		and treason carried the death sentence. Along the Atlantic coasts and in the harbours of Spain,
-		the fleet that would become the Armada was being assembled. England's fate, many felt on both
-		sides of the confessional divide, hung in the balance.
+		When the <a href="https://en.wikipedia.org/wiki/Reims">Rheims</a> New Testament appeared in 1582,
+		England was a country in a state of declared emergency. The previous year, Edmund Campion, a Jesuit
+		priest and former Fellow of St John's College, Oxford, had been arrested, subjected to torture in
+		the Tower of London, and executed at Tyburn. The papal excommunication of Queen Elizabeth, issued
+		by Pope Saint Pius V in 1570, had placed every English Catholic in an impossible position: loyalty
+		to Rome was framed as treason, and treason carried the death sentence. Along the Atlantic coasts and
+		in the harbours of Spain, the fleet that would become the Armada was being assembled. England's fate,
+		many felt on both sides of the confessional divide, hung in the balance.
 	</p>
 
 	<p>
