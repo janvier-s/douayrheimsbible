@@ -44,6 +44,7 @@
 	title="The Challoner Revision"
 	subtitle="How Bishop Richard Challoner transformed the Douay-Rheims Bible in the eighteenth century, and why the distinction between the original and the revision matters."
 	faqItems={FAQ}
+	datePublished="2024-01-01"
 >
 	<h2>Bishop Richard Challoner</h2>
 
@@ -246,8 +247,12 @@
 	<h2>Almost a New Translation</h2>
 
 	<p>
-		The cumulative effect of Challoner's changes was dramatic. Cardinal John Henry Newman observed
-		that the revisions <q>almost amounted to a new translation,</q> and that Challoner's version was
+		The cumulative effect of Challoner's changes was dramatic. Cardinal John Henry Newman, writing
+		in
+		<a href="https://www.newmanreader.org/works/essays/volume1/index.html"
+			>Essays Critical and Historical</a
+		>, observed that the revisions <q>almost amounted to a new translation,</q> and that Challoner's
+		version was
 		<q>even nearer to the Protestant than it is to the Douay</q> in phraseology and diction, despite both
 		being translations of the same Latin Vulgate. In many passages, the Challoner text reads so differently
 		from Gregory Martin's original that they are barely recognizable as the same work.
@@ -263,6 +268,56 @@
 		almost invariably mean Challoner's version. The original text, with its Latinate richness, its
 		close fidelity to the Vulgate, and its extensive polemical annotations, has been largely
 		forgotten.
+	</p>
+
+	<h2>What Was Lost: The Names</h2>
+
+	<p>
+		Among the least-noticed but most theologically significant of Challoner's changes was his
+		treatment of the name of Christ in Old Testament passages. The
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		>
+		is direct on the scope of the intervention: Challoner's changes were "so considerable that scarcely
+		any verse remains as it was originally published."
+	</p>
+
+	<p>
+		The Vulgate Latin uses the word "christum," the Latin rendering of the Greek christos, in
+		several Old Testament passages where the Hebrew original has "mashiach." Gregory Martin followed
+		Jerome's Latin and rendered these as "his Christ," "the Christ of the Lord," or "the Lord's
+		Christ," preserving the Christological resonance that Jerome intended and that the Council of
+		Trent's declaration of Vulgate authenticity had sanctioned. Challoner, working toward a more
+		natural English idiom, replaced these with "his anointed" or "the anointed of the Lord."
+	</p>
+
+	<p>
+		The difference is not trivial. In 1 Kings 12:3, the original Douay-Rheims gives: "the Lord is
+		witness against you, and his Christ is witness this day, that you have not found ought in my
+		hand." Challoner's version reads: "the Lord is witness against you, and his anointed is witness
+		this day, that you have not found aught in my hand." The typological link to Christ is present
+		in Martin's text; in Challoner's it is dissolved into a description. The same pattern recurs
+		throughout the Old Testament wherever the Vulgate uses "christum" in a Messianic context.
+	</p>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Side-by-side comparison of the original Douay-Rheims (1609) and Challoner revision showing 1 Kings 12:3 with 'his Christ' vs 'his anointed'"
+		></div>
+		<figcaption>
+			A comparison of the original Douay-Rheims and Challoner texts at 1 Kings 12:3, illustrating
+			the systematic replacement of "his Christ" with "his anointed"
+		</figcaption>
+	</figure>
+
+	<p>
+		For readers who wish to examine the differences in detail,
+		<a href="https://realdouayrheims.com/">realdouayrheims.com</a> presents the case for the
+		original text with further examples, and
+		<a href="https://originaldouayrheims.com/differences">originaldouayrheims.com/differences</a>
+		provides a systematic account of the changes Challoner introduced. This site presents the original
+		pre-Challoner text: Gregory Martin's translation, unaltered.
 	</p>
 
 	<h2>Why the Original Matters</h2>
