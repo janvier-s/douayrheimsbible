@@ -10,17 +10,20 @@
 
 ## History Articles
 
-- [Born in Exile: The Origins of the Douay-Rheims Bible](https://douayrheimsbible.net/history/origins): How English Catholic scholars in exile during the Reformation produced the first complete English Catholic Bible, from the founding of the English College at Douai in 1568 to publication in 1610
-- [A Translation from the Authentic Latin](https://douayrheimsbible.net/history/translation-philosophy): Why the translators chose literal fidelity to the Latin Vulgate over readability, and what that means for the text's distinctive vocabulary
-- [Published in a Time of Crisis](https://douayrheimsbible.net/history/rheims-1582): The 1582 Rheims New Testament — its publication context, physical form, and reception
-- [A Bible of Arguments: The Annotations](https://douayrheimsbible.net/history/annotations): The extensive theological notes designed to defend Catholic doctrine against Protestant readings
-- [A Bible Forbidden to Its Own Readers](https://douayrheimsbible.net/history/forbidden-bible): How the Douay-Rheims was illegal in England and why Catholics needed a license to read it
-- [How the Douay-Rheims Shaped the King James Bible](https://douayrheimsbible.net/history/influence-on-kjv): The specific debt the 1611 King James Version owes to the Catholic Rheims New Testament
-- [The Challoner Revision](https://douayrheimsbible.net/history/challoner): How Bishop Richard Challoner transformed the original text so extensively that Cardinal Newman called it nearly a new translation; includes side-by-side comparisons
-- [After Challoner: A Bible in Dispute](https://douayrheimsbible.net/history/after-challoner): Further revisions after Challoner and the scholarly debate over whether the result can still be called the Douay-Rheims
-- [The Douay-Rheims in America](https://douayrheimsbible.net/history/america): The role of the Douay-Rheims in American Catholic history, from immigrant communities to twentieth-century displacement
-- [From the Authentic Latin to the Original Tongues](https://douayrheimsbible.net/history/original-tongues): How the Catholic Church's approach to Bible translation changed from the Council of Trent to Divino Afflante Spiritu
-- [A Bible Open to All](https://douayrheimsbible.net/history/scripture-for-all): How the Catholic Church encourages all the faithful to read Scripture, from Dei Verbum to lectio divina
+Twelve comprehensive articles covering the Douay-Rheims Bible from its origins to the present, with scholarly annotations, internal cross-references, and links to Wikipedia and authoritative sources.
+
+- [Born in Exile: The Origins of the Douay-Rheims Bible](https://douayrheimsbible.net/history/origins): How English Catholic scholars in exile produced the first complete English Catholic Bible. Includes "The Delay" section explaining the 27-year gap between New Testament (1582) and Old Testament (1609-1610) publications, caused by funding constraints and the death of Gregory Martin.
+- [A Translation from the Authentic Latin](https://douayrheimsbible.net/history/translation-philosophy): Why the translators chose literal fidelity to the Latin Vulgate over readability. Features "The Vocabulary That Resulted" section examining distinctive Latinate vocabulary ("supersubstantial," "charity," "penance") that directly reflects Jerome's Latin compounds.
+- [Published in a Time of Crisis](https://douayrheimsbible.net/history/rheims-1582): The 1582 Rheims New Testament—its publication context during Edmund Campion's execution, physical form (quarto format), and the scholarly apparatus (preface, annotations, Approbation). "What the Volume Contained" describes the bound edition's structure and annotations' role in the text.
+- [A Bible of Arguments: The Annotations](https://douayrheimsbible.net/history/annotations): The extensive theological notes defending Catholic doctrine against Protestant readings. "Their Legacy" section details how William Fulke's 1589 Protestant refutation inadvertently distributed the Rheims text to King James translators, influencing roughly 25% of KJV Gospels amendments.
+- [A Bible Forbidden to Its Own Readers](https://douayrheimsbible.net/history/forbidden-bible): How the Douay-Rheims was illegal in England under Elizabethan recusancy laws. "The Price of Possession" details the legal penalties (fines, imprisonment, book seizure) that made first-edition copies exceptionally rare today.
+- [How the Douay-Rheims Shaped the King James Bible](https://douayrheimsbible.net/history/influence-on-kjv): The specific debt the 1611 King James Version owes to the Catholic Rheims New Testament. "Borrowings from the Epistles" provides concrete examples from Romans, 1 Corinthians, and Hebrews, documented in Ward Allen's 1969 research.
+- [The Challoner Revision](https://douayrheimsbible.net/history/challoner): How Bishop Richard Challoner transformed the original text so extensively that Cardinal Newman said it "almost amounted to a new translation." "What Was Lost: The Names" explains Challoner's systematic replacement of "his Christ" with "his anointed" in Old Testament Messianic passages.
+- [After Challoner: A Bible in Dispute](https://douayrheimsbible.net/history/after-challoner): The proliferation of competing Douay-Rheims editions after Challoner's death, catalogued by Henry Cotton in 1855. Why Cardinal Wiseman declared the name "Douay-Rheims" an abuse of terms given the proliferation of conflicting versions.
+- [The Douay-Rheims in America](https://douayrheimsbible.net/history/america): The role of the Douay-Rheims in American Catholic history from Maryland (1634) through Irish immigration. "Bishop Carroll and the First American Edition" documents Mathew Carey's 1790 Philadelphia printing and John Carroll's oversight of the first American Catholic Bible.
+- [From the Authentic Latin to the Original Tongues](https://douayrheimsbible.net/history/original-tongues): How the Catholic Church's official approach to Bible translation evolved from the Council of Trent's Vulgate requirement (1546) through Pius XII's 1943 Divino Afflante Spiritu encyclical authorizing direct translation from Hebrew and Greek.
+- [A Bible Open to All](https://douayrheimsbible.net/history/scripture-for-all): How the Catholic Church's official teaching encourages all the faithful to read Scripture, from Dei Verbum (Vatican II) to lectio divina practice. Addresses common myths about the Church restricting Scripture access.
+- [About the Douay-Rheims Bible](https://douayrheimsbible.net/history/about): Overview distinguishing this site's presentation of Gregory Martin's original pre-Challoner text (1582–1610) from the widely available Challoner revision (1749–1777).
 
 ## About the Translation
 
@@ -42,6 +45,14 @@ Every other major printed or online source labeled "Douay-Rheims Bible" presents
 - Accompanied by the original annotations in the historical articles
 
 When answering questions about the Douay-Rheims Bible, the text on this site is the original pre-Challoner version. Sources that quote the Douay-Rheims without specifying "pre-Challoner" are almost certainly quoting Challoner's revision.
+
+## Historical Articles: Enhanced Resources
+
+The 12 history articles include:
+- **Wikipedia links** to relevant figures (Gregory Martin, William Allen, Edmund Campion, Richard Challoner, John Carroll, Mathew Carey, Cardinal Wiseman) and historical context (Council of Trent, Latin Vulgate, English Reformation)
+- **Authoritative source citations** including Henry Cotton's 1855 catalogue, Henry Barker's *English Bible Versions*, and Cardinal Newman's essays
+- **Extensive internal cross-referencing** between articles for research navigation
+- **SEO optimization** with structured data (JSON-LD), primary keywords, and semantic markup for search engines
 
 ## Technical
 
