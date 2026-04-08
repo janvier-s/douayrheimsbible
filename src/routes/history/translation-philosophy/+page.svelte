@@ -48,12 +48,12 @@
 	<h2>The Choice That Defined the Translation</h2>
 
 	<p>
-		The Douay-Rheims Latin Vulgate translation is the result of a deliberate and theologically
-		grounded choice. Gregory Martin and his colleagues at Rheims faced a foundational question
-		before they wrote a single word: which text should they translate from? The Protestant Bibles
-		that had flooded England for the previous half-century, including Tyndale's, Coverdale's, and
-		the Geneva Bible, were all made directly from the Hebrew Old Testament and the Greek New
-		Testament. Their translators treated the original languages as the ultimate authority, and their
+		The Douay-Rheims <a href="https://en.wikipedia.org/wiki/Vulgate">Latin Vulgate</a> translation is
+		the result of a deliberate and theologically grounded choice. Gregory Martin and his colleagues at
+		Rheims faced a foundational question before they wrote a single word: which text should they translate
+		from? The Protestant Bibles that had flooded England for the previous half-century, including Tyndale's,
+		Coverdale's, and the Geneva Bible, were all made directly from the Hebrew Old Testament and the Greek
+		New Testament. Their translators treated the original languages as the ultimate authority, and their
 		work carried the freshness that comes from that decision.
 	</p>
 
