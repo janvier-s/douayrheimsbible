@@ -8,7 +8,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "These <cr>[1]</cr> be the names of the children of Israel, that entered into Aegypt with Jacob: they did enter in^ every one with their houses,"
+          "text": "These <cr>[1]</cr> be the names of the children of Israel, that entered into Aegypt with Jacob: they did enter in every one with their houses,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part of this book. Of the Israelites' servile affliction in Aegypt, and their delivery from thence."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -54,17 +60,21 @@
           "notes": [
             {
               "label": "a",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
         {
           "verse": 11,
-          "text": "Therefore <na>(b)</na> he set over them masters of the works, to afflict them with burdens: and they built 17. But the midwives feared God.] In commendation of the midwives not obeying the king's commandment, Moyses opposeth the fear of God <cr>[1]</cr> , to the fear of Princes; shewing thereby that <cr>[1]</cr> God must be feared before Princes unto Pharao cities of tabernacles, Phithom, and Ramesses.",
+          "text": "Therefore <na>(b)</na> he set over them masters of the works, to afflict them with burdens: and they built <cr>[1]</cr>",
           "notes": [
             {
               "label": "b",
               "text": "The first persecution was in temporal losses and bodily pains, by pressing them with works."
+            },
+            {
+              "label": "1",
+              "text": "God must be feared before Princes unto Pharao cities of tabernacles, Phithom, and Ramesses."
             }
           ]
         },
@@ -78,7 +88,7 @@
           "notes": [
             {
               "label": "a",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
@@ -151,8 +161,9 @@
           "verse": 3,
           "text": "And when now she could not conceal him, she took a basket made of bulrushes, and daubed it with <cr>[1]</cr> bitume and pitch: and put within it the little infant, and laid him in a sedgy place by the river's brink,",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "a kind of glue, so called."
             }
           ]
@@ -276,7 +287,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> Moyses fed the sheep of Jethro his father in law the Priest of Madian: and having driven the flock to the inner parts of the desert, he came to the mountain of God, Horeb."
+          "text": "And <cr>[1]</cr> Moyses fed the sheep of Jethro his father in law the Priest of Madian: and having driven the flock to the inner parts of the desert, he came to the mountain of God, Horeb.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The three first lessons on the 4. Sunday in Lent."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -339,7 +356,7 @@
         },
         {
           "verse": 14,
-          "text": "God said to Moyses: <sc>Iam</sc> <sc>Which</sc> AM. He said: Thus shalt thou say to the children of Israel: HE <sc>Which</sc> IS, hath sent me to you.",
+          "text": "God said to Moyses: <sc>Iam Which</sc> AM. He said: Thus shalt thou say to the children of Israel: HE <sc>Which</sc> IS, hath sent me to you.",
           "has_annotation": true
         },
         {
@@ -378,7 +395,7 @@
         },
         {
           "verse": 22,
-          "text": "but each woman shall ask of her neighbour and of her that is in house with her^ vessels of silver and of gold, and raiment: and you shall lay it upon your sons and daughters, and <na>(d)</na> shall spoil Aegypt.",
+          "text": "but each woman shall ask of her neighbour and of her that is in house with her vessels of silver and of gold, and raiment: and you shall lay it upon your sons and daughters, and <na>(d)</na> shall spoil Aegypt.",
           "notes": [
             {
               "label": "d",
@@ -503,15 +520,11 @@
         },
         {
           "verse": 25,
-          "text": "Sephora by and by took a very sharp stone, and circumcised the prepuce of her son, and <na>(c)</na> touched his feet, and said: <na>(c)</na> A bloody spouse thou art to me.",
+          "text": "Sephora by and by took a very sharp stone, and circumcised the prepuce of her son, and <na>(c)</na> touched his feet, and said:",
           "notes": [
             {
               "label": "c",
-              "text": "Sephora cast the prepuce at Moyses' feet, and said: (c) I had lost thee my spouse except I had redeemed thee with the blood of my child. And (c) the Angel let Moyses go. S. Aug. q. 11. in Exod. iuxta 7."
-            },
-            {
-              "label": "c",
-              "text": "↑"
+              "text": "Abloody spouse thou art to me."
             }
           ]
         },
@@ -521,7 +534,7 @@
           "notes": [
             {
               "label": "c",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
@@ -655,7 +668,7 @@
         },
         {
           "verse": 22,
-          "text": "And Moyses returned to our Lord, and said: Lord <na>(c)</na> Why hast thou afflicted this people? Wherefore hast thou sent me? afflicted, when relief is near at hand. <i>Theod. q. 13. in Exod.</i>",
+          "text": "And Moyses returned to our Lord, and said: Lord <na>(c)</na> Why hast thou afflicted this people? Wherefore hast thou sent me?",
           "notes": [
             {
               "label": "c",
@@ -702,7 +715,7 @@
         },
         {
           "verse": 6,
-          "text": "Therefore say to the children of Israel: I^ the Lord who will bring you forth out of the work-prison of the Aegyptians, and will deliver you from servitude: and redeem you in a high arm, and great judgments."
+          "text": "Therefore say to the children of Israel: I the Lord who will bring you forth out of the work-prison of the Aegyptians, and will deliver you from servitude: and redeem you in a high arm, and great judgments."
         },
         {
           "verse": 7,
@@ -710,7 +723,7 @@
         },
         {
           "verse": 8,
-          "text": "and brought you into the land, over which I lifted up my hand to give it to Abraham, Isaac, and Jacob: and I will give it you to possess: I^ the Lord."
+          "text": "and brought you into the land, over which I lifted up my hand to give it to Abraham, Isaac, and Jacob: and I will give it you to possess: I the Lord."
         },
         {
           "verse": 9,
@@ -765,15 +778,14 @@
         {
           "verse": 20,
           "text": "And Amram took to wife Iocabed <na>(f)</na> his <cr>[1]</cr> aunt by the father's side: who bare him Aaron & Moyses. And the years of Amram's life were an hundred thirty seven.",
-          "cross_refs": [
-            {
-              "text": "* patruelem pro patrua, quae Latine non dicitur."
-            }
-          ],
           "notes": [
             {
               "label": "f",
               "text": "See Num. 26. v. 59."
+            },
+            {
+              "label": "1",
+              "text": "* patruelem pro patrua, quae Latine non dicitur."
             }
           ]
         },
@@ -817,7 +829,7 @@
         },
         {
           "verse": 29,
-          "text": "And our Lord spake to Moyses, saying: I^ the Lord: speak to Pharao the king of Aegypt, all things which I speak to thee."
+          "text": "And our Lord spake to Moyses, saying: I the Lord: speak to Pharao the king of Aegypt, all things which I speak to thee."
         },
         {
           "verse": 30,
@@ -954,12 +966,7 @@
         },
         {
           "verse": 25,
-          "text": "And seven days were fully ended, after that our Lord struck the river. to compel him to dismiss the Israelites out of Aegypt, but also to terrify him so in the mean time, that he being otherwise a mighty king, and extremely and often afflicted by Moyses, yet durst never lay violent hands upon him, lest himself and all his nation should presently have been destroyed. As S. Hilary <i>(lib. 7. de Trinitate)</i> & S. Gregory <i>(ho. 8.</i> in <i>Ezech.)</i> note upon this place. Likewise Priests are called gods <cr>[4]</cr> <i>(Exod. 22. v. 28.)</i> for their sacred function, pertaining to Religion and Service of God. Prophets also are called <i>videntes, Seers</i> <cr>[5]</cr> <i> (1. Reg. 9.)</i> because by participation of divine knowledge, they see sometimes the secrets of other men's hearts, things supernatural, and future contingent, though properly and naturally only God Almighty is <i>Scrutator cordis, the searcher of the heart,</i> and knoweth all things <i>(Sap. 1.)</i> Again S. Peter saith <i>(2. Epist. c. 1.)</i> that <i>just men are made partakers of divine nature.</i> Which is rather more than to participate in name. All which titles rightly pertained to Moyses, being in life Holy, in knowledge, a Prophet, in function a <cr>[6][7]</cr> Priest, and in power a Prince. In the same sense of participation Saints are called our Mediators, Advocates, Redeemers, Deliverers, and the like. 3. I will indurate.] According to our purpose mentioned in the Annotations upon the 9. chap. to the Romans, we shall here recite the sum of S. Augustine's doctrine <i>(Ser. 88. de tempore)</i> touching the hard question: How God did indurate Pharao's heart. And withal we shall briefly explicate, according to the doctrine of the same, & other most learned Fathers of the Church, the true sense of this and like places, by which Zuinglius, Calvin, Beza, and other Sectaries <cr>[1]</cr> , would prove that God not only permitteth, but also commandeth, inclineth, enforceth, and compelleth men to do that which is sin: yea that God is the author, internal mover, & enforcer, that man transgresseth; though they deny that God sinneth, or is cause of the malice of sin. For example, Zuinglius <cr>[2]</cr> <i>(Ser. de providentia Dei, ca. 5)</i> saith: <i>Numen ipsum auctor est eius, quod nobis est iniustitia, illi vero nullatenus est. The divine power itself is author of that thing, which to us is injustice, but to him in nowise is.</i> And a little after, <i>Cum igitur Angelum transgressorem facit, & hominem, ipse tamen transgressor non constituitur. When therefore God maketh Angel, and man transgressor, yet himself is not made a transgressor.</i> Cha. 6. <i>Unum igitur atque idem facinus, puta adulterium aut homicidium, quantum Dei est auctoris, motoris, impulsoris, opus est, crimen non est: quantum hominis est, crimen ac scelus est.</i> Therefore the selfsame act, as adultery or manslaughter, as it is of God <i>the author, mover, enforcer,</i> is a work, is not a crime: but as it is of man, is a crime, & a wicked act. <cr>[3]</cr> Calvin <i>(li. 8. Instit. c. 17. para. 11.)</i> affirmeth that the devil, & the whole band of the wicked cannot conceive, nor endeavour, nor do any mischief, <i>nisi quantum Deus permiserit, imo nisi quantum ille mandarit. But so</i> far as God permitteth (which all Catholics firmly believe) <i>nay but so far as he commandeth:</i> which all Catholics abhor and detest. Likewise <i>(li. 2. c. 4. para. 4.)</i> alleging God's words, saying <i>he had aggravated, and hardened Pharao's heart,</i> affirmeth, that which God did more, besides not mollifying his heart, was, <i>quod obstinatione pectus eius obfirmandum Satanae mandavit, that he committed his heart to Satan to be obdurated with obstinacy:</i> making God the author, and Satan only the minister of hardening Pharao's heart. <cr>[4]</cr> Beza following this race <i>(in Respon. ad Castallionem, Aphorismo 22.)</i> saith, God so <i>worketh</i> by evil instruments, that he doth not only suffer them to work, nor only moderateth the event, <i>set etiam ut excitet, impellat, moveat, regat, atque adeo (quod omnium est maximum) etiam creet, ut per illa agat quod constituit:</i> but also stirreth them up, driveth them forward, moveth them, ruleth them, and (which is most of all) even createth them, that by them he may <i>work</i> that which he appointed. <i>All which</i> (saith he) <i>God doth rightly, and without any injustice.</i> So indeed these men say, when they are pressed with the blasphemous absurdity, that they make God author and cause of sin, which necessarily and evidently followeth of their doctrine. <cr>[5]</cr> For by the very light of nature it is clear, that the commander or enforcer is author of that evil which another doth by his commandment or enforcement, and by all law of nature and nations, divine and human, is condemned as culpable and guilty of the fault, which the of Pharao.",
-          "cross_refs": [
-            {
-              "text": "Psal. 98. v. 6."
-            }
-          ]
+          "text": "And seven days were fully ended, after that our Lord struck the river."
         }
       ],
       "summary": "Moyses being constituted as God of Pharao, and Aaron as the Prophet of Moyses they declare God's commandment to Pharao; 10. turn the rod into a serpent; 17. and the water into blood, which is the first plague. 22. The Magicians do the like by enchantment, and Pharao's heart is indurate."
@@ -1253,7 +1260,12 @@
         },
         {
           "verse": 16,
-          "text": "And therefore <na>(f)</na> have I set thee, that in thee I may shew my might, & my name may be told in all the earth. <cr>[1]</cr> de Predest. & Grat. c. 6. <cr>[1]</cr> <i>Rom. 9.</i>",
+          "text": "And therefore <na>(f)</na> have I set thee, that in thee I may shew my might, & my name may be told in all the earth. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Rom. 9."
+            }
+          ],
           "notes": [
             {
               "label": "f",
@@ -1567,7 +1579,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> our Lord said to Moyses and Aaron in the Land of Aegypt:"
+          "text": "And <cr>[1]</cr> our Lord said to Moyses and Aaron in the Land of Aegypt:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in the office on good Friday. And the 9. prophecy before Mass on Easter eve."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1630,7 +1648,7 @@
         },
         {
           "verse": 12,
-          "text": "And I will pass through the Land of Aegypt that night, and will strike every first-begotten in the Land of Aegypt from man even unto beast: & <na>(d)</na> in all the gods of Aegypt I will do judgments, I^ the Lord.",
+          "text": "And I will pass through the Land of Aegypt that night, and will strike every first-begotten in the Land of Aegypt from man even unto beast: & <na>(d)</na> in all the gods of Aegypt I will do judgments, I the Lord.",
           "notes": [
             {
               "label": "d",
@@ -1772,7 +1790,7 @@
         },
         {
           "verse": 40,
-          "text": "And the dwelling of the children of Israel that they abode <na>(i)</na> in Aegypt, was four hundred thirty years. Chanaan the rest of this time. See. Gen. 15. v. 13. The 70. read in Aegypt and in <i>Chanaan,</i> for explication, as S. Augustine noteth <i>li. 16. c. 10. civit.</i>",
+          "text": "And the dwelling of the children of Israel that they abode <na>(i)</na> in Aegypt, was four hundred thirty years.",
           "notes": [
             {
               "label": "i",
@@ -1822,33 +1840,7 @@
         },
         {
           "verse": 51,
-          "text": "And the same day our Lord brought forth the children of Israel out of the Land of Aegypt by their troops. male, of the firs year , foreshewed in general the purity, fortitude, meekness, and all perfection of the true <i>Lamb of God, that taketh away the sins of the world</i> <cr>[3]</cr> . More particularly the killing & bereaving the Paschal Lamb of natural life, <i>the sprinkling of his blood on the door posts, the roasting at the fire, & not breaking any bone thereof,</i> most specially expressed Christ's death on the Cross <cr>[4][5]</cr> . But <i>the fourteenth day,</i> & <i>the evening</i> agree only with the Eucharist <cr>[6]</cr> , instituted the night before our Lord's Passion, which he suffered the fifteenth being the full moon) and at midday, as ancient S. Dionyse of Ariopagite (in two Epistles, to Policarpus, & to Apollophanes) testifieth, admiring the miracle of the sun's eclipse, that happened the same time. Neither did the <i>eating of the Lamb</i> directly prefigurate the oblation of the Cross, for Christ was not crucified to be eaten: but the Sacrament <i>in forms of bread and wine</i> was expressly figured by eating the lamb with <i>unleavened bread,</i> & drinking <i>the cup thereto adjoined (Luc. 22. v. 17.)</i> In like sort the Lamb immolated <i>in commemoration</i> of the delivery of Israel from death, & from servitude, when the first-born of Aegypt were slain, most aptly prefigured the Eucharist, which is <i>a perpetual commendation</i> of man's redemption & delivery from eternal death, and from bondage of the devil & sin, by Christ's death on the Cross, which death indeed was the very redemption & delivery of mankind, & not a commemoration thereof. Finally, the immolating of the Lamb <i>within the house</i> with precise commandment to <i>carry nothing thereof forth,</i> pertained particularly to the Eucharist, which our Lord celebrated <i>within the house,</i> whereby S. Cyprian <i>(lib. de unit. Eccles.)</i> proveth, that the B. Sacrament must not be given to any out of the <i>Catholic Church,</i> though Christ's Passion be extended to all the world, as well to bring such as are without into the Church, as to save those that are already entered in. <cr>[7]</cr> In this sort the most ancient and best expositors of holy Scripture, explicate this special figure of the Paschal Lamb. As we shall here produce some witnesses in confirmation of this truth. expressly signified his Passion.",
-          "cross_refs": [
-            {
-              "text": "Ioa. 19."
-            },
-            {
-              "text": "lib. 4. contra Marcionem"
-            },
-            {
-              "text": "With desire I have desired to eat this Pasch with you before I suffer veruecinam Iudaeorum This is my body Figura autem non suisset, nisi veritatis esset corpus: But it had not been a figure unless it were a body of verity a very body (in 26. Mat.)"
-            },
-            {
-              "text": "Luc. 22."
-            },
-            {
-              "text": "Hiere. 11. v. 19. (de Caena Dom.) consumed inconsumptible (orat. 2. de Pascha) (in 26. Mat.) which confirmeth the heart of man"
-            },
-            {
-              "text": "(Ho. de prodit. Judae) (in Lucae. 1.)"
-            },
-            {
-              "text": "Ps. 103."
-            },
-            {
-              "text": "1. Cor. 5."
-            }
-          ]
+          "text": "And the same day our Lord brought forth the children of Israel out of the Land of Aegypt by their troops."
         }
       ]
     },
@@ -1857,7 +1849,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> our Lord spake to Moyses, saying:"
+          "text": "And <cr>[1]</cr> our Lord spake to Moyses, saying:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first lesson at Matins on Candlemass day."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2090,7 +2088,13 @@
         },
         {
           "verse": 24,
-          "text": "<cr>[1]</cr> And now the morning watch was come, and behold our Lord looking upon the Aegyptians' camp through the pillar of fire and the cloud, slew their army:"
+          "text": "<cr>[1]</cr> And now the morning watch was come, and behold our Lord looking upon the Aegyptians' camp through the pillar of fire and the cloud, slew their army:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The fourth prophecy in the office before Mass on Easter eve. And the second on Whitsun-eve."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -2233,10 +2237,6 @@
             {
               "label": "c",
               "text": "Musical instruments used before the law of Moyses in the service of God. The end of the third age. THE CONTINUANCE OF THE CHURCH AND RELIGION IN THE THIRD AGE, from Abraham's going forth of Chaldea, to the parting of Israel out of Aegypt. The space of 430. years."
-            },
-            {
-              "label": "◦",
-              "text": "ONE and the same Church and Religion begun in the first age of the world, and continued in the second, became more and more conspicuous in the third. For in this age not only the same"
             }
           ]
         },
@@ -2278,33 +2278,7 @@
         },
         {
           "verse": 27,
-          "text": "And the children of Israel came into Elim, where there were twelve fountains of water, and seventy palm trees: and they camped beside the waters. <na>◦</na> The same Church & Religion in this age as principal and particular points of faith were believed and professed, but also the number of professors increased, and partly by separation of place and abode, and specially by diversity of manners, outward rites, and conversation, were more distinct from infidels than before: as we shall now shew by the sacred history of that time. Which beginneth with Abraham's going forth of his country of Chaldea, about 2024. years from the beginning of the world, in the 75. year of his age. in the former. <na>◦</na> From which time forward God often appeared to him, and after him to Isaac and Jacob, in the title of <i>EL <sc>Saddai</sc>,</i> that is, <i>God Almighty, Creator of all things, Lord, God, most high, Possessor of heaven and earth (Gen. 14.)</i> To Moyses more familiarly <i>(Exod. 3.)</i> in his most proper name, <i>HE <sc>Which</sc> IS.</i> In the name of <i>four letters,</i> which the Jews count <i>ineffable.</i> And in diverse other names, all shewing <i>One, Eternal, Omnipotent, Infinite Majesty:</i> Of whom all other things depend and have their being, himself independent of any other thing.",
-          "cross_refs": [
-            {
-              "text": "three in Persons adored as one Lord thy sight thy ye your There appeared to him three men, they said He said, I will come two Angels the Son of God the Holy Ghost the Father I beseech you my Lords your thee my Lord thy thee I have heard Our Lord rained from our Lord giveth and taketh away the Maker Keeper of men. He that taketh away sin, and iniquity He that doth great things, incomprehensible, and marvelous, whereof there is no number"
-            },
-            {
-              "text": "In his strength suddenly the seas are gathered together, & with his wisdom he struck the proud man. His Spirit hath adorned the heavens"
-            },
-            {
-              "text": "Strength wisdom spirit"
-            },
-            {
-              "text": "Abram (high or noble father) Abraham (Father of many) Ismaelites, Madianites, Idumeans Israelites"
-            },
-            {
-              "text": "of Christ"
-            },
-            {
-              "text": "Rom. 9."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "Belief in one God."
-            }
-          ]
+          "text": "And the children of Israel came into Elim, where there were twelve fountains of water, and seventy palm trees: and they camped beside the waters."
         }
       ],
       "summary": "Moyses with the people sing a Canticle of thanks-giving for their delivery. 22. The people being three days in the desert without water, then finding that is bitter, do murmur. 25. It is made sweet. 27. Coming to Elim they find twelve fountains and seventy palm-trees."
@@ -2314,7 +2288,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> they set forward from Elim, and all the multitude of the children of Israel came into the desert Sin, which is between Elim and Sinai: the fifteenth day of the second month, after they came forth out of the Land of Aegypt."
+          "text": "And <cr>[1]</cr> they set forward from Elim, and all the multitude of the children of Israel came into the desert Sin, which is between Elim and Sinai: the fifteenth day of the second month, after they came forth out of the Land of Aegypt.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part of this book. How the Israelites were sustained in the desert, and prepared to receive the Law."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2364,7 +2344,7 @@
         },
         {
           "verse": 12,
-          "text": "Ihave heard the murmurings of the children of Israel, say to them: At even you shall eat flesh, and in the morning you shall have your fill of bread: and you shall know that I am the Lord your God."
+          "text": "I have heard the murmurings of the children of Israel, say to them: At even you shall eat flesh, and in the morning you shall have your fill of bread: and you shall know that I am the Lord your God."
         },
         {
           "verse": 13,
@@ -2603,7 +2583,7 @@
         },
         {
           "verse": 6,
-          "text": "And he sent word to Moyses, saying: I^ Jethro thy allied come to thee, and thy wife, and thy two children with her."
+          "text": "And he sent word to Moyses, saying: I Jethro thy allied come to thee, and thy wife, and thy two children with her."
         },
         {
           "verse": 7,
@@ -2752,7 +2732,7 @@
           "notes": [
             {
               "label": "c",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
@@ -2862,7 +2842,7 @@
         },
         {
           "verse": 2,
-          "text": "Iam the Lord thy God, which brought thee forth out of the Land of Aegypt, out of the house of servitude."
+          "text": "I am the Lord thy God, which brought thee forth out of the Land of Aegypt, out of the house of servitude."
         },
         {
           "verse": 3,
@@ -2871,7 +2851,7 @@
         },
         {
           "verse": 4,
-          "text": "Thou shalt not make to thee a <na>(a)</na> graven thing, nor any similitude that is in heaven above, & that is in the earth beneath, neither of those things that are in the waters under the earth. English <i>a graven thing.</i>",
+          "text": "Thou shalt not make to thee a <na>(a)</na> graven thing, nor any similitude that is in heaven above, & that is in the earth beneath, neither of those things that are in the waters under the earth.",
           "has_annotation": true,
           "notes": [
             {
@@ -2916,7 +2896,13 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> Honour thy father and thy mother, that thou mayst be long lived upon the earth, which the Lord thy God will give thee."
+          "text": "<cr>[1]</cr> Honour thy father and thy mother, that thou mayst be long lived upon the earth, which the Lord thy God will give thee.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle on Wednesday in the third week of Lent."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -2978,7 +2964,7 @@
         },
         {
           "verse": 26,
-          "text": "Thou shalt not go up by grises unto mine Altar, lest thy turpitude be discovered. practice of the Catholic Church in this point. <cr>[3]</cr> Luther in his postil upon the Gospel of our Lord's Incarnation, saith: <i>Papistae Virginem Mariam Deum constituunt: Omnipotentiam ei in coelo, & in terra tribuunt.</i> The Papists (saith he) make the Virgin Mary God: they attribute to her omnipotency in heaven and in earth. In Papistry all expected more favour and grace from her, than from Christ himself. His scholar Melancton <i>(in locis communib.)</i> postiling the first Precept, saith: Papists invocate Saints, and worship Images in heathenish manner. Calvin <i>(li. de necess. refor. Eccles.)</i> saith: those of the Emperor's religion (meaning all Catholics) so divide God's offices among Saints, that they join them to the Sovereign God, as colleagues; in which multitude God lieth hidden. <cr>[4]</cr> Against the most glorious virgin mother the same Luther <i>(ser. de natali virg. Mar.)</i> feared not to say, that he esteemed no more of the prayer of <i>S. Mary,</i> than of any one of the people. And his reason is worse than his wicked assertion, for that, saith he, all that believe in Christ are as just, and as holy as the virgin Mary, or any other Saint how great soever. The Magdeburgian Centuriators (li. 1. Cent. 1.) affirm that the virgin Mary sinned grievously, yea compare her imagined faults with the sin of Eve in paradise. (li. 2.) They charge S. Peter and S. Paul (also after their conversions) with diverse great crimes. Calvin (li. 3. Inst. c. 2. parag. 31.) condemneth Sara and Rebecca of great sins (c. 4.) reprehendeth Judas Machabeus for superstitious, and preposterous zeal, in causing Sacrifice to be offered for the dead. In his commentary (in 32. Exodi) he accuseth most holy and meek Moyses of arrogancy and pride And (li. 3. Instit. c. 20. pa. 27.) he scurvily scoffeth at all Saints in general, saying: If they hear mortal men's prayers, they must have ears so long, as from heaven to earth. And calleth them not only <i>homines mortuos, dead men,</i> (which S. Hierom reproved in Vigilantius) but also <i>umbras, larvas, colluviem: shadows, night goblins, stinking filth:</i> yet more, <i>(li. de vera refor. Eccles. rat.)</i> he calleth them <i>Monstra, carnifices, bestias, monsters, hangmen, beasts.</i> <cr>[5]</cr> These and like blasphemies modest men cannot but abhor and detest. <cr>[6]</cr> Their lies also are convinced by S. Hierom, handling this matter of purpose against Vigilantius, by S. Augustine touching it by occasion <i>(li. 20. c. 21.)</i> against Faustus the Manichee, Thomas Waldensis <i>(To. 3. tit. 13. de Sacramentalibus)</i> against Wiclif, by all Catechisms and Christian Instructions, teaching nothing like, but quite contrary to these men's reports. <cr>[7]</cr> In sum they all teach, that Saints are to be honoured with religious honour, which is greater than civil, but infinitely inferior to divine, as the excellency of God surmounteth all excellency created. For better declaration whereof, it is to be considered, that seeing by the law of God and nature honour is due to excellency <cr>[1]</cr> , there must be so many distinct kinds of honour, as there be general kinds of excellency, which are three <cr>[2]</cr> . The first of God, infinite, and incomparably above all: the second is supernatural, but created, as of grace and glory: the third is human or natural, consisting in natural gifts, or worldly power and dignity, all three as distinct as God, heaven, and earth. To these three general kinds of excellency pertain therefore other three as distinct kinds of honour <cr>[3]</cr> , to wit, Divine due to God only, called by use and appropriation of a Greek word <i>Latria:</i> the second <i>Dulia,</i> belonging to Saints, and other holy things, elevated by God above the course of nature, in diverse degrees, but within the rank of creatures: the third is civil honour, due to human and worldly excellency, according to diverse states and qualities of men. The first of these, which is divine, may in no case be given to any creature, how excellent soever. The third which is civil, as both Catholics and Protestants hold for certain, is not competent nor agreeable to Saints, but to mortal worldly men in respect of temporal excellency. And the controversy therefore is about the second. Which Calvin <i>(li. 1. Instit. c. 11. & 12.)</i> and all <cr>[4]</cr> Protestants writers deny & reject, and so would have no honour at all given to Saints. <cr>[5]</cr> Objecting as old heretics did, that Catholics do all the same external acts, as standing bare-head, bowing, kneeling, praying, and the like to Saints, as to God himself. <cr>[6]</cr> We answer, that the distinction of honour consisteth not always in the external action, but in the intention of the mind. will condemn these blasphemies."
+          "text": "Thou shalt not go up by grises unto mine Altar, lest thy turpitude be discovered."
         }
       ],
       "summary": "Moyses receiveth the Decalogue or ten commandments of God, for all the people 23. with repetition that they shall not make false gods, nor make Altars but of earth or unhewed stone, and without steps. <na>[1]</na>",
@@ -3005,8 +2991,9 @@
         {
           "verse": 2,
           "text": "If thou buy an Hebrew servant, six years shall he serve thee: in the seventh he shall go out free <cr>[1]</cr> gratis.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Paying nothing."
             }
           ]
@@ -3161,15 +3148,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "If any man steal an ox or a sheep, and kill or sell it: he shall restore <na>(a)</na> five oxen for one ox, and <na>(a)</na> four sheep for one sheep.",
+          "text": "If any man steal an ox or a sheep, and kill or sell it: he shall restore <na>(a)</na> five oxen for one ox, and",
           "notes": [
             {
               "label": "a",
-              "text": "Where great faults are committed, punishment is inflicted according to the enormity of the sin, above the proportion of the injury. Theodoret. q. 50. in Exod. Deut. 25. Mystically, He that taketh from the Church a daily labourer in God's field, sinneth more grievously and deserveth more punishment, than he that taketh a private man of Christ's flock. Rabanus."
-            },
-            {
-              "label": "a",
-              "text": "↑"
+              "text": "four sheep for one sheep."
             }
           ]
         },
@@ -3383,7 +3366,13 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Three times every year you shall celebrate feasts to me."
+          "text": "<cr>[1]</cr> Three times every year you shall celebrate feasts to me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Three principal feasts besides the Sabbath, & some others."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -3451,7 +3440,7 @@
         },
         {
           "verse": 27,
-          "text": "Iwill send my terror to run before thee, and will kill all people, to whom thou shalt enter: and will turn the backs of all thine enemies before thee:"
+          "text": "I will send my terror to run before thee, and will kill all people, to whom thou shalt enter: and will turn the backs of all thine enemies before thee:"
         },
         {
           "verse": 28,
@@ -3459,7 +3448,7 @@
         },
         {
           "verse": 29,
-          "text": "Iwill not cast them out from thy face in one year: lest the land be brought into a wilderness, and beasts increase against thee."
+          "text": "I will not cast them out from thy face in one year: lest the land be brought into a wilderness, and beasts increase against thee."
         },
         {
           "verse": 30,
@@ -3521,7 +3510,7 @@
         },
         {
           "verse": 7,
-          "text": "And taking the volume of the covenant, he read^ the people hearing it: Who said, All things that our Lord hath spoken, we will do, and we will be obedient."
+          "text": "And taking the volume of the covenant, he read the people hearing it: Who said, All things that our Lord hath spoken, we will do, and we will be obedient."
         },
         {
           "verse": 8,
@@ -3824,7 +3813,7 @@
         },
         {
           "verse": 14,
-          "text": "Thou shalt make also another cover to the roof^ of the ram's skins dyed red: & over that again another cover of janthine skins."
+          "text": "Thou shalt make also another cover to the roof of the ram's skins dyed red: & over that again another cover of janthine skins."
         },
         {
           "verse": 15,
@@ -4156,7 +4145,7 @@
         },
         {
           "verse": 30,
-          "text": "And thou shalt put in the Rationale of Judgment^ <na>(c)</na> Doctrine, and Verity, which shall be on Aaron's breast, when he shall go in before the Lord: and he shall bear the judgment of the children of Israel on his breast, in the sight of the Lord always.",
+          "text": "And thou shalt put in the Rationale of Judgment <na>(c)</na> Doctrine, and Verity, which shall be on Aaron's breast, when he shall go in before the Lord: and he shall bear the judgment of the children of Israel on his breast, in the sight of the Lord always.",
           "notes": [
             {
               "label": "c",
@@ -4413,7 +4402,7 @@
         },
         {
           "verse": 44,
-          "text": "Iwill sanctify also the tabernacle of testimony with the Altar & Aaron with his sons, to do the function of priesthood unto me."
+          "text": "I will sanctify also the tabernacle of testimony with the Altar & Aaron with his sons, to do the function of priesthood unto me."
         },
         {
           "verse": 45,
@@ -4421,7 +4410,7 @@
         },
         {
           "verse": 46,
-          "text": "& they shall know that I am the Lord their God, that have brought them out of the Land of Aegypt, that I might abide among them, I^ the Lord their God."
+          "text": "& they shall know that I am the Lord their God, that have brought them out of the Land of Aegypt, that I might abide among them, I the Lord their God."
         }
       ],
       "summary": "The manner of consecrating Aaron and other Priests: with burnt offerings, 26. and pacifics, whereof Aaron and his sons shall participate. 38. The institution of the daily Sacrifice of two lambs, one in the morning, the other at even."
@@ -5044,8 +5033,9 @@
         {
           "verse": 6,
           "text": "Who passing before him said: <cr>[1]</cr> Dominatour Lord God, merciful and clement, patient and of much compassion, and true,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* chief ruler."
             }
           ]
@@ -5064,7 +5054,13 @@
         },
         {
           "verse": 10,
-          "text": "Our Lord answered: <na>(b)</na> I will make a covenant in the sight of all. I will do signs that were never seen upon the earth, nor in any nations: that this people may see, in the midst of whom thou art, the terrible work of the Lord, which I will do. <na>(b)</na> Notwithstanding his former commination <i>chap. 33. v. 3.</i> God here promiseth new benefits."
+          "text": "Our Lord answered: <na>(b)</na> I will make a covenant in the sight of all. I will do signs that were never seen upon the earth, nor in any nations: that this people may see, in the midst of whom thou art, the terrible work of the Lord, which I will do.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Notwithstanding his former commination chap. 33. v. 3. God here promiseth new benefits."
+            }
+          ]
         },
         {
           "verse": 11,

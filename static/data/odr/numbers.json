@@ -440,11 +440,11 @@
         },
         {
           "verse": 12,
-          "text": "Ihave taken the Levites from the children of Israel, for every first born, that openeth the matrice among the children of Israel, and the Levites shall be mine."
+          "text": "I have taken the Levites from the children of Israel, for every first born, that openeth the matrice among the children of Israel, and the Levites shall be mine."
         },
         {
           "verse": 13,
-          "text": "For the first born is mine: since I struck the first born in the Land of Aegypt: I have sanctified to me whatsoever is first born in Israel from man unto beast, they are mine: I^ the Lord."
+          "text": "For the first born is mine: since I struck the first born in the Land of Aegypt: I have sanctified to me whatsoever is first born in Israel from man unto beast, they are mine: I the Lord."
         },
         {
           "verse": 14,
@@ -913,8 +913,9 @@
         {
           "verse": 15,
           "text": "he shall bring her to the Priest, and shall offer an oblation for her, the <cr>[1]</cr> tenth part of a satum of barley meal: he shall not pour oil thereon, nor put frankincense upon it: because it is a sacrifice of jealousy, and an oblation searching out adultery.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* about the eighth part of our peck."
             }
           ]
@@ -1020,7 +1021,13 @@
         },
         {
           "verse": 5,
-          "text": "All the time of his separation a razor shall not pass over his head, until the day be expired, that he is consecrated to the Lord. He shall be holy <na>(a)</na> whiles the bush of hair on his head doth grow. <na>(a)</na> When Samson was deprived of these hairs he lost his strength. <i>Iudic. 16.</i>"
+          "text": "All the time of his separation a razor shall not pass over his head, until the day be expired, that he is consecrated to the Lord. He shall be holy <na>(a)</na> whiles the bush of hair on his head doth grow.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "When Samson was deprived of these hairs he lost his strength. Iudic. 16."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -1276,7 +1283,7 @@
         },
         {
           "verse": 36,
-          "text": "The fifth day the Prince of the sons of Simeon^ Salamiel the son of Surisaddai,"
+          "text": "The fifth day the Prince of the sons of Simeon Salamiel the son of Surisaddai,"
         },
         {
           "verse": 37,
@@ -1772,7 +1779,7 @@
         },
         {
           "verse": 10,
-          "text": "If at any time you shall have a banquet, & festival days, and Calends, you shall sound with trumpets over the holocausts, & pacific victims, that they may be unto you for a remembrance of your God. I^ the Lord your God."
+          "text": "If at any time you shall have a banquet, & festival days, and Calends, you shall sound with trumpets over the holocausts, & pacific victims, that they may be unto you for a remembrance of your God. I the Lord your God."
         },
         {
           "verse": 11,
@@ -1849,15 +1856,14 @@
         {
           "verse": 29,
           "text": "And Moyses said to Hobab the son of Raguel the Madianite, <na>(a)</na> his <cr>[1]</cr> allied: We march toward the place, which our Lord will give us: come with us, that we may do thee good: for our Lord hath promised good things to Israel.",
-          "cross_refs": [
-            {
-              "text": "* cognato vel affini."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "Either this Hobab was otherwise called Raguel Exo. 2. and also Jethro Exo. 3. and was father in law to Moyses, or else he was son of Raguel, and brother in law to Moyses."
+            },
+            {
+              "label": "1",
+              "text": "* cognato vel affini."
             }
           ]
         },
@@ -1927,7 +1933,13 @@
         },
         {
           "verse": 4,
-          "text": "For <na>(a)</na> the common vulgar people that came up with them, burned with desire, sitting and weeping, the children of Israel being joined together with them, and said: Who shall give us flesh to eat? <na>(a)</na> These were Aegyptians that parted out of their country with the Israelites, and now murmuring draw others by example to the same sin."
+          "text": "For <na>(a)</na> the common vulgar people that came up with them, burned with desire, sitting and weeping, the children of Israel being joined together with them, and said: Who shall give us flesh to eat?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "These were Aegyptians that parted out of their country with the Israelites, and now murmuring draw others by example to the same sin."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1967,7 +1979,7 @@
         },
         {
           "verse": 14,
-          "text": "Ialone cannot sustain all this people, because it is heavy for me."
+          "text": "I alone cannot sustain all this people, because it is heavy for me."
         },
         {
           "verse": 15,
@@ -2304,7 +2316,7 @@
         },
         {
           "verse": 33,
-          "text": "And they detracted from the Land, which they had viewed, before the children of Israel, saying: The Land, which we have viewed, <na>(b)</na> devoureth her inhabitants: the people, that we beheld, is of a tall stature. by reason of the giants, covertly they detracted from God's power, or his good will towards them, who had promised the same. And therefore he gave it to their children, but not to these seducers and murmurers, <i>chap. 14. v. 23, 29.</i>",
+          "text": "And they detracted from the Land, which they had viewed, before the children of Israel, saying: The Land, which we have viewed, <na>(b)</na> devoureth her inhabitants: the people, that we beheld, is of a tall stature.",
           "notes": [
             {
               "label": "b",
@@ -2380,7 +2392,7 @@
         },
         {
           "verse": 12,
-          "text": "Iwill strike them therefore with pestilence, and will consume them: but thee I will make Prince over a great nation and a stronger than this is."
+          "text": "I will strike them therefore with pestilence, and will consume them: but thee I will make Prince over a great nation and a stronger than this is."
         },
         {
           "verse": 13,
@@ -2718,7 +2730,7 @@
         },
         {
           "verse": 41,
-          "text": "I^ the Lord your God, that brought you out of the Land of"
+          "text": "I the Lord your God, that brought you out of the Land of"
         }
       ],
       "summary": "Certain precepts concerning Sacrifices 17. and first fruits, are repeated, 22. also touching different punishment of sin committed by ignorance and by set willfulness: 32. and accordingly one is stoned to death for gathering sticks on the Sabbath day. 37. All are commanded to carry a sign in their garments, thereby to remember the commandments of God."
@@ -2787,7 +2799,7 @@
         },
         {
           "verse": 14,
-          "text": "Indeed^ hast thou brought us into a land, that floweth with rivers of milk and honey, and hast thou given us possessions of fields and vineyards? What, wilt thou pluck out our eyes also? We come not."
+          "text": "Indeed hast thou brought us into a land, that floweth with rivers of milk and honey, and hast thou given us possessions of fields and vineyards? What, wilt thou pluck out our eyes also? We come not."
         },
         {
           "verse": 15,
@@ -2835,7 +2847,7 @@
         },
         {
           "verse": 26,
-          "text": "he said to the multitude: Depart from the tabernacles of the impious men, and touch not the things that pertain to them, <na>(a)</na> lest you be wrapped in their sins. depart not from the tabernacles of schismatics are enwrapped in their sins: much more to go unto heretical Synagogues is condemned. <i>See S. Cyprian l. de lapsis Parag. 5.</i>",
+          "text": "he said to the multitude: Depart from the tabernacles of the impious men, and touch not the things that pertain to them, <na>(a)</na> lest you be wrapped in their sins.",
           "notes": [
             {
               "label": "a",
@@ -3001,11 +3013,6 @@
           "verse": 8,
           "text": "returning the day following he found that Aaron's <na>(b)</na> rod in the house of Levi was budded: and the buds thereof swelling, the blossoms were shot forth, which spreading the leaves; were <cr>[1]</cr> fashioned into <na>(c)</na> almonds.",
           "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "* deformati, fully formed."
-            }
-          ],
           "notes": [
             {
               "label": "b",
@@ -3014,6 +3021,10 @@
             {
               "label": "c",
               "text": "almonds Christ, to wit, the utter pill his humanity, the shell his cross, the kernel his divinity: Who pacified by the blood of his cross, all things in earth & in heaven. Collos. 1. S. Aug. de temp. ser. 3."
+            },
+            {
+              "label": "1",
+              "text": "* deformati, fully formed."
             }
           ]
         },
@@ -3065,7 +3076,7 @@
         },
         {
           "verse": 6,
-          "text": "Ihave given you your brethren the Levites out of the midst of the children of Israel, and have delivered them a gift to the Lord, to serve in the ministries of his tabernacle."
+          "text": "I have given you your brethren the Levites out of the midst of the children of Israel, and have delivered them a gift to the Lord, to serve in the ministries of his tabernacle."
         },
         {
           "verse": 7,
@@ -3202,11 +3213,6 @@
         {
           "verse": 2,
           "text": "This is the religion of <cr>[1]</cr> the victim, which the Lord hath appointed. Command the children of Israel, that they bring unto thee <na>(a)</na> a red cow of <na>(b)</na> full age, wherein is <na>(c)</na> no blemish, and that hath <na>(d)</na> not carried yoke:",
-          "cross_refs": [
-            {
-              "text": "(q. 33.) (q. 36. in Num.)"
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -3223,6 +3229,10 @@
             {
               "label": "d",
               "text": "Free from all bondage."
+            },
+            {
+              "label": "1",
+              "text": "* The same things, saith S. Aug. (q. 33.) and Theodo. (q. 36. in Num.) which were shadowed & prefigured in the old Testament, are revealed & manifested in the New. And this special sacrifice prefigured diverse particular things in Christ's Passion."
             }
           ]
         },
@@ -3382,7 +3392,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> the children of Israel, and all the multitude came into the desert Sin, the first month: and the people abode in Cades. And Mary died there, and was buried in the same place."
+          "text": "And <cr>[1]</cr> the children of Israel, and all the multitude came into the desert Sin, the first month: and the people abode in Cades. And Mary died there, and was buried in the same place.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle on Friday in the third week of Lent."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3564,7 +3580,7 @@
         },
         {
           "verse": 9,
-          "text": "Moyses therefore made <na>(e)</na> <sc>Abrazen</sc> <sc>Serpent</sc>, and set it for a sign: whom when they that were strucken looked on, they were healed.",
+          "text": "Moyses therefore made <na>(e)</na> <sc>Abrazen Serpent</sc>, and set it for a sign: whom when they that were strucken looked on, they were healed.",
           "notes": [
             {
               "label": "e",
@@ -3628,7 +3644,7 @@
         },
         {
           "verse": 22,
-          "text": "Ibeseech thee that I may have licence to pass through thy land: we will not go aside into the fields and the vineyards, we will not drink waters of the wells, we will go the king's high way, till we be past thy borders."
+          "text": "I beseech thee that I may have licence to pass through thy land: we will not go aside into the fields and the vineyards, we will not drink waters of the wells, we will go the king's high way, till we be past thy borders."
         },
         {
           "verse": 23,
@@ -3772,7 +3788,7 @@
         },
         {
           "verse": 19,
-          "text": "Ibeseech you that you will also tarry here this night, and I may know what the Lord will answer me <na>(c)</na> once more.",
+          "text": "I beseech you that you will also tarry here this night, and I may know what the Lord will answer me <na>(c)</na> once more.",
           "notes": [
             {
               "label": "c",
@@ -3986,13 +4002,14 @@
         },
         {
           "verse": 20,
-          "text": "Iwas brought to bless, the blessing I am not able to stay."
+          "text": "I was brought to bless, the blessing I am not able to stay."
         },
         {
           "verse": 21,
           "text": "There is no idol in Jacob, neither is there <cr>[1]</cr> simulachre to be seen in Israel. The Lord his God is with him, and the sound of the victory of the king in him.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* likeness of Idol."
             }
           ]
@@ -4085,7 +4102,7 @@
         },
         {
           "verse": 9,
-          "text": "Lying^ he hath slept as a lion, and as a lioness, whom none shall be bold to raise up. He that blesseth thee, himself also shall be blessed: he that curseth thee, shall be reputed accurst."
+          "text": "Lying he hath slept as a lion, and as a lioness, whom none shall be bold to raise up. He that blesseth thee, himself also shall be blessed: he that curseth thee, shall be reputed accurst."
         },
         {
           "verse": 10,
@@ -4117,7 +4134,7 @@
         },
         {
           "verse": 17,
-          "text": "Ishall see him, but not now: I shall behold him but not near. <na>(b)</na> <sc>Astar</sc> <sc>Shall</sc> <sc>Rise</sc> out of Jacob, and a rod shall arise from Israel: and shall strike the Dukes of Moab, and shall waste all the children of Seth.",
+          "text": "Ishall see him, but not now: I shall behold him but not near. <na>(b)</na> <sc>Astar Shall Rise</sc> out of Jacob, and a rod shall arise from Israel: and shall strike the Dukes of Moab, and shall waste all the children of Seth.",
           "notes": [
             {
               "label": "b",
@@ -4679,7 +4696,13 @@
         },
         {
           "verse": 3,
-          "text": "These are the sacrifices which you must offer: Two lambs of a year old without blemish daily for <cr>[1]</cr> the everlasting holocaust:"
+          "text": "These are the sacrifices which you must offer: Two lambs of a year old without blemish daily for <cr>[1]</cr> the everlasting holocaust:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "1. (b) Every day twice."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -4703,7 +4726,13 @@
         },
         {
           "verse": 9,
-          "text": "And on the day of <cr>[1]</cr> the Sabbath, you shall offer two lambs of a year old without blemish, and two tenths of flour tempered with oil in sacrifice, & the libaments,"
+          "text": "And on the day of <cr>[1]</cr> the Sabbath, you shall offer two lambs of a year old without blemish, and two tenths of flour tempered with oil in sacrifice, & the libaments,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "2. (c) On the Sabbath day."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -4711,7 +4740,13 @@
         },
         {
           "verse": 11,
-          "text": "And in <cr>[1]</cr> the Calends you shall offer an holocaust to the Lord, two calves of the herd, one ram, seven lambs of a year old without blemish,"
+          "text": "And in <cr>[1]</cr> the Calends you shall offer an holocaust to the Lord, two calves of the herd, one ram, seven lambs of a year old without blemish,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "3. (d) The Neomenia, or new moon."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -4731,7 +4766,13 @@
         },
         {
           "verse": 16,
-          "text": "And in the first month, <cr>[1]</cr> the fourteenth day of the month shall be the Phase of the Lord,"
+          "text": "And in the first month, <cr>[1]</cr> the fourteenth day of the month shall be the Phase of the Lord,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "4. (e) Pasch, or Phase."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -4771,7 +4812,13 @@
         },
         {
           "verse": 26,
-          "text": "The day also of <cr>[1]</cr> first fruits when you shall offer new fruits to the Lord, after that the weeks be accomplished, shall be venerable and holy: no servile work shall you do therein."
+          "text": "The day also of <cr>[1]</cr> first fruits when you shall offer new fruits to the Lord, after that the weeks be accomplished, shall be venerable and holy: no servile work shall you do therein.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "5. (f) Pentecost."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -4801,7 +4848,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The <cr>[1]</cr> first day also of the seventh month shall be venerable and holy unto you, no servile work shall you do therein, because it is the day of sounding and of trumpets. (a) Feast of Trumpets."
+          "text": "The <cr>[1]</cr> first day also of the seventh month shall be venerable and holy unto you, no servile work shall you do therein, because it is the day of sounding and of trumpets.",
+          "cross_refs": [
+            {
+              "text": "6."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -4830,6 +4882,10 @@
             {
               "label": "c",
               "text": "For remission of sins the penitents did cooperate by penal works of fasting & abstinence, from even until even. Levit. 23. v. 32. S. Aug. q. 57. in Num. Theod. q. 32. in Levit."
+            },
+            {
+              "label": "1",
+              "text": "7. (b) Feast of Expiation."
             }
           ]
         },
@@ -4851,7 +4907,13 @@
         },
         {
           "verse": 12,
-          "text": "But the <cr>[1]</cr> fifteenth day of the seventh month, which shall be unto you holy and venerable, no servile work shall you do therein, but you shall celebrate the solemnity to the Lord seven days."
+          "text": "But the <cr>[1]</cr> fifteenth day of the seventh month, which shall be unto you holy and venerable, no servile work shall you do therein, but you shall celebrate the solemnity to the Lord seven days.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "8. (d) Feast of Tabernacles."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -5288,7 +5350,7 @@
         },
         {
           "verse": 50,
-          "text": "For this cause we offer in the donaries of our Lord every one^ that which we could find in the prey of gold, garters and tablets, rings and bracelets, and chains, that thou mayest pray to our Lord for us."
+          "text": "For this cause we offer in the donaries of our Lord every one that which we could find in the prey of gold, garters and tablets, rings and bracelets, and chains, that thou mayest pray to our Lord for us."
         },
         {
           "verse": 51,
@@ -5340,7 +5402,7 @@
         },
         {
           "verse": 6,
-          "text": "To whom Moyses answered: Why^ shall your brethren go to fight, and will you sit here?"
+          "text": "To whom Moyses answered: Why shall your brethren go to fight, and will you sit here?"
         },
         {
           "verse": 7,
@@ -5396,7 +5458,7 @@
         },
         {
           "verse": 20,
-          "text": "To whom Moyses said: If you do that you promise, march on^ well appointed before our Lord to fight:"
+          "text": "To whom Moyses said: If you do that you promise, march on well appointed before our Lord to fight:"
         },
         {
           "verse": 21,
@@ -5841,7 +5903,7 @@
         },
         {
           "verse": 21,
-          "text": "Of the tribe of Benjamin^ Elidad the son of Chaselon."
+          "text": "Of the tribe of Benjamin Elidad the son of Chaselon."
         },
         {
           "verse": 22,

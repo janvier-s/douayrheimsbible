@@ -72,7 +72,7 @@
         },
         {
           "verse": 12,
-          "text": "Iwill send fire into Theman: and it shall devour the houses of Bosra."
+          "text": "I will send fire into Theman: and it shall devour the houses of Bosra."
         },
         {
           "verse": 13,
@@ -85,8 +85,9 @@
         {
           "verse": 15,
           "text": "And <cr>[1]</cr> Melchom shall go into captivity, himself, and his princes together, saith our Lord.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* The god of the Ammonites."
             }
           ]
@@ -142,15 +143,14 @@
         {
           "verse": 7,
           "text": "Which bruise the heads of the poor upon the dust of the earth, and decline the way of the humble: and <na>(d)</na> the son and his father have gone to <cr>[1]</cr> a young woman, that they might violate my holy name.",
-          "cross_refs": [
-            {
-              "text": "* puellam."
-            }
-          ],
           "notes": [
             {
               "label": "d",
               "text": "Sons committed incest with their father's wives; & the fathers with their daughters in law, which most detestable sins must needs be severely punished."
+            },
+            {
+              "label": "1",
+              "text": "* puellam."
             }
           ]
         },
@@ -308,8 +308,9 @@
         {
           "verse": 3,
           "text": "And by the breaches you shall go out one against another, & you shall be cast forth into <cr>[1]</cr> Armon, saith our Lord.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* places of Armenia"
             }
           ]
@@ -340,7 +341,7 @@
         },
         {
           "verse": 7,
-          "text": "Ialso have stayed the rain from you, when there remained yet three months unto harvest: and I rained upon one city, and upon another city I rained not: one part was rained upon, and the part whereupon I rained not, withered."
+          "text": "I also have stayed the rain from you, when there remained yet three months unto harvest: and I rained upon one city, and upon another city I rained not: one part was rained upon, and the part whereupon I rained not, withered."
         },
         {
           "verse": 8,
@@ -611,7 +612,7 @@
         },
         {
           "verse": 13,
-          "text": "<na>(c)</na> Why^ can horses run upon rocks, or can there be ploughing with buffles? Because you have turned judgement into bitterness, and the fruit of justice into wormwood?",
+          "text": "<na>(c)</na> Why can horses run upon rocks, or can there be ploughing with buffles? Because you have turned judgement into bitterness, and the fruit of justice into wormwood?",
           "notes": [
             {
               "label": "c",
@@ -724,8 +725,9 @@
         {
           "verse": 14,
           "text": "And Amos answered, and said to Amasias: I am not a Prophet <cr>[1]</cr> and I am not the son of a Prophet: but an herdsman am I plucking sycamores.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* by education."
             }
           ]
@@ -807,7 +809,7 @@
         },
         {
           "verse": 11,
-          "text": "Behold the days come, saith our Lord, and I will send forth famine into the land: <na>(c)</na> not the famine of bread, nor thirst of water, but of hearing the word of the Lord. bread, drink, & of other victuals: but greater want of spiritual food.",
+          "text": "Behold the days come, saith our Lord, and I will send forth famine into the land: <na>(c)</na> not the famine of bread, nor thirst of water, but of hearing the word of the Lord.",
           "notes": [
             {
               "label": "c",
@@ -907,18 +909,7 @@
         },
         {
           "verse": 11,
-          "text": "<na>(e)[1]</na> In that day I will raise up the tabernacle of David, that was fallen: & I will re-edify the breaches of the walls thereof, and those things, that were fallen I will repair: & I will re-edify him as in the days of old.",
-          "cross_refs": [
-            {
-              "text": "Act. 15."
-            }
-          ],
-          "notes": [
-            {
-              "label": "e",
-              "text": "S. James conformably to S. Peter's doctrine, interpreteth this place of the conversion of Gentiles to Christ. Act. 15 v. 15. &c."
-            }
-          ]
+          "text": "<na>(e)[1]</na> In that day I will raise up the tabernacle of David, that was fallen: & I will re-edify the breaches of the walls thereof, and those things, that were fallen I will repair: & I will re-edify him as in the days of old."
         },
         {
           "verse": 12,

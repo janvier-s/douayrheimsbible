@@ -123,18 +123,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I <na>(a)[1]</na> will stand upon my watch, and fix my step upon the munition: and I will behold, to see what may be said to me, and what I may answer to him that rebuketh me.",
-          "cross_refs": [
-            {
-              "text": "Isa. 21."
-            }
-          ],
-          "notes": [
-            {
-              "label": "a",
-              "text": "The words of the Prophet expecting what God will further reveal unto him."
-            }
-          ]
+          "text": "I <na>(a)[1]</na> will stand upon my watch, and fix my step upon the munition: and I will behold, to see what may be said to me, and what I may answer to him that rebuketh me."
         },
         {
           "verse": 2,
@@ -259,7 +248,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The prayer of Habacuc the prophet for <cr>[1]</cr> ignorances."
+          "text": "The prayer of Habacuc the prophet for <cr>[1]</cr> ignorances.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "* All sins in some sort proceed of ignorance: for remission whereof the Prophet prayeth in this Canticle, and that for the same Christ's coming may not be deferred: 2. So prophesieth his Incarnation, 3. Nativity, 4. Miracles and Doctrine, 5. Passion, Resurrection, and conversion of Gentiles: 16. The general Judgement, Glory of the blessed, and Damnation of the reprobate."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -278,15 +273,14 @@
         {
           "verse": 3,
           "text": "God will come from <na>(c)</na> the South, and the holy one from mount Pharan: <cr>[1]</cr> His glory shall cover the heavens, and the earth is full of his praise.",
-          "cross_refs": [
-            {
-              "text": "* Sela. See Annot. Ps. 9."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "From Bethleem which is southward from Jerusalem."
+            },
+            {
+              "label": "1",
+              "text": "* Sela. See Annot. Ps. 9."
             }
           ]
         },
@@ -319,8 +313,9 @@
         {
           "verse": 9,
           "text": "Raising thou wilt raise up thy bow: the oath to the tribes which thou hast spoken. <cr>[1]</cr> Thou wilt cut the rivers of the earth.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Sela."
             }
           ]
@@ -340,15 +335,14 @@
         {
           "verse": 13,
           "text": "Thou wentest forth the salvation of thy people: salvation with thy Christ. Thou struckest <na>(e)</na> the head out of the house of the impious, thou hast discovered the foundation even to the neck. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "Sela."
-            }
-          ],
           "notes": [
             {
               "label": "e",
               "text": "Antichrist the head of the malignant house, or conventicle, shall be destroyed by Christ. Isa. 11. v. 4. 2. Thes. 2."
+            },
+            {
+              "label": "1",
+              "text": "Sela."
             }
           ]
         },
@@ -362,7 +356,7 @@
         },
         {
           "verse": 16,
-          "text": "Iheard, and my belly was troubled: at the voice my lips trembled. Let rottenness enter in my bones, and swarm under me. That I may rest in <na>(f)</na> the day of tribulation: that I may ascend to our girded people.",
+          "text": "I heard, and my belly was troubled: at the voice my lips trembled. Let rottenness enter in my bones, and swarm under me. That I may rest in <na>(f)</na> the day of tribulation: that I may ascend to our girded people.",
           "notes": [
             {
               "label": "f",

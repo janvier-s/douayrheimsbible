@@ -8,7 +8,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "These <cr>[1]</cr> are the words, which Moyses spake to all Israel beyond Jordan, in the champion wilderness, against the Red sea, between Pharan and Tophel and Laban and Haseroth, where there is very much gold:"
+          "text": "These <cr>[1]</cr> are the words, which Moyses spake to all Israel beyond Jordan, in the champion wilderness, against the Red sea, between Pharan and Tophel and Laban and Haseroth, where there is very much gold:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part. A repetition of God's benefits, the people's ingratitude, and punishment."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -32,7 +38,7 @@
         },
         {
           "verse": 7,
-          "text": "return, and come to the mountain of the Amorrheites, and to the rest that are next to it^ champion and hilly and lower places against the South, and beside the shore of the sea, the Land of the Chananites, and of Libanus unto the great river Euphrates."
+          "text": "return, and come to the mountain of the Amorrheites, and to the rest that are next to it champion and hilly and lower places against the South, and beside the shore of the sea, the Land of the Chananites, and of Libanus unto the great river Euphrates."
         },
         {
           "verse": 8,
@@ -44,7 +50,7 @@
         },
         {
           "verse": 10,
-          "text": "Ialone cannot sustain you, because the Lord your God hath multiplied you, and you are this day as the stars of heaven, very many."
+          "text": "I alone cannot sustain you, because the Lord your God hath multiplied you, and you are this day as the stars of heaven, very many."
         },
         {
           "verse": 11,
@@ -52,7 +58,7 @@
         },
         {
           "verse": 12,
-          "text": "Ialone am not able to sustain your businesses, and the charge of you and your quarrels."
+          "text": "I alone am not able to sustain your businesses, and the charge of you and your quarrels."
         },
         {
           "verse": 13,
@@ -64,7 +70,7 @@
         },
         {
           "verse": 15,
-          "text": "And I took of your tribes^ men wise and noble, and appointed them Princes, tribunes, and centurions, and quinquagenarians, and deans, that might teach you all things."
+          "text": "And I took of your tribes men wise and noble, and appointed them Princes, tribunes, and centurions, and quinquagenarians, and deans, that might teach you all things."
         },
         {
           "verse": 16,
@@ -500,7 +506,7 @@
         },
         {
           "verse": 25,
-          "text": "Iwill pass over therefore, and will see this excellent Land beyond Jordan, and this goodly mountain, and Libanus."
+          "text": "I will pass over therefore, and will see this excellent Land beyond Jordan, and this goodly mountain, and Libanus."
         },
         {
           "verse": 26,
@@ -532,7 +538,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> now Israel hear the precepts and judgments, which I teach thee: that doing them, thou mayest live, and entering in mayest possess the Land, which the Lord the God of your fathers will give you."
+          "text": "And <cr>[1]</cr> now Israel hear the precepts and judgments, which I teach thee: that doing them, thou mayest live, and entering in mayest possess the Land, which the Lord the God of your fathers will give you.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part. A repetition & explication of the law."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -657,7 +669,7 @@
         },
         {
           "verse": 26,
-          "text": "Icall this day heaven and earth witnesses, that you shall quickly perish from out of the Land, which being passed over Jordan you shall possess. You shall not dwell therein long time, but our Lord will destroy you,"
+          "text": "I call this day heaven and earth witnesses, that you shall quickly perish from out of the Land, which being passed over Jordan you shall possess. You shall not dwell therein long time, but our Lord will destroy you,"
         },
         {
           "verse": 27,
@@ -711,7 +723,7 @@
         },
         {
           "verse": 38,
-          "text": "to destroy very great nations and stronger than thou^ at thy entering in, and to bring thee in, and give thee their land in possession, as thou seest this present day."
+          "text": "to destroy very great nations and stronger than thou at thy entering in, and to bring thee in, and give thee their land in possession, as thou seest this present day."
         },
         {
           "verse": 39,
@@ -787,7 +799,7 @@
         },
         {
           "verse": 5,
-          "text": "Iwas arbiter and <na>(b)</na> Mediator betwixt our Lord and you at that time, to shew you his words, for you feared the fire, and went not up into the mount, and he said:",
+          "text": "I was arbiter and <na>(b)</na> Mediator betwixt our Lord and you at that time, to shew you his words, for you feared the fire, and went not up into the mount, and he said:",
           "notes": [
             {
               "label": "b",
@@ -797,7 +809,7 @@
         },
         {
           "verse": 6,
-          "text": "I^ the Lord thy God, that brought thee out of the Land of Aegypt out of the house of servitude."
+          "text": "I the Lord thy God, that brought thee out of the Land of Aegypt out of the house of servitude."
         },
         {
           "verse": 7,
@@ -1016,7 +1028,7 @@
         },
         {
           "verse": 23,
-          "text": "and he brought us out from thence, that being brought in^ he might give us the Land, whereupon he sware to our fathers."
+          "text": "and he brought us out from thence, that being brought in he might give us the Land, whereupon he sware to our fathers."
         },
         {
           "verse": 24,
@@ -1070,7 +1082,7 @@
         },
         {
           "verse": 10,
-          "text": "and rendering forthwith to them that hate him, so that he destroyeth them, and deferreth no longer, <na>(a)</na> immediately rendering to them that^ they deserve.",
+          "text": "and rendering forthwith to them that hate him, so that he destroyeth them, and deferreth no longer, <na>(a)</na> immediately rendering to them that they deserve.",
           "notes": [
             {
               "label": "a",
@@ -1330,7 +1342,7 @@
         },
         {
           "verse": 17,
-          "text": "Icast the tables out of my hands, and brake them in your sight."
+          "text": "I cast the tables out of my hands, and brake them in your sight."
         },
         {
           "verse": 18,
@@ -1396,7 +1408,7 @@
         },
         {
           "verse": 3,
-          "text": "Imade therefore an ark of the wood Setim. And when I had hewed two tables of stone like to the former, I went up into the mount, having them in my hands."
+          "text": "I made therefore an ark of the wood Setim. And when I had hewed two tables of stone like to the former, I went up into the mount, having them in my hands."
         },
         {
           "verse": 4,
@@ -1584,7 +1596,13 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> For if you keep the commandments which I command you, and do them, that you love the Lord your God, & walk in all his ways, cleaving to him,"
+          "text": "<cr>[1]</cr> For if you keep the commandments which I command you, and do them, that you love the Lord your God, & walk in all his ways, cleaving to him,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second lesson in Mass on Imber Saturday in Lent."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -1674,7 +1692,7 @@
         },
         {
           "verse": 8,
-          "text": "You shall not do there the things, that we do here this day^ <na>(b)</na> every man^ that which seemeth good to himself.",
+          "text": "You shall not do there the things, that we do here this day <na>(b)</na> every man that which seemeth good to himself.",
           "notes": [
             {
               "label": "b",
@@ -1696,7 +1714,7 @@
         },
         {
           "verse": 12,
-          "text": "There^ shall you feast before the Lord your God, you and your sons and daughters, men servants and women servants, and the Levite, that dwelleth in your cities. For he hath no other part and possession among you."
+          "text": "There shall you feast before the Lord your God, you and your sons and daughters, men servants and women servants, and the Levite, that dwelleth in your cities. For he hath no other part and possession among you."
         },
         {
           "verse": 13,
@@ -1756,7 +1774,7 @@
         },
         {
           "verse": 27,
-          "text": "and shalt offer thy oblations the flesh and the blood upon the altar of the Lord thy God: the blood of thy hosts thou shalt pour on the altar: and the flesh^ thyself shalt eat."
+          "text": "and shalt offer thy oblations the flesh and the blood upon the altar of the Lord thy God: the blood of thy hosts thou shalt pour on the altar: and the flesh thyself shalt eat."
         },
         {
           "verse": 28,
@@ -1923,7 +1941,7 @@
         },
         {
           "verse": 11,
-          "text": "All birds that are clean^ eat."
+          "text": "All birds that are clean eat."
         },
         {
           "verse": 12,
@@ -2126,15 +2144,18 @@
         {
           "verse": 1,
           "text": "Observe <cr>[1]</cr> the month of new corn, and the <na>(a)</na> first of the spring time, that thou mayest make the <cr>[2]</cr> Phase to our Lord thy God: because in this month our Lord thy God brought thee out of Aegypt by night.",
-          "cross_refs": [
-            {
-              "text": "Levit. 23. Num. 28. & 29."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "Here only three of the principal."
+            },
+            {
+              "label": "1",
+              "text": "The rest of the feasts are mentioned Levit. 23. Num. 28. & 29."
+            },
+            {
+              "label": "2",
+              "text": "1. Pasch."
             }
           ]
         },
@@ -2168,7 +2189,13 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> Seven weeks shalt thou number thee from that day wherein thou didst put the sicle to the corn,"
+          "text": "<cr>[1]</cr> Seven weeks shalt thou number thee from that day wherein thou didst put the sicle to the corn,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "2. Pentecost."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -2184,7 +2211,13 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> The solemnity also of Tabernacles thou shalt celebrate seven days, when thou hast gathered thy fruit of the barn floor and the press:"
+          "text": "<cr>[1]</cr> The solemnity also of Tabernacles thou shalt celebrate seven days, when thou hast gathered thy fruit of the barn floor and the press:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "3. Feast of Tabernacles."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -2444,7 +2477,7 @@
         },
         {
           "verse": 22,
-          "text": "This sign thou shalt have: That which the same Prophet foretelleth, in the name of the Lord, & cometh not to pass: that^ our Lord hath not spoken, but by the arrogancy of his mind the Prophet hath forged it: and therefore thou shalt not fear him."
+          "text": "This sign thou shalt have: That which the same Prophet foretelleth, in the name of the Lord, & cometh not to pass: that our Lord hath not spoken, but by the arrogancy of his mind the Prophet hath forged it: and therefore thou shalt not fear him."
         }
       ],
       "summary": "Instead of other inheritance Priests and Levites have provision by Sacrifices and oblations. 9. All superstition to be avoided. 15. Perpetuity of Prophets, and finally one special PROPHET (to wit CHRIST) is promised. 20. False Prophets must be slain."
@@ -2476,7 +2509,7 @@
         },
         {
           "verse": 5,
-          "text": "but to have gone with him simply unto the wood to cut wood, and in cutting of wood^ the axe slipped out of his hand, & the iron falling from the handle struck his friend, and killed him: he shall fly to one of the cities aforesaid, and live:"
+          "text": "but to have gone with him simply unto the wood to cut wood, and in cutting of wood the axe slipped out of his hand, & the iron falling from the handle struck his friend, and killed him: he shall fly to one of the cities aforesaid, and live:"
         },
         {
           "verse": 6,
@@ -2855,7 +2888,7 @@
         },
         {
           "verse": 19,
-          "text": "condemning him besides^ in a hundred sicles of silver, which he shall give to the wench's father, because he hath infamously spread a very ill name upon a virgin of Israel: and he shall have her to wife, and cannot put her away all the days of his life."
+          "text": "condemning him besides in a hundred sicles of silver, which he shall give to the wench's father, because he hath infamously spread a very ill name upon a virgin of Israel: and he shall have her to wife, and cannot put her away all the days of his life."
         },
         {
           "verse": 20,
@@ -3253,7 +3286,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> when thou art entered into the Land, which our Lord thy God will give thee to possess, and hast obtained it, and dwellest in it:"
+          "text": "And <cr>[1]</cr> when thou art entered into the Land, which our Lord thy God will give thee to possess, and hast obtained it, and dwellest in it:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third lesson in Mass on Imber Saturday in whitsunweek."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3299,7 +3338,13 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> And thou shalt feast in all the good things, which our Lord thy God hath given to thee, and thy house, thou and the Levite, and the stranger that is with thee."
+          "text": "<cr>[1]</cr> And thou shalt feast in all the good things, which our Lord thy God hath given to thee, and thy house, thou and the Levite, and the stranger that is with thee.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first lesson in Mass on Imber Saturday in Lent."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -3317,7 +3362,7 @@
         },
         {
           "verse": 14,
-          "text": "Ihave not eaten of them in my mourning, nor separated them in any uncleanness, nor spent of them any thing in funerals. I have obeyed the voice of our Lord my God, and have done all things as thou didst command me."
+          "text": "I have not eaten of them in my mourning, nor separated them in any uncleanness, nor spent of them any thing in funerals. I have obeyed the voice of our Lord my God, and have done all things as thou didst command me."
         },
         {
           "verse": 15,
@@ -3353,7 +3398,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> Moyses and the ancients of Israel commanded the people, saying: Keep every commandment that I command you this day."
+          "text": "And <cr>[1]</cr> Moyses and the ancients of Israel commanded the people, saying: Keep every commandment that I command you this day.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part. God's promises & threats, for keeping or breaking his commandments."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3369,7 +3420,7 @@
         },
         {
           "verse": 5,
-          "text": "and thou shalt build there an altar to our Lord thy God^ of stones, which iron hath not touched,"
+          "text": "and thou shalt build there an altar to our Lord thy God of stones, which iron hath not touched,"
         },
         {
           "verse": 6,
@@ -4024,7 +4075,7 @@
         },
         {
           "verse": 19,
-          "text": "Icall for witnesses this day heaven & earth, that I have proposed to you life and death, blessing and cursing. <na>(b)</na> Choose therefore life, that both thou mayest live, and thy seed:",
+          "text": "I call for witnesses this day heaven & earth, that I have proposed to you life and death, blessing and cursing. <na>(b)</na> Choose therefore life, that both thou mayest live, and thy seed:",
           "has_annotation": true,
           "notes": [
             {
@@ -4145,7 +4196,13 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> Moyses therefore wrote the canticle and taught it the children of Israel:"
+          "text": "<cr>[1]</cr> Moyses therefore wrote the canticle and taught it the children of Israel:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The eleventh prophecy in the office before Mass on Easter eve. And the third on Whitsuneve."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -4360,7 +4417,7 @@
         },
         {
           "verse": 23,
-          "text": "Iwill heap evils upon them, and mine arrows I will spend in them."
+          "text": "I will heap evils upon them, and mine arrows I will spend in them."
         },
         {
           "verse": 24,
@@ -4390,7 +4447,7 @@
         },
         {
           "verse": 29,
-          "text": "Othat they were <na>(q)</na> wise, and understood, and would provide for their last! things present, and <i>provideth</i> for things to come.",
+          "text": "O that they were <na>(q)</na> wise, and understood, and would provide for their last!",
           "notes": [
             {
               "label": "q",
@@ -4458,7 +4515,7 @@
         },
         {
           "verse": 40,
-          "text": "Iwill lift up my hand to heaven, and will say: I live for ever."
+          "text": "I will lift up my hand to heaven, and will say: I live for ever."
         },
         {
           "verse": 41,
@@ -4466,7 +4523,7 @@
         },
         {
           "verse": 42,
-          "text": "Iwill imbrue my arrows with blood, and my sword shall devour flesh, of the blood of the slain and captivity, of <na>(u)</na> the bare head of the enemies.",
+          "text": "I will imbrue my arrows with blood, and my sword shall devour flesh, of the blood of the slain and captivity, of <na>(u)</na> the bare head of the enemies.",
           "notes": [
             {
               "label": "u",
@@ -4708,7 +4765,7 @@
         },
         {
           "verse": 6,
-          "text": "and he buried him in the valley of the Land of Moab against Phogor: and <na>(b)</na> no man hath known his sepulchre until this present day. <i>The end of the five books of Moyses, containing the Law.</i>",
+          "text": "and he buried him in the valley of the Land of Moab against Phogor: and <na>(b)</na> no man hath known his sepulchre until this present day.",
           "notes": [
             {
               "label": "b",

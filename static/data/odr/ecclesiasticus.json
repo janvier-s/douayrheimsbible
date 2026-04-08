@@ -208,15 +208,14 @@
         {
           "verse": 2,
           "text": "Repress thy heart, & sustain: incline thine ear, & receive the words of understanding, <na>(a)</na> and make no haste in the time of <cr>[1]</cr> obduction.",
-          "cross_refs": [
-            {
-              "text": "* Covering."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "Desire not to die that thou mayst thereby be covered from worldly miseries, for that is a desperate desire, but have patience in this life that thou mayst find rest in God."
+            },
+            {
+              "label": "1",
+              "text": "* Covering."
             }
           ]
         },
@@ -246,7 +245,7 @@
         },
         {
           "verse": 9,
-          "text": "Ye that fear our Lord^ hope in him: and mercy shall come to you for your delectation."
+          "text": "Ye that fear our Lord hope in him: and mercy shall come to you for your delectation."
         },
         {
           "verse": 10,
@@ -719,7 +718,13 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> and say not: How mighty am I? And who shall bring me under for my facts? For God revenging will revenge."
+          "text": "<cr>[1]</cr> and say not: How mighty am I? And who shall bring me under for my facts? For God revenging will revenge.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Though thou be so potent, that no man can hinder thy evil designment; yet do it not, because God will punish it."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -748,8 +753,9 @@
         {
           "verse": 10,
           "text": "Be not careful in unjust riches: for they shall not profit thee in the day of <cr>[1]</cr> obduction and vengeance.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Covering, or death. Prov. 10. v. 4."
             }
           ]
@@ -2055,7 +2061,13 @@
         },
         {
           "verse": 28,
-          "text": "<na>(c)</na> The rich man spake, and all held their peace, and they will carry his word even to the clouds. <na>(c)</na> Acception of persons hindereth many good counsels: & promoteth many evil things."
+          "text": "<na>(c)</na> The rich man spake, and all held their peace, and they will carry his word even to the clouds.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Acception of persons hindereth many good counsels: & promoteth many evil things."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -2431,18 +2443,7 @@
         },
         {
           "verse": 15,
-          "text": "All mercy shall make a place to every man according to <na>(b)[1]</na> the merit of his works, & according to the understanding of his peregrination.",
-          "cross_refs": [
-            {
-              "text": "Rom. 2. v. 6."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "Even a dish of cold water given in alms shall be rewarded. Mat. 10."
-            }
-          ]
+          "text": "All mercy shall make a place to every man according to <na>(b)[1]</na> the merit of his works, & according to the understanding of his peregrination."
         },
         {
           "verse": 16,
@@ -2761,7 +2762,7 @@
         },
         {
           "verse": 19,
-          "text": "Before judgment prepare thee justice, and before thou speak^ learn."
+          "text": "Before judgment prepare thee justice, and before thou speak learn."
         },
         {
           "verse": 20,
@@ -2778,18 +2779,7 @@
         },
         {
           "verse": 22,
-          "text": "Be not hindered <na>(b)[1]</na> to pray always, & fear not to be justified even to death, because the reward of God abideth for ever.",
-          "cross_refs": [
-            {
-              "text": "Luc. 18. 1. 1. Thes. 5."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "They pray always that pray at certain convenient times. And still have intention so to frequent the same exercise all their life. S. Aug. Epist. 121. c. 9. ad Probam."
-            }
-          ]
+          "text": "Be not hindered <na>(b)[1]</na> to pray always, & fear not to be justified even to death, because the reward of God abideth for ever."
         },
         {
           "verse": 23,
@@ -3411,9 +3401,10 @@
         {
           "verse": 12,
           "text": "<cr>[1]</cr> For the wicked life of the very wicked, above the death of a fool.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "v. 12."
+              "label": "1",
+              "text": "For the wicked life of such a one is worse than his death. v. 12."
             }
           ]
         },
@@ -3513,7 +3504,7 @@
         },
         {
           "verse": 31,
-          "text": "Iwill not be ashamed to salute a friend, from his face I will not hide myself: and if there chance evils to me by him, I will bear it."
+          "text": "I will not be ashamed to salute a friend, from his face I will not hide myself: and if there chance evils to me by him, I will bear it."
         },
         {
           "verse": 32,
@@ -3524,7 +3515,7 @@
           "text": "Who will give a guard to my mouth, and a sure seal upon my lips, that I fall not by them, and my tongue destroy me? <cr>[1]</cr>",
           "cross_refs": [
             {
-              "text": "Ps. 140"
+              "text": "Ps. 140 ."
             }
           ]
         }
@@ -3566,7 +3557,7 @@
         },
         {
           "verse": 7,
-          "text": "Ochildren hear <na>(b)</na> the doctrine of the mouth: and he that will keep it, shall not perish by his lips, nor be scandalized in most wicked works.",
+          "text": "O children hear <na>(b)</na> the doctrine of the mouth: and he that will keep it, shall not perish by his lips, nor be scandalized in most wicked works.",
           "notes": [
             {
               "label": "b",
@@ -3716,18 +3707,7 @@
         },
         {
           "verse": 30,
-          "text": "<na>(k)[1]</na> Revenge shall be taken on this man in the streets of the city, and as an horse-colt he shall be chased: and where he expected not, he shall be apprehended.",
-          "cross_refs": [
-            {
-              "text": "Lev. 20. Deu. 22."
-            }
-          ],
-          "notes": [
-            {
-              "label": "k",
-              "text": "Seeing carnal adultery is severely punished, much more spiritual: as schism, heresy, and apostasy from Catholic Religion."
-            }
-          ]
+          "text": "<na>(k)[1]</na> Revenge shall be taken on this man in the streets of the city, and as an horse-colt he shall be chased: and where he expected not, he shall be apprehended."
         },
         {
           "verse": 31,
@@ -3791,19 +3771,19 @@
         },
         {
           "verse": 5,
-          "text": "Icame forth from the mouth of the Highest, the first begotten before all creatures."
+          "text": "I came forth from the mouth of the Highest, the first begotten before all creatures."
         },
         {
           "verse": 6,
-          "text": "Imade that in the heavens, there should rise light that faileth not, and as a cloud I covered all the earth."
+          "text": "I made that in the heavens, there should rise light that faileth not, and as a cloud I covered all the earth."
         },
         {
           "verse": 7,
-          "text": "Idwelt in the highest places, and my throne is in the pillar of a cloud."
+          "text": "I dwelt in the highest places, and my throne is in the pillar of a cloud."
         },
         {
           "verse": 8,
-          "text": "Ialone have gone round about the compass of heaven, and have penetrated into the bottom of the depth, and have walked in the waves of the sea,"
+          "text": "I alone have gone round about the compass of heaven, and have penetrated into the bottom of the depth, and have walked in the waves of the sea,"
         },
         {
           "verse": 9,
@@ -3857,7 +3837,7 @@
         },
         {
           "verse": 17,
-          "text": "Iam exalted as a cedar in Libanus, and as a cypress tree in mount Sion."
+          "text": "I am exalted as a cedar in Libanus, and as a cypress tree in mount Sion."
         },
         {
           "verse": 18,
@@ -3869,7 +3849,7 @@
         },
         {
           "verse": 20,
-          "text": "Igave an odour as cinnamon, & aromatical balm: as chosen myrrh have I given the sweetness of odour:"
+          "text": "I gave an odour as cinnamon, & aromatical balm: as chosen myrrh have I given the sweetness of odour:"
         },
         {
           "verse": 21,
@@ -3877,15 +3857,15 @@
         },
         {
           "verse": 22,
-          "text": "Ihave spread out my boughs as the terebinth, and my boughs are of honour & grace."
+          "text": "I have spread out my boughs as the terebinth, and my boughs are of honour & grace."
         },
         {
           "verse": 23,
-          "text": "Ias a vine have fructified sweetness of odour: and my flowers are fruit of honour and honesty."
+          "text": "I as a vine have fructified sweetness of odour: and my flowers are fruit of honour and honesty."
         },
         {
           "verse": 24,
-          "text": "Iam the mother of beautiful love, and of fear, and of knowledge, and of holy hope."
+          "text": "I am the mother of beautiful love, and of fear, and of knowledge, and of holy hope."
         },
         {
           "verse": 25,
@@ -3971,11 +3951,11 @@
         },
         {
           "verse": 40,
-          "text": "Iwisdom have poured out rivers."
+          "text": "I wisdom have poured out rivers."
         },
         {
           "verse": 41,
-          "text": "Ias a sluse of a mighty water out of the river, I as the river Dioryx, & as a water conduit I came out of paradise."
+          "text": "I as a sluse of a mighty water out of the river, I as the river Dioryx, & as a water conduit I came out of paradise."
         },
         {
           "verse": 42,
@@ -3991,11 +3971,11 @@
         },
         {
           "verse": 45,
-          "text": "Iwill penetrate all the inferior parts of the earth, and will behold all that sleep, and will illuminate all that hope in our Lord."
+          "text": "I will penetrate all the inferior parts of the earth, and will behold all that sleep, and will illuminate all that hope in our Lord."
         },
         {
           "verse": 46,
-          "text": "Iwill yet pour out doctrine as prophecy, and will leave it to them that seek wisdom, and will not cease unto their progenies even to the holy age."
+          "text": "I will yet pour out doctrine as prophecy, and will leave it to them that seek wisdom, and will not cease unto their progenies even to the holy age."
         },
         {
           "verse": 47,
@@ -4488,7 +4468,7 @@
         },
         {
           "verse": 27,
-          "text": "Ihave heard many things, & have not esteemed them equal to him, and our Lord will hate him."
+          "text": "I have heard many things, & have not esteemed them equal to him, and our Lord will hate him."
         },
         {
           "verse": 28,
@@ -4547,18 +4527,7 @@
         },
         {
           "verse": 2,
-          "text": "<na>(b)[1]</na> Forgive thy neighbour hurting thee: & then shall thy sins be loosed to thee when thou prayest.",
-          "cross_refs": [
-            {
-              "text": "Deu. 32, 35. Mat. 6, 14. & 11, 25. Rom. 12, 19."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "Charity requireth that we remit injuries with three conditions, if the offender be truly penitent, if the remission of punishment be not against justice, nor against necessary discipline."
-            }
-          ]
+          "text": "<na>(b)[1]</na> Forgive thy neighbour hurting thee: & then shall thy sins be loosed to thee when thou prayest."
         },
         {
           "verse": 3,
@@ -4711,7 +4680,7 @@
           "notes": [
             {
               "label": "a",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
@@ -5597,7 +5566,7 @@
         },
         {
           "verse": 12,
-          "text": "Ihave seen many things in wandering to and fro, and very many fashions of words."
+          "text": "I have seen many things in wandering to and fro, and very many fashions of words."
         },
         {
           "verse": 13,
@@ -5715,18 +5684,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "He <na>(a)[1]</na> that keepeth the law, multiplieth oblation.",
-          "cross_refs": [
-            {
-              "text": "1. Reg. 15. v. 22. Ier. 7."
-            }
-          ],
-          "notes": [
-            {
-              "label": "a",
-              "text": "sacrifices of penance, Psa. 50. of justice Psal. 4. and of praise, Psal. 49. are better than external sacrifices."
-            }
-          ]
+          "text": "He <na>(a)[1]</na> that keepeth the law, multiplieth oblation."
         },
         {
           "verse": 2,
@@ -5746,18 +5704,7 @@
         },
         {
           "verse": 6,
-          "text": "<na>(b)[1]</na> Thou shalt not appear before the sight of our Lord empty.",
-          "cross_refs": [
-            {
-              "text": "Exo. 23. & 34. Deu. 16."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "Nevertheless external sacrifice is also necessary."
-            }
-          ]
+          "text": "<na>(b)[1]</na> Thou shalt not appear before the sight of our Lord empty."
         },
         {
           "verse": 7,
@@ -6034,7 +5981,7 @@
         },
         {
           "verse": 3,
-          "text": "Omost wicked presumption, whence wast thou created to cover the dry land with malice, and with the deceitfulness thereof?"
+          "text": "O most wicked presumption, whence wast thou created to cover the dry land with malice, and with the deceitfulness thereof?"
         },
         {
           "verse": 4,
@@ -6140,7 +6087,7 @@
         },
         {
           "verse": 28,
-          "text": "The life of a man is in the number of days: but the days <na>(c)</na> of Israel are innumerable. eternal.",
+          "text": "The life of a man is in the number of days: but the days <na>(c)</na> of Israel are innumerable.",
           "notes": [
             {
               "label": "c",
@@ -6234,18 +6181,7 @@
         },
         {
           "verse": 9,
-          "text": "Son <na>(b)[1]</na> in thine infirmity contemn not thyself, but pray our Lord, and he will cure thee.",
-          "cross_refs": [
-            {
-              "text": "Isa. 38."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "Spiritual infirmity requireth spiritual physic."
-            }
-          ]
+          "text": "Son <na>(b)[1]</na> in thine infirmity contemn not thyself, but pray our Lord, and he will cure thee."
         },
         {
           "verse": 10,
@@ -6277,18 +6213,7 @@
         },
         {
           "verse": 17,
-          "text": "But <na>(c)[1]</na> for detraction bear bitterly the mourning of him one day, and be comforted for the heaviness,",
-          "cross_refs": [
-            {
-              "text": "Pro. 15. & 17."
-            }
-          ],
-          "notes": [
-            {
-              "label": "c",
-              "text": "To avoid evil speech, shew that thou art truly sorry for the death of thy friend. But moderate thy sorrow, lest it hurt thyself."
-            }
-          ]
+          "text": "But <na>(c)[1]</na> for detraction bear bitterly the mourning of him one day, and be comforted for the heaviness,"
         },
         {
           "verse": 18,
@@ -6325,7 +6250,7 @@
         },
         {
           "verse": 25,
-          "text": "<na>(d)</na> The wisdom of a scribe in the time of vacancy: and he that is less in action, shall receive wisdom. but also writ. So likewise the Doctors of the Church and other holy Fathers.",
+          "text": "<na>(d)</na> The wisdom of a scribe in the time of vacancy: and he that is less in action, shall receive wisdom.",
           "notes": [
             {
               "label": "d",
@@ -6431,7 +6356,13 @@
         },
         {
           "verse": 8,
-          "text": "For if it shall please our great Lord, he will fill him with <cr>[1]</cr> the spirit of understanding:"
+          "text": "For if it shall please our great Lord, he will fill him with <cr>[1]</cr> the spirit of understanding:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "1. (b) True knowledge of holy Mysteries: without the which meditation will be erroneous."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -6463,7 +6394,7 @@
         },
         {
           "verse": 16,
-          "text": "Iwill yet consult that I may declare: For as with fury I am replenished."
+          "text": "I will yet consult that I may declare: For as with fury I am replenished."
         },
         {
           "verse": 17,
@@ -6471,7 +6402,13 @@
         },
         {
           "verse": 18,
-          "text": "As Libanus <cr>[1]</cr> have ye the odours of sweetness."
+          "text": "As Libanus <cr>[1]</cr> have ye the odours of sweetness.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "2. (c) Purity of soul free from grievous sins, and endowed with virtues."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -6479,7 +6416,13 @@
         },
         {
           "verse": 20,
-          "text": "<cr>[1]</cr> Give magnificence to his name, and confess unto him in the voice of your lips, and in songs of the lips, and harps, & thus shall ye say in confession:"
+          "text": "<cr>[1]</cr> Give magnificence to his name, and confess unto him in the voice of your lips, and in songs of the lips, and harps, & thus shall ye say in confession:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "3. (d) Humility is especially required in contemplative persons."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -6517,7 +6460,13 @@
         },
         {
           "verse": 27,
-          "text": "<cr>[1]</cr> His blessing hath overflowed as a stream."
+          "text": "<cr>[1]</cr> His blessing hath overflowed as a stream.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "4. (e) Hope of eternal reward comforteth, & encourageth the servants of God."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -6770,7 +6719,7 @@
         },
         {
           "verse": 3,
-          "text": "Odeath, thy judgement is good to a needy man, and him that is diminished in strength,"
+          "text": "O death, thy judgement is good to a needy man, and him that is diminished in strength,"
         },
         {
           "verse": 4,
@@ -7040,7 +6989,7 @@
         },
         {
           "verse": 2,
-          "text": "The <na>(a)</na> sun in sight declaring at his coming forth, a marvelous instrument, the work of the Highest. li. 2. de anima. But the faithful know it is a creature inferior to man, in respect of his reasonable soul, and in them both & in all other creatures, acknowledge super-excellent & infinite Majesty in God.",
+          "text": "The <na>(a)</na> sun in sight declaring at his coming forth, a marvelous instrument, the work of the Highest.",
           "notes": [
             {
               "label": "a",
@@ -7201,10 +7150,6 @@
       "chapter": 44,
       "verses": [
         {
-          "verse": 0,
-          "text": "God."
-        },
-        {
           "verse": 1,
           "text": "Let us praise glorious men, and our fathers in their generation."
         },
@@ -7282,18 +7227,7 @@
         },
         {
           "verse": 17,
-          "text": "Noe was found <na>(c)[1]</na> perfect, just, and in the time of wrath he was made a reconciliation.",
-          "cross_refs": [
-            {
-              "text": "Gen. 5. Gen. 6. Gen. 9."
-            }
-          ],
-          "notes": [
-            {
-              "label": "c",
-              "text": "Noe was perfect."
-            }
-          ]
+          "text": "Noe was found <na>(c)[1]</na> perfect, just, and in the time of wrath he was made a reconciliation."
         },
         {
           "verse": 18,
@@ -7305,18 +7239,7 @@
         },
         {
           "verse": 20,
-          "text": "Abraham the great <na>(d)[1]</na> father of the multitude of the nations, and there was not found the like to him in glory, who kept the law of the Highest, and was in covenant with him.",
-          "cross_refs": [
-            {
-              "text": "Gen. 12."
-            }
-          ],
-          "notes": [
-            {
-              "label": "d",
-              "text": "Abraham father of all the believers in Christ."
-            }
-          ]
+          "text": "Abraham the great <na>(d)[1]</na> father of the multitude of the nations, and there was not found the like to him in glory, who kept the law of the Highest, and was in covenant with him."
         },
         {
           "verse": 21,
@@ -7643,7 +7566,7 @@
         },
         {
           "verse": 16,
-          "text": "The beloved of our Lord his God^ Samuel the prophet of our Lord, renewed the empire, and <na>(d)</na> anointed princes in his nation.",
+          "text": "The beloved of our Lord his God Samuel the prophet of our Lord, renewed the empire, and <na>(d)</na> anointed princes in his nation.",
           "notes": [
             {
               "label": "d",
@@ -7687,18 +7610,7 @@
         },
         {
           "verse": 23,
-          "text": "And after this he slept, and <na>(e)[1]</na> he notified to the king, and shewed him the end of his life, and he exalted his voice out of the earth in prophecy, to take clean away the impiety of the nation.",
-          "cross_refs": [
-            {
-              "text": "1. Reg. 28."
-            }
-          ],
-          "notes": [
-            {
-              "label": "e",
-              "text": "If Samuel himself had not appeared, (but some other spirit) it could not have been noted in his praises. See. 1. Reg. 28."
-            }
-          ]
+          "text": "And after this he slept, and <na>(e)[1]</na> he notified to the king, and shewed him the end of his life, and he exalted his voice out of the earth in prophecy, to take clean away the impiety of the nation."
         }
       ],
       "summary": "Praises of Josue, 9. Caleb, 13. the Judges of Israel, 16. Namely of Samuel Judge and Prophet."
@@ -7731,8 +7643,9 @@
         {
           "verse": 4,
           "text": "<cr>[1]</cr> Did not he kill the giant, & took away reproach from his nation?",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Ibidem."
             }
           ]
@@ -7853,18 +7766,7 @@
         },
         {
           "verse": 22,
-          "text": "Thou <na>(d)[1]</na> hast made a blot in thy glory, & profaned thy seed to bring wrath to thy children, & thy folly to be kindled,",
-          "cross_refs": [
-            {
-              "text": "3. Reg. 11."
-            }
-          ],
-          "notes": [
-            {
-              "label": "d",
-              "text": "Salomon's sins were punished, but God's mercy continued in conserving his posterity. Psal. 88."
-            }
-          ]
+          "text": "Thou <na>(d)[1]</na> hast made a blot in thy glory, & profaned thy seed to bring wrath to thy children, & thy folly to be kindled,"
         },
         {
           "verse": 23,
@@ -7994,18 +7896,7 @@
         },
         {
           "verse": 14,
-          "text": "Neither did any word overcome him, and his body <na>(b)[1]</na> prophesied being dead.",
-          "cross_refs": [
-            {
-              "text": "4. Reg. 13."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "The miracle wrought by his dead body shewed that he was an holy Prophet. 4. Reg. 13. See the miracles of Elias, & Eliseus. To. 1. pag. 940."
-            }
-          ]
+          "text": "Neither did any word overcome him, and his body <na>(b)[1]</na> prophesied being dead."
         },
         {
           "verse": 15,
@@ -8213,18 +8104,7 @@
         },
         {
           "verse": 16,
-          "text": "No man hath been born in the earth like to Henoch: for <na>(b)[1]</na> he also was taken up from the earth.",
-          "cross_refs": [
-            {
-              "text": "Gen. 5."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "See the Annotation. ch. 38."
-            }
-          ]
+          "text": "No man hath been born in the earth like to Henoch: for <na>(b)[1]</na> he also was taken up from the earth."
         },
         {
           "verse": 17,
@@ -8257,18 +8137,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Simon <na>(a)[1]</na> the son of Onias, the high priest, who in his life held up the house, and in his days strengthened the temple.",
-          "cross_refs": [
-            {
-              "text": "Iosephus lib. 12. Antiq."
-            }
-          ],
-          "notes": [
-            {
-              "label": "a",
-              "text": "This Simon called Iustus, and Priscus, was high Priest when this book was written (in the time of Ptolomie the first, King of Aegypt) a very holy man, and dead before it was translated into Greek about the time of Ptolomie the third called Evergetes, near 300. years before Christ."
-            }
-          ]
+          "text": "Simon <na>(a)[1]</na> the son of Onias, the high priest, who in his life held up the house, and in his days strengthened the temple."
         },
         {
           "verse": 2,
@@ -8329,8 +8198,9 @@
         {
           "verse": 16,
           "text": "he stretched forth his hand in <cr>[1]</cr> oblation of moist sacrifice, and offered of the blood of the grape.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Libatione."
             }
           ]
@@ -8430,11 +8300,11 @@
         },
         {
           "verse": 2,
-          "text": "Iwill confess to thy name: because thou art become my helper and protector,"
+          "text": "I will confess to thy name: because thou art become my helper and protector,"
         },
         {
           "verse": 3,
-          "text": "& hast delivered my body from perdition, from the snare of an unjust tongue, and from the lips of them that work lying, and in the sight of them that stood up^ thou art become my helper."
+          "text": "& hast delivered my body from perdition, from the snare of an unjust tongue, and from the lips of them that work lying, and in the sight of them that stood up thou art become my helper."
         },
         {
           "verse": 4,
@@ -8466,7 +8336,7 @@
         },
         {
           "verse": 11,
-          "text": "Iremembered thy mercy o Lord, and thy operation, which are from the beginning of the world."
+          "text": "I remembered thy mercy o Lord, and thy operation, which are from the beginning of the world."
         },
         {
           "verse": 12,
@@ -8478,11 +8348,11 @@
         },
         {
           "verse": 14,
-          "text": "Ihave invocated our Lord the father of my Lord, that he leave me not in the day of my tribulation, and in the time of the proud without help."
+          "text": "I have invocated our Lord the father of my Lord, that he leave me not in the day of my tribulation, and in the time of the proud without help."
         },
         {
           "verse": 15,
-          "text": "Iwill praise thy name continually, and will collaud it in confession, and my prayer was heard."
+          "text": "I will praise thy name continually, and will collaud it in confession, and my prayer was heard."
         },
         {
           "verse": 16,
@@ -8512,7 +8382,7 @@
         },
         {
           "verse": 21,
-          "text": "Ibowed mine ear a little, and received it."
+          "text": "I bowed mine ear a little, and received it."
         },
         {
           "verse": 22,
@@ -8528,7 +8398,7 @@
         },
         {
           "verse": 25,
-          "text": "My soul hath wrestled in it, and in doing it I was <i>The end of the Sapiential Books.</i> confirmed."
+          "text": "My soul hath wrestled in it, and in doing it I was confirmed."
         },
         {
           "verse": 26,
@@ -8536,11 +8406,11 @@
         },
         {
           "verse": 27,
-          "text": "Idirected my soul to wisdom, and in knowledge I found it."
+          "text": "I directed my soul to wisdom, and in knowledge I found it."
         },
         {
           "verse": 28,
-          "text": "Ipossessed with it an heart from the beginning: for this cause I shall not be forsaken."
+          "text": "I possessed with it an heart from the beginning: for this cause I shall not be forsaken."
         },
         {
           "verse": 29,
@@ -8560,7 +8430,7 @@
         },
         {
           "verse": 33,
-          "text": "Ihave opened my mouth, and have spoken: Buy it for you without silver,"
+          "text": "I have opened my mouth, and have spoken: Buy it for you without silver,"
         },
         {
           "verse": 34,

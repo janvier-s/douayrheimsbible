@@ -142,7 +142,7 @@
         },
         {
           "verse": 8,
-          "text": "And I will move all nations: <sc>And</sc> <na>(c)</na> <sc>The</sc> <sc>Desired</sc> OF <sc>All</sc> <sc>Nations</sc> <sc>Shall</sc> <sc>Come</sc>: and I will fill this house with glory, saith the Lord of hosts.",
+          "text": "And I will move all nations: <sc>And</sc> <na>(c)</na> <sc>The Desired</sc> OF <sc>All Nations Shall Come</sc>: and I will fill this house with glory, saith the Lord of hosts.",
           "notes": [
             {
               "label": "c",
@@ -209,8 +209,9 @@
         {
           "verse": 20,
           "text": "Is there the seed now <cr>[1]</cr> abreward? And as yet the wine, and the fig-tree, and the pomegranate, and the olive-tree hath not flourished? From this day I will bless.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* sprung up."
             }
           ]

@@ -8,10 +8,16 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Paul</sc> <cr>[1]</cr> the servant of <sc>Jesus</sc> <sc>Christ</sc>, called to be an Apostle, <cr>[2]</cr> separated into the Gospel of God,",
+          "text": "<sc>Paul</sc> <cr>[1]</cr> the servant of <sc>Jesus Christ</sc>, called to be an Apostle, <cr>[2]</cr> separated into the Gospel of God,",
           "cross_refs": [
             {
               "text": "Act. 13, 2."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Christmas eve."
             }
           ]
         },
@@ -25,44 +31,44 @@
         },
         {
           "verse": 4,
-          "text": "who was predestinate the Son of God in power, according to the spirit of sanctification, by the resurrection of our Lord <sc>Jesus</sc> <sc>Christ</sc> from the dead,"
+          "text": "who was predestinate the Son of God in power, according to the spirit of sanctification, by the resurrection of our Lord <sc>Jesus Christ</sc> from the dead,"
         },
         {
           "verse": 5,
           "text": "by whom we have received grace and Apostleship <cr>[1][2]</cr> for obedience to the faith <cr>[3]</cr> in all Nations for the name of him,",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "c εἰς ὑπακοὴν πίστεως."
-            },
-            {
-              "text": "Aug. ep. 161."
+              "label": "3",
+              "text": "S. Augustine useth this place and the like against Heretics, which would draw the common Catholic faith of all nations, to some certain countries or corners of the world. Aug. ep. 161."
             }
           ]
         },
         {
           "verse": 6,
-          "text": "among whom are you also the called of <sc>Jesus</sc> <sc>Christ</sc>:)"
+          "text": "among whom are you also the called of <sc>Jesus Christ</sc>:)"
         },
         {
           "verse": 7,
-          "text": "to all that are at Rome the beloved of God, called to be saints. Grace to you and peace from God our father, and our Lord <sc>Jesus</sc> <sc>Christ</sc>.",
+          "text": "to all that are at Rome the beloved of God, called to be saints. Grace to you and peace from God our father, and our Lord <sc>Jesus Christ</sc>.",
           "has_annotation": true
         },
         {
           "verse": 8,
-          "text": "First I give thanks to my God through <sc>Jesus</sc> <sc>Christ</sc> for all you, because your faith is renowned in the whole world.",
+          "text": "First I give thanks to my God through <sc>Jesus Christ</sc> for all you, because your faith is renowned in the whole world.",
           "has_annotation": true
         },
         {
           "verse": 9,
           "text": "For God is my witness, <cr>[1]</cr> whom I serve in my spirit in the Gospel of his Son, that <cr>[2]</cr> without intermission I make a memory of you",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ᾧ λατρεύω."
             },
             {
-              "text": "Aug. haeres. 57."
+              "label": "2",
+              "text": "He prayeth without intermission that omitteth no day certain times of prayer. Aug. haeres. 57."
             }
           ]
         },
@@ -73,9 +79,10 @@
         {
           "verse": 11,
           "text": "For I desire to see you, that I may impart unto you some spiritual grace, to <cr>[1]</cr> confirm you:",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Com. apud Hierony. Theodoret. in 16. Rom. & Chrys."
+              "label": "1",
+              "text": "The Romans were converted and taught by S. Peter before. Therefore he useth that speech, to confirm them in their faith. Author Com. apud Hierony. Theodoret. in 16. Rom. & Chrys."
             }
           ]
         },
@@ -86,8 +93,9 @@
         {
           "verse": 13,
           "text": "And I will not have you ignorant (brethren) that I have often purposed to come unto you (and have been stayed hitherto) that I may <cr>[1]</cr> have some fruit in you, as also in the other Gentiles.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "also"
             }
           ]
@@ -111,10 +119,13 @@
           "has_annotation": true,
           "cross_refs": [
             {
-              "text": "Aug. de Sp. & lit. c. 9."
-            },
-            {
               "text": "Abac. 2, 4."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "He meaneth not God's own justice in himself, but that justice wherewith God endueth man when he justifieth him. Aug. de Sp. & lit. c. 9. Whereby you may gather the vanity of the Heretical imputative justice."
             }
           ]
         },
@@ -141,22 +152,29 @@
         },
         {
           "verse": 23,
-          "text": "And they changed the glory of the incorruptible God, into a <cr>[1]</cr> similitude of the image of a corruptible man, and of fowls and four-footed beasts and of them that creep."
+          "text": "And they changed the glory of the incorruptible God, into a <cr>[1]</cr> similitude of the image of a corruptible man, and of fowls and four-footed beasts and of them that creep.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Lo these and the like are the Images or Idols so often condemned in the scriptures, and not the holy Images of Christ and his Saints."
+            }
+          ]
         },
         {
           "verse": 24,
           "text": "(For the which cause God <cr>[1]</cr> hath delivered them up unto the desires of their heart, unto uncleanness, for to abuse their own bodies among themselves ignominiously.)",
           "cross_refs": [
             {
-              "text": "4, 19. They have delivered or given up themselves to all uncleanness."
+              "text": "Eph. 4, 19. he saith, They have delivered or given up themselves to all uncleanness. By which conference of scriptures we learn that themselves are the cause of their own sin and damnation, God of his justice permitting & leaving them to their own will, and so giving them up into passions &c."
             }
           ]
         },
         {
           "verse": 25,
           "text": "Who have changed the verity of God into lying: and have worshipped & <cr>[1]</cr> served the creature rather than the Creator, who is blessed for ever. Amen.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἐλάτρευσαν."
             }
           ]
@@ -188,46 +206,8 @@
         },
         {
           "verse": 32,
-          "text": "Who whereas they knew the justice of God, did not understand that they which do such things, are worthy of death: not only they that do them, but they also that consent to the doers. faith than the rest of the Christian Churches, but that there is in them more devotion and simplicity of <i>faith.</i> In another place the same holy Doctor signifieth that it is all one to say, the Roman faith, and the Catholic. <i>Apolg. 1. adv. Ruff. c. 1.</i> So doth S. Cyprian <i>ep. 52. nu. 1. ad Antonianum:</i> and S. Ambrose <i>de obitu fratris, in med.</i> <cr>[6]</cr> Whereupon, this word, <i>Roman,</i> is added to, <i>Catholic,</i> in many countries where sects do abound, for the better distinction of true believers from Heretics: which in all ages did hate and abhor the Roman faith and Church, as all malefactors do their Judges and correctors. 9. Serve in spirit.] <na>◦</na> Diverse Heretics when they hear that God is a spirit, and must be served and adored in spirit, imagine that he must be honoured only inwardly, without ceremonies and external works: which you see is otherwise, for that the Apostle served God in spirit, by preaching the Gospel. To serve God then in spirit, is to serve him with faith, hope, and charity, and with all works proceeding of them: as to serve him carnally, is, with works external, without the said internal virtues.",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "Mat. 28."
-            },
-            {
-              "text": "(Abacuc 2.)"
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "How God is served in spirit. 9. A memory of you.]"
-            },
-            {
-              "label": "◦",
-              "text": "Agreat example of charity for all men, specially for Prelates and Pastors, not only to preach, but to pray continually for the conversion of people to Christ's faith: Which the Apostle did for them whom he never knew, in respect of God's honour only and the zeal of souls."
-            },
-            {
-              "label": "◦",
-              "text": "Prayer for conversion of souls. 15. To evangelize.]"
-            },
-            {
-              "label": "◦",
-              "text": "the Catholic belief (saith S. Augustine li. 3. cont. 2 ep. Pelag. ) Which maketh a just man, and distinguisheth between the just and unjust , and that by the law of faith, and not by the law of works. Whereof it riseth, that the Jew, the Heathen Philosopher, and the Heretic, though they excelled in all works of moral virtues, could not yet be just: and a Catholic Christian man living but an ordinary honest life, either not sinning greatly, or supplying his faults by penance, is just. And this difference riseth by faith. not that faith can save any man without works, For it is not a reprobate faith that we speak of, (as the holy Doctor saith) but that which worketh by charity, and therefore remitteth sins and maketh one just. See S. Augustine's place."
-            },
-            {
-              "label": "◦",
-              "text": "The Catholic or Christian faith with good works justifieth; & without this faith, no works whatsoever. 18. Is revealed.]"
-            },
-            {
-              "label": "◦",
-              "text": "By all the passage following you may see, that the Gospel and Christ's law consisteth not only in preaching faith, (though that be the ground, and is first always to be done:) but to teach virtuous life and good works, and to denounce damnation to all them that commit deadly sins and repent not. And again we see that not only lack of faith is a sin, but all other acts done against God's commandments."
-            },
-            {
-              "label": "◦",
-              "text": "Not only faith."
-            }
-          ]
+          "text": "Who whereas they knew the justice of God, did not understand that they which do such things, are worthy of death: not only they that do them, but they also that consent to the doers.",
+          "has_annotation": true
         }
       ],
       "summary": "The foundation of his Apostleship being laid, 8. he highly commendeth the Romans, and protesteth his affection towards them, and so coming to the matter, saith, our Christian Catholic doctrine (that teacheth all to believe) to be the way to salvation: 18. because the Gentiles (first of all) could not be saved by their Philosophy, whereby they knew God, for so much as they did not serve him, but Idols: he therefore justly permitting them to fall into all kind of most damnable sin."
@@ -270,9 +250,10 @@
         {
           "verse": 7,
           "text": "<cr>[1]</cr> to them truly that according to patience in good work, seek glory and honour and incorruption, life eternal;",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Aug. ep. 47."
+              "label": "1",
+              "text": "Good men also according to the merits of their good will shall have their reward. Aug. ep. 47."
             }
           ]
         },
@@ -283,9 +264,10 @@
         {
           "verse": 9,
           "text": "Tribulation and anguish upon every soul of man that worketh evil, of the Jew first and of the <cr>[1]</cr> Greek:",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Gentile"
+              "label": "1",
+              "text": "c That is, the Gentile ."
             }
           ]
         },
@@ -326,7 +308,7 @@
         },
         {
           "verse": 16,
-          "text": "in the day when God shall judge the secrets of men, according to my Gospel, by <sc>Jesus</sc> <sc>Christ</sc>."
+          "text": "in the day when God shall judge the secrets of men, according to my Gospel, by <sc>Jesus Christ</sc>."
         },
         {
           "verse": 17,
@@ -346,7 +328,13 @@
         },
         {
           "verse": 21,
-          "text": "Thou therefore <cr>[1]</cr> that teachest another, teachest not thyself: that preachest, men ought not to steal, thou stealest:"
+          "text": "Thou therefore <cr>[1]</cr> that teachest another, teachest not thyself: that preachest, men ought not to steal, thou stealest:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "It is a shameful and damnable thing for preachers, teachers, or other guides of men's life, to commit the same things themselves which they reprove in other."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -363,11 +351,23 @@
             {
               "text": "Es. 52, 5. Ez. 36, 20."
             }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "c It is a great sin that by the ill life of the faithful, our Lord's name should be ill spoken of among the misbelievers, & many withdrawn from the true religion thereby."
+            }
           ]
         },
         {
           "verse": 25,
-          "text": "Circumcision indeed profiteth, if thou observe the Law: but if thou be a prevaricator of the Law, thy circumcision is become <cr>[1]</cr> prepuce."
+          "text": "Circumcision indeed profiteth, if thou observe the Law: but if thou be a prevaricator of the Law, thy circumcision is become <cr>[1]</cr> prepuce.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Prepuce is the foreskin not circumcised, & therefore signifieth the Gentiles, or the state and condition of the Gentiles: as circumcision, the Jews and their state."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -384,22 +384,8 @@
         },
         {
           "verse": 29,
-          "text": "but he that is in secret, is a Jew; and the circumcision of the heart, in spirit, not in the letter: whose praise is not of men, but of God. any man should think or gather untruly of his words, that Christian men's works were not meritorious or the cause of Salvation, he expressly writeth, that God giveth as well everlasting life and glory to men, for and according to their good works, as he giveth damnation for the contrary works. And how so ever Heretics fondly flee from the evidence of these places, yet S. Augustine saith <cr>[2]</cr> , Life everlasting to be rendered for good works according to this manifest Scripture, <i>God shall render to every man according to his works.</i> 13. Not the hearers.] This same sentence agreeable also to Christ's words <i>(Mat. 7, 21)</i> is the very ground of S. James disputation, that not faith alone, but good works also do justify. Therefore S. Paul (howsoever some perversely conster his words in other places) meaneth the same that S. James. <cr>[1]</cr> And here <cr>[2]</cr> he speaketh not properly of the first justification, when an Infidel or ill man is made just, who had no acceptable works before to be justified by (of which kind he specially meaneth in other places of this Epistle) but he speaketh of the second justification or increase of former justice, which he that is in God's grace, daily proceedeth in, by doing all kind of good works, which be justices, and for doing of which, he is just indeed before God. <cr>[3]</cr> And of this kind doth S. James namely treat. Which is directly against the Heretics of this time, who not only attribute nothing to the works done in sin and infidelity, but esteem nothing at all of all Christian men's works toward justification and salvation, condemning them as unclean, sinful, hypocritical, Pharisaical: which is directly against these & other Scriptures, and plain blaspheming of Christ and his grace, by whose spirit and cooperation we do them. 13. Shall be justified.] <cr>[1]</cr> Of all other Articles deceitfully handled by Heretics, they use most guile in this of Justification: and specially by the equivocation of certain words, which is proper to all contentious wranglers, and namely in this word, <i>Justify,</i> Which because they find sometime to signify the acquitting of a guilty man of some crime whereof he is indeed guilty, & for which he ought to be condemned, (as by man's judgement either of ignorance or of purpose often a very malefactor is deemed or declared and pronounced innocent) they falsely make it so signify in this place and the like, wheresoever man is said to be justified of God for his works or otherwise: as though it were said, that God justifieth man, that is to say, imputeth to him the justice of Christ, though he be not indeed just: or of favour reputeth him as just, when indeed he is wicked, impious, and unjust. Which is a most blasphemous doctrine against God, making him either ignorant who is just, and so to err in his judgement, or not good, that can love and save him whom he knoweth to be evil. <cr>[2]</cr> And a marvelous pitiful blindness it is in the Church's Adversaries, that they should think it more to God's glory, and more to the commendation of Christ's justice, merits, and mercy, to call and count an ill man so continuing, for just: than by his grace and mercy to make him of an ill one, just indeed, and so truly to justify him, or as the word doth here signify, to esteem and approve for just indeed, him, that by his grace keepeth his law and commandments. For, that the keepers or doers of the commandments be just and so reputed, it is plain by the correspondence to the former words, <i>Not the hearers are just, but the doers.</i> Whereupon S. Augustine <i>de Sp. & lit. c. 26. to. 3.</i> hath these words, <i>When it is said, The doers of the Law shall be justified, what other thing is said, than, The just shall be justified? For the doers of the Law verily are just.</i> 26. Keep the justices.] If a Gentile either now since Christ, by his grace and faith, or any other before Christ, not of the stock of Abraham, through the Spirit of God keep the justices of the Law, he is just no less than if he had been outwardly circumcised, and shall condemn the circumcised Jew not keeping the Law <na>◦</na> , without which, his outward Sacrament cannot serve him, but shall be much to his condemnation, that having the Law and peculiar Sacraments of God, he did not keep the Law, nor inwardly exercise that in his heart which the outward sign did import. And all this is",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "Li. de grat. & lib. arb. c. 8."
-            },
-            {
-              "text": "Aug. de Sp. & lit. c. 26. to. 3."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "True justice both in Jew and Gentile, is by keeping the Law."
-            }
-          ]
+          "text": "but he that is in secret, is a Jew; and the circumcision of the heart, in spirit, not in the letter: whose praise is not of men, but of God.",
+          "has_annotation": true
         }
       ],
       "summary": "Now also he sheweth that neither the Jews could be saved by the knowledge of the Law, of the which they did so much brag against the Gentiles, seeing they did notwithstanding sin as the Gentiles did. 14. And therefore that the true Jew is the Christian (though he be a Gentile) who by grace in his heart doth the good works that the Law commandeth."
@@ -428,9 +414,6 @@
             },
             {
               "text": "Ps. 115, 11."
-            },
-            {
-              "text": "Ps. 50, 6."
             }
           ]
         },
@@ -482,9 +465,12 @@
             },
             {
               "text": "Ps. 139, 4."
-            },
+            }
+          ],
+          "notes": [
             {
-              "text": "Aspidum"
+              "label": "3",
+              "text": "c Aspidum , A kind of little serpents."
             }
           ]
         },
@@ -543,11 +529,12 @@
         },
         {
           "verse": 22,
-          "text": "And the justice of God by faith of <sc>Jesus</sc> <sc>Christ</sc>, unto all and upon all that <cr>[1]</cr> believe in him. For there is no distinction.",
+          "text": "And the justice of God by faith of <sc>Jesus Christ</sc>, unto all and upon all that <cr>[1]</cr> believe in him. For there is no distinction.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Galat. 5, 6."
+              "label": "1",
+              "text": "c To believe in him, here compriseth not only the act of faith, but of hope & charity, as the Apostle explicateth himself. Galat. 5, 6."
             }
           ]
         },
@@ -557,20 +544,27 @@
         },
         {
           "verse": 24,
-          "text": "Justified <cr>[1]</cr> gratis by his grace, by the redemption that is in <sc>Christ</sc> <sc>Jesus</sc>,"
+          "text": "Justified <cr>[1]</cr> gratis by his grace, by the redemption that is in <sc>Christ Jesus</sc>,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "No man attaineth his first justification by the merits either of his faith or works, but merely by Christ's grace and mercy: though his faith & works proceeding of grace be dispositions & preparations thereunto."
+            }
+          ]
         },
         {
           "verse": 25,
           "text": "whom God hath proposed a <cr>[1]</cr> <alt>propitiation</alt>, by faith in his blood, to the shewing of his justice, for the remission of former sins,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "propitiator"
             }
           ]
         },
         {
           "verse": 26,
-          "text": "in the toleration of God, to the shewing of his justice in this time: that he may be just, and justifying him that is of the faith of <sc>Jesus</sc> <sc>Christ</sc>."
+          "text": "in the toleration of God, to the shewing of his justice in this time: that he may be just, and justifying him that is of the faith of <sc>Jesus Christ</sc>."
         },
         {
           "verse": 27,
@@ -591,49 +585,7 @@
         },
         {
           "verse": 31,
-          "text": "Do we then destroy the Law by faith? God forbid, but we do establish the Law. 10. Not any just.] <cr>[1]</cr> These general speeches, that both Jew and Gentile be in sin, and none at all just, are not so to be taken, that none in neither sort were ever good: the Scriptures expressly saying that Job <cr>[2]</cr> , <cr>[3]</cr> Zacharie, Elisabeth, and such like, were just before God, & it were blasphemy to say that these words alleged out of the 13. Psalm, were meant in Christ's mother, in S. John the Baptist, in the Apostles &c. For, this only is the sense: that neither by the law of nature, nor law of Moyses, could any man be just or avoid such sins as here be reckoned, but by faith and the grace of God, by which there were a number in all ages (specially among the Jews) that were just and holy, whom these words touch not, being spoken only to the multitude of the wicked, which the Prophet maketh as it were a several body conspiring against Christ, and persecuting the just and godly, of which ill company he saith, that none was just nor feared God.",
-          "cross_refs": [
-            {
-              "text": "none just"
-            },
-            {
-              "text": "Iob. 1."
-            },
-            {
-              "text": "* Luc, 1."
-            },
-            {
-              "text": "The grace of Christ doth work our illumination and justification inwardly also."
-            },
-            {
-              "text": "He giveth to the faithful the most secret grace of his Spirit, which secretly he poureth into infants also. They are justified in Christ that believe in him through the secret communication and inspiration of spiritual grace, whereby every one leaneth to our Lord. He maketh just renewing by the Spirit, and regeneration by grace."
-            },
-            {
-              "text": "De pec. mer. li. 1. c. 9. 10."
-            },
-            {
-              "text": "Men not understanding that which the Apostle saith, (we count a man to be justified by faith without the works of the Law) did think that he said, faith would suffice a man though he lived ill and had no good works. Which God forbid the vessel of election should think: who in a certain place after he had said,"
-            },
-            {
-              "text": "In Christ JESUS neither circumcision nor prepuce availeth any whit, he straight added, but faith which worketh by love."
-            },
-            {
-              "text": "de grat. & lib. arb. c. 7."
-            },
-            {
-              "text": "Gal. 5."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "S. Hierom and S. Chrysostom expound this of the ceremonial works only, and in that sense the Apostle specially prosecuteth this proposition in his Epistle to the Galatians. But it is true also of all man's moral works done without faith & the grace of God: which cannot be acceptable or available in God's sight, to justify any man, And so S. Augustine taketh it de Sp. & li. c. 8. to. 3."
-            },
-            {
-              "label": "◦",
-              "text": "No works avail without faith and grace. 22. Justice of God.]"
-            }
-          ]
+          "text": "Do we then destroy the Law by faith? God forbid, but we do establish the Law."
         }
       ],
       "summary": "He granteth that the Jews did pass the Heathen Gentiles, in God's benefits, 9. but not in their own works, concluding, that he hath shewed, both Jew and Gentile to be sinners: 18. and therefore (inferring) that there must be some other way to Salvation, indifferent to both, which is to believe in JESUS CHRIST, that for his sake their sins may be forgiven them."
@@ -664,8 +616,9 @@
           "verse": 4,
           "text": "But to him that worketh, the reward is not <cr>[1]</cr> imputed according to grace but according to debt.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c λογίζεται"
             }
           ]
@@ -674,8 +627,9 @@
           "verse": 5,
           "text": "But to him that worketh not, yet believeth in him that justifieth the impious, his faith is <cr>[1]</cr> reputed to justice according to the purpose of the grace of God.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c λογίζεται"
             }
           ]
@@ -702,9 +656,10 @@
         {
           "verse": 9,
           "text": "This blessedness then doth it abide in the circumcision, or in the prepuce also? For we say that unto Abraham faith was <cr>[1]</cr> reputed to justice.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Reputed v. 4. 1. Cor. 4, 1."
+              "label": "1",
+              "text": "The word, Reputed , doth not diminish the truth of the justice, as though it were reputed for justice, being not justice indeed; but signifieth, that as it was in itself, so God esteemed & reputed it: as the same Greek word must needs be taken v. 4. next going before, & 1. Cor. 4, 1. and elsewhere."
             }
           ]
         },
@@ -719,9 +674,12 @@
           "cross_refs": [
             {
               "text": "Gen. 17, 10."
-            },
+            }
+          ],
+          "notes": [
             {
-              "text": "ex opere operato"
+              "label": "2",
+              "text": "c Our Sacraments of the new Law give ex opere operato that grace and justice of faith which here is commended: whereas circumcision was but a sign or mark of the same."
             }
           ]
         },
@@ -751,8 +709,11 @@
           "cross_refs": [
             {
               "text": "Gen. 17, 4."
-            },
+            }
+          ],
+          "notes": [
             {
+              "label": "2",
               "text": "he believed,"
             }
           ]
@@ -788,7 +749,7 @@
         },
         {
           "verse": 24,
-          "text": "but also for us, to whom it shall be reputed believing in him, that raised up <sc>Jesus</sc> <sc>Christ</sc> our Lord from the dead,",
+          "text": "but also for us, to whom it shall be reputed believing in him, that raised up <sc>Jesus Christ</sc> our Lord from the dead,",
           "has_annotation": true
         },
         {
@@ -803,13 +764,25 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Being</sc> <cr>[1]</cr> justified therefore by faith, let us have peace toward God by our Lord <sc>Jesus</sc> <sc>Christ</sc>;",
-          "has_annotation": true
+          "text": "<sc>Being</sc> <cr>[1]</cr> justified therefore by faith, let us have peace toward God by our Lord <sc>Jesus Christ</sc>;",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle on Imber Saturday in Whitsunweek. And for many Martyrs."
+            }
+          ]
         },
         {
           "verse": 2,
           "text": "by whom also we have access through faith into this grace wherein we stand, and glory, <cr>[1]</cr> in the hope of the glory of the sons of God.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christian men do not vaunt themselves of certainty of their salvation, but glory in the hope thereof only, which hope is here insinuated to be given in our justification, & is afterward to be confirmed by probation in tribulation."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -828,11 +801,13 @@
         {
           "verse": 6,
           "text": "For why did Christ, when we as yet were <cr>[1]</cr> <cr>[2]</cr> weak, according to the time die for the impious?",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "of no strength No. Test. 1580."
+              "label": "1",
+              "text": "c The Heretics falsely translate of no strength , to take away all free-will. No. Test. 1580."
             },
             {
+              "label": "2",
               "text": "c ἀσθενεῖς"
             }
           ]
@@ -878,8 +853,9 @@
         {
           "verse": 16,
           "text": "And not as by one <cr>[1]</cr> <alt>sin</alt>, so also the gift. For judgement indeed is of one, to condemnation: but grace is of many offences, to justification.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "sinner,"
             }
           ]
@@ -894,7 +870,13 @@
         },
         {
           "verse": 19,
-          "text": "For as by the disobedience of one man, many were made sinners; so also by the obedience of one, many <cr>[1]</cr> shall be made just."
+          "text": "For as by the disobedience of one man, many were made sinners; so also by the obedience of one, many <cr>[1]</cr> shall be made just.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Here we may see against the Heretics, that they which be born of Christ and justified by him, be made & constituted just indeed, & not by imputation only: as all that be born of Adam, be unjust and sinners in truth, & not by imputation."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -922,11 +904,23 @@
         {
           "verse": 3,
           "text": "<cr>[1]</cr> Are you ignorant that all we which are baptized in Christ <sc>Jesus</sc>, in his death we are baptized?",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The Epistle upon the 6. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "For <cr>[1]</cr> we are buried together with him by Baptism into death: that as Christ is risen from the dead by the glory of the Father, so we also may walk in newness of life."
+          "text": "For <cr>[1]</cr> we are buried together with him by Baptism into death: that as Christ is risen from the dead by the glory of the Father, so we also may walk in newness of life.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Remission of sin, new life, sanctification, and justification, are given by Baptism, because it resembleth in us and applieth to us Christ's death and resurrection, and engrafteth us into him."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -936,9 +930,10 @@
           "verse": 6,
           "text": "Knowing this, that our old man is crucified with him, that the body of sin may be <cr>[1]</cr> destroyed, to the end that we may serve sin no longer.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "enervetur destruatur"
+              "label": "1",
+              "text": "Castalion noteth that Beza falsely translateth enervetur , for, destruatur : weakened, for, destroyed."
             }
           ]
         },
@@ -992,7 +987,13 @@
         {
           "verse": 17,
           "text": "But thanks be to God, that you were the servants of sin, but <cr>[1]</cr> have obeyed from the heart, unto that form of doctrine, into the which you have been delivered.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "Here again is signified, that our discharge from the bondage of sin, is by the Christian faith, & by obedience to the whole doctrine of Christ's religion: in that the Apostle attributeth this their deliverance from sin, to their humble receiving of the Catholic faith."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1000,7 +1001,17 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> I speak an human thing, because of the infirmity of your flesh. For as you have exhibited your members to serve uncleanness and iniquity, unto iniquity; so now exhibit your members to serve justice, <cr>[2]</cr> unto sanctification."
+          "text": "<cr>[1]</cr> I speak an human thing, because of the infirmity of your flesh. For as you have exhibited your members to serve uncleanness and iniquity, unto iniquity; so now exhibit your members to serve justice, <cr>[2]</cr> unto sanctification.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 7. Sunday after Pentecost."
+            },
+            {
+              "label": "2",
+              "text": "He signifieth that as when they were subject to sin by continual & often working wickedness, they increased their iniquity: that so also now being justified, they may & should by external works of justice, increase their justice and sanctification."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1028,8 +1039,9 @@
         {
           "verse": 1,
           "text": "<sc>Are</sc> you ignorant, brethren, (for I speak to them that know the Law) that the Law hath dominion over a man as long time as <cr>[1]</cr> <alt>he</alt> liveth?",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "it"
             }
           ]
@@ -1041,15 +1053,27 @@
             {
               "text": "1. Cor. 7, 39."
             }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Nothing but death dissolveth the band betwixt man & wife: though for fornication one may depart from another's company. Therefore to marry again is adultery, during the life of the party separated."
+            }
           ]
         },
         {
           "verse": 3,
-          "text": "Therefore her husband living, she shall be called an adulteress if she be with another man: but if her husband be dead^ she is delivered from the law of her husband: so that she is not and adulteress if she be with another man."
+          "text": "Therefore her husband living, she shall be called an adulteress if she be with another man: but if her husband be dead she is delivered from the law of her husband: so that she is not and adulteress if she be with another man."
         },
         {
           "verse": 4,
-          "text": "Therefore my brethren <cr>[1]</cr> you also are made dead to the Law by the body of Christ; that you may be another man's who is risen again from the dead, that we may fructify to God."
+          "text": "Therefore my brethren <cr>[1]</cr> you also are made dead to the Law by the body of Christ; that you may be another man's who is risen again from the dead, that we may fructify to God.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Being now baptised and dead to sin, & engrafted in Christ's mystical body, you are discharged of the Law of Moyses, and are free in Christ."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1058,9 +1082,14 @@
         {
           "verse": 6,
           "text": "But now we are loosed from the law of death wherein we were detained: <cr>[1]</cr> in so much we serve in <cr>[2]</cr> newness of spirit, and not in the oldness of the letter.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ὥστε δουλεύειν."
+            },
+            {
+              "label": "2",
+              "text": "By Baptism we have not Christ's justice imputed to us, but an inward newness of spirit given us and resident in us."
             }
           ]
         },
@@ -1076,7 +1105,13 @@
         },
         {
           "verse": 8,
-          "text": "But <cr>[1]</cr> occasion being taken, sin by the commandment wrought in me all concupiscence. For without the Law sin was dead."
+          "text": "But <cr>[1]</cr> occasion being taken, sin by the commandment wrought in me all concupiscence. For without the Law sin was dead.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sin or concupiscence which was asleep before, was wakened by prohibition, the Law not being the cause thereof, nor giving occasion thereunto, but occasion being taken by our corrupt nature to resist that which was commanded."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -1139,7 +1174,13 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> For I am delighted with the Law of God according to the inward man:"
+          "text": "<cr>[1]</cr> For I am delighted with the Law of God according to the inward man:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in a votive Mass for remission of sins."
+            }
+          ]
         },
         {
           "verse": 23,
@@ -1153,8 +1194,9 @@
           "verse": 25,
           "text": "The grace of God by <sc>Jesus</sc> Christ our Lord. Therefore I myself with the mind <cr>[1]</cr> serve the law of God, but with the flesh, the law of sin.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c δουλεύω"
             }
           ]
@@ -1175,11 +1217,17 @@
         },
         {
           "verse": 3,
-          "text": "For that which was impossible to the Law, in that it was weakened by the flesh; God sending his Son in the similitude of the flesh of sin, even of sin^ damned sin in the flesh,"
+          "text": "For that which was impossible to the Law, in that it was weakened by the flesh; God sending his Son in the similitude of the flesh of sin, even of sin damned sin in the flesh,"
         },
         {
           "verse": 4,
-          "text": "that <cr>[1]</cr> the justification of the Law might be fulfilled in us who walk not according to the flesh, but according to the spirit."
+          "text": "that <cr>[1]</cr> the justification of the Law might be fulfilled in us who walk not according to the flesh, but according to the spirit.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This convinceth against the Church's adversaries, that the law, that is, God's commandments may be kept, & that the keeping thereof is justice, & that in Christian men that is fulfilled by Christ's grace which by the force of the Law could never be fulfilled."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1192,8 +1240,9 @@
         {
           "verse": 7,
           "text": "Because the wisdom of the flesh, is <cr>[1]</cr> <alt>an enemy</alt> to God: for to the Law of Got it is not subject, neither can it be.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "enmity"
             }
           ]
@@ -1212,11 +1261,17 @@
         },
         {
           "verse": 11,
-          "text": "And if the Spirit of him that raised up <sc>Jesus</sc> from the dead, dwell in you; he that raised up <sc>Jesus</sc> <sc>Christ</sc> from the dead, shall quicken also your mortal bodies, because of his Spirit dwelling in you."
+          "text": "And if the Spirit of him that raised up <sc>Jesus</sc> from the dead, dwell in you; he that raised up <sc>Jesus Christ</sc> from the dead, shall quicken also your mortal bodies, because of his Spirit dwelling in you."
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> Therefore brethren, we are debters, not to the flesh, to live according to the flesh."
+          "text": "<cr>[1]</cr> Therefore brethren, we are debters, not to the flesh, to live according to the flesh.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 8. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1225,9 +1280,10 @@
         {
           "verse": 14,
           "text": "For whosoever <cr>[1]</cr> are led by the Spirit of God, they are the sons of God.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Aug. Enchirid. c. 64. De verb. Do. ser. 43. c. 7. et de verb. Apost. ser. 13. c. 11. 12."
+              "label": "1",
+              "text": "He meaneth not that the Children of God be violently compelled against their wills, but that they be sweetly drawn, moved, or induced to do good. Aug. Enchirid. c. 64. De verb. Do. ser. 43. c. 7. et de verb. Apost. ser. 13. c. 11. 12."
             }
           ]
         },
@@ -1257,8 +1313,13 @@
           "verse": 18,
           "text": "<cr>[1]</cr> For I think that the passions of this time are not <cr>[2]</cr> condign to the glory to come that shall be revealed in us.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
+              "text": "The Epistle upon the 4. Sunday after Pentecost, and for many Martyrs."
+            },
+            {
+              "label": "2",
               "text": "condignae ad gloriam"
             }
           ]
@@ -1332,7 +1393,13 @@
         },
         {
           "verse": 35,
-          "text": "<cr>[1]</cr> Who then shall separate us from the charity of Christ? tribulation? or distress? or famine? or nakedness? or danger? or persecution? or the sword?"
+          "text": "<cr>[1]</cr> Who then shall separate us from the charity of Christ? tribulation? or distress? or famine? or nakedness? or danger? or persecution? or the sword?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for S. Ignatius Febr. 1."
+            }
+          ]
         },
         {
           "verse": 36,
@@ -1351,8 +1418,9 @@
           "verse": 38,
           "text": "<cr>[1]</cr> For I am sure that neither death, nor life, nor Angels, nor Principalities, nor Powers, neither things present, nor things to come, neither might,",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c πέπεισμαι γὰρ"
             }
           ]
@@ -1383,8 +1451,9 @@
         {
           "verse": 4,
           "text": "who are Israelites, whose is the adoption of sons, and the glory, and <cr>[1]</cr> the testament, and the law-giving, & the service, and the promises:",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἡ λατρεία,"
             }
           ]
@@ -1427,10 +1496,13 @@
           "has_annotation": true,
           "cross_refs": [
             {
-              "text": "All the epistle surely to the Romans needeth interpretation, and is enwrapped with so great obscurities that to understand it we need the help of the Holy Ghost, who by the Apostle did dictate these same things: but especially this place. Howbeit nothing pleaseth us but that which is Ecclesiastical, that is, the sense of the Church."
-            },
-            {
               "text": "Gen. 25, 21."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "S. Hierom. q. 10. ad Hedibiam. All the epistle surely to the Romans needeth interpretation, and is enwrapped with so great obscurities that to understand it we need the help of the Holy Ghost, who by the Apostle did dictate these same things: but especially this place. Howbeit nothing pleaseth us but that which is Ecclesiastical, that is, the sense of the Church."
             }
           ]
         },
@@ -1496,7 +1568,7 @@
         },
         {
           "verse": 20,
-          "text": "Oman, who art thou that doest answer God? Doth the work say to him that wrought it: Why hast thou made me thus?",
+          "text": "O man, who art thou that doest answer God? Doth the work say to him that wrought it: Why hast thou made me thus?",
           "has_annotation": true
         },
         {
@@ -1507,8 +1579,13 @@
         {
           "verse": 22,
           "text": "And if God willing to shew wrath, & to make his might known, <cr>[1]</cr> sustained in much patience the vessels of wrath <cr>[2]</cr> <alt>apt</alt> to destruction,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
+              "text": "That God is not the cause of any man's reprobation or damnation, otherwise than for punishment of his sins, he sheweth by that that he expecteth all men's amendment with great patience, and consequently that they have also free-will."
+            },
+            {
+              "label": "2",
               "text": "apted, fitted"
             }
           ]
@@ -1571,34 +1648,26 @@
         },
         {
           "verse": 32,
-          "text": "Why so? Because not of faith, but as it were of works. For <cr>[1]</cr> they have stumbled at the stone of stumbling,"
+          "text": "Why so? Because not of faith, but as it were of works. For <cr>[1]</cr> they have stumbled at the stone of stumbling,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Here we see that they are the cause of their own damnation by infidelity."
+            }
+          ]
         },
         {
           "verse": 33,
-          "text": "as it is written: <cr>[1]</cr> <i>Behold I put in Sion a stone of</i> stumbling, and a rock of scandal: and whosoever <i>believeth in him, shall not be confounded.</i> he doth not reprobate or hate any man but for sin, or the foresight thereof. 14. Is there iniquity?] <na>◦</na> Upon the former discourse that of two persons equal, God calleth the one to mercy, and leaveth the other in his sin, one might infer that God were unjust and an accepter of persons. To which the Apostle answereth, that God were not just nor indifferent indeed, so to use the matter where grace or salvation were due. As if two men being Christened, both believe well, & live well: if God should give heaven to the one, & should damn the other, then were he unjust, partial, & forgetful of his promise; but respecting or taking two, who both be worthy of damnation (as all are before they be first called to mercy) then the matter standeth on mere mercy, and of the giver's will and liberality, in which case partiality hath no place. As for example.",
+          "text": "as it is written: <cr>[1]</cr> <i>Behold I put in Sion a stone of</i> stumbling, and a rock of scandal: and whosoever <i>believeth in him, shall not be confounded.</i>",
           "cross_refs": [
             {
               "text": "Es. 8, 14. 28, 16."
-            },
-            {
-              "text": "make his election sure by good works,"
-            },
-            {
-              "text": "2. Pet. 1, 10."
             }
           ],
           "notes": [
             {
-              "label": "◦",
-              "text": "1. Two malefactors being condemned both for one crime, the Prince pardoneth the one, and letteth the law proceed on the other. 1. So likewise, God seeing all mankind and every one of the same in a general condemnation, and mass of sin, in and by Adam, delivereth some, and not othersome 2. The thief that is pardoned, cannot attribute his escape to his own deservings, but to the Prince's mercy. 2. All that be delivered out of that common damnation, be delivered by grace and pardon, through the means and merits of Christ. 3. The thief that is executed, cannot challenge the Prince that he was not pardoned also: but must acknowledge that he hath his deserving. 3. Such as be left in the common case of damnation, cannot complain, because they have their deserving for sin. 4. The standers by, must not say, that he was executed because the Prince would not pardon him. For that was not the cause, but his offence. 4. We may not say that such be damned, because God did not pardon them, but because they had sin, and therefore deserved it. 5. If they ask further, why the Prince pardoned not both, or executed not both: the answer is, that as mercy is a goodly virtue, so justice is necessary and commendable. 5. That some should be damned, and not all pardoned, and other some pardoned rather than all condemned, is agreeable to God's justice & mercy: both which virtues in God's providence towards us are recommended. 6. But if it be further demanded why John rather than Thomas was executed: or Thomas rather than John pardoned: answer, that (the parties being otherwise equal) it hangeth merely and wholly upon the Prince's will and pleasure. 6. That Saul should be rather pardoned than Caiphas (I mean where two be equally evil and undeserving) that is only God's holy will and appointment, by which many an unworthy man getteth pardon, but no good or just or innocent person is ever damned."
-            },
-            {
-              "label": "◦",
-              "text": "That God is not unjust, or an accepter of persons, is declared by familiar examples."
-            },
-            {
-              "label": "◦",
-              "text": "S. Augustine's example is of two debters: the one forgiven all, and the other put to pay all, by the same creditor. li. de praedest. & gra. cap. 4."
+              "label": "1",
+              "text": "In all this mercy of God towards some, and justice towards other some, both the pardoned work by their own free-will, and thereby deserve their salvation: and the other no less, by their own free-will, without all necessity, work wickedness, & themselves and only of themselves procure their own damnation. Therefore no man may without blasphemy say, or can truly say, that he hath nothing to do towards his own salvation, but will live, and thinketh he may live without care or cogitation of his end the one way or the other, saying, If I be appointed to be saved, be it so: if I be one designed to damnation, I cannot help the matter: come what come may. All these speeches and cogitations are sinful & come of the enemy, and be rather signs of reprobation, than of election. Therefore the good man must without search of God's secrets, work his own salvation and (as S. Peter saith"
             }
           ]
         }
@@ -1623,7 +1692,13 @@
         },
         {
           "verse": 4,
-          "text": "For, <cr>[1]</cr> the end of the Law is Christ; unto justice to every one that believeth."
+          "text": "For, <cr>[1]</cr> the end of the Law is Christ; unto justice to every one that believeth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Law was not given to make a man just or perfect by itself, but to bring us to Christ to be justified by him."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -1632,11 +1707,17 @@
             {
               "text": "Lev. 18, 5."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The justice of the Law of Moyses went no further of itself, but to save a man from the temporal death and punishment prescribed to the transgressors of the same."
+            }
           ]
         },
         {
           "verse": 6,
-          "text": "But the justice which is of faith, saith thus: <cr>[1]</cr> <i>Say not in thy heart, Who shall ascend into Heaven?</i> that is^ to bring Christ down.",
+          "text": "But the justice which is of faith, saith thus: <cr>[1]</cr> <i>Say not in thy heart, Who shall ascend into Heaven?</i> that is to bring Christ down.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -1646,7 +1727,7 @@
         },
         {
           "verse": 7,
-          "text": "<i>Or who descendeth into the depth?</i> that is^ to call Christ again from the dead."
+          "text": "<i>Or who descendeth into the depth?</i> that is to call Christ again from the dead."
         },
         {
           "verse": 8,
@@ -1659,7 +1740,13 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> For with the heart we believe unto justice; but with the mouth confession is made to salvation."
+          "text": "<cr>[1]</cr> For with the heart we believe unto justice; but with the mouth confession is made to salvation.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon S. Andrew's day. Novemb. 30."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1680,6 +1767,12 @@
           "cross_refs": [
             {
               "text": "Ioel. 2, 22."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "To believe in him & to invocate him, is to serve him with all love and sincere affection. All that so do, shall doubtless be saved & shall never be confounded."
             }
           ]
         },
@@ -1703,10 +1796,13 @@
           "text": "But all <cr>[1]</cr> do not obey the Gospel. For Esay saith,",
           "cross_refs": [
             {
-              "text": "Lord, who hath believed the hearing of us?"
-            },
-            {
               "text": "Esa. 53, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "We see then that it is in a man's free-will to believe or not to believe, to obey or disobey the Gospel or truth preached."
             }
           ]
         },
@@ -1778,9 +1874,10 @@
           "verse": 4,
           "text": "But what saith the divine answer unto him? <i>I have left me seven thousand men, that have not bowed their knees to </i> <cr>[1]</cr> <i>Baal?</i>",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Image Act. 19, 35."
+              "label": "1",
+              "text": "c The Heretics add here also, Image , to the text, as Act. 19, 35."
             }
           ]
         },
@@ -1822,11 +1919,23 @@
         },
         {
           "verse": 11,
-          "text": "Isay then, have they so stumbled, <cr>[1]</cr> that they should fall? God forbid. But by their offence, salvation is to the Gentiles, that they may emulate them."
+          "text": "Isay then, have they so stumbled, <cr>[1]</cr> that they should fall? God forbid. But by their offence, salvation is to the Gentiles, that they may emulate them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Jews are not rejected wholly & incurably for ever: but for a part, and for a time suffered to fall. Which God did turn to the Gentiles' general good."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "And if the offence of them be the riches of the world, and the diminution of them <cr>[1]</cr> the riches of the Gentiles; how much more the fullness of them?"
+          "text": "And if the offence of them be the riches of the world, and the diminution of them <cr>[1]</cr> the riches of the Gentiles; how much more the fullness of them?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "If God could and did turn their fall and sin into the good of the Gentiles, much more will he work good of their general conversion, which shall be at length the accomplishment of the Church consisting of both the Nations."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1859,7 +1968,13 @@
         {
           "verse": 20,
           "text": "Well: because of incredulity they were broken, but thou by faith doest stand: be not too highly wise; but <cr>[1]</cr> fear.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "We see that he which standeth by faith, may fall from it, and therefore must live in fear, and not in the vain presumption and security of the Heretics."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -1920,7 +2035,13 @@
         {
           "verse": 33,
           "text": "<cr>[1]</cr> O depth of the riches of the wisdom and of the knowledge of God: how incomprehensible are his judgements, and his ways unsearchable?",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Trinity Sunday."
+            }
+          ]
         },
         {
           "verse": 34,
@@ -1937,25 +2058,7 @@
         },
         {
           "verse": 36,
-          "text": "For of him, and by him, and in him are all things: to him be glory for ever. Amen. faithful, so many, that <cr>[2]</cr> the very soldiers only were numbered above ten hundred thousand. besides that there is a great difference between the Christian Church and the Jews, ours resting upon better promises than theirs. And we will not put the Protestants to prove that there were 7000 of their Sect, when their new Elias Luther began: but let them prove that there were seven, or any one, either then or in all ages before him, that was in all points of his belief. Heretics there were before him, as Iovinian, Vigilantius, Helvidius, Wicleffe &c. and with him, Zuinglius, Calvin, &c. Who believed as he did in some things, but not in all. 6. Not now of works.] <na>◦</na> If salvation be attributed to good works done of nature without faith & God's help, the same cannot be of grace. For such works exclude grace, favour, and mercy: and challenge only of debt, and not of gift. Therefore take heed here of the Heretics' exposition, that untruly exclude Christian men's works from necessity or merit of salvation, which are done with and by God's grace, and therefore evidently consist with the same, and be joined with God's grace as causes of our salvation. Our Adversaries are like ill Potecaries, ever taking <i>quid pro quo,</i> either of ignorance, or of intent to deceive the simple. 8. God hath given.] <cr>[1]</cr> It doth not signify his working or action, but his permission. <i>Chrys. ho. 19. in ep. Ro.</i> And S. Augustine saith <cr>[2]</cr> , not by putting malice into them, but by not imparting his grace unto them, and that through their own deserts always, and their own wills ever properly working the same. <i>See Annot. Mat. c. 13, 14. Ro. c. 1, 24.</i> 20. Because of incredulity.] <na>◦</na> He represseth the pride of the Gentiles vaunting themselves of their receiving, and of the Jews' rejection, namely in that they thought the Jews to be forsaken for no other cause, but that they might come into their rooms: declaring that the direct and proper cause of their forsaking, was their incredulity, exhorting the Gentiles to beware of the same, because they may fall as well as the other, and that God is as like to execute justice against them as against the Jews, as he hath done in many nations falling to heresy. 28. According to the Gospel.] In respect, or, as concerning belief in Christ and receiving the Gospel, they are God's enemies: by occasion of which their incredulity, the Gentiles found mercy: otherwise in respect of his special election of that nation, and the promises made to the Patriarchs, the Jews are dear to him still. For God never promiseth but he performeth, nor repenteth himself of the privileges given to that nation. 30. For as you.] As the Gentiles which before believed not, found mercy and came to faith, when the Jews did fall: so the Jews not now believing, when all the Gentiles have obtained mercy, shall in the end of the world by God's disposition obtain grace and pardon as the Gentiles have done. 32. Concluded all.] That so God taking all Nations and all men in sin (which they fell into, not by his drift or causing, but of their own free-will) may of his mercy call and convert whom and in what order he will: and the parties have no cause to brag of their deservings: but both countries and particular men may refer their eternal election and their first calling and conversion to Christ, and to his mercy only: no works which they had before in their incredulity, deserving any such thing, though their works afterward proceeding of faith and grace do merit heaven. 33. O depth] <cr>[1]</cr> The Apostle concludeth that no man ought to search further into God's secret and unsearchable counsels of the vocation of the Gentiles, and rejecting the Jews, otherwise than this, that all which be rejected, for their sins be justly rejected: and all that be saved, by God's great mercy and Christ's grace be saved. And whosoever seeketh among the people to spread contagion",
-          "cross_refs": [
-            {
-              "text": "2. Par. 17."
-            },
-            {
-              "text": "Aug. Ep. 105. ad Sixtum."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "What works are not, & what are the cause of salvation."
-            },
-            {
-              "label": "◦",
-              "text": "Aparaphrastical explication of the text, concerning the Jews and Gentiles, their standing, falling, rising again, &c."
-            }
-          ]
+          "text": "For of him, and by him, and in him are all things: to him be glory for ever. Amen."
         }
       ],
       "summary": "Not all the Jews were reprobate, but some elect: and they by grace obtained justice, the rest (according to the Prophets) being excecated, 11. Against whom notwithstanding the Christian Gentiles (to whom by that occasion Christ is come) must not insult: but rather fear every man himself to be likewise cut off the tree (which is the Catholic Church) 25. and know that when all the Gentiles are brought into the Church, then (about the end of the world) shall the multitude of the Jews also come in: 33. according to the disposition of the wonderful wisdom of God."
@@ -1970,6 +2073,12 @@
           "cross_refs": [
             {
               "text": "Phil. 4, 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 1. Sunday after the Epiphany."
             }
           ]
         },
@@ -1989,6 +2098,12 @@
             {
               "text": "1. Cor. 12, 11. Eph. 4, 7."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "None must presume to meddle above the measure of God's gift, or out of the compass of his state and vocation."
+            }
           ]
         },
         {
@@ -2003,9 +2118,14 @@
           "verse": 6,
           "text": "<cr>[1]</cr> And having gifts, according to the grace that is given us, different, either <cr>[2]</cr> prophecy according to the rule of faith,",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "li. 3. Doct. Chr. c. 27. li. 1. c. 36. li. 12. Confess. c. 18. unto c. 32."
+              "label": "1",
+              "text": "The Epistle upon the 2. Sunday after the Epiphany."
+            },
+            {
+              "label": "2",
+              "text": "Prophecy is interpretation of the Scriptures, which is according to the rule of faith, when it is not against the right faith, or when it is profitable to edify charity, as S. Augustine speaketh li. 3. Doct. Chr. c. 27. and li. 1. c. 36. and in effect he saith the same li. 12. Confess. c. 18. unto c. 32."
             }
           ]
         },
@@ -2020,8 +2140,9 @@
         {
           "verse": 9,
           "text": "<cr>[1]</cr> Love without simulation. Hating evil, cleaving to good.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c dilectio"
             }
           ]
@@ -2041,15 +2162,22 @@
         {
           "verse": 13,
           "text": "Communicating to the <cr>[1]</cr> <alt>necessities</alt> of the saints. Pursuing hospitality.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "memories"
             }
           ]
         },
         {
           "verse": 14,
-          "text": "Bless them that persecute you: bless, and <cr>[1]</cr> curse not."
+          "text": "Bless them that persecute you: bless, and <cr>[1]</cr> curse not.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Cursing is a vice whereunto the common people is much given, who often curse them on whom they cannot otherwise be revenged. They may see here that it is a great fault."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -2057,7 +2185,13 @@
         },
         {
           "verse": 16,
-          "text": "Being of one mind one toward another. Not minding high things, but consenting to the humble. <cr>[1]</cr> Be not wise in your own conceit."
+          "text": "Being of one mind one toward another. Not minding high things, but consenting to the humble. <cr>[1]</cr> Be not wise in your own conceit.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The Epistle upon the 3. Sunday after the Epiphany."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -2136,16 +2270,28 @@
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> Render therefore to all men their dew: <cr>[2]</cr> to whom tribute, tribute: to whom custom, custom: to whom fear, fear; to whom honour, honour. 1. Every soul be subject.] Because the Apostles preached liberty by Christ from the yoke of the Law and servitude of sin, and gave all the faithful both example and commandment to obey God more <cr>[1]</cr> Obedience to temporal rulers, & in what cases.",
+          "text": "<cr>[1]</cr> Render therefore to all men their dew: <cr>[2]</cr> to whom tribute, tribute: to whom custom, custom: to whom fear, fear; to whom honour, honour.",
           "cross_refs": [
             {
               "text": "Mt. 22, 21."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Obedience to temporal rulers, & in what cases."
             }
           ]
         },
         {
           "verse": 8,
-          "text": "Owe no man any thing: but that you love one another. For he that loveth his neighbour, hath <cr>[1]</cr> fulfilled the law."
+          "text": "Owe no man any thing: but that you love one another. For he that loveth his neighbour, hath <cr>[1]</cr> fulfilled the law.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Here we learn that the Law may be & is fulfilled by love in this life: against the Adversaries saying it is impossible to keep the commandments."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -2165,7 +2311,13 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> And that knowing the season, that it is now the hour for us to rise from sleep. For now our salvation is nearer than when we believed."
+          "text": "<cr>[1]</cr> And that knowing the season, that it is now the hour for us to rise from sleep. For now our salvation is nearer than when we believed.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 1. Sunday in Advent."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -2178,21 +2330,7 @@
         },
         {
           "verse": 14,
-          "text": "but do ye on our Lord <sc>Jesus</sc> Christ, and make not provision for the flesh in concupiscences. than men, and withal ever charged them expressly to be obedient and subject to their Prelates as to them which had cure of their souls and were by the Holy Ghost placed over the Church of God: there were many in those days newly converted, that thought themselves free from all temporal Potestates, carnal Lords, and human creatures or powers: whereupon the bondman took himself to be loose from his servitude, the subject from his Sovereign, were he Emperor, King, Duke, or what other secular Magistrate so ever, specially the Princes of those days being Heathens and persecutors of the Apostles, and of Christ's religion. <cr>[1]</cr> For which cause and for that the Apostles were untruly charged of their Adversaries, that they withdrew men from order and obedience to Civil laws and Officers: S. Paul here (as S. Peter doth 1. Chap. 2.) cleareth himself, and expressly chargeth every man to be subject to his temporal Prince and Superior: Not every man to all that be in Office or Superiority, but every one to him whom God hath put in authority over him, by that he is his Master, Lord, king, or such like: Neither to them in matters of religion or regiment of their souls (for most part were Pagans, whom the Apostle could not will men to obey in matters of faith) but to them in such things only as concern the public peace & Policy, and what other causes so ever consist with God's holy will and ordinance. For <cr>[2]</cr> against God no power may be obeyed. 1. No power but of God.] <cr>[1]</cr> S. Chrysostom <cr>[2]</cr> here noteth, that power, rule, & Superiority, is God's ordinance, but not eftsoons all Princes: because many may usurp, who reign by his permission only, and not by his appointment: nor all actions that every one doeth in and by his sovereign power, as Iulian's apostasy and affliction of Catholics, Pharao's tyrannical oppression of the Israelites, Achab's persecution of the Prophets, Nero's executing of the Apostles, Herod's and Pilate's condemning of Christ: all which things God permitted them, by the abuse of their power to accomplish, and not being the cause of their evil doings, turned and ordered the same to good effects. <i>S. August. tract. 112. in Ioan. S. Tho, 1. p. q. 19. a. 9.</i> 2. They that resist.] <na>◦</na> Whosoever resisteth or obeyeth not his lawful Superior in those causes wherein he is subject unto him, withstandeth God's appointment, & sinneth deadly, and is worthy to be punished both in this world by his Superior, and by God in the next life. For in temporal government and causes, the Christians were bound in conscience to obey their Heathen Emperors: though on the other side, they were bound under pain of damnation to obey their Apostles and prelates, and not to obey their kings or Emperors, in matters of religion. Whereby it is clear that when we be commanded to obey our Superiors, it is meant always, and only in such things as they may lawfully command, and in respect of such matters wherein they be our Superiors. 4. Beareth not the sword.] <cr>[1]</cr> That the Apostle meaneth here specially of temporal powers, we may see by the sword, tribute, & external compulsion, which he here attributeth to them. And the Christian men then had no doubt whether they should obey their Spiritual powers. But now the disease is clean contrary. For all is given to the secular power, and nothing to the spiritual, which expressly is ordained by Christ and the Holy Ghost: and all the faithful are commanded to be subject thereunto, as to Christ's own word and will. <cr>[2]</cr> There were Heretics called <i>Begardi,</i> that took away all rule and Superiority: The Wiclefists would obey not Prince nor Prelate, if he were once in deadly sin. The Protestants of our time (as we may see in all Countries where the secular sword is drawn against their Sects) care neither for the one nor for the other, though they extol only the secular when it maketh for them. <cr>[3]</cr> The Catholics only most humbly obey both, even according to God's ordinance, the one in temporal causes, and the other in Spiritual: in which order both these States have blessedly flourished in all Christian countries ever since Christ's time, and it is the very way to preserve both, as one day all the world shall confess with us.",
-          "cross_refs": [
-            {
-              "text": "Act. 4, 19. 5, 29."
-            },
-            {
-              "text": "Chrys. in ep. Ro. ho. 23."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "In things lawfully commanded it is mortal sin not to obey our Superiors."
-            }
-          ]
+          "text": "but do ye on our Lord <sc>Jesus</sc> Christ, and make not provision for the flesh in concupiscences."
         }
       ],
       "summary": "To yield obedience and all other duties unto Potestates: 8. to love their neighbour which is the fulfilling of the Law: 11. and specially to consider, that now being the time of grace, we must do nothing that may not beseem day light."
@@ -2208,8 +2346,9 @@
           "verse": 2,
           "text": "For one believeth that he may eat all things: but he that is weak, <cr>[1]</cr> <alt>let him eat</alt> herbs.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "eateth"
             }
           ]
@@ -2272,10 +2411,11 @@
         },
         {
           "verse": 14,
-          "text": "Iknow and am persuaded in our Lord <sc>Jesus</sc> Christ, that nothing is <cr>[1]</cr> common of itself, but to him that supposeth any thing to be common, to him it is common.",
-          "cross_refs": [
+          "text": "I know and am persuaded in our Lord <sc>Jesus</sc> Christ, that nothing is <cr>[1]</cr> common of itself, but to him that supposeth any thing to be common, to him it is common.",
+          "notes": [
             {
-              "text": "Common unclean 7, 2."
+              "label": "1",
+              "text": "Common , that is, unclean . See Annot. Marc. 7, 2."
             }
           ]
         },
@@ -2285,6 +2425,12 @@
           "cross_refs": [
             {
               "text": "1. Cor. 8."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Though he wish the weak to be borne withal, yet he uttereth his mind plainly, that indeed all the meats forbidden and unclean in the Law, are now through Christ cleansed & lawful for every man to use."
             }
           ]
         },
@@ -2353,7 +2499,17 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> For <cr>[2]</cr> what things soever have been written, to our learning they are written: that by the patience and consolation of the Scriptures, we may have hope."
+          "text": "<cr>[1]</cr> For <cr>[2]</cr> what things soever have been written, to our learning they are written: that by the patience and consolation of the Scriptures, we may have hope.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 2. Sunday in Advent."
+            },
+            {
+              "label": "2",
+              "text": "He meaneth all that is written in the old Testament: much more all things written in the new Testament, are for our learning and comfort."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -2361,7 +2517,13 @@
         },
         {
           "verse": 6,
-          "text": "that of <cr>[1]</cr> one mind, with one mouth you may glorify God & the Father of our Lord <sc>Jesus</sc> Christ."
+          "text": "that of <cr>[1]</cr> one mind, with one mouth you may glorify God & the Father of our Lord <sc>Jesus</sc> Christ.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Unity in religion commended."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -2369,7 +2531,13 @@
         },
         {
           "verse": 8,
-          "text": "For I say Christ <sc>Jesus</sc> to have been <cr>[1]</cr> minister of the circumcision for the verity of God to confirm the promises of the fathers."
+          "text": "For I say Christ <sc>Jesus</sc> to have been <cr>[1]</cr> minister of the circumcision for the verity of God to confirm the promises of the fathers.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christ did execute his office and ministry only towards the people of Circumcision, that is, the Jews."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -2391,7 +2559,7 @@
         },
         {
           "verse": 11,
-          "text": "And again: <cr>[1]</cr> <i>Praise^ all ye Gentiles^ our Lord; and magnify him all ye peoples.</i>",
+          "text": "And again: <cr>[1]</cr> <i>Praise all ye Gentiles our Lord; and magnify him all ye peoples.</i>",
           "cross_refs": [
             {
               "text": "Psa. 116, 1."
@@ -2425,7 +2593,7 @@
         },
         {
           "verse": 17,
-          "text": "Ihave therefore glory in Christ <sc>Jesus</sc> toward God."
+          "text": "I have therefore glory in Christ <sc>Jesus</sc> toward God."
         },
         {
           "verse": 18,
@@ -2463,9 +2631,10 @@
         {
           "verse": 25,
           "text": "Now therefore I will go unto Jerusalem to minister to the <cr>[1]</cr> saints.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "S. Hiero. against Vigilantius"
+              "label": "1",
+              "text": "He meaneth the holy persons that having forsaken all their goods for Christ, were wholly converted to serve our Lord with all their mind. S. Hiero. against Vigilantius the Heretic reprehending the alms given to such, as do the Heretics also of our time."
             }
           ]
         },
@@ -2487,7 +2656,13 @@
         },
         {
           "verse": 30,
-          "text": "Ibeseech you therefore brethren by our Lord <sc>Jesus</sc> <sc>Christ</sc>, and by the charity of the Holy Ghost, that you <cr>[1]</cr> help me in your prayers for me to God,"
+          "text": "I beseech you therefore brethren by our Lord <sc>Jesus Christ</sc>, and by the charity of the Holy Ghost, that you <cr>[1]</cr> help me in your prayers for me to God,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "In that the Apostle desired to be prayed for, we may be moved to seek the same as a great benefit."
+            }
+          ]
         },
         {
           "verse": 31,
@@ -2518,9 +2693,10 @@
         {
           "verse": 3,
           "text": "<cr>[1]</cr> Salute Prisca & Aquila my helpers in Christ <sc>Jesus</sc>,",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Chrys. in 2. Tim. 4."
+              "label": "1",
+              "text": "c The only salutation of so worthy a man is sufficient to fill him with great grace that is so saluted. Chrys. in 2. Tim. 4."
             }
           ]
         },
@@ -2530,7 +2706,13 @@
         },
         {
           "verse": 5,
-          "text": "and their <cr>[1]</cr> domestical Church. Salute Epaenetus my beloved: who is the first fruit of Asia in Christ."
+          "text": "and their <cr>[1]</cr> domestical Church. Salute Epaenetus my beloved: who is the first fruit of Asia in Christ.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This domestical Church was either that faithful and Christian household, or rather the Christians meeting together there & in such good houses to hear divine service and the Apostles' preaching in those times of persecution."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -2539,8 +2721,9 @@
         {
           "verse": 7,
           "text": "Salute Andronicus and <cr>[1]</cr> <alt>Iulia</alt> my cousins and fellow captives: who are noble among the Apostles, who also before me were in Christ.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Iunia"
             }
           ]
@@ -2556,8 +2739,9 @@
         {
           "verse": 10,
           "text": "Salute Apelles <cr>[1]</cr> approved in Christ. Salute them that are of Aristobolus' house.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c τὸν δόκιμον"
             }
           ]
@@ -2576,7 +2760,13 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Salute Asyncritus, Phlegon, Hermas, Patrobas, Hermes: and the brethren that are with them."
+          "text": "<cr>[1]</cr> Salute Asyncritus, Phlegon, Hermas, Patrobas, Hermes: and the brethren that are with them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Protestants here reason thus, Peter is not here saluted, therefore he was never at Rome. See the Annotation."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -2590,15 +2780,22 @@
         {
           "verse": 17,
           "text": "And I desire you, brethren, to mark them that make dissensions and scandals contrary to the doctrine which you have <cr>[1]</cr> learned, and avoid them.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Of the Prince of the Apostles, saith Theodorete upon this place."
+            }
+          ]
         },
         {
           "verse": 18,
           "text": "For such do not serve Christ our Lord, but their own belly: and <cr>[1]</cr> by sweet speeches and benedictions seduce the hearts of innocents.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "c. 7, 15."
+              "label": "1",
+              "text": "The special way that Heretics have ever had to beguile, was and is by sweet words & gay speeches. Which their sheep's coat see before described particularly in the Annotations upon S. Matthew. c. 7, 15."
             }
           ]
         },
@@ -2617,7 +2814,7 @@
         },
         {
           "verse": 22,
-          "text": "I^ Tertius salute you, that wrote the epistle, in our Lord."
+          "text": "I Tertius salute you, that wrote the epistle, in our Lord."
         },
         {
           "verse": 23,

@@ -152,8 +152,9 @@
         {
           "verse": 8,
           "text": "None shall press his brother: they shall walk every one in their own path: yea & through the windows they shall fall, & shall <cr>[1]</cr> not demolish.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* take no harm."
             }
           ]
@@ -264,7 +265,7 @@
         },
         {
           "verse": 27,
-          "text": "And you shall know that I am in the midst of Israel: & I^ the Lord your God, and there is none besides: and my people shall not be confounded for ever."
+          "text": "And you shall know that I am in the midst of Israel: & I the Lord your God, and there is none besides: and my people shall not be confounded for ever."
         },
         {
           "verse": 28,
@@ -320,7 +321,7 @@
         },
         {
           "verse": 2,
-          "text": "Iwill gather together all Nations, and will lead them into the valley of <na>(b)</na> Josaphat: and I will plead with them there upon my people, and mine inheritance Israel, whom they have dispersed in the nations, and have divided my land.",
+          "text": "I will gather together all Nations, and will lead them into the valley of <na>(b)</na> Josaphat: and I will plead with them there upon my people, and mine inheritance Israel, whom they have dispersed in the nations, and have divided my land.",
           "notes": [
             {
               "label": "b",
@@ -379,7 +380,7 @@
         },
         {
           "verse": 14,
-          "text": "<na>(c)</na> Peoples^ peoples in the valley of concision, because the day of our Lord is nigh in the valley of concision. <cr>[1]</cr>",
+          "text": "<na>(c)</na> Peoples peoples in the valley of concision, because the day of our Lord is nigh in the valley of concision. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Iere. 21. Amos. 1."

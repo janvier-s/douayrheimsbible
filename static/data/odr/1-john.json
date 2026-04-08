@@ -16,7 +16,7 @@
         },
         {
           "verse": 3,
-          "text": "that^ which we have seen and have heard, we declare unto you, that you also may have society with us, and our society may be with the Father and with his Son <sc>Jesus</sc> Christ.",
+          "text": "that which we have seen and have heard, we declare unto you, that you also may have society with us, and our society may be with the Father and with his Son <sc>Jesus</sc> Christ.",
           "has_annotation": true
         },
         {
@@ -74,8 +74,9 @@
           "verse": 1,
           "text": "My little children, these things I write to you, that you sin not. But and if any man shall sin, we have an <cr>[1]</cr> Advocate with the Father, <sc>Jesus</sc> Christ the just:",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c παράκλητον."
             }
           ]
@@ -134,15 +135,15 @@
         },
         {
           "verse": 12,
-          "text": "Iwrite unto you little children, because your sins are forgiven you for his name."
+          "text": "I write unto you little children, because your sins are forgiven you for his name."
         },
         {
           "verse": 13,
-          "text": "Iwrite unto you fathers, because you have known him which is from the beginning. I write unto you young men, because you have overcome the wicked one."
+          "text": "I write unto you fathers, because you have known him which is from the beginning. I write unto you young men, because you have overcome the wicked one."
         },
         {
           "verse": 14,
-          "text": "Iwrite to you infants, because you have known the Father. I write unto you young men, because you are strong, and the word of God abideth in you, and you have overcome the wicked one."
+          "text": "I write to you infants, because you have known the Father. I write unto you young men, because you are strong, and the word of God abideth in you, and you have overcome the wicked one."
         },
         {
           "verse": 15,
@@ -150,10 +151,11 @@
         },
         {
           "verse": 16,
-          "text": "because <cr>[1]</cr> all that is in the world, is the concupiscence of the flesh, and the concupiscence of the eyes, and the pride of life, which is not of the 1 John 2 Father, but is of the world.",
-          "cross_refs": [
+          "text": "because <cr>[1]</cr> all that is in the world, is the concupiscence of the flesh, and the concupiscence of the eyes, and the pride of life, which is not of the Father, but is of the world.",
+          "notes": [
             {
-              "text": "quaest. 77. art. 5."
+              "label": "1",
+              "text": "How all sin & tentation proceed of these three, see S. Thomas in his Sum. 1. 2. quaest. 77. art. 5."
             }
           ]
         },
@@ -165,8 +167,9 @@
           "verse": 18,
           "text": "Little children, it is the last hour, & as you have heard, that <cr>[1]</cr> Antichrist cometh: now there are become many Antichrists, whereby we know, that it is the last hour.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ὁ ἀντίχριςος."
             }
           ]
@@ -174,21 +177,28 @@
         {
           "verse": 19,
           "text": "They went out from us; but <cr>[1]</cr> they were not of us. For if they had been of us, they would surely have remained with us: but that they may be manifest that they are not all of us.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "They were of us for the time, that is, of and in the Church: otherwise they could not have gone out. But they were not of the constant sort, or of the elect & predestinate: for then they had tarried within, or returned before their death."
+            }
+          ]
         },
         {
           "verse": 20,
           "text": "But you have <cr>[1]</cr> the unction from the Holy one, and know all things.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c Χρίσμα Chrisma. whereof Christ & Christians"
             }
           ]
         },
         {
           "verse": 21,
-          "text": "Ihave not written to you as to them that know not the truth, but as to them that know it: and that no lie is of the truth."
+          "text": "I have not written to you as to them that know not the truth, but as to them that know it: and that no lie is of the truth."
         },
         {
           "verse": 22,
@@ -200,7 +210,13 @@
         },
         {
           "verse": 24,
-          "text": "You, that which you have <cr>[1]</cr> heard from the beginning, let it abide in you. If that abide in you which you have heard from the beginning, you also shall abide in the Son & the Father."
+          "text": "You, that which you have <cr>[1]</cr> heard from the beginning, let it abide in you. If that abide in you which you have heard from the beginning, you also shall abide in the Son & the Father.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Keep that firmly & constantly which you have heard even from the beginning, by the mouth of the Apostles; & not that only which you have received by writing."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -213,9 +229,10 @@
         {
           "verse": 27,
           "text": "And you, the unction which you have received from him, let it abide in you. And you have no need that any man teach you: but as his unction teacheth you of all things, and it is true, and it is no lie. And as it hath taught you, abide <cr>[1]</cr> in him.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "in it"
+              "label": "1",
+              "text": "c or, in it ."
             }
           ]
         },
@@ -225,51 +242,11 @@
         },
         {
           "verse": 29,
-          "text": "If you know that he is just, know ye that every one also <cr>[1]</cr> which doeth justice, is born of him. 1 John 2 <i>only, but for the whole worlds.</i> In which sort he is our only advocate, because he is our only redeemer. and hereupon he alone immediately, by and through himself, and without the aid or assistance of any other, man or Angel. in his own name, right, and merits, confidently dealeth in our causes before God our judge, & so procureth our pardon, which is the highest degree of advocation that can be.",
-          "cross_refs": [
-            {
-              "text": "per Christum Dominum nostrum tract. 1. in ep. Io. Sed dicet aliquis, &c. But some man will say, Do not the Saints then pray for us? Do not Bishops then or Prelates and Pastors pray for the people? Yes, Mark the Scriptures, and you shall find that the Apostles prayed for the people, and again desired the people to pray for them, and so the head prayeth for all, and the members one for another"
-            },
-            {
-              "text": "Our Lord Jesus Christ doth yet make intercession for us, all the Martyrs that be with him, pray for us: neither will their intercession cease, till we cease our groanings. ep. 59. to Paulinus circa med."
-            },
-            {
-              "text": "The obedient Virgin MARIE is made the advocate of the disobedient virgin Eve"
-            },
-            {
-              "text": "Gen. 48. v. 16. Tob. 5. v. 27. & c. 12. v. 12. Dan. 10."
-            },
-            {
-              "text": "Iren. li. 3. c. 33. & li. 5. post med."
-            },
-            {
-              "text": "D. Hiero. in Mat. c. 18."
-            }
-          ],
+          "text": "If you know that he is just, know ye that every one also <cr>[1]</cr> which doeth justice, is born of him.",
           "notes": [
             {
-              "label": "◦",
-              "text": "S. Augustine gathereth hereof against the Donatists, and all other Heretics, that would drive the Church into corners or some certain countries, from the universality of all Nations (whereof it was named by the Apostles, Catholic) that the true religion, and Church, and consequently the effects of Christ's propitiation, death, and advocation, pertaineth not to one age, nation, or people, but to the whole world. S. Augustine upon this place to. 9. tract. 1 in ep. Io. 4. He that saith he knoweth.]"
-            },
-            {
-              "label": "◦",
-              "text": "To know God here, signifieth (as it doth often in the Scriptures) to love, that is, as in the last chapter, to be in society with him, and to have familiar and experimental knowledge of his graces. If any vaunt himself thus to know God, and yet keepeth not his commandments, he is a liar, as all Calvinists and Lutherans, that profess themselves to be in the favour of God by only faith: affirming, that they neither keep, nor possibly can keep his commandments. 18. Many Antichrists.]"
-            },
-            {
-              "label": "◦",
-              "text": "The holy Apostle S. John (saith S. Cyprian) did not put a difference betwixt"
-            },
-            {
-              "label": "◦",
-              "text": "All Heretics are"
-            },
-            {
-              "label": "◦",
-              "text": "The Catholic Church is the only true Church."
-            },
-            {
-              "label": "◦",
-              "text": "Not only faith."
+              "label": "1",
+              "text": "We see it is Apostolical doctrine, that men may do or work justice, and that so doing they be just by their works proceeding of God's grace, & not by faith or imputation only."
             }
           ]
         }
@@ -281,23 +258,31 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>See</sc> what manner of charity the Father hath given us, that we should be named and be <cr>[1]</cr> the sons of God. For this cause the world doth not know us, because it hath not known him."
+          "text": "<sc>See</sc> what manner of charity the Father hath given us, that we should be named and be <cr>[1]</cr> the sons of God. For this cause the world doth not know us, because it hath not known him.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Not by nature, as Christ is: but by grace and adoption."
+            }
+          ]
         },
         {
           "verse": 2,
           "text": "My dearest, now we are the sons of God; & it hath not yet appeared what we shall be. We know that when he shall appear, we shall be like to him: because we shall <cr>[1]</cr> see him as he is.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "ep. 111. 112. & li. 12. de civit. Dei c. 29."
+              "label": "1",
+              "text": "c How we shall see God & be like unto him in the next life, see S. Augustine. ep. 111. 112. & li. 12. de civit. Dei c. 29."
             }
           ]
         },
         {
           "verse": 3,
           "text": "And every one that hath this hope in him, <cr>[1]</cr> sanctifieth himself, as he also is holy.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "upon this place."
+              "label": "1",
+              "text": "This teacheth us that man sanctifieth himself by his free-will working together with God's grace. S. Augustine upon this place."
             }
           ]
         },
@@ -351,10 +336,13 @@
           "text": "<cr>[1]</cr> Because this is the annunciation, which you have heard from the beginning, <cr>[2]</cr> That you love one another.",
           "cross_refs": [
             {
-              "text": "Ian. 26."
-            },
-            {
               "text": "Io. 13. 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for S. Polycarpus, Ian. 26."
             }
           ]
         },
@@ -369,7 +357,13 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> Marvel not, brethren, if the world hate you."
+          "text": "<cr>[1]</cr> Marvel not, brethren, if the world hate you.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 2. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -394,6 +388,12 @@
           "cross_refs": [
             {
               "text": "Ia. 2, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Every man is bound to give alms according to his ability, when he seeth his brother in great necessity."
             }
           ]
         },
@@ -425,10 +425,16 @@
         },
         {
           "verse": 23,
-          "text": "And <cr>[1]</cr> this is his commandment, that we believe in the name of his Son <sc>Jesus</sc> Christ: and <cr>[2]</cr> love one 1 John 3 another, as he hath given commandment unto us.",
+          "text": "And <cr>[1]</cr> this is his commandment, that we believe in the name of his Son <sc>Jesus</sc> Christ: and <cr>[2]</cr> love one another, as he hath given commandment unto us.",
           "cross_refs": [
             {
               "text": "Io. 17, 3. 13, 34."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Lest any man should think by the words next before, only faith in Christ to be commanded or to please God, he addeth to faith, the commandment of charity or love of our neighbour."
             }
           ]
         },
@@ -461,8 +467,9 @@
           "verse": 3,
           "text": "and every spirit that dissolveth <sc>Jesus</sc>, is not of God: and this is <cr>[1]</cr> Antichrist, of whom you have heard that he cometh, and now he is in the world.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c τὸ τοῦ ἀντίχριςτου."
             }
           ]
@@ -491,7 +498,13 @@
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> He that loveth not, knoweth not God: because God is charity."
+          "text": "<cr>[1]</cr> He that loveth not, knoweth not God: because God is charity.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the first Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -516,9 +529,12 @@
           "cross_refs": [
             {
               "text": "Io. 1, 18. 1. Tim. 6, 16."
-            },
+            }
+          ],
+          "notes": [
             {
-              "text": "See S. August. ad Paulin. de videndo Deo. cp. 112."
+              "label": "2",
+              "text": "No man in this life, nor with corporal eyes, can see the proper essence or substance of the Deity. See S. August. ad Paulin. de videndo Deo. cp. 112."
             }
           ]
         },
@@ -558,40 +574,16 @@
         },
         {
           "verse": 21,
-          "text": "<cr>[1]</cr> And this commandment we have from God: that he which loveth God, love also his brother. 1 John 4 Church, and challenge the spirit, and vaunt of God's word, Scripture, and Gospel, which indeed be seducers. 1. Prove the spirits.] <cr>[1]</cr> It is not meant by this place, as the Protestants would have it, that every particular person should of himself examine, try, or judge who is a true or false Doctor, and which is true or false doctrine. But the Apostle here would every one to discern these diversities of spirits, by taking knowledge of them to whom God hath given the gift of discerning spirits and doctrines (which S. Paul expressly saith is given but to some, and not to every one, 1 Cor. 12.) and by obeying the Church of God, to whom Christ hath given <cr>[2]</cr> the Spirit of truth. And this is only the sure way to prove the spirits and doctrines of these days. And all they that would bring us from our Pastor's and the Church's judgement, to our own private trial, seek nothing else but to drive us to miserable uncertaintly in all our belief. as <cr>[3]</cr> Calvin doth, who upon this place saith, that private men may examine the general Councels' doctrines.",
+          "text": "<cr>[1]</cr> And this commandment we have from God: that he which loveth God, love also his brother.",
           "cross_refs": [
             {
               "text": "Io. 13, 34. 15, 12."
-            },
-            {
-              "text": "Io. 14, 16."
-            },
-            {
-              "text": "li. 3. c. 18 tract. 6. in fine, S. Leo ep. 10. c. 5, Every spirit that confesseth not Christ to have come in flesh, is not of God Nestorius"
-            },
-            {
-              "text": "being eloquent by nature accounted himself therefore learned, & disdained to study the old interpreters, counting himself better than them all: being ignorant that in S. John's Catholic epistle the old copies had, EVERY ONE THAT DISSOLVETH JESUS, IS NOT OF GOD"
-            },
-            {
-              "text": "li. 7. c. 32."
             }
           ],
           "notes": [
             {
-              "label": "◦",
-              "text": "The Apostle speaketh according to that time, and for that part of Christian doctrine which then was specially to be confessed, taught, & maintained against certain wicked Heretics, Cerinthus, Ebion, and the like, that taught wickedly against the person and both natures of Christ JESUS. The Apostle therefore giveth the faithful people this token to know the true teachers of those days from the false. Not that this mark would serve for all times, or in case of all other false doctrines, but that it was then a necessary note. As if a good Catholic writer, Pastor, or parents would warn all theirs, now in these days, to give ear only to such teachers as acknowledge Christ our Saviour to be really present, and sacrificed in the B. Mass, & that all such are true preachers and of God, the rest to be of the Devil, or to be counted the spirit of Antichrist. Which spirit of Antichrist (he saith) was come even then, and is no doubt much more now in all Heretics, all being precursors of that great Antichrist which shall come towards the later end."
-            },
-            {
-              "label": "◦",
-              "text": "To confess or deny any article which the Cath. Church teacheth, is at all times a certain mark of Catholic or Heretic. 3. That dissolveth.]"
-            },
-            {
-              "label": "◦",
-              "text": "This is the most sure & general mark to know the true spirits and prophets"
-            },
-            {
-              "label": "◦",
-              "text": "Asure mark of true or false teachers."
+              "label": "1",
+              "text": "The Church only, not every private man, hath to prove and discern spirits."
             }
           ]
         }
@@ -607,7 +599,7 @@
         },
         {
           "verse": 2,
-          "text": "In this we know that we love the children of God: when as we love God, and keep his 1 John 5 commandments."
+          "text": "In this we know that we love the children of God: when as we love God, and keep his commandments."
         },
         {
           "verse": 3,
@@ -622,9 +614,10 @@
         {
           "verse": 4,
           "text": "<cr>[1]</cr> Because all that is born of God, overcometh the world: And this is the victory which overcometh the world, our faith.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "upon Dominica in albis"
+              "label": "1",
+              "text": "The Epistle upon Dominica in albis or Low Sunday."
             }
           ]
         },
@@ -639,7 +632,7 @@
         },
         {
           "verse": 6,
-          "text": "This is he that came by water & blood^ <sc>Jesus</sc> Christ: not in water only, but in water and blood. And it is the Spirit which testifieth, that Christ is the truth."
+          "text": "This is he that came by water & blood <sc>Jesus</sc> Christ: not in water only, but in water and blood. And it is the Spirit which testifieth, that Christ is the truth."
         },
         {
           "verse": 7,
@@ -687,9 +680,10 @@
         {
           "verse": 15,
           "text": "And <cr>[1]</cr> we know that he heareth us whatsoever we shall ask: we know that we have the petitions which we request of him.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "if we know"
+              "label": "1",
+              "text": "c or, if we know"
             }
           ]
         },
@@ -701,11 +695,13 @@
         {
           "verse": 17,
           "text": "All <cr>[1]</cr> iniquity, is sin. And there is a sin <cr>[2]</cr> <alt>to death</alt>.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἀδικία"
             },
             {
+              "label": "2",
               "text": "not to death."
             }
           ]
@@ -729,20 +725,12 @@
         },
         {
           "verse": 21,
-          "text": "My little children, keep yourselves from idols <cr>[1]</cr> . Amen. 1 John 5 unity of nature and essence in the B. Trinity; against the Arians and other like Heretics, who have in diverse ages found themselves so pressed with these plain Scriptures, that they have (as it is thought) altered and corrupted <cr>[2]</cr> the text both in Greek and Latin many ways: even as the Protestants handle those texts that make against them. But because we are not now troubled with Arianism so much as with Calvinism, we need not stand upon the variety of readings or expositions of this passage. See S. Hierom in his epistle put before the 7 Canonical or Catholic Epistles. 16. A sin to death.] <na>◦</na> A sin to death is another thing than a mortal sin. for it is that mortal sin only, whereof a man is never penitent before his death, or in which he continueth till death, and dieth in it. <i>I affirm</i> (saith S. Augustine de correp. & grat. c. 12) <i>that a sin to death is to leave faith working by charity even till death,</i> so likewise in the words before, <i>a sin not to death,</i> is not that which we call a venial sin, but any that a man committeth and continueth not therein till death. 16. For that I say not.] If the sin to death whereof he speaketh, be the sin wherein a man dieth without repentance, according to S. Augustine's words before rehearsed: then the prayer which he speaketh of, must needs be <cr>[1]</cr> prayer for the dead. because he speaketh of praying, or not praying, for them that died in deadly sin, exhorting us to pray, and encouraging us to do it with confidence to be heard, if we pray for them that departed this life not in deadly sin: and contrarywise in manner dissuading & discouraging us from praying for such as continued in wickedness even till their life's end. And S. Augustine setteth down the Church's practice agreeable to the Apostle's meaning, li. 21 c. 24 de Civit. Dei. <i>If there be any</i> (saith he) <i>that persist till death in impenitency of heart, doth the Church now pray for them, that is, for the souls of them that so are departed?</i> So saith he. <cr>[2]</cr> And this is the cause, that <i>Concilium Bracharense primum cap. 34.</i> forbiddeth to pray for such as die in desperation, or kill themselves: and the reason, why the Church forbeareth to pray for Heretics that die in their heresy, or maintain heresy unto death and by their death.",
+          "text": "My little children, keep yourselves from idols <cr>[1]</cr> . Amen.",
           "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "ἀπὸ τῶν ἐιδώλων."
-            },
-            {
-              "text": "idola"
-            }
-          ],
           "notes": [
             {
-              "label": "◦",
-              "text": "What is a sin to death."
+              "label": "1",
+              "text": "ἀπὸ τῶν ἐιδώλων."
             }
           ]
         }

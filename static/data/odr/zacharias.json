@@ -119,8 +119,9 @@
         {
           "verse": 20,
           "text": "And our Lord shewed me four <cr>[1]</cr> artificers.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* fabros."
             }
           ]
@@ -259,7 +260,7 @@
         },
         {
           "verse": 8,
-          "text": "Hear o Jesus thou grand Priest, thou and thy friends that dwell before thee, because they are portending men: for behold <sc>Iwill</sc> <sc>Bring</sc> <na>(d)</na> MY <sc>Servant</sc> <sc>The</sc> <sc>Orient</sc>. <cr>[1]</cr>",
+          "text": "Hear o Jesus thou grand Priest, thou and thy friends that dwell before thee, because they are portending men: for behold <sc>Iwill Bring</sc> <na>(d)</na> MY <sc>Servant The Orient</sc>. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Luc. 1. v. 78."
@@ -407,7 +408,7 @@
         },
         {
           "verse": 4,
-          "text": "Iwill bring it forth, saith the Lord of hosts: and it shall come to the house of the thief, & to the house of him that sweareth by my name falsely: and it shall abide in the midst of his house, and shall consume it, & the timber thereof, and the stones thereof."
+          "text": "I will bring it forth, saith the Lord of hosts: and it shall come to the house of the thief, & to the house of him that sweareth by my name falsely: and it shall abide in the midst of his house, and shall consume it, & the timber thereof, and the stones thereof."
         },
         {
           "verse": 5,
@@ -507,7 +508,7 @@
         },
         {
           "verse": 12,
-          "text": "and thou shalt speak to him, saying: Thus saith the Lord of hosts, <na>(b)</na> saying: <cr>[1]</cr> <sc>Behold</sc> <sc>Aman</sc>, <sc>Orient</sc> IS <sc>His</sc> <sc>Name</sc>: and under him shall spring up, & shall build a temple to our Lord.",
+          "text": "and thou shalt speak to him, saying: Thus saith the Lord of hosts, <na>(b)</na> saying: <cr>[1]</cr> <sc>Behold Aman</sc>, <sc>Orient</sc> IS <sc>His Name</sc>: and under him shall spring up, & shall build a temple to our Lord.",
           "cross_refs": [
             {
               "text": "Luc. 1. v. 78."
@@ -548,7 +549,7 @@
         },
         {
           "verse": 3,
-          "text": "that they should say to the priests of the house of the Lord of hosts, and to the Prophets, saying: Must I weep in <na>(a)</na> the fifth month, or must I sanctify myself as now I have done many years? fasted in those two months all the time of <i>their captivity.</i>",
+          "text": "that they should say to the priests of the house of the Lord of hosts, and to the Prophets, saying: Must I weep in <na>(a)</na> the fifth month, or must I sanctify myself as now I have done many years?",
           "notes": [
             {
               "label": "a",
@@ -756,15 +757,14 @@
         {
           "verse": 1,
           "text": "The <na>(a)</na> burden of the word of our Lord in the land of <cr>[1]</cr> Hadrach, & Damascus his rest: because our Lord is the eye of man, and of all the tribes of Israel.",
-          "cross_refs": [
-            {
-              "text": "* a city of Syria."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "Preaching true doctrine is at first ungrateful to some hearers, & still to the incredulous, but this burden becometh light to the faithful."
+            },
+            {
+              "label": "1",
+              "text": "* a city of Syria."
             }
           ]
         },
@@ -798,7 +798,7 @@
         },
         {
           "verse": 9,
-          "text": "Rejoice greatly, o daughter of Sion, make jubilation, o daughter of Jerusalem: <sc>Behold</sc> <sc>Thy</sc> <sc>King</sc> <na>(b)</na> will come to thee, the just & saviour: himself poor, and riding upon an ass, and upon a colt the foal of an ass. <cr>[1]</cr>",
+          "text": "Rejoice greatly, o daughter of Sion, make jubilation, o daughter of Jerusalem: <sc>Behold Thy King</sc> <na>(b)</na> will come to thee, the just & saviour: himself poor, and riding upon an ass, and upon a colt the foal of an ass. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Isa. 62. Mat. 21. v. 5. Ioan 1. v. 15."
@@ -940,7 +940,7 @@
         },
         {
           "verse": 12,
-          "text": "Iwill strengthen them in the Lord, and in his name they shall walk, saith our Lord."
+          "text": "I will strengthen them in the Lord, and in his name they shall walk, saith our Lord."
         }
       ],
       "summary": "The Jews are exhorted to ask good things of God: 4. of their nation cometh the Redeemer of all men, 5. and of the same are the Apostles, spiritual masters of the whole world. 6. The whole nation shall at last be converted."
@@ -1045,19 +1045,26 @@
         {
           "verse": 15,
           "text": "And our Lord said to me: As yet take to thee the <cr>[1]</cr> vessels of a foolish Pastor.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* unapt instruments."
             }
           ]
         },
         {
           "verse": 16,
-          "text": "Because lo <na>(f)</na> I will raise up a Pastor in the land which shall not visit things forsaken, the thing dispersed he shall not seek, and the broken he shall not heal, and that which standeth he shall not nourish, and he shall eat the flesh of the fat ones, and their hoofs he shall dissolve. <na>(f)</na> Antichrist a destroyer,"
+          "text": "Because lo <na>(f)</na> I will raise up a Pastor in the land which shall not visit things forsaken, the thing dispersed he shall not seek, and the broken he shall not heal, and that which standeth he shall not nourish, and he shall eat the flesh of the fat ones, and their hoofs he shall dissolve.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Antichrist a destroyer,"
+            }
+          ]
         },
         {
           "verse": 17,
-          "text": "Opastor, and idol, leaving the flock: <na>(g)</na> the sword upon his arm, & upon his right eye: his arm shall be dried with withering, and his right eye waxing dark shall be obscured.",
+          "text": "O pastor, and idol, leaving the flock: <na>(g)</na> the sword upon his arm, & upon his right eye: his arm shall be dried with withering, and his right eye waxing dark shall be obscured.",
           "notes": [
             {
               "label": "g",

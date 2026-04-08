@@ -8,7 +8,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> it came to pass after the death of Moyses the servant of our Lord, that our Lord spake to Josue the son of Nun, the minister of Moyses, and said to him:"
+          "text": "And <cr>[1]</cr> it came to pass after the death of Moyses the servant of our Lord, that our Lord spake to Josue the son of Nun, the minister of Moyses, and said to him:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part. Of the passage of Israel over Jordan."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -130,7 +136,7 @@
         },
         {
           "verse": 9,
-          "text": "Iknow that the Lord hath given this Land to you: for your terror is fallen upon us, & all the inhabitants of the Land are become faint."
+          "text": "I know that the Lord hath given this Land to you: for your terror is fallen upon us, & all the inhabitants of the Land are become faint."
         },
         {
           "verse": 10,
@@ -158,7 +164,7 @@
         },
         {
           "verse": 16,
-          "text": "And she said to them: Go up to the mountains, lest perhaps they meet you returning: and there^ lie hid three days, till they return, and so you shall go on your way."
+          "text": "And she said to them: Go up to the mountains, lest perhaps they meet you returning: and there lie hid three days, till they return, and so you shall go on your way."
         },
         {
           "verse": 17,
@@ -284,58 +290,7 @@
         },
         {
           "verse": 17,
-          "text": "And the people went against Jericho: and the Priests that carried the ark of the covenant of our Lord, stood girded upon the dry ground in the midst of Jordan, and all the people passed over through the dry channel. these, and other like things, yet he had a spiritual superior in earth, which was Eleazar the high-Priest. <cr>[3]</cr> For Moyses being extraordinary superior of all, both in spiritual and temporal causes, the ordinary priesthood and spiritual supremacy was established in Aaron and his sons, as appeareth <i>Levit. 8. Num. 20.</i> and other places: and the temporal government after Moyses and given to Josue, succeeding to him <i>(Num. 27.)</i> not in all, but <i>in part of his glory</i> (or authority) his whole honour (or power) <cr>[4]</cr> being distributed between the high-Priest, and the temporal Prince <cr>[5]</cr> , as learned Theodoret <i>(q. 48. in Nu.)</i> noteth upon the sacred text, expressly distinguishing their offices <i>(v. 21.)</i> that <i>Eleazar the Priest should consult our Lord for him</i> (and so receive answer <i>in doctrine and verity, Exod. 28. Levit. 8.</i> ) and that <i>Josue should go out and go in, and all the children of Israel with him</i> (that is, lead and govern the people) <i>at Eleazar's word.</i> <cr>[6]</cr> Where it is manifest that Josue was not set over Eleazar, but Eleazar over him. That therefore which Josue did in spiritual affairs, was in subordination <cr>[7]</cr> to the high-Priest, by whose direction, approbation, or ratihabition, he commanded some of the Priest's to carry the ark, and with it to go into Jordan, and coming into the mid channel to stand there, whiles all the army and people passed over <cr>[8]</cr> : also gave order that all should be circumcised <cr>[9]</cr> , blessed the people <cr>[10]</cr> , read the law <cr>[11]</cr> , and after godly exhortations, renewed the covenant between God and them <cr>[12]</cr> ; all in way of execution of God's will & commandments, not by any pretended jurisdiction in spiritual things.",
-          "cross_refs": [
-            {
-              "text": "23."
-            },
-            {
-              "text": "24."
-            },
-            {
-              "text": "(li. 1. cont. Parmen.) O rabida furoris audacia! sicut in causis Gentilium fieri solet, appellationem interposuerunt"
-            },
-            {
-              "text": "Catholic most Christian"
-            },
-            {
-              "text": "Defender of the faith"
-            },
-            {
-              "text": "Exod. 4. 5. 6. &c."
-            },
-            {
-              "text": "Deut. 17."
-            },
-            {
-              "text": "Chap. 5."
-            },
-            {
-              "text": "8."
-            },
-            {
-              "text": "22."
-            },
-            {
-              "text": "Veniam petiturus."
-            },
-            {
-              "text": "Catholic most Christian Defenders of the faith"
-            },
-            {
-              "text": "An. Do. 1521."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "In like sort many other good temporal Princes, as well in the old as the new Testament, have disposed and executed diverse things pertaining to God's service: their office requiring that they should set forward, maintain & defend true faith and religion. Especially Christian Princes, of whom Esay Prophesied (chap. 49.) that Kings should be foster fathers, and Queens the nurses of the Church . Conformably whereto S. Augustin teacheth (li. 3. c. 51. cont. Crescon.) that Kings, in that they are Kings, serve God by commanding good things, and forbidding evil, not only pertaining to human society, but also belonging to God's religion. To this effect Constantine the Great did many religious acts: yea even those things which our adversaries wrest to their own sense, shew evidently his due submission to his spiritual pastor. As when urged by the Donatists' perverse importunity, and being desirous (as S. Augustine testifieth Epist. 116. ) to bridle so great impudency, he heard and judged Bishop Cecilian's cause, after other Bishops' sentence for him against the heretics, where he both gave judgement agreeable to the Bishops, and yet pleading pardon, excused himself for this fact"
-            },
-            {
-              "label": "◦",
-              "text": "Other good Princes have also much advanced religion but not taken supremacy in spiritual causes."
-            }
-          ]
+          "text": "And the people went against Jericho: and the Priests that carried the ark of the covenant of our Lord, stood girded upon the dry ground in the midst of Jordan, and all the people passed over through the dry channel."
         }
       ],
       "summary": "After three days abode by the banks of Jordan, 3. the Priests with the Ark of God entering first into the river,"
@@ -508,8 +463,9 @@
         {
           "verse": 11,
           "text": "and they did eat of the corn of the Land the next day, azyme loaves and <cr>[1]</cr> polent of the same year.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Frumenty."
             }
           ]
@@ -616,7 +572,7 @@
         },
         {
           "verse": 16,
-          "text": "And when in the seventh going about^ the priests sounded with the trumpets, Josue said to all Israel: Make a shout, for our Lord hath delivered to you the city:"
+          "text": "And when in the seventh going about the priests sounded with the trumpets, Josue said to all Israel: Make a shout, for our Lord hath delivered to you the city:"
         },
         {
           "verse": 17,
@@ -730,7 +686,7 @@
         },
         {
           "verse": 10,
-          "text": "And our Lord said to Josue: Arise^ <na>(b)</na> why liest thou flat on the ground?",
+          "text": "And our Lord said to Josue: Arise <na>(b)</na> why liest thou flat on the ground?",
           "notes": [
             {
               "label": "b",
@@ -1365,11 +1321,11 @@
         },
         {
           "verse": 13,
-          "text": "Except the cities that were situated on hills and higher ground, the rest Israel burnt: one only^ Asor^ very well fenced he consumed with fire."
+          "text": "Except the cities that were situated on hills and higher ground, the rest Israel burnt: one only Asor very well fenced he consumed with fire."
         },
         {
           "verse": 14,
-          "text": "And all the prey of these cities and the cattle^ the children of Israel divided among themselves, all the men being slain."
+          "text": "And all the prey of these cities and the cattle the children of Israel divided among themselves, all the men being slain."
         },
         {
           "verse": 15,
@@ -1546,7 +1502,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Josue <cr>[1]</cr> was old, and striken in age, and our Lord said to him: Thou art old, and of a great age, and there is a very large country left, which is not yet divided by lot:"
+          "text": "Josue <cr>[1]</cr> was old, and striken in age, and our Lord said to him: Thou art old, and of a great age, and there is a very large country left, which is not yet divided by lot:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part. Partition of the land among nine tribes and a half."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1632,7 +1594,7 @@
         },
         {
           "verse": 21,
-          "text": "and all the champion cities, and all the Kingdoms of Sehon the king of the Amorrhite, that reigned in Hesebon, whom Moyses struck with the Princes of Madian: the Heveite, and Recem, and Sur, and Hur, and Rebe^ Dukes of Sehon inhabitants of the Land."
+          "text": "and all the champion cities, and all the Kingdoms of Sehon the king of the Amorrhite, that reigned in Hesebon, whom Moyses struck with the Princes of Madian: the Heveite, and Recem, and Sur, and Hur, and Rebe Dukes of Sehon inhabitants of the Land."
         },
         {
           "verse": 22,
@@ -2052,7 +2014,7 @@
         },
         {
           "verse": 63,
-          "text": "But the Jebusite the inhabitant of Jerusalem^ the children of Judas <na>(c)</na> could not destroy: and the Jebusite dwelt with the children of Judas in Jerusalem until this present day.",
+          "text": "But the Jebusite the inhabitant of Jerusalem the children of Judas <na>(c)</na> could not destroy: and the Jebusite dwelt with the children of Judas in Jerusalem until this present day.",
           "notes": [
             {
               "label": "c",
@@ -2235,7 +2197,7 @@
         },
         {
           "verse": 6,
-          "text": "The Land in the midst between these^ mark out into seven parts: and you shall come hither to me, that <na>(b)</na> before our Lord your God^ I may cast the lot for you:",
+          "text": "The Land in the midst between these mark out into seven parts: and you shall come hither to me, that <na>(b)</na> before our Lord your God I may cast the lot for you:",
           "notes": [
             {
               "label": "b",
@@ -2635,7 +2597,7 @@
         },
         {
           "verse": 9,
-          "text": "Of the tribes of the children of Judas & Simeon^ Josue gave cities: whose names be these,"
+          "text": "Of the tribes of the children of Judas & Simeon Josue gave cities: whose names be these,"
         },
         {
           "verse": 10,
@@ -2784,10 +2746,6 @@
     {
       "chapter": 22,
       "verses": [
-        {
-          "verse": 0,
-          "text": "Two tribes & a half return to their possessions; Iosue's godly admonitions; and his, and Eleazar's death."
-        },
         {
           "verse": 1,
           "text": "The same time Josue called the Rubenites, and Gadites, and the half tribe of Manasses,"
@@ -3187,7 +3145,7 @@
         },
         {
           "verse": 29,
-          "text": "<na>(d)</na> And after these things^ Josue the Son of Nun the servant of our Lord died, being an hundred and ten years old:",
+          "text": "<na>(d)</na> And after these things Josue the Son of Nun the servant of our Lord died, being an hundred and ten years old:",
           "notes": [
             {
               "label": "d",
@@ -3206,7 +3164,7 @@
         },
         {
           "verse": 32,
-          "text": "The <na>(e)[1]</na> bones also of Joseph which the children of Israel had taken out of Aegypt, they buried in Sichem, in part of the field, which Jacob had bought of the sons of Hemor the father of Sichem, for a hundred young ewes, and it was in the possession of the sons of Joseph. <na>(e)</na> Joseph's <i>Mausoleum</i> (or famous sepulchre) remained in Sichem in S. Hierom's time as he witnesseth. <i>Tradit. Hebra.</i> in Gen. prope finem. <cr>[1]</cr> <i>Gen. 50. Exo. 13.</i>"
+          "text": "The <na>(e)[1]</na> bones also of Joseph which the children of Israel had taken out of Aegypt, they buried in Sichem, in part of the field, which Jacob had bought of the sons of Hemor the father of Sichem, for a hundred young ewes, and it was in the possession of the sons of Joseph."
         },
         {
           "verse": 33,

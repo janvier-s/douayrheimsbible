@@ -12,7 +12,7 @@
         },
         {
           "verse": 2,
-          "text": "Ihave loved you, saith our Lord: & you have said: Wherein hast thou loved us? <na>(a)</na> Was not Esau brother to Jacob, saith our Lord, and I loved Jacob,",
+          "text": "I have loved you, saith our Lord: & you have said: Wherein hast thou loved us? <na>(a)</na> Was not Esau brother to Jacob, saith our Lord, and I loved Jacob,",
           "notes": [
             {
               "label": "a",
@@ -282,7 +282,7 @@
         },
         {
           "verse": 6,
-          "text": "For I^ the Lord, and I am not changed: and ye sons of Jacob are not consumed."
+          "text": "For I the Lord, and I am not changed: and ye sons of Jacob are not consumed."
         },
         {
           "verse": 7,
@@ -325,18 +325,7 @@
         },
         {
           "verse": 14,
-          "text": "And you said: What have we spoken against thee? You have said: <na>(g)[1]</na> He is vain that serveth God, and what profit is it that we have kept his precepts, and that we have walked sorrowful before the Lord of hosts?",
-          "cross_refs": [
-            {
-              "text": "Iob. 21. v. 14. Isa. 58. v. 2."
-            }
-          ],
-          "notes": [
-            {
-              "label": "g",
-              "text": "Sin of murmuring against God, is great blasphemy & not tolerable: For when they were punished by famine, for defrauding the Levites of tithes, they blasphemously imputed it to God: as though he had not such care of his own people, as he had of other nations, which had aboundance of temporal goods."
-            }
-          ]
+          "text": "And you said: What have we spoken against thee? You have said: <na>(g)[1]</na> He is vain that serveth God, and what profit is it that we have kept his precepts, and that we have walked sorrowful before the Lord of hosts?"
         },
         {
           "verse": 15,
@@ -395,16 +384,7 @@
         {
           "verse": 5,
           "text": "Behold I will send you <na>(b)[1]</na> Elias the Prophet, before the day of our Lord come great and <na>(c)</na> dreadful.",
-          "cross_refs": [
-            {
-              "text": "Mat. 11. & 17. v. 11."
-            }
-          ],
           "notes": [
-            {
-              "label": "b",
-              "text": "The Septuagint for explication add Thesbites . And S. Ierom in 17. Mat. teacheth that Elias shall indeed come and restore all things."
-            },
             {
               "label": "c",
               "text": "Christ's first coming was in all meekness not in terror, but his coming to judge will be dreadful . And therefore the Prophet here meaneth not S. John Baptist, but that Elias himself shall come before the great and dreadful day of our Lord."
@@ -414,8 +394,9 @@
         {
           "verse": 6,
           "text": "And he shall convert the heart of the fathers to the children, & the heart of the children to their fathers: lest perhaps I come, and strike the earth with <cr>[1]</cr> anathema.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* utter destruction. The end of the Prophetical Books."
             }
           ]

@@ -9,9 +9,10 @@
         {
           "verse": 1,
           "text": "<sc>Peter</sc> <cr>[1]</cr> an Apostle of <sc>Jesus</sc> Christ, to the elect strangers of the dispersion of Pontus, Galatia, Cappadocia, Asia, and Bithynia,",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "In Cathedra S. Petri Rome. & Antiochiae"
+              "label": "1",
+              "text": "The Epistle In Cathedra S. Petri Rome. Ian. 18. & Antiochiae Feb. 22."
             }
           ]
         },
@@ -21,12 +22,7 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1][2]</cr> Blessed be God and the Father of our Lord <sc>Jesus</sc> Christ, who according to his great mercy hath regenerated us unto a lively hope, by the resurrection of <sc>Jesus</sc> Christ from the dead,",
-          "cross_refs": [
-            {
-              "text": "2. Cor. 1, 3. Eph. 1, 3."
-            }
-          ]
+          "text": "<cr>[1][2]</cr> Blessed be God and the Father of our Lord <sc>Jesus</sc> Christ, who according to his great mercy hath regenerated us unto a lively hope, by the resurrection of <sc>Jesus</sc> Christ from the dead,"
         },
         {
           "verse": 4,
@@ -67,9 +63,10 @@
         {
           "verse": 13,
           "text": "For the which cause having the loins of your <cr>[1]</cr> mind girded, sober, trust perfectly in that grace which is offered you, in the revelation of <sc>Jesus</sc> Christ,",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "S. Bede upon this place"
+              "label": "1",
+              "text": "Chastity not only of body but also of mind, is required. S. Bede upon this place ."
             }
           ]
         },
@@ -92,7 +89,13 @@
         },
         {
           "verse": 17,
-          "text": "And if you invocate the Father, him which without acception of persons judgeth according to every one's <cr>[1]</cr> work; in fear converse ye the time of your sojourning."
+          "text": "And if you invocate the Father, him which without acception of persons judgeth according to every one's <cr>[1]</cr> work; in fear converse ye the time of your sojourning.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c God will judge men according to every one's works, and not by faith only."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -100,9 +103,12 @@
           "cross_refs": [
             {
               "text": "1. Cor. 6, 20. 7, 23."
-            },
+            }
+          ],
+          "notes": [
             {
-              "text": "Deuteroses which you have received by tradition of the Fathers"
+              "label": "2",
+              "text": "He meaneth the errors of Gentility. Or if he write to the Jews dispersed, he meaneth the yoke of the Law with the fond and heavy additions of their later Masters called Deuteroses . The Heretics, to make it sound to the simple against the traditions of the Church, corrupt the text thus, which you have received by tradition of the Fathers ."
             }
           ]
         },
@@ -125,7 +131,7 @@
         },
         {
           "verse": 22,
-          "text": "Making your souls chaste in obedience of charity, in the sincere love of the fraternity^ from the heart love ye one another earnestly:"
+          "text": "Making your souls chaste in obedience of charity, in the sincere love of the fraternity from the heart love ye one another earnestly:"
         },
         {
           "verse": 23,
@@ -152,7 +158,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Laying</sc> <cr>[1]</cr> away therefore all malice, and all guile, and simulations, and envies, and all detractions,"
+          "text": "<sc>Laying</sc> <cr>[1]</cr> away therefore all malice, and all guile, and simulations, and envies, and all detractions,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Sunday in Easter week."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -170,8 +182,9 @@
           "verse": 5,
           "text": "be ye also yourselves super-edified as it were living stones, <cr>[1]</cr> <alt>spiritual houses</alt>, a holy priesthood, to offer spiritual hosts, acceptable to God by <sc>Jesus</sc> Christ.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "a spiritual house,"
             }
           ]
@@ -197,8 +210,9 @@
         {
           "verse": 8,
           "text": "and a stone of offence, & a rock of scandal, to them that stumble at the word, neither do believe <cr>[1]</cr> <alt>wherein also they are put</alt>.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "whereto also they are ordained."
             }
           ]
@@ -206,9 +220,10 @@
         {
           "verse": 9,
           "text": "But you are an elect generation, a <cr>[1]</cr> kingly priesthood, a holy nation, a people of purchase: that you may declare his virtues, which from darkness hath called you into his marvelous light.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Apoc. 1, 6. & 5, 10. Thou hast made us a Kingdom (or Kings) & Priests."
+              "label": "1",
+              "text": "c The Protestants can no more gather of this, that all Christians be Priests: than, that all be kings: as is most plain Apoc. 1, 6. & 5, 10. Thou hast made us a Kingdom (or Kings) & Priests."
             }
           ]
         },
@@ -228,6 +243,12 @@
             {
               "text": "Gal. 5, 16."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 3. Sunday after Easter."
+            }
           ]
         },
         {
@@ -246,18 +267,22 @@
           "cross_refs": [
             {
               "text": "Ro. 13, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "So is the Greek, but the Protest. in favour of temporal laws made against the Cat. religion, translate it very falsely thus, to all manner ordinance of man : themselves boldly rejecting Ecclesiastical decrees as men's ordinances."
             },
             {
-              "text": "to all manner ordinance of man"
-            },
-            {
+              "label": "3",
               "text": "c κτίσει."
             }
           ]
         },
         {
           "verse": 14,
-          "text": "or to rulers as sent by him to the revenge of 1 Peter 2 malefactors, but to the praise of the good:"
+          "text": "or to rulers as sent by him to the revenge of malefactors, but to the praise of the good:"
         },
         {
           "verse": 15,
@@ -270,7 +295,13 @@
         },
         {
           "verse": 17,
-          "text": "Honour all men. <cr>[1]</cr> Love the fraternity. Fear God. Honour the king."
+          "text": "Honour all men. <cr>[1]</cr> Love the fraternity. Fear God. Honour the king.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c In this speech is often commended the unity of all Christians among themselves."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -288,11 +319,17 @@
         {
           "verse": 21,
           "text": "<cr>[1]</cr> For unto this are you called: because Christ also suffered for <cr>[2]</cr> <alt>us</alt>, leaving <cr>[3]</cr> <alt>you</alt> an example that you may follow his steps.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
+              "text": "The Epistle upon the 2. Sunday after Easter."
+            },
+            {
+              "label": "2",
               "text": "you"
             },
             {
+              "label": "3",
               "text": "us"
             }
           ]
@@ -309,8 +346,9 @@
         {
           "verse": 23,
           "text": "Who when he was reviled, <cr>[1]</cr> did not revile: when he suffered, he threatened not: but delivered himself to him that judged him unjustly.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ὀυκ ἀντελοιδόρει."
             }
           ]
@@ -326,42 +364,7 @@
         },
         {
           "verse": 25,
-          "text": "For you were as sheep straying: but you be converted now to the Pastor & Bishop of your souls. 1 Peter 2 men, by maintaining of due superiority and subjection one towards another, and by giving power to the people and Common wealth to choose to themselves some kind or form of Regiment, under which they be content to live for their preservation in peace and tranquility. But Spiritual superiority is far more excellent, as in more excellent sort depending, not of man's ordinance, election, or (as this Apostle speaketh) creation, but of the Holy Ghost, who is always resident in the Church (which is Christ's body mystical, and therefore another manner of Commonwealth than the earthly) concurring in singular sort to the creation of all necessary Officers in the said Church, even to the world's end, as S. Paul writeth to the Ephesians <na>◦</na> . Lest therefore the people, being then in so precise sort always warned of the excellency of their Spiritual governors <na>◦</na> and of their obedience toward them, might neglect their duties to Temporal Magistrates, specially being infidels, and many times tyrants and persecutors of the faith, as Nero and other were then: therefore S. Peter here warneth them to be subject, for their bodies and goods and other temporal things, even to the worldly Princes both infidels and Christians, whom he calleth human creatures.",
-          "cross_refs": [
-            {
-              "text": "To the king as to the chief head"
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "Hebr. 13. 13. To the king as excelling.] Some simple heretics & others also not unlearned, at the beginning, for lack of better places, would have proved by this, that the king was head of the Church, and above all Spiritual rulers: and to make it sound better that way, they falsely translate"
-            },
-            {
-              "label": "◦",
-              "text": "This is an invincible demonstration, that this text maketh not for any spiritual claim of earthly kings, because it giveth no more to any Prince than may and ought to be done and granted to a Heathen Magistrate. Neither is there any thing in all the new Testament that proveth the Prince to be head or chief governor of the Church in spiritual or Ecclesiastical causes, more than it proveth any heathen Emperor of Rome to have been. For they were bound in temporal things to obey the heathen being lawful kings, to be subject to them even for conscience, to keep their temporal laws, to pay them tribute, to pray for them, and to do all other natural duties: and more no scriptures bind us to do to Christian kings."
-            },
-            {
-              "label": "◦",
-              "text": "Christian Princes have no more right to be supreme heads in spiritual causes, than the Heathen. 16. Not as having.] There were some Libertines in those days, as there be now, that under pretence of liberty of the Gospel,"
-            },
-            {
-              "label": "◦",
-              "text": "sought to be free from subjection and laws of men as now under the like wicked pretence, Heretics refuse to obey their spiritual rulers and to observe their laws."
-            },
-            {
-              "label": "◦",
-              "text": "Libertines. 18. But also the wayward.]"
-            },
-            {
-              "label": "◦",
-              "text": "The Wiclefists and their followers in these days, sometimes to move the people unto sedition, hold and teach that masters and magistrates lose their authority over their servants and subjects, if they be once in deadly sin, and that the people in that case need not in conscience obey them. Which is a pernicious and false doctrine, as is plain by this place, where we be expressly commanded to obey even the ill conditioned. Which must be always understood, if they command nothing against God. for then this rule is ever to be followed. We must obey God rather than men . Act. 5. 29."
-            },
-            {
-              "label": "◦",
-              "text": "Deadly sins of Princes or Superiors exempt not the subjects from obedience, as Wicleffe held."
-            }
-          ]
+          "text": "For you were as sheep straying: but you be converted now to the Pastor & Bishop of your souls."
         }
       ],
       "summary": "Now after their Baptism, what must be their meat: 4. and being come to Christ, how happy they be above their incredulous brethren, according to the Scriptures also. 11. Whereupon he beseecheth them to shine in good life among the Heathen, so to procure their conversion: 13. to be obedient subjects to higher Powers (how soever some misconster Christian liberty) 14. and servants to obey their Masters. 19. And so, doing well, though they suffer for it, it is very meritorious. 21. whereas Christ also not only gave them example, 24. but also by his death hath made them able to live justly."
@@ -376,6 +379,12 @@
             {
               "text": "Eph. 5, 28. Col. 3, 18."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "How wives should behave themselves toward their husbands."
+            }
           ]
         },
         {
@@ -384,12 +393,7 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1][2]</cr> Whose trimming let it not be outwardly the plaiting of hair, or laying on gold round about, or of putting on vestures:",
-          "cross_refs": [
-            {
-              "text": "1. Tim. 2, 9."
-            }
-          ]
+          "text": "<cr>[1][2]</cr> Whose trimming let it not be outwardly the plaiting of hair, or laying on gold round about, or of putting on vestures:"
         },
         {
           "verse": 4,
@@ -405,21 +409,35 @@
           "cross_refs": [
             {
               "text": "Gen. 18."
-            },
+            }
+          ],
+          "notes": [
             {
+              "label": "2",
               "text": "c ἧς"
             }
           ]
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> Husbands likewise, dwelling with them according to knowledge, as unto the weaker feminine vessel imparting honour, as it were to the coheirs also of the grace of life: that your prayers be not hindered."
+          "text": "<cr>[1]</cr> Husbands likewise, dwelling with them according to knowledge, as unto the weaker feminine vessel imparting honour, as it were to the coheirs also of the grace of life: that your prayers be not hindered.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "How husbands should behave themselves toward their wives."
+            }
+          ]
         },
         {
           "verse": 8,
           "text": "<cr>[1]</cr> And <cr>[2]</cr> <alt>in fine</alt> all of one mind, having compassion, lovers of the fraternity, merciful, modest, humble.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
+              "text": "The Epistle upon the 5. Sunday after Pentecost."
+            },
+            {
+              "label": "2",
               "text": "in faith"
             }
           ]
@@ -477,14 +495,21 @@
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> Because Christ also died once for our sins, the just for the unjust: that he might offer us to God, mortified certes in flesh, but quickened in spirit."
+          "text": "<cr>[1]</cr> Because Christ also died once for our sins, the just for the unjust: that he might offer us to God, mortified certes in flesh, but quickened in spirit.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Friday in Easter week."
+            }
+          ]
         },
         {
           "verse": 19,
           "text": "In the which spirit coming he preached to <cr>[1]</cr> <alt>them</alt> also that were in prison:",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "those spirits"
             }
           ]
@@ -506,15 +531,16 @@
           "verse": 21,
           "text": "Whereunto Baptism being of the like form now saveth <cr>[1]</cr> <alt>you</alt> also: not the laying away of the filth of the flesh, but the examination of a good conscience toward God by the resurrection of <sc>Jesus</sc> Christ.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "us"
             }
           ]
         },
         {
           "verse": 22,
-          "text": "Who is on the right hand of God, swallowing 1 Peter 3 death, that we might be made heirs of life everlasting: being gone into Heaven, Angels and Potentates and Powers subjected to him."
+          "text": "Who is on the right hand of God, swallowing death, that we might be made heirs of life everlasting: being gone into Heaven, Angels and Potentates and Powers subjected to him."
         }
       ],
       "summary": "The duty of wives and husbands to each other. 9. None to do or speak evil by their persecutors, 15. but to answer them always with modesty, and specially with innocency, after the example of Christ most innocent: whose body though they killed, yet his soul lived and preached afterward to the souls in Hell (namely to those in the time of Noe's flood being a figure of our Baptism) rose again, and ascended."
@@ -545,17 +571,23 @@
         {
           "verse": 6,
           "text": "For, for this cause also was <cr>[1]</cr> it evangelized to the dead: that they may be judged indeed according to men, in the flesh: but may live according to God in the Spirit.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Chap. 3. v. 19. ep. 69. upon this place"
+              "label": "1",
+              "text": "It hath the same difficulty and sense that the other like words have before, Chap. 3. See the annotation there v. 19. and S. Aug. ep. 69. & Oecumenius upon this place ."
             }
           ]
         },
         {
           "verse": 7,
           "text": "<cr>[1]</cr> And the end of all <cr>[2]</cr> <alt>shall approach</alt>. Be wise therefore, and watch in prayers.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
+              "text": "The Epistle upon Sunday next after the Ascension."
+            },
+            {
+              "label": "2",
               "text": "is at hand."
             }
           ]
@@ -594,11 +626,17 @@
         },
         {
           "verse": 12,
-          "text": "My dearest, think it not strange in the 1 Peter 4 fervour which is to you for a tentation, as though some new thing happened to you:"
+          "text": "My dearest, think it not strange in the fervour which is to you for a tentation, as though some new thing happened to you:"
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> But communicating with the passions of Christ, be glad, that in the revelation also of his glory you may be glad rejoicing."
+          "text": "<cr>[1]</cr> But communicating with the passions of Christ, be glad, that in the revelation also of his glory you may be glad rejoicing.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for some Martyrs."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -651,18 +689,24 @@
           "verse": 1,
           "text": "<sc>The</sc> <cr>[1]</cr> seniors therefore that are among you, I beseech, myself a fellow senior with them & a witness of the Passions of Christ, who am also partaker of the glory which is to be revealed in time to come:",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Iul. 23."
+              "label": "1",
+              "text": "The Epistle for S. Apollinaris. Iul. 23."
             }
           ]
         },
         {
           "verse": 2,
-          "text": "feed the flock of God which is among you^ <cr>[1]</cr> providing not by constraint, but willingly according to God: <cr>[2]</cr> neither for filthy lucre sake, but voluntarily:",
-          "cross_refs": [
+          "text": "feed the flock of God which is among you <cr>[1]</cr> providing not by constraint, but willingly according to God: <cr>[2]</cr> neither for filthy lucre sake, but voluntarily:",
+          "notes": [
             {
+              "label": "1",
               "text": "c ἐπισκοποῦντες."
+            },
+            {
+              "label": "2",
+              "text": "Desire of lucre, or to exercise holy functions for gain, is a filthy fault in the Clergy, and therefore much to be avoided."
             }
           ]
         },
@@ -682,12 +726,7 @@
         },
         {
           "verse": 6,
-          "text": "<cr>[1][2]</cr> Be ye humbled therefore under the mighty hand of God, that he may exalt you in the time of visitation:",
-          "cross_refs": [
-            {
-              "text": "Prov. 3. Iac. 4. Iac. 4. Psa. 54. Mt. 6, 25."
-            }
-          ]
+          "text": "<cr>[1][2]</cr> Be ye humbled therefore under the mighty hand of God, that he may exalt you in the time of visitation:"
         },
         {
           "verse": 7,
@@ -720,58 +759,16 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Salute one another in a holy kiss. Grace be to all you which are in Christ <sc>Jesus</sc>. Amen. 1 Peter 5 commended in Ecclesiastical Officers. The Greek word here of ruling or overruling <cr>[2]</cr> , being the same that our Saviour useth in the Gospel <cr>[3]</cr> of the tyrannical rule of secular Heathen Princes, saying to his Apostles, that it shall not be so among them: according as here the prince of the Apostles teacheth his brethren the Ecclesiastical rulers. in the Clergy.",
+          "text": "<cr>[1]</cr> Salute one another in a holy kiss. Grace be to all you which are in Christ <sc>Jesus</sc>. Amen.",
           "cross_refs": [
             {
               "text": "Ro. 16, 16. 1. Cor. 16, 20. 2. Cor. 13, 12."
-            },
-            {
-              "text": "κατακυριεύοντες."
-            },
-            {
-              "text": "Mat. 20. v. 25."
-            },
-            {
-              "text": "Parishes heritages"
-            },
-            {
-              "text": "Clergy Therefore Clericus a Clergy man, which serveth the Church of Christ, let him first interpret his name, and the signification of the name being declared, let him endeavour to be that which he is called κλῆρος in Greek, be called in Latin, Sors, therefore are they called Clerici, that is, Clergy men, because they are of the lot of our Lord, or because our Lord himself is the lot or portion of Clergy men &c."
-            },
-            {
-              "text": "Numer. 18. Deutero. 18."
-            },
-            {
-              "text": "Dominus pars haereditatis meae Our Lord is the portion of mine inheritance κλῆρος"
-            },
-            {
-              "text": "Liv. 5. hist. Angl. c. 22."
-            },
-            {
-              "text": "κληρονομια. κλῆρος. μερὶς."
-            },
-            {
-              "text": "in Catalogo de Scriptoribus Ecclesiasticis, verbo Marcus li. 2. c. 14. hist. Oecumenius"
-            },
-            {
-              "text": "Ser. 1 in Nati. Petri & Pauli"
             }
           ],
           "notes": [
             {
-              "label": "◦",
-              "text": "As life everlasting shall be the reward of all the just, so the preachers & Pastors that do well, for their going shall have that reward in a more excellent degree, expressed here by these words, Crown of glory . according to the saying of Daniel c. 12. They that sleep in the dust of the earth, shall awake, one sort to life everlasting, others to everlasting rebuke. but such as be learned, shall shine as the brightness of the firmament: and such as instruct many to justice, shall be as stars, during all eternity ."
-            },
-            {
-              "label": "◦",
-              "text": "The heavenly crown of Doctors and preachers. 13. That is in Babylon.]"
-            },
-            {
-              "label": "◦",
-              "text": "yet our Adversaries fearing hereby the sequel of Peter's or the Pope's supremacy at Rome, deny that ever he was there, or that this Epistle was written there, or that Babylon doth here signify Rome: but they say that Peter wrote this Epistle at Babylon in Chaldaea, though they never"
-            },
-            {
-              "label": "◦",
-              "text": "The Protestants will have Babylon to signify Rome in other places but not here."
+              "label": "1",
+              "text": "Some of the English new translations turn it corruptly, Parishes : others, heritages : both, to avoid the most known, true, and common word in all Christian languages, to wit,"
             }
           ]
         }

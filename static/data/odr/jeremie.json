@@ -9,8 +9,9 @@
         {
           "verse": 1,
           "text": "The words of Jeremy the son of <cr>[1]</cr> Helcias, of the Priests that were in Anathoth, in the land of Benjamin.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* 4. Reg. 22. v. 8."
             }
           ]
@@ -77,8 +78,9 @@
         {
           "verse": 11,
           "text": "And the word of our Lord was made to me, saying: What seest thou Jeremy? And I said: I see a rod <cr>[1]</cr> watching.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "or a nutty rod."
             }
           ]
@@ -612,7 +614,7 @@
         },
         {
           "verse": 23,
-          "text": "Ibeheld the earth, and lo it was void, and a thing of nothing: and the heavens, & there was no light in them."
+          "text": "I beheld the earth, and lo it was void, and a thing of nothing: and the heavens, & there was no light in them."
         },
         {
           "verse": 24,
@@ -620,11 +622,11 @@
         },
         {
           "verse": 25,
-          "text": "Ibeheld, and there was not a man: and every fowl of the air was departed."
+          "text": "I beheld, and there was not a man: and every fowl of the air was departed."
         },
         {
           "verse": 26,
-          "text": "Ilooked, and behold Carmel made desert: and all the cities thereof were destroyed at the face of our Lord, and at the face of the wrath of his fury."
+          "text": "I looked, and behold Carmel made desert: and all the cities thereof were destroyed at the face of our Lord, and at the face of the wrath of his fury."
         },
         {
           "verse": 27,
@@ -682,7 +684,7 @@
         },
         {
           "verse": 5,
-          "text": "Iwill go therefore to the great men, and will speak to them: for they have known the way of their Lord: and behold these altogether have more broken the yoke, have burst the bonds."
+          "text": "I will go therefore to the great men, and will speak to them: for they have known the way of their Lord: and behold these altogether have more broken the yoke, have burst the bonds."
         },
         {
           "verse": 6,
@@ -753,7 +755,13 @@
         },
         {
           "verse": 18,
-          "text": "But yet in those days, saith our Lord, I <na>(e)</na> will not bring you into consummation. <na>(e)</na> As before <i>v. 10. & ch. 4. v. 27.</i>"
+          "text": "But yet in those days, saith our Lord, I <na>(e)</na> will not bring you into consummation.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "As before v. 10. & ch. 4. v. 27."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -825,7 +833,7 @@
         },
         {
           "verse": 2,
-          "text": "Ihave resembled the daughter of Sion to a beautiful and delicate woman."
+          "text": "I have resembled the daughter of Sion to a beautiful and delicate woman."
         },
         {
           "verse": 3,
@@ -958,7 +966,7 @@
         },
         {
           "verse": 27,
-          "text": "Ihave set thee a strong prover in my people: and thou shalt know, and prove their way."
+          "text": "I have set thee a strong prover in my people: and thou shalt know, and prove their way."
         },
         {
           "verse": 28,
@@ -1010,7 +1018,7 @@
         },
         {
           "verse": 7,
-          "text": "Iwill dwell with you in this place: in the land, which I gave to your fathers from the beginning and for ever."
+          "text": "I will dwell with you in this place: in the land, which I gave to your fathers from the beginning and for ever."
         },
         {
           "verse": 8,
@@ -1059,7 +1067,7 @@
         },
         {
           "verse": 14,
-          "text": "Iwill do to this house, wherein my name is invocated, & wherein you have confidence: and to the place which I have given you and your fathers, as I did to Silo."
+          "text": "I will do to this house, wherein my name is invocated, & wherein you have confidence: and to the place which I have given you and your fathers, as I did to Silo."
         },
         {
           "verse": 15,
@@ -1192,7 +1200,7 @@
         },
         {
           "verse": 6,
-          "text": "Iattended, and harkened: no man speaketh that which is good, there is none that doth penance for his sin, saying: What have I done? They are all turned to their own course, as an horse going with violence to battle."
+          "text": "I attended, and harkened: no man speaketh that which is good, there is none that doth penance for his sin, saying: What have I done? They are all turned to their own course, as an horse going with violence to battle."
         },
         {
           "verse": 7,
@@ -1529,7 +1537,7 @@
         },
         {
           "verse": 23,
-          "text": "Iknow Lord, that <na>(c)</na> man's way is not his own: neither is it in a man to walk, and to direct his steps.",
+          "text": "I know Lord, that <na>(c)</na> man's way is not his own: neither is it in a man to walk, and to direct his steps.",
           "notes": [
             {
               "label": "c",
@@ -1717,8 +1725,9 @@
         {
           "verse": 3,
           "text": "And thou Lord hast known me, thou hast seen me, and proved my heart with thee: gather them together as a flock to the victim, and <cr>[1]</cr> sanctify them in the day of slaughter.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Segregate."
             }
           ]
@@ -1737,7 +1746,7 @@
         },
         {
           "verse": 7,
-          "text": "Ihave forsaken my house, I have left mine inheritance: I have given my beloved soul into the hand of her enemies."
+          "text": "I have forsaken my house, I have left mine inheritance: I have given my beloved soul into the hand of her enemies."
         },
         {
           "verse": 8,
@@ -1970,7 +1979,7 @@
         },
         {
           "verse": 8,
-          "text": "Oexpectation of Israel, the saviour thereof in the time of tribulation: why wilt thou be as a sojourner in the land, and as a wayfaring man turning in to lodge?"
+          "text": "O expectation of Israel, the saviour thereof in the time of tribulation: why wilt thou be as a sojourner in the land, and as a wayfaring man turning in to lodge?"
         },
         {
           "verse": 9,
@@ -1996,7 +2005,7 @@
         },
         {
           "verse": 13,
-          "text": "And I said: A a a, O Lord God^ <na>(c)</na> the Prophets say to them: You shall not see the sword, and there shall be no famine among you, but he will give you true peace in this place.",
+          "text": "And I said: A a a, O Lord God <na>(c)</na> the Prophets say to them: You shall not see the sword, and there shall be no famine among you, but he will give you true peace in this place.",
           "notes": [
             {
               "label": "c",
@@ -2287,7 +2296,7 @@
         },
         {
           "verse": 16,
-          "text": "Behold I will send many <na>(d)</na> fishers saith our Lord, and they shall fish them: and after this I will send them many <na>(e)</na> hunters, and they shall hunt them from every mountain, and from every little hill, and out of the caves <na>(f)</na> of rocks. locum.",
+          "text": "Behold I will send many <na>(d)</na> fishers saith our Lord, and they shall fish them: and after this I will send them many <na>(e)</na> hunters, and they shall hunt them from every mountain, and from every little hill, and out of the caves <na>(f)</na> of rocks.",
           "notes": [
             {
               "label": "d",
@@ -2395,7 +2404,7 @@
         },
         {
           "verse": 10,
-          "text": "I^ the Lord <na>(c)</na> that search the heart, and prove the reins: <cr>[1]</cr> which give to every one according to his way, and according to the fruit of his inventions. <cr>[2]</cr>",
+          "text": "I the Lord <na>(c)</na> that search the heart, and prove the reins: <cr>[1]</cr> which give to every one according to his way, and according to the fruit of his inventions. <cr>[2]</cr>",
           "cross_refs": [
             {
               "text": "Psa. 7. v. 10."
@@ -2534,7 +2543,7 @@
         },
         {
           "verse": 7,
-          "text": "Iwill suddenly speak against nation, and against kingdom, to root out, and destroy, and waste it."
+          "text": "I will suddenly speak against nation, and against kingdom, to root out, and destroy, and waste it."
         },
         {
           "verse": 8,
@@ -2821,7 +2830,12 @@
         },
         {
           "verse": 8,
-          "text": "And to this people thou shalt say: Thus saith our Lord: Behold <na>(b)</na> I give before you the way of life, and the way of death. <cr>[1]</cr> they will. <cr>[1]</cr> <i>Duet. 7. 11. 30.</i>",
+          "text": "And to this people thou shalt say: Thus saith our Lord: Behold <na>(b)</na> I give before you the way of life, and the way of death. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Duet. 7. 11. 30."
+            }
+          ],
           "notes": [
             {
               "label": "b",
@@ -2881,7 +2895,7 @@
         },
         {
           "verse": 3,
-          "text": "Thus saith our Lord: Do ye judgement & justice, & deliver the oppressed by violence out of the hand of the oppressor: and the stranger, and pupil, and widow make not sorrowful, nor oppress them unjustly: and the innocent blood^ shed not in this place."
+          "text": "Thus saith our Lord: Do ye judgement & justice, & deliver the oppressed by violence out of the hand of the oppressor: and the stranger, and pupil, and widow make not sorrowful, nor oppress them unjustly: and the innocent blood shed not in this place."
         },
         {
           "verse": 4,
@@ -2996,7 +3010,7 @@
         },
         {
           "verse": 24,
-          "text": "Ilive, saith our Lord: that if <na>(g)</na> Jechonias the son of Joakim the king of Juda shall be a ring on my right hand, thence will I pluck him off.",
+          "text": "I live, saith our Lord: that if <na>(g)</na> Jechonias the son of Joakim the king of Juda shall be a ring on my right hand, thence will I pluck him off.",
           "notes": [
             {
               "label": "g",
@@ -3176,7 +3190,7 @@
         },
         {
           "verse": 25,
-          "text": "Ihave heard what the Prophets have said, prophesying in my name lies, and saying: I have dreamed, I have dreamed."
+          "text": "I have heard what the Prophets have said, prophesying in my name lies, and saying: I have dreamed, I have dreamed."
         },
         {
           "verse": 26,
@@ -3218,7 +3232,7 @@
         },
         {
           "verse": 34,
-          "text": "And the Prophet, and the Priest, and the people that saith: The burden of our Lord^ will I visit upon that man, and upon his house."
+          "text": "And the Prophet, and the Priest, and the people that saith: The burden of our Lord will I visit upon that man, and upon his house."
         },
         {
           "verse": 35,
@@ -3529,8 +3543,9 @@
         {
           "verse": 2,
           "text": "Thus saith our Lord: Stand in the court of the house of our Lord, and thou shalt speak to all the <cr>[1]</cr> cities of Juda, out of the which they come, to adore in the house of our Lord, all the words which I have commanded thee to speak unto them: withdraw not a word,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Men of the cities."
             }
           ]
@@ -3686,7 +3701,7 @@
         },
         {
           "verse": 5,
-          "text": "Imade the earth, and men, and the beasts, that are upon the face of the earth, in my great strength, and in my stretched out arm: and I have given it to him, that pleased in mine eyes."
+          "text": "I made the earth, and men, and the beasts, that are upon the face of the earth, in my great strength, and in my stretched out arm: and I have given it to him, that pleased in mine eyes."
         },
         {
           "verse": 6,
@@ -3827,7 +3842,7 @@
         },
         {
           "verse": 6,
-          "text": "And Jeremy the Prophet said: <na>(b)</na> Amen, Our Lord so do: our Lord raise up thy words, which thou hast prophesied: that the vessels may be brought again into the house of our Lord, and all the transmigration out of Babylon to this place. the people not to believe it, because it is false and shall not happen as the false prophet affirmeth.",
+          "text": "And Jeremy the Prophet said: <na>(b)</na> Amen, Our Lord so do: our Lord raise up thy words, which thou hast prophesied: that the vessels may be brought again into the house of our Lord, and all the transmigration out of Babylon to this place.",
           "notes": [
             {
               "label": "b",
@@ -3979,8 +3994,9 @@
         {
           "verse": 17,
           "text": "Thus saith the Lord of hosts: Behold I will send upon them the sword, and famine, and the pestilence: and I will make them as naughty figs, that cannot be eaten, because they are very naught. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "ch. 24."
             }
           ]
@@ -4150,7 +4166,7 @@
         },
         {
           "verse": 18,
-          "text": "Thus saith our Lord: Behold I <na>(c)</na> will convert the conversion of the tabernacles of Jacob, and will have pity on his houses, & the city shall be built in her high place, and the temple shall be founded according to the order thereof. mountain.",
+          "text": "Thus saith our Lord: Behold I <na>(c)</na> will convert the conversion of the tabernacles of Jacob, and will have pity on his houses, & the city shall be built in her high place, and the temple shall be founded according to the order thereof.",
           "notes": [
             {
               "label": "c",
@@ -4322,7 +4338,7 @@
         },
         {
           "verse": 22,
-          "text": "How long wilt thou be dissolute in deliciousness, o wandering daughter? Because our Lord hath created a new thing upon the earth: <sc>Awoman</sc> <sc>Shall</sc> <sc>Compass</sc> <na>(f)</na> <sc>Aman</sc>.",
+          "text": "How long wilt thou be dissolute in deliciousness, o wandering daughter? Because our Lord hath created a new thing upon the earth: <sc>Awoman Shall Compass</sc> <na>(f)</na> <sc>Aman</sc>.",
           "notes": [
             {
               "label": "f",
@@ -4577,7 +4593,7 @@
           "notes": [
             {
               "label": "d",
-              "text": "When they were in the wilderness newly delivered from Aegypt, they committed many heinous crimes: in murmuring^ schism, idolatry, & other carnal & spiritual sins."
+              "text": "When they were in the wilderness newly delivered from Aegypt, they committed many heinous crimes: in murmuring schism, idolatry, & other carnal & spiritual sins."
             }
           ]
         },
@@ -4612,7 +4628,13 @@
         },
         {
           "verse": 37,
-          "text": "Behold <na>(e)</na> I will gather them together out of all lands, to which I have cast them out in my fury, and in my wrath, and in my great indignation: and I will bring them again into this place, and will make them dwell confidently. <na>(e)</na> Lest any should think that by God's just and severe punishment, or by any revolting from his service the Church might be utterly destroyed, he still promiseth mercy towards the relics of his people, that they shall never all fail, but continue till the Redeemer of mankind Christ shall come. And much less shall Christ's Church ever fail after his coming."
+          "text": "Behold <na>(e)</na> I will gather them together out of all lands, to which I have cast them out in my fury, and in my wrath, and in my great indignation: and I will bring them again into this place, and will make them dwell confidently.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Lest any should think that by God's just and severe punishment, or by any revolting from his service the Church might be utterly destroyed, he still promiseth mercy towards the relics of his people, that they shall never all fail, but continue till the Redeemer of mankind Christ shall come. And much less shall Christ's Church ever fail after his coming."
+            }
+          ]
         },
         {
           "verse": 38,
@@ -5316,7 +5338,12 @@
         },
         {
           "verse": 2,
-          "text": "Thus saith our Lord: Whosoever shall remain in this city, shall die by sword, and famine, and pestilence: but he that shall fly to the Chaldees, shall live, and his life shall be safe and <na>(a)</na> living. <cr>[1]</cr> shall live , signifieth that he shall live most securely. Mystically this safety in voluntary banishment signifieth, that voluntary temporal penance saveth from eternal damnation. <cr>[1]</cr> <i>Iere. 21. v. 9.</i>",
+          "text": "Thus saith our Lord: Whosoever shall remain in this city, shall die by sword, and famine, and pestilence: but he that shall fly to the Chaldees, shall live, and his life shall be safe and <na>(a)</na> living. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Iere. 21. v. 9."
+            }
+          ],
           "notes": [
             {
               "label": "a",
@@ -5392,7 +5419,7 @@
           "notes": [
             {
               "label": "c",
-              "text": "Prophecies are not only certain when a thing is absolutely affirmed, but also when they are conditional, as this was, and the event should have been accordingly if the king had followed the prophet's advise, though by not going^ the contrary captivity, and much misery happened to the king and people."
+              "text": "Prophecies are not only certain when a thing is absolutely affirmed, but also when they are conditional, as this was, and the event should have been accordingly if the king had followed the prophet's advise, though by not going the contrary captivity, and much misery happened to the king and people."
             }
           ]
         },
@@ -5514,7 +5541,7 @@
         },
         {
           "verse": 12,
-          "text": "Take him, and set thine eyes upon him, and do him no evil: but as he will^ so do to him."
+          "text": "Take him, and set thine eyes upon him, and do him no evil: but as he will so do to him."
         },
         {
           "verse": 13,
@@ -5626,8 +5653,9 @@
         {
           "verse": 16,
           "text": "And Godolias the son of Ahicam said to Johanan the son of Caree: Do not <cr>[1]</cr> this word: for thou speakest false of Ismahel.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* This thing."
             }
           ]
@@ -5774,8 +5802,9 @@
         {
           "verse": 3,
           "text": "And let our Lord thy God tell us the way, by which we may go, and the <cr>[1]</cr> word that we must do.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* the thing."
             }
           ]
@@ -5926,7 +5955,13 @@
         },
         {
           "verse": 9,
-          "text": "<na>(c)</na> Take thee great stones in thy hand, and thou shalt hide them in the cave, that is under the brick wall in the gate of Pharao's house in Taphnis: in the sight of the men of Juda. <na>(c)</na> Where both by words and other signs he prophesieth that the King of Babylon will build his palace in the chief city of Aegypt, and in sign thereof layeth great stones as the foundation of the same. As elsewhere he prophesied by facts. <i>ch. 19. v. 10. c. 27. v. 2. c. 32. v. 7.</i>"
+          "text": "<na>(c)</na> Take thee great stones in thy hand, and thou shalt hide them in the cave, that is under the brick wall in the gate of Pharao's house in Taphnis: in the sight of the men of Juda.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Where both by words and other signs he prophesieth that the King of Babylon will build his palace in the chief city of Aegypt, and in sign thereof layeth great stones as the foundation of the same. As elsewhere he prophesied by facts. ch. 19. v. 10. c. 27. v. 2. c. 32. v. 7."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -6002,10 +6037,16 @@
         },
         {
           "verse": 12,
-          "text": "And I will take the remnant of Juda, which have set their face to go into the Land of Aegypt, and to dwell there, and they shall be all consumed in the Land of Aegypt: they shall fall by the sword, and by famine: & they shall be consumed <na>(b)</na> from the least even to the greatest, by the sword, and by famine shall they die: <cr>[1]</cr> and they shall be for an oath, and for a miracle, and into malediction, and into reproach. <na>(b)</na> Not all absolutely, but the greatest part and well near all: for some shall fly from thence. <i>v. 14. & 28.</i>",
+          "text": "And I will take the remnant of Juda, which have set their face to go into the Land of Aegypt, and to dwell there, and they shall be all consumed in the Land of Aegypt: they shall fall by the sword, and by famine: & they shall be consumed <na>(b)</na> from the least even to the greatest, by the sword, and by famine shall they die: <cr>[1]</cr> and they shall be for an oath, and for a miracle, and into malediction, and into reproach.",
           "cross_refs": [
             {
               "text": "Ch. 42. v. 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "Not all absolutely, but the greatest part and well near all: for some shall fly from thence. v. 14. & 28."
             }
           ]
         },
@@ -6031,7 +6072,7 @@
           "notes": [
             {
               "label": "c",
-              "text": "They reputed the moon as Queen, and the sun as King of the stars: more peculiarly men did sacrifice to the sun, and women to the moon, but so that all did cooperate in both. For the children gathered sticks^ the fathers kindled the fire, and women tempered the dough, and made cakes unto the queen of heaven. ch. 7. v. 18. 4. Reg. 23. v. 5."
+              "text": "They reputed the moon as Queen, and the sun as King of the stars: more peculiarly men did sacrifice to the sun, and women to the moon, but so that all did cooperate in both. For the children gathered sticks the fathers kindled the fire, and women tempered the dough, and made cakes unto the queen of heaven. ch. 7. v. 18. 4. Reg. 23. v. 5."
             }
           ]
         },
@@ -6069,7 +6110,7 @@
         },
         {
           "verse": 26,
-          "text": "Therefore hear ye the word of our Lord all Juda, which dwell in the Land of Aegypt: Behold I have sworn by my great name, saith our Lord: that my name shall no more be called by the mouth of every man of Juda, saying: Our Lord God liveth^ in all the Land of Aegypt."
+          "text": "Therefore hear ye the word of our Lord all Juda, which dwell in the Land of Aegypt: Behold I have sworn by my great name, saith our Lord: that my name shall no more be called by the mouth of every man of Juda, saying: Our Lord God liveth in all the Land of Aegypt."
         },
         {
           "verse": 27,
@@ -6137,7 +6178,7 @@
           "notes": [
             {
               "label": "a",
-              "text": "As partly before, so more especially in the chapters following^ the Prophet foresheweth the punishment of diverse gentiles which were the chiefest enemies to the Jews."
+              "text": "As partly before, so more especially in the chapters following the Prophet foresheweth the punishment of diverse gentiles which were the chiefest enemies to the Jews."
             }
           ]
         },
@@ -6185,7 +6226,7 @@
         },
         {
           "verse": 11,
-          "text": "Go up into Galaad, & take resin <na>(c)</na> o virgin the daughter of Aegypt: thou doest in vain multiply medicines, there shall not be health to thee. them, as appeareth by the next words: <i>Thou doest in vain multiply medicines, or remedies, and v. 5. 10. 16.</i>",
+          "text": "Go up into Galaad, & take resin <na>(c)</na> o virgin the daughter of Aegypt: thou doest in vain multiply medicines, there shall not be health to thee.",
           "notes": [
             {
               "label": "c",
@@ -6212,8 +6253,9 @@
         {
           "verse": 16,
           "text": "He hath multiplied them that fall, and man hath fallen against his neighbour, and they shall say: Arise, and let us return to our people, and to the Land of our nativity, from the face of the sword of <cr>[1]</cr> the dove.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* as ch. 25. v. 38."
             }
           ]
@@ -6224,7 +6266,7 @@
         },
         {
           "verse": 18,
-          "text": "Ilive (saith the King, the Lord of hosts is his name) that as Thabor in the mountains, and as Carmel in the sea, he shall come."
+          "text": "I live (saith the King, the Lord of hosts is his name) that as Thabor in the mountains, and as Carmel in the sea, he shall come."
         },
         {
           "verse": 19,
@@ -6315,11 +6357,11 @@
         },
         {
           "verse": 6,
-          "text": "Osword of our Lord, how long wilt thou not be quiet? Get into thy scabbard, be cooled, and be still."
+          "text": "O sword of our Lord, how long wilt thou not be quiet? Get into thy scabbard, be cooled, and be still."
         },
         {
           "verse": 7,
-          "text": "How shall it be quiet when our Lord hath commanded it against Ascalon, and against the countries thereof by the sea side, and there^ hath made appointment with it?"
+          "text": "How shall it be quiet when our Lord hath commanded it against Ascalon, and against the countries thereof by the sea side, and there hath made appointment with it?"
         }
       ],
       "summary": "The desolation of the Philisthiims, Tyre, Sidon, Gaza, and Ascalon, is prophesied."
@@ -6475,7 +6517,7 @@
           "notes": [
             {
               "label": "d",
-              "text": "Moabites descending from Lot, Abraham's nephew^ derided their kindred in miseries, and are therefore more severely punished."
+              "text": "Moabites descending from Lot, Abraham's nephew derided their kindred in miseries, and are therefore more severely punished."
             }
           ]
         },
@@ -6489,7 +6531,7 @@
         },
         {
           "verse": 30,
-          "text": "Iknow, saith our Lord, his boasting: and that the strength thereof is not according to it, neither hath it endeavoured to do according to that which it was able."
+          "text": "I know, saith our Lord, his boasting: and that the strength thereof is not according to it, neither hath it endeavoured to do according to that which it was able."
         },
         {
           "verse": 31,
@@ -6537,7 +6579,7 @@
           "notes": [
             {
               "label": "f",
-              "text": "Amongst the Jews and others in those parts, cutting of their hair was a sign of mourning, but with the Romans contrarywise^ mourners suffered their hair grow long. Cicero Orat. pro Pub. Sestio, & pro Cn. Plancio."
+              "text": "Amongst the Jews and others in those parts, cutting of their hair was a sign of mourning, but with the Romans contrarywise mourners suffered their hair grow long. Cicero Orat. pro Pub. Sestio, & pro Cn. Plancio."
             }
           ]
         },
@@ -6666,8 +6708,9 @@
         {
           "verse": 14,
           "text": "<cr>[1]</cr> I have heard a bruit from our Lord, & a legate is sent to the Nations: Gather yourselves together, and come against her, and let us rise up into battle.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Abdiae v. 1."
             }
           ]
@@ -6679,15 +6722,16 @@
         {
           "verse": 16,
           "text": "Thine arrogancy hath deceived thee, and the pride of thy heart: which dwellest in the caves of the rock, and endeavourest to apprehend the height of the hill. When thou shalt exalt thy nest as an eagle, <cr>[1]</cr> thence will I bring thee down, saith our Lord.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Abd. v. 4."
             }
           ]
         },
         {
           "verse": 17,
-          "text": "And Idumea shall be desolate: every one that shall pass by it, shall be <na>(d)</na> astonished, & shall hiss upon all the plagues thereof. events, maketh men to be <i>astonished:</i> so if the same do please them, they <i>hiss</i> thereat, signifying contempt. <i>Terms often used by this prophet.</i>",
+          "text": "And Idumea shall be desolate: every one that shall pass by it, shall be <na>(d)</na> astonished, & shall hiss upon all the plagues thereof.",
           "notes": [
             {
               "label": "d",
@@ -6964,7 +7008,7 @@
         },
         {
           "verse": 24,
-          "text": "Ihave snared thee, and thou art taken Babylon, and thou knewest it not: thou art found & apprehended, because thou hast provoked our Lord."
+          "text": "I have snared thee, and thou art taken Babylon, and thou knewest it not: thou art found & apprehended, because thou hast provoked our Lord."
         },
         {
           "verse": 25,
@@ -7061,11 +7105,20 @@
         },
         {
           "verse": 44,
-          "text": "Behold <na>(k)</na> as a lion he shall come up <na>(l)</na> from the pride of Jordan to the strong beautifulness: because I will make him run suddenly to her: and who shall be a chosen one, whom I may appoint over her? For who is like to me? And who shall abide me? And who is this Pastor, that can resist my countenance? <cr>[1]</cr> devoured others: so at last others destroyed him, and all his forces, coming suddenly upon him. <na>(l)</na> As when Jordan swelling overfloweth the land. <cr>[1]</cr> <i>Iob. 41.</i>",
+          "text": "Behold <na>(k)</na> as a lion he shall come up <na>(l)</na> from the pride of Jordan to the strong beautifulness: because I will make him run suddenly to her: and who shall be a chosen one, whom I may appoint over her? For who is like to me? And who shall abide me? And who is this Pastor, that can resist my countenance? <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Iob. 41."
+            }
+          ],
           "notes": [
             {
               "label": "k",
               "text": "As the King of Babylon like a lion destroyed, and"
+            },
+            {
+              "label": "l",
+              "text": "As when Jordan swelling overfloweth the land."
             }
           ]
         },
@@ -7105,8 +7158,9 @@
         {
           "verse": 3,
           "text": "Let not him that bendeth bend his bow, and let not him go up that is in <cr>[1]</cr> a brigandine, spare not her young men, kill all her host.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* a coat of mail."
             }
           ]
@@ -7279,7 +7333,7 @@
         },
         {
           "verse": 40,
-          "text": "Iwill lead them as lambs to be a victim, and as rams with kids."
+          "text": "I will lead them as lambs to be a victim, and as rams with kids."
         },
         {
           "verse": 41,
@@ -7397,7 +7451,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "A <cr>[1]</cr> child of one and twenty years was Sedecias when he began to reign: and eleven years he reigned in Jerusalem: and the name of his mother was Amital, the daughter of Jeremie of Lobna."
+          "text": "A <cr>[1]</cr> child of one and twenty years was Sedecias when he began to reign: and eleven years he reigned in Jerusalem: and the name of his mother was Amital, the daughter of Jeremie of Lobna.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This whole history is written more largely in the two last chapters of the fourth book of Kings, & in the last of Paralipomenon."
+            }
+          ]
         },
         {
           "verse": 2,

@@ -247,10 +247,6 @@
       "chapter": 2,
       "verses": [
         {
-          "verse": 0,
-          "text": "1 Paralipomenon 2"
-        },
-        {
           "verse": 1,
           "text": "And the children of <na>(a)</na> Israel: Ruben, Simeon, Levi, Juda, Issachar, and Zabulon,",
           "notes": [
@@ -460,7 +456,7 @@
         },
         {
           "verse": 47,
-          "text": "And the sons of Jahaddai, Regom, and Joathan, and Gesan, and Phalet, and Epha, and Saaph. 1 Paralipomenon 2"
+          "text": "And the sons of Jahaddai, Regom, and Joathan, and Gesan, and Phalet, and Epha, and Saaph."
         },
         {
           "verse": 48,
@@ -481,8 +477,9 @@
         {
           "verse": 52,
           "text": "And there were sons of Sobal the father of Chariathiarim, he that saw the half of the <cr>[1]</cr> restings.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* dwellings, or resting places."
             }
           ]
@@ -529,7 +526,7 @@
         },
         {
           "verse": 5,
-          "text": "Moreover in Jerusalem^ sons were born to him, Simmaa, and Sobab, and Nathan, and Salomon, four of Bethsabee the daughter of Ammiel,"
+          "text": "Moreover in Jerusalem sons were born to him, Simmaa, and Sobab, and Nathan, and Salomon, four of Bethsabee the daughter of Ammiel,"
         },
         {
           "verse": 6,
@@ -783,7 +780,7 @@
         },
         {
           "verse": 37,
-          "text": "Ziza also the son of Zephei the 1 Paralipomenon 4 son of Allon the son of Adaia, the son of Semri the son of Samaia."
+          "text": "Ziza also the son of Zephei the son of Allon the son of Adaia, the son of Semri the son of Samaia."
         },
         {
           "verse": 38,
@@ -899,7 +896,7 @@
         },
         {
           "verse": 20,
-          "text": "gave them aid. And the Agarenes were delivered into their hands, and all that were with them, because they called upon God when they fought: and he heard them, <na>(b)</na> because they believed in him. 1 Paralipomenon 5 <i>overcame Kingdoms. Heb. 11.</i>",
+          "text": "gave them aid. And the Agarenes were delivered into their hands, and all that were with them, because they called upon God when they fought: and he heard them, <na>(b)</na> because they believed in him.",
           "notes": [
             {
               "label": "b",
@@ -1078,7 +1075,7 @@
         },
         {
           "verse": 33,
-          "text": "And these are they, which assisted with their sons, 1 Paralipomenon 6 of the sons of Caath, Hemam singing man, the son of Joel, the son of Samuel,"
+          "text": "And these are they, which assisted with their sons, of the sons of Caath, Hemam singing man, the son of Joel, the son of Samuel,"
         },
         {
           "verse": 34,
@@ -1256,7 +1253,7 @@
         },
         {
           "verse": 76,
-          "text": "Moreover of the 1 Paralipomenon 6 tribe of Nephthali, Cedes in Galilee and the suburbs thereof, Hamon with the suburbs thereof, and Cariathaim, and the suburbs thereof."
+          "text": "Moreover of the tribe of Nephthali, Cedes in Galilee and the suburbs thereof, Hamon with the suburbs thereof, and Cariathaim, and the suburbs thereof."
         },
         {
           "verse": 77,
@@ -1382,7 +1379,7 @@
         },
         {
           "verse": 21,
-          "text": "and this man's son Suthala, and this man's son Ezer, and Elad: and the men of Geth^ born in the land slew them, because they came down to invade their possessions."
+          "text": "and this man's son Suthala, and this man's son Ezer, and Elad: and the men of Geth born in the land slew them, because they came down to invade their possessions."
         },
         {
           "verse": 22,
@@ -1390,7 +1387,7 @@
         },
         {
           "verse": 23,
-          "text": "And 1 Paralipomenon 7 he went in unto his wife: who conceived and bare a son, and he called his name Beria, for that he was born in the evils of his house:"
+          "text": "And he went in unto his wife: who conceived and bare a son, and he called his name Beria, for that he was born in the evils of his house:"
         },
         {
           "verse": 24,
@@ -1504,7 +1501,7 @@
         },
         {
           "verse": 10,
-          "text": "Jehus also, and Sechia, and Marma. These are his sons^ Princes in their families."
+          "text": "Jehus also, and Sechia, and Marma. These are his sons Princes in their families."
         },
         {
           "verse": 11,
@@ -1512,11 +1509,11 @@
         },
         {
           "verse": 12,
-          "text": "Moreover the sons of Elphaal^ Heber, and Misaam, and Samad: this man built Ono, and Lod, and her daughters."
+          "text": "Moreover the sons of Elphaal Heber, and Misaam, and Samad: this man built Ono, and Lod, and her daughters."
         },
         {
           "verse": 13,
-          "text": "And Baria, and Sama^ Princes of their kindreds that dwelt in Aialon: these drove away the inhabitants of Geth."
+          "text": "And Baria, and Sama Princes of their kindreds that dwelt in Aialon: these drove away the inhabitants of Geth."
         },
         {
           "verse": 14,
@@ -1600,7 +1597,7 @@
         },
         {
           "verse": 34,
-          "text": "And the son of Jonathas, Meribbaal: and Meribbaal 1 Paralipomenon 8 begat Micha."
+          "text": "And the son of Jonathas, Meribbaal: and Meribbaal begat Micha."
         },
         {
           "verse": 35,
@@ -1736,7 +1733,7 @@
         },
         {
           "verse": 25,
-          "text": "And their brethren dwelt in 1 Paralipomenon 9 villages, & came upon their Sabbaths from time to time."
+          "text": "And their brethren dwelt in villages, & came upon their Sabbaths from time to time."
         },
         {
           "verse": 26,
@@ -1822,7 +1819,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> the Philisthiims fought against Israel, and the men of Israel fled from the Palesthines, and they fell wounded in mount Gelboe."
+          "text": "And <cr>[1]</cr> the Philisthiims fought against Israel, and the men of Israel fled from the Palesthines, and they fell wounded in mount Gelboe.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part. King Saul and all his family overthrown."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1866,7 +1869,7 @@
         },
         {
           "verse": 12,
-          "text": "every one of the valiant men 1 Paralipomenon 10 arose, and took the bodies of Saul and of his sons, and brought them into Jabes, & buried their bones under an oak, that was in Jabes, and they fasted seven days."
+          "text": "every one of the valiant men arose, and took the bodies of Saul and of his sons, and brought them into Jabes, & buried their bones under an oak, that was in Jabes, and they fasted seven days."
         },
         {
           "verse": 13,
@@ -1890,7 +1893,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "All <cr>[1]</cr> Israel therefore was gathered together to David in Hebron, saying: We are thy bone, and thy flesh."
+          "text": "All <cr>[1]</cr> Israel therefore was gathered together to David in Hebron, saying: We are thy bone, and thy flesh.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part. King David's reign and his special acts."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1930,7 +1939,7 @@
         },
         {
           "verse": 11,
-          "text": "And this is the number of David's strong ones: Jesbaam the son of Hachamoni Prince among thirty: this man lifted up his spear upon three hundred^ wounded at one time."
+          "text": "And this is the number of David's strong ones: Jesbaam the son of Hachamoni Prince among thirty: this man lifted up his spear upon three hundred wounded at one time."
         },
         {
           "verse": 12,
@@ -1962,11 +1971,11 @@
         },
         {
           "verse": 19,
-          "text": "saying: God forbid that in the sight of my God I should do this, and should drink the blood of these men: because in the peril of their lives they have brought me the water. And for this cause he would not 1 Paralipomenon 11 drink. These things did the three most valiants."
+          "text": "saying: God forbid that in the sight of my God I should do this, and should drink the blood of these men: because in the peril of their lives they have brought me the water. And for this cause he would not drink. These things did the three most valiants."
         },
         {
           "verse": 20,
-          "text": "Abisai also the brother of Joab^ he was Prince of three, and he lifted up his spear against three hundred^ wounded, and he was among three most renowned,"
+          "text": "Abisai also the brother of Joab he was Prince of three, and he lifted up his spear against three hundred wounded, and he was among three most renowned,"
         },
         {
           "verse": 21,
@@ -2142,7 +2151,7 @@
         },
         {
           "verse": 15,
-          "text": "These are they which passed Jordan the first month, when it used to flow over his banks: & they chased away all that dwelt in 1 Paralipomenon 12 the valleys toward the east quarter and the west."
+          "text": "These are they which passed Jordan the first month, when it used to flow over his banks: & they chased away all that dwelt in the valleys toward the east quarter and the west."
         },
         {
           "verse": 16,
@@ -2258,7 +2267,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "1 Paralipomenon 13 <i>Obededom.</i>"
+          "text": "Obededom."
         },
         {
           "verse": 1,
@@ -2394,7 +2403,7 @@
         },
         {
           "verse": 16,
-          "text": "David therefore did as God had 1 Paralipomenon 14 commanded him, & struck the camp of the Philisthians from Gabaon unto Gazera."
+          "text": "David therefore did as God had commanded him, & struck the camp of the Philisthians from Gabaon unto Gazera."
         },
         {
           "verse": 17,
@@ -2512,7 +2521,7 @@
         },
         {
           "verse": 27,
-          "text": "Moreover David was clothed with a robe of fine linen, & all the Levites that carried the Ark, and the singing men, and Chonenias the Prince of prophecy among the singers: and David also was clothed with an <na>(a)</na> Ephod of linen. 1 Paralipomenon 15",
+          "text": "Moreover David was clothed with a robe of fine linen, & all the Levites that carried the Ark, and the singing men, and Chonenias the Prince of prophecy among the singers: and David also was clothed with an <na>(a)</na> Ephod of linen.",
           "notes": [
             {
               "label": "a",
@@ -2662,7 +2671,7 @@
         },
         {
           "verse": 27,
-          "text": "Confession and 1 Paralipomenon 16 magnificence before him: strength and joy in his place."
+          "text": "Confession and magnificence before him: strength and joy in his place."
         },
         {
           "verse": 28,
@@ -2787,7 +2796,7 @@
         },
         {
           "verse": 11,
-          "text": "And when thou shalt have accomplished thy days 1 Paralipomenon 17 to go to thy fathers, I will raise up thy seed after thee, which shall be of thy children: and I will establish his Kingdom."
+          "text": "And when thou shalt have accomplished thy days to go to thy fathers, I will raise up thy seed after thee, which shall be of thy children: and I will establish his Kingdom."
         },
         {
           "verse": 12,
@@ -2795,7 +2804,7 @@
         },
         {
           "verse": 13,
-          "text": "Iwill be to him for a father, and he shall be to me for a son: and my mercy I will not take from him, as I took from him, that was before thee."
+          "text": "I will be to him for a father, and he shall be to me for a son: and my mercy I will not take from him, as I took from him, that was before thee."
         },
         {
           "verse": 14,
@@ -2907,7 +2916,13 @@
         },
         {
           "verse": 11,
-          "text": "But all the vessels also of gold, and silver, and brass^ king David <na>(b)</na> consecrated to our Lord, 1 Paralipomenon 18 with the silver and gold, which he had taken out of all the nations, as well of Idumea, and Moab, and the children of Ammon, as of the Philisthiims & Amalec. <na>(b)</na> That which is dedicated to sacred use, is consecrated to God."
+          "text": "But all the vessels also of gold, and silver, and brass king David <na>(b)</na> consecrated to our Lord, with the silver and gold, which he had taken out of all the nations, as well of Idumea, and Moab, and the children of Ammon, as of the Philisthiims & Amalec.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "That which is dedicated to sacred use, is consecrated to God."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -3010,7 +3025,7 @@
         },
         {
           "verse": 17,
-          "text": "Which when it was told David, he gathered together all Israel, and passed Jordan, and fell upon them, & directed his army 1 Paralipomenon 19 against him, they fighting on the contrary part."
+          "text": "Which when it was told David, he gathered together all Israel, and passed Jordan, and fell upon them, & directed his army against him, they fighting on the contrary part."
         },
         {
           "verse": 18,
@@ -3067,18 +3082,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But <na>(a)[1]</na> Satan rose against Israel: and moved David to number Israel.",
-          "cross_refs": [
-            {
-              "text": "2. Reg. 24."
-            }
-          ],
-          "notes": [
-            {
-              "label": "a",
-              "text": "By God's permission David was tempted and overcome. 2. Reg. 24."
-            }
-          ]
+          "text": "But <na>(a)[1]</na> Satan rose against Israel: and moved David to number Israel."
         },
         {
           "verse": 2,
@@ -3086,7 +3090,7 @@
         },
         {
           "verse": 3,
-          "text": "And Joab, answered: Our Lord increase his people an hundred fold more than they are: are they not^ my lord king^ all thy servants? Why doth my lord seek this, which may be reputed for a sin to Israel?"
+          "text": "And Joab, answered: Our Lord increase his people an hundred fold more than they are: are they not my lord king all thy servants? Why doth my lord seek this, which may be reputed for a sin to Israel?"
         },
         {
           "verse": 4,
@@ -3102,7 +3106,7 @@
         },
         {
           "verse": 7,
-          "text": "And that which was commanded displeased God: and he struck Israel. 1 Paralipomenon 21"
+          "text": "And that which was commanded displeased God: and he struck Israel."
         },
         {
           "verse": 8,
@@ -3173,8 +3177,9 @@
         {
           "verse": 23,
           "text": "And Ornan said to David: Take it, and let my lord the king do whatsoever pleaseth him: yea the oxen also I give for holocaust, and <cr>[1]</cr> the drays for wood, and wheat for sacrifice: I will give all things willingly.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* little carts."
             }
           ]
@@ -3308,7 +3313,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "David therefore being old and full of days, made Salomon his son king over Israel 1 Paralipomenon 23"
+          "text": "David therefore being old and full of days, made Salomon his son king over Israel"
         },
         {
           "verse": 2,
@@ -3447,7 +3452,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "1 Paralipomenon 24 <i>according to their Priestly function, 20. likewise principal Levites in their offices.</i>"
+          "text": "according to their Priestly function, 20. likewise principal <i>Levites in their offices.</i>"
         },
         {
           "verse": 1,
@@ -3591,7 +3596,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Therefore David, and the officers of the host separated for the ministry the sons of Asaph, and Heman, and <na>(a)</na> Idithun: which should <na>(b)</na> prophesy on harps, and psalteries, and cymbals, according to their number serving the office dedicated to them. 1 Paralipomenon 25",
+          "text": "Therefore David, and the officers of the host separated for the ministry the sons of Asaph, and Heman, and <na>(a)</na> Idithun: which should <na>(b)</na> prophesy on harps, and psalteries, and cymbals, according to their number serving the office dedicated to them.",
           "notes": [
             {
               "label": "a",
@@ -3767,7 +3772,13 @@
         },
         {
           "verse": 10,
-          "text": "And of Hosa, that is, of the sons of Merari: Semri the Prince ( <na>(a)</na> for he had not a first-begotten, and therefore his father made him chief) 1 Paralipomenon 26 <na>(a)</na> Either his first son was dead, or was not fit to be chief over the rest."
+          "text": "And of Hosa, that is, of the sons of Merari: Semri the Prince ( <na>(a)</na> for he had not a first-begotten, and therefore his father made him chief)",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Either his first son was dead, or was not fit to be chief over the rest."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -3887,7 +3898,7 @@
         },
         {
           "verse": 5,
-          "text": "Captain also of the third company in the 1 Paralipomenon 27 third month, was Banaias the son of Joiada the Priest: and in his division four and twenty thousand."
+          "text": "Captain also of the third company in the third month, was Banaias the son of Joiada the Priest: and in his division four and twenty thousand."
         },
         {
           "verse": 6,
@@ -4019,7 +4030,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "1 Paralipomenon 28 <i>to serve God sincerely: 10. and to build the temple, describing in what form to make it.</i>"
+          "text": "to serve God sincerely: 10. and to build the temple, <i>describing in what form to make it.</i>"
         },
         {
           "verse": 1,
@@ -4121,7 +4132,7 @@
         },
         {
           "verse": 20,
-          "text": "David also said to Salomon his son: Deal manfully, and take courage, and do it: fear not, 1 Paralipomenon 28 and be not dismayed: for our Lord my God will be with thee, and will not leave thee, nor forsake thee, till thou perfit all the work of the ministry of the house of our Lord."
+          "text": "David also said to Salomon his son: Deal manfully, and take courage, and do it: fear not, and be not dismayed: for our Lord my God will be with thee, and will not leave thee, nor forsake thee, till thou perfit all the work of the ministry of the house of our Lord."
         },
         {
           "verse": 21,
@@ -4140,8 +4151,9 @@
         {
           "verse": 2,
           "text": "And I with all my ability have prepared the expenses of the house of my God. Gold for vessels of gold, and silver for them of silver, brass for them of brass, iron for them of iron, wood for them of wood: and onyx stones, and as it were <cr>[1]</cr> stibians, and of diverse colours, and every precious stone, and marble of Paros most abundantly:",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* a kind of fine white stone."
             }
           ]
@@ -4216,7 +4228,7 @@
         },
         {
           "verse": 17,
-          "text": "Iknow my God that thou provest the hearts, and lovest simplicity, 1 Paralipomenon 29 wherefore I also in the simplicity of my heart, gladly have offered all these things: and thy people, which is here found, I have seen with great joy offer thee donaries."
+          "text": "I know my God that thou provest the hearts, and lovest simplicity, wherefore I also in the simplicity of my heart, gladly have offered all these things: and thy people, which is here found, I have seen with great joy offer thee donaries."
         },
         {
           "verse": 18,

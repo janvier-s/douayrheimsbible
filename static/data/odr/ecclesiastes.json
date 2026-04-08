@@ -50,7 +50,7 @@
         },
         {
           "verse": 10,
-          "text": "<na>(b)</na> Nothing under the sun is new, neither is any man able to say: Behold this is new: for it hath already gone before in the ages that were before us. the beginning of the world, or are procreated of diverse kinds preexisting. S. Tho. 1. p. q. 73. a. 1. ad. 3.",
+          "text": "<na>(b)</na> Nothing under the sun is new, neither is any man able to say: Behold this is new: for it hath already gone before in the ages that were before us.",
           "notes": [
             {
               "label": "b",
@@ -64,7 +64,7 @@
         },
         {
           "verse": 12,
-          "text": "I^ Ecclesiastes have been king of Israel in Jerusalem,"
+          "text": "I Ecclesiastes have been king of Israel in Jerusalem,"
         },
         {
           "verse": 13,
@@ -72,7 +72,7 @@
         },
         {
           "verse": 14,
-          "text": "Ihave seen all things, that are done under the sun, and behold all <na>(c)</na> are vanity, & affliction of spirit.",
+          "text": "I have seen all things, that are done under the sun, and behold all <na>(c)</na> are vanity, & affliction of spirit.",
           "notes": [
             {
               "label": "c",
@@ -86,7 +86,7 @@
         },
         {
           "verse": 16,
-          "text": "Ihave spoken in my heart, saying: Lo I have been made great, and have gone beyond all in wisdom, that were before me in Jerusalem: and my mind hath contemplated many things wisely, and I have learned."
+          "text": "I have spoken in my heart, saying: Lo I have been made great, and have gone beyond all in wisdom, that were before me in Jerusalem: and my mind hath contemplated many things wisely, and I have learned."
         },
         {
           "verse": 17,
@@ -135,15 +135,15 @@
         },
         {
           "verse": 3,
-          "text": "Ihave thought in my heart to withdraw my flesh from wine, that I might transfer my mind to wisdom, and might avoid folly, till I might see what should be profitable for the children of men: what is needful to be done under the sun, in the number of the days of their life."
+          "text": "I have thought in my heart to withdraw my flesh from wine, that I might transfer my mind to wisdom, and might avoid folly, till I might see what should be profitable for the children of men: what is needful to be done under the sun, in the number of the days of their life."
         },
         {
           "verse": 4,
-          "text": "Ihave magnified my works, I have built me houses, & planted vineyards,"
+          "text": "I have magnified my works, I have built me houses, & planted vineyards,"
         },
         {
           "verse": 5,
-          "text": "Ihave made gardens, and orchards, and set them with trees of all kinds,"
+          "text": "I have made gardens, and orchards, and set them with trees of all kinds,"
         },
         {
           "verse": 6,
@@ -151,11 +151,11 @@
         },
         {
           "verse": 7,
-          "text": "Ihave possessed men-servants and women-servants, and have had a great family: herds also, and great flocks of sheep, above all that were before me in Jerusalem:"
+          "text": "I have possessed men-servants and women-servants, and have had a great family: herds also, and great flocks of sheep, above all that were before me in Jerusalem:"
         },
         {
           "verse": 8,
-          "text": "Ihave heaped together to myself silver, and gold, and the substance of kings, and provinces: I made me singing men, & singing women, and the delights of the children of men: cups, and goblets to serve to pour out wines:"
+          "text": "I have heaped together to myself silver, and gold, and the substance of kings, and provinces: I made me singing men, & singing women, and the delights of the children of men: cups, and goblets to serve to pour out wines:"
         },
         {
           "verse": 9,
@@ -171,7 +171,7 @@
         },
         {
           "verse": 12,
-          "text": "Ipassed further to contemplate wisdom, and errors, and folly (what is man, quoth I, that he can follow the King his Maker?)"
+          "text": "I passed further to contemplate wisdom, and errors, and folly (what is man, quoth I, that he can follow the King his Maker?)"
         },
         {
           "verse": 13,
@@ -303,7 +303,7 @@
         },
         {
           "verse": 10,
-          "text": "Ihave seen the affliction, which God hath given to the children of men, that they may be distracted in it."
+          "text": "I have seen the affliction, which God hath given to the children of men, that they may be distracted in it."
         },
         {
           "verse": 11,
@@ -319,7 +319,7 @@
         },
         {
           "verse": 14,
-          "text": "Ihave learned that all the works, which God hath made, persevere for ever: we cannot add any thing, nor take away from those things, which God hath made that he may be feared."
+          "text": "I have learned that all the works, which God hath made, persevere for ever: we cannot add any thing, nor take away from those things, which God hath made that he may be feared."
         },
         {
           "verse": 15,
@@ -473,12 +473,7 @@
         },
         {
           "verse": 3,
-          "text": "<na>(b)[1]</na> If thou hast vowed any thing to God, defer not to pay it: for an unfaithful and foolish promise displeaseth him. But whatsoever thou hast vowed, pay it: <na>(b)</na> Vow or promise once made must be fulfilled.",
-          "cross_refs": [
-            {
-              "text": "Deu. 23."
-            }
-          ]
+          "text": "<na>(b)[1]</na> If thou hast vowed any thing to God, defer not to pay it: for an unfaithful and foolish promise displeaseth him. But whatsoever thou hast vowed, pay it:"
         },
         {
           "verse": 4,
@@ -631,7 +626,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "What <cr>[1]</cr> needeth a man to seek things greater than himself, whereas he is ignorant, what is profitable for him in his life, in the number of the days of his peregrination, and the time that passeth as a shadow? Or who can tell him what shall be after him under the sun?"
+          "text": "What <cr>[1]</cr> needeth a man to seek things greater than himself, whereas he is ignorant, what is profitable for him in his life, in the number of the days of his peregrination, and the time that passeth as a shadow? Or who can tell him what shall be after him under the sun?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "None can perfectly know the nature of all things present, or to come."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -639,6 +640,12 @@
           "cross_refs": [
             {
               "text": "Pro. 22."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The 2. part. True felicity is procured by good life, and consisteth in the eternal sight of God."
             }
           ]
         },
@@ -751,7 +758,7 @@
         },
         {
           "verse": 24,
-          "text": "Ihave proved all things in wisdom. I have said: I will become wise, & it departed farther from me"
+          "text": "I have proved all things in wisdom. I have said: I will become wise, & it departed farther from me"
         },
         {
           "verse": 25,
@@ -759,7 +766,7 @@
         },
         {
           "verse": 26,
-          "text": "Ihave viewed all things with my mind, that I might know, and consider, and might seek wisdom and reason: and that I might know the impiety of the fool, and the error of the imprudent:"
+          "text": "I have viewed all things with my mind, that I might know, and consider, and might seek wisdom and reason: and that I might know the impiety of the fool, and the error of the imprudent:"
         },
         {
           "verse": 27,
@@ -768,8 +775,9 @@
         {
           "verse": 28,
           "text": "Lo this have I found, said <cr>[1]</cr> Ecclesiastes, one thing and another, that I might find reason,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* The preacher."
             }
           ]
@@ -791,15 +799,14 @@
         {
           "verse": 30,
           "text": "Only this I have found, that <na>(f)</na> God made man right, and he hath entangled himself with infinite questions. Who is such a one as the wise? And who hath known the resolution of <cr>[1]</cr> the word.",
-          "cross_refs": [
-            {
-              "text": "* The obscure thing."
-            }
-          ],
           "notes": [
             {
               "label": "f",
               "text": "God made man right, & he of his own will fell from God. See S. Aug. li. 14. c. 11. civit."
+            },
+            {
+              "label": "1",
+              "text": "* The obscure thing."
             }
           ]
         }
@@ -869,7 +876,13 @@
         },
         {
           "verse": 14,
-          "text": "There is also another <na>(b)</na> vanity, which is done upon the earth. There are just men, to whom evils happen, as though they had done the works of the impious: and there are impious men, which are so secure, as though they had the deeds of the just. But this also I judge most vain. <na>(b)</na> By this term (vanity) is still understood that felicity is not in prosperous things of this world: neither are all men miserable, that suffer adversity."
+          "text": "There is also another <na>(b)</na> vanity, which is done upon the earth. There are just men, to whom evils happen, as though they had done the works of the impious: and there are impious men, which are so secure, as though they had the deeds of the just. But this also I judge most vain.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "By this term (vanity) is still understood that felicity is not in prosperous things of this world: neither are all men miserable, that suffer adversity."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -878,8 +891,9 @@
         {
           "verse": 16,
           "text": "And I have set my heart to know wisdom, and to understand the <cr>[1]</cr> distraction that is in the earth: There is a man that days and nights taketh no sleep with his eyes.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Busy searching."
             }
           ]
@@ -1016,7 +1030,7 @@
         },
         {
           "verse": 7,
-          "text": "Ihave seen <na>(b)</na> servants upon horses: and Princes walking on the ground as servants.",
+          "text": "I have seen <na>(b)</na> servants upon horses: and Princes walking on the ground as servants.",
           "notes": [
             {
               "label": "b",
@@ -1208,8 +1222,9 @@
         {
           "verse": 8,
           "text": "Vanity of vanities, said <cr>[1]</cr> Ecclesiastes, and all things vanity.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* The preacher."
             }
           ]
@@ -1232,13 +1247,20 @@
         },
         {
           "verse": 13,
-          "text": "<na>(b)</na> Let us all hear together the end of speaking. Fear God, and observe his commandments: for this is every man: <na>(b)</na> This is the brief sum of all profitable doctrine: Fear God, & keep his commandments."
+          "text": "<na>(b)</na> Let us all hear together the end of speaking. Fear God, and observe his commandments: for this is every man:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "This is the brief sum of all profitable doctrine: Fear God, & keep his commandments."
+            }
+          ]
         },
         {
           "verse": 14,
           "text": "and all things that are done, God will bring into judgement for every <cr>[1]</cr> error, whether it be good or evil.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Hidden, or obscure thing."
             }
           ]

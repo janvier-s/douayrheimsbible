@@ -10,16 +10,7 @@
           "verse": 1,
           "text": "Blessed <na>(a)[1]</na> is the man, that hath <na>(b)</na> not gone in the counsel of the impious, & hath <na>(c)</na> not stood in the way of sinners, and hath <na>(d)</na> not sit in the chair of pestilence:",
           "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "Mat. 5."
-            }
-          ],
           "notes": [
-            {
-              "label": "a",
-              "text": "He is in the right way to eternal felicity."
-            },
             {
               "label": "b",
               "text": "not consented to evil suggestions."
@@ -40,29 +31,13 @@
           "has_annotation": true,
           "cross_refs": [
             {
-              "text": "Ios. 1."
+              "text": "Ios. 1. 1. Hath not gone, not stood, not sit.]"
             }
           ],
           "notes": [
             {
               "label": "e",
               "text": "He is wholly occupied & delighted in keeping God's commandments."
-            },
-            {
-              "label": "◦",
-              "text": "The Hebrew style and manner of discourse differeth here from other nations, in mentioning first the less evil, and the greatest last. Whereas we would say in the contrary order: He is happy that hath not sit , that is, hath not settled himself in wickedness, nor finally persisted obstinate: more happy, that hath not stood , any notable time continued in sin: and most happy, that hath not gone , not given any consent at all to evil suggestions."
-            },
-            {
-              "label": "◦",
-              "text": "They are happy (in hope) that decline from evil. 2. His will in the way of our Lord.] As one part of happiness consisteth in declining from evil: so the other is in doing good"
-            },
-            {
-              "label": "◦",
-              "text": "; the will desiring, and diligently endeavouring to walk in the way of virtue, and law of God. Which is true justice, and right form of good life, proposed in this Psalm, for attaining eternal beatitude."
-            },
-            {
-              "label": "◦",
-              "text": "Justice consisteth in flying evil and doing good."
             }
           ]
         },
@@ -132,7 +107,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Of Christ, the 5. key. Also of his Church, the 6. key."
+          "text": "Of Christ,\nThe 5. key. Also of his Church,\nThe 6. key."
         }
       ]
     },
@@ -386,7 +361,7 @@
         },
         {
           "verse": 6,
-          "text": "Ihave <na>(i)</na> slept, and have <na>(k)</na> been at rest; and have <na>(l)</na> risen up, because our lord hath taken me.",
+          "text": "I have <na>(i)</na> slept, and have <na>(k)</na> been at rest; and have <na>(l)</na> risen up, because our lord hath taken me.",
           "has_annotation": true,
           "notes": [
             {
@@ -405,7 +380,7 @@
         },
         {
           "verse": 7,
-          "text": "Iwill not fear thousands of people compassing me: <na>(m)</na> arise Lord, save me my God.",
+          "text": "I will not fear thousands of people compassing me: <na>(m)</na> arise Lord, save me my God.",
           "notes": [
             {
               "label": "m",
@@ -442,7 +417,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David Persecuted by his son. The 8. key."
+          "text": "David Persecuted by his son.\nThe 8. key."
         }
       ]
     },
@@ -584,11 +559,11 @@
             },
             {
               "label": "w",
-              "text": "↑"
+              "text": "See previous note"
             },
             {
               "label": "x",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
@@ -617,7 +592,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Confidence in God necessary. The 7. key."
+          "text": "Confidence in God necessary.\nThe 7. key."
         }
       ]
     },
@@ -775,7 +750,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The general judgement. The 9. key."
+          "text": "The general judgement.\nThe 9. key."
         }
       ]
     },
@@ -860,11 +835,15 @@
         },
         {
           "verse": 6,
-          "text": "Because there is not in <na>(l)</na> death that is mindful of thee: and in <na>(m)</na> hell who shall confess to thee? conversion. <na>(m)</na> In hell nothing but blasphemy.",
+          "text": "Because there is not in <na>(l)</na> death that is mindful of thee: and in <na>(m)</na> hell who shall confess to thee?",
           "notes": [
             {
               "label": "l",
               "text": "This life is the time of repentance, after death no"
+            },
+            {
+              "label": "m",
+              "text": "In hell nothing but blasphemy."
             }
           ]
         },
@@ -942,7 +921,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "A pathetical prayer of a sinner & the first penitential Psalm, the 7. key."
+          "text": "A pathetical prayer of a sinner & the first penitential Psalm,\nThe 7. key."
         }
       ]
     },
@@ -952,15 +931,14 @@
         {
           "verse": 1,
           "text": "The Psalm of David which he sung to our Lord, for the words of <na>(a)</na> Chusi the son of Jemini. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "(2. Reg. 16.)"
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "This Chusi defeated the counsel of Achitophel, as S. Aug. S. Basil & S. Chris. expound it. Others think he speaketh of that Chusi (or Chusai) who reported to him the death of Absalom. 2. Reg. 18. v. 31."
+            },
+            {
+              "label": "1",
+              "text": "(2. Reg. 16.)"
             }
           ]
         },
@@ -1122,14 +1100,14 @@
         },
         {
           "verse": 18,
-          "text": "Iwill confess to our Lord according to his justice: and will sing to the name of our Lord most high."
+          "text": "I will confess to our Lord according to his justice: and will sing to the name of our Lord most high."
         }
       ],
       "summary": "David in confidence of his just cause, and unjust persecution, prayeth for God's help, 7. and just revenge of his enemies: 15. describing their malicious intention, and ruin. <na>[1]</na>",
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David's prayer in tribulation. The 8. key."
+          "text": "David's prayer in tribulation.\nThe 8. key."
         }
       ]
     },
@@ -1153,11 +1131,15 @@
         },
         {
           "verse": 2,
-          "text": "O Lord <na>(c)</na> our Lord, how marvelous is thy name in the whole earth! Because thy magnificence is elevated above <na>(d)</na> the heavens. that believe and trust in him. <na>(d)</na> God more excellent than the heavens, he being the Creator, they a creature.",
+          "text": "O Lord <na>(c)</na> our Lord, how marvelous is thy name in the whole earth! Because thy magnificence is elevated above <na>(d)</na> the heavens.",
           "notes": [
             {
               "label": "c",
               "text": "God the Lord of all by creation, is our singular Lord,"
+            },
+            {
+              "label": "d",
+              "text": "God more excellent than the heavens, he being the Creator, they a creature."
             }
           ]
         },
@@ -1216,11 +1198,6 @@
         {
           "verse": 8,
           "text": "Thou hast subjected <na>(i)</na> all things under his feet, all <na>(k)</na> sheep and oxen: moreover also the beasts of the field.",
-          "cross_refs": [
-            {
-              "text": "Gen. 1. v. 27. 1. Cor. 15."
-            }
-          ],
           "notes": [
             {
               "label": "i",
@@ -1251,7 +1228,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's Incarnation. The 5. key."
+          "text": "Christ's Incarnation.\nThe 5. key."
         }
       ]
     },
@@ -1270,7 +1247,7 @@
         },
         {
           "verse": 2,
-          "text": "Iwill <na>(b)</na> confess to thee, o Lord, with all my heart: I will tell all thy marvelous things.",
+          "text": "I will <na>(b)</na> confess to thee, o Lord, with all my heart: I will tell all thy marvelous things.",
           "notes": [
             {
               "label": "b",
@@ -1280,7 +1257,17 @@
         },
         {
           "verse": 3,
-          "text": "Iwill be <na>(c)</na> glad and <na>(d)</na> rejoice in thee: I will sing to thy name, o most High. <na>(c)</na> In mind <na>(d)</na> and body."
+          "text": "I will be <na>(c)</na> glad and <na>(d)</na> rejoice in thee: I will sing to thy name, o most High.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "In mind"
+            },
+            {
+              "label": "d",
+              "text": "and body."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -1390,7 +1377,7 @@
         },
         {
           "verse": 16,
-          "text": "Iwill rejoice in thy salvation: the Gentiles are <na>(p)</na> fastened in the destruction, which they made. In this snare, which they hid, is their foot taken.",
+          "text": "I will rejoice in thy salvation: the Gentiles are <na>(p)</na> fastened in the destruction, which they made. In this snare, which they hid, is their foot taken.",
           "notes": [
             {
               "label": "p",
@@ -1430,23 +1417,10 @@
           "verse": 21,
           "text": "Appoint Lord <na>(s)</na> a Law-giver over them: that the Gentiles may know that they be men.",
           "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "2. Thes. 2."
-            }
-          ],
           "notes": [
             {
               "label": "s",
               "text": "Suffer a tyrant to rule over them, that thereby they may learn what it is to use others unjustly. It seemeth to S. Augustine a Prophecy, that such as receive not Christ, shall believe Antichrist."
-            },
-            {
-              "label": "t",
-              "text": "the Hebrews."
-            },
-            {
-              "label": "t",
-              "text": "The later Hebrew Doctors."
             }
           ]
         },
@@ -1590,7 +1564,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence in protecting the good and permitting evil. The 3. key."
+          "text": "God's providence in protecting the good and permitting evil.\nThe 3. key."
         }
       ]
     },
@@ -1687,7 +1661,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's provident care of the just. The 3. key."
+          "text": "God's provident care of the just.\nThe 3. key."
         }
       ]
     },
@@ -1789,7 +1763,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The state of the Church in the first and last times of Christ. The 6. key."
+          "text": "The state of the Church in the first and last times of Christ.\nThe 6. key."
         }
       ]
     },
@@ -1853,7 +1827,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Of Christ's Incarnation. The 5. key."
+          "text": "Of Christ's Incarnation.\nThe 5. key."
         }
       ]
     },
@@ -1862,14 +1836,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Unto the end, a Psalm of David. The <na>(a)</na> fool hath said in his heart: There is no God. They are corrupt, and are become <na>(b)</na> abominable in their studies: there is <na>(c)</na> not that doth good^ no not one. <cr>[1]</cr>",
+          "text": "Unto the end, a Psalm of David. The <na>(a)</na> fool hath said in his heart: There is no God. They are corrupt, and are become <na>(b)</na> abominable in their studies: there is <na>(c)</na> not that doth good no not one. <cr>[1]</cr>",
           "has_annotation": true,
           "cross_refs": [
             {
               "text": "Psa. 52."
-            },
-            {
-              "text": "Rom. 3."
             }
           ],
           "notes": [
@@ -2077,7 +2048,7 @@
         },
         {
           "verse": 2,
-          "text": "Ihave said to our Lord: Thou art my God, because thou <na>(d)</na> needest not my goods.",
+          "text": "I have said to our Lord: Thou art my God, because thou <na>(d)</na> needest not my goods.",
           "notes": [
             {
               "label": "d",
@@ -2148,7 +2119,7 @@
         },
         {
           "verse": 7,
-          "text": "Iwill bless our Lord, who hath <na>(o)</na> given me understanding: moreover also even till <na>(p)</na> night my <na>(q)</na> veins have rebuked me.",
+          "text": "I will bless our Lord, who hath <na>(o)</na> given me understanding: moreover also even till <na>(p)</na> night my <na>(q)</na> veins have rebuked me.",
           "notes": [
             {
               "label": "o",
@@ -2297,7 +2268,7 @@
         },
         {
           "verse": 6,
-          "text": "Ihave cried, because thou hast heard me, o God: incline thine ear to me, and hear my words."
+          "text": "I have cried, because thou hast heard me, o God: incline thine ear to me, and hear my words."
         },
         {
           "verse": 7,
@@ -2315,7 +2286,13 @@
         },
         {
           "verse": 9,
-          "text": "from the <na>(m)</na> face of the impious, that have afflicted me. Mine enemies have compassed my soul, <na>(m)</na> From their cruel and furious countenance."
+          "text": "from the <na>(m)</na> face of the impious, that have afflicted me. Mine enemies have compassed my soul,",
+          "notes": [
+            {
+              "label": "m",
+              "text": "From their cruel and furious countenance."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -2392,7 +2369,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence protecting the just. The 3. key."
+          "text": "God's providence protecting the just.\nThe 3. key."
         }
       ]
     },
@@ -2402,11 +2379,6 @@
         {
           "verse": 1,
           "text": "Unto <na>(a)</na> the end, <na>(b)</na> to the servant of our Lord David, who spake to our Lord the words of this canticle, in the day, that our Lord delivered him out of the hand of all his enemies, and out of the hand of <na>(c)</na> Saul, and he said: <cr>[1]</cr> I will <na>(d)</na> love thee o Lord <na>(e)</na> my strength:",
-          "cross_refs": [
-            {
-              "text": "(2. Reg. 22.)"
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -2427,6 +2399,10 @@
             {
               "label": "e",
               "text": "By whom I am strong."
+            },
+            {
+              "label": "1",
+              "text": "(2. Reg. 22.)"
             }
           ]
         },
@@ -2597,7 +2573,7 @@
         },
         {
           "verse": 19,
-          "text": "They prevented me in the day of mine affliction: and our Lord was made my protector. * So in the rest of this Psalm the Prophet speaketh for most part in proper terms, without Metaphors or other figures. Yet in the mystical sense of Christ, and Christians."
+          "text": "They prevented me in the day of mine affliction: and our Lord was made my protector."
         },
         {
           "verse": 20,
@@ -2633,7 +2609,7 @@
         },
         {
           "verse": 25,
-          "text": "<na>(z)</na> And our Lord will reward me according to my justice: & according to the purity of my hands in the sight of his eyes. render to every one as they deserve.",
+          "text": "<na>(z)</na> And our Lord will reward me according to my justice: & according to the purity of my hands in the sight of his eyes.",
           "notes": [
             {
               "label": "z",
@@ -2698,11 +2674,6 @@
         {
           "verse": 35,
           "text": "That teacheth my hands to battle: and hast put mine arms <na>(d)</na> as a bow of brass.",
-          "cross_refs": [
-            {
-              "text": "2. Re. 22."
-            }
-          ],
           "notes": [
             {
               "label": "d",
@@ -2720,11 +2691,11 @@
         },
         {
           "verse": 38,
-          "text": "Iwill pursue mine enemies, and overtake them: and will not return till they fail."
+          "text": "I will pursue mine enemies, and overtake them: and will not return till they fail."
         },
         {
           "verse": 39,
-          "text": "Iwill break them, neither shall they be able to stand: they shall fall under my feet."
+          "text": "I will break them, neither shall they be able to stand: they shall fall under my feet."
         },
         {
           "verse": 40,
@@ -2809,17 +2780,13 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David singularly protected by God. The 8. key."
+          "text": "David singularly protected by God.\nThe 8. key."
         }
       ]
     },
     {
       "chapter": 18,
       "verses": [
-        {
-          "verse": 0,
-          "text": "The 6. key."
-        },
         {
           "verse": 1,
           "text": "Unto <na>(a)</na> the end, the Psalm of David.",
@@ -3066,7 +3033,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's exaltation. The 5. key."
+          "text": "Christ's exaltation.\nThe 5. key."
         }
       ]
     },
@@ -3499,7 +3466,7 @@
         },
         {
           "verse": 23,
-          "text": "Iwill <na>(t)</na> declare thy name to my brethren: in the midst of the Church I will praise thee,",
+          "text": "I will <na>(t)</na> declare thy name to my brethren: in the midst of the Church I will praise thee,",
           "has_annotation": true,
           "notes": [
             {
@@ -3605,41 +3572,11 @@
         },
         {
           "verse": 32,
-          "text": "The generation to come shall be shewed to our Lord: and the <na>(h)</na> heavens shall shew forth his justice to the people that shall be born, whom our Lord hath made. particular circumstances, as the Evangelists have since historically recorded, that it may not unfitly be called, <i>The Passion of Jesus Christ according to David.</i> according to David. 3. Thou wilt not hear.] Our B. Saviour seeing his most terrible death imminent, prayed conditionally <cr>[1]</cr> , <i>if it pleased his heavenly Father,</i> to have the same removed from him, & was not heard, as the Psalmist here prophesieth. The principal reason was, because God of his divine charity had decreed, that mankind should be redeemed by this death of his Son. Christ also himself of his excellent charity, consented here unto, & therefore persisted not in his conditional prayer, but added absolutely & prayed, that not his own will, but his Fathers might be fulfilled. And in this he was heard <cr>[2]</cr> , to his own more glory and other infinite benefits of innumerable souls, as it followeth, <i>v. 25. When I cried to him he heard me.</i> S. Paul also witnesseth <i>(Heb. 5. v. 7.)</i> that Christ <i>offering prayers and supplications to him that could save him from death, was heard for his reverence:</i> that is, in respect of his inestimable merit in human nature united in person to God. Another cause, why Christ was not delivered from violent death <cr>[3]</cr> , as many holy persons were, when they cried to God in distress, as S. Augustine sheweth (Epist. 120. c. 11.) was for example to Christians, whom God will have to suffer temporal afflictions, and death, for the glory of life everlasting, according to S. Peter's doctrine, <i>Christ suffered for us, leaving an example that you may follow his steps.</i> <cr>[4]</cr>",
-          "cross_refs": [
-            {
-              "text": "1 Pet. 2."
-            },
-            {
-              "text": "in the great Church."
-            },
-            {
-              "text": "all the ends of the earth shall remember, and be converted to our Lord the ends of the earth, but all the ends All the families of the Gentiles shall adore in his sight Because the Kingdom is our Lord's, and he shall have dominion over the Gentiles"
-            },
-            {
-              "text": "in hunc Psal."
-            }
-          ],
+          "text": "The generation to come shall be shewed to our Lord: and the <na>(h)</na> heavens shall shew forth his justice to the people that shall be born, whom our Lord hath made.",
           "notes": [
             {
               "label": "h",
               "text": "Apostles, and other preachers of Christ."
-            },
-            {
-              "label": "◦",
-              "text": ", reading caari , which signifieth as a lion , without all coherence of the sense, for caaru , they digged or pierced ; to avoid so plain a prophecy of nailing Christ's hands and feet to the cross."
-            },
-            {
-              "label": "◦",
-              "text": "The Hebrew text corrupted by the Jews. 23. I will declare thy name to my brethren.] Here it is evident that this Psalm is of Christ"
-            },
-            {
-              "label": "◦",
-              "text": ", not of David, by S. Paul's allegation (Heb. 2. v. 11. 12.) saying: He that sanctifieth (to wit Christ) disdained not to call the sanctified his brethren."
-            },
-            {
-              "label": "◦",
-              "text": "This Psalm is of Christ. 23. In the midst of the Church I will praise thee.] After Christ's Passion and Resurrection, in the rest of this Psalm, other two principal points of Christian Religion are likewise prophesied: His perpetual visible Church, and the B. Sacrament of his body. The former is here prophesied by way of inviting all the seed of Jacob to glorify God (v. 24.) all the seed of Israel to fear him (v. 25.) to wit, innumerable Christians"
             }
           ]
         }
@@ -3648,7 +3585,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's Passion & effects thereof. The 5. key."
+          "text": "Christ's Passion & effects thereof.\nThe 5. key."
         }
       ]
     },
@@ -3765,7 +3702,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Thanks-giving for God's protection. The 7. key."
+          "text": "Thanks-giving for God's protection.\nThe 7. key."
         }
       ]
     },
@@ -3866,7 +3803,7 @@
         },
         {
           "verse": 10,
-          "text": "<na>(l)</na> Who is this King of glory? <na>(m)</na> The Lord of powers^ he is the King of glory.",
+          "text": "<na>(l)</na> Who is this King of glory? <na>(m)</na> The Lord of powers he is the King of glory.",
           "notes": [
             {
               "label": "l",
@@ -3883,7 +3820,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "A prayer of the faithful. The 7. key."
+          "text": "A prayer of the faithful.\nThe 7. key."
         }
       ]
     },
@@ -4023,16 +3960,40 @@
             {
               "label": "r",
               "text": "He that feareth God, which is the beginning of wisdom, receiveth five spiritual commodities here mentioned:"
+            },
+            {
+              "label": "1",
+              "text": "1. God instructeth him by his law:"
             }
           ]
         },
         {
           "verse": 13,
-          "text": "His soul <cr>[1]</cr> shall abide in good things: and <cr>[2]</cr> his seed shall inherit the land."
+          "text": "His soul <cr>[1]</cr> shall abide in good things: and <cr>[2]</cr> his seed shall inherit the land.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "2. bestoweth all necessaries upon him:"
+            },
+            {
+              "label": "2",
+              "text": "3. others shall imitate his good example."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "Our Lord is <cr>[1]</cr> a firmament to them that fear him: & <cr>[2]</cr> his testament that it may be made manifest to them."
+          "text": "Our Lord is <cr>[1]</cr> a firmament to them that fear him: & <cr>[2]</cr> his testament that it may be made manifest to them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "4. God will protect him:"
+            },
+            {
+              "label": "2",
+              "text": "5. According to God's covenant he shall enjoy the manifest sight of God for his eternal reward."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -4151,25 +4112,16 @@
         },
         {
           "verse": 5,
-          "text": "Ihave hated the Church of the malignant: and with the impious I will not sit.",
+          "text": "I have hated the Church of the malignant: and with the impious I will not sit.",
           "has_annotation": true
         },
         {
           "verse": 6,
           "text": "I <na>(e)</na> will wash my hands among innocents: <na>(f)</na> and will compass thy altar, o Lord:",
-          "cross_refs": [
-            {
-              "text": "Ep. 120. c. 11."
-            }
-          ],
           "notes": [
             {
               "label": "e",
               "text": "The rest of this Psalm every Priest reciteth in Mass, before he offer the holy Sacrifice, professing & putting himself in memory, that he must only communicate with 5. I have hated the Church of the malignant.] Holy David forced by reason of persecution to dwell"
-            },
-            {
-              "label": "◦",
-              "text": "Asingular great the innocent, or of pure conscience,"
             },
             {
               "label": "f",
@@ -4262,7 +4214,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David's prayer distressed in persecution. The 8. key."
+          "text": "David's prayer distressed in persecution.\nThe 8. key."
         }
       ]
     },
@@ -4461,7 +4413,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "An other confident prayer of David in tribulation. The 3. key."
+          "text": "An other confident prayer of David in tribulation.\nThe 3. key."
         }
       ]
     },
@@ -4559,7 +4511,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Another prayer of David for delivery from evils. The 8. key."
+          "text": "Another prayer of David for delivery from evils.\nThe 8. key."
         }
       ]
     },
@@ -4694,11 +4646,6 @@
         {
           "verse": 9,
           "text": "The voice of our Lord <na>(v)</na> preparing <cr>[1]</cr> harts, and he shall discover thick woods <na>(w)</na> : and <na>(x)</na> in his temple all shall say glory.",
-          "cross_refs": [
-            {
-              "text": "cervos."
-            }
-          ],
           "notes": [
             {
               "label": "v",
@@ -4711,6 +4658,10 @@
             {
               "label": "x",
               "text": "in his holy Temple , the Catholic Church, wherein all true Christians shall glorify God ."
+            },
+            {
+              "label": "1",
+              "text": "cervos."
             }
           ]
         },
@@ -4747,7 +4698,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church of Christ endowed with excellent mysteries. The 6. key."
+          "text": "The Church of Christ endowed with excellent mysteries.\nThe 6. key."
         }
       ]
     },
@@ -4770,7 +4721,7 @@
         },
         {
           "verse": 2,
-          "text": "Iwill <na>(c)</na> exalt thee, o Lord <na>(d)</na> because thou hast received me: neither hast <na>(e)</na> delighted mine enemies over me.",
+          "text": "I will <na>(c)</na> exalt thee, o Lord <na>(d)</na> because thou hast received me: neither hast <na>(e)</na> delighted mine enemies over me.",
           "notes": [
             {
               "label": "c",
@@ -4909,7 +4860,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David rendereth thanks for his establishment in his Kingdom. The 8. key."
+          "text": "David rendereth thanks for his establishment in his Kingdom.\nThe 8. key."
         }
       ]
     },
@@ -5024,7 +4975,7 @@
         },
         {
           "verse": 13,
-          "text": "Iam forgotten, from the heart as one dead. I am made as a vessel destroyed:"
+          "text": "I am forgotten, from the heart as one dead. I am made as a vessel destroyed:"
         },
         {
           "verse": 14,
@@ -5145,7 +5096,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "How to pray in affliction. The 7. key."
+          "text": "How to pray in affliction.\nThe 7. key."
         }
       ]
     },
@@ -5194,11 +5145,6 @@
         {
           "verse": 3,
           "text": "Because <na>(f)</na> I held my peace, my bones are <cr>[1]</cr> inveterated, <na>(g)</na> whilst I cried all the day.",
-          "cross_refs": [
-            {
-              "text": "waxed as if they were old."
-            }
-          ],
           "notes": [
             {
               "label": "f",
@@ -5207,6 +5153,10 @@
             {
               "label": "g",
               "text": "though otherwise I ceased not to pray, but without any fruit or good effect."
+            },
+            {
+              "label": "1",
+              "text": "waxed as if they were old."
             }
           ]
         },
@@ -5263,10 +5213,6 @@
             {
               "label": "o",
               "text": "God speaketh, promising by these tribulations to give his servants understanding , and instruction:"
-            },
-            {
-              "label": "p",
-              "text": "with perpetual protection."
             }
           ]
         },
@@ -5313,7 +5259,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The second penitential Psalm. The 7. key."
+          "text": "The second penitential Psalm.\nThe 7. key."
         }
       ]
     },
@@ -5384,7 +5330,13 @@
         },
         {
           "verse": 6,
-          "text": "By <na>(i)</na> the word of our Lord the heavens are established: and by the spirit of his mouth all the power of them, <na>(i)</na> God's word is omnipotent."
+          "text": "By <na>(i)</na> the word of our Lord the heavens are established: and by the spirit of his mouth all the power of them,",
+          "notes": [
+            {
+              "label": "i",
+              "text": "God's word is omnipotent."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -5513,7 +5465,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The perfection of God's works described. The 2. key."
+          "text": "The perfection of God's works described.\nThe 2. key."
         }
       ]
     },
@@ -5524,15 +5476,18 @@
           "verse": 1,
           "text": "To <cr>[1]</cr> David, when he changed his countenance before <na>(a)</na> Abimelech, and he dismist him, and he went away <cr>[2]</cr>",
           "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "(1. Reg. 21)"
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "His proper name was Achis, 1. Reg. 21. but all Kings of Palestina were called Abimelech, as Pharao in Aegypt, Nabuchodonosor in Babylon."
+            },
+            {
+              "label": "1",
+              "text": "This Psalm is also composed in order of the Alphabet."
+            },
+            {
+              "label": "2",
+              "text": "(1. Reg. 21)"
             }
           ]
         },
@@ -5566,7 +5521,7 @@
         },
         {
           "verse": 5,
-          "text": "Ihave sought out our Lord, and he hath heard me: and from all my tribulations he hath delivered me."
+          "text": "I have sought out our Lord, and he hath heard me: and from all my tribulations he hath delivered me."
         },
         {
           "verse": 6,
@@ -5700,7 +5655,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence. The 3. key."
+          "text": "God's providence.\nThe 3. key."
         }
       ]
     },
@@ -5835,7 +5790,21 @@
         },
         {
           "verse": 15,
-          "text": "And they <na>(o)</na> rejoiced against me, and <na>(p)</na> came together: <na>(q)</na> scourges were gathered together upon me, and I was <na>(r)</na> ignorant. (o p q) All this was fulfilled according to the letter in our Saviour's passion. <na>(p)</na> ↑ <na>(q)</na> ↑ <na>(r)</na> Our Lord knoweth not any just cause, why the Jews so persecuted him, for they had no just cause but mere malice."
+          "text": "And they <na>(o)</na> rejoiced against me, and <na>(p)</na> came together: <na>(q)</na> scourges were gathered together upon me, and I was <na>(r)</na> ignorant.",
+          "notes": [
+            {
+              "label": "p",
+              "text": "See previous note"
+            },
+            {
+              "label": "q",
+              "text": "See previous note"
+            },
+            {
+              "label": "r",
+              "text": "Our Lord knoweth not any just cause, why the Jews so persecuted him, for they had no just cause but mere malice."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -5857,7 +5826,7 @@
         },
         {
           "verse": 18,
-          "text": "Iwill confess to thee in <na>(v)</na> the great Church, in a grave people I will praise thee.",
+          "text": "I will confess to thee in <na>(v)</na> the great Church, in a grave people I will praise thee.",
           "notes": [
             {
               "label": "v",
@@ -5946,7 +5915,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's persecution. The 5. key."
+          "text": "Christ's persecution.\nThe 5. key."
         }
       ]
     },
@@ -6088,7 +6057,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence. The 3. key."
+          "text": "God's providence.\nThe 3. key."
         }
       ]
     },
@@ -6254,7 +6223,7 @@
         },
         {
           "verse": 25,
-          "text": "Ihave been young, for I am old: and I have not seen the just forsaken, <na>(l)</na> nor his seed seeking bread. (conc. 3. in hunc Psal.) exemplifieth in Abraham, Isaac, and Jacob with all his family, who were forced to go into other countries by reason of famine, and by God's providence were there sustained, Gen. 12. 26. 46. and S. Paul among his other tribulations mentioneth famine and thirst. 2. Cor. 11. v. 27. Seeing therefore these so just persons sought their bread in necessity, he expoundeth this holy Scripture in the Allegorical sense, that the Church from her beginning in Jerusalem to the end of the world, never wanteth the true word of God, true faith and doctrine, which is the spiritual bread wherewith the soul is nourished. <cr>[1]</cr> <i>Eccle. 2.</i>",
+          "text": "I have been young, for I am old: and I have not seen the just forsaken, <na>(l)</na> nor his seed seeking bread.",
           "notes": [
             {
               "label": "l",
@@ -6317,11 +6286,11 @@
         },
         {
           "verse": 34,
-          "text": "Expect our Lord, and keep his way: and he will exalt thee, that thou mayst inherit the land: when the sinners shall perish^ thou shalt see."
+          "text": "Expect our Lord, and keep his way: and he will exalt thee, that thou mayst inherit the land: when the sinners shall perish thou shalt see."
         },
         {
           "verse": 35,
-          "text": "Ihave seen the impious highly exalted, and advance as the cedars of Libanus."
+          "text": "I have seen the impious highly exalted, and advance as the cedars of Libanus."
         },
         {
           "verse": 36,
@@ -6360,7 +6329,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "An exhortation to contempt of this world. The 7. key."
+          "text": "An exhortation to contempt of this world.\nThe 7. key."
         }
       ]
     },
@@ -6379,7 +6348,7 @@
         },
         {
           "verse": 2,
-          "text": "Lord <na>(b)</na> rebuke me not in thy fury: <na>(c)</na> nor chastise me in wrath. rebuked in fury of eternal damnation, but also I fear to be purged in the wrath of transitory correption. Thou therefore, o Lord, whom I serve in my spirit, whom I know to be the Saviour of all men, rebuke me not in fury of perpetual damnation, nor chastise me in wrath of purging punishment. <i>See Annotat. Ps. 6.</i>",
+          "text": "Lord <na>(b)</na> rebuke me not in thy fury: <na>(c)</na> nor chastise me in wrath.",
           "notes": [
             {
               "label": "b",
@@ -6449,7 +6418,7 @@
         },
         {
           "verse": 7,
-          "text": "Iam become miserable, and am made <na>(m)</na> crooked even to the end: I went sorrowful all the day.",
+          "text": "I am become miserable, and am made <na>(m)</na> crooked even to the end: I went sorrowful all the day.",
           "notes": [
             {
               "label": "m",
@@ -6469,7 +6438,7 @@
         },
         {
           "verse": 9,
-          "text": "Iam afflicted and am humbled exceedingly: I <na>(o)</na> roared for the groaning of my heart.",
+          "text": "I am afflicted and am humbled exceedingly: I <na>(o)</na> roared for the groaning of my heart.",
           "notes": [
             {
               "label": "o",
@@ -6602,7 +6571,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The third penitential Psalm. The 7. key."
+          "text": "The third penitential Psalm.\nThe 7. key."
         }
       ]
     },
@@ -6635,7 +6604,7 @@
         },
         {
           "verse": 3,
-          "text": "Iwas dumb and humbled, and kept silence <na>(d)</na> from good things: and <na>(e)</na> my sorrow was renewed.",
+          "text": "I was dumb and humbled, and kept silence <na>(d)</na> from good things: and <na>(e)</na> my sorrow was renewed.",
           "notes": [
             {
               "label": "d",
@@ -6659,7 +6628,7 @@
         },
         {
           "verse": 5,
-          "text": "Ihave spoken in my tongue: Lord <na>(g)</na> make mine end known to me. And the number of my days what it is: that I may know what is lacking to me.",
+          "text": "I have spoken in my tongue: Lord <na>(g)</na> make mine end known to me. And the number of my days what it is: that I may know what is lacking to me.",
           "notes": [
             {
               "label": "g",
@@ -6707,7 +6676,7 @@
         },
         {
           "verse": 10,
-          "text": "Iwas dumb, and opened not my mouth, <na>(m)</na> because thou didst it:",
+          "text": "I was dumb, and opened not my mouth, <na>(m)</na> because thou didst it:",
           "notes": [
             {
               "label": "m",
@@ -6761,7 +6730,13 @@
       "verses": [
         {
           "verse": 0,
-          "text": "Redemption of mankind, and to denounce the same in <i>the whole world: 12. prayeth for his servants, undertaking to satisfy for their sins.</i> <cr>[1]</cr>"
+          "text": "Redemption of mankind, and to denounce the same in <i>the whole world: 12. prayeth for his servants, undertaking to satisfy for their sins.</i> <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christ's coming and redeeming of mankind.\nThe 5. key."
+            }
+          ]
         },
         {
           "verse": 1,
@@ -6844,7 +6819,7 @@
         },
         {
           "verse": 10,
-          "text": "Ihave <na>(h)</na> declared thy justice in the great Church, lo I will not stay my lips: Lord thou hast known it.",
+          "text": "I have <na>(h)</na> declared thy justice in the great Church, lo I will not stay my lips: Lord thou hast known it.",
           "notes": [
             {
               "label": "h",
@@ -6950,7 +6925,7 @@
           "text": "Unto <na>(a)</na> the end, a Psalm to David himself. <cr>[1]</cr>",
           "cross_refs": [
             {
-              "text": "Io. 13. v. 18."
+              "text": "Io. 13. v. 18. This Psalm is also applied by the Church in the office of the sick, whom whosoever assisteth in that case, may hope to have assistance in their own like necessity."
             }
           ],
           "notes": [
@@ -7104,7 +7079,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's Passion and Resurrection. The 5. key."
+          "text": "Christ's Passion and Resurrection.\nThe 5. key."
         }
       ]
     },
@@ -7137,7 +7112,17 @@
         },
         {
           "verse": 3,
-          "text": "My soul hath thirsted after God <na>(d)</na> the strong <na>(e)</na> living: <na>(f)</na> when shall I come and appear before the face of God? (d e) God is omnipotent, and indeed the only true living God: devils who are honoured in idols, can do no more than God permitteth, and so they can kill the souls, that consent unto their tentations, but cannot restore spiritual life again. <na>(e)</na> ↑ <na>(f)</na> The soul being justified, and still assaulted with new tentations desireth to be with God."
+          "text": "My soul hath thirsted after God <na>(d)</na> the strong <na>(e)</na> living: <na>(f)</na> when shall I come and appear before the face of God?",
+          "notes": [
+            {
+              "label": "e",
+              "text": "See previous note"
+            },
+            {
+              "label": "f",
+              "text": "The soul being justified, and still assaulted with new tentations desireth to be with God."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -7165,11 +7150,15 @@
         },
         {
           "verse": 6,
-          "text": "Why <na>(k)</na> art thou sorrowful my soul? & why dost thou trouble me? Hope in God, because yet I <na>(l)</na> will confess to him: the salvation of my countenance, the hope of everlasting joy. <na>(l)</na> I render thanks and praises.",
+          "text": "Why <na>(k)</na> art thou sorrowful my soul? & why dost thou trouble me? Hope in God, because yet I <na>(l)</na> will confess to him: the salvation of my countenance,",
           "notes": [
             {
               "label": "k",
               "text": "The Prophet comforteth himself, or any just soul, in"
+            },
+            {
+              "label": "l",
+              "text": "Irender thanks and praises."
             }
           ]
         },
@@ -7217,7 +7206,7 @@
         },
         {
           "verse": 10,
-          "text": "Iwill say to God: Thou art my defender. Why hast thou forgotten me? And why go I sorrowful, whilst mine enemy afflicteth me?"
+          "text": "I will say to God: Thou art my defender. Why hast thou forgotten me? And why go I sorrowful, whilst mine enemy afflicteth me?"
         },
         {
           "verse": 11,
@@ -7238,7 +7227,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Eternal glory. The 10. key."
+          "text": "Eternal glory.\nThe 10. key."
         }
       ]
     },
@@ -7317,7 +7306,7 @@
             },
             {
               "label": "n",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
@@ -7352,7 +7341,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "One God the B. Trinity. The 1. key."
+          "text": "One God the B. Trinity.\nThe 1. key."
         }
       ]
     },
@@ -7576,7 +7565,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The state of the Jews. The 4. key."
+          "text": "The state of the Jews.\nThe 4. key."
         }
       ]
     },
@@ -7657,8 +7646,16 @@
         },
         {
           "verse": 5,
-          "text": "With thy beauty and fairness <na>(n)</na> intend, <na>(o)</na> proceed prosperously, and <na>(p)</na> reign, Because of <na>(q)</na> truth, and <na>(r)</na> mildness, and <na>(s)</na> justice: and thy right hand shall conduct thee marvelously. <na>(n)</na> Purposing, <na>(o)</na> prosecuting,",
+          "text": "With thy beauty and fairness <na>(n)</na> intend, <na>(o)</na> proceed prosperously, and <na>(p)</na> reign, Because of <na>(q)</na> truth, and <na>(r)</na> mildness, and <na>(s)</na> justice: and thy right hand shall conduct thee marvelously.",
           "notes": [
+            {
+              "label": "n",
+              "text": "Purposing,"
+            },
+            {
+              "label": "o",
+              "text": "prosecuting,"
+            },
             {
               "label": "p",
               "text": "and perfecting the conquest, and so establishing thy spiritual Kingdom."
@@ -7865,7 +7862,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ most excellently endowing his Church. The 6. key."
+          "text": "Christ most excellently endowing his Church.\nThe 6. key."
         }
       ]
     },
@@ -7997,7 +7994,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church prospereth also in persecution. The 6. key."
+          "text": "The Church prospereth also in persecution.\nThe 6. key."
         }
       ]
     },
@@ -8113,7 +8110,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Vocation of Gentiles. The 6. key."
+          "text": "Vocation of Gentiles.\nThe 6. key."
         }
       ]
     },
@@ -8218,7 +8215,13 @@
         },
         {
           "verse": 10,
-          "text": "We have received thy mercy, o God, <na>(m)</na> in the midst of thy temple. <na>(m)</na> Grace and mercy is only granted to those that are within, or come unto the Catholic Church."
+          "text": "We have received thy mercy, o God, <na>(m)</na> in the midst of thy temple.",
+          "notes": [
+            {
+              "label": "m",
+              "text": "Grace and mercy is only granted to those that are within, or come unto the Catholic Church."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -8281,7 +8284,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church founded and protected by God. The 6. key."
+          "text": "The Church founded and protected by God.\nThe 6. key."
         }
       ]
     },
@@ -8314,7 +8317,7 @@
         },
         {
           "verse": 3,
-          "text": "All ye earthly persons, and children of men: together in one^ the rich and the poor."
+          "text": "All ye earthly persons, and children of men: together in one the rich and the poor."
         },
         {
           "verse": 4,
@@ -8322,7 +8325,7 @@
         },
         {
           "verse": 5,
-          "text": "Iwill <na>(d)</na> incline mine ear unto a parable: I will <na>(e)</na> open my proposition <na>(f)</na> on a Psalter.",
+          "text": "I will <na>(d)</na> incline mine ear unto a parable: I will <na>(e)</na> open my proposition <na>(f)</na> on a Psalter.",
           "notes": [
             {
               "label": "d",
@@ -8533,7 +8536,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Exhortation to fly from sin for fear of hell. The 7. key."
+          "text": "Exhortation to fly from sin for fear of hell.\nThe 7. key."
         }
       ]
     },
@@ -8542,7 +8545,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "A Psalm <na>(a)</na> to Asaph. The <na>(b)</na> God of gods our Lord hath spoken: and he hath called the earth, from the rising of the sun even to the going down. God Almighty, who is greater than are all falsely supposed gods; or holy persons, that participating of his goodness are called gods (as Kings, Priests, Judges) coming into this world in man's nature, calleth all men to salvation.",
+          "text": "A Psalm <na>(a)</na> to Asaph. The <na>(b)</na> God of gods our Lord hath spoken: and he hath called the earth, from the rising of the sun even to the going down.",
           "notes": [
             {
               "label": "a",
@@ -8614,7 +8617,7 @@
         },
         {
           "verse": 8,
-          "text": "Iwill not rebuke thee in thy sacrifices: and thy holocausts <na>(k)</na> are in my sight always.",
+          "text": "I will not rebuke thee in thy sacrifices: and thy holocausts <na>(k)</na> are in my sight always.",
           "notes": [
             {
               "label": "k",
@@ -8624,7 +8627,7 @@
         },
         {
           "verse": 9,
-          "text": "Iwill <na>(l)</na> not take calves out of thy house: nor buck-goats out of thy flocks.",
+          "text": "I will <na>(l)</na> not take calves out of thy house: nor buck-goats out of thy flocks.",
           "notes": [
             {
               "label": "l",
@@ -8638,7 +8641,7 @@
         },
         {
           "verse": 11,
-          "text": "Ihave known all the fowls of the air: and the beauty of the field is with me."
+          "text": "I have known all the fowls of the air: and the beauty of the field is with me."
         },
         {
           "verse": 12,
@@ -8722,7 +8725,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "General Judgement. The 9. key."
+          "text": "General Judgement.\nThe 9. key."
         }
       ]
     },
@@ -8984,7 +8987,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The fourth penitential Psalm. The 7. key."
+          "text": "The fourth penitential Psalm.\nThe 7. key."
         }
       ]
     },
@@ -8998,11 +9001,6 @@
         {
           "verse": 2,
           "text": "When Doeg <na>(a)</na> the Idumeite came and told Saul: David is come into the house of <na>(b)</na> Achimelech. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "(1. Reg. 22.)"
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -9011,6 +9009,10 @@
             {
               "label": "b",
               "text": "High Priest, slain with 84. more Priests and others, because they were supposed to favour David. ibidem."
+            },
+            {
+              "label": "1",
+              "text": "(1. Reg. 22.)"
             }
           ]
         },
@@ -9036,7 +9038,13 @@
         },
         {
           "verse": 5,
-          "text": "Thou hast loved malice more than benignity: <na>(e)</na> iniquity rather than to speak equity. <na>(e)</na> Though he told a truth, yet it was iniquity to betray innocents."
+          "text": "Thou hast loved malice more than benignity: <na>(e)</na> iniquity rather than to speak equity.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Though he told a truth, yet it was iniquity to betray innocents."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -9082,7 +9090,7 @@
         },
         {
           "verse": 11,
-          "text": "Iwill <na>(k)</na> confess to thee for ever, because thou hast done it: and I will expect thy <na>(l)</na> name, because it is good in the sight of thy Saints.",
+          "text": "I will <na>(k)</na> confess to thee for ever, because thou hast done it: and I will expect thy <na>(l)</na> name, because it is good in the sight of thy Saints.",
           "notes": [
             {
               "label": "k",
@@ -9099,7 +9107,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David's invective against Doeg. The 8. key."
+          "text": "David's invective against Doeg.\nThe 8. key."
         }
       ]
     },
@@ -9165,7 +9173,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "A prayer in distress. The 7. key."
+          "text": "A prayer in distress.\nThe 7. key."
         }
       ]
     },
@@ -9174,7 +9182,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Unto <na>(a)</na> the end, <na>(b)</na> in songs^ understanding for David",
+          "text": "Unto <na>(a)</na> the end, <na>(b)</na> in songs understanding for David",
           "notes": [
             {
               "label": "a",
@@ -9189,15 +9197,14 @@
         {
           "verse": 2,
           "text": "when the Zipheites were come, and said to Saul: <na>(c)</na> Is not David hid with us? <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "1. Reg. c. 23. & 26."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "when upon notice given that he abode in the mountains, Saul straitly besieged him, with a great army, but the Philistiims invading the country, Saul was forced to leave David, and to turn his forces against them, 1. Reg. 23. yet it pertaineth also literally to all just men in distress, especially to the Church of Christ, praying in like dangers, and God by his like providence delivering his servants in extremities."
+            },
+            {
+              "label": "1",
+              "text": "1. Reg. c. 23. & 26."
             }
           ]
         },
@@ -9314,7 +9321,7 @@
         },
         {
           "verse": 4,
-          "text": "Iam made sorrowful in my <na>(d)</na> exercise: and am troubled at the voice of the enemy: and at the tribulation of the sinner. Because they have <na>(e)</na> wrested iniquities upon me: & <na>(f)</na> in anger they were troublesome to me.",
+          "text": "I am made sorrowful in my <na>(d)</na> exercise: and am troubled at the voice of the enemy: and at the tribulation of the sinner. Because they have <na>(e)</na> wrested iniquities upon me: & <na>(f)</na> in anger they were troublesome to me.",
           "notes": [
             {
               "label": "d",
@@ -9394,7 +9401,25 @@
         },
         {
           "verse": 10,
-          "text": "<na>(p)</na> Precipitate, o Lord, and <na>(q)</na> divide their tongues: because I have seen <na>(r)</na> iniquity, and <na>(s)</na> contradiction in the city. <na>(p)</na> O God abate the pride of arrogant persecuters, <na>(q)</na> suffer them not to agree amongst themselves. <na>(r)</na> They are full of all iniquity, <na>(s)</na> they have also contentions among themselves, turn the same to our good."
+          "text": "<na>(p)</na> Precipitate, o Lord, and <na>(q)</na> divide their tongues: because I have seen <na>(r)</na> iniquity, and <na>(s)</na> contradiction in the city.",
+          "notes": [
+            {
+              "label": "p",
+              "text": "O God abate the pride of arrogant persecuters,"
+            },
+            {
+              "label": "q",
+              "text": "suffer them not to agree amongst themselves."
+            },
+            {
+              "label": "r",
+              "text": "They are full of all iniquity,"
+            },
+            {
+              "label": "s",
+              "text": "they have also contentions among themselves, turn the same to our good."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -9479,15 +9504,14 @@
         {
           "verse": 18,
           "text": "In <na>(e)</na> the evening, and morning, & at midday, I will <cr>[1]</cr> speak, and declare, and he will hear my voice.",
-          "cross_refs": [
-            {
-              "text": "* or pray"
-            }
-          ],
           "notes": [
             {
               "label": "e",
               "text": "The Prophet alludeth to three more specially appointed hours of Divine service, the daily sacrifice at morning, and evening, and other sacrifices commonly about midday. Which also are the three principal times of Divine Service in the Church of Christ: Matins, Evensong, and the Sacrifice of Mass. Which Eutymius and other Grecians call Liturgiam. S. Clement also (li. 7. c. 25. Apost. Instit.) testifieth that the Apostles ordained three set hours of common prayer every day."
+            },
+            {
+              "label": "1",
+              "text": "* or pray"
             }
           ]
         },
@@ -9576,7 +9600,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence towards the good and bad. The 3. key."
+          "text": "God's providence towards the good and bad.\nThe 3. key."
         }
       ]
     },
@@ -9586,6 +9610,11 @@
         {
           "verse": 1,
           "text": "Unto <na>(a)</na> the end, <na>(b)</na> for a people, that is made far from the Saints, David in <na>(c)</na> the inscription of the title, <na>(d)</na> when the foreigners held him in Geth. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "1. Reg. 12. v. 12."
+            }
+          ],
           "notes": [
             {
               "label": "a",
@@ -9697,7 +9726,7 @@
         },
         {
           "verse": 9,
-          "text": "Ihave shewed my life to thee: thou hast set my tears in thy sight. As also in thy promise:"
+          "text": "I have shewed my life to thee: thou hast set my tears in thy sight. As also in thy promise:"
         },
         {
           "verse": 10,
@@ -9742,7 +9771,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David's prayer in danger. The 8. key."
+          "text": "David's prayer in danger.\nThe 8. key."
         }
       ]
     },
@@ -9782,7 +9811,7 @@
         },
         {
           "verse": 3,
-          "text": "Iwill cry to God the highest: God that hath done me good."
+          "text": "I will cry to God the highest: God that hath done me good."
         },
         {
           "verse": 4,
@@ -9836,7 +9865,13 @@
         },
         {
           "verse": 8,
-          "text": "My heart is ready, o God, my heart is ready: I will sing, and say <cr>[1]</cr> a Psalm."
+          "text": "My heart is ready, o God, my heart is ready: I will sing, and say <cr>[1]</cr> a Psalm.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Psalms more in use with Christian Gentiles, than they were with the Jews. See page. 12."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -9844,7 +9879,13 @@
         },
         {
           "verse": 10,
-          "text": "Iwill confess to thee among <na>(m)</na> peoples, o Lord: and I will say a Psalm to thee among <na>(n)</na> the Gentiles. (m n) God's benefits bestowed upon David, and upon faithful Christians prefigured by him, are for ever to be praised by all people's and nations. <na>(n)</na> ↑"
+          "text": "I will confess to thee among <na>(m)</na> peoples, o Lord: and I will say a Psalm to thee among <na>(n)</na> the Gentiles.",
+          "notes": [
+            {
+              "label": "n",
+              "text": "See previous note"
+            }
+          ]
         },
         {
           "verse": 11,
@@ -9859,7 +9900,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence in suffering evil. The 3. key."
+          "text": "God's providence in suffering evil.\nThe 3. key."
         }
       ]
     },
@@ -10011,7 +10052,12 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Unto the end, destroy not, to David in the inscription of the title, <na>(a)</na> when Saul sent, and watched his house to kill him. <cr>[1]</cr> for perpetual memory of God's like benefits, in delivering him in imminent dangers, when Saul sent three troops of sergeants to kill him, and followed them himself. <i>1. Reg. 19. v. 20.</i> likewise when he was known and bewrayed before Achis King of Geth. <i>1. Reg. 21.</i> also in Ceila, in the deserts of Ziph, and of Maon, <i>c. 23.</i> in Engaddi, <i>c. 24.</i> in Hachila, <i>c. 26.</i> and again amongst the Philistians, <i>c. 27.</i> and <i>30.</i> <cr>[1]</cr> <i>1. Reg. 19.</i>",
+          "text": "Unto the end, destroy not, to David in the inscription of the title, <na>(a)</na> when Saul sent, and watched his house to kill him. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "1. Reg. 19."
+            }
+          ],
           "notes": [
             {
               "label": "a",
@@ -10095,7 +10141,7 @@
         },
         {
           "verse": 10,
-          "text": "Iwill keep my strength to thee: <na>(k)</na> because thou art my receiver:",
+          "text": "I will keep my strength to thee: <na>(k)</na> because thou art my receiver:",
           "notes": [
             {
               "label": "k",
@@ -10109,7 +10155,7 @@
         },
         {
           "verse": 12,
-          "text": "God will shew unto me concerning mine enemies, kill them not <na>(l)</na> lest sometime my peoples forget. Disperse them in thy strength: and <na>(m)</na> depose them^ my protector, o Lord.",
+          "text": "God will shew unto me concerning mine enemies, kill them not <na>(l)</na> lest sometime my peoples forget. Disperse them in thy strength: and <na>(m)</na> depose them my protector, o Lord.",
           "notes": [
             {
               "label": "l",
@@ -10182,7 +10228,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Another prayer of David in danger. The 8. key."
+          "text": "Another prayer of David in danger.\nThe 8. key."
         }
       ]
     },
@@ -10191,7 +10237,13 @@
       "verses": [
         {
           "verse": 0,
-          "text": "victories, 11. achieved by God's only power. <cr>[1]</cr>"
+          "text": "victories, 11. achieved by God's only power. <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "King David's thanks for victories.\nThe 8. key."
+            }
+          ]
         },
         {
           "verse": 1,
@@ -10443,7 +10495,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "A confident prayer for Christ's Incarnation. The 5. key."
+          "text": "A confident prayer for Christ's Incarnation.\nThe 5. key."
         }
       ]
     },
@@ -10581,7 +10633,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Exhortation to good life, in respect of reward or punishment. The 7. key."
+          "text": "Exhortation to good life, in respect of reward or punishment.\nThe 7. key."
         }
       ]
     },
@@ -10734,7 +10786,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David's devotion in banishment. The 8. key."
+          "text": "David's devotion in banishment.\nThe 8. key."
         }
       ]
     },
@@ -10830,7 +10882,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Conversion of Gentiles. The 6. key."
+          "text": "Conversion of Gentiles.\nThe 6. key."
         }
       ]
     },
@@ -10893,11 +10945,15 @@
         },
         {
           "verse": 6,
-          "text": "<na>(g)</na> We shall be replenished in the goods of thy house: holy is thy temple, <na>(h)</na> marvelous in equity. Hear us, o God our saviour, the hope of all the ends of the earth, and in the sea far. eternal glory. <i>Rom. 5.</i> <na>(h)</na> Nothing polluted shall enter into heaven. Apo. 21.",
+          "text": "<na>(g)</na> We shall be replenished in the goods of thy house: holy is thy temple, <na>(h)</na> marvelous in equity. Hear us, o God our saviour, the hope of all the ends of the earth, and in the sea far.",
           "notes": [
             {
               "label": "g",
               "text": "The voices of the faithful, rejoicing in the hope of"
+            },
+            {
+              "label": "h",
+              "text": "Nothing polluted shall enter into heaven. Apo. 21."
             }
           ]
         },
@@ -11079,7 +11135,7 @@
         },
         {
           "verse": 7,
-          "text": "Who ruleth in his strength for ever^ his eyes look upon the gentiles: <na>(h)</na> they that exasperate him let them <na>(i)</na> not be exalted in themselves.",
+          "text": "Who ruleth in his strength for ever his eyes look upon the gentiles: <na>(h)</na> they that exasperate him let them <na>(i)</na> not be exalted in themselves.",
           "notes": [
             {
               "label": "h",
@@ -11137,7 +11193,7 @@
         },
         {
           "verse": 13,
-          "text": "Iwill go into thy house with <na>(o)</na> holocausts: I will render thee <na>(p)</na> my vows:",
+          "text": "I will go into thy house with <na>(o)</na> holocausts: I will render thee <na>(p)</na> my vows:",
           "notes": [
             {
               "label": "o",
@@ -11212,7 +11268,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Gentiles succeed the Jews. The 6. key."
+          "text": "Gentiles succeed the Jews.\nThe 6. key."
         }
       ]
     },
@@ -11302,7 +11358,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church still conserved. The 6. key."
+          "text": "The Church still conserved.\nThe 6. key."
         }
       ]
     },
@@ -11333,7 +11389,13 @@
         },
         {
           "verse": 4,
-          "text": "And <na>(c)</na> let the just make merry, and rejoice in the sight of God: and let them be delighted in mirth. <na>(c)</na> As God is terrible to the wicked: so he is comfortable to the just."
+          "text": "And <na>(c)</na> let the just make merry, and rejoice in the sight of God: and let them be delighted in mirth.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "As God is terrible to the wicked: so he is comfortable to the just."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -11511,11 +11573,15 @@
         },
         {
           "verse": 18,
-          "text": "The <na>(d)</na> chariot of God is ten thousand fold, thousands of them that rejoice, our Lord in them, <na>(e)</na> in Sina in the holy place. chariot of infinite magnificence. Dan. <i>7.</i> <na>(e)</na> So God appeared in Majesty, when he gave his law in mount Sinai.",
+          "text": "The <na>(d)</na> chariot of God is ten thousand fold, thousands of them that rejoice, our Lord in them, <na>(e)</na> in Sina in the holy place.",
           "notes": [
             {
               "label": "d",
               "text": "Innumerable Angels, ministers of God's will, do continually attend upon his Divine Majesty, as if he (who otherwise needeth no service) were carried by them, as in a"
+            },
+            {
+              "label": "e",
+              "text": "So God appeared in Majesty, when he gave his law in mount Sinai."
             }
           ]
         },
@@ -11587,15 +11653,14 @@
         {
           "verse": 24,
           "text": "That thy foot <na>(o)</na> may be dipped in blood: the tongue of thy dogs <i>(made red)</i> with the same <i>(blood)</i> of the enemies. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "Ex inimicis ab ipso."
-            }
-          ],
           "notes": [
             {
               "label": "o",
               "text": "But such severe slaughter shall fall upon the obstinate contemners of this grace, that men's feet shall be defiled in their blood, and dogs shall lap it."
+            },
+            {
+              "label": "1",
+              "text": "Ex inimicis ab ipso."
             }
           ]
         },
@@ -11703,7 +11768,13 @@
         },
         {
           "verse": 33,
-          "text": "Ye Kingdoms <na>(e)</na> of the earth sing to God: sing to our Lord: <na>(e)</na> The like afterwards in all other nations, whom therefore the Prophet inviteth to praise God, for so inestimable benefits in the whole world."
+          "text": "Ye Kingdoms <na>(e)</na> of the earth sing to God: sing to our Lord:",
+          "notes": [
+            {
+              "label": "e",
+              "text": "The like afterwards in all other nations, whom therefore the Prophet inviteth to praise God, for so inestimable benefits in the whole world."
+            }
+          ]
         },
         {
           "verse": 34,
@@ -11768,7 +11839,7 @@
         },
         {
           "verse": 4,
-          "text": "Ihave <na>(f)</na> laboured crying, my jaws are made hoarse: my eyes have failed, whilst I hope in my God.",
+          "text": "I have <na>(f)</na> laboured crying, my jaws are made hoarse: my eyes have failed, whilst I hope in my God.",
           "notes": [
             {
               "label": "f",
@@ -11821,7 +11892,7 @@
         },
         {
           "verse": 9,
-          "text": "Iam become a foreigner to my brethren, and a stranger to the sons of my mother."
+          "text": "I am become a foreigner to my brethren, and a stranger to the sons of my mother."
         },
         {
           "verse": 10,
@@ -11921,11 +11992,6 @@
         {
           "verse": 21,
           "text": "In thy sight are all they that afflict me, my heart hath looked for reproach and misery. And I expected somebody that would be sorry together with me, and there <na>(t)</na> was none: and that would comfort me, and I found not.",
-          "cross_refs": [
-            {
-              "text": "Mat. 27. Ioan. 19."
-            }
-          ],
           "notes": [
             {
               "label": "t",
@@ -11987,7 +12053,13 @@
         },
         {
           "verse": 27,
-          "text": "Because <na>(z)</na> whom thou hast strucken, they have persecuted: and upon the sorrow of my wounds they have added. <na>(z)</na> Christ, whom God of his mercy designed to suffer death, for redemption of mankind, the Jews of mere envy and malice persecuted to death."
+          "text": "Because <na>(z)</na> whom thou hast strucken, they have persecuted: and upon the sorrow of my wounds they have added.",
+          "notes": [
+            {
+              "label": "z",
+              "text": "Christ, whom God of his mercy designed to suffer death, for redemption of mankind, the Jews of mere envy and malice persecuted to death."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -12025,7 +12097,7 @@
         },
         {
           "verse": 31,
-          "text": "Iwill praise the name of God with canticle: and will magnify him in praise."
+          "text": "I will praise the name of God with canticle: and will magnify him in praise."
         },
         {
           "verse": 32,
@@ -12090,7 +12162,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's afflictions and victory. The 5. key."
+          "text": "Christ's afflictions and victory.\nThe 5. key."
         }
       ]
     },
@@ -12151,7 +12223,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David's prayer in persecution. The 8. key."
+          "text": "David's prayer in persecution.\nThe 8. key."
         }
       ]
     },
@@ -12214,7 +12286,7 @@
         },
         {
           "verse": 7,
-          "text": "Iwas made to many as <na>(g)</na> a wonder: & thou art a strong helper.",
+          "text": "I was made to many as <na>(g)</na> a wonder: & thou art a strong helper.",
           "notes": [
             {
               "label": "g",
@@ -12339,7 +12411,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "A prayer for perseverance in virtue. The 7. key."
+          "text": "A prayer for perseverance in virtue.\nThe 7. key."
         }
       ]
     },
@@ -12484,7 +12556,13 @@
         },
         {
           "verse": 15,
-          "text": "And <cr>[1]</cr> he shall live, and there shall be given him of the gold of Arabia, and they shall adore it always: all the day they shall bless him."
+          "text": "And <cr>[1]</cr> he shall live, and there shall be given him of the gold of Arabia, and they shall adore it always: all the day they shall bless him.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "How is this prophecy verified, except the Church be always visible?"
+            }
+          ]
         },
         {
           "verse": 16,
@@ -12533,7 +12611,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ our King & Judge. The 5. key."
+          "text": "Christ our King & Judge.\nThe 5. key."
         }
       ]
     },
@@ -12647,7 +12725,13 @@
         },
         {
           "verse": 11,
-          "text": "And they have said: <na>(m)</na> How doth God know, and is there knowledge in the highest? <na>(m)</na> The voice of the weak, inclining to diffidence, & doubt of God's knowledge and providence."
+          "text": "And they have said: <na>(m)</na> How doth God know, and is there knowledge in the highest?",
+          "notes": [
+            {
+              "label": "m",
+              "text": "The voice of the weak, inclining to diffidence, & doubt of God's knowledge and providence."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -12788,7 +12872,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Affliction in this world is recompensed in the end. The 9. key."
+          "text": "Affliction in this world is recompensed in the end.\nThe 9. key."
         }
       ]
     },
@@ -12811,7 +12895,7 @@
         },
         {
           "verse": 2,
-          "text": "Be <na>(c)</na> mindful of thy congregation, <na>(d)</na> which thou hast possessed from the beginning. Thou hast <na>(e)</na> redeemed the rod of thine inheritance: mount Sion, in which thou hast dwelt. assured that God who hath conserved his Church hitherto, from the beginning of the world, will conserve it still to the end. <na>(e)</na> Another reason why God will conserve his Church is, because he hath delivered it often in a strong arm; as from bondage in Aegypt, from persecution and oppression in the time of Judges, and Kings, and lastly redeemed it from the tyranny of the devil by Christ's death.",
+          "text": "Be <na>(c)</na> mindful of thy congregation, <na>(d)</na> which thou hast possessed from the beginning. Thou hast <na>(e)</na> redeemed the rod of thine inheritance: mount Sion, in which thou hast dwelt.",
           "notes": [
             {
               "label": "c",
@@ -12820,6 +12904,10 @@
             {
               "label": "d",
               "text": "being"
+            },
+            {
+              "label": "e",
+              "text": "Another reason why God will conserve his Church is, because he hath delivered it often in a strong arm; as from bondage in Aegypt, from persecution and oppression in the time of Judges, and Kings, and lastly redeemed it from the tyranny of the devil by Christ's death."
             }
           ]
         },
@@ -12850,11 +12938,6 @@
         {
           "verse": 5,
           "text": "and have not known, <na>(i)</na> as in the issue on high. As <na>(k)</na> in a wood of trees they have with axes",
-          "cross_refs": [
-            {
-              "text": "4. Reg. 25."
-            }
-          ],
           "notes": [
             {
               "label": "i",
@@ -13020,7 +13103,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "A prayer in long affliction. The 7. key."
+          "text": "A prayer in long affliction.\nThe 7. key."
         }
       ]
     },
@@ -13148,7 +13231,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence towards his people. The 3. key."
+          "text": "God's providence towards his people.\nThe 3. key."
         }
       ]
     },
@@ -13157,11 +13240,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Unto the end, in praises, a Psalm <na>(a)</na> to Asaph, a Canticle to <na>(b)</na> the Assyrians. people. <na>(b)</na> Amongst others, one notorious example of God's providence is recorded of an hundred fourscore & five thousand Assirians, slain in one night by an Angel. 4. Reg. 19.",
+          "text": "Unto the end, in praises, a Psalm <na>(a)</na> to Asaph, a Canticle to <na>(b)</na> the Assyrians.",
           "notes": [
             {
               "label": "a",
               "text": "For the congregation of faithful and godly"
+            },
+            {
+              "label": "b",
+              "text": "Amongst others, one notorious example of God's providence is recorded of an hundred fourscore & five thousand Assirians, slain in one night by an Angel. 4. Reg. 19."
             }
           ]
         },
@@ -13258,6 +13345,10 @@
             {
               "label": "o",
               "text": "persecutors and others being terrified shall be astonished and silent."
+            },
+            {
+              "label": "1",
+              "text": "The Prophets do often speak in the pretertense, for the assurance of the things to come."
             }
           ]
         },
@@ -13314,7 +13405,13 @@
       "verses": [
         {
           "verse": 0,
-          "text": "and therefore he still reneweth his purpose to serve God <i>sincerely, 15. particularly remembering the delivery of Israel from Aegypt.</i> <cr>[1]</cr>"
+          "text": "and therefore he still reneweth his purpose to serve God <i>sincerely, 15. particularly remembering the delivery of Israel from Aegypt.</i> <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "God's special protection of the Jews.\nThe 4. key."
+            }
+          ]
         },
         {
           "verse": 1,
@@ -13443,7 +13540,7 @@
         },
         {
           "verse": 12,
-          "text": "Ihave been mindful of the works of our Lord: because I will be mindful from the beginning of thy marvelous works."
+          "text": "I have been mindful of the works of our Lord: because I will be mindful from the beginning of thy marvelous works."
         },
         {
           "verse": 13,
@@ -13519,11 +13616,6 @@
         {
           "verse": 1,
           "text": "Understanding <na>(a)</na> to Asaph. My people attend ye to <na>(b)</na> my law: incline your ear unto the words of my mouth.",
-          "cross_refs": [
-            {
-              "text": "Mat. 13. 5, 35."
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -13537,7 +13629,7 @@
         },
         {
           "verse": 2,
-          "text": "Iwill open my mouth in <na>(c)</na> parables: I will speak <na>(d)</na> propositions from the beginning.",
+          "text": "I will open my mouth in <na>(c)</na> parables: I will speak <na>(d)</na> propositions from the beginning.",
           "notes": [
             {
               "label": "c",
@@ -13667,7 +13759,7 @@
         },
         {
           "verse": 14,
-          "text": "And he <na>(r)</na> conducted them in a cloud by day: and all the night by light of fire. they were in the desert.",
+          "text": "And he <na>(r)</na> conducted them in a cloud by day: and all the night by light of fire.",
           "notes": [
             {
               "label": "r",
@@ -13919,11 +14011,6 @@
         {
           "verse": 45,
           "text": "He sent upon them <na>(p)</na> a swarm of flies, and it eat them: and <na>(q)</na> the frog, and it destroyed them. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "* Coenomyiam."
-            }
-          ],
           "notes": [
             {
               "label": "p",
@@ -13932,17 +14019,16 @@
             {
               "label": "q",
               "text": "The second plague."
+            },
+            {
+              "label": "1",
+              "text": "* Coenomyiam."
             }
           ]
         },
         {
           "verse": 46,
           "text": "And he gave their fruits to <na>(r)</na> the blast, and their labours to <na>(s)</na> the locust.",
-          "cross_refs": [
-            {
-              "text": "Exod. 10."
-            }
-          ],
           "notes": [
             {
               "label": "r",
@@ -13957,11 +14043,6 @@
         {
           "verse": 47,
           "text": "And he killed their vineyards with <na>(t)</na> hail: and their mulberry trees with <na>(v)</na> hoar-frost.",
-          "cross_refs": [
-            {
-              "text": "Exod. 9."
-            }
-          ],
           "notes": [
             {
               "label": "t",
@@ -14008,14 +14089,6 @@
         {
           "verse": 51,
           "text": "And <na>(a)</na> he struck all the first-born in the land of Aegypt: the first fruits of all their labours in the tabernacles <na>(b)</na> of Cham.",
-          "cross_refs": [
-            {
-              "text": "10. v. 6."
-            },
-            {
-              "text": "Exod. 11."
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -14081,12 +14154,7 @@
         },
         {
           "verse": 58,
-          "text": "They incensed him to wrath in their <na>(i)</na> hills: and in their <cr>[1]</cr> gravens they provoked him <na>(k)</na> to emulation. indignation.",
-          "cross_refs": [
-            {
-              "text": "* Sculptilibus."
-            }
-          ],
+          "text": "They incensed him to wrath in their <na>(i)</na> hills: and in their <cr>[1]</cr> gravens they provoked him <na>(k)</na> to emulation.",
           "notes": [
             {
               "label": "i",
@@ -14095,6 +14163,10 @@
             {
               "label": "k",
               "text": "By graven images of Idols, they provoked God to"
+            },
+            {
+              "label": "1",
+              "text": "* Sculptilibus."
             }
           ]
         },
@@ -14241,7 +14313,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's great Benefits bestowed upon the Jews, and their ingratitude. The 4. key."
+          "text": "God's great Benefits bestowed upon the Jews, and their ingratitude.\nThe 4. key."
         }
       ]
     },
@@ -14338,11 +14410,15 @@
         },
         {
           "verse": 10,
-          "text": "Lest they say perhaps amongst the Gentiles: <na>(l)</na> where is their God? And <na>(m)</na> be notified in the nations before our eyes. The revenge of the blood of thy servants, which hath been shed: not thine enemies to insult, as though thou were not our God; and consequently thou hadst no people at all in the world. <na>(m)</na> Therefore we pray, that the revenge of thy servants' blood may be so notified, that it cannot be denied, nor doubted of. Which is also here prophesied, that it will so come to pass in the end.",
+          "text": "Lest they say perhaps amongst the Gentiles: <na>(l)</na> where is their God? And <na>(m)</na> be notified in the nations before our eyes. The revenge of the blood of thy servants, which hath been shed:",
           "notes": [
             {
               "label": "l",
               "text": "Albeit, o Lord, thou suffer us to be punished, yet suffer"
+            },
+            {
+              "label": "m",
+              "text": "Therefore we pray, that the revenge of thy servants' blood may be so notified, that it cannot be denied, nor doubted of. Which is also here prophesied, that it will so come to pass in the end."
             }
           ]
         },
@@ -14381,7 +14457,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church suffereth very great persecutions. The 6. key."
+          "text": "The Church suffereth very great persecutions.\nThe 6. key."
         }
       ]
     },
@@ -14619,7 +14695,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ our Redeemer from sin and captivity. The 5. key."
+          "text": "Christ our Redeemer from sin and captivity.\nThe 5. key."
         }
       ]
     },
@@ -14669,6 +14745,14 @@
             {
               "label": "f",
               "text": "and most especially solemnity in the first day of the seventh month, in memory of Isaac conserved from death, in whom God promised Abraham to multiply his seed, and to bless all nations. Gen. 17. v. 21. c. 21. v. 12. c. 22. v. 18."
+            },
+            {
+              "label": "1",
+              "text": "The feast of Noemenia."
+            },
+            {
+              "label": "2",
+              "text": "Feast of trumpets."
             }
           ]
         },
@@ -14693,13 +14777,21 @@
             {
               "label": "h",
               "text": "God delivered the same people from their untolerable bondage of carrying burdens in baskets, from gathering straw, making bricks, and other servitude. Exo. 1. v. 14. c. 5. v. 7."
+            },
+            {
+              "label": "1",
+              "text": "In memory of this benefit Pasch was instituted."
             }
           ]
         },
         {
           "verse": 8,
-          "text": "In <na>(i)</na> tribulation thou didst invocate me, and I heard thee: I heard thee in the secret of the tempest: I <na>(k)</na> proved thee at the water of contradiction. <na>(i)</na> The admonition of God to the people:",
+          "text": "In <na>(i)</na> tribulation thou didst invocate me, and I heard thee: I heard thee in the secret of the tempest: I <na>(k)</na> proved thee at the water of contradiction.",
           "notes": [
+            {
+              "label": "i",
+              "text": "The admonition of God to the people:"
+            },
             {
               "label": "k",
               "text": "yet after so great benefits thou didst murmur, and contradict me. Exo. 17. Num. 20."
@@ -14727,6 +14819,10 @@
             {
               "label": "n",
               "text": "This was another great benefit, to give an express law, for their instruction."
+            },
+            {
+              "label": "1",
+              "text": "The feast of Pentecost in memory of the law."
             }
           ]
         },
@@ -14759,7 +14855,7 @@
         },
         {
           "verse": 15,
-          "text": "Ihad <na>(p)</na> for nothing <na>(q)</na> perhaps humbled their enemies: and had laid my hand upon those that afflict them.",
+          "text": "I had <na>(p)</na> for nothing <na>(q)</na> perhaps humbled their enemies: and had laid my hand upon those that afflict them.",
           "notes": [
             {
               "label": "p",
@@ -14796,7 +14892,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Invitation to celebrate festival days devoutly. The 7. key."
+          "text": "Invitation to celebrate festival days devoutly.\nThe 7. key."
         }
       ]
     },
@@ -14897,7 +14993,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Admonition to Magistrates. The 7. key."
+          "text": "Admonition to Magistrates.\nThe 7. key."
         }
       ]
     },
@@ -15119,7 +15215,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Persecuters of the Church confounded or converted. The 6. key."
+          "text": "Persecuters of the Church confounded or converted.\nThe 6. key."
         }
       ]
     },
@@ -15250,7 +15346,7 @@
         },
         {
           "verse": 11,
-          "text": "Because <na>(r)</na> better is one day in thy courts, above thousands. I have chosen to be <na>(s)</na> an abject in the house of my God: rather than to dwell <na>(t)</na> in the tabernacles of sinners. be in the poorest state of Catholic Christians, <na>(t)</na> than in greatest palaces or highest dignities amongst sinners.",
+          "text": "Because <na>(r)</na> better is one day in thy courts, above thousands. I have chosen to be <na>(s)</na> an abject in the house of my God: rather than to dwell <na>(t)</na> in the tabernacles of sinners.",
           "notes": [
             {
               "label": "r",
@@ -15259,6 +15355,10 @@
             {
               "label": "s",
               "text": "And better to"
+            },
+            {
+              "label": "t",
+              "text": "than in greatest palaces or highest dignities amongst sinners."
             }
           ]
         },
@@ -15295,7 +15395,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Eternal glory. The 10. key."
+          "text": "Eternal glory.\nThe 10. key."
         }
       ]
     },
@@ -15376,7 +15476,7 @@
         },
         {
           "verse": 9,
-          "text": "Iwill <na>(i)</na> hear what our Lord God will speak in me: <na>(k)</na> because he will speak peace upon his people. And upon <na>(l)</na> his saints: and upon them, that are converted to the heart.",
+          "text": "I will <na>(i)</na> hear what our Lord God will speak in me: <na>(k)</na> because he will speak peace upon his people. And upon <na>(l)</na> his saints: and upon them, that are converted to the heart.",
           "notes": [
             {
               "label": "i",
@@ -15459,7 +15559,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Incarnation of Christ. The 5. key."
+          "text": "Incarnation of Christ.\nThe 5. key."
         }
       ]
     },
@@ -15580,7 +15680,7 @@
         },
         {
           "verse": 12,
-          "text": "Iwill <na>(p)</na> confess to thee, o Lord my God, with all my heart, and will glorify thy name for ever.",
+          "text": "I will <na>(p)</na> confess to thee, o Lord my God, with all my heart, and will glorify thy name for ever.",
           "notes": [
             {
               "label": "p",
@@ -15855,7 +15955,7 @@
         },
         {
           "verse": 16,
-          "text": "Iam poor, and in labours <na>(n)</na> from my youth: and being <na>(o)</na> exalted, humbled, and troubled.",
+          "text": "I am poor, and in labours <na>(n)</na> from my youth: and being <na>(o)</na> exalted, humbled, and troubled.",
           "notes": [
             {
               "label": "n",
@@ -15929,11 +16029,11 @@
         },
         {
           "verse": 4,
-          "text": "Ihave ordained a testament with mine elect, I have sworn to David my servant:"
+          "text": "I have ordained a testament with mine elect, I have sworn to David my servant:"
         },
         {
           "verse": 5,
-          "text": "<na>(d)</na> for ever will I prepare thy seed. And I will build thy seat unto generation and generation. Church is for ever conserved. Otherwise not verified of David's temporal kingdom, which decayed in the captivity of Babylon, and is now wholly destroyed.",
+          "text": "<na>(d)</na> for ever will I prepare thy seed. And I will build thy seat unto generation and generation.",
           "notes": [
             {
               "label": "d",
@@ -16040,15 +16140,16 @@
         {
           "verse": 20,
           "text": "Then didst thou speak in vision to thy Saints, and saidst: <cr>[1]</cr> I have put help on the mighty one: & have exalted an elect one of my people.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "1. Reg. 16. 1. Reg. 5. Act. 13. v. 22."
+              "label": "1",
+              "text": "Thus God promised to establish the Kingdom of the Jews in David and his family. 1. Reg. 16. 1. Reg. 5. and other places. Which was performed as in a figure, but more fully in Christ. Act. 13. v. 22."
             }
           ]
         },
         {
           "verse": 21,
-          "text": "Ihave found David my servant: with mine holy oil have I anointed him."
+          "text": "I have found David my servant: with mine holy oil have I anointed him."
         },
         {
           "verse": 22,
@@ -16080,11 +16181,11 @@
         },
         {
           "verse": 29,
-          "text": "Iwill keep my mercy unto him for ever: and my testament faithful to him."
+          "text": "I will keep my mercy unto him for ever: and my testament faithful to him."
         },
         {
           "verse": 30,
-          "text": "Iwill put his seed for ever and ever: and his throne as the days of heaven."
+          "text": "I will put his seed for ever and ever: and his throne as the days of heaven."
         },
         {
           "verse": 31,
@@ -16096,7 +16197,7 @@
         },
         {
           "verse": 33,
-          "text": "Iwill visit their iniquities with a rod: and their sins with stripes."
+          "text": "I will visit their iniquities with a rod: and their sins with stripes."
         },
         {
           "verse": 34,
@@ -16114,8 +16215,9 @@
         {
           "verse": 37,
           "text": "his seed shall continue for ever. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Iwill not lie."
             }
           ]
@@ -16142,6 +16244,10 @@
             {
               "label": "o",
               "text": "Amongst many pensive things, this one word doth comfort us, thy promise remaineth, thou hast not denied to send Christ, but deferred him."
+            },
+            {
+              "label": "1",
+              "text": "God having promised all the aforesaid, the Prophet in the person of the weak, lamenteth that the contrary shall happen as well in the temporal kingdom oppressed by the Assirians, Babylonians, Persians, Grecians, and Romans: as in the Church impugned by innumerable sorts of Heretics and other Infidels."
             }
           ]
         },
@@ -16181,7 +16287,13 @@
         },
         {
           "verse": 47,
-          "text": "<cr>[1]</cr> How long, o Lord, doest thou turn away for ever: shall thy wrath burn as a fire?"
+          "text": "<cr>[1]</cr> How long, o Lord, doest thou turn away for ever: shall thy wrath burn as a fire?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Psalmist prayeth and prophesieth that God will respect the weakness of man, maintain his Church in many nations, & save many souls."
+            }
+          ]
         },
         {
           "verse": 48,
@@ -16224,7 +16336,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church of Christ never faileth. The 6. key."
+          "text": "The Church of Christ never faileth.\nThe 6. key."
         }
       ]
     },
@@ -16304,15 +16416,14 @@
         {
           "verse": 8,
           "text": "Thou hast put <na>(i)</na> our iniquities in thy sight: our age in the light of thy countenance. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "Saeculum."
-            }
-          ],
           "notes": [
             {
               "label": "i",
               "text": "Sin the cause of shortness of man's life."
+            },
+            {
+              "label": "1",
+              "text": "Saeculum."
             }
           ]
         },
@@ -16328,7 +16439,17 @@
         },
         {
           "verse": 10,
-          "text": "the days of our years in them are <na>(l)</na> seventy years. And if in strong ones <na>(m)</na> eighty years: and the more of them, labour & sorrow. Because <na>(n)</na> mildness is come upon us: and we shall be chastised. (l m) These numbers literally shew the shortness of the longer sort of men's lives. Mystically, seven signify the rest after labours of this world, and pertain to the old testament: eight signify the reward in the resurrection, pertaining to the new testament. Which multiplied by ten, a perfect number, make seventy and eighty. Which joined together make an hundred and fifty. The number of all these Psalms. <na>(m)</na> ↑ <na>(n)</na> It is of God's mild providence, that man's life is short, for that many if they were sure, or had probability to live long, would presume to sin more."
+          "text": "the days of our years in them are <na>(l)</na> seventy years. And if in strong ones <na>(m)</na> eighty years: and the more of them, labour & sorrow. Because <na>(n)</na> mildness is come upon us: and we shall be chastised.",
+          "notes": [
+            {
+              "label": "m",
+              "text": "See previous note"
+            },
+            {
+              "label": "n",
+              "text": "It is of God's mild providence, that man's life is short, for that many if they were sure, or had probability to live long, would presume to sin more."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -16405,7 +16526,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Man rightly created fell by sin into miseries. The 6. key."
+          "text": "Man rightly created fell by sin into miseries.\nThe 6. key."
         }
       ]
     },
@@ -16465,7 +16586,7 @@
         },
         {
           "verse": 6,
-          "text": "Of <na>(g)</na> the arrow flying in the day, <na>(h)</na> of business walking in darkness: <na>(i)</na> of invasion, and the midday devil. torments, even to death, except God's servants will relent, and deny the truth, which they assuredly believe, and know in their conscience, that they are bound to profess it.",
+          "text": "Of <na>(g)</na> the arrow flying in the day, <na>(h)</na> of business walking in darkness: <na>(i)</na> of invasion, and the midday devil.",
           "notes": [
             {
               "label": "g",
@@ -16515,7 +16636,7 @@
         },
         {
           "verse": 11,
-          "text": "Because he hath given <na>(n)</na> his Angels charge of thee: <na>(o)</na> that they keep thee in all thy ways. the latter part of this verse; which sheweth when Angels protect just men, to wit, when they walk in a right path, observing ordinary course in their actions, not in giving themselves headlong into needless danger, as the same devil proposed to our Saviour, to cast himself down from the pinnacle of the temple. Such falling is not the way of the just, but of Lucifer, that fell from heaven. So S. Bernard noteth Ser. <i>15.</i> in hunc Psal.",
+          "text": "Because he hath given <na>(n)</na> his Angels charge of thee: <na>(o)</na> that they keep thee in all thy ways.",
           "notes": [
             {
               "label": "n",
@@ -16564,7 +16685,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence. The 3. key."
+          "text": "God's providence.\nThe 3. key."
         }
       ]
     },
@@ -16722,7 +16843,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The works of God admirable. The 2. key."
+          "text": "The works of God admirable.\nThe 2. key."
         }
       ]
     },
@@ -16828,7 +16949,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Eternal salvation and damnation. The 10. key."
+          "text": "Eternal salvation and damnation.\nThe 10. key."
         }
       ]
     },
@@ -16837,17 +16958,35 @@
       "verses": [
         {
           "verse": 1,
-          "text": "To <na>(a)</na> David himself, in <na>(b)</na> the fourth of the sabbath. Our Lord God of revenges: the God <na>(c)</na> of revenges hath done <na>(d)</na> freely. A Psalm of David, yet it is so to be understood, that the Holy Ghost is always the principal author, and David the instrumental, ministerial, or secondary author. But when other names are expressed, either in the genitive or dative case, or howsoever, it proveth not that those men were the writers of the same Psalms, but importeth some other things, as by S. Augustin's judgement we noted in the proemial Annotations, page <i>3.</i> & <i>4.</i> Whereby is proved that this Psalm was not written, nor composed by Moyses, as Hebrew Rabbins suppose, but by the Royal Psalmist David. <na>(b)</na> Made and ordinarily sung in the fourth day of the week, our Wednesday, in which day Judas the traitor sold our Saviour Christ to his enemies. The revenge of which wickedness, and of all other sins, is here prophesied. <na>(c)</na> God more commonly called the God of mercy (which virtue in him is above all his works, Psal. <i>144.</i> ) is also the God of revenges, according to his justice. <na>(d)</na> He proceedeth in judgement resolutely, not depending, nor fearing, nor respecting any person, power, dignity, wisdom or other like quality, but their just merits.",
+          "text": "To <na>(a)</na> David himself, in <na>(b)</na> the fourth of the sabbath. Our Lord God of revenges: the God <na>(c)</na> of revenges hath done <na>(d)</na> freely.",
           "notes": [
             {
               "label": "a",
               "text": "The Hebrew letter Lamed, which ordinarily is prefixed to the dative case, or signifieth to, being set before proper names, is a sign of the genitive case. Yet the Septuagint express it by the dative, and so doth the Latin, ipsi David, and consequently our English hath, to David himself, to shew a difference between sacred and profane writers. For in human books the writer and author is all one; but in divine, the Holy Ghost is the proper author, and a man is the writer. To signify therefore the principal author, David is sometimes named as the instrumental cause, to whom the Holy Ghost inspired this and other Psalms, and by whom they were written. And when the titles express otherwise:"
+            },
+            {
+              "label": "b",
+              "text": "Made and ordinarily sung in the fourth day of the week, our Wednesday, in which day Judas the traitor sold our Saviour Christ to his enemies. The revenge of which wickedness, and of all other sins, is here prophesied."
+            },
+            {
+              "label": "c",
+              "text": "God more commonly called the God of mercy (which virtue in him is above all his works, Psal. 144. ) is also the God of revenges, according to his justice."
+            },
+            {
+              "label": "d",
+              "text": "He proceedeth in judgement resolutely, not depending, nor fearing, nor respecting any person, power, dignity, wisdom or other like quality, but their just merits."
             }
           ]
         },
         {
           "verse": 2,
-          "text": "Be <cr>[1]</cr> exalted thou that judgest the earth: render retribution to the proud."
+          "text": "Be <cr>[1]</cr> exalted thou that judgest the earth: render retribution to the proud.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Aprayer of just zeal."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -16865,7 +17004,13 @@
         },
         {
           "verse": 5,
-          "text": "Thy <cr>[1]</cr> people, o Lord, they have humbled: and thine inheritance they have vexed."
+          "text": "Thy <cr>[1]</cr> people, o Lord, they have humbled: and thine inheritance they have vexed.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Adescription of heathenish and heretical cruelty."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -16873,7 +17018,13 @@
         },
         {
           "verse": 7,
-          "text": "And <cr>[1]</cr> they have said: The Lord shall not see, neither shall the God of Jacob understand."
+          "text": "And <cr>[1]</cr> they have said: The Lord shall not see, neither shall the God of Jacob understand.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Scarce any Atheists are so blind as thus to think, but many sinners so behave themselves, as if God saw not, knew not, or at least cared not what they do."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -17009,6 +17160,10 @@
             {
               "label": "d",
               "text": "God our Creator, is also our Protector & Saviour."
+            },
+            {
+              "label": "1",
+              "text": "This invitation is most fitly ordained by the Church for the proem or beginning of Matins."
             }
           ]
         },
@@ -17112,7 +17267,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ our Lord and King. The 5. key."
+          "text": "Christ our Lord and King.\nThe 5. key."
         }
       ]
     },
@@ -17229,7 +17384,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's divine power. The 5. key."
+          "text": "Christ's divine power.\nThe 5. key."
         }
       ]
     },
@@ -17274,7 +17429,13 @@
         },
         {
           "verse": 4,
-          "text": "His lightnings <cr>[1]</cr> shined to the round world, the earth saw: and was moved."
+          "text": "His lightnings <cr>[1]</cr> shined to the round world, the earth saw: and was moved.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "These things are denounced as if they were already done, for the assured certainty thereof."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -17338,7 +17499,13 @@
       "verses": [
         {
           "verse": 0,
-          "text": "his coming to judge the world. <cr>[1]</cr>"
+          "text": "his coming to judge the world. <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Church in all nations.\nThe 6. key."
+            }
+          ]
         },
         {
           "verse": 1,
@@ -17381,11 +17548,6 @@
         {
           "verse": 4,
           "text": "Make ye jubilation to God all the earth: <na>(f)</na> chant, and <na>(g)</na> rejoice, and <na>(h)</na> sing. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "Cantate, exultate, psallite."
-            }
-          ],
           "notes": [
             {
               "label": "f",
@@ -17398,6 +17560,10 @@
             {
               "label": "h",
               "text": "In instruments."
+            },
+            {
+              "label": "1",
+              "text": "Cantate, exultate, psallite."
             }
           ]
         },
@@ -17486,11 +17652,6 @@
         {
           "verse": 6,
           "text": "Moyses and Aaron in his <na>(f)</na> Priests: and Samuel among them that invocate his name: They invocated our Lord <na>(g)</na> and he heard them:",
-          "cross_refs": [
-            {
-              "text": "q. 23. in Levit."
-            }
-          ],
           "notes": [
             {
               "label": "f",
@@ -17504,7 +17665,7 @@
         },
         {
           "verse": 8,
-          "text": "O Lord our God thou heardest them: God thou wast propitious to them, and taking vengeance upon all their <na>(h)</na> inventions. punishing the rebellion of Chore, Dathan, and Abiron. Num. <i>16.</i>",
+          "text": "O Lord our God thou heardest them: God thou wast propitious to them, and taking vengeance upon all their <na>(h)</na> inventions.",
           "notes": [
             {
               "label": "h",
@@ -17521,7 +17682,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ our Messias. The 5. key."
+          "text": "Christ our Messias.\nThe 5. key."
         }
       ]
     },
@@ -17581,7 +17742,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "One Creator of all things. The 1. key."
+          "text": "One Creator of all things.\nThe 1. key."
         }
       ]
     },
@@ -17614,7 +17775,7 @@
         },
         {
           "verse": 3,
-          "text": "Idid not propose before mine eyes any unjust thing: I hated them that do prevarication."
+          "text": "I did not propose before mine eyes any unjust thing: I hated them that do prevarication."
         },
         {
           "verse": 4,
@@ -17669,7 +17830,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The fifth penitential Psalm. The 7. key."
+          "text": "The fifth penitential Psalm.\nThe 7. key."
         }
       ]
     },
@@ -17752,7 +17913,7 @@
         },
         {
           "verse": 7,
-          "text": "Iam become like <na>(l)</na> a pelican of the wilderness: I am become as <na>(m)</na> a night crow in the house.",
+          "text": "I am become like <na>(l)</na> a pelican of the wilderness: I am become as <na>(m)</na> a night crow in the house.",
           "notes": [
             {
               "label": "l",
@@ -17766,7 +17927,7 @@
         },
         {
           "verse": 8,
-          "text": "Ihave watched, and am become as <na>(n)</na> a sparrow solitary in the house-top.",
+          "text": "I have watched, and am become as <na>(n)</na> a sparrow solitary in the house-top.",
           "notes": [
             {
               "label": "n",
@@ -18195,7 +18356,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Gratitude for God's benefits. The 7. key."
+          "text": "Gratitude for God's benefits.\nThe 7. key."
         }
       ]
     },
@@ -18322,7 +18483,7 @@
         },
         {
           "verse": 14,
-          "text": "Bringing forth grass for beasts, and herb for the service of men. That thou mayst bring forth <na>(n)</na> bread out of the earth: (n o p) By these three principal kinds of food, bread, wine, and oil, all sorts of nutriment are understood."
+          "text": "Bringing forth grass for beasts, and herb for the service of men. That thou mayst bring forth <na>(n)</na> bread out of the earth:"
         },
         {
           "verse": 15,
@@ -18330,11 +18491,11 @@
           "notes": [
             {
               "label": "o",
-              "text": "↑"
+              "text": "See previous note"
             },
             {
               "label": "p",
-              "text": "↑"
+              "text": "See previous note"
             }
           ]
         },
@@ -18344,7 +18505,7 @@
         },
         {
           "verse": 17,
-          "text": "there^ sparrows shall make their nest. The house of the heron is the leader of them:"
+          "text": "there sparrows shall make their nest. The house of the heron is the leader of them:"
         },
         {
           "verse": 18,
@@ -18434,7 +18595,7 @@
         },
         {
           "verse": 33,
-          "text": "Iwill chant to our Lord in my life: I will sing to my God as long as I am."
+          "text": "I will chant to our Lord in my life: I will sing to my God as long as I am."
         },
         {
           "verse": 34,
@@ -18455,7 +18616,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's works marvelous. The 2. key."
+          "text": "God's works marvelous.\nThe 2. key."
         }
       ]
     },
@@ -18473,6 +18634,10 @@
             {
               "label": "b",
               "text": "How much grateful is it now to God, that we celebrate the greater mysteries of the new Testament."
+            },
+            {
+              "label": "1",
+              "text": "For an exposition of this Psalm read the places quoted in the inner margin."
             }
           ]
         },
@@ -18684,17 +18849,16 @@
             {
               "label": "o",
               "text": "The second plague."
+            },
+            {
+              "label": "1",
+              "text": "David knew this by revelation, or by tradition, for it is not in Exodus."
             }
           ]
         },
         {
           "verse": 31,
           "text": "He said, and <na>(p)</na> the <cr>[1]</cr> caenomyia came: and the <na>(q)</na> sciniphs in all their coasts.",
-          "cross_refs": [
-            {
-              "text": "a swarm of flies."
-            }
-          ],
           "notes": [
             {
               "label": "p",
@@ -18703,6 +18867,10 @@
             {
               "label": "q",
               "text": "The third plague."
+            },
+            {
+              "label": "1",
+              "text": "a swarm of flies."
             }
           ]
         },
@@ -18722,7 +18890,7 @@
         },
         {
           "verse": 34,
-          "text": "He said, & <na>(s)</na> the locust came, & the <na>(t)</na> bruchus whereof there was no number. grass, and fruit.",
+          "text": "He said, & <na>(s)</na> the locust came, & the <na>(t)</na> bruchus whereof there was no number.",
           "notes": [
             {
               "label": "s",
@@ -18741,11 +18909,6 @@
         {
           "verse": 36,
           "text": "And he struck every <na>(v)</na> first begotten in their land: the first fruits of all their labour.",
-          "cross_refs": [
-            {
-              "text": "Exod. 12. v. 35."
-            }
-          ],
           "notes": [
             {
               "label": "v",
@@ -18799,7 +18962,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's special benefits towards the Jews. The 4. key."
+          "text": "God's special benefits towards the Jews.\nThe 4. key."
         }
       ]
     },
@@ -19123,7 +19286,13 @@
         },
         {
           "verse": 38,
-          "text": "And <na>(x)</na> they shed innocent blood: the blood of their sons and of their daughters, which they sacrificed to the sculptiles of Chanaan. And the land was infected with blood, <na>(x)</na> Some Jews offered these most cruel, unnatural, and abominable sacrifices; perhaps in the times of Judges, when they were mingled with idolatrous people, and served their gods. Iud. <i>2. v. 12. c. 3. v. 6.</i> But it is more express after David's time, whereof he here prophesieth, and was verified by Achaz. <i>4. Reg. 16. v. 3.</i> and by Manasses. <i>4. Reg. 21. v. 6.</i> Which with other idolatry King Iosias destroyed. <i>4. Reg. 23. v. 1.</i>"
+          "text": "And <na>(x)</na> they shed innocent blood: the blood of their sons and of their daughters, which they sacrificed to the sculptiles of Chanaan. And the land was infected with blood,",
+          "notes": [
+            {
+              "label": "x",
+              "text": "Some Jews offered these most cruel, unnatural, and abominable sacrifices; perhaps in the times of Judges, when they were mingled with idolatrous people, and served their gods. Iud. 2. v. 12. c. 3. v. 6. But it is more express after David's time, whereof he here prophesieth, and was verified by Achaz. 4. Reg. 16. v. 3. and by Manasses. 4. Reg. 21. v. 6. Which with other idolatry King Iosias destroyed. 4. Reg. 23. v. 1."
+            }
+          ]
         },
         {
           "verse": 39,
@@ -19171,7 +19340,13 @@
         },
         {
           "verse": 47,
-          "text": "<cr>[1]</cr> Save us, o Lord our God: and gather us out of the Nations. That we may confess to thy holy name: & may glory in thy praise."
+          "text": "<cr>[1]</cr> Save us, o Lord our God: and gather us out of the Nations. That we may confess to thy holy name: & may glory in thy praise.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Avery fit prayer in time of schism."
+            }
+          ]
         },
         {
           "verse": 48,
@@ -19182,7 +19357,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Israelites often sinned, and were mercifully punished. The 4. key."
+          "text": "The Israelites often sinned, and were mercifully punished.\nThe 4. key."
         }
       ]
     },
@@ -19216,7 +19391,13 @@
         },
         {
           "verse": 3,
-          "text": "From <na>(c)</na> the rising of the sun, and the going down: from the north, and the sea. <na>(c)</na> which redemption was intended for all, & faileth not of God's part in any, but of men's own willful refusing to be duly penitent, and to keep God's precepts."
+          "text": "From <na>(c)</na> the rising of the sun, and the going down: from the north, and the sea.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "which redemption was intended for all, & faileth not of God's part in any, but of men's own willful refusing to be duly penitent, and to keep God's precepts."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -19386,7 +19567,13 @@
         },
         {
           "verse": 34,
-          "text": "The <na>(m)</na> fruitful land into a salt ground, for the malice of them that inhabit it. <na>(m)</na> He alludeth to the country about Sodome and Gomorre, which was most fruitful, and most pleasant, Gen. <i>13. v. 10.</i> but shortly after was burnt with fire and brimstone, Gen. <i>19. v. 14.</i> subverted, and turned into a dead and salt sea."
+          "text": "The <na>(m)</na> fruitful land into a salt ground, for the malice of them that inhabit it.",
+          "notes": [
+            {
+              "label": "m",
+              "text": "He alludeth to the country about Sodome and Gomorre, which was most fruitful, and most pleasant, Gen. 13. v. 10. but shortly after was burnt with fire and brimstone, Gen. 19. v. 14. subverted, and turned into a dead and salt sea."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -19471,6 +19658,12 @@
             {
               "text": "Psa. 56."
             }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The former part of this Psalm to the 7. verse, is the same in sense, and almost in words, with the later part of the 56. from the 8. verse."
+            }
           ]
         },
         {
@@ -19506,7 +19699,13 @@
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> that thy beloved may be delivered. Save with thy right hand, and hear me:"
+          "text": "<cr>[1]</cr> that thy beloved may be delivered. Save with thy right hand, and hear me:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The rest of this Psalm is the same with the later part of the 59. from the 7. verse."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -19541,7 +19740,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "David singeth praises for benefits received. The 8. key."
+          "text": "David singeth praises for benefits received.\nThe 8. key."
         }
       ]
     },
@@ -19739,7 +19938,7 @@
         },
         {
           "verse": 30,
-          "text": "Iwill confess to our Lord exceedingly with my mouth: and in the midst of many I will praise him."
+          "text": "I will confess to our Lord exceedingly with my mouth: and in the midst of many I will praise him."
         },
         {
           "verse": 31,
@@ -19750,7 +19949,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ persecuted & his enemies punished. The 5. key."
+          "text": "Christ persecuted & his enemies punished.\nThe 5. key."
         }
       ]
     },
@@ -19883,7 +20082,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's exaltation. The 5. key."
+          "text": "Christ's exaltation.\nThe 5. key."
         }
       ]
     },
@@ -19901,6 +20100,10 @@
             {
               "label": "b",
               "text": "and in public for edification of others."
+            },
+            {
+              "label": "1",
+              "text": "This Psalm in the Hebrew is composed with every verse and middle of verse, beginning with a distinct letter, in order of the Alphabet."
             }
           ]
         },
@@ -19997,7 +20200,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Graces given to the Church. The 6. key."
+          "text": "Graces given to the Church.\nThe 6. key."
         }
       ]
     },
@@ -20020,6 +20223,10 @@
             {
               "label": "b",
               "text": "He that sincerely feareth God, will take great delight in keeping his commandments."
+            },
+            {
+              "label": "2",
+              "text": "This Psalm is also composed by the Alphabet, as the next before."
             }
           ]
         },
@@ -20103,7 +20310,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence. The 3. key."
+          "text": "God's providence.\nThe 3. key."
         }
       ]
     },
@@ -20258,7 +20465,13 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> <sc>Not</sc> TO US <sc>Olord</sc>, <sc>Not</sc> TO US: but to thy name give the glory."
+          "text": "<cr>[1]</cr> <sc>Not</sc> TO US <sc>Olord</sc>, <sc>Not</sc> TO US: but to thy name give the glory.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Here some Hebrew Rabbins begin another Psalm, but by the coherence of the matter Saint Augustine proveth that it is but one Psalm, where is shewed that the true invisible God is known by such works as are here recited: and contrarywise, that the gentiles' idols are not Gods, because they are made of silver, gold, or other matter, by men's hands; having resemblance of living things are altogether senseless."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -20345,11 +20558,15 @@
         },
         {
           "verse": 24,
-          "text": "<na>(o)</na> The heaven of heaven is to our Lord: but <na>(p)</na> the earth he hath given to the children of men. it were quitting their interest of heaven to God, <na>(p)</na> and contenting themselves with earthly possessions.",
+          "text": "<na>(o)</na> The heaven of heaven is to our Lord: but <na>(p)</na> the earth he hath given to the children of men.",
           "notes": [
             {
               "label": "o",
               "text": "This in effect all worldly politics say in their hearts: as"
+            },
+            {
+              "label": "p",
+              "text": "and contenting themselves with earthly possessions."
             }
           ]
         },
@@ -20382,7 +20599,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The marvelous passage of Israel from Aegypt. The 4. key."
+          "text": "The marvelous passage of Israel from Aegypt.\nThe 4. key."
         }
       ]
     },
@@ -20478,7 +20695,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Thanks-giving for our Redeemer. The 5. key."
+          "text": "Thanks-giving for our Redeemer.\nThe 5. key."
         }
       ]
     },
@@ -20500,6 +20717,10 @@
             {
               "label": "c",
               "text": "Iwas vehemently afflicted in tribulations."
+            },
+            {
+              "label": "1",
+              "text": "This in the Hebrew is joined to the next Psalm before."
             }
           ]
         },
@@ -20515,21 +20736,31 @@
         },
         {
           "verse": 3,
-          "text": "What <na>(e)</na> shall I render to our Lord, for all things that he <na>(f)</na> hath rendered to me? (e f) Considering that God hath not only given, and bestowed many great benefits upon me, and all mankind, but also hath rendered good for evil, mercy for our sins, we have rendered evil for good: what now shall I render, saith a true penitent, for all that he hath thus rendered to me, deserving so evil? <na>(f)</na> ↑"
+          "text": "What <na>(e)</na> shall I render to our Lord, for all things that he <na>(f)</na> hath rendered to me?",
+          "notes": [
+            {
+              "label": "f",
+              "text": "See previous note"
+            }
+          ]
         },
         {
           "verse": 4,
-          "text": "I <na>(g)</na> will take the chalice of salvation: and <na>(h)</na> I will invocate the name of our Lord. he drunk for mankind, <na>(h)</na> and will praise, and call upon his name.",
+          "text": "I <na>(g)</na> will take the chalice of salvation: and <na>(h)</na> I will invocate the name of our Lord.",
           "notes": [
             {
               "label": "g",
               "text": "Seeing I am not able to render any thing worthy of God's favour to me, yet I will do that I can: I will gratefully accept his great benefit, the cup of Christ's passion, which"
+            },
+            {
+              "label": "h",
+              "text": "and will praise, and call upon his name."
             }
           ]
         },
         {
           "verse": 5,
-          "text": "Iwill <na>(i)</na> render my vows to our Lord <na>(k)</na> before all his people:",
+          "text": "I will <na>(i)</na> render my vows to our Lord <na>(k)</na> before all his people:",
           "notes": [
             {
               "label": "i",
@@ -20571,11 +20802,11 @@
         },
         {
           "verse": 8,
-          "text": "Iwill sacrifice to thee the host of praise, and I will invocate the name of our Lord."
+          "text": "I will sacrifice to thee the host of praise, and I will invocate the name of our Lord."
         },
         {
           "verse": 9,
-          "text": "Iwill render my vows to our Lord in the sight of all his people:"
+          "text": "I will render my vows to our Lord in the sight of all his people:"
         },
         {
           "verse": 10,
@@ -20630,7 +20861,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ beneficial Mysteries are celebrated by his Church. The 6. key."
+          "text": "Christ beneficial Mysteries are celebrated by his Church.\nThe 6. key."
         }
       ]
     },
@@ -20746,7 +20977,7 @@
         },
         {
           "verse": 13,
-          "text": "Being thrust^ <na>(l)</na> I was overturned to fall: and our Lord <na>(m)</na> received me.",
+          "text": "Being thrust <na>(l)</na> I was overturned to fall: and our Lord <na>(m)</na> received me.",
           "notes": [
             {
               "label": "l",
@@ -20816,7 +21047,7 @@
         },
         {
           "verse": 21,
-          "text": "Iwill confess to thee because thou hast heard me: and art become my salvation."
+          "text": "I will confess to thee because thou hast heard me: and art become my salvation."
         },
         {
           "verse": 22,
@@ -20887,15 +21118,11 @@
         },
         {
           "verse": 29,
-          "text": "<na>(z)</na> Confess ye to our Lord because he is good: because his mercy is for ever. <sc>General</sc> <sc>Annotations</sc> <sc>Upon</sc> <sc>This</sc> <sc>Cxviii</sc>. <sc>Psalm</sc>. As this Psalm is the longest in the whole Psalter, so it seemeth to the ancient Fathers most profound in sense. <cr>[1]</cr> And so much the harder to be understood, because also the very hardness thereof lieth hidden, which in diverse other Psalms and parts of holy Scripture, easily appeareth to the reader. But here the words being clear, and the sense also plain and easy in some points of doctrine, yet the more diligence is employed, the more difficulty is found in searching the whole sense and meaning of every word and sentence, with the manner observed in composing it, and the frequent repetition of the same or like words. All which maturely considered caused that great Clerk, and light of the Church Saint Augustin, <cr>[2]</cr> to omit this Psalm, when he explicated all the rest. And when at last he added also this, he wittingly omitted one special difficulty, which he doubted not to be contained in the manner of composing it, not only by order of the Hebrew Alphabet, as diverse more Psalms, and some other parts of holy Scripture, but more artificially than any other, the first eight verses all beginning with the first letter Aleph; the next eight, with the second letter Beth: and so to the last of the two and twenty letters. Of which omission he yieldeth this only reason, because he found nothing (as he humbly affirmeth) that might properly pertain thereunto. Confessing also expressly, that whensoever he applied his cogitations to expound the text it-self, it always exceeded his hability. But finally to satisfy the often and earnest request of his brethren and friends, trusting (as always) in God's special help, he largely expoundeth it, in thirty two distinct Sermons. <cr>[3]</cr> S. Ambrose, also moved with like piety, <cr>[1]</cr> made two and twenty Sermons in exposition of this Psalm. Affirming in his Prologue, that amongst other Psalms, especially this sheweth how great a master King David was of moral good life. For all Moral doctrine, being of his own nature sweet, yet most delighteth the ears, and gently toucheth the mind, being uttered, as here it is, with pleasantness of verse, and sweetness of song. Again whereas this Royal Prophet in many places of this book poureth out sentences of moral Psalms or songs, <cr>[2]</cr> as bright stars, that shine and glister to all the world, here most excellently he produceth a more singular mirror, as the sun, of full light, burning with meridian heat. And for the profit of all, <cr>[3]</cr> the better to draw our attentions, to learn that we may, though we cannot attain to all that we would, he disposed this Psalm through all the Alphabet: that as children beginning with the first letters, make entrance to further knowledge; so by the same beginnings we should lay the first foundation, and thereupon proceed in our spiritual building, towards perfection in good life, the true service of God. Which is yet further insinuated (as the same Doctor teacheth) by the eight verses continually beginning with the same letter, <cr>[4]</cr> and so other eight in order through the whole Alphabet, to signify that after seven days travail in this temporal life, we may come to that unity, which we expected in the eighth day of resurrection, when we hope to rise revived in our Lord Jesus, in newness of eternal life. Likewise Saint Basil in the Argument of this Psalm admonisheth, <na>◦</na> that whereas holy David, according to diverse states, which he passed, writ diverse Psalms: as when he fled from his enemies, when he lamented his distresses, mourned in pensiveness, enjoyed peace and comfort, ran a right course of virtue, fell from God by sin, & again returning observed God's laws; in this one Psalm he comprehendeth all his prayers made to God at sundry times, & here proposeth the same, a certain profitable moral doctrine, to all sorts and states of men. Neither doth he pretermit doctrinal points of faith, but interposeth them also with moral documents, in such sort, that this one Psalm may suffice to teach the well disposed, how to attain to perfection in virtue, to stir up",
+          "text": "<na>(z)</na> Confess ye to our Lord because he is good: because his mercy is for ever.",
           "notes": [
             {
               "label": "z",
               "text": "Our first, chief, and final duty is to praise God. v. 1. & ult."
-            },
-            {
-              "label": "◦",
-              "text": "Saint Basil's judgement that this Psalm containeth the argument of many Psalms."
             }
           ]
         }
@@ -20919,6 +21146,10 @@
             {
               "label": "c",
               "text": "and they are immaculate, that walk in the law of God. Where the holy Psalmist presupposeth, that some can and do keep the law of God, and so are immaculate, and blessed in the way of this life."
+            },
+            {
+              "label": "1",
+              "text": "This title was added by the Septuagint, to admonish us that this Psalm containeth that singular manner of praising God, signified by the two Hebrew words Alleluia, as before Psal. 104."
             }
           ]
         },
@@ -21005,11 +21236,6 @@
         {
           "verse": 8,
           "text": "<na>(p)</na> I will keep thy justifications: <na>(q)</na> forsake me not wholly.",
-          "cross_refs": [
-            {
-              "text": "li. 20. c. 21. Mor."
-            }
-          ],
           "notes": [
             {
               "label": "p",
@@ -21024,11 +21250,6 @@
         {
           "verse": 9,
           "text": "Beth. House. Wherein <na>(a)</na> doth a young man correct his way? <na>(b)</na> In keeping thy <cr>[1]</cr> words.",
-          "cross_refs": [
-            {
-              "text": "* sermones."
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -21037,6 +21258,10 @@
             {
               "label": "b",
               "text": "Whereto the same Holy Ghost answereth, that he must keep God's law, called here his words. For all the words which God uttereth, are laws to his servants."
+            },
+            {
+              "label": "1",
+              "text": "* sermones."
             }
           ]
         },
@@ -21057,15 +21282,14 @@
         {
           "verse": 11,
           "text": "<na>(e)</na> In my heart I have hid thy <cr>[1]</cr> words: that I may not sin to thee.",
-          "cross_refs": [
-            {
-              "text": "* eloquia."
-            }
-          ],
           "notes": [
             {
               "label": "e",
               "text": "Another, sincere profession of a resolute good purpose not to sin."
+            },
+            {
+              "label": "1",
+              "text": "* eloquia."
             }
           ]
         },
@@ -21095,7 +21319,7 @@
         },
         {
           "verse": 14,
-          "text": "Iam <na>(i)</na> delighted in the way of thy testimonies, as in all riches.",
+          "text": "I am <na>(i)</na> delighted in the way of thy testimonies, as in all riches.",
           "notes": [
             {
               "label": "i",
@@ -21116,26 +21340,20 @@
         {
           "verse": 16,
           "text": "I <na>(l)</na> will meditate in thy justifications: I will not forget thy <cr>[1]</cr> words.",
-          "cross_refs": [
-            {
-              "text": "* sermones."
-            }
-          ],
           "notes": [
             {
               "label": "l",
               "text": "And diligently meditateth God's law."
+            },
+            {
+              "label": "1",
+              "text": "* sermones."
             }
           ]
         },
         {
           "verse": 17,
           "text": "Gimel. Fullness. Render <na>(a)</na> to thy servant, <na>(b)</na> quicken me: <na>(c)</na> and I shall keep thy <cr>[1]</cr> words.",
-          "cross_refs": [
-            {
-              "text": "* sermones."
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -21148,6 +21366,10 @@
             {
               "label": "c",
               "text": "so I shall keep thy law, which otherwise I cannot."
+            },
+            {
+              "label": "1",
+              "text": "* sermones."
             }
           ]
         },
@@ -21245,7 +21467,7 @@
         },
         {
           "verse": 26,
-          "text": "Ihave uttered my ways, and thou hast heard me: teach me thy justifications."
+          "text": "I have uttered my ways, and thou hast heard me: teach me thy justifications."
         },
         {
           "verse": 27,
@@ -21281,11 +21503,11 @@
         },
         {
           "verse": 30,
-          "text": "Ihave chosen the way of truth: I have not forgotten thy judgments."
+          "text": "I have chosen the way of truth: I have not forgotten thy judgments."
         },
         {
           "verse": 31,
-          "text": "Ihave cleaved to thy testimonies, o Lord: <na>(g)</na> do not confound me.",
+          "text": "I have cleaved to thy testimonies, o Lord: <na>(g)</na> do not confound me.",
           "notes": [
             {
               "label": "g",
@@ -21351,7 +21573,17 @@
         },
         {
           "verse": 36,
-          "text": "<na>(g)</na> Incline my heart into thy testimonies: and <na>(h)</na> not into avarice. <na>(g)</na> Still the Prophet inculcateth the necessity of God's grace, as well to make us desire that is good; <na>(h)</na> as to fly from evil."
+          "text": "<na>(g)</na> Incline my heart into thy testimonies: and <na>(h)</na> not into avarice.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "Still the Prophet inculcateth the necessity of God's grace, as well to make us desire that is good;"
+            },
+            {
+              "label": "h",
+              "text": "as to fly from evil."
+            }
+          ]
         },
         {
           "verse": 37,
@@ -21370,15 +21602,14 @@
         {
           "verse": 38,
           "text": "<na>(l)</na> Establish thy <cr>[1]</cr> word to thy servant, in thy fear.",
-          "cross_refs": [
-            {
-              "text": "* eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "l",
               "text": "Again the just prayeth for confirmation in grace, to be established in the fear of God."
+            },
+            {
+              "label": "1",
+              "text": "* eloquium."
             }
           ]
         },
@@ -21409,11 +21640,6 @@
         {
           "verse": 41,
           "text": "Vau. And. And <na>(a)</na> let thy mercy come upon me, o Lord: <na>(b)</na> thy salvation according to thy <cr>[1]</cr> word.",
-          "cross_refs": [
-            {
-              "text": "* eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -21422,17 +21648,16 @@
             {
               "label": "b",
               "text": "and his help freely promised to all that ask it."
+            },
+            {
+              "label": "1",
+              "text": "* eloquium."
             }
           ]
         },
         {
           "verse": 42,
           "text": "And <na>(c)</na> I shall answer a word to them that upbraid me: <na>(d)</na> because I have hoped in thy <cr>[1]</cr> words.",
-          "cross_refs": [
-            {
-              "text": "* sermonibus."
-            }
-          ],
           "notes": [
             {
               "label": "c",
@@ -21441,6 +21666,10 @@
             {
               "label": "d",
               "text": "that indeed he hath not in vain trusted in God's promised help."
+            },
+            {
+              "label": "1",
+              "text": "* sermonibus."
             }
           ]
         },
@@ -21529,15 +21758,14 @@
         {
           "verse": 50,
           "text": "This hath comforted me in my humiliation: because <na>(b)</na> thy <cr>[1]</cr> word hath quickened me.",
-          "cross_refs": [
-            {
-              "text": "eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "b",
               "text": "Expectation of thy promise hath given me courage."
+            },
+            {
+              "label": "1",
+              "text": "eloquium."
             }
           ]
         },
@@ -21595,7 +21823,7 @@
         },
         {
           "verse": 55,
-          "text": "Ihave been mindful in <na>(k)</na> the night of thy name, o Lord: and have kept thy law.",
+          "text": "I have been mindful in <na>(k)</na> the night of thy name, o Lord: and have kept thy law.",
           "notes": [
             {
               "label": "k",
@@ -21626,15 +21854,14 @@
         {
           "verse": 58,
           "text": "<na>(b)</na> I besought thy face, with all my heart: have mercy on me according to thy <cr>[1]</cr> word.",
-          "cross_refs": [
-            {
-              "text": "eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "b",
               "text": "And seeing this exceedeth my proper strength, I prayed God of his mercy to make able to keep it."
+            },
+            {
+              "label": "1",
+              "text": "eloquium."
             }
           ]
         },
@@ -21675,14 +21902,6 @@
         {
           "verse": 62,
           "text": "At <na>(g)</na> mid-night I rose to confess to thee, for the judgments of thy justification.",
-          "cross_refs": [
-            {
-              "text": "v. 164."
-            },
-            {
-              "text": "Act. 16."
-            }
-          ],
           "notes": [
             {
               "label": "g",
@@ -21753,11 +21972,6 @@
         {
           "verse": 67,
           "text": "Before I <na>(g)</na> was humbled I offended: <na>(h)</na> therefore have I kept thy <cr>[1]</cr> word.",
-          "cross_refs": [
-            {
-              "text": "eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "g",
@@ -21766,6 +21980,10 @@
             {
               "label": "h",
               "text": "but vexation gave me understanding, therefore now I keep thy law."
+            },
+            {
+              "label": "1",
+              "text": "eloquium."
             }
           ]
         },
@@ -21852,8 +22070,9 @@
         {
           "verse": 76,
           "text": "Let thy mercy be done to comfort me, according to thy <cr>[1]</cr> word unto thy servant.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* eloquium."
             }
           ]
@@ -21905,15 +22124,14 @@
         {
           "verse": 82,
           "text": "Mine eyes have failed for thy <cr>[1]</cr> word, saying: <na>(b)</na> When wilt thou comfort me?",
-          "cross_refs": [
-            {
-              "text": "* eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "b",
               "text": "Delayed hope afflicteth."
+            },
+            {
+              "label": "1",
+              "text": "* eloquium."
             }
           ]
         },
@@ -22011,11 +22229,11 @@
         },
         {
           "verse": 93,
-          "text": "Iwill not forget thy justifications for ever: because in them thou hast quickened me."
+          "text": "I will not forget thy justifications for ever: because in them thou hast quickened me."
         },
         {
           "verse": 94,
-          "text": "Iam thine, save me: because <na>(e)</na> I have sought out thy justifications.",
+          "text": "I am thine, save me: because <na>(e)</na> I have sought out thy justifications.",
           "notes": [
             {
               "label": "e",
@@ -22083,24 +22301,23 @@
         },
         {
           "verse": 101,
-          "text": "Ihave stayed my feet from all evil way: that I may keep thy words."
+          "text": "I have stayed my feet from all evil way: that I may keep thy words."
         },
         {
           "verse": 102,
-          "text": "Ihave not declined from thy judgments: because thou hast set me a law."
+          "text": "I have not declined from thy judgments: because thou hast set me a law."
         },
         {
           "verse": 103,
           "text": "<na>(e)</na> How sweet are thy <cr>[1]</cr> words to my jaws. More than honey to my mouth!",
-          "cross_refs": [
-            {
-              "text": "eloquia."
-            }
-          ],
           "notes": [
             {
               "label": "e",
               "text": "Another fruit is the sweetness, which the just feeleth in his own soul."
+            },
+            {
+              "label": "1",
+              "text": "eloquia."
             }
           ]
         },
@@ -22126,7 +22343,7 @@
         },
         {
           "verse": 106,
-          "text": "I <na>(b)</na> sware, and have determined to keep the judgments of thy justice. Circumcision, or at other times: Christians make it in Baptism.",
+          "text": "I <na>(b)</na> sware, and have determined to keep the judgments of thy justice.",
           "notes": [
             {
               "label": "b",
@@ -22136,7 +22353,7 @@
         },
         {
           "verse": 107,
-          "text": "Iam <na>(c)</na> humbled exceedingly, o Lord: quicken me according to thy word.",
+          "text": "I am <na>(c)</na> humbled exceedingly, o Lord: quicken me according to thy word.",
           "notes": [
             {
               "label": "c",
@@ -22174,7 +22391,7 @@
         },
         {
           "verse": 112,
-          "text": "Ihave inclined my heart to do thy justifications for ever, <na>(f)</na> for reward.",
+          "text": "I have inclined my heart to do thy justifications for ever, <na>(f)</na> for reward.",
           "notes": [
             {
               "label": "f",
@@ -22213,11 +22430,6 @@
         {
           "verse": 116,
           "text": "<na>(d)</na> Receive me according to thy <cr>[1]</cr> word, <na>(e)</na> and I shall live: and <na>(f)</na> confound me not of mine expectation.",
-          "cross_refs": [
-            {
-              "text": "eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "d",
@@ -22230,6 +22442,10 @@
             {
               "label": "f",
               "text": "which we pray with great confidence, because he hath promised to hear those that seek, ask, and knock at the door of his grace."
+            },
+            {
+              "label": "1",
+              "text": "eloquium."
             }
           ]
         },
@@ -22304,15 +22520,14 @@
         {
           "verse": 123,
           "text": "Mine eyes have failed <na>(d)</na> after thy salvation: and for the <cr>[1]</cr> word of thy justice.",
-          "cross_refs": [
-            {
-              "text": "eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "d",
               "text": "By long expecting to be delivered and saved from tribulation."
+            },
+            {
+              "label": "1",
+              "text": "eloquium."
             }
           ]
         },
@@ -22322,7 +22537,7 @@
         },
         {
           "verse": 125,
-          "text": "Iam thy servant: give me understanding, that I may know thy testimonies."
+          "text": "I am thy servant: give me understanding, that I may know thy testimonies."
         },
         {
           "verse": 126,
@@ -22379,15 +22594,14 @@
         {
           "verse": 130,
           "text": "The <na>(c)</na> declaration of thy <cr>[1]</cr> words doth illuminate: and giveth understanding to little ones.",
-          "cross_refs": [
-            {
-              "text": "Sermonum."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "First entrance into knowledge of holy Scripture, illuminateth the understanding of the humble, whereby they proceed to know more."
+            },
+            {
+              "label": "1",
+              "text": "Sermonum."
             }
           ]
         },
@@ -22414,8 +22628,9 @@
         {
           "verse": 133,
           "text": "Direct my steps according to thy <cr>[1]</cr> word: and let not any injustice have domination over me.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "eloquium."
             }
           ]
@@ -22471,21 +22686,20 @@
         {
           "verse": 140,
           "text": "Thy <cr>[1]</cr> word is <na>(c)</na> fired exceedingly: and thy servant hath loved it.",
-          "cross_refs": [
-            {
-              "text": "* eloquia."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "God's law is as pure as any thing purged by fire."
+            },
+            {
+              "label": "1",
+              "text": "* eloquia."
             }
           ]
         },
         {
           "verse": 141,
-          "text": "Iam <na>(d)</na> a youngman, and contemned: I <na>(e)</na> have not forgotten thy justifications.",
+          "text": "I am <na>(d)</na> a youngman, and contemned: I <na>(e)</na> have not forgotten thy justifications.",
           "notes": [
             {
               "label": "d",
@@ -22507,7 +22721,7 @@
         },
         {
           "verse": 144,
-          "text": "Thy testimonies are equity for ever^ <na>(f)</na> give me understanding, and I shall live.",
+          "text": "Thy testimonies are equity for ever <na>(f)</na> give me understanding, and I shall live.",
           "notes": [
             {
               "label": "f",
@@ -22527,11 +22741,11 @@
         },
         {
           "verse": 146,
-          "text": "Ihave cried to thee, save me: that I may keep thy commandments."
+          "text": "I have cried to thee, save me: that I may keep thy commandments."
         },
         {
           "verse": 147,
-          "text": "Ihave prevented in <na>(b)</na> maturity, and <na>(c)</na> have cried: because I hoped much in thy words.",
+          "text": "I have prevented in <na>(b)</na> maturity, and <na>(c)</na> have cried: because I hoped much in thy words.",
           "notes": [
             {
               "label": "b",
@@ -22546,15 +22760,14 @@
         {
           "verse": 148,
           "text": "Mine eyes <na>(d)</na> have prevented early unto thee: that I might meditate thy <cr>[1]</cr> words.",
-          "cross_refs": [
-            {
-              "text": "eloquia."
-            }
-          ],
           "notes": [
             {
               "label": "d",
               "text": "Again in the morning I have prevented the accustomed time of prayer."
+            },
+            {
+              "label": "1",
+              "text": "eloquia."
             }
           ]
         },
@@ -22605,15 +22818,14 @@
         {
           "verse": 154,
           "text": "Judge my judgment, & redeem me: for thy <cr>[1]</cr> word <na>(b)</na> quicken thou me.",
-          "cross_refs": [
-            {
-              "text": "eloquium."
-            }
-          ],
           "notes": [
             {
               "label": "b",
               "text": "Conserve me in thy grace."
+            },
+            {
+              "label": "1",
+              "text": "eloquium."
             }
           ]
         },
@@ -22638,8 +22850,9 @@
         {
           "verse": 158,
           "text": "Isaw the prevaricators, and I pined away: because they kept not thy <cr>[1]</cr> words.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "eloquia."
             }
           ]
@@ -22685,25 +22898,24 @@
         {
           "verse": 162,
           "text": "I <na>(c)</na> will rejoice at thy <cr>[1]</cr> words: as he that findeth many spoils.",
-          "cross_refs": [
-            {
-              "text": "eloquia."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "Yea they also rejoice in keeping the commandments, with such difficulty, as those do, that gaining the victory over their enemies, carry away great and rich spoils."
+            },
+            {
+              "label": "1",
+              "text": "eloquia."
             }
           ]
         },
         {
           "verse": 163,
-          "text": "Ihave heard iniquity, and abhorred it: but thy law I have loved."
+          "text": "I have heard iniquity, and abhorred it: but thy law I have loved."
         },
         {
           "verse": 164,
-          "text": "<na>(d)</na> Seven times in the day I have said praise to thee, for the judgments of thy justice. Nyctazontes, Somnicolosi, Drowsy heretics. <cr>[2]</cr> As the same S. Isidorus testifieth li. 1. c. 22. de Offi. Eccles. S. Ierom Epist. ad Riparium, noteth the same heresy in Vigilantius, <cr>[3]</cr> calling him Dormitantius, because he reprehended holy Vigils, as if it were better to sleep, than wake in time of Divine service. <cr>[4]</cr> Wicliff also raised up the same heresy as witnesseth Thomas Waldensis, To. 3. Tit. 3. c. 21. <cr>[5]</cr> Lastly Luther and all his brood. But the holy observation of Canonical Hours is proved by many ancient Fathers to be altogether agreeable to the holy Scriptures, both of the old and new Testament. <cr>[6]</cr> So S. Beda in 18. Luc. & li. 4. c. 7. Hist. Angl. S. Gregory the Great li. 3. Dialog. c. 14. S. Augustin (Ser. 55. de temp.) exhorting the people to rise early to the Vigils (or Nocturnes) and in anywise to come to the Third hour, sixth, and Ninth. Let none (saith he) withdraw himself from the holy work, but whom either sickness, or public utility, or perhaps some great necessity holdeth back. <cr>[7]</cr> S. Jerom. Epist. 22. ad Eustoch. & in Epitaph. Paulae c. 10. maketh express mention of the Third hour, Sixth, Ninth, Morning, & Evening; also of Mid-night, adding that no Religious is ignorant that sometimes they must rise to Divine Service, twice, yea thrice in the night. <cr>[8]</cr> S. Basil in Regulis fusius disput. ad Interrog. 37. & de Instit. Monachorum, first sheweth his ordinance to be agreeable to the holy Scriptures, & namely to this place of the Psalmist. <cr>[9]</cr> S. Cyprian in fine exposit. Orat. Domin. affirmeth that besides the three hours in which Daniel and his fellows prayed, the Church of Christ hath added more. And (as many suppose) <cr>[10]</cr> S. Clement li. 8. Constitut. Apostol. c. 40. sheweth the set Hours of prayers, & the reasons thereof: Make your prayers Early in the morning, at the Third hour, Sixth, Ninth, Evening, & at the Time of cock crowing. Early giving thanks, because our Lord hath illuminated us, the night being passed, & the day coming in; <cr>[11]</cr> the Third, because that hour our Lord received Pilate's sentence; the Sixth hour, because then he was Crucified; the Ninth, because all things were moved, when our Lord was crucified, abhorring the audacity of the wicked, & not bearing the ignominy of our Lord; at Evening, giving thanks, for that God hath given us the night for rest of day's labours: at the Cock crowing, because at that time the coming of the day is denounced, to exercise the works of light, thus. S. Clement. Touching the distinct and set times of public prayer, the continual practice of tradition teacheth, that Matins with Lauds were said in the night, about the first Cock-crowing. Prime early in the morning. The other parts in the day time. At evening Evensong, & last of all Compline. And touching the place: If for the infidels (saith the same holy Father) there be not access to the Church, <cr>[12]</cr> the Bishop must gather the Assembly at home, that the godly may not enter into the Church of the wicked: for the place doth not sanctify man, but man the place. Wherefore if the wicked occupy the place, that place is to be shunned, because it is profaned by them: for as Priests do sanctify holy things, so the wicked do contaminate them. If neither at home, nor in the Church Assemblies can be celebrated, let every one by himself sing, read, pray, or two or three be gathered together. For where two or three are gathered in my name (saith Christ) there am I in the midst of them. <cr>[13]</cr> Let not the godly pray with an heretic, <cr>[14]</cr> no not at home. For what society is there of light with darkness? <cr>[15]</cr> <cr>[1]</cr> Institution of Canonical Hours by the Church. <cr>[2]</cr> This religious institution reprehended by Drowsy Heretics. <cr>[3]</cr> Vigilantians. <cr>[4]</cr> Wicliffists. <cr>[5]</cr> Lutherans. <cr>[6]</cr> Approved by S. Beda, S. Gregory, S. Augustin. <cr>[7]</cr> S. Jerom. <cr>[8]</cr> S. Basil. <cr>[9]</cr> S. Cyprian. <cr>[10]</cr> S. Clement. <cr>[11]</cr> Why public prayer is constituted at these hours. <cr>[12]</cr> Not lawful to go to Church, nor to pray with Infidels. <cr>[13]</cr> <i>Mat. 18.</i> <cr>[14]</cr> Nor with heretics. <cr>[15]</cr> <i>2. Cor. 6.</i>",
+          "text": "<na>(d)</na> Seven times in the day I have said praise to thee, for the judgments of thy justice.",
           "notes": [
             {
               "label": "d",
@@ -22727,7 +22939,7 @@
         },
         {
           "verse": 166,
-          "text": "Iexpected thy salvation, o Lord: and have loved thy commandments."
+          "text": "I expected thy salvation, o Lord: and have loved thy commandments."
         },
         {
           "verse": 167,
@@ -22783,16 +22995,15 @@
         },
         {
           "verse": 172,
-          "text": "My tongue shall pronounce thy <cr>[1]</cr> word: <na>(e)</na> because all thy <sc>Abrief</sc> <sc>Note</sc> <sc>Concerning</sc> the Gradual Psalms.",
-          "cross_refs": [
-            {
-              "text": "eloquium."
-            }
-          ],
+          "text": "My tongue shall pronounce thy <cr>[1]</cr> word: <na>(e)</na> because all thy",
           "notes": [
             {
               "label": "e",
               "text": "God giving grace, it behoveth his servants thankfully to serve and praise him."
+            },
+            {
+              "label": "1",
+              "text": "Why the 15 Psalms following are called Gradual Canticles. Here follow in order fifteen Psalms entitle Gradual Canticles."
             }
           ]
         },
@@ -22808,7 +23019,7 @@
         },
         {
           "verse": 174,
-          "text": "Ihave coveted thy salvation, o Lord: and thy law is my meditation."
+          "text": "I have coveted thy salvation, o Lord: and thy law is my meditation."
         },
         {
           "verse": 175,
@@ -22843,7 +23054,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Perfect justice is in keeping God's law. The 7. key."
+          "text": "Perfect justice is in keeping God's law.\nThe 7. key."
         }
       ]
     },
@@ -22923,7 +23134,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's protection. The 3. key."
+          "text": "God's protection.\nThe 3. key."
         }
       ]
     },
@@ -22988,7 +23199,13 @@
         },
         {
           "verse": 7,
-          "text": "Our Lord doth keep thee from all evil: our Lord keep <na>(g)</na> thy soul. Spiritual life."
+          "text": "Our Lord doth keep thee from all evil: our Lord keep <na>(g)</na> thy soul.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "Spiritual life."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -23064,11 +23281,6 @@
         {
           "verse": 6,
           "text": "<na>(i)</na> Ask ye the things that are for the peace of Jerusalem: and <na>(k)</na> aboundance to them that love thee.",
-          "cross_refs": [
-            {
-              "text": "Mat. 21. v. 22."
-            }
-          ],
           "notes": [
             {
               "label": "i",
@@ -23113,7 +23325,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "A prayer in affliction. The 7. key."
+          "text": "A prayer in affliction.\nThe 7. key."
         }
       ]
     },
@@ -23240,7 +23452,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's protection. The 3. key."
+          "text": "God's protection.\nThe 3. key."
         }
       ]
     },
@@ -23303,11 +23515,6 @@
         {
           "verse": 1,
           "text": "Agradual Canticle. When our Lord turned the captivity of Sion: we were made as <na>(a)</na> men comforted.",
-          "cross_refs": [
-            {
-              "text": "Act. 12."
-            }
-          ],
           "notes": [
             {
               "label": "a",
@@ -23372,7 +23579,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's help in all good works. The 3. key."
+          "text": "God's help in all good works.\nThe 3. key."
         }
       ]
     },
@@ -23381,11 +23588,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Agradual Canticle <na>(a)</na> of Salomon. Unless <na>(b)</na> our Lord build the house, they have laboured in vain that build it. Unless our Lord keep the city, he watcheth in vain that keepeth it. directeth this Psalm to him, to be sung with others in the dedication of the temple. <i>3. Reg. 8. 2. Par. 5.</i> <na>(b)</na> Unless God be the principal Angel, no work can prosper.",
+          "text": "Agradual Canticle <na>(a)</na> of Salomon. Unless <na>(b)</na> our Lord build the house, they have laboured in vain that build it. Unless our Lord keep the city, he watcheth in vain that keepeth it.",
           "notes": [
             {
               "label": "a",
               "text": "God not permitting David to build the Temple, promised that his son should build it, and therefore besides other good admonitions, given to his son Salomon, he"
+            },
+            {
+              "label": "b",
+              "text": "Unless God be the principal Angel, no work can prosper."
             }
           ]
         },
@@ -23519,7 +23730,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church still firm in persecution. The 6. key."
+          "text": "The Church still firm in persecution.\nThe 6. key."
         }
       ]
     },
@@ -23542,7 +23753,13 @@
         },
         {
           "verse": 2,
-          "text": "Often have they impugned me from my youth: <na>(c)</na> but they have not prevailed against me. <na>(c)</na> But they have never overcome me. So the Psalmist testifieth for all times past, & prophesieth the same for times to come."
+          "text": "Often have they impugned me from my youth: <na>(c)</na> but they have not prevailed against me.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "But they have never overcome me. So the Psalmist testifieth for all times past, & prophesieth the same for times to come."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -23676,7 +23893,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The sixth penitential Psalm. The 7. key."
+          "text": "The sixth penitential Psalm.\nThe 7. key."
         }
       ]
     },
@@ -23726,7 +23943,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Christ's coming to restore man. The 5. key."
+          "text": "Christ's coming to restore man.\nThe 5. key."
         }
       ]
     },
@@ -23787,7 +24004,7 @@
         },
         {
           "verse": 7,
-          "text": "<na>(f)</na> We will enter into his tabernacle: we will <na>(g)</na> adore in the place where his feet stood. other place where his feet stood.",
+          "text": "<na>(f)</na> We will enter into his tabernacle: we will <na>(g)</na> adore in the place where his feet stood.",
           "notes": [
             {
               "label": "f",
@@ -23936,7 +24153,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Agradual Canticle <na>(a)</na> of David. Behold <na>(b)</na> how good and how pleasant a thing it is, for brethren to dwell in one. in the Church of God.",
+          "text": "Agradual Canticle <na>(a)</na> of David. Behold <na>(b)</na> how good and how pleasant a thing it is, for brethren to dwell in one.",
           "notes": [
             {
               "label": "a",
@@ -23989,7 +24206,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Fraternal concord. The 7. key."
+          "text": "Fraternal concord.\nThe 7. key."
         }
       ]
     },
@@ -24025,7 +24242,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's perfection and goodness. The 1. key."
+          "text": "God's perfection and goodness.\nThe 1. key."
         }
       ]
     },
@@ -24348,7 +24565,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's marvelous works. The 2. key."
+          "text": "God's marvelous works.\nThe 2. key."
         }
       ]
     },
@@ -24447,7 +24664,7 @@
         },
         {
           "verse": 8,
-          "text": "<na>(n)</na> Daughter of Babylon miserable: blessed is he, that shall repay thee thy payment, which thou hast payed us. likewise prophesieth <i>c. 13.</i>",
+          "text": "<na>(n)</na> Daughter of Babylon miserable: blessed is he, that shall repay thee thy payment, which thou hast payed us.",
           "notes": [
             {
               "label": "n",
@@ -24474,7 +24691,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Jews' lamentation in captivity. The 4. key."
+          "text": "The Jews' lamentation in captivity.\nThe 4. key."
         }
       ]
     },
@@ -24505,12 +24722,7 @@
         },
         {
           "verse": 2,
-          "text": "Iwill adore <na>(e)</na> toward thy holy temple, and will confess to thy name: <cr>[1]</cr> For thy mercy, and thy truth: because thou hast magnified above every thing <na>(f)</na> thy holy name.",
-          "cross_refs": [
-            {
-              "text": "1. Cor. v. 10. Tob. 12. Act. 10. Psal. 24. v. 10."
-            }
-          ],
+          "text": "I will adore <na>(e)</na> toward thy holy temple, and will confess to thy name: <cr>[1]</cr> For thy mercy, and thy truth: because thou hast magnified above every thing <na>(f)</na> thy holy name.",
           "notes": [
             {
               "label": "e",
@@ -24519,6 +24731,10 @@
             {
               "label": "f",
               "text": "The Name and Majesty of GOD, the WORD (which is the Son of God) also the name of JESUS, is magnified above all names, or temporal things."
+            },
+            {
+              "label": "1",
+              "text": "1. Cor. v. 10. Tob. 12. Act. 10. Psal. 24. v. 10."
             }
           ]
         },
@@ -24563,7 +24779,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's special providence of his servants. The 3. key."
+          "text": "God's special providence of his servants.\nThe 3. key."
         }
       ]
     },
@@ -24572,7 +24788,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Unto <na>(a)</na> the end, a Psalm of David. Lord thou <na>(b)</na> hast proved me, and hast known me: present, & to come: all works, words, thoughts, and whatsoever can be, though it never was nor shall be, in general, and in particular.",
+          "text": "Unto <na>(a)</na> the end, a Psalm of David. Lord thou <na>(b)</na> hast proved me, and hast known me:",
           "notes": [
             {
               "label": "a",
@@ -24674,7 +24890,7 @@
         },
         {
           "verse": 14,
-          "text": "Iwill confess to thee, because thou art terribly magnified: thy works are marvelous, & my soul knoweth exceedingly."
+          "text": "I will confess to thee, because thou art terribly magnified: thy works are marvelous, & my soul knoweth exceedingly."
         },
         {
           "verse": 15,
@@ -24689,14 +24905,6 @@
         {
           "verse": 16,
           "text": "<na>(l)</na> Mine <cr>[1]</cr> imperfection thine eyes have seen, & in thy book <cr>[2]</cr> all shall be written: <na>(m)</na> days shall be formed, & no man in them.",
-          "cross_refs": [
-            {
-              "text": "Colem, Embryonem."
-            },
-            {
-              "text": "Of knowledge."
-            }
-          ],
           "notes": [
             {
               "label": "l",
@@ -24705,6 +24913,14 @@
             {
               "label": "m",
               "text": "daily formed by God, not by man. Job. 10. v. 8. 2. Mac. 7. v. 22. 23."
+            },
+            {
+              "label": "1",
+              "text": "Colem, Embryonem."
+            },
+            {
+              "label": "2",
+              "text": "Of knowledge."
             }
           ]
         },
@@ -24715,6 +24931,10 @@
             {
               "label": "n",
               "text": "Above all considerations it most exceedeth, that God so high and infinite, honoureth his humble poor servants so exceedingly, that it seemeth to themselves far more than can be due. For he rewardeth even over & above merits; which merits also are founded in God's mercy given without merit."
+            },
+            {
+              "label": "1",
+              "text": "New translaters pervert this place, translating (thoughts) for (friends) contrary to the Hebrew, Greek, and Latin, and all ancient Fathers, only pretending that the same word in the Chaldee tongue also signifieth thoughts."
             }
           ]
         },
@@ -24850,8 +25070,9 @@
         {
           "verse": 6,
           "text": "Who have devised to supplant my steps: the proud have hid a snare for me: And they have stretched out ropes for a snare: they have laid <cr>[1]</cr> a stumbling block for me near the way.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Scandalum."
             }
           ]
@@ -24953,7 +25174,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Eternal pain of the wicked, and joy of the blessed. The 10. key."
+          "text": "Eternal pain of the wicked, and joy of the blessed.\nThe 10. key."
         }
       ]
     },
@@ -24975,6 +25196,10 @@
             {
               "label": "b",
               "text": "In the old testament morning sacrifice was rather more solemn, and more frequent, but the Prophet seemeth to allude unto Christ's Sacrifice, which he was to offer towards evening on the Cross; and the same also in unbloody manner, the evening before his Passion, in the Eucharist."
+            },
+            {
+              "label": "1",
+              "text": "In these words the Church prayeth, offering incense in her solemn Offices."
             }
           ]
         },
@@ -25063,15 +25288,14 @@
         {
           "verse": 8,
           "text": "<na>(q)</na> for to thee, o Lord, Lord are mine eyes; in thee have I hoped, take not away my <cr>[1]</cr> soul.",
-          "cross_refs": [
-            {
-              "text": "* life."
-            }
-          ],
           "notes": [
             {
               "label": "q",
               "text": "but the Church and all her members repose confidence in God."
+            },
+            {
+              "label": "1",
+              "text": "* life."
             }
           ]
         },
@@ -25108,7 +25332,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "The Church prayeth and prevaileth. The 6. key."
+          "text": "The Church prayeth and prevaileth.\nThe 6. key."
         }
       ]
     },
@@ -25118,6 +25342,11 @@
         {
           "verse": 1,
           "text": "Of <na>(a)</na> understanding to David, when he was in the cave, a prayer. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "1 Reg. 24."
+            }
+          ],
           "notes": [
             {
               "label": "a",
@@ -25137,7 +25366,7 @@
         },
         {
           "verse": 3,
-          "text": "Ipour out my prayer in his sight, and I pronounce my tribulation before him."
+          "text": "I pour out my prayer in his sight, and I pronounce my tribulation before him."
         },
         {
           "verse": 4,
@@ -25155,7 +25384,7 @@
         },
         {
           "verse": 5,
-          "text": "Ilooked toward <na>(e)</na> the right hand, and <na>(f)</na> saw: and <na>(g)</na> there was none that would know me. <na>(h)</na> Flight hath failed me: and there is none to require my soul.",
+          "text": "I looked toward <na>(e)</na> the right hand, and <na>(f)</na> saw: and <na>(g)</na> there was none that would know me. <na>(h)</na> Flight hath failed me: and there is none to require my soul.",
           "notes": [
             {
               "label": "e",
@@ -25233,7 +25462,13 @@
       "verses": [
         {
           "verse": 0,
-          "text": "to be speedily delivered; 11. and confidently assureth <i>himself thereof.</i> <cr>[1]</cr>"
+          "text": "to be speedily delivered; 11. and confidently assureth <i>himself thereof.</i> <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The seventh penitential Psalm.\nThe 7. key."
+            }
+          ]
         },
         {
           "verse": 1,
@@ -25302,7 +25537,7 @@
         },
         {
           "verse": 6,
-          "text": "Ihave <na>(i)</na> stretched forth my hands to thee: my soul is <na>(k)</na> as earth without water unto thee.",
+          "text": "I have <na>(i)</na> stretched forth my hands to thee: my soul is <na>(k)</na> as earth without water unto thee.",
           "notes": [
             {
               "label": "i",
@@ -25502,8 +25737,9 @@
         {
           "verse": 14,
           "text": "their oxen are fat. There is no ruin of wall, nor <cr>[1]</cr> passage, nor cry in their streets.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* transmigration."
             }
           ]
@@ -25527,7 +25763,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "King David praiseth God for his victories. The 8. key."
+          "text": "King David praiseth God for his victories.\nThe 8. key."
         }
       ]
     },
@@ -25536,12 +25772,24 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Praising, <na>(a)</na> to David himself. I will exalt thee my God <na>(b)</na> the King: and I will bless thy name <na>(c)</na> for ever and <na>(d)</na> for ever. which principal end both Angels and Men, yea and all other creatures were made. <na>(b)</na> King is the proper epitheton of Christ, the Son of God, to whom, in his humanity, God the Father promised the Church of all nations for his kingdom. <i>Psal. 2.</i> in whom also the whole Blessed Trinity is praised. <na>(c)</na> All the time of this world they praise God, <na>(d)</na> & after in eternity.",
+          "text": "Praising, <na>(a)</na> to David himself. I will exalt thee my God <na>(b)</na> the King: and I will bless thy name <na>(c)</na> for ever and <na>(d)</na> for ever.",
           "has_annotation": true,
           "notes": [
             {
               "label": "a",
               "text": "By this title Esdras signifieth that the Holy Ghost, who indited all the Psalms to God's praise, more specially in these seven last suggested to David, & by him to all God's servants, that all their other service must ten and be directed to the praise of God: and that therein we must continue, and finally rest, as in the sabbath of the seventh day, signified (as S. Beda supposeth) by these seven last Psalms of praise, eternally praising our Lord God. For"
+            },
+            {
+              "label": "b",
+              "text": "King is the proper epitheton of Christ, the Son of God, to whom, in his humanity, God the Father promised the Church of all nations for his kingdom. Psal. 2. in whom also the whole Blessed Trinity is praised."
+            },
+            {
+              "label": "c",
+              "text": "All the time of this world they praise God,"
+            },
+            {
+              "label": "d",
+              "text": "& after in eternity."
             }
           ]
         },
@@ -25591,7 +25839,7 @@
         },
         {
           "verse": 10,
-          "text": "Let all thy works, o Lord, confess to thee: and let thy <na>(g)</na> Saints bless thee. God.",
+          "text": "Let all thy works, o Lord, confess to thee: and let thy <na>(g)</na> Saints bless thee.",
           "notes": [
             {
               "label": "g",
@@ -25667,7 +25915,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's Majesty excelleth all things. The 1. key."
+          "text": "God's Majesty excelleth all things.\nThe 1. key."
         }
       ]
     },
@@ -25730,14 +25978,14 @@
         },
         {
           "verse": 10,
-          "text": "Our Lord will reign for ever^ thy God, o Sion in generation & generation."
+          "text": "Our Lord will reign for ever thy God, o Sion in generation & generation."
         }
       ],
       "summary": "God is also to be praised by his peculiar people, for particular benefits, 4. & for his omnipotent power, wisdom, goodness, in creating and governing this whole world, 11. and most special benignity towards those that trust in him. <na>[1]</na>",
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's excellency in creating and governing the world. The 2. key."
+          "text": "God's excellency in creating and governing the world.\nThe 2. key."
         }
       ]
     },
@@ -25819,11 +26067,6 @@
         {
           "verse": 9,
           "text": "Who giveth to beasts their food: and to <na>(h)</na> the young ravens that call upon him.",
-          "cross_refs": [
-            {
-              "text": "Ho. in hunc Psalm."
-            }
-          ],
           "notes": [
             {
               "label": "h",
@@ -25851,6 +26094,10 @@
             {
               "label": "a",
               "text": "Jerusalem in the latter part of David's time, all the time of Salomon, and part of other Kings' reigns till the captivity, had peace & prospered. Again after the captivity, the City was repaired, the Temple re-edified, and the whole land received and enjoyed many blessings. But all this was no more than a figure of the excellent benefits here prophesied, and more evidently verified in Christ's Catholic Church: partly here militant in the whole world, & especially in the glorious Jerusalem, and Sion, the perfect vision of peace, and contemplation of God in eternal life."
+            },
+            {
+              "label": "1",
+              "text": "The Hebrews join this Psalm with the precedent."
             }
           ]
         },
@@ -25971,7 +26218,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "God's providence especially towards the Church. The 6. key."
+          "text": "God's providence especially towards the Church.\nThe 6. key."
         }
       ]
     },
@@ -26087,7 +26334,7 @@
       "summary_notes": [
         {
           "marker": 1,
-          "text": "Our Creator to be praised by all creatures. The 2. key."
+          "text": "Our Creator to be praised by all creatures.\nThe 2. key."
         }
       ]
     },
@@ -26129,11 +26376,6 @@
         {
           "verse": 6,
           "text": "The <na>(c)</na> exaltations of God in their throat: and <na>(d)</na> two edged swords in their hands.",
-          "cross_refs": [
-            {
-              "text": "In Psal. 121. v. 5. li. 3. in Mat. 19. ho. in Nat. S. Bened."
-            }
-          ],
           "notes": [
             {
               "label": "c",
@@ -26181,11 +26423,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Alleluia. Praise ye our Lord <na>(a)</na> in his holies: praise ye him in <na>(b)</na> the firmament of his strength. heaven praise our Lord. <na>(b)</na> All ye creatures that are in and under the first moveable firmament, praise our Lord.",
+          "text": "Alleluia. Praise ye our Lord <na>(a)</na> in his holies: praise ye him in <na>(b)</na> the firmament of his strength.",
           "notes": [
             {
               "label": "a",
               "text": "All ye Angels and men that are in the holy and highest"
+            },
+            {
+              "label": "b",
+              "text": "All ye creatures that are in and under the first moveable firmament, praise our Lord."
             }
           ]
         },
@@ -26220,23 +26466,7 @@
         {
           "verse": 4,
           "text": "Praise ye him on timbrel and <na>(g)</na> choir: praise ye him on <na>(h)</na> strings and organ. S. Augustin in the conclusion of his Enarrations or Sermons upon the Psalms, explicateth a mystery in the number of an hundred and fifty, signifying the concord of the two Testaments. <na>◦</na> For in the old testament they kept the Sabbath, which is the seventh day: in the new we keep our Lord's day, after the sabbath, that is, the eighth: which seven and eight (making fifteen) multiplied by ten, signifying the Law of ten commandments, rise unto <i>150.</i>",
-          "cross_refs": [
-            {
-              "text": ", signifying the B. Trinity, make 150. Neither seemed it without cause to this great Doctor, that the first fifty end with a Psalm of Penance, craving mercy & remission of sins: the second with Mercy & Justice, which God joineth in the Redemption, Justification, and Salvation of men: the last with Divine Praises, signifying, that by condemning sins in ourselves, through God's mercy we may be justified, and so begin in this life, which is to be perfected in the next, to praise our Lord, as S. Paul admonisheth with Psalms, Hymns, and Spiritual Songs. Concluding with the two verses, appointed by S. Damasus Pope, to be added in the end of all Psalms, and is observed ever since his time by tradition in the whole Church."
-            },
-            {
-              "text": "Colloss. 3. Circa An. Do 380. Glory to the Father, and to the Son, and to the Holy Ghost: As it was in the beginning, and now, and ever, into worlds of worlds. (in eternity without end.) Amen."
-            }
-          ],
           "notes": [
-            {
-              "label": "◦",
-              "text": "The number of Psalms signifieth the agreement of the old and new Testament. Again, seven multiplied by seven make 49. whereto one (to wit the eight) being added make fifty, which multiplied by three"
-            },
-            {
-              "label": "◦",
-              "text": "Gloria Patri added by tradition."
-            },
             {
               "label": "g",
               "text": "By the way the Psalmist interposeth again two especial things, which make perfect harmony, without which no instrument is grateful to God: Unity amongst his servants, signified by the Quire of consonant voices:"
@@ -26244,6 +26474,10 @@
             {
               "label": "h",
               "text": "and mortification of passions, signified by Strings, which are made of dead beast's bowels."
+            },
+            {
+              "label": "◦",
+              "text": "The number of Psalms signifieth the agreement of the old and new Testament. Again, seven multiplied by seven make 49. whereto one (to wit the eight) being added make fifty, which multiplied by three"
             }
           ]
         },

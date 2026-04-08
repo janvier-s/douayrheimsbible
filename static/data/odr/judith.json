@@ -13,6 +13,10 @@
             {
               "label": "a",
               "text": "The author being resolved to write this history, joineth his narration to his internal purpose saying: Arphaxad therefore &c. S. Greg. ho. 2. in Ezech."
+            },
+            {
+              "label": "1",
+              "text": "The first part. The occasion of the Jews' persecution at this time."
             }
           ]
         },
@@ -65,8 +69,9 @@
         {
           "verse": 12,
           "text": "Then Nabuchodonosor the king taking indignation against all that land, swore by his throne and kingdom that he would <cr>[1]</cr> revenge himself of all those countries.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* defenderet se."
             }
           ]
@@ -202,7 +207,7 @@
         },
         {
           "verse": 11,
-          "text": "Neither doing these things, could they for all that^ mitigate the fierceness of his stomach:"
+          "text": "Neither doing these things, could they for all that mitigate the fierceness of his stomach:"
         },
         {
           "verse": 12,
@@ -234,7 +239,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Then <cr>[1]</cr> the children of Israel, which dwelt in the Land of Juda, hearing these things, were sore afraid of his presence."
+          "text": "Then <cr>[1]</cr> the children of Israel, which dwelt in the Land of Juda, hearing these things, were sore afraid of his presence.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part. God's people are in great fear and distress."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -388,8 +399,9 @@
         {
           "verse": 12,
           "text": "these flying away, the God of heaven opened the sea, so that the waters were <cr>[1]</cr> consolidated as a wall, on either side, and they walking through the bottom of the sea passed dry-foot.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* made solid or firm. Exo. 14."
             }
           ]
@@ -524,7 +536,7 @@
         },
         {
           "verse": 4,
-          "text": "and thou shalt prove that Nabuchodonosor is Lord of the whole earth: and then the sword of my warfare shall pass through thy sides, & pierced^ thou shalt fall among the wounded of Israel, & thou shalt no more fetch breath, till thou be destroyed with them."
+          "text": "and thou shalt prove that Nabuchodonosor is Lord of the whole earth: and then the sword of my warfare shall pass through thy sides, & pierced thou shalt fall among the wounded of Israel, & thou shalt no more fetch breath, till thou be destroyed with them."
         },
         {
           "verse": 5,
@@ -544,7 +556,7 @@
         },
         {
           "verse": 9,
-          "text": "And they returning out of the way by the side of the mountain, tied Achior to a tree^ hand and foot, and so left him bound with withes, and returned to their lord."
+          "text": "And they returning out of the way by the side of the mountain, tied Achior to a tree hand and foot, and so left him bound with withes, and returned to their lord."
         },
         {
           "verse": 10,
@@ -568,8 +580,12 @@
         },
         {
           "verse": 15,
-          "text": "saying: Lord God of heaven and earth, behold <na>(b)</na> their pride, and have regard to <na>(c)</na> our humility, and attend <na>(d)</na> the face of thy saints, and shew that <na>(e)</na> thou forsakest not them that presume of thee, and that thou humblest them that presume of themselves, and glory of their power. <na>(b)</na> God regardeth the pride of sinners;",
+          "text": "saying: Lord God of heaven and earth, behold <na>(b)</na> their pride, and have regard to <na>(c)</na> our humility, and attend <na>(d)</na> the face of thy saints, and shew that <na>(e)</na> thou forsakest not them that presume of thee, and that thou humblest them that presume of themselves, and glory of their power.",
           "notes": [
+            {
+              "label": "b",
+              "text": "God regardeth the pride of sinners;"
+            },
             {
               "label": "c",
               "text": "the humiliation of penitents,"
@@ -666,7 +682,13 @@
         },
         {
           "verse": 12,
-          "text": "Then all the men, and women, young men, and children, being gathered together to <na>(b)</na> Ozias, all together with one voice, <na>(b)</na> A common frailty of people in distress to impute error to their Superiors: though indeed Ozias erred rather in yielding at last to their suggestion, <i>v. 25.</i> than in withstanding thus long."
+          "text": "Then all the men, and women, young men, and children, being gathered together to <na>(b)</na> Ozias, all together with one voice,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Acommon frailty of people in distress to impute error to their Superiors: though indeed Ozias erred rather in yielding at last to their suggestion, v. 25. than in withstanding thus long."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -706,7 +728,7 @@
         },
         {
           "verse": 22,
-          "text": "And when they^ wearied with these cries, and tired with these weepings, had held their peace,"
+          "text": "And when they wearied with these cries, and tired with these weepings, had held their peace,"
         },
         {
           "verse": 23,
@@ -755,11 +777,6 @@
         {
           "verse": 6,
           "text": "and having <na>(b)</na> cloth of hair upon her loins, she <na>(c)</na> fasted all the days of her life, but Sabbaths, and <cr>[1]</cr> new moons, and the feasts of the house of Israel.",
-          "cross_refs": [
-            {
-              "text": "* the first day of the month."
-            }
-          ],
           "notes": [
             {
               "label": "b",
@@ -768,6 +785,10 @@
             {
               "label": "c",
               "text": "and in much fasting: as it were a perpetual lent, all days but Sabbaths & feasts excepted."
+            },
+            {
+              "label": "1",
+              "text": "* the first day of the month."
             }
           ]
         },
@@ -1030,8 +1051,9 @@
         {
           "verse": 3,
           "text": "and washed her body, and anointed herself with ointment, and plaited the hair of her head, and put a crown upon her head, and clothed herself with the garments of her joyfulness, and put <cr>[1]</cr> pantofles on her feet, & took bracelets, and Lilies, and earlets, and rings, and with all her ornaments she adorned herself.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Sandalia."
             }
           ]
@@ -1049,15 +1071,14 @@
         {
           "verse": 5,
           "text": "She therefore laid upon her Abra <na>(c)</na> a bottle of wine, and a vessel of oil, and <cr>[1]</cr> polent, and dry figs, and bread, and cheese, and went forward.",
-          "cross_refs": [
-            {
-              "text": "Polentam."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "Not only certain meats were forbid by the law Levit. 11. but in a manner all the meats of the Gentiles were unlawful being offered to idols, for which cause Daniel and the three children would not eat of the King's meats in Babylon."
+            },
+            {
+              "label": "1",
+              "text": "Polentam."
             }
           ]
         },
@@ -1079,7 +1100,7 @@
         },
         {
           "verse": 10,
-          "text": "But Judith praying our Lord, passed through the gates^ she & her Abra."
+          "text": "But Judith praying our Lord, passed through the gates she & her Abra."
         },
         {
           "verse": 11,
@@ -1170,7 +1191,7 @@
         },
         {
           "verse": 7,
-          "text": "Neither is that unknown which Achior spake, neither are we ignorant of that^ thou hast commanded to come upon him."
+          "text": "Neither is that unknown which Achior spake, neither are we ignorant of that thou hast commanded to come upon him."
         },
         {
           "verse": 8,
@@ -1293,8 +1314,9 @@
         {
           "verse": 12,
           "text": "Then Vagao went in to Judith, & said: Let not the good <cr>[1]</cr> young maid fear to go in to my lord, that she may be honoured before his face, that she may eat with him & drink wine in joyfulness.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Puella."
             }
           ]
@@ -1361,7 +1383,7 @@
         },
         {
           "verse": 5,
-          "text": "And Judith said to her maid that she should stand without^ before the chamber, & watch."
+          "text": "And Judith said to her maid that she should stand without before the chamber, & watch."
         },
         {
           "verse": 6,
@@ -1461,7 +1483,7 @@
         },
         {
           "verse": 27,
-          "text": "Moreover Achior being called^ came, and Judith said to him: The God of Israel, to whom thou gavest testimony, that he revengeth himself of his enemies, he hath cut off the head of all the unfaithful this night by my hand."
+          "text": "Moreover Achior being called came, and Judith said to him: The God of Israel, to whom thou gavest testimony, that he revengeth himself of his enemies, he hath cut off the head of all the unfaithful this night by my hand."
         },
         {
           "verse": 28,
@@ -1603,7 +1625,13 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> And Ioachim the high Priest came from Jerusalem into Bethulia with all his ancients to see Judith."
+          "text": "<cr>[1]</cr> And Ioachim the high Priest came from Jerusalem into Bethulia with all his ancients to see Judith.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The fourth part. The praises of Iudith, who with all the people praise God."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -1798,7 +1826,7 @@
         },
         {
           "verse": 31,
-          "text": "But the day of the festivity of this victory is received of the Hebrews in the number of holy days, and is worshipped of the Jews from that time until this present day. perfection counseled by our Saviour and S. Paul. <i>Mat. 19. 1. Cor. 7.</i>"
+          "text": "But the day of the festivity of this victory is received of the Hebrews in the number of holy days, and is worshipped of the Jews from that time until this present day."
         }
       ],
       "summary": "Judith singeth a canticle of thanks-giving to our Lord. 22. The people go to Jerusalem and offer sacrifices. 25. She in great honour liveth a widow till her death in good old age. 30. The people have long peace, and a festival day is instituted in perpetual memory of her fact."

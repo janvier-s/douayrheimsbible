@@ -122,42 +122,49 @@
       ]
     },
     {
-      "verse": 21,
-      "part": 3,
-      "text": "<mn>[1]</mn>",
+      "text": "<mn>[1]</mn> But as for the having of images or portraits of holy things, not only in private houses, but also in Churches, God himself doth warrant us, who <mn>[2]</mn> commanded even the Jews themselves (a people most prone to idolatry, and that after he had given them a special precept of not having, making, or worshipping of idols) to make the images of Angels (the Cherubins) and that in the sovereign holiest places of adoration that was in the Temple, & about the Ark. Yea and in respect of which sacred images partly, they did (as S. Hierom saith <i>ep. 17 c. 3</i> ) so great reverence to the holy place called <i>Sancta sanctorum</i>. If they then were warranted and commanded to make and have in so great reverence the images of mere spirits or Angels, whose natural shape could not be expressed: how much more may we Christians have and reverence the images of Christ, his B. mother, the Apostles, and other Saints, being men, whose shape may be expressed? So doth the said <mn>[3]</mn> Nicene Councel argue against the Heretics which at that time were the Adversaries of images.",
       "notes": [
         {
           "marker": 1,
           "text": "Sacred images in Churches, by God's own warrant."
-        }
-      ]
-    },
-    {
-      "verse": 21,
-      "part": 4,
-      "text": "But as for the having of images or portraits of holy things, not only in private houses, but also in Churches, God himself doth warrant us, who <mn>[2]</mn> commanded even the Jews themselves (a people most prone to idolatry, and that after he had given them a special precept of not having, making, or worshipping of idols) to make the images of Angels (the Cherubins) and that in the sovereign holiest places of adoration that was in the Temple, & about the Ark. Yea and in respect of which sacred images partly, they did (as S. Hierom saith <i>ep. 17 c. 3</i> ) so great reverence to the holy place called <i>Sancta sanctorum</i>. If they then were warranted and commanded to make and have in so great reverence the images of mere spirits or Angels, whose natural shape could not be expressed: how much more may we Christians have and reverence the images of Christ, his B. mother, the Apostles, and other Saints, being men, whose shape may be expressed? So doth the said <mn>[3]</mn> Nicene Councel argue against the Heretics which at that time were the Adversaries of images.\n\n<mn>[1]</mn>\n\nAnd note here, that eight hundred years ago, they were straight counted Heretics, that began to speak against images, and that Councel was called purposely for them, and condemned them for Heretics, & confirmed the former ancient reverence and use of sacred images. which began even in our Saviour's time or little after, when good religious folk for love and reverence made his image, namely the woman that he healed of the bloody flux. which image was also approved by miracles, as the Ecclesiastical history telleth, and namely Eusebius <i>Eccl. hist. li. 7. c. 14.</i> <mn>[2]</mn> who also witnesseth that the images of Peter and Paul were in his days, as you may see also in S. Augustine ( <i>li. d. consens. Evangelist. c. 10</i> ) that their pictures commonly stood together in Rome even as at this day. Of our Lady's image see S. Gregory <i>li. 7. ep. 5. indict. 2. ad Ianuar. & ep. 53</i>. <mn>[3]</mn> In whom also ( <i>li. 7. ep. 109</i> ) you may see the true use of images, & that they are the books of the unlearned, and that the people ought to be instructed and taught the right use of them, even as at this day good Catholic folk do use them to help & increase their devotion, in all Catholic Churches: yea the Lutherans themselves retain them still. S. Damascene wrote three books in defense of sacred images against the foresaid Heretics.",
-      "notes": [
-        {
-          "marker": 1,
-          "text": "The antiquity of holy images."
         },
         {
           "marker": 2,
           "text": "<i>Exod. 25.</i>"
         },
         {
+          "marker": 3,
+          "text": "The 2. Councel of Nice was gathered against Image breakers."
+        }
+      ],
+      "verse": 21,
+      "part": 3
+    },
+    {
+      "text": "<mn>[1]</mn>",
+      "notes": [
+        {
+          "marker": 1,
+          "text": "The antiquity of holy images."
+        }
+      ],
+      "verse": 21,
+      "part": 4
+    },
+    {
+      "text": "And note here, that eight hundred years ago, they were straight counted Heretics, that began to speak against images, and that Councel was called purposely for them, and condemned them for Heretics, & confirmed the former ancient reverence and use of sacred images. which began even in our Saviour's time or little after, when good religious folk for love and reverence made his image, namely the woman that he healed of the bloody flux. which image was also approved by miracles, as the Ecclesiastical history telleth, and namely Eusebius <i>Eccl. hist. li. 7. c. 14.</i> <mn>[2]</mn> who also witnesseth that the images of Peter and Paul were in his days, as you may see also in S. Augustine ( <i>li. d. consens. Evangelist. c. 10</i> ) that their pictures commonly stood together in Rome even as at this day. Of our Lady's image see S. Gregory <i>li. 7. ep. 5. indict. 2. ad Ianuar. & ep. 53</i>. <mn>[3]</mn> In whom also ( <i>li. 7. ep. 109</i> ) you may see the true use of images, & that they are the books of the unlearned, and that the people ought to be instructed and taught the right use of them, even as at this day good Catholic folk do use them to help & increase their devotion, in all Catholic Churches: yea the Lutherans themselves retain them still. S. Damascene wrote three books in defense of sacred images against the foresaid Heretics.",
+      "notes": [
+        {
           "marker": 2,
           "text": "<i>* Loco citato.</i>"
         },
         {
           "marker": 3,
-          "text": "The 2. Councel of Nice was gathered against Image breakers."
-        },
-        {
-          "marker": 3,
           "text": "The use and fruit of holy images."
         }
-      ]
+      ],
+      "verse": 21,
+      "part": 5
     }
   ]
 }

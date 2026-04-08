@@ -8,7 +8,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> our Lord called Moyses, and spake to him out of the tabernacle of testimony, saying:"
+          "text": "And <cr>[1]</cr> our Lord called Moyses, and spake to him out of the tabernacle of testimony, saying:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part of this book. Of diverse sorts of Sacrifices."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -137,15 +143,11 @@
         },
         {
           "verse": 11,
-          "text": "Every oblation that is offered to our Lord, shall be made <na>(b)</na> without leaven, neither shall any leaven and <na>(b)</na> honey be burned in the sacrifice of our Lord.",
+          "text": "Every oblation that is offered to our Lord, shall be made <na>(b)</na> without leaven, neither shall any leaven and",
           "notes": [
             {
               "label": "b",
-              "text": "As literally no leaven nor honey might be offered in sacrifice: so all sin and carnal delectation must be excluded in Christian life."
-            },
-            {
-              "label": "b",
-              "text": "↑"
+              "text": "honey be burned in the sacrifice of our Lord."
             }
           ]
         },
@@ -593,7 +595,7 @@
         },
         {
           "verse": 12,
-          "text": "And the fire on the altar <na>(b)</na> shall always burn, which the Priest shall nourish, putting wood underneath, in the morning every day, and laying on the holocaust, thereupon shall burn the fat of the pacifics. heart by God's grace, must be continually nourished, and kept burning, from which all other good works are derived.",
+          "text": "And the fire on the altar <na>(b)</na> shall always burn, which the Priest shall nourish, putting wood underneath, in the morning every day, and laying on the holocaust, thereupon shall burn the fat of the pacifics.",
           "notes": [
             {
               "label": "b",
@@ -729,7 +731,7 @@
         },
         {
           "verse": 10,
-          "text": "Whether they be tempered with oil, or dry, to all the sons of Aaron^ equal measure shall be divided to ever one."
+          "text": "Whether they be tempered with oil, or dry, to all the sons of Aaron equal measure shall be divided to ever one."
         },
         {
           "verse": 11,
@@ -857,7 +859,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> Our Lord spake to Moyses, saying:"
+          "text": "And <cr>[1]</cr> Our Lord spake to Moyses, saying:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part. Of consecrating Priests, & their vestments: with punishment of some that transgressed."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1026,34 +1034,7 @@
         },
         {
           "verse": 36,
-          "text": "And Aaron, and his sons did all things which our Lord spake by the hand of Moyses. closed in gold, one having engraven six names of the tribes of Israel, set on one shoulder, that he must support and meekly bear the infirmities of the people. <cr>[7]</cr> Fifthly, a breast-plate called <i>Rationale,</i> of the same precious matter, the measure of a palm, four square, embroidered with the same four colours, with four rews of twelve precious stones, and therein engraven the names of the twelve tribes. Besides which were engraven also <sc>Vrim</sc> and <sc>Thvmmim</sc>, <i>Illuminations and Perfections,</i> or <i>Doctrine</i> and <i>Verity,</i> because the high-Priest must have knowledge of the truth, and sincere intention. Likewise in the Ephod and Rationale were rings, hooks, and chains of purest gold, to join them fast together. All signifying the perpetual solicitude and care which he ought to have in his heart, to know and teach the truth, that the people may truly serve God, to his honour and their own salvation. <cr>[8]</cr> Sixthly, a <i>Mitre</i> of twisted silk, with little crowns of embroidered work, set on his head, to signify that he must direct all his actions to God's glory, that sitteth above all. <cr>[9]</cr> Seventhly, <i>A plate of sacred veneration,</i> made of the finest gold, with the most holy name of God engraven, set on his forehead; to put him still in remembrance to contemplate God and his works.",
-          "cross_refs": [
-            {
-              "text": "holy oil of unction"
-            },
-            {
-              "text": "For the Priesthood being translated, it is necessary that a translation of the Law be also made."
-            },
-            {
-              "text": "resuscitate the grace given him by imposition of hands. 2. Timot. 1. 1 Timot. 4. lib. de bono coniugali c. 24. & lib. 2. contra Epist. Parmen. q. 48. in lib. Num."
-            },
-            {
-              "text": "Num. 3."
-            },
-            {
-              "text": "Heb. 7."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "The other Priests had three special ornaments: a Linen white garment, a Bawdrike , and a Mitre , for glory and beauty; to signify the qualities above mentioned, purity, discretion, and direct intention also required in them."
-            },
-            {
-              "label": "◦",
-              "text": "Other Priests had also three ornaments. 14. He offered the calf.]"
-            }
-          ]
+          "text": "And Aaron, and his sons did all things which our Lord spake by the hand of Moyses."
         }
       ],
       "summary": "Moyses consecrateth Aaron high-Priest, 13. and his sons Priests, 33. continuing in the tabernacle seven days and nights."
@@ -1273,7 +1254,13 @@
         },
         {
           "verse": 19,
-          "text": "Aaron answered: This day hath been offered the victim for sin, and the holocaust before our Lord: and to me that is chanced which thou seest, how could I eat it, or please our Lord in ceremonies having <na>(c)</na> a sorrowful heart? <na>(c)</na> Natural grief of mind made Aaron both unwilling to eat & less apt to complete all the ceremonies: so without sin he omitted that pertained to his commodity, offering it to God."
+          "text": "Aaron answered: This day hath been offered the victim for sin, and the holocaust before our Lord: and to me that is chanced which thou seest, how could I eat it, or please our Lord in ceremonies having <na>(c)</na> a sorrowful heart?",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Natural grief of mind made Aaron both unwilling to eat & less apt to complete all the ceremonies: so without sin he omitted that pertained to his commodity, offering it to God."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1292,6 +1279,10 @@
             {
               "label": "a",
               "text": "Hitherto God revealed his Law to Moyses only, and by him to the people. Now also to Aaron after he was consecrated high-Priest: yet not always, for Moyses was still superior, chap. 12. 14. 16. 17. &c."
+            },
+            {
+              "label": "1",
+              "text": "The third part. Of things clean and unclean, with the manner of purifying: & other precepts moral and judicial."
             }
           ]
         },
@@ -1827,8 +1818,9 @@
         {
           "verse": 5,
           "text": "and he shall command that one of the sparrows be immolated in an earthen vessel over <cr>[1]</cr> living water:",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* of well or river, not of a cistern, pool, or marish."
             }
           ]
@@ -2111,7 +2103,13 @@
         },
         {
           "verse": 15,
-          "text": "who shall <na>(b)</na> make one for sin, and the other for an holocaust, & he shall pray for him before our Lord, that he may be cleansed of the flux of his seed. <na>(b)</na> To make, offer, and sacrifice an host, is all one."
+          "text": "who shall <na>(b)</na> make one for sin, and the other for an holocaust, & he shall pray for him before our Lord, that he may be cleansed of the flux of his seed.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "To make, offer, and sacrifice an host, is all one."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -2451,7 +2449,7 @@
         },
         {
           "verse": 2,
-          "text": "Speak to the children of Israel, and thou shalt say to them: I^ the Lord your God,"
+          "text": "Speak to the children of Israel, and thou shalt say to them: I the Lord your God,"
         },
         {
           "verse": 3,
@@ -2459,15 +2457,15 @@
         },
         {
           "verse": 4,
-          "text": "You shall do my judgments, and shall observe my precepts, and shall walk in them. I^ the Lord your God."
+          "text": "You shall do my judgments, and shall observe my precepts, and shall walk in them. I the Lord your God."
         },
         {
           "verse": 5,
-          "text": "Keep my laws and judgments, which a man doing, shall live in them. I^ the Lord."
+          "text": "Keep my laws and judgments, which a man doing, shall live in them. I the Lord."
         },
         {
           "verse": 6,
-          "text": "No man shall approach to her that is next of his blood, to reveal her <na>(a)</na> turpitude. I^ the Lord.",
+          "text": "No man shall approach to her that is next of his blood, to reveal her <na>(a)</na> turpitude. I the Lord.",
           "has_annotation": true,
           "notes": [
             {
@@ -2540,7 +2538,7 @@
         },
         {
           "verse": 21,
-          "text": "Of thy seed thou shalt not give to be consecrated to the idol Moloch, nor pollute the name of thy God: I^ the Lord."
+          "text": "Of thy seed thou shalt not give to be consecrated to the idol Moloch, nor pollute the name of thy God: I the Lord."
         },
         {
           "verse": 22,
@@ -2576,24 +2574,7 @@
         },
         {
           "verse": 30,
-          "text": "Keep my commandments. Do not the things which they have done, that have been before you, and be not polluted in them: I^ the Lord your God. 6. Next of his blood.] <cr>[1]</cr> Marriage is forbid first and most strictly by the law of nature, in all degrees in the right line ascending and descending, both in consanguinity and affinity. S. Paul testifying that <i>among the heathen, no man could have his father's wife.</i> <cr>[2]</cr> And in the right line God himself (who only can) never dispensed. <cr>[3]</cr> Secondarily, the first collateral degree in consanguinity, that is, between brother and sister, by one parent, or by both, is also unlawful by the law of nature, except in the beginning of the world, when Adam's children must needs marry together, God so ordaining that all mankind should be propagated by one man (for of him also the first woman was made) <cr>[4]</cr> but after this beginning it was never allowed <cr>[5]</cr> , nor perhaps can be dispensed withal, at least never was by any man. Though Beza <i>(li. de repudiis & divortiis)</i> and some English Bezites charge Pope Martin the fifth <cr>[6]</cr> , to have dispensed with one, that had married his own natural sister: which is a false report. For it was with one, who having committed fornication with one sister, afterwards married the other, from whom he could not be separated without great scandal, the pretended marriage being public, and the impediment secret: as S. Antoninus writeth <i>par. 3. sum. Theol. li. 1. c. 11.</i> <cr>[7]</cr> But besides the right line, & the first collateral degree in consanguinity, no other collateral degrees are prohibited by the law of nature, but by positive only. So this present law, written by Moyses, forbad to marry in the first collateral degree of affinity, but the same law commanded <i>(Deut. 25.)</i> that in case a married man died without issue, his brother should marry the widow. Whereby is clear that this degree, and other more remote, were not prohibited by the law of nature. For then God would not have made a contrary general law in any case, for the whole nation of the Jews, his people; and that under penalty to be observed, which is contrary to the quality of indulgence or dispensation, and no such necessity, as in the beginning of the world. <cr>[8]</cr> Wherefore all Protestants that say, the whole law written by Moyses concerning degrees of consanguinity and affinity is the law of nature, and so pertaineth to Christians, must necessarily say also, that if now a married man die without issue, his brother must marry his wife. Which specially they deny. <cr>[9]</cr> It is also proved that this and some other degrees expressed in this place, were not against the law of nature (which is common to all nations commonly, or easily known to all men by discourse of reason) <cr>[10]</cr> because no common-wealth among the Gentiles did punish, nor modest men forbear, or reprehend such marriages: as appeareth by Laban, who after he had deceived Jacob by giving him one sister for another, offered him also the former promised, whom without difficulty of conscience he accepted (Gen. 29.) neither did that holy Patriarch think it unlawful to keep them both. And when Judas matched his second son, and promised the third to the wife of his first son, he did it according to the custom of that place & time, Gen. 38. And Noemi spoke according to the same custom, Ruth 1. v. 11. <cr>[11]</cr> Again, where this law forbiddeth a man to marry, or company with his wife's sister, it addeth, <i>whiles she is living,</i> not prohibiting marriage, when his first wife is dead. Yet his wife's sister is as near in affinity, as his brother's wife. <cr>[12]</cr> Likewise, the diversity of punishments <i>(chap. 20.)</i> for transgression of this law, either in the right line, or in the first collateral degree of consanguinity, who were punished by death; and for transgressing in the first collateral degree of affinity, or in the second either of consanguinity or affinity, who had less punishments, sheweth that the former degrees are prohibited by the law of nature, and not the other: for then the violation should be like sin, and punished alike. <cr>[13]</cr> Finally, it is evident, that certain of these degrees are not against the law of nature, by the example of holy Abraham, who in, and according to the law of nature, married his brother's daughter called Sarai, otherwise Jescha, which marriage God approved by many blessings <cr>[14]</cr> . Also Jacob married two sisters together. Two sons of Judas married the same woman successively. And Amram (Moyses' father) married his aunt, his father's sister, ) Wherefore seeing neither the first collateral degree in affinity, nor the second",
-          "cross_refs": [
-            {
-              "text": "1. Cor. 5. v. 1."
-            },
-            {
-              "text": "Act. 17. v. 26."
-            },
-            {
-              "text": "S. Aug. de bono conjug. c. 1."
-            },
-            {
-              "text": "Arist. l. 2. Pol."
-            },
-            {
-              "text": "S. Hiero. quest. Heb. in Gen."
-            }
-          ]
+          "text": "Keep my commandments. Do not the things which they have done, that have been before you, and be not polluted in them: I the Lord your God."
         }
       ]
     },
@@ -2602,19 +2583,25 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Our <cr>[1]</cr> Lord spake to Moyses, saying:"
+          "text": "Our <cr>[1]</cr> Lord spake to Moyses, saying:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle on Wednesday in Passion Week."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "Speak to all the assembly of the children of Israel, and thou shalt say to them: Be ye holy, because I^ the Lord your God am holy."
+          "text": "Speak to all the assembly of the children of Israel, and thou shalt say to them: Be ye holy, because I the Lord your God am holy."
         },
         {
           "verse": 3,
-          "text": "Let every one fear his father, and mother. Keep my Sabbaths. I^ the Lord your God."
+          "text": "Let every one fear his father, and mother. Keep my Sabbaths. I the Lord your God."
         },
         {
           "verse": 4,
-          "text": "Turn not yourselves to idols, neither make you to yourselves molten gods. I^ the Lord your God."
+          "text": "Turn not yourselves to idols, neither make you to yourselves molten gods. I the Lord your God."
         },
         {
           "verse": 5,
@@ -2638,7 +2625,7 @@
         },
         {
           "verse": 10,
-          "text": "Neither in thy vineyard shalt thou gather the clusters and grapes that fall down, but shall leave them to the poor, and the strangers to take. I^ the Lord your God."
+          "text": "Neither in thy vineyard shalt thou gather the clusters and grapes that fall down, but shall leave them to the poor, and the strangers to take. I the Lord your God."
         },
         {
           "verse": 11,
@@ -2646,7 +2633,7 @@
         },
         {
           "verse": 12,
-          "text": "Thou shalt not forswear thyself in my name, nor pollute the name of thy God. I^ the Lord."
+          "text": "Thou shalt not forswear thyself in my name, nor pollute the name of thy God. I the Lord."
         },
         {
           "verse": 13,
@@ -2662,7 +2649,7 @@
         },
         {
           "verse": 16,
-          "text": "Thou shalt not be a criminator, nor a whisperer among the people. Thou shalt not stand against the blood of thy neighbour. I^ the Lord."
+          "text": "Thou shalt not be a criminator, nor a whisperer among the people. Thou shalt not stand against the blood of thy neighbour. I the Lord."
         },
         {
           "verse": 17,
@@ -2670,7 +2657,7 @@
         },
         {
           "verse": 18,
-          "text": "Seek not revenge, nor be mindful of the injury of thy citizens. Thou shalt love thy friend as thyself. I^ the Lord."
+          "text": "Seek not revenge, nor be mindful of the injury of thy citizens. Thou shalt love thy friend as thyself. I the Lord."
         },
         {
           "verse": 19,
@@ -2704,7 +2691,7 @@
         },
         {
           "verse": 25,
-          "text": "And the fifth year you shall eat the fruits, gathering the offspring that they bring forth. I^ the Lord your God."
+          "text": "And the fifth year you shall eat the fruits, gathering the offspring that they bring forth. I the Lord your God."
         },
         {
           "verse": 26,
@@ -2722,7 +2709,7 @@
         },
         {
           "verse": 28,
-          "text": "And for the dead you shall not cut your flesh, neither shall you make in yourselves any figures or marks. I^ the Lord."
+          "text": "And for the dead you shall not cut your flesh, neither shall you make in yourselves any figures or marks. I the Lord."
         },
         {
           "verse": 29,
@@ -2730,15 +2717,15 @@
         },
         {
           "verse": 30,
-          "text": "Keep ye my Sabbaths, & fear my Sanctuary. I^ the Lord."
+          "text": "Keep ye my Sabbaths, & fear my Sanctuary. I the Lord."
         },
         {
           "verse": 31,
-          "text": "Decline not to magicians, neither ask any thing of soothsayers, to be polluted by them. I^ the Lord your God."
+          "text": "Decline not to magicians, neither ask any thing of soothsayers, to be polluted by them. I the Lord your God."
         },
         {
           "verse": 32,
-          "text": "Before the hoar head^ rise up, and honour the person of an old man: and fear the Lord thy God. I am the Lord."
+          "text": "Before the hoar head rise up, and honour the person of an old man: and fear the Lord thy God. I am the Lord."
         },
         {
           "verse": 33,
@@ -2746,7 +2733,7 @@
         },
         {
           "verse": 34,
-          "text": "but let him be among you as the same country man: and you shall love him as yourselves: for you also have been strangers in the Land of Aegypt. I^ the Lord your God."
+          "text": "but let him be among you as the same country man: and you shall love him as yourselves: for you also have been strangers in the Land of Aegypt. I the Lord your God."
         },
         {
           "verse": 35,
@@ -2754,11 +2741,11 @@
         },
         {
           "verse": 36,
-          "text": "Let the balance be just, and the weights equal, the bushel just, and the sextary equal. I^ the Lord your God, that brought you out of the Land of Aegypt."
+          "text": "Let the balance be just, and the weights equal, the bushel just, and the sextary equal. I the Lord your God, that brought you out of the Land of Aegypt."
         },
         {
           "verse": 37,
-          "text": "Keep all my precepts, and all my judgements, and do them. I^ the Lord."
+          "text": "Keep all my precepts, and all my judgements, and do them. I the Lord."
         }
       ],
       "summary": "Diverse Moral, Ceremonial, and Judicial precepts are briefly recited."
@@ -2784,7 +2771,7 @@
         },
         {
           "verse": 5,
-          "text": "Iwill set my face upon that man, & his kindred, and will cut off both him, and all that consented with him, to commit fornication with Moloch, out of the midst of their people."
+          "text": "I will set my face upon that man, & his kindred, and will cut off both him, and all that consented with him, to commit fornication with Moloch, out of the midst of their people."
         },
         {
           "verse": 6,
@@ -2796,7 +2783,7 @@
         },
         {
           "verse": 8,
-          "text": "Keep my precepts, & do them. I^ the Lord that sanctify you."
+          "text": "Keep my precepts, & do them. I the Lord that sanctify you."
         },
         {
           "verse": 9,
@@ -2872,7 +2859,7 @@
         },
         {
           "verse": 24,
-          "text": "But to you I speak: Possess their land, which I will give you for an inheritance, a land flowing with milk and honey. I^ the Lord your God, that have separated you from other peoples."
+          "text": "But to you I speak: Possess their land, which I will give you for an inheritance, a land flowing with milk and honey. I the Lord your God, that have separated you from other peoples."
         },
         {
           "verse": 25,
@@ -2880,7 +2867,7 @@
         },
         {
           "verse": 26,
-          "text": "You shall be holy unto me, because I^ the Lord am holy, and I have separated you from other peoples, that you should be mine."
+          "text": "You shall be holy unto me, because I the Lord am holy, and I have separated you from other peoples, that you should be mine."
         },
         {
           "verse": 27,
@@ -2950,7 +2937,7 @@
         },
         {
           "verse": 12,
-          "text": "Neither shall he go forth out of the holy places, lest he pollute the Sanctuary of the Lord, because the oil of the holy unction of his God is upon him. I^ the Lord."
+          "text": "Neither shall he go forth out of the holy places, lest he pollute the Sanctuary of the Lord, because the oil of the holy unction of his God is upon him. I the Lord."
         },
         {
           "verse": 13,
@@ -3000,7 +2987,7 @@
         },
         {
           "verse": 23,
-          "text": "yet so that he enter not within the veil, or approach the altar, because he hath a blemish, and he must not contaminate my Sanctuary. I^ the Lord that sanctify them."
+          "text": "yet so that he enter not within the veil, or approach the altar, because he hath a blemish, and he must not contaminate my Sanctuary. I the Lord that sanctify them."
         },
         {
           "verse": 24,
@@ -3018,7 +3005,7 @@
         },
         {
           "verse": 2,
-          "text": "speak to Aaron and to his sons, that they beware of those that are the consecrated things of the children of Israel, and contaminate not the name of the things sanctified to me, which they offer. I^ the Lord."
+          "text": "speak to Aaron and to his sons, that they beware of those that are the consecrated things of the children of Israel, and contaminate not the name of the things sanctified to me, which they offer. I the Lord."
         },
         {
           "verse": 3,
@@ -3052,7 +3039,7 @@
         },
         {
           "verse": 9,
-          "text": "Let them keep my precepts, that they be not subject to sin, and die in the Sanctuary, when they shall have polluted it. I^ the Lord that sanctify them."
+          "text": "Let them keep my precepts, that they be not subject to sin, and die in the Sanctuary, when they shall have polluted it. I the Lord that sanctify them."
         },
         {
           "verse": 10,
@@ -3080,7 +3067,7 @@
         },
         {
           "verse": 16,
-          "text": "lest perhaps they sustain the iniquity of their offence, when they shall have eaten the sanctified things. I^ the Lord that sanctify them."
+          "text": "lest perhaps they sustain the iniquity of their offence, when they shall have eaten the sanctified things. I the Lord that sanctify them."
         },
         {
           "verse": 17,
@@ -3136,19 +3123,19 @@
         },
         {
           "verse": 30,
-          "text": "the same day you shall eat it, there shall not ought remain until the morning of the next day. I^ the Lord."
+          "text": "the same day you shall eat it, there shall not ought remain until the morning of the next day. I the Lord."
         },
         {
           "verse": 31,
-          "text": "Keep my commandments, & do them. I^ the Lord."
+          "text": "Keep my commandments, & do them. I the Lord."
         },
         {
           "verse": 32,
-          "text": "Pollute not my holy name that I may be sanctified in the midst of the children of Israel. I^ the Lord that sanctify you,"
+          "text": "Pollute not my holy name that I may be sanctified in the midst of the children of Israel. I the Lord that sanctify you,"
         },
         {
           "verse": 33,
-          "text": "and brought you out of the Land of Aegypt, that I might be your God. I^ the Lord."
+          "text": "and brought you out of the Land of Aegypt, that I might be your God. I the Lord."
         }
       ],
       "summary": "Who may eat of sanctified things. 17. And what things may be offered."
@@ -3167,7 +3154,12 @@
         },
         {
           "verse": 3,
-          "text": "Six days ye shall do work: <na>(a)</na> the seventh day, because it is the rest of the sabbath, shall be called holy. No work shall you do in it: it is <cr>[1]</cr> the Sabbath of the Lord in all your habitations. (b) The Sabbath in memory that God created all things in six days & rested the seventh.",
+          "text": "Six days ye shall do work: <na>(a)</na> the seventh day, because it is the rest of the sabbath, shall be called holy. No work shall you do in it: it is <cr>[1]</cr> the Sabbath of the Lord in all your habitations.",
+          "cross_refs": [
+            {
+              "text": "1."
+            }
+          ],
           "notes": [
             {
               "label": "a",
@@ -3181,7 +3173,13 @@
         },
         {
           "verse": 5,
-          "text": "The first month, the fourteenth day of the month at even, is the <cr>[1]</cr> Phase of the Lord:"
+          "text": "The first month, the fourteenth day of the month at even, is the <cr>[1]</cr> Phase of the Lord:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "2. (c) Pasch in memory of their delivery from Aegypt."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -3225,7 +3223,13 @@
         },
         {
           "verse": 16,
-          "text": "unto the morrow after the seventh week be expired, that is to say <cr>[1]</cr> fifty days, and so you shall offer a new sacrifice to the Lord,"
+          "text": "unto the morrow after the seventh week be expired, that is to say <cr>[1]</cr> fifty days, and so you shall offer a new sacrifice to the Lord,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "3. (d) Pentecost in remembrance of receiving the law."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -3263,7 +3267,13 @@
         },
         {
           "verse": 24,
-          "text": "Speak to the children of Israel: The seventh month, on <cr>[1]</cr> the first day of the month, shall be a Sabbath, a memorial, by sounding of trumpets, and shall be called holy:"
+          "text": "Speak to the children of Israel: The seventh month, on <cr>[1]</cr> the first day of the month, shall be a Sabbath, a memorial, by sounding of trumpets, and shall be called holy:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "4. (e) Feast of trumpets, in memory that a ram sticking by the horns was offered by Abraham instead of Isaac."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -3275,7 +3285,13 @@
         },
         {
           "verse": 27,
-          "text": "upon the tenth day of this seventh month shall be the day of <cr>[1]</cr> expiations most solemn, and it shall be called holy: and you shall afflict your souls in it, and shall offer holocaust to the Lord."
+          "text": "upon the tenth day of this seventh month shall be the day of <cr>[1]</cr> expiations most solemn, and it shall be called holy: and you shall afflict your souls in it, and shall offer holocaust to the Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "5. (f) Feast of Expiation in memory of the sin in worshipping the calf, and for all sins forgotten, or unknown."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -3303,7 +3319,13 @@
         },
         {
           "verse": 34,
-          "text": "Speak to the children of Israel: From the fifteenth day of this seventh month, shall be the festivity of <cr>[1]</cr> tabernacles seven days to the Lord."
+          "text": "Speak to the children of Israel: From the fifteenth day of this seventh month, shall be the festivity of <cr>[1]</cr> tabernacles seven days to the Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "6. (g) Feast of Tabernacles, to remember God's protection in the wilderness, where they dwelled in tabernacles 40. years."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -3311,7 +3333,13 @@
         },
         {
           "verse": 36,
-          "text": "The eighth day also shall be most solemn and most holy, and you shall offer holocausts to the Lord: for it is of <cr>[1]</cr> assembly and collection: no servile work shall you do in it."
+          "text": "The eighth day also shall be most solemn and most holy, and you shall offer holocausts to the Lord: for it is of <cr>[1]</cr> assembly and collection: no servile work shall you do in it.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "7. (h) Feast of Assembly and collection, in memory of peace given in the land of promise."
+            }
+          ]
         },
         {
           "verse": 37,
@@ -3345,7 +3373,7 @@
         },
         {
           "verse": 43,
-          "text": "that your posterity may learn that I made the children of Israel to dwell in tabernacles, when I brought them out of the Land of Aegypt. I^ the Lord your God."
+          "text": "that your posterity may learn that I made the children of Israel to dwell in tabernacles, when I brought them out of the Land of Aegypt. I the Lord your God."
         },
         {
           "verse": 44,
@@ -3545,7 +3573,7 @@
         },
         {
           "verse": 17,
-          "text": "Do not afflict your countrymen, but let every one fear his God, because I^ the Lord your God."
+          "text": "Do not afflict your countrymen, but let every one fear his God, because I the Lord your God."
         },
         {
           "verse": 18,
@@ -3561,7 +3589,7 @@
         },
         {
           "verse": 21,
-          "text": "Iwill give you my benediction the sixth year, and it shall yield the fruits of three years:"
+          "text": "I will give you my benediction the sixth year, and it shall yield the fruits of three years:"
         },
         {
           "verse": 22,
@@ -3635,7 +3663,7 @@
         },
         {
           "verse": 38,
-          "text": "I^ the Lord your God, that brought you out of the Land of Aegypt, that I might give you the Land of Chanaan, & might be your God."
+          "text": "I the Lord your God, that brought you out of the Land of Aegypt, that I might give you the Land of Chanaan, & might be your God."
         },
         {
           "verse": 39,
@@ -3713,7 +3741,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I ^ The Lord your God: you shall not make to yourselves an idol and <na>(a)</na> thing graven, neither shall you erect titles, nor set a notorious stone in your land, for to adore it, for I am the Lord your God.",
+          "text": "I  The Lord your God: you shall not make to yourselves an idol and <na>(a)</na> thing graven, neither shall you erect titles, nor set a notorious stone in your land, for to adore it, for I am the Lord your God.",
           "notes": [
             {
               "label": "a",
@@ -3723,7 +3751,7 @@
         },
         {
           "verse": 2,
-          "text": "Keep my sabbaths, and dread my Sanctuary. I^ the Lord."
+          "text": "Keep my sabbaths, and dread my Sanctuary. I the Lord."
         },
         {
           "verse": 3,
@@ -3739,7 +3767,7 @@
         },
         {
           "verse": 6,
-          "text": "Iwill give peace in your coasts: you shall sleep, and there shall be none to make you afraid. I will take away evil beasts: and the sword shall not pass through your quarters."
+          "text": "I will give peace in your coasts: you shall sleep, and there shall be none to make you afraid. I will take away evil beasts: and the sword shall not pass through your quarters."
         },
         {
           "verse": 7,
@@ -3751,7 +3779,7 @@
         },
         {
           "verse": 9,
-          "text": "Iwill respect you, and make you increase: you shall be multiplied, & I will establish my covenant with you."
+          "text": "I will respect you, and make you increase: you shall be multiplied, & I will establish my covenant with you."
         },
         {
           "verse": 10,
@@ -3759,15 +3787,15 @@
         },
         {
           "verse": 11,
-          "text": "Iwill set my tabernacle in the midst of you, and my soul shall not cast you off."
+          "text": "I will set my tabernacle in the midst of you, and my soul shall not cast you off."
         },
         {
           "verse": 12,
-          "text": "Iwill walk among you, & will be your God, & you shall be my people."
+          "text": "I will walk among you, & will be your God, & you shall be my people."
         },
         {
           "verse": 13,
-          "text": "I^ the Lord your God, that have brought you out of the Land of the Aegyptians, that you should not serve them, and that have broken the chains of your necks, that you might go upright."
+          "text": "I the Lord your God, that have brought you out of the Land of the Aegyptians, that you should not serve them, and that have broken the chains of your necks, that you might go upright."
         },
         {
           "verse": 14,
@@ -3779,11 +3807,11 @@
         },
         {
           "verse": 16,
-          "text": "Ialso will do these things to you: I shall quickly visit you with poverty, and burning heat, which shall waste your eyes, & consume your lives, you shall sow your seed in vain, which shall be devoured of the enemies."
+          "text": "I also will do these things to you: I shall quickly visit you with poverty, and burning heat, which shall waste your eyes, & consume your lives, you shall sow your seed in vain, which shall be devoured of the enemies."
         },
         {
           "verse": 17,
-          "text": "Iwill set my face against you, and you shall fall down before your enemies, and shall be made subject to them that hate you. You shall fly, when no man pursueth you."
+          "text": "I will set my face against you, and you shall fall down before your enemies, and shall be made subject to them that hate you. You shall fly, when no man pursueth you."
         },
         {
           "verse": 18,
@@ -3811,7 +3839,7 @@
         },
         {
           "verse": 24,
-          "text": "Ialso will go opposite against you, and will strike you seven times for your sins,"
+          "text": "I also will go opposite against you, and will strike you seven times for your sins,"
         },
         {
           "verse": 25,
@@ -3827,7 +3855,7 @@
         },
         {
           "verse": 28,
-          "text": "Ialso will go against you in contrary fury, and will chastise you with seven plagues for your sins,"
+          "text": "I also will go against you in contrary fury, and will chastise you with seven plagues for your sins,"
         },
         {
           "verse": 29,
@@ -3841,7 +3869,7 @@
         },
         {
           "verse": 30,
-          "text": "Iwill destroy your excelses, & break your idols. You shall fall among the ruins of your idols, & my soul shall abhor you,"
+          "text": "I will destroy your excelses, & break your idols. You shall fall among the ruins of your idols, & my soul shall abhor you,"
         },
         {
           "verse": 31,
@@ -3885,7 +3913,7 @@
         },
         {
           "verse": 41,
-          "text": "Ialso therefore will walk against them, & bring them into their enemy's land, until their uncircumcised mind be ashamed: then shall they pray for their impieties."
+          "text": "I also therefore will walk against them, & bring them into their enemy's land, until their uncircumcised mind be ashamed: then shall they pray for their impieties."
         },
         {
           "verse": 42,
@@ -3913,7 +3941,7 @@
         },
         {
           "verse": 45,
-          "text": "and I will remember mine old covenant, when I brought them out of the Land of Aegypt, in the sight of the Gentiles, for to be their God. I^ the Lord. These are the judgments, and precepts, and laws, which our Lord gave between himself and the children of Israel in Mount Sinai by the hand of Moyses."
+          "text": "and I will remember mine old covenant, when I brought them out of the Land of Aegypt, in the sight of the Gentiles, for to be their God. I the Lord. These are the judgments, and precepts, and laws, which our Lord gave between himself and the children of Israel in Mount Sinai by the hand of Moyses."
         }
       ],
       "summary": "With new prohibition of Idolatry, and commandment to keep the Sabbath 3. rewards are promised to all that observe God's precepts. 14. And many miserable punishments are threatened to all transgressors."
@@ -4031,7 +4059,7 @@
         },
         {
           "verse": 25,
-          "text": "All estimation shall be weighed by the sicle of the sanctuary. A sicle hath twenty oboles. <na>(c)</na> A sicle was about 15. d. obolus three farthings.",
+          "text": "All estimation shall be weighed by the sicle of the sanctuary. A sicle hath twenty oboles.",
           "has_annotation": true
         },
         {
@@ -4074,7 +4102,7 @@
         },
         {
           "verse": 34,
-          "text": "These are the precepts, which our Lord commanded Moyses unto the children of Israel in the mount Sinai. have ever from Christ's time both taught and practised religious vows, of obedience to superiors, who otherwise had no authority over them, and of perpetual chastity, and voluntary poverty. It is likewise, and continually hath been, a most common practice in the Church, to vow other good works of piety, as to visit holy places, to build Churches, Colleges, Hospitals, and the like, being no way bound thereto but of mere devotion. <i>See Annotations 1. Tim. 5. 131.</i>"
+          "text": "These are the precepts, which our Lord commanded Moyses unto the children of Israel in the mount Sinai."
         }
       ],
       "summary": "How some vows of diverse persons may be redeemed, but some may not be changed. 28. All, one way or other, must be discharged. 30. Tithes also must be payed, either the same that are due or more. <na>[1]</na>",

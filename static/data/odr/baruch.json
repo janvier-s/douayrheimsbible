@@ -55,8 +55,9 @@
         {
           "verse": 10,
           "text": "And they said: Behold we have sent you money, with the which buy ye holocausts, and frankincense, and make <cr>[1]</cr> manna, and offer for sin at the altar of the Lord our God:",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* or, manah sacrifice."
             }
           ]
@@ -102,8 +103,9 @@
         {
           "verse": 19,
           "text": "From the day, that he brought our fathers out of the Land of Aegypt, even to this day, we would not be brought to believe the Lord our God: and <cr>[1]</cr> dissipated we revolted, that we might not hear his voice.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Corrupted in judgement."
             }
           ]
@@ -250,7 +252,13 @@
         },
         {
           "verse": 26,
-          "text": "And hast made the <na>(c)</na> temple, in which thy name was there invocated, as it is this day, for the iniquity of the house of Israel, and of the house of Juda. <na>(c)</na> The temple was not as yet destroyed but the prophet speaketh of it, as he saw it should come to pass."
+          "text": "And hast made the <na>(c)</na> temple, in which thy name was there invocated, as it is this day, for the iniquity of the house of Israel, and of the house of Juda.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The temple was not as yet destroyed but the prophet speaketh of it, as he saw it should come to pass."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -272,8 +280,9 @@
         {
           "verse": 30,
           "text": "<cr>[1]</cr> because I know that the people will not hear me. for it is a people of a stiff neck: and they shall be converted to their heart in the land of their captivity:",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "& 32. v. 20."
             }
           ]
@@ -604,7 +613,7 @@
         },
         {
           "verse": 20,
-          "text": "Ihave put off the stole of peace, and I have put upon me the sackcloth of prayer, and I will cry to the Highest in my days."
+          "text": "I have put off the stole of peace, and I have put upon me the sackcloth of prayer, and I will cry to the Highest in my days."
         },
         {
           "verse": 21,

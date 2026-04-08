@@ -21,19 +21,27 @@
       ]
     },
     {
-      "verse": 39,
-      "title": "If not so worthily.",
-      "text": "<mn>◦</mn> He demandeth not pardon, as though he suspected any error in his doctrine or in the history, but of his unpolished style in writing. As S. Paul saith that <i>himself was rude in speech, yet not in knowledge, 2 Cor. 11. v. 6.</i>\n\nBut we, who by God's great goodness have passed not to the end of this English old Testament, justly fearing that we have not worthily discharged so great a work: & in nowise presuming that we have avoided all errors, as well of doctrine as history: much more we acknowledge that our style is rude & unpolished. And therefore we necessarily, and with all humility crave pardon of God & all his glorious Saints, Likewise of the Church militant, & particularly of you, right well beloved English readers, to whom as at the beginning we directed & dedicated these our In like sort the <mn>◦</mn> <i>continuance of Priesthood</i>, and Priestly functions is manifest in the books of Esdras, and of other Prophets, which prefigured <i>the Sacrament of holy Orders</i>, in the Church of Christ.",
+      "text": "<mn>◦</mn> He demandeth not pardon, as though he suspected any error in his doctrine or in the history, but of his unpolished style in writing. As S. Paul saith that <i>himself was rude in speech, yet not in knowledge, 2 Cor. 11. v. 6.</i>",
       "notes": [
         {
           "marker": "◦",
           "text": "The author of this book asketh pardon for his style, not for the doctrine nor history. But the authors of these Annotations crave pardon for all defects."
-        },
+        }
+      ],
+      "verse": 39,
+      "title": "If not so worthily.",
+      "part": 1
+    },
+    {
+      "text": "But we, who by God's great goodness have passed not to the end of this English old Testament, justly fearing that we have not worthily discharged so great a work: & in nowise presuming that we have avoided all errors, as well of doctrine as history: much more we acknowledge that our style is rude & unpolished. And therefore we necessarily, and with all humility crave pardon of God & all his glorious Saints, Likewise of the Church militant, & particularly of you, right well beloved English readers, to whom as at the beginning we directed & dedicated these our In like sort the <mn>◦</mn> <i>continuance of Priesthood</i>, and Priestly functions is manifest in the books of Esdras, and of other Prophets, which prefigured <i>the Sacrament of holy Orders</i>, in the Church of Christ.",
+      "notes": [
         {
           "marker": "◦",
           "text": "Holy Orders."
         }
-      ]
+      ],
+      "verse": 39,
+      "part": 2
     }
   ]
 }

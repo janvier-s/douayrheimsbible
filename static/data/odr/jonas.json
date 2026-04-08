@@ -148,7 +148,7 @@
         },
         {
           "verse": 7,
-          "text": "Iam descended to the <na>(c)</na> extreme parts of the mountains: the bars of the earth have shut me up for ever: and thou wilt lift up my life from corruption, o Lord my God.",
+          "text": "I am descended to the <na>(c)</na> extreme parts of the mountains: the bars of the earth have shut me up for ever: and thou wilt lift up my life from corruption, o Lord my God.",
           "notes": [
             {
               "label": "c",
@@ -260,15 +260,14 @@
         {
           "verse": 1,
           "text": "And Jonas <na>(a)</na> was afflicted with great affliction, and was <cr>[1]</cr> angry:",
-          "cross_refs": [
-            {
-              "text": "* grieved."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "Ionas conjectured by their penance that God would for this time spare Ninive, and so was afflicted fearing that both this, and other prophecies should be reputed uncertain. But this doubt is solved understanding God's threats to be conditional as before. ch. 3. v. 4. and so it proved. For they falling again into former sins were afterwards destroyed. Nahum. 1. 2. & 3."
+            },
+            {
+              "label": "1",
+              "text": "* grieved."
             }
           ]
         },
@@ -307,11 +306,15 @@
         },
         {
           "verse": 9,
-          "text": "And our Lord said to Jonas: Art thou angry well, thinkest thou, for the ivy? And he said: <na>(b)</na> I am <cr>[1]</cr> angry well even unto death. resurrection, unless himself had so expounded it? <i>Mat. 12.</i> <cr>[1]</cr> <i>* grieved.</i>",
+          "text": "And our Lord said to Jonas: Art thou angry well, thinkest thou, for the ivy? And he said: <na>(b)</na> I am <cr>[1]</cr> angry well even unto death.",
           "notes": [
             {
               "label": "b",
               "text": "Ionas had just cause to be grieved; and so God had just cause of compassion, that the city should not perish. In this prophecy, which is also an history, who could have thought that Ionas had been a figure of our Saviour's death &"
+            },
+            {
+              "label": "1",
+              "text": "* grieved."
             }
           ]
         },

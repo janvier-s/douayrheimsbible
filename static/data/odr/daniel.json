@@ -13,6 +13,12 @@
             {
               "text": "4. Reg. 24. v. 1."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part. Acts of Daniel with the other three Hebrew children; & of the Kings of Babylon."
+            }
           ]
         },
         {
@@ -70,15 +76,14 @@
         {
           "verse": 12,
           "text": "<na>(c)</na> Prove I beseech thee, thy servants for ten days, & let <cr>[1]</cr> pulse be given us to eat, & water to drink:",
-          "cross_refs": [
-            {
-              "text": "* beans, peas &c."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "Three causes moved them to abstain from the King's meats: lest they might eat any thing offered to idols, or forbid by the law of Moyses, and because such delicate diet might provoke to gluttony, or in time when they should be elder, to other sins. Theod."
+            },
+            {
+              "label": "1",
+              "text": "* beans, peas &c."
             }
           ]
         },
@@ -147,8 +152,9 @@
         {
           "verse": 2,
           "text": "But the king commanded, that the soothsayers should be called together, and the magicians, and the sorcerers, and the <cr>[1]</cr> Chaldees: to declare unto the king his dreams: who when they were come, stood before the king.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* professors of Astrology."
             }
           ]
@@ -374,15 +380,14 @@
         {
           "verse": 47,
           "text": "The king therefore speaking said to Daniel: In very deed <na>(i)</na> your God is the God of gods, and Lord of kings, and he that revealeth mysteries: because thou couldst open this <cr>[1]</cr> sacrament.",
-          "cross_refs": [
-            {
-              "text": "* mystery."
-            }
-          ],
           "notes": [
             {
               "label": "i",
               "text": "Notwithstanding this confession, shortly after he erected an idol to represent his own greatness, and to be adored therein."
+            },
+            {
+              "label": "1",
+              "text": "* mystery."
             }
           ]
         },
@@ -501,8 +506,9 @@
         {
           "verse": 21,
           "text": "And forthwith those men being bound with their breeches, <cr>[1]</cr> and head attire, and shoes, and garments were cast into the furnace of burning fire.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* or caps."
             }
           ]
@@ -513,7 +519,13 @@
         },
         {
           "verse": 23,
-          "text": "But these three men, that is, Sidrach, Misach, and Abdenago fell in the midst of the furnace of burning fire, bound together. <i>That which followeth I found not in the Hebrew volumes.</i> <cr>[1]</cr>"
+          "text": "But these three men, that is, Sidrach, Misach, and Abdenago fell in the midst of the furnace of burning fire, bound together. <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Though these parcels were not in the Hebrew in S. Jerome's time, yet either had been in the Hebrew or Chaldee, or at least were Canonical scriptures; as we have proved in the argument of this book."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -618,8 +630,9 @@
         {
           "verse": 46,
           "text": "And the king's servants that had cast them in, ceased not to heat the furnace, with <cr>[1]</cr> Naphtha, and tow, and pitch, and dry sticks,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "chalky, clay, or lime."
             }
           ]
@@ -810,9 +823,10 @@
         },
         {
           "verse": 90,
-          "text": "All religious bless ye our Lord the God of gods: praise and confess ye to him, because his mercy is unto all worlds. <i>Hitherto it is not in the Hebrew: and that which we have put, is translated out of the Edition of Theodotion.</i> <cr>[1]</cr>",
-          "cross_refs": [
+          "text": "All religious bless ye our Lord the God of gods: praise and confess ye to him, because his mercy is unto all worlds. <cr>[1]</cr>",
+          "notes": [
             {
+              "label": "1",
               "text": "S. Jerome's words."
             }
           ]
@@ -883,7 +897,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I ^ <na>(a)</na> Nabuchodonosor, was quiet in my house, and flourishing in my palace.",
+          "text": "I  <na>(a)</na> Nabuchodonosor, was quiet in my house, and flourishing in my palace.",
           "notes": [
             {
               "label": "a",
@@ -952,7 +966,7 @@
         },
         {
           "verse": 15,
-          "text": "This dream saw I^ Nabuchodonosor the king: thou therefore o Baltassar tell the interpretation quickly: because all the wisemen of my kingdom cannot declare the solution unto me: but thou canst, because the spirit of holy gods is in thee."
+          "text": "This dream saw I Nabuchodonosor the king: thou therefore o Baltassar tell the interpretation quickly: because all the wisemen of my kingdom cannot declare the solution unto me: but thou canst, because the spirit of holy gods is in thee."
         },
         {
           "verse": 16,
@@ -1028,7 +1042,7 @@
         },
         {
           "verse": 31,
-          "text": "Therefore after the end of the days, I^ Nabuchodonosor lifted up mine eyes to heaven, and my sense was restored to me: and I blessed the Highest, and praised him that liveth for ever, and glorified him: because his power is an everlasting power, and his kingdom in generation and generation."
+          "text": "Therefore after the end of the days, I Nabuchodonosor lifted up mine eyes to heaven, and my sense was restored to me: and I blessed the Highest, and praised him that liveth for ever, and glorified him: because his power is an everlasting power, and his kingdom in generation and generation."
         },
         {
           "verse": 32,
@@ -1036,7 +1050,7 @@
         },
         {
           "verse": 33,
-          "text": "In the very same time did my sense return to me, & I came to the honour, and beauty of my kingdom: and my <na>(e)</na> figure returned to me: and my nobles, & my magistrates sought for me, and I was restored in my kingdom: and more ample magnificence was added to me. & nails, & so appeared to himself as returned to his former figure or shape.",
+          "text": "In the very same time did my sense return to me, & I came to the honour, and beauty of my kingdom: and my <na>(e)</na> figure returned to me: and my nobles, & my magistrates sought for me, and I was restored in my kingdom: and more ample magnificence was added to me.",
           "notes": [
             {
               "label": "e",
@@ -1046,7 +1060,7 @@
         },
         {
           "verse": 34,
-          "text": "Now therefore I^ Nabuchodonosor praise, and magnify, and glorify the King of heaven: because all his works are true, and his ways judgements, and them that walk in pride he can humble.",
+          "text": "Now therefore I Nabuchodonosor praise, and magnify, and glorify the King of heaven: because all his works are true, and his ways judgements, and them that walk in pride he can humble.",
           "has_annotation": true
         }
       ],
@@ -1055,10 +1069,6 @@
     {
       "chapter": 5,
       "verses": [
-        {
-          "verse": 0,
-          "text": "Niglissar and Labosardach: as testify <i>Euse. S. Ierom. S. Beda.</i> & others."
-        },
         {
           "verse": 1,
           "text": "<sc>Baltassar</sc> <na>(a)</na> the king made a great feast to his nobles a thousand: and every one drank according to his age.",
@@ -1104,8 +1114,9 @@
         {
           "verse": 10,
           "text": "And the <cr>[1]</cr> queen for the thing that had happened to the king, and his nobles, entered into the house of the feast: and speaking she said: King for ever live: let not thy cogitations trouble thee, neither let thy face be changed.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* the King's mother v. 11."
             }
           ]
@@ -1130,13 +1141,14 @@
         },
         {
           "verse": 14,
-          "text": "Ihave heard of thee, that thou hast the spirit of the gods, and more ample knowledge, and understanding, and wisdom are found in thee."
+          "text": "I have heard of thee, that thou hast the spirit of the gods, and more ample knowledge, and understanding, and wisdom are found in thee."
         },
         {
           "verse": 15,
           "text": "And now there have come into my sight the wise magicians, that they might read this writing, and might shew me the interpretation thereof: and they could not declare me the sense of this <cr>[1]</cr> word.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* thing written."
             }
           ]
@@ -1151,7 +1163,7 @@
         },
         {
           "verse": 18,
-          "text": "Oking, God the most high gave to Nabuchodonosor thy father kingdom and magnificence, glory and honour."
+          "text": "O king, God the most high gave to Nabuchodonosor thy father kingdom and magnificence, glory and honour."
         },
         {
           "verse": 19,
@@ -1449,7 +1461,7 @@
         },
         {
           "verse": 8,
-          "text": "Iconsidered the horns, and behold another <na>(h)</na> little horn sprang out of the midst of them: and three of the first horns were plucked off at the presence thereof, and lo eyes as it were the eyes of a man were in this horn, & a mouth speaking great words.",
+          "text": "I considered the horns, and behold another <na>(h)</na> little horn sprang out of the midst of them: and three of the first horns were plucked off at the presence thereof, and lo eyes as it were the eyes of a man were in this horn, & a mouth speaking great words.",
           "notes": [
             {
               "label": "h",
@@ -1459,7 +1471,7 @@
         },
         {
           "verse": 9,
-          "text": "Ibeheld till thrones were set, and <na>(i)</na> the ancient of days sat: his vesture white as snow, and the hairs of his head as clean wool: his throne flames of fire: his wheels fire kindled. ancient than another: for every Person is eternal; and all are one eternal God: But in order of proceeding one from another, the Father is the beginning: of whom the Son is begotten; and from whom, as also from the Son, the Holy Ghost proceedeth.",
+          "text": "I beheld till thrones were set, and <na>(i)</na> the ancient of days sat: his vesture white as snow, and the hairs of his head as clean wool: his throne flames of fire: his wheels fire kindled.",
           "notes": [
             {
               "label": "i",
@@ -1483,7 +1495,7 @@
         },
         {
           "verse": 11,
-          "text": "Ibeheld because of the voice of the great words, which that horn spake: and I saw that the beast was slain, and the body thereof was perished, and was committed to the fire to be burnt."
+          "text": "I beheld because of the voice of the great words, which that horn spake: and I saw that the beast was slain, and the body thereof was perished, and was committed to the fire to be burnt."
         },
         {
           "verse": 12,
@@ -1491,7 +1503,7 @@
         },
         {
           "verse": 13,
-          "text": "Ibeheld therefore in the vision of the night, and lo with the clouds of heaven there came in, as it were <na>(m)</na> the son of man, and he came even to the ancient of days: and in his sight they offered him.",
+          "text": "I beheld therefore in the vision of the night, and lo with the clouds of heaven there came in, as it were <na>(m)</na> the son of man, and he came even to the ancient of days: and in his sight they offered him.",
           "notes": [
             {
               "label": "m",
@@ -1505,11 +1517,11 @@
         },
         {
           "verse": 15,
-          "text": "My spirit trembled, I^ Daniel was made sore afraid at these things, and the visions of my head troubled me."
+          "text": "My spirit trembled, I Daniel was made sore afraid at these things, and the visions of my head troubled me."
         },
         {
           "verse": 16,
-          "text": "Icame to one of the assistants, and I asked the truth of him concerning all these things, who told me the interpretation of the words, and taught me:"
+          "text": "I came to one of the assistants, and I asked the truth of him concerning all these things, who told me the interpretation of the words, and taught me:"
         },
         {
           "verse": 17,
@@ -1529,7 +1541,7 @@
         },
         {
           "verse": 21,
-          "text": "Ibeheld, and lo that horn made war against the saints, and prevailed over them,"
+          "text": "I beheld, and lo that horn made war against the saints, and prevailed over them,"
         },
         {
           "verse": 22,
@@ -1555,7 +1567,7 @@
         },
         {
           "verse": 26,
-          "text": "And judgement shall sit, that might^ may be taken away, and be broken, and perish even to the end."
+          "text": "And judgement shall sit, that might may be taken away, and be broken, and perish even to the end."
         },
         {
           "verse": 27,
@@ -1563,7 +1575,7 @@
         },
         {
           "verse": 28,
-          "text": "Hitherto the end of the word, I^ Daniel was much troubled with my cogitations, and my face was changed in me: but the word I kept in my heart."
+          "text": "Hitherto the end of the word, I Daniel was much troubled with my cogitations, and my face was changed in me: but the word I kept in my heart."
         }
       ],
       "summary": "Daniel seeth four winds fighting, and four terrible beasts rising from the sea: 9. God sitting in a throne, and served by innumerable Angels. 11. The greatest beast is slain, and the power of the rest diminished. 13. The Son of man receiveth eternal power of God. 15. The prophet much terrified, is instructed that the four beasts signify four kingdoms. 19. The greatest shall prevail for a while, 26. but shortly perish. <na>[1]</na>",
@@ -1583,16 +1595,15 @@
         },
         {
           "verse": 2,
-          "text": "I^ Daniel <na>(a)</na> saw in my vision, after that which I had seen in the beginning, when I was in Susis the castle, which is in the province of Aelam: and I saw in the vision, that I was over the <cr>[1]</cr> gate Ulai.",
-          "cross_refs": [
-            {
-              "text": "or river."
-            }
-          ],
+          "text": "I Daniel <na>(a)</na> saw in my vision, after that which I had seen in the beginning, when I was in Susis the castle, which is in the province of Aelam: and I saw in the vision, that I was over the <cr>[1]</cr> gate Ulai.",
           "notes": [
             {
               "label": "a",
               "text": "He insinuateth that this vision was in explication of some part of the former, which he had two years before. ch. 7. where four monarchies are mentioned: so here is foretold the great conflict between the Persians & Grecians, about 220 years after."
+            },
+            {
+              "label": "1",
+              "text": "or river."
             }
           ]
         },
@@ -1692,7 +1703,7 @@
         },
         {
           "verse": 15,
-          "text": "And it came to pass when I^ Daniel saw the vision, and sought the understanding: behold there stood in my sight as it were the form of a man."
+          "text": "And it came to pass when I Daniel saw the vision, and sought the understanding: behold there stood in my sight as it were the form of a man."
         },
         {
           "verse": 16,
@@ -1731,15 +1742,14 @@
         {
           "verse": 23,
           "text": "And after their reign, when iniquities shall be increased, <na>(l)</na> there shall arise a king impudent of face, and understanding <cr>[1]</cr> propositions.",
-          "cross_refs": [
-            {
-              "text": "* obscure speeches."
-            }
-          ],
           "notes": [
             {
               "label": "l",
               "text": "Historically Antiochus; mystically Antichrist, as ch. 22. & Mat. 24."
+            },
+            {
+              "label": "1",
+              "text": "* obscure speeches."
             }
           ]
         },
@@ -1763,7 +1773,7 @@
         },
         {
           "verse": 27,
-          "text": "And I^ Daniel languished, and was sick for certain days: and when I was risen up, I did the king's works, and was astonished at the vision, and there was none that could interpret it."
+          "text": "And I Daniel languished, and was sick for certain days: and when I was risen up, I did the king's works, and was astonished at the vision, and there was none that could interpret it."
         }
       ],
       "summary": "Daniel seeth a ram with two horns overcome by a goat with one horn: 8. Which shall also be broken, and four less rise in place thereof: one of them profaneth the temple in Jerusalem, and taketh away the daily sacrifice. 15. And Gabriel the Archangel expoundeth the vision."
@@ -1783,7 +1793,7 @@
         },
         {
           "verse": 2,
-          "text": "<na>(b)</na> the first year of his kingdom, I^ Daniel understood in books the number of years, whereof the word of our Lord was made to Jeremie the prophet, that <na>(c)</na> seventy years should be accomplished of the desolation of Jerusalem. <cr>[1]</cr>",
+          "text": "<na>(b)</na> the first year of his kingdom, I Daniel understood in books the number of years, whereof the word of our Lord was made to Jeremie the prophet, that <na>(c)</na> seventy years should be accomplished of the desolation of Jerusalem. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Iere. 29. v. 10."
@@ -1867,7 +1877,7 @@
         },
         {
           "verse": 18,
-          "text": "Incline^ my God^ thine ear, & hear: open thine eyes, and see our desolation, & the city upon which thy name is invocated: for neither in our justifications do we prostrate prayers before thy face, but in thy many commiserations."
+          "text": "Incline my God thine ear, & hear: open thine eyes, and see our desolation, & the city upon which thy name is invocated: for neither in our justifications do we prostrate prayers before thy face, but in thy many commiserations."
         },
         {
           "verse": 19,
@@ -1912,15 +1922,14 @@
         {
           "verse": 25,
           "text": "Know therefore, & mark: From the going forth of the word, that Jerusalem be built again, unto Christ the prince, there shall be seven <na>(g)</na> weeks, & sixty two weeks, & the street shall be built again, & the walls in <cr>[1]</cr> straitness of the times.",
-          "cross_refs": [
-            {
-              "text": "* troublesome times."
-            }
-          ],
           "notes": [
             {
               "label": "g",
               "text": "Hebdomas or Septenarius signifying seven, understood of days importeth a week: of years (as Levi. 25. ) seven years: so seventy weeks 490. years. S. Bed. li. de rat. temp. c. 6. 7. 8."
+            },
+            {
+              "label": "1",
+              "text": "* troublesome times."
             }
           ]
         },
@@ -1955,7 +1964,7 @@
         },
         {
           "verse": 2,
-          "text": "In those days^ I^ Daniel mourned the days of three weeks,"
+          "text": "In those days I Daniel mourned the days of three weeks,"
         },
         {
           "verse": 3,
@@ -1975,7 +1984,7 @@
         },
         {
           "verse": 7,
-          "text": "And I^ Daniel alone saw the vision: moreover the men that were with me, saw it not, but exceeding terror fell upon them, and they fled away, and hid themselves."
+          "text": "And I Daniel alone saw the vision: moreover the men that were with me, saw it not, but exceeding terror fell upon them, and they fled away, and hid themselves."
         },
         {
           "verse": 8,
@@ -2002,8 +2011,9 @@
         {
           "verse": 12,
           "text": "And he said to me: Fear not Daniel: because since the first day that thou didst set thy heart to understand to afflict thyself in the sight of thy God, thy <cr>[1]</cr> words have been heard: and I am come for thy words.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "prayers."
             }
           ]
@@ -2085,11 +2095,13 @@
         {
           "verse": 2,
           "text": "And now I will declare the truth unto thee. Behold <cr>[1]</cr> three kings as yet shall stand in Persia, and <cr>[2]</cr> the fourth shall be enriched with exceeding riches above all: & when he is grown mighty in his riches, he shall raise up all against the kingdom of Greece.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Cambyses. 1. Smerdes magus. Darius Histaspis."
             },
             {
+              "label": "2",
               "text": "* Xerxes."
             }
           ]
@@ -2097,8 +2109,9 @@
         {
           "verse": 3,
           "text": "But there shall rise <cr>[1]</cr> a strong king, and shall rule with much power: and he shall do what shall please him.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Alexander."
             }
           ]
@@ -2106,26 +2119,20 @@
         {
           "verse": 4,
           "text": "And when he <cr>[1]</cr> shall stand, his kingdom shall be broken, and it shall be divided into the four winds of heaven: but not unto his posterity, nor according to his mightiness wherewith he ruled. For <na>(b)</na> his kingdom shall be rent even unto foreigners, beside these.",
-          "cross_refs": [
-            {
-              "text": "* come to his height."
-            }
-          ],
           "notes": [
             {
               "label": "b",
               "text": "Scarcely touching other successors of Alexander, the holy scripture here prophesieth of the Kings of Aegypt on the south side of Jury; and Syrians on the North: by whose wars the Jews were most molested."
+            },
+            {
+              "label": "1",
+              "text": "* come to his height."
             }
           ]
         },
         {
           "verse": 5,
           "text": "And <na>(c)</na> the king <cr>[1]</cr> of the South shall be made strong, & there shall <na>(d)</na> of his princes prevail above him, and he shall rule in dominion: for his dominion shall be much.",
-          "cross_refs": [
-            {
-              "text": "King of Aegypt."
-            }
-          ],
           "notes": [
             {
               "label": "c",
@@ -2134,27 +2141,36 @@
             {
               "label": "d",
               "text": "His son called Ptolomeus Philadelphus excelled his father in power and magnificence."
+            },
+            {
+              "label": "1",
+              "text": "King of Aegypt."
             }
           ]
         },
         {
           "verse": 6,
           "text": "And after the end of years they shall be confederated: and the daughter of the king of the South shall come to <na>(e)</na> the king <cr>[1]</cr> of the North to make amity, and shall not obtain the strength of the arm, neither shall his seed stand: and she shall be delivered, and they that brought her, her youngmen and they that strengthened her in the times.",
-          "cross_refs": [
-            {
-              "text": "King of Syria."
-            }
-          ],
           "notes": [
             {
               "label": "e",
               "text": "This King of the North seemeth to be Antiochus Theos King of Syria."
+            },
+            {
+              "label": "1",
+              "text": "King of Syria."
             }
           ]
         },
         {
           "verse": 7,
-          "text": "<na>(f)</na> And there shall stand of the bud of her roots a plant: and he shall come with an army, and shall enter the province of the king of the North: and he shall abuse them, and shall obtain. <na>(f)</na> Ptolomeus Evergetes King of Aegypt invaded and spoiled Syria."
+          "text": "<na>(f)</na> And there shall stand of the bud of her roots a plant: and he shall come with an army, and shall enter the province of the king of the North: and he shall abuse them, and shall obtain.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Ptolomeus Evergetes King of Aegypt invaded and spoiled Syria."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -2369,7 +2385,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>But</sc> in that time shall rise up <na>(a)</na> Michael the great prince, who standeth for the children of thy people: and a time shall come such as hath not been from the time since nations began even until that time. And in that time shall thy people be saved, every one that shall be found written in the book. <na>(a)</na> S. Michael the Guardian Angel & protector of the Jews in the old Testament. <i>c. 10. v. 13. & 21.</i> & now of the Church of Christ, will defend the same against Antichrist invisibly as the Ecclesiastical pastors shall do visibly."
+          "text": "<sc>But</sc> in that time shall rise up <na>(a)</na> Michael the great prince, who standeth for the children of thy people: and a time shall come such as hath not been from the time since nations began even until that time. And in that time shall thy people be saved, every one that shall be found written in the book.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "S. Michael the Guardian Angel & protector of the Jews in the old Testament. c. 10. v. 13. & 21. & now of the Church of Christ, will defend the same against Antichrist invisibly as the Ecclesiastical pastors shall do visibly."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2384,15 +2406,14 @@
         {
           "verse": 3,
           "text": "But they that be learned <cr>[1]</cr> shall shine as the brightness of the firmament: and they that instruct many to justice, <na>(c)</na> as stars unto perpetual eternities.",
-          "cross_refs": [
-            {
-              "text": "* in the law of God."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "Aglorious Aureola or accidental reward (besides the essential beatitude) shall be given to those that duly perform the office of pastors, in teaching others, as there is another like to Martyrs, & another to Virgins."
+            },
+            {
+              "label": "1",
+              "text": "* in the law of God."
             }
           ]
         },
@@ -2408,7 +2429,7 @@
         },
         {
           "verse": 5,
-          "text": "And I^ Daniel saw, and behold there stood as it were two others: one on this side upon the bank of the river, and another on that side, on the other bank of the river."
+          "text": "And I Daniel saw, and behold there stood as it were two others: one on this side upon the bank of the river, and another on that side, on the other bank of the river."
         },
         {
           "verse": 6,
@@ -2824,8 +2845,11 @@
           "cross_refs": [
             {
               "text": "Gen. 10. v. 10."
-            },
+            }
+          ],
+          "notes": [
             {
+              "label": "2",
               "text": "* amphorae."
             }
           ]

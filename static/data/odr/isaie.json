@@ -143,7 +143,7 @@
         },
         {
           "verse": 26,
-          "text": "And I will restore <na>(f)</na> thy judges as they have been before, and thy counsellers as of old. After these things thou shalt be called the just, a faithful city. governed the people after their delivery from captivity: but S. Ierom expoundeth this and the like places of the Apostles, and their successors.",
+          "text": "And I will restore <na>(f)</na> thy judges as they have been before, and thy counsellers as of old. After these things thou shalt be called the just, a faithful city.",
           "notes": [
             {
               "label": "f",
@@ -472,7 +472,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Iwill sing to my beloved <na>(a)</na> the canticle of my cousin concerning his vineyard. <cr>[1]</cr> A vineyard was made to my beloved in horn, the son of oil.",
+          "text": "I will sing to my beloved <na>(a)</na> the canticle of my cousin concerning his vineyard. <cr>[1]</cr> A vineyard was made to my beloved in horn, the son of oil.",
           "cross_refs": [
             {
               "text": "Mat. 21."
@@ -854,7 +854,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And our Lord said to me: Take thee <na>(a)</na> a great book, & write in it with the pen of man. Take away the spoils speedily, quickly take preys. thereof.",
+          "text": "And our Lord said to me: Take thee <na>(a)</na> a great book, & write in it with the pen of man. Take away the spoils speedily, quickly take preys.",
           "notes": [
             {
               "label": "a",
@@ -1017,7 +1017,7 @@
         },
         {
           "verse": 6,
-          "text": "For <na>(c)</na> <sc>Alittle</sc> <sc>Child</sc> IS <sc>Born</sc> TO US, <cr>[1]</cr> and a son is given to us, and his principality is made upon his shoulder: and his name shall be called, Marvelous, Counseller, God, Strong, Father of the world to come, the Prince of peace:",
+          "text": "For <na>(c)</na> <sc>Alittle Child</sc> IS <sc>Born</sc> TO US, <cr>[1]</cr> and a son is given to us, and his principality is made upon his shoulder: and his name shall be called, Marvelous, Counseller, God, Strong, Father of the world to come, the Prince of peace:",
           "cross_refs": [
             {
               "text": "Luc. 2."
@@ -1140,7 +1140,7 @@
         },
         {
           "verse": 6,
-          "text": "Iwill send him to <na>(b)</na> a deceitful nation, & will give him commandment against the people of my fury, that he take away spoils, and catch the prey, and put them to be trodden upon, as the mire of the streets.",
+          "text": "I will send him to <na>(b)</na> a deceitful nation, & will give him commandment against the people of my fury, that he take away spoils, and catch the prey, and put them to be trodden upon, as the mire of the streets.",
           "notes": [
             {
               "label": "b",
@@ -1439,9 +1439,10 @@
         {
           "verse": 1,
           "text": "The <cr>[1]</cr> burden of Babylon, which Isaie the son of Amos saw.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "(Gen. 10.)"
+              "label": "1",
+              "text": "The 1. against Babylon. (a) Nemrod began the Kingdom of Babylon (Gen. 10.) his son Belus did much augment it: & his son Ninus brought it to be a very great Empire, & Monarchy. But at last, after 1240. years, it was overcome by Cyrus King of Persia."
             }
           ]
         },
@@ -1451,7 +1452,7 @@
         },
         {
           "verse": 3,
-          "text": "Ihave commanded my <na>(b)</na> sanctified, and have called my strong ones in my wrath, them that rejoice in my glory.",
+          "text": "I have commanded my <na>(b)</na> sanctified, and have called my strong ones in my wrath, them that rejoice in my glory.",
           "notes": [
             {
               "label": "b",
@@ -1633,7 +1634,7 @@
         },
         {
           "verse": 14,
-          "text": "Iwill ascend above the height of the clouds, I will be like to the Highest."
+          "text": "I will ascend above the height of the clouds, I will be like to the Highest."
         },
         {
           "verse": 15,
@@ -1958,20 +1959,25 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Woe <cr>[1]</cr> to the land the cymbal of wings, which is beyond the rivers of Aethiopia,"
+          "text": "Woe <cr>[1]</cr> to the land the cymbal of wings, which is beyond the rivers of Aethiopia,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The fifth was against the Aethiopians and Aegyptians."
+            }
+          ]
         },
         {
           "verse": 2,
           "text": "which sendeth legates into the sea, and in the vessels of <cr>[1]</cr> bulrushes upon the waters. Go ye swift <na>(a)</na> angels to a nation shaken a sunder, and torn in pieces: to a terrible people, after which there is none other: to a nation expecting and trodden under foot, whose land the floods have spoiled:",
-          "cross_refs": [
-            {
-              "text": "Or paper boats."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "The Aegyptians bid their messengers go swiftly, & tell the Jews that they shall have present help according as they require & expect."
+            },
+            {
+              "label": "1",
+              "text": "Or paper boats."
             }
           ]
         },
@@ -2163,7 +2169,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The <cr>[1]</cr> burden of the desert sea. As whirlwinds come from the South, it cometh from the desert, from an horrible land."
+          "text": "The <cr>[1]</cr> burden of the desert sea. As whirlwinds come from the South, it cometh from the desert, from an horrible land.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The sixth commination was against the Assirians, and specially the Babylonians."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2210,7 +2222,7 @@
         },
         {
           "verse": 10,
-          "text": "Omy threshing, and children of my floor, the things that I have heard of the Lord of hosts the God of Israel, I have shewed unto you."
+          "text": "O my threshing, and children of my floor, the things that I have heard of the Lord of hosts the God of Israel, I have shewed unto you."
         },
         {
           "verse": 11,
@@ -2382,7 +2394,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The <cr>[1]</cr> burden of Tyre. Howl ye ships of the sea, because the house is destroyed, from whence they were wont to come: from the land of Cethim it is revealed to them."
+          "text": "The <cr>[1]</cr> burden of Tyre. Howl ye ships of the sea, because the house is destroyed, from whence they were wont to come: from the land of Cethim it is revealed to them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The tenth commination was against the Tyrians."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2476,6 +2494,12 @@
           "cross_refs": [
             {
               "text": "Osee. 4."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part. Prophecies pertaining to the whole world."
             }
           ]
         },
@@ -2810,7 +2834,7 @@
         },
         {
           "verse": 3,
-          "text": "I^ the Lord that keep it, I will suddenly drink to it: lest perhaps there be visitation against it, night and day I keep it."
+          "text": "I the Lord that keep it, I will suddenly drink to it: lest perhaps there be visitation against it, night and day I keep it."
         },
         {
           "verse": 4,
@@ -2865,6 +2889,10 @@
             {
               "label": "a",
               "text": "By Ephraim is understood the Kingdom of Israel, whose first King Jeroboam was of that tribe."
+            },
+            {
+              "label": "1",
+              "text": "The fourth part. Prophetical admonitions to both the Kingdoms of Israel & Juda."
             }
           ]
         },
@@ -2934,7 +2962,7 @@
         },
         {
           "verse": 13,
-          "text": "And the word of our Lord shall be to them, <na>(f)</na> command recommand, command, recommand; expect reexpect, expect, reexpect, a little there, a little there: that they may go, and fall backward, and be destroyed, and snared, and taken. expect his mercy and goodness, they scornfully repeat the same words, deriding such exhortations & desperately giving themselves to all wickedness, as if they neither feared death nor hell. <i>v. 15.</i>",
+          "text": "And the word of our Lord shall be to them, <na>(f)</na> command recommand, command, recommand; expect reexpect, expect, reexpect, a little there, a little there: that they may go, and fall backward, and be destroyed, and snared, and taken.",
           "notes": [
             {
               "label": "f",
@@ -3188,15 +3216,14 @@
         {
           "verse": 1,
           "text": "Woe <na>(a)</na> unto <cr>[1]</cr> renegade children, saith our Lord, that you would take counsel, and not of me: and would begin a web, and not by my spirit, that you might add sin upon sin:",
-          "cross_refs": [
-            {
-              "text": "Apostatae. or, deniers."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "You that trust in your own counsels and forces, or in other men's, and not in God, shall find the miserable event of your folly, as is before noted. chap. 20."
+            },
+            {
+              "label": "1",
+              "text": "Apostatae. or, deniers."
             }
           ]
         },
@@ -3356,8 +3383,9 @@
         {
           "verse": 33,
           "text": "For <cr>[1]</cr> Topheth is prepared since yesterday, prepared of the king, deep, and wide. The nourishments thereof, fire and much wood: the breath of our Lord as a torrent of brimstone kindling it.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Hell."
             }
           ]
@@ -3435,7 +3463,13 @@
         {
           "verse": 1,
           "text": "Behold <cr>[1]</cr> the king shall reign in justice, & the princes shall rule in judgement.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The fifth part. Of the captivity, and relaxation of the Kingdom of Juda: with other afflictions and comforts; but especially of Christ and his Church."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3474,8 +3508,9 @@
         {
           "verse": 9,
           "text": "Ye <cr>[1]</cr> rich women arise, and hear my voice: ye confident daughters give ear to my speech.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Noble cities of Juda."
             }
           ]
@@ -4066,7 +4101,7 @@
         },
         {
           "verse": 25,
-          "text": "Ihave digged, and drunken the water, and have dried up with the step of my foot all the rivers of the rampiers."
+          "text": "I have digged, and drunken the water, and have dried up with the step of my foot all the rivers of the rampiers."
         },
         {
           "verse": 26,
@@ -4078,7 +4113,7 @@
         },
         {
           "verse": 28,
-          "text": "Ihave known thy habitation, and thy going out, and thy coming in, and thy madness against me."
+          "text": "I have known thy habitation, and thy going out, and thy coming in, and thy madness against me."
         },
         {
           "verse": 29,
@@ -4197,7 +4232,7 @@
         },
         {
           "verse": 10,
-          "text": "Ihave said: <na>(d)</na> In the midst of my days shall I go to the gates of hell. I have sought the residue of my years.",
+          "text": "I have said: <na>(d)</na> In the midst of my days shall I go to the gates of hell. I have sought the residue of my years.",
           "notes": [
             {
               "label": "d",
@@ -4207,7 +4242,7 @@
         },
         {
           "verse": 11,
-          "text": "Ihave said: I shall not see our Lord God in the land of the living. I shall behold man no more, and the inhabiter of rest."
+          "text": "I have said: I shall not see our Lord God in the land of the living. I shall behold man no more, and the inhabiter of rest."
         },
         {
           "verse": 12,
@@ -4221,7 +4256,7 @@
         },
         {
           "verse": 13,
-          "text": "Ihoped until morning, as a lion so hath he broken all my bones: From morning until evening thou wilt make an end of me."
+          "text": "I hoped until morning, as a lion so hath he broken all my bones: From morning until evening thou wilt make an end of me."
         },
         {
           "verse": 14,
@@ -4233,7 +4268,7 @@
         },
         {
           "verse": 16,
-          "text": "Iwill recount to thee all my years in the bitterness of my soul. Lord if man's life be such, and the life of my spirit in such things, thou shalt chasten me, and shalt quicken me."
+          "text": "I will recount to thee all my years in the bitterness of my soul. Lord if man's life be such, and the life of my spirit in such things, thou shalt chasten me, and shalt quicken me."
         },
         {
           "verse": 17,
@@ -4339,6 +4374,10 @@
             {
               "label": "a",
               "text": "The Prophet alludeth to the comfort of the Jews, when they should be delivered from captivity of Babylon: but principally prophesieth of man's delivery from sin by Christ."
+            },
+            {
+              "label": "1",
+              "text": "The sixth part. Of the delivery from sin by Christ."
             }
           ]
         },
@@ -4440,8 +4479,9 @@
         {
           "verse": 15,
           "text": "Behold the Gentiles are as a drop of a bucket, and are reputed as <cr>[1]</cr> the moment of a balance: behold the islands are as a little dust.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* least dust, or atomus."
             }
           ]
@@ -4558,7 +4598,7 @@
         },
         {
           "verse": 4,
-          "text": "Who hath wrought and done these things, calling the generations from the beginning? I^ the Lord, the first and the last I am. <cr>[1]</cr>",
+          "text": "Who hath wrought and done these things, calling the generations from the beginning? I the Lord, the first and the last I am. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Apo. 1. & 22."
@@ -4613,7 +4653,7 @@
         },
         {
           "verse": 15,
-          "text": "Ihave made thee as a new threshing wain, having teeth like a saw: thou shalt thresh the mountains, and break them in pieces: and shalt make the little hills as dust."
+          "text": "I have made thee as a new threshing wain, having teeth like a saw: thou shalt thresh the mountains, and break them in pieces: and shalt make the little hills as dust."
         },
         {
           "verse": 16,
@@ -4621,15 +4661,15 @@
         },
         {
           "verse": 17,
-          "text": "The needy and the poor seek for waters, and there are none: their tongue hath been dry with thirst. I^ the Lord will hear them, I^ the God of Israel will not forsake them."
+          "text": "The needy and the poor seek for waters, and there are none: their tongue hath been dry with thirst. I the Lord will hear them, I the God of Israel will not forsake them."
         },
         {
           "verse": 18,
-          "text": "Iwill open rivers in the high hills, and fountains in the midst of plain fields: I will make the desert into pools of waters, and the land not passable into rivers of waters."
+          "text": "I will open rivers in the high hills, and fountains in the midst of plain fields: I will make the desert into pools of waters, and the land not passable into rivers of waters."
         },
         {
           "verse": 19,
-          "text": "Iwill give into the wilderness the cedar, and the thorn, and the myrtle and the olive tree: I will set in the desert the fir tree, the elm, and the box tree together."
+          "text": "I will give into the wilderness the cedar, and the thorn, and the myrtle and the olive tree: I will set in the desert the fir tree, the elm, and the box tree together."
         },
         {
           "verse": 20,
@@ -4659,7 +4699,7 @@
         },
         {
           "verse": 25,
-          "text": "Ihave raised up from the North, and he shall come from the rising of the sun: he shall call upon my name, and shall bring the magistrates as mire, and as the plasterer treading clay."
+          "text": "I have raised up from the North, and he shall come from the rising of the sun: he shall call upon my name, and shall bring the magistrates as mire, and as the plasterer treading clay."
         },
         {
           "verse": 26,
@@ -4721,7 +4761,7 @@
         },
         {
           "verse": 6,
-          "text": "I^ the Lord have called thee in justice, and taken thy hand, & preserved thee. And I have given thee for a covenant of the people, for a light of the Gentiles."
+          "text": "I the Lord have called thee in justice, and taken thy hand, & preserved thee. And I have given thee for a covenant of the people, for a light of the Gentiles."
         },
         {
           "verse": 7,
@@ -4729,7 +4769,7 @@
         },
         {
           "verse": 8,
-          "text": "I^ the Lord, this is my name: I will not give my glory to another, and my praise to graven things."
+          "text": "I the Lord, this is my name: I will not give my glory to another, and my praise to graven things."
         },
         {
           "verse": 9,
@@ -4753,11 +4793,11 @@
         },
         {
           "verse": 14,
-          "text": "Ihave always held my peace, I have kept silence, I have been patient, I will speak as a travailing woman: I will dissipate, and swallow up together."
+          "text": "I have always held my peace, I have kept silence, I have been patient, I will speak as a travailing woman: I will dissipate, and swallow up together."
         },
         {
           "verse": 15,
-          "text": "Iwill make <na>(b)</na> mountains and little hills desolate, and will make all their grass to wither: and I will turn rivers into islands, and will dry up the standing pools.",
+          "text": "I will make <na>(b)</na> mountains and little hills desolate, and will make all their grass to wither: and I will turn rivers into islands, and will dry up the standing pools.",
           "notes": [
             {
               "label": "b",
@@ -4845,7 +4885,7 @@
         },
         {
           "verse": 6,
-          "text": "Iwill say to the North: Give: and to the South: Hinder not: bring my sons from a far, and my daughters from the ends of the earth."
+          "text": "I will say to the North: Give: and to the South: Hinder not: bring my sons from a far, and my daughters from the ends of the earth."
         },
         {
           "verse": 7,
@@ -4865,11 +4905,11 @@
         },
         {
           "verse": 11,
-          "text": "Iam, I am the Lord, and there is no saviour beside me."
+          "text": "I am, I am the Lord, and there is no saviour beside me."
         },
         {
           "verse": 12,
-          "text": "Ihave shewed, and have saved: I have made it heard, and there hath been no strange one among you. You are my witnesses, saith our Lord, and I^ God."
+          "text": "I have shewed, and have saved: I have made it heard, and there hath been no strange one among you. You are my witnesses, saith our Lord, and I God."
         },
         {
           "verse": 13,
@@ -4877,7 +4917,7 @@
         },
         {
           "verse": 14,
-          "text": "<na>(c)</na> Thus saith the Lord your redeemer, the holy one of Israel: For your sake have I sent forth into Babylon, and have plucked down all the bars, & Chaldees glorying in their ships. the good of his Church.",
+          "text": "<na>(c)</na> Thus saith the Lord your redeemer, the holy one of Israel: For your sake have I sent forth into Babylon, and have plucked down all the bars, & Chaldees glorying in their ships.",
           "notes": [
             {
               "label": "c",
@@ -4887,7 +4927,7 @@
         },
         {
           "verse": 15,
-          "text": "I^ the Lord your holy one, that created Israel your king."
+          "text": "I the Lord your holy one, that created Israel your king."
         },
         {
           "verse": 16,
@@ -4932,7 +4972,7 @@
         },
         {
           "verse": 25,
-          "text": "Iam, I am he that take clean away thine iniquities for mine own sake, and I will not remember thy sins."
+          "text": "I am, I am he that take clean away thine iniquities for mine own sake, and I will not remember thy sins."
         },
         {
           "verse": 26,
@@ -4995,7 +5035,7 @@
         },
         {
           "verse": 6,
-          "text": "Thus saith our Lord the King of Israel; and the redeemer thereof the Lord of hosts: I am <na>(b)</na> the first, and I^ the last, <cr>[1]</cr> and beside me there is no God.",
+          "text": "Thus saith our Lord the King of Israel; and the redeemer thereof the Lord of hosts: I am <na>(b)</na> the first, and I the last, <cr>[1]</cr> and beside me there is no God.",
           "cross_refs": [
             {
               "text": "Apo. 1. & 22."
@@ -5018,7 +5058,7 @@
         },
         {
           "verse": 9,
-          "text": "All the makers of an idol are nothing, and their best beloved things shall not profit them. <na>(c)</na> Themselves are their witnesses, that they do not see, nor understand, that they may be confounded. place) unto heresy, and heretics, who artificially devise the fictions of their own doctrines and lying: and adore the things which they know were feigned by themselves; neither are so content, but draw the simple to embrace and adore the same inventions. A little after he sheweth, that the Catholic Church of Christ shall be ever free from such idolatry: quite contrary to Protestants' assertion that the Church should have fallen & been in idolatry many hundred years together.",
+          "text": "All the makers of an idol are nothing, and their best beloved things shall not profit them. <na>(c)</na> Themselves are their witnesses, that they do not see, nor understand, that they may be confounded.",
           "notes": [
             {
               "label": "c",
@@ -5057,7 +5097,7 @@
         },
         {
           "verse": 16,
-          "text": "Half he burnt with fire, and of the half^ broiled he flesh & eat it: he sod pottage, and was filled, and was warmed, and said: Aha, I am warm, I have seen the fire."
+          "text": "Half he burnt with fire, and of the half broiled he flesh & eat it: he sod pottage, and was filled, and was warmed, and said: Aha, I am warm, I have seen the fire."
         },
         {
           "verse": 17,
@@ -5081,7 +5121,7 @@
         },
         {
           "verse": 22,
-          "text": "Ihave clean taken away thine iniquities as a cloud, & thy sins as a mist: return to me because I have redeemed thee."
+          "text": "I have clean taken away thine iniquities as a cloud, & thy sins as a mist: return to me because I have redeemed thee."
         },
         {
           "verse": 23,
@@ -5121,7 +5161,13 @@
       "verses": [
         {
           "verse": 0,
-          "text": "because he acknowledgeth not God. 8. Upon which <i>occasion the Prophet foresheweth the coming of Christ; 14. in figure of whom he addeth more of Cyrus: 18. and avoucheth that there is but one true God.</i> <cr>[1]</cr>"
+          "text": "because he acknowledgeth not God. 8. Upon which <i>occasion the Prophet foresheweth the coming of Christ; 14. in figure of whom he addeth more of Cyrus: 18. and avoucheth that there is but one true God.</i> <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The 7. part. The delivery of the Jews from Babylon by Cyrus King of Medes and Persians, now also of Assyrians."
+            }
+          ]
         },
         {
           "verse": 1,
@@ -5135,7 +5181,7 @@
         },
         {
           "verse": 2,
-          "text": "Iwill go before thee, and will humble the glorious of the earth: I will break the brazen gates, and will burst the iron bars."
+          "text": "I will go before thee, and will humble the glorious of the earth: I will break the brazen gates, and will burst the iron bars."
         },
         {
           "verse": 3,
@@ -5162,19 +5208,19 @@
         },
         {
           "verse": 5,
-          "text": "I^ the Lord, & there is none else: beside me there is no God: I girded thee, and thou hast not known me:"
+          "text": "I the Lord, & there is none else: beside me there is no God: I girded thee, and thou hast not known me:"
         },
         {
           "verse": 6,
-          "text": "that they which are from the rising of the sun, and which are from the west may know, that there is none beside me, I^ the Lord, and there is none other,"
+          "text": "that they which are from the rising of the sun, and which are from the west may know, that there is none beside me, I the Lord, and there is none other,"
         },
         {
           "verse": 7,
-          "text": "that form light, and create darkness, make peace, and create evil: I^ the Lord that do all these things."
+          "text": "that form light, and create darkness, make peace, and create evil: I the Lord that do all these things."
         },
         {
           "verse": 8,
-          "text": "<na>(d)</na> Drop dew ye heavens from above, and let the clouds rain the just: be the earth opened, & bud forth a saviour: & let justice spring up withal: I^ the Lord have created him.",
+          "text": "<na>(d)</na> Drop dew ye heavens from above, and let the clouds rain the just: be the earth opened, & bud forth a saviour: & let justice spring up withal: I the Lord have created him.",
           "notes": [
             {
               "label": "d",
@@ -5201,11 +5247,11 @@
         },
         {
           "verse": 12,
-          "text": "Imade the earth: & man upon the same I have created: my hands stretched forth the heavens, and I have commanded all their host."
+          "text": "I made the earth: & man upon the same I have created: my hands stretched forth the heavens, and I have commanded all their host."
         },
         {
           "verse": 13,
-          "text": "Ihave raised him up to justice, & will direct all his ways: he shall build my city, & dismiss my captivity: not for price, nor for gifts, saith our Lord the God of hosts."
+          "text": "I have raised him up to justice, & will direct all his ways: he shall build my city, & dismiss my captivity: not for price, nor for gifts, saith our Lord the God of hosts."
         },
         {
           "verse": 14,
@@ -5225,11 +5271,11 @@
         },
         {
           "verse": 18,
-          "text": "Because thus saith our Lord that created the heavens, the very God that formed the earth, and made it, the very maker thereof: he did not create it in vain: to be inhabited he formed it. I^ the Lord, and there is none other."
+          "text": "Because thus saith our Lord that created the heavens, the very God that formed the earth, and made it, the very maker thereof: he did not create it in vain: to be inhabited he formed it. I the Lord, and there is none other."
         },
         {
           "verse": 19,
-          "text": "Ihave not spoken in secret, in a dark place of the earth: I have not said to the seed of Jacob: Seek me in vain. I^ the Lord that speak justice, that declare right things."
+          "text": "I have not spoken in secret, in a dark place of the earth: I have not said to the seed of Jacob: Seek me in vain. I the Lord that speak justice, that declare right things."
         },
         {
           "verse": 20,
@@ -5237,7 +5283,7 @@
         },
         {
           "verse": 21,
-          "text": "Declare ye, and come, and consult together: who hath made this to be heard from the beginning, from that time foretold this? Have not I^ the Lord, and there is no God besides but I? A just God, and that saveth^ there is none beside me."
+          "text": "Declare ye, and come, and consult together: who hath made this to be heard from the beginning, from that time foretold this? Have not I the Lord, and there is no God besides but I? A just God, and that saveth there is none beside me."
         },
         {
           "verse": 22,
@@ -5245,7 +5291,7 @@
         },
         {
           "verse": 23,
-          "text": "Ihave sworn by myself, the word of justice shall proceed out of my mouth, and shall not return, because every knee shall be bowed to me, and every tongue shall swear. <cr>[1]</cr>",
+          "text": "I have sworn by myself, the word of justice shall proceed out of my mouth, and shall not return, because every knee shall be bowed to me, and every tongue shall swear. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Rom. 14. Phil. 2."
@@ -5333,7 +5379,7 @@
         },
         {
           "verse": 13,
-          "text": "Ihave made my justice near, it shall not be far off, and my salvation shall not tarry. I will give salvation in Sion, and my glory to Israel."
+          "text": "I have made my justice near, it shall not be far off, and my salvation shall not tarry. I will give salvation in Sion, and my glory to Israel."
         }
       ],
       "summary": "The destruction of Babylon is further prophesied, for their pride, 8. arrogancy, 10. and sorcery."
@@ -5369,7 +5415,7 @@
         },
         {
           "verse": 6,
-          "text": "Iwas angry against my people, I <na>(b)</na> have contaminated mine inheritance, and have given them into thy hand: thou hast not shewed mercies to them: upon the ancient thou hast made thy yoke exceeding heavy.",
+          "text": "I was angry against my people, I <na>(b)</na> have contaminated mine inheritance, and have given them into thy hand: thou hast not shewed mercies to them: upon the ancient thou hast made thy yoke exceeding heavy.",
           "notes": [
             {
               "label": "b",
@@ -5486,7 +5532,7 @@
         },
         {
           "verse": 12,
-          "text": "Hear me, o Jacob, and thou Israel whom I call: I^ the same, I^ the first, & I^ the last."
+          "text": "Hear me, o Jacob, and thou Israel whom I call: I the same, I the first, & I the last."
         },
         {
           "verse": 13,
@@ -5506,11 +5552,11 @@
         },
         {
           "verse": 17,
-          "text": "Thus saith our Lord thy Redeemer, the holy one of Israel: I^ the Lord thy God that teach thee profitable things, that govern thee in the way that thou walkest."
+          "text": "Thus saith our Lord thy Redeemer, the holy one of Israel: I the Lord thy God that teach thee profitable things, that govern thee in the way that thou walkest."
         },
         {
           "verse": 18,
-          "text": "Iwould thou hadst attended to my commandments: thy peace had been as a flood, and thy justice as the waves of the sea."
+          "text": "I would thou hadst attended to my commandments: thy peace had been as a flood, and thy justice as the waves of the sea."
         },
         {
           "verse": 19,
@@ -5733,7 +5779,7 @@
         },
         {
           "verse": 3,
-          "text": "Iwill clothe the heavens with darkness, and will make sackcloth their covering."
+          "text": "I will clothe the heavens with darkness, and will make sackcloth their covering."
         },
         {
           "verse": 4,
@@ -5751,7 +5797,7 @@
         },
         {
           "verse": 6,
-          "text": "Ihave given my body to the strikers, & my cheeks to the pluckers: I have not turned away my face from the rebukers & spitters. <cr>[1]</cr>",
+          "text": "I have given my body to the strikers, & my cheeks to the pluckers: I have not turned away my face from the rebukers & spitters. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Mat. 26."
@@ -6252,7 +6298,13 @@
         },
         {
           "verse": 9,
-          "text": "<na>(c)</na> For as the heavens are exalted above the earth, so are my ways exalted above your ways, & my cogitations above your cogitations. <na>(c)</na> The ways of God's service, and of serving this world, are so opposite and contrary, that it is unpossible to walk in them both at once. No man can serve these two masters, God and this world. We must therefore so use this world, that we may serve God, and inherit heaven."
+          "text": "<na>(c)</na> For as the heavens are exalted above the earth, so are my ways exalted above your ways, & my cogitations above your cogitations.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The ways of God's service, and of serving this world, are so opposite and contrary, that it is unpossible to walk in them both at once. No man can serve these two masters, God and this world. We must therefore so use this world, that we may serve God, and inherit heaven."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -6316,11 +6368,11 @@
         },
         {
           "verse": 5,
-          "text": "Iwill give unto them in my house, and within my walls a place, and a name better than sons and daughters, an everlasting name will I give them, which shall not perish."
+          "text": "I will give unto them in my house, and within my walls a place, and a name better than sons and daughters, an everlasting name will I give them, which shall not perish."
         },
         {
           "verse": 6,
-          "text": "And the children of the stranger that cleave to the Lord, to worship him, & to love his name, to be his servants: every one that keepeth the Sabbath^ not to pollute it, and that holdeth my covenant."
+          "text": "And the children of the stranger that cleave to the Lord, to worship him, & to love his name, to be his servants: every one that keepeth the Sabbath not to pollute it, and that holdeth my covenant."
         },
         {
           "verse": 7,
@@ -6428,7 +6480,7 @@
         },
         {
           "verse": 12,
-          "text": "Iwill declare thy justice, and thy works shall not profit thee."
+          "text": "I will declare thy justice, and thy works shall not profit thee."
         },
         {
           "verse": 13,
@@ -6467,7 +6519,7 @@
         },
         {
           "verse": 19,
-          "text": "Ihave created the fruit of the lips peace, peace to him that is far off, & that is near, saith our Lord, and I have healed him."
+          "text": "I have created the fruit of the lips peace, peace to him that is far off, & that is near, saith our Lord, and I have healed him."
         },
         {
           "verse": 20,
@@ -6528,7 +6580,13 @@
         },
         {
           "verse": 6,
-          "text": "Is not this rather the fast that I have chosen? 5. Is this such a fast, as I have chosen?] Fasting is so often & clearly commended in holy Scriptures, that Protestants (though not greatly affected thereto) confess it to be a good thing of it-self, <cr>[1]</cr> <cr>[1]</cr> <i>Cultus Dei. Luc. 2. v. 37.</i> Dissolve the bands of impiety, loose the bundles that overload, dismiss them free that are broken, and break in sunder every burden."
+          "text": "Is not this rather the fast that I have chosen? <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Cultus Dei. Luc. 2. v. 37. Dissolve the bands of impiety, loose the bundles that overload, dismiss them free that are broken, and break in sunder every burden."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -6853,7 +6911,7 @@
         },
         {
           "verse": 22,
-          "text": "The least shall be into a thousand, and the little one into a most strong nation: I^ the Lord in the time thereof will suddenly do it."
+          "text": "The least shall be into a thousand, and the little one into a most strong nation: I the Lord in the time thereof will suddenly do it."
         }
       ],
       "summary": "In the Church of Christ shall the light of true faith, and sincere charity: 8. which shall be spread in all nations, and continue all times: 15. replenished with many joyful graces, 18. and eternal glory."
@@ -7018,7 +7076,7 @@
         },
         {
           "verse": 3,
-          "text": "Ihave trodden the press alone, and of the Gentiles there is not a man with me: I have trodden them in my fury, and have trodden them down in my wrath: & their blood is sprinkled upon my garments, & I have stained all my raiment."
+          "text": "I have trodden the press alone, and of the Gentiles there is not a man with me: I have trodden them in my fury, and have trodden them down in my wrath: & their blood is sprinkled upon my garments, & I have stained all my raiment."
         },
         {
           "verse": 4,
@@ -7026,7 +7084,7 @@
         },
         {
           "verse": 5,
-          "text": "Ilooked about, & there was no helper: I sought, and there was none to aid: and mine arm hath saved, and mine indignation it-self hath holpen me."
+          "text": "I looked about, & there was no helper: I sought, and there was none to aid: and mine arm hath saved, and mine indignation it-self hath holpen me."
         },
         {
           "verse": 6,
@@ -7034,7 +7092,7 @@
         },
         {
           "verse": 7,
-          "text": "Iwill remember the mercies of our Lord, the praise of our Lord for all things, that our Lord hath rendered to us, and for the multitude of the good things to the house of Israel, which he hath given them according to his indulgence, and according to the multitude of his mercies."
+          "text": "I will remember the mercies of our Lord, the praise of our Lord for all things, that our Lord hath rendered to us, and for the multitude of the good things to the house of Israel, which he hath given them according to his indulgence, and according to the multitude of his mercies."
         },
         {
           "verse": 8,
@@ -7210,7 +7268,7 @@
         },
         {
           "verse": 2,
-          "text": "Ihave spread forth mine hands all the day to <na>(b)</na> an incredulous people, which goeth in a way not good after their own cogitations.",
+          "text": "I have spread forth mine hands all the day to <na>(b)</na> an incredulous people, which goeth in a way not good after their own cogitations.",
           "notes": [
             {
               "label": "b",
@@ -7256,7 +7314,7 @@
         },
         {
           "verse": 12,
-          "text": "Iwill number you in the sword, and you shall all fall by slaughter: because I called, and you have not answered: I spake, and you have not heard, and you did evil in mine eyes: and you <na>(c)</na> have chosen the things, that I would not. <cr>[1]</cr>",
+          "text": "I will number you in the sword, and you shall all fall by slaughter: because I called, and you have not answered: I spake, and you have not heard, and you did evil in mine eyes: and you <na>(c)</na> have chosen the things, that I would not. <cr>[1]</cr>",
           "cross_refs": [
             {
               "text": "Prov. 1. Iere. 7."
@@ -7286,11 +7344,6 @@
         {
           "verse": 15,
           "text": "And you shall leave your name <na>(e)</na> for an <cr>[1]</cr> oath to mine elect: and the Lord God shall kill thee, and will call his servants by <na>(f)</na> another name.",
-          "cross_refs": [
-            {
-              "text": "* Oath of execration."
-            }
-          ],
           "notes": [
             {
               "label": "e",
@@ -7299,6 +7352,10 @@
             {
               "label": "f",
               "text": "And God's servants shall be called Christians."
+            },
+            {
+              "label": "1",
+              "text": "* Oath of execration."
             }
           ]
         },
@@ -7456,7 +7513,13 @@
         },
         {
           "verse": 15,
-          "text": "Because lo our Lord <na>(e)</na> will come in fire, & his chariots as a whirlwind, to render his fury in indignation, & his rebuking in flame of fire: <na>(e)</na> Immediately before Christ come to judge, this whole world shall be destroyed by fire."
+          "text": "Because lo our Lord <na>(e)</na> will come in fire, & his chariots as a whirlwind, to render his fury in indignation, & his rebuking in flame of fire:",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Immediately before Christ come to judge, this whole world shall be destroyed by fire."
+            }
+          ]
         },
         {
           "verse": 16,

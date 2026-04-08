@@ -185,6 +185,10 @@
         {
           "marker": 1,
           "text": "The Heretics' corrupting of the"
+        },
+        {
+          "marker": 2,
+          "text": "<i>καπηλεύοντες.</i>"
         }
       ]
     }

@@ -60,7 +60,7 @@
         },
         {
           "verse": 8,
-          "text": "And it shall be: in the day of the host of our Lord I will visit upon the princes, and upon <na>(e)</na> the king's sons, and upon all that are clothed with strange clothing: Jechonias otherwise called Ioachin was kept long prisoner in Babylon, & all the issue of Josias afflicted.",
+          "text": "And it shall be: in the day of the host of our Lord I will visit upon the princes, and upon <na>(e)</na> the king's sons, and upon all that are clothed with strange clothing:",
           "notes": [
             {
               "label": "e",
@@ -79,8 +79,9 @@
         {
           "verse": 11,
           "text": "Howl ye inhabitants of the <cr>[1]</cr> Morter. All the people of Chanaan is hush, all are perished that were wrapped in silver.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* the valley near Jerusalem."
             }
           ]
@@ -188,7 +189,7 @@
         },
         {
           "verse": 8,
-          "text": "Ihave heard the reproach of Moab, and the blasphemies of the children of Ammon, with which they have upbraided my people, and were magnified upon their borders."
+          "text": "I have heard the reproach of Moab, and the blasphemies of the children of Ammon, with which they have upbraided my people, and were magnified upon their borders."
         },
         {
           "verse": 9,
@@ -251,7 +252,7 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> Her princes in the midst of her as lions roaring: her judges^ wolves in the evening, left nothing for the morning.",
+          "text": "<cr>[1]</cr> Her princes in the midst of her as lions roaring: her judges wolves in the evening, left nothing for the morning.",
           "cross_refs": [
             {
               "text": "Ezec. 22. Mich. 3."
@@ -265,15 +266,16 @@
         {
           "verse": 5,
           "text": "Our just Lord in the midst thereof will not do iniquity: in the morning, in the morning he will <cr>[1]</cr> give his judgement into light, and it shall not be hid: but the wicked man hath not known the confusion.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* bring."
             }
           ]
         },
         {
           "verse": 6,
-          "text": "Ihave destroyed the Gentiles, & their corners are dissipated: I have made their ways desert, whiles there is none that passeth by: their cities are desolate, not a man remaining, nor any inhabiter."
+          "text": "I have destroyed the Gentiles, & their corners are dissipated: I have made their ways desert, whiles there is none that passeth by: their cities are desolate, not a man remaining, nor any inhabiter."
         },
         {
           "verse": 7,
@@ -291,7 +293,13 @@
         },
         {
           "verse": 9,
-          "text": "Because <na>(c)</na> then will I restore to the peoples, a chosen lip, that all may invocate in the name of the Lord, & may serve him with one shoulder. <na>(c)</na> All nations shall invocate one God in a <i>chosen lip</i> or tongue, in unity of faith, & with <i>one shoulder</i> of fortitude bear the yoke & burden of Christian life, made <i>sweet and light by Christ's grace.</i>"
+          "text": "Because <na>(c)</na> then will I restore to the peoples, a chosen lip, that all may invocate in the name of the Lord, & may serve him with one shoulder.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "All nations shall invocate one God in a chosen lip or tongue, in unity of faith, & with one shoulder of fortitude bear the yoke & burden of Christian life, made sweet and light by Christ's grace ."
+            }
+          ]
         },
         {
           "verse": 10,

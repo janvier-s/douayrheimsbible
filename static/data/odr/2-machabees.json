@@ -33,15 +33,14 @@
         {
           "verse": 7,
           "text": "When Demetrius reigned, in the year one hundreth sixty nine, <na>(a)</na> we Jews wrote unto you in the tribulation, and violence, that came upon us in these years, since Jason revolted from the holy land, and from the kingdom. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "li. 2. c. 4. v. 7."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "As they had written before in their afflictions, so now they exhort their brethren to be thankful to God, and amongst other means to shew their grateful mind by celebrating the feast of dedication of the new altar."
+            },
+            {
+              "label": "1",
+              "text": "li. 2. c. 4. v. 7."
             }
           ]
         },
@@ -209,7 +208,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "2 Machabees 2 <i>the Tabernacle, and Salomon the Temple: 14. so Judas Machabeus cleansing the Temple, and making a new Altar, instituted a feast of the Dedication thereof. 20. The Preface of the Author abridging the history of the Machabees written by Jason in five Books.</i>"
+          "text": "the Tabernacle, and Salomon the Temple: 14. so Judas <i>Machabeus cleansing the Temple, and making a new Altar, instituted a feast of the Dedication thereof. 20. The Preface of the Author abridging the history of the Machabees written by Jason in five Books.</i>"
         },
         {
           "verse": 1,
@@ -232,15 +231,14 @@
         {
           "verse": 4,
           "text": "<cr>[1]</cr> And it was in the same writing, how the Prophet commanded by the divine answer made to him, that <na>(b)</na> the tabernacle, and the ark should follow in company with him, till he came forth into the mount in which Moyses ascended, and saw the inheritance of God.",
-          "cross_refs": [
-            {
-              "text": "Epis. Iere. Baruc. 6."
-            }
-          ],
           "notes": [
             {
               "label": "b",
               "text": "Neither the tabernacle nor the ark were carried away by Nabuchodonosor, but were preserved by some means: and most like (besides the authority of this scripture) by Jeremy the prophet, who had special favour of the Babylonians, when Jerusalem was taken. Iere. 39. v. 11."
+            },
+            {
+              "label": "1",
+              "text": "Epis. Iere. Baruc. 6."
             }
           ]
         },
@@ -319,25 +317,20 @@
         {
           "verse": 19,
           "text": "For he hath delivered us out of great perils, and hath purged the place. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 2. c. 15. v. 38."
             }
           ]
         },
         {
           "verse": 20,
-          "text": "<cr>[1](d)</cr> Concerning Judas Machabeus, and his brethren, and of the purification of the great temple, and of the dedication of the altar,",
-          "notes": [
-            {
-              "label": "d",
-              "text": "After the author had written this Appendix to the former Book, he resolved also to add an abridgement of the whole history, whereunto he maketh this Preface, signifying the matter whereof he will write. v. 20. in what manner. v. 24. and why, v. 25. avouching his diligence. v. 26. with brevity. v. 29."
-            }
-          ]
+          "text": "<cr>[1](d)</cr> Concerning Judas Machabeus, and his brethren, and of the purification of the great temple, and of the dedication of the altar,"
         },
         {
           "verse": 21,
-          "text": "Yea and of the battles that pertain to Antiochus the 2 Machabees 2 Noble, and his son Eupator:"
+          "text": "Yea and of the battles that pertain to Antiochus the Noble, and his son Eupator:"
         },
         {
           "verse": 22,
@@ -375,9 +368,10 @@
         },
         {
           "verse": 29,
-          "text": "The <cr>[1]</cr> verity certes concerning every particular^ leaving to the authors, & ourselves according to the form that is given, studying to be brief.",
-          "cross_refs": [
+          "text": "The <cr>[1]</cr> verity certes concerning every particular leaving to the authors, & ourselves according to the form that is given, studying to be brief.",
+          "notes": [
             {
+              "label": "1",
               "text": "* exact declaration."
             }
           ]
@@ -397,8 +391,9 @@
         {
           "verse": 33,
           "text": "From hence then will we begin the narration: of the preface let it be sufficient to have said thus much: for it is a foolish thing before the history to flow over, and in the history to be short. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 1. v. 1."
             }
           ]
@@ -416,6 +411,22 @@
             {
               "label": "a",
               "text": "Three things make a common wealth to be in good state."
+            },
+            {
+              "label": "1",
+              "text": "C"
+            },
+            {
+              "label": "2",
+              "text": "1. Good agreement of principal men amongst themselves, & with the commonality."
+            },
+            {
+              "label": "3",
+              "text": "2. Exact observation of good laws:"
+            },
+            {
+              "label": "4",
+              "text": "3. And eminent virtue of the supreme governor with exercise of piety and hate of sins."
             }
           ]
         },
@@ -429,11 +440,27 @@
         },
         {
           "verse": 4,
-          "text": "But <na>(b)</na> Simon of the tribe of Benjamin, being appointed overseer of the temple, <cr>[1]</cr> contended, the Prince of the Priests resisting him, to work some wicked thing in the city. 2 Machabees 3 <na>(b)</na> other three things do trouble the state:"
+          "text": "But <na>(b)</na> Simon of the tribe of Benjamin, being appointed overseer of the temple, <cr>[1]</cr> contended, the Prince of the Priests resisting him, to work some wicked thing in the city.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "other three things do trouble the state:"
+            },
+            {
+              "label": "1",
+              "text": "Obstinacy in offenders, not content to be corrected."
+            }
+          ]
         },
         {
           "verse": 5,
-          "text": "And <cr>[1]</cr> when he could not overcome Onias, he came to Apollonius the son of Tharsaeas, who at that time was governor of Caelesyria, and Phaenicia:"
+          "text": "And <cr>[1]</cr> when he could not overcome Onias, he came to Apollonius the son of Tharsaeas, who at that time was governor of Caelesyria, and Phaenicia:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "2. Inveterate malice seeking revenge against just Superiors."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -441,7 +468,13 @@
         },
         {
           "verse": 7,
-          "text": "And <cr>[1]</cr> when Apollonius had made relation to the king, concerning the money that he was told of, he calling for Heliodorus, who was over his affairs, sent him with commission to transport the foresaid money."
+          "text": "And <cr>[1]</cr> when Apollonius had made relation to the king, concerning the money that he was told of, he calling for Heliodorus, who was over his affairs, sent him with commission to transport the foresaid money.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "3. and avarice of princes, to rob the holy or common treasure."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -529,7 +562,7 @@
         },
         {
           "verse": 26,
-          "text": "There appeared also two other young men comely 2 Machabees 3 for strength, excellent of glory, and beautiful in attire: which stood about him, and on both sides whipped him, beating him with many stripes without intermission."
+          "text": "There appeared also two other young men comely for strength, excellent of glory, and beautiful in attire: which stood about him, and on both sides whipped him, beating him with many stripes without intermission."
         },
         {
           "verse": 27,
@@ -619,7 +652,7 @@
         },
         {
           "verse": 4,
-          "text": "Onias considering the peril of the contention, and that Apollonius being governor of Caelesyria, & Phaenicia, was outrageous, which increased the malice of Simon, <na>(b)</na> went to the king. 2 Machabees 4",
+          "text": "Onias considering the peril of the contention, and that Apollonius being governor of Caelesyria, & Phaenicia, was outrageous, which increased the malice of Simon, <na>(b)</na> went to the king.",
           "notes": [
             {
               "label": "b",
@@ -634,15 +667,22 @@
         {
           "verse": 6,
           "text": "For he saw that without the king's providence it was unpossible that peace should be made in those matters, and that Simon would not cease from his folly. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 1. v. 11."
             }
           ]
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> But after Seleucus' departure out of life, when Antiochus that was called the Noble, had taken the kingdom upon him, Jason the brother of Onias ambitiously sought the high-priesthood:"
+          "text": "<cr>[1]</cr> But after Seleucus' departure out of life, when Antiochus that was called the Noble, had taken the kingdom upon him, Jason the brother of Onias ambitiously sought the high-priesthood:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "E"
+            }
+          ]
         },
         {
           "verse": 8,
@@ -701,8 +741,9 @@
         {
           "verse": 20,
           "text": "And these were offered indeed by him that sent them, unto the sacrifice of Hercules: but because of them that were present they were given to the making of gallies. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 1. v. 17."
             }
           ]
@@ -714,6 +755,10 @@
             {
               "label": "d",
               "text": "This king falsely pretended to restore his kinsman (his sister's son) to the kingdom being deprived by his younger brother (Livius li. 44.) but the true cause of his sending Apollonius into Aegypt, was to subdue that Kingdom to himself. 1. Mach. 1. v. 17."
+            },
+            {
+              "label": "1",
+              "text": "G"
             }
           ]
         },
@@ -723,7 +768,7 @@
         },
         {
           "verse": 23,
-          "text": "And after the time of three years^ Jason sent Menelaus brother of the foresaid Simon, carrying money to the king, and to bring answers of necessary affairs."
+          "text": "And after the time of three years Jason sent Menelaus brother of the foresaid Simon, carrying money to the king, and to bring answers of necessary affairs."
         },
         {
           "verse": 24,
@@ -731,7 +776,7 @@
         },
         {
           "verse": 25,
-          "text": "And having received commission from the king, he came, having indeed nothing worthy of the priesthood: but bearing the mind of a cruel tyrant, and the wrath of a wild 2 Machabees 4 beast."
+          "text": "And having received commission from the king, he came, having indeed nothing worthy of the priesthood: but bearing the mind of a cruel tyrant, and the wrath of a wild beast."
         },
         {
           "verse": 26,
@@ -902,15 +947,22 @@
         {
           "verse": 10,
           "text": "but he that cast away many unburied, himself both unlamented, and unburied is cast forth, neither enjoying foreign burial, nor partaker of the sepulchre of his father's. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 1. v. 21."
             }
           ]
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> These things therefore being done, the king suspected that the Jews would forsake the society: & for this departing out of Aegypt with a furious mind, he took the city by arms."
+          "text": "<cr>[1]</cr> These things therefore being done, the king suspected that the Jews would forsake the society: & for this departing out of Aegypt with a furious mind, he took the city by arms.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "I"
+            }
+          ]
         },
         {
           "verse": 12,
@@ -947,7 +999,7 @@
         },
         {
           "verse": 19,
-          "text": "But <na>(c)</na> not the nation for the place, but the place for the nation hath God chosen. 2 Machabees 5 are ordained to the Service of God: and for men's spiritual good and therefore when men cease to serve God, as holy things are destroyed, or taken away.",
+          "text": "But <na>(c)</na> not the nation for the place, but the place for the nation hath God chosen.",
           "notes": [
             {
               "label": "c",
@@ -1049,15 +1101,33 @@
         },
         {
           "verse": 10,
-          "text": "For <cr>[1]</cr> two women were accused to have circumcided their children: whom, the infants hanging 2 Machabees 6 at their breasts, when they had openly led them about through the city, they threw down headlong by the walls."
+          "text": "For <cr>[1]</cr> two women were accused to have circumcided their children: whom, the infants hanging at their breasts, when they had openly led them about through the city, they threw down headlong by the walls.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "1. Women with their circumcised children."
+            }
+          ]
         },
         {
           "verse": 11,
-          "text": "And others coming together to the next caves, and secretly <cr>[1]</cr> keeping the day of the Sabbath, when they were discovered to Philip, were burnt with fire, because they feared for religion and observance, to help themselves with their hand."
+          "text": "And others coming together to the next caves, and secretly <cr>[1]</cr> keeping the day of the Sabbath, when they were discovered to Philip, were burnt with fire, because they feared for religion and observance, to help themselves with their hand.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "2. Other people for keeping the sabbath."
+            }
+          ]
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> But I beseech them that shall read this book, that they abhor not for the adversities, but that they account those things, which have happened, not to be for the destruction, but for the chastening of our stock."
+          "text": "<cr>[1]</cr> But I beseech them that shall read this book, that they abhor not for the adversities, but that they account those things, which have happened, not to be for the destruction, but for the chastening of our stock.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Anecessary admonition to the weak in time of persecution."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -1086,6 +1156,10 @@
             {
               "label": "c",
               "text": "He was excellently learned in holy Scriptures and in all divine and human knowledge."
+            },
+            {
+              "label": "1",
+              "text": "3. Eleazarus ninety years old cruelly slain."
             }
           ]
         },
@@ -1153,7 +1227,7 @@
         },
         {
           "verse": 30,
-          "text": "But when he was now in killing with the strokes, he groaned, and said: O Lord, which hast the holy knowledge, thou knowest manifestly that whereas I might be delivered from death, I do sustain sore pains of the body: but according to the soul, for thy fear I do 2 Machabees 6 willingly suffer these things."
+          "text": "But when he was now in killing with the strokes, he groaned, and said: O Lord, which hast the holy knowledge, thou knowest manifestly that whereas I might be delivered from death, I do sustain sore pains of the body: but according to the soul, for thy fear I do willingly suffer these things."
         },
         {
           "verse": 31,
@@ -1167,10 +1241,15 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> it came to pass, <cr>[2]</cr> that seven brethren together with their mother being apprehended, to be compelled by the king to eat against the law^ swine's flesh, were tormented with whips and scourges.",
-          "cross_refs": [
+          "text": "And <cr>[1]</cr> it came to pass, <cr>[2]</cr> that seven brethren together with their mother being apprehended, to be compelled by the king to eat against the law swine's flesh, were tormented with whips and scourges.",
+          "notes": [
             {
-              "text": "de Machabaeis li. 4. Epist. ep. 6. homilia de nativitate septem Machabaeorum. li. 1. Offic. c. 40. &c. li. 11. de Iacob. c. 9. de origine animae. Tract. 8. in Epist. 1. Ioan. & Ser. 110. de diversis. li. de praedict. par. 2. c. 40. hymno de Romano Martyre. Ser. de Nat. septem fratrum. Machab. Brixanus Tractatu de Machabaeis. Ser. de morte. Carmine de septem Machabaeis."
+              "label": "1",
+              "text": "Whosoever please to read more of these glorious Martyrs, may see the large discourses of Flavius Iosephus in his book de Machabaeis . And of sundry ancient Fathers: S. Cyprian. li. 4. Epist. ep. 6. S. Chrysostom, homilia de nativitate septem Machabaeorum. S. Ambrose. li. 1. Offic. c. 40. &c. li. 11. de Iacob. c. 9. S. Augustin, de origine animae. Tract. 8. in Epist. 1. Ioan. & Ser. 110. de diversis. S. Prosper: li. de praedict. par. 2. c. 40. S. Prudentius. hymno de Romano Martyre. S. Leo. Ser. de Nat. septem fratrum. Machab. S. Gaudentius Brixanus Tractatu de Machabaeis. S. Ephrem. Ser. de morte. S. Victorinus Afer. Carmine de septem Machabaeis."
+            },
+            {
+              "label": "2",
+              "text": "4. The fourth Martyrdom was of seven brethren and their mother."
             }
           ]
         },
@@ -1245,7 +1324,7 @@
         },
         {
           "verse": 18,
-          "text": "After him they brought the sixth, and he 2 Machabees 7 beginning to die, said thus: Be not deceived vainly: for we suffer this for our own sakes, sinning against our God, and things worthy of admiration are done in us:"
+          "text": "After him they brought the sixth, and he beginning to die, said thus: Be not deceived vainly: for we suffer this for our own sakes, sinning against our God, and things worthy of admiration are done in us:"
         },
         {
           "verse": 19,
@@ -1297,7 +1376,7 @@
         },
         {
           "verse": 28,
-          "text": "Ibeseech thee my son, that thou look to heaven and earth, and to all things that are in them: and understand that God of nothing made them & mankind:"
+          "text": "I beseech thee my son, that thou look to heaven and earth, and to all things that are in them: and understand that God of nothing made them & mankind:"
         },
         {
           "verse": 29,
@@ -1354,8 +1433,9 @@
         {
           "verse": 42,
           "text": "Therefore of the sacrifices, and of the exceeding cruelties there is enough said. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 2. v. 1."
             }
           ]
@@ -1368,7 +1448,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But <cr>[1]</cr> Judas Machabeus and they that were with him, went in secretly into the towns: and calling together their kinsmen and taking unto them those that continued in Judaism, they brought out to them six thousand men."
+          "text": "But <cr>[1]</cr> Judas Machabeus and they that were with him, went in secretly into the towns: and calling together their kinsmen and taking unto them those that continued in Judaism, they brought out to them six thousand men.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "L"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1399,8 +1485,9 @@
         {
           "verse": 7,
           "text": "and especially in the nights he was carried to such excursions, and the fame of his manliness was spread abroad every-where. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 3. v. 10."
             }
           ]
@@ -1412,6 +1499,10 @@
             {
               "label": "b",
               "text": "This Philip a Phrygian was left in Jerusalem by Antiochus to afflict the Jews. ch. 5. v. 22."
+            },
+            {
+              "label": "1",
+              "text": "N"
             }
           ]
         },
@@ -1455,7 +1546,7 @@
         },
         {
           "verse": 17,
-          "text": "having before their eyes the contumely, that was unjustly done by them to the holy place, & moreover the injury also of the city being made a 2 Machabees 8 laughing stock, besides also the ordinances of the ancesters broken."
+          "text": "having before their eyes the contumely, that was unjustly done by them to the holy place, & moreover the injury also of the city being made a laughing stock, besides also the ordinances of the ancesters broken."
         },
         {
           "verse": 18,
@@ -1473,9 +1564,10 @@
         {
           "verse": 20,
           "text": "And of the battle, that they had against the Galatians in Babylonia, how all they, when it came to the point, the Macedonians their fellows staggering, being only six thousand slew an hundred twenty thousand, by reason of the aid given them from heaven, and for these things obtained very many benefits. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "bellis Syriacis li. 12. c. 3."
+              "label": "1",
+              "text": "Of this battle with the Galatians there is no other mention in holy scripture but is seemeth to be that, wherein they assisted Antiochus the first called Soter, when he repelled the Galatians invading Asia: whereof Appianus writeth in bellis Syriacis . And Iosephus testifieth, li. 12. c. 3. that Antiochus Magnus (son of Soter) much favoured the Jews for their exploits done in his father's days."
             }
           ]
         },
@@ -1509,7 +1601,7 @@
         },
         {
           "verse": 28,
-          "text": "But after the Sabbath they divided the spoils to the feeble and to orphans, & to widows: and the rest^ themselves had with their fellows."
+          "text": "But after the Sabbath they divided the spoils to the feeble and to orphans, & to widows: and the rest themselves had with their fellows."
         },
         {
           "verse": 29,
@@ -1542,8 +1634,9 @@
         {
           "verse": 36,
           "text": "And he that had promised that he would render tribute to the Romans of the captivity of Jerusalem, now professed that the Jews had God their protector, and that for him they could not be wounded, because they followed the laws appointed by him. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 4. v. 28."
             }
           ]
@@ -1562,7 +1655,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "At <cr>[1]</cr> that time Antiochus returned out of Persis dishonourably."
+          "text": "At <cr>[1]</cr> that time Antiochus returned out of Persis dishonourably.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "R"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1646,7 +1745,7 @@
         },
         {
           "verse": 19,
-          "text": "TO <sc>His</sc> <sc>Very</sc> <sc>Good</sc> <sc>Subjects</sc> the Jews the king and prince Antiochus, much health, and welfare, and to be happy. 2 Machabees 9"
+          "text": "TO <sc>His Very Good Subjects</sc> the Jews the king and prince Antiochus, much health, and welfare, and to be happy."
         },
         {
           "verse": 20,
@@ -1674,7 +1773,7 @@
         },
         {
           "verse": 26,
-          "text": "Ipray you therefore, and desire you mindful of the benefits both public and private, that every one keep his fidelity to me, and to my son."
+          "text": "I pray you therefore, and desire you mindful of the benefits both public and private, that every one keep his fidelity to me, and to my son."
         },
         {
           "verse": 27,
@@ -1693,8 +1792,9 @@
         {
           "verse": 29,
           "text": "But Philip his foster brother removed his body: who fearing the son of Antiochus, went to Ptolomee Philometor into Aegypt. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 6. v. 17."
             }
           ]
@@ -1712,6 +1812,10 @@
             {
               "label": "a",
               "text": "This recovering and cleansing of the temple was after the fourth battle of Judas, which was against Lysias one of Antiochus' chief captains, as appeareth. li. 1. c. 4. and so was before the death of Antiochus, written here. ch. 9."
+            },
+            {
+              "label": "1",
+              "text": "P"
             }
           ]
         },
@@ -1730,8 +1834,9 @@
         {
           "verse": 5,
           "text": "<cr>[1]</cr> And what day the temple had been polluted of the aliens, it happened that on the same day was made the purification, the five & twentieth of the month, which was Casleu.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "li. 1. c. 4. v. 54."
             }
           ]
@@ -1752,15 +1857,22 @@
         {
           "verse": 9,
           "text": "And Antiochus that was called the Noble, his departure out of life was after this sort. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 5. v. 1."
             }
           ]
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> But now of Eupator the son of Antiochus the impious, we will tell the things that have been done, 2 Machabees 10 abridging the evils that were done in the wars."
+          "text": "<cr>[1]</cr> But now of Eupator the son of Antiochus the impious, we will tell the things that have been done, abridging the evils that were done in the wars.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "T"
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1878,7 +1990,13 @@
         },
         {
           "verse": 35,
-          "text": "But when the fifth day appeared, <na>(e)</na> twenty young men of them that were with Machabeus, incensed in their minds because of the blasphemy, went manfully to the wall, and with fierce courage going on, they scaled to the top: 2 Machabees 10 <na>(e)</na> Iosephus Gorion. <i>li. 3. c. 13.</i> saith these twenty zealous young men were of the <i>Assidians,</i> who professed a certain religious form of life: of whom mention is made before <i>li. 1. ch. 2. v. 42. & c. 7. v. 13.</i>"
+          "text": "But when the fifth day appeared, <na>(e)</na> twenty young men of them that were with Machabeus, incensed in their minds because of the blasphemy, went manfully to the wall, and with fierce courage going on, they scaled to the top:",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Iosephus Gorion. li. 3. c. 13. saith these twenty zealous young men were of the Assidians , who professed a certain religious form of life: of whom mention is made before li. 1. ch. 2. v. 42. & c. 7. v. 13."
+            }
+          ]
         },
         {
           "verse": 36,
@@ -1900,7 +2018,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But a little after^ <na>(a)</na> Lysias the king's procurator, and cousin, and chief over the affairs, being greatly offended with these things, that had happened,",
+          "text": "But a little after <na>(a)</na> Lysias the king's procurator, and cousin, and chief over the affairs, being greatly offended with these things, that had happened,",
           "notes": [
             {
               "label": "a",
@@ -1926,7 +2044,7 @@
         },
         {
           "verse": 6,
-          "text": "But as Machabeus, and they that were with him, understood that the holds were expugned, they besought our Lord with weeping and tears, and all the multitude together, <na>(b)</na> that he would send a good Angel to the saving of Israel. 2 Machabees 11",
+          "text": "But as Machabeus, and they that were with him, understood that the holds were expugned, they besought our Lord with weeping and tears, and all the multitude together, <na>(b)</na> that he would send a good Angel to the saving of Israel.",
           "notes": [
             {
               "label": "b",
@@ -1972,7 +2090,7 @@
         },
         {
           "verse": 16,
-          "text": "For there were epistles written to the Jews from Lysias, containing this tenure: <sc>Lysias</sc> to the people of the Jews^ health."
+          "text": "For there were epistles written to the Jews from Lysias, containing this tenure: <sc>Lysias</sc> to the people of the Jews health."
         },
         {
           "verse": 17,
@@ -2022,7 +2140,7 @@
         },
         {
           "verse": 27,
-          "text": "But to the Jews the king's epistle was in this manner: <sc>King</sc> Antiochus to the senate of the Jews, and to the rest of the Jews^ health."
+          "text": "But to the Jews the king's epistle was in this manner: <sc>King</sc> Antiochus to the senate of the Jews, and to the rest of the Jews health."
         },
         {
           "verse": 28,
@@ -2050,7 +2168,7 @@
         },
         {
           "verse": 34,
-          "text": "And the Romans also sent an epistle, which is thus: Quintus Memmius, and Titus Manilius legates of the Romans, to the people of the Jews^ health."
+          "text": "And the Romans also sent an epistle, which is thus: Quintus Memmius, and Titus Manilius legates of the Romans, to the people of the Jews health."
         },
         {
           "verse": 35,
@@ -2175,7 +2293,7 @@
         },
         {
           "verse": 19,
-          "text": "But Dositheus and Sosipater, who were captains with Machabeus, 2 Machabees 12 slew them that were left of Timothee in the hold, ten thousand men."
+          "text": "But Dositheus and Sosipater, who were captains with Machabeus, slew them that were left of Timothee in the hold, ten thousand men."
         },
         {
           "verse": 20,
@@ -2199,7 +2317,7 @@
         },
         {
           "verse": 25,
-          "text": "And when he had given his faith that he would restore them according to the appointment^ they let him go without harm, for the safety of their brethren."
+          "text": "And when he had given his faith that he would restore them according to the appointment they let him go without harm, for the safety of their brethren."
         },
         {
           "verse": 26,
@@ -2287,11 +2405,11 @@
         },
         {
           "verse": 44,
-          "text": "(For unless he hoped 2 Machabees 12 that they that were slain should rise again, it should seem superfluous and vain to pray for the dead.)"
+          "text": "(For unless he hoped that they that were slain should rise again, it should seem superfluous and vain to pray for the dead.)"
         },
         {
           "verse": 45,
-          "text": "And because he considered that they, which had taken their sleep <na>(g)</na> with godliness, had very good grace laid up for them. thought of any such matter.",
+          "text": "And because he considered that they, which had taken their sleep <na>(g)</na> with godliness, had very good grace laid up for them.",
           "notes": [
             {
               "label": "g",
@@ -2303,15 +2421,14 @@
           "verse": 46,
           "text": "It is therefore <na>(h)</na> a holy, and healthful cogitation to pray for the dead, that they may be loosed from sins. <cr>[1]</cr>",
           "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "* li. 1. c. 6. v. 18."
-            }
-          ],
           "notes": [
             {
               "label": "h",
               "text": "It is only profitable for those that die penitent."
+            },
+            {
+              "label": "1",
+              "text": "* li. 1. c. 6. v. 18."
             }
           ]
         }
@@ -2423,7 +2540,7 @@
         },
         {
           "verse": 23,
-          "text": "He joined battle with Judas, he was overcome. And as he understood that Philippe rebelled at Antioch, who was left over the affairs, dismayed in mind entreating the Jews, and yielding unto them, he sweareth concerning all things that seemed reason, 2 Machabees 13 and being reconciled he offered sacrifice, honoured the temple, and gave hosts."
+          "text": "He joined battle with Judas, he was overcome. And as he understood that Philippe rebelled at Antioch, who was left over the affairs, dismayed in mind entreating the Jews, and yielding unto them, he sweareth concerning all things that seemed reason, and being reconciled he offered sacrifice, honoured the temple, and gave hosts."
         },
         {
           "verse": 24,
@@ -2436,8 +2553,9 @@
         {
           "verse": 26,
           "text": "Then Lysias went up to the judgement seat, and declared the reason, and appeased the people, and returned to Antioch: and in this manner the king's journey and return proceeded. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 7. v. 1."
             }
           ]
@@ -2450,7 +2568,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But <cr>[1]</cr> after the space of three years Judas understood, and they that were with him, that Demetrius the son of Seleucus with a strong multitude, & with ships was come up by the port of Tripolis to commodious places,"
+          "text": "But <cr>[1]</cr> after the space of three years Judas understood, and they that were with him, that Demetrius the son of Seleucus with a strong multitude, & with ships was come up by the port of Tripolis to commodious places,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Y"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2469,8 +2593,9 @@
         {
           "verse": 4,
           "text": "came to king Demetrius in the year an hundred fifty, offering him a crown of gold, & a palm, & besides these, <cr>[1]</cr> Talloes, which seemed to be of the temple. And that same day indeed he held his peace.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* a golden bough."
             }
           ]
@@ -2508,15 +2633,22 @@
         {
           "verse": 11,
           "text": "And such things being said of him, the other friends also behaving themselves as enemies against Judas, incensed Demetrius. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 7. v. 26."
             }
           ]
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> Who forthwith sent Nicanor, chief over the elephants captain into Jurie:"
+          "text": "<cr>[1]</cr> Who forthwith sent Nicanor, chief over the elephants captain into Jurie:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "A"
+            }
+          ]
         },
         {
           "verse": 13,
@@ -2524,7 +2656,7 @@
         },
         {
           "verse": 14,
-          "text": "Then the nations, which had fled 2 Machabees 14 from Judas out of Jurie, joined themselves by troops with Nicanor, <na>(c)</na> esteeming the miseries and calamities of the Jews the prosperities of their own affairs.",
+          "text": "Then the nations, which had fled from Judas out of Jurie, joined themselves by troops with Nicanor, <na>(c)</na> esteeming the miseries and calamities of the Jews the prosperities of their own affairs.",
           "notes": [
             {
               "label": "c",
@@ -2640,7 +2772,7 @@
         },
         {
           "verse": 37,
-          "text": "And Razias one of the ancients of Jerusalem, was accused to Nicanor, a man 2 Machabees 14 that was a lover of the city, and well reported of, who for his affection was called father of the Jews."
+          "text": "And Razias one of the ancients of Jerusalem, was accused to Nicanor, a man that was a lover of the city, and well reported of, who for his affection was called father of the Jews."
         },
         {
           "verse": 38,
@@ -2683,8 +2815,9 @@
         {
           "verse": 46,
           "text": "and standing upon a certain steep rock, and now being become without blood, griping his bowels, with both hands he cast them upon multitudes, invocating the dominatour of life and spirit, that he would restore these to him again: and so he departed this life. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 7. v. 39."
             }
           ]
@@ -2745,7 +2878,7 @@
         },
         {
           "verse": 10,
-          "text": "and so their hearts being 2 Machabees 15 encouraged, withal he shewed the fraud of the Gentiles, and their breaking of oaths."
+          "text": "and so their hearts being encouraged, withal he shewed the fraud of the Gentiles, and their breaking of oaths."
         },
         {
           "verse": 11,
@@ -2861,7 +2994,7 @@
         },
         {
           "verse": 33,
-          "text": "The tongue also of impious Nicanor being cut out, he commanded to be given piecemeal to the birds: and the hand of the furious man to be hanged up 2 Machabees 15 against the temple."
+          "text": "The tongue also of impious Nicanor being cut out, he commanded to be given piecemeal to the birds: and the hand of the furious man to be hanged up against the temple."
         },
         {
           "verse": 34,
@@ -2878,8 +3011,9 @@
         {
           "verse": 37,
           "text": "but to keep the solemnity the thirteenth day of the month Adar, which is called in the Syrian language, the day before Mardocheus' day. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 1. c. 8. v. 1. &c."
             }
           ]
@@ -2896,27 +3030,12 @@
         },
         {
           "verse": 39,
-          "text": "And if well, and as is competent for a story, that^ myself also would: but if not so worthily^ it resteth to be pardoned me.",
+          "text": "And if well, and as is competent for a story, that myself also would: but if not so worthily it resteth to be pardoned me.",
           "has_annotation": true
         },
         {
           "verse": 40,
-          "text": "For as to drink always wine, or always water is hurtful, but to use now one now another is delectable: so to the readers, if the speech be always exact, it will not be grateful. Here therefore it shall be ended. 2 Machabees 15 endeavours: so to you we offer the rest of our labours, even to the end of our lives: in our B. Saviour <sc>Jesus</sc> Christ, to whom be all praise and glory. Amen. <sc>The</sc> <sc>Continuance</sc> OF <sc>The</sc> <sc>Church</sc> <sc>And</sc> <sc>Religion</sc> IN <sc>The</sc> <sc>Sixth</sc> <sc>Age</sc>: <sc>From</sc> <sc>The</sc> <sc>Captivity</sc> in Babylon to the coming of our Saviour, near the space of 640. years. <na>◦</na> God's true Service hath always continued in the visible Church. <sc>Such</sc> is the providence of Almighty God, that not obscurely, or at some times only, but manifestly, and without intermission his Divine Majesty is acknowledged, <na>◦</na> his name glorified; his Religion professed, and his precepts observed by a visible known Church, from the beginning of the world to the end thereof, as we have already shewed in the other five ages; and shall no less clearly declare the same in this sixth. For albeit the peculiar people of God were for their sins carried forth of their country, and held captives in Babylon seventy years, and after their reduction were subject to strangers ruling over them, and sometimes extremely afflicted with persecution, yet they still persevered in the same faith and religion, had succession of Priests, and of one High priest, with conservation also of the royal line of David, even to Christ our eternal King and Priest.",
-          "cross_refs": [
-            {
-              "text": "three Divine Persons in one God I am with you, saith the Lord of hosts, the word that I did covenant with you when you came out of the land of Aegypt: and my Spirit shall be in the midst of you the Lord of hosts God the Father; by his spirit, God the Holy Ghost word God the Son his word the word, his only Son the Second Divine Person"
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "First therefore concerning Articles of faith and religion, the belief in one God was so generally confessed by the whole Jewish nation, that their Priests and Prophets did use it for a principle, in confirmation of other points, as well doctrinal as moral. So Malachie teaching that our neighbour is to be beloved, God to be served, and his laws to be kept: Is there not one Father of us all (saith he. ch. 2. v. 10.) Hath not one God created us? Why then doth every one of us despise his brother, violating the covenant of our fathers? More expressly Jeremy in his Epistle (Barac. 6.) sheweth the vanity and absurdity of many gods, exhorting the people to serve the one omnipotent God, saying to him sincerely in their hearts (v. 5.) Thou oughtest to be adored, o Lord . Likewise, when the Magicians of Chaldea ascribed the knowledge of dreams to false gods, Daniel with the other three children (ch. 2. v. 18.) prayed the God of heaven: and the mystery was revealed to Daniel . And he declared and expounded the King's dream. Who thereupon confessed to Daniel (v. 47.) In very deed your God is the God of gods, and Lord of kings . The same three children (Daniel 3.) were cast into the burning furnace, and Daniel into the lions' den (ch. 6. & 14.) ready to die for their faith in one God. For this faith also Mardocheus, as is written in the book of Esther, was persecuted, and he with all the people were in extreme danger. And the author of the book of wisdom teacheth that one God is known by consideration of his creatures: All men are vain (saith he. ch. 13. v. 1) that by things seen, understand not him that is: neither attending to the works agnise who was the workman . So the author of Ecclesiasticus ch. 1. v. 8. professeth: There is one most high Creator omnipotent, and mighty King, and to be feared exceedingly, sitting upon the throne, the God of Dominion ."
-            },
-            {
-              "label": "◦",
-              "text": "Faith in one God is the ground of all Religion."
-            }
-          ]
+          "text": "For as to drink always wine, or always water is hurtful, but to use now one now another is delectable: so to the readers, if the speech be always exact, it will not be grateful. Here therefore it shall be ended."
         }
       ],
       "summary": "Nicanor intending to assault Judas on the sabbath day, 5. blasphemeth most proudly. 7. Judas with all confidence in God encourageth his men, 11. confirming them with the relation of a vision in sleep. 21. So he with fervent prayer, the enemy trusting his own strength, joineth battle, 27. and killeth thirty five thousand, and Nicanor amongst the rest. Whose head, and hand cut off with the shoulder are hanged up in Jerusalem: 33. his tongue given to the birds, and a festival day observed. 38. And herewith the Author (of this second Book) concludeth the whole history."

@@ -145,19 +145,27 @@
       ]
     },
     {
-      "verse": 26,
-      "title": "Faith without works is dead.",
-      "text": "<mn>◦</mn> S. James (as the Protestants feign) saith that faith without good works is no faith, and that therefore it justifieth not, because it is no faith. for he saith that it is dead without works, as the body is dead without the soul, and therefore being dead hath no activity or efficacy to justify or save. But it is a great difference, to say that the body is dead, and to say that it is no body. even so it is the like difference, to say that faith without works is dead, and to say that faith without works is no faith. And if a dead body be notwithstanding a true body, then according to S. James' comparison here, a dead faith is notwithstanding a true faith, but yet not available to justification, because it is dead, that is, because it is only faith without good works.\n\n<mn>◦</mn>\n\nAnd therefore it is a great impudency in Heretics, and a hard shift, to say that the faith of which the Apostle disputeth all this while, is no true or properly called faith at all. It is the same faith that S. Paul defined and commended in all the 11. Chapter to the Hebrews, and the same which is called the Catholic faith, and the same which being formed & made alive by charity, justifieth. Mary true it is, that it is not that special faith which the Heretics feign only to justify, to wit, when a man doth firmly believe as an article of his faith, that himself shall be saved. this special faith it is not whereof the Apostle here speaketh. for neither he, nor S. Paul, nor any other sacred writer in all the holy Scriptures ever speak or knew of any such forged faith.",
+      "text": "<mn>◦</mn> S. James (as the Protestants feign) saith that faith without good works is no faith, and that therefore it justifieth not, because it is no faith. for he saith that it is dead without works, as the body is dead without the soul, and therefore being dead hath no activity or efficacy to justify or save. But it is a great difference, to say that the body is dead, and to say that it is no body. even so it is the like difference, to say that faith without works is dead, and to say that faith without works is no faith. And if a dead body be notwithstanding a true body, then according to S. James' comparison here, a dead faith is notwithstanding a true faith, but yet not available to justification, because it is dead, that is, because it is only faith without good works.",
       "notes": [
         {
           "marker": "◦",
           "text": "Faith without works is a true faith, but not available: as the body without the spirit is a true body, though it be dead."
-        },
+        }
+      ],
+      "verse": 26,
+      "title": "Faith without works is dead.",
+      "part": 1
+    },
+    {
+      "text": "<mn>◦</mn>\n\nAnd therefore it is a great impudency in Heretics, and a hard shift, to say that the faith of which the Apostle disputeth all this while, is no true or properly called faith at all. It is the same faith that S. Paul defined and commended in all the 11. Chapter to the Hebrews, and the same which is called the Catholic faith, and the same which being formed & made alive by charity, justifieth. Mary true it is, that it is not that special faith which the Heretics feign only to justify, to wit, when a man doth firmly believe as an article of his faith, that himself shall be saved. this special faith it is not whereof the Apostle here speaketh. for neither he, nor S. Paul, nor any other sacred writer in all the holy Scriptures ever speak or knew of any such forged faith.",
+      "notes": [
         {
           "marker": "◦",
           "text": "What faith the Apostle speaketh of: & that he knew no special faith."
         }
-      ]
+      ],
+      "verse": 26,
+      "part": 2
     }
   ]
 }

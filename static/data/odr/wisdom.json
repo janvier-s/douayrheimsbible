@@ -279,18 +279,7 @@
         },
         {
           "verse": 2,
-          "text": "<na>(b)[1]</na> They seemed in the eyes of the unwise to die: and their decease was counted affliction:",
-          "cross_refs": [
-            {
-              "text": "Chap. 5. v. 4."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "For albeit Martyrs seem in the eyes of the unwise to die, or to be extinguished, they pass indeed into eternal, and unspeakable glory."
-            }
-          ]
+          "text": "<na>(b)[1]</na> They seemed in the eyes of the unwise to die: and their decease was counted affliction:"
         },
         {
           "verse": 3,
@@ -356,8 +345,9 @@
         {
           "verse": 14,
           "text": "and <cr>[1]</cr> the eunuch that hath not wrought iniquity with his hands, nor thought most wicked things against God: for the chosen gift of faith shall be given to him, and a most acceptable lot in the temple of God.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* See. S. Ierom. in Isa. 56. v. 4."
             }
           ]
@@ -648,18 +638,7 @@
         },
         {
           "verse": 4,
-          "text": "because the <na>(a)[1]</na> power is given you of our Lord, and strength by the Highest, who will examine your works, and search your cogitations:",
-          "cross_refs": [
-            {
-              "text": "Rom. 13. v. 1."
-            }
-          ],
-          "notes": [
-            {
-              "label": "a",
-              "text": "All power is from God: & therefore to be respected, though the magistrates sometimes abuse their authority."
-            }
-          ]
+          "text": "because the <na>(a)[1]</na> power is given you of our Lord, and strength by the Highest, who will examine your works, and search your cogitations:"
         },
         {
           "verse": 5,
@@ -721,7 +700,13 @@
         },
         {
           "verse": 18,
-          "text": "For <na>(c)</na> the beginning of her is the most true desire of discipline. <na>(c)</na> Wisdom is attained by this gradation, and so from first to last, a resolute desire joineth faithful souls to God. v. 22."
+          "text": "For <na>(c)</na> the beginning of her is the most true desire of discipline.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Wisdom is attained by this gradation, and so from first to last, a resolute desire joineth faithful souls to God. v. 22."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -767,7 +752,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Ialso certes am a mortal man, like to all, and of the earthly kindred of him that was made first, and in the womb of my mother was I fashioned flesh,"
+          "text": "I also certes am a mortal man, like to all, and of the earthly kindred of him that was made first, and in the womb of my mother was I fashioned flesh,"
         },
         {
           "verse": 2,
@@ -789,7 +774,7 @@
         },
         {
           "verse": 4,
-          "text": "Iwas nourished in swaddling cloths, and great cares."
+          "text": "I was nourished in swaddling cloths, and great cares."
         },
         {
           "verse": 5,
@@ -992,18 +977,7 @@
         },
         {
           "verse": 9,
-          "text": "<na>(b)[1]</na> I purposed therefore to bring her to me to live together: knowing that she will communicate unto me of good things, and will be a comfort of my cogitation & tediousness.",
-          "cross_refs": [
-            {
-              "text": "Prov. 3."
-            }
-          ],
-          "notes": [
-            {
-              "label": "b",
-              "text": "This is also the speech of Salomon, recited by the writer of this book."
-            }
-          ]
+          "text": "<na>(b)[1]</na> I purposed therefore to bring her to me to live together: knowing that she will communicate unto me of good things, and will be a comfort of my cogitation & tediousness."
         },
         {
           "verse": 10,
@@ -1171,7 +1145,7 @@
         },
         {
           "verse": 13,
-          "text": "For <na>(d)</na> who of men is able to know the counsel of God? Or who can think what God will? sufficient to govern ourselves, much less others.",
+          "text": "For <na>(d)</na> who of men is able to know the counsel of God? Or who can think what God will?",
           "notes": [
             {
               "label": "d",
@@ -1287,18 +1261,7 @@
         },
         {
           "verse": 10,
-          "text": "And <na>(h)[1]</na> the just flying his brother's wrath, she conducted by the right ways, and shewed him the kingdom of God, and gave him the knowledge of the holy, did honest him in labours, and accomplished his labours.",
-          "cross_refs": [
-            {
-              "text": "Gen. 28."
-            }
-          ],
-          "notes": [
-            {
-              "label": "h",
-              "text": "Jacob."
-            }
-          ]
+          "text": "And <na>(h)[1]</na> the just flying his brother's wrath, she conducted by the right ways, and shewed him the kingdom of God, and gave him the knowledge of the holy, did honest him in labours, and accomplished his labours."
         },
         {
           "verse": 11,
@@ -1499,7 +1462,7 @@
         },
         {
           "verse": 16,
-          "text": "But for senseless cogitations of their iniquity, for that <na>(g)</na> some erring did worship dumb serpents and superfluous beasts, thou didst send upon them a multitude of dumb beasts for revenge: frogs, sciniphs, flies, and locusts.",
+          "text": "But for senseless cogitations of their iniquity, for that <na>(g)</na> some erring did worship dumb serpents and superfluous beasts, thou didst send upon them a multitude of dumb beasts for revenge:",
           "notes": [
             {
               "label": "g",
@@ -1938,7 +1901,7 @@
           "notes": [
             {
               "label": "g",
-              "text": "↓"
+              "text": "See next note"
             }
           ]
         },
@@ -2174,7 +2137,13 @@
         },
         {
           "verse": 7,
-          "text": "For he that turned to it, <na>(d)</na> was not healed by that which he saw, but by thee the Saviour of all: <na>(d)</na> The brazen serpent not by any virtue inherent, but as a sign of God's favour, was the means of curing the people. <i>Num. 21.</i>"
+          "text": "For he that turned to it, <na>(d)</na> was not healed by that which he saw, but by thee the Saviour of all:",
+          "notes": [
+            {
+              "label": "d",
+              "text": "The brazen serpent not by any virtue inherent, but as a sign of God's favour, was the means of curing the people. Num. 21."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -2327,7 +2296,13 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> And whilst they think that they lie hid in obscure sins, they were dispersed by the dark covert of oblivion, being horribly afraid and disturbed with exceeding admiration."
+          "text": "<cr>[1]</cr> And whilst they think that they lie hid in obscure sins, they were dispersed by the dark covert of oblivion, being horribly afraid and disturbed with exceeding admiration.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Morally they & other gentiles were in darkness without faith in God, till Christ's Resurrection the third day."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -2503,7 +2478,7 @@
         },
         {
           "verse": 18,
-          "text": "And one here^ another there cast forth half alive, shewed for what cause of death he died."
+          "text": "And one here another there cast forth half alive, shewed for what cause of death he died."
         },
         {
           "verse": 19,

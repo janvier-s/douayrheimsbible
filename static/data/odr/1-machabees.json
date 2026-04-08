@@ -57,9 +57,10 @@
         {
           "verse": 10,
           "text": "and they did all put crowns on them after his death, & their sons after them many years, & evils were multiplied in the earth. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "* li. 2. c. 3. v. 1."
+              "label": "1",
+              "text": "* li. 2. c. 3. v. 1. D"
             }
           ]
         },
@@ -96,9 +97,10 @@
         {
           "verse": 16,
           "text": "and they made to themselves prepuces, and revolted from the holy testament, and were joined to the Nations, and were sold to do evil. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "* li. 2. c. 4. v. 7."
+              "label": "1",
+              "text": "* li. 2. c. 4. v. 7. F"
             }
           ]
         },
@@ -123,9 +125,10 @@
         {
           "verse": 20,
           "text": "And he took the fenced cities in the land of Aegypt: and he took the spoils of the land of Aegypt. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "* li. 2. c. 4. v. 21."
+              "label": "1",
+              "text": "* li. 2. c. 4. v. 21. H"
             }
           ]
         },
@@ -352,8 +355,9 @@
         {
           "verse": 67,
           "text": "and there was made great wrath upon the people exceedingly. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 2. c. 5. v. 11."
             }
           ]
@@ -375,12 +379,14 @@
       "chapter": 2,
       "verses": [
         {
-          "verse": 0,
-          "text": "1 Machabees 2"
-        },
-        {
           "verse": 1,
-          "text": "In <cr>[1]</cr> those days arose Mathathias the son of John, the son of Simeon, Priest of the sons of Joarib from Jerusalem, & he sat in the mountain of Modin:"
+          "text": "In <cr>[1]</cr> those days arose Mathathias the son of John, the son of Simeon, Priest of the sons of Joarib from Jerusalem, & he sat in the mountain of Modin:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The 2. part. The wars of the Machabees, begun by this Mathathias, and prosecuted by his sons, especially by Judas, as in the seven chapters following, and more largely in the second book from 8. chapter to the end of the last."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -462,7 +468,7 @@
         },
         {
           "verse": 20,
-          "text": "Iand my sons, & my brethren will obey the law of our fathers."
+          "text": "I and my sons, & my brethren will obey the law of our fathers."
         },
         {
           "verse": 21,
@@ -474,7 +480,7 @@
         },
         {
           "verse": 23,
-          "text": "And as he ceased to speak these words, there came a certain Jew in the eyes of all^ to sacrifice to the idols upon the altar in the city of Modin, according to the king's commandment."
+          "text": "And as he ceased to speak these words, there came a certain Jew in the eyes of all to sacrifice to the idols upon the altar in the city of Modin, according to the king's commandment."
         },
         {
           "verse": 24,
@@ -517,7 +523,7 @@
         },
         {
           "verse": 31,
-          "text": "And it was reported to the king's men, and to the army that was in Jerusalem in the city of David, that certain men which dissipated the king's 1 Machabees 2 commandment, were departed into secret places in the desert, & many were gone after them."
+          "text": "And it was reported to the king's men, and to the army that was in Jerusalem in the city of David, that certain men which dissipated the king's commandment, were departed into secret places in the desert, & many were gone after them."
         },
         {
           "verse": 32,
@@ -676,7 +682,7 @@
         },
         {
           "verse": 59,
-          "text": "<cr>[1]</cr> Ananias and Azarias & Misael believing, were delivered out of the flame. 1 Machabees 2",
+          "text": "<cr>[1]</cr> Ananias and Azarias & Misael believing, were delivered out of the flame.",
           "cross_refs": [
             {
               "text": "Dan. 3."
@@ -791,9 +797,10 @@
         {
           "verse": 9,
           "text": "And he was renowned even to the uttermost part of the earth, and he gathered them that perished. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "li. 2. c. 8. v. 1."
+              "label": "1",
+              "text": "li. 2. c. 8. v. 1. M"
             }
           ]
         },
@@ -807,11 +814,17 @@
         },
         {
           "verse": 12,
-          "text": "And he took the spoils of them, and the sword of Apollonius^ Judas took away, and he fought with it all his days."
+          "text": "And he took the spoils of them, and the sword of Apollonius Judas took away, and he fought with it all his days."
         },
         {
           "verse": 13,
-          "text": "And <na>(c)</na> Seron captain of the army of Syria heard that Judas gathered a congregation of the faithful, and an assembly with him, 1 Machabees 3 <na>(c)</na> The second against Seron."
+          "text": "And <na>(c)</na> Seron captain of the army of Syria heard that Judas gathered a congregation of the faithful, and an assembly with him,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The second against Seron."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -853,7 +866,7 @@
         },
         {
           "verse": 22,
-          "text": "& our Lord himself will destroy them before our face, but you^ fear them not."
+          "text": "& our Lord himself will destroy them before our face, but you fear them not."
         },
         {
           "verse": 23,
@@ -939,7 +952,7 @@
         },
         {
           "verse": 41,
-          "text": "And the merchants of the countries heard the name of them: and they took silver and gold exceeding much, and servants: and they came into the camp, to take the children of Israel for slaves, & there were added to them the army of Syria, & of 1 Machabees 3 the land of the strangers."
+          "text": "And the merchants of the countries heard the name of them: and they took silver and gold exceeding much, and servants: and they came into the camp, to take the children of Israel for slaves, & there were added to them the army of Syria, & of the land of the strangers."
         },
         {
           "verse": 42,
@@ -1008,8 +1021,9 @@
         {
           "verse": 55,
           "text": "And after these things Judas appointed captains of the people, tribunes, and centurions, and <cr>[1]</cr> sergeants, and decurions.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* pentacontarchos."
             }
           ]
@@ -1053,7 +1067,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <na>(a)</na> Gorgias took five thousand men, & a thousand chosen horsemen: & they removed the camp by night, 1 Machabees 4",
+          "text": "And <na>(a)</na> Gorgias took five thousand men, & a thousand chosen horsemen: & they removed the camp by night,",
           "notes": [
             {
               "label": "a",
@@ -1181,9 +1195,10 @@
         {
           "verse": 27,
           "text": "Which when he heard being amazed he fainted in mind: that such things chanced not in Israel, as he would, & such as the king commanded. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "* li. 2. c. 8. v. 8."
+              "label": "1",
+              "text": "* li. 2. c. 8. v. 8. O"
             }
           ]
         },
@@ -1224,7 +1239,7 @@
         },
         {
           "verse": 34,
-          "text": "And they joined battle: and 1 Machabees 4 there fell of the army of Lysias five thousand men."
+          "text": "And they joined battle: and there fell of the army of Lysias five thousand men."
         },
         {
           "verse": 35,
@@ -1362,8 +1377,9 @@
         {
           "verse": 61,
           "text": "And he placed an army there, to keep it, & he fenced it to keep Bethsura, that the people might have a munition against the face of Idumea. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 2. c. 10. v. 1."
             }
           ]
@@ -1381,6 +1397,10 @@
             {
               "label": "a",
               "text": "In this chapter is mention of ten battles in which Judas or his brethren Jonathas and Simon were victors."
+            },
+            {
+              "label": "1",
+              "text": "Q"
             }
           ]
         },
@@ -1411,8 +1431,9 @@
         {
           "verse": 5,
           "text": "And they were shut up by him in towers, and he came near to them, and anathematized them, and burnt their towers with fire, with all that were in them. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "utterly destroyed."
             }
           ]
@@ -1434,8 +1455,9 @@
         {
           "verse": 8,
           "text": "and he took Gazer the city, and her <cr>[1]</cr> daughters, and returned into Jewry.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "villages."
             }
           ]
@@ -1510,7 +1532,7 @@
         },
         {
           "verse": 23,
-          "text": "and he took them that were in Galilee & in Arbatis with their wives, and children, & all things that they had, and he brought them into 1 Machabees 5 Jurie with great joy."
+          "text": "and he took them that were in Galilee & in Arbatis with their wives, and children, & all things that they had, and he brought them into Jurie with great joy."
         },
         {
           "verse": 24,
@@ -1639,7 +1661,7 @@
         },
         {
           "verse": 51,
-          "text": "& they slew every male in the edge of the sword, and he rooted it up, and took the spoils thereof, & 1 Machabees 5 passed through all the city upon the slain."
+          "text": "& they slew every male in the edge of the sword, and he rooted it up, and took the spoils thereof, & passed through all the city upon the slain."
         },
         {
           "verse": 52,
@@ -1751,11 +1773,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> king Antiochus walked through the higher countries, and he heard that there was a city Elymais in Persis, most noble, and plentiful in silver & gold,"
+          "text": "And <cr>[1]</cr> king Antiochus walked through the higher countries, and he heard that there was a city Elymais in Persis, most noble, and plentiful in silver & gold,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The full history of Antiochus Epiphanes his death is written in this chapter to the 16. v. and in all the 9. of the second Book."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "and a temple therein exceeding rich: and coverings thereof gold, and brigantines, and shields, which 1 Machabees 6 Alexander Philip's son the king of Macedonia that reigned first in Greece left there."
+          "text": "and a temple therein exceeding rich: and coverings thereof gold, and brigantines, and shields, which Alexander Philip's son the king of Macedonia that reigned first in Greece left there."
         },
         {
           "verse": 3,
@@ -1763,14 +1791,21 @@
         },
         {
           "verse": 4,
-          "text": "And they rose up into battle, and he fled from thence, and departed with great sorrow, and returned into Babylonia. <cr>[1]</cr>"
+          "text": "And they rose up into battle, and he fled from thence, and departed with great sorrow, and returned into Babylonia. <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Finally he returned into the country of Babylon:"
+            }
+          ]
         },
         {
           "verse": 5,
           "text": "<cr>[1]</cr> And there came one that told him in Persis, that the camps that were in the land of Juda, were put to flight:",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "v. 8. li. 2. ch. 9. v. 5."
+              "label": "1",
+              "text": "but before he arrived there he heard the bad news of his army in Jury, & fell into intolerable and desperate diseases, v. 8. and li. 2. ch. 9. v. 5."
             }
           ]
         },
@@ -1810,7 +1845,7 @@
         },
         {
           "verse": 13,
-          "text": "Iknow therefore that for this cause have these evils found me: and lo I perish with great sorrow in a strange country."
+          "text": "I know therefore that for this cause have these evils found me: and lo I perish with great sorrow in a strange country."
         },
         {
           "verse": 14,
@@ -1823,24 +1858,24 @@
         {
           "verse": 16,
           "text": "And Antiochus the king died there in the year <na>(b)</na> an hundreth forty nine. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "* li. 2. c. 9. v. 1."
-            }
-          ],
           "notes": [
             {
               "label": "b",
               "text": "Antiochus began to persecute the Jews in the year 143. ch. 1. v. 21. and dying this year, 149. it appeareth that his persecution dured about six years, or somewhat more: agreeable to the answer of the Angel Dan. 8. v. 14. that it should endure 2300. days, which make six years, & almost four months. Within which time Judas by his valor obtained & purged the holy places, in the year 148. ch. 6. v. 52. some months before Antiochus' death."
+            },
+            {
+              "label": "1",
+              "text": "* li. 2. c. 9. v. 1. S"
             }
           ]
         },
         {
           "verse": 17,
           "text": "And Lysias understood that the king was dead, and he appointed Antiochus his son to reign, who he brought up a young man: and he called his name Eupator. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "* li. 2. c. 10. v. 10."
+              "label": "1",
+              "text": "* li. 2. c. 10. v. 10. V"
             }
           ]
         },
@@ -1886,7 +1921,7 @@
         },
         {
           "verse": 28,
-          "text": "And the king was angry, as he 1 Machabees 6 heard these things: & he called together all his friends, & the princes of his army, and them that were over the horsemen."
+          "text": "And the king was angry, as he heard these things: & he called together all his friends, & the princes of his army, and them that were over the horsemen."
         },
         {
           "verse": 29,
@@ -2010,7 +2045,7 @@
         },
         {
           "verse": 56,
-          "text": "was returned from Persis, and Media, and the army 1 Machabees 6 that went with him, and that he sought to take upon him the affairs of the kingdom:"
+          "text": "was returned from Persis, and Media, and the army that went with him, and that he sought to take upon him the affairs of the kingdom:"
         },
         {
           "verse": 57,
@@ -2039,8 +2074,9 @@
         {
           "verse": 63,
           "text": "And he departed in haste, and returned to Antioch, and found Philip ruling over the city: and he fought against him and won the city. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* li. 2. c. 13. v. 1."
             }
           ]
@@ -2058,6 +2094,10 @@
             {
               "label": "a",
               "text": "This Seleucus was brother to Antiochus Epiphanes: & so Antiochus Eupator was Demetrius his cousin-german."
+            },
+            {
+              "label": "1",
+              "text": "X"
             }
           ]
         },
@@ -2115,7 +2155,7 @@
         },
         {
           "verse": 12,
-          "text": "And there assembled to Alcimus and Bacchides a 1 Machabees 7 congregation of the scribes to require the things that are just:"
+          "text": "And there assembled to Alcimus and Bacchides a congregation of the scribes to require the things that are just:"
         },
         {
           "verse": 13,
@@ -2185,9 +2225,10 @@
         {
           "verse": 25,
           "text": "But Alcimus saw that Judas prevailed, & they that were with him: & he knew that he could not stand with them, and he went back to the king, & accused them of many crimes. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "* li. 2. c. 14. v. 1."
+              "label": "1",
+              "text": "* li. 2. c. 14. v. 1. Z"
             }
           ]
         },
@@ -2248,15 +2289,22 @@
         {
           "verse": 38,
           "text": "Take vengeance upon this man, and his army, and let them fall by the sword: remember their blasphemies, and grant not unto them to be permanent. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "* li. 2. c. 14. v. 12."
+              "label": "1",
+              "text": "* li. 2. c. 14. v. 12. B"
             }
           ]
         },
         {
           "verse": 39,
-          "text": "And <na>(g)</na> Nicanor went out from Jerusalem, & moved the camp, near to Bethhoron: and the army of Syria met him. 1 Machabees 7 <na>(g)</na> This was the last conflict between Judas and Nicanor written more largely in the last chapter of the second book."
+          "text": "And <na>(g)</na> Nicanor went out from Jerusalem, & moved the camp, near to Bethhoron: and the army of Syria met him.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "This was the last conflict between Judas and Nicanor written more largely in the last chapter of the second book."
+            }
+          ]
         },
         {
           "verse": 40,
@@ -2306,15 +2354,14 @@
         {
           "verse": 50,
           "text": "And the land of Juda was quiet for <na>(h)</na> a few days. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "l. 2. c. 15. v. 1."
-            }
-          ],
           "notes": [
             {
               "label": "h",
               "text": "Whiles Judas disposed things pertaining to religion, and the commonwealth: Demetrius prepared for wars. ch. 9. v. 3."
+            },
+            {
+              "label": "1",
+              "text": "l. 2. c. 15. v. 1."
             }
           ]
         }
@@ -2331,6 +2378,10 @@
             {
               "label": "a",
               "text": "Of the renowned acts of the Romans, other Historiographers have also written largely: especially Livius, Diodorus, Iustinus, Florus, Varre, Plutarchus , and many others."
+            },
+            {
+              "label": "1",
+              "text": "D"
             }
           ]
         },
@@ -2345,9 +2396,10 @@
         {
           "verse": 4,
           "text": "<cr>[1]</cr> and destroyed the places that were very far off from them, and the kings that came upon them from the ends of the earth, and struck them with a great plague: and the rest give them tribute every year.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "l. 12. c. 17."
+              "label": "1",
+              "text": "What places these were Iosephus expresseth. l. 12. c. 17."
             }
           ]
         },
@@ -2371,7 +2423,7 @@
         },
         {
           "verse": 8,
-          "text": "and the region of the Indes, and the Medes, and the Lydians of their best countries: and the same being taken of them, 1 Machabees 8 they gave to Eumenes the king."
+          "text": "and the region of the Indes, and the Medes, and the Lydians of their best countries: and the same being taken of them, they gave to Eumenes the king."
         },
         {
           "verse": 9,
@@ -2437,7 +2489,7 @@
         },
         {
           "verse": 23,
-          "text": "BE IT <sc>Well</sc> TO <sc>The</sc> <sc>Romans</sc>, and to the nation of the Jews by sea, and by land for ever: and sword and enemy be far from them."
+          "text": "BE IT <sc>Well</sc> TO <sc>The Romans</sc>, and to the nation of the Jews by sea, and by land for ever: and sword and enemy be far from them."
         },
         {
           "verse": 24,
@@ -2483,7 +2535,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "1 Machabees 9 <i>environed by Bacchides chaseth him away to his fenced places, killing many. 54. Alcimus beginning to deface the temple, is striken with a palsy, and dieth miserably. 57. So they have peace two years. 58. Bacchides coming with a new army: 62. Jonathas and Simon retire into Bethbessen: 65. there defend themselves, and annoy the enemy. 69. who blaming his counsellers, maketh peace, and departeth.</i>"
+          "text": "environed by Bacchides chaseth him away to his fenced <i>places, killing many. 54. Alcimus beginning to deface the temple, is striken with a palsy, and dieth miserably. 57. So they have peace two years. 58. Bacchides coming with a new army: 62. Jonathas and Simon retire into Bethbessen: 65. there defend themselves, and annoy the enemy. 69. who blaming his counsellers, maketh peace, and departeth.</i>"
         },
         {
           "verse": 1,
@@ -2611,7 +2663,7 @@
         },
         {
           "verse": 26,
-          "text": "and they 1 Machabees 9 sought out, & searched for the friends of Judas, & brought them to Bacchides, and he took revenge on them, and scorned them."
+          "text": "and they sought out, & searched for the friends of Judas, & brought them to Bacchides, and he took revenge on them, and scorned them."
         },
         {
           "verse": 27,
@@ -2744,7 +2796,7 @@
         },
         {
           "verse": 52,
-          "text": "and he fenced the city Bethsura, and Gazara, and the castle, and set garrisons in them, & 1 Machabees 9 provision of victuals:"
+          "text": "and he fenced the city Bethsura, and Gazara, and the castle, and set garrisons in them, & provision of victuals:"
         },
         {
           "verse": 53,
@@ -2850,7 +2902,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "1 Machabees 10 <i>horsemen) 83. Jonathas burneth Azotus, with their idol Dagon: 86. so returneth by Ascalon to Jerusalem with great glory.</i>"
+          "text": "horsemen) 83. Jonathas burneth Azotus, with their idol <i>Dagon: 86. so returneth by Ascalon to Jerusalem with great glory.</i>"
         },
         {
           "verse": 1,
@@ -2958,7 +3010,7 @@
         },
         {
           "verse": 24,
-          "text": "Ialso will write to them words of request, and dignities, and gifts: that they may be with me to aid me."
+          "text": "I also will write to them words of request, and dignities, and gifts: that they may be with me to aid me."
         },
         {
           "verse": 25,
@@ -2992,11 +3044,11 @@
         },
         {
           "verse": 31,
-          "text": "& let Jerusalem be holy, and free with the coasts thereof: & the tithes, & 1 Machabees 10 tributes be they to it."
+          "text": "& let Jerusalem be holy, and free with the coasts thereof: & the tithes, & tributes be they to it."
         },
         {
           "verse": 32,
-          "text": "Irelease also the authority of the castle, that is in Jerusalem, and I give it to the high priest, to place therein men whomsoever he shall choose, that may keep it."
+          "text": "I release also the authority of the castle, that is in Jerusalem, and I give it to the high priest, to place therein men whomsoever he shall choose, that may keep it."
         },
         {
           "verse": 33,
@@ -3053,15 +3105,14 @@
         {
           "verse": 46,
           "text": "But as Jonathas, & the people heard these words, <na>(d)</na> they believed them not, nor received them: because they remembered the great mischief, that he had done in Israel, and had afflicted them exceedingly. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "ch. 7. v. 11."
-            }
-          ],
           "notes": [
             {
               "label": "d",
               "text": "Notwithstanding the great offers of evil disposed men, Ionathas and all prudent men considering their former wicked deeds do not give credit to glorious words."
+            },
+            {
+              "label": "1",
+              "text": "ch. 7. v. 11."
             }
           ]
         },
@@ -3109,7 +3160,7 @@
         },
         {
           "verse": 56,
-          "text": "And now I will do to thee 1 Machabees 10 that which thou hast written: but meet me at Ptolomais, that we may see one another, and I may despouse her to thee as thou hast said."
+          "text": "And now I will do to thee that which thou hast written: but meet me at Ptolomais, that we may see one another, and I may despouse her to thee as thou hast said."
         },
         {
           "verse": 57,
@@ -3237,7 +3288,7 @@
         },
         {
           "verse": 85,
-          "text": "And there were that were 1 Machabees 10 slain by the sword, with these that were burnt, almost eight thousand men."
+          "text": "And there were that were slain by the sword, with these that were burnt, almost eight thousand men."
         },
         {
           "verse": 86,
@@ -3345,7 +3396,7 @@
         },
         {
           "verse": 20,
-          "text": "In those days Jonathas gathered together them, that were in Jurie, to win the castle in Jerusalem: and they made engines 1 Machabees 11 against it."
+          "text": "In those days Jonathas gathered together them, that were in Jurie, to win the castle in Jerusalem: and they made engines against it."
         },
         {
           "verse": 21,
@@ -3465,7 +3516,7 @@
         },
         {
           "verse": 44,
-          "text": "And Jonathas sent him <na>(f)</na> three thousand valiant men to Antioch: and they came to the king, & the king was delighted at their coming. 1 Machabees 11 hundred thousand.",
+          "text": "And Jonathas sent him <na>(f)</na> three thousand valiant men to Antioch: and they came to the king, & the king was delighted at their coming.",
           "notes": [
             {
               "label": "f",
@@ -3739,7 +3790,7 @@
         },
         {
           "verse": 25,
-          "text": "And he went out from Jerusalem, & met them in the country of Amathis: for he gave them not space to enter into his country. 1 Machabees 12"
+          "text": "And he went out from Jerusalem, & met them in the country of Amathis: for he gave them not space to enter into his country."
         },
         {
           "verse": 26,
@@ -3897,7 +3948,7 @@
         },
         {
           "verse": 6,
-          "text": "Iwill <na>(b)</na> avenge therefore my nation and the holies, our children also, and wives: because all the heathen are gathered together to destroy us of enmity.",
+          "text": "I will <na>(b)</na> avenge therefore my nation and the holies, our children also, and wives: because all the heathen are gathered together to destroy us of enmity.",
           "notes": [
             {
               "label": "b",
@@ -3993,7 +4044,13 @@
         },
         {
           "verse": 27,
-          "text": "And Simon <na>(d)</na> built over the sepulchre of his 1 Machabees 13 father and of his brethren a building high to behold, of stone polished behind and before: <na>(d)</na> This was not vain glory, but true glory to keep memory of so great virtue: thereby to stir up others to imitation. <i>He that loveth honour</i> (saith S. Augustin. <i>li. cont. Secundin. c. 17.</i> ) <i>imitateth God. but humble souls desire honour in God, proud men will be honoured more than God.</i> or without God. O how many Epitaphs are of wicked men, nothing else but perpetual monuments of their ambition, vanity, injustice, cruelty, & other vices! But those that are of true virtues are to God's more honour: the author of all virtues."
+          "text": "And Simon <na>(d)</na> built over the sepulchre of his father and of his brethren a building high to behold, of stone polished behind and before:",
+          "notes": [
+            {
+              "label": "d",
+              "text": "This was not vain glory, but true glory to keep memory of so great virtue: thereby to stir up others to imitation. He that loveth honour (saith S. Augustin. li. cont. Secundin. c. 17. ) imitateth God. but humble souls desire honour in God, proud men will be honoured more than God. or without God. O how many Epitaphs are of wicked men, nothing else but perpetual monuments of their ambition, vanity, injustice, cruelty, & other vices! But those that are of true virtues are to God's more honour: the author of all virtues."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -4034,8 +4091,9 @@
         {
           "verse": 37,
           "text": "The crown of gold, and <cr>[1]</cr> the bahem, which you sent, we have received: and we are ready to make with you great peace, and to write to the king's chief officers to release you the things that we have released.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* a precious chain."
             }
           ]
@@ -4210,7 +4268,7 @@
         },
         {
           "verse": 20,
-          "text": "<sc>The</sc> <sc>Princes</sc> and <na>(c)</na> the cities of the Spartians to Simon the grand Priest, & to the ancients, and the Priests, and the rest of the people of the Jews their brethren, greeting.",
+          "text": "<sc>The Princes</sc> and <na>(c)</na> the cities of the Spartians to Simon the grand Priest, & to the ancients, and the Priests, and the rest of the people of the Jews their brethren, greeting.",
           "notes": [
             {
               "label": "c",
@@ -4228,7 +4286,7 @@
         },
         {
           "verse": 23,
-          "text": "And it pleased the people to receive the men gloriously, and to put a copy of their words in the severed book of the people, to be for a 1 Machabees 14 memory to the people of the Spartiates. And a copy of these we have written to Simon the grand Priest."
+          "text": "And it pleased the people to receive the men gloriously, and to put a copy of their words in the severed book of the people, to be for a memory to the people of the Spartiates. And a copy of these we have written to Simon the grand Priest."
         },
         {
           "verse": 24,
@@ -4250,7 +4308,7 @@
         },
         {
           "verse": 27,
-          "text": "And this is a copy of the writing. <sc>The</sc> <sc>Eighteenth</sc> day of the month Elul, in the year an hundreth seventy two, the third year under Simon the grand-Priest in Asaramel,"
+          "text": "And this is a copy of the writing. <sc>The Eighteenth</sc> day of the month Elul, in the year an hundreth seventy two, the third year under Simon the grand-Priest in Asaramel,"
         },
         {
           "verse": 28,
@@ -4340,7 +4398,7 @@
         },
         {
           "verse": 48,
-          "text": "And this writing they bade 1 Machabees 14 them put in tables of brass, and to set them in the circuit of the holies, in a famous place:"
+          "text": "And this writing they bade them put in tables of brass, and to set them in the circuit of the holies, in a famous place:"
         },
         {
           "verse": 49,
@@ -4454,7 +4512,7 @@
         },
         {
           "verse": 23,
-          "text": "and into all countries: and to Lampsaces, & to the Spartiates, and to Delus, and to Myndus, and to Sicyon, & to Caria, and to Samus, & Pamphilia, and Lycia, and Alicarnassus, and Coo, & 1 Machabees 15 Siden, & Aradon, and Rhodes, and Phaselis, & Gortyna, and Gnidus, and Cypres, & Cyrenee."
+          "text": "and into all countries: and to Lampsaces, & to the Spartiates, and to Delus, and to Myndus, and to Sicyon, & to Caria, and to Samus, & Pamphilia, and Lycia, and Alicarnassus, and Coo, & Siden, & Aradon, and Rhodes, and Phaselis, & Gortyna, and Gnidus, and Cypres, & Cyrenee."
         },
         {
           "verse": 24,
@@ -4502,15 +4560,11 @@
         },
         {
           "verse": 35,
-          "text": "For concerning Joppe, and Gazara, that thou complainest <na>(c)</na> they made a great plague among the people, and in our country: for these <na>(c)</na> we given an hundred talents. And Athenobius answered him not a word.",
+          "text": "For concerning Joppe, and Gazara, that thou complainest <na>(c)</na> they made a great plague among the people, and in our country: for these",
           "notes": [
             {
               "label": "c",
-              "text": "Simon subdued these two towns because they annoyed the Jews: but because they otherwise pertained not to Jury he payed for them an hundred talents."
-            },
-            {
-              "label": "c",
-              "text": "↑"
+              "text": "we given an hundred talents. And Athenobius answered him not a word."
             }
           ]
         },
@@ -4562,7 +4616,7 @@
         },
         {
           "verse": 2,
-          "text": "And Simon called his two elder sons, Judas and John, and he said to them: I and my brethren, and the house of my father, have expugned the enemies of Israel from our youth even to this day: and it hath 1 Machabees 16 prospered in our hands to deliver Israel oftentimes."
+          "text": "And Simon called his two elder sons, Judas and John, and he said to them: I and my brethren, and the house of my father, have expugned the enemies of Israel from our youth even to this day: and it hath prospered in our hands to deliver Israel oftentimes."
         },
         {
           "verse": 3,
@@ -4590,7 +4644,7 @@
         },
         {
           "verse": 9,
-          "text": "Then was Judas^ John's brother wounded: But John pursued them, till he came to Cedron, which he built:"
+          "text": "Then was Judas John's brother wounded: But John pursued them, till he came to Cedron, which he built:"
         },
         {
           "verse": 10,
@@ -4657,15 +4711,14 @@
         {
           "verse": 24,
           "text": "lo these are written in <na>(c)</na> the book of the days of his priesthood, from the time that he was made prince of the priests after his father. <cr>[1]</cr>",
-          "cross_refs": [
-            {
-              "text": "* li. 2. c. 1. v. 1."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "Out of the book here mentioned some think the fourth book of Machabees was translated. See Sixtus Senen. li. 1. Biblioth. pag. 37."
+            },
+            {
+              "label": "1",
+              "text": "* li. 2. c. 1. v. 1."
             }
           ]
         }

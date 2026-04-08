@@ -20,7 +20,13 @@
         },
         {
           "verse": 4,
-          "text": "as he chose us in him before the constitution of the world, that we should be holy and immaculate <cr>[1]</cr> in his sight in charity."
+          "text": "as he chose us in him before the constitution of the world, that we should be holy and immaculate <cr>[1]</cr> in his sight in charity.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "We learn here that by God's grace men be holy and immaculate, not only in the sight of men, nor by imputation, but truly and before God: contrary to the Doctrine of the Calvinists."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -29,8 +35,9 @@
         {
           "verse": 6,
           "text": "unto the praise of the glory of his grace, wherein he hath <cr>[1]</cr> gratified us in his beloved Son.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἐχαρίτωσεν."
             }
           ]
@@ -50,8 +57,9 @@
         {
           "verse": 10,
           "text": "in the dispensation of the fullness of times, to <cr>[1]</cr> perfit all things in Christ, that are in heaven and in earth, in him.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἀνακεφαλαιώσασθαι."
             }
           ]
@@ -67,9 +75,10 @@
         {
           "verse": 13,
           "text": "in whom you also, when you had heard the word of truth (the Gospel of your salvation) in which also believing you were <cr>[1]</cr> signed with the holy Spirit of promise,",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Act. 8."
+              "label": "1",
+              "text": "Some refer this to the grace of Baptism: but to many learned it seemeth that the Apostle alludeth to the giving of the Holy Ghost in the Sacrament of Confirmation, by signing the baptized with the sign of the Cross & holy Chrism. For that was the use in the Apostles' time, as elsewhere we have proved. Annot. Act. 8."
             }
           ]
         },
@@ -118,7 +127,13 @@
         },
         {
           "verse": 23,
-          "text": "which is his body, the <cr>[1]</cr> fullness of him, which is filled all in all."
+          "text": "which is his body, the <cr>[1]</cr> fullness of him, which is filled all in all.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christ is not full, whole, and perfect without the Church no more than the head without the body."
+            }
+          ]
         }
       ],
       "summary": "He magnifieth the grace of God's eternal predestination and temporal vocation, 11. both of the Jews, 13. and also of the Ephesians being Gentiles. 13. for whose excellent faith and charity he rejoiceth, and continually prayeth for their increase, that they may see more clearly the greatness both of the inheritance in heaven, and also of God's might which helpeth them thereunto: 20. an example of which might they may behold in the supereminent exalting of Christ."
@@ -167,9 +182,10 @@
         {
           "verse": 9,
           "text": "<cr>[1]</cr> not of works, that no man glory.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Aug. de gr. & lib. arbit. c. 8. & seq."
+              "label": "1",
+              "text": "It is said, not of works, as thine, of thy-self being unto thee, but as those in which God hath made, formed, and created thee. Aug. de gr. & lib. arbit. c. 8. & seq."
             }
           ]
         },
@@ -206,8 +222,9 @@
         {
           "verse": 15,
           "text": "evacuating the law of commandments <cr>[1]</cr> in decrees: that he may create the two in himself into one new man, making peace,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἐν δόγμασι."
             }
           ]
@@ -227,13 +244,20 @@
             {
               "text": "Ro. 5, 2."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for S. Thomas the Apostle, Decemb. 21."
+            }
           ]
         },
         {
           "verse": 19,
           "text": "Now then you are not strangers and foreigners: but you are <cr>[1]</cr> citizens of the saints, and the domesticals of God,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c συμπολῖται."
             }
           ]
@@ -259,7 +283,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>For</sc> this cause, I^ Paul the prisoner of <sc>Jesus</sc> Christ, for you Gentiles:"
+          "text": "<sc>For</sc> this cause, I Paul the prisoner of <sc>Jesus</sc> Christ, for you Gentiles:"
         },
         {
           "verse": 2,
@@ -271,7 +295,7 @@
         },
         {
           "verse": 4,
-          "text": "according as you reading^ may understand my wisdom in the mystery of Christ,"
+          "text": "according as you reading may understand my wisdom in the mystery of Christ,"
         },
         {
           "verse": 5,
@@ -296,15 +320,7 @@
         },
         {
           "verse": 9,
-          "text": "& to illuminate all men what is the dispensation of the sacrament hidden <cr>[1][2]</cr> from worlds in God, who created all things:",
-          "cross_refs": [
-            {
-              "text": "for ever before"
-            },
-            {
-              "text": "c ἀπὸ τῶν αἰώνων"
-            }
-          ]
+          "text": "& to illuminate all men what is the dispensation of the sacrament hidden <cr>[1][2]</cr> from worlds in God, who created all things:"
         },
         {
           "verse": 10,
@@ -313,9 +329,10 @@
         {
           "verse": 11,
           "text": "according to the <cr>[1]</cr> prefinition of worlds, which he made in Christ <sc>Jesus</sc> our Lord.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "the eternal praefinition"
+              "label": "1",
+              "text": "c that is, the eternal praefinition"
             }
           ]
         },
@@ -325,7 +342,13 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> For the which cause I desire that you faint not in my tribulations for you, which is your glory."
+          "text": "<cr>[1]</cr> For the which cause I desire that you faint not in my tribulations for you, which is your glory.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The Epistle upon the 16. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -341,7 +364,17 @@
         },
         {
           "verse": 17,
-          "text": "Christ <cr>[1]</cr> to dwell by faith in your hearts, rooted and founded <cr>[2]</cr> in charity,"
+          "text": "Christ <cr>[1]</cr> to dwell by faith in your hearts, rooted and founded <cr>[2]</cr> in charity,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christ dwelleth in us by his gifts, and we be just by those his gifts remaining and resident in us, & not by Christ's proper justice only, as the Heretics affirm."
+            },
+            {
+              "label": "2",
+              "text": "c Not faith only must be in us, but charity which accomplisheth all virtues."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -372,7 +405,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I <cr>[1]</cr> therefore prisoner in our Lord, beseech you, that you walk worthy of the vocation in which you are called,"
+          "text": "I <cr>[1]</cr> therefore prisoner in our Lord, beseech you, that you walk worthy of the vocation in which you are called,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 17. Sunday after Pentecost. And in a Votive Mass against Schism."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -407,6 +446,12 @@
             {
               "text": "Ro. 12, 4. 1. Cor. 12, 4."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Ascension eve. And upon SS. Simon and Jude's day."
+            }
           ]
         },
         {
@@ -420,7 +465,13 @@
         },
         {
           "verse": 9,
-          "text": "(And that he ascended, what is it, but because he descended also first into the <cr>[1]</cr> inferior parts of the earth?"
+          "text": "(And that he ascended, what is it, but because he descended also first into the <cr>[1]</cr> inferior parts of the earth?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c He meaneth specially of his descending to Hell."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -490,16 +541,17 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1][2]</cr> Lay you away, according to the old conversation the old man, which is corrupted according to the desires of error.",
-          "cross_refs": [
-            {
-              "text": "Colos. 3, 8. Heb. 12, 1."
-            }
-          ]
+          "text": "<cr>[1][2]</cr> Lay you away, according to the old conversation the old man, which is corrupted according to the desires of error."
         },
         {
           "verse": 23,
-          "text": "And <cr>[1]</cr> be renewed in the spirit of your mind:"
+          "text": "And <cr>[1]</cr> be renewed in the spirit of your mind:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Apostle teacheth us not to apprehend Christ's justice by faith only, but to be renewed in ourselves truly, & to put on us the new man formed & created in justice and holiness of truth. By the which, free will also is proved to be in us, to work with God, or to consent unto him in our sanctification."
+            }
+          ]
         },
         {
           "verse": 24,
@@ -554,7 +606,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Be <cr>[1]</cr> ye therefore followers of God, as most dear children:"
+          "text": "Be <cr>[1]</cr> ye therefore followers of God, as most dear children:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 3. Sunday in Lent."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -580,10 +638,11 @@
         },
         {
           "verse": 5,
-          "text": "For understanding^ know you this, that no fornicator, or unclean, or covetous person (which is <cr>[1]</cr> the service of idols) hath inheritance in the Kingdom of Christ and of God.",
-          "cross_refs": [
+          "text": "For understanding know you this, that no fornicator, or unclean, or covetous person (which is <cr>[1]</cr> the service of idols) hath inheritance in the Kingdom of Christ and of God.",
+          "notes": [
             {
-              "text": "3. 5."
+              "label": "1",
+              "text": "See the heretical corruption of this place in the Annotation Col. 3. v. 5."
             }
           ]
         },
@@ -635,6 +694,12 @@
             {
               "text": "Col. 4, 5."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 20. Sunday after Pentecost."
+            }
           ]
         },
         {
@@ -673,6 +738,12 @@
             {
               "text": "Col. 3, 18. Tit. 2, 5. 1. Pet. 3, 1."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in a votive Mass for marriage."
+            }
           ]
         },
         {
@@ -682,9 +753,12 @@
           "cross_refs": [
             {
               "text": "Gen. 3, 16. 1. Cor. 11, 3."
-            },
+            }
+          ],
+          "notes": [
             {
-              "text": "Congregation"
+              "label": "2",
+              "text": "It is much to be noted, that in the first English Bibles there is not once the name of CHURCH in all the Bible, but instead thereof, Congregation . Which is so notorious a corruption, that themselves in the later Bibles correct it for shame, but yet suffer the other to be read and used still. See the Bible printed in the year 1562."
             }
           ]
         },
@@ -735,27 +809,7 @@
         },
         {
           "verse": 33,
-          "text": "Nevertheless you also every one, let each love his wife as himself: and let the wife fear her husband. 29. As Christ the Church.] <cr>[1]</cr> It is an unspeakable dignity of the <sc>Church</sc>, which the Apostle expresseth often else-where, but specially in this whole passage, to be that creature only for which Christ effectually suffered, to be washed and embrued with water and blood issuing out of his holy side, to be nourished with his own body (for so doth S. Irenaeus expound li. 5. in principio) to be his members, <cr>[2]</cr> to be so joined unto him as the body and members of the same flesh, bone, and substance, to the head; to be loved and cherished of him as wife of husband, yea to be his wife and most dear spouse, taken and formed (as S. Augustine often saith) out of his own side upon the Cross, as Eve our first father Adam's spouse was made of his rib. <i>In Psal. 126. & in Psal. 127. & tract. 9 in Ioan. & tract. 120.</i> In respect of which great dignity and excellency, the same holy father affirmeth the <sc>Church</sc> to be the principal creature <cr>[3]</cr> , and therefore named in the Creed next after the Holy Ghost. and he proveth against the Macedonians, the Holy Ghost to be God, because he is named before the Church in the confession of our faith. Of which incomparable excellency of the Church, so beloved of Christ, and so inseparately joined in marriage with him, if the Heretics of our time had any sense or consideration, they would neither think their contemptible company or congregation to be the glorious spouse of our Lord, <cr>[4]</cr> nor teach that the Church may err, that is to say, may be divorced from her spouse for Idolatry, superstition, Heresy, or other abominations: Whereupon one of these absurdities would ensue, that either Christ may sometimes be without a Church & spouse in earth (as he was all the while there were no Calvinists, if their Church be the spouse of Christ) or else <cr>[5]</cr> if the Catholic Church only is and hath been his wife, and the same have such errors as the Heretics falsely pretend, that his wife so dear and so praised here, is notwithstanding a very whore. Which horrible absurdities prove and convince to any man of common sense, both that the Catholic Church always is, and that it teacheth truth always, and to honour God truly and sincerely always: whatsoever the adulterous generation of Heretics think or blaspheme. 32. This is a great Sacrament.] Marriage a great Sacrament of Christ and his Church prefigured in the first parents. <i>Adam</i> (saith S. Augustine <i>tract. 15 in Io.</i> ) <i>who was a form or figure of him that was to come, yea rather God in him, gave us a great token of a Sacrament. For both he deserved sleeping to take a wife, and of his rib his wife was made unto him: because of Christ sleeping on the Cross the Church was to be made out of his side.</i> In another place he maketh Matrimony a Sacrament of Christ and his Church: in that, that as the married man must forsake father & mother and cleave unto his wife, so Christ as it were left his father, exinaniting himself by his incarnation, & left the Synagogue his mother, & joined himself to the Church. <i>Li. 12 c. 8. cont. Faustum</i> <na>◦</na> In diverse other places he maketh it also a Sacrament, specially in that it is an inseparable bond betwixt two, and that can never be dissolved but by death: signifying Christ's perpetual and indissoluble conjunction with the Church his one only spouse. <i>de Gen. ad lit. li. 9. c. 7. Cont Pelag. de pec. orig. li. 2. c. 34. De fid. et op. c. 7. De bono coniug. c. 7. & 18.</i> And in another place, <i>The good of Marriage</i> (saith he) <i>among the people of God is in the holiness of a Sacrament.</i> De bono coniugali c. 24. Who would have thought such mysteries and Sacraments to be in Marriage, that the joining of man & wife together should represent so great a mystery, if the Apostle himself, & after him this holy father and others, had not noted it? Or who can marvel that the holy Church taketh this to be a Sacrament, <cr>[1]</cr> and to give grace of sanctification to the parties married, that they may live together in mutual fidelity, bring up their children in faith and fear of God, and possess their vessel (as the Apostle speaketh <cr>[2]</cr> ) in sanctification and honour, and not in passion of lust and ignominy, as the Heathen do which know not God, and as our brutish new Masters seem to do that commend marriage above all things so far as it feedeth their concupiscences <cr>[3]</cr> , but for grace,",
-          "cross_refs": [
-            {
-              "text": "* Aug. li. 1 de Symb. ad Catech. c. 9."
-            },
-            {
-              "text": "1. Thes. 4."
-            },
-            {
-              "text": "μυστήριον"
-            },
-            {
-              "text": "Sacramentum."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "MATRIMONY a Sacrament."
-            }
-          ]
+          "text": "Nevertheless you also every one, let each love his wife as himself: and let the wife fear her husband."
         }
       ],
       "summary": "He continueth his exhortation to good life, 5. assuring them against all deceivers, that no committer of mortal sin shall be saved: considering that for such sins it is that the heathen shall be damned: 8. & that Christians must rather be the light of all others. 22. Then he cometh in particular and exhorteth husbands and wives to do their duty one towards the other, by the example of Christ and his obedient and beloved spouse the Church."
@@ -803,29 +857,45 @@
         },
         {
           "verse": 8,
-          "text": "Knowing that every one what good soever he shall do, that shall he <cr>[1]</cr> receive of our Lord, whether he be bond, or free."
+          "text": "Knowing that every one what good soever he shall do, that shall he <cr>[1]</cr> receive of our Lord, whether he be bond, or free.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c God leaveth no good work unrewarded."
+            }
+          ]
         },
         {
           "verse": 9,
           "text": "And you masters, do the same things to them, <cr>[1]</cr> remitting threatenings: knowing that both their Lord and yours, is in Heaven: and <cr>[2]</cr> acception of persons is not with him.",
           "cross_refs": [
             {
-              "text": "b ἀνιέντες"
-            },
-            {
               "text": "Deu. 10, 17."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "b ἀνιέντες"
             }
           ]
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> Hence-forth, brethren, be strengthened in our Lord, and in the might of his power."
+          "text": "<cr>[1]</cr> Hence-forth, brethren, be strengthened in our Lord, and in the might of his power.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 21. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 11,
           "text": "Put you on the <cr>[1]</cr> armour of God, that you may stand against the deceits of the devil.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c πανοπλίαν."
             }
           ]
@@ -845,7 +915,13 @@
         },
         {
           "verse": 14,
-          "text": "Stand therefore having your loins girded in truth, and <cr>[1]</cr> clothed with the breast-plate of justice,"
+          "text": "Stand therefore having your loins girded in truth, and <cr>[1]</cr> clothed with the breast-plate of justice,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "If man could not be truly just or have justice in himself, how could he be clothed with justice?"
+            }
+          ]
         },
         {
           "verse": 15,
@@ -887,9 +963,10 @@
         {
           "verse": 23,
           "text": "Peace to the brethren and <cr>[1]</cr> charity with faith from God the Father, and our Lord <sc>Jesus</sc> Christ.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "li. 50. ho. 7."
+              "label": "1",
+              "text": "S. Augustine noteth in sundry places upon this same text, that faith without charity serveth not to salvation. li. 50. ho. 7."
             }
           ]
         },

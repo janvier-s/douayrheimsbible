@@ -8,7 +8,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Tobias <cr>[1]</cr> of the tribe and city of Nephthali (which is in the upper parts of Galilee above Naasson, beyond the way that leadeth to the west, having on the right hand the city Sephet)"
+          "text": "Tobias <cr>[1]</cr> of the tribe and city of Nephthali (which is in the upper parts of Galilee above Naasson, beyond the way that leadeth to the west, having on the right hand the city Sephet)",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part. Tobias his holy manner of life."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -24,7 +30,13 @@
         },
         {
           "verse": 5,
-          "text": "Finally, when <na>(a)</na> all went to the golden calves, which Jeroboam the king of Israel had made, he alone fled the companies of all, <na>(a)</na> Not absolutely all, but very many: for some of the same tribe and kindred did also fear God. <i>c. 2. v. 2.</i>"
+          "text": "Finally, when <na>(a)</na> all went to the golden calves, which Jeroboam the king of Israel had made, he alone fled the companies of all,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Not absolutely all, but very many: for some of the same tribe and kindred did also fear God. c. 2. v. 2."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -218,7 +230,7 @@
         },
         {
           "verse": 21,
-          "text": "the voice whereof bleating^ when her husband had heard, he said: Take heed, lest perhaps it be stolen, restore ye it to his owners, because it is not lawful for us either to eat any thing of theft or to touch it."
+          "text": "the voice whereof bleating when her husband had heard, he said: Take heed, lest perhaps it be stolen, restore ye it to his owners, because it is not lawful for us either to eat any thing of theft or to touch it."
         },
         {
           "verse": 22,
@@ -256,7 +268,7 @@
         },
         {
           "verse": 6,
-          "text": "and now Lord according to thy will^ do with me, and command my spirit to be received in peace: for it is expedient for me to die, rather than to live."
+          "text": "and now Lord according to thy will do with me, and command my spirit to be received in peace: for it is expedient for me to die, rather than to live."
         },
         {
           "verse": 7,
@@ -304,7 +316,7 @@
         },
         {
           "verse": 15,
-          "text": "Idesire Lord that thou loose me from the bond of this reproach, or else take me away from the earth."
+          "text": "I desire Lord that thou loose me from the bond of this reproach, or else take me away from the earth."
         },
         {
           "verse": 16,
@@ -374,7 +386,15 @@
         },
         {
           "verse": 3,
-          "text": "When God shall take my soul, <cr>[1]</cr> bury my body: & thou shalt do <cr>[2]</cr> honour to thy mother all the days of her life:"
+          "text": "When God shall take my soul, <cr>[1]</cr> bury my body: & thou shalt do <cr>[2]</cr> honour to thy mother all the days of her life:",
+          "cross_refs": [
+            {
+              "text": "1."
+            },
+            {
+              "text": "2."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -386,11 +406,21 @@
         },
         {
           "verse": 6,
-          "text": "And all the days of thy life <cr>[1]</cr> have God in thy mind: and beware thou consent not to sin at any time, and pretermit the precepts of our Lord God."
+          "text": "And all the days of thy life <cr>[1]</cr> have God in thy mind: and beware thou consent not to sin at any time, and pretermit the precepts of our Lord God.",
+          "cross_refs": [
+            {
+              "text": "3."
+            }
+          ]
         },
         {
           "verse": 7,
           "text": "<cr>[1]</cr> Of thy substance <na>(b)</na> give alms, & turn not away thy face from any poor person: for so it shall come to pass that neither the face of our Lord shall be turned from thee.",
+          "cross_refs": [
+            {
+              "text": "4."
+            }
+          ],
           "notes": [
             {
               "label": "b",
@@ -420,19 +450,39 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> Take heed to thyself my son of all fornication, and beside thy wife never abide to know crime,"
+          "text": "<cr>[1]</cr> Take heed to thyself my son of all fornication, and beside thy wife never abide to know crime,",
+          "cross_refs": [
+            {
+              "text": "5."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Never permit pride to rule in thy word: for in it all perdition took his beginning."
+          "text": "<cr>[1]</cr> Never permit pride to rule in thy word: for in it all perdition took his beginning.",
+          "cross_refs": [
+            {
+              "text": "6."
+            }
+          ]
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> Whosoever hath wrought any thing for thee, pay him his hire immediately, and let not the hire of thy hired servant remain with thee at all."
+          "text": "<cr>[1]</cr> Whosoever hath wrought any thing for thee, pay him his hire immediately, and let not the hire of thy hired servant remain with thee at all.",
+          "cross_refs": [
+            {
+              "text": "7."
+            }
+          ]
         },
         {
           "verse": 16,
           "text": "<cr>[1]</cr> That <na>(c)</na> which thou hatest to be done to thee by another, see thou do it not to another at any time.",
+          "cross_refs": [
+            {
+              "text": "8."
+            }
+          ],
           "notes": [
             {
               "label": "c",
@@ -447,6 +497,14 @@
         {
           "verse": 18,
           "text": "<cr>[1]</cr> Set thy bread, and thy wine upon <na>(d)</na> the burial of a just man, <cr>[2]</cr> and do not eat and drink thereof with sinners.",
+          "cross_refs": [
+            {
+              "text": "9."
+            },
+            {
+              "text": "10."
+            }
+          ],
           "notes": [
             {
               "label": "d",
@@ -456,15 +514,30 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> Seek counsel always of a wise man."
+          "text": "<cr>[1]</cr> Seek counsel always of a wise man.",
+          "cross_refs": [
+            {
+              "text": "11."
+            }
+          ]
         },
         {
           "verse": 20,
-          "text": "<cr>[1]</cr> At all time bless God: and desire of him, that he direct thy ways, and that all thy counsels remain in him."
+          "text": "<cr>[1]</cr> At all time bless God: and desire of him, that he direct thy ways, and that all thy counsels remain in him.",
+          "cross_refs": [
+            {
+              "text": "12."
+            }
+          ]
         },
         {
           "verse": 21,
           "text": "<cr>[1]</cr> I tell thee also my son <na>(e)</na> that I gave ten talents of silver, whiles thou wast yet a child, to Gabelus, in Rages a city of the Medes, & I have a bill of his hand with me:",
+          "cross_refs": [
+            {
+              "text": "13."
+            }
+          ],
           "notes": [
             {
               "label": "e",
@@ -478,7 +551,12 @@
         },
         {
           "verse": 23,
-          "text": "<cr>[1]</cr> Fear not my son: we lead indeed a poor life, but we shall have many good things if we fear God, and depart from all sin, and do well."
+          "text": "<cr>[1]</cr> Fear not my son: we lead indeed a poor life, but we shall have many good things if we fear God, and depart from all sin, and do well.",
+          "cross_refs": [
+            {
+              "text": "14."
+            }
+          ]
         }
       ],
       "summary": "Tobias thinking he shall die, giveth his son godly admonitions: 7. especially exhorteth him to give alms diligently, 13. to fly all fornication, pride, and fraud. 21. And telleth him of money lent to a friend."
@@ -488,7 +566,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Then <cr>[1]</cr> Tobias answered his father, and said: I will do all things, father, whatsoever thou hast commanded me."
+          "text": "Then <cr>[1]</cr> Tobias answered his father, and said: I will do all things, father, whatsoever thou hast commanded me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part. The journey & affairs of young Tobias assisted by the Angel Raphael."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -592,7 +676,7 @@
         },
         {
           "verse": 24,
-          "text": "Iwould the money had never been, for the which thou hast sent him."
+          "text": "I would the money had never been, for the which thou hast sent him."
         },
         {
           "verse": 25,
@@ -658,16 +742,15 @@
         },
         {
           "verse": 8,
-          "text": "And the Angel answering, said to him: If thou put a little piece of his <cr>[1]</cr> heart upon coals, the <na>(d)</na> smoke thereof driveth out all kind of devils, either from man or from woman, so that it cometh no more unto them. with few loaves. <i>Ioan. 6.</i> So the Angel by God's appointment used this means to expel the devil.",
-          "cross_refs": [
-            {
-              "text": "* and liver. v. 19."
-            }
-          ],
+          "text": "And the Angel answering, said to him: If thou put a little piece of his <cr>[1]</cr> heart upon coals, the <na>(d)</na> smoke thereof driveth out all kind of devils, either from man or from woman, so that it cometh no more unto them.",
           "notes": [
             {
               "label": "d",
               "text": "Devils who exalted themselves as equal with God, are justly made subject to corporal creatures. God concurring with natural causes, whose good pleasure is sometimes to use instruments naturally unapt, as when Christ gave sight to the blind by putting clay on his eyes. Ioan. 9. sometimes more apt, as when he fed many"
+            },
+            {
+              "label": "1",
+              "text": "* and liver. v. 19."
             }
           ]
         },
@@ -697,7 +780,7 @@
         },
         {
           "verse": 15,
-          "text": "Iam afraid therefore, lest these things may happen to me also: & whereas I am the only child of my parents, I may bring down their old age with sorrow unto <na>(e)</na> hell.",
+          "text": "I am afraid therefore, lest these things may happen to me also: & whereas I am the only child of my parents, I may bring down their old age with sorrow unto <na>(e)</na> hell.",
           "notes": [
             {
               "label": "e",
@@ -720,8 +803,9 @@
         {
           "verse": 19,
           "text": "And the same night, the <cr>[1]</cr> liver of the fish set on the fire, the devil shall be driven away.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* and heart. v. 8."
             }
           ]
@@ -922,7 +1006,7 @@
         },
         {
           "verse": 19,
-          "text": "And thou hast taken pity upon two^ the <na>(b)</na> only children. Make them Lord bless thee more fully, & to offer up to thee a sacrifice of thy praise, and of their health, that all nations may know, that thou art God only in all the earth.",
+          "text": "And thou hast taken pity upon two the <na>(b)</na> only children. Make them Lord bless thee more fully, & to offer up to thee a sacrifice of thy praise, and of their health, that all nations may know, that thou art God only in all the earth.",
           "notes": [
             {
               "label": "b",
@@ -1170,7 +1254,7 @@
         },
         {
           "verse": 20,
-          "text": "And Achior and Nabath^ Tobias' sister's sons came, rejoicing at Tobias, and congratulating him for all good things that God had shewed towards him."
+          "text": "And Achior and Nabath Tobias' sister's sons came, rejoicing at Tobias, and congratulating him for all good things that God had shewed towards him."
         },
         {
           "verse": 21,
@@ -1193,6 +1277,29 @@
         {
           "verse": 3,
           "text": "He hath <cr>[1]</cr> led me & brought me again safe, he <cr>[2]</cr> received the money of Gabelus, he <cr>[3]</cr> caused me to have my wife, and the <cr>[4]</cr> evil spirit he chased from her, he <cr>[5]</cr> made joy unto her parents, myself he <cr>[6]</cr> delivered from being devoured of the fish, <cr>[7]</cr> thee also he hath made to see the light of heaven, and we are replenished with <na>(a)</na> all good things by him. What can we give him worthy for these things?",
+          "cross_refs": [
+            {
+              "text": "1."
+            },
+            {
+              "text": "2."
+            },
+            {
+              "text": "3."
+            },
+            {
+              "text": "4."
+            },
+            {
+              "text": "5."
+            },
+            {
+              "text": "6."
+            },
+            {
+              "text": "7."
+            }
+          ],
           "notes": [
             {
               "label": "a",
@@ -1236,7 +1343,7 @@
         },
         {
           "verse": 11,
-          "text": "Iopen therefore unto you the truth, and I will not hide from you the secret word."
+          "text": "I open therefore unto you the truth, and I will not hide from you the secret word."
         },
         {
           "verse": 12,
@@ -1297,7 +1404,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> Tobias the elder opening his mouth, blessed our Lord, and said: Thou art great Lord for ever, and thy Kingdom world without end:"
+          "text": "And <cr>[1]</cr> Tobias the elder opening his mouth, blessed our Lord, and said: Thou art great Lord for ever, and thy Kingdom world without end:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part. Old Tobias praiseth God, prophesieth better state of God's people."
+            }
+          ]
         },
         {
           "verse": 2,

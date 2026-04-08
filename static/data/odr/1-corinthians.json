@@ -8,7 +8,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Paul</sc> <cr>[1]</cr> called to be an Apostle of <sc>Jesus</sc> Christ, by the will of God, and Sosthenes a brother,"
+          "text": "<sc>Paul</sc> <cr>[1]</cr> called to be an Apostle of <sc>Jesus</sc> Christ, by the will of God, and Sosthenes a brother,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 10. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -20,7 +26,7 @@
         },
         {
           "verse": 4,
-          "text": "Igive thanks to my God always for you for the grace of God that is given you in Christ <sc>Jesus</sc>,"
+          "text": "I give thanks to my God always for you for the grace of God that is given you in Christ <sc>Jesus</sc>,"
         },
         {
           "verse": 5,
@@ -53,7 +59,13 @@
         },
         {
           "verse": 12,
-          "text": "And I mean this, for that every one of you saith, <cr>[1]</cr> I certes am Paul's, & I^ Apollo's, but I^ Cephas', and I^ Christ's."
+          "text": "And I mean this, for that every one of you saith, <cr>[1]</cr> I certes am Paul's, & I Apollo's, but I Cephas', and I Christ's.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The beginning of all Schisms is over much admiring & addicting men's selves to their own particular Masters."
+            }
+          ]
         },
         {
           "verse": 13,
@@ -61,7 +73,7 @@
         },
         {
           "verse": 14,
-          "text": "Igive God thanks, that I baptized none of you, but <cr>[1]</cr> Crispus and Caius:",
+          "text": "I give God thanks, that I baptized none of you, but <cr>[1]</cr> Crispus and Caius:",
           "cross_refs": [
             {
               "text": "Act. 18, 8."
@@ -111,14 +123,15 @@
         },
         {
           "verse": 24,
-          "text": "but to the called^ Jews & Greeks, Christ the power of God and the wisdom of God."
+          "text": "but to the called Jews & Greeks, Christ the power of God and the wisdom of God."
         },
         {
           "verse": 25,
           "text": "<cr>[1]</cr> For that which is the foolish of God, is wiser than men; and that which is the infirm of God, is stronger than men.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Febr. 5."
+              "label": "1",
+              "text": "The Epistle for S. Agatha, Febr. 5."
             }
           ]
         },
@@ -253,19 +266,16 @@
       "chapter": 3,
       "verses": [
         {
-          "verse": 0,
-          "text": "1 Corinthians 3"
-        },
-        {
           "verse": 1,
           "text": "<sc>And</sc> I, brethren, could not speak to you as to spiritual, but as to carnal. As it were to little ones in Christ,"
         },
         {
           "verse": 2,
-          "text": "Igave you <cr>[1]</cr> milk to drink, not meat: for you could not as yet. But neither can you now verily, for yet you are carnal.",
-          "cross_refs": [
+          "text": "I gave you <cr>[1]</cr> milk to drink, not meat: for you could not as yet. But neither can you now verily, for yet you are carnal.",
+          "notes": [
             {
-              "text": "Aug. li. 15. c. 3. cont. Faust."
+              "label": "1",
+              "text": "The Church only hath truth both in her milk and in her bread: that is, whether she instruct the perfect, or the imperfect who are called carnal. Aug. li. 15. c. 3. cont. Faust."
             }
           ]
         },
@@ -275,9 +285,10 @@
         },
         {
           "verse": 4,
-          "text": "For when one saith, I certes am Paul's, & another, I^ Apollo's; are you not <cr>[1]</cr> <alt>men</alt>? What is Apollo then? and what is Paul?",
-          "cross_refs": [
+          "text": "For when one saith, I certes am Paul's, & another, I Apollo's; are you not <cr>[1]</cr> <alt>men</alt>? What is Apollo then? and what is Paul?",
+          "notes": [
             {
+              "label": "1",
               "text": "carnal"
             }
           ]
@@ -288,7 +299,7 @@
         },
         {
           "verse": 6,
-          "text": "Iplanted, Apollo watered; but God gave the increase."
+          "text": "I planted, Apollo watered; but God gave the increase."
         },
         {
           "verse": 7,
@@ -301,15 +312,7 @@
         },
         {
           "verse": 9,
-          "text": "For we are God's <cr>[1][2]</cr> coadjutors; you are God's husbandry, you are God's building.",
-          "cross_refs": [
-            {
-              "text": "Administri Coadjutores"
-            },
-            {
-              "text": "c συνεργοὶ"
-            }
-          ]
+          "text": "For we are God's <cr>[1][2]</cr> coadjutors; you are God's husbandry, you are God's building."
         },
         {
           "verse": 10,
@@ -317,7 +320,7 @@
         },
         {
           "verse": 11,
-          "text": "For other foundation no man can lay, beside that which is laid; which is <sc>Christ</sc> <sc>Jesus</sc>."
+          "text": "For other foundation no man can lay, beside that which is laid; which is <sc>Christ Jesus</sc>."
         },
         {
           "verse": 12,
@@ -378,48 +381,7 @@
         },
         {
           "verse": 23,
-          "text": "and you are Christ's, and Christ is God's. 1 Corinthians 3 doth not so well express the nature of the <cr>[2]</cr> Latin word, or the <cr>[3]</cr> Greek, which are rather the very stipend that the hired workman or journeyman covenanteth to have of him whose work he doth, and is a thing equally and justly answering to the time and weight of his travails and works (in which sense the Scripture saith, <cr>[4]</cr> <i>Dignus est operarius mercede sua.</i> the workman is worthy of his hire) rather than a free gift: though, because faithful men must acknowledge that their merits be the gifts and graces of God, they rather use the word reward, than hire, stipend, or repayment: though indeed it be all one, as you may see by diverse places of holy writ, as, <cr>[5]</cr> <i>My merces</i> (reward) <i>is with me to render to every one according to his works.</i> And <i>Our Lord will render unto me according to my justice. Ps. 17.</i> And the very word itself <i>merit</i> (equivalent to the Greek <cr>[6]</cr> ) is used thus, <i>Mercy shall make a place to every one according to the merit of works.</i> Eccle. 16, 15. And <i>If you do your justice before men, you shall not have reward in heaven. Mat. 6. 1.</i> Where you see that the reward of heaven is recompense of justice. And the evasion of the Heretics is frivolous and evidently false, as the former and like words do convince, for they say heaven is our <i>Merces</i> or reward, not because it is due to our works, but to the promise of God: where the words be plain, <i>According to every man's works or labours:</i> upon which works, and for which works conditionally, the promise of heaven was made. <i>16, 27. Ro. 2, 6.</i>",
-          "cross_refs": [
-            {
-              "text": "κατὰ τὰ ἔργα."
-            },
-            {
-              "text": "day of our Lord (1. Cor. 5, 5. 2. Cor. 1, 13. Philip. 1, 10. 6. 1. Thes. 5, 2. 2. Thes. 2, 2.)"
-            },
-            {
-              "text": "dies Domini (Domini) A day shall come which shall open &c. Dies"
-            },
-            {
-              "text": "2 Tim. 1, 12. 28."
-            },
-            {
-              "text": "the day of our Lord."
-            },
-            {
-              "text": "Calv. in hunc locum."
-            },
-            {
-              "text": "ἡ ἡμέρα"
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "The foundation is Christ, and faith in him working by charity. The upper building may be either pure and perfect matter of gold, silver, and precious stone, which (according to the most authentical and probable exposition) be good works of charity and all Christian justice done by God's grace: or else, wood, hay, stubble, which signify the manifold acts of man's infirmity and his venial sins. Which more or less mixed and meddled with the better matter aforesaid, require more or less punishment or purgation at the day of our death. At which day, if by penance or other means in the Church, the said venial sins be before hand cleansed, there shall need no purging at all, but they shall straight receive the reward due to them."
-            },
-            {
-              "label": "◦",
-              "text": "Building of gold, or stubble. 13. Shall be manifest.]"
-            },
-            {
-              "label": "◦",
-              "text": "Whether our life and works be pure and need no cleansing, now in this world is hard to judge: but the day of our Lord, which is at our death, will make it plain in what terms every man's life is towards God. For then Purgatory fire shall reveal and prove it. For, whosoever hath any impure matter of venial sins or such other debts, to God's justice payable and purgable, must into that fire, and after due payment and cleansing, be saved through the same. Where the works of the perfect men and such as died with all debts payed, cleansed, or forgiven, are quitted from the fire, and never incur damage, pain, or loss thereby. The places of Fathers expounding this for Purgatory, be very many most evident, which are cited in the last Annotation following."
-            },
-            {
-              "label": "◦",
-              "text": "Our works shall be manifested by fire. 13. The day of our Lord shall declare.] That this purgation rather signifieth the place of God's justice after our death, than any affliction in this life, the Apostle's precise specifying of fire declareth, and of revealing and notifying the difference of men's works by the same: which is not done evidently ever in this life: and namely the word,"
-            }
-          ]
+          "text": "and you are Christ's, and Christ is God's."
         }
       ],
       "summary": "If they will not be carnal still, they must boast in God only, and not in their Preachers, which are but his Ministers, 10. and need to look well how they preach: 12. because not all preaching, though it be Catholic, is meritorious: but rather it buildeth matter to be purged by fire, when it is vain and unfruitful (as also any other like works of other Catholics.) Mary if it be heretical, destroying the Temple of God, then it worketh damnation. 18. The remedy is, to humble themselves and refer all to God."
@@ -429,7 +391,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "SO <cr>[1]</cr> let a man esteem us as the ministers of Christ, and the dispensers of the mysteries of God."
+          "text": "SO <cr>[1]</cr> let a man esteem us as the ministers of Christ, and the dispensers of the mysteries of God.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 4. Sunday of Advent."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -450,7 +418,13 @@
         },
         {
           "verse": 6,
-          "text": "But these things, brethren, <cr>[1]</cr> I have transfigured into myself and Apollo, for you; that in us you may learn, one not to be puffed up against another, above that is written."
+          "text": "But these things, brethren, <cr>[1]</cr> I have transfigured into myself and Apollo, for you; that in us you may learn, one not to be puffed up against another, above that is written.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Lo when he named himself, and Apollo, & Cephas: he meant other seditious and factious preachers whose names he spared."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -462,10 +436,15 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> For I think that God hath shewed us Apostles the last, as it were deputed to death: because <cr>[2]</cr> we are made a 1 Corinthians 4 spectacle to the world, and to Angels and men.",
-          "cross_refs": [
+          "text": "<cr>[1]</cr> For I think that God hath shewed us Apostles the last, as it were deputed to death: because <cr>[2]</cr> we are made a spectacle to the world, and to Angels and men.",
+          "notes": [
             {
-              "text": "Iul. 25."
+              "label": "1",
+              "text": "a The Epistle upon S. James' day, Iul. 25."
+            },
+            {
+              "label": "2",
+              "text": "b The Epistle upon SS. Simon and Jude's eve, Octob. 27. And for some Confessors, not Bishops."
             }
           ]
         },
@@ -491,11 +470,17 @@
         },
         {
           "verse": 15,
-          "text": "For <cr>[1]</cr> if you have ten thousand Paedagogues in Christ; yet not many fathers. For in Christ <sc>Jesus</sc> by the Gospel I begat you."
+          "text": "For <cr>[1]</cr> if you have ten thousand Paedagogues in Christ; yet not many fathers. For in Christ <sc>Jesus</sc> by the Gospel I begat you.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c So may S. Augustine our Apostle say to us English men."
+            }
+          ]
         },
         {
           "verse": 16,
-          "text": "Ibeseech you therefore be followers of me."
+          "text": "I beseech you therefore be followers of me."
         },
         {
           "verse": 17,
@@ -535,11 +520,17 @@
         },
         {
           "verse": 2,
-          "text": "And you are puffed up; and <cr>[1]</cr> have not mourned rather, that he might be taken away from among you, that hath done this deed."
+          "text": "And you are puffed up; and <cr>[1]</cr> have not mourned rather, that he might be taken away from among you, that hath done this deed.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christian men should be sorrowful to see grievous offences born withal, and ought zealously to seek the offender's punishment by excommunication."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "Iindeed absent in body, but present in spirit, have already judged, as present, him that hath so done,",
+          "text": "I indeed absent in body, but present in spirit, have already judged, as present, him that hath so done,",
           "has_annotation": true
         },
         {
@@ -554,11 +545,17 @@
         },
         {
           "verse": 6,
-          "text": "Your glorying is not good. Know you not that a little leaven corrupteth 1 Corinthians 5 the whole paste?"
+          "text": "Your glorying is not good. Know you not that a little leaven corrupteth the whole paste?"
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> Purge the old leaven, that you may be a new paste, as you are azymes. For our Pasch, Christ, is immolated."
+          "text": "<cr>[1]</cr> Purge the old leaven, that you may be a new paste, as you are azymes. For our Pasch, Christ, is immolated.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Easter day."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -567,19 +564,26 @@
         },
         {
           "verse": 9,
-          "text": "Iwrote to you in <cr>[1]</cr> an epistle, not to keep company with fornicators."
+          "text": "I wrote to you in <cr>[1]</cr> an epistle, not to keep company with fornicators.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Either this Epistle in the words before, or some other."
+            }
+          ]
         },
         {
           "verse": 10,
-          "text": "Imean not the fornicators of this world, or the covetous, or the extortioners, or servers of idols: otherwise you should have gone out of this world."
+          "text": "I mean not the fornicators of this world, or the covetous, or the extortioners, or servers of idols: otherwise you should have gone out of this world."
         },
         {
           "verse": 11,
           "text": "But now I wrote to you, not to keep company, if he that is named a brother, be a fornicator, or a covetous person, or <cr>[1]</cr> a server of idols, or a railer, or a drunkard, or an extortioner: with such an one not so much as to take meat.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Idolaters worshiper of images Idolater"
+              "label": "1",
+              "text": "c A notorious willful corruption in the Bible 1562: translating in the verse before, Idolaters ; and here, worshiper of images : the Apostle's word being one, εἰδωλολάτρης, Idolater ."
             }
           ]
         },
@@ -610,7 +614,13 @@
         },
         {
           "verse": 2,
-          "text": "Or know you not that <cr>[1]</cr> the saints shall judge of the world? And if the world shall be judged by you: are you unworthy to judge of the least things?"
+          "text": "Or know you not that <cr>[1]</cr> the saints shall judge of the world? And if the world shall be judged by you: are you unworthy to judge of the least things?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The faithful judge and give sentence with God at the later day, specially the Apostles and the perfect Christians that have forsaken all for Christ's sake."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -640,7 +650,7 @@
         },
         {
           "verse": 9,
-          "text": "Know you not that the unjust shall not possess the Kingdom of God? Do not err: Neither fornicators, nor <cr>[1][2]</cr> servers of idols, nor adulterers, nor the effeminate, nor the liers with mankind, 1 Corinthians 6 <i>worshippers for images.</i> <cr>[2]</cr> <i>c εἰδωλολάτραι</i>"
+          "text": "Know you not that the unjust shall not possess the Kingdom of God? Do not err: Neither fornicators, nor <cr>[1][2]</cr> servers of idols, nor adulterers, nor the effeminate, nor the liers with mankind,"
         },
         {
           "verse": 10,
@@ -681,7 +691,13 @@
         },
         {
           "verse": 18,
-          "text": "Fly fornication. Every sin whatsoever a man doeth is without the body: but he that doeth fornicate, sinneth <cr>[1]</cr> against his own body."
+          "text": "Fly fornication. Every sin whatsoever a man doeth is without the body: but he that doeth fornicate, sinneth <cr>[1]</cr> against his own body.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Fornication is not only enemy to the soul, but wasteth, weakeneth, corrupteth and defileth the body, more properly and directly than any other sins do."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -703,15 +719,16 @@
         },
         {
           "verse": 2,
-          "text": "But because of fornication let 1 Corinthians 7 every man have his own wife, & let every woman have her own husband.",
+          "text": "But because of fornication let every man have his own wife, & let every woman have her own husband.",
           "has_annotation": true
         },
         {
           "verse": 3,
           "text": "Let the husband <cr>[1]</cr> render his debt to the wife: and the wife also in like manner to her husband.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c debitum reddat."
             }
           ]
@@ -724,11 +741,13 @@
           "verse": 5,
           "text": "Defraud not one another, except perhaps by consent for a time, <cr>[1]</cr> that you may give yourself <cr>[2]</cr> <alt>to prayer</alt>: and return again together, lest Satan tempt you for your incontinency.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Hiero. li. 1. c. 19. adver. Iovin."
+              "label": "1",
+              "text": "If the layman cannot pray, unless he abstain from his wife: the Priest that always must offer sacrifices, and always pray, must therefore always be free from matrimony. Hiero. li. 1. c. 19. adver. Iovin."
             },
             {
+              "label": "2",
               "text": "to fasting & prayer:"
             }
           ]
@@ -745,14 +764,21 @@
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> But I say to the unmarried and to widows: It is good for them if they so abide even as I also."
+          "text": "<cr>[1]</cr> But I say to the unmarried and to widows: It is good for them if they so abide even as I also.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Before he treated of the continency of such as were married, now he giveth lessons for the unmarried also."
+            }
+          ]
         },
         {
           "verse": 9,
           "text": "But if they do not contain themselves, let them marry. For it is better to marry than <cr>[1]</cr> to be burnt.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c uri. πυροῦσθαι."
             }
           ]
@@ -817,21 +843,29 @@
         {
           "verse": 22,
           "text": "For he that in our Lord is called, being a bondman, is the <cr>[1]</cr> franchised of our Lord. Likewise he that is called, being free, is the bondman of Christ.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c libertus"
             }
           ]
         },
         {
           "verse": 23,
-          "text": "You were bought with price, be not made the <cr>[1]</cr> bondmen of men."
+          "text": "You were bought with price, be not made the <cr>[1]</cr> bondmen of men.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "You must not serve men so that you obey & please them more than God."
+            }
+          ]
         },
         {
           "verse": 24,
           "text": "Every <cr>[1]</cr> <alt>brother</alt> wherein he was called, in that let him abide before God.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "one, brethren,"
             }
           ]
@@ -839,7 +873,13 @@
         {
           "verse": 25,
           "text": "<cr>[1]</cr> And as concerning virgins, a commandment of our Lord I have not: but counsel I give, as having obtained mercy of our Lord to be faithful.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for holy Virgins not Martyrs."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -852,7 +892,13 @@
         {
           "verse": 28,
           "text": "But if thou take a wife, <cr>[1]</cr> thou hast not sinned. And if a virgin marry, she hath not sinned. Nevertheless tribulation of the flesh shall such have. But I spare you.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "Virginity counseled as the better: Marriage not forbidden, because it is no sin."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -861,7 +907,7 @@
         },
         {
           "verse": 30,
-          "text": "and they that weep, as though they wept not; and they that rejoice, as though they rejoiced not; and they that buy, as though they 1 Corinthians 7 possessed not;"
+          "text": "and they that weep, as though they wept not; and they that rejoice, as though they rejoiced not; and they that buy, as though they possessed not;"
         },
         {
           "verse": 31,
@@ -907,51 +953,11 @@
         },
         {
           "verse": 40,
-          "text": "But <cr>[1]</cr> more blessed shall she be if she so remain, according to my counsel. And I think that I also have the Spirit of God. 1 Corinthians 7 continency, nor giving good example. 6. By indulgence, not commandment.] <na>◦</na> Lest some might misconstrue his former words, as though he had precisely commanded married persons not to abstain perpetually from carnal copulation, or not to give their consent one to another of continency but for a time only: he declareth plainly that he gave no rule or precept absolutely therein, but that he spake all the foresaid, condescending to their infirmities only, insinuating that continency from carnal copulation is much better, and that himself kept it continually. <i>Aug. de bon. coniug. c. 10. Enchirid. c. 78.</i>",
-          "cross_refs": [
-            {
-              "text": "August. de grat. & lib. arbitrio c. 4. De continent. c. 1."
-            },
-            {
-              "text": "* See S. Augustine li. 2. c. 19. 20. de Adult. Coniug. to. 6."
-            }
-          ],
+          "text": "But <cr>[1]</cr> more blessed shall she be if she so remain, according to my counsel. And I think that I also have the Spirit of God.",
           "notes": [
             {
-              "label": "◦",
-              "text": "Perpetual continency, even in married folks, better than carnal copulation. 7. A proper gift.] To such as may lawfully marry, or be already married, God giveth not always that more high and special gift or grace of continency, though every one of them all that duly ask and labour for it, might have it: but such are not bound to endeavour to seek for it always, and therefore cannot be commanded to abstain further than they like."
-            },
-            {
-              "label": "◦",
-              "text": "He meaneth of such as be free: for if they marry after they have made vow or promise to God of chastity, they are worthily damned, such being bound to contain, and so may contain if they list. August. de bono viduit. c. 8. 9. & de adult. conjug. li. 1. c. 15. & de fide ad Petrum c. 3. in fine. Ambros. ad virg. lapsam c. 5."
-            },
-            {
-              "label": "◦",
-              "text": "The Apostle permitteth marriage to them that be free, not to vowed persons. 9. Better to marry.] It is better to marry for the said persons that be free, than to be overthrown and fall into fornication. For, to burn , or, to be burnt , is not to be tempted only (as the Protestants think that pick quarrels easily to marry), but it signifieth"
-            },
-            {
-              "label": "◦",
-              "text": "to yield to concupiscence either in mind or external work. We say also, for such as be free. For concerning others lawfully made Priests, and such as otherwise have made vow of chastity, they cannot marry at all, and therefore there is no comparison in them betwixt marriage and fornication or burning. For their marriage is but pretensed, and is the worst sort of incontinency and fornication or burning."
-            },
-            {
-              "label": "◦",
-              "text": "Theodoret in hunc locum. 11. To remain unmarried.]"
-            },
-            {
-              "label": "◦",
-              "text": "Neither party may dismiss the other and marry another for any cause. For though they be separated for fornication, yet neither may marry again. August. de adult. conjug. li. 1. c. 8. 9. and li. 2. c. 5. 19. See Annotat. Matt. 19. and S. Augustine in his whole books. de adulter. coniugijs to. 6."
-            },
-            {
-              "label": "◦",
-              "text": "After divorce not to marry. 12. I say, not our Lord.]"
-            },
-            {
-              "label": "◦",
-              "text": "By this we learn, that there were many matters over and above the things that Christ taught or prescribed, left to the Apostles' order and interpretation: wherein they might, as the case required, either command or counsel, and we bound to obey accordingly."
-            },
-            {
-              "label": "◦",
-              "text": "The Apostle's precepts. 14. Sanctified.]"
+              "label": "1",
+              "text": "c The state of widowhood more blessed, than the state of matrimony."
             }
           ]
         }
@@ -971,9 +977,10 @@
           "verse": 1,
           "text": "<sc>And</sc> concerning those things that are sacrificed to idols, we know that we all have knowledge. <cr>[1]</cr> Knowledge puffeth up; but charity edifieth.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Aug. li. 9. civ. Dei. c. 20."
+              "label": "1",
+              "text": "Knowledge without charity puffeth up in pride, and profiteth nothing at all: when it is joined with charity, then it edifieth. Aug. li. 9. civ. Dei. c. 20."
             }
           ]
         },
@@ -987,15 +994,15 @@
         },
         {
           "verse": 4,
-          "text": "But as for the meats that are immolated to idols, we know that an idol is nothing in the world, and that there is 1. We all have knowledge.] <cr>[1]</cr> The spiritual and perfectly instructed Christians knew no meats now to be unclean, neither for signification, as in the Law of Moyses: nor always by nature and creation, as the Manichees thought: nor by any other pollution, as in that they were offered to Idols: and therefore they did eat boldly of such meats as were sacrificed, contemning and condemning their Idols as mere nothing, and the worship of them as the honour of things imaginary. <cr>[2]</cr> Which their fact, for their want of discretion and charity, and for the use of that their liberty to the offence and scandal of the weak, the Apostle doth here reprehend.",
+          "text": "But as for the meats that are immolated to idols, we know that an idol is nothing in the world, and that there is <cr>[1]</cr> <cr>[2]</cr>",
           "notes": [
             {
-              "label": "◦",
-              "text": "Therefore the case standing thus, and the Apostle's discourse of eating or not eating meats being so as is declared (a thing so evident that it admitteth no other interpretation) if the Protestants apply any of this admonition against our fasts in the Cath. Church, they be too ridiculous."
+              "label": "1",
+              "text": "No meats unclean."
             },
             {
-              "label": "◦",
-              "text": "The Heretics ridiculously apply S. Paul's words against no God, but one."
+              "label": "2",
+              "text": "Giving of scandal reprehended. 7. Some with a conscience.] The perfecter men's fault was, that they gave offence by their eating, to the weaker Christians. Who seeing them whom they reputed wise and learned, to eat the meats offered to Idols, conceived that there was some virtue and sanctification in those meats, from the Idol to which they were offered: and thought that such things were or might be eaten with the same conscience and devotion as before their conversion."
             }
           ]
         },
@@ -1005,7 +1012,7 @@
         },
         {
           "verse": 6,
-          "text": "yet to us there is one God, the Father, of whom all things, and we unto him: and one Lord, <sc>Jesus</sc> <sc>Christ</sc>, by whom all things, and we by him."
+          "text": "yet to us there is one God, the Father, of whom all things, and we unto him: and one Lord, <sc>Jesus Christ</sc>, by whom all things, and we by him."
         },
         {
           "verse": 7,
@@ -1080,9 +1087,10 @@
           "verse": 5,
           "text": "Have we not power to lead about a woman a sister, as also the rest of the Apostles, and our Lord's brethren, and <cr>[1]</cr> Cephas?",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "S. Ambro. S. Chrys. Oecum."
+              "label": "1",
+              "text": "He nameth Cephas (that is Peter) to prove his purpose by the example of the chief and Prince of the Apostles. S. Ambro. S. Chrys. Oecum. upon this place."
             }
           ]
         },
@@ -1106,6 +1114,12 @@
             {
               "text": "Deu. 25, 4."
             }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "In that country they did tread out their corn with oxen, as we do thresh it out."
+            }
           ]
         },
         {
@@ -1126,12 +1140,6 @@
           "cross_refs": [
             {
               "text": "Deu. 18, 1."
-            },
-            {
-              "text": "(1562) altar, temple"
-            },
-            {
-              "text": "c τῷ θυσιαςηρίῳ,"
             }
           ]
         },
@@ -1166,14 +1174,15 @@
         },
         {
           "verse": 21,
-          "text": "To them that are under the Law, as though I were under the Law 1 Corinthians 9 (whereas myself was not under the Law) that I might gain them that were under the Law. To them that were without the Law, as though I were without the Law (whereas I was not without the law of God, but was in the law of Christ) that I might gain them that were without the Law."
+          "text": "To them that are under the Law, as though I were under the Law (whereas myself was not under the Law) that I might gain them that were under the Law. To them that were without the Law, as though I were without the Law (whereas I was not without the law of God, but was in the law of Christ) that I might gain them that were without the Law."
         },
         {
           "verse": 22,
           "text": "To the weak I became weak, that I might gain the weak. To all men <cr>[1]</cr> I became all things, that I might save all.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Aug. ep. 9."
+              "label": "1",
+              "text": "Not by fiction or simulation, but by compassion of the infirmities of all sorts. Aug. ep. 9."
             }
           ]
         },
@@ -1185,7 +1194,13 @@
         {
           "verse": 24,
           "text": "<cr>[1]</cr> Know you not that they that run in the race, all run indeed, but one receiveth the prize? So run that you may obtain.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the Sunday of Septuagesima."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -1260,6 +1275,12 @@
             {
               "text": "Nu. 11, 4."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 9. Sunday after Pentecost."
+            }
           ]
         },
         {
@@ -1291,7 +1312,7 @@
         },
         {
           "verse": 10,
-          "text": "Neither do you murmur, as <cr>[1]</cr> certain of them murmured, and perished by the destroyer. 1 Corinthians 10",
+          "text": "Neither do you murmur, as <cr>[1]</cr> certain of them murmured, and perished by the destroyer.",
           "cross_refs": [
             {
               "text": "Nu. 11, 23. 14, 37."
@@ -1304,16 +1325,24 @@
         },
         {
           "verse": 12,
-          "text": "Therefore he that thinketh himself to stand, let him take heed <cr>[1]</cr> lest he fall."
+          "text": "Therefore he that thinketh himself to stand, let him take heed <cr>[1]</cr> lest he fall.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "It is profitable to all, or in a manner to all, for to keep them in humility, not to know what they shall be, saith S. Augustine. Which maketh against the vain security of the protestants."
+            }
+          ]
         },
         {
           "verse": 13,
           "text": "<cr>[1]</cr> <alt>Let not tentation apprehend</alt> you, but human. And God is faithful, who will not suffer you to be tempted above that which you are able: but will make also with tentation <cr>[2]</cr> issue, that you may be able to sustain.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Tentation hath not apprehended"
             },
             {
+              "label": "2",
               "text": "c ἔκβασιν"
             }
           ]
@@ -1408,26 +1437,7 @@
         },
         {
           "verse": 33,
-          "text": "as I also in all things do please all men, not seeking that which is profitable to myself, but which is to many; that they may be saved. 1 Corinthians 10 which, and the sacrifice of Idols also, they might not be in any case partakers. Using this term, <i>ut prudentibus loquor,</i> in the same sense (as it is thought) as the Fathers of the primitive Church did give a watch-word of keeping secret from the Infidels and unbaptized, the mystery of this divine Sacrifice, by these words, <i>Norunt fideles, norunt qui initiati sunt. August. in Ps. 39. & 33. Conc. 1. 2. & Ps. 109. Ho. 42. c. 4. in lib. 50. hom. Orig. in Levit. ho. 9. Chrys. ho. 27. in Gen. in fine ho. 51. ad po. Antioch. ho. 5. in 1. Tim.</i> S. Paul saith, I speak to you boldly of this mystery as to the wiser and better instructed in the same. 16. Which we bless.] <cr>[1]</cr> That is to say, <cr>[2]</cr> the Chalice of Consecration which we Apostles and Priests by Christ's commission do consecrate, by which speech as well the Calvinists (that use no consecration of the cup at all, blasphemously calling it magical murmuration, and perversely referring the benediction, to thanks-giving to God) as also the Lutherans be refuted, who affirm Christ's body and blood to be made present by receiving & in the receiving only. For the Apostle expressly referreth the benediction to the chalice, and not to God, making the holy blood and the communicating thereof the effect of the benediction. 16. The participation of the body.] <na>◦</na> The holy Sacrament and Sacrifice of Christ's body and blood being received of us, joineth us in soul & body and engrafteth us into Christ himself, making us partakers, and as a piece of his body & blood, <i>For not by love or spirit only</i> (saith S. Chrysostom) <i>but in very deed we are united in his flesh, made one body with him, members of his flesh and bones.</i> Chrys. ho. 45. in Io. sub finem. And S. Cyril, <i>Such is the force of mystical benediction that it maketh Christ corporally by communicating of his flesh to dwell in us.</i> Cyril. li. 10. in Io. c. 13. 17. One bread, one body.] <na>◦</na> As we be first made one with Christ by eating his body and drinking his blood, so secondly are we conjoined by this one bread which is his body, & cup which is his blood, in the perfect union and fellowship of all Catholic men, in one Church which is his body Mystical. Which name of Body mystical is specially attributed and appropriated to this one commonwealth and Society of faithful men, by reason that all the true persons and true members of the same, be marvelously knit together by Christ's own one body, and by the self-same blood in this divine Sacrament. See S. <i>August. li. 21. c. 25. de civ. Dei. Hilar. li. 8. de Trin. circa med.</i> 18. They that eat the hosts.] It is plain also by the example of the Jews in their Sacrifices, that he that eateth any of the host immolated, is partaker of the Sacrifice, and joined by office and obligation to God, of whose sacrifice he eateth. 20. I will not have you.] <na>◦</na> I conclude then (saith the Apostle) thus: that as the Christian which eateth and drinketh of the sacrifice or Sacrament of the altar, by his eating is participant of Christ's body, and is joined in fellowship to all Christian people that eat and drink of the same, being the host of the new Law: and as all that did eat of the hosts of the Sacrifices of Moyses' Law, were belonging and associated to that state and to God to whom the Sacrifice was done: even so whosoever eateth of the meats offered to Idols, he sheweth and professeth himself to be of the Communion and Society of the same Idols. 21. You cannot drink.] <cr>[1]</cr> Upon the premises he warneth them plainly, that they must either forsake the sacrifice and fellowship of the Idols and Idolaters, or else refuse the Sacrifice of Christ's body and blood in the Church. In all which discourse we may observe that our bread and chalice, our table and altar, the participation of our host and oblation, be compared or resembled point by point, in all effects, conditions, and proprieties, to the altars, hosts, sacrifices and immolations of the Jews and Gentiles. Which the Apostle would not, nor could not have done in this Sacrament of Sacrament.",
-          "cross_refs": [
-            {
-              "text": "Calix cui benedicimus. ὃ εὐλογοῦμεν."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "Our uniting to Christ by the B. Sacrament."
-            },
-            {
-              "label": "◦",
-              "text": "Our union among ourselves by the B. Sacrament."
-            },
-            {
-              "label": "◦",
-              "text": "Participation in Sacrament or sacrifice, sheweth of what society we are."
-            }
-          ]
+          "text": "as I also in all things do please all men, not seeking that which is profitable to myself, but which is to many; that they may be saved."
         }
       ],
       "summary": "See the argument of the 9. Chapter, which comprehendeth the contents of this also."
@@ -1443,9 +1453,10 @@
           "verse": 2,
           "text": "And I praise you brethren, that in all things you be mindful of me: and as I have delivered unto you, you keep my <cr>[1]</cr> precepts.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Traditions, παραδόσεις."
+              "label": "1",
+              "text": "c In the Greek, Traditions, παραδόσεις."
             }
           ]
         },
@@ -1497,7 +1508,7 @@
         },
         {
           "verse": 13,
-          "text": "Yourselves judge: doth it become a woman not 1 Corinthians 11 covered to pray unto God?"
+          "text": "Yourselves judge: doth it become a woman not covered to pray unto God?"
         },
         {
           "verse": 14,
@@ -1511,8 +1522,9 @@
           "verse": 16,
           "text": "But if any man seem to be contentious, we have no such custom, nor the <cr>[1]</cr> <alt><sc>Church</sc></alt> of God.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "churches"
             }
           ]
@@ -1523,7 +1535,13 @@
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> First indeed when you come together into the Church, I hear that there are schisms among you, and in part I believe it."
+          "text": "<cr>[1]</cr> First indeed when you come together into the Church, I hear that there are schisms among you, and in part I believe it.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Maundy Thursday."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -1549,21 +1567,24 @@
           "has_annotation": true,
           "cross_refs": [
             {
-              "text": "Ep. 118. c. 3."
-            },
-            {
               "text": "Mat. 26, 26. Mr. 14, 22. Luc. 22, 19."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "a The Epistle upon CORPUS Christi day."
             }
           ]
         },
         {
           "verse": 24,
-          "text": "and giving thanks brake, and said: Take ye & eat, <sc>This</sc> IS MY <sc>Body</sc> <sc>Which</sc> <sc>Shall</sc> BE <sc>Delivered</sc> <sc>For</sc> <sc>You</sc>. This do ye for the commemoration of me.",
+          "text": "and giving thanks brake, and said: Take ye & eat, <sc>This</sc> IS MY <sc>Body Which Shall</sc> BE <sc>Delivered For You</sc>. This do ye for the commemoration of me.",
           "has_annotation": true
         },
         {
           "verse": 25,
-          "text": "In like manner also the chalice after he had supped, saying: <sc>This</sc> <sc>Chalice</sc> IS <sc>The</sc> <sc>New</sc> <sc>Testament</sc> IN MY <sc>Blood</sc>. This do ye, as often as you shall drink, for the commemoration of me."
+          "text": "In like manner also the chalice after he had supped, saying: <sc>This Chalice</sc> IS <sc>The New Testament</sc> IN MY <sc>Blood</sc>. This do ye, as often as you shall drink, for the commemoration of me."
         },
         {
           "verse": 26,
@@ -1606,19 +1627,8 @@
         },
         {
           "verse": 34,
-          "text": "If any man be an hungered, let him eat at home; that you come not together unto judgement. And the rest I will dispose, when I come. 1 Corinthians 11 the Church, this is our custom. Which is a goodly rule to repress the sauciness of contentious janglers, which being out of all modesty and reason, never want words and replies against the Church. Which Church if it could then by prescription of twenty or thirty years, and by the authority of one or two of their first preachers, stop the mouths of the seditious: what should not the custom of fifteen hundred years, & the decrees of many hundred Pastors, gain of reasonable, modest, and humble men? 19. There must be heresies] <cr>[1]</cr> When the Apostle saith, <i>Heresies must be:</i> He sheweth the event, and not that God hath directly so appointed it as necessary. For, that they be, it cometh of man's malice and free-will: but that they be converted to the manifestation of the good and constant in faith & the Church's unity, that is God's special work of providence that worketh good of evil. And for that there should fall Heresies and Schisms, specially concerning the Article and use of the B. Sacrament of the Altar, whereof he now beginneth to treat, it may make us marvel the less, to see so great dissensions, Heresies, and Schisms of the wicked and weak in faith concerning the same. Such things then will be, but woe to him by whom scandals or Sects do come. <cr>[2]</cr> <i>Let us use Heretics,</i> saith S. Augustine, <i>not to that end to approve their errors, but that by defending the Catholic doctrine against their deceits, we may be more watchful and wary: because it is most truly written, There must be heresies that the tried and approved may be manifested or discovered from the hollow hearts among you. Let us use this benefit of God's providence. For Heretics be made of such as would err or be naught, though they were in the Church: but being out, they profit us exceedingly, not by teaching the truth which they know not, but by stirring up the carnal in the Church to seek truth, and the spiritual Catholics, to clear the truth. For there be innumerable holy approved men in the Church, but they be not discerned from other among us, nor manifest, so long as we had rather sleep in darkness of ignorance, than behold the light of truth. Therefore many are raised out of their sleep by Heretics to see the day of God, and are glad thereof.</i> August. c. 8. de vera relig. 20. Our Lord's supper.] The Christians at or about the time of the Church's only Sacrifice and their communicating thereof, kept great feasts: which continued long, for that the relief of the poor upon the common charges of the richer sort, and the charity and unity of all sorts were much preserved thereby, for which cause they were called <i>ἀγάπαι</i> <cr>[1][2]</cr> , that is, Charities, of the ancient Fathers, and were kept commonly in Church houses or porches adjoining, or in the body of the Church <cr>[3]</cr> (whereof see Tertullian <i>Apolog. c. 39.</i> Clemens Alexand. S. Iustine, S. Augustine <i>cont. Faust. li. 20. c. 20.</i> ) after the Sacrifice and Communion was ended, as S. Chrysostom <i>ho. 27. in 1. Cor. in initio</i> judgeth. Those feasts S. Paul here calleth <i>Coenas Dominicas,</i> because they were made in the Churches which then were called Dominicae, that is, <i>Our Lord's houses.</i> The disorder therefore kept among the Corinthians in these Church-feasts of Charity, the Apostle seeketh here to redress, from the foul abuses expressed here in the text. <cr>[4]</cr> And as S. Ambrose <i>in hunc locum,</i> and most good authors now think, this which he called <i>Dominicam coenam,</i> is not meant of the B. Sacrament, as the circumstances also of the text do give, namely, the rejecting of the poor, the rich men's private devouring of all, not expecting one another, gluttony and drunkenness in the same, which cannot agree to the holy Sacrament. And therefore the Heretics have small reason, upon this place, to name the said holy Sacrament, rather, <i>the Supper of the Lord,</i> than after the manner of the primitive Church, the <i>Eucharist,</i> <sc>Mass</sc>, or <i>Liturgy.</i> But by like they would bring it to the supper again or evening service, when men be not fasting, the rather to take away the old estimation of the holiness thereof. 23. I have delivered.] <cr>[1]</cr> As all other parts of religion were first delivered by preaching and word of mouth to every Nation converted, so this holy order and use of the B. Sacrament was by S. Paul",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "Conc. Gang. can. 11."
-            },
-            {
-              "text": "Con. Laodic. can. 27, 28."
-            },
-            {
-              "text": "our Lord's supper"
-            }
-          ]
+          "text": "If any man be an hungered, let him eat at home; that you come not together unto judgement. And the rest I will dispose, when I come.",
+          "has_annotation": true
         }
       ],
       "summary": "He commendeth them for keeping his traditions generally. 3. And in particular for this that a man prayed and prophesied bare-headed, a woman veiled, he bringeth many reasons. 17. About another, he reprehendeth the rich, that at the charitable supper supped uncharitably: 23. telling them that they received therefore unworthily the B. Sacrament, and shewing them what an heinous sin that is, seeing it is our Lord's body and the representation of his death, as he by tradition had taught them. <na>[1]</na>",
@@ -1634,7 +1644,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> concerning spiritual things, I will not have you ignorant, brethren."
+          "text": "<sc>And</sc> <cr>[1]</cr> concerning spiritual things, I will not have you ignorant, brethren.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 10. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1663,9 +1679,10 @@
         {
           "verse": 8,
           "text": "To one certes by the Spirit is given <cr>[1]</cr> the word of wisdom: and to another, the word of knowledge according to the same Spirit:",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Gratias gratis datas"
+              "label": "1",
+              "text": "All these Gifts be those which the learned call Gratias gratis datas : which be bestowed often even upon ill livers, which have not the other graces of God whereby their persons should be grateful, just & holy in his sight."
             }
           ]
         },
@@ -1688,17 +1705,21 @@
           "cross_refs": [
             {
               "text": "Ro. 12, 4. Eph. 4, 7."
-            },
+            }
+          ],
+          "notes": [
             {
-              "text": "Aug. de unit. Ec."
+              "label": "2",
+              "text": "Amarvelous union betwixt Christ & his church, & a great comfort to all Catholics being members thereof, that the Church and He, the head & the body, make & be called one Christ. Aug. de unit. Ec."
             }
           ]
         },
         {
           "verse": 13,
           "text": "For in one Spirit were we all baptized into <cr>[1]</cr> <alt>one</alt>, whether Jews, or Gentiles, or bondmen, or free: & in one Spirit we were all made to drink.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "one body,"
             }
           ]
@@ -1718,7 +1739,7 @@
         },
         {
           "verse": 17,
-          "text": "If the whole body were the eye: where is the 1 Corinthians 12 hearing? If the whole were the hearing: where is the smelling?"
+          "text": "If the whole body were the eye: where is the hearing? If the whole were the hearing: where is the smelling?"
         },
         {
           "verse": 18,
@@ -1760,9 +1781,10 @@
         {
           "verse": 27,
           "text": "<cr>[1]</cr> And you are the body of Christ, and members of member.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Augu. 24."
+              "label": "1",
+              "text": "b The Epistle upon S. Bartholomew's day. Augu. 24."
             }
           ]
         },
@@ -1782,9 +1804,10 @@
         {
           "verse": 30,
           "text": "<cr>[1]</cr> are all miracles? have all the grace of doing cures? do all speak with tongues? do all interpret?",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "ep. 137."
+              "label": "1",
+              "text": "S. Augustine ep. 137. giveth the same reason, why miracles & cures be done at the memories or bodies of some Saints more than at others: & by the same Saints in one place of their memories rather than at other places."
             }
           ]
         },
@@ -1807,11 +1830,23 @@
         {
           "verse": 1,
           "text": "IF <cr>[1]</cr> I speak with the tongues of men, and of Angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the Sunday of Quinquagesima, called Shrove-Sunday."
+            }
+          ]
         },
         {
           "verse": 2,
-          "text": "And if I should have prophecy, and knew all mysteries, and all knowledge, & if I should <cr>[1]</cr> have all 1 Corinthians 13 faith so that I could remove mountains, and have not charity, I am nothing."
+          "text": "And if I should have prophecy, and knew all mysteries, and all knowledge, & if I should <cr>[1]</cr> have all faith so that I could remove mountains, and have not charity, I am nothing.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This proveth that faith is nothing worth to salvation without works, and that there may be true faith without Charity."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1845,9 +1880,10 @@
         {
           "verse": 10,
           "text": "But <cr>[1]</cr> when that shall come that is perfect, that shall be made void that is in part.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "li. 22. Civ. c. 29."
+              "label": "1",
+              "text": "By this text S. Augustine li. 22. Civ. c. 29. proveth that the Saints in heaven have more perfect knowledge of our affairs here, than they had when they lived here."
             }
           ]
         },
@@ -1862,7 +1898,13 @@
         {
           "verse": 13,
           "text": "And now there remain, faith, hope, charity, these three: but the <cr>[1]</cr> greater of these is charity.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "Charity is of all the three the greatest. How then doth only faith, being inferior to it, save & justify, and not Charity?"
+            }
+          ]
         }
       ],
       "summary": "That above all other Gifts they should seek after Charity: as that without which nothing profiteth, 4. and which doth all as is to be done, and remaineth also in Heaven."
@@ -1916,7 +1958,7 @@
         },
         {
           "verse": 11,
-          "text": "If then I know not the virtue of the voice, I shall be to him to whom I speak, barbarous; and he that speaketh^ barbarous to me."
+          "text": "If then I know not the virtue of the voice, I shall be to him to whom I speak, barbarous; and he that speaketh barbarous to me."
         },
         {
           "verse": 12,
@@ -1938,12 +1980,7 @@
         },
         {
           "verse": 16,
-          "text": "But if thou bless in the spirit, he that supplieth the place <cr>[1][2]</cr> of the vulgar how shall he say, Amen, upon thy blessing? because he knoweth not what thou sayest.",
-          "cross_refs": [
-            {
-              "text": "c idiotae"
-            }
-          ]
+          "text": "But if thou bless in the spirit, he that supplieth the place <cr>[1][2]</cr> of the vulgar how shall he say, Amen, upon thy blessing? because he knoweth not what thou sayest."
         },
         {
           "verse": 17,
@@ -1951,9 +1988,10 @@
         },
         {
           "verse": 18,
-          "text": "Igive my God thanks, that I speak <cr>[1]</cr> <alt>with the tongue of you all</alt>.",
-          "cross_refs": [
+          "text": "I give my God thanks, that I speak <cr>[1]</cr> <alt>with the tongue of you all</alt>.",
+          "notes": [
             {
+              "label": "1",
               "text": "with tongues more than you all."
             }
           ]
@@ -2000,7 +2038,7 @@
         },
         {
           "verse": 27,
-          "text": "Whether a man speak with tongue, by two, or at the most by three, and in 1 Corinthians 14 course, and let one interpret.",
+          "text": "Whether a man speak with tongue, by two, or at the most by three, and in course, and let one interpret.",
           "has_annotation": true
         },
         {
@@ -2062,17 +2100,7 @@
         },
         {
           "verse": 40,
-          "text": "But let all things be done honestly and according to order among you. 1 Corinthians 14 appoint such an one to get his strange prayer translated into his vulgar tongue, to obtain thereby the foresaid instruction. See the Declaration following of this Chapter. 22. A sign.] The extraordinary gift of tongues was a miraculous sign in the primitive Church, to be used specially in the Nations of the Heathen for their conversion. 23. Infidels.] In the primitive Church, when Infidels dwelt near or among Christians, and often times came unto their public preaching & exercises of exhortation and exposition of Scriptures and the like: it was both unprofitable and ridiculous to hear a number talking, teaching, singing Psalms & the like, one in this language, & another in that, all at once like a black-saunts, and one often not understood of another, sometime not to themselves, and to strangers or the simple standers by, not at all. Where otherwise if they had spoken either in known tongues, or had done it in order, having an expositor or interpreter withal, the Infidels might have been convinced. 26. A Psalm.] <na>◦</na> We see here that those spiritual exercises consisted specially, first, in singing or giving forth new Psalms or prayers and lauds: secondly, in Doctrine, teaching, or reading lectures: thirdly, in Revelation of secret things either present or to come: fourthly, in speaking Tongues of strange Nations: lastly, in translating or Interpreting that which was said, into some common known language, as into Greek, Latin, &c. All which gifts they had among them by miracle from the Holy Ghost. 27. In course.] <na>◦</na> All these things they did without order, of pride and contention they preached, they prophesied, they prayed, they blessed, without any seemly respect one of another, or observing of turns and intercourse of uttering their Gifts. Yea women without cover or veil, and without regard of their sex or the Angels or Priests or their own husbands, malapertly spake tongues, taught, or prophesied with the rest. This was then the disorder among the Corinthians, which the Apostle in this whole chapter reprehendeth and sought to redress, by forbidding women utterly that public exercise, and teaching men, in what order and course as well for speaking in tongues, as interpreting and prophesying, it should be kept. <sc>Amore</sc> <sc>Ample</sc> <sc>Declaration</sc> OF <sc>The</sc> sense of this 14. Chapter.",
-          "notes": [
-            {
-              "label": "◦",
-              "text": "Of what spiritual exercise the Apostle speaketh."
-            },
-            {
-              "label": "◦",
-              "text": "The disorders in the same."
-            }
-          ]
+          "text": "But let all things be done honestly and according to order among you."
         }
       ],
       "summary": "Against their vain childishness, that thought it a goodly matter to be able to speak (by miracle) strange languages in the Church, preferring their languages before prophesying, that is opening of mysteries: he declareth that this gift of languages is inferior to the gift of prophecy. 26. Giving order also how both gifts are to be used; to wit, the Prophet to submit himself to other Prophets: & the Speaker of languages not to publish his inspiration, unless there be an Interpreter. 34. Provided always, that women speak not at all in the Church. <na>[1]</na>",
@@ -2088,7 +2116,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> I do you to understand, brethren, the Gospel which I preached to you, which also you received, in the which also you stand,"
+          "text": "<sc>And</sc> <cr>[1]</cr> I do you to understand, brethren, the Gospel which I preached to you, which also you received, in the which also you stand,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 11. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2099,19 +2133,13 @@
           "text": "For <cr>[1][2]</cr> I delivered unto you first of all which I also received: that Christ died for our sins <cr>[3]</cr> according to the Scriptures:",
           "cross_refs": [
             {
-              "text": "tradition"
-            },
-            {
-              "text": "c tradidi παρέδωκα"
-            },
-            {
               "text": "Esa. 53, 8. Dan. 9, 26."
             }
           ]
         },
         {
           "verse": 4,
-          "text": "and that he was buried, and that he rose again the third day, <cr>[1]</cr> according to the Scriptures: 1 Corinthians 15",
+          "text": "and that he was buried, and that he rose again the third day, <cr>[1]</cr> according to the Scriptures:",
           "cross_refs": [
             {
               "text": "Ps. 15, 10. Ion. 2, 2."
@@ -2140,10 +2168,13 @@
           "text": "And last of all, as it were of <cr>[1]</cr> an abortive <cr>[2]</cr> he was seen also of me.",
           "cross_refs": [
             {
-              "text": "c one born out of time"
-            },
-            {
               "text": "Act. 9, 3."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c one born out of time"
             }
           ]
         },
@@ -2154,7 +2185,13 @@
         {
           "verse": 10,
           "text": "But by the grace of God I am that which I am; & his grace in me hath not been <cr>[1]</cr> void, but I have laboured more aboundantly than all they: yet not I, but the grace of God with me.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "In him God's grace is not void, that worketh by his free will according to the motion and direction of the same grace."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -2174,7 +2211,13 @@
         },
         {
           "verse": 15,
-          "text": "And we are found also <cr>[1]</cr> false witnesses of God: because we have given testimony against God, that he hath raised up Christ, whom he hath not raised up, if the dead rise not again."
+          "text": "And we are found also <cr>[1]</cr> false witnesses of God: because we have given testimony against God, that he hath raised up Christ, whom he hath not raised up, if the dead rise not again.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "So may we say, if the Cath. faith in all points be not true, then our first Apostles were false witnesses, then hath our Country believed in vain all this while, then are all our Forefathers dead in their sins and perished. Which (presupposing Christ to be God) were the greatest absurdity in the world."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -2263,7 +2306,7 @@
         },
         {
           "verse": 31,
-          "text": "Idie daily by your glory, brethren, which I have in Christ <sc>Jesus</sc> our Lord."
+          "text": "I die daily by your glory, brethren, which I have in Christ <sc>Jesus</sc> our Lord."
         },
         {
           "verse": 32,
@@ -2278,8 +2321,9 @@
         {
           "verse": 33,
           "text": "Be not seduced, <cr>[1]</cr> <i>Evil communications corrupt good manners.</i>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Menander"
             }
           ]
@@ -2294,7 +2338,7 @@
         },
         {
           "verse": 36,
-          "text": "Fool, that 1 Corinthians 15 which thou sowest is not quickened, unless it die first."
+          "text": "Fool, that which thou sowest is not quickened, unless it die first."
         },
         {
           "verse": 37,
@@ -2314,7 +2358,13 @@
         },
         {
           "verse": 41,
-          "text": "One glory of the sun, another glory of the moon, and another glory of the stars. For <cr>[1]</cr> star differeth from star in glory:"
+          "text": "One glory of the sun, another glory of the moon, and another glory of the stars. For <cr>[1]</cr> star differeth from star in glory:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The glory of the bodies of Saints shall not be all alike, but different in heaven according to men's merits."
+            }
+          ]
         },
         {
           "verse": 42,
@@ -2326,7 +2376,13 @@
         },
         {
           "verse": 44,
-          "text": "It is sown a natural body; it shall rise a <cr>[1]</cr> spiritual body. If there be a natural body, there is also a spiritual,"
+          "text": "It is sown a natural body; it shall rise a <cr>[1]</cr> spiritual body. If there be a natural body, there is also a spiritual,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "As to become spiritual doth not take away the substance of the body glorified: no more when Christ's body is said to be in spiritual sort in the Sacrament, doth it import the absence of his true body and substance."
+            }
+          ]
         },
         {
           "verse": 45,
@@ -2355,11 +2411,23 @@
         },
         {
           "verse": 50,
-          "text": "This I say, brethren, that <cr>[1]</cr> flesh and blood cannot possess the Kingdom of God: neither shall corruption possess incorruption."
+          "text": "This I say, brethren, that <cr>[1]</cr> flesh and blood cannot possess the Kingdom of God: neither shall corruption possess incorruption.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Flesh and blood signify not here the substance of those things, but the corrupt quality incident to them in this life by the fall of Adam."
+            }
+          ]
         },
         {
           "verse": 51,
-          "text": "<cr>[1]</cr> Behold I tell you a mystery. We shall all indeed rise again: but we shall not all be changed."
+          "text": "<cr>[1]</cr> Behold I tell you a mystery. We shall all indeed rise again: but we shall not all be changed.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The Epistle upon All-Souls day."
+            }
+          ]
         },
         {
           "verse": 52,
@@ -2421,9 +2489,10 @@
         {
           "verse": 2,
           "text": "In <cr>[1]</cr> the first of the Sabboth let every one of you put a part with himself, laying up what shall well like him: that not when I come, then collections be made.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Hiero. q. 4. Hedibiae"
+              "label": "1",
+              "text": "That is Sunday. Hiero. q. 4. Hedibiae . So quickly did the Christians keep Sunday, holiday, and assembled to Divine Service on the same."
             }
           ]
         },
@@ -2450,9 +2519,10 @@
         {
           "verse": 8,
           "text": "But I will tarry at Ephesus until <cr>[1]</cr> Pentecost.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "See S. Aug. ep. 119. c. 15. & 16. Ambr. in c. 17. Lucae."
+              "label": "1",
+              "text": "The Heretics & other new-fangled strive among themselves, whether Pentecost signify here the term of fifty days; or else the Jews' holy-day so called. But it cometh not to their minds that it is most like to be the feast of Whitsuntide, kept & instituted even then by the Apostles, as appeareth by the Fathers. See S. Aug. ep. 119. c. 15. & 16. Ambr. in c. 17. Lucae."
             }
           ]
         },
@@ -2471,8 +2541,9 @@
         {
           "verse": 12,
           "text": "And of brother Apollo I do you to understand, that I much entreated him to come unto you with the brethren: and <cr>[1]</cr> at all it was not his mind to come now. But he will come when he shall have leisure.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c πάντως"
             }
           ]
@@ -2496,8 +2567,9 @@
         {
           "verse": 17,
           "text": "And I rejoice in the presence of Stephanas and Fortunatus and Achaicus, because <cr>[1]</cr> that which you wanted, they have supplied.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c τὸ ὑμῶν ὑςέρημα."
             }
           ]
@@ -2521,19 +2593,11 @@
         },
         {
           "verse": 21,
-          "text": "The salutation with mine own hand^ Paul's."
+          "text": "The salutation with mine own hand Paul's."
         },
         {
           "verse": 22,
-          "text": "If any man love not our Lord <sc>Jesus</sc> Christ, be he <i>anathema. </i> <cr>[1][2]</cr> <i>Maran atha.</i>",
-          "cross_refs": [
-            {
-              "text": "our Lord is come anathema Theophyla. upon this place."
-            },
-            {
-              "text": "c אתא מרן"
-            }
-          ]
+          "text": "If any man love not our Lord <sc>Jesus</sc> Christ, be he <i>anathema. </i> <cr>[1][2]</cr> <i>Maran atha.</i>"
         },
         {
           "verse": 23,

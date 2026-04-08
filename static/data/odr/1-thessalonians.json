@@ -12,7 +12,13 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> We give thanks to God always for all you; making a memory of you in prayers without intermission,"
+          "text": "<cr>[1]</cr> We give thanks to God always for all you; making a memory of you in prayers without intermission,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 6. Sunday after the Epiphany."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -41,7 +47,13 @@
         },
         {
           "verse": 9,
-          "text": "For they themselves report of us what manner of entering we had to you; and how you are turned to God <cr>[1]</cr> from idols, to serve the living and true God,"
+          "text": "For they themselves report of us what manner of entering we had to you; and how you are turned to God <cr>[1]</cr> from idols, to serve the living and true God,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "In this and the like places the Heretics maliciously & most falsely translate, construe, & apply all things meant of the Heathen idols, to the memories and images of Christ and his Saints, namely the English Bibles of the year 1562. 1577. See the Annotation 1 Io. 5, 21."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -64,6 +76,12 @@
             {
               "text": "Act. 16, 12. 23."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c A notable example for Catholic preachers, and passing comfortable, when in the midst of persecutions and reproaches they preach sincerely, to please God & not men."
+            }
           ]
         },
         {
@@ -85,8 +103,9 @@
         {
           "verse": 7,
           "text": "Whereas we might have been a burden to you, as the Apostles of Christ; but we became <cr>[1]</cr> <alt>children</alt> in the midst of you, as if a nurse should cherish her children:",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "mild"
             }
           ]
@@ -97,7 +116,7 @@
         },
         {
           "verse": 9,
-          "text": "For you are mindful, brethren, of <cr>[1]</cr> our labour and toil. Day and night working, lest we should charge any of you, we preached among you the Gospel of God. 1 Thessalonians 2",
+          "text": "For you are mindful, brethren, of <cr>[1]</cr> our labour and toil. Day and night working, lest we should charge any of you, we preached among you the Gospel of God.",
           "cross_refs": [
             {
               "text": "Act. 20, 34. 1. Cor. 4, 12. 2. Thes. 3."
@@ -119,7 +138,13 @@
         {
           "verse": 13,
           "text": "<cr>[1]</cr> Therefore we also give thanks to God without intermission: because that when you had received of us the word of the hearing of God, you received it not as the word of men, but (as it is indeed) the word of God, who worketh in you that have believed.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for many Martyrs. Aug. 8."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -136,19 +161,26 @@
         {
           "verse": 17,
           "text": "But we, brethren, <cr>[1]</cr> deprived of you for a short time, in sight, not in heart; have hastened the more aboundantly to see your face with much desire.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἀπορφανισθέντες"
             }
           ]
         },
         {
           "verse": 18,
-          "text": "For we would have come to you, I^ Paul certes, once and again: but Satan hath hindered us."
+          "text": "For we would have come to you, I Paul certes, once and again: but Satan hath hindered us."
         },
         {
           "verse": 19,
-          "text": "For what is our hope, or joy, or crown of glory? <cr>[1]</cr> Are not you, before our Lord <sc>Jesus</sc> Christ in his coming?"
+          "text": "For what is our hope, or joy, or crown of glory? <cr>[1]</cr> Are not you, before our Lord <sc>Jesus</sc> Christ in his coming?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "If the Apostle without injury to God, in right good sense call his scholers the Thessalonians, his hope, joy, glory: why blaspheme the Protestants the Cath. Church & her children for terming our B. Lady or other Saints, their hope, for the special confidence they have in their prayers?"
+            }
+          ]
         },
         {
           "verse": 20,
@@ -182,7 +214,7 @@
         },
         {
           "verse": 6,
-          "text": "But now <cr>[1]</cr> Timothee coming unto us from you, and reporting to us your faith and charity, and that you have a good remembrance of us always, desiring to see us, as we 1 Thessalonians 3 also^ you:",
+          "text": "But now <cr>[1]</cr> Timothee coming unto us from you, and reporting to us your faith and charity, and that you have a good remembrance of us always, desiring to see us, as we also you:",
           "cross_refs": [
             {
               "text": "Act. 18, 5."
@@ -203,7 +235,13 @@
         },
         {
           "verse": 10,
-          "text": "night and day more aboundantly praying that we may <cr>[1]</cr> see your face, and may accomplish those things that want of your faith?"
+          "text": "night and day more aboundantly praying that we may <cr>[1]</cr> see your face, and may accomplish those things that want of your faith?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Though letters or epistles in absence give great comfort and confirmation in faith, yet it is preaching in presence by which the faith of Christ and true religion is always both begun and accomplished."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -225,7 +263,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>For</sc> <cr>[1]</cr> the rest therefore, brethren, we desire and beseech you in our Lord <sc>Jesus</sc>, that as you have received of us how you ought to walk, and to please God, as also you do walk, that you abound more."
+          "text": "<sc>For</sc> <cr>[1]</cr> the rest therefore, brethren, we desire and beseech you in our Lord <sc>Jesus</sc>, that as you have received of us how you ought to walk, and to please God, as also you do walk, that you abound more.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 2. Sunday in Lent."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -263,11 +307,23 @@
             {
               "text": "Io. 13, 34. 15, 17. Heb. 13, 1."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c All Catholic Christians make one fraternity or brotherhood."
+            }
           ]
         },
         {
           "verse": 10,
-          "text": "Yea and you do it toward all the brethren in all Macedonia. But we desire you, brethren, that you <cr>[1]</cr> abound more:"
+          "text": "Yea and you do it toward all the brethren in all Macedonia. But we desire you, brethren, that you <cr>[1]</cr> abound more:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christian men ought to proceed and profit continually in good works and justification."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -280,11 +336,17 @@
         {
           "verse": 13,
           "text": "<cr>[1]</cr> And we will not have you ignorant, brethren, concerning them that sleep, that you be not sorrowful, as also others that have no hope.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in a Mass for the dead upon the day of the burial or deposition."
+            }
+          ]
         },
         {
           "verse": 14,
-          "text": "For if we believe that <sc>Jesus</sc> died and rose again, so also God^ them that have slept^ by <sc>Jesus</sc>^ will bring with him."
+          "text": "For if we believe that <sc>Jesus</sc> died and rose again, so also God them that have slept by <sc>Jesus</sc> will bring with him."
         },
         {
           "verse": 15,
@@ -293,11 +355,17 @@
             {
               "text": "1. Cor. 15, 23."
             }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "He speaketh in the person of those that shall be alive when our Saviour returneth to judgement."
+            }
           ]
         },
         {
           "verse": 16,
-          "text": "For our Lord himself in commandment, and in the voice of an <cr>[1]</cr> Archangel, & in the trumpet of God will descend from heaven: and the dead that are in 1 Thessalonians 4 Christ, shall rise again first.",
+          "text": "For our Lord himself in commandment, and in the voice of an <cr>[1]</cr> Archangel, & in the trumpet of God will descend from heaven: and the dead that are in Christ, shall rise again first.",
           "cross_refs": [
             {
               "text": "Mt. 24, 31. 1. Cor. 13, 52."
@@ -358,6 +426,12 @@
             {
               "text": "Esa. 59, 17. Eph. 6, 17."
             }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "A Christian man's whole armour is not faith only, but all the three virtues here named."
+            }
           ]
         },
         {
@@ -382,7 +456,13 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> And we beseech you, brethren, admonish the unquiet, comfort the weak-minded, bear up the weak, be patient to all."
+          "text": "<cr>[1]</cr> And we beseech you, brethren, admonish the unquiet, comfort the weak-minded, bear up the weak, be patient to all.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The Epistle upon the Imber Saturday in Lent."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -402,10 +482,13 @@
           "text": "<cr>[1]</cr> Pray <cr>[2]</cr> without intermission.",
           "cross_refs": [
             {
-              "text": "See S. Aug. ep. 121. ad Probam."
-            },
-            {
               "text": "Luc. 18, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c To desire eternal life of him that only can give it, is to pray without intermission: but because that desire is often by worldly cares cooled, certain hours and times of vocal prayer were appointed. See S. Aug. ep. 121. ad Probam."
             }
           ]
         },
@@ -415,15 +498,15 @@
         },
         {
           "verse": 19,
-          "text": "The Spirit^ extinguish not."
+          "text": "The Spirit extinguish not."
         },
         {
           "verse": 20,
-          "text": "Prophecies^ despise not."
+          "text": "Prophecies despise not."
         },
         {
           "verse": 21,
-          "text": "But prove all 1 Thessalonians 5 things: hold that which is good.",
+          "text": "But prove all things: hold that which is good.",
           "has_annotation": true
         },
         {
@@ -448,7 +531,7 @@
         },
         {
           "verse": 27,
-          "text": "Iadjure you by our Lord that this epistle be read to all the holy brethren."
+          "text": "I adjure you by our Lord that this epistle be read to all the holy brethren."
         },
         {
           "verse": 28,

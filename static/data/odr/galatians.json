@@ -30,14 +30,15 @@
         },
         {
           "verse": 6,
-          "text": "Imarvel that thus so soon you are transferred from him that called you into the grace of Christ, unto another Gospel:"
+          "text": "I marvel that thus so soon you are transferred from him that called you into the grace of Christ, unto another Gospel:"
         },
         {
           "verse": 7,
           "text": "which is not another, unless there be some that trouble you, and will <cr>[1]</cr> invert the Gospel of Christ.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Cont. Faustum. li. 32. c. 27."
+              "label": "1",
+              "text": "New Gospellers that pervert, corrupt, or alter the one only true and first delivered Gospel, are to be avoided. See S. Augustin. Cont. Faustum. li. 32. c. 27."
             }
           ]
         },
@@ -56,9 +57,10 @@
         {
           "verse": 11,
           "text": "<cr>[1]</cr> For I do you to understand, brethren, the Gospel that was evangelized of me, that it is not according to man.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Iun. 30."
+              "label": "1",
+              "text": "c The Epistle upon the Commemoration of S. Paul, Iun. 30."
             }
           ]
         },
@@ -98,7 +100,13 @@
         },
         {
           "verse": 19,
-          "text": "But other of the Apostles saw I none; saving James <cr>[1]</cr> the brother of our Lord."
+          "text": "But other of the Apostles saw I none; saving James <cr>[1]</cr> the brother of our Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "S. James was called our Lord's brother after the Hebrew phrase of the Jews, by which near kinsmen are called brethren: for they were not brethren indeed, but rather sister's children."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -118,45 +126,7 @@
         },
         {
           "verse": 24,
-          "text": "and in me they glorified God. Calvin and such other lewd fellows, into a new Gospel, which are so far from Apostles and Angels, that they are not any whit comparable with the old Heretics in gifts of learning or eloquence, much less in good life.",
-          "cross_refs": [
-            {
-              "text": "Beside The Apostle did not say, If any man evangelize to you more than you have received, but, beside that you received. For if he should say that, he should be prejudicial to himself, who coveted to come to the Thessalonians, that he might supply that which was wanting to their faith. Now he that supplieth, addeth that which was lacking, taketh not away that which was, &c."
-            },
-            {
-              "text": "Tract. 98. in Ioan."
-            },
-            {
-              "text": "To preach any thing to Christian Catholic men"
-            },
-            {
-              "text": "besides that which they have received, never was it lawful, never is it, nor never shall it be lawful. To say anathema to such, it hath been, and is, and shall be always behooful ep. 48. Psal. 103. Con. 2."
-            },
-            {
-              "text": "Li. cont. proph. haer. novit."
-            },
-            {
-              "text": "* Aug. ep. 165."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "Thirdly, as well by the word evangelizamus (we evangelize) as the word accepistis (you have received) we may not that the first truth, against which no second Gospelling or doctrine may be admitted, is not that only which he wrote to the Galatians, or which is contained either in his or any other of the Apostle's or Evangelist's writings, but that which was by word of mouth also preached, taught, or delivered them first, before he wrote to them. Therefore the Adversaries of the Church that measure the word of God or Gospel by the Scriptures only, thinking themselves not to incur S. Paul's curse, except they teach directly against the written word, are foully beguiled. As therein also they shamefully err, when they charge the Catholics with adding to the Gospel, when they teach any thing that is not in express words written by the Apostles or Evangelists. not marking that the Apostle in this Chapter, and else-where, commonly calleth his & his fellows' whole preaching, the Gospel, be it written or unwritten."
-            },
-            {
-              "label": "◦",
-              "text": "The Gospel is not only in the written word of Scripture, but in unwritten tradition also."
-            },
-            {
-              "label": "◦",
-              "text": "Fourthly, by the same words we see condemned all after-preachings, later doctrines, new sects and authors of the same: that only being true, which was first by the Apostles and Apostolic men as the lawful husbandmen of Christ's field, sowed and planted in the Church: and that false, which was later and as it were oversown by the enemy. By which rule not only Tertullian (de praescript. nu. 6. & 9.) but all other ancient Doctors, and specially S. Irenaeus (li. 3. c. 2. 3. 4.) tried truth from false, and condemned old Heretics, proving Marcion, Valentine, Cerdon, Menander, and such like false Apostles, because they came in with their novelties long after the Church was settled in former truth."
-            },
-            {
-              "label": "◦",
-              "text": "After-preaching & over-sowing of novelties, argueth false doctrine."
-            }
-          ]
+          "text": "and in me they glorified God."
         }
       ],
       "summary": "After the foundation laid in the salutation, 6. he exclaimeth against the Galatians, and their false apostles, 11. considering that the Gospel which he preached to them, he had it immediately of Christ himself. 13. which to shew he beginneth to tell the story of his conversion and preaching since then, that as he learned nothing of the other Apostles, so yet he had their approbation."
@@ -199,9 +169,10 @@
           "verse": 7,
           "text": "But contrarywise when they had seen, that to me was committed the Gospel of the <cr>[1]</cr> prepuce, as to Peter of the circumcision",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Rom. 2. v. 25."
+              "label": "1",
+              "text": "c See the marginal Annotation Rom. 2. v. 25."
             }
           ]
         },
@@ -221,15 +192,7 @@
         {
           "verse": 11,
           "text": "And when Cephas was come to Antioch, I resisted him <cr>[1][2]</cr> in face, because he was reprehensible.",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "in presence, before them all to his face"
-            },
-            {
-              "text": "c κατὰ πρόσωπον."
-            }
-          ]
+          "has_annotation": true
         },
         {
           "verse": 12,
@@ -254,6 +217,12 @@
             {
               "text": "Ro. 3, 19. 20."
             }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "By this and by the discourse of this whole epistle, you may perceive, that when justification is attributed to faith, the works of Charity be not excluded, but the works of Moyses' law: that is, the ceremonies, sacrifices and sacraments thereof principally, and consequently all works done merely by nature and free-will, without the faith, grace, spirit, & aid of Christ."
+            }
           ]
         },
         {
@@ -274,24 +243,7 @@
         },
         {
           "verse": 21,
-          "text": "Icast not away the grace of God. For if justice be by the Law, then Christ died in vain. cavilling of Heretics, that we make subject God's Oracles to man's censure, and the Scriptures to have no more force than the Church is content to grant unto them, is vain and false. <cr>[3]</cr> For, to bear witness or to give evidence or attestation that the preaching or writing of such, is true and of the Holy Ghost, is not to make it true: no more than the Goldsmith or touch-stone that try and discern which is true gold, make it good gold, but they give evidence to man that so it is. And therefore that disputation also, whether the Scripture or the Church be of greater authority, is superfluous: either giving testimony to the other, and both assured by the Holy Ghost from all error: <cr>[4]</cr> the Church yet being before the Scriptures, the spouse of Christ, and proper dwelling, temple, or subject of God and his graces: for the which Church the Scriptures were, and not the Church for the Scriptures. In which Church there is judicial authority by office and jurisdiction to determine of doubtful questions touching the sense of the Scriptures and other controversies in religion, & to punish disobedient persons. Of which judicial power the Scriptures be not capable, as neither the truths & determinations of the same can be so evident to men, nor so agreeable and fit for every particular resolution, as diversity of times and persons requireth. Certain is the truth, and great is the authority of both: but in such diverse kinds, as they cannot be well compared together. The controversy is much like as if a man touching the ruling a case in law or giving sentence in a matter of question, should ask, whether the judge, or the evidence of the parties, be of more authority or credit. which were as frivolous a dispute, as it were a disordered part for any man to say, he would be tried by no other judge but by his own writings or evidences. With such triflers and seditious persons have we to do now a days in divinity, as were intolerable in any profane science or faculty in the world. 6. Added nothing.] <na>◦</na> The Gospel and preaching of S. Paul was wholly of God, & therefore though it were put to the Church's probation, as gold is to the touch stone: yet being found in all points pure, nothing could be altered or amended therein by the Apostles. Even so the Scriptures which are indeed wholly of the Holy Ghost's inditing, being put to the Church's trial, are found, proved, and testified unto the world to be such, and not made true, altered, or amended by the same. Without which attestation of the Church, the holy Scriptures in themselves were always true before: but not so known to be, to all Christians, nor they so bound to take them. And that is the meaning of the famous sentence of S. Augustine <i>Cont. ep. fund. c. 5.</i> which troubleth the Heretics so much. <i>I would not believe the Gospel</i> (saith he) <i>unless the authority of the Church moved me.</i> 7. To Peter of the circumcision.] <cr>[1]</cr> We may not think, as the Heretics deceitfully teach, that the charge of the Apostles was so distincted, that none could preach or exercise jurisdiction but in those several places or towards those people or provinces only, whereunto by God's appointment or their own lot or election, they were specially designed. For, every Apostle might by Christ's commission <i>(Mat. 28. Go, and teach all nations)</i> use all spiritual function through the whole world, yet for the more particular regard & care of provinces, & for peace & order sake, some were appointed to one country, & some to another: as, of the other Apostles, we see in the Ecclesiastical histories, and for S. Peter & S. Paul, it is plain by this place & other, <cr>[2]</cr> that to them as to the two chief and most renowned Apostles, the Church of all Nations was given, as divided into two parts, that is, Jews and Gentiles: the first and principal being S. Peter's lot, that herein also he might resemble our Saviour, who was sent namely <cr>[3]</cr> <i>to the lost sheep of Israel,</i> and was properly <cr>[4]</cr> <i>the Minister of the Circumcision:</i> the second being S. Paul's, whom Christ chose specially to preach to the Gentiles: Not so for all that, that either he was limited to the Gentiles only, (whom the Acts of the Apostles report, in every place, first to have entered into the Synagogues & preached Christ to the Jews, as he wrote also to the Hebrews & ever had special regard & honour to them:) or Peter so bound to the Jews only, that he could not meddle with the Gentiles: seeing he was <cr>[5]</cr> the man",
-          "cross_refs": [
-            {
-              "text": "Mat. 15."
-            },
-            {
-              "text": "Ro. 15."
-            },
-            {
-              "text": "Act. 10. & 15. v. 7."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "The Scriptures always true in themselves, are so known to be by the Church."
-            }
-          ]
+          "text": "I cast not away the grace of God. For if justice be by the Law, then Christ died in vain."
         }
       ],
       "summary": "He telleth forth the story begun in the last chapter, and how he reprehended Peter, 15. and then specially urgeth the ensample of the Christian Jews, who sought unto Christ for justification, and that by warrant also of their Law it-self, as also because otherwise Christ's death had been needless."
@@ -301,7 +253,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Osenseless Galatians, who hath <cr>[1]</cr> bewitched you, not to obey the truth, before whose eyes <sc>Jesus</sc> Christ was proscribed, being crucified among you?"
+          "text": "O senseless Galatians, who hath <cr>[1]</cr> bewitched you, not to obey the truth, before whose eyes <sc>Jesus</sc> Christ was proscribed, being crucified among you?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "For any people or person to forsake the faith of their first Apostles & Conversion, at the voice of a few novellaries, seemeth to wise men a very bewitching & senseless brutishness. Such is the case of our poor country, Germany, and others."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -330,7 +288,13 @@
         },
         {
           "verse": 7,
-          "text": "Know ye therefore that they that are <cr>[1]</cr> of faith, the same are the children of Abraham."
+          "text": "Know ye therefore that they that are <cr>[1]</cr> of faith, the same are the children of Abraham.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This faith whereby Abraham was justified, and his children the Gentiles believing in Christ, implieth all Christian virtues; of which the first is faith, the ground & foundation of all the rest, and therefore here and elsewhere often named of the Apostle."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -348,15 +312,7 @@
         {
           "verse": 10,
           "text": "For whosoever are of the works of the Law, are under curse. For it is written:",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "Cursed be every one that abideth not in all things that be written in the book of the Law, to do them."
-            },
-            {
-              "text": "Deu. 27, 26."
-            }
-          ]
+          "has_annotation": true
         },
         {
           "verse": 11,
@@ -392,7 +348,13 @@
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> Brethren (I speak according to man) yet a man's testament being confirmed no man despiseth, or further disposeth."
+          "text": "<cr>[1]</cr> Brethren (I speak according to man) yet a man's testament being confirmed no man despiseth, or further disposeth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 13. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -469,7 +431,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> I say, as long as the heir is a little one, he differeth nothing from a servant, although he be lord of all,"
+          "text": "<sc>And</sc> <cr>[1]</cr> I say, as long as the heir is a little one, he differeth nothing from a servant, although he be lord of all,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Twelfth eve."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -478,7 +446,13 @@
         {
           "verse": 3,
           "text": "so we also, when we were little ones, were serving under the <cr>[1]</cr> elements of the world.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "That is, the rudiments of religion, wherein the carnal Jews were trained up: or the corporal creatures, wherein their manifold sacrifices, sacraments, and rites did consist."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -529,7 +503,13 @@
         },
         {
           "verse": 14,
-          "text": "and your tentation in my flesh you despised not, neither rejected, but <cr>[1]</cr> as and Angel of God you received me, as Christ <sc>Jesus</sc>."
+          "text": "and your tentation in my flesh you despised not, neither rejected, but <cr>[1]</cr> as and Angel of God you received me, as Christ <sc>Jesus</sc>.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "So ought all Catholic people receive their teachers in religion, with all duty, love, & reverence."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -566,6 +546,12 @@
             {
               "text": "Gen. 16, 15. 21, 2."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 4. Sunday in Lent."
+            }
           ]
         },
         {
@@ -580,8 +566,9 @@
         {
           "verse": 25,
           "text": "(for Sina is a mountain in Arabia, <cr>[1]</cr> which hath affinity to that which now is Jerusalem) and serveth with her children.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c συστοιχεῖ"
             }
           ]
@@ -611,9 +598,10 @@
         {
           "verse": 29,
           "text": "But <cr>[1]</cr> as then he that was born according to the flesh, persecuted him that was after the spirit; so now also.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Aug. ep. 48."
+              "label": "1",
+              "text": "This mutual persecution, is a figure also of the Church justly persecuting Heretics, & contrarywise of Heretics (which be the children of the bond woman) unjustly persecuting the Catholic Church. Aug. ep. 48."
             }
           ]
         },
@@ -643,7 +631,7 @@
         },
         {
           "verse": 2,
-          "text": "Behold I^ Paul tell you that if you be circumcised, Christ shall profit you nothing."
+          "text": "Behold I Paul tell you that if you be circumcised, Christ shall profit you nothing."
         },
         {
           "verse": 3,
@@ -686,7 +674,7 @@
         },
         {
           "verse": 10,
-          "text": "Ihave confidence in you in our Lord, that you will be of no other mind: but he that troubleth you, shall bear the judgement, whosoever he be."
+          "text": "I have confidence in you in our Lord, that you will be of no other mind: but he that troubleth you, shall bear the judgement, whosoever he be."
         },
         {
           "verse": 11,
@@ -694,7 +682,7 @@
         },
         {
           "verse": 12,
-          "text": "Iwould they were also cut off that trouble you."
+          "text": "I would they were also cut off that trouble you."
         },
         {
           "verse": 13,
@@ -707,6 +695,12 @@
           "cross_refs": [
             {
               "text": "Lev. 19, 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 14. Sunday after Pentecost."
             }
           ]
         },
@@ -721,9 +715,10 @@
         {
           "verse": 17,
           "text": "For the flesh lusteth against the spirit, and the spirit against the flesh: for these are adversaries one to another: <cr>[1]</cr> that not what things soever you will, these you do.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "(saith S. Augustine) in c. 5. Gal."
+              "label": "1",
+              "text": "Here men think (saith S. Augustine) the Apostle denieth that we have free liberty of will: not understanding that this is said to them, if they will not hold fast the grace of faith conceived, by which only they can walk in the spirit, & not accomplish the concupiscences of the flesh. in c. 5. Gal."
             }
           ]
         },
@@ -741,7 +736,13 @@
         },
         {
           "verse": 21,
-          "text": "envies, murders, ebrieties, commessations, and such like. Which I foretell you, as I have foretold you, that they which do <cr>[1]</cr> such things, shall not obtain the Kingdom of God."
+          "text": "envies, murders, ebrieties, commessations, and such like. Which I foretell you, as I have foretold you, that they which do <cr>[1]</cr> such things, shall not obtain the Kingdom of God.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c S. Augustine sheweth hereby that not only infidelity is a damnable sin."
+            }
+          ]
         },
         {
           "verse": 22,
@@ -757,7 +758,13 @@
         },
         {
           "verse": 25,
-          "text": "<cr>[1]</cr> If we live in the spirit, in the spirit also let us walk."
+          "text": "<cr>[1]</cr> If we live in the spirit, in the spirit also let us walk.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The Epistle upon the 15. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -805,19 +812,11 @@
         },
         {
           "verse": 8,
-          "text": "For what things a man shall sow, those also shall he reap. For he that soweth in his flesh, of the flesh also shall reap corruption. But he that soweth in the spirit, of the 6. Communicate] <na>◦</na> The great duty & respect that we ought to have to such as preach or teach us the Cath. faith: and not in regard only of their pains taken with us, and well-deserving of us by their doctrine; but that we may be partakers of their merits, we ought specially to do good to such, or (as the Apostle speaketh) communicate with them in all our temporal goods, that we may be partakers of their spiritual. See S. Augustine <i>li. 2. Evang. quaest. q. 8.</i>",
+          "text": "For what things a man shall sow, those also shall he reap. For he that soweth in his flesh, of the flesh also shall reap corruption. But he that soweth in the spirit, of the <na>◦</na>",
           "notes": [
             {
               "label": "◦",
               "text": "Duty to our spiritual teachers. 10. Especially.]"
-            },
-            {
-              "label": "◦",
-              "text": "In giving alms, though we may do well in helping all that are in necessity, as far"
-            },
-            {
-              "label": "◦",
-              "text": "In alms whom to spirit shall reap life everlasting."
             }
           ]
         },
@@ -827,6 +826,12 @@
           "cross_refs": [
             {
               "text": "2. Thes. 3, 13."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The works of mercy be the seed of life everlasting, and the proper cause thereof, and not faith only."
             }
           ]
         },
@@ -850,9 +855,14 @@
         {
           "verse": 14,
           "text": "<cr>[1]</cr> But <cr>[2]</cr> God forbid that I should glory, saving in the cross of our Lord <sc>Jesus</sc> Christ; by whom the world is crucified to me, and I to the world.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "(saith S. Augustine)"
+              "label": "1",
+              "text": "b The Epistle for S. Francis, Octob. 4."
+            },
+            {
+              "label": "2",
+              "text": "Christ (saith S. Augustine) chose a kind of death, to hang on the Cross and to fix or fasten the same cross in the foreheads of the faithful, that the Christian may say, God forbid that I should glory saving in the cross of our Lord JESUS CHRIST. Expos. in Evang. Io. tract. 43."
             }
           ]
         },
@@ -871,7 +881,7 @@
         },
         {
           "verse": 18,
-          "text": "The grace of our Lord <sc>Jesus</sc> Christ be with your spirit, brethren. Amen. as we can, yet we are more bound to succour Christians, than Jews or Infidels; and Catholics, than Heretics. See S. Hierom <i>q. 1. ad Hedibiam.</i> 15. A new creature.] <cr>[1]</cr> Note well that the Apostle calleth that here a new creature, which in the last chapter he termed, <i>faith working by charity,</i> & (1. Cor. 7, 19) <i>the observation of the commandments of God.</i> Whereby we may learn that under the name of faith, is contained the whole reformation of our souls and our new creation in good works: and also that Christian justice is a very quality, condition and state of virtue and grace resident in us, and not a phantastical apprehension of Christ's justice only imputed to us. <cr>[2]</cr> Lastly, that the faith which justifieth, joined with the other virtues, is properly the formal cause, and not the efficient or instrumental cause of justification. that is to say, these virtues put together, being the effect of God's grace, be our new creature and our justice in Christ. prefer."
+          "text": "The grace of our Lord <sc>Jesus</sc> Christ be with your spirit, brethren. Amen."
         }
       ],
       "summary": "If any do sin, the rest that do the works of the Holy Ghost, must not therefore take pride in themselves, but rather make humility of it, partly by fearing their own fall, partly by looking straitly to their own works. 6. He exhorteth earnestly to good works, assuring them that they shall reap none other than here they sow. 11. With his own hand he writeth, telling them, the true cause why those false Apostles preach circumcision, to be only to please the Jews: 17. and a plain argument that he preacheth it not, to be this, that he is persecuted of the Jews."

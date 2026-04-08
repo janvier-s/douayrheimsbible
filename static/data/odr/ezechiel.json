@@ -35,8 +35,9 @@
         {
           "verse": 5,
           "text": "and out of the midst thereof the similitude of four <cr>[1]</cr> living creatures: and this was their look: the similitude of a man in them.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* animalium."
             }
           ]
@@ -227,7 +228,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And he said to me: Son of man, whatsoever thou shalt find^ eat: <na>(a)</na> eat this volume, and going speak to the children of Israel.",
+          "text": "And he said to me: Son of man, whatsoever thou shalt find eat: <na>(a)</na> eat this volume, and going speak to the children of Israel.",
           "notes": [
             {
               "label": "a",
@@ -528,7 +529,7 @@
         },
         {
           "verse": 13,
-          "text": "And I will accomplish my fury, and will make mine indignation rest in them, and will be comforted: and they shall know that I^ the Lord have spoken in my zeal, when I shall have accomplished mine indignation in them."
+          "text": "And I will accomplish my fury, and will make mine indignation rest in them, and will be comforted: and they shall know that I the Lord have spoken in my zeal, when I shall have accomplished mine indignation in them."
         },
         {
           "verse": 14,
@@ -546,11 +547,11 @@
         },
         {
           "verse": 16,
-          "text": "I^ the Lord have spoken: When I shall send very sore arrows of famine upon them: which shall be mortiferous, and which I shall send to destroy you: and I will gather famine upon you, and will break among you the staff of bread."
+          "text": "I the Lord have spoken: When I shall send very sore arrows of famine upon them: which shall be mortiferous, and which I shall send to destroy you: and I will gather famine upon you, and will break among you the staff of bread."
         },
         {
           "verse": 17,
-          "text": "And I will send in upon you famine, and very sore beasts even to destruction: and pestilence, and blood shall pass through thee, and the sword I will bring in upon thee. I^ the Lord have spoken."
+          "text": "And I will send in upon you famine, and very sore beasts even to destruction: and pestilence, and blood shall pass through thee, and the sword I will bring in upon thee. I the Lord have spoken."
         }
       ],
       "summary": "By the hair of the Prophet's head and beard polled, and diversely destroyed, 5. is signified the destruction of the Jews. 10. The fathers and sons eating one another, 12. in extremity of pestilence, famine, and sword."
@@ -614,7 +615,7 @@
         },
         {
           "verse": 10,
-          "text": "And they shall know that I^ the Lord have not spoken in vain to do them this evil."
+          "text": "And they shall know that I the Lord have not spoken in vain to do them this evil."
         },
         {
           "verse": 11,
@@ -694,7 +695,13 @@
         },
         {
           "verse": 13,
-          "text": "Because he that selleth, <na>(b)</na> shall not return to that which he hath sold, and as yet in the living the life of them. For the vision shall not go back to all the multitude thereof: and man in the iniquity of his life shall not be strengthened. <na>(b)</na> In the year of Jubilee the lands which were sold, returned to the seller or to his heir, <i>Levi. 25.</i> but in captivity there could be no such recovery."
+          "text": "Because he that selleth, <na>(b)</na> shall not return to that which he hath sold, and as yet in the living the life of them. For the vision shall not go back to all the multitude thereof: and man in the iniquity of his life shall not be strengthened.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In the year of Jubilee the lands which were sold, returned to the seller or to his heir, Levi. 25. but in captivity there could be no such recovery."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -737,8 +744,9 @@
         {
           "verse": 22,
           "text": "And I will turn away my face from them, and they shall violate my <cr>[1]</cr> secret: and spoilers shall enter into it, and shall contaminate it.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* arcanum."
             }
           ]
@@ -879,21 +887,20 @@
         {
           "verse": 1,
           "text": "And <na>(a)</na> he cried in mine ears with a loud voice, saying: The visitations of the city approach, and every one hath <cr>[1]</cr> a weapon of slaughter in his hand.",
-          "cross_refs": [
-            {
-              "text": "* Vas interfectionis."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "The Prophet being first instructed by a voice that the destruction is near at hand:"
+            },
+            {
+              "label": "1",
+              "text": "* Vas interfectionis."
             }
           ]
         },
         {
           "verse": 2,
-          "text": "And behold <na>(b)</na> six men came from the way of the upper gate, which looketh to the North: and every man's weapon of destruction in his hand: <na>(c)</na> one man also in the midst of them was clothed with linen garments, and the ink-horn of a writer at his reins: and they entered in, and stood by the brazen altar. because he never suffereth his Church to be wholly destroyed.",
+          "text": "And behold <na>(b)</na> six men came from the way of the upper gate, which looketh to the North: and every man's weapon of destruction in his hand: <na>(c)</na> one man also in the midst of them was clothed with linen garments, and the ink-horn of a writer at his reins: and they entered in, and stood by the brazen altar.",
           "notes": [
             {
               "label": "b",
@@ -913,8 +920,9 @@
           "verse": 4,
           "text": "And our Lord said to him: Pass through the midst of the city in the midst of Jerusalem: and sign <cr>[1]</cr> Thau upon the foreheads of the men that mourn and lament upon all the abominations, that are done in the midst thereof.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Mark with."
             }
           ]
@@ -925,7 +933,7 @@
         },
         {
           "verse": 6,
-          "text": "The old, the young man, and the virgin, the little one, and the women kill to utter destruction: but every one upon whom you shall see Thau, kill not, and <na>(d)</na> begin ye at my Sanctuary: They began therefore at the ancient men, which were before the face of the house. sacred Rites, God suffereth first Churches and Monasteries to be destroyed, & clergy men & other religious persons to be persecuted, and so punishment proceedeth to other offenders, as, <i>1. Pet. 4. v. 17. Judgement beginneth at the house of God.</i>",
+          "text": "The old, the young man, and the virgin, the little one, and the women kill to utter destruction: but every one upon whom you shall see Thau, kill not, and <na>(d)</na> begin ye at my Sanctuary: They began therefore at the ancient men, which were before the face of the house.",
           "notes": [
             {
               "label": "d",
@@ -951,28 +959,7 @@
         },
         {
           "verse": 11,
-          "text": "And behold the man, that was clothed with the linen garments, that had the ink-horn at his back, answered a word, saying: I have done as thou hast commanded me. this holy Sign of the Cross in all Divine Mysteries, and godly works, even from the Apostles' time. Witnesses hereof are the ancient Fathers: S. Dionyse Ariopagite, <i>Eccles. Hierarch. c. 2.</i> reciting the sign of the Cross amongst other sacred Rites in administration of Baptism: who also <i>c. 5. & 6.</i> maketh like mention of the same sign in making Priests, and professing of Religious persons. Likewise S. Ireneus. <i>li. 2. c. 42.</i> describeth the form of the Cross. S. Justinus Martyr, <i>Dialogo cum Tryphone,</i> sheweth diverse figures in the old Testament of the Cross. Tertullian, <i>Adversus Marcionem,</i> testifieth that the Apostles, and all the faithful of Christ were signed in their foreheads with the sign of <sc>Thav</sc>, the last of the Hebrew letters, bearing the form of a Cross: the same (saith he) with the Greek letter, <sc>Tav</sc>, and our Latin T. Who further both in that place, and <i>li. de corona militis, & li. de resurrect. carnis,</i> testifieth the most frequent use of this holy sign of the Cross. After him S. Cyprian witnesseth the same in his time, <i>Epist. ad Tybaritanos, li. ad Demetrianum, & li. 1. ca. 8. Testimoniorum advers. Iudaeos.</i> More especially, <i>li. 2. c. 21.</i> proveth by this place amongst other holy Scriptures, that in this sign of the Cross, is health to all that are signed therewith in the foreheads. S. Chrysostome. <i>li. cont. Gentiles,</i> Amongst other demonstrations, sheweth by the honour, <cr>[5]</cr> and daily use of the Cross, that Christ is God; because none but God could make a thing, which before was so execrable, to be now every-where so highly esteemed. And in his Homilies. <i>55. in Mat. 16. & 84. in Ioan. 19.</i> and other places, witnesseth that in Baptism, in the most holy Eucharist, in the Sacrament of Holy Orders, & in all most excellent Mysteries, the Ensign of Victory, the sign of the Cross is ever present unto us: in all his discourse teaching, to glory not only in Christ crucified, but also to honour the sign of the Cross. And that who soever despiseth the sign of the Cross, despiseth indeed Christ Crucified. To omit others, S. Augustine recordeth, <i>li. 1. Confess. c. 11.</i> that himself when he was a child, and dangerously sick, was by his mother's pious care, signed with the sign of the Cross: and <i>li. de catechizandis rudibus c. 20.</i> teacheth that every one is to be signed in the forehead with the sign of the Cross, <cr>[6]</cr> and that all Christians are so signed. Also <i>Tract, 118. in Ioan.</i> What is the sign of Christ (saith he) which all know, but the Cross of Christ? Which sign unless it be adjoined, as well to the foreheads of them that believe in Christ, as to the water it-self wherewith they are regenerate, and to the chrism oil, wherewith they are anointed, as also to the Sacrifice, wherewith they are nourished; none of these things is rightly performed. Or will you have him to speak more plainly, or more generally? <i>Ser. 101. de tempore:</i> With the sign of the Cross (saith he) our Lord's body is consecrated, and all things, whatsoever are sanctified, are consecrated with the invocation of Christ's name in this sign. Who pleaseth to see more testimonies of ancient Fathers, may also read S. Basil, <i>li. de Spiritu Sancto.</i> S. Cyril of Jerusalem, <i>Catechesi. 4. & 13.</i> S. Ambrose, <i>Orat. funebri de obitu Theodosij.</i> S. Gregory. <i>Epist. 126.</i> Cross in the Church.",
-          "cross_refs": [
-            {
-              "text": "Exo. 12."
-            },
-            {
-              "text": "1. Cor. 2."
-            },
-            {
-              "text": "Mat. 24."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "The apparition also of this sign to Constantine the great, with this inscription: IN HOC VINCES, is most famous; written by Eusebius Caesariensis li. 1. c. 22: & 23. de vita Constantini , and many others. The same sign also appeared in Jerusalem in the time of his son Constantius, as S. Cyril of Jerusalem testifieth in his Epistle to the same Emperor. And Nicephorus. li. 10. c. 2. Hist. Eccles writeth that the forms of Crosses, fell with the dew upon the garments of Iulian the Apostata, and of his followers. And many other histories, both ancient and modern make mention of the like apparitions."
-            },
-            {
-              "label": "◦",
-              "text": "Miraculous apparition of the sign of the Cross. But above all others, the most principal is to come: The sign of the Son of man; as our B. Saviour himself foretelleth,"
-            }
-          ]
+          "text": "And behold the man, that was clothed with the linen garments, that had the ink-horn at his back, answered a word, saying: I have done as thou hast commanded me."
         }
       ],
       "summary": "The Prophet seeing six men by God's commandment kill all, 6. that are not marked with THAV in their forehead: 8. lamenteth so great a slaughter: 9. and God answereth, that their iniquity may not be longer tolerated."
@@ -1274,7 +1261,7 @@
         },
         {
           "verse": 7,
-          "text": "Idid therefore as he had commanded me: I carried my vessels as the vessels of one flitting by day: and at even I digged to me through the wall with my hand: and I went forth in the dark, and was carried on shoulders in their sight."
+          "text": "I did therefore as he had commanded me: I carried my vessels as the vessels of one flitting by day: and at even I digged to me through the wall with my hand: and I went forth in the dark, and was carried on shoulders in their sight."
         },
         {
           "verse": 8,
@@ -1298,11 +1285,15 @@
         },
         {
           "verse": 13,
-          "text": "And I will stretch forth my net upon him, and he shall be taken in my net: and I <na>(c)</na> will bring him into Babylon into the land of the Chaldees, and he shall <na>(d)</na> not see it, and there he shall die. contradiction that the king should be carried into Babylon, <na>(d)</na> and should not see Babylon. But the event convinced their rash judgement. For he was carried thither blind. <i>4. Reg. 2.</i>",
+          "text": "And I will stretch forth my net upon him, and he shall be taken in my net: and I <na>(c)</na> will bring him into Babylon into the land of the Chaldees, and he shall <na>(d)</na> not see it, and there he shall die.",
           "notes": [
             {
               "label": "c",
               "text": "The false Prophets argued here Ezechiel of"
+            },
+            {
+              "label": "d",
+              "text": "and should not see Babylon. But the event convinced their rash judgement. For he was carried thither blind. 4. Reg. 2."
             }
           ]
         },
@@ -1362,7 +1353,7 @@
         },
         {
           "verse": 25,
-          "text": "Because I^ the Lord will speak: and what word soever I shall speak, shall also be done, it shall not be prolonged any more: but in your days ye exasperating house, will I speak the word, and will do it, saith our Lord God."
+          "text": "Because I the Lord will speak: and what word soever I shall speak, shall also be done, it shall not be prolonged any more: but in your days ye exasperating house, will I speak the word, and will do it, saith our Lord God."
         },
         {
           "verse": 26,
@@ -1408,7 +1399,7 @@
         },
         {
           "verse": 7,
-          "text": "Why^ have you not seen vain vision, and spoken lying divination? And you say: Our Lord saith; whereas I have not spoken."
+          "text": "Why have you not seen vain vision, and spoken lying divination? And you say: Our Lord saith; whereas I have not spoken."
         },
         {
           "verse": 8,
@@ -1518,7 +1509,7 @@
         },
         {
           "verse": 4,
-          "text": "For this cause speak to them, and thou shalt say to them: Thus saith our Lord God: Man, man of the house of Israel, that shall put his uncleanness in his heart, and set the scandal of his iniquity against his face, and shall come to the Prophet asking me by him: I^ the Lord will answer him in the multitude of his uncleanness:"
+          "text": "For this cause speak to them, and thou shalt say to them: Thus saith our Lord God: Man, man of the house of Israel, that shall put his uncleanness in his heart, and set the scandal of his iniquity against his face, and shall come to the Prophet asking me by him: I the Lord will answer him in the multitude of his uncleanness:"
         },
         {
           "verse": 5,
@@ -1536,7 +1527,7 @@
         },
         {
           "verse": 7,
-          "text": "Because man man of the house of Israel and of the proselytes, whosoever shall be a stranger in Israel, if he be alienated from me, and put his idols in his heart, and set the scandal of iniquity against his face, and come to the Prophet to ask me by him: I^ the Lord will answer him by myself."
+          "text": "Because man man of the house of Israel and of the proselytes, whosoever shall be a stranger in Israel, if he be alienated from me, and put his idols in his heart, and set the scandal of iniquity against his face, and come to the Prophet to ask me by him: I the Lord will answer him by myself."
         },
         {
           "verse": 8,
@@ -1544,7 +1535,7 @@
         },
         {
           "verse": 9,
-          "text": "And the Prophet when he shall err, & shall speak a word: I^ the Lord <na>(c)</na> have deceived that Prophet: and I will stretch forth my hand upon him, and will rase him out of the midst of my people Israel.",
+          "text": "And the Prophet when he shall err, & shall speak a word: I the Lord <na>(c)</na> have deceived that Prophet: and I will stretch forth my hand upon him, and will rase him out of the midst of my people Israel.",
           "notes": [
             {
               "label": "c",
@@ -1627,7 +1618,7 @@
           "text": "And they shall comfort you, when you shall see"
         }
       ],
-      "summary": "Idolaters inquiring of God's will by his Prophets, 6. must first depart from idolatry: 8. otherwise God will permit false-Prophets to deceive them, and both shall perish together: 12. by famine, 15. by ravenous beasts, 17. sword, 19. and pestilence: yea Noe^ Daniel, and Job interceding shall not deliver them (v. 14. 16. 18. 20.) 21. yet God will conserve some that the whole Church perish not."
+      "summary": "Idolaters inquiring of God's will by his Prophets, 6. must first depart from idolatry: 8. otherwise God will permit false-Prophets to deceive them, and both shall perish together: 12. by famine, 15. by ravenous beasts, 17. sword, 19. and pestilence: yea Noe Daniel, and Job interceding shall not deliver them (v. 14. 16. 18. 20.) 21. yet God will conserve some that the whole Church perish not."
     },
     {
       "chapter": 15,
@@ -2107,7 +2098,7 @@
         },
         {
           "verse": 21,
-          "text": "And all his fugitives with all their troop shall fall by the sword: and the residue shall be dispersed into every wind: and you shall know that I^ the Lord have spoken."
+          "text": "And all his fugitives with all their troop shall fall by the sword: and the residue shall be dispersed into every wind: and you shall know that I the Lord have spoken."
         },
         {
           "verse": 22,
@@ -2125,7 +2116,7 @@
         },
         {
           "verse": 24,
-          "text": "And all the trees of the country shall know, that I^ the Lord have humbled the high tree, & exalted the low tree: and have dried the green tree, and have caused the dry tree to spring, I^ the Lord have spoken, and have done it."
+          "text": "And all the trees of the country shall know, that I the Lord have humbled the high tree, & exalted the low tree: and have dried the green tree, and have caused the dry tree to spring, I the Lord have spoken, and have done it."
         }
       ],
       "summary": "By a parable of two eagles (6. and of a vineyard) is prophesied, 9. that Sedecias being made King by Nabuchodonosor, 15. and rebelling, shall be carried captive, and die in Babylon: 22. with prophecy, that God will plant, and propagate the Church of Christ."
@@ -2237,8 +2228,9 @@
           "verse": 23,
           "text": "Why, is the death of a sinner my will, saith our Lord God, and not that he convert from his ways, and live? <cr>[1]</cr>",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "v. 32."
             }
           ]
@@ -2258,15 +2250,14 @@
         {
           "verse": 27,
           "text": "And when the impious shall turn away himself from his impiety, which he hath wrought, and shall do judgement and justice <na>(c)</na> he shall <cr>[1]</cr> vivificate his soul.",
-          "cross_refs": [
-            {
-              "text": "* make his soul to live."
-            }
-          ],
           "notes": [
             {
               "label": "c",
               "text": "As a soul in mortal sin is spiritually dead: so truly repenting it returneth to spiritual life."
+            },
+            {
+              "label": "1",
+              "text": "* make his soul to live."
             }
           ]
         },
@@ -2406,7 +2397,7 @@
         },
         {
           "verse": 5,
-          "text": "And thou shalt say to them: Thus saith our Lord God: In the day that I chose Israel, and lifted up my hand for the stock of the house of Jacob: and appeared to them in the Land of Aegypt, & lifted up my hand for them, saying: I^ the Lord your God:"
+          "text": "And thou shalt say to them: Thus saith our Lord God: In the day that I chose Israel, and lifted up my hand for the stock of the house of Jacob: and appeared to them in the Land of Aegypt, & lifted up my hand for them, saying: I the Lord your God:"
         },
         {
           "verse": 6,
@@ -2414,7 +2405,7 @@
         },
         {
           "verse": 7,
-          "text": "And I said to them: Let every man cast away the scandals of his eyes, & in the idols of Aegypt be ye not polluted: I^ the Lord your God."
+          "text": "And I said to them: Let every man cast away the scandals of his eyes, & in the idols of Aegypt be ye not polluted: I the Lord your God."
         },
         {
           "verse": 8,
@@ -2432,7 +2423,7 @@
         },
         {
           "verse": 10,
-          "text": "Icast them out therefore of the Land of Aegypt, and brought them forth into the desert."
+          "text": "I cast them out therefore of the Land of Aegypt, and brought them forth into the desert."
         },
         {
           "verse": 11,
@@ -2475,11 +2466,11 @@
         },
         {
           "verse": 18,
-          "text": "But I said to their children in the wilderness: In the precepts of your fathers^ walk not, neither keep ye their judgments, nor be polluted in their idols:"
+          "text": "But I said to their children in the wilderness: In the precepts of your fathers walk not, neither keep ye their judgments, nor be polluted in their idols:"
         },
         {
           "verse": 19,
-          "text": "I^ the Lord your God: walk ye in my precepts, and keep my judgements, and do them."
+          "text": "I the Lord your God: walk ye in my precepts, and keep my judgements, and do them."
         },
         {
           "verse": 20,
@@ -2589,7 +2580,7 @@
         },
         {
           "verse": 41,
-          "text": "Iwill receive you for an odour of sweetness, when Ishall have brought you out of the peoples, & shall have gathered you out of the lands, into which you are dispersed, & I will be sanctified in you in the eyes of the nations."
+          "text": "I will receive you for an odour of sweetness, when Ishall have brought you out of the peoples, & shall have gathered you out of the lands, into which you are dispersed, & I will be sanctified in you in the eyes of the nations."
         },
         {
           "verse": 42,
@@ -2623,7 +2614,7 @@
         },
         {
           "verse": 48,
-          "text": "And all flesh shall see, that I^ the Lord kindled it, neither shall it be quenched."
+          "text": "And all flesh shall see, that I the Lord kindled it, neither shall it be quenched."
         },
         {
           "verse": 49,
@@ -2671,7 +2662,7 @@
         },
         {
           "verse": 5,
-          "text": "That all flesh may know that I^ the Lord have drawn my sword out of his scabbard not to be revoked."
+          "text": "That all flesh may know that I the Lord have drawn my sword out of his scabbard not to be revoked."
         },
         {
           "verse": 6,
@@ -2725,7 +2716,7 @@
         },
         {
           "verse": 17,
-          "text": "Yea and I will clap hand to hand, and will fill mine indignation: I^ the Lord have spoken."
+          "text": "Yea and I will clap hand to hand, and will fill mine indignation: I the Lord have spoken."
         },
         {
           "verse": 18,
@@ -2803,7 +2794,7 @@
         },
         {
           "verse": 32,
-          "text": "Thou shalt be food for the fire, thy blood shall be in the midst of the land, thou shalt be forgotten: because I^ the Lord have spoken."
+          "text": "Thou shalt be food for the fire, thy blood shall be in the midst of the land, thou shalt be forgotten: because I the Lord have spoken."
         }
       ],
       "summary": "Destruction of Jerusalem by sword is further described: 10. with translation of the Kingdom. 28. The ruin also of the Ammonites is foreshewed. 30. And finally Babylon, the destroyer of others, shall be destroyed."
@@ -2877,7 +2868,7 @@
         },
         {
           "verse": 14,
-          "text": "Why, shall thy heart abide, or shall thy hands prevail in the days, which I shall make to thee? I^ the Lord have spoken, and will do it."
+          "text": "Why, shall thy heart abide, or shall thy hands prevail in the days, which I shall make to thee? I the Lord have spoken, and will do it."
         },
         {
           "verse": 15,
@@ -3168,8 +3159,9 @@
         {
           "verse": 40,
           "text": "They sent to men coming from far, to whom they had sent a messenger: therefore lo they came: to whom thou didst wash thyself, and didst anoint thine eyes about with <cr>[1]</cr> stibic stone, and wast adorned with women's ornaments.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Antimonium."
             }
           ]
@@ -3288,7 +3280,7 @@
         },
         {
           "verse": 14,
-          "text": "I^ the Lord have spoken: It shall come, and I will do it: I will not pass, nor spare, nor be pacified: according to thy ways, and according to thine inventions will I judge thee, saith our Lord."
+          "text": "I the Lord have spoken: It shall come, and I will do it: I will not pass, nor spare, nor be pacified: according to thy ways, and according to thine inventions will I judge thee, saith our Lord."
         },
         {
           "verse": 15,
@@ -3558,7 +3550,7 @@
         },
         {
           "verse": 21,
-          "text": "Iwill bring thee to nothing, & thou shalt not be, and being sought for, thou shalt not be found any more for ever, saith our Lord God."
+          "text": "I will bring thee to nothing, & thou shalt not be, and being sought for, thou shalt not be found any more for ever, saith our Lord God."
         }
       ],
       "summary": "Tyre a most noble maritime city shall be destroyed, by the King of Babylon, because they rejoice at the desolation of Jerusalem. 15. At the sight whereof many shall be astonished."
@@ -3791,8 +3783,9 @@
         {
           "verse": 13,
           "text": "thou wast in the delicacies of the paradise of God: every precious stone thy covering: sardius, topatius, and the jasper, chrysolithus, and onyx, and berillus, the sapphire, and the carbuncle, and the emerald: gold the work of thy beauty: & thy <cr>[1]</cr> pipes were prepared in the day, that thou wast created.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* Foramina, places taking breath."
             }
           ]
@@ -4037,7 +4030,7 @@
         },
         {
           "verse": 12,
-          "text": "And I will make the channels of the rivers dry, and will deliver the land into the hands of the most wicked: and will dissipate the land and the fullness thereof in the hands of aliens, I^ the Lord have spoken."
+          "text": "And I will make the channels of the rivers dry, and will deliver the land into the hands of the most wicked: and will dissipate the land and the fullness thereof in the hands of aliens, I the Lord have spoken."
         },
         {
           "verse": 13,
@@ -4155,7 +4148,7 @@
         },
         {
           "verse": 11,
-          "text": "Ihave delivered him into the hands of the strongest of the nations, doing he shall do to him: according to his impiety I have cast him out."
+          "text": "I have delivered him into the hands of the strongest of the nations, doing he shall do to him: according to his impiety I have cast him out."
         },
         {
           "verse": 12,
@@ -4227,7 +4220,7 @@
         },
         {
           "verse": 8,
-          "text": "Iwill make <na>(b)</na> all the lights of heaven to mourn upon thee: & I will give darkness upon thy land, saith our Lord God, when thy wounded shall fall in the midst of the land, saith our Lord God.",
+          "text": "I will make <na>(b)</na> all the lights of heaven to mourn upon thee: & I will give darkness upon thy land, saith our Lord God, when thy wounded shall fall in the midst of the land, saith our Lord God.",
           "notes": [
             {
               "label": "b",
@@ -4403,7 +4396,7 @@
             },
             {
               "label": "c",
-              "text": "God being always ready to shew mercy, knocking at the door of our heart, Apoc. 3. v. 20. it is of men's own willfulness that they are not saved: according to that general Axiom: Man doing that in him lieth^ God is not wanting of his part to save all. S. Tho. 1. 2. q. 109. a. 6. & q. 112. a. 3."
+              "text": "God being always ready to shew mercy, knocking at the door of our heart, Apoc. 3. v. 20. it is of men's own willfulness that they are not saved: according to that general Axiom: Man doing that in him lieth God is not wanting of his part to save all. S. Tho. 1. 2. q. 109. a. 6. & q. 112. a. 3."
             }
           ]
         },
@@ -4467,7 +4460,7 @@
         },
         {
           "verse": 25,
-          "text": "Therefore thou shalt say to them: Thus saith our Lord God: Ye that eat in blood & lift up your eyes to your uncleanness, & shed blood: what^ shall you possess the land by inheritance?"
+          "text": "Therefore thou shalt say to them: Thus saith our Lord God: Ye that eat in blood & lift up your eyes to your uncleanness, & shed blood: what shall you possess the land by inheritance?"
         },
         {
           "verse": 26,
@@ -4577,7 +4570,7 @@
         },
         {
           "verse": 15,
-          "text": "Iwill feed my sheep, & I will make them lie, saith our Lord God."
+          "text": "I will feed my sheep, & I will make them lie, saith our Lord God."
         },
         {
           "verse": 16,
@@ -4611,11 +4604,11 @@
         },
         {
           "verse": 22,
-          "text": "Iwill save my flock, & it shall be no more into spoil, & I will judge between beast and beast."
+          "text": "I will save my flock, & it shall be no more into spoil, & I will judge between beast and beast."
         },
         {
           "verse": 23,
-          "text": "<sc>And</sc> <sc>Iwill</sc> <sc>Raise</sc> UP <sc>Over</sc> <sc>Them</sc> <sc>One</sc> <sc>Pastor</sc>: <cr>[1]</cr> who shall feed them, my servant <na>(d)</na> David: he shall feed them, & he shall be their Pastor.",
+          "text": "<sc>And Iwill Raise</sc> UP <sc>Over Them One Pastor</sc>: <cr>[1]</cr> who shall feed them, my servant <na>(d)</na> David: he shall feed them, & he shall be their Pastor.",
           "cross_refs": [
             {
               "text": "Ioa. 10."
@@ -4630,7 +4623,7 @@
         },
         {
           "verse": 24,
-          "text": "And I^ the Lord will be their God: & my servant David the Prince in the midst of them: I^ the Lord have spoken."
+          "text": "And I the Lord will be their God: & my servant David the Prince in the midst of them: I the Lord have spoken."
         },
         {
           "verse": 25,
@@ -4654,11 +4647,11 @@
         },
         {
           "verse": 30,
-          "text": "And they shall know that I^ the Lord their God with them, and they my people the house of Israel: saith our Lord God."
+          "text": "And they shall know that I the Lord their God with them, and they my people the house of Israel: saith our Lord God."
         },
         {
           "verse": 31,
-          "text": "And you my flocks, the flocks of my pasture are men: and I^ the Lord your God, saith our Lord God."
+          "text": "And you my flocks, the flocks of my pasture are men: and I the Lord your God, saith our Lord God."
         }
       ],
       "summary": "A commination of evil pastors: 11. and a prophecy of the coming of Christ, the true Pastor; who will gather his flock from all parts of the earth, 25. and conserve it for ever."
@@ -4724,7 +4717,7 @@
         },
         {
           "verse": 12,
-          "text": "And thou shalt know that I^ the Lord have heard all thy reproaches, that thou hast spoken of the mountains of Israel, saying: They are desert, they are given unto us to devour."
+          "text": "And thou shalt know that I the Lord have heard all thy reproaches, that thou hast spoken of the mountains of Israel, saying: They are desert, they are given unto us to devour."
         },
         {
           "verse": 13,
@@ -4910,7 +4903,7 @@
         },
         {
           "verse": 36,
-          "text": "And the Nations whatsoever shall be left round about you, shall know that I^ the Lord have builded the destroyed things, & planted the untilled places, that I^ the Lord have spoken, and done it."
+          "text": "And the Nations whatsoever shall be left round about you, shall know that I the Lord have builded the destroyed things, & planted the untilled places, that I the Lord have spoken, and done it."
         },
         {
           "verse": 37,
@@ -5012,7 +5005,7 @@
         },
         {
           "verse": 14,
-          "text": "and shall have given my spirit in you, & you shall live, & I shall make you rest upon your ground: & you shall know that I^ the Lord have spoken & done it, saith our Lord God."
+          "text": "and shall have given my spirit in you, & you shall live, & I shall make you rest upon your ground: & you shall know that I the Lord have spoken & done it, saith our Lord God."
         },
         {
           "verse": 15,
@@ -5327,12 +5320,7 @@
         },
         {
           "verse": 24,
-          "text": "According to their uncleanness and wickedness have I done to them, and have hid my face from them. Annotations upon Ezechiel's last vision: written in the nine last chapters.",
-          "cross_refs": [
-            {
-              "text": "ch. 42. v. 16. v. 20. (ch. 40. v. 5.) (ch. 48. v. 16.) li. 15. c. 14. Antiq. Iudaicarum ch. 47. v. 1. & 12."
-            }
-          ]
+          "text": "According to their uncleanness and wickedness have I done to them, and have hid my face from them."
         },
         {
           "verse": 25,
@@ -5352,12 +5340,7 @@
         },
         {
           "verse": 29,
-          "text": "And I will hide my face no more from them, because I have poured out my spirit upon all the house of Israel, saith our Lord God.",
-          "cross_refs": [
-            {
-              "text": "ch. 18. v. 23. ch. 33. v. 11."
-            }
-          ]
+          "text": "And I will hide my face no more from them, because I have poured out my spirit upon all the house of Israel, saith our Lord God."
         }
       ],
       "summary": "Our Lord permitting Gog, most vehemently to afflict the Church, 3. after a while will destroy him, with all his troops: 9. their weapons shall be burned, 11. their sepulchres infamous, the earth not fully cleansed of their carcases in seven months. 17. God's people shall rejoice; 22. and all men shall know that their sins were the cause of their captivity."
@@ -5857,8 +5840,9 @@
         {
           "verse": 3,
           "text": "<cr>[1]</cr> And I saw a vision according to the form which I had seen, when he came to destroy the city: and the shape according to the sight, which I had seen by the river Chobar: and I fell upon my face.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "ch. 9."
             }
           ]
@@ -5866,8 +5850,9 @@
         {
           "verse": 4,
           "text": "And the majesty of our Lord went into the temple by the way of the gate that looked to the East. <cr>[1]</cr>",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "ch. 1."
             }
           ]
@@ -6159,9 +6144,14 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And when you shall begin to divide the land by lot, separate ye first fruits to our Lord, <na>(a)</na> a piece <cr>[1]</cr> sanctified of the land, in length twenty five thousand, and in breadth ten thousand: it shall be sanctified in all the border thereof round about. <na>(a)</na> The land that was assigned to holy uses, was called sanctified, and could not be alienated to private men nor other purposes.",
-          "cross_refs": [
+          "text": "And when you shall begin to divide the land by lot, separate ye first fruits to our Lord, <na>(a)</na> a piece <cr>[1]</cr> sanctified of the land, in length twenty five thousand, and in breadth ten thousand: it shall be sanctified in all the border thereof round about.",
+          "notes": [
             {
+              "label": "a",
+              "text": "The land that was assigned to holy uses, was called sanctified, and could not be alienated to private men nor other purposes."
+            },
+            {
+              "label": "1",
               "text": "* sanctificatum."
             }
           ]
@@ -6284,7 +6274,7 @@
         },
         {
           "verse": 25,
-          "text": "In the seventh month the fifteenth day of the month, in the solemnity he shall make as are before said^ for seven days: as well for sin, as for holocaust, and in sacrifice, and in oil."
+          "text": "In the seventh month the fifteenth day of the month, in the solemnity he shall make as are before said for seven days: as well for sin, as for holocaust, and in sacrifice, and in oil."
         }
       ],
       "summary": "In distribution of the land (after the captivity) several portions are assigned for the Priests, the Levites, the City, and the Prince: the rest was for the people. 9. Rulers are admonished to observe just measures: 15. and to offer due sacrifices."
@@ -6360,7 +6350,13 @@
         },
         {
           "verse": 16,
-          "text": "Thus saith our Lord God: If the Prince shall give a gift to any <na>(b)</na> of his sons: his inheritance shall be to his sons, they shall possess it by inheritance. <na>(b)</na> All works done by the true children of God, that is to say done in the state of grace, do merit eternal reward."
+          "text": "Thus saith our Lord God: If the Prince shall give a gift to any <na>(b)</na> of his sons: his inheritance shall be to his sons, they shall possess it by inheritance.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "All works done by the true children of God, that is to say done in the state of grace, do merit eternal reward."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -6409,15 +6405,14 @@
         {
           "verse": 1,
           "text": "And he turned me to the gate of the house, <cr>[1]</cr> and behold <na>(a)</na> waters issued forth under the threshold of the house toward the East: for the face of the house looked to the East: but the waters descended into the right side of the temple to the South part of the altar.",
-          "cross_refs": [
-            {
-              "text": "See ch. 36. v. 25."
-            }
-          ],
           "notes": [
             {
               "label": "a",
               "text": "There is no history nor probability that waters issued out of the temple, which was re-edified by Zorobabel. Neither did all sorts of fishes live in any such water near the temple as are mentioned. v. 9. And therefore this prophecy hath an higher & truer sense, of the Church of Christ, and the water of Baptism."
+            },
+            {
+              "label": "1",
+              "text": "See ch. 36. v. 25."
             }
           ]
         },

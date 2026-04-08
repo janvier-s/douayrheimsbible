@@ -16,7 +16,7 @@
         },
         {
           "verse": 3,
-          "text": "Igive thanks to God, whom I serve from my progenitors in a pure conscience, that without intermission I have a memory of thee in my prayers, night and day."
+          "text": "I give thanks to God, whom I serve from my progenitors in a pure conscience, that without intermission I have a memory of thee in my prayers, night and day."
         },
         {
           "verse": 4,
@@ -30,9 +30,10 @@
         {
           "verse": 6,
           "text": "For the which cause I admonish thee that thou resuscitate the <cr>[1]</cr> grace of God, which is in thee by the imposition of my hands.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Act. 14, 25."
+              "label": "1",
+              "text": "Here again it is plain that holy Orders give grace, and that even by and in the external ceremony of imposing the Bishop's hands. And it is a manner of speech specially used in this Apostle and S. Luke, that Orders give grace to the ordered, & that to take orders or authority to minister Sacraments or preach, is, to be given or delivered to God's grace. Act. 14, 25."
             }
           ]
         },
@@ -77,12 +78,7 @@
         {
           "verse": 13,
           "text": "Have thou a form of sound words, which thou hast heard of me in faith and <cr>[1][2]</cr> in the love of Christ <sc>Jesus</sc>.",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "c ἀγάπῃ τῇ ἐν Χριςῷ"
-            }
-          ]
+          "has_annotation": true
         },
         {
           "verse": 14,
@@ -98,6 +94,12 @@
           "cross_refs": [
             {
               "text": "2. Tim. 4, 19."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "What a happy & meritorious things it is to relieve the afflicted for religion, & not to be ashamed of their disgrace, irons, or what miseries so ever."
             }
           ]
         },
@@ -147,7 +149,13 @@
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> Be mindful that our Lord <sc>Jesus</sc> Christ is risen again from the dead, of the seed of David, according to my Gospel,"
+          "text": "<cr>[1]</cr> Be mindful that our Lord <sc>Jesus</sc> Christ is risen again from the dead, of the seed of David, according to my Gospel,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b Part of the Epistle upon S. George's day. April. 25. The rest is pa. 541."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -155,7 +163,13 @@
         },
         {
           "verse": 10,
-          "text": "Therefore <cr>[1]</cr> I sustain all things for the elect, that they also may obtain the salvation, which is in Christ <sc>Jesus</sc>, with heavenly glory."
+          "text": "Therefore <cr>[1]</cr> I sustain all things for the elect, that they also may obtain the salvation, which is in Christ <sc>Jesus</sc>, with heavenly glory.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Mark here that the elect (though sure of salvation) yet are saved by means of their preachers & teachers, as also by their own endeavours."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -191,9 +205,10 @@
         {
           "verse": 16,
           "text": "But <cr>[1]</cr> profane and vain speeches avoid: for they do much grow to impiety:",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "1. Tim. 6. v. 20."
+              "label": "1",
+              "text": "c See the Annotations before 1. Tim. 6. v. 20."
             }
           ]
         },
@@ -204,7 +219,7 @@
         },
         {
           "verse": 18,
-          "text": "who have erred from the 2 Timothy 2 truth, saying that the resurrection is done already, and have subverted the faith of some."
+          "text": "who have erred from the truth, saying that the resurrection is done already, and have subverted the faith of some."
         },
         {
           "verse": 19,
@@ -222,7 +237,7 @@
         },
         {
           "verse": 22,
-          "text": "But youthful desires^ fly, and pursue justice, faith, charity, and peace with them that invocate our Lord from a pure heart."
+          "text": "But youthful desires fly, and pursue justice, faith, charity, and peace with them that invocate our Lord from a pure heart."
         },
         {
           "verse": 23,
@@ -239,7 +254,13 @@
         },
         {
           "verse": 25,
-          "text": "with modesty admonishing them that resist the truth: lest sometime <cr>[1]</cr> God give them repentance to know the truth:"
+          "text": "with modesty admonishing them that resist the truth: lest sometime <cr>[1]</cr> God give them repentance to know the truth:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Conversion from sin and heresy is the gift of God and of his special grace: yet here we see, good exhortations and prayer and such other helps of man be profitable thereunto. Which could not be, if we had not free will."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -293,6 +314,12 @@
             {
               "text": "Exo. 7."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "That those Magicians which resisted Moyses, were thus called, it is not written in all the old Testament, therefore it came to the Apostle's knowledge by tradition, as the Church now hath the names of the 3 kings, of the penitent thief, of the soldier that pierced Christ's side on the Cross, and of the like."
+            }
           ]
         },
         {
@@ -302,11 +329,17 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> But thou hast attained to my doctrine, institution, purpose, faith, longanimity, love, patience,"
+          "text": "<cr>[1]</cr> But thou hast attained to my doctrine, institution, purpose, faith, longanimity, love, patience,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The rest of the Epist. for S. George's day."
+            }
+          ]
         },
         {
           "verse": 11,
-          "text": "persecutions, passions: what manner of things were done to me at Antioch, at Iconium, at Lystra: 2 Timothy 3 what manner of persecutions I sustained. And out of all^ our Lord delivered me."
+          "text": "persecutions, passions: what manner of things were done to me at Antioch, at Iconium, at Lystra: what manner of persecutions I sustained. And out of all our Lord delivered me."
         },
         {
           "verse": 12,
@@ -321,9 +354,10 @@
         {
           "verse": 14,
           "text": "But thou, <cr>[1]</cr> continue in those things which thou hast learned, & are committed to thee: knowing of whom thou hast learned;",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "depositum. 1. Tim. 6. and 2. Tim. 1."
+              "label": "1",
+              "text": "In all danger and diversity of false sects, S. Paul's admonition is, ever to abide in that was first taught and delivered, never to give over our old faith for a new fancy. This is it which before he calleth depositum. 1. Tim. 6. and 2. Tim. 1."
             }
           ]
         },
@@ -354,9 +388,10 @@
         {
           "verse": 1,
           "text": "I <cr>[1]</cr> Testify before God and <sc>Jesus</sc> Christ who shall judge the living and the dead, and by his advent, and his Kingdom:",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "31. 14. August 4."
+              "label": "1",
+              "text": "The Epistle for holy Doctors, and for S. Silvester. Decemb. 31. & for S. Hilary, Ian. 14. and S. Dominic August 4."
             }
           ]
         },
@@ -379,11 +414,17 @@
         },
         {
           "verse": 6,
-          "text": "For I am even now <cr>[1]</cr> to be sacrificed: and the time of my resolution is at hand."
+          "text": "For I am even now <cr>[1]</cr> to be sacrificed: and the time of my resolution is at hand.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The martyrdom of Saints is so acceptable to God, that it is counted as it were a sacrifice in his sight, and therefore hath many effects both in the party that suffereth it, and in others that are partakers of the merit as of a Sacrifice: which name it hath by a Metaphor."
+            }
+          ]
         },
         {
           "verse": 7,
-          "text": "Ihave fought a good fight, I have consummate my course, I have kept the faith."
+          "text": "I have fought a good fight, I have consummate my course, I have kept the faith."
         },
         {
           "verse": 8,
@@ -413,7 +454,7 @@
         },
         {
           "verse": 13,
-          "text": "The cloak that I left at Troas with Carpus, coming bring with thee, and the books, especially the parchment. 2 Timothy 4"
+          "text": "The cloak that I left at Troas with Carpus, coming bring with thee, and the books, especially the parchment."
         },
         {
           "verse": 14,
@@ -434,8 +475,9 @@
         {
           "verse": 18,
           "text": "Our Lord <cr>[1]</cr> <alt>hath delivered</alt> me from all evil work: and will save me unto his heavenly Kingdom. To whom be glory for ever and ever. Amen.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "will deliver"
             }
           ]
@@ -455,11 +497,17 @@
         },
         {
           "verse": 21,
-          "text": "Make haste to come before winter. Eubulus and Pudens and <cr>[1]</cr> Linus and Claudia, and all the brethren, salute thee."
+          "text": "Make haste to come before winter. Eubulus and Pudens and <cr>[1]</cr> Linus and Claudia, and all the brethren, salute thee.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c This Linus was coadjutor with & under S. Peter, & so counted second in the number of Popes."
+            }
+          ]
         },
         {
           "verse": 22,
-          "text": "Our Lord <sc>Jesus</sc> Christ be with thy spirit. Grace be with you. Amen. 2 Timothy 4 and right debt <cr>[3]</cr> . See a notable place in S. Augustine in <i>Psal. 83 in fine:</i> and <i>100 in initio. & ho. 14. c. 2. ii. 50. hom.</i> S. Cyprian also, and namely the later end of his book <i>de opere & eleemosyna:</i> and thou shalt easily contemn the contrary falsehood, which doth not so much derogate from man's works, as from God's grace which is the cause and ground of all worthiness in man's merits. S. Augustine's words <cr>[4]</cr> be these, <i>Mark that he to whom our Lord gave grace, hath our Lord also his debter. He found him a giver, in the time of mercy: he hath him his debter in the time of judgement.</i> See the place and the rest here quoted, where he examineth and explicateth the matter at large."
+          "text": "Our Lord <sc>Jesus</sc> Christ be with thy spirit. Grace be with you. Amen."
         }
       ],
       "summary": "He requireth him to be earnest while he may, because the time will come when they will not abide Catholic preaching, 5. and to fulfil his course, as himself now hath done. 9. and to come unto him with speed, because the rest of his train are dispersed, and he draweth now to heaven."

@@ -13,6 +13,10 @@
             {
               "label": "a",
               "text": "Nehemias by his legacy , being sent from a King; by his name which signifieth comforter from our Lord; and by his building again the walls of Jerusalem; prefigured our Saviour, who was sent from God the Father, himself being the comforter of mankind, & the sender of another comforter the Holy Ghost, to remain with his Church. S. Beda prolog. in Nehemiam."
+            },
+            {
+              "label": "1",
+              "text": "The first part. Nehemias his commiseration of his country."
             }
           ]
         },
@@ -54,7 +58,7 @@
         },
         {
           "verse": 11,
-          "text": "Ibeseech thee Lord, let thine ear be attent to the prayer of thy servant, and to the prayer of thy servants, which will fear thy name: and direct thy servant this day, and give him mercy before this man. For I was the king's cup-bearer."
+          "text": "I beseech thee Lord, let thine ear be attent to the prayer of thy servant, and to the prayer of thy servants, which will fear thy name: and direct thy servant this day, and give him mercy before this man. For I was the king's cup-bearer."
         }
       ],
       "summary": "Nehemias hearing the miserable state of his country-men in Jury, 4. lamenteth, fasteth, and prayeth God for their relief."
@@ -138,7 +142,13 @@
         },
         {
           "verse": 18,
-          "text": "And I shewed them <na>(b)</na> the hand of my God, that it was good with me, and the king's words, which he had spoken to me, and I said: 2 Esdras 2 Let us rise, and let us build. And their hands were encouraged in good. <na>(b)</na> God's hand was clearly shewed in the effect of obtaining the King's favorable letters."
+          "text": "And I shewed them <na>(b)</na> the hand of my God, that it was good with me, and the king's words, which he had spoken to me, and I said: Let us rise, and let us build. And their hands were encouraged in good.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "God's hand was clearly shewed in the effect of obtaining the King's favorable letters."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -161,6 +171,10 @@
             {
               "label": "a",
               "text": "Finishing the gate they dedicated it to God's service, being for defence of his holy city: & so sanctified it."
+            },
+            {
+              "label": "1",
+              "text": "The second part. How the city was repaired with walls and people."
             }
           ]
         },
@@ -242,7 +256,7 @@
         },
         {
           "verse": 21,
-          "text": "After him built Merimuth the son of Urias 2 Esdras 3 the son of Haccus, the second measure, from the gate of the house of Eliasib, as far as the house of Eliasib extended."
+          "text": "After him built Merimuth the son of Urias the son of Haccus, the second measure, from the gate of the house of Eliasib, as far as the house of Eliasib extended."
         },
         {
           "verse": 22,
@@ -350,7 +364,7 @@
         },
         {
           "verse": 14,
-          "text": "And I looked and rose up: and I said to the Princes and magistrates, and to the rest of the common 2 Esdras 4 people: Be not afraid at their face: Remember our Lord great and terrible, and fight for your brethren, your sons, and your daughters, and your wives, and your houses."
+          "text": "And I looked and rose up: and I said to the Princes and magistrates, and to the rest of the common people: Be not afraid at their face: Remember our Lord great and terrible, and fight for your brethren, your sons, and your daughters, and your wives, and your houses."
         },
         {
           "verse": 15,
@@ -444,7 +458,7 @@
         },
         {
           "verse": 10,
-          "text": "Ialso & my brethren, and my servants, have lent money and corn to very many: let us not ask this again in common, let us remit them the debt, that is due to us."
+          "text": "I also & my brethren, and my servants, have lent money and corn to very many: let us not ask this again in common, let us remit them the debt, that is due to us."
         },
         {
           "verse": 11,
@@ -452,7 +466,7 @@
         },
         {
           "verse": 12,
-          "text": "And they said: We will restore, and we will seek nothing of them: and we will do so as thou 2 Esdras 5 speakest. And I called the Priests, and adjured them to do according to that which I had said."
+          "text": "And they said: We will restore, and we will seek nothing of them: and we will do so as thou speakest. And I called the Priests, and adjured them to do according to that which I had said."
         },
         {
           "verse": 13,
@@ -542,7 +556,7 @@
         },
         {
           "verse": 11,
-          "text": "And I said. Doth any man that is like unto me fly? And who being as I am, will go into the temple, and live? I will not go in. 2 Esdras 6"
+          "text": "And I said. Doth any man that is like unto me fly? And who being as I am, will go into the temple, and live? I will not go in."
         },
         {
           "verse": 12,
@@ -588,7 +602,7 @@
         },
         {
           "verse": 2,
-          "text": "Icommanded Hanani my brother, and Hananias Prince of the house of Jerusalem (for he seemed as it were a true man, & one that feared God above the rest)"
+          "text": "I commanded Hanani my brother, and Hananias Prince of the house of Jerusalem (for he seemed as it were a true man, & one that feared God above the rest)"
         },
         {
           "verse": 3,
@@ -690,7 +704,7 @@
         },
         {
           "verse": 26,
-          "text": "The children of Bethlehem, and Netupha, an hundred 2 Esdras 7 eighty eight."
+          "text": "The children of Bethlehem, and Netupha, an hundred eighty eight."
         },
         {
           "verse": 27,
@@ -850,7 +864,7 @@
         },
         {
           "verse": 66,
-          "text": "All the multitude as it were one man^ forty two thousand three hundred sixty,"
+          "text": "All the multitude as it were one man forty two thousand three hundred sixty,"
         },
         {
           "verse": 67,
@@ -862,10 +876,11 @@
         },
         {
           "verse": 69,
-          "text": "their camels, four hundred thirty five, asses six thousand seven hundred twenty. <i>Hitherto is reported what was written in the Register. From this place forward goeth on in order the history of Nehemias.</i> <cr>[1]</cr>",
-          "cross_refs": [
+          "text": "their camels, four hundred thirty five, asses six thousand seven hundred twenty. <cr>[1]</cr>",
+          "notes": [
             {
-              "text": "S. Jerome"
+              "label": "1",
+              "text": "S. Jerome here noteth whence he received each part of this book, which is all Canonical Scripture, being all alike so declared by the Church."
             }
           ]
         },
@@ -970,7 +985,7 @@
         },
         {
           "verse": 16,
-          "text": "And the people went forth, and brought. And they made themselves tabernacles every man in 2 Esdras 8 his house top, and in his courts, and in the courts of the house of God, and in the street of the water gate, and in the street of the gate of Ephraim."
+          "text": "And the people went forth, and brought. And they made themselves tabernacles every man in his house top, and in his courts, and in the courts of the house of God, and in the street of the water gate, and in the street of the gate of Ephraim."
         },
         {
           "verse": 17,
@@ -1060,7 +1075,7 @@
         },
         {
           "verse": 16,
-          "text": "But they and our fathers did 2 Esdras 9 proudly, and hardened their necks, and heard not thy commandments."
+          "text": "But they and our fathers did proudly, and hardened their necks, and heard not thy commandments."
         },
         {
           "verse": 17,
@@ -1146,7 +1161,7 @@
         },
         {
           "verse": 36,
-          "text": "Behold we ourselves this day are bondmen: and the land, which thou gavest our fathers, that they should eat the bread thereof, and the good things that are thereof, and 2 Esdras 9 ourselves are servants in it."
+          "text": "Behold we ourselves this day are bondmen: and the land, which thou gavest our fathers, that they should eat the bread thereof, and the good things that are thereof, and ourselves are servants in it."
         },
         {
           "verse": 37,
@@ -1314,11 +1329,11 @@
         },
         {
           "verse": 37,
-          "text": "And the first fruits of our meats, and of our libaments, & the fruits of every tree, of vintage also and of oil we will bring to the Priests, unto the treasury of our God, and the tenth part of our land to the Levites. The Levites themselves shall receive the tithes out of all the cities^ of our works."
+          "text": "And the first fruits of our meats, and of our libaments, & the fruits of every tree, of vintage also and of oil we will bring to the Priests, unto the treasury of our God, and the tenth part of our land to the Levites. The Levites themselves shall receive the tithes out of all the cities of our works."
         },
         {
           "verse": 38,
-          "text": "And the Priest the son of Aaron shall be with the Levites in the 2 Esdras 10 tithes of the Levites, and the Levites shall offer the tenth part of their tithe in the house of our God, to the treasury in the treasure-house."
+          "text": "And the Priest the son of Aaron shall be with the Levites in the tithes of the Levites, and the Levites shall offer the tenth part of their tithe in the house of our God, to the treasury in the treasure-house."
         },
         {
           "verse": 39,
@@ -1428,7 +1443,7 @@
         },
         {
           "verse": 22,
-          "text": "And the overseer of the Levites in Jerusalem, Azzi the son of Bani, the son of Hasabia, the son of Mathania, the son of Micha. Of the children of Asaph, 2 Esdras 11 the singing men in the ministry of the house of God."
+          "text": "And the overseer of the Levites in Jerusalem, Azzi the son of Bani, the son of Hasabia, the son of Mathania, the son of Micha. Of the children of Asaph, the singing men in the ministry of the house of God."
         },
         {
           "verse": 23,
@@ -1528,7 +1543,7 @@
         },
         {
           "verse": 8,
-          "text": "Moreover the Levites, Jesua, Bennui, Cedmihel, Sarebia, Juda, Mathanias, over the hymns^ they & their brethren:"
+          "text": "Moreover the Levites, Jesua, Bennui, Cedmihel, Sarebia, Juda, Mathanias, over the hymns they & their brethren:"
         },
         {
           "verse": 9,
@@ -1618,7 +1633,7 @@
         },
         {
           "verse": 29,
-          "text": "and from the house of Galgal, and from 2 Esdras 12 the countries of Geba and Azmaveth: because the singing men did build themselves villages round about Jerusalem."
+          "text": "and from the house of Galgal, and from the countries of Geba and Azmaveth: because the singing men did build themselves villages round about Jerusalem."
         },
         {
           "verse": 30,
@@ -1702,7 +1717,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> in that day there was read in the volume of Moyses the people hearing it: and there was found written in it, that the Ammonites and the Moabites should not enter into the Church of God for ever:"
+          "text": "And <cr>[1]</cr> in that day there was read in the volume of Moyses the people hearing it: and there was found written in it, that the Ammonites and the Moabites should not enter into the Church of God for ever:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part. Correction of faults."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1715,7 +1736,7 @@
         },
         {
           "verse": 3,
-          "text": "And it came to pass, when they had heard the law, 2 Esdras 13 they separated every stranger from Israel."
+          "text": "And it came to pass, when they had heard the law, they separated every stranger from Israel."
         },
         {
           "verse": 4,
@@ -1813,7 +1834,7 @@
         },
         {
           "verse": 26,
-          "text": "Did not Salomon the king of Israel sin in this kind of thing? And surely in many nations, there was not a king like to him, and he was 2 Esdras 13 beloved of his God, and God set him king over all Israel: him therefore also foreign women brought to sin."
+          "text": "Did not Salomon the king of Israel sin in this kind of thing? And surely in many nations, there was not a king like to him, and he was beloved of his God, and God set him king over all Israel: him therefore also foreign women brought to sin."
         },
         {
           "verse": 27,

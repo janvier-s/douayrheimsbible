@@ -206,20 +206,26 @@
       ]
     },
     {
-      "verse": 28,
-      "part": 4,
-      "text": "<mn>[1]</mn>",
+      "text": "<mn>[1]</mn> If any here ask, what need so much disputing, study, and travail in Councels to find out and determine the truth, if the Holy Ghost infallibly guide them? We answer that such is the ordinary providence of God in this case, to assist them when they do their endeavour, and use all human means of industry, and not else. And so (though somewhat otherwise) God assisted the Evangelists and other writers of the holy Scriptures, that they could not err in penning the same, but yet they did and ought to use all possible human diligence to know and learn out the histories and truth of matters, as is plain in the beginning of S. Luke's Gospel <mn>[2]</mn>: else the Holy Ghost would not have assisted them. Even so in this Councel of the Apostles, though they had the Holy Ghost assistant, yet the text saith, <i>cum magna conquisitio fieret</i>, when there was great disputation, search and examination of the case, then Peter spake &c. <mn>[3]</mn> If again it be demanded, what need is there to expect the Councel's determination, if the Pope's or See Apostolic's judgement be infallible and have the assistance of God also, as the Catholics affirm? We answer, that for the Catholic and peaceable obedient children of the Church it is a comfort to have such various means of determination, trial, and declaration of the truth, and that it is necessary for the recovery of Heretics, and for the contentation of the weak, who not always giving over to one man's determination, yet will either yield to the judgement of all the learned men and Bishops of all Nations, or else remain desperate and condemned before God and man for ever. And as I said before, this assistance of the Holy Ghost promised to Peter's See, presupposeth human means of searching out the truth, which the Pope always hath used, & will, & must use in matters of great importance, by calling Councels, even as here you see SS. Peter and Paul themselves and all the Apostles, though endued with the Holy Ghost, yet thought it notwithstanding necessary for further trial & clearing of truth and maintenance of unity, to keep a Councel.",
       "notes": [
         {
           "marker": 1,
           "text": "Notwithstanding the Holy Ghost's assistance, yet human means must be used to search the truth."
+        },
+        {
+          "marker": 2,
+          "text": "<i>Lu. 1, 3.</i>"
+        },
+        {
+          "marker": 3,
+          "text": "Though the See Apostolic itself have the same assistance, yet Councels be also necessary for many causes."
         }
-      ]
+      ],
+      "verse": 28,
+      "part": 4
     },
     {
-      "verse": 28,
-      "part": 5,
-      "text": "If any here ask, what need so much disputing, study, and travail in Councels to find out and determine the truth, if the Holy Ghost infallibly guide them? We answer that such is the ordinary providence of God in this case, to assist them when they do their endeavour, and use all human means of industry, and not else. And so (though somewhat otherwise) God assisted the Evangelists and other writers of the holy Scriptures, that they could not err in penning the same, but yet they did and ought to use all possible human diligence to know and learn out the histories and truth of matters, as is plain in the beginning of S. Luke's Gospel <mn>[2]</mn>: else the Holy Ghost would not have assisted them. Even so in this Councel of the Apostles, though they had the Holy Ghost assistant, yet the text saith, <i>cum magna conquisitio fieret</i>, when there was great disputation, search and examination of the case, then Peter spake &c. <mn>[3]</mn> If again it be demanded, what need is there to expect the Councel's determination, if the Pope's or See Apostolic's judgement be infallible and have the assistance of God also, as the Catholics affirm? We answer, that for the Catholic and peaceable obedient children of the Church it is a comfort to have such various means of determination, trial, and declaration of the truth, and that it is necessary for the recovery of Heretics, and for the contentation of the weak, who not always giving over to one man's determination, yet will either yield to the judgement of all the learned men and Bishops of all Nations, or else remain desperate and condemned before God and man for ever. And as I said before, this assistance of the Holy Ghost promised to Peter's See, presupposeth human means of searching out the truth, which the Pope always hath used, & will, & must use in matters of great importance, by calling Councels, even as here you see SS. Peter and Paul themselves and all the Apostles, though endued with the Holy Ghost, yet thought it notwithstanding necessary for further trial & clearing of truth and maintenance of unity, to keep a Councel.\n\nLastly it is to be noted, that as Christ and the Holy Ghost be present by his promise, to all such assemblies as gather in the obedience & unity of the Church, with full mind to obey whatsoever shall be determined, whereby the assembled though of diverse judgments before, do most peaceably yield to truth, and agree in one uniform determination of the same: so all such as gather out of the Church, without humility or intention to yield one to another, or to any Superior, man or Councel, or what else so ever, but challenge to themselves learning, spirit, and we cannot tell what: <mn>[1]</mn> such, how many meetings so ever they make, being destitute of the Holy Ghost the author of truth and concord, are further off and further out, than ever before: as God hath shewed by the success of all Heretical Colloquies, Synods, and Assemblies in Germany, France, Pole, and other places in our days. Read a notable place in S. Cyprian <mn>[2]</mn>, that the promise of Christ, that he would be in the middes of two or three gathered in his name, pertaineth not to them that assemble out of the Church.",
+      "text": "Lastly it is to be noted, that as Christ and the Holy Ghost be present by his promise, to all such assemblies as gather in the obedience & unity of the Church, with full mind to obey whatsoever shall be determined, whereby the assembled though of diverse judgments before, do most peaceably yield to truth, and agree in one uniform determination of the same: so all such as gather out of the Church, without humility or intention to yield one to another, or to any Superior, man or Councel, or what else so ever, but challenge to themselves learning, spirit, and we cannot tell what: <mn>[1]</mn> such, how many meetings so ever they make, being destitute of the Holy Ghost the author of truth and concord, are further off and further out, than ever before: as God hath shewed by the success of all Heretical Colloquies, Synods, and Assemblies in Germany, France, Pole, and other places in our days. Read a notable place in S. Cyprian <mn>[2]</mn>, that the promise of Christ, that he would be in the middes of two or three gathered in his name, pertaineth not to them that assemble out of the Church.",
       "notes": [
         {
           "marker": 1,
@@ -227,17 +233,11 @@
         },
         {
           "marker": 2,
-          "text": "<i>Lu. 1, 3.</i>"
-        },
-        {
-          "marker": 2,
           "text": "<i>de unit. Ec. nu. 7.</i>"
-        },
-        {
-          "marker": 3,
-          "text": "Though the See Apostolic itself have the same assistance, yet Councels be also necessary for many causes."
         }
-      ]
+      ],
+      "verse": 28,
+      "part": 5
     },
     {
       "verse": 31,

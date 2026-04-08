@@ -8,7 +8,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Simon</sc> <sc>Peter</sc>^ servant and Apostle of <sc>Jesus</sc> Christ, to them that have obtained equal faith with us in the justice of our God and Saviour <sc>Jesus</sc> Christ."
+          "text": "<sc>Simon Peter</sc> servant and Apostle of <sc>Jesus</sc> Christ, to them that have obtained equal faith with us in the justice of our God and Saviour <sc>Jesus</sc> Christ."
         },
         {
           "verse": 2,
@@ -71,15 +71,18 @@
         {
           "verse": 16,
           "text": "<cr>[1]</cr> For, not having followed unlearned fables, have we made the power and <cr>[2]</cr> <alt>presence</alt> of our Lord <sc>Jesus</sc> Christ known to you: but <cr>[3]</cr> made beholders of his greatness.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Transfiguration Aug. 6."
+              "label": "1",
+              "text": "The Epistle in the Transfiguration of our Lord, Aug. 6."
             },
             {
+              "label": "2",
               "text": "prescience"
             },
             {
-              "text": "Mat. 17, 1."
+              "label": "3",
+              "text": "c By this it is plain, that either John, James, or Peter must be the author of this epistle. For these three only were present at the Transfiguration. Mat. 17, 1."
             }
           ]
         },
@@ -95,9 +98,10 @@
         {
           "verse": 18,
           "text": "And this voice we heard brought from heaven, when we were with him in the <cr>[1]</cr> holy mount.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Act. 7, 33."
+              "label": "1",
+              "text": "You see that places are made holy by Christ's presence, & that all places be not alike holy. See Annot. Act. 7, 33."
             }
           ]
         },
@@ -126,28 +130,39 @@
       "chapter": 2,
       "verses": [
         {
-          "verse": 0,
-          "text": "2 Peter 2"
-        },
-        {
           "verse": 1,
           "text": "<sc>But</sc> there were also false-prophets in the people, as also in you there <cr>[1]</cr> shall be lying masters which shall bring in sects of perdition, and deny him that hath bought them, <cr>[2]</cr> the Lord: bringing upon themselves speedy perdition.",
           "cross_refs": [
             {
               "text": "1. Tim. 4. Iude."
-            },
+            }
+          ],
+          "notes": [
             {
+              "label": "2",
               "text": "c δεσπότην."
             }
           ]
         },
         {
           "verse": 2,
-          "text": "And <cr>[1]</cr> many shall follow their riotousnesses, by whom the way of truth shall be blasphemed."
+          "text": "And <cr>[1]</cr> many shall follow their riotousnesses, by whom the way of truth shall be blasphemed.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Heretics (of whom he prophesieth here) do gain scholers, by preaching liberty, and by their own licentious life, which is specially joined to the heresy of these days."
+            }
+          ]
         },
         {
           "verse": 3,
-          "text": "And in avarice shall they <cr>[1]</cr> with feigned words make merchandise of you. Unto whom the judgement now long since ceaseth not: and their perdition slumbereth not."
+          "text": "And in avarice shall they <cr>[1]</cr> with feigned words make merchandise of you. Unto whom the judgement now long since ceaseth not: and their perdition slumbereth not.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c All the sweet words of heretics, speaking much of the word of the Lord, the Gospel, JESUS CHRIST &c. are but terms of art to buy and sell poor men's souls."
+            }
+          ]
         },
         {
           "verse": 4,
@@ -182,7 +197,13 @@
         },
         {
           "verse": 8,
-          "text": "For in sight and <cr>[1]</cr> hearing he was just: dwelling with them who from day to day vexed the just soul with unjust works."
+          "text": "For in sight and <cr>[1]</cr> hearing he was just: dwelling with them who from day to day vexed the just soul with unjust works.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "See previous note"
+            }
+          ]
         },
         {
           "verse": 9,
@@ -190,26 +211,40 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> and especially them which walk after the flesh in concupiscence of uncleanness, and contemn dominion, bold, self-pleasers: they fear not to bring in sects, blaspheming."
+          "text": "<cr>[1]</cr> and especially them which walk after the flesh in concupiscence of uncleanness, and contemn dominion, bold, self-pleasers: they fear not to bring in sects, blaspheming.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The special properties of heretics."
+            }
+          ]
         },
         {
           "verse": 11,
           "text": "Whereas Angels being greater in strength and power, bear not the execrable judgement <cr>[1]</cr> against them.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "* from our Lord"
             }
           ]
         },
         {
           "verse": 12,
-          "text": "But these men as unreasonable beasts, naturally tending to the snare and into destruction, <cr>[1]</cr> in those things which they know not, blaspheming, shall perish in their corruption,"
+          "text": "But these men as unreasonable beasts, naturally tending to the snare and into destruction, <cr>[1]</cr> in those things which they know not, blaspheming, shall perish in their corruption,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "So heretics blaspheme the highest mysteries of our faith through ignorance."
+            }
+          ]
         },
         {
           "verse": 13,
           "text": "receiving the reward of injustice, esteeming for a pleasure the delights of a day: <cr>[1]</cr> coinquinations and spots, flowing in delicacies, in their feastings rioting with you,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "b coinquinationes & maculae."
             }
           ]
@@ -246,11 +281,17 @@
             {
               "text": "Io. 8, 34. Ro. 6, 16."
             }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Who ever promised more liberty to their followers than Luther, Calvin, & the like, taking away penance, fasting, continency or chastity, keeping of vows, necessity of good works (because faith doth all) obedience to Ecclesiastical Pastors and Councels, and such like?"
+            }
           ]
         },
         {
           "verse": 20,
-          "text": "For if flying from the coinquinations of the world 2 Peter 2 in the knowledge of our Lord and Saviour <sc>Jesus</sc> Christ, they again entangled with the same be overcome: <cr>[1]</cr> the later things are become unto them worse than the former.",
+          "text": "For if flying from the coinquinations of the world in the knowledge of our Lord and Saviour <sc>Jesus</sc> Christ, they again entangled with the same be overcome: <cr>[1]</cr> the later things are become unto them worse than the former.",
           "cross_refs": [
             {
               "text": "Mt. 12, 45."
@@ -263,12 +304,15 @@
         },
         {
           "verse": 22,
-          "text": "For, that of the true proverb is chanced to them, <cr>[1]</cr> The dog returned to his vomit: and, The sow washed^ <cr>[2]</cr> into her wallowing in the mire.",
+          "text": "For, that of the true proverb is chanced to them, <cr>[1]</cr> The dog returned to his vomit: and, The sow washed <cr>[2]</cr> into her wallowing in the mire.",
           "cross_refs": [
             {
               "text": "Pro. 26, 11."
-            },
+            }
+          ],
+          "notes": [
             {
+              "label": "2",
               "text": "c εἰς κύλισμα."
             }
           ]
@@ -282,8 +326,9 @@
         {
           "verse": 1,
           "text": "<sc>This</sc> lo the second epistle I write to you, my dearest, <cr>[1]</cr> in which I stir up by admonition your sincere mind:",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c in quibus"
             }
           ]
@@ -376,7 +421,7 @@
         },
         {
           "verse": 16,
-          "text": "as also in all epistles speaking in them of these things; in the which are certain things hard to be 2 Peter 3 understood, which the unlearned and unstable deprave, as also the rest of the Scriptures, to their own perdition.",
+          "text": "as also in all epistles speaking in them of these things; in the which are certain things hard to be understood, which the unlearned and unstable deprave, as also the rest of the Scriptures, to their own perdition.",
           "has_annotation": true
         },
         {
@@ -385,18 +430,7 @@
         },
         {
           "verse": 18,
-          "text": "But grow in grace and in knowledge of our Lord and Saviour <sc>Jesus</sc> Christ. To him be glory both now and unto the day of eternity. Amen. 2 Peter 3 writing and inditing thereof, is high and hard, and purposely by God's providence appointed to be written in such sort <cr>[1]</cr> , see S. Augustine li. 2. de doct. Christ. C. 6. and ep. 119. S. Ambrose ep. 44. in principio. S. Hierom to Paulinus ep. 103. c. 5. 6. 7. who also (ep. 65. c. 1.) saith, that in his old age when he should rather have taught than be taught, he went as far as Alexandria, only to hear Didymus, and to have his help for the understanding of the Scriptures, and confesseth with great thanks to the said Didymus, that he learned of him that which before he knew not. David saith, <i>Give me understanding, and I will search thy law</i> <cr>[2]</cr> . The Eunuch in the Acts <cr>[3]</cr> said, How can I understand with out an interpreter? The Apostles, till Christ opened their sense to understand the scriptures, could not understand them <cr>[4]</cr> . The holy Doctors by continual study, watching, fasting, and praying, had much a do to understand them: that great clerk S. Augustine confessing in the foresaid epistle 119. c. 21. that there were many more things that he understood not. then that he understood. The Heretics say the fathers did commonly err. and how could such great wise learned men be deceived in reading and expounding the Scriptures, if they were not hard? and if they were hard to them, how are they easy to these new masters the Heretics? Finally, why do they write so many new glosses, scholies, commentaries, as a cart cannot carry? Why do Luther, Zuinglius, Calvin, and their Companions agree no better upon the interpretation of the Scriptures, if they be not hard? whereat stumbled all the old heretics & the new, Arius, Macedonius, Vigilantius, Nestorius, Eutyches, Berengarius, Wicleffe, Protestants, Puritanes, Anabaptists, and the rest, but at the hardness of the Scriptures? They be hard then to understand, and Heretics pervert them to their own damnation. matter, but the style of the Scriptures is hard.",
-          "cross_refs": [
-            {
-              "text": "Ps. 118."
-            },
-            {
-              "text": "Act. 8."
-            },
-            {
-              "text": "Luc. 24. v. 45."
-            }
-          ]
+          "text": "But grow in grace and in knowledge of our Lord and Saviour <sc>Jesus</sc> Christ. To him be glory both now and unto the day of eternity. Amen."
         }
       ],
       "summary": "These two Epistles he writeth to confirm them in the Apostles' doctrine, and warneth them of scorners that shall come, and deny Domes-day. 5. Whose vain argument he answereth, and giveth the reason of God's so long patience, 10. exhorting to all holiness of life in respect of that terrible day. 16. Finally giving warning of such as misinterpret S. Paul's Epistles & the other Scriptures, and that we must not for any thing fall from the true faith."

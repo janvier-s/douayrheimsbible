@@ -17,17 +17,19 @@
         {
           "verse": 3,
           "text": "<cr>[1]</cr> Blessed be the God and Father of our Lord <sc>Jesus</sc> Christ, the Father of mercies and God of all comfort,",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "16. 23."
+              "label": "1",
+              "text": "The Epistle for S. Marcellus. Ian. 16. and S. Linus Sept. 23. And for some other Martyrs Bishops."
             }
           ]
         },
         {
           "verse": 4,
           "text": "who comforteth us in all our tribulation; that we also may be able to comfort them that are in all distress, <cr>[1]</cr> by the exhortation wherewith we also are exhorted of God.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c διὰ τῆς παρακλήσεως ἕις παρακαλούμεθα."
             }
           ]
@@ -111,33 +113,8 @@
         },
         {
           "verse": 23,
-          "text": "And I call God to witness upon my soul, that sparing you, I came not any more to Corinth, not because we over-rule your faith: but, we are helpers of your joy. For in the faith you stand. 11. You helping in prayer.] <cr>[1]</cr> S. Paul knew that the help of other men's prayers was nothing derogatory to the office of Christ's mediation or intercession for him, nor to the hope that he had in God: and therefore he craveth the Corinthians' aid herein as a support and succours for himself in the sight of God. With what reason or Scripture then, can the Protestants say that the prayers of Saints be injurious to Christ, or not to stand with the confidence we have in him? As though it were more dishonour to God that we should use the aid of Saints in heaven, than of sinners in earth: or <cr>[2]</cr> that the intercession of these our fellows beneath, were more available than the prayers of those that be in the glorious sight of God above. 11. By many men's.] <na>◦</na> He meaneth, that as the prayers of many joined together for him, shall be rather heard, than of any alone: so their common thanks-giving to God for granting their request, shall be more acceptable and glorious to God, than any one man's thanks alone. Which thing doth much commend the holy Church's public prayers, processions, stations, and pilgrimages, where so many meet and uniformly join their prayers and lauds together unto God. 14. Your glory.] <na>◦</na> The Apostles, teachers, and preachers, that convert countries or particular persons to Christ, and the peoples or parties by them converted, shall in the day of judgement have much mutual joy and glory of and for each other, one giving to the other great matter of merit in this life, and of reward in the next. See <i>1. Thess. 2. v. 19.</i> 18. It is, it is not.] <na>◦</na> As he dischargeth himself of all other levity touching his promise or purpose of coming to them, so much more of all inconstancy in preaching Christ's doctrine and faith. Wherein, one day to affirm, another day to deny, to dissent from his fellows or from himself, to change every year or in every epistle the form of his former teaching, to come daily with new devices repugnant to his own rules, were not agreeable to an Apostle and true teacher of Christ, but proper to false prophets and Heretics. Whereof we have notorious examples in the Protestants: who being destitute of the spirit of peace, concord, constancy, unity, and verity, as they vary from their own writings which they retract, reform or deform continually, so both in their preachings, & form of Service, they are so restless, changeable and repugnant to themselves, that if they were not kept in awe with much ado, by temporal laws, or by the shame and rebuke of the world, they would coin us every year or every Parliament, new Communions, new faiths, and new Christs, as you see by the manifold endeavours of the Puritans. And this to be the proper note of false Apostles and Heretics, see in <i>S. Irenaeus li. 1. c. 18.</i> and <i>Tertull. de praescript. S. Basil. ep. 12.</i> 22. Hath sealed.] <cr>[1]</cr> The learned Divines prove by this place and by the like in the fourth to the Ephesians <cr>[2]</cr> , that the Sacrament of Baptism doth not only give grace, but imprinteth and sealeth the soul of the baptized, with a spiritual sign, mark, badge, or token, which can never be blotted out, neither by sin, heresy, apostasy, nor other ways, but remaineth for ever in man for the cognisance of his Christendom, and for distinction from others which were never of Christ's fold. By which also he is as it were consecrated and deputed to God, made capable and partaker of the rights of the Church, and subject to her laws and discipline. See S. Hierom <i>in 4. Ephes.</i> S. Ambrose <i>li. 1 de Sp. Sancto cap. 6.</i> S. Cyril Hierosol. <i>Catechesi. 17</i> at the end, and S. Dionysius Areopag. <i>c. 2. Eccl. Hierarch.</i> The which Fathers express that spiritual sign by diverse agreeable names, which the Church and most Divines, after S. Augustine, call the <i>character</i> of Baptism. By the truth and force of which spiritual note or mark of the soul, he specially convinceth the Donatists, that the said Sacrament though given and ministered by Heretics or Schismatics or who else so ever, can never be reiterated. See <i>ep. 57. & li. 6 cont. Donatist. cap. 1. & li. 2 cont. Parmenianum c. 13.</i> As the like indelible characters given also by the Sacraments of Confirmation and Orders, do make those also",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "Hiero. cont. Vigil."
-            },
-            {
-              "text": "Eph. 4, 30."
-            },
-            {
-              "text": "See Conc. Tarraco. to. 2. Concil."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "Public prayers & fasts."
-            },
-            {
-              "label": "◦",
-              "text": "Their glory in heaven that convert others."
-            },
-            {
-              "label": "◦",
-              "text": "The Protestants' inconstancy in changing their writings, translations, service books, &c."
-            }
-          ]
+          "text": "And I call God to witness upon my soul, that sparing you, I came not any more to Corinth, not because we over-rule your faith: but, we are helpers of your joy. For in the faith you stand.",
+          "has_annotation": true
         }
       ],
       "summary": "By his troubles in Asia he comforteth them: and (against his adversaries the false Apostles of the Jews) allegeth to them the testimony of his own and also of their conscience, 17. answering them that objected lightness against him, for not coming to Corinth according to his promise."
@@ -159,7 +136,7 @@
         },
         {
           "verse": 4,
-          "text": "For of much tribulation and anguish of heart I wrote to you by many tears: not that you should be 2 Corinthians 2 made sorry; but that you may know what charity I have more aboundantly toward you."
+          "text": "For of much tribulation and anguish of heart I wrote to you by many tears: not that you should be made sorry; but that you may know what charity I have more aboundantly toward you."
         },
         {
           "verse": 5,
@@ -186,11 +163,12 @@
         },
         {
           "verse": 10,
-          "text": "And whom you have pardoned any thing, I also. For, myself also that which <cr>[1]</cr> I pardoned, if I pardoned any thing, for you in the person of Christ, greater than his penance.",
+          "text": "And whom you have pardoned any thing, I also. For, myself also that which <cr>[1]</cr> I pardoned, if I pardoned any thing, for you in the person of Christ,",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "c κεχάρισμαι. χάριν, a grace"
+              "label": "1",
+              "text": "c κεχάρισμαι. Though he did great Penance (saith Theodorete) yet he calleth this pardoning. χάριν, a grace , because his sin was"
             }
           ]
         },
@@ -205,7 +183,7 @@
         },
         {
           "verse": 13,
-          "text": "Ihad no rest in my spirit, for that I found not Titus my brother, but bidding them fare well, I went forth into Macedonia."
+          "text": "I had no rest in my spirit, for that I found not Titus my brother, but bidding them fare well, I went forth into Macedonia."
         },
         {
           "verse": 14,
@@ -221,54 +199,8 @@
         },
         {
           "verse": 17,
-          "text": "For we are not as very many, adulterating the word of God, but of sincerity, and as of God, before God, in Christ we speak. 2 Corinthians 2 Councels prescribing times of penance, commanding penance, enjoining penance, and continually using the word satisfaction in this case throughout all their works, as our Adversaries themselves cannot but confess. 8. I beseech you.] <na>◦</na> They which at the beginning did bear too much with the offender, and seemed loath to have him excommunicated in so austere manner: yet through their obedience to the Apostle became on the other side so rigorous, and so far detested the malefactor after he was excommunicated, that the Apostle now meaning to absolve him, was glad to entreat and command them also to accept him to their company and grace again.",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "Whatsoever you loose in earth, shall be loosed in heaven."
-            },
-            {
-              "text": "donare condonare"
-            },
-            {
-              "text": "Mat. 18, 18."
-            },
-            {
-              "text": "Cypria. ep. 13. 14. 15."
-            },
-            {
-              "text": "κεχάρισμαι. See Theodoret in hunc loc."
-            },
-            {
-              "text": "Io. 8, 11."
-            },
-            {
-              "text": "Theodor. in hunc locum."
-            },
-            {
-              "text": "Cypr. locis citatis."
-            },
-            {
-              "text": "2. cor. 8."
-            },
-            {
-              "text": "Col. 1, 24."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "Zeal against the excommunicate. 9. Obedient.]"
-            },
-            {
-              "label": "◦",
-              "text": "Though in the last chapter he discharged himself of tyrannical dominion over them, yet he challengeth their obedience in all things as their Pastor and Superior, and consequently in this point of receiving to mercy the penitent Corinthian. Whereby we see, that as the power and authority of excommunicating, so of absolving also was in S. Paul's person, though both were to be done in the face of the Church: else he would not have commanded or required their obedience."
-            },
-            {
-              "label": "◦",
-              "text": "The Apostle challengeth their obedience to his Ecclesiastical authority. 10. I also.]"
-            }
-          ]
+          "text": "For we are not as very many, adulterating the word of God, but of sincerity, and as of God, before God, in Christ we speak.",
+          "has_annotation": true
         }
       ],
       "summary": "Prosecuting the true cause which in the last chapter he gave of his not coming, 6. he pardoneth now after some part of penance, him that for incest he excommunicated in the last epistle, requiring them obediently to consent thereunto. 12. Then of his going from Troas in to Macedonia; God every-where giving him the triumph."
@@ -291,7 +223,13 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> And such confidence we have by Christ to God:"
+          "text": "<cr>[1]</cr> And such confidence we have by Christ to God:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 12. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -305,7 +243,13 @@
         },
         {
           "verse": 7,
-          "text": "And if the ministration of death with letters figured in stones, was in glory, so that the children of Israel could not 3. The Epistle of Christ.] <cr>[1]</cr> S. Paul and other holy writers of Scriptures did set down many things in writing, by pen, ink, and paper, all which be of the Holy Ghost: but the special and proper book of Christ's truth and Gospel, is not the external writing in those dead creatures, but in the hearts of the faithful, being the proper subject of these truths and graces preached in the new Testament, and the habitacle of the Holy Ghost. In the which book of faithful men's hearts S. Paul wrote"
+          "text": "And if the ministration of death with letters figured in stones, was in glory, so that the children of Israel could not <cr>[1]</cr>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Apostles wrote the Gospel in men's hearts much more than in paper."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -362,29 +306,7 @@
         },
         {
           "verse": 18,
-          "text": "But we all, beholding the glory of our Lord with face revealed, are transformed into the same image from glory unto glory, as of our Lord's Spirit. 2 Corinthians 3 diverse things not uttered in any Epistle: as sundry of the Apostles wrote the Christian religion in the hearts of their hearers only, and in other material books not at all. Whereof S. Irenaeus <i>li. 3. c. 4.</i> saith, <cr>[2]</cr> <i>What and if the Apostles also had left no Scriptures, ought we not to follow the order of the tradition, which they delivered unto them to whom they committed the Churches? To the which ordinance many nations of those barbarous people that have believed in Christ, do consent, without letter or ink, having salvation written in their hearts, and keeping diligently the tradition of the elders.</i> And S. Hierom. <i>(cont. Io. Hieros. c. 9. ad Pam.) In the Creed of our faith and hope, which being delivered by tradition from the Apostles, is not written in paper and ink, but in the tables carnal of the heart.</i> And this is the Church's book also, whereby and wherein she keepeth faithfully all truth written in the hearts of those to whom the Apostles did preach, with the like diligence as she keepeth and preserveth the other book which is of holy Scriptures, from all corruption of Heretics and other injuries. 5. Of ourselves.] <na>◦</na> This maketh first against the Heretics called Pelagians, that hold our meritorious actions or cogitations to be of free-will only, and not of God's special grace. Secondly against the Protestants, who on the contrary side refer all to God, and take away man's freedom and proper motion in his thoughts and doings: the Apostle confessing our good cogitations to be our own, but not as coming of ourselves, but of God. 6. The letter killeth.] <na>◦</na> As the letter of the old Law not truly understood, nor referred to Christ, commanding and not giving grace and spirit to fulfill that which was commanded, did by occasion kill the carnal Jew: so the letter of the new Testament not truly taken nor expounded by the Spirit of Christ (which is only in his Church) killeth the Heretic: who also being carnal and void of spirit, gaineth nothing by the external precepts or good lessons of the Scriptures, but rather taketh hurt by the same. See S. Augustine <i>to. 10. Ser. 70. & 100. de tempore. & li. de Sp. & lit. c. 5. 6. & seq.</i> 9. Much more.] <na>◦</na> The preeminence of the new Testament and of the priesthood or Ministry thereof before the old, is, that the new, by all her Sacraments and Priests as ministers immediate of grace and remission of sins, doth so <i>ex opere operato</i> give the spirit of life and charity into the hearts of the faithful, as the old did give the letter or external act of the Law. 14. The self-same veil.] <cr>[1]</cr> As the Jews reading the Old Testament, by reason of their blindness (which God for the punishment of their incredulity suffereth to remain as a cover upon their eyes and hearts) cannot see Christ in the Scriptures which they daily hear read in their Synagogues, but shall, when they believe in him and have the cover removed, perceive all to be most plainly done and spoken of him in their law & Scriptures: even so Heretics having (as S. Augustine <cr>[2]</cr> noteth) a far greater cover of blindness and incredulity over their hearts in respect of the Catholic Church which they impugn, than the Jews have concerning Christ, cannot see, though they read or hear the Scriptures read never so much, the marvelous evidence of the Catholic Church and truth in all points: but when they shall return again to the obedience of the same Church, they shall find the Scriptures most clear for her and her doctrine, and shall wonder at their former blindness. 17. Liberty.] <cr>[1]</cr> The Spirit and grace of God in the new Testament dischargeth us of the bondage of the Law and sin, but is not a warrant to us of fleshly licence, as S. Peter writeth <cr>[2]</cr> : nor dischargeth Christians of their obedience to order, law, and power of Magistrates spiritual or temporal, as some Heretics of these days do seditiously teach. and Tradition unwritten.",
-          "cross_refs": [
-            {
-              "text": "Aug. in Psal. 30. Conc. 2."
-            },
-            {
-              "text": "1. Pet. 2, 16."
-            }
-          ],
-          "notes": [
-            {
-              "label": "◦",
-              "text": "God's grace & free will both must concur."
-            },
-            {
-              "label": "◦",
-              "text": "The letter killeth both Jew and Heretic."
-            },
-            {
-              "label": "◦",
-              "text": "The preeminence of the new Testament, Sacraments, &c."
-            }
-          ]
+          "text": "But we all, beholding the glory of our Lord with face revealed, are transformed into the same image from glory unto glory, as of our Lord's Spirit."
         }
       ],
       "summary": "Lest the Judaical false Apostles should object again that he praiseth himself, he saith that the Corinthians are his commendation: and they in their hearts being justified by his ministry, he thereof inferreth that the Ministers of the new Testament are far more glorious than they of the old, 12. and our people more lightened than theirs."
@@ -412,9 +334,10 @@
         {
           "verse": 5,
           "text": "<cr>[1]</cr> For we preach not our-selves, but <sc>Jesus</sc> Christ our Lord: and us, your servants by <sc>Jesus</sc>:",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Mai. 2."
+              "label": "1",
+              "text": "The Epistle for S. Athanasius. Mai. 2."
             }
           ]
         },
@@ -428,19 +351,16 @@
         },
         {
           "verse": 8,
-          "text": "In all things we suffer 2. Adulterating.] <cr>[1][2]</cr> He giveth often warning of false teachers, whose special and proper study is to falsify and adulterate by deceitful constructions, interpretations, and applications, the word of God: having no other end but to make their advantage of the Scriptures, and to gain glory and estimation among the sinful and simple, by new devised expositions. Wherein the Protestants do excel the ancient Heretics, none ever more impurely handling the word of God than they do. Origen <cr>[3]</cr> calleth such <i>Scripturarum fures & adulteros,</i> thieves and adulterers of the Scriptures. S. Cyprian <i>(de unit. Ec. nu. 7.)</i> calleth them, corrupters of the Gospel, false interpreters, artificers and crafts-masters in corrupting the truth. On the other side, for special reverence and sincerity of dealing in those matters, the fathers and all Catholic preachers or Expositors were of old called",
+          "text": "In all things we suffer <cr>[1][2]</cr> <cr>[3]</cr>",
           "cross_refs": [
             {
-              "text": "See Iren. li. 1. c. 1."
-            },
+              "text": "2. Tim. 2. tribulation, but are not in distress:"
+            }
+          ],
+          "notes": [
             {
+              "label": "3",
               "text": "in 2. ad Rom."
-            },
-            {
-              "text": "2. Tim. 2."
-            },
-            {
-              "text": "c aporiamur. See S. Ambr. Theoph."
             }
           ]
         },
@@ -480,8 +400,9 @@
         {
           "verse": 16,
           "text": "For which cause we fail not: but although that our man which is without, <cr>[1]</cr> corrupt: yet that which is within, is renewed from day to day.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "b corrumpitur."
             }
           ]
@@ -489,15 +410,7 @@
         {
           "verse": 17,
           "text": "For that our tribulation which presently is momentary & light, <cr>[1][2]</cr> worketh above measure exceedingly an eternal weight of glory in us,",
-          "has_annotation": true,
-          "cross_refs": [
-            {
-              "text": "prepareth"
-            },
-            {
-              "text": "c κατεργάζεται."
-            }
-          ]
+          "has_annotation": true
         },
         {
           "verse": 18,
@@ -539,7 +452,13 @@
         },
         {
           "verse": 8,
-          "text": "but we are bold, and have a good will to be pilgrims rather from the body, & <cr>[1]</cr> to be present with our Lord."
+          "text": "but we are bold, and have a good will to be pilgrims rather from the body, & <cr>[1]</cr> to be present with our Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This place proveth that the Saints departed now since Christ, sleep not till the day of judgement, and that they be not holden in any several place of rest from the fruition of God till the resurrection of their bodies, but that they be present with God in their souls."
+            }
+          ]
         },
         {
           "verse": 9,
@@ -599,15 +518,16 @@
         },
         {
           "verse": 20,
-          "text": "For Christ therefore we are legates, 2 Corinthians 5 God as it were exhorting by us. For Christ we beseech you, be reconciled to God."
+          "text": "For Christ therefore we are legates, God as it were exhorting by us. For Christ we beseech you, be reconciled to God."
         },
         {
           "verse": 21,
           "text": "Him that knew no sin, for us he made <cr>[1]</cr> sin: that we might be made the justice of God in him.",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "See the last annot. of this chapter."
+              "label": "1",
+              "text": "c This is to say, a sacrifice and an host for sin. See the last annot. of this chapter."
             }
           ]
         }
@@ -620,7 +540,13 @@
         {
           "verse": 1,
           "text": "<sc>And</sc> <cr>[1]</cr> we helping do exhort, that you receive not the grace of God in vain.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the first Sunday of Lent."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -637,7 +563,13 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> but in all things let us exhibit ourselves as the ministers of God, in much patience, in tribulations, in necessities, in distresses,"
+          "text": "<cr>[1]</cr> but in all things let us exhibit ourselves as the ministers of God, in much patience, in tribulations, in necessities, in distresses,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for many Martyrs."
+            }
+          ]
         },
         {
           "verse": 5,
@@ -662,7 +594,13 @@
         },
         {
           "verse": 10,
-          "text": "as sorrowful, but always rejoicing: as needy, but enriching many: as <cr>[1]</cr> having nothing, and possessing all things."
+          "text": "as sorrowful, but always rejoicing: as needy, but enriching many: as <cr>[1]</cr> having nothing, and possessing all things.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "S. Augustine (in Ps. 113) gathereth hereby, that the Apostles did vow poverty."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -680,9 +618,10 @@
           "verse": 14,
           "text": "<cr>[1]</cr> Bear not the yoke with infidels. For what participation hath justice with iniquity? or what society is there between light and darkness?",
           "has_annotation": true,
-          "cross_refs": [
+          "notes": [
             {
-              "text": "See S. Hierom. cont. Iovinian. li. 1. Conc. Laod. c. 10. & 31."
+              "label": "1",
+              "text": "It is not lawful for Catholics to marry with Heretics or Infidels. See S. Hierom. cont. Iovinian. li. 1. Conc. Laod. c. 10. & 31."
             }
           ]
         },
@@ -762,7 +701,13 @@
         },
         {
           "verse": 10,
-          "text": "For <cr>[1]</cr> the sorrow that is according to God, worketh penance unto salvation that is stable: but the sorrow of the world worketh death."
+          "text": "For <cr>[1]</cr> the sorrow that is according to God, worketh penance unto salvation that is stable: but the sorrow of the world worketh death.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Contrition or sorrowful lamenting of our offences, is the cause of salvation. Not only faith then saveth, as the Heretics affirm."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -782,11 +727,11 @@
         },
         {
           "verse": 15,
-          "text": "And his bowels are more aboundantly 2 Corinthians 7 toward you: remembering the obedience of you all, how with fear and trembling you received him."
+          "text": "And his bowels are more aboundantly toward you: remembering the obedience of you all, how with fear and trembling you received him."
         },
         {
           "verse": 16,
-          "text": "Irejoice that in all things I have confidence in you."
+          "text": "I rejoice that in all things I have confidence in you."
         }
       ],
       "summary": "He proceedeth to exhort them to purity, and to receive him into their charity. 3. Which lest they should think he speaketh to accuse them, he commendeth them highly, both for their behaviour toward Titus, and for their penance which they had done upon his other epistle."
@@ -812,7 +757,13 @@
         },
         {
           "verse": 5,
-          "text": "And not as we hoped, but their own selves they gave, first to our Lord, <cr>[1]</cr> then to us by the will of God:"
+          "text": "And not as we hoped, but their own selves they gave, first to our Lord, <cr>[1]</cr> then to us by the will of God:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The principal respect next after God, is to be had of our masters in religion, in all temporal and spiritual duties."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -829,9 +780,10 @@
         {
           "verse": 9,
           "text": "<cr>[1]</cr> For you know the grace of our Lord <sc>Jesus</sc> Christ, that for you he was made poor, whereas he was rich; that by his poverty you might be rich.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Iun. 22."
+              "label": "1",
+              "text": "The Epistle for S. Paulinus, Iun. 22."
             }
           ]
         },
@@ -868,9 +820,10 @@
         {
           "verse": 16,
           "text": "<cr>[1]</cr> And thanks be to God, that hath given the self-same carefulness for you in the heart of Titus,",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Octob. 18."
+              "label": "1",
+              "text": "The Epistle upon S. Luke's day, Octob. 18."
             }
           ]
         },
@@ -880,11 +833,11 @@
         },
         {
           "verse": 18,
-          "text": "We 2 Corinthians 8 have sent also with him the brother, whose praise is in the Gospel through all the churches:"
+          "text": "We have sent also with him the brother, whose praise is in the Gospel through all the churches:"
         },
         {
           "verse": 19,
-          "text": "& not only that, but also he was ordained of the churches^ fellow of our peregrination, for this grace which is ministered of us to the glory of our Lord, and our determined will:"
+          "text": "& not only that, but also he was ordained of the churches fellow of our peregrination, for this grace which is ministered of us to the glory of our Lord, and our determined will:"
         },
         {
           "verse": 20,
@@ -933,8 +886,9 @@
         {
           "verse": 4,
           "text": "lest when the Macedonians shall come with me, and find you unready, we (that we say not, ye) may be ashamed <cr>[1]</cr> in this substance.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c That is, in this matter of alms Chrysos. Theoph."
             }
           ]
@@ -947,7 +901,13 @@
         {
           "verse": 6,
           "text": "<cr>[1]</cr> And this I say, he that soweth sparingly, sparingly also shall reap: and he that soweth in blessings, of blessings also shall reap.",
-          "has_annotation": true
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for S. Laurence, Aug. 10."
+            }
+          ]
         },
         {
           "verse": 7,
@@ -959,7 +919,18 @@
         },
         {
           "verse": 9,
-          "text": "as it is written: <cr>[1]</cr> <i>He distributed, he gave to the poor: </i> <cr>[2]</cr> <i>his justice</i> 2 Corinthians 9 <i>remaineth for ever.</i> <cr>[1]</cr> <i>Ps. 111, 9.</i> <cr>[2]</cr> The fruit of alms is the increase of grace in all justice and good works to life everlasting: God giving these things for reward & recompense of charitable works, which therefore be called the seed or meritorious cause of these spiritual fruits."
+          "text": "as it is written: <cr>[1]</cr> <i>He distributed, he gave to the poor: </i> <cr>[2]</cr> <i>his justice</i> remaineth for ever.",
+          "cross_refs": [
+            {
+              "text": "Ps. 111, 9."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The fruit of alms is the increase of grace in all justice and good works to life everlasting: God giving these things for reward & recompense of charitable works, which therefore be called the seed or meritorious cause of these spiritual fruits."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -994,11 +965,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> I^ Paul myself beseech you by the mildness and modesty of Christ, who in presence indeed am humble among you, but absent am bold on you."
+          "text": "<sc>And</sc> I Paul myself beseech you by the mildness and modesty of Christ, who in presence indeed am humble among you, but absent am bold on you."
         },
         {
           "verse": 2,
-          "text": "But I beseech you, that being present I need not be bold by that confidence wherewith I am thought to be bold against some: which think us as though we walk according to the 2 Corinthians 10 flesh."
+          "text": "But I beseech you, that being present I need not be bold by that confidence wherewith I am thought to be bold against some: which think us as though we walk according to the flesh."
         },
         {
           "verse": 3,
@@ -1054,8 +1025,9 @@
         {
           "verse": 15,
           "text": "not glorying above measure in other men's labours: but having <cr>[1]</cr> hope of your faith increasing, to be magnified in you according to our rule aboundantly,",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c ἐλπίδα ἀυξομένης τῆς πίςεως ὑμῶν."
             }
           ]
@@ -1070,6 +1042,12 @@
           "cross_refs": [
             {
               "text": "Ier. 9, 23."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon S. Lucy's day 13. Decem. S. Martha's. Iulij 29. S. Agnes. secundo Ian. 28. S. Potentiana's. May 19."
             }
           ]
         },
@@ -1089,7 +1067,13 @@
         },
         {
           "verse": 2,
-          "text": "for I emulate you with the emulation of God. For I have <cr>[1]</cr> despoused you to one man, to present you a chaste virgin unto Christ."
+          "text": "for I emulate you with the emulation of God. For I have <cr>[1]</cr> despoused you to one man, to present you a chaste virgin unto Christ.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Apostles and their successors did despouse the people whom they converted, to Christ, in all purity & Charity of truth, and wholly undefiled and void of error and heresy."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1104,9 +1088,10 @@
         {
           "verse": 4,
           "text": "For if he that <cr>[1]</cr> cometh, preach another Christ whom we have not preached, or you receive another spirit whom you have not received; or another Gospel which you have not received: you might well suffer it.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "to come"
+              "label": "1",
+              "text": "The note of a false teacher, to come : that is, without lawful calling or sending to thrust and intrude himself into another man's charge."
             }
           ]
         },
@@ -1146,9 +1131,10 @@
         {
           "verse": 13,
           "text": "For such false apostles are <cr>[1]</cr> crafty workers, transfiguring themselves into Apostles of Christ.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "Vincentius Lirinensis Against the Profane novelties of all heresies"
+              "label": "1",
+              "text": "Aproper term for Heretics that shape themselves into the habit of true teachers, specially by often allegation and commendation of the Scriptures. Read the notable admonition of the ancient writer Vincentius Lirinensis in his golden book Against the Profane novelties of all heresies ."
             }
           ]
         },
@@ -1174,7 +1160,13 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> For you do gladly suffer the foolish: whereas yourselves are 2 Corinthians 11 wise."
+          "text": "<cr>[1]</cr> For you do gladly suffer the foolish: whereas yourselves are wise.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the Sunday of Sexagesima."
+            }
+          ]
         },
         {
           "verse": 20,
@@ -1232,17 +1224,19 @@
         {
           "verse": 28,
           "text": "beside those things which are outwardly: my daily <cr>[1]</cr> instance, the carefulness of all churches.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "b ἐπισύςασις."
+              "label": "1",
+              "text": "b ἐπισύςασις. S. Chrysostom and Theophylacte interpret it of daily conspiracy against him: others, of multitude of cares instant & urgent upon him."
             }
           ]
         },
         {
           "verse": 29,
           "text": "Who is weak, and I <cr>[1]</cr> am not weak? Who is scandalized, and I am not burnt?",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "c non uror? πυροῦμαι ?"
             }
           ]
@@ -1281,7 +1275,13 @@
         },
         {
           "verse": 2,
-          "text": "Iknow a man in Christ above fourteen years ago (whether in the body, I know not, or out of the body, I know not: God doth know) such a one <cr>[1]</cr> rapt even to the third Heaven."
+          "text": "I know a man in Christ above fourteen years ago (whether in the body, I know not, or out of the body, I know not: God doth know) such a one <cr>[1]</cr> rapt even to the third Heaven.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "By this we may prove that it is neither impossible, incredible, nor undecent, that is reported by the ancient Fathers of some that have been ravished or rapt (whether in body or out of body god knoweth) & brought to see the state of the next life, as well of the saved as damned."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -1317,7 +1317,7 @@
         },
         {
           "verse": 11,
-          "text": "Iam become foolish: you have compelled me. For I ought to have been commended of you: for I have been nothing less than they that are above measure Apostles: although I am nothing.",
+          "text": "I am become foolish: you have compelled me. For I ought to have been commended of you: for I have been nothing less than they that are above measure Apostles: although I am nothing.",
           "has_annotation": true
         },
         {
@@ -1347,13 +1347,14 @@
         },
         {
           "verse": 18,
-          "text": "Irequested Titus, and I sent with him a brother. Did Titus circumvent you? walked we not with one spirit? not in the self-same steps?"
+          "text": "I requested Titus, and I sent with him a brother. Did Titus circumvent you? walked we not with one spirit? not in the self-same steps?"
         },
         {
           "verse": 19,
           "text": "<cr>[1]</cr> <alt>Of old</alt> think you that we excuse ourselves to you? Before God, in Christ we speak: but all things (my dearest) for your edifying.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "Again"
             }
           ]
@@ -1365,9 +1366,10 @@
         {
           "verse": 21,
           "text": "Lest again when I come, God humble me among you: & I mourn many of them that sinned before, & <cr>[1]</cr> have not done penance for the uncleanness & fornication and incontinency that they have committed.",
-          "cross_refs": [
+          "notes": [
             {
-              "text": "τῶν μὴ μετανοησάντων (ep. 108.) poenitentes"
+              "label": "1",
+              "text": "τῶν μὴ μετανοησάντων . Which S. Augustine saith (ep. 108.) is spoken here of doing great penance for heinous sins, as poenitentes did in the primitive Church. So that it is not only to repent or to amend their lives, as the Protestants translate it."
             }
           ]
         }
@@ -1406,8 +1408,9 @@
         {
           "verse": 6,
           "text": "But I hope you <cr>[1]</cr> <alt>know</alt> that we are not reprobates.",
-          "cross_refs": [
+          "notes": [
             {
+              "label": "1",
               "text": "shall know"
             }
           ]
@@ -1426,7 +1429,13 @@
         },
         {
           "verse": 10,
-          "text": "Therefore these things I write absent: that being present I may not deal hardly according to the <cr>[1]</cr> power which our 2 Corinthians 13 Lord hath given me unto edification and not unto destruction."
+          "text": "Therefore these things I write absent: that being present I may not deal hardly according to the <cr>[1]</cr> power which our Lord hath given me unto edification and not unto destruction.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Ecclesiastical power to punish offenders by the censures of the Church."
+            }
+          ]
         },
         {
           "verse": 11,
@@ -1434,6 +1443,12 @@
           "cross_refs": [
             {
               "text": "c παρακαλεῖσθε, Ro. 16, 16. 1. Cor. 16, 20."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in a votive Mass of the B. Trinity."
             }
           ]
         },
