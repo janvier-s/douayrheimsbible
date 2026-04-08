@@ -6,7 +6,7 @@
 	const FAQ = [
 		{
 			q: 'Why does the Douay-Rheims Bible have so many footnotes?',
-			a: 'The annotations were a deliberate response to the Protestant Reformation. The translators knew their Bible would be read in the context of active religious controversy, and they designed the notes to defend Catholic doctrine verse by verse — addressing specific Protestant arguments, explaining sacramental theology, and guiding readers through passages that Reformers had interpreted differently.'
+			a: 'The annotations were a deliberate response to the Protestant Reformation. The translators knew their Bible would be read in the context of active religious controversy, and they designed the notes to defend Catholic doctrine verse by verse; they addressed specific Protestant arguments, explaining sacramental theology, and guiding readers through passages that Reformers had interpreted differently.'
 		},
 		{
 			q: 'Who wrote the annotations in the Douay-Rheims Bible?',
@@ -181,11 +181,11 @@
 	</p>
 
 	<p>
-		The annotations also shaped the tradition of Catholic biblical commentary in English. Bishop
-		Challoner, who removed most of them from his revision, drew on their arguments in preparing the
-		shorter notes he substituted. The learned engagement with Scripture that Gregory Martin and
-		Richard Bristow had modelled in 1582 continued, in modified form, through the centuries that
-		followed. The
+		The annotations also shaped the tradition of Catholic biblical commentary in English.
+		<a href="/history/challoner">Bishop Challoner</a>, who removed most of them from his revision,
+		drew on their arguments in preparing the shorter notes he substituted. The learned engagement
+		with Scripture that Gregory Martin and Richard Bristow had modelled in 1582 continued, in
+		modified form, through the centuries that followed. The
 		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
 			>Catholic Encyclopedia (1913)</a
 		>
@@ -199,14 +199,13 @@
 			Rev. Henry Cotton, <em
 				>Rhemes and Doway: An Attempt to Shew What Has Been Done by Roman Catholics for the
 				Diffusion of the Holy Scriptures in English</em
-			> (Oxford University Press, 1855) — primary source for Cotton's descriptions of the annotations
-			and the Protestant responses
+			> (Oxford University Press, 1855), primary source for Cotton's descriptions of the annotations and
+			the Protestant responses
 		</li>
 		<li>
 			Henry Barker, <em
 				>English Bible Versions: A Tercentenary Memorial of the King James Version</em
-			>
-			— source for Geddes's and Mombert's characterizations of the annotations
+			>, source for Geddes's and Mombert's characterizations of the annotations
 		</li>
 		<li>
 			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>
