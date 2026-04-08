@@ -43,6 +43,7 @@
 	title="Published in a Time of Crisis"
 	subtitle="The political world that greeted the Rheims New Testament in 1582, and the Protestant refutation that spread it further than its authors could have imagined."
 	faqItems={FAQ}
+	datePublished="2024-01-01"
 >
 	<h2>England in 1582</h2>
 
@@ -92,12 +93,17 @@
 	<p>
 		Without this Approbation the translation had no standing in Catholic eyes. It also marked a
 		claim: the Rheims version was the legitimate, authorized word of God in English, against every
-		Protestant accusation to the contrary. The notes that accompanied the text left little to the
-		imagination. They defended Catholic doctrine at every disputed point, attacked Protestant
-		translations with considerable force, and spared neither Queen Elizabeth nor the Reformers of
-		Germany, Switzerland, and France. Dr. Geddes, himself a Catholic priest, later described the
-		annotations as "virulent," directed against the Protestant religion and calculated to support a
-		system, as he put it, of "transalpine Popery."
+		Protestant accusation to the contrary, as documented in the <a
+			href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		>. The notes that accompanied the text left little to the imagination. They defended Catholic
+		doctrine at every disputed point, attacked Protestant translations with considerable force, and
+		spared neither Queen Elizabeth nor the Reformers of Germany, Switzerland, and France. Dr.
+		Geddes, himself a Catholic priest, later described the annotations as "virulent," directed
+		against the Protestant religion and calculated to support a system, as he put it, of
+		"transalpine Popery." As described in
+		<a href="/history/annotations">A Bible of Arguments: The Annotations</a>, these notes became the
+		defining feature of the work.
 	</p>
 
 	<h2>Martin's Companion Work</h2>
@@ -109,7 +115,8 @@
 		>, published the same year as the New Testament though somewhat later in 1582, laid out his case
 		against Protestant translations at length. The preface to the New Testament itself referred
 		readers to this work: "more at large in a book lately made purposely of that matter, called a
-		Discovery."
+		Discovery." For the full story of the translation's creation, see
+		<a href="/history/origins">Born in Exile: The Origins of the Douay-Rheims Bible</a>.
 	</p>
 
 	<p>
@@ -172,6 +179,49 @@
 		the next article.
 	</p>
 
+	<h2>What the Volume Contained</h2>
+
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Title page of the 1582 Rheims New Testament, showing the full title, place of publication, and the statement 'Translated faithfully into English out of the authentical Latin'"
+		></div>
+		<figcaption>
+			The title page of the 1582 Rheims New Testament, the first Catholic English New Testament
+		</figcaption>
+	</figure>
+
+	<p>
+		The physical volume that appeared in 1582 was a quarto, a page size roughly nine inches tall and
+		seven inches wide, running to approximately six hundred pages. It opened with a formal
+		Approbation signed by four doctors of theology at the English College, a printed authority that
+		declared the text free of doctrinal error and suitable for Catholic readers.
+	</p>
+
+	<p>
+		The Approbation was followed by a dedication to William Allen and then by a substantial preface
+		addressed "To the Right Welbeloved English Reader." This preface, several thousand words long,
+		gave the translators' full account of why they had undertaken the work, why the Catholic Church
+		now authorised the reading of Scripture in the vernacular, why the Vulgate was the correct
+		source text, and what distinguished their translation from Protestant versions. It was, in
+		itself, a polemical document of considerable skill, and it repays reading as an account of the
+		intellectual world in which the translation was produced.
+	</p>
+
+	<p>
+		The translation occupied the central portion of the volume. Passages were set in roman type,
+		with brief marginal notes identifying cross-references and offering short explanations. Below
+		the text and in the margins ran the more substantial annotations; theological arguments,
+		refutations of Protestant readings, explications of difficult passages, citations of the
+		Fathers. These annotations often equalled or exceeded the biblical text in length, giving the
+		volume the character of a combined translation and theological commentary. The
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		>
+		describes the annotations as the element that most distinguished the 1582 edition from any Protestant
+		contemporary, and as the primary target of Protestant refutations in the decades that followed.
+	</p>
+
 	<h2>Sources</h2>
 	<ul>
 		<li>
@@ -183,11 +233,12 @@
 			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>
 		</li>
 		<li>
-			Rev. Henry Cotton, <em
+			Rev. <a href="https://archive.org/details/rhemesanddoway00cottuoft">Henry Cotton</a>,
+			<em
 				>Rhemes and Doway: An Attempt to Shew What Has Been Done by Roman Catholics for the
 				Diffusion of the Holy Scriptures in English</em
 			>
-			(Oxford University Press, 1855) — source for the Approbation text, Martin's
+			(Oxford University Press, 1855); source for the Approbation text, Martin's
 			<em>Discovery of Corruptions</em>, and the Protestant responses
 		</li>
 	</ul>
