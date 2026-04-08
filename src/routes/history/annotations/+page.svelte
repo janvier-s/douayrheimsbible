@@ -20,17 +20,17 @@
 </script>
 
 <svelte:head>
-	<title>A Bible of Arguments: The Annotations of the Douay-Rheims</title>
+	<title>The Annotations of the Rheims New Testament 1582</title>
 	<meta
 		name="description"
-		content="The notes that accompanied the Douay-Rheims New Testament were a sustained, learned theological engagement with Protestant readings of Scripture that drove a Protestant response lasting decades."
+		content="The theological annotations that accompanied the 1582 Rheims New Testament: their purpose, their character, and their unexpected legacy in shaping both Catholic biblical scholarship and the King James Version."
 	/>
 	<link rel="canonical" href="https://douayrheimsbible.net/history/annotations" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="A Bible of Arguments: The Annotations of the Douay-Rheims" />
+	<meta property="og:title" content="The Annotations of the Rheims New Testament 1582" />
 	<meta
 		property="og:description"
-		content="The annotations of the Douay-Rheims were a sustained theological engagement with Protestant readings of Scripture. How they shaped the Bible and its reception."
+		content="The scholarly annotations of the 1582 Rheims New Testament: their polemical purpose, their character, and their legacy."
 	/>
 	<meta property="og:url" content="https://douayrheimsbible.net/history/annotations" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -39,6 +39,7 @@
 <ProseLayout
 	title="A Bible of Arguments: The Annotations"
 	subtitle="The notes that accompanied the Rheims New Testament were a sustained, scholarly engagement with Protestant readings of Scripture, and they changed everything about how the book was received."
+	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
 	<h2>The Notes as Purpose</h2>
@@ -71,13 +72,13 @@
 	<h2>Their Character</h2>
 
 	<p>
-		Henry Cotton catalogued the volume with characteristic precision. The annotations, he wrote,
-		were "vindicating the translation, fiercely asserting all the peculiar doctrines of the Court of
-		Rome, and employing the most bitter and contumelious terms in speaking of Protestants, and their
-		doctrines, and their versions of Scripture." Dr. Geddes, himself a Catholic priest, described
-		them as "virulent Annotations against the Protestant Religion, and manifestly calculated to
-		support a system, not of genuine Catholicity, but of transalpine Popery." The Protestant scholar
-		Mombert called them "ferocious," "savage," and "fanatical."
+		<a href="https://archive.org/details/rhemesanddoway00cottuoft">Henry Cotton</a> catalogued the volume
+		with characteristic precision. The annotations, he wrote, were "vindicating the translation, fiercely
+		asserting all the peculiar doctrines of the Court of Rome, and employing the most bitter and contumelious
+		terms in speaking of Protestants, and their doctrines, and their versions of Scripture." Dr. Geddes,
+		himself a Catholic priest, described them as "virulent Annotations against the Protestant Religion,
+		and manifestly calculated to support a system, not of genuine Catholicity, but of transalpine Popery."
+		The Protestant scholar Mombert called them "ferocious," "savage," and "fanatical."
 	</p>
 
 	<p>
@@ -147,13 +148,49 @@
 		When the translators of the King James Version gathered in 1604, Fulke's parallel edition was
 		among their working texts. The annotations that Bristow and Allen had composed to defend Roman
 		doctrine against Protestant corruption had, through the mechanism of refutation, contributed to
-		the making of the greatest Protestant English Bible. That is a peculiar sort of immortality.
+		the making of <a href="/history/influence-on-kjv">the greatest Protestant English Bible</a>.
+		That is a peculiar sort of immortality.
 	</p>
 
 	<p>
 		The text on this site presents Gregory Martin's translation without the annotations of 1582. It
 		is possible to read the original Douay-Rheims as a bare text. Its authors never intended it to
 		be read that way.
+	</p>
+
+	<h2>Their Legacy</h2>
+
+	<p>
+		The annotations produced an unintended consequence that their authors would have found ironic.
+		In 1589, the Cambridge Master William Fulke published a systematic Protestant refutation of the
+		Rheims New Testament by printing the entire Catholic text alongside the Bishops' Bible in
+		parallel columns and answering each annotation point by point. Fulke aimed to discredit. His
+		method placed the Rheims translation, and its arguments, into every serious Protestant biblical
+		scholar's library in England.
+	</p>
+
+	<p>
+		When the King James translators gathered in 1604, Fulke's parallel edition was among the most
+		widely circulated English New Testaments in the country. The annotations they had intended to
+		refute became, through Fulke's inadvertent distribution, a working reference for the committee
+		producing the Protestant masterpiece. Ward Allen's analysis of the King James translators'
+		revision notes, published in 1969, found that a significant proportion of their proposed textual
+		improvements in the Gospels drew on readings first found in the Rheims translation. For a full
+		account of this debt, see
+		<a href="/history/influence-on-kjv">How the Douay-Rheims Shaped the King James Bible</a>.
+	</p>
+
+	<p>
+		The annotations also shaped the tradition of Catholic biblical commentary in English. Bishop
+		Challoner, who removed most of them from his revision, drew on their arguments in preparing the
+		shorter notes he substituted. The learned engagement with Scripture that Gregory Martin and
+		Richard Bristow had modelled in 1582 continued, in modified form, through the centuries that
+		followed. The
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+			>Catholic Encyclopedia (1913)</a
+		>
+		records that the annotations remained the most cited element of the original edition in both Catholic
+		and Protestant scholarship for over a century after publication.
 	</p>
 
 	<h2>Sources</h2>
