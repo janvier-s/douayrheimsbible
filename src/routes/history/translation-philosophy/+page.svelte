@@ -272,6 +272,10 @@
 			Douay-Rheims translation method
 		</li>
 		<li>
+			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
+			<em>Essays Critical and Historical</em>
+		</li>
+		<li>
 			Rev. Henry Cotton, <em
 				>Rhemes and Doway: An Attempt to Shew What Has Been Done by Roman Catholics for the
 				Diffusion of the Holy Scriptures in English</em
