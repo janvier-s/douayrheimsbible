@@ -428,6 +428,7 @@
 	/* Study marker superscript — colored badge so they're visible even when
 	   the parent <p> has text-decoration which bleeds through child elements */
 	:global(.study-marker) {
+		position: relative;
 		font-size: 8px;
 		font-family: var(--font-ui);
 		font-weight: 600;
@@ -440,6 +441,18 @@
 		border-radius: 2px;
 		color: var(--color-accent-text);
 		background: color-mix(in srgb, var(--color-accent-text) 14%, transparent);
+	}
+
+	@media (pointer: coarse) {
+		:global(.study-marker::before) {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			min-width: 44px;
+			min-height: 44px;
+		}
 	}
 
 	:global(.study-marker:hover) {
