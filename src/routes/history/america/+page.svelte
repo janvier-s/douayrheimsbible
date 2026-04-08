@@ -204,15 +204,15 @@
 	<h2>Sources</h2>
 	<ul>
 		<li>
-			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em> — primary
-			source for the Maryland settlement, the parallel with the Geneva Bible, and the difficult English
-			reception
+			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>,
+			primary source for the Maryland settlement, the parallel with the Geneva Bible, and the
+			difficult English reception
 		</li>
 		<li>
 			Rev. Henry Cotton, <em
 				>Rhemes and Doway: An Attempt to Shew What Has Been Done by Roman Catholics for the
 				Diffusion of the Holy Scriptures in English</em
-			> (Oxford University Press, 1855) — chronological list of American editions including the 1805 Carey
+			> (Oxford University Press, 1855), chronological list of American editions including the 1805 Carey
 			Bible and Kenrick's translation
 		</li>
 	</ul>
