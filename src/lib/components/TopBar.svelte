@@ -387,7 +387,7 @@
 	<!-- Mobile bottom sheet -->
 	<div
 		transition:fly={{ y: 400, duration: 260, easing: cubicOut }}
-		class="md:hidden fixed inset-x-0 bottom-0 bg-panel border-t border-border rounded-t-xl z-[60] font-ui overflow-y-auto"
+		class="md:hidden fixed inset-x-0 bottom-0 bg-panel border-t border-border rounded-t-xl z-[60] font-ui overflow-y-auto overscroll-y-contain"
 		style="max-height: 85vh; padding-bottom: env(safe-area-inset-bottom);"
 		role="dialog"
 		aria-label="Reading options"
