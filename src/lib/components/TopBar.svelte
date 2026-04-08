@@ -284,7 +284,9 @@
 		{#each modeItems as item, i}
 			<button
 				class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
-                    {activeModeIdx === i ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+                    {pendingIdx === i || (pendingIdx === -1 && activeModeIdx === i)
+					? 'text-accent'
+					: 'text-subtle hover:text-foreground'}"
 				aria-label={item.label}
 				aria-pressed={activeModeIdx === i}
 				on:click={() => selectMode(item.key, i)}
@@ -340,7 +342,8 @@
 		{/each}
 		<!-- Search tab -->
 		<button
-			class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast text-subtle hover:text-foreground"
+			class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
+                    {searchOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 			aria-label="Search"
 			on:click={() => (searchOpen = true)}
 		>
