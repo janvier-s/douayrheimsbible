@@ -22,6 +22,7 @@
 	$: chapterNum = $readingPosition
 		? String($readingPosition.chapter)
 		: ($page.params.chapter ?? '');
+	$: showTabBar = !!($page.params.book && $page.params.chapter);
 
 	const FONT_STACKS: Record<string, string> = {
 		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
@@ -82,7 +83,7 @@
 <a href="#main-content" class="skip-link">Skip to reading</a>
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
 	{#if $page.data.showLayoutTopBar !== false}
-		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />
+		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} {showTabBar} />
 	{/if}
 	<slot />
 </div>
