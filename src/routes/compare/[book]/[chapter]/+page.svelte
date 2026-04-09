@@ -9,6 +9,15 @@
 
 	export let data: PageData;
 
+	/** Strip <cr>, <na> tags and their content; keep <i> as HTML italic. */
+	function stripTags(text: string): string {
+		return text
+			.replace(/<cr>[^<]*<\/cr>/g, '')
+			.replace(/<na>[^<]*<\/na>/g, '')
+			.replace(/  +/g, ' ')
+			.trim();
+	}
+
 	$: ({ bookMeta, chapter } = data);
 	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
 	$: nextChapter = chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null;
@@ -214,9 +223,9 @@
 							>
 						{/if}
 						{#if t.live}
-							<span>{v.text}</span>
+							<span>{@html stripTags(v.text)}</span>
 						{:else}
-							<span class="invisible" aria-hidden="true">{v.text}</span>
+							<span class="invisible" aria-hidden="true">{@html stripTags(v.text)}</span>
 						{/if}
 					</div>
 				{/each}
@@ -226,7 +235,7 @@
 
 	<!-- Chapter prev / next — below table -->
 	<div
-		class="mx-auto flex justify-between items-center mt-[12px] mb-[40px] px-[4px] font-ui"
+		class="mx-auto flex justify-between items-center mt-[12px] mb-[40px] max-md:mb-[100px] px-[4px] font-ui"
 		style="max-width: {containerMaxWidth};"
 	>
 		{#if prevChapter}

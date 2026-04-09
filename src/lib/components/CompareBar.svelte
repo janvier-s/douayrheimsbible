@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
+	import { slide, fly, fade } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -31,15 +32,20 @@
 
 	let pendingIdx = -1;
 
-	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
-		const { key, index } = e.detail;
+	async function selectMode(key: string, index: number) {
 		const href = key === 'reading' ? readingHref : key === 'study' ? studyHref : null;
+		if (key === 'compare') return; // already on compare
 		if (!href) return;
 		pendingIdx = index;
 		const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
 		await new Promise<void>((r) => setTimeout(r, delay));
 		prefs.update((p) => ({ ...p, readingMode: key === 'study' ? 'study' : 'reading' }));
 		goto(href);
+	}
+
+	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
+		const { key, index } = e.detail;
+		await selectMode(key, index);
 	}
 
 	let navOpen = false;
@@ -116,7 +122,7 @@
 	<!-- Row 2: compare controls -->
 	<div
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[14px] relative"
-		style="height: 60px;"
+		style="height: 50px;"
 	>
 		<!-- Translation chips — desktop -->
 		<div class="hidden md:flex flex-col justify-center gap-[5px] shrink-0">
@@ -253,19 +259,33 @@
 {/if}
 
 {#if prefsOpen}
+	<!-- Desktop panel -->
 	<div
 		transition:slide={{ duration: 180 }}
-		class="fixed top-[var(--header-height)] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
+		class="hidden md:block fixed top-[var(--header-height)] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
 		role="dialog"
 		aria-label="Reading options"
 	>
 		<ReadingPrefs />
 	</div>
+
+	<!-- Mobile top panel — slides down from header -->
+	<div
+		transition:fly={{ y: -30, duration: 200, easing: cubicOut }}
+		class="md:hidden fixed inset-x-0 top-[var(--header-height)] bg-panel border-b border-border z-[60] font-ui"
+		style="border-radius: 0 0 12px 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);"
+		role="dialog"
+		aria-label="Reading options"
+	>
+		<div style="height: 320px; overflow-y: auto; overscroll-behavior: contain;">
+			<ReadingPrefs />
+		</div>
+	</div>
 {/if}
 
 {#if navOpen || prefsOpen || mobileTransOpen}
 	<div
-		class="fixed inset-0 z-40"
+		class="fixed inset-0 z-[57]"
 		role="presentation"
 		on:click={closeAll}
 		on:keydown={(e) => {
@@ -273,3 +293,97 @@
 		}}
 	></div>
 {/if}
+
+<!-- Bottom tab bar — mobile only -->
+<nav
+	transition:fade={{ duration: 200 }}
+	class="md:hidden fixed bottom-0 inset-x-0 z-[56] bg-glass backdrop-blur-sm border-t border-border font-ui"
+	style="padding-bottom: env(safe-area-inset-bottom);"
+	aria-label="Main navigation"
+>
+	<div class="flex" style="height: 56px;">
+		{#each modeItems as item, i}
+			<button
+				class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
+				{pendingIdx === i || (pendingIdx === -1 && activeModeIdx === i)
+					? 'text-accent'
+					: 'text-subtle hover:text-foreground'}"
+				aria-label={item.label}
+				aria-pressed={activeModeIdx === i}
+				on:click={() => selectMode(item.key, i)}
+			>
+				{#if item.key === 'reading'}
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<rect x="3" y="2" width="12" height="14" rx="1.5" />
+						<line x1="6" y1="6" x2="12" y2="6" />
+						<line x1="6" y1="9" x2="12" y2="9" />
+						<line x1="6" y1="12" x2="9" y2="12" />
+					</svg>
+				{:else if item.key === 'study'}
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.3"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path
+							d="M9 4C7.5 3 5.5 2.5 3 3v11c2.5-.5 4.5 0 6 1m0-11c1.5-1 3.5-1.5 6-1v11c-2.5-.5-4.5 0-6 1"
+						/>
+						<line x1="9" y1="6" x2="9" y2="11" />
+						<line x1="7" y1="8" x2="11" y2="8" />
+					</svg>
+				{:else if item.key === 'compare'}
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<rect x="2" y="3" width="5.5" height="12" rx="1" />
+						<rect x="10.5" y="3" width="5.5" height="12" rx="1" />
+					</svg>
+				{/if}
+				<span class="text-[8px] uppercase tracking-[0.1em] font-medium">{item.label}</span>
+			</button>
+		{/each}
+		<!-- Search tab -->
+		<button
+			class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
+				{searchOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+			aria-label="Search"
+			aria-pressed={searchOpen}
+			on:click={() => (searchOpen = true)}
+		>
+			<svg
+				width="18"
+				height="18"
+				viewBox="0 0 18 18"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.5"
+				stroke-linecap="round"
+			>
+				<circle cx="8" cy="8" r="5.5" />
+				<line x1="12" y1="12" x2="16" y2="16" />
+			</svg>
+			<span class="text-[8px] uppercase tracking-[0.1em] font-medium">Search</span>
+		</button>
+	</div>
+</nav>
