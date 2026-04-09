@@ -1,8 +1,5 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { ALL_BOOKS } from '$lib/data/books';
-
 	const ARTICLES_FAQ = [
 		{
 			q: 'What is the difference between the Douay-Rheims and the Challoner revision?',
@@ -199,14 +196,6 @@
 		</ol>
 	{/each}
 </ProseLayout>
-
-<PageFooter
-	bookMeta={ALL_BOOKS[0]}
-	chapterNum={1}
-	totalChapters={50}
-	routeBase="/odr"
-	showNav={false}
-/>
 
 <style>
 	.article-list {

@@ -1,8 +1,5 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { ALL_BOOKS } from '$lib/data/books';
-
 	const FAQ = [
 		{
 			q: 'Did the King James Bible copy from the Douay-Rheims?',
@@ -243,11 +240,3 @@
 		<a href="/history/challoner">The Challoner Revision →</a>
 	</p>
 </ProseLayout>
-
-<PageFooter
-	bookMeta={ALL_BOOKS[0]}
-	chapterNum={1}
-	totalChapters={50}
-	routeBase="/odr"
-	showNav={false}
-/>

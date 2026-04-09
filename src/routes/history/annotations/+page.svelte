@@ -1,8 +1,5 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { ALL_BOOKS } from '$lib/data/books';
-
 	const FAQ = [
 		{
 			q: 'Why does the Douay-Rheims Bible have so many footnotes?',
@@ -224,11 +221,3 @@
 		<a href="/history/forbidden-bible">A Bible Forbidden to Its Own Readers →</a>
 	</p>
 </ProseLayout>
-
-<PageFooter
-	bookMeta={ALL_BOOKS[0]}
-	chapterNum={1}
-	totalChapters={50}
-	routeBase="/odr"
-	showNav={false}
-/>

@@ -1,8 +1,5 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { ALL_BOOKS } from '$lib/data/books';
-
 	const FAQ = [
 		{
 			q: 'Was the Douay-Rheims Bible illegal in England?',
@@ -284,11 +281,3 @@
 		<a href="/history/influence-on-kjv">How the Douay-Rheims Shaped the King James Bible →</a>
 	</p>
 </ProseLayout>
-
-<PageFooter
-	bookMeta={ALL_BOOKS[0]}
-	chapterNum={1}
-	totalChapters={50}
-	routeBase="/odr"
-	showNav={false}
-/>

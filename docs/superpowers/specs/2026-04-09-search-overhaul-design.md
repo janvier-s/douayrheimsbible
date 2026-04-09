@@ -86,7 +86,7 @@ Results render as a single continuous list, grouped by reference range (BibleGat
 **Only ODR text** is shown (the only live translation). No translation selector.
 
 **Edge cases:**
-- Invalid input (e.g., "hello world") — gentle message: "No references found. Try a verse like John 6:53"
+- Invalid input (e.g., "hello world") — gentle message: "No references found. Try a verse like James 2:24"
 - Chapter-only reference (e.g., "Matt 3") — show entire chapter
 - Out-of-range verses — `bcv_parser` clamps to valid range automatically
 

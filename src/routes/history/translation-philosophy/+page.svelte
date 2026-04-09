@@ -1,8 +1,5 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { ALL_BOOKS } from '$lib/data/books';
-
 	const FAQ = [
 		{
 			q: 'Why does the Douay-Rheims use unusual vocabulary like "supersubstantial" and "longsuffering"?',
@@ -291,11 +288,3 @@
 		<a href="/history/rheims-1582">Published in a Time of Crisis →</a>
 	</p>
 </ProseLayout>
-
-<PageFooter
-	bookMeta={ALL_BOOKS[0]}
-	chapterNum={1}
-	totalChapters={50}
-	routeBase="/odr"
-	showNav={false}
-/>

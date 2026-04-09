@@ -1,8 +1,5 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { ALL_BOOKS } from '$lib/data/books';
-
 	const FAQ = [
 		{
 			q: 'Why did the Catholic Church move away from the Latin Vulgate as its translation source?',
@@ -258,11 +255,3 @@
 		<a href="/history/scripture-for-all">A Bible Open to All →</a>
 	</p>
 </ProseLayout>
-
-<PageFooter
-	bookMeta={ALL_BOOKS[0]}
-	chapterNum={1}
-	totalChapters={50}
-	routeBase="/odr"
-	showNav={false}
-/>

@@ -1,8 +1,5 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-	import { ALL_BOOKS } from '$lib/data/books';
-
 	const ABOUT_FAQ = [
 		{
 			q: 'What is the Douay-Rheims Bible?',
@@ -168,11 +165,3 @@
 
 	<p><a href="/history/origins">Born in Exile: The Origins of the Douay-Rheims Bible →</a></p>
 </ProseLayout>
-
-<PageFooter
-	bookMeta={ALL_BOOKS[0]}
-	chapterNum={1}
-	totalChapters={50}
-	routeBase="/odr"
-	showNav={false}
-/>

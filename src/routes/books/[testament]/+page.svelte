@@ -1,7 +1,5 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import PageFooter from '$lib/components/PageFooter.svelte';
-
 	export let data: PageData;
 </script>
 
@@ -72,11 +70,3 @@
 		{/if}
 	</nav>
 </main>
-
-<PageFooter
-	bookMeta={data.books[0]}
-	chapterNum={1}
-	totalChapters={data.books[0].chapters}
-	routeBase="/odr"
-	showNav={false}
-/>

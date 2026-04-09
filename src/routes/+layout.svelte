@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 	import TopBar from '$lib/components/TopBar.svelte';
+	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -110,4 +111,5 @@
 		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />
 	{/if}
 	<slot />
+	<SiteFooter />
 </div>

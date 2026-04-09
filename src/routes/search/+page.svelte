@@ -5,8 +5,6 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
-	import TopBar from '$lib/components/TopBar.svelte';
-
 	export let data: { query: string };
 
 	let inputEl: HTMLInputElement;
@@ -19,9 +17,7 @@
 	const EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 
 	onMount(() => {
-		// Auto-focus if navigated here via keyboard shortcut or empty
 		if (inputEl) inputEl.focus();
-		// If query is present on load, search immediately
 		if (query) search(query);
 	});
 
@@ -98,13 +94,11 @@
 	<title>{query ? `${query} | Search` : 'Search'} | ODR Bible</title>
 </svelte:head>
 
-<TopBar bookSlug="" chapterNum="" />
-
 <main class="max-w-[750px] mx-auto px-md py-xl font-ui" in:fade={{ duration: 140 }}>
 	<!-- Search bar -->
 	<form on:submit|preventDefault={onSubmit} class="relative mb-lg">
 		<div
-			class="flex items-center gap-[10px] border border-border rounded-[6px] bg-panel px-[14px] h-[54px] focus-within:border-accent transition-colors duration-fast"
+			class="flex items-center gap-[10px] border border-border rounded-[6px] bg-panel px-[14px] h-[54px] focus-within:border-subtle transition-colors duration-fast"
 		>
 			<svg
 				width="18"
@@ -126,7 +120,7 @@
 				on:input={onInput}
 				type="text"
 				placeholder="Search for a verse — e.g. Matthew 16:18"
-				class="flex-1 bg-transparent border-none outline-none font-ui text-[15px] font-light text-foreground caret-accent min-w-0"
+				class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
 				autocomplete="off"
 				autocorrect="off"
 				autocapitalize="off"
@@ -142,7 +136,7 @@
 			<div class="flex flex-wrap justify-center gap-[8px]">
 				{#each EXAMPLES as example}
 					<button
-						class="px-[12px] py-[6px] rounded-[4px] border border-border text-[13px] text-accent hover:bg-accent/10 transition-colors duration-fast"
+						class="px-[12px] py-[6px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
 						on:click={() => onExampleClick(example)}
 					>
 						{example}
@@ -161,7 +155,7 @@
 	{#if searched && !loading && results.length === 0}
 		<p class="text-subtle text-[14px] text-center">
 			No references found. Try a verse like <button
-				class="text-accent hover:underline"
+				class="text-subtle hover:text-foreground hover:underline"
 				on:click={() => onExampleClick('James 2:24')}>James 2:24</button
 			>
 		</p>
@@ -175,10 +169,10 @@
 					<hr class="border-border" />
 				{/if}
 				<section>
-					<h2 class="font-ui text-[14px] font-semibold text-foreground mb-[8px]">
+					<h2 class="font-ui text-[14px] font-semibold text-accent mb-[8px]">
 						<a
 							href="/odr/{group.slug}/{group.chapter}"
-							class="hover:text-accent transition-colors duration-fast"
+							class="hover:text-foreground transition-colors duration-fast"
 						>
 							{group.heading}
 						</a>
@@ -201,7 +195,7 @@
 					</div>
 					<a
 						href="/odr/{group.slug}/{group.chapter}"
-						class="inline-block mt-[8px] text-[11px] uppercase tracking-[0.15em] text-accent hover:text-foreground transition-colors duration-fast font-medium"
+						class="inline-block mt-[8px] text-[11px] uppercase tracking-[0.15em] text-subtle hover:text-foreground transition-colors duration-fast font-medium"
 					>
 						Read full chapter →
 					</a>
