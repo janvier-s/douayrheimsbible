@@ -428,7 +428,7 @@
 
 {#if navOpen || prefsOpen || translationOpen}
 	<div
-		class="fixed inset-0 z-[55]"
+		class="fixed inset-0 z-[57]"
 		role="presentation"
 		on:click={closeAll}
 		on:keydown={(e) => {
