@@ -84,3 +84,55 @@ export function parseReference(input: string): ParsedReference | null {
 		verse: parts[2] ? parseInt(parts[2], 10) : undefined
 	};
 }
+
+export interface OsisRange {
+	/** Raw OSIS string e.g. "Matt.3.2-Matt.3.12" */
+	osis: string;
+	/** OSIS book code e.g. "Matt" */
+	book: string;
+	startChapter: number;
+	startVerse?: number;
+	endChapter: number;
+	endVerse?: number;
+}
+
+/**
+ * Parse input into all OSIS references.
+ * Handles multi-reference queries like "Matt 3:2-12, John 5:1-6".
+ */
+export function parseAllReferences(input: string): OsisRange[] {
+	const normalised = normaliseInput(input.trim()).replace(/^(\d)\s+/, '$1');
+	const result = parser.parse(normalised);
+	const passages = result.osis_and_indices();
+
+	if (!passages.length) return [];
+
+	const ranges: OsisRange[] = [];
+
+	for (const passage of passages) {
+		// Each passage.osis may contain comma-separated refs e.g. "Matt.3.2-Matt.3.12,John.5.1-John.5.6"
+		const osisRefs = passage.osis.split(',');
+		for (const osis of osisRefs) {
+			const range = parseOsis(osis);
+			if (range) ranges.push(range);
+		}
+	}
+
+	return ranges;
+}
+
+function parseOsis(osis: string): OsisRange | null {
+	// Formats: "Book.Ch", "Book.Ch.V", "Book.Ch.V-Book.Ch.V", "Book.Ch-Book.Ch"
+	const rangeMatch = osis.match(/^([^.]+)\.(\d+)(?:\.(\d+))?(?:-[^.]+\.(\d+)(?:\.(\d+))?)?$/);
+	if (!rangeMatch) return null;
+
+	const [, book, sCh, sV, eCh, eV] = rangeMatch;
+	return {
+		osis,
+		book,
+		startChapter: parseInt(sCh, 10),
+		startVerse: sV ? parseInt(sV, 10) : undefined,
+		endChapter: eCh ? parseInt(eCh, 10) : parseInt(sCh, 10),
+		endVerse: eV ? parseInt(eV, 10) : sV ? parseInt(sV, 10) : undefined
+	};
+}
