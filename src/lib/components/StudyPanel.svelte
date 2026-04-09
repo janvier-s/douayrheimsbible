@@ -230,7 +230,7 @@
 			{:else}
 				{#if intros.length > 1}
 					<div
-						class="subtab-row flex overflow-x-auto border-b border-border bg-background shrink-0"
+						class="subtab-row flex overflow-x-auto border-b border-border bg-background sticky top-0 z-[2]"
 					>
 						{#each intros as intro, i}
 							<button
@@ -621,5 +621,42 @@
 		color: var(--color-subtle);
 		font-style: italic;
 		line-height: 1.5;
+	}
+
+	/* ─── Mobile density overrides ─────────────────────────────── */
+	@media (max-width: 767px) {
+		.content-block {
+			padding: 12px 16px;
+		}
+
+		.sub-section {
+			padding: 4px 12px 10px;
+		}
+
+		.sub-section:last-child {
+			padding-bottom: 14px;
+		}
+
+		.verse-section-header {
+			padding: 8px 12px 4px;
+		}
+
+		.verse-section-header-sticky {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		.cr-text {
+			font-size: 12px;
+		}
+
+		.note-text {
+			font-size: 12px;
+		}
+
+		.annotation-title {
+			font-size: 12px;
+			margin: 6px 0 5px;
+		}
 	}
 </style>
