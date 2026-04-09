@@ -8,7 +8,6 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { isMobile } from '$lib/stores/mobile';
 	import FloatingNav from './FloatingNav.svelte';
-	import SpotlightSearch from './SpotlightSearch.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
 	import ModeToggle from './ModeToggle.svelte';
 
@@ -21,7 +20,6 @@
 	let navOpen = false;
 	let prefsOpen = false;
 	let translationOpen = false;
-	let searchOpen = false;
 
 	$: bookMeta = getBookBySlug(bookSlug);
 
@@ -112,8 +110,6 @@
 	}
 </script>
 
-<SpotlightSearch bind:open={searchOpen} />
-
 <header class="sticky top-0 z-50 font-ui">
 	<!-- Row 1: branding + mode + search -->
 	<div
@@ -160,11 +156,11 @@
 		</div>
 
 		<!-- Search icon — desktop only -->
-		<button
+		<a
+			href="/search"
 			class="hidden md:flex ml-0 shrink-0 items-center justify-center w-[30px] h-[30px]
-				rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
+		    rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
 			aria-label="Search"
-			on:click={() => (searchOpen = true)}
 		>
 			<svg
 				width="15"
@@ -178,7 +174,7 @@
 				<circle cx="6.5" cy="6.5" r="4.5" />
 				<line x1="10" y1="10" x2="14" y2="14" />
 			</svg>
-		</button>
+		</a>
 
 		<!-- Reading options sliders icon — mobile only, Row 1 -->
 		<button
@@ -367,12 +363,11 @@
 				</button>
 			{/each}
 			<!-- Search tab -->
-			<button
+			<a
+				href="/search"
 				class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
-                    {searchOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+			    text-subtle hover:text-foreground"
 				aria-label="Search"
-				aria-pressed={searchOpen}
-				on:click={() => (searchOpen = true)}
 			>
 				<svg
 					width="18"
@@ -387,7 +382,7 @@
 					<line x1="12" y1="12" x2="16" y2="16" />
 				</svg>
 				<span class="text-[8px] uppercase tracking-[0.1em] font-medium">Search</span>
-			</button>
+			</a>
 		</div>
 	</nav>
 {/if}
