@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { slide, fly, fade } from 'svelte/transition';
+	import { slide, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
@@ -296,7 +296,6 @@
 
 <!-- Bottom tab bar — mobile only -->
 <nav
-	transition:fade={{ duration: 200 }}
 	class="md:hidden fixed bottom-0 inset-x-0 z-[56] bg-glass backdrop-blur-sm border-t border-border font-ui"
 	style="padding-bottom: env(safe-area-inset-bottom);"
 	aria-label="Main navigation"

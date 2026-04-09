@@ -259,7 +259,11 @@
 	}
 
 	onMount(async () => {
-		prefs.update((p) => ({ ...p, readingMode: 'reading' }));
+		// Keep study mode if explicitly selected (e.g. navigating from compare → study).
+		// Only reset from compare, since BibleReader doesn't support compare mode.
+		if ($prefs.readingMode !== 'study') {
+			prefs.update((p) => ({ ...p, readingMode: 'reading' }));
+		}
 		readingPosition.set({
 			bookSlug: initialBookMeta.slug,
 			chapter: initialChapter.chapter,
