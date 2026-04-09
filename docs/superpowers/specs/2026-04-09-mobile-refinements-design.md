@@ -94,9 +94,9 @@ prefs.update((p) => ({ ...p, readingMode: 'reading' }));
 
 No device condition. Study mode is a per-session choice; it is not persisted across page loads.
 
-### 6. Chapter nav button font size
+### 6. Chapter nav button font size and line height
 
-Reduce the nav label span from `text-[16px]` to `text-[13px] md:text-[16px]`. The chevron icon stays `text-[12px]`. This prevents overflow on long book names like "Ecclesiasticus 45" on narrow phones.
+Reduce the nav label span from `text-[16px]` to `text-[13px] md:text-[16px]` and add `leading-tight` (or `leading-[1.2]`). The chevron icon stays `text-[12px]`. This prevents overflow on long book names like "Ecclesiasticus 45" on narrow phones and tightens the vertical rhythm of the button.
 
 ### 7. Verse left padding
 
@@ -133,6 +133,8 @@ And in the style attribute: `width: {panelWidth};`
 | `src/lib/components/TopBar.svelte` | Import `isMobile` from `$lib/stores/mobile`; import `onMount`/`onDestroy` from `svelte`; import `browser` from `$app/environment`; panel direction (fly y=-30), rounded bottom corners, fixed-height inner container, body scroll lock reactive, popstate listener in onMount/onDestroy |
 | `src/lib/components/TopBar.svelte` | Chapter nav label: `text-[13px] md:text-[16px]` |
 | `src/lib/components/BibleReader.svelte` | `onMount` readingMode reset; `max-md:px-[12px]` on `<main>`; `width: 100%` on panel container on mobile in study mode |
+
+| `src/lib/components/FloatingNav.svelte` | Reduce `max-h-[72vh]` to `max-h-[calc(100vh-var(--header-height)-56px)]` on mobile so the panel doesn't overlap the tab bar |
 
 **Not changed:** `ReadingPrefs.svelte`, `mobile.ts`, `prefs.ts`, `VerseList.svelte`.
 
