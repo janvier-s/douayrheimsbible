@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { tick, onDestroy } from 'svelte';
+	import { tick } from 'svelte';
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
 	import VerseList from './VerseList.svelte';
-	import VerseTooltip from './VerseTooltip.svelte';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel } from '$lib/stores/studyPanel';
 
@@ -63,61 +62,6 @@
 	let activeVerse: number | undefined = targetVerse;
 	$: if (targetVerse !== undefined) activeVerse = targetVerse;
 
-	// Verse tooltip
-	let tooltipVerse: number | null = null;
-	let tooltipX = 0;
-	let tooltipY = 0;
-	let tooltipCloseTimer: ReturnType<typeof setTimeout> | null = null;
-
-	$: tooltipText = (() => {
-		if (tooltipVerse == null) return '';
-		const raw = chapter.verses.find((v) => v.verse === tooltipVerse)?.text ?? '';
-		return raw
-			.replace(/<cr>[^<]*<\/cr>/g, '')
-			.replace(/<na>[^<]*<\/na>/g, '')
-			.replace(/<\/?i>/g, '')
-			.replace(/  +/g, ' ')
-			.trim();
-	})();
-
-	function cancelClose() {
-		if (tooltipCloseTimer) {
-			clearTimeout(tooltipCloseTimer);
-			tooltipCloseTimer = null;
-		}
-	}
-
-	function scheduleClose() {
-		cancelClose();
-		tooltipCloseTimer = setTimeout(() => (tooltipVerse = null), 120);
-	}
-
-	function handleSummaryMouseover(e: MouseEvent | FocusEvent) {
-		const el = (e.target as HTMLElement).closest('.summary-verse-ref') as HTMLElement | null;
-		if (!el) return;
-		cancelClose();
-		tooltipVerse = parseInt(el.dataset.verse ?? '0');
-		const rect = el.getBoundingClientRect();
-		tooltipX = rect.left + rect.width / 2;
-		tooltipY = rect.top;
-	}
-
-	function handleSummaryMouseout() {
-		scheduleClose();
-	}
-
-	function handleTooltipMouseout() {
-		scheduleClose();
-	}
-
-	function handleTooltipMouseover() {
-		cancelClose();
-	}
-
-	onDestroy(() => {
-		if (tooltipCloseTimer) clearTimeout(tooltipCloseTimer);
-	});
-
 	function linkifySummary(text: string, isStudy: boolean): string {
 		// Summary text is from trusted build-time JSON; we only inject our own tags.
 		// Match verse-number references in summary text: a digit-sequence followed by
@@ -127,7 +71,7 @@
 		let t = text.replace(/(^|[\s;,])(\d+)\.\s+/g, (match, sep, n) => {
 			const num = parseInt(n, 10);
 			if (num < 1 || num > maxVerse) return match;
-			const link = `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}"><span class="verse-ref-glyph">℣.</span>${n}</a> `;
+			const link = `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}">${n}</a> `;
 			return sep + link;
 		});
 		if (isStudy) {
@@ -230,30 +174,13 @@
 	</header>
 
 	{#if chapter.summary && chapter.summary !== '---'}
-		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions a11y_mouse_events_have_key_events -->
+		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 		<p
 			class="text-subtle font-reader italic mb-lg text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 			on:click={handleSummaryClick}
-			on:mouseover={handleSummaryMouseover}
-			on:mouseout={handleSummaryMouseout}
-			on:focusin={handleSummaryMouseover}
-			on:focusout={() => scheduleClose()}
 		>
 			{@html linkifySummary(chapter.summary, $prefs.readingMode === 'study')}
 		</p>
-	{/if}
-
-	{#if tooltipVerse != null && tooltipText}
-		<VerseTooltip
-			verseNum={tooltipVerse}
-			verseText={tooltipText}
-			anchorX={tooltipX}
-			anchorY={tooltipY}
-			on:mouseover={handleTooltipMouseover}
-			on:mouseout={handleTooltipMouseout}
-			on:focusin={handleTooltipMouseover}
-			on:focusout={handleTooltipMouseout}
-		/>
 	{/if}
 
 	<VerseList
@@ -273,10 +200,5 @@
 	}
 	:global(.summary-verse-ref:hover) {
 		text-decoration: underline;
-	}
-	@media (max-width: 640px) {
-		:global(.verse-ref-glyph) {
-			display: none;
-		}
 	}
 </style>
