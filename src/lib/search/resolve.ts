@@ -1,7 +1,7 @@
 import type { ParsedReference } from './reference';
 import { getBookByOdrName, getBookByModernName, getBookBySlug } from '$lib/data/books';
 
-const OSIS_TO_SLUG: Record<string, string> = {
+export const OSIS_TO_SLUG: Record<string, string> = {
 	// OT — books with standard names
 	Gen: 'genesis',
 	Exod: 'exodus',
