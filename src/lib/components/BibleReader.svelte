@@ -63,6 +63,7 @@
 	);
 	$: if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
 	$: panelMaxWidth = $prefs.readingMode === 'study' ? ($isMobile ? '100%' : liveWidth) : '0';
+	$: panelWidth = $isMobile && $prefs.readingMode === 'study' ? '100%' : '';
 	$: panelTransition = panelDragging
 		? 'opacity 250ms ease'
 		: $isMobile
@@ -258,6 +259,7 @@
 	}
 
 	onMount(async () => {
+		prefs.update((p) => ({ ...p, readingMode: 'reading' }));
 		readingPosition.set({
 			bookSlug: initialBookMeta.slug,
 			chapter: initialChapter.chapter,
@@ -301,7 +303,7 @@
 	<main
 		id="main-content"
 		bind:this={container}
-		class="flex-1 min-w-0 px-md pt-[20px] pb-xl max-md:pb-[80px]"
+		class="flex-1 min-w-0 px-md max-md:px-[12px] pt-[20px] pb-xl max-md:pb-[80px]"
 		class:hidden={$prefs.readingMode === 'study' && $isMobile}
 	>
 		<div style="max-width: {columnMaxWidth}px;" class="mx-auto">
@@ -330,7 +332,7 @@
 		class="shrink-0 sticky flex [overflow:clip]"
 		style="top: var(--header-height); height: {$isMobile
 			? 'calc(100vh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
-			: 'calc(100vh - var(--header-height))'}; max-width: {panelMaxWidth}; opacity: {$prefs.readingMode ===
+			: 'calc(100vh - var(--header-height))'}; max-width: {panelMaxWidth}; width: {panelWidth}; opacity: {$prefs.readingMode ===
 		'study'
 			? '1'
 			: '0'}; transition: {panelTransition};"
