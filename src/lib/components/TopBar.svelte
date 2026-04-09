@@ -338,12 +338,15 @@
 							viewBox="0 0 18 18"
 							fill="none"
 							stroke="currentColor"
-							stroke-width="1.5"
+							stroke-width="1.3"
 							stroke-linecap="round"
+							stroke-linejoin="round"
 						>
-							<circle cx="9" cy="9" r="7" />
-							<line x1="9" y1="6" x2="9" y2="9.5" />
-							<circle cx="9" cy="12" r="0.8" fill="currentColor" stroke="none" />
+							<path
+								d="M9 4C7.5 3 5.5 2.5 3 3v11c2.5-.5 4.5 0 6 1m0-11c1.5-1 3.5-1.5 6-1v11c-2.5-.5-4.5 0-6 1"
+							/>
+							<line x1="9" y1="6" x2="9" y2="11" />
+							<line x1="7" y1="8" x2="11" y2="8" />
 						</svg>
 					{:else if item.key === 'compare'}
 						<svg
@@ -356,9 +359,8 @@
 							stroke-linecap="round"
 							stroke-linejoin="round"
 						>
-							<line x1="3" y1="9" x2="15" y2="9" />
-							<polyline points="11,5 15,9 11,13" />
-							<polyline points="7,5 3,9 7,13" />
+							<rect x="2" y="3" width="5.5" height="12" rx="1" />
+							<rect x="10.5" y="3" width="5.5" height="12" rx="1" />
 						</svg>
 					{/if}
 					<span class="text-[8px] uppercase tracking-[0.1em] font-medium">{item.label}</span>
