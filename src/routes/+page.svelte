@@ -17,7 +17,7 @@
 	onMount(() => {
 		readerObs = new IntersectionObserver(
 			([entry]) => {
-				if (entry.isIntersecting) readerVisible = true;
+				readerVisible = entry.isIntersecting;
 			},
 			{ threshold: 0 }
 		);
