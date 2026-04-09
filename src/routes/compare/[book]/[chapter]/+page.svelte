@@ -228,13 +228,13 @@
 			{#each chapter.verses as v (v.verse)}
 				{#each displayedCols as t, colIdx (t.id)}
 					<div
-						class="px-[5px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[8px]
+						class="px-[5px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 						class:text-justify={$prefs.justifiedText}
 					>
 						{#if $prefs.showVerseNumbers}
 							<span
-								class="text-subtle font-ui text-[10px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-5"
+								class="text-subtle font-ui text-[10px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-fit"
 								class:invisible={!t.live}
 								aria-hidden={!t.live}>{v.verse}</span
 							>
