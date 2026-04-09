@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
 	import { getBookBySlug } from '$lib/data/books';
 	import { slide, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
+	import { isMobile } from '$lib/stores/mobile';
 	import FloatingNav from './FloatingNav.svelte';
 	import SpotlightSearch from './SpotlightSearch.svelte';
 	import ReadingPrefs from './ReadingPrefs.svelte';
@@ -76,6 +79,34 @@
 	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
 		const { key, index } = e.detail;
 		await selectMode(key, index);
+	}
+
+	function togglePrefs() {
+		prefsOpen = !prefsOpen;
+		translationOpen = false;
+		navOpen = false;
+		if ($isMobile && prefsOpen) {
+			history.pushState({ prefsOpen: true }, '');
+		}
+	}
+
+	function onPopState() {
+		if (prefsOpen) prefsOpen = false;
+	}
+
+	onMount(() => {
+		if (browser) window.addEventListener('popstate', onPopState);
+	});
+
+	onDestroy(() => {
+		if (browser) {
+			window.removeEventListener('popstate', onPopState);
+			document.body.style.overflow = '';
+		}
+	});
+
+	$: if (browser) {
+		document.body.style.overflow = $isMobile && prefsOpen ? 'hidden' : '';
 	}
 </script>
 
@@ -155,11 +186,7 @@
 			aria-label="Reading options"
 			aria-expanded={prefsOpen}
 			aria-haspopup="dialog"
-			on:click={() => {
-				prefsOpen = !prefsOpen;
-				translationOpen = false;
-				navOpen = false;
-			}}
+			on:click={togglePrefs}
 		>
 			<svg
 				width="16"
@@ -385,21 +412,15 @@
 		<ReadingPrefs />
 	</div>
 
-	<!-- Mobile bottom sheet -->
+	<!-- Mobile top panel — slides down from header -->
 	<div
-		transition:fly={{ y: 400, duration: 260, easing: cubicOut }}
-		class="md:hidden fixed inset-x-0 bottom-0 bg-panel border-t border-border rounded-t-xl z-[60] font-ui overflow-y-auto overscroll-y-contain"
-		style="max-height: 85vh; padding-bottom: env(safe-area-inset-bottom);"
+		transition:fly={{ y: -30, duration: 200, easing: cubicOut }}
+		class="md:hidden fixed inset-x-0 top-[var(--header-height)] bg-panel border-b border-border z-[60] font-ui"
+		style="border-radius: 0 0 12px 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);"
 		role="dialog"
 		aria-label="Reading options"
 	>
-		<!-- Drag handle -->
-		<div
-			class="flex justify-center pt-[10px] pb-[6px] sticky top-0 bg-panel border-b border-border z-10"
-		>
-			<div class="w-[32px] h-[4px] bg-border rounded-full"></div>
-		</div>
-		<div class="p-md">
+		<div style="height: 320px; overflow-y: auto; overscroll-behavior: contain;">
 			<ReadingPrefs />
 		</div>
 	</div>
