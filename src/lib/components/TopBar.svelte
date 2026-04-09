@@ -274,7 +274,7 @@
 					translationOpen = false;
 				}}
 			>
-				<span class="text-[16px] font-medium">{navLabel}</span>
+				<span class="text-[13px] md:text-[16px] leading-tight font-medium">{navLabel}</span>
 				<span class="text-[12px] opacity-70 leading-none" aria-hidden="true"
 					>{navOpen ? '▲' : '▼'}</span
 				>
