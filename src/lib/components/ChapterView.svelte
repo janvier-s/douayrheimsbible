@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { tick } from 'svelte';
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
 	import VerseList from './VerseList.svelte';
@@ -71,7 +70,7 @@
 		let t = text.replace(/(^|[\s;,])(\d+)\.\s+/g, (match, sep, n) => {
 			const num = parseInt(n, 10);
 			if (num < 1 || num > maxVerse) return match;
-			const link = `<a href="#v${n}" data-verse="${n}" class="summary-verse-ref" aria-label="Verse ${n}">${n}</a> `;
+			const link = `<span class="summary-verse-ref">${n}.</span> `;
 			return sep + link;
 		});
 		if (isStudy) {
@@ -89,33 +88,17 @@
 		return t;
 	}
 
-	async function handleSummaryClick(e: MouseEvent) {
-		// Summary note marker click → scroll panel to summary section
+	function handleSummaryClick(e: MouseEvent) {
+		// Summary note marker click → scroll study panel to summary section
 		const noteBtn = (e.target as HTMLElement).closest('[data-summary-note]') as HTMLElement | null;
-		if (noteBtn) {
-			e.preventDefault();
-			const marker = noteBtn.dataset.summaryNote ?? '';
-			studyPanel.update((s) => ({
-				...s,
-				activeTab: 'commentary',
-				scrollTrigger: { verse: 0, type: 'note', marker }
-			}));
-			return;
-		}
-
-		const el = (e.target as HTMLElement).closest('[data-verse]') as HTMLElement | null;
-		if (!el?.dataset.verse) return;
+		if (!noteBtn) return;
 		e.preventDefault();
-		const n = parseInt(el.dataset.verse);
-		activeVerse = n;
-		await tick();
-		const article = document.querySelector(
-			`[data-book="${bookMeta.slug}"][data-chapter="${chapter.chapter}"]`
-		);
-		(article?.querySelector('#v' + n) as HTMLElement | null)?.scrollIntoView({
-			behavior: 'smooth',
-			block: 'center'
-		});
+		const marker = noteBtn.dataset.summaryNote ?? '';
+		studyPanel.update((s) => ({
+			...s,
+			activeTab: 'commentary',
+			scrollTrigger: { verse: 0, type: 'note', marker }
+		}));
 	}
 </script>
 
@@ -194,11 +177,6 @@
 <style>
 	:global(.summary-verse-ref) {
 		color: color-mix(in srgb, var(--color-interactive) 75%, var(--color-text));
-		cursor: pointer;
-		text-decoration: none;
 		font-variant-numeric: tabular-nums;
-	}
-	:global(.summary-verse-ref:hover) {
-		text-decoration: underline;
 	}
 </style>
