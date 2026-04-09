@@ -17,7 +17,7 @@
 	export let chapterNum: string;
 	export let hasStudyMode = false;
 
-	$: showTabBar = /^\/(?:odr|compare)\//.test($page.url.pathname);
+	$: showTabBar = !!$page.params.chapter;
 
 	let navOpen = false;
 	let prefsOpen = false;
