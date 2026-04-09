@@ -334,7 +334,7 @@
 				bind:this={verseEls[v.verse]}
 				id="v{v.verse}"
 				data-verse-num={v.verse}
-				class="flex gap-sm max-md:gap-[3px]"
+				class="flex gap-sm max-md:gap-0 max-md:items-end"
 				class:verse-target={targetVerse === v.verse}
 				class:verse-annotated={isStudy && v.has_annotation}
 				on:click={(e) => isStudy && handleVerseClick(e, v)}
@@ -342,7 +342,7 @@
 			>
 				{#if $prefs.showVerseNumbers}
 					<span
-						class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-auto shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
+						class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-fit max-md:mr-[3px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-0 max-md:self-end max-md:pb-[0.2em]"
 						class:text-subtle={!isStudy || !v.has_annotation}
 						style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
 					>

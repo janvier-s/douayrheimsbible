@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
 	import type { PageData } from './$types';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import BibleReader from '$lib/components/BibleReader.svelte';
@@ -7,7 +8,25 @@
 	export let data: PageData;
 
 	$: bookSlug = $readingPosition?.bookSlug ?? data.bookMeta.slug;
-	$: chapterNum = $readingPosition ? String($readingPosition.chapter) : '1';
+
+	// Only show chapterNum (and thus the tab bar) once the reader section is in view
+	let readerVisible = false;
+	let readerEl: HTMLElement;
+	let readerObs: IntersectionObserver | null = null;
+
+	onMount(() => {
+		readerObs = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) readerVisible = true;
+			},
+			{ threshold: 0 }
+		);
+		if (readerEl) readerObs.observe(readerEl);
+	});
+
+	onDestroy(() => readerObs?.disconnect());
+
+	$: chapterNum = readerVisible && $readingPosition ? String($readingPosition.chapter) : '';
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
@@ -150,7 +169,7 @@
 </section>
 
 <!-- ═══════════ READER ═══════════ -->
-<div id="reader">
+<div id="reader" bind:this={readerEl}>
 	<TopBar {bookSlug} {chapterNum} hasStudyMode={true} />
 	<BibleReader
 		initialBookMeta={data.bookMeta}
