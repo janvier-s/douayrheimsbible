@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+	import { browser } from '$app/environment';
 	import type { PageData } from './$types';
 	import { prefs } from '$lib/stores/prefs';
 	import { compareStore, TRANSLATIONS, MAX_COLS } from '$lib/stores/compare';
@@ -8,6 +10,20 @@
 	import { fade } from 'svelte/transition';
 
 	export let data: PageData;
+
+	// Set compare-specific font size on mount, restore on destroy
+	let prevFontSize = '';
+	onMount(() => {
+		prevFontSize = getComputedStyle(document.documentElement).getPropertyValue(
+			'--font-size-reader'
+		);
+		document.documentElement.style.setProperty('--font-size-reader', `${$prefs.compareFontSize}px`);
+	});
+	onDestroy(() => {
+		if (browser && prevFontSize) {
+			document.documentElement.style.setProperty('--font-size-reader', prevFontSize);
+		}
+	});
 
 	/** Strip <cr>, <na> tags and their content; keep <i> as HTML italic. */
 	function stripTags(text: string): string {
@@ -159,7 +175,7 @@
 						>
 						<div class="min-w-0 font-ui">
 							<span
-								class="text-[13px] max-md:text-[11px] font-semibold text-foreground leading-tight block mt-[5px]"
+								class="text-[13px] max-md:text-[11px] font-semibold text-foreground leading-tight block mt-[5px] min-h-[2.6em]"
 							>
 								{t.label}
 							</span>
@@ -196,7 +212,7 @@
 					>
 						{#if t.id === 'odr'}
 							<p class="font-reader italic text-subtle text-[13px] leading-relaxed">
-								{chapter.summary}
+								{@html stripTags(chapter.summary)}
 							</p>
 						{/if}
 					</div>

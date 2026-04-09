@@ -247,8 +247,9 @@
 					>{$compareStore.showSummary ? 'on' : 'off'}</span
 				>
 			</button>
+			<!-- Desktop: text button -->
 			<button
-				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
+				class="hidden sm:flex px-[8px] h-[28px] items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 				aria-label="Reading options"
 				on:click={() => {
@@ -257,8 +258,36 @@
 					mobileTransOpen = false;
 				}}
 			>
-				<span class="hidden sm:inline">Reading options</span>
-				<span class="sm:hidden">Aa</span>
+				Reading options
+			</button>
+			<!-- Mobile: sliders icon -->
+			<button
+				class="sm:hidden shrink-0 flex items-center justify-center w-[30px] h-[30px]
+					rounded-[3px] transition-colors duration-fast
+					{prefsOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+				aria-label="Reading options"
+				on:click={() => {
+					prefsOpen = !prefsOpen;
+					navOpen = false;
+					mobileTransOpen = false;
+				}}
+			>
+				<svg
+					width="16"
+					height="14"
+					viewBox="0 0 16 14"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+				>
+					<line x1="1" y1="2" x2="15" y2="2" />
+					<line x1="1" y1="7" x2="15" y2="7" />
+					<line x1="1" y1="12" x2="15" y2="12" />
+					<circle cx="5" cy="2" r="2" fill="currentColor" stroke="none" />
+					<circle cx="11" cy="7" r="2" fill="currentColor" stroke="none" />
+					<circle cx="7" cy="12" r="2" fill="currentColor" stroke="none" />
+				</svg>
 			</button>
 		</div>
 	</div>
@@ -281,7 +310,7 @@
 		role="dialog"
 		aria-label="Reading options"
 	>
-		<ReadingPrefs />
+		<ReadingPrefs compareMode={true} />
 	</div>
 
 	<!-- Mobile top panel — slides down from header -->
@@ -293,7 +322,7 @@
 		aria-label="Reading options"
 	>
 		<div style="height: 320px; overflow-y: auto; overscroll-behavior: contain;">
-			<ReadingPrefs />
+			<ReadingPrefs compareMode={true} />
 		</div>
 	</div>
 {/if}

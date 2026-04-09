@@ -26,6 +26,8 @@ export interface ReadingPrefs {
 	showItalics: boolean;
 	// v9
 	showSmallCaps: boolean;
+	// v10
+	compareFontSize: number;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -49,10 +51,11 @@ const DEFAULTS: ReadingPrefs = {
 	bionicOpacity: 1,
 	syncStudyScroll: true,
 	showItalics: true,
-	showSmallCaps: true
+	showSmallCaps: true,
+	compareFontSize: 13
 };
 
-const PREFS_VERSION = 9;
+const PREFS_VERSION = 10;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -100,6 +103,10 @@ function loadPrefs(): ReadingPrefs {
 		// v9 migration: add small-caps toggle (on by default)
 		if (!parsed._v || parsed._v < 9) {
 			parsed.showSmallCaps = true;
+		}
+		// v10 migration: add separate compare font size
+		if (!parsed._v || parsed._v < 10) {
+			parsed.compareFontSize = 13;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

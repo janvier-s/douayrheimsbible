@@ -2,6 +2,9 @@
 	import { onMount } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
 
+	export let compareMode = false;
+	$: activeFontSize = compareMode ? $prefs.compareFontSize : $prefs.fontSize;
+
 	const FONTS = [
 		{
 			id: 'libre-baskerville',
@@ -133,16 +136,17 @@
 	{#if activeTab === 'text'}
 		<div class="space-y-[10px]">
 			<label class="block">
-				<span class="block mb-xs">Font size: {$prefs.fontSize}px</span>
+				<span class="block mb-xs">Font size: {activeFontSize}px</span>
 				<input
 					type="range"
 					min="12"
 					max="20"
 					step="1"
-					value={$prefs.fontSize}
+					value={activeFontSize}
 					on:input={(e) => {
 						const v = parseInt((e.target as HTMLInputElement).value);
-						prefs.update((p) => ({ ...p, fontSize: v }));
+						const key = compareMode ? 'compareFontSize' : 'fontSize';
+						prefs.update((p) => ({ ...p, [key]: v }));
 						document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
 					}}
 					class="w-full accent-accent"
