@@ -39,16 +39,8 @@
 	}
 
 	function applySmallCaps(text: string): string {
-		text = text.replace(/\bJESUS CHRIST\b/g, '<span class="sc">Jesus</span> Christ');
-		text = text.replace(/\bCHRIST JESUS\b/g, 'Christ <span class="sc">Jesus</span>');
-		text = text.replace(/\b[A-Z]{2,}(?:\s+[A-Z]{2,})+\b/g, (match) => {
-			const sentenceCase = match.charAt(0) + match.slice(1).toLowerCase();
-			return `<span class="sc">${sentenceCase}</span>`;
-		});
-		text = text.replace(/\b[A-Z]{3,}\b/g, (match) => {
-			const titleCase = match.charAt(0) + match.slice(1).toLowerCase();
-			return `<span class="sc">${titleCase}</span>`;
-		});
+		// Convert source <sc>...</sc> tags (used in ODR text for proper small caps)
+		text = text.replace(/<sc>(.*?)<\/sc>/g, '<span class="sc">$1</span>');
 		return text;
 	}
 

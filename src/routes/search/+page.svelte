@@ -122,6 +122,7 @@
 				type="text"
 				placeholder="Search for a verse — e.g. Matthew 16:18"
 				class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
+				style="outline: none;"
 				autocomplete="off"
 				autocorrect="off"
 				autocapitalize="off"
@@ -171,7 +172,10 @@
 						<hr class="border-border" />
 					{/if}
 					<section>
-						<h2 class="font-ui text-[14px] font-semibold text-accent mb-[8px]">
+						<h2
+							class="font-ui text-[14px] font-semibold mb-[8px]"
+							style="color: var(--color-accent-text)"
+						>
 							<a
 								href="/odr/{group.slug}/{group.chapter}"
 								class="hover:text-foreground transition-colors duration-fast"

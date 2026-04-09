@@ -173,8 +173,9 @@
 			}
 		}
 
-		// Consume the trigger
-		studyPanel.update((s) => ({ ...s, scrollTrigger: null }));
+		// Consume the trigger; also sync activeVerse so the observer reactive
+		// doesn't re-run with a stale verse and clobber our scroll position.
+		studyPanel.update((s) => ({ ...s, scrollTrigger: null, activeVerse: trigger.verse }));
 	}
 
 	// Slider position: 0 = Intro, 1 = Commentary
