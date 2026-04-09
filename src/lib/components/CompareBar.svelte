@@ -72,34 +72,47 @@
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
 		style="height: 50px;"
 	>
-		<!-- Logo: absolute-centered on mobile, in-flow on desktop -->
+		<!-- Logo -->
 		<a
 			href="/"
-			class="flex items-center gap-[6px] group shrink-0
-				   max-md:absolute max-md:left-1/2 max-md:-translate-x-1/2 max-md:pointer-events-auto"
+			aria-label="Douay-Rheims"
+			class="flex items-center gap-[6px] group shrink-0"
 			on:click={closeAll}
 		>
 			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 			<span
-				class="text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
+				class="hidden md:block text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
 			>
 				Douay-Rheims
+			</span>
+			<span class="md:hidden flex flex-col gap-[1px] leading-[1.2]" aria-hidden="true">
+				<span
+					class="text-[7px] uppercase tracking-[0.18em] font-bold text-foreground group-hover:text-accent transition-colors duration-fast"
+					>Douay</span
+				>
+				<span
+					class="text-[7px] uppercase tracking-[0.18em] font-bold text-foreground group-hover:text-accent transition-colors duration-fast"
+					>Rheims</span
+				>
 			</span>
 		</a>
 
 		<!-- Spacer (desktop only) -->
 		<div class="hidden md:flex flex-1"></div>
 
-		<ModeToggle
-			items={modeItems}
-			activeIndex={activeModeIdx}
-			pendingIndex={pendingIdx}
-			on:select={handleModeSelect}
-		/>
+		<!-- ModeToggle — desktop only (mobile uses bottom tab bar) -->
+		<div class="hidden md:flex">
+			<ModeToggle
+				items={modeItems}
+				activeIndex={activeModeIdx}
+				pendingIndex={pendingIdx}
+				on:select={handleModeSelect}
+			/>
+		</div>
 
-		<!-- Search icon (always visible) -->
+		<!-- Search icon — desktop only (mobile uses bottom tab bar) -->
 		<button
-			class="ml-auto md:ml-0 shrink-0 flex items-center justify-center w-[30px] h-[30px]
+			class="hidden md:flex ml-0 shrink-0 items-center justify-center w-[30px] h-[30px]
 				rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
 			aria-label="Search"
 			on:click={() => (searchOpen = true)}
@@ -121,7 +134,7 @@
 
 	<!-- Row 2: compare controls -->
 	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[14px] relative"
+		class="bg-glass backdrop-blur-sm border-b border-border px-lg max-md:px-[8px] flex items-center gap-[10px] md:gap-[14px] relative"
 		style="height: 50px;"
 	>
 		<!-- Translation chips — desktop -->
@@ -164,7 +177,7 @@
 		<!-- Translation dropdown — mobile -->
 		<div class="md:hidden relative shrink-0">
 			<button
-				class="flex items-center gap-[6px] px-[10px] py-[4px] rounded-[3px] border border-border text-[12px] font-medium transition-colors duration-fast
+				class="flex items-center gap-[4px] px-[8px] py-[4px] rounded-[3px] border border-border text-[11px] font-medium transition-colors duration-fast
 					{mobileTransOpen
 					? 'bg-interactive text-white border-interactive'
 					: 'text-foreground hover:text-accent'}"
@@ -174,8 +187,8 @@
 					prefsOpen = false;
 				}}
 			>
-				Translations
-				<span class="text-[10px] opacity-70" aria-hidden="true">{mobileTransOpen ? '▲' : '▼'}</span>
+				Trans.
+				<span class="text-[9px] opacity-70" aria-hidden="true">{mobileTransOpen ? '▲' : '▼'}</span>
 			</button>
 			{#if mobileTransOpen}
 				<div
@@ -204,10 +217,12 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav — absolutely centered so unequal sides don't shift it -->
-		<div class="absolute left-1/2 -translate-x-1/2">
+		<!-- Center: chapter nav — absolutely centered on desktop, in-flow on mobile -->
+		<div
+			class="md:absolute md:left-1/2 md:-translate-x-1/2 flex-1 md:flex-none flex justify-center"
+		>
 			<button
-				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
+				class="flex items-center gap-[5px] px-[12px] md:px-[17px] py-[8px] md:py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
 				on:click={() => {
 					navOpen = !navOpen;
@@ -215,15 +230,15 @@
 					mobileTransOpen = false;
 				}}
 			>
-				<span class="text-[16px] font-medium">{navLabel}</span>
-				<span class="text-[11px] opacity-70 leading-none" aria-hidden="true"
+				<span class="text-[14px] md:text-[16px] font-medium">{navLabel}</span>
+				<span class="text-[10px] md:text-[11px] opacity-70 leading-none" aria-hidden="true"
 					>{navOpen ? '▲' : '▼'}</span
 				>
 			</button>
 		</div>
 
 		<!-- Right: summary + text options -->
-		<div class="ml-auto shrink-0 flex items-center gap-[10px] md:gap-[20px]">
+		<div class="shrink-0 flex items-center gap-[8px] md:gap-[20px] md:ml-auto">
 			<button
 				on:click={() => compareStore.toggleSummary()}
 				class="hidden sm:block text-[13px] font-medium text-muted hover:text-foreground transition-colors duration-fast"

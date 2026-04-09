@@ -55,7 +55,7 @@ export const TRANSLATIONS: Translation[] = [
 		live: false,
 		ntOnly: false,
 		fullHeader: true,
-		micro: 'Standard Revised Edition'
+		micro: 'Douay-Rheims Revision'
 	},
 	{
 		id: 'conf',

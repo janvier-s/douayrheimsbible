@@ -147,18 +147,19 @@
 					on:dragstart={(e) => onColDragStart(e, t.id)}
 					on:dragover={(e) => onColDragOver(e, t.id)}
 					on:dragend={onColDragEnd}
-					class="px-[20px] py-[13px] flex items-center justify-between gap-[8px] cursor-grab active:cursor-grabbing select-none bg-panel
+					class="px-[20px] max-md:px-[10px] py-[13px] max-md:py-[8px] flex items-center justify-between gap-[8px] max-md:gap-[4px] cursor-grab active:cursor-grabbing select-none bg-panel
 					{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}
 					{draggingId === t.id ? 'opacity-50' : ''}"
 				>
 					<div class="flex items-center gap-[9px] min-w-0">
 						<!-- Drag handle indicator -->
-						<span class="text-subtle/35 text-[12px] leading-none shrink-0" aria-hidden="true"
-							>⠿</span
+						<span
+							class="text-subtle/35 text-[12px] leading-none shrink-0 max-md:hidden"
+							aria-hidden="true">⠿</span
 						>
 						<div class="min-w-0 font-ui">
 							<span
-								class="text-[13px] font-semibold text-foreground leading-none truncate block mt-[5px]"
+								class="text-[13px] max-md:text-[11px] font-semibold text-foreground leading-tight block mt-[5px]"
 							>
 								{t.label}
 							</span>
