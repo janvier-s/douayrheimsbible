@@ -52,7 +52,7 @@ export async function buildResultGroups(
 				if (!verses.length) continue;
 
 				// Build heading
-				const heading = formatHeading(meta.odrName, ch, startV, endV, range, chapter.verses.length);
+				const heading = formatHeading(meta.odrName, ch, startV, endV, range);
 
 				groups.push({
 					heading,
@@ -76,8 +76,7 @@ function formatHeading(
 	chapter: number,
 	startVerse: number,
 	endVerse: number,
-	range: OsisRange,
-	_totalVerses: number
+	range: OsisRange
 ): string {
 	// Whole chapter (no verse specified in input)
 	if (range.startVerse === undefined && range.endVerse === undefined) {
