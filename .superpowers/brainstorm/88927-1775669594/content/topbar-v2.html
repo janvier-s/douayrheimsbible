@@ -1,0 +1,156 @@
+<h2>Mobile layout — new direction</h2>
+<p class="subtitle">Logo top-right (vertical), mode as bottom tab bar, reading options in top bar. Does this feel right?</p>
+
+<div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap; padding:8px 0;">
+
+  <!-- Phone mockup: Read mode -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+    <div class="label">Read mode</div>
+    <div style="width:220px; border:2px solid #444; border-radius:20px; overflow:hidden; background:#f8f5ef; box-shadow:0 8px 32px rgba(0,0,0,0.3); display:flex; flex-direction:column;">
+
+      <!-- Status bar -->
+      <div style="background:#1a1a1a; height:12px; display:flex; align-items:center; justify-content:flex-end; padding:0 10px;">
+        <span style="color:#666; font-size:7px;">9:41</span>
+      </div>
+
+      <!-- Row 1: Search + Aa + Logo (right, vertical) -->
+      <div style="background:#1e1e1e; height:48px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a; gap:8px;">
+        <button style="width:28px; height:28px; border-radius:4px; border:none; background:transparent; color:#888; font-size:13px; cursor:pointer;">⌕</button>
+        <button style="height:28px; padding:0 8px; border-radius:4px; border:none; background:transparent; color:#888; font-size:11px; font-weight:600; cursor:pointer;">Aa</button>
+        <div style="flex:1;"></div>
+        <!-- Logo: right, vertical -->
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:1px; line-height:1;">
+          <span style="color:#4a9eff; font-size:9px;">✠</span>
+          <span style="color:#ddd; font-size:7px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;">Douay</span>
+          <span style="color:#ddd; font-size:7px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;">Rheims</span>
+        </div>
+      </div>
+
+      <!-- Row 2: Translation + Chapter nav -->
+      <div style="background:#1e1e1e; height:52px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a; gap:8px;">
+        <button style="border:1px solid #333; border-radius:4px; padding:4px 8px; background:transparent; cursor:pointer;">
+          <div style="color:#666; font-size:7px; letter-spacing:0.1em; text-align:left;">TRANSLATION</div>
+          <div style="color:#ccc; font-size:11px; font-weight:600; text-align:left;">ODR ▾</div>
+        </button>
+        <div style="flex:1; display:flex; justify-content:center;">
+          <button style="border-radius:4px; padding:7px 14px; background:rgba(74,158,255,0.12); border:1px solid rgba(74,158,255,0.3); cursor:pointer;">
+            <span style="color:#4a9eff; font-size:12px; font-weight:600;">Genesis 1 ▾</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Reading area -->
+      <div style="flex:1; padding:14px 14px 10px; min-height:200px; background:#f8f5ef;">
+        <p style="font-size:11px; color:#333; line-height:1.7; margin:0 0 6px;"><sup style="font-size:8px; color:#888;">1</sup> In the beginning God created heaven and earth.</p>
+        <p style="font-size:11px; color:#333; line-height:1.7; margin:0 0 6px;"><sup style="font-size:8px; color:#888;">2</sup> And the earth was void and empty, and darkness was upon the face of the deep…</p>
+        <p style="font-size:11px; color:#333; line-height:1.7; margin:0;"><sup style="font-size:8px; color:#888;">3</sup> And God said: Be light made. And light was made.</p>
+      </div>
+
+      <!-- Bottom tab bar -->
+      <div style="background:#1e1e1e; border-top:1px solid #2a2a2a; display:flex; padding:8px 0 12px;">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;">
+          <span style="font-size:14px;">📖</span>
+          <span style="font-size:8px; font-weight:700; color:#4a9eff;">Read</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;">
+          <span style="font-size:14px; opacity:0.4;">🔍</span>
+          <span style="font-size:8px; color:#555;">Study</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;">
+          <span style="font-size:14px; opacity:0.4;">⇄</span>
+          <span style="font-size:8px; color:#555;">Compare</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Phone mockup: Study mode -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+    <div class="label">Study mode (tab C)</div>
+    <div style="width:220px; border:2px solid #4a9eff; border-radius:20px; overflow:hidden; background:#0d1117; box-shadow:0 8px 32px rgba(74,158,255,0.15); display:flex; flex-direction:column;">
+
+      <!-- Status bar -->
+      <div style="background:#0a0a0a; height:12px; display:flex; align-items:center; justify-content:flex-end; padding:0 10px;">
+        <span style="color:#444; font-size:7px;">9:41</span>
+      </div>
+
+      <!-- Row 1 -->
+      <div style="background:#111; height:48px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #1f1f1f; gap:8px;">
+        <button style="width:28px; height:28px; border-radius:4px; border:none; background:transparent; color:#555; font-size:13px; cursor:pointer;">⌕</button>
+        <button style="height:28px; padding:0 8px; border-radius:4px; border:none; background:transparent; color:#555; font-size:11px; font-weight:600; cursor:pointer;">Aa</button>
+        <div style="flex:1;"></div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:1px; line-height:1;">
+          <span style="color:#4a9eff; font-size:9px;">✠</span>
+          <span style="color:#555; font-size:7px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;">Douay</span>
+          <span style="color:#555; font-size:7px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;">Rheims</span>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div style="background:#111; height:52px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #1f1f1f; gap:8px;">
+        <button style="border:1px solid #222; border-radius:4px; padding:4px 8px; background:transparent; cursor:pointer;">
+          <div style="color:#444; font-size:7px; letter-spacing:0.1em; text-align:left;">TRANSLATION</div>
+          <div style="color:#888; font-size:11px; font-weight:600; text-align:left;">ODR ▾</div>
+        </button>
+        <div style="flex:1; display:flex; justify-content:center;">
+          <button style="border-radius:4px; padding:7px 14px; background:rgba(74,158,255,0.08); border:1px solid rgba(74,158,255,0.2); cursor:pointer;">
+            <span style="color:#4a9eff; font-size:12px; font-weight:600;">Genesis 1 ▾</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Study tab sub-bar -->
+      <div style="background:#0d1117; display:flex; border-bottom:1px solid #1f1f1f; padding:0 12px;">
+        <div style="padding:8px 10px; font-size:9px; font-weight:700; color:#4a9eff; border-bottom:2px solid #4a9eff; letter-spacing:0.08em;">COMMENTARY</div>
+        <div style="padding:8px 10px; font-size:9px; color:#444; letter-spacing:0.08em;">INTRO</div>
+      </div>
+
+      <!-- Study content -->
+      <div style="flex:1; padding:12px 14px; min-height:190px;">
+        <div style="color:#6a8; font-size:9px; font-weight:700; letter-spacing:0.1em; margin-bottom:4px;">VERSE 1</div>
+        <div style="color:#bbb; font-size:10px; line-height:1.6; margin-bottom:10px;">In the beginning — Refers to the absolute beginning of time and creation, prior to any material existence…</div>
+        <div style="color:#6a8; font-size:9px; font-weight:700; letter-spacing:0.1em; margin-bottom:4px;">VERSE 2</div>
+        <div style="color:#bbb; font-size:10px; line-height:1.6;">void and empty — the Hebrew tohu wabohu denotes utter formlessness…</div>
+      </div>
+
+      <!-- Bottom tab bar — Study active -->
+      <div style="background:#111; border-top:1px solid #1f1f1f; display:flex; padding:8px 0 12px;">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;">
+          <span style="font-size:14px; opacity:0.4;">📖</span>
+          <span style="font-size:8px; color:#444;">Read</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;">
+          <span style="font-size:14px;">🔍</span>
+          <span style="font-size:8px; font-weight:700; color:#4a9eff;">Study</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;">
+          <span style="font-size:14px; opacity:0.4;">⇄</span>
+          <span style="font-size:8px; color:#444;">Compare</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:20px; font-size:13px;">
+  <p class="label">Open questions</p>
+  <ul style="margin-top:8px; line-height:1.9;">
+    <li>Should <strong>Search</strong> stay in Row 1, or move to the tab bar as a 4th tab?</li>
+    <li>The tab bar uses placeholder icons — should it be text-only (no icons), or text + icons?</li>
+    <li>On desktop, the ModeToggle in Row 1 stays exactly as-is — only mobile gets the tab bar.</li>
+  </ul>
+</div>
+
+<div class="options" style="margin-top:16px;">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content"><h3>Yes, this direction — let's refine</h3></div>
+  </div>
+  <div class="option" data-choice="tweak" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content"><h3>Tweak needed</h3></div>
+  </div>
+</div>

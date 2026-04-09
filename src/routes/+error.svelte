@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Error — Douay-Rheims Bible</title>
+	<title>Error | Douay-Rheims Bible</title>
 </svelte:head>
 
 <main class="min-h-[80vh] flex flex-col items-center justify-center px-md font-ui text-center">

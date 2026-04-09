@@ -1,0 +1,118 @@
+<h2>TopBar mobile — current vs proposed</h2>
+<p class="subtitle">Two overlaps to fix. Does this proposed layout look right?</p>
+
+<div class="split">
+
+  <!-- CURRENT (broken) -->
+  <div class="mockup">
+    <div class="mockup-header" style="color:#e05; background: rgba(220,0,50,0.1);">Current — broken</div>
+    <div class="mockup-body" style="padding:0; font-size:11px;">
+
+      <!-- Row 1 current -->
+      <div style="background:#1a1a1a; height:50px; display:flex; align-items:center; padding:0 12px; position:relative; border-bottom:1px solid #333; gap:8px;">
+        <!-- ModeToggle in flow (left side since logo is absolute) -->
+        <div style="display:flex; gap:2px; background:#333; border-radius:4px; padding:2px; z-index:1;">
+          <div style="padding:3px 7px; border-radius:3px; background:#555; color:#fff; font-size:9px; font-weight:600;">Read</div>
+          <div style="padding:3px 7px; border-radius:3px; color:#aaa; font-size:9px;">Study</div>
+          <div style="padding:3px 7px; border-radius:3px; color:#aaa; font-size:9px;">Compare</div>
+        </div>
+        <!-- Logo absolute centered (overlapping!) -->
+        <div style="position:absolute; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:4px; z-index:2; background:rgba(220,0,50,0.15); border:1px dashed #e05; border-radius:3px; padding:2px 6px;">
+          <span style="color:#e05; font-size:11px;">✠</span>
+          <span style="color:#e05; font-size:9px; font-weight:700; letter-spacing:0.15em;">DOUAY-RHEIMS</span>
+        </div>
+        <!-- Search -->
+        <div style="margin-left:auto; color:#888; font-size:12px;">⌕</div>
+      </div>
+      <div style="padding:4px 12px; background:rgba(220,0,50,0.08); font-size:9px; color:#e05;">⚠ Logo overlaps ModeToggle</div>
+
+      <!-- Row 2 current -->
+      <div style="background:#1a1a1a; height:60px; display:flex; align-items:center; padding:0 12px; position:relative; border-bottom:1px solid #333; gap:8px; margin-top:8px;">
+        <!-- Translation (in flow, left) -->
+        <div style="border:1px solid #444; border-radius:3px; padding:3px 6px; shrink-0;">
+          <div style="color:#666; font-size:7px; letter-spacing:0.1em;">TRANSLATION</div>
+          <div style="color:#ccc; font-size:11px; font-weight:600;">ODR ▾</div>
+        </div>
+        <!-- Chapter nav absolute centered (overlapping!) -->
+        <div style="position:absolute; left:50%; transform:translateX(-50%); background:rgba(220,0,50,0.15); border:1px dashed #e05; border-radius:3px; padding:6px 12px;">
+          <span style="color:#e05; font-size:11px; font-weight:600;">Ecclesiasticus 45 ▾</span>
+        </div>
+        <!-- Aa -->
+        <div style="margin-left:auto; color:#888; font-size:11px; font-weight:600;">Aa</div>
+      </div>
+      <div style="padding:4px 12px; background:rgba(220,0,50,0.08); font-size:9px; color:#e05;">⚠ Chapter nav overlaps translation selector</div>
+
+    </div>
+  </div>
+
+  <!-- PROPOSED (fixed) -->
+  <div class="mockup">
+    <div class="mockup-header" style="color:#4a9; background: rgba(40,180,100,0.1);">Proposed — fixed</div>
+    <div class="mockup-body" style="padding:0; font-size:11px;">
+
+      <!-- Row 1 fixed -->
+      <div style="background:#1a1a1a; height:50px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #333; gap:8px;">
+        <!-- Logo in-flow, left-aligned -->
+        <div style="display:flex; align-items:center; gap:4px; shrink-0;">
+          <span style="color:#4a9eff; font-size:11px;">✠</span>
+          <span style="color:#eee; font-size:9px; font-weight:700; letter-spacing:0.15em;">DOUAY-RHEIMS</span>
+        </div>
+        <!-- ModeToggle centered (flex-1 spacer before it) -->
+        <div style="flex:1; display:flex; justify-content:center;">
+          <div style="display:flex; gap:2px; background:#333; border-radius:4px; padding:2px;">
+            <div style="padding:3px 7px; border-radius:3px; background:#4a9eff; color:#fff; font-size:9px; font-weight:600;">Read</div>
+            <div style="padding:3px 7px; border-radius:3px; color:#aaa; font-size:9px;">Study</div>
+            <div style="padding:3px 7px; border-radius:3px; color:#aaa; font-size:9px;">Compare</div>
+          </div>
+        </div>
+        <!-- Search -->
+        <div style="color:#888; font-size:12px;">⌕</div>
+      </div>
+      <div style="padding:4px 12px; background:rgba(40,180,100,0.08); font-size:9px; color:#4a9;">✓ No overlap — logo left, mode centered, search right</div>
+
+      <!-- Row 2 fixed -->
+      <div style="background:#1a1a1a; height:60px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #333; gap:8px; margin-top:8px;">
+        <!-- Translation hidden on mobile (icon only) -->
+        <div style="border:1px solid #444; border-radius:3px; padding:4px 6px; shrink-0; display:flex; align-items:center; gap:3px;">
+          <div style="color:#ccc; font-size:10px; font-weight:600;">ODR</div>
+          <span style="color:#666; font-size:8px;">▾</span>
+        </div>
+        <!-- Chapter nav: flex-1, centered in its space -->
+        <div style="flex:1; display:flex; justify-content:center;">
+          <div style="border-radius:3px; padding:6px 12px; background:#4a9eff22; border:1px solid #4a9eff66;">
+            <span style="color:#4a9eff; font-size:11px; font-weight:600;">Ecclesiasticus 45 ▾</span>
+          </div>
+        </div>
+        <!-- Aa -->
+        <div style="color:#888; font-size:11px; font-weight:600;">Aa</div>
+      </div>
+      <div style="padding:4px 12px; background:rgba(40,180,100,0.08); font-size:9px; color:#4a9;">✓ Chapter nav in flex-1 container — never overlaps</div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:20px;">
+  <p class="label">What changes</p>
+  <ul style="font-size:13px; margin-top:8px; line-height:1.8;">
+    <li><strong>Row 1:</strong> Logo loses its absolute centering on mobile → becomes left-aligned in flow. ModeToggle sits in a flex-1 center zone.</li>
+    <li><strong>Row 2:</strong> Chapter nav loses its absolute centering → wraps in a flex-1 container that naturally centers it between translation (left) and Aa (right). Translation selector shows just "ODR ▾" on mobile (no label row).</li>
+    <li>Desktop layout is <strong>completely unchanged</strong>.</li>
+  </ul>
+</div>
+
+<div class="options" style="margin-top:16px;">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>Looks good — go with this</h3>
+    </div>
+  </div>
+  <div class="option" data-choice="tweak" onclick="toggleSelect(this)">
+    <div class="letter">?</div>
+    <div class="content">
+      <h3>I want to tweak something</h3>
+    </div>
+  </div>
+</div>

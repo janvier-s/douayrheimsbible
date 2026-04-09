@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Search — ODR Bible</title>
+	<title>Search | ODR Bible</title>
 </svelte:head>
 
 <main class="max-w-[750px] mx-auto px-md py-xl font-ui">

@@ -1,0 +1,139 @@
+<h2>Reading Options Panel — Direction</h2>
+<p class="subtitle">The sliders icon (Row 1) opens the reading options. Which direction should the panel slide in?</p>
+
+<div class="split" style="gap: 24px; align-items: flex-start;">
+
+  <!-- Option A: Slide from bottom (current) -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)" style="cursor:pointer; padding: 0; overflow:hidden; border-radius: 12px;">
+    <div style="background:#1a1a1a; width:100%; aspect-ratio: 9/16; position:relative; font-family: system-ui; overflow:hidden; display:flex; flex-direction:column;">
+      <!-- Header rows -->
+      <div style="background:#111; padding:10px 14px; border-bottom:1px solid #333; display:flex; align-items:center; justify-content:space-between;">
+        <div style="display:flex; flex-direction:column; gap:1px;">
+          <span style="color:#e8d5a3; font-size:6px; letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">Douay</span>
+          <span style="color:#e8d5a3; font-size:6px; letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">Rheims</span>
+        </div>
+        <div style="color:#e8d5a3; font-size:9px; opacity:0.8;">⊞</div>
+      </div>
+      <div style="background:#111; padding:6px 14px; border-bottom:1px solid #333; display:flex; align-items:center; gap:8px;">
+        <span style="color:#e8d5a3; font-size:7px; border:1px solid #444; padding:2px 5px; border-radius:3px;">ODR ▾</span>
+        <span style="color:#e8d5a3; font-size:7px; flex:1; text-align:center;">Genesis 1 ▾</span>
+      </div>
+      <!-- Bible text (partially covered) -->
+      <div style="flex:1; padding:10px 14px; overflow:hidden; position:relative;">
+        <p style="color:#ccc; font-size:7px; line-height:1.6; margin:0 0 6px;">
+          <sup style="color:#e8d5a3; font-size:6px;">1</sup> In the beginning God created heaven, and earth.
+        </p>
+        <p style="color:#ccc; font-size:7px; line-height:1.6; margin:0 0 6px;">
+          <sup style="color:#e8d5a3; font-size:6px;">2</sup> And the earth was void and empty, and darkness was upon the face of the deep...
+        </p>
+        <p style="color:#ccc; font-size:7px; line-height:1.6; margin:0 0 6px; opacity:0.4;">
+          <sup style="color:#e8d5a3; font-size:6px;">3</sup> And God said: Be light made. And light was made.
+        </p>
+        <!-- Dim overlay showing panel will cover text -->
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,0.45);"></div>
+      </div>
+      <!-- Bottom sheet covering most of screen -->
+      <div style="background:#222; border-top:2px solid #e8d5a3; border-radius:12px 12px 0 0; padding:6px 12px 10px; position:absolute; bottom:0; left:0; right:0; height:60%;">
+        <div style="display:flex; justify-content:center; margin-bottom:5px;">
+          <div style="width:24px; height:3px; background:#444; border-radius:99px;"></div>
+        </div>
+        <div style="display:flex; border-bottom:1px solid #333; margin-bottom:8px;">
+          <div style="flex:1; text-align:center; font-size:6px; color:#e8d5a3; padding-bottom:4px; border-bottom:1px solid #e8d5a3; text-transform:uppercase; letter-spacing:0.1em;">Text</div>
+          <div style="flex:1; text-align:center; font-size:6px; color:#666; padding-bottom:4px; text-transform:uppercase; letter-spacing:0.1em;">Reading</div>
+          <div style="flex:1; text-align:center; font-size:6px; color:#666; padding-bottom:4px; text-transform:uppercase; letter-spacing:0.1em;">Verse</div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="color:#999; font-size:6px;">Font size</span>
+          <div style="display:flex; align-items:center; gap:4px;">
+            <div style="width:40px; height:2px; background:#444; border-radius:1px; position:relative;"><div style="width:55%; height:100%; background:#e8d5a3; border-radius:1px;"></div></div>
+            <span style="color:#e8d5a3; font-size:6px;">16</span>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="color:#999; font-size:6px;">Spacing</span>
+          <div style="display:flex; gap:3px;">
+            <div style="background:#333; padding:2px 5px; border-radius:3px; font-size:6px; color:#666;">Tight</div>
+            <div style="background:#e8d5a3; padding:2px 5px; border-radius:3px; font-size:6px; color:#111;">Default</div>
+            <div style="background:#333; padding:2px 5px; border-radius:3px; font-size:6px; color:#666;">Wide</div>
+          </div>
+        </div>
+      </div>
+      <!-- Tab bar -->
+      <div style="position:absolute; bottom:0; left:0; right:0; height:0; background:#111; border-top:1px solid #333; display:flex; align-items:center; justify-content:space-around; padding-bottom:0px;">
+      </div>
+    </div>
+    <div class="card-body" style="padding: 12px 16px;">
+      <h3 style="margin:0 0 4px;">A — Slide up from bottom (current)</h3>
+      <p style="margin:0; font-size:13px; color:#888;">Panel slides up over the text. Covers the reading content. Familiar mobile pattern (drawer).</p>
+    </div>
+  </div>
+
+  <!-- Option B: Slide from top (below header) -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)" style="cursor:pointer; padding: 0; overflow:hidden; border-radius: 12px;">
+    <div style="background:#1a1a1a; width:100%; aspect-ratio: 9/16; position:relative; font-family: system-ui; overflow:hidden; display:flex; flex-direction:column;">
+      <!-- Header rows -->
+      <div style="background:#111; padding:10px 14px; border-bottom:1px solid #333; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2;">
+        <div style="display:flex; flex-direction:column; gap:1px;">
+          <span style="color:#e8d5a3; font-size:6px; letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">Douay</span>
+          <span style="color:#e8d5a3; font-size:6px; letter-spacing:0.15em; font-weight:700; text-transform:uppercase;">Rheims</span>
+        </div>
+        <div style="color:#e8d5a3; font-size:9px; opacity:0.8;">⊞</div>
+      </div>
+      <div style="background:#111; padding:6px 14px; border-bottom:1px solid #333; display:flex; align-items:center; gap:8px; position:relative; z-index:2;">
+        <span style="color:#e8d5a3; font-size:7px; border:1px solid #444; padding:2px 5px; border-radius:3px;">ODR ▾</span>
+        <span style="color:#e8d5a3; font-size:7px; flex:1; text-align:center;">Genesis 1 ▾</span>
+      </div>
+      <!-- Top sheet, slides down just below header -->
+      <div style="background:#222; border-bottom:2px solid #e8d5a3; padding:8px 12px 10px; position:absolute; top:54px; left:0; right:0; z-index:3; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+        <div style="display:flex; border-bottom:1px solid #333; margin-bottom:8px;">
+          <div style="flex:1; text-align:center; font-size:6px; color:#e8d5a3; padding-bottom:4px; border-bottom:1px solid #e8d5a3; text-transform:uppercase; letter-spacing:0.1em;">Text</div>
+          <div style="flex:1; text-align:center; font-size:6px; color:#666; padding-bottom:4px; text-transform:uppercase; letter-spacing:0.1em;">Reading</div>
+          <div style="flex:1; text-align:center; font-size:6px; color:#666; padding-bottom:4px; text-transform:uppercase; letter-spacing:0.1em;">Verse</div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="color:#999; font-size:6px;">Font size</span>
+          <div style="display:flex; align-items:center; gap:4px;">
+            <div style="width:40px; height:2px; background:#444; border-radius:1px; position:relative;"><div style="width:55%; height:100%; background:#e8d5a3; border-radius:1px;"></div></div>
+            <span style="color:#e8d5a3; font-size:6px;">16</span>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="color:#999; font-size:6px;">Spacing</span>
+          <div style="display:flex; gap:3px;">
+            <div style="background:#333; padding:2px 5px; border-radius:3px; font-size:6px; color:#666;">Tight</div>
+            <div style="background:#e8d5a3; padding:2px 5px; border-radius:3px; font-size:6px; color:#111;">Default</div>
+            <div style="background:#333; padding:2px 5px; border-radius:3px; font-size:6px; color:#666;">Wide</div>
+          </div>
+        </div>
+        <!-- dim overlay arrow hint -->
+        <div style="text-align:center; margin-top:5px; color:#555; font-size:7px;">▼ tap below to close</div>
+      </div>
+      <!-- Bible text visible below the panel -->
+      <div style="flex:1; padding:10px 14px; overflow:hidden; position:relative;">
+        <div style="height:72px;"></div><!-- space for panel -->
+        <p style="color:#ccc; font-size:7px; line-height:1.6; margin:0 0 6px;">
+          <sup style="color:#e8d5a3; font-size:6px;">1</sup> In the beginning God created heaven, and earth.
+        </p>
+        <p style="color:#ccc; font-size:7px; line-height:1.6; margin:0 0 6px;">
+          <sup style="color:#e8d5a3; font-size:6px;">2</sup> And the earth was void and empty, and darkness was upon the face of the deep...
+        </p>
+        <p style="color:#ccc; font-size:7px; line-height:1.6; margin:0 0 6px;">
+          <sup style="color:#e8d5a3; font-size:6px;">3</sup> And God said: Be light made. And light was made.
+        </p>
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,0.3);"></div>
+      </div>
+      <!-- Tab bar -->
+      <div style="background:#111; border-top:1px solid #333; height:28px; display:flex; align-items:center; justify-content:space-around;">
+        <span style="color:#e8d5a3; font-size:8px;">📄</span>
+        <span style="color:#555; font-size:8px;">ℹ</span>
+        <span style="color:#555; font-size:8px;">⇄</span>
+        <span style="color:#555; font-size:8px;">🔍</span>
+      </div>
+    </div>
+    <div class="card-body" style="padding: 12px 16px;">
+      <h3 style="margin:0 0 4px;">B — Slide down from top (below header)</h3>
+      <p style="margin:0; font-size:13px; color:#888;">Panel drops down from the header. Text stays visible below it — you can see font/spacing changes in real time while the panel is open.</p>
+    </div>
+  </div>
+
+</div>

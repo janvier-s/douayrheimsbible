@@ -178,7 +178,7 @@
 **Current state:** 210 lines, strong historical writing, compelling opening.
 **Changes:**
 - Meta title: `The Rheims New Testament 1582: Published in a Time of Crisis`
-- Meta description: include "Edmund Campion", "1582 New Testament", "English Catholic exile"
+- Meta description: include "Saint Edmund Campion", "1582 New Testament", "English Catholic exile"
 - Primary keyword in first 100 words
 - Add section: **"What the Volume Contained"** — physical description of the 1582 edition: quarto format, the preface, the annotations, the scholarly apparatus. Grounds the article in the object itself.
 - Outbound: archive.org Cotton link; Catholic Encyclopedia (1913)

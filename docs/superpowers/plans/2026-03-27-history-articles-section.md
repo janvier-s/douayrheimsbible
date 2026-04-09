@@ -357,7 +357,7 @@ The prose body is unchanged. Changes: new canonical URL, new title (retitled "Bo
 
 	<p>
 		Among the scholars who gathered at Douai was Gregory Martin, one of the original students at St
-		John's College, Oxford, and a close friend of Edmund Campion. Martin arrived at the college in
+		John's College, Oxford, and a close friend of Saint Edmund Campion. Martin arrived at the college in
 		1570, was ordained in 1573, and spent two years helping to establish the English College in Rome
 		before returning to the continent.
 	</p>
@@ -812,7 +812,7 @@ Sources: Barker, Simms, Cotton.
 
 	<p>
 		When the Rheims New Testament appeared in 1582, England was a country in a state of declared
-		emergency. The previous year, Edmund Campion, a Jesuit priest and former Fellow of St John's
+		emergency. The previous year, Saint Edmund Campion, a Jesuit priest and former Fellow of St John's
 		College, Oxford, had been arrested, subjected to torture in the Tower of London, and executed at
 		Tyburn. The papal excommunication of Queen Elizabeth, issued by Pope Pius V in 1570, had placed
 		every English Catholic in an impossible position: loyalty to Rome was framed as treason, and

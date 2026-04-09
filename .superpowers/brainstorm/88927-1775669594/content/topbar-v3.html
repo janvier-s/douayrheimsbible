@@ -1,0 +1,232 @@
+<h2>Mobile layout — refined</h2>
+<p class="subtitle">Logo top-left, search in tab bar, reading options icon, full-width panels</p>
+
+<div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; padding:8px 0; align-items:flex-start;">
+
+  <!-- Read mode: default state -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+    <div class="label">Default</div>
+    <div style="width:200px; border:2px solid #444; border-radius:20px; overflow:hidden; background:#f8f5ef; box-shadow:0 8px 32px rgba(0,0,0,0.3); display:flex; flex-direction:column;">
+      <div style="background:#1a1a1a; height:10px;"></div>
+      <!-- Row 1: Logo left + reading options icon right -->
+      <div style="background:#1e1e1e; height:46px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a;">
+        <!-- Logo: left, vertical -->
+        <div style="display:flex; flex-direction:column; align-items:flex-start; gap:0px; line-height:1.1;">
+          <span style="color:#4a9eff; font-size:10px;">✠</span>
+          <span style="color:#ddd; font-size:6.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;">Douay-Rheims</span>
+        </div>
+        <div style="flex:1;"></div>
+        <!-- Reading options icon (sliders) -->
+        <button style="width:32px; height:32px; border-radius:6px; background:transparent; border:none; color:#888; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <line x1="2" y1="4" x2="14" y2="4"/>
+            <line x1="2" y1="8" x2="14" y2="8"/>
+            <line x1="2" y1="12" x2="14" y2="12"/>
+            <circle cx="5" cy="4" r="1.5" fill="#1e1e1e" stroke="currentColor"/>
+            <circle cx="10" cy="8" r="1.5" fill="#1e1e1e" stroke="currentColor"/>
+            <circle cx="6" cy="12" r="1.5" fill="#1e1e1e" stroke="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Row 2: Translation + Chapter nav -->
+      <div style="background:#1e1e1e; height:50px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a; gap:8px;">
+        <button style="border:1px solid #333; border-radius:4px; padding:3px 7px; background:transparent; cursor:pointer;">
+          <div style="color:#555; font-size:6.5px; letter-spacing:0.1em; text-align:left;">TRANSLATION</div>
+          <div style="color:#bbb; font-size:10px; font-weight:600;">ODR ▾</div>
+        </button>
+        <div style="flex:1; display:flex; justify-content:center;">
+          <button style="border-radius:4px; padding:6px 12px; background:rgba(74,158,255,0.12); border:1px solid rgba(74,158,255,0.3); cursor:pointer;">
+            <span style="color:#4a9eff; font-size:11px; font-weight:600;">Genesis 1 ▾</span>
+          </button>
+        </div>
+      </div>
+      <!-- Reading content -->
+      <div style="flex:1; padding:12px; min-height:160px; background:#f8f5ef;">
+        <p style="font-size:10px; color:#333; line-height:1.7; margin:0 0 5px;"><sup style="font-size:7px; color:#888;">1</sup> In the beginning God created heaven and earth.</p>
+        <p style="font-size:10px; color:#333; line-height:1.7; margin:0 0 5px;"><sup style="font-size:7px; color:#888;">2</sup> And the earth was void and empty, and darkness was upon the face of the deep.</p>
+        <p style="font-size:10px; color:#333; line-height:1.7; margin:0;"><sup style="font-size:7px; color:#888;">3</sup> And God said: Be light made. And light was made.</p>
+      </div>
+      <!-- Bottom tab bar: 4 tabs -->
+      <div style="background:#1e1e1e; border-top:1px solid #2a2a2a; display:flex; padding:6px 0 10px;">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#4a9eff" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="1"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+          <span style="font-size:7px; font-weight:700; color:#4a9eff;">Read</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><line x1="8" y1="5" x2="8" y2="8"/><line x1="8" y1="10" x2="8" y2="11"/></svg>
+          <span style="font-size:7px; color:#555;">Study</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/><polyline points="7,4 3,8 7,12"/></svg>
+          <span style="font-size:7px; color:#555;">Compare</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg>
+          <span style="font-size:7px; color:#555;">Search</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter nav open: full-width bottom sheet -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+    <div class="label">Chapter nav open</div>
+    <div style="width:200px; border:2px solid #4a9eff; border-radius:20px; overflow:hidden; background:#f8f5ef; box-shadow:0 8px 32px rgba(74,158,255,0.2); display:flex; flex-direction:column; position:relative;">
+      <div style="background:#1a1a1a; height:10px;"></div>
+      <div style="background:#1e1e1e; height:46px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a;">
+        <div style="display:flex; flex-direction:column; gap:0px; line-height:1.1;">
+          <span style="color:#4a9eff; font-size:10px;">✠</span>
+          <span style="color:#ddd; font-size:6.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;">Douay-Rheims</span>
+        </div>
+        <div style="flex:1;"></div>
+        <button style="width:32px; height:32px; border-radius:6px; background:transparent; border:none; color:#555; display:flex; align-items:center; justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="4" x2="14" y2="4"/><line x1="2" y1="8" x2="14" y2="8"/><line x1="2" y1="12" x2="14" y2="12"/><circle cx="5" cy="4" r="1.5" fill="#1e1e1e" stroke="currentColor"/><circle cx="10" cy="8" r="1.5" fill="#1e1e1e" stroke="currentColor"/><circle cx="6" cy="12" r="1.5" fill="#1e1e1e" stroke="currentColor"/></svg>
+        </button>
+      </div>
+      <div style="background:#1e1e1e; height:50px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a; gap:8px;">
+        <button style="border:1px solid #333; border-radius:4px; padding:3px 7px; background:transparent;">
+          <div style="color:#555; font-size:6.5px; letter-spacing:0.1em;">TRANSLATION</div>
+          <div style="color:#bbb; font-size:10px; font-weight:600;">ODR ▾</div>
+        </button>
+        <div style="flex:1; display:flex; justify-content:center;">
+          <button style="border-radius:4px; padding:6px 12px; background:#4a9eff22; border:1px solid #4a9eff;">
+            <span style="color:#4a9eff; font-size:11px; font-weight:600;">Genesis 1 ▲</span>
+          </button>
+        </div>
+      </div>
+      <!-- Dimmed reading area -->
+      <div style="flex:1; padding:12px; min-height:100px; background:rgba(0,0,0,0.45); backdrop-filter:blur(1px);">
+        <p style="font-size:10px; color:#999; line-height:1.7; margin:0;"><sup style="font-size:7px;">1</sup> In the beginning God created heaven…</p>
+      </div>
+      <!-- Full-width chapter nav sheet -->
+      <div style="background:#1a1a1a; border-top:2px solid #4a9eff; padding:8px 0 0;">
+        <div style="width:28px; height:3px; background:#444; border-radius:2px; margin:0 auto 8px;"></div>
+        <div style="padding:0 10px 4px; color:#666; font-size:7px; letter-spacing:0.12em; font-weight:700;">BOOK</div>
+        <div style="display:flex; gap:6px; padding:0 10px 8px; flex-wrap:wrap;">
+          <span style="background:#4a9eff; color:#fff; font-size:8px; padding:3px 7px; border-radius:3px; font-weight:600;">Genesis</span>
+          <span style="color:#888; font-size:8px; padding:3px 7px; border-radius:3px; border:1px solid #333;">Exodus</span>
+          <span style="color:#888; font-size:8px; padding:3px 7px; border-radius:3px; border:1px solid #333;">Leviticus</span>
+        </div>
+        <div style="padding:0 10px 4px; color:#666; font-size:7px; letter-spacing:0.12em; font-weight:700;">CHAPTER</div>
+        <div style="display:flex; gap:4px; padding:0 10px 10px; flex-wrap:wrap;">
+          <span style="background:#4a9eff; color:#fff; font-size:8px; padding:3px 6px; border-radius:3px; font-weight:600;">1</span>
+          <span style="color:#888; font-size:8px; padding:3px 6px; border-radius:3px; border:1px solid #333;">2</span>
+          <span style="color:#888; font-size:8px; padding:3px 6px; border-radius:3px; border:1px solid #333;">3</span>
+          <span style="color:#888; font-size:8px; padding:3px 6px; border-radius:3px; border:1px solid #333;">4</span>
+          <span style="color:#888; font-size:8px; padding:3px 6px; border-radius:3px; border:1px solid #333;">5</span>
+        </div>
+      </div>
+      <!-- Tab bar -->
+      <div style="background:#1e1e1e; border-top:1px solid #2a2a2a; display:flex; padding:6px 0 10px;">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#4a9eff" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="1"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+          <span style="font-size:7px; color:#4a9eff;">Read</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; opacity:0.3;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><line x1="8" y1="5" x2="8" y2="8"/><line x1="8" y1="10" x2="8" y2="11"/></svg>
+          <span style="font-size:7px; color:#555;">Study</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; opacity:0.3;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/><polyline points="7,4 3,8 7,12"/></svg>
+          <span style="font-size:7px; color:#555;">Compare</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; opacity:0.3;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg>
+          <span style="font-size:7px; color:#555;">Search</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reading options open: full-width sheet -->
+  <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+    <div class="label">Reading options open</div>
+    <div style="width:200px; border:2px solid #888; border-radius:20px; overflow:hidden; background:#f8f5ef; box-shadow:0 8px 32px rgba(0,0,0,0.3); display:flex; flex-direction:column; position:relative;">
+      <div style="background:#1a1a1a; height:10px;"></div>
+      <div style="background:#1e1e1e; height:46px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a;">
+        <div style="display:flex; flex-direction:column; gap:0px; line-height:1.1;">
+          <span style="color:#4a9eff; font-size:10px;">✠</span>
+          <span style="color:#ddd; font-size:6.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;">Douay-Rheims</span>
+        </div>
+        <div style="flex:1;"></div>
+        <!-- Reading options icon — active -->
+        <button style="width:32px; height:32px; border-radius:6px; background:#4a9eff22; border:1px solid #4a9eff55; color:#4a9eff; display:flex; align-items:center; justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="4" x2="14" y2="4"/><line x1="2" y1="8" x2="14" y2="8"/><line x1="2" y1="12" x2="14" y2="12"/><circle cx="5" cy="4" r="1.5" fill="#1e1e1e" stroke="currentColor"/><circle cx="10" cy="8" r="1.5" fill="#1e1e1e" stroke="currentColor"/><circle cx="6" cy="12" r="1.5" fill="#1e1e1e" stroke="currentColor"/></svg>
+        </button>
+      </div>
+      <div style="background:#1e1e1e; height:50px; display:flex; align-items:center; padding:0 12px; border-bottom:1px solid #2a2a2a; gap:8px;">
+        <button style="border:1px solid #2a2a2a; border-radius:4px; padding:3px 7px; background:transparent; opacity:0.4;">
+          <div style="color:#555; font-size:6.5px; letter-spacing:0.1em;">TRANSLATION</div>
+          <div style="color:#bbb; font-size:10px; font-weight:600;">ODR ▾</div>
+        </button>
+        <div style="flex:1; display:flex; justify-content:center; opacity:0.4;">
+          <button style="border-radius:4px; padding:6px 12px; background:rgba(74,158,255,0.12); border:1px solid rgba(74,158,255,0.3);">
+            <span style="color:#4a9eff; font-size:11px; font-weight:600;">Genesis 1 ▾</span>
+          </button>
+        </div>
+      </div>
+      <!-- Dimmed reading area -->
+      <div style="flex:1; min-height:60px; background:rgba(0,0,0,0.45);"></div>
+      <!-- Full-width reading options sheet -->
+      <div style="background:#1a1a1a; border-top:2px solid #555; padding:8px 0 0;">
+        <div style="width:28px; height:3px; background:#444; border-radius:2px; margin:0 auto 8px;"></div>
+        <!-- Tab bar inside sheet -->
+        <div style="display:flex; border-bottom:1px solid #2a2a2a; padding:0 10px; margin-bottom:8px;">
+          <div style="padding:4px 8px; font-size:7px; font-weight:700; color:#4a9eff; border-bottom:2px solid #4a9eff; letter-spacing:0.1em;">TEXT</div>
+          <div style="padding:4px 8px; font-size:7px; color:#555; letter-spacing:0.1em;">READING</div>
+          <div style="padding:4px 8px; font-size:7px; color:#555; letter-spacing:0.1em;">VERSE</div>
+        </div>
+        <div style="padding:0 10px 6px;">
+          <div style="color:#666; font-size:7px; margin-bottom:4px;">Font size · 16px</div>
+          <div style="height:3px; background:#333; border-radius:2px; margin-bottom:8px;">
+            <div style="height:3px; background:#4a9eff; width:50%; border-radius:2px;"></div>
+          </div>
+          <div style="color:#666; font-size:7px; margin-bottom:4px;">Font</div>
+          <div style="background:#222; border:1px solid #333; border-radius:3px; padding:3px 6px; font-size:8px; color:#ccc; margin-bottom:8px; display:flex; justify-content:space-between;">
+            <span>Libre Baskerville</span><span style="color:#555;">▾</span>
+          </div>
+          <div style="color:#666; font-size:7px; margin-bottom:4px;">Theme</div>
+          <div style="display:flex; gap:4px;">
+            <div style="width:20px; height:24px; background:#f8f5ef; border-radius:3px; border:2px solid #4a9eff;"></div>
+            <div style="width:20px; height:24px; background:#f2e8d8; border-radius:3px; border:1px solid #333;"></div>
+            <div style="width:20px; height:24px; background:#111113; border-radius:3px; border:1px solid #333;"></div>
+            <div style="width:20px; height:24px; background:#000; border-radius:3px; border:1px solid #333;"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Tab bar -->
+      <div style="background:#1e1e1e; border-top:1px solid #2a2a2a; display:flex; padding:6px 0 10px;">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#4a9eff" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="1"/><line x1="5" y1="5" x2="11" y2="5"/><line x1="5" y1="8" x2="11" y2="8"/><line x1="5" y1="11" x2="8" y2="11"/></svg>
+          <span style="font-size:7px; color:#4a9eff;">Read</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; opacity:0.3;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><line x1="8" y1="5" x2="8" y2="8"/><line x1="8" y1="10" x2="8" y2="11"/></svg><span style="font-size:7px; color:#555;">Study</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; opacity:0.3;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/><polyline points="7,4 3,8 7,12"/></svg><span style="font-size:7px; color:#555;">Compare</span></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; opacity:0.3;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round"><circle cx="6.5" cy="6.5" r="4"/><line x1="9.5" y1="9.5" x2="13" y2="13"/></svg><span style="font-size:7px; color:#555;">Search</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:20px; font-size:13px;">
+  <p class="label">Summary of changes</p>
+  <ul style="margin-top:8px; line-height:1.9;">
+    <li><strong>Row 1:</strong> Logo top-left (vertical ✠ / Douay-Rheims) + sliders icon for reading options (right)</li>
+    <li><strong>Row 2:</strong> Translation (left) + chapter nav (flex-centered) — clean, no overlap</li>
+    <li><strong>Bottom tab bar:</strong> Read · Study · Compare · Search</li>
+    <li><strong>All panels</strong> (translation, chapter nav, reading options) open as full-width bottom sheets with drag handle</li>
+    <li><strong>Desktop:</strong> unchanged — tab bar hidden, original ModeToggle in Row 1 stays</li>
+  </ul>
+</div>
+
+<div class="options" style="margin-top:16px;">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content"><h3>Looks good — write the spec</h3></div>
+  </div>
+  <div class="option" data-choice="tweak" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content"><h3>Still needs tweaking</h3></div>
+  </div>
+</div>

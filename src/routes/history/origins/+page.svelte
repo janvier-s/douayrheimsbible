@@ -14,7 +14,7 @@
 		},
 		{
 			q: 'Who was Gregory Martin?',
-			a: "Gregory Martin (c. 1542-1582) was an Oxford-trained scholar and a founding student of St John's College alongside Edmund Campion. He joined the English College at Douai and undertook the entire Bible translation (approximately two chapters per day), completing the draft around 1580. He died of tuberculosis in October 1582, the same year the New Testament appeared."
+			a: "Gregory Martin (c. 1542-1582) was an Oxford-trained scholar and a founding student of St John's College alongside Saint Edmund Campion. He joined the English College at Douai and undertook the entire Bible translation (approximately two chapters per day), completing the draft around 1580. He died of tuberculosis in October 1582, the same year the New Testament appeared."
 		},
 		{
 			q: 'How long did it take to translate the Douay-Rheims Bible?',
@@ -100,9 +100,9 @@
 	<p>
 		Among the scholars who gathered at Douai was
 		<a href="https://en.wikipedia.org/wiki/Gregory_Martin_(scholar)">Gregory Martin</a> (c. 1542–1582),
-		one of the original students at St John's College, Oxford, and a close friend of Edmund Campion. Martin
-		arrived at the college in 1570, was ordained in 1573, and spent two years helping to establish the
-		English College in Rome before returning to the continent.
+		one of the original students at St John's College, Oxford, and a close friend of Saint Edmund Campion.
+		Martin arrived at the college in 1570, was ordained in 1573, and spent two years helping to establish
+		the English College in Rome before returning to the continent.
 	</p>
 
 	<p>

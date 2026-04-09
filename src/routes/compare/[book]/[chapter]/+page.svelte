@@ -60,7 +60,7 @@
 <svelte:window bind:innerWidth />
 
 <svelte:head>
-	<title>{bookMeta.odrName} {chapter.chapter} — Compare Translations</title>
+	<title>{bookMeta.odrName} {chapter.chapter} | Compare Translations</title>
 </svelte:head>
 
 <CompareBar {bookMeta} chapterNum={chapter.chapter} />

@@ -65,7 +65,7 @@
 
 	<p>
 		The principal translator was Gregory Martin, a distinguished scholar who had been among the
-		first cohort of students at St John's College, Oxford, alongside his close friend Edmund
+		first cohort of students at St John's College, Oxford, alongside his close friend Saint Edmund
 		Campion, who would later be martyred for the faith. Martin began translating in October 1578,
 		working at a pace of roughly two chapters per day, and is believed to have completed the entire
 		Bible by around July 1580, an extraordinary feat of sustained scholarship.

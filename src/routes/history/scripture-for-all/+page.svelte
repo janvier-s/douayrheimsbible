@@ -194,19 +194,19 @@
 
 	<ol class="lectio-list">
 		<li>
-			<em>Lectio</em> — attentive reading: taking a passage slowly, allowing the words to land, not rushing
+			<em>Lectio</em> attentive reading: taking a passage slowly, allowing the words to land, not rushing
 			past difficulty.
 		</li>
 		<li>
-			<em>Meditatio</em> — meditation: staying with a phrase or image that arrests the attention, turning
+			<em>Meditatio</em> meditation: staying with a phrase or image that arrests the attention, turning
 			it in the mind, listening for what it opens.
 		</li>
 		<li>
-			<em>Oratio</em> — prayer: speaking to God from what has been heard, bringing the text into direct
+			<em>Oratio</em> prayer: speaking to God from what has been heard, bringing the text into direct
 			conversation with the life of the reader.
 		</li>
 		<li>
-			<em>Contemplatio</em> — contemplation: resting in God's presence, beyond words, in the quiet that
+			<em>Contemplatio</em> contemplation: resting in God's presence, beyond words, in the quiet that
 			reading and prayer have prepared.
 		</li>
 	</ol>

@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact — Douay-Rheims Bible</title>
+	<title>Contact | Douay-Rheims Bible</title>
 	<meta name="description" content="Get in touch with the Douay-Rheims Bible project." />
 	<link rel="canonical" href="https://douayrheimsbible.net/contact" />
 </svelte:head>
@@ -28,8 +28,8 @@
 	<p>
 		The source code is available at
 		<a href="https://github.com/janvier-s/douayrheimsbible">github.com/janvier-s/douayrheimsbible</a
-		>. Contributions are welcome — whether correcting the text, adding translations, or improving
-		the reading experience.
+		>. Contributions are welcome, whether correcting the text, adding translations, or improving the
+		reading experience.
 	</p>
 
 	<h2>General Enquiries</h2>

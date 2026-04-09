@@ -1,0 +1,26 @@
+<h2>A vs C — the key difference</h2>
+<p class="subtitle">One question: do you ever want to see the Bible text <em>and</em> the study notes at the same time on mobile?</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Bottom Sheet — text + notes together</h3>
+      <p>The text stays visible above while notes peek from the bottom. Drag up to read more notes, drag down to focus on text. Tapping a verse scrolls notes to that verse.</p>
+      <p style="margin-top:6px; color: var(--color-subtle, #888); font-size:13px;">Best if: you want to read a verse, glance at the commentary, then keep reading — without leaving the page.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Tab Switcher — full screen each</h3>
+      <p>Text and study panel each fill the whole screen. A tab bar at the top switches between them. Scroll position is preserved independently.</p>
+      <p style="margin-top:6px; color: var(--color-subtle, #888); font-size:13px;">Best if: you read a passage, then switch to study mode to dig in — treating them as two separate reading sessions.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:24px; padding:16px; background: rgba(74,158,255,0.08); border-radius:8px; border:1px solid rgba(74,158,255,0.2);">
+  <p class="label">Implementation note</p>
+  <p style="font-size:13px; margin-top:6px;">C is significantly simpler to build and has no risk of layout bugs. A is the richer UX but requires a drag-handle gesture system and careful scroll coordination between the sheet and the reading area.</p>
+</div>

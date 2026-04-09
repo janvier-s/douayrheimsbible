@@ -235,7 +235,7 @@
 		on Catholics through a succession of Acts: the Act of Uniformity (1559) set a fine of twelve
 		pence for each absence from Anglican Sunday services; the Recusancy Act of 1571 raised the
 		stakes further; and the Act of 1581, passed in the same year that <a
-			href="https://en.wikipedia.org/wiki/Edmund_Campion">Edmund Campion</a
+			href="https://en.wikipedia.org/wiki/Saint Edmund_Campion">Saint Edmund Campion</a
 		> was arrested and executed, converted recusancy from a civil into a criminal matter and added felony
 		charges for those who harboured priests.
 	</p>

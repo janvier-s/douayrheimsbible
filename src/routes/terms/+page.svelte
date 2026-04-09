@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Terms of Use — Douay-Rheims Bible</title>
+	<title>Terms of Use | Douay-Rheims Bible</title>
 	<meta name="description" content="Terms of use for the Douay-Rheims Bible website." />
 	<link rel="canonical" href="https://douayrheimsbible.net/terms" />
 </svelte:head>

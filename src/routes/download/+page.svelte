@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Download — Douay-Rheims Bible</title>
+	<title>Download | Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Download the original Douay-Rheims Bible text as structured JSON data. Free for personal and scholarly use."
@@ -47,7 +47,7 @@
 	<ul>
 		{#each ALL_BOOKS.slice(0, 10) as book}
 			<li>
-				<a href="/data/odr/{book.slug}.json"><code>{book.slug}.json</code></a> — {book.odrName} ({book.chapters}
+				<a href="/data/odr/{book.slug}.json"><code>{book.slug}.json</code></a> | {book.odrName} ({book.chapters}
 				chapters)
 			</li>
 		{/each}

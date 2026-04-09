@@ -472,7 +472,7 @@ Insert before the closing navigation links:
 		The danger was concrete and documented. The Elizabethan settlement had imposed legal penalties
 		on Catholics through a succession of Acts: the Act of Uniformity (1559) set a fine of twelve
 		pence for each absence from Anglican Sunday services; the Recusancy Act of 1571 raised the
-		stakes further; and the Act of 1581, passed in the same year that Edmund Campion was arrested
+		stakes further; and the Act of 1581, passed in the same year that Saint Edmund Campion was arrested
 		and executed, converted recusancy from a civil into a criminal matter and added felony charges
 		for those who harboured priests.
 	</p>
