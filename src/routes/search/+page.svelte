@@ -183,20 +183,22 @@
 								{group.heading}
 							</a>
 						</h2>
-						<div class="space-y-[2px]">
+						<div class="space-y-[0.7rem]">
 							{#each group.verses as v}
-								<p
-									class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
-									class:text-justify={$prefs.justifiedText}
-								>
+								<div class="flex gap-sm">
 									{#if $prefs.showVerseNumbers}
 										<span
-											class="text-subtle font-ui text-[10px] font-light select-none tabular-nums mr-[3px]"
+											class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em] text-subtle"
 											>{v.verse}</span
 										>
 									{/if}
-									<span>{@html stripTags(v.text)}</span>
-								</p>
+									<p
+										class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
+										class:text-justify={$prefs.justifiedText}
+									>
+										{@html stripTags(v.text)}
+									</p>
+								</div>
 							{/each}
 						</div>
 						<a
