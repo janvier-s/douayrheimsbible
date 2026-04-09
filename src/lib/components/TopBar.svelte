@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { page } from '$app/stores';
 	import { getBookBySlug } from '$lib/data/books';
 	import { slide, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
@@ -17,7 +16,7 @@
 	export let chapterNum: string;
 	export let hasStudyMode = false;
 
-	$: showTabBar = !!$page.params.chapter;
+	$: showTabBar = chapterNum !== '';
 
 	let navOpen = false;
 	let prefsOpen = false;

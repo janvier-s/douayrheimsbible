@@ -243,7 +243,7 @@
 	{#if chapter.summary && chapter.summary !== '---'}
 		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions a11y_mouse_events_have_key_events -->
 		<p
-			class="text-subtle font-reader italic mb-lg text-base leading-[var(--line-height-reader)]"
+			class="text-subtle font-reader italic mb-lg text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 			on:click={handleSummaryClick}
 			on:mouseover={handleSummaryMouseover}
 			on:mouseout={handleSummaryMouseout}

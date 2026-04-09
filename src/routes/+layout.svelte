@@ -48,7 +48,19 @@
 
 	onMount(() => {
 		const p = $prefs;
-		document.documentElement.style.setProperty('--font-size-reader', `${p.fontSize}px`);
+		// Default to 15px on mobile for first-time visitors
+		const mobileFontApplied = localStorage.getItem('mobile-font-default');
+		if (
+			!mobileFontApplied &&
+			p.fontSize === 16 &&
+			window.matchMedia('(max-width: 767px)').matches
+		) {
+			localStorage.setItem('mobile-font-default', '1');
+			prefs.update((pr) => ({ ...pr, fontSize: 15 }));
+			document.documentElement.style.setProperty('--font-size-reader', '15px');
+		} else {
+			document.documentElement.style.setProperty('--font-size-reader', `${p.fontSize}px`);
+		}
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));
 		document.documentElement.style.setProperty('--bionic-opacity', String(p.bionicOpacity ?? 1));
 		const isSans = SANS_FONTS_LAYOUT.includes(p.fontFamily) || p.dyslexiaFont;
