@@ -207,7 +207,7 @@
 			>
 				{#each displayedCols as t, colIdx (t.id)}
 					<div
-						class="px-[20px] py-[14px] bg-panel
+						class="px-[10px] py-[10px] bg-panel
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 					>
 						{#if t.id === 'odr'}

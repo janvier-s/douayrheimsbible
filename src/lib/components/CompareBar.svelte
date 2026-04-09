@@ -14,18 +14,16 @@
 	export let bookMeta: BookMeta;
 	export let chapterNum: number;
 
-	// Return URLs derived from the last known reading position (includes routeBase).
-	// Falls back to ODR if no position recorded (e.g. user landed directly on /compare).
+	// Return URLs derived from the last known reading position or current compare context.
 	$: _base = $readingPosition?.routeBase ?? '/odr';
 	$: _slug = $readingPosition?.bookSlug ?? bookMeta.slug;
 	$: _ch = $readingPosition?.chapter ?? chapterNum;
-	$: readingHref = `${_base}/${_slug}/${_ch}`;
-	$: studyHref = $readingPosition ? `${_base}/${_slug}/${_ch}` : null;
+	$: readerHref = `${_base}/${_slug}/${_ch}`;
 
-	// Build toggle items
+	// Build toggle items — study is always available (uses same href as reading)
 	$: modeItems = [
 		{ key: 'reading', label: 'Read' },
-		...(studyHref ? [{ key: 'study', label: 'Study' }] : []),
+		{ key: 'study', label: 'Study' },
 		{ key: 'compare', label: 'Compare' }
 	];
 	$: activeModeIdx = modeItems.length - 1; // Compare is always active here
@@ -33,14 +31,12 @@
 	let pendingIdx = -1;
 
 	async function selectMode(key: string, index: number) {
-		const href = key === 'reading' ? readingHref : key === 'study' ? studyHref : null;
 		if (key === 'compare') return; // already on compare
-		if (!href) return;
 		pendingIdx = index;
 		const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
 		await new Promise<void>((r) => setTimeout(r, delay));
 		prefs.update((p) => ({ ...p, readingMode: key === 'study' ? 'study' : 'reading' }));
-		goto(href);
+		goto(readerHref);
 	}
 
 	async function handleModeSelect(e: CustomEvent<{ key: string; index: number }>) {
