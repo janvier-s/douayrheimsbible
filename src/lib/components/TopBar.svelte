@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import { page } from '$app/stores';
 	import { getBookBySlug } from '$lib/data/books';
 	import { slide, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
@@ -15,7 +16,8 @@
 	export let bookSlug: string;
 	export let chapterNum: string;
 	export let hasStudyMode = false;
-	export let showTabBar = false;
+
+	$: showTabBar = /^\/(?:odr|compare)\//.test($page.url.pathname);
 
 	let navOpen = false;
 	let prefsOpen = false;
@@ -226,7 +228,7 @@
 					navOpen = false;
 				}}
 			>
-				<span class="text-[13px] md:text-[16px] leading-tight font-medium">ODR</span>
+				<span class="text-[11px] md:text-[14px] leading-tight font-medium">ODR</span>
 				<span
 					class="text-[12px] opacity-70 {translationOpen ? 'text-white/70' : ''} leading-none"
 					aria-hidden="true"

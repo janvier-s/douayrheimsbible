@@ -342,7 +342,7 @@
 			>
 				{#if $prefs.showVerseNumbers}
 					<span
-						class="font-ui text-[13px] font-thin select-none w-6 shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
+						class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-[14px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
 						class:text-subtle={!isStudy || !v.has_annotation}
 						style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
 					>
