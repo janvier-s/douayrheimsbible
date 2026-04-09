@@ -2,7 +2,7 @@
 	import { onMount, tick } from 'svelte';
 	import { fly, slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	import { ALL_BOOKS } from '$lib/data/books';
+	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
 	import { prefs } from '$lib/stores/prefs';
 
 	export let bookSlug: string;
@@ -45,17 +45,6 @@
 
 	function bookLabel(odrName: string, modernName: string): string {
 		return $prefs.modernBookNames ? modernName : odrName;
-	}
-
-	function hebPsalmNum(n: number): string | null {
-		if (n <= 8) return null;
-		if (n === 9) return '9\u201310';
-		if (n >= 10 && n <= 112) return String(n + 1);
-		if (n === 113) return '114\u2013115';
-		if (n === 114 || n === 115) return '116';
-		if (n >= 116 && n <= 145) return String(n + 1);
-		if (n === 146 || n === 147) return '147';
-		return null;
 	}
 
 	function focusTrap(node: HTMLElement) {
@@ -160,8 +149,8 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && hebPsalmNum(ch) !== null}
-										<span class="block text-[9px] opacity-60">{hebPsalmNum(ch)}</span>
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
+										<span class="block text-[9px] opacity-60">{getHebPsalmNum(ch)}</span>
 									{/if}
 								</a>
 							{/each}
@@ -207,8 +196,8 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && hebPsalmNum(ch) !== null}
-										<span class="block text-[9px] opacity-60">{hebPsalmNum(ch)}</span>
+									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
+										<span class="block text-[9px] opacity-60">{getHebPsalmNum(ch)}</span>
 									{/if}
 								</a>
 							{/each}

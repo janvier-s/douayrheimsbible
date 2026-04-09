@@ -84,14 +84,9 @@ export const OSIS_TO_SLUG: Record<string, string> = {
 	Rev: 'apocalypse'
 };
 
-export interface ResolvedRef {
-	slug: string;
-	chapter: number;
-	verse?: number;
-	url: string;
-}
-
-export function resolveReference(ref: ParsedReference): ResolvedRef | null {
+export function resolveReference(
+	ref: ParsedReference
+): { slug: string; chapter: number; verse?: number; url: string } | null {
 	const slug =
 		OSIS_TO_SLUG[ref.book] ??
 		getBookByOdrName(ref.book)?.slug ??

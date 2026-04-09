@@ -1,49 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
+	import { FONTS, getFontById, isSansFont } from '$lib/data/fonts';
 
 	export let compareMode = false;
 	$: activeFontSize = compareMode ? $prefs.compareFontSize : $prefs.fontSize;
-
-	const FONTS = [
-		{
-			id: 'libre-baskerville',
-			label: 'Libre Baskerville',
-			stack: "'Libre Baskerville', Georgia, serif",
-			gfUrl:
-				'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
-		},
-		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
-		{
-			id: 'source-serif-4',
-			label: 'Source Serif',
-			stack: "'Source Serif 4', Georgia, serif",
-			gfUrl:
-				'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap'
-		},
-		{
-			id: 'noto-sans',
-			label: 'Noto Sans',
-			stack: "'Noto Sans', sans-serif",
-			gfUrl:
-				'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap',
-			dividerBefore: true
-		},
-		{
-			id: 'libre-franklin',
-			label: 'Libre Franklin',
-			stack: "'Libre Franklin', sans-serif",
-			gfUrl:
-				'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap'
-		},
-		{
-			id: 'montserrat',
-			label: 'Montserrat',
-			stack: "'Montserrat', sans-serif",
-			gfUrl:
-				'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap'
-		}
-	];
 
 	const THEMES = [
 		{ id: 'light', label: 'Light', bg: '#f8f5ef', fg: '#1c1710', lines: '#c8bfb0' },
@@ -56,7 +17,7 @@
 	let fontDropdownOpen = false;
 
 	$: activeFontId = $prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily;
-	$: activeFont = FONTS.find((f) => f.id === activeFontId);
+	$: activeFont = getFontById(activeFontId);
 	$: activeFontStack =
 		activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit');
 
@@ -71,14 +32,14 @@
 	}
 
 	function setFont(id: string) {
-		const font = FONTS.find((f) => f.id === id);
+		const font = getFontById(id);
 		if (!font) return;
 		prefs.update((p) => ({ ...p, fontFamily: id }));
 		document.documentElement.style.setProperty('--font-reader', font.stack);
-		if ('gfUrl' in font && font.gfUrl && !document.querySelector(`link[data-gf="${id}"]`)) {
+		if (font.gfUrl && !document.querySelector(`link[data-gf="${id}"]`)) {
 			const link = document.createElement('link');
 			link.rel = 'stylesheet';
-			link.href = font.gfUrl as string;
+			link.href = font.gfUrl;
 			link.dataset.gf = id;
 			document.head.appendChild(link);
 		}
@@ -94,22 +55,22 @@
 			document.documentElement.style.setProperty('--font-ui', "'Grace Dyslexic MD', sans-serif");
 			document.documentElement.style.setProperty('--bionic-bold-weight', '900');
 		} else {
-			const font = FONTS.find((f) => f.id === $prefs.fontFamily);
+			const font = getFontById($prefs.fontFamily);
 			document.documentElement.style.setProperty('--font-reader', font?.stack ?? 'serif');
 			document.documentElement.style.setProperty(
 				'--font-ui',
 				"'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 			);
-			const isSans = SANS_FONTS.includes($prefs.fontFamily);
-			document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
+			document.documentElement.style.setProperty(
+				'--bionic-bold-weight',
+				isSansFont($prefs.fontFamily) ? '900' : '700'
+			);
 		}
 	}
 
-	const SANS_FONTS = ['noto-sans', 'libre-franklin', 'montserrat'];
-
 	function setFontWithBionic(id: string) {
 		setFont(id);
-		const isSans = SANS_FONTS.includes(id);
+		const isSans = isSansFont(id);
 		document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
 	}
 

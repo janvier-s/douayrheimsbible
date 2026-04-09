@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { getBookBySlug } from '$lib/data/books';
-	import { slide, fly, fade } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
+	import { getBookBySlug, getHebPsalmNum } from '$lib/data/books';
+	import { slide, fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
 	import { isMobile } from '$lib/stores/mobile';
 	import FloatingNav from './FloatingNav.svelte';
-	import ReadingPrefs from './ReadingPrefs.svelte';
-	import ModeToggle from './ModeToggle.svelte';
+	import BrandingRow from './BrandingRow.svelte';
+	import BottomTabBar from './BottomTabBar.svelte';
+	import PrefsPanel from './PrefsPanel.svelte';
 
 	export let bookSlug: string;
 	export let chapterNum: string;
@@ -22,17 +22,6 @@
 	let translationOpen = false;
 
 	$: bookMeta = getBookBySlug(bookSlug);
-
-	function getHebPsalmNum(n: number): string | null {
-		if (n <= 8) return null;
-		if (n === 9) return '9\u201310';
-		if (n >= 10 && n <= 112) return String(n + 1);
-		if (n === 113) return '114\u2013115';
-		if (n === 114 || n === 115) return '116';
-		if (n >= 116 && n <= 145) return String(n + 1);
-		if (n === 146 || n === 147) return '147';
-		return null;
-	}
 
 	$: displayName = bookMeta
 		? $prefs.modernBookNames
@@ -110,73 +99,22 @@
 	}
 </script>
 
+<svelte:window
+	on:keydown={(e) => {
+		if (e.key === 'Escape') closeAll();
+	}}
+/>
+
 <header class="sticky top-0 z-50 font-ui">
 	<!-- Row 1: branding + mode + search -->
-	<div
-		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
-		style="height: 50px;"
+	<BrandingRow
+		{modeItems}
+		{activeModeIdx}
+		{pendingIdx}
+		onModeSelect={handleModeSelect}
+		onLogoClick={closeAll}
 	>
-		<!-- Logo: in-flow on both mobile and desktop -->
-		<a
-			href="/"
-			aria-label="Douay-Rheims"
-			class="flex items-center gap-[6px] group shrink-0"
-			on:click={closeAll}
-		>
-			<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
-			<!-- Desktop: single line -->
-			<span
-				class="hidden md:block text-[12px] uppercase tracking-[0.2em] font-semibold text-foreground group-hover:text-accent transition-colors duration-fast"
-			>
-				Douay-Rheims
-			</span>
-			<!-- Mobile: two lines stacked -->
-			<span class="md:hidden flex flex-col gap-[1px] leading-[1.2]" aria-hidden="true">
-				<span
-					class="text-[7px] uppercase tracking-[0.18em] font-bold text-foreground group-hover:text-accent transition-colors duration-fast"
-					>Douay</span
-				>
-				<span
-					class="text-[7px] uppercase tracking-[0.18em] font-bold text-foreground group-hover:text-accent transition-colors duration-fast"
-					>Rheims</span
-				>
-			</span>
-		</a>
-
-		<!-- Spacer (desktop only) -->
-		<div class="hidden md:flex flex-1"></div>
-
-		<div class="hidden md:flex">
-			<ModeToggle
-				items={modeItems}
-				activeIndex={activeModeIdx}
-				pendingIndex={pendingIdx}
-				on:select={handleModeSelect}
-			/>
-		</div>
-
-		<!-- Search icon — desktop only -->
-		<a
-			href="/search"
-			class="hidden md:flex ml-0 shrink-0 items-center justify-center w-[30px] h-[30px]
-		    rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
-			aria-label="Search"
-		>
-			<svg
-				width="15"
-				height="15"
-				viewBox="0 0 15 15"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="1.5"
-				stroke-linecap="round"
-			>
-				<circle cx="6.5" cy="6.5" r="4.5" />
-				<line x1="10" y1="10" x2="14" y2="14" />
-			</svg>
-		</a>
-
-		<!-- Reading options sliders icon — mobile only, Row 1 -->
+		<!-- Mobile prefs toggle (TopBar-specific) -->
 		<button
 			class="md:hidden ml-auto shrink-0 flex items-center justify-center w-[30px] h-[30px]
 				rounded-[3px] transition-colors duration-fast
@@ -203,7 +141,7 @@
 				<circle cx="7" cy="12" r="2" fill="currentColor" stroke="none" />
 			</svg>
 		</button>
-	</div>
+	</BrandingRow>
 
 	<!-- Row 2: reading controls -->
 	<div
@@ -248,7 +186,7 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav — absolute on desktop, flex-1 centered on mobile -->
+		<!-- Center: chapter nav -->
 		<div
 			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center"
 		>
@@ -271,7 +209,7 @@
 			</button>
 		</div>
 
-		<!-- Right: reading prefs — desktop only (mobile uses sliders icon in Row 1) -->
+		<!-- Right: reading prefs — desktop only -->
 		<div class="hidden md:flex ml-auto shrink-0">
 			<button
 				class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
@@ -294,97 +232,9 @@
 
 <!-- Bottom tab bar — mobile only, reader pages only -->
 {#if showTabBar}
-	<nav
-		transition:fade={{ duration: 200 }}
-		class="md:hidden fixed bottom-0 inset-x-0 z-[56] bg-glass backdrop-blur-sm border-t border-border font-ui"
-		style="padding-bottom: env(safe-area-inset-bottom);"
-		aria-label="Main navigation"
-	>
-		<div class="flex" style="height: 56px;">
-			{#each modeItems as item, i}
-				<button
-					class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
-                    {pendingIdx === i || (pendingIdx === -1 && activeModeIdx === i)
-						? 'text-accent'
-						: 'text-subtle hover:text-foreground'}"
-					aria-label={item.label}
-					aria-pressed={activeModeIdx === i}
-					on:click={() => selectMode(item.key, i)}
-				>
-					{#if item.key === 'reading'}
-						<svg
-							width="18"
-							height="18"
-							viewBox="0 0 18 18"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						>
-							<rect x="3" y="2" width="12" height="14" rx="1.5" />
-							<line x1="6" y1="6" x2="12" y2="6" />
-							<line x1="6" y1="9" x2="12" y2="9" />
-							<line x1="6" y1="12" x2="9" y2="12" />
-						</svg>
-					{:else if item.key === 'study'}
-						<svg
-							width="18"
-							height="18"
-							viewBox="0 0 18 18"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.3"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						>
-							<path
-								d="M9 4C7.5 3 5.5 2.5 3 3v11c2.5-.5 4.5 0 6 1m0-11c1.5-1 3.5-1.5 6-1v11c-2.5-.5-4.5 0-6 1"
-							/>
-							<line x1="9" y1="6" x2="9" y2="11" />
-							<line x1="7" y1="8" x2="11" y2="8" />
-						</svg>
-					{:else if item.key === 'compare'}
-						<svg
-							width="18"
-							height="18"
-							viewBox="0 0 18 18"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						>
-							<rect x="2" y="3" width="5.5" height="12" rx="1" />
-							<rect x="10.5" y="3" width="5.5" height="12" rx="1" />
-						</svg>
-					{/if}
-					<span class="text-[8px] uppercase tracking-[0.1em] font-medium">{item.label}</span>
-				</button>
-			{/each}
-			<!-- Search tab -->
-			<a
-				href="/search"
-				class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
-			    text-subtle hover:text-foreground"
-				aria-label="Search"
-			>
-				<svg
-					width="18"
-					height="18"
-					viewBox="0 0 18 18"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
-					stroke-linecap="round"
-				>
-					<circle cx="8" cy="8" r="5.5" />
-					<line x1="12" y1="12" x2="16" y2="16" />
-				</svg>
-				<span class="text-[8px] uppercase tracking-[0.1em] font-medium">Search</span>
-			</a>
-		</div>
-	</nav>
+	<div transition:fade={{ duration: 200 }}>
+		<BottomTabBar {modeItems} {activeModeIdx} {pendingIdx} {selectMode} />
+	</div>
 {/if}
 
 {#if navOpen}
@@ -396,37 +246,10 @@
 {/if}
 
 {#if prefsOpen}
-	<!-- Desktop panel (unchanged) -->
-	<div
-		transition:slide={{ duration: 180 }}
-		class="hidden md:block fixed top-[var(--header-height)] right-md bg-panel border border-border rounded-sm shadow-lg p-md z-50 w-72 font-ui"
-		role="dialog"
-		aria-label="Reading options"
-	>
-		<ReadingPrefs />
-	</div>
-
-	<!-- Mobile top panel — slides down from header -->
-	<div
-		transition:fly={{ y: -30, duration: 200, easing: cubicOut }}
-		class="md:hidden fixed inset-x-0 top-[var(--header-height)] bg-panel border-b border-border z-[60] font-ui"
-		style="border-radius: 0 0 12px 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);"
-		role="dialog"
-		aria-label="Reading options"
-	>
-		<div style="height: 320px; overflow-y: auto; overscroll-behavior: contain;">
-			<ReadingPrefs />
-		</div>
-	</div>
+	<PrefsPanel />
 {/if}
 
 {#if navOpen || prefsOpen || translationOpen}
-	<div
-		class="fixed inset-0 z-[57]"
-		role="presentation"
-		on:click={closeAll}
-		on:keydown={(e) => {
-			if (e.key === 'Escape') closeAll();
-		}}
-	></div>
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<div class="fixed inset-0 z-[57]" role="presentation" on:click={closeAll}></div>
 {/if}

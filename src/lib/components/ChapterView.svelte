@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tick, onDestroy } from 'svelte';
 	import type { BookMeta, Chapter } from '$lib/data/types';
-	import { ALL_BOOKS } from '$lib/data/books';
+	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
 	import VerseList from './VerseList.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { prefs } from '$lib/stores/prefs';
@@ -54,17 +54,6 @@
 						chLabel: 'Ch. 1'
 					}
 				: null;
-
-	function getHebPsalmNum(n: number): string | null {
-		if (n <= 8) return null;
-		if (n === 9) return '9\u201310';
-		if (n >= 10 && n <= 112) return String(n + 1);
-		if (n === 113) return '114\u2013115';
-		if (n === 114 || n === 115) return '116';
-		if (n >= 116 && n <= 145) return String(n + 1);
-		if (n === 146 || n === 147) return '147';
-		return null;
-	}
 
 	$: hebrewPsalmNum = (() => {
 		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return null;

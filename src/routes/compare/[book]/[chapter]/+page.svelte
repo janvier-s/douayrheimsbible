@@ -8,6 +8,7 @@
 	import CompareBar from '$lib/components/CompareBar.svelte';
 	import PageFooter from '$lib/components/PageFooter.svelte';
 	import { fade } from 'svelte/transition';
+	import { stripTags } from '$lib/utils/text';
 
 	export let data: PageData;
 
@@ -24,15 +25,6 @@
 			document.documentElement.style.setProperty('--font-size-reader', prevFontSize);
 		}
 	});
-
-	/** Strip <cr>, <na> tags and their content; keep <i> as HTML italic. */
-	function stripTags(text: string): string {
-		return text
-			.replace(/<cr>[^<]*<\/cr>/g, '')
-			.replace(/<na>[^<]*<\/na>/g, '')
-			.replace(/  +/g, ' ')
-			.trim();
-	}
 
 	$: ({ bookMeta, chapter } = data);
 	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;

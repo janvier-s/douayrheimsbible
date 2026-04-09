@@ -39,7 +39,7 @@
 	</div>
 
 	<!-- Link columns -->
-	<div class="footer-columns">
+	<nav aria-label="Footer navigation" class="footer-columns">
 		{#each columns as col}
 			<div class="footer-col">
 				<p class="footer-col-heading">{col.heading}</p>
@@ -50,7 +50,7 @@
 				</ul>
 			</div>
 		{/each}
-	</div>
+	</nav>
 
 	<!-- Attribution -->
 	<div class="footer-attribution">
@@ -69,6 +69,12 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 48px;
+	}
+
+	@media (max-width: 767px) {
+		.footer {
+			padding-bottom: calc(80px + 56px + env(safe-area-inset-bottom));
+		}
 	}
 
 	/* ─── Ornamental divider ─── */

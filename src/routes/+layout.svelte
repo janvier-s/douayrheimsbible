@@ -7,6 +7,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { afterNavigate, goto } from '$app/navigation';
+	import { getFontById, isSansFont } from '$lib/data/fonts';
 
 	afterNavigate(({ from, to, type }) => {
 		if (type === 'popstate') return;
@@ -23,29 +24,6 @@
 	$: chapterNum = $readingPosition
 		? String($readingPosition.chapter)
 		: ($page.params.chapter ?? '');
-	const FONT_STACKS: Record<string, string> = {
-		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
-		sentinel: "'Sentinel', Georgia, serif",
-		'source-serif-4': "'Source Serif 4', Georgia, serif",
-		'noto-sans': "'Noto Sans', sans-serif",
-		'libre-franklin': "'Libre Franklin', sans-serif",
-		montserrat: "'Montserrat', sans-serif"
-	};
-
-	const GF_URLS: Record<string, string> = {
-		'libre-baskerville':
-			'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap',
-		'source-serif-4':
-			'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap',
-		'libre-franklin':
-			'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap',
-		'noto-sans':
-			'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap',
-		montserrat:
-			'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap'
-	};
-
-	const SANS_FONTS_LAYOUT = ['noto-sans', 'libre-franklin', 'montserrat'];
 
 	onMount(() => {
 		const p = $prefs;
@@ -64,7 +42,7 @@
 		}
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));
 		document.documentElement.style.setProperty('--bionic-opacity', String(p.bionicOpacity ?? 1));
-		const isSans = SANS_FONTS_LAYOUT.includes(p.fontFamily) || p.dyslexiaFont;
+		const isSans = isSansFont(p.fontFamily) || p.dyslexiaFont;
 		document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
 		if (p.dyslexiaFont) {
 			document.documentElement.style.setProperty(
@@ -73,14 +51,13 @@
 			);
 			document.documentElement.style.setProperty('--font-ui', "'Grace Dyslexic MD', sans-serif");
 		} else {
-			const stack = FONT_STACKS[p.fontFamily];
-			if (stack) document.documentElement.style.setProperty('--font-reader', stack);
+			const font = getFontById(p.fontFamily);
+			if (font) document.documentElement.style.setProperty('--font-reader', font.stack);
 			// Inject Google Fonts link so the selector button renders in the correct font immediately
-			const gfUrl = GF_URLS[p.fontFamily];
-			if (gfUrl && !document.querySelector(`link[data-gf="${p.fontFamily}"]`)) {
+			if (font?.gfUrl && !document.querySelector(`link[data-gf="${p.fontFamily}"]`)) {
 				const link = document.createElement('link');
 				link.rel = 'stylesheet';
-				link.href = gfUrl;
+				link.href = font.gfUrl;
 				link.dataset.gf = p.fontFamily;
 				document.head.appendChild(link);
 			}
