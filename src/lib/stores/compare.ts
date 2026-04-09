@@ -31,7 +31,7 @@ export const TRANSLATIONS: Translation[] = [
 		id: 'odr',
 		label: 'Original Douay-Rheims',
 		abbr: 'ODR',
-		year: '1609',
+		year: '1582–1610',
 		live: true,
 		ntOnly: false,
 		fullHeader: true,
