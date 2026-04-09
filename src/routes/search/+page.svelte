@@ -171,7 +171,7 @@
 					{#if groupIdx > 0}
 						<hr class="border-border" />
 					{/if}
-					<section>
+					<section class:pl-[2.5rem]={$prefs.showVerseNumbers}>
 						<h2
 							class="font-ui text-[14px] font-semibold mb-[8px]"
 							style="color: var(--color-accent-text)"
@@ -185,10 +185,10 @@
 						</h2>
 						<div class="space-y-[0.7rem]">
 							{#each group.verses as v}
-								<div class="flex gap-sm">
+								<div class="relative">
 									{#if $prefs.showVerseNumbers}
 										<span
-											class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em] text-subtle"
+											class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
 											>{v.verse}</span
 										>
 									{/if}
