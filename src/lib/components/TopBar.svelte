@@ -277,7 +277,7 @@
 
 <!-- Bottom tab bar — mobile only -->
 <nav
-	class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-glass backdrop-blur-sm border-t border-border font-ui"
+	class="md:hidden fixed bottom-0 inset-x-0 z-[56] bg-glass backdrop-blur-sm border-t border-border font-ui"
 	style="padding-bottom: env(safe-area-inset-bottom);"
 	aria-label="Main navigation"
 >
@@ -346,6 +346,7 @@
 			class="flex-1 flex flex-col items-center justify-center gap-[3px] transition-colors duration-fast
                     {searchOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 			aria-label="Search"
+			aria-pressed={searchOpen}
 			on:click={() => (searchOpen = true)}
 		>
 			<svg
