@@ -73,7 +73,7 @@
 	// Sync inner panel width when not dragging (initial render + settings changes).
 	// During drag, the resize utility sets panelEl.style.width directly.
 	$: if (panelEl && !panelDragging && !$isMobile) panelEl.style.width = $prefs.studyPanelWidth;
-	$: if (panelEl && $isMobile) panelEl.style.width = '100%';
+	$: if (panelEl && $isMobile && $prefs.readingMode === 'study') panelEl.style.width = '100%';
 
 	// Bumped after each loadBook resolves, so the reactive below re-evaluates.
 	let bookCacheTick = 0;
@@ -329,7 +329,7 @@
 	<div
 		class="shrink-0 sticky flex [overflow:clip]"
 		style="top: var(--header-height); height: {$isMobile
-			? 'calc(100vh - var(--header-height) - 56px)'
+			? 'calc(100vh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
 			: 'calc(100vh - var(--header-height))'}; max-width: {panelMaxWidth}; opacity: {$prefs.readingMode ===
 		'study'
 			? '1'
