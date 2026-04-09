@@ -211,12 +211,12 @@
 	<!-- Row 2: reading controls -->
 	<div
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg flex items-center gap-[10px] relative"
-		style="height: 60px;"
+		style="height: 50px;"
 	>
 		<!-- Left: translation selector -->
 		<div class="relative shrink-0">
 			<button
-				class="flex items-center gap-[8px] px-[10px] py-[4px] rounded-[3px] transition-colors duration-fast
+				class="flex items-center gap-[7px] px-[10px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{translationOpen ? 'bg-accent text-white' : 'text-foreground hover:text-accent'}"
 				aria-expanded={translationOpen}
 				aria-haspopup="listbox"
@@ -226,17 +226,9 @@
 					navOpen = false;
 				}}
 			>
-				<div class="text-left">
-					<div
-						class="text-[9px] uppercase tracking-[0.15em] leading-none mb-[2px]
-							{translationOpen ? 'text-white/70' : 'text-subtle'}"
-					>
-						Translation
-					</div>
-					<div class="text-[13px] font-medium leading-none">ODR</div>
-				</div>
+				<span class="text-[13px] md:text-[16px] leading-tight font-medium">ODR</span>
 				<span
-					class="text-[10px] {translationOpen ? 'text-white/70' : 'text-subtle'} leading-none"
+					class="text-[12px] opacity-70 {translationOpen ? 'text-white/70' : ''} leading-none"
 					aria-hidden="true"
 				>
 					{translationOpen ? '▲' : '▼'}

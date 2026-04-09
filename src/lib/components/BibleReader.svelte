@@ -303,7 +303,7 @@
 	<main
 		id="main-content"
 		bind:this={container}
-		class="flex-1 min-w-0 px-md max-md:px-[8px] pt-[20px] pb-xl max-md:pb-[80px]"
+		class="flex-1 min-w-0 px-md max-md:px-[4px] pt-[20px] pb-xl max-md:pb-[80px]"
 		class:hidden={$prefs.readingMode === 'study' && $isMobile}
 	>
 		<div style="max-width: {columnMaxWidth}px;" class="mx-auto">

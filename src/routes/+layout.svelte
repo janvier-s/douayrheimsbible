@@ -22,7 +22,7 @@
 	$: chapterNum = $readingPosition
 		? String($readingPosition.chapter)
 		: ($page.params.chapter ?? '');
-	$: showTabBar = !!($page.params.book && $page.params.chapter);
+	$: showTabBar = !!$page.route.id?.includes('[chapter]');
 
 	const FONT_STACKS: Record<string, string> = {
 		'libre-baskerville': "'Libre Baskerville', Georgia, serif",
