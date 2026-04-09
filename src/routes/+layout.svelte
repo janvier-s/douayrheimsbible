@@ -5,7 +5,7 @@
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 
 	afterNavigate(({ from, to, type }) => {
 		if (type === 'popstate') return;
@@ -88,8 +88,22 @@
 		const savedTheme = localStorage.getItem('theme');
 		document.documentElement.setAttribute('data-theme', savedTheme || 'auto');
 	});
+
+	function handleGlobalKeydown(e: KeyboardEvent) {
+		// Don't trigger if user is typing in an input/textarea
+		const tag = (e.target as HTMLElement)?.tagName;
+		if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+		if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key === 'k')) {
+			e.preventDefault();
+			if ($page.url.pathname !== '/search') {
+				goto('/search');
+			}
+		}
+	}
 </script>
 
+<svelte:window on:keydown={handleGlobalKeydown} />
 <a href="#main-content" class="skip-link">Skip to reading</a>
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
 	{#if $page.data.showLayoutTopBar !== false}
