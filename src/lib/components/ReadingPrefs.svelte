@@ -111,11 +111,12 @@
 	}
 
 	let activeTab: 'text' | 'reading' | 'verse' = 'text';
+	let fontSectionEl: HTMLElement;
 </script>
 
 <div class="text-sm font-ui">
 	<!-- Tab bar -->
-	<div class="flex border-b border-border mb-md -mx-md px-md">
+	<div class="flex border-b border-border mb-md -mx-md px-md sticky top-0 z-10 bg-panel">
 		{#each [{ id: 'text', label: 'Text' }, { id: 'reading', label: 'Reading' }, { id: 'verse', label: 'Verse' }] as tab}
 			<button
 				class="flex-1 py-[8px] text-[11px] uppercase tracking-[0.12em] font-semibold transition-colors duration-fast border-b-2 -mb-px
@@ -130,7 +131,7 @@
 	</div>
 	<!-- Text tab -->
 	{#if activeTab === 'text'}
-		<div class="space-y-md">
+		<div class="space-y-[10px]">
 			<label class="block">
 				<span class="block mb-xs">Font size: {$prefs.fontSize}px</span>
 				<input
@@ -171,14 +172,18 @@
 				</div>
 			</div>
 
-			<div class="relative">
+			<div class="relative" bind:this={fontSectionEl}>
 				<span class="block mb-xs">Font</span>
 				<button
 					class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
 					style="font-family: {activeFontStack};"
 					aria-expanded={fontDropdownOpen}
 					aria-haspopup="listbox"
-					on:click={() => (fontDropdownOpen = !fontDropdownOpen)}
+					on:click={() => {
+						fontDropdownOpen = !fontDropdownOpen;
+						if (fontDropdownOpen)
+							fontSectionEl?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+					}}
 				>
 					<span>{activeFontId === 'grace' ? 'Grace Dyslexic MD' : (activeFont?.label ?? '')}</span>
 					<span class="text-[10px] text-subtle font-ui" aria-hidden="true"
@@ -221,7 +226,7 @@
 				{/if}
 			</div>
 
-			<div>
+			<div class="max-md:mb-[8px]">
 				<span class="block mb-xs">Theme</span>
 				<div class="flex gap-[6px]">
 					{#each THEMES as t}
@@ -232,10 +237,10 @@
 								{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
 							style="background: {t.bg};"
 						>
-							<div class="theme-card-inner p-[7px]">
+							<div class="theme-card-inner p-[7px] max-md:p-[4px]">
 								<div class="flex items-baseline gap-[3px] mb-[5px]">
 									<span
-										class="font-reader text-[15px] leading-none font-bold"
+										class="font-reader text-[15px] max-md:text-[11px] leading-none font-bold"
 										style="color: {t.fg};">A</span
 									>
 									<span
@@ -260,7 +265,7 @@
 	<!-- Reading tab -->
 	{#if activeTab === 'reading'}
 		<div class="space-y-md">
-			<div>
+			<div class="hidden md:block">
 				<span class="block mb-xs">Column width</span>
 				<div class="flex gap-xs">
 					{#each [{ label: 'Narrow', value: 'narrow' }, { label: 'Default', value: 'default' }, { label: 'Wide', value: 'wide' }] as opt}
