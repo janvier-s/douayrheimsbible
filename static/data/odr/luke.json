@@ -931,7 +931,7 @@
         },
         {
           "verse": 16,
-          "text": "John answered, saying unto all: <cr>[1]</cr> I indeed baptize you with water, <cr>[2][3]</cr> but there <cr>[4]</cr> <alt>shall come</alt> a mightier than I, whose latchet of his shoes I am not worthy to loose; he shall baptize you in the Holy Ghost and fire:",
+          "text": "John answered, saying unto all: <cr>[1]</cr> I indeed baptize you with water, <cr>[2]</cr><cr>[3]</cr> but there <cr>[4]</cr> <alt>shall come</alt> a mightier than I, whose latchet of his shoes I am not worthy to loose; he shall baptize you in the Holy Ghost and fire:",
           "cross_refs": [
             {
               "text": "Mt. 3, 11. Mr. 1, 8."
@@ -941,6 +941,10 @@
             }
           ],
           "notes": [
+            {
+              "label": "2",
+              "text": "How say then the Heretics that the baptism of Christ is of no greater virtue than John's?"
+            },
             {
               "label": "4",
               "text": "cometh"
@@ -1128,13 +1132,17 @@
         },
         {
           "verse": 8,
-          "text": "And <sc>Jesus</sc> answering said to him: It is written, <cr>[1][2]</cr> <i>Thou shalt adore the Lord thy God & him only shalt thou </i> <cr>[3]</cr> <i>serve.</i>",
+          "text": "And <sc>Jesus</sc> answering said to him: It is written, <cr>[1]</cr><cr>[2]</cr> <i>Thou shalt adore the Lord thy God & him only shalt thou </i> <cr>[3]</cr> <i>serve.</i>",
           "cross_refs": [
             {
               "text": "Deu. 6, 13. 10, 20."
             }
           ],
           "notes": [
+            {
+              "label": "1",
+              "text": "See the Annot. in S. Matthew c. 4, 11."
+            },
             {
               "label": "3",
               "text": "λατρεύσεις."
@@ -1180,7 +1188,18 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1][2]</cr> And <sc>Jesus</sc> returned in the force of the spirit into Galilee, and the fame went forth through the whole country of him."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And <sc>Jesus</sc> returned in the force of the spirit into Galilee, and the fame went forth through the whole country of him.",
+          "cross_refs": [
+            {
+              "text": "Mt. 4, 12. Mr. 1, 14."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part: of Christ's manifesting himself by preaching and miracles, specially in Galilee."
+            }
+          ]
         },
         {
           "verse": 15,
@@ -1465,7 +1484,18 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1][2]</cr> And it came to pass one day, and he sat teaching. And there were Pharisees sitting and Doctors of Law that were come out of every town of Galilee and Jewry and Jerusalem; and the virtue of our Lord was to heal them."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And it came to pass one day, and he sat teaching. And there were Pharisees sitting and Doctors of Law that were come out of every town of Galilee and Jewry and Jerusalem; and the virtue of our Lord was to heal them.",
+          "cross_refs": [
+            {
+              "text": "Mt. 9, 2. Mr. 2, 3."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Imber Friday in Whitsunweek."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -1508,7 +1538,18 @@
         },
         {
           "verse": 27,
-          "text": "<cr>[1][2]</cr> And after these things he went forth, and saw a Publican called Levi, sitting at the Custom-house, and he said to him: Follow me."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And after these things he went forth, and saw a Publican called Levi, sitting at the Custom-house, and he said to him: Follow me.",
+          "cross_refs": [
+            {
+              "text": "Mt. 9, 9. Mr. 2, 14."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon S. Matthew's eve. Septemb. 20."
+            }
+          ]
         },
         {
           "verse": 28,
@@ -2487,13 +2528,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> calling together the twelve Apostles, he gave them <cr>[3]</cr> virtue and power over all devils, and to cure maladies.",
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> calling together the twelve Apostles, he gave them <cr>[3]</cr> virtue and power over all devils, and to cure maladies.",
           "cross_refs": [
             {
               "text": "Mt. 10, 1. Mr. 3, 13. 6, 8."
             }
           ],
           "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Thursday in Whitsunweek."
+            },
             {
               "label": "3",
               "text": "To command Devils and diseases either of body or soul, is by nature proper to God only: but by God's gift, men also may have the same: even so to forgive sins."
@@ -2574,7 +2619,17 @@
         },
         {
           "verse": 16,
-          "text": "And taking the five loaves and the two fishes, he looked up unto Heaven, and <cr>[1][2]</cr> blessed them; and he brake, and distributed to his Disciples, for to set before the multitudes."
+          "text": "And taking the five loaves and the two fishes, he looked up unto Heaven, and <cr>[1]</cr><cr>[2]</cr> blessed them; and he brake, and distributed to his Disciples, for to set before the multitudes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c εὐλόγησεν αὐτοὺς:"
+            },
+            {
+              "label": "2",
+              "text": "Here you see that he blessed the things, and not only gave thanks to God. See Annot. Marci. c. 8, 7."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -2634,7 +2689,18 @@
         },
         {
           "verse": 28,
-          "text": "<cr>[1][2]</cr> And it came to pass after these words almost eight days, and he took Peter and James and John, and went into a mountain to pray."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And it came to pass after these words almost eight days, and he took Peter and James and John, and went into a mountain to pray.",
+          "cross_refs": [
+            {
+              "text": "Mt. 17, 1. Mr. 9, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The TRANSFIGURATION."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -2925,7 +2991,17 @@
         },
         {
           "verse": 16,
-          "text": "<cr>[1][2]</cr> He that heareth you, heareth me; and he that despiseth you, despiseth me. And he that despiseth me, despiseth him that sent me."
+          "text": "<cr>[1]</cr><cr>[2]</cr> He that heareth you, heareth me; and he that despiseth you, despiseth me. And he that despiseth me, despiseth him that sent me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel for many Martyrs."
+            },
+            {
+              "label": "2",
+              "text": "It is all one to despise Christ, and to despise his Priests and Ministers in the Catholic Church: to refuse his doctrine, & theirs."
+            }
+          ]
         },
         {
           "verse": 17,
@@ -3018,7 +3094,17 @@
         },
         {
           "verse": 35,
-          "text": "And the next day he took forth two pence, and gave to the host, and said: Have care of him; and whatsoever thou shalt <cr>[1][2]</cr> supererogate, I at my return will repay thee."
+          "text": "And the next day he took forth two pence, and gave to the host, and said: Have care of him; and whatsoever thou shalt <cr>[1]</cr><cr>[2]</cr> supererogate, I at my return will repay thee.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "S. Augustine saith that the Apostle (1. Cor. 9.) according to this place did supererogate, that is, did more than he needed or was bound to do, when he might have required all duties for preaching the Gospel, but would not. li. de op. Monach. c. 5. Whereof it cometh, that the works which we do more than precept, be called works of Supererogation: &"
+            },
+            {
+              "label": "2",
+              "text": "Supererogaveris, προσδαπανήσῃς,"
+            }
+          ]
         },
         {
           "verse": 36,
@@ -3106,7 +3192,18 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1][2]</cr> And I say to you, Ask, and it shall be given you: seek, and you shall find: knock, and it shall be opened to you."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And I say to you, Ask, and it shall be given you: seek, and you shall find: knock, and it shall be opened to you.",
+          "cross_refs": [
+            {
+              "text": "Mt. 7, 7."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel in a votive Mass for remission of sins."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -3135,7 +3232,18 @@
         },
         {
           "verse": 15,
-          "text": "<cr>[1][2]</cr> And certain of them said: In Beel-zebub the prince of devils he casteth out devils."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And certain of them said: In Beel-zebub the prince of devils he casteth out devils.",
+          "cross_refs": [
+            {
+              "text": "Mr. 3, 22."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon the 3. Sunday in Lent."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -3265,7 +3373,18 @@
         },
         {
           "verse": 33,
-          "text": "<cr>[1][2]</cr> No man lighteth a candle, and putteth it in secret, neither under a bushel: but upon a candlestick, that they that go in may see the light."
+          "text": "<cr>[1]</cr><cr>[2]</cr> No man lighteth a candle, and putteth it in secret, neither under a bushel: but upon a candlestick, that they that go in may see the light.",
+          "cross_refs": [
+            {
+              "text": "Mt. 5, 15. Mar. 4, 21."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon S. Martin's day. Novem. 11. & for some other Confessors Bishops."
+            }
+          ]
         },
         {
           "verse": 34,
@@ -3769,7 +3888,17 @@
         },
         {
           "verse": 3,
-          "text": "No, I say to you: but unless you <cr>[1][2]</cr> have penance, you shall all likewise perish."
+          "text": "No, I say to you: but unless you <cr>[1]</cr><cr>[2]</cr> have penance, you shall all likewise perish.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Or as it is uttered in other places, do penance, μετανοῆτε. the which in the new Testament signifieth perfect repentance. See Annotations Mat. 3, 2. 11, 21."
+            },
+            {
+              "label": "2",
+              "text": "Nisi poenitentiam habueritis,"
+            }
+          ]
         },
         {
           "verse": 4,
@@ -4623,7 +4752,17 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1][2]</cr> And it came to pass, as he went unto Jerusalem, he passed through the midst of Samaria and Galilee."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And it came to pass, as he went unto Jerusalem, he passed through the midst of Samaria and Galilee.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The fourth part of this Gospel. The coming of Christ into Jewry, towards his Passion."
+            },
+            {
+              "label": "2",
+              "text": "The Gospel upon the 13. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -4971,7 +5110,18 @@
         },
         {
           "verse": 31,
-          "text": "<cr>[1][2]</cr> And <sc>Jesus</sc> took the Twelve, and said to them: Behold we go up to Jerusalem, and all things shall be consummate which were written by the Prophets of the Son of man."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And <sc>Jesus</sc> took the Twelve, and said to them: Behold we go up to Jerusalem, and all things shall be consummate which were written by the Prophets of the Son of man.",
+          "cross_refs": [
+            {
+              "text": "Mt. 20, 17. Mr. 10, 32."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon the Sunday of Quinquagesima."
+            }
+          ]
         },
         {
           "verse": 32,
@@ -5282,7 +5432,18 @@
         },
         {
           "verse": 45,
-          "text": "<cr>[1][2]</cr> And entering into the Temple, he began to cast out the sellers therein and the buyers,"
+          "text": "<cr>[1]</cr><cr>[2]</cr> And entering into the Temple, he began to cast out the sellers therein and the buyers,",
+          "cross_refs": [
+            {
+              "text": "* Mt. 21, 12. Mr. 11, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "MONDAY"
+            }
+          ]
         },
         {
           "verse": 46,
@@ -5312,7 +5473,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> it came to pass in one of the days, when he was teaching the people in the Temple & evangelizing, the chief Priests & the Scribes with the Ancients assembled,"
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> it came to pass in one of the days, when he was teaching the people in the Temple & evangelizing, the chief Priests & the Scribes with the Ancients assembled,",
+          "cross_refs": [
+            {
+              "text": "Mt. 21, 23. Mr. 11, 27."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "TUESDAY."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -5713,7 +5885,18 @@
         },
         {
           "verse": 25,
-          "text": "<cr>[1][2]</cr> And there shall be signs in the sun and the moon and the stars: and upon earth distress of nations, for the confusion of the sound of sea and waves,"
+          "text": "<cr>[1]</cr><cr>[2]</cr> And there shall be signs in the sun and the moon and the stars: and upon earth distress of nations, for the confusion of the sound of sea and waves,",
+          "cross_refs": [
+            {
+              "text": "Eze. 32, 7. Ioel. 3, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon the 1. Sunday in Advent."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -5787,7 +5970,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> the festival day of the Azymes approached, which is called Pasch:"
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> the festival day of the Azymes approached, which is called Pasch:",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 1. Mr. 14, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The PASSION according to S. Luke in these two chapters, is the Gospel at Mass upon Tenebrae Wednesday. TENEBRAE Wednesday."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -5811,7 +6005,18 @@
         },
         {
           "verse": 7,
-          "text": "<cr>[1][2]</cr> And the day of the Azymes came, wherein it was necessary that the Pasch should be killed."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And the day of the Azymes came, wherein it was necessary that the Pasch should be killed.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26. 17. Mr. 14, 12."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "MAUNDY Thursday."
+            }
+          ]
         },
         {
           "verse": 8,
@@ -5899,8 +6104,19 @@
         },
         {
           "verse": 24,
-          "text": "<cr>[1][2]</cr> And there fell also a contention between them, which of them seemed to be greater.",
-          "has_annotation": true
+          "text": "<cr>[1]</cr><cr>[2]</cr> And there fell also a contention between them, which of them seemed to be greater.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Mt. 20, 25. Mr. 10, 42."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon S. Apollinaris' day. Iulij 23."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -6131,7 +6347,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> all the multitude of them rising up, led him to Pilate."
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> all the multitude of them rising up, led him to Pilate.",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 1. 11. Mr. 15, 1. Io. 18, 27."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "GOOD FRIDAY."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -6392,13 +6619,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> in the <cr>[3]</cr> first of the Sabboth very early they came to the monument, carrying the spices which they had prepared.",
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> in the <cr>[3]</cr> first of the Sabboth very early they came to the monument, carrying the spices which they had prepared.",
           "cross_refs": [
             {
               "text": "Mt. 28, 1. Mr. 16, 1. Io. 20, 1."
             }
           ],
           "notes": [
+            {
+              "label": "1",
+              "text": "EASTER DAY."
+            },
             {
               "label": "3",
               "text": "That is, first after the Sabboth, which is (saith S. Hiero. q. 4. ad Hedib.) dies Dominica , our Lord's day, wherein he arose. For the week is divided into the Sabboth, & the 1. 2. 3. 4. 5. 6. of the Sabboth. And the Apostle (1. Cor. 16, 2.) commanded a collection of money to be made on the first of the Sabboth. Whereby we learn, both the keeping of Sunday, & the Church's count of days by the 2. 3. 4. of the Sabboth, to be Apostolical. Which S. Sylvester afterward named, 2. 3. 4. feriam &c. Breviar. Roman. Decemb. 31."
@@ -6461,7 +6692,18 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1][2]</cr> And behold, two of them went the same day into a town which was the space of sixty furlongs from Jerusalem, named Emmaus."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And behold, two of them went the same day into a town which was the space of sixty furlongs from Jerusalem, named Emmaus.",
+          "cross_refs": [
+            {
+              "text": "Mr. 16, 12."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Monday in Easter week."
+            }
+          ]
         },
         {
           "verse": 14,
@@ -6554,7 +6796,18 @@
         },
         {
           "verse": 36,
-          "text": "<cr>[1][2]</cr> And whiles they speak these things, <sc>Jesus</sc> stood in the midst of them, and he saith to them: Peace be to you; it is I, fear not."
+          "text": "<cr>[1]</cr><cr>[2]</cr> And whiles they speak these things, <sc>Jesus</sc> stood in the midst of them, and he saith to them: Peace be to you; it is I, fear not.",
+          "cross_refs": [
+            {
+              "text": "Mr. 16, 14. Io. 20, 19."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Tuesday in Easter week."
+            }
+          ]
         },
         {
           "verse": 37,

@@ -8,7 +8,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "In <cr>[1][2]</cr> the first year of Cyrus king of the Persians, that the word of our Lord by the mouth of Jeremy might be accomplished, our Lord raised up the spirit of Cyrus king of the Persians: & he made proclamation in all his Kingdom, yea by writing, saying:"
+          "text": "In <cr>[1]</cr><cr>[2]</cr> the first year of Cyrus king of the Persians, that the word of our Lord by the mouth of Jeremy might be accomplished, our Lord raised up the spirit of Cyrus king of the Persians: & he made proclamation in all his Kingdom, yea by writing, saying:",
+          "cross_refs": [
+            {
+              "text": "Isa. 44. 45. Jer. 25. 29."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part. The return of God's people from Babylon."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -852,7 +863,7 @@
         },
         {
           "verse": 28,
-          "text": "and hath inclined his mercy toward me before the king and his counsellers, and all the mighty princes of the king: and I taking courage by the hand of our Lord"
+          "text": "and hath inclined his mercy toward me before the king and his counsellers, and all the mighty princes of the king: and I taking courage by the hand of our Lord my God, which was on me, gathered together out of Israel princes that should go up with me."
         }
       ],
       "summary": "Esdras, with many other Priests and Levites, ascendeth to Jerusalem to teach, and assist the people: 11. bringing Artaxerxes' Edict, declareth it to the people, 27. and giveth thanks to God."

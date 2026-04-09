@@ -538,7 +538,17 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1][2]</cr> Detract not one from another, my brethren. He that detracteth from his brother, or he that judgeth his brother, detracteth from the Law, and judgeth the Law. But if thou judge the Law, thou art not a doer of the Law, but a Judge."
+          "text": "<cr>[1]</cr><cr>[2]</cr> Detract not one from another, my brethren. He that detracteth from his brother, or he that judgeth his brother, detracteth from the Law, and judgeth the Law. But if thou judge the Law, thou art not a doer of the Law, but a Judge.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c He forbiddeth detraction, evil speaking, slandering."
+            },
+            {
+              "label": "2",
+              "text": "c μὴ καταλαλεῖτε ἀλλήλων."
+            }
+          ]
         },
         {
           "verse": 12,
@@ -693,8 +703,18 @@
         },
         {
           "verse": 16,
-          "text": "<cr>[1][2]</cr> Confess therefore your sins one to another: and pray one for another, that you may be saved. For the continual prayer of a just man availeth much.",
-          "has_annotation": true
+          "text": "<cr>[1]</cr><cr>[2]</cr> Confess therefore your sins one to another: and pray one for another, that you may be saved. For the continual prayer of a just man availeth much.",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The Epistle in Maioribus Litanijs on S. Mark's day, and in the Rogation days."
+            },
+            {
+              "label": "2",
+              "text": "b The heretics translate, Acknowledge your sins. &c. So little they can abide the very word of confession ."
+            }
+          ]
         },
         {
           "verse": 17,

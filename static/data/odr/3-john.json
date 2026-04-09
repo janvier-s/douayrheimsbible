@@ -62,7 +62,17 @@
         },
         {
           "verse": 10,
-          "text": "For this cause, if I come, <cr>[1][2]</cr> I will advertise his works which he doeth: with malicious words chatting against us. And as though these things suffice him not, neither himself doth receive the brethren, and them that do receive, he prohibiteth, and casteth out of the Church."
+          "text": "For this cause, if I come, <cr>[1]</cr><cr>[2]</cr> I will advertise his works which he doeth: with malicious words chatting against us. And as though these things suffice him not, neither himself doth receive the brethren, and them that do receive, he prohibiteth, and casteth out of the Church.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "That is, I will rebuke them and make them known to be wicked. Bede."
+            },
+            {
+              "label": "2",
+              "text": "c commonebo. ὑπομνήσω"
+            }
+          ]
         },
         {
           "verse": 11,

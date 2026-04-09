@@ -8,7 +8,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "How <cr>[1][2]</cr> doth the city full of people, sit solitary: how is the lady of the Gentiles become as a widow: the princess of Provinces is made tributary?"
+          "text": "How <cr>[1]</cr><cr>[2]</cr> doth the city full of people, sit solitary: how is the lady of the Gentiles become as a widow: the princess of Provinces is made tributary?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Aleph."
+            },
+            {
+              "label": "2",
+              "text": "The miserable change in Jerusalem made the beholders astonished."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1451,7 +1461,13 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> Thine iniquity is accomplished o daughter of Sion, he will add no more to transport thee: he hath"
+          "text": "<cr>[1]</cr> Thine iniquity is accomplished o daughter of Sion, he will add no more to transport thee: he hath visited thine iniquity o daughter of Edom, he hath discovered thy sins.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Thau."
+            }
+          ]
         }
       ]
     },

@@ -227,8 +227,19 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> when the days of Pentecost were accomplished, they were all together in one place:",
-          "has_annotation": true
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when the days of Pentecost were accomplished, they were all together in one place:",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Act. 1, 4."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Whitsunday."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -1917,7 +1928,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> Saul as yet breathing forth threatenings and slaughter against the Disciples of our Lord, came to the high priest,"
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> Saul as yet breathing forth threatenings and slaughter against the Disciples of our Lord, came to the high priest,",
+          "cross_refs": [
+            {
+              "text": "Act. 22, 4. Gal. 1, 13."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the Conversion of S. Paul Ian. 25."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2272,8 +2294,16 @@
         },
         {
           "verse": 30,
-          "text": "And Cornelius said: Four days since, until this hour, I was <cr>[1][2]</cr> praying the ninth hour in my house, and behold <cr>[3]</cr> a man stood before me in white apparel,",
+          "text": "And Cornelius said: Four days since, until this hour, I was <cr>[1]</cr><cr>[2]</cr> praying the ninth hour in my house, and behold <cr>[3]</cr> a man stood before me in white apparel,",
           "notes": [
+            {
+              "label": "1",
+              "text": "c At the time of prayer specially God sendeth men comfortable visitations."
+            },
+            {
+              "label": "2",
+              "text": "c In the Greek, fasting & praying."
+            },
             {
               "label": "3",
               "text": "Note these apparitions and visions to S. Peter, Cornelius, and others, in the Scriptures very often, against the incredulity of our Heretics, that will believe neither vision nor miracle, not expressed in Scripture: these being believed of Christian men even before they were written."
@@ -2378,7 +2408,13 @@
           "text": "And he commanded them to be baptized in the name of our Lord <sc>Jesus Christ</sc>. Then they desired him that he would tarry with them certain days."
         }
       ],
-      "summary": "Because the Jews so much abhorred the Gentiles, for the better warrant of their Christening, an Angel appeareth to Cornelius the devout Italian. 9. and a vision is shewed to Peter himself (the chief and Paster of all) 19. and the Spirit speaketh to him, 34. yea and as he is Catechizing them about JESUS, 44. the Holy Ghost cometh visibly upon them: and therefore not fearing any longer the offence of the Jews, he commandeth to baptize them. <na>[1]</na>"
+      "summary": "Because the Jews so much abhorred the Gentiles, for the better warrant of their Christening, an Angel appeareth to Cornelius the devout Italian. 9. and a vision is shewed to Peter himself (the chief and Paster of all) 19. and the Spirit speaketh to him, 34. yea and as he is Catechizing them about JESUS, 44. the Holy Ghost cometh visibly upon them: and therefore not fearing any longer the offence of the Jews, he commandeth to baptize them. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The 4. part.\nTHE propagation of the Church to the Gentiles also."
+        }
+      ]
     },
     {
       "chapter": 11,
@@ -3228,7 +3264,17 @@
         },
         {
           "verse": 4,
-          "text": "And when they were come to Jerusalem, they were received of the Church and of the Apostles and <cr>[1][2]</cr> Ancients, declaring whatsoever God had done with them."
+          "text": "And when they were come to Jerusalem, they were received of the Church and of the Apostles and <cr>[1]</cr><cr>[2]</cr> Ancients, declaring whatsoever God had done with them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Ancients here, & often in this chapter, are the same that Priests vers. 2. as S. Hierom taketh it also 1. Pet. 5. &"
+            },
+            {
+              "label": "2",
+              "text": "c πρεσβυτέρων"
+            }
+          ]
         },
         {
           "verse": 5,
@@ -3778,7 +3824,17 @@
         },
         {
           "verse": 23,
-          "text": "For passing by and seeing your <cr>[1][2]</cr> idols, I found an altar also where upon was written: To the unknown God. That therefore which you worship, not knowing it, the same do I preach to you."
+          "text": "For passing by and seeing your <cr>[1]</cr><cr>[2]</cr> idols, I found an altar also where upon was written: To the unknown God. That therefore which you worship, not knowing it, the same do I preach to you.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c The Adversaries (in the new Test. 1580.) translate, your devotions , most corruptly against the nature of the Greek word (2. Thes. 2, 4.) and most wickedly, against the laudable devotion of good Christians, calling the Pagans idolatry and superstition, their devotions."
+            },
+            {
+              "label": "2",
+              "text": "c τὰ σεβάσματα"
+            }
+          ]
         },
         {
           "verse": 24,
@@ -3985,10 +4041,6 @@
       "chapter": 19,
       "verses": [
         {
-          "verse": 0,
-          "text": "specially through his great miracles also, in healing <i>diseases with the touch of his clothes, and expelling devils, 13. who yet contemned the Exorcists of the Jews. 18. How the Christians there confess their acts, and burn their unlawful books: 21. and how he foretold that after he had been at Hierusalem, he must see Rome. 23. and what a great sedition was raised against him at Ephesus, by them that got their living by working to the idolatrous Temple of Diana.</i>"
-        },
-        {
           "verse": 1,
           "text": "<sc>And</sc> <cr>[1]</cr> it came to pass when Apollo was at Corinth, that Paul having gone through the higher parts came to Ephesus, and found certain Disciples:",
           "notes": [
@@ -4138,7 +4190,17 @@
         },
         {
           "verse": 24,
-          "text": "For one named Demetrius, a silver-smith, that made silver <cr>[1][2]</cr> temples of Diana, procured to the artificers no small gain:"
+          "text": "For one named Demetrius, a silver-smith, that made silver <cr>[1]</cr><cr>[2]</cr> temples of Diana, procured to the artificers no small gain:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c The Protestants translate, shrines , in the Bible an. 1577: to make the people think that it toucheth the holy shrines of Saints: most corruptly, the Greek signifying plainly, temples , and that of heathen gods."
+            },
+            {
+              "label": "2",
+              "text": "c ναοὺς."
+            }
+          ]
         },
         {
           "verse": 25,
@@ -4182,7 +4244,17 @@
         },
         {
           "verse": 35,
-          "text": "And when the Scribe had appeased the multitudes, he saith: Ye men of Ephesus, for what man is there that knoweth not the city of the Ephesians to be a worshipper of great Diana, and <cr>[1][2]</cr> Jupiter's child?"
+          "text": "And when the Scribe had appeased the multitudes, he saith: Ye men of Ephesus, for what man is there that knoweth not the city of the Ephesians to be a worshipper of great Diana, and <cr>[1]</cr><cr>[2]</cr> Jupiter's child?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Here the Heretics add to the text this word, image , more than is in the Greek, to put a scruple into the people's mind concerning holy images."
+            },
+            {
+              "label": "2",
+              "text": "c τοῦ διοπετοῦς."
+            }
+          ]
         },
         {
           "verse": 36,
@@ -4205,7 +4277,7 @@
           "text": "For we are in danger also to be accused for this day's sedition: whereas there is no man guilty by whom we may give an account of this concourse. And when he had said these things, he dismissed the assembly."
         }
       ],
-      "summary": "How Paul began the Church of Ephesus, first in twelve that were baptized with John's baptism, 8. then preaching three months in the Synagogue of the Jews, until for their obstinacy and blaspheming, he forsook them, disputing afterward in a certain school for two years space to the marvelous increase of the Church,"
+      "summary": "How Paul began the Church of Ephesus, first in twelve that were baptized with John's baptism, 8. then preaching three months in the Synagogue of the Jews, until for their obstinacy and blaspheming, he forsook them, disputing afterward in a certain school for two years space to the marvelous increase of the Church, specially through his great miracles also, in healing <i>diseases with the touch of his clothes, and expelling devils, 13. who yet contemned the Exorcists of the Jews. 18. How the Christians there confess their acts, and burn their unlawful books: 21. and how he foretold that after he had been at Hierusalem, he must see Rome. 23. and what a great sedition was raised against him at Ephesus, by them that got their living by working to the idolatrous Temple of Diana.</i>"
     },
     {
       "chapter": 20,
@@ -4283,11 +4355,19 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> And sending from Miletum to Ephesus, he called the <cr>[2][3]</cr> Ancients of the Church.",
+          "text": "<cr>[1]</cr> And sending from Miletum to Ephesus, he called the <cr>[2]</cr><cr>[3]</cr> Ancients of the Church.",
           "notes": [
             {
               "label": "1",
               "text": "The Epistle for S. Steven Pope. Aug. 2."
+            },
+            {
+              "label": "2",
+              "text": "c That is, Priests as Act. 15, 4. See the marginal annot. there."
+            },
+            {
+              "label": "3",
+              "text": "c πρεσβυτέρους"
             }
           ]
         },

@@ -138,7 +138,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Therefore</sc> more aboundantly ought we to observe those things which we have heard: <cr>[1][2]</cr> lest perhaps we run out."
+          "text": "<sc>Therefore</sc> more aboundantly ought we to observe those things which we have heard: <cr>[1]</cr><cr>[2]</cr> lest perhaps we run out.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c As that which runneth out of a broken vessel, or that runneth by, is lost."
+            },
+            {
+              "label": "2",
+              "text": "c μὴ ποτε παραρρυῶμεν"
+            }
+          ]
         },
         {
           "verse": 2,
@@ -963,13 +973,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>The</sc> <cr>[1][2]</cr> former also indeed had justifications <cr>[3]</cr> of service, and a secular sanctuary.",
+          "text": "<sc>The</sc> <cr>[1]</cr><cr>[2]</cr> former also indeed had justifications <cr>[3]</cr> of service, and a secular sanctuary.",
           "cross_refs": [
             {
               "text": "Exo. 25, 26. 1, 36."
             }
           ],
           "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Imber Saturday in Sept."
+            },
             {
               "label": "3",
               "text": "c λατρείας."
@@ -1029,7 +1043,17 @@
         },
         {
           "verse": 9,
-          "text": "Which is a parable of the time present: according to which are offered gifts and hosts, which cannot concerning the conscience make perfect <cr>[1][2]</cr> him that serveth,"
+          "text": "Which is a parable of the time present: according to which are offered gifts and hosts, which cannot concerning the conscience make perfect <cr>[1]</cr><cr>[2]</cr> him that serveth,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c All things done in the old Testament and priesthood were figures of Christ's actions."
+            },
+            {
+              "label": "2",
+              "text": "c τὸν λατρεύοντα."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -1148,7 +1172,17 @@
         },
         {
           "verse": 28,
-          "text": "so also Christ was offered once <cr>[1][2]</cr> to exhaust the sins of many. The second time he shall appear without sin to them that expect him, unto salvation."
+          "text": "so also Christ was offered once <cr>[1]</cr><cr>[2]</cr> to exhaust the sins of many. The second time he shall appear without sin to them that expect him, unto salvation.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c By this word which signifieth to empty or draw out even to the bottom, is declared the plentiful and perfect redemption of sin by Christ."
+            },
+            {
+              "label": "2",
+              "text": "c ad exhaurienda peccata."
+            }
+          ]
         }
       ],
       "summary": "In the old Testament, that secular sanctuary had two parts: the one signifying that time, with the ceremonies thereof for the emundation of the flesh: the one signifying heaven, which then was shut, until our High priest Christ entered into it, and that with his own blood, shed for the emundation of our consciences. Whereupon he concludeth the excellency of his tabernacle and host above the old. 25. Noting also the difference, that he entered but once (so effectual was that one bloody offering of himself, for ever) whereas the Levitical High priest entered every year once."
@@ -1273,7 +1307,17 @@
         },
         {
           "verse": 20,
-          "text": "which <cr>[1][2]</cr> he hath dedicated to us a new & living way by the veil, that is, his flesh,"
+          "text": "which <cr>[1]</cr><cr>[2]</cr> he hath dedicated to us a new & living way by the veil, that is, his flesh,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c To dedicate, is to be author & beginner of a thing. The Protestants translate, he hath prepared , for their heresy that Christ was not the first man that entered into heaven."
+            },
+            {
+              "label": "2",
+              "text": "c ἐνεκαίνισεν"
+            }
+          ]
         },
         {
           "verse": 21,
@@ -2067,7 +2111,17 @@
         },
         {
           "verse": 21,
-          "text": "<cr>[1][2]</cr> fit you in all goodness, that you may do his will, doing in you that which may please before him by <sc>Jesus</sc> Christ: to whom is glory for ever and ever. Amen."
+          "text": "<cr>[1]</cr><cr>[2]</cr> fit you in all goodness, that you may do his will, doing in you that which may please before him by <sc>Jesus</sc> Christ: to whom is glory for ever and ever. Amen.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c καταρτίσαι , that is, make you perfect and absolute in all goodness."
+            },
+            {
+              "label": "2",
+              "text": "c aptet vos"
+            }
+          ]
         },
         {
           "verse": 22,

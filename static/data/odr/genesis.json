@@ -1700,7 +1700,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1][2]</cr> our Lord said to Abram: Go forth of thy country, and out of thy kindred, and out of thy father's house, and come into a land which I will shew thee."
+          "text": "And <cr>[1]</cr><cr>[2]</cr> our Lord said to Abram: Go forth of thy country, and out of thy kindred, and out of thy father's house, and come into a land which I will shew thee.",
+          "cross_refs": [
+            {
+              "text": "Act. 7."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The fifth part of this book. Of Abraham's leaving his country, God's blessing of his seed, and commandment of Circumcision."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2168,11 +2179,31 @@
         },
         {
           "verse": 6,
-          "text": "To whom Abram <cr>[1][2]</cr> <cr>[3][4]</cr> <cr>[5]</cr> <cr>[6][7]</cr>",
+          "text": "To whom Abram <cr>[1]</cr><cr>[2]</cr> <cr>[3]</cr><cr>[4]</cr> <cr>[5]</cr> <cr>[6]</cr><cr>[7]</cr>",
           "notes": [
+            {
+              "label": "1",
+              "text": "Manichees condemned plurality of wives in the Patriarchs."
+            },
+            {
+              "label": "2",
+              "text": "S. Aug. l. 22. c. 47. cont. Faust."
+            },
+            {
+              "label": "3",
+              "text": "Luther alloweth it in Christians."
+            },
+            {
+              "label": "4",
+              "text": "Luther proposit. 62. 65. & 66."
+            },
             {
               "label": "5",
               "text": "Other Protestants in some case."
+            },
+            {
+              "label": "6",
+              "text": "Two sorts of making answer: Behold, saith he, thy handmaid is in thine own hand, use her as it pleaseth thee. When Sarai therefore did afflict her, she ran away."
             }
           ]
         },

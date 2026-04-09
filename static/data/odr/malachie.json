@@ -198,7 +198,12 @@
         },
         {
           "verse": 12,
-          "text": "Our Lord will destroy the man, that hath done this, the master, and the scholar out of the tabernacles of Jacob, and him that offereth gift to the Lord of hosts. <cr>[1]</cr>"
+          "text": "Our Lord will destroy the man, that hath done this, the master, and the scholar out of the tabernacles of Jacob, and him that offereth gift to the Lord of hosts. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ioel 3. Zach. 14."
+            }
+          ]
         },
         {
           "verse": 13,

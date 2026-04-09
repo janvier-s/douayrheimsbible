@@ -3459,7 +3459,18 @@
         },
         {
           "verse": 25,
-          "text": "There is a way that seemeth to a man right: and the later ends thereof lead to death. <cr>[1][2]</cr>"
+          "text": "There is a way that seemeth to a man right: and the later ends thereof lead to death. <cr>[1]</cr><cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ch. 14. v. 2."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "True faith & Religion."
+            }
+          ]
         },
         {
           "verse": 26,
@@ -6562,7 +6573,19 @@
         },
         {
           "verse": 27,
-          "text": "Let the milk of the goats suffice thee for thy meats, and for the necessities of thy house: and for victual to thy hand-maids. <cr>[1][2]</cr>"
+          "text": "Let the milk of the goats suffice thee for thy meats, and for the necessities of thy house: and for victual to thy hand-maids. <cr>[1]</cr><cr>[2]</cr>",
+          "cross_refs": [
+            {
+              "label": "2",
+              "text": "Matth. 6. v. 33."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Be content with things necessary, and they shall be given to thee."
+            }
+          ]
         }
       ]
     },

@@ -7500,7 +7500,12 @@
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> Whether was not the sun hindered in his anger, and one day was made as two?"
+          "text": "<cr>[1]</cr> Whether was not the sun hindered in his anger, and one day was made as two?",
+          "cross_refs": [
+            {
+              "text": "Iosue 10."
+            }
+          ]
         },
         {
           "verse": 6,
@@ -7535,7 +7540,12 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> And our Lord gave strength to Caleb himself, and his strength continued even until old age, so that he went up into the high place of the land, & his seed obtained inheritance."
+          "text": "<cr>[1]</cr> And our Lord gave strength to Caleb himself, and his strength continued even until old age, so that he went up into the high place of the land, & his seed obtained inheritance.",
+          "cross_refs": [
+            {
+              "text": "Iosue 14."
+            }
+          ]
         },
         {
           "verse": 12,

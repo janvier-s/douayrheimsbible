@@ -77,8 +77,18 @@
         },
         {
           "verse": 13,
-          "text": "Have thou a form of sound words, which thou hast heard of me in faith and <cr>[1][2]</cr> in the love of Christ <sc>Jesus</sc>.",
-          "has_annotation": true
+          "text": "Have thou a form of sound words, which thou hast heard of me in faith and <cr>[1]</cr><cr>[2]</cr> in the love of Christ <sc>Jesus</sc>.",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Faith and love coupled commonly together in this Apostle's writings."
+            },
+            {
+              "label": "2",
+              "text": "c ἀγάπῃ τῇ ἐν Χριςῷ"
+            }
+          ]
         },
         {
           "verse": 14,

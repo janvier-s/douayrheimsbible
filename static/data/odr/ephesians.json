@@ -320,7 +320,17 @@
         },
         {
           "verse": 9,
-          "text": "& to illuminate all men what is the dispensation of the sacrament hidden <cr>[1][2]</cr> from worlds in God, who created all things:"
+          "text": "& to illuminate all men what is the dispensation of the sacrament hidden <cr>[1]</cr><cr>[2]</cr> from worlds in God, who created all things:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c This is, for ever before ."
+            },
+            {
+              "label": "2",
+              "text": "c ἀπὸ τῶν αἰώνων"
+            }
+          ]
         },
         {
           "verse": 10,
@@ -541,7 +551,18 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1][2]</cr> Lay you away, according to the old conversation the old man, which is corrupted according to the desires of error."
+          "text": "<cr>[1]</cr><cr>[2]</cr> Lay you away, according to the old conversation the old man, which is corrupted according to the desires of error.",
+          "cross_refs": [
+            {
+              "text": "Colos. 3, 8. Heb. 12, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 19. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 23,

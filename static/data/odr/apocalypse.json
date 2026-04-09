@@ -1771,7 +1771,12 @@
         },
         {
           "verse": 15,
-          "text": "And another Angel came forth from the temple, crying with a loud voice to him that sat upon the cloud: <cr>[1]</cr> Thrust in thy sickle, and reap, because the hour is come to reap, for the harvest of the earth is dry."
+          "text": "And another Angel came forth from the temple, crying with a loud voice to him that sat upon the cloud: <cr>[1]</cr> Thrust in thy sickle, and reap, because the hour is come to reap, for the harvest of the earth is dry.",
+          "cross_refs": [
+            {
+              "text": "Ioel 3. Mat. 13."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -2412,7 +2417,18 @@
         },
         {
           "verse": 16,
-          "text": "And he hath in his garment and in his thigh written, <cr>[1][2]</cr> <sc>King</sc> OF <sc>Kings And Lord</sc> OF <sc>Lords</sc>."
+          "text": "And he hath in his garment and in his thigh written, <cr>[1]</cr><cr>[2]</cr> <sc>King</sc> OF <sc>Kings And Lord</sc> OF <sc>Lords</sc>.",
+          "cross_refs": [
+            {
+              "text": "Apo. 17, 14."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Even according to his humanity also."
+            }
+          ]
         },
         {
           "verse": 17,

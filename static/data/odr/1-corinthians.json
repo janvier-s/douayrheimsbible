@@ -312,7 +312,17 @@
         },
         {
           "verse": 9,
-          "text": "For we are God's <cr>[1][2]</cr> coadjutors; you are God's husbandry, you are God's building."
+          "text": "For we are God's <cr>[1]</cr><cr>[2]</cr> coadjutors; you are God's husbandry, you are God's building.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c A marvelous dignity of spiritual pastors, that they be not only the instruments or ministers of Christ (as Castal. noteth Beza falsely translateth Administri , for Coadjutores ), but indeed God's coadjutors in the work of our Salvation."
+            },
+            {
+              "label": "2",
+              "text": "c συνεργοὶ"
+            }
+          ]
         },
         {
           "verse": 10,
@@ -650,7 +660,17 @@
         },
         {
           "verse": 9,
-          "text": "Know you not that the unjust shall not possess the Kingdom of God? Do not err: Neither fornicators, nor <cr>[1][2]</cr> servers of idols, nor adulterers, nor the effeminate, nor the liers with mankind,"
+          "text": "Know you not that the unjust shall not possess the Kingdom of God? Do not err: Neither fornicators, nor <cr>[1]</cr><cr>[2]</cr> servers of idols, nor adulterers, nor the effeminate, nor the liers with mankind,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c For this, the English Bible 1562 falsely translateth,"
+            },
+            {
+              "label": "2",
+              "text": "c εἰδωλολάτραι"
+            }
+          ]
         },
         {
           "verse": 10,
@@ -1136,10 +1156,20 @@
         },
         {
           "verse": 13,
-          "text": "Know you not <cr>[1]</cr> that they which work in the holy place, eat the things that are of the holy place: and they that serve <cr>[2][3]</cr> the altar, participate with the altar?",
+          "text": "Know you not <cr>[1]</cr> that they which work in the holy place, eat the things that are of the holy place: and they that serve <cr>[2]</cr><cr>[3]</cr> the altar, participate with the altar?",
           "cross_refs": [
             {
               "text": "Deu. 18, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "c The English Bible (1562) here and in the next chapter, saith thrice for altar, temple : most falsely & heretically, against holy altars, which about the time of that translation were digged down in England."
+            },
+            {
+              "label": "3",
+              "text": "c τῷ θυσιαςηρίῳ,"
             }
           ]
         },
@@ -1563,7 +1593,7 @@
         },
         {
           "verse": 23,
-          "text": "<cr>[1]</cr> For I received of our Lord that which also I have delivered unto you, <cr>[2][3]</cr> that our Lord <sc>Jesus</sc> in the night that he was betrayed, took bread:",
+          "text": "<cr>[1]</cr> For I received of our Lord that which also I have delivered unto you, <cr>[2]</cr><cr>[3]</cr> that our Lord <sc>Jesus</sc> in the night that he was betrayed, took bread:",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -1574,6 +1604,10 @@
             {
               "label": "1",
               "text": "a The Epistle upon CORPUS Christi day."
+            },
+            {
+              "label": "2",
+              "text": "The Apostle's drift in all that he saith here of the Sacrament, is against unworthy receiving (as S. Augustine also noteth Ep. 118. c. 3. ) and not to set out the whole order of ministration, as the heretics do ignorantly imagine."
             }
           ]
         },
@@ -1980,7 +2014,17 @@
         },
         {
           "verse": 16,
-          "text": "But if thou bless in the spirit, he that supplieth the place <cr>[1][2]</cr> of the vulgar how shall he say, Amen, upon thy blessing? because he knoweth not what thou sayest."
+          "text": "But if thou bless in the spirit, he that supplieth the place <cr>[1]</cr><cr>[2]</cr> of the vulgar how shall he say, Amen, upon thy blessing? because he knoweth not what thou sayest.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c By this word are meant all rude unlearned men, but specially the simple which were yet unchristened, as the Catechumens, which came in to those spiritual exercises, as also infidels did at their pleasures."
+            },
+            {
+              "label": "2",
+              "text": "c idiotae"
+            }
+          ]
         },
         {
           "verse": 17,
@@ -2130,10 +2174,20 @@
         },
         {
           "verse": 3,
-          "text": "For <cr>[1][2]</cr> I delivered unto you first of all which I also received: that Christ died for our sins <cr>[3]</cr> according to the Scriptures:",
+          "text": "For <cr>[1]</cr><cr>[2]</cr> I delivered unto you first of all which I also received: that Christ died for our sins <cr>[3]</cr> according to the Scriptures:",
           "cross_refs": [
             {
               "text": "Esa. 53, 8. Dan. 9, 26."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c This delivery in the Latin & Greek importeth tradition . So by Tradition did the Apostles plant the Church in all truth, before they wrote any thing."
+            },
+            {
+              "label": "2",
+              "text": "c tradidi παρέδωκα"
             }
           ]
         },
@@ -2597,7 +2651,17 @@
         },
         {
           "verse": 22,
-          "text": "If any man love not our Lord <sc>Jesus</sc> Christ, be he <i>anathema. </i> <cr>[1][2]</cr> <i>Maran atha.</i>"
+          "text": "If any man love not our Lord <sc>Jesus</sc> Christ, be he <i>anathema. </i> <cr>[1]</cr><cr>[2]</cr> <i>Maran atha.</i>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c That is, our Lord is come . Hiero. ep. 173. Therefore anathema to all that love him not, or believe not. Theophyla. upon this place."
+            },
+            {
+              "label": "2",
+              "text": "c אתא מרן"
+            }
+          ]
         },
         {
           "verse": 23,

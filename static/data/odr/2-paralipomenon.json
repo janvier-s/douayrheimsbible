@@ -1008,7 +1008,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1][2]</cr> Roboam went forth into Sichem: for thither all Israel was assembled, to make him king."
+          "text": "And <cr>[1]</cr><cr>[2]</cr> Roboam went forth into Sichem: for thither all Israel was assembled, to make him king.",
+          "cross_refs": [
+            {
+              "text": "3. Reg. 12."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part. Division of the kingdom. David's issue reigning only in two tribes, which also are carried captive into Babylon."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3872,7 +3883,7 @@
         },
         {
           "verse": 27,
-          "text": "his works also the first and the last, are"
+          "text": "his works also the first and the last, are written in the Book of the kings of Juda and Israel."
         }
       ],
       "summary": "Josias celebrateth a most Solemn Pasch. 20. Is slain by the king of Aegypt, all Juda lamenting him, 25. most specially Jeremias."

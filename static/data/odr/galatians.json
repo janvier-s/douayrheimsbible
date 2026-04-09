@@ -191,8 +191,18 @@
         },
         {
           "verse": 11,
-          "text": "And when Cephas was come to Antioch, I resisted him <cr>[1][2]</cr> in face, because he was reprehensible.",
-          "has_annotation": true
+          "text": "And when Cephas was come to Antioch, I resisted him <cr>[1]</cr><cr>[2]</cr> in face, because he was reprehensible.",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "c That is, in presence, before them all , as Beza himself expoundeth it. Yet the English Bezites to the more disgracing of S. Peter, translate, to his face , No. Test. an. 1580."
+            },
+            {
+              "label": "2",
+              "text": "c κατὰ πρόσωπον."
+            }
+          ]
         },
         {
           "verse": 12,

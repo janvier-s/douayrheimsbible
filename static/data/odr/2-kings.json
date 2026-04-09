@@ -2616,7 +2616,12 @@
         },
         {
           "verse": 2,
-          "text": "The king therefore calling the Gabaonites, said to them. (Moreover the Gabaonites were not of the children of Israel, but the relics of the Amorrheites: For the children of Israel had sworn to them, and Saul would strike them of zeal, as it were for the children of Israel & Juda.) <cr>[1]</cr>"
+          "text": "The king therefore calling the Gabaonites, said to them. (Moreover the Gabaonites were not of the children of Israel, but the relics of the Amorrheites: For the children of Israel had sworn to them, and Saul would strike them of zeal, as it were for the children of Israel & Juda.) <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Iosue 9."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -3108,7 +3113,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <na>(a)(a)</na> the fury of our Lord added to be angry against Israel, & stirred up David among them saying: Go, number Israel and Juda."
+          "text": "And <na>(a)</na><na>(b)</na> the fury of our Lord added to be angry against Israel, & stirred up David among them saying: Go, number Israel and Juda.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This sin & punishment happened before, when David had health and strength of body."
+            },
+            {
+              "label": "b",
+              "text": "The fury of our Lord, that is Satan (a furious spirit, yet God's creature) not our Lord himself, but by permission only. <i>1. Par. 2. 1. Satan arose against Israel, & moved David.</i>"
+            }
+          ]
         },
         {
           "verse": 2,

@@ -194,7 +194,22 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1][2]</cr> exhort your hearts and confirm you in every good work and word."
+          "text": "<cr>[1]</cr><cr>[2]</cr> exhort your hearts and confirm you in every good work and word.",
+          "cross_refs": [
+            {
+              "text": "1. Io. 2. v. 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c This word of exhorting implieth in it comfort and consolation: as 2. Cor. 1. v. 4. & 6."
+            },
+            {
+              "label": "2",
+              "text": "c παρακαλέσαι"
+            }
+          ]
         }
       ],
       "summary": "He requireth them, in no case to think that Domesday is at hand, 3. repeating onto them, that there must before come first a revolt, secondly the revelation also of Antichrist himself in person, and that Antichrist shall not permit any God to be worshipped but only himself: that also with his lying wonders he shall win to him the incredulous Jews. But Christ shall come then immediately in majesty, and destroy him and his. 13. Therefore he thanketh God for the faith of the Thessalonians, 15. and biddeth them stick to his Traditions both written and unwritten, & prayeth God to confirm them."
@@ -229,7 +244,17 @@
         },
         {
           "verse": 6,
-          "text": "And we denounce unto you, brethren, in the name of our Lord <sc>Jesus</sc> Christ, that you withdraw yourselves from every brother walking inordinately, and not according to the <cr>[1][2]</cr> tradition which they have received of us."
+          "text": "And we denounce unto you, brethren, in the name of our Lord <sc>Jesus</sc> Christ, that you withdraw yourselves from every brother walking inordinately, and not according to the <cr>[1]</cr><cr>[2]</cr> tradition which they have received of us.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Here also (as is noted before 2. Thess. 2, 15. ) the adversaries in their translations avoid the word, Tradition , being plain in the Greek, lest themselves might seem to be noted as men walking inordinately, and not according to Apostolical Tradition, as all Schismatics, Heretics, and rebels to God's Church do."
+            },
+            {
+              "label": "2",
+              "text": "c παράδοσιν."
+            }
+          ]
         },
         {
           "verse": 7,

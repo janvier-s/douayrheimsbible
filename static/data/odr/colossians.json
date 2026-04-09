@@ -56,8 +56,16 @@
         },
         {
           "verse": 10,
-          "text": "that you may walk <cr>[1][2]</cr> worthy of God, in all things pleasing: fructifying in <cr>[3]</cr> all good work, & increasing in the knowledge of God:",
+          "text": "that you may walk <cr>[1]</cr><cr>[2]</cr> worthy of God, in all things pleasing: fructifying in <cr>[3]</cr> all good work, & increasing in the knowledge of God:",
           "notes": [
+            {
+              "label": "1",
+              "text": "c So S. Ambr. & the Gr. Doctors, or thus worthily pleasing God, &c."
+            },
+            {
+              "label": "2",
+              "text": "c ἀξίως τοῦ κυρίου"
+            },
             {
               "label": "3",
               "text": "c Many things requisite, and diverse things acceptable to God beside faith."

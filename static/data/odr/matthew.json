@@ -195,6 +195,10 @@
         {
           "marker": 1,
           "text": "THE FIRST part of this Gospel, of the Infancy of our Saviour Christ."
+        },
+        {
+          "marker": 2,
+          "text": "Gen. 12. 22. 2. Reg. 7. Psal. 131."
         }
       ]
     },
@@ -1016,7 +1020,18 @@
         },
         {
           "verse": 9,
-          "text": "Thus therefore shall you pray. <cr>[1][2]</cr> <i><sc>Our Father</sc> which art in heaven, sanctified be thy name.</i>"
+          "text": "Thus therefore shall you pray. <cr>[1]</cr><cr>[2]</cr> <i><sc>Our Father</sc> which art in heaven, sanctified be thy name.</i>",
+          "cross_refs": [
+            {
+              "text": "Luc. 11, 2."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The PATER NOSTER."
+            }
+          ]
         },
         {
           "verse": 10,
@@ -1688,7 +1703,18 @@
         },
         {
           "verse": 18,
-          "text": "<cr>[1][2]</cr> As he was speaking this unto them, behold a certain Governor approached, and adored him, saying: Lord, my daughter is even now dead; but come, lay thy hand upon her, and she shall live."
+          "text": "<cr>[1]</cr><cr>[2]</cr> As he was speaking this unto them, behold a certain Governor approached, and adored him, saying: Lord, my daughter is even now dead; but come, lay thy hand upon her, and she shall live.",
+          "cross_refs": [
+            {
+              "text": "Mar. 5, 22. Luc. 8, 41."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon the 23. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -2094,7 +2120,18 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1][2]</cr> And when John had heard in prison the works of Christ; sending two of his Disciples, he said to him:"
+          "text": "<cr>[1]</cr><cr>[2]</cr> And when John had heard in prison the works of Christ; sending two of his Disciples, he said to him:",
+          "cross_refs": [
+            {
+              "text": "Luc. 7, 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel on the 2. Sunday in Advent."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -3095,7 +3132,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Then</sc> <cr>[1][2]</cr> came to him from Jerusalem Scribes and Pharisees, saying:"
+          "text": "<sc>Then</sc> <cr>[1]</cr><cr>[2]</cr> came to him from Jerusalem Scribes and Pharisees, saying:",
+          "cross_refs": [
+            {
+              "text": "Mr. 7, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Wednesday the 3. week in Lent."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3414,8 +3462,19 @@
         },
         {
           "verse": 18,
-          "text": "And I say to thee: <i>That thou art</i> <cr>[1][2]</cr> Peter; <i>and upon this</i> Rock <i>will I build my Church, and the gates of Hell shall not prevail</i> against it.",
-          "has_annotation": true
+          "text": "And I say to thee: <i>That thou art</i> <cr>[1]</cr><cr>[2]</cr> Peter; <i>and upon this</i> Rock <i>will I build my Church, and the gates of Hell shall not prevail</i> against it.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Io. 1, 42. Io. 21, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "That is, a Rock."
+            }
+          ]
         },
         {
           "verse": 19,
@@ -3490,7 +3549,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> after six days <sc>Jesus</sc> taketh unto him Peter, and James, & John his brother, & bringeth them into a high mountain apart:"
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> after six days <sc>Jesus</sc> taketh unto him Peter, and James, & John his brother, & bringeth them into a high mountain apart:",
+          "cross_refs": [
+            {
+              "text": "Mr. 9, 2. Luc. 9, 28."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Transfiguration of our Lord, celebrated in the Church the 6. of Aug. The Gospel of the said feast, & of the 2. Sunday in Lent: and on Imber Saturday before."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3639,8 +3709,19 @@
       "verses": [
         {
           "verse": 1,
-          "text": "AT <cr>[1][2]</cr> that hour the Disciples came to <sc>Jesus</sc>, saying: Who, thinkest thou, is the greater in the Kingdom of Heaven?",
-          "has_annotation": true
+          "text": "AT <cr>[1]</cr><cr>[2]</cr> that hour the Disciples came to <sc>Jesus</sc>, saying: Who, thinkest thou, is the greater in the Kingdom of Heaven?",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Mr. 9, 34. Luc. 9, 46."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel on Michaelmas day Septemb. 29. And upon his Apparition. Maij 8."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -4180,7 +4261,18 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1][2]</cr> And <sc>Jesus</sc> going up to Jerusalem, took the twelve Disciples secretly, and said to them:"
+          "text": "<cr>[1]</cr><cr>[2]</cr> And <sc>Jesus</sc> going up to Jerusalem, took the twelve Disciples secretly, and said to them:",
+          "cross_refs": [
+            {
+              "text": "Mr. 10, 32. Luc. 18, 31."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Wednesday the 2. week in Lent. And in a votive Mass of the holy Cross."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -4192,7 +4284,18 @@
         },
         {
           "verse": 20,
-          "text": "<cr>[1][2]</cr> Then came to him the mother of the sons of Zebedee with her sons, adoring and desiring something of him."
+          "text": "<cr>[1]</cr><cr>[2]</cr> Then came to him the mother of the sons of Zebedee with her sons, adoring and desiring something of him.",
+          "cross_refs": [
+            {
+              "text": "Mr. 10, 35."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon S. Jame's day. Iul. 25 . And S. John's ante portam Latinam Maij 6."
+            }
+          ]
         },
         {
           "verse": 21,
@@ -4292,7 +4395,18 @@
         },
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> when they drew nigh to Jerusalem, and were come to Beth-phagee unto Mount-olivet, then <sc>Jesus</sc> sent two Disciples,"
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when they drew nigh to Jerusalem, and were come to Beth-phagee unto Mount-olivet, then <sc>Jesus</sc> sent two Disciples,",
+          "cross_refs": [
+            {
+              "text": "Mr. 11, 1. Luc. 19, 20. Io. 12, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel on Palm Sunday before the benediction of the Palms."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -4660,7 +4774,18 @@
         },
         {
           "verse": 15,
-          "text": "<cr>[1][2]</cr> Then the Pharisees departing, consulted among themselves for to entrap him in his talk."
+          "text": "<cr>[1]</cr><cr>[2]</cr> Then the Pharisees departing, consulted among themselves for to entrap him in his talk.",
+          "cross_refs": [
+            {
+              "text": "Mr. 12, 13. Lu. 20, 20."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon the 22. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 16,
@@ -4754,7 +4879,18 @@
         },
         {
           "verse": 34,
-          "text": "<cr>[1][2]</cr> But the Pharisees hearing that he had put the Sadducees to silence, came together:"
+          "text": "<cr>[1]</cr><cr>[2]</cr> But the Pharisees hearing that he had put the Sadducees to silence, came together:",
+          "cross_refs": [
+            {
+              "text": "Mar. 12, 28."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon the 17. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 35,
@@ -5618,7 +5754,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> it came to pass, when <sc>Jesus</sc> had ended all these words, he said to his Disciples:"
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> it came to pass, when <sc>Jesus</sc> had ended all these words, he said to his Disciples:",
+          "cross_refs": [
+            {
+              "text": "Mr. 14, 1. Luc. 22, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Passion according to S. Matthew in these two Chapters, is the Gospel at Mass upon Palm Sunday."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -6032,7 +6179,18 @@
         },
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> when morning was come; all the chief Priests and ancients of the people consulted together against <sc>Jesus</sc>, that they might put him to death."
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when morning was come; all the chief Priests and ancients of the people consulted together against <sc>Jesus</sc>, that they might put him to death.",
+          "cross_refs": [
+            {
+              "text": "Mr. 15, 1. Lu. 23, 1. Io. 18, 28."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "PRIME, or Hora prima, in the Church's Service."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -6376,8 +6534,23 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2][3]</cr> in the evening of the Sabboth which dawneth on the first of the Sabboth, came Mary Magdalene, and the other Mary to see the sepulchre.",
-          "has_annotation": true
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr><cr>[3]</cr> in the evening of the Sabboth which dawneth on the first of the Sabboth, came Mary Magdalene, and the other Mary to see the sepulchre.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Mr. 16, 1. Luc. 24, 1. Io. 20, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel for the night Mass of Christ's Resurrection, which is now used to be said on Easter eve."
+            },
+            {
+              "label": "3",
+              "text": "EASTER day."
+            }
+          ]
         },
         {
           "verse": 2,

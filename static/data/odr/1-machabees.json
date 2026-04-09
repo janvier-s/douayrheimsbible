@@ -2534,10 +2534,6 @@
       "chapter": 9,
       "verses": [
         {
-          "verse": 0,
-          "text": "environed by Bacchides chaseth him away to his fenced <i>places, killing many. 54. Alcimus beginning to deface the temple, is striken with a palsy, and dieth miserably. 57. So they have peace two years. 58. Bacchides coming with a new army: 62. Jonathas and Simon retire into Bethbessen: 65. there defend themselves, and annoy the enemy. 69. who blaming his counsellers, maketh peace, and departeth.</i>"
-        },
-        {
           "verse": 1,
           "text": "In <na>(a)</na> the mean time as Demetrius heard that Nicanor was fallen and his army in the battle, he added to send Bacchides and Alcimus again into Jurie, and the right wing with them.",
           "notes": [
@@ -2895,7 +2891,7 @@
           "text": "And the sword ceased out of Israel: and Jonathas dwelt in Machmas, and Jonathas began there to judge the people, and he destroyed the impious out of Israel."
         }
       ],
-      "summary": "Bacchides and Alcimus returning into Jury make great slaughter. 5. More than two parts of Judas' small troop flying away, he with eight hundred, setteth upon the enemy, 14. overthroweth the strongest part of their army: 16. but another part coming at his back, with great slaughter on both parties, Judas is slain: 19. and most honourably buried. 23. Much evil increaseth in Israel. 28. Jonathas is made captain general. 36. The children of Iambrie kill his brother, which he revengeth. 43. Being"
+      "summary": "Bacchides and Alcimus returning into Jury make great slaughter. 5. More than two parts of Judas' small troop flying away, he with eight hundred, setteth upon the enemy, 14. overthroweth the strongest part of their army: 16. but another part coming at his back, with great slaughter on both parties, Judas is slain: 19. and most honourably buried. 23. Much evil increaseth in Israel. 28. Jonathas is made captain general. 36. The children of Iambrie kill his brother, which he revengeth. 43. Being environed by Bacchides chaseth him away to his fenced <i>places, killing many. 54. Alcimus beginning to deface the temple, is striken with a palsy, and dieth miserably. 57. So they have peace two years. 58. Bacchides coming with a new army: 62. Jonathas and Simon retire into Bethbessen: 65. there defend themselves, and annoy the enemy. 69. who blaming his counsellers, maketh peace, and departeth.</i>"
     },
     {
       "chapter": 10,
@@ -4170,7 +4166,13 @@
         },
         {
           "verse": 54,
-          "text": "And Simon saw <na>(f)</na> John his son, that he was a"
+          "text": "And Simon saw <na>(f)</na> John his son, that he was a valiant man of war: and he made him captain of all the hosts: and he dwelt in Gazara.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "This John Hyrcanus defended the country against invaders. ch. 16."
+            }
+          ]
         }
       ],
       "summary": "Simon exhorteth the people to defend themselves, and religion: 7. is made general captain. 14. Tryphon demandeth an hundred talents of silver, and hostages for Jonathas, 17. which are sent (to satisfy the people.) Tryphon receiveth the ransom; 23. killeth Jonathas, and his sons. 25. Simon erecteth a memory to his parents and brethren. 31. Tryphon murdereth his young King. 33. Simon fortifieth the country, obtaineth peace, and liberties of Demetrius: 42. subdueth the city Gaza, and the rebellious castle within Jerusalem."

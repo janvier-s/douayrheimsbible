@@ -1599,7 +1599,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "IN <cr>[1][2]</cr> those days again when there was a great multitude, and had not what to eat: calling his Disciples together, he saith to them:"
+          "text": "IN <cr>[1]</cr><cr>[2]</cr> those days again when there was a great multitude, and had not what to eat: calling his Disciples together, he saith to them:",
+          "cross_refs": [
+            {
+              "text": "Mt. 15, 32."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon the 6. Sunday after Pentecost."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2413,7 +2424,18 @@
         },
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> when they came nigh unto Jerusalem and Bethania to Mount-olivet, he sendeth two of his Disciples,"
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when they came nigh unto Jerusalem and Bethania to Mount-olivet, he sendeth two of his Disciples,",
+          "cross_refs": [
+            {
+              "text": "Mt. 21, 1. Lu. 19, 20. Io. 12, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "PALM Sunday."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -2523,10 +2545,20 @@
         },
         {
           "verse": 20,
-          "text": "<cr>[1][2]</cr> And <cr>[3]</cr> when they passed by in the morning, they saw the figtree withered from the roots.",
+          "text": "<cr>[1]</cr><cr>[2]</cr> And <cr>[3]</cr> when they passed by in the morning, they saw the figtree withered from the roots.",
           "cross_refs": [
             {
               "text": "Mt. 21, 20."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "TUESDAY."
+            },
+            {
+              "label": "2",
+              "text": "b The Gospel for S. Gregorius Thaumaturgus Novemb. 17. And in a Votive Mass for any necessity."
             }
           ]
         },
@@ -2888,7 +2920,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> when he went out of the Temple, one of his Disciples saith to him: Master, behold what manner of stones, and what kind of buildings."
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when he went out of the Temple, one of his Disciples saith to him: Master, behold what manner of stones, and what kind of buildings.",
+          "cross_refs": [
+            {
+              "text": "Mt. 24, 1. Lu. 21, 5."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "See the Annotations upon S. Matthew c. 24."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3109,7 +3152,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> the Pasch was, and the Azymes after two days: and the chief Priests and the Scribes sought how they might by some wile lay hands on him, and kill him."
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> the Pasch was, and the Azymes after two days: and the chief Priests and the Scribes sought how they might by some wile lay hands on him, and kill him.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 1. Lu. 22, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "TENEBRAE Wednesday."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3506,7 +3560,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> forthwith in the morning the chief Priests with the Ancients and the Scribes & the whole Council, consulting together, binding <sc>Jesus</sc> led & delivered him to Pilate."
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> forthwith in the morning the chief Priests with the Ancients and the Scribes & the whole Council, consulting together, binding <sc>Jesus</sc> led & delivered him to Pilate.",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 1. Lu. 23, 1. Io. 18, 28."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "GOOD FRIDAY."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3740,8 +3805,19 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> when the Sabboth was past, Mary Magdalene and Mary of James, and Salome bought spices, that coming they might anoint <sc>Jesus</sc>.",
-          "has_annotation": true
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when the Sabboth was past, Mary Magdalene and Mary of James, and Salome bought spices, that coming they might anoint <sc>Jesus</sc>.",
+          "has_annotation": true,
+          "cross_refs": [
+            {
+              "text": "Mt. 28, 1. Luc. 24, 1. Io. 20, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Easter day."
+            }
+          ]
         },
         {
           "verse": 2,

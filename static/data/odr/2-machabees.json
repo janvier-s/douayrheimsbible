@@ -8,7 +8,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "To <cr>[1][2]</cr> the brethren, the Jews that are throughout Aegypt, the brethren, the Jews that are in Jerusalem, and that are in the country of Jurie, send health, & good peace."
+          "text": "To <cr>[1]</cr><cr>[2]</cr> the brethren, the Jews that are throughout Aegypt, the brethren, the Jews that are in Jerusalem, and that are in the country of Jurie, send health, & good peace.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "E"
+            },
+            {
+              "label": "2",
+              "text": "The Appendix concerning two epistles of the Jews was added to the history of the first book by him that writ this second."
+            }
+          ]
         },
         {
           "verse": 2,

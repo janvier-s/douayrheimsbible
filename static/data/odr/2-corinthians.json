@@ -351,13 +351,21 @@
         },
         {
           "verse": 8,
-          "text": "In all things we suffer <cr>[1][2]</cr> <cr>[3]</cr>",
+          "text": "In all things we suffer <cr>[1]</cr><cr>[2]</cr> <cr>[3]</cr>",
           "cross_refs": [
             {
               "text": "2. Tim. 2. tribulation, but are not in distress:"
             }
           ],
           "notes": [
+            {
+              "label": "1",
+              "text": "Heretics corrupters of God's word; Catholic Doctors, right handlers thereof."
+            },
+            {
+              "label": "2",
+              "text": "See Iren. li. 1. c. 1."
+            },
             {
               "label": "3",
               "text": "in 2. ad Rom."
@@ -409,8 +417,18 @@
         },
         {
           "verse": 17,
-          "text": "For that our tribulation which presently is momentary & light, <cr>[1][2]</cr> worketh above measure exceedingly an eternal weight of glory in us,",
-          "has_annotation": true
+          "text": "For that our tribulation which presently is momentary & light, <cr>[1]</cr><cr>[2]</cr> worketh above measure exceedingly an eternal weight of glory in us,",
+          "has_annotation": true,
+          "notes": [
+            {
+              "label": "1",
+              "text": "c The English Bible 1577, doth falsely translate, prepareth ."
+            },
+            {
+              "label": "2",
+              "text": "c κατεργάζεται."
+            }
+          ]
         },
         {
           "verse": 18,
@@ -911,7 +929,12 @@
         },
         {
           "verse": 7,
-          "text": "Every one as he hath determined in his heart, not of sadness or of necessity. For <cr>[1]</cr> <i>God loveth a cheerful giver.</i>"
+          "text": "Every one as he hath determined in his heart, not of sadness or of necessity. For <cr>[1]</cr> <i>God loveth a cheerful giver.</i>",
+          "cross_refs": [
+            {
+              "text": "Ecclci 35, 11."
+            }
+          ]
         },
         {
           "verse": 8,

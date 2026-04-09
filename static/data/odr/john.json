@@ -133,10 +133,19 @@
         },
         {
           "verse": 21,
-          "text": "And they asked him: What then? Art thou <cr>[1]</cr> Elias? And he said: I am not. Art thou <cr>[2][3]</cr> the Prophet? And he answered: No.",
+          "text": "And they asked him: What then? Art thou <cr>[1]</cr> Elias? And he said: I am not. Art thou <cr>[2]</cr><cr>[3]</cr> the Prophet? And he answered: No.",
           "cross_refs": [
             {
               "text": "Mal. 4, 5."
+            },
+            {
+              "text": "Deu. 18, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "By like the Jews ignorantly understood not the place in Deuteronomy, of Christ, and therefore they ask also whether he be the Prophet there spoken of. See also c. 7, 40."
             }
           ]
         },
@@ -163,7 +172,18 @@
         },
         {
           "verse": 26,
-          "text": "John answered them, saying: <cr>[1][2]</cr> I baptize in water; but there hath stood in the midst of you whom you know not."
+          "text": "John answered them, saying: <cr>[1]</cr><cr>[2]</cr> I baptize in water; but there hath stood in the midst of you whom you know not.",
+          "cross_refs": [
+            {
+              "text": "Mt. 3, 11. Mr. 1, 8. Lu. 3, 16."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "He doth often here signify the great difference of his Baptism & of Christ's, as of his person & Christ's. See Annot. Mat. 3."
+            }
+          ]
         },
         {
           "verse": 27,
@@ -1211,7 +1231,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>After</sc> <cr>[1][2]</cr> these things <sc>Jesus</sc> went beyond the sea of Galilee, which is of Tiberias."
+          "text": "<sc>After</sc> <cr>[1]</cr><cr>[2]</cr> these things <sc>Jesus</sc> went beyond the sea of Galilee, which is of Tiberias.",
+          "cross_refs": [
+            {
+              "text": "Mt. 14, 13. Mar. 6, 32. Lu. 9, 10."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Mid-lent Sunday."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3007,7 +3038,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Jesus</sc> <cr>[1][2]</cr> therefore six days before the Pasch came to Bethania, where Lazarus was, that had been dead, whom <sc>Jesus</sc> raised."
+          "text": "<sc>Jesus</sc> <cr>[1]</cr><cr>[2]</cr> therefore six days before the Pasch came to Bethania, where Lazarus was, that had been dead, whom <sc>Jesus</sc> raised.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 6. Mar. 14, 3."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Monday in Holy Week."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -3319,13 +3361,17 @@
         },
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> before the festival day of Pasch, <sc>Jesus</sc> knowing that his hour was come that he should pass out of this world to his Father: whereas he had loved his that were in the world, unto the end he loved them. <cr>[3]</cr>",
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> before the festival day of Pasch, <sc>Jesus</sc> knowing that his hour was come that he should pass out of this world to his Father: whereas he had loved his that were in the world, unto the end he loved them. <cr>[3]</cr>",
           "cross_refs": [
             {
               "text": "Mt. 26, 1. Mr. 14, 1. Luc. 22, 1."
             }
           ],
           "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Maundy Thursday at Mass, & at the washing of feet."
+            },
             {
               "label": "3",
               "text": "MAUNDY THURSDAY."
@@ -3723,7 +3769,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I <cr>[1][2]</cr> AM the true vine; and my Father is the husband-man."
+          "text": "I <cr>[1]</cr><cr>[2]</cr> AM the true vine; and my Father is the husband-man.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel for some Martyrs, between Easter & Whitsunday. And on SS. Simon and Jude's eve. Oct. 27."
+            },
+            {
+              "label": "2",
+              "text": "The Gospel upon S. George's day: April. 23. And for some other Martyrs between Easter & Whitsunday."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -4245,7 +4301,18 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>When</sc> <cr>[1][2]</cr> <sc>Jesus</sc> had said these things, he went forth with his Disciples beyond the Torrent-Cedron, where was a garden, into the which he entered and his Disciples."
+          "text": "<sc>When</sc> <cr>[1]</cr><cr>[2]</cr> <sc>Jesus</sc> had said these things, he went forth with his Disciples beyond the Torrent-Cedron, where was a garden, into the which he entered and his Disciples.",
+          "cross_refs": [
+            {
+              "text": "Mt. 26, 36. Mr. 14, 32. Lu. 22, 39."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "THURSDAY night. The PASSION according to S. John in these two Chapters, is the Gospel at Mass upon Good Friday. So the PASSION is read in Holy Week four times, according to the four Evangelists, as S. Augustine appointed also in his Church at Hippo. Ser. 144. de tempore."
+            }
+          ]
         },
         {
           "verse": 2,
@@ -4379,7 +4446,18 @@
         },
         {
           "verse": 28,
-          "text": "<cr>[1][2]</cr> They therefore bring <sc>Jesus</sc> from Caiphas into the Palace. And it was morning: and they went not in into the Palace, that they might not be contaminated, but that they might eat the Pasch."
+          "text": "<cr>[1]</cr><cr>[2]</cr> They therefore bring <sc>Jesus</sc> from Caiphas into the Palace. And it was morning: and they went not in into the Palace, that they might not be contaminated, but that they might eat the Pasch.",
+          "cross_refs": [
+            {
+              "text": "Mt. 27, 1. Mr. 15, 1. Lu. 23, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "GOOD FRIDAY."
+            }
+          ]
         },
         {
           "verse": 29,
@@ -4715,13 +4793,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1][2]</cr> the <cr>[3]</cr> first of the Sabboth, Mary Magdalene cometh early, when it was yet dark, unto the monument: and she saw the stone taken away from the monument.",
+          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> the <cr>[3]</cr> first of the Sabboth, Mary Magdalene cometh early, when it was yet dark, unto the monument: and she saw the stone taken away from the monument.",
           "cross_refs": [
             {
               "text": "EASTER DAY. Mt. 28, 1. Mr. 16, 1. Lu. 24, 1."
             }
           ],
           "notes": [
+            {
+              "label": "1",
+              "text": "The Gospel upon Saturday in Easter week."
+            },
             {
               "label": "3",
               "text": "That is, the first day of the week, as some interpret it, taking Sabboth (as sometime it is) for a week. This is our Sunday, called Dies Dominica , because of our Lord's resurrection. See the marg. annot. Luc. 24, 1."

@@ -35,8 +35,16 @@
         },
         {
           "verse": 5,
-          "text": "by whom we have received grace and Apostleship <cr>[1][2]</cr> for obedience to the faith <cr>[3]</cr> in all Nations for the name of him,",
+          "text": "by whom we have received grace and Apostleship <cr>[1]</cr><cr>[2]</cr> for obedience to the faith <cr>[3]</cr> in all Nations for the name of him,",
           "notes": [
+            {
+              "label": "1",
+              "text": "c Faith must not be subject to sense, reason, arguing or understanding, but must command & be obeyed in humility and simplicity."
+            },
+            {
+              "label": "2",
+              "text": "c εἰς ὑπακοὴν πίστεως."
+            },
             {
               "label": "3",
               "text": "S. Augustine useth this place and the like against Heretics, which would draw the common Catholic faith of all nations, to some certain countries or corners of the world. Aug. ep. 161."
@@ -407,13 +415,22 @@
         },
         {
           "verse": 4,
-          "text": "God forbid. But <cr>[1]</cr> God is true, & <cr>[2][3]</cr> every man a liar, as it is written: <cr>[4]</cr> <i>That thou mayest be justified in thy words, and overcome when thou art judged.</i>",
+          "text": "God forbid. But <cr>[1]</cr> God is true, & <cr>[2]</cr><cr>[3]</cr> every man a liar, as it is written: <cr>[4]</cr> <i>That thou mayest be justified in thy words, and overcome when thou art judged.</i>",
           "cross_refs": [
             {
               "text": "Io. 3, 33."
             },
             {
               "text": "Ps. 115, 11."
+            },
+            {
+              "text": "Ps. 50, 6."
+            }
+          ],
+          "notes": [
+            {
+              "label": "3",
+              "text": "God only by nature is true, all mere men by nature may lie, deceive and be deceived: yet God by his grace & spirit may and doth preserve the Apostles and principal Governers of his people & the Church and Councels in all truth, though they were and are mere men."
             }
           ]
         },
