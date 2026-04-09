@@ -92,7 +92,7 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div
-	class="fixed top-[var(--header-height)] left-1/2 -translate-x-1/2 z-[65] bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] flex flex-col font-ui"
+	class="fixed top-[var(--header-height)] left-1/2 -translate-x-1/2 z-[65] bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] max-md:max-h-[calc(100vh-var(--header-height)-56px)] flex flex-col font-ui"
 	role="dialog"
 	aria-label="Bible navigation"
 	aria-modal="true"
