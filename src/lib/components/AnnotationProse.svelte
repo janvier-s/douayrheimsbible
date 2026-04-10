@@ -179,15 +179,6 @@
 		line-height: 1.45;
 	}
 
-	.ann-note-marker {
-		font-family: var(--font-ui);
-		font-size: 10px;
-		font-weight: 600;
-		color: var(--color-accent-text);
-		flex-shrink: 0;
-		min-width: 14px;
-	}
-
 	.ann-note-text {
 		font-family: var(--font-ui);
 		font-size: 13px;
