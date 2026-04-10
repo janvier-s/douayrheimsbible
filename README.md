@@ -1,42 +1,63 @@
-# sv
+# Original Douay-Rheims Bible
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The Original Douay-Rheims Bible online -- the first complete English Catholic Bible, translated from the Latin Vulgate between 1582 and 1610. Read at [douayrheimsbible.net](https://douayrheimsbible.net).
 
-## Creating a project
+## Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **SvelteKit 2** with Svelte 5
+- **Cloudflare Pages** (static assets) + **Cloudflare Workers** (dynamic routes)
+- **Tailwind CSS 3**
+- **TypeScript**
+- GitHub Actions for CI/CD with automatic CDN cache purge on deploy
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Local Development
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.12.8 create --template minimal --types ts --install npm douayrheimsbible
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+The dev server runs at `http://localhost:5173`.
 
-To create a production version of your app:
+## Build
 
-```sh
+```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+The `prebuild` step (`scripts/prepare-data.ts`) compiles raw source data into optimised JSON bundles consumed at runtime. This runs automatically before every build.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Deploy
+
+Deployments are handled by GitHub Actions on push to `main`. The workflow:
+
+1. Runs `npm run build`
+2. Publishes to Cloudflare Pages via Wrangler
+3. Purges the Cloudflare CDN cache
+
+Secrets required: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_ZONE_ID`.
+
+## Project Structure
+
+```
+src/
+  routes/         # SvelteKit pages and API endpoints
+    odr/          # Bible reader (routed through Worker for cache safety)
+    compare/      # Side-by-side translation comparison
+    search/       # Full-text search
+    history/      # Editorial articles on the Bible's history
+  lib/
+    components/   # Shared UI components
+    data/         # Data loaders and type definitions
+scripts/
+  prepare-data.ts # Build-time data pipeline
+static/           # Favicons, webmanifest, robots.txt
+```
+
+## Routing Architecture
+
+ODR chapter pages (`/odr/*/*`) are served through the Cloudflare Worker rather than as static assets. This ensures the HTML always references the current build's asset hashes, preventing stale-chunk MIME errors when Cloudflare's CDN caches old HTML.
+
+## License
+
+All rights reserved. Source available for reference.
