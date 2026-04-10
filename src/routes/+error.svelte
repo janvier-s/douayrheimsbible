@@ -5,43 +5,31 @@
 		latin: string;
 		heading: string;
 		message: string;
-		verse: string;
-		citation: string;
 	};
 
 	const errors: Record<number, ErrorInfo> = {
 		404: {
 			latin: 'Non Inventum',
 			heading: 'Page Not Found',
-			message:
-				'This page hath been lost to the ages, like a manuscript consumed by time. The scripture you sought does not dwell here.',
-			verse: 'Seek, and you shall find; knock, and it shall be opened to you.',
-			citation: 'Matt. 7:7'
+			message: 'That which thou seekest dwelleth not within these pages.'
 		},
 		403: {
 			latin: 'Accedere Non Licet',
 			heading: 'Access Denied',
-			message:
-				'Thou art not permitted entry here. This portion of the scriptorium is closed to thee at this time.',
-			verse: 'He that humbleth himself shall be exalted.',
-			citation: 'Luke 14:11'
+			message: 'Thou art not permitted entry into this portion of the scriptorium.'
 		},
 		500: {
 			latin: 'Scriptorium in Confusione',
 			heading: 'Something Went Wrong',
 			message:
-				'Something hath gone awry in our digital scriptorium. Our scribes have been made aware and are working to restore order.',
-			verse: 'In your patience you shall possess your souls.',
-			citation: 'Luke 21:19'
+				'Something hath gone awry in our scriptorium. Our scribes are working to restore order.'
 		}
 	};
 
 	$: info = errors[$page.status] ?? {
 		latin: 'Error Ignotus',
 		heading: 'An Error Occurred',
-		message: $page.error?.message ?? 'Something unexpected hath occurred in our scriptorium.',
-		verse: 'Cast thy care upon the Lord, and he shall sustain thee.',
-		citation: 'Ps. 54:23'
+		message: $page.error?.message ?? 'Something unexpected hath occurred in our scriptorium.'
 	};
 </script>
 
@@ -53,26 +41,16 @@
 	<div class="error-inner">
 		<div class="ornament" aria-hidden="true">✦</div>
 
-		<div class="status-block">
-			<span class="status-number">{$page.status}</span>
-			<span class="status-divider" aria-hidden="true">—</span>
-			<span class="status-latin">{info.latin}</span>
-		</div>
+		<span class="status-latin">{info.latin}</span>
+		<span class="status-number">{$page.status}</span>
 
 		<h1 class="error-heading">{info.heading}</h1>
 
 		<p class="error-message">{info.message}</p>
 
-		<blockquote class="error-verse">
-			<p class="verse-text">"{info.verse}"</p>
-			<cite class="verse-citation">— {info.citation}</cite>
-		</blockquote>
-
-		<div class="error-rule" aria-hidden="true"></div>
-
 		<nav class="error-nav" aria-label="Recovery navigation">
-			<a href="/odr/genesis/1" class="nav-link nav-primary">Begin at Genesis</a>
-			<a href="/books" class="nav-link">All Books</a>
+			<a href="/odr/genesis/1" class="nav-link nav-primary">Read Genesis</a>
+			<a href="/" class="nav-link">Go Home</a>
 			<a href="/search" class="nav-link">Search</a>
 		</nav>
 	</div>
@@ -94,52 +72,36 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0;
 	}
 
-	/* Ornament */
 	.ornament {
 		font-size: 10px;
 		color: var(--color-accent);
 		letter-spacing: 0.4em;
-		margin-bottom: 32px;
+		margin-bottom: 28px;
 		opacity: 0.7;
 	}
 
-	/* Status line */
-	.status-block {
-		display: flex;
-		align-items: baseline;
-		gap: 10px;
-		margin-bottom: 20px;
-		font-family: var(--font-ui);
-	}
-
-	.status-number {
-		font-size: clamp(4rem, 12vw, 6.5rem);
-		line-height: 1;
-		font-weight: 300;
-		color: var(--color-accent);
-		letter-spacing: -0.03em;
-		font-family: var(--font-reader);
-	}
-
-	.status-divider {
-		color: var(--color-border);
-		font-size: 1.5rem;
-		font-weight: 300;
-	}
-
 	.status-latin {
+		font-family: var(--font-ui);
 		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.25em;
 		color: var(--color-subtle);
 		font-weight: 500;
-		white-space: nowrap;
+		margin-bottom: 8px;
 	}
 
-	/* Heading */
+	.status-number {
+		font-family: var(--font-reader);
+		font-size: clamp(4rem, 12vw, 6.5rem);
+		line-height: 1;
+		font-weight: 300;
+		color: var(--color-text);
+		letter-spacing: -0.03em;
+		margin-bottom: 20px;
+	}
+
 	.error-heading {
 		font-family: var(--font-reader);
 		font-size: clamp(1.1rem, 3vw, 1.4rem);
@@ -149,71 +111,15 @@
 		margin: 0 0 18px;
 	}
 
-	/* Description */
 	.error-message {
 		font-family: var(--font-reader);
 		font-size: 15px;
 		line-height: 1.75;
 		color: var(--color-muted);
-		margin: 0 0 32px;
+		margin: 0 0 36px;
 		font-style: italic;
 	}
 
-	/* Scripture quote */
-	.error-verse {
-		margin: 0 0 32px;
-		padding: 20px 24px;
-		border-left: 2px solid var(--color-accent);
-		border-right: 2px solid var(--color-accent);
-		background: transparent;
-		text-align: center;
-		position: relative;
-	}
-
-	.error-verse::before,
-	.error-verse::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 40px;
-		height: 1px;
-		background: var(--color-border);
-	}
-	.error-verse::before {
-		top: 0;
-	}
-	.error-verse::after {
-		bottom: 0;
-	}
-
-	.verse-text {
-		font-family: var(--font-reader);
-		font-size: 14px;
-		line-height: 1.7;
-		color: var(--color-text);
-		margin: 0 0 8px;
-		font-style: italic;
-	}
-
-	.verse-citation {
-		font-family: var(--font-ui);
-		font-size: 10px;
-		text-transform: uppercase;
-		letter-spacing: 0.2em;
-		color: var(--color-accent);
-		font-style: normal;
-	}
-
-	/* Rule */
-	.error-rule {
-		width: 40px;
-		height: 1px;
-		background: var(--color-border);
-		margin-bottom: 28px;
-	}
-
-	/* Navigation */
 	.error-nav {
 		display: flex;
 		align-items: center;
