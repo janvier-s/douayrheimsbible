@@ -14,7 +14,13 @@
 	let readerEl: HTMLElement;
 	let readerObs: IntersectionObserver | null = null;
 
+	let reducedMotion = false;
+
 	onMount(() => {
+		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+		reducedMotion = mq.matches;
+		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
+
 		readerObs = new IntersectionObserver(
 			([entry]) => {
 				readerVisible = entry.isIntersecting;
@@ -137,7 +143,10 @@
 
 			<button
 				class="hero-cta"
-				on:click={() => document.getElementById('reader')?.scrollIntoView({ behavior: 'smooth' })}
+				on:click={() =>
+					document
+						.getElementById('reader')
+						?.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth' })}
 			>
 				Read the Scriptures
 				<span class="hero-cta-arrow" aria-hidden="true">↓</span>
@@ -434,6 +443,23 @@
 		50% {
 			opacity: 1;
 			transform: scaleY(1);
+		}
+	}
+
+	/* ─── Reduced motion ─── */
+	@media (prefers-reduced-motion: reduce) {
+		.hero-cta {
+			transition: none;
+		}
+
+		.hero-cta-arrow {
+			animation: none;
+		}
+
+		.hero-scroll-line {
+			animation: none;
+			opacity: 0.6;
+			transform: none;
 		}
 	}
 

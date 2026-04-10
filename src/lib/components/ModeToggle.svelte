@@ -71,11 +71,23 @@
 		pointer-events: none;
 	}
 
+	@media (prefers-reduced-motion: reduce) {
+		.mode-pill {
+			transition: none;
+		}
+	}
+
 	.mode-btn {
 		font-family: var(--font-ui);
 		letter-spacing: 0.04em;
 		background: none;
 		border: none;
 		cursor: pointer;
+		outline: none;
+	}
+
+	.mode-btn:focus-visible {
+		box-shadow: inset 0 0 0 2px var(--color-accent);
+		border-radius: 3px;
 	}
 </style>

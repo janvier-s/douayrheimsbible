@@ -624,6 +624,22 @@
 		line-height: 1.5;
 	}
 
+	/* ─── Reduced motion ───────────────────────────────────────── */
+	@media (prefers-reduced-motion: reduce) {
+		.tab-slider {
+			transition: none;
+		}
+
+		.verse-section {
+			transition: none;
+		}
+
+		:global(.flash-highlight) {
+			animation: none;
+			background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+		}
+	}
+
 	/* ─── Mobile density overrides ─────────────────────────────── */
 	@media (max-width: 767px) {
 		.content-block {

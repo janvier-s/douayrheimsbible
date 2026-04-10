@@ -57,6 +57,7 @@
 	// debounce tick ($prefs.studyPanelWidth updates every 200ms during drag).
 	let liveWidth = '';
 	let panelDragging = false;
+	let reducedMotion = false;
 	const resize = createPanelResize(
 		(w) => (liveWidth = w),
 		(d) => (panelDragging = d)
@@ -64,11 +65,13 @@
 	$: if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
 	$: panelMaxWidth = $prefs.readingMode === 'study' ? ($isMobile ? '100%' : liveWidth) : '0';
 	$: panelWidth = $isMobile && $prefs.readingMode === 'study' ? '100%' : '';
-	$: panelTransition = panelDragging
-		? 'opacity 250ms ease'
-		: $isMobile
-			? 'opacity 150ms ease'
-			: 'max-width 250ms ease, opacity 250ms ease';
+	$: panelTransition = reducedMotion
+		? 'none'
+		: panelDragging
+			? 'opacity 250ms ease'
+			: $isMobile
+				? 'opacity 150ms ease'
+				: 'max-width 250ms ease, opacity 250ms ease';
 	let panelEl: HTMLElement;
 	$: if (panelEl) resize.bindPanel(panelEl);
 	// Sync inner panel width when not dragging (initial render + settings changes).
@@ -259,6 +262,10 @@
 	}
 
 	onMount(async () => {
+		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+		reducedMotion = mq.matches;
+		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
+
 		// Keep study mode if explicitly selected (e.g. navigating from compare → study).
 		// Only reset from compare, since BibleReader doesn't support compare mode.
 		if ($prefs.readingMode !== 'study') {

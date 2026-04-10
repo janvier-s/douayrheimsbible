@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-export type TranslationId = 'odr' | 'drc' | 'conf' | 'knox' | 'cpdv' | 'kjv' | 'vul';
+export type TranslationId = 'odr' | 'drc' | 'conf' | 'knox' | 'cpdv' | 'kjv' | 'vul' | 'rsv';
 
 export interface Translation {
 	id: TranslationId;
@@ -13,6 +13,8 @@ export interface Translation {
 	fullHeader: boolean;
 	/** Short contextual label shown below the title in column headers */
 	micro?: string;
+	/** Hidden from the UI unless the Konami code has been entered */
+	hidden?: boolean;
 }
 
 // Historical order
@@ -86,10 +88,38 @@ export const TRANSLATIONS: Translation[] = [
 		ntOnly: false,
 		fullHeader: true,
 		micro: 'Modern Vulgate Translation'
+	},
+	{
+		id: 'rsv',
+		label: 'Revised Standard Version, Second Catholic Edition',
+		abbr: 'RSV-2CE',
+		year: '2006',
+		live: false,
+		ntOnly: false,
+		fullHeader: false,
+		micro: 'Ecumenical Catholic Translation',
+		hidden: true
 	}
 ];
 
 export const MAX_COLS = 5;
+
+// ── Konami unlock ─────────────────────────────────────────────────────────────
+
+const KONAMI_KEY = 'konami_rsv';
+
+export const konamiUnlocked = writable<boolean>(
+	browser ? localStorage.getItem(KONAMI_KEY) === '1' : false
+);
+
+konamiUnlocked.subscribe((v) => {
+	if (browser) {
+		if (v) localStorage.setItem(KONAMI_KEY, '1');
+		else localStorage.removeItem(KONAMI_KEY);
+	}
+});
+
+// ── Compare store ─────────────────────────────────────────────────────────────
 
 interface CompareState {
 	order: TranslationId[];
@@ -98,8 +128,8 @@ interface CompareState {
 	columnOffset: number;
 }
 
-// Bump version to reset cached order after historical reordering
-const STORAGE_KEY = 'compareStore_v2';
+// Bump version to reset cached order after adding/reordering translations
+const STORAGE_KEY = 'compareStore_v3';
 
 function loadFromStorage(): Partial<Pick<CompareState, 'order' | 'visible'>> {
 	if (!browser) return {};

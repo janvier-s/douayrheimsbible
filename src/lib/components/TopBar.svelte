@@ -4,7 +4,9 @@
 	import { slide, fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
+	import { get } from 'svelte/store';
 	import { prefs } from '$lib/stores/prefs';
+	import { readingPosition } from '$lib/stores/reading';
 	import { isMobile } from '$lib/stores/mobile';
 	import FloatingNav from './FloatingNav.svelte';
 	import BrandingRow from './BrandingRow.svelte';
@@ -56,6 +58,19 @@
 	let pendingIdx = -1;
 
 	async function selectMode(key: string, index: number) {
+		if (!chapterNum) {
+			// Not on a chapter page — navigate to the last reading position (or genesis 1).
+			const pos = get(readingPosition);
+			const slug = pos?.bookSlug ?? bookSlug ?? 'genesis';
+			const ch = pos?.chapter ?? 1;
+			if (key === 'compare') {
+				goto(`/compare/${slug}/${ch}`);
+			} else {
+				prefs.update((p) => ({ ...p, readingMode: key as 'reading' | 'study' }));
+				goto(`/odr/${slug}/${ch}`);
+			}
+			return;
+		}
 		if (key === 'compare') {
 			pendingIdx = index;
 			const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;

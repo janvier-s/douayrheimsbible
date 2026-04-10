@@ -7,7 +7,7 @@
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
 	import PrefsPanel from './PrefsPanel.svelte';
-	import { compareStore, TRANSLATIONS } from '$lib/stores/compare';
+	import { compareStore, TRANSLATIONS, konamiUnlocked } from '$lib/stores/compare';
 	import type { BookMeta } from '$lib/data/types';
 
 	export let bookMeta: BookMeta;
@@ -47,6 +47,8 @@
 	let prefsOpen = false;
 	let mobileTransOpen = false;
 
+	$: visibleTranslations = $konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden);
+
 	$: isOT = bookMeta.testament === 'OT';
 	$: navLabel = `${bookMeta.odrName} ${chapterNum}`;
 
@@ -84,7 +86,7 @@
 				>Translations</span
 			>
 			<div class="flex items-center gap-[5px]">
-				{#each TRANSLATIONS as t (t.id)}
+				{#each visibleTranslations as t (t.id)}
 					{@const disabled = t.ntOnly && isOT}
 					{@const active = $compareStore.visible.has(t.id)}
 					<div class="relative group/tip">
@@ -136,7 +138,7 @@
 					transition:slide={{ duration: 180 }}
 					class="absolute top-[calc(100%+6px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-50 w-48"
 				>
-					{#each TRANSLATIONS as t (t.id)}
+					{#each visibleTranslations as t (t.id)}
 						{@const disabled = t.ntOnly && isOT}
 						<label
 							class="flex items-center gap-sm py-[6px] cursor-pointer {disabled

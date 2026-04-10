@@ -9,6 +9,8 @@
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
 	export let data: { query: string };
 
+	let reducedMotion = false;
+
 	let inputEl: HTMLInputElement;
 	let query = data.query;
 	let results: SearchResultGroup[] = [];
@@ -24,6 +26,10 @@
 	$: isHero = !searched && !query;
 
 	onMount(() => {
+		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+		reducedMotion = mq.matches;
+		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
+
 		if (inputEl) inputEl.focus();
 		if (query) search(query);
 	});
@@ -73,16 +79,15 @@
 	}
 
 	function collapseAndFade(node: HTMLElement) {
-		const height = node.offsetHeight;
-		const mb = parseFloat(getComputedStyle(node).marginBottom);
+		// Animate only opacity (GPU-composited). The element is kept in document
+		// flow while fading so there's no layout shift during the animation.
+		// One layout reflow happens at the end when the element is removed — that's
+		// a single frame and imperceptible. Animating max-height caused a layout
+		// reflow on every frame for 420ms, visibly moving the footer on Firefox.
 		return {
-			duration: 420,
+			duration: reducedMotion ? 0 : 200,
 			easing: cubicOut,
-			css: (t: number) => {
-				// Opacity completes in first ~140ms (first 1/3); height slides the full 420ms
-				const opacity = Math.max(0, 3 * t - 2);
-				return `opacity: ${opacity}; max-height: ${t * (height + mb)}px; margin-bottom: ${t * mb}px; overflow: hidden;`;
-			}
+			css: (t: number) => `opacity: ${t};`
 		};
 	}
 
@@ -152,7 +157,7 @@
 	id="main-content"
 	class="max-w-[750px] mx-auto px-md font-ui"
 	class:hero-layout={isHero}
-	in:fade={{ duration: 140 }}
+	in:fade={{ duration: reducedMotion ? 0 : 140 }}
 >
 	<!-- Heading — only visible in hero (empty) state, collapses smoothly on first input -->
 	{#if isHero}
@@ -177,7 +182,7 @@
 		>
 			<div
 				class="flex items-center gap-[10px] border border-border rounded-[6px] bg-background px-[14px] h-[52px]
-					focus-within:border-accent transition-colors duration-fast"
+					focus-within:border-sublte transition-colors duration-fast"
 			>
 				<svg
 					width="18"
@@ -219,7 +224,7 @@
 
 	<!-- Example queries (shown when no results and no query) -->
 	{#if isHero}
-		<div class="text-center" in:fade={{ duration: 160 }}>
+		<div class="text-center" in:fade={{ duration: reducedMotion ? 0 : 160 }}>
 			<p class="text-subtle text-[13px] mb-sm">Try a reference:</p>
 			<div class="flex flex-wrap justify-center gap-[8px]">
 				{#each EXAMPLES as example}
@@ -242,8 +247,13 @@
 
 		<!-- No results -->
 		{#if searched && !loading && results.length === 0}
-			<p class="text-subtle text-[14px] text-center" in:fade={{ duration: 160 }}>
-				No references found. Try a verse like <button
+			<p
+				class="text-subtle text-[14px] text-center"
+				in:fade={{ duration: reducedMotion ? 0 : 160 }}
+			>
+				No referencesThat verse is not found in the Original Douay-Rheims Bible.<br />Try a verse
+				like
+				<button
 					class="text-subtle hover:text-foreground hover:underline"
 					on:click={() => onExampleClick('James 2:24')}>James 2:24</button
 				>
@@ -252,7 +262,7 @@
 
 		<!-- Results -->
 		{#if results.length > 0}
-			<div class="space-y-[24px]" in:fade={{ duration: 260 }}>
+			<div class="space-y-[24px]" in:fade={{ duration: reducedMotion ? 0 : 260 }}>
 				{#each results as group, groupIdx}
 					{#if groupIdx > 0}
 						<hr class="border-border" />
