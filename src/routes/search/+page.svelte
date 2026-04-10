@@ -2,7 +2,6 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
@@ -88,11 +87,6 @@
 		search(query);
 	}
 
-	function goToChapter(slug: string, chapter: number) {
-		prefs.update((p) => ({ ...p, readingMode: 'reading' }));
-		goto(`/odr/${slug}/${chapter}`);
-	}
-
 	/** Render verse text for search results: strip cr/na, preserve <i> italics,
 	 *  convert <sc> to small-caps span when the preference is enabled. */
 	function renderSearchVerse(text: string): string {
@@ -128,10 +122,20 @@
 	class:hero-layout={isHero}
 	in:fade={{ duration: 140 }}
 >
-	<!-- Heading — large in hero state, compact with results -->
-	<div class="search-heading" class:search-heading-hero={isHero}>
-		<h1 class="search-title" class:search-title-hero={isHero}>Search the Douay-Rheims</h1>
-	</div>
+	<!-- Heading — only visible in hero (empty) state -->
+	{#if isHero}
+		<div class="mb-[1.75rem] text-center" in:fade={{ duration: 160 }}>
+			<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-[8px]">
+				Douay-Rheims Bible
+			</p>
+			<h1
+				class="font-reader text-[2.2rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-[14px]"
+			>
+				Search
+			</h1>
+			<div class="w-10 h-px bg-accent opacity-70 mx-auto"></div>
+		</div>
+	{/if}
 
 	<!-- Search bar -->
 	<form on:submit|preventDefault={onSubmit} role="search" class="mb-lg">
@@ -229,7 +233,7 @@
 							<a
 								href="/odr/{group.slug}/{group.chapter}"
 								class="hover:text-foreground transition-colors duration-fast"
-								on:click|preventDefault={() => goToChapter(group.slug, group.chapter)}
+								on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 							>
 								{group.heading}
 							</a>
@@ -252,12 +256,13 @@
 								</div>
 							{/each}
 						</div>
-						<button
+						<a
+							href="/odr/{group.slug}/{group.chapter}"
 							class="inline-block mt-[8px] text-[11px] uppercase tracking-[0.15em] text-subtle hover:text-foreground transition-colors duration-fast font-medium"
-							on:click={() => goToChapter(group.slug, group.chapter)}
+							on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 						>
 							Read full chapter →
-						</button>
+						</a>
 					</section>
 				{/each}
 			</div>
@@ -279,35 +284,5 @@
 	/* Non-hero layout — normal top padding */
 	main:not(.hero-layout) {
 		padding-top: var(--spacing-xl);
-	}
-
-	/* Heading wrapper */
-	.search-heading {
-		margin-bottom: 0.75rem;
-	}
-
-	.search-heading-hero {
-		margin-bottom: 1.75rem;
-		text-align: center;
-	}
-
-	/* Title — compact by default */
-	.search-title {
-		font-family: var(--font-ui);
-		font-size: 1rem;
-		font-weight: 600;
-		color: var(--color-subtle);
-		transition:
-			font-size 240ms ease,
-			color 240ms ease,
-			margin 240ms ease;
-	}
-
-	/* Title — hero (large) */
-	.search-title-hero {
-		font-size: clamp(1.6rem, 4vw, 2.25rem);
-		font-weight: 700;
-		color: var(--color-foreground);
-		letter-spacing: -0.01em;
 	}
 </style>
