@@ -163,7 +163,7 @@
 	class="max-w-[750px] mx-auto px-md font-ui"
 	style="padding-top: {isHero ? 'clamp(80px, 16vh, 160px)' : '55px'}; padding-bottom: {isHero
 		? '4rem'
-		: '0'}; transition: padding-top {reducedMotion ? '0ms' : '260ms'} ease;"
+		: '0'};"
 	in:fade={{ duration: reducedMotion ? 0 : 140 }}
 >
 	<!-- Heading — only visible in hero (empty) state, collapses smoothly on first input -->
