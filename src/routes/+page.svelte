@@ -138,7 +138,7 @@
 				and Rheims, prior to Bishop Challoner’s 18th-century revisions.
 			</p>
 			<p class="hero-note-minor">
-				Spelling and punctuation lightly modernized; the translation itself is unaltered.
+				Spelling and punctuation lightly modernized;<br />the translation itself is unaltered.
 			</p>
 
 			<button
