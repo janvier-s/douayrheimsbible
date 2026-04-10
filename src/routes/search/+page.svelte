@@ -2,7 +2,7 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { replaceState } from '$app/navigation';
+	import { afterNavigate } from '$app/navigation';
 	import { cubicOut } from 'svelte/easing';
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
@@ -16,6 +16,7 @@
 	let searched = false;
 	let debounceTimer: ReturnType<typeof setTimeout>;
 	let searchGeneration = 0;
+	let lastDataQuery = '';
 
 	const EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 
@@ -23,7 +24,18 @@
 
 	onMount(() => {
 		if (inputEl) inputEl.focus();
-		if (query) search(query);
+	});
+
+	afterNavigate(() => {
+		if (data.query !== lastDataQuery) {
+			lastDataQuery = data.query;
+			query = data.query;
+			results = [];
+			searched = false;
+			loading = false;
+			if (query) search(query);
+		}
+		if (inputEl) inputEl.focus();
 	});
 
 	function onInput() {
@@ -53,14 +65,14 @@
 		} else {
 			url.searchParams.delete('q');
 		}
-		replaceState(url.toString(), {});
+		history.replaceState({}, '', url.toString());
 	}
 
 	function collapseAndFade(node: HTMLElement) {
 		const height = node.offsetHeight;
 		const mb = parseFloat(getComputedStyle(node).marginBottom);
 		return {
-			duration: 240,
+			duration: 400,
 			easing: cubicOut,
 			css: (t: number) =>
 				`opacity: ${t}; max-height: ${t * (height + mb)}px; margin-bottom: ${t * mb}px; overflow: hidden;`
@@ -296,6 +308,6 @@
 
 	/* Non-hero layout — normal top padding */
 	main:not(.hero-layout) {
-		padding-top: var(--spacing-xl);
+		padding-top: 55px;
 	}
 </style>
