@@ -39,7 +39,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "* good work"
+              "text": "<i>* good work</i>"
             }
           ]
         },
@@ -124,7 +124,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "c ὀναίμησ"
+              "text": "<i>c ὀναίμησ</i>"
             }
           ]
         },
