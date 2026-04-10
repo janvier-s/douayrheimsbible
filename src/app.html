@@ -16,29 +16,6 @@
 				document.documentElement.setAttribute('data-theme', stored || 'auto');
 			})();
 		</script>
-		<!-- Reload recovery: if any /_app/immutable/ asset fails (stale prerendered HTML
-		     with old chunk hashes), reload once to get fresh HTML. SessionStorage guard
-		     prevents infinite loops. -->
-		<script>
-			(function () {
-				if (sessionStorage.getItem('skit_reloaded')) {
-					sessionStorage.removeItem('skit_reloaded');
-					return;
-				}
-				document.addEventListener(
-					'error',
-					function (e) {
-						var el = e.target;
-						var url = (el && (el.href || el.src)) || '';
-						if (url.indexOf('/_app/immutable/') !== -1) {
-							sessionStorage.setItem('skit_reloaded', '1');
-							window.location.reload();
-						}
-					},
-					true
-				);
-			})();
-		</script>
 		<!-- Font preloads: critical reader + UI fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

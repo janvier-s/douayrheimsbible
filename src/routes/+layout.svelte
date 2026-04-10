@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import '../app.css';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
@@ -34,21 +34,6 @@
 			: '';
 
 	onMount(() => {
-		// If a dynamically-imported SvelteKit chunk 404s (stale manifest from cached homepage),
-		// the browser gets an HTML response instead of JS → MIME error. Reload to recover.
-		function onUnhandledRejection(e: PromiseRejectionEvent) {
-			const msg = e.reason?.message ?? '';
-			if (
-				msg.includes('Failed to fetch dynamically imported module') || // Chrome
-				msg.includes('Importing a module script failed') || // Safari
-				msg.includes('error loading dynamically imported module') // Firefox
-			) {
-				window.location.reload();
-			}
-		}
-		window.addEventListener('unhandledrejection', onUnhandledRejection);
-		onDestroy(() => window.removeEventListener('unhandledrejection', onUnhandledRejection));
-
 		const p = $prefs;
 		// Default to 15px on mobile for first-time visitors
 		const mobileFontApplied = localStorage.getItem('mobile-font-default');

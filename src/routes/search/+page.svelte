@@ -3,7 +3,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { afterNavigate, goto } from '$app/navigation';
-	import { cubicOut } from 'svelte/easing';
+
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
@@ -89,7 +89,6 @@
 	function collapseAndFade(_node: HTMLElement) {
 		return {
 			duration: reducedMotion ? 0 : 80,
-			easing: cubicOut,
 			css: (t: number) => `opacity: ${t};`
 		};
 	}
