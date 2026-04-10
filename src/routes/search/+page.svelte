@@ -76,11 +76,11 @@
 		const height = node.offsetHeight;
 		const mb = parseFloat(getComputedStyle(node).marginBottom);
 		return {
-			duration: 300,
+			duration: 420,
 			easing: cubicOut,
 			css: (t: number) => {
-				// Opacity completes in the first half so text vanishes while space is still releasing
-				const opacity = Math.max(0, (t - 0.5) / 0.5);
+				// Opacity completes in first ~140ms (first 1/3); height slides the full 420ms
+				const opacity = Math.max(0, 3 * t - 2);
 				return `opacity: ${opacity}; max-height: ${t * (height + mb)}px; margin-bottom: ${t * mb}px; overflow: hidden;`;
 			}
 		};
@@ -242,7 +242,7 @@
 
 		<!-- No results -->
 		{#if searched && !loading && results.length === 0}
-			<p class="text-subtle text-[14px] text-center">
+			<p class="text-subtle text-[14px] text-center" in:fade={{ duration: 160 }}>
 				No references found. Try a verse like <button
 					class="text-subtle hover:text-foreground hover:underline"
 					on:click={() => onExampleClick('James 2:24')}>James 2:24</button
