@@ -353,6 +353,9 @@
 			role="separator"
 			aria-orientation="vertical"
 			aria-label="Resize study panel"
+			aria-valuenow={parseInt($prefs.studyPanelWidth ?? '320')}
+			aria-valuemin={240}
+			aria-valuemax={640}
 			tabindex="0"
 			class="w-[5px] shrink-0 cursor-col-resize hover:bg-[rgba(128,128,128,0.2)] focus:bg-[rgba(128,128,128,0.3)] transition-colors duration-fast self-stretch outline-none max-md:hidden"
 			on:mousedown={resize.onDividerMousedown}

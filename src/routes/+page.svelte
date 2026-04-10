@@ -345,7 +345,10 @@
 		align-items: center;
 		gap: 10px;
 		padding: 13px 28px;
-		background: var(--color-accent);
+		/* Use the original darker red for the button so white text keeps 6.9:1.
+		   The lightened --color-accent in dark mode is for text-on-dark, not
+		   white-on-red buttons. */
+		background: #a62c2c;
 		color: white;
 		font-family: var(--font-ui);
 		font-size: 12px;

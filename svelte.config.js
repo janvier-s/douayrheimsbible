@@ -44,7 +44,11 @@ const config = {
 		prerender: {
 			handleHttpError: 'warn',
 			handleMissingId: 'warn'
-		}
+		},
+		// Inline component CSS chunks smaller than 8KB directly into the HTML
+		// instead of emitting them as separate <link> tags. Eliminates 5
+		// render-blocking stylesheet requests (~14KB total) flagged by Lighthouse.
+		inlineStyleThreshold: 8192
 	}
 };
 
