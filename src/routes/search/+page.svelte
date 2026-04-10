@@ -79,15 +79,12 @@
 	}
 
 	function collapseAndFade(_node: HTMLElement) {
-		// Animate only opacity (GPU-composited). The element is kept in document
-		// flow while fading so there's no layout shift during the animation.
-		// One layout reflow happens at the end when the element is removed — that's
-		// a single frame and imperceptible. Animating max-height caused a layout
-		// reflow on every frame for 420ms, visibly moving the footer on Firefox.
+		// opacity + translateY — both GPU-composited, no layout reflow per frame.
+		// The element stays in document flow until removed (one reflow at the end).
 		return {
-			duration: reducedMotion ? 0 : 200,
+			duration: reducedMotion ? 0 : 220,
 			easing: cubicOut,
-			css: (t: number) => `opacity: ${t};`
+			css: (t: number) => `opacity: ${t}; transform: translateY(${(1 - t) * -10}px);`
 		};
 	}
 
@@ -156,7 +153,9 @@
 <main
 	id="main-content"
 	class="max-w-[750px] mx-auto px-md font-ui"
-	class:hero-layout={isHero}
+	style="padding-top: {isHero ? 'clamp(80px, 16vh, 160px)' : '55px'}; padding-bottom: {isHero
+		? '4rem'
+		: '0'}; transition: padding-top {reducedMotion ? '0ms' : '260ms'} ease;"
 	in:fade={{ duration: reducedMotion ? 0 : 140 }}
 >
 	<!-- Heading — only visible in hero (empty) state, collapses smoothly on first input -->
@@ -182,7 +181,7 @@
 		>
 			<div
 				class="flex items-center gap-[10px] border border-border rounded-[6px] bg-background px-[14px] h-[52px]
-					focus-within:border-sublte transition-colors duration-fast"
+					focus-within:border-subtle transition-colors duration-fast"
 			>
 				<svg
 					width="18"
@@ -311,20 +310,3 @@
 		{/if}
 	</div>
 </main>
-
-<style>
-	/* Hero layout — center content vertically when empty */
-	.hero-layout {
-		min-height: 55vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-top: 0;
-		padding-bottom: 4rem;
-	}
-
-	/* Non-hero layout — normal top padding */
-	main:not(.hero-layout) {
-		padding-top: 55px;
-	}
-</style>

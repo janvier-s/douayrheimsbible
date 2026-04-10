@@ -65,17 +65,17 @@
 	];
 	let konamiProgress = 0;
 	let showUnlockToast = false;
+	let konamiToastUnlocked = true;
 
 	function onKonamiKeydown(e: KeyboardEvent) {
 		if (e.key === KONAMI_SEQUENCE[konamiProgress]) {
 			konamiProgress++;
 			if (konamiProgress === KONAMI_SEQUENCE.length) {
 				konamiProgress = 0;
-				if (!$konamiUnlocked) {
-					konamiUnlocked.set(true);
-					showUnlockToast = true;
-					setTimeout(() => (showUnlockToast = false), 4000);
-				}
+				konamiToastUnlocked = !$konamiUnlocked;
+				konamiUnlocked.update((v) => !v);
+				showUnlockToast = true;
+				setTimeout(() => (showUnlockToast = false), 4000);
 			}
 		} else {
 			konamiProgress = e.key === KONAMI_SEQUENCE[0] ? 1 : 0;
@@ -319,8 +319,12 @@
 	>
 		<span class="unlock-icon" aria-hidden="true">✦</span>
 		<div>
-			<p class="unlock-title">Translation unlocked</p>
-			<p class="unlock-sub">RSV-2CE 2006 is now available in the translation selector</p>
+			<p class="unlock-title">{konamiToastUnlocked ? 'Translation unlocked' : 'Translation hidden'}</p>
+			<p class="unlock-sub">
+				{konamiToastUnlocked
+					? 'RSV-2CE 2006 is now available in the translation selector'
+					: 'RSV-2CE 2006 has been removed from the translation selector'}
+			</p>
 		</div>
 	</div>
 {/if}
