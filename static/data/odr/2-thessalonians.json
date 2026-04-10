@@ -24,7 +24,7 @@
         },
         {
           "verse": 5,
-          "text": "for an example of the just judgement of God, that <cr>[1]</cr> you may be <cr>[2]</cr> counted worthy of the Kingdom of God, for the which also you suffer.",
+          "text": "for an example of the just judgement of God, that <na>[1]</na> you may be <na>[2]</na> counted worthy of the Kingdom of God, for the which also you suffer.",
           "notes": [
             {
               "label": "1",
@@ -59,7 +59,7 @@
         },
         {
           "verse": 10,
-          "text": "when he shall come to be <cr>[1]</cr> glorified in his saints, and to be made marvelous in all them that have believed, because our testimony concerning you was credited in that day.",
+          "text": "when he shall come to be <na>[1]</na> glorified in his saints, and to be made marvelous in all them that have believed, because our testimony concerning you was credited in that day.",
           "notes": [
             {
               "label": "1",
@@ -69,7 +69,7 @@
         },
         {
           "verse": 11,
-          "text": "Wherein also we pray always for you, that our God <cr>[1]</cr> make you worthy of his vocation, and accomplish all the good pleasure of his goodness & the work of faith in power,",
+          "text": "Wherein also we pray always for you, that our God <na>[1]</na> make you worthy of his vocation, and accomplish all the good pleasure of his goodness & the work of faith in power,",
           "notes": [
             {
               "label": "1",
@@ -89,7 +89,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> we desire you, brethren, by the coming of our Lord <sc>Jesus</sc> Christ, & of our congregation into him;",
+          "text": "<sc>And</sc> <na>[1]</na> we desire you, brethren, by the coming of our Lord <sc>Jesus</sc> Christ, & of our congregation into him;",
           "notes": [
             {
               "label": "1",
@@ -104,7 +104,7 @@
         },
         {
           "verse": 3,
-          "text": "Let no man seduce you by any means, for unless there come <cr>[1]</cr> a revolt first, and the man of sin be revealed, the son of perdition,",
+          "text": "Let no man seduce you by any means, for unless there come <na>[1]</na> a revolt first, and the man of sin be revealed, the son of perdition,",
           "has_annotation": true,
           "notes": [
             {
@@ -115,7 +115,7 @@
         },
         {
           "verse": 4,
-          "text": "which is an adversary & is extolled <cr>[1]</cr> above all that is called God, or that is worshipped, so that he sitteth in the temple of God, shewing himself as though he were God.",
+          "text": "which is an adversary & is extolled <na>[1]</na> above all that is called God, or that is worshipped, so that he sitteth in the temple of God, shewing himself as though he were God.",
           "has_annotation": true,
           "notes": [
             {
@@ -157,7 +157,7 @@
         },
         {
           "verse": 11,
-          "text": "Therefore <cr>[1]</cr> God will send them the operation of error, to believe lying:",
+          "text": "Therefore <na>[1]</na> God will send them the operation of error, to believe lying:",
           "notes": [
             {
               "label": "1",
@@ -179,7 +179,7 @@
         },
         {
           "verse": 15,
-          "text": "Therefore, brethren, stand; and hold <cr>[1]</cr> the traditions which you have learned, whether it be by word, or by our epistle.",
+          "text": "Therefore, brethren, stand; and hold <na>[1]</na> the traditions which you have learned, whether it be by word, or by our epistle.",
           "has_annotation": true,
           "notes": [
             {
@@ -194,12 +194,7 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr><cr>[2]</cr> exhort your hearts and confirm you in every good work and word.",
-          "cross_refs": [
-            {
-              "text": "1. Io. 2. v. 18."
-            }
-          ],
+          "text": "<cr>[1]</cr><na>[2]</na> exhort your hearts and confirm you in every good work and word.",
           "notes": [
             {
               "label": "1",
@@ -244,7 +239,7 @@
         },
         {
           "verse": 6,
-          "text": "And we denounce unto you, brethren, in the name of our Lord <sc>Jesus</sc> Christ, that you withdraw yourselves from every brother walking inordinately, and not according to the <cr>[1]</cr><cr>[2]</cr> tradition which they have received of us.",
+          "text": "And we denounce unto you, brethren, in the name of our Lord <sc>Jesus</sc> Christ, that you withdraw yourselves from every brother walking inordinately, and not according to the <na>[1]</na><na>[2]</na> tradition which they have received of us.",
           "notes": [
             {
               "label": "1",

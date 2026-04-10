@@ -33,14 +33,8 @@
         },
         {
           "verse": 6,
-          "text": "And this is charity, that we walk according to his commandments. For this is the commandment, that as <na>◦</na>",
-          "has_annotation": true,
-          "notes": [
-            {
-              "label": "◦",
-              "text": "To hold fast the old received faith. you have heard from the beginning, you walk in the same:"
-            }
-          ]
+          "text": "And this is charity, that we walk according to his commandments. For this is the commandment, that as you have heard from the beginning, you walk in the same.",
+          "has_annotation": true
         },
         {
           "verse": 7,
@@ -48,7 +42,7 @@
         },
         {
           "verse": 8,
-          "text": "Look to yourselves, that you lose not the things which you have wrought: but that you may receive a full <cr>[1]</cr> reward.",
+          "text": "Look to yourselves, that you lose not the things which you have wrought: but that you may receive a full <na>[1]</na> reward.",
           "notes": [
             {
               "label": "1",
@@ -58,7 +52,7 @@
         },
         {
           "verse": 9,
-          "text": "Every one that <cr>[1]</cr> revolteth, and persisteth not in the doctrine of Christ, hath not God. He that persisteth in the doctrine, the same hath both the Father, and the Son.",
+          "text": "Every one that <na>[1]</na> revolteth, and persisteth not in the doctrine of Christ, hath not God. He that persisteth in the doctrine, the same hath both the Father, and the Son.",
           "notes": [
             {
               "label": "1",

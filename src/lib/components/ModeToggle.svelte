@@ -16,8 +16,12 @@
 	async function measurePill(idx: number) {
 		await tick();
 		if (!toggleEl) return;
+		if (idx < 0) {
+			pillWidth = 0;
+			return;
+		}
 		const btns = toggleEl.querySelectorAll<HTMLElement>('.mode-btn');
-		const btn = btns[idx >= 0 ? idx : 0];
+		const btn = btns[idx];
 		if (!btn) return;
 		pillLeft = btn.offsetLeft;
 		pillWidth = btn.offsetWidth;

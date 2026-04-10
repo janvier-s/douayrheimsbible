@@ -64,6 +64,7 @@
 :root {
 	--color-bg: #f8f5ef;
 	--color-panel: #ffffff;
+	--color-search-card: #ffffff;
 	--color-text: #1c1710;
 	--color-muted: #4a443e;
 	--color-subtle: #5e5650;
@@ -91,6 +92,7 @@
 [data-theme='sepia'] {
 	--color-bg: #f2e8d8;
 	--color-panel: #f9f2e6;
+	--color-search-card: #fef9f2;
 	--color-text: #2c1e10;
 	--color-muted: #4e3520;
 	--color-subtle: #6a4830;
@@ -104,6 +106,7 @@
 [data-theme='dark'] {
 	--color-bg: #111113;
 	--color-panel: #1c1c1f;
+	--color-search-card: #252528;
 	--color-text: #e8ddd0;
 	--color-muted: #8a8690;
 	--color-subtle: #a09ca8;
@@ -118,6 +121,7 @@
 [data-theme='oled'] {
 	--color-bg: #000000;
 	--color-panel: #0f0f0f;
+	--color-search-card: #1a1a1a;
 	--color-text: #e0e0e0;
 	--color-muted: #666666;
 	--color-subtle: #888888;
@@ -133,6 +137,7 @@
 	[data-theme='auto'] {
 		--color-bg: #111113;
 		--color-panel: #1c1c1f;
+		--color-search-card: #252528;
 		--color-text: #e8ddd0;
 		--color-muted: #8a8690;
 		--color-subtle: #a09ca8;
@@ -271,3 +276,4 @@ body {
 	text-align: center;
 	line-height: 1.5;
 }
+.sc { font-variant: small-caps; }

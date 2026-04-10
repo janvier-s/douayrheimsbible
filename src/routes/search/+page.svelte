@@ -2,10 +2,10 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
-	import { stripTags } from '$lib/utils/text';
 	export let data: { query: string };
 
 	let inputEl: HTMLInputElement;
@@ -17,6 +17,8 @@
 	let searchGeneration = 0;
 
 	const EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
+
+	$: isHero = !searched && !query;
 
 	onMount(() => {
 		if (inputEl) inputEl.focus();
@@ -85,6 +87,37 @@
 		updateUrl(query);
 		search(query);
 	}
+
+	function goToChapter(slug: string, chapter: number) {
+		prefs.update((p) => ({ ...p, readingMode: 'reading' }));
+		goto(`/odr/${slug}/${chapter}`);
+	}
+
+	/** Render verse text for search results: strip cr/na, preserve <i> italics,
+	 *  convert <sc> to small-caps span when the preference is enabled. */
+	function renderSearchVerse(text: string): string {
+		const showSmallCaps = $prefs.showSmallCaps ?? true;
+
+		let t = text
+			.replace(/<cr>[^<]*<\/cr>/g, '')
+			.replace(/<na>[^<]*<\/na>/g, '');
+
+		if (showSmallCaps) {
+			// Temporarily replace <sc>…</sc> to survive the tag-strip pass
+			t = t.replace(/<sc>(.*?)<\/sc>/g, '\x01$1\x02');
+		} else {
+			t = t.replace(/<\/?sc>/g, '');
+		}
+
+		// Strip all remaining tags except <i> / </i>
+		t = t.replace(/<(?!\/?i\b)[^>]*>/gi, '');
+
+		if (showSmallCaps) {
+			t = t.replace(/\x01(.*?)\x02/g, '<span class="sc">$1</span>');
+		}
+
+		return t.replace(/  +/g, ' ').trim();
+	}
 </script>
 
 <svelte:head>
@@ -93,47 +126,63 @@
 
 <main
 	id="main-content"
-	class="max-w-[750px] mx-auto px-md py-xl font-ui"
+	class="max-w-[750px] mx-auto px-md font-ui"
+	class:hero-layout={isHero}
 	in:fade={{ duration: 140 }}
 >
+	<!-- Heading — large in hero state, compact with results -->
+	<div class="search-heading" class:search-heading-hero={isHero}>
+		<h1 class="search-title" class:search-title-hero={isHero}>Search the Douay-Rheims</h1>
+	</div>
+
 	<!-- Search bar -->
-	<form on:submit|preventDefault={onSubmit} role="search" class="relative mb-lg">
-		<div
-			class="flex items-center gap-[10px] border border-border rounded-[6px] bg-panel px-[14px] h-[54px] focus-within:border-subtle transition-colors duration-fast"
-		>
-			<svg
-				width="18"
-				height="18"
-				viewBox="0 0 20 20"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="1.7"
-				stroke-linecap="round"
-				class="text-subtle shrink-0"
-				aria-hidden="true"
+	<form on:submit|preventDefault={onSubmit} role="search" class="mb-lg">
+		<div class="border border-border rounded-[10px] p-[8px]" style="background: var(--color-search-card);">
+			<div
+				class="flex items-center gap-[10px] border border-border rounded-[6px] bg-background px-[14px] h-[52px]
+					focus-within:border-accent transition-colors duration-fast"
 			>
-				<circle cx="8.5" cy="8.5" r="5.5" />
-				<line x1="13" y1="13" x2="18" y2="18" />
-			</svg>
-			<input
-				bind:this={inputEl}
-				bind:value={query}
-				on:input={onInput}
-				type="text"
-				placeholder="Search for a verse — e.g. Matthew 16:18"
-				class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
-				style="outline: none;"
-				autocomplete="off"
-				autocorrect="off"
-				autocapitalize="off"
-				spellcheck="false"
-			/>
+				<svg
+					width="18"
+					height="18"
+					viewBox="0 0 20 20"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.7"
+					stroke-linecap="round"
+					class="text-subtle shrink-0"
+					aria-hidden="true"
+				>
+					<circle cx="8.5" cy="8.5" r="5.5" />
+					<line x1="13" y1="13" x2="18" y2="18" />
+				</svg>
+				<input
+					bind:this={inputEl}
+					bind:value={query}
+					on:input={onInput}
+					type="text"
+					placeholder="Search for a verse — e.g. Matthew 16:18"
+					class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
+					style="outline: none;"
+					autocomplete="off"
+					autocorrect="off"
+					autocapitalize="off"
+					spellcheck="false"
+				/>
+				<button
+					type="submit"
+					class="shrink-0 px-[14px] h-[36px] bg-accent text-white rounded-[4px] text-[13px] font-medium
+						hover:opacity-90 active:opacity-80 transition-opacity duration-fast"
+				>
+					Search
+				</button>
+			</div>
 		</div>
 	</form>
 
 	<!-- Example queries (shown when no results and no query) -->
-	{#if !searched && !query}
-		<div class="text-center">
+	{#if isHero}
+		<div class="text-center" in:fade={{ duration: 160 }}>
 			<p class="text-subtle text-[13px] mb-sm">Try a reference:</p>
 			<div class="flex flex-wrap justify-center gap-[8px]">
 				{#each EXAMPLES as example}
@@ -179,6 +228,7 @@
 							<a
 								href="/odr/{group.slug}/{group.chapter}"
 								class="hover:text-foreground transition-colors duration-fast"
+								on:click|preventDefault={() => goToChapter(group.slug, group.chapter)}
 							>
 								{group.heading}
 							</a>
@@ -196,20 +246,68 @@
 										class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 										class:text-justify={$prefs.justifiedText}
 									>
-										{@html stripTags(v.text)}
+										{@html renderSearchVerse(v.text)}
 									</p>
 								</div>
 							{/each}
 						</div>
-						<a
-							href="/odr/{group.slug}/{group.chapter}"
+						<button
 							class="inline-block mt-[8px] text-[11px] uppercase tracking-[0.15em] text-subtle hover:text-foreground transition-colors duration-fast font-medium"
+							on:click={() => goToChapter(group.slug, group.chapter)}
 						>
 							Read full chapter →
-						</a>
+						</button>
 					</section>
 				{/each}
 			</div>
 		{/if}
 	</div>
 </main>
+
+<style>
+	/* Hero layout — center content vertically when empty */
+	.hero-layout {
+		min-height: 55vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 0;
+		padding-bottom: 4rem;
+	}
+
+	/* Non-hero layout — normal top padding */
+	main:not(.hero-layout) {
+		padding-top: var(--spacing-xl);
+	}
+
+	/* Heading wrapper */
+	.search-heading {
+		margin-bottom: 0.75rem;
+	}
+
+	.search-heading-hero {
+		margin-bottom: 1.75rem;
+		text-align: center;
+	}
+
+	/* Title — compact by default */
+	.search-title {
+		font-family: var(--font-ui);
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--color-subtle);
+		transition:
+			font-size 240ms ease,
+			color 240ms ease,
+			margin 240ms ease;
+	}
+
+	/* Title — hero (large) */
+	.search-title-hero {
+		font-size: clamp(1.6rem, 4vw, 2.25rem);
+		font-weight: 700;
+		color: var(--color-foreground);
+		letter-spacing: -0.01em;
+	}
+
+</style>

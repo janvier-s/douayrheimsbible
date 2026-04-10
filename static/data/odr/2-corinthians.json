@@ -16,7 +16,7 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> Blessed be the God and Father of our Lord <sc>Jesus</sc> Christ, the Father of mercies and God of all comfort,",
+          "text": "<na>[1]</na> Blessed be the God and Father of our Lord <sc>Jesus</sc> Christ, the Father of mercies and God of all comfort,",
           "notes": [
             {
               "label": "1",
@@ -26,7 +26,7 @@
         },
         {
           "verse": 4,
-          "text": "who comforteth us in all our tribulation; that we also may be able to comfort them that are in all distress, <cr>[1]</cr> by the exhortation wherewith we also are exhorted of God.",
+          "text": "who comforteth us in all our tribulation; that we also may be able to comfort them that are in all distress, <na>[1]</na> by the exhortation wherewith we also are exhorted of God.",
           "notes": [
             {
               "label": "1",
@@ -163,7 +163,7 @@
         },
         {
           "verse": 10,
-          "text": "And whom you have pardoned any thing, I also. For, myself also that which <cr>[1]</cr> I pardoned, if I pardoned any thing, for you in the person of Christ,",
+          "text": "And whom you have pardoned any thing, I also. For, myself also that which <na>[1]</na> I pardoned, if I pardoned any thing, for you in the person of Christ,",
           "has_annotation": true,
           "notes": [
             {
@@ -223,7 +223,7 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> And such confidence we have by Christ to God:",
+          "text": "<na>[1]</na> And such confidence we have by Christ to God:",
           "notes": [
             {
               "label": "1",
@@ -243,7 +243,7 @@
         },
         {
           "verse": 7,
-          "text": "And if the ministration of death with letters figured in stones, was in glory, so that the children of Israel could not <cr>[1]</cr>",
+          "text": "And if the ministration of death with letters figured in stones, was in glory, so that the children of Israel could not <na>[1]</na>",
           "notes": [
             {
               "label": "1",
@@ -333,7 +333,7 @@
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> For we preach not our-selves, but <sc>Jesus</sc> Christ our Lord: and us, your servants by <sc>Jesus</sc>:",
+          "text": "<na>[1]</na> For we preach not our-selves, but <sc>Jesus</sc> Christ our Lord: and us, your servants by <sc>Jesus</sc>:",
           "notes": [
             {
               "label": "1",
@@ -351,24 +351,11 @@
         },
         {
           "verse": 8,
-          "text": "In all things we suffer <cr>[1]</cr><cr>[2]</cr> <cr>[3]</cr>",
-          "cross_refs": [
-            {
-              "text": "2. Tim. 2. tribulation, but are not in distress:"
-            }
-          ],
+          "text": "In all things we suffer tribulation, but are not in distress: <na>[1]</na> we want, but are not destitute:",
           "notes": [
             {
               "label": "1",
-              "text": "Heretics corrupters of God's word; Catholic Doctors, right handlers thereof."
-            },
-            {
-              "label": "2",
-              "text": "See Iren. li. 1. c. 1."
-            },
-            {
-              "label": "3",
-              "text": "in 2. ad Rom."
+              "text": "I c aporiamur. See S. Ambr. Theoph."
             }
           ]
         },
@@ -407,7 +394,7 @@
         },
         {
           "verse": 16,
-          "text": "For which cause we fail not: but although that our man which is without, <cr>[1]</cr> corrupt: yet that which is within, is renewed from day to day.",
+          "text": "For which cause we fail not: but although that our man which is without, <na>[1]</na> corrupt: yet that which is within, is renewed from day to day.",
           "notes": [
             {
               "label": "1",
@@ -417,7 +404,7 @@
         },
         {
           "verse": 17,
-          "text": "For that our tribulation which presently is momentary & light, <cr>[1]</cr><cr>[2]</cr> worketh above measure exceedingly an eternal weight of glory in us,",
+          "text": "For that our tribulation which presently is momentary & light, <na>[1]</na><na>[2]</na> worketh above measure exceedingly an eternal weight of glory in us,",
           "has_annotation": true,
           "notes": [
             {
@@ -470,7 +457,7 @@
         },
         {
           "verse": 8,
-          "text": "but we are bold, and have a good will to be pilgrims rather from the body, & <cr>[1]</cr> to be present with our Lord.",
+          "text": "but we are bold, and have a good will to be pilgrims rather from the body, & <na>[1]</na> to be present with our Lord.",
           "notes": [
             {
               "label": "1",
@@ -540,7 +527,7 @@
         },
         {
           "verse": 21,
-          "text": "Him that knew no sin, for us he made <cr>[1]</cr> sin: that we might be made the justice of God in him.",
+          "text": "Him that knew no sin, for us he made <na>[1]</na> sin: that we might be made the justice of God in him.",
           "has_annotation": true,
           "notes": [
             {
@@ -557,7 +544,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> we helping do exhort, that you receive not the grace of God in vain.",
+          "text": "<sc>And</sc> <na>[1]</na> we helping do exhort, that you receive not the grace of God in vain.",
           "has_annotation": true,
           "notes": [
             {
@@ -581,7 +568,7 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> but in all things let us exhibit ourselves as the ministers of God, in much patience, in tribulations, in necessities, in distresses,",
+          "text": "<na>[1]</na> but in all things let us exhibit ourselves as the ministers of God, in much patience, in tribulations, in necessities, in distresses,",
           "notes": [
             {
               "label": "1",
@@ -612,7 +599,7 @@
         },
         {
           "verse": 10,
-          "text": "as sorrowful, but always rejoicing: as needy, but enriching many: as <cr>[1]</cr> having nothing, and possessing all things.",
+          "text": "as sorrowful, but always rejoicing: as needy, but enriching many: as <na>[1]</na> having nothing, and possessing all things.",
           "notes": [
             {
               "label": "1",
@@ -634,7 +621,7 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Bear not the yoke with infidels. For what participation hath justice with iniquity? or what society is there between light and darkness?",
+          "text": "<na>[1]</na> Bear not the yoke with infidels. For what participation hath justice with iniquity? or what society is there between light and darkness?",
           "has_annotation": true,
           "notes": [
             {
@@ -719,7 +706,7 @@
         },
         {
           "verse": 10,
-          "text": "For <cr>[1]</cr> the sorrow that is according to God, worketh penance unto salvation that is stable: but the sorrow of the world worketh death.",
+          "text": "For <na>[1]</na> the sorrow that is according to God, worketh penance unto salvation that is stable: but the sorrow of the world worketh death.",
           "notes": [
             {
               "label": "1",
@@ -775,7 +762,7 @@
         },
         {
           "verse": 5,
-          "text": "And not as we hoped, but their own selves they gave, first to our Lord, <cr>[1]</cr> then to us by the will of God:",
+          "text": "And not as we hoped, but their own selves they gave, first to our Lord, <na>[1]</na> then to us by the will of God:",
           "notes": [
             {
               "label": "1",
@@ -797,7 +784,7 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> For you know the grace of our Lord <sc>Jesus</sc> Christ, that for you he was made poor, whereas he was rich; that by his poverty you might be rich.",
+          "text": "<na>[1]</na> For you know the grace of our Lord <sc>Jesus</sc> Christ, that for you he was made poor, whereas he was rich; that by his poverty you might be rich.",
           "notes": [
             {
               "label": "1",
@@ -837,7 +824,7 @@
         },
         {
           "verse": 16,
-          "text": "<cr>[1]</cr> And thanks be to God, that hath given the self-same carefulness for you in the heart of Titus,",
+          "text": "<na>[1]</na> And thanks be to God, that hath given the self-same carefulness for you in the heart of Titus,",
           "notes": [
             {
               "label": "1",
@@ -903,7 +890,7 @@
         },
         {
           "verse": 4,
-          "text": "lest when the Macedonians shall come with me, and find you unready, we (that we say not, ye) may be ashamed <cr>[1]</cr> in this substance.",
+          "text": "lest when the Macedonians shall come with me, and find you unready, we (that we say not, ye) may be ashamed <na>[1]</na> in this substance.",
           "notes": [
             {
               "label": "1",
@@ -918,7 +905,7 @@
         },
         {
           "verse": 6,
-          "text": "<cr>[1]</cr> And this I say, he that soweth sparingly, sparingly also shall reap: and he that soweth in blessings, of blessings also shall reap.",
+          "text": "<na>[1]</na> And this I say, he that soweth sparingly, sparingly also shall reap: and he that soweth in blessings, of blessings also shall reap.",
           "has_annotation": true,
           "notes": [
             {
@@ -942,7 +929,7 @@
         },
         {
           "verse": 9,
-          "text": "as it is written: <cr>[1]</cr> <i>He distributed, he gave to the poor: </i> <cr>[2]</cr> <i>his justice</i> remaineth for ever.",
+          "text": "as it is written: <cr>[1]</cr> <i>He distributed, he gave to the poor: </i> <na>[2]</na> <i>his justice</i> remaineth for ever.",
           "cross_refs": [
             {
               "text": "Ps. 111, 9."
@@ -1047,7 +1034,7 @@
         },
         {
           "verse": 15,
-          "text": "not glorying above measure in other men's labours: but having <cr>[1]</cr> hope of your faith increasing, to be magnified in you according to our rule aboundantly,",
+          "text": "not glorying above measure in other men's labours: but having <na>[1]</na> hope of your faith increasing, to be magnified in you according to our rule aboundantly,",
           "notes": [
             {
               "label": "1",
@@ -1061,7 +1048,7 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> But he that glorieth, let him glory in our Lord. <cr>[2]</cr>",
+          "text": "<cr>[1]</cr> But he that glorieth, let him glory in our Lord. <na>[2]</na>",
           "cross_refs": [
             {
               "text": "Ier. 9, 23."
@@ -1069,7 +1056,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Epistle upon S. Lucy's day 13. Decem. S. Martha's. Iulij 29. S. Agnes. secundo Ian. 28. S. Potentiana's. May 19."
             }
           ]
@@ -1090,7 +1077,7 @@
         },
         {
           "verse": 2,
-          "text": "for I emulate you with the emulation of God. For I have <cr>[1]</cr> despoused you to one man, to present you a chaste virgin unto Christ.",
+          "text": "for I emulate you with the emulation of God. For I have <na>[1]</na> despoused you to one man, to present you a chaste virgin unto Christ.",
           "notes": [
             {
               "label": "1",
@@ -1110,7 +1097,7 @@
         },
         {
           "verse": 4,
-          "text": "For if he that <cr>[1]</cr> cometh, preach another Christ whom we have not preached, or you receive another spirit whom you have not received; or another Gospel which you have not received: you might well suffer it.",
+          "text": "For if he that <na>[1]</na> cometh, preach another Christ whom we have not preached, or you receive another spirit whom you have not received; or another Gospel which you have not received: you might well suffer it.",
           "notes": [
             {
               "label": "1",
@@ -1153,7 +1140,7 @@
         },
         {
           "verse": 13,
-          "text": "For such false apostles are <cr>[1]</cr> crafty workers, transfiguring themselves into Apostles of Christ.",
+          "text": "For such false apostles are <na>[1]</na> crafty workers, transfiguring themselves into Apostles of Christ.",
           "notes": [
             {
               "label": "1",
@@ -1183,7 +1170,7 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> For you do gladly suffer the foolish: whereas yourselves are wise.",
+          "text": "<na>[1]</na> For you do gladly suffer the foolish: whereas yourselves are wise.",
           "notes": [
             {
               "label": "1",
@@ -1246,7 +1233,7 @@
         },
         {
           "verse": 28,
-          "text": "beside those things which are outwardly: my daily <cr>[1]</cr> instance, the carefulness of all churches.",
+          "text": "beside those things which are outwardly: my daily <na>[1]</na> instance, the carefulness of all churches.",
           "notes": [
             {
               "label": "1",
@@ -1256,7 +1243,7 @@
         },
         {
           "verse": 29,
-          "text": "Who is weak, and I <cr>[1]</cr> am not weak? Who is scandalized, and I am not burnt?",
+          "text": "Who is weak, and I <na>[1]</na> am not weak? Who is scandalized, and I am not burnt?",
           "notes": [
             {
               "label": "1",
@@ -1298,7 +1285,7 @@
         },
         {
           "verse": 2,
-          "text": "I know a man in Christ above fourteen years ago (whether in the body, I know not, or out of the body, I know not: God doth know) such a one <cr>[1]</cr> rapt even to the third Heaven.",
+          "text": "I know a man in Christ above fourteen years ago (whether in the body, I know not, or out of the body, I know not: God doth know) such a one <na>[1]</na> rapt even to the third Heaven.",
           "notes": [
             {
               "label": "1",
@@ -1374,7 +1361,7 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> <alt>Of old</alt> think you that we excuse ourselves to you? Before God, in Christ we speak: but all things (my dearest) for your edifying.",
+          "text": "<na>[1]</na> <alt>Of old</alt> think you that we excuse ourselves to you? Before God, in Christ we speak: but all things (my dearest) for your edifying.",
           "notes": [
             {
               "label": "1",
@@ -1388,7 +1375,7 @@
         },
         {
           "verse": 21,
-          "text": "Lest again when I come, God humble me among you: & I mourn many of them that sinned before, & <cr>[1]</cr> have not done penance for the uncleanness & fornication and incontinency that they have committed.",
+          "text": "Lest again when I come, God humble me among you: & I mourn many of them that sinned before, & <na>[1]</na> have not done penance for the uncleanness & fornication and incontinency that they have committed.",
           "notes": [
             {
               "label": "1",
@@ -1430,7 +1417,7 @@
         },
         {
           "verse": 6,
-          "text": "But I hope you <cr>[1]</cr> <alt>know</alt> that we are not reprobates.",
+          "text": "But I hope you <na>[1]</na> <alt>know</alt> that we are not reprobates.",
           "notes": [
             {
               "label": "1",
@@ -1452,7 +1439,7 @@
         },
         {
           "verse": 10,
-          "text": "Therefore these things I write absent: that being present I may not deal hardly according to the <cr>[1]</cr> power which our Lord hath given me unto edification and not unto destruction.",
+          "text": "Therefore these things I write absent: that being present I may not deal hardly according to the <na>[1]</na> power which our Lord hath given me unto edification and not unto destruction.",
           "notes": [
             {
               "label": "1",
@@ -1462,7 +1449,7 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> For the rest, brethren, rejoice, be perfect, <cr>[2]</cr> take exhortation, be of one mind, have peace; and the God of peace & love shall be with you.",
+          "text": "<cr>[1]</cr> For the rest, brethren, rejoice, be perfect, <na>[2]</na> take exhortation, be of one mind, have peace; and the God of peace & love shall be with you.",
           "cross_refs": [
             {
               "text": "c παρακαλεῖσθε, Ro. 16, 16. 1. Cor. 16, 20."
@@ -1470,7 +1457,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Epistle in a votive Mass of the B. Trinity."
             }
           ]

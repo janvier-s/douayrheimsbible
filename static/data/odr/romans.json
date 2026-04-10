@@ -8,7 +8,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Paul</sc> <cr>[1]</cr> the servant of <sc>Jesus Christ</sc>, called to be an Apostle, <cr>[2]</cr> separated into the Gospel of God,",
+          "text": "<sc>Paul</sc> <cr>[1]</cr> the servant of <sc>Jesus Christ</sc>, called to be an Apostle, <na>[2]</na> separated into the Gospel of God,",
           "cross_refs": [
             {
               "text": "Act. 13, 2."
@@ -16,7 +16,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Epistle upon Christmas eve."
             }
           ]
@@ -35,7 +35,7 @@
         },
         {
           "verse": 5,
-          "text": "by whom we have received grace and Apostleship <cr>[1]</cr><cr>[2]</cr> for obedience to the faith <cr>[3]</cr> in all Nations for the name of him,",
+          "text": "by whom we have received grace and Apostleship <na>[1]</na><na>[2]</na> for obedience to the faith <na>[3]</na> in all Nations for the name of him,",
           "notes": [
             {
               "label": "1",
@@ -67,7 +67,7 @@
         },
         {
           "verse": 9,
-          "text": "For God is my witness, <cr>[1]</cr> whom I serve in my spirit in the Gospel of his Son, that <cr>[2]</cr> without intermission I make a memory of you",
+          "text": "For God is my witness, <na>[1]</na> whom I serve in my spirit in the Gospel of his Son, that <na>[2]</na> without intermission I make a memory of you",
           "has_annotation": true,
           "notes": [
             {
@@ -86,7 +86,7 @@
         },
         {
           "verse": 11,
-          "text": "For I desire to see you, that I may impart unto you some spiritual grace, to <cr>[1]</cr> confirm you:",
+          "text": "For I desire to see you, that I may impart unto you some spiritual grace, to <na>[1]</na> confirm you:",
           "notes": [
             {
               "label": "1",
@@ -100,7 +100,7 @@
         },
         {
           "verse": 13,
-          "text": "And I will not have you ignorant (brethren) that I have often purposed to come unto you (and have been stayed hitherto) that I may <cr>[1]</cr> have some fruit in you, as also in the other Gentiles.",
+          "text": "And I will not have you ignorant (brethren) that I have often purposed to come unto you (and have been stayed hitherto) that I may <na>[1]</na> have some fruit in you, as also in the other Gentiles.",
           "notes": [
             {
               "label": "1",
@@ -123,7 +123,7 @@
         },
         {
           "verse": 17,
-          "text": "For <cr>[1]</cr> the justice of God is revealed therein by faith into faith; as it is written: <cr>[2]</cr> <i>And the just liveth by faith.</i>",
+          "text": "For <cr>[1]</cr> the justice of God is revealed therein by faith into faith; as it is written: <na>[2]</na> <i>And the just liveth by faith.</i>",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -132,7 +132,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "He meaneth not God's own justice in himself, but that justice wherewith God endueth man when he justifieth him. Aug. de Sp. & lit. c. 9. Whereby you may gather the vanity of the Heretical imputative justice."
             }
           ]
@@ -160,7 +160,7 @@
         },
         {
           "verse": 23,
-          "text": "And they changed the glory of the incorruptible God, into a <cr>[1]</cr> similitude of the image of a corruptible man, and of fowls and four-footed beasts and of them that creep.",
+          "text": "And they changed the glory of the incorruptible God, into a <na>[1]</na> similitude of the image of a corruptible man, and of fowls and four-footed beasts and of them that creep.",
           "notes": [
             {
               "label": "1",
@@ -179,7 +179,7 @@
         },
         {
           "verse": 25,
-          "text": "Who have changed the verity of God into lying: and have worshipped & <cr>[1]</cr> served the creature rather than the Creator, who is blessed for ever. Amen.",
+          "text": "Who have changed the verity of God into lying: and have worshipped & <na>[1]</na> served the creature rather than the Creator, who is blessed for ever. Amen.",
           "notes": [
             {
               "label": "1",
@@ -257,7 +257,7 @@
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> to them truly that according to patience in good work, seek glory and honour and incorruption, life eternal;",
+          "text": "<na>[1]</na> to them truly that according to patience in good work, seek glory and honour and incorruption, life eternal;",
           "notes": [
             {
               "label": "1",
@@ -271,7 +271,7 @@
         },
         {
           "verse": 9,
-          "text": "Tribulation and anguish upon every soul of man that worketh evil, of the Jew first and of the <cr>[1]</cr> Greek:",
+          "text": "Tribulation and anguish upon every soul of man that worketh evil, of the Jew first and of the <na>[1]</na> Greek:",
           "notes": [
             {
               "label": "1",
@@ -336,7 +336,7 @@
         },
         {
           "verse": 21,
-          "text": "Thou therefore <cr>[1]</cr> that teachest another, teachest not thyself: that preachest, men ought not to steal, thou stealest:",
+          "text": "Thou therefore <na>[1]</na> that teachest another, teachest not thyself: that preachest, men ought not to steal, thou stealest:",
           "notes": [
             {
               "label": "1",
@@ -354,7 +354,7 @@
         },
         {
           "verse": 24,
-          "text": "( <cr>[1]</cr> <i>For </i> <cr>[2]</cr> <i>the name of God through you is blasphemed among the Gentiles,</i> as it is written.)",
+          "text": "( <cr>[1]</cr> <i>For </i> <na>[2]</na> <i>the name of God through you is blasphemed among the Gentiles,</i> as it is written.)",
           "cross_refs": [
             {
               "text": "Es. 52, 5. Ez. 36, 20."
@@ -369,7 +369,7 @@
         },
         {
           "verse": 25,
-          "text": "Circumcision indeed profiteth, if thou observe the Law: but if thou be a prevaricator of the Law, thy circumcision is become <cr>[1]</cr> prepuce.",
+          "text": "Circumcision indeed profiteth, if thou observe the Law: but if thou be a prevaricator of the Law, thy circumcision is become <na>[1]</na> prepuce.",
           "notes": [
             {
               "label": "1",
@@ -415,7 +415,7 @@
         },
         {
           "verse": 4,
-          "text": "God forbid. But <cr>[1]</cr> God is true, & <cr>[2]</cr><cr>[3]</cr> every man a liar, as it is written: <cr>[4]</cr> <i>That thou mayest be justified in thy words, and overcome when thou art judged.</i>",
+          "text": "God forbid. But <cr>[1]</cr> God is true, & <cr>[2]</cr><cr>[3]</cr> every man a liar, as it is written: <na>[4]</na> <i>That thou mayest be justified in thy words, and overcome when thou art judged.</i>",
           "cross_refs": [
             {
               "text": "Io. 3, 33."
@@ -429,7 +429,7 @@
           ],
           "notes": [
             {
-              "label": "3",
+              "label": "4",
               "text": "God only by nature is true, all mere men by nature may lie, deceive and be deceived: yet God by his grace & spirit may and doth preserve the Apostles and principal Governers of his people & the Church and Councels in all truth, though they were and are mere men."
             }
           ]
@@ -475,7 +475,7 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> <i>Their throat is an open sepulchre, with their tongues they dealt deceitfully. </i> <cr>[2]</cr> <i>The venom </i> <cr>[3]</cr> <i>of asps under their lips.</i>",
+          "text": "<cr>[1]</cr> <i>Their throat is an open sepulchre, with their tongues they dealt deceitfully. </i> <cr>[2]</cr> <i>The venom </i> <na>[3]</na> <i>of asps under their lips.</i>",
           "cross_refs": [
             {
               "text": "Ps. 5, 11."
@@ -546,7 +546,7 @@
         },
         {
           "verse": 22,
-          "text": "And the justice of God by faith of <sc>Jesus Christ</sc>, unto all and upon all that <cr>[1]</cr> believe in him. For there is no distinction.",
+          "text": "And the justice of God by faith of <sc>Jesus Christ</sc>, unto all and upon all that <na>[1]</na> believe in him. For there is no distinction.",
           "has_annotation": true,
           "notes": [
             {
@@ -561,7 +561,7 @@
         },
         {
           "verse": 24,
-          "text": "Justified <cr>[1]</cr> gratis by his grace, by the redemption that is in <sc>Christ Jesus</sc>,",
+          "text": "Justified <na>[1]</na> gratis by his grace, by the redemption that is in <sc>Christ Jesus</sc>,",
           "notes": [
             {
               "label": "1",
@@ -571,7 +571,7 @@
         },
         {
           "verse": 25,
-          "text": "whom God hath proposed a <cr>[1]</cr> <alt>propitiation</alt>, by faith in his blood, to the shewing of his justice, for the remission of former sins,",
+          "text": "whom God hath proposed a <na>[1]</na> <alt>propitiation</alt>, by faith in his blood, to the shewing of his justice, for the remission of former sins,",
           "notes": [
             {
               "label": "1",
@@ -631,7 +631,7 @@
         },
         {
           "verse": 4,
-          "text": "But to him that worketh, the reward is not <cr>[1]</cr> imputed according to grace but according to debt.",
+          "text": "But to him that worketh, the reward is not <na>[1]</na> imputed according to grace but according to debt.",
           "has_annotation": true,
           "notes": [
             {
@@ -642,7 +642,7 @@
         },
         {
           "verse": 5,
-          "text": "But to him that worketh not, yet believeth in him that justifieth the impious, his faith is <cr>[1]</cr> reputed to justice according to the purpose of the grace of God.",
+          "text": "But to him that worketh not, yet believeth in him that justifieth the impious, his faith is <na>[1]</na> reputed to justice according to the purpose of the grace of God.",
           "has_annotation": true,
           "notes": [
             {
@@ -672,7 +672,7 @@
         },
         {
           "verse": 9,
-          "text": "This blessedness then doth it abide in the circumcision, or in the prepuce also? For we say that unto Abraham faith was <cr>[1]</cr> reputed to justice.",
+          "text": "This blessedness then doth it abide in the circumcision, or in the prepuce also? For we say that unto Abraham faith was <na>[1]</na> reputed to justice.",
           "notes": [
             {
               "label": "1",
@@ -686,7 +686,7 @@
         },
         {
           "verse": 11,
-          "text": "And <cr>[1]</cr> he received <cr>[2]</cr> the sign of circumcision, a seal of the justice of faith that is in prepuce: that he might be the father of all that believe by the prepuce, that unto them also it may be reputed to justice:",
+          "text": "And <cr>[1]</cr> he received <na>[2]</na> the sign of circumcision, a seal of the justice of faith that is in prepuce: that he might be the father of all that believe by the prepuce, that unto them also it may be reputed to justice:",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -722,7 +722,7 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> <i>For, a father of many Nations have I appointed thee</i> ) before God, whom <cr>[2]</cr> <alt>thou didst believe</alt>, who quickeneth the dead; calleth those things that are not, as those things that are.",
+          "text": "<cr>[1]</cr> <i>For, a father of many Nations have I appointed thee</i> ) before God, whom <na>[2]</na> <alt>thou didst believe</alt>, who quickeneth the dead; calleth those things that are not, as those things that are.",
           "cross_refs": [
             {
               "text": "Gen. 17, 4."
@@ -781,7 +781,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Being</sc> <cr>[1]</cr> justified therefore by faith, let us have peace toward God by our Lord <sc>Jesus Christ</sc>;",
+          "text": "<sc>Being</sc> <na>[1]</na> justified therefore by faith, let us have peace toward God by our Lord <sc>Jesus Christ</sc>;",
           "has_annotation": true,
           "notes": [
             {
@@ -792,7 +792,7 @@
         },
         {
           "verse": 2,
-          "text": "by whom also we have access through faith into this grace wherein we stand, and glory, <cr>[1]</cr> in the hope of the glory of the sons of God.",
+          "text": "by whom also we have access through faith into this grace wherein we stand, and glory, <na>[1]</na> in the hope of the glory of the sons of God.",
           "has_annotation": true,
           "notes": [
             {
@@ -817,7 +817,7 @@
         },
         {
           "verse": 6,
-          "text": "For why did Christ, when we as yet were <cr>[1]</cr> <cr>[2]</cr> weak, according to the time die for the impious?",
+          "text": "For why did Christ, when we as yet were <na>[1]</na> <na>[2]</na> weak, according to the time die for the impious?",
           "notes": [
             {
               "label": "1",
@@ -869,7 +869,7 @@
         },
         {
           "verse": 16,
-          "text": "And not as by one <cr>[1]</cr> <alt>sin</alt>, so also the gift. For judgement indeed is of one, to condemnation: but grace is of many offences, to justification.",
+          "text": "And not as by one <na>[1]</na> <alt>sin</alt>, so also the gift. For judgement indeed is of one, to condemnation: but grace is of many offences, to justification.",
           "notes": [
             {
               "label": "1",
@@ -887,7 +887,7 @@
         },
         {
           "verse": 19,
-          "text": "For as by the disobedience of one man, many were made sinners; so also by the obedience of one, many <cr>[1]</cr> shall be made just.",
+          "text": "For as by the disobedience of one man, many were made sinners; so also by the obedience of one, many <na>[1]</na> shall be made just.",
           "notes": [
             {
               "label": "1",
@@ -920,7 +920,7 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> Are you ignorant that all we which are baptized in Christ <sc>Jesus</sc>, in his death we are baptized?",
+          "text": "<na>[1]</na> Are you ignorant that all we which are baptized in Christ <sc>Jesus</sc>, in his death we are baptized?",
           "has_annotation": true,
           "notes": [
             {
@@ -931,7 +931,7 @@
         },
         {
           "verse": 4,
-          "text": "For <cr>[1]</cr> we are buried together with him by Baptism into death: that as Christ is risen from the dead by the glory of the Father, so we also may walk in newness of life.",
+          "text": "For <na>[1]</na> we are buried together with him by Baptism into death: that as Christ is risen from the dead by the glory of the Father, so we also may walk in newness of life.",
           "notes": [
             {
               "label": "1",
@@ -945,7 +945,7 @@
         },
         {
           "verse": 6,
-          "text": "Knowing this, that our old man is crucified with him, that the body of sin may be <cr>[1]</cr> destroyed, to the end that we may serve sin no longer.",
+          "text": "Knowing this, that our old man is crucified with him, that the body of sin may be <na>[1]</na> destroyed, to the end that we may serve sin no longer.",
           "has_annotation": true,
           "notes": [
             {
@@ -1003,7 +1003,7 @@
         },
         {
           "verse": 17,
-          "text": "But thanks be to God, that you were the servants of sin, but <cr>[1]</cr> have obeyed from the heart, unto that form of doctrine, into the which you have been delivered.",
+          "text": "But thanks be to God, that you were the servants of sin, but <na>[1]</na> have obeyed from the heart, unto that form of doctrine, into the which you have been delivered.",
           "has_annotation": true,
           "notes": [
             {
@@ -1018,7 +1018,7 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> I speak an human thing, because of the infirmity of your flesh. For as you have exhibited your members to serve uncleanness and iniquity, unto iniquity; so now exhibit your members to serve justice, <cr>[2]</cr> unto sanctification.",
+          "text": "<na>[1]</na> I speak an human thing, because of the infirmity of your flesh. For as you have exhibited your members to serve uncleanness and iniquity, unto iniquity; so now exhibit your members to serve justice, <na>[2]</na> unto sanctification.",
           "notes": [
             {
               "label": "1",
@@ -1055,7 +1055,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Are</sc> you ignorant, brethren, (for I speak to them that know the Law) that the Law hath dominion over a man as long time as <cr>[1]</cr> <alt>he</alt> liveth?",
+          "text": "<sc>Are</sc> you ignorant, brethren, (for I speak to them that know the Law) that the Law hath dominion over a man as long time as <na>[1]</na> <alt>he</alt> liveth?",
           "notes": [
             {
               "label": "1",
@@ -1065,7 +1065,7 @@
         },
         {
           "verse": 2,
-          "text": "For <cr>[1]</cr> the woman that is under a husband; <cr>[2]</cr> her husband living is bound to the law. But if her husband be dead, she is loosed from the law of her husband.",
+          "text": "For <cr>[1]</cr> the woman that is under a husband; <na>[2]</na> her husband living is bound to the law. But if her husband be dead, she is loosed from the law of her husband.",
           "cross_refs": [
             {
               "text": "1. Cor. 7, 39."
@@ -1084,7 +1084,7 @@
         },
         {
           "verse": 4,
-          "text": "Therefore my brethren <cr>[1]</cr> you also are made dead to the Law by the body of Christ; that you may be another man's who is risen again from the dead, that we may fructify to God.",
+          "text": "Therefore my brethren <na>[1]</na> you also are made dead to the Law by the body of Christ; that you may be another man's who is risen again from the dead, that we may fructify to God.",
           "notes": [
             {
               "label": "1",
@@ -1098,7 +1098,7 @@
         },
         {
           "verse": 6,
-          "text": "But now we are loosed from the law of death wherein we were detained: <cr>[1]</cr> in so much we serve in <cr>[2]</cr> newness of spirit, and not in the oldness of the letter.",
+          "text": "But now we are loosed from the law of death wherein we were detained: <na>[1]</na> in so much we serve in <na>[2]</na> newness of spirit, and not in the oldness of the letter.",
           "notes": [
             {
               "label": "1",
@@ -1122,7 +1122,7 @@
         },
         {
           "verse": 8,
-          "text": "But <cr>[1]</cr> occasion being taken, sin by the commandment wrought in me all concupiscence. For without the Law sin was dead.",
+          "text": "But <na>[1]</na> occasion being taken, sin by the commandment wrought in me all concupiscence. For without the Law sin was dead.",
           "notes": [
             {
               "label": "1",
@@ -1191,7 +1191,7 @@
         },
         {
           "verse": 22,
-          "text": "<cr>[1]</cr> For I am delighted with the Law of God according to the inward man:",
+          "text": "<na>[1]</na> For I am delighted with the Law of God according to the inward man:",
           "notes": [
             {
               "label": "1",
@@ -1209,7 +1209,7 @@
         },
         {
           "verse": 25,
-          "text": "The grace of God by <sc>Jesus</sc> Christ our Lord. Therefore I myself with the mind <cr>[1]</cr> serve the law of God, but with the flesh, the law of sin.",
+          "text": "The grace of God by <sc>Jesus</sc> Christ our Lord. Therefore I myself with the mind <na>[1]</na> serve the law of God, but with the flesh, the law of sin.",
           "has_annotation": true,
           "notes": [
             {
@@ -1238,7 +1238,7 @@
         },
         {
           "verse": 4,
-          "text": "that <cr>[1]</cr> the justification of the Law might be fulfilled in us who walk not according to the flesh, but according to the spirit.",
+          "text": "that <na>[1]</na> the justification of the Law might be fulfilled in us who walk not according to the flesh, but according to the spirit.",
           "notes": [
             {
               "label": "1",
@@ -1256,7 +1256,7 @@
         },
         {
           "verse": 7,
-          "text": "Because the wisdom of the flesh, is <cr>[1]</cr> <alt>an enemy</alt> to God: for to the Law of Got it is not subject, neither can it be.",
+          "text": "Because the wisdom of the flesh, is <na>[1]</na> <alt>an enemy</alt> to God: for to the Law of Got it is not subject, neither can it be.",
           "notes": [
             {
               "label": "1",
@@ -1282,7 +1282,7 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> Therefore brethren, we are debters, not to the flesh, to live according to the flesh.",
+          "text": "<na>[1]</na> Therefore brethren, we are debters, not to the flesh, to live according to the flesh.",
           "notes": [
             {
               "label": "1",
@@ -1296,7 +1296,7 @@
         },
         {
           "verse": 14,
-          "text": "For whosoever <cr>[1]</cr> are led by the Spirit of God, they are the sons of God.",
+          "text": "For whosoever <na>[1]</na> are led by the Spirit of God, they are the sons of God.",
           "notes": [
             {
               "label": "1",
@@ -1328,7 +1328,7 @@
         },
         {
           "verse": 18,
-          "text": "<cr>[1]</cr> For I think that the passions of this time are not <cr>[2]</cr> condign to the glory to come that shall be revealed in us.",
+          "text": "<na>[1]</na> For I think that the passions of this time are not <na>[2]</na> condign to the glory to come that shall be revealed in us.",
           "has_annotation": true,
           "notes": [
             {
@@ -1410,7 +1410,7 @@
         },
         {
           "verse": 35,
-          "text": "<cr>[1]</cr> Who then shall separate us from the charity of Christ? tribulation? or distress? or famine? or nakedness? or danger? or persecution? or the sword?",
+          "text": "<na>[1]</na> Who then shall separate us from the charity of Christ? tribulation? or distress? or famine? or nakedness? or danger? or persecution? or the sword?",
           "notes": [
             {
               "label": "1",
@@ -1433,7 +1433,7 @@
         },
         {
           "verse": 38,
-          "text": "<cr>[1]</cr> For I am sure that neither death, nor life, nor Angels, nor Principalities, nor Powers, neither things present, nor things to come, neither might,",
+          "text": "<na>[1]</na> For I am sure that neither death, nor life, nor Angels, nor Principalities, nor Powers, neither things present, nor things to come, neither might,",
           "has_annotation": true,
           "notes": [
             {
@@ -1467,7 +1467,7 @@
         },
         {
           "verse": 4,
-          "text": "who are Israelites, whose is the adoption of sons, and the glory, and <cr>[1]</cr> the testament, and the law-giving, & the service, and the promises:",
+          "text": "who are Israelites, whose is the adoption of sons, and the glory, and <na>[1]</na> the testament, and the law-giving, & the service, and the promises:",
           "notes": [
             {
               "label": "1",
@@ -1509,7 +1509,7 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> And not only she, But <cr>[2]</cr> Rebecca also conceiving of one copulation, of Isaac our father.",
+          "text": "<cr>[1]</cr> And not only she, But <na>[2]</na> Rebecca also conceiving of one copulation, of Isaac our father.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -1518,7 +1518,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "S. Hierom. q. 10. ad Hedibiam. All the epistle surely to the Romans needeth interpretation, and is enwrapped with so great obscurities that to understand it we need the help of the Holy Ghost, who by the Apostle did dictate these same things: but especially this place. Howbeit nothing pleaseth us but that which is Ecclesiastical, that is, the sense of the Church."
             }
           ]
@@ -1595,7 +1595,7 @@
         },
         {
           "verse": 22,
-          "text": "And if God willing to shew wrath, & to make his might known, <cr>[1]</cr> sustained in much patience the vessels of wrath <cr>[2]</cr> <alt>apt</alt> to destruction,",
+          "text": "And if God willing to shew wrath, & to make his might known, <na>[1]</na> sustained in much patience the vessels of wrath <na>[2]</na> <alt>apt</alt> to destruction,",
           "notes": [
             {
               "label": "1",
@@ -1665,7 +1665,7 @@
         },
         {
           "verse": 32,
-          "text": "Why so? Because not of faith, but as it were of works. For <cr>[1]</cr> they have stumbled at the stone of stumbling,",
+          "text": "Why so? Because not of faith, but as it were of works. For <na>[1]</na> they have stumbled at the stone of stumbling,",
           "notes": [
             {
               "label": "1",
@@ -1709,7 +1709,7 @@
         },
         {
           "verse": 4,
-          "text": "For, <cr>[1]</cr> the end of the Law is Christ; unto justice to every one that believeth.",
+          "text": "For, <na>[1]</na> the end of the Law is Christ; unto justice to every one that believeth.",
           "notes": [
             {
               "label": "1",
@@ -1719,7 +1719,7 @@
         },
         {
           "verse": 5,
-          "text": "For Moyses wrote, <cr>[1]</cr> that, the justice which is of the Law, <cr>[2]</cr> <i>the man that hath done it, shall live in it.</i>",
+          "text": "For Moyses wrote, <cr>[1]</cr> that, the justice which is of the Law, <na>[2]</na> <i>the man that hath done it, shall live in it.</i>",
           "cross_refs": [
             {
               "text": "Lev. 18, 5."
@@ -1727,7 +1727,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The justice of the Law of Moyses went no further of itself, but to save a man from the temporal death and punishment prescribed to the transgressors of the same."
             }
           ]
@@ -1757,7 +1757,7 @@
         },
         {
           "verse": 10,
-          "text": "<cr>[1]</cr> For with the heart we believe unto justice; but with the mouth confession is made to salvation.",
+          "text": "<na>[1]</na> For with the heart we believe unto justice; but with the mouth confession is made to salvation.",
           "notes": [
             {
               "label": "1",
@@ -1780,7 +1780,7 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> <i>For every one </i> <cr>[2]</cr> <i>whosoever shall invocate the name of our Lord, shall be saved.</i>",
+          "text": "<cr>[1]</cr> <i>For every one </i> <na>[2]</na> <i>whosoever shall invocate the name of our Lord, shall be saved.</i>",
           "cross_refs": [
             {
               "text": "Ioel. 2, 22."
@@ -1889,7 +1889,7 @@
         },
         {
           "verse": 4,
-          "text": "But what saith the divine answer unto him? <i>I have left me seven thousand men, that have not bowed their knees to </i> <cr>[1]</cr> <i>Baal?</i>",
+          "text": "But what saith the divine answer unto him? <i>I have left me seven thousand men, that have not bowed their knees to </i> <na>[1]</na> <i>Baal?</i>",
           "has_annotation": true,
           "notes": [
             {
@@ -1936,7 +1936,7 @@
         },
         {
           "verse": 11,
-          "text": "Isay then, have they so stumbled, <cr>[1]</cr> that they should fall? God forbid. But by their offence, salvation is to the Gentiles, that they may emulate them.",
+          "text": "Isay then, have they so stumbled, <na>[1]</na> that they should fall? God forbid. But by their offence, salvation is to the Gentiles, that they may emulate them.",
           "notes": [
             {
               "label": "1",
@@ -1946,7 +1946,7 @@
         },
         {
           "verse": 12,
-          "text": "And if the offence of them be the riches of the world, and the diminution of them <cr>[1]</cr> the riches of the Gentiles; how much more the fullness of them?",
+          "text": "And if the offence of them be the riches of the world, and the diminution of them <na>[1]</na> the riches of the Gentiles; how much more the fullness of them?",
           "notes": [
             {
               "label": "1",
@@ -1984,7 +1984,7 @@
         },
         {
           "verse": 20,
-          "text": "Well: because of incredulity they were broken, but thou by faith doest stand: be not too highly wise; but <cr>[1]</cr> fear.",
+          "text": "Well: because of incredulity they were broken, but thou by faith doest stand: be not too highly wise; but <na>[1]</na> fear.",
           "has_annotation": true,
           "notes": [
             {
@@ -2051,7 +2051,7 @@
         },
         {
           "verse": 33,
-          "text": "<cr>[1]</cr> O depth of the riches of the wisdom and of the knowledge of God: how incomprehensible are his judgements, and his ways unsearchable?",
+          "text": "<na>[1]</na> O depth of the riches of the wisdom and of the knowledge of God: how incomprehensible are his judgements, and his ways unsearchable?",
           "has_annotation": true,
           "notes": [
             {
@@ -2085,7 +2085,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I <cr>[1]</cr> <sc>Beseech</sc> you therefore, brethren, by the mercy of God, <cr>[2]</cr> that you exhibit your bodies a living host, holy, pleasing to God, your reasonable service.",
+          "text": "I <cr>[1]</cr> <sc>Beseech</sc> you therefore, brethren, by the mercy of God, <na>[2]</na> that you exhibit your bodies a living host, holy, pleasing to God, your reasonable service.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -2094,7 +2094,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Epistle upon the 1. Sunday after the Epiphany."
             }
           ]
@@ -2110,7 +2110,7 @@
         },
         {
           "verse": 3,
-          "text": "For I say by the grace that is given me, to all that are among you, <cr>[1]</cr> not to be more wise than behoveth to be wise, but to be wise unto sobriety, <cr>[2]</cr> to every one as God hath divided the measure of faith.",
+          "text": "For I say by the grace that is given me, to all that are among you, <cr>[1]</cr> not to be more wise than behoveth to be wise, but to be wise unto sobriety, <na>[2]</na> to every one as God hath divided the measure of faith.",
           "cross_refs": [
             {
               "text": "1. Cor. 12, 11. Eph. 4, 7."
@@ -2118,7 +2118,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "None must presume to meddle above the measure of God's gift, or out of the compass of his state and vocation."
             }
           ]
@@ -2133,7 +2133,7 @@
         },
         {
           "verse": 6,
-          "text": "<cr>[1]</cr> And having gifts, according to the grace that is given us, different, either <cr>[2]</cr> prophecy according to the rule of faith,",
+          "text": "<na>[1]</na> And having gifts, according to the grace that is given us, different, either <na>[2]</na> prophecy according to the rule of faith,",
           "has_annotation": true,
           "notes": [
             {
@@ -2156,7 +2156,7 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> Love without simulation. Hating evil, cleaving to good.",
+          "text": "<na>[1]</na> Love without simulation. Hating evil, cleaving to good.",
           "notes": [
             {
               "label": "1",
@@ -2178,7 +2178,7 @@
         },
         {
           "verse": 13,
-          "text": "Communicating to the <cr>[1]</cr> <alt>necessities</alt> of the saints. Pursuing hospitality.",
+          "text": "Communicating to the <na>[1]</na> <alt>necessities</alt> of the saints. Pursuing hospitality.",
           "notes": [
             {
               "label": "1",
@@ -2188,7 +2188,7 @@
         },
         {
           "verse": 14,
-          "text": "Bless them that persecute you: bless, and <cr>[1]</cr> curse not.",
+          "text": "Bless them that persecute you: bless, and <na>[1]</na> curse not.",
           "notes": [
             {
               "label": "1",
@@ -2202,7 +2202,7 @@
         },
         {
           "verse": 16,
-          "text": "Being of one mind one toward another. Not minding high things, but consenting to the humble. <cr>[1]</cr> Be not wise in your own conceit.",
+          "text": "Being of one mind one toward another. Not minding high things, but consenting to the humble. <na>[1]</na> Be not wise in your own conceit.",
           "notes": [
             {
               "label": "1",
@@ -2287,7 +2287,7 @@
         },
         {
           "verse": 7,
-          "text": "<cr>[1]</cr> Render therefore to all men their dew: <cr>[2]</cr> to whom tribute, tribute: to whom custom, custom: to whom fear, fear; to whom honour, honour.",
+          "text": "<cr>[1]</cr> Render therefore to all men their dew: <na>[2]</na> to whom tribute, tribute: to whom custom, custom: to whom fear, fear; to whom honour, honour.",
           "cross_refs": [
             {
               "text": "Mt. 22, 21."
@@ -2295,14 +2295,14 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "Obedience to temporal rulers, & in what cases."
             }
           ]
         },
         {
           "verse": 8,
-          "text": "Owe no man any thing: but that you love one another. For he that loveth his neighbour, hath <cr>[1]</cr> fulfilled the law.",
+          "text": "Owe no man any thing: but that you love one another. For he that loveth his neighbour, hath <na>[1]</na> fulfilled the law.",
           "notes": [
             {
               "label": "1",
@@ -2328,7 +2328,7 @@
         },
         {
           "verse": 11,
-          "text": "<cr>[1]</cr> And that knowing the season, that it is now the hour for us to rise from sleep. For now our salvation is nearer than when we believed.",
+          "text": "<na>[1]</na> And that knowing the season, that it is now the hour for us to rise from sleep. For now our salvation is nearer than when we believed.",
           "notes": [
             {
               "label": "1",
@@ -2361,7 +2361,7 @@
         },
         {
           "verse": 2,
-          "text": "For one believeth that he may eat all things: but he that is weak, <cr>[1]</cr> <alt>let him eat</alt> herbs.",
+          "text": "For one believeth that he may eat all things: but he that is weak, <na>[1]</na> <alt>let him eat</alt> herbs.",
           "has_annotation": true,
           "notes": [
             {
@@ -2428,7 +2428,7 @@
         },
         {
           "verse": 14,
-          "text": "I know and am persuaded in our Lord <sc>Jesus</sc> Christ, that nothing is <cr>[1]</cr> common of itself, but to him that supposeth any thing to be common, to him it is common.",
+          "text": "I know and am persuaded in our Lord <sc>Jesus</sc> Christ, that nothing is <na>[1]</na> common of itself, but to him that supposeth any thing to be common, to him it is common.",
           "notes": [
             {
               "label": "1",
@@ -2438,7 +2438,7 @@
         },
         {
           "verse": 15,
-          "text": "<cr>[1]</cr> For if because of meat thy brother be grieved; now thou walkest not according to charity. <cr>[2]</cr> Do not with thy meat destroy him for whom Christ died.",
+          "text": "<cr>[1]</cr> For if because of meat thy brother be grieved; now thou walkest not according to charity. <na>[2]</na> Do not with thy meat destroy him for whom Christ died.",
           "cross_refs": [
             {
               "text": "1. Cor. 8."
@@ -2446,7 +2446,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "Though he wish the weak to be borne withal, yet he uttereth his mind plainly, that indeed all the meats forbidden and unclean in the Law, are now through Christ cleansed & lawful for every man to use."
             }
           ]
@@ -2516,7 +2516,7 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> For <cr>[2]</cr> what things soever have been written, to our learning they are written: that by the patience and consolation of the Scriptures, we may have hope.",
+          "text": "<na>[1]</na> For <na>[2]</na> what things soever have been written, to our learning they are written: that by the patience and consolation of the Scriptures, we may have hope.",
           "notes": [
             {
               "label": "1",
@@ -2534,7 +2534,7 @@
         },
         {
           "verse": 6,
-          "text": "that of <cr>[1]</cr> one mind, with one mouth you may glorify God & the Father of our Lord <sc>Jesus</sc> Christ.",
+          "text": "that of <na>[1]</na> one mind, with one mouth you may glorify God & the Father of our Lord <sc>Jesus</sc> Christ.",
           "notes": [
             {
               "label": "1",
@@ -2548,7 +2548,7 @@
         },
         {
           "verse": 8,
-          "text": "For I say Christ <sc>Jesus</sc> to have been <cr>[1]</cr> minister of the circumcision for the verity of God to confirm the promises of the fathers.",
+          "text": "For I say Christ <sc>Jesus</sc> to have been <na>[1]</na> minister of the circumcision for the verity of God to confirm the promises of the fathers.",
           "notes": [
             {
               "label": "1",
@@ -2647,7 +2647,7 @@
         },
         {
           "verse": 25,
-          "text": "Now therefore I will go unto Jerusalem to minister to the <cr>[1]</cr> saints.",
+          "text": "Now therefore I will go unto Jerusalem to minister to the <na>[1]</na> saints.",
           "notes": [
             {
               "label": "1",
@@ -2673,7 +2673,7 @@
         },
         {
           "verse": 30,
-          "text": "I beseech you therefore brethren by our Lord <sc>Jesus Christ</sc>, and by the charity of the Holy Ghost, that you <cr>[1]</cr> help me in your prayers for me to God,",
+          "text": "I beseech you therefore brethren by our Lord <sc>Jesus Christ</sc>, and by the charity of the Holy Ghost, that you <na>[1]</na> help me in your prayers for me to God,",
           "notes": [
             {
               "label": "1",
@@ -2709,7 +2709,7 @@
         },
         {
           "verse": 3,
-          "text": "<cr>[1]</cr> Salute Prisca & Aquila my helpers in Christ <sc>Jesus</sc>,",
+          "text": "<na>[1]</na> Salute Prisca & Aquila my helpers in Christ <sc>Jesus</sc>,",
           "notes": [
             {
               "label": "1",
@@ -2723,7 +2723,7 @@
         },
         {
           "verse": 5,
-          "text": "and their <cr>[1]</cr> domestical Church. Salute Epaenetus my beloved: who is the first fruit of Asia in Christ.",
+          "text": "and their <na>[1]</na> domestical Church. Salute Epaenetus my beloved: who is the first fruit of Asia in Christ.",
           "notes": [
             {
               "label": "1",
@@ -2737,7 +2737,7 @@
         },
         {
           "verse": 7,
-          "text": "Salute Andronicus and <cr>[1]</cr> <alt>Iulia</alt> my cousins and fellow captives: who are noble among the Apostles, who also before me were in Christ.",
+          "text": "Salute Andronicus and <na>[1]</na> <alt>Iulia</alt> my cousins and fellow captives: who are noble among the Apostles, who also before me were in Christ.",
           "notes": [
             {
               "label": "1",
@@ -2755,7 +2755,7 @@
         },
         {
           "verse": 10,
-          "text": "Salute Apelles <cr>[1]</cr> approved in Christ. Salute them that are of Aristobolus' house.",
+          "text": "Salute Apelles <na>[1]</na> approved in Christ. Salute them that are of Aristobolus' house.",
           "notes": [
             {
               "label": "1",
@@ -2777,7 +2777,7 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Salute Asyncritus, Phlegon, Hermas, Patrobas, Hermes: and the brethren that are with them.",
+          "text": "<na>[1]</na> Salute Asyncritus, Phlegon, Hermas, Patrobas, Hermes: and the brethren that are with them.",
           "notes": [
             {
               "label": "1",
@@ -2796,7 +2796,7 @@
         },
         {
           "verse": 17,
-          "text": "And I desire you, brethren, to mark them that make dissensions and scandals contrary to the doctrine which you have <cr>[1]</cr> learned, and avoid them.",
+          "text": "And I desire you, brethren, to mark them that make dissensions and scandals contrary to the doctrine which you have <na>[1]</na> learned, and avoid them.",
           "has_annotation": true,
           "notes": [
             {
@@ -2807,7 +2807,7 @@
         },
         {
           "verse": 18,
-          "text": "For such do not serve Christ our Lord, but their own belly: and <cr>[1]</cr> by sweet speeches and benedictions seduce the hearts of innocents.",
+          "text": "For such do not serve Christ our Lord, but their own belly: and <na>[1]</na> by sweet speeches and benedictions seduce the hearts of innocents.",
           "has_annotation": true,
           "notes": [
             {

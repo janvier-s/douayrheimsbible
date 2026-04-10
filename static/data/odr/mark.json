@@ -12,7 +12,7 @@
         },
         {
           "verse": 2,
-          "text": "As it is written in <cr>[1]</cr> <alt>Esay the Prophet</alt> <cr>[2]</cr> : <i>(</i> <cr>[3]</cr> <i>Behold I send mine Angel before thy face, who shall prepare thy way before thee.)</i>",
+          "text": "As it is written in <cr>[1]</cr> <alt>Esay the Prophet</alt> <cr>[2]</cr> : <i>(</i> <na>[3]</na> <i>Behold I send mine Angel before thy face, who shall prepare thy way before thee.)</i>",
           "cross_refs": [
             {
               "text": "Esa. 40, 3."
@@ -23,7 +23,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "3",
               "text": "the prophet's"
             }
           ]
@@ -34,7 +34,7 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> John was in the desert baptizing, and preaching the Baptism of penance <cr>[2]</cr> unto remission of sins.",
+          "text": "<cr>[1]</cr> John was in the desert baptizing, and preaching the Baptism of penance <na>[2]</na> unto remission of sins.",
           "cross_refs": [
             {
               "text": "Mt. 3, 1. Lu. 3, 4. Io. 1, 15."
@@ -96,7 +96,7 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> And <cr>[2]</cr> after that John was delivered up, <sc>Jesus</sc> came into Galilee, preaching the Gospel of the Kingdom of God,",
+          "text": "<cr>[1]</cr> And <na>[2]</na> after that John was delivered up, <sc>Jesus</sc> came into Galilee, preaching the Gospel of the Kingdom of God,",
           "cross_refs": [
             {
               "text": "Mat. 4, 12. Luc. 4, 14."
@@ -104,14 +104,14 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "THE SECOND part of this Gospel: of Christ's manifestation."
             }
           ]
         },
         {
           "verse": 15,
-          "text": "and saying: That the time is fulfilled, and the Kingdom of God is at hand: <cr>[1]</cr> be penitent, and believe the Gospel.",
+          "text": "and saying: That the time is fulfilled, and the Kingdom of God is at hand: <na>[1]</na> be penitent, and believe the Gospel.",
           "notes": [
             {
               "label": "1",
@@ -259,7 +259,7 @@
         },
         {
           "verse": 44,
-          "text": "And he saith to him: See thou tell nobody, but go, shew thyself <cr>[1]</cr> to the high Priest, and offer for thy cleansing the things that <cr>[2]</cr> Moyses commanded, for a testimony to them.",
+          "text": "And he saith to him: See thou tell nobody, but go, shew thyself <cr>[1]</cr> to the high Priest, and offer for thy cleansing the things that <na>[2]</na> Moyses commanded, for a testimony to them.",
           "cross_refs": [
             {
               "text": "Lev. 14, 3."
@@ -267,7 +267,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "Our Saviour even when he healed the leper by extraordinary miraculous power, would not yet break order, but sent the party to the Priest."
             }
           ]
@@ -312,7 +312,7 @@
         },
         {
           "verse": 5,
-          "text": "And when <sc>Jesus</sc> had seen <cr>[1]</cr> their faith, he saith to the sick of the palsy: Son, thy sins are forgiven thee.",
+          "text": "And when <sc>Jesus</sc> had seen <na>[1]</na> their faith, he saith to the sick of the palsy: Son, thy sins are forgiven thee.",
           "has_annotation": true,
           "notes": [
             {
@@ -395,7 +395,7 @@
         },
         {
           "verse": 20,
-          "text": "But the days will come when the bridegroom shall be taken away from them; and then they shall <cr>[1]</cr> fast in those days.",
+          "text": "But the days will come when the bridegroom shall be taken away from them; and then they shall <na>[1]</na> fast in those days.",
           "notes": [
             {
               "label": "1",
@@ -447,7 +447,7 @@
         },
         {
           "verse": 28,
-          "text": "Therefore the Son of man is <cr>[1]</cr> Lord of the Sabboth also.",
+          "text": "Therefore the Son of man is <na>[1]</na> Lord of the Sabboth also.",
           "notes": [
             {
               "label": "1",
@@ -504,7 +504,7 @@
         },
         {
           "verse": 10,
-          "text": "For he healed many, so that there pressed in upon him for <cr>[1]</cr> to touch him, as many had hurts.",
+          "text": "For he healed many, so that there pressed in upon him for <na>[1]</na> to touch him, as many had hurts.",
           "notes": [
             {
               "label": "1",
@@ -562,7 +562,7 @@
         },
         {
           "verse": 21,
-          "text": "And when his had heard of it, they went forth to lay hands on him. For they said that he was become <cr>[1]</cr> mad.",
+          "text": "And when his had heard of it, they went forth to lay hands on him. For they said that he was become <na>[1]</na> mad.",
           "notes": [
             {
               "label": "1",
@@ -692,7 +692,7 @@
         },
         {
           "verse": 11,
-          "text": "And he said to them: To you it is given to know the mystery of the Kingdom of God; but to <cr>[1]</cr> them that are without, all things are done in parables:",
+          "text": "And he said to them: To you it is given to know the mystery of the Kingdom of God; but to <na>[1]</na> them that are without, all things are done in parables:",
           "notes": [
             {
               "label": "1",
@@ -744,7 +744,7 @@
         },
         {
           "verse": 21,
-          "text": "And he said to them: <cr>[1]</cr> Cometh a candle to be put <cr>[2]</cr> under a bushel, or under a bed? And not to be put upon the candlestick?",
+          "text": "And he said to them: <cr>[1]</cr> Cometh a candle to be put <na>[2]</na> under a bushel, or under a bed? And not to be put upon the candlestick?",
           "cross_refs": [
             {
               "text": "Lu. 8, 16."
@@ -767,7 +767,7 @@
         },
         {
           "verse": 24,
-          "text": "And he said to them: See what you hear. <cr>[1]</cr> In what measure you mete, it shall be measured to you again, and more shall be given <cr>[2]</cr> <alt>to you</alt>.",
+          "text": "And he said to them: See what you hear. <cr>[1]</cr> In what measure you mete, it shall be measured to you again, and more shall be given <na>[2]</na> <alt>to you</alt>.",
           "cross_refs": [
             {
               "text": "Lu. 8, 18."
@@ -915,7 +915,7 @@
         },
         {
           "verse": 12,
-          "text": "And the spirits besought him, saying: Send us <cr>[1]</cr> into the swine, that we may enter into them.",
+          "text": "And the spirits besought him, saying: Send us <na>[1]</na> into the swine, that we may enter into them.",
           "notes": [
             {
               "label": "1",
@@ -966,7 +966,7 @@
         },
         {
           "verse": 22,
-          "text": "And there cometh one of the <cr>[1]</cr> Arch-synagogues, named Jairus: and seeing him, he falleth down at his feet.",
+          "text": "And there cometh one of the <na>[1]</na> Arch-synagogues, named Jairus: and seeing him, he falleth down at his feet.",
           "notes": [
             {
               "label": "1",
@@ -1026,7 +1026,7 @@
         },
         {
           "verse": 35,
-          "text": "As he was yet speaking, they come <cr>[1]</cr> <alt>to</alt> the Archsynagogue, saying: That thy daughter is dead: why doest thou trouble the Master any further?",
+          "text": "As he was yet speaking, they come <na>[1]</na> <alt>to</alt> the Archsynagogue, saying: That thy daughter is dead: why doest thou trouble the Master any further?",
           "notes": [
             {
               "label": "1",
@@ -1049,7 +1049,7 @@
         },
         {
           "verse": 39,
-          "text": "And going in, he saith to them: Why make you this ado and weep? the wench is not dead, but <cr>[1]</cr> sleepeth.",
+          "text": "And going in, he saith to them: Why make you this ado and weep? the wench is not dead, but <na>[1]</na> sleepeth.",
           "notes": [
             {
               "label": "1",
@@ -1143,7 +1143,7 @@
         },
         {
           "verse": 13,
-          "text": "And they cast out many devils, and <cr>[1]</cr> anointed with <cr>[2]</cr> oil many sick, and healed them.",
+          "text": "And they cast out many devils, and <cr>[1]</cr> anointed with <na>[2]</na> oil many sick, and healed them.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -1176,7 +1176,7 @@
         },
         {
           "verse": 17,
-          "text": "<cr>[1]</cr> For the said Herod sent and apprehended John, and bound him in prison for Herodias the wife of <cr>[2]</cr> Philippe his brother, because he had married her.",
+          "text": "<na>[1]</na> For the said Herod sent and apprehended John, and bound him in prison for Herodias the wife of <na>[2]</na> Philippe his brother, because he had married her.",
           "notes": [
             {
               "label": "1",
@@ -1318,7 +1318,7 @@
         },
         {
           "verse": 45,
-          "text": "And immediately he compelled his Disciples to go up into the boat, that they might go before him beyond the <cr>[1]</cr> strait to Bethsaida: whiles himself did dismiss the people.",
+          "text": "And immediately he compelled his Disciples to go up into the boat, that they might go before him beyond the <na>[1]</na> strait to Bethsaida: whiles himself did dismiss the people.",
           "notes": [
             {
               "label": "1",
@@ -1328,7 +1328,7 @@
         },
         {
           "verse": 46,
-          "text": "<cr>[1]</cr> And <cr>[2]</cr> when he had dismissed them, he went into the mountain to pray.",
+          "text": "<cr>[1]</cr> And <na>[2]</na> when he had dismissed them, he went into the mountain to pray.",
           "cross_refs": [
             {
               "text": "Mt. 14, 23. Io 6, 16."
@@ -1336,7 +1336,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Gospel on Saturday after Ashwednesday."
             }
           ]
@@ -1420,7 +1420,7 @@
         },
         {
           "verse": 6,
-          "text": "But he answering, said to them: Well did Esay Prophesy of you Hypocrites, as it is written: <cr>[1]</cr> <i>This people honoureth me </i> <cr>[2]</cr> <i>with their lips, but their heart is far from me.</i>",
+          "text": "But he answering, said to them: Well did Esay Prophesy of you Hypocrites, as it is written: <cr>[1]</cr> <i>This people honoureth me </i> <na>[2]</na> <i>with their lips, but their heart is far from me.</i>",
           "cross_refs": [
             {
               "text": "Esa. 29, 13."
@@ -1477,7 +1477,7 @@
         },
         {
           "verse": 15,
-          "text": "Nothing is without a man entering into him, that can defile him. But the things that proceed from a man those are they that make a man <cr>[1]</cr> common.",
+          "text": "Nothing is without a man entering into him, that can defile him. But the things that proceed from a man those are they that make a man <na>[1]</na> common.",
           "has_annotation": true,
           "notes": [
             {
@@ -1553,7 +1553,7 @@
         },
         {
           "verse": 31,
-          "text": "<cr>[1]</cr> And again going out of the coasts <cr>[2]</cr> <alt>of Tyre, he came by Sidon</alt> to the sea of Galilee through the midst of the coasts of Decapolis.",
+          "text": "<na>[1]</na> And again going out of the coasts <na>[2]</na> <alt>of Tyre, he came by Sidon</alt> to the sea of Galilee through the midst of the coasts of Decapolis.",
           "notes": [
             {
               "label": "1",
@@ -1599,7 +1599,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "IN <cr>[1]</cr><cr>[2]</cr> those days again when there was a great multitude, and had not what to eat: calling his Disciples together, he saith to them:",
+          "text": "IN <cr>[1]</cr><na>[2]</na> those days again when there was a great multitude, and had not what to eat: calling his Disciples together, he saith to them:",
           "cross_refs": [
             {
               "text": "Mt. 15, 32."
@@ -1607,14 +1607,14 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Gospel upon the 6. Sunday after Pentecost."
             }
           ]
         },
         {
           "verse": 2,
-          "text": "I have compassion upon the multitude, because lo <cr>[1]</cr> three days they now endure with me, neither have what to eat.",
+          "text": "I have compassion upon the multitude, because lo <na>[1]</na> three days they now endure with me, neither have what to eat.",
           "notes": [
             {
               "label": "1",
@@ -1717,7 +1717,7 @@
         },
         {
           "verse": 22,
-          "text": "And they come to Bethsaida; and they bring to him one blind, and desired him that he would <cr>[1]</cr> touch him.",
+          "text": "And they come to Bethsaida; and they bring to him one blind, and desired him that he would <na>[1]</na> touch him.",
           "notes": [
             {
               "label": "1",
@@ -1821,7 +1821,7 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> And his garments were made glistering and white exceedingly as snow, the like whereof a fuller cannot make white upon the earth.",
+          "text": "<na>[1]</na> And his garments were made glistering and white exceedingly as snow, the like whereof a fuller cannot make white upon the earth.",
           "notes": [
             {
               "label": "1",
@@ -1831,7 +1831,7 @@
         },
         {
           "verse": 3,
-          "text": "And there appeared to them <cr>[1]</cr> Elias with Moyses; and they were talking with <sc>Jesus</sc>.",
+          "text": "And there appeared to them <na>[1]</na> Elias with Moyses; and they were talking with <sc>Jesus</sc>.",
           "notes": [
             {
               "label": "1",
@@ -1875,7 +1875,7 @@
         },
         {
           "verse": 11,
-          "text": "Who answering said to them: Elias when he cometh first, shall restore all things: and <cr>[1]</cr> <alt>how</alt> it is written of the Son of man, that he shall suffer many things and be contemned.",
+          "text": "Who answering said to them: Elias when he cometh first, shall restore all things: and <na>[1]</na> <alt>how</alt> it is written of the Son of man, that he shall suffer many things and be contemned.",
           "notes": [
             {
               "label": "1",
@@ -1907,7 +1907,7 @@
         },
         {
           "verse": 16,
-          "text": "<cr>[1]</cr> And one of the multitude answering, said: Master, I have brought my son to thee, having a dumb spirit,",
+          "text": "<na>[1]</na> And one of the multitude answering, said: Master, I have brought my son to thee, having a dumb spirit,",
           "notes": [
             {
               "label": "1",
@@ -1961,7 +1961,7 @@
         },
         {
           "verse": 28,
-          "text": "And he said to them: This kind can go out by nothing but <cr>[1]</cr> by prayer and fasting.",
+          "text": "And he said to them: This kind can go out by nothing but <na>[1]</na> by prayer and fasting.",
           "notes": [
             {
               "label": "1",
@@ -2031,7 +2031,7 @@
         },
         {
           "verse": 40,
-          "text": "For Whosoever shall give you to drink a cup of water in my name, because you are Christ's; amen I say to you, he shall not lose his <cr>[1]</cr> reward.",
+          "text": "For Whosoever shall give you to drink a cup of water in my name, because you are Christ's; amen I say to you, he shall not lose his <na>[1]</na> reward.",
           "notes": [
             {
               "label": "1",
@@ -2041,7 +2041,7 @@
         },
         {
           "verse": 41,
-          "text": "And whosoever shall <cr>[1]</cr> scandalize one of these little ones believing in me; it is good for him rather if a millstone were put about his neck, and he were cast into the sea.",
+          "text": "And whosoever shall <na>[1]</na> scandalize one of these little ones believing in me; it is good for him rather if a millstone were put about his neck, and he were cast into the sea.",
           "notes": [
             {
               "label": "1",
@@ -2147,7 +2147,7 @@
         },
         {
           "verse": 9,
-          "text": "That therefore which God hath joined together, <cr>[1]</cr> let no man separate.",
+          "text": "That therefore which God hath joined together, <na>[1]</na> let no man separate.",
           "notes": [
             {
               "label": "1",
@@ -2192,7 +2192,7 @@
         },
         {
           "verse": 16,
-          "text": "And embracing them, and imposing hands upon them, he <cr>[1]</cr> blessed them.",
+          "text": "And embracing them, and imposing hands upon them, he <na>[1]</na> blessed them.",
           "notes": [
             {
               "label": "1",
@@ -2216,7 +2216,7 @@
         },
         {
           "verse": 19,
-          "text": "Thou knowest the <cr>[1]</cr> commandments, <cr>[2]</cr> <i>Commit not adultery, Kill not, Steal not, Bear not false witness, do no fraud, Honour thy father and mother.</i>",
+          "text": "Thou knowest the <cr>[1]</cr> commandments, <na>[2]</na> <i>Commit not adultery, Kill not, Steal not, Bear not false witness, do no fraud, Honour thy father and mother.</i>",
           "cross_refs": [
             {
               "text": "Exo. 20, 13."
@@ -2224,7 +2224,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "Note that the keeping of God's commandments procureth life everlasting."
             }
           ]
@@ -2235,7 +2235,7 @@
         },
         {
           "verse": 21,
-          "text": "And <sc>Jesus</sc> beholding him, loved him, and said to him: One thing is wanting unto thee: <cr>[1]</cr> go, sell whatsoever thou hast, and give to the poor, and thou shalt have treasure in Heaven; and come, follow me.",
+          "text": "And <sc>Jesus</sc> beholding him, loved him, and said to him: One thing is wanting unto thee: <na>[1]</na> go, sell whatsoever thou hast, and give to the poor, and thou shalt have treasure in Heaven; and come, follow me.",
           "notes": [
             {
               "label": "1",
@@ -2274,7 +2274,7 @@
         },
         {
           "verse": 29,
-          "text": "<sc>Jesus</sc> answering, said: <cr>[1]</cr> Amen I say to you, there is no man which hath left house, or brethren, or sisters, or father, or mother, or children, or lands for me and for the Gospel,",
+          "text": "<sc>Jesus</sc> answering, said: <na>[1]</na> Amen I say to you, there is no man which hath left house, or brethren, or sisters, or father, or mother, or children, or lands for me and for the Gospel,",
           "notes": [
             {
               "label": "1",
@@ -2414,7 +2414,7 @@
       "verses": [
         {
           "verse": 0,
-          "text": "leafy tree. 15. He sheweth his zeal for the house of God: <i>for which the Rulers seek his destruction. 24. He exhorteth his Disciples to steadfastness of faith, and to forgive their enemies. 27. He avoucheth his power by the witness of John who was a man sent of God.</i> <cr>[1]</cr>",
+          "text": "leafy tree. 15. He sheweth his zeal for the house of God: <i>for which the Rulers seek his destruction. 24. He exhorteth his Disciples to steadfastness of faith, and to forgive their enemies. 27. He avoucheth his power by the witness of John who was a man sent of God.</i> <na>[1]</na>",
           "notes": [
             {
               "label": "1",
@@ -2424,7 +2424,7 @@
         },
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when they came nigh unto Jerusalem and Bethania to Mount-olivet, he sendeth two of his Disciples,",
+          "text": "<sc>And</sc> <cr>[1]</cr><na>[2]</na> when they came nigh unto Jerusalem and Bethania to Mount-olivet, he sendeth two of his Disciples,",
           "cross_refs": [
             {
               "text": "Mt. 21, 1. Lu. 19, 20. Io. 12, 15."
@@ -2432,7 +2432,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "PALM Sunday."
             }
           ]
@@ -2463,7 +2463,7 @@
         },
         {
           "verse": 8,
-          "text": "And <cr>[1]</cr> many spread their garments in the way: and others did cut boughs from the trees, and strawed them in the way.",
+          "text": "And <na>[1]</na> many spread their garments in the way: and others did cut boughs from the trees, and strawed them in the way.",
           "notes": [
             {
               "label": "1",
@@ -2490,7 +2490,7 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> And the next day when they departed from Bethania, he was an hungered.",
+          "text": "<na>[1]</na> And the next day when they departed from Bethania, he was an hungered.",
           "notes": [
             {
               "label": "1",
@@ -2545,7 +2545,7 @@
         },
         {
           "verse": 20,
-          "text": "<cr>[1]</cr><cr>[2]</cr> And <cr>[3]</cr> when they passed by in the morning, they saw the figtree withered from the roots.",
+          "text": "<cr>[1]</cr><na>[2]</na> And <na>[3]</na> when they passed by in the morning, they saw the figtree withered from the roots.",
           "cross_refs": [
             {
               "text": "Mt. 21, 20."
@@ -2553,7 +2553,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "3",
               "text": "TUESDAY."
             },
             {
@@ -2568,7 +2568,7 @@
         },
         {
           "verse": 22,
-          "text": "And <sc>Jesus</sc> answering saith to them: Have <cr>[1]</cr> faith of God.",
+          "text": "And <sc>Jesus</sc> answering saith to them: Have <na>[1]</na> faith of God.",
           "notes": [
             {
               "label": "1",
@@ -2590,7 +2590,7 @@
         },
         {
           "verse": 26,
-          "text": "<cr>[1]</cr> If so be that you will not forgive, neither will your Father that is in Heaven, forgive you your sins.",
+          "text": "<na>[1]</na> If so be that you will not forgive, neither will your Father that is in Heaven, forgive you your sins.",
           "notes": [
             {
               "label": "1",
@@ -2639,7 +2639,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> he began to speak to them in parables: <cr>[2]</cr> A man planted a vineyard and made a hedge about it, and digged a trough, and built a tower, and let it out to husbandmen; and went forth into a strange country.",
+          "text": "<sc>And</sc> <cr>[1]</cr> he began to speak to them in parables: <na>[2]</na> A man planted a vineyard and made a hedge about it, and digged a trough, and built a tower, and let it out to husbandmen; and went forth into a strange country.",
           "cross_refs": [
             {
               "text": "Esa. 5, 1. Mt. 21, 33. Lu. 20, 9."
@@ -2670,7 +2670,7 @@
         },
         {
           "verse": 6,
-          "text": "Therefore having yet one <cr>[1]</cr> son most dear; him also he sent unto them last saying: That they will reverence my son.",
+          "text": "Therefore having yet one <na>[1]</na> son most dear; him also he sent unto them last saying: That they will reverence my son.",
           "notes": [
             {
               "label": "1",
@@ -2688,7 +2688,7 @@
         },
         {
           "verse": 9,
-          "text": "What therefore will the Lord of the vineyard do? <cr>[1]</cr> He will come and destroy the husbandmen; and will give the vineyard to others.",
+          "text": "What therefore will the Lord of the vineyard do? <na>[1]</na> He will come and destroy the husbandmen; and will give the vineyard to others.",
           "notes": [
             {
               "label": "1",
@@ -2698,7 +2698,7 @@
         },
         {
           "verse": 10,
-          "text": "Neither have you read this scripture, <cr>[1]</cr> <i>The </i> <cr>[2]</cr> <i>stone which the builders rejected; the same is made the head of the corner:</i>",
+          "text": "Neither have you read this scripture, <cr>[1]</cr> <i>The </i> <na>[2]</na> <i>stone which the builders rejected; the same is made the head of the corner:</i>",
           "cross_refs": [
             {
               "text": "Ps. 117, 22."
@@ -2839,7 +2839,7 @@
         },
         {
           "verse": 33,
-          "text": "And that he be loved from the whole heart, and with the whole understanding, and with the whole soul, and with the whole strength: and <cr>[1]</cr> to love his neighbour as himself, is a greater thing than all holocausts and sacrifices.",
+          "text": "And that he be loved from the whole heart, and with the whole understanding, and with the whole soul, and with the whole strength: and <na>[1]</na> to love his neighbour as himself, is a greater thing than all holocausts and sacrifices.",
           "notes": [
             {
               "label": "1",
@@ -2900,7 +2900,7 @@
         },
         {
           "verse": 43,
-          "text": "And calling his Disciples together, he saith to them, Amen I say to you, that this poor widow hath cast in <cr>[1]</cr> more than all that have cast into the treasury.",
+          "text": "And calling his Disciples together, he saith to them, Amen I say to you, that this poor widow hath cast in <na>[1]</na> more than all that have cast into the treasury.",
           "notes": [
             {
               "label": "1",
@@ -2920,7 +2920,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when he went out of the Temple, one of his Disciples saith to him: Master, behold what manner of stones, and what kind of buildings.",
+          "text": "<sc>And</sc> <cr>[1]</cr><na>[2]</na> when he went out of the Temple, one of his Disciples saith to him: Master, behold what manner of stones, and what kind of buildings.",
           "cross_refs": [
             {
               "text": "Mt. 24, 1. Lu. 21, 5."
@@ -2928,7 +2928,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "See the Annotations upon S. Matthew c. 24."
             }
           ]
@@ -2943,7 +2943,7 @@
         },
         {
           "verse": 4,
-          "text": "<cr>[1]</cr> Tell us, when shall these things be? and what shall be the sign when all these things shall begin to be consummate?",
+          "text": "<na>[1]</na> Tell us, when shall these things be? and what shall be the sign when all these things shall begin to be consummate?",
           "has_annotation": true,
           "notes": [
             {
@@ -2967,7 +2967,7 @@
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> For nation shall rise against nation and kingdom against kingdom, and there shall be earth-quakes in places, & famines. These things are the beginning of sorrows.",
+          "text": "<na>[1]</na> For nation shall rise against nation and kingdom against kingdom, and there shall be earth-quakes in places, & famines. These things are the beginning of sorrows.",
           "notes": [
             {
               "label": "1",
@@ -2977,7 +2977,7 @@
         },
         {
           "verse": 9,
-          "text": "<cr>[1]</cr> But look to yourselves. For they shall deliver you up in Councils, and in Synagogues shall you be beaten, and you shall stand before Presidents and kings for my sake, for a testimony unto them.",
+          "text": "<na>[1]</na> But look to yourselves. For they shall deliver you up in Councils, and in Synagogues shall you be beaten, and you shall stand before Presidents and kings for my sake, for a testimony unto them.",
           "notes": [
             {
               "label": "1",
@@ -2995,7 +2995,7 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> And brother shall deliver brother unto death, and the father his Son; and the children shall arise against the parents, and shall work their death.",
+          "text": "<na>[1]</na> And brother shall deliver brother unto death, and the father his Son; and the children shall arise against the parents, and shall work their death.",
           "notes": [
             {
               "label": "1",
@@ -3005,7 +3005,7 @@
         },
         {
           "verse": 13,
-          "text": "<cr>[1]</cr> And you shall be odious to all men for my name. But he that shall endure unto the end, he shall be saved.",
+          "text": "<na>[1]</na> And you shall be odious to all men for my name. But he that shall endure unto the end, he shall be saved.",
           "notes": [
             {
               "label": "1",
@@ -3045,7 +3045,7 @@
         },
         {
           "verse": 20,
-          "text": "And unless the Lord had shortened the days, no flesh should be saved: but for the elect which he hath elected, he hath <cr>[1]</cr> shortened the days.",
+          "text": "And unless the Lord had shortened the days, no flesh should be saved: but for the elect which he hath elected, he hath <na>[1]</na> shortened the days.",
           "notes": [
             {
               "label": "1",
@@ -3110,7 +3110,7 @@
         },
         {
           "verse": 32,
-          "text": "But of that day or hour no man knoweth, neither the Angels in Heaven, nor the <cr>[1]</cr> Son, but the Father.",
+          "text": "But of that day or hour no man knoweth, neither the Angels in Heaven, nor the <na>[1]</na> Son, but the Father.",
           "notes": [
             {
               "label": "1",
@@ -3120,7 +3120,7 @@
         },
         {
           "verse": 33,
-          "text": "<cr>[1]</cr> Take heed, watch, and pray. For you know not when the time is.",
+          "text": "<na>[1]</na> Take heed, watch, and pray. For you know not when the time is.",
           "notes": [
             {
               "label": "1",
@@ -3152,7 +3152,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> the Pasch was, and the Azymes after two days: and the chief Priests and the Scribes sought how they might by some wile lay hands on him, and kill him.",
+          "text": "<sc>And</sc> <cr>[1]</cr><na>[2]</na> the Pasch was, and the Azymes after two days: and the chief Priests and the Scribes sought how they might by some wile lay hands on him, and kill him.",
           "cross_refs": [
             {
               "text": "Mt. 26, 1. Lu. 22, 1."
@@ -3160,7 +3160,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "TENEBRAE Wednesday."
             }
           ]
@@ -3194,7 +3194,7 @@
         },
         {
           "verse": 7,
-          "text": "For the poor you have always with you; and when you will, you may do them good; but <cr>[1]</cr> me you have not always.",
+          "text": "For the poor you have always with you; and when you will, you may do them good; but <na>[1]</na> me you have not always.",
           "notes": [
             {
               "label": "1",
@@ -3225,7 +3225,7 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr> And <cr>[2]</cr> the first day of the Azymes when they sacrificed the Pasch, the Disciples say to him: Whither wilt thou that we go, and prepare for thee to eat the Pasch?",
+          "text": "<cr>[1]</cr> And <na>[2]</na> the first day of the Azymes when they sacrificed the Pasch, the Disciples say to him: Whither wilt thou that we go, and prepare for thee to eat the Pasch?",
           "cross_refs": [
             {
               "text": "Mt. 26, 17. Lu. 22, 7."
@@ -3233,7 +3233,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "MAUNDY Thursday."
             }
           ]
@@ -3296,7 +3296,7 @@
         },
         {
           "verse": 23,
-          "text": "And taking the chalice, giving thanks he gave to them. And they <cr>[1]</cr> all drank of it.",
+          "text": "And taking the chalice, giving thanks he gave to them. And they <na>[1]</na> all drank of it.",
           "has_annotation": true,
           "notes": [
             {
@@ -3321,7 +3321,7 @@
         },
         {
           "verse": 26,
-          "text": "<cr>[1]</cr> And an hymn being said, they went forth into Mount-olivet.",
+          "text": "<na>[1]</na> And an hymn being said, they went forth into Mount-olivet.",
           "notes": [
             {
               "label": "1",
@@ -3499,7 +3499,7 @@
         },
         {
           "verse": 64,
-          "text": "You have heard blasphemy. How think you? Who all <cr>[1]</cr> condemned him to be guilty of death.",
+          "text": "You have heard blasphemy. How think you? Who all <na>[1]</na> condemned him to be guilty of death.",
           "notes": [
             {
               "label": "1",
@@ -3513,7 +3513,7 @@
         },
         {
           "verse": 66,
-          "text": "And when Peter was in the court beneath, there cometh one of the <cr>[1]</cr> woman-servants of the high Priest.",
+          "text": "And when Peter was in the court beneath, there cometh one of the <na>[1]</na> woman-servants of the high Priest.",
           "notes": [
             {
               "label": "1",
@@ -3560,7 +3560,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> forthwith in the morning the chief Priests with the Ancients and the Scribes & the whole Council, consulting together, binding <sc>Jesus</sc> led & delivered him to Pilate.",
+          "text": "<sc>And</sc> <cr>[1]</cr><na>[2]</na> forthwith in the morning the chief Priests with the Ancients and the Scribes & the whole Council, consulting together, binding <sc>Jesus</sc> led & delivered him to Pilate.",
           "cross_refs": [
             {
               "text": "Mt. 27, 1. Lu. 23, 1. Io. 18, 28."
@@ -3568,7 +3568,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "GOOD FRIDAY."
             }
           ]
@@ -3695,7 +3695,7 @@
         },
         {
           "verse": 29,
-          "text": "And they that passed by, blasphemed him, wagging their heads, and saying: Vah, <cr>[1]</cr> <alt>he that destroyeth</alt> the Temple, and in three days <cr>[2]</cr> <alt>buildeth it</alt>:",
+          "text": "And they that passed by, blasphemed him, wagging their heads, and saying: Vah, <na>[1]</na> <alt>he that destroyeth</alt> the Temple, and in three days <na>[2]</na> <alt>buildeth it</alt>:",
           "notes": [
             {
               "label": "1",
@@ -3709,7 +3709,7 @@
         },
         {
           "verse": 30,
-          "text": "<cr>[1]</cr> save thyself, coming down from the cross.",
+          "text": "<na>[1]</na> save thyself, coming down from the cross.",
           "notes": [
             {
               "label": "1",
@@ -3731,7 +3731,7 @@
         },
         {
           "verse": 34,
-          "text": "And at the ninth hour <sc>Jesus</sc> cried out with a mighty voice, saying: <cr>[1]</cr> <i>Eloi, Eloi, lamma-sabacthani?</i> Which is being interpreted, <i>My God, my God, why hast thou </i> <cr>[2]</cr> <i>forsaken me?</i>",
+          "text": "And at the ninth hour <sc>Jesus</sc> cried out with a mighty voice, saying: <cr>[1]</cr> <i>Eloi, Eloi, lamma-sabacthani?</i> Which is being interpreted, <i>My God, my God, why hast thou </i> <na>[2]</na> <i>forsaken me?</i>",
           "cross_refs": [
             {
               "text": "Psa. 21, 1."
@@ -3805,7 +3805,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr><cr>[2]</cr> when the Sabboth was past, Mary Magdalene and Mary of James, and Salome bought spices, that coming they might anoint <sc>Jesus</sc>.",
+          "text": "<sc>And</sc> <cr>[1]</cr><na>[2]</na> when the Sabboth was past, Mary Magdalene and Mary of James, and Salome bought spices, that coming they might anoint <sc>Jesus</sc>.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -3814,14 +3814,14 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Gospel upon Easter day."
             }
           ]
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> And very early the first of the Sabboths, they come to the monument, the sun being now risen.",
+          "text": "<na>[1]</na> And very early the first of the Sabboths, they come to the monument, the sun being now risen.",
           "notes": [
             {
               "label": "1",
@@ -3847,7 +3847,7 @@
         },
         {
           "verse": 7,
-          "text": "But go, tell his Disciples and <cr>[1]</cr> Peter that he goeth before you into Galilee; there you shall see him, <cr>[2]</cr> as he told you.",
+          "text": "But go, tell his Disciples and <cr>[1]</cr> Peter that he goeth before you into Galilee; there you shall see him, <na>[2]</na> as he told you.",
           "cross_refs": [
             {
               "text": "Mr. 14, 28."
@@ -3855,7 +3855,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "Peter is named in special (as often elsewhere) for prerogative."
             }
           ]
@@ -3900,7 +3900,7 @@
         },
         {
           "verse": 14,
-          "text": "<cr>[1]</cr> Last <cr>[2]</cr> he appeared to those eleven as they sat at the table; and he exprobrated their incredulity and hardness of heart, because they did not believe them that had seen him risen again.",
+          "text": "<cr>[1]</cr> Last <na>[2]</na> he appeared to those eleven as they sat at the table; and he exprobrated their incredulity and hardness of heart, because they did not believe them that had seen him risen again.",
           "cross_refs": [
             {
               "text": "Lu. 24, 36. Io. 20, 26."
@@ -3908,7 +3908,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Gospel upon the Ascension day. And for some Martyrs."
             }
           ]
@@ -3934,7 +3934,7 @@
         },
         {
           "verse": 18,
-          "text": "Serpents shall they take away; And if they drink any deadly thing, it shall not hurt them; They shall <cr>[1]</cr> impose hands upon the sick and they shall be whole.",
+          "text": "Serpents shall they take away; And if they drink any deadly thing, it shall not hurt them; They shall <na>[1]</na> impose hands upon the sick and they shall be whole.",
           "notes": [
             {
               "label": "1",
@@ -3944,7 +3944,7 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> And so our Lord <sc>Jesus</sc> after he spake unto them, <cr>[2]</cr> was assumpted into Heaven, and sat on the right hand of God.",
+          "text": "<cr>[1]</cr> And so our Lord <sc>Jesus</sc> after he spake unto them, <na>[2]</na> was assumpted into Heaven, and sat on the right hand of God.",
           "cross_refs": [
             {
               "text": "Lu. 24, 51."
@@ -3952,7 +3952,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The Ascension."
             }
           ]

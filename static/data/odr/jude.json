@@ -24,7 +24,7 @@
         },
         {
           "verse": 4,
-          "text": "For there are certain men secretly entered in (which were long ago prescribed unto this judgement) impious, transferring the grace of our God <cr>[1]</cr> into riotousness, and denying the only Dominatour, & our Lord <sc>Jesus</sc> Christ.",
+          "text": "For there are certain men secretly entered in (which were long ago prescribed unto this judgement) impious, transferring the grace of our God <na>[1]</na> into riotousness, and denying the only Dominatour, & our Lord <sc>Jesus</sc> Christ.",
           "notes": [
             {
               "label": "1",
@@ -34,7 +34,7 @@
         },
         {
           "verse": 5,
-          "text": "<cr>[1]</cr> But I will admonish you, that once know all things, that <cr>[2]</cr> <sc>Jesus</sc>, saving the people out of the land of Aegypt, <cr>[3]</cr> secondly destroyed them which believed not.",
+          "text": "<cr>[1]</cr> But I will admonish you, that once know all things, that <cr>[2]</cr> <sc>Jesus</sc>, saving the people out of the land of Aegypt, <na>[3]</na> secondly destroyed them which believed not.",
           "cross_refs": [
             {
               "text": "2. Pet. 2."
@@ -45,7 +45,7 @@
           ],
           "notes": [
             {
-              "label": "2",
+              "label": "3",
               "text": "c This is our Saviour, not Iosue, as S. Hierom noteth ep. 17. see Abac. c. 3. v. 18."
             }
           ]
@@ -56,7 +56,7 @@
         },
         {
           "verse": 7,
-          "text": "As <cr>[1]</cr> Sodom and Gomorrhe, and the cities adjoining in like manner having <cr>[2]</cr> fornicated, and going after other flesh, were made an example, sustaining the pain of eternal fire.",
+          "text": "As <cr>[1]</cr> Sodom and Gomorrhe, and the cities adjoining in like manner having <na>[2]</na> fornicated, and going after other flesh, were made an example, sustaining the pain of eternal fire.",
           "cross_refs": [
             {
               "text": "Gen. 19."
@@ -71,7 +71,7 @@
         },
         {
           "verse": 8,
-          "text": "In like manner these also defile the flesh, and <cr>[1]</cr> despise dominion, & blaspheme majesty.",
+          "text": "In like manner these also defile the flesh, and <na>[1]</na> despise dominion, & blaspheme majesty.",
           "notes": [
             {
               "label": "1",
@@ -81,7 +81,7 @@
         },
         {
           "verse": 9,
-          "text": "When Michael the Archangel, disputing with the devil, made altercation for the body of Moyses, he durst not infer judgement of blasphemy, but said, Our Lord <cr>[1]</cr> <alt>command</alt> thee.",
+          "text": "When Michael the Archangel, disputing with the devil, made altercation for the body of Moyses, he durst not infer judgement of blasphemy, but said, Our Lord <na>[1]</na> <alt>command</alt> thee.",
           "has_annotation": true,
           "notes": [
             {
@@ -97,7 +97,7 @@
         },
         {
           "verse": 11,
-          "text": "Woe unto them, <cr>[1]</cr> <alt>which</alt> have gone in the way of <cr>[2]</cr> Cain: and with the error of <cr>[3]</cr> Balaam, have for reward poured out themselves, and have perished in the contradiction of Core.",
+          "text": "Woe unto them, <cr>[1]</cr> <alt>which</alt> have gone in the way of <na>[2]</na> Cain: and with the error of <na>[3]</na> Balaam, have for reward poured out themselves, and have perished in the contradiction of Core.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -106,7 +106,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "because they"
             },
             {
@@ -155,7 +155,7 @@
         },
         {
           "verse": 20,
-          "text": "But you, my dearest, building yourselves upon <cr>[1]</cr> <alt>our</alt> most holy faith, in the Holy Ghost, praying,",
+          "text": "But you, my dearest, building yourselves upon <na>[1]</na> <alt>our</alt> most holy faith, in the Holy Ghost, praying,",
           "notes": [
             {
               "label": "1",

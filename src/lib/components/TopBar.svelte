@@ -50,6 +50,8 @@
 		{ key: 'compare', label: 'Compare' }
 	];
 	$: activeModeIdx = modeItems.findIndex((m) => m.key === $prefs.readingMode);
+	// No active mode when not on a chapter page (search, home, etc.)
+	$: displayModeIdx = chapterNum ? activeModeIdx : -1;
 
 	let pendingIdx = -1;
 
@@ -109,7 +111,7 @@
 	<!-- Row 1: branding + mode + search -->
 	<BrandingRow
 		{modeItems}
-		{activeModeIdx}
+		activeModeIdx={displayModeIdx}
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
 		onLogoClick={closeAll}

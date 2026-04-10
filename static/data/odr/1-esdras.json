@@ -8,7 +8,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "In <cr>[1]</cr><cr>[2]</cr> the first year of Cyrus king of the Persians, that the word of our Lord by the mouth of Jeremy might be accomplished, our Lord raised up the spirit of Cyrus king of the Persians: & he made proclamation in all his Kingdom, yea by writing, saying:",
+          "text": "In <cr>[1]</cr><na>[2]</na> the first year of Cyrus king of the Persians, that the word of our Lord by the mouth of Jeremy might be accomplished, our Lord raised up the spirit of Cyrus king of the Persians: & he made proclamation in all his Kingdom, yea by writing, saying:",
           "cross_refs": [
             {
               "text": "Isa. 44. 45. Jer. 25. 29."
@@ -16,7 +16,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The first part. The return of God's people from Babylon."
             }
           ]
@@ -743,7 +743,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr> after these things in the reign of Artaxerxes king of Persians, Esdras, the son of Saraias, the son of Azarias, the son of Helcias,",
+          "text": "And <na>[1]</na> after these things in the reign of Artaxerxes king of Persians, Esdras, the son of Saraias, the son of Azarias, the son of Helcias,",
           "notes": [
             {
               "label": "1",

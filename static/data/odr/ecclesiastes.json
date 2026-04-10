@@ -626,7 +626,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "What <cr>[1]</cr> needeth a man to seek things greater than himself, whereas he is ignorant, what is profitable for him in his life, in the number of the days of his peregrination, and the time that passeth as a shadow? Or who can tell him what shall be after him under the sun?",
+          "text": "What <na>[1]</na> needeth a man to seek things greater than himself, whereas he is ignorant, what is profitable for him in his life, in the number of the days of his peregrination, and the time that passeth as a shadow? Or who can tell him what shall be after him under the sun?",
           "notes": [
             {
               "label": "1",
@@ -636,7 +636,7 @@
         },
         {
           "verse": 2,
-          "text": "<cr>[1]</cr> Better is <cr>[2]</cr> a good name than precious ointments: and the day of death, than the day of nativity.",
+          "text": "<cr>[1]</cr> Better is <na>[2]</na> a good name than precious ointments: and the day of death, than the day of nativity.",
           "cross_refs": [
             {
               "text": "Pro. 22."
@@ -644,7 +644,7 @@
           ],
           "notes": [
             {
-              "label": "1",
+              "label": "2",
               "text": "The 2. part. True felicity is procured by good life, and consisteth in the eternal sight of God."
             }
           ]
@@ -774,7 +774,7 @@
         },
         {
           "verse": 28,
-          "text": "Lo this have I found, said <cr>[1]</cr> Ecclesiastes, one thing and another, that I might find reason,",
+          "text": "Lo this have I found, said <na>[1]</na> Ecclesiastes, one thing and another, that I might find reason,",
           "notes": [
             {
               "label": "1",
@@ -798,7 +798,7 @@
         },
         {
           "verse": 30,
-          "text": "Only this I have found, that <na>(f)</na> God made man right, and he hath entangled himself with infinite questions. Who is such a one as the wise? And who hath known the resolution of <cr>[1]</cr> the word.",
+          "text": "Only this I have found, that <na>(f)</na> God made man right, and he hath entangled himself with infinite questions. Who is such a one as the wise? And who hath known the resolution of <na>[1]</na> the word.",
           "notes": [
             {
               "label": "f",
@@ -890,7 +890,7 @@
         },
         {
           "verse": 16,
-          "text": "And I have set my heart to know wisdom, and to understand the <cr>[1]</cr> distraction that is in the earth: There is a man that days and nights taketh no sleep with his eyes.",
+          "text": "And I have set my heart to know wisdom, and to understand the <na>[1]</na> distraction that is in the earth: There is a man that days and nights taketh no sleep with his eyes.",
           "notes": [
             {
               "label": "1",
@@ -1221,7 +1221,7 @@
         },
         {
           "verse": 8,
-          "text": "Vanity of vanities, said <cr>[1]</cr> Ecclesiastes, and all things vanity.",
+          "text": "Vanity of vanities, said <na>[1]</na> Ecclesiastes, and all things vanity.",
           "notes": [
             {
               "label": "1",
@@ -1257,7 +1257,7 @@
         },
         {
           "verse": 14,
-          "text": "and all things that are done, God will bring into judgement for every <cr>[1]</cr> error, whether it be good or evil.",
+          "text": "and all things that are done, God will bring into judgement for every <na>[1]</na> error, whether it be good or evil.",
           "notes": [
             {
               "label": "1",
