@@ -319,7 +319,9 @@
 	>
 		<span class="unlock-icon" aria-hidden="true">✦</span>
 		<div>
-			<p class="unlock-title">{konamiToastUnlocked ? 'Translation unlocked' : 'Translation hidden'}</p>
+			<p class="unlock-title">
+				{konamiToastUnlocked ? 'Translation unlocked' : 'Translation hidden'}
+			</p>
 			<p class="unlock-sub">
 				{konamiToastUnlocked
 					? 'RSV-2CE 2006 is now available in the translation selector'
