@@ -61,10 +61,11 @@
 
 	async function selectMode(key: string, index: number) {
 		if (!isChapterPage) {
-			// Not on a chapter page — navigate to the last reading position (or genesis 1).
+			// Not on a chapter page — prefer navOverride context (e.g. search result),
+			// then fall back to last reading position, then genesis 1.
 			const pos = get(readingPosition);
-			const slug = pos?.bookSlug || bookSlug || 'genesis';
-			const ch = pos?.chapter || 1;
+			const slug = bookSlug || pos?.bookSlug || 'genesis';
+			const ch = parseInt(chapterNum, 10) || pos?.chapter || 1;
 			if (key === 'compare') {
 				goto(`/compare/${slug}/${ch}`);
 			} else {
