@@ -11,11 +11,10 @@ const config = {
 				// are served as static assets, avoiding the _routes.json limit.
 				include: ['/*'],
 				exclude: [
-					// '/' intentionally omitted — homepage goes through the Worker so its
-					// embedded SvelteKit manifest always reflects the current build's chunk
-					// hashes.  Serving it as a static file risks a stale manifest that
-					// causes MIME-type errors when client-side navigating to ODR pages.
-					'/odr/*/*',
+					// ODR pages (/odr/*/*) intentionally NOT excluded — they go through the
+					// Worker so the HTML always reflects the current build's chunk hashes.
+					// Serving prerendered HTML as static files risks Cloudflare's CDN
+					// caching stale HTML with old chunk references, causing MIME errors.
 					'/api',
 					'/articles',
 					'/books/*',
