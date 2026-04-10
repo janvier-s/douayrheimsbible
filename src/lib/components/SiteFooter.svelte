@@ -177,7 +177,6 @@
 		color: var(--color-subtle);
 		font-weight: 300;
 		text-align: center;
-		opacity: 0.7;
 		line-height: 1.6;
 	}
 </style>

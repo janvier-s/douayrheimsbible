@@ -157,7 +157,9 @@
 			<figure class="hero-figure">
 				<img
 					src="/images/dr-1582-rheims.webp"
-					alt="Title page and opening of Matthew — Rheims New Testament, 1582"
+					srcset="/images/dr-1582-rheims-800.webp 800w, /images/dr-1582-rheims-1040.webp 1040w, /images/dr-1582-rheims.webp 1400w"
+					sizes="(max-width: 900px) 380px, 520px"
+					alt="Title page and opening of Matthew -- Rheims New Testament, 1582"
 					class="hero-img"
 					width="1400"
 					height="1087"
