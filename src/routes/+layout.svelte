@@ -8,6 +8,7 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import { afterNavigate, goto } from '$app/navigation';
 	import { getFontById, isSansFont } from '$lib/data/fonts';
+	import { navOverride } from '$lib/stores/navOverride';
 
 	afterNavigate(({ from, to, type }) => {
 		if (type === 'popstate') return;
@@ -17,13 +18,20 @@
 		);
 	});
 
-	// $page.params is the primary source on navigation.
-	// readingPosition is only set by the ODR page during infinite scroll,
-	// which may advance to a chapter/book not reflected in the URL params.
-	$: bookSlug = $readingPosition?.bookSlug ?? $page.params.book ?? '';
-	$: chapterNum = $readingPosition
-		? String($readingPosition.chapter)
-		: ($page.params.chapter ?? '');
+	// isChapterPage: true only when we are actually on a chapter route (ODR or compare).
+	// readingPosition tracks infinite-scroll advances within a chapter page.
+	// navOverride lets non-chapter pages (search) show a contextual reference.
+	$: isChapterPage = !!$page.params.book && !!$page.params.chapter;
+	$: bookSlug = isChapterPage
+		? ($readingPosition?.bookSlug ?? $page.params.book ?? '')
+		: ($navOverride?.bookSlug ?? $page.params.book ?? '');
+	$: chapterNum = isChapterPage
+		? $readingPosition
+			? String($readingPosition.chapter)
+			: ($page.params.chapter ?? '')
+		: $navOverride
+			? String($navOverride.chapter)
+			: '';
 
 	onMount(() => {
 		const p = $prefs;
@@ -85,7 +93,12 @@
 <a href="#main-content" class="skip-link">Skip to reading</a>
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
 	{#if $page.data.showLayoutTopBar !== false}
-		<TopBar {bookSlug} {chapterNum} hasStudyMode={$page.data.hasStudyMode ?? false} />
+		<TopBar
+			{bookSlug}
+			{chapterNum}
+			{isChapterPage}
+			hasStudyMode={$page.data.hasStudyMode ?? false}
+		/>
 	{/if}
 	<slot />
 	<SiteFooter />

@@ -15,9 +15,10 @@
 
 	export let bookSlug: string;
 	export let chapterNum: string;
+	export let isChapterPage = false;
 	export let hasStudyMode = false;
 
-	$: showTabBar = chapterNum !== '';
+	$: showTabBar = true;
 
 	let navOpen = false;
 	let prefsOpen = false;
@@ -37,7 +38,8 @@
 		return prot ? ` (${prot})` : '';
 	})();
 
-	$: navLabel = bookMeta ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026';
+	$: navLabel =
+		bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026';
 
 	function closeAll() {
 		navOpen = false;
@@ -53,12 +55,12 @@
 	];
 	$: activeModeIdx = modeItems.findIndex((m) => m.key === $prefs.readingMode);
 	// No active mode when not on a chapter page (search, home, etc.)
-	$: displayModeIdx = chapterNum ? activeModeIdx : -1;
+	$: displayModeIdx = isChapterPage ? activeModeIdx : -1;
 
 	let pendingIdx = -1;
 
 	async function selectMode(key: string, index: number) {
-		if (!chapterNum) {
+		if (!isChapterPage) {
 			// Not on a chapter page — navigate to the last reading position (or genesis 1).
 			const pos = get(readingPosition);
 			const slug = pos?.bookSlug || bookSlug || 'genesis';
@@ -127,6 +129,7 @@
 	<BrandingRow
 		{modeItems}
 		activeModeIdx={displayModeIdx}
+		showModeToggle={isChapterPage}
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
 		onLogoClick={closeAll}

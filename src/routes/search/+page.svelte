@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { afterNavigate, goto } from '$app/navigation';
 	import { cubicOut } from 'svelte/easing';
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
+	import { navOverride } from '$lib/stores/navOverride';
 	export let data: { query: string };
 
 	let reducedMotion = false;
@@ -24,6 +25,13 @@
 	const EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 
 	$: isHero = !searched && !query;
+
+	// Keep TopBar nav button in sync with the first result's book/chapter
+	$: navOverride.set(
+		results.length > 0 ? { bookSlug: results[0].slug, chapter: results[0].chapter } : null
+	);
+
+	onDestroy(() => navOverride.set(null));
 
 	onMount(() => {
 		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
