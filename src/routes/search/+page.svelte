@@ -2,7 +2,7 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { cubicOut } from 'svelte/easing';
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
@@ -16,7 +16,8 @@
 	let searched = false;
 	let debounceTimer: ReturnType<typeof setTimeout>;
 	let searchGeneration = 0;
-	let lastDataQuery = '';
+	// Initialized to data.query so afterNavigate doesn't double-search on mount
+	let lastDataQuery = data.query;
 
 	const EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 
@@ -24,6 +25,7 @@
 
 	onMount(() => {
 		if (inputEl) inputEl.focus();
+		if (query) search(query);
 	});
 
 	afterNavigate(() => {
@@ -59,13 +61,15 @@
 
 	function updateUrl(q: string) {
 		if (!browser) return;
+		// Pre-set so afterNavigate recognises this as an internal update and skips re-search
+		lastDataQuery = q.trim();
 		const url = new URL(window.location.href);
 		if (q.trim()) {
 			url.searchParams.set('q', q.trim());
 		} else {
 			url.searchParams.delete('q');
 		}
-		history.replaceState({}, '', url.toString());
+		goto(url.toString(), { replaceState: true, noScroll: true, keepFocus: true });
 	}
 
 	function collapseAndFade(node: HTMLElement) {
