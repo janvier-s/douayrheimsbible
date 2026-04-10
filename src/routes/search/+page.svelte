@@ -102,7 +102,7 @@
 
 		if (showSmallCaps) {
 			// Temporarily replace <sc>…</sc> to survive the tag-strip pass
-			t = t.replace(/<sc>(.*?)<\/sc>/g, '\x01$1\x02');
+			t = t.replace(/<sc>(.*?)<\/sc>/g, '\uE001$1\uE002');
 		} else {
 			t = t.replace(/<\/?sc>/g, '');
 		}
@@ -111,7 +111,7 @@
 		t = t.replace(/<(?!\/?i\b)[^>]*>/gi, '');
 
 		if (showSmallCaps) {
-			t = t.replace(/\x01(.*?)\x02/g, '<span class="sc">$1</span>');
+			t = t.replace(/\uE001(.*?)\uE002/g, '<span class="sc">$1</span>');
 		}
 
 		return t.replace(/  +/g, ' ').trim();
