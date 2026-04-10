@@ -3,7 +3,6 @@
 
 	export let modeItems: Array<{ key: string; label: string }>;
 	export let activeModeIdx: number;
-	export let showModeToggle = false;
 	export let pendingIdx: number;
 	export let onModeSelect: (e: CustomEvent<{ key: string; index: number }>) => void;
 	export let onLogoClick: () => void = () => {};
@@ -43,17 +42,15 @@
 	<!-- Spacer (desktop only) -->
 	<div class="hidden md:flex flex-1"></div>
 
-	<!-- ModeToggle — desktop only, chapter pages only -->
-	{#if showModeToggle}
-		<div class="hidden md:flex">
-			<ModeToggle
-				items={modeItems}
-				activeIndex={activeModeIdx}
-				pendingIndex={pendingIdx}
-				on:select={onModeSelect}
-			/>
-		</div>
-	{/if}
+	<!-- ModeToggle — desktop only -->
+	<div class="hidden md:flex">
+		<ModeToggle
+			items={modeItems}
+			activeIndex={activeModeIdx}
+			pendingIndex={pendingIdx}
+			on:select={onModeSelect}
+		/>
+	</div>
 
 	<!-- Search icon — desktop only -->
 	<a

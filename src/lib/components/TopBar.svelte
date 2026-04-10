@@ -129,7 +129,6 @@
 	<BrandingRow
 		{modeItems}
 		activeModeIdx={displayModeIdx}
-		showModeToggle={isChapterPage}
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
 		onLogoClick={closeAll}
