@@ -78,7 +78,7 @@
 		goto(url.toString(), { noScroll: true, keepFocus: true });
 	}
 
-	function collapseAndFade(node: HTMLElement) {
+	function collapseAndFade(_node: HTMLElement) {
 		// Animate only opacity (GPU-composited). The element is kept in document
 		// flow while fading so there's no layout shift during the animation.
 		// One layout reflow happens at the end when the element is removed — that's
