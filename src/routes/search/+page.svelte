@@ -98,9 +98,7 @@
 	function renderSearchVerse(text: string): string {
 		const showSmallCaps = $prefs.showSmallCaps ?? true;
 
-		let t = text
-			.replace(/<cr>[^<]*<\/cr>/g, '')
-			.replace(/<na>[^<]*<\/na>/g, '');
+		let t = text.replace(/<cr>[^<]*<\/cr>/g, '').replace(/<na>[^<]*<\/na>/g, '');
 
 		if (showSmallCaps) {
 			// Temporarily replace <sc>…</sc> to survive the tag-strip pass
@@ -137,7 +135,10 @@
 
 	<!-- Search bar -->
 	<form on:submit|preventDefault={onSubmit} role="search" class="mb-lg">
-		<div class="border border-border rounded-[10px] p-[8px]" style="background: var(--color-search-card);">
+		<div
+			class="border border-border rounded-[10px] p-[8px]"
+			style="background: var(--color-search-card);"
+		>
 			<div
 				class="flex items-center gap-[10px] border border-border rounded-[6px] bg-background px-[14px] h-[52px]
 					focus-within:border-accent transition-colors duration-fast"
@@ -309,5 +310,4 @@
 		color: var(--color-foreground);
 		letter-spacing: -0.01em;
 	}
-
 </style>

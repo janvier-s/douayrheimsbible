@@ -276,4 +276,6 @@ body {
 	text-align: center;
 	line-height: 1.5;
 }
-.sc { font-variant: small-caps; }
+.sc {
+	font-variant: small-caps;
+}
