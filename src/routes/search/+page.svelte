@@ -2,6 +2,8 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { replaceState } from '$app/navigation';
+	import { cubicOut } from 'svelte/easing';
 	import { prefs } from '$lib/stores/prefs';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
@@ -51,7 +53,18 @@
 		} else {
 			url.searchParams.delete('q');
 		}
-		history.replaceState({}, '', url.toString());
+		replaceState(url.toString(), {});
+	}
+
+	function collapseAndFade(node: HTMLElement) {
+		const height = node.offsetHeight;
+		const mb = parseFloat(getComputedStyle(node).marginBottom);
+		return {
+			duration: 240,
+			easing: cubicOut,
+			css: (t: number) =>
+				`opacity: ${t}; max-height: ${t * (height + mb)}px; margin-bottom: ${t * mb}px; overflow: hidden;`
+		};
 	}
 
 	async function search(q: string) {
@@ -122,16 +135,16 @@
 	class:hero-layout={isHero}
 	in:fade={{ duration: 140 }}
 >
-	<!-- Heading — only visible in hero (empty) state -->
+	<!-- Heading — only visible in hero (empty) state, collapses smoothly on first input -->
 	{#if isHero}
-		<div class="mb-[1.75rem] text-center" in:fade={{ duration: 160 }}>
+		<div class="mb-[1.75rem] text-center" transition:collapseAndFade>
 			<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-[8px]">
 				Douay-Rheims Bible
 			</p>
 			<h1
 				class="font-reader text-[2.2rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-[14px]"
 			>
-				Search
+				Verse Search
 			</h1>
 			<div class="w-10 h-px bg-accent opacity-70 mx-auto"></div>
 		</div>
