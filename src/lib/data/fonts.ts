@@ -10,9 +10,8 @@ export const FONTS: FontDef[] = [
 	{
 		id: 'libre-baskerville',
 		label: 'Libre Baskerville',
-		stack: "'Libre Baskerville', Georgia, serif",
-		gfUrl:
-			'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
+		stack: "'Libre Baskerville', Georgia, serif"
+		// self-hosted via @font-face in app.css — no gfUrl needed
 	},
 	{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
 	{
