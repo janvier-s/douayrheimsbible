@@ -45,10 +45,12 @@ const config = {
 			handleHttpError: 'warn',
 			handleMissingId: 'warn'
 		},
-		// Inline component CSS chunks smaller than 8KB directly into the HTML
-		// instead of emitting them as separate <link> tags. Eliminates 5
-		// render-blocking stylesheet requests (~14KB total) flagged by Lighthouse.
-		inlineStyleThreshold: 8192
+		// Inline component CSS chunks into the HTML instead of emitting separate
+		// <link> tags. The threshold is uncompressed bytes — the two largest
+		// component CSS files are ~26KB and ~10KB uncompressed (8KB and 3KB
+		// transfer), so 50KB catches everything. Eliminates all render-blocking
+		// stylesheet requests (480-630ms waste on mobile) flagged by Lighthouse.
+		inlineStyleThreshold: 51200
 	}
 };
 
