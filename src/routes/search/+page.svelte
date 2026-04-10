@@ -252,7 +252,7 @@
 
 		<!-- Results -->
 		{#if results.length > 0}
-			<div class="space-y-[24px]" in:fade={{ duration: 160 }}>
+			<div class="space-y-[24px]" in:fade={{ duration: 260 }}>
 				{#each results as group, groupIdx}
 					{#if groupIdx > 0}
 						<hr class="border-border" />
