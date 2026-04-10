@@ -32,6 +32,13 @@ const config = {
 				]
 			}
 		}),
+		paths: {
+			// Use absolute /_app/... paths in all prerendered pages so that
+			// 404.html works correctly when Cloudflare serves it as a fallback
+			// for deep URLs (e.g. /odr/invalidbook/16) where relative paths
+			// would resolve to the wrong location.
+			relative: false
+		},
 		prerender: {
 			handleHttpError: 'warn',
 			handleMissingId: 'warn'
