@@ -61,8 +61,8 @@
 		if (!chapterNum) {
 			// Not on a chapter page — navigate to the last reading position (or genesis 1).
 			const pos = get(readingPosition);
-			const slug = pos?.bookSlug ?? bookSlug ?? 'genesis';
-			const ch = pos?.chapter ?? 1;
+			const slug = pos?.bookSlug || bookSlug || 'genesis';
+			const ch = pos?.chapter || 1;
 			if (key === 'compare') {
 				goto(`/compare/${slug}/${ch}`);
 			} else {
