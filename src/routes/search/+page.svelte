@@ -69,17 +69,20 @@
 		} else {
 			url.searchParams.delete('q');
 		}
-		goto(url.toString(), { replaceState: true, noScroll: true, keepFocus: true });
+		goto(url.toString(), { noScroll: true, keepFocus: true });
 	}
 
 	function collapseAndFade(node: HTMLElement) {
 		const height = node.offsetHeight;
 		const mb = parseFloat(getComputedStyle(node).marginBottom);
 		return {
-			duration: 400,
+			duration: 300,
 			easing: cubicOut,
-			css: (t: number) =>
-				`opacity: ${t}; max-height: ${t * (height + mb)}px; margin-bottom: ${t * mb}px; overflow: hidden;`
+			css: (t: number) => {
+				// Opacity completes in the first half so text vanishes while space is still releasing
+				const opacity = Math.max(0, (t - 0.5) / 0.5);
+				return `opacity: ${opacity}; max-height: ${t * (height + mb)}px; margin-bottom: ${t * mb}px; overflow: hidden;`;
+			}
 		};
 	}
 
