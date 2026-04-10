@@ -48,7 +48,6 @@ export function GET() {
 	urls.push(entry('/history/america', '0.9', 'monthly'));
 	urls.push(entry('/history/original-tongues', '0.9', 'monthly'));
 	urls.push(entry('/history/scripture-for-all', '0.9', 'monthly'));
-	urls.push(entry('/challoner-revision', '0.8', 'monthly'));
 
 	// Static pages
 	urls.push(entry('/search', '0.6', 'monthly'));
