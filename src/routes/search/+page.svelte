@@ -87,12 +87,10 @@
 	}
 
 	function collapseAndFade(_node: HTMLElement) {
-		// opacity + translateY — both GPU-composited, no layout reflow per frame.
-		// The element stays in document flow until removed (one reflow at the end).
 		return {
-			duration: reducedMotion ? 0 : 220,
+			duration: reducedMotion ? 0 : 80,
 			easing: cubicOut,
-			css: (t: number) => `opacity: ${t}; transform: translateY(${(1 - t) * -10}px);`
+			css: (t: number) => `opacity: ${t};`
 		};
 	}
 
@@ -161,7 +159,9 @@
 <main
 	id="main-content"
 	class="max-w-[750px] mx-auto px-md font-ui"
-	style="padding-top: 55px;"
+	style="padding-top: 55px; padding-bottom: {isHero
+		? 'calc(4rem + clamp(40px, 12vh, 120px))'
+		: '2rem'};"
 	in:fade={{ duration: reducedMotion ? 0 : 140 }}
 >
 	<!-- GPU-composited wrapper: slides down in hero state, no layout reflow -->

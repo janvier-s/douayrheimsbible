@@ -39,8 +39,9 @@
 		function onUnhandledRejection(e: PromiseRejectionEvent) {
 			const msg = e.reason?.message ?? '';
 			if (
-				msg.includes('Failed to fetch dynamically imported module') ||
-				msg.includes('Importing a module script failed')
+				msg.includes('Failed to fetch dynamically imported module') || // Chrome
+				msg.includes('Importing a module script failed') || // Safari
+				msg.includes('error loading dynamically imported module') // Firefox
 			) {
 				window.location.reload();
 			}
