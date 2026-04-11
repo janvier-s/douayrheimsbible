@@ -723,10 +723,16 @@
 							class="hover:underline"
 							style="color: var(--color-accent-text)"
 							on:click={() => setMode('text')}
-							>Switch to Text Search to find "{query}" in {textSuggestionVerses} verse{textSuggestionVerses ===
-							1
-								? ''
-								: 's'} and {textSuggestionNotes} note{textSuggestionNotes === 1 ? '' : 's'} →</button
+							>Switch to Text Search to find "{query}" in {[
+								textSuggestionVerses > 0
+									? `${textSuggestionVerses} verse${textSuggestionVerses === 1 ? '' : 's'}`
+									: null,
+								textSuggestionNotes > 0
+									? `${textSuggestionNotes} note${textSuggestionNotes === 1 ? '' : 's'}`
+									: null
+							]
+								.filter(Boolean)
+								.join(' and ')} →</button
 						>
 					</p>
 				{:else if notAReferenceQuery}

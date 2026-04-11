@@ -2,6 +2,7 @@ import { readdir, readFile, writeFile } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import MiniSearch from 'minisearch';
+import { searchTokenizer, processTerm } from '../src/lib/search/normalize.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '..');
@@ -41,20 +42,8 @@ function cleanText(text: string): string {
 const MINISEARCH_OPTIONS = {
 	fields: ['text'] as const,
 	storeFields: ['book', 'chapter', 'verse'] as string[],
-	tokenize: (text: string): string[] => {
-		if (!text) return [];
-		return text
-			.replace(/\[[\d]+\]/g, '')
-			.split(/[\s.,;:!?()"']+/)
-			.filter((w) => w.length > 0);
-	},
-	processTerm: (term: string): string | null => {
-		const normalized = term
-			.toLowerCase()
-			.replace(/[.,;:!?()"']/g, '')
-			.replace(/-/g, '');
-		return normalized.length > 0 ? normalized : null;
-	}
+	tokenize: searchTokenizer,
+	processTerm
 };
 
 const NOTES_MINISEARCH_OPTIONS = {
