@@ -727,14 +727,14 @@
 			{#if searched && !loading}
 				{#if mode === 'verse' && verseResultCount > 0}
 					<p
-						class="text-subtle text-[12px] text-center mb-[12px]"
+						class="text-subtle text-[12px] mb-[12px]"
 						in:fade={{ duration: reducedMotion ? 0 : 120 }}
 					>
 						{verseResultCount} verse{verseResultCount === 1 ? '' : 's'} found
 					</p>
 				{:else if mode === 'text' && textTotal > 0}
 					<p
-						class="text-subtle text-[12px] text-center mb-[12px]"
+						class="text-subtle text-[12px] mb-[12px]"
 						in:fade={{ duration: reducedMotion ? 0 : 120 }}
 					>
 						{textTotal}
