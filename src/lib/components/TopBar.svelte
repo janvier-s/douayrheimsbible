@@ -65,8 +65,8 @@
 		{ key: 'compare', label: 'Compare' }
 	];
 	$: activeModeIdx = modeItems.findIndex((m) => m.key === $prefs.readingMode);
-	// No active mode when not on a chapter page (search, home, etc.)
-	$: displayModeIdx = isChapterPage ? activeModeIdx : -1;
+	// Always show the current reading mode; fall back to index 0 if mode isn't in the list
+	$: displayModeIdx = activeModeIdx >= 0 ? activeModeIdx : 0;
 
 	let pendingIdx = -1;
 
