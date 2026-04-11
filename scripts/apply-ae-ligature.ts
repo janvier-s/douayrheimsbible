@@ -61,7 +61,7 @@ const PRESERVE = [
 	'Zaraei',
 	'Asrael',
 	'Azael',
-	'Abimael',
+	'Abimael'
 ];
 
 // Pre-compute: for each preserved word, what it looks like after ae→æ pass
