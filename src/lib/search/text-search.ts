@@ -438,13 +438,15 @@ export async function hydrateNoteResults(
 		}
 	}
 
-	// Re-rank by phrase proximity: results where query tokens appear closest
-	// together (or in order) rank higher, matching verse search behaviour.
-	hydrated.sort((a, b) => {
-		const textA = [a.title ?? '', a.noteText, ...(a.subNotes?.map((n) => n.text) ?? [])].join(' ');
-		const textB = [b.title ?? '', b.noteText, ...(b.subNotes?.map((n) => n.text) ?? [])].join(' ');
-		return phraseProximity(textA, queryTokens) - phraseProximity(textB, queryTokens);
-	});
+	// Re-rank by phrase proximity. Title matches are prioritised over body
+	// matches — any title hit beats any body-only hit.
+	function noteScore(note: NoteResult): number {
+		const titleProx = phraseProximity(note.title ?? '', queryTokens);
+		if (titleProx < Infinity) return titleProx;
+		const body = [note.noteText, ...(note.subNotes?.map((n) => n.text) ?? [])].join(' ');
+		return phraseProximity(body, queryTokens) + 10000;
+	}
+	hydrated.sort((a, b) => noteScore(a) - noteScore(b));
 
 	return hydrated;
 }
