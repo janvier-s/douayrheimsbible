@@ -69,7 +69,12 @@
 				? 'No notes found matching your search.'
 				: 'No verses found matching your search.';
 
-	$: isHero = !searched && !query;
+	$: isHero =
+		!searched &&
+		!query &&
+		results.length === 0 &&
+		textResults.length === 0 &&
+		noteResults.length === 0;
 
 	// Keep TopBar nav button in sync with the first result's book/chapter
 	$: navOverride.set(
@@ -412,7 +417,7 @@
 </script>
 
 <svelte:head>
-	<title>{query ? `${query} | ${heading}` : heading} | ODR Bible</title>
+	<title>{query ? `${query} | ${heading}` : heading} | Original Douai-Rheims Bible</title>
 </svelte:head>
 
 <main
