@@ -15,6 +15,7 @@
 		buildTextResultGroups,
 		hydrateResultGroups,
 		hydrateNoteResults,
+		phraseProximity,
 		type TextResultGroup,
 		type NoteResult
 	} from '$lib/search/text-search';
@@ -41,6 +42,10 @@
 	let lastDataQuery = data.query;
 	let lastDataMode = data.mode;
 	let lastDataScope = data.scope;
+
+	let crossScopeVerseResults: TextResultGroup[] = [];
+	let crossScopeNoteResults: NoteResult[] = [];
+	let queryTokens: string[] = [];
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
@@ -128,6 +133,10 @@
 			} else {
 				results = [];
 				textResults = [];
+				noteResults = [];
+				crossScopeVerseResults = [];
+				crossScopeNoteResults = [];
+				queryTokens = [];
 				searched = false;
 				stopWordWarning = false;
 			}
@@ -212,7 +221,10 @@
 		if (isAllStopWords(tokens)) {
 			stopWordWarning = true;
 			textResults = [];
-			results = [];
+			noteResults = [];
+			crossScopeVerseResults = [];
+			crossScopeNoteResults = [];
+			queryTokens = [];
 			searched = true;
 			loading = false;
 			return;
@@ -221,20 +233,32 @@
 		const gen = ++searchGeneration;
 		loading = true;
 		try {
+			const [verseSearch, noteSearch] = await Promise.all([
+				searchVerses(trimmed, fetch, scope === 'verses' ? textLimit : 20),
+				searchNotes(trimmed, fetch, scope === 'notes' ? textLimit : 20)
+			]);
+			if (gen !== searchGeneration) return;
+
+			const { results: verseRaw, total: verseTotal, queryTokens: qt } = verseSearch;
+			const { results: noteRaw, total: noteTotal } = noteSearch;
+			queryTokens = qt;
+
 			if (scope === 'verses') {
-				const { results: raw, total, queryTokens } = await searchVerses(trimmed, fetch, textLimit);
-				if (gen !== searchGeneration) return;
-				const groups = buildTextResultGroups(raw);
-				textResults = await hydrateResultGroups(groups, queryTokens, fetch);
+				const groups = buildTextResultGroups(verseRaw);
+				textResults = await hydrateResultGroups(groups, qt, fetch);
 				noteResults = [];
-				textTotal = total;
+				textTotal = verseTotal;
+				crossScopeNoteResults = await hydrateNoteResults(noteRaw, qt, fetch);
+				crossScopeVerseResults = [];
 			} else {
-				const { results: raw, total, queryTokens } = await searchNotes(trimmed, fetch, textLimit);
-				if (gen !== searchGeneration) return;
-				noteResults = await hydrateNoteResults(raw, queryTokens, fetch);
+				noteResults = await hydrateNoteResults(noteRaw, qt, fetch);
 				textResults = [];
-				textTotal = total;
+				textTotal = noteTotal;
+				const vsGroups = buildTextResultGroups(verseRaw);
+				crossScopeVerseResults = await hydrateResultGroups(vsGroups, qt, fetch);
+				crossScopeNoteResults = [];
 			}
+
 			if (gen !== searchGeneration) return;
 			results = [];
 			searched = true;
@@ -242,6 +266,9 @@
 			if (gen !== searchGeneration) return;
 			textResults = [];
 			noteResults = [];
+			crossScopeVerseResults = [];
+			crossScopeNoteResults = [];
+			queryTokens = [];
 			searched = true;
 		}
 		loading = false;
@@ -264,6 +291,9 @@
 		scope = newScope;
 		textResults = [];
 		noteResults = [];
+		crossScopeVerseResults = [];
+		crossScopeNoteResults = [];
+		queryTokens = [];
 		searched = false;
 		stopWordWarning = false;
 		updateUrl(query);
