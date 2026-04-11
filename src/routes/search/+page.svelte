@@ -48,6 +48,8 @@
 	let crossScopeNoteResults: NoteResult[] = [];
 	let queryTokens: string[] = [];
 	let crossScopeTotal = 0;
+
+	$: verseResultCount = results.reduce((n, g) => n + g.verses.length, 0);
 	let notAReferenceQuery = false;
 	let textSuggestionVerses = 0;
 	let textSuggestionNotes = 0;
@@ -213,33 +215,39 @@
 	}
 
 	async function searchVerse(trimmed: string) {
+		// No digits → can't be a verse reference, treat as text query immediately
+		// (avoids false positives like "Thou art Peter" → 1 Peter 1)
+		if (!/\d/.test(trimmed)) {
+			results = [];
+			textResults = [];
+			notAReferenceQuery = true;
+			loading = true;
+			const gen = ++searchGeneration;
+			try {
+				const [vs, ns] = await Promise.all([
+					searchVerses(trimmed, fetch, 100),
+					searchNotes(trimmed, fetch, 100)
+				]);
+				if (gen !== searchGeneration) return;
+				textSuggestionVerses = vs.total;
+				textSuggestionNotes = ns.total;
+			} catch {
+				if (gen !== searchGeneration) return;
+				textSuggestionVerses = 0;
+				textSuggestionNotes = 0;
+			}
+			searched = true;
+			loading = false;
+			return;
+		}
+
 		const ranges = parseAllReferences(trimmed);
 		if (!ranges.length) {
 			results = [];
 			textResults = [];
-			// No digits → looks like a text query, not a verse reference
-			if (!/\d/.test(trimmed)) {
-				notAReferenceQuery = true;
-				loading = true;
-				const gen = ++searchGeneration;
-				try {
-					const [vs, ns] = await Promise.all([
-						searchVerses(trimmed, fetch, 100),
-						searchNotes(trimmed, fetch, 100)
-					]);
-					if (gen !== searchGeneration) return;
-					textSuggestionVerses = vs.total;
-					textSuggestionNotes = ns.total;
-				} catch {
-					if (gen !== searchGeneration) return;
-					textSuggestionVerses = 0;
-					textSuggestionNotes = 0;
-				}
-			} else {
-				notAReferenceQuery = false;
-				textSuggestionVerses = 0;
-				textSuggestionNotes = 0;
-			}
+			notAReferenceQuery = false;
+			textSuggestionVerses = 0;
+			textSuggestionNotes = 0;
 			searched = true;
 			loading = false;
 			return;
@@ -501,6 +509,10 @@
 		return applyHighlights(text, queryTokens, 'search-highlight', 'search-highlight-muted', true);
 	}
 
+	function highlightNoteBody(text: string, tokens: string[]): string {
+		return applyHighlights(text, tokens, 'search-highlight', 'search-highlight-muted', false);
+	}
+
 	function computeCrossScope(
 		tokens: string[],
 		curScope: SearchScope,
@@ -711,6 +723,28 @@
 				</p>
 			{/if}
 
+			<!-- Result count -->
+			{#if searched && !loading}
+				{#if mode === 'verse' && verseResultCount > 0}
+					<p
+						class="text-subtle text-[12px] text-center mb-[12px]"
+						in:fade={{ duration: reducedMotion ? 0 : 120 }}
+					>
+						{verseResultCount} verse{verseResultCount === 1 ? '' : 's'} found
+					</p>
+				{:else if mode === 'text' && textTotal > 0}
+					<p
+						class="text-subtle text-[12px] text-center mb-[12px]"
+						in:fade={{ duration: reducedMotion ? 0 : 120 }}
+					>
+						{textTotal}
+						{scope === 'notes'
+							? `note${textTotal === 1 ? '' : 's'}`
+							: `verse${textTotal === 1 ? '' : 's'}`} found
+					</p>
+				{/if}
+			{/if}
+
 			<!-- No results (verse mode) -->
 			{#if searched && !loading && mode === 'verse' && results.length === 0}
 				{#if notAReferenceQuery && (textSuggestionVerses > 0 || textSuggestionNotes > 0)}
@@ -901,12 +935,15 @@
 									{@html highlightNoteTitle(note.title, note.queryTokens)}
 								</p>
 							{/if}
-							<AnnotationProse text={note.noteText} notes={note.subNotes ?? []} />
+							<AnnotationProse
+								text={highlightNoteBody(note.noteText, note.queryTokens)}
+								notes={note.subNotes ?? []}
+							/>
 							{#if note.type === 'note' && note.verseText}
 								<p
 									class="font-reader text-[length:calc(var(--font-size-reader) * 0.9)] leading-[var(--line-height-reader)] text-subtle mt-[8px] border-l-2 border-border pl-[12px]"
 								>
-									{@html renderSearchVerse(note.verseText)}
+									{@html highlightSearchVerse(note.verseText, note.queryTokens)}
 								</p>
 							{/if}
 						</section>
