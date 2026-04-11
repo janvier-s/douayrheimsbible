@@ -1,6 +1,6 @@
 # Original Douay-Rheims Bible
 
-The Original Douay-Rheims Bible online: the first complete English Catholic Bible, translated from the Latin Vulgate between 1582 and 1610. Read at [douayrheimsbible.net](https://douayrheimsbible.net).
+The Original Douay-Rheims Bible online: the first complete English Catholic Bible, translated from the Latin Vulgate between 1582 and 1610. Read at [thedouayrheims.com](https://thedouayrheims.com).
 
 ## Stack
 

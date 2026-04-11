@@ -22,7 +22,7 @@
 		name="description"
 		content="How the Catholic Church actively encourages all the faithful to read Scripture, from Dei Verbum's open invitation to the Church's guidance on how to read: with attention to literary forms, Tradition, and the Magisterium, and through the ancient practice of Lectio Divina."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/scripture-for-all" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/scripture-for-all" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -32,7 +32,7 @@
 		property="og:description"
 		content="How the Church moved from regulated access to active encouragement, and how Catholics are invited to read Scripture today."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/scripture-for-all" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/scripture-for-all" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

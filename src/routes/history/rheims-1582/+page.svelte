@@ -22,7 +22,7 @@
 		name="description"
 		content="The political world that greeted the Rheims New Testament in 1582: Campion's execution, England's anti-Roman fever, and the Protestant refutation that spread the Catholic Bible further than its authors expected."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/rheims-1582" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/rheims-1582" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -32,7 +32,7 @@
 		property="og:description"
 		content="The political world that greeted the Rheims New Testament in 1582, and the refutation that spread it further."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/rheims-1582" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/rheims-1582" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

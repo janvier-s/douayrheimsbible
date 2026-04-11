@@ -152,14 +152,14 @@
 		name="description"
 		content="Articles on the Catholic Bible: comparisons of translations, verse-level explainers, the deuterocanonical books, and the Latin Vulgate tradition. Written from the perspective of the original Douay-Rheims."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/articles" />
+	<link rel="canonical" href="https://thedouayrheims.com/articles" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Articles on the Catholic Bible | Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="Comparisons, verse explainers, canon questions, and translation scholarship, all from the perspective of the original Douay-Rheims Bible."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/articles" />
+	<meta property="og:url" content="https://thedouayrheims.com/articles" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

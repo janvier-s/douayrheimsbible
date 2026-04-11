@@ -22,7 +22,7 @@
 		name="description"
 		content="How the Douay-Rheims Bible crossed the Atlantic with Maryland's Catholic founders in 1634, and how Bishop Carroll and Mathew Carey established it as the American Catholic Bible with the first American printing in 1790."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/america" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/america" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -32,7 +32,7 @@
 		property="og:description"
 		content="How the Douay-Rheims Bible came to America with Maryland's Catholics in 1634 and was first printed in America by Mathew Carey in 1790."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/america" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/america" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

@@ -8,14 +8,14 @@
 		name="description"
 		content="A collection of articles tracing the origins, translation, influence, and legacy of the Douay-Rheims Bible, the first complete English Catholic translation of Sacred Scripture."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history" />
+	<link rel="canonical" href="https://thedouayrheims.com/history" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="History of the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="Articles on the origins, language, and legacy of the first complete English Catholic translation of Sacred Scripture."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history" />
+	<meta property="og:url" content="https://thedouayrheims.com/history" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

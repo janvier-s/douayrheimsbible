@@ -22,7 +22,7 @@
 		name="description"
 		content="Why the Douay-Rheims translators chose Saint Jerome's Latin Vulgate over the original Greek and Hebrew, how that choice shaped the translation's vocabulary, and what words like 'supersubstantial,' 'charity,' and 'penance' reveal about their method."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/translation-philosophy" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/translation-philosophy" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -32,7 +32,7 @@
 		property="og:description"
 		content="Why the Douay-Rheims translators chose the Vulgate over the original languages, and what their fierce fidelity gave and cost them."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/translation-philosophy" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/translation-philosophy" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

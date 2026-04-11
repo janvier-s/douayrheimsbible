@@ -7,11 +7,11 @@
 
 	export let title: string;
 	export let subtitle: string = '';
-	export let ogImage: string = 'https://douayrheimsbible.net/images/dr-1582-rheims.webp';
+	export let ogImage: string = 'https://thedouayrheims.com/images/dr-1582-rheims.webp';
 	export let datePublished: string | undefined = undefined;
 	export let faqItems: Array<{ q: string; a: string }> = [];
 
-	const SITE = 'https://douayrheimsbible.net';
+	const SITE = 'https://thedouayrheims.com';
 
 	const PATH_LABELS: Record<string, string> = {
 		about: 'About',

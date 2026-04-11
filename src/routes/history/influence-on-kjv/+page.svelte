@@ -22,14 +22,14 @@
 		name="description"
 		content="The documented debt the King James Version owes to the Catholic Douay-Rheims Bible: Ward Allen's 1969 research, Fulke's parallel edition, and the specific phrases and vocabulary the KJV translators borrowed from the Rheims New Testament."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/influence-on-kjv" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/influence-on-kjv" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="How the Douay-Rheims Bible Shaped the King James Version" />
 	<meta
 		property="og:description"
 		content="The specific debt the King James Version owes to the Catholic Douay-Rheims Bible, documented in Ward Allen's 1969 research."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/influence-on-kjv" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/influence-on-kjv" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

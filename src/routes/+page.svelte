@@ -36,7 +36,7 @@
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
-	const SITE = 'https://douayrheimsbible.net';
+	const SITE = 'https://thedouayrheims.com';
 	const websiteSchema =
 		scriptOpen +
 		JSON.stringify({
@@ -79,7 +79,7 @@
 		name="description"
 		content="Read the Original Douay-Rheims Bible online | the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore the original pre-Challoner text."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/" />
+	<link rel="canonical" href="https://thedouayrheims.com/" />
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
@@ -89,8 +89,8 @@
 		property="og:description"
 		content="The first complete English Catholic translation of Sacred Scripture, faithfully rendered from the Latin Vulgate. Read the original pre-Challoner text online."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/" />
-	<meta property="og:image" content="https://douayrheimsbible.net/images/dr-1582-rheims.webp" />
+	<meta property="og:url" content="https://thedouayrheims.com/" />
+	<meta property="og:image" content="https://thedouayrheims.com/images/dr-1582-rheims.webp" />
 	<meta property="og:site_name" content="Original Douay-Rheims Bible" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta
@@ -101,7 +101,7 @@
 		name="twitter:description"
 		content="The first complete English Catholic translation of Sacred Scripture, faithfully rendered from the Latin Vulgate. Read the original pre-Challoner text online."
 	/>
-	<meta name="twitter:image" content="https://douayrheimsbible.net/images/dr-1582-rheims.webp" />
+	<meta name="twitter:image" content="https://thedouayrheims.com/images/dr-1582-rheims.webp" />
 	{@html websiteSchema}
 </svelte:head>
 

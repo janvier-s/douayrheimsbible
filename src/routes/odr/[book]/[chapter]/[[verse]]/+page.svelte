@@ -5,13 +5,13 @@
 
 	export let data: PageData;
 
-	$: pageUrl = `https://douayrheimsbible.net/odr/${data.bookMeta.slug}/${data.chapter.chapter}`;
+	$: pageUrl = `https://thedouayrheims.com/odr/${data.bookMeta.slug}/${data.chapter.chapter}`;
 	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} | Original Douay-Rheims Bible`;
 	$: pageDesc = `Read ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} in the original Douay-Rheims Bible (1582–1610). Pre-Challoner English Catholic translation from the Latin Vulgate.${data.chapter.summary && data.chapter.summary !== '---' ? ` ${data.chapter.summary.slice(0, 120)}` : ''}`;
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
-	const SITE = 'https://douayrheimsbible.net';
+	const SITE = 'https://thedouayrheims.com';
 	const bookId = SITE + '/#douay-rheims-bible';
 	$: jsonLdTag = `${scriptOpen}${JSON.stringify({
 		'@context': 'https://schema.org',

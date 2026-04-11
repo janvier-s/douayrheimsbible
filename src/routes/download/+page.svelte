@@ -9,7 +9,7 @@
 		name="description"
 		content="Download the original Douay-Rheims Bible text as structured JSON data. Free for personal and scholarly use."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/download" />
+	<link rel="canonical" href="https://thedouayrheims.com/download" />
 </svelte:head>
 
 <ProseLayout

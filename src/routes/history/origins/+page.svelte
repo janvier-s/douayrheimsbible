@@ -26,14 +26,14 @@
 		name="description"
 		content="How English Catholic scholars at the English College Douai produced the first complete Catholic Bible in English: Gregory Martin's translation, William Allen's leadership, and the 27-year gap between the New and Old Testaments."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/origins" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/origins" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="The Origins of the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="How English Catholics in exile at Douai and Rheims produced the first complete Catholic English Bible between 1578 and 1610."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/origins" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/origins" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

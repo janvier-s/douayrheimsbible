@@ -12,7 +12,7 @@
 	/>
 	<link
 		rel="canonical"
-		href="https://douayrheimsbible.net/books/{data.testament === 'OT'
+		href="https://thedouayrheims.com/books/{data.testament === 'OT'
 			? 'old-testament'
 			: 'new-testament'}"
 	/>

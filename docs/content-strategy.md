@@ -1,4 +1,4 @@
-# Content Strategy: douayrheimsbible.net
+# Content Strategy: thedouayrheims.com
 
 **Site**: Original pre-Challoner Douay-Rheims Bible + 11-article history series
 **Goal**: Own the search space for Catholic Bible translation questions, comparisons, and distinctives

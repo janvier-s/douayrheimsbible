@@ -22,14 +22,14 @@
 		name="description"
 		content="The theological annotations that accompanied the 1582 Rheims New Testament: their purpose, their character, and their unexpected legacy in shaping both Catholic biblical scholarship and the King James Version."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/annotations" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/annotations" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="The Annotations of the Rheims New Testament 1582" />
 	<meta
 		property="og:description"
 		content="The scholarly annotations of the 1582 Rheims New Testament: their polemical purpose, their character, and their legacy."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/annotations" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/annotations" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

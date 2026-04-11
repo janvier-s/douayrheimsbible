@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://douayrheimsbible.net/sitemap.xml
+Sitemap: https://thedouayrheims.com/sitemap.xml

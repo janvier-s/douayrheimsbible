@@ -3,7 +3,7 @@ import { ALL_BOOKS } from '$lib/data/books';
 // Translation prefixes with live data — add entries here as translations are imported
 const LIVE_TRANSLATIONS = ['odr'] as const;
 
-const SITE = 'https://douayrheimsbible.net';
+const SITE = 'https://thedouayrheims.com';
 
 export const prerender = true;
 

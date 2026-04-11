@@ -22,7 +22,7 @@
 		name="description"
 		content="How the Catholic Church moved from requiring the Latin Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals, from the Council of Trent through Divino Afflante Spiritu to the present day."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/original-tongues" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/original-tongues" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -32,7 +32,7 @@
 		property="og:description"
 		content="How the Church moved from the Vulgate to the original languages: Trent, Divino Afflante Spiritu, and the modern Catholic Bible."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/original-tongues" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/original-tongues" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

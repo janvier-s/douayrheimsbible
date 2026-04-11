@@ -22,7 +22,7 @@
 		name="description"
 		content="The proliferation of competing Douay-Rheims Bible editions after Challoner, catalogued by Henry Cotton in 1855, and why Cardinal Wiseman declared the name Douay-Rheims an abuse of terms."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/after-challoner" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/after-challoner" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
@@ -32,7 +32,7 @@
 		property="og:description"
 		content="How the Douay-Rheims proliferated into competing editions after Challoner, and why Cardinal Wiseman said the name had become an abuse of terms."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/after-challoner" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/after-challoner" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

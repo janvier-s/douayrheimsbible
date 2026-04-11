@@ -26,14 +26,14 @@
 		name="description"
 		content="Bishop Richard Challoner's 18th-century revision of the Douay-Rheims Bible changed the text so extensively that Cardinal Newman said it almost amounted to a new translation. Learn what changed and why."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/challoner" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/challoner" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="The Challoner Revision of the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="How Bishop Challoner transformed the original Douay-Rheims text, and why the distinction matters."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/challoner" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/challoner" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

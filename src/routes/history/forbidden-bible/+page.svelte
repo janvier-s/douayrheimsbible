@@ -22,14 +22,14 @@
 		name="description"
 		content="Catholics who produced the Douay-Rheims Bible were banned from reading it in England without a license. The Elizabethan recusancy laws, the penalties for possessing Catholic books, and the theology behind the Church's own restrictions."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/forbidden-bible" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/forbidden-bible" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="A Bible Banned in England: The Douay-Rheims and Recusancy" />
 	<meta
 		property="og:description"
 		content="The Elizabethan recusancy laws banned the Douay-Rheims in England. The history of those restrictions and the theology behind them."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/forbidden-bible" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/forbidden-bible" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 

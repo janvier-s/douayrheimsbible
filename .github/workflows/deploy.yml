@@ -47,9 +47,9 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
-            https://douayrheimsbible.net
-            https://douayrheimsbible.net/odr/genesis/1
-            https://douayrheimsbible.net/search
+            https://thedouayrheims.com
+            https://thedouayrheims.com/odr/genesis/1
+            https://thedouayrheims.com/search
           configPath: .lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true

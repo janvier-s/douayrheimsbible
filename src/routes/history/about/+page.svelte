@@ -26,14 +26,14 @@
 		name="description"
 		content="The Douay-Rheims Bible is the first complete English Catholic translation of Sacred Scripture, translated by Gregory Martin from the Latin Vulgate. This site presents the original pre-Challoner text of 1582 and 1609-1610."
 	/>
-	<link rel="canonical" href="https://douayrheimsbible.net/history/about" />
+	<link rel="canonical" href="https://thedouayrheims.com/history/about" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="About the Douay-Rheims Bible" />
 	<meta
 		property="og:description"
 		content="The first complete English Catholic translation of Sacred Scripture, faithfully rendered from the Latin Vulgate by English scholars in exile."
 	/>
-	<meta property="og:url" content="https://douayrheimsbible.net/history/about" />
+	<meta property="og:url" content="https://thedouayrheims.com/history/about" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
