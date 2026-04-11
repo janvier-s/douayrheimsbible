@@ -1058,6 +1058,7 @@
 		background: none;
 		border: none;
 		cursor: pointer;
+		font-weight: 500;
 	}
 
 	/* ── Scope tab underline ──────────────────────────────────────────── */
