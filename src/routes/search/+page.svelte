@@ -48,6 +48,9 @@
 	let crossScopeNoteResults: NoteResult[] = [];
 	let queryTokens: string[] = [];
 	let crossScopeTotal = 0;
+	let notAReferenceQuery = false;
+	let textSuggestionVerses = 0;
+	let textSuggestionNotes = 0;
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
@@ -133,6 +136,9 @@
 			crossScopeNoteResults = [];
 			queryTokens = [];
 			crossScopeTotal = 0;
+			notAReferenceQuery = false;
+			textSuggestionVerses = 0;
+			textSuggestionNotes = 0;
 			searched = false;
 			loading = false;
 			textLimit = 100;
@@ -156,6 +162,9 @@
 				crossScopeNoteResults = [];
 				queryTokens = [];
 				crossScopeTotal = 0;
+				notAReferenceQuery = false;
+				textSuggestionVerses = 0;
+				textSuggestionNotes = 0;
 				searched = false;
 				stopWordWarning = false;
 			}
@@ -215,6 +224,29 @@
 		if (!ranges.length) {
 			results = [];
 			textResults = [];
+			// No digits → looks like a text query, not a verse reference
+			if (!/\d/.test(trimmed)) {
+				notAReferenceQuery = true;
+				loading = true;
+				const gen = ++searchGeneration;
+				try {
+					const [vs, ns] = await Promise.all([
+						searchVerses(trimmed, fetch, 100),
+						searchNotes(trimmed, fetch, 100)
+					]);
+					if (gen !== searchGeneration) return;
+					textSuggestionVerses = vs.total;
+					textSuggestionNotes = ns.total;
+				} catch {
+					if (gen !== searchGeneration) return;
+					textSuggestionVerses = 0;
+					textSuggestionNotes = 0;
+				}
+			} else {
+				notAReferenceQuery = false;
+				textSuggestionVerses = 0;
+				textSuggestionNotes = 0;
+			}
 			searched = true;
 			loading = false;
 			return;
@@ -303,6 +335,9 @@
 		results = [];
 		textResults = [];
 		noteResults = [];
+		notAReferenceQuery = false;
+		textSuggestionVerses = 0;
+		textSuggestionNotes = 0;
 		searched = false;
 		stopWordWarning = false;
 		updateUrl(query);
@@ -664,32 +699,70 @@
 
 			<!-- Cross-scope teaser -->
 			{#if crossScopeTeaser}
-				<button
-					class="block w-full text-center mb-[16px] font-ui text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
-					on:click={() => {
-						if (crossScopeTeaser) setScope(crossScopeTeaser.targetScope);
-					}}
+				<p
+					class="text-center mb-[16px] font-ui text-[13px] text-subtle"
+					in:fade={{ duration: reducedMotion ? 0 : 160 }}
 				>
-					<span
-						>"{query}" is also found in {crossScopeTeaser.count} matching {crossScopeTeaser.label}</span
+					"{query}" also appears in {crossScopeTeaser.count}
+					{crossScopeTeaser.label === 'annotations' ? 'notes and annotations' : 'Bible verses'}.
+					<button
+						class="hover:underline"
+						style="color: var(--color-accent-text)"
+						on:click={() => {
+							if (crossScopeTeaser) setScope(crossScopeTeaser.targetScope);
+						}}
+						>Switch to {crossScopeTeaser.label === 'annotations'
+							? 'Notes Search'
+							: 'Verse Text Search'} →</button
 					>
-					<span class="ml-[4px]">→</span>
-				</button>
+				</p>
 			{/if}
 
 			<!-- No results (verse mode) -->
 			{#if searched && !loading && mode === 'verse' && results.length === 0}
-				<p
-					class="text-subtle text-[14px] text-center"
-					in:fade={{ duration: reducedMotion ? 0 : 160 }}
-				>
-					That verse is not found in the Original Douay-Rheims Bible.<br />Try a verse, for example:
-					<button
-						class="hover:underline"
-						style="color: var(--color-accent-text)"
-						on:click={() => onExampleClick('James 2:24')}>James 2:24</button
+				{#if notAReferenceQuery && (textSuggestionVerses > 0 || textSuggestionNotes > 0)}
+					<p
+						class="text-subtle text-[14px] text-center"
+						in:fade={{ duration: reducedMotion ? 0 : 160 }}
 					>
-				</p>
+						This looks like a text search.
+						<button
+							class="hover:underline"
+							style="color: var(--color-accent-text)"
+							on:click={() => setMode('text')}
+							>Switch to Text Search to find "{query}" in {textSuggestionVerses} verse{textSuggestionVerses ===
+							1
+								? ''
+								: 's'} and {textSuggestionNotes} note{textSuggestionNotes === 1 ? '' : 's'} →</button
+						>
+					</p>
+				{:else if notAReferenceQuery}
+					<p
+						class="text-subtle text-[14px] text-center"
+						in:fade={{ duration: reducedMotion ? 0 : 160 }}
+					>
+						This looks like a text search, but nothing was found for "{query}".<br />You can also
+						try a verse reference, for example:
+						<button
+							class="hover:underline"
+							style="color: var(--color-accent-text)"
+							on:click={() => onExampleClick('James 2:24')}>James 2:24</button
+						>.
+					</p>
+				{:else}
+					<p
+						class="text-subtle text-[14px] text-center"
+						in:fade={{ duration: reducedMotion ? 0 : 160 }}
+					>
+						"{query}" is not found in the Original Douay-Rheims Bible.<br />Try a verse, for
+						example:
+						<button
+							class="hover:underline"
+							style="color: var(--color-accent-text)"
+							on:click={() => onExampleClick('James 2:24')}>James 2:24</button
+						>
+					</p>
+				{/if}
 			{/if}
 
 			<!-- Verse results -->
@@ -858,7 +931,8 @@
 					class="text-subtle text-[14px] text-center"
 					in:fade={{ duration: reducedMotion ? 0 : 160 }}
 				>
-					Try a more specific search. Common words like "the" or "and" are too broad.
+					Words like "the" and "and" are too common to search on their own. Try a more specific
+					phrase.
 				</p>
 			{/if}
 
@@ -867,7 +941,7 @@
 					class="text-subtle text-[14px] text-center"
 					in:fade={{ duration: reducedMotion ? 0 : 160 }}
 				>
-					{noResultsMessage}<br />Try different words, for example:
+					Nothing found for "{query}".<br />Try different words, for example:
 					<button
 						class="italic hover:underline"
 						style="color: var(--color-accent-text)"
