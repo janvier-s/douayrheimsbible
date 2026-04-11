@@ -331,3 +331,14 @@ body {
 	border-radius: 2px;
 	padding: 0 2px;
 }
+
+[data-theme='dark'] .search-highlight,
+[data-theme='oled'] .search-highlight {
+	color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+	[data-theme='auto'] .search-highlight {
+		color: #000;
+	}
+}

@@ -361,48 +361,44 @@
 		<!-- Search bar -->
 		<form on:submit|preventDefault={onSubmit} role="search" class="mb-lg">
 			<div
-				class="border border-border rounded-[10px] p-[8px]"
+				class="flex items-center gap-[10px] rounded-[10px] px-[14px] h-[52px] border border-interactive
+				focus-within:border-subtle transition-colors duration-fast"
 				style="background: var(--color-search-card);"
 			>
-				<div
-					class="flex items-center gap-[10px] border border-border rounded-[6px] bg-background px-[14px] h-[52px]
-					focus-within:border-subtle transition-colors duration-fast"
+				<svg
+					width="18"
+					height="18"
+					viewBox="0 0 20 20"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.7"
+					stroke-linecap="round"
+					class="text-subtle shrink-0"
+					aria-hidden="true"
 				>
-					<svg
-						width="18"
-						height="18"
-						viewBox="0 0 20 20"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						class="text-subtle shrink-0"
-						aria-hidden="true"
-					>
-						<circle cx="8.5" cy="8.5" r="5.5" />
-						<line x1="13" y1="13" x2="18" y2="18" />
-					</svg>
-					<input
-						bind:this={inputEl}
-						bind:value={query}
-						on:input={onInput}
-						type="text"
-						{placeholder}
-						class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
-						style="outline: none;"
-						autocomplete="off"
-						autocorrect="off"
-						autocapitalize="off"
-						spellcheck="false"
-					/>
-					<button
-						type="submit"
-						class="shrink-0 px-[14px] h-[36px] bg-accent text-white rounded-[4px] text-[13px] font-medium
+					<circle cx="8.5" cy="8.5" r="5.5" />
+					<line x1="13" y1="13" x2="18" y2="18" />
+				</svg>
+				<input
+					bind:this={inputEl}
+					bind:value={query}
+					on:input={onInput}
+					type="text"
+					{placeholder}
+					class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
+					style="outline: none;"
+					autocomplete="off"
+					autocorrect="off"
+					autocapitalize="off"
+					spellcheck="false"
+				/>
+				<button
+					type="submit"
+					class="shrink-0 px-[14px] h-[36px] bg-accent text-white rounded-[4px] text-[13px] font-medium
 						hover:opacity-90 active:opacity-80 transition-opacity duration-fast"
-					>
-						Search
-					</button>
-				</div>
+				>
+					Search
+				</button>
 			</div>
 		</form>
 
