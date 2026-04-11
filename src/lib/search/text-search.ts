@@ -247,7 +247,7 @@ export function buildTextResultGroups(
  * Returns a proximity score: lower = better (0 = exact phrase match).
  * Returns Infinity if tokens don't all appear.
  */
-function phraseProximity(text: string, queryTokens: string[]): number {
+export function phraseProximity(text: string, queryTokens: string[]): number {
 	if (queryTokens.length <= 1) return 0;
 
 	const stripped = stripHtml(text).toLowerCase();
