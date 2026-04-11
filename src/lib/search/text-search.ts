@@ -123,7 +123,8 @@ export function parseResultId(id: string): { book: string; chapter: number; vers
  * and groups are combined with AND between them.
  * e.g. ["baptize", "peter"] → AND(OR("baptize","baptise"), "peter")
  */
-function buildSearchQuery(tokens: string[]): string | Record<string, unknown> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function buildSearchQuery(tokens: string[]): any {
 	const groups = expandTokenGroups(tokens);
 	const hasExpansions = groups.some((g) => g.length > 1);
 
@@ -416,7 +417,7 @@ export async function hydrateNoteResults(
 			const ann = annData.annotations[parsed.index];
 			if (!ann) continue;
 
-			const subNotes: { marker: number; text: string }[] = [];
+			const subNotes: NoteSubNote[] = [];
 			if (ann.notes) {
 				for (const n of ann.notes) {
 					if (n.text) subNotes.push({ marker: n.marker, text: n.text });
