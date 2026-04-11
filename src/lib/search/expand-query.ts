@@ -122,6 +122,17 @@ export function expandTokens(tokens: string[]): string[] {
 	return result;
 }
 
+/**
+ * Expand tokens into per-token groups, preserving which expansions belong to which original token.
+ * e.g. ["baptize", "peter"] → [["baptize", "baptise"], ["peter"]]
+ */
+export function expandTokenGroups(tokens: string[]): string[][] {
+	return tokens.map((token) => {
+		const alts = expansionMap[token];
+		return alts ? [token, ...alts] : [token];
+	});
+}
+
 /** Returns true if every token is a stop word (or the array is empty). */
 export function isAllStopWords(tokens: string[]): boolean {
 	return tokens.every((t) => STOP_WORDS.has(t));

@@ -1,6 +1,6 @@
 import MiniSearch from 'minisearch';
 import { searchTokenizer, processTerm } from './normalize';
-import { expandTokens, isAllStopWords } from './expand-query';
+import { expandTokens, expandTokenGroups, isAllStopWords } from './expand-query';
 import { tokenize } from './normalize';
 import { loadBook, getChapter } from '$lib/data/loader';
 import { ALL_BOOKS } from '$lib/data/books';
@@ -93,6 +93,44 @@ export function parseResultId(id: string): { book: string; chapter: number; vers
 	};
 }
 
+/**
+ * Build a MiniSearch query expression tree from tokens.
+ * Each token is expanded to its alternatives (OR within group),
+ * and groups are combined with AND between them.
+ * e.g. ["baptize", "peter"] → AND(OR("baptize","baptise"), "peter")
+ */
+function buildSearchQuery(tokens: string[]): string | Record<string, unknown> {
+	const groups = expandTokenGroups(tokens);
+	const hasExpansions = groups.some((g) => g.length > 1);
+
+	if (!hasExpansions) {
+		// No expansions — simple AND query with prefix
+		return {
+			combineWith: 'AND',
+			prefix: (term: string) => term.length > 2,
+			queries: tokens
+		};
+	}
+
+	// Build nested query: AND between groups, OR within groups that have expansions
+	return {
+		combineWith: 'AND',
+		queries: groups.map((group) => {
+			if (group.length === 1) {
+				return {
+					queries: [group[0]],
+					prefix: (term: string) => term.length > 2
+				};
+			}
+			return {
+				combineWith: 'OR',
+				prefix: (term: string) => term.length > 2,
+				queries: group
+			};
+		})
+	};
+}
+
 export async function searchVerses(
 	query: string,
 	fetch: typeof globalThis.fetch,
@@ -106,11 +144,8 @@ export async function searchVerses(
 	const expanded = expandTokens(tokens);
 	const index = await loadVerseIndex(fetch);
 
-	const raw = index.search(query, {
-		combineWith: 'AND',
-		prefix: (term) => term.length > 2,
-		processTerm,
-		tokenize: () => expanded
+	const raw = index.search(buildSearchQuery(tokens), {
+		processTerm
 	});
 
 	const total = raw.length;
@@ -138,11 +173,8 @@ export async function searchNotes(
 	const expanded = expandTokens(tokens);
 	const index = await loadNotesIndex(fetch);
 
-	const raw = index.search(query, {
-		combineWith: 'AND',
-		prefix: (term) => term.length > 2,
-		processTerm,
-		tokenize: () => expanded
+	const raw = index.search(buildSearchQuery(tokens), {
+		processTerm
 	});
 
 	const total = raw.length;
