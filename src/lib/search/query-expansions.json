@@ -1,15 +1,2971 @@
 {
-	"honor": ["honour"],
-	"honor's": ["honour's"],
-	"baptize": ["baptise"],
-	"baptized": ["baptised"],
-	"savior": ["saviour"],
-	"favor": ["favour"],
-	"color": ["colour"],
-	"today": ["to-day"],
-	"forever": ["for-ever"],
-	"recognize": ["recognise"],
-	"labor": ["labour"],
-	"neighbor": ["neighbour"],
-	"passover": ["pasch"]
+	"abdie": [
+		"abdiae"
+	],
+	"abimel": [
+		"abimael"
+	],
+	"accuzation": [
+		"accusation"
+	],
+	"accuzations": [
+		"accusations"
+	],
+	"acte": [
+		"actae"
+	],
+	"adays": [
+		"a-days"
+	],
+	"advertize": [
+		"advertise"
+	],
+	"advertized": [
+		"advertised"
+	],
+	"advertizing": [
+		"advertising"
+	],
+	"advize": [
+		"advise"
+	],
+	"advized": [
+		"advised"
+	],
+	"advizing": [
+		"advising"
+	],
+	"afoot": [
+		"a-foot"
+	],
+	"afterdoctrines": [
+		"after-doctrines"
+	],
+	"afterpreaching": [
+		"after-preaching"
+	],
+	"afterpreachings": [
+		"after-preachings"
+	],
+	"afterteacher": [
+		"after-teacher"
+	],
+	"afterteaching": [
+		"after-teaching"
+	],
+	"agape": [
+		"agapae"
+	],
+	"aggeus": [
+		"aggaeus"
+	],
+	"agnize": [
+		"agnise"
+	],
+	"agnized": [
+		"agnised"
+	],
+	"agnoite": [
+		"agnoitae"
+	],
+	"akin": [
+		"a-kin"
+	],
+	"alabasterbox": [
+		"alabaster-box"
+	],
+	"alehouses": [
+		"ale-houses"
+	],
+	"alie": [
+		"aliae"
+	],
+	"alike": [
+		"a-like"
+	],
+	"alleluia": [
+		"allelu-ia"
+	],
+	"allhallows": [
+		"all-hallows"
+	],
+	"allsouls": [
+		"all-souls"
+	],
+	"almsdeed": [
+		"alms-deed"
+	],
+	"almsdeeds": [
+		"alms-deeds"
+	],
+	"almsmen": [
+		"alms-men"
+	],
+	"alpheus": [
+		"alphaeus"
+	],
+	"amorrheus": [
+		"amorrhaeus"
+	],
+	"amphore": [
+		"amphorae"
+	],
+	"ample": [
+		"amplae"
+	],
+	"anime": [
+		"animae"
+	],
+	"anize": [
+		"anise"
+	],
+	"antichrist": [
+		"anti-christ"
+	],
+	"antiochie": [
+		"antiochiae"
+	],
+	"anywhere": [
+		"any-where"
+	],
+	"apart": [
+		"a-part"
+	],
+	"apiece": [
+		"a-piece"
+	],
+	"apijforum": [
+		"apij-forum"
+	],
+	"apostate": [
+		"apostatae"
+	],
+	"apostatemonks": [
+		"apostate-monks"
+	],
+	"apostatepriests": [
+		"apostate-priests"
+	],
+	"apostates": [
+		"apostataes"
+	],
+	"appletree": [
+		"apple-tree"
+	],
+	"appletrees": [
+		"apple-trees"
+	],
+	"apromize": [
+		"apromise"
+	],
+	"araceus": [
+		"aracaeus"
+	],
+	"archheretic": [
+		"arch-heretic"
+	],
+	"archheretics": [
+		"arch-heretics"
+	],
+	"archsynagogues": [
+		"arch-synagogues"
+	],
+	"arctabes": [
+		"arctabaes"
+	],
+	"arimathea": [
+		"arimathaea"
+	],
+	"arize": [
+		"arise"
+	],
+	"arizing": [
+		"arising"
+	],
+	"armhole": [
+		"arm-hole"
+	],
+	"armoab": [
+		"ar-moab"
+	],
+	"armor": [
+		"armour"
+	],
+	"armory": [
+		"armoury"
+	],
+	"armourbearer": [
+		"armour-bearer"
+	],
+	"asel": [
+		"asael"
+	],
+	"aside": [
+		"a-side"
+	],
+	"asie": [
+		"asiae"
+	],
+	"asleep": [
+		"a-sleep"
+	],
+	"asrel": [
+		"asrael"
+	],
+	"asunder": [
+		"a-sunder"
+	],
+	"authorized": [
+		"authorised"
+	],
+	"autotheism": [
+		"auto-theism"
+	],
+	"awize": [
+		"awise"
+	],
+	"azel": [
+		"azael"
+	],
+	"babyle": [
+		"babylae"
+	],
+	"backparts": [
+		"back-parts"
+	],
+	"backward": [
+		"back-ward"
+	],
+	"baneus": [
+		"banaeus"
+	],
+	"baptiste": [
+		"baptistae"
+	],
+	"baptize": [
+		"baptise"
+	],
+	"baptized": [
+		"baptised"
+	],
+	"barefoot": [
+		"bare-foot"
+	],
+	"barehead": [
+		"bare-head"
+	],
+	"bariesu": [
+		"bar-iesu"
+	],
+	"barjona": [
+		"bar-jona"
+	],
+	"bartimaeus": [
+		"bar-timaeus"
+	],
+	"basilice": [
+		"basilicae"
+	],
+	"batemakers": [
+		"bate-makers"
+	],
+	"bedchamber": [
+		"bed-chamber"
+	],
+	"beelzebub": [
+		"beel-zebub"
+	],
+	"beforehand": [
+		"before-hand"
+	],
+	"behavior": [
+		"behaviour"
+	],
+	"bellycheer": [
+		"belly-cheer"
+	],
+	"benjamin": [
+		"ben-jamin"
+	],
+	"berea": [
+		"beraea",
+		"beroea"
+	],
+	"bestportion": [
+		"best-portion"
+	],
+	"bethanoth": [
+		"beth-anoth"
+	],
+	"betharaba": [
+		"beth-araba"
+	],
+	"bethhoron": [
+		"beth-horon"
+	],
+	"bethlehem": [
+		"beth-lehem"
+	],
+	"bethphagee": [
+		"beth-phagee"
+	],
+	"bethsaida": [
+		"beth-saida"
+	],
+	"birthday": [
+		"birth-day"
+	],
+	"blacksaunts": [
+		"black-saunts"
+	],
+	"bleareyed": [
+		"blear-eyed"
+	],
+	"blindfold": [
+		"blind-fold"
+	],
+	"bloodshedders": [
+		"blood-shedders"
+	],
+	"bloodshedding": [
+		"blood-shedding"
+	],
+	"bloodsuckers": [
+		"blood-suckers"
+	],
+	"bloodsucking": [
+		"blood-sucking"
+	],
+	"bondman": [
+		"bond-man"
+	],
+	"bondmen": [
+		"bond-men"
+	],
+	"bondwoman": [
+		"bond-woman"
+	],
+	"bondwomen": [
+		"bond-women"
+	],
+	"bowman": [
+		"bow-man"
+	],
+	"boxtree": [
+		"box-tree"
+	],
+	"breastplate": [
+		"breast-plate"
+	],
+	"bridechamber": [
+		"bride-chamber"
+	],
+	"brothelhouse": [
+		"brothel-house"
+	],
+	"bruize": [
+		"bruise"
+	],
+	"bruized": [
+		"bruised"
+	],
+	"bruizing": [
+		"bruising"
+	],
+	"buckgoat": [
+		"buck-goat"
+	],
+	"buckgoats": [
+		"buck-goats"
+	],
+	"byway": [
+		"by-way"
+	],
+	"byways": [
+		"by-ways"
+	],
+	"caesareaphilippi": [
+		"caesarea-philippi"
+	],
+	"calumnie": [
+		"calumniae"
+	],
+	"cambyzes": [
+		"cambyses"
+	],
+	"cananeus": [
+		"cananaeus"
+	],
+	"cariatharbe": [
+		"cariath-arbe"
+	],
+	"cariathsepher": [
+		"cariath-sepher"
+	],
+	"cecil": [
+		"caecil"
+	],
+	"cecilium": [
+		"caecilium"
+	],
+	"cedartrees": [
+		"cedar-trees"
+	],
+	"cedarwood": [
+		"cedar-wood"
+	],
+	"cel": [
+		"cael"
+	],
+	"celest": [
+		"caelest"
+	],
+	"celesti": [
+		"caelesti"
+	],
+	"celestium": [
+		"caelestium"
+	],
+	"celesyria": [
+		"caelesyria"
+	],
+	"celi": [
+		"caeli"
+	],
+	"celibatu": [
+		"caelibatu"
+	],
+	"celo": [
+		"caelo"
+	],
+	"cen": [
+		"caen"
+	],
+	"cena": [
+		"caena"
+	],
+	"cendebeus": [
+		"cendebaeus"
+	],
+	"cenomyia": [
+		"caenomyia"
+	],
+	"cesar": [
+		"caesar"
+	],
+	"cesarea": [
+		"caesarea"
+	],
+	"cesariam": [
+		"caesariam"
+	],
+	"cesariensis": [
+		"caesariensis"
+	],
+	"cesars": [
+		"caesars"
+	],
+	"cetera": [
+		"caetera"
+	],
+	"ceteris": [
+		"caeteris"
+	],
+	"chaldea": [
+		"chaldaea"
+	],
+	"chamberpot": [
+		"chamber-pot"
+	],
+	"chancemedley": [
+		"chance-medley"
+	],
+	"chariothorses": [
+		"chariot-horses"
+	],
+	"chastize": [
+		"chastise"
+	],
+	"chastized": [
+		"chastised"
+	],
+	"chastizing": [
+		"chastising"
+	],
+	"cheekteeth": [
+		"cheek-teeth"
+	],
+	"cheektooth": [
+		"cheek-tooth"
+	],
+	"chereas": [
+		"chaereas"
+	],
+	"chiefpriests": [
+		"chief-priests"
+	],
+	"childbearings": [
+		"child-bearings"
+	],
+	"chiliaste": [
+		"chiliastae"
+	],
+	"chipaxe": [
+		"chip-axe"
+	],
+	"churchfeasts": [
+		"church-feasts"
+	],
+	"churchservice": [
+		"church-service"
+	],
+	"circumcize": [
+		"circumcise"
+	],
+	"circumcized": [
+		"circumcised"
+	],
+	"clamor": [
+		"clamour"
+	],
+	"clamors": [
+		"clamours"
+	],
+	"cockboat": [
+		"cock-boat"
+	],
+	"coelect": [
+		"co-elect"
+	],
+	"coeternal": [
+		"co-eternal"
+	],
+	"cold": [
+		"could"
+	],
+	"coldest": [
+		"couldest"
+	],
+	"coldst": [
+		"couldst"
+	],
+	"color": [
+		"colour"
+	],
+	"colored": [
+		"coloured"
+	],
+	"colors": [
+		"colours"
+	],
+	"colter": [
+		"coulter"
+	],
+	"colters": [
+		"coulters"
+	],
+	"comeszation": [
+		"comessation"
+	],
+	"comeszations": [
+		"comessations"
+	],
+	"commeszations": [
+		"commessations"
+	],
+	"commonweals": [
+		"common-weals"
+	],
+	"commonwealth": [
+		"common-wealth"
+	],
+	"communionboard": [
+		"communion-board"
+	],
+	"compeled": [
+		"compelled"
+	],
+	"comprized": [
+		"comprised"
+	],
+	"comprizing": [
+		"comprising"
+	],
+	"concorse": [
+		"concourse"
+	],
+	"condigne": [
+		"condignae"
+	],
+	"contrarywize": [
+		"contrarywise"
+	],
+	"converzation": [
+		"conversation"
+	],
+	"converzations": [
+		"conversations"
+	],
+	"coppersmiths": [
+		"copper-smiths"
+	],
+	"corage": [
+		"courage"
+	],
+	"corageous": [
+		"courageous"
+	],
+	"corageousness": [
+		"courageousness"
+	],
+	"corages": [
+		"courages"
+	],
+	"coriers": [
+		"couriers"
+	],
+	"cornerstone": [
+		"corner-stone"
+	],
+	"corse": [
+		"course"
+	],
+	"corsed": [
+		"coursed"
+	],
+	"corser": [
+		"courser"
+	],
+	"corses": [
+		"courses"
+	],
+	"corsing": [
+		"coursing"
+	],
+	"cort": [
+		"court"
+	],
+	"corteous": [
+		"courteous"
+	],
+	"corteously": [
+		"courteously"
+	],
+	"cortesies": [
+		"courtesies"
+	],
+	"cortesy": [
+		"courtesy"
+	],
+	"cortiers": [
+		"courtiers"
+	],
+	"corts": [
+		"courts"
+	],
+	"counseled": [
+		"counselled"
+	],
+	"countryfolks": [
+		"country-folks"
+	],
+	"countrymen": [
+		"country-men"
+	],
+	"cousingerman": [
+		"cousin-german"
+	],
+	"craftsman": [
+		"crafts-man"
+	],
+	"craftsmasters": [
+		"crafts-masters"
+	],
+	"craftsmen": [
+		"crafts-men"
+	],
+	"cupbearer": [
+		"cup-bearer"
+	],
+	"cupbearers": [
+		"cup-bearers"
+	],
+	"cure": [
+		"curae"
+	],
+	"customhouse": [
+		"custom-house"
+	],
+	"cythreus": [
+		"cythraeus"
+	],
+	"daystar": [
+		"day-star"
+	],
+	"deipare": [
+		"deiparae"
+	],
+	"demones": [
+		"daemones"
+	],
+	"demonia": [
+		"daemonia"
+	],
+	"demoniorum": [
+		"daemoniorum"
+	],
+	"despize": [
+		"despise"
+	],
+	"despized": [
+		"despised"
+	],
+	"despizing": [
+		"despising"
+	],
+	"devize": [
+		"devise"
+	],
+	"devized": [
+		"devised"
+	],
+	"devizers": [
+		"devisers"
+	],
+	"devizing": [
+		"devising"
+	],
+	"devor": [
+		"devour"
+	],
+	"devored": [
+		"devoured"
+	],
+	"devorer": [
+		"devourer"
+	],
+	"devorers": [
+		"devourers"
+	],
+	"devoreth": [
+		"devoureth"
+	],
+	"devoring": [
+		"devouring"
+	],
+	"diaconisse": [
+		"diaconissae"
+	],
+	"didrachmes": [
+		"didrachmaes"
+	],
+	"dionyze": [
+		"dionyse"
+	],
+	"discorage": [
+		"discourage"
+	],
+	"discoraged": [
+		"discouraged"
+	],
+	"discoraging": [
+		"discouraging"
+	],
+	"discorse": [
+		"discourse"
+	],
+	"discorsed": [
+		"discoursed"
+	],
+	"discorses": [
+		"discourses"
+	],
+	"discorseth": [
+		"discourseth"
+	],
+	"discorsing": [
+		"discoursing"
+	],
+	"disfavor": [
+		"disfavour"
+	],
+	"dishonor": [
+		"dishonour"
+	],
+	"dishonorably": [
+		"dishonourably"
+	],
+	"dishonored": [
+		"dishonoured"
+	],
+	"dishonoreth": [
+		"dishonoureth"
+	],
+	"dishonoring": [
+		"dishonouring"
+	],
+	"dispenzation": [
+		"dispensation"
+	],
+	"dispraized": [
+		"dispraised"
+	],
+	"divine": [
+		"divinae"
+	],
+	"dolors": [
+		"dolours"
+	],
+	"dominice": [
+		"dominicae"
+	],
+	"doorposts": [
+		"door-posts"
+	],
+	"doubletongued": [
+		"double-tongued"
+	],
+	"drinkingpot": [
+		"drinking-pot"
+	],
+	"drinkofferings": [
+		"drink-offerings"
+	],
+	"dryfoot": [
+		"dry-foot"
+	],
+	"dweled": [
+		"dwelled"
+	],
+	"dyonize": [
+		"dyonise"
+	],
+	"earthquake": [
+		"earth-quake"
+	],
+	"earthquakes": [
+		"earth-quakes"
+	],
+	"ebionite": [
+		"ebionitae"
+	],
+	"ecclesiaste": [
+		"ecclesiastae"
+	],
+	"ecclesie": [
+		"ecclesiae"
+	],
+	"ecolamp": [
+		"oecolamp"
+	],
+	"ecu": [
+		"oecu"
+	],
+	"ecum": [
+		"oecum"
+	],
+	"ecumenius": [
+		"oecumenius"
+	],
+	"egypt": [
+		"aegypt"
+	],
+	"egyptian": [
+		"aegyptian"
+	],
+	"egyptians": [
+		"aegyptians"
+	],
+	"elam": [
+		"aelam"
+	],
+	"elamites": [
+		"aelamites"
+	],
+	"elath": [
+		"aelath"
+	],
+	"eliseus": [
+		"elisaeus"
+	],
+	"elsewhere": [
+		"else-where"
+	],
+	"emuli": [
+		"aemuli"
+	],
+	"en": [
+		"aen"
+	],
+	"enameled": [
+		"enamelled"
+	],
+	"encorage": [
+		"encourage"
+	],
+	"encoraged": [
+		"encouraged"
+	],
+	"encoragement": [
+		"encouragement"
+	],
+	"encorageth": [
+		"encourageth"
+	],
+	"encoraging": [
+		"encouraging"
+	],
+	"endeavor": [
+		"endeavour"
+	],
+	"endeavored": [
+		"endeavoured"
+	],
+	"endeavorest": [
+		"endeavourest"
+	],
+	"endeavoreth": [
+		"endeavoureth"
+	],
+	"endeavoring": [
+		"endeavouring"
+	],
+	"endeavors": [
+		"endeavours"
+	],
+	"eneas": [
+		"aeneas"
+	],
+	"enemyman": [
+		"enemy-man"
+	],
+	"enigma": [
+		"aenigma"
+	],
+	"enon": [
+		"aenon"
+	],
+	"entercorse": [
+		"entercourse"
+	],
+	"enterprize": [
+		"enterprise"
+	],
+	"enterprizes": [
+		"enterprises"
+	],
+	"epenetus": [
+		"epaenetus"
+	],
+	"erea": [
+		"aerea"
+	],
+	"eremite": [
+		"eremitae"
+	],
+	"erians": [
+		"aerians"
+	],
+	"erius": [
+		"aerius"
+	],
+	"eterna": [
+		"aeterna"
+	],
+	"ethiopia": [
+		"aethiopia"
+	],
+	"ethiopian": [
+		"aethiopian"
+	],
+	"ethiopians": [
+		"aethiopians"
+	],
+	"euroaquilo": [
+		"euro-aquilo"
+	],
+	"europe": [
+		"europae"
+	],
+	"eveningprayer": [
+		"evening-prayer"
+	],
+	"evermore": [
+		"ever-more"
+	],
+	"everywhere": [
+		"every-where"
+	],
+	"exceled": [
+		"excelled"
+	],
+	"exercize": [
+		"exercise"
+	],
+	"exercized": [
+		"exercised"
+	],
+	"exercizes": [
+		"exercises"
+	],
+	"exercizing": [
+		"exercising"
+	],
+	"exfornicate": [
+		"exfornicatae"
+	],
+	"exorciste": [
+		"exorcistae"
+	],
+	"expeled": [
+		"expelled"
+	],
+	"eyebrows": [
+		"eye-brows"
+	],
+	"eyelids": [
+		"eye-lids"
+	],
+	"eyesalve": [
+		"eye-salve"
+	],
+	"fainthearted": [
+		"faint-hearted"
+	],
+	"fairweather": [
+		"fair-weather"
+	],
+	"falsechrists": [
+		"false-christs"
+	],
+	"falsegods": [
+		"false-gods"
+	],
+	"falseprophet": [
+		"false-prophet"
+	],
+	"falseprophets": [
+		"false-prophets"
+	],
+	"farewell": [
+		"fare-well"
+	],
+	"farmplace": [
+		"farm-place"
+	],
+	"fastingdays": [
+		"fasting-days"
+	],
+	"favor": [
+		"favour"
+	],
+	"favorable": [
+		"favourable"
+	],
+	"favorably": [
+		"favourably"
+	],
+	"favorer": [
+		"favourer"
+	],
+	"favoreth": [
+		"favoureth"
+	],
+	"favoring": [
+		"favouring"
+	],
+	"fellowcompanion": [
+		"fellow-companion"
+	],
+	"fellowlabourer": [
+		"fellow-labourer"
+	],
+	"fellowlike": [
+		"fellow-like"
+	],
+	"fellowmembers": [
+		"fellow-members"
+	],
+	"fellowpriest": [
+		"fellow-priest"
+	],
+	"fellowprisoner": [
+		"fellow-prisoner"
+	],
+	"fellowservant": [
+		"fellow-servant"
+	],
+	"fellowservants": [
+		"fellow-servants"
+	],
+	"fellowsoldier": [
+		"fellow-soldier"
+	],
+	"fem": [
+		"faem"
+	],
+	"fervor": [
+		"fervour"
+	],
+	"figgroves": [
+		"fig-groves"
+	],
+	"figtree": [
+		"fig-tree"
+	],
+	"figtrees": [
+		"fig-trees"
+	],
+	"figurecasting": [
+		"figure-casting"
+	],
+	"firebrand": [
+		"fire-brand"
+	],
+	"firetried": [
+		"fire-tried"
+	],
+	"firstbegotten": [
+		"first-begotten"
+	],
+	"firstbirth": [
+		"first-birth"
+	],
+	"firstbirthright": [
+		"first-birth-right"
+	],
+	"firstbirthrights": [
+		"first-birth-rights"
+	],
+	"firstborn": [
+		"first-born"
+	],
+	"firstfruits": [
+		"first-fruits"
+	],
+	"firtree": [
+		"fir-tree"
+	],
+	"firtrees": [
+		"fir-trees"
+	],
+	"fishgate": [
+		"fish-gate"
+	],
+	"fishpool": [
+		"fish-pool"
+	],
+	"fishpools": [
+		"fish-pools"
+	],
+	"flavored": [
+		"favoured"
+	],
+	"fleshhooks": [
+		"flesh-hooks"
+	],
+	"flintstone": [
+		"flint-stone"
+	],
+	"floodgates": [
+		"flood-gates"
+	],
+	"flor": [
+		"flour"
+	],
+	"florish": [
+		"flourish"
+	],
+	"florished": [
+		"flourished"
+	],
+	"florisheth": [
+		"flourisheth"
+	],
+	"florishing": [
+		"flourishing"
+	],
+	"footmen": [
+		"foot-men"
+	],
+	"footstool": [
+		"foot-stool"
+	],
+	"forbecause": [
+		"for-because"
+	],
+	"forefathers": [
+		"fore-fathers"
+	],
+	"foreknowing": [
+		"fore-knowing"
+	],
+	"forepart": [
+		"fore-part"
+	],
+	"forerunners": [
+		"fore-runners"
+	],
+	"foretelling": [
+		"fore-telling"
+	],
+	"forthcoming": [
+		"forth-coming"
+	],
+	"forthwith": [
+		"forth-with"
+	],
+	"fortynine": [
+		"forty-nine"
+	],
+	"fosterbrother": [
+		"foster-brother"
+	],
+	"fosterfather": [
+		"foster-father"
+	],
+	"fourfooted": [
+		"four-footed"
+	],
+	"foursquare": [
+		"four-square"
+	],
+	"franchized": [
+		"franchised"
+	],
+	"freecost": [
+		"free-cost"
+	],
+	"freeman": [
+		"free-man"
+	],
+	"freemen": [
+		"free-men"
+	],
+	"freewill": [
+		"free-will"
+	],
+	"freewoman": [
+		"free-woman"
+	],
+	"fruittrees": [
+		"fruit-trees"
+	],
+	"fulfill": [
+		"fulfil"
+	],
+	"gabe": [
+		"gabae"
+	],
+	"galilean": [
+		"galilaean"
+	],
+	"galileans": [
+		"galilaeans"
+	],
+	"gentilelike": [
+		"gentile-like"
+	],
+	"gergeseus": [
+		"gergesaeus"
+	],
+	"godhead": [
+		"god-head"
+	],
+	"godward": [
+		"god-ward"
+	],
+	"goldsmith": [
+		"gold-smith"
+	],
+	"goldsmiths": [
+		"gold-smiths"
+	],
+	"goodfriday": [
+		"good-friday"
+	],
+	"goodhavens": [
+		"good-havens"
+	],
+	"goodman": [
+		"good-man"
+	],
+	"gorgonie": [
+		"gorgoniae"
+	],
+	"gormander": [
+		"gourmander"
+	],
+	"grandfather": [
+		"grand-father"
+	],
+	"grandfathers": [
+		"grand-fathers"
+	],
+	"grandmother": [
+		"grand-mother"
+	],
+	"grandpriest": [
+		"grand-priest"
+	],
+	"gratie": [
+		"gratiae"
+	],
+	"grec": [
+		"graec"
+	],
+	"greci": [
+		"graeci"
+	],
+	"grecians": [
+		"graecians"
+	],
+	"greco": [
+		"graeco"
+	],
+	"grecol": [
+		"graecol"
+	],
+	"grecolat": [
+		"graecolat"
+	],
+	"grecorum": [
+		"graecorum"
+	],
+	"grecos": [
+		"graecos"
+	],
+	"grizes": [
+		"grises"
+	],
+	"haceldema": [
+		"hacel-dema"
+	],
+	"hailstones": [
+		"hail-stones"
+	],
+	"haircloth": [
+		"hair-cloth"
+	],
+	"haircloths": [
+		"hair-cloths"
+	],
+	"halfdead": [
+		"half-dead"
+	],
+	"hamatheus": [
+		"hamathaeus"
+	],
+	"handiwork": [
+		"handi-work"
+	],
+	"handmaids": [
+		"hand-maids"
+	],
+	"handstaves": [
+		"hand-staves"
+	],
+	"handwriting": [
+		"hand-writing"
+	],
+	"handywork": [
+		"handy-work"
+	],
+	"harbor": [
+		"harbour"
+	],
+	"harbored": [
+		"harboured"
+	],
+	"harboring": [
+		"harbouring"
+	],
+	"hardhearted": [
+		"hard-hearted"
+	],
+	"harnessbearer": [
+		"harness-bearer"
+	],
+	"hazel": [
+		"hazael"
+	],
+	"he": [
+		"hae"
+	],
+	"headband": [
+		"head-band"
+	],
+	"hearthbaked": [
+		"hearth-baked"
+	],
+	"hearthbakenbread": [
+		"hearth-baken-bread"
+	],
+	"hebre": [
+		"hebrae"
+	],
+	"hebreum": [
+		"hebraeum"
+	],
+	"hec": [
+		"haec"
+	],
+	"hedibie": [
+		"hedibiae"
+	],
+	"helchesete": [
+		"helchesetae"
+	],
+	"hellgates": [
+		"hell-gates"
+	],
+	"helltorments": [
+		"hell-torments"
+	],
+	"henceforth": [
+		"hence-forth"
+	],
+	"her": [
+		"haer"
+	],
+	"herdsman": [
+		"herds-man"
+	],
+	"hereafter": [
+		"here-after"
+	],
+	"hereby": [
+		"here-by"
+	],
+	"hereditatis": [
+		"haereditatis"
+	],
+	"heres": [
+		"haeres"
+	],
+	"hereses": [
+		"haereses"
+	],
+	"heresi": [
+		"haeresi"
+	],
+	"heresib": [
+		"haeresib"
+	],
+	"hereticis": [
+		"haereticis"
+	],
+	"hetheus": [
+		"hethaeus"
+	],
+	"heveus": [
+		"hevaeus"
+	],
+	"highpriest": [
+		"high-priest"
+	],
+	"highpriesthood": [
+		"high-priesthood"
+	],
+	"highpriests": [
+		"high-priests"
+	],
+	"hillcountry": [
+		"hill-country"
+	],
+	"hilltops": [
+		"hill-tops"
+	],
+	"hinderpart": [
+		"hinder-part"
+	],
+	"hispanie": [
+		"hispaniae"
+	],
+	"historie": [
+		"historiae"
+	],
+	"hoarfrost": [
+		"hoar-frost"
+	],
+	"holyday": [
+		"holy-day"
+	],
+	"holydays": [
+		"holy-days"
+	],
+	"holyghost": [
+		"holy-ghost"
+	],
+	"honeycomb": [
+		"honey-comb"
+	],
+	"honor": [
+		"honour"
+	],
+	"honorable": [
+		"honourable"
+	],
+	"honorably": [
+		"honourably"
+	],
+	"honored": [
+		"honoured"
+	],
+	"honoreth": [
+		"honoureth"
+	],
+	"honoring": [
+		"honouring"
+	],
+	"honors": [
+		"honours"
+	],
+	"horsecolt": [
+		"horse-colt"
+	],
+	"horselitters": [
+		"horse-litters"
+	],
+	"horsemen": [
+		"horse-men"
+	],
+	"householdstuff": [
+		"household-stuff"
+	],
+	"housetop": [
+		"house-top"
+	],
+	"housetops": [
+		"house-tops"
+	],
+	"humor": [
+		"humour"
+	],
+	"humors": [
+		"humours"
+	],
+	"hundredfold": [
+		"hundred-fold"
+	],
+	"husbandman": [
+		"husband-man"
+	],
+	"hymeneus": [
+		"hymenaeus"
+	],
+	"idiote": [
+		"idiotae"
+	],
+	"idumea": [
+		"idumaea"
+	],
+	"iebnel": [
+		"iebnael"
+	],
+	"iebuseus": [
+		"iebusaeus"
+	],
+	"iephthel": [
+		"iephthael"
+	],
+	"iezrelite": [
+		"iezraelite"
+	],
+	"illspeaking": [
+		"ill-speaking"
+	],
+	"incircumcized": [
+		"incircumcised"
+	],
+	"inkhorn": [
+		"ink-horn"
+	],
+	"intercorse": [
+		"intercourse"
+	],
+	"ione": [
+		"ionae"
+	],
+	"ipraize": [
+		"ipraise"
+	],
+	"irene": [
+		"irenae"
+	],
+	"ireneus": [
+		"irenaeus"
+	],
+	"ironsmith": [
+		"iron-smith"
+	],
+	"isaie": [
+		"isaiae"
+	],
+	"ishmel": [
+		"ishmael"
+	],
+	"ismel": [
+		"ismael"
+	],
+	"ismelite": [
+		"ismaelite"
+	],
+	"ismelites": [
+		"ismaelites"
+	],
+	"isrel": [
+		"israel"
+	],
+	"isrelite": [
+		"israelite"
+	],
+	"isrelites": [
+		"israelites"
+	],
+	"isrelitical": [
+		"israelitical"
+	],
+	"itself": [
+		"it-self"
+	],
+	"iudeorum": [
+		"iudaeorum"
+	],
+	"iudeos": [
+		"iudaeos"
+	],
+	"iustitie": [
+		"iustitiae"
+	],
+	"izes": [
+		"ises"
+	],
+	"jathanel": [
+		"jathanael"
+	],
+	"jawbone": [
+		"jaw-bone"
+	],
+	"jeramel": [
+		"jeramael"
+	],
+	"jesrelite": [
+		"jesraelite"
+	],
+	"jezrel": [
+		"jezrael"
+	],
+	"jude": [
+		"judae"
+	],
+	"judeus": [
+		"judaeus"
+	],
+	"justitie": [
+		"justitiae"
+	],
+	"labor": [
+		"labour"
+	],
+	"labored": [
+		"laboured"
+	],
+	"laborer": [
+		"labourer"
+	],
+	"laborest": [
+		"labourest"
+	],
+	"laboreth": [
+		"laboureth"
+	],
+	"laboring": [
+		"labouring"
+	],
+	"labors": [
+		"labours"
+	],
+	"lamies": [
+		"lamiaes"
+	],
+	"lammasabacthani": [
+		"lamma-sabacthani"
+	],
+	"lawgiver": [
+		"law-giver"
+	],
+	"lawgivers": [
+		"law-givers"
+	],
+	"lawgiving": [
+		"law-giving"
+	],
+	"layheadship": [
+		"lay-head-ship",
+		"lay-headship"
+	],
+	"leastwize": [
+		"leastwise"
+	],
+	"legierdemain": [
+		"legier-demain"
+	],
+	"lel": [
+		"lael"
+	],
+	"lentfast": [
+		"lent-fast"
+	],
+	"libye": [
+		"libyae"
+	],
+	"likepunishment": [
+		"like-punishment"
+	],
+	"likewize": [
+		"likewise"
+	],
+	"likwize": [
+		"likwise"
+	],
+	"luce": [
+		"lucae"
+	],
+	"machabeis": [
+		"machabaeis"
+	],
+	"machabeorum": [
+		"machabaeorum"
+	],
+	"machabeus": [
+		"machabaeus"
+	],
+	"macule": [
+		"maculae"
+	],
+	"maidservant": [
+		"maid-servant"
+	],
+	"malekind": [
+		"male-kind"
+	],
+	"malesex": [
+		"male-sex"
+	],
+	"manchild": [
+		"man-child"
+	],
+	"mandragores": [
+		"mandragoraes"
+	],
+	"manhu": [
+		"man-hu"
+	],
+	"manicheo": [
+		"manichaeo"
+	],
+	"manicheos": [
+		"manichaeos"
+	],
+	"manicheus": [
+		"manichaeus"
+	],
+	"mankiller": [
+		"man-killer"
+	],
+	"mankillers": [
+		"man-killers"
+	],
+	"manservant": [
+		"man-servant"
+	],
+	"manslaughter": [
+		"man-slaughter"
+	],
+	"manstealers": [
+		"man-stealers"
+	],
+	"mardocheus": [
+		"mardochaeus"
+	],
+	"marie": [
+		"mariae"
+	],
+	"marketplace": [
+		"market-place"
+	],
+	"marriagebed": [
+		"marriage-bed"
+	],
+	"mathusel": [
+		"mathusael"
+	],
+	"matthei": [
+		"matthaei"
+	],
+	"maviel": [
+		"maviael"
+	],
+	"mee": [
+		"meae"
+	],
+	"melchized": [
+		"melchised"
+	],
+	"meleth": [
+		"maeleth"
+	],
+	"menchildren": [
+		"men-children"
+	],
+	"menservants": [
+		"men-servants"
+	],
+	"merchandize": [
+		"merchandise"
+	],
+	"merchandizes": [
+		"merchandises"
+	],
+	"merchandizing": [
+		"merchandising"
+	],
+	"micheas": [
+		"michaeas"
+	],
+	"michee": [
+		"micheae"
+	],
+	"michel": [
+		"michael"
+	],
+	"michelmas": [
+		"michaelmas"
+	],
+	"midday": [
+		"mid-day"
+	],
+	"midlent": [
+		"mid-lent"
+	],
+	"midnight": [
+		"mid-night"
+	],
+	"midway": [
+		"mid-way"
+	],
+	"midwife": [
+		"mid-wife"
+	],
+	"millstone": [
+		"mill-stone"
+	],
+	"misel": [
+		"misael"
+	],
+	"mizel": [
+		"mizael"
+	],
+	"mizer": [
+		"miser"
+	],
+	"mold": [
+		"mould"
+	],
+	"moreover": [
+		"more-over"
+	],
+	"morn": [
+		"mourn"
+	],
+	"morned": [
+		"mourned"
+	],
+	"morner": [
+		"mourner"
+	],
+	"morners": [
+		"mourners"
+	],
+	"mornest": [
+		"mournest"
+	],
+	"morneth": [
+		"mourneth"
+	],
+	"mornful": [
+		"mournful"
+	],
+	"morning": [
+		"mourning"
+	],
+	"morningprayer": [
+		"morning-prayer"
+	],
+	"mornings": [
+		"mournings"
+	],
+	"mortizes": [
+		"mortises"
+	],
+	"mountolivet": [
+		"mount-olivet"
+	],
+	"moyzes": [
+		"moyses"
+	],
+	"muchspeaking": [
+		"much-speaking"
+	],
+	"multe": [
+		"multae"
+	],
+	"mustardseed": [
+		"mustard-seed"
+	],
+	"myrtletrees": [
+		"myrtle-trees"
+	],
+	"myself": [
+		"my-self"
+	],
+	"nanee": [
+		"naneae"
+	],
+	"nathanel": [
+		"nathanael"
+	],
+	"neighbor": [
+		"neighbour"
+	],
+	"neighborly": [
+		"neighbourly"
+	],
+	"neighbors": [
+		"neighbours"
+	],
+	"neocesar": [
+		"neocaesar"
+	],
+	"neocesarea": [
+		"neocaesarea"
+	],
+	"neocesariensis": [
+		"neocaesariensis"
+	],
+	"newfangled": [
+		"new-fangled"
+	],
+	"newmoon": [
+		"new-moon"
+	],
+	"noize": [
+		"noise"
+	],
+	"noized": [
+		"noised"
+	],
+	"noizes": [
+		"noises"
+	],
+	"norish": [
+		"nourish"
+	],
+	"norished": [
+		"nourished"
+	],
+	"norisheth": [
+		"nourisheth"
+	],
+	"norishing": [
+		"nourishing"
+	],
+	"norishment": [
+		"nourishment"
+	],
+	"norishments": [
+		"nourishments"
+	],
+	"northpole": [
+		"north-pole"
+	],
+	"northwind": [
+		"north-wind"
+	],
+	"notwithstanding": [
+		"not-withstanding"
+	],
+	"nowhere": [
+		"no-where"
+	],
+	"nowize": [
+		"nowise"
+	],
+	"nue": [
+		"nuae"
+	],
+	"odor": [
+		"odour"
+	],
+	"odors": [
+		"odours"
+	],
+	"oftentimes": [
+		"often-times"
+	],
+	"oldage": [
+		"old-age"
+	],
+	"oldgate": [
+		"old-gate"
+	],
+	"olivetree": [
+		"olive-tree"
+	],
+	"olivetrees": [
+		"olive-trees"
+	],
+	"onlybegotten": [
+		"only-begotten"
+	],
+	"onlyfaith": [
+		"only-faith"
+	],
+	"orthodoxe": [
+		"orthodoxae"
+	],
+	"othersome": [
+		"other-some"
+	],
+	"otherwize": [
+		"otherwise"
+	],
+	"ourselves": [
+		"our-selves"
+	],
+	"outcry": [
+		"out-cry"
+	],
+	"outgoings": [
+		"out-goings"
+	],
+	"outrun": [
+		"out-run"
+	],
+	"overabounded": [
+		"over-abounded"
+	],
+	"overagainst": [
+		"over-against"
+	],
+	"overclothed": [
+		"over-clothed"
+	],
+	"overgo": [
+		"over-go"
+	],
+	"overlabor": [
+		"overlabour"
+	],
+	"overmuch": [
+		"over-much"
+	],
+	"overpass": [
+		"over-pass"
+	],
+	"overrule": [
+		"over-rule"
+	],
+	"overruling": [
+		"over-ruling"
+	],
+	"overshadowing": [
+		"over-shadowing"
+	],
+	"oversowing": [
+		"over-sowing"
+	],
+	"overtake": [
+		"over-take"
+	],
+	"palmsunday": [
+		"palm-sunday"
+	],
+	"palmtree": [
+		"palm-tree"
+	],
+	"palmtrees": [
+		"palm-trees"
+	],
+	"papiste": [
+		"papistae"
+	],
+	"paradize": [
+		"paradise"
+	],
+	"parlor": [
+		"parlour"
+	],
+	"parttaking": [
+		"part-taking"
+	],
+	"pasturefed": [
+		"pasture-fed"
+	],
+	"pathway": [
+		"path-way"
+	],
+	"patientie": [
+		"patientiae"
+	],
+	"paule": [
+		"paulae"
+	],
+	"peacemaker": [
+		"peace-maker"
+	],
+	"peacemakers": [
+		"peace-makers"
+	],
+	"peartrees": [
+		"pear-trees"
+	],
+	"pedagogues": [
+		"paedagogues"
+	],
+	"penae": [
+		"paenae"
+	],
+	"penit": [
+		"paenit"
+	],
+	"peniten": [
+		"paeniten"
+	],
+	"pestilentie": [
+		"pestilentiae"
+	],
+	"phedel": [
+		"phedael"
+	],
+	"phenicia": [
+		"phaenicia"
+	],
+	"philistea": [
+		"philistaea"
+	],
+	"philisthea": [
+		"philisthaea"
+	],
+	"philosophie": [
+		"philosophiae"
+	],
+	"pinetree": [
+		"pine-tree"
+	],
+	"pitelim": [
+		"pit-elim"
+	],
+	"planetrees": [
+		"plane-trees"
+	],
+	"poize": [
+		"poise"
+	],
+	"poized": [
+		"poised"
+	],
+	"poplartree": [
+		"poplar-tree"
+	],
+	"por": [
+		"pour"
+	],
+	"pored": [
+		"poured"
+	],
+	"porest": [
+		"pourest"
+	],
+	"poreth": [
+		"poureth"
+	],
+	"poring": [
+		"pouring"
+	],
+	"portered": [
+		"pourtered"
+	],
+	"potamiena": [
+		"potamiaena"
+	],
+	"pothooks": [
+		"pot-hooks"
+	],
+	"potsherd": [
+		"pot-sherd"
+	],
+	"practice": [
+		"practise"
+	],
+	"practiced": [
+		"practised"
+	],
+	"practicing": [
+		"practising"
+	],
+	"praiseworthy": [
+		"praise-worthy"
+	],
+	"praize": [
+		"praise"
+	],
+	"praized": [
+		"praised"
+	],
+	"praizes": [
+		"praises"
+	],
+	"praizing": [
+		"praising"
+	],
+	"precedentium": [
+		"praecedentium"
+	],
+	"preceptum": [
+		"praeceptum"
+	],
+	"precize": [
+		"precise"
+	],
+	"pred": [
+		"praed"
+	],
+	"predest": [
+		"praedest"
+	],
+	"predicationis": [
+		"praedicationis"
+	],
+	"predict": [
+		"praedict"
+	],
+	"predictionibus": [
+		"praedictionibus"
+	],
+	"preesse": [
+		"praeesse"
+	],
+	"pref": [
+		"praef"
+	],
+	"prefat": [
+		"praefat"
+	],
+	"prefinition": [
+		"praefinition"
+	],
+	"premia": [
+		"praemia"
+	],
+	"premized": [
+		"premised"
+	],
+	"premizes": [
+		"premises"
+	],
+	"prenuntiabatur": [
+		"praenuntiabatur"
+	],
+	"preputium": [
+		"praeputium"
+	],
+	"prescitae": [
+		"praescitae"
+	],
+	"prescr": [
+		"praescr"
+	],
+	"prescript": [
+		"praescript"
+	],
+	"prescriptionibus": [
+		"praescriptionibus"
+	],
+	"pretors": [
+		"praetors"
+	],
+	"priesthood": [
+		"priest-hood"
+	],
+	"promize": [
+		"promise"
+	],
+	"promized": [
+		"promised"
+	],
+	"promizer": [
+		"promiser"
+	],
+	"promizes": [
+		"promises"
+	],
+	"promizing": [
+		"promising"
+	],
+	"provized": [
+		"provised"
+	],
+	"ptolomeus": [
+		"ptolomaeus"
+	],
+	"puritancalvinists": [
+		"puritan-calvinists"
+	],
+	"quadranglewise": [
+		"quadrangle-wise"
+	],
+	"quarreled": [
+		"quarrelled"
+	],
+	"que": [
+		"quae"
+	],
+	"quedam": [
+		"quaedam"
+	],
+	"quest": [
+		"quaest"
+	],
+	"questionem": [
+		"quaestionem"
+	],
+	"rachel": [
+		"rachael"
+	],
+	"rainbow": [
+		"rain-bow"
+	],
+	"raize": [
+		"raise"
+	],
+	"raized": [
+		"raised"
+	],
+	"raizing": [
+		"raising"
+	],
+	"rancor": [
+		"rancour"
+	],
+	"raphel": [
+		"raphael"
+	],
+	"rebeled": [
+		"rebelled"
+	],
+	"recorse": [
+		"recourse"
+	],
+	"reedification": [
+		"re-edification"
+	],
+	"reedified": [
+		"re-edified"
+	],
+	"reedify": [
+		"re-edify"
+	],
+	"reedifying": [
+		"re-edifying"
+	],
+	"refeled": [
+		"refelled"
+	],
+	"reflorished": [
+		"reflourished"
+	],
+	"reflorishing": [
+		"reflourishing"
+	],
+	"repeled": [
+		"repelled"
+	],
+	"rigor": [
+		"rigour"
+	],
+	"rize": [
+		"rise"
+	],
+	"rizing": [
+		"rising"
+	],
+	"roebucks": [
+		"roe-bucks"
+	],
+	"rome": [
+		"romae"
+	],
+	"roundabout": [
+		"round-about"
+	],
+	"roundwize": [
+		"roundwise"
+	],
+	"rumor": [
+		"rumour"
+	],
+	"runover": [
+		"run-over"
+	],
+	"sabbatheus": [
+		"sabbathaeus"
+	],
+	"sabbothdays": [
+		"sabboth-days"
+	],
+	"sabbotheve": [
+		"sabboth-eve"
+	],
+	"sabeans": [
+		"sabaeans"
+	],
+	"sackcloth": [
+		"sack-cloth"
+	],
+	"sackcloths": [
+		"sack-cloths"
+	],
+	"sacre": [
+		"sacrae"
+	],
+	"saltpits": [
+		"salt-pits"
+	],
+	"samareus": [
+		"samaraeus"
+	],
+	"sancte": [
+		"sanctae"
+	],
+	"satane": [
+		"satanae"
+	],
+	"savior": [
+		"saviour"
+	],
+	"saviors": [
+		"saviours"
+	],
+	"savor": [
+		"savour"
+	],
+	"savored": [
+		"savoured"
+	],
+	"savorest": [
+		"savourest"
+	],
+	"savory": [
+		"savoury"
+	],
+	"scored": [
+		"scoured"
+	],
+	"scorge": [
+		"scourge"
+	],
+	"scorged": [
+		"scourged"
+	],
+	"scorges": [
+		"scourges"
+	],
+	"scorgest": [
+		"scourgest"
+	],
+	"scorgeth": [
+		"scourgeth"
+	],
+	"scoutwatch": [
+		"scout-watch"
+	],
+	"screechowl": [
+		"screech-owl"
+	],
+	"scripture": [
+		"scripturae"
+	],
+	"seafaring": [
+		"sea-faring"
+	],
+	"secondfirst": [
+		"second-first"
+	],
+	"sectmaster": [
+		"sect-master"
+	],
+	"sectmasters": [
+		"sect-masters"
+	],
+	"seculi": [
+		"saeculi"
+	],
+	"seculorum": [
+		"saeculorum"
+	],
+	"seculum": [
+		"saeculum"
+	],
+	"seedtime": [
+		"seed-time"
+	],
+	"selflove": [
+		"self-love"
+	],
+	"selfpleasers": [
+		"self-pleasers"
+	],
+	"selfsame": [
+		"self-same"
+	],
+	"selfwill": [
+		"self-will"
+	],
+	"selfwilled": [
+		"self-willed"
+	],
+	"sepe": [
+		"saepe"
+	],
+	"sevenfold": [
+		"seven-fold"
+	],
+	"seventytwo": [
+		"seventy-two"
+	],
+	"sheasses": [
+		"she-asses"
+	],
+	"sheepherd": [
+		"sheep-herd"
+	],
+	"sheepshearing": [
+		"sheep-shearing"
+	],
+	"sheepskins": [
+		"sheep-skins"
+	],
+	"shieldbearers": [
+		"shield-bearers"
+	],
+	"shipmen": [
+		"ship-men"
+	],
+	"shrovesunday": [
+		"shrove-sunday"
+	],
+	"shutup": [
+		"shut-up"
+	],
+	"silversmith": [
+		"silver-smith"
+	],
+	"silversmiths": [
+		"silver-smiths"
+	],
+	"sineus": [
+		"sinaeus"
+	],
+	"skycolour": [
+		"sky-colour"
+	],
+	"smeled": [
+		"smelled"
+	],
+	"snowwaters": [
+		"snow-waters"
+	],
+	"soever": [
+		"so-ever"
+	],
+	"sometime": [
+		"some-time"
+	],
+	"somewhat": [
+		"some-what"
+	],
+	"somewhile": [
+		"some-while"
+	],
+	"southwestwind": [
+		"south-west-wind"
+	],
+	"southwind": [
+		"south-wind"
+	],
+	"spikenard": [
+		"spike-nard"
+	],
+	"stageplayers": [
+		"stage-players"
+	],
+	"stiffnecked": [
+		"stiff-necked"
+	],
+	"storehouses": [
+		"store-houses"
+	],
+	"straightway": [
+		"straight-way"
+	],
+	"subel": [
+		"subael"
+	],
+	"substantie": [
+		"substantiae"
+	],
+	"succor": [
+		"succour"
+	],
+	"succored": [
+		"succoured"
+	],
+	"succors": [
+		"succours"
+	],
+	"succorse": [
+		"succourse"
+	],
+	"sue": [
+		"suae"
+	],
+	"superedified": [
+		"super-edified"
+	],
+	"surmize": [
+		"surmise"
+	],
+	"surmized": [
+		"surmised"
+	],
+	"surprized": [
+		"surprised"
+	],
+	"sweetodours": [
+		"sweet-odours"
+	],
+	"sweled": [
+		"swelled"
+	],
+	"syrophenician": [
+		"syrophaenician"
+	],
+	"teacherotherwise": [
+		"teacher-otherwise"
+	],
+	"teachingotherwise": [
+		"teaching-otherwise"
+	],
+	"templewardens": [
+		"temple-wardens"
+	],
+	"tenebraewednesday": [
+		"tenebrae-wednesday"
+	],
+	"tenebre": [
+		"tenebrae"
+	],
+	"tentmakers": [
+		"tent-makers"
+	],
+	"tergiverzation": [
+		"tergiversation"
+	],
+	"thaddeus": [
+		"thaddaeus"
+	],
+	"thanathselo": [
+		"thanath-selo"
+	],
+	"thanksgivers": [
+		"thanks-givers"
+	],
+	"thanksgiving": [
+		"thanks-giving"
+	],
+	"thanksgivings": [
+		"thanks-givings"
+	],
+	"tharseas": [
+		"tharsaeas"
+	],
+	"thenceforth": [
+		"thence-forth"
+	],
+	"therewithal": [
+		"there-withal"
+	],
+	"thirtyfold": [
+		"thirty-fold"
+	],
+	"thome": [
+		"thomae"
+	],
+	"threecups": [
+		"three-cups"
+	],
+	"threehundred": [
+		"three-hundred"
+	],
+	"threescore": [
+		"three-score"
+	],
+	"threescorefold": [
+		"threescore-fold"
+	],
+	"threetaverns": [
+		"three-taverns"
+	],
+	"throughout": [
+		"through-out"
+	],
+	"thymtrees": [
+		"thym-trees"
+	],
+	"thyself": [
+		"thy-self"
+	],
+	"timeus": [
+		"timaeus"
+	],
+	"tobie": [
+		"tobiae"
+	],
+	"toparchie": [
+		"toparchiae"
+	],
+	"torrentcedron": [
+		"torrent-cedron"
+	],
+	"touchstone": [
+		"touch-stone"
+	],
+	"traveled": [
+		"travelled"
+	],
+	"treasurehouse": [
+		"treasure-house"
+	],
+	"treatize": [
+		"treatise"
+	],
+	"treatizes": [
+		"treatises"
+	],
+	"truemeaning": [
+		"true-meaning"
+	],
+	"tryphena": [
+		"tryphaena"
+	],
+	"turncoat": [
+		"turn-coat"
+	],
+	"turnskin": [
+		"turn-skin"
+	],
+	"turtledove": [
+		"turtle-dove"
+	],
+	"turtledoves": [
+		"turtle-doves"
+	],
+	"twelfthday": [
+		"twelfth-day"
+	],
+	"twoedged": [
+		"two-edged"
+	],
+	"unadvized": [
+		"unadvised"
+	],
+	"uncircumcized": [
+		"uncircumcised"
+	],
+	"underfoot": [
+		"under-foot"
+	],
+	"undergaoler": [
+		"under-gaoler"
+	],
+	"unsavory": [
+		"unsavoury"
+	],
+	"unwize": [
+		"unwise"
+	],
+	"upperhand": [
+		"upper-hand"
+	],
+	"vainspeakers": [
+		"vain-speakers"
+	],
+	"vaintalk": [
+		"vain-talk"
+	],
+	"vapor": [
+		"vapour"
+	],
+	"vaticane": [
+		"vaticanae"
+	],
+	"ve": [
+		"vae"
+	],
+	"vigor": [
+		"vigour"
+	],
+	"vite": [
+		"vitae"
+	],
+	"vowbreakers": [
+		"vow-breakers"
+	],
+	"warfare": [
+		"war-fare"
+	],
+	"watchman": [
+		"watch-man"
+	],
+	"watchmen": [
+		"watch-men"
+	],
+	"watchword": [
+		"watch-word"
+	],
+	"waterpot": [
+		"water-pot"
+	],
+	"waterpots": [
+		"water-pots"
+	],
+	"weakminded": [
+		"weak-minded"
+	],
+	"wealthyone": [
+		"wealthy-one"
+	],
+	"welldeserving": [
+		"well-deserving"
+	],
+	"welldoing": [
+		"well-doing"
+	],
+	"wellfare": [
+		"well-fare"
+	],
+	"wellworking": [
+		"well-working"
+	],
+	"whatsoever": [
+		"what-soever"
+	],
+	"wheresoever": [
+		"where-soever"
+	],
+	"whirlwind": [
+		"whirl-wind"
+	],
+	"whirlwinds": [
+		"whirl-winds"
+	],
+	"whithersoever": [
+		"whither-soever"
+	],
+	"whitsuneve": [
+		"whitsun-eve"
+	],
+	"whoelse": [
+		"who-else"
+	],
+	"winedrinker": [
+		"wine-drinker"
+	],
+	"winepress": [
+		"wine-press"
+	],
+	"wisemen": [
+		"wise-men"
+	],
+	"witchcrafts": [
+		"witch-crafts"
+	],
+	"witnessheap": [
+		"witness-heap"
+	],
+	"wivesslaughter": [
+		"wives-slaughter"
+	],
+	"wize": [
+		"wise"
+	],
+	"wizer": [
+		"wiser"
+	],
+	"womanservant": [
+		"woman-servant"
+	],
+	"womanservants": [
+		"woman-servants"
+	],
+	"womenservants": [
+		"women-servants"
+	],
+	"woodland": [
+		"wood-land"
+	],
+	"woofthread": [
+		"woof-thread"
+	],
+	"wordsower": [
+		"word-sower"
+	],
+	"workman": [
+		"work-man"
+	],
+	"workmen": [
+		"work-men"
+	],
+	"workprison": [
+		"work-prison"
+	],
+	"wormeaten": [
+		"worm-eaten"
+	],
+	"wormwood": [
+		"worm-wood"
+	],
+	"yokefellow": [
+		"yoke-fellow"
+	],
+	"youngmaid": [
+		"young-maid"
+	],
+	"youngmen": [
+		"young-men"
+	],
+	"yourselves": [
+		"your-selves"
+	],
+	"zacharie": [
+		"zachariae"
+	],
+	"zacheus": [
+		"zachaeus"
+	],
+	"zarei": [
+		"zaraei"
+	]
 }
