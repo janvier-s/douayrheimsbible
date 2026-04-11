@@ -14,7 +14,9 @@
 		searchNotes,
 		buildTextResultGroups,
 		hydrateResultGroups,
-		type TextResultGroup
+		hydrateNoteResults,
+		type TextResultGroup,
+		type NoteResult
 	} from '$lib/search/text-search';
 	import { isAllStopWords } from '$lib/search/expand-query';
 	import { tokenize } from '$lib/search/normalize';
@@ -28,6 +30,7 @@
 	let scope: SearchScope = data.scope;
 	let results: SearchResultGroup[] = [];
 	let textResults: TextResultGroup[] = [];
+	let noteResults: NoteResult[] = [];
 	let textTotal = 0;
 	let textLimit = 100;
 	let stopWordWarning = false;
@@ -218,12 +221,13 @@
 				if (gen !== searchGeneration) return;
 				const groups = buildTextResultGroups(raw);
 				textResults = await hydrateResultGroups(groups, queryTokens, fetch);
+				noteResults = [];
 				textTotal = total;
 			} else {
 				const { results: raw, total, queryTokens } = await searchNotes(trimmed, fetch, textLimit);
 				if (gen !== searchGeneration) return;
-				const groups = buildTextResultGroups(raw);
-				textResults = await hydrateResultGroups(groups, queryTokens, fetch);
+				noteResults = await hydrateNoteResults(raw, queryTokens, fetch);
+				textResults = [];
 				textTotal = total;
 			}
 			if (gen !== searchGeneration) return;
@@ -232,6 +236,7 @@
 		} catch {
 			if (gen !== searchGeneration) return;
 			textResults = [];
+			noteResults = [];
 			searched = true;
 		}
 		loading = false;
@@ -242,6 +247,7 @@
 		mode = newMode;
 		results = [];
 		textResults = [];
+		noteResults = [];
 		searched = false;
 		stopWordWarning = false;
 		updateUrl(query);
@@ -252,6 +258,7 @@
 		if (newScope === scope) return;
 		scope = newScope;
 		textResults = [];
+		noteResults = [];
 		searched = false;
 		stopWordWarning = false;
 		updateUrl(query);
@@ -593,6 +600,61 @@
 				</div>
 			{/if}
 
+			<!-- Note/annotation results -->
+			{#if noteResults.length > 0}
+				<div class="space-y-[24px]" in:fade={{ duration: reducedMotion ? 0 : 260 }}>
+					{#each noteResults as note, noteIdx}
+						{#if noteIdx > 0}
+							<hr class="border-border" />
+						{/if}
+						<section>
+							<div class="flex items-baseline gap-[8px] mb-[6px]">
+								<a
+									href="/odr/{note.slug}/{note.chapter}?study={note.verse}"
+									class="font-ui text-[14px] font-semibold hover:text-foreground transition-colors duration-fast"
+									style="color: var(--color-accent-text)"
+									on:click={() => prefs.update((p) => ({ ...p, readingMode: 'study' }))}
+								>
+									{note.reference}
+								</a>
+								<span class="font-ui text-[11px] uppercase tracking-[0.1em] text-subtle">
+									{note.type === 'annotation' ? 'Annotation' : 'Note'}
+								</span>
+							</div>
+							{#if note.title}
+								<p class="font-ui text-[13px] font-medium text-foreground mb-[4px]">
+									{note.title}
+								</p>
+							{/if}
+							<p
+								class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
+								class:text-justify={$prefs.justifiedText}
+							>
+								{@html highlightSearchVerse(note.noteText, note.queryTokens)}
+							</p>
+							{#if note.type === 'note' && note.verseText}
+								<p
+									class="font-reader text-[length:calc(var(--font-size-reader) * 0.9)] leading-[var(--line-height-reader)] text-subtle mt-[8px] border-l-2 border-border pl-[12px]"
+								>
+									{@html renderSearchVerse(note.verseText)}
+								</p>
+							{/if}
+						</section>
+					{/each}
+
+					{#if textTotal > noteResults.length}
+						<div class="text-center pt-sm">
+							<button
+								class="px-[20px] py-[8px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
+								on:click={showMore}
+							>
+								Show more results ({textTotal} total)
+							</button>
+						</div>
+					{/if}
+				</div>
+			{/if}
+
 			{#if stopWordWarning}
 				<p
 					class="text-subtle text-[14px] text-center"
@@ -602,7 +664,7 @@
 				</p>
 			{/if}
 
-			{#if searched && !loading && mode === 'text' && textResults.length === 0 && !stopWordWarning}
+			{#if searched && !loading && mode === 'text' && textResults.length === 0 && noteResults.length === 0 && !stopWordWarning}
 				<p
 					class="text-subtle text-[14px] text-center"
 					in:fade={{ duration: reducedMotion ? 0 : 160 }}

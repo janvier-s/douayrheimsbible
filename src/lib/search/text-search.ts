@@ -2,7 +2,7 @@ import MiniSearch from 'minisearch';
 import { searchTokenizer, processTerm, stripHtml } from './normalize';
 import { expandTokens, expandTokenGroups, isAllStopWords } from './expand-query';
 import { tokenize } from './normalize';
-import { loadBook, getChapter } from '$lib/data/loader';
+import { loadBook, getChapter, loadAnnotations } from '$lib/data/loader';
 import { ALL_BOOKS } from '$lib/data/books';
 import type { Verse } from '$lib/data/types';
 
@@ -22,6 +22,23 @@ export interface TextResultGroup {
 	bookName: string;
 	verseNumbers: number[];
 	verses: Verse[];
+	queryTokens: string[];
+}
+
+export interface NoteResult {
+	/** e.g. "Matthew 1:3" */
+	reference: string;
+	slug: string;
+	chapter: number;
+	verse: number;
+	/** 'note' (inline verse note) or 'annotation' */
+	type: string;
+	/** Annotation title if applicable */
+	title?: string;
+	/** The note/annotation text that matched the search */
+	noteText: string;
+	/** The parent verse text (shown for inline notes) */
+	verseText?: string;
 	queryTokens: string[];
 }
 
@@ -305,6 +322,114 @@ export async function hydrateResultGroups(
 		const bestB = Math.min(...b.verses.map((v) => phraseProximity(v.text, queryTokens)));
 		return bestA - bestB;
 	});
+
+	return hydrated;
+}
+
+/**
+ * Parse a note index ID like "matthew:1:3:n0" or "matthew:26:8:a0"
+ * into its components.
+ */
+function parseNoteId(id: string): {
+	book: string;
+	chapter: number;
+	verse: number;
+	type: 'note' | 'annotation';
+	index: number;
+} {
+	const parts = id.split(':');
+	const book = parts[0];
+	const chapter = parseInt(parts[1], 10);
+	const verse = parseInt(parts[2], 10);
+	const marker = parts[3] ?? 'n0';
+	const type = marker.startsWith('a') ? 'annotation' : 'note';
+	const index = parseInt(marker.slice(1), 10);
+	return { book, chapter, verse, type, index };
+}
+
+/**
+ * Hydrate note search results into individual NoteResult objects.
+ * Each result is standalone (not grouped by chapter).
+ */
+export async function hydrateNoteResults(
+	results: TextSearchResult[],
+	queryTokens: string[],
+	fetch: typeof globalThis.fetch
+): Promise<NoteResult[]> {
+	// Pre-load all needed books and annotation files
+	const bookSlugs = [...new Set(results.map((r) => r.book))];
+	await Promise.all(bookSlugs.map((slug) => loadBook(slug, fetch)));
+
+	const annotationKeys = new Set<string>();
+	for (const r of results) {
+		const parsed = parseNoteId(r.id);
+		if (parsed.type === 'annotation') {
+			annotationKeys.add(`${parsed.book}:${parsed.chapter}`);
+		}
+	}
+	await Promise.all(
+		[...annotationKeys].map((key) => {
+			const [slug, ch] = key.split(':');
+			return loadAnnotations(slug, parseInt(ch, 10), fetch);
+		})
+	);
+
+	const hydrated: NoteResult[] = [];
+
+	for (const r of results) {
+		const parsed = parseNoteId(r.id);
+		const meta = ALL_BOOKS.find((b) => b.slug === parsed.book);
+		const bookName = meta?.odrName ?? parsed.book;
+		const reference = `${bookName} ${parsed.chapter}:${parsed.verse}`;
+
+		if (parsed.type === 'note') {
+			// Inline verse note
+			const bookData = await loadBook(parsed.book, fetch);
+			const chapter = getChapter(bookData, parsed.chapter);
+			if (!chapter) continue;
+
+			const verse = chapter.verses.find((v) => v.verse === parsed.verse);
+			if (!verse?.notes?.[parsed.index]) continue;
+
+			hydrated.push({
+				reference,
+				slug: parsed.book,
+				chapter: parsed.chapter,
+				verse: parsed.verse,
+				type: 'note',
+				noteText: verse.notes[parsed.index].text,
+				verseText: verse.text,
+				queryTokens
+			});
+		} else {
+			// Annotation from sidecar
+			const annData = await loadAnnotations(parsed.book, parsed.chapter, fetch);
+			if (!annData?.annotations) continue;
+
+			const ann = annData.annotations[parsed.index];
+			if (!ann) continue;
+
+			// Build full annotation text (title + text + sub-notes)
+			const parts: string[] = [];
+			if (ann.text) parts.push(ann.text);
+			if (ann.notes) {
+				for (const n of ann.notes) {
+					if (n.text) parts.push(n.text);
+				}
+			}
+
+			hydrated.push({
+				reference,
+				slug: parsed.book,
+				chapter: parsed.chapter,
+				verse: parsed.verse || ann.verse,
+				type: 'annotation',
+				title: ann.title,
+				noteText: parts.join(' '),
+				queryTokens
+			});
+		}
+	}
 
 	return hydrated;
 }
