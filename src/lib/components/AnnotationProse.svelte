@@ -148,7 +148,7 @@
 		line-height: 1;
 		cursor: pointer;
 		border: none;
-		background: #29191b;
+		background: color-mix(in srgb, var(--color-accent) 15%, transparent);
 		padding: 1px 3px;
 		margin: 0 1px;
 		border-radius: 2px;

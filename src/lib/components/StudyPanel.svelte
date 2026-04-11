@@ -480,7 +480,7 @@
 		text-align: center;
 		padding-top: 15px;
 		padding-bottom: 15px;
-		border-bottom: 1px solid #2e2b32;
+		border-bottom: 1px solid var(--color-border);
 		font-weight: 400;
 		color: var(--color-accent);
 		margin-bottom: 20px;
