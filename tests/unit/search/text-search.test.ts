@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { parseResultId, buildTextResultGroups, type TextSearchResult } from '$lib/search/text-search';
+import {
+	parseResultId,
+	buildTextResultGroups,
+	type TextSearchResult
+} from '$lib/search/text-search';
 
 describe('parseResultId', () => {
 	it('parses a verse id', () => {

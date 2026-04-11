@@ -95,7 +95,9 @@ async function buildVerseIndex(): Promise<void> {
 	miniSearch.addAll(docs);
 	const json = JSON.stringify(miniSearch);
 	await writeFile(join(DATA_DIR, 'search-index.json'), json);
-	console.log(`✓ Verse search index: ${docs.length} documents (${(json.length / 1024 / 1024).toFixed(2)} MB)`);
+	console.log(
+		`✓ Verse search index: ${docs.length} documents (${(json.length / 1024 / 1024).toFixed(2)} MB)`
+	);
 }
 
 async function buildNotesIndex(): Promise<void> {
@@ -188,7 +190,9 @@ async function buildNotesIndex(): Promise<void> {
 	miniSearch.addAll(docs);
 	const json = JSON.stringify(miniSearch);
 	await writeFile(join(DATA_DIR, 'search-notes-index.json'), json);
-	console.log(`✓ Notes search index: ${docs.length} documents (${(json.length / 1024 / 1024).toFixed(2)} MB)`);
+	console.log(
+		`✓ Notes search index: ${docs.length} documents (${(json.length / 1024 / 1024).toFixed(2)} MB)`
+	);
 }
 
 export async function buildSearchIndexes(): Promise<void> {

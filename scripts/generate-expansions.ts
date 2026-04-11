@@ -56,7 +56,7 @@ function tokenize(text: string): string[] {
 const ARCHAIC_PATTERNS = [
 	/eth$/, // hath, doth, giveth …
 	/est$/, // thou sayest, thou doest …
-	/^thy$|^thou$|^thee$|^thine$|^ye$|^hath$|^doth$|^saith$|^art$|^wilt$|^shalt$/,
+	/^thy$|^thou$|^thee$|^thine$|^ye$|^hath$|^doth$|^saith$|^art$|^wilt$|^shalt$/
 ];
 
 function looksArchaic(word: string): boolean {
