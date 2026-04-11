@@ -8,27 +8,73 @@
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
 	import { navOverride } from '$lib/stores/navOverride';
-	export let data: { query: string };
+	import type { SearchMode, SearchScope } from './+page';
+	import {
+		searchVerses,
+		searchNotes,
+		buildTextResultGroups,
+		hydrateResultGroups,
+		type TextResultGroup
+	} from '$lib/search/text-search';
+	import { isAllStopWords } from '$lib/search/expand-query';
+	import { tokenize } from '$lib/search/normalize';
+
+	export let data: { query: string; mode: SearchMode; scope: SearchScope };
 
 	let reducedMotion = false;
-
 	let inputEl: HTMLInputElement;
 	let query = data.query;
+	let mode: SearchMode = data.mode;
+	let scope: SearchScope = data.scope;
 	let results: SearchResultGroup[] = [];
+	let textResults: TextResultGroup[] = [];
+	let textTotal = 0;
+	let textLimit = 100;
+	let stopWordWarning = false;
 	let loading = false;
 	let searched = false;
 	let debounceTimer: ReturnType<typeof setTimeout>;
 	let searchGeneration = 0;
-	// Initialized to data.query so afterNavigate doesn't double-search on mount
 	let lastDataQuery = data.query;
+	let lastDataMode = data.mode;
+	let lastDataScope = data.scope;
 
-	const EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
+	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
+	const TEXT_VERSE_EXAMPLES = ['thou art Peter', 'full of grace', 'daily bread'];
+	const TEXT_NOTES_EXAMPLES = ['transubstantiation', 'original sin'];
+
+	$: currentExamples =
+		mode === 'verse'
+			? VERSE_EXAMPLES
+			: scope === 'notes'
+				? TEXT_NOTES_EXAMPLES
+				: TEXT_VERSE_EXAMPLES;
+
+	$: placeholder =
+		mode === 'verse'
+			? 'Search for a verse — e.g. Matthew 16:18'
+			: scope === 'notes'
+				? 'Search notes & annotations — e.g. transubstantiation'
+				: 'Search the Bible — e.g. thou art Peter';
+
+	$: heading = mode === 'verse' ? 'Verse Search' : 'Text Search';
+
+	$: noResultsMessage =
+		mode === 'verse'
+			? null
+			: scope === 'notes'
+				? 'No notes found matching your search.'
+				: 'No verses found matching your search.';
 
 	$: isHero = !searched && !query;
 
 	// Keep TopBar nav button in sync with the first result's book/chapter
 	$: navOverride.set(
-		results.length > 0 ? { bookSlug: results[0].slug, chapter: results[0].chapter } : null
+		results.length > 0
+			? { bookSlug: results[0].slug, chapter: results[0].chapter }
+			: textResults.length > 0
+				? { bookSlug: textResults[0].slug, chapter: textResults[0].chapter }
+				: null
 	);
 
 	onDestroy(() => navOverride.set(null));
@@ -43,12 +89,23 @@
 	});
 
 	afterNavigate(() => {
-		if (data.query !== lastDataQuery) {
+		if (
+			data.query !== lastDataQuery ||
+			data.mode !== lastDataMode ||
+			data.scope !== lastDataScope
+		) {
 			lastDataQuery = data.query;
+			lastDataMode = data.mode;
+			lastDataScope = data.scope;
 			query = data.query;
+			mode = data.mode;
+			scope = data.scope;
 			results = [];
+			textResults = [];
 			searched = false;
 			loading = false;
+			textLimit = 100;
+			stopWordWarning = false;
 			if (query) search(query);
 		}
 		if (inputEl) inputEl.focus();
@@ -62,7 +119,9 @@
 				search(query);
 			} else {
 				results = [];
+				textResults = [];
 				searched = false;
+				stopWordWarning = false;
 			}
 		}, 300);
 	}
@@ -75,13 +134,25 @@
 
 	function updateUrl(q: string) {
 		if (!browser) return;
-		// Pre-set so afterNavigate recognises this as an internal update and skips re-search
 		lastDataQuery = q.trim();
+		lastDataMode = mode;
+		lastDataScope = scope;
 		const url = new URL(window.location.href);
 		if (q.trim()) {
 			url.searchParams.set('q', q.trim());
 		} else {
 			url.searchParams.delete('q');
+		}
+		if (mode === 'text') {
+			url.searchParams.set('mode', 'text');
+			if (scope === 'notes') {
+				url.searchParams.set('scope', 'notes');
+			} else {
+				url.searchParams.delete('scope');
+			}
+		} else {
+			url.searchParams.delete('mode');
+			url.searchParams.delete('scope');
 		}
 		goto(url.toString(), { noScroll: true, keepFocus: true });
 	}
@@ -96,21 +167,29 @@
 	async function search(q: string) {
 		const trimmed = q.trim();
 		if (!trimmed) return;
+		if (mode === 'verse') {
+			await searchVerse(trimmed);
+		} else {
+			await searchText(trimmed);
+		}
+	}
 
+	async function searchVerse(trimmed: string) {
 		const ranges = parseAllReferences(trimmed);
 		if (!ranges.length) {
 			results = [];
+			textResults = [];
 			searched = true;
 			loading = false;
 			return;
 		}
-
 		const gen = ++searchGeneration;
 		loading = true;
 		try {
 			const data = await buildResultGroups(ranges, fetch);
 			if (gen !== searchGeneration) return;
 			results = data;
+			textResults = [];
 			searched = true;
 		} catch {
 			if (gen !== searchGeneration) return;
@@ -118,6 +197,70 @@
 			searched = true;
 		}
 		loading = false;
+	}
+
+	async function searchText(trimmed: string) {
+		const tokens = tokenize(trimmed);
+		if (isAllStopWords(tokens)) {
+			stopWordWarning = true;
+			textResults = [];
+			results = [];
+			searched = true;
+			loading = false;
+			return;
+		}
+		stopWordWarning = false;
+		const gen = ++searchGeneration;
+		loading = true;
+		try {
+			if (scope === 'verses') {
+				const { results: raw, total, queryTokens } = await searchVerses(trimmed, fetch, textLimit);
+				if (gen !== searchGeneration) return;
+				const groups = buildTextResultGroups(raw);
+				textResults = await hydrateResultGroups(groups, queryTokens, fetch);
+				textTotal = total;
+			} else {
+				const { results: raw, total, queryTokens } = await searchNotes(trimmed, fetch, textLimit);
+				if (gen !== searchGeneration) return;
+				const groups = buildTextResultGroups(raw);
+				textResults = await hydrateResultGroups(groups, queryTokens, fetch);
+				textTotal = total;
+			}
+			if (gen !== searchGeneration) return;
+			results = [];
+			searched = true;
+		} catch {
+			if (gen !== searchGeneration) return;
+			textResults = [];
+			searched = true;
+		}
+		loading = false;
+	}
+
+	function setMode(newMode: SearchMode) {
+		if (newMode === mode) return;
+		mode = newMode;
+		results = [];
+		textResults = [];
+		searched = false;
+		stopWordWarning = false;
+		updateUrl(query);
+		if (query.trim()) search(query);
+	}
+
+	function setScope(newScope: SearchScope) {
+		if (newScope === scope) return;
+		scope = newScope;
+		textResults = [];
+		searched = false;
+		stopWordWarning = false;
+		updateUrl(query);
+		if (query.trim()) search(query);
+	}
+
+	function showMore() {
+		textLimit += 100;
+		if (query.trim()) searchText(query.trim());
 	}
 
 	function onExampleClick(example: string) {
@@ -149,10 +292,27 @@
 
 		return t.replace(/  +/g, ' ').trim();
 	}
+
+	function highlightSearchVerse(text: string, queryTokens: string[]): string {
+		let t = renderSearchVerse(text);
+		if (!queryTokens.length) return t;
+		const escaped = queryTokens.map((tok) => tok.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+		escaped.sort((a, b) => b.length - a.length);
+		const pattern = new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi');
+		t = t.replace(/(<[^>]+>)|(\b\w+\b)/g, (match, tag, word) => {
+			if (tag) return tag;
+			if (word && pattern.test(word)) {
+				pattern.lastIndex = 0;
+				return `<mark class="search-highlight">${word}</mark>`;
+			}
+			return match;
+		});
+		return t;
+	}
 </script>
 
 <svelte:head>
-	<title>{query ? `${query} | Search` : 'Search'} | ODR Bible</title>
+	<title>{query ? `${query} | ${heading}` : heading} | ODR Bible</title>
 </svelte:head>
 
 <main
@@ -185,7 +345,7 @@
 				<h1
 					class="font-reader text-[2.2rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-[14px]"
 				>
-					Verse Search
+					{heading}
 				</h1>
 				<div class="w-10 h-px bg-accent opacity-70 mx-auto"></div>
 			</div>
@@ -220,7 +380,7 @@
 						bind:value={query}
 						on:input={onInput}
 						type="text"
-						placeholder="Search for a verse — e.g. Matthew 16:18"
+						{placeholder}
 						class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
 						style="outline: none;"
 						autocomplete="off"
@@ -239,12 +399,57 @@
 			</div>
 		</form>
 
+		<!-- Mode toggle -->
+		<div class="flex justify-center gap-[2px] mb-md -mt-[8px]">
+			<button
+				class="px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] rounded-l-[4px] transition-colors duration-fast
+					{mode === 'verse'
+					? 'bg-accent text-white'
+					: 'bg-transparent text-subtle hover:text-foreground border border-border'}"
+				on:click={() => setMode('verse')}
+			>
+				Verse Search
+			</button>
+			<button
+				class="px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] rounded-r-[4px] transition-colors duration-fast
+					{mode === 'text'
+					? 'bg-accent text-white'
+					: 'bg-transparent text-subtle hover:text-foreground border border-border'}"
+				on:click={() => setMode('text')}
+			>
+				Text Search
+			</button>
+		</div>
+
+		{#if mode === 'text'}
+			<div class="flex justify-center gap-[2px] mb-md -mt-[4px]">
+				<button
+					class="px-[12px] py-[5px] text-[11px] font-medium tracking-[0.05em] rounded-l-[3px] transition-colors duration-fast
+						{scope === 'verses'
+						? 'text-foreground border-b-2 border-accent'
+						: 'text-subtle hover:text-foreground'}"
+					on:click={() => setScope('verses')}
+				>
+					Verses
+				</button>
+				<button
+					class="px-[12px] py-[5px] text-[11px] font-medium tracking-[0.05em] rounded-r-[3px] transition-colors duration-fast
+						{scope === 'notes'
+						? 'text-foreground border-b-2 border-accent'
+						: 'text-subtle hover:text-foreground'}"
+					on:click={() => setScope('notes')}
+				>
+					Notes & Annotations
+				</button>
+			</div>
+		{/if}
+
 		<!-- Example queries (shown when no results and no query) -->
 		{#if isHero}
 			<div class="text-center" in:fade={{ duration: reducedMotion ? 0 : 160 }}>
 				<p class="text-subtle text-[13px] mb-sm">Try a reference:</p>
 				<div class="flex flex-wrap justify-center gap-[8px]">
-					{#each EXAMPLES as example}
+					{#each currentExamples as example}
 						<button
 							class="px-[12px] py-[6px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
 							on:click={() => onExampleClick(example)}
@@ -262,8 +467,8 @@
 				<p class="text-subtle text-[13px] text-center">Searching...</p>
 			{/if}
 
-			<!-- No results -->
-			{#if searched && !loading && results.length === 0}
+			<!-- No results (verse mode) -->
+			{#if searched && !loading && mode === 'verse' && results.length === 0}
 				<p
 					class="text-subtle text-[14px] text-center"
 					in:fade={{ duration: reducedMotion ? 0 : 160 }}
@@ -277,7 +482,7 @@
 				</p>
 			{/if}
 
-			<!-- Results -->
+			<!-- Verse results -->
 			{#if results.length > 0}
 				<div class="space-y-[24px]" in:fade={{ duration: reducedMotion ? 0 : 260 }}>
 					{#each results as group, groupIdx}
@@ -325,6 +530,89 @@
 						</section>
 					{/each}
 				</div>
+			{/if}
+
+			<!-- Text results -->
+			{#if textResults.length > 0}
+				<div class="space-y-[24px]" in:fade={{ duration: reducedMotion ? 0 : 260 }}>
+					{#each textResults as group, groupIdx}
+						{#if groupIdx > 0}
+							<hr class="border-border" />
+						{/if}
+						<section class:pl-[2.5rem]={$prefs.showVerseNumbers}>
+							<h2
+								class="font-ui text-[14px] font-semibold mb-[8px]"
+								style="color: var(--color-accent-text)"
+							>
+								<a
+									href="/odr/{group.slug}/{group.chapter}"
+									class="hover:text-foreground transition-colors duration-fast"
+									on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
+								>
+									{group.heading}
+								</a>
+							</h2>
+							<div class="space-y-[0.7rem]">
+								{#each group.verses as v}
+									<div class="relative">
+										{#if $prefs.showVerseNumbers}
+											<span
+												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
+												>{v.verse}</span
+											>
+										{/if}
+										<p
+											class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
+											class:text-justify={$prefs.justifiedText}
+										>
+											{@html highlightSearchVerse(v.text, group.queryTokens)}
+										</p>
+									</div>
+								{/each}
+							</div>
+							<a
+								href="/odr/{group.slug}/{group.chapter}"
+								class="inline-block mt-[8px] text-[11px] uppercase tracking-[0.15em] text-subtle hover:text-foreground transition-colors duration-fast font-medium"
+								on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
+							>
+								Read full chapter →
+							</a>
+						</section>
+					{/each}
+
+					{#if textTotal > textResults.reduce((n, g) => n + g.verses.length, 0)}
+						<div class="text-center pt-sm">
+							<button
+								class="px-[20px] py-[8px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
+								on:click={showMore}
+							>
+								Show more results ({textTotal} total)
+							</button>
+						</div>
+					{/if}
+				</div>
+			{/if}
+
+			{#if stopWordWarning}
+				<p
+					class="text-subtle text-[14px] text-center"
+					in:fade={{ duration: reducedMotion ? 0 : 160 }}
+				>
+					Try a more specific search. Common words like "the" or "and" are too broad.
+				</p>
+			{/if}
+
+			{#if searched && !loading && mode === 'text' && textResults.length === 0 && !stopWordWarning}
+				<p
+					class="text-subtle text-[14px] text-center"
+					in:fade={{ duration: reducedMotion ? 0 : 160 }}
+				>
+					{noResultsMessage}<br />Try different words or use
+					<button
+						class="text-subtle hover:text-foreground hover:underline"
+						on:click={() => onExampleClick(currentExamples[0])}>{currentExamples[0]}</button
+					>
+				</p>
 			{/if}
 		</div>
 	</div>

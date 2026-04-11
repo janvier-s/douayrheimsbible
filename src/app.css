@@ -324,3 +324,10 @@ body {
 .sc {
 	font-variant: small-caps;
 }
+
+.search-highlight {
+	background: var(--color-accent);
+	color: var(--color-bg);
+	border-radius: 2px;
+	padding: 0 2px;
+}
