@@ -5,6 +5,7 @@
 	import { afterNavigate, goto } from '$app/navigation';
 
 	import { prefs } from '$lib/stores/prefs';
+	import AnnotationProse from '$lib/components/AnnotationProse.svelte';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
 	import { navOverride } from '$lib/stores/navOverride';
@@ -47,58 +48,6 @@
 	let crossScopeNoteResults: NoteResult[] = [];
 	let queryTokens: string[] = [];
 	let crossScopeTotal = 0;
-
-	// Marginal note popover
-	const MN_POPOVER_WIDTH = 300;
-	const MN_GAP = 10;
-	let mnActiveNote: { label: string; text: string } | null = null;
-	let mnPopoverStyle = '';
-	let mnPopoverAbove = false;
-	let mnHoverTimer: ReturnType<typeof setTimeout> | null = null;
-
-	function dismissMn() {
-		mnActiveNote = null;
-		mnPopoverStyle = '';
-	}
-
-	function scheduleMnDismiss() {
-		mnHoverTimer = setTimeout(dismissMn, 120);
-	}
-
-	function cancelMnDismiss() {
-		if (mnHoverTimer) {
-			clearTimeout(mnHoverTimer);
-			mnHoverTimer = null;
-		}
-	}
-
-	function handleMnHover(e: Event, notes: Array<{ label: string; text: string }>) {
-		const el = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
-		if (!el) return;
-		cancelMnDismiss();
-		const marker = el.dataset.mn ?? null;
-		if (!marker) return;
-		const note = notes.find((n) => n.label === marker) ?? null;
-		if (!note) return;
-		const rect = el.getBoundingClientRect();
-		const spaceBelow = window.innerHeight - rect.bottom;
-		mnPopoverAbove = spaceBelow < 130;
-		const cx = rect.left + rect.width / 2;
-		const left = Math.min(
-			Math.max(cx - MN_POPOVER_WIDTH / 2, 12),
-			window.innerWidth - MN_POPOVER_WIDTH - 12
-		);
-		mnPopoverStyle = mnPopoverAbove
-			? `left:${left}px; bottom:${window.innerHeight - rect.top + MN_GAP}px; width:${MN_POPOVER_WIDTH}px;`
-			: `left:${left}px; top:${rect.bottom + MN_GAP}px; width:${MN_POPOVER_WIDTH}px;`;
-		mnActiveNote = note;
-	}
-
-	function handleMnOut(e: Event) {
-		const el = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
-		if (!el) return;
-		scheduleMnDismiss();
-	}
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
@@ -154,17 +103,12 @@
 				: null
 	);
 
-	onDestroy(() => {
-		navOverride.set(null);
-		if (browser) document.removeEventListener('scroll', dismissMn, true);
-	});
+	onDestroy(() => navOverride.set(null));
 
 	onMount(() => {
 		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
 		reducedMotion = mq.matches;
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
-
-		document.addEventListener('scroll', dismissMn, true);
 
 		if (inputEl) inputEl.focus();
 		if (query) search(query);
@@ -405,8 +349,8 @@
 			t = t.replace(/<\/?sc>/g, '');
 		}
 
-		// Convert <mn>[N]</mn> to styled superscript markers (data-mn enables hover popover)
-		t = t.replace(/<mn>\[?([^\]<]+)\]?<\/mn>/g, '<sup class="search-mn" data-mn="$1">$1</sup>');
+		// Convert <mn>[N]</mn> to styled superscript markers
+		t = t.replace(/<mn>\[?([^\]<]+)\]?<\/mn>/g, '<sup class="search-mn">$1</sup>');
 
 		// Strip all remaining tags except <i> and <sup>
 		t = t.replace(/<(?!\/?i\b)(?!\/?sup\b)[^>]*>/gi, '');
@@ -881,33 +825,7 @@
 									{@html highlightNoteTitle(note.title, note.queryTokens)}
 								</p>
 							{/if}
-							<!-- svelte-ignore a11y_no_static_element_interactions -->
-							<!-- svelte-ignore a11y_mouse_events_have_key_events -->
-							<p
-								class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] text-foreground"
-								class:text-justify={$prefs.justifiedText}
-								on:mouseover={(e) =>
-									handleMnHover(
-										e,
-										(note.subNotes ?? []).map((n) => ({ label: String(n.marker), text: n.text }))
-									)}
-								on:mouseout={handleMnOut}
-							>
-								{@html highlightSearchVerse(note.noteText, note.queryTokens)}
-							</p>
-							{#if note.subNotes && note.subNotes.length > 0}
-								<div class="mt-[10px] space-y-[2px] border-l-2 border-border pl-[12px]">
-									{#each note.subNotes as sub}
-										<p class="font-ui text-[13px] leading-[1.5] text-subtle font-light">
-											<span
-												class="text-[9px] font-semibold align-super mr-[1px]"
-												style="color: var(--color-accent-text)">{sub.marker}</span
-											>
-											{@html highlightSearchVerse(sub.text, note.queryTokens)}
-										</p>
-									{/each}
-								</div>
-							{/if}
+							<AnnotationProse text={note.noteText} notes={note.subNotes ?? []} />
 							{#if note.type === 'note' && note.verseText}
 								<p
 									class="font-reader text-[length:calc(var(--font-size-reader) * 0.9)] leading-[var(--line-height-reader)] text-subtle mt-[8px] border-l-2 border-border pl-[12px]"
@@ -956,74 +874,3 @@
 		</div>
 	</div>
 </main>
-
-{#if mnActiveNote && mnPopoverStyle}
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<div
-		class="mn-popover"
-		class:mn-popover-above={mnPopoverAbove}
-		role="tooltip"
-		on:mouseenter={cancelMnDismiss}
-		on:mouseleave={scheduleMnDismiss}
-		style="position:fixed; {mnPopoverStyle}"
-	>
-		<span class="mn-popover-marker">{mnActiveNote.label}</span>
-		<span class="mn-popover-text">{@html mnActiveNote.text}</span>
-	</div>
-{/if}
-
-<style>
-	.mn-popover {
-		background: var(--color-text);
-		color: var(--color-bg);
-		font-size: 13px;
-		font-family: var(--font-ui);
-		line-height: 1.5;
-		border-radius: 6px;
-		padding: 9px 12px;
-		box-shadow:
-			0 8px 24px rgba(0, 0, 0, 0.25),
-			0 2px 6px rgba(0, 0, 0, 0.15);
-		max-height: 200px;
-		overflow-y: auto;
-		z-index: 100;
-		animation: tooltip-in 120ms ease-out both;
-	}
-
-	.mn-popover-above {
-		animation-name: tooltip-in-above;
-	}
-
-	@keyframes tooltip-in {
-		from {
-			opacity: 0;
-			transform: translateY(-3px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	@keyframes tooltip-in-above {
-		from {
-			opacity: 0;
-			transform: translateY(3px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	.mn-popover-marker {
-		color: var(--color-accent);
-		font-size: 9px;
-		font-weight: 700;
-		margin-right: 6px;
-	}
-
-	.mn-popover-text {
-		opacity: 0.9;
-	}
-</style>
