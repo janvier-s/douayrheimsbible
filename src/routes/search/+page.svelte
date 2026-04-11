@@ -72,13 +72,6 @@
 
 	$: heading = mode === 'verse' ? 'Verse Search' : 'Text Search';
 
-	$: noResultsMessage =
-		mode === 'verse'
-			? null
-			: scope === 'notes'
-				? 'No notes found matching your search.'
-				: 'No verses found matching your search.';
-
 	$: isHero =
 		!searched &&
 		!query &&
