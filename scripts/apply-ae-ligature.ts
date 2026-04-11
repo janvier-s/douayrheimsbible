@@ -90,10 +90,15 @@ function applyLigatures(text: string): string {
 
 function transformBook(data: Record<string, unknown>): Record<string, unknown> {
 	const chapters = (data.chapters as Record<string, unknown>[]).map((ch) => {
-		const verses = (ch.verses as Record<string, unknown>[]).map((v) => ({
-			...v,
-			text: applyLigatures(v.text as string)
-		}));
+		const verses = (ch.verses as Record<string, unknown>[]).map((v) => {
+			const notes = v.notes
+				? (v.notes as Record<string, unknown>[]).map((n) => ({
+						...n,
+						text: applyLigatures(n.text as string)
+					}))
+				: v.notes;
+			return { ...v, text: applyLigatures(v.text as string), notes };
+		});
 
 		return {
 			...ch,

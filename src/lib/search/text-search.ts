@@ -1,5 +1,5 @@
 import MiniSearch from 'minisearch';
-import { searchTokenizer, processTerm, stripHtml } from './normalize';
+import { searchTokenizer, processTerm, stripHtml, foldLigatures } from './normalize';
 import { expandTokens, expandTokenGroups, isAllStopWords } from './expand-query';
 import { tokenize } from './normalize';
 import { loadBook, getChapter, loadAnnotations } from '$lib/data/loader';
@@ -250,7 +250,7 @@ export function buildTextResultGroups(
 export function phraseProximity(text: string, queryTokens: string[]): number {
 	if (queryTokens.length <= 1) return 0;
 
-	const stripped = stripHtml(text).toLowerCase();
+	const stripped = foldLigatures(stripHtml(text).toLowerCase());
 	const words = stripped.match(/[a-z]+(?:-[a-z]+)*/g);
 	if (!words) return Infinity;
 

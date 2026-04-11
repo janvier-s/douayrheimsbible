@@ -21,7 +21,7 @@
 		type NoteResult
 	} from '$lib/search/text-search';
 	import { isAllStopWords, isStopWord } from '$lib/search/expand-query';
-	import { tokenize } from '$lib/search/normalize';
+	import { tokenize, foldLigatures } from '$lib/search/normalize';
 
 	export let data: { query: string; mode: SearchMode; scope: SearchScope };
 
@@ -381,6 +381,10 @@
 		escaped.sort((a, b) => b.length - a.length);
 		const pattern = new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi');
 
+		// Fold ligatures in text for matching. æ (1 char) → e (1 char) preserves
+		// character positions, so hit indices from tFolded apply directly to t.
+		const tFolded = foldLigatures(t);
+
 		// Collect all match positions with their word boundaries
 		interface HitInfo {
 			start: number;
@@ -394,7 +398,7 @@
 		if (stripVerseTags) {
 			const wordRe = /(<[^>]+>)|(\b\w+\b)/g;
 			let m: RegExpExecArray | null;
-			while ((m = wordRe.exec(t)) !== null) {
+			while ((m = wordRe.exec(tFolded)) !== null) {
 				if (m[1]) continue; // skip tags
 				const word = m[2];
 				if (word && pattern.test(word)) {
@@ -402,20 +406,20 @@
 					hits.push({
 						start: m.index,
 						end: m.index + word.length,
-						word,
+						word: t.slice(m.index, m.index + word.length), // original form for display
 						stop: isStopWord(word.toLowerCase())
 					});
 				}
 			}
 		} else {
 			let m: RegExpExecArray | null;
-			while ((m = pattern.exec(t)) !== null) {
-				const word = m[1];
+			while ((m = pattern.exec(tFolded)) !== null) {
+				const word = t.slice(m.index, m.index + m[1].length); // original form for display
 				hits.push({
 					start: m.index,
-					end: m.index + word.length,
+					end: m.index + m[1].length,
 					word,
-					stop: isStopWord(word.toLowerCase())
+					stop: isStopWord(m[1].toLowerCase())
 				});
 			}
 		}
