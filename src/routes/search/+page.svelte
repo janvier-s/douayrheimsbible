@@ -658,7 +658,7 @@
 			{/if}
 
 			<!-- Cross-scope teaser -->
-			{#if crossScopeTeaser && (textResults.length > 0 || noteResults.length > 0)}
+			{#if crossScopeTeaser}
 				<button
 					class="block w-full text-left mb-[16px] font-ui text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
 					on:click={() => {
