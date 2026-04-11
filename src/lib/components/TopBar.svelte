@@ -16,6 +16,7 @@
 	export let bookSlug: string;
 	export let chapterNum: string;
 	export let isChapterPage = false;
+	export let isHomePage = false;
 	export let hasStudyMode = false;
 
 	$: showTabBar = true;
@@ -65,8 +66,8 @@
 		{ key: 'compare', label: 'Compare' }
 	];
 	$: activeModeIdx = modeItems.findIndex((m) => m.key === $prefs.readingMode);
-	// Always show the current reading mode; fall back to index 0 if mode isn't in the list
-	$: displayModeIdx = activeModeIdx >= 0 ? activeModeIdx : 0;
+	// Show pill on chapter pages and home page; hide on other non-chapter pages (search, etc.)
+	$: displayModeIdx = isChapterPage || isHomePage ? (activeModeIdx >= 0 ? activeModeIdx : 0) : -1;
 
 	let pendingIdx = -1;
 

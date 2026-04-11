@@ -22,6 +22,7 @@
 	// readingPosition tracks infinite-scroll advances within a chapter page.
 	// navOverride lets non-chapter pages (search) show a contextual reference.
 	$: isChapterPage = !!$page.params.book && !!$page.params.chapter;
+	$: isHomePage = $page.url.pathname === '/';
 	$: bookSlug = isChapterPage
 		? ($readingPosition?.bookSlug ?? $page.params.book ?? '')
 		: ($navOverride?.bookSlug ?? $page.params.book ?? '');
@@ -97,6 +98,7 @@
 			{bookSlug}
 			{chapterNum}
 			{isChapterPage}
+			{isHomePage}
 			hasStudyMode={$page.data.hasStudyMode ?? false}
 		/>
 	{/if}
