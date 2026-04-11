@@ -1,11 +1,14 @@
 <script lang="ts">
 	import ModeToggle from './ModeToggle.svelte';
+	import { page } from '$app/stores';
 
 	export let modeItems: Array<{ key: string; label: string }>;
 	export let activeModeIdx: number;
 	export let pendingIdx: number;
 	export let onModeSelect: (e: CustomEvent<{ key: string; index: number }>) => void;
 	export let onLogoClick: () => void = () => {};
+
+	$: isSearchPage = $page.url.pathname.startsWith('/search');
 </script>
 
 <div
@@ -56,7 +59,8 @@
 	<a
 		href="/search"
 		class="hidden md:flex ml-0 shrink-0 items-center justify-center w-[30px] h-[30px]
-		    rounded-[3px] text-subtle hover:text-foreground transition-colors duration-fast"
+		    rounded-[3px] transition-colors duration-fast
+		    {isSearchPage ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 		aria-label="Search"
 	>
 		<svg

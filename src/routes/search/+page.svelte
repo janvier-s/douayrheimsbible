@@ -22,6 +22,7 @@
 	} from '$lib/search/text-search';
 	import { isAllStopWords, isStopWord } from '$lib/search/expand-query';
 	import { tokenize, foldLigatures } from '$lib/search/normalize';
+	import ModeToggle from '$lib/components/ModeToggle.svelte';
 
 	export let data: { query: string; mode: SearchMode; scope: SearchScope };
 
@@ -635,43 +636,40 @@
 		</form>
 
 		<!-- Mode toggle -->
-		<div class="flex justify-center gap-[2px] mb-md -mt-[8px]">
-			<button
-				class="px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] rounded-l-[4px] transition-colors duration-fast
-					{mode === 'verse'
-					? 'bg-accent text-white'
-					: 'bg-transparent text-subtle hover:text-foreground border border-border'}"
-				on:click={() => setMode('verse')}
-			>
-				Verse Search
-			</button>
-			<button
-				class="px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] rounded-r-[4px] transition-colors duration-fast
-					{mode === 'text'
-					? 'bg-accent text-white'
-					: 'bg-transparent text-subtle hover:text-foreground border border-border'}"
-				on:click={() => setMode('text')}
-			>
-				Text Search
-			</button>
+		<div class="flex justify-center mb-md -mt-[8px]">
+			<ModeToggle
+				items={[
+					{ key: 'verse', label: 'Verse Search' },
+					{ key: 'text', label: 'Text Search' }
+				]}
+				activeIndex={mode === 'verse' ? 0 : 1}
+				pendingIndex={-1}
+				on:select={(e) => setMode(e.detail.key as SearchMode)}
+			/>
 		</div>
 
 		{#if mode === 'text'}
-			<div class="flex justify-center gap-[2px] mb-md -mt-[4px]">
+			<div class="scope-tabs relative flex mb-md -mt-[4px]" role="tablist">
+				<div
+					class="scope-slider"
+					style="transform: translateX({scope === 'notes' ? '100%' : '0%'})"
+				></div>
 				<button
-					class="px-[12px] py-[5px] text-[11px] font-medium tracking-[0.05em] rounded-l-[3px] transition-colors duration-fast
-						{scope === 'verses'
-						? 'text-foreground border-b-2 border-accent'
+					class="scope-btn flex-1 transition-colors duration-fast {scope === 'verses'
+						? 'text-foreground'
 						: 'text-subtle hover:text-foreground'}"
+					role="tab"
+					aria-selected={scope === 'verses'}
 					on:click={() => setScope('verses')}
 				>
 					Verses
 				</button>
 				<button
-					class="px-[12px] py-[5px] text-[11px] font-medium tracking-[0.05em] rounded-r-[3px] transition-colors duration-fast
-						{scope === 'notes'
-						? 'text-foreground border-b-2 border-accent'
+					class="scope-btn flex-1 transition-colors duration-fast {scope === 'notes'
+						? 'text-foreground'
 						: 'text-subtle hover:text-foreground'}"
+					role="tab"
+					aria-selected={scope === 'notes'}
 					on:click={() => setScope('notes')}
 				>
 					Notes & Annotations
@@ -988,3 +986,37 @@
 		</div>
 	</div>
 </main>
+
+<style>
+	.scope-tabs {
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.scope-btn {
+		font-size: 11px;
+		font-weight: 500;
+		font-family: var(--font-ui);
+		letter-spacing: 0.05em;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 6px 12px 9px;
+	}
+
+	.scope-slider {
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 50%;
+		height: 2px;
+		background: var(--color-accent);
+		transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		pointer-events: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.scope-slider {
+			transition: none;
+		}
+	}
+</style>
