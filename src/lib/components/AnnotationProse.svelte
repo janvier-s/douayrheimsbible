@@ -164,7 +164,6 @@
 
 	.annotation-prose :global(sc) {
 		font-variant: small-caps;
-		text-transform: lowercase;
 	}
 
 	/* Notes list */
