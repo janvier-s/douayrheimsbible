@@ -46,6 +46,7 @@
 	let crossScopeVerseResults: TextResultGroup[] = [];
 	let crossScopeNoteResults: NoteResult[] = [];
 	let queryTokens: string[] = [];
+	let crossScopeTotal = 0;
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
@@ -83,7 +84,13 @@
 
 	$: crossScopeTeaser =
 		searched && !loading && mode === 'text'
-			? computeCrossScope(queryTokens, scope, crossScopeVerseResults, crossScopeNoteResults)
+			? computeCrossScope(
+					queryTokens,
+					scope,
+					crossScopeVerseResults,
+					crossScopeNoteResults,
+					crossScopeTotal
+				)
 			: null;
 
 	// Keep TopBar nav button in sync with the first result's book/chapter
@@ -120,6 +127,11 @@
 			scope = data.scope;
 			results = [];
 			textResults = [];
+			noteResults = [];
+			crossScopeVerseResults = [];
+			crossScopeNoteResults = [];
+			queryTokens = [];
+			crossScopeTotal = 0;
 			searched = false;
 			loading = false;
 			textLimit = 100;
@@ -142,6 +154,7 @@
 				crossScopeVerseResults = [];
 				crossScopeNoteResults = [];
 				queryTokens = [];
+				crossScopeTotal = 0;
 				searched = false;
 				stopWordWarning = false;
 			}
@@ -230,6 +243,7 @@
 			crossScopeVerseResults = [];
 			crossScopeNoteResults = [];
 			queryTokens = [];
+			crossScopeTotal = 0;
 			searched = true;
 			loading = false;
 			return;
@@ -255,6 +269,7 @@
 				textTotal = verseTotal;
 				crossScopeNoteResults = await hydrateNoteResults(noteRaw, qt, fetch);
 				crossScopeVerseResults = [];
+				crossScopeTotal = noteTotal;
 			} else {
 				noteResults = await hydrateNoteResults(noteRaw, qt, fetch);
 				textResults = [];
@@ -262,6 +277,7 @@
 				const vsGroups = buildTextResultGroups(verseRaw);
 				crossScopeVerseResults = await hydrateResultGroups(vsGroups, qt, fetch);
 				crossScopeNoteResults = [];
+				crossScopeTotal = verseTotal;
 			}
 
 			if (gen !== searchGeneration) return;
@@ -274,6 +290,7 @@
 			crossScopeVerseResults = [];
 			crossScopeNoteResults = [];
 			queryTokens = [];
+			crossScopeTotal = 0;
 			searched = true;
 		}
 		loading = false;
@@ -299,6 +316,7 @@
 		crossScopeVerseResults = [];
 		crossScopeNoteResults = [];
 		queryTokens = [];
+		crossScopeTotal = 0;
 		searched = false;
 		stopWordWarning = false;
 		updateUrl(query);
@@ -454,7 +472,8 @@
 		tokens: string[],
 		curScope: SearchScope,
 		verseGroups: TextResultGroup[],
-		noteList: NoteResult[]
+		noteList: NoteResult[],
+		total: number
 	): { label: string; count: number; targetScope: SearchScope } | null {
 		const nonStop = tokens.filter((t) => !isStopWord(t));
 		if (nonStop.length === 0) return null;
@@ -462,8 +481,7 @@
 		const threshold = nonStop.length + 3;
 
 		if (curScope === 'verses') {
-			const count = noteList.length;
-			if (count === 0) return null;
+			if (noteList.length === 0) return null;
 			if (multiWord) {
 				const hasMatch = noteList.some((n) => {
 					const text = [n.title ?? '', n.noteText, ...(n.subNotes?.map((s) => s.text) ?? [])].join(
@@ -473,17 +491,16 @@
 				});
 				if (!hasMatch) return null;
 			}
-			return { label: 'annotations', count, targetScope: 'notes' };
+			return { label: 'annotations', count: total, targetScope: 'notes' };
 		} else {
-			const count = verseGroups.reduce((n, g) => n + g.verses.length, 0);
-			if (count === 0) return null;
+			if (verseGroups.length === 0) return null;
 			if (multiWord) {
 				const hasMatch = verseGroups.some((g) =>
 					g.verses.some((v) => phraseProximity(v.text, nonStop) <= threshold)
 				);
 				if (!hasMatch) return null;
 			}
-			return { label: 'verses', count, targetScope: 'verses' };
+			return { label: 'verses', count: total, targetScope: 'verses' };
 		}
 	}
 </script>
