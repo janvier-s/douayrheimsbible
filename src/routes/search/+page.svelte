@@ -81,6 +81,11 @@
 		textResults.length === 0 &&
 		noteResults.length === 0;
 
+	$: crossScopeTeaser =
+		searched && !loading && mode === 'text'
+			? computeCrossScope(queryTokens, scope, crossScopeVerseResults, crossScopeNoteResults)
+			: null;
+
 	// Keep TopBar nav button in sync with the first result's book/chapter
 	$: navOverride.set(
 		results.length > 0
@@ -444,6 +449,43 @@
 	function highlightSearchVerse(text: string, queryTokens: string[]): string {
 		return applyHighlights(text, queryTokens, 'search-highlight', 'search-highlight-muted', true);
 	}
+
+	function computeCrossScope(
+		tokens: string[],
+		curScope: SearchScope,
+		verseGroups: TextResultGroup[],
+		noteList: NoteResult[]
+	): { label: string; count: number; targetScope: SearchScope } | null {
+		const nonStop = tokens.filter((t) => !isStopWord(t));
+		if (nonStop.length === 0) return null;
+		const multiWord = nonStop.length >= 2;
+		const threshold = nonStop.length + 3;
+
+		if (curScope === 'verses') {
+			const count = noteList.length;
+			if (count === 0) return null;
+			if (multiWord) {
+				const hasMatch = noteList.some((n) => {
+					const text = [n.title ?? '', n.noteText, ...(n.subNotes?.map((s) => s.text) ?? [])].join(
+						' '
+					);
+					return phraseProximity(text, nonStop) <= threshold;
+				});
+				if (!hasMatch) return null;
+			}
+			return { label: 'annotations', count, targetScope: 'notes' };
+		} else {
+			const count = verseGroups.reduce((n, g) => n + g.verses.length, 0);
+			if (count === 0) return null;
+			if (multiWord) {
+				const hasMatch = verseGroups.some((g) =>
+					g.verses.some((v) => phraseProximity(v.text, nonStop) <= threshold)
+				);
+				if (!hasMatch) return null;
+			}
+			return { label: 'verses', count, targetScope: 'verses' };
+		}
+	}
 </script>
 
 <svelte:head>
@@ -596,6 +638,21 @@
 			<!-- Loading -->
 			{#if loading}
 				<p class="text-subtle text-[13px] text-center">Searching...</p>
+			{/if}
+
+			<!-- Cross-scope teaser -->
+			{#if crossScopeTeaser && (textResults.length > 0 || noteResults.length > 0)}
+				<button
+					class="block w-full text-left mb-[16px] font-ui text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
+					on:click={() => {
+						if (crossScopeTeaser) setScope(crossScopeTeaser.targetScope);
+					}}
+				>
+					<span class="border-b border-dashed border-current">
+						"{query}" is also found in {crossScopeTeaser.count} matching {crossScopeTeaser.label}
+					</span>
+					<span class="ml-[4px]">→</span>
+				</button>
 			{/if}
 
 			<!-- No results (verse mode) -->
