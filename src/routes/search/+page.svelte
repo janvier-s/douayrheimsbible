@@ -521,11 +521,11 @@
 	<!-- GPU-composited wrapper: slides down in hero state, no layout reflow -->
 	<div
 		class="relative"
-		style="transform: translateY({isHero
-			? 'clamp(40px, 12vh, 120px)'
-			: '0px'}); transition: transform {reducedMotion
+		style="transform: {isHero
+			? 'translateY(clamp(40px, 12vh, 120px))'
+			: 'none'}; transition: transform {reducedMotion
 			? '0ms'
-			: '260ms'} cubic-bezier(0.33,1,0.68,1); will-change: transform;"
+			: '260ms'} cubic-bezier(0.33,1,0.68,1); {isHero ? 'will-change: transform;' : ''}"
 	>
 		<!-- Heading — absolutely positioned above wrapper, zero layout contribution -->
 		{#if isHero}
