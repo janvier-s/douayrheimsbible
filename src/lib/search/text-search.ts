@@ -1,5 +1,5 @@
 import MiniSearch from 'minisearch';
-import { searchTokenizer, processTerm } from './normalize';
+import { searchTokenizer, processTerm, stripHtml } from './normalize';
 import { expandTokens, expandTokenGroups, isAllStopWords } from './expand-query';
 import { tokenize } from './normalize';
 import { loadBook, getChapter } from '$lib/data/loader';
@@ -217,6 +217,56 @@ export function buildTextResultGroups(
 	return groups;
 }
 
+/**
+ * Check if query tokens appear consecutively in text (phrase match).
+ * Returns a proximity score: lower = better (0 = exact phrase match).
+ * Returns Infinity if tokens don't all appear.
+ */
+function phraseProximity(text: string, queryTokens: string[]): number {
+	if (queryTokens.length <= 1) return 0;
+
+	const stripped = stripHtml(text).toLowerCase();
+	const words = stripped.match(/[a-z]+(?:-[a-z]+)*/g);
+	if (!words) return Infinity;
+
+	// Normalize words the same way as tokenizer (strip hyphens)
+	const normalized = words.map((w) => w.replace(/-/g, ''));
+
+	// Find all positions of each query token
+	const positions: number[][] = queryTokens.map((token) => {
+		const pos: number[] = [];
+		for (let i = 0; i < normalized.length; i++) {
+			if (normalized[i] === token) pos.push(i);
+		}
+		return pos;
+	});
+
+	// If any token is missing, no proximity
+	if (positions.some((p) => p.length === 0)) return Infinity;
+
+	// Find the minimum span covering all query tokens in order
+	let bestSpan = Infinity;
+	for (const startPos of positions[0]) {
+		let pos = startPos;
+		let valid = true;
+		for (let t = 1; t < positions.length; t++) {
+			// Find the next occurrence of token t after current position
+			const nextPos = positions[t].find((p) => p > pos);
+			if (nextPos === undefined) {
+				valid = false;
+				break;
+			}
+			pos = nextPos;
+		}
+		if (valid) {
+			const span = pos - startPos;
+			if (span < bestSpan) bestSpan = span;
+		}
+	}
+
+	return bestSpan;
+}
+
 export async function hydrateResultGroups(
 	groups: Omit<TextResultGroup, 'verses' | 'queryTokens'>[],
 	queryTokens: string[],
@@ -237,9 +287,24 @@ export async function hydrateResultGroups(
 			.filter((v): v is Verse => v !== undefined);
 
 		if (verses.length > 0) {
+			// Re-rank verses within group by phrase proximity
+			// Verses where query tokens appear closer together rank higher
+			verses.sort((a, b) => {
+				const proxA = phraseProximity(a.text, queryTokens);
+				const proxB = phraseProximity(b.text, queryTokens);
+				return proxA - proxB; // lower proximity = better match
+			});
+
 			hydrated.push({ ...group, verses, queryTokens });
 		}
 	}
+
+	// Also re-rank groups: groups containing a phrase match should come first
+	hydrated.sort((a, b) => {
+		const bestA = Math.min(...a.verses.map((v) => phraseProximity(v.text, queryTokens)));
+		const bestB = Math.min(...b.verses.map((v) => phraseProximity(v.text, queryTokens)));
+		return bestA - bestB;
+	});
 
 	return hydrated;
 }
