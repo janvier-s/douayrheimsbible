@@ -76,9 +76,9 @@
 		if (isStudy) {
 			// Render <na>[N]</na> as clickable accent superscript
 			t = t.replace(
-				/<na>(\[(\d+)\])<\/na>/g,
-				(_, full, n) =>
-					`<button class="study-marker" data-summary-note="${n}" aria-label="Summary note ${n}">${full}</button>`
+				/<na>\[(\d+)\]<\/na>/g,
+				(_, n) =>
+					`<button class="study-marker" data-summary-note="${n}" aria-label="Summary note ${n}">${n}</button>`
 			);
 		} else {
 			// Strip <na> tags and content in reading mode

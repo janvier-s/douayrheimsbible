@@ -195,6 +195,5 @@
 	}
 
 	.note-text {
-		color: var(--color-subtle);
 	}
 </style>

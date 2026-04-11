@@ -9,11 +9,13 @@
 
 	function renderParagraphs(raw: string): string[] {
 		return raw.split('\n\n').map((p) =>
-			p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
-				// Normalise [1] → 1 for numeric markers; leave ◦ and others as-is
-				const display = raw.replace(/^\[(\d+)\]$/, '$1');
-				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
-			})
+			p
+				.trim()
+				.replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
+					// Normalise [1] → 1 for numeric markers; leave ◦ and others as-is
+					const display = raw.replace(/^\[(\d+)\]$/, '$1');
+					return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
+				})
 		);
 	}
 
@@ -107,6 +109,7 @@
 		<ul class="ann-notes">
 			{#each notes as note}
 				<li class="ann-note-row">
+					<span class="ann-note-marker">{note.marker}</span>
 					<span class="ann-note-text">{@html note.text}</span>
 				</li>
 			{/each}
@@ -161,6 +164,11 @@
 		font-style: italic;
 	}
 
+	.annotation-prose :global(sc) {
+		font-variant: small-caps;
+		text-transform: lowercase;
+	}
+
 	/* Notes list */
 	.ann-notes {
 		list-style: none;
@@ -179,11 +187,18 @@
 		line-height: 1.45;
 	}
 
+	.ann-note-marker {
+		font-family: var(--font-ui);
+		font-size: 10px;
+		font-weight: 600;
+		color: var(--color-accent-text);
+		flex-shrink: 0;
+		min-width: 18px;
+	}
+
 	.ann-note-text {
 		font-family: var(--font-ui);
-		font-size: 13px;
-		color: var(--color-subtle);
-		font-style: italic;
+		font-size: 15px;
 	}
 
 	.ann-note-text :global(i) {
