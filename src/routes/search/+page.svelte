@@ -22,7 +22,7 @@
 	} from '$lib/search/text-search';
 	import { isAllStopWords, isStopWord } from '$lib/search/expand-query';
 	import { tokenize, foldLigatures } from '$lib/search/normalize';
-	import ModeToggle from '$lib/components/ModeToggle.svelte';
+	import { tick } from 'svelte';
 
 	export let data: { query: string; mode: SearchMode; scope: SearchScope };
 
@@ -51,6 +51,38 @@
 	let crossScopeTotal = 0;
 
 	$: verseResultCount = results.reduce((n, g) => n + g.verses.length, 0);
+
+	// ── Sliding pill (mode toggle) ──────────────────────────────────────
+	let modeToggleEl: HTMLElement;
+	let modePillLeft = 0;
+	let modePillWidth = 0;
+
+	async function measureModePill(m: SearchMode) {
+		await tick();
+		if (!modeToggleEl) return;
+		const btns = modeToggleEl.querySelectorAll<HTMLElement>('.search-mode-btn');
+		const btn = btns[m === 'verse' ? 0 : 1];
+		if (!btn) return;
+		modePillLeft = btn.offsetLeft;
+		modePillWidth = btn.offsetWidth;
+	}
+	$: if (modeToggleEl) measureModePill(mode);
+
+	// ── Sliding underline (scope tabs) ─────────────────────────────────
+	let scopeTabsEl: HTMLElement;
+	let scopeSliderLeft = 0;
+	let scopeSliderWidth = 0;
+
+	async function measureScopeSlider(s: SearchScope) {
+		await tick();
+		if (!scopeTabsEl) return;
+		const btns = scopeTabsEl.querySelectorAll<HTMLElement>('.scope-btn');
+		const btn = btns[s === 'verses' ? 0 : 1];
+		if (!btn) return;
+		scopeSliderLeft = btn.offsetLeft;
+		scopeSliderWidth = btn.offsetWidth;
+	}
+	$: if (scopeTabsEl) measureScopeSlider(scope);
 	let notAReferenceQuery = false;
 	let textSuggestionVerses = 0;
 	let textSuggestionNotes = 0;
@@ -637,43 +669,64 @@
 
 		<!-- Mode toggle -->
 		<div class="flex justify-center mb-md -mt-[8px]">
-			<ModeToggle
-				items={[
-					{ key: 'verse', label: 'Verse Search' },
-					{ key: 'text', label: 'Text Search' }
-				]}
-				activeIndex={mode === 'verse' ? 0 : 1}
-				pendingIndex={-1}
-				on:select={(e) => setMode(e.detail.key as SearchMode)}
-			/>
+			<div
+				bind:this={modeToggleEl}
+				class="relative flex rounded-[4px] overflow-hidden border border-border"
+				style="background: color-mix(in srgb, var(--color-border) 35%, transparent)"
+			>
+				{#if modePillWidth > 0}
+					<div
+						class="search-mode-pill"
+						style="transform: translateX({modePillLeft}px); width: {modePillWidth}px;"
+					></div>
+				{/if}
+				<button
+					class="search-mode-btn relative z-10 px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] font-ui transition-colors duration-fast
+						{mode === 'verse' ? 'text-white' : 'text-subtle hover:text-foreground'}"
+					on:click={() => setMode('verse')}
+				>
+					Verse Search
+				</button>
+				<button
+					class="search-mode-btn relative z-10 px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] font-ui transition-colors duration-fast
+						{mode === 'text' ? 'text-white' : 'text-subtle hover:text-foreground'}"
+					on:click={() => setMode('text')}
+				>
+					Text Search
+				</button>
+			</div>
 		</div>
 
 		{#if mode === 'text'}
-			<div class="scope-tabs relative flex mb-md -mt-[4px]" role="tablist">
-				<div
-					class="scope-slider"
-					style="transform: translateX({scope === 'notes' ? '100%' : '0%'})"
-				></div>
-				<button
-					class="scope-btn flex-1 transition-colors duration-fast {scope === 'verses'
-						? 'text-foreground'
-						: 'text-subtle hover:text-foreground'}"
-					role="tab"
-					aria-selected={scope === 'verses'}
-					on:click={() => setScope('verses')}
-				>
-					Verses
-				</button>
-				<button
-					class="scope-btn flex-1 transition-colors duration-fast {scope === 'notes'
-						? 'text-foreground'
-						: 'text-subtle hover:text-foreground'}"
-					role="tab"
-					aria-selected={scope === 'notes'}
-					on:click={() => setScope('notes')}
-				>
-					Notes & Annotations
-				</button>
+			<div class="flex justify-center mb-md -mt-[4px]">
+				<div bind:this={scopeTabsEl} class="scope-tabs relative flex" role="tablist">
+					{#if scopeSliderWidth > 0}
+						<div
+							class="scope-slider"
+							style="transform: translateX({scopeSliderLeft}px); width: {scopeSliderWidth}px;"
+						></div>
+					{/if}
+					<button
+						class="scope-btn transition-colors duration-fast {scope === 'verses'
+							? 'text-foreground'
+							: 'text-subtle hover:text-foreground'}"
+						role="tab"
+						aria-selected={scope === 'verses'}
+						on:click={() => setScope('verses')}
+					>
+						Verses
+					</button>
+					<button
+						class="scope-btn transition-colors duration-fast {scope === 'notes'
+							? 'text-foreground'
+							: 'text-subtle hover:text-foreground'}"
+						role="tab"
+						aria-selected={scope === 'notes'}
+						on:click={() => setScope('notes')}
+					>
+						Notes & Annotations
+					</button>
+				</div>
 			</div>
 		{/if}
 
@@ -988,6 +1041,26 @@
 </main>
 
 <style>
+	/* ── Mode toggle pill ─────────────────────────────────────────────── */
+	.search-mode-pill {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		background: var(--color-interactive);
+		transition:
+			transform 220ms cubic-bezier(0.34, 1.06, 0.64, 1),
+			width 220ms cubic-bezier(0.34, 1.06, 0.64, 1);
+		pointer-events: none;
+	}
+
+	.search-mode-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	/* ── Scope tab underline ──────────────────────────────────────────── */
 	.scope-tabs {
 		border-bottom: 1px solid var(--color-border);
 	}
@@ -1000,21 +1073,24 @@
 		background: none;
 		border: none;
 		cursor: pointer;
-		padding: 6px 12px 9px;
+		padding: 5px 12px 9px;
+		white-space: nowrap;
 	}
 
 	.scope-slider {
 		position: absolute;
 		bottom: -1px;
 		left: 0;
-		width: 50%;
 		height: 2px;
 		background: var(--color-accent);
-		transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition:
+			transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+			width 200ms cubic-bezier(0.4, 0, 0.2, 1);
 		pointer-events: none;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
+		.search-mode-pill,
 		.scope-slider {
 			transition: none;
 		}
