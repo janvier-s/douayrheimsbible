@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { getBookBySlug, getHebPsalmNum } from '$lib/data/books';
+	import { ALL_BOOKS, getBookBySlug, getHebPsalmNum } from '$lib/data/books';
 	import { slide, fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
@@ -40,6 +40,17 @@
 
 	$: navLabel =
 		bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026';
+
+	$: bookIndex = bookMeta ? ALL_BOOKS.findIndex((b) => b.slug === bookMeta!.slug) : -1;
+	$: prevBook = isChapterPage && bookIndex > 0 ? ALL_BOOKS[bookIndex - 1] : null;
+	$: nextBook =
+		isChapterPage && bookIndex >= 0 && bookIndex < ALL_BOOKS.length - 1
+			? ALL_BOOKS[bookIndex + 1]
+			: null;
+
+	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
+		return $prefs.modernBookNames ? b.modernName : b.odrName;
+	}
 
 	function closeAll() {
 		navOpen = false;
@@ -206,10 +217,32 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav -->
+		<!-- Center: chapter nav with book chevrons -->
 		<div
-			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center"
+			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center flex items-center gap-[8px]"
 		>
+			{#if prevBook}
+				<a
+					href="/odr/{prevBook.slug}/1"
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					title={bookNavLabel(prevBook)}
+					aria-label="Previous book: {bookNavLabel(prevBook)}"
+				>
+					<svg
+						width="15"
+						height="15"
+						viewBox="0 0 15 15"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.6"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<polyline points="9.5,2.5 4.5,7.5 9.5,12.5" />
+					</svg>
+				</a>
+			{/if}
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
@@ -227,6 +260,28 @@
 					>{navOpen ? '▲' : '▼'}</span
 				>
 			</button>
+			{#if nextBook}
+				<a
+					href="/odr/{nextBook.slug}/1"
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					title={bookNavLabel(nextBook)}
+					aria-label="Next book: {bookNavLabel(nextBook)}"
+				>
+					<svg
+						width="15"
+						height="15"
+						viewBox="0 0 15 15"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.6"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<polyline points="5.5,2.5 10.5,7.5 5.5,12.5" />
+					</svg>
+				</a>
+			{/if}
 		</div>
 
 		<!-- Right: reading prefs — desktop only -->

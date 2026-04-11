@@ -102,118 +102,40 @@
 	}
 </script>
 
-{#if showNav}
+{#if showNav && (prevNav || nextNav)}
 	<nav class="flex justify-between items-center mb-lg font-ui">
-		<div class="flex items-center gap-[14px]">
-			{#if bookIndex > 0}
-				<a
-					href="{routeBase}/{ALL_BOOKS[bookIndex - 1].slug}/1"
-					class="text-subtle hover:text-accent transition-colors duration-fast"
-					title={bookLabel(ALL_BOOKS[bookIndex - 1])}
-					aria-label="Previous book: {bookLabel(ALL_BOOKS[bookIndex - 1])}"
-				>
-					<svg
-						width="15"
-						height="15"
-						viewBox="0 0 15 15"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<polyline points="9.5,2.5 4.5,7.5 9.5,12.5" />
-					</svg>
-				</a>
-			{:else}
-				<span class="opacity-20 cursor-not-allowed" aria-hidden="true">
-					<svg
-						width="15"
-						height="15"
-						viewBox="0 0 15 15"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					>
-						<polyline points="9.5,2.5 4.5,7.5 9.5,12.5" />
-					</svg>
+		{#if prevNav}
+			<a
+				href="{routeBase}/{prevNav.slug}/{prevNav.ch}"
+				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
+			>
+				<span class="text-[16px] leading-none">‹</span>
+				<span class="flex flex-col leading-tight">
+					<span>{prevNav.label}</span>
+					{#if prevNav.chLabel}
+						<span class="text-[10px] normal-case tracking-normal opacity-70">{prevNav.chLabel}</span
+						>
+					{/if}
 				</span>
-			{/if}
-			{#if prevNav}
-				<a
-					href="{routeBase}/{prevNav.slug}/{prevNav.ch}"
-					class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
-				>
-					<span class="text-[16px] leading-none">‹</span>
-					<span class="flex flex-col leading-tight">
-						<span>{prevNav.label}</span>
-						{#if prevNav.chLabel}
-							<span class="text-[10px] normal-case tracking-normal opacity-70"
-								>{prevNav.chLabel}</span
-							>
-						{/if}
-					</span>
-				</a>
-			{/if}
-		</div>
-		<div class="flex items-center gap-[14px]">
-			{#if nextNav}
-				<a
-					href="{routeBase}/{nextNav.slug}/{nextNav.ch}"
-					class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
-				>
-					<span class="flex flex-col items-end leading-tight">
-						<span>{nextNav.label}</span>
-						{#if nextNav.chLabel}
-							<span class="text-[10px] normal-case tracking-normal opacity-70"
-								>{nextNav.chLabel}</span
-							>
-						{/if}
-					</span>
-					<span class="text-[16px] leading-none">›</span>
-				</a>
-			{/if}
-			{#if bookIndex < ALL_BOOKS.length - 1}
-				<a
-					href="{routeBase}/{ALL_BOOKS[bookIndex + 1].slug}/1"
-					class="text-subtle hover:text-accent transition-colors duration-fast"
-					title={bookLabel(ALL_BOOKS[bookIndex + 1])}
-					aria-label="Next book: {bookLabel(ALL_BOOKS[bookIndex + 1])}"
-				>
-					<svg
-						width="15"
-						height="15"
-						viewBox="0 0 15 15"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<polyline points="5.5,2.5 10.5,7.5 5.5,12.5" />
-					</svg>
-				</a>
-			{:else}
-				<span class="opacity-20 cursor-not-allowed" aria-hidden="true">
-					<svg
-						width="15"
-						height="15"
-						viewBox="0 0 15 15"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					>
-						<polyline points="5.5,2.5 10.5,7.5 5.5,12.5" />
-					</svg>
+			</a>
+		{:else}
+			<span></span>
+		{/if}
+		{#if nextNav}
+			<a
+				href="{routeBase}/{nextNav.slug}/{nextNav.ch}"
+				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[12px] uppercase tracking-[0.15em]"
+			>
+				<span class="flex flex-col items-end leading-tight">
+					<span>{nextNav.label}</span>
+					{#if nextNav.chLabel}
+						<span class="text-[10px] normal-case tracking-normal opacity-70">{nextNav.chLabel}</span
+						>
+					{/if}
 				</span>
-			{/if}
-		</div>
+				<span class="text-[16px] leading-none">›</span>
+			</a>
+		{/if}
 	</nav>
 {/if}
 
