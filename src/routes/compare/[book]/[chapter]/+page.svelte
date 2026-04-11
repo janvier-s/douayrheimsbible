@@ -231,7 +231,7 @@
 			>
 				{#each displayedCols as t, colIdx (t.id)}
 					<div
-						class="px-[10px] py-[10px] bg-panel
+						class="px-[20px] py-[14px] max-md:px-[10px] max-md:py-[10px] bg-panel
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 					>
 						{#if t.id === 'odr'}
@@ -252,7 +252,7 @@
 			{#each chapter.verses as v (v.verse)}
 				{#each displayedCols as t, colIdx (t.id)}
 					<div
-						class="px-[5px] py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
+						class="px-[16px] py-[12px] max-md:px-[5px] max-md:py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 						class:text-justify={$prefs.justifiedText}
 					>

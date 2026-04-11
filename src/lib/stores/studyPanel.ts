@@ -17,7 +17,7 @@ export interface StudyPanelState {
 }
 
 const defaults: StudyPanelState = {
-	activeTab: 'intro',
+	activeTab: 'commentary',
 	activeIntroIndex: 0,
 	activeVerse: null,
 	scrollTrigger: null
