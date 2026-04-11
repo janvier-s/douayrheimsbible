@@ -25,6 +25,11 @@ export interface TextResultGroup {
 	queryTokens: string[];
 }
 
+export interface NoteSubNote {
+	marker: string | number;
+	text: string;
+}
+
 export interface NoteResult {
 	/** e.g. "Matthew 1:3" */
 	reference: string;
@@ -37,6 +42,8 @@ export interface NoteResult {
 	title?: string;
 	/** The note/annotation text that matched the search */
 	noteText: string;
+	/** Sub-notes with markers (for annotations) */
+	subNotes?: NoteSubNote[];
 	/** The parent verse text (shown for inline notes) */
 	verseText?: string;
 	queryTokens: string[];
@@ -409,12 +416,10 @@ export async function hydrateNoteResults(
 			const ann = annData.annotations[parsed.index];
 			if (!ann) continue;
 
-			// Build full annotation text (title + text + sub-notes)
-			const parts: string[] = [];
-			if (ann.text) parts.push(ann.text);
+			const subNotes: { marker: number; text: string }[] = [];
 			if (ann.notes) {
 				for (const n of ann.notes) {
-					if (n.text) parts.push(n.text);
+					if (n.text) subNotes.push({ marker: n.marker, text: n.text });
 				}
 			}
 
@@ -425,7 +430,8 @@ export async function hydrateNoteResults(
 				verse: parsed.verse || ann.verse,
 				type: 'annotation',
 				title: ann.title,
-				noteText: parts.join(' '),
+				noteText: ann.text ?? '',
+				subNotes: subNotes.length > 0 ? subNotes : undefined,
 				queryTokens
 			});
 		}

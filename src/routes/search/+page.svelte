@@ -18,7 +18,7 @@
 		type TextResultGroup,
 		type NoteResult
 	} from '$lib/search/text-search';
-	import { isAllStopWords } from '$lib/search/expand-query';
+	import { isAllStopWords, isStopWord } from '$lib/search/expand-query';
 	import { tokenize } from '$lib/search/normalize';
 
 	export let data: { query: string; mode: SearchMode; scope: SearchScope };
@@ -290,8 +290,11 @@
 			t = t.replace(/<\/?sc>/g, '');
 		}
 
-		// Strip all remaining tags except <i> / </i>
-		t = t.replace(/<(?!\/?i\b)[^>]*>/gi, '');
+		// Convert <mn>[N]</mn> to styled superscript markers
+		t = t.replace(/<mn>\[?([^\]<]+)\]?<\/mn>/g, '<sup class="search-mn">$1</sup>');
+
+		// Strip all remaining tags except <i> and <sup>
+		t = t.replace(/<(?!\/?i\b)(?!\/?sup\b)[^>]*>/gi, '');
 
 		if (showSmallCaps) {
 			t = t.replace(/\uE001(.*?)\uE002/g, '<span class="sc">$1</span>');
@@ -300,21 +303,111 @@
 		return t.replace(/  +/g, ' ').trim();
 	}
 
-	function highlightSearchVerse(text: string, queryTokens: string[]): string {
-		let t = renderSearchVerse(text);
+	/**
+	 * Highlight query tokens, giving stop words a muted class unless they are
+	 * directly adjacent (only whitespace between) to a non-stop-word highlight.
+	 * Collects all match positions first, resolves adjacency, then applies.
+	 */
+	function applyHighlights(
+		text: string,
+		queryTokens: string[],
+		cls: string,
+		mutedCls: string,
+		stripVerseTags: boolean
+	): string {
+		let t = stripVerseTags ? renderSearchVerse(text) : text;
 		if (!queryTokens.length) return t;
+
 		const escaped = queryTokens.map((tok) => tok.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
 		escaped.sort((a, b) => b.length - a.length);
 		const pattern = new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi');
-		t = t.replace(/(<[^>]+>)|(\b\w+\b)/g, (match, tag, word) => {
-			if (tag) return tag;
-			if (word && pattern.test(word)) {
-				pattern.lastIndex = 0;
-				return `<mark class="search-highlight">${word}</mark>`;
+
+		// Collect all match positions with their word boundaries
+		interface HitInfo {
+			start: number;
+			end: number;
+			word: string;
+			stop: boolean;
+		}
+		const hits: HitInfo[] = [];
+
+		// For verse text, skip HTML tags
+		if (stripVerseTags) {
+			const wordRe = /(<[^>]+>)|(\b\w+\b)/g;
+			let m: RegExpExecArray | null;
+			while ((m = wordRe.exec(t)) !== null) {
+				if (m[1]) continue; // skip tags
+				const word = m[2];
+				if (word && pattern.test(word)) {
+					pattern.lastIndex = 0;
+					hits.push({
+						start: m.index,
+						end: m.index + word.length,
+						word,
+						stop: isStopWord(word.toLowerCase())
+					});
+				}
 			}
-			return match;
-		});
+		} else {
+			let m: RegExpExecArray | null;
+			while ((m = pattern.exec(t)) !== null) {
+				const word = m[1];
+				hits.push({
+					start: m.index,
+					end: m.index + word.length,
+					word,
+					stop: isStopWord(word.toLowerCase())
+				});
+			}
+		}
+
+		if (!hits.length) return t;
+
+		// Determine which stop-word hits are adjacent to a non-stop hit.
+		// "Adjacent" = only whitespace between the end of one hit and start of the next.
+		const promoted = new Set<number>();
+		for (let i = 0; i < hits.length; i++) {
+			if (!hits[i].stop) {
+				promoted.add(i);
+				continue;
+			}
+			const between = (a: number, b: number) => /^\s*$/.test(t.slice(a, b));
+			if (i > 0 && !hits[i - 1].stop && between(hits[i - 1].end, hits[i].start)) {
+				promoted.add(i);
+			} else if (
+				i < hits.length - 1 &&
+				!hits[i + 1].stop &&
+				between(hits[i].end, hits[i + 1].start)
+			) {
+				promoted.add(i);
+			}
+		}
+
+		// Apply highlights from end to start so indices stay valid
+		for (let i = hits.length - 1; i >= 0; i--) {
+			const h = hits[i];
+			const c = h.stop && !promoted.has(i) ? mutedCls : cls;
+			t = t.slice(0, h.start) + `<mark class="${c}">${h.word}</mark>` + t.slice(h.end);
+		}
+
 		return t;
+	}
+
+	function highlightNoteTitle(text: string, queryTokens: string[]): string {
+		let t = applyHighlights(
+			text,
+			queryTokens,
+			'search-highlight-title',
+			'search-highlight-title-muted',
+			false
+		);
+		// Merge adjacent full highlights into a single span
+		t = t.replace(/<\/mark>\s+<mark class="search-highlight-title">/g, ' ');
+		return t;
+	}
+
+	function highlightSearchVerse(text: string, queryTokens: string[]): string {
+		return applyHighlights(text, queryTokens, 'search-highlight', 'search-highlight-muted', true);
 	}
 </script>
 
@@ -476,10 +569,10 @@
 					class="text-subtle text-[14px] text-center"
 					in:fade={{ duration: reducedMotion ? 0 : 160 }}
 				>
-					No referencesThat verse is not found in the Original Douay-Rheims Bible.<br />Try a verse
-					like
+					That verse is not found in the Original Douay-Rheims Bible.<br />Try a verse, for example:
 					<button
-						class="text-subtle hover:text-foreground hover:underline"
+						class="hover:underline"
+						style="color: var(--color-accent-text)"
 						on:click={() => onExampleClick('James 2:24')}>James 2:24</button
 					>
 				</p>
@@ -618,16 +711,29 @@
 								</span>
 							</div>
 							{#if note.title}
-								<p class="font-ui text-[13px] font-medium text-foreground mb-[4px]">
-									{note.title}
+								<p class="font-ui text-[15px] font-medium italic text-foreground mb-[4px]">
+									{@html highlightNoteTitle(note.title, note.queryTokens)}
 								</p>
 							{/if}
 							<p
-								class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
+								class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] text-foreground"
 								class:text-justify={$prefs.justifiedText}
 							>
 								{@html highlightSearchVerse(note.noteText, note.queryTokens)}
 							</p>
+							{#if note.subNotes && note.subNotes.length > 0}
+								<div class="mt-[10px] space-y-[2px] border-l-2 border-border pl-[12px]">
+									{#each note.subNotes as sub}
+										<p class="font-ui text-[13px] leading-[1.5] text-subtle font-light">
+											<span
+												class="text-[9px] font-semibold align-super mr-[1px]"
+												style="color: var(--color-accent-text)">{sub.marker}</span
+											>
+											{@html highlightSearchVerse(sub.text, note.queryTokens)}
+										</p>
+									{/each}
+								</div>
+							{/if}
 							{#if note.type === 'note' && note.verseText}
 								<p
 									class="font-reader text-[length:calc(var(--font-size-reader) * 0.9)] leading-[var(--line-height-reader)] text-subtle mt-[8px] border-l-2 border-border pl-[12px]"
@@ -665,9 +771,10 @@
 					class="text-subtle text-[14px] text-center"
 					in:fade={{ duration: reducedMotion ? 0 : 160 }}
 				>
-					{noResultsMessage}<br />Try different words or use
+					{noResultsMessage}<br />Try different words, for example:
 					<button
-						class="text-subtle hover:text-foreground hover:underline"
+						class="italic hover:underline"
+						style="color: var(--color-accent-text)"
 						on:click={() => onExampleClick(currentExamples[0])}>{currentExamples[0]}</button
 					>
 				</p>

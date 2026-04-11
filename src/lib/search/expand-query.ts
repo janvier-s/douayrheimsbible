@@ -133,6 +133,11 @@ export function expandTokenGroups(tokens: string[]): string[][] {
 	});
 }
 
+/** Returns true if the token is a stop word. */
+export function isStopWord(token: string): boolean {
+	return STOP_WORDS.has(token);
+}
+
 /** Returns true if every token is a stop word (or the array is empty). */
 export function isAllStopWords(tokens: string[]): boolean {
 	return tokens.every((t) => STOP_WORDS.has(t));

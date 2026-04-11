@@ -325,20 +325,42 @@ body {
 	font-variant: small-caps;
 }
 
+.search-mn {
+	font-family: var(--font-ui);
+	font-size: 9px;
+	font-weight: 600;
+	color: var(--color-accent-text);
+	margin: 0 1px;
+}
+
 .search-highlight {
 	background: var(--color-accent);
-	color: var(--color-bg);
+	color: var(--color-text);
 	border-radius: 2px;
-	padding: 0 2px;
+	padding: 2px 4px;
+	font-weight: 600;
 }
 
-[data-theme='dark'] .search-highlight,
-[data-theme='oled'] .search-highlight {
-	color: #000;
+.search-highlight-muted {
+	background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+	color: var(--color-text);
+	border-radius: 2px;
+	padding: 2px 4px;
+	font-weight: 600;
 }
 
-@media (prefers-color-scheme: dark) {
-	[data-theme='auto'] .search-highlight {
-		color: #000;
-	}
+.search-highlight-title {
+	background: var(--color-accent);
+	color: var(--color-text);
+	border-radius: 2px;
+	padding: 2px 2px;
+	font-weight: 500;
+}
+
+.search-highlight-title-muted {
+	background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+	color: var(--color-text);
+	border-radius: 2px;
+	padding: 2px 2px;
+	font-weight: 500;
 }
