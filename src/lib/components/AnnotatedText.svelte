@@ -193,7 +193,4 @@
 		border-radius: 2px;
 		flex-shrink: 0;
 	}
-
-	.note-text {
-	}
 </style>

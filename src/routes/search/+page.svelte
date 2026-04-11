@@ -21,7 +21,6 @@
 	} from '$lib/search/text-search';
 	import { isAllStopWords, isStopWord } from '$lib/search/expand-query';
 	import { tokenize } from '$lib/search/normalize';
-	import type { VerseNote } from '$lib/data/types';
 
 	export let data: { query: string; mode: SearchMode; scope: SearchScope };
 
@@ -52,7 +51,7 @@
 	// Marginal note popover
 	const MN_POPOVER_WIDTH = 300;
 	const MN_GAP = 10;
-	let mnActiveNote: VerseNote | null = null;
+	let mnActiveNote: { label: string; text: string } | null = null;
 	let mnPopoverStyle = '';
 	let mnPopoverAbove = false;
 	let mnHoverTimer: ReturnType<typeof setTimeout> | null = null;
@@ -73,7 +72,7 @@
 		}
 	}
 
-	function handleMnHover(e: Event, notes: VerseNote[]) {
+	function handleMnHover(e: Event, notes: Array<{ label: string; text: string }>) {
 		const el = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
 		if (!el) return;
 		cancelMnDismiss();
@@ -767,12 +766,7 @@
 							</h2>
 							<div class="space-y-[0.7rem]">
 								{#each group.verses as v}
-									<!-- svelte-ignore a11y_no_static_element_interactions -->
-									<div
-										class="relative"
-										on:mouseover={(e) => handleMnHover(e, v.notes ?? [])}
-										on:mouseout={handleMnOut}
-									>
+									<div class="relative">
 										{#if $prefs.showVerseNumbers}
 											<span
 												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
@@ -822,12 +816,7 @@
 							</h2>
 							<div class="space-y-[0.7rem]">
 								{#each group.verses as v}
-									<!-- svelte-ignore a11y_no_static_element_interactions -->
-									<div
-										class="relative"
-										on:mouseover={(e) => handleMnHover(e, v.notes ?? [])}
-										on:mouseout={handleMnOut}
-									>
+									<div class="relative">
 										{#if $prefs.showVerseNumbers}
 											<span
 												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
@@ -892,9 +881,17 @@
 									{@html highlightNoteTitle(note.title, note.queryTokens)}
 								</p>
 							{/if}
+							<!-- svelte-ignore a11y_no_static_element_interactions -->
+							<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 							<p
 								class="font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] text-foreground"
 								class:text-justify={$prefs.justifiedText}
+								on:mouseover={(e) =>
+									handleMnHover(
+										e,
+										(note.subNotes ?? []).map((n) => ({ label: String(n.marker), text: n.text }))
+									)}
+								on:mouseout={handleMnOut}
 							>
 								{@html highlightSearchVerse(note.noteText, note.queryTokens)}
 							</p>
