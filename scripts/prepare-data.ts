@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { buildSearchIndexes } from './build-search-index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '..');
@@ -44,6 +45,7 @@ async function main() {
 	}
 
 	console.log(`\nPrepared ${count} books → ${OUT_DIR}`);
+	await buildSearchIndexes();
 }
 
 main().catch((e) => {

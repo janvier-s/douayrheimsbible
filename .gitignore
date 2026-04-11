@@ -21,3 +21,7 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Search indexes (generated at build time)
+static/data/odr/search-index.json
+static/data/odr/search-notes-index.json
