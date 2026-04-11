@@ -438,5 +438,13 @@ export async function hydrateNoteResults(
 		}
 	}
 
+	// Re-rank by phrase proximity: results where query tokens appear closest
+	// together (or in order) rank higher, matching verse search behaviour.
+	hydrated.sort((a, b) => {
+		const textA = [a.title ?? '', a.noteText, ...(a.subNotes?.map((n) => n.text) ?? [])].join(' ');
+		const textB = [b.title ?? '', b.noteText, ...(b.subNotes?.map((n) => n.text) ?? [])].join(' ');
+		return phraseProximity(textA, queryTokens) - phraseProximity(textB, queryTokens);
+	});
+
 	return hydrated;
 }
