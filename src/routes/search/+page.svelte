@@ -855,7 +855,7 @@
 						{#if groupIdx > 0}
 							<hr class="border-border" />
 						{/if}
-						<section class:pl-[2.5rem]={$prefs.showVerseNumbers}>
+						<section>
 							<h2
 								class="font-ui text-[14px] font-semibold mb-[8px]"
 								style="color: var(--color-accent-text)"
