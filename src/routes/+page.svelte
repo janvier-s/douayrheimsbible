@@ -74,7 +74,7 @@
 </script>
 
 <svelte:head>
-	<title>The Original Douay-Rheims Bible | English Catholic Scripture, 1582–1610</title>
+	<title>The Original Pre-Challoner Douay-Rheims Bible, 1582–1610</title>
 	<meta
 		name="description"
 		content="Read the Original Douay-Rheims Bible online | the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore the original pre-Challoner text."
