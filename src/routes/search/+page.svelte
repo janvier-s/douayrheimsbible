@@ -43,8 +43,8 @@
 	let lastDataScope = data.scope;
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
-	const TEXT_VERSE_EXAMPLES = ['thou art Peter', 'full of grace', 'daily bread'];
-	const TEXT_NOTES_EXAMPLES = ['transubstantiation', 'original sin'];
+	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
+	const TEXT_NOTES_EXAMPLES = ['Transubstantiation', 'Original sin'];
 
 	$: currentExamples =
 		mode === 'verse'
@@ -58,7 +58,7 @@
 			? 'Search for a verse — e.g. Matthew 16:18'
 			: scope === 'notes'
 				? 'Search notes & annotations — e.g. transubstantiation'
-				: 'Search the Bible — e.g. thou art Peter';
+				: 'Search the Bible — e.g. Thou art Peter';
 
 	$: heading = mode === 'verse' ? 'Verse Search' : 'Text Search';
 
