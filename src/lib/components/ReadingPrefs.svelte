@@ -452,6 +452,20 @@
 				/>
 				<span>Italics (OT quotes in NT)</span>
 			</label>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
+					checked={$prefs.expandAmpersand ?? false}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							expandAmpersand: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>&amp; → and</span>
+			</label>
 		</div>
 	{/if}
 </div>

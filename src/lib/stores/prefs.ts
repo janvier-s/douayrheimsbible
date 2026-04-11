@@ -28,6 +28,8 @@ export interface ReadingPrefs {
 	showSmallCaps: boolean;
 	// v10
 	compareFontSize: number;
+	// v11
+	expandAmpersand: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -52,10 +54,11 @@ const DEFAULTS: ReadingPrefs = {
 	syncStudyScroll: true,
 	showItalics: true,
 	showSmallCaps: true,
-	compareFontSize: 13
+	compareFontSize: 13,
+	expandAmpersand: false
 };
 
-const PREFS_VERSION = 10;
+const PREFS_VERSION = 11;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -107,6 +110,10 @@ function loadPrefs(): ReadingPrefs {
 		// v10 migration: add separate compare font size
 		if (!parsed._v || parsed._v < 10) {
 			parsed.compareFontSize = 13;
+		}
+		// v11 migration: add expand ampersand toggle
+		if (!parsed._v || parsed._v < 11) {
+			parsed.expandAmpersand = false;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

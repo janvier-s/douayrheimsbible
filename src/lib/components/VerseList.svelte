@@ -93,9 +93,11 @@
 		isStudy: boolean,
 		showItalics: boolean,
 		verseNum: number,
-		smallCaps: boolean
+		smallCaps: boolean,
+		expandAmpersand: boolean
 	): string {
 		let t = text;
+		if (expandAmpersand) t = t.replace(/&amp;/g, 'and').replace(/&/g, 'and');
 		if (isStudy) {
 			t = renderStudyMarkers(t, verseNum);
 		} else {
@@ -290,6 +292,7 @@
 	$: showItalics = $prefs.showItalics;
 	$: showSmallCaps = $prefs.showSmallCaps ?? true;
 	$: bionic = $prefs.bionicReading && bionicReady;
+	$: expandAmpersand = $prefs.expandAmpersand ?? false;
 </script>
 
 {#if $prefs.paragraphView}
@@ -314,7 +317,15 @@
 						>{v.verse}</sup
 					>
 				{/if}
-				{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse, showSmallCaps)}{' '}
+				{@html renderVerse(
+					v.text,
+					bionic,
+					isStudy,
+					showItalics,
+					v.verse,
+					showSmallCaps,
+					expandAmpersand
+				)}{' '}
 			</span>
 		{/each}
 	</p>
@@ -352,7 +363,15 @@
 					on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 					on:blur={isStudy ? handleMarkerMouseout : undefined}
 				>
-					{@html renderVerse(v.text, bionic, isStudy, showItalics, v.verse, showSmallCaps)}
+					{@html renderVerse(
+						v.text,
+						bionic,
+						isStudy,
+						showItalics,
+						v.verse,
+						showSmallCaps,
+						expandAmpersand
+					)}
 				</p>
 			</li>
 		{/each}
