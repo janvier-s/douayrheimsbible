@@ -207,7 +207,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>When</sc> <cr>[1]</cr> <sc>Jesus</sc> therefore was <na>[2]</na> born in Bethlehem of Juda in the days of Herod the king, behold there came Sages from the East to Jerusalem,",
+          "text": "<sc>When <cr>[1]</cr> Jesus</sc> therefore was <na>[2]</na> born in Bethlehem of Juda in the days of Herod the king, behold there came Sages from the East to Jerusalem,",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -469,7 +469,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Then</sc> <cr>[1]</cr> <na>[2]</na> <sc>Jesus</sc> was led of the Spirit into the desert, to be tempted of the devil.",
+          "text": "<sc>Then <cr>[1]</cr> <na>[2]</na> Jesus</sc> was led of the Spirit into the desert, to be tempted of the devil.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -4702,7 +4702,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <na>[1]</na> <sc>Jesus</sc> answering, spake again in parables to them, saying:",
+          "text": "<sc>And <na>[1]</na> Jesus</sc> answering, spake again in parables to them, saying:",
           "notes": [
             {
               "label": "1",
@@ -4969,7 +4969,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>Then</sc> <na>[1]</na> <sc>Jesus</sc> spake to the multitudes and to his Disciples,",
+          "text": "<sc>Then <na>[1]</na> Jesus</sc> spake to the multitudes and to his Disciples,",
           "notes": [
             {
               "label": "1",
@@ -5211,7 +5211,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> <sc>Jesus</sc> being gone out of the temple, went. And his Disciples came to shew him the buildings of the temple.",
+          "text": "<sc>And <cr>[1]</cr> Jesus</sc> being gone out of the temple, went. And his Disciples came to shew him the buildings of the temple.",
           "cross_refs": [
             {
               "text": "Mr. 13, 1. Lu. 21, 5."
@@ -5907,7 +5907,7 @@
         },
         {
           "verse": 26,
-          "text": "And <cr>[1]</cr> whiles they were at supper, <sc>Jesus</sc> took bread, and blessed, and brake: and he gave to his Disciples, and said: Take ye, and eat: <sc>This</sc> IS MY <sc>Body</sc>.",
+          "text": "And <cr>[1]</cr> whiles they were at supper, <sc>Jesus</sc> took bread, and blessed, and brake: and he gave to his Disciples, and said: Take ye, and eat: <sc>This is my Body</sc>.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -5927,7 +5927,7 @@
         },
         {
           "verse": 28,
-          "text": "<sc>For This</sc> IS MY <sc>Blood</sc> OF <sc>The New Testament</sc>, <sc>Which Shall</sc> BE <sc>Shed For Many Unto Remission</sc> OF <sc>Sins</sc>.",
+          "text": "<sc>For This is my Blood of The New Testament, Which Shall be Shed For Many Unto Remission of Sins</sc>.",
           "has_annotation": true
         },
         {
@@ -6376,7 +6376,7 @@
         },
         {
           "verse": 37,
-          "text": "And they put over his head his cause written: <sc>This</sc> IS <sc>Jesus The King</sc> OF <sc>The Jews</sc>."
+          "text": "And they put over his head his cause written: <sc>This is Jesus The King of The Jews</sc>."
         },
         {
           "verse": 38,
@@ -6639,7 +6639,7 @@
         },
         {
           "verse": 19,
-          "text": "going therefore teach ye all Nations: <sc>Baptizing Them</sc> IN <sc>The Name</sc> OF <sc>The Father</sc>, <sc>And</sc> OF <sc>The Son</sc>, <sc>And</sc> OF <sc>The Holy Ghost</sc>,",
+          "text": "going therefore teach ye all Nations: <sc>Baptizing Them in The Name of The Father, And of The Son, And of The Holy Ghost</sc>,",
           "has_annotation": true
         },
         {

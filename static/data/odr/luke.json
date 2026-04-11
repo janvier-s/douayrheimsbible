@@ -410,7 +410,7 @@
         },
         {
           "verse": 68,
-          "text": "<na>[1]</na> <i><sc>Blessed</sc> BE <sc>Our Lord</sc> God of Israel: because he hath visited and wrought the redemption of his people:</i>",
+          "text": "<na>[1]</na> <i><sc>Blessed be Our Lord</sc> God of Israel: because he hath visited and wrought the redemption of his people:</i>",
           "notes": [
             {
               "label": "1",
@@ -1088,7 +1088,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <cr>[1]</cr> <sc>Jesus</sc> full of the Holy Ghost, returned from Jordan, & was driven in the spirit into the desert.",
+          "text": "<sc>And <cr>[1]</cr> Jesus</sc> full of the Holy Ghost, returned from Jordan, & was driven in the spirit into the desert.",
           "cross_refs": [
             {
               "text": "Mt. 4, 1. Mr. 1, 12."
@@ -6066,7 +6066,7 @@
         },
         {
           "verse": 19,
-          "text": "<cr>[1]</cr> And taking bread, he gave thanks, and brake; and gave to them, saying: <sc>This</sc> IS MY <sc>Body Which</sc> IS <sc>Given For You</sc>. Do this for a commemoration of me.",
+          "text": "<cr>[1]</cr> And taking bread, he gave thanks, and brake; and gave to them, saying: <sc>This is my Body Which is Given For You</sc>. Do this for a commemoration of me.",
           "has_annotation": true,
           "cross_refs": [
             {
@@ -6076,7 +6076,7 @@
         },
         {
           "verse": 20,
-          "text": "In like manner the chalice also, after he had supped, saying: <na>[1]</na> <sc>This</sc> IS <sc>The Chalice</sc> <sc>The New Testament</sc> IN MY <sc>Blood</sc>, <sc>Which Shall</sc> BE <sc>Shed For You</sc>.",
+          "text": "In like manner the chalice also, after he had supped, saying: <na>[1]</na> <sc>This is The Chalice The New Testament in my Blood, Which Shall be Shed For You</sc>.",
           "has_annotation": true,
           "notes": [
             {
@@ -6518,7 +6518,7 @@
         },
         {
           "verse": 38,
-          "text": "And there was also a superscription written over him in Greek, and Latin, and Hebrew letters: <sc>This</sc> IS <sc>The King</sc> OF <sc>The Jews</sc>."
+          "text": "And there was also a superscription written over him in Greek, and Latin, and Hebrew letters: <sc>This is The King of The Jews</sc>."
         },
         {
           "verse": 39,

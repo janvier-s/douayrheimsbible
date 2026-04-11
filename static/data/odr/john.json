@@ -1963,7 +1963,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>And</sc> <na>[1]</na> <sc>Jesus</sc> went into the Mount-olivet:",
+          "text": "<sc>And <na>[1]</na> Jesus</sc> went into the Mount-olivet:",
           "notes": [
             {
               "label": "1",
@@ -2297,7 +2297,7 @@
         },
         {
           "verse": 1,
-          "text": "<sc>And</sc> <na>[1]</na> <sc>Jesus</sc> passing by, saw a man blind: from his nativity;",
+          "text": "<sc>And <na>[1]</na> Jesus</sc> passing by, saw a man blind: from his nativity;",
           "notes": [
             {
               "label": "1",
@@ -4301,7 +4301,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>When</sc> <cr>[1]</cr><na>[2]</na> <sc>Jesus</sc> had said these things, he went forth with his Disciples beyond the Torrent-Cedron, where was a garden, into the which he entered and his Disciples.",
+          "text": "<sc>When <cr>[1]</cr><na>[2]</na> Jesus</sc> had said these things, he went forth with his Disciples beyond the Torrent-Cedron, where was a garden, into the which he entered and his Disciples.",
           "cross_refs": [
             {
               "text": "Mt. 26, 36. Mr. 14, 32. Lu. 22, 39."
@@ -4625,7 +4625,7 @@
         },
         {
           "verse": 19,
-          "text": "And Pilate wrote a title also: and he put it upon the cross. And it was written, <sc>Jesus</sc> OF <sc>Nazareth The King</sc> OF <sc>The Jews</sc>."
+          "text": "And Pilate wrote a title also: and he put it upon the cross. And it was written, <sc>Jesus of Nazareth The King of The Jews</sc>."
         },
         {
           "verse": 20,
@@ -4936,7 +4936,7 @@
         },
         {
           "verse": 23,
-          "text": "<sc>Whose Sins You Shall Forgive</sc>, <sc>They Are Forgiven Them</sc>: <sc>And Whose You Shall Retain</sc>, <sc>They Are Retained</sc>.",
+          "text": "<sc>Whose Sins You Shall Forgive, They Are Forgiven Them: And Whose You Shall Retain, They Are Retained</sc>.",
           "has_annotation": true
         },
         {
@@ -5006,7 +5006,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>After</sc> <na>[1]</na> <sc>Jesus</sc> manifested himself again to the Disciples at the sea of Tiberias. And he manifested thus.",
+          "text": "<sc>After <na>[1]</na> Jesus</sc> manifested himself again to the Disciples at the sea of Tiberias. And he manifested thus.",
           "notes": [
             {
               "label": "1",
@@ -5086,7 +5086,7 @@
         },
         {
           "verse": 15,
-          "text": "<na>[1]</na> Therefore when they had dined, <sc>Jesus</sc> saith to Simon Peter: Simon of John, lovest thou me more than these? He saith to him: Yea Lord; thou knowest that I love thee. He saith to him: <sc>Feed</sc> MY <sc>Lambs</sc>.",
+          "text": "<na>[1]</na> Therefore when they had dined, <sc>Jesus</sc> saith to Simon Peter: Simon of John, lovest thou me more than these? He saith to him: Yea Lord; thou knowest that I love thee. He saith to him: <sc>Feed my Lambs</sc>.",
           "notes": [
             {
               "label": "1",
@@ -5096,7 +5096,7 @@
         },
         {
           "verse": 16,
-          "text": "He saith to him again: Simon of John, lovest thou me? He saith to him: Yea Lord, thou knowest that I love thee. He saith to him: <na>[1]</na> <sc>Feed</sc> MY <sc>Lambs</sc>.",
+          "text": "He saith to him again: Simon of John, lovest thou me? He saith to him: Yea Lord, thou knowest that I love thee. He saith to him: <na>[1]</na> <sc>Feed my Lambs</sc>.",
           "notes": [
             {
               "label": "1",
@@ -5106,7 +5106,7 @@
         },
         {
           "verse": 17,
-          "text": "He saith to him the third time: Simon of John, lovest thou me? Peter was stroken sad because he said unto him the third time, Lovest thou me? And he said to him: Lord, thou knowest all things: thou knowest that I love thee. He said to him: <sc>Feed</sc> MY <sc>Sheep</sc>.",
+          "text": "He saith to him the third time: Simon of John, lovest thou me? Peter was stroken sad because he said unto him the third time, Lovest thou me? And he said to him: Lord, thou knowest all things: thou knowest that I love thee. He said to him: <sc>Feed my Sheep</sc>.",
           "has_annotation": true
         },
         {
