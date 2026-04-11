@@ -21,6 +21,7 @@
 	} from '$lib/search/text-search';
 	import { isAllStopWords, isStopWord } from '$lib/search/expand-query';
 	import { tokenize } from '$lib/search/normalize';
+	import type { VerseNote } from '$lib/data/types';
 
 	export let data: { query: string; mode: SearchMode; scope: SearchScope };
 
@@ -47,6 +48,58 @@
 	let crossScopeNoteResults: NoteResult[] = [];
 	let queryTokens: string[] = [];
 	let crossScopeTotal = 0;
+
+	// Marginal note popover
+	const MN_POPOVER_WIDTH = 300;
+	const MN_GAP = 10;
+	let mnActiveNote: VerseNote | null = null;
+	let mnPopoverStyle = '';
+	let mnPopoverAbove = false;
+	let mnHoverTimer: ReturnType<typeof setTimeout> | null = null;
+
+	function dismissMn() {
+		mnActiveNote = null;
+		mnPopoverStyle = '';
+	}
+
+	function scheduleMnDismiss() {
+		mnHoverTimer = setTimeout(dismissMn, 120);
+	}
+
+	function cancelMnDismiss() {
+		if (mnHoverTimer) {
+			clearTimeout(mnHoverTimer);
+			mnHoverTimer = null;
+		}
+	}
+
+	function handleMnHover(e: Event, notes: VerseNote[]) {
+		const el = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
+		if (!el) return;
+		cancelMnDismiss();
+		const marker = el.dataset.mn ?? null;
+		if (!marker) return;
+		const note = notes.find((n) => n.label === marker) ?? null;
+		if (!note) return;
+		const rect = el.getBoundingClientRect();
+		const spaceBelow = window.innerHeight - rect.bottom;
+		mnPopoverAbove = spaceBelow < 130;
+		const cx = rect.left + rect.width / 2;
+		const left = Math.min(
+			Math.max(cx - MN_POPOVER_WIDTH / 2, 12),
+			window.innerWidth - MN_POPOVER_WIDTH - 12
+		);
+		mnPopoverStyle = mnPopoverAbove
+			? `left:${left}px; bottom:${window.innerHeight - rect.top + MN_GAP}px; width:${MN_POPOVER_WIDTH}px;`
+			: `left:${left}px; top:${rect.bottom + MN_GAP}px; width:${MN_POPOVER_WIDTH}px;`;
+		mnActiveNote = note;
+	}
+
+	function handleMnOut(e: Event) {
+		const el = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
+		if (!el) return;
+		scheduleMnDismiss();
+	}
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
@@ -102,12 +155,17 @@
 				: null
 	);
 
-	onDestroy(() => navOverride.set(null));
+	onDestroy(() => {
+		navOverride.set(null);
+		if (browser) document.removeEventListener('scroll', dismissMn, true);
+	});
 
 	onMount(() => {
 		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
 		reducedMotion = mq.matches;
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
+
+		document.addEventListener('scroll', dismissMn, true);
 
 		if (inputEl) inputEl.focus();
 		if (query) search(query);
@@ -348,8 +406,8 @@
 			t = t.replace(/<\/?sc>/g, '');
 		}
 
-		// Convert <mn>[N]</mn> to styled superscript markers
-		t = t.replace(/<mn>\[?([^\]<]+)\]?<\/mn>/g, '<sup class="search-mn">$1</sup>');
+		// Convert <mn>[N]</mn> to styled superscript markers (data-mn enables hover popover)
+		t = t.replace(/<mn>\[?([^\]<]+)\]?<\/mn>/g, '<sup class="search-mn" data-mn="$1">$1</sup>');
 
 		// Strip all remaining tags except <i> and <sup>
 		t = t.replace(/<(?!\/?i\b)(?!\/?sup\b)[^>]*>/gi, '');
@@ -660,14 +718,14 @@
 			<!-- Cross-scope teaser -->
 			{#if crossScopeTeaser}
 				<button
-					class="block w-full text-left mb-[16px] font-ui text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
+					class="block w-full text-center mb-[16px] font-ui text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
 					on:click={() => {
 						if (crossScopeTeaser) setScope(crossScopeTeaser.targetScope);
 					}}
 				>
-					<span class="border-b border-dashed border-current">
-						"{query}" is also found in {crossScopeTeaser.count} matching {crossScopeTeaser.label}
-					</span>
+					<span
+						>"{query}" is also found in {crossScopeTeaser.count} matching {crossScopeTeaser.label}</span
+					>
 					<span class="ml-[4px]">→</span>
 				</button>
 			{/if}
@@ -709,7 +767,12 @@
 							</h2>
 							<div class="space-y-[0.7rem]">
 								{#each group.verses as v}
-									<div class="relative">
+									<!-- svelte-ignore a11y_no_static_element_interactions -->
+									<div
+										class="relative"
+										on:mouseover={(e) => handleMnHover(e, v.notes ?? [])}
+										on:mouseout={handleMnOut}
+									>
 										{#if $prefs.showVerseNumbers}
 											<span
 												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
@@ -759,7 +822,12 @@
 							</h2>
 							<div class="space-y-[0.7rem]">
 								{#each group.verses as v}
-									<div class="relative">
+									<!-- svelte-ignore a11y_no_static_element_interactions -->
+									<div
+										class="relative"
+										on:mouseover={(e) => handleMnHover(e, v.notes ?? [])}
+										on:mouseout={handleMnOut}
+									>
 										{#if $prefs.showVerseNumbers}
 											<span
 												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
@@ -891,3 +959,74 @@
 		</div>
 	</div>
 </main>
+
+{#if mnActiveNote && mnPopoverStyle}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div
+		class="mn-popover"
+		class:mn-popover-above={mnPopoverAbove}
+		role="tooltip"
+		on:mouseenter={cancelMnDismiss}
+		on:mouseleave={scheduleMnDismiss}
+		style="position:fixed; {mnPopoverStyle}"
+	>
+		<span class="mn-popover-marker">{mnActiveNote.label}</span>
+		<span class="mn-popover-text">{@html mnActiveNote.text}</span>
+	</div>
+{/if}
+
+<style>
+	.mn-popover {
+		background: var(--color-text);
+		color: var(--color-bg);
+		font-size: 13px;
+		font-family: var(--font-ui);
+		line-height: 1.5;
+		border-radius: 6px;
+		padding: 9px 12px;
+		box-shadow:
+			0 8px 24px rgba(0, 0, 0, 0.25),
+			0 2px 6px rgba(0, 0, 0, 0.15);
+		max-height: 200px;
+		overflow-y: auto;
+		z-index: 100;
+		animation: tooltip-in 120ms ease-out both;
+	}
+
+	.mn-popover-above {
+		animation-name: tooltip-in-above;
+	}
+
+	@keyframes tooltip-in {
+		from {
+			opacity: 0;
+			transform: translateY(-3px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes tooltip-in-above {
+		from {
+			opacity: 0;
+			transform: translateY(3px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.mn-popover-marker {
+		color: var(--color-accent);
+		font-size: 9px;
+		font-weight: 700;
+		margin-right: 6px;
+	}
+
+	.mn-popover-text {
+		opacity: 0.9;
+	}
+</style>
