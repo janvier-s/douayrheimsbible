@@ -188,7 +188,7 @@
 
 <!-- ═══════════ READER ═══════════ -->
 <div id="reader" bind:this={readerEl}>
-	<TopBar {bookSlug} {chapterNum} hasStudyMode={true} />
+	<TopBar {bookSlug} {chapterNum} hasStudyMode={true} isHomePage={true} />
 	<BibleReader
 		initialBookMeta={data.bookMeta}
 		initialChapter={data.chapter}
