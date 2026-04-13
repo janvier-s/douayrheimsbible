@@ -7,9 +7,6 @@
 	export let text: string;
 	export let notes: AnnotationNote[] = [];
 
-	// Unique scope ID so multiple AnnotationProse instances don't collide
-	let uid = Math.random().toString(36).slice(2, 8);
-
 	/** Convert ALL CAPS words (2+ letters) to capitalized small-caps spans.
 	 *  e.g. "JESUS" → '<span class="sc">Jesus</span>' */
 	function allcapsToSmallcaps(html: string): string {
@@ -50,7 +47,7 @@
 			let html = p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
 				// Normalise [1] → 1 for numeric markers; leave ◦ and others as-is
 				const display = raw.replace(/^\[(\d+)\]$/, '$1');
-				return `<button class="mn-marker" id="mn-${uid}-${display}" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
+				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
 			});
 			html = allcapsToSmallcaps(html);
 			return html;
@@ -60,35 +57,57 @@
 	let proseEl: HTMLElement;
 
 	function scrollToInlineMarker(marker: string) {
-		// Find the inline marker inside this component's own DOM
-		const target = proseEl?.querySelector(`[id="mn-${uid}-${marker}"]`) as HTMLElement | null;
+		// Use data-mn attribute — more reliable than id for {@html}-injected elements
+		const target = proseEl?.querySelector(`.mn-marker[data-mn="${marker}"]`) as HTMLElement | null;
 		if (!target) return;
-		scrollIntoPanel(target);
-		flashEl(target);
+		scrollIntoPanel(target, () => blinkEl(target));
 	}
 
 	function scrollToNote(marker: string) {
-		const target = proseEl?.querySelector(`[id="note-${uid}-${marker}"]`) as HTMLElement | null;
+		const target = proseEl?.querySelector(`[data-note-marker="${marker}"]`) as HTMLElement | null;
 		if (!target) return;
-		scrollIntoPanel(target);
-		flashEl(target);
+		scrollIntoPanel(target, () => blinkEl(target));
 	}
 
-	function scrollIntoPanel(el: HTMLElement) {
-		// Find the closest scrollable ancestor (the panel-scroll div)
+	function scrollIntoPanel(el: HTMLElement, onDone?: () => void) {
 		const scroller = el.closest('.panel-scroll') as HTMLElement | null;
 		if (scroller) {
 			const scrollerTop = scroller.getBoundingClientRect().top;
 			const elTop = el.getBoundingClientRect().top;
-			scroller.scrollTo({ top: elTop - scrollerTop + scroller.scrollTop - 40, behavior: 'smooth' });
+			const targetTop = elTop - scrollerTop + scroller.scrollTop - 40;
+			scroller.scrollTo({ top: targetTop, behavior: 'smooth' });
+			// Wait for scroll to settle, then fire callback
+			if (onDone) waitForScrollEnd(scroller, onDone);
 		} else {
 			el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			if (onDone) setTimeout(onDone, 400);
 		}
 	}
 
-	function flashEl(el: HTMLElement) {
-		el.classList.add('flash-highlight');
-		setTimeout(() => el.classList.remove('flash-highlight'), 1500);
+	function waitForScrollEnd(scroller: HTMLElement, cb: () => void) {
+		let timer: ReturnType<typeof setTimeout>;
+		const handler = () => {
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				scroller.removeEventListener('scroll', handler);
+				cb();
+			}, 80);
+		};
+		scroller.addEventListener('scroll', handler, { passive: true });
+		// Fallback if already at position (no scroll events fire)
+		timer = setTimeout(() => {
+			scroller.removeEventListener('scroll', handler);
+			cb();
+		}, 100);
+	}
+
+	/** Double-blink: two rapid fades then a longer glow that fades out. */
+	function blinkEl(el: HTMLElement) {
+		el.classList.remove('note-blink');
+		// Force reflow so re-adding the class restarts the animation
+		void el.offsetWidth;
+		el.classList.add('note-blink');
+		el.addEventListener('animationend', () => el.classList.remove('note-blink'), { once: true });
 	}
 
 	const POPOVER_WIDTH = 300;
@@ -189,7 +208,7 @@
 	{#if sequentialNotes && sequentialNotes.length > 0}
 		<ul class="ann-notes">
 			{#each sequentialNotes as note}
-				<li class="ann-note-row" id="note-{uid}-{note.marker}">
+				<li class="ann-note-row" data-note-marker={note.marker}>
 					<button
 						class="ann-note-marker"
 						on:click|stopPropagation={() => scrollToInlineMarker(String(note.marker))}
@@ -351,5 +370,37 @@
 
 	.mn-popover-text {
 		opacity: 0.9;
+	}
+
+	/* Double-blink then lingering glow */
+	:global(.note-blink) {
+		animation: note-blink 1.8s ease-out both;
+	}
+
+	@keyframes note-blink {
+		0% {
+			background: transparent;
+		}
+		/* First blink */
+		5% {
+			background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+		}
+		15% {
+			background: transparent;
+		}
+		/* Second blink */
+		20% {
+			background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+		}
+		30% {
+			background: transparent;
+		}
+		/* Lingering glow */
+		35% {
+			background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+		}
+		100% {
+			background: transparent;
+		}
 	}
 </style>
