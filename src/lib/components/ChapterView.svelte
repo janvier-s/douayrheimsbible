@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
+	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import VerseList from './VerseList.svelte';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel } from '$lib/stores/studyPanel';
@@ -76,14 +77,6 @@
 	$: verse0 = chapter.verses.find((v) => v.verse === 0);
 	$: fullSummary = verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? '');
 	$: displayVerses = verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses;
-
-	/** Convert ALL CAPS words (2+ letters) to capitalized small-caps spans. */
-	function allcapsToSmallcaps(html: string): string {
-		return html.replace(/(?<![<\w/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
-			const capitalized = word.charAt(0) + word.slice(1).toLowerCase();
-			return `<span class="sc">${capitalized}</span>`;
-		});
-	}
 
 	function linkifySummary(text: string, isStudy: boolean): string {
 		// Summary text is from trusted build-time JSON; we only inject our own tags.

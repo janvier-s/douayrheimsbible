@@ -2,20 +2,11 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
+	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import type { AnnotationNote } from '$lib/data/types';
 
 	export let text: string;
 	export let notes: AnnotationNote[] = [];
-
-	/** Convert ALL CAPS words (2+ letters) to capitalized small-caps spans.
-	 *  e.g. "JESUS" → '<span class="sc">Jesus</span>' */
-	function allcapsToSmallcaps(html: string): string {
-		// Only match ALLCAPS words that are NOT inside an HTML tag
-		return html.replace(/(?<![<\w/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
-			const capitalized = word.charAt(0) + word.slice(1).toLowerCase();
-			return `<span class="sc">${capitalized}</span>`;
-		});
-	}
 
 	/** Renumber numeric markers sequentially across the full text and notes. */
 	function renumber(
@@ -266,10 +257,6 @@
 
 	.annotation-prose :global(i) {
 		font-style: italic;
-	}
-
-	.annotation-prose :global(sc) {
-		font-variant: small-caps;
 	}
 
 	/* Notes list */

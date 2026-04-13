@@ -278,7 +278,11 @@
 		document.addEventListener('scroll', dismissPopover, true);
 	});
 
-	// Re-observe when verses change
+	// Re-observe when verses change.
+	// Disconnect first so we don't double-observe if Svelte re-runs this block.
+	// intersectingReaderVerses is cleared so stale verse positions don't linger.
+	// verseEls entries are kept — bind:this keeps them current; the loop below
+	// re-registers only live elements (el is non-null for mounted nodes).
 	$: if (verseObserver && verses) {
 		verseObserver.disconnect();
 		intersectingReaderVerses.clear();
@@ -483,10 +487,6 @@
 		text-decoration-style: solid;
 		text-underline-offset: 3px;
 		text-decoration-color: var(--color-accent-text);
-	}
-
-	:global(.sc) {
-		font-variant: small-caps;
 	}
 
 	:global(.bionic-fade) {
