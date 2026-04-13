@@ -4,6 +4,7 @@
 	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel } from '$lib/stores/studyPanel';
+	import { readingPosition } from '$lib/stores/reading';
 	import type { Verse } from '$lib/data/types';
 
 	export let verses: Verse[];
@@ -292,8 +293,12 @@
 
 	// Panel→reader sync: scroll the reader window when the study panel scrolls to a verse.
 	// Extract annotatedVerse so this block only re-runs when that specific field changes.
+	// Guard with chapterNum/bookSlug so only the active chapter's VerseList scrolls
+	// (with infinite scroll, multiple VerseList instances can be in the DOM at once).
 	$: syncAnnotatedVerse = $studyPanel.annotatedVerse;
-	$: if (browser && $prefs.annotationSync && syncAnnotatedVerse != null) {
+	$: isActiveChapter =
+		bookSlug === $readingPosition?.bookSlug && chapterNum === $readingPosition?.chapter;
+	$: if (browser && $prefs.annotationSync && syncAnnotatedVerse != null && isActiveChapter) {
 		const el = verseEls[syncAnnotatedVerse];
 		if (el) {
 			programmaticReaderScroll = true;
