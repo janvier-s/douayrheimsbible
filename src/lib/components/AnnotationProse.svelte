@@ -11,7 +11,7 @@
 	 *  e.g. "JESUS" → '<span class="sc">Jesus</span>' */
 	function allcapsToSmallcaps(html: string): string {
 		// Only match ALLCAPS words that are NOT inside an HTML tag
-		return html.replace(/(?<![<\w\/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
+		return html.replace(/(?<![<\w/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
 			const capitalized = word.charAt(0) + word.slice(1).toLowerCase();
 			return `<span class="sc">${capitalized}</span>`;
 		});

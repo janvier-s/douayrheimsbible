@@ -79,7 +79,7 @@
 
 	/** Convert ALL CAPS words (2+ letters) to capitalized small-caps spans. */
 	function allcapsToSmallcaps(html: string): string {
-		return html.replace(/(?<![<\w\/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
+		return html.replace(/(?<![<\w/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
 			const capitalized = word.charAt(0) + word.slice(1).toLowerCase();
 			return `<span class="sc">${capitalized}</span>`;
 		});

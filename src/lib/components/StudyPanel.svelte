@@ -6,7 +6,6 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { loadAnnotations } from '$lib/data/loader';
 	import type { BookData, ChapterAnnotations, AnnotationEntry, Verse } from '$lib/data/types';
-	import AnnotatedText from './AnnotatedText.svelte';
 	import AnnotationProse from './AnnotationProse.svelte';
 
 	export let bookData: BookData | null = null;
