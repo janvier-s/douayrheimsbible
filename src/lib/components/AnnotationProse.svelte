@@ -375,6 +375,7 @@
 	/* Glow with double-blink at start — note rows */
 	:global(.note-blink) {
 		animation: note-blink 4s ease both;
+		margin-left: -10px;
 		padding-left: 10px;
 	}
 
@@ -402,7 +403,6 @@
 	/* Bright blink + glow for inline text markers */
 	:global(.mn-marker.note-blink) {
 		animation: marker-blink 4s ease both;
-		padding-left: 0;
 	}
 
 	@keyframes marker-blink {
