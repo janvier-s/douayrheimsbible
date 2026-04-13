@@ -74,7 +74,7 @@
 		if (scroller) {
 			const scrollerTop = scroller.getBoundingClientRect().top;
 			const elTop = el.getBoundingClientRect().top;
-			const targetTop = elTop - scrollerTop + scroller.scrollTop - 40;
+			const targetTop = elTop - scrollerTop + scroller.scrollTop - 80;
 			scroller.scrollTo({ top: targetTop, behavior: 'smooth' });
 			// Wait for scroll to settle, then fire callback
 			if (onDone) waitForScrollEnd(scroller, onDone);
