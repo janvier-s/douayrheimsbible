@@ -241,6 +241,10 @@
 	// to avoid triggering a redundant panel re-scroll.
 	let programmaticReaderScroll = false;
 	let programmaticReaderScrollTimer: ReturnType<typeof setTimeout> | null = null;
+	// Track all currently-intersecting verses so we can always pick the topmost one.
+	// This fixes scroll-up: multiple verses may intersect simultaneously and the last
+	// entry in the batch is not reliably the topmost one.
+	const intersectingReaderVerses = new Map<number, number>(); // verse → boundingClientRect.top
 
 	onMount(async () => {
 		mounted = true;
@@ -250,13 +254,18 @@
 		verseObserver = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
-					if (entry.isIntersecting && !programmaticReaderScroll) {
-						const vNum = parseInt((entry.target as HTMLElement).dataset.verseNum ?? '0');
-						if (vNum > 0) {
-							studyPanel.update((s) => ({ ...s, activeVerse: vNum }));
-						}
+					const vNum = parseInt((entry.target as HTMLElement).dataset.verseNum ?? '0');
+					if (vNum <= 0) continue;
+					if (entry.isIntersecting) {
+						intersectingReaderVerses.set(vNum, entry.boundingClientRect.top);
+					} else {
+						intersectingReaderVerses.delete(vNum);
 					}
 				}
+				if (programmaticReaderScroll || intersectingReaderVerses.size === 0) return;
+				// Pick the topmost intersecting verse (smallest top value)
+				const active = [...intersectingReaderVerses.entries()].sort((a, b) => a[1] - b[1])[0][0];
+				studyPanel.update((s) => ({ ...s, activeVerse: active }));
 			},
 			{ rootMargin: '-0% 0px -70% 0px' } // top ~30% of viewport
 		);
@@ -272,6 +281,7 @@
 	// Re-observe when verses change
 	$: if (verseObserver && verses) {
 		verseObserver.disconnect();
+		intersectingReaderVerses.clear();
 		for (const [, el] of Object.entries(verseEls)) {
 			if (el) verseObserver.observe(el);
 		}
