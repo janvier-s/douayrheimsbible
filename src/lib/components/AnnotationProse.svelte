@@ -372,32 +372,30 @@
 		opacity: 0.9;
 	}
 
-	/* Gentle double-blink then lingering glow */
+	/* Glow with double-blink at start */
 	:global(.note-blink) {
 		animation: note-blink 2.5s ease both;
 	}
 
 	@keyframes note-blink {
 		0% {
-			background: transparent;
+			background: color-mix(in srgb, var(--color-accent) 10%, transparent);
 		}
-		/* First soft pulse */
-		8% {
-			background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+		/* First blink peak */
+		6% {
+			background: color-mix(in srgb, var(--color-accent) 18%, transparent);
 		}
-		20% {
-			background: transparent;
-		}
-		/* Second soft pulse */
-		28% {
-			background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-		}
-		42% {
-			background: transparent;
-		}
-		/* Lingering warm glow */
-		52% {
+		/* Dip */
+		14% {
 			background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+		}
+		/* Second blink peak */
+		20% {
+			background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+		}
+		/* Settle into glow */
+		30% {
+			background: color-mix(in srgb, var(--color-accent) 10%, transparent);
 		}
 		100% {
 			background: transparent;
