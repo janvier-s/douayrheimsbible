@@ -32,6 +32,8 @@ export interface ReadingPrefs {
 	expandAmpersand: boolean;
 	// v12
 	studyDefaultTab: 'intro' | 'commentary';
+	// v13
+	annotationSync: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -58,10 +60,11 @@ const DEFAULTS: ReadingPrefs = {
 	showSmallCaps: true,
 	compareFontSize: 13,
 	expandAmpersand: false,
-	studyDefaultTab: 'intro'
+	studyDefaultTab: 'intro',
+	annotationSync: true
 };
 
-const PREFS_VERSION = 12;
+const PREFS_VERSION = 13;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -121,6 +124,10 @@ function loadPrefs(): ReadingPrefs {
 		// v12 migration: add study default tab preference
 		if (!parsed._v || parsed._v < 12) {
 			parsed.studyDefaultTab = 'intro';
+		}
+		// v13 migration: add annotation verse sync toggle
+		if (!parsed._v || parsed._v < 13) {
+			parsed.annotationSync = true;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

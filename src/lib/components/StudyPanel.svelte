@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { tick } from 'svelte';
+	import { tick, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import { studyPanel } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
@@ -60,6 +60,7 @@
 			lastAnnotationKey = key;
 			annotationsLoading = true;
 			annotations = null;
+			studyPanel.update((s) => ({ ...s, annotatedVerse: null }));
 			loadAnnotations(currentBookSlug, currentChapterNum, fetch)
 				.then((data) => {
 					// Only apply if still the same chapter
@@ -92,6 +93,8 @@
 		anns: ChapterAnnotations | null
 	): VerseSection[] {
 		if (!chapter) return [];
+		// Guard against stale annotations from a previously-visited chapter
+		const safeAnns = anns?.chapter === chapter.chapter ? anns : null;
 		const sections: VerseSection[] = [];
 
 		// Verse 0 is a summary continuation — merge its notes into the Summary section
@@ -116,7 +119,7 @@
 			if (v.verse === 0) continue;
 			const hasCrossRefs = v.cross_refs && v.cross_refs.length > 0;
 			const hasNotes = v.notes && v.notes.length > 0;
-			const annEntries = anns?.annotations.filter((a) => a.verse === v.verse) ?? [];
+			const annEntries = safeAnns?.annotations.filter((a) => a.verse === v.verse) ?? [];
 			const hasAnnotations = v.has_annotation && annEntries.length > 0;
 
 			if (hasCrossRefs || hasNotes || hasAnnotations) {
@@ -136,6 +139,10 @@
 
 	let panelScroll: HTMLElement;
 	let sectionEls: Record<number, HTMLElement> = {};
+	let programmaticScroll = false;
+	let programmaticScrollTimer: ReturnType<typeof setTimeout> | null = null;
+	let panelSectionObserver: IntersectionObserver | null = null;
+	const intersectingVerses = new Map<number, number>();
 
 	// Reset stale section element refs whenever the chapter changes
 	$: (currentBookSlug, currentChapterNum, (sectionEls = {}));
@@ -153,10 +160,53 @@
 	function scrollToSection(verse: number) {
 		const el = sectionEls[verse];
 		if (!el || !panelScroll) return;
+		programmaticScroll = true;
+		if (programmaticScrollTimer) clearTimeout(programmaticScrollTimer);
 		const panelTop = panelScroll.getBoundingClientRect().top;
 		const elTop = el.getBoundingClientRect().top;
 		const offset = elTop - panelTop + panelScroll.scrollTop;
 		panelScroll.scrollTo({ top: offset, behavior: 'smooth' });
+		programmaticScrollTimer = setTimeout(() => {
+			programmaticScroll = false;
+		}, 600);
+	}
+
+	function setupPanelObserver() {
+		panelSectionObserver?.disconnect();
+		panelSectionObserver = null;
+		intersectingVerses.clear();
+		if (!browser || !panelScroll || !$prefs.annotationSync) return;
+		panelSectionObserver = new IntersectionObserver(
+			(entries) => {
+				if (programmaticScroll) return;
+				for (const entry of entries) {
+					const verse = parseInt((entry.target as HTMLElement).dataset.sectionVerse ?? '-1');
+					if (verse < 0) continue;
+					if (entry.isIntersecting) {
+						intersectingVerses.set(verse, entry.boundingClientRect.top);
+					} else {
+						intersectingVerses.delete(verse);
+					}
+				}
+				if (intersectingVerses.size > 0) {
+					const active = [...intersectingVerses.entries()].sort((a, b) => a[1] - b[1])[0][0];
+					studyPanel.update((s) => ({ ...s, annotatedVerse: active }));
+				}
+			},
+			{ root: panelScroll, rootMargin: '0px 0px -55% 0px', threshold: 0 }
+		);
+		for (const key of Object.keys(sectionEls)) {
+			const el = sectionEls[parseInt(key)];
+			if (el) panelSectionObserver.observe(el);
+		}
+	}
+
+	$: if (verseSections && browser) {
+		tick().then(setupPanelObserver);
+	}
+	$: if (browser && !$prefs.annotationSync) {
+		panelSectionObserver?.disconnect();
+		panelSectionObserver = null;
 	}
 
 	// ── ScrollTrigger consumption ────────────────────────────────────
@@ -195,6 +245,11 @@
 
 	// Slider position: 0 = Intro, 1 = Commentary
 	$: sliderIndex = $studyPanel.activeTab === 'commentary' ? 1 : 0;
+
+	onDestroy(() => {
+		panelSectionObserver?.disconnect();
+		if (programmaticScrollTimer) clearTimeout(programmaticScrollTimer);
+	});
 </script>
 
 <aside
@@ -288,6 +343,7 @@
 							class="verse-section"
 							class:verse-section-active={$studyPanel.activeVerse === section.verse}
 							bind:this={sectionEls[section.verse]}
+							data-section-verse={section.verse}
 						>
 							<!-- Verse header (sticky for non-summary) -->
 							<div

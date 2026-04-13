@@ -284,6 +284,20 @@
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"
+					checked={$prefs.annotationSync ?? true}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							annotationSync: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>Annotation verse sync</span>
+			</label>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
 					checked={$prefs.showChapterNav ?? true}
 					on:change={(e) =>
 						prefs.update((p) => ({

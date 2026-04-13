@@ -118,6 +118,7 @@
 		studyPanel.update((s) => ({
 			...s,
 			activeTab: 'commentary',
+			annotatedVerse: verseNum,
 			scrollTrigger: { verse: verseNum, type, marker }
 		}));
 	}
@@ -131,6 +132,7 @@
 		studyPanel.update((s) => ({
 			...s,
 			activeTab: 'commentary',
+			annotatedVerse: v.verse,
 			scrollTrigger: { verse: v.verse, type: 'annotation' }
 		}));
 	}
@@ -308,7 +310,12 @@
 	>
 		{#each verses as v (v.verse)}
 			<!-- inline anchor for intersection observer + scroll target -->
-			<span bind:this={verseEls[v.verse]} id="v{v.verse}" data-verse-num={v.verse}>
+			<span
+				bind:this={verseEls[v.verse]}
+				id="v{v.verse}"
+				data-verse-num={v.verse}
+				class:verse-active-annotation={isStudy && $studyPanel.annotatedVerse === v.verse}
+			>
 				{#if $prefs.showVerseNumbers}
 					<sup
 						class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
@@ -340,6 +347,7 @@
 				class="flex gap-sm max-md:gap-0"
 				class:verse-target={targetVerse === v.verse}
 				class:verse-annotated={isStudy && v.has_annotation}
+				class:verse-active-annotation={isStudy && $studyPanel.annotatedVerse === v.verse}
 				on:click={(e) => isStudy && handleVerseClick(e, v)}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
 			>
@@ -417,6 +425,29 @@
 	.verse-annotated:hover {
 		background: color-mix(in srgb, var(--color-accent) 4%, transparent);
 		border-radius: 2px;
+	}
+
+	/* List view active annotation underline */
+	.verse-active-annotation p,
+	.verse-active-annotation.verse-annotated p {
+		text-decoration: underline;
+		text-decoration-style: solid;
+		text-underline-offset: 3px;
+		text-decoration-color: var(--color-accent-text);
+	}
+
+	/* List view active annotation background */
+	.verse-active-annotation {
+		background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+		border-radius: 2px;
+	}
+
+	/* Paragraph view - target the inline span directly */
+	p .verse-active-annotation {
+		text-decoration: underline;
+		text-decoration-style: solid;
+		text-underline-offset: 3px;
+		text-decoration-color: var(--color-accent-text);
 	}
 
 	:global(.sc) {

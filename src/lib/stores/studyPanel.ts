@@ -13,6 +13,7 @@ export interface StudyPanelState {
 	activeTab: StudyTab;
 	activeIntroIndex: number;
 	activeVerse: number | null;
+	annotatedVerse: number | null;
 	scrollTrigger: ScrollTrigger | null;
 }
 
@@ -20,6 +21,7 @@ const defaults: StudyPanelState = {
 	activeTab: 'commentary',
 	activeIntroIndex: 0,
 	activeVerse: null,
+	annotatedVerse: null,
 	scrollTrigger: null
 };
 
