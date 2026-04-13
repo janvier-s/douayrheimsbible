@@ -60,14 +60,15 @@
 	let proseEl: HTMLElement;
 
 	function scrollToInlineMarker(marker: string) {
-		const target = document.getElementById(`mn-${uid}-${marker}`);
+		// Find the inline marker inside this component's own DOM
+		const target = proseEl?.querySelector(`[id="mn-${uid}-${marker}"]`) as HTMLElement | null;
 		if (!target) return;
 		scrollIntoPanel(target);
 		flashEl(target);
 	}
 
 	function scrollToNote(marker: string) {
-		const target = document.getElementById(`note-${uid}-${marker}`);
+		const target = proseEl?.querySelector(`[id="note-${uid}-${marker}"]`) as HTMLElement | null;
 		if (!target) return;
 		scrollIntoPanel(target);
 		flashEl(target);

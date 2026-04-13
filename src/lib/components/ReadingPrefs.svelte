@@ -80,7 +80,9 @@
 
 <div class="text-sm font-ui">
 	<!-- Tab bar -->
-	<div class="flex border-b border-border mb-md -mx-md px-md sticky top-0 z-10 bg-panel">
+	<div
+		class="flex border-b border-border mb-md -mx-md px-md max-md:-mx-[20px] max-md:px-[20px] sticky top-0 z-10 bg-panel"
+	>
 		{#each [{ id: 'text', label: 'Text' }, { id: 'reading', label: 'Reading' }, { id: 'verse', label: 'Verse' }] as tab}
 			<button
 				class="flex-1 py-[8px] text-[11px] uppercase tracking-[0.12em] font-semibold transition-colors duration-fast border-b-2 -mb-px

@@ -24,7 +24,10 @@
 	role="dialog"
 	aria-label="Reading options"
 >
-	<div style="height: 320px; overflow-y: auto; overscroll-behavior: contain;">
+	<div
+		class="px-[20px]"
+		style="height: 320px; overflow-y: auto; overscroll-behavior: contain; overflow-x: hidden;"
+	>
 		<ReadingPrefs {compareMode} />
 	</div>
 </div>
