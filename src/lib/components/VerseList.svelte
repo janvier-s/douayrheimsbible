@@ -236,6 +236,10 @@
 	// ── IntersectionObserver for scroll sync ─────────────────────────
 
 	let verseObserver: IntersectionObserver | null = null;
+	// Suppress activeVerse updates while programmatically scrolling the reader
+	// to avoid triggering a redundant panel re-scroll.
+	let programmaticReaderScroll = false;
+	let programmaticReaderScrollTimer: ReturnType<typeof setTimeout> | null = null;
 
 	onMount(async () => {
 		mounted = true;
@@ -245,7 +249,7 @@
 		verseObserver = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
-					if (entry.isIntersecting) {
+					if (entry.isIntersecting && !programmaticReaderScroll) {
 						const vNum = parseInt((entry.target as HTMLElement).dataset.verseNum ?? '0');
 						if (vNum > 0) {
 							studyPanel.update((s) => ({ ...s, activeVerse: vNum }));
@@ -275,6 +279,7 @@
 	onDestroy(() => {
 		verseObserver?.disconnect();
 		if (hoverTimer) clearTimeout(hoverTimer);
+		if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
 		if (browser) document.removeEventListener('scroll', dismissPopover, true);
 	});
 
@@ -284,6 +289,21 @@
 			verseEls[targetVerse].scrollIntoView({ behavior: 'instant', block: 'center' });
 		}
 	});
+
+	// Panel→reader sync: scroll the reader window when the study panel scrolls to a verse.
+	// Extract annotatedVerse so this block only re-runs when that specific field changes.
+	$: syncAnnotatedVerse = $studyPanel.annotatedVerse;
+	$: if (browser && $prefs.annotationSync && syncAnnotatedVerse != null) {
+		const el = verseEls[syncAnnotatedVerse];
+		if (el) {
+			programmaticReaderScroll = true;
+			if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
+			el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			programmaticReaderScrollTimer = setTimeout(() => {
+				programmaticReaderScroll = false;
+			}, 800);
+		}
+	}
 
 	// mounted gate: keeps isStudy false during SSR/pre-render (where readingMode
 	// defaults to 'reading'), so the hydrated HTML matches the pre-rendered HTML.
