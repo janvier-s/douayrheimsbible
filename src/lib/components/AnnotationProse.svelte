@@ -17,6 +17,31 @@
 		});
 	}
 
+	/** Renumber numeric markers sequentially across the full text and notes. */
+	function renumber(
+		raw: string,
+		originalNotes: AnnotationNote[]
+	): { html: string; notes: AnnotationNote[] } {
+		let seq = 0;
+		// Build a mapping from (occurrence index of numeric marker) → new sequential number.
+		// Non-numeric markers (◦ etc.) are left untouched.
+		const renumbered = raw.replace(/<mn>\[?(\d+)\]?<\/mn>/g, () => {
+			seq++;
+			return `<mn>[${seq}]</mn>`;
+		});
+		// Renumber notes in the same order — numeric notes get new sequential numbers
+		let noteSeq = 0;
+		const newNotes = originalNotes.map((n) => {
+			const isNumeric = /^\d+$/.test(String(n.marker));
+			if (isNumeric) {
+				noteSeq++;
+				return { ...n, marker: noteSeq };
+			}
+			return n;
+		});
+		return { html: renumbered, notes: newNotes };
+	}
+
 	function renderParagraphs(raw: string): string[] {
 		return raw.split('\n\n').map((p) => {
 			let html = p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
@@ -95,8 +120,9 @@
 		if (browser) document.removeEventListener('scroll', dismiss, true);
 	});
 
-	$: paragraphs = renderParagraphs(text);
-	$: activeNote = notes.find((n) => String(n.marker) === openMn) ?? null;
+	$: ({ html: sequentialText, notes: sequentialNotes } = renumber(text, notes));
+	$: paragraphs = renderParagraphs(sequentialText);
+	$: activeNote = sequentialNotes.find((n) => String(n.marker) === openMn) ?? null;
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -115,9 +141,9 @@
 		</p>
 	{/each}
 
-	{#if notes && notes.length > 0}
+	{#if sequentialNotes && sequentialNotes.length > 0}
 		<ul class="ann-notes">
-			{#each notes as note}
+			{#each sequentialNotes as note}
 				<li class="ann-note-row">
 					<span class="ann-note-marker">{note.marker}</span>
 					<span class="ann-note-text">{@html note.text}</span>
