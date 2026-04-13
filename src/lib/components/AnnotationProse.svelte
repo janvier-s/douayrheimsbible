@@ -374,31 +374,53 @@
 
 	/* Glow with double-blink at start */
 	:global(.note-blink) {
-		animation: note-blink 2.5s ease both;
+		animation: note-blink 4s ease both;
 	}
 
 	@keyframes note-blink {
 		0% {
-			background: color-mix(in srgb, var(--color-accent) 10%, transparent);
-		}
-		/* First blink peak */
-		6% {
-			background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-		}
-		/* Dip */
-		14% {
 			background: color-mix(in srgb, var(--color-accent) 8%, transparent);
 		}
-		/* Second blink peak */
-		20% {
-			background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+		5% {
+			background: color-mix(in srgb, var(--color-accent) 13%, transparent);
 		}
-		/* Settle into glow */
-		30% {
-			background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+		12% {
+			background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+		}
+		18% {
+			background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+		}
+		26% {
+			background: color-mix(in srgb, var(--color-accent) 8%, transparent);
 		}
 		100% {
 			background: transparent;
+		}
+	}
+
+	/* Same glow for inline markers (text background) */
+	:global(.mn-marker.note-blink) {
+		animation: marker-blink 4s ease both;
+	}
+
+	@keyframes marker-blink {
+		0% {
+			background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+		}
+		5% {
+			background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+		}
+		12% {
+			background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+		}
+		18% {
+			background: color-mix(in srgb, var(--color-accent) 32%, transparent);
+		}
+		26% {
+			background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+		}
+		100% {
+			background: color-mix(in srgb, var(--color-accent) 15%, transparent);
 		}
 	}
 </style>
