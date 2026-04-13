@@ -7,6 +7,9 @@
 	export let text: string;
 	export let notes: AnnotationNote[] = [];
 
+	// Unique scope ID so multiple AnnotationProse instances don't collide
+	let uid = Math.random().toString(36).slice(2, 8);
+
 	/** Convert ALL CAPS words (2+ letters) to capitalized small-caps spans.
 	 *  e.g. "JESUS" → '<span class="sc">Jesus</span>' */
 	function allcapsToSmallcaps(html: string): string {
@@ -47,11 +50,44 @@
 			let html = p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
 				// Normalise [1] → 1 for numeric markers; leave ◦ and others as-is
 				const display = raw.replace(/^\[(\d+)\]$/, '$1');
-				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
+				return `<button class="mn-marker" id="mn-${uid}-${display}" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
 			});
 			html = allcapsToSmallcaps(html);
 			return html;
 		});
+	}
+
+	let proseEl: HTMLElement;
+
+	function scrollToInlineMarker(marker: string) {
+		const target = document.getElementById(`mn-${uid}-${marker}`);
+		if (!target) return;
+		scrollIntoPanel(target);
+		flashEl(target);
+	}
+
+	function scrollToNote(marker: string) {
+		const target = document.getElementById(`note-${uid}-${marker}`);
+		if (!target) return;
+		scrollIntoPanel(target);
+		flashEl(target);
+	}
+
+	function scrollIntoPanel(el: HTMLElement) {
+		// Find the closest scrollable ancestor (the panel-scroll div)
+		const scroller = el.closest('.panel-scroll') as HTMLElement | null;
+		if (scroller) {
+			const scrollerTop = scroller.getBoundingClientRect().top;
+			const elTop = el.getBoundingClientRect().top;
+			scroller.scrollTo({ top: elTop - scrollerTop + scroller.scrollTop - 40, behavior: 'smooth' });
+		} else {
+			el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+	}
+
+	function flashEl(el: HTMLElement) {
+		el.classList.add('flash-highlight');
+		setTimeout(() => el.classList.remove('flash-highlight'), 1500);
 	}
 
 	const POPOVER_WIDTH = 300;
@@ -127,13 +163,21 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_no_static_element_interactions a11y-click-events-have-key-events -->
 <div
 	class="annotation-prose"
+	bind:this={proseEl}
 	on:mouseover={handleMouseover}
 	on:mouseout={handleMouseout}
 	on:focus={handleMouseover}
 	on:blur={handleMouseout}
+	on:click={(e) => {
+		const btn = (e.target as HTMLElement).closest('.mn-marker') as HTMLElement | null;
+		if (btn) {
+			const marker = btn.dataset.mn;
+			if (marker) scrollToNote(marker);
+		}
+	}}
 >
 	{#each paragraphs as para}
 		<p class="font-reader text-[16px] leading-[1.83] text-foreground">
@@ -144,8 +188,12 @@
 	{#if sequentialNotes && sequentialNotes.length > 0}
 		<ul class="ann-notes">
 			{#each sequentialNotes as note}
-				<li class="ann-note-row">
-					<span class="ann-note-marker">{note.marker}</span>
+				<li class="ann-note-row" id="note-{uid}-{note.marker}">
+					<button
+						class="ann-note-marker"
+						on:click={() => scrollToInlineMarker(String(note.marker))}
+						aria-label="Go to marker {note.marker} in text">{note.marker}</button
+					>
 					<span class="ann-note-text">{@html note.text}</span>
 				</li>
 			{/each}
@@ -229,6 +277,15 @@
 		color: var(--color-accent-text);
 		flex-shrink: 0;
 		min-width: 18px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+		text-align: left;
+	}
+
+	.ann-note-marker:hover {
+		opacity: 0.7;
 	}
 
 	.ann-note-text {

@@ -95,7 +95,7 @@
 	</div>
 	<!-- Text tab -->
 	{#if activeTab === 'text'}
-		<div class="space-y-[10px]">
+		<div class="space-y-[10px] max-md:pb-[40px]">
 			<label class="block">
 				<span class="block mb-xs">Font size: {activeFontSize}px</span>
 				<input
@@ -368,7 +368,7 @@
 
 	<!-- Verse tab -->
 	{#if activeTab === 'verse'}
-		<div class="space-y-md">
+		<div class="space-y-md max-md:pb-[40px]">
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"
