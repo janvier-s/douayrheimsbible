@@ -191,7 +191,7 @@
 				<li class="ann-note-row" id="note-{uid}-{note.marker}">
 					<button
 						class="ann-note-marker"
-						on:click={() => scrollToInlineMarker(String(note.marker))}
+						on:click|stopPropagation={() => scrollToInlineMarker(String(note.marker))}
 						aria-label="Go to marker {note.marker} in text">{note.marker}</button
 					>
 					<span class="ann-note-text">{@html note.text}</span>
