@@ -25,13 +25,21 @@
 	}
 
 	$: intros = bookData?.intros ?? [];
+	$: hasIntros = intros.length > 0;
 
+	// When book changes, set the active tab based on user preference and intro availability
 	$: {
 		const idx = intros.findIndex((i) => i.default);
 		const target = idx >= 0 ? idx : 0;
-		if ($studyPanel.activeIntroIndex !== target) {
-			studyPanel.update((s) => ({ ...s, activeIntroIndex: target }));
+		const preferredTab = hasIntros ? $prefs.studyDefaultTab : 'commentary';
+		if ($studyPanel.activeIntroIndex !== target || $studyPanel.activeTab !== preferredTab) {
+			studyPanel.update((s) => ({ ...s, activeIntroIndex: target, activeTab: preferredTab }));
 		}
+	}
+
+	function switchTab(tab: 'intro' | 'commentary') {
+		studyPanel.update((s) => ({ ...s, activeTab: tab }));
+		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
 
 	// ── Current chapter data ─────────────────────────────────────────
@@ -87,18 +95,26 @@
 		if (!chapter) return [];
 		const sections: VerseSection[] = [];
 
-		// Verse 0 = Summary (if summary has notes)
-		if (chapter.summary_notes && chapter.summary_notes.length > 0) {
+		// Verse 0 is a summary continuation — merge its notes into the Summary section
+		const verse0 = chapter.verses.find((v) => v.verse === 0);
+		const hasSummaryNotes = chapter.summary_notes && chapter.summary_notes.length > 0;
+		const hasVerse0Content =
+			verse0 &&
+			((verse0.notes && verse0.notes.length > 0) ||
+				(verse0.cross_refs && verse0.cross_refs.length > 0));
+
+		if (hasSummaryNotes || hasVerse0Content) {
 			sections.push({
 				verse: 0,
 				label: 'Summary',
-				verseData: null,
+				verseData: verse0 ?? null,
 				annotationEntries: []
 			});
 		}
 
-		// Verse sections
+		// Verse sections (skip verse 0 — handled above)
 		for (const v of chapter.verses) {
+			if (v.verse === 0) continue;
 			const hasCrossRefs = v.cross_refs && v.cross_refs.length > 0;
 			const hasNotes = v.notes && v.notes.length > 0;
 			const annEntries = anns?.annotations.filter((a) => a.verse === v.verse) ?? [];
@@ -193,29 +209,31 @@
 		</div>
 
 		<!-- Tabs with sliding underline -->
-		<div
-			class="tab-row relative flex px-[4px] gap-[2px]"
-			role="tablist"
-			aria-label="Study panel sections"
-		>
-			{#each ['intro', 'commentary'] as const as tab}
-				<button
-					role="tab"
-					aria-selected={$studyPanel.activeTab === tab}
-					class="tab-btn flex-1 pb-[9px] pt-[2px]"
-					class:tab-active={$studyPanel.activeTab === tab}
-					on:click={() => studyPanel.update((s) => ({ ...s, activeTab: tab }))}
-				>
-					{tab === 'intro' ? 'Intro' : 'Commentary'}
-				</button>
-			{/each}
-			<!-- Single sliding underline -->
+		{#if hasIntros}
 			<div
-				class="tab-slider"
-				style="transform: translateX({sliderIndex * 100}%)"
-				aria-hidden="true"
-			></div>
-		</div>
+				class="tab-row relative flex px-[4px] gap-[2px]"
+				role="tablist"
+				aria-label="Study panel sections"
+			>
+				{#each ['intro', 'commentary'] as const as tab}
+					<button
+						role="tab"
+						aria-selected={$studyPanel.activeTab === tab}
+						class="tab-btn flex-1 pb-[9px] pt-[2px]"
+						class:tab-active={$studyPanel.activeTab === tab}
+						on:click={() => switchTab(tab)}
+					>
+						{tab === 'intro' ? 'Intro' : 'Commentary'}
+					</button>
+				{/each}
+				<!-- Single sliding underline -->
+				<div
+					class="tab-slider"
+					style="transform: translateX({sliderIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		{/if}
 
 		<div class="border-b border-border"></div>
 	</div>
@@ -249,7 +267,7 @@
 					{@const intro = intros[$studyPanel.activeIntroIndex]}
 					<div class="content-block">
 						<p class="content-eyebrow">{tabLabel(intro.title)}</p>
-						<AnnotatedText text={intro.text} annotations={intro.annotations ?? []} />
+						<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
 					</div>
 				{/if}
 			{/if}
@@ -306,19 +324,6 @@
 								</div>
 							{/if}
 
-							<!-- Notes -->
-							{#if section.verseData?.notes && section.verseData.notes.length > 0}
-								<div class="sub-section">
-									<div class="sub-section-header">Notes</div>
-									{#each section.verseData.notes as note}
-										<div class="note-row" data-panel-id="panel-{section.verse}-note-{note.label}">
-											<span class="note-marker">{note.label}</span>
-											<span class="note-text">{@html note.text}</span>
-										</div>
-									{/each}
-								</div>
-							{/if}
-
 							<!-- Annotations -->
 							{#if section.annotationEntries.length > 0}
 								<div class="sub-section">
@@ -330,6 +335,19 @@
 										>
 											<p class="annotation-title">{ann.title}</p>
 											<AnnotationProse text={ann.text} notes={ann.notes} />
+										</div>
+									{/each}
+								</div>
+							{/if}
+
+							<!-- Notes -->
+							{#if section.verseData?.notes && section.verseData.notes.length > 0}
+								<div class="sub-section">
+									<div class="sub-section-header">Notes</div>
+									{#each section.verseData.notes as note}
+										<div class="note-row" data-panel-id="panel-{section.verse}-note-{note.label}">
+											<span class="note-marker">{note.label}</span>
+											<span class="note-text">{@html note.text}</span>
 										</div>
 									{/each}
 								</div>

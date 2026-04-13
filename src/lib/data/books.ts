@@ -242,7 +242,7 @@ export const ALL_BOOKS: BookMeta[] = [
 	},
 	{
 		slug: 'jeremie',
-		odrName: 'Jeremie',
+		odrName: 'Jeremy',
 		modernName: 'Jeremiah',
 		testament: 'OT',
 		chapters: 52,

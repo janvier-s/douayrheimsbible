@@ -12,10 +12,21 @@
 	export let showNav: boolean = true;
 	export let routeBase: string = '/odr';
 	export let headingLevel: 'h1' | 'h2' = 'h1';
+	export let bookTitle: string | null | undefined = undefined;
+	export let shortTitle: string | null | undefined = undefined;
+
+	function renderLine(line: string): string {
+		// Wrap Hebrew characters (U+0590–U+05FF, U+FB1D–U+FB4F) in a span
+		return line.replace(
+			/([\u0590-\u05FF\uFB1D-\uFB4F]+(?:\s[\u0590-\u05FF\uFB1D-\uFB4F]+)*)/g,
+			'<span class="hebrew">$1</span>'
+		);
+	}
 
 	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
 
-	function bookLabel(bm: BookMeta): string {
+	function bookLabel(bm: BookMeta, override?: string | null): string {
+		if (!$prefs.modernBookNames && override) return override;
 		return $prefs.modernBookNames ? bm.modernName : bm.odrName;
 	}
 
@@ -61,6 +72,19 @@
 	let activeVerse: number | undefined = targetVerse;
 	$: if (targetVerse !== undefined) activeVerse = targetVerse;
 
+	// Verse 0 is a summary continuation fragment — merge it into the summary display
+	$: verse0 = chapter.verses.find((v) => v.verse === 0);
+	$: fullSummary = verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? '');
+	$: displayVerses = verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses;
+
+	/** Convert ALL CAPS words (2+ letters) to capitalized small-caps spans. */
+	function allcapsToSmallcaps(html: string): string {
+		return html.replace(/(?<![<\w\/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
+			const capitalized = word.charAt(0) + word.slice(1).toLowerCase();
+			return `<span class="sc">${capitalized}</span>`;
+		});
+	}
+
 	function linkifySummary(text: string, isStudy: boolean): string {
 		// Summary text is from trusted build-time JSON; we only inject our own tags.
 		// Match verse-number references in summary text: a digit-sequence followed by
@@ -85,6 +109,7 @@
 			t = t.replace(/<na>[^<]*<\/na>/g, '');
 			t = t.replace(/  +/g, ' ').trim();
 		}
+		t = allcapsToSmallcaps(t);
 		return t;
 	}
 
@@ -140,9 +165,21 @@
 {/if}
 
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
+	{#if chapter.chapter === 1 && bookTitle}
+		<header class="book-title-header mb-[50px] text-center">
+			{#each bookTitle.split('\n') as line, i}
+				{#if i === 0}
+					<span class="book-title-main">{line}</span>
+				{:else}
+					<span class="book-title-sub">{@html renderLine(line)}</span>
+				{/if}
+			{/each}
+		</header>
+	{/if}
+
 	<header class="mb-[35px]">
 		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
-			{bookLabel(bookMeta)}
+			{bookLabel(bookMeta, shortTitle)}
 		</p>
 		<svelte:element
 			this={headingLevel}
@@ -156,18 +193,18 @@
 		<div class="w-10 h-px bg-accent opacity-70"></div>
 	</header>
 
-	{#if chapter.summary && chapter.summary !== '---'}
+	{#if fullSummary && fullSummary !== '---'}
 		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 		<p
 			class="text-subtle font-reader italic mb-lg text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 			on:click={handleSummaryClick}
 		>
-			{@html linkifySummary(chapter.summary, $prefs.readingMode === 'study')}
+			{@html linkifySummary(fullSummary, $prefs.readingMode === 'study')}
 		</p>
 	{/if}
 
 	<VerseList
-		verses={chapter.verses}
+		verses={displayVerses}
 		targetVerse={activeVerse}
 		bookSlug={bookMeta.slug}
 		chapterNum={chapter.chapter}
@@ -175,6 +212,38 @@
 </article>
 
 <style>
+	.book-title-header {
+		padding: 30px 20px 0;
+	}
+
+	.book-title-main {
+		font-family: var(--font-reader);
+		font-size: 2rem;
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		color: var(--color-foreground);
+		display: block;
+	}
+
+	.book-title-sub {
+		font-family: var(--font-reader);
+		font-size: 1.1rem;
+		font-style: italic;
+		letter-spacing: 0.02em;
+		color: var(--color-subtle);
+		display: block;
+		margin-top: 2px;
+	}
+
+	.book-title-sub :global(.hebrew) {
+		font-family: 'Frank Ruhl Libre', 'David', 'Times New Roman', serif;
+		font-style: normal;
+		font-size: 1.3rem;
+		letter-spacing: 0.05em;
+		direction: rtl;
+		unicode-bidi: bidi-override;
+	}
+
 	:global(.summary-verse-ref) {
 		color: color-mix(in srgb, var(--color-interactive) 75%, var(--color-text));
 		font-variant-numeric: tabular-nums;

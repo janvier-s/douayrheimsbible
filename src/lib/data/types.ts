@@ -61,6 +61,7 @@ export interface Chapter {
 export interface BookData {
 	book: string;
 	book_title?: string | null;
+	short_title?: string | null;
 	hebrew_title?: string | null;
 	chapters: Chapter[];
 	intros?: BookIntro[];
@@ -70,6 +71,7 @@ export interface BookIntro {
 	title: string;
 	text: string;
 	annotations?: InlineAnnotation[];
+	notes?: AnnotationNote[];
 	default?: boolean;
 }
 

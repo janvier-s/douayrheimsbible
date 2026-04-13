@@ -7,14 +7,26 @@
 	export let text: string;
 	export let notes: AnnotationNote[] = [];
 
+	/** Convert ALL CAPS words (2+ letters) to capitalized small-caps spans.
+	 *  e.g. "JESUS" → '<span class="sc">Jesus</span>' */
+	function allcapsToSmallcaps(html: string): string {
+		// Only match ALLCAPS words that are NOT inside an HTML tag
+		return html.replace(/(?<![<\w\/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
+			const capitalized = word.charAt(0) + word.slice(1).toLowerCase();
+			return `<span class="sc">${capitalized}</span>`;
+		});
+	}
+
 	function renderParagraphs(raw: string): string[] {
-		return raw.split('\n\n').map((p) =>
-			p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
+		return raw.split('\n\n').map((p) => {
+			let html = p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
 				// Normalise [1] → 1 for numeric markers; leave ◦ and others as-is
 				const display = raw.replace(/^\[(\d+)\]$/, '$1');
 				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
-			})
-		);
+			});
+			html = allcapsToSmallcaps(html);
+			return html;
+		});
 	}
 
 	const POPOVER_WIDTH = 300;

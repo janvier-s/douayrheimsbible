@@ -30,6 +30,8 @@ export interface ReadingPrefs {
 	compareFontSize: number;
 	// v11
 	expandAmpersand: boolean;
+	// v12
+	studyDefaultTab: 'intro' | 'commentary';
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -55,10 +57,11 @@ const DEFAULTS: ReadingPrefs = {
 	showItalics: true,
 	showSmallCaps: true,
 	compareFontSize: 13,
-	expandAmpersand: false
+	expandAmpersand: false,
+	studyDefaultTab: 'intro'
 };
 
-const PREFS_VERSION = 11;
+const PREFS_VERSION = 12;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -114,6 +117,10 @@ function loadPrefs(): ReadingPrefs {
 		// v11 migration: add expand ampersand toggle
 		if (!parsed._v || parsed._v < 11) {
 			parsed.expandAmpersand = false;
+		}
+		// v12 migration: add study default tab preference
+		if (!parsed._v || parsed._v < 12) {
+			parsed.studyDefaultTab = 'intro';
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

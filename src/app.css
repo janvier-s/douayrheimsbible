@@ -93,6 +93,16 @@
 		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Frank Ruhl Libre — traditional Hebrew serif for book titles */
+@font-face {
+	font-family: 'Frank Ruhl Libre';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/FrankRuhlLibre-hebrew.woff2') format('woff2');
+	unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
 /* Ensure liturgical characters (℣ U+2123) render on all devices */
 @font-face {
 	font-family: 'SymbolFallback';
