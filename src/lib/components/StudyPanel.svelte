@@ -147,20 +147,8 @@
 	// Reset stale section element refs whenever the chapter changes
 	$: (currentBookSlug, currentChapterNum, (sectionEls = {}));
 
-	// Extract store fields so the sync reactive only re-runs when these
-	// specific values change — not on every store emit (e.g. annotatedVerse).
-	$: syncActiveVerse = $studyPanel.activeVerse;
-	$: syncActiveTab = $studyPanel.activeTab;
-
-	$: if (
-		browser &&
-		$prefs.syncStudyScroll &&
-		syncActiveVerse != null &&
-		syncActiveTab === 'commentary' &&
-		panelScroll
-	) {
-		scrollToSection(syncActiveVerse);
-	}
+	// Reader→panel auto-scroll disabled (too many edge cases with infinite scroll).
+	// Explicit clicks (scrollTrigger) still scroll the panel.
 
 	function scrollToSection(verse: number) {
 		const el = sectionEls[verse];
