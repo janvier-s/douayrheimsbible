@@ -343,12 +343,14 @@
 	<!-- Sticky panel container — overflow:clip on the sticky el itself, not an ancestor -->
 	<div
 		class="shrink-0 sticky flex [overflow:clip]"
-		style="top: var(--header-height); height: {$isMobile
+		style:top="var(--header-height)"
+		style:height={$isMobile
 			? 'calc(100vh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
-			: 'calc(100vh - var(--header-height))'}; max-width: {panelMaxWidth}; width: {panelWidth}; opacity: {$prefs.readingMode ===
-		'study'
-			? '1'
-			: '0'}; transition: {panelTransition};"
+			: 'calc(100vh - var(--header-height))'}
+		style:max-width={panelMaxWidth}
+		style:width={panelWidth}
+		style:opacity={$prefs.readingMode === 'study' ? '1' : '0'}
+		style:transition={panelTransition}
 	>
 		<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 		<div

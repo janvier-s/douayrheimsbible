@@ -58,19 +58,22 @@
 		if (key !== lastAnnotationKey && currentBookSlug) {
 			// eslint-disable-next-line no-useless-assignment
 			lastAnnotationKey = key;
+			// Capture these NOW, before any async gap
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
 			annotationsLoading = true;
 			annotations = null;
 			studyPanel.update((s) => ({ ...s, annotatedVerse: null }));
-			loadAnnotations(currentBookSlug, currentChapterNum, fetch)
+			loadAnnotations(slug, chNum, fetch)
 				.then((data) => {
-					// Only apply if still the same chapter
-					if (`${currentBookSlug}/${currentChapterNum}` === key) {
+					// Only apply if still the same chapter (use captured values, not live ones)
+					if (`${slug}/${chNum}` === key) {
 						annotations = data;
 						annotationsLoading = false;
 					}
 				})
 				.catch(() => {
-					if (`${currentBookSlug}/${currentChapterNum}` === key) {
+					if (`${slug}/${chNum}` === key) {
 						annotationsLoading = false;
 					}
 				});
