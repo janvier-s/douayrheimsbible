@@ -147,19 +147,26 @@
 	// Reset stale section element refs whenever the chapter changes
 	$: (currentBookSlug, currentChapterNum, (sectionEls = {}));
 
+	// Extract store fields so the sync reactive only re-runs when these
+	// specific values change — not on every store emit (e.g. annotatedVerse).
+	$: syncActiveVerse = $studyPanel.activeVerse;
+	$: syncActiveTab = $studyPanel.activeTab;
+
 	$: if (
 		browser &&
 		$prefs.syncStudyScroll &&
-		$studyPanel.activeVerse != null &&
-		$studyPanel.activeTab === 'commentary' &&
+		syncActiveVerse != null &&
+		syncActiveTab === 'commentary' &&
 		panelScroll
 	) {
-		scrollToSection($studyPanel.activeVerse);
+		scrollToSection(syncActiveVerse);
 	}
 
 	function scrollToSection(verse: number) {
 		const el = sectionEls[verse];
 		if (!el || !panelScroll) return;
+		// Sync the verse underline in the reader
+		studyPanel.update((s) => (s.annotatedVerse !== verse ? { ...s, annotatedVerse: verse } : s));
 		programmaticScroll = true;
 		if (programmaticScrollTimer) clearTimeout(programmaticScrollTimer);
 		const panelTop = panelScroll.getBoundingClientRect().top;
@@ -341,7 +348,7 @@
 					{#each verseSections as section (section.verse)}
 						<div
 							class="verse-section"
-							class:verse-section-active={$studyPanel.activeVerse === section.verse}
+							class:verse-section-active={$studyPanel.annotatedVerse === section.verse}
 							bind:this={sectionEls[section.verse]}
 							data-section-verse={section.verse}
 						>
@@ -366,19 +373,6 @@
 								</div>
 							{/if}
 
-							<!-- Cross-references -->
-							{#if section.verseData?.cross_refs && section.verseData.cross_refs.length > 0}
-								<div class="sub-section">
-									<div class="sub-section-header">Cross-references</div>
-									{#each section.verseData.cross_refs as cr, ci}
-										<div class="cr-row" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
-											<span class="cr-marker">{ci + 1}</span>
-											<span class="cr-text">{cr.text}</span>
-										</div>
-									{/each}
-								</div>
-							{/if}
-
 							<!-- Annotations -->
 							{#if section.annotationEntries.length > 0}
 								<div class="sub-section">
@@ -390,6 +384,19 @@
 										>
 											<p class="annotation-title">{ann.title}</p>
 											<AnnotationProse text={ann.text} notes={ann.notes} />
+										</div>
+									{/each}
+								</div>
+							{/if}
+
+							<!-- Cross-references -->
+							{#if section.verseData?.cross_refs && section.verseData.cross_refs.length > 0}
+								<div class="sub-section">
+									<div class="sub-section-header">Cross-references</div>
+									{#each section.verseData.cross_refs as cr, ci}
+										<div class="cr-row" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
+											<span class="cr-marker">{ci + 1}</span>
+											<span class="cr-text">{cr.text}</span>
 										</div>
 									{/each}
 								</div>
