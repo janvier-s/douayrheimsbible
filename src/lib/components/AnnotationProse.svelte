@@ -403,6 +403,8 @@
 	/* Bright blink + glow for inline text markers */
 	:global(.mn-marker.note-blink) {
 		animation: marker-blink 4s ease both;
+		margin-left: 0;
+		padding-left: 3px;
 	}
 
 	@keyframes marker-blink {
