@@ -372,9 +372,10 @@
 		opacity: 0.9;
 	}
 
-	/* Glow with double-blink at start */
+	/* Glow with double-blink at start — note rows */
 	:global(.note-blink) {
 		animation: note-blink 4s ease both;
+		padding-left: 10px;
 	}
 
 	@keyframes note-blink {
@@ -398,26 +399,27 @@
 		}
 	}
 
-	/* Same glow for inline markers (text background) */
+	/* Bright blink + glow for inline text markers */
 	:global(.mn-marker.note-blink) {
 		animation: marker-blink 4s ease both;
+		padding-left: 0;
 	}
 
 	@keyframes marker-blink {
 		0% {
-			background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+			background: color-mix(in srgb, var(--color-accent) 50%, transparent);
 		}
 		5% {
-			background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+			background: color-mix(in srgb, var(--color-accent) 80%, transparent);
 		}
 		12% {
-			background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+			background: color-mix(in srgb, var(--color-accent) 35%, transparent);
 		}
 		18% {
-			background: color-mix(in srgb, var(--color-accent) 32%, transparent);
+			background: color-mix(in srgb, var(--color-accent) 70%, transparent);
 		}
 		26% {
-			background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+			background: color-mix(in srgb, var(--color-accent) 40%, transparent);
 		}
 		100% {
 			background: color-mix(in srgb, var(--color-accent) 15%, transparent);
