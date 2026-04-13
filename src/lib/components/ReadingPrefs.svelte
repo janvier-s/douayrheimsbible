@@ -284,15 +284,14 @@
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"
-					checked={$prefs.annotationSync ?? true}
-					on:change={(e) =>
-						prefs.update((p) => ({
-							...p,
-							annotationSync: (e.target as HTMLInputElement).checked
-						}))}
+					checked={($prefs.syncStudyScroll ?? true) && ($prefs.annotationSync ?? true)}
+					on:change={(e) => {
+						const v = (e.target as HTMLInputElement).checked;
+						prefs.update((p) => ({ ...p, syncStudyScroll: v, annotationSync: v }));
+					}}
 					class="accent-accent"
 				/>
-				<span>Annotation verse sync</span>
+				<span>Verse &amp; notes scroll sync</span>
 			</label>
 
 			<label class="flex items-center gap-sm cursor-pointer">
