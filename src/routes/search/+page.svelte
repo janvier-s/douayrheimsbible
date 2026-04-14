@@ -635,7 +635,7 @@
 <main
 	id="main-content"
 	class="max-w-[750px] mx-auto px-md font-ui"
-	style="padding-top: 55px; padding-bottom: {isHero
+	style="padding-top: 55px; min-height: {isHero ? 'auto' : '100vh'}; padding-bottom: {isHero
 		? 'calc(4rem + clamp(40px, 12vh, 120px))'
 		: '2rem'};"
 	in:fade={{ duration: reducedMotion ? 0 : 140 }}
