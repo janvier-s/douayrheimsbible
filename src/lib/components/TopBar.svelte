@@ -232,7 +232,7 @@
 		<div
 			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center relative flex items-center"
 		>
-			<!-- Left chevrons — absolutely to the left of the button -->
+			<!-- Left chevrons — absolutely to the left of the button; placeholders keep slots fixed -->
 			<div
 				class="absolute right-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pr-[8px]"
 			>
@@ -242,9 +242,13 @@
 						direction="prev"
 						label={bookNavLabel(prevBook)}
 					/>
+				{:else if isChapterPage}
+					<div class="w-[15px]" aria-hidden="true"></div>
 				{/if}
 				{#if prevChapterHref}
 					<ChapterNavLink href={prevChapterHref} direction="prev" chapter={chapterNumInt - 1} />
+				{:else if isChapterPage}
+					<div class="w-[15px]" aria-hidden="true"></div>
 				{/if}
 			</div>
 			<button
@@ -264,10 +268,12 @@
 					>{navOpen ? '▲' : '▼'}</span
 				>
 			</button>
-			<!-- Right chevrons — absolutely to the right of the button -->
+			<!-- Right chevrons — absolutely to the right of the button; placeholders keep slots fixed -->
 			<div class="absolute left-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pl-[8px]">
 				{#if nextChapterHref}
 					<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNumInt + 1} />
+				{:else if isChapterPage}
+					<div class="w-[15px]" aria-hidden="true"></div>
 				{/if}
 				{#if nextBook}
 					<BookNavLink
@@ -275,6 +281,8 @@
 						direction="next"
 						label={bookNavLabel(nextBook)}
 					/>
+				{:else if isChapterPage}
+					<div class="w-[15px]" aria-hidden="true"></div>
 				{/if}
 			</div>
 		</div>
