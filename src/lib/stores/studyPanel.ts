@@ -9,6 +9,8 @@ export interface ScrollTrigger {
 	marker?: string; // e.g. "1", "a"
 }
 
+// ── UI + sync state (persistent across tab switches) ─────────────────────────
+
 export interface StudyPanelState {
 	activeTab: StudyTab;
 	activeIntroIndex: number;
@@ -19,7 +21,6 @@ export interface StudyPanelState {
 	 *  without showing the underline — keeps "you selected this verse" separate from
 	 *  "the panel is currently showing this verse". */
 	panelScrollVerse: number | null;
-	scrollTrigger: ScrollTrigger | null;
 }
 
 const defaults: StudyPanelState = {
@@ -27,8 +28,14 @@ const defaults: StudyPanelState = {
 	activeIntroIndex: 0,
 	activeVerse: null,
 	annotatedVerse: null,
-	panelScrollVerse: null,
-	scrollTrigger: null
+	panelScrollVerse: null
 };
 
 export const studyPanel = writable<StudyPanelState>({ ...defaults });
+
+// ── Scroll trigger (one-shot event) ──────────────────────────────────────────
+// Separated from the main store so frequent panelScrollVerse / annotatedVerse
+// updates don't cause the trigger subscriber to re-evaluate, and vice-versa.
+// Producer sets a value; consumer reads it and nulls it after handling.
+
+export const scrollTrigger = writable<ScrollTrigger | null>(null);

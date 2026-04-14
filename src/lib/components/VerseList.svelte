@@ -3,7 +3,7 @@
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
-	import { studyPanel } from '$lib/stores/studyPanel';
+	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
@@ -117,12 +117,8 @@
 		e.stopPropagation();
 		const type = btn.dataset.markerType as 'cross_ref' | 'note';
 		const marker = btn.dataset.marker ?? '';
-		studyPanel.update((s) => ({
-			...s,
-			activeTab: 'commentary',
-			annotatedVerse: verseNum,
-			scrollTrigger: { verse: verseNum, type, marker }
-		}));
+		studyPanel.update((s) => ({ ...s, annotatedVerse: verseNum }));
+		scrollTrigger.set({ verse: verseNum, type, marker });
 	}
 
 	// ── Verse click (annotation) ─────────────────────────────────────
@@ -131,12 +127,8 @@
 		// Don't fire if a marker was clicked (handled above)
 		if ((e.target as HTMLElement).closest('[data-marker-type]')) return;
 		if (!v.has_annotation) return;
-		studyPanel.update((s) => ({
-			...s,
-			activeTab: 'commentary',
-			annotatedVerse: v.verse,
-			scrollTrigger: { verse: v.verse, type: 'annotation' }
-		}));
+		studyPanel.update((s) => ({ ...s, annotatedVerse: v.verse }));
+		scrollTrigger.set({ verse: v.verse, type: 'annotation' });
 	}
 
 	// ── Marker hover popover ─────────────────────────────────────────

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tick, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
-	import { studyPanel } from '$lib/stores/studyPanel';
+	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import { prefs } from '$lib/stores/prefs';
 	import { loadAnnotations } from '$lib/data/loader';
@@ -154,7 +154,11 @@
 	let annotatedVerseTimer: ReturnType<typeof setTimeout> | null = null;
 
 	// Reset stale section element refs whenever the chapter changes
-	$: (currentBookSlug, currentChapterNum, (sectionEls = {}));
+	$: {
+		currentBookSlug;
+		currentChapterNum;
+		sectionEls = {};
+	}
 
 	// Reader→panel auto-scroll disabled (too many edge cases with infinite scroll).
 	// Explicit clicks (scrollTrigger) still scroll the panel.
@@ -226,11 +230,13 @@
 
 	// ── ScrollTrigger consumption ────────────────────────────────────
 
-	$: if ($studyPanel.scrollTrigger && panelScroll) {
-		handleScrollTrigger($studyPanel.scrollTrigger);
+	$: if ($scrollTrigger && panelScroll) {
+		handleScrollTrigger($scrollTrigger);
 	}
 
-	async function handleScrollTrigger(trigger: NonNullable<typeof $studyPanel.scrollTrigger>) {
+	async function handleScrollTrigger(
+		trigger: NonNullable<import('$lib/stores/studyPanel').ScrollTrigger>
+	) {
 		// Switch to commentary tab
 		if ($studyPanel.activeTab !== 'commentary') {
 			studyPanel.update((s) => ({ ...s, activeTab: 'commentary' }));
@@ -255,7 +261,8 @@
 
 		// Consume the trigger; also sync activeVerse so the observer reactive
 		// doesn't re-run with a stale verse and clobber our scroll position.
-		studyPanel.update((s) => ({ ...s, scrollTrigger: null, activeVerse: trigger.verse }));
+		scrollTrigger.set(null);
+		studyPanel.update((s) => ({ ...s, activeVerse: trigger.verse }));
 	}
 
 	// Slider position: 0 = Intro, 1 = Commentary
@@ -623,30 +630,8 @@
 		margin-bottom: 6px;
 	}
 
-	/* Cross-references */
-	.cr-row {
-		display: flex;
-		gap: 7px;
-		align-items: baseline;
-		line-height: 1.45;
-		padding: 2px 0;
-	}
-
-	.cr-marker {
-		font-family: var(--font-ui);
-		font-size: 10px;
-		font-weight: 600;
-		color: var(--color-accent-text);
-		flex-shrink: 0;
-		min-width: 18px;
-	}
-
-	.cr-text {
-		font-family: var(--font-ui);
-		font-size: 15px;
-	}
-
-	/* Notes */
+	/* Cross-references & Notes (shared layout) */
+	.cr-row,
 	.note-row {
 		display: flex;
 		gap: 7px;
@@ -655,6 +640,7 @@
 		padding: 2px 0;
 	}
 
+	.cr-marker,
 	.note-marker {
 		font-family: var(--font-ui);
 		font-size: 10px;
@@ -664,6 +650,7 @@
 		min-width: 18px;
 	}
 
+	.cr-text,
 	.note-text {
 		font-family: var(--font-ui);
 		font-size: 15px;

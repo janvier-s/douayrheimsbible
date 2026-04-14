@@ -112,12 +112,12 @@ export const konamiUnlocked = writable<boolean>(
 	browser ? localStorage.getItem(KONAMI_KEY) === '1' : false
 );
 
-konamiUnlocked.subscribe((v) => {
-	if (browser) {
+if (browser) {
+	konamiUnlocked.subscribe((v) => {
 		if (v) localStorage.setItem(KONAMI_KEY, '1');
 		else localStorage.removeItem(KONAMI_KEY);
-	}
-});
+	});
+}
 
 // ── Compare store ─────────────────────────────────────────────────────────────
 

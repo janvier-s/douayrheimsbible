@@ -85,11 +85,12 @@
 			}, 80);
 		};
 		scroller.addEventListener('scroll', handler, { passive: true });
-		// Fallback if already at position (no scroll events fire)
+		// Fallback if already at position (no scroll events fire).
+		// 300ms gives smooth scroll enough time to begin emitting events.
 		timer = setTimeout(() => {
 			scroller.removeEventListener('scroll', handler);
 			cb();
-		}, 100);
+		}, 300);
 	}
 
 	/** Double-blink: two rapid fades then a longer glow that fades out. */

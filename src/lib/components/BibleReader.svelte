@@ -15,7 +15,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { createPanelResize } from '$lib/utils/panelResize';
-	import type { Chapter, BookMeta } from '$lib/data/types';
+	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
 	import StudyPanel from './StudyPanel.svelte';
 	import PageFooter from './PageFooter.svelte';
 	import { isMobile } from '$lib/stores/mobile';
@@ -79,10 +79,13 @@
 	$: if (panelEl && !panelDragging && !$isMobile) panelEl.style.width = $prefs.studyPanelWidth;
 	$: if (panelEl && $isMobile && $prefs.readingMode === 'study') panelEl.style.width = '100%';
 
-	// Bumped after each loadBook resolves, so the reactive below re-evaluates.
-	let bookCacheTick = 0;
-	$: currentBookData =
-		bookCacheTick >= 0 ? getCachedBook($readingPosition?.bookSlug ?? initialBookMeta.slug) : null;
+	// Re-evaluated whenever readingPosition changes (slug or chapter switch).
+	// After the initial loadBook in onMount, we assign directly to pick up the data.
+	let currentBookData: BookData | null = getCachedBook(initialBookMeta.slug);
+	$: {
+		const slug = $readingPosition?.bookSlug ?? initialBookMeta.slug;
+		currentBookData = getCachedBook(slug);
+	}
 
 	const updatePosition = debounce((slug: string, ch: number) => {
 		replaceState(`${routeBase}/${slug}/${ch}`, {});
@@ -137,7 +140,6 @@
 		loadingAny = true;
 		try {
 			const bookData = await loadBook(last.bookMeta.slug, fetch);
-			bookCacheTick++;
 			const nextCh = getChapter(bookData, nextChNum);
 			if (nextCh) {
 				chapters = [
@@ -178,7 +180,6 @@
 		loadingAny = true;
 		try {
 			const bookData = await loadBook(targetBookMeta.slug, fetch);
-			bookCacheTick++;
 			const prevCh = getChapter(bookData, prevChNum);
 			const totalChs = bookData.chapters.length;
 			if (prevCh) {
@@ -280,7 +281,7 @@
 		window.addEventListener('scroll', onScroll, { passive: true });
 		try {
 			await loadBook(initialBookMeta.slug, fetch);
-			bookCacheTick++;
+			currentBookData = getCachedBook(initialBookMeta.slug);
 		} catch (e) {
 			console.warn('Failed to preload book data:', e);
 		}
