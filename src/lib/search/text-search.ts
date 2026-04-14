@@ -1,4 +1,9 @@
 import MiniSearch from 'minisearch';
+
+/** Minimal KV interface — avoids importing @cloudflare/workers-types directly */
+interface KVStore {
+	get(key: string): Promise<string | null>;
+}
 import { searchTokenizer, processTerm } from './normalize';
 import { expandTokens, expandTokenGroups, isAllStopWords } from './expand-query';
 import { tokenize } from './normalize';
@@ -71,7 +76,7 @@ let notesIndexPromise: Promise<MiniSearch> | null = null;
 async function fetchIndexJson(
 	key: string,
 	url: string,
-	kv: KVNamespace | undefined,
+	kv: KVStore | undefined,
 	fetch: typeof globalThis.fetch
 ): Promise<string> {
 	if (kv) {
@@ -83,10 +88,7 @@ async function fetchIndexJson(
 	return res.text();
 }
 
-async function loadVerseIndex(
-	fetch: typeof globalThis.fetch,
-	kv?: KVNamespace
-): Promise<MiniSearch> {
+async function loadVerseIndex(fetch: typeof globalThis.fetch, kv?: KVStore): Promise<MiniSearch> {
 	if (verseIndex) return verseIndex;
 	if (verseIndexPromise) return verseIndexPromise;
 
@@ -104,10 +106,7 @@ async function loadVerseIndex(
 	return verseIndexPromise;
 }
 
-async function loadNotesIndex(
-	fetch: typeof globalThis.fetch,
-	kv?: KVNamespace
-): Promise<MiniSearch> {
+async function loadNotesIndex(fetch: typeof globalThis.fetch, kv?: KVStore): Promise<MiniSearch> {
 	if (notesIndex) return notesIndex;
 	if (notesIndexPromise) return notesIndexPromise;
 
@@ -180,7 +179,7 @@ export async function searchVerses(
 	query: string,
 	fetch: typeof globalThis.fetch,
 	limit = 100,
-	kv?: KVNamespace
+	kv?: KVStore
 ): Promise<{ results: TextSearchResult[]; total: number; queryTokens: string[] }> {
 	const tokens = tokenize(query);
 	if (!tokens.length || isAllStopWords(tokens)) {
@@ -213,7 +212,7 @@ export async function searchNotes(
 	query: string,
 	fetch: typeof globalThis.fetch,
 	limit = 100,
-	kv?: KVNamespace
+	kv?: KVStore
 ): Promise<{ results: TextSearchResult[]; total: number; queryTokens: string[] }> {
 	const tokens = tokenize(query);
 	if (!tokens.length || isAllStopWords(tokens)) {

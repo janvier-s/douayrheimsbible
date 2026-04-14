@@ -1,6 +1,7 @@
-/// <reference types="@cloudflare/workers-types" />
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
+import type { KVNamespace } from '@cloudflare/workers-types';
+
 declare global {
 	namespace App {
 		// interface Error {}
