@@ -293,10 +293,16 @@
 		// Block loadPrevChapter for 300ms — covers the ~33ms afterNavigate double-rAF
 		// and any microtask/rAF jitter, while still allowing free infinite scroll up
 		// once the page has settled.
-		navCooldownUntil = Date.now() + 300;
+		navCooldownUntil = Date.now() + 2000;
 		scrollReady = true;
-		onScrollCheck(); // scroll-based check (mostly for shouldLoadNext near bottom)
-		preloadTimer = setTimeout(() => checkRollingPreload(), 310); // kick off pre-load after cooldown expires
+		// Delay preloading next chapters to avoid CLS. Only call onScrollCheck
+		// (appends below viewport — no CLS). Skip checkRollingPreload here because
+		// it would prepend previous chapters, causing a layout shift the browser
+		// reports before our scroll compensation runs. Previous-chapter preload
+		// kicks in naturally once the user scrolls and readingPosition changes.
+		preloadTimer = setTimeout(() => {
+			onScrollCheck();
+		}, 2000);
 	});
 
 	onDestroy(() => {

@@ -234,7 +234,7 @@
 		>
 			<!-- Left chevrons — absolutely to the left of the button; placeholders keep slots fixed -->
 			<div
-				class="absolute right-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pr-[8px]"
+				class="hidden md:flex absolute right-full top-1/2 -translate-y-1/2 items-center gap-[8px] pr-[8px]"
 			>
 				{#if prevBook}
 					<BookNavLink
@@ -269,7 +269,9 @@
 				>
 			</button>
 			<!-- Right chevrons — absolutely to the right of the button; placeholders keep slots fixed -->
-			<div class="absolute left-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pl-[8px]">
+			<div
+				class="hidden md:flex absolute left-full top-1/2 -translate-y-1/2 items-center gap-[8px] pl-[8px]"
+			>
 				{#if nextChapterHref}
 					<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNumInt + 1} />
 				{:else if isChapterPage}

@@ -181,7 +181,7 @@
 		>
 			<!-- Left chevrons — placeholders keep slots fixed when chevrons are absent -->
 			<div
-				class="absolute right-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pr-[8px]"
+				class="hidden md:flex absolute right-full top-1/2 -translate-y-1/2 items-center gap-[8px] pr-[8px]"
 			>
 				{#if prevBook}
 					<BookNavLink
@@ -213,7 +213,9 @@
 				>
 			</button>
 			<!-- Right chevrons — placeholders keep slots fixed when chevrons are absent -->
-			<div class="absolute left-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pl-[8px]">
+			<div
+				class="hidden md:flex absolute left-full top-1/2 -translate-y-1/2 items-center gap-[8px] pl-[8px]"
+			>
 				{#if nextChapterHref}
 					<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNum + 1} />
 				{:else}
