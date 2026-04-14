@@ -371,9 +371,9 @@
 			tabindex="0"
 			class="w-[5px] shrink-0 cursor-col-resize hover:bg-[rgba(128,128,128,0.2)] focus:bg-[rgba(128,128,128,0.3)] transition-colors duration-fast self-stretch outline-none max-md:hidden"
 			on:mousedown={resize.onDividerMousedown}
-			on:touchstart={resize.onTouchStart}
-			on:touchmove={resize.onTouchMove}
-			on:touchend={resize.onTouchEnd}
+			on:touchstart|passive={resize.onTouchStart}
+			on:touchmove|passive={resize.onTouchMove}
+			on:touchend|passive={resize.onTouchEnd}
 			on:keydown={resize.onKeydown}
 		></div>
 		<div bind:this={panelEl} class="shrink-0 h-full">
