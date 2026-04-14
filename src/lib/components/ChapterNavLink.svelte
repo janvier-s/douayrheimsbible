@@ -18,6 +18,6 @@
 		class="pointer-events-none absolute top-full left-1/2 -translate-x-1/2 mt-[5px] px-[6px] py-[3px] bg-foreground text-background text-[11px] rounded-[3px] whitespace-nowrap opacity-0 group-hover/chapnav:opacity-100 transition-opacity z-50"
 		style="transition-delay: 150ms;"
 	>
-		Ch. {chapter}
+		Chapter {chapter}
 	</div>
 </div>

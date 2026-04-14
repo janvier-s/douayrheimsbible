@@ -7,7 +7,7 @@
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
 	import PrefsPanel from './PrefsPanel.svelte';
-	import BookNavChevron from './BookNavChevron.svelte';
+	import BookNavLink from './BookNavLink.svelte';
 	import ChapterNavLink from './ChapterNavLink.svelte';
 	import { compareStore, TRANSLATIONS, konamiUnlocked } from '$lib/stores/compare';
 	import { ALL_BOOKS } from '$lib/data/books';
@@ -180,14 +180,11 @@
 			class="md:absolute md:left-1/2 md:-translate-x-1/2 flex-1 md:flex-none flex justify-center items-center gap-[8px]"
 		>
 			{#if prevBook}
-				<a
+				<BookNavLink
 					href="/compare/{prevBook.slug}/1"
-					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
-					title={bookNavLabel(prevBook)}
-					aria-label="Previous book: {bookNavLabel(prevBook)}"
-				>
-					<BookNavChevron direction="prev" />
-				</a>
+					direction="prev"
+					label={bookNavLabel(prevBook)}
+				/>
 			{/if}
 			{#if prevChapterHref}
 				<ChapterNavLink href={prevChapterHref} direction="prev" chapter={chapterNum - 1} />
@@ -210,14 +207,11 @@
 				<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNum + 1} />
 			{/if}
 			{#if nextBook}
-				<a
+				<BookNavLink
 					href="/compare/{nextBook.slug}/1"
-					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
-					title={bookNavLabel(nextBook)}
-					aria-label="Next book: {bookNavLabel(nextBook)}"
-				>
-					<BookNavChevron direction="next" />
-				</a>
+					direction="next"
+					label={bookNavLabel(nextBook)}
+				/>
 			{/if}
 		</div>
 

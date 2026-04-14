@@ -12,7 +12,7 @@
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
 	import PrefsPanel from './PrefsPanel.svelte';
-	import BookNavChevron from './BookNavChevron.svelte';
+	import BookNavLink from './BookNavLink.svelte';
 	import ChapterNavLink from './ChapterNavLink.svelte';
 
 	export let bookSlug: string;
@@ -233,14 +233,11 @@
 			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center flex items-center gap-[8px]"
 		>
 			{#if prevBook}
-				<a
+				<BookNavLink
 					href="/odr/{prevBook.slug}/1"
-					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
-					title={bookNavLabel(prevBook)}
-					aria-label="Previous book: {bookNavLabel(prevBook)}"
-				>
-					<BookNavChevron direction="prev" />
-				</a>
+					direction="prev"
+					label={bookNavLabel(prevBook)}
+				/>
 			{/if}
 			{#if prevChapterHref}
 				<ChapterNavLink href={prevChapterHref} direction="prev" chapter={chapterNumInt - 1} />
@@ -266,14 +263,11 @@
 				<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNumInt + 1} />
 			{/if}
 			{#if nextBook}
-				<a
+				<BookNavLink
 					href="/odr/{nextBook.slug}/1"
-					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
-					title={bookNavLabel(nextBook)}
-					aria-label="Next book: {bookNavLabel(nextBook)}"
-				>
-					<BookNavChevron direction="next" />
-				</a>
+					direction="next"
+					label={bookNavLabel(nextBook)}
+				/>
 			{/if}
 		</div>
 
