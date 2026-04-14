@@ -361,8 +361,11 @@
 			if (gen !== searchGeneration) return;
 			results = [];
 
-			// If text search found nothing, check if the query is a verse reference
-			if (verseTotal === 0 && noteTotal === 0) {
+			// If the active scope found nothing, check if the query is a verse reference.
+			// Only check the active scope total — cross-scope notes matching a word
+			// like "Matthew" shouldn't suppress the verse reference suggestion.
+			const activeTotal = scope === 'verses' ? verseTotal : noteTotal;
+			if (activeTotal === 0) {
 				const ranges = parseAllReferences(trimmed);
 				if (ranges.length > 0) {
 					try {
@@ -832,16 +835,17 @@
 			{#if searched && !loading && mode === 'verse' && results.length === 0}
 				{#if notAReferenceQuery && (textSuggestionVerses > 0 || textSuggestionNotes > 0)}
 					<div
-						class="text-subtle text-[14px] text-center flex flex-col items-center gap-[6px]"
+						class="text-subtle text-center flex flex-col items-center gap-[6px]"
 						in:fade={{ duration: reducedMotion ? 0 : 160 }}
 					>
-						<span>This looks like a text search.</span>
+						<span class="text-[16px]">This looks like a text search.</span>
 						<button
-							class="hover:underline"
+							class="text-[14px] hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => setMode('text')}>Switch to Text Search to find "{query}"</button
+							on:click={() => setMode('text')}
+							>Click here to switch to Text Search to find "{query}" →</button
 						>
-						<span class="text-[12px]"
+						<span class="text-[12px] italic"
 							>Found in {[
 								textSuggestionVerses > 0
 									? `${textSuggestionVerses} verse${textSuggestionVerses === 1 ? '' : 's'}`
@@ -1060,14 +1064,15 @@
 			{#if searched && !loading && mode === 'text' && textResults.length === 0 && noteResults.length === 0 && !stopWordWarning}
 				{#if isVerseReference && verseSuggestionCount > 0}
 					<div
-						class="text-subtle text-[14px] text-center flex flex-col items-center gap-[6px]"
+						class="text-subtle text-center flex flex-col items-center gap-[6px]"
 						in:fade={{ duration: reducedMotion ? 0 : 160 }}
 					>
-						<span>This looks like a verse reference.</span>
+						<span class="text-[16px]">This looks like a verse reference.</span>
 						<button
-							class="hover:underline"
+							class="text-[14px] hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => setMode('verse')}>Switch to Verse Search to look up "{query}"</button
+							on:click={() => setMode('verse')}
+							>Click here to switch to Verse Search to look up "{query}" →</button
 						>
 					</div>
 				{:else}
