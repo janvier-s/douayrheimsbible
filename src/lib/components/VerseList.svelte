@@ -5,6 +5,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
+	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import type { Verse } from '$lib/data/types';
 
 	export let verses: Verse[];
@@ -140,9 +141,6 @@
 
 	// ── Marker hover popover ─────────────────────────────────────────
 
-	const POPOVER_WIDTH = 300;
-	const POPOVER_GAP = 10;
-
 	interface PopoverState {
 		label: string;
 		content: string;
@@ -150,21 +148,8 @@
 	}
 
 	let openPopover: PopoverState | null = null;
-	let popoverStyle = '';
-	let popoverAbove = false;
+	let popoverAnchorEl: HTMLElement | null = null;
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
-
-	function calcPopoverStyle(btn: HTMLElement): string {
-		const rect = btn.getBoundingClientRect();
-		const markerCX = rect.left + rect.width / 2;
-		const spaceBelow = window.innerHeight - rect.bottom;
-		popoverAbove = spaceBelow < 150;
-		const idealLeft = markerCX - POPOVER_WIDTH / 2;
-		const left = Math.min(Math.max(idealLeft, 12), window.innerWidth - POPOVER_WIDTH - 12);
-		return popoverAbove
-			? `left:${left}px; bottom:${window.innerHeight - rect.top + POPOVER_GAP}px; width:${POPOVER_WIDTH}px;`
-			: `left:${left}px; top:${rect.bottom + POPOVER_GAP}px; width:${POPOVER_WIDTH}px;`;
-	}
 
 	/** Split concatenated Bible references onto separate lines.
 	 *  Detects new reference starts: ". " followed by a capital+lowercase word
@@ -204,7 +189,7 @@
 		const data = resolveMarkerContent(btn);
 		if (!data) return;
 		openPopover = data;
-		popoverStyle = calcPopoverStyle(btn);
+		popoverAnchorEl = btn;
 	}
 
 	function handleMarkerMouseout(e: Event) {
@@ -216,7 +201,7 @@
 	function schedulePopoverDismiss() {
 		hoverTimer = setTimeout(() => {
 			openPopover = null;
-			popoverStyle = '';
+			popoverAnchorEl = null;
 			hoverTimer = null;
 		}, 120);
 	}
@@ -231,7 +216,7 @@
 	function dismissPopover() {
 		cancelPopoverDismiss();
 		openPopover = null;
-		popoverStyle = '';
+		popoverAnchorEl = null;
 	}
 
 	// ── IntersectionObserver for scroll sync ─────────────────────────
@@ -274,8 +259,6 @@
 		for (const [, el] of Object.entries(verseEls)) {
 			if (el) verseObserver.observe(el);
 		}
-
-		document.addEventListener('scroll', dismissPopover, true);
 	});
 
 	// Re-observe when verses change.
@@ -295,7 +278,6 @@
 		verseObserver?.disconnect();
 		if (hoverTimer) clearTimeout(hoverTimer);
 		if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
-		if (browser) document.removeEventListener('scroll', dismissPopover, true);
 	});
 
 	// Scroll to target verse after navigation
@@ -425,20 +407,17 @@
 	</ol>
 {/if}
 
-{#if openPopover && popoverStyle}
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<div
-		class="marker-popover"
-		class:marker-popover-above={popoverAbove}
-		role="tooltip"
-		aria-live="polite"
-		style="position:fixed; {popoverStyle}"
-		on:mouseenter={cancelPopoverDismiss}
-		on:mouseleave={schedulePopoverDismiss}
-	>
+<MarkerPopover
+	anchorEl={popoverAnchorEl}
+	visible={!!openPopover}
+	on:dismiss={() => dismissPopover()}
+	on:mouseenter={cancelPopoverDismiss}
+	on:mouseleave={schedulePopoverDismiss}
+>
+	{#if openPopover}
 		<span class="marker-popover-content">{@html openPopover.content}</span>
-	</div>
-{/if}
+	{/if}
+</MarkerPopover>
 
 <style>
 	.verse-target {
@@ -536,57 +515,8 @@
 		opacity: 0.75;
 	}
 
-	/* Marker hover popover */
-	.marker-popover {
-		background: var(--color-text);
-		color: var(--color-bg);
-		font-size: 13px;
-		font-weight: 300;
-		font-family: var(--font-ui);
-		line-height: 1.5;
-		border-radius: 6px;
-		padding: 9px 12px;
-		box-shadow:
-			0 8px 24px rgba(0, 0, 0, 0.25),
-			0 2px 6px rgba(0, 0, 0, 0.15);
-		max-height: 200px;
-		overflow-y: auto;
-		z-index: 100;
-		animation: marker-tooltip-in 120ms ease-out both;
-	}
-
-	.marker-popover-above {
-		animation-name: marker-tooltip-in-above;
-	}
-
-	@keyframes marker-tooltip-in {
-		from {
-			opacity: 0;
-			transform: translateY(-3px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	@keyframes marker-tooltip-in-above {
-		from {
-			opacity: 0;
-			transform: translateY(3px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	.marker-popover-content {
+	:global(.marker-popover-content) {
 		opacity: 0.9;
 		white-space: pre-line;
-	}
-
-	.marker-popover :global(i) {
-		font-style: italic;
 	}
 </style>

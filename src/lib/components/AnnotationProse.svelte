@@ -1,8 +1,8 @@
 <!-- src/lib/components/AnnotationProse.svelte -->
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	import { browser } from '$app/environment';
+	import { onDestroy } from 'svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
+	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import type { AnnotationNote } from '$lib/data/types';
 
 	export let text: string;
@@ -101,32 +101,17 @@
 		el.addEventListener('animationend', () => el.classList.remove('note-blink'), { once: true });
 	}
 
-	const POPOVER_WIDTH = 300;
-	const GAP = 10;
-
 	let openMn: string | null = null;
-	let popoverStyle = '';
-	let above = false;
-
-	function calcPopover(btn: HTMLElement): string {
-		const rect = btn.getBoundingClientRect();
-		const markerCX = rect.left + rect.width / 2;
-		const spaceBelow = window.innerHeight - rect.bottom;
-		above = spaceBelow < 130;
-
-		const idealLeft = markerCX - POPOVER_WIDTH / 2;
-		const left = Math.min(Math.max(idealLeft, 12), window.innerWidth - POPOVER_WIDTH - 12);
-
-		return above
-			? `left:${left}px; bottom:${window.innerHeight - rect.top + GAP}px; width:${POPOVER_WIDTH}px;`
-			: `left:${left}px; top:${rect.bottom + GAP}px; width:${POPOVER_WIDTH}px;`;
-	}
-
+	let popoverAnchorEl: HTMLElement | null = null;
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
 	function dismiss() {
+		if (hoverTimer) {
+			clearTimeout(hoverTimer);
+			hoverTimer = null;
+		}
 		openMn = null;
-		popoverStyle = '';
+		popoverAnchorEl = null;
 	}
 
 	function scheduleDismiss() {
@@ -146,7 +131,7 @@
 		cancelDismiss();
 		const mn = btn.dataset.mn ?? null;
 		openMn = mn;
-		popoverStyle = calcPopover(btn);
+		popoverAnchorEl = btn;
 	}
 
 	function handleMouseout(e: Event) {
@@ -159,12 +144,8 @@
 		if (openMn && e.key === 'Escape') dismiss();
 	}
 
-	// Capture-phase scroll catches panel internal scroll, not just window scroll
-	onMount(() => {
-		document.addEventListener('scroll', dismiss, true);
-	});
 	onDestroy(() => {
-		if (browser) document.removeEventListener('scroll', dismiss, true);
+		if (hoverTimer) clearTimeout(hoverTimer);
 	});
 
 	$: ({ html: sequentialText, notes: sequentialNotes } = renumber(text, notes));
@@ -211,20 +192,18 @@
 		</ul>
 	{/if}
 
-	{#if openMn && activeNote && popoverStyle}
-		<div
-			class="mn-popover"
-			class:mn-popover-above={above}
-			role="tooltip"
-			aria-live="polite"
-			on:mouseenter={cancelDismiss}
-			on:mouseleave={scheduleDismiss}
-			style="position:fixed; {popoverStyle}"
-		>
+	<MarkerPopover
+		anchorEl={popoverAnchorEl}
+		visible={!!openMn && !!activeNote}
+		on:dismiss={() => dismiss()}
+		on:mouseenter={cancelDismiss}
+		on:mouseleave={scheduleDismiss}
+	>
+		{#if activeNote}
 			<span class="mn-popover-marker">{openMn}</span>
 			<span class="mn-popover-text">{@html activeNote.text}</span>
-		</div>
-	{/if}
+		{/if}
+	</MarkerPopover>
 </div>
 
 <style>
@@ -304,58 +283,14 @@
 		font-style: italic;
 	}
 
-	/* Popover */
-	.mn-popover {
-		background: var(--color-text);
-		color: var(--color-bg);
-		font-size: 13px;
-		font-family: var(--font-ui);
-		line-height: 1.5;
-		border-radius: 6px;
-		padding: 9px 12px;
-		box-shadow:
-			0 8px 24px rgba(0, 0, 0, 0.25),
-			0 2px 6px rgba(0, 0, 0, 0.15);
-		max-height: 200px;
-		overflow-y: auto;
-		z-index: 100;
-		animation: tooltip-in 120ms ease-out both;
-	}
-
-	.mn-popover-above {
-		animation-name: tooltip-in-above;
-	}
-
-	@keyframes tooltip-in {
-		from {
-			opacity: 0;
-			transform: translateY(-3px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	@keyframes tooltip-in-above {
-		from {
-			opacity: 0;
-			transform: translateY(3px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	.mn-popover-marker {
+	:global(.mn-popover-marker) {
 		color: var(--color-accent);
 		font-size: 9px;
 		font-weight: 700;
 		margin-right: 6px;
 	}
 
-	.mn-popover-text {
+	:global(.mn-popover-text) {
 		opacity: 0.9;
 	}
 
