@@ -8,9 +8,75 @@ export function stripTags(text: string): string {
 		.trim();
 }
 
-/** Normalize a single ALL-CAPS word to "First letter upper, rest lower" form
- *  so font-variant:small-caps can render the lowercase letters as small caps. */
-function normalizeWord(word: string): string {
+/** Minor words that should be fully lowercase in small-caps text (title-case
+ *  convention). Articles, prepositions, conjunctions, common pronouns & auxiliaries.
+ *  Fully-lowercase letters render as uniform small capitals with font-variant:small-caps,
+ *  while a leading uppercase letter renders as a full-size capital. */
+const SC_MINOR = new Set([
+	'a',
+	'an',
+	'and',
+	'are',
+	'as',
+	'at',
+	'be',
+	'but',
+	'by',
+	'for',
+	'from',
+	'had',
+	'has',
+	'have',
+	'he',
+	'her',
+	'him',
+	'his',
+	'if',
+	'in',
+	'into',
+	'is',
+	'it',
+	'its',
+	'may',
+	'no',
+	'nor',
+	'not',
+	'of',
+	'on',
+	'or',
+	'our',
+	'shall',
+	'so',
+	'than',
+	'that',
+	'the',
+	'their',
+	'them',
+	'then',
+	'they',
+	'this',
+	'to',
+	'up',
+	'upon',
+	'us',
+	'was',
+	'we',
+	'were',
+	'who',
+	'whom',
+	'will',
+	'with',
+	'yet',
+	'you',
+	'your'
+]);
+
+/** Normalize an ALL-CAPS word for small-caps rendering.
+ *  Minor/function words → fully lowercase (uniform small caps).
+ *  Content words → first letter upper, rest lower (full-size initial cap). */
+function normalizeScWord(word: string): string {
+	const lower = word.toLowerCase();
+	if (SC_MINOR.has(lower)) return lower;
 	return word.charAt(0) + word.slice(1).toLowerCase();
 }
 
@@ -18,22 +84,30 @@ function normalizeWord(word: string): string {
  *  merge adjacent spans so "THE LORD GOD" becomes one span, not three.
  *  Also handles <sc>…</sc> element tags from source JSON by normalizing
  *  their ALL-CAPS content and converting to <span class="sc">.
- *  Capitalization: first letter upper, rest lower — font-variant:small-caps
- *  then renders the lowercase letters as small capitals (the standard technique).
- *  e.g. "LORD GOD" → '<span class="sc">Lord God</span>' */
+ *  Uses title-case rules: minor words (articles, prepositions, conjunctions)
+ *  are fully lowercased for uniform small caps; content words keep an
+ *  initial capital. The first letter of each merged span is always capitalized.
+ *  e.g. "THE HOLY GHOST" → '<span class="sc">the Holy Ghost</span>'
+ *     → after Pass 3: '<span class="sc">The Holy Ghost</span>' */
 export function allcapsToSmallcaps(html: string): string {
 	// Step 0: convert <sc>…</sc> element tags (from source JSON) to spans,
-	// normalizing ALL CAPS words inside so font-variant:small-caps takes effect.
+	// normalizing only ALL CAPS words inside (mixed-case content is preserved).
 	let result = html.replace(/<sc>([\s\S]*?)<\/sc>/g, (_, content: string) => {
-		const normalized = content.replace(/\b([A-Z]{2,})\b/g, normalizeWord);
+		const normalized = content.replace(/\b([A-Z]{2,})\b/g, (w) => normalizeScWord(w));
 		return `<span class="sc">${normalized}</span>`;
 	});
 	// Pass 1: wrap each remaining bare ALL-CAPS word individually
 	result = result.replace(/(?<![<\w/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
-		return `<span class="sc">${normalizeWord(word)}</span>`;
+		return `<span class="sc">${normalizeScWord(word)}</span>`;
 	});
-	// Pass 2: merge consecutive small-caps spans separated only by whitespace
-	// so multi-word phrases render as a single span rather than broken up.
-	result = result.replace(/<\/span>(\s+)<span class="sc">/g, '$1');
+	// Pass 2: merge consecutive small-caps spans separated by whitespace or
+	// within-sentence punctuation (commas, semicolons, colons, dashes).
+	result = result.replace(/<\/span>([,;:\-\u2014\u2013\s]+)<span class="sc">/g, '$1');
+	// Pass 3: ensure the first letter of each span is always capitalized
+	// (handles cases where a minor word ends up first after merge).
+	result = result.replace(
+		/<span class="sc">([a-z])/g,
+		(_, ch: string) => `<span class="sc">${ch.toUpperCase()}`
+	);
 	return result;
 }
