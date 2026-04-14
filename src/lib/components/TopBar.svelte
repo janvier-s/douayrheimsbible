@@ -50,6 +50,14 @@
 			? ALL_BOOKS[bookIndex + 1]
 			: null;
 
+	$: chapterNumInt = parseInt(chapterNum, 10);
+	$: prevChapterHref =
+		isChapterPage && bookMeta && chapterNumInt > 1 ? `/odr/${bookSlug}/${chapterNumInt - 1}` : null;
+	$: nextChapterHref =
+		isChapterPage && bookMeta && chapterNumInt < bookMeta.chapters
+			? `/odr/${bookSlug}/${chapterNumInt + 1}`
+			: null;
+
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
 	}
@@ -233,6 +241,15 @@
 					<BookNavChevron direction="prev" />
 				</a>
 			{/if}
+			{#if prevChapterHref}
+				<a
+					href={prevChapterHref}
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					aria-label="Previous chapter"
+				>
+					<BookNavChevron direction="prev" double={false} />
+				</a>
+			{/if}
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
@@ -250,6 +267,15 @@
 					>{navOpen ? '▲' : '▼'}</span
 				>
 			</button>
+			{#if nextChapterHref}
+				<a
+					href={nextChapterHref}
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					aria-label="Next chapter"
+				>
+					<BookNavChevron direction="next" double={false} />
+				</a>
+			{/if}
 			{#if nextBook}
 				<a
 					href="/odr/{nextBook.slug}/1"

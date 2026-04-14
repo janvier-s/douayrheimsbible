@@ -58,13 +58,13 @@ const DEFAULTS: ReadingPrefs = {
 	syncStudyScroll: true,
 	showItalics: true,
 	showSmallCaps: true,
-	compareFontSize: 13,
+	compareFontSize: 14,
 	expandAmpersand: false,
 	studyDefaultTab: 'intro',
 	annotationSync: true
 };
 
-const PREFS_VERSION = 13;
+const PREFS_VERSION = 14;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -128,6 +128,10 @@ function loadPrefs(): ReadingPrefs {
 		// v13 migration: add annotation verse sync toggle
 		if (!parsed._v || parsed._v < 13) {
 			parsed.annotationSync = true;
+		}
+		// v14 migration: bump compare font size default from 13 to 14
+		if (!parsed._v || parsed._v < 14) {
+			if (parsed.compareFontSize === 13) parsed.compareFontSize = 14;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

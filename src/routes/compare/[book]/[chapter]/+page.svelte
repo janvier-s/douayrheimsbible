@@ -235,7 +235,7 @@
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 					>
 						{#if t.id === 'odr'}
-							<p class="font-reader italic text-subtle text-[13px] leading-relaxed">
+							<p class="font-reader italic text-subtle text-[13px] md:text-[14px] leading-relaxed">
 								{@html stripTags(chapter.summary)}
 							</p>
 						{/if}

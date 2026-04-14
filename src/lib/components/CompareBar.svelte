@@ -7,7 +7,9 @@
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
 	import PrefsPanel from './PrefsPanel.svelte';
+	import BookNavChevron from './BookNavChevron.svelte';
 	import { compareStore, TRANSLATIONS, konamiUnlocked } from '$lib/stores/compare';
+	import { ALL_BOOKS } from '$lib/data/books';
 	import type { BookMeta } from '$lib/data/types';
 
 	export let bookMeta: BookMeta;
@@ -48,6 +50,18 @@
 	let mobileTransOpen = false;
 
 	$: visibleTranslations = $konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden);
+
+	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
+	$: prevBook = bookIndex > 0 ? ALL_BOOKS[bookIndex - 1] : null;
+	$: nextBook =
+		bookIndex >= 0 && bookIndex < ALL_BOOKS.length - 1 ? ALL_BOOKS[bookIndex + 1] : null;
+	$: prevChapterHref = chapterNum > 1 ? `/compare/${bookMeta.slug}/${chapterNum - 1}` : null;
+	$: nextChapterHref =
+		chapterNum < bookMeta.chapters ? `/compare/${bookMeta.slug}/${chapterNum + 1}` : null;
+
+	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
+		return $prefs.modernBookNames ? b.modernName : b.odrName;
+	}
 
 	$: isOT = bookMeta.testament === 'OT';
 	$: navLabel = `${bookMeta.odrName} ${chapterNum}`;
@@ -160,10 +174,29 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav -->
+		<!-- Center: chapter nav with book/chapter chevrons -->
 		<div
-			class="md:absolute md:left-1/2 md:-translate-x-1/2 flex-1 md:flex-none flex justify-center"
+			class="md:absolute md:left-1/2 md:-translate-x-1/2 flex-1 md:flex-none flex justify-center items-center gap-[8px]"
 		>
+			{#if prevBook}
+				<a
+					href="/compare/{prevBook.slug}/1"
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					title={bookNavLabel(prevBook)}
+					aria-label="Previous book: {bookNavLabel(prevBook)}"
+				>
+					<BookNavChevron direction="prev" />
+				</a>
+			{/if}
+			{#if prevChapterHref}
+				<a
+					href={prevChapterHref}
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					aria-label="Previous chapter"
+				>
+					<BookNavChevron direction="prev" double={false} />
+				</a>
+			{/if}
 			<button
 				class="flex items-center gap-[5px] px-[12px] md:px-[17px] py-[8px] md:py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
@@ -178,6 +211,25 @@
 					>{navOpen ? '▲' : '▼'}</span
 				>
 			</button>
+			{#if nextChapterHref}
+				<a
+					href={nextChapterHref}
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					aria-label="Next chapter"
+				>
+					<BookNavChevron direction="next" double={false} />
+				</a>
+			{/if}
+			{#if nextBook}
+				<a
+					href="/compare/{nextBook.slug}/1"
+					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
+					title={bookNavLabel(nextBook)}
+					aria-label="Next book: {bookNavLabel(nextBook)}"
+				>
+					<BookNavChevron direction="next" />
+				</a>
+			{/if}
 		</div>
 
 		<!-- Right: summary + text options -->
