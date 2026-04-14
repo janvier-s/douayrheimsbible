@@ -86,6 +86,9 @@
 	let notAReferenceQuery = false;
 	let textSuggestionVerses = 0;
 	let textSuggestionNotes = 0;
+	// Mirror flag: query in text mode looks like a verse reference
+	let isVerseReference = false;
+	let verseSuggestionCount = 0;
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
@@ -167,6 +170,8 @@
 			notAReferenceQuery = false;
 			textSuggestionVerses = 0;
 			textSuggestionNotes = 0;
+			isVerseReference = false;
+			verseSuggestionCount = 0;
 			searched = false;
 			loading = false;
 			textLimit = 100;
@@ -193,6 +198,8 @@
 				notAReferenceQuery = false;
 				textSuggestionVerses = 0;
 				textSuggestionNotes = 0;
+				isVerseReference = false;
+				verseSuggestionCount = 0;
 				searched = false;
 				stopWordWarning = false;
 			}
@@ -311,11 +318,15 @@
 			crossScopeNoteResults = [];
 			queryTokens = [];
 			crossScopeTotal = 0;
+			isVerseReference = false;
+			verseSuggestionCount = 0;
 			searched = true;
 			loading = false;
 			return;
 		}
 		stopWordWarning = false;
+		isVerseReference = false;
+		verseSuggestionCount = 0;
 		const gen = ++searchGeneration;
 		loading = true;
 		try {
@@ -349,6 +360,25 @@
 
 			if (gen !== searchGeneration) return;
 			results = [];
+
+			// If text search found nothing, check if the query is a verse reference
+			if (verseTotal === 0 && noteTotal === 0) {
+				const ranges = parseAllReferences(trimmed);
+				if (ranges.length > 0) {
+					try {
+						const verseGroups = await buildResultGroups(ranges, fetch);
+						if (gen !== searchGeneration) return;
+						const count = verseGroups.reduce((n, g) => n + g.verses.length, 0);
+						if (count > 0) {
+							isVerseReference = true;
+							verseSuggestionCount = count;
+						}
+					} catch {
+						// Reference parsing failed — not a valid reference
+					}
+				}
+			}
+
 			searched = true;
 		} catch {
 			if (gen !== searchGeneration) return;
@@ -372,6 +402,8 @@
 		notAReferenceQuery = false;
 		textSuggestionVerses = 0;
 		textSuggestionNotes = 0;
+		isVerseReference = false;
+		verseSuggestionCount = 0;
 		searched = false;
 		stopWordWarning = false;
 		updateUrl(query);
@@ -1024,17 +1056,33 @@
 			{/if}
 
 			{#if searched && !loading && mode === 'text' && textResults.length === 0 && noteResults.length === 0 && !stopWordWarning}
-				<p
-					class="text-subtle text-[14px] text-center"
-					in:fade={{ duration: reducedMotion ? 0 : 160 }}
-				>
-					Nothing found for "{query}".<br />Try different words, for example:
-					<button
-						class="italic hover:underline"
-						style="color: var(--color-accent-text)"
-						on:click={() => onExampleClick(currentExamples[0])}>{currentExamples[0]}</button
+				{#if isVerseReference && verseSuggestionCount > 0}
+					<p
+						class="text-subtle text-[14px] text-center"
+						in:fade={{ duration: reducedMotion ? 0 : 160 }}
 					>
-				</p>
+						This looks like a verse reference.
+						<button
+							class="hover:underline"
+							style="color: var(--color-accent-text)"
+							on:click={() => setMode('verse')}
+							>Switch to Verse Search to look up "{query}" ({verseSuggestionCount}
+							verse{verseSuggestionCount === 1 ? '' : 's'}) →</button
+						>
+					</p>
+				{:else}
+					<p
+						class="text-subtle text-[14px] text-center"
+						in:fade={{ duration: reducedMotion ? 0 : 160 }}
+					>
+						Nothing found for "{query}".<br />Try different words, for example:
+						<button
+							class="italic hover:underline"
+							style="color: var(--color-accent-text)"
+							on:click={() => onExampleClick(currentExamples[0])}>{currentExamples[0]}</button
+						>
+					</p>
+				{/if}
 			{/if}
 		</div>
 	</div>
