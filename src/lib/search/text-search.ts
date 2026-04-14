@@ -1,5 +1,4 @@
 import MiniSearch from 'minisearch';
-import type { KVNamespace } from '@cloudflare/workers-types';
 import { searchTokenizer, processTerm } from './normalize';
 import { expandTokens, expandTokenGroups, isAllStopWords } from './expand-query';
 import { tokenize } from './normalize';

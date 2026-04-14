@@ -57,7 +57,6 @@
 	$: {
 		const key = `${currentBookSlug}/${currentChapterNum}`;
 		if (key !== lastAnnotationKey && currentBookSlug) {
-			// eslint-disable-next-line no-useless-assignment
 			lastAnnotationKey = key;
 			// Capture these NOW, before any async gap
 			const slug = currentBookSlug;

@@ -4,7 +4,7 @@
 	import { replaceState } from '$app/navigation';
 	import ChapterView from './ChapterView.svelte';
 	import { loadBook, getChapter, getCachedBook } from '$lib/data/loader';
-	import { ALL_BOOKS, getPrevNavBook } from '$lib/data/books';
+	import { getPrevNavBook } from '$lib/data/books';
 	import { debounce } from '$lib/utils/debounce';
 	import {
 		shouldLoadNext,
