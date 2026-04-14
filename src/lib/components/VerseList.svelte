@@ -16,9 +16,6 @@
 	export let chapterNum: number;
 
 	let verseEls: Record<number, HTMLElement> = {};
-	// Clear stale element refs when verses changes so the observer never
-	// re-attaches to detached DOM nodes from a previous render.
-	$: (verses, (verseEls = {}));
 
 	// Lazy-load text-vide only when bionic reading is first enabled
 	let textVideFn: ((_text: string, _opts: object) => string) | null = null;
@@ -258,16 +255,16 @@
 		setupPanelSync();
 	});
 
-	// Re-observe when verses change. verseEls was cleared by the reactive above,
-	// so we wait a tick for bind:this to repopulate it before re-connecting.
+	// Re-observe when verses change.
+	// Disconnect first so we don't double-observe if Svelte re-runs this block.
+	// verseEls entries are kept — bind:this keeps them current; the loop below
+	// re-registers only live elements (el is non-null for mounted nodes).
 	$: if (verseObserver && verses) {
 		verseObserver.disconnect();
 		intersectingReaderVerses.clear();
-		tick().then(() => {
-			for (const [, el] of Object.entries(verseEls)) {
-				if (el) verseObserver!.observe(el);
-			}
-		});
+		for (const [, el] of Object.entries(verseEls)) {
+			if (el) verseObserver.observe(el);
+		}
 	}
 
 	onDestroy(() => {
@@ -293,28 +290,15 @@
 	let lastSyncedVerse: number | null = null;
 
 	function setupPanelSync() {
-		console.log('[sync] setupPanelSync called, bookSlug=', bookSlug, 'ch=', chapterNum);
 		panelSyncUnsub?.();
 		panelSyncUnsub = studyPanel.subscribe((state) => {
 			if (state.panelScrollVerse === lastSyncedVerse) return;
 			lastSyncedVerse = state.panelScrollVerse;
-			if (state.panelScrollVerse == null) {
-				console.log('[sync] panelScrollVerse is null, skip');
-				return;
-			}
-			const syncEnabled = get(prefs).annotationSync;
-			if (!syncEnabled) {
-				console.log('[sync] annotationSync disabled, skip');
-				return;
-			}
+			if (state.panelScrollVerse == null) return;
+			if (!get(prefs).annotationSync) return;
 			const pos = get(readingPosition);
-			if (!pos || bookSlug !== pos.bookSlug || chapterNum !== pos.chapter) {
-				console.log('[sync] not active chapter:', { bookSlug, chapterNum, pos });
-				return;
-			}
+			if (!pos || bookSlug !== pos.bookSlug || chapterNum !== pos.chapter) return;
 			const el = verseEls[state.panelScrollVerse];
-			const elCount = Object.keys(verseEls).length;
-			console.log('[sync] verse', state.panelScrollVerse, 'el=', !!el, 'verseEls count=', elCount);
 			if (el) {
 				programmaticReaderScroll = true;
 				if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
