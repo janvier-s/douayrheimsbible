@@ -41,14 +41,13 @@ function cleanText(text: string): string {
 
 const MINISEARCH_OPTIONS = {
 	fields: ['text'] as const,
-	storeFields: ['book', 'chapter', 'verse'] as string[],
+	storeFields: [] as string[],
 	tokenize: searchTokenizer,
 	processTerm
 };
 
 const NOTES_MINISEARCH_OPTIONS = {
-	...MINISEARCH_OPTIONS,
-	storeFields: ['book', 'chapter', 'verse', 'type'] as string[]
+	...MINISEARCH_OPTIONS
 };
 
 async function buildVerseIndex(): Promise<void> {

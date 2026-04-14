@@ -10,16 +10,8 @@
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
 	import { navOverride } from '$lib/stores/navOverride';
 	import type { SearchMode, SearchScope } from './+page';
-	import {
-		searchVerses,
-		searchNotes,
-		buildTextResultGroups,
-		hydrateResultGroups,
-		hydrateNoteResults,
-		phraseProximity,
-		type TextResultGroup,
-		type NoteResult
-	} from '$lib/search/text-search';
+	import { phraseProximity } from '$lib/search/proximity';
+	import type { TextResultGroup, NoteResult } from '$lib/search/text-search';
 	import { isAllStopWords, isStopWord } from '$lib/search/expand-query';
 	import { tokenize, foldLigatures } from '$lib/search/normalize';
 	import { tick } from 'svelte';
@@ -264,13 +256,16 @@
 			loading = true;
 			const gen = ++searchGeneration;
 			try {
-				const [vs, ns] = await Promise.all([
-					searchVerses(trimmed, fetch, 100),
-					searchNotes(trimmed, fetch, 100)
-				]);
+				const res = await fetch(`/api/search?q=${encodeURIComponent(trimmed)}&counts=1`);
 				if (gen !== searchGeneration) return;
-				textSuggestionVerses = vs.total;
-				textSuggestionNotes = ns.total;
+				if (res.ok) {
+					const data = await res.json();
+					textSuggestionVerses = data.versesTotal;
+					textSuggestionNotes = data.notesTotal;
+				} else {
+					textSuggestionVerses = 0;
+					textSuggestionNotes = 0;
+				}
 			} catch {
 				if (gen !== searchGeneration) return;
 				textSuggestionVerses = 0;
@@ -330,41 +325,41 @@
 		const gen = ++searchGeneration;
 		loading = true;
 		try {
-			// Load only the primary scope index first, then lazy-load cross-scope
+			// Fetch primary scope results from server API
+			const res = await fetch(
+				`/api/search?q=${encodeURIComponent(trimmed)}&scope=${scope}&limit=${textLimit}`
+			);
+			if (gen !== searchGeneration) return;
+			if (!res.ok) throw new Error('Search API failed');
+			const data = await res.json();
+
+			queryTokens = data.queryTokens;
 			if (scope === 'verses') {
-				const verseSearch = await searchVerses(trimmed, fetch, textLimit);
-				if (gen !== searchGeneration) return;
-				const { results: verseRaw, total: verseTotal, queryTokens: qt } = verseSearch;
-				queryTokens = qt;
-				const groups = buildTextResultGroups(verseRaw);
-				textResults = await hydrateResultGroups(groups, qt, fetch);
+				textResults = data.results;
 				noteResults = [];
-				textTotal = verseTotal;
+				textTotal = data.total;
 				crossScopeVerseResults = [];
 				// Load cross-scope notes in background (non-blocking)
-				searchNotes(trimmed, fetch, 20)
-					.then(async (noteSearch) => {
-						if (gen !== searchGeneration) return;
-						crossScopeNoteResults = await hydrateNoteResults(noteSearch.results, qt, fetch);
-						crossScopeTotal = noteSearch.total;
+				fetch(`/api/search?q=${encodeURIComponent(trimmed)}&scope=notes&limit=20`)
+					.then((r) => (r.ok ? r.json() : null))
+					.then((d) => {
+						if (!d || gen !== searchGeneration) return;
+						crossScopeNoteResults = d.results;
+						crossScopeTotal = d.total;
 					})
 					.catch(() => {});
 			} else {
-				const noteSearch = await searchNotes(trimmed, fetch, textLimit);
-				if (gen !== searchGeneration) return;
-				const { results: noteRaw, total: noteTotal, queryTokens: qt } = noteSearch;
-				queryTokens = qt;
-				noteResults = await hydrateNoteResults(noteRaw, qt, fetch);
+				noteResults = data.results;
 				textResults = [];
-				textTotal = noteTotal;
+				textTotal = data.total;
 				crossScopeNoteResults = [];
 				// Load cross-scope verses in background (non-blocking)
-				searchVerses(trimmed, fetch, 20)
-					.then(async (verseSearch) => {
-						if (gen !== searchGeneration) return;
-						const vsGroups = buildTextResultGroups(verseSearch.results);
-						crossScopeVerseResults = await hydrateResultGroups(vsGroups, qt, fetch);
-						crossScopeTotal = verseSearch.total;
+				fetch(`/api/search?q=${encodeURIComponent(trimmed)}&scope=verses&limit=20`)
+					.then((r) => (r.ok ? r.json() : null))
+					.then((d) => {
+						if (!d || gen !== searchGeneration) return;
+						crossScopeVerseResults = d.results;
+						crossScopeTotal = d.total;
 					})
 					.catch(() => {});
 			}
@@ -373,8 +368,6 @@
 			results = [];
 
 			// If the active scope found nothing, check if the query is a verse reference.
-			// Only check the active scope total — cross-scope notes matching a word
-			// like "Matthew" shouldn't suppress the verse reference suggestion.
 			const activeTotal = textTotal;
 			if (activeTotal === 0) {
 				const ranges = parseAllReferences(trimmed);
