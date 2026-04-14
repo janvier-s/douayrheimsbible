@@ -814,6 +814,7 @@
 				{#if mode === 'verse' && verseResultCount > 0}
 					<p
 						class="text-subtle text-[12px] mb-[12px]"
+						style="margin-left: 40px;"
 						in:fade={{ duration: reducedMotion ? 0 : 120 }}
 					>
 						{verseResultCount} verse{verseResultCount === 1 ? '' : 's'} found
