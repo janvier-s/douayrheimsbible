@@ -31,6 +31,7 @@
 						stroke-width="1.5"
 						stroke-linecap="round"
 						stroke-linejoin="round"
+						aria-hidden="true"
 					>
 						<rect x="3" y="2" width="12" height="14" rx="1.5" />
 						<line x1="6" y1="6" x2="12" y2="6" />
@@ -47,6 +48,7 @@
 						stroke-width="1.3"
 						stroke-linecap="round"
 						stroke-linejoin="round"
+						aria-hidden="true"
 					>
 						<path
 							d="M9 4C7.5 3 5.5 2.5 3 3v11c2.5-.5 4.5 0 6 1m0-11c1.5-1 3.5-1.5 6-1v11c-2.5-.5-4.5 0-6 1"
@@ -64,6 +66,7 @@
 						stroke-width="1.5"
 						stroke-linecap="round"
 						stroke-linejoin="round"
+						aria-hidden="true"
 					>
 						<rect x="2" y="3" width="5.5" height="12" rx="1" />
 						<rect x="10.5" y="3" width="5.5" height="12" rx="1" />
@@ -87,6 +90,7 @@
 				stroke="currentColor"
 				stroke-width="1.5"
 				stroke-linecap="round"
+				aria-hidden="true"
 			>
 				<circle cx="8" cy="8" r="5.5" />
 				<line x1="12" y1="12" x2="16" y2="16" />

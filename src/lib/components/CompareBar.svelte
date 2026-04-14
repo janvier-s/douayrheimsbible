@@ -276,6 +276,7 @@
 					stroke="currentColor"
 					stroke-width="1.5"
 					stroke-linecap="round"
+					aria-hidden="true"
 				>
 					<line x1="1" y1="2" x2="15" y2="2" />
 					<line x1="1" y1="7" x2="15" y2="7" />
