@@ -27,9 +27,10 @@ async function upload() {
 
 		// wrangler kv key put reads value from stdin when given --stdin flag,
 		// or from a file with --path. Use --path to avoid shell escaping issues.
-		execSync(`npx wrangler kv key put --binding=SEARCH_INDEX "${key}" --path="${filePath}"`, {
-			stdio: 'inherit'
-		});
+		execSync(
+			`npx wrangler kv key put --remote --binding=SEARCH_INDEX "${key}" --path="${filePath}"`,
+			{ stdio: 'inherit' }
+		);
 
 		console.log(`✓ ${key} uploaded`);
 	}
