@@ -147,6 +147,10 @@
 	let programmaticScrollTimer: ReturnType<typeof setTimeout> | null = null;
 	let panelSectionObserver: IntersectionObserver | null = null;
 	const intersectingVerses = new Map<number, number>();
+	// Debounce timer for annotatedVerse: we update panelScrollVerse immediately
+	// (so the reader follows while you scroll), but only commit annotatedVerse
+	// (which shows the verse underline) after the user has settled for 400ms.
+	let annotatedVerseTimer: ReturnType<typeof setTimeout> | null = null;
 
 	// Reset stale section element refs whenever the chapter changes
 	$: (currentBookSlug, currentChapterNum, (sectionEls = {}));
@@ -174,6 +178,10 @@
 		panelSectionObserver?.disconnect();
 		panelSectionObserver = null;
 		intersectingVerses.clear();
+		if (annotatedVerseTimer) {
+			clearTimeout(annotatedVerseTimer);
+			annotatedVerseTimer = null;
+		}
 		if (!browser || !panelScroll || !$prefs.annotationSync) return;
 		panelSectionObserver = new IntersectionObserver(
 			(entries) => {
@@ -189,10 +197,14 @@
 				}
 				if (intersectingVerses.size > 0) {
 					const active = [...intersectingVerses.entries()].sort((a, b) => a[1] - b[1])[0][0];
-					// Use panelScrollVerse (not annotatedVerse) so free panel scroll drives
-					// reader scroll without triggering the verse underline. The underline
-					// (annotatedVerse) is only set by explicit clicks via scrollTrigger.
+					// Immediate: drive reader scroll to follow the panel
 					studyPanel.update((s) => ({ ...s, panelScrollVerse: active }));
+					// Debounced: only underline the verse after the user has settled (400ms).
+					// This prevents the underline jumping to verses you scroll past.
+					if (annotatedVerseTimer) clearTimeout(annotatedVerseTimer);
+					annotatedVerseTimer = setTimeout(() => {
+						studyPanel.update((s) => ({ ...s, annotatedVerse: active }));
+					}, 400);
 				}
 			},
 			{ root: panelScroll, rootMargin: '0px 0px -55% 0px', threshold: 0 }
@@ -272,6 +284,7 @@
 	onDestroy(() => {
 		panelSectionObserver?.disconnect();
 		if (programmaticScrollTimer) clearTimeout(programmaticScrollTimer);
+		if (annotatedVerseTimer) clearTimeout(annotatedVerseTimer);
 		wheelCleanup?.();
 	});
 </script>
