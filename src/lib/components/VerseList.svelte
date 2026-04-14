@@ -6,6 +6,7 @@
 	import { studyPanel } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
+	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import type { Verse } from '$lib/data/types';
 
 	export let verses: Verse[];
@@ -40,11 +41,7 @@
 		});
 	}
 
-	function applySmallCaps(text: string): string {
-		// Convert source <sc>...</sc> tags (used in ODR text for proper small caps)
-		text = text.replace(/<sc>(.*?)<\/sc>/g, '<span class="sc">$1</span>');
-		return text;
-	}
+	// applySmallCaps is no longer needed — allcapsToSmallcaps handles <sc> tags directly.
 
 	/** Strip <cr> and <na> tags+content for reading mode. Optionally strip <i> tags. */
 	function stripStudyMarkers(text: string, showItalics: boolean): string {
@@ -106,7 +103,7 @@
 			t = stripStudyMarkers(t, showItalics);
 		}
 		const t2 = bionic ? applyBionic(t) : t;
-		return smallCaps ? applySmallCaps(t2) : t2;
+		return smallCaps ? allcapsToSmallcaps(t2) : t2;
 	}
 
 	// ── Marker click handling ────────────────────────────────────────
