@@ -331,7 +331,10 @@ body {
 	text-align: center;
 	line-height: 1.5;
 }
-.sc {
+/* Handles both <span class="sc"> (from allcapsToSmallcaps) and raw <sc> elements
+   in {@html note.text} content from annotation JSON */
+.sc,
+sc {
 	font-variant: small-caps;
 }
 

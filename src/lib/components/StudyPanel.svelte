@@ -484,6 +484,7 @@
 	.panel-scroll {
 		scrollbar-width: thin;
 		scrollbar-color: color-mix(in srgb, var(--color-accent) 25%, transparent) transparent;
+		overscroll-behavior: contain;
 	}
 
 	.panel-scroll::-webkit-scrollbar {

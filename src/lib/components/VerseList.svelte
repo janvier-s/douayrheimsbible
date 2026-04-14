@@ -250,7 +250,9 @@
 				if (programmaticReaderScroll || intersectingReaderVerses.size === 0) return;
 				// Pick the topmost intersecting verse (smallest top value)
 				const active = [...intersectingReaderVerses.entries()].sort((a, b) => a[1] - b[1])[0][0];
-				studyPanel.update((s) => ({ ...s, activeVerse: active }));
+				// Clear annotatedVerse on free scroll so the underline doesn't persist on
+				// the wrong verse as the user scrolls past verses they didn't select.
+				studyPanel.update((s) => ({ ...s, activeVerse: active, annotatedVerse: null }));
 			},
 			{ rootMargin: '-0% 0px -70% 0px' } // top ~30% of viewport
 		);
