@@ -846,7 +846,7 @@
 							on:click={() => setMode('text')}
 							>Click here to switch to Text Search to find "{query}" →</button
 						>
-						<span class="text-[12px] italic"
+						<span class="text-[12px]"
 							>Found in {[
 								textSuggestionVerses > 0
 									? `${textSuggestionVerses} verse${textSuggestionVerses === 1 ? '' : 's'}`
