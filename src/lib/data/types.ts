@@ -87,6 +87,8 @@ export interface BookMeta {
 	chapters: number;
 	/** Whether this book has Confraternity data (NT only) */
 	hasConfraternity: boolean;
+	/** If true, skip this book in sequential navigation (prev/next book chevrons, infinite scroll) */
+	navSkip?: boolean;
 }
 
 /** Returns true if the marker is a cross-reference (numeric), false if footnote (letter) */

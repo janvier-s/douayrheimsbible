@@ -10,7 +10,7 @@
 	import BookNavLink from './BookNavLink.svelte';
 	import ChapterNavLink from './ChapterNavLink.svelte';
 	import { compareStore, TRANSLATIONS, konamiUnlocked } from '$lib/stores/compare';
-	import { ALL_BOOKS } from '$lib/data/books';
+	import { ALL_BOOKS, getPrevNavBook, getNextNavBook } from '$lib/data/books';
 	import type { BookMeta } from '$lib/data/types';
 
 	export let bookMeta: BookMeta;
@@ -53,9 +53,8 @@
 	$: visibleTranslations = $konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden);
 
 	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
-	$: prevBook = bookIndex > 0 ? ALL_BOOKS[bookIndex - 1] : null;
-	$: nextBook =
-		bookIndex >= 0 && bookIndex < ALL_BOOKS.length - 1 ? ALL_BOOKS[bookIndex + 1] : null;
+	$: prevBook = getPrevNavBook(bookMeta.slug) ?? null;
+	$: nextBook = getNextNavBook(bookMeta.slug) ?? null;
 	$: prevChapterHref = chapterNum > 1 ? `/compare/${bookMeta.slug}/${chapterNum - 1}` : null;
 	$: nextChapterHref =
 		chapterNum < bookMeta.chapters ? `/compare/${bookMeta.slug}/${chapterNum + 1}` : null;

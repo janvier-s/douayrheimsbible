@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
-	import { ALL_BOOKS, getBookBySlug, getHebPsalmNum } from '$lib/data/books';
+	import {
+		ALL_BOOKS,
+		getBookBySlug,
+		getHebPsalmNum,
+		getPrevNavBook,
+		getNextNavBook
+	} from '$lib/data/books';
 	import { slide, fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
@@ -45,11 +51,8 @@
 		bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026';
 
 	$: bookIndex = bookMeta ? ALL_BOOKS.findIndex((b) => b.slug === bookMeta!.slug) : -1;
-	$: prevBook = isChapterPage && bookIndex > 0 ? ALL_BOOKS[bookIndex - 1] : null;
-	$: nextBook =
-		isChapterPage && bookIndex >= 0 && bookIndex < ALL_BOOKS.length - 1
-			? ALL_BOOKS[bookIndex + 1]
-			: null;
+	$: prevBook = isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null;
+	$: nextBook = isChapterPage && bookMeta ? (getNextNavBook(bookMeta.slug) ?? null) : null;
 
 	$: chapterNumInt = parseInt(chapterNum, 10);
 	$: prevChapterHref =

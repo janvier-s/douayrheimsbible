@@ -4,7 +4,7 @@
 	import { replaceState } from '$app/navigation';
 	import ChapterView from './ChapterView.svelte';
 	import { loadBook, getChapter, getCachedBook } from '$lib/data/loader';
-	import { ALL_BOOKS } from '$lib/data/books';
+	import { ALL_BOOKS, getPrevNavBook } from '$lib/data/books';
 	import { debounce } from '$lib/utils/debounce';
 	import {
 		shouldLoadNext,
@@ -170,9 +170,9 @@
 		let prevChNum = first.chapter.chapter - 1;
 
 		if (prevChNum < 1) {
-			const bookIndex = ALL_BOOKS.findIndex((b) => b.slug === first.bookMeta.slug);
-			if (bookIndex <= 0) return;
-			targetBookMeta = ALL_BOOKS[bookIndex - 1];
+			const prevBook = getPrevNavBook(first.bookMeta.slug);
+			if (!prevBook) return;
+			targetBookMeta = prevBook;
 			prevChNum = targetBookMeta.chapters;
 		}
 

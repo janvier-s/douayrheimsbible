@@ -377,13 +377,15 @@ export const ALL_BOOKS: BookMeta[] = [
 		hasConfraternity: false
 	},
 	// OT APPENDIX (ODR-only — not in standard 73-book Catholic canon)
+	// navSkip: excluded from sequential prev/next book navigation
 	{
 		slug: 'prayer-of-manasses',
 		odrName: 'Prayer of Manasses',
 		modernName: 'Prayer of Manasseh',
 		testament: 'OT',
 		chapters: 1,
-		hasConfraternity: false
+		hasConfraternity: false,
+		navSkip: true
 	},
 	{
 		slug: '3-esdras',
@@ -391,7 +393,8 @@ export const ALL_BOOKS: BookMeta[] = [
 		modernName: '3 Esdras',
 		testament: 'OT',
 		chapters: 9,
-		hasConfraternity: false
+		hasConfraternity: false,
+		navSkip: true
 	},
 	{
 		slug: '4-esdras',
@@ -399,7 +402,8 @@ export const ALL_BOOKS: BookMeta[] = [
 		modernName: '4 Esdras',
 		testament: 'OT',
 		chapters: 16,
-		hasConfraternity: false
+		hasConfraternity: false,
+		navSkip: true
 	},
 	// NEW TESTAMENT
 	{
@@ -670,6 +674,24 @@ export function getPrevBook(slug: string): BookMeta | undefined {
 export function getNextBook(slug: string): BookMeta | undefined {
 	const idx = ALL_BOOKS.findIndex((b) => b.slug === slug);
 	return idx >= 0 && idx < ALL_BOOKS.length - 1 ? ALL_BOOKS[idx + 1] : undefined;
+}
+
+/** Returns the previous navigable book, skipping navSkip books (e.g. appendix). */
+export function getPrevNavBook(slug: string): BookMeta | undefined {
+	const idx = ALL_BOOKS.findIndex((b) => b.slug === slug);
+	for (let i = idx - 1; i >= 0; i--) {
+		if (!ALL_BOOKS[i].navSkip) return ALL_BOOKS[i];
+	}
+	return undefined;
+}
+
+/** Returns the next navigable book, skipping navSkip books (e.g. appendix). */
+export function getNextNavBook(slug: string): BookMeta | undefined {
+	const idx = ALL_BOOKS.findIndex((b) => b.slug === slug);
+	for (let i = idx + 1; i < ALL_BOOKS.length; i++) {
+		if (!ALL_BOOKS[i].navSkip) return ALL_BOOKS[i];
+	}
+	return undefined;
 }
 
 /** Maps a Vulgate/Douay psalm number to its Hebrew (Protestant) equivalent, or null if identical. */

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { BookMeta, Chapter } from '$lib/data/types';
-	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
+	import { ALL_BOOKS, getHebPsalmNum, getPrevNavBook, getNextNavBook } from '$lib/data/books';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import VerseList from './VerseList.svelte';
 	import { prefs } from '$lib/stores/prefs';
@@ -31,6 +31,7 @@
 		return $prefs.modernBookNames ? bm.modernName : bm.odrName;
 	}
 
+	$: prevNavBook = chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null;
 	$: prevNav =
 		chapter.chapter > 1
 			? {
@@ -39,15 +40,17 @@
 					label: `Ch. ${chapter.chapter - 1}`,
 					chLabel: null
 				}
-			: bookIndex > 0
+			: prevNavBook
 				? {
-						slug: ALL_BOOKS[bookIndex - 1].slug,
-						ch: ALL_BOOKS[bookIndex - 1].chapters,
-						label: bookLabel(ALL_BOOKS[bookIndex - 1]),
-						chLabel: `Ch. ${ALL_BOOKS[bookIndex - 1].chapters}`
+						slug: prevNavBook.slug,
+						ch: prevNavBook.chapters,
+						label: bookLabel(prevNavBook),
+						chLabel: `Ch. ${prevNavBook.chapters}`
 					}
 				: null;
 
+	$: nextNavBook =
+		chapter.chapter >= totalChapters ? (getNextNavBook(bookMeta.slug) ?? null) : null;
 	$: nextNav =
 		chapter.chapter < totalChapters
 			? {
@@ -56,11 +59,11 @@
 					label: `Ch. ${chapter.chapter + 1}`,
 					chLabel: null
 				}
-			: bookIndex < ALL_BOOKS.length - 1
+			: nextNavBook
 				? {
-						slug: ALL_BOOKS[bookIndex + 1].slug,
+						slug: nextNavBook.slug,
 						ch: 1,
-						label: bookLabel(ALL_BOOKS[bookIndex + 1]),
+						label: bookLabel(nextNavBook),
 						chLabel: 'Ch. 1'
 					}
 				: null;

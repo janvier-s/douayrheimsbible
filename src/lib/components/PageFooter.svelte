@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ALL_BOOKS } from '$lib/data/books';
+	import { ALL_BOOKS, getNextNavBook } from '$lib/data/books';
 	import type { BookMeta } from '$lib/data/types';
 
 	export let bookMeta: BookMeta;
@@ -10,15 +10,15 @@
 
 	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
 	$: isLastChapter = chapterNum >= totalChapters;
-	$: isLastBook = bookIndex >= ALL_BOOKS.length - 1;
+	$: nextNavBook = isLastChapter ? (getNextNavBook(bookMeta.slug) ?? null) : null;
 
 	$: nextHref = isLastChapter
-		? !isLastBook
-			? `${routeBase}/${ALL_BOOKS[bookIndex + 1].slug}/1`
+		? nextNavBook
+			? `${routeBase}/${nextNavBook.slug}/1`
 			: null
 		: `${routeBase}/${bookMeta.slug}/${chapterNum + 1}`;
 
-	$: nextBook = isLastChapter && !isLastBook ? ALL_BOOKS[bookIndex + 1] : null;
+	$: nextBook = nextNavBook;
 	$: nextLabel = nextBook ? nextBook.odrName : `Chapter ${chapterNum + 1}`;
 	$: nextSubLabel = nextBook ? 'Chapter 1' : null;
 </script>
