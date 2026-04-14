@@ -228,20 +228,25 @@
 			{/if}
 		</div>
 
-		<!-- Center: chapter nav with book chevrons -->
+		<!-- Center: button is the centered anchor; chevrons float out absolutely so button never shifts -->
 		<div
-			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center flex items-center gap-[8px]"
+			class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center relative flex items-center"
 		>
-			{#if prevBook}
-				<BookNavLink
-					href="/odr/{prevBook.slug}/1"
-					direction="prev"
-					label={bookNavLabel(prevBook)}
-				/>
-			{/if}
-			{#if prevChapterHref}
-				<ChapterNavLink href={prevChapterHref} direction="prev" chapter={chapterNumInt - 1} />
-			{/if}
+			<!-- Left chevrons — absolutely to the left of the button -->
+			<div
+				class="absolute right-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pr-[8px]"
+			>
+				{#if prevBook}
+					<BookNavLink
+						href="/odr/{prevBook.slug}/1"
+						direction="prev"
+						label={bookNavLabel(prevBook)}
+					/>
+				{/if}
+				{#if prevChapterHref}
+					<ChapterNavLink href={prevChapterHref} direction="prev" chapter={chapterNumInt - 1} />
+				{/if}
+			</div>
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
@@ -259,16 +264,19 @@
 					>{navOpen ? '▲' : '▼'}</span
 				>
 			</button>
-			{#if nextChapterHref}
-				<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNumInt + 1} />
-			{/if}
-			{#if nextBook}
-				<BookNavLink
-					href="/odr/{nextBook.slug}/1"
-					direction="next"
-					label={bookNavLabel(nextBook)}
-				/>
-			{/if}
+			<!-- Right chevrons — absolutely to the right of the button -->
+			<div class="absolute left-full top-1/2 -translate-y-1/2 flex items-center gap-[8px] pl-[8px]">
+				{#if nextChapterHref}
+					<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNumInt + 1} />
+				{/if}
+				{#if nextBook}
+					<BookNavLink
+						href="/odr/{nextBook.slug}/1"
+						direction="next"
+						label={bookNavLabel(nextBook)}
+					/>
+				{/if}
+			</div>
 		</div>
 
 		<!-- Right: reading prefs — desktop only -->
