@@ -2,6 +2,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
+	import { get } from 'svelte/store';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
@@ -253,6 +254,8 @@
 		for (const [, el] of Object.entries(verseEls)) {
 			if (el) verseObserver.observe(el);
 		}
+
+		setupPanelSync();
 	});
 
 	// Re-observe when verses change. verseEls was cleared by the reactive above,
@@ -269,6 +272,7 @@
 
 	onDestroy(() => {
 		verseObserver?.disconnect();
+		panelSyncUnsub?.();
 		if (hoverTimer) clearTimeout(hoverTimer);
 		if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
 	});
@@ -281,19 +285,23 @@
 	});
 
 	// Panel→reader sync: scroll the reader window when the panel observer moves to a verse.
-	// Reads panelScrollVerse (not annotatedVerse) — the panel observer sets this field so
-	// free panel scrolling drives reader scroll without triggering the verse underline.
+	// Uses a direct store subscription instead of $: reactives to avoid Svelte's reactive
+	// batching potentially running the scroll check with stale verseEls.
 	// Guard with chapterNum/bookSlug so only the active chapter's VerseList scrolls
 	// (with infinite scroll, multiple VerseList instances can be in the DOM at once).
-	$: syncPanelVerse = $studyPanel.panelScrollVerse;
-	$: isActiveChapter =
-		bookSlug === $readingPosition?.bookSlug && chapterNum === $readingPosition?.chapter;
-	$: if (browser && $prefs.annotationSync && syncPanelVerse != null && isActiveChapter) {
-		// Defer to after DOM update so bind:this has populated verseEls
-		// (guards against the verseEls reset reactive clearing refs mid-cycle).
-		const targetVNum = syncPanelVerse;
-		tick().then(() => {
-			const el = verseEls[targetVNum];
+	let panelSyncUnsub: (() => void) | null = null;
+	let lastSyncedVerse: number | null = null;
+
+	function setupPanelSync() {
+		panelSyncUnsub?.();
+		panelSyncUnsub = studyPanel.subscribe((state) => {
+			if (state.panelScrollVerse === lastSyncedVerse) return;
+			lastSyncedVerse = state.panelScrollVerse;
+			if (state.panelScrollVerse == null) return;
+			if (!get(prefs).annotationSync) return;
+			const pos = get(readingPosition);
+			if (!pos || bookSlug !== pos.bookSlug || chapterNum !== pos.chapter) return;
+			const el = verseEls[state.panelScrollVerse];
 			if (el) {
 				programmaticReaderScroll = true;
 				if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
