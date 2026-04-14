@@ -97,9 +97,12 @@ export function allcapsToSmallcaps(html: string): string {
 		const normalized = content.replace(/\b([A-Z][a-zA-Z]*)\b/g, (w) => normalizeScWord(w));
 		return `<span class="sc">${normalized}</span>`;
 	});
-	// Pass 1: wrap each remaining bare ALL-CAPS word individually
+	// Pass 1: wrap each remaining bare ALL-CAPS word individually.
+	// Unlike <sc> content (which has author-chosen Title Case indicating proper nouns),
+	// bare ALL CAPS is ambiguous — we can't tell "FIRST" (common) from "CHURCH" (proper).
+	// Lowercase everything; Pass 3 capitalizes the first letter of each merged span.
 	result = result.replace(/(?<![<\w/])(\b[A-Z]{2,}\b)(?![^<]*>)/g, (_, word: string) => {
-		return `<span class="sc">${normalizeScWord(word)}</span>`;
+		return `<span class="sc">${word.toLowerCase()}</span>`;
 	});
 	// Pass 2: merge consecutive small-caps spans separated by whitespace or
 	// within-sentence punctuation (commas, semicolons, colons, dashes).
