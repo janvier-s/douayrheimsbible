@@ -2,3 +2,7 @@ name = "douayrheimsbible"
 pages_build_output_dir = ".svelte-kit/cloudflare"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "SEARCH_INDEX"
+id = "1689872113944250b1295bb4f8c1aad8"

@@ -14,7 +14,8 @@
 		"test": "vitest run",
 		"test:e2e": "playwright test",
 		"lint": "prettier --check . && eslint src/",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"upload-index": "tsx scripts/upload-search-index.ts"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

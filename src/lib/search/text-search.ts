@@ -1,4 +1,5 @@
 import MiniSearch from 'minisearch';
+import type { KVNamespace } from '@cloudflare/workers-types';
 import { searchTokenizer, processTerm } from './normalize';
 import { expandTokens, expandTokenGroups, isAllStopWords } from './expand-query';
 import { tokenize } from './normalize';
@@ -68,19 +69,34 @@ let notesIndex: MiniSearch | null = null;
 let verseIndexPromise: Promise<MiniSearch> | null = null;
 let notesIndexPromise: Promise<MiniSearch> | null = null;
 
-async function loadVerseIndex(fetch: typeof globalThis.fetch): Promise<MiniSearch> {
+async function fetchIndexJson(
+	key: string,
+	url: string,
+	kv: KVNamespace | undefined,
+	fetch: typeof globalThis.fetch
+): Promise<string> {
+	if (kv) {
+		const cached = await kv.get(key);
+		if (cached) return cached;
+	}
+	const res = await fetch(url);
+	if (!res.ok) throw new Error(`Failed to load ${key}: ${res.status}`);
+	return res.text();
+}
+
+async function loadVerseIndex(
+	fetch: typeof globalThis.fetch,
+	kv?: KVNamespace
+): Promise<MiniSearch> {
 	if (verseIndex) return verseIndex;
 	if (verseIndexPromise) return verseIndexPromise;
 
-	verseIndexPromise = fetch('/data/odr/search-index.json')
-		.then((res) => {
-			if (!res.ok) throw new Error(`Failed to load search index: ${res.status}`);
-			return res.text();
-		})
-		.then((json) => {
+	verseIndexPromise = fetchIndexJson('search-index', '/data/odr/search-index.json', kv, fetch).then(
+		(json) => {
 			verseIndex = MiniSearch.loadJSON(json, MINISEARCH_OPTIONS);
 			return verseIndex;
-		});
+		}
+	);
 
 	verseIndexPromise.catch(() => {
 		verseIndexPromise = null;
@@ -89,19 +105,22 @@ async function loadVerseIndex(fetch: typeof globalThis.fetch): Promise<MiniSearc
 	return verseIndexPromise;
 }
 
-async function loadNotesIndex(fetch: typeof globalThis.fetch): Promise<MiniSearch> {
+async function loadNotesIndex(
+	fetch: typeof globalThis.fetch,
+	kv?: KVNamespace
+): Promise<MiniSearch> {
 	if (notesIndex) return notesIndex;
 	if (notesIndexPromise) return notesIndexPromise;
 
-	notesIndexPromise = fetch('/data/odr/search-notes-index.json')
-		.then((res) => {
-			if (!res.ok) throw new Error(`Failed to load notes index: ${res.status}`);
-			return res.text();
-		})
-		.then((json) => {
-			notesIndex = MiniSearch.loadJSON(json, NOTES_MINISEARCH_OPTIONS);
-			return notesIndex;
-		});
+	notesIndexPromise = fetchIndexJson(
+		'search-notes-index',
+		'/data/odr/search-notes-index.json',
+		kv,
+		fetch
+	).then((json) => {
+		notesIndex = MiniSearch.loadJSON(json, NOTES_MINISEARCH_OPTIONS);
+		return notesIndex;
+	});
 
 	notesIndexPromise.catch(() => {
 		notesIndexPromise = null;
@@ -161,7 +180,8 @@ function buildSearchQuery(tokens: string[]): any {
 export async function searchVerses(
 	query: string,
 	fetch: typeof globalThis.fetch,
-	limit = 100
+	limit = 100,
+	kv?: KVNamespace
 ): Promise<{ results: TextSearchResult[]; total: number; queryTokens: string[] }> {
 	const tokens = tokenize(query);
 	if (!tokens.length || isAllStopWords(tokens)) {
@@ -169,7 +189,7 @@ export async function searchVerses(
 	}
 
 	const expanded = expandTokens(tokens);
-	const index = await loadVerseIndex(fetch);
+	const index = await loadVerseIndex(fetch, kv);
 
 	const raw = index.search(buildSearchQuery(tokens), {
 		processTerm
@@ -193,7 +213,8 @@ export async function searchVerses(
 export async function searchNotes(
 	query: string,
 	fetch: typeof globalThis.fetch,
-	limit = 100
+	limit = 100,
+	kv?: KVNamespace
 ): Promise<{ results: TextSearchResult[]; total: number; queryTokens: string[] }> {
 	const tokens = tokenize(query);
 	if (!tokens.length || isAllStopWords(tokens)) {
@@ -201,7 +222,7 @@ export async function searchNotes(
 	}
 
 	const expanded = expandTokens(tokens);
-	const index = await loadNotesIndex(fetch);
+	const index = await loadNotesIndex(fetch, kv);
 
 	const raw = index.search(buildSearchQuery(tokens), {
 		processTerm
