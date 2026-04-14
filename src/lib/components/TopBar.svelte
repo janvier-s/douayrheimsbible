@@ -13,6 +13,7 @@
 	import BottomTabBar from './BottomTabBar.svelte';
 	import PrefsPanel from './PrefsPanel.svelte';
 	import BookNavChevron from './BookNavChevron.svelte';
+	import ChapterNavLink from './ChapterNavLink.svelte';
 
 	export let bookSlug: string;
 	export let chapterNum: string;
@@ -242,13 +243,7 @@
 				</a>
 			{/if}
 			{#if prevChapterHref}
-				<a
-					href={prevChapterHref}
-					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
-					aria-label="Previous chapter"
-				>
-					<BookNavChevron direction="prev" double={false} />
-				</a>
+				<ChapterNavLink href={prevChapterHref} direction="prev" chapter={chapterNumInt - 1} />
 			{/if}
 			<button
 				class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
@@ -268,13 +263,7 @@
 				>
 			</button>
 			{#if nextChapterHref}
-				<a
-					href={nextChapterHref}
-					class="text-subtle hover:text-accent transition-colors duration-fast shrink-0"
-					aria-label="Next chapter"
-				>
-					<BookNavChevron direction="next" double={false} />
-				</a>
+				<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNumInt + 1} />
 			{/if}
 			{#if nextBook}
 				<a
