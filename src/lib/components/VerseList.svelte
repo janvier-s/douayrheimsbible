@@ -293,15 +293,28 @@
 	let lastSyncedVerse: number | null = null;
 
 	function setupPanelSync() {
+		console.log('[sync] setupPanelSync called, bookSlug=', bookSlug, 'ch=', chapterNum);
 		panelSyncUnsub?.();
 		panelSyncUnsub = studyPanel.subscribe((state) => {
 			if (state.panelScrollVerse === lastSyncedVerse) return;
 			lastSyncedVerse = state.panelScrollVerse;
-			if (state.panelScrollVerse == null) return;
-			if (!get(prefs).annotationSync) return;
+			if (state.panelScrollVerse == null) {
+				console.log('[sync] panelScrollVerse is null, skip');
+				return;
+			}
+			const syncEnabled = get(prefs).annotationSync;
+			if (!syncEnabled) {
+				console.log('[sync] annotationSync disabled, skip');
+				return;
+			}
 			const pos = get(readingPosition);
-			if (!pos || bookSlug !== pos.bookSlug || chapterNum !== pos.chapter) return;
+			if (!pos || bookSlug !== pos.bookSlug || chapterNum !== pos.chapter) {
+				console.log('[sync] not active chapter:', { bookSlug, chapterNum, pos });
+				return;
+			}
 			const el = verseEls[state.panelScrollVerse];
+			const elCount = Object.keys(verseEls).length;
+			console.log('[sync] verse', state.panelScrollVerse, 'el=', !!el, 'verseEls count=', elCount);
 			if (el) {
 				programmaticReaderScroll = true;
 				if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
