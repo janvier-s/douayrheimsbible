@@ -60,8 +60,8 @@
 		pointer-events: auto;
 		box-shadow:
 			0 2px 0 color-mix(in srgb, var(--color-accent) 20%, transparent),
-			0 8px 24px color-mix(in srgb, var(--color-foreground) 18%, transparent),
-			0 2px 6px color-mix(in srgb, var(--color-foreground) 10%, transparent);
+			0 8px 24px color-mix(in srgb, var(--color-text) 18%, transparent),
+			0 2px 6px color-mix(in srgb, var(--color-text) 10%, transparent);
 	}
 
 	/* Crimson top rule */
@@ -112,7 +112,7 @@
 		font-size: 13.5px;
 		font-style: italic;
 		line-height: 1.65;
-		color: var(--color-foreground);
+		color: var(--color-text);
 		padding: 0 14px;
 		margin: 0;
 	}

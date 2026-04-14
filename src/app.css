@@ -201,6 +201,7 @@
 		--color-accent-text: #e06868;
 		--color-border: #2e2b32;
 		--color-bg-glass: rgba(17, 17, 19, 0.94);
+		--color-heading: #c5bbb0;
 	}
 }
 
@@ -304,8 +305,8 @@ body {
 	position: relative;
 	width: 100%;
 	aspect-ratio: 16 / 9;
-	background: color-mix(in srgb, var(--color-foreground) 4%, transparent);
-	border: 1px dashed color-mix(in srgb, var(--color-foreground) 20%, transparent);
+	background: color-mix(in srgb, var(--color-text) 4%, transparent);
+	border: 1px dashed color-mix(in srgb, var(--color-text) 20%, transparent);
 	border-radius: 2px;
 	display: flex;
 	align-items: center;
@@ -317,7 +318,7 @@ body {
 	content: attr(data-label);
 	font-family: var(--font-ui);
 	font-size: 0.75rem;
-	color: color-mix(in srgb, var(--color-foreground) 40%, transparent);
+	color: color-mix(in srgb, var(--color-text) 40%, transparent);
 	text-align: center;
 	max-width: 40ch;
 	line-height: 1.5;

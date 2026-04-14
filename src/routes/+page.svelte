@@ -237,7 +237,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.22em;
 		font-weight: 600;
-		color: var(--color-foreground);
+		color: var(--color-text);
 	}
 
 	.hero-inner {
@@ -292,7 +292,7 @@
 		font-family: var(--font-reader);
 		font-size: clamp(2.8rem, 5vw, 4.2rem);
 		font-weight: 700;
-		color: var(--color-foreground);
+		color: var(--color-text);
 		letter-spacing: -0.02em;
 		line-height: 0.95;
 	}
@@ -301,7 +301,7 @@
 		font-family: var(--font-reader);
 		font-size: clamp(2.2rem, 4vw, 3.4rem);
 		font-weight: 400;
-		color: var(--color-foreground);
+		color: var(--color-text);
 		letter-spacing: -0.01em;
 		line-height: 1;
 		margin-top: 4px;
@@ -411,8 +411,8 @@
 		display: block;
 		border: 1px solid var(--color-border);
 		box-shadow:
-			0 2px 8px color-mix(in srgb, var(--color-foreground) 8%, transparent),
-			0 20px 60px color-mix(in srgb, var(--color-foreground) 12%, transparent);
+			0 2px 8px color-mix(in srgb, var(--color-text) 8%, transparent),
+			0 20px 60px color-mix(in srgb, var(--color-text) 12%, transparent);
 		outline: 1px solid var(--color-border);
 		outline-offset: 4px;
 	}
@@ -422,7 +422,7 @@
 		font-size: 10px;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
-		color: var(--color-foreground);
+		color: var(--color-text);
 		text-align: center;
 		font-weight: 300;
 		line-height: 2;

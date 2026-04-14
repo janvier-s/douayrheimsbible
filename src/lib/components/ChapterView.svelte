@@ -211,7 +211,7 @@
 		font-size: 2rem;
 		font-weight: 400;
 		letter-spacing: 0.04em;
-		color: var(--color-foreground);
+		color: var(--color-text);
 		display: block;
 	}
 
