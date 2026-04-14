@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ALL_BOOKS, getNextNavBook } from '$lib/data/books';
+	import { getNextNavBook } from '$lib/data/books';
 	import type { BookMeta } from '$lib/data/types';
 
 	export let bookMeta: BookMeta;
@@ -8,7 +8,6 @@
 	export let routeBase: string = '/odr';
 	export let showNav: boolean = true;
 
-	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
 	$: isLastChapter = chapterNum >= totalChapters;
 	$: nextNavBook = isLastChapter ? (getNextNavBook(bookMeta.slug) ?? null) : null;
 

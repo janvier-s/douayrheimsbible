@@ -22,7 +22,7 @@
 		"@playwright/test": "^1.58.2",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/kit": "^2.50.2",
-		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@typescript-eslint/eslint-plugin": "^8.57.1",
 		"@typescript-eslint/parser": "^8.57.1",
 		"autoprefixer": "^10.4.27",
@@ -39,7 +39,7 @@
 		"tailwindcss": "^3.4.19",
 		"tsx": "^4.21.0",
 		"typescript": "^5.9.3",
-		"vite": "^7.3.1",
+		"vite": "^8.0.8",
 		"vitest": "^4.1.0",
 		"wrangler": "^4.82.2"
 	},
