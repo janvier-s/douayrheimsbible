@@ -289,15 +289,16 @@
 		}
 	});
 
-	// Panel→reader sync: scroll the reader window when the study panel scrolls to a verse.
-	// Extract annotatedVerse so this block only re-runs when that specific field changes.
+	// Panel→reader sync: scroll the reader window when the panel observer moves to a verse.
+	// Reads panelScrollVerse (not annotatedVerse) — the panel observer sets this field so
+	// free panel scrolling drives reader scroll without triggering the verse underline.
 	// Guard with chapterNum/bookSlug so only the active chapter's VerseList scrolls
 	// (with infinite scroll, multiple VerseList instances can be in the DOM at once).
-	$: syncAnnotatedVerse = $studyPanel.annotatedVerse;
+	$: syncPanelVerse = $studyPanel.panelScrollVerse;
 	$: isActiveChapter =
 		bookSlug === $readingPosition?.bookSlug && chapterNum === $readingPosition?.chapter;
-	$: if (browser && $prefs.annotationSync && syncAnnotatedVerse != null && isActiveChapter) {
-		const el = verseEls[syncAnnotatedVerse];
+	$: if (browser && $prefs.annotationSync && syncPanelVerse != null && isActiveChapter) {
+		const el = verseEls[syncPanelVerse];
 		if (el) {
 			programmaticReaderScroll = true;
 			if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
@@ -337,7 +338,9 @@
 				bind:this={verseEls[v.verse]}
 				id="v{v.verse}"
 				data-verse-num={v.verse}
-				class:verse-active-annotation={isStudy && $studyPanel.annotatedVerse === v.verse}
+				class:verse-active-annotation={isStudy &&
+					v.has_annotation &&
+					$studyPanel.annotatedVerse === v.verse}
 			>
 				{#if $prefs.showVerseNumbers}
 					<sup
@@ -370,7 +373,9 @@
 				class="flex gap-sm max-md:gap-0"
 				class:verse-target={targetVerse === v.verse}
 				class:verse-annotated={isStudy && v.has_annotation}
-				class:verse-active-annotation={isStudy && $studyPanel.annotatedVerse === v.verse}
+				class:verse-active-annotation={isStudy &&
+					v.has_annotation &&
+					$studyPanel.annotatedVerse === v.verse}
 				on:click={(e) => isStudy && handleVerseClick(e, v)}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
 			>

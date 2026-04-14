@@ -186,7 +186,7 @@
 						on:click|stopPropagation={() => scrollToInlineMarker(String(note.marker))}
 						aria-label="Go to marker {note.marker} in text">{note.marker}</button
 					>
-					<span class="ann-note-text">{@html note.text}</span>
+					<span class="ann-note-text">{@html allcapsToSmallcaps(note.text)}</span>
 				</li>
 			{/each}
 		</ul>

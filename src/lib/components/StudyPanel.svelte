@@ -7,6 +7,7 @@
 	import { loadAnnotations } from '$lib/data/loader';
 	import type { BookData, ChapterAnnotations, AnnotationEntry, Verse } from '$lib/data/types';
 	import AnnotationProse from './AnnotationProse.svelte';
+	import { allcapsToSmallcaps } from '$lib/utils/text';
 
 	export let bookData: BookData | null = null;
 
@@ -63,7 +64,7 @@
 			const chNum = currentChapterNum;
 			annotationsLoading = true;
 			annotations = null;
-			studyPanel.update((s) => ({ ...s, annotatedVerse: null }));
+			studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
 			loadAnnotations(slug, chNum, fetch)
 				.then((data) => {
 					// Only apply if still the same chapter (use captured values, not live ones)
@@ -188,7 +189,10 @@
 				}
 				if (intersectingVerses.size > 0) {
 					const active = [...intersectingVerses.entries()].sort((a, b) => a[1] - b[1])[0][0];
-					studyPanel.update((s) => ({ ...s, annotatedVerse: active }));
+					// Use panelScrollVerse (not annotatedVerse) so free panel scroll drives
+					// reader scroll without triggering the verse underline. The underline
+					// (annotatedVerse) is only set by explicit clicks via scrollTrigger.
+					studyPanel.update((s) => ({ ...s, panelScrollVerse: active }));
 				}
 			},
 			{ root: panelScroll, rootMargin: '0px 0px -55% 0px', threshold: 0 }
@@ -244,9 +248,31 @@
 	// Slider position: 0 = Intro, 1 = Commentary
 	$: sliderIndex = $studyPanel.activeTab === 'commentary' ? 1 : 0;
 
+	// Wheel handler: capture scroll when panel has room to scroll; bleed through to
+	// the window at boundaries so infinite-scroll chapter loading still works.
+	let wheelCleanup: (() => void) | null = null;
+	function attachWheelHandler(el: HTMLElement) {
+		wheelCleanup?.();
+		function handleWheel(e: WheelEvent) {
+			const { scrollTop, scrollHeight, clientHeight } = el;
+			const canScrollDown = Math.round(scrollTop + clientHeight) < scrollHeight;
+			const canScrollUp = scrollTop > 0;
+			if ((e.deltaY > 0 && canScrollDown) || (e.deltaY < 0 && canScrollUp)) {
+				e.preventDefault();
+				el.scrollBy({ top: e.deltaY });
+			}
+			// At top/bottom boundary: don't prevent — scroll bleeds to window so the
+			// reader's infinite scroll can load the next/previous chapter.
+		}
+		el.addEventListener('wheel', handleWheel, { passive: false });
+		wheelCleanup = () => el.removeEventListener('wheel', handleWheel);
+	}
+	$: if (panelScroll && browser) attachWheelHandler(panelScroll);
+
 	onDestroy(() => {
 		panelSectionObserver?.disconnect();
 		if (programmaticScrollTimer) clearTimeout(programmaticScrollTimer);
+		wheelCleanup?.();
 	});
 </script>
 
@@ -358,7 +384,7 @@
 									{#each currentChapterData.summary_notes as sn}
 										<div class="note-row" data-panel-id="panel-0-note-{sn.marker}">
 											<span class="note-marker">{sn.marker}</span>
-											<span class="note-text">{sn.text}</span>
+											<span class="note-text">{@html allcapsToSmallcaps(sn.text)}</span>
 										</div>
 									{/each}
 								</div>
@@ -373,7 +399,7 @@
 											class="annotation-block"
 											data-panel-id="panel-{section.verse}-annotation-{ann.part}"
 										>
-											<p class="annotation-title">{ann.title}</p>
+											<p class="annotation-title">{@html allcapsToSmallcaps(ann.title)}</p>
 											<AnnotationProse text={ann.text} notes={ann.notes} />
 										</div>
 									{/each}
@@ -387,7 +413,7 @@
 									{#each section.verseData.cross_refs as cr, ci}
 										<div class="cr-row" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
 											<span class="cr-marker">{ci + 1}</span>
-											<span class="cr-text">{cr.text}</span>
+											<span class="cr-text">{@html allcapsToSmallcaps(cr.text)}</span>
 										</div>
 									{/each}
 								</div>
@@ -400,7 +426,7 @@
 									{#each section.verseData.notes as note}
 										<div class="note-row" data-panel-id="panel-{section.verse}-note-{note.label}">
 											<span class="note-marker">{note.label}</span>
-											<span class="note-text">{@html note.text}</span>
+											<span class="note-text">{@html allcapsToSmallcaps(note.text)}</span>
 										</div>
 									{/each}
 								</div>
@@ -484,7 +510,6 @@
 	.panel-scroll {
 		scrollbar-width: thin;
 		scrollbar-color: color-mix(in srgb, var(--color-accent) 25%, transparent) transparent;
-		overscroll-behavior: contain;
 	}
 
 	.panel-scroll::-webkit-scrollbar {

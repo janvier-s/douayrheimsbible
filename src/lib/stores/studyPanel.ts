@@ -13,7 +13,12 @@ export interface StudyPanelState {
 	activeTab: StudyTab;
 	activeIntroIndex: number;
 	activeVerse: number | null;
+	/** Set only by explicit user clicks (marker/verse). Drives the reader verse underline. */
 	annotatedVerse: number | null;
+	/** Set by the panel IntersectionObserver during free panel scroll. Drives reader scroll
+	 *  without showing the underline — keeps "you selected this verse" separate from
+	 *  "the panel is currently showing this verse". */
+	panelScrollVerse: number | null;
 	scrollTrigger: ScrollTrigger | null;
 }
 
@@ -22,6 +27,7 @@ const defaults: StudyPanelState = {
 	activeIntroIndex: 0,
 	activeVerse: null,
 	annotatedVerse: null,
+	panelScrollVerse: null,
 	scrollTrigger: null
 };
 
