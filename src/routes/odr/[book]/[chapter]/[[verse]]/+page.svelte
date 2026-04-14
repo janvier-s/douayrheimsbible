@@ -1,14 +1,6 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import BibleReader from '$lib/components/BibleReader.svelte';
-
-	// Only fade on client-side navigation, not on initial page load (prevents CLS)
-	let mounted = false;
-	onMount(() => {
-		mounted = true;
-	});
 
 	export let data: PageData;
 
@@ -89,12 +81,14 @@
 	{@html jsonLdTag}
 </svelte:head>
 
-<div>
-	<BibleReader
-		initialBookMeta={data.bookMeta}
-		initialChapter={data.chapter}
-		initialTotalChapters={data.totalChapters}
-		targetVerse={data.targetVerse}
-		routeBase="/odr"
-	/>
-</div>
+{#key `${data.bookMeta.slug}-${data.chapter.chapter}`}
+	<div>
+		<BibleReader
+			initialBookMeta={data.bookMeta}
+			initialChapter={data.chapter}
+			initialTotalChapters={data.totalChapters}
+			targetVerse={data.targetVerse}
+			routeBase="/odr"
+		/>
+	</div>
+{/key}
