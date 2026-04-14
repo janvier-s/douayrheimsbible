@@ -15,6 +15,9 @@
 	export let chapterNum: number;
 
 	let verseEls: Record<number, HTMLElement> = {};
+	// Clear stale element refs when verses changes so the observer never
+	// re-attaches to detached DOM nodes from a previous render.
+	$: (verses, (verseEls = {}));
 
 	// Lazy-load text-vide only when bionic reading is first enabled
 	let textVideFn: ((_text: string, _opts: object) => string) | null = null;
@@ -260,17 +263,16 @@
 		}
 	});
 
-	// Re-observe when verses change.
-	// Disconnect first so we don't double-observe if Svelte re-runs this block.
-	// intersectingReaderVerses is cleared so stale verse positions don't linger.
-	// verseEls entries are kept — bind:this keeps them current; the loop below
-	// re-registers only live elements (el is non-null for mounted nodes).
+	// Re-observe when verses change. verseEls was cleared by the reactive above,
+	// so we wait a tick for bind:this to repopulate it before re-connecting.
 	$: if (verseObserver && verses) {
 		verseObserver.disconnect();
 		intersectingReaderVerses.clear();
-		for (const [, el] of Object.entries(verseEls)) {
-			if (el) verseObserver.observe(el);
-		}
+		tick().then(() => {
+			for (const [, el] of Object.entries(verseEls)) {
+				if (el) verseObserver!.observe(el);
+			}
+		});
 	}
 
 	onDestroy(() => {
@@ -419,7 +421,7 @@
 	on:mouseleave={schedulePopoverDismiss}
 >
 	{#if openPopover}
-		<span class="marker-popover-content">{@html openPopover.content}</span>
+		<span class="marker-popover-content">{@html allcapsToSmallcaps(openPopover.content)}</span>
 	{/if}
 </MarkerPopover>
 

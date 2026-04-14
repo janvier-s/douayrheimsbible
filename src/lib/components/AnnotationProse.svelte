@@ -201,7 +201,7 @@
 	>
 		{#if activeNote}
 			<span class="mn-popover-marker">{openMn}</span>
-			<span class="mn-popover-text">{@html activeNote.text}</span>
+			<span class="mn-popover-text">{@html allcapsToSmallcaps(activeNote.text)}</span>
 		{/if}
 	</MarkerPopover>
 </div>

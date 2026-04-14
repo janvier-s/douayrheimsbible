@@ -67,14 +67,15 @@
 			studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
 			loadAnnotations(slug, chNum, fetch)
 				.then((data) => {
-					// Only apply if still the same chapter (use captured values, not live ones)
-					if (`${slug}/${chNum}` === key) {
+					// Compare against lastAnnotationKey (live), not key (captured) — if the user
+					// navigated away before this fetch resolved, lastAnnotationKey will have changed.
+					if (`${slug}/${chNum}` === lastAnnotationKey) {
 						annotations = data;
 						annotationsLoading = false;
 					}
 				})
 				.catch(() => {
-					if (`${slug}/${chNum}` === key) {
+					if (`${slug}/${chNum}` === lastAnnotationKey) {
 						annotationsLoading = false;
 					}
 				});
