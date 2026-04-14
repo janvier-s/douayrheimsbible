@@ -289,15 +289,20 @@
 	$: isActiveChapter =
 		bookSlug === $readingPosition?.bookSlug && chapterNum === $readingPosition?.chapter;
 	$: if (browser && $prefs.annotationSync && syncPanelVerse != null && isActiveChapter) {
-		const el = verseEls[syncPanelVerse];
-		if (el) {
-			programmaticReaderScroll = true;
-			if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
-			el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-			programmaticReaderScrollTimer = setTimeout(() => {
-				programmaticReaderScroll = false;
-			}, 800);
-		}
+		// Defer to after DOM update so bind:this has populated verseEls
+		// (guards against the verseEls reset reactive clearing refs mid-cycle).
+		const targetVNum = syncPanelVerse;
+		tick().then(() => {
+			const el = verseEls[targetVNum];
+			if (el) {
+				programmaticReaderScroll = true;
+				if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
+				el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				programmaticReaderScrollTimer = setTimeout(() => {
+					programmaticReaderScroll = false;
+				}, 800);
+			}
+		});
 	}
 
 	// mounted gate: keeps isStudy false during SSR/pre-render (where readingMode

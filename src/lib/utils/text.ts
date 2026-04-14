@@ -106,7 +106,12 @@ export function allcapsToSmallcaps(html: string): string {
 	});
 	// Pass 2: merge consecutive small-caps spans separated by whitespace or
 	// within-sentence punctuation (commas, semicolons, colons, dashes).
-	result = result.replace(/<\/span>([,;:\-\u2014\u2013\s]+)<span class="sc">/g, '$1');
+	// Lookbehind ensures only <span class="sc"> closings are merged (not other spans
+	// like <span class="summary-verse-ref">).
+	result = result.replace(
+		/(?<=<span class="sc">[^<]*)<\/span>([,;:\-\u2014\u2013\s]+)<span class="sc">/g,
+		'$1'
+	);
 	// Pass 3: ensure the first letter of each span is always capitalized
 	// (handles cases where a minor word ends up first after merge).
 	result = result.replace(

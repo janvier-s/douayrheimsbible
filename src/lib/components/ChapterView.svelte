@@ -4,7 +4,7 @@
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import VerseList from './VerseList.svelte';
 	import { prefs } from '$lib/stores/prefs';
-	import { studyPanel } from '$lib/stores/studyPanel';
+	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 
 	export let bookMeta: BookMeta;
 	export let chapter: Chapter;
@@ -112,11 +112,8 @@
 		if (!noteBtn) return;
 		e.preventDefault();
 		const marker = noteBtn.dataset.summaryNote ?? '';
-		studyPanel.update((s) => ({
-			...s,
-			activeTab: 'commentary',
-			scrollTrigger: { verse: 0, type: 'note', marker }
-		}));
+		studyPanel.update((s) => ({ ...s, annotatedVerse: 0 }));
+		scrollTrigger.set({ verse: 0, type: 'note', marker });
 	}
 </script>
 

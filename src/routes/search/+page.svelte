@@ -831,16 +831,18 @@
 			<!-- No results (verse mode) -->
 			{#if searched && !loading && mode === 'verse' && results.length === 0}
 				{#if notAReferenceQuery && (textSuggestionVerses > 0 || textSuggestionNotes > 0)}
-					<p
-						class="text-subtle text-[14px] text-center"
+					<div
+						class="text-subtle text-[14px] text-center flex flex-col items-center gap-[6px]"
 						in:fade={{ duration: reducedMotion ? 0 : 160 }}
 					>
-						This looks like a text search.
+						<span>This looks like a text search.</span>
 						<button
 							class="hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => setMode('text')}
-							>Switch to Text Search to find "{query}" in {[
+							on:click={() => setMode('text')}>Switch to Text Search to find "{query}"</button
+						>
+						<span class="text-[12px]"
+							>Found in {[
 								textSuggestionVerses > 0
 									? `${textSuggestionVerses} verse${textSuggestionVerses === 1 ? '' : 's'}`
 									: null,
@@ -849,9 +851,9 @@
 									: null
 							]
 								.filter(Boolean)
-								.join(' and ')} →</button
+								.join(' and ')}</span
 						>
-					</p>
+					</div>
 				{:else if notAReferenceQuery}
 					<p
 						class="text-subtle text-[14px] text-center"
@@ -1057,19 +1059,17 @@
 
 			{#if searched && !loading && mode === 'text' && textResults.length === 0 && noteResults.length === 0 && !stopWordWarning}
 				{#if isVerseReference && verseSuggestionCount > 0}
-					<p
-						class="text-subtle text-[14px] text-center"
+					<div
+						class="text-subtle text-[14px] text-center flex flex-col items-center gap-[6px]"
 						in:fade={{ duration: reducedMotion ? 0 : 160 }}
 					>
-						This looks like a verse reference.
+						<span>This looks like a verse reference.</span>
 						<button
 							class="hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => setMode('verse')}
-							>Switch to Verse Search to look up "{query}" ({verseSuggestionCount}
-							verse{verseSuggestionCount === 1 ? '' : 's'}) →</button
+							on:click={() => setMode('verse')}>Switch to Verse Search to look up "{query}"</button
 						>
-					</p>
+					</div>
 				{:else}
 					<p
 						class="text-subtle text-[14px] text-center"
