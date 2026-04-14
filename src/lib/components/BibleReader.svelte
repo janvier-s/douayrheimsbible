@@ -81,7 +81,8 @@
 
 	// Re-evaluated whenever readingPosition changes (slug or chapter switch).
 	// After the initial loadBook in onMount, we assign directly to pick up the data.
-	let currentBookData: BookData | null = getCachedBook(initialBookMeta.slug);
+	// eslint-disable-next-line no-useless-assignment
+	let currentBookData: BookData | null = null;
 	$: {
 		const slug = $readingPosition?.bookSlug ?? initialBookMeta.slug;
 		currentBookData = getCachedBook(slug);

@@ -91,9 +91,10 @@ function normalizeScWord(word: string): string {
  *     → after Pass 3: '<span class="sc">The Holy Ghost</span>' */
 export function allcapsToSmallcaps(html: string): string {
 	// Step 0: convert <sc>…</sc> element tags (from source JSON) to spans,
-	// normalizing only ALL CAPS words inside (mixed-case content is preserved).
+	// normalizing capitalized words inside (Title Case and ALL CAPS) via
+	// the minor-word list so function words become uniform small caps.
 	let result = html.replace(/<sc>([\s\S]*?)<\/sc>/g, (_, content: string) => {
-		const normalized = content.replace(/\b([A-Z]{2,})\b/g, (w) => normalizeScWord(w));
+		const normalized = content.replace(/\b([A-Z][a-zA-Z]*)\b/g, (w) => normalizeScWord(w));
 		return `<span class="sc">${normalized}</span>`;
 	});
 	// Pass 1: wrap each remaining bare ALL-CAPS word individually
