@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { BookMeta, Chapter } from '$lib/data/types';
-	import { ALL_BOOKS, getHebPsalmNum, getPrevNavBook, getNextNavBook } from '$lib/data/books';
+	import { getHebPsalmNum, getPrevNavBook, getNextNavBook } from '$lib/data/books';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import VerseList from './VerseList.svelte';
 	import { prefs } from '$lib/stores/prefs';
@@ -23,8 +23,6 @@
 			'<span class="hebrew">$1</span>'
 		);
 	}
-
-	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
 
 	function bookLabel(bm: BookMeta, override?: string | null): string {
 		if (!$prefs.modernBookNames && override) return override;

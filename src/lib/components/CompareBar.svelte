@@ -52,7 +52,6 @@
 
 	$: visibleTranslations = $konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden);
 
-	$: bookIndex = ALL_BOOKS.findIndex((b) => b.slug === bookMeta.slug);
 	$: prevBook = getPrevNavBook(bookMeta.slug) ?? null;
 	$: nextBook = getNextNavBook(bookMeta.slug) ?? null;
 	$: prevChapterHref = chapterNum > 1 ? `/compare/${bookMeta.slug}/${chapterNum - 1}` : null;

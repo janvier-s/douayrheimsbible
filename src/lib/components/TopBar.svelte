@@ -50,7 +50,6 @@
 	$: navLabel =
 		bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026';
 
-	$: bookIndex = bookMeta ? ALL_BOOKS.findIndex((b) => b.slug === bookMeta!.slug) : -1;
 	$: prevBook = isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null;
 	$: nextBook = isChapterPage && bookMeta ? (getNextNavBook(bookMeta.slug) ?? null) : null;
 
