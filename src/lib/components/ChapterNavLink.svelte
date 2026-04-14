@@ -9,7 +9,7 @@
 <div class="relative group/chapnav shrink-0">
 	<a
 		{href}
-		class="text-subtle hover:text-accent transition-colors duration-fast block"
+		class="text-subtle hover:text-accent transition-colors duration-fast block p-2 -m-2"
 		aria-label="{direction === 'prev' ? 'Previous' : 'Next'} chapter"
 	>
 		<BookNavChevron {direction} double={false} />

@@ -1,0 +1,97 @@
+<h2>Text Search Result Styles</h2>
+<p class="subtitle">Imagine the user searched for "thou art Peter" — how should results appear?</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Full Verse + Highlight</h3>
+      <p style="margin-bottom:12px;color:#888;">Shows the complete verse text with matching words bolded. Grouped by chapter, just like your current verse search results.</p>
+      <div style="background:#1a1a1a;border-radius:8px;padding:16px 20px;font-family:serif;line-height:1.7;font-size:14px;">
+        <div style="color:#b08d57;font-size:12px;font-weight:600;margin-bottom:6px;font-family:sans-serif;">Matthew 16:18</div>
+        <p style="margin:0;">And I say to <b style="color:#e8d5a3;">thee</b>: That <b style="color:#e8d5a3;">thou art Peter</b>; and upon this rock I will build my church, and the gates of hell shall not prevail against it.</p>
+        <div style="margin-top:8px;"><a style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;font-family:sans-serif;">Read full chapter →</a></div>
+      </div>
+      <div style="margin-top:16px;">
+        <h4 style="font-size:13px;margin-bottom:6px;">Pros</h4>
+        <ul style="font-size:13px;color:#aaa;margin:0;padding-left:18px;">
+          <li>Full context — no guessing what the verse says</li>
+          <li>Consistent with your existing verse search results</li>
+          <li>Highlights make matches scannable</li>
+          <li>User can read and compare verses without clicking through</li>
+        </ul>
+        <h4 style="font-size:13px;margin-top:12px;margin-bottom:6px;">Cons</h4>
+        <ul style="font-size:13px;color:#aaa;margin:0;padding-left:18px;">
+          <li>Takes more vertical space — fewer results visible at once</li>
+          <li>Common words like "the" could return hundreds of full verses</li>
+          <li>Slower to scan when you have many results</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Snippet / Excerpt</h3>
+      <p style="margin-bottom:12px;color:#888;">Shows ~15 words around each match, like Google results. Trimmed with ellipsis.</p>
+      <div style="background:#1a1a1a;border-radius:8px;padding:16px 20px;font-family:serif;line-height:1.7;font-size:14px;">
+        <div style="color:#b08d57;font-size:12px;font-weight:600;margin-bottom:6px;font-family:sans-serif;">Matthew 16:18</div>
+        <p style="margin:0;">...I say to thee: That <b style="color:#e8d5a3;">thou art Peter</b>; and upon this rock I will build...</p>
+        <div style="margin-top:8px;"><a style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;font-family:sans-serif;">Read full chapter →</a></div>
+      </div>
+      <div style="margin-top:16px;">
+        <h4 style="font-size:13px;margin-bottom:6px;">Pros</h4>
+        <ul style="font-size:13px;color:#aaa;margin:0;padding-left:18px;">
+          <li>Compact — more results visible per screen</li>
+          <li>Faster to scan through many results</li>
+          <li>Focuses attention on the matching phrase</li>
+        </ul>
+        <h4 style="font-size:13px;margin-top:12px;margin-bottom:6px;">Cons</h4>
+        <ul style="font-size:13px;color:#aaa;margin:0;padding-left:18px;">
+          <li>Loses context — can't fully understand the verse</li>
+          <li>Feels more "search engine" than "Bible reader"</li>
+          <li>Inconsistent with how verse search shows full verses</li>
+          <li>Users will click through more often to read the full verse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Compact Reference List</h3>
+      <p style="margin-bottom:12px;color:#888;">Dense list of references with a tiny preview. Maximum density.</p>
+      <div style="background:#1a1a1a;border-radius:8px;padding:12px 16px;font-size:14px;">
+        <div style="display:flex;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px solid #2a2a2a;">
+          <span style="color:#b08d57;font-family:sans-serif;font-size:12px;font-weight:600;white-space:nowrap;">Matt 16:18</span>
+          <span style="color:#999;font-family:serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">...That <b style="color:#e8d5a3;">thou art Peter</b>; and upon this rock...</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px solid #2a2a2a;">
+          <span style="color:#b08d57;font-family:sans-serif;font-size:12px;font-weight:600;white-space:nowrap;">John 21:17</span>
+          <span style="color:#999;font-family:serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">...<b style="color:#e8d5a3;">thou</b> knowest that I love thee...</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;padding:6px 0;">
+          <span style="color:#b08d57;font-family:sans-serif;font-size:12px;font-weight:600;white-space:nowrap;">Acts 10:14</span>
+          <span style="color:#999;font-family:serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">...for I have never eaten any thing that is common...</span>
+        </div>
+      </div>
+      <div style="margin-top:16px;">
+        <h4 style="font-size:13px;margin-bottom:6px;">Pros</h4>
+        <ul style="font-size:13px;color:#aaa;margin:0;padding-left:18px;">
+          <li>Maximum results per screen — great for "where is this phrase?"</li>
+          <li>Fast scanning of references</li>
+          <li>Lightest on rendering</li>
+        </ul>
+        <h4 style="font-size:13px;margin-top:12px;margin-bottom:6px;">Cons</h4>
+        <ul style="font-size:13px;color:#aaa;margin:0;padding-left:18px;">
+          <li>Almost no context — you must click to read</li>
+          <li>Completely different feel from the rest of the site</li>
+          <li>Poor for studying or comparing verses</li>
+          <li>Feels like a concordance index, not a Bible reader</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

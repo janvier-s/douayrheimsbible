@@ -39,11 +39,12 @@
 	}
 
 	onMount(() => {
-		document.addEventListener('scroll', onScroll, true);
+		document.addEventListener('scroll', onScroll, { capture: true, passive: true });
 	});
 
 	onDestroy(() => {
-		if (browser) document.removeEventListener('scroll', onScroll, true);
+		if (browser)
+			document.removeEventListener('scroll', onScroll, { capture: true } as EventListenerOptions);
 	});
 </script>
 

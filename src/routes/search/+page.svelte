@@ -330,32 +330,43 @@
 		const gen = ++searchGeneration;
 		loading = true;
 		try {
-			const [verseSearch, noteSearch] = await Promise.all([
-				searchVerses(trimmed, fetch, scope === 'verses' ? textLimit : 20),
-				searchNotes(trimmed, fetch, scope === 'notes' ? textLimit : 20)
-			]);
-			if (gen !== searchGeneration) return;
-
-			const { results: verseRaw, total: verseTotal, queryTokens: qt } = verseSearch;
-			const { results: noteRaw, total: noteTotal } = noteSearch;
-			queryTokens = qt;
-
+			// Load only the primary scope index first, then lazy-load cross-scope
 			if (scope === 'verses') {
+				const verseSearch = await searchVerses(trimmed, fetch, textLimit);
+				if (gen !== searchGeneration) return;
+				const { results: verseRaw, total: verseTotal, queryTokens: qt } = verseSearch;
+				queryTokens = qt;
 				const groups = buildTextResultGroups(verseRaw);
 				textResults = await hydrateResultGroups(groups, qt, fetch);
 				noteResults = [];
 				textTotal = verseTotal;
-				crossScopeNoteResults = await hydrateNoteResults(noteRaw, qt, fetch);
 				crossScopeVerseResults = [];
-				crossScopeTotal = noteTotal;
+				// Load cross-scope notes in background (non-blocking)
+				searchNotes(trimmed, fetch, 20)
+					.then(async (noteSearch) => {
+						if (gen !== searchGeneration) return;
+						crossScopeNoteResults = await hydrateNoteResults(noteSearch.results, qt, fetch);
+						crossScopeTotal = noteSearch.total;
+					})
+					.catch(() => {});
 			} else {
+				const noteSearch = await searchNotes(trimmed, fetch, textLimit);
+				if (gen !== searchGeneration) return;
+				const { results: noteRaw, total: noteTotal, queryTokens: qt } = noteSearch;
+				queryTokens = qt;
 				noteResults = await hydrateNoteResults(noteRaw, qt, fetch);
 				textResults = [];
 				textTotal = noteTotal;
-				const vsGroups = buildTextResultGroups(verseRaw);
-				crossScopeVerseResults = await hydrateResultGroups(vsGroups, qt, fetch);
 				crossScopeNoteResults = [];
-				crossScopeTotal = verseTotal;
+				// Load cross-scope verses in background (non-blocking)
+				searchVerses(trimmed, fetch, 20)
+					.then(async (verseSearch) => {
+						if (gen !== searchGeneration) return;
+						const vsGroups = buildTextResultGroups(verseSearch.results);
+						crossScopeVerseResults = await hydrateResultGroups(vsGroups, qt, fetch);
+						crossScopeTotal = verseSearch.total;
+					})
+					.catch(() => {});
 			}
 
 			if (gen !== searchGeneration) return;
@@ -364,7 +375,7 @@
 			// If the active scope found nothing, check if the query is a verse reference.
 			// Only check the active scope total — cross-scope notes matching a word
 			// like "Matthew" shouldn't suppress the verse reference suggestion.
-			const activeTotal = scope === 'verses' ? verseTotal : noteTotal;
+			const activeTotal = textTotal;
 			if (activeTotal === 0) {
 				const ranges = parseAllReferences(trimmed);
 				if (ranges.length > 0) {
@@ -620,6 +631,12 @@
 
 <svelte:head>
 	<title>{query ? `${query} | ${heading}` : heading} | Original Douai-Rheims Bible</title>
+	<meta
+		name="description"
+		content={query
+			? `Search results for "${query}" in the Original Douay-Rheims Bible.`
+			: 'Search the Original Douay-Rheims Bible by verse reference or full-text keyword search.'}
+	/>
 </svelte:head>
 
 <main

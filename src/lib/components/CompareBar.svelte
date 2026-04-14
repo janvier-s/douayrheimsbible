@@ -208,7 +208,7 @@
 				}}
 			>
 				<span class="text-[14px] md:text-[16px] font-medium">{navLabel}</span>
-				<span class="text-[10px] md:text-[11px] opacity-70 leading-none" aria-hidden="true"
+				<span class="text-[10px] md:text-[11px] opacity-80 leading-none" aria-hidden="true"
 					>{navOpen ? '▲' : '▼'}</span
 				>
 			</button>

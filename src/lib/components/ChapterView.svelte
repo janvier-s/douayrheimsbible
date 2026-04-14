@@ -128,7 +128,7 @@
 				<span class="flex flex-col leading-tight">
 					<span>{prevNav.label}</span>
 					{#if prevNav.chLabel}
-						<span class="text-[10px] normal-case tracking-normal opacity-70">{prevNav.chLabel}</span
+						<span class="text-[10px] normal-case tracking-normal opacity-80">{prevNav.chLabel}</span
 						>
 					{/if}
 				</span>
@@ -144,7 +144,7 @@
 				<span class="flex flex-col items-end leading-tight">
 					<span>{nextNav.label}</span>
 					{#if nextNav.chLabel}
-						<span class="text-[10px] normal-case tracking-normal opacity-70">{nextNav.chLabel}</span
+						<span class="text-[10px] normal-case tracking-normal opacity-80">{nextNav.chLabel}</span
 						>
 					{/if}
 				</span>
