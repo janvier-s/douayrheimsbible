@@ -43,8 +43,7 @@
 	});
 
 	onDestroy(() => {
-		if (browser)
-			document.removeEventListener('scroll', onScroll, { capture: true } as EventListenerOptions);
+		if (browser) document.removeEventListener('scroll', onScroll, true);
 	});
 </script>
 
