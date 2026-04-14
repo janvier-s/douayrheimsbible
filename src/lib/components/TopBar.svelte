@@ -12,6 +12,7 @@
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
 	import PrefsPanel from './PrefsPanel.svelte';
+	import BookNavChevron from './BookNavChevron.svelte';
 
 	export let bookSlug: string;
 	export let chapterNum: string;
@@ -229,19 +230,7 @@
 					title={bookNavLabel(prevBook)}
 					aria-label="Previous book: {bookNavLabel(prevBook)}"
 				>
-					<svg
-						width="15"
-						height="15"
-						viewBox="0 0 15 15"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<polyline points="9.5,2.5 4.5,7.5 9.5,12.5" />
-					</svg>
+					<BookNavChevron direction="prev" />
 				</a>
 			{/if}
 			<button
@@ -268,19 +257,7 @@
 					title={bookNavLabel(nextBook)}
 					aria-label="Next book: {bookNavLabel(nextBook)}"
 				>
-					<svg
-						width="15"
-						height="15"
-						viewBox="0 0 15 15"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<polyline points="5.5,2.5 10.5,7.5 5.5,12.5" />
-					</svg>
+					<BookNavChevron direction="next" />
 				</a>
 			{/if}
 		</div>
