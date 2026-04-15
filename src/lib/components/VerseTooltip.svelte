@@ -1,59 +1,114 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import { loadBook } from '$lib/data/loader';
+	import { OSIS_TO_SLUG } from '$lib/search/resolve';
+	import { stripTags } from '$lib/utils/text';
+	import type { OsisRange } from '$lib/search/reference';
 
-	export let verseNum: number;
-	export let verseText: string;
-	export let anchorX: number;
-	export let anchorY: number;
+	export let osisRanges: OsisRange[] = [];
+	export let anchorEl: HTMLElement | null = null;
+	export let visible: boolean = false;
 
+	interface VerseEntry {
+		ref: string;
+		text: string;
+	}
+
+	let x = 0;
+	let y = 0;
 	let windowWidth = 1024;
+	let loading = false;
+	let entries: VerseEntry[] = [];
 
-	// Clamp so the tooltip never bleeds off screen edges
-	const TOOLTIP_WIDTH = 300;
+	const TOOLTIP_WIDTH = 320;
 	const CLAMP_EDGE = TOOLTIP_WIDTH / 2 + 20;
-	$: left = Math.min(Math.max(anchorX, CLAMP_EDGE), windowWidth - CLAMP_EDGE);
+	$: left = Math.min(Math.max(x, CLAMP_EDGE), windowWidth - CLAMP_EDGE);
+
+	$: if (visible && anchorEl) {
+		const rect = anchorEl.getBoundingClientRect();
+		x = rect.left + rect.width / 2;
+		y = rect.top - 8;
+		loadEntries(osisRanges);
+	} else if (!visible) {
+		entries = [];
+		loading = false;
+	}
+
+	async function loadEntries(ranges: OsisRange[]) {
+		const verseRanges = ranges.filter((r) => r.startVerse !== undefined);
+		if (verseRanges.length === 0) return;
+
+		loading = true;
+		const result: VerseEntry[] = [];
+
+		for (const range of verseRanges) {
+			const slug = OSIS_TO_SLUG[range.book];
+			if (!slug) continue;
+			try {
+				const bookData = await loadBook(slug, fetch);
+				const chapter = bookData.chapters.find((c) => c.chapter === range.startChapter);
+				const verse = chapter?.verses.find((v) => v.verse === range.startVerse);
+				if (verse) {
+					result.push({
+						ref: `${range.book} ${range.startChapter}:${range.startVerse}`,
+						text: stripTags(verse.text)
+					});
+				}
+			} catch {
+				// silently skip on fetch error
+			}
+		}
+
+		entries = result;
+		loading = false;
+	}
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<!-- svelte-ignore a11y_mouse_events_have_key_events -->
-<div
-	class="tooltip"
-	style="left: {left}px; top: {anchorY}px;"
-	transition:fade={{ duration: 140 }}
-	role="tooltip"
-	on:mouseover
-	on:mouseout
-	on:focusin
-	on:focusout
->
-	<!-- Top rule -->
-	<div class="rule"></div>
+{#if visible && (loading || entries.length > 0)}
+	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
+	<div
+		class="tooltip"
+		style="left: {left}px; top: {y}px;"
+		transition:fade={{ duration: 120 }}
+		role="tooltip"
+		on:mouseover
+		on:mouseout
+		on:focusin
+		on:focusout
+	>
+		<div class="rule"></div>
 
-	<!-- Header: label + verse number -->
-	<div class="header">
-		<span class="verse-label">
-			<span class="sigil">verse</span>
-			<span class="verse-num">{verseNum}</span>
-		</span>
+		{#if loading}
+			<div class="loading">
+				<div class="shimmer"></div>
+				<div class="shimmer shimmer-short"></div>
+			</div>
+		{:else}
+			{#each entries as entry, i}
+				{#if i > 0}<div class="entry-sep"></div>{/if}
+				<div class="entry">
+					<div class="header">
+						<span class="sigil">verse</span>
+						<span class="verse-ref">{entry.ref}</span>
+					</div>
+					<div class="sep"></div>
+					<p class="verse-text">{entry.text}</p>
+				</div>
+			{/each}
+		{/if}
+
+		<div class="nib" aria-hidden="true"></div>
 	</div>
-
-	<!-- Separator -->
-	<div class="sep"></div>
-
-	<!-- Verse text -->
-	<p class="verse-text">{verseText}</p>
-
-	<!-- Nib pointing down toward the reference -->
-	<div class="nib" aria-hidden="true"></div>
-</div>
+{/if}
 
 <style>
 	.tooltip {
 		position: fixed;
 		z-index: 9999;
 		transform: translateX(-50%) translateY(calc(-100% - 14px));
-		width: 300px;
+		width: 320px;
 		background: var(--color-panel);
 		border: 1px solid var(--color-border);
 		padding: 0 0 14px;
@@ -64,24 +119,24 @@
 			0 2px 6px color-mix(in srgb, var(--color-text) 10%, transparent);
 	}
 
-	/* Crimson top rule */
 	.rule {
 		height: 2px;
 		background: var(--color-accent);
 		margin-bottom: 10px;
 	}
 
-	.header {
-		display: flex;
-		justify-content: center;
-		padding: 0 14px;
-		margin-bottom: 8px;
+	.entry-sep {
+		height: 1px;
+		background: var(--color-border);
+		margin: 10px 14px;
 	}
 
-	.verse-label {
+	.header {
 		display: flex;
 		align-items: baseline;
 		gap: 5px;
+		padding: 0 14px;
+		margin-bottom: 8px;
 	}
 
 	.sigil {
@@ -92,12 +147,11 @@
 		font-weight: 600;
 	}
 
-	.verse-num {
+	.verse-ref {
 		font-family: var(--font-reader);
 		font-size: 12px;
 		color: var(--color-accent);
 		font-weight: 700;
-		letter-spacing: 0.02em;
 	}
 
 	.sep {
@@ -117,7 +171,39 @@
 		margin: 0;
 	}
 
-	/* Downward-pointing nib connecting to the verse ref */
+	.loading {
+		padding: 4px 14px 2px;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.shimmer {
+		height: 12px;
+		border-radius: 2px;
+		background: linear-gradient(
+			90deg,
+			color-mix(in srgb, var(--color-text) 8%, transparent) 0%,
+			color-mix(in srgb, var(--color-text) 14%, transparent) 50%,
+			color-mix(in srgb, var(--color-text) 8%, transparent) 100%
+		);
+		background-size: 200% 100%;
+		animation: shimmer 1.2s infinite;
+	}
+
+	.shimmer-short {
+		width: 60%;
+	}
+
+	@keyframes shimmer {
+		0% {
+			background-position: 200% 0;
+		}
+		100% {
+			background-position: -200% 0;
+		}
+	}
+
 	.nib {
 		position: absolute;
 		bottom: -6px;
@@ -127,10 +213,8 @@
 		height: 6px;
 		background: var(--color-panel);
 		clip-path: polygon(0 0, 100% 0, 50% 100%);
-		border-bottom: none;
 	}
 
-	/* Nib border — rendered as a pseudo-element behind */
 	.tooltip::after {
 		content: '';
 		position: absolute;
