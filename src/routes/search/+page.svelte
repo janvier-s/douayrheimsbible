@@ -8,6 +8,7 @@
 	import AnnotationProse from '$lib/components/AnnotationProse.svelte';
 	import { parseAllReferences } from '$lib/search/reference';
 	import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
+	import { getHebPsalmNum, drFromHebPsalmNum } from '$lib/data/books';
 	import { navOverride } from '$lib/stores/navOverride';
 	import type { SearchMode, SearchScope } from './+page';
 	import { phraseProximity } from '$lib/search/proximity';
@@ -276,7 +277,7 @@
 			return;
 		}
 
-		const ranges = parseAllReferences(trimmed);
+		const ranges = parseAllReferences(applyPsalmConversion(trimmed));
 		if (!ranges.length) {
 			results = [];
 			textResults = [];
@@ -370,7 +371,7 @@
 			// If the active scope found nothing, check if the query is a verse reference.
 			const activeTotal = textTotal;
 			if (activeTotal === 0) {
-				const ranges = parseAllReferences(trimmed);
+				const ranges = parseAllReferences(applyPsalmConversion(trimmed));
 				if (ranges.length > 0) {
 					try {
 						const verseGroups = await buildResultGroups(ranges, fetch);
@@ -441,6 +442,28 @@
 		query = example;
 		updateUrl(query);
 		search(query);
+	}
+
+	/**
+	 * When Hebrew psalm numbers are shown, convert a typed Hebrew psalm chapter
+	 * to its DR/LXX equivalent before looking it up.
+	 * "Psalm 94:11" → "Psalm 93:11"
+	 */
+	function applyPsalmConversion(q: string): string {
+		if (!$prefs.showPsalmNumbers) return q;
+		return q.replace(/^(Psalms?|Ps\.?)\s*(\d+)/i, (_, prefix, num) => {
+			const dr = drFromHebPsalmNum(parseInt(num));
+			return `${prefix} ${dr}`;
+		});
+	}
+
+	/** Return a result group heading, appending Hebrew psalm number when the pref is on. */
+	function groupHeading(group: SearchResultGroup): string {
+		if (!$prefs.showPsalmNumbers || group.slug !== 'psalms') return group.heading;
+		const heb = getHebPsalmNum(group.chapter);
+		if (!heb) return group.heading;
+		// "Psalms 93:11" → "Psalms 93 (Heb. 94):11"
+		return group.heading.replace(/^(Psalms? \d+)/, `$1 (Heb. ${heb})`);
 	}
 
 	/** Render verse text for search results: strip cr/na, preserve <i> italics,
@@ -801,13 +824,18 @@
 			<!-- Cross-scope teaser -->
 			{#if crossScopeTeaser}
 				<p
-					class="text-center mb-[16px] font-ui text-[13px] text-subtle"
+					class="text-center mb-[16px] font-ui text-[16px]"
 					in:fade={{ duration: reducedMotion ? 0 : 160 }}
 				>
-					"{query}" also appears in {crossScopeTeaser.count}
-					{crossScopeTeaser.label === 'annotations' ? 'notes and annotations' : 'Bible verses'}.
+					<span class="text-foreground">"{query}"</span>
+					<span class="text-subtle">
+						also appears in {crossScopeTeaser.count}
+						{crossScopeTeaser.label === 'annotations'
+							? 'notes and annotations'
+							: 'Bible verses'}.</span
+					>
 					<button
-						class="hover:underline"
+						class="font-medium hover:underline"
 						style="color: var(--color-accent-text)"
 						on:click={() => {
 							if (crossScopeTeaser) setScope(crossScopeTeaser.targetScope);
@@ -915,7 +943,7 @@
 									class="hover:text-foreground transition-colors duration-fast"
 									on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 								>
-									{group.heading}
+									{groupHeading(group)}
 								</a>
 							</h2>
 							<div class="space-y-[0.7rem]">
@@ -965,7 +993,7 @@
 									class="hover:text-foreground transition-colors duration-fast"
 									on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 								>
-									{group.heading}
+									{groupHeading(group)}
 								</a>
 							</h2>
 							<div class="space-y-[0.7rem]">
@@ -1011,7 +1039,7 @@
 
 			<!-- Note/annotation results -->
 			{#if noteResults.length > 0}
-				<div class="space-y-[24px]" in:fade={{ duration: reducedMotion ? 0 : 260 }}>
+				<div class="space-y-[24px] note-results" in:fade={{ duration: reducedMotion ? 0 : 260 }}>
 					{#each noteResults as note, noteIdx}
 						{#if noteIdx > 0}
 							<hr class="border-border" />
@@ -1031,7 +1059,7 @@
 								</span>
 							</div>
 							{#if note.title}
-								<p class="font-ui text-[15px] font-medium italic text-foreground mb-[4px]">
+								<p class="font-ui text-[15px] font-medium italic note-title mb-[4px]">
 									{@html highlightNoteTitle(note.title, note.queryTokens)}
 								</p>
 							{/if}
@@ -1105,6 +1133,19 @@
 </main>
 
 <style>
+	/* ── Note results — match study panel font weight ──────────────────── */
+	.note-results {
+		font-weight: 500;
+	}
+
+	.note-results :global(i) {
+		font-style: italic;
+	}
+
+	.note-title {
+		color: var(--color-accent-text);
+	}
+
 	/* ── Mode toggle pill ─────────────────────────────────────────────── */
 	.search-mode-pill {
 		position: absolute;

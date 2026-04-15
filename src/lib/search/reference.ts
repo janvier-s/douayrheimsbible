@@ -56,8 +56,28 @@ export interface ParsedReference {
 	verse?: number;
 }
 
+/**
+ * Parse a Psalm reference directly, bypassing bcv_parser's Protestant verse-count
+ * validation. DR/LXX Psalms have different chapter/verse counts than Protestant.
+ */
+function parsePsalmRef(
+	input: string
+): { chapter: number; verse?: number; endVerse?: number } | null {
+	const m = input.match(/^(?:Psalms?|Ps)\s*(\d+)(?:[:\s,]\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?)?/i);
+	if (!m) return null;
+	return {
+		chapter: parseInt(m[1]),
+		verse: m[2] ? parseInt(m[2]) : undefined,
+		endVerse: m[3] ? parseInt(m[3]) : undefined
+	};
+}
+
 export function parseReference(input: string): ParsedReference | null {
 	const normalised = normaliseInput(input.trim()).replace(/^(\d)\s+/, '$1');
+
+	// Bypass bcv_parser for Psalms — Protestant verse counts differ from DR/LXX
+	const ps = parsePsalmRef(normalised);
+	if (ps) return { book: 'Ps', chapter: ps.chapter, verse: ps.verse };
 
 	const result = parser.parse(normalised);
 	const passages = result.osis_and_indices();
@@ -102,6 +122,21 @@ export interface OsisRange {
  */
 export function parseAllReferences(input: string): OsisRange[] {
 	const normalised = normaliseInput(input.trim()).replace(/^(\d)\s+/, '$1');
+
+	// Bypass bcv_parser for Psalms — Protestant verse counts differ from DR/LXX
+	const ps = parsePsalmRef(normalised);
+	if (ps) {
+		const { chapter: ch, verse: sv, endVerse: ev } = ps;
+		let osis: string;
+		if (sv !== undefined) {
+			osis = ev !== undefined && ev !== sv ? `Ps.${ch}.${sv}-Ps.${ch}.${ev}` : `Ps.${ch}.${sv}`;
+		} else {
+			osis = `Ps.${ch}`;
+		}
+		const range = parseOsis(osis);
+		if (range) return [range];
+	}
+
 	const result = parser.parse(normalised);
 	const passages = result.osis_and_indices();
 

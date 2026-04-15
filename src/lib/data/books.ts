@@ -705,3 +705,15 @@ export function getHebPsalmNum(n: number): string | null {
 	if (n === 146 || n === 147) return '147';
 	return null;
 }
+
+/** Maps a Hebrew (Protestant) psalm number to its Vulgate/Douay equivalent. */
+export function drFromHebPsalmNum(heb: number): number {
+	if (heb <= 8) return heb;
+	if (heb <= 10) return 9; // Hebrew 9+10 merged into DR 9
+	if (heb <= 113) return heb - 1;
+	if (heb <= 115) return 113; // Hebrew 114+115 merged into DR 113
+	if (heb === 116) return 114; // Hebrew 116 → DR 114
+	if (heb <= 146) return heb - 1;
+	if (heb === 147) return 146; // Hebrew 147 → DR 146
+	return heb; // 148–150 same
+}
