@@ -61,8 +61,8 @@
 		const estimatedH = Math.min(verseCount * 80 + chapterCount * 40 + 30, windowHeight * 0.6);
 		// Prefer above, but flip below if content won't fit above
 		flipBelow = spaceAbove < estimatedH && spaceBelow > spaceAbove;
-		y = flipBelow ? rect.bottom : rect.top; // eslint-disable-line no-useless-assignment
-		maxH = `${Math.min(Math.max(flipBelow ? spaceBelow : spaceAbove, 120), windowHeight * 0.6)}px`; // eslint-disable-line no-useless-assignment
+		y = flipBelow ? rect.bottom : rect.top;
+		maxH = `${Math.min(Math.max(flipBelow ? spaceBelow : spaceAbove, 120), windowHeight * 0.6)}px`;
 		loadEntries(osisRanges);
 	} else if (!visible) {
 		entries = [];

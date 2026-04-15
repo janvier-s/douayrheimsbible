@@ -399,13 +399,13 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 					const display = text.slice(bookMatch.displayStart, displayEnd).trim();
 
 					tokens.push({ type: 'ref', osis, display, isVerse });
-					lastOsisBook = bookMatch.osisBook; // eslint-disable-line no-useless-assignment
+					lastOsisBook = bookMatch.osisBook;
 
 					pos = displayEnd;
 
 					// Check for continuation refs: bare "chapter, verse." with same book
 					pos = parseContinuationRefs(text, pos, lastOsisBook, tokens);
-					textStart = pos; // eslint-disable-line no-useless-assignment
+					textStart = pos;
 					continue;
 				}
 			}

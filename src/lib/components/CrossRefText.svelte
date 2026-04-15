@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { tokenizeCrossRef } from '$lib/search/crossRefParser';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
-	import type { OsisRange } from '$lib/search/reference';
 	import { parseAllReferences } from '$lib/search/reference';
 
 	export let text: string;
