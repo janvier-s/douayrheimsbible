@@ -8,17 +8,18 @@
 
 	$: tokens = tokenizeCrossRef(text);
 
-	let hoveredOsis: OsisRange[] = [];
+	/** All OSIS ranges from the entire cross-ref string, grouped for one tooltip */
+	$: allRanges = tokens
+		.filter((t): t is Extract<typeof t, { type: 'ref' }> => t.type === 'ref')
+		.flatMap((t) => parseAllReferences(t.osis));
+
 	let anchorEl: HTMLElement | null = null;
 	let tooltipVisible = false;
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
-	function handleMouseenter(e: MouseEvent, osis: string, isVerse: boolean) {
+	function handleMouseenter(e: MouseEvent) {
 		if (hoverTimer) clearTimeout(hoverTimer);
-		if (!isVerse) return;
-		const ranges = parseAllReferences(osis);
-		if (ranges.length === 0 || ranges[0].startVerse === undefined) return;
-		hoveredOsis = ranges;
+		if (allRanges.length === 0) return;
 		anchorEl = e.currentTarget as HTMLElement;
 		tooltipVisible = true;
 	}
@@ -33,53 +34,32 @@
 	function handleTooltipMouseenter() {
 		if (hoverTimer) clearTimeout(hoverTimer);
 	}
-
-	function handleTooltipMouseleave() {
-		tooltipVisible = false;
-		anchorEl = null;
-	}
 </script>
 
-<span class="cr-text">
-	{#each tokens as token}
-		{#if token.type === 'text'}
-			{token.content}
-		{:else}
-			<a
-				href="/search?q={encodeURIComponent(token.osis)}&mode=verse"
-				class="verse-ref-link"
-				target="_blank"
-				rel="noopener"
-				on:mouseenter={(e) => handleMouseenter(e, token.osis, token.isVerse)}
-				on:mouseleave={handleMouseleave}>{token.display || token.osis}</a
-			>
-		{/if}
-	{/each}
-</span>
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<span class="cr-text" on:mouseenter={handleMouseenter} on:mouseleave={handleMouseleave}
+	>{#each tokens as token, i}{#if token.type === 'text'}{token.content}{:else}{#if i > 0 && tokens[i - 1].type === 'ref'}{' '}{/if}{token.display ||
+				token.osis}{/if}{/each}</span
+>
 
 <VerseTooltip
-	osisRanges={hoveredOsis}
+	osisRanges={allRanges}
 	{anchorEl}
 	visible={tooltipVisible}
-	on:mouseover={handleTooltipMouseenter}
-	on:mouseout={handleTooltipMouseleave}
+	on:mouseenter={handleTooltipMouseenter}
+	on:mouseleave={handleMouseleave}
 />
 
 <style>
 	.cr-text {
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--color-text);
-	}
-
-	.verse-ref-link {
 		color: var(--color-accent-text);
-		text-decoration: none;
 		border-bottom: 1px solid color-mix(in srgb, var(--color-accent-text) 40%, transparent);
 		cursor: pointer;
 	}
 
-	.verse-ref-link:hover {
+	.cr-text:hover {
 		color: var(--color-accent);
 		border-bottom-color: var(--color-accent);
 	}

@@ -151,7 +151,7 @@
 			if (verseRefTimer) clearTimeout(verseRefTimer);
 			const osis = vref.dataset.osis ?? '';
 			const refs = parseAllReferences(osis);
-			if (refs.length > 0 && refs[0].startVerse !== undefined) {
+			if (refs.length > 0) {
 				openVerseRef = refs;
 				verseRefAnchorEl = vref;
 				verseRefVisible = true;
@@ -246,12 +246,14 @@
 		osisRanges={openVerseRef}
 		anchorEl={verseRefAnchorEl}
 		visible={verseRefVisible}
-		on:mouseover={() => {
+		on:mouseenter={() => {
 			if (verseRefTimer) clearTimeout(verseRefTimer);
 		}}
-		on:mouseout={() => {
-			verseRefVisible = false;
-			verseRefAnchorEl = null;
+		on:mouseleave={() => {
+			verseRefTimer = setTimeout(() => {
+				verseRefVisible = false;
+				verseRefAnchorEl = null;
+			}, 120);
 		}}
 	/>
 </div>
@@ -282,11 +284,6 @@
 
 	:global(.mn-marker:hover) {
 		opacity: 0.75;
-	}
-
-	.annotation-prose :global(i) {
-		font-style: italic;
-		font-weight: 400;
 	}
 
 	.annotation-prose :global(.verse-ref) {
@@ -340,11 +337,6 @@
 	.ann-note-text {
 		font-family: var(--font-ui);
 		font-size: 15px;
-	}
-
-	.ann-note-text :global(i) {
-		font-style: italic;
-		font-weight: 400;
 	}
 
 	:global(.mn-popover-marker) {

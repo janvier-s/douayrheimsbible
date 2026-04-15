@@ -463,6 +463,12 @@
 </aside>
 
 <style>
+	/* Gotham only has italic at 400/600 — use 500 (Medium) so
+	   italic text (400) doesn't look heavier than surrounding text. */
+	.panel-root {
+		font-weight: 500;
+	}
+
 	/* ─── Identity bar ──────────────────────────────── */
 	.panel-title {
 		font-size: 10px;
@@ -657,8 +663,9 @@
 		font-size: 15px;
 	}
 
-	/* Allow <i> inside note text */
-	.note-text :global(i) {
+	/* Gotham Italic only exists at weight 400/600 — inherit panel weight (500)
+	   so the browser selects the closest italic face (400) without synthesis. */
+	.panel-root :global(i) {
 		font-style: italic;
 	}
 
