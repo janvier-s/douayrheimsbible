@@ -41,7 +41,7 @@
 		"typescript": "^5.9.3",
 		"vite": "^8.0.8",
 		"vitest": "^4.1.0",
-		"wrangler": "^4.82.2"
+		"wrangler": "^4.83.0"
 	},
 	"dependencies": {
 		"bible-passage-reference-parser": "^3.2.0",

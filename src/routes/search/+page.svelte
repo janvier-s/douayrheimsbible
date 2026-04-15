@@ -462,8 +462,8 @@
 		if (!$prefs.showPsalmNumbers || group.slug !== 'psalms') return group.heading;
 		const heb = getHebPsalmNum(group.chapter);
 		if (!heb) return group.heading;
-		// "Psalms 93:11" → "Psalms 93 (Heb. 94):11"
-		return group.heading.replace(/^(Psalms? \d+)/, `$1 (Heb. ${heb})`);
+		// "Psalms 93:11" → "Psalms 93 (94):11"
+		return group.heading.replace(/^(Psalms? \d+)/, `$1 (${heb})`);
 	}
 
 	/** Render verse text for search results: strip cr/na, preserve <i> italics,
