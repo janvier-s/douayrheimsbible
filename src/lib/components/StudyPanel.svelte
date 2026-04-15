@@ -8,6 +8,7 @@
 	import type { BookData, ChapterAnnotations, AnnotationEntry, Verse } from '$lib/data/types';
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
+	import CrossRefText from './CrossRefText.svelte';
 
 	export let bookData: BookData | null = null;
 
@@ -419,7 +420,9 @@
 											class="annotation-block"
 											data-panel-id="panel-{section.verse}-annotation-{ann.part}"
 										>
-											{#if ann.title}<p class="annotation-title">{@html allcapsToSmallcaps(ann.title)}</p>{/if}
+											{#if ann.title}<p class="annotation-title">
+													{@html allcapsToSmallcaps(ann.title)}
+												</p>{/if}
 											<AnnotationProse text={ann.text} notes={ann.notes} />
 										</div>
 									{/each}
@@ -433,7 +436,7 @@
 									{#each section.verseData.cross_refs as cr, ci}
 										<div class="cr-row" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
 											<span class="cr-marker">{ci + 1}</span>
-											<span class="cr-text">{@html allcapsToSmallcaps(cr.text)}</span>
+											<CrossRefText text={cr.text} />
 										</div>
 									{/each}
 								</div>
@@ -649,7 +652,6 @@
 		min-width: 18px;
 	}
 
-	.cr-text,
 	.note-text {
 		font-family: var(--font-ui);
 		font-size: 15px;
@@ -755,10 +757,6 @@
 		.verse-section-header-sticky {
 			padding-top: 10px;
 			padding-bottom: 10px;
-		}
-
-		.cr-text {
-			font-size: 13px;
 		}
 
 		.note-text {
