@@ -367,6 +367,8 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 	const tokens: CrossRefToken[] = [];
 	let pos = 0;
 	let textStart = 0;
+	// eslint-disable-next-line no-useless-assignment -- used via parseContinuationRefs
+	let lastOsisBook: string | null = null;
 
 	while (pos < text.length) {
 		// Try to match a book at this position
@@ -397,9 +399,13 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 					const display = text.slice(bookMatch.displayStart, displayEnd).trim();
 
 					tokens.push({ type: 'ref', osis, display, isVerse });
+					lastOsisBook = bookMatch.osisBook; // eslint-disable-line no-useless-assignment
 
 					pos = displayEnd;
-					textStart = pos;
+
+					// Check for continuation refs: bare "chapter, verse." with same book
+					pos = parseContinuationRefs(text, pos, lastOsisBook, tokens);
+					textStart = pos; // eslint-disable-line no-useless-assignment
 					continue;
 				}
 			}
@@ -414,6 +420,55 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 	}
 
 	return tokens;
+}
+
+/**
+ * After parsing a ref, check if bare "N, N." or "N." continuations follow
+ * using the same book. E.g. "Psal. 32, 6. 135, 5." → second ref is Ps.135.5
+ */
+function parseContinuationRefs(
+	text: string,
+	startPos: number,
+	osisBook: string,
+	tokens: CrossRefToken[]
+): number {
+	let pos = startPos;
+
+	while (pos < text.length) {
+		// Skip whitespace
+		let cursor = pos;
+		while (cursor < text.length && text[cursor] === ' ') cursor++;
+
+		// Must start with a digit (bare chapter number, no book name)
+		if (cursor >= text.length || !/\d/.test(text[cursor])) break;
+
+		// But NOT if it's preceded by a book abbreviation starting here
+		// (that means a new book ref, not a continuation)
+		const nextBook = matchBookAt(text, cursor);
+		if (nextBook) break;
+
+		// Also check if a digit prefix like "2. Thess" starts a new numbered book
+		const numBookMatch = /^(\d)\.\s*[A-Z]/.exec(text.slice(cursor));
+		if (numBookMatch) break;
+
+		// Try to parse as chapter[,verse]
+		const cv = parseChapterVerse(text, cursor);
+		if (!cv) break;
+
+		const isVerse = cv.verse !== undefined;
+		let osis = osisBook + '.' + cv.chapter;
+		if (cv.verse !== undefined) {
+			osis += '.' + cv.verse;
+		}
+
+		const displayEnd = cursor + cv.consumed;
+		const display = text.slice(cursor, displayEnd).trim();
+
+		tokens.push({ type: 'ref', osis, display, isVerse });
+		pos = displayEnd;
+	}
+
+	return pos;
 }
 
 /** Map of old abbreviations to modern book names for parseAllReferences */

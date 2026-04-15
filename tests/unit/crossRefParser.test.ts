@@ -60,6 +60,31 @@ describe('tokenizeCrossRef', () => {
 		const tokens = tokenizeCrossRef('Hier. Epist. 83. ad Ocea. Tert. de Baptis.');
 		expect(tokens.every((t) => t.type === 'text')).toBe(true);
 	});
+
+	it('parses continuation refs with same book (Psal. 32, 6. 135, 5.)', () => {
+		const tokens = tokenizeCrossRef('Psal. 32, 6. 135, 5.');
+		const refs = tokens.filter((t) => t.type === 'ref');
+		expect(refs).toHaveLength(2);
+		expect(refs[0]).toMatchObject({ osis: 'Ps.32.6' });
+		expect(refs[1]).toMatchObject({ osis: 'Ps.135.5' });
+	});
+
+	it('parses continuation refs mixed with other books', () => {
+		const tokens = tokenizeCrossRef('Psal. 32, 6. 135, 5. Eccl. 10, 1.');
+		const refs = tokens.filter((t) => t.type === 'ref');
+		expect(refs).toHaveLength(3);
+		expect(refs[0]).toMatchObject({ osis: 'Ps.32.6' });
+		expect(refs[1]).toMatchObject({ osis: 'Ps.135.5' });
+		expect(refs[2]).toMatchObject({ osis: 'Eccl.10.1' });
+	});
+
+	it('parses Act. 14, 15. 17, 24. as two Acts refs', () => {
+		const tokens = tokenizeCrossRef('Act. 14, 15. 17, 24.');
+		const refs = tokens.filter((t) => t.type === 'ref');
+		expect(refs).toHaveLength(2);
+		expect(refs[0]).toMatchObject({ osis: 'Acts.14.15' });
+		expect(refs[1]).toMatchObject({ osis: 'Acts.17.24' });
+	});
 });
 
 describe('parseItalicRef', () => {

@@ -286,6 +286,7 @@
 
 	.annotation-prose :global(i) {
 		font-style: italic;
+		font-weight: 400;
 	}
 
 	.annotation-prose :global(.verse-ref) {
@@ -343,6 +344,7 @@
 
 	.ann-note-text :global(i) {
 		font-style: italic;
+		font-weight: 400;
 	}
 
 	:global(.mn-popover-marker) {

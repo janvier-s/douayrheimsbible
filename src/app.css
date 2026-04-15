@@ -27,6 +27,20 @@
 	font-display: fallback;
 }
 @font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: fallback;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Bold-Italic.woff2') format('woff2');
+	font-weight: 600;
+	font-style: italic;
+	font-display: fallback;
+}
+@font-face {
 	font-family: 'Grace Dyslexic MD';
 	src: url('/fonts/dyslexia.woff2') format('woff2');
 	font-weight: 400;

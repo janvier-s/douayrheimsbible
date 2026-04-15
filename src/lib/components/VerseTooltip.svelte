@@ -17,8 +17,10 @@
 	let x = 0;
 	let y = 0;
 	let windowWidth = 1024;
+	let windowHeight = 768;
 	let loading = false;
 	let entries: VerseEntry[] = [];
+	let flipBelow = false;
 
 	const TOOLTIP_WIDTH = 320;
 	const CLAMP_EDGE = TOOLTIP_WIDTH / 2 + 20;
@@ -27,7 +29,9 @@
 	$: if (visible && anchorEl) {
 		const rect = anchorEl.getBoundingClientRect();
 		x = rect.left + rect.width / 2; // eslint-disable-line no-useless-assignment
-		y = rect.top - 8;
+		// Flip below if not enough room above (less than 200px)
+		flipBelow = rect.top < 200;
+		y = flipBelow ? rect.bottom + 8 : rect.top - 8; // eslint-disable-line no-useless-assignment
 		loadEntries(osisRanges);
 	} else if (!visible) {
 		entries = [];
@@ -64,12 +68,13 @@
 	}
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} />
+<svelte:window bind:innerWidth={windowWidth} bind:innerHeight={windowHeight} />
 
 {#if visible && (loading || entries.length > 0)}
 	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 	<div
 		class="tooltip"
+		class:flip-below={flipBelow}
 		style="left: {left}px; top: {y}px;"
 		transition:fade={{ duration: 120 }}
 		role="tooltip"
@@ -109,6 +114,8 @@
 		z-index: 9999;
 		transform: translateX(-50%) translateY(calc(-100% - 14px));
 		width: 320px;
+		max-height: 60vh;
+		overflow-y: auto;
 		background: var(--color-panel);
 		border: 1px solid var(--color-border);
 		padding: 0 0 14px;
@@ -117,6 +124,11 @@
 			0 2px 0 color-mix(in srgb, var(--color-accent) 20%, transparent),
 			0 8px 24px color-mix(in srgb, var(--color-text) 18%, transparent),
 			0 2px 6px color-mix(in srgb, var(--color-text) 10%, transparent);
+	}
+
+	/* Flip below the anchor when not enough room above */
+	.tooltip.flip-below {
+		transform: translateX(-50%) translateY(0);
 	}
 
 	.rule {
@@ -215,6 +227,12 @@
 		clip-path: polygon(0 0, 100% 0, 50% 100%);
 	}
 
+	.flip-below .nib {
+		bottom: auto;
+		top: -6px;
+		clip-path: polygon(50% 0, 0 100%, 100% 100%);
+	}
+
 	.tooltip::after {
 		content: '';
 		position: absolute;
@@ -226,5 +244,11 @@
 		background: var(--color-border);
 		clip-path: polygon(0 0, 100% 0, 50% 100%);
 		z-index: -1;
+	}
+
+	.flip-below::after {
+		bottom: auto;
+		top: -7px;
+		clip-path: polygon(50% 0, 0 100%, 100% 100%);
 	}
 </style>
