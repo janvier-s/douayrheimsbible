@@ -3,6 +3,10 @@
 	import { onDestroy } from 'svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
+	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
+	import { linkifyItalicRefs } from '$lib/search/crossRefParser';
+	import { parseAllReferences } from '$lib/search/reference';
+	import type { OsisRange } from '$lib/search/reference';
 	import type { AnnotationNote } from '$lib/data/types';
 
 	export let text: string;
@@ -40,6 +44,7 @@
 				const display = raw.replace(/^\[(\d+)\]$/, '$1');
 				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
 			});
+			html = linkifyItalicRefs(html);
 			html = allcapsToSmallcaps(html);
 			return html;
 		});
@@ -106,6 +111,11 @@
 	let popoverAnchorEl: HTMLElement | null = null;
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
+	let openVerseRef: OsisRange[] = [];
+	let verseRefAnchorEl: HTMLElement | null = null;
+	let verseRefVisible = false;
+	let verseRefTimer: ReturnType<typeof setTimeout> | null = null;
+
 	function dismiss() {
 		if (hoverTimer) {
 			clearTimeout(hoverTimer);
@@ -127,18 +137,42 @@
 	}
 
 	function handleMouseover(e: Event) {
-		const btn = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
-		if (!btn) return;
-		cancelDismiss();
-		const mn = btn.dataset.mn ?? null;
-		openMn = mn;
-		popoverAnchorEl = btn;
+		const target = e.target as HTMLElement;
+		const btn = target.closest('[data-mn]') as HTMLElement | null;
+		if (btn) {
+			cancelDismiss();
+			const mn = btn.dataset.mn ?? null;
+			openMn = mn;
+			popoverAnchorEl = btn;
+			return;
+		}
+		const vref = target.closest('.verse-ref') as HTMLElement | null;
+		if (vref) {
+			if (verseRefTimer) clearTimeout(verseRefTimer);
+			const osis = vref.dataset.osis ?? '';
+			const refs = parseAllReferences(osis);
+			if (refs.length > 0 && refs[0].startVerse !== undefined) {
+				openVerseRef = refs;
+				verseRefAnchorEl = vref;
+				verseRefVisible = true;
+			}
+		}
 	}
 
 	function handleMouseout(e: Event) {
-		const btn = (e.target as HTMLElement).closest('[data-mn]') as HTMLElement | null;
-		if (!btn) return;
-		scheduleDismiss();
+		const target = e.target as HTMLElement;
+		const btn = target.closest('[data-mn]') as HTMLElement | null;
+		if (btn) {
+			scheduleDismiss();
+			return;
+		}
+		const vref = target.closest('.verse-ref') as HTMLElement | null;
+		if (vref) {
+			verseRefTimer = setTimeout(() => {
+				verseRefVisible = false;
+				verseRefAnchorEl = null;
+			}, 120);
+		}
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -147,6 +181,7 @@
 
 	onDestroy(() => {
 		if (hoverTimer) clearTimeout(hoverTimer);
+		if (verseRefTimer) clearTimeout(verseRefTimer);
 	});
 
 	$: ({ html: sequentialText, notes: sequentialNotes } = renumber(text, notes));
@@ -187,7 +222,8 @@
 						on:click|stopPropagation={() => scrollToInlineMarker(String(note.marker))}
 						aria-label="Go to marker {note.marker} in text">{note.marker}</button
 					>
-					<span class="ann-note-text">{@html allcapsToSmallcaps(note.text)}</span>
+					<span class="ann-note-text">{@html allcapsToSmallcaps(linkifyItalicRefs(note.text))}</span
+					>
 				</li>
 			{/each}
 		</ul>
@@ -205,6 +241,19 @@
 			<span class="mn-popover-text">{@html allcapsToSmallcaps(activeNote.text)}</span>
 		{/if}
 	</MarkerPopover>
+
+	<VerseTooltip
+		osisRanges={openVerseRef}
+		anchorEl={verseRefAnchorEl}
+		visible={verseRefVisible}
+		on:mouseover={() => {
+			if (verseRefTimer) clearTimeout(verseRefTimer);
+		}}
+		on:mouseout={() => {
+			verseRefVisible = false;
+			verseRefAnchorEl = null;
+		}}
+	/>
 </div>
 
 <style>
@@ -237,6 +286,18 @@
 
 	.annotation-prose :global(i) {
 		font-style: italic;
+	}
+
+	.annotation-prose :global(.verse-ref) {
+		color: var(--color-accent-text);
+		text-decoration: none;
+		border-bottom: 1px solid color-mix(in srgb, var(--color-accent-text) 40%, transparent);
+		cursor: pointer;
+	}
+
+	.annotation-prose :global(.verse-ref:hover) {
+		color: var(--color-accent);
+		border-bottom-color: var(--color-accent);
 	}
 
 	/* Notes list */

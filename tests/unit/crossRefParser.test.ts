@@ -1,6 +1,6 @@
 // tests/unit/crossRefParser.test.ts
 import { describe, it, expect } from 'vitest';
-import { tokenizeCrossRef, parseItalicRef } from '$lib/search/crossRefParser';
+import { tokenizeCrossRef, parseItalicRef, linkifyItalicRefs } from '$lib/search/crossRefParser';
 
 describe('tokenizeCrossRef', () => {
 	it('parses a single verse reference', () => {
@@ -83,5 +83,29 @@ describe('parseItalicRef', () => {
 	it('returns null for patristic citation', () => {
 		const result = parseItalicRef('Homi. in 40 Martyres.');
 		expect(result).toBeNull();
+	});
+});
+
+describe('linkifyItalicRefs', () => {
+	it('wraps a parseable italic span in a verse-ref link', () => {
+		const result = linkifyItalicRefs('<i>Act. 13, 14.</i>');
+		expect(result).toContain('class="verse-ref"');
+		expect(result).toContain('data-osis=');
+		expect(result).toContain('<i>Act. 13, 14.</i>');
+	});
+
+	it('leaves non-ref italic spans untouched', () => {
+		const input = '<i>rested the seventh day</i>';
+		expect(linkifyItalicRefs(input)).toBe(input);
+	});
+
+	it('leaves patristic citation italic spans untouched', () => {
+		const input = '<i>Homi. in 40 Martyres.</i>';
+		expect(linkifyItalicRefs(input)).toBe(input);
+	});
+
+	it('encodes multiple OSIS refs into data-osis for grouped refs', () => {
+		const result = linkifyItalicRefs('<i>Act. 13, 14. Levit. 23.</i>');
+		expect(result).toContain('class="verse-ref"');
 	});
 });

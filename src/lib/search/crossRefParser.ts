@@ -643,3 +643,17 @@ export function parseItalicRef(text: string): OsisRange[] | null {
 
 	return refs.length > 0 ? refs : null;
 }
+
+/**
+ * Preprocess an HTML string: wrap <i> tags whose content parses as a Bible
+ * reference in an <a class="verse-ref"> link. Non-ref italic spans are left untouched.
+ */
+export function linkifyItalicRefs(html: string): string {
+	return html.replace(/<i>([\s\S]*?)<\/i>/g, (match, content) => {
+		const refs = parseItalicRef(content);
+		if (!refs || refs.length === 0) return match;
+		const osisStr = refs.map((r) => r.osis).join(',');
+		const searchUrl = `/search?q=${encodeURIComponent(osisStr)}&mode=verse`;
+		return `<a class="verse-ref" data-osis="${osisStr}" href="${searchUrl}" target="_blank" rel="noopener"><i>${content}</i></a>`;
+	});
+}
