@@ -23,8 +23,8 @@ export interface AnnotationNote {
 
 export interface AnnotationEntry {
 	verse: number;
-	part: number;
-	title: string;
+	part?: number;
+	title?: string;
 	text: string;
 	notes: AnnotationNote[];
 }
