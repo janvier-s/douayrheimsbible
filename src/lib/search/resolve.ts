@@ -54,6 +54,8 @@ export const OSIS_TO_SLUG: Record<string, string> = {
 	PrMan: 'prayer-of-manasses',
 	'3Esd': '3-esdras',
 	'4Esd': '4-esdras',
+	'1Esd': '3-esdras', // bcv_parser's OSIS for Greek 1 Esdras = DR 3 Esdras
+	'2Esd': '4-esdras', // bcv_parser's OSIS for apoc. 2 Esdras = DR 4 Esdras
 	// NT
 	Matt: 'matthew',
 	Mark: 'mark',

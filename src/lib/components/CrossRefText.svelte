@@ -1,16 +1,21 @@
 <script lang="ts">
 	import { tokenizeCrossRef } from '$lib/search/crossRefParser';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
-	import { parseAllReferences } from '$lib/search/reference';
+	import { parseOsis } from '$lib/search/reference';
 
 	export let text: string;
 
 	$: tokens = tokenizeCrossRef(text);
 
-	/** All OSIS ranges from the entire cross-ref string, grouped for one tooltip */
+	/** All OSIS ranges from the entire cross-ref string, grouped for one tooltip.
+	 *  Parse OSIS strings directly (not through bcv_parser) so DR/LXX Psalm
+	 *  numbers are preserved exactly as tokenized from the annotation text. */
 	$: allRanges = tokens
 		.filter((t): t is Extract<typeof t, { type: 'ref' }> => t.type === 'ref')
-		.flatMap((t) => parseAllReferences(t.osis));
+		.flatMap((t) => {
+			const r = parseOsis(t.osis);
+			return r ? [r] : [];
+		});
 
 	let anchorEl: HTMLElement | null = null;
 	let tooltipVisible = false;

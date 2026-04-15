@@ -44,7 +44,8 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Paralip': '2Chr',
 	'1Esd': 'Ezra',
 	'2Esd': 'Neh',
-	'3Esd': 'Ezra',
+	'3Esd': '3Esd',
+	'4Esd': '4Esd',
 	Esd: 'Ezra',
 	Esdr: 'Ezra',
 	Tob: 'Tob',
@@ -658,7 +659,9 @@ function normalizeForParser(text: string): string {
 					Ezra: 'Ezra',
 					Neh: 'Nehemiah',
 					'1Macc': '1 Maccabees',
-					'2Macc': '2 Maccabees'
+					'2Macc': '2 Maccabees',
+					'3Esd': '1 Esdras',
+					'4Esd': '2 Esdras'
 				};
 				return modernMap[osis] || `${num} ${abbr}`;
 			}
@@ -686,8 +689,13 @@ export function parseItalicRef(text: string): OsisRange[] | null {
 	// Quick check: if text has no digits, it's unlikely to be a reference
 	if (!/\d/.test(text)) return null;
 
-	// Check for patristic indicators
-	if (/\b(?:Homi|Epist|Serm|Tract|lib|cont|Baptis|Martyres)\b/i.test(text)) return null;
+	// Check for patristic / non-biblical indicators — author names, work structures, Latin terms
+	if (
+		/\b(?:Homi|ho|Epist|Serm|Ser|Tract|lib|li|cont|Baptis|Martyres|Dialog|adv|Poenit|principio|Iovinian|Ambr|Hiero|Greg|Origen|Aug|Chrys|Clem|Cypr|Cyril|Iren|Tert|Ath|Bas|Epiph|Hilar|Isid|Prosp|Cassi|Alcuin|Bede|Anselm|Aquin|Bernard)\b/i.test(
+			text
+		)
+	)
+		return null;
 
 	const normalized = normalizeForParser(text);
 	const refs = parseAllReferences(normalized);

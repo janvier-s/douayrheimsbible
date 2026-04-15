@@ -5,7 +5,7 @@
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
 	import { linkifyItalicRefs } from '$lib/search/crossRefParser';
-	import { parseAllReferences } from '$lib/search/reference';
+	import { parseOsis } from '$lib/search/reference';
 	import type { OsisRange } from '$lib/search/reference';
 	import type { AnnotationNote } from '$lib/data/types';
 
@@ -150,7 +150,10 @@
 		if (vref) {
 			if (verseRefTimer) clearTimeout(verseRefTimer);
 			const osis = vref.dataset.osis ?? '';
-			const refs = parseAllReferences(osis);
+			const refs = osis.split(',').flatMap((s) => {
+				const r = parseOsis(s.trim());
+				return r ? [r] : [];
+			});
 			if (refs.length > 0) {
 				openVerseRef = refs;
 				verseRefAnchorEl = vref;

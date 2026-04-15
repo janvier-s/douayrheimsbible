@@ -121,7 +121,7 @@ export function parseAllReferences(input: string): OsisRange[] {
 	return ranges;
 }
 
-function parseOsis(osis: string): OsisRange | null {
+export function parseOsis(osis: string): OsisRange | null {
 	// Formats: "Book.Ch", "Book.Ch.V", "Book.Ch.V-Book.Ch.V", "Book.Ch-Book.Ch"
 	const rangeMatch = osis.match(/^([^.]+)\.(\d+)(?:\.(\d+))?(?:-[^.]+\.(\d+)(?:\.(\d+))?)?$/);
 	if (!rangeMatch) return null;
