@@ -26,7 +26,7 @@
 
 	$: if (visible && anchorEl) {
 		const rect = anchorEl.getBoundingClientRect();
-		x = rect.left + rect.width / 2;
+		x = rect.left + rect.width / 2; // eslint-disable-line no-useless-assignment
 		y = rect.top - 8;
 		loadEntries(osisRanges);
 	} else if (!visible) {

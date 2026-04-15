@@ -209,10 +209,6 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 /** Sorted longest-first for greedy matching */
 const SORTED_ABBREVS = Object.keys(ABBREV_TO_OSIS).sort((a, b) => b.length - a.length);
 
-/** Known patristic / non-Bible prefixes that should suppress a match */
-const PATRISTIC_PREFIXES =
-	/(?:^|\s)(?:S\.\s*|de\s+|ad\s+|in\s+|super\.\s*|cont\.\s*|l\.\s*\d+\.\s*de\s+)/i;
-
 interface BookMatch {
 	osisBook: string;
 	/** Start index in the source string (including any digit prefix) */
