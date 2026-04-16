@@ -204,10 +204,7 @@ export const NT_ARTICLES: ReferenceArticle[] = [
 
 export const ALL_REFERENCE_ARTICLES = [...OT_ARTICLES, ...NT_ARTICLES];
 
-export function findArticle(
-	testament: string,
-	slug: string
-): ReferenceArticle | undefined {
+export function findArticle(testament: string, slug: string): ReferenceArticle | undefined {
 	const list = testament === 'ot' ? OT_ARTICLES : NT_ARTICLES;
 	return list.find((a) => a.slug === slug);
 }

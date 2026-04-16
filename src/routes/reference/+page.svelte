@@ -238,5 +238,4 @@
 		color: var(--color-muted);
 		line-height: 1.5;
 	}
-
 </style>
