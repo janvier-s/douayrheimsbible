@@ -41,6 +41,8 @@
 		if (/parables/i.test(title)) return 'Parables';
 		if (/declaration/i.test(title)) return 'Declaration';
 		if (/annotations upon/i.test(title)) return 'Annotations';
+		if (/catholic epistle/i.test(title)) return 'Catholic Epistles';
+		if (/sum.*gospels/i.test(title)) return 'Sum (Gospels)';
 		return title
 			.replace(/^the\s+/i, '')
 			.split(/\s+/)
