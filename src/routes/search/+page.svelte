@@ -17,6 +17,14 @@
 	import { tokenize, foldLigatures } from '$lib/search/normalize';
 	import { tick } from 'svelte';
 
+	// ── Search suggestions ─────────────────────────────────────────────
+	interface SuggestionData {
+		suggestions: Record<string, string[]>;
+		lookup: Record<string, string>;
+	}
+	let suggestionData: SuggestionData | null = null;
+	let relatedTerms: string[] = [];
+
 	export let data: { query: string; mode: SearchMode; scope: SearchScope };
 
 	let reducedMotion = false;
@@ -137,10 +145,18 @@
 
 	onDestroy(() => navOverride.set(null));
 
-	onMount(() => {
+	onMount(async () => {
 		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
 		reducedMotion = mq.matches;
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
+
+		// Load search suggestions (non-blocking)
+		fetch('/data/odr/search-suggestions.json')
+			.then((r) => (r.ok ? r.json() : null))
+			.then((d) => {
+				if (d) suggestionData = d;
+			})
+			.catch(() => {});
 
 		if (inputEl) inputEl.focus();
 		if (query) search(query);
@@ -170,6 +186,7 @@
 			textSuggestionNotes = 0;
 			isVerseReference = false;
 			verseSuggestionCount = 0;
+			relatedTerms = [];
 			searched = false;
 			loading = false;
 			textLimit = 100;
@@ -198,6 +215,7 @@
 				textSuggestionNotes = 0;
 				isVerseReference = false;
 				verseSuggestionCount = 0;
+				relatedTerms = [];
 				searched = false;
 				stopWordWarning = false;
 			}
@@ -278,6 +296,7 @@
 			}
 			searched = true;
 			loading = false;
+			lookupSuggestions(trimmed);
 			return;
 		}
 
@@ -290,6 +309,7 @@
 			textSuggestionNotes = 0;
 			searched = true;
 			loading = false;
+			lookupSuggestions(trimmed);
 			return;
 		}
 		const gen = ++searchGeneration;
@@ -306,6 +326,7 @@
 			searched = true;
 		}
 		loading = false;
+		lookupSuggestions(trimmed);
 	}
 
 	async function searchText(trimmed: string) {
@@ -392,6 +413,7 @@
 			}
 
 			searched = true;
+			lookupSuggestions(trimmed);
 		} catch {
 			if (gen !== searchGeneration) return;
 			textResults = [];
@@ -401,6 +423,7 @@
 			queryTokens = [];
 			crossScopeTotal = 0;
 			searched = true;
+			lookupSuggestions(trimmed);
 		}
 		loading = false;
 	}
@@ -416,6 +439,7 @@
 		textSuggestionNotes = 0;
 		isVerseReference = false;
 		verseSuggestionCount = 0;
+		relatedTerms = [];
 		searched = false;
 		stopWordWarning = false;
 		updateUrl(query);
@@ -610,6 +634,31 @@
 
 	function highlightNoteBody(text: string, tokens: string[]): string {
 		return applyHighlights(text, tokens, 'search-highlight', 'search-highlight-muted', false);
+	}
+
+	function lookupSuggestions(q: string) {
+		if (!suggestionData) {
+			relatedTerms = [];
+			return;
+		}
+		const normalized = foldLigatures(q).toLowerCase().replace(/['']/g, "'").trim();
+		// Direct lookup
+		const displayTerm = suggestionData.lookup[normalized];
+		if (displayTerm && suggestionData.suggestions[displayTerm]) {
+			relatedTerms = suggestionData.suggestions[displayTerm];
+			return;
+		}
+		// Try individual significant words (longest first)
+		const words = normalized.split(/\s+/).filter((w) => w.length > 3);
+		words.sort((a, b) => b.length - a.length);
+		for (const w of words) {
+			const term = suggestionData.lookup[w];
+			if (term && suggestionData.suggestions[term]) {
+				relatedTerms = suggestionData.suggestions[term];
+				return;
+			}
+		}
+		relatedTerms = [];
 	}
 
 	function computeCrossScope(
@@ -872,6 +921,25 @@
 							: `verse${textTotal === 1 ? '' : 's'}`} found
 					</p>
 				{/if}
+			{/if}
+
+			<!-- Related terms (search suggestions) -->
+			{#if searched && !loading && relatedTerms.length > 0}
+				<div class="text-center mb-[16px]" in:fade={{ duration: reducedMotion ? 0 : 160 }}>
+					<p class="text-subtle text-[13px] mb-sm">Related topics:</p>
+					<div class="flex flex-wrap justify-center gap-[8px]">
+						{#each relatedTerms as term}
+							<a
+								href="/search?q={encodeURIComponent(term)}&mode=text"
+								target="_blank"
+								rel="noopener"
+								class="px-[12px] py-[6px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
+							>
+								{term}
+							</a>
+						{/each}
+					</div>
+				</div>
 			{/if}
 
 			<!-- No results (verse mode) -->
