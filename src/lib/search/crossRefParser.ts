@@ -850,7 +850,6 @@ export function linkifyBareRefs(html: string): string {
 	// Don't process inside HTML tags
 	// Split on tags, process only text segments
 	const parts = html.split(/(<[^>]+>)/);
-	let inTag = false;
 	return parts
 		.map((part) => {
 			if (part.startsWith('<')) return part;

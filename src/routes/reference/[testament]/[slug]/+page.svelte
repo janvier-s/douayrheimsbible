@@ -391,7 +391,7 @@
 			<!-- Book-grouped entries (corruptions table) -->
 			{#each content.books as book}
 				{@const osisBook = BOOK_HEADING_TO_OSIS[book.book] || ''}
-				{(lastCorruptionChapter = 0) ? '' : ''}
+				{@const _ = lastCorruptionChapter = 0}
 				<h2 class="ref-book-heading">{book.book}</h2>
 				<div class="ref-book-entries">
 					{#each book.entries as entry}
