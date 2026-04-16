@@ -53,11 +53,16 @@
 	async function measureModePill(m: SearchMode) {
 		await tick();
 		if (!modeToggleEl) return;
-		const btns = modeToggleEl.querySelectorAll<HTMLElement>('.search-mode-btn');
-		const btn = btns[m === 'verse' ? 0 : 1];
-		if (!btn) return;
-		modePillLeft = btn.offsetLeft;
-		modePillWidth = btn.offsetWidth;
+		const btns = Array.from(modeToggleEl.querySelectorAll<HTMLElement>('.search-mode-btn'));
+		if (btns.length < 2) return;
+		// Reset any forced widths so we can read natural widths
+		btns.forEach((b) => (b.style.width = ''));
+		await tick();
+		const w = Math.max(...btns.map((b) => b.offsetWidth));
+		// Force both buttons to the same width (the wider one)
+		btns.forEach((b) => (b.style.width = w + 'px'));
+		modePillWidth = w;
+		modePillLeft = m === 'verse' ? 0 : w;
 	}
 	$: if (modeToggleEl) measureModePill(mode);
 
@@ -248,8 +253,7 @@
 	}
 
 	async function searchVerse(trimmed: string) {
-		// No digits → can't be a verse reference, treat as text query immediately
-		// (avoids false positives like "Thou art Peter" → 1 Peter 1)
+		// No digits → can't be a verse reference, show text search suggestion
 		if (!/\d/.test(trimmed)) {
 			results = [];
 			textResults = [];
@@ -740,7 +744,7 @@
 			<div
 				bind:this={modeToggleEl}
 				class="relative flex rounded-[4px] overflow-hidden border border-border"
-				style="background: color-mix(in srgb, var(--color-border) 35%, transparent)"
+				style="background: color-mix(in srgb, var(--color-border) 35%, transparent);"
 			>
 				{#if modePillWidth > 0}
 					<div
@@ -1164,6 +1168,8 @@
 		border: none;
 		cursor: pointer;
 		font-weight: 500;
+		text-align: center;
+		white-space: nowrap;
 	}
 
 	/* ── Scope tab underline ──────────────────────────────────────────── */

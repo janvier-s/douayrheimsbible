@@ -9,6 +9,7 @@
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import CrossRefText from './CrossRefText.svelte';
+	import { getBookBySlug } from '$lib/data/books';
 
 	export let bookData: BookData | null = null;
 
@@ -473,6 +474,25 @@
 			{:else if intros[$studyPanel.activeIntroIndex]}
 				{@const intro = intros[$studyPanel.activeIntroIndex]}
 				<div class="content-block">
+					{#if currentBookSlug === 'genesis' || currentBookSlug === 'matthew'}
+						{@const bookMeta = getBookBySlug(currentBookSlug)}
+						<a
+							href="/reference/{bookMeta?.testament === 'NT' ? 'nt' : 'ot'}/title-page"
+							target="_blank"
+							rel="noopener"
+							class="ref-gateway"
+						>
+							<span class="ref-gateway-label">
+								{bookMeta?.testament === 'NT' ? 'New' : 'Old'} Testament Reference
+							</span>
+							<span class="ref-gateway-desc">
+								{bookMeta?.testament === 'NT'
+									? 'Preface, annotations, evangelical history & more'
+									: 'Preface, historical tables, glossary & more'}
+							</span>
+							<span class="ref-gateway-arrow" aria-hidden="true">↗</span>
+						</a>
+					{/if}
 					<p class="content-eyebrow">{tabLabel(intro.title)}</p>
 					<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
 				</div>
@@ -602,6 +622,52 @@
 	   italic text (400) doesn't look heavier than surrounding text. */
 	.panel-root {
 		font-weight: 500;
+	}
+
+	/* ─── Reference gateway ─────────────────────────── */
+	.ref-gateway {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 12px;
+		margin-bottom: 16px;
+		border: 1px solid var(--color-border);
+		border-radius: 3px;
+		text-decoration: none;
+		background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+		transition:
+			border-color 150ms ease,
+			background 150ms ease;
+	}
+
+	.ref-gateway:hover {
+		border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+		background: color-mix(in srgb, var(--color-accent) 9%, transparent);
+	}
+
+	.ref-gateway-label {
+		font-size: 11px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: var(--color-accent);
+		flex-shrink: 0;
+	}
+
+	.ref-gateway-desc {
+		font-size: 11px;
+		color: var(--color-muted);
+		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.ref-gateway-arrow {
+		font-size: 13px;
+		color: var(--color-subtle);
+		flex-shrink: 0;
 	}
 
 	/* ─── Identity bar ──────────────────────────────── */

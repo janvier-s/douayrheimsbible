@@ -6,7 +6,8 @@
 				{ label: 'Old Testament', href: '/books/old-testament' },
 				{ label: 'New Testament', href: '/books/new-testament' },
 				{ label: 'Search', href: '/search' },
-				{ label: 'Compare Translations', href: '/compare' }
+				{ label: 'Compare Translations', href: '/compare' },
+				{ label: 'Reference Material', href: '/reference' }
 			]
 		},
 		{

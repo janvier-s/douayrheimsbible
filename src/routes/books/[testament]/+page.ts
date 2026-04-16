@@ -16,13 +16,15 @@ export const load: PageLoad = ({ params }) => {
 	if (!isOT && !isNT) throw error(404, 'Not found');
 
 	const testament = isOT ? 'OT' : 'NT';
-	const books = ALL_BOOKS.filter((b) => b.testament === testament);
+	const allBooks = ALL_BOOKS.filter((b) => b.testament === testament);
+	const books = allBooks.filter((b) => !b.navSkip);
+	const apocrypha = isOT ? allBooks.filter((b) => b.navSkip) : [];
 	const label = isOT ? 'Old Testament' : 'New Testament';
 
 	return {
 		books,
+		apocrypha,
 		label,
-		testament,
-		showLayoutTopBar: false
+		testament
 	};
 };

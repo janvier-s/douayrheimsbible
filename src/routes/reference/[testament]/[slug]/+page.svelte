@@ -380,7 +380,12 @@
 					{#each group.words as item}
 						<div class="ref-dict-entry">
 							<dt>
-								<a href={annotationSearchUrl(item.word)} class="ref-dict-link">{@html item.word}</a>
+								<a
+									href={annotationSearchUrl(item.word)}
+									class="ref-dict-link"
+									target="_blank"
+									rel="noopener">{@html item.word}</a
+								>
 							</dt>
 							<dd>{@html linkify(item.definition)}</dd>
 						</div>
