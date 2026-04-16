@@ -18,10 +18,16 @@
 
 	function renderLine(line: string): string {
 		// Wrap Hebrew characters (U+0590–U+05FF, U+FB1D–U+FB4F) in a span
-		return line.replace(
+		let out = line.replace(
 			/([\u0590-\u05FF\uFB1D-\uFB4F]+(?:\s[\u0590-\u05FF\uFB1D-\uFB4F]+)*)/g,
 			'<span class="hebrew">$1</span>'
 		);
+		// Wrap Greek characters (basic U+0370–U+03FF + extended polytonic U+1F00–U+1FFF)
+		out = out.replace(
+			/([\u0370-\u03FF\u1F00-\u1FFF]+(?:\s[\u0370-\u03FF\u1F00-\u1FFF]+)*)/g,
+			'<span class="greek">$1</span>'
+		);
+		return out;
 	}
 
 	function bookLabel(bm: BookMeta, override?: string | null): string {

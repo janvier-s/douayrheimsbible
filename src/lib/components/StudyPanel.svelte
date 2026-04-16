@@ -18,6 +18,11 @@
 		if (/sum.*new/i.test(title)) return 'Sum (NT)';
 		if (/sum/i.test(title)) return 'Sum';
 		if (/moyses|moses/i.test(title)) return 'Of Moyses';
+		if (/recapitulation/i.test(title)) return 'Recapitulation';
+		if (/continuance.*church/i.test(title)) return 'Continuance';
+		if (/augustin/i.test(title)) return 'S. Augustin';
+		if (/end of the acts/i.test(title)) return 'End of Acts';
+		if (/other apostles/i.test(title)) return 'The Other Apostles';
 		return title
 			.replace(/^the\s+/i, '')
 			.split(/\s+/)
@@ -27,18 +32,30 @@
 
 	$: intros = bookData?.intros ?? [];
 	$: hasIntros = intros.length > 0;
+	$: endMatters = bookData?.endMatters ?? [];
+	$: hasEndMatters = endMatters.length > 0;
+
+	type TabDef = { id: 'intro' | 'commentary' | 'end'; label: string };
+	$: visibleTabs = ([] as TabDef[])
+		.concat(hasIntros ? [{ id: 'intro', label: 'Intro' }] : [])
+		.concat([{ id: 'commentary', label: 'Commentary' }])
+		.concat(hasEndMatters ? [{ id: 'end', label: 'End' }] : []);
+	$: showTabBar = visibleTabs.length > 1;
 
 	// When book changes, set the active tab based on user preference and intro availability
 	$: {
 		const idx = intros.findIndex((i) => i.default);
 		const target = idx >= 0 ? idx : 0;
-		const preferredTab = hasIntros ? $prefs.studyDefaultTab : 'commentary';
+		let preferredTab = hasIntros || hasEndMatters ? $prefs.studyDefaultTab : 'commentary';
+		// If preferred tab doesn't exist for this book, fall back to commentary
+		if (preferredTab === 'end' && !hasEndMatters) preferredTab = 'commentary';
+		if (preferredTab === 'intro' && !hasIntros) preferredTab = 'commentary';
 		if ($studyPanel.activeIntroIndex !== target || $studyPanel.activeTab !== preferredTab) {
 			studyPanel.update((s) => ({ ...s, activeIntroIndex: target, activeTab: preferredTab }));
 		}
 	}
 
-	function switchTab(tab: 'intro' | 'commentary') {
+	function switchTab(tab: 'intro' | 'commentary' | 'end') {
 		studyPanel.update((s) => ({ ...s, activeTab: tab }));
 		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
@@ -265,8 +282,11 @@
 		studyPanel.update((s) => ({ ...s, activeVerse: trigger.verse }));
 	}
 
-	// Slider position: 0 = Intro, 1 = Commentary
-	$: sliderIndex = $studyPanel.activeTab === 'commentary' ? 1 : 0;
+	// Slider position: index within visible tabs
+	$: sliderIndex = Math.max(
+		0,
+		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
+	);
 
 	// Wheel handler: capture scroll when panel has room to scroll; bleed through to
 	// the window at boundaries so infinite-scroll chapter loading still works.
@@ -308,27 +328,28 @@
 		</div>
 
 		<!-- Tabs with sliding underline -->
-		{#if hasIntros}
+		{#if showTabBar}
 			<div
 				class="tab-row relative flex px-[4px] gap-[2px]"
 				role="tablist"
 				aria-label="Study panel sections"
 			>
-				{#each ['intro', 'commentary'] as const as tab}
+				{#each visibleTabs as tab}
 					<button
 						role="tab"
-						aria-selected={$studyPanel.activeTab === tab}
+						aria-selected={$studyPanel.activeTab === tab.id}
 						class="tab-btn flex-1 pb-[9px] pt-[2px]"
-						class:tab-active={$studyPanel.activeTab === tab}
-						on:click={() => switchTab(tab)}
+						class:tab-active={$studyPanel.activeTab === tab.id}
+						on:click={() => switchTab(tab.id)}
 					>
-						{tab === 'intro' ? 'Intro' : 'Commentary'}
+						{tab.label}
 					</button>
 				{/each}
 				<!-- Single sliding underline -->
 				<div
 					class="tab-slider"
-					style="transform: translateX({sliderIndex * 100}%)"
+					style="width: calc({100 /
+						visibleTabs.length}% - 4px); transform: translateX({sliderIndex * 100}%)"
 					aria-hidden="true"
 				></div>
 			</div>
@@ -338,7 +359,7 @@
 	</div>
 
 	<!-- Scrollable content -->
-	<div class="panel-scroll flex-1 overflow-y-auto" bind:this={panelScroll}>
+	<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
 		{#if $studyPanel.activeTab === 'intro'}
 			{#if intros.length === 0}
 				<div class="empty-state">
@@ -347,9 +368,7 @@
 				</div>
 			{:else}
 				{#if intros.length > 1}
-					<div
-						class="subtab-row flex overflow-x-auto border-b border-border bg-background sticky top-0 z-[2]"
-					>
+					<div class="subtab-row border-b border-border bg-background sticky top-0 z-[2]">
 						{#each intros as intro, i}
 							<button
 								class="subtab-btn px-[12px] py-[7px] whitespace-nowrap transition-colors duration-fast shrink-0 relative"
@@ -370,7 +389,7 @@
 					</div>
 				{/if}
 			{/if}
-		{:else}
+		{:else if $studyPanel.activeTab === 'commentary'}
 			<!-- Commentary tab -->
 			{#if annotationsLoading}
 				<div class="empty-state">
@@ -458,6 +477,36 @@
 					{/each}
 				</div>
 			{/if}
+		{:else if $studyPanel.activeTab === 'end'}
+			<!-- End matter tab -->
+			{#if endMatters.length === 0}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No end matter for this book yet.</p>
+				</div>
+			{:else}
+				{#if endMatters.length > 1}
+					<div class="subtab-row border-b border-border bg-background sticky top-0 z-[2]">
+						{#each endMatters as em, i}
+							<button
+								class="subtab-btn px-[12px] py-[7px] whitespace-nowrap transition-colors duration-fast shrink-0 relative"
+								class:subtab-active={$studyPanel.activeEndIndex === i}
+								on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
+							>
+								{tabLabel(em.title)}
+							</button>
+						{/each}
+					</div>
+				{/if}
+
+				{#if endMatters[$studyPanel.activeEndIndex]}
+					{@const em = endMatters[$studyPanel.activeEndIndex]}
+					<div class="content-block">
+						<p class="content-eyebrow">{tabLabel(em.title)}</p>
+						<AnnotationProse text={em.text} notes={em.notes ?? []} />
+					</div>
+				{/if}
+			{/if}
 		{/if}
 	</div>
 </aside>
@@ -508,7 +557,6 @@
 		position: absolute;
 		bottom: 0;
 		left: 4px;
-		width: calc(50% - 4px);
 		height: 2px;
 		border-radius: 1px 1px 0 0;
 		background: var(--color-accent);
@@ -524,7 +572,9 @@
 		border: none;
 		cursor: pointer;
 		font-family: var(--font-ui);
-		transition: color var(--duration-fast);
+		transition:
+			color var(--duration-fast),
+			border-color var(--duration-fast);
 	}
 
 	.subtab-btn:hover {
@@ -535,27 +585,50 @@
 		color: var(--color-accent);
 	}
 
+	/* ─── Sub-tabs ─ layout ────────────────────────── */
+	.subtab-row {
+		display: flex;
+	}
+
+	.subtab-row .subtab-btn {
+		flex: 1;
+		text-align: center;
+		border-bottom: 2px solid transparent;
+		padding-bottom: 6px;
+	}
+
+	.subtab-row .subtab-active {
+		border-bottom-color: var(--color-accent);
+	}
+
 	/* ─── Scrollable pane ───────────────────────────── */
+	/* Force classic (always-visible) scrollbar on macOS WebKit */
 	.panel-scroll {
-		scrollbar-width: thin;
-		scrollbar-color: color-mix(in srgb, var(--color-accent) 25%, transparent) transparent;
+		scrollbar-width: auto;
+		scrollbar-color: color-mix(in srgb, var(--color-accent) 50%, transparent)
+			color-mix(in srgb, var(--color-border) 40%, transparent);
 	}
 
 	.panel-scroll::-webkit-scrollbar {
-		width: 4px;
+		width: 10px;
+		-webkit-appearance: none;
 	}
 
 	.panel-scroll::-webkit-scrollbar-track {
-		background: transparent;
+		background: color-mix(in srgb, var(--color-border) 40%, transparent);
 	}
 
 	.panel-scroll::-webkit-scrollbar-thumb {
-		background: color-mix(in srgb, var(--color-accent) 30%, transparent);
-		border-radius: 2px;
+		background: color-mix(in srgb, var(--color-accent) 50%, transparent);
+		border-radius: 5px;
+		border: 2px solid transparent;
+		background-clip: padding-box;
+		min-height: 40px;
 	}
 
 	.panel-scroll::-webkit-scrollbar-thumb:hover {
-		background: color-mix(in srgb, var(--color-accent) 50%, transparent);
+		background: color-mix(in srgb, var(--color-accent) 70%, transparent);
+		background-clip: padding-box;
 	}
 
 	/* ─── Content ───────────────────────────────────── */

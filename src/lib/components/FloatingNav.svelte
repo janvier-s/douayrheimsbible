@@ -114,6 +114,10 @@
 			class:hidden={activeTestament !== 'OT'}
 		>
 			{#each otBooks as book}
+				{@const isAppendix =
+					book.slug === 'prayer-of-manasses' ||
+					book.slug === '3-esdras' ||
+					book.slug === '4-esdras'}
 				<div
 					class:border-t={book.slug === 'prayer-of-manasses'}
 					class:border-border={book.slug === 'prayer-of-manasses'}
@@ -129,7 +133,7 @@
 							: 'text-foreground hover:bg-border hover:text-accent'}"
 						on:click={() => toggleBook(book.slug)}
 					>
-						{bookLabel(book.odrName, book.modernName)}
+						<span class:italic={isAppendix}>{bookLabel(book.odrName, book.modernName)}</span>
 					</button>
 					{#if expandedBooks.has(book.slug)}
 						<div

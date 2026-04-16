@@ -1,7 +1,7 @@
 // src/lib/stores/studyPanel.ts
 import { writable } from 'svelte/store';
 
-export type StudyTab = 'intro' | 'commentary';
+export type StudyTab = 'intro' | 'commentary' | 'end';
 
 export interface ScrollTrigger {
 	verse: number; // 0 = summary
@@ -14,6 +14,7 @@ export interface ScrollTrigger {
 export interface StudyPanelState {
 	activeTab: StudyTab;
 	activeIntroIndex: number;
+	activeEndIndex: number;
 	activeVerse: number | null;
 	/** Set only by explicit user clicks (marker/verse). Drives the reader verse underline. */
 	annotatedVerse: number | null;
@@ -26,6 +27,7 @@ export interface StudyPanelState {
 const defaults: StudyPanelState = {
 	activeTab: 'commentary',
 	activeIntroIndex: 0,
+	activeEndIndex: 0,
 	activeVerse: null,
 	annotatedVerse: null,
 	panelScrollVerse: null

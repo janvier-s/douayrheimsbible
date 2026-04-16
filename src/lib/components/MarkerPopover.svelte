@@ -109,5 +109,6 @@
 
 	.marker-popover :global(i) {
 		font-style: italic;
+		font-weight: 300;
 	}
 </style>

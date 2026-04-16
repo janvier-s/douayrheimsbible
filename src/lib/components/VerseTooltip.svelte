@@ -141,7 +141,7 @@
 				<div class="entry">
 					{#if entry.isChapter}
 						<div class="header">
-							<a class="chapter-link" href={entry.href}>Read {entry.ref}</a>
+							<a class="chapter-link" href={entry.href} target="_blank">Read {entry.ref}</a>
 						</div>
 					{:else}
 						<div class="header">
