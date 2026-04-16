@@ -13,6 +13,7 @@
 	export let bookData: BookData | null = null;
 
 	function tabLabel(title: string): string {
+		if (/argument.*in general/i.test(title)) return 'General';
 		if (/argument/i.test(title)) return 'Argument';
 		if (/sum.*old/i.test(title)) return 'Sum (OT)';
 		if (/sum.*new/i.test(title)) return 'Sum (NT)';
@@ -23,6 +24,17 @@
 		if (/augustin/i.test(title)) return 'S. Augustin';
 		if (/end of the acts/i.test(title)) return 'End of Acts';
 		if (/other apostles/i.test(title)) return 'The Other Apostles';
+		if (/proemial/i.test(title)) return 'Proemial';
+		if (/interpretation.*scripture/i.test(title)) return 'Interpretation';
+		if (/annotations.*concerning/i.test(title)) return 'Annotations';
+		if (/prologue/i.test(title)) return 'Prologue';
+		if (/sapiential/i.test(title)) return 'Sapiential Books';
+		if (/prophetical/i.test(title)) return 'Prophetical Books';
+		if (/twelve less/i.test(title)) return 'Twelve Prophets';
+		if (/machabees.*historical/i.test(title)) return 'Machabees';
+		if (/epistle.*hebrews/i.test(title)) return 'Epistle';
+		if (/third book.*esdras/i.test(title)) return '3 Esdras';
+		if (/prophecy of/i.test(title)) return 'Prophecy';
 		return title
 			.replace(/^the\s+/i, '')
 			.split(/\s+/)
@@ -41,18 +53,26 @@
 		.concat([{ id: 'commentary', label: 'Commentary' }])
 		.concat(hasEndMatters ? [{ id: 'end', label: 'End' }] : []);
 	$: showTabBar = visibleTabs.length > 1;
+	$: hasSubtabs =
+		($studyPanel.activeTab === 'intro' && intros.length > 1) ||
+		($studyPanel.activeTab === 'end' && endMatters.length > 1);
 
 	// When book changes, set the active tab based on user preference and intro availability
-	$: {
+	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
+	let prevBook: string | null = null;
+	$: if (bookData && bookData.book !== prevBook) {
+		prevBook = bookData.book;
 		const idx = intros.findIndex((i) => i.default);
 		const target = idx >= 0 ? idx : 0;
 		let preferredTab = hasIntros || hasEndMatters ? $prefs.studyDefaultTab : 'commentary';
-		// If preferred tab doesn't exist for this book, fall back to commentary
 		if (preferredTab === 'end' && !hasEndMatters) preferredTab = 'commentary';
 		if (preferredTab === 'intro' && !hasIntros) preferredTab = 'commentary';
-		if ($studyPanel.activeIntroIndex !== target || $studyPanel.activeTab !== preferredTab) {
-			studyPanel.update((s) => ({ ...s, activeIntroIndex: target, activeTab: preferredTab }));
-		}
+		studyPanel.update((s) => ({
+			...s,
+			activeIntroIndex: target,
+			activeEndIndex: 0,
+			activeTab: preferredTab
+		}));
 	}
 
 	function switchTab(tab: 'intro' | 'commentary' | 'end') {
@@ -358,6 +378,53 @@
 		<div class="border-b border-border"></div>
 	</div>
 
+	<!-- Sub-tab segmented control (outside scroll so scrollbar doesn't bleed into them) -->
+	{#if $studyPanel.activeTab === 'intro' && intros.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat({intros.length}, 1fr)">
+				{#each intros as intro, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeIntroIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
+					>
+						{tabLabel(intro.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 /
+						intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{/if}
+	{#if $studyPanel.activeTab === 'end' && endMatters.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div
+				class="segmented-control"
+				style="grid-template-columns: repeat({endMatters.length}, 1fr)"
+			>
+				{#each endMatters as em, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeEndIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
+					>
+						{tabLabel(em.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 /
+						endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{/if}
+
 	<!-- Scrollable content -->
 	<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
 		{#if $studyPanel.activeTab === 'intro'}
@@ -366,28 +433,12 @@
 					<span class="empty-icon" aria-hidden="true">✦</span>
 					<p>No introduction for this book yet.</p>
 				</div>
-			{:else}
-				{#if intros.length > 1}
-					<div class="subtab-row border-b border-border bg-background sticky top-0 z-[2]">
-						{#each intros as intro, i}
-							<button
-								class="subtab-btn px-[12px] py-[7px] whitespace-nowrap transition-colors duration-fast shrink-0 relative"
-								class:subtab-active={$studyPanel.activeIntroIndex === i}
-								on:click={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
-							>
-								{tabLabel(intro.title)}
-							</button>
-						{/each}
-					</div>
-				{/if}
-
-				{#if intros[$studyPanel.activeIntroIndex]}
-					{@const intro = intros[$studyPanel.activeIntroIndex]}
-					<div class="content-block">
-						<p class="content-eyebrow">{tabLabel(intro.title)}</p>
-						<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
-					</div>
-				{/if}
+			{:else if intros[$studyPanel.activeIntroIndex]}
+				{@const intro = intros[$studyPanel.activeIntroIndex]}
+				<div class="content-block">
+					<p class="content-eyebrow">{tabLabel(intro.title)}</p>
+					<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
+				</div>
 			{/if}
 		{:else if $studyPanel.activeTab === 'commentary'}
 			<!-- Commentary tab -->
@@ -484,28 +535,12 @@
 					<span class="empty-icon" aria-hidden="true">✦</span>
 					<p>No end matter for this book yet.</p>
 				</div>
-			{:else}
-				{#if endMatters.length > 1}
-					<div class="subtab-row border-b border-border bg-background sticky top-0 z-[2]">
-						{#each endMatters as em, i}
-							<button
-								class="subtab-btn px-[12px] py-[7px] whitespace-nowrap transition-colors duration-fast shrink-0 relative"
-								class:subtab-active={$studyPanel.activeEndIndex === i}
-								on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
-							>
-								{tabLabel(em.title)}
-							</button>
-						{/each}
-					</div>
-				{/if}
-
-				{#if endMatters[$studyPanel.activeEndIndex]}
-					{@const em = endMatters[$studyPanel.activeEndIndex]}
-					<div class="content-block">
-						<p class="content-eyebrow">{tabLabel(em.title)}</p>
-						<AnnotationProse text={em.text} notes={em.notes ?? []} />
-					</div>
-				{/if}
+			{:else if endMatters[$studyPanel.activeEndIndex]}
+				{@const em = endMatters[$studyPanel.activeEndIndex]}
+				<div class="content-block">
+					<p class="content-eyebrow">{tabLabel(em.title)}</p>
+					<AnnotationProse text={em.text} notes={em.notes ?? []} />
+				</div>
 			{/if}
 		{/if}
 	</div>
@@ -563,42 +598,56 @@
 		transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	/* ─── Sub-tabs ──────────────────────────────────── */
-	.subtab-btn {
+	/* ─── Segmented control (sub-tabs) ─────────────── */
+	.subtab-bar {
+		display: flex;
+		justify-content: center;
+		padding: 8px 16px;
+	}
+
+	.segmented-control {
+		display: inline-grid;
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		overflow: hidden;
+		background: color-mix(in srgb, var(--color-foreground) 5%, var(--color-background));
+		position: relative;
+	}
+
+	.seg-btn {
+		grid-row: 1;
 		font-size: 11px;
-		font-weight: 400;
+		font-weight: 500;
 		color: var(--color-subtle);
 		background: none;
 		border: none;
 		cursor: pointer;
 		font-family: var(--font-ui);
-		transition:
-			color var(--duration-fast),
-			border-color var(--duration-fast);
+		padding: 5px 16px;
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		transition: color var(--duration-fast);
 	}
 
-	.subtab-btn:hover {
+	.seg-btn:hover {
 		color: var(--color-text);
 	}
 
-	.subtab-active {
+	.seg-active {
 		color: var(--color-accent);
 	}
 
-	/* ─── Sub-tabs ─ layout ────────────────────────── */
-	.subtab-row {
-		display: flex;
-	}
-
-	.subtab-row .subtab-btn {
-		flex: 1;
-		text-align: center;
-		border-bottom: 2px solid transparent;
-		padding-bottom: 6px;
-	}
-
-	.subtab-row .subtab-active {
-		border-bottom-color: var(--color-accent);
+	.seg-slider {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+		transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		pointer-events: none;
+		grid-column: 1 / -1;
+		grid-row: 1;
 	}
 
 	/* ─── Scrollable pane ───────────────────────────── */
