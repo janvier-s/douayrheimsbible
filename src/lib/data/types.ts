@@ -56,6 +56,7 @@ export interface Chapter {
 	summary?: string;
 	summary_notes?: SummaryNote[];
 	verses: Verse[];
+	articles?: BookIntro[];
 }
 
 export interface BookData {

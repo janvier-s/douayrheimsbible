@@ -35,6 +35,12 @@
 		if (/epistle.*hebrews/i.test(title)) return 'Epistle';
 		if (/third book.*esdras/i.test(title)) return '3 Esdras';
 		if (/prophecy of/i.test(title)) return 'Prophecy';
+		if (/remonstrance/i.test(title)) return 'Remonstrance';
+		if (/general annotations/i.test(title)) return 'Annotations';
+		if (/brief note/i.test(title)) return 'Note';
+		if (/parables/i.test(title)) return 'Parables';
+		if (/declaration/i.test(title)) return 'Declaration';
+		if (/annotations upon/i.test(title)) return 'Annotations';
 		return title
 			.replace(/^the\s+/i, '')
 			.split(/\s+/)
@@ -47,35 +53,41 @@
 	$: endMatters = bookData?.endMatters ?? [];
 	$: hasEndMatters = endMatters.length > 0;
 
-	type TabDef = { id: 'intro' | 'commentary' | 'end'; label: string };
+	type TabDef = { id: 'intro' | 'commentary' | 'article' | 'end'; label: string };
 	$: visibleTabs = ([] as TabDef[])
 		.concat(hasIntros ? [{ id: 'intro', label: 'Intro' }] : [])
 		.concat([{ id: 'commentary', label: 'Commentary' }])
+		.concat(hasArticles ? [{ id: 'article', label: 'Article' }] : [])
 		.concat(hasEndMatters ? [{ id: 'end', label: 'End' }] : []);
 	$: showTabBar = visibleTabs.length > 1;
-	$: hasSubtabs =
-		($studyPanel.activeTab === 'intro' && intros.length > 1) ||
-		($studyPanel.activeTab === 'end' && endMatters.length > 1);
 
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
 	let prevBook: string | null = null;
 	$: if (bookData && bookData.book !== prevBook) {
-		prevBook = bookData.book;
+		prevBook = bookData.book; // eslint-disable-line no-useless-assignment
 		const idx = intros.findIndex((i) => i.default);
 		const target = idx >= 0 ? idx : 0;
-		let preferredTab = hasIntros || hasEndMatters ? $prefs.studyDefaultTab : 'commentary';
+		let preferredTab =
+			hasIntros || hasEndMatters || hasArticles ? $prefs.studyDefaultTab : 'commentary';
 		if (preferredTab === 'end' && !hasEndMatters) preferredTab = 'commentary';
 		if (preferredTab === 'intro' && !hasIntros) preferredTab = 'commentary';
+		if (preferredTab === 'article' && !hasArticles) preferredTab = 'commentary';
 		studyPanel.update((s) => ({
 			...s,
 			activeIntroIndex: target,
 			activeEndIndex: 0,
+			activeArticleIndex: 0,
 			activeTab: preferredTab
 		}));
 	}
 
-	function switchTab(tab: 'intro' | 'commentary' | 'end') {
+	// If on the article tab but current chapter has no articles, fall back to commentary
+	$: if ($studyPanel.activeTab === 'article' && !hasArticles) {
+		studyPanel.update((s) => ({ ...s, activeTab: 'commentary' }));
+	}
+
+	function switchTab(tab: 'intro' | 'commentary' | 'article' | 'end') {
 		studyPanel.update((s) => ({ ...s, activeTab: tab }));
 		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
@@ -85,6 +97,8 @@
 	$: currentChapterNum = $readingPosition?.chapter ?? 1;
 	$: currentBookSlug = $readingPosition?.bookSlug ?? '';
 	$: currentChapterData = bookData?.chapters.find((c) => c.chapter === currentChapterNum);
+	$: articles = currentChapterData?.articles ?? [];
+	$: hasArticles = articles.length > 0; // eslint-disable-line no-useless-assignment
 
 	// ── Annotation sidecar loading ───────────────────────────────────
 
@@ -400,6 +414,27 @@
 			</div>
 		</div>
 	{/if}
+	{#if $studyPanel.activeTab === 'article' && articles.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat({articles.length}, 1fr)">
+				{#each articles as art, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeArticleIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
+					>
+						{tabLabel(art.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 /
+						articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{/if}
 	{#if $studyPanel.activeTab === 'end' && endMatters.length > 1}
 		<div class="subtab-bar shrink-0">
 			<div
@@ -526,6 +561,20 @@
 							{/if}
 						</div>
 					{/each}
+				</div>
+			{/if}
+		{:else if $studyPanel.activeTab === 'article'}
+			<!-- Article tab -->
+			{#if articles.length === 0}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No article for this chapter.</p>
+				</div>
+			{:else if articles[$studyPanel.activeArticleIndex]}
+				{@const art = articles[$studyPanel.activeArticleIndex]}
+				<div class="content-block">
+					<p class="content-eyebrow">{tabLabel(art.title)}</p>
+					<AnnotationProse text={art.text} notes={art.notes ?? []} />
 				</div>
 			{/if}
 		{:else if $studyPanel.activeTab === 'end'}
