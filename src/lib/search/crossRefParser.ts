@@ -16,6 +16,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Nu: 'Num',
 	Num: 'Num',
 	Numer: 'Num',
+	Numb: 'Num',
 	Deu: 'Deut',
 	Deut: 'Deut',
 	Deuter: 'Deut',
@@ -43,14 +44,20 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'1Paralip': '1Chr',
 	'2Paralip': '2Chr',
 	'1Esd': 'Ezra',
+	'1Esdr': 'Ezra',
 	'2Esd': 'Neh',
+	'2Esdr': 'Neh',
 	'3Esd': '3Esd',
 	'4Esd': '4Esd',
 	Esd: 'Ezra',
 	Esdr: 'Ezra',
+	Esdras: 'Ezra',
 	Tob: 'Tob',
+	Tobie: 'Tob',
+	Tobiae: 'Tob',
 	Tobias: 'Tob',
 	Judith: 'Jdt',
+	Iudith: 'Jdt',
 	Jdt: 'Jdt',
 	Esth: 'Esth',
 	Esther: 'Esth',
@@ -60,6 +67,10 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Mac': '2Macc',
 	'1Macch': '1Macc',
 	'2Macch': '2Macc',
+	'1Machab': '1Macc',
+	'2Machab': '2Macc',
+	'1Macha': '1Macc',
+	'2Macha': '2Macc',
 	// Wisdom
 	Job: 'Job',
 	Iob: 'Job',
@@ -70,10 +81,13 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Pro: 'Prov',
 	Prov: 'Prov',
 	Prover: 'Prov',
+	Proverb: 'Prov',
 	Eccl: 'Eccl',
 	Eccle: 'Eccl',
+	Eccles: 'Eccl',
 	Ecclus: 'Sir',
 	Eccli: 'Sir',
+	Can: 'Cant',
 	Cant: 'Cant',
 	Song: 'Cant',
 	Sap: 'Wis',
@@ -83,14 +97,19 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Esa: 'Isa',
 	Isa: 'Isa',
 	Isai: 'Isa',
+	Isaiae: 'Isa',
+	Isaie: 'Isa',
 	Jer: 'Jer',
+	Hier: 'Jer',
 	Ier: 'Jer',
 	Iere: 'Jer',
+	Ierem: 'Jer',
 	Jere: 'Jer',
 	Jerem: 'Jer',
 	Lam: 'Lam',
 	Thren: 'Lam',
 	Bar: 'Bar',
+	Baruch: 'Bar',
 	Ez: 'Ezek',
 	Eze: 'Ezek',
 	Ezec: 'Ezek',
@@ -107,6 +126,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Abdias: 'Obad',
 	Jon: 'Jonah',
 	Ion: 'Jonah',
+	Ionas: 'Jonah',
 	Jonas: 'Jonah',
 	Mich: 'Mic',
 	Micheas: 'Mic',
@@ -129,6 +149,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Mal: 'Mal',
 	Malac: 'Mal',
 	Malach: 'Mal',
+	Malachie: 'Mal',
 	// NT Gospels & Acts
 	Matt: 'Matt',
 	Math: 'Matt',
@@ -254,10 +275,19 @@ function matchBookAt(text: string, pos: number): BookMatch | null {
 
 		const slice = text.slice(cursor);
 		if (!slice.startsWith(abbrev)) continue;
-		// Must be followed by "." or end of string
+		// Must be followed by ".", space+digit, or end of string
 		const afterIdx = cursor + abbrev.length;
-		if (afterIdx < text.length && text[afterIdx] !== '.') continue;
-		const endIdx = afterIdx < text.length ? afterIdx + 1 : afterIdx;
+		if (afterIdx < text.length && text[afterIdx] !== '.' && text[afterIdx] !== ':') {
+			// Allow full book names followed by space+digit (e.g. "Iosue 7")
+			if (text[afterIdx] === ' ' && afterIdx + 1 < text.length && /\d/.test(text[afterIdx + 1])) {
+				return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: afterIdx };
+			}
+			continue;
+		}
+		const endIdx =
+			afterIdx < text.length && (text[afterIdx] === '.' || text[afterIdx] === ':')
+				? afterIdx + 1
+				: afterIdx;
 		return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: endIdx };
 	}
 
@@ -289,8 +319,11 @@ function parseChapterVerse(text: string, startPos: number): ChapterVerseResult |
 	const chapter = parseInt(chMatch[1], 10);
 	cursor += chMatch[0].length;
 
-	// skip optional period and whitespace after chapter
+	// skip optional period after chapter
 	if (cursor < text.length && text[cursor] === '.') cursor++;
+
+	// Save position before consuming whitespace — only advance if a verse follows
+	const afterPeriod = cursor;
 	while (cursor < text.length && text[cursor] === ' ') cursor++;
 
 	// Now look for verse
@@ -321,16 +354,11 @@ function parseChapterVerse(text: string, startPos: number): ChapterVerseResult |
 			}
 		}
 	}
-	// Case 3: period separator — another digit follows (chapter already consumed period)
-	// We already consumed the period after chapter above, check if a digit follows
-	else if (cursor < text.length && /\d/.test(text[cursor])) {
-		const vMatch = text.slice(cursor).match(/^(\d+)/);
-		if (vMatch) {
-			verse = parseInt(vMatch[1], 10);
-			cursor += vMatch[0].length;
-			if (cursor < text.length && text[cursor] === '.') cursor++;
-		}
-	}
+	// Case 3: period separator — "19. 20." means two chapters, NOT chapter:verse.
+	// Bare digit after period is a continuation chapter, handled by parseContinuationRefs.
+
+	// If no verse was found, don't consume whitespace after the period
+	if (verse === undefined) cursor = afterPeriod;
 
 	return {
 		chapter,
@@ -405,7 +433,14 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 					pos = displayEnd;
 
 					// Check for continuation refs: bare "chapter, verse." with same book
-					pos = parseContinuationRefs(text, pos, lastOsisBook, tokens);
+					// Pass last chapter+verse context so verse continuations work
+					pos = parseContinuationRefs(
+						text,
+						pos,
+						lastOsisBook,
+						tokens,
+						cv.verse !== undefined ? cv.chapter : undefined
+					);
 					textStart = pos;
 					continue;
 				}
@@ -426,24 +461,28 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 /**
  * After parsing a ref, check if bare "N, N." or "N." continuations follow
  * using the same book. E.g. "Psal. 32, 6. 135, 5." → second ref is Ps.135.5
+ *
+ * If `lastVerseChapter` is set, the previous ref was verse-level, so bare
+ * numbers are continuation verses in that chapter (e.g. "v. 64. 65." → 65 is verse).
  */
 function parseContinuationRefs(
 	text: string,
 	startPos: number,
 	osisBook: string,
-	tokens: CrossRefToken[]
+	tokens: CrossRefToken[],
+	lastVerseChapter?: number
 ): number {
 	let pos = startPos;
 
 	while (pos < text.length) {
-		// Skip whitespace
+		// Skip and preserve whitespace, marginal note markers (''), and & separators
 		let cursor = pos;
-		while (cursor < text.length && text[cursor] === ' ') cursor++;
+		while (cursor < text.length && /[ '&]/.test(text[cursor])) cursor++;
 
 		// Must start with a digit (bare chapter number, no book name)
 		if (cursor >= text.length || !/\d/.test(text[cursor])) break;
 
-		// But NOT if it's preceded by a book abbreviation starting here
+		// But NOT if it's a book abbreviation starting here
 		// (that means a new book ref, not a continuation)
 		const nextBook = matchBookAt(text, cursor);
 		if (nextBook) break;
@@ -451,6 +490,34 @@ function parseContinuationRefs(
 		// Also check if a digit prefix like "2. Thess" starts a new numbered book
 		const numBookMatch = /^(\d)\.\s*[A-Z]/.exec(text.slice(cursor));
 		if (numBookMatch) break;
+
+		// Emit skipped separators as text (only after confirming this IS a continuation)
+		if (cursor > pos) {
+			tokens.push({ type: 'text', content: text.slice(pos, cursor) });
+		}
+
+		// If last ref was verse-level, treat bare numbers as continuation verses
+		// BUT only if they're not followed by comma+number (which indicates a new chapter,verse pair)
+		if (lastVerseChapter !== undefined) {
+			const vMatch = text.slice(cursor).match(/^(\d+)/);
+			if (!vMatch) break;
+			let afterNum = cursor + vMatch[0].length;
+			if (afterNum < text.length && text[afterNum] === '.') afterNum++;
+			// Only break out of verse mode if THIS number is followed by comma+number
+			// (indicating a new chapter,verse pair like "5, 7.")
+			const afterDigits = text.slice(cursor + vMatch[0].length);
+			const isNewChapterVerse = /^\s*,\s*\d/.test(afterDigits);
+			if (!isNewChapterVerse) {
+				const verse = parseInt(vMatch[1], 10);
+				const osis = `${osisBook}.${lastVerseChapter}.${verse}`;
+				const display = text.slice(cursor, afterNum).trim();
+				tokens.push({ type: 'ref', osis, display, isVerse: true });
+				pos = afterNum;
+				continue;
+			}
+			// Otherwise fall through to chapter parsing
+			lastVerseChapter = undefined;
+		}
 
 		// Try to parse as chapter[,verse]
 		const cv = parseChapterVerse(text, cursor);
@@ -466,6 +533,8 @@ function parseContinuationRefs(
 		const display = text.slice(cursor, displayEnd).trim();
 
 		tokens.push({ type: 'ref', osis, display, isVerse });
+		// If this continuation had a verse, subsequent bare numbers are also verses
+		if (cv.verse !== undefined) lastVerseChapter = cv.chapter;
 		pos = displayEnd;
 	}
 
@@ -483,6 +552,7 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 	Nu: 'Numbers',
 	Num: 'Numbers',
 	Numer: 'Numbers',
+	Numb: 'Numbers',
 	Deu: 'Deuteronomy',
 	Deut: 'Deuteronomy',
 	Deuter: 'Deuteronomy',
@@ -497,13 +567,17 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 	Iudi: 'Judges',
 	Ruth: 'Ruth',
 	Tob: 'Tobit',
+	Tobie: 'Tobit',
+	Tobiae: 'Tobit',
 	Tobias: 'Tobit',
 	Judith: 'Judith',
+	Iudith: 'Judith',
 	Jdt: 'Judith',
 	Esth: 'Esther',
 	Esther: 'Esther',
 	Esd: 'Ezra',
 	Esdr: 'Ezra',
+	Esdras: 'Ezra',
 	Job: 'Job',
 	Iob: 'Job',
 	Ps: 'Psalms',
@@ -513,10 +587,13 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 	Pro: 'Proverbs',
 	Prov: 'Proverbs',
 	Prover: 'Proverbs',
+	Proverb: 'Proverbs',
 	Eccl: 'Ecclesiastes',
 	Eccle: 'Ecclesiastes',
+	Eccles: 'Ecclesiastes',
 	Ecclus: 'Sirach',
 	Eccli: 'Sirach',
+	Can: 'Song of Solomon',
 	Cant: 'Song of Solomon',
 	Song: 'Song of Solomon',
 	Sap: 'Wisdom',
@@ -525,14 +602,19 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 	Esa: 'Isaiah',
 	Isa: 'Isaiah',
 	Isai: 'Isaiah',
+	Isaiae: 'Isaiah',
+	Isaie: 'Isaiah',
 	Jer: 'Jeremiah',
+	Hier: 'Jeremiah',
 	Ier: 'Jeremiah',
 	Iere: 'Jeremiah',
+	Ierem: 'Jeremiah',
 	Jere: 'Jeremiah',
 	Jerem: 'Jeremiah',
 	Lam: 'Lamentations',
 	Thren: 'Lamentations',
 	Bar: 'Baruch',
+	Baruch: 'Baruch',
 	Ez: 'Ezekiel',
 	Eze: 'Ezekiel',
 	Ezec: 'Ezekiel',
@@ -548,6 +630,7 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 	Abdias: 'Obadiah',
 	Jon: 'Jonah',
 	Ion: 'Jonah',
+	Ionas: 'Jonah',
 	Jonas: 'Jonah',
 	Mich: 'Micah',
 	Micheas: 'Micah',
@@ -570,6 +653,7 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 	Mal: 'Malachi',
 	Malac: 'Malachi',
 	Malach: 'Malachi',
+	Malachie: 'Malachi',
 	Matt: 'Matthew',
 	Math: 'Matthew',
 	Mat: 'Matthew',
@@ -631,11 +715,11 @@ function normalizeForParser(text: string): string {
 	let result = text;
 
 	// Handle numbered books like "1. Cor." → "1 Corinthians"
+	// Anchor with (?:^|(?<=\s)) to avoid matching chapter numbers like "5. Joan."
 	result = result.replace(
-		/(\d)\.\s*(Cor|Thess|Thes|Th|Tim|Timo|Pet|Petr|Ioan|Joan|Io|Mach|Mac|Macch|Reg|Par|Para|Paral|Paralip|Esd)\./gi,
-		(_, num, abbr) => {
+		/(?:^|(?<=\s))(\d)\.\s*(Cor|Thess|Thes|Th|Tim|Timo|Pet|Petr|Ioan|Joan|Io|Machab|Macha|Mach|Mac|Macch|Reg|Par|Para|Paral|Paralip|Esd|Esdr)\./gi,
+		(match, num, abbr) => {
 			const key = num + abbr;
-			// Look up the combined key
 			if (key in ABBREV_TO_OSIS) {
 				const osis = ABBREV_TO_OSIS[key];
 				const modernMap: Record<string, string> = {
@@ -663,9 +747,9 @@ function normalizeForParser(text: string): string {
 					'3Esd': '1 Esdras',
 					'4Esd': '2 Esdras'
 				};
-				return modernMap[osis] || `${num} ${abbr}`;
+				return modernMap[osis] || match;
 			}
-			return `${num} ${abbr}`;
+			return match;
 		}
 	);
 
@@ -679,23 +763,64 @@ function normalizeForParser(text: string): string {
 	// Convert comma-separated verse to colon: "13, 14" → "13:14"
 	result = result.replace(/(\d+),\s*(\d+)/g, '$1:$2');
 
-	// Convert "v. N" to ":N" when preceded by chapter
-	result = result.replace(/(\d+)\.\s*v\.\s*(\d+)/g, '$1:$2');
+	// Convert "v. N[. N...]" to ":N[, N...]" when preceded by chapter
+	// e.g. "26. v. 64. 65." → "26:64, 65"
+	result = result.replace(/(\d+)\.\s*v\.\s*(\d+(?:\.\s*\d+)*)/g, (_, ch, versesPart) => {
+		const verses = versesPart.split(/\.\s*/).filter(Boolean);
+		return `${ch}:${verses.join(', ')}`;
+	});
 
 	return result;
 }
 
-export function parseItalicRef(text: string): OsisRange[] | null {
+export function parseItalicRef(text: string, conservative = false): OsisRange[] | null {
 	// Quick check: if text has no digits, it's unlikely to be a reference
 	if (!/\d/.test(text)) return null;
 
 	// Check for patristic / non-biblical indicators — author names, work structures, Latin terms
 	if (
-		/\b(?:Homi|ho|Epist|Serm|Ser|Tract|lib|li|cont|Baptis|Martyres|Dialog|adv|Poenit|principio|Iovinian|Ambr|Hiero|Greg|Origen|Aug|Chrys|Clem|Cypr|Cyril|Iren|Tert|Ath|Bas|Epiph|Hilar|Isid|Prosp|Cassi|Alcuin|Bede|Anselm|Aquin|Bernard)\b/i.test(
+		/\b(?:Homi|ho|Epist|Serm|Ser|Tract|lib|li|cont|Baptis|Martyres|Dialog|adv|Poenit|principio|Iovinian|Ambr|Hiero|Greg|Origen|Orig|Aug|Chrys|Clem|Cypr|Cyril|Iren|Tert|Ath|Bas|Epiph|Hilar|Isid|Prosp|Cassi|Alcuin|Bede|Anselm|Aquin|Bernard|Annot|Testa|Praef|Conc|Decret)\b/i.test(
 			text
 		)
 	)
 		return null;
+
+	// Latin citation context: "in c. 2.", "c. 8. v. 34.", "sub finem", "prope finem", "l. 2. de", "ad Ro."
+	if (/\b(?:prope|finem|ibidem|supra|infra)\b/i.test(text)) return null;
+	if (/\bc\.\s*\d/i.test(text)) return null;
+	if (/\bsub\s+\w/i.test(text)) return null;
+	if (/\bl\.\s*\d/i.test(text)) return null;
+	if (/\bad\s+[A-Z]/i.test(text)) return null;
+
+	// Greek text mixed with refs — likely a scholarly citation, not a standalone reference
+	if (/[\u0370-\u03FF\u1F00-\u1FFF]/.test(text)) return null;
+
+	// Four-digit year = publication reference, not Bible
+	if (/\b1[4-9]\d{2}\b/.test(text)) return null;
+
+	// Conservative mode: extra checks for reference pages with mixed patristic content
+	if (conservative) {
+		// Reject if text starts with a bare number+period followed by an abbreviation
+		// that is NOT a known numbered book. "1. Lu. v. 78." → "1Lu" not in map → reject.
+		// But "1. Cor. 4, 1." → "1Cor" IS in map → allow.
+		const leadingMatch = text.match(/^\s*(\d+)\.\s+([A-Z][a-z]\w*)/);
+		if (leadingMatch) {
+			const numberedKey = leadingMatch[1] + leadingMatch[2];
+			if (!ABBREV_TO_OSIS[numberedKey]) {
+				return null;
+			}
+		}
+		// Reject if text contains lowercase Latin words mixed with refs
+		// (genuine refs are mostly abbreviations + numbers)
+		const stripped = text
+			.replace(/<[^>]+>/g, '')
+			.replace(/\d+/g, '')
+			.replace(/[.,;:&v]/g, '')
+			.trim();
+		const words = stripped.split(/\s+/).filter((w) => w.length > 2);
+		const lowerWords = words.filter((w) => w[0] === w[0].toLowerCase());
+		if (lowerWords.length > 1) return null;
+	}
 
 	const normalized = normalizeForParser(text);
 	const refs = parseAllReferences(normalized);
@@ -707,12 +832,37 @@ export function parseItalicRef(text: string): OsisRange[] | null {
  * Preprocess an HTML string: wrap <i> tags whose content parses as a Bible
  * reference in an <a class="verse-ref"> link. Non-ref italic spans are left untouched.
  */
-export function linkifyItalicRefs(html: string): string {
+export function linkifyItalicRefs(html: string, conservative = false): string {
 	return html.replace(/<i>([\s\S]*?)<\/i>/g, (match, content) => {
-		const refs = parseItalicRef(content);
+		const refs = parseItalicRef(content, conservative);
 		if (!refs || refs.length === 0) return match;
 		const osisStr = refs.map((r) => r.osis).join(',');
 		const searchUrl = `/search?q=${encodeURIComponent(osisStr)}&mode=verse`;
 		return `<a class="verse-ref" data-osis="${osisStr}" href="${searchUrl}" target="_blank" rel="noopener"><i>${content}</i></a>`;
 	});
+}
+
+/**
+ * Linkify bare (non-italic) Bible references in text using the tokenizer.
+ * Each ref token becomes a hoverable/clickable <a class="verse-ref"> link.
+ */
+export function linkifyBareRefs(html: string): string {
+	// Don't process inside HTML tags
+	// Split on tags, process only text segments
+	const parts = html.split(/(<[^>]+>)/);
+	let inTag = false;
+	return parts
+		.map((part) => {
+			if (part.startsWith('<')) return part;
+			// Process text segment
+			const tokens = tokenizeCrossRef(part);
+			return tokens
+				.map((t) => {
+					if (t.type === 'text') return t.content;
+					const searchUrl = `/search?q=${encodeURIComponent(t.osis)}&mode=verse`;
+					return `<a class="verse-ref" data-osis="${t.osis}" href="${searchUrl}" target="_blank" rel="noopener">${t.display}</a>`;
+				})
+				.join('');
+		})
+		.join('');
 }

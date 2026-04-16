@@ -80,25 +80,32 @@
 			if (!slug) continue;
 
 			// Chapter-only ref: show as "Read [Book Chapter]" link
+			// Expand multi-chapter ranges (e.g. Exod.19-Exod.20) into individual entries
 			if (range.startVerse === undefined) {
-				result.push({
-					ref: `${bookDisplayName(range.book)} ${range.startChapter}`,
-					text: '',
-					href: `/odr/${slug}/${range.startChapter}`,
-					isChapter: true
-				});
+				const endCh = range.endChapter ?? range.startChapter;
+				for (let ch = range.startChapter; ch <= endCh; ch++) {
+					result.push({
+						ref: `${bookDisplayName(range.book)} ${ch}`,
+						text: '',
+						href: `/odr/${slug}/${ch}`,
+						isChapter: true
+					});
+				}
 				continue;
 			}
 
 			try {
 				const bookData = await loadBook(slug, fetch);
 				const chapter = bookData.chapters.find((c) => c.chapter === range.startChapter);
-				const verse = chapter?.verses.find((v) => v.verse === range.startVerse);
-				if (verse) {
-					result.push({
-						ref: `${bookDisplayName(range.book)} ${range.startChapter}:${range.startVerse}`,
-						text: stripTags(verse.text)
-					});
+				const endVerse = range.endVerse ?? range.startVerse!;
+				for (let v = range.startVerse!; v <= endVerse; v++) {
+					const verse = chapter?.verses.find((vr) => vr.verse === v);
+					if (verse) {
+						result.push({
+							ref: `${bookDisplayName(range.book)} ${range.startChapter}:${v}`,
+							text: stripTags(verse.text)
+						});
+					}
 				}
 			} catch {
 				// silently skip on fetch error
@@ -118,6 +125,7 @@
 		class="tooltip"
 		class:flip-below={flipBelow}
 		class:scrollable={needsScroll}
+		class:chapters-only={entries.length > 0 && entries.every((e) => e.isChapter)}
 		bind:this={tooltipEl}
 		style="left: {left}px; top: {y}px; max-height: {maxH};"
 		transition:fade={{ duration: 120 }}
@@ -187,6 +195,10 @@
 	}
 
 	/* Flip below the anchor when not enough room above */
+	.tooltip.chapters-only {
+		padding-bottom: 5px;
+	}
+
 	.tooltip.flip-below {
 		transform: translateX(-50%) translateY(0);
 	}

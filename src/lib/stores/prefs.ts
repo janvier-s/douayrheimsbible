@@ -60,11 +60,11 @@ const DEFAULTS: ReadingPrefs = {
 	showSmallCaps: true,
 	compareFontSize: 14,
 	expandAmpersand: false,
-	studyDefaultTab: 'intro',
+	studyDefaultTab: 'commentary',
 	annotationSync: true
 };
 
-const PREFS_VERSION = 14;
+const PREFS_VERSION = 15;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -132,6 +132,10 @@ function loadPrefs(): ReadingPrefs {
 		// v14 migration: bump compare font size default from 13 to 14
 		if (!parsed._v || parsed._v < 14) {
 			if (parsed.compareFontSize === 13) parsed.compareFontSize = 14;
+		}
+		// v15 migration: default study tab to commentary instead of intro
+		if (!parsed._v || parsed._v < 15) {
+			if (parsed.studyDefaultTab === 'intro') parsed.studyDefaultTab = 'commentary';
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

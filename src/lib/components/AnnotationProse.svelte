@@ -11,6 +11,8 @@
 
 	export let text: string;
 	export let notes: AnnotationNote[] = [];
+	/** Use stricter parsing to avoid false positives in patristic-heavy content */
+	export let conservativeLinks: boolean = false;
 
 	/** Renumber numeric markers sequentially across the full text and notes. */
 	function renumber(
@@ -44,7 +46,7 @@
 				const display = raw.replace(/^\[(\d+)\]$/, '$1');
 				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
 			});
-			html = linkifyItalicRefs(html);
+			html = linkifyItalicRefs(html, conservativeLinks);
 			html = allcapsToSmallcaps(html);
 			return html;
 		});
@@ -340,6 +342,7 @@
 	.ann-note-text {
 		font-family: var(--font-ui);
 		font-size: 15px;
+		font-weight: 300;
 	}
 
 	:global(.mn-popover-marker) {

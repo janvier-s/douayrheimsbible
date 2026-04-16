@@ -99,7 +99,7 @@
 			{chapterNum}
 			{isChapterPage}
 			{isHomePage}
-			hasStudyMode={$page.data.hasStudyMode ?? false}
+			hasStudyMode={$page.data.hasStudyMode !== false}
 		/>
 	{/if}
 	<slot />
