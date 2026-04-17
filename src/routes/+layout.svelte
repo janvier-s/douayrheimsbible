@@ -3,6 +3,7 @@
 	import '../app.css';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
+	import PrayerModal from '$lib/components/PrayerModal.svelte';
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -100,8 +101,10 @@
 			{isChapterPage}
 			{isHomePage}
 			hasStudyMode={$page.data.hasStudyMode !== false}
+			minimal={$page.data.topBarMinimal === true}
 		/>
 	{/if}
 	<slot />
 	<SiteFooter />
 </div>
+<PrayerModal />

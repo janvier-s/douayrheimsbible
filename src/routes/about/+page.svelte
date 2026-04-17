@@ -1,5 +1,35 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
+	import { browser } from '$app/environment';
+	import { onMount, onDestroy } from 'svelte';
+
+	let blessingOpen = false;
+
+	function closeBlessing() {
+		blessingOpen = false;
+	}
+
+	function handleBlessingKey(e: KeyboardEvent) {
+		if (e.key === 'Escape') closeBlessing();
+	}
+
+	function handleBlessingBackdrop(e: MouseEvent) {
+		if (e.target === e.currentTarget) closeBlessing();
+	}
+
+	onMount(() => {
+		if (browser) document.addEventListener('keydown', handleBlessingKey);
+	});
+
+	onDestroy(() => {
+		if (browser) document.removeEventListener('keydown', handleBlessingKey);
+	});
+
+	$: if (browser && blessingOpen) {
+		document.body.style.overflow = 'hidden';
+	} else if (browser) {
+		document.body.style.overflow = '';
+	}
 </script>
 
 <svelte:head>
@@ -30,7 +60,8 @@
 		has been the Bible of the Western Church for over a millennium. The Council of Trent, in 1546,
 		formally defined it as the authentic text of Sacred Scripture for the Catholic Church: the
 		edition from which Catholic doctrine is to be proved and defended. It is from this text, and no
-		other, that the Original Douay-Rheims Bible was made.
+		other, that the Original Douay-Rheims Bible was made: the Word of God in English, drawn directly
+		from the Latin in which the Western Church had kept and defended it.
 	</p>
 
 	<p>
@@ -41,8 +72,9 @@
 		of their contemporaries. The language is deliberately Latinate, precise in its theological
 		vocabulary, and at times startlingly direct. The annotations, all 1,707 of them, form a
 		sustained argument: point by point engagement with those Protestant translations, defending
-		Catholic readings of contested passages. The whole text is an act of witness, produced by
-		scholars in exile who expected martyrdom and wrote accordingly.
+		Catholic readings of contested passages. The whole text is an act of witness to the faith of the
+		Church in Jesus Christ, produced by scholars in exile who expected martyrdom and wrote
+		accordingly.
 	</p>
 
 	<p>
@@ -397,8 +429,10 @@
 	<ul>
 		<li>
 			<strong>Annotations:</strong> The 1,707 marginal annotations are the theological heart of the Original
-			Douay-Rheims. They defend Catholic readings, refute Protestant translations, and explain the Latin
-			behind the English word chosen.
+			Douay-Rheims. They defend Catholic readings of Scripture, refute Protestant translations, and explain
+			the Latin behind the English word chosen; the doctrines most directly at stake are those the reformers
+			contested: Christ's presence in the Eucharist, the intercession of the saints, and the nature of
+			justification.
 		</li>
 		<li>
 			<strong>Cross-references:</strong> 3,709 scriptural cross-references drawn from the translators'
@@ -620,8 +654,8 @@
 		The praying hands icon in the top bar opens a short prayer before reading Sacred Scripture. It
 		is the <em>Veni Sancte Spiritus</em>, the traditional invocation of the Holy Spirit used before
 		the reading of Scripture and the Divine Office, presented side by side in Latin and English. The
-		practice of praying before opening the Bible is as old as the Church's engagement with Scripture
-		itself.
+		practice of praying before opening the Scriptures is as old as the Church's engagement with the
+		Word of God, who speaks still through the text.
 	</p>
 
 	<h2>Mobile</h2>
@@ -726,12 +760,14 @@
 
 	<p>
 		Ten articles trace the story of the Douay-Rheims Bible from the exile that produced it to its
-		place in American Catholic life. They begin with the founding of the English College at Douai by
-		William Allen, follow the translators through the production of the Rheims New Testament of 1582
-		and the Douay Old Testament of 1609-1610, examine the theological convictions that shaped their
-		choices, and continue through the Challoner revision of the eighteenth century to the reception
-		of the text in nineteenth-century America. The articles are arranged to be read in sequence but
-		each stands on its own.
+		place in American Catholic life: a story of martyrdom, dispossession, and the conviction that
+		English Catholics deserved access to the Word of God in their own language on the Church's own
+		terms. They begin with the founding of the English College at Douai by William Allen, follow the
+		translators through the production of the Rheims New Testament of 1582 and the Douay Old
+		Testament of 1609-1610, examine the theological convictions that shaped their choices, and
+		continue through the Challoner revision of the eighteenth century to the reception of the text
+		in nineteenth-century America. The articles are arranged to be read in sequence but each stands
+		on its own.
 	</p>
 
 	<h3>Articles</h3>
@@ -747,9 +783,9 @@
 		The original prefatory and appended material from the 1582 and 1609-1610 editions. This includes
 		the New Testament and Old Testament prefaces, which are among the most direct statements the
 		translators left of what they were doing and why: their argument for fidelity to the Latin
-		Vulgate, their defence of specific translation choices, and their conviction that Catholic
-		teaching must inform the rendering of Sacred Scripture. Reading the prefaces alongside the text
-		they introduce changes how the text reads.
+		Vulgate, their defence of specific translation choices, and their conviction that the Church's
+		understanding of Christ and his mysteries must shape every rendering of Sacred Scripture.
+		Reading the prefaces alongside the text they introduce changes how the text reads.
 	</p>
 
 	<p>
@@ -841,6 +877,21 @@
 		</a>
 	</div>
 
+	<p class="blessing-invite">
+		Prayers for this work are also welcome.
+		<button
+			class="blessing-trigger"
+			on:click={() => (blessingOpen = true)}
+			aria-label="Open a prayer for this work"
+		>
+			<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+				<path
+					d="M235.32,180l-36.24-36.25L162.62,23.46A21.76,21.76,0,0,0,128,12.93,21.76,21.76,0,0,0,93.38,23.46L56.92,143.76,20.68,180a16,16,0,0,0,0,22.62l32.69,32.69a16,16,0,0,0,22.63,0L124.28,187a40.68,40.68,0,0,0,3.72-4.29,40.68,40.68,0,0,0,3.72,4.29L180,235.32a16,16,0,0,0,22.63,0l32.69-32.69A16,16,0,0,0,235.32,180ZM64.68,224,32,191.32l12.69-12.69,32.69,32.69ZM120,158.75a23.85,23.85,0,0,1-7,17L88.68,200,56,167.32l13.65-13.66a8,8,0,0,0,2-3.34l37-122.22A5.78,5.78,0,0,1,120,29.78Zm23,17a23.85,23.85,0,0,1-7-17v-129a5.78,5.78,0,0,1,11.31-1.68l37,122.22a8,8,0,0,0,2,3.34l14.49,14.49-33.4,32ZM191.32,224l-12.56-12.57,33.39-32L224,191.32Z"
+				/>
+			</svg>
+		</button>
+	</p>
+
 	<h2>A Simple Idea</h2>
 
 	<p>
@@ -853,15 +904,15 @@
 	</p>
 
 	<p>
-		The result is this site. It is offered freely, for anyone who wishes to read, study, or pray
-		with the first complete English translation of the Latin Vulgate, made without Protestant
-		influence, from the text the Church has always held as its own.
+		The result is this site. It is offered freely, for anyone who wishes to read, study, or draw
+		near to God through the first complete English translation of the Latin Vulgate, made without
+		Protestant influence, from the text the Church has always held as its own.
 	</p>
 
 	<p class="intercession">
 		St. Jerome, pray for us.<br />
 		St. Edmund Campion, pray for us.<br />
-		Our Lady of La Salette, pray for us.
+		St. Carlo Acutis, pray for us.
 	</p>
 
 	<p class="laus-deo"><em>Laus Deo.</em></p>
@@ -870,6 +921,64 @@
 		<a href="/odr/genesis/1" class="cta-btn">Read the Original Douay-Rheims →</a>
 	</div>
 </ProseLayout>
+
+{#if blessingOpen}
+	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+	<div
+		class="blessing-backdrop"
+		role="dialog"
+		aria-modal="true"
+		aria-labelledby="blessing-title"
+		on:click={handleBlessingBackdrop}
+		on:keydown={handleBlessingKey}
+	>
+		<div class="blessing-panel">
+			<div class="blessing-head">
+				<div class="blessing-eyebrow">
+					<span class="blessing-cross" aria-hidden="true">✠</span>
+					<span>A Prayer for This Work</span>
+				</div>
+				<button class="blessing-close" on:click={closeBlessing} aria-label="Close">
+					<svg
+						width="11"
+						height="11"
+						viewBox="0 0 11 11"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.6"
+						stroke-linecap="round"
+						aria-hidden="true"
+					>
+						<line x1="1" y1="1" x2="10" y2="10" />
+						<line x1="10" y1="1" x2="1" y2="10" />
+					</svg>
+				</button>
+			</div>
+
+			<h2 id="blessing-title" class="blessing-title">Benedictio</h2>
+
+			<div class="blessing-body">
+				<p>
+					O God, who hast spoken to thy people through the Sacred Scriptures and dost speak still:
+					look with favour upon all who come to this place in search of thy holy Word.
+				</p>
+				<p>
+					Bless thy servant who has built and maintains this website. Bless the memory of Gregory
+					Martin and all those at Douai and Rheims who labored in exile to give the English Church
+					her Scripture; bless Patrick Madueke, whose diligence preserved that text and made this
+					edition possible; bless all those whose skill and labor sustain the means by which thy
+					Word is now made available across the world.
+				</p>
+				<p>
+					Grant to all who desire to draw near to thee through thy written Word the grace to do so;
+					and in thy mercy look with compassion upon those who do not yet have access to Sacred
+					Scripture.
+				</p>
+				<p>Through Jesus Christ our Lord. <em>Amen.</em></p>
+			</div>
+		</div>
+	</div>
+{/if}
 
 <style>
 	.stats-grid {
@@ -1294,6 +1403,162 @@
 	.cta-btn:hover {
 		background: var(--color-accent);
 		color: var(--color-bg);
+	}
+
+	/* Prayer invite */
+	.blessing-invite {
+		font-size: 0.9rem;
+		color: var(--color-subtle);
+		text-align: center;
+		margin-top: 1rem;
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.blessing-trigger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		border-radius: 3px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		color: var(--color-subtle);
+		transition: color 150ms ease;
+		padding: 0;
+		flex-shrink: 0;
+	}
+
+	.blessing-trigger:hover {
+		color: var(--color-accent);
+	}
+
+	/* Blessing modal */
+	.blessing-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 9000;
+		background: rgba(0, 0, 0, 0.55);
+		backdrop-filter: blur(4px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 24px;
+		animation: blessing-backdrop-in 180ms ease both;
+	}
+
+	@keyframes blessing-backdrop-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.blessing-panel {
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		box-shadow:
+			0 8px 24px -4px rgba(0, 0, 0, 0.2),
+			0 2px 8px -2px rgba(0, 0, 0, 0.12);
+		width: 100%;
+		max-width: 480px;
+		padding: 32px 36px 28px;
+		animation: blessing-panel-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	@keyframes blessing-panel-in {
+		from {
+			opacity: 0;
+			transform: translateY(10px) scale(0.98);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
+
+	.blessing-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 16px;
+	}
+
+	.blessing-eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-family: var(--font-ui);
+		font-size: 9px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.22em;
+		color: var(--color-accent-text);
+	}
+
+	.blessing-cross {
+		font-size: 13px;
+		color: var(--color-accent);
+	}
+
+	.blessing-close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 26px;
+		height: 26px;
+		border-radius: 3px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		color: var(--color-subtle);
+		transition: color 150ms ease;
+		padding: 0;
+	}
+
+	.blessing-close:hover {
+		color: var(--color-text);
+	}
+
+	.blessing-title {
+		font-family: var(--font-reader);
+		font-size: 1.45rem;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+		color: var(--color-heading, var(--color-text));
+		margin: 0 0 20px;
+		line-height: 1.2;
+	}
+
+	.blessing-body {
+		font-family: var(--font-reader);
+		font-size: 0.97rem;
+		line-height: 1.8;
+		color: var(--color-text);
+	}
+
+	.blessing-body p {
+		margin: 0 0 14px;
+	}
+
+	.blessing-body p:last-child {
+		margin-bottom: 0;
+		color: var(--color-accent-text);
+		font-size: 0.93rem;
+	}
+
+	@media (max-width: 560px) {
+		.blessing-panel {
+			padding: 24px 20px 20px;
+		}
 	}
 
 	.laus-deo {
