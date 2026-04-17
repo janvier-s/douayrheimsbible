@@ -291,7 +291,7 @@
 			display: none;
 		}
 
-		.prayer-col + .prayer-col {
+		.prayer-col:not(:first-child) {
 			margin-top: 28px;
 			padding-top: 24px;
 			border-top: 1px solid var(--color-border);

@@ -374,14 +374,6 @@
 		color: var(--color-text);
 	}
 
-	.field-optional {
-		font-weight: 400;
-		text-transform: none;
-		letter-spacing: 0;
-		color: var(--color-muted);
-		font-size: 10px;
-	}
-
 	.required {
 		color: var(--color-accent);
 		margin-left: 2px;

@@ -247,7 +247,8 @@
 				href="https://github.com/janvier-s/original-douay-rheims"
 				target="_blank"
 				rel="noopener noreferrer">GitHub repository</a
-			>. A read <a href="/api">API</a> is also available for those wishing to build on the text programmatically.
+			>. A <a href="/api">REST API</a> is also available, with endpoints for individual verses, chapters,
+			full books, random verses, and full-text search.
 		</p>
 		<a
 			href="https://creativecommons.org/publicdomain/zero/1.0/"
@@ -1017,6 +1018,7 @@
 	<div
 		class="blessing-backdrop"
 		role="dialog"
+		tabindex="-1"
 		aria-modal="true"
 		aria-labelledby="blessing-title"
 		on:click={handleBlessingBackdrop}
@@ -1318,11 +1320,6 @@
 		margin: 28px 0 8px;
 	}
 
-	.screenshot-fig--wide {
-		margin: 20px 0 8px;
-		max-width: 52%;
-	}
-
 	.options-row {
 		display: flex;
 		align-items: flex-start;
@@ -1339,18 +1336,6 @@
 		flex-shrink: 0;
 		width: 220px;
 		margin: 32px 0 0;
-	}
-
-	.mobile-row {
-		display: flex;
-		align-items: flex-start;
-		gap: 32px;
-		margin: 28px 0 8px;
-	}
-
-	.mobile-row p {
-		flex: 1;
-		margin: 0;
 	}
 
 	.screenshot-fig--mobile {
