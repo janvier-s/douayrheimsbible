@@ -43,7 +43,8 @@
 			label: 'About',
 			links: [
 				{ label: 'History', href: '/history' },
-				{ label: 'About', href: '/history/the-douay-rheims' }
+				{ label: 'About This Website', href: '/about' },
+				{ label: 'About the Translation', href: '/history/the-douay-rheims' }
 			]
 		}
 	];
