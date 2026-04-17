@@ -158,9 +158,12 @@
 		Two modern typeset editions also exist. Dr. William G. von Peters produced a meticulous
 		modernised edition at <a href="https://www.realdouayrheims.com">realdouayrheims.com</a>, but it
 		is copyrighted. Patrick Madueke assembled a complete PDF transcription of the Original
-		Douay-Rheims and placed it in a GitLab repository dedicated to Our Lady of La Salette, without
-		copyright restriction. That repository is what this site is built on. Without his work, it could
-		not have been built.
+		Douay-Rheims and placed it in
+		<a href="https://codeberg.org/olprint" target="_blank" rel="noopener noreferrer"
+			>his repository</a
+		>
+		dedicated to Our Lady of La Salette, without copyright restriction. That repository is what this site
+		is built on. Without his work, it could not have been built.
 	</p>
 
 	<div class="screenshot-row">
@@ -241,7 +244,7 @@
 			Patrick Madueke's original PDF transcription, can be downloaded in JSON format from the
 			<a href="/download">download page</a> and from the
 			<a
-				href="https://github.com/janvier-s/douayrheimsbible"
+				href="https://github.com/janvier-s/original-douay-rheims"
 				target="_blank"
 				rel="noopener noreferrer">GitHub repository</a
 			>. A read <a href="/api">API</a> is also available for those wishing to build on the text programmatically.

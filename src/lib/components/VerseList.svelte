@@ -389,7 +389,7 @@
 					{#if $prefs.showVerseNumbers && !isDropcap}
 						<sup
 							class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
-							class:verse-num-hang={$prefs.hangingVerseNumbers ?? true}
+							class:verse-num-hang={vi === 0 && ($prefs.hangingVerseNumbers ?? true)}
 							class:text-subtle={!isStudy || !v.has_annotation}
 							style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
 							>{v.verse}</sup
