@@ -13,7 +13,7 @@
 		{
 			heading: 'About',
 			links: [
-				{ label: 'About the Translation', href: '/history/about' },
+				{ label: 'About the Translation', href: '/history/the-douay-rheims' },
 				{ label: 'History of the DR Bible', href: '/history' },
 				{ label: 'Articles', href: '/articles' },
 				{ label: 'The Challoner Revision', href: '/history/challoner' },

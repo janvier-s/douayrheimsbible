@@ -15,6 +15,7 @@
 
 	const PATH_LABELS: Record<string, string> = {
 		about: 'About',
+		'the-douay-rheims': 'The Douay-Rheims Bible',
 		articles: 'Articles',
 		history: 'History',
 		origins: 'Origins',
@@ -110,7 +111,7 @@
 
 	const NAV_ARTICLES = [
 		{ path: '/history', label: 'History' },
-		{ path: '/history/about', label: 'About' },
+		{ path: '/history/the-douay-rheims', label: 'The Douay-Rheims Bible' },
 		{ path: '/history/origins', label: 'Origins' },
 		{ path: '/history/translation-philosophy', label: 'Translation' },
 		{ path: '/history/rheims-1582', label: 'Rheims 1582' },

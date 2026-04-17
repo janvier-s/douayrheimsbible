@@ -33,7 +33,7 @@
 
 	<ol class="article-list">
 		<li class="article-item">
-			<a href="/history/about" class="article-link">
+			<a href="/history/the-douay-rheims" class="article-link">
 				<span class="article-title">About the Douay-Rheims Bible</span>
 				<span class="article-desc"
 					>What it is, who translated it, why it was created, and how to distinguish the original

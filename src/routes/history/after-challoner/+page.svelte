@@ -158,7 +158,7 @@
 		The text presented on this site is Martin's original: the first edition pre-Challoner
 		Douay-Rheims, the translation that all subsequent editors took as their starting point and that
 		none of them left unchanged. For a full account of what this site presents, see <a
-			href="/history/about">About the Douay-Rheims Bible</a
+			href="/history/the-douay-rheims">About the Douay-Rheims Bible</a
 		>.
 	</p>
 

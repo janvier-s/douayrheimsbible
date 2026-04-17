@@ -35,7 +35,8 @@ export function GET() {
 
 	// Content pages
 	urls.push(entry('/history', '0.9', 'monthly'));
-	urls.push(entry('/history/about', '0.9', 'monthly'));
+	urls.push(entry('/about', '0.9', 'monthly'));
+	urls.push(entry('/history/the-douay-rheims', '0.9', 'monthly'));
 	urls.push(entry('/articles', '0.9', 'monthly'));
 	urls.push(entry('/history/origins', '0.9', 'monthly'));
 	urls.push(entry('/history/translation-philosophy', '0.9', 'monthly'));
