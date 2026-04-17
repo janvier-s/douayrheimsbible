@@ -354,8 +354,8 @@ export async function hydrateNoteResults(
 	queryTokens: string[],
 	fetch: typeof globalThis.fetch
 ): Promise<NoteResult[]> {
-	// Pre-load all needed books and annotation files
-	const bookSlugs = [...new Set(results.map((r) => r.book))];
+	// Pre-load all needed books and annotation files (skip reference docs)
+	const bookSlugs = [...new Set(results.map((r) => r.book).filter((b) => !b.startsWith('ref:')))];
 	await Promise.all(bookSlugs.map((slug) => loadBook(slug, fetch)));
 
 	const annotationKeys = new Set<string>();
