@@ -116,13 +116,14 @@
 			// Capture these NOW, before any async gap
 			const slug = currentBookSlug;
 			const chNum = currentChapterNum;
+			// Reset scroll instantly; the CSS slide-up animation handles the smooth transition
+			if (browser && panelScroll) panelScroll.scrollTop = 0;
+			sectionEls = {};
 			annotationsLoading = true;
 			annotations = null;
 			studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
 			loadAnnotations(slug, chNum, fetch)
 				.then((data) => {
-					// Compare against lastAnnotationKey (live), not key (captured) — if the user
-					// navigated away before this fetch resolved, lastAnnotationKey will have changed.
 					if (`${slug}/${chNum}` === lastAnnotationKey) {
 						annotations = data;
 						annotationsLoading = false;
@@ -207,12 +208,7 @@
 	// (which shows the verse underline) after the user has settled for 400ms.
 	let annotatedVerseTimer: ReturnType<typeof setTimeout> | null = null;
 
-	// Reset stale section element refs whenever the chapter changes
-	$: {
-		currentBookSlug;
-		currentChapterNum;
-		sectionEls = {};
-	}
+	// (chapter-change scroll + sectionEls reset handled inside annotation loading reactive)
 
 	// Reader→panel auto-scroll disabled (too many edge cases with infinite scroll).
 	// Explicit clicks (scrollTrigger) still scroll the panel.
@@ -241,7 +237,8 @@
 			clearTimeout(annotatedVerseTimer);
 			annotatedVerseTimer = null;
 		}
-		if (!browser || !panelScroll || !$prefs.annotationSync) return;
+		if (!browser || !panelScroll || !$prefs.annotationSync || $prefs.readingMode !== 'study')
+			return;
 		panelSectionObserver = new IntersectionObserver(
 			(entries) => {
 				if (programmaticScroll) return;
@@ -255,7 +252,10 @@
 					}
 				}
 				if (intersectingVerses.size > 0) {
-					const active = [...intersectingVerses.entries()].sort((a, b) => a[1] - b[1])[0][0];
+					// Filter out verse 0 (Summary) — it has no reader element so syncing to it skips verse 1
+					const candidates = [...intersectingVerses.entries()].filter(([v]) => v > 0);
+					if (candidates.length === 0) return;
+					const active = candidates.sort((a, b) => a[1] - b[1])[0][0];
 					// Immediate: drive reader scroll to follow the panel
 					studyPanel.update((s) => ({ ...s, panelScrollVerse: active }));
 					// Debounced: only underline the verse after the user has settled (400ms).
@@ -278,6 +278,10 @@
 		tick().then(setupPanelObserver);
 	}
 	$: if (browser && !$prefs.annotationSync) {
+		panelSectionObserver?.disconnect();
+		panelSectionObserver = null;
+	}
+	$: if (browser && $prefs.readingMode !== 'study') {
 		panelSectionObserver?.disconnect();
 		panelSectionObserver = null;
 	}
@@ -815,6 +819,18 @@
 	.commentary-list {
 		display: flex;
 		flex-direction: column;
+		animation: panelContentIn 400ms ease-out;
+	}
+
+	@keyframes panelContentIn {
+		from {
+			opacity: 0;
+			transform: translateY(24px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	.verse-section {
