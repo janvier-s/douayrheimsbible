@@ -412,6 +412,37 @@
 				<span>Paragraph view</span>
 			</label>
 
+			{#if $prefs.paragraphView}
+				<div class="pl-[20px] space-y-sm">
+					<label class="flex items-center gap-sm cursor-pointer">
+						<input
+							type="checkbox"
+							checked={$prefs.showDropcap ?? true}
+							on:change={(e) =>
+								prefs.update((p) => ({
+									...p,
+									showDropcap: (e.target as HTMLInputElement).checked
+								}))}
+							class="accent-accent"
+						/>
+						<span>Drop cap</span>
+					</label>
+					<label class="flex items-center gap-sm cursor-pointer">
+						<input
+							type="checkbox"
+							checked={$prefs.hangingVerseNumbers ?? true}
+							on:change={(e) =>
+								prefs.update((p) => ({
+									...p,
+									hangingVerseNumbers: (e.target as HTMLInputElement).checked
+								}))}
+							class="accent-accent"
+						/>
+						<span>Hanging verse numbers</span>
+					</label>
+				</div>
+			{/if}
+
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"

@@ -9,6 +9,7 @@
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import type { Verse } from '$lib/data/types';
+	import { PARAGRAPH_STARTS } from '$lib/data/paragraphs';
 
 	export let verses: Verse[];
 	export let targetVerse: number | undefined;
@@ -87,6 +88,21 @@
 		return text;
 	}
 
+	/** Wrap the first letter of rendered HTML in a dropcap span.
+	 *  Handles two leading-tag cases produced by the render pipeline:
+	 *  - <sc>Word</sc>...  (small-caps proper noun at verse start)
+	 *  - Plain letter (most verses) */
+	function injectDropcap(html: string): string {
+		// <sc>Letter...</sc> → pull first letter out of the sc tag
+		const sc = html.replace(
+			/^<sc>([A-Za-zÀ-ÿ])([^<]*)<\/sc>/,
+			'<span class="dropcap">$1</span><sc>$2</sc>'
+		);
+		if (sc !== html) return sc;
+		// Plain first letter
+		return html.replace(/^([A-Za-zÀ-ÿ])/, '<span class="dropcap">$1</span>');
+	}
+
 	function renderVerse(
 		text: string,
 		bionic: boolean,
@@ -94,7 +110,8 @@
 		showItalics: boolean,
 		verseNum: number,
 		smallCaps: boolean,
-		expandAmpersand: boolean
+		expandAmpersand: boolean,
+		isDropcap: boolean = false
 	): string {
 		let t = text;
 		if (expandAmpersand) t = t.replace(/&amp;/g, 'and').replace(/&/g, 'and');
@@ -104,7 +121,9 @@
 			t = stripStudyMarkers(t, showItalics);
 		}
 		const t2 = bionic ? applyBionic(t) : t;
-		return smallCaps ? allcapsToSmallcaps(t2) : t2;
+		const result = smallCaps ? allcapsToSmallcaps(t2) : t2;
+		// Dropcap: only when bionic is off (bionic wraps letters in <b>, complicating injection)
+		return isDropcap && !bionic ? injectDropcap(result) : result;
 	}
 
 	// ── Marker click handling ────────────────────────────────────────
@@ -320,49 +339,76 @@
 	$: showSmallCaps = $prefs.showSmallCaps ?? true;
 	$: bionic = $prefs.bionicReading && bionicReady;
 	$: expandAmpersand = $prefs.expandAmpersand ?? false;
+
+	// Group verses into paragraphs using the paragraph reference data
+	function groupIntoParagraphs(vv: Verse[], slug: string, ch: number): Verse[][] {
+		const starts = PARAGRAPH_STARTS[slug]?.[ch];
+		if (!starts || starts.length === 0) return [vv];
+		const startSet = new Set(starts);
+		const groups: Verse[][] = [];
+		let current: Verse[] = [];
+		for (const v of vv) {
+			if (startSet.has(v.verse) && current.length > 0) {
+				groups.push(current);
+				current = [];
+			}
+			current.push(v);
+		}
+		if (current.length > 0) groups.push(current);
+		return groups;
+	}
+	$: paragraphs = groupIntoParagraphs(verses, bookSlug, chapterNum);
 </script>
 
 {#if $prefs.paragraphView}
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<p
-		class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
-		class:text-justify={$prefs.justifiedText}
-		class:bionic-fade={bionic}
-		on:mouseover={isStudy ? handleMarkerMouseover : undefined}
-		on:focus={isStudy ? handleMarkerMouseover : undefined}
-		on:mouseout={isStudy ? handleMarkerMouseout : undefined}
-		on:blur={isStudy ? handleMarkerMouseout : undefined}
-	>
-		{#each verses as v (v.verse)}
-			<!-- inline anchor for intersection observer + scroll target -->
-			<span
-				bind:this={verseEls[v.verse]}
-				id="v{v.verse}"
-				data-verse-num={v.verse}
-				class:verse-active-annotation={isStudy &&
-					v.has_annotation &&
-					$studyPanel.annotatedVerse === v.verse}
-			>
-				{#if $prefs.showVerseNumbers}
-					<sup
-						class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
-						class:text-subtle={!isStudy || !v.has_annotation}
-						style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
-						>{v.verse}</sup
-					>
-				{/if}
-				{@html renderVerse(
-					v.text,
-					bionic,
-					isStudy,
-					showItalics,
-					v.verse,
-					showSmallCaps,
-					expandAmpersand
-				)}{' '}
-			</span>
-		{/each}
-	</p>
+	{#each paragraphs as group, gi (group[0].verse)}
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<p
+			class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
+			class:text-justify={$prefs.justifiedText}
+			class:bionic-fade={bionic}
+			class:para-hanging={$prefs.showVerseNumbers && ($prefs.hangingVerseNumbers ?? true)}
+			class:para-dropcap={gi === 0 && ($prefs.showDropcap ?? true)}
+			style={gi > 0 ? 'margin-top: 1em' : ''}
+			on:mouseover={isStudy ? handleMarkerMouseover : undefined}
+			on:focus={isStudy ? handleMarkerMouseover : undefined}
+			on:mouseout={isStudy ? handleMarkerMouseout : undefined}
+			on:blur={isStudy ? handleMarkerMouseout : undefined}
+		>
+			{#each group as v, vi (v.verse)}
+				{@const isDropcap = gi === 0 && vi === 0 && ($prefs.showDropcap ?? true)}
+				<!-- inline anchor for intersection observer + scroll target -->
+				<span
+					bind:this={verseEls[v.verse]}
+					id="v{v.verse}"
+					data-verse-num={v.verse}
+					class:verse-active-annotation={isStudy &&
+						v.has_annotation &&
+						$studyPanel.annotatedVerse === v.verse}
+				>
+					{#if $prefs.showVerseNumbers && !isDropcap}
+						<sup
+							class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
+							class:verse-num-hang={$prefs.hangingVerseNumbers ?? true}
+							class:text-subtle={!isStudy || !v.has_annotation}
+							style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
+							>{v.verse}</sup
+						>
+					{/if}
+					{@html renderVerse(
+						v.text,
+						bionic,
+						isStudy,
+						showItalics,
+						v.verse,
+						showSmallCaps,
+						expandAmpersand,
+						isDropcap
+					)}{' '}
+				</span>
+			{/each}
+		</p>
+	{/each}
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
 		{#each verses as v (v.verse)}
@@ -428,6 +474,32 @@
 </MarkerPopover>
 
 <style>
+	.para-hanging {
+		padding-left: 2rem;
+	}
+
+	.para-dropcap {
+		display: flow-root;
+	}
+
+	:global(.verse-num-hang) {
+		display: inline-block;
+		width: 1.6rem;
+		margin-left: -2rem;
+		text-align: right;
+		padding-right: 0.3em;
+		box-sizing: border-box;
+	}
+
+	:global(.dropcap) {
+		font-size: 3.4em;
+		line-height: 0.62;
+		float: left;
+		margin-right: 0.06em;
+		margin-top: 0.24em;
+		color: var(--color-subtle);
+	}
+
 	.verse-target {
 		box-shadow: inset 3px 0 0 var(--color-accent);
 	}

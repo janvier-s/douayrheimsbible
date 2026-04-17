@@ -34,6 +34,10 @@ export interface ReadingPrefs {
 	studyDefaultTab: 'intro' | 'commentary' | 'article' | 'end';
 	// v13
 	annotationSync: boolean;
+	// v16
+	showDropcap: boolean;
+	// v17
+	hangingVerseNumbers: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -61,10 +65,12 @@ const DEFAULTS: ReadingPrefs = {
 	compareFontSize: 14,
 	expandAmpersand: false,
 	studyDefaultTab: 'commentary',
-	annotationSync: true
+	annotationSync: true,
+	showDropcap: true,
+	hangingVerseNumbers: true
 };
 
-const PREFS_VERSION = 15;
+const PREFS_VERSION = 17;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -136,6 +142,14 @@ function loadPrefs(): ReadingPrefs {
 		// v15 migration: default study tab to commentary instead of intro
 		if (!parsed._v || parsed._v < 15) {
 			if (parsed.studyDefaultTab === 'intro') parsed.studyDefaultTab = 'commentary';
+		}
+		// v16 migration: add dropcap toggle (on by default)
+		if (!parsed._v || parsed._v < 16) {
+			parsed.showDropcap = true;
+		}
+		// v17 migration: add hanging verse numbers toggle (on by default)
+		if (!parsed._v || parsed._v < 17) {
+			parsed.hangingVerseNumbers = true;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
