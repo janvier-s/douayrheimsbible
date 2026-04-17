@@ -613,8 +613,12 @@
 			continuous prose.
 		</li>
 		<li>
-			<strong>Paragraph view:</strong> Arranges the text in flowing paragraphs rather than numbered lines,
-			as the original printed book appeared.
+			<strong>Paragraph view:</strong> Arranges the text in flowing paragraphs rather than numbered
+			lines, as the original printed book appeared. Two sub-options are available:
+			<strong>Drop cap</strong>
+			renders the first letter of each chapter as a large decorative capital, and
+			<strong>Hanging verse numbers</strong> pulls each paragraph-opening verse number into the left margin
+			so the text body remains flush throughout.
 		</li>
 		<li>
 			<strong>Italics:</strong> Words italicised in the original are those supplied by the translators
