@@ -187,8 +187,8 @@
 	<p class="stats-note">
 		The 76 books include 73 of the Catholic canon and three further texts present in the Vulgate
 		appendix: 3 Esdras, 4 Esdras, and the Prayer of Manasses. The 84 book arguments exceed 76
-		because several books carry more than one prefatory section, a general introduction and
-		separate arguments for distinct parts.
+		because several books carry more than one prefatory section, a general introduction and separate
+		arguments for distinct parts.
 	</p>
 
 	<h2>A Simple Idea</h2>
