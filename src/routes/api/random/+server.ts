@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { loadBook, getChapter } from '$lib/data/loader';
+import { loadBook } from '$lib/data/loader';
 import { ALL_BOOKS } from '$lib/data/books';
 
 // No cache — each request should return a different verse
