@@ -237,8 +237,14 @@
 		<p class="license-body">
 			The text, annotations, prefaces, and reference material on this site are in the public domain.
 			You are free to copy, share, adapt, and redistribute them for any purpose, with no
-			restrictions and no attribution required. A read API will be available shortly for those
-			wishing to build on the Original Douay-Rheims text programmatically.
+			restrictions and no attribution required. The translations available on this site, along with
+			Patrick Madueke's original PDF transcription, can be downloaded in JSON format from the
+			<a href="/download">download page</a> and from the
+			<a
+				href="https://github.com/janvier-s/douayrheimsbible"
+				target="_blank"
+				rel="noopener noreferrer">GitHub repository</a
+			>. A read <a href="/api">API</a> is also available for those wishing to build on the text programmatically.
 		</p>
 		<a
 			href="https://creativecommons.org/publicdomain/zero/1.0/"
