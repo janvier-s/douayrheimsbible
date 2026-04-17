@@ -1119,15 +1119,24 @@
 						<section>
 							<div class="flex items-baseline gap-[8px] mb-[6px]">
 								<a
-									href="/odr/{note.slug}/{note.chapter}?study={note.verse}"
+									href={note.type === 'reference'
+										? `/reference/${note.refPath}`
+										: `/odr/${note.slug}/${note.chapter}?study=${note.verse}`}
 									class="font-ui text-[14px] font-semibold hover:text-foreground transition-colors duration-fast"
 									style="color: var(--color-accent-text)"
-									on:click={() => prefs.update((p) => ({ ...p, readingMode: 'study' }))}
+									on:click={() => {
+										if (note.type !== 'reference')
+											prefs.update((p) => ({ ...p, readingMode: 'study' }));
+									}}
 								>
 									{note.reference}
 								</a>
 								<span class="font-ui text-[11px] uppercase tracking-[0.1em] text-subtle">
-									{note.type === 'annotation' ? 'Annotation' : 'Note'}
+									{note.type === 'annotation'
+										? 'Annotation'
+										: note.type === 'reference'
+											? 'Reference'
+											: 'Note'}
 								</span>
 							</div>
 							{#if note.title}

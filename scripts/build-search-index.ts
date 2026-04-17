@@ -7,6 +7,7 @@ import { searchTokenizer, processTerm } from '../src/lib/search/normalize.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '..');
 const DATA_DIR = join(PROJECT_ROOT, 'static', 'data', 'odr');
+const REF_DIR = join(PROJECT_ROOT, 'static', 'data', 'reference');
 
 interface VerseDoc {
 	id: string;
@@ -172,6 +173,49 @@ async function buildNotesIndex(): Promise<void> {
 			}
 		} catch {
 			// No annotations directory for this book — skip
+		}
+	}
+
+	// Index reference material (prefaces, introductions, etc.)
+	for (const testament of ['ot', 'nt']) {
+		const testDir = join(REF_DIR, testament);
+		const refFiles = await readdir(testDir);
+		for (const refFile of refFiles.sort()) {
+			if (!refFile.endsWith('.json')) continue;
+			const refSlug = refFile.replace('.json', '');
+			const refRaw = await readFile(join(testDir, refFile), 'utf-8');
+			const refData = JSON.parse(refRaw);
+
+			// Collect paragraphs from top-level and subsections
+			const allParagraphs: string[] = [];
+			if (refData.paragraphs) {
+				for (const p of refData.paragraphs) {
+					if (p.text) allParagraphs.push(p.text);
+				}
+			}
+			if (refData.subsections) {
+				for (const sub of refData.subsections) {
+					if (sub.paragraphs) {
+						for (const p of sub.paragraphs) {
+							if (p.text) allParagraphs.push(p.text);
+						}
+					}
+				}
+			}
+
+			for (let pi = 0; pi < allParagraphs.length; pi++) {
+				const text = cleanText(allParagraphs[pi]);
+				if (text) {
+					docs.push({
+						id: makeUniqueId(`ref:${testament}:${refSlug}:p${pi}`),
+						book: `ref:${testament}:${refSlug}`,
+						chapter: 0,
+						verse: 0,
+						text,
+						type: 'reference'
+					});
+				}
+			}
 		}
 	}
 

@@ -39,12 +39,12 @@ export interface NoteSubNote {
 }
 
 export interface NoteResult {
-	/** e.g. "Matthew 1:3" */
+	/** e.g. "Matthew 1:3" or "NT Preface" */
 	reference: string;
 	slug: string;
 	chapter: number;
 	verse: number;
-	/** 'note' (inline verse note) or 'annotation' */
+	/** 'note' | 'annotation' | 'reference' */
 	type: string;
 	/** Annotation title if applicable */
 	title?: string;
@@ -54,6 +54,8 @@ export interface NoteResult {
 	subNotes?: NoteSubNote[];
 	/** The parent verse text (shown for inline notes) */
 	verseText?: string;
+	/** For reference type: path like 'nt/preface' used to build /reference/{refPath} URL */
+	refPath?: string;
 	queryTokens: string[];
 }
 
@@ -319,9 +321,20 @@ function parseNoteId(id: string): {
 	book: string;
 	chapter: number;
 	verse: number;
-	type: 'note' | 'annotation';
+	type: 'note' | 'annotation' | 'reference';
 	index: number;
+	testament?: string;
+	refSlug?: string;
 } {
+	if (id.startsWith('ref:')) {
+		// Format: ref:nt:preface:p0
+		const parts = id.split(':');
+		const testament = parts[1];
+		const refSlug = parts[2];
+		const marker = parts[3] ?? 'p0';
+		const index = parseInt(marker.slice(1), 10);
+		return { book: id, chapter: 0, verse: 0, type: 'reference', index, testament, refSlug };
+	}
 	const parts = id.split(':');
 	const book = parts[0];
 	const chapter = parseInt(parts[1], 10);
@@ -384,6 +397,48 @@ export async function hydrateNoteResults(
 				type: 'note',
 				noteText: verse.notes[parsed.index].text,
 				verseText: verse.text,
+				queryTokens
+			});
+		} else if (parsed.type === 'reference') {
+			const testament = parsed.testament!;
+			const refSlug = parsed.refSlug!;
+			const refData = await fetch(`/data/reference/${testament}/${refSlug}.json`).then((res) =>
+				res.json()
+			);
+
+			// Collect paragraphs in the same order as the build script
+			const allParagraphs: string[] = [];
+			if (refData.paragraphs) {
+				for (const p of refData.paragraphs) {
+					if (p.text) allParagraphs.push(p.text);
+				}
+			}
+			if (refData.subsections) {
+				for (const sub of refData.subsections) {
+					if (sub.paragraphs) {
+						for (const p of sub.paragraphs) {
+							if (p.text) allParagraphs.push(p.text);
+						}
+					}
+				}
+			}
+
+			const paraText = allParagraphs[parsed.index] ?? '';
+			if (!paraText) continue;
+
+			const refTitle = (refData.title as string | undefined) ?? refSlug;
+
+			hydrated.push({
+				reference: refTitle
+					.replace(/<[^>]+>/g, '')
+					.replace(/\s+/g, ' ')
+					.trim(),
+				slug: `ref:${testament}:${refSlug}`,
+				chapter: 0,
+				verse: 0,
+				type: 'reference',
+				noteText: paraText,
+				refPath: `${testament}/${refSlug}`,
 				queryTokens
 			});
 		} else {
