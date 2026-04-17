@@ -3,7 +3,6 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
-	import ProseReadingPrefs from '$lib/components/ProseReadingPrefs.svelte';
 
 	export let title: string;
 	export let subtitle: string = '';
@@ -125,9 +124,9 @@
 		{ path: '/history/scripture-for-all', label: 'Scripture for All' }
 	];
 
-	let prefsOpen = false;
-	let wrapperEl: HTMLElement;
 	let articleEl: HTMLElement;
+
+	$: isInNav = NAV_ARTICLES.some((a) => a.path === $page.url.pathname);
 
 	// TOC
 	type TocItem = { id: string; text: string };
@@ -229,19 +228,7 @@
 		};
 	}
 
-	function handleOutside(e: MouseEvent) {
-		if (prefsOpen && wrapperEl && !wrapperEl.contains(e.target as Node)) {
-			prefsOpen = false;
-		}
-	}
-
-	function handleKey(e: KeyboardEvent) {
-		if (e.key === 'Escape') prefsOpen = false;
-	}
-
 	onMount(() => {
-		document.addEventListener('mousedown', handleOutside);
-		document.addEventListener('keydown', handleKey);
 		buildToc();
 		buildNav();
 		window.addEventListener('scroll', onScroll, { passive: true });
@@ -249,8 +236,6 @@
 
 	onDestroy(() => {
 		if (!browser) return;
-		document.removeEventListener('mousedown', handleOutside);
-		document.removeEventListener('keydown', handleKey);
 		window.removeEventListener('scroll', onScroll);
 		cancelAnimationFrame(scrollRaf);
 	});
@@ -264,26 +249,6 @@
 	<meta property="og:image" content={ogImage} />
 	{@html jsonLdHtml}
 </svelte:head>
-
-<nav class="prose-nav">
-	<a href="/" class="prose-nav-link">
-		<span class="prose-nav-cross" aria-hidden="true">✠</span>
-		<span>Douay-Rheims</span>
-	</a>
-	<div class="prose-nav-right" bind:this={wrapperEl}>
-		<button
-			class="px-[8px] h-[28px] flex items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium font-ui
-				{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
-			aria-label="Reading options"
-			aria-expanded={prefsOpen}
-			on:click={() => (prefsOpen = !prefsOpen)}
-		>
-			<span class="hidden sm:inline">Reading options</span>
-			<span class="sm:hidden">Aa</span>
-		</button>
-		<ProseReadingPrefs {prefsOpen} />
-	</div>
-</nav>
 
 <main id="main-content" class="prose-page" style="max-width: {proseWidth}px;">
 	<header class="prose-header">
@@ -328,62 +293,38 @@
 
 <aside class="prose-toc" aria-label="Table of contents">
 	<p class="toc-label">Contents</p>
-	<ul class="toc-nav">
-		{#each NAV_ARTICLES as article}
-			{@const isCurrent = $page.url.pathname === article.path}
-			<li class="toc-nav-item" class:toc-nav-item--current={isCurrent}>
-				<a href={article.path} class="toc-nav-link" class:toc-nav-link--active={isCurrent}>
-					{article.label}
-				</a>
-				{#if isCurrent && tocItems.length > 0}
-					<ul class="toc-sections">
-						{#each tocItems as item}
-							<li class="toc-section-item" class:toc-section-item--active={activeId === item.id}>
-								<a href="#{item.id}">{item.text}</a>
-							</li>
-						{/each}
-					</ul>
-				{/if}
-			</li>
-		{/each}
-	</ul>
+	{#if isInNav}
+		<ul class="toc-nav">
+			{#each NAV_ARTICLES as article}
+				{@const isCurrent = $page.url.pathname === article.path}
+				<li class="toc-nav-item" class:toc-nav-item--current={isCurrent}>
+					<a href={article.path} class="toc-nav-link" class:toc-nav-link--active={isCurrent}>
+						{article.label}
+					</a>
+					{#if isCurrent && tocItems.length > 0}
+						<ul class="toc-sections">
+							{#each tocItems as item}
+								<li class="toc-section-item" class:toc-section-item--active={activeId === item.id}>
+									<a href="#{item.id}">{item.text}</a>
+								</li>
+							{/each}
+						</ul>
+					{/if}
+				</li>
+			{/each}
+		</ul>
+	{:else if tocItems.length > 0}
+		<ul class="toc-sections toc-sections--standalone">
+			{#each tocItems as item}
+				<li class="toc-section-item" class:toc-section-item--active={activeId === item.id}>
+					<a href="#{item.id}">{item.text}</a>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 </aside>
 
 <style>
-	.prose-nav {
-		padding: 22px 48px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.prose-nav-right {
-		position: relative;
-	}
-
-	.prose-nav-link {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		text-decoration: none;
-		font-family: var(--font-ui);
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: 0.22em;
-		font-weight: 600;
-		color: var(--color-text);
-		transition: color 150ms ease;
-	}
-
-	.prose-nav-link:hover {
-		color: var(--color-accent);
-	}
-
-	.prose-nav-cross {
-		font-size: 14px;
-		color: var(--color-accent);
-	}
-
 	/* Layout */
 	.prose-page {
 		max-width: 700px;
@@ -454,6 +395,7 @@
 		letter-spacing: -0.01em;
 		margin: 56px 0 16px;
 		line-height: 1.25;
+		scroll-margin-top: calc(var(--header-height) - 24px);
 	}
 
 	.prose-body :global(h3) {
@@ -716,6 +658,17 @@
 	.toc-section-item--active a {
 		color: var(--color-accent-text);
 		opacity: 1;
+	}
+
+	.toc-sections--standalone {
+		padding: 0;
+		border-left: none;
+	}
+
+	.toc-sections--standalone .toc-section-item a {
+		font-size: 13px;
+		padding: 4px 0;
+		opacity: 0.85;
 	}
 
 	@media (max-width: 1120px) {

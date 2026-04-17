@@ -353,7 +353,7 @@
 		class="shrink-0 sticky flex [overflow:clip]"
 		style:top="var(--header-height)"
 		style:height={$isMobile
-			? 'calc(100vh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
+			? 'calc(100lvh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
 			: 'calc(100vh - var(--header-height))'}
 		style:max-width={panelMaxWidth}
 		style:width={panelWidth}
