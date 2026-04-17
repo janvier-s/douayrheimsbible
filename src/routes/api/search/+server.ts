@@ -9,7 +9,7 @@ import {
 } from '$lib/search/text-search';
 
 const CACHE_HEADERS = {
-	'Cache-Control': 'public, max-age=3600, s-maxage=86400'
+	'Cache-Control': 'private, max-age=600'
 };
 
 export const GET: RequestHandler = async ({ url, fetch, platform }) => {
