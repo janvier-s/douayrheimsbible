@@ -793,9 +793,14 @@
 	</p>
 
 	<p>
-		Two scopes can be searched independently: the verse text and the annotations. Searching the
-		verses finds every occurrence of a word in Scripture. Searching the annotations shows what the
-		translators thought about a passage, which is often as instructive as the verse itself.
+		Two scopes can be searched independently: the verse text and the notes. Searching the verses
+		finds every occurrence of a word in Scripture. Searching the notes covers the full scholarly
+		apparatus the translators assembled: the 1,707 annotations, all marginal notes, and the
+		prefatory reference material from both Testaments, including the prefaces to the reader, the
+		table of corruptions in Protestant translations, the glossary of theological terms, and all
+		other front matter. Results from the reference material appear alongside annotations and verse
+		notes, so a search for a doctrine or a phrase will surface not only what the translators wrote
+		beside a verse but what they argued at length in the prefaces.
 	</p>
 
 	<ul>
@@ -805,9 +810,9 @@
 			naming.
 		</li>
 		<li>
-			<strong>Text search examples:</strong>
-			<em>holocausts</em>, <em>propitiation</em>, <em>wash me</em>. Any word or phrase in the verse
-			text, annotations, and marginal notes across all 76 books.
+			<strong>Notes search examples:</strong>
+			<em>holocausts</em>, <em>propitiation</em>, <em>wash me</em>. Any word or phrase in the
+			annotations, marginal notes, and reference documents across the full edition.
 		</li>
 	</ul>
 
@@ -875,6 +880,12 @@
 		Latin tradition. The Explication is the Original Douay-Rheims' own dictionary of its own
 		vocabulary. When a word in the text is not quite what it seems, the Explication is often the
 		surest guide to what the translators meant.
+	</p>
+
+	<p>
+		All reference material is fully searchable. A search in the notes scope will surface matching
+		passages from the prefaces and reference documents alongside verse annotations and marginal
+		notes, with a link directly to the relevant section.
 	</p>
 
 	<h2>The Original Douay-Rheims in Numbers</h2>
