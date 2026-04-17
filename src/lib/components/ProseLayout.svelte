@@ -292,7 +292,9 @@
 </main>
 
 <aside class="prose-toc" aria-label="Table of contents">
-	<p class="toc-label">Contents</p>
+	{#if isInNav || tocItems.length > 0}
+		<p class="toc-label">Contents</p>
+	{/if}
 	{#if isInNav}
 		<ul class="toc-nav">
 			{#each NAV_ARTICLES as article}

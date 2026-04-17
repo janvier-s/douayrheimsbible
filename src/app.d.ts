@@ -11,6 +11,8 @@ declare global {
 		interface Platform {
 			env: {
 				SEARCH_INDEX: KVNamespace;
+				RESEND_API_KEY?: string;
+				CONTACT_EMAIL?: string;
 			};
 		}
 	}
