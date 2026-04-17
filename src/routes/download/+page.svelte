@@ -106,8 +106,9 @@
 				<td>Complete Bible with annotations and notes</td>
 				<td class="dl-size">27 MB</td>
 				<td>
-					<a href="/downloads/Original-Douay-Rheims-Bible-Merged.pdf" download class="dl-link"
-						>Download</a
+					<a
+						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible-Merged.pdf"
+						class="dl-link">Download</a
 					>
 				</td>
 			</tr>
@@ -116,7 +117,10 @@
 				<td>New Testament, text only (no notes)</td>
 				<td class="dl-size">4.8 MB</td>
 				<td>
-					<a href="/downloads/Original-Douay-Rheims-Bible.pdf" download class="dl-link">Download</a>
+					<a
+						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible.pdf"
+						class="dl-link">Download</a
+					>
 				</td>
 			</tr>
 		</tbody>
