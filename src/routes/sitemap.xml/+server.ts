@@ -1,7 +1,9 @@
 import { ALL_BOOKS } from '$lib/data/books';
 
-// Translation prefixes with live data — add entries here as translations are imported
-const LIVE_TRANSLATIONS = ['odr'] as const;
+// Translation prefixes with live data — all books (OT + NT)
+const LIVE_TRANSLATIONS = ['odr', 'vul', 'drc', 'knox', 'kjv', 'cpdv'] as const;
+// NT-only translations
+const LIVE_TRANSLATIONS_NT_ONLY = ['conf'] as const;
 
 const SITE = 'https://thedouayrheims.com';
 
@@ -13,11 +15,21 @@ export function GET() {
 	// Homepage
 	urls.push(entry('/', '1.0', 'monthly'));
 
-	// Chapter pages for each live translation
+	// Chapter pages for each live translation (OT + NT)
 	for (const prefix of LIVE_TRANSLATIONS) {
+		const priority = prefix === 'odr' ? '0.8' : '0.7';
 		for (const book of ALL_BOOKS) {
 			for (let ch = 1; ch <= book.chapters; ch++) {
-				urls.push(entry(`/${prefix}/${book.slug}/${ch}`, '0.8', 'yearly'));
+				urls.push(entry(`/${prefix}/${book.slug}/${ch}`, priority, 'yearly'));
+			}
+		}
+	}
+
+	// NT-only translations
+	for (const prefix of LIVE_TRANSLATIONS_NT_ONLY) {
+		for (const book of ALL_BOOKS.filter((b) => b.testament === 'NT')) {
+			for (let ch = 1; ch <= book.chapters; ch++) {
+				urls.push(entry(`/${prefix}/${book.slug}/${ch}`, '0.7', 'yearly'));
 			}
 		}
 	}
