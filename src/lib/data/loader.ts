@@ -1,4 +1,5 @@
 import type { BookData, Chapter, ChapterAnnotations } from './types';
+import type { TranslationBook } from './translation-types';
 
 const bookCache = new Map<string, Promise<BookData>>();
 const resolvedCache = new Map<string, BookData>();
@@ -51,4 +52,29 @@ export function loadAnnotations(
 		annotationCache.set(key, promise);
 	}
 	return annotationCache.get(key)!;
+}
+
+// ── Non-ODR translation books ─────────────────────────────────────
+
+const translationBookCache = new Map<string, Promise<TranslationBook>>();
+
+/**
+ * Fetches a non-ODR translation book from /data/{id}/{slug}.json.
+ * Caches per `{id}/{slug}` key. Follows the same pattern as loadBook().
+ */
+export function loadTranslationBook(
+	id: string,
+	slug: string,
+	fetch: typeof globalThis.fetch
+): Promise<TranslationBook> {
+	const key = `${id}/${slug}`;
+	if (!translationBookCache.has(key)) {
+		const promise = fetch(`/data/${id}/${slug}.json`).then((res) => {
+			if (!res.ok) throw new Error(`Book not found: ${id}/${slug}`);
+			return res.json() as Promise<TranslationBook>;
+		});
+		promise.then(null, () => translationBookCache.delete(key));
+		translationBookCache.set(key, promise);
+	}
+	return translationBookCache.get(key)!;
 }
