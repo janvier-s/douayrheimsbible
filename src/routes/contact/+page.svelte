@@ -91,16 +91,6 @@
 		}
 	}
 
-	function resetForm() {
-		formState = 'idle';
-		errorMessage = '';
-		subject = '';
-		reference = '';
-		email = '';
-		message = '';
-		honeypot = '';
-		touched = { subject: false, email: false, message: false };
-	}
 </script>
 
 <svelte:head>
@@ -126,9 +116,7 @@
 			<p class="success-body">
 				Thank you for writing.<br />A reply will follow in due course.
 			</p>
-			<button class="back-link" onclick={resetForm}>
-				<span aria-hidden="true">&#8592;</span> Back
-			</button>
+			<a class="back-link" href="/odr/genesis/1">Back to reading →</a>
 		</div>
 	{:else}
 		<form class="contact-form" onsubmit={handleSubmit} novalidate>
