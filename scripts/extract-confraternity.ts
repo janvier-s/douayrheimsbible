@@ -429,6 +429,38 @@ function parseIntroduction(html: string, slug: string): IntroData {
 	return { book: slug, bibleIntro, commentaryIntro };
 }
 
+// ── Front/back matter ─────────────────────────────────────────
+function extractMatterContent(html: string): string[] {
+	const root = parse(html);
+	const body = root.querySelector('body');
+	if (!body) return [];
+
+	const children = body.childNodes.filter((n) => n instanceof HTMLElement) as HTMLElement[];
+	const content: string[] = [];
+
+	// Skip h2 title, extract all p elements
+	let startIdx = 0;
+	for (let i = 0; i < children.length; i++) {
+		if (children[i].tagName === 'H2') {
+			startIdx = i + 1;
+			break;
+		}
+	}
+
+	for (let i = startIdx; i < children.length; i++) {
+		const el = children[i];
+		if (el.tagName === 'P') {
+			const cleaned = cleanParagraph(el);
+			const plain = cleaned.replace(/<[^>]+>/g, '').trim();
+			if (plain && plain.length > 0) {
+				content.push(cleaned);
+			}
+		}
+	}
+
+	return content;
+}
+
 // ── Chapter verse counts ──────────────────────────────────────
 function getChapterVerseCount(slug: string, chapter: number): number {
 	const bookPath = path.join(STATIC_DIR, 'conf', `${slug}.json`);
@@ -467,12 +499,18 @@ function main() {
 
 	const intros = classified.filter((f) => f.type === 'introduction');
 	const chapters = classified.filter((f) => f.type === 'chapter');
+	const frontMatter = classified.filter((f) => f.type === 'front-matter');
+	const backMatter = classified.filter((f) => f.type === 'back-matter');
 
-	console.log(`Classified: ${intros.length} introductions, ${chapters.length} chapters`);
+	console.log(
+		`Classified: ${intros.length} introductions, ${chapters.length} chapters, ${frontMatter.length} front-matter, ${backMatter.length} back-matter`
+	);
 
 	const footnotesDir = path.join(STATIC_DIR, 'conf-footnotes');
 	const commentaryDir = path.join(STATIC_DIR, 'conf-commentary');
 	const introsDir = path.join(STATIC_DIR, 'conf-intros');
+	const frontDir = path.join(STATIC_DIR, 'conf-front');
+	const backDir = path.join(STATIC_DIR, 'conf-back');
 
 	// Process introductions
 	let introCount = 0;
@@ -515,6 +553,35 @@ function main() {
 	}
 
 	console.log(`Wrote ${fnCount} footnote files, ${cmCount} commentary files`);
+
+	// Process front matter
+	let frontContent: string[] = [];
+	for (const fm of frontMatter) {
+		const html = fs.readFileSync(fm.path, 'utf-8');
+		const content = extractMatterContent(html);
+		frontContent = frontContent.concat(content);
+	}
+	if (frontContent.length > 0) {
+		fs.mkdirSync(frontDir, { recursive: true });
+		const frontData = { paragraphs: frontContent };
+		fs.writeFileSync(path.join(frontDir, 'content.json'), JSON.stringify(frontData, null, 2));
+		console.log(`Wrote front matter (${frontContent.length} paragraphs)`);
+	}
+
+	// Process back matter
+	let backContent: string[] = [];
+	for (const bm of backMatter) {
+		const html = fs.readFileSync(bm.path, 'utf-8');
+		const content = extractMatterContent(html);
+		backContent = backContent.concat(content);
+	}
+	if (backContent.length > 0) {
+		fs.mkdirSync(backDir, { recursive: true });
+		const backData = { paragraphs: backContent };
+		fs.writeFileSync(path.join(backDir, 'content.json'), JSON.stringify(backData, null, 2));
+		console.log(`Wrote back matter (${backContent.length} paragraphs)`);
+	}
+
 	console.log('Done!');
 }
 

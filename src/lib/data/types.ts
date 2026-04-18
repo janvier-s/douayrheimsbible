@@ -63,6 +63,14 @@ export interface ConfIntro {
 	commentaryIntro: string[];
 }
 
+export interface ConfFrontMatter {
+	paragraphs: string[];
+}
+
+export interface ConfBackMatter {
+	paragraphs: string[];
+}
+
 // ── Legacy inline annotation (kept for intro system) ─────────────
 
 export interface InlineAnnotation {

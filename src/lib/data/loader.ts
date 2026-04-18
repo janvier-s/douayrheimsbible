@@ -4,7 +4,9 @@ import type {
 	ChapterAnnotations,
 	ConfChapterFootnotes,
 	ConfChapterCommentary,
-	ConfIntro
+	ConfIntro,
+	ConfFrontMatter,
+	ConfBackMatter
 } from './types';
 import type { TranslationBook, TranslationNote } from './translation-types';
 
@@ -183,4 +185,34 @@ export function loadTranslationBook(
 		translationBookCache.set(key, promise);
 	}
 	return translationBookCache.get(key)!;
+}
+
+// ── Confraternity front/back matter (book-level content) ──────────
+
+let frontMatterPromise: Promise<ConfFrontMatter | null> | null = null;
+
+/** Fetches the Confraternity front matter (shared across all books). Returns null on 404. */
+export function loadConfFrontMatter(
+	fetch: typeof globalThis.fetch
+): Promise<ConfFrontMatter | null> {
+	if (!frontMatterPromise) {
+		frontMatterPromise = fetch(`/data/conf-front/content.json`).then((res) => {
+			if (!res.ok) return null;
+			return res.json() as Promise<ConfFrontMatter>;
+		});
+	}
+	return frontMatterPromise;
+}
+
+let backMatterPromise: Promise<ConfBackMatter | null> | null = null;
+
+/** Fetches the Confraternity back matter (shared across all books). Returns null on 404. */
+export function loadConfBackMatter(fetch: typeof globalThis.fetch): Promise<ConfBackMatter | null> {
+	if (!backMatterPromise) {
+		backMatterPromise = fetch(`/data/conf-back/content.json`).then((res) => {
+			if (!res.ok) return null;
+			return res.json() as Promise<ConfBackMatter>;
+		});
+	}
+	return backMatterPromise;
 }
