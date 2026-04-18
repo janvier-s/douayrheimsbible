@@ -1,14 +1,13 @@
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { loadTranslationBook } from '$lib/data/loader';
+import { loadTranslationBook, loadTranslationNotes, loadConfIntro } from '$lib/data/loader';
 import { getBookBySlug } from '$lib/data/books';
 import { TRANSLATIONS } from '$lib/stores/compare';
-import type { TranslationChapter } from '$lib/data/translation-types';
+import type { TranslationChapter, TranslationNote } from '$lib/data/translation-types';
 
 export const load: PageLoad = async ({ params, fetch }) => {
   const { translation: translationId, book: slug, chapter: chapterStr } = params;
 
-  // Only accept known live non-ODR translations
   const translation = TRANSLATIONS.find((t) => t.id === translationId && t.live && t.id !== 'odr');
   if (!translation) throw error(404, `Unknown translation: ${translationId}`);
 
@@ -22,7 +21,15 @@ export const load: PageLoad = async ({ params, fetch }) => {
   const chapterNum = parseInt(chapterStr, 10);
   if (isNaN(chapterNum) || chapterNum < 1) throw error(404, `Invalid chapter: ${chapterStr}`);
 
-  const book = await loadTranslationBook(translationId, slug, fetch);
+  const hasNotes = translationId === 'drc' || translationId === 'cpdv';
+  const hasIntro = translationId === 'conf';
+
+  const [book, notes, intro] = await Promise.all([
+    loadTranslationBook(translationId, slug, fetch),
+    hasNotes ? loadTranslationNotes(translationId, slug, chapterNum, fetch) : Promise.resolve(null),
+    hasIntro ? loadConfIntro(slug, fetch) : Promise.resolve(null),
+  ]);
+
   const chapter: TranslationChapter | undefined = book.chapters.find((c) => c.chapter === chapterNum);
   if (!chapter) throw error(404, `Chapter ${chapterNum} not found`);
 
@@ -30,6 +37,8 @@ export const load: PageLoad = async ({ params, fetch }) => {
     translation,
     bookMeta,
     chapter,
-    totalChapters: book.chapters.length
+    totalChapters: book.chapters.length,
+    notes: notes as TranslationNote[] | null,
+    intro: intro as string[] | null,
   };
 };
