@@ -37,6 +37,7 @@
 		role="dialog"
 		aria-modal="true"
 		aria-labelledby="prayer-title"
+		tabindex="-1"
 		on:click={handleBackdrop}
 		on:keydown={handleKey}
 	>

@@ -41,7 +41,7 @@ function cleanText(text: string): string {
 }
 
 const MINISEARCH_OPTIONS = {
-	fields: ['text'] as const,
+	fields: ['text'] as string[],
 	storeFields: [] as string[],
 	tokenize: searchTokenizer,
 	processTerm
