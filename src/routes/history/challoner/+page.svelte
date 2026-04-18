@@ -61,15 +61,15 @@
 		of his own day.
 	</p>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Portrait of Bishop Richard Challoner (1691–1781), Vicar Apostolic of the London District"
-		></div>
-		<figcaption>
-			Bishop Richard Challoner, whose revisions of 1749–1752 transformed the Douay-Rheims into the
-			form most Catholics know today
-		</figcaption>
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/richard-challoner.webp"
+			alt="Portrait of Bishop Richard Challoner (1691–1781), Vicar Apostolic of the London District"
+			width="400"
+			height="487"
+			loading="lazy"
+		/>
+		<figcaption>Bishop Richard Challoner (1691–1781)</figcaption>
 	</figure>
 
 	<h2>What He Changed</h2>
@@ -295,17 +295,6 @@
 		in Martin's text; in Challoner's it is dissolved into a description. The same pattern recurs
 		throughout the Old Testament wherever the Vulgate uses "christum" in a Messianic context.
 	</p>
-
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Side-by-side comparison of the original Douay-Rheims (1609) and Challoner revision showing 1 Kings 12:3 with 'his Christ' vs 'his anointed'"
-		></div>
-		<figcaption>
-			A comparison of the original Douay-Rheims and Challoner texts at 1 Kings 12:3, illustrating
-			the systematic replacement of "his Christ" with "his anointed"
-		</figcaption>
-	</figure>
 
 	<p>
 		For readers who wish to examine the differences in detail,

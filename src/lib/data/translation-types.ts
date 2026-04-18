@@ -18,9 +18,3 @@ export interface TranslationBook {
 	book: string;
 	chapters: TranslationChapter[];
 }
-
-/** Book introduction for a non-ODR translation (e.g. Confraternity). */
-export interface TranslationIntro {
-	/** Plain-text paragraphs — no inline markers. */
-	paragraphs: string[];
-}

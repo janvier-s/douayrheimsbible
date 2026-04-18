@@ -3,16 +3,6 @@ import { error } from '@sveltejs/kit';
 import { loadBook, getChapter, loadTranslationBook } from '$lib/data/loader';
 import { getBookBySlug } from '$lib/data/books';
 import { TRANSLATIONS } from '$lib/stores/compare';
-import type { TranslationChapter } from '$lib/data/translation-types';
-
-export function buildVerseMap(
-	chapters: TranslationChapter[],
-	chapterNum: number
-): Map<number, string> {
-	const ch = chapters.find((c) => c.chapter === chapterNum);
-	if (!ch) return new Map();
-	return new Map(ch.verses.map((v) => [v.verse, v.text]));
-}
 
 export const load: PageLoad = async ({ params, fetch }) => {
 	const { book: slug, chapter: chapterStr } = params;
@@ -37,18 +27,19 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		otherTranslations.map((t) => loadTranslationBook(t.id, slug, fetch))
 	);
 
-	// Build verse map per translation
-	const verseMaps: Record<string, Map<number, string>> = {
-		odr: new Map(chapter.verses.map((v) => [v.verse, v.text]))
+	// Build verse map per translation (plain objects — Map is not serializable by SvelteKit)
+	const verseMaps: Record<string, Record<number, string>> = {
+		odr: Object.fromEntries(chapter.verses.map((v) => [v.verse, v.text]))
 	};
 
 	for (let i = 0; i < otherTranslations.length; i++) {
 		const result = translationResults[i];
 		const t = otherTranslations[i];
 		if (result.status === 'fulfilled') {
-			verseMaps[t.id] = buildVerseMap(result.value.chapters, chapterNum);
+			const ch = result.value.chapters.find((c) => c.chapter === chapterNum);
+			verseMaps[t.id] = ch ? Object.fromEntries(ch.verses.map((v) => [v.verse, v.text])) : {};
 		} else {
-			verseMaps[t.id] = new Map(); // empty if translation unavailable for this book
+			verseMaps[t.id] = {};
 		}
 	}
 

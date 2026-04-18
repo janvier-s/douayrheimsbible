@@ -1,3 +1,3 @@
 export function load() {
-  return { hasStudyMode: true };
+	return { hasStudyMode: true };
 }

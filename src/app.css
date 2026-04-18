@@ -369,6 +369,28 @@ body {
 	margin: 2rem 0;
 }
 
+.article-figure img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 2px;
+}
+
+.article-figure--float {
+	float: right;
+	width: 200px;
+	margin: 0 0 1rem 1.5rem;
+	clear: right;
+}
+
+@media (max-width: 540px) {
+	.article-figure--float {
+		float: none;
+		width: 100%;
+		margin: 1.5rem 0;
+	}
+}
+
 .article-figure-placeholder {
 	position: relative;
 	width: 100%;

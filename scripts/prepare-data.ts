@@ -10,23 +10,23 @@ const OUT_DIR = join(PROJECT_ROOT, 'static', 'data', 'odr');
 const ODR_PARENT = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR');
 
 export const SLUG_REMAP_DRC_KNOX: Record<string, string> = {
-	'josue': 'joshua',
-	'jeremie': 'jeremiah',
-	'ezechiel': 'ezekiel',
-	'isaie': 'isaiah',
-	'micheas': 'micah',
-	'osee': 'hosea',
-	'aggeus': 'haggai',
-	'zacharias': 'zechariah',
-	'sophonias': 'zephaniah',
-	'malachie': 'malachi',
-	'abdias': 'obadiah',
-	'jonas': 'jonah',
-	'habacuc': 'habakkuk',
-	'tobias': 'tobit',
-	'ecclesiasticus': 'sirach',
+	josue: 'joshua',
+	jeremie: 'jeremiah',
+	ezechiel: 'ezekiel',
+	isaie: 'isaiah',
+	micheas: 'micah',
+	osee: 'hosea',
+	aggeus: 'haggai',
+	zacharias: 'zechariah',
+	sophonias: 'zephaniah',
+	malachie: 'malachi',
+	abdias: 'obadiah',
+	jonas: 'jonah',
+	habacuc: 'habakkuk',
+	tobias: 'tobit',
+	ecclesiasticus: 'sirach',
 	'canticle-of-canticles': 'song-of-solomon',
-	'apocalypse': 'revelation',
+	apocalypse: 'revelation',
 	'1-machabees': '1-maccabees',
 	'2-machabees': '2-maccabees',
 	'1-kings': '1-samuel',
@@ -56,13 +56,29 @@ export function reverseRemapSlug(modernSlug: string, map: Record<string, string>
 }
 
 const TRANSLATIONS_TO_COPY = [
-	{ id: 'vul',  srcDir: join(ODR_PARENT, 'VUL_CL', 'JSON_Converted'), remap: false },
-	{ id: 'drc',  srcDir: join(ODR_PARENT, 'DRC', 'JSON_drbo'), remap: true  },
-	{ id: 'knox', srcDir: join(ODR_PARENT, 'Knox', 'JSON_converted'), remap: true  },
-	{ id: 'kjv',  srcDir: join(ODR_PARENT, 'KJV', 'JSON_Converted'), remap: false },
+	{ id: 'vul', srcDir: join(ODR_PARENT, 'VUL_CL', 'JSON_Converted'), remap: false },
+	{ id: 'drc', srcDir: join(ODR_PARENT, 'DRC', 'JSON_drbo'), remap: true },
+	{ id: 'knox', srcDir: join(ODR_PARENT, 'Knox', 'JSON_converted'), remap: true },
+	{ id: 'kjv', srcDir: join(ODR_PARENT, 'KJV', 'JSON_Converted'), remap: false },
 	{ id: 'cpdv', srcDir: join(ODR_PARENT, 'CPDV', 'JSON_Converted'), remap: false },
-	{ id: 'conf', srcDir: join(ODR_PARENT, 'Confraternity', 'JSON_Converted'), remap: false },
+	{ id: 'conf', srcDir: join(ODR_PARENT, 'Confraternity', 'JSON_Converted'), remap: false }
 ] as const;
+
+/** Clean translation verse text at build time so JSON/API consumers get clean data. */
+function cleanVerseText(text: string): string {
+	return (
+		text
+			// KJV: USFM word-level markup  \+w WORD|strong="HXXXX"\+w*
+			.replace(/\\\+w\s+(.*?)\|[^\\]*\\\+w\*/g, '$1')
+			// KJV: pilcrow paragraph markers
+			.replace(/¶\s*/g, '')
+			// Vulgate: section bracket markers
+			.replace(/[\[\]]/g, '')
+			// Collapse runs of whitespace
+			.replace(/  +/g, ' ')
+			.trim()
+	);
+}
 
 async function main() {
 	// Source data lives in SCRIPTURA (local only) — skip book copying on CI where
@@ -109,7 +125,9 @@ async function main() {
 		try {
 			await access(translation.srcDir);
 		} catch {
-			console.log(`Translation source not found at ${translation.srcDir} — skipping ${translation.id}.`);
+			console.log(
+				`Translation source not found at ${translation.srcDir} — skipping ${translation.id}.`
+			);
 			continue;
 		}
 
@@ -141,12 +159,15 @@ async function main() {
 			// Write minimal JSON: only book and chapters (with chapter/verse/text)
 			const minimal = {
 				book: data.book,
-				chapters: (data.chapters as Array<{ chapter: unknown; verses: Array<{ verse: unknown; text: unknown }> }>).map(
-					(ch) => ({
-						chapter: ch.chapter,
-						verses: ch.verses.map((v) => ({ verse: v.verse, text: v.text }))
-					})
-				)
+				chapters: (
+					data.chapters as Array<{
+						chapter: unknown;
+						verses: Array<{ verse: number; text: string }>;
+					}>
+				).map((ch) => ({
+					chapter: ch.chapter,
+					verses: ch.verses.map((v) => ({ verse: v.verse, text: cleanVerseText(v.text) }))
+				}))
 			};
 
 			await writeFile(join(translationOutDir, `${odrSlug}.json`), JSON.stringify(minimal));
@@ -171,7 +192,9 @@ async function main() {
 			if (!file.endsWith('.json')) continue;
 
 			const raw = await readFile(join(drcNotesSrc, file), 'utf-8');
-			const data = JSON.parse(raw) as { chapters?: Array<{ chapter: number; notes?: Array<{ verse: number; text: string }> }> };
+			const data = JSON.parse(raw) as {
+				chapters?: Array<{ chapter: number; notes?: Array<{ verse: number; text: string }> }>;
+			};
 			if (!Array.isArray(data.chapters)) continue;
 
 			// DRC files use modern-name slugs — reverse-remap to ODR slug
@@ -206,7 +229,9 @@ async function main() {
 			if (!file.endsWith('.json')) continue;
 
 			const raw = await readFile(join(cpdvNotesSrc, file), 'utf-8');
-			const data = JSON.parse(raw) as { notes?: Array<{ chapter: number; verse: number; note: string }> };
+			const data = JSON.parse(raw) as {
+				notes?: Array<{ chapter: number; verse: number; note: string }>;
+			};
 			if (!Array.isArray(data.notes)) continue;
 
 			// CPDV uses ODR-compatible slugs — no remap needed

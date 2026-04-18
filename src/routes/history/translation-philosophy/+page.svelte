@@ -70,17 +70,6 @@
 		Scripture; her Bible was the Bible.
 	</p>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Title page of the Rheims New Testament (1582) showing the words 'translated faithfully into English out of the authentical Latin'"
-		></div>
-		<figcaption>
-			Title page of the Rheims New Testament (1582), declaring the Vulgate as the translation's
-			authority
-		</figcaption>
-	</figure>
-
 	<h2>The Title Page States It Plainly</h2>
 
 	<p>
@@ -152,6 +141,17 @@
 
 	<h2>The Vocabulary That Resulted</h2>
 
+	<figure class="article-figure article-figure--float">
+		<div
+			class="article-figure-placeholder"
+			data-label="Scan of Matthew 6:11 from the 1582 Rheims NT showing 'supersubstantial bread' alongside the Latin 'panem supersubstantialem' — Internet Archive first edition"
+		></div>
+		<figcaption>
+			Matthew 6:11 in the 1582 Rheims NT: "supersubstantial bread" — a direct rendering of Jerome's
+			<em>panem supersubstantialem</em>, with no modern equivalent
+		</figcaption>
+	</figure>
+
 	<p>
 		The practical consequence of translating from the Vulgate was a distinctive English vocabulary,
 		unlike any other Bible translation before or since. Gregory Martin coined or preserved words
@@ -177,17 +177,6 @@
 		noted that the result was "so full of Latinisms as to be in places hardly intelligible," and the translators
 		included a glossary, acknowledging the difficulty openly.
 	</p>
-
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Detail from the 1582 Rheims New Testament showing a passage with distinctive Latinate vocabulary such as 'supersubstantial' or 'exinanited,' with the Latin Vulgate alongside"
-		></div>
-		<figcaption>
-			A passage from the 1582 Rheims New Testament illustrating the Latinate vocabulary that
-			directly reflects the Vulgate source
-		</figcaption>
-	</figure>
 
 	<h2>What the Fidelity Gave</h2>
 

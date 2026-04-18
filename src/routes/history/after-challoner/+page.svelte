@@ -70,15 +70,15 @@
 
 	<h2>Cotton's Catalogue</h2>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Title page or frontispiece of Henry Cotton's 'Rhemes and Doway' (Oxford University Press, 1855), cataloguing nearly 300 Catholic English Bible editions"
-		></div>
-		<figcaption>
-			Henry Cotton's <em>Rhemes and Doway</em> (1855), the authoritative catalogue of every Catholic English
-			Bible edition from 1582 to the mid-nineteenth century
-		</figcaption>
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/cotton-rhemes-doway.webp"
+			alt="Title page of Henry Cotton's Rhemes and Doway (Oxford University Press, 1855)"
+			width="400"
+			height="681"
+			loading="lazy"
+		/>
+		<figcaption>Henry Cotton, <em>Rhemes and Doway</em> (1855)</figcaption>
 	</figure>
 
 	<p>

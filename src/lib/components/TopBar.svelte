@@ -33,7 +33,9 @@
 	$: showTabBar = true;
 
 	$: liveTranslations = TRANSLATIONS.filter((t) => t.live && !t.hidden);
-	$: currentTranslation = liveTranslations.find((t) => t.id === translationId) ?? liveTranslations.find((t) => t.id === 'odr')!;
+	$: currentTranslation =
+		liveTranslations.find((t) => t.id === translationId) ??
+		liveTranslations.find((t) => t.id === 'odr')!;
 
 	let navOpen = false;
 	let prefsOpen = false;
@@ -59,12 +61,15 @@
 	$: prevBook = isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null;
 	$: nextBook = isChapterPage && bookMeta ? (getNextNavBook(bookMeta.slug) ?? null) : null;
 
+	$: routeBase = translationId === 'odr' ? '/odr' : `/${translationId}`;
 	$: chapterNumInt = parseInt(chapterNum, 10);
 	$: prevChapterHref =
-		isChapterPage && bookMeta && chapterNumInt > 1 ? `/odr/${bookSlug}/${chapterNumInt - 1}` : null;
+		isChapterPage && bookMeta && chapterNumInt > 1
+			? `${routeBase}/${bookSlug}/${chapterNumInt - 1}`
+			: null;
 	$: nextChapterHref =
 		isChapterPage && bookMeta && chapterNumInt < bookMeta.chapters
-			? `/odr/${bookSlug}/${chapterNumInt + 1}`
+			? `${routeBase}/${bookSlug}/${chapterNumInt + 1}`
 			: null;
 
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
@@ -100,7 +105,7 @@
 				goto(`/compare/${slug}/${ch}`);
 			} else {
 				prefs.update((p) => ({ ...p, readingMode: key as 'reading' | 'study' }));
-				goto(`/odr/${slug}/${ch}`);
+				goto(`${routeBase}/${slug}/${ch}`);
 			}
 			return;
 		}
@@ -213,7 +218,9 @@
 						navOpen = false;
 					}}
 				>
-					<span class="text-[11px] md:text-[14px] leading-tight font-medium">{currentTranslation.abbr}</span>
+					<span class="text-[11px] md:text-[14px] leading-tight font-medium"
+						>{currentTranslation.abbr}</span
+					>
 					<span
 						class="text-[12px] opacity-70 {translationOpen ? 'text-white/70' : ''} leading-none"
 						aria-hidden="true"
@@ -224,35 +231,52 @@
 				{#if translationOpen}
 					<div
 						transition:slide={{ duration: 180 }}
-						class="absolute top-[calc(100%+8px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-50 w-64 font-ui text-sm"
+						class="absolute top-[calc(100%+8px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-[60] w-72 font-ui"
 					>
-						<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-medium">
+						<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-semibold">
 							Translation
 						</p>
 						{#each liveTranslations as t (t.id)}
 							{@const isCurrent = t.id === translationId}
-							{@const href = t.id === 'odr'
-								? `/odr/${bookSlug}/${chapterNum}`
-								: `/${t.id}/${bookSlug}/${chapterNum}`}
+							{@const href =
+								t.id === 'odr'
+									? `/odr/${bookSlug}/${chapterNum}`
+									: `/${t.id}/${bookSlug}/${chapterNum}`}
 							{#if isCurrent}
-								<div class="flex items-center justify-between px-sm py-[7px] rounded-sm bg-accent/10 mb-[2px]">
-									<div class="min-w-0">
-										<span class="text-foreground font-medium text-[13px] block truncate">{t.abbr}</span>
-										{#if t.micro}<span class="text-[10px] text-subtle">{t.micro}</span>{/if}
+								<div
+									class="flex items-center justify-between px-sm py-[8px] rounded-sm bg-accent/10 mb-[2px]"
+								>
+									<div class="min-w-0 leading-snug">
+										<span class="text-foreground font-semibold text-[15px] block truncate"
+											>{t.abbr}</span
+										>
+										{#if t.micro}<span class="text-[11px] text-subtle font-medium block mb-[3px]"
+												>{t.micro}</span
+											>{/if}
 									</div>
-									<span class="text-[10px] text-accent font-semibold tracking-[0.1em] shrink-0 ml-[8px]">✓</span>
+									<span
+										class="text-[11px] text-accent font-semibold tracking-[0.1em] shrink-0 ml-[8px]"
+										>✓</span
+									>
 								</div>
 							{:else}
 								<a
 									{href}
-									on:click={() => { translationOpen = false; }}
-									class="flex items-center justify-between px-sm py-[7px] rounded-sm hover:bg-accent/5 transition-colors duration-fast mb-[2px] block"
+									on:click={() => {
+										translationOpen = false;
+									}}
+									class="flex items-center justify-between px-sm py-[8px] rounded-sm hover:bg-accent/5 transition-colors duration-fast mb-[2px]"
 								>
-									<div class="min-w-0">
-										<span class="text-foreground text-[13px] block truncate">{t.abbr}</span>
-										{#if t.micro}<span class="text-[10px] text-subtle">{t.micro}</span>{/if}
+									<div class="min-w-0 leading-snug">
+										<span class="text-foreground font-medium text-[15px] block truncate"
+											>{t.label}</span
+										>
+										{#if t.micro}<span class="text-[11px] text-subtle font-medium block mb-[3px]"
+												>{t.micro}</span
+											>{/if}
 									</div>
-									<span class="text-[10px] text-subtle shrink-0 ml-[8px]">{t.year}</span>
+									<span class="text-[12px] text-subtle font-medium shrink-0 ml-[8px]">{t.year}</span
+									>
 								</a>
 							{/if}
 						{/each}
@@ -270,7 +294,7 @@
 				>
 					{#if prevBook}
 						<BookNavLink
-							href="/odr/{prevBook.slug}/1"
+							href="{routeBase}/{prevBook.slug}/1"
 							direction="prev"
 							label={bookNavLabel(prevBook)}
 						/>
@@ -311,7 +335,7 @@
 					{/if}
 					{#if nextBook}
 						<BookNavLink
-							href="/odr/{nextBook.slug}/1"
+							href="{routeBase}/{nextBook.slug}/1"
 							direction="next"
 							label={bookNavLabel(nextBook)}
 						/>
@@ -364,5 +388,5 @@
 
 {#if navOpen || prefsOpen || translationOpen}
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="fixed inset-0 z-[57]" role="presentation" on:click={closeAll}></div>
+	<div class="fixed inset-0 z-[49]" role="presentation" on:click={closeAll}></div>
 {/if}

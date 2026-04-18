@@ -1,9 +1,13 @@
-/** Strip <cr>, <na> tags and their content; keep only <i> as HTML italic. */
+/** Strip <cr>, <na> tags and their content; keep only <i> as HTML italic.
+ *  Also strips USFM word-level markup (\+w WORD|strong="HXXXX"\+w*) and ¶ pilcrow markers. */
 export function stripTags(text: string): string {
 	return text
 		.replace(/<cr>[^<]*<\/cr>/g, '')
 		.replace(/<na>[^<]*<\/na>/g, '')
 		.replace(/<(?!\/?i\b)[^>]*>/gi, '')
+		.replace(/\\\+w\s+(.*?)\|[^\\]*\\\+w\*/g, '$1')
+		.replace(/¶\s*/g, '')
+		.replace(/[\[\]]/g, '')
 		.replace(/  +/g, ' ')
 		.trim();
 }

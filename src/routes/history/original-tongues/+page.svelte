@@ -111,14 +111,17 @@
 		scholarly ventures ahead of official sanction, but they demonstrated what was possible.
 	</p>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Portrait of Pope Pius XII, or opening page of the encyclical Divino Afflante Spiritu (September 30, 1943)"
-		></div>
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/pope-pius-xii.webp"
+			alt="Portrait of Pope Pius XII (1876–1958)"
+			width="400"
+			height="574"
+			loading="lazy"
+		/>
 		<figcaption>
-			Pope Pius XII, whose encyclical <em>Divino Afflante Spiritu</em> (1943) authorized Catholic scholars
-			to translate Scripture from the original Hebrew and Greek
+			Pope Pius XII, whose encyclical <em>Divino Afflante Spiritu</em> (1943) authorized translation from
+			the original Hebrew and Greek
 		</figcaption>
 	</figure>
 

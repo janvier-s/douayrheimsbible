@@ -41,6 +41,17 @@
 >
 	<h2>Two Prohibitions</h2>
 
+	<figure class="article-figure article-figure--float">
+		<div
+			class="article-figure-placeholder"
+			data-label="Portrait of Queen Elizabeth I — the Armada Portrait (1588) or similar — Wikimedia Commons"
+		></div>
+		<figcaption>
+			Queen Elizabeth I, under whose reign possession of Catholic texts was a criminal offence and
+			the Rheims New Testament was seized at English ports
+		</figcaption>
+	</figure>
+
 	<p>
 		The Douay-Rheims Bible entered English life under two simultaneous prohibitions. The first came
 		from the Protestant English state, which made possession of Catholic books a criminal offence.
@@ -123,17 +134,6 @@
 		recognized dogma of that Church."
 	</p>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Preface page of the 1582 Rheims New Testament, where the translators state they acted 'not from choice, but from necessity'"
-		></div>
-		<figcaption>
-			Preface of the 1582 Rheims New Testament, in which the translators explain their reasons for
-			producing a vernacular Scripture
-		</figcaption>
-	</figure>
-
 	<h2>The Translators' Own Position</h2>
 
 	<p>
@@ -215,17 +215,6 @@
 	</p>
 
 	<h2>The Price of Possession</h2>
-
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Illustration of Elizabethan customs officers or pursuivants searching for Catholic books and priests, or a document showing recusancy fines"
-		></div>
-		<figcaption>
-			The enforcement of Elizabethan recusancy laws, which made possession of Catholic texts a
-			criminal matter
-		</figcaption>
-	</figure>
 
 	<p>
 		The danger was concrete and documented. The Elizabethan settlement had imposed legal penalties

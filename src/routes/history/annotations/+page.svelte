@@ -55,18 +55,18 @@
 		knew they were writing for an illegal book in a hostile country.
 	</p>
 
+	<h2>Their Character</h2>
+
 	<figure class="article-figure">
 		<div
 			class="article-figure-placeholder"
-			data-label="Page from the 1582 Rheims New Testament showing the dense marginal and interlinear annotations alongside the biblical text"
+			data-label="Scan of a page from the 1582 Rheims NT showing the dense marginal and interlinear annotations alongside the biblical text — Internet Archive first edition"
 		></div>
 		<figcaption>
-			A page from the 1582 Rheims New Testament, with the theological annotations that defined the
-			translation's polemical character
+			A page from the 1582 Rheims New Testament, with theological annotations that often equalled or
+			exceeded the biblical text in length
 		</figcaption>
 	</figure>
-
-	<h2>Their Character</h2>
 
 	<p>
 		<a href="https://archive.org/details/rhemesanddoway00cottuoft">Henry Cotton</a> catalogued the volume

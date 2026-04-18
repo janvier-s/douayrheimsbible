@@ -62,14 +62,16 @@
 		communities did, in a colony whose charter had promised religious tolerance.
 	</p>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Historical illustration or map of the Maryland settlement, 1634, showing the arrival of Lord Baltimore's colonists at the Chesapeake"
-		></div>
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/george-calvert.webp"
+			alt="Portrait of George Calvert, 1st Baron Baltimore (c. 1580–1632), by Daniel Mytens"
+			width="400"
+			height="634"
+			loading="lazy"
+		/>
 		<figcaption>
-			The founding of Maryland (1634), the first English Catholic colony in America, where the
-			Douay-Rheims Bible entered American life
+			George Calvert, 1st Baron Baltimore, whose son Cecil founded the Maryland colony
 		</figcaption>
 	</figure>
 
@@ -114,15 +116,15 @@
 
 	<h2>Bishop Kenrick's Translation</h2>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Portrait of Bishop Francis Patrick Kenrick, or title page of his 1849 New Testament (New York)"
-		></div>
-		<figcaption>
-			Bishop Francis Patrick Kenrick, whose 1849 New Testament was the first major American Catholic
-			biblical translation
-		</figcaption>
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/francis-kenrick.webp"
+			alt="Portrait of Bishop Francis Patrick Kenrick (1797–1863)"
+			width="400"
+			height="300"
+			loading="lazy"
+		/>
+		<figcaption>Bishop Francis Patrick Kenrick (1797–1863)</figcaption>
 	</figure>
 
 	<p>
@@ -161,15 +163,15 @@
 
 	<h2>Bishop Carroll and the First American Edition</h2>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Portrait of Bishop John Carroll (1735–1815), first Catholic bishop of the United States, or the title page of Mathew Carey's 1790 Philadelphia Catholic Bible"
-		></div>
-		<figcaption>
-			John Carroll, first Bishop of Baltimore, who oversaw the first American printing of the
-			Catholic Bible in 1790
-		</figcaption>
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/john-carroll.webp"
+			alt="Portrait of John Carroll (1735–1815), first Catholic bishop of the United States, by Gilbert Stuart"
+			width="400"
+			height="489"
+			loading="lazy"
+		/>
+		<figcaption>John Carroll (1735–1815), first Bishop of Baltimore</figcaption>
 	</figure>
 
 	<p>

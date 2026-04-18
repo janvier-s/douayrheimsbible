@@ -8,7 +8,7 @@
 	import CompareBar from '$lib/components/CompareBar.svelte';
 	import PageFooter from '$lib/components/PageFooter.svelte';
 	import { fade } from 'svelte/transition';
-	import { stripTags } from '$lib/utils/text';
+	import { stripTags, allcapsToSmallcaps } from '$lib/utils/text';
 
 	export let data: PageData;
 
@@ -84,6 +84,7 @@
 
 	// Drag-to-reorder columns
 	let draggingId: TranslationId | null = null;
+	let hoveredVerse: number | null = null;
 
 	function onColDragStart(e: DragEvent, id: TranslationId) {
 		draggingId = id;
@@ -216,45 +217,29 @@
 			{/each}
 		</div>
 
-		<!-- Summary row -->
-		{#if $compareStore.showSummary && chapter.summary && chapter.summary !== '---'}
-			<div
-				class="grid border-b border-border"
-				style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
-			>
-				{#each displayedCols as t, colIdx (t.id)}
-					<div
-						class="px-[20px] py-[14px] max-md:px-[10px] max-md:py-[10px] bg-panel
-						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
-					>
-						{#if t.id === 'odr'}
-							<p class="font-reader italic text-subtle text-[13px] md:text-[14px] leading-relaxed">
-								{@html stripTags(chapter.summary)}
-							</p>
-						{/if}
-					</div>
-				{/each}
-			</div>
-		{/if}
-
 		<!-- Verse grid: one cell per (verse × column) — CSS grid auto-flow aligns rows -->
 		<div
 			class="grid"
 			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
 		>
-			{#each chapter.verses as v (v.verse)}
+			{#each chapter.verses.filter((v) => v.verse > 0) as v (v.verse)}
 				{#each displayedCols as t, colIdx (t.id)}
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<div
-						class="px-[16px] py-[12px] max-md:px-[5px] max-md:py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
+						class="verse-cell px-[16px] py-[12px] max-md:px-[5px] max-md:py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 						class:text-justify={$prefs.justifiedText}
+						class:verse-row-hover={hoveredVerse === v.verse}
+						on:mouseenter={() => (hoveredVerse = v.verse)}
+						on:mouseleave={() => (hoveredVerse = null)}
 					>
 						{#if $prefs.showVerseNumbers}
 							<span
 								class="text-subtle font-ui text-[10px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-fit md:mr-[6px]"
-							>{v.verse}</span>
+								>{v.verse}</span
+							>
 						{/if}
-						<span>{@html stripTags(verseMaps[t.id]?.get(v.verse) ?? '')}</span>
+						<span>{@html allcapsToSmallcaps(stripTags(verseMaps[t.id]?.[v.verse] ?? ''))}</span>
 					</div>
 				{/each}
 			{/each}
@@ -354,5 +339,14 @@
 		font-size: 11px;
 		color: var(--color-subtle);
 		margin: 2px 0 0;
+	}
+
+	/* ─── Verse row hover highlight ────────────────── */
+	.verse-cell {
+		transition: background-color 120ms ease;
+	}
+
+	.verse-row-hover {
+		background-color: color-mix(in srgb, var(--color-accent) 12%, var(--color-panel));
 	}
 </style>

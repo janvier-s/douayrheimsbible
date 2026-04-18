@@ -58,6 +58,17 @@
 		complete work therefore predates the King James Version of 1611 by several decades.
 	</p>
 
+	<figure class="article-figure">
+		<div
+			class="article-figure-placeholder"
+			data-label="Title page of the 1582 Rheims New Testament — 'The New Testament of Jesus Christ translated faithfully into English out of the authentical Latin'"
+		></div>
+		<figcaption>
+			Title page of the Rheims New Testament (1582), the first English Catholic New Testament —
+			Internet Archive scan of the first edition
+		</figcaption>
+	</figure>
+
 	<h2>The Translators</h2>
 
 	<p>

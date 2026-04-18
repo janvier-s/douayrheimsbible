@@ -3,8 +3,9 @@
 	import { browser } from '$app/environment';
 	import { replaceState } from '$app/navigation';
 	import ChapterView from './ChapterView.svelte';
-	import { loadBook, getChapter, getCachedBook } from '$lib/data/loader';
+	import { loadBook, getChapter, getCachedBook, loadTranslationBook } from '$lib/data/loader';
 	import { getPrevNavBook } from '$lib/data/books';
+	import type { Chapter as ChapterType } from '$lib/data/types';
 	import { debounce } from '$lib/utils/debounce';
 	import {
 		shouldLoadNext,
@@ -26,6 +27,26 @@
 	export let targetVerse: number | undefined = undefined;
 	export let enablePrevScroll: boolean = true;
 	export let routeBase: string = '/odr';
+	export let translationId: string = 'odr';
+
+	/** Load a chapter from the correct data source based on translationId */
+	async function fetchChapter(
+		slug: string,
+		chapterNum: number
+	): Promise<{ chapter: ChapterType | undefined; totalChapters: number }> {
+		if (translationId === 'odr') {
+			const bookData = await loadBook(slug, fetch);
+			return { chapter: getChapter(bookData, chapterNum), totalChapters: bookData.chapters.length };
+		} else {
+			const bookData = await loadTranslationBook(translationId, slug, fetch);
+			const ch = bookData.chapters.find((c) => c.chapter === chapterNum);
+			// TranslationChapter is structurally compatible with Chapter
+			return {
+				chapter: ch as ChapterType | undefined,
+				totalChapters: bookData.chapters.length
+			};
+		}
+	}
 
 	interface LoadedChapter {
 		bookMeta: BookMeta;
@@ -140,12 +161,11 @@
 
 		loadingAny = true;
 		try {
-			const bookData = await loadBook(last.bookMeta.slug, fetch);
-			const nextCh = getChapter(bookData, nextChNum);
-			if (nextCh) {
+			const result = await fetchChapter(last.bookMeta.slug, nextChNum);
+			if (result.chapter) {
 				chapters = [
 					...chapters,
-					{ bookMeta: last.bookMeta, chapter: nextCh, totalChapters: last.totalChapters }
+					{ bookMeta: last.bookMeta, chapter: result.chapter, totalChapters: last.totalChapters }
 				];
 				await tick();
 				observeNewHeading(container, ensureObserver(), last.bookMeta.slug, nextChNum);
@@ -180,16 +200,18 @@
 
 		loadingAny = true;
 		try {
-			const bookData = await loadBook(targetBookMeta.slug, fetch);
-			const prevCh = getChapter(bookData, prevChNum);
-			const totalChs = bookData.chapters.length;
-			if (prevCh) {
+			const result = await fetchChapter(targetBookMeta.slug, prevChNum);
+			if (result.chapter) {
 				// Measure immediately before DOM mutation — after tick() below,
 				// newHeight - oldHeight equals exactly the prepended chapter's height.
 				const scrollY = window.scrollY;
 				const oldHeight = document.documentElement.scrollHeight;
 				chapters = [
-					{ bookMeta: targetBookMeta, chapter: prevCh, totalChapters: totalChs },
+					{
+						bookMeta: targetBookMeta,
+						chapter: result.chapter,
+						totalChapters: result.totalChapters
+					},
 					...chapters
 				];
 				await tick();
@@ -280,11 +302,13 @@
 		});
 		observeAllHeadings(container, ensureObserver());
 		window.addEventListener('scroll', onScroll, { passive: true });
-		try {
-			await loadBook(initialBookMeta.slug, fetch);
-			currentBookData = getCachedBook(initialBookMeta.slug);
-		} catch (e) {
-			console.warn('Failed to preload book data:', e);
+		if (translationId === 'odr') {
+			try {
+				await loadBook(initialBookMeta.slug, fetch);
+				currentBookData = getCachedBook(initialBookMeta.slug);
+			} catch (e) {
+				console.warn('Failed to preload book data:', e);
+			}
 		}
 		await tick();
 		// Scroll to top before setting scrollReady so the layout's afterNavigate
@@ -377,7 +401,7 @@
 			on:keydown={resize.onKeydown}
 		></div>
 		<div bind:this={panelEl} class="shrink-0 h-full">
-			<StudyPanel bookData={currentBookData} />
+			<StudyPanel bookData={currentBookData} {translationId} />
 		</div>
 	</div>
 </div>

@@ -24,6 +24,7 @@
 	// navOverride lets non-chapter pages (search) show a contextual reference.
 	$: isChapterPage = !!$page.params.book && !!$page.params.chapter;
 	$: isHomePage = $page.url.pathname === '/';
+	$: translationId = ($page.params.translation as string) ?? 'odr';
 	$: bookSlug = isChapterPage
 		? ($readingPosition?.bookSlug ?? $page.params.book ?? '')
 		: ($navOverride?.bookSlug ?? $page.params.book ?? '');
@@ -102,6 +103,7 @@
 			{isHomePage}
 			hasStudyMode={$page.data.hasStudyMode !== false}
 			minimal={$page.data.topBarMinimal === true}
+			{translationId}
 		/>
 	{/if}
 	<slot />

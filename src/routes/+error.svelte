@@ -21,8 +21,7 @@
 		500: {
 			latin: 'Scriptorium in Confusione',
 			heading: 'Something Went Wrong',
-			message:
-				'Something hath gone awry in our scriptorium. Our scribes are working to restore order.'
+			message: 'Something went wrong on our end. Please try again or navigate to another page.'
 		}
 	};
 

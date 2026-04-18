@@ -503,6 +503,31 @@
 		further modern reference.
 	</p>
 
+	<p>
+		Up to seven translations can be displayed at once. Column headers can be grabbed and dragged to
+		reorder the columns as needed. Hovering over a verse highlights the entire row across all
+		columns, making it easier to track the same verse across translations.
+	</p>
+
+	<figure class="screenshot-fig">
+		<a href="/compare/genesis/1" class="screenshot-link">
+			<picture>
+				<source srcset="/images/about/compare.webp" type="image/webp" />
+				<img
+					src="/images/about/compare.jpg"
+					alt="Compare mode showing John Chapter 1 across four translations side by side: Clementine Vulgate, Original Douay-Rheims, King James Version, and Douay-Rheims Challoner, with row highlight on hover"
+					width="1140"
+					height="715"
+					loading="lazy"
+				/>
+			</picture>
+		</a>
+		<figcaption>
+			Compare mode. Clementine Vulgate, Original Douay-Rheims, KJV, and Challoner placed side by
+			side.
+		</figcaption>
+	</figure>
+
 	<h2>The Translations</h2>
 
 	<p>
@@ -530,7 +555,7 @@
 			King James Version. The standard English Catholic Bible for two centuries and still widely used.
 			The comparison between the two Douay texts is the most instructive available on this site: it shows
 			exactly what was gained in readability and what was sacrificed in fidelity. Challoner's edition
-			also carries its own study notes, available in the study panel.
+			carries its own study notes, available in the study panel alongside the text.
 		</li>
 		<li>
 			<strong>Confraternity New Testament (1941):</strong> A revision of the Challoner New Testament sponsored
@@ -538,7 +563,8 @@
 			accurate than Challoner in several places, it served as the standard New Testament for American
 			Catholics through the mid-twentieth century. Only the New Testament was completed; before the Old
 			Testament could be finished, the project shifted to the original languages and became what would
-			eventually be published as the New American Bible.
+			eventually be published as the New American Bible. Each book is accompanied by an introduction,
+			available in the study panel.
 		</li>
 		<li>
 			<strong>Knox Bible (1945–1949):</strong> Ronald Knox's complete translation from the Vulgate into
@@ -550,7 +576,8 @@
 		<li>
 			<strong>Catholic Public Domain Version (2009):</strong> A modern translation of the Vulgate by Ronald
 			Conte Jr., freely available without copyright restriction. More literal in approach than Knox, more
-			modern in vocabulary than Challoner. The CPDV is accompanied on this site by study notes.
+			modern in vocabulary than Challoner. The CPDV is accompanied by translator's notes, available in
+			the study panel.
 		</li>
 		<li>
 			<strong>King James Version (1611):</strong> A Protestant translation from the Hebrew and Greek,

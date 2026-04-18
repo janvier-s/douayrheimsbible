@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildVerseMap } from '../../src/routes/compare/[book]/[chapter]/+page.js';
+import { buildVerseMap } from '../../src/lib/utils/verse-map.js';
 
 describe('buildVerseMap', () => {
 	it('indexes verses by verse number', () => {
@@ -13,12 +13,12 @@ describe('buildVerseMap', () => {
 			}
 		];
 		const map = buildVerseMap(chapters, 1);
-		expect(map.get(1)).toBe('In the beginning');
-		expect(map.get(2)).toBe('And the earth');
+		expect(map[1]).toBe('In the beginning');
+		expect(map[2]).toBe('And the earth');
 	});
 
-	it('returns empty map for missing chapter', () => {
+	it('returns empty object for missing chapter', () => {
 		const map = buildVerseMap([], 1);
-		expect(map.size).toBe(0);
+		expect(Object.keys(map).length).toBe(0);
 	});
 });

@@ -231,16 +231,8 @@
 			</div>
 		</div>
 
-		<!-- Right: summary + text options -->
+		<!-- Right: text options -->
 		<div class="shrink-0 flex items-center gap-[8px] md:gap-[20px] md:ml-auto">
-			<button
-				on:click={() => compareStore.toggleSummary()}
-				class="hidden sm:block text-[13px] font-medium text-muted hover:text-foreground transition-colors duration-fast"
-			>
-				Summary: <span class={$compareStore.showSummary ? 'text-accent' : ''}
-					>{$compareStore.showSummary ? 'on' : 'off'}</span
-				>
-			</button>
 			<!-- Desktop: text button -->
 			<button
 				class="hidden sm:flex px-[8px] h-[28px] items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium

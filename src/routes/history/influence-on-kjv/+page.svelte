@@ -71,15 +71,14 @@
 		without anyone planning it that way, one of the working texts of the Protestant masterpiece.
 	</p>
 
-	<figure class="article-figure">
+	<figure class="article-figure article-figure--float">
 		<div
 			class="article-figure-placeholder"
-			data-label="Title page of William Fulke's parallel edition (1589), showing the Rheims and Bishops' Bible in double columns"
+			data-label="Title page of the King James Bible (1611) — Wikimedia Commons"
 		></div>
 		<figcaption>
-			William Fulke's parallel edition (1589), which placed the <a href="/history/rheims-1582"
-				>1582 Rheims New Testament</a
-			> in Protestant hands and made it available to the King James translators
+			Title page of the King James Version (1611), which drew significantly on the Rheims New
+			Testament its translators had studied
 		</figcaption>
 	</figure>
 
@@ -133,17 +132,6 @@
 		frequently adopting Rheims readings. The Catholic translation's influence on the Protestant
 		masterpiece is not a matter of inference but of documented revision history.
 	</p>
-
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Side-by-side comparison of the Rheims New Testament and King James Version texts at 1 Corinthians 13, showing the identical 'charity' rendering and other shared phrases"
-		></div>
-		<figcaption>
-			1 Corinthians 13 in the Rheims New Testament (1582) and the King James Version (1611), showing
-			the shared "charity" rendering and the documented borrowings
-		</figcaption>
-	</figure>
 
 	<p>
 		Cardinal Newman later observed that the relationship between the two traditions was closer than

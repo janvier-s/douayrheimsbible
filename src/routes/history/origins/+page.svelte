@@ -63,6 +63,17 @@
 
 	<h2>The English College at Douai</h2>
 
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/cardinal-allen.webp"
+			alt="Portrait of Cardinal William Allen (1532–1594), founder of the English College at Douai"
+			width="400"
+			height="448"
+			loading="lazy"
+		/>
+		<figcaption>Cardinal William Allen (1532–1594)</figcaption>
+	</figure>
+
 	<p>
 		It was against this backdrop that <a
 			href="https://en.wikipedia.org/wiki/William_Allen_(cardinal)">William Allen</a
@@ -83,16 +94,36 @@
 	</p>
 
 	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Engraving or architectural view of the English College at Douai"
-		></div>
+		<picture>
+			<source
+				srcset="/images/history/english-college-douai-800.webp 800w, /images/history/english-college-douai-400.webp 400w"
+				type="image/webp"
+			/>
+			<img
+				src="/images/history/english-college-douai-800.webp"
+				alt="Engraving of the English College at Douai, founded 1568"
+				width="800"
+				height="551"
+				loading="lazy"
+			/>
+		</picture>
 		<figcaption>
 			The English College at Douai, founded 1568, where English Catholic scholars gathered in exile
 		</figcaption>
 	</figure>
 
 	<h2>Gregory Martin and the Translation</h2>
+
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/gregory-martin.webp"
+			alt="Portrait of Gregory Martin (c. 1542–1582), principal translator of the Douay-Rheims Bible"
+			width="320"
+			height="414"
+			loading="lazy"
+		/>
+		<figcaption>Gregory Martin (c. 1542–1582)</figcaption>
+	</figure>
 
 	<p>
 		Among the scholars who gathered at Douai was
@@ -136,16 +167,6 @@
 		theological concepts were best expressed in terms closely derived from the Latin.
 	</p>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Title page of the Rheims New Testament, 1582"
-		></div>
-		<figcaption>
-			Title page of the Rheims New Testament (1582), the first English Catholic New Testament
-		</figcaption>
-	</figure>
-
 	<p>
 		Gregory Martin did not long survive his achievement. He had contracted tuberculosis, and died on
 		28 October 1582, the same year his New Testament was published. He was approximately forty years
@@ -188,17 +209,6 @@
 	</p>
 
 	<h2>The Delay</h2>
-
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Map or illustration showing the English College's moves between Douai (1568), Rheims (1578), and back to Douai (1593), with dates of the New Testament (1582) and Old Testament (1609-1610) publications"
-		></div>
-		<figcaption>
-			The English College's moves between Douai and Rheims, and the long interval between the two
-			publications
-		</figcaption>
-	</figure>
 
 	<p>
 		The interval between the New Testament's appearance in 1582 and the Old Testament's publication

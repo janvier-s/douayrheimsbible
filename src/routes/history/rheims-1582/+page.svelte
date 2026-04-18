@@ -61,15 +61,15 @@
 		whole feeling of England was anti-Roman." The translators knew it. They published anyway.
 	</p>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Portrait of Saint Edmund Campion (c. 1540–1581), Jesuit priest executed at Tyburn the year before the Rheims New Testament appeared"
-		></div>
-		<figcaption>
-			Saint Edmund Campion, executed at Tyburn in 1581, whose arrest and death framed the world into
-			which the Rheims New Testament was published
-		</figcaption>
+	<figure class="article-figure article-figure--float">
+		<img
+			src="/images/history/edmund-campion.webp"
+			alt="Portrait of Saint Edmund Campion (c. 1540–1581), Jesuit priest executed at Tyburn"
+			width="340"
+			height="436"
+			loading="lazy"
+		/>
+		<figcaption>Saint Edmund Campion, executed 1581</figcaption>
 	</figure>
 
 	<h2>The Approbation</h2>
@@ -156,17 +156,6 @@
 
 	<h2>The Refutation That Spread It</h2>
 
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Title page or opening spread of William Fulke's 1589 parallel edition of the Rheims New Testament and the Bishops' Bible"
-		></div>
-		<figcaption>
-			William Fulke's parallel edition (1589), which spread the Rheims text throughout Protestant
-			England
-		</figcaption>
-	</figure>
-
 	<p>
 		The most consequential response was Fulke's 1589 parallel edition, which printed the entire
 		Rheims New Testament alongside the Bishops' Bible and argued against the Catholic annotations
@@ -177,16 +166,6 @@
 	</p>
 
 	<h2>What the Volume Contained</h2>
-
-	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Title page of the 1582 Rheims New Testament, showing the full title, place of publication, and the statement 'Translated faithfully into English out of the authentical Latin'"
-		></div>
-		<figcaption>
-			The title page of the 1582 Rheims New Testament, the first Catholic English New Testament
-		</figcaption>
-	</figure>
 
 	<p>
 		The physical volume that appeared in 1582 was a quarto, a page size roughly nine inches tall and
