@@ -157,6 +157,115 @@ async function main() {
 		console.log(`\nPrepared ${translationCount} books → ${translationOutDir}`);
 	}
 
+	// --- DRC chapter notes → static/data/drc-notes/{odrSlug}/{chapter}.json ---
+	const drcNotesSrc = join(ODR_PARENT, 'DRC', 'JSON_Converted');
+	try {
+		await access(drcNotesSrc);
+		const drcNotesOutBase = join(PROJECT_ROOT, 'static', 'data', 'drc-notes');
+		await mkdir(drcNotesOutBase, { recursive: true });
+
+		const drcFiles = await readdir(drcNotesSrc);
+		let drcNotesCount = 0;
+
+		for (const file of drcFiles) {
+			if (!file.endsWith('.json')) continue;
+
+			const raw = await readFile(join(drcNotesSrc, file), 'utf-8');
+			const data = JSON.parse(raw) as { chapters?: Array<{ chapter: number; notes?: Array<{ verse: number; text: string }> }> };
+			if (!Array.isArray(data.chapters)) continue;
+
+			// DRC files use modern-name slugs — reverse-remap to ODR slug
+			const modernSlug = file.replace(/^\d+-/, '').replace('.json', '');
+			const odrSlug = reverseRemapSlug(modernSlug, SLUG_REMAP_DRC_KNOX);
+			const bookOutDir = join(drcNotesOutBase, odrSlug);
+
+			for (const ch of data.chapters) {
+				if (!Array.isArray(ch.notes) || ch.notes.length === 0) continue;
+				await mkdir(bookOutDir, { recursive: true });
+				await writeFile(join(bookOutDir, `${ch.chapter}.json`), JSON.stringify(ch.notes));
+				drcNotesCount++;
+			}
+		}
+
+		console.log(`✓ drc-notes: wrote ${drcNotesCount} chapter note files → ${drcNotesOutBase}`);
+	} catch {
+		console.log(`DRC notes source not found at ${drcNotesSrc} — skipping.`);
+	}
+
+	// --- CPDV chapter notes → static/data/cpdv-notes/{odrSlug}/{chapter}.json ---
+	const cpdvNotesSrc = join(ODR_PARENT, 'CPDV', 'JSON_notes');
+	try {
+		await access(cpdvNotesSrc);
+		const cpdvNotesOutBase = join(PROJECT_ROOT, 'static', 'data', 'cpdv-notes');
+		await mkdir(cpdvNotesOutBase, { recursive: true });
+
+		const cpdvFiles = await readdir(cpdvNotesSrc);
+		let cpdvNotesCount = 0;
+
+		for (const file of cpdvFiles) {
+			if (!file.endsWith('.json')) continue;
+
+			const raw = await readFile(join(cpdvNotesSrc, file), 'utf-8');
+			const data = JSON.parse(raw) as { notes?: Array<{ chapter: number; verse: number; note: string }> };
+			if (!Array.isArray(data.notes)) continue;
+
+			// CPDV uses ODR-compatible slugs — no remap needed
+			const slug = file.replace(/^\d+-/, '').replace('.json', '');
+			const bookOutDir = join(cpdvNotesOutBase, slug);
+
+			// Group notes by chapter
+			const byChapter = new Map<number, Array<{ verse: number; text: string }>>();
+			for (const n of data.notes) {
+				if (!byChapter.has(n.chapter)) byChapter.set(n.chapter, []);
+				byChapter.get(n.chapter)!.push({ verse: n.verse, text: n.note });
+			}
+
+			for (const [chapterNum, notes] of byChapter) {
+				await mkdir(bookOutDir, { recursive: true });
+				await writeFile(join(bookOutDir, `${chapterNum}.json`), JSON.stringify(notes));
+				cpdvNotesCount++;
+			}
+		}
+
+		console.log(`✓ cpdv-notes: wrote ${cpdvNotesCount} chapter note files → ${cpdvNotesOutBase}`);
+	} catch {
+		console.log(`CPDV notes source not found at ${cpdvNotesSrc} — skipping.`);
+	}
+
+	// --- Confraternity intros → static/data/conf-intros/{odrSlug}.json ---
+	const confIntroSrc = join(ODR_PARENT, 'Confraternity', 'JSON_Converted', 'JSON_intros');
+	try {
+		await access(confIntroSrc);
+		const confIntroOutDir = join(PROJECT_ROOT, 'static', 'data', 'conf-intros');
+		await mkdir(confIntroOutDir, { recursive: true });
+
+		const introFiles = await readdir(confIntroSrc);
+		let introCount = 0;
+
+		for (const file of introFiles) {
+			if (!file.endsWith('.json')) continue;
+
+			// Strip leading number prefix and '-intro.json' suffix.
+			// Skip malformed names that contain '.json' before '-intro.json'.
+			const rawSlug = file.replace(/^\d+-/, '').replace(/-intro\.json$/, '');
+			if (rawSlug.includes('.json')) continue; // malformed filename — skip
+
+			const raw = await readFile(join(confIntroSrc, file), 'utf-8');
+			const data = JSON.parse(raw) as { book: string; introduction: string[] };
+			if (!Array.isArray(data.introduction)) continue;
+
+			// Confraternity files already use ODR slugs (e.g. 'apocalypse', not 'revelation')
+			// so no remap is needed — rawSlug is the correct ODR slug.
+			await writeFile(join(confIntroOutDir, `${rawSlug}.json`), JSON.stringify(data.introduction));
+			introCount++;
+			console.log(`✓ conf-intros/${rawSlug}`);
+		}
+
+		console.log(`✓ conf-intros: wrote ${introCount} intro files → ${confIntroOutDir}`);
+	} catch {
+		console.log(`Conf intro source not found at ${confIntroSrc} — skipping.`);
+	}
+
 	await buildSearchIndexes();
 }
 
