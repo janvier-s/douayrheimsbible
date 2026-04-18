@@ -182,8 +182,8 @@
 			</p>
 
 			<p class="hero-note">
-				This is the original pre-Challoner text, as first published by the English College at Douai
-				and Rheims, prior to Bishop Challoner’s 18th-century revisions.
+				This is the original text as first published, before Bishop Challoner’s 18th-century
+				revisions.
 			</p>
 			<p class="hero-note-minor">
 				Spelling and punctuation lightly modernized;<br />the translation itself is unaltered.
