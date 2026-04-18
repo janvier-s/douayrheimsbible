@@ -43,7 +43,14 @@ export function remapSlug(odrSlug: string, map: Record<string, string>): string 
 	return map[odrSlug] ?? odrSlug;
 }
 
-function reverseRemapSlug(modernSlug: string, map: Record<string, string>): string {
+/**
+ * Given a modern-name slug (as used by DRC/Knox source files), find the ODR slug.
+ * Note: the Kings/Samuel entries look like a collision but are intentional —
+ * '1-kings' as a *value* maps back to '3-kings' (ODR's name for 1 Kings / 1 Samuel).
+ * Insertion order in SLUG_REMAP_DRC_KNOX ensures the correct result.
+ */
+/** @internal */
+export function reverseRemapSlug(modernSlug: string, map: Record<string, string>): string {
 	const entry = Object.entries(map).find(([, v]) => v === modernSlug);
 	return entry ? entry[0] : modernSlug;
 }
@@ -119,7 +126,7 @@ async function main() {
 			const data = JSON.parse(raw);
 
 			// Skip files without chapters field
-			if (!data.chapters) continue;
+			if (!Array.isArray(data.chapters)) continue;
 
 			// Derive output slug
 			const rawSlug = file.replace(/^\d+-/, '').replace('.json', '');
