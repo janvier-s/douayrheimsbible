@@ -122,9 +122,9 @@
 	{#if formState === 'success'}
 		<div class="success-panel">
 			<span class="success-cross" aria-hidden="true">✠</span>
-			<h2 class="success-heading">Message received</h2>
+			<h2 class="success-heading">Message sent</h2>
 			<p class="success-body">
-				Thank you for writing. If you included an email address, a reply will follow in due course.
+				Thank you for writing.<br />A reply will follow in due course.
 			</p>
 			<button class="back-link" onclick={resetForm}>
 				<span aria-hidden="true">&#8592;</span> Back
