@@ -220,8 +220,17 @@ function parseFootnotes(elements: HTMLElement[]): FootnoteEntry[] {
 
 	for (const el of elements) {
 		const cleaned = cleanParagraph(el);
-		// Footnotes start with verse number followed by colon
-		const match = cleaned.match(/^(\d+)[\s\-]*(?:f{0,2})?:\s*(.+)$/s);
+		// Try verse range first: "N-M: text" (e.g. "4-14: This passage...")
+		const rangeMatch = cleaned.match(/^(\d+)-(\d+)\s*(?:f{0,2})?:\s*(.+)$/s);
+		if (rangeMatch) {
+			footnotes.push({
+				verse: parseInt(rangeMatch[1], 10),
+				text: rangeMatch[3].trim()
+			});
+			continue;
+		}
+		// Single verse: "N: text"
+		const match = cleaned.match(/^(\d+)[\s]*(?:f{0,2})?:\s*(.+)$/s);
 		if (match) {
 			footnotes.push({
 				verse: parseInt(match[1], 10),
@@ -306,6 +315,12 @@ function parseVerseRange(
 	heading: string,
 	totalVerses: number
 ): { start: number; end: number } {
+	// Try cross-chapter range: "N, N -- M, P"
+	const crossChapterMatch = heading.match(/(\d+),\s*(\d+)\s*--\s*(\d+),\s*(\d+)/);
+	if (crossChapterMatch) {
+		return { start: parseInt(crossChapterMatch[2], 10), end: totalVerses };
+	}
+
 	// Try "chapter, startVerse-endVerse:" pattern
 	const rangeMatch = heading.match(/(\d+),\s*(\d+)\s*-\s*(\d+)/);
 	if (rangeMatch) {
@@ -316,6 +331,13 @@ function parseVerseRange(
 	const singleMatch = heading.match(/(\d+),\s*(\d+)\s*[:\.]/);
 	if (singleMatch) {
 		const v = parseInt(singleMatch[2], 10);
+		return { start: v, end: v };
+	}
+
+	// Try single terminal verse: "N, N" at end (no trailing punctuation)
+	const terminalSingle = heading.match(/(\d+),\s*(\d+)\s*(?:f{0,2})?$/);
+	if (terminalSingle) {
+		const v = parseInt(terminalSingle[2], 10);
 		return { start: v, end: v };
 	}
 

@@ -2,6 +2,14 @@
   "chapter": 10,
   "footnotes": [
     {
+      "verse": 5,
+      "text": "Ps. <i>39,</i> 7-9."
+    },
+    {
+      "verse": 16,
+      "text": "Jer. <i>31,</i> 33-34."
+    },
+    {
       "verse": 18,
       "text": "The sense is: where these are remitted there is no longer need of an offering for sin."
     },
@@ -11,7 +19,11 @@
     },
     {
       "verse": 30,
-      "text": "Deut. <i>32,</i> 35-36. 37-38: Hab. <i>2,</i> 3-4."
+      "text": "Deut. <i>32,</i> 35-36."
+    },
+    {
+      "verse": 37,
+      "text": "Hab. <i>2,</i> 3-4."
     }
   ]
 }

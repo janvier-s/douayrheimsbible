@@ -2,8 +2,20 @@
   "chapter": 7,
   "footnotes": [
     {
+      "verse": 6,
+      "text": "Gen. <i>15,</i> 13."
+    },
+    {
       "verse": 8,
-      "text": "Gen. <i>15,</i> 14. 42-43: Amos <i>5,</i> 25. 49-50: Isa. <i>66,</i> 1."
+      "text": "Gen. <i>15,</i> 14."
+    },
+    {
+      "verse": 42,
+      "text": "Amos <i>5,</i> 25."
+    },
+    {
+      "verse": 49,
+      "text": "Isa. <i>66,</i> 1."
     }
   ]
 }

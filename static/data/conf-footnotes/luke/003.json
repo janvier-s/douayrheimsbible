@@ -3,7 +3,15 @@
   "footnotes": [
     {
       "verse": 3,
-      "text": "The baptism of John was not a sacrament, but a symbol of repentance, by which the recipient expressed his sorrow for his sins and his desire for internal purification. Thus he was prepared for the true remission of his sins. 4-6: Isa. <i>40,</i> 3-5. 23-38: In St. Matthew the genealogy descends from Abraham to Jesus, whereas in St. Luke it ascends from Jesus to Adam. Both evangelists give the genealogy of St. Joseph, but according to different relationships."
+      "text": "The baptism of John was not a sacrament, but a symbol of repentance, by which the recipient expressed his sorrow for his sins and his desire for internal purification. Thus he was prepared for the true remission of his sins."
+    },
+    {
+      "verse": 4,
+      "text": "Isa. <i>40,</i> 3-5."
+    },
+    {
+      "verse": 23,
+      "text": "In St. Matthew the genealogy descends from Abraham to Jesus, whereas in St. Luke it ascends from Jesus to Adam. Both evangelists give the genealogy of St. Joseph, but according to different relationships."
     }
   ]
 }
