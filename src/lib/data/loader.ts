@@ -1,5 +1,5 @@
 import type { BookData, Chapter, ChapterAnnotations } from './types';
-import type { TranslationBook } from './translation-types';
+import type { TranslationBook, TranslationIntro, TranslationNote } from './translation-types';
 
 const bookCache = new Map<string, Promise<BookData>>();
 const resolvedCache = new Map<string, BookData>();
@@ -23,6 +23,33 @@ export function loadBook(slug: string, fetch: typeof globalThis.fetch): Promise<
 /** Returns already-resolved BookData synchronously, or null if not yet loaded. */
 export function getCachedBook(slug: string): BookData | null {
 	return resolvedCache.get(slug) ?? null;
+}
+
+// ── Translation intro sidecar ─────────────────────────────────────
+
+const translationIntroCache = new Map<string, Promise<TranslationIntro | null>>();
+
+/**
+ * Fetches a book introduction for a non-ODR translation from
+ * /data/{id}-intros/{slug}.json. Returns null on 404 (translation has no intro
+ * for this book). Follows the same cache-evict-on-failure pattern as loadBook().
+ */
+export function loadTranslationIntro(
+	id: string,
+	slug: string,
+	fetch: typeof globalThis.fetch
+): Promise<TranslationIntro | null> {
+	const key = `${id}/${slug}`;
+	if (!translationIntroCache.has(key)) {
+		const promise = fetch(`/data/${id}-intros/${slug}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load intro: ${id}/${slug} (${res.status})`);
+			return res.json() as Promise<TranslationIntro>;
+		});
+		promise.then(null, () => translationIntroCache.delete(key));
+		translationIntroCache.set(key, promise);
+	}
+	return translationIntroCache.get(key)!;
 }
 
 /** Extracts a single chapter from a loaded book */
@@ -52,6 +79,57 @@ export function loadAnnotations(
 		annotationCache.set(key, promise);
 	}
 	return annotationCache.get(key)!;
+}
+
+// ── Translation notes (DRC / CPDV chapter-level) ─────────────────
+
+const translationNotesCache = new Map<string, Promise<TranslationNote[] | null>>();
+
+/**
+ * Fetches chapter-level notes for a non-ODR translation (DRC or CPDV).
+ * Returns null on 404 (chapter has no notes). Caches per `{id}/{slug}/{chapter}`.
+ */
+export function loadTranslationNotes(
+	id: string,
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<TranslationNote[] | null> {
+	const key = `${id}/${slug}/${chapter}`;
+	if (!translationNotesCache.has(key)) {
+		const promise = fetch(`/data/${id}-notes/${slug}/${chapter}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load notes: ${res.status}`);
+			return res.json() as Promise<TranslationNote[]>;
+		});
+		promise.then(null, () => translationNotesCache.delete(key));
+		translationNotesCache.set(key, promise);
+	}
+	return translationNotesCache.get(key)!;
+}
+
+// ── Confraternity NT book introductions ──────────────────────────
+
+const confIntroCache = new Map<string, Promise<string[] | null>>();
+
+/**
+ * Fetches the book introduction for Confraternity NT.
+ * Returns null on 404 (book has no intro). Caches per slug.
+ */
+export function loadConfIntro(
+	slug: string,
+	fetch: typeof globalThis.fetch
+): Promise<string[] | null> {
+	if (!confIntroCache.has(slug)) {
+		const promise = fetch(`/data/conf-intros/${slug}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load intro: ${res.status}`);
+			return res.json() as Promise<string[]>;
+		});
+		promise.then(null, () => confIntroCache.delete(slug));
+		confIntroCache.set(slug, promise);
+	}
+	return confIntroCache.get(slug)!;
 }
 
 // ── Non-ODR translation books ─────────────────────────────────────
