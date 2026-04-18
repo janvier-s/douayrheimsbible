@@ -1,7 +1,7 @@
 {
-	"name": "Original Douay-Rheims Bible",
-	"short_name": "ODR Bible",
-	"description": "The Original Douay-Rheims Bible — the first complete English Catholic Bible.",
+	"name": "Douay-Rheims Bible",
+	"short_name": "Douay-Rheims",
+	"description": "The Douay-Rheims Bible — seven Catholic translations side by side, with study notes, search, and compare.",
 	"icons": [
 		{
 			"src": "/web-app-manifest-192x192.png",
