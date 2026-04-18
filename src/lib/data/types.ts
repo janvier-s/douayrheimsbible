@@ -34,6 +34,35 @@ export interface ChapterAnnotations {
 	annotations: AnnotationEntry[];
 }
 
+// ── Confraternity commentary types ────────────────────────────
+export interface ConfFootnoteEntry {
+	verse: number;
+	text: string;
+}
+
+export interface ConfChapterFootnotes {
+	chapter: number;
+	footnotes: ConfFootnoteEntry[];
+}
+
+export interface ConfCommentarySection {
+	startVerse: number;
+	endVerse: number;
+	heading: string;
+	paragraphs: string[];
+}
+
+export interface ConfChapterCommentary {
+	chapter: number;
+	sections: ConfCommentarySection[];
+}
+
+export interface ConfIntro {
+	book: string;
+	bibleIntro: string[];
+	commentaryIntro: string[];
+}
+
 // ── Legacy inline annotation (kept for intro system) ─────────────
 
 export interface InlineAnnotation {
