@@ -1,7 +1,7 @@
 // src/lib/stores/studyPanel.ts
 import { writable } from 'svelte/store';
 
-export type StudyTab = 'intro' | 'commentary' | 'article' | 'end';
+export type StudyTab = 'intro' | 'commentary' | 'article' | 'end' | 'footnotes';
 
 export interface ScrollTrigger {
 	verse: number; // 0 = summary
@@ -23,6 +23,7 @@ export interface StudyPanelState {
 	 *  without showing the underline — keeps "you selected this verse" separate from
 	 *  "the panel is currently showing this verse". */
 	panelScrollVerse: number | null;
+	activeConfIntroTab: 'bible' | 'commentary';
 }
 
 const defaults: StudyPanelState = {
@@ -32,7 +33,8 @@ const defaults: StudyPanelState = {
 	activeArticleIndex: 0,
 	activeVerse: null,
 	annotatedVerse: null,
-	panelScrollVerse: null
+	panelScrollVerse: null,
+	activeConfIntroTab: 'bible' as const
 };
 
 export const studyPanel = writable<StudyPanelState>({ ...defaults });

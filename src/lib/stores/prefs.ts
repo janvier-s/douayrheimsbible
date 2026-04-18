@@ -31,7 +31,7 @@ export interface ReadingPrefs {
 	// v11
 	expandAmpersand: boolean;
 	// v12
-	studyDefaultTab: 'intro' | 'commentary' | 'article' | 'end';
+	studyDefaultTab: 'intro' | 'commentary' | 'article' | 'end' | 'footnotes';
 	// v13
 	annotationSync: boolean;
 	// v16
@@ -70,7 +70,7 @@ const DEFAULTS: ReadingPrefs = {
 	hangingVerseNumbers: true
 };
 
-const PREFS_VERSION = 17;
+const PREFS_VERSION = 18;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -150,6 +150,10 @@ function loadPrefs(): ReadingPrefs {
 		// v17 migration: add hanging verse numbers toggle (on by default)
 		if (!parsed._v || parsed._v < 17) {
 			parsed.hangingVerseNumbers = true;
+		}
+		// v18 migration: added 'footnotes' tab option — no data migration needed
+		if (!parsed._v || parsed._v < 18) {
+			// no data change needed
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
