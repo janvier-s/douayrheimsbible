@@ -25,7 +25,7 @@
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import CrossRefText from './CrossRefText.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
-	import { linkifyConfRefs } from '$lib/search/crossRefParser';
+	import { linkifyConfRefs, linkifyKnoxRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
 	import { parseOsis } from '$lib/search/reference';
 	import type { OsisRange } from '$lib/search/reference';
 	import { getBookBySlug } from '$lib/data/books';
@@ -35,7 +35,11 @@
 	export let translationId: string = 'odr';
 
 	$: isOdr = translationId === 'odr';
-	$: hasTranslationNotes = translationId === 'drc' || translationId === 'cpdv';
+	$: hasTranslationNotes =
+		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox';
+	$: isDrc = translationId === 'drc';
+	$: isKnox = translationId === 'knox';
+	$: hasLinkifiedNotes = isDrc || isKnox;
 	$: hasTranslationIntro = translationId === 'conf';
 	$: isConf = translationId === 'conf';
 	$: translationMeta = TRANSLATIONS.find((t) => t.id === translationId);
@@ -580,7 +584,13 @@
 	{#if !isOdr}
 		<!-- Translation-specific study content -->
 		{#if hasTranslationNotes}
-			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
+			<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
+			<div
+				class="panel-scroll flex-1 overflow-y-scroll"
+				bind:this={panelScroll}
+				on:mouseover={hasLinkifiedNotes ? handleConfRefOver : undefined}
+				on:mouseout={hasLinkifiedNotes ? handleConfRefOut : undefined}
+			>
 				{#if translationNotesLoading}
 					<div class="empty-state"><p>Loading notes...</p></div>
 				{:else if translationNotes && translationNotes.length > 0}
@@ -590,12 +600,21 @@
 						</p>
 						{#each translationNotes as note (note.verse)}
 							{@const headingMatch = note.text.match(/^(".*?")\s*\.{3}\s*/)}
+							{@const linkify = isKnox ? linkifyKnoxRefs : isDrc ? linkifyDrcRefs : null}
 							<div class="translation-note-entry">
 								<span class="cr-marker">{note.verse}</span>
 								<div class="note-body">
 									{#if headingMatch}
 										<p class="annotation-title">{headingMatch[1].replace(/^"|"$/g, '')}</p>
-										<span class="note-text">{note.text.slice(headingMatch[0].length)}</span>
+										{#if linkify}
+											<span class="note-text"
+												>{@html linkify(note.text.slice(headingMatch[0].length))}</span
+											>
+										{:else}
+											<span class="note-text">{note.text.slice(headingMatch[0].length)}</span>
+										{/if}
+									{:else if linkify}
+										<span class="note-text">{@html linkify(note.text)}</span>
 									{:else}
 										<span class="note-text">{note.text}</span>
 									{/if}
@@ -608,6 +627,24 @@
 						<span class="empty-icon" aria-hidden="true">✦</span>
 						<p>No notes for this chapter.</p>
 					</div>
+				{/if}
+
+				{#if hasLinkifiedNotes}
+					<VerseTooltip
+						{translationId}
+						osisRanges={confVerseRefs}
+						anchorEl={confVerseRefAnchor}
+						visible={confVerseRefVisible}
+						on:mouseenter={() => {
+							if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
+						}}
+						on:mouseleave={() => {
+							confVerseRefTimer = setTimeout(() => {
+								confVerseRefVisible = false;
+								confVerseRefAnchor = null;
+							}, 120);
+						}}
+					/>
 				{/if}
 			</div>
 		{:else if isConf}
@@ -738,6 +775,7 @@
 				{/if}
 
 				<VerseTooltip
+					{translationId}
 					osisRanges={confVerseRefs}
 					anchorEl={confVerseRefAnchor}
 					visible={confVerseRefVisible}

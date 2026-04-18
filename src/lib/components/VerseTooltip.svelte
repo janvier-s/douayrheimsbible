@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { loadBook } from '$lib/data/loader';
+	import { loadBook, loadTranslationBook } from '$lib/data/loader';
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
 	import { ALL_BOOKS } from '$lib/data/books';
 	import { stripTags } from '$lib/utils/text';
@@ -17,6 +17,8 @@
 	export let osisRanges: OsisRange[] = [];
 	export let anchorEl: HTMLElement | null = null;
 	export let visible: boolean = false;
+	/** Which translation's verses to show. Defaults to 'odr'. */
+	export let translationId: string = 'odr';
 
 	interface VerseEntry {
 		ref: string;
@@ -69,6 +71,8 @@
 		loading = false;
 	}
 
+	$: routeBase = translationId === 'odr' ? '/odr' : `/${translationId}`;
+
 	async function loadEntries(ranges: OsisRange[]) {
 		if (ranges.length === 0) return;
 
@@ -87,7 +91,7 @@
 					result.push({
 						ref: `${bookDisplayName(range.book)} ${ch}`,
 						text: '',
-						href: `/odr/${slug}/${ch}`,
+						href: `${routeBase}/${slug}/${ch}`,
 						isChapter: true
 					});
 				}
@@ -95,15 +99,31 @@
 			}
 
 			try {
-				const bookData = await loadBook(slug, fetch);
-				const chapter = bookData.chapters.find((c) => c.chapter === range.startChapter);
+				// Load verse text from the active translation
+				let verseText: (v: number) => string | undefined;
+				if (translationId === 'odr') {
+					const bookData = await loadBook(slug, fetch);
+					const chapter = bookData.chapters.find((c) => c.chapter === range.startChapter);
+					verseText = (v) => {
+						const verse = chapter?.verses.find((vr) => vr.verse === v);
+						return verse ? stripTags(verse.text) : undefined;
+					};
+				} else {
+					const bookData = await loadTranslationBook(translationId, slug, fetch);
+					const chapter = bookData.chapters.find((c) => c.chapter === range.startChapter);
+					verseText = (v) => {
+						const verse = chapter?.verses.find((vr) => vr.verse === v);
+						return verse ? stripTags(verse.text) : undefined;
+					};
+				}
+
 				const endVerse = range.endVerse ?? range.startVerse!;
 				for (let v = range.startVerse!; v <= endVerse; v++) {
-					const verse = chapter?.verses.find((vr) => vr.verse === v);
-					if (verse) {
+					const text = verseText(v);
+					if (text) {
 						result.push({
 							ref: `${bookDisplayName(range.book)} ${range.startChapter}:${v}`,
-							text: stripTags(verse.text)
+							text
 						});
 					}
 				}

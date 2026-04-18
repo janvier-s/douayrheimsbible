@@ -6,10 +6,13 @@ export type CrossRefToken =
 	| { type: 'text'; content: string };
 
 const ABBREV_TO_OSIS: Record<string, string> = {
-	// Pentateuch
+	// Pentateuch (full names + abbreviations)
+	Genesis: 'Gen',
 	Gen: 'Gen',
+	Ex: 'Exod',
 	Exo: 'Exod',
 	Exod: 'Exod',
+	Exodus: 'Exod',
 	Lev: 'Lev',
 	Levi: 'Lev',
 	Levit: 'Lev',
@@ -27,6 +30,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Iosu: 'Josh',
 	Iosue: 'Josh',
 	Josue: 'Josh',
+	Judges: 'Judg',
 	Judic: 'Judg',
 	Iudic: 'Judg',
 	Iudi: 'Judg',
@@ -35,6 +39,10 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Reg': '2Sam',
 	'3Reg': '1Kgs',
 	'4Reg': '2Kgs',
+	'1Kings': '1Sam',
+	'2Kings': '2Sam',
+	'3Kings': '1Kgs',
+	'4Kings': '2Kgs',
 	'1Par': '1Chr',
 	'2Par': '2Chr',
 	'1Para': '1Chr',
@@ -71,6 +79,8 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Machab': '2Macc',
 	'1Macha': '1Macc',
 	'2Macha': '2Macc',
+	'1Machabees': '1Macc',
+	'2Machabees': '2Macc',
 	// Wisdom
 	Job: 'Job',
 	Iob: 'Job',
@@ -87,6 +97,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Eccles: 'Eccl',
 	Ecclus: 'Sir',
 	Eccli: 'Sir',
+	Ecclesiasticus: 'Sir',
 	Can: 'Cant',
 	Cant: 'Cant',
 	Song: 'Cant',
@@ -99,6 +110,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Isai: 'Isa',
 	Isaiae: 'Isa',
 	Isaie: 'Isa',
+	Isaias: 'Isa',
 	Jer: 'Jer',
 	Hier: 'Jer',
 	Ier: 'Jer',
@@ -116,6 +128,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Ezech: 'Ezek',
 	Dan: 'Dan',
 	// Minor prophets
+	Hosea: 'Hos',
 	Os: 'Hos',
 	Ose: 'Hos',
 	Osee: 'Hos',
@@ -151,6 +164,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Malach: 'Mal',
 	Malachie: 'Mal',
 	// NT Gospels & Acts
+	Matthew: 'Matt',
 	Matt: 'Matt',
 	Math: 'Matt',
 	Mat: 'Matt',
@@ -159,14 +173,17 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Marc: 'Mark',
 	Mark: 'Mark',
 	Mr: 'Mark',
+	Luke: 'Luke',
 	Lu: 'Luke',
 	Luc: 'Luke',
 	Luk: 'Luke',
+	John: 'John',
 	Io: 'John',
 	Ioa: 'John',
 	Ioan: 'John',
 	Joan: 'John',
 	Joa: 'John',
+	Acts: 'Acts',
 	Act: 'Acts',
 	// NT Epistles
 	Ro: 'Rom',
@@ -205,6 +222,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Jac: 'Jas',
 	Jacob: 'Jas',
 	Jas: 'Jas',
+	James: 'Jas',
 	'1Pet': '1Pet',
 	'2Pet': '2Pet',
 	'1Petr': '1Pet',
@@ -218,6 +236,9 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'1Joan': '1John',
 	'2Joan': '2John',
 	'3Joan': '3John',
+	'1John': '1John',
+	'2John': '2John',
+	'3John': '3John',
 	Iud: 'Jude',
 	Jude: 'Jude',
 	Judas: 'Jude',
@@ -1125,4 +1146,532 @@ export function linkifyConfRefs(html: string): string {
 	// Don't process inside existing <a> tags
 	const parts = html.split(/(<a[^>]*>[\s\S]*?<\/a>)/);
 	return parts.map((part) => (part.startsWith('<a') ? part : linkifyConfSegment(part))).join('');
+}
+
+// ── Knox reference linkification ─────────────────────────────────────
+// Knox notes use period-separated chapter.verse (e.g. "Gen. 17.10"),
+// semicolons to chain refs ("Job 1.6; 2.1; 38.7"), and Roman numerals
+// for numbered books ("III Kg. 17.1"). Plain text — no HTML tags.
+
+/** Knox abbreviations → OSIS. Superset of existing maps, tuned for Knox's specific usage. */
+const KNOX_SIMPLE_BOOKS: Record<string, string> = {
+	Gen: 'Gen',
+	Ex: 'Exod',
+	Exod: 'Exod',
+	Lev: 'Lev',
+	Num: 'Num',
+	Deut: 'Deut',
+	Dent: 'Deut', // Knox typo
+	Jos: 'Josh',
+	Josue: 'Josh',
+	Jg: 'Judg',
+	Judges: 'Judg',
+	Ruth: 'Ruth',
+	Esd: 'Ezra',
+	Esdras: 'Ezra',
+	Neh: 'Neh',
+	Tob: 'Tob',
+	Judith: 'Jdt',
+	Est: 'Esth',
+	Esther: 'Esth',
+	Job: 'Job',
+	Ps: 'Ps',
+	Psalms: 'Ps',
+	Prov: 'Prov',
+	Eccl: 'Eccl',
+	Ecclus: 'Sir',
+	Cant: 'Cant',
+	Wis: 'Wis',
+	Is: 'Isa',
+	Jer: 'Jer',
+	Lam: 'Lam',
+	Bar: 'Bar',
+	Ez: 'Ezek',
+	Dan: 'Dan',
+	Daniel: 'Dan',
+	Os: 'Hos',
+	Joel: 'Joel',
+	Jl: 'Joel',
+	Am: 'Amos',
+	Amos: 'Amos',
+	Abd: 'Obad',
+	Jon: 'Jonah',
+	Mic: 'Mic',
+	Nah: 'Nah',
+	Nahum: 'Nah',
+	Hab: 'Hab',
+	Soph: 'Zeph',
+	Agg: 'Hag',
+	Aggaeus: 'Hag',
+	Zach: 'Zech',
+	Zech: 'Zech',
+	Mal: 'Mal',
+	Mt: 'Matt',
+	Mat: 'Matt',
+	Mk: 'Mark',
+	Mark: 'Mark',
+	Lk: 'Luke',
+	Luke: 'Luke',
+	Jn: 'John',
+	Ac: 'Acts',
+	Acts: 'Acts',
+	Rom: 'Rom',
+	Gal: 'Gal',
+	Eph: 'Eph',
+	Phil: 'Phil',
+	Col: 'Col',
+	Tit: 'Titus',
+	Phm: 'Phlm',
+	Heb: 'Heb',
+	Jas: 'Jas',
+	Jude: 'Jude',
+	Apoc: 'Rev'
+};
+
+/** Numbered book stems for Knox. Handles Arabic ("1 Cor") and Roman ("III Kg") prefixes. */
+const KNOX_NUMBERED_BOOKS: Record<string, Record<number, string>> = {
+	Kg: { 1: '1Sam', 2: '2Sam', 3: '1Kgs', 4: '2Kgs' },
+	Kings: { 1: '1Sam', 2: '2Sam', 3: '1Kgs', 4: '2Kgs' },
+	Sam: { 1: '1Sam', 2: '2Sam' },
+	Par: { 1: '1Chr', 2: '2Chr' },
+	Para: { 1: '1Chr', 2: '2Chr' },
+	Esd: { 1: 'Ezra', 2: 'Neh' },
+	Esdras: { 1: 'Ezra', 2: 'Neh' },
+	Mac: { 1: '1Macc', 2: '2Macc' },
+	Cor: { 1: '1Cor', 2: '2Cor' },
+	Thess: { 1: '1Thess', 2: '2Thess' },
+	Tim: { 1: '1Tim', 2: '2Tim' },
+	Pet: { 1: '1Pet', 2: '2Pet' },
+	Peter: { 1: '1Pet', 2: '2Pet' },
+	Jn: { 1: '1John', 2: '2John', 3: '3John' },
+	Jo: { 1: '1John', 2: '2John', 3: '3John' }
+};
+
+const ROMAN_MAP: Record<string, number> = { I: 1, II: 2, III: 3, IV: 4 };
+
+const KNOX_ALL_NAMES = [
+	...new Set([...Object.keys(KNOX_SIMPLE_BOOKS), ...Object.keys(KNOX_NUMBERED_BOOKS)])
+].sort((a, b) => b.length - a.length);
+
+// Main regex: optional number prefix (Arabic or Roman) + book abbreviation + period-separated chapter.verse
+// Groups: (1) Arabic num, (2) Roman num, (3) book, (4) chapter, (5) verse, (6) verse range end
+const KNOX_REF_RE = new RegExp(
+	'(?:' +
+		'(\\d)\\s+' + // g1: Arabic number prefix "1 "
+		'|' +
+		'(I{1,3}V?)\\s+' + // g2: Roman number prefix "III "
+		')?' +
+		'(' +
+		KNOX_ALL_NAMES.join('|') +
+		')' + // g3: book abbreviation
+		'\\.?\\s*' + // optional trailing period + space
+		'(\\d+)' + // g4: chapter
+		'(?:\\.(\\d+)' + // g5: verse (period-separated)
+		'(?:\\s*[-\u2013]\\s*(\\d+))?' + // g6: verse range end
+		')?',
+	'g'
+);
+
+interface KnoxRef {
+	start: number;
+	end: number;
+	osis: string;
+	osisBook: string;
+	chapter: number;
+}
+
+function resolveKnoxBook(num: number, abbrev: string): string | null {
+	if (num > 0) {
+		return KNOX_NUMBERED_BOOKS[abbrev]?.[num] ?? null;
+	}
+	return KNOX_SIMPLE_BOOKS[abbrev] ?? null;
+}
+
+function findKnoxRefs(text: string): KnoxRef[] {
+	const results: KnoxRef[] = [];
+	KNOX_REF_RE.lastIndex = 0;
+	let m: RegExpExecArray | null;
+
+	while ((m = KNOX_REF_RE.exec(text)) !== null) {
+		const arabicNum = m[1] ? parseInt(m[1]) : 0;
+		const romanNum = m[2] ? (ROMAN_MAP[m[2]] ?? 0) : 0;
+		const num = arabicNum || romanNum;
+		const abbrev = m[3];
+		const osisBook = resolveKnoxBook(num, abbrev);
+		if (!osisBook) continue;
+
+		// Disambiguation: check what precedes — skip if preceded by patristic context
+		const before = text.slice(0, m.index);
+		if (/(?:de|ad|in|super\.|cont\.)\s*$/i.test(before)) continue;
+
+		const chapter = parseInt(m[4]);
+		const verse = m[5] ? parseInt(m[5]) : undefined;
+		const verseEnd = m[6] ? parseInt(m[6]) : undefined;
+
+		let osis: string;
+		if (verse !== undefined) {
+			osis = `${osisBook}.${chapter}.${verse}`;
+			if (verseEnd !== undefined) {
+				osis += `-${osisBook}.${chapter}.${verseEnd}`;
+			}
+		} else {
+			osis = `${osisBook}.${chapter}`;
+		}
+
+		let end = m.index + m[0].length;
+
+		// Consume comma-separated continuation verses: ", 17" or ", 17-20"
+		const contRe = /^,\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?/;
+		let contMatch: RegExpMatchArray | null;
+		while ((contMatch = text.slice(end).match(contRe)) !== null) {
+			// Only consume if NOT followed by period+digit (which would be chapter.verse of next ref)
+			const afterCont = end + contMatch[0].length;
+			if (
+				afterCont < text.length &&
+				text[afterCont] === '.' &&
+				/\d/.test(text[afterCont + 1] ?? '')
+			) {
+				break; // This comma-number is actually a chapter number for a continuation ref
+			}
+			end += contMatch[0].length;
+		}
+
+		results.push({ start: m.index, end, osis, osisBook, chapter });
+	}
+	return results;
+}
+
+/**
+ * After finding explicit book refs, scan for semicolon-chained bare chapter.verse
+ * continuations that inherit the book from the preceding ref.
+ * E.g. "Job 1.6; 2.1; 38.7" → three refs all to Job.
+ */
+function expandKnoxSemicolonChains(text: string, refs: KnoxRef[]): KnoxRef[] {
+	if (refs.length === 0) return refs;
+
+	const expanded: KnoxRef[] = [];
+
+	for (let i = 0; i < refs.length; i++) {
+		expanded.push(refs[i]);
+		let pos = refs[i].end;
+		const nextRefStart = i + 1 < refs.length ? refs[i + 1].start : text.length;
+		let lastBook = refs[i].osisBook;
+		let lastChapter = refs[i].chapter;
+
+		// Look for "; N.N" continuations between this ref and the next explicit ref
+		const semiRe = /^;\s*(\d+)\.(\d+)(?:\s*[-\u2013]\s*(\d+))?/;
+		// Also handle bare "; N" (chapter only, no verse)
+		const semiChRe = /^;\s*(\d+)(?!\.?\d)/;
+
+		while (pos < nextRefStart) {
+			// Skip whitespace
+			if (text[pos] === ' ') {
+				pos++;
+				continue;
+			}
+
+			const remainder = text.slice(pos);
+
+			// Try chapter.verse continuation
+			const semiMatch = remainder.match(semiRe);
+			if (semiMatch) {
+				const chapter = parseInt(semiMatch[1]);
+				const verse = parseInt(semiMatch[2]);
+				const verseEnd = semiMatch[3] ? parseInt(semiMatch[3]) : undefined;
+				let osis = `${lastBook}.${chapter}.${verse}`;
+				if (verseEnd !== undefined) osis += `-${lastBook}.${chapter}.${verseEnd}`;
+				const end = pos + semiMatch[0].length;
+
+				// Consume comma-separated continuation verses after this semi ref
+				let contEnd = end;
+				const contRe = /^,\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?/;
+				let contMatch: RegExpMatchArray | null;
+				while ((contMatch = text.slice(contEnd).match(contRe)) !== null) {
+					const afterCont = contEnd + contMatch[0].length;
+					if (
+						afterCont < text.length &&
+						text[afterCont] === '.' &&
+						/\d/.test(text[afterCont + 1] ?? '')
+					) {
+						break;
+					}
+					contEnd += contMatch[0].length;
+				}
+
+				expanded.push({ start: pos, end: contEnd, osis, osisBook: lastBook, chapter });
+				lastChapter = chapter;
+				pos = contEnd;
+				continue;
+			}
+
+			// Try chapter-only continuation: "; 2" (same book, chapter only)
+			const semiChMatch = remainder.match(semiChRe);
+			if (semiChMatch) {
+				const chapter = parseInt(semiChMatch[1]);
+				const osis = `${lastBook}.${chapter}`;
+				const end = pos + semiChMatch[0].length;
+				expanded.push({ start: pos, end, osis, osisBook: lastBook, chapter });
+				lastChapter = chapter;
+				pos = end;
+				continue;
+			}
+
+			break; // Not a continuation
+		}
+	}
+
+	return expanded;
+}
+
+/**
+ * Linkify Bible references in Knox translation notes.
+ * Handles period-separated chapter.verse, semicolon chains, Roman numeral books,
+ * and comma-separated verse continuations.
+ */
+export function linkifyKnoxRefs(text: string): string {
+	let refs = findKnoxRefs(text);
+	refs = expandKnoxSemicolonChains(text, refs);
+	if (refs.length === 0) return text;
+
+	let result = '';
+	let lastEnd = 0;
+
+	for (const ref of refs) {
+		if (ref.start < lastEnd) continue; // skip overlapping
+		const matchedText = text.slice(ref.start, ref.end);
+		const searchUrl = `/search?q=${encodeURIComponent(ref.osis)}&mode=verse`;
+		result += text.slice(lastEnd, ref.start);
+		result += `<a class="verse-ref" data-osis="${ref.osis}" href="${searchUrl}" target="_blank" rel="noopener">${matchedText}</a>`;
+		lastEnd = ref.end;
+	}
+
+	result += text.slice(lastEnd);
+	return result;
+}
+
+// ── DRC reference linkification ──────────────────────────────────────
+// DRC notes use period-space between chapter and verse: "Gen. 14. 14."
+// Numbered books: "1. Par. 6. 34" or "3 Kings 22."
+// Comma-separated verses: "Gen. 9. 4, 5, 6."
+// Reuses the existing ABBREV_TO_OSIS map and SORTED_ABBREVS.
+
+interface DrcRef {
+	start: number;
+	end: number;
+	osis: string;
+}
+
+/**
+ * Parse a DRC-style reference starting at `pos` in `text`.
+ * Returns a ref object or null if no valid reference found.
+ */
+function matchDrcRefAt(text: string, pos: number): DrcRef | null {
+	let cursor = pos;
+
+	// 1) Optional numbered book prefix: "1. " or "1 " or "3 "
+	let numPrefix = '';
+	const numMatch = text.slice(cursor).match(/^(\d)\.\s+/);
+	const numMatchNoP = !numMatch ? text.slice(cursor).match(/^(\d)\s+/) : null;
+	if (numMatch) {
+		numPrefix = numMatch[1];
+		cursor += numMatch[0].length;
+	} else if (numMatchNoP) {
+		numPrefix = numMatchNoP[1];
+		cursor += numMatchNoP[0].length;
+	}
+
+	// 2) Match book abbreviation
+	let osisBook: string | null = null;
+	let afterBook = cursor;
+	for (const abbrev of SORTED_ABBREVS) {
+		if (/^\d/.test(abbrev) && !numPrefix) continue;
+		if (/^\d/.test(abbrev)) {
+			if (abbrev[0] !== numPrefix) continue;
+			const rest = abbrev.slice(1);
+			if (!text.slice(cursor).startsWith(rest)) continue;
+			const endIdx = cursor + rest.length;
+			// Must be followed by ".", space+digit, or end
+			if (endIdx < text.length && text[endIdx] !== '.') {
+				if (text[endIdx] === ' ' && endIdx + 1 < text.length && /\d/.test(text[endIdx + 1])) {
+					// OK: full name + space + digit
+				} else {
+					continue;
+				}
+			}
+			afterBook = endIdx;
+			osisBook = ABBREV_TO_OSIS[abbrev];
+			break;
+		}
+		if (numPrefix) continue;
+		if (!text.slice(cursor).startsWith(abbrev)) continue;
+		const endIdx = cursor + abbrev.length;
+		// Must be followed by ".", ":", or space+digit
+		if (endIdx < text.length && text[endIdx] !== '.' && text[endIdx] !== ':') {
+			if (text[endIdx] === ' ' && endIdx + 1 < text.length && /\d/.test(text[endIdx + 1])) {
+				// OK: full name + space + digit (e.g. "John 3")
+			} else {
+				continue;
+			}
+		}
+		afterBook = endIdx;
+		osisBook = ABBREV_TO_OSIS[abbrev];
+		break;
+	}
+	if (!osisBook) return null;
+
+	// Skip optional period and space after book name
+	let c = afterBook;
+	if (c < text.length && text[c] === '.') c++;
+	if (c < text.length && text[c] === ' ') c++;
+	// Another space is OK (some have double space)
+	if (c < text.length && text[c] === ' ') c++;
+
+	// 3) Chapter number (required)
+	const chMatch = text.slice(c).match(/^(\d+)/);
+	if (!chMatch) return null;
+	const chapter = parseInt(chMatch[1]);
+	c += chMatch[0].length;
+
+	// Skip optional trailing period after chapter
+	if (c < text.length && text[c] === '.') c++;
+
+	// 4) Check for verse: need whitespace then digit (DRC period-space format)
+	//    But NOT if the next content is a letter (would be a sentence continuation)
+	let verse: number | undefined;
+	const beforeVerse = c;
+	// Skip whitespace
+	while (c < text.length && text[c] === ' ') c++;
+
+	if (c < text.length && /\d/.test(text[c])) {
+		// Check this isn't a new book abbreviation starting with a digit
+		const nextBookCheck = matchBookAt(text, c);
+		if (!nextBookCheck) {
+			const vMatch = text.slice(c).match(/^(\d+)/);
+			if (vMatch) {
+				verse = parseInt(vMatch[1]);
+				c += vMatch[0].length;
+				// Skip trailing period after verse
+				if (c < text.length && text[c] === '.') c++;
+			}
+		}
+	}
+
+	if (verse === undefined) {
+		c = beforeVerse;
+	}
+
+	// 5) Consume continuation verses: ", 5, 6." or "and 7"
+	let end = c;
+	let lastVerse = verse;
+	if (verse !== undefined) {
+		const contRe = /^(?:,\s*|\s+and\s+)(\d+)\.?/;
+		let contMatch: RegExpMatchArray | null;
+		while ((contMatch = text.slice(end).match(contRe)) !== null) {
+			lastVerse = parseInt(contMatch[1]);
+			end += contMatch[0].length;
+		}
+	}
+
+	// Build OSIS (use range if continuations expanded the verse span)
+	let osis: string;
+	if (verse !== undefined) {
+		osis = `${osisBook}.${chapter}.${verse}`;
+		if (lastVerse !== undefined && lastVerse !== verse) {
+			osis += `-${osisBook}.${chapter}.${lastVerse}`;
+		}
+	} else {
+		osis = `${osisBook}.${chapter}`;
+	}
+
+	return { start: pos, end, osis };
+}
+
+const ORDINAL_MAP: Record<string, string> = {
+	first: '1',
+	second: '2',
+	third: '3',
+	fourth: '4'
+};
+
+const PROSE_BOOK_RE =
+	/\b(first|second|third|fourth)\s+(?:book\s+of\s+)?(Machabees|Kings|Paralipomenon|Esdras|Corinthians|Thessalonians|Timothy|Peter|John|Maccabees|Chronicles|Samuel)\.?\s+(\d+)(?:\.\s*(\d+))?/gi;
+
+function findDrcRefs(text: string): DrcRef[] {
+	const refs: DrcRef[] = [];
+
+	// Pass 1: find prose ordinal refs like "first book of Machabees 5. 54"
+	PROSE_BOOK_RE.lastIndex = 0;
+	let proseMatch: RegExpExecArray | null;
+	while ((proseMatch = PROSE_BOOK_RE.exec(text)) !== null) {
+		const num = ORDINAL_MAP[proseMatch[1].toLowerCase()];
+		const bookName = proseMatch[2];
+		// Build a key like "1Machabees" and look it up
+		const key = num + bookName;
+		const osisBook = ABBREV_TO_OSIS[key] ?? null;
+		if (!osisBook) continue;
+
+		const chapter = parseInt(proseMatch[3]);
+		const verse = proseMatch[4] ? parseInt(proseMatch[4]) : undefined;
+		let osis = verse !== undefined ? `${osisBook}.${chapter}.${verse}` : `${osisBook}.${chapter}`;
+
+		let end = proseMatch.index + proseMatch[0].length;
+		// Consume trailing period
+		if (end < text.length && text[end] === '.') end++;
+
+		refs.push({ start: proseMatch.index, end, osis });
+	}
+
+	// Pass 2: find standard abbreviation refs
+	let pos = 0;
+	while (pos < text.length) {
+		// Skip positions already covered by prose refs
+		const coveredByProse = refs.some((r) => pos >= r.start && pos < r.end);
+		if (coveredByProse) {
+			pos++;
+			continue;
+		}
+
+		// Only try matching at positions where a book abbreviation could start
+		if (/[A-Z0-9]/.test(text[pos])) {
+			const before = text.slice(0, pos);
+			if (!/(?:de|ad|in|super\.|cont\.)\s*$/i.test(before)) {
+				const ref = matchDrcRefAt(text, pos);
+				if (ref) {
+					refs.push(ref);
+					pos = ref.end;
+					continue;
+				}
+			}
+		}
+		pos++;
+	}
+
+	// Sort by position
+	refs.sort((a, b) => a.start - b.start);
+	return refs;
+}
+
+/**
+ * Linkify Bible references in DRC translation notes.
+ * Handles the period-space format: "Gen. 14. 14.", "1. Par. 6. 34",
+ * comma-separated verses: "Gen. 9. 4, 5, 6."
+ */
+export function linkifyDrcRefs(text: string): string {
+	const refs = findDrcRefs(text);
+	if (refs.length === 0) return text;
+
+	let result = '';
+	let lastEnd = 0;
+
+	for (const ref of refs) {
+		if (ref.start < lastEnd) continue;
+		const matchedText = text.slice(ref.start, ref.end);
+		const searchUrl = `/search?q=${encodeURIComponent(ref.osis)}&mode=verse`;
+		result += text.slice(lastEnd, ref.start);
+		result += `<a class="verse-ref" data-osis="${ref.osis}" href="${searchUrl}" target="_blank" rel="noopener">${matchedText}</a>`;
+		lastEnd = ref.end;
+	}
+
+	result += text.slice(lastEnd);
+	return result;
 }

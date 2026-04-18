@@ -75,6 +75,8 @@ function cleanVerseText(text: string): string {
 			.replace(/¶\s*/g, '')
 			// Vulgate: section bracket markers
 			.replace(/[\[\]]/g, '')
+			// Knox: trailing footnote marker numbers (e.g. "...Christ.1" → "...Christ.")
+			.replace(/([.;?!,)…:a-zA-Z])\d{1,2}$/, '$1')
 			// Collapse runs of whitespace
 			.replace(/  +/g, ' ')
 			.trim()
@@ -214,6 +216,48 @@ async function main() {
 		console.log(`✓ drc-notes: wrote ${drcNotesCount} chapter note files → ${drcNotesOutBase}`);
 	} catch {
 		console.log(`DRC notes source not found at ${drcNotesSrc} — skipping.`);
+	}
+
+	// --- Knox chapter notes → static/data/knox-notes/{odrSlug}/{chapter}.json ---
+	const knoxNotesSrc = join(ODR_PARENT, 'Knox', 'JSON_converted');
+	try {
+		await access(knoxNotesSrc);
+		const knoxNotesOutBase = join(PROJECT_ROOT, 'static', 'data', 'knox-notes');
+		await mkdir(knoxNotesOutBase, { recursive: true });
+
+		const knoxFiles = await readdir(knoxNotesSrc);
+		let knoxNotesCount = 0;
+
+		for (const file of knoxFiles) {
+			if (!file.endsWith('.json')) continue;
+
+			const raw = await readFile(join(knoxNotesSrc, file), 'utf-8');
+			const data = JSON.parse(raw) as {
+				chapters?: Array<{
+					chapter: number;
+					notes?: Array<{ verse_marker: number; note_marker: number; text: string }>;
+				}>;
+			};
+			if (!Array.isArray(data.chapters)) continue;
+
+			// Knox files use modern-name slugs — reverse-remap to ODR slug
+			const modernSlug = file.replace(/^\d+-/, '').replace('.json', '');
+			const odrSlug = reverseRemapSlug(modernSlug, SLUG_REMAP_DRC_KNOX);
+			const bookOutDir = join(knoxNotesOutBase, odrSlug);
+
+			for (const ch of data.chapters) {
+				if (!Array.isArray(ch.notes) || ch.notes.length === 0) continue;
+				await mkdir(bookOutDir, { recursive: true });
+				// Normalize to { verse, text } format matching TranslationNote
+				const notes = ch.notes.map((n) => ({ verse: n.verse_marker, text: n.text }));
+				await writeFile(join(bookOutDir, `${ch.chapter}.json`), JSON.stringify(notes));
+				knoxNotesCount++;
+			}
+		}
+
+		console.log(`✓ knox-notes: wrote ${knoxNotesCount} chapter note files → ${knoxNotesOutBase}`);
+	} catch {
+		console.log(`Knox notes source not found at ${knoxNotesSrc} — skipping.`);
 	}
 
 	// --- CPDV chapter notes → static/data/cpdv-notes/{odrSlug}/{chapter}.json ---
