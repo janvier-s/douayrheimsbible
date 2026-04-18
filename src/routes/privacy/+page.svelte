@@ -47,8 +47,8 @@
 	<h2>Third-Party Services</h2>
 
 	<p>
-		All fonts are self-hosted on this site's own servers. No third-party font services are used.
-		No external requests are made when you read or browse.
+		All fonts are self-hosted on this site's own servers. No third-party font services are used. No
+		external requests are made when you read or browse.
 	</p>
 
 	<h2>Cookies</h2>
