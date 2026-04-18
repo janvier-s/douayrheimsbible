@@ -1,4 +1,4 @@
-import type { BookData, Chapter, ChapterAnnotations } from './types';
+import type { BookData, Chapter, ChapterAnnotations, ConfChapterFootnotes, ConfChapterCommentary, ConfIntro } from './types';
 import type { TranslationBook, TranslationNote } from './translation-types';
 
 const bookCache = new Map<string, Promise<BookData>>();
@@ -83,7 +83,7 @@ export function loadTranslationNotes(
 
 // ── Confraternity NT book introductions ──────────────────────────
 
-const confIntroCache = new Map<string, Promise<string[] | null>>();
+const confIntroCache = new Map<string, Promise<ConfIntro | null>>();
 
 /**
  * Fetches the book introduction for Confraternity NT.
@@ -92,17 +92,65 @@ const confIntroCache = new Map<string, Promise<string[] | null>>();
 export function loadConfIntro(
 	slug: string,
 	fetch: typeof globalThis.fetch
-): Promise<string[] | null> {
+): Promise<ConfIntro | null> {
 	if (!confIntroCache.has(slug)) {
 		const promise = fetch(`/data/conf-intros/${slug}.json`).then((res) => {
 			if (res.status === 404) return null;
 			if (!res.ok) throw new Error(`Failed to load intro: ${res.status}`);
-			return res.json() as Promise<string[]>;
+			return res.json() as Promise<ConfIntro>;
 		});
 		promise.then(null, () => confIntroCache.delete(slug));
 		confIntroCache.set(slug, promise);
 	}
 	return confIntroCache.get(slug)!;
+}
+
+// ── Confraternity footnotes ───────────────────────────────────
+const confFootnotesCache = new Map<string, Promise<ConfChapterFootnotes | null>>();
+
+export function loadConfFootnotes(
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<ConfChapterFootnotes | null> {
+	const key = `${slug}/${chapter}`;
+	const cached = confFootnotesCache.get(key);
+	if (cached) return cached;
+
+	const padded = String(chapter).padStart(3, '0');
+	const promise = fetch(`/data/conf-footnotes/${slug}/${padded}.json`)
+		.then((r) => (r.ok ? (r.json() as Promise<ConfChapterFootnotes>) : null))
+		.catch(() => {
+			confFootnotesCache.delete(key);
+			return null;
+		});
+
+	confFootnotesCache.set(key, promise);
+	return promise;
+}
+
+// ── Confraternity commentary ──────────────────────────────────
+const confCommentaryCache = new Map<string, Promise<ConfChapterCommentary | null>>();
+
+export function loadConfCommentary(
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<ConfChapterCommentary | null> {
+	const key = `${slug}/${chapter}`;
+	const cached = confCommentaryCache.get(key);
+	if (cached) return cached;
+
+	const padded = String(chapter).padStart(3, '0');
+	const promise = fetch(`/data/conf-commentary/${slug}/${padded}.json`)
+		.then((r) => (r.ok ? (r.json() as Promise<ConfChapterCommentary>) : null))
+		.catch(() => {
+			confCommentaryCache.delete(key);
+			return null;
+		});
+
+	confCommentaryCache.set(key, promise);
+	return promise;
 }
 
 // ── Non-ODR translation books ─────────────────────────────────────
