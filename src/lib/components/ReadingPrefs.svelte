@@ -36,13 +36,6 @@
 		if (!font) return;
 		prefs.update((p) => ({ ...p, fontFamily: id }));
 		document.documentElement.style.setProperty('--font-reader', font.stack);
-		if (font.gfUrl && !document.querySelector(`link[data-gf="${id}"]`)) {
-			const link = document.createElement('link');
-			link.rel = 'stylesheet';
-			link.href = font.gfUrl;
-			link.dataset.gf = id;
-			document.head.appendChild(link);
-		}
 	}
 
 	function setDyslexia(on: boolean) {

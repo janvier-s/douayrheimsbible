@@ -2,7 +2,6 @@ export interface FontDef {
 	id: string;
 	label: string;
 	stack: string;
-	gfUrl?: string;
 	dividerBefore?: boolean;
 }
 
@@ -11,37 +10,28 @@ export const FONTS: FontDef[] = [
 		id: 'libre-baskerville',
 		label: 'Libre Baskerville',
 		stack: "'Libre Baskerville', Georgia, serif"
-		// self-hosted via @font-face in app.css — no gfUrl needed
 	},
 	{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
 	{
 		id: 'source-serif-4',
 		label: 'Source Serif',
-		stack: "'Source Serif 4', Georgia, serif",
-		gfUrl:
-			'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&display=swap'
+		stack: "'Source Serif 4', Georgia, serif"
 	},
 	{
 		id: 'noto-sans',
 		label: 'Noto Sans',
 		stack: "'Noto Sans', sans-serif",
-		gfUrl:
-			'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap',
 		dividerBefore: true
 	},
 	{
 		id: 'libre-franklin',
 		label: 'Libre Franklin',
-		stack: "'Libre Franklin', sans-serif",
-		gfUrl:
-			'https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap'
+		stack: "'Libre Franklin', sans-serif"
 	},
 	{
 		id: 'montserrat',
 		label: 'Montserrat',
-		stack: "'Montserrat', sans-serif",
-		gfUrl:
-			'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap'
+		stack: "'Montserrat', sans-serif"
 	}
 ];
 

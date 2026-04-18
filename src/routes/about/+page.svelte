@@ -770,7 +770,8 @@
 	<p>
 		The site is fully responsive. On a phone the layout reflows around the screen: the navigation
 		moves to a bottom bar, the text scales to the available width, and all reading options remain
-		accessible. A PWA version, installable directly from the browser, is planned.
+		accessible. The site can be installed as a Progressive Web App directly from your browser,
+		adding it to your home screen for a native app-like experience.
 	</p>
 
 	<div class="mobile-mockup-row">
@@ -972,10 +973,11 @@
 	</p>
 
 	<p>
-		This site does not store or transmit any user data to Google, Anthropic, or any third party.
-		There are no cookies, tracking scripts, or advertising. The only analytics in use are
-		Cloudflare's basic traffic counters, which are privacy-preserving and require no consent banner.
-		What you read here stays between you and the page.
+		This site does not store or transmit any user data to any third party. All fonts are
+		self-hosted; no external requests are made when you read or browse. There are no cookies,
+		tracking scripts, or advertising. The only analytics in use are Cloudflare's basic traffic
+		counters, which are privacy-preserving and require no consent banner. What you read here stays
+		between you and the page.
 	</p>
 
 	<p class="kofi-intro">

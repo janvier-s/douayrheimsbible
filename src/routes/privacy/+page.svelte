@@ -46,13 +46,10 @@
 
 	<h2>Third-Party Services</h2>
 
-	<ul>
-		<li>
-			<strong>Google Fonts</strong> — the Libre Baskerville font family is loaded from Google's font
-			CDN. Google may log requests to this service. See
-			<a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
-		</li>
-	</ul>
+	<p>
+		All fonts are self-hosted on this site's own servers. No third-party font services are used.
+		No external requests are made when you read or browse.
+	</p>
 
 	<h2>Cookies</h2>
 

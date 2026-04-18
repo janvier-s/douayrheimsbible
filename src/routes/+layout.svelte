@@ -64,14 +64,6 @@
 		} else {
 			const font = getFontById(p.fontFamily);
 			if (font) document.documentElement.style.setProperty('--font-reader', font.stack);
-			// Inject Google Fonts link so the selector button renders in the correct font immediately
-			if (font?.gfUrl && !document.querySelector(`link[data-gf="${p.fontFamily}"]`)) {
-				const link = document.createElement('link');
-				link.rel = 'stylesheet';
-				link.href = font.gfUrl;
-				link.dataset.gf = p.fontFamily;
-				document.head.appendChild(link);
-			}
 		}
 		// app.html script handles pre-paint theme; sync post-hydration
 		const savedTheme = localStorage.getItem('theme');
