@@ -1329,6 +1329,12 @@
 	}
 
 	/* ─── Confraternity commentary sections ──────── */
+	.conf-commentary-section .prose-para :global(b:first-child) {
+		color: var(--color-accent-text);
+		font-style: italic;
+		display: block;
+	}
+
 	.conf-note-entry {
 		display: flex;
 		gap: 10px;

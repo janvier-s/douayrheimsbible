@@ -77,7 +77,12 @@ function cleanHtml(el: HTMLElement): string {
 
 /** Extract cleaned text from a paragraph element */
 function cleanParagraph(p: HTMLElement): string {
-	return cleanHtml(p);
+	let html = cleanHtml(p);
+	// Strip editorial bracket wrappers like "[See commentary in previous chapter.]"
+	if (html.startsWith('[') && html.endsWith(']')) {
+		html = html.slice(1, -1).trim();
+	}
+	return html;
 }
 
 // ── File classification ───────────────────────────────────────
