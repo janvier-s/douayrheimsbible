@@ -26,7 +26,7 @@
 		}
 	});
 
-	$: ({ bookMeta, chapter } = data);
+	$: ({ bookMeta, chapter, verseMaps } = data);
 	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
 	$: nextChapter = chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null;
 
@@ -212,13 +212,6 @@
 							{/if}
 						</div>
 					</div>
-					{#if !t.live}
-						<span
-							class="shrink-0 text-[9px] uppercase tracking-[0.1em] text-subtle border border-border rounded-[2px] px-[5px] py-[1px]"
-						>
-							Soon
-						</span>
-					{/if}
 				</div>
 			{/each}
 		</div>
@@ -259,15 +252,9 @@
 						{#if $prefs.showVerseNumbers}
 							<span
 								class="text-subtle font-ui text-[10px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-fit md:mr-[6px]"
-								class:invisible={!t.live}
-								aria-hidden={!t.live}>{v.verse}</span
-							>
+							>{v.verse}</span>
 						{/if}
-						{#if t.live}
-							<span>{@html stripTags(v.text)}</span>
-						{:else}
-							<span class="invisible" aria-hidden="true">{@html stripTags(v.text)}</span>
-						{/if}
+						<span>{@html stripTags(verseMaps[t.id]?.get(v.verse) ?? '')}</span>
 					</div>
 				{/each}
 			{/each}
