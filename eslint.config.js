@@ -20,6 +20,18 @@ export default [
 		}
 	},
 	{
+		files: ['src/service-worker.ts'],
+		plugins: { '@typescript-eslint': tsPlugin },
+		languageOptions: {
+			parser: tsParser,
+			parserOptions: { sourceType: 'module', ecmaVersion: 2020 },
+			globals: { ...globals.serviceworker }
+		},
+		rules: {
+			...tsPlugin.configs.recommended.rules
+		}
+	},
+	{
 		files: ['**/*.svelte'],
 		plugins: { svelte, '@typescript-eslint': tsPlugin },
 		languageOptions: {
