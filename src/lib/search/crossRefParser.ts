@@ -1360,7 +1360,7 @@ function expandKnoxSemicolonChains(text: string, refs: KnoxRef[]): KnoxRef[] {
 		let pos = refs[i].end;
 		const nextRefStart = i + 1 < refs.length ? refs[i + 1].start : text.length;
 		let lastBook = refs[i].osisBook;
-		let lastChapter = refs[i].chapter;
+
 
 		// Look for "; N.N" continuations between this ref and the next explicit ref
 		const semiRe = /^;\s*(\d+)\.(\d+)(?:\s*[-\u2013]\s*(\d+))?/;
@@ -1403,7 +1403,6 @@ function expandKnoxSemicolonChains(text: string, refs: KnoxRef[]): KnoxRef[] {
 				}
 
 				expanded.push({ start: pos, end: contEnd, osis, osisBook: lastBook, chapter });
-				lastChapter = chapter;
 				pos = contEnd;
 				continue;
 			}
@@ -1415,7 +1414,6 @@ function expandKnoxSemicolonChains(text: string, refs: KnoxRef[]): KnoxRef[] {
 				const osis = `${lastBook}.${chapter}`;
 				const end = pos + semiChMatch[0].length;
 				expanded.push({ start: pos, end, osis, osisBook: lastBook, chapter });
-				lastChapter = chapter; // eslint-disable-line no-useless-assignment
 				pos = end;
 				continue;
 			}
