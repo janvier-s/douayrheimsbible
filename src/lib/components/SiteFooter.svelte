@@ -5,25 +5,25 @@
 			links: [
 				{ label: 'Old Testament', href: '/books/old-testament' },
 				{ label: 'New Testament', href: '/books/new-testament' },
-				{ label: 'Search', href: '/search' },
 				{ label: 'Compare Translations', href: '/compare' },
-				{ label: 'Reference Material', href: '/reference' }
+				{ label: 'Reference Material', href: '/reference' },
+				{ label: 'Search', href: '/search' }
 			]
 		},
 		{
 			heading: 'About',
 			links: [
 				{ label: 'About the Translation', href: '/history/the-douay-rheims' },
+				{ label: 'About This Website', href: '/about' },
 				{ label: 'History of the DR Bible', href: '/history' },
 				{ label: 'Articles', href: '/articles' },
-				{ label: 'The Challoner Revision', href: '/history/challoner' },
-				{ label: 'Downloads', href: '/download' },
-				{ label: 'API', href: '/api' }
+				{ label: 'Downloads', href: '/download' }
 			]
 		},
 		{
 			heading: 'Info',
 			links: [
+				{ label: 'API', href: '/api' },
 				{ label: 'Contact', href: '/contact' },
 				{ label: 'Sitemap', href: '/sitemap.xml' },
 				{ label: 'Privacy', href: '/privacy' },
