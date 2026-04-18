@@ -385,6 +385,13 @@
 	// Reader→panel auto-scroll disabled (too many edge cases with infinite scroll).
 	// Explicit clicks (scrollTrigger) still scroll the panel.
 
+	// Clear sectionEls on tab switch
+	let lastActiveTab: StudyTab | null = null;
+	$: if ($studyPanel.activeTab !== lastActiveTab) {
+		lastActiveTab = $studyPanel.activeTab;
+		sectionEls = {};
+	}
+
 	function scrollToSection(verse: number) {
 		const el = sectionEls[verse];
 		if (!el || !panelScroll) return;
@@ -449,6 +456,9 @@
 	$: if (verseSections && browser) {
 		tick().then(setupPanelObserver);
 	}
+	$: if ($studyPanel.activeTab && browser) {
+		tick().then(setupPanelObserver);
+	}
 	$: if (browser && !$prefs.annotationSync) {
 		panelSectionObserver?.disconnect();
 		panelSectionObserver = null;
@@ -467,9 +477,23 @@
 	async function handleScrollTrigger(
 		trigger: NonNullable<import('$lib/stores/studyPanel').ScrollTrigger>
 	) {
-		// Switch to commentary tab
-		if ($studyPanel.activeTab !== 'commentary') {
-			studyPanel.update((s) => ({ ...s, activeTab: 'commentary' }));
+		// Determine which tab the trigger should route to
+		let targetTab: StudyTab;
+		if (!isOdr) {
+			// Non-ODR translations don't have separate tabs for these
+			targetTab = $studyPanel.activeTab;
+		} else if (trigger.type === 'cross_ref') {
+			targetTab = 'cross-refs';
+		} else if (trigger.type === 'note') {
+			targetTab = 'notes';
+		} else if (trigger.type === 'annotation') {
+			targetTab = 'annotations';
+		} else {
+			targetTab = 'annotations'; // default for verse clicks
+		}
+
+		if ($studyPanel.activeTab !== targetTab) {
+			studyPanel.update((s) => ({ ...s, activeTab: targetTab }));
 			await tick();
 		}
 
