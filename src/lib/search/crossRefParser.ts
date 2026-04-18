@@ -1361,7 +1361,6 @@ function expandKnoxSemicolonChains(text: string, refs: KnoxRef[]): KnoxRef[] {
 		const nextRefStart = i + 1 < refs.length ? refs[i + 1].start : text.length;
 		let lastBook = refs[i].osisBook;
 
-
 		// Look for "; N.N" continuations between this ref and the next explicit ref
 		const semiRe = /^;\s*(\d+)\.(\d+)(?:\s*[-\u2013]\s*(\d+))?/;
 		// Also handle bare "; N" (chapter only, no verse)
