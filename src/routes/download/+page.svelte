@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
+	import OfflineDownload from '$lib/components/OfflineDownload.svelte';
 </script>
 
 <svelte:head>
@@ -15,6 +16,8 @@
 	title="Downloads"
 	subtitle="The complete Original Douay-Rheims Bible in open formats. All files are public domain under CC0 1.0."
 >
+	<OfflineDownload />
+
 	<h2>Structured Data</h2>
 
 	<p>
