@@ -7,7 +7,7 @@ export function stripTags(text: string): string {
 		.replace(/<(?!\/?i\b)[^>]*>/gi, '')
 		.replace(/\\\+w\s+(.*?)\|[^\\]*\\\+w\*/g, '$1')
 		.replace(/¶\s*/g, '')
-		.replace(/[\[\]]/g, '')
+		.replace(/[[\]]/g, '')
 		.replace(/  +/g, ' ')
 		.trim();
 }
