@@ -67,6 +67,54 @@
 						height: 96
 					},
 					sameAs: []
+				},
+				{
+					'@type': 'ItemList',
+					name: 'Bible Translations',
+					itemListElement: [
+						{
+							'@type': 'SiteNavigationElement',
+							position: 1,
+							name: 'Original Douay-Rheims (1582–1610)',
+							url: SITE + '/odr/genesis/1'
+						},
+						{
+							'@type': 'SiteNavigationElement',
+							position: 2,
+							name: 'Douay-Rheims Challoner (1752)',
+							url: SITE + '/drc/genesis/1'
+						},
+						{
+							'@type': 'SiteNavigationElement',
+							position: 3,
+							name: 'Clementine Vulgate (Latin)',
+							url: SITE + '/vul/genesis/1'
+						},
+						{
+							'@type': 'SiteNavigationElement',
+							position: 4,
+							name: 'King James Version (1611)',
+							url: SITE + '/kjv/genesis/1'
+						},
+						{
+							'@type': 'SiteNavigationElement',
+							position: 5,
+							name: 'Knox Bible (1955)',
+							url: SITE + '/knox/genesis/1'
+						},
+						{
+							'@type': 'SiteNavigationElement',
+							position: 6,
+							name: 'Catholic Public Domain Version',
+							url: SITE + '/cpdv/genesis/1'
+						},
+						{
+							'@type': 'SiteNavigationElement',
+							position: 7,
+							name: 'Confraternity NT (1941)',
+							url: SITE + '/conf/matthew/1'
+						}
+					]
 				}
 			]
 		}) +
