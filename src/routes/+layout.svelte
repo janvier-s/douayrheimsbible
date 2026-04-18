@@ -4,6 +4,7 @@
 	import TopBar from '$lib/components/TopBar.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import PrayerModal from '$lib/components/PrayerModal.svelte';
+	import InstallBanner from '$lib/components/InstallBanner.svelte';
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -102,3 +103,4 @@
 	<SiteFooter />
 </div>
 <PrayerModal />
+<InstallBanner />

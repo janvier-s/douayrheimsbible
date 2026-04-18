@@ -90,7 +90,6 @@
 			formState = 'error';
 		}
 	}
-
 </script>
 
 <svelte:head>

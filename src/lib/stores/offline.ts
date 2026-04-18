@@ -2,7 +2,13 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-export type OfflineStatus = 'checking' | 'unavailable' | 'not-downloaded' | 'downloading' | 'complete' | 'error';
+export type OfflineStatus =
+	| 'checking'
+	| 'unavailable'
+	| 'not-downloaded'
+	| 'downloading'
+	| 'complete'
+	| 'error';
 
 interface OfflineState {
 	status: OfflineStatus;

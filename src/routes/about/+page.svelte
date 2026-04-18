@@ -771,7 +771,9 @@
 		The site is fully responsive. On a phone the layout reflows around the screen: the navigation
 		moves to a bottom bar, the text scales to the available width, and all reading options remain
 		accessible. The site can be installed as a Progressive Web App directly from your browser,
-		adding it to your home screen for a native app-like experience.
+		adding it to your home screen for a native app-like experience. Once installed, you can
+		<a href="/download">download the full text for offline reading</a>, so the Bible is always
+		available, even without a network connection.
 	</p>
 
 	<div class="mobile-mockup-row">

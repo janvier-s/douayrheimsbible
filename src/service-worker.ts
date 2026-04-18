@@ -54,8 +54,14 @@ self.addEventListener('fetch', (event) => {
 		return;
 	}
 
-	// Data files + fonts: network-first, persistent cache (survives deploys)
-	if (url.pathname.startsWith('/data/') || url.pathname.startsWith('/fonts/')) {
+	// Data files: cache-first, persistent cache (immutable content, survives deploys)
+	if (url.pathname.startsWith('/data/')) {
+		event.respondWith(cacheFirst(DATA, event.request));
+		return;
+	}
+
+	// Fonts: network-first, persistent cache (survives deploys)
+	if (url.pathname.startsWith('/fonts/')) {
 		event.respondWith(networkFirst(DATA, event.request));
 		return;
 	}
@@ -114,7 +120,10 @@ async function downloadAll() {
 		}
 
 		if (failed > 0) {
-			await broadcast({ type: 'download-error', error: `${failed} files could not be downloaded.` });
+			await broadcast({
+				type: 'download-error',
+				error: `${failed} files could not be downloaded.`
+			});
 		} else {
 			await broadcast({ type: 'download-complete' });
 		}
