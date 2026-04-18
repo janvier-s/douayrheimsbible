@@ -4,8 +4,8 @@
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import { prefs } from '$lib/stores/prefs';
-	import { loadAnnotations, loadTranslationNotes, loadConfIntro } from '$lib/data/loader';
-	import type { BookData, ChapterAnnotations, AnnotationEntry, Verse } from '$lib/data/types';
+	import { loadAnnotations, loadTranslationNotes, loadConfIntro, loadConfFootnotes, loadConfCommentary } from '$lib/data/loader';
+	import type { BookData, ChapterAnnotations, AnnotationEntry, Verse, ConfChapterFootnotes, ConfChapterCommentary, ConfIntro } from '$lib/data/types';
 	import type { TranslationNote } from '$lib/data/translation-types';
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
@@ -19,6 +19,7 @@
 	$: isOdr = translationId === 'odr';
 	$: hasTranslationNotes = translationId === 'drc' || translationId === 'cpdv';
 	$: hasTranslationIntro = translationId === 'conf';
+	$: isConf = translationId === 'conf';
 	$: translationMeta = TRANSLATIONS.find((t) => t.id === translationId);
 
 	// ── Translation notes (DRC/CPDV) ────────────────────────────────
@@ -52,7 +53,7 @@
 	}
 
 	// ── Confraternity intro ─────────────────────────────────────────
-	let confIntro: string[] | null = null;
+	let confIntro: ConfIntro | null = null;
 	let confIntroLoading = false;
 	let lastConfIntroSlug = '';
 
@@ -77,24 +78,45 @@
 		}
 	}
 
-	// Confraternity intro: skip heading-only lines and outline sections
-	$: introParagraphs = (() => {
-		if (!confIntro) return [];
-		const dividerIdx = confIntro.findIndex(
-			(p: string) => p === 'OUTLINE' || p.startsWith('----------')
-		);
-		const body = dividerIdx > 0 ? confIntro.slice(0, dividerIdx) : confIntro;
-		let start = 0;
-		while (start < body.length) {
-			const p = body[start].trim();
-			if (p.length <= 120 && !/\.\s+[A-Z]/.test(p)) {
-				start++;
-			} else {
-				break;
-			}
+	// ── Confraternity footnotes ───────────────────────────────────
+	let confFootnotes: ConfChapterFootnotes | null = null;
+	let confFootnotesLoading = false;
+	let lastConfFootnotesKey = '';
+
+	$: if (isConf && currentBookSlug && currentChapterNum) {
+		const key = `${currentBookSlug}/${currentChapterNum}`;
+		if (key !== lastConfFootnotesKey) {
+			lastConfFootnotesKey = key;
+			confFootnotesLoading = true;
+			confFootnotes = null;
+			loadConfFootnotes(currentBookSlug, currentChapterNum, fetch).then((data) => {
+				if (key === lastConfFootnotesKey) {
+					confFootnotes = data;
+					confFootnotesLoading = false;
+				}
+			});
 		}
-		return body.slice(start);
-	})();
+	}
+
+	// ── Confraternity commentary ──────────────────────────────────
+	let confCommentary: ConfChapterCommentary | null = null;
+	let confCommentaryLoading = false;
+	let lastConfCommentaryKey = '';
+
+	$: if (isConf && currentBookSlug && currentChapterNum) {
+		const key = `${currentBookSlug}/${currentChapterNum}`;
+		if (key !== lastConfCommentaryKey) {
+			lastConfCommentaryKey = key;
+			confCommentaryLoading = true;
+			confCommentary = null;
+			loadConfCommentary(currentBookSlug, currentChapterNum, fetch).then((data) => {
+				if (key === lastConfCommentaryKey) {
+					confCommentary = data;
+					confCommentaryLoading = false;
+				}
+			});
+		}
+	}
 
 	function tabLabel(title: string): string {
 		if (/argument.*in general/i.test(title)) return 'General';
@@ -147,25 +169,50 @@
 		.concat(hasEndMatters ? [{ id: 'end', label: 'End' }] : []);
 	$: showTabBar = visibleTabs.length > 1;
 
+	// ── Confraternity tabs ──────────────────────────────────────
+	type ConfTabDef = { id: 'intro' | 'footnotes' | 'commentary'; label: string };
+	$: confVisibleTabs = ((): ConfTabDef[] => {
+		const tabs: ConfTabDef[] = [];
+		if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
+			tabs.push({ id: 'intro', label: 'Intro' });
+		}
+		tabs.push({ id: 'footnotes', label: 'Footnotes' });
+		tabs.push({ id: 'commentary', label: 'Commentary' });
+		return tabs;
+	})();
+	$: confShowTabBar = confVisibleTabs.length > 1;
+	$: confSliderIndex = Math.max(0, confVisibleTabs.findIndex((t) => t.id === $studyPanel.activeTab));
+
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
 	let prevBook: string | null = null;
 	$: if (bookData && bookData.book !== prevBook) {
 		prevBook = bookData.book; // eslint-disable-line no-useless-assignment
-		const idx = intros.findIndex((i) => i.default);
-		const target = idx >= 0 ? idx : 0;
-		let preferredTab =
-			hasIntros || hasEndMatters || hasArticles ? $prefs.studyDefaultTab : 'commentary';
-		if (preferredTab === 'end' && !hasEndMatters) preferredTab = 'commentary';
-		if (preferredTab === 'intro' && !hasIntros) preferredTab = 'commentary';
-		if (preferredTab === 'article' && !hasArticles) preferredTab = 'commentary';
-		studyPanel.update((s) => ({
-			...s,
-			activeIntroIndex: target,
-			activeEndIndex: 0,
-			activeArticleIndex: 0,
-			activeTab: preferredTab
-		}));
+		if (isConf) {
+			const preferred = $prefs.studyDefaultTab;
+			if (preferred === 'footnotes' || preferred === 'commentary') {
+				studyPanel.update((s) => ({ ...s, activeTab: preferred }));
+			} else if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
+				studyPanel.update((s) => ({ ...s, activeTab: 'intro' }));
+			} else {
+				studyPanel.update((s) => ({ ...s, activeTab: 'footnotes' }));
+			}
+		} else {
+			const idx = intros.findIndex((i) => i.default);
+			const target = idx >= 0 ? idx : 0;
+			let preferredTab =
+				hasIntros || hasEndMatters || hasArticles ? $prefs.studyDefaultTab : 'commentary';
+			if (preferredTab === 'end' && !hasEndMatters) preferredTab = 'commentary';
+			if (preferredTab === 'intro' && !hasIntros) preferredTab = 'commentary';
+			if (preferredTab === 'article' && !hasArticles) preferredTab = 'commentary';
+			studyPanel.update((s) => ({
+				...s,
+				activeIntroIndex: target,
+				activeEndIndex: 0,
+				activeArticleIndex: 0,
+				activeTab: preferredTab
+			}));
+		}
 	}
 
 	// If on the article tab but current chapter has no articles, fall back to commentary
@@ -173,7 +220,7 @@
 		studyPanel.update((s) => ({ ...s, activeTab: 'commentary' }));
 	}
 
-	function switchTab(tab: 'intro' | 'commentary' | 'article' | 'end') {
+	function switchTab(tab: 'intro' | 'commentary' | 'article' | 'end' | 'footnotes') {
 		studyPanel.update((s) => ({ ...s, activeTab: tab }));
 		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
@@ -484,8 +531,8 @@
 
 	{#if !isOdr}
 		<!-- Translation-specific study content -->
-		<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
-			{#if hasTranslationNotes}
+		{#if hasTranslationNotes}
+			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
 				{#if translationNotesLoading}
 					<div class="empty-state"><p>Loading notes...</p></div>
 				{:else if translationNotes && translationNotes.length > 0}
@@ -514,31 +561,134 @@
 						<p>No notes for this chapter.</p>
 					</div>
 				{/if}
-			{:else if hasTranslationIntro}
-				{#if confIntroLoading}
-					<div class="empty-state"><p>Loading introduction...</p></div>
-				{:else if introParagraphs.length > 0}
-					<div class="content-block">
-						<p class="content-eyebrow">Introduction · {translationMeta?.abbr ?? 'Conf'}</p>
-						{#each introParagraphs as para}
-							<p class="prose-para">{para}</p>
-						{/each}
+			</div>
+		{:else if isConf}
+			<!-- Confraternity tab bar -->
+			{#if confShowTabBar}
+				<div
+					class="tab-row relative flex px-[4px] gap-[2px]"
+					role="tablist"
+					aria-label="Confraternity study sections"
+				>
+					{#each confVisibleTabs as tab}
+						<button
+							role="tab"
+							aria-selected={$studyPanel.activeTab === tab.id}
+							class="tab-btn flex-1 pb-[9px] pt-[2px]"
+							class:tab-active={$studyPanel.activeTab === tab.id}
+							on:click={() => switchTab(tab.id)}
+						>
+							{tab.label}
+						</button>
+					{/each}
+					<div
+						class="tab-slider"
+						style="width: calc({100 / confVisibleTabs.length}% - 4px); transform: translateX({confSliderIndex * 100}%)"
+						aria-hidden="true"
+					></div>
+				</div>
+			{/if}
+
+			<div class="border-b border-border"></div>
+
+			<!-- Confraternity intro sub-tabs -->
+			{#if $studyPanel.activeTab === 'intro' && confIntro}
+				<div class="subtab-bar shrink-0">
+					<div class="segmented-control" style="grid-template-columns: repeat(2, 1fr)">
+						<button
+							class="seg-btn"
+							class:seg-active={$studyPanel.activeConfIntroTab === 'bible'}
+							on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
+						>
+							Confraternity Bible
+						</button>
+						<button
+							class="seg-btn"
+							class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
+							on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
+						>
+							Supplemental Commentary
+						</button>
+						<div
+							class="seg-slider"
+							style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible' ? 0 : 100}%)"
+							aria-hidden="true"
+						></div>
 					</div>
-				{:else}
-					<div class="empty-state">
-						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No introduction for this book.</p>
+				</div>
+			{/if}
+
+			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
+				{#if $studyPanel.activeTab === 'intro' && confIntro}
+					<div class="content-block">
+						{#if $studyPanel.activeConfIntroTab === 'bible'}
+							<p class="content-eyebrow">Introduction · Confraternity Bible</p>
+							{#each confIntro.bibleIntro as para}
+								<p class="prose-para">{@html para}</p>
+							{/each}
+						{:else}
+							<p class="content-eyebrow">Introduction · Supplemental Commentary</p>
+							{#each confIntro.commentaryIntro as para}
+								<p class="prose-para">{@html para}</p>
+							{/each}
+						{/if}
+					</div>
+				{:else if $studyPanel.activeTab === 'footnotes'}
+					<div class="content-block">
+						{#if confFootnotesLoading}
+							<div class="empty-state"><p>Loading footnotes...</p></div>
+						{:else if confFootnotes && confFootnotes.footnotes.length > 0}
+							<p class="content-eyebrow">Bible Footnotes</p>
+							{#each confFootnotes.footnotes as fn}
+								<div class="conf-note-entry">
+									<span class="cr-marker">{fn.verse}</span>
+									<div class="note-body">
+										<span class="note-text">{@html fn.text}</span>
+									</div>
+								</div>
+							{/each}
+						{:else}
+							<div class="empty-state">
+								<span class="empty-icon" aria-hidden="true">✦</span>
+								<p>No footnotes for this chapter.</p>
+							</div>
+						{/if}
+					</div>
+				{:else if $studyPanel.activeTab === 'commentary'}
+					<div class="content-block">
+						{#if confCommentaryLoading}
+							<div class="empty-state"><p>Loading commentary...</p></div>
+						{:else if confCommentary && confCommentary.sections.length > 0}
+							<p class="content-eyebrow">Supplemental Commentary</p>
+							{#each confCommentary.sections as section}
+								<div class="conf-commentary-section">
+									{#if section.heading}
+										<p class="conf-section-heading">{section.heading}</p>
+									{/if}
+									{#each section.paragraphs as para}
+										<p class="prose-para">{@html para}</p>
+									{/each}
+								</div>
+							{/each}
+						{:else}
+							<div class="empty-state">
+								<span class="empty-icon" aria-hidden="true">✦</span>
+								<p>No commentary for this chapter.</p>
+							</div>
+						{/if}
 					</div>
 				{/if}
-			{:else}
+			</div>
+		{:else}
+			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
 				<div class="empty-state">
 					<span class="empty-icon" aria-hidden="true">✦</span>
 					<p>
 						No study notes available for {translationMeta?.abbr ?? translationId.toUpperCase()}.
 					</p>
 				</div>
-			{/if}
-		</div>
+			</div>
+		{/if}
 	{:else}
 		<!-- Sub-tab segmented control (outside scroll so scrollbar doesn't bleed into them) -->
 		{#if $studyPanel.activeTab === 'intro' && intros.length > 1}
@@ -1152,6 +1302,36 @@
 		line-height: 1.83;
 		color: var(--color-foreground);
 		margin-bottom: 0.6em;
+	}
+
+	/* ─── Confraternity commentary sections ──────── */
+	.conf-note-entry {
+		display: flex;
+		gap: 10px;
+		padding: 10px 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.conf-note-entry:last-child {
+		border-bottom: none;
+	}
+
+	.conf-commentary-section {
+		padding: 12px 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.conf-commentary-section:last-child {
+		border-bottom: none;
+	}
+
+	.conf-section-heading {
+		font-size: 11px;
+		font-weight: 600;
+		color: var(--color-accent);
+		margin: 0 0 8px;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
 	}
 
 	/* ─── Reduced motion ───────────────────────────────────────── */
