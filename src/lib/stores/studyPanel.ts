@@ -1,7 +1,15 @@
 // src/lib/stores/studyPanel.ts
 import { writable } from 'svelte/store';
 
-export type StudyTab = 'intro' | 'commentary' | 'article' | 'end' | 'footnotes' | 'annotations' | 'notes' | 'cross-refs';
+export type StudyTab =
+	| 'intro'
+	| 'commentary'
+	| 'article'
+	| 'end'
+	| 'footnotes'
+	| 'annotations'
+	| 'notes'
+	| 'cross-refs';
 
 export interface ScrollTrigger {
 	verse: number; // 0 = summary
