@@ -14,6 +14,3 @@
 /reference/ /reference 301
 /search/ /search 301
 /terms/ /terms 301
-/books/:slug/ /books/:slug 301
-/history/:slug/ /history/:slug 301
-/reference/:testament/:slug/ /reference/:testament/:slug 301
