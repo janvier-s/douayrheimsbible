@@ -4,8 +4,22 @@
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import { prefs } from '$lib/stores/prefs';
-	import { loadAnnotations, loadTranslationNotes, loadConfIntro, loadConfFootnotes, loadConfCommentary } from '$lib/data/loader';
-	import type { BookData, ChapterAnnotations, AnnotationEntry, Verse, ConfChapterFootnotes, ConfChapterCommentary, ConfIntro } from '$lib/data/types';
+	import {
+		loadAnnotations,
+		loadTranslationNotes,
+		loadConfIntro,
+		loadConfFootnotes,
+		loadConfCommentary
+	} from '$lib/data/loader';
+	import type {
+		BookData,
+		ChapterAnnotations,
+		AnnotationEntry,
+		Verse,
+		ConfChapterFootnotes,
+		ConfChapterCommentary,
+		ConfIntro
+	} from '$lib/data/types';
 	import type { TranslationNote } from '$lib/data/translation-types';
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
@@ -181,7 +195,10 @@
 		return tabs;
 	})();
 	$: confShowTabBar = confVisibleTabs.length > 1;
-	$: confSliderIndex = Math.max(0, confVisibleTabs.findIndex((t) => t.id === $studyPanel.activeTab));
+	$: confSliderIndex = Math.max(
+		0,
+		confVisibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
+	);
 
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
@@ -192,7 +209,10 @@
 			const preferred = $prefs.studyDefaultTab;
 			if (preferred === 'footnotes' || preferred === 'commentary') {
 				studyPanel.update((s) => ({ ...s, activeTab: preferred }));
-			} else if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
+			} else if (
+				confIntro &&
+				(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
+			) {
 				studyPanel.update((s) => ({ ...s, activeTab: 'intro' }));
 			} else {
 				studyPanel.update((s) => ({ ...s, activeTab: 'footnotes' }));
@@ -583,7 +603,8 @@
 					{/each}
 					<div
 						class="tab-slider"
-						style="width: calc({100 / confVisibleTabs.length}% - 4px); transform: translateX({confSliderIndex * 100}%)"
+						style="width: calc({100 /
+							confVisibleTabs.length}% - 4px); transform: translateX({confSliderIndex * 100}%)"
 						aria-hidden="true"
 					></div>
 				</div>
@@ -605,13 +626,16 @@
 						<button
 							class="seg-btn"
 							class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
+							on:click={() =>
+								studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
 						>
 							Supplemental Commentary
 						</button>
 						<div
 							class="seg-slider"
-							style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible' ? 0 : 100}%)"
+							style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible'
+								? 0
+								: 100}%)"
 							aria-hidden="true"
 						></div>
 					</div>

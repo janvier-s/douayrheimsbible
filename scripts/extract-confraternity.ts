@@ -147,9 +147,7 @@ function splitChapterSections(html: string): ChapterSections {
 	const body = root.querySelector('body');
 	if (!body) return { footnotes: [], commentary: [] };
 
-	const children = body.childNodes.filter(
-		(n) => n instanceof HTMLElement
-	) as HTMLElement[];
+	const children = body.childNodes.filter((n) => n instanceof HTMLElement) as HTMLElement[];
 
 	// Find the "Bible Footnotes:" paragraph
 	let footnotesStart = -1;
@@ -256,10 +254,7 @@ interface CommentarySection {
 	paragraphs: string[];
 }
 
-function parseCommentary(
-	elements: HTMLElement[],
-	totalVerses: number
-): CommentarySection[] {
+function parseCommentary(elements: HTMLElement[], totalVerses: number): CommentarySection[] {
 	const sections: CommentarySection[] = [];
 
 	const paragraphs: { text: string; isSectionHeading: boolean }[] = [];
@@ -311,10 +306,7 @@ function parseCommentary(
 	return sections;
 }
 
-function parseVerseRange(
-	heading: string,
-	totalVerses: number
-): { start: number; end: number } {
+function parseVerseRange(heading: string, totalVerses: number): { start: number; end: number } {
 	// Try cross-chapter range: "N, N -- M, P"
 	const crossChapterMatch = heading.match(/(\d+),\s*(\d+)\s*--\s*(\d+),\s*(\d+)/);
 	if (crossChapterMatch) {
@@ -366,9 +358,7 @@ function parseIntroduction(html: string, slug: string): IntroData {
 	const body = root.querySelector('body');
 	if (!body) return { book: slug, bibleIntro: [], commentaryIntro: [] };
 
-	const children = body.childNodes.filter(
-		(n) => n instanceof HTMLElement
-	) as HTMLElement[];
+	const children = body.childNodes.filter((n) => n instanceof HTMLElement) as HTMLElement[];
 
 	let separatorIndex = -1;
 	for (let i = 0; i < children.length; i++) {
@@ -382,10 +372,7 @@ function parseIntroduction(html: string, slug: string): IntroData {
 	let commentaryStart = -1;
 	for (let i = 0; i < children.length; i++) {
 		const text = children[i].text.trim();
-		if (
-			text.startsWith('Supplemental Commentary:') ||
-			text === 'Supplemental Commentary:'
-		) {
+		if (text.startsWith('Supplemental Commentary:') || text === 'Supplemental Commentary:') {
 			commentaryStart = i;
 			break;
 		}
@@ -396,21 +383,14 @@ function parseIntroduction(html: string, slug: string): IntroData {
 	let bibleStart = -1;
 	for (let i = 0; i < children.length; i++) {
 		const text = children[i].text.trim();
-		if (
-			text.startsWith('Confraternity Bible:') ||
-			text === 'Confraternity Bible:'
-		) {
+		if (text.startsWith('Confraternity Bible:') || text === 'Confraternity Bible:') {
 			bibleStart = i;
 			break;
 		}
 	}
 
 	const bibleEnd =
-		separatorIndex >= 0
-			? separatorIndex
-			: commentaryStart >= 0
-				? commentaryStart
-				: children.length;
+		separatorIndex >= 0 ? separatorIndex : commentaryStart >= 0 ? commentaryStart : children.length;
 	if (bibleStart >= 0) {
 		for (let i = bibleStart + 1; i < bibleEnd; i++) {
 			const el = children[i];
@@ -449,9 +429,7 @@ function getChapterVerseCount(slug: string, chapter: number): number {
 	const bookPath = path.join(STATIC_DIR, 'conf', `${slug}.json`);
 	try {
 		const data = JSON.parse(fs.readFileSync(bookPath, 'utf-8'));
-		const ch = data.chapters?.find(
-			(c: { chapter: number }) => c.chapter === chapter
-		);
+		const ch = data.chapters?.find((c: { chapter: number }) => c.chapter === chapter);
 		return ch?.verses?.length ?? 30;
 	} catch {
 		return 30;
@@ -463,9 +441,7 @@ function getChapterVerseCount(slug: string, chapter: number): number {
 function main() {
 	const epubDir = process.argv[2];
 	if (!epubDir) {
-		console.error(
-			'Usage: npx tsx scripts/extract-confraternity.ts <epub-extract-dir>'
-		);
+		console.error('Usage: npx tsx scripts/extract-confraternity.ts <epub-extract-dir>');
 		process.exit(1);
 	}
 
@@ -487,9 +463,7 @@ function main() {
 	const intros = classified.filter((f) => f.type === 'introduction');
 	const chapters = classified.filter((f) => f.type === 'chapter');
 
-	console.log(
-		`Classified: ${intros.length} introductions, ${chapters.length} chapters`
-	);
+	console.log(`Classified: ${intros.length} introductions, ${chapters.length} chapters`);
 
 	const footnotesDir = path.join(STATIC_DIR, 'conf-footnotes');
 	const commentaryDir = path.join(STATIC_DIR, 'conf-commentary');
@@ -522,10 +496,7 @@ function main() {
 		fs.mkdirSync(fnDir, { recursive: true });
 		const footnotes = parseFootnotes(sections.footnotes);
 		const fnData = { chapter: ch.chapter, footnotes };
-		fs.writeFileSync(
-			path.join(fnDir, `${paddedChapter}.json`),
-			JSON.stringify(fnData, null, 2)
-		);
+		fs.writeFileSync(path.join(fnDir, `${paddedChapter}.json`), JSON.stringify(fnData, null, 2));
 		fnCount++;
 
 		// Write commentary
@@ -534,10 +505,7 @@ function main() {
 		const totalVerses = getChapterVerseCount(ch.book, ch.chapter);
 		const commentarySections = parseCommentary(sections.commentary, totalVerses);
 		const cmData = { chapter: ch.chapter, sections: commentarySections };
-		fs.writeFileSync(
-			path.join(cmDir, `${paddedChapter}.json`),
-			JSON.stringify(cmData, null, 2)
-		);
+		fs.writeFileSync(path.join(cmDir, `${paddedChapter}.json`), JSON.stringify(cmData, null, 2));
 		cmCount++;
 	}
 

@@ -1,4 +1,11 @@
-import type { BookData, Chapter, ChapterAnnotations, ConfChapterFootnotes, ConfChapterCommentary, ConfIntro } from './types';
+import type {
+	BookData,
+	Chapter,
+	ChapterAnnotations,
+	ConfChapterFootnotes,
+	ConfChapterCommentary,
+	ConfIntro
+} from './types';
 import type { TranslationBook, TranslationNote } from './translation-types';
 
 const bookCache = new Map<string, Promise<BookData>>();
