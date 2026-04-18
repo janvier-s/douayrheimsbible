@@ -598,323 +598,199 @@
 		<div class="border-b border-border"></div>
 	</div>
 
-	{#if !isOdr}
-		<!-- Translation-specific study content -->
-		{#if hasTranslationNotes}
-			<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
-			<div
-				class="panel-scroll flex-1 overflow-y-scroll"
-				bind:this={panelScroll}
-				on:mouseover={hasLinkifiedNotes ? handleConfRefOver : undefined}
-				on:mouseout={hasLinkifiedNotes ? handleConfRefOut : undefined}
-			>
-				{#if translationNotesLoading}
-					<div class="empty-state"><p>Loading notes...</p></div>
-				{:else if translationNotes && translationNotes.length > 0}
-					<div class="content-block">
-						<p class="content-eyebrow">
-							Notes · {translationMeta?.abbr ?? translationId.toUpperCase()}
-						</p>
-						{#each translationNotes as note (note.verse)}
-							{@const headingMatch = note.text.match(/^(".*?")\s*\.{3}\s*/)}
-							{@const linkify = isKnox ? linkifyKnoxRefs : isDrc ? linkifyDrcRefs : null}
-							<div class="translation-note-entry">
-								<span class="cr-marker">{note.verse}</span>
-								<div class="note-body">
-									{#if headingMatch}
-										<p class="annotation-title">{headingMatch[1].replace(/^"|"$/g, '')}</p>
-										{#if linkify}
-											<span class="note-text"
-												>{@html linkify(note.text.slice(headingMatch[0].length))}</span
-											>
-										{:else}
-											<span class="note-text">{note.text.slice(headingMatch[0].length)}</span>
-										{/if}
-									{:else if linkify}
-										<span class="note-text">{@html linkify(note.text)}</span>
-									{:else}
-										<span class="note-text">{note.text}</span>
-									{/if}
-								</div>
-							</div>
-						{/each}
-					</div>
-				{:else}
-					<div class="empty-state">
-						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No notes for this chapter.</p>
-					</div>
-				{/if}
-
-				{#if hasLinkifiedNotes}
-					<VerseTooltip
-						{translationId}
-						osisRanges={confVerseRefs}
-						anchorEl={confVerseRefAnchor}
-						visible={confVerseRefVisible}
-						on:mouseenter={() => {
-							if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
-						}}
-						on:mouseleave={() => {
-							confVerseRefTimer = setTimeout(() => {
-								confVerseRefVisible = false;
-								confVerseRefAnchor = null;
-							}, 120);
-						}}
-					/>
-				{/if}
+	<!-- Sub-tab segmented controls (outside scroll — applies to any translation) -->
+	{#if $studyPanel.activeTab === 'intro' && isOdr && intros.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat({intros.length}, 1fr)">
+				{#each intros as intro, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeIntroIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
+					>
+						{tabLabel(intro.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 / intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
+					aria-hidden="true"
+				></div>
 			</div>
-		{:else if isConf}
-			<!-- Confraternity intro sub-tabs -->
-			{#if $studyPanel.activeTab === 'intro' && confIntro}
-				<div class="subtab-bar shrink-0">
-					<div class="segmented-control" style="grid-template-columns: repeat(2, 1fr)">
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeConfIntroTab === 'bible'}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
+		</div>
+	{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat(2, 1fr)">
+				<button
+					class="seg-btn"
+					class:seg-active={$studyPanel.activeConfIntroTab === 'bible'}
+					on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
+				>
+					Confraternity Bible
+				</button>
+				<button
+					class="seg-btn"
+					class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
+					on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
+				>
+					Supplemental Commentary
+				</button>
+				<div
+					class="seg-slider"
+					style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible' ? 0 : 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{:else if $studyPanel.activeTab === 'article' && isOdr && articles.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat({articles.length}, 1fr)">
+				{#each articles as art, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeArticleIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
+					>
+						{tabLabel(art.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 / articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{:else if $studyPanel.activeTab === 'end' && isOdr && endMatters.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat({endMatters.length}, 1fr)">
+				{#each endMatters as em, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeEndIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
+					>
+						{tabLabel(em.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 / endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{/if}
+
+	<!-- Scrollable content area -->
+	<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
+	<div
+		class="panel-scroll flex-1 overflow-y-scroll"
+		bind:this={panelScroll}
+		on:mouseover={hasLinkifiedNotes || isConf ? handleConfRefOver : undefined}
+		on:mouseout={hasLinkifiedNotes || isConf ? handleConfRefOut : undefined}
+	>
+		<!-- ═══ ODR: Intro tab ═══ -->
+		{#if $studyPanel.activeTab === 'intro' && isOdr}
+			{#if intros.length === 0}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No introduction for this book yet.</p>
+				</div>
+			{:else if intros[$studyPanel.activeIntroIndex]}
+				{@const intro = intros[$studyPanel.activeIntroIndex]}
+				<div class="content-block">
+					{#if currentBookSlug === 'genesis' || currentBookSlug === 'matthew'}
+						{@const bookMeta = getBookBySlug(currentBookSlug)}
+						<a
+							href="/reference/{bookMeta?.testament === 'NT' ? 'nt' : 'ot'}/title-page"
+							target="_blank"
+							rel="noopener"
+							class="ref-gateway"
 						>
-							Confraternity Bible
-						</button>
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
-							on:click={() =>
-								studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
-						>
-							Supplemental Commentary
-						</button>
-						<div
-							class="seg-slider"
-							style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible'
-								? 0
-								: 100}%)"
-							aria-hidden="true"
-						></div>
-					</div>
+							<span class="ref-gateway-label">
+								{bookMeta?.testament === 'NT' ? 'New' : 'Old'} Testament Reference
+							</span>
+							<span class="ref-gateway-desc">
+								{bookMeta?.testament === 'NT'
+									? 'Preface, annotations, evangelical history & more'
+									: 'Preface, historical tables, glossary & more'}
+							</span>
+							<span class="ref-gateway-arrow" aria-hidden="true">↗</span>
+						</a>
+					{/if}
+					<p class="content-eyebrow">{tabLabel(intro.title)}</p>
+					<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
 				</div>
 			{/if}
 
-			<!-- svelte-ignore a11y_no_static_element_interactions a11y_mouse_events_have_key_events -->
-			<div
-				class="panel-scroll flex-1 overflow-y-scroll"
-				bind:this={panelScroll}
-				on:mouseover={handleConfRefOver}
-				on:mouseout={handleConfRefOut}
-			>
-				{#if $studyPanel.activeTab === 'intro' && confIntro}
-					<div class="content-block">
-						{#if $studyPanel.activeConfIntroTab === 'bible'}
-							<p class="content-eyebrow">Introduction · Confraternity Bible</p>
-							{#each confIntro.bibleIntro as para}
-								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-							{/each}
-						{:else}
-							<p class="content-eyebrow">Introduction · Supplemental Commentary</p>
-							{#each confIntro.commentaryIntro as para}
-								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-							{/each}
-						{/if}
-					</div>
-				{:else if $studyPanel.activeTab === 'footnotes'}
-					<div class="content-block">
-						{#if confFootnotesLoading}
-							<div class="empty-state"><p>Loading footnotes...</p></div>
-						{:else if confFootnotes && confFootnotes.footnotes.length > 0}
-							<p class="content-eyebrow">Bible Footnotes</p>
-							{#each confFootnotes.footnotes as fn}
-								<div class="conf-note-entry">
-									<span class="cr-marker">{fn.verse}</span>
-									<div class="note-body">
-										<span class="note-text">{@html linkifyConfRefs(fn.text)}</span>
-									</div>
-								</div>
-							{/each}
-						{:else}
-							<div class="empty-state">
-								<span class="empty-icon" aria-hidden="true">✦</span>
-								<p>No footnotes for this chapter.</p>
-							</div>
-						{/if}
-					</div>
-				{:else if $studyPanel.activeTab === 'commentary'}
-					<div class="content-block">
-						{#if confCommentaryLoading}
-							<div class="empty-state"><p>Loading commentary...</p></div>
-						{:else if confCommentary && confCommentary.sections.length > 0}
-							<p class="content-eyebrow">Supplemental Commentary</p>
-							{#each confCommentary.sections as section}
-								<div class="conf-commentary-section">
-									{#if section.heading}
-										<p class="conf-section-heading">{section.heading}</p>
-									{/if}
-									{#each section.paragraphs as para}
-										<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-									{/each}
-								</div>
-							{/each}
-						{:else}
-							<div class="empty-state">
-								<span class="empty-icon" aria-hidden="true">✦</span>
-								<p>No commentary for this chapter.</p>
-							</div>
-						{/if}
-					</div>
-				{/if}
-
-				<VerseTooltip
-					{translationId}
-					osisRanges={confVerseRefs}
-					anchorEl={confVerseRefAnchor}
-					visible={confVerseRefVisible}
-					on:mouseenter={() => {
-						if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
-					}}
-					on:mouseleave={() => {
-						confVerseRefTimer = setTimeout(() => {
-							confVerseRefVisible = false;
-							confVerseRefAnchor = null;
-						}, 120);
-					}}
-				/>
-			</div>
-		{:else}
-			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
-				<div class="empty-state">
-					<span class="empty-icon" aria-hidden="true">✦</span>
-					<p>
-						No study notes available for {translationMeta?.abbr ?? translationId.toUpperCase()}.
-					</p>
-				</div>
-			</div>
-		{/if}
-	{:else}
-		<!-- Sub-tab segmented control (outside scroll so scrollbar doesn't bleed into them) -->
-		{#if $studyPanel.activeTab === 'intro' && intros.length > 1}
-			<div class="subtab-bar shrink-0">
-				<div class="segmented-control" style="grid-template-columns: repeat({intros.length}, 1fr)">
-					{#each intros as intro, i}
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeIntroIndex === i}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
-						>
-							{tabLabel(intro.title)}
-						</button>
-					{/each}
-					<div
-						class="seg-slider"
-						style="width: {100 /
-							intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
-						aria-hidden="true"
-					></div>
-				</div>
-			</div>
-		{/if}
-		{#if $studyPanel.activeTab === 'article' && articles.length > 1}
-			<div class="subtab-bar shrink-0">
-				<div
-					class="segmented-control"
-					style="grid-template-columns: repeat({articles.length}, 1fr)"
-				>
-					{#each articles as art, i}
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeArticleIndex === i}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
-						>
-							{tabLabel(art.title)}
-						</button>
-					{/each}
-					<div
-						class="seg-slider"
-						style="width: {100 /
-							articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
-						aria-hidden="true"
-					></div>
-				</div>
-			</div>
-		{/if}
-		{#if $studyPanel.activeTab === 'end' && endMatters.length > 1}
-			<div class="subtab-bar shrink-0">
-				<div
-					class="segmented-control"
-					style="grid-template-columns: repeat({endMatters.length}, 1fr)"
-				>
-					{#each endMatters as em, i}
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeEndIndex === i}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
-						>
-							{tabLabel(em.title)}
-						</button>
-					{/each}
-					<div
-						class="seg-slider"
-						style="width: {100 /
-							endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
-						aria-hidden="true"
-					></div>
-				</div>
-			</div>
-		{/if}
-
-		<!-- Scrollable content -->
-		<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
-			{#if $studyPanel.activeTab === 'intro'}
-				{#if intros.length === 0}
+		<!-- ═══ ODR: Annotations tab ═══ -->
+		{:else if $studyPanel.activeTab === 'annotations' && isOdr}
+			{#if annotationsLoading}
+				<div class="empty-state"><p>Loading annotations...</p></div>
+			{:else}
+				{@const annotationSections = verseSections.filter((s) => s.annotationEntries.length > 0)}
+				{#if annotationSections.length === 0}
 					<div class="empty-state">
 						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No introduction for this book yet.</p>
-					</div>
-				{:else if intros[$studyPanel.activeIntroIndex]}
-					{@const intro = intros[$studyPanel.activeIntroIndex]}
-					<div class="content-block">
-						{#if currentBookSlug === 'genesis' || currentBookSlug === 'matthew'}
-							{@const bookMeta = getBookBySlug(currentBookSlug)}
-							<a
-								href="/reference/{bookMeta?.testament === 'NT' ? 'nt' : 'ot'}/title-page"
-								target="_blank"
-								rel="noopener"
-								class="ref-gateway"
-							>
-								<span class="ref-gateway-label">
-									{bookMeta?.testament === 'NT' ? 'New' : 'Old'} Testament Reference
-								</span>
-								<span class="ref-gateway-desc">
-									{bookMeta?.testament === 'NT'
-										? 'Preface, annotations, evangelical history & more'
-										: 'Preface, historical tables, glossary & more'}
-								</span>
-								<span class="ref-gateway-arrow" aria-hidden="true">↗</span>
-							</a>
-						{/if}
-						<p class="content-eyebrow">{tabLabel(intro.title)}</p>
-						<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
-					</div>
-				{/if}
-			{:else if $studyPanel.activeTab === 'commentary'}
-				<!-- Commentary tab -->
-				{#if annotationsLoading}
-					<div class="empty-state">
-						<p>Loading commentary...</p>
-					</div>
-				{:else if verseSections.length === 0}
-					<div class="empty-state">
-						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No commentary for this chapter yet.</p>
+						<p>No annotations for this chapter yet.</p>
 					</div>
 				{:else}
 					<div class="commentary-list">
-						{#each verseSections as section (section.verse)}
+						{#each annotationSections as section (section.verse)}
 							<div
 								class="verse-section"
 								class:verse-section-active={$studyPanel.annotatedVerse === section.verse}
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
-								<!-- Verse header (sticky for non-summary) -->
+								<div
+									class="verse-section-header"
+									class:verse-section-header-sticky={section.verse !== 0}
+								>
+									{section.label}
+								</div>
+								{#each section.annotationEntries as ann}
+									<div
+										class="annotation-block"
+										data-panel-id="panel-{section.verse}-annotation-{ann.part}"
+									>
+										{#if ann.title}<p class="annotation-title">
+												{@html allcapsToSmallcaps(ann.title)}
+											</p>{/if}
+										<AnnotationProse text={ann.text} notes={ann.notes} />
+									</div>
+								{/each}
+							</div>
+						{/each}
+					</div>
+				{/if}
+			{/if}
+
+		<!-- ═══ ODR: Notes tab ═══ -->
+		{:else if $studyPanel.activeTab === 'notes' && isOdr}
+			{#if annotationsLoading}
+				<div class="empty-state"><p>Loading notes...</p></div>
+			{:else}
+				{@const noteSections = verseSections.filter(
+					(s) =>
+						(s.verse === 0 && currentChapterData?.summary_notes?.length) ||
+						(s.verseData?.notes && s.verseData.notes.length > 0)
+				)}
+				{#if noteSections.length === 0}
+					<div class="empty-state">
+						<span class="empty-icon" aria-hidden="true">✦</span>
+						<p>No notes for this chapter.</p>
+					</div>
+				{:else}
+					<div class="commentary-list">
+						{#each noteSections as section (section.verse)}
+							<div
+								class="verse-section"
+								class:verse-section-active={$studyPanel.annotatedVerse === section.verse}
+								bind:this={sectionEls[section.verse]}
+								data-section-verse={section.verse}
+							>
 								<div
 									class="verse-section-header"
 									class:verse-section-header-sticky={section.verse !== 0}
@@ -922,97 +798,227 @@
 									{section.label}
 								</div>
 
-								<!-- Summary notes (verse 0) -->
 								{#if section.verse === 0 && currentChapterData?.summary_notes}
-									<div class="sub-section">
-										<div class="sub-section-header">Notes</div>
-										{#each currentChapterData.summary_notes as sn}
-											<div class="note-row" data-panel-id="panel-0-note-{sn.marker}">
-												<span class="note-marker">{sn.marker}</span>
-												<span class="note-text">{@html allcapsToSmallcaps(sn.text)}</span>
-											</div>
-										{/each}
-									</div>
+									{#each currentChapterData.summary_notes as sn}
+										<div class="note-row sub-section-inline" data-panel-id="panel-0-note-{sn.marker}">
+											<span class="note-marker">{sn.marker}</span>
+											<span class="note-text">{@html allcapsToSmallcaps(sn.text)}</span>
+										</div>
+									{/each}
 								{/if}
 
-								<!-- Annotations -->
-								{#if section.annotationEntries.length > 0}
-									<div class="sub-section">
-										<div class="sub-section-header">Annotations</div>
-										{#each section.annotationEntries as ann}
-											<div
-												class="annotation-block"
-												data-panel-id="panel-{section.verse}-annotation-{ann.part}"
-											>
-												{#if ann.title}<p class="annotation-title">
-														{@html allcapsToSmallcaps(ann.title)}
-													</p>{/if}
-												<AnnotationProse text={ann.text} notes={ann.notes} />
-											</div>
-										{/each}
-									</div>
-								{/if}
-
-								<!-- Cross-references -->
-								{#if section.verseData?.cross_refs && section.verseData.cross_refs.length > 0}
-									<div class="sub-section">
-										<div class="sub-section-header">Cross-references</div>
-										{#each section.verseData.cross_refs as cr, ci}
-											<div class="cr-row" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
-												<span class="cr-marker">{ci + 1}</span>
-												<CrossRefText text={cr.text} />
-											</div>
-										{/each}
-									</div>
-								{/if}
-
-								<!-- Notes -->
 								{#if section.verseData?.notes && section.verseData.notes.length > 0}
-									<div class="sub-section">
-										<div class="sub-section-header">Notes</div>
-										{#each section.verseData.notes as note}
-											<div class="note-row" data-panel-id="panel-{section.verse}-note-{note.label}">
-												<span class="note-marker">{note.label}</span>
-												<span class="note-text">{@html allcapsToSmallcaps(note.text)}</span>
-											</div>
-										{/each}
-									</div>
+									{#each section.verseData.notes as note}
+										<div class="note-row sub-section-inline" data-panel-id="panel-{section.verse}-note-{note.label}">
+											<span class="note-marker">{note.label}</span>
+											<span class="note-text">{@html allcapsToSmallcaps(note.text)}</span>
+										</div>
+									{/each}
 								{/if}
 							</div>
 						{/each}
 					</div>
 				{/if}
-			{:else if $studyPanel.activeTab === 'article'}
-				<!-- Article tab -->
-				{#if articles.length === 0}
+			{/if}
+
+		<!-- ═══ ODR: Cross-Refs tab ═══ -->
+		{:else if $studyPanel.activeTab === 'cross-refs' && isOdr}
+			{#if annotationsLoading}
+				<div class="empty-state"><p>Loading cross-references...</p></div>
+			{:else}
+				{@const crossRefSections = verseSections.filter(
+					(s) => s.verseData?.cross_refs && s.verseData.cross_refs.length > 0
+				)}
+				{#if crossRefSections.length === 0}
 					<div class="empty-state">
 						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No article for this chapter.</p>
+						<p>No cross-references for this chapter.</p>
 					</div>
-				{:else if articles[$studyPanel.activeArticleIndex]}
-					{@const art = articles[$studyPanel.activeArticleIndex]}
-					<div class="content-block">
-						<p class="content-eyebrow">{tabLabel(art.title)}</p>
-						<AnnotationProse text={art.text} notes={art.notes ?? []} />
-					</div>
-				{/if}
-			{:else if $studyPanel.activeTab === 'end'}
-				<!-- End matter tab -->
-				{#if endMatters.length === 0}
-					<div class="empty-state">
-						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No end matter for this book yet.</p>
-					</div>
-				{:else if endMatters[$studyPanel.activeEndIndex]}
-					{@const em = endMatters[$studyPanel.activeEndIndex]}
-					<div class="content-block">
-						<p class="content-eyebrow">{tabLabel(em.title)}</p>
-						<AnnotationProse text={em.text} notes={em.notes ?? []} />
+				{:else}
+					<div class="commentary-list">
+						{#each crossRefSections as section (section.verse)}
+							<div
+								class="verse-section"
+								class:verse-section-active={$studyPanel.annotatedVerse === section.verse}
+								bind:this={sectionEls[section.verse]}
+								data-section-verse={section.verse}
+							>
+								<div class="verse-section-header verse-section-header-sticky">
+									{section.label}
+								</div>
+								{#each (section.verseData?.cross_refs ?? []) as cr, ci}
+									<div class="cr-row sub-section-inline" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
+										<span class="cr-marker">{ci + 1}</span>
+										<CrossRefText text={cr.text} />
+									</div>
+								{/each}
+							</div>
+						{/each}
 					</div>
 				{/if}
 			{/if}
-		</div>
-	{/if}
+
+		<!-- ═══ ODR: Article tab ═══ -->
+		{:else if $studyPanel.activeTab === 'article' && isOdr}
+			{#if articles.length === 0}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No article for this chapter.</p>
+				</div>
+			{:else if articles[$studyPanel.activeArticleIndex]}
+				{@const art = articles[$studyPanel.activeArticleIndex]}
+				<div class="content-block">
+					<p class="content-eyebrow">{tabLabel(art.title)}</p>
+					<AnnotationProse text={art.text} notes={art.notes ?? []} />
+				</div>
+			{/if}
+
+		<!-- ═══ ODR: End matter tab ═══ -->
+		{:else if $studyPanel.activeTab === 'end' && isOdr}
+			{#if endMatters.length === 0}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No end matter for this book yet.</p>
+				</div>
+			{:else if endMatters[$studyPanel.activeEndIndex]}
+				{@const em = endMatters[$studyPanel.activeEndIndex]}
+				<div class="content-block">
+					<p class="content-eyebrow">{tabLabel(em.title)}</p>
+					<AnnotationProse text={em.text} notes={em.notes ?? []} />
+				</div>
+			{/if}
+
+		<!-- ═══ Confraternity: Intro tab ═══ -->
+		{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
+			<div class="content-block">
+				{#if $studyPanel.activeConfIntroTab === 'bible'}
+					<p class="content-eyebrow">Introduction · Confraternity Bible</p>
+					{#each confIntro.bibleIntro as para}
+						<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+					{/each}
+				{:else}
+					<p class="content-eyebrow">Introduction · Supplemental Commentary</p>
+					{#each confIntro.commentaryIntro as para}
+						<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+					{/each}
+				{/if}
+			</div>
+
+		<!-- ═══ Confraternity: Footnotes tab ═══ -->
+		{:else if $studyPanel.activeTab === 'footnotes' && isConf}
+			<div class="content-block">
+				{#if confFootnotesLoading}
+					<div class="empty-state"><p>Loading footnotes...</p></div>
+				{:else if confFootnotes && confFootnotes.footnotes.length > 0}
+					<p class="content-eyebrow">Bible Footnotes</p>
+					{#each confFootnotes.footnotes as fn}
+						<div class="conf-note-entry">
+							<span class="cr-marker">{fn.verse}</span>
+							<div class="note-body">
+								<span class="note-text">{@html linkifyConfRefs(fn.text)}</span>
+							</div>
+						</div>
+					{/each}
+				{:else}
+					<div class="empty-state">
+						<span class="empty-icon" aria-hidden="true">✦</span>
+						<p>No footnotes for this chapter.</p>
+					</div>
+				{/if}
+			</div>
+
+		<!-- ═══ Confraternity: Commentary tab ═══ -->
+		{:else if $studyPanel.activeTab === 'commentary' && isConf}
+			<div class="content-block">
+				{#if confCommentaryLoading}
+					<div class="empty-state"><p>Loading commentary...</p></div>
+				{:else if confCommentary && confCommentary.sections.length > 0}
+					<p class="content-eyebrow">Supplemental Commentary</p>
+					{#each confCommentary.sections as section}
+						<div class="conf-commentary-section">
+							{#if section.heading}
+								<p class="conf-section-heading">{section.heading}</p>
+							{/if}
+							{#each section.paragraphs as para}
+								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+							{/each}
+						</div>
+					{/each}
+				{:else}
+					<div class="empty-state">
+						<span class="empty-icon" aria-hidden="true">✦</span>
+						<p>No commentary for this chapter.</p>
+					</div>
+				{/if}
+			</div>
+
+		<!-- ═══ DRC/Knox/CPDV: Translation Notes tab ═══ -->
+		{:else if $studyPanel.activeTab === 'notes' && hasTranslationNotes}
+			{#if translationNotesLoading}
+				<div class="empty-state"><p>Loading notes...</p></div>
+			{:else if translationNotes && translationNotes.length > 0}
+				<div class="content-block">
+					<p class="content-eyebrow">
+						Notes · {translationMeta?.abbr ?? translationId.toUpperCase()}
+					</p>
+					{#each translationNotes as note (note.verse)}
+						{@const headingMatch = note.text.match(/^(".*?")\s*\.{3}\s*/)}
+						{@const linkify = isKnox ? linkifyKnoxRefs : isDrc ? linkifyDrcRefs : null}
+						<div class="translation-note-entry">
+							<span class="cr-marker">{note.verse}</span>
+							<div class="note-body">
+								{#if headingMatch}
+									<p class="annotation-title">{headingMatch[1].replace(/^"|"$/g, '')}</p>
+									{#if linkify}
+										<span class="note-text">{@html linkify(note.text.slice(headingMatch[0].length))}</span>
+									{:else}
+										<span class="note-text">{note.text.slice(headingMatch[0].length)}</span>
+									{/if}
+								{:else if linkify}
+									<span class="note-text">{@html linkify(note.text)}</span>
+								{:else}
+									<span class="note-text">{note.text}</span>
+								{/if}
+							</div>
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No notes for this chapter.</p>
+				</div>
+			{/if}
+
+		<!-- ═══ Fallback: No study content ═══ -->
+		{:else}
+			<div class="empty-state">
+				<span class="empty-icon" aria-hidden="true">✦</span>
+				<p>
+					No study notes available for {translationMeta?.abbr ?? translationId.toUpperCase()}.
+				</p>
+			</div>
+		{/if}
+
+		<!-- Verse-ref tooltip (for linkified notes) -->
+		{#if hasLinkifiedNotes || isConf}
+			<VerseTooltip
+				{translationId}
+				osisRanges={confVerseRefs}
+				anchorEl={confVerseRefAnchor}
+				visible={confVerseRefVisible}
+				on:mouseenter={() => {
+					if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
+				}}
+				on:mouseleave={() => {
+					confVerseRefTimer = setTimeout(() => {
+						confVerseRefVisible = false;
+						confVerseRefAnchor = null;
+					}, 120);
+				}}
+			/>
+		{/if}
+	</div>
 </aside>
 
 <style>
@@ -1279,6 +1285,10 @@
 		padding-bottom: 17px;
 	}
 
+	.sub-section-inline {
+		padding: 2px 52px;
+	}
+
 	.sub-section-header {
 		font-size: 10px;
 		text-transform: uppercase;
@@ -1480,6 +1490,10 @@
 
 		.sub-section:last-child {
 			padding-bottom: 14px;
+		}
+
+		.sub-section-inline {
+			padding: 2px 12px;
 		}
 
 		.verse-section-header {
