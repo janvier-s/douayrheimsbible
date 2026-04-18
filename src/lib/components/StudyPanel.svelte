@@ -177,9 +177,18 @@
 
 	type TabDef = { id: StudyTab; label: string };
 
-	$: visibleTabs = buildVisibleTabs(translationId, hasIntros, hasArticles, hasEndMatters, confIntro);
+	$: visibleTabs = buildVisibleTabs(
+		translationId,
+		hasIntros,
+		hasArticles,
+		hasEndMatters,
+		confIntro
+	);
 	$: showTabBar = visibleTabs.length > 1;
-	$: sliderIndex = Math.max(0, visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab));
+	$: sliderIndex = Math.max(
+		0,
+		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
+	);
 
 	function buildVisibleTabs(
 		tid: string,
@@ -195,7 +204,7 @@
 				{ id: 'notes' as StudyTab, label: 'Notes' },
 				{ id: 'cross-refs' as StudyTab, label: 'Cross-Refs' },
 				...(hasArticles ? [{ id: 'article' as StudyTab, label: 'Article' }] : []),
-				...(hasEndMatters ? [{ id: 'end' as StudyTab, label: 'End' }] : []),
+				...(hasEndMatters ? [{ id: 'end' as StudyTab, label: 'End' }] : [])
 			];
 		}
 		if (tid === 'conf') {
@@ -388,7 +397,7 @@
 	// Clear sectionEls on tab switch
 	let lastActiveTab: StudyTab | null = null;
 	$: if ($studyPanel.activeTab !== lastActiveTab) {
-		lastActiveTab = $studyPanel.activeTab;
+		lastActiveTab = $studyPanel.activeTab; // eslint-disable-line no-useless-assignment
 		sectionEls = {};
 	}
 
@@ -637,7 +646,8 @@
 				{/each}
 				<div
 					class="seg-slider"
-					style="width: {100 / intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
+					style="width: {100 /
+						intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
 					aria-hidden="true"
 				></div>
 			</div>
@@ -661,7 +671,9 @@
 				</button>
 				<div
 					class="seg-slider"
-					style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible' ? 0 : 100}%)"
+					style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible'
+						? 0
+						: 100}%)"
 					aria-hidden="true"
 				></div>
 			</div>
@@ -680,14 +692,18 @@
 				{/each}
 				<div
 					class="seg-slider"
-					style="width: {100 / articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
+					style="width: {100 /
+						articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
 					aria-hidden="true"
 				></div>
 			</div>
 		</div>
 	{:else if $studyPanel.activeTab === 'end' && isOdr && endMatters.length > 1}
 		<div class="subtab-bar shrink-0">
-			<div class="segmented-control" style="grid-template-columns: repeat({endMatters.length}, 1fr)">
+			<div
+				class="segmented-control"
+				style="grid-template-columns: repeat({endMatters.length}, 1fr)"
+			>
 				{#each endMatters as em, i}
 					<button
 						class="seg-btn"
@@ -699,7 +715,8 @@
 				{/each}
 				<div
 					class="seg-slider"
-					style="width: {100 / endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
+					style="width: {100 /
+						endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
 					aria-hidden="true"
 				></div>
 			</div>
@@ -748,7 +765,7 @@
 				</div>
 			{/if}
 
-		<!-- ═══ ODR: Annotations tab ═══ -->
+			<!-- ═══ ODR: Annotations tab ═══ -->
 		{:else if $studyPanel.activeTab === 'annotations' && isOdr}
 			{#if annotationsLoading}
 				<div class="empty-state"><p>Loading annotations...</p></div>
@@ -791,7 +808,7 @@
 				{/if}
 			{/if}
 
-		<!-- ═══ ODR: Notes tab ═══ -->
+			<!-- ═══ ODR: Notes tab ═══ -->
 		{:else if $studyPanel.activeTab === 'notes' && isOdr}
 			{#if annotationsLoading}
 				<div class="empty-state"><p>Loading notes...</p></div>
@@ -824,7 +841,10 @@
 
 								{#if section.verse === 0 && currentChapterData?.summary_notes}
 									{#each currentChapterData.summary_notes as sn}
-										<div class="note-row sub-section-inline" data-panel-id="panel-0-note-{sn.marker}">
+										<div
+											class="note-row sub-section-inline"
+											data-panel-id="panel-0-note-{sn.marker}"
+										>
 											<span class="note-marker">{sn.marker}</span>
 											<span class="note-text">{@html allcapsToSmallcaps(sn.text)}</span>
 										</div>
@@ -833,7 +853,10 @@
 
 								{#if section.verseData?.notes && section.verseData.notes.length > 0}
 									{#each section.verseData.notes as note}
-										<div class="note-row sub-section-inline" data-panel-id="panel-{section.verse}-note-{note.label}">
+										<div
+											class="note-row sub-section-inline"
+											data-panel-id="panel-{section.verse}-note-{note.label}"
+										>
 											<span class="note-marker">{note.label}</span>
 											<span class="note-text">{@html allcapsToSmallcaps(note.text)}</span>
 										</div>
@@ -845,7 +868,7 @@
 				{/if}
 			{/if}
 
-		<!-- ═══ ODR: Cross-Refs tab ═══ -->
+			<!-- ═══ ODR: Cross-Refs tab ═══ -->
 		{:else if $studyPanel.activeTab === 'cross-refs' && isOdr}
 			{#if annotationsLoading}
 				<div class="empty-state"><p>Loading cross-references...</p></div>
@@ -870,8 +893,11 @@
 								<div class="verse-section-header verse-section-header-sticky">
 									{section.label}
 								</div>
-								{#each (section.verseData?.cross_refs ?? []) as cr, ci}
-									<div class="cr-row sub-section-inline" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
+								{#each section.verseData?.cross_refs ?? [] as cr, ci}
+									<div
+										class="cr-row sub-section-inline"
+										data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}"
+									>
 										<span class="cr-marker">{ci + 1}</span>
 										<CrossRefText text={cr.text} />
 									</div>
@@ -882,7 +908,7 @@
 				{/if}
 			{/if}
 
-		<!-- ═══ ODR: Article tab ═══ -->
+			<!-- ═══ ODR: Article tab ═══ -->
 		{:else if $studyPanel.activeTab === 'article' && isOdr}
 			{#if articles.length === 0}
 				<div class="empty-state">
@@ -897,7 +923,7 @@
 				</div>
 			{/if}
 
-		<!-- ═══ ODR: End matter tab ═══ -->
+			<!-- ═══ ODR: End matter tab ═══ -->
 		{:else if $studyPanel.activeTab === 'end' && isOdr}
 			{#if endMatters.length === 0}
 				<div class="empty-state">
@@ -912,7 +938,7 @@
 				</div>
 			{/if}
 
-		<!-- ═══ Confraternity: Intro tab ═══ -->
+			<!-- ═══ Confraternity: Intro tab ═══ -->
 		{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
 			<div class="content-block">
 				{#if $studyPanel.activeConfIntroTab === 'bible'}
@@ -928,7 +954,7 @@
 				{/if}
 			</div>
 
-		<!-- ═══ Confraternity: Footnotes tab ═══ -->
+			<!-- ═══ Confraternity: Footnotes tab ═══ -->
 		{:else if $studyPanel.activeTab === 'footnotes' && isConf}
 			<div class="content-block">
 				{#if confFootnotesLoading}
@@ -951,7 +977,7 @@
 				{/if}
 			</div>
 
-		<!-- ═══ Confraternity: Commentary tab ═══ -->
+			<!-- ═══ Confraternity: Commentary tab ═══ -->
 		{:else if $studyPanel.activeTab === 'commentary' && isConf}
 			<div class="content-block">
 				{#if confCommentaryLoading}
@@ -976,7 +1002,7 @@
 				{/if}
 			</div>
 
-		<!-- ═══ DRC/Knox/CPDV: Translation Notes tab ═══ -->
+			<!-- ═══ DRC/Knox/CPDV: Translation Notes tab ═══ -->
 		{:else if $studyPanel.activeTab === 'notes' && hasTranslationNotes}
 			{#if translationNotesLoading}
 				<div class="empty-state"><p>Loading notes...</p></div>
@@ -994,7 +1020,9 @@
 								{#if headingMatch}
 									<p class="annotation-title">{headingMatch[1].replace(/^"|"$/g, '')}</p>
 									{#if linkify}
-										<span class="note-text">{@html linkify(note.text.slice(headingMatch[0].length))}</span>
+										<span class="note-text"
+											>{@html linkify(note.text.slice(headingMatch[0].length))}</span
+										>
 									{:else}
 										<span class="note-text">{note.text.slice(headingMatch[0].length)}</span>
 									{/if}
@@ -1014,7 +1042,7 @@
 				</div>
 			{/if}
 
-		<!-- ═══ Fallback: No study content ═══ -->
+			<!-- ═══ Fallback: No study content ═══ -->
 		{:else}
 			<div class="empty-state">
 				<span class="empty-icon" aria-hidden="true">✦</span>
@@ -1301,24 +1329,8 @@
 		}
 	}
 
-	.sub-section {
-		padding: 4px 52px 12px;
-	}
-
-	.sub-section:last-child {
-		padding-bottom: 17px;
-	}
-
 	.sub-section-inline {
 		padding: 2px 52px;
-	}
-
-	.sub-section-header {
-		font-size: 10px;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		color: var(--color-subtle);
-		margin-bottom: 6px;
 	}
 
 	/* Cross-references & Notes (shared layout) */
@@ -1506,14 +1518,6 @@
 	@media (max-width: 767px) {
 		.content-block {
 			padding: 12px 16px;
-		}
-
-		.sub-section {
-			padding: 4px 12px 10px;
-		}
-
-		.sub-section:last-child {
-			padding-bottom: 14px;
 		}
 
 		.sub-section-inline {
