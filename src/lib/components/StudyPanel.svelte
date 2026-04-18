@@ -72,27 +72,18 @@
 
 	// ── Confraternity intro ─────────────────────────────────────────
 	let confIntro: ConfIntro | null = null;
-	let confIntroLoading = false;
 	let lastConfIntroSlug = '';
 
 	$: {
 		if (!isOdr && hasTranslationIntro && currentBookSlug && currentBookSlug !== lastConfIntroSlug) {
 			lastConfIntroSlug = currentBookSlug;
 			const slug = currentBookSlug;
-			confIntroLoading = true;
 			confIntro = null;
-			loadConfIntro(slug, fetch)
-				.then((data) => {
-					if (slug === lastConfIntroSlug) {
-						confIntro = data;
-						confIntroLoading = false;
-					}
-				})
-				.catch(() => {
-					if (slug === lastConfIntroSlug) {
-						confIntroLoading = false;
-					}
-				});
+			loadConfIntro(slug, fetch).then((data) => {
+				if (slug === lastConfIntroSlug) {
+					confIntro = data;
+				}
+			});
 		}
 	}
 
