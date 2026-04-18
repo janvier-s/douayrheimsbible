@@ -62,7 +62,7 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 			},
 			body: JSON.stringify({
 				from: 'Contact Form <contact@thedouayrheims.com>',
-				to: ['janvier.sabates@gmail.com'],
+				to: [env.CONTACT_EMAIL],
 				reply_to: email,
 				subject: emailSubject,
 				text: textBody
