@@ -24,7 +24,7 @@ export const TRANSLATIONS: Translation[] = [
 		label: 'Clementine Vulgate',
 		abbr: 'Vul',
 		year: '1592',
-		live: false,
+		live: true,
 		ntOnly: false,
 		fullHeader: false,
 		micro: 'Source Text'
@@ -44,7 +44,7 @@ export const TRANSLATIONS: Translation[] = [
 		label: 'King James Version',
 		abbr: 'KJV',
 		year: '1611',
-		live: false,
+		live: true,
 		ntOnly: false,
 		fullHeader: false,
 		micro: 'Influenced Challoner Revision'
@@ -54,7 +54,7 @@ export const TRANSLATIONS: Translation[] = [
 		label: 'Douay-Rheims Challoner',
 		abbr: 'DRC',
 		year: '1752',
-		live: false,
+		live: true,
 		ntOnly: false,
 		fullHeader: true,
 		micro: 'Douay-Rheims Revision'
@@ -64,7 +64,7 @@ export const TRANSLATIONS: Translation[] = [
 		label: 'Confraternity NT',
 		abbr: 'Conf',
 		year: '1941',
-		live: false,
+		live: true,
 		ntOnly: true,
 		fullHeader: false,
 		micro: 'Modest Revision of Douay NT'
@@ -74,7 +74,7 @@ export const TRANSLATIONS: Translation[] = [
 		label: 'Knox Bible',
 		abbr: 'Knox',
 		year: '1955',
-		live: false,
+		live: true,
 		ntOnly: false,
 		fullHeader: false,
 		micro: 'Literary Vulgate Translation'
@@ -84,7 +84,7 @@ export const TRANSLATIONS: Translation[] = [
 		label: 'Catholic Public Domain Version',
 		abbr: 'CPDV',
 		year: '2009',
-		live: false,
+		live: true,
 		ntOnly: false,
 		fullHeader: true,
 		micro: 'Modern Vulgate Translation'
@@ -129,7 +129,7 @@ interface CompareState {
 }
 
 // Bump version to reset cached order after adding/reordering translations
-const STORAGE_KEY = 'compareStore_v3';
+const STORAGE_KEY = 'compareStore_v4';
 
 function loadFromStorage(): Partial<Pick<CompareState, 'order' | 'visible'>> {
 	if (!browser) return {};
