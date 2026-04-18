@@ -40,6 +40,7 @@
 	let stopWordWarning = false;
 	let loading = false;
 	let searched = false;
+	let searchFailed = false;
 	let debounceTimer: ReturnType<typeof setTimeout>;
 	let searchGeneration = 0;
 	let lastDataQuery = data.query;
@@ -188,6 +189,7 @@
 			verseSuggestionCount = 0;
 			relatedTerms = [];
 			searched = false;
+			searchFailed = false;
 			loading = false;
 			textLimit = 100;
 			stopWordWarning = false;
@@ -217,6 +219,7 @@
 				verseSuggestionCount = 0;
 				relatedTerms = [];
 				searched = false;
+				searchFailed = false;
 				stopWordWarning = false;
 			}
 		}, 300);
@@ -346,6 +349,7 @@
 			return;
 		}
 		stopWordWarning = false;
+		searchFailed = false;
 		isVerseReference = false;
 		verseSuggestionCount = 0;
 		const gen = ++searchGeneration;
@@ -416,6 +420,7 @@
 			lookupSuggestions(trimmed);
 		} catch {
 			if (gen !== searchGeneration) return;
+			searchFailed = true;
 			textResults = [];
 			noteResults = [];
 			crossScopeVerseResults = [];
@@ -423,7 +428,6 @@
 			queryTokens = [];
 			crossScopeTotal = 0;
 			searched = true;
-			lookupSuggestions(trimmed);
 		}
 		loading = false;
 	}
@@ -441,6 +445,7 @@
 		verseSuggestionCount = 0;
 		relatedTerms = [];
 		searched = false;
+		searchFailed = false;
 		stopWordWarning = false;
 		updateUrl(query);
 		if (query.trim()) search(query);
@@ -456,6 +461,7 @@
 		queryTokens = [];
 		crossScopeTotal = 0;
 		searched = false;
+		searchFailed = false;
 		stopWordWarning = false;
 		updateUrl(query);
 		if (query.trim()) search(query);
@@ -943,7 +949,7 @@
 			{/if}
 
 			<!-- No results (verse mode) -->
-			{#if searched && !loading && mode === 'verse' && results.length === 0}
+			{#if searched && !loading && mode === 'verse' && results.length === 0 && !searchFailed}
 				{#if notAReferenceQuery && (textSuggestionVerses > 0 || textSuggestionNotes > 0)}
 					<div
 						class="text-subtle text-center flex flex-col items-center gap-[6px]"
@@ -1181,7 +1187,16 @@
 				</p>
 			{/if}
 
-			{#if searched && !loading && mode === 'text' && textResults.length === 0 && noteResults.length === 0 && !stopWordWarning}
+			{#if searchFailed && searched && !loading}
+				<p
+					class="text-subtle text-[14px] text-center"
+					in:fade={{ duration: reducedMotion ? 0 : 160 }}
+				>
+					Search is not available offline.
+				</p>
+			{/if}
+
+			{#if searched && !loading && mode === 'text' && textResults.length === 0 && noteResults.length === 0 && !stopWordWarning && !searchFailed}
 				{#if isVerseReference && verseSuggestionCount > 0}
 					<div
 						class="text-subtle text-center flex flex-col items-center gap-[6px]"
