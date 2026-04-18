@@ -24,6 +24,10 @@
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import CrossRefText from './CrossRefText.svelte';
+	import VerseTooltip from './VerseTooltip.svelte';
+	import { linkifyConfRefs } from '$lib/search/crossRefParser';
+	import { parseOsis } from '$lib/search/reference';
+	import type { OsisRange } from '$lib/search/reference';
 	import { getBookBySlug } from '$lib/data/books';
 	import { TRANSLATIONS } from '$lib/stores/compare';
 
@@ -500,10 +504,43 @@
 	}
 	$: if (panelScroll && browser) attachWheelHandler(panelScroll);
 
+	// ── Conf verse-ref tooltip state ────────────────────────────────
+	let confVerseRefs: OsisRange[] = [];
+	let confVerseRefAnchor: HTMLElement | null = null;
+	let confVerseRefVisible = false;
+	let confVerseRefTimer: ReturnType<typeof setTimeout> | null = null;
+
+	function handleConfRefOver(e: Event) {
+		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
+		if (!vref) return;
+		if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
+		const osis = vref.dataset.osis ?? '';
+		const refs = osis.split(',').flatMap((s) => {
+			const r = parseOsis(s.trim());
+			return r ? [r] : [];
+		});
+		if (refs.length > 0) {
+			confVerseRefs = refs;
+			confVerseRefAnchor = vref;
+			confVerseRefVisible = true;
+		}
+	}
+
+	function handleConfRefOut(e: Event) {
+		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
+		if (vref) {
+			confVerseRefTimer = setTimeout(() => {
+				confVerseRefVisible = false;
+				confVerseRefAnchor = null;
+			}, 120);
+		}
+	}
+
 	onDestroy(() => {
 		panelSectionObserver?.disconnect();
 		if (programmaticScrollTimer) clearTimeout(programmaticScrollTimer);
 		if (annotatedVerseTimer) clearTimeout(annotatedVerseTimer);
+		if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
 		wheelCleanup?.();
 	});
 </script>
@@ -642,18 +679,24 @@
 				</div>
 			{/if}
 
-			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
+			<!-- svelte-ignore a11y_no_static_element_interactions a11y_mouse_events_have_key_events -->
+			<div
+				class="panel-scroll flex-1 overflow-y-scroll"
+				bind:this={panelScroll}
+				on:mouseover={handleConfRefOver}
+				on:mouseout={handleConfRefOut}
+			>
 				{#if $studyPanel.activeTab === 'intro' && confIntro}
 					<div class="content-block">
 						{#if $studyPanel.activeConfIntroTab === 'bible'}
 							<p class="content-eyebrow">Introduction · Confraternity Bible</p>
 							{#each confIntro.bibleIntro as para}
-								<p class="prose-para">{@html para}</p>
+								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
 							{/each}
 						{:else}
 							<p class="content-eyebrow">Introduction · Supplemental Commentary</p>
 							{#each confIntro.commentaryIntro as para}
-								<p class="prose-para">{@html para}</p>
+								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
 							{/each}
 						{/if}
 					</div>
@@ -667,7 +710,7 @@
 								<div class="conf-note-entry">
 									<span class="cr-marker">{fn.verse}</span>
 									<div class="note-body">
-										<span class="note-text">{@html fn.text}</span>
+										<span class="note-text">{@html linkifyConfRefs(fn.text)}</span>
 									</div>
 								</div>
 							{/each}
@@ -690,7 +733,7 @@
 										<p class="conf-section-heading">{section.heading}</p>
 									{/if}
 									{#each section.paragraphs as para}
-										<p class="prose-para">{@html para}</p>
+										<p class="prose-para">{@html linkifyConfRefs(para)}</p>
 									{/each}
 								</div>
 							{/each}
@@ -702,6 +745,21 @@
 						{/if}
 					</div>
 				{/if}
+
+				<VerseTooltip
+					osisRanges={confVerseRefs}
+					anchorEl={confVerseRefAnchor}
+					visible={confVerseRefVisible}
+					on:mouseenter={() => {
+						if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
+					}}
+					on:mouseleave={() => {
+						confVerseRefTimer = setTimeout(() => {
+							confVerseRefVisible = false;
+							confVerseRefAnchor = null;
+						}, 120);
+					}}
+				/>
 			</div>
 		{:else}
 			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
@@ -1362,6 +1420,19 @@
 		margin: 0 0 8px;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
+	}
+
+	/* ─── Verse-ref links (linkified references) ───── */
+	.panel-root :global(.verse-ref) {
+		color: var(--color-accent-text);
+		text-decoration: none;
+		border-bottom: 1px solid color-mix(in srgb, var(--color-accent-text) 40%, transparent);
+		cursor: pointer;
+	}
+
+	.panel-root :global(.verse-ref:hover) {
+		color: var(--color-accent);
+		border-bottom-color: var(--color-accent);
 	}
 
 	/* ─── Reduced motion ───────────────────────────────────────── */

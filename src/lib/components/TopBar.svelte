@@ -379,6 +379,7 @@
 		{bookSlug}
 		chapterNum={parseInt(chapterNum, 10) || 0}
 		onClose={() => (navOpen = false)}
+		{translationId}
 	/>
 {/if}
 

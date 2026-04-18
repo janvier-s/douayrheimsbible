@@ -865,3 +865,264 @@ export function linkifyBareRefs(html: string): string {
 		})
 		.join('');
 }
+
+// ── Confraternity reference linkification ──────────────────────────
+// Confraternity content has references like "Isa. <i>53,</i> 7" where
+// book names are plain text and <i> tags are interspersed. This parser
+// strips italic tags, finds references in the clean text, then wraps
+// the original HTML (with tags preserved) in <a class="verse-ref">.
+
+const CONF_SIMPLE_BOOKS: Record<string, string> = {
+	Gen: 'Gen',
+	Gn: 'Gen',
+	Ex: 'Exod',
+	Exod: 'Exod',
+	Lev: 'Lev',
+	Lv: 'Lev',
+	Num: 'Num',
+	Nm: 'Num',
+	Deut: 'Deut',
+	Dt: 'Deut',
+	Jos: 'Josh',
+	Josue: 'Josh',
+	Jgs: 'Judg',
+	Judg: 'Judg',
+	Ruth: 'Ruth',
+	Ru: 'Ruth',
+	Ezr: 'Ezra',
+	Ezra: 'Ezra',
+	Neh: 'Neh',
+	Tob: 'Tob',
+	Tb: 'Tob',
+	Jdt: 'Jdt',
+	Judith: 'Jdt',
+	Est: 'Esth',
+	Esth: 'Esth',
+	Job: 'Job',
+	Jb: 'Job',
+	Ps: 'Ps',
+	Pss: 'Ps',
+	Prov: 'Prov',
+	Prv: 'Prov',
+	Eccl: 'Eccl',
+	Cant: 'Cant',
+	Ct: 'Cant',
+	Wis: 'Wis',
+	Sir: 'Sir',
+	Isa: 'Isa',
+	Is: 'Isa',
+	Jer: 'Jer',
+	Lam: 'Lam',
+	Bar: 'Bar',
+	Baruch: 'Bar',
+	Ezech: 'Ezek',
+	Ez: 'Ezek',
+	Dan: 'Dan',
+	Dn: 'Dan',
+	Hos: 'Hos',
+	Joel: 'Joel',
+	Jl: 'Joel',
+	Amos: 'Amos',
+	Am: 'Amos',
+	Abd: 'Obad',
+	Jon: 'Jonah',
+	Mic: 'Mic',
+	Mi: 'Mic',
+	Nah: 'Nah',
+	Na: 'Nah',
+	Hab: 'Hab',
+	Hb: 'Hab',
+	Soph: 'Zeph',
+	Zeph: 'Zeph',
+	Ag: 'Hag',
+	Hag: 'Hag',
+	Zach: 'Zech',
+	Za: 'Zech',
+	Mal: 'Mal',
+	Matt: 'Matt',
+	Mt: 'Matt',
+	Mark: 'Mark',
+	Mk: 'Mark',
+	Luke: 'Luke',
+	Lk: 'Luke',
+	John: 'John',
+	Jn: 'John',
+	Acts: 'Acts',
+	Rom: 'Rom',
+	Gal: 'Gal',
+	Eph: 'Eph',
+	Phil: 'Phil',
+	Col: 'Col',
+	Tit: 'Titus',
+	Ti: 'Titus',
+	Philem: 'Phlm',
+	Phlm: 'Phlm',
+	Heb: 'Heb',
+	Jas: 'Jas',
+	Jude: 'Jude',
+	Apoc: 'Rev',
+	Ap: 'Rev',
+	Rev: 'Rev'
+};
+
+/** Numbered books: prefix digit → OSIS code. Vulgate numbering for Kings. */
+const CONF_NUMBERED_BOOKS: Record<string, Record<number, string>> = {
+	Sam: { 1: '1Sam', 2: '2Sam' },
+	Sm: { 1: '1Sam', 2: '2Sam' },
+	// Confraternity/Vulgate: 1-2 Kgs = 1-2 Sam, 3-4 Kgs = 1-2 Kings
+	Kgs: { 1: '1Sam', 2: '2Sam', 3: '1Kgs', 4: '2Kgs' },
+	Kings: { 1: '1Sam', 2: '2Sam', 3: '1Kgs', 4: '2Kgs' },
+	Chr: { 1: '1Chr', 2: '2Chr' },
+	Chron: { 1: '1Chr', 2: '2Chr' },
+	Par: { 1: '1Chr', 2: '2Chr' },
+	Macc: { 1: '1Macc', 2: '2Macc' },
+	Mach: { 1: '1Macc', 2: '2Macc' },
+	Cor: { 1: '1Cor', 2: '2Cor' },
+	Thess: { 1: '1Thess', 2: '2Thess' },
+	Thes: { 1: '1Thess', 2: '2Thess' },
+	Tim: { 1: '1Tim', 2: '2Tim' },
+	Tm: { 1: '1Tim', 2: '2Tim' },
+	Pet: { 1: '1Pet', 2: '2Pet' },
+	Pt: { 1: '1Pet', 2: '2Pet' },
+	John: { 1: '1John', 2: '2John', 3: '3John' },
+	Jn: { 1: '1John', 2: '2John', 3: '3John' },
+	Esd: { 1: 'Ezra', 2: 'Neh' },
+	Esdr: { 1: 'Ezra', 2: 'Neh' }
+};
+
+function resolveConfBook(num: number, abbrev: string): string | null {
+	if (num > 0) {
+		return CONF_NUMBERED_BOOKS[abbrev]?.[num] ?? null;
+	}
+	return CONF_SIMPLE_BOOKS[abbrev] ?? null;
+}
+
+const CONF_ALL_BOOK_NAMES = [
+	...new Set([...Object.keys(CONF_SIMPLE_BOOKS), ...Object.keys(CONF_NUMBERED_BOOKS)])
+].sort((a, b) => b.length - a.length);
+
+const CONF_REF_RE = new RegExp(
+	'(?:(\\d)\\s+)?' + // g1: numbered prefix
+		'(' +
+		CONF_ALL_BOOK_NAMES.join('|') +
+		')' + // g2: book abbreviation
+		'\\.?\\s*' + // optional period + space
+		'(\\d+)' + // g3: chapter
+		'(?:\\s*[-\u2013]\\s*(\\d+))?' + // g4: chapter range end
+		'(?:' +
+		'\\s*,\\s*' + // comma separator
+		'(\\d+)' + // g5: start verse
+		'(?:\\s*[-\u2013]\\s*(\\d+))?' + // g6: end verse
+		')?',
+	'g'
+);
+
+interface ConfRefMatch {
+	start: number;
+	end: number;
+	osis: string;
+}
+
+function findConfRefs(clean: string): ConfRefMatch[] {
+	const results: ConfRefMatch[] = [];
+	CONF_REF_RE.lastIndex = 0;
+	let m: RegExpExecArray | null;
+	while ((m = CONF_REF_RE.exec(clean)) !== null) {
+		const num = m[1] ? parseInt(m[1]) : 0;
+		const osisBook = resolveConfBook(num, m[2]);
+		if (!osisBook) continue;
+
+		const chapter = parseInt(m[3]);
+		const chapterEnd = m[4] ? parseInt(m[4]) : undefined;
+		const verse = m[5] ? parseInt(m[5]) : undefined;
+		const verseEnd = m[6] ? parseInt(m[6]) : undefined;
+
+		let osis: string;
+		if (verse !== undefined) {
+			osis = `${osisBook}.${chapter}.${verse}`;
+			if (verseEnd !== undefined) {
+				osis += `-${osisBook}.${chapter}.${verseEnd}`;
+			}
+		} else if (chapterEnd !== undefined) {
+			osis = `${osisBook}.${chapter}-${osisBook}.${chapterEnd}`;
+		} else {
+			osis = `${osisBook}.${chapter}`;
+		}
+
+		results.push({ start: m.index, end: m.index + m[0].length, osis });
+	}
+	return results;
+}
+
+function linkifyConfSegment(segment: string): string {
+	// Build position map: strip <i> and </i> tags
+	const cleanChars: string[] = [];
+	const posMap: number[] = [];
+	for (let i = 0; i < segment.length; ) {
+		if (segment.startsWith('<i>', i)) {
+			i += 3;
+			continue;
+		}
+		if (segment.startsWith('</i>', i)) {
+			i += 4;
+			continue;
+		}
+		posMap.push(i);
+		cleanChars.push(segment[i]);
+		i++;
+	}
+	const clean = cleanChars.join('');
+	posMap.push(segment.length); // sentinel
+
+	const refs = findConfRefs(clean);
+	if (refs.length === 0) return segment;
+
+	let result = '';
+	let lastOrigEnd = 0;
+
+	for (const ref of refs) {
+		let origStart = posMap[ref.start];
+		// Include leading <i> tag if the match starts right after one
+		// (handles numbered books: "<i>1</i> Cor." where the digit is inside <i>)
+		while (origStart >= 3 && segment.startsWith('<i>', origStart - 3)) {
+			origStart -= 3;
+		}
+		let origEnd = posMap[ref.end];
+		// Extend past trailing </i>, <i> tags and period
+		while (origEnd < segment.length) {
+			if (segment.startsWith('</i>', origEnd)) {
+				origEnd += 4;
+				continue;
+			}
+			if (segment.startsWith('<i>', origEnd)) {
+				origEnd += 3;
+				continue;
+			}
+			if (segment[origEnd] === '.') {
+				origEnd++;
+				continue;
+			}
+			break;
+		}
+		if (origStart < lastOrigEnd) continue; // skip overlapping
+
+		const matchedHtml = segment.slice(origStart, origEnd);
+		const searchUrl = `/search?q=${encodeURIComponent(ref.osis)}&mode=verse`;
+		result += segment.slice(lastOrigEnd, origStart);
+		result += `<a class="verse-ref" data-osis="${ref.osis}" href="${searchUrl}" target="_blank" rel="noopener">${matchedHtml}</a>`;
+		lastOrigEnd = origEnd;
+	}
+
+	result += segment.slice(lastOrigEnd);
+	return result;
+}
+
+/**
+ * Linkify Bible references in Confraternity HTML content.
+ * Handles the mixed-tag format: "Isa. <i>53,</i> 7" and "<i>1</i> Cor. <i>5,</i> 5".
+ */
+export function linkifyConfRefs(html: string): string {
+	// Don't process inside existing <a> tags
+	const parts = html.split(/(<a[^>]*>[\s\S]*?<\/a>)/);
+	return parts.map((part) => (part.startsWith('<a') ? part : linkifyConfSegment(part))).join('');
+}
