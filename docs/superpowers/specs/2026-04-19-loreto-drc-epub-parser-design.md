@@ -251,7 +251,15 @@ The Cross-Refs tab for DRC translation loads from `drc-crossrefs/{book}/{chapter
 The superscript markers in verse text (¹²³) are rendered as clickable elements that:
 1. Switch to the Cross-Refs tab in the StudyPanel
 2. Scroll to the corresponding cross-ref entry
-3. The cross-ref text is then linkified by the existing `crossRefParser.ts`
+
+### Bible reference linkification
+
+All Bible references across the entire StudyPanel are linkified — not just cross-refs. This includes:
+- **Cross-Refs tab**: Reference strings like "Acts 14:14, 17:24; Ps. 32:6"
+- **Notes tab**: References within Challoner's notes like "(Jn. 5:17)"
+- **Annotations tab**: Any Bible references in ODR annotation text
+
+The existing `crossRefParser.ts` handles the linkification. References become clickable links that navigate to the referenced verse.
 
 ## Tech Stack
 
