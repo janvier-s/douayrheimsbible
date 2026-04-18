@@ -12,7 +12,6 @@ declare global {
 			env: {
 				SEARCH_INDEX: KVNamespace;
 				RESEND_API_KEY?: string;
-				CONTACT_EMAIL?: string;
 			};
 		}
 	}

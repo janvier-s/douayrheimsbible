@@ -53,8 +53,6 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 
 	const textBody = lines.join('\n');
 
-	const toAddress = env?.CONTACT_EMAIL ?? 'contact@thedouayrheims.com';
-
 	try {
 		const resendRes = await fetch('https://api.resend.com/emails', {
 			method: 'POST',
@@ -64,7 +62,7 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 			},
 			body: JSON.stringify({
 				from: 'Contact Form <contact@thedouayrheims.com>',
-				to: [toAddress],
+				to: ['janvier.sabates@gmail.com'],
 				reply_to: email,
 				subject: emailSubject,
 				text: textBody
