@@ -31,7 +31,7 @@ export interface ReadingPrefs {
 	// v11
 	expandAmpersand: boolean;
 	// v12
-	studyDefaultTab: 'intro' | 'commentary' | 'article' | 'end' | 'footnotes';
+	studyDefaultTab: 'intro' | 'commentary' | 'article' | 'end' | 'footnotes' | 'annotations' | 'notes' | 'cross-refs';
 	// v13
 	annotationSync: boolean;
 	// v16

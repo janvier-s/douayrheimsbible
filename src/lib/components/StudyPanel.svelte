@@ -2,6 +2,7 @@
 	import { tick, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
+	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import { prefs } from '$lib/stores/prefs';
 	import {
@@ -174,72 +175,94 @@
 	$: endMatters = bookData?.endMatters ?? [];
 	$: hasEndMatters = endMatters.length > 0;
 
-	type TabDef = { id: 'intro' | 'commentary' | 'article' | 'end'; label: string };
-	$: visibleTabs = ([] as TabDef[])
-		.concat(hasIntros ? [{ id: 'intro', label: 'Intro' }] : [])
-		.concat([{ id: 'commentary', label: 'Commentary' }])
-		.concat(hasArticles ? [{ id: 'article', label: 'Article' }] : [])
-		.concat(hasEndMatters ? [{ id: 'end', label: 'End' }] : []);
-	$: showTabBar = visibleTabs.length > 1;
+	type TabDef = { id: StudyTab; label: string };
 
-	// ── Confraternity tabs ──────────────────────────────────────
-	type ConfTabDef = { id: 'intro' | 'footnotes' | 'commentary'; label: string };
-	$: confVisibleTabs = ((): ConfTabDef[] => {
-		const tabs: ConfTabDef[] = [];
-		if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
-			tabs.push({ id: 'intro', label: 'Intro' });
+	$: visibleTabs = buildVisibleTabs(translationId, hasIntros, hasArticles, hasEndMatters, confIntro);
+	$: showTabBar = visibleTabs.length > 1;
+	$: sliderIndex = Math.max(0, visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab));
+
+	function buildVisibleTabs(
+		tid: string,
+		hasIntros: boolean,
+		hasArticles: boolean,
+		hasEndMatters: boolean,
+		confIntro: ConfIntro | null
+	): TabDef[] {
+		if (tid === 'odr') {
+			return [
+				...(hasIntros ? [{ id: 'intro' as StudyTab, label: 'Intro' }] : []),
+				{ id: 'annotations' as StudyTab, label: 'Annotations' },
+				{ id: 'notes' as StudyTab, label: 'Notes' },
+				{ id: 'cross-refs' as StudyTab, label: 'Cross-Refs' },
+				...(hasArticles ? [{ id: 'article' as StudyTab, label: 'Article' }] : []),
+				...(hasEndMatters ? [{ id: 'end' as StudyTab, label: 'End' }] : []),
+			];
 		}
-		tabs.push({ id: 'footnotes', label: 'Footnotes' });
-		tabs.push({ id: 'commentary', label: 'Commentary' });
-		return tabs;
-	})();
-	$: confShowTabBar = confVisibleTabs.length > 1;
-	$: confSliderIndex = Math.max(
-		0,
-		confVisibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
-	);
+		if (tid === 'conf') {
+			const tabs: TabDef[] = [];
+			if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
+				tabs.push({ id: 'intro', label: 'Intro' });
+			}
+			tabs.push({ id: 'footnotes', label: 'Footnotes' });
+			tabs.push({ id: 'commentary', label: 'Commentary' });
+			return tabs;
+		}
+		if (tid === 'drc' || tid === 'cpdv' || tid === 'knox') {
+			return [{ id: 'notes', label: 'Notes' }];
+		}
+		return [];
+	}
 
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
 	let prevBook: string | null = null;
 	$: if (bookData && bookData.book !== prevBook) {
 		prevBook = bookData.book; // eslint-disable-line no-useless-assignment
-		if (isConf) {
-			const preferred = $prefs.studyDefaultTab;
+		const preferred = $prefs.studyDefaultTab;
+
+		let defaultTab: StudyTab;
+		if (translationId === 'odr') {
+			defaultTab = 'annotations';
+			if (preferred === 'annotations' || preferred === 'notes' || preferred === 'cross-refs') {
+				defaultTab = preferred;
+			}
+			if (preferred === 'intro' && hasIntros) defaultTab = 'intro';
+			if (preferred === 'article' && hasArticles) defaultTab = 'article';
+			if (preferred === 'end' && hasEndMatters) defaultTab = 'end';
+		} else if (translationId === 'conf') {
+			defaultTab = 'footnotes';
 			if (preferred === 'footnotes' || preferred === 'commentary') {
-				studyPanel.update((s) => ({ ...s, activeTab: preferred }));
-			} else if (
+				defaultTab = preferred;
+			}
+			if (
+				preferred === 'intro' &&
 				confIntro &&
 				(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
 			) {
-				studyPanel.update((s) => ({ ...s, activeTab: 'intro' }));
-			} else {
-				studyPanel.update((s) => ({ ...s, activeTab: 'footnotes' }));
+				defaultTab = 'intro';
 			}
+		} else if (hasTranslationNotes) {
+			defaultTab = 'notes';
 		} else {
-			const idx = intros.findIndex((i) => i.default);
-			const target = idx >= 0 ? idx : 0;
-			let preferredTab =
-				hasIntros || hasEndMatters || hasArticles ? $prefs.studyDefaultTab : 'commentary';
-			if (preferredTab === 'end' && !hasEndMatters) preferredTab = 'commentary';
-			if (preferredTab === 'intro' && !hasIntros) preferredTab = 'commentary';
-			if (preferredTab === 'article' && !hasArticles) preferredTab = 'commentary';
-			studyPanel.update((s) => ({
-				...s,
-				activeIntroIndex: target,
-				activeEndIndex: 0,
-				activeArticleIndex: 0,
-				activeTab: preferredTab
-			}));
+			defaultTab = 'annotations';
 		}
+
+		const idx = intros.findIndex((i) => i.default);
+		studyPanel.update((s) => ({
+			...s,
+			activeTab: defaultTab,
+			activeIntroIndex: idx >= 0 ? idx : 0,
+			activeEndIndex: 0,
+			activeArticleIndex: 0
+		}));
 	}
 
-	// If on the article tab but current chapter has no articles, fall back to commentary
+	// If on the article tab but current chapter has no articles, fall back to annotations/commentary
 	$: if ($studyPanel.activeTab === 'article' && !hasArticles) {
-		studyPanel.update((s) => ({ ...s, activeTab: 'commentary' }));
+		studyPanel.update((s) => ({ ...s, activeTab: isOdr ? 'annotations' : 'commentary' }));
 	}
 
-	function switchTab(tab: 'intro' | 'commentary' | 'article' | 'end' | 'footnotes') {
+	function switchTab(tab: StudyTab) {
 		studyPanel.update((s) => ({ ...s, activeTab: tab }));
 		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
@@ -472,12 +495,6 @@
 		studyPanel.update((s) => ({ ...s, activeVerse: trigger.verse }));
 	}
 
-	// Slider position: index within visible tabs
-	$: sliderIndex = Math.max(
-		0,
-		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
-	);
-
 	// Wheel handler: capture scroll when panel has room to scroll; bleed through to
 	// the window at boundaries so infinite-scroll chapter loading still works.
 	let wheelCleanup: (() => void) | null = null;
@@ -550,8 +567,8 @@
 			<span class="panel-title">Study Notes</span>
 		</div>
 
-		<!-- Tabs with sliding underline (ODR only) -->
-		{#if isOdr && showTabBar}
+		<!-- Tabs with sliding underline -->
+		{#if showTabBar}
 			<div
 				class="tab-row relative flex px-[4px] gap-[2px]"
 				role="tablist"
@@ -648,35 +665,6 @@
 				{/if}
 			</div>
 		{:else if isConf}
-			<!-- Confraternity tab bar -->
-			{#if confShowTabBar}
-				<div
-					class="tab-row relative flex px-[4px] gap-[2px]"
-					role="tablist"
-					aria-label="Confraternity study sections"
-				>
-					{#each confVisibleTabs as tab}
-						<button
-							role="tab"
-							aria-selected={$studyPanel.activeTab === tab.id}
-							class="tab-btn flex-1 pb-[9px] pt-[2px]"
-							class:tab-active={$studyPanel.activeTab === tab.id}
-							on:click={() => switchTab(tab.id)}
-						>
-							{tab.label}
-						</button>
-					{/each}
-					<div
-						class="tab-slider"
-						style="width: calc({100 /
-							confVisibleTabs.length}% - 4px); transform: translateX({confSliderIndex * 100}%)"
-						aria-hidden="true"
-					></div>
-				</div>
-			{/if}
-
-			<div class="border-b border-border"></div>
-
 			<!-- Confraternity intro sub-tabs -->
 			{#if $studyPanel.activeTab === 'intro' && confIntro}
 				<div class="subtab-bar shrink-0">
