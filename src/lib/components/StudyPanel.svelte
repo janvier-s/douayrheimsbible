@@ -1271,18 +1271,6 @@
 	.commentary-list {
 		display: flex;
 		flex-direction: column;
-		animation: panelContentIn 400ms ease-out;
-	}
-
-	@keyframes panelContentIn {
-		from {
-			opacity: 0;
-			transform: translateY(24px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
 	}
 
 	.verse-section {
@@ -1340,7 +1328,7 @@
 		gap: 7px;
 		align-items: baseline;
 		line-height: 1.45;
-		padding: 2px 0;
+		padding-block: 2px;
 	}
 
 	.cr-marker,
@@ -1366,7 +1354,7 @@
 
 	/* Annotations */
 	.annotation-block {
-		padding: 4px 0 8px;
+		padding: 4px 52px 8px;
 	}
 
 	.annotation-block + .annotation-block {
@@ -1531,6 +1519,10 @@
 		.verse-section-header-sticky {
 			padding-top: 10px;
 			padding-bottom: 10px;
+		}
+
+		.annotation-block {
+			padding: 4px 12px 8px;
 		}
 
 		.note-text {
