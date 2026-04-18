@@ -1,3 +1,4 @@
+// @ts-nocheck — build script run with tsx, not part of the Svelte app
 import { readdir, readFile, writeFile, mkdir, access } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';

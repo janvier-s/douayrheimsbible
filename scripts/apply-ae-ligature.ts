@@ -1,3 +1,4 @@
+// @ts-nocheck — build script run with tsx, not part of the Svelte app
 /**
  * scripts/apply-ae-ligature.ts
  *

@@ -1,3 +1,4 @@
+// @ts-nocheck — build script run with tsx, not part of the Svelte app
 /**
  * Uploads the pre-built search indexes to Cloudflare KV.
  * Run after build-search-index.ts whenever the index changes.
