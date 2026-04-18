@@ -2,6 +2,7 @@
 	import { tick, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
+	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import { prefs } from '$lib/stores/prefs';
 	import {
@@ -174,72 +175,103 @@
 	$: endMatters = bookData?.endMatters ?? [];
 	$: hasEndMatters = endMatters.length > 0;
 
-	type TabDef = { id: 'intro' | 'commentary' | 'article' | 'end'; label: string };
-	$: visibleTabs = ([] as TabDef[])
-		.concat(hasIntros ? [{ id: 'intro', label: 'Intro' }] : [])
-		.concat([{ id: 'commentary', label: 'Commentary' }])
-		.concat(hasArticles ? [{ id: 'article', label: 'Article' }] : [])
-		.concat(hasEndMatters ? [{ id: 'end', label: 'End' }] : []);
-	$: showTabBar = visibleTabs.length > 1;
+	type TabDef = { id: StudyTab; label: string };
 
-	// ── Confraternity tabs ──────────────────────────────────────
-	type ConfTabDef = { id: 'intro' | 'footnotes' | 'commentary'; label: string };
-	$: confVisibleTabs = ((): ConfTabDef[] => {
-		const tabs: ConfTabDef[] = [];
-		if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
-			tabs.push({ id: 'intro', label: 'Intro' });
-		}
-		tabs.push({ id: 'footnotes', label: 'Footnotes' });
-		tabs.push({ id: 'commentary', label: 'Commentary' });
-		return tabs;
-	})();
-	$: confShowTabBar = confVisibleTabs.length > 1;
-	$: confSliderIndex = Math.max(
-		0,
-		confVisibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
+	$: visibleTabs = buildVisibleTabs(
+		translationId,
+		hasIntros,
+		hasArticles,
+		hasEndMatters,
+		confIntro
 	);
+	$: showTabBar = visibleTabs.length > 1;
+	$: sliderIndex = Math.max(
+		0,
+		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
+	);
+
+	function buildVisibleTabs(
+		tid: string,
+		hasIntros: boolean,
+		hasArticles: boolean,
+		hasEndMatters: boolean,
+		confIntro: ConfIntro | null
+	): TabDef[] {
+		if (tid === 'odr') {
+			return [
+				...(hasIntros ? [{ id: 'intro' as StudyTab, label: 'Intro' }] : []),
+				{ id: 'annotations' as StudyTab, label: 'Annotations' },
+				{ id: 'notes' as StudyTab, label: 'Notes' },
+				{ id: 'cross-refs' as StudyTab, label: 'Cross-Refs' },
+				...(hasArticles ? [{ id: 'article' as StudyTab, label: 'Article' }] : []),
+				...(hasEndMatters ? [{ id: 'end' as StudyTab, label: 'End' }] : [])
+			];
+		}
+		if (tid === 'conf') {
+			const tabs: TabDef[] = [];
+			if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
+				tabs.push({ id: 'intro', label: 'Intro' });
+			}
+			tabs.push({ id: 'footnotes', label: 'Footnotes' });
+			tabs.push({ id: 'commentary', label: 'Commentary' });
+			return tabs;
+		}
+		if (tid === 'drc' || tid === 'cpdv' || tid === 'knox') {
+			return [{ id: 'notes', label: 'Notes' }];
+		}
+		return [];
+	}
 
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
 	let prevBook: string | null = null;
 	$: if (bookData && bookData.book !== prevBook) {
 		prevBook = bookData.book; // eslint-disable-line no-useless-assignment
-		if (isConf) {
-			const preferred = $prefs.studyDefaultTab;
+		const preferred = $prefs.studyDefaultTab;
+
+		let defaultTab: StudyTab;
+		if (translationId === 'odr') {
+			defaultTab = 'annotations';
+			if (preferred === 'annotations' || preferred === 'notes' || preferred === 'cross-refs') {
+				defaultTab = preferred;
+			}
+			if (preferred === 'intro' && hasIntros) defaultTab = 'intro';
+			if (preferred === 'article' && hasArticles) defaultTab = 'article';
+			if (preferred === 'end' && hasEndMatters) defaultTab = 'end';
+		} else if (translationId === 'conf') {
+			defaultTab = 'footnotes';
 			if (preferred === 'footnotes' || preferred === 'commentary') {
-				studyPanel.update((s) => ({ ...s, activeTab: preferred }));
-			} else if (
+				defaultTab = preferred;
+			}
+			if (
+				preferred === 'intro' &&
 				confIntro &&
 				(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
 			) {
-				studyPanel.update((s) => ({ ...s, activeTab: 'intro' }));
-			} else {
-				studyPanel.update((s) => ({ ...s, activeTab: 'footnotes' }));
+				defaultTab = 'intro';
 			}
+		} else if (hasTranslationNotes) {
+			defaultTab = 'notes';
 		} else {
-			const idx = intros.findIndex((i) => i.default);
-			const target = idx >= 0 ? idx : 0;
-			let preferredTab =
-				hasIntros || hasEndMatters || hasArticles ? $prefs.studyDefaultTab : 'commentary';
-			if (preferredTab === 'end' && !hasEndMatters) preferredTab = 'commentary';
-			if (preferredTab === 'intro' && !hasIntros) preferredTab = 'commentary';
-			if (preferredTab === 'article' && !hasArticles) preferredTab = 'commentary';
-			studyPanel.update((s) => ({
-				...s,
-				activeIntroIndex: target,
-				activeEndIndex: 0,
-				activeArticleIndex: 0,
-				activeTab: preferredTab
-			}));
+			defaultTab = 'annotations';
 		}
+
+		const idx = intros.findIndex((i) => i.default);
+		studyPanel.update((s) => ({
+			...s,
+			activeTab: defaultTab,
+			activeIntroIndex: idx >= 0 ? idx : 0,
+			activeEndIndex: 0,
+			activeArticleIndex: 0
+		}));
 	}
 
-	// If on the article tab but current chapter has no articles, fall back to commentary
+	// If on the article tab but current chapter has no articles, fall back to annotations/commentary
 	$: if ($studyPanel.activeTab === 'article' && !hasArticles) {
-		studyPanel.update((s) => ({ ...s, activeTab: 'commentary' }));
+		studyPanel.update((s) => ({ ...s, activeTab: isOdr ? 'annotations' : 'commentary' }));
 	}
 
-	function switchTab(tab: 'intro' | 'commentary' | 'article' | 'end' | 'footnotes') {
+	function switchTab(tab: StudyTab) {
 		studyPanel.update((s) => ({ ...s, activeTab: tab }));
 		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
@@ -362,6 +394,13 @@
 	// Reader→panel auto-scroll disabled (too many edge cases with infinite scroll).
 	// Explicit clicks (scrollTrigger) still scroll the panel.
 
+	// Clear sectionEls on tab switch
+	let lastActiveTab: StudyTab | null = null;
+	$: if ($studyPanel.activeTab !== lastActiveTab) {
+		lastActiveTab = $studyPanel.activeTab; // eslint-disable-line no-useless-assignment
+		sectionEls = {};
+	}
+
 	function scrollToSection(verse: number) {
 		const el = sectionEls[verse];
 		if (!el || !panelScroll) return;
@@ -426,6 +465,9 @@
 	$: if (verseSections && browser) {
 		tick().then(setupPanelObserver);
 	}
+	$: if ($studyPanel.activeTab && browser) {
+		tick().then(setupPanelObserver);
+	}
 	$: if (browser && !$prefs.annotationSync) {
 		panelSectionObserver?.disconnect();
 		panelSectionObserver = null;
@@ -444,9 +486,23 @@
 	async function handleScrollTrigger(
 		trigger: NonNullable<import('$lib/stores/studyPanel').ScrollTrigger>
 	) {
-		// Switch to commentary tab
-		if ($studyPanel.activeTab !== 'commentary') {
-			studyPanel.update((s) => ({ ...s, activeTab: 'commentary' }));
+		// Determine which tab the trigger should route to
+		let targetTab: StudyTab;
+		if (!isOdr) {
+			// Non-ODR translations don't have separate tabs for these
+			targetTab = $studyPanel.activeTab;
+		} else if (trigger.type === 'cross_ref') {
+			targetTab = 'cross-refs';
+		} else if (trigger.type === 'note') {
+			targetTab = 'notes';
+		} else if (trigger.type === 'annotation') {
+			targetTab = 'annotations';
+		} else {
+			targetTab = 'annotations'; // default for verse clicks
+		}
+
+		if ($studyPanel.activeTab !== targetTab) {
+			studyPanel.update((s) => ({ ...s, activeTab: targetTab }));
 			await tick();
 		}
 
@@ -471,12 +527,6 @@
 		scrollTrigger.set(null);
 		studyPanel.update((s) => ({ ...s, activeVerse: trigger.verse }));
 	}
-
-	// Slider position: index within visible tabs
-	$: sliderIndex = Math.max(
-		0,
-		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
-	);
 
 	// Wheel handler: capture scroll when panel has room to scroll; bleed through to
 	// the window at boundaries so infinite-scroll chapter loading still works.
@@ -550,8 +600,8 @@
 			<span class="panel-title">Study Notes</span>
 		</div>
 
-		<!-- Tabs with sliding underline (ODR only) -->
-		{#if isOdr && showTabBar}
+		<!-- Tabs with sliding underline -->
+		{#if showTabBar}
 			<div
 				class="tab-row relative flex px-[4px] gap-[2px]"
 				role="tablist"
@@ -581,352 +631,207 @@
 		<div class="border-b border-border"></div>
 	</div>
 
-	{#if !isOdr}
-		<!-- Translation-specific study content -->
-		{#if hasTranslationNotes}
-			<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
-			<div
-				class="panel-scroll flex-1 overflow-y-scroll"
-				bind:this={panelScroll}
-				on:mouseover={hasLinkifiedNotes ? handleConfRefOver : undefined}
-				on:mouseout={hasLinkifiedNotes ? handleConfRefOut : undefined}
-			>
-				{#if translationNotesLoading}
-					<div class="empty-state"><p>Loading notes...</p></div>
-				{:else if translationNotes && translationNotes.length > 0}
-					<div class="content-block">
-						<p class="content-eyebrow">
-							Notes · {translationMeta?.abbr ?? translationId.toUpperCase()}
-						</p>
-						{#each translationNotes as note (note.verse)}
-							{@const headingMatch = note.text.match(/^(".*?")\s*\.{3}\s*/)}
-							{@const linkify = isKnox ? linkifyKnoxRefs : isDrc ? linkifyDrcRefs : null}
-							<div class="translation-note-entry">
-								<span class="cr-marker">{note.verse}</span>
-								<div class="note-body">
-									{#if headingMatch}
-										<p class="annotation-title">{headingMatch[1].replace(/^"|"$/g, '')}</p>
-										{#if linkify}
-											<span class="note-text"
-												>{@html linkify(note.text.slice(headingMatch[0].length))}</span
-											>
-										{:else}
-											<span class="note-text">{note.text.slice(headingMatch[0].length)}</span>
-										{/if}
-									{:else if linkify}
-										<span class="note-text">{@html linkify(note.text)}</span>
-									{:else}
-										<span class="note-text">{note.text}</span>
-									{/if}
-								</div>
-							</div>
-						{/each}
-					</div>
-				{:else}
-					<div class="empty-state">
-						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No notes for this chapter.</p>
-					</div>
-				{/if}
-
-				{#if hasLinkifiedNotes}
-					<VerseTooltip
-						{translationId}
-						osisRanges={confVerseRefs}
-						anchorEl={confVerseRefAnchor}
-						visible={confVerseRefVisible}
-						on:mouseenter={() => {
-							if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
-						}}
-						on:mouseleave={() => {
-							confVerseRefTimer = setTimeout(() => {
-								confVerseRefVisible = false;
-								confVerseRefAnchor = null;
-							}, 120);
-						}}
-					/>
-				{/if}
-			</div>
-		{:else if isConf}
-			<!-- Confraternity tab bar -->
-			{#if confShowTabBar}
+	<!-- Sub-tab segmented controls (outside scroll — applies to any translation) -->
+	{#if $studyPanel.activeTab === 'intro' && isOdr && intros.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat({intros.length}, 1fr)">
+				{#each intros as intro, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeIntroIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
+					>
+						{tabLabel(intro.title)}
+					</button>
+				{/each}
 				<div
-					class="tab-row relative flex px-[4px] gap-[2px]"
-					role="tablist"
-					aria-label="Confraternity study sections"
-				>
-					{#each confVisibleTabs as tab}
-						<button
-							role="tab"
-							aria-selected={$studyPanel.activeTab === tab.id}
-							class="tab-btn flex-1 pb-[9px] pt-[2px]"
-							class:tab-active={$studyPanel.activeTab === tab.id}
-							on:click={() => switchTab(tab.id)}
-						>
-							{tab.label}
-						</button>
-					{/each}
-					<div
-						class="tab-slider"
-						style="width: calc({100 /
-							confVisibleTabs.length}% - 4px); transform: translateX({confSliderIndex * 100}%)"
-						aria-hidden="true"
-					></div>
-				</div>
-			{/if}
-
-			<div class="border-b border-border"></div>
-
-			<!-- Confraternity intro sub-tabs -->
-			{#if $studyPanel.activeTab === 'intro' && confIntro}
-				<div class="subtab-bar shrink-0">
-					<div class="segmented-control" style="grid-template-columns: repeat(2, 1fr)">
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeConfIntroTab === 'bible'}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
-						>
-							Confraternity Bible
-						</button>
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
-							on:click={() =>
-								studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
-						>
-							Supplemental Commentary
-						</button>
-						<div
-							class="seg-slider"
-							style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible'
-								? 0
-								: 100}%)"
-							aria-hidden="true"
-						></div>
-					</div>
-				</div>
-			{/if}
-
-			<!-- svelte-ignore a11y_no_static_element_interactions a11y_mouse_events_have_key_events -->
-			<div
-				class="panel-scroll flex-1 overflow-y-scroll"
-				bind:this={panelScroll}
-				on:mouseover={handleConfRefOver}
-				on:mouseout={handleConfRefOut}
-			>
-				{#if $studyPanel.activeTab === 'intro' && confIntro}
-					<div class="content-block">
-						{#if $studyPanel.activeConfIntroTab === 'bible'}
-							<p class="content-eyebrow">Introduction · Confraternity Bible</p>
-							{#each confIntro.bibleIntro as para}
-								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-							{/each}
-						{:else}
-							<p class="content-eyebrow">Introduction · Supplemental Commentary</p>
-							{#each confIntro.commentaryIntro as para}
-								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-							{/each}
-						{/if}
-					</div>
-				{:else if $studyPanel.activeTab === 'footnotes'}
-					<div class="content-block">
-						{#if confFootnotesLoading}
-							<div class="empty-state"><p>Loading footnotes...</p></div>
-						{:else if confFootnotes && confFootnotes.footnotes.length > 0}
-							<p class="content-eyebrow">Bible Footnotes</p>
-							{#each confFootnotes.footnotes as fn}
-								<div class="conf-note-entry">
-									<span class="cr-marker">{fn.verse}</span>
-									<div class="note-body">
-										<span class="note-text">{@html linkifyConfRefs(fn.text)}</span>
-									</div>
-								</div>
-							{/each}
-						{:else}
-							<div class="empty-state">
-								<span class="empty-icon" aria-hidden="true">✦</span>
-								<p>No footnotes for this chapter.</p>
-							</div>
-						{/if}
-					</div>
-				{:else if $studyPanel.activeTab === 'commentary'}
-					<div class="content-block">
-						{#if confCommentaryLoading}
-							<div class="empty-state"><p>Loading commentary...</p></div>
-						{:else if confCommentary && confCommentary.sections.length > 0}
-							<p class="content-eyebrow">Supplemental Commentary</p>
-							{#each confCommentary.sections as section}
-								<div class="conf-commentary-section">
-									{#if section.heading}
-										<p class="conf-section-heading">{section.heading}</p>
-									{/if}
-									{#each section.paragraphs as para}
-										<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-									{/each}
-								</div>
-							{/each}
-						{:else}
-							<div class="empty-state">
-								<span class="empty-icon" aria-hidden="true">✦</span>
-								<p>No commentary for this chapter.</p>
-							</div>
-						{/if}
-					</div>
-				{/if}
-
-				<VerseTooltip
-					{translationId}
-					osisRanges={confVerseRefs}
-					anchorEl={confVerseRefAnchor}
-					visible={confVerseRefVisible}
-					on:mouseenter={() => {
-						if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
-					}}
-					on:mouseleave={() => {
-						confVerseRefTimer = setTimeout(() => {
-							confVerseRefVisible = false;
-							confVerseRefAnchor = null;
-						}, 120);
-					}}
-				/>
+					class="seg-slider"
+					style="width: {100 /
+						intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
+					aria-hidden="true"
+				></div>
 			</div>
-		{:else}
-			<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
+		</div>
+	{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat(2, 1fr)">
+				<button
+					class="seg-btn"
+					class:seg-active={$studyPanel.activeConfIntroTab === 'bible'}
+					on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
+				>
+					Confraternity Bible
+				</button>
+				<button
+					class="seg-btn"
+					class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
+					on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
+				>
+					Supplemental Commentary
+				</button>
+				<div
+					class="seg-slider"
+					style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible'
+						? 0
+						: 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{:else if $studyPanel.activeTab === 'article' && isOdr && articles.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div class="segmented-control" style="grid-template-columns: repeat({articles.length}, 1fr)">
+				{#each articles as art, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeArticleIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
+					>
+						{tabLabel(art.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 /
+						articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{:else if $studyPanel.activeTab === 'end' && isOdr && endMatters.length > 1}
+		<div class="subtab-bar shrink-0">
+			<div
+				class="segmented-control"
+				style="grid-template-columns: repeat({endMatters.length}, 1fr)"
+			>
+				{#each endMatters as em, i}
+					<button
+						class="seg-btn"
+						class:seg-active={$studyPanel.activeEndIndex === i}
+						on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
+					>
+						{tabLabel(em.title)}
+					</button>
+				{/each}
+				<div
+					class="seg-slider"
+					style="width: {100 /
+						endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
+					aria-hidden="true"
+				></div>
+			</div>
+		</div>
+	{/if}
+
+	<!-- Scrollable content area -->
+	<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
+	<div
+		class="panel-scroll flex-1 overflow-y-scroll"
+		bind:this={panelScroll}
+		on:mouseover={hasLinkifiedNotes || isConf ? handleConfRefOver : undefined}
+		on:mouseout={hasLinkifiedNotes || isConf ? handleConfRefOut : undefined}
+	>
+		<!-- ═══ ODR: Intro tab ═══ -->
+		{#if $studyPanel.activeTab === 'intro' && isOdr}
+			{#if intros.length === 0}
 				<div class="empty-state">
 					<span class="empty-icon" aria-hidden="true">✦</span>
-					<p>
-						No study notes available for {translationMeta?.abbr ?? translationId.toUpperCase()}.
-					</p>
+					<p>No introduction for this book yet.</p>
 				</div>
-			</div>
-		{/if}
-	{:else}
-		<!-- Sub-tab segmented control (outside scroll so scrollbar doesn't bleed into them) -->
-		{#if $studyPanel.activeTab === 'intro' && intros.length > 1}
-			<div class="subtab-bar shrink-0">
-				<div class="segmented-control" style="grid-template-columns: repeat({intros.length}, 1fr)">
-					{#each intros as intro, i}
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeIntroIndex === i}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
+			{:else if intros[$studyPanel.activeIntroIndex]}
+				{@const intro = intros[$studyPanel.activeIntroIndex]}
+				<div class="content-block">
+					{#if currentBookSlug === 'genesis' || currentBookSlug === 'matthew'}
+						{@const bookMeta = getBookBySlug(currentBookSlug)}
+						<a
+							href="/reference/{bookMeta?.testament === 'NT' ? 'nt' : 'ot'}/title-page"
+							target="_blank"
+							rel="noopener"
+							class="ref-gateway"
 						>
-							{tabLabel(intro.title)}
-						</button>
-					{/each}
-					<div
-						class="seg-slider"
-						style="width: {100 /
-							intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
-						aria-hidden="true"
-					></div>
+							<span class="ref-gateway-label">
+								{bookMeta?.testament === 'NT' ? 'New' : 'Old'} Testament Reference
+							</span>
+							<span class="ref-gateway-desc">
+								{bookMeta?.testament === 'NT'
+									? 'Preface, annotations, evangelical history & more'
+									: 'Preface, historical tables, glossary & more'}
+							</span>
+							<span class="ref-gateway-arrow" aria-hidden="true">↗</span>
+						</a>
+					{/if}
+					<p class="content-eyebrow">{tabLabel(intro.title)}</p>
+					<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
 				</div>
-			</div>
-		{/if}
-		{#if $studyPanel.activeTab === 'article' && articles.length > 1}
-			<div class="subtab-bar shrink-0">
-				<div
-					class="segmented-control"
-					style="grid-template-columns: repeat({articles.length}, 1fr)"
-				>
-					{#each articles as art, i}
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeArticleIndex === i}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
-						>
-							{tabLabel(art.title)}
-						</button>
-					{/each}
-					<div
-						class="seg-slider"
-						style="width: {100 /
-							articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
-						aria-hidden="true"
-					></div>
-				</div>
-			</div>
-		{/if}
-		{#if $studyPanel.activeTab === 'end' && endMatters.length > 1}
-			<div class="subtab-bar shrink-0">
-				<div
-					class="segmented-control"
-					style="grid-template-columns: repeat({endMatters.length}, 1fr)"
-				>
-					{#each endMatters as em, i}
-						<button
-							class="seg-btn"
-							class:seg-active={$studyPanel.activeEndIndex === i}
-							on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
-						>
-							{tabLabel(em.title)}
-						</button>
-					{/each}
-					<div
-						class="seg-slider"
-						style="width: {100 /
-							endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
-						aria-hidden="true"
-					></div>
-				</div>
-			</div>
-		{/if}
+			{/if}
 
-		<!-- Scrollable content -->
-		<div class="panel-scroll flex-1 overflow-y-scroll" bind:this={panelScroll}>
-			{#if $studyPanel.activeTab === 'intro'}
-				{#if intros.length === 0}
+			<!-- ═══ ODR: Annotations tab ═══ -->
+		{:else if $studyPanel.activeTab === 'annotations' && isOdr}
+			{#if annotationsLoading}
+				<div class="empty-state"><p>Loading annotations...</p></div>
+			{:else}
+				{@const annotationSections = verseSections.filter((s) => s.annotationEntries.length > 0)}
+				{#if annotationSections.length === 0}
 					<div class="empty-state">
 						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No introduction for this book yet.</p>
-					</div>
-				{:else if intros[$studyPanel.activeIntroIndex]}
-					{@const intro = intros[$studyPanel.activeIntroIndex]}
-					<div class="content-block">
-						{#if currentBookSlug === 'genesis' || currentBookSlug === 'matthew'}
-							{@const bookMeta = getBookBySlug(currentBookSlug)}
-							<a
-								href="/reference/{bookMeta?.testament === 'NT' ? 'nt' : 'ot'}/title-page"
-								target="_blank"
-								rel="noopener"
-								class="ref-gateway"
-							>
-								<span class="ref-gateway-label">
-									{bookMeta?.testament === 'NT' ? 'New' : 'Old'} Testament Reference
-								</span>
-								<span class="ref-gateway-desc">
-									{bookMeta?.testament === 'NT'
-										? 'Preface, annotations, evangelical history & more'
-										: 'Preface, historical tables, glossary & more'}
-								</span>
-								<span class="ref-gateway-arrow" aria-hidden="true">↗</span>
-							</a>
-						{/if}
-						<p class="content-eyebrow">{tabLabel(intro.title)}</p>
-						<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
-					</div>
-				{/if}
-			{:else if $studyPanel.activeTab === 'commentary'}
-				<!-- Commentary tab -->
-				{#if annotationsLoading}
-					<div class="empty-state">
-						<p>Loading commentary...</p>
-					</div>
-				{:else if verseSections.length === 0}
-					<div class="empty-state">
-						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No commentary for this chapter yet.</p>
+						<p>No annotations for this chapter yet.</p>
 					</div>
 				{:else}
 					<div class="commentary-list">
-						{#each verseSections as section (section.verse)}
+						{#each annotationSections as section (section.verse)}
 							<div
 								class="verse-section"
 								class:verse-section-active={$studyPanel.annotatedVerse === section.verse}
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
-								<!-- Verse header (sticky for non-summary) -->
+								<div
+									class="verse-section-header"
+									class:verse-section-header-sticky={section.verse !== 0}
+								>
+									{section.label}
+								</div>
+								{#each section.annotationEntries as ann}
+									<div
+										class="annotation-block"
+										data-panel-id="panel-{section.verse}-annotation-{ann.part}"
+									>
+										{#if ann.title}<p class="annotation-title">
+												{@html allcapsToSmallcaps(ann.title)}
+											</p>{/if}
+										<AnnotationProse text={ann.text} notes={ann.notes} />
+									</div>
+								{/each}
+							</div>
+						{/each}
+					</div>
+				{/if}
+			{/if}
+
+			<!-- ═══ ODR: Notes tab ═══ -->
+		{:else if $studyPanel.activeTab === 'notes' && isOdr}
+			{#if annotationsLoading}
+				<div class="empty-state"><p>Loading notes...</p></div>
+			{:else}
+				{@const noteSections = verseSections.filter(
+					(s) =>
+						(s.verse === 0 && currentChapterData?.summary_notes?.length) ||
+						(s.verseData?.notes && s.verseData.notes.length > 0)
+				)}
+				{#if noteSections.length === 0}
+					<div class="empty-state">
+						<span class="empty-icon" aria-hidden="true">✦</span>
+						<p>No notes for this chapter.</p>
+					</div>
+				{:else}
+					<div class="commentary-list">
+						{#each noteSections as section (section.verse)}
+							<div
+								class="verse-section"
+								class:verse-section-active={$studyPanel.annotatedVerse === section.verse}
+								bind:this={sectionEls[section.verse]}
+								data-section-verse={section.verse}
+							>
 								<div
 									class="verse-section-header"
 									class:verse-section-header-sticky={section.verse !== 0}
@@ -934,97 +839,238 @@
 									{section.label}
 								</div>
 
-								<!-- Summary notes (verse 0) -->
 								{#if section.verse === 0 && currentChapterData?.summary_notes}
-									<div class="sub-section">
-										<div class="sub-section-header">Notes</div>
-										{#each currentChapterData.summary_notes as sn}
-											<div class="note-row" data-panel-id="panel-0-note-{sn.marker}">
-												<span class="note-marker">{sn.marker}</span>
-												<span class="note-text">{@html allcapsToSmallcaps(sn.text)}</span>
-											</div>
-										{/each}
-									</div>
+									{#each currentChapterData.summary_notes as sn}
+										<div
+											class="note-row sub-section-inline"
+											data-panel-id="panel-0-note-{sn.marker}"
+										>
+											<span class="note-marker">{sn.marker}</span>
+											<span class="note-text">{@html allcapsToSmallcaps(sn.text)}</span>
+										</div>
+									{/each}
 								{/if}
 
-								<!-- Annotations -->
-								{#if section.annotationEntries.length > 0}
-									<div class="sub-section">
-										<div class="sub-section-header">Annotations</div>
-										{#each section.annotationEntries as ann}
-											<div
-												class="annotation-block"
-												data-panel-id="panel-{section.verse}-annotation-{ann.part}"
-											>
-												{#if ann.title}<p class="annotation-title">
-														{@html allcapsToSmallcaps(ann.title)}
-													</p>{/if}
-												<AnnotationProse text={ann.text} notes={ann.notes} />
-											</div>
-										{/each}
-									</div>
-								{/if}
-
-								<!-- Cross-references -->
-								{#if section.verseData?.cross_refs && section.verseData.cross_refs.length > 0}
-									<div class="sub-section">
-										<div class="sub-section-header">Cross-references</div>
-										{#each section.verseData.cross_refs as cr, ci}
-											<div class="cr-row" data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}">
-												<span class="cr-marker">{ci + 1}</span>
-												<CrossRefText text={cr.text} />
-											</div>
-										{/each}
-									</div>
-								{/if}
-
-								<!-- Notes -->
 								{#if section.verseData?.notes && section.verseData.notes.length > 0}
-									<div class="sub-section">
-										<div class="sub-section-header">Notes</div>
-										{#each section.verseData.notes as note}
-											<div class="note-row" data-panel-id="panel-{section.verse}-note-{note.label}">
-												<span class="note-marker">{note.label}</span>
-												<span class="note-text">{@html allcapsToSmallcaps(note.text)}</span>
-											</div>
-										{/each}
-									</div>
+									{#each section.verseData.notes as note}
+										<div
+											class="note-row sub-section-inline"
+											data-panel-id="panel-{section.verse}-note-{note.label}"
+										>
+											<span class="note-marker">{note.label}</span>
+											<span class="note-text">{@html allcapsToSmallcaps(note.text)}</span>
+										</div>
+									{/each}
 								{/if}
 							</div>
 						{/each}
 					</div>
 				{/if}
-			{:else if $studyPanel.activeTab === 'article'}
-				<!-- Article tab -->
-				{#if articles.length === 0}
+			{/if}
+
+			<!-- ═══ ODR: Cross-Refs tab ═══ -->
+		{:else if $studyPanel.activeTab === 'cross-refs' && isOdr}
+			{#if annotationsLoading}
+				<div class="empty-state"><p>Loading cross-references...</p></div>
+			{:else}
+				{@const crossRefSections = verseSections.filter(
+					(s) => s.verseData?.cross_refs && s.verseData.cross_refs.length > 0
+				)}
+				{#if crossRefSections.length === 0}
 					<div class="empty-state">
 						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No article for this chapter.</p>
+						<p>No cross-references for this chapter.</p>
 					</div>
-				{:else if articles[$studyPanel.activeArticleIndex]}
-					{@const art = articles[$studyPanel.activeArticleIndex]}
-					<div class="content-block">
-						<p class="content-eyebrow">{tabLabel(art.title)}</p>
-						<AnnotationProse text={art.text} notes={art.notes ?? []} />
-					</div>
-				{/if}
-			{:else if $studyPanel.activeTab === 'end'}
-				<!-- End matter tab -->
-				{#if endMatters.length === 0}
-					<div class="empty-state">
-						<span class="empty-icon" aria-hidden="true">✦</span>
-						<p>No end matter for this book yet.</p>
-					</div>
-				{:else if endMatters[$studyPanel.activeEndIndex]}
-					{@const em = endMatters[$studyPanel.activeEndIndex]}
-					<div class="content-block">
-						<p class="content-eyebrow">{tabLabel(em.title)}</p>
-						<AnnotationProse text={em.text} notes={em.notes ?? []} />
+				{:else}
+					<div class="commentary-list">
+						{#each crossRefSections as section (section.verse)}
+							<div
+								class="verse-section"
+								class:verse-section-active={$studyPanel.annotatedVerse === section.verse}
+								bind:this={sectionEls[section.verse]}
+								data-section-verse={section.verse}
+							>
+								<div class="verse-section-header verse-section-header-sticky">
+									{section.label}
+								</div>
+								{#each section.verseData?.cross_refs ?? [] as cr, ci}
+									<div
+										class="cr-row sub-section-inline"
+										data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}"
+									>
+										<span class="cr-marker">{ci + 1}</span>
+										<CrossRefText text={cr.text} />
+									</div>
+								{/each}
+							</div>
+						{/each}
 					</div>
 				{/if}
 			{/if}
-		</div>
-	{/if}
+
+			<!-- ═══ ODR: Article tab ═══ -->
+		{:else if $studyPanel.activeTab === 'article' && isOdr}
+			{#if articles.length === 0}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No article for this chapter.</p>
+				</div>
+			{:else if articles[$studyPanel.activeArticleIndex]}
+				{@const art = articles[$studyPanel.activeArticleIndex]}
+				<div class="content-block">
+					<p class="content-eyebrow">{tabLabel(art.title)}</p>
+					<AnnotationProse text={art.text} notes={art.notes ?? []} />
+				</div>
+			{/if}
+
+			<!-- ═══ ODR: End matter tab ═══ -->
+		{:else if $studyPanel.activeTab === 'end' && isOdr}
+			{#if endMatters.length === 0}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No end matter for this book yet.</p>
+				</div>
+			{:else if endMatters[$studyPanel.activeEndIndex]}
+				{@const em = endMatters[$studyPanel.activeEndIndex]}
+				<div class="content-block">
+					<p class="content-eyebrow">{tabLabel(em.title)}</p>
+					<AnnotationProse text={em.text} notes={em.notes ?? []} />
+				</div>
+			{/if}
+
+			<!-- ═══ Confraternity: Intro tab ═══ -->
+		{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
+			<div class="content-block">
+				{#if $studyPanel.activeConfIntroTab === 'bible'}
+					<p class="content-eyebrow">Introduction · Confraternity Bible</p>
+					{#each confIntro.bibleIntro as para}
+						<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+					{/each}
+				{:else}
+					<p class="content-eyebrow">Introduction · Supplemental Commentary</p>
+					{#each confIntro.commentaryIntro as para}
+						<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+					{/each}
+				{/if}
+			</div>
+
+			<!-- ═══ Confraternity: Footnotes tab ═══ -->
+		{:else if $studyPanel.activeTab === 'footnotes' && isConf}
+			<div class="content-block">
+				{#if confFootnotesLoading}
+					<div class="empty-state"><p>Loading footnotes...</p></div>
+				{:else if confFootnotes && confFootnotes.footnotes.length > 0}
+					<p class="content-eyebrow">Bible Footnotes</p>
+					{#each confFootnotes.footnotes as fn}
+						<div class="conf-note-entry">
+							<span class="cr-marker">{fn.verse}</span>
+							<div class="note-body">
+								<span class="note-text">{@html linkifyConfRefs(fn.text)}</span>
+							</div>
+						</div>
+					{/each}
+				{:else}
+					<div class="empty-state">
+						<span class="empty-icon" aria-hidden="true">✦</span>
+						<p>No footnotes for this chapter.</p>
+					</div>
+				{/if}
+			</div>
+
+			<!-- ═══ Confraternity: Commentary tab ═══ -->
+		{:else if $studyPanel.activeTab === 'commentary' && isConf}
+			<div class="content-block">
+				{#if confCommentaryLoading}
+					<div class="empty-state"><p>Loading commentary...</p></div>
+				{:else if confCommentary && confCommentary.sections.length > 0}
+					<p class="content-eyebrow">Supplemental Commentary</p>
+					{#each confCommentary.sections as section}
+						<div class="conf-commentary-section">
+							{#if section.heading}
+								<p class="conf-section-heading">{section.heading}</p>
+							{/if}
+							{#each section.paragraphs as para}
+								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+							{/each}
+						</div>
+					{/each}
+				{:else}
+					<div class="empty-state">
+						<span class="empty-icon" aria-hidden="true">✦</span>
+						<p>No commentary for this chapter.</p>
+					</div>
+				{/if}
+			</div>
+
+			<!-- ═══ DRC/Knox/CPDV: Translation Notes tab ═══ -->
+		{:else if $studyPanel.activeTab === 'notes' && hasTranslationNotes}
+			{#if translationNotesLoading}
+				<div class="empty-state"><p>Loading notes...</p></div>
+			{:else if translationNotes && translationNotes.length > 0}
+				<div class="content-block">
+					<p class="content-eyebrow">
+						Notes · {translationMeta?.abbr ?? translationId.toUpperCase()}
+					</p>
+					{#each translationNotes as note (note.verse)}
+						{@const headingMatch = note.text.match(/^(".*?")\s*\.{3}\s*/)}
+						{@const linkify = isKnox ? linkifyKnoxRefs : isDrc ? linkifyDrcRefs : null}
+						<div class="translation-note-entry">
+							<span class="cr-marker">{note.verse}</span>
+							<div class="note-body">
+								{#if headingMatch}
+									<p class="annotation-title">{headingMatch[1].replace(/^"|"$/g, '')}</p>
+									{#if linkify}
+										<span class="note-text"
+											>{@html linkify(note.text.slice(headingMatch[0].length))}</span
+										>
+									{:else}
+										<span class="note-text">{note.text.slice(headingMatch[0].length)}</span>
+									{/if}
+								{:else if linkify}
+									<span class="note-text">{@html linkify(note.text)}</span>
+								{:else}
+									<span class="note-text">{note.text}</span>
+								{/if}
+							</div>
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No notes for this chapter.</p>
+				</div>
+			{/if}
+
+			<!-- ═══ Fallback: No study content ═══ -->
+		{:else}
+			<div class="empty-state">
+				<span class="empty-icon" aria-hidden="true">✦</span>
+				<p>
+					No study notes available for {translationMeta?.abbr ?? translationId.toUpperCase()}.
+				</p>
+			</div>
+		{/if}
+
+		<!-- Verse-ref tooltip (for linkified notes) -->
+		{#if hasLinkifiedNotes || isConf}
+			<VerseTooltip
+				{translationId}
+				osisRanges={confVerseRefs}
+				anchorEl={confVerseRefAnchor}
+				visible={confVerseRefVisible}
+				on:mouseenter={() => {
+					if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
+				}}
+				on:mouseleave={() => {
+					confVerseRefTimer = setTimeout(() => {
+						confVerseRefVisible = false;
+						confVerseRefAnchor = null;
+					}, 120);
+				}}
+			/>
+		{/if}
+	</div>
 </aside>
 
 <style>
@@ -1225,18 +1271,6 @@
 	.commentary-list {
 		display: flex;
 		flex-direction: column;
-		animation: panelContentIn 400ms ease-out;
-	}
-
-	@keyframes panelContentIn {
-		from {
-			opacity: 0;
-			transform: translateY(24px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
 	}
 
 	.verse-section {
@@ -1283,20 +1317,8 @@
 		}
 	}
 
-	.sub-section {
-		padding: 4px 52px 12px;
-	}
-
-	.sub-section:last-child {
-		padding-bottom: 17px;
-	}
-
-	.sub-section-header {
-		font-size: 10px;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		color: var(--color-subtle);
-		margin-bottom: 6px;
+	.sub-section-inline {
+		padding: 2px 52px;
 	}
 
 	/* Cross-references & Notes (shared layout) */
@@ -1306,7 +1328,7 @@
 		gap: 7px;
 		align-items: baseline;
 		line-height: 1.45;
-		padding: 2px 0;
+		padding-block: 2px;
 	}
 
 	.cr-marker,
@@ -1332,7 +1354,7 @@
 
 	/* Annotations */
 	.annotation-block {
-		padding: 4px 0 8px;
+		padding: 4px 52px 8px;
 	}
 
 	.annotation-block + .annotation-block {
@@ -1486,12 +1508,8 @@
 			padding: 12px 16px;
 		}
 
-		.sub-section {
-			padding: 4px 12px 10px;
-		}
-
-		.sub-section:last-child {
-			padding-bottom: 14px;
+		.sub-section-inline {
+			padding: 2px 12px;
 		}
 
 		.verse-section-header {
@@ -1501,6 +1519,10 @@
 		.verse-section-header-sticky {
 			padding-top: 10px;
 			padding-bottom: 10px;
+		}
+
+		.annotation-block {
+			padding: 4px 12px 8px;
 		}
 
 		.note-text {

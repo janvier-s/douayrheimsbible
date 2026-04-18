@@ -1,7 +1,7 @@
 // src/lib/stores/studyPanel.ts
 import { writable } from 'svelte/store';
 
-export type StudyTab = 'intro' | 'commentary' | 'article' | 'end' | 'footnotes';
+export type StudyTab = 'intro' | 'commentary' | 'article' | 'end' | 'footnotes' | 'annotations' | 'notes' | 'cross-refs';
 
 export interface ScrollTrigger {
 	verse: number; // 0 = summary
@@ -27,7 +27,7 @@ export interface StudyPanelState {
 }
 
 const defaults: StudyPanelState = {
-	activeTab: 'commentary',
+	activeTab: 'annotations',
 	activeIntroIndex: 0,
 	activeEndIndex: 0,
 	activeArticleIndex: 0,

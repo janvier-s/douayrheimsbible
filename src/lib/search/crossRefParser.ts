@@ -440,7 +440,11 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 					}
 
 					const isVerse = cv.verse !== undefined;
-					let osis = bookMatch.osisBook + '.' + cv.chapter;
+					// "Eccl." in DR cross-refs: Ecclesiastes has 12 chapters,
+					// so chapter > 12 must be Ecclesiasticus (Sir)
+					const osisBook =
+						bookMatch.osisBook === 'Eccl' && cv.chapter > 12 ? 'Sir' : bookMatch.osisBook;
+					let osis = osisBook + '.' + cv.chapter;
 					if (cv.verse !== undefined) {
 						osis += '.' + cv.verse;
 					}
@@ -449,7 +453,7 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 					const display = text.slice(bookMatch.displayStart, displayEnd).trim();
 
 					tokens.push({ type: 'ref', osis, display, isVerse });
-					lastOsisBook = bookMatch.osisBook;
+					lastOsisBook = osisBook;
 
 					pos = displayEnd;
 
@@ -1411,7 +1415,7 @@ function expandKnoxSemicolonChains(text: string, refs: KnoxRef[]): KnoxRef[] {
 				const osis = `${lastBook}.${chapter}`;
 				const end = pos + semiChMatch[0].length;
 				expanded.push({ start: pos, end, osis, osisBook: lastBook, chapter });
-				lastChapter = chapter;
+				lastChapter = chapter; // eslint-disable-line no-useless-assignment
 				pos = end;
 				continue;
 			}

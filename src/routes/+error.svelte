@@ -21,7 +21,7 @@
 		500: {
 			latin: 'Scriptorium in Confusione',
 			heading: 'Something Went Wrong',
-			message: 'Something went wrong on our end. Please try again or navigate to another page.'
+			message: 'Something went wrong on our end.<br />Please try again or navigate to another page.'
 		}
 	};
 
@@ -45,7 +45,7 @@
 
 		<h1 class="error-heading">{info.heading}</h1>
 
-		<p class="error-message">{info.message}</p>
+		<p class="error-message">{@html info.message}</p>
 
 		<nav class="error-nav" aria-label="Recovery navigation">
 			<a href="/odr/genesis/1" class="nav-link nav-primary">Read Genesis</a>
