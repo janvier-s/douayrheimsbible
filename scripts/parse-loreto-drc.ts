@@ -1105,8 +1105,10 @@ async function main(): Promise<void> {
 	console.log(`Output: ${DRC_OUT}`);
 }
 
-// Run main
-main().catch((err) => {
-	console.error('Fatal error:', err);
-	process.exit(1);
-});
+// Run if executed directly (skip when imported by tests)
+if (!process.env.VITEST) {
+	main().catch((err) => {
+		console.error('Fatal error:', err);
+		process.exit(1);
+	});
+}

@@ -385,5 +385,7 @@ function extractAll() {
 	);
 }
 
-// Run if executed directly
-extractAll();
+// Run if executed directly (skip when imported by tests)
+if (!process.env.VITEST) {
+	extractAll();
+}
