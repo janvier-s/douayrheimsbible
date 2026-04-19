@@ -14,14 +14,15 @@
 			message: 'That which thou seekest dwelleth not within these pages.'
 		},
 		403: {
-			latin: 'Accedere Non Licet',
-			heading: 'Access Denied',
-			message: 'Thou art not permitted entry into this portion of the scriptorium.'
+			latin: 'Nondum Paratum',
+			heading: 'Not Yet Available',
+			message:
+				'This translation is not yet available.<br />Please check back later or choose another translation.'
 		},
 		500: {
 			latin: 'Scriptorium in Confusione',
 			heading: 'Something Went Wrong',
-			message: 'Something went wrong on our end.<br />Please try again or navigate to another page.'
+			message: 'The server encountered an error.<br />Please try again or navigate to another page.'
 		}
 	};
 

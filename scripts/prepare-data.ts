@@ -238,7 +238,10 @@ async function main() {
 
 			const raw = await readFile(join(drcCrossRefsSrc, file), 'utf-8');
 			const data = JSON.parse(raw) as {
-				chapters?: Array<{ chapter: number; crossrefs?: Array<{ marker: number; verse: number; refs: string }> }>;
+				chapters?: Array<{
+					chapter: number;
+					crossrefs?: Array<{ marker: number; verse: number; refs: string }>;
+				}>;
 			};
 			if (!Array.isArray(data.chapters)) continue;
 
@@ -255,7 +258,9 @@ async function main() {
 			}
 		}
 
-		console.log(`✓ drc-crossrefs: wrote ${drcCrossRefsCount} chapter cross-ref files → ${drcCrossRefsOutBase}`);
+		console.log(
+			`✓ drc-crossrefs: wrote ${drcCrossRefsCount} chapter cross-ref files → ${drcCrossRefsOutBase}`
+		);
 	} catch {
 		console.log(`DRC cross-refs source not found at ${drcCrossRefsSrc} — skipping.`);
 	}

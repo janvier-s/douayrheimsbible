@@ -128,6 +128,10 @@
 					if (`haydock/${slug}/${chNum}` === lastHaydockCommentaryKey) {
 						haydockCommentary = data;
 						haydockCommentaryLoading = false;
+						// After Svelte renders the commentary sections, wire up the scroll observer
+						tick()
+							.then(() => tick())
+							.then(setupPanelObserver);
 					}
 				})
 				.catch(() => {
@@ -412,6 +416,7 @@
 			// Reset scroll instantly; the CSS slide-up animation handles the smooth transition
 			if (browser && panelScroll) panelScroll.scrollTop = 0;
 			sectionEls = {};
+			lastObservedKeys = '';
 			annotationsLoading = true;
 			annotations = null;
 			studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
@@ -489,7 +494,9 @@
 	}
 
 	/** Group flat commentary entries by verse for section rendering */
-	function groupByVerse(entries: HaydockCommentaryEntry[]): { verse: number; entries: HaydockCommentaryEntry[] }[] {
+	function groupByVerse(
+		entries: HaydockCommentaryEntry[]
+	): { verse: number; entries: HaydockCommentaryEntry[] }[] {
 		const map = new Map<number, HaydockCommentaryEntry[]>();
 		for (const e of entries) {
 			if (!map.has(e.verse)) map.set(e.verse, []);
@@ -507,12 +514,8 @@
 	let programmaticScroll = false;
 	let programmaticScrollTimer: ReturnType<typeof setTimeout> | null = null;
 	let panelSectionObserver: IntersectionObserver | null = null;
-	const intersectingVerses = new Map<number, number>();
-	// Debounce timer for annotatedVerse: we update panelScrollVerse immediately
-	// (so the reader follows while you scroll), but only commit annotatedVerse
-	// (which shows the verse underline) after the user has settled for 400ms.
+	const intersectingVerses = new Set<number>();
 	let annotatedVerseTimer: ReturnType<typeof setTimeout> | null = null;
-
 	// (chapter-change scroll + sectionEls reset handled inside annotation loading reactive)
 
 	// Reader→panel auto-scroll disabled (too many edge cases with infinite scroll).
@@ -523,6 +526,7 @@
 	$: if ($studyPanel.activeTab !== lastActiveTab) {
 		lastActiveTab = $studyPanel.activeTab; // eslint-disable-line no-useless-assignment
 		sectionEls = {};
+		lastObservedKeys = '';
 	}
 
 	function scrollToSection(verse: number) {
@@ -541,7 +545,25 @@
 		}, 600);
 	}
 
+	let lastObservedKeys = '';
+
 	function setupPanelObserver() {
+		if (!browser || !panelScroll || !$prefs.annotationSync || $prefs.readingMode !== 'study') {
+			panelSectionObserver?.disconnect();
+			panelSectionObserver = null;
+			intersectingVerses.clear();
+			lastObservedKeys = '';
+			if (annotatedVerseTimer) {
+				clearTimeout(annotatedVerseTimer);
+				annotatedVerseTimer = null;
+			}
+			return;
+		}
+		// Skip teardown/rebuild if already observing the same set of section elements
+		const currentKeys = Object.keys(sectionEls).sort().join(',');
+		if (panelSectionObserver && currentKeys === lastObservedKeys && currentKeys !== '') return;
+		lastObservedKeys = currentKeys;
+
 		panelSectionObserver?.disconnect();
 		panelSectionObserver = null;
 		intersectingVerses.clear();
@@ -549,8 +571,7 @@
 			clearTimeout(annotatedVerseTimer);
 			annotatedVerseTimer = null;
 		}
-		if (!browser || !panelScroll || !$prefs.annotationSync || $prefs.readingMode !== 'study')
-			return;
+		if (currentKeys === '') return;
 		panelSectionObserver = new IntersectionObserver(
 			(entries) => {
 				if (programmaticScroll) return;
@@ -558,27 +579,34 @@
 					const verse = parseInt((entry.target as HTMLElement).dataset.sectionVerse ?? '-1');
 					if (verse < 0) continue;
 					if (entry.isIntersecting) {
-						intersectingVerses.set(verse, entry.boundingClientRect.top);
+						intersectingVerses.add(verse);
 					} else {
 						intersectingVerses.delete(verse);
 					}
 				}
 				if (intersectingVerses.size > 0) {
-					// Filter out verse 0 (Summary) — it has no reader element so syncing to it skips verse 1
-					const candidates = [...intersectingVerses.entries()].filter(([v]) => v > 0);
+					// Pick the topmost visible section by reading current positions
+					const candidates = [...intersectingVerses].filter((v) => v > 0);
 					if (candidates.length === 0) return;
-					const active = candidates.sort((a, b) => a[1] - b[1])[0][0];
+					let active = candidates[0];
+					let activeTop = sectionEls[active]?.getBoundingClientRect().top ?? Infinity;
+					for (let i = 1; i < candidates.length; i++) {
+						const top = sectionEls[candidates[i]]?.getBoundingClientRect().top ?? Infinity;
+						if (top < activeTop) {
+							active = candidates[i];
+							activeTop = top;
+						}
+					}
 					// Immediate: drive reader scroll to follow the panel
 					studyPanel.update((s) => ({ ...s, panelScrollVerse: active }));
-					// Debounced: only underline the verse after the user has settled (400ms).
-					// This prevents the underline jumping to verses you scroll past.
+					// Debounced: commit annotatedVerse (verse highlight) after settling
 					if (annotatedVerseTimer) clearTimeout(annotatedVerseTimer);
 					annotatedVerseTimer = setTimeout(() => {
 						studyPanel.update((s) => ({ ...s, annotatedVerse: active }));
-					}, 400);
+					}, 80);
 				}
 			},
-			{ root: panelScroll, rootMargin: '0px 0px -55% 0px', threshold: 0 }
+			{ root: panelScroll, rootMargin: '0px 0px -30% 0px', threshold: 0 }
 		);
 		for (const key of Object.keys(sectionEls)) {
 			const el = sectionEls[parseInt(key)];
@@ -724,7 +752,7 @@
 </script>
 
 <aside
-	class="panel-root h-full overflow-hidden border-l border-border bg-panel flex flex-col font-ui"
+	class="panel-root h-full overflow-hidden bg-panel flex flex-col font-ui"
 	aria-label="Study panel"
 >
 	<!-- Panel identity bar -->
@@ -1150,7 +1178,7 @@
 				<div class="empty-state"><p>Loading commentary...</p></div>
 			{:else if haydockCommentary && haydockCommentary.length > 0}
 				{@const grouped = groupByVerse(haydockCommentary)}
-				<div class="content-block">
+				<div class="content-block haydock-commentary-block">
 					<p class="content-eyebrow">Haydock Commentary</p>
 					{#each grouped as group (group.verse)}
 						<div
@@ -1163,7 +1191,10 @@
 								{group.verse === 0 ? 'Chapter' : `Verse ${group.verse}`}
 							</div>
 							{#each group.entries as entry}
-								<div class="haydock-entry" data-panel-id="panel-{group.verse}-commentary-{entry.marker}">
+								<div
+									class="haydock-entry"
+									data-panel-id="panel-{group.verse}-commentary-{entry.marker}"
+								>
 									<span class="cr-marker">{entry.marker}</span>
 									<span class="note-text">{@html linkifyDrcRefs(entry.text)}</span>
 								</div>
@@ -1184,7 +1215,7 @@
 				<div class="empty-state"><p>Loading cross-references...</p></div>
 			{:else if translationCrossRefs && translationCrossRefs.length > 0}
 				<div class="content-block">
-					<p class="content-eyebrow">Cross-References · DRC-H</p>
+					<p class="content-eyebrow">Cross-References · Haydock</p>
 					{#each translationCrossRefs as cr (cr.marker)}
 						<div class="cr-row">
 							<span class="cr-marker">{cr.marker}</span>
@@ -1499,8 +1530,12 @@
 		transition: box-shadow 200ms ease;
 	}
 
-	.verse-section-active {
-		box-shadow: inset 3px 0 0 var(--color-accent);
+	.verse-section-active > .verse-section-header {
+		background: color-mix(in srgb, var(--color-accent) 6%, var(--color-panel));
+		box-shadow:
+			-52px 0 0 color-mix(in srgb, var(--color-accent) 6%, var(--color-panel)),
+			52px 0 0 color-mix(in srgb, var(--color-accent) 6%, var(--color-panel));
+		color: var(--color-accent);
 	}
 
 	.verse-section-header {
@@ -1638,13 +1673,18 @@
 		line-height: 1.5;
 	}
 
+	.haydock-commentary-block {
+		padding-left: 20px;
+		padding-right: 28px;
+	}
+
 	/* ─── Haydock commentary entries ─────────────────────────── */
 	.haydock-entry {
 		display: flex;
 		gap: 10px;
 		align-items: baseline;
 		line-height: 1.7;
-		padding: 8px 52px;
+		padding: 8px 0;
 		border-bottom: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
 	}
 
@@ -1775,7 +1815,7 @@
 		}
 
 		.haydock-entry {
-			padding: 6px 12px;
+			padding: 6px 0;
 		}
 
 		.note-text {

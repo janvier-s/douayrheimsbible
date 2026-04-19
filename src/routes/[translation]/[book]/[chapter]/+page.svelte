@@ -11,8 +11,11 @@
 <svelte:head>
 	<title
 		>{data.bookMeta.odrName}
-		{data.chapter?.chapter ?? ''} — {data.translationId.toUpperCase()}</title
+		{data.chapter?.chapter ?? ''} | {data.seoName ?? data.translationLabel}</title
 	>
+	{#if data.seoDesc}
+		<meta name="description" content={data.seoDesc} />
+	{/if}
 </svelte:head>
 
 {#if data.ntOnly}

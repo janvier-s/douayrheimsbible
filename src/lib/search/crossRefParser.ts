@@ -1565,10 +1565,11 @@ function matchDrcRefAt(text: string, pos: number): DrcRef | null {
 	// Skip optional trailing period after chapter
 	if (c < text.length && text[c] === '.') c++;
 
-	// 4) Check for verse: need whitespace then digit (DRC period-space format)
-	//    But NOT if the next content is a letter (would be a sentence continuation)
+	// 4) Check for verse: colon separator (14:19) or whitespace then digit (DRC period-space)
 	let verse: number | undefined;
 	const beforeVerse = c;
+	// Colon separator (Haydock format: "Exodus 14:19")
+	if (c < text.length && text[c] === ':') c++;
 	// Skip whitespace
 	while (c < text.length && text[c] === ' ') c++;
 

@@ -84,7 +84,8 @@
 		(d) => (panelDragging = d)
 	);
 	$: if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
-	$: panelMaxWidth = $prefs.readingMode === 'study' ? ($isMobile ? '100%' : liveWidth) : '0';
+	$: panelMaxWidth =
+		$prefs.readingMode === 'study' ? ($isMobile ? '100%' : `calc(${liveWidth} + 16px)`) : '0';
 	$: panelWidth = $isMobile && $prefs.readingMode === 'study' ? '100%' : '';
 	$: panelTransition = reducedMotion
 		? 'none'
@@ -394,13 +395,20 @@
 			aria-valuemin={240}
 			aria-valuemax={640}
 			tabindex="0"
-			class="w-[5px] shrink-0 cursor-col-resize hover:bg-[rgba(128,128,128,0.2)] focus:bg-[rgba(128,128,128,0.3)] transition-colors duration-fast self-stretch outline-none max-md:hidden"
+			class="panel-resize-zone shrink-0 cursor-col-resize self-stretch outline-none max-md:hidden"
 			on:mousedown={resize.onDividerMousedown}
 			on:touchstart|passive={resize.onTouchStart}
 			on:touchmove|passive={resize.onTouchMove}
 			on:touchend|passive={resize.onTouchEnd}
 			on:keydown={resize.onKeydown}
-		></div>
+		>
+			<div class="panel-resize-bar">
+				<div class="panel-resize-grip" aria-hidden="true">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
 		<div bind:this={panelEl} class="shrink-0 h-full">
 			<StudyPanel bookData={currentBookData} {translationId} />
 		</div>
@@ -414,3 +422,66 @@
 	{routeBase}
 	showNav={!$prefs.infiniteScroll}
 />
+
+<style>
+	/* Wide invisible hover zone for easy targeting */
+	.panel-resize-zone {
+		width: 16px;
+		position: relative;
+		z-index: 2;
+	}
+
+	/* The visible 1px bar, flush against the panel edge */
+	.panel-resize-bar {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 1px;
+		background: var(--color-border);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition:
+			width 150ms ease,
+			background-color 150ms ease;
+	}
+
+	/* On hover: widen bar toward the left */
+	.panel-resize-zone:hover .panel-resize-bar,
+	.panel-resize-zone:focus-visible .panel-resize-bar {
+		width: 5px;
+		background: color-mix(in srgb, var(--color-muted) 30%, transparent);
+	}
+
+	/* On drag: accent color */
+	.panel-resize-zone:active .panel-resize-bar {
+		width: 5px;
+		background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+	}
+
+	/* Grip indicator: two thin lines */
+	.panel-resize-grip {
+		display: flex;
+		gap: 3px;
+		opacity: 0;
+		transition: opacity 150ms ease;
+	}
+
+	.panel-resize-grip span {
+		display: block;
+		width: 1.5px;
+		height: 24px;
+		border-radius: 1px;
+		background: var(--color-muted);
+	}
+
+	.panel-resize-zone:hover .panel-resize-grip,
+	.panel-resize-zone:focus-visible .panel-resize-grip {
+		opacity: 1;
+	}
+
+	.panel-resize-zone:active .panel-resize-grip span {
+		background: var(--color-accent);
+	}
+</style>

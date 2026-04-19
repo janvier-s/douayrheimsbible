@@ -202,7 +202,10 @@
 		if (SUPER_RE.test(t)) {
 			SUPER_RE.lastIndex = 0;
 			if (isStudy) {
-				t = translationId === 'haydock' ? renderHaydockMarkers(t, verseNum) : renderDrcMarkers(t, verseNum);
+				t =
+					translationId === 'haydock'
+						? renderHaydockMarkers(t, verseNum)
+						: renderDrcMarkers(t, verseNum);
 			} else {
 				t = stripDrcMarkers(t);
 			}
@@ -224,7 +227,11 @@
 		const btn = (e.target as HTMLElement).closest('[data-marker-type]') as HTMLElement | null;
 		if (!btn) return;
 		e.stopPropagation();
-		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref' | 'haydock-commentary';
+		const type = btn.dataset.markerType as
+			| 'cross_ref'
+			| 'note'
+			| 'drc-crossref'
+			| 'haydock-commentary';
 		const marker = btn.dataset.marker ?? '';
 		const verseNum = parseInt(btn.dataset.verse ?? String(fallbackVerse));
 		if (type === 'drc-crossref') {
@@ -234,7 +241,11 @@
 			return;
 		}
 		if (type === 'haydock-commentary') {
-			studyPanel.update((s) => ({ ...s, activeTab: 'commentary' as StudyTab, annotatedVerse: verseNum }));
+			studyPanel.update((s) => ({
+				...s,
+				activeTab: 'commentary' as StudyTab,
+				annotatedVerse: verseNum
+			}));
 			scrollTrigger.set({ verse: verseNum, type: 'annotation', marker });
 			return;
 		}
@@ -272,7 +283,11 @@
 	}
 
 	function resolveMarkerContent(btn: HTMLElement): PopoverState | null {
-		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref' | 'haydock-commentary';
+		const type = btn.dataset.markerType as
+			| 'cross_ref'
+			| 'note'
+			| 'drc-crossref'
+			| 'haydock-commentary';
 		const marker = btn.dataset.marker ?? '';
 		const verseNum = parseInt(btn.dataset.verse ?? '0');
 
@@ -287,7 +302,11 @@
 			if (!entry) return null;
 			// Show first 200 chars of commentary in popover
 			const preview = entry.text.replace(/<hr>/g, ' — ').slice(0, 200);
-			return { label: marker, content: preview + (entry.text.length > 200 ? '...' : ''), type: 'note' };
+			return {
+				label: marker,
+				content: preview + (entry.text.length > 200 ? '...' : ''),
+				type: 'note'
+			};
 		}
 
 		const verse = verseNum > 0 ? verses.find((v) => v.verse === verseNum) : null;
@@ -454,6 +473,9 @@
 	// re-render → renderStudyMarkers runs and injects the marker buttons.
 	let mounted = false;
 	$: isStudy = mounted && $prefs.readingMode === 'study';
+	$: isHaydock = translationId === 'haydock';
+	$: haydockVerseSet =
+		isHaydock && haydockCommentary ? new Set(haydockCommentary.map((e) => e.verse)) : null;
 	$: showItalics = $prefs.showItalics;
 	$: showSmallCaps = $prefs.showSmallCaps ?? true;
 	$: bionic = $prefs.bionicReading && bionicReady;
@@ -503,16 +525,17 @@
 					id="v{v.verse}"
 					data-verse-num={v.verse}
 					class:verse-active-annotation={isStudy &&
-						v.has_annotation &&
+						(v.has_annotation || haydockVerseSet?.has(v.verse)) &&
 						$studyPanel.annotatedVerse === v.verse}
 				>
 					{#if $prefs.showVerseNumbers && !isDropcap}
 						<sup
 							class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
 							class:verse-num-hang={vi === 0 && ($prefs.hangingVerseNumbers ?? true)}
-							class:text-subtle={!isStudy || !v.has_annotation}
-							style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
-							>{v.verse}</sup
+							class:text-subtle={!isStudy || (!v.has_annotation && !haydockVerseSet?.has(v.verse))}
+							style={isStudy && (v.has_annotation || haydockVerseSet?.has(v.verse))
+								? 'color: var(--color-accent-text)'
+								: ''}>{v.verse}</sup
 						>
 					{/if}
 					{@html renderVerse(
@@ -539,9 +562,9 @@
 				data-verse-num={v.verse}
 				class="flex gap-sm max-md:gap-0"
 				class:verse-target={targetVerse === v.verse}
-				class:verse-annotated={isStudy && v.has_annotation}
+				class:verse-annotated={isStudy && (v.has_annotation || haydockVerseSet?.has(v.verse))}
 				class:verse-active-annotation={isStudy &&
-					v.has_annotation &&
+					(v.has_annotation || haydockVerseSet?.has(v.verse)) &&
 					$studyPanel.annotatedVerse === v.verse}
 				on:click={(e) => isStudy && handleVerseClick(e, v)}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
@@ -549,8 +572,10 @@
 				{#if $prefs.showVerseNumbers}
 					<span
 						class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em]"
-						class:text-subtle={!isStudy || !v.has_annotation}
-						style={isStudy && v.has_annotation ? 'color: var(--color-accent-text)' : ''}
+						class:text-subtle={!isStudy || (!v.has_annotation && !haydockVerseSet?.has(v.verse))}
+						style={isStudy && (v.has_annotation || haydockVerseSet?.has(v.verse))
+							? 'color: var(--color-accent-text)'
+							: ''}
 					>
 						{v.verse}
 					</span>

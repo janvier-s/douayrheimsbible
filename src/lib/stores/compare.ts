@@ -1,7 +1,16 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-export type TranslationId = 'odr' | 'drc' | 'haydock' | 'conf' | 'knox' | 'cpdv' | 'kjv' | 'vul' | 'rsv';
+export type TranslationId =
+	| 'odr'
+	| 'drc'
+	| 'haydock'
+	| 'conf'
+	| 'knox'
+	| 'cpdv'
+	| 'kjv'
+	| 'vul'
+	| 'rsv';
 
 export interface Translation {
 	id: TranslationId;
@@ -15,6 +24,10 @@ export interface Translation {
 	micro?: string;
 	/** Hidden from the UI unless the Konami code has been entered */
 	hidden?: boolean;
+	/** SEO: human-readable name for page titles, e.g. "Douay-Rheims Challoner Bible" */
+	seoName?: string;
+	/** SEO: template for meta description. Use {book} and {chapter} as placeholders. */
+	seoDesc?: string;
 }
 
 // Historical order
@@ -27,7 +40,10 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: false,
-		micro: 'Source Text'
+		micro: 'Source Text',
+		seoName: 'Clementine Vulgate (Latin)',
+		seoDesc:
+			'Read {book} Chapter {chapter} in the Clementine Vulgate, the official Latin Bible of the Catholic Church (1592).'
 	},
 	{
 		id: 'odr',
@@ -37,7 +53,10 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: true,
-		micro: 'First English Vulgate Translation'
+		micro: 'First English Vulgate Translation',
+		seoName: 'Original Douay-Rheims Bible',
+		seoDesc:
+			'Read {book} Chapter {chapter} in the original Douay-Rheims Bible (1582-1610), the first complete English Catholic translation from the Latin Vulgate.'
 	},
 	{
 		id: 'kjv',
@@ -47,7 +66,10 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: false,
-		micro: 'Influenced Challoner Revision'
+		micro: 'Influenced Challoner Revision',
+		seoName: 'King James Version',
+		seoDesc:
+			'Read {book} Chapter {chapter} in the King James Version (1611). Compare with the Douay-Rheims and other Catholic Bible translations.'
 	},
 	{
 		id: 'drc',
@@ -57,17 +79,23 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: true,
-		micro: 'Douay-Rheims Revision'
+		micro: 'Douay-Rheims Revision',
+		seoName: 'Douay-Rheims Bible (Challoner Revision)',
+		seoDesc:
+			'Read {book} Chapter {chapter} in the Douay-Rheims Challoner Bible (1752), the standard English Catholic Bible for over two centuries.'
 	},
 	{
 		id: 'haydock',
 		label: 'DRC Haydock',
-		abbr: 'DRC-H',
+		abbr: 'DRC-Haydock',
 		year: '1883',
 		live: true,
 		ntOnly: false,
 		fullHeader: true,
-		micro: 'DRC with Haydock Commentary'
+		micro: 'DRC with Haydock Commentary',
+		seoName: 'Haydock Catholic Bible Commentary',
+		seoDesc:
+			'Read {book} Chapter {chapter} with the Haydock Catholic Bible Commentary (1883). Verse-by-verse commentary from the Church Fathers and Catholic theologians.'
 	},
 	{
 		id: 'conf',
@@ -77,7 +105,10 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: true,
 		fullHeader: false,
-		micro: 'Modest Revision of Douay NT'
+		micro: 'Modest Revision of Douay NT',
+		seoName: 'Confraternity New Testament',
+		seoDesc:
+			'Read {book} Chapter {chapter} in the Confraternity New Testament (1941), the Catholic revision of the Douay-Rheims New Testament.'
 	},
 	{
 		id: 'knox',
@@ -87,7 +118,10 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: false,
-		micro: 'Literary Vulgate Translation'
+		micro: 'Literary Vulgate Translation',
+		seoName: 'Knox Bible',
+		seoDesc:
+			"Read {book} Chapter {chapter} in the Knox Bible (1955), Ronald Knox's acclaimed literary Catholic translation from the Latin Vulgate."
 	},
 	{
 		id: 'cpdv',
@@ -97,7 +131,10 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: true,
-		micro: 'Modern Vulgate Translation'
+		micro: 'Modern Vulgate Translation',
+		seoName: 'Catholic Public Domain Version',
+		seoDesc:
+			'Read {book} Chapter {chapter} in the Catholic Public Domain Version (2009), a modern English translation from the Latin Vulgate.'
 	},
 	{
 		id: 'rsv',
@@ -108,7 +145,9 @@ export const TRANSLATIONS: Translation[] = [
 		ntOnly: false,
 		fullHeader: false,
 		micro: 'Ecumenical Catholic Translation',
-		hidden: true
+		hidden: true,
+		seoName: 'Revised Standard Version, Second Catholic Edition',
+		seoDesc: 'Read {book} Chapter {chapter} in the RSV Second Catholic Edition (2006).'
 	}
 ];
 

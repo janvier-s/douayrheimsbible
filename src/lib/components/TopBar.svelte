@@ -231,7 +231,7 @@
 				{#if translationOpen}
 					<div
 						transition:slide={{ duration: 180 }}
-						class="absolute top-[calc(100%+8px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-[60] w-72 font-ui"
+						class="absolute top-[calc(100%+8px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-[60] w-96 font-ui"
 					>
 						<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-semibold">
 							Translation
