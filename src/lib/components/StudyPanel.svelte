@@ -11,8 +11,11 @@
 		loadTranslationCrossRefs,
 		loadConfIntro,
 		loadConfFootnotes,
-		loadConfCommentary
+		loadConfCommentary,
+		loadHaydockCommentary,
+		loadHaydockIntro
 	} from '$lib/data/loader';
+	import type { HaydockCommentaryEntry, HaydockIntro } from '$lib/data/loader';
 	import type {
 		BookData,
 		ChapterAnnotations,
@@ -41,9 +44,10 @@
 		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox';
 	$: isDrc = translationId === 'drc';
 	$: isKnox = translationId === 'knox';
-	$: hasLinkifiedNotes = isDrc || isKnox;
+	$: hasLinkifiedNotes = isDrc || isKnox || isHaydock;
 	$: hasTranslationIntro = translationId === 'conf';
 	$: isConf = translationId === 'conf';
+	$: isHaydock = translationId === 'haydock';
 	$: translationMeta = TRANSLATIONS.find((t) => t.id === translationId);
 
 	// ── Translation notes (DRC/CPDV) ────────────────────────────────
@@ -83,24 +87,74 @@
 
 	$: {
 		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
-		if (isDrc && currentBookSlug && key !== lastTranslationCrossRefsKey) {
+		if ((isDrc || isHaydock) && currentBookSlug && key !== lastTranslationCrossRefsKey) {
 			lastTranslationCrossRefsKey = key;
 			const slug = currentBookSlug;
 			const chNum = currentChapterNum;
 			translationCrossRefsLoading = true;
 			translationCrossRefs = null;
-			loadTranslationCrossRefs('drc', slug, chNum, fetch)
+			loadTranslationCrossRefs(isDrc ? 'drc' : 'haydock', slug, chNum, fetch)
 				.then((data) => {
-					if (`drc/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
+					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
 						translationCrossRefs = data;
 						translationCrossRefsLoading = false;
 					}
 				})
 				.catch(() => {
-					if (`drc/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
+					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
 						translationCrossRefsLoading = false;
 					}
 				});
+		} else if (!isDrc && !isHaydock) {
+			translationCrossRefs = null;
+		}
+	}
+
+	// ── Haydock commentary ──────────────────────────────────────────
+	let haydockCommentary: HaydockCommentaryEntry[] | null = null;
+	let haydockCommentaryLoading = false;
+	let lastHaydockCommentaryKey = '';
+
+	$: {
+		const key = `haydock/${currentBookSlug}/${currentChapterNum}`;
+		if (isHaydock && currentBookSlug && key !== lastHaydockCommentaryKey) {
+			lastHaydockCommentaryKey = key;
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
+			haydockCommentaryLoading = true;
+			haydockCommentary = null;
+			loadHaydockCommentary(slug, chNum, fetch)
+				.then((data) => {
+					if (`haydock/${slug}/${chNum}` === lastHaydockCommentaryKey) {
+						haydockCommentary = data;
+						haydockCommentaryLoading = false;
+					}
+				})
+				.catch(() => {
+					if (`haydock/${currentBookSlug}/${currentChapterNum}` === lastHaydockCommentaryKey) {
+						haydockCommentaryLoading = false;
+					}
+				});
+		} else if (!isHaydock) {
+			haydockCommentary = null;
+		}
+	}
+
+	// ── Haydock intro ───────────────────────────────────────────────
+	let haydockIntro: HaydockIntro | null = null;
+	let lastHaydockIntroSlug = '';
+
+	$: {
+		if (isHaydock && currentBookSlug && currentBookSlug !== lastHaydockIntroSlug) {
+			lastHaydockIntroSlug = currentBookSlug;
+			const slug = currentBookSlug;
+			loadHaydockIntro(slug, fetch)
+				.then((data) => {
+					if (slug === lastHaydockIntroSlug) haydockIntro = data;
+				})
+				.catch(() => {});
+		} else if (!isHaydock) {
+			haydockIntro = null;
 		}
 	}
 
@@ -211,7 +265,8 @@
 		hasIntros,
 		hasArticles,
 		hasEndMatters,
-		confIntro
+		confIntro,
+		haydockIntro
 	);
 	// Snap to first visible tab if the active tab isn't available for this translation
 	$: if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
@@ -228,7 +283,8 @@
 		hasIntros: boolean,
 		hasArticles: boolean,
 		hasEndMatters: boolean,
-		confIntro: ConfIntro | null
+		confIntro: ConfIntro | null,
+		haydockIntro: HaydockIntro | null
 	): TabDef[] {
 		if (tid === 'odr') {
 			return [
@@ -254,6 +310,15 @@
 				{ id: 'notes', label: 'Notes' },
 				{ id: 'cross-refs', label: 'Cross-Refs' }
 			];
+		}
+		if (tid === 'haydock') {
+			const tabs: TabDef[] = [];
+			if (haydockIntro && haydockIntro.paragraphs.length > 0) {
+				tabs.push({ id: 'intro', label: 'Intro' });
+			}
+			tabs.push({ id: 'commentary', label: 'Commentary' });
+			tabs.push({ id: 'cross-refs', label: 'Cross-Refs' });
+			return tabs;
 		}
 		if (tid === 'cpdv' || tid === 'knox') {
 			return [{ id: 'notes', label: 'Notes' }];
@@ -287,6 +352,14 @@
 				confIntro &&
 				(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
 			) {
+				defaultTab = 'intro';
+			}
+		} else if (isHaydock) {
+			defaultTab = 'commentary';
+			if (preferred === 'commentary' || preferred === 'cross-refs') {
+				defaultTab = preferred;
+			}
+			if (preferred === 'intro' && haydockIntro && haydockIntro.paragraphs.length > 0) {
 				defaultTab = 'intro';
 			}
 		} else if (hasTranslationNotes) {
@@ -415,6 +488,18 @@
 		return sections;
 	}
 
+	/** Group flat commentary entries by verse for section rendering */
+	function groupByVerse(entries: HaydockCommentaryEntry[]): { verse: number; entries: HaydockCommentaryEntry[] }[] {
+		const map = new Map<number, HaydockCommentaryEntry[]>();
+		for (const e of entries) {
+			if (!map.has(e.verse)) map.set(e.verse, []);
+			map.get(e.verse)!.push(e);
+		}
+		return Array.from(map.entries())
+			.sort((a, b) => a[0] - b[0])
+			.map(([verse, entries]) => ({ verse, entries }));
+	}
+
 	// ── Synced scroll ────────────────────────────────────────────────
 
 	let panelScroll: HTMLElement;
@@ -528,8 +613,17 @@
 		// Determine which tab the trigger should route to
 		let targetTab: StudyTab;
 		if (!isOdr) {
-			// Non-ODR translations don't have separate tabs for these
-			targetTab = $studyPanel.activeTab;
+			if (isHaydock) {
+				if (trigger.type === 'annotation' || trigger.type === 'note') {
+					targetTab = 'commentary';
+				} else if (trigger.type === 'cross_ref') {
+					targetTab = 'cross-refs';
+				} else {
+					targetTab = 'commentary';
+				}
+			} else {
+				targetTab = $studyPanel.activeTab;
+			}
 		} else if (trigger.type === 'cross_ref') {
 			targetTab = 'cross-refs';
 		} else if (trigger.type === 'note') {
@@ -1041,6 +1135,71 @@
 				{/if}
 			</div>
 
+			<!-- ═══ Haydock: Intro tab ═══ -->
+		{:else if $studyPanel.activeTab === 'intro' && isHaydock && haydockIntro}
+			<div class="content-block">
+				<p class="content-eyebrow">Introduction · Haydock</p>
+				{#each haydockIntro.paragraphs as para}
+					<p class="prose-para">{@html linkifyDrcRefs(para)}</p>
+				{/each}
+			</div>
+
+			<!-- ═══ Haydock: Commentary tab ═══ -->
+		{:else if $studyPanel.activeTab === 'commentary' && isHaydock}
+			{#if haydockCommentaryLoading}
+				<div class="empty-state"><p>Loading commentary...</p></div>
+			{:else if haydockCommentary && haydockCommentary.length > 0}
+				{@const grouped = groupByVerse(haydockCommentary)}
+				<div class="content-block">
+					<p class="content-eyebrow">Haydock Commentary</p>
+					{#each grouped as group (group.verse)}
+						<div
+							class="verse-section"
+							class:verse-section-active={$studyPanel.annotatedVerse === group.verse}
+							bind:this={sectionEls[group.verse]}
+							data-section-verse={group.verse}
+						>
+							<div class="verse-section-header verse-section-header-sticky">
+								{group.verse === 0 ? 'Chapter' : `Verse ${group.verse}`}
+							</div>
+							{#each group.entries as entry}
+								<div class="haydock-entry" data-panel-id="panel-{group.verse}-commentary-{entry.marker}">
+									<span class="cr-marker">{entry.marker}</span>
+									<span class="note-text">{@html linkifyDrcRefs(entry.text)}</span>
+								</div>
+							{/each}
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No commentary for this chapter.</p>
+				</div>
+			{/if}
+
+			<!-- ═══ Haydock: Cross-Refs tab ═══ -->
+		{:else if $studyPanel.activeTab === 'cross-refs' && isHaydock}
+			{#if translationCrossRefsLoading}
+				<div class="empty-state"><p>Loading cross-references...</p></div>
+			{:else if translationCrossRefs && translationCrossRefs.length > 0}
+				<div class="content-block">
+					<p class="content-eyebrow">Cross-References · DRC-H</p>
+					{#each translationCrossRefs as cr (cr.marker)}
+						<div class="cr-row">
+							<span class="cr-marker">{cr.marker}</span>
+							<span class="cr-verse-tag">v.{cr.verse}</span>
+							<CrossRefText text={cr.refs} />
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No cross-references for this chapter.</p>
+				</div>
+			{/if}
+
 			<!-- ═══ DRC/Knox/CPDV: Translation Notes tab ═══ -->
 		{:else if $studyPanel.activeTab === 'notes' && hasTranslationNotes}
 			{#if translationNotesLoading}
@@ -1479,6 +1638,27 @@
 		line-height: 1.5;
 	}
 
+	/* ─── Haydock commentary entries ─────────────────────────── */
+	.haydock-entry {
+		display: flex;
+		gap: 10px;
+		align-items: baseline;
+		line-height: 1.7;
+		padding: 8px 52px;
+		border-bottom: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+	}
+
+	.haydock-entry:last-child {
+		border-bottom: none;
+	}
+
+	/* Haydock commentary <hr> tags from --- separators */
+	.haydock-entry :global(hr) {
+		border: none;
+		border-top: 1px solid var(--color-border);
+		margin: 8px 0;
+	}
+
 	/* ─── Translation notes ────────────────────────────────────── */
 	.translation-note-entry {
 		display: flex;
@@ -1592,6 +1772,10 @@
 
 		.annotation-block {
 			padding: 4px 12px 8px;
+		}
+
+		.haydock-entry {
+			padding: 6px 12px;
 		}
 
 		.note-text {
