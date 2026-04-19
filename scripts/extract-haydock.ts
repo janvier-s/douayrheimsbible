@@ -89,3 +89,147 @@ export function parseCrossRef(line: string): ParsedCrossRef | null {
     refs: match[3].trim(),
   };
 }
+
+export interface HaydockCommentaryEntry {
+  verse: number;
+  marker: string;
+  text: string;
+}
+
+export interface HaydockCrossRefEntry {
+  verse: number;
+  marker: number;
+  refs: string;
+}
+
+export interface HaydockChapter {
+  chapter: number;
+  summary: string;
+  verses: { verse: number; text: string }[];
+}
+
+export interface ParsedBook {
+  slug: string;
+  intro: string[];
+  chapters: HaydockChapter[];
+  /** Commentary entries keyed by chapter number */
+  commentary: Record<number, HaydockCommentaryEntry[]>;
+  /** Cross-refs keyed by chapter number */
+  crossRefs: Record<number, HaydockCrossRefEntry[]>;
+}
+
+/** Parse an entire PSFM book file into structured data. */
+export function parseBookFile(content: string): ParsedBook {
+  const lines = content.split('\n');
+
+  let slug = '';
+  const intro: string[] = [];
+  const chapters: HaydockChapter[] = [];
+  const commentary: Record<number, HaydockCommentaryEntry[]> = {};
+  const crossRefs: Record<number, HaydockCrossRefEntry[]> = {};
+
+  let currentChapter = 0;
+  let currentSummary = '';
+  let currentVerses: { verse: number; text: string }[] = [];
+  let inIntro = false;
+
+  // Track per-verse marker counters for commentary
+  const verseMarkerCount: Record<string, number> = {}; // "chapter:verse" → count
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed === '<>') continue;
+
+    // Book ID
+    if (trimmed.startsWith('\\id ')) {
+      const code = trimmed.split(/\s+/)[1];
+      slug = usfmToSlug(code) ?? '';
+      continue;
+    }
+
+    // Intro markers
+    if (trimmed.startsWith('\\imt1 ') || trimmed.startsWith('\\imt3 ') || trimmed.startsWith('\\imt5 ')) {
+      inIntro = true;
+      continue; // Skip intro titles (they're just headings)
+    }
+    if (trimmed.startsWith('\\im ') || trimmed.startsWith('\\ip ')) {
+      inIntro = true;
+      const text = trimmed.replace(/^\\i[mp]\s+/, '').trim();
+      if (text) intro.push(text);
+      continue;
+    }
+
+    // Main title — marks end of intro
+    if (trimmed.startsWith('\\mt1 ')) {
+      inIntro = false;
+      continue;
+    }
+
+    // Chapter start
+    if (trimmed.startsWith('\\c ')) {
+      // Save previous chapter
+      if (currentChapter > 0) {
+        chapters.push({ chapter: currentChapter, summary: currentSummary, verses: currentVerses });
+      }
+      currentChapter = parseInt(trimmed.replace('\\c ', ''));
+      currentSummary = '';
+      currentVerses = [];
+      inIntro = false;
+      continue;
+    }
+
+    // Chapter description (summary)
+    if (trimmed.startsWith('\\cd ')) {
+      currentSummary = trimmed.replace('\\cd ', '').trim();
+      continue;
+    }
+
+    // Verse
+    if (trimmed.startsWith('\\v ')) {
+      const parsed = parseVerseText(trimmed);
+      if (parsed) currentVerses.push({ verse: parsed.verse, text: parsed.text });
+      continue;
+    }
+
+    // Footnote/commentary
+    if (trimmed.startsWith('\\f ')) {
+      const parsed = parseFootnote(trimmed);
+      if (parsed) {
+        const ch = parsed.chapter;
+        if (!commentary[ch]) commentary[ch] = [];
+        const key = `${ch}:${parsed.verse}`;
+        verseMarkerCount[key] = (verseMarkerCount[key] ?? 0) + 1;
+        commentary[ch].push({
+          verse: parsed.verse,
+          marker: String(verseMarkerCount[key]),
+          text: parsed.text,
+        });
+      }
+      continue;
+    }
+
+    // Cross-reference
+    if (trimmed.startsWith('\\x ')) {
+      const parsed = parseCrossRef(trimmed);
+      if (parsed) {
+        const ch = parsed.chapter;
+        if (!crossRefs[ch]) crossRefs[ch] = [];
+        crossRefs[ch].push({
+          verse: parsed.verse,
+          marker: crossRefs[ch].length + 1,
+          refs: parsed.refs,
+        });
+      }
+      continue;
+    }
+
+    // Skip: \p, \cl, \h, \toc*, \ide, \s1, \periph, \tr, \th*, \tc*, \ili, \iq, \ib*
+  }
+
+  // Save last chapter
+  if (currentChapter > 0) {
+    chapters.push({ chapter: currentChapter, summary: currentSummary, verses: currentVerses });
+  }
+
+  return { slug, intro, chapters, commentary, crossRefs };
+}
