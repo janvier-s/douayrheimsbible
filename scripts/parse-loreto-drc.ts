@@ -297,25 +297,30 @@ export function parseNoteBlock(innerHTML: string): ParsedNote {
 	const root = parseHTML(`<div>${innerHTML}</div>`);
 	const div = root.querySelector('div')!;
 
-	const children = div.childNodes.filter(
-		(n) => n.nodeType === 1
-	) as import('node-html-parser').HTMLElement[];
-
 	let chapter: number | null = null;
 	let verse = 0;
 	let lemma = '';
 	let bodyParts: string[] = [];
 	let headerProcessed = false;
 
-	for (let i = 0; i < children.length; i++) {
-		const el = children[i];
+	for (const node of div.childNodes) {
+		if (node.nodeType === 3) {
+			// Text node — only include after header is processed
+			if (headerProcessed) {
+				bodyParts.push(node.text);
+			}
+			continue;
+		}
+		if (node.nodeType !== 1) continue;
+
+		const el = node as import('node-html-parser').HTMLElement;
 		const cls = el.getAttribute('class') ?? '';
 		const text = el.text;
 
 		if (!headerProcessed && cls === 'plain-bible1') {
-			// Try to parse "CHAP. N. Ver. N." or just "Ver. N."
-			const chapVerMatch = text.match(/CHAP\.\s*(\d+)\.\s*Ver\.\s*(\d+)\./i);
-			const verOnlyMatch = text.match(/^Ver\.\s*(\d+)\./i);
+			// Try to parse "CHAP. N. Ver. N." or "CHAP N Ver. N" or just "Ver. N."
+			const chapVerMatch = text.match(/CHAP\.?\s*(\d+)\.?\s*Ver\.\s*(\d+)\.?/i);
+			const verOnlyMatch = text.match(/^Ver\.\s*(\d+)\.?/i);
 
 			if (chapVerMatch) {
 				chapter = parseInt(chapVerMatch[1], 10);
@@ -334,7 +339,8 @@ export function parseNoteBlock(innerHTML: string): ParsedNote {
 
 		if (headerProcessed && cls === 'bible-italic' && lemma === '') {
 			// First italic text after header is the lemma
-			lemma = text.trim();
+			// Handle colon suffix: "Showed him:" → "Showed him"
+			lemma = text.trim().replace(/:$/, '');
 			continue;
 		}
 
@@ -349,8 +355,8 @@ export function parseNoteBlock(innerHTML: string): ParsedNote {
 	let noteText = '';
 	if (lemma) {
 		let body = bodyParts.join('').trim();
-		// The body usually starts with ". " or "... " — normalize to "... "
-		body = body.replace(/^\.\s*/, '... ');
+		// The body usually starts with ". " or ": " or "... " — normalize to "... "
+		body = body.replace(/^[.:]\s*/, '... ');
 		noteText = `"${lemma}"... ${body}`.replace(/\.\.\.\s+\.\.\.\s*/, '... ').trim();
 	} else {
 		noteText = bodyParts.join('').trim();
