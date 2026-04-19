@@ -520,6 +520,26 @@
 			.map(([verse, entries]) => ({ verse, entries }));
 	}
 
+	// ── Shareable anchor links ───────────────────────────────────────
+
+	let copiedVerse: number | null = null;
+	let copiedTimer: ReturnType<typeof setTimeout> | null = null;
+
+	function copyVerseLink(verse: number) {
+		if (!browser) return;
+		const base = $readingPosition?.routeBase ?? '/odr';
+		const slug = currentBookSlug;
+		const ch = currentChapterNum;
+		const tab = $studyPanel.activeTab;
+		const url = `${window.location.origin}${base}/${slug}/${ch}?mode=study&tab=${tab}&v=${verse}`;
+		navigator.clipboard.writeText(url);
+		copiedVerse = verse;
+		if (copiedTimer) clearTimeout(copiedTimer);
+		copiedTimer = setTimeout(() => {
+			copiedVerse = null;
+		}, 1500);
+	}
+
 	// ── Synced scroll ────────────────────────────────────────────────
 
 	let panelScroll: HTMLElement;
@@ -968,11 +988,42 @@
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
+								<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 								<div
 									class="verse-section-header"
 									class:verse-section-header-sticky={section.verse !== 0}
+									on:click={() => copyVerseLink(section.verse)}
 								>
 									{section.label}
+									<button
+										class="verse-link-btn"
+										class:copied={copiedVerse === section.verse}
+										aria-label="Copy link to {section.label}"
+									>
+										{#if copiedVerse === section.verse}
+											<svg
+												width="14"
+												height="14"
+												viewBox="0 0 256 256"
+												fill="currentColor"
+												aria-hidden="true"
+												><path
+													d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+												/></svg
+											>
+										{:else}
+											<svg
+												width="14"
+												height="14"
+												viewBox="0 0 256 256"
+												fill="currentColor"
+												aria-hidden="true"
+												><path
+													d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+												/></svg
+											>
+										{/if}
+									</button>
 								</div>
 								{#each section.annotationEntries as ann}
 									<div
@@ -1015,11 +1066,42 @@
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
+								<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 								<div
 									class="verse-section-header"
 									class:verse-section-header-sticky={section.verse !== 0}
+									on:click={() => copyVerseLink(section.verse)}
 								>
 									{section.label}
+									<button
+										class="verse-link-btn"
+										class:copied={copiedVerse === section.verse}
+										aria-label="Copy link to {section.label}"
+									>
+										{#if copiedVerse === section.verse}
+											<svg
+												width="14"
+												height="14"
+												viewBox="0 0 256 256"
+												fill="currentColor"
+												aria-hidden="true"
+												><path
+													d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+												/></svg
+											>
+										{:else}
+											<svg
+												width="14"
+												height="14"
+												viewBox="0 0 256 256"
+												fill="currentColor"
+												aria-hidden="true"
+												><path
+													d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+												/></svg
+											>
+										{/if}
+									</button>
 								</div>
 
 								{#if section.verse === 0 && currentChapterData?.summary_notes}
@@ -1077,8 +1159,41 @@
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
-								<div class="verse-section-header verse-section-header-sticky">
+								<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+								<div
+									class="verse-section-header verse-section-header-sticky"
+									on:click={() => copyVerseLink(section.verse)}
+								>
 									{section.label}
+									<button
+										class="verse-link-btn"
+										class:copied={copiedVerse === section.verse}
+										aria-label="Copy link to {section.label}"
+									>
+										{#if copiedVerse === section.verse}
+											<svg
+												width="14"
+												height="14"
+												viewBox="0 0 256 256"
+												fill="currentColor"
+												aria-hidden="true"
+												><path
+													d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+												/></svg
+											>
+										{:else}
+											<svg
+												width="14"
+												height="14"
+												viewBox="0 0 256 256"
+												fill="currentColor"
+												aria-hidden="true"
+												><path
+													d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+												/></svg
+											>
+										{/if}
+									</button>
 								</div>
 								{#each section.verseData?.cross_refs ?? [] as cr, ci}
 									<div
@@ -1223,8 +1338,41 @@
 							bind:this={sectionEls[group.verse]}
 							data-section-verse={group.verse}
 						>
-							<div class="verse-section-header verse-section-header-sticky">
+							<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+							<div
+								class="verse-section-header verse-section-header-sticky"
+								on:click={() => copyVerseLink(group.verse)}
+							>
 								{group.verse === 0 ? 'Chapter' : `Verse ${group.verse}`}
+								<button
+									class="verse-link-btn"
+									class:copied={copiedVerse === group.verse}
+									aria-label="Copy link to verse {group.verse}"
+								>
+									{#if copiedVerse === group.verse}
+										<svg
+											width="14"
+											height="14"
+											viewBox="0 0 256 256"
+											fill="currentColor"
+											aria-hidden="true"
+											><path
+												d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+											/></svg
+										>
+									{:else}
+										<svg
+											width="14"
+											height="14"
+											viewBox="0 0 256 256"
+											fill="currentColor"
+											aria-hidden="true"
+											><path
+												d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+											/></svg
+										>
+									{/if}
+								</button>
 							</div>
 							{#each group.entries as entry}
 								<div
@@ -1590,6 +1738,35 @@
 		font-weight: 500;
 		padding: 12px 52px 6px;
 		user-select: none;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	}
+
+	.verse-link-btn {
+		opacity: 0;
+		color: inherit;
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		transition: opacity 150ms ease;
+		line-height: 0;
+	}
+
+	.verse-link-btn.copied {
+		opacity: 1;
+		color: var(--color-accent);
+	}
+
+	.verse-section-header:hover .verse-link-btn {
+		opacity: 1;
+	}
+
+	.verse-link-btn:hover {
+		color: var(--color-accent);
 	}
 
 	.verse-section-header-sticky {

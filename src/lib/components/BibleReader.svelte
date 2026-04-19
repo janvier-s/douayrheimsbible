@@ -15,6 +15,8 @@
 	} from '$lib/utils/infiniteScroll';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
+	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
+	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { createPanelResize } from '$lib/utils/panelResize';
 	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
 	import StudyPanel from './StudyPanel.svelte';
@@ -292,6 +294,7 @@
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
 
 		// ?mode=read or ?mode=study in the URL overrides the stored preference
+		// ?tab=notes&v=5 opens a specific study panel tab and scrolls to a verse
 		if (browser) {
 			const params = new URLSearchParams(window.location.search);
 			const urlMode = params.get('mode');
@@ -299,6 +302,40 @@
 				prefs.update((p) => ({ ...p, readingMode: 'reading' }));
 			} else if (urlMode === 'study') {
 				prefs.update((p) => ({ ...p, readingMode: 'study' }));
+			}
+			const urlTab = params.get('tab');
+			const urlVerse = params.get('v');
+			if (urlTab || urlVerse !== null) {
+				// tab/v params imply study mode
+				prefs.update((p) => ({ ...p, readingMode: 'study' }));
+			}
+			if (urlTab) {
+				const validTabs = [
+					'intro',
+					'commentary',
+					'article',
+					'end',
+					'footnotes',
+					'annotations',
+					'notes',
+					'cross-refs'
+				];
+				if (validTabs.includes(urlTab)) {
+					studyPanel.update((s) => ({
+						...s,
+						activeTab: urlTab as StudyTab
+					}));
+				}
+			}
+			if (urlVerse !== null) {
+				const v = parseInt(urlVerse, 10);
+				if (!isNaN(v) && v >= 0) {
+					// Delay slightly so the panel has time to render sections
+					setTimeout(() => {
+						studyPanel.update((s) => ({ ...s, annotatedVerse: v }));
+						scrollTrigger.set({ verse: v });
+					}, 300);
+				}
 			}
 		}
 
