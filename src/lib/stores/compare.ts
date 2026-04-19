@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-export type TranslationId = 'odr' | 'drc' | 'conf' | 'knox' | 'cpdv' | 'kjv' | 'vul' | 'rsv';
+export type TranslationId = 'odr' | 'drc' | 'haydock' | 'conf' | 'knox' | 'cpdv' | 'kjv' | 'vul' | 'rsv';
 
 export interface Translation {
 	id: TranslationId;
@@ -58,6 +58,16 @@ export const TRANSLATIONS: Translation[] = [
 		ntOnly: false,
 		fullHeader: true,
 		micro: 'Douay-Rheims Revision'
+	},
+	{
+		id: 'haydock',
+		label: 'DRC Haydock',
+		abbr: 'DRC-H',
+		year: '1883',
+		live: true,
+		ntOnly: false,
+		fullHeader: true,
+		micro: 'DRC with Haydock Commentary'
 	},
 	{
 		id: 'conf',
@@ -129,7 +139,7 @@ interface CompareState {
 }
 
 // Bump version to reset cached order after adding/reordering translations
-const STORAGE_KEY = 'compareStore_v4';
+const STORAGE_KEY = 'compareStore_v5';
 
 function loadFromStorage(): Partial<Pick<CompareState, 'order' | 'visible'>> {
 	if (!browser) return {};

@@ -18,6 +18,7 @@ export interface TranslationCrossRef {
 
 export interface TranslationChapter {
 	chapter: number;
+	summary?: string;
 	verses: TranslationVerse[];
 }
 

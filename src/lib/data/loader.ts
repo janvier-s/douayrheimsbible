@@ -113,6 +113,59 @@ export function loadTranslationCrossRefs(
 	return translationCrossRefsCache.get(key)!;
 }
 
+// ── Haydock commentary (per chapter) ────────────────────────────────
+
+export interface HaydockCommentaryEntry {
+	verse: number;
+	marker: string;
+	text: string;
+}
+
+const haydockCommentaryCache = new Map<string, Promise<HaydockCommentaryEntry[] | null>>();
+
+export function loadHaydockCommentary(
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<HaydockCommentaryEntry[] | null> {
+	const key = `${slug}/${chapter}`;
+	if (!haydockCommentaryCache.has(key)) {
+		const promise = fetch(`/data/haydock-commentary/${slug}/${chapter}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load Haydock commentary: ${res.status}`);
+			return res.json() as Promise<HaydockCommentaryEntry[]>;
+		});
+		promise.then(null, () => haydockCommentaryCache.delete(key));
+		haydockCommentaryCache.set(key, promise);
+	}
+	return haydockCommentaryCache.get(key)!;
+}
+
+// ── Haydock book introductions ──────────────────────────────────────
+
+export interface HaydockIntro {
+	book: string;
+	paragraphs: string[];
+}
+
+const haydockIntroCache = new Map<string, Promise<HaydockIntro | null>>();
+
+export function loadHaydockIntro(
+	slug: string,
+	fetch: typeof globalThis.fetch
+): Promise<HaydockIntro | null> {
+	if (!haydockIntroCache.has(slug)) {
+		const promise = fetch(`/data/haydock-intros/${slug}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load Haydock intro: ${res.status}`);
+			return res.json() as Promise<HaydockIntro>;
+		});
+		promise.then(null, () => haydockIntroCache.delete(slug));
+		haydockIntroCache.set(slug, promise);
+	}
+	return haydockIntroCache.get(slug)!;
+}
+
 // ── Confraternity NT book introductions ──────────────────────────
 
 const confIntroCache = new Map<string, Promise<ConfIntro | null>>();
