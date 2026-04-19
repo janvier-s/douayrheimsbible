@@ -11,7 +11,8 @@
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import type { Verse } from '$lib/data/types';
 	import type { TranslationCrossRef } from '$lib/data/translation-types';
-	import { loadTranslationCrossRefs } from '$lib/data/loader';
+	import { loadTranslationCrossRefs, loadHaydockCommentary } from '$lib/data/loader';
+	import type { HaydockCommentaryEntry } from '$lib/data/loader';
 	import { PARAGRAPH_STARTS } from '$lib/data/paragraphs';
 
 	export let verses: Verse[];
@@ -35,6 +36,24 @@
 				.catch(() => {});
 		} else if (translationId !== 'drc') {
 			drcCrossRefs = null;
+		}
+	}
+
+	// ── Haydock commentary (loaded for hover popovers) ────
+	let haydockCommentary: HaydockCommentaryEntry[] | null = null;
+	let lastHaydockKey = '';
+
+	$: {
+		const key = `${bookSlug}/${chapterNum}`;
+		if (browser && translationId === 'haydock' && key !== lastHaydockKey) {
+			lastHaydockKey = key;
+			loadHaydockCommentary(bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${bookSlug}/${chapterNum}` === lastHaydockKey) haydockCommentary = data;
+				})
+				.catch(() => {});
+		} else if (translationId !== 'haydock') {
+			haydockCommentary = null;
 		}
 	}
 
@@ -136,6 +155,17 @@
 		});
 	}
 
+	/** Convert Haydock superscript markers (¹²³) to clickable buttons in study mode */
+	function renderHaydockMarkers(text: string, verseNum: number): string {
+		return text.replace(SUPER_RE, (match) => {
+			const num = match
+				.split('')
+				.map((c) => SUPER_TO_DIGIT[c] ?? c)
+				.join('');
+			return `<button class="study-marker" data-marker-type="haydock-commentary" data-marker="${num}" data-verse="${verseNum}" aria-label="Commentary ${num}">${num}</button>`;
+		});
+	}
+
 	/** Strip DRC superscript markers in reading mode */
 	function stripDrcMarkers(text: string): string {
 		return text.replace(SUPER_RE, '');
@@ -168,10 +198,14 @@
 	): string {
 		let t = text;
 		if (expandAmpersand) t = t.replace(/&amp;/g, 'and').replace(/&/g, 'and');
-		// DRC superscript markers (¹²³) — convert to buttons in study mode, strip in reading mode
+		// Superscript markers (¹²³) — convert to buttons in study mode, strip in reading mode
 		if (SUPER_RE.test(t)) {
 			SUPER_RE.lastIndex = 0;
-			t = isStudy ? renderDrcMarkers(t, verseNum) : stripDrcMarkers(t);
+			if (isStudy) {
+				t = translationId === 'haydock' ? renderHaydockMarkers(t, verseNum) : renderDrcMarkers(t, verseNum);
+			} else {
+				t = stripDrcMarkers(t);
+			}
 		}
 		if (isStudy) {
 			t = renderStudyMarkers(t, verseNum);
@@ -186,16 +220,22 @@
 
 	// ── Marker click handling ────────────────────────────────────────
 
-	function handleMarkerClick(e: MouseEvent, verseNum: number) {
+	function handleMarkerClick(e: MouseEvent, fallbackVerse: number) {
 		const btn = (e.target as HTMLElement).closest('[data-marker-type]') as HTMLElement | null;
 		if (!btn) return;
 		e.stopPropagation();
-		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref';
+		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref' | 'haydock-commentary';
 		const marker = btn.dataset.marker ?? '';
+		const verseNum = parseInt(btn.dataset.verse ?? String(fallbackVerse));
 		if (type === 'drc-crossref') {
 			// Switch to Cross-Refs tab and scroll to the marker
 			studyPanel.update((s) => ({ ...s, activeTab: 'cross-refs' as StudyTab }));
 			scrollTrigger.set({ verse: verseNum, type: 'cross_ref', marker });
+			return;
+		}
+		if (type === 'haydock-commentary') {
+			studyPanel.update((s) => ({ ...s, activeTab: 'commentary' as StudyTab, annotatedVerse: verseNum }));
+			scrollTrigger.set({ verse: verseNum, type: 'annotation', marker });
 			return;
 		}
 		studyPanel.update((s) => ({ ...s, annotatedVerse: verseNum }));
@@ -232,7 +272,7 @@
 	}
 
 	function resolveMarkerContent(btn: HTMLElement): PopoverState | null {
-		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref';
+		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref' | 'haydock-commentary';
 		const marker = btn.dataset.marker ?? '';
 		const verseNum = parseInt(btn.dataset.verse ?? '0');
 
@@ -240,6 +280,14 @@
 			const cr = drcCrossRefs?.find((c) => c.marker === parseInt(marker));
 			if (!cr) return null;
 			return { label: marker, content: cr.refs, type: 'cross_ref' };
+		}
+
+		if (type === 'haydock-commentary') {
+			const entry = haydockCommentary?.find((c) => c.verse === verseNum && c.marker === marker);
+			if (!entry) return null;
+			// Show first 200 chars of commentary in popover
+			const preview = entry.text.replace(/<hr>/g, ' — ').slice(0, 200);
+			return { label: marker, content: preview + (entry.text.length > 200 ? '...' : ''), type: 'note' };
 		}
 
 		const verse = verseNum > 0 ? verses.find((v) => v.verse === verseNum) : null;
@@ -433,7 +481,7 @@
 
 {#if $prefs.paragraphView}
 	{#each paragraphs as group, gi (group[0].verse)}
-		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<!-- svelte-ignore a11y_no_static_element_interactions a11y_click_events_have_key_events a11y_no_noninteractive_element_interactions -->
 		<p
 			class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 			class:text-justify={$prefs.justifiedText}
@@ -445,6 +493,7 @@
 			on:focus={isStudy ? handleMarkerMouseover : undefined}
 			on:mouseout={isStudy ? handleMarkerMouseout : undefined}
 			on:blur={isStudy ? handleMarkerMouseout : undefined}
+			on:click={(e) => isStudy && handleMarkerClick(e, 0)}
 		>
 			{#each group as v, vi (v.verse)}
 				{@const isDropcap = gi === 0 && vi === 0 && ($prefs.showDropcap ?? true)}
