@@ -1,6 +1,6 @@
 // @ts-nocheck — build script run with tsx, not part of the Svelte app
 import { parse as parseHTML } from 'node-html-parser';
-import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
+import { readdir, readFile, writeFile, mkdir, access } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -1105,10 +1105,14 @@ async function main(): Promise<void> {
 	console.log(`Output: ${DRC_OUT}`);
 }
 
-// Run if executed directly (skip when imported by tests)
+// Run if executed directly (skip when imported by tests or missing source dir)
 if (!process.env.VITEST) {
-	main().catch((err) => {
-		console.error('Fatal error:', err);
-		process.exit(1);
-	});
+	access(EPUB_DIR)
+		.then(() =>
+			main().catch((err) => {
+				console.error('Fatal error:', err);
+				process.exit(1);
+			})
+		)
+		.catch(() => {});
 }

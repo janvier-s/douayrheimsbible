@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 
 /** Maps USFM 3-letter book codes to project slugs (Douay-Rheims naming). */
@@ -385,7 +385,7 @@ function extractAll() {
 	);
 }
 
-// Run if executed directly (skip when imported by tests)
-if (!process.env.VITEST) {
+// Run if executed directly (skip when imported by tests or missing source dir)
+if (!process.env.VITEST && existsSync(PSFM_DIR)) {
 	extractAll();
 }
