@@ -5,16 +5,38 @@
 	import { get } from 'svelte/store';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
+	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import type { Verse } from '$lib/data/types';
+	import type { TranslationCrossRef } from '$lib/data/translation-types';
+	import { loadTranslationCrossRefs } from '$lib/data/loader';
 	import { PARAGRAPH_STARTS } from '$lib/data/paragraphs';
 
 	export let verses: Verse[];
 	export let targetVerse: number | undefined;
 	export let bookSlug: string;
 	export let chapterNum: number;
+	export let translationId: string = 'odr';
+
+	// ── DRC cross-refs (loaded automatically for hover popovers) ────
+	let drcCrossRefs: TranslationCrossRef[] | null = null;
+	let lastDrcKey = '';
+
+	$: {
+		const key = `${bookSlug}/${chapterNum}`;
+		if (browser && translationId === 'drc' && key !== lastDrcKey) {
+			lastDrcKey = key;
+			loadTranslationCrossRefs('drc', bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${bookSlug}/${chapterNum}` === lastDrcKey) drcCrossRefs = data;
+				})
+				.catch(() => {});
+		} else if (translationId !== 'drc') {
+			drcCrossRefs = null;
+		}
+	}
 
 	let verseEls: Record<number, HTMLElement> = {};
 
@@ -88,6 +110,37 @@
 		return text;
 	}
 
+	/** Unicode superscript digits → regular digit */
+	const SUPER_TO_DIGIT: Record<string, string> = {
+		'\u2070': '0',
+		'\u00B9': '1',
+		'\u00B2': '2',
+		'\u00B3': '3',
+		'\u2074': '4',
+		'\u2075': '5',
+		'\u2076': '6',
+		'\u2077': '7',
+		'\u2078': '8',
+		'\u2079': '9'
+	};
+	const SUPER_RE = /[\u2070\u00B9\u00B2\u00B3\u2074-\u2079]+/g;
+
+	/** Convert DRC superscript markers (¹²³) to clickable buttons in study mode */
+	function renderDrcMarkers(text: string, verseNum: number): string {
+		return text.replace(SUPER_RE, (match) => {
+			const num = match
+				.split('')
+				.map((c) => SUPER_TO_DIGIT[c] ?? c)
+				.join('');
+			return `<button class="study-marker" data-marker-type="drc-crossref" data-marker="${num}" data-verse="${verseNum}" aria-label="Cross-reference ${num}">${num}</button>`;
+		});
+	}
+
+	/** Strip DRC superscript markers in reading mode */
+	function stripDrcMarkers(text: string): string {
+		return text.replace(SUPER_RE, '');
+	}
+
 	/** Wrap the first letter of rendered HTML in a dropcap span.
 	 *  Handles two leading-tag cases produced by the render pipeline:
 	 *  - <sc>Word</sc>...  (small-caps proper noun at verse start)
@@ -115,6 +168,11 @@
 	): string {
 		let t = text;
 		if (expandAmpersand) t = t.replace(/&amp;/g, 'and').replace(/&/g, 'and');
+		// DRC superscript markers (¹²³) — convert to buttons in study mode, strip in reading mode
+		if (SUPER_RE.test(t)) {
+			SUPER_RE.lastIndex = 0;
+			t = isStudy ? renderDrcMarkers(t, verseNum) : stripDrcMarkers(t);
+		}
 		if (isStudy) {
 			t = renderStudyMarkers(t, verseNum);
 		} else {
@@ -132,8 +190,14 @@
 		const btn = (e.target as HTMLElement).closest('[data-marker-type]') as HTMLElement | null;
 		if (!btn) return;
 		e.stopPropagation();
-		const type = btn.dataset.markerType as 'cross_ref' | 'note';
+		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref';
 		const marker = btn.dataset.marker ?? '';
+		if (type === 'drc-crossref') {
+			// Switch to Cross-Refs tab and scroll to the marker
+			studyPanel.update((s) => ({ ...s, activeTab: 'cross-refs' as StudyTab }));
+			scrollTrigger.set({ verse: verseNum, type: 'cross_ref', marker });
+			return;
+		}
 		studyPanel.update((s) => ({ ...s, annotatedVerse: verseNum }));
 		scrollTrigger.set({ verse: verseNum, type, marker });
 	}
@@ -168,9 +232,16 @@
 	}
 
 	function resolveMarkerContent(btn: HTMLElement): PopoverState | null {
-		const type = btn.dataset.markerType as 'cross_ref' | 'note';
+		const type = btn.dataset.markerType as 'cross_ref' | 'note' | 'drc-crossref';
 		const marker = btn.dataset.marker ?? '';
 		const verseNum = parseInt(btn.dataset.verse ?? '0');
+
+		if (type === 'drc-crossref') {
+			const cr = drcCrossRefs?.find((c) => c.marker === parseInt(marker));
+			if (!cr) return null;
+			return { label: marker, content: cr.refs, type: 'cross_ref' };
+		}
+
 		const verse = verseNum > 0 ? verses.find((v) => v.verse === verseNum) : null;
 		if (!verse) return null;
 

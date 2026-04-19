@@ -12,6 +12,7 @@
 	export let totalChapters: number;
 	export let showNav: boolean = true;
 	export let routeBase: string = '/odr';
+	export let translationId: string = 'odr';
 	export let headingLevel: 'h1' | 'h2' = 'h1';
 	export let bookTitle: string | null | undefined = undefined;
 	export let shortTitle: string | null | undefined = undefined;
@@ -205,6 +206,7 @@
 		targetVerse={activeVerse}
 		bookSlug={bookMeta.slug}
 		chapterNum={chapter.chapter}
+		{translationId}
 	/>
 </article>
 

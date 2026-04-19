@@ -276,8 +276,24 @@ function matchBookAt(text: string, pos: number): BookMatch | null {
 	}
 
 	for (const abbrev of SORTED_ABBREVS) {
-		// Only check abbreviations that start with a digit if we have a digit prefix
-		if (/^\d/.test(abbrev) && !numPrefix) continue;
+		// Digit-leading abbreviation without "N. " prefix — try direct match (e.g. "1Cor.")
+		if (/^\d/.test(abbrev) && !numPrefix) {
+			const slice = text.slice(pos);
+			if (!slice.startsWith(abbrev)) continue;
+			const afterIdx = pos + abbrev.length;
+			if (
+				afterIdx < text.length &&
+				text[afterIdx] !== '.' &&
+				text[afterIdx] !== ':' &&
+				!(text[afterIdx] === ' ' && afterIdx + 1 < text.length && /\d/.test(text[afterIdx + 1]))
+			)
+				continue;
+			const endIdx =
+				afterIdx < text.length && (text[afterIdx] === '.' || text[afterIdx] === ':')
+					? afterIdx + 1
+					: afterIdx;
+			return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: endIdx };
+		}
 		// If abbreviation starts with digit, it must match our numPrefix
 		if (/^\d/.test(abbrev)) {
 			if (abbrev[0] !== numPrefix) continue;
@@ -339,6 +355,19 @@ function parseChapterVerse(text: string, startPos: number): ChapterVerseResult |
 	if (!chMatch) return null;
 	const chapter = parseInt(chMatch[1], 10);
 	cursor += chMatch[0].length;
+
+	// Case 0: colon separator — "14:14" (DRC cross-ref format)
+	// Check BEFORE consuming the period so "32:6" works
+	if (cursor < text.length && text[cursor] === ':') {
+		cursor++; // skip colon
+		const vMatch = text.slice(cursor).match(/^(\d+)/);
+		if (vMatch) {
+			const verse = parseInt(vMatch[1], 10);
+			cursor += vMatch[0].length;
+			if (cursor < text.length && text[cursor] === '.') cursor++;
+			return { chapter, verse, consumed: cursor - startPos, display: '' };
+		}
+	}
 
 	// skip optional period after chapter
 	if (cursor < text.length && text[cursor] === '.') cursor++;
@@ -500,9 +529,9 @@ function parseContinuationRefs(
 	let pos = startPos;
 
 	while (pos < text.length) {
-		// Skip and preserve whitespace, marginal note markers (''), and & separators
+		// Skip and preserve whitespace, commas, marginal note markers (''), and & separators
 		let cursor = pos;
-		while (cursor < text.length && /[ '&]/.test(text[cursor])) cursor++;
+		while (cursor < text.length && /[ ,'&]/.test(text[cursor])) cursor++;
 
 		// Must start with a digit (bare chapter number, no book name)
 		if (cursor >= text.length || !/\d/.test(text[cursor])) break;
@@ -529,9 +558,9 @@ function parseContinuationRefs(
 			let afterNum = cursor + vMatch[0].length;
 			if (afterNum < text.length && text[afterNum] === '.') afterNum++;
 			// Only break out of verse mode if THIS number is followed by comma+number
-			// (indicating a new chapter,verse pair like "5, 7.")
+			// or colon+number (indicating a new chapter,verse pair like "5, 7." or "5:7")
 			const afterDigits = text.slice(cursor + vMatch[0].length);
-			const isNewChapterVerse = /^\s*,\s*\d/.test(afterDigits);
+			const isNewChapterVerse = /^\s*[,:]\s*\d/.test(afterDigits);
 			if (!isNewChapterVerse) {
 				const verse = parseInt(vMatch[1], 10);
 				const osis = `${osisBook}.${lastVerseChapter}.${verse}`;

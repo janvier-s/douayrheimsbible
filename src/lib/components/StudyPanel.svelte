@@ -199,15 +199,6 @@
 			.join(' ');
 	}
 
-	const SUPER_DIGITS: Record<string, string> = {
-		'0': '\u2070', '1': '\u00B9', '2': '\u00B2', '3': '\u00B3',
-		'4': '\u2074', '5': '\u2075', '6': '\u2076', '7': '\u2077',
-		'8': '\u2078', '9': '\u2079',
-	};
-	function markerToSuperscript(n: number): string {
-		return String(n).split('').map(d => SUPER_DIGITS[d] ?? d).join('');
-	}
-
 	$: intros = bookData?.intros ?? [];
 	$: hasIntros = intros.length > 0;
 	$: endMatters = bookData?.endMatters ?? [];
@@ -222,6 +213,10 @@
 		hasEndMatters,
 		confIntro
 	);
+	// Snap to first visible tab if the active tab isn't available for this translation
+	$: if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
+		studyPanel.update((s) => ({ ...s, activeTab: visibleTabs[0].id }));
+	}
 	$: showTabBar = visibleTabs.length > 1;
 	$: sliderIndex = Math.max(
 		0,
@@ -257,7 +252,7 @@
 		if (tid === 'drc') {
 			return [
 				{ id: 'notes', label: 'Notes' },
-				{ id: 'cross-refs', label: 'Cross-Refs' },
+				{ id: 'cross-refs', label: 'Cross-Refs' }
 			];
 		}
 		if (tid === 'cpdv' || tid === 'knox') {
@@ -1092,12 +1087,10 @@
 				<div class="empty-state"><p>Loading cross-references...</p></div>
 			{:else if translationCrossRefs && translationCrossRefs.length > 0}
 				<div class="content-block">
-					<p class="content-eyebrow">
-						Cross-References · DRC
-					</p>
+					<p class="content-eyebrow">Cross-References · DRC</p>
 					{#each translationCrossRefs as cr (cr.marker)}
-						<div class="cr-row sub-section-inline">
-							<span class="cr-marker">{markerToSuperscript(cr.marker)}</span>
+						<div class="cr-row">
+							<span class="cr-marker">{cr.marker}</span>
 							<span class="cr-verse-tag">v.{cr.verse}</span>
 							<CrossRefText text={cr.refs} />
 						</div>

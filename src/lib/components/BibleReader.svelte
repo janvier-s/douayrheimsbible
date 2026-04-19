@@ -363,6 +363,7 @@
 						targetVerse={item.chapter.chapter === initialChapter.chapter ? targetVerse : undefined}
 						totalChapters={item.totalChapters}
 						showNav={$prefs.showChapterNav}
+						{translationId}
 						headingLevel={i === 0 ? 'h1' : 'h2'}
 						bookTitle={item.chapter.chapter === 1 ? currentBookData?.book_title : undefined}
 						shortTitle={currentBookData?.short_title}
