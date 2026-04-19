@@ -1,3 +1,6 @@
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'fs';
+import { join } from 'path';
+
 /** Maps USFM 3-letter book codes to project slugs (Douay-Rheims naming). */
 const USFM_TO_SLUG: Record<string, string> = {
   GEN: 'genesis', EXO: 'exodus', LEV: 'leviticus', NUM: 'numbers', DEU: 'deuteronomy',
@@ -233,3 +236,87 @@ export function parseBookFile(content: string): ParsedBook {
 
   return { slug, intro, chapters, commentary, crossRefs };
 }
+
+const PSFM_DIR = '/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdom/SCRIPTURA/sources/ODR/Haydock/ENG-B-Haydock1883-pd-PSFM-master';
+
+/** Files to skip (front matter, NT intro, back matter) */
+const SKIP_IDS = new Set(['FRT', 'INT', 'BAK']);
+
+function extractAll() {
+  const outBase = join(import.meta.dirname ?? '.', '..', 'static', 'data');
+  const haydockDir = join(outBase, 'haydock');
+  const commentaryDir = join(outBase, 'haydock-commentary');
+  const crossRefsDir = join(outBase, 'haydock-crossrefs');
+  const introsDir = join(outBase, 'haydock-intros');
+
+  // Find all .p.sfm files
+  const files = readdirSync(PSFM_DIR)
+    .filter(f => f.endsWith('.p.sfm'))
+    .sort();
+
+  let bookCount = 0;
+  let commentaryFiles = 0;
+  let crossRefFiles = 0;
+
+  for (const file of files) {
+    // Extract book code from filename: "01-GEN-ENG[B]DRC1750[pd].p.sfm" → "GEN"
+    const code = file.split('-')[1];
+    if (SKIP_IDS.has(code)) {
+      console.log(`  Skipping ${file} (${code})`);
+      continue;
+    }
+
+    const content = readFileSync(join(PSFM_DIR, file), 'utf-8');
+    const book = parseBookFile(content);
+
+    if (!book.slug) {
+      console.warn(`  WARNING: No slug for ${file}, skipping`);
+      continue;
+    }
+
+    bookCount++;
+    console.log(`  ${book.slug} — ${book.chapters.length} chapters`);
+
+    // 1. Write verse text
+    mkdirSync(haydockDir, { recursive: true });
+    const bookJson = {
+      book: book.slug,
+      chapters: book.chapters.map(ch => ({
+        chapter: ch.chapter,
+        summary: ch.summary || undefined,
+        verses: ch.verses,
+      })),
+    };
+    writeFileSync(join(haydockDir, `${book.slug}.json`), JSON.stringify(bookJson));
+
+    // 2. Write commentary (per chapter)
+    for (const [chStr, entries] of Object.entries(book.commentary)) {
+      const chDir = join(commentaryDir, book.slug);
+      mkdirSync(chDir, { recursive: true });
+      writeFileSync(join(chDir, `${chStr}.json`), JSON.stringify(entries));
+      commentaryFiles++;
+    }
+
+    // 3. Write cross-refs (per chapter)
+    for (const [chStr, entries] of Object.entries(book.crossRefs)) {
+      const chDir = join(crossRefsDir, book.slug);
+      mkdirSync(chDir, { recursive: true });
+      writeFileSync(join(chDir, `${chStr}.json`), JSON.stringify(entries));
+      crossRefFiles++;
+    }
+
+    // 4. Write intro
+    if (book.intro.length > 0) {
+      mkdirSync(introsDir, { recursive: true });
+      writeFileSync(
+        join(introsDir, `${book.slug}.json`),
+        JSON.stringify({ book: book.slug, paragraphs: book.intro })
+      );
+    }
+  }
+
+  console.log(`\nDone: ${bookCount} books, ${commentaryFiles} commentary files, ${crossRefFiles} cross-ref files`);
+}
+
+// Run if executed directly
+extractAll();
