@@ -85,6 +85,38 @@ describe('tokenizeCrossRef', () => {
 		expect(refs[0]).toMatchObject({ osis: 'Acts.14.15' });
 		expect(refs[1]).toMatchObject({ osis: 'Acts.17.24' });
 	});
+
+	it('disambiguates Gen. 12. 22. as two chapters (Gen has 50 chapters)', () => {
+		const tokens = tokenizeCrossRef('Gen. 12. 22.');
+		const refs = tokens.filter((t) => t.type === 'ref');
+		expect(refs).toHaveLength(2);
+		expect(refs[0]).toMatchObject({ osis: 'Gen.12', isVerse: false });
+		expect(refs[1]).toMatchObject({ osis: 'Gen.22', isVerse: false });
+	});
+
+	it('disambiguates Ruth. 4. 18. as chapter+verse (Ruth has 4 chapters)', () => {
+		const tokens = tokenizeCrossRef('Ruth. 4. 18.');
+		const refs = tokens.filter((t) => t.type === 'ref');
+		expect(refs).toHaveLength(1);
+		expect(refs[0]).toMatchObject({ osis: 'Ruth.4.18', isVerse: true });
+	});
+
+	it('parses 1 Par. with digit-space-no-period format', () => {
+		const tokens = tokenizeCrossRef('1 Par. 2, 5.');
+		const refs = tokens.filter((t) => t.type === 'ref');
+		expect(refs).toHaveLength(1);
+		expect(refs[0]).toMatchObject({ osis: '1Chr.2.5', isVerse: true });
+	});
+
+	it('parses Gen. 12. 22. 2. Reg. 7. Psal. 131. correctly', () => {
+		const tokens = tokenizeCrossRef('Gen. 12. 22. 2. Reg. 7. Psal. 131.');
+		const refs = tokens.filter((t) => t.type === 'ref');
+		expect(refs).toHaveLength(4);
+		expect(refs[0]).toMatchObject({ osis: 'Gen.12', isVerse: false });
+		expect(refs[1]).toMatchObject({ osis: 'Gen.22', isVerse: false });
+		expect(refs[2]).toMatchObject({ osis: '2Sam.7', isVerse: false });
+		expect(refs[3]).toMatchObject({ osis: 'Ps.131', isVerse: false });
+	});
 });
 
 describe('parseItalicRef', () => {

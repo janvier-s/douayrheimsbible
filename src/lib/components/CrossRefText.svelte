@@ -57,14 +57,13 @@
 <style>
 	.cr-text {
 		font-family: var(--font-ui);
-		font-size: 13px;
-		color: var(--color-accent-text);
-		border-bottom: 1px solid color-mix(in srgb, var(--color-accent-text) 40%, transparent);
+		font-size: 15px;
+		color: var(--color-text);
+		text-decoration: underline;
 		cursor: pointer;
 	}
 
 	.cr-text:hover {
 		color: var(--color-accent);
-		border-bottom-color: var(--color-accent);
 	}
 </style>

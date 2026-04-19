@@ -1,8 +1,13 @@
 <script lang="ts">
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { getHebPsalmNum, getPrevNavBook, getNextNavBook } from '$lib/data/books';
+	import { onDestroy } from 'svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
+	import { tokenizeCrossRef } from '$lib/search/crossRefParser';
+	import { OSIS_TO_SLUG } from '$lib/search/resolve';
+	import type { OsisRange } from '$lib/search/reference';
 	import VerseList from './VerseList.svelte';
+	import VerseTooltip from './VerseTooltip.svelte';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 
@@ -86,17 +91,48 @@
 	$: fullSummary = verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? '');
 	$: displayVerses = verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses;
 
+	/** Strip trailing cross-reference text that follows the last </na> marker group.
+	 *  e.g. "<na>[1]</na><na>[2]</na> Gen. 12. 22. 2. Reg. 7. Psal. 131." → remove "Gen. 12. …"
+	 *  Also handles Latin shorthand like "li. 2. ch. 2. v. 20." and bare numbers "83. 93." */
+	function stripTrailingCrossRefs(raw: string): string {
+		const lastIdx = raw.lastIndexOf('</na>');
+		if (lastIdx < 0) return raw;
+		const afterNa = raw.slice(lastIdx + 5).trim();
+		if (!afterNa) return raw;
+		// If the tokenizer recognises it all as Bible refs, strip it
+		const tokens = tokenizeCrossRef(afterNa);
+		const allRefs = tokens.every(
+			(t) => t.type === 'ref' || (t.type === 'text' && /^[\s.,;&]+$/.test(t.content))
+		);
+		if (allRefs && tokens.some((t) => t.type === 'ref')) {
+			return raw.slice(0, lastIdx + 5);
+		}
+		// Also strip short trailing text that has no real words (Latin abbreviations,
+		// bare numbers like "li. 2. ch. 2. v. 20." or "83. 93." or "7")
+		const hasRealWord = /[a-zA-Z]{6,}/.test(afterNa);
+		if (!hasRealWord && afterNa.length < 40) {
+			return raw.slice(0, lastIdx + 5);
+		}
+		return raw;
+	}
+
 	function linkifySummary(text: string, isStudy: boolean): string {
 		// Summary text is from trusted build-time JSON; we only inject our own tags.
 		// Match verse-number references in summary text: a digit-sequence followed by
 		// ". " that appears after whitespace or a semicolon (e.g. "8. Then placing…").
 		// Also handles any pre-existing ℣.N patterns.
 		const maxVerse = Math.max(...chapter.verses.map((v) => v.verse), 0);
+		// Pass 1: "N. " — number with trailing period (most common)
 		let t = text.replace(/(^|[\s;,])(\d+)\.\s+/g, (match, sep, n) => {
 			const num = parseInt(n, 10);
 			if (num < 1 || num > maxVerse) return match;
-			const link = `<span class="summary-verse-ref">${n}.</span> `;
-			return sep + link;
+			return sep + `<span class="summary-verse-ref" data-verse="${n}">${n}.</span> `;
+		});
+		// Pass 2: "N " — bare number after sentence punctuation (e.g. "Christ. 3 The")
+		t = t.replace(/([.,:;])\s+(\d+)\s+/g, (match, punct, n) => {
+			const num = parseInt(n, 10);
+			if (num < 1 || num > maxVerse) return match;
+			return punct + ' ' + `<span class="summary-verse-ref" data-verse="${n}">${n}</span> `;
 		});
 		if (isStudy) {
 			// Render <na>[N]</na> as clickable accent superscript
@@ -106,6 +142,8 @@
 					`<button class="study-marker" data-summary-note="${n}" aria-label="Summary note ${n}">${n}</button>`
 			);
 		} else {
+			// Strip trailing cross-ref text (e.g. "Gen. 12. 22.") before removing <na> tags
+			t = stripTrailingCrossRefs(t);
 			// Strip <na> tags and content in reading mode
 			t = t.replace(/<na>[^<]*<\/na>/g, '');
 			t = t.replace(/  +/g, ' ').trim();
@@ -123,6 +161,58 @@
 		studyPanel.update((s) => ({ ...s, annotatedVerse: 0 }));
 		scrollTrigger.set({ verse: 0, type: 'note', marker });
 	}
+
+	// --- Summary verse-ref tooltip ---
+	/** Reverse lookup: slug → OSIS book code */
+	const SLUG_TO_OSIS: Record<string, string> = {};
+	for (const [osis, slug] of Object.entries(OSIS_TO_SLUG)) {
+		if (!SLUG_TO_OSIS[slug]) SLUG_TO_OSIS[slug] = osis;
+	}
+
+	let svRefRanges: OsisRange[] = [];
+	let svRefAnchor: HTMLElement | null = null;
+	let svRefVisible = false;
+	let svRefTimer: ReturnType<typeof setTimeout> | null = null;
+
+	function handleSummaryOver(e: Event) {
+		const target = e.target as HTMLElement;
+		const ref = target.closest('.summary-verse-ref') as HTMLElement | null;
+		if (!ref) return;
+		if (svRefTimer) clearTimeout(svRefTimer);
+		const verseNum = parseInt(ref.dataset.verse ?? '', 10);
+		if (!verseNum) return;
+		const osisBook = SLUG_TO_OSIS[bookMeta.slug];
+		if (!osisBook) return;
+		svRefRanges = [
+			{
+				osis: `${osisBook}.${chapter.chapter}.${verseNum}`,
+				book: osisBook,
+				startChapter: chapter.chapter,
+				startVerse: verseNum,
+				endChapter: chapter.chapter,
+				endVerse: verseNum
+			}
+		];
+		svRefAnchor = ref;
+		svRefVisible = true;
+	}
+
+	function handleSummaryOut(e: Event) {
+		const me = e as MouseEvent;
+		const related = me.relatedTarget as HTMLElement | null;
+		if (related?.closest?.('.tooltip')) return;
+		const ref = (e.target as HTMLElement).closest('.summary-verse-ref') as HTMLElement | null;
+		if (ref) {
+			svRefTimer = setTimeout(() => {
+				svRefVisible = false;
+				svRefAnchor = null;
+			}, 120);
+		}
+	}
+
+	onDestroy(() => {
+		if (svRefTimer) clearTimeout(svRefTimer);
+	});
 </script>
 
 {#if showNav && (prevNav || nextNav)}
@@ -192,13 +282,31 @@
 	</header>
 
 	{#if fullSummary && fullSummary !== '---'}
-		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
+		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions a11y_no_static_element_interactions -->
 		<p
 			class="text-subtle font-reader italic mb-lg text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 			on:click={handleSummaryClick}
+			on:mouseover={handleSummaryOver}
+			on:mouseout={handleSummaryOut}
 		>
 			{@html linkifySummary(fullSummary, $prefs.readingMode === 'study')}
 		</p>
+
+		<VerseTooltip
+			osisRanges={svRefRanges}
+			anchorEl={svRefAnchor}
+			visible={svRefVisible}
+			{translationId}
+			on:mouseenter={() => {
+				if (svRefTimer) clearTimeout(svRefTimer);
+			}}
+			on:mouseleave={() => {
+				svRefTimer = setTimeout(() => {
+					svRefVisible = false;
+					svRefAnchor = null;
+				}, 120);
+			}}
+		/>
 	{/if}
 
 	<VerseList
@@ -211,6 +319,16 @@
 </article>
 
 <style>
+	:global(.summary-verse-ref) {
+		color: var(--color-muted);
+		font-style: normal;
+		cursor: pointer;
+	}
+
+	:global(.summary-verse-ref:hover) {
+		color: var(--color-accent);
+	}
+
 	.book-title-header {
 		padding: 30px 20px 0;
 	}
@@ -241,10 +359,5 @@
 		letter-spacing: 0.05em;
 		direction: rtl;
 		unicode-bidi: bidi-override;
-	}
-
-	:global(.summary-verse-ref) {
-		color: color-mix(in srgb, var(--color-interactive) 75%, var(--color-text));
-		font-variant-numeric: tabular-nums;
 	}
 </style>

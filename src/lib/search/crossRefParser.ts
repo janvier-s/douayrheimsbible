@@ -1,5 +1,33 @@
 import type { OsisRange } from './reference';
 import { parseAllReferences } from './reference';
+import { OSIS_TO_SLUG } from './resolve';
+import { ALL_BOOKS } from '$lib/data/books';
+
+/** OSIS book code → total chapter count, for disambiguating period-separated refs */
+const OSIS_CHAPTERS: Record<string, number> = {};
+for (const b of ALL_BOOKS) {
+	// Map every OSIS code that resolves to this slug
+	for (const [osis, slug] of Object.entries(OSIS_TO_SLUG)) {
+		if (slug === b.slug) OSIS_CHAPTERS[osis] = b.chapters;
+	}
+}
+
+/**
+ * Build the best URL for a Bible reference.
+ * Chapter-only refs (e.g. "Gen.12") link directly to the reader page;
+ * verse-level refs link to search.
+ */
+function refUrl(osis: string, translationPrefix?: string): string {
+	if (translationPrefix) {
+		const parts = osis.split('.');
+		// chapter-only: "Gen.12" → 2 parts
+		if (parts.length === 2) {
+			const slug = OSIS_TO_SLUG[parts[0]];
+			if (slug) return `/${translationPrefix}/${slug}/${parts[1]}?mode=read`;
+		}
+	}
+	return `/search?q=${encodeURIComponent(osis)}&mode=verse`;
+}
 
 export type CrossRefToken =
 	| { type: 'ref'; osis: string; display: string; isVerse: boolean }
@@ -16,14 +44,17 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Lev: 'Lev',
 	Levi: 'Lev',
 	Levit: 'Lev',
+	Leviticus: 'Lev',
 	Nu: 'Num',
 	Num: 'Num',
 	Numer: 'Num',
 	Numb: 'Num',
+	Numbers: 'Num',
 	Deu: 'Deut',
 	Deut: 'Deut',
 	Deuter: 'Deut',
 	Deuteron: 'Deut',
+	Deuteronomy: 'Deut',
 	// Historical
 	Jos: 'Josh',
 	Ios: 'Josh',
@@ -81,6 +112,14 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Macha': '2Macc',
 	'1Machabees': '1Macc',
 	'2Machabees': '2Macc',
+	'1Maccabees': '1Macc',
+	'2Maccabees': '2Macc',
+	'1Samuel': '1Sam',
+	'2Samuel': '2Sam',
+	'1Chronicles': '1Chr',
+	'2Chronicles': '2Chr',
+	'1Paralipomenon': '1Chr',
+	'2Paralipomenon': '2Chr',
 	// Wisdom
 	Job: 'Job',
 	Iob: 'Job',
@@ -92,9 +131,11 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Prov: 'Prov',
 	Prover: 'Prov',
 	Proverb: 'Prov',
+	Proverbs: 'Prov',
 	Eccl: 'Eccl',
 	Eccle: 'Eccl',
 	Eccles: 'Eccl',
+	Ecclesiastes: 'Eccl',
 	Ecclus: 'Sir',
 	Eccli: 'Sir',
 	Ecclesiasticus: 'Sir',
@@ -103,6 +144,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Song: 'Cant',
 	Sap: 'Wis',
 	Wisd: 'Wis',
+	Wisdom: 'Wis',
 	// Major prophets
 	Es: 'Isa',
 	Esa: 'Isa',
@@ -111,6 +153,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Isaiae: 'Isa',
 	Isaie: 'Isa',
 	Isaias: 'Isa',
+	Isaiah: 'Isa',
 	Jer: 'Jer',
 	Hier: 'Jer',
 	Ier: 'Jer',
@@ -118,15 +161,21 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Ierem: 'Jer',
 	Jere: 'Jer',
 	Jerem: 'Jer',
+	Jeremias: 'Jer',
+	Jeremiah: 'Jer',
 	Lam: 'Lam',
 	Thren: 'Lam',
+	Lamentations: 'Lam',
 	Bar: 'Bar',
 	Baruch: 'Bar',
 	Ez: 'Ezek',
 	Eze: 'Ezek',
 	Ezec: 'Ezek',
 	Ezech: 'Ezek',
+	Ezechiel: 'Ezek',
+	Ezekiel: 'Ezek',
 	Dan: 'Dan',
+	Daniel: 'Dan',
 	// Minor prophets
 	Hosea: 'Hos',
 	Os: 'Hos',
@@ -148,6 +197,8 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Nahum: 'Nah',
 	Abac: 'Hab',
 	Habac: 'Hab',
+	Habacuc: 'Hab',
+	Habakkuk: 'Hab',
 	Soph: 'Zeph',
 	Sopho: 'Zeph',
 	Sophon: 'Zeph',
@@ -188,34 +239,46 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	// NT Epistles
 	Ro: 'Rom',
 	Rom: 'Rom',
+	Romans: 'Rom',
 	'1Cor': '1Cor',
 	'2Cor': '2Cor',
+	'1Corinthians': '1Cor',
+	'2Corinthians': '2Cor',
 	Gal: 'Gal',
+	Galatians: 'Gal',
 	Eph: 'Eph',
 	Ephe: 'Eph',
 	Ephes: 'Eph',
+	Ephesians: 'Eph',
 	Phil: 'Phil',
 	Philip: 'Phil',
 	Philipp: 'Phil',
+	Philippians: 'Phil',
 	Col: 'Col',
 	Colos: 'Col',
 	Coloss: 'Col',
+	Colossians: 'Col',
 	'1Thess': '1Thess',
 	'2Thess': '2Thess',
 	'1Thes': '1Thess',
 	'2Thes': '2Thess',
 	'1Th': '1Thess',
 	'2Th': '2Thess',
+	'1Thessalonians': '1Thess',
+	'2Thessalonians': '2Thess',
 	'1Tim': '1Tim',
 	'2Tim': '2Tim',
 	'1Timo': '1Tim',
 	'2Timo': '2Tim',
+	'1Timothy': '1Tim',
+	'2Timothy': '2Tim',
 	Tit: 'Titus',
 	Titus: 'Titus',
 	Phile: 'Phlm',
 	Philem: 'Phlm',
 	Heb: 'Heb',
 	Hebr: 'Heb',
+	Hebrews: 'Heb',
 	Ia: 'Jas',
 	Iac: 'Jas',
 	Iacob: 'Jas',
@@ -227,6 +290,8 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Pet': '2Pet',
 	'1Petr': '1Pet',
 	'2Petr': '2Pet',
+	'1Peter': '1Pet',
+	'2Peter': '2Pet',
 	'1Io': '1John',
 	'2Io': '2John',
 	'3Io': '3John',
@@ -268,11 +333,15 @@ function matchBookAt(text: string, pos: number): BookMatch | null {
 	let cursor = pos;
 	let numPrefix = '';
 
-	// Check for numbered book prefix: digit + optional ". "
+	// Check for numbered book prefix: "1. " or "1 " (digit + optional period + space)
 	const numMatch = text.slice(cursor).match(/^(\d)\.\s*/);
+	const numMatchNoP = !numMatch ? text.slice(cursor).match(/^(\d)\s+(?=[A-Za-z])/) : null;
 	if (numMatch) {
 		numPrefix = numMatch[1];
 		cursor += numMatch[0].length;
+	} else if (numMatchNoP) {
+		numPrefix = numMatchNoP[1];
+		cursor += numMatchNoP[0].length;
 	}
 
 	for (const abbrev of SORTED_ABBREVS) {
@@ -341,8 +410,15 @@ interface ChapterVerseResult {
 /**
  * Parse chapter (and optional verse) after a matched book position.
  * Returns null if no valid chapter number follows.
+ * When osisBook is provided, uses chapter counts to disambiguate:
+ * "Gen. 12. 22." → Gen 12 + Gen 22 (Gen has 50 chapters, 22 is a valid chapter)
+ * "Ruth. 4. 18." → Ruth 4:18 (Ruth has 4 chapters, 18 can't be a chapter)
  */
-function parseChapterVerse(text: string, startPos: number): ChapterVerseResult | null {
+function parseChapterVerse(
+	text: string,
+	startPos: number,
+	osisBook?: string
+): ChapterVerseResult | null {
 	let cursor = startPos;
 	// skip whitespace
 	while (cursor < text.length && text[cursor] === ' ') cursor++;
@@ -404,8 +480,21 @@ function parseChapterVerse(text: string, startPos: number): ChapterVerseResult |
 			}
 		}
 	}
-	// Case 3: period separator — "19. 20." means two chapters, NOT chapter:verse.
-	// Bare digit after period is a continuation chapter, handled by parseContinuationRefs.
+	// Case 3: period-space-digit — ambiguous. Use chapter count to disambiguate:
+	// If the number exceeds the book's total chapters, it must be a verse.
+	// Otherwise treat as a continuation chapter (handled by parseContinuationRefs).
+	else if (osisBook && /\d/.test(text[cursor] ?? '')) {
+		const vMatch = text.slice(cursor).match(/^(\d+)/);
+		if (vMatch) {
+			const num = parseInt(vMatch[1], 10);
+			const maxChapters = OSIS_CHAPTERS[osisBook];
+			if (maxChapters && num > maxChapters) {
+				verse = num;
+				cursor += vMatch[0].length;
+				if (cursor < text.length && text[cursor] === '.') cursor++;
+			}
+		}
+	}
 
 	// If no verse was found, don't consume whitespace after the period
 	if (verse === undefined) cursor = afterPeriod;
@@ -460,7 +549,8 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 
 			if (followedByChapter && !patristicContext) {
 				// We have a Bible reference
-				const cv = parseChapterVerse(text, bookMatch.end);
+				const resolvedBook = bookMatch.osisBook === 'Eccl' ? 'Eccl' : bookMatch.osisBook;
+				const cv = parseChapterVerse(text, bookMatch.end, resolvedBook);
 
 				if (cv) {
 					// Flush any preceding text
@@ -574,7 +664,7 @@ function parseContinuationRefs(
 		}
 
 		// Try to parse as chapter[,verse]
-		const cv = parseChapterVerse(text, cursor);
+		const cv = parseChapterVerse(text, cursor, osisBook);
 		if (!cv) break;
 
 		const isVerse = cv.verse !== undefined;
@@ -886,13 +976,17 @@ export function parseItalicRef(text: string, conservative = false): OsisRange[] 
  * Preprocess an HTML string: wrap <i> tags whose content parses as a Bible
  * reference in an <a class="verse-ref"> link. Non-ref italic spans are left untouched.
  */
-export function linkifyItalicRefs(html: string, conservative = false): string {
+export function linkifyItalicRefs(
+	html: string,
+	conservative = false,
+	translationPrefix?: string
+): string {
 	return html.replace(/<i>([\s\S]*?)<\/i>/g, (match, content) => {
 		const refs = parseItalicRef(content, conservative);
 		if (!refs || refs.length === 0) return match;
 		const osisStr = refs.map((r) => r.osis).join(',');
-		const searchUrl = `/search?q=${encodeURIComponent(osisStr)}&mode=verse`;
-		return `<a class="verse-ref" data-osis="${osisStr}" href="${searchUrl}" target="_blank" rel="noopener"><i>${content}</i></a>`;
+		const url = refUrl(osisStr, translationPrefix);
+		return `<a class="verse-ref" data-osis="${osisStr}" href="${url}" target="_blank" rel="noopener"><i>${content}</i></a>`;
 	});
 }
 
@@ -900,7 +994,7 @@ export function linkifyItalicRefs(html: string, conservative = false): string {
  * Linkify bare (non-italic) Bible references in text using the tokenizer.
  * Each ref token becomes a hoverable/clickable <a class="verse-ref"> link.
  */
-export function linkifyBareRefs(html: string): string {
+export function linkifyBareRefs(html: string, translationPrefix?: string): string {
 	// Don't process inside HTML tags
 	// Split on tags, process only text segments
 	const parts = html.split(/(<[^>]+>)/);
@@ -912,8 +1006,8 @@ export function linkifyBareRefs(html: string): string {
 			return tokens
 				.map((t) => {
 					if (t.type === 'text') return t.content;
-					const searchUrl = `/search?q=${encodeURIComponent(t.osis)}&mode=verse`;
-					return `<a class="verse-ref" data-osis="${t.osis}" href="${searchUrl}" target="_blank" rel="noopener">${t.display}</a>`;
+					const url = refUrl(t.osis, translationPrefix);
+					return `<a class="verse-ref" data-osis="${t.osis}" href="${url}" target="_blank" rel="noopener">${t.display}</a>`;
 				})
 				.join('');
 		})
@@ -1687,7 +1781,7 @@ function findDrcRefs(text: string): DrcRef[] {
  * Handles the period-space format: "Gen. 14. 14.", "1. Par. 6. 34",
  * comma-separated verses: "Gen. 9. 4, 5, 6."
  */
-export function linkifyDrcRefs(text: string): string {
+export function linkifyDrcRefs(text: string, translationPrefix?: string): string {
 	const refs = findDrcRefs(text);
 	if (refs.length === 0) return text;
 
@@ -1697,9 +1791,9 @@ export function linkifyDrcRefs(text: string): string {
 	for (const ref of refs) {
 		if (ref.start < lastEnd) continue;
 		const matchedText = text.slice(ref.start, ref.end);
-		const searchUrl = `/search?q=${encodeURIComponent(ref.osis)}&mode=verse`;
+		const url = refUrl(ref.osis, translationPrefix);
 		result += text.slice(lastEnd, ref.start);
-		result += `<a class="verse-ref" data-osis="${ref.osis}" href="${searchUrl}" target="_blank" rel="noopener">${matchedText}</a>`;
+		result += `<a class="verse-ref" data-osis="${ref.osis}" href="${url}" target="_blank" rel="noopener">${matchedText}</a>`;
 		lastEnd = ref.end;
 	}
 

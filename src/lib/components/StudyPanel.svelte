@@ -44,7 +44,7 @@
 		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox';
 	$: isDrc = translationId === 'drc';
 	$: isKnox = translationId === 'knox';
-	$: hasLinkifiedNotes = isDrc || isKnox || isHaydock;
+	$: hasLinkifiedNotes = isOdr || isDrc || isKnox || isHaydock;
 	$: hasTranslationIntro = translationId === 'conf';
 	$: isConf = translationId === 'conf';
 	$: isHaydock = translationId === 'haydock';
@@ -493,6 +493,19 @@
 		return sections;
 	}
 
+	/** Format trailing (Author) attribution as a styled citation line, per paragraph */
+	function formatHaydockAttribution(html: string): string {
+		return html
+			.split('<hr>')
+			.map((seg) =>
+				seg.replace(
+					/\(([A-Z][a-zA-Zé.'"  ]+)\)\s*$/,
+					'<br><span class="haydock-attribution">— $1</span>'
+				)
+			)
+			.join('<hr>');
+	}
+
 	/** Group flat commentary entries by verse for section rendering */
 	function groupByVerse(
 		entries: HaydockCommentaryEntry[]
@@ -733,12 +746,16 @@
 	}
 
 	function handleConfRefOut(e: Event) {
+		const me = e as MouseEvent;
+		// Don't dismiss if the mouse moved to the tooltip itself
+		const related = me.relatedTarget as HTMLElement | null;
+		if (related?.closest?.('.tooltip')) return;
 		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
 		if (vref) {
 			confVerseRefTimer = setTimeout(() => {
 				confVerseRefVisible = false;
 				confVerseRefAnchor = null;
-			}, 120);
+			}, 300);
 		}
 	}
 
@@ -922,7 +939,12 @@
 						</a>
 					{/if}
 					<p class="content-eyebrow">{tabLabel(intro.title)}</p>
-					<AnnotationProse text={intro.text} notes={intro.notes ?? []} />
+					<AnnotationProse
+						text={intro.text}
+						notes={intro.notes ?? []}
+						linkifyBare
+						translationPrefix={translationId}
+					/>
 				</div>
 			{/if}
 
@@ -1007,7 +1029,9 @@
 											data-panel-id="panel-0-note-{sn.marker}"
 										>
 											<span class="note-marker">{sn.marker}</span>
-											<span class="note-text">{@html allcapsToSmallcaps(sn.text)}</span>
+											<span class="note-text"
+												>{@html allcapsToSmallcaps(linkifyDrcRefs(sn.text, translationId))}</span
+											>
 										</div>
 									{/each}
 								{/if}
@@ -1019,7 +1043,9 @@
 											data-panel-id="panel-{section.verse}-note-{note.label}"
 										>
 											<span class="note-marker">{note.label}</span>
-											<span class="note-text">{@html allcapsToSmallcaps(note.text)}</span>
+											<span class="note-text"
+												>{@html allcapsToSmallcaps(linkifyDrcRefs(note.text, translationId))}</span
+											>
 										</div>
 									{/each}
 								{/if}
@@ -1080,7 +1106,12 @@
 				{@const art = articles[$studyPanel.activeArticleIndex]}
 				<div class="content-block">
 					<p class="content-eyebrow">{tabLabel(art.title)}</p>
-					<AnnotationProse text={art.text} notes={art.notes ?? []} />
+					<AnnotationProse
+						text={art.text}
+						notes={art.notes ?? []}
+						linkifyBare
+						translationPrefix={translationId}
+					/>
 				</div>
 			{/if}
 
@@ -1095,7 +1126,12 @@
 				{@const em = endMatters[$studyPanel.activeEndIndex]}
 				<div class="content-block">
 					<p class="content-eyebrow">{tabLabel(em.title)}</p>
-					<AnnotationProse text={em.text} notes={em.notes ?? []} />
+					<AnnotationProse
+						text={em.text}
+						notes={em.notes ?? []}
+						linkifyBare
+						translationPrefix={translationId}
+					/>
 				</div>
 			{/if}
 
@@ -1168,7 +1204,7 @@
 			<div class="content-block">
 				<p class="content-eyebrow">Introduction · Haydock</p>
 				{#each haydockIntro.paragraphs as para}
-					<p class="prose-para">{@html linkifyDrcRefs(para)}</p>
+					<p class="prose-para">{@html linkifyDrcRefs(para, translationId)}</p>
 				{/each}
 			</div>
 
@@ -1196,7 +1232,11 @@
 									data-panel-id="panel-{group.verse}-commentary-{entry.marker}"
 								>
 									<span class="cr-marker">{entry.marker}</span>
-									<span class="note-text">{@html linkifyDrcRefs(entry.text)}</span>
+									<span class="note-text"
+										>{@html formatHaydockAttribution(
+											linkifyDrcRefs(entry.text, translationId)
+										)}</span
+									>
 								</div>
 							{/each}
 						</div>
@@ -1242,7 +1282,11 @@
 					</p>
 					{#each translationNotes as note (note.verse)}
 						{@const headingMatch = note.text.match(/^(".*?")\s*\.{3}\s*/)}
-						{@const linkify = isKnox ? linkifyKnoxRefs : isDrc ? linkifyDrcRefs : null}
+						{@const linkify = isKnox
+							? (t: string) => linkifyKnoxRefs(t)
+							: isDrc
+								? (t: string) => linkifyDrcRefs(t, translationId)
+								: null}
 						<div class="translation-note-entry">
 							<span class="cr-marker">{note.verse}</span>
 							<div class="note-body">
@@ -1584,6 +1628,7 @@
 		align-items: baseline;
 		line-height: 1.45;
 		padding-block: 2px;
+		margin-bottom: 20px;
 	}
 
 	.cr-marker,
@@ -1690,6 +1735,12 @@
 
 	.haydock-entry:last-child {
 		border-bottom: none;
+	}
+
+	.haydock-entry :global(.haydock-attribution) {
+		font-style: italic;
+		color: var(--color-subtle);
+		font-size: 0.9em;
 	}
 
 	/* Haydock commentary <hr> tags from --- separators */

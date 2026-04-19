@@ -424,46 +424,47 @@
 	<h2>Study</h2>
 
 	<p>
-		Study mode opens a side panel alongside the text. The panel tracks the current verse as you
-		scroll and surfaces everything the translators attached to it. All of this material is
-		reproduced exactly as they wrote it. Nothing has been added, removed, or modified.
+		Study mode opens a side panel alongside the text. As you scroll, the panel tracks the current
+		verse and surfaces the notes, commentary, and cross-references that belong to it. All of this
+		material is reproduced exactly as the translators and commentators wrote it. Nothing has been
+		added, removed, or modified.
 	</p>
 
-	<p>The panel has two main tabs: <strong>Commentary</strong> and <strong>Intro</strong>.</p>
+	<p>Six translations carry study content, each with its own character.</p>
 
 	<p>
-		<strong>Commentary</strong> is open by default. It shows, for the active verse, everything anchored
-		to that specific passage:
-	</p>
-
-	<ul>
-		<li>
-			<strong>Annotations:</strong> The 1,707 marginal annotations are the theological heart of the Original
-			Douay-Rheims. They defend Catholic readings of Scripture, refute Protestant translations, and explain
-			the Latin behind the English word chosen; the doctrines most directly at stake are those the reformers
-			contested: Christ's presence in the Eucharist, the intercession of the saints, and the nature of
-			justification.
-		</li>
-		<li>
-			<strong>Cross-references:</strong> 3,709 scriptural cross-references drawn from the translators'
-			own marginal notes, linking each passage to related verses across the canon.
-		</li>
-		<li>
-			<strong>Marginal notes:</strong> Shorter textual notes, mostly philological, flagging alternative
-			readings and points of translation.
-		</li>
-	</ul>
-
-	<p>
-		<strong>Intro</strong> contains the prefatory material the translators placed before the text itself:
-		a general book argument and, where provided, separate arguments for distinct parts of the book.
+		The <strong>Original Douay-Rheims</strong> carries 1,707 marginal annotations that form the theological
+		heart of the translation, defending Catholic readings of Scripture, refuting Protestant renderings,
+		and explaining the Latin behind the English word chosen. The doctrines most directly at stake are
+		those the reformers contested: Christ's presence in the Eucharist, the intercession of the saints,
+		and the nature of justification. Alongside the annotations are 3,709 scriptural cross-references drawn
+		from the translators' own marginal notes, shorter textual notes on philology and alternative readings,
+		book introductions and arguments, and occasional longer articles and end matter attached to specific
+		chapters.
 	</p>
 
 	<p>
-		Some books carry an additional <strong>End</strong> tab for closing material appended after the
-		text. Some chapters carry an additional <strong>Article</strong> tab for longer thematic pieces the
-		translators attached to that chapter specifically. These tabs appear only where the source material
-		includes them.
+		The <strong>Challoner Douay-Rheims</strong> (1752) includes Bishop Challoner's own footnotes and cross-references,
+		which are more concise than the originals but remain a valuable companion to his revised text.
+	</p>
+
+	<p>
+		The <strong>Haydock Catholic Bible Commentary</strong> (1859) offers the most extensive study material
+		on this site: verse-by-verse commentary for nearly every verse in Scripture, compiled by Rev. George
+		Leo Haydock from the work of Challoner, Calmet, Tirinus, Menochius, and other Catholic commentators.
+		Each entry is attributed to its author. The panel also includes book introductions and cross-references.
+	</p>
+
+	<p>
+		The <strong>Confraternity New Testament</strong> (1941) carries footnotes, brief commentary, and book
+		introductions prepared by the scholars of the Episcopal Committee of the Confraternity of Christian
+		Doctrine.
+	</p>
+
+	<p>
+		The <strong>Knox Bible</strong> (1955) includes Monsignor Knox's own translator notes, often
+		witty and always illuminating, and the <strong>Catholic Public Domain Version</strong> includes translator
+		notes by Ronald L. Conte Jr.
 	</p>
 
 	<p>
@@ -556,6 +557,14 @@
 			The comparison between the two Douay texts is the most instructive available on this site: it shows
 			exactly what was gained in readability and what was sacrificed in fidelity. Challoner's edition
 			carries its own study notes, available in the study panel alongside the text.
+		</li>
+		<li>
+			<strong>Haydock Catholic Bible Commentary (1883):</strong> Rev. George Leo Haydock's comprehensive
+			commentary on the entire Catholic Bible, drawing on the Church Fathers, Doctors of the Church, and
+			the most respected Catholic commentators. Haydock compiled and edited the work of Challoner, Witham,
+			Tirinus, Menochius, Calmet, and others into a single apparatus covering every book of Scripture.
+			The Bible text is the Challoner Douay-Rheims with minor punctuation variations. The commentary is
+			available in the study panel with verse-by-verse notes, chapter introductions, and cross-references.
 		</li>
 		<li>
 			<strong>Confraternity New Testament (1941):</strong> A revision of the Challoner New Testament sponsored

@@ -216,7 +216,8 @@
 
 	/* Flip below the anchor when not enough room above */
 	.tooltip.chapters-only {
-		padding-bottom: 5px;
+		width: 200px;
+		padding-bottom: 8px;
 	}
 
 	.tooltip.flip-below {
@@ -259,10 +260,15 @@
 
 	.chapter-link {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 13px;
 		color: var(--color-accent-text);
 		text-decoration: none;
 		font-weight: 500;
+	}
+
+	.chapters-only .header {
+		justify-content: center;
+		padding: 4px 14px;
 	}
 
 	.chapter-link:hover {

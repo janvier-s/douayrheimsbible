@@ -4,7 +4,7 @@
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
-	import { linkifyItalicRefs } from '$lib/search/crossRefParser';
+	import { linkifyItalicRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
 	import { parseOsis } from '$lib/search/reference';
 	import type { OsisRange } from '$lib/search/reference';
 	import type { AnnotationNote } from '$lib/data/types';
@@ -13,6 +13,10 @@
 	export let notes: AnnotationNote[] = [];
 	/** Use stricter parsing to avoid false positives in patristic-heavy content */
 	export let conservativeLinks: boolean = false;
+	/** Also linkify bare (non-italic) DRC-style references like "Gen. 12. 22." */
+	export let linkifyBare: boolean = false;
+	/** Translation prefix for direct chapter links (e.g. "odr", "drc") */
+	export let translationPrefix: string | undefined = undefined;
 
 	/** Renumber numeric markers sequentially across the full text and notes. */
 	function renumber(
@@ -46,7 +50,8 @@
 				const display = raw.replace(/^\[(\d+)\]$/, '$1');
 				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;
 			});
-			html = linkifyItalicRefs(html, conservativeLinks);
+			html = linkifyItalicRefs(html, conservativeLinks, translationPrefix);
+			if (linkifyBare) html = linkifyDrcRefs(html, translationPrefix);
 			html = allcapsToSmallcaps(html);
 			return html;
 		});
@@ -227,7 +232,15 @@
 						on:click|stopPropagation={() => scrollToInlineMarker(String(note.marker))}
 						aria-label="Go to marker {note.marker} in text">{note.marker}</button
 					>
-					<span class="ann-note-text">{@html allcapsToSmallcaps(linkifyItalicRefs(note.text))}</span
+					<span class="ann-note-text"
+						>{@html allcapsToSmallcaps(
+							linkifyBare
+								? linkifyDrcRefs(
+										linkifyItalicRefs(note.text, false, translationPrefix),
+										translationPrefix
+									)
+								: linkifyItalicRefs(note.text, false, translationPrefix)
+						)}</span
 					>
 				</li>
 			{/each}

@@ -291,6 +291,17 @@
 		reducedMotion = mq.matches;
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
 
+		// ?mode=read or ?mode=study in the URL overrides the stored preference
+		if (browser) {
+			const params = new URLSearchParams(window.location.search);
+			const urlMode = params.get('mode');
+			if (urlMode === 'read') {
+				prefs.update((p) => ({ ...p, readingMode: 'reading' }));
+			} else if (urlMode === 'study') {
+				prefs.update((p) => ({ ...p, readingMode: 'study' }));
+			}
+		}
+
 		// Keep study mode if explicitly selected (e.g. navigating from compare → study).
 		// Only reset from compare, since BibleReader doesn't support compare mode.
 		if ($prefs.readingMode !== 'study') {
