@@ -8,6 +8,7 @@
 	import {
 		loadAnnotations,
 		loadTranslationNotes,
+		loadTranslationCrossRefs,
 		loadConfIntro,
 		loadConfFootnotes,
 		loadConfCommentary
@@ -21,7 +22,7 @@
 		ConfChapterCommentary,
 		ConfIntro
 	} from '$lib/data/types';
-	import type { TranslationNote } from '$lib/data/translation-types';
+	import type { TranslationNote, TranslationCrossRef } from '$lib/data/translation-types';
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import CrossRefText from './CrossRefText.svelte';
@@ -70,6 +71,34 @@
 				.catch(() => {
 					if (`${id}/${slug}/${chNum}` === lastTranslationNotesKey) {
 						translationNotesLoading = false;
+					}
+				});
+		}
+	}
+
+	// ── Translation cross-refs (DRC) ────────────────────────────────
+	let translationCrossRefs: TranslationCrossRef[] | null = null;
+	let translationCrossRefsLoading = false;
+	let lastTranslationCrossRefsKey = '';
+
+	$: {
+		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
+		if (isDrc && currentBookSlug && key !== lastTranslationCrossRefsKey) {
+			lastTranslationCrossRefsKey = key;
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
+			translationCrossRefsLoading = true;
+			translationCrossRefs = null;
+			loadTranslationCrossRefs('drc', slug, chNum, fetch)
+				.then((data) => {
+					if (`drc/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
+						translationCrossRefs = data;
+						translationCrossRefsLoading = false;
+					}
+				})
+				.catch(() => {
+					if (`drc/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
+						translationCrossRefsLoading = false;
 					}
 				});
 		}
@@ -170,6 +199,15 @@
 			.join(' ');
 	}
 
+	const SUPER_DIGITS: Record<string, string> = {
+		'0': '\u2070', '1': '\u00B9', '2': '\u00B2', '3': '\u00B3',
+		'4': '\u2074', '5': '\u2075', '6': '\u2076', '7': '\u2077',
+		'8': '\u2078', '9': '\u2079',
+	};
+	function markerToSuperscript(n: number): string {
+		return String(n).split('').map(d => SUPER_DIGITS[d] ?? d).join('');
+	}
+
 	$: intros = bookData?.intros ?? [];
 	$: hasIntros = intros.length > 0;
 	$: endMatters = bookData?.endMatters ?? [];
@@ -216,7 +254,13 @@
 			tabs.push({ id: 'commentary', label: 'Commentary' });
 			return tabs;
 		}
-		if (tid === 'drc' || tid === 'cpdv' || tid === 'knox') {
+		if (tid === 'drc') {
+			return [
+				{ id: 'notes', label: 'Notes' },
+				{ id: 'cross-refs', label: 'Cross-Refs' },
+			];
+		}
+		if (tid === 'cpdv' || tid === 'knox') {
 			return [{ id: 'notes', label: 'Notes' }];
 		}
 		return [];
@@ -1042,6 +1086,30 @@
 				</div>
 			{/if}
 
+			<!-- ═══ DRC: Cross-Refs tab ═══ -->
+		{:else if $studyPanel.activeTab === 'cross-refs' && isDrc}
+			{#if translationCrossRefsLoading}
+				<div class="empty-state"><p>Loading cross-references...</p></div>
+			{:else if translationCrossRefs && translationCrossRefs.length > 0}
+				<div class="content-block">
+					<p class="content-eyebrow">
+						Cross-References · DRC
+					</p>
+					{#each translationCrossRefs as cr (cr.marker)}
+						<div class="cr-row sub-section-inline">
+							<span class="cr-marker">{markerToSuperscript(cr.marker)}</span>
+							<span class="cr-verse-tag">v.{cr.verse}</span>
+							<CrossRefText text={cr.refs} />
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<div class="empty-state">
+					<span class="empty-icon" aria-hidden="true">✦</span>
+					<p>No cross-references for this chapter.</p>
+				</div>
+			{/if}
+
 			<!-- ═══ Fallback: No study content ═══ -->
 		{:else}
 			<div class="empty-state">
@@ -1339,6 +1407,14 @@
 		color: var(--color-accent-text);
 		flex-shrink: 0;
 		min-width: 18px;
+	}
+
+	.cr-verse-tag {
+		font-family: var(--font-ui);
+		font-size: 11px;
+		color: var(--color-muted);
+		margin-right: 6px;
+		white-space: nowrap;
 	}
 
 	.note-text {
