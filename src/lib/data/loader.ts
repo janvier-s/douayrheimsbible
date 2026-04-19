@@ -8,7 +8,7 @@ import type {
 	ConfFrontMatter,
 	ConfBackMatter
 } from './types';
-import type { TranslationBook, TranslationNote } from './translation-types';
+import type { TranslationBook, TranslationNote, TranslationCrossRef } from './translation-types';
 
 const bookCache = new Map<string, Promise<BookData>>();
 const resolvedCache = new Map<string, BookData>();
@@ -88,6 +88,29 @@ export function loadTranslationNotes(
 		translationNotesCache.set(key, promise);
 	}
 	return translationNotesCache.get(key)!;
+}
+
+// ── Translation cross-references (DRC chapter-level) ────────────────────────────
+
+const translationCrossRefsCache = new Map<string, Promise<TranslationCrossRef[] | null>>();
+
+export function loadTranslationCrossRefs(
+	id: string,
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<TranslationCrossRef[] | null> {
+	const key = `${id}/${slug}/${chapter}`;
+	if (!translationCrossRefsCache.has(key)) {
+		const promise = fetch(`/data/${id}-crossrefs/${slug}/${chapter}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load cross-refs: ${res.status}`);
+			return res.json() as Promise<TranslationCrossRef[]>;
+		});
+		promise.then(null, () => translationCrossRefsCache.delete(key));
+		translationCrossRefsCache.set(key, promise);
+	}
+	return translationCrossRefsCache.get(key)!;
 }
 
 // ── Confraternity NT book introductions ──────────────────────────

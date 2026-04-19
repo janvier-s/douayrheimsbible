@@ -9,6 +9,13 @@ export interface TranslationNote {
 	text: string;
 }
 
+/** A single numbered cross-reference entry for DRC */
+export interface TranslationCrossRef {
+	marker: number;
+	verse: number;
+	refs: string;
+}
+
 export interface TranslationChapter {
 	chapter: number;
 	verses: TranslationVerse[];

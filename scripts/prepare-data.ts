@@ -159,19 +159,24 @@ async function main() {
 				odrSlug = rawSlug;
 			}
 
-			// Write minimal JSON: only book and chapters (with chapter/verse/text)
-			const minimal = {
+			// Write minimal JSON: book and chapters (with chapter/verse/text, plus optional summary/intro)
+			const minimal: Record<string, unknown> = {
 				book: data.book,
 				chapters: (
 					data.chapters as Array<{
 						chapter: unknown;
+						summary?: string;
 						verses: Array<{ verse: number; text: string }>;
 					}>
 				).map((ch) => ({
 					chapter: ch.chapter,
+					...(ch.summary ? { summary: ch.summary } : {}),
 					verses: ch.verses.map((v) => ({ verse: v.verse, text: cleanVerseText(v.text) }))
 				}))
 			};
+			if ((data as Record<string, unknown>).intro) {
+				minimal.intro = (data as Record<string, unknown>).intro;
+			}
 
 			await writeFile(join(translationOutDir, `${odrSlug}.json`), JSON.stringify(minimal));
 			translationCount++;
@@ -216,6 +221,43 @@ async function main() {
 		console.log(`✓ drc-notes: wrote ${drcNotesCount} chapter note files → ${drcNotesOutBase}`);
 	} catch {
 		console.log(`DRC notes source not found at ${drcNotesSrc} — skipping.`);
+	}
+
+	// --- DRC cross-references → static/data/drc-crossrefs/{odrSlug}/{chapter}.json ---
+	const drcCrossRefsSrc = join(ODR_PARENT, 'DRC', 'JSON_crossrefs');
+	try {
+		await access(drcCrossRefsSrc);
+		const drcCrossRefsOutBase = join(PROJECT_ROOT, 'static', 'data', 'drc-crossrefs');
+		await mkdir(drcCrossRefsOutBase, { recursive: true });
+
+		const drcCrossRefsFiles = await readdir(drcCrossRefsSrc);
+		let drcCrossRefsCount = 0;
+
+		for (const file of drcCrossRefsFiles) {
+			if (!file.endsWith('.json')) continue;
+
+			const raw = await readFile(join(drcCrossRefsSrc, file), 'utf-8');
+			const data = JSON.parse(raw) as {
+				chapters?: Array<{ chapter: number; crossrefs?: Array<{ marker: number; verse: number; refs: string }> }>;
+			};
+			if (!Array.isArray(data.chapters)) continue;
+
+			// DRC files use modern-name slugs — reverse-remap to ODR slug
+			const modernSlug = file.replace(/^\d+-/, '').replace('.json', '');
+			const odrSlug = reverseRemapSlug(modernSlug, SLUG_REMAP_DRC_KNOX);
+			const bookOutDir = join(drcCrossRefsOutBase, odrSlug);
+
+			for (const ch of data.chapters) {
+				if (!Array.isArray(ch.crossrefs) || ch.crossrefs.length === 0) continue;
+				await mkdir(bookOutDir, { recursive: true });
+				await writeFile(join(bookOutDir, `${ch.chapter}.json`), JSON.stringify(ch.crossrefs));
+				drcCrossRefsCount++;
+			}
+		}
+
+		console.log(`✓ drc-crossrefs: wrote ${drcCrossRefsCount} chapter cross-ref files → ${drcCrossRefsOutBase}`);
+	} catch {
+		console.log(`DRC cross-refs source not found at ${drcCrossRefsSrc} — skipping.`);
 	}
 
 	// --- Knox chapter notes → static/data/knox-notes/{odrSlug}/{chapter}.json ---
