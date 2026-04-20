@@ -8,7 +8,7 @@ import { searchTokenizer, processTerm } from '../src/lib/search/normalize.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '..');
 const DATA_DIR = join(PROJECT_ROOT, 'static', 'data', 'odr');
-const REF_DIR = join(PROJECT_ROOT, 'static', 'data', 'reference');
+const REF_DIR = join(PROJECT_ROOT, 'static', 'data', 'reference', 'odr');
 
 interface VerseDoc {
 	id: string;

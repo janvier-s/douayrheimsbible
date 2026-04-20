@@ -951,6 +951,31 @@
 		surest guide to what the translators meant.
 	</p>
 
+	<p>Reference material extends across four translations, each with its own apparatus:</p>
+
+	<ul>
+		<li>
+			<a href="/reference/odr"><strong>Original Douay-Rheims:</strong></a> the prefaces to both
+			Testaments, the table of corruptions in Protestant versions, historical tables of the ages,
+			and the <em>Explication of Certain Words</em>.
+		</li>
+		<li>
+			<a href="/reference/drc"><strong>Challoner Douay-Rheims:</strong></a> Challoner's own
+			prefatory material, Pope Leo XIII's encyclical <em>Providentissimus Deus</em> on the study of Holy
+			Scripture, prayers for reading, chronological tables of both Testaments, and the table of epistles
+			and gospels for the liturgical year.
+		</li>
+		<li>
+			<a href="/reference/haydock"><strong>Haydock Catholic Bible:</strong></a> the 1883 foreword, a directory
+			of over two hundred commentators cited in the work, comprehensive introductions to every book of
+			both Testaments, chapter summaries for the entire Bible, and a general preface on reading Scripture.
+		</li>
+		<li>
+			<a href="/reference/conf"><strong>Confraternity New Testament:</strong></a> background essays on
+			the world of the New Testament, its parables, and the text's relationship to earlier Catholic translations.
+		</li>
+	</ul>
+
 	<p>
 		All reference material is fully searchable. A search in the notes scope will surface matching
 		passages from the prefaces and reference documents alongside verse annotations and marginal

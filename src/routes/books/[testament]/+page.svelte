@@ -99,7 +99,7 @@
 	<section class="mt-[56px]">
 		<p class="text-[10px] uppercase tracking-[0.28em] text-subtle mb-[16px]">Reference Material</p>
 		<a
-			href="/reference/{data.testament === 'NT' ? 'nt' : 'ot'}/title-page"
+			href="/reference/odr/{data.testament === 'NT' ? 'nt' : 'ot'}/title-page"
 			class="group flex items-center justify-between px-[16px] py-[14px] border border-border rounded-[3px]
 				hover:border-accent/50 hover:bg-accent/5 transition-colors duration-fast"
 		>

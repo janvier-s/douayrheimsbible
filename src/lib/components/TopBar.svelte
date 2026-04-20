@@ -248,7 +248,7 @@
 								>
 									<div class="min-w-0 leading-snug">
 										<span class="text-foreground font-semibold text-[15px] block truncate"
-											>{t.abbr}</span
+											>{t.label}</span
 										>
 										{#if t.micro}<span class="text-[11px] text-subtle font-medium block mb-[3px]"
 												>{t.micro}</span

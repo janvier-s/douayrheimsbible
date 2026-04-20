@@ -1126,7 +1126,7 @@
 							<div class="flex items-baseline gap-[8px] mb-[6px]">
 								<a
 									href={note.type === 'reference'
-										? `/reference/${note.refPath}`
+										? `/reference/odr/${note.refPath}`
 										: `/odr/${note.slug}/${note.chapter}?study=${note.verse}`}
 									class="font-ui text-[14px] font-semibold hover:text-foreground transition-colors duration-fast"
 									style="color: var(--color-accent-text)"

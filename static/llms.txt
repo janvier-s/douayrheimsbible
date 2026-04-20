@@ -4,9 +4,64 @@
 
 ## Key Pages
 
-- [About](https://thedouayrheims.com/history/about): Overview of the Douay-Rheims Bible — its origins, translators, source text, Catholic significance, and the distinction from the Challoner revision
+- [About](https://thedouayrheims.com/about): Overview of the Douay-Rheims Bible — its origins, translators, source text, Catholic significance, and the distinction from the Challoner revision
 - [History](https://thedouayrheims.com/history): Series of eleven articles covering the complete history of the Douay-Rheims Bible from its origins to the present
 - [Read the Bible](https://thedouayrheims.com/odr/genesis/1): Full text of the original Douay-Rheims Bible online, all 73 books, searchable and readable
+- [Compare Translations](https://thedouayrheims.com/compare/genesis/1): Side-by-side comparison of up to 5 translations simultaneously
+- [Search](https://thedouayrheims.com/search): Full-text search across verse text and scholarly notes
+- [Download](https://thedouayrheims.com/download): Download the full text in JSON format for offline reading or reuse
+- [API](https://thedouayrheims.com/api): REST API for programmatic access to the Bible text
+- [Reference Materials](https://thedouayrheims.com/reference): Front and back matter from four editions
+
+## The Translations
+
+Eight translations are available for reading and comparison, all from or related to the Latin Vulgate tradition:
+
+| Translation | Abbr | Year | Scope | Description |
+|---|---|---|---|---|
+| Sixto-Clementine Vulgate | Vul | 1592 | Full Bible | The official Latin Bible of the Catholic Church, source text for all English translations on this site |
+| Original Douay-Rheims | ODR | 1582–1610 | Full Bible | Gregory Martin's original, with 1,707 annotations and 3,709 cross-references. The primary text of this site |
+| King James Version | KJV | 1611 | Full Bible | Included to show Challoner's borrowings from the KJV when revising the DR |
+| Douay-Rheims Challoner | DRC | 1752 | Full Bible | Bishop Challoner's revision, the standard English Catholic Bible for two centuries |
+| Haydock Catholic Bible Commentary | DRC-Haydock | 1883 | Full Bible | Verse-by-verse commentary compiled from the Church Fathers and Catholic commentators |
+| Confraternity New Testament | Confraternity | 1941 | NT only | Catholic revision from the Vulgate; preceded the NAB |
+| Knox Bible | Knox | 1955 | Full Bible | Ronald Knox's literary Vulgate translation |
+| Catholic Public Domain Version | CPDV | 2009 | Full Bible | Modern Vulgate translation by Ronald Conte Jr., freely available |
+
+## Reading Modes
+
+### Read Mode
+The default mode presents the full text cleanly, with inline annotation markers, chapter arguments, and book introductions as they appeared in the original edition.
+
+### Study Mode
+Opens a side panel that tracks the current verse and surfaces notes, commentary, and cross-references. Study content varies by translation:
+- **ODR**: 1,707 marginal annotations, 3,709 cross-references, textual notes, book introductions
+- **DRC**: Challoner's footnotes and cross-references
+- **Haydock**: Verse-by-verse commentary for nearly every verse, attributed to individual commentators (Challoner, Calmet, Tirinus, Menochius, etc.)
+- **Confraternity**: Footnotes, brief commentary, book introductions
+- **Knox**: Translator notes
+- **CPDV**: Translator notes
+
+### Compare Mode
+Any chapter can be placed alongside other translations. Up to 5 columns displayed simultaneously. Columns are draggable to reorder. Row highlighting tracks the same verse across all translations.
+
+## Reading Options
+
+- **Fonts**: Libre Baskerville (default), Sentinel, Source Serif, Noto Sans, Libre Franklin, Montserrat
+- **Typography**: Adjustable font size, line height, and column width
+- **Display**: Verse numbers (show/hide), paragraph view with drop caps and hanging numbers, italics toggle, small caps toggle, ampersand expansion
+- **Themes**: Light, Sepia, Dark, OLED
+- **Accessibility**: Bionic Reading (adjustable fixation/saccade/opacity), Dyslexia font (Grace Dyslexic)
+- **Scholarly**: Toggle Douay-Rheims book names vs. modern equivalents; toggle Septuagint vs. Hebrew psalm numbering
+- **Navigation**: Infinite scroll (forward and back), chapter chevrons, dropdown chapter selector
+
+## Search
+
+Full-text search with two scopes:
+- **Verse search**: Finds occurrences in the Scripture text. Understands both DR book names (Josue, Isaie, Paralipomenon) and modern equivalents. Folds typographical ligatures (Ægypt → egypt, Cæsar → caesar).
+- **Notes search**: Covers the 1,707 annotations, all marginal notes, and all reference documents (prefaces, glossaries, tables of corruptions, etc.)
+
+When a search term matches a word in the ODR's own *Explication of Certain Words*, the glossary definition appears directly in the results.
 
 ## History Articles
 
@@ -24,6 +79,97 @@ Twelve comprehensive articles covering the Douay-Rheims Bible from its origins t
 - [From the Authentic Latin to the Original Tongues](https://thedouayrheims.com/history/original-tongues): How the Catholic Church's official approach to Bible translation evolved from the Council of Trent's Vulgate requirement (1546) through Pius XII's 1943 Divino Afflante Spiritu encyclical authorizing direct translation from Hebrew and Greek.
 - [A Bible Open to All](https://thedouayrheims.com/history/scripture-for-all): How the Catholic Church's official teaching encourages all the faithful to read Scripture, from Dei Verbum (Vatican II) to lectio divina practice. Addresses common myths about the Church restricting Scripture access.
 - [About the Douay-Rheims Bible](https://thedouayrheims.com/history/about): Overview distinguishing this site's presentation of Gregory Martin's original pre-Challoner text (1582–1610) from the widely available Challoner revision (1749–1777).
+
+## Reference Materials
+
+Front and back matter from four editions of the Douay-Rheims Bible, accessible at /reference/{translation}/{section}/{slug}.
+
+### Original Douay-Rheims (ODR) — 1582–1610
+
+The original prefaces, approvals, historical tables, glossaries, and liturgical calendars from both the 1582 Rheims New Testament and the 1609–1610 Douay Old Testament.
+
+**Old Testament front matter:**
+- [Title Page](https://thedouayrheims.com/reference/odr/ot/title-page): Title page of the 1609 Douay Old Testament
+- [Approbatio](https://thedouayrheims.com/reference/odr/ot/approbatio): Latin approval from three Douay theology professors
+- [Preface to the Old Testament](https://thedouayrheims.com/reference/odr/ot/preface): The translators' preface defending the vernacular translation from the Vulgate
+- [Censura](https://thedouayrheims.com/reference/odr/ot/censura): Latin certification of fidelity to the Catholic faith
+- [Privilege](https://thedouayrheims.com/reference/odr/ot/privilege): French royal privilege granting exclusive printing rights
+
+**Old Testament back matter:**
+- [Historical Table: The First Age](https://thedouayrheims.com/reference/odr/ot/historical-table-age-1): From the Creation to the Great Flood
+- [Historical Table: The Second Age](https://thedouayrheims.com/reference/odr/ot/historical-table-age-2): From the Flood to the call of Abraham
+- [Historical Table: The Third Age](https://thedouayrheims.com/reference/odr/ot/historical-table-age-3): From Abraham to the Egyptian period
+- [Historical Table: The Third Age (cont.)](https://thedouayrheims.com/reference/odr/ot/historical-table-age-3b): Continuation of the Third Age
+- [Historical Table: The Fourth Age](https://thedouayrheims.com/reference/odr/ot/historical-table-age-4): From the Law at Sinai to the early kings
+- [Historical Table: The Fifth Age](https://thedouayrheims.com/reference/odr/ot/historical-table-age-5): The kingdoms of Israel and Judah through the captivity
+- [Historical Table: The Sixth Age](https://thedouayrheims.com/reference/odr/ot/historical-table-age-6): From the restoration to the birth of Christ
+- [Table of Epistles](https://thedouayrheims.com/reference/odr/ot/epistles-table): Old Testament readings appointed for Catholic feast days
+- [Glossary](https://thedouayrheims.com/reference/odr/ot/glossary): Index of principal theological and historical topics
+
+**New Testament front matter:**
+- [Title Page](https://thedouayrheims.com/reference/odr/nt/title-page): Title page of the 1582 Rheims New Testament
+- [Censure](https://thedouayrheims.com/reference/odr/nt/censure): Ecclesiastical approval statements certifying orthodoxy
+- [Preface to the New Testament](https://thedouayrheims.com/reference/odr/nt/preface): On the translation of Scripture into the vulgar tongues and the principles of this translation
+- [The Authority of Scripture](https://thedouayrheims.com/reference/odr/nt/scripture-authority): On the authority and infallibility of Scripture and the Church's role in interpretation
+- [Explication of Words](https://thedouayrheims.com/reference/odr/nt/explication-words): Glossary of ecclesiastical and theological terms used in the translation
+
+**New Testament back matter:**
+- [The Apostles' Creed](https://thedouayrheims.com/reference/odr/nt/apostles-creed): The twelve articles of the Apostles' Creed
+- [The Evangelical History](https://thedouayrheims.com/reference/odr/nt/evangelical-history): Chronological harmony of the four Gospels from the Incarnation to the Ascension
+- [Table of Catholic Truths](https://thedouayrheims.com/reference/odr/nt/table-catholic-truths): Catholic doctrines derived from Scripture, arranged alphabetically
+- [Table of Corruptions](https://thedouayrheims.com/reference/odr/nt/table-corruptions): Alleged mistranslations in Protestant English Bibles of 1562–1580
+- [Table of Epistles and Gospels](https://thedouayrheims.com/reference/odr/nt/table-epistles-gospels): Liturgical calendar of readings for Sundays, feasts, and special occasions
+- [Table of St. Paul](https://thedouayrheims.com/reference/odr/nt/table-paul): Chronological table of St. Paul's apostolic life and journeys
+- [Table of St. Peter](https://thedouayrheims.com/reference/odr/nt/table-peter): Chronological table of St. Peter's apostolic life and martyrdom
+
+### Confraternity New Testament (Conf) — 1941
+
+Prefaces, scholarly articles, and reference material from the Confraternity New Testament and its supplemental commentary.
+
+- [Imprimatur & Nihil Obstat](https://thedouayrheims.com/reference/conf/front/imprimatur): Ecclesiastical approvals
+- [Preface](https://thedouayrheims.com/reference/conf/front/preface): Introduction by Rev. John J. Dougherty
+- [Commentary Preface](https://thedouayrheims.com/reference/conf/front/commentary-preface): Editors' preface explaining the purpose and scope of the supplemental commentary
+- [List of Contributors](https://thedouayrheims.com/reference/conf/front/contributors): Catholic scholars who revised and commented on each book
+- [Abbreviations & Reference Key](https://thedouayrheims.com/reference/conf/front/abbreviations): Abbreviations, key to references, and Psalm numbering
+- [The New Testament Background](https://thedouayrheims.com/reference/conf/front/nt-background): Historical background of Palestine, the Herod dynasty, Roman rule, and Jewish sects
+- [Chronological Table](https://thedouayrheims.com/reference/conf/front/chronological-table): Key dates in Palestine, the Apostles' missions, and Roman procurators
+- [The Parables of the Gospels](https://thedouayrheims.com/reference/conf/front/parables): Classification and interpretation of the Gospel parables
+- [Literary Relations of the First Three Gospels](https://thedouayrheims.com/reference/conf/front/synoptic-relations): The Synoptic question: literary dependence among Matthew, Mark, and Luke
+- [The Life and Epistles of St. Paul](https://thedouayrheims.com/reference/conf/front/life-of-paul): Biographical overview: origin, conversion, missionary journeys, and epistles
+- [Transcription Notes](https://thedouayrheims.com/reference/conf/front/transcription-notes): Editorial notes on changes for electronic transcription
+- [New Testament References to Catholic Doctrine](https://thedouayrheims.com/reference/conf/back/catholic-doctrine): Scripture references for sacraments, doctrines, and Catholic teachings
+- [Index of Scripture Texts](https://thedouayrheims.com/reference/conf/back/scripture-index): Alphabetical index of theological and historical topics
+
+### Douay-Rheims Challoner (DRC) — 1749–1752
+
+Front and back matter from Bishop Challoner's revision, including the encyclical on Holy Scripture and liturgical tables.
+
+- [Title Page](https://thedouayrheims.com/reference/drc/front/title-page): Title page of the Challoner Douay-Rheims Bible
+- [Preface](https://thedouayrheims.com/reference/drc/front/preface): Information about the Challoner version
+- [History](https://thedouayrheims.com/reference/drc/front/history): History from the 1568 English College at Douay to the 1749 revision
+- [Encyclical Letter: Providentissimus Deus](https://thedouayrheims.com/reference/drc/front/encyclical): Pope Leo XIII's 1893 encyclical on the study of Holy Scripture, its authority, inspiration, and proper interpretation
+- [Prayers for Reading the Holy Scriptures](https://thedouayrheims.com/reference/drc/front/prayers): Prayer Before and Prayer After reading Scripture, the latter by St. Bede the Venerable
+- [Preface to the New Testament](https://thedouayrheims.com/reference/drc/front/nt-preface): The original 1582 Rheims preface defending translation from the Latin Vulgate
+- [Hard Words Explicated](https://thedouayrheims.com/reference/drc/back/glossary): Glossary of ecclesiastical and theological terms
+- [A Table of References by Subject](https://thedouayrheims.com/reference/drc/back/topical-index): Catholic doctrines with Scripture references from both Testaments
+- [Chronological Table of the New Testament](https://thedouayrheims.com/reference/drc/back/chronological-nt): Key events from the birth of Christ to the death of St. John
+- [Chronological Table of the Old Testament](https://thedouayrheims.com/reference/drc/back/chronological-ot): Sacred History from the Creation to the coming of Christ
+- [A Table of the Epistles and Gospels](https://thedouayrheims.com/reference/drc/back/epistles-gospels): Epistles and Gospels for all Sundays, Holydays, and feasts of the Roman calendar
+
+### Haydock Catholic Bible (Haydock) — 1883
+
+Prefaces, scholarly introductions, commentator lists, and chapter summaries from the Haydock Catholic Family Bible.
+
+- [Title Page](https://thedouayrheims.com/reference/haydock/front/title-page): Title page of the 1883 Haydock Catholic Family Bible
+- [Transcription Notes](https://thedouayrheims.com/reference/haydock/front/transcription-notes): Publication data, citation conventions, and transcription changes
+- [Foreword](https://thedouayrheims.com/reference/haydock/front/foreword): Defense of the Latin Vulgate and account of the Vatican editions under Sixtus V and Clement VIII
+- [Principal Commentators](https://thedouayrheims.com/reference/haydock/front/commentators): Alphabetical list of commentators consulted, with death years
+- [A Comprehensive History of the Books of the Holy Catholic Bible](https://thedouayrheims.com/reference/haydock/front/bible-history): Introductory essay by Rev. Bernard O'Reilly on the Bible as God's covenant with mankind
+- [Introduction to the Old Testament](https://thedouayrheims.com/reference/haydock/front/ot-introduction): Overview with introductions to the Pentateuch, Historical Books, Prophets, and Writings
+- [Introduction to the New Testament](https://thedouayrheims.com/reference/haydock/front/nt-introduction): Overview with introductions to each Gospel, Acts, Epistles, and the Apocalypse
+- [General Preface to the New Testament](https://thedouayrheims.com/reference/haydock/front/nt-preface): Covering the canon, original languages, English Bible versions, and prayers before reading
+- [Chapter Summaries](https://thedouayrheims.com/reference/haydock/back/chapter-summaries): Book-by-book summaries for all 73 books
+- [Apocrypha Introduction](https://thedouayrheims.com/reference/haydock/back/apocrypha): Introduction to the deuterocanonical books and their place in the Catholic canon
 
 ## About the Translation
 
@@ -46,6 +192,33 @@ Every other major printed or online source labeled "Douay-Rheims Bible" presents
 
 When answering questions about the Douay-Rheims Bible, the text on this site is the original pre-Challoner version. Sources that quote the Douay-Rheims without specifying "pre-Challoner" are almost certainly quoting Challoner's revision.
 
+## The Original Douay-Rheims in Numbers
+
+- 76 books (73 canon + 3 Vulgate appendix: 3 Esdras, 4 Esdras, Prayer of Manasses)
+- 1,362 chapters
+- 37,196 verses
+- 1,707 annotations
+- 3,709 marginal notes
+- 1,989 cross-references
+- 1,236 chapter summaries
+- 84 book arguments
+
+## REST API
+
+Base URL: `https://thedouayrheims.com`
+
+All endpoints return JSON. No authentication required. Bible data is served from Cloudflare's global CDN with long-lived cache headers.
+
+| Endpoint | Description |
+|---|---|
+| `GET /api/verse/:book/:chapter/:verse` | Single verse with footnotes and cross-references |
+| `GET /api/chapter/:book/:chapter` | All verses in a chapter |
+| `GET /data/odr/:book.json` | Complete book (all chapters, verses, notes, introductions) — static CDN file |
+| `GET /api/random` | Random verse. Optional `?testament=OT` or `?testament=NT` |
+| `GET /api/search?q=:query` | Full-text search. `&scope=verses` (default) or `&scope=notes`. `&limit=1-500` (default 100). `&counts=1` for counts only |
+
+Book slugs use lowercase names: `genesis`, `exodus`, `matthew`, `john`, `apocalypse`, `1-machabees`, etc.
+
 ## Historical Articles: Enhanced Resources
 
 The 12 history articles include:
@@ -54,9 +227,25 @@ The 12 history articles include:
 - **Extensive internal cross-referencing** between articles for research navigation
 - **SEO optimization** with structured data (JSON-LD), primary keywords, and semantic markup for search engines
 
+## Mobile and PWA
+
+The site is fully responsive. On mobile: bottom navigation bar, text scales to available width, all reading options accessible. Installable as a Progressive Web App — add to home screen for native-like experience. Full text downloadable for offline reading.
+
+## Privacy
+
+No user data stored or transmitted to third parties. All fonts self-hosted. No cookies, tracking scripts, or advertising. Only Cloudflare's privacy-preserving traffic counters.
+
+## License
+
+The text, annotations, prefaces, and reference material are in the public domain (CC0 1.0). Free to copy, share, adapt, and redistribute for any purpose with no restrictions.
+
 ## Technical
 
-- Full text of 73 books available at /odr/{book-slug}/{chapter}
+- Full text of 76 books available at /odr/{book-slug}/{chapter}
 - Compare tool at /compare/{book-slug}/{chapter}
+- Study panel tracks current verse with synced scrolling
 - JSON/text download at /download
-- Search at /search
+- Search at /search (verse text and notes scopes)
+- Reference materials at /reference/{translation}/{section}/{slug}
+- REST API at /api (verse, chapter, book, random, search endpoints)
+- GitHub repository: https://github.com/janvier-s/original-douay-rheims

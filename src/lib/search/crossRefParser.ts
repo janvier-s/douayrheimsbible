@@ -404,6 +404,8 @@ function matchBookAt(text: string, pos: number): BookMatch | null {
 interface ChapterVerseResult {
 	chapter: number;
 	verse?: number;
+	endChapter?: number;
+	endVerse?: number;
 	consumed: number; // how many chars consumed after the book match end
 	display: string;
 }
@@ -441,8 +443,16 @@ function parseChapterVerse(
 		if (vMatch) {
 			const verse = parseInt(vMatch[1], 10);
 			cursor += vMatch[0].length;
+			// Optional letter suffix + range (e.g., "14a-15")
+			if (cursor < text.length && /[a-c]/.test(text[cursor])) cursor++;
+			let endVerse0: number | undefined;
+			const rangeMatch0 = text.slice(cursor).match(/^-(\d+)[a-c]?/);
+			if (rangeMatch0) {
+				endVerse0 = parseInt(rangeMatch0[1], 10);
+				cursor += rangeMatch0[0].length;
+			}
 			if (cursor < text.length && text[cursor] === '.') cursor++;
-			return { chapter, verse, consumed: cursor - startPos, display: '' };
+			return { chapter, verse, endVerse: endVerse0, consumed: cursor - startPos, display: '' };
 		}
 	}
 
@@ -500,9 +510,36 @@ function parseChapterVerse(
 	// If no verse was found, don't consume whitespace after the period
 	if (verse === undefined) cursor = afterPeriod;
 
+	// Consume optional verse range: "-N" or "-Na" (e.g., "47-50", "14a-15")
+	let endVerse: number | undefined;
+	let endChapter: number | undefined;
+	if (verse !== undefined) {
+		// Skip optional letter suffix on start verse (e.g., "14a")
+		if (cursor < text.length && /[a-c]/.test(text[cursor])) cursor++;
+
+		// Cross-chapter range: "---N, M" or "--N, M" (e.g., "9, 51---18, 14")
+		const crossChapterMatch = text.slice(cursor).match(/^-{2,3}\s*(\d+),\s*(\d+)/);
+		if (crossChapterMatch) {
+			endChapter = parseInt(crossChapterMatch[1], 10);
+			endVerse = parseInt(crossChapterMatch[2], 10);
+			cursor += crossChapterMatch[0].length;
+			if (cursor < text.length && text[cursor] === '.') cursor++;
+		} else {
+			// Same-chapter verse range: "-N" (e.g., "47-50")
+			const rangeMatch = text.slice(cursor).match(/^-(\d+)[a-c]?/);
+			if (rangeMatch) {
+				endVerse = parseInt(rangeMatch[1], 10);
+				cursor += rangeMatch[0].length;
+				if (cursor < text.length && text[cursor] === '.') cursor++;
+			}
+		}
+	}
+
 	return {
 		chapter,
 		verse,
+		endChapter,
+		endVerse,
 		consumed: cursor - startPos,
 		display: ''
 	};
@@ -568,6 +605,10 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 						let osis = osisBook + '.' + cv.chapter;
 						if (cv.verse !== undefined) {
 							osis += '.' + cv.verse;
+						}
+						if (cv.endVerse !== undefined) {
+							const endCh = cv.endChapter ?? cv.chapter;
+							osis += '-' + osisBook + '.' + endCh + '.' + cv.endVerse;
 						}
 
 						const displayEnd = bookMatch.end + cv.consumed;
@@ -635,9 +676,9 @@ function parseContinuationRefs(
 	let pos = startPos;
 
 	while (pos < text.length) {
-		// Skip and preserve whitespace, commas, marginal note markers (''), and & separators
+		// Skip and preserve whitespace, commas, semicolons, marginal note markers (''), and & separators
 		let cursor = pos;
-		while (cursor < text.length && /[ ,'&]/.test(text[cursor])) cursor++;
+		while (cursor < text.length && /[ ,;'&]/.test(text[cursor])) cursor++;
 
 		// Must start with a digit (bare chapter number, no book name)
 		if (cursor >= text.length || !/\d/.test(text[cursor])) break;
@@ -687,6 +728,10 @@ function parseContinuationRefs(
 		let osis = osisBook + '.' + cv.chapter;
 		if (cv.verse !== undefined) {
 			osis += '.' + cv.verse;
+		}
+		if (cv.endVerse !== undefined) {
+			const endCh = cv.endChapter ?? cv.chapter;
+			osis += '-' + osisBook + '.' + endCh + '.' + cv.endVerse;
 		}
 
 		const displayEnd = cursor + cv.consumed;

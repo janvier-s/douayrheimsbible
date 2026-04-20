@@ -100,7 +100,7 @@ export const TRANSLATIONS: Translation[] = [
 	{
 		id: 'conf',
 		label: 'Confraternity NT',
-		abbr: 'Conf',
+		abbr: 'Confraternity',
 		year: '1941',
 		live: true,
 		ntOnly: true,

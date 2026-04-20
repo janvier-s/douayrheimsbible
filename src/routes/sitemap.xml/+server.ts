@@ -1,4 +1,5 @@
 import { ALL_BOOKS } from '$lib/data/books';
+import { TRANSLATION_CONFIGS } from '$lib/data/reference';
 
 // Translation prefixes with live data — all books (OT + NT)
 const LIVE_TRANSLATIONS = ['odr', 'vul', 'drc', 'knox', 'kjv', 'cpdv', 'haydock'] as const;
@@ -61,6 +62,17 @@ export function GET() {
 	urls.push(entry('/history/america', '0.9', 'monthly'));
 	urls.push(entry('/history/original-tongues', '0.9', 'monthly'));
 	urls.push(entry('/history/scripture-for-all', '0.9', 'monthly'));
+
+	// Reference material
+	urls.push(entry('/reference', '0.7', 'monthly'));
+	for (const config of TRANSLATION_CONFIGS) {
+		urls.push(entry(`/reference/${config.id}`, '0.7', 'monthly'));
+		for (const article of config.articles) {
+			urls.push(
+				entry(`/reference/${config.id}/${article.section}/${article.slug}`, '0.6', 'yearly')
+			);
+		}
+	}
 
 	// Static pages
 	urls.push(entry('/search', '0.6', 'monthly'));

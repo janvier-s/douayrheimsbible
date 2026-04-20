@@ -955,7 +955,7 @@
 					{#if currentBookSlug === 'genesis' || currentBookSlug === 'matthew'}
 						{@const bookMeta = getBookBySlug(currentBookSlug)}
 						<a
-							href="/reference/{bookMeta?.testament === 'NT' ? 'nt' : 'ot'}/title-page"
+							href="/reference/odr/{bookMeta?.testament === 'NT' ? 'nt' : 'ot'}/title-page"
 							target="_blank"
 							rel="noopener"
 							class="ref-gateway"

@@ -3,5 +3,5 @@ import type { PageLoad } from './$types';
 export const prerender = true;
 
 export const load: PageLoad = () => {
-	return { hasStudyMode: true };
+	return { hasStudyMode: true, topBarMinimal: true };
 };
