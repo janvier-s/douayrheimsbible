@@ -599,7 +599,7 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 					const osis = bookMatch.osisBook + '.1';
 					const display = text.slice(bookMatch.displayStart, bookMatch.end).trim();
 					tokens.push({ type: 'ref', osis, display, isVerse: false });
-					lastOsisBook = bookMatch.osisBook;
+					lastOsisBook = bookMatch.osisBook; // eslint-disable-line no-useless-assignment
 					pos = bookMatch.end;
 					textStart = pos;
 					continue;
@@ -1215,6 +1215,36 @@ function findConfRefs(clean: string): ConfRefMatch[] {
 		}
 
 		results.push({ start: m.index, end: m.index + m[0].length, osis });
+
+		// Scan for continuation refs: "; N, N" or "; N" reusing the same book
+		// e.g. "Pss. 68, 26; 108, 8" → second ref is Ps.108.8
+		const contRe = /;\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?(?:\s*,\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?)?/g;
+		contRe.lastIndex = m.index + m[0].length;
+		let cm: RegExpExecArray | null;
+		while ((cm = contRe.exec(clean)) !== null) {
+			// Must start right where we left off (allow only whitespace gap)
+			if (cm.index !== contRe.lastIndex - cm[0].length) break;
+			const cCh = parseInt(cm[1]);
+			const cChEnd = cm[2] ? parseInt(cm[2]) : undefined;
+			const cVerse = cm[3] ? parseInt(cm[3]) : undefined;
+			const cVerseEnd = cm[4] ? parseInt(cm[4]) : undefined;
+
+			let cOsis: string;
+			if (cVerse !== undefined) {
+				cOsis = `${osisBook}.${cCh}.${cVerse}`;
+				if (cVerseEnd !== undefined) {
+					cOsis += `-${osisBook}.${cCh}.${cVerseEnd}`;
+				}
+			} else if (cChEnd !== undefined) {
+				cOsis = `${osisBook}.${cCh}-${osisBook}.${cChEnd}`;
+			} else {
+				cOsis = `${osisBook}.${cCh}`;
+			}
+
+			results.push({ start: cm.index, end: cm.index + cm[0].length, osis: cOsis });
+			// Advance the main regex past the continuation so it doesn't re-parse
+			CONF_REF_RE.lastIndex = cm.index + cm[0].length;
+		}
 	}
 	return results;
 }
