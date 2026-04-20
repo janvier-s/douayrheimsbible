@@ -305,6 +305,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2John': '2John',
 	'3John': '3John',
 	Iud: 'Jude',
+	Iude: 'Jude',
 	Jude: 'Jude',
 	Judas: 'Jude',
 	Ap: 'Rev',
@@ -547,44 +548,59 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 			const followedByChapter = isFollowedByChapterIndicator(text, bookMatch.end);
 			const patristicContext = isPrecededByPatristicContext(text, pos);
 
-			if (followedByChapter && !patristicContext) {
-				// We have a Bible reference
-				const resolvedBook = bookMatch.osisBook === 'Eccl' ? 'Eccl' : bookMatch.osisBook;
-				const cv = parseChapterVerse(text, bookMatch.end, resolvedBook);
+			if (!patristicContext) {
+				if (followedByChapter) {
+					// We have a Bible reference
+					const resolvedBook = bookMatch.osisBook === 'Eccl' ? 'Eccl' : bookMatch.osisBook;
+					const cv = parseChapterVerse(text, bookMatch.end, resolvedBook);
 
-				if (cv) {
-					// Flush any preceding text
+					if (cv) {
+						// Flush any preceding text
+						if (pos > textStart) {
+							tokens.push({ type: 'text', content: text.slice(textStart, pos) });
+						}
+
+						const isVerse = cv.verse !== undefined;
+						// "Eccl." in DR cross-refs: Ecclesiastes has 12 chapters,
+						// so chapter > 12 must be Ecclesiasticus (Sir)
+						const osisBook =
+							bookMatch.osisBook === 'Eccl' && cv.chapter > 12 ? 'Sir' : bookMatch.osisBook;
+						let osis = osisBook + '.' + cv.chapter;
+						if (cv.verse !== undefined) {
+							osis += '.' + cv.verse;
+						}
+
+						const displayEnd = bookMatch.end + cv.consumed;
+						const display = text.slice(bookMatch.displayStart, displayEnd).trim();
+
+						tokens.push({ type: 'ref', osis, display, isVerse });
+						lastOsisBook = osisBook;
+
+						pos = displayEnd;
+
+						// Check for continuation refs: bare "chapter, verse." with same book
+						// Pass last chapter+verse context so verse continuations work
+						pos = parseContinuationRefs(
+							text,
+							pos,
+							lastOsisBook,
+							tokens,
+							cv.verse !== undefined ? cv.chapter : undefined
+						);
+						textStart = pos;
+						continue;
+					}
+				} else if (OSIS_CHAPTERS[bookMatch.osisBook] === 1) {
+					// Single-chapter books (Jude, Philemon, etc.) may appear without a
+					// chapter/verse number — default to chapter 1
 					if (pos > textStart) {
 						tokens.push({ type: 'text', content: text.slice(textStart, pos) });
 					}
-
-					const isVerse = cv.verse !== undefined;
-					// "Eccl." in DR cross-refs: Ecclesiastes has 12 chapters,
-					// so chapter > 12 must be Ecclesiasticus (Sir)
-					const osisBook =
-						bookMatch.osisBook === 'Eccl' && cv.chapter > 12 ? 'Sir' : bookMatch.osisBook;
-					let osis = osisBook + '.' + cv.chapter;
-					if (cv.verse !== undefined) {
-						osis += '.' + cv.verse;
-					}
-
-					const displayEnd = bookMatch.end + cv.consumed;
-					const display = text.slice(bookMatch.displayStart, displayEnd).trim();
-
-					tokens.push({ type: 'ref', osis, display, isVerse });
-					lastOsisBook = osisBook;
-
-					pos = displayEnd;
-
-					// Check for continuation refs: bare "chapter, verse." with same book
-					// Pass last chapter+verse context so verse continuations work
-					pos = parseContinuationRefs(
-						text,
-						pos,
-						lastOsisBook,
-						tokens,
-						cv.verse !== undefined ? cv.chapter : undefined
-					);
+					const osis = bookMatch.osisBook + '.1';
+					const display = text.slice(bookMatch.displayStart, bookMatch.end).trim();
+					tokens.push({ type: 'ref', osis, display, isVerse: false });
+					lastOsisBook = bookMatch.osisBook;
+					pos = bookMatch.end;
 					textStart = pos;
 					continue;
 				}
@@ -840,6 +856,7 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 	Jacob: 'James',
 	Jas: 'James',
 	Iud: 'Jude',
+	Iude: 'Jude',
 	Jude: 'Jude',
 	Judas: 'Jude',
 	Ap: 'Revelation',

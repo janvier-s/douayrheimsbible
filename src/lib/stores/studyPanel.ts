@@ -32,6 +32,9 @@ export interface StudyPanelState {
 	 *  "the panel is currently showing this verse". */
 	panelScrollVerse: number | null;
 	activeConfIntroTab: 'bible' | 'commentary';
+	/** One-shot flag: when activeTab was set from a URL ?tab= param, the book-change
+	 *  reactive in StudyPanel should respect it instead of overriding with the default. */
+	tabSetByUrl: boolean;
 }
 
 const defaults: StudyPanelState = {
@@ -42,7 +45,8 @@ const defaults: StudyPanelState = {
 	activeVerse: null,
 	annotatedVerse: null,
 	panelScrollVerse: null,
-	activeConfIntroTab: 'bible' as const
+	activeConfIntroTab: 'bible' as const,
+	tabSetByUrl: false
 };
 
 export const studyPanel = writable<StudyPanelState>({ ...defaults });

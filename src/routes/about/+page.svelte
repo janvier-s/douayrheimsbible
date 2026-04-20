@@ -430,6 +430,8 @@
 		added, removed, or modified.
 	</p>
 
+	<h3>Study Content by Translation</h3>
+
 	<p>Six translations carry study content, each with its own character.</p>
 
 	<p>
@@ -466,6 +468,33 @@
 		witty and always illuminating, and the <strong>Catholic Public Domain Version</strong> includes translator
 		notes by Ronald L. Conte Jr.
 	</p>
+
+	<h3>Linked References</h3>
+
+	<p>
+		Scripture references within cross-references and notes are automatically detected and linked.
+		Hovering over a linked reference shows a tooltip with the full verse text; clicking it navigates
+		to the passage. Each verse header in the panel also doubles as a shareable link: hovering
+		reveals a link icon, and clicking it copies a URL that opens directly to that verse's notes,
+		cross-references, or annotations. Because the references were extracted programmatically from
+		sixteenth- and seventeenth-century notation, a small number may not be detected or may resolve
+		incorrectly.
+	</p>
+
+	<figure class="screenshot-fig screenshot-fig-sm">
+		<a href="/images/about/cross-refs.webp" target="_blank" rel="noopener" class="screenshot-link">
+			<img
+				src="/images/about/cross-refs.webp"
+				alt="A verse tooltip showing John 8:12 alongside a cross-reference entry linking to Io. 8, 12."
+				width="896"
+				height="352"
+				loading="lazy"
+			/>
+		</a>
+		<figcaption>Cross-references link to full verse text on hover.</figcaption>
+	</figure>
+
+	<h3>The Panel</h3>
 
 	<p>
 		The panel can be resized by dragging the divider. On mobile it takes over the full screen, with
@@ -1413,6 +1442,10 @@
 
 	.screenshot-link {
 		display: block;
+	}
+
+	.screenshot-fig-sm {
+		max-width: 520px;
 	}
 
 	.screenshot-fig img {

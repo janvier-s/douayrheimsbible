@@ -1,7 +1,7 @@
 import { ALL_BOOKS } from '$lib/data/books';
 
 // Translation prefixes with live data — all books (OT + NT)
-const LIVE_TRANSLATIONS = ['odr', 'vul', 'drc', 'knox', 'kjv', 'cpdv'] as const;
+const LIVE_TRANSLATIONS = ['odr', 'vul', 'drc', 'knox', 'kjv', 'cpdv', 'haydock'] as const;
 // NT-only translations
 const LIVE_TRANSLATIONS_NT_ONLY = ['conf'] as const;
 

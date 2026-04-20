@@ -323,17 +323,28 @@
 				if (validTabs.includes(urlTab)) {
 					studyPanel.update((s) => ({
 						...s,
-						activeTab: urlTab as StudyTab
+						activeTab: urlTab as StudyTab,
+						tabSetByUrl: true
 					}));
 				}
 			}
 			if (urlVerse !== null) {
 				const v = parseInt(urlVerse, 10);
 				if (!isNaN(v) && v >= 0) {
+					// Map the URL tab to a scroll trigger type so handleScrollTrigger
+					// routes to the correct tab instead of defaulting to 'annotations'
+					const triggerType =
+						urlTab === 'cross-refs'
+							? ('cross_ref' as const)
+							: urlTab === 'notes'
+								? ('note' as const)
+								: urlTab === 'annotations'
+									? ('annotation' as const)
+									: undefined;
 					// Delay slightly so the panel has time to render sections
 					setTimeout(() => {
 						studyPanel.update((s) => ({ ...s, annotatedVerse: v }));
-						scrollTrigger.set({ verse: v });
+						scrollTrigger.set({ verse: v, type: triggerType });
 					}, 300);
 				}
 			}

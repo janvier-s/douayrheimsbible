@@ -35,17 +35,17 @@
 		{
 			label: 'Study',
 			links: [
-				{ label: 'Search', href: '/search' },
 				{ label: 'Compare Translations', href: '/compare' },
-				{ label: 'Articles', href: '/articles' }
+				{ label: 'Articles', href: '/articles' },
+				{ label: 'Search', href: '/search' }
 			]
 		},
 		{
 			label: 'About',
 			links: [
-				{ label: 'History', href: '/history' },
 				{ label: 'About This Website', href: '/about' },
 				{ label: 'About the Translation', href: '/history/the-douay-rheims' },
+				{ label: 'History', href: '/history' },
 				{ label: 'Contact', href: '/contact' }
 			]
 		}

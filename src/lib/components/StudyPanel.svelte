@@ -335,51 +335,64 @@
 	let prevBook: string | null = null;
 	$: if (bookData && bookData.book !== prevBook) {
 		prevBook = bookData.book; // eslint-disable-line no-useless-assignment
-		const preferred = $prefs.studyDefaultTab;
 
-		let defaultTab: StudyTab;
-		if (translationId === 'odr') {
-			defaultTab = 'annotations';
-			if (preferred === 'annotations' || preferred === 'notes' || preferred === 'cross-refs') {
-				defaultTab = preferred;
-			}
-			if (preferred === 'intro' && hasIntros) defaultTab = 'intro';
-			if (preferred === 'article' && hasArticles) defaultTab = 'article';
-			if (preferred === 'end' && hasEndMatters) defaultTab = 'end';
-		} else if (translationId === 'conf') {
-			defaultTab = 'footnotes';
-			if (preferred === 'footnotes' || preferred === 'commentary') {
-				defaultTab = preferred;
-			}
-			if (
-				preferred === 'intro' &&
-				confIntro &&
-				(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
-			) {
-				defaultTab = 'intro';
-			}
-		} else if (isHaydock) {
-			defaultTab = 'commentary';
-			if (preferred === 'commentary' || preferred === 'cross-refs') {
-				defaultTab = preferred;
-			}
-			if (preferred === 'intro' && haydockIntro && haydockIntro.paragraphs.length > 0) {
-				defaultTab = 'intro';
-			}
-		} else if (hasTranslationNotes) {
-			defaultTab = 'notes';
+		// If the tab was set from a URL ?tab= param, respect it on first load
+		if ($studyPanel.tabSetByUrl) {
+			const idx = intros.findIndex((i) => i.default);
+			studyPanel.update((s) => ({
+				...s,
+				tabSetByUrl: false,
+				activeIntroIndex: idx >= 0 ? idx : 0,
+				activeEndIndex: 0,
+				activeArticleIndex: 0
+			}));
 		} else {
-			defaultTab = 'annotations';
-		}
+			const preferred = $prefs.studyDefaultTab;
 
-		const idx = intros.findIndex((i) => i.default);
-		studyPanel.update((s) => ({
-			...s,
-			activeTab: defaultTab,
-			activeIntroIndex: idx >= 0 ? idx : 0,
-			activeEndIndex: 0,
-			activeArticleIndex: 0
-		}));
+			let defaultTab: StudyTab;
+			if (translationId === 'odr') {
+				defaultTab = 'annotations';
+				if (preferred === 'annotations' || preferred === 'notes' || preferred === 'cross-refs') {
+					defaultTab = preferred;
+				}
+				if (preferred === 'intro' && hasIntros) defaultTab = 'intro';
+				if (preferred === 'article' && hasArticles) defaultTab = 'article';
+				if (preferred === 'end' && hasEndMatters) defaultTab = 'end';
+			} else if (translationId === 'conf') {
+				defaultTab = 'footnotes';
+				if (preferred === 'footnotes' || preferred === 'commentary') {
+					defaultTab = preferred;
+				}
+				if (
+					preferred === 'intro' &&
+					confIntro &&
+					(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
+				) {
+					defaultTab = 'intro';
+				}
+			} else if (isHaydock) {
+				defaultTab = 'commentary';
+				if (preferred === 'commentary' || preferred === 'cross-refs') {
+					defaultTab = preferred;
+				}
+				if (preferred === 'intro' && haydockIntro && haydockIntro.paragraphs.length > 0) {
+					defaultTab = 'intro';
+				}
+			} else if (hasTranslationNotes) {
+				defaultTab = 'notes';
+			} else {
+				defaultTab = 'annotations';
+			}
+
+			const idx = intros.findIndex((i) => i.default);
+			studyPanel.update((s) => ({
+				...s,
+				activeTab: defaultTab,
+				activeIntroIndex: idx >= 0 ? idx : 0,
+				activeEndIndex: 0,
+				activeArticleIndex: 0
+			}));
+		}
 	}
 
 	// If on the article tab but current chapter has no articles, fall back to annotations/commentary

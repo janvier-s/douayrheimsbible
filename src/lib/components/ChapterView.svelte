@@ -90,6 +90,12 @@
 	$: verse0 = chapter.verses.find((v) => v.verse === 0);
 	$: fullSummary = verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? '');
 	$: displayVerses = verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses;
+	// Reactive declaration ensures Svelte tracks the readingMode dependency properly
+	// (inline {@html fn(x, $store)} can miss updates during SSR → client hydration)
+	$: summaryHtml =
+		fullSummary && fullSummary !== '---'
+			? linkifySummary(fullSummary, $prefs.readingMode === 'study')
+			: '';
 
 	/** Strip trailing cross-reference text that follows the last </na> marker group.
 	 *  e.g. "<na>[1]</na><na>[2]</na> Gen. 12. 22. 2. Reg. 7. Psal. 131." → remove "Gen. 12. …"
@@ -117,13 +123,15 @@
 	}
 
 	function linkifySummary(text: string, isStudy: boolean): string {
-		// Summary text is from trusted build-time JSON; we only inject our own tags.
+		// Strip trailing cross-ref text (e.g. "Gen. 12. 22.") BEFORE verse-number
+		// linkification — Pass 1/2 wrap numbers in <span> tags which breaks the tokenizer
+		let t = stripTrailingCrossRefs(text);
+
 		// Match verse-number references in summary text: a digit-sequence followed by
 		// ". " that appears after whitespace or a semicolon (e.g. "8. Then placing…").
-		// Also handles any pre-existing ℣.N patterns.
 		const maxVerse = Math.max(...chapter.verses.map((v) => v.verse), 0);
 		// Pass 1: "N. " — number with trailing period (most common)
-		let t = text.replace(/(^|[\s;,])(\d+)\.\s+/g, (match, sep, n) => {
+		t = t.replace(/(^|[\s;,])(\d+)\.\s+/g, (match, sep, n) => {
 			const num = parseInt(n, 10);
 			if (num < 1 || num > maxVerse) return match;
 			return sep + `<span class="summary-verse-ref" data-verse="${n}">${n}.</span> `;
@@ -142,8 +150,6 @@
 					`<button class="study-marker" data-summary-note="${n}" aria-label="Summary note ${n}">${n}</button>`
 			);
 		} else {
-			// Strip trailing cross-ref text (e.g. "Gen. 12. 22.") before removing <na> tags
-			t = stripTrailingCrossRefs(t);
 			// Strip <na> tags and content in reading mode
 			t = t.replace(/<na>[^<]*<\/na>/g, '');
 			t = t.replace(/  +/g, ' ').trim();
@@ -289,7 +295,7 @@
 			on:mouseover={handleSummaryOver}
 			on:mouseout={handleSummaryOut}
 		>
-			{@html linkifySummary(fullSummary, $prefs.readingMode === 'study')}
+			{@html summaryHtml}
 		</p>
 
 		<VerseTooltip
