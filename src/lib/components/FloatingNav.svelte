@@ -12,7 +12,9 @@
 	export let translationId: string = 'odr';
 	export let routeBase: string = '';
 
-	$: base = routeBase || (compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`);
+	$: base =
+		routeBase ||
+		(compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`);
 
 	type Testament = 'OT' | 'NT';
 	let activeTestament: Testament = ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT';

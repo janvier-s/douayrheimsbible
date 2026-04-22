@@ -21,7 +21,9 @@
 	}
 
 	function leaveRef() {
-		hoverTimer = setTimeout(() => { refTooltipVisible = false; }, 120);
+		hoverTimer = setTimeout(() => {
+			refTooltipVisible = false;
+		}, 120);
 	}
 
 	function enterTooltip() {
@@ -75,18 +77,16 @@
 					<button
 						class="prayer-tab"
 						class:active={tab === 'indulgences'}
-						on:click={() => (tab = 'indulgences')}
-					>Indulgences</button>
+						on:click={() => (tab = 'indulgences')}>Indulgences</button
+					>
 					<button
 						class="prayer-tab"
 						class:active={tab === 'before'}
-						on:click={() => (tab = 'before')}
-					>Before Reading</button>
-					<button
-						class="prayer-tab"
-						class:active={tab === 'after'}
-						on:click={() => (tab = 'after')}
-					>After Reading</button>
+						on:click={() => (tab = 'before')}>Before Reading</button
+					>
+					<button class="prayer-tab" class:active={tab === 'after'} on:click={() => (tab = 'after')}
+						>After Reading</button
+					>
 				</div>
 				<button class="prayer-close" on:click={close} aria-label="Close">
 					<svg
@@ -154,25 +154,31 @@
 				</div>
 
 				<p class="prayer-source">Veni Sancte Spiritus · Liturgy of the Hours</p>
-
 			{:else if tab === 'after'}
 				<h2 id="prayer-title" class="prayer-title">Prayer After Reading</h2>
 
 				<div class="prayer-body prayer-body--single">
 					<p>
 						Let me not, O Lord, be puffed up with worldly wisdom, which passes away, but grant me
-						that love which never abates, that I may not choose to know anything among men but Jesus,
-						and Him crucified.<br /><span class="prayer-ref">(<a href="/odr/1-corinthians/13" on:click={close} on:mouseenter={enterRef} on:mouseleave={leaveRef} class="prayer-ref-link">1 Cor. 13:8; 2:2</a>)</span>
+						that love which never abates, that I may not choose to know anything among men but
+						Jesus, and Him crucified.<br /><span class="prayer-ref"
+							>(<a
+								href="/odr/1-corinthians/13"
+								on:click={close}
+								on:mouseenter={enterRef}
+								on:mouseleave={leaveRef}
+								class="prayer-ref-link">1 Cor. 13:8; 2:2</a
+							>)</span
+						>
 					</p>
 					<p>
-						I pray Thee, loving Jesus, that as Thou hast graciously given me to drink in with delight
-						the words of Thy knowledge, so Thou wouldst mercifully grant me to attain one day to Thee,
-						the Fountain of all Wisdom, and to appear forever before Thy face. Amen.
+						I pray Thee, loving Jesus, that as Thou hast graciously given me to drink in with
+						delight the words of Thy knowledge, so Thou wouldst mercifully grant me to attain one
+						day to Thee, the Fountain of all Wisdom, and to appear forever before Thy face. Amen.
 					</p>
 				</div>
 
 				<p class="prayer-source">Prayer of St. Bede the Venerable · c. 735</p>
-
 			{:else}
 				<h2 id="prayer-title" class="prayer-title">Indulgences for Reading Scripture</h2>
 
@@ -198,9 +204,9 @@
 						<li>
 							a plenary indulgence is granted at the hour of death to those who often during life
 							have performed this pious exercise, provided they have confessed and received
-							Communion, or at least having sorrow for their sins, they invoke the most holy name
-							of Jesus with their lips, if possible, or at least in their hearts, and humbly
-							accept death from the hand of God as the price of sin.
+							Communion, or at least having sorrow for their sins, they invoke the most holy name of
+							Jesus with their lips, if possible, or at least in their hearts, and humbly accept
+							death from the hand of God as the price of sin.
 						</li>
 					</ul>
 				</div>

@@ -7,9 +7,9 @@ import type { BookMeta } from '$lib/data/types';
  * the ODR odrName field. These are the only 3 mismatches.
  */
 const UNIFIED_TO_ODR: Record<string, string> = {
-	'Isaias': 'Isaie',
-	'Jeremias': 'Jeremy',
-	'Malachias': 'Malachie',
+	Isaias: 'Isaie',
+	Jeremias: 'Jeremy',
+	Malachias: 'Malachie'
 };
 
 /** Cache book lookups since verseRefs repeat heavily */

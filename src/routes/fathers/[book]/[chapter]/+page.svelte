@@ -27,10 +27,6 @@
 			chapterNum={data.chapter.chapter}
 			totalChapters={data.totalChapters}
 		/>
-		<FathersReader
-			bookMeta={data.bookMeta}
-			chapter={data.chapter}
-			fathersData={data.fathersData}
-		/>
+		<FathersReader bookMeta={data.bookMeta} chapter={data.chapter} fathersData={data.fathersData} />
 	</div>
 {/key}
