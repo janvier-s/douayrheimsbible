@@ -6,8 +6,8 @@
 	import type { OsisRange } from '$lib/search/reference';
 
 	const refRanges: OsisRange[] = [
-		{ book: '1Cor', startChapter: 13, startVerse: 8, endVerse: 8 },
-		{ book: '1Cor', startChapter: 2, startVerse: 2, endVerse: 2 }
+		{ osis: '1Cor.13.8', book: '1Cor', startChapter: 13, endChapter: 13, startVerse: 8, endVerse: 8 },
+		{ osis: '1Cor.2.2', book: '1Cor', startChapter: 2, endChapter: 2, startVerse: 2, endVerse: 2 }
 	];
 
 	let refAnchorEl: HTMLElement | null = null;
