@@ -9,6 +9,7 @@ import type {
 	ConfBackMatter
 } from './types';
 import type { TranslationBook, TranslationNote, TranslationCrossRef } from './translation-types';
+import type { FathersChapterFile } from './fathers-types';
 
 const bookCache = new Map<string, Promise<BookData>>();
 const resolvedCache = new Map<string, BookData>();
@@ -291,4 +292,28 @@ export function loadConfBackMatter(fetch: typeof globalThis.fetch): Promise<Conf
 		});
 	}
 	return backMatterPromise;
+}
+
+// ── Fathers commentary (ACCS + FKB, per chapter) ────────────────
+
+const fathersChapterCache = new Map<string, Promise<FathersChapterFile | null>>();
+
+export function loadFathersChapter(
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<FathersChapterFile | null> {
+	const key = `${slug}/${chapter}`;
+	const cached = fathersChapterCache.get(key);
+	if (cached) return cached;
+
+	const promise = fetch(`/data/fathers/${slug}/${chapter}.json`)
+		.then((r) => (r.ok ? (r.json() as Promise<FathersChapterFile>) : null))
+		.catch(() => {
+			fathersChapterCache.delete(key);
+			return null;
+		});
+
+	fathersChapterCache.set(key, promise);
+	return promise;
 }

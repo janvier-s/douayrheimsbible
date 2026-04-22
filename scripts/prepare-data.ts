@@ -383,6 +383,14 @@ async function main() {
 		console.log(`Conf intro source not found at ${confIntroSrc} — skipping.`);
 	}
 
+	// ── Fathers commentary data (ACCS + FKB) ────────────────────────
+	try {
+		await import('./build-fathers-data.js');
+		console.log('Fathers commentary data built.');
+	} catch {
+		console.log('Fathers build skipped (source not available).');
+	}
+
 	await buildSearchIndexes();
 }
 
