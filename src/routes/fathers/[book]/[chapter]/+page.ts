@@ -1,16 +1,14 @@
 import type { PageLoad, EntryGenerator } from './$types';
 import { error } from '@sveltejs/kit';
 import { loadBook, getChapter, loadFathersChapter } from '$lib/data/loader';
-import { getBookBySlug, ALL_BOOKS } from '$lib/data/books';
+import { getBookBySlug } from '$lib/data/books';
+import manifest from '../../../../../static/data/fathers/manifest.json';
 
 export const prerender = true;
 
 export const entries: EntryGenerator = () =>
-	ALL_BOOKS.flatMap((book) =>
-		Array.from({ length: book.chapters }, (_, i) => ({
-			book: book.slug,
-			chapter: String(i + 1)
-		}))
+	Object.entries(manifest as Record<string, number[]>).flatMap(([slug, chapters]) =>
+		chapters.map((ch) => ({ book: slug, chapter: String(ch) }))
 	);
 
 export const load: PageLoad = async ({ params, fetch }) => {

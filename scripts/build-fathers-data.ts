@@ -311,6 +311,16 @@ for (const [slugChapter, pericopeMap] of bySlugChapter) {
 	chaptersWritten++;
 }
 
+// ── Write manifest (book → chapter numbers) for prerender entries ─────────
+const manifest: Record<string, number[]> = {};
+for (const key of bySlugChapter.keys()) {
+	const [slug, chStr] = key.split('/');
+	if (!manifest[slug]) manifest[slug] = [];
+	manifest[slug].push(parseInt(chStr, 10));
+}
+for (const chapters of Object.values(manifest)) chapters.sort((a, b) => a - b);
+writeFileSync(join(OUT_DIR, 'manifest.json'), JSON.stringify(manifest));
+
 console.log(`Built ${chaptersWritten} chapter files from ${totalProcessed} entries.`);
 console.log(`Skipped: ${skippedNoRef} (no ref), ${skippedNoSlug} (no slug).`);
 
