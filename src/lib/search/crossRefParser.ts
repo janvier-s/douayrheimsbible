@@ -19,11 +19,13 @@ for (const b of ALL_BOOKS) {
  */
 function refUrl(osis: string, translationPrefix?: string): string {
 	if (translationPrefix) {
-		const parts = osis.split('.');
-		// chapter-only: "Gen.12" → 2 parts
-		if (parts.length === 2) {
-			const slug = OSIS_TO_SLUG[parts[0]];
-			if (slug) return `/${translationPrefix}/${slug}/${parts[1]}?mode=read`;
+		// Handle range refs: "Gen.1.1-Gen.1.3" → take first part
+		const baseOsis = osis.includes('-') ? osis.split('-')[0] : osis;
+		const parts = baseOsis.split('.');
+		const slug = OSIS_TO_SLUG[parts[0]];
+		if (slug && parts.length >= 2) {
+			// Both chapter-only and verse-level refs link to the reader page
+			return `/${translationPrefix}/${slug}/${parts[1]}?mode=read`;
 		}
 	}
 	return `/search?q=${encodeURIComponent(osis)}&mode=verse`;
@@ -37,6 +39,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	// Pentateuch (full names + abbreviations)
 	Genesis: 'Gen',
 	Gen: 'Gen',
+	Gn: 'Gen',
 	Ex: 'Exod',
 	Exo: 'Exod',
 	Exod: 'Exod',
@@ -50,6 +53,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Numer: 'Num',
 	Numb: 'Num',
 	Numbers: 'Num',
+	Dt: 'Deut',
 	Deu: 'Deut',
 	Deut: 'Deut',
 	Deuter: 'Deut',
@@ -74,6 +78,8 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Kings': '2Sam',
 	'3Kings': '1Kgs',
 	'4Kings': '2Kgs',
+	'1Kgs': '1Kgs',
+	'2Kgs': '2Kgs',
 	'1Par': '1Chr',
 	'2Par': '2Chr',
 	'1Para': '1Chr',
@@ -91,6 +97,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Esd: 'Ezra',
 	Esdr: 'Ezra',
 	Esdras: 'Ezra',
+	Tb: 'Tob',
 	Tob: 'Tob',
 	Tobie: 'Tob',
 	Tobiae: 'Tob',
@@ -128,6 +135,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Psal: 'Ps',
 	Psalm: 'Ps',
 	Pro: 'Prov',
+	Prv: 'Prov',
 	Prov: 'Prov',
 	Prover: 'Prov',
 	Proverb: 'Prov',
@@ -146,6 +154,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Wisd: 'Wis',
 	Wisdom: 'Wis',
 	// Major prophets
+	Is: 'Isa',
 	Es: 'Isa',
 	Esa: 'Isa',
 	Isa: 'Isa',
@@ -174,6 +183,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Ezech: 'Ezek',
 	Ezechiel: 'Ezek',
 	Ezekiel: 'Ezek',
+	Dn: 'Dan',
 	Dan: 'Dan',
 	Daniel: 'Dan',
 	// Minor prophets
@@ -223,12 +233,15 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Mar: 'Mark',
 	Marc: 'Mark',
 	Mark: 'Mark',
+	Mk: 'Mark',
 	Mr: 'Mark',
 	Luke: 'Luke',
+	Lk: 'Luke',
 	Lu: 'Luke',
 	Luc: 'Luke',
 	Luk: 'Luke',
 	John: 'John',
+	Jn: 'John',
 	Io: 'John',
 	Ioa: 'John',
 	Ioan: 'John',
@@ -268,6 +281,10 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	'2Thessalonians': '2Thess',
 	'1Tim': '1Tim',
 	'2Tim': '2Tim',
+	'1Tm': '1Tim',
+	'2Tm': '2Tim',
+	'1Ti': '1Tim',
+	'2Ti': '2Tim',
 	'1Timo': '1Tim',
 	'2Timo': '2Tim',
 	'1Timothy': '1Tim',
@@ -286,6 +303,8 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Jacob: 'Jas',
 	Jas: 'Jas',
 	James: 'Jas',
+	'1Pt': '1Pet',
+	'2Pt': '2Pet',
 	'1Pet': '1Pet',
 	'2Pet': '2Pet',
 	'1Petr': '1Pet',
@@ -312,6 +331,7 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 	Apo: 'Rev',
 	Apoc: 'Rev',
 	Apocalypse: 'Rev',
+	Rv: 'Rev',
 	Re: 'Rev'
 };
 
@@ -370,10 +390,19 @@ function matchBookAt(text: string, pos: number): BookMatch | null {
 			const rest = abbrev.slice(1);
 			const slice = text.slice(cursor);
 			if (!slice.startsWith(rest)) continue;
-			// Must be followed by "." or end
+			// Must be followed by ".", ":", space+digit, or end
 			const afterIdx = cursor + rest.length;
-			if (afterIdx < text.length && text[afterIdx] !== '.') continue;
-			const endIdx = afterIdx < text.length ? afterIdx + 1 : afterIdx;
+			if (afterIdx < text.length && text[afterIdx] !== '.' && text[afterIdx] !== ':') {
+				// Allow space+digit (e.g. "1 Cor 13:4")
+				if (text[afterIdx] === ' ' && afterIdx + 1 < text.length && /\d/.test(text[afterIdx + 1])) {
+					return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: afterIdx };
+				}
+				continue;
+			}
+			const endIdx =
+				afterIdx < text.length && (text[afterIdx] === '.' || text[afterIdx] === ':')
+					? afterIdx + 1
+					: afterIdx;
 			return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: endIdx };
 		}
 
@@ -446,7 +475,7 @@ function parseChapterVerse(
 			// Optional letter suffix + range (e.g., "14a-15")
 			if (cursor < text.length && /[a-c]/.test(text[cursor])) cursor++;
 			let endVerse0: number | undefined;
-			const rangeMatch0 = text.slice(cursor).match(/^-(\d+)[a-c]?/);
+			const rangeMatch0 = text.slice(cursor).match(/^[-\u2013](\d+)[a-c]?/);
 			if (rangeMatch0) {
 				endVerse0 = parseInt(rangeMatch0[1], 10);
 				cursor += rangeMatch0[0].length;
@@ -518,15 +547,15 @@ function parseChapterVerse(
 		if (cursor < text.length && /[a-c]/.test(text[cursor])) cursor++;
 
 		// Cross-chapter range: "---N, M" or "--N, M" (e.g., "9, 51---18, 14")
-		const crossChapterMatch = text.slice(cursor).match(/^-{2,3}\s*(\d+),\s*(\d+)/);
+		const crossChapterMatch = text.slice(cursor).match(/^[-\u2013]{2,3}\s*(\d+),\s*(\d+)/);
 		if (crossChapterMatch) {
 			endChapter = parseInt(crossChapterMatch[1], 10);
 			endVerse = parseInt(crossChapterMatch[2], 10);
 			cursor += crossChapterMatch[0].length;
 			if (cursor < text.length && text[cursor] === '.') cursor++;
 		} else {
-			// Same-chapter verse range: "-N" (e.g., "47-50")
-			const rangeMatch = text.slice(cursor).match(/^-(\d+)[a-c]?/);
+			// Same-chapter verse range: "-N" or "–N" (e.g., "47-50", "26–27")
+			const rangeMatch = text.slice(cursor).match(/^[-\u2013](\d+)[a-c]?/);
 			if (rangeMatch) {
 				endVerse = parseInt(rangeMatch[1], 10);
 				cursor += rangeMatch[0].length;
@@ -562,10 +591,19 @@ function isFollowedByChapterIndicator(text: string, pos: number): boolean {
  * Check if a match at `pos` is preceded by patristic context words
  * like "de ", "ad ", "super. ", "S. ", "cont. "
  */
-function isPrecededByPatristicContext(text: string, pos: number): boolean {
+function isPrecededByPatristicContext(text: string, pos: number, bookEnd?: number): boolean {
 	const before = text.slice(0, pos);
-	// Check for common patristic lead-ins right before the match
-	if (/(?:de|ad|in|super\.|cont\.|l\.\s*\d+\.\s*de)\s*$/i.test(before)) return true;
+	// Strong patristic lead-ins (always reject as Bible ref)
+	if (/(?:de|ad|super\.|cont\.|l\.\s*\d+\.\s*de)\s*$/i.test(before)) return true;
+	// "in" is common in English ("found in Rom 8:28") so only treat it as
+	// patristic when the reference uses period-separated notation (Latin style,
+	// e.g. "in Gen. 3.") rather than colon notation ("in Gen 3:15").
+	if (/(?:^|\s)in\s*$/i.test(before) && bookEnd !== undefined) {
+		const afterBook = text.slice(bookEnd);
+		// If what follows the book uses colon notation, it's a modern Bible ref
+		if (/^\s*\d+\s*:/.test(afterBook)) return false;
+		return true;
+	}
 	return false;
 }
 
@@ -583,7 +621,7 @@ export function tokenizeCrossRef(text: string): CrossRefToken[] {
 		if (bookMatch) {
 			// Disambiguation checks
 			const followedByChapter = isFollowedByChapterIndicator(text, bookMatch.end);
-			const patristicContext = isPrecededByPatristicContext(text, pos);
+			const patristicContext = isPrecededByPatristicContext(text, pos, bookMatch.end);
 
 			if (!patristicContext) {
 				if (followedByChapter) {

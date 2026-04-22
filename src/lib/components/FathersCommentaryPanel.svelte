@@ -1,10 +1,13 @@
 <script lang="ts">
-	import { createEventDispatcher, tick } from 'svelte';
+	import { createEventDispatcher, onDestroy, tick } from 'svelte';
 	import type { FathersChapterFile, FathersEntry } from '$lib/data/fathers-types';
+	import type { OsisRange } from '$lib/search/reference';
+	import { parseOsis } from '$lib/search/reference';
 	import { getAuthorMeta } from '$lib/data/fathers-authors';
 	import { displayVerseRef } from '$lib/utils/fathers-display';
 	import { prefs } from '$lib/stores/prefs';
 	import FathersEntryCard from './FathersEntryCard.svelte';
+	import VerseTooltip from './VerseTooltip.svelte';
 
 	export let chapterData: FathersChapterFile;
 	export let selectedVerse: number | null;
@@ -48,6 +51,45 @@
 		) as HTMLElement | null;
 		scrollToEl(el);
 	}
+
+	// ── Verse-ref tooltip (hover popover for linkified refs) ─────────
+	let verseRefs: OsisRange[] = [];
+	let verseRefAnchor: HTMLElement | null = null;
+	let verseRefVisible = false;
+	let verseRefTimer: ReturnType<typeof setTimeout> | null = null;
+
+	function handleRefOver(e: Event) {
+		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
+		if (!vref) return;
+		if (verseRefTimer) clearTimeout(verseRefTimer);
+		const osis = vref.dataset.osis ?? '';
+		const refs = osis.split(',').flatMap((s) => {
+			const r = parseOsis(s.trim());
+			return r ? [r] : [];
+		});
+		if (refs.length > 0) {
+			verseRefs = refs;
+			verseRefAnchor = vref;
+			verseRefVisible = true;
+		}
+	}
+
+	function handleRefOut(e: Event) {
+		const me = e as MouseEvent;
+		const related = me.relatedTarget as HTMLElement | null;
+		if (related?.closest?.('.tooltip')) return;
+		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
+		if (vref) {
+			verseRefTimer = setTimeout(() => {
+				verseRefVisible = false;
+				verseRefAnchor = null;
+			}, 300);
+		}
+	}
+
+	onDestroy(() => {
+		if (verseRefTimer) clearTimeout(verseRefTimer);
+	});
 
 	// ── Filter state ──────────────────────────────────────────────────
 	let filtersOpen = false;
@@ -379,7 +421,13 @@
 	{/if}
 
 	<!-- ── Pericope groups ────────────────────────────────────── -->
-	<div class="flex-1 overflow-y-auto styled-scroll" bind:this={scrollContainer}>
+	<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
+	<div
+		class="flex-1 overflow-y-auto styled-scroll"
+		bind:this={scrollContainer}
+		on:mouseover={handleRefOver}
+		on:mouseout={handleRefOut}
+	>
 		{#if chapterData.pericopes.length === 0}
 			<div class="p-lg text-center text-subtle text-[14px]">
 				<p>No patristic commentary available for this chapter.</p>
@@ -443,6 +491,23 @@
 			{/each}
 		{/if}
 	</div>
+
+	<!-- Verse-ref hover tooltip -->
+	<VerseTooltip
+		translationId="odr"
+		osisRanges={verseRefs}
+		anchorEl={verseRefAnchor}
+		visible={verseRefVisible}
+		on:mouseenter={() => {
+			if (verseRefTimer) clearTimeout(verseRefTimer);
+		}}
+		on:mouseleave={() => {
+			verseRefTimer = setTimeout(() => {
+				verseRefVisible = false;
+				verseRefAnchor = null;
+			}, 120);
+		}}
+	/>
 </div>
 
 <style>

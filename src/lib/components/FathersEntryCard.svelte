@@ -20,7 +20,7 @@
 			const idx = parseInt(n);
 			return `<sup class="fathers-fn" data-fn="${idx}">[${idx + 1}]</sup>`;
 		});
-		return linkifyBareRefs(html);
+		return linkifyBareRefs(html, 'odr');
 	}
 
 	$: bodyParagraphs = entry.body.split('\n\n').filter((p) => p.trim().length > 0);
@@ -86,9 +86,9 @@
 	{#if entry.footnotes.length > 0 && isOpen}
 		<div class="px-sm mt-[6px] border-t border-border/30 pt-[6px]">
 			{#each entry.footnotes as fn, i}
-				<p class="text-[11px] text-subtle leading-snug">
+				<p class="text-[11px] text-subtle leading-snug fathers-body">
 					<span class="font-semibold">[{i + 1}]</span>
-					{fn.text}
+					{@html linkifyBareRefs(fn.text, 'odr')}
 				</p>
 			{/each}
 		</div>
