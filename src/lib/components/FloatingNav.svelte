@@ -10,8 +10,9 @@
 	export let onClose: () => void;
 	export let compareMode: boolean = false;
 	export let translationId: string = 'odr';
+	export let routeBase: string = '';
 
-	$: base = compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`;
+	$: base = routeBase || (compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`);
 
 	type Testament = 'OT' | 'NT';
 	let activeTestament: Testament = ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT';

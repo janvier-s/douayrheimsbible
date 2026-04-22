@@ -86,7 +86,8 @@
 	$: modeItems = [
 		{ key: 'reading', label: 'Read' },
 		...(hasStudyMode ? [{ key: 'study', label: 'Study' }] : []),
-		{ key: 'compare', label: 'Compare' }
+		{ key: 'compare', label: 'Compare' },
+		{ key: 'fathers', label: 'Fathers' }
 	];
 	$: activeModeIdx = modeItems.findIndex((m) => m.key === $prefs.readingMode);
 	// Show pill on chapter pages and home page; hide on other non-chapter pages (search, etc.)
@@ -101,12 +102,21 @@
 			const pos = get(readingPosition);
 			const slug = bookSlug || pos?.bookSlug || 'genesis';
 			const ch = parseInt(chapterNum, 10) || pos?.chapter || 1;
-			if (key === 'compare') {
+			if (key === 'fathers') {
+				goto(`/fathers/${slug}/${ch}`);
+			} else if (key === 'compare') {
 				goto(`/compare/${slug}/${ch}`);
 			} else {
 				prefs.update((p) => ({ ...p, readingMode: key as 'reading' | 'study' }));
 				goto(`${routeBase}/${slug}/${ch}`);
 			}
+			return;
+		}
+		if (key === 'fathers') {
+			pendingIdx = index;
+			const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
+			await new Promise<void>((r) => setTimeout(r, delay));
+			goto(`/fathers/${bookSlug}/${chapterNum}`);
 			return;
 		}
 		if (key === 'compare') {

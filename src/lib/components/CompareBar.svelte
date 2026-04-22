@@ -26,7 +26,8 @@
 	$: modeItems = [
 		{ key: 'reading', label: 'Read' },
 		{ key: 'study', label: 'Study' },
-		{ key: 'compare', label: 'Compare' }
+		{ key: 'compare', label: 'Compare' },
+		{ key: 'fathers', label: 'Fathers' }
 	];
 	$: activeModeIdx = modeItems.length - 1; // Compare is always active here
 
@@ -37,6 +38,10 @@
 		pendingIdx = index;
 		const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 210;
 		await new Promise<void>((r) => setTimeout(r, delay));
+		if (key === 'fathers') {
+			goto(`/fathers/${bookMeta.slug}/${chapterNum}`);
+			return;
+		}
 		prefs.update((p) => ({ ...p, readingMode: key === 'study' ? 'study' : 'reading' }));
 		goto(readerHref);
 	}
