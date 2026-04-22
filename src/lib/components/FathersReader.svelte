@@ -9,10 +9,17 @@
 	export let fathersData: FathersChapterFile | null;
 
 	let selectedVerse: number | null = null;
+	let selectedPericope: string | null = null;
 
 	function handleVerseSelect(e: CustomEvent<number>) {
 		const verse = e.detail;
 		selectedVerse = selectedVerse === verse ? null : verse;
+		selectedPericope = null;
+	}
+
+	function handlePericopeSelect(e: CustomEvent<string>) {
+		selectedPericope = e.detail;
+		selectedVerse = null;
 	}
 
 	let filteredVerseEntryCounts: Record<number, number> | null = null;
@@ -29,6 +36,7 @@
 	<div class="border-r border-border hidden md:flex md:flex-col" style="width: 50%;">
 		<FathersVerseList
 			{chapter}
+			pericopes={data.pericopes}
 			bookSlug={bookMeta.slug}
 			chapterNum={chapter.chapter}
 			isOT={bookMeta.testament === 'OT'}
@@ -36,6 +44,7 @@
 			{filteredVerseEntryCounts}
 			{selectedVerse}
 			on:selectVerse={handleVerseSelect}
+			on:selectPericope={handlePericopeSelect}
 		/>
 	</div>
 
@@ -44,6 +53,7 @@
 		<FathersCommentaryPanel
 			chapterData={data}
 			{selectedVerse}
+			{selectedPericope}
 			on:filteredCounts={handleFilteredCounts}
 		/>
 	</div>

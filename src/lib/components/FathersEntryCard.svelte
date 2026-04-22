@@ -30,6 +30,7 @@
 	class="rounded-sm border transition-all duration-fast
 		{highlighted ? 'border-accent/40 bg-accent/5' : 'border-border bg-panel'}
 		{dimmed ? 'opacity-40' : 'opacity-100'}"
+	data-verse={entry.subVerseNum}
 >
 	<!-- Header: title + author + badges -->
 	<div class="px-sm pt-sm pb-[6px]">

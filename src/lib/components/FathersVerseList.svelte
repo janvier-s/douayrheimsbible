@@ -3,12 +3,15 @@
 	import { slide } from 'svelte/transition';
 	import { browser } from '$app/environment';
 	import type { Chapter } from '$lib/data/types';
+	import type { FathersPericope } from '$lib/data/fathers-types';
 	import { prefs } from '$lib/stores/prefs';
 	import { TRANSLATIONS } from '$lib/stores/compare';
 	import { loadTranslationBook } from '$lib/data/loader';
+	import { displayVerseRef } from '$lib/utils/fathers-display';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 
 	export let chapter: Chapter;
+	export let pericopes: FathersPericope[] = [];
 	export let verseEntryCounts: Record<number, number>;
 	export let filteredVerseEntryCounts: Record<number, number> | null;
 	export let selectedVerse: number | null;
@@ -16,7 +19,13 @@
 	export let chapterNum: number;
 	export let isOT: boolean = false;
 
-	const dispatch = createEventDispatcher<{ selectVerse: number }>();
+	const dispatch = createEventDispatcher<{
+		selectVerse: number;
+		selectPericope: string;
+	}>();
+
+	// Map: startVerse → pericope (for injecting headers before the verse)
+	$: pericopeAtVerse = new Map(pericopes.map((p) => [p.startVerse, p]));
 
 	function handleVerseClick(verseNum: number) {
 		dispatch('selectVerse', verseNum);
@@ -152,6 +161,7 @@
 	>
 		<div class="space-y-[2px]">
 			{#each chapter.verses as verse}
+				{@const pericope = pericopeAtVerse.get(verse.verse)}
 				{@const totalCount = verseEntryCounts[verse.verse] ?? 0}
 				{@const filteredCount = filteredVerseEntryCounts
 					? (filteredVerseEntryCounts[verse.verse] ?? 0)
@@ -159,6 +169,36 @@
 				{@const isSelected = selectedVerse === verse.verse}
 				{@const hasBadge = totalCount > 0}
 				{@const verseText = altVerses?.[verse.verse] ?? verse.text}
+
+				<!-- Pericope header injected before the first verse in its range -->
+				{#if pericope}
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
+					<div
+						class="pericope-header flex items-center gap-[8px] px-[6px] py-[6px] mt-[8px] mb-[2px] rounded-sm cursor-pointer transition-colors duration-fast border-l-2 border-accent/40 hover:bg-accent/10 hover:border-accent"
+						on:click={() => dispatch('selectPericope', pericope.verseRef)}
+						on:keydown={(e) => {
+							if (e.key === 'Enter' || e.key === ' ') {
+								e.preventDefault();
+								dispatch('selectPericope', pericope.verseRef);
+							}
+						}}
+					>
+						<div class="flex-1 min-w-0">
+							<span class="text-[11px] font-semibold uppercase tracking-[0.1em] text-accent">
+								{displayVerseRef(pericope.verseRef, $prefs.modernBookNames)}
+							</span>
+							{#if pericope.pericopeTitle}
+								<p class="text-[11px] text-foreground/70 leading-snug truncate">
+									{pericope.pericopeTitle}
+								</p>
+							{/if}
+						</div>
+						<span class="shrink-0 text-[10px] font-medium text-subtle whitespace-nowrap">
+							{pericope.entries.length}
+							{pericope.entries.length === 1 ? 'entry' : 'entries'}
+						</span>
+					</div>
+				{/if}
 
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div
@@ -191,7 +231,7 @@
 									: 'text-subtle group-hover:text-accent'}"
 						>
 							{filteredCount}
-							{filteredCount === 1 ? 'entry' : 'entries'}
+							{filteredCount === 1 ? 'note' : 'notes'}
 						</span>
 					{/if}
 				</div>

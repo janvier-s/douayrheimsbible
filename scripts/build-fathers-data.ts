@@ -264,6 +264,35 @@ for (const [chapterKey, indices] of Object.entries(verseIndex)) {
 	}
 }
 
+// ── Merge single-verse pericopes into parent ranges ───────────────
+// If a pericope covers a single verse (startVerse === endVerse) and a broader
+// pericope's range contains that verse, merge its entries as subverse entries.
+let mergedCount = 0;
+for (const [, pericopeMap] of bySlugChapter) {
+	const refs = [...pericopeMap.entries()];
+	const singleVerse = refs.filter(([, p]) => p.startVerse === p.endVerse);
+	const multiVerse = refs.filter(([, p]) => p.startVerse !== p.endVerse);
+
+	for (const [svRef, svData] of singleVerse) {
+		const verse = svData.startVerse;
+		// Find a parent pericope whose range contains this verse
+		const parent = multiVerse.find(([, p]) => verse >= p.startVerse && verse <= p.endVerse);
+		if (!parent) continue;
+
+		// Merge entries into parent with subVerseNum set
+		for (const entry of svData.entries) {
+			parent[1].entries.push({
+				...entry,
+				subVerse: entry.subVerse ?? `${verse}`,
+				subVerseNum: verse
+			});
+		}
+		pericopeMap.delete(svRef);
+		mergedCount += svData.entries.length;
+	}
+}
+console.log(`Merged ${mergedCount} single-verse entries into parent pericopes.`);
+
 // ── Write per-chapter JSON files ────────────────────────────────
 
 let chaptersWritten = 0;

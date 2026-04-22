@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, tick } from 'svelte';
 	import type { FathersChapterFile, FathersEntry } from '$lib/data/fathers-types';
 	import { getAuthorMeta } from '$lib/data/fathers-authors';
 	import { displayVerseRef } from '$lib/utils/fathers-display';
@@ -8,8 +8,46 @@
 
 	export let chapterData: FathersChapterFile;
 	export let selectedVerse: number | null;
+	export let selectedPericope: string | null = null;
 
 	const dispatch = createEventDispatcher<{ filteredCounts: Record<number, number> | null }>();
+
+	// ── Scroll on verse or pericope select ────────────────────────
+	let scrollContainer: HTMLElement;
+
+	$: if (selectedVerse !== null) {
+		scrollToVerse(selectedVerse);
+	}
+
+	$: if (selectedPericope !== null) {
+		scrollToPericopeRef(selectedPericope);
+	}
+
+	async function scrollToEl(el: HTMLElement | null) {
+		if (!el || !scrollContainer) return;
+		const containerTop = scrollContainer.getBoundingClientRect().top;
+		const elTop = el.getBoundingClientRect().top;
+		const offset = elTop - containerTop + scrollContainer.scrollTop;
+		scrollContainer.scrollTo({ top: offset, behavior: 'smooth' });
+	}
+
+	async function scrollToVerse(verse: number) {
+		await tick();
+		if (!scrollContainer) return;
+		// Find first entry tagged with this exact verse
+		const el = scrollContainer.querySelector(`[data-verse="${verse}"]`) as HTMLElement | null;
+		scrollToEl(el);
+	}
+
+	async function scrollToPericopeRef(verseRef: string) {
+		await tick();
+		if (!scrollContainer) return;
+		// Find the pericope section by its verseRef data attribute
+		const el = scrollContainer.querySelector(
+			`[data-pericope-ref="${CSS.escape(verseRef)}"]`
+		) as HTMLElement | null;
+		scrollToEl(el);
+	}
 
 	// ── Filter state ──────────────────────────────────────────────────
 	let filtersOpen = false;
@@ -341,7 +379,7 @@
 	{/if}
 
 	<!-- ── Pericope groups ────────────────────────────────────── -->
-	<div class="flex-1 overflow-y-auto styled-scroll">
+	<div class="flex-1 overflow-y-auto styled-scroll" bind:this={scrollContainer}>
 		{#if chapterData.pericopes.length === 0}
 			<div class="p-lg text-center text-subtle text-[14px]">
 				<p>No patristic commentary available for this chapter.</p>
@@ -353,7 +391,10 @@
 					? pericopeEntries.filter(entryMatches).length
 					: pericopeEntries.length}
 
-				<div class="border-b border-border/50 last:border-b-0">
+				<div
+					class="border-b border-border/50 last:border-b-0"
+					data-pericope-ref={pericope.verseRef}
+				>
 					<!-- Pericope header (no backdrop-blur for Firefox perf) -->
 					<div class="sticky top-0 z-10 bg-panel border-b border-border/30 px-sm py-[8px]">
 						<div class="flex items-center justify-between">
