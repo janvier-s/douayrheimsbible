@@ -12,6 +12,14 @@
 	function toggle() {
 		if (!forceOpen) expanded = !expanded;
 	}
+
+	/** Replace {fn:N} with superscript footnote markers (1-indexed) */
+	function renderBody(text: string): string {
+		return text.replace(/\{fn:(\d+)\}/g, (_, n) => {
+			const idx = parseInt(n);
+			return `<sup class="fathers-fn" data-fn="${idx}">[${idx + 1}]</sup>`;
+		});
+	}
 </script>
 
 <article
@@ -35,22 +43,15 @@
 			{#if entry.date}
 				<span class="text-[11px] text-subtle">({entry.date})</span>
 			{/if}
-			<span
-				class="text-[9px] px-[4px] py-[1px] rounded-full font-semibold uppercase tracking-wider
-				{entry.source === 'fkb'
-					? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
-					: 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400'}"
-			>
-				{entry.source === 'fkb' ? 'FKB' : 'ACCS'}
-			</span>
 			{#if entry.subVerse}
 				<span
-					class="text-[10px] px-[5px] py-[1px] rounded-full bg-border text-subtle font-medium"
+					class="text-[10px] px-[5px] py-[1px] rounded-full bg-border text-subtle font-medium ml-auto"
 				>
-					v. {entry.subVerseNum}
+					verse {entry.subVerseNum}
 				</span>
 			{/if}
 		</div>
+		<div class="w-[24px] h-[2px] bg-accent/50 mt-[5px] rounded-full"></div>
 		{#if entry.fkbChapter}
 			<p class="text-[10px] text-subtle italic mt-[2px]">{entry.fkbChapter}</p>
 		{/if}
@@ -62,7 +63,7 @@
 			class="text-[14px] leading-relaxed text-foreground overflow-hidden transition-all duration-200"
 			style="max-height: {isOpen ? '9999px' : '6em'};"
 		>
-			<p>{entry.body}</p>
+			<p>{@html renderBody(entry.body)}</p>
 		</div>
 		{#if !forceOpen}
 			<button
@@ -93,3 +94,15 @@
 		</div>
 	{/if}
 </article>
+
+<style>
+	:global(.fathers-fn) {
+		font-size: 9px;
+		font-family: var(--font-ui);
+		font-weight: 600;
+		color: var(--color-accent-text);
+		cursor: default;
+		vertical-align: super;
+		line-height: 1;
+	}
+</style>

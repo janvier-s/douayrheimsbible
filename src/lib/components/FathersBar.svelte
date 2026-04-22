@@ -5,6 +5,7 @@
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
 	import FloatingNav from './FloatingNav.svelte';
+	import PrefsPanel from './PrefsPanel.svelte';
 	import BookNavLink from './BookNavLink.svelte';
 	import ChapterNavLink from './ChapterNavLink.svelte';
 	import { ALL_BOOKS, getPrevNavBook, getNextNavBook } from '$lib/data/books';
@@ -54,6 +55,12 @@
 		chapterNum < totalChapters ? `/fathers/${bookMeta.slug}/${chapterNum + 1}` : null;
 
 	let navOpen = false;
+	let prefsOpen = false;
+
+	function closeAll() {
+		navOpen = false;
+		prefsOpen = false;
+	}
 
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
@@ -64,7 +71,7 @@
 
 <svelte:window
 	on:keydown={(e) => {
-		if (e.key === 'Escape') navOpen = false;
+		if (e.key === 'Escape') closeAll();
 	}}
 />
 
@@ -110,7 +117,10 @@
 			<button
 				class="flex items-center gap-[5px] px-[12px] md:px-[17px] py-[8px] md:py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
-				on:click={() => (navOpen = !navOpen)}
+				on:click={() => {
+					navOpen = !navOpen;
+					prefsOpen = false;
+				}}
 			>
 				<span class="text-[14px] md:text-[16px] font-medium">{navLabel}</span>
 				<span class="text-[10px] md:text-[11px] opacity-80 leading-none" aria-hidden="true"
@@ -139,11 +149,54 @@
 			</div>
 		</div>
 
-		<!-- Right: "Church Fathers" label badge -->
-		<div class="ml-auto shrink-0 hidden md:block">
-			<span class="text-[11px] uppercase tracking-[0.15em] text-subtle font-medium"
-				>Church Fathers</span
+		<!-- Right: reading options -->
+		<div class="shrink-0 flex items-center gap-[8px] ml-auto">
+			<button
+				class="hidden sm:flex px-[8px] h-[28px] items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
+					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
+				aria-label="Reading options"
+				on:click={() => {
+					prefsOpen = !prefsOpen;
+					navOpen = false;
+				}}
 			>
+				Reading options
+			</button>
+			<button
+				class="sm:hidden shrink-0 flex items-center justify-center w-[30px] h-[30px]
+					rounded-[3px] transition-colors duration-fast
+					{prefsOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
+				aria-label="Reading options"
+				on:click={() => {
+					prefsOpen = !prefsOpen;
+					navOpen = false;
+				}}
+			>
+				<svg
+					width="16"
+					height="14"
+					viewBox="0 0 16 14"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					aria-hidden="true"
+				>
+					<line x1="1" y1="2" x2="15" y2="2" /><line x1="1" y1="7" x2="15" y2="7" /><line
+						x1="1"
+						y1="12"
+						x2="15"
+						y2="12"
+					/>
+					<circle cx="5" cy="2" r="2" fill="currentColor" stroke="none" /><circle
+						cx="11"
+						cy="7"
+						r="2"
+						fill="currentColor"
+						stroke="none"
+					/><circle cx="7" cy="12" r="2" fill="currentColor" stroke="none" />
+				</svg>
+			</button>
 		</div>
 	</div>
 </header>
@@ -157,9 +210,13 @@
 	/>
 {/if}
 
-{#if navOpen}
+{#if prefsOpen}
+	<PrefsPanel />
+{/if}
+
+{#if navOpen || prefsOpen}
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="fixed inset-0 z-[57]" role="presentation" on:click={() => (navOpen = false)}></div>
+	<div class="fixed inset-0 z-[57]" role="presentation" on:click={closeAll}></div>
 {/if}
 
 <!-- Mobile bottom tab bar -->

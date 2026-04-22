@@ -26,9 +26,12 @@
 
 <div class="flex items-stretch" style="height: calc(100vh - 100px);">
 	<!-- Left pane: verse reader (hidden on mobile) -->
-	<div class="shrink-0 border-r border-border overflow-hidden hidden md:block" style="width: 320px;">
+	<div class="border-r border-border hidden md:flex md:flex-col" style="width: 50%;">
 		<FathersVerseList
 			{chapter}
+			bookSlug={bookMeta.slug}
+			chapterNum={chapter.chapter}
+			isOT={bookMeta.testament === 'OT'}
 			verseEntryCounts={data.verseEntryCounts}
 			{filteredVerseEntryCounts}
 			{selectedVerse}
