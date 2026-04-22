@@ -1161,10 +1161,6 @@
 
 	/* ── Responsive ───────────────────────────────────────────── */
 	@media (max-width: 640px) {
-		.ref-nav {
-			padding: 16px 20px;
-		}
-
 		.ref-page {
 			padding: 32px 16px 64px;
 		}

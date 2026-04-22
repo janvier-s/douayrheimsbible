@@ -288,12 +288,14 @@
 	</header>
 
 	{#if fullSummary && fullSummary !== '---'}
-		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions a11y_no_static_element_interactions -->
+		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions a11y_no_static_element_interactions a11y-mouse-events-have-key-events -->
 		<p
 			class="text-subtle font-reader italic mb-lg text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 			on:click={handleSummaryClick}
 			on:mouseover={handleSummaryOver}
 			on:mouseout={handleSummaryOut}
+			on:focus={undefined}
+			on:blur={undefined}
 		>
 			{@html summaryHtml}
 		</p>

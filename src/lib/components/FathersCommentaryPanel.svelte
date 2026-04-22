@@ -151,7 +151,7 @@
 		if (!available && !active) {
 			return `px-[8px] py-[3px] rounded-[3px] text-[11px] font-medium border transition-colors duration-fast border-border text-border cursor-not-allowed opacity-40`;
 		}
-		return `px-[8px] py-[3px] rounded-[3px] text-[11px] font-medium border transition-colors duration-fast
+		return `px-[8px] py-[3px] rounded-[3px] text-[11px] font-medium border transition-colors duration-fast cursor-pointer
 			${active ? 'bg-interactive text-white border-interactive' : 'border-border text-subtle hover:text-foreground hover:border-foreground/30'}`;
 	}
 </script>
@@ -206,15 +206,22 @@
 				>
 				{#each CENTURIES as c}
 					{@const avail = availableCenturies.has(c)}
+					{@const label = c === 1 ? '1st' : c === 2 ? '2nd' : c === 3 ? '3rd' : `${c}th`}
 					<button
 						class={chipClass(filterCentury === c, avail)}
+						title={avail
+							? `Filter to ${label} century`
+							: `No ${label} century entries in this chapter`}
 						on:click={() => avail && (filterCentury = c)}
 					>
-						{c === 1 ? '1st' : c === 2 ? '2nd' : c === 3 ? '3rd' : `${c}th`}
+						{label}
 					</button>
 				{/each}
 				<button
 					class={chipClass(filterCentury === 'other', hasOtherCentury)}
+					title={hasOtherCentury
+						? 'Filter to 9th century and later'
+						: 'No 9th+ century entries in this chapter'}
 					on:click={() => hasOtherCentury && (filterCentury = 'other')}>9th+</button
 				>
 			</div>
@@ -229,6 +236,7 @@
 					{@const avail = availableEras.has(key)}
 					<button
 						class={chipClass(filterEra === key, avail)}
+						title={avail ? `Filter to ${label} era` : `No ${label} entries in this chapter`}
 						on:click={() => avail && (filterEra = key)}>{label}</button
 					>
 				{/each}
@@ -245,6 +253,7 @@
 					{@const avail = availableTraditions.has(key)}
 					<button
 						class={chipClass(filterTradition === key, avail)}
+						title={avail ? `Filter to ${label} tradition` : `No ${label} entries in this chapter`}
 						on:click={() => avail && (filterTradition = key)}>{label}</button
 					>
 				{/each}

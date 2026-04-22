@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { FathersEntry } from '$lib/data/fathers-types';
+	import { linkifyBareRefs } from '$lib/search/crossRefParser';
 
 	export let entry: FathersEntry;
 	export let highlighted: boolean = false;
@@ -13,13 +14,16 @@
 		if (!forceOpen) expanded = !expanded;
 	}
 
-	/** Replace {fn:N} with superscript footnote markers (1-indexed) */
+	/** Replace {fn:N} with superscript footnote markers, then linkify verse refs */
 	function renderBody(text: string): string {
-		return text.replace(/\{fn:(\d+)\}/g, (_, n) => {
+		let html = text.replace(/\{fn:(\d+)\}/g, (_, n) => {
 			const idx = parseInt(n);
 			return `<sup class="fathers-fn" data-fn="${idx}">[${idx + 1}]</sup>`;
 		});
+		return linkifyBareRefs(html);
 	}
+
+	$: bodyParagraphs = entry.body.split('\n\n').filter((p) => p.trim().length > 0);
 </script>
 
 <article
@@ -60,10 +64,12 @@
 	<!-- Body: collapsible -->
 	<div class="px-sm">
 		<div
-			class="text-[14px] leading-relaxed text-foreground overflow-hidden transition-all duration-200"
+			class="fathers-body text-[14px] leading-relaxed text-foreground overflow-hidden transition-all duration-200"
 			style="max-height: {isOpen ? '9999px' : '6em'};"
 		>
-			<p>{@html renderBody(entry.body)}</p>
+			{#each bodyParagraphs as para}
+				<p>{@html renderBody(para)}</p>
+			{/each}
 		</div>
 		{#if !forceOpen}
 			<button
@@ -96,6 +102,22 @@
 </article>
 
 <style>
+	.fathers-body p + p {
+		margin-top: 10px;
+	}
+
+	:global(.fathers-body .verse-ref) {
+		color: var(--color-accent-text);
+		text-decoration: underline;
+		text-decoration-color: var(--color-border);
+		text-underline-offset: 2px;
+		transition: color 150ms ease;
+	}
+
+	:global(.fathers-body .verse-ref:hover) {
+		color: var(--color-accent);
+	}
+
 	:global(.fathers-fn) {
 		font-size: 9px;
 		font-family: var(--font-ui);
