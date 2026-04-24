@@ -110,10 +110,11 @@
 		if (allRefs && tokens.some((t) => t.type === 'ref')) {
 			return raw.slice(0, lastIdx + 5);
 		}
-		// Also strip short trailing text that has no real words (Latin abbreviations,
-		// bare numbers like "li. 2. ch. 2. v. 20." or "83. 93." or "7")
+		// Also strip short trailing text that has no real words but contains digits
+		// (Latin abbreviations, bare numbers like "li. 2. ch. 2. v. 20." or "83. 93.")
 		const hasRealWord = /[a-zA-Z]{6,}/.test(afterNa);
-		if (!hasRealWord && afterNa.length < 40) {
+		const hasDigitOrPeriod = /[\d.]/.test(afterNa);
+		if (!hasRealWord && hasDigitOrPeriod && afterNa.length < 40) {
 			return raw.slice(0, lastIdx + 5);
 		}
 		return raw;

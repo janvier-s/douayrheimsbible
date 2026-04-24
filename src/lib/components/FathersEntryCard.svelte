@@ -84,8 +84,8 @@
 	<!-- Body: collapsible -->
 	<div class="px-sm">
 		<div
-			class="fathers-body text-[14px] leading-relaxed text-foreground overflow-hidden transition-all duration-200"
-			style="max-height: {isOpen ? '9999px' : '6em'};"
+			class="fathers-body text-[14px] leading-relaxed text-foreground overflow-hidden"
+			class:body-collapsed={!isOpen}
 		>
 			{#each bodyParagraphs as para}
 				<p>{@html renderBody(para, sourceFootnoteIdx)}</p>
@@ -132,6 +132,10 @@
 </article>
 
 <style>
+	.body-collapsed {
+		max-height: 6em;
+	}
+
 	.fathers-body p + p {
 		margin-top: 10px;
 	}

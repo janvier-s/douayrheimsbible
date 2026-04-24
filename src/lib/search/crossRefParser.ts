@@ -1255,21 +1255,19 @@ const CONF_ALL_BOOK_NAMES = [
 	...new Set([...Object.keys(CONF_SIMPLE_BOOKS), ...Object.keys(CONF_NUMBERED_BOOKS)])
 ].sort((a, b) => b.length - a.length);
 
-const CONF_REF_RE = new RegExp(
+const CONF_REF_PATTERN =
 	'(?:(\\d)\\s+)?' + // g1: numbered prefix
-		'(' +
-		CONF_ALL_BOOK_NAMES.join('|') +
-		')' + // g2: book abbreviation
-		'\\.?\\s*' + // optional period + space
-		'(\\d+)' + // g3: chapter
-		'(?:\\s*[-\u2013]\\s*(\\d+))?' + // g4: chapter range end
-		'(?:' +
-		'\\s*,\\s*' + // comma separator
-		'(\\d+)' + // g5: start verse
-		'(?:\\s*[-\u2013]\\s*(\\d+))?' + // g6: end verse
-		')?',
-	'g'
-);
+	'(' +
+	CONF_ALL_BOOK_NAMES.join('|') +
+	')' + // g2: book abbreviation
+	'\\.?\\s*' + // optional period + space
+	'(\\d+)' + // g3: chapter
+	'(?:\\s*[-\u2013]\\s*(\\d+))?' + // g4: chapter range end
+	'(?:' +
+	'\\s*,\\s*' + // comma separator
+	'(\\d+)' + // g5: start verse
+	'(?:\\s*[-\u2013]\\s*(\\d+))?' + // g6: end verse
+	')?';
 
 interface ConfRefMatch {
 	start: number;
@@ -1279,9 +1277,9 @@ interface ConfRefMatch {
 
 function findConfRefs(clean: string): ConfRefMatch[] {
 	const results: ConfRefMatch[] = [];
-	CONF_REF_RE.lastIndex = 0;
+	const re = new RegExp(CONF_REF_PATTERN, 'g');
 	let m: RegExpExecArray | null;
-	while ((m = CONF_REF_RE.exec(clean)) !== null) {
+	while ((m = re.exec(clean)) !== null) {
 		const num = m[1] ? parseInt(m[1]) : 0;
 		const osisBook = resolveConfBook(num, m[2]);
 		if (!osisBook) continue;
@@ -1332,7 +1330,7 @@ function findConfRefs(clean: string): ConfRefMatch[] {
 
 			results.push({ start: cm.index, end: cm.index + cm[0].length, osis: cOsis });
 			// Advance the main regex past the continuation so it doesn't re-parse
-			CONF_REF_RE.lastIndex = cm.index + cm[0].length;
+			re.lastIndex = cm.index + cm[0].length;
 		}
 	}
 	return results;
@@ -1883,12 +1881,16 @@ function findDrcRefs(text: string): DrcRef[] {
 	}
 
 	// Pass 2: find standard abbreviation refs
+	// Sort prose refs by start position so we can skip covered ranges in O(1)
+	refs.sort((a, b) => a.start - b.start);
+	let proseIdx = 0;
 	let pos = 0;
 	while (pos < text.length) {
-		// Skip positions already covered by prose refs
-		const coveredByProse = refs.some((r) => pos >= r.start && pos < r.end);
-		if (coveredByProse) {
-			pos++;
+		// Advance prose index past current position
+		while (proseIdx < refs.length && refs[proseIdx].end <= pos) proseIdx++;
+		// Skip if inside a prose ref range
+		if (proseIdx < refs.length && pos >= refs[proseIdx].start && pos < refs[proseIdx].end) {
+			pos = refs[proseIdx].end;
 			continue;
 		}
 

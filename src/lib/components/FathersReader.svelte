@@ -31,7 +31,7 @@
 	$: data = fathersData ?? { pericopes: [], verseEntryCounts: {}, totalEntries: 0 };
 </script>
 
-<div class="flex items-stretch" style="height: calc(100vh - 100px);">
+<div class="flex flex-1 items-stretch min-h-0">
 	<!-- Left pane: verse reader (hidden on mobile) -->
 	<div class="border-r border-border hidden md:flex md:flex-col" style="width: 50%;">
 		<FathersVerseList

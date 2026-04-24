@@ -296,6 +296,7 @@ export function loadConfBackMatter(fetch: typeof globalThis.fetch): Promise<Conf
 
 // ── Fathers commentary (ACCS + FKB, per chapter) ────────────────
 
+const FATHERS_CACHE_MAX = 30;
 const fathersChapterCache = new Map<string, Promise<FathersChapterFile | null>>();
 
 export function loadFathersChapter(
@@ -305,7 +306,18 @@ export function loadFathersChapter(
 ): Promise<FathersChapterFile | null> {
 	const key = `${slug}/${chapter}`;
 	const cached = fathersChapterCache.get(key);
-	if (cached) return cached;
+	if (cached) {
+		// Move to end (most recently used)
+		fathersChapterCache.delete(key);
+		fathersChapterCache.set(key, cached);
+		return cached;
+	}
+
+	// Evict oldest entry if at capacity
+	if (fathersChapterCache.size >= FATHERS_CACHE_MAX) {
+		const oldest = fathersChapterCache.keys().next().value;
+		if (oldest !== undefined) fathersChapterCache.delete(oldest);
+	}
 
 	const promise = fetch(`/data/fathers/${slug}/${chapter}.json`)
 		.then((r) => (r.ok ? (r.json() as Promise<FathersChapterFile>) : null))

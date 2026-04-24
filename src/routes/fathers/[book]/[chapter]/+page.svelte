@@ -21,7 +21,7 @@
 </svelte:head>
 
 {#key `${data.bookMeta.slug}-${data.chapter.chapter}`}
-	<div id="main-content">
+	<div id="main-content" class="flex flex-col h-screen">
 		<FathersBar
 			bookMeta={data.bookMeta}
 			chapterNum={data.chapter.chapter}
