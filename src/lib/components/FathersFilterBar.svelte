@@ -11,7 +11,6 @@
 		createEmptyFilter,
 		hasActiveFilter,
 		filterCount,
-		entryMatches,
 		type FathersFilterState
 	} from './fathersFilterUtils';
 
