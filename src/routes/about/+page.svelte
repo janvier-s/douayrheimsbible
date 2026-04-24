@@ -1,12 +1,6 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
-
-	const ABOUT_NAV = [
-		{ path: '/about', label: 'About' },
-		{ path: '/about/features', label: 'Features' },
-		{ path: '/about/translations', label: 'The Translations' },
-		{ path: '/about/stats', label: 'In Numbers' }
-	];
+	import { ABOUT_NAV } from './nav';
 </script>
 
 <svelte:head>

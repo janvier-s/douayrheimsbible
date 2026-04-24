@@ -473,6 +473,7 @@
 	// re-render → renderStudyMarkers runs and injects the marker buttons.
 	let mounted = false;
 	$: isStudy = mounted && $prefs.readingMode === 'study';
+	$: activeAnnotatedVerse = $studyPanel.annotatedVerse;
 	$: isHaydock = translationId === 'haydock';
 	$: haydockVerseSet =
 		isHaydock && haydockCommentary ? new Set(haydockCommentary.map((e) => e.verse)) : null;
@@ -526,7 +527,7 @@
 					data-verse-num={v.verse}
 					class:verse-active-annotation={isStudy &&
 						(v.has_annotation || haydockVerseSet?.has(v.verse)) &&
-						$studyPanel.annotatedVerse === v.verse}
+						activeAnnotatedVerse === v.verse}
 				>
 					{#if $prefs.showVerseNumbers && !isDropcap}
 						<sup
@@ -565,7 +566,7 @@
 				class:verse-annotated={isStudy && (v.has_annotation || haydockVerseSet?.has(v.verse))}
 				class:verse-active-annotation={isStudy &&
 					(v.has_annotation || haydockVerseSet?.has(v.verse)) &&
-					$studyPanel.annotatedVerse === v.verse}
+					activeAnnotatedVerse === v.verse}
 				on:click={(e) => isStudy && handleVerseClick(e, v)}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
 			>

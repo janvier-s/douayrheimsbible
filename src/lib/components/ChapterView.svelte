@@ -90,12 +90,9 @@
 	$: verse0 = chapter.verses.find((v) => v.verse === 0);
 	$: fullSummary = verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? '');
 	$: displayVerses = verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses;
-	// Reactive declaration ensures Svelte tracks the readingMode dependency properly
-	// (inline {@html fn(x, $store)} can miss updates during SSR → client hydration)
+	$: isStudyMode = $prefs.readingMode === 'study';
 	$: summaryHtml =
-		fullSummary && fullSummary !== '---'
-			? linkifySummary(fullSummary, $prefs.readingMode === 'study')
-			: '';
+		fullSummary && fullSummary !== '---' ? linkifySummary(fullSummary, isStudyMode) : '';
 
 	/** Strip trailing cross-reference text that follows the last </na> marker group.
 	 *  e.g. "<na>[1]</na><na>[2]</na> Gen. 12. 22. 2. Reg. 7. Psal. 131." → remove "Gen. 12. …"
