@@ -1,16 +1,3 @@
-/read /odr/genesis/1 301
-/odr /odr/genesis/1 301
-/odr/ /odr/genesis/1 301
-
-# Strip trailing slashes — Cloudflare Pages serves foo.html at both /foo and /foo/
-/about/ /about 301
-/api/ /api 301
-/articles/ /articles 301
-/compare/ /compare 301
-/contact/ /contact 301
-/download/ /download 301
-/history/ /history 301
-/privacy/ /privacy 301
-/reference/ /reference 301
-/search/ /search 301
-/terms/ /terms 301
+# Legacy reference URLs: /reference/ot|nt/slug → /reference/odr/ot|nt/slug
+/reference/ot/* /reference/odr/ot/:splat 301
+/reference/nt/* /reference/odr/nt/:splat 301

@@ -1,3 +1,0 @@
-# Legacy reference URLs: /reference/ot|nt/slug → /reference/odr/ot|nt/slug
-/reference/ot/* /reference/odr/ot/:splat 301
-/reference/nt/* /reference/odr/nt/:splat 301
