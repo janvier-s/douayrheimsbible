@@ -29,7 +29,10 @@
 	});
 
 	onDestroy(() => {
-		if (browser) document.removeEventListener('keydown', handleBlessingKey);
+		if (browser) {
+			document.removeEventListener('keydown', handleBlessingKey);
+			document.body.style.overflow = '';
+		}
 	});
 
 	$: if (browser && blessingOpen) {

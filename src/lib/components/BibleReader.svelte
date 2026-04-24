@@ -30,6 +30,11 @@
 	export let enablePrevScroll: boolean = true;
 	export let routeBase: string = '/odr';
 	export let translationId: string = 'odr';
+	/** SSR-available book title for chapter 1 (e.g. "The Holy Gospel of Jesus Christ\naccording to John.").
+	 *  Passed from the page load function to avoid a post-mount CLS when currentBookData resolves. */
+	export let initialBookTitle: string | null = null;
+	/** SSR-available short title (e.g. "John"). Same rationale as initialBookTitle. */
+	export let initialShortTitle: string | null = null;
 
 	/** Load a chapter from the correct data source based on translationId */
 	async function fetchChapter(
@@ -425,8 +430,12 @@
 						showNav={$prefs.showChapterNav}
 						{translationId}
 						headingLevel={i === 0 ? 'h1' : 'h2'}
-						bookTitle={item.chapter.chapter === 1 ? currentBookData?.book_title : undefined}
-						shortTitle={currentBookData?.short_title}
+						bookTitle={item.chapter.chapter === 1
+							? (currentBookData?.book_title ??
+								(item.bookMeta.slug === initialBookMeta.slug ? initialBookTitle : undefined))
+							: undefined}
+						shortTitle={currentBookData?.short_title ??
+							(item.bookMeta.slug === initialBookMeta.slug ? initialShortTitle : undefined)}
 					/>
 				</section>
 			{/each}

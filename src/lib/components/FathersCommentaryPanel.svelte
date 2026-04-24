@@ -134,8 +134,20 @@
 					visiblePericopes = new Set(visiblePericopes);
 				}
 			},
-			{ rootMargin: '200px', root: null }
+			{ rootMargin: '200px', root: scrollContainer }
 		);
+		// Observe pericopes that mounted before the observer was ready
+		// (actions run before onMount, so pericopeObserver was null when they fired)
+		if (scrollContainer) {
+			const els = scrollContainer.querySelectorAll('[data-pericope-idx]');
+			for (const el of Array.from(els) as HTMLElement[]) {
+				const idx = Number(el.dataset.pericopeIdx);
+				if (!isNaN(idx) && !visiblePericopes.has(idx)) {
+					pericopeObserver.observe(el);
+					observedEls.set(idx, el);
+				}
+			}
+		}
 	});
 
 	onDestroy(() => {

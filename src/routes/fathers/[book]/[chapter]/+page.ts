@@ -20,11 +20,13 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	const chapterNum = parseInt(chapterStr, 10);
 	if (isNaN(chapterNum) || chapterNum < 1) throw error(404, `Invalid chapter: ${chapterStr}`);
 
-	const bookData = await loadBook(slug, fetch);
+	const [bookData, fathersData] = await Promise.all([
+		loadBook(slug, fetch),
+		loadFathersChapter(slug, chapterNum, fetch)
+	]);
+
 	const chapter = getChapter(bookData, chapterNum);
 	if (!chapter) throw error(404, `Chapter ${chapterNum} not found`);
-
-	const fathersData = await loadFathersChapter(slug, chapterNum, fetch);
 
 	return {
 		bookMeta,

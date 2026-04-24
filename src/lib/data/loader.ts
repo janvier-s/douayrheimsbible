@@ -307,12 +307,11 @@ export function loadFathersChapter(
 	const cached = fathersChapterCache.get(key);
 	if (cached) return cached;
 
-	const empty: FathersChapterFile = { pericopes: [], verseEntryCounts: {}, totalEntries: 0 };
 	const promise = fetch(`/data/fathers/${slug}/${chapter}.json`)
-		.then((r) => (r.ok ? (r.json() as Promise<FathersChapterFile>) : empty))
+		.then((r) => (r.ok ? (r.json() as Promise<FathersChapterFile>) : null))
 		.catch(() => {
 			fathersChapterCache.delete(key);
-			return empty;
+			return null;
 		});
 
 	fathersChapterCache.set(key, promise);

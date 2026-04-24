@@ -951,6 +951,13 @@ const ABBREV_TO_MODERN: Record<string, string> = {
 
 const SORTED_MODERN_ABBREVS = Object.keys(ABBREV_TO_MODERN).sort((a, b) => b.length - a.length);
 
+// Pre-compiled patterns for normalizeForParser — avoids re-compiling ~120 RegExps on every call.
+const NORMALISE_ABBREV_PATTERNS: ReadonlyArray<[RegExp, string]> = Object.freeze(
+	SORTED_MODERN_ABBREVS.filter((abbrev) => !/^\d/.test(abbrev)).map(
+		(abbrev) => [new RegExp(`\\b${abbrev}\\.`, 'g'), ABBREV_TO_MODERN[abbrev]] as [RegExp, string]
+	)
+);
+
 /**
  * Normalize old Douay-Rheims abbreviations in italic text to modern names
  * that parseAllReferences can handle.
@@ -997,11 +1004,10 @@ function normalizeForParser(text: string): string {
 		}
 	);
 
-	// Replace non-numbered abbreviations
-	for (const abbrev of SORTED_MODERN_ABBREVS) {
-		if (/^\d/.test(abbrev)) continue; // skip numbered
-		const pattern = new RegExp(`\\b${abbrev}\\.`, 'g');
-		result = result.replace(pattern, ABBREV_TO_MODERN[abbrev]);
+	// Replace non-numbered abbreviations using pre-compiled patterns.
+	for (const [pattern, replacement] of NORMALISE_ABBREV_PATTERNS) {
+		pattern.lastIndex = 0;
+		result = result.replace(pattern, replacement);
 	}
 
 	// Convert comma-separated verse to colon: "13, 14" → "13:14"

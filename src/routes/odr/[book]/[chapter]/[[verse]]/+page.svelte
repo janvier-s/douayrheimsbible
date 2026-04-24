@@ -89,6 +89,8 @@
 			initialTotalChapters={data.totalChapters}
 			targetVerse={data.targetVerse}
 			routeBase="/odr"
+			initialBookTitle={data.bookTitle}
+			initialShortTitle={data.shortTitle}
 		/>
 	</div>
 {/key}

@@ -91,8 +91,7 @@
 		return text.replace(SUPER_RE, '');
 	}
 
-	function cleanVerseText(text: string): string {
-		const showSmallCaps = $prefs.showSmallCaps ?? true;
+	function cleanVerseText(text: string, showSmallCaps: boolean): string {
 		let t = stripMarkers(text);
 		t = stripSuperscripts(t);
 		return showSmallCaps ? allcapsToSmallcaps(t) : t;
@@ -219,7 +218,8 @@
 					<span
 						class="flex-1 text-[15px] leading-relaxed text-foreground"
 						class:verse-annotated={hasBadge}
-						class:verse-active={isSelected}>{@html cleanVerseText(verseText)}</span
+						class:verse-active={isSelected}
+						>{@html cleanVerseText(verseText, $prefs.showSmallCaps ?? true)}</span
 					>
 					{#if hasBadge}
 						<span
