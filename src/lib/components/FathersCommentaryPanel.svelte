@@ -250,7 +250,10 @@
 		{:else}
 			{#each chapterData.pericopes as pericope, i}
 				{@const pericopeEntries = pericope.entries}
-				{@const verseInRange = selectedVerse !== null && selectedVerse >= pericope.startVerse && selectedVerse <= pericope.endVerse}
+				{@const verseInRange =
+					selectedVerse !== null &&
+					selectedVerse >= pericope.startVerse &&
+					selectedVerse <= pericope.endVerse}
 				{@const matchingCount = hasFilter
 					? pericopeEntries.filter((e) => entryMatches(e, filter)).length
 					: pericopeEntries.length}
