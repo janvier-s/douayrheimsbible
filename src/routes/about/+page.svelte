@@ -558,6 +558,40 @@
 		</figcaption>
 	</figure>
 
+	<h2>Church Fathers</h2>
+
+	<p>
+		Every chapter of Scripture has a fourth mode alongside Read, Study, and Compare: a panel of
+		patristic commentary drawn from the first eight centuries of the Church. The writers represented
+		range from Clement of Rome and Ignatius of Antioch through Augustine, Chrysostom, Jerome, and
+		Gregory the Great, with coverage spanning East and West, Greek and Latin traditions. Each entry
+		shows the author's name, approximate date, and the passage under comment.
+	</p>
+
+	<p>
+		Commentary is organised by chapter. Within a chapter, entries are grouped by pericope, the
+		natural unit of text the Fathers typically addressed. Clicking any verse number or pericope
+		heading scrolls the commentary panel to the corresponding group. Where a Father comments on a
+		single verse in isolation, that entry appears under its verse; where the comment ranges across
+		several verses, it appears under the pericope that contains them.
+	</p>
+
+	<p>
+		Each entry card can be expanded to reveal inline footnotes and the source reference. The footnotes
+		supply textual variants, parallel passages, and the editor's clarifications. The source line at the
+		foot of each card gives the standard citation for the patristic text: the volume and column in
+		Migne's Patrologia Graeca or Patrologia Latina, or the equivalent critical series. Bible references
+		within the commentary text are linked: hovering over one shows the verse text in a small popover,
+		the same tooltip used in study mode.
+	</p>
+
+	<p>
+		The panel includes filters for narrowing by century, era, theological tradition, or individual
+		author. These can be combined: selecting the third century and the Greek East, for example, isolates
+		the Alexandrian commentators on any given chapter. Filtered entries update immediately without
+		reloading.
+	</p>
+
 	<h2>The Translations</h2>
 
 	<p>
@@ -769,13 +803,13 @@
 			<a href="/images/about/dyslexic.jpg" target="_blank" rel="noopener" class="screenshot-link">
 				<img
 					src="/images/about/dyslexic.jpg"
-					alt="OpenDyslexic font, Genesis 1:1–2 in dyslexia-friendly typeface"
+					alt="Grace Dyslexic font, Genesis 1:1–2 in dyslexia-friendly typeface"
 					width="960"
 					height="362"
 					loading="lazy"
 				/>
 			</a>
-			<figcaption>OpenDyslexic font mode.</figcaption>
+			<figcaption>Grace Dyslexic font mode.</figcaption>
 		</figure>
 	</div>
 

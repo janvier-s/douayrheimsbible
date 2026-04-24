@@ -377,13 +377,13 @@
             <a href="/images/about/dyslexic.jpg" target="_blank" rel="noopener" class="screenshot-link">
                 <img
                     src="/images/about/dyslexic.jpg"
-                    alt="OpenDyslexic font, Genesis 1:1–2 in dyslexia-friendly typeface"
+                    alt="Grace Dyslexic font, Genesis 1:1–2 in dyslexia-friendly typeface"
                     width="960"
                     height="362"
                     loading="lazy"
                 />
             </a>
-            <figcaption>OpenDyslexic font mode.</figcaption>
+            <figcaption>Grace Dyslexic font mode.</figcaption>
         </figure>
     </div>
 
