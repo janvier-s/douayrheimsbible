@@ -27,6 +27,13 @@
 	// ── Filter state ──────────────────────────────────────────────────
 	let filtersOpen = false;
 	let authorDropdownOpen = false;
+	let authorDropdownEl: HTMLElement;
+
+	function handleWindowClick(e: MouseEvent) {
+		if (authorDropdownOpen && authorDropdownEl && !authorDropdownEl.contains(e.target as Node)) {
+			authorDropdownOpen = false;
+		}
+	}
 	let filter: FathersFilterState = createEmptyFilter();
 
 	$: hasFilter = hasActiveFilter(filter);
@@ -84,6 +91,8 @@
 		allEntries.map((e) => getAuthorMeta(e.author).tradition).filter(Boolean)
 	);
 </script>
+
+<svelte:window on:click={handleWindowClick} />
 
 <!-- ── Toolbar row ────────────────────────────────────────── -->
 <div class="shrink-0 border-b border-border px-sm py-[8px] bg-panel flex items-center gap-[8px]">
@@ -189,7 +198,7 @@
 			>Authors &amp;<br />Documents</span
 		>
 		<div class="flex items-center gap-[5px] flex-wrap">
-			<div class="relative">
+			<div class="relative" bind:this={authorDropdownEl}>
 				<button
 					class="text-[11px] px-[8px] py-[3px] rounded-[3px] border transition-colors duration-fast
 						{filter.authors.size > 0

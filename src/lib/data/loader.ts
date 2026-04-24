@@ -204,12 +204,10 @@ export function loadConfFootnotes(
 	if (cached) return cached;
 
 	const padded = String(chapter).padStart(3, '0');
-	const promise = fetch(`/data/conf-footnotes/${slug}/${padded}.json`)
-		.then((r) => (r.ok ? (r.json() as Promise<ConfChapterFootnotes>) : null))
-		.catch(() => {
-			confFootnotesCache.delete(key);
-			return null;
-		});
+	const promise = fetch(`/data/conf-footnotes/${slug}/${padded}.json`).then((r) =>
+		r.ok ? (r.json() as Promise<ConfChapterFootnotes>) : null
+	);
+	promise.then(null, () => confFootnotesCache.delete(key));
 
 	confFootnotesCache.set(key, promise);
 	return promise;
@@ -228,12 +226,10 @@ export function loadConfCommentary(
 	if (cached) return cached;
 
 	const padded = String(chapter).padStart(3, '0');
-	const promise = fetch(`/data/conf-commentary/${slug}/${padded}.json`)
-		.then((r) => (r.ok ? (r.json() as Promise<ConfChapterCommentary>) : null))
-		.catch(() => {
-			confCommentaryCache.delete(key);
-			return null;
-		});
+	const promise = fetch(`/data/conf-commentary/${slug}/${padded}.json`).then((r) =>
+		r.ok ? (r.json() as Promise<ConfChapterCommentary>) : null
+	);
+	promise.then(null, () => confCommentaryCache.delete(key));
 
 	confCommentaryCache.set(key, promise);
 	return promise;
@@ -319,12 +315,10 @@ export function loadFathersChapter(
 		if (oldest !== undefined) fathersChapterCache.delete(oldest);
 	}
 
-	const promise = fetch(`/data/fathers/${slug}/${chapter}.json`)
-		.then((r) => (r.ok ? (r.json() as Promise<FathersChapterFile>) : null))
-		.catch(() => {
-			fathersChapterCache.delete(key);
-			return null;
-		});
+	const promise = fetch(`/data/fathers/${slug}/${chapter}.json`).then((r) =>
+		r.ok ? (r.json() as Promise<FathersChapterFile>) : null
+	);
+	promise.then(null, () => fathersChapterCache.delete(key));
 
 	fathersChapterCache.set(key, promise);
 	return promise;

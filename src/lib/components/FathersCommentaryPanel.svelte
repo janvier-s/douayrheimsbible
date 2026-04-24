@@ -48,32 +48,29 @@
 		return !entryMatches(e, filter);
 	}
 
-	$: annotatedPericopes = chapterData.pericopes.map((p) => {
-		const verseInRange =
-			selectedVerse !== null && selectedVerse >= p.startVerse && selectedVerse <= p.endVerse;
-		return { ...p, verseInRange };
-	});
-
-	// Dispatch filtered counts for verse list badge dimming
-	$: {
-		if (!hasFilter) {
-			dispatch('filteredCounts', null);
-		} else {
-			const counts: Record<number, number> = {};
-			for (const p of chapterData.pericopes) {
-				for (const entry of p.entries) {
-					if (!entryMatches(entry, filter)) continue;
-					if (entry.subVerseNum !== null) {
-						counts[entry.subVerseNum] = (counts[entry.subVerseNum] ?? 0) + 1;
-					} else {
-						for (let v = p.startVerse; v <= p.endVerse; v++) {
-							counts[v] = (counts[v] ?? 0) + 1;
-						}
+	// Compute filtered counts, then dispatch only when they actually change
+	$: computedFilteredCounts = (() => {
+		if (!hasFilter) return null;
+		const counts: Record<number, number> = {};
+		for (const p of chapterData.pericopes) {
+			for (const entry of p.entries) {
+				if (!entryMatches(entry, filter)) continue;
+				if (entry.subVerseNum !== null) {
+					counts[entry.subVerseNum] = (counts[entry.subVerseNum] ?? 0) + 1;
+				} else {
+					for (let v = p.startVerse; v <= p.endVerse; v++) {
+						counts[v] = (counts[v] ?? 0) + 1;
 					}
 				}
 			}
-			dispatch('filteredCounts', counts);
 		}
+		return counts;
+	})();
+
+	let prevFilteredCounts: Record<number, number> | null = null;
+	$: if (computedFilteredCounts !== prevFilteredCounts) {
+		prevFilteredCounts = computedFilteredCounts;
+		dispatch('filteredCounts', computedFilteredCounts);
 	}
 
 	// ── Scroll on verse or pericope select ────────────────────────
@@ -251,8 +248,9 @@
 				<p>No patristic commentary available for this chapter.</p>
 			</div>
 		{:else}
-			{#each annotatedPericopes as pericope, i}
+			{#each chapterData.pericopes as pericope, i}
 				{@const pericopeEntries = pericope.entries}
+				{@const verseInRange = selectedVerse !== null && selectedVerse >= pericope.startVerse && selectedVerse <= pericope.endVerse}
 				{@const matchingCount = hasFilter
 					? pericopeEntries.filter((e) => entryMatches(e, filter)).length
 					: pericopeEntries.length}
@@ -299,7 +297,7 @@
 							{#each pericopeEntries as entry}
 								<FathersEntryCard
 									{entry}
-									highlighted={pericope.verseInRange && entryIsHighlighted(entry)}
+									highlighted={verseInRange && entryIsHighlighted(entry)}
 									dimmed={entryIsDimmed(entry)}
 									forceOpen={expandAll}
 								/>

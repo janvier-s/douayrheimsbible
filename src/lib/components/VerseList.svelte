@@ -13,13 +13,22 @@
 	import type { TranslationCrossRef } from '$lib/data/translation-types';
 	import { loadTranslationCrossRefs, loadHaydockCommentary } from '$lib/data/loader';
 	import type { HaydockCommentaryEntry } from '$lib/data/loader';
-	import { PARAGRAPH_STARTS } from '$lib/data/paragraphs';
-
 	export let verses: Verse[];
 	export let targetVerse: number | undefined;
 	export let bookSlug: string;
 	export let chapterNum: number;
 	export let translationId: string = 'odr';
+
+	// ── DRC cross-refs (loaded automatically for hover popovers) ────
+	// ── Paragraph data (lazy-loaded to avoid 28KB in initial bundle) ────
+	type ParagraphStarts = Record<string, Record<number, number[]>>;
+	let paragraphStarts: ParagraphStarts | null = null;
+
+	if (browser) {
+		import('$lib/data/paragraphs').then((m) => {
+			paragraphStarts = m.PARAGRAPH_STARTS;
+		});
+	}
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
 	let drcCrossRefs: TranslationCrossRef[] | null = null;
@@ -483,10 +492,15 @@
 	$: expandAmpersand = $prefs.expandAmpersand ?? false;
 
 	// Group verses into paragraphs using the paragraph reference data
-	function groupIntoParagraphs(vv: Verse[], slug: string, ch: number): Verse[][] {
-		const starts = PARAGRAPH_STARTS[slug]?.[ch];
-		if (!starts || starts.length === 0) return [vv];
-		const startSet = new Set(starts);
+	function groupIntoParagraphs(
+		vv: Verse[],
+		slug: string,
+		ch: number,
+		starts: ParagraphStarts | null
+	): Verse[][] {
+		const chStarts = starts?.[slug]?.[ch];
+		if (!chStarts || chStarts.length === 0) return [vv];
+		const startSet = new Set(chStarts);
 		const groups: Verse[][] = [];
 		let current: Verse[] = [];
 		for (const v of vv) {
@@ -499,7 +513,7 @@
 		if (current.length > 0) groups.push(current);
 		return groups;
 	}
-	$: paragraphs = groupIntoParagraphs(verses, bookSlug, chapterNum);
+	$: paragraphs = groupIntoParagraphs(verses, bookSlug, chapterNum, paragraphStarts);
 </script>
 
 {#if $prefs.paragraphView}

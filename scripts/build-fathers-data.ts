@@ -246,7 +246,7 @@ for (const [chapterKey, indices] of Object.entries(verseIndex)) {
 		const pericope = pericopeMap.get(e.verseRef)!;
 		if (!pericope.pericopeTitle && e.pericopeTitle) pericope.pericopeTitle = e.pericopeTitle;
 
-		pericope.entries.push({
+		const entry: Record<string, unknown> = {
 			subVerse: e.subVerse,
 			subVerseNum: parseSubVerseNum(e.subVerse),
 			source: e.source,
@@ -255,11 +255,14 @@ for (const [chapterKey, indices] of Object.entries(verseIndex)) {
 			title: e.title,
 			body: e.body,
 			citation: e.citation,
-			isDocument: e.isDocument,
-			footnotes: e.footnotes,
-			fkbChapter:
-				e.chapterNum && e.chapterTitle ? `Ch. ${e.chapterNum} \u2014 ${e.chapterTitle}` : null
-		});
+			footnotes: e.footnotes
+		};
+		// Omit defaults to save bytes in JSON output
+		if (e.isDocument) entry.isDocument = true;
+		const fkbChapter =
+			e.chapterNum && e.chapterTitle ? `Ch. ${e.chapterNum} \u2014 ${e.chapterTitle}` : null;
+		if (fkbChapter) entry.fkbChapter = fkbChapter;
+		pericope.entries.push(entry as any);
 		totalProcessed++;
 	}
 }

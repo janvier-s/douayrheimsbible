@@ -338,6 +338,13 @@ const ABBREV_TO_OSIS: Record<string, string> = {
 /** Sorted longest-first for greedy matching */
 const SORTED_ABBREVS = Object.keys(ABBREV_TO_OSIS).sort((a, b) => b.length - a.length);
 
+/** First-character index: maps a character to the subset of SORTED_ABBREVS starting with it. */
+const ABBREV_BY_FIRST_CHAR: Record<string, string[]> = {};
+for (const abbrev of SORTED_ABBREVS) {
+	const ch = abbrev[0];
+	(ABBREV_BY_FIRST_CHAR[ch] ??= []).push(abbrev);
+}
+
 interface BookMatch {
 	osisBook: string;
 	/** Start index in the source string (including any digit prefix) */
@@ -365,35 +372,40 @@ function matchBookAt(text: string, pos: number): BookMatch | null {
 		cursor += numMatchNoP[0].length;
 	}
 
-	for (const abbrev of SORTED_ABBREVS) {
-		// Digit-leading abbreviation without "N. " prefix — try direct match (e.g. "1Cor.")
-		if (/^\d/.test(abbrev) && !numPrefix) {
-			const slice = text.slice(pos);
-			if (!slice.startsWith(abbrev)) continue;
-			const afterIdx = pos + abbrev.length;
-			if (
-				afterIdx < text.length &&
-				text[afterIdx] !== '.' &&
-				text[afterIdx] !== ':' &&
-				!(text[afterIdx] === ' ' && afterIdx + 1 < text.length && /\d/.test(text[afterIdx + 1]))
-			)
-				continue;
-			const endIdx =
-				afterIdx < text.length && (text[afterIdx] === '.' || text[afterIdx] === ':')
-					? afterIdx + 1
-					: afterIdx;
-			return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: endIdx };
+	// Check digit-leading abbreviations (e.g. "1Cor.", "2Par.")
+	const digitChar = text[pos];
+	if (/\d/.test(digitChar)) {
+		const digitAbbrevs = ABBREV_BY_FIRST_CHAR[digitChar] ?? [];
+		for (const abbrev of digitAbbrevs) {
+			if (!numPrefix) {
+				// Direct match: "1Cor." without "1. " prefix
+				if (!text.startsWith(abbrev, pos)) continue;
+				const afterIdx = pos + abbrev.length;
+				if (
+					afterIdx < text.length &&
+					text[afterIdx] !== '.' &&
+					text[afterIdx] !== ':' &&
+					!(text[afterIdx] === ' ' && afterIdx + 1 < text.length && /\d/.test(text[afterIdx + 1]))
+				)
+					continue;
+				const endIdx =
+					afterIdx < text.length && (text[afterIdx] === '.' || text[afterIdx] === ':')
+						? afterIdx + 1
+						: afterIdx;
+				return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: endIdx };
+			}
 		}
-		// If abbreviation starts with digit, it must match our numPrefix
-		if (/^\d/.test(abbrev)) {
+	}
+
+	// Check numbered abbreviations with prefix (e.g. "1. Cor" where numPrefix="1")
+	if (numPrefix) {
+		const numAbbrevs = ABBREV_BY_FIRST_CHAR[numPrefix] ?? [];
+		for (const abbrev of numAbbrevs) {
 			if (abbrev[0] !== numPrefix) continue;
 			const rest = abbrev.slice(1);
-			const slice = text.slice(cursor);
-			if (!slice.startsWith(rest)) continue;
-			// Must be followed by ".", ":", space+digit, or end
+			if (!text.startsWith(rest, cursor)) continue;
 			const afterIdx = cursor + rest.length;
 			if (afterIdx < text.length && text[afterIdx] !== '.' && text[afterIdx] !== ':') {
-				// Allow space+digit (e.g. "1 Cor 13:4")
 				if (text[afterIdx] === ' ' && afterIdx + 1 < text.length && /\d/.test(text[afterIdx + 1])) {
 					return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: afterIdx };
 				}
@@ -405,16 +417,17 @@ function matchBookAt(text: string, pos: number): BookMatch | null {
 					: afterIdx;
 			return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: endIdx };
 		}
+		return null; // numPrefix consumed — don't check non-numbered
+	}
 
-		// Non-numbered abbreviation
-		if (numPrefix) continue; // If we consumed a digit prefix, skip non-numbered abbrevs
-
-		const slice = text.slice(cursor);
-		if (!slice.startsWith(abbrev)) continue;
-		// Must be followed by ".", space+digit, or end of string
+	// Non-numbered abbreviations: use first-char index at cursor position
+	const cursorChar = text[cursor];
+	const candidates = ABBREV_BY_FIRST_CHAR[cursorChar] ?? [];
+	for (const abbrev of candidates) {
+		if (/^\d/.test(abbrev)) continue; // skip digit-leading in this branch
+		if (!text.startsWith(abbrev, cursor)) continue;
 		const afterIdx = cursor + abbrev.length;
 		if (afterIdx < text.length && text[afterIdx] !== '.' && text[afterIdx] !== ':') {
-			// Allow full book names followed by space+digit (e.g. "Iosue 7")
 			if (text[afterIdx] === ' ' && afterIdx + 1 < text.length && /\d/.test(text[afterIdx + 1])) {
 				return { osisBook: ABBREV_TO_OSIS[abbrev], displayStart: pos, end: afterIdx };
 			}
@@ -1738,17 +1751,17 @@ function matchDrcRefAt(text: string, pos: number): DrcRef | null {
 		cursor += numMatchNoP[0].length;
 	}
 
-	// 2) Match book abbreviation
+	// 2) Match book abbreviation using first-char index
 	let osisBook: string | null = null;
 	let afterBook = cursor;
-	for (const abbrev of SORTED_ABBREVS) {
-		if (/^\d/.test(abbrev) && !numPrefix) continue;
-		if (/^\d/.test(abbrev)) {
+	if (numPrefix) {
+		// Numbered book: check digit-leading abbreviations matching our prefix
+		const numAbbrevs = ABBREV_BY_FIRST_CHAR[numPrefix] ?? [];
+		for (const abbrev of numAbbrevs) {
 			if (abbrev[0] !== numPrefix) continue;
 			const rest = abbrev.slice(1);
-			if (!text.slice(cursor).startsWith(rest)) continue;
+			if (!text.startsWith(rest, cursor)) continue;
 			const endIdx = cursor + rest.length;
-			// Must be followed by ".", space+digit, or end
 			if (endIdx < text.length && text[endIdx] !== '.') {
 				if (text[endIdx] === ' ' && endIdx + 1 < text.length && /\d/.test(text[endIdx + 1])) {
 					// OK: full name + space + digit
@@ -1760,20 +1773,25 @@ function matchDrcRefAt(text: string, pos: number): DrcRef | null {
 			osisBook = ABBREV_TO_OSIS[abbrev];
 			break;
 		}
-		if (numPrefix) continue;
-		if (!text.slice(cursor).startsWith(abbrev)) continue;
-		const endIdx = cursor + abbrev.length;
-		// Must be followed by ".", ":", or space+digit
-		if (endIdx < text.length && text[endIdx] !== '.' && text[endIdx] !== ':') {
-			if (text[endIdx] === ' ' && endIdx + 1 < text.length && /\d/.test(text[endIdx + 1])) {
-				// OK: full name + space + digit (e.g. "John 3")
-			} else {
-				continue;
+	} else {
+		// Non-numbered: use first-char at cursor
+		const cursorChar = text[cursor];
+		const candidates = ABBREV_BY_FIRST_CHAR[cursorChar] ?? [];
+		for (const abbrev of candidates) {
+			if (/^\d/.test(abbrev)) continue;
+			if (!text.startsWith(abbrev, cursor)) continue;
+			const endIdx = cursor + abbrev.length;
+			if (endIdx < text.length && text[endIdx] !== '.' && text[endIdx] !== ':') {
+				if (text[endIdx] === ' ' && endIdx + 1 < text.length && /\d/.test(text[endIdx + 1])) {
+					// OK: full name + space + digit (e.g. "John 3")
+				} else {
+					continue;
+				}
 			}
+			afterBook = endIdx;
+			osisBook = ABBREV_TO_OSIS[abbrev];
+			break;
 		}
-		afterBook = endIdx;
-		osisBook = ABBREV_TO_OSIS[abbrev];
-		break;
 	}
 	if (!osisBook) return null;
 

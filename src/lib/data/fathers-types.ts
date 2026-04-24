@@ -10,10 +10,10 @@ export interface FathersEntry {
 	title: string | null; // ACCS entry heading
 	body: string;
 	citation: string;
-	isDocument: boolean; // true for councils, documents, anonymous works
+	isDocument?: boolean; // true for councils, documents, anonymous works (omitted when false)
 	footnotes: Array<{ type: string; text: string }>;
-	/** FKB-specific: doctrinal chapter context */
-	fkbChapter: string | null; // e.g. "Ch. 13 — The One True God"
+	/** FKB-specific: doctrinal chapter context (omitted when null) */
+	fkbChapter?: string | null; // e.g. "Ch. 13 — The One True God"
 }
 
 export interface FathersPericope {
