@@ -4,9 +4,10 @@
 	import type { FathersChapterFile, FathersEntry } from '$lib/data/fathers-types';
 	import type { OsisRange } from '$lib/search/reference';
 	import { parseOsis } from '$lib/search/reference';
-	import { getAuthorMeta } from '$lib/data/fathers-authors';
 	import { displayVerseRef } from '$lib/utils/fathers-display';
 	import { prefs } from '$lib/stores/prefs';
+	import { entryMatches, hasActiveFilter, type FathersFilterState } from './fathersFilterUtils';
+	import FathersFilterBar from './FathersFilterBar.svelte';
 	import FathersEntryCard from './FathersEntryCard.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 
@@ -15,6 +16,65 @@
 	export let selectedPericope: string | null = null;
 
 	const dispatch = createEventDispatcher<{ filteredCounts: Record<number, number> | null }>();
+
+	// ── Filter state (owned by FathersFilterBar, received via event) ──
+	let filter: FathersFilterState = {
+		century: 'all',
+		era: 'all',
+		tradition: 'all',
+		authors: new Set()
+	};
+	let expandAll = false;
+
+	$: hasFilter = hasActiveFilter(filter);
+	$: allEntries = chapterData.pericopes.flatMap((p) => p.entries);
+
+	function handleFilterChange(e: CustomEvent<FathersFilterState>) {
+		filter = e.detail;
+	}
+
+	function handleExpandAllChange(e: CustomEvent<boolean>) {
+		expandAll = e.detail;
+	}
+
+	function entryIsHighlighted(e: FathersEntry): boolean {
+		if (selectedVerse === null) return false;
+		if (e.subVerseNum !== null) return e.subVerseNum === selectedVerse;
+		return false;
+	}
+
+	function entryIsDimmed(e: FathersEntry): boolean {
+		if (!hasFilter) return false;
+		return !entryMatches(e, filter);
+	}
+
+	$: annotatedPericopes = chapterData.pericopes.map((p) => {
+		const verseInRange =
+			selectedVerse !== null && selectedVerse >= p.startVerse && selectedVerse <= p.endVerse;
+		return { ...p, verseInRange };
+	});
+
+	// Dispatch filtered counts for verse list badge dimming
+	$: {
+		if (!hasFilter) {
+			dispatch('filteredCounts', null);
+		} else {
+			const counts: Record<number, number> = {};
+			for (const p of chapterData.pericopes) {
+				for (const entry of p.entries) {
+					if (!entryMatches(entry, filter)) continue;
+					if (entry.subVerseNum !== null) {
+						counts[entry.subVerseNum] = (counts[entry.subVerseNum] ?? 0) + 1;
+					} else {
+						for (let v = p.startVerse; v <= p.endVerse; v++) {
+							counts[v] = (counts[v] ?? 0) + 1;
+						}
+					}
+				}
+			}
+			dispatch('filteredCounts', counts);
+		}
+	}
 
 	// ── Scroll on verse or pericope select ────────────────────────
 	let scrollContainer: HTMLElement;
@@ -38,14 +98,12 @@
 	async function scrollToVerse(verse: number) {
 		await tick();
 		if (!scrollContainer) return;
-		// Force-mount the pericope containing this verse
 		const idx = chapterData.pericopes.findIndex(
 			(p) => verse >= p.startVerse && verse <= p.endVerse
 		);
 		if (idx >= 0 && ensurePericopeMounted(idx)) {
 			await tick();
 		}
-		// Find first entry tagged with this exact verse
 		const el = scrollContainer.querySelector(`[data-verse="${verse}"]`) as HTMLElement | null;
 		scrollToEl(el);
 	}
@@ -53,12 +111,10 @@
 	async function scrollToPericopeRef(verseRef: string) {
 		await tick();
 		if (!scrollContainer) return;
-		// Force-mount the target pericope
 		const idx = chapterData.pericopes.findIndex((p) => p.verseRef === verseRef);
 		if (idx >= 0 && ensurePericopeMounted(idx)) {
 			await tick();
 		}
-		// Find the pericope section by its verseRef data attribute
 		const el = scrollContainer.querySelector(
 			`[data-pericope-ref="${CSS.escape(verseRef)}"]`
 		) as HTMLElement | null;
@@ -105,11 +161,8 @@
 	});
 
 	// ── Lazy pericope rendering via IntersectionObserver ──────────────
-	/** Set of pericope indices whose entries are mounted. Once added, never removed. */
 	let visiblePericopes: Set<number> = new Set([0, 1, 2]);
-
 	let pericopeObserver: IntersectionObserver | null = null;
-	/** Map from pericope index to its observed element, for cleanup. */
 	const observedEls = new Map<number, HTMLElement>();
 
 	onMount(() => {
@@ -123,21 +176,17 @@
 						if (!isNaN(idx) && !visiblePericopes.has(idx)) {
 							visiblePericopes.add(idx);
 							changed = true;
-							// No need to keep observing once mounted
 							pericopeObserver?.unobserve(ioEntry.target);
 							observedEls.delete(idx);
 						}
 					}
 				}
 				if (changed) {
-					// Trigger Svelte reactivity by creating a new Set
 					visiblePericopes = new Set(visiblePericopes);
 				}
 			},
 			{ rootMargin: '200px', root: scrollContainer }
 		);
-		// Observe pericopes that mounted before the observer was ready
-		// (actions run before onMount, so pericopeObserver was null when they fired)
 		if (scrollContainer) {
 			const els = scrollContainer.querySelectorAll('[data-pericope-idx]');
 			for (const el of Array.from(els) as HTMLElement[]) {
@@ -156,7 +205,6 @@
 		observedEls.clear();
 	});
 
-	/** Svelte action: observe a pericope container element. */
 	function observePericope(node: HTMLElement, idx: number) {
 		if (pericopeObserver && !visiblePericopes.has(idx)) {
 			pericopeObserver.observe(node);
@@ -170,346 +218,25 @@
 		};
 	}
 
-	/** Force-mount a pericope by index so we can scroll to its content. */
 	function ensurePericopeMounted(idx: number): boolean {
 		if (visiblePericopes.has(idx)) return false;
 		visiblePericopes = new Set([...visiblePericopes, idx]);
 		return true;
 	}
 
-	// Reset visible pericopes when chapter changes
 	$: if (chapterData) {
 		visiblePericopes = new Set([0, 1, 2]);
-	}
-
-	// ── Filter state ──────────────────────────────────────────────────
-	let filtersOpen = false;
-	let filterCentury: number | 'all' | 'other' = 'all';
-	let filterEra: 'all' | 'ante-nicene' | 'nicene' | 'post-nicene' = 'all';
-	let filterTradition: 'all' | 'eastern' | 'western' | 'syriac' = 'all';
-	let filterAuthors: Set<string> = new Set();
-	let expandAll = false;
-	let authorDropdownOpen = false;
-
-	const CENTURIES = [1, 2, 3, 4, 5, 6, 7, 8] as const;
-	const ERAS = [
-		{ key: 'ante-nicene', label: 'Ante-Nicene' },
-		{ key: 'nicene', label: 'Nicene' },
-		{ key: 'post-nicene', label: 'Post-Nicene' }
-	] as const;
-	const TRADITIONS = [
-		{ key: 'eastern', label: 'Eastern' },
-		{ key: 'western', label: 'Western' },
-		{ key: 'syriac', label: 'Syriac' }
-	] as const;
-
-	/** Strip honorific prefixes for sorting: St., Bl., Ven., Pope, etc. */
-	function sortKey(name: string): string {
-		return name.replace(/^(St\.|Bl\.|Ven\.|Pope|Abp\.|Bp\.)\s+/i, '').toLowerCase();
-	}
-
-	$: allEntries = chapterData.pericopes.flatMap((p) => p.entries);
-
-	// Count entries per author
-	$: authorEntryCounts = (() => {
-		const counts: Record<string, number> = {};
-		for (const e of allEntries) {
-			counts[e.author] = (counts[e.author] ?? 0) + 1;
-		}
-		return counts;
-	})();
-
-	$: chapterAuthorsAll = [...new Set(allEntries.map((e) => e.author))].sort((a, b) =>
-		sortKey(a).localeCompare(sortKey(b))
-	);
-
-	// Separate authors from documents for grouped dropdown
-	$: documentNames = new Set(allEntries.filter((e) => e.isDocument).map((e) => e.author));
-	$: chapterAuthors = chapterAuthorsAll.filter((a) => !documentNames.has(a));
-	$: chapterDocuments = chapterAuthorsAll.filter((a) => documentNames.has(a));
-
-	// Available filter values based on current chapter entries (for dimming unavailable chips)
-	$: availableCenturies = new Set(
-		allEntries.map((e) => getAuthorMeta(e.author).century).filter(Boolean)
-	);
-	$: hasOtherCentury = [...availableCenturies].some((c) => typeof c === 'number' && c >= 9);
-	$: availableEras = new Set(allEntries.map((e) => getAuthorMeta(e.author).era).filter(Boolean));
-	$: availableTraditions = new Set(
-		allEntries.map((e) => getAuthorMeta(e.author).tradition).filter(Boolean)
-	);
-
-	$: hasFilter =
-		filterCentury !== 'all' ||
-		filterEra !== 'all' ||
-		filterTradition !== 'all' ||
-		filterAuthors.size > 0;
-
-	$: filterCount =
-		(filterCentury !== 'all' ? 1 : 0) +
-		(filterEra !== 'all' ? 1 : 0) +
-		(filterTradition !== 'all' ? 1 : 0) +
-		(filterAuthors.size > 0 ? 1 : 0);
-
-	function clearFilters() {
-		filterCentury = 'all';
-		filterEra = 'all';
-		filterTradition = 'all';
-		filterAuthors = new Set();
-	}
-
-	function toggleAuthor(author: string) {
-		const next = new Set(filterAuthors);
-		if (next.has(author)) next.delete(author);
-		else next.add(author);
-		filterAuthors = next;
-	}
-
-	function entryMatches(e: FathersEntry): boolean {
-		const meta = getAuthorMeta(e.author);
-		if (filterCentury !== 'all') {
-			if (filterCentury === 'other') {
-				if (!meta.century || meta.century < 9) return false;
-			} else {
-				if (meta.century !== filterCentury) return false;
-			}
-		}
-		if (filterEra !== 'all' && meta.era !== filterEra) return false;
-		if (filterTradition !== 'all' && meta.tradition !== filterTradition) return false;
-		if (filterAuthors.size > 0 && !filterAuthors.has(e.author)) return false;
-		return true;
-	}
-
-	function entryIsHighlighted(e: FathersEntry): boolean {
-		if (selectedVerse === null) return false;
-		if (e.subVerseNum !== null) return e.subVerseNum === selectedVerse;
-		return false;
-	}
-
-	function entryIsDimmed(e: FathersEntry): boolean {
-		if (!hasFilter) return false;
-		return !entryMatches(e);
-	}
-
-	$: annotatedPericopes = chapterData.pericopes.map((p) => {
-		const verseInRange =
-			selectedVerse !== null && selectedVerse >= p.startVerse && selectedVerse <= p.endVerse;
-		return { ...p, verseInRange };
-	});
-
-	// Dispatch filtered counts for verse list badge dimming
-	$: {
-		if (!hasFilter) {
-			dispatch('filteredCounts', null);
-		} else {
-			const counts: Record<number, number> = {};
-			for (const p of chapterData.pericopes) {
-				for (const entry of p.entries) {
-					if (!entryMatches(entry)) continue;
-					if (entry.subVerseNum !== null) {
-						counts[entry.subVerseNum] = (counts[entry.subVerseNum] ?? 0) + 1;
-					} else {
-						for (let v = p.startVerse; v <= p.endVerse; v++) {
-							counts[v] = (counts[v] ?? 0) + 1;
-						}
-					}
-				}
-			}
-			dispatch('filteredCounts', counts);
-		}
-	}
-
-	function chipClass(active: boolean, available: boolean = true) {
-		if (!available && !active) {
-			return `px-[8px] py-[3px] rounded-[3px] text-[11px] font-medium border transition-colors duration-fast border-border text-border cursor-not-allowed opacity-40`;
-		}
-		return `px-[8px] py-[3px] rounded-[3px] text-[11px] font-medium border transition-colors duration-fast cursor-pointer
-			${active ? 'bg-interactive text-white border-interactive' : 'border-border text-subtle hover:text-foreground hover:border-foreground/30'}`;
 	}
 </script>
 
 <div class="flex flex-col h-full overflow-hidden">
-	<!-- ── Toolbar row ────────────────────────────────────────── -->
-	<div class="shrink-0 border-b border-border px-sm py-[8px] bg-panel flex items-center gap-[8px]">
-		<button
-			class="text-[11px] font-medium px-[8px] py-[4px] rounded-[3px] border transition-colors duration-fast
-				{filtersOpen
-				? 'bg-interactive text-white border-interactive'
-				: 'border-border text-subtle hover:text-foreground'}"
-			on:click={() => (filtersOpen = !filtersOpen)}
-		>
-			Filters{filterCount > 0 ? ` (${filterCount})` : ''}
-		</button>
-
-		{#if hasFilter}
-			<button
-				class="text-[11px] text-subtle hover:text-accent transition-colors duration-fast"
-				on:click={clearFilters}
-			>
-				Clear filters
-			</button>
-		{/if}
-
-		<div class="ml-auto flex items-center gap-[8px]">
-			<button
-				class="text-[11px] font-medium px-[8px] py-[4px] rounded-[3px] border transition-colors duration-fast
-					{expandAll
-					? 'bg-interactive text-white border-interactive'
-					: 'border-border text-subtle hover:text-foreground'}"
-				on:click={() => (expandAll = !expandAll)}
-			>
-				{expandAll ? 'Collapse' : 'Expand all'}
-			</button>
-			<span class="text-[11px] text-subtle">
-				{chapterData.totalEntries}
-				{chapterData.totalEntries === 1 ? 'entry' : 'entries'}
-			</span>
-		</div>
-	</div>
-
-	<!-- ── Collapsible filter panel ───────────────────────────── -->
-	{#if filtersOpen}
-		<div class="shrink-0 border-b border-border px-sm py-[10px] bg-panel/80 filter-grid">
-			<!-- Century -->
-			<span class="filter-label">Century</span>
-			<div class="flex items-center gap-[5px] flex-wrap">
-				<button class={chipClass(filterCentury === 'all')} on:click={() => (filterCentury = 'all')}
-					>All</button
-				>
-				{#each CENTURIES as c}
-					{@const avail = availableCenturies.has(c)}
-					{@const label = c === 1 ? '1st' : c === 2 ? '2nd' : c === 3 ? '3rd' : `${c}th`}
-					<button
-						class={chipClass(filterCentury === c, avail)}
-						title={avail
-							? `Filter to ${label} century`
-							: `No ${label} century entries in this chapter`}
-						on:click={() => avail && (filterCentury = c)}
-					>
-						{label}
-					</button>
-				{/each}
-				<button
-					class={chipClass(filterCentury === 'other', hasOtherCentury)}
-					title={hasOtherCentury
-						? 'Filter to 9th century and later'
-						: 'No 9th+ century entries in this chapter'}
-					on:click={() => hasOtherCentury && (filterCentury = 'other')}>9th+</button
-				>
-			</div>
-
-			<!-- Era -->
-			<span class="filter-label">Era</span>
-			<div class="flex items-center gap-[5px] flex-wrap">
-				<button class={chipClass(filterEra === 'all')} on:click={() => (filterEra = 'all')}
-					>All</button
-				>
-				{#each ERAS as { key, label }}
-					{@const avail = availableEras.has(key)}
-					<button
-						class={chipClass(filterEra === key, avail)}
-						title={avail ? `Filter to ${label} era` : `No ${label} entries in this chapter`}
-						on:click={() => avail && (filterEra = key)}>{label}</button
-					>
-				{/each}
-			</div>
-
-			<!-- Tradition -->
-			<span class="filter-label">Tradition</span>
-			<div class="flex items-center gap-[5px] flex-wrap">
-				<button
-					class={chipClass(filterTradition === 'all')}
-					on:click={() => (filterTradition = 'all')}>All</button
-				>
-				{#each TRADITIONS as { key, label }}
-					{@const avail = availableTraditions.has(key)}
-					<button
-						class={chipClass(filterTradition === key, avail)}
-						title={avail ? `Filter to ${label} tradition` : `No ${label} entries in this chapter`}
-						on:click={() => avail && (filterTradition = key)}>{label}</button
-					>
-				{/each}
-			</div>
-
-			<!-- Authors & Documents -->
-			<span class="filter-label" style="white-space: normal; line-height: 1.3;"
-				>Authors &amp;<br />Documents</span
-			>
-			<div class="flex items-center gap-[5px] flex-wrap">
-				<div class="relative">
-					<button
-						class="text-[11px] px-[8px] py-[3px] rounded-[3px] border transition-colors duration-fast
-							{filterAuthors.size > 0
-							? 'bg-interactive text-white border-interactive'
-							: 'border-border text-subtle hover:text-foreground'}"
-						on:click={() => (authorDropdownOpen = !authorDropdownOpen)}
-					>
-						{filterAuthors.size > 0 ? `${filterAuthors.size} selected` : 'Select'}
-						<span class="text-[9px] opacity-70 ml-[3px]">{authorDropdownOpen ? '▲' : '▼'}</span>
-					</button>
-					{#if authorDropdownOpen}
-						<div
-							class="absolute top-full left-0 mt-[2px] bg-panel border border-border rounded-sm shadow-md z-20 max-h-[240px] overflow-y-auto w-[260px]"
-						>
-							{#if chapterAuthors.length > 0}
-								<p
-									class="px-[8px] pt-[6px] pb-[2px] text-[9px] uppercase tracking-[0.15em] text-subtle font-semibold"
-								>
-									Authors
-								</p>
-								{#each chapterAuthors as author}
-									{@const selected = filterAuthors.has(author)}
-									<label
-										class="flex items-center gap-[6px] px-[8px] py-[4px] text-[12px] text-foreground hover:bg-accent/10 cursor-pointer transition-colors duration-fast"
-									>
-										<input
-											type="checkbox"
-											checked={selected}
-											on:change={() => toggleAuthor(author)}
-											class="accent-accent"
-										/>
-										<span class="flex-1 truncate">{author}</span>
-										<span class="text-[10px] text-subtle shrink-0"
-											>{authorEntryCounts[author] ?? 0}</span
-										>
-									</label>
-								{/each}
-							{/if}
-							{#if chapterDocuments.length > 0}
-								<p
-									class="px-[8px] pt-[6px] pb-[2px] text-[9px] uppercase tracking-[0.15em] text-subtle font-semibold border-t border-border/30 mt-[4px]"
-								>
-									Documents
-								</p>
-								{#each chapterDocuments as doc}
-									{@const selected = filterAuthors.has(doc)}
-									<label
-										class="flex items-center gap-[6px] px-[8px] py-[4px] text-[12px] text-foreground italic hover:bg-accent/10 cursor-pointer transition-colors duration-fast"
-									>
-										<input
-											type="checkbox"
-											checked={selected}
-											on:change={() => toggleAuthor(doc)}
-											class="accent-accent"
-										/>
-										<span class="flex-1 truncate">{doc}</span>
-										<span class="text-[10px] text-subtle shrink-0"
-											>{authorEntryCounts[doc] ?? 0}</span
-										>
-									</label>
-								{/each}
-							{/if}
-						</div>
-					{/if}
-				</div>
-				{#if filterAuthors.size > 0}
-					<button
-						class="text-[10px] text-subtle hover:text-accent"
-						on:click={() => (filterAuthors = new Set())}>clear</button
-					>
-				{/if}
-			</div>
-		</div>
-	{/if}
+	<FathersFilterBar
+		{allEntries}
+		totalEntries={chapterData.totalEntries}
+		{expandAll}
+		on:filterChange={handleFilterChange}
+		on:expandAllChange={handleExpandAllChange}
+	/>
 
 	<!-- ── Pericope groups ────────────────────────────────────── -->
 	<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
@@ -527,7 +254,7 @@
 			{#each annotatedPericopes as pericope, i}
 				{@const pericopeEntries = pericope.entries}
 				{@const matchingCount = hasFilter
-					? pericopeEntries.filter(entryMatches).length
+					? pericopeEntries.filter((e) => entryMatches(e, filter)).length
 					: pericopeEntries.length}
 
 				<div
@@ -536,7 +263,6 @@
 					data-pericope-idx={i}
 					use:observePericope={i}
 				>
-					<!-- Pericope header (no backdrop-blur for Firefox perf) -->
 					<div class="sticky top-0 z-10 bg-panel border-b border-border/30 px-sm py-[8px]">
 						<div class="flex items-center justify-between">
 							<span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-subtle">
@@ -557,7 +283,6 @@
 						{/if}
 					</div>
 
-					<!-- Overview text -->
 					{#if pericope.overview && expandAll}
 						<div class="px-sm py-[8px] bg-accent/5 border-b border-border/20">
 							<p class="text-[9px] uppercase tracking-[0.15em] text-subtle font-medium mb-[4px]">
@@ -569,7 +294,6 @@
 						</div>
 					{/if}
 
-					<!-- Entries (lazy-rendered per pericope) -->
 					{#if visiblePericopes.has(i)}
 						<div class="px-sm py-[8px] space-y-[8px]">
 							{#each pericopeEntries as entry}
@@ -582,7 +306,6 @@
 							{/each}
 						</div>
 					{:else}
-						<!-- Placeholder preserving scroll height estimate -->
 						<div class="px-sm py-[8px]" style="min-height: {pericopeEntries.length * 80}px"></div>
 					{/if}
 				</div>
@@ -590,7 +313,6 @@
 		{/if}
 	</div>
 
-	<!-- Verse-ref hover tooltip -->
 	<VerseTooltip
 		translationId="odr"
 		osisRanges={verseRefs}
@@ -607,22 +329,3 @@
 		}}
 	/>
 </div>
-
-<style>
-	.filter-grid {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 8px 10px;
-		align-items: center;
-	}
-
-	.filter-label {
-		font-size: 9px;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		color: var(--color-subtle);
-		font-weight: 500;
-		text-align: left;
-		white-space: nowrap;
-	}
-</style>
