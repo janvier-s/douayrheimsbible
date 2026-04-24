@@ -395,7 +395,6 @@
 	</p>
 </ProseLayout>
 
-
 <style>
 	/* Genesis comparison (used in Translation section) */
 	.gen-subtitle {
@@ -542,7 +541,6 @@
 	.screenshot-link:hover img {
 		opacity: 0.88;
 	}
-
 
 	.screenshot-fig figcaption {
 		font-family: var(--font-ui);
