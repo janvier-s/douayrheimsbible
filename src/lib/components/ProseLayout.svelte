@@ -9,11 +9,15 @@
 	export let ogImage: string = 'https://thedouayrheims.com/images/dr-1582-rheims.webp';
 	export let datePublished: string | undefined = undefined;
 	export let faqItems: Array<{ q: string; a: string }> = [];
+	export let navItems: Array<{ path: string; label: string }> | undefined = undefined;
 
 	const SITE = 'https://thedouayrheims.com';
 
 	const PATH_LABELS: Record<string, string> = {
 		about: 'About',
+		features: 'Features',
+		translations: 'The Translations',
+		stats: 'In Numbers',
 		'the-douay-rheims': 'The Douay-Rheims Bible',
 		articles: 'Articles',
 		history: 'History',
@@ -126,7 +130,8 @@
 
 	let articleEl: HTMLElement;
 
-	$: isInNav = NAV_ARTICLES.some((a) => a.path === $page.url.pathname);
+	$: activeNav = navItems ?? NAV_ARTICLES;
+	$: isInNav = activeNav.some((a) => a.path === $page.url.pathname);
 
 	// TOC
 	type TocItem = { id: string; text: string };
@@ -297,7 +302,7 @@
 	{/if}
 	{#if isInNav}
 		<ul class="toc-nav">
-			{#each NAV_ARTICLES as article}
+			{#each activeNav as article}
 				{@const isCurrent = $page.url.pathname === article.path}
 				<li class="toc-nav-item" class:toc-nav-item--current={isCurrent}>
 					<a href={article.path} class="toc-nav-link" class:toc-nav-link--active={isCurrent}>
