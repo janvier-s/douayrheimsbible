@@ -1,67 +1,67 @@
 <script lang="ts">
-    import ProseLayout from '$lib/components/ProseLayout.svelte';
-    import { browser } from '$app/environment';
-    import { onMount, onDestroy } from 'svelte';
+	import ProseLayout from '$lib/components/ProseLayout.svelte';
+	import { browser } from '$app/environment';
+	import { onMount, onDestroy } from 'svelte';
 
-    const ABOUT_NAV = [
-        { path: '/about', label: 'About' },
-        { path: '/about/features', label: 'Features' },
-        { path: '/about/translations', label: 'The Translations' },
-        { path: '/about/stats', label: 'In Numbers' }
-    ];
+	const ABOUT_NAV = [
+		{ path: '/about', label: 'About' },
+		{ path: '/about/features', label: 'Features' },
+		{ path: '/about/translations', label: 'The Translations' },
+		{ path: '/about/stats', label: 'In Numbers' }
+	];
 
-    let blessingOpen = false;
+	let blessingOpen = false;
 
-    function closeBlessing() {
-        blessingOpen = false;
-    }
+	function closeBlessing() {
+		blessingOpen = false;
+	}
 
-    function handleBlessingKey(e: KeyboardEvent) {
-        if (e.key === 'Escape') closeBlessing();
-    }
+	function handleBlessingKey(e: KeyboardEvent) {
+		if (e.key === 'Escape') closeBlessing();
+	}
 
-    function handleBlessingBackdrop(e: MouseEvent) {
-        if (e.target === e.currentTarget) closeBlessing();
-    }
+	function handleBlessingBackdrop(e: MouseEvent) {
+		if (e.target === e.currentTarget) closeBlessing();
+	}
 
-    onMount(() => {
-        if (browser) document.addEventListener('keydown', handleBlessingKey);
-    });
+	onMount(() => {
+		if (browser) document.addEventListener('keydown', handleBlessingKey);
+	});
 
-    onDestroy(() => {
-        if (browser) document.removeEventListener('keydown', handleBlessingKey);
-    });
+	onDestroy(() => {
+		if (browser) document.removeEventListener('keydown', handleBlessingKey);
+	});
 
-    $: if (browser && blessingOpen) {
-        document.body.style.overflow = 'hidden';
-    } else if (browser) {
-        document.body.style.overflow = '';
-    }
+	$: if (browser && blessingOpen) {
+		document.body.style.overflow = 'hidden';
+	} else if (browser) {
+		document.body.style.overflow = '';
+	}
 </script>
 
 <svelte:head>
-    <title>In Numbers | The Original Douay-Rheims Bible</title>
-    <meta
-        name="description"
-        content="The Original Douay-Rheims Bible in numbers: 1,707 annotations, 3,709 cross-references, and the story of how this site was built."
-    />
-    <link rel="canonical" href="https://thedouayrheims.com/about/stats" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="In Numbers" />
-    <meta
-        property="og:description"
-        content="The Original Douay-Rheims Bible in numbers: 1,707 annotations, 3,709 cross-references, and the story of how this site was built."
-    />
-    <meta property="og:url" content="https://thedouayrheims.com/about/stats" />
-    <meta property="og:site_name" content="Douay-Rheims Bible" />
+	<title>In Numbers | The Original Douay-Rheims Bible</title>
+	<meta
+		name="description"
+		content="The Original Douay-Rheims Bible in numbers: 1,707 annotations, 3,709 cross-references, and the story of how this site was built."
+	/>
+	<link rel="canonical" href="https://thedouayrheims.com/about/stats" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="In Numbers" />
+	<meta
+		property="og:description"
+		content="The Original Douay-Rheims Bible in numbers: 1,707 annotations, 3,709 cross-references, and the story of how this site was built."
+	/>
+	<meta property="og:url" content="https://thedouayrheims.com/about/stats" />
+	<meta property="og:site_name" content="Douay-Rheims Bible" />
 </svelte:head>
 
 <ProseLayout
-    title="In Numbers"
-    subtitle="The Original Douay-Rheims Bible by the numbers, and the story of how this site was built."
-    navItems={ABOUT_NAV}
+	title="In Numbers"
+	subtitle="The Original Douay-Rheims Bible by the numbers, and the story of how this site was built."
+	navItems={ABOUT_NAV}
 >
-    <h2>The Original Douay-Rheims in Numbers</h2>
+	<h2>The Original Douay-Rheims in Numbers</h2>
 
 	<div class="stats-grid">
 		<div class="stat-card">
@@ -156,14 +156,13 @@
 		</button>
 	</p>
 
-    <hr />
-    <p>
-        <a href="/about/translations">← The Translations</a>
-    </p>
+	<hr />
+	<p>
+		<a href="/about/translations">← The Translations</a>
+	</p>
 </ProseLayout>
 
 {#if blessingOpen}
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<div
 		class="blessing-backdrop"
 		role="dialog"
@@ -222,258 +221,262 @@
 {/if}
 
 <style>
-    /* Stats grid */
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1px;
-        background-color: var(--color-border);
-        border: 1px solid var(--color-border);
-        border-radius: 4px;
-        overflow: hidden;
-        margin: 2rem 0 1rem;
-    }
+	/* Stats grid */
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1px;
+		background-color: var(--color-border);
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		overflow: hidden;
+		margin: 2rem 0 1rem;
+	}
 
-    .stat-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        padding: 28px 16px;
-        background-color: var(--color-panel);
-        text-align: center;
-    }
+	.stat-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		padding: 28px 16px;
+		background-color: var(--color-panel);
+		text-align: center;
+	}
 
-    .stat-number {
-        font-family: 'Gotham', var(--font-ui);
-        font-size: 2.6rem;
-        font-weight: 600;
-        line-height: 1;
-        color: var(--color-accent);
-        letter-spacing: -0.02em;
-    }
+	.stat-number {
+		font-family: 'Gotham', var(--font-ui);
+		font-size: 2.6rem;
+		font-weight: 600;
+		line-height: 1;
+		color: var(--color-accent);
+		letter-spacing: -0.02em;
+	}
 
-    .stat-label {
-        font-family: var(--font-ui);
-        font-size: 0.7rem;
-        font-variant: small-caps;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        color: var(--color-subtle);
-        text-transform: lowercase;
-    }
+	.stat-label {
+		font-family: var(--font-ui);
+		font-size: 0.7rem;
+		font-variant: small-caps;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		color: var(--color-subtle);
+		text-transform: lowercase;
+	}
 
-    .stats-note {
-        font-size: 0.85em;
-        color: var(--color-subtle);
-        font-style: italic;
-        margin-top: 0.75rem;
-    }
+	.stats-note {
+		font-size: 0.85em;
+		color: var(--color-subtle);
+		font-style: italic;
+		margin-top: 0.75rem;
+	}
 
-    /* Ko-fi */
-    .kofi-row {
-        display: flex;
-        justify-content: center;
-        margin-top: 1.5rem;
-    }
+	/* Ko-fi */
+	.kofi-row {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.5rem;
+	}
 
-    .kofi-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 20px;
-        background: color-mix(in srgb, var(--color-subtle) 15%, transparent);
-        border: 1px solid transparent;
-        border-radius: 4px;
-        font-family: var(--font-ui);
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--color-text) !important;
-        text-decoration: none;
-        transition:
-            border-color 150ms ease,
-            color 150ms ease;
-    }
+	.kofi-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 10px 20px;
+		background: color-mix(in srgb, var(--color-subtle) 15%, transparent);
+		border: 1px solid transparent;
+		border-radius: 4px;
+		font-family: var(--font-ui);
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--color-text) !important;
+		text-decoration: none;
+		transition:
+			border-color 150ms ease,
+			color 150ms ease;
+	}
 
-    .kofi-btn img {
-        width: 20px;
-        height: 20px;
-        object-fit: contain;
-    }
+	.kofi-btn img {
+		width: 20px;
+		height: 20px;
+		object-fit: contain;
+	}
 
-    .kofi-btn:hover {
-        border-color: var(--color-subtle);
-        color: var(--color-text) !important;
-    }
+	.kofi-btn:hover {
+		border-color: var(--color-subtle);
+		color: var(--color-text) !important;
+	}
 
-    .kofi-intro {
-        font-size: 0.9rem;
-        color: var(--color-subtle);
-        text-align: center;
-        margin-top: 1.5rem;
-        margin-bottom: 0;
-    }
+	.kofi-intro {
+		font-size: 0.9rem;
+		color: var(--color-subtle);
+		text-align: center;
+		margin-top: 1.5rem;
+		margin-bottom: 0;
+	}
 
-    /* Prayer invite */
-    .blessing-invite {
-        font-size: 0.9rem;
-        color: var(--color-subtle);
-        text-align: center;
-        margin-top: 1rem;
-        margin-bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
+	/* Prayer invite */
+	.blessing-invite {
+		font-size: 0.9rem;
+		color: var(--color-subtle);
+		text-align: center;
+		margin-top: 1rem;
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
 
-    .blessing-trigger {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 28px;
-        height: 28px;
-        border-radius: 3px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        color: var(--color-subtle);
-        transition: color 150ms ease;
-        padding: 0;
-        flex-shrink: 0;
-    }
+	.blessing-trigger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		border-radius: 3px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		color: var(--color-subtle);
+		transition: color 150ms ease;
+		padding: 0;
+		flex-shrink: 0;
+	}
 
-    .blessing-trigger:hover {
-        color: var(--color-accent);
-    }
+	.blessing-trigger:hover {
+		color: var(--color-accent);
+	}
 
-    /* Blessing modal */
-    .blessing-backdrop {
-        position: fixed;
-        inset: 0;
-        z-index: 9000;
-        background: rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(4px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        animation: blessing-backdrop-in 180ms ease both;
-    }
+	/* Blessing modal */
+	.blessing-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 9000;
+		background: rgba(0, 0, 0, 0.55);
+		backdrop-filter: blur(4px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 24px;
+		animation: blessing-backdrop-in 180ms ease both;
+	}
 
-    @keyframes blessing-backdrop-in {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+	@keyframes blessing-backdrop-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 
-    .blessing-panel {
-        background: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: 6px;
-        box-shadow:
-            0 8px 24px -4px rgba(0, 0, 0, 0.2),
-            0 2px 8px -2px rgba(0, 0, 0, 0.12);
-        width: 100%;
-        max-width: 480px;
-        padding: 32px 36px 28px;
-        animation: blessing-panel-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
+	.blessing-panel {
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		box-shadow:
+			0 8px 24px -4px rgba(0, 0, 0, 0.2),
+			0 2px 8px -2px rgba(0, 0, 0, 0.12);
+		width: 100%;
+		max-width: 480px;
+		padding: 32px 36px 28px;
+		animation: blessing-panel-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
 
-    @keyframes blessing-panel-in {
-        from {
-            opacity: 0;
-            transform: translateY(10px) scale(0.98);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
+	@keyframes blessing-panel-in {
+		from {
+			opacity: 0;
+			transform: translateY(10px) scale(0.98);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
+	}
 
-    .blessing-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 16px;
-    }
+	.blessing-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 16px;
+	}
 
-    .blessing-eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-family: var(--font-ui);
-        font-size: 9px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.22em;
-        color: var(--color-accent-text);
-    }
+	.blessing-eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-family: var(--font-ui);
+		font-size: 9px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.22em;
+		color: var(--color-accent-text);
+	}
 
-    .blessing-cross {
-        font-size: 13px;
-        color: var(--color-accent);
-    }
+	.blessing-cross {
+		font-size: 13px;
+		color: var(--color-accent);
+	}
 
-    .blessing-close {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 26px;
-        height: 26px;
-        border-radius: 3px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        color: var(--color-subtle);
-        transition: color 150ms ease;
-        padding: 0;
-    }
+	.blessing-close {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 26px;
+		height: 26px;
+		border-radius: 3px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		color: var(--color-subtle);
+		transition: color 150ms ease;
+		padding: 0;
+	}
 
-    .blessing-close:hover {
-        color: var(--color-text);
-    }
+	.blessing-close:hover {
+		color: var(--color-text);
+	}
 
-    .blessing-title {
-        font-family: var(--font-reader);
-        font-size: 1.45rem;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-        color: var(--color-heading, var(--color-text));
-        margin: 0 0 20px;
-        line-height: 1.2;
-    }
+	.blessing-title {
+		font-family: var(--font-reader);
+		font-size: 1.45rem;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+		color: var(--color-heading, var(--color-text));
+		margin: 0 0 20px;
+		line-height: 1.2;
+	}
 
-    .blessing-body {
-        font-family: var(--font-reader);
-        font-size: 0.97rem;
-        line-height: 1.8;
-        color: var(--color-text);
-    }
+	.blessing-body {
+		font-family: var(--font-reader);
+		font-size: 0.97rem;
+		line-height: 1.8;
+		color: var(--color-text);
+	}
 
-    .blessing-body p {
-        margin: 0 0 14px;
-    }
+	.blessing-body p {
+		margin: 0 0 14px;
+	}
 
-    .blessing-body p:last-child {
-        margin-bottom: 0;
-        color: var(--color-accent-text);
-        font-size: 0.93rem;
-    }
+	.blessing-body p:last-child {
+		margin-bottom: 0;
+		color: var(--color-accent-text);
+		font-size: 0.93rem;
+	}
 
-    @media (max-width: 560px) {
-        .blessing-panel {
-            padding: 24px 20px 20px;
-        }
-    }
+	@media (max-width: 560px) {
+		.blessing-panel {
+			padding: 24px 20px 20px;
+		}
+	}
 
-    @media (max-width: 640px) {
-        .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
+	@media (max-width: 640px) {
+		.stats-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 
-        .stat-number {
-            font-size: 2rem;
-        }
-    }
+		.stat-number {
+			font-size: 2rem;
+		}
+	}
 </style>
