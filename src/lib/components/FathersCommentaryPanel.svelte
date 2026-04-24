@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { createEventDispatcher, onDestroy, tick } from 'svelte';
+	import { createEventDispatcher, onDestroy, onMount, tick } from 'svelte';
+	import { browser } from '$app/environment';
 	import type { FathersChapterFile, FathersEntry } from '$lib/data/fathers-types';
 	import type { OsisRange } from '$lib/search/reference';
 	import { parseOsis } from '$lib/search/reference';
@@ -37,6 +38,13 @@
 	async function scrollToVerse(verse: number) {
 		await tick();
 		if (!scrollContainer) return;
+		// Force-mount the pericope containing this verse
+		const idx = chapterData.pericopes.findIndex(
+			(p) => verse >= p.startVerse && verse <= p.endVerse
+		);
+		if (idx >= 0 && ensurePericopeMounted(idx)) {
+			await tick();
+		}
 		// Find first entry tagged with this exact verse
 		const el = scrollContainer.querySelector(`[data-verse="${verse}"]`) as HTMLElement | null;
 		scrollToEl(el);
@@ -45,6 +53,11 @@
 	async function scrollToPericopeRef(verseRef: string) {
 		await tick();
 		if (!scrollContainer) return;
+		// Force-mount the target pericope
+		const idx = chapterData.pericopes.findIndex((p) => p.verseRef === verseRef);
+		if (idx >= 0 && ensurePericopeMounted(idx)) {
+			await tick();
+		}
 		// Find the pericope section by its verseRef data attribute
 		const el = scrollContainer.querySelector(
 			`[data-pericope-ref="${CSS.escape(verseRef)}"]`
@@ -90,6 +103,72 @@
 	onDestroy(() => {
 		if (verseRefTimer) clearTimeout(verseRefTimer);
 	});
+
+	// ── Lazy pericope rendering via IntersectionObserver ──────────────
+	/** Set of pericope indices whose entries are mounted. Once added, never removed. */
+	let visiblePericopes: Set<number> = new Set([0, 1, 2]);
+
+	let pericopeObserver: IntersectionObserver | null = null;
+	/** Map from pericope index to its observed element, for cleanup. */
+	const observedEls = new Map<number, HTMLElement>();
+
+	onMount(() => {
+		if (!browser) return;
+		pericopeObserver = new IntersectionObserver(
+			(entries) => {
+				let changed = false;
+				for (const ioEntry of entries) {
+					if (ioEntry.isIntersecting) {
+						const idx = Number((ioEntry.target as HTMLElement).dataset.pericopeIdx);
+						if (!isNaN(idx) && !visiblePericopes.has(idx)) {
+							visiblePericopes.add(idx);
+							changed = true;
+							// No need to keep observing once mounted
+							pericopeObserver?.unobserve(ioEntry.target);
+							observedEls.delete(idx);
+						}
+					}
+				}
+				if (changed) {
+					// Trigger Svelte reactivity by creating a new Set
+					visiblePericopes = new Set(visiblePericopes);
+				}
+			},
+			{ rootMargin: '200px', root: null }
+		);
+	});
+
+	onDestroy(() => {
+		pericopeObserver?.disconnect();
+		pericopeObserver = null;
+		observedEls.clear();
+	});
+
+	/** Svelte action: observe a pericope container element. */
+	function observePericope(node: HTMLElement, idx: number) {
+		if (pericopeObserver && !visiblePericopes.has(idx)) {
+			pericopeObserver.observe(node);
+			observedEls.set(idx, node);
+		}
+		return {
+			destroy() {
+				pericopeObserver?.unobserve(node);
+				observedEls.delete(idx);
+			}
+		};
+	}
+
+	/** Force-mount a pericope by index so we can scroll to its content. */
+	function ensurePericopeMounted(idx: number): boolean {
+		if (visiblePericopes.has(idx)) return false;
+		visiblePericopes = new Set([...visiblePericopes, idx]);
+		return true;
+	}
+
+	// Reset visible pericopes when chapter changes
+	$: if (chapterData) {
+		visiblePericopes = new Set([0, 1, 2]);
+	}
 
 	// ── Filter state ──────────────────────────────────────────────────
 	let filtersOpen = false;
@@ -433,7 +512,7 @@
 				<p>No patristic commentary available for this chapter.</p>
 			</div>
 		{:else}
-			{#each annotatedPericopes as pericope}
+			{#each annotatedPericopes as pericope, i}
 				{@const pericopeEntries = pericope.entries}
 				{@const matchingCount = hasFilter
 					? pericopeEntries.filter(entryMatches).length
@@ -442,6 +521,8 @@
 				<div
 					class="border-b border-border/50 last:border-b-0"
 					data-pericope-ref={pericope.verseRef}
+					data-pericope-idx={i}
+					use:observePericope={i}
 				>
 					<!-- Pericope header (no backdrop-blur for Firefox perf) -->
 					<div class="sticky top-0 z-10 bg-panel border-b border-border/30 px-sm py-[8px]">
@@ -476,17 +557,22 @@
 						</div>
 					{/if}
 
-					<!-- Entries -->
-					<div class="px-sm py-[8px] space-y-[8px]">
-						{#each pericopeEntries as entry}
-							<FathersEntryCard
-								{entry}
-								highlighted={pericope.verseInRange && entryIsHighlighted(entry)}
-								dimmed={entryIsDimmed(entry)}
-								forceOpen={expandAll}
-							/>
-						{/each}
-					</div>
+					<!-- Entries (lazy-rendered per pericope) -->
+					{#if visiblePericopes.has(i)}
+						<div class="px-sm py-[8px] space-y-[8px]">
+							{#each pericopeEntries as entry}
+								<FathersEntryCard
+									{entry}
+									highlighted={pericope.verseInRange && entryIsHighlighted(entry)}
+									dimmed={entryIsDimmed(entry)}
+									forceOpen={expandAll}
+								/>
+							{/each}
+						</div>
+					{:else}
+						<!-- Placeholder preserving scroll height estimate -->
+						<div class="px-sm py-[8px]" style="min-height: {pericopeEntries.length * 80}px"></div>
+					{/if}
 				</div>
 			{/each}
 		{/if}
