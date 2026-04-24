@@ -14,16 +14,35 @@
 		if (!forceOpen) expanded = !expanded;
 	}
 
-	/** Replace {fn:N} with superscript footnote markers, then linkify verse refs */
-	function renderBody(text: string): string {
+	// The last footnote is always the source reference (PG, PL, CSEL, etc.)
+	$: sourceFootnoteIdx = entry.footnotes.length > 0 ? entry.footnotes.length - 1 : -1;
+	$: sourceFootnote = sourceFootnoteIdx >= 0 ? entry.footnotes[sourceFootnoteIdx] : null;
+	$: inlineFootnotes = entry.footnotes.slice(0, sourceFootnoteIdx);
+
+	/** Replace {fn:N} with superscript footnote markers, stripping the last (source ref) marker */
+	function renderBody(text: string, lastFnIdx: number): string {
 		let html = text.replace(/\{fn:(\d+)\}/g, (_, n) => {
 			const idx = parseInt(n);
+			if (idx === lastFnIdx) return '';
 			return `<sup class="fathers-fn" data-fn="${idx}">[${idx + 1}]</sup>`;
 		});
 		return linkifyBareRefs(html, 'odr');
 	}
 
 	$: bodyParagraphs = entry.body.split('\n\n').filter((p) => p.trim().length > 0);
+
+	// Body text longer than 350 chars will be truncated by the 6em max-height
+	$: bodyTruncated = entry.body.length > 350;
+
+	$: buttonLabel = expanded
+		? 'Show less'
+		: bodyTruncated
+			? 'Show more'
+			: inlineFootnotes.length > 0
+				? `Show ${inlineFootnotes.length} footnote${inlineFootnotes.length === 1 ? '' : 's'}`
+				: sourceFootnote
+					? 'Show source'
+					: 'Show more';
 </script>
 
 <article
@@ -69,7 +88,7 @@
 			style="max-height: {isOpen ? '9999px' : '6em'};"
 		>
 			{#each bodyParagraphs as para}
-				<p>{@html renderBody(para)}</p>
+				<p>{@html renderBody(para, sourceFootnoteIdx)}</p>
 			{/each}
 		</div>
 		{#if !forceOpen}
@@ -77,20 +96,30 @@
 				class="text-[11px] text-subtle hover:text-accent transition-colors duration-fast mt-[4px] pb-[2px]"
 				on:click={toggle}
 			>
-				{expanded ? 'Show less' : 'Show more'}
+				{buttonLabel}
 			</button>
 		{/if}
 	</div>
 
-	<!-- Footnotes -->
-	{#if entry.footnotes.length > 0 && isOpen}
+	<!-- Inline footnotes (all except last/source) -->
+	{#if inlineFootnotes.length > 0 && isOpen}
 		<div class="px-sm mt-[6px] border-t border-border/30 pt-[6px]">
-			{#each entry.footnotes as fn, i}
+			{#each inlineFootnotes as fn, i}
 				<p class="text-[11px] text-subtle leading-snug fathers-body">
 					<span class="font-semibold">[{i + 1}]</span>
 					{@html linkifyBareRefs(fn.text, 'odr')}
 				</p>
 			{/each}
+		</div>
+	{/if}
+
+	<!-- Source reference (last footnote) -->
+	{#if sourceFootnote && isOpen}
+		<div class="px-sm mt-[4px] pb-[2px]">
+			<p class="source-ref text-[10px] text-subtle/70 tracking-[0.02em]">
+				<span class="source-label">Source:</span>
+				{@html linkifyBareRefs(sourceFootnote.text, 'odr')}
+			</p>
 		</div>
 	{/if}
 
@@ -127,5 +156,21 @@
 		cursor: default;
 		vertical-align: super;
 		line-height: 1;
+	}
+
+	.source-ref {
+		font-family: var(--font-ui);
+		font-style: italic;
+		line-height: 1.5;
+	}
+
+	.source-label {
+		font-weight: 600;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 9px;
+		letter-spacing: 0.08em;
+		opacity: 0.6;
+		margin-right: 3px;
 	}
 </style>
