@@ -271,76 +271,6 @@
         margin-top: 0.75rem;
     }
 
-    /* Facsimile card */
-    .facsimile-card {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 20px 24px;
-        border: 1px solid var(--color-border);
-        border-radius: 4px;
-        background: var(--color-panel);
-        text-decoration: none;
-        color: var(--color-text);
-        margin: 28px 0 8px;
-        transition:
-            border-color 200ms ease,
-            background 200ms ease;
-    }
-
-    .facsimile-card:hover {
-        border-color: var(--color-accent);
-        background: color-mix(in srgb, var(--color-accent) 4%, var(--color-panel));
-        text-decoration: none;
-    }
-
-    .facsimile-cross {
-        font-size: 20px;
-        color: var(--color-accent);
-        flex-shrink: 0;
-    }
-
-    .facsimile-text {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        flex: 1;
-    }
-
-    .facsimile-label {
-        font-family: var(--font-ui);
-        font-size: 9px;
-        text-transform: uppercase;
-        letter-spacing: 0.22em;
-        font-weight: 600;
-        color: var(--color-accent-text);
-    }
-
-    .facsimile-title {
-        font-family: var(--font-reader);
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--color-text);
-        line-height: 1.3;
-    }
-
-    .facsimile-sub {
-        font-family: var(--font-ui);
-        font-size: 12px;
-        color: var(--color-subtle);
-    }
-
-    .facsimile-arrow {
-        font-size: 18px;
-        color: var(--color-accent);
-        flex-shrink: 0;
-        transition: transform 200ms ease;
-    }
-
-    .facsimile-card:hover .facsimile-arrow {
-        transform: translateX(4px);
-    }
-
     /* Ko-fi */
     .kofi-row {
         display: flex;
@@ -544,11 +474,6 @@
 
         .stat-number {
             font-size: 2rem;
-        }
-
-        .facsimile-card {
-            padding: 16px;
-            gap: 12px;
         }
     }
 </style>
