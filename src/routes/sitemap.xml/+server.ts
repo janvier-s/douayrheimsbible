@@ -1,5 +1,6 @@
 import { ALL_BOOKS } from '$lib/data/books';
 import { TRANSLATION_CONFIGS } from '$lib/data/reference';
+import fathersManifest from '../../../static/data/fathers/manifest.json';
 
 // Translation prefixes with live data — all books (OT + NT)
 const LIVE_TRANSLATIONS = ['odr', 'vul', 'drc', 'knox', 'kjv', 'cpdv', 'haydock'] as const;
@@ -71,6 +72,18 @@ export function GET() {
 			urls.push(
 				entry(`/reference/${config.id}/${article.section}/${article.slug}`, '0.6', 'yearly')
 			);
+		}
+	}
+
+	// About sub-pages
+	urls.push(entry('/about/features', '0.8', 'monthly'));
+	urls.push(entry('/about/translations', '0.8', 'monthly'));
+	urls.push(entry('/about/stats', '0.7', 'monthly'));
+
+	// Fathers/patristic commentary pages
+	for (const [slug, chapters] of Object.entries(fathersManifest)) {
+		for (const ch of chapters as number[]) {
+			urls.push(entry(`/fathers/${slug}/${ch}`, '0.6', 'monthly'));
 		}
 	}
 

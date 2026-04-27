@@ -1,7 +1,8 @@
 {
 	"name": "Douay-Rheims Bible",
 	"short_name": "Douay-Rheims",
-	"description": "The Douay-Rheims Bible — seven Catholic translations side by side, with study notes, search, and compare.",
+	"description": "The original Douay-Rheims Bible — eight Catholic translations, patristic commentary, study notes, search, and compare.",
+	"categories": ["books", "reference", "religion"],
 	"icons": [
 		{
 			"src": "/web-app-manifest-192x192.png",

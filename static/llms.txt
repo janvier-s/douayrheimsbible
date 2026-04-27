@@ -7,6 +7,7 @@
 - [About](https://thedouayrheims.com/about): Overview of the Douay-Rheims Bible — its origins, translators, source text, Catholic significance, and the distinction from the Challoner revision
 - [History](https://thedouayrheims.com/history): Series of eleven articles covering the complete history of the Douay-Rheims Bible from its origins to the present
 - [Read the Bible](https://thedouayrheims.com/odr/genesis/1): Full text of the original Douay-Rheims Bible online, all 73 books, searchable and readable
+- [Patristic Commentary](https://thedouayrheims.com/fathers/genesis/1): Church Fathers commentary on Scripture — 68 books, filterable by century, era, tradition, and author
 - [Compare Translations](https://thedouayrheims.com/compare/genesis/1): Side-by-side comparison of up to 5 translations simultaneously
 - [Search](https://thedouayrheims.com/search): Full-text search across verse text and scholarly notes
 - [Download](https://thedouayrheims.com/download): Download the full text in JSON format for offline reading or reuse
@@ -44,6 +45,16 @@ Opens a side panel that tracks the current verse and surfaces notes, commentary,
 
 ### Compare Mode
 Any chapter can be placed alongside other translations. Up to 5 columns displayed simultaneously. Columns are draggable to reorder. Row highlighting tracks the same verse across all translations.
+
+### Fathers Mode
+A dedicated reading mode at /fathers/{book}/{chapter} surfacing patristic commentary — verse-by-verse comments from the Church Fathers and early Christian writers. Available for 68 books (1,165 chapters). Two data sources:
+
+- **ACCS** (Ancient Christian Commentary on Scripture): Grouped by pericope with attributed quotations from individual Fathers (Chrysostom, Augustine, Origen, Jerome, Ambrose, etc.)
+- **FKB** (Faith and Knowledge Bible): Additional patristic entries with doctrinal chapter headings
+
+**Filtering**: Comments can be filtered by century (1st–9th+), era (Ante-Nicene, Nicene, Post-Nicene), tradition (Eastern, Western, Desert), and author/document. Filter state is reflected in verse badge counts in the main reader so the user can see which verses have commentary matching the current filter.
+
+**Navigation**: Clicking a verse in the ODR reader links to the corresponding pericope in Fathers Mode. Cross-references in Father comments link back to the ODR reader with a hover tooltip showing the passage text.
 
 ## Reading Options
 
