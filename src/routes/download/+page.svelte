@@ -16,7 +16,49 @@
 	title="Downloads"
 	subtitle="The complete Original Douay-Rheims Bible in open formats. All files are public domain under CC0 1.0."
 >
-	<OfflineDownload />
+	<h2>PDF Transcription</h2>
+
+	<p>
+		The source PDFs assembled by
+		<a href="https://codeberg.org/olprint" target="_blank" rel="noopener noreferrer"
+			>Patrick Madueke</a
+		>, whose work this site is built on. Both are placed in the public domain.
+	</p>
+
+	<table class="dl-table">
+		<thead>
+			<tr>
+				<th>File</th>
+				<th>Description</th>
+				<th>Size</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>Original-Douay-Rheims-Bible-Merged.pdf</code></td>
+				<td>Complete Bible with annotations and notes</td>
+				<td class="dl-size">27 MB</td>
+				<td>
+					<a
+						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible-Merged.pdf"
+						class="dl-link">Download</a
+					>
+				</td>
+			</tr>
+			<tr>
+				<td><code>Original-Douay-Rheims-Bible.pdf</code></td>
+				<td>New Testament, text only (no notes)</td>
+				<td class="dl-size">4.8 MB</td>
+				<td>
+					<a
+						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible.pdf"
+						class="dl-link">Download</a
+					>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 	<h2>Structured Data</h2>
 
@@ -85,56 +127,14 @@
 		<span class="repo-arrow" aria-hidden="true">→</span>
 	</a>
 
-	<h2>PDF Transcription</h2>
-
-	<p>
-		The source PDFs assembled by
-		<a href="https://codeberg.org/olprint" target="_blank" rel="noopener noreferrer"
-			>Patrick Madueke</a
-		>, whose work this site is built on. Both are placed in the public domain.
-	</p>
-
-	<table class="dl-table">
-		<thead>
-			<tr>
-				<th>File</th>
-				<th>Description</th>
-				<th>Size</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><code>Original-Douay-Rheims-Bible-Merged.pdf</code></td>
-				<td>Complete Bible with annotations and notes</td>
-				<td class="dl-size">27 MB</td>
-				<td>
-					<a
-						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible-Merged.pdf"
-						class="dl-link">Download</a
-					>
-				</td>
-			</tr>
-			<tr>
-				<td><code>Original-Douay-Rheims-Bible.pdf</code></td>
-				<td>New Testament, text only (no notes)</td>
-				<td class="dl-size">4.8 MB</td>
-				<td>
-					<a
-						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible.pdf"
-						class="dl-link">Download</a
-					>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-
 	<h2>API</h2>
 
 	<p>
 		A read API is available for programmatic access to the text. See the
 		<a href="/api">API documentation</a> for endpoints, parameters, and examples.
 	</p>
+
+	<OfflineDownload />
 
 	<div class="license-block">
 		<p class="license-title">
