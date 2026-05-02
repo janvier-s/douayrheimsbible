@@ -28,3 +28,6 @@ CLAUDE.md
 # Search indexes (generated at build time)
 static/data/odr/search-index.json
 static/data/odr/search-notes-index.json
+
+# Brainstorming visual companion artifacts (local only)
+.superpowers/
