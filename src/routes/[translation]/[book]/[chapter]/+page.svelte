@@ -6,15 +6,69 @@
 	export let data: PageData;
 
 	$: bookDisplayName = $prefs.modernBookNames ? data.bookMeta.modernName : data.bookMeta.odrName;
+
+	const SITE = 'https://thedouayrheims.com';
+	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
+
+	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} | ${data.seoName ?? data.translationLabel}`;
+	$: pageDesc = data.seoDesc || '';
+	$: pageUrl = data.chapter
+		? `${SITE}/${data.translationId}/${data.bookMeta.slug}/${data.chapter.chapter}`
+		: `${SITE}/${data.translationId}/${data.bookMeta.slug}/1`;
+
+	const scriptOpen = '<' + 'script type="application/ld+json">';
+	const scriptClose = '</' + 'script>';
+	const bookId = SITE + '/#douay-rheims-bible';
+	$: jsonLdTag =
+		data.chapter && !data.ntOnly
+			? `${scriptOpen}${JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'Article',
+					headline: pageTitle,
+					description: pageDesc,
+					url: pageUrl,
+					image: OG_IMAGE,
+					isPartOf: { '@id': bookId },
+					breadcrumb: {
+						'@type': 'BreadcrumbList',
+						itemListElement: [
+							{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+							{
+								'@type': 'ListItem',
+								position: 2,
+								name: data.bookMeta.odrName,
+								item: `${SITE}/${data.translationId}/${data.bookMeta.slug}/1`
+							},
+							{
+								'@type': 'ListItem',
+								position: 3,
+								name: `Chapter ${data.chapter.chapter}`,
+								item: pageUrl
+							}
+						]
+					}
+				})}${scriptClose}`
+			: '';
 </script>
 
 <svelte:head>
-	<title
-		>{data.bookMeta.odrName}
-		{data.chapter?.chapter ?? ''} | {data.seoName ?? data.translationLabel}</title
-	>
-	{#if data.seoDesc}
-		<meta name="description" content={data.seoDesc} />
+	<title>{pageTitle}</title>
+	{#if pageDesc}
+		<meta name="description" content={pageDesc} />
+	{/if}
+	{#if data.chapter && !data.ntOnly}
+		<link rel="canonical" href={pageUrl} />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content={pageTitle} />
+		{#if pageDesc}<meta property="og:description" content={pageDesc} />{/if}
+		<meta property="og:url" content={pageUrl} />
+		<meta property="og:site_name" content="Douay-Rheims Bible" />
+		<meta property="og:image" content={OG_IMAGE} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		{#if pageDesc}<meta name="twitter:description" content={pageDesc} />{/if}
+		<meta name="twitter:image" content={OG_IMAGE} />
+		{@html jsonLdTag}
 	{/if}
 </svelte:head>
 

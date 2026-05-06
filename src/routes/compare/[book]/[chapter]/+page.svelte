@@ -110,7 +110,37 @@
 <svelte:window bind:innerWidth on:keydown={onKonamiKeydown} />
 
 <svelte:head>
-	<title>{bookMeta.odrName} {chapter.chapter} | Compare Translations</title>
+	<title>{bookMeta.odrName} {chapter.chapter} | Compare Translations — Douay-Rheims Bible</title>
+	<meta
+		name="description"
+		content="Compare {bookMeta.odrName} Chapter {chapter.chapter} side-by-side across multiple Bible translations: Original Douay-Rheims, Challoner, Vulgate, KJV, Knox, and more."
+	/>
+	<link
+		rel="canonical"
+		href="https://thedouayrheims.com/compare/{bookMeta.slug}/{chapter.chapter}"
+	/>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{bookMeta.odrName} {chapter.chapter} | Compare Translations" />
+	<meta
+		property="og:description"
+		content="Compare {bookMeta.odrName} Chapter {chapter.chapter} across multiple Bible translations."
+	/>
+	<meta
+		property="og:url"
+		content="https://thedouayrheims.com/compare/{bookMeta.slug}/{chapter.chapter}"
+	/>
+	<meta property="og:site_name" content="Douay-Rheims Bible" />
+	<meta property="og:image" content="https://thedouayrheims.com/images/dr-1582-rheims.webp" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta
+		name="twitter:title"
+		content="{bookMeta.odrName} {chapter.chapter} | Compare Translations"
+	/>
+	<meta
+		name="twitter:description"
+		content="Compare {bookMeta.odrName} Chapter {chapter.chapter} across multiple Bible translations."
+	/>
+	<meta name="twitter:image" content="https://thedouayrheims.com/images/dr-1582-rheims.webp" />
 </svelte:head>
 
 <CompareBar {bookMeta} chapterNum={chapter.chapter} />

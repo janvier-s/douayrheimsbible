@@ -705,13 +705,14 @@
 </script>
 
 <svelte:head>
-	<title>{query ? `${query} | ${heading}` : heading} | Original Douai-Rheims Bible</title>
+	<title>{query ? `${query} | ${heading}` : heading} | Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content={query
 			? `Search results for "${query}" in the Original Douay-Rheims Bible.`
 			: 'Search the Original Douay-Rheims Bible by verse reference or full-text keyword search.'}
 	/>
+	<link rel="canonical" href="https://thedouayrheims.com/search" />
 </svelte:head>
 
 <main

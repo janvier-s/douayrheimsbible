@@ -78,6 +78,11 @@
 	<meta property="og:description" content={pageDesc} />
 	<meta property="og:url" content={pageUrl} />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
+	<meta property="og:image" content="https://thedouayrheims.com/images/dr-1582-rheims.webp" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={pageTitle} />
+	<meta name="twitter:description" content={pageDesc} />
+	<meta name="twitter:image" content="https://thedouayrheims.com/images/dr-1582-rheims.webp" />
 	{@html jsonLdTag}
 </svelte:head>
 
