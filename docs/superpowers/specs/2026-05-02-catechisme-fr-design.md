@@ -21,7 +21,7 @@ The mega-site (Bible + multi-catechism + commentaries + liturgy) is **out of sco
 
 ### Stack
 
-- **SvelteKit 2** + **Svelte 5** (running in Svelte 4 compat mode — `export let`, `$:`, writable stores; no runes). Mirror the `douayrheimsbible` repo precisely on this point.
+- **SvelteKit 2** + **Svelte 5** with **runes-only** (strict `compilerOptions.runes: true`). Use `$state`, `$derived`, `$effect`, `$props`. The DR site is on Svelte 5 with v4 syntax as deferred tech debt; this fresh project does NOT inherit that — it commits to runes from day 1. Components copied from DR are converted to runes on copy. Stores remain stores; `$store` auto-subscription works in runes mode.
 - **Tailwind CSS 3**, **TypeScript**.
 - **Cloudflare Pages** for static delivery; **Cloudflare Workers** for dynamic-render routes (CCC chapter pages render through the Worker to avoid stale-CDN-chunk MIME errors — same pattern as DR's ODR routes).
 - **Cloudflare KV** binding `SEARCH_INDEX` for the MiniSearch dump.
