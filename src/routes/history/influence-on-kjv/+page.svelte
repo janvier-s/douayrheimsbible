@@ -39,7 +39,7 @@
 	datePublished="2024-01-01"
 	faqItems={FAQ}
 >
-	<h2>The Refutation That Became a Reference</h2>
+	<h2>How the KJV Translators Accessed the Rheims Text</h2>
 
 	<p>
 		The Douay-Rheims Bible's influence on the King James Version is one of the most unexpected

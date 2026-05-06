@@ -225,6 +225,22 @@
 		and timely word addressed to the particular reader in the particular moment of their life.
 	</p>
 
+	<h2>Reading the Douay-Rheims with Lectio Divina</h2>
+
+	<p>
+		The Douay-Rheims was translated for devotional reading, not rapid comprehension. Gregory Martin
+		and his colleagues at Douai and Reims worked from the Latin Vulgate, and their English follows
+		Vulgate phrasing closely enough that a reader familiar with the Latin hears the same cadences in
+		both. This deliberate closeness to Jerome's text, including its Latinate diction and syntactic
+		weight, slows the reader down. That slowness is not a defect. It is what <em>lectio divina</em>
+		requires. A translation calibrated for swift modern reading moves too fast for the kind of attentive
+		dwelling that <em>meditatio</em> depends on; the Douay-Rheims, with its archaism and density,
+		holds the reader at the pace the text itself sets. Readers who have prayed the Psalms or the
+		Pauline epistles in this version often find that the unfamiliar phrasing arrests the attention
+		in the same way a difficult line of poetry does, making space for the silence that
+		<em>contemplatio</em> opens into.
+	</p>
+
 	<h2>A Tradition of Encouragement</h2>
 
 	<figure class="article-figure">

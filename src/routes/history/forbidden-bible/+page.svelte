@@ -248,6 +248,27 @@
 		of allegiance to a faith that the state had declared treasonous.
 	</p>
 
+	<h2>The End of the Restriction</h2>
+
+	<p>
+		The civil penalties that made Catholic Bible possession a criminal matter in England ended with
+		the Catholic Emancipation Act of 1829, which removed the principal legal disabilities on
+		Catholics and effectively decriminalized Catholic worship and Catholic books. The seizure of
+		Douay-Rheims copies at English ports, and the prosecutions for possessing Catholic literature,
+		belonged to an era that the Act formally closed.
+	</p>
+
+	<p>
+		The Church's own licensing requirement for vernacular Scripture had a separate history. Pope
+		Pius X's 1897 constitution <em>Officiorum ac Munerum</em> revised the rules of the Index of Forbidden
+		Books and permitted Catholics to read approved vernacular translations without the individual bishop's
+		license that had been required since Trent. What had been a matter of personal permission granted
+		by a pastor became a general grant, provided the translation bore ecclesiastical approval. The practical
+		restriction on private Catholic Bible reading was not abolished but substantially loosened. The Index
+		of Forbidden Books itself was abolished in 1966 under Paul VI, ending the formal censorship apparatus
+		that had governed Catholic Bible circulation for four centuries.
+	</p>
+
 	<h2>Sources</h2>
 	<ul>
 		<li>

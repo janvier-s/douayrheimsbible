@@ -179,16 +179,34 @@
 	</p>
 
 	<p>
-		The annotations also shaped the tradition of Catholic biblical commentary in English.
-		<a href="/history/challoner">Bishop Challoner</a>, who removed most of them from his revision,
-		drew on their arguments in preparing the shorter notes he substituted. The learned engagement
-		with Scripture that Gregory Martin and Richard Bristow had modelled in 1582 continued, in
-		modified form, through the centuries that followed. The
+		The annotations also shaped the tradition of Catholic biblical commentary in English. The
+		learned engagement with Scripture that Gregory Martin and Richard Bristow had modelled in 1582
+		continued, in modified form, through the centuries that followed. The
 		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
 			>Catholic Encyclopedia (1913)</a
 		>
 		records that the annotations remained the most cited element of the original edition in both Catholic
 		and Protestant scholarship for over a century after publication.
+	</p>
+
+	<h2>The Annotations After Challoner</h2>
+
+	<p>
+		<a href="/history/challoner">Bishop Challoner</a> did not carry the original annotations into his
+		revision. His editions of 1749 and 1752 replaced the dense polemical apparatus of Bristow and Worthington
+		with shorter, devotional notes suited to ordinary Catholic readers in eighteenth-century England.
+		The doctrinal arguments that had occupied hundreds of pages in the 1582 original were largely dropped;
+		Challoner drew on their substance in composing his briefer substitutes, but the original notes did
+		not survive the revision intact.
+	</p>
+
+	<p>
+		As a result, the full annotations of 1582 are accessible today only through the original
+		editions and scholarly facsimiles. The 1582 Rheims New Testament and the 1609-1610 Douay Old
+		Testament, available through library facsimile editions and digitized copies on the Internet
+		Archive, preserve the annotations as Bristow, Worthington, and Allen composed them. The text on
+		this site presents Gregory Martin's translation without those notes, as the Challoner revision
+		has transmitted it.
 	</p>
 
 	<h2>Sources</h2>
