@@ -21,10 +21,10 @@
 </script>
 
 <svelte:head>
-	<title>The Origins of the Douay-Rheims Bible | English College Douai, 1582</title>
+	<title>Origins of the Douay-Rheims Bible: English College Douai</title>
 	<meta
 		name="description"
-		content="How English Catholic scholars at the English College Douai produced the first complete Catholic Bible in English: Gregory Martin's translation, William Allen's leadership, and the 27-year gap between the New and Old Testaments."
+		content="English scholars at Douai produced the first Catholic English Bible. Martin translated it in under two years; the Old Testament took 27 more years to print."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/origins" />
 	<meta property="og:type" content="article" />
@@ -179,9 +179,10 @@
 	<p>
 		Although Martin had completed the Old Testament translation by 1580, financial difficulties
 		prevented its publication for nearly three decades. It finally appeared in two quarto volumes
-		from Douai: Genesis through Job in 1609, and Psalms through 2 Maccabees (together with the
-		apocryphal books) in 1610. By this time the college had returned to Douai from Rheims, which is
-		why the complete work bears the names of both cities.
+		from Douai: <a href="/odr/genesis/1">Genesis</a> through Job in 1609, and
+		<a href="/odr/psalms/1">Psalms</a> through 2 Maccabees (together with the apocryphal books) in 1610.
+		By this time the college had returned to Douai from Rheims, which is why the complete work bears the
+		names of both cities.
 	</p>
 
 	<h2>Reception and Legacy</h2>

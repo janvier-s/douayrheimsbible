@@ -17,10 +17,10 @@
 </script>
 
 <svelte:head>
-	<title>The Douay-Rheims Bible in America: From Maryland to the Nineteenth Century</title>
+	<title>The Douay-Rheims in America: Maryland to the 19th Century</title>
 	<meta
 		name="description"
-		content="How the Douay-Rheims Bible crossed the Atlantic with Maryland's Catholic founders in 1634, and how Bishop Carroll and Mathew Carey established it as the American Catholic Bible with the first American printing in 1790."
+		content="The Douay-Rheims came to America with Maryland Catholics in 1634. Carey printed the first American Catholic Bible in Philadelphia in 1790 under Carroll."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/america" />
 	<meta property="og:type" content="article" />
@@ -133,6 +133,9 @@
 		York in 1849, with Old Testament volumes following in subsequent years. Kenrick translated
 		directly from the original languages with scholarly care, and his work represented the most
 		substantial American contribution to Catholic biblical scholarship in the nineteenth century.
+		Readers can compare the original pre-Challoner text with Kenrick's source material by reading <a
+			href="/odr/genesis/1">Genesis in the original Douay-Rheims</a
+		>.
 	</p>
 
 	<p>

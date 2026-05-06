@@ -17,17 +17,14 @@
 </script>
 
 <svelte:head>
-	<title>Translated from the Latin Vulgate: The Douay-Rheims Philosophy</title>
+	<title>Douay-Rheims Translation: Vulgate over Greek and Hebrew</title>
 	<meta
 		name="description"
-		content="Why the Douay-Rheims translators chose Saint Jerome's Latin Vulgate over the original Greek and Hebrew, how that choice shaped the translation's vocabulary, and what words like 'supersubstantial,' 'charity,' and 'penance' reveal about their method."
+		content="Why the Douay-Rheims chose the Latin Vulgate over Greek and Hebrew, and how that produced terms like 'supersubstantial' and 'charity' that entered the KJV."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/translation-philosophy" />
 	<meta property="og:type" content="article" />
-	<meta
-		property="og:title"
-		content="Translated from the Latin Vulgate: The Douay-Rheims Philosophy"
-	/>
+	<meta property="og:title" content="Douay-Rheims Translation: Vulgate over Greek and Hebrew" />
 	<meta
 		property="og:description"
 		content="Why the Douay-Rheims translators chose the Vulgate over the original languages, and what their fierce fidelity gave and cost them."
@@ -163,14 +160,15 @@
 	</p>
 
 	<p>
-		The more familiar Latinate terms have endured. "Charity" for "caritas" in 1 Corinthians 13,
-		where later translations give "love," preserves the specifically theological content of Jerome's
-		word. "Penance" for "paenitentiam," where Protestant translations give "repentance," preserves
-		the sacramental sense the original intended. "Supersubstantial" for the hapax legomenon
-		"supersubstantialem" at Matthew 6:11 preserves a term with no established English equivalent and
-		no easy modern translation. These choices reflect a theology of translation; the text is not to
-		be made easy but to be made accurate, even at the cost of requiring the reader to learn new
-		words. The
+		The more familiar Latinate terms have endured. "Charity" for "caritas" in <a
+			href="/odr/1-corinthians/13">1 Corinthians 13</a
+		>, where later translations give "love," preserves the specifically theological content of
+		Jerome's word. "Penance" for "paenitentiam," where Protestant translations give "repentance,"
+		preserves the sacramental sense the original intended. "Supersubstantial" for the hapax
+		legomenon "supersubstantialem" at <a href="/odr/matthew/6">Matthew 6:11</a> preserves a term
+		with no established English equivalent and no easy modern translation. These choices reflect a
+		theology of translation; the text is not to be made easy but to be made accurate, even at the
+		cost of requiring the reader to learn new words. The
 		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
 			>Catholic Encyclopedia (1913)</a
 		>

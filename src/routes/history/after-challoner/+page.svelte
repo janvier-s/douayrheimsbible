@@ -17,10 +17,10 @@
 </script>
 
 <svelte:head>
-	<title>After Challoner: The Disputed History of Douay-Rheims Bible Editions</title>
+	<title>After Challoner: Disputed Editions of the Douay-Rheims Bible</title>
 	<meta
 		name="description"
-		content="The proliferation of competing Douay-Rheims Bible editions after Challoner, catalogued by Henry Cotton in 1855, and why Cardinal Wiseman declared the name Douay-Rheims an abuse of terms."
+		content="Competing Douay-Rheims editions proliferated after Challoner. Cotton catalogued them all in 1855. Wiseman declared the name Douay-Rheims an abuse of terms."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/after-challoner" />
 	<meta property="og:type" content="article" />
@@ -59,13 +59,13 @@
 
 	<p>
 		In 1783, a Dublin priest named Mr. McMahon, at the request of Archbishop Troy of Dublin,
-		undertook a further revision of Challoner's New Testament. McMahon's text introduced more than
-		five hundred changes in some sections, departing from what the Catholic Dictionary later
-		described as Challoner's Protestant leanings. Archbishop Troy then had the entire Bible collated
-		with the Clementine Vulgate and issued the result in 1791, producing what became known as Dr.
-		Troy's Bible. In 1794, and again in 1803 and 1810, further New Testament printings appeared,
-		each claiming the Challoner lineage while differing in significant respects from his actual
-		text.
+		undertook a further revision of <a href="/drc/matthew/1">Challoner's New Testament</a>.
+		McMahon's text introduced more than five hundred changes in some sections, departing from what
+		the Catholic Dictionary later described as Challoner's Protestant leanings. Archbishop Troy then
+		had the entire Bible collated with the Clementine Vulgate and issued the result in 1791,
+		producing what became known as Dr. Troy's Bible. In 1794, and again in 1803 and 1810, further
+		New Testament printings appeared, each claiming the Challoner lineage while differing in
+		significant respects from his actual text.
 	</p>
 
 	<h2>Cotton's Catalogue</h2>

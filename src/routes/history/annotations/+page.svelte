@@ -17,14 +17,14 @@
 </script>
 
 <svelte:head>
-	<title>The Annotations of the Rheims New Testament 1582</title>
+	<title>Douay-Rheims Annotations: The 1582 Rheims New Testament</title>
 	<meta
 		name="description"
-		content="The theological annotations that accompanied the 1582 Rheims New Testament: their purpose, their character, and their unexpected legacy in shaping both Catholic biblical scholarship and the King James Version."
+		content="The 1582 Douay-Rheims annotations defended Catholic doctrine verse by verse, provoked Protestant refutations, and gave KJV translators access to the text."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/annotations" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="The Annotations of the Rheims New Testament 1582" />
+	<meta property="og:title" content="Douay-Rheims Annotations: The 1582 Rheims New Testament" />
 	<meta
 		property="og:description"
 		content="The scholarly annotations of the 1582 Rheims New Testament: their polemical purpose, their character, and their legacy."
@@ -99,12 +99,13 @@
 	</p>
 
 	<p>
-		The argument prefixed to the Gospel of John was particularly characteristic. Cotton noted that
-		it "treats professedly of Heresies; and contains much condemnation of Protestants, of private
-		judgment, vernacular translations, the general perusal of Scripture." The notes to the
-		Apocalypse were "preeminently controversial; designed to defend the Church of Rome from the
-		interpretations given by Protestant Divines." One of those notes ran to six and a half pages of
-		small print, arguing that the Pope could not be the Antichrist described in Revelation.
+		The argument prefixed to the <a href="/odr/john/1">Gospel of John</a> was particularly
+		characteristic. Cotton noted that it "treats professedly of Heresies; and contains much
+		condemnation of Protestants, of private judgment, vernacular translations, the general perusal
+		of Scripture." The notes to the
+		<a href="/odr/revelation/1">Apocalypse</a> were "preeminently controversial; designed to defend the
+		Church of Rome from the interpretations given by Protestant Divines." One of those notes ran to six
+		and a half pages of small print, arguing that the Pope could not be the Antichrist described in Revelation.
 	</p>
 
 	<p>

@@ -21,10 +21,10 @@
 </script>
 
 <svelte:head>
-	<title>The Challoner Revision: How the Douay-Rheims Bible Was Transformed</title>
+	<title>The Challoner Revision of the Douay-Rheims Bible, 1749-1752</title>
 	<meta
 		name="description"
-		content="Bishop Richard Challoner's 18th-century revision of the Douay-Rheims Bible changed the text so extensively that Cardinal Newman said it almost amounted to a new translation. Learn what changed and why."
+		content="Challoner revised the Douay-Rheims so extensively that Newman called it almost a new translation. Passage comparisons show what was lost from Martin original."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/challoner" />
 	<meta property="og:type" content="article" />
@@ -114,7 +114,8 @@
 
 	<p>
 		Challoner did not produce a single definitive revision. He issued several editions over more
-		than two decades, each differing from the last:
+		than two decades, each differing from the last. Readers can compare Martin's original with
+		<a href="/drc/matthew/1">Challoner's revised New Testament</a> directly on this site.
 	</p>
 
 	<ul>
@@ -208,7 +209,7 @@
 		rendering of the Latin; Challoner's is the more natural English idiom for the same idea.
 	</p>
 
-	<h3>Isaiah 40:22</h3>
+	<h3><a href="/odr/isaiah/40">Isaiah 40:22</a></h3>
 	<blockquote class="comparison">
 		<strong>Vulgate:</strong>
 		<em

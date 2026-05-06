@@ -17,17 +17,14 @@
 </script>
 
 <svelte:head>
-	<title>Published in a Time of Crisis: The Rheims New Testament of 1582</title>
+	<title>The Rheims New Testament of 1582: Published in a Crisis</title>
 	<meta
 		name="description"
-		content="The political world that greeted the Rheims New Testament in 1582: Campion's execution, England's anti-Roman fever, and the Protestant refutation that spread the Catholic Bible further than its authors expected."
+		content="The Douay-Rheims appeared in 1582 amid Campion execution and anti-Roman fever. Fulke refutation spread the Catholic New Testament across Protestant England."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/rheims-1582" />
 	<meta property="og:type" content="article" />
-	<meta
-		property="og:title"
-		content="Published in a Time of Crisis: The Rheims New Testament of 1582"
-	/>
+	<meta property="og:title" content="The Rheims New Testament of 1582: Published in a Crisis" />
 	<meta
 		property="og:description"
 		content="The political world that greeted the Rheims New Testament in 1582, and the refutation that spread it further."
@@ -171,7 +168,9 @@
 		The physical volume that appeared in 1582 was a quarto, a page size roughly nine inches tall and
 		seven inches wide, running to approximately six hundred pages. It opened with a formal
 		Approbation signed by four doctors of theology at the English College, a printed authority that
-		declared the text free of doctrinal error and suitable for Catholic readers.
+		declared the text free of doctrinal error and suitable for Catholic readers. It covered <a
+			href="/odr/matthew/1">the four Gospels</a
+		>, Acts, the Epistles, and the Apocalypse.
 	</p>
 
 	<p>

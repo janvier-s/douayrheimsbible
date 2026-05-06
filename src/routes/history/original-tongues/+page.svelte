@@ -17,17 +17,14 @@
 </script>
 
 <svelte:head>
-	<title>From the Vulgate to Hebrew and Greek: Catholic Bible Translation History</title>
+	<title>Vulgate to Hebrew and Greek: Catholic Bible Translation</title>
 	<meta
 		name="description"
-		content="How the Catholic Church moved from requiring the Latin Vulgate as the basis for all translation to mandating direct use of the Hebrew and Greek originals, from the Council of Trent through Divino Afflante Spiritu to the present day."
+		content="How the Catholic Church moved from the Latin Vulgate to Hebrew and Greek: from Trent 1546 through Divino Afflante Spiritu 1943 to modern Catholic Bibles."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/original-tongues" />
 	<meta property="og:type" content="article" />
-	<meta
-		property="og:title"
-		content="From the Vulgate to Hebrew and Greek: Catholic Bible Translation"
-	/>
+	<meta property="og:title" content="Vulgate to Hebrew and Greek: Catholic Bible Translation" />
 	<meta
 		property="og:description"
 		content="How the Church moved from the Vulgate to the original languages: Trent, Divino Afflante Spiritu, and the modern Catholic Bible."
@@ -82,7 +79,9 @@
 		Vulgate word for word wherever possible, as explored in <a
 			href="/history/translation-philosophy">A Translation from the Authentic Latin</a
 		>, preserving Saint Jerome's Latin in English with a literalism that prioritized theological
-		precision over readability, as documented in
+		precision over readability. That literalism is visible throughout the text, from
+		<a href="/odr/genesis/1">Genesis 1</a>
+		to the Epistles of Saint Paul, as documented in
 		<a href="https://books.google.fr/books/about/English_Bible_Versions.html?id=WcwsNaXqE-kC"
 			><em>English Bible Versions</em></a
 		>. <a href="/history/challoner">The Challoner Revision</a>, and the long succession of editions

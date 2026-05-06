@@ -3,14 +3,17 @@
 </script>
 
 <svelte:head>
-	<title>History of the Douay-Rheims Bible: Origins, Language, and Legacy</title>
+	<title>History of the Douay-Rheims Bible: Origins, Language, Legacy</title>
 	<meta
 		name="description"
-		content="A collection of articles tracing the origins, translation, influence, and legacy of the Douay-Rheims Bible, the first complete English Catholic translation of Sacred Scripture."
+		content="Twelve articles on the Douay-Rheims Bible: origins at Douai, the Challoner revision, its influence on the King James Bible, and its American Catholic legacy."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="History of the Douay-Rheims Bible" />
+	<meta
+		property="og:title"
+		content="History of the Douay-Rheims Bible: Origins, Language, Legacy"
+	/>
 	<meta
 		property="og:description"
 		content="Articles on the origins, language, and legacy of the first complete English Catholic translation of Sacred Scripture."

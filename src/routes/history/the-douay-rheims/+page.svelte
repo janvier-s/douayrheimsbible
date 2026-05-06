@@ -21,10 +21,10 @@
 </script>
 
 <svelte:head>
-	<title>About the Douay-Rheims Bible: English Catholic Scripture, 1582-1610</title>
+	<title>About the Douay-Rheims Bible: First Catholic English Bible</title>
 	<meta
 		name="description"
-		content="The Douay-Rheims Bible is the first complete English Catholic translation of Sacred Scripture, translated by Gregory Martin from the Latin Vulgate. This site presents the original pre-Challoner text of 1582 and 1609-1610."
+		content="The Douay-Rheims is the first complete English Catholic Bible, rendered by Gregory Martin from the Latin Vulgate in 1582–1610. Pre-Challoner original text."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/the-douay-rheims" />
 	<meta property="og:type" content="article" />
@@ -53,9 +53,9 @@
 	</p>
 
 	<p>
-		The New Testament was published in 1582 at Rheims in northern France, and the Old Testament
-		followed in two volumes from Douai (then in the Spanish Netherlands) in 1609 and 1610. The
-		complete work therefore predates the King James Version of 1611 by several decades.
+		The <a href="/odr/matthew/1">New Testament was published in 1582 at Rheims</a> in northern France,
+		and the Old Testament followed in two volumes from Douai (then in the Spanish Netherlands) in 1609
+		and 1610. The complete work therefore predates the King James Version of 1611 by several decades.
 	</p>
 
 	<figure class="article-figure">
@@ -103,8 +103,9 @@
 
 	<p>
 		The translators did not work from a single Greek manuscript tradition. In places their Vulgate
-		source preserves readings that align with older manuscript families. For example, at James 2:20,
-		the original Douay-Rheims reads "idle" (from the Greek <em>arge</em>), a reading found in the
+		source preserves readings that align with older manuscript families. For example, at <a
+			href="/odr/james/2">James 2:20</a
+		>, the original Douay-Rheims reads "idle" (from the Greek <em>arge</em>), a reading found in the
 		Codex Amiatinus, rather than "dead" (<em>nekra</em>) found in Erasmus's Textus Receptus and most
 		Protestant translations.
 	</p>

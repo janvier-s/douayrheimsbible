@@ -17,16 +17,16 @@
 </script>
 
 <svelte:head>
-	<title>A Bible Open to All: How the Catholic Church Encourages Scripture Reading</title>
+	<title>Dei Verbum, Lectio Divina, and Catholic Scripture Reading</title>
 	<meta
 		name="description"
-		content="How the Catholic Church actively encourages all the faithful to read Scripture, from Dei Verbum's open invitation to the Church's guidance on how to read: with attention to literary forms, Tradition, and the Magisterium, and through the ancient practice of Lectio Divina."
+		content="How the Catholic Church encourages Scripture reading: Dei Verbum invitation, the three criteria for reading well, and the ancient practice of Lectio Divina."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/scripture-for-all" />
 	<meta property="og:type" content="article" />
 	<meta
 		property="og:title"
-		content="A Bible Open to All: How the Catholic Church Encourages Scripture Reading"
+		content="Catholic Scripture Reading: Dei Verbum, Lectio Divina, and the Bible"
 	/>
 	<meta
 		property="og:description"
@@ -259,8 +259,10 @@
 		millennium, wrote to his correspondents with the urgency of a teacher who knew what was being
 		missed: "Read assiduously and learn as much as you can. Let sleep find you holding your Bible,
 		and when your head nods, let it fall on the sacred page." His maxim that "ignorance of the
-		Scriptures is ignorance of Christ" passed from his letters into <em>Dei Verbum</em> itself and from
-		there into the Catechism (CCC 133).
+		Scriptures is ignorance of Christ" passed from his letters into <em>Dei Verbum</em> itself and
+		from there into the Catechism (CCC 133). The <a href="/odr/psalms/1">Psalms</a> — the prayer book
+		that Jerome translated and that every generation of the Church has prayed — illustrate why that urgency
+		was warranted.
 	</p>
 
 	<p>

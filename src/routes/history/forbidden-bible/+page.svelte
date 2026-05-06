@@ -17,10 +17,10 @@
 </script>
 
 <svelte:head>
-	<title>A Bible Banned in England: The Douay-Rheims and Elizabethan Recusancy</title>
+	<title>The Douay-Rheims Banned in England: Recusancy and the Bible</title>
 	<meta
 		name="description"
-		content="Catholics who produced the Douay-Rheims Bible were banned from reading it in England without a license. The Elizabethan recusancy laws, the penalties for possessing Catholic books, and the theology behind the Church's own restrictions."
+		content="The Douay-Rheims was doubly forbidden: English law criminalized possession and the Church required a license. The theology ran from Toulouse to Wiseman."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/history/forbidden-bible" />
 	<meta property="og:type" content="article" />
@@ -103,8 +103,9 @@
 	<p>
 		Cotton, surveying the history of Catholic restrictions on lay Bible reading, traced their formal
 		expression in canon law to the fourteenth canon of the Council of Toulouse, held in 1229. This
-		canon prohibited the laity from possessing either the Old Testament or the New. Only a Psalter,
-		a Breviary, or the Hours of the Virgin Mary were permitted, and even these were strictly
+		canon prohibited the laity from possessing either the Old Testament or the New. Only a <a
+			href="/odr/psalms/1">Psalter</a
+		>, a Breviary, or the Hours of the Virgin Mary were permitted, and even these were strictly
 		forbidden to be had in the vernacular tongue.
 	</p>
 

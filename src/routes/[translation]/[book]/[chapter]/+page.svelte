@@ -11,7 +11,15 @@
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
 	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} | ${data.seoName ?? data.translationLabel}`;
-	$: pageDesc = data.seoDesc || '';
+	$: pageDesc = (() => {
+		const base = data.seoDesc || '';
+		if (base.length >= 80) return base;
+		const firstVerse = data.chapter?.verses?.[0]?.text ?? '';
+		const plain = firstVerse.replace(/<[^>]*>/g, '').trim();
+		const snippet = plain.length > 100 ? plain.slice(0, 100) + '…' : plain;
+		if (!snippet) return base;
+		return base ? `${base} ${snippet}`.slice(0, 160) : snippet.slice(0, 160);
+	})();
 	$: pageUrl = data.chapter
 		? `${SITE}/${data.translationId}/${data.bookMeta.slug}/${data.chapter.chapter}`
 		: `${SITE}/${data.translationId}/${data.bookMeta.slug}/1`;
