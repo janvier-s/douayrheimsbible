@@ -579,8 +579,9 @@
 	// Used by Conf commentary sections that span multiple verses.
 	function registerSectionRange(node: HTMLElement, range: { start: number; end: number }) {
 		const apply = (r: { start: number; end: number }) => {
-			for (let v = r.start; v <= r.end; v++) sectionEls[v] = node;
-			sectionEls = sectionEls; // trigger reactivity
+			const next = { ...sectionEls };
+			for (let v = r.start; v <= r.end; v++) next[v] = node;
+			sectionEls = next;
 		};
 		const clear = (r: { start: number; end: number }) => {
 			for (let v = r.start; v <= r.end; v++) {
