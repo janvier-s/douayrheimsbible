@@ -89,8 +89,8 @@
 		</span>
 	</a>
 
-	<!-- Spacer (desktop only) -->
-	<div class="hidden md:flex flex-1"></div>
+	<!-- Spacer: pushes right-side controls to the end on both mobile and desktop -->
+	<div class="flex-1"></div>
 
 	<!-- ModeToggle — desktop only -->
 	<div class="hidden md:flex">

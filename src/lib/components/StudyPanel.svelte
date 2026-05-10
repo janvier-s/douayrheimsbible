@@ -575,6 +575,31 @@
 		lastObservedKeys = '';
 	}
 
+	// Register one DOM element for every verse in a [start, end] range.
+	// Used by Conf commentary sections that span multiple verses.
+	function registerSectionRange(node: HTMLElement, range: { start: number; end: number }) {
+		const apply = (r: { start: number; end: number }) => {
+			for (let v = r.start; v <= r.end; v++) sectionEls[v] = node;
+			sectionEls = sectionEls; // trigger reactivity
+		};
+		const clear = (r: { start: number; end: number }) => {
+			for (let v = r.start; v <= r.end; v++) {
+				if (sectionEls[v] === node) delete sectionEls[v];
+			}
+		};
+		apply(range);
+		return {
+			update(next: { start: number; end: number }) {
+				clear(range);
+				range = next;
+				apply(range);
+			},
+			destroy() {
+				clear(range);
+			}
+		};
+	}
+
 	function scrollToSection(verse: number) {
 		const el = sectionEls[verse];
 		if (!el || !panelScroll) return;
@@ -694,6 +719,23 @@
 					targetTab = 'cross-refs';
 				} else {
 					targetTab = 'commentary';
+				}
+			} else if (isConf) {
+				if (trigger.type === 'cross_ref') {
+					targetTab = $studyPanel.activeTab;
+				} else if (
+					$studyPanel.activeTab === 'footnotes' ||
+					$studyPanel.activeTab === 'commentary'
+				) {
+					targetTab = $studyPanel.activeTab;
+				} else {
+					targetTab = 'footnotes';
+				}
+			} else if (hasTranslationNotes) {
+				if (trigger.type === 'cross_ref' && isDrc) {
+					targetTab = 'cross-refs';
+				} else {
+					targetTab = 'notes';
 				}
 			} else {
 				targetTab = $studyPanel.activeTab;
@@ -1287,7 +1329,12 @@
 				{:else if confFootnotes && confFootnotes.footnotes.length > 0}
 					<p class="content-eyebrow">Bible Footnotes</p>
 					{#each confFootnotes.footnotes as fn}
-						<div class="conf-note-entry">
+						<div
+							class="conf-note-entry"
+							class:verse-section-active={$studyPanel.annotatedVerse === fn.verse}
+							bind:this={sectionEls[fn.verse]}
+							data-section-verse={fn.verse}
+						>
 							<span class="cr-marker">{fn.verse}</span>
 							<div class="note-body">
 								<span class="note-text">{@html linkifyConfRefs(fn.text)}</span>
@@ -1310,7 +1357,17 @@
 				{:else if confCommentary && confCommentary.sections.length > 0}
 					<p class="content-eyebrow">Supplemental Commentary</p>
 					{#each confCommentary.sections as section}
-						<div class="conf-commentary-section">
+						<div
+							class="conf-commentary-section"
+							class:verse-section-active={$studyPanel.annotatedVerse !== null &&
+								$studyPanel.annotatedVerse >= section.startVerse &&
+								$studyPanel.annotatedVerse <= section.endVerse}
+							use:registerSectionRange={{
+								start: section.startVerse,
+								end: section.endVerse
+							}}
+							data-section-verse={section.startVerse}
+						>
 							{#if section.heading}
 								<p class="conf-section-heading">{section.heading}</p>
 							{/if}
@@ -1448,7 +1505,12 @@
 							: isDrc
 								? (t: string) => linkifyDrcRefs(t, translationId)
 								: null}
-						<div class="translation-note-entry">
+						<div
+							class="translation-note-entry"
+							class:verse-section-active={$studyPanel.annotatedVerse === note.verse}
+							bind:this={sectionEls[note.verse]}
+							data-section-verse={note.verse}
+						>
 							<span class="cr-marker">{note.verse}</span>
 							<div class="note-body">
 								{#if headingMatch}

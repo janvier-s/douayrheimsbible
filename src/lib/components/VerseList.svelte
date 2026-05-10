@@ -9,9 +9,15 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
-	import type { Verse } from '$lib/data/types';
-	import type { TranslationCrossRef } from '$lib/data/translation-types';
-	import { loadTranslationCrossRefs, loadHaydockCommentary } from '$lib/data/loader';
+	import type { Verse, ConfChapterFootnotes, ConfChapterCommentary } from '$lib/data/types';
+	import type { TranslationCrossRef, TranslationNote } from '$lib/data/translation-types';
+	import {
+		loadTranslationCrossRefs,
+		loadHaydockCommentary,
+		loadTranslationNotes,
+		loadConfFootnotes,
+		loadConfCommentary
+	} from '$lib/data/loader';
 	import type { HaydockCommentaryEntry } from '$lib/data/loader';
 	export let verses: Verse[];
 	export let targetVerse: number | undefined;
@@ -65,6 +71,80 @@
 			haydockCommentary = null;
 		}
 	}
+
+	// ── Translation notes (DRC / CPDV / Knox) ────────────────────────
+	let translationNotes: TranslationNote[] | null = null;
+	let lastTranslationNotesKey = '';
+	$: hasTranslationNotes =
+		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox';
+	$: {
+		const key = `${translationId}/${bookSlug}/${chapterNum}`;
+		if (browser && hasTranslationNotes && key !== lastTranslationNotesKey) {
+			lastTranslationNotesKey = key;
+			const id = translationId;
+			loadTranslationNotes(id, bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${id}/${bookSlug}/${chapterNum}` === lastTranslationNotesKey)
+						translationNotes = data;
+				})
+				.catch(() => {});
+		} else if (!hasTranslationNotes) {
+			translationNotes = null;
+		}
+	}
+
+	// ── Confraternity footnotes + commentary ─────────────────────────
+	let confFootnotes: ConfChapterFootnotes | null = null;
+	let confCommentary: ConfChapterCommentary | null = null;
+	let lastConfKey = '';
+	$: {
+		const key = `${bookSlug}/${chapterNum}`;
+		if (browser && translationId === 'conf' && key !== lastConfKey) {
+			lastConfKey = key;
+			loadConfFootnotes(bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${bookSlug}/${chapterNum}` === lastConfKey) confFootnotes = data;
+				})
+				.catch(() => {});
+			loadConfCommentary(bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${bookSlug}/${chapterNum}` === lastConfKey) confCommentary = data;
+				})
+				.catch(() => {});
+		} else if (translationId !== 'conf') {
+			confFootnotes = null;
+			confCommentary = null;
+		}
+	}
+
+	// ── Unified annotated-verse set ──────────────────────────────────
+	// Drives the dotted underline + click handler for every translation.
+	$: annotatedVerseSet = (() => {
+		const set = new Set<number>();
+		if (translationId === 'odr') {
+			for (const v of verses) if (v.has_annotation) set.add(v.verse);
+			return set;
+		}
+		if (translationId === 'haydock') {
+			if (haydockCommentary) for (const e of haydockCommentary) set.add(e.verse);
+			return set;
+		}
+		if (hasTranslationNotes) {
+			if (translationNotes) for (const n of translationNotes) set.add(n.verse);
+			if (translationId === 'drc' && drcCrossRefs) for (const c of drcCrossRefs) set.add(c.verse);
+			return set;
+		}
+		if (translationId === 'conf') {
+			if (confFootnotes) for (const fn of confFootnotes.footnotes) set.add(fn.verse);
+			if (confCommentary) {
+				for (const s of confCommentary.sections) {
+					for (let v = s.startVerse; v <= s.endVerse; v++) set.add(v);
+				}
+			}
+			return set;
+		}
+		return set;
+	})();
 
 	let verseEls: Record<number, HTMLElement> = {};
 
@@ -267,7 +347,7 @@
 	function handleVerseClick(e: MouseEvent, v: Verse) {
 		// Don't fire if a marker was clicked (handled above)
 		if ((e.target as HTMLElement).closest('[data-marker-type]')) return;
-		if (!v.has_annotation) return;
+		if (!annotatedVerseSet.has(v.verse)) return;
 		studyPanel.update((s) => ({ ...s, annotatedVerse: v.verse }));
 		scrollTrigger.set({ verse: v.verse, type: 'annotation' });
 	}
@@ -483,9 +563,6 @@
 	let mounted = false;
 	$: isStudy = mounted && $prefs.readingMode === 'study';
 	$: activeAnnotatedVerse = $studyPanel.annotatedVerse;
-	$: isHaydock = translationId === 'haydock';
-	$: haydockVerseSet =
-		isHaydock && haydockCommentary ? new Set(haydockCommentary.map((e) => e.verse)) : null;
 	$: showItalics = $prefs.showItalics;
 	$: showSmallCaps = $prefs.showSmallCaps ?? true;
 	$: bionic = $prefs.bionicReading && bionicReady;
@@ -540,15 +617,15 @@
 					id="v{v.verse}"
 					data-verse-num={v.verse}
 					class:verse-active-annotation={isStudy &&
-						(v.has_annotation || haydockVerseSet?.has(v.verse)) &&
+						annotatedVerseSet.has(v.verse) &&
 						activeAnnotatedVerse === v.verse}
 				>
 					{#if $prefs.showVerseNumbers && !isDropcap}
 						<sup
 							class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
 							class:verse-num-hang={vi === 0 && ($prefs.hangingVerseNumbers ?? true)}
-							class:text-subtle={!isStudy || (!v.has_annotation && !haydockVerseSet?.has(v.verse))}
-							style={isStudy && (v.has_annotation || haydockVerseSet?.has(v.verse))
+							class:text-subtle={!isStudy || !annotatedVerseSet.has(v.verse)}
+							style={isStudy && annotatedVerseSet.has(v.verse)
 								? 'color: var(--color-accent-text)'
 								: ''}>{v.verse}</sup
 						>
@@ -577,9 +654,9 @@
 				data-verse-num={v.verse}
 				class="flex gap-sm max-md:gap-0"
 				class:verse-target={targetVerse === v.verse}
-				class:verse-annotated={isStudy && (v.has_annotation || haydockVerseSet?.has(v.verse))}
+				class:verse-annotated={isStudy && annotatedVerseSet.has(v.verse)}
 				class:verse-active-annotation={isStudy &&
-					(v.has_annotation || haydockVerseSet?.has(v.verse)) &&
+					annotatedVerseSet.has(v.verse) &&
 					activeAnnotatedVerse === v.verse}
 				on:click={(e) => isStudy && handleVerseClick(e, v)}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
@@ -587,8 +664,8 @@
 				{#if $prefs.showVerseNumbers}
 					<span
 						class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em]"
-						class:text-subtle={!isStudy || (!v.has_annotation && !haydockVerseSet?.has(v.verse))}
-						style={isStudy && (v.has_annotation || haydockVerseSet?.has(v.verse))
+						class:text-subtle={!isStudy || !annotatedVerseSet.has(v.verse)}
+						style={isStudy && annotatedVerseSet.has(v.verse)
 							? 'color: var(--color-accent-text)'
 							: ''}
 					>

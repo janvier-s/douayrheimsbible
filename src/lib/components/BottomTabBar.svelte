@@ -56,6 +56,23 @@
 						<line x1="9" y1="6" x2="9" y2="11" />
 						<line x1="7" y1="8" x2="11" y2="8" />
 					</svg>
+				{:else if item.key === 'fathers'}
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<circle cx="9" cy="5" r="2.2" />
+						<path d="M4.5 15c0-2.4 2-4.2 4.5-4.2s4.5 1.8 4.5 4.2" />
+						<line x1="9" y1="2" x2="9" y2="3.2" />
+						<line x1="7.8" y1="2.6" x2="10.2" y2="2.6" />
+					</svg>
 				{:else if item.key === 'compare'}
 					<svg
 						width="18"
