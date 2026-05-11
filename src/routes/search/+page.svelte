@@ -713,6 +713,9 @@
 			: 'Search the Original Douay-Rheims Bible by verse reference or full-text keyword search.'}
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/search" />
+	{#if query}
+		<meta name="robots" content="noindex, follow" />
+	{/if}
 </svelte:head>
 
 <main

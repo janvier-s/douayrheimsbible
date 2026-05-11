@@ -4,6 +4,8 @@ import fathersManifest from '../../../static/data/fathers/manifest.json';
 
 // Translation prefixes with live data — all books (OT + NT)
 const LIVE_TRANSLATIONS = ['odr', 'vul', 'drc', 'knox', 'kjv', 'cpdv', 'haydock'] as const;
+// Translations that include the OT appendix (prayer-of-manasses, 3-esdras, 4-esdras)
+const TRANSLATIONS_WITH_APPENDIX = new Set(['odr', 'drc']);
 // NT-only translations
 const LIVE_TRANSLATIONS_NT_ONLY = ['conf'] as const;
 
@@ -26,6 +28,7 @@ export function GET() {
 	for (const prefix of LIVE_TRANSLATIONS) {
 		const priority = prefix === 'odr' ? '0.8' : '0.7';
 		for (const book of ALL_BOOKS) {
+			if (book.navSkip && !TRANSLATIONS_WITH_APPENDIX.has(prefix)) continue;
 			for (let ch = 1; ch <= book.chapters; ch++) {
 				urls.push(entry(`/${prefix}/${book.slug}/${ch}`, priority, 'yearly', DATE_BIBLE_TEXT));
 			}

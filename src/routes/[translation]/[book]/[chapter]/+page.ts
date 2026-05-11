@@ -31,7 +31,12 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	const chapterNum = parseInt(chapterStr, 10);
 	if (isNaN(chapterNum) || chapterNum < 1) throw error(404, `Invalid chapter: ${chapterStr}`);
 
-	const book = await loadTranslationBook(translationId, slug, fetch);
+	let book;
+	try {
+		book = await loadTranslationBook(translationId, slug, fetch);
+	} catch {
+		throw error(404, `${translation.label}: ${bookMeta.odrName} not available`);
+	}
 
 	// TranslationChapter is structurally compatible with Chapter (extra fields are optional)
 	const chapter = book.chapters.find((c) => c.chapter === chapterNum) as Chapter | undefined;

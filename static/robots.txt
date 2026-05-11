@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /data/
+Disallow: /search?
 
 Sitemap: https://thedouayrheims.com/sitemap.xml
