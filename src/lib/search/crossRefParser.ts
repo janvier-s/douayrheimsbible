@@ -25,7 +25,7 @@ function refUrl(osis: string, translationPrefix?: string): string {
 		const slug = OSIS_TO_SLUG[parts[0]];
 		if (slug && parts.length >= 2) {
 			// Both chapter-only and verse-level refs link to the reader page
-			return `/${translationPrefix}/${slug}/${parts[1]}?mode=read`;
+			return `/${translationPrefix}/${slug}/${parts[1]}`;
 		}
 	}
 	return `/search?q=${encodeURIComponent(osis)}&mode=verse`;

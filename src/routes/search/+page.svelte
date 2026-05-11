@@ -1131,7 +1131,7 @@
 								<a
 									href={note.type === 'reference'
 										? `/reference/odr/${note.refPath}`
-										: `/odr/${note.slug}/${note.chapter}?study=${note.verse}`}
+										: `/odr/${note.slug}/${note.chapter}`}
 									class="font-ui text-[14px] font-semibold hover:text-foreground transition-colors duration-fast"
 									style="color: var(--color-accent-text)"
 									on:click={() => {
