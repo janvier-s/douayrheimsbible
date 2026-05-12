@@ -19,9 +19,9 @@
 	let reducedMotion = false;
 	let showSkipCheckbox = false;
 
-	onMount(() => {
+	onMount(async () => {
 		if ($prefs.skipHomepage) {
-			goto('/odr/genesis/1');
+			await goto('/odr/genesis/1', { replaceState: true });
 			return;
 		}
 		if (!$prefs.hasVisitedHomepage) {
