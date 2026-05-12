@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Features | The Original Douay-Rheims Bible</title>
+	<title>Features · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="How to use this site: the reader, study panel, Church Fathers commentary, compare mode, search, and reading options for the Original Douay-Rheims Bible."

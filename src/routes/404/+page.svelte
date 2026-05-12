@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>404 — Page Not Found | Douay-Rheims Bible</title>
+	<title>404 — Page Not Found · Douay-Rheims Bible</title>
 </svelte:head>
 
 <main class="error-page">

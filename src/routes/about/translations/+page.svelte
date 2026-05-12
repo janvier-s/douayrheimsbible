@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>The Translations | The Original Douay-Rheims Bible</title>
+	<title>The Translations · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Every translation available on this site: Sixto-Clementine Vulgate, Original Douay-Rheims, Challoner, Haydock, Confraternity, Knox, CPDV, and KJV."

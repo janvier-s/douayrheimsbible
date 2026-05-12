@@ -5,7 +5,7 @@
 	export let data: PageData;
 
 	$: pageUrl = `https://thedouayrheims.com/odr/${data.bookMeta.slug}/${data.chapter.chapter}`;
-	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} | Original Douay-Rheims Bible`;
+	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} · Original Douay-Rheims Bible`;
 	$: pageDesc = (() => {
 		const base = `Read ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} in the original Douay-Rheims Bible (1582–1610). Pre-Challoner English Catholic translation from the Latin Vulgate.`;
 		if (data.chapter.summary && data.chapter.summary !== '---') {

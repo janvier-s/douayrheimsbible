@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.label} | Original Douay-Rheims Bible</title>
+	<title>{data.label} · Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Browse all {data.books

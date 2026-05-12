@@ -8,7 +8,7 @@
 	const SITE = 'https://thedouayrheims.com';
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
-	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} — Church Fathers | Douay-Rheims`;
+	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} — Church Fathers · Douay-Rheims`;
 	$: pageDesc = `Patristic commentary on ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} from the Church Fathers. Early Christian interpretation alongside the Douay-Rheims text.`;
 	$: pageUrl = `${SITE}/fathers/${data.bookMeta.slug}/${data.chapter.chapter}`;
 

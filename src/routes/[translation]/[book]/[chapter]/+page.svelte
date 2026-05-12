@@ -10,7 +10,7 @@
 	const SITE = 'https://thedouayrheims.com';
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
-	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} | ${data.seoName ?? data.translationLabel}`;
+	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} · ${data.seoName ?? data.translationLabel}`;
 	$: pageDesc = (() => {
 		const base = data.seoDesc || '';
 		if (base.length >= 80) return base;

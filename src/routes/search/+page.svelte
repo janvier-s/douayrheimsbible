@@ -705,7 +705,7 @@
 </script>
 
 <svelte:head>
-	<title>{query ? `${query} | ${heading}` : heading} | Original Douay-Rheims Bible</title>
+	<title>{query ? `${query} · ${heading}` : heading} · Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content={query

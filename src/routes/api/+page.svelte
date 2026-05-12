@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>API | The Original Douay-Rheims Bible</title>
+	<title>API · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="REST API for the Original Douay-Rheims Bible. Fetch verses, chapters, books, and search the full text programmatically."

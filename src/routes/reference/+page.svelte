@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Reference Material | Douay-Rheims Bible</title>
+	<title>Reference Material · Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Front and back matter from Catholic Bible translations: prefaces, approvals, historical tables, glossaries, scholarly articles, and liturgical calendars."

@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Privacy Policy | Douay-Rheims Bible</title>
+	<title>Privacy Policy · Douay-Rheims Bible</title>
 	<meta name="description" content="Privacy policy for the Douay-Rheims Bible website." />
 	<link rel="canonical" href="https://thedouayrheims.com/privacy" />
 </svelte:head>

@@ -93,7 +93,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact | Douay-Rheims Bible</title>
+	<title>Contact · Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Report an error, ask a question, or send a message to the Douay-Rheims Bible project."

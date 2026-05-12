@@ -37,7 +37,7 @@
 </script>
 
 <svelte:head>
-	<title>In Numbers | The Original Douay-Rheims Bible</title>
+	<title>In Numbers · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="The Original Douay-Rheims Bible in numbers: 1,707 annotations, 3,709 cross-references, and the story of how this site was built."

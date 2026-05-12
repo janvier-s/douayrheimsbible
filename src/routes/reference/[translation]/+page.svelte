@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<title>{config.label} Reference Material | Douay-Rheims Bible</title>
+	<title>{config.label} Reference Material · Douay-Rheims Bible</title>
 	<meta name="description" content={config.desc} />
 	<link rel="canonical" href="https://thedouayrheims.com/reference/{config.id}" />
 </svelte:head>

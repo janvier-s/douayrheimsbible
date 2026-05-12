@@ -110,7 +110,7 @@
 <svelte:window bind:innerWidth on:keydown={onKonamiKeydown} />
 
 <svelte:head>
-	<title>{bookMeta.odrName} {chapter.chapter} | Compare Translations — Douay-Rheims Bible</title>
+	<title>{bookMeta.odrName} {chapter.chapter} · Compare Translations — Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Compare {bookMeta.odrName} Chapter {chapter.chapter} side-by-side across multiple Bible translations: Original Douay-Rheims, Challoner, Vulgate, KJV, Knox, and more."
@@ -120,7 +120,7 @@
 		href="https://thedouayrheims.com/compare/{bookMeta.slug}/{chapter.chapter}"
 	/>
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{bookMeta.odrName} {chapter.chapter} | Compare Translations" />
+	<meta property="og:title" content="{bookMeta.odrName} {chapter.chapter} · Compare Translations" />
 	<meta
 		property="og:description"
 		content="Compare {bookMeta.odrName} Chapter {chapter.chapter} across multiple Bible translations."
@@ -134,7 +134,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta
 		name="twitter:title"
-		content="{bookMeta.odrName} {chapter.chapter} | Compare Translations"
+		content="{bookMeta.odrName} {chapter.chapter} · Compare Translations"
 	/>
 	<meta
 		name="twitter:description"

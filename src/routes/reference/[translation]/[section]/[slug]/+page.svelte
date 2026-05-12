@@ -211,7 +211,7 @@
 </script>
 
 <svelte:head>
-	<title>{article.title} | Douay-Rheims Bible</title>
+	<title>{article.title} · Douay-Rheims Bible</title>
 	<meta name="description" content={article.desc} />
 	<link
 		rel="canonical"

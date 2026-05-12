@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>About This Website | The Original Douay-Rheims Bible</title>
+	<title>About This Website · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="How and why this site was built: the first freely searchable digital edition of the Original Douay-Rheims Bible of 1582–1610, with all annotations, search, and study tools."

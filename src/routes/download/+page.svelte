@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Downloads | The Original Douay-Rheims Bible</title>
+	<title>Downloads · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Download the Original Douay-Rheims Bible as structured JSON, USFM, or PDF. All files are public domain under CC0 1.0."

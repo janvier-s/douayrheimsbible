@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import { browser } from '$app/environment';
+	import { get } from 'svelte/store';
 	import { goto } from '$app/navigation';
 	import type { PageData } from './$types';
 	import TopBar from '$lib/components/TopBar.svelte';
@@ -8,6 +10,11 @@
 	import { prefs } from '$lib/stores/prefs';
 
 	export let data: PageData;
+
+	// Sync hide for client-side navigation — app.html script only covers hard loads
+	if (browser && get(prefs).skipHomepage) {
+		document.documentElement.style.setProperty('visibility', 'hidden');
+	}
 
 	$: bookSlug = $readingPosition?.bookSlug ?? data.bookMeta.slug;
 
@@ -140,13 +147,13 @@
 	<title>The Original Pre-Challoner Douay-Rheims Bible, 1582–1610</title>
 	<meta
 		name="description"
-		content="Read the Original Douay-Rheims Bible online | the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore the original pre-Challoner text."
+		content="Read the Original Douay-Rheims Bible online · the first complete English Catholic translation from the Latin Vulgate, 1582–1610. Compare translations, search Scripture, and explore the original pre-Challoner text."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/" />
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
-		content="The Original Douay-Rheims Bible | English Catholic Scripture"
+		content="The Original Douay-Rheims Bible · English Catholic Scripture"
 	/>
 	<meta
 		property="og:description"
@@ -158,7 +165,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta
 		name="twitter:title"
-		content="The Original Douay-Rheims Bible | English Catholic Scripture"
+		content="The Original Douay-Rheims Bible · English Catholic Scripture"
 	/>
 	<meta
 		name="twitter:description"

@@ -34,7 +34,7 @@
 </script>
 
 <svelte:head>
-	<title>{$page.status} — {info.heading} | Douay-Rheims Bible</title>
+	<title>{$page.status} — {info.heading} · Douay-Rheims Bible</title>
 </svelte:head>
 
 <main class="error-page">
