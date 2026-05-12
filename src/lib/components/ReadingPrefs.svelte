@@ -304,6 +304,20 @@
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"
+					checked={!$prefs.skipHomepage}
+					on:change={(e) =>
+						prefs.update((p) => ({
+							...p,
+							skipHomepage: !(e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<span>Show intro page</span>
+			</label>
+
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
 					checked={$prefs.bionicReading}
 					on:change={(e) =>
 						prefs.update((p) => ({
