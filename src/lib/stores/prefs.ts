@@ -170,7 +170,7 @@ function loadPrefs(): ReadingPrefs {
 		}
 		// v19 migration: add homepage skip preferences
 		if (!parsed._v || parsed._v < 19) {
-			parsed.hasVisitedHomepage = false;
+			parsed.hasVisitedHomepage = true;
 			parsed.skipHomepage = false;
 		}
 		parsed._v = PREFS_VERSION;

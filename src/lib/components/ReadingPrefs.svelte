@@ -301,19 +301,21 @@
 				<span>Chapter navigation</span>
 			</label>
 
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={!($prefs.skipHomepage ?? false)}
-					on:change={(e) =>
-						prefs.update((p) => ({
-							...p,
-							skipHomepage: !(e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Show intro page</span>
-			</label>
+			{#if $prefs.hasVisitedHomepage}
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={!($prefs.skipHomepage ?? false)}
+						on:change={(e) =>
+							prefs.update((p) => ({
+								...p,
+								skipHomepage: !(e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<span>Show intro page</span>
+				</label>
+			{/if}
 
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
