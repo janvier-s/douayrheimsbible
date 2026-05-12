@@ -38,6 +38,7 @@
 
 	export let bookData: BookData | null = null;
 	export let translationId: string = 'odr';
+	export let onClose: (() => void) | null = null;
 
 	$: isOdr = translationId === 'odr';
 	$: hasTranslationNotes =
@@ -850,8 +851,29 @@
 >
 	<!-- Panel identity bar -->
 	<div class="panel-header shrink-0 flex flex-col">
-		<div class="flex items-center justify-center px-[14px] pt-[11px] pb-[10px]">
-			<span class="panel-title">Study Notes</span>
+		<div class="flex items-center px-[14px] pt-[11px] pb-[10px]">
+			{#if onClose}<div class="w-6 shrink-0"></div>{/if}
+			<span class="panel-title flex-1 text-center">Study Notes</span>
+			{#if onClose}
+				<button
+					class="w-6 h-6 shrink-0 flex items-center justify-center rounded text-subtle hover:text-foreground transition-colors"
+					aria-label="Close study panel"
+					on:click={onClose}
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="2.5"
+						stroke="currentColor"
+						width="14"
+						height="14"
+						aria-hidden="true"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+					</svg>
+				</button>
+			{/if}
 		</div>
 
 		<!-- Tabs with sliding underline -->

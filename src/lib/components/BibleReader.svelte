@@ -91,16 +91,25 @@
 		(d) => (panelDragging = d)
 	);
 	$: if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
+	$: mobileStudyMode = $isMobile && $prefs.readingMode === 'study';
+	let mobilePanelOpen = false;
+	$: if (!mobileStudyMode) mobilePanelOpen = false;
+	$: if ($scrollTrigger !== null && mobileStudyMode) mobilePanelOpen = true;
 	$: panelMaxWidth =
 		$prefs.readingMode === 'study' ? ($isMobile ? '100%' : `calc(${liveWidth} + 16px)`) : '0';
-	$: panelWidth = $isMobile && $prefs.readingMode === 'study' ? '100%' : '';
+	$: panelWidth = mobileStudyMode ? '100%' : '';
+	$: panelHeight = $isMobile
+		? 'calc(100lvh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
+		: 'calc(100vh - var(--header-height))';
 	$: panelTransition = reducedMotion
 		? 'none'
 		: panelDragging
 			? 'opacity 250ms ease'
-			: $isMobile
-				? 'opacity 150ms ease'
-				: 'max-width 250ms ease, opacity 250ms ease';
+			: mobileStudyMode
+				? 'transform 320ms cubic-bezier(0.32, 0.72, 0, 1), opacity 200ms ease'
+				: $isMobile
+					? 'opacity 150ms ease'
+					: 'max-width 250ms ease, opacity 250ms ease';
 	let panelEl: HTMLElement;
 	$: if (panelEl) resize.bindPanel(panelEl);
 	// Sync inner panel width when not dragging (initial render + settings changes).
@@ -412,7 +421,6 @@
 		id="main-content"
 		bind:this={container}
 		class="flex-1 min-w-0 px-md max-md:px-[8px] pt-[20px] pb-xl max-md:pb-[80px]"
-		class:hidden={$prefs.readingMode === 'study' && $isMobile}
 	>
 		<div style="max-width: {columnMaxWidth}px;" class="mx-auto">
 			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
@@ -442,13 +450,23 @@
 		</div>
 	</main>
 
-	<!-- Sticky panel container — overflow:clip on the sticky el itself, not an ancestor -->
+	<!-- Sticky panel on desktop; fixed full-screen slide-up overlay on mobile -->
 	<div
-		class="shrink-0 sticky flex [overflow:clip]"
+		class="shrink-0 flex [overflow:clip]"
+		class:sticky={!mobileStudyMode}
+		style:position={mobileStudyMode ? 'fixed' : undefined}
 		style:top="var(--header-height)"
-		style:height={$isMobile
-			? 'calc(100lvh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
-			: 'calc(100vh - var(--header-height))'}
+		style:bottom={mobileStudyMode ? 'calc(56px + env(safe-area-inset-bottom, 0px))' : undefined}
+		style:left={mobileStudyMode ? '0' : undefined}
+		style:right={mobileStudyMode ? '0' : undefined}
+		style:z-index={mobileStudyMode ? '40' : undefined}
+		style:pointer-events={mobileStudyMode && !mobilePanelOpen ? 'none' : undefined}
+		style:transform={mobileStudyMode
+			? mobilePanelOpen
+				? 'translateY(0)'
+				: 'translateY(100%)'
+			: undefined}
+		style:height={panelHeight}
 		style:max-width={panelMaxWidth}
 		style:width={panelWidth}
 		style:opacity={$prefs.readingMode === 'study' ? '1' : '0'}
@@ -478,7 +496,11 @@
 			</div>
 		</div>
 		<div bind:this={panelEl} class="shrink-0 h-full">
-			<StudyPanel bookData={currentBookData} {translationId} />
+			<StudyPanel
+				bookData={currentBookData}
+				{translationId}
+				onClose={mobileStudyMode ? () => (mobilePanelOpen = false) : null}
+			/>
 		</div>
 	</div>
 </div>
