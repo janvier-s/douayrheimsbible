@@ -46,6 +46,9 @@ export interface ReadingPrefs {
 	showDropcap: boolean;
 	// v17
 	hangingVerseNumbers: boolean;
+	// v19
+	hasVisitedHomepage: boolean;
+	skipHomepage: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -75,10 +78,12 @@ const DEFAULTS: ReadingPrefs = {
 	studyDefaultTab: 'commentary',
 	annotationSync: true,
 	showDropcap: true,
-	hangingVerseNumbers: true
+	hangingVerseNumbers: true,
+	hasVisitedHomepage: false,
+	skipHomepage: false
 };
 
-const PREFS_VERSION = 18;
+const PREFS_VERSION = 19;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -162,6 +167,11 @@ function loadPrefs(): ReadingPrefs {
 		// v18 migration: added 'footnotes' tab option — no data migration needed
 		if (!parsed._v || parsed._v < 18) {
 			// no data change needed
+		}
+		// v19 migration: add homepage skip preferences
+		if (!parsed._v || parsed._v < 19) {
+			parsed.hasVisitedHomepage = false;
+			parsed.skipHomepage = false;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
