@@ -10,6 +10,7 @@
 	import ChapterNavLink from './ChapterNavLink.svelte';
 	import { ALL_BOOKS, getPrevNavBook, getNextNavBook } from '$lib/data/books';
 	import type { BookMeta } from '$lib/data/types';
+	import manifest from '../../../static/data/fathers/manifest.json';
 
 	export let bookMeta: BookMeta;
 	export let chapterNum: number;
@@ -48,11 +49,36 @@
 		await selectMode(key, index);
 	}
 
-	$: prevBook = getPrevNavBook(bookMeta.slug) ?? null;
-	$: nextBook = getNextNavBook(bookMeta.slug) ?? null;
-	$: prevChapterHref = chapterNum > 1 ? `/fathers/${bookMeta.slug}/${chapterNum - 1}` : null;
-	$: nextChapterHref =
-		chapterNum < totalChapters ? `/fathers/${bookMeta.slug}/${chapterNum + 1}` : null;
+	const fathersManifest = manifest as Record<string, number[]>;
+
+	// Chapter nav: skip to nearest chapter that actually has fathers data
+	$: bookChapters = fathersManifest[bookMeta.slug] ?? [];
+	$: prevChapterHref = (() => {
+		for (let ch = chapterNum - 1; ch >= 1; ch--) {
+			if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
+		}
+		return null;
+	})();
+	$: nextChapterHref = (() => {
+		for (let ch = chapterNum + 1; ch <= totalChapters; ch++) {
+			if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
+		}
+		return null;
+	})();
+
+	// Book nav: skip books that have no fathers data at all
+	function findPrevFathersBook(slug: string): (typeof ALL_BOOKS)[number] | null {
+		let b = getPrevNavBook(slug);
+		while (b && !fathersManifest[b.slug]?.length) b = getPrevNavBook(b.slug);
+		return b ?? null;
+	}
+	function findNextFathersBook(slug: string): (typeof ALL_BOOKS)[number] | null {
+		let b = getNextNavBook(slug);
+		while (b && !fathersManifest[b.slug]?.length) b = getNextNavBook(b.slug);
+		return b ?? null;
+	}
+	$: prevBook = findPrevFathersBook(bookMeta.slug);
+	$: nextBook = findNextFathersBook(bookMeta.slug);
 
 	let navOpen = false;
 	let prefsOpen = false;
@@ -100,7 +126,7 @@
 			>
 				{#if prevBook}
 					<BookNavLink
-						href="/fathers/{prevBook.slug}/1"
+						href="/fathers/{prevBook.slug}/{fathersManifest[prevBook.slug]?.[0] ?? 1}"
 						direction="prev"
 						label={bookNavLabel(prevBook)}
 					/>
@@ -139,7 +165,7 @@
 				{/if}
 				{#if nextBook}
 					<BookNavLink
-						href="/fathers/{nextBook.slug}/1"
+						href="/fathers/{nextBook.slug}/{fathersManifest[nextBook.slug]?.[0] ?? 1}"
 						direction="next"
 						label={bookNavLabel(nextBook)}
 					/>
