@@ -22,8 +22,10 @@
 	onMount(async () => {
 		if ($prefs.skipHomepage) {
 			await goto('/odr/genesis/1', { replaceState: true });
+			document.documentElement.style.removeProperty('visibility');
 			return;
 		}
+		document.documentElement.style.removeProperty('visibility');
 		if (!$prefs.hasVisitedHomepage) {
 			prefs.update((p) => ({ ...p, hasVisitedHomepage: true }));
 		} else {

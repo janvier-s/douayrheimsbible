@@ -26,6 +26,10 @@
 					}
 					if (fs) s.setProperty('--font-size-reader', fs + 'px');
 					if (prefs.lineHeight) s.setProperty('--line-height-reader', String(prefs.lineHeight));
+					// Hide homepage before paint when user has opted to skip it
+					if (prefs.skipHomepage && window.location.pathname === '/') {
+						s.setProperty('visibility', 'hidden');
+					}
 				} catch (e) {}
 			})();
 		</script>
