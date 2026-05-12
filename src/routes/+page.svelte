@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import { goto } from '$app/navigation';
 	import type { PageData } from './$types';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import BibleReader from '$lib/components/BibleReader.svelte';
 	import { readingPosition } from '$lib/stores/reading';
+	import { prefs } from '$lib/stores/prefs';
 
 	export let data: PageData;
 
@@ -15,8 +17,19 @@
 	let readerObs: IntersectionObserver | null = null;
 
 	let reducedMotion = false;
+	let showSkipCheckbox = false;
 
 	onMount(() => {
+		if ($prefs.skipHomepage) {
+			goto('/odr/genesis/1');
+			return;
+		}
+		if (!$prefs.hasVisitedHomepage) {
+			prefs.update((p) => ({ ...p, hasVisitedHomepage: true }));
+		} else {
+			showSkipCheckbox = true;
+		}
+
 		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
 		reducedMotion = mq.matches;
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
@@ -199,6 +212,21 @@
 				Read the Scriptures
 				<span class="hero-cta-arrow" aria-hidden="true">↓</span>
 			</button>
+			{#if showSkipCheckbox}
+				<label class="hero-skip-label">
+					<input
+						type="checkbox"
+						checked={$prefs.skipHomepage}
+						on:change={(e) =>
+							prefs.update((p) => ({
+								...p,
+								skipHomepage: (e.target as HTMLInputElement).checked
+							}))}
+						class="hero-skip-checkbox"
+					/>
+					<span>Skip this intro on future visits</span>
+				</label>
+			{/if}
 		</div>
 
 		<div class="hero-right">
@@ -560,5 +588,24 @@
 		.hero-nav {
 			padding: 16px;
 		}
+	}
+
+	.hero-skip-label {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 16px;
+		cursor: pointer;
+		font-family: var(--font-ui);
+		font-size: 11px;
+		color: var(--color-subtle);
+		letter-spacing: 0.05em;
+	}
+
+	.hero-skip-checkbox {
+		accent-color: var(--color-accent);
+		width: 13px;
+		height: 13px;
+		cursor: pointer;
 	}
 </style>
