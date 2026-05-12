@@ -304,7 +304,7 @@
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"
-					checked={!$prefs.skipHomepage}
+					checked={!($prefs.skipHomepage ?? false)}
 					on:change={(e) =>
 						prefs.update((p) => ({
 							...p,
