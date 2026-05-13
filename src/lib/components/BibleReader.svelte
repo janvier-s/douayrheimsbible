@@ -43,14 +43,17 @@
 	): Promise<{ chapter: ChapterType | undefined; totalChapters: number }> {
 		if (translationId === 'odr') {
 			const bookData = await loadBook(slug, fetch);
-			return { chapter: getChapter(bookData, chapterNum), totalChapters: bookData.chapters.length };
+			return {
+				chapter: getChapter(bookData, chapterNum),
+				totalChapters: bookData.chapters[bookData.chapters.length - 1].chapter
+			};
 		} else {
 			const bookData = await loadTranslationBook(translationId, slug, fetch);
 			const ch = bookData.chapters.find((c) => c.chapter === chapterNum);
 			// TranslationChapter is structurally compatible with Chapter
 			return {
 				chapter: ch as ChapterType | undefined,
-				totalChapters: bookData.chapters.length
+				totalChapters: bookData.chapters[bookData.chapters.length - 1].chapter
 			};
 		}
 	}

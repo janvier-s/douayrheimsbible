@@ -209,7 +209,7 @@
 		rendering of the Latin; Challoner's is the more natural English idiom for the same idea.
 	</p>
 
-	<h3><a href="/odr/isaiah/40">Isaiah 40:22</a></h3>
+	<h3><a href="/odr/isaie/40">Isaiah 40:22</a></h3>
 	<blockquote class="comparison">
 		<strong>Vulgate:</strong>
 		<em

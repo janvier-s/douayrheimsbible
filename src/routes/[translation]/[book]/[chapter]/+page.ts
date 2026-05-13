@@ -45,7 +45,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	return {
 		bookMeta,
 		chapter,
-		totalChapters: book.chapters.length,
+		totalChapters: book.chapters[book.chapters.length - 1].chapter,
 		translationId,
 		ntOnly: false,
 		translationLabel: translation.label,

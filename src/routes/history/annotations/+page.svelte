@@ -103,7 +103,7 @@
 		characteristic. Cotton noted that it "treats professedly of Heresies; and contains much
 		condemnation of Protestants, of private judgment, vernacular translations, the general perusal
 		of Scripture." The notes to the
-		<a href="/odr/revelation/1">Apocalypse</a> were "preeminently controversial; designed to defend the
+		<a href="/odr/apocalypse/1">Apocalypse</a> were "preeminently controversial; designed to defend the
 		Church of Rome from the interpretations given by Protestant Divines." One of those notes ran to six
 		and a half pages of small print, arguing that the Pope could not be the Antichrist described in Revelation.
 	</p>

@@ -34,7 +34,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		bookMeta,
 		chapter,
 		targetVerse: verseNum,
-		totalChapters: bookData.chapters.length,
+		totalChapters: bookData.chapters[bookData.chapters.length - 1].chapter,
 		bookTitle: bookData.book_title ?? null,
 		shortTitle: bookData.short_title ?? null
 	};
