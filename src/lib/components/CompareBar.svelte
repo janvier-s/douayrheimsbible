@@ -29,7 +29,7 @@
 		{ key: 'compare', label: 'Compare' },
 		{ key: 'fathers', label: 'Fathers' }
 	];
-	$: activeModeIdx = modeItems.length - 1; // Compare is always active here
+	$: activeModeIdx = modeItems.findIndex((m) => m.key === 'compare');
 
 	let pendingIdx = -1;
 

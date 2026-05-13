@@ -49,6 +49,7 @@
 
 	// Max-width scales with column count (405px per col → 2 cols = 810px)
 	$: containerMaxWidth = `${Math.min(displayedCols.length * 405, 1800)}px`;
+	$: isOT = bookMeta.testament === 'OT';
 
 	// ── Konami code ────────────────────────────────────────────────────────────
 	const KONAMI_SEQUENCE = [
@@ -218,7 +219,7 @@
 					on:dragstart={(e) => onColDragStart(e, t.id)}
 					on:dragover={(e) => onColDragOver(e, t.id)}
 					on:dragend={onColDragEnd}
-					class="px-[20px] max-md:px-[10px] py-[13px] max-md:py-[8px] flex items-center justify-between gap-[8px] max-md:gap-[4px] cursor-grab active:cursor-grabbing select-none bg-panel
+					class="group px-[20px] max-md:px-[10px] py-[13px] max-md:py-[8px] flex items-center justify-between gap-[8px] max-md:gap-[4px] cursor-grab active:cursor-grabbing select-none bg-panel
 					{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}
 					{draggingId === t.id ? 'opacity-50' : ''}"
 				>
@@ -243,6 +244,25 @@
 							{/if}
 						</div>
 					</div>
+					<button
+						class="opacity-0 group-hover:opacity-100 transition-opacity duration-fast shrink-0 flex items-center justify-center w-[20px] h-[20px] rounded-[2px] text-subtle/50 hover:text-foreground hover:bg-border/60"
+						aria-label="Remove {t.label}"
+						on:click|stopPropagation={() => compareStore.toggle(t.id, isOT)}
+						on:dragstart|stopPropagation
+					>
+						<svg
+							width="8"
+							height="8"
+							viewBox="0 0 8 8"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							aria-hidden="true"
+						>
+							<line x1="1" y1="1" x2="7" y2="7" /><line x1="7" y1="1" x2="1" y2="7" />
+						</svg>
+					</button>
 				</div>
 			{/each}
 		</div>
