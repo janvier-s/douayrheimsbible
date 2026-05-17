@@ -29,13 +29,7 @@
 		translationId?: string;
 	}
 
-	let {
-		verses,
-		targetVerse,
-		bookSlug,
-		chapterNum,
-		translationId = 'odr'
-	}: Props = $props();
+	let { verses, targetVerse, bookSlug, chapterNum, translationId = 'odr' }: Props = $props();
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
 	// ── Paragraph data (lazy-loaded to avoid 28KB in initial bundle) ────
@@ -87,8 +81,9 @@
 	// ── Translation notes (DRC / CPDV / Knox) ────────────────────────
 	let translationNotes: TranslationNote[] | null = $state(null);
 	let lastTranslationNotesKey = $state('');
-	let hasTranslationNotes =
-		$derived(translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox');
+	let hasTranslationNotes = $derived(
+		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox'
+	);
 	run(() => {
 		const key = `${translationId}/${bookSlug}/${chapterNum}`;
 		if (browser && hasTranslationNotes && key !== lastTranslationNotesKey) {

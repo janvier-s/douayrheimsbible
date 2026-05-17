@@ -9,12 +9,7 @@
 		forceOpen?: boolean;
 	}
 
-	let {
-		entry,
-		highlighted = false,
-		dimmed = false,
-		forceOpen = false
-	}: Props = $props();
+	let { entry, highlighted = false, dimmed = false, forceOpen = false }: Props = $props();
 
 	let expanded = $state(false);
 	let isOpen = $derived(forceOpen || expanded);
@@ -43,15 +38,17 @@
 	// Body text longer than 350 chars will be truncated by the 6em max-height
 	let bodyTruncated = $derived(entry.body.length > 350);
 
-	let buttonLabel = $derived(expanded
-		? 'Show less'
-		: bodyTruncated
-			? 'Show more'
-			: inlineFootnotes.length > 0
-				? `Show ${inlineFootnotes.length} footnote${inlineFootnotes.length === 1 ? '' : 's'}`
-				: sourceFootnote
-					? 'Show source'
-					: 'Show more');
+	let buttonLabel = $derived(
+		expanded
+			? 'Show less'
+			: bodyTruncated
+				? 'Show more'
+				: inlineFootnotes.length > 0
+					? `Show ${inlineFootnotes.length} footnote${inlineFootnotes.length === 1 ? '' : 's'}`
+					: sourceFootnote
+						? 'Show source'
+						: 'Show more'
+	);
 </script>
 
 <article

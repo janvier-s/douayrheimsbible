@@ -12,45 +12,51 @@
 	const SITE = 'https://thedouayrheims.com';
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
-	let pageTitle = $derived(`${data.bookMeta.odrName} ${data.chapter.chapter} — Church Fathers · Douay-Rheims`);
-	let pageDesc = $derived(`Patristic commentary on ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} from the Church Fathers. Early Christian interpretation alongside the Douay-Rheims text.`);
+	let pageTitle = $derived(
+		`${data.bookMeta.odrName} ${data.chapter.chapter} — Church Fathers · Douay-Rheims`
+	);
+	let pageDesc = $derived(
+		`Patristic commentary on ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} from the Church Fathers. Early Christian interpretation alongside the Douay-Rheims text.`
+	);
 	let pageUrl = $derived(`${SITE}/fathers/${data.bookMeta.slug}/${data.chapter.chapter}`);
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
-	let jsonLdTag = $derived(`${scriptOpen}${JSON.stringify({
-		'@context': 'https://schema.org',
-		'@type': 'Article',
-		headline: pageTitle,
-		description: pageDesc,
-		url: pageUrl,
-		image: OG_IMAGE,
-		author: { '@type': 'Organization', name: 'Douay-Rheims Bible', url: SITE },
-		publisher: {
-			'@type': 'Organization',
-			name: 'Douay-Rheims Bible',
-			url: SITE,
-			logo: { '@type': 'ImageObject', url: SITE + '/favicon-96x96.png' }
-		},
-		breadcrumb: {
-			'@type': 'BreadcrumbList',
-			itemListElement: [
-				{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-				{
-					'@type': 'ListItem',
-					position: 2,
-					name: data.bookMeta.odrName,
-					item: `${SITE}/fathers/${data.bookMeta.slug}/1`
-				},
-				{
-					'@type': 'ListItem',
-					position: 3,
-					name: `Chapter ${data.chapter.chapter}`,
-					item: pageUrl
-				}
-			]
-		}
-	})}${scriptClose}`);
+	let jsonLdTag = $derived(
+		`${scriptOpen}${JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Article',
+			headline: pageTitle,
+			description: pageDesc,
+			url: pageUrl,
+			image: OG_IMAGE,
+			author: { '@type': 'Organization', name: 'Douay-Rheims Bible', url: SITE },
+			publisher: {
+				'@type': 'Organization',
+				name: 'Douay-Rheims Bible',
+				url: SITE,
+				logo: { '@type': 'ImageObject', url: SITE + '/favicon-96x96.png' }
+			},
+			breadcrumb: {
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+					{
+						'@type': 'ListItem',
+						position: 2,
+						name: data.bookMeta.odrName,
+						item: `${SITE}/fathers/${data.bookMeta.slug}/1`
+					},
+					{
+						'@type': 'ListItem',
+						position: 3,
+						name: `Chapter ${data.chapter.chapter}`,
+						item: pageUrl
+					}
+				]
+			}
+		})}${scriptClose}`
+	);
 </script>
 
 <svelte:head>

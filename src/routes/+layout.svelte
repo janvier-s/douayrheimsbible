@@ -31,16 +31,20 @@
 	let isChapterPage = $derived(!!$page.params.book && !!$page.params.chapter);
 	let isHomePage = $derived($page.url.pathname === '/');
 	let translationId = $derived(($page.params.translation as string) ?? 'odr');
-	let bookSlug = $derived(isChapterPage
-		? ($readingPosition?.bookSlug ?? $page.params.book ?? '')
-		: ($navOverride?.bookSlug ?? $page.params.book ?? ''));
-	let chapterNum = $derived(isChapterPage
-		? $readingPosition
-			? String($readingPosition.chapter)
-			: ($page.params.chapter ?? '')
-		: $navOverride
-			? String($navOverride.chapter)
-			: '');
+	let bookSlug = $derived(
+		isChapterPage
+			? ($readingPosition?.bookSlug ?? $page.params.book ?? '')
+			: ($navOverride?.bookSlug ?? $page.params.book ?? '')
+	);
+	let chapterNum = $derived(
+		isChapterPage
+			? $readingPosition
+				? String($readingPosition.chapter)
+				: ($page.params.chapter ?? '')
+			: $navOverride
+				? String($navOverride.chapter)
+				: ''
+	);
 
 	onMount(() => {
 		const p = $prefs;

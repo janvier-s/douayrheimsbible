@@ -50,8 +50,9 @@
 
 	let activeFontId = $derived($prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily);
 	let activeFont = $derived(FONTS.find((f) => f.id === activeFontId));
-	let activeFontStack =
-		$derived(activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit'));
+	let activeFontStack = $derived(
+		activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit')
+	);
 
 	onMount(() => {
 		currentTheme = document.documentElement.getAttribute('data-theme') ?? 'auto';

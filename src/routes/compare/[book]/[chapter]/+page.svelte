@@ -42,14 +42,17 @@
 	let effectiveMax = $derived(innerWidth > 0 && innerWidth < 768 ? 2 : MAX_COLS);
 
 	// Derived view state from store
-	let orderedTranslations = $derived($compareStore.order.map(
-		(id: TranslationId) => TRANSLATIONS.find((t: Translation) => t.id === id)!
-	));
-	let activeCols = $derived(orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id)));
-	let displayedCols = $derived(activeCols.slice(
-		$compareStore.columnOffset,
-		$compareStore.columnOffset + effectiveMax
-	));
+	let orderedTranslations = $derived(
+		$compareStore.order.map(
+			(id: TranslationId) => TRANSLATIONS.find((t: Translation) => t.id === id)!
+		)
+	);
+	let activeCols = $derived(
+		orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id))
+	);
+	let displayedCols = $derived(
+		activeCols.slice($compareStore.columnOffset, $compareStore.columnOffset + effectiveMax)
+	);
 	let needsScroll = $derived(activeCols.length > effectiveMax);
 	let canScrollLeft = $derived($compareStore.columnOffset > 0);
 	let canScrollRight = $derived($compareStore.columnOffset + effectiveMax < activeCols.length);

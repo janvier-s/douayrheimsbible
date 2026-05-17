@@ -44,12 +44,11 @@
 		translationId = 'odr'
 	}: Props = $props();
 
-	
-
 	let liveTranslations = $derived(TRANSLATIONS.filter((t) => t.live && !t.hidden));
-	let currentTranslation =
-		$derived(liveTranslations.find((t) => t.id === translationId) ??
-		liveTranslations.find((t) => t.id === 'odr')!);
+	let currentTranslation = $derived(
+		liveTranslations.find((t) => t.id === translationId) ??
+			liveTranslations.find((t) => t.id === 'odr')!
+	);
 
 	let navOpen = $state(false);
 	let prefsOpen = $state(false);
@@ -57,34 +56,41 @@
 
 	let bookMeta = $derived(getBookBySlug(bookSlug));
 
-	let displayName = $derived(bookMeta
-		? $prefs.modernBookNames
-			? bookMeta.modernName
-			: bookMeta.odrName
-		: '');
+	let displayName = $derived(
+		bookMeta ? ($prefs.modernBookNames ? bookMeta.modernName : bookMeta.odrName) : ''
+	);
 
-	let psalmSuffix = $derived((() => {
-		if (!$prefs.showPsalmNumbers || bookMeta?.slug !== 'psalms' || !chapterNum) return '';
-		const prot = getHebPsalmNum(parseInt(chapterNum, 10));
-		return prot ? ` (${prot})` : '';
-	})());
+	let psalmSuffix = $derived(
+		(() => {
+			if (!$prefs.showPsalmNumbers || bookMeta?.slug !== 'psalms' || !chapterNum) return '';
+			const prot = getHebPsalmNum(parseInt(chapterNum, 10));
+			return prot ? ` (${prot})` : '';
+		})()
+	);
 
-	let navLabel =
-		$derived(bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026');
+	let navLabel = $derived(
+		bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026'
+	);
 
-	let prevBook = $derived(isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
-	let nextBook = $derived(isChapterPage && bookMeta ? (getNextNavBook(bookMeta.slug) ?? null) : null);
+	let prevBook = $derived(
+		isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null
+	);
+	let nextBook = $derived(
+		isChapterPage && bookMeta ? (getNextNavBook(bookMeta.slug) ?? null) : null
+	);
 
 	let routeBase = $derived(translationId === 'odr' ? '/odr' : `/${translationId}`);
 	let chapterNumInt = $derived(parseInt(chapterNum, 10));
-	let prevChapterHref =
-		$derived(isChapterPage && bookMeta && chapterNumInt > 1
+	let prevChapterHref = $derived(
+		isChapterPage && bookMeta && chapterNumInt > 1
 			? `${routeBase}/${bookSlug}/${chapterNumInt - 1}`
-			: null);
-	let nextChapterHref =
-		$derived(isChapterPage && bookMeta && chapterNumInt < bookMeta.chapters
+			: null
+	);
+	let nextChapterHref = $derived(
+		isChapterPage && bookMeta && chapterNumInt < bookMeta.chapters
 			? `${routeBase}/${bookSlug}/${chapterNumInt + 1}`
-			: null);
+			: null
+	);
 
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
@@ -105,7 +111,9 @@
 	]);
 	let activeModeIdx = $derived(modeItems.findIndex((m) => m.key === $prefs.readingMode));
 	// Show pill on chapter pages and home page; hide on other non-chapter pages (search, etc.)
-	let displayModeIdx = $derived(isChapterPage || isHomePage ? (activeModeIdx >= 0 ? activeModeIdx : 0) : -1);
+	let displayModeIdx = $derived(
+		isChapterPage || isHomePage ? (activeModeIdx >= 0 ? activeModeIdx : 0) : -1
+	);
 
 	let showTabBar = $state(true);
 	let pendingIdx = $state(-1);

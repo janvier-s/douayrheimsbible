@@ -14,9 +14,6 @@
 
 	let { data }: Props = $props();
 
-
-
-
 	// Detect content type from JSON shape
 	type ContentType =
 		| 'paragraphs'
@@ -51,7 +48,6 @@
 			return 'alpha-entries';
 		return 'paragraphs';
 	}
-
 
 	/** Strip HTML tags to get plain text for search query */
 	function stripHtml(html: string): string {
@@ -197,20 +193,24 @@
 	let sectionArticles = $derived(config.articles.filter((a) => a.section === section));
 	let currentIdx = $derived(sectionArticles.findIndex((a) => a.slug === article.slug));
 	let prev = $derived(currentIdx > 0 ? sectionArticles[currentIdx - 1] : null);
-	let next = $derived(currentIdx < sectionArticles.length - 1 ? sectionArticles[currentIdx + 1] : null);
+	let next = $derived(
+		currentIdx < sectionArticles.length - 1 ? sectionArticles[currentIdx + 1] : null
+	);
 	let contentType = $derived(detectType(content));
 	/** Confraternity data uses plain string paragraphs; ODR uses {text, notes} objects */
-	let isPlainParagraphs =
-		$derived(contentType === 'paragraphs' &&
-		Array.isArray(content.paragraphs) &&
-		content.paragraphs.length > 0 &&
-		typeof content.paragraphs[0] === 'string');
+	let isPlainParagraphs = $derived(
+		contentType === 'paragraphs' &&
+			Array.isArray(content.paragraphs) &&
+			content.paragraphs.length > 0 &&
+			typeof content.paragraphs[0] === 'string'
+	);
 	let isTitlePage = $derived(article.slug === 'title-page');
 	let isLastPage = $derived(currentIdx === sectionArticles.length - 1);
-	let skipLinkify =
-		$derived(article.slug === 'contributors' ||
-		article.slug === 'abbreviations' ||
-		article.slug === 'commentators');
+	let skipLinkify = $derived(
+		article.slug === 'contributors' ||
+			article.slug === 'abbreviations' ||
+			article.slug === 'commentators'
+	);
 	let hasToc = $derived(Array.isArray(content.toc) && content.toc.length > 0);
 </script>
 

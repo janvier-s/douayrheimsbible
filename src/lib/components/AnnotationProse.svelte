@@ -11,9 +11,6 @@
 	import type { OsisRange } from '$lib/search/reference';
 	import type { AnnotationNote } from '$lib/data/types';
 
-	
-	
-	
 	interface Props {
 		text: string;
 		notes?: AnnotationNote[];

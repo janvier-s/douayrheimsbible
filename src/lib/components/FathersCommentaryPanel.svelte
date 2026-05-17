@@ -32,7 +32,6 @@
 	});
 	let expandAll = $state(false);
 
-
 	function handleFilterChange(e: CustomEvent<FathersFilterState>) {
 		filter = e.detail;
 	}
@@ -52,13 +51,10 @@
 		return !entryMatches(e, filter);
 	}
 
-
 	let prevFilteredCounts: Record<number, number> | null = $state(null);
 
 	// ── Scroll on verse or pericope select ────────────────────────
 	let scrollContainer: HTMLElement | undefined = $state();
-
-
 
 	async function scrollToEl(el: HTMLElement | null) {
 		if (!el || !scrollContainer) return;
@@ -200,23 +196,25 @@
 	let hasFilter = $derived(hasActiveFilter(filter));
 	let allEntries = $derived(chapterData.pericopes.flatMap((p) => p.entries));
 	// Compute filtered counts, then dispatch only when they actually change
-	let computedFilteredCounts = $derived((() => {
-		if (!hasFilter) return null;
-		const counts: Record<number, number> = {};
-		for (const p of chapterData.pericopes) {
-			for (const entry of p.entries) {
-				if (!entryMatches(entry, filter)) continue;
-				if (entry.subVerseNum !== null) {
-					counts[entry.subVerseNum] = (counts[entry.subVerseNum] ?? 0) + 1;
-				} else {
-					for (let v = p.startVerse; v <= p.endVerse; v++) {
-						counts[v] = (counts[v] ?? 0) + 1;
+	let computedFilteredCounts = $derived(
+		(() => {
+			if (!hasFilter) return null;
+			const counts: Record<number, number> = {};
+			for (const p of chapterData.pericopes) {
+				for (const entry of p.entries) {
+					if (!entryMatches(entry, filter)) continue;
+					if (entry.subVerseNum !== null) {
+						counts[entry.subVerseNum] = (counts[entry.subVerseNum] ?? 0) + 1;
+					} else {
+						for (let v = p.startVerse; v <= p.endVerse; v++) {
+							counts[v] = (counts[v] ?? 0) + 1;
+						}
 					}
 				}
 			}
-		}
-		return counts;
-	})());
+			return counts;
+		})()
+	);
 	run(() => {
 		if (computedFilteredCounts !== prevFilteredCounts) {
 			// eslint-disable-next-line no-useless-assignment -- tracks previous value for Svelte reactive equality check

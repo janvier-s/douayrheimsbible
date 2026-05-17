@@ -54,18 +54,20 @@
 
 	let canonicalUrl = $derived(SITE + $page.url.pathname);
 
-	let breadcrumbItems = $derived((() => {
-		const parts = $page.url.pathname.split('/').filter(Boolean);
-		const items: Array<{ name: string; item: string }> = [{ name: 'Home', item: SITE + '/' }];
-		let current = SITE;
-		for (let i = 0; i < parts.length - 1; i++) {
-			current += '/' + parts[i];
-			const label = PATH_LABELS[parts[i]] ?? parts[i];
-			items.push({ name: label, item: current });
-		}
-		if (parts.length > 0) items.push({ name: title, item: canonicalUrl });
-		return items;
-	})());
+	let breadcrumbItems = $derived(
+		(() => {
+			const parts = $page.url.pathname.split('/').filter(Boolean);
+			const items: Array<{ name: string; item: string }> = [{ name: 'Home', item: SITE + '/' }];
+			let current = SITE;
+			for (let i = 0; i < parts.length - 1; i++) {
+				current += '/' + parts[i];
+				const label = PATH_LABELS[parts[i]] ?? parts[i];
+				items.push({ name: label, item: current });
+			}
+			if (parts.length > 0) items.push({ name: title, item: canonicalUrl });
+			return items;
+		})()
+	);
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
@@ -103,8 +105,8 @@
 		}))
 	});
 
-	let faqSchema =
-		$derived(faqItems.length > 0
+	let faqSchema = $derived(
+		faqItems.length > 0
 			? {
 					'@context': 'https://schema.org',
 					'@type': 'FAQPage',
@@ -114,16 +116,18 @@
 						acceptedAnswer: { '@type': 'Answer', text: a }
 					}))
 				}
-			: null);
+			: null
+	);
 
-	let jsonLdHtml =
-		$derived(scriptOpen +
-		JSON.stringify(articleSchema) +
-		scriptClose +
+	let jsonLdHtml = $derived(
 		scriptOpen +
-		JSON.stringify(breadcrumbSchema) +
-		scriptClose +
-		(faqSchema ? scriptOpen + JSON.stringify(faqSchema) + scriptClose : ''));
+			JSON.stringify(articleSchema) +
+			scriptClose +
+			scriptOpen +
+			JSON.stringify(breadcrumbSchema) +
+			scriptClose +
+			(faqSchema ? scriptOpen + JSON.stringify(faqSchema) + scriptClose : '')
+	);
 
 	const NAV_ARTICLES = [
 		{ path: '/history', label: 'History' },

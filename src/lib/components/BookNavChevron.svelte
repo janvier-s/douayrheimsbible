@@ -1,5 +1,4 @@
 <script lang="ts">
-	
 	interface Props {
 		direction: 'prev' | 'next';
 		/** true = double chevron (book jump «»), false = single chevron (chapter step ‹›) */

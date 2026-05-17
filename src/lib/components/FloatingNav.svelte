@@ -23,12 +23,14 @@
 		routeBase = ''
 	}: Props = $props();
 
-	let base =
-		$derived(routeBase ||
-		(compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`));
+	let base = $derived(
+		routeBase || (compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`)
+	);
 
 	type Testament = 'OT' | 'NT';
-	let activeTestament: Testament = $state(ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT');
+	let activeTestament: Testament = $state(
+		ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT'
+	);
 	let expandedBooks = $state(new Set<string>(bookSlug ? [bookSlug] : []));
 
 	const otBooks = ALL_BOOKS.filter((b) => b.testament === 'OT');

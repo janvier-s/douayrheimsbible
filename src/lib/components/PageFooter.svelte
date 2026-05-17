@@ -10,22 +10,18 @@
 		showNav?: boolean;
 	}
 
-	let {
-		bookMeta,
-		chapterNum,
-		totalChapters,
-		routeBase = '/odr',
-		showNav = true
-	}: Props = $props();
+	let { bookMeta, chapterNum, totalChapters, routeBase = '/odr', showNav = true }: Props = $props();
 
 	let isLastChapter = $derived(chapterNum >= totalChapters);
 	let nextNavBook = $derived(isLastChapter ? (getNextNavBook(bookMeta.slug) ?? null) : null);
 
-	let nextHref = $derived(isLastChapter
-		? nextNavBook
-			? `${routeBase}/${nextNavBook.slug}/1`
-			: null
-		: `${routeBase}/${bookMeta.slug}/${chapterNum + 1}`);
+	let nextHref = $derived(
+		isLastChapter
+			? nextNavBook
+				? `${routeBase}/${nextNavBook.slug}/1`
+				: null
+			: `${routeBase}/${bookMeta.slug}/${chapterNum + 1}`
+	);
 
 	let nextBook = $derived(nextNavBook);
 	let nextLabel = $derived(nextBook ? nextBook.odrName : `Chapter ${chapterNum + 1}`);

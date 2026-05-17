@@ -46,47 +46,39 @@
 
 	let { bookData = null, translationId = 'odr', onClose = null }: Props = $props();
 
-
 	// ── Translation notes (DRC/CPDV) ────────────────────────────────
 	// Follows the same pattern as the ODR annotation loader below.
 	let translationNotes: TranslationNote[] | null = $state(null);
 	let translationNotesLoading = $state(false);
-	let lastTranslationNotesKey = $state('');
-
+	let lastTranslationNotesKey = '';
 
 	// ── Translation cross-refs (DRC) ────────────────────────────────
 	let translationCrossRefs: TranslationCrossRef[] | null = $state(null);
 	let translationCrossRefsLoading = $state(false);
-	let lastTranslationCrossRefsKey = $state('');
-
+	let lastTranslationCrossRefsKey = '';
 
 	// ── Haydock commentary ──────────────────────────────────────────
 	let haydockCommentary: HaydockCommentaryEntry[] | null = $state(null);
 	let haydockCommentaryLoading = $state(false);
-	let lastHaydockCommentaryKey = $state('');
-
+	let lastHaydockCommentaryKey = '';
 
 	// ── Haydock intro ───────────────────────────────────────────────
 	let haydockIntro: HaydockIntro | null = $state(null);
-	let lastHaydockIntroSlug = $state('');
-
+	let lastHaydockIntroSlug = '';
 
 	// ── Confraternity intro ─────────────────────────────────────────
 	let confIntro: ConfIntro | null = $state(null);
-	let lastConfIntroSlug = $state('');
-
+	let lastConfIntroSlug = '';
 
 	// ── Confraternity footnotes ───────────────────────────────────
 	let confFootnotes: ConfChapterFootnotes | null = $state(null);
 	let confFootnotesLoading = $state(false);
-	let lastConfFootnotesKey = $state('');
-
+	let lastConfFootnotesKey = '';
 
 	// ── Confraternity commentary ──────────────────────────────────
 	let confCommentary: ConfChapterCommentary | null = $state(null);
 	let confCommentaryLoading = $state(false);
-	let lastConfCommentaryKey = $state('');
-
+	let lastConfCommentaryKey = '';
 
 	function tabLabel(title: string): string {
 		if (/argument.*in general/i.test(title)) return 'General';
@@ -126,9 +118,7 @@
 			.join(' ');
 	}
 
-
 	type TabDef = { id: StudyTab; label: string };
-
 
 	function buildVisibleTabs(
 		tid: string,
@@ -180,21 +170,18 @@
 
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
-	let prevBook: string | null = $state(null);
-
+	let prevBook: string | null = null;
 
 	function switchTab(tab: StudyTab) {
 		studyPanel.update((s) => ({ ...s, activeTab: tab }));
 		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
 
-
 	// ── Annotation sidecar loading ───────────────────────────────────
 
 	let annotations: ChapterAnnotations | null = $state(null);
 	let annotationsLoading = $state(false);
-	let lastAnnotationKey = $state('');
-
+	let lastAnnotationKey = '';
 
 	// ── Build verse sections for the commentary tab ──────────────────
 
@@ -204,7 +191,6 @@
 		verseData: Verse | null;
 		annotationEntries: AnnotationEntry[];
 	}
-
 
 	function buildVerseSections(
 		chapter: typeof currentChapterData,
@@ -315,7 +301,7 @@
 	// Explicit clicks (scrollTrigger) still scroll the panel.
 
 	// Clear sectionEls on tab switch
-	let lastActiveTab: StudyTab | null = $state(null);
+	let lastActiveTab: StudyTab | null = null;
 
 	// Register one DOM element for every verse in a [start, end] range.
 	// Used by Conf commentary sections that span multiple verses.
@@ -359,7 +345,7 @@
 		}, 600);
 	}
 
-	let lastObservedKeys = $state('');
+	let lastObservedKeys = '';
 
 	function setupPanelObserver() {
 		if (!browser || !panelScroll || !$prefs.annotationSync || $prefs.readingMode !== 'study') {
@@ -427,8 +413,6 @@
 			if (el) panelSectionObserver.observe(el);
 		}
 	}
-
-
 
 	async function handleScrollTrigger(
 		trigger: NonNullable<import('$lib/stores/studyPanel').ScrollTrigger>
@@ -565,8 +549,9 @@
 		wheelCleanup?.();
 	});
 	let isOdr = $derived(translationId === 'odr');
-	let hasTranslationNotes =
-		$derived(translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox');
+	let hasTranslationNotes = $derived(
+		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox'
+	);
 	let isDrc = $derived(translationId === 'drc');
 	let isKnox = $derived(translationId === 'knox');
 	let isHaydock = $derived(translationId === 'haydock');
@@ -714,17 +699,14 @@
 	let hasIntros = $derived(intros.length > 0);
 	let endMatters = $derived(bookData?.endMatters ?? []);
 	let hasEndMatters = $derived(endMatters.length > 0);
-	let currentChapterData = $derived(bookData?.chapters.find((c) => c.chapter === currentChapterNum));
+	let currentChapterData = $derived(
+		bookData?.chapters.find((c) => c.chapter === currentChapterNum)
+	);
 	let articles = $derived(currentChapterData?.articles ?? []);
 	let hasArticles = $derived(articles.length > 0); // eslint-disable-line no-useless-assignment
-	let visibleTabs = $derived(buildVisibleTabs(
-		translationId,
-		hasIntros,
-		hasArticles,
-		hasEndMatters,
-		confIntro,
-		haydockIntro
-	));
+	let visibleTabs = $derived(
+		buildVisibleTabs(translationId, hasIntros, hasArticles, hasEndMatters, confIntro, haydockIntro)
+	);
 	// Snap to first visible tab if the active tab isn't available for this translation
 	run(() => {
 		if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
@@ -732,10 +714,12 @@
 		}
 	});
 	let showTabBar = $derived(visibleTabs.length > 1);
-	let sliderIndex = $derived(Math.max(
-		0,
-		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
-	));
+	let sliderIndex = $derived(
+		Math.max(
+			0,
+			visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
+		)
+	);
 	run(() => {
 		if (bookData && bookData.book !== prevBook) {
 			prevBook = bookData.book; // eslint-disable-line no-useless-assignment

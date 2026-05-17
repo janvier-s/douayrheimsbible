@@ -39,7 +39,6 @@
 		selectPericope: string;
 	}>();
 
-
 	function handleVerseClick(verseNum: number) {
 		dispatch('selectVerse', verseNum);
 	}
@@ -51,8 +50,6 @@
 	// Alternate verse text loaded from translation book JSON
 	let altVerses: Record<number, string> | null = $state(null);
 	let lastAltKey = $state('');
-
-
 
 	async function loadAltVerses(tid: string, slug: string, ch: number) {
 		try {
@@ -98,9 +95,10 @@
 	// Map: startVerse → pericope (for injecting headers before the verse)
 	let pericopeAtVerse = $derived(new Map(pericopes.map((p) => [p.startVerse, p])));
 	let liveTranslations = $derived(TRANSLATIONS.filter((t) => t.live && !t.hidden));
-	let currentTranslation =
-		$derived(liveTranslations.find((t) => t.id === translationId) ??
-		liveTranslations.find((t) => t.id === 'odr')!);
+	let currentTranslation = $derived(
+		liveTranslations.find((t) => t.id === translationId) ??
+			liveTranslations.find((t) => t.id === 'odr')!
+	);
 	run(() => {
 		const key = `${translationId}/${bookSlug}/${chapterNum}`;
 		if (browser && translationId !== 'odr' && key !== lastAltKey) {

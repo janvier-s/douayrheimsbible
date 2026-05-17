@@ -17,7 +17,6 @@
 		return (slug && SLUG_TO_NAME[slug]) || osisBook;
 	}
 
-	
 	interface Props {
 		osisRanges?: OsisRange[];
 		anchorEl?: HTMLElement | null;
@@ -55,11 +54,8 @@
 	let tooltipEl: HTMLElement | undefined = $state();
 	let needsScroll = $state(false);
 
-
 	const TOOLTIP_WIDTH = 320;
 	const CLAMP_EDGE = TOOLTIP_WIDTH / 2 + 20;
-
-
 
 	async function loadEntries(ranges: OsisRange[]) {
 		if (ranges.length === 0) return;

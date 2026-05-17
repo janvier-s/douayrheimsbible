@@ -14,12 +14,14 @@
 	/** All OSIS ranges from the entire cross-ref string, grouped for one tooltip.
 	 *  Parse OSIS strings directly (not through bcv_parser) so DR/LXX Psalm
 	 *  numbers are preserved exactly as tokenized from the annotation text. */
-	let allRanges = $derived(tokens
-		.filter((t): t is Extract<typeof t, { type: 'ref' }> => t.type === 'ref')
-		.flatMap((t) => {
-			const r = parseOsis(t.osis);
-			return r ? [r] : [];
-		}));
+	let allRanges = $derived(
+		tokens
+			.filter((t): t is Extract<typeof t, { type: 'ref' }> => t.type === 'ref')
+			.flatMap((t) => {
+				const r = parseOsis(t.osis);
+				return r ? [r] : [];
+			})
+	);
 
 	let anchorEl: HTMLElement | null = $state(null);
 	let tooltipVisible = $state(false);

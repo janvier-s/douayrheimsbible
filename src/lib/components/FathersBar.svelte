@@ -57,18 +57,22 @@
 
 	// Chapter nav: skip to nearest chapter that actually has fathers data
 	let bookChapters = $derived(fathersManifest[bookMeta.slug] ?? []);
-	let prevChapterHref = $derived((() => {
-		for (let ch = chapterNum - 1; ch >= 1; ch--) {
-			if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
-		}
-		return null;
-	})());
-	let nextChapterHref = $derived((() => {
-		for (let ch = chapterNum + 1; ch <= totalChapters; ch++) {
-			if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
-		}
-		return null;
-	})());
+	let prevChapterHref = $derived(
+		(() => {
+			for (let ch = chapterNum - 1; ch >= 1; ch--) {
+				if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
+			}
+			return null;
+		})()
+	);
+	let nextChapterHref = $derived(
+		(() => {
+			for (let ch = chapterNum + 1; ch <= totalChapters; ch++) {
+				if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
+			}
+			return null;
+		})()
+	);
 
 	// Book nav: skip books that have no fathers data at all
 	function findPrevFathersBook(slug: string): (typeof ALL_BOOKS)[number] | null {

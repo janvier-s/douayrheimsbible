@@ -25,8 +25,6 @@
 	import PageFooter from './PageFooter.svelte';
 	import { isMobile } from '$lib/stores/mobile';
 
-	
-	
 	interface Props {
 		initialBookMeta: BookMeta;
 		initialChapter: Chapter;
@@ -36,7 +34,7 @@
 		routeBase?: string;
 		translationId?: string;
 		/** SSR-available book title for chapter 1 (e.g. "The Holy Gospel of Jesus Christ\naccording to John.").
-	 *  Passed from the page load function to avoid a post-mount CLS when currentBookData resolves. */
+		 *  Passed from the page load function to avoid a post-mount CLS when currentBookData resolves. */
 		initialBookTitle?: string | null;
 		/** SSR-available short title (e.g. "John"). Same rationale as initialBookTitle. */
 		initialShortTitle?: string | null;
@@ -122,21 +120,26 @@
 	run(() => {
 		if ($scrollTrigger !== null && mobileStudyMode) mobilePanelOpen = true;
 	});
-	let panelMaxWidth =
-		$derived($prefs.readingMode === 'study' ? ($isMobile ? '100%' : `calc(${liveWidth} + 16px)`) : '0');
+	let panelMaxWidth = $derived(
+		$prefs.readingMode === 'study' ? ($isMobile ? '100%' : `calc(${liveWidth} + 16px)`) : '0'
+	);
 	let panelWidth = $derived(mobileStudyMode ? '100%' : '');
-	let panelHeight = $derived($isMobile
-		? 'calc(100lvh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
-		: 'calc(100vh - var(--header-height))');
-	let panelTransition = $derived(reducedMotion
-		? 'none'
-		: panelDragging
-			? 'opacity 250ms ease'
-			: mobileStudyMode
-				? 'transform 320ms cubic-bezier(0.32, 0.72, 0, 1), opacity 200ms ease'
-				: $isMobile
-					? 'opacity 150ms ease'
-					: 'max-width 250ms ease, opacity 250ms ease');
+	let panelHeight = $derived(
+		$isMobile
+			? 'calc(100lvh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
+			: 'calc(100vh - var(--header-height))'
+	);
+	let panelTransition = $derived(
+		reducedMotion
+			? 'none'
+			: panelDragging
+				? 'opacity 250ms ease'
+				: mobileStudyMode
+					? 'transform 320ms cubic-bezier(0.32, 0.72, 0, 1), opacity 200ms ease'
+					: $isMobile
+						? 'opacity 150ms ease'
+						: 'max-width 250ms ease, opacity 250ms ease'
+	);
 	let panelEl: HTMLElement | undefined = $state();
 	run(() => {
 		if (panelEl) resize.bindPanel(panelEl);
@@ -313,7 +316,8 @@
 		if (idx < 2) loadPrevChapter();
 	}
 	run(() => {
-		$readingPosition; checkRollingPreload();
+		$readingPosition;
+		checkRollingPreload();
 	});
 
 	function onScrollCheck() {
@@ -422,7 +426,9 @@
 		await tick();
 		// Scroll to top before setting scrollReady so the layout's afterNavigate
 		// double-rAF scrollTo(0) becomes a no-op (position unchanged → no scroll event).
-		if (browser) window.scrollTo({ top: 0, behavior: 'instant' });
+		// Guard: skip if user has already scrolled (e.g. via homepage CTA) so we
+		// don't cancel an in-flight smooth scroll.
+		if (browser && window.scrollY === 0) window.scrollTo({ top: 0, behavior: 'instant' });
 		// Block loadPrevChapter for 300ms — covers the ~33ms afterNavigate double-rAF
 		// and any microtask/rAF jitter, while still allowing free infinite scroll up
 		// once the page has settled.

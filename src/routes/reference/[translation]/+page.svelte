@@ -11,16 +11,18 @@
 	let config = $derived(data.config);
 
 	// Build grouped articles for display
-	let groupedSections = $derived(config.sections.map((sec) => {
-		const sectionArticles = config.articles.filter((a) => a.section === sec.key);
-		return {
-			...sec,
-			groups: sec.categories.map((cat) => ({
-				...cat,
-				articles: sectionArticles.filter((a) => a.category === cat.key)
-			}))
-		};
-	}));
+	let groupedSections = $derived(
+		config.sections.map((sec) => {
+			const sectionArticles = config.articles.filter((a) => a.section === sec.key);
+			return {
+				...sec,
+				groups: sec.categories.map((cat) => ({
+					...cat,
+					articles: sectionArticles.filter((a) => a.category === cat.key)
+				}))
+			};
+		})
+	);
 
 	let otherTranslations = $derived(TRANSLATION_CONFIGS.filter((c) => c.id !== config.id));
 </script>

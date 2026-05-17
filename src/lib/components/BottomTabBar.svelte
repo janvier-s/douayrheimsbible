@@ -6,12 +6,7 @@
 		selectMode: (key: string, index: number) => void;
 	}
 
-	let {
-		modeItems,
-		activeModeIdx,
-		pendingIdx,
-		selectMode
-	}: Props = $props();
+	let { modeItems, activeModeIdx, pendingIdx, selectMode }: Props = $props();
 </script>
 
 <nav

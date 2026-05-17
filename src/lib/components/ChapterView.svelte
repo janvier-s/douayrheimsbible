@@ -58,11 +58,7 @@
 		return $prefs.modernBookNames ? bm.modernName : bm.odrName;
 	}
 
-
-
-
 	let activeVerse: number | undefined = $state(targetVerse);
-
 
 	/** Strip trailing cross-reference text that follows the last </na> marker group.
 	 *  e.g. "<na>[1]</na><na>[2]</na> Gen. 12. 22. 2. Reg. 7. Psal. 131." → remove "Gen. 12. …"
@@ -188,8 +184,8 @@
 		if (svRefTimer) clearTimeout(svRefTimer);
 	});
 	let prevNavBook = $derived(chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
-	let prevNav =
-		$derived(chapter.chapter > 1
+	let prevNav = $derived(
+		chapter.chapter > 1
 			? {
 					slug: bookMeta.slug,
 					ch: chapter.chapter - 1,
@@ -203,11 +199,13 @@
 						label: bookLabel(prevNavBook),
 						chLabel: `Ch. ${prevNavBook.chapters}`
 					}
-				: null);
-	let nextNavBook =
-		$derived(chapter.chapter >= totalChapters ? (getNextNavBook(bookMeta.slug) ?? null) : null);
-	let nextNav =
-		$derived(chapter.chapter < totalChapters
+				: null
+	);
+	let nextNavBook = $derived(
+		chapter.chapter >= totalChapters ? (getNextNavBook(bookMeta.slug) ?? null) : null
+	);
+	let nextNav = $derived(
+		chapter.chapter < totalChapters
 			? {
 					slug: bookMeta.slug,
 					ch: chapter.chapter + 1,
@@ -221,21 +219,33 @@
 						label: bookLabel(nextNavBook),
 						chLabel: 'Ch. 1'
 					}
-				: null);
-	let hebrewPsalmNum = $derived((() => {
-		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return null;
-		return getHebPsalmNum(chapter.chapter);
-	})());
+				: null
+	);
+	let hebrewPsalmNum = $derived(
+		(() => {
+			if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return null;
+			return getHebPsalmNum(chapter.chapter);
+		})()
+	);
 	run(() => {
 		if (targetVerse !== undefined) activeVerse = targetVerse;
 	});
 	// Verse 0 is a summary continuation fragment — merge it into the summary display
 	let verse0 = $derived(chapter.verses.find((v) => v.verse === 0));
-	let fullSummary = $derived(verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? ''));
-	let displayVerses = $derived(verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses);
+	let fullSummary = $derived(
+		verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? '')
+	);
+	let displayVerses = $derived(
+		verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses
+	);
 	let isStudyMode = $derived($prefs.readingMode === 'study');
-	let summaryHtml =
-		$derived(fullSummary && fullSummary !== '---' ? linkifySummary(fullSummary, isStudyMode) : '');
+	let mounted = $state(false);
+	$effect(() => {
+		mounted = true;
+	});
+	let summaryHtml = $derived(
+		fullSummary && fullSummary !== '---' ? linkifySummary(fullSummary, mounted && isStudyMode) : ''
+	);
 </script>
 
 {#if showNav && (prevNav || nextNav)}

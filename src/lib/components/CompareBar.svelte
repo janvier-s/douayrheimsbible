@@ -59,13 +59,18 @@
 	let prefsOpen = $state(false);
 	let mobileTransOpen = $state(false);
 
-	let visibleTranslations = $derived($konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden));
+	let visibleTranslations = $derived(
+		$konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden)
+	);
 
 	let prevBook = $derived(getPrevNavBook(bookMeta.slug) ?? null);
 	let nextBook = $derived(getNextNavBook(bookMeta.slug) ?? null);
-	let prevChapterHref = $derived(chapterNum > 1 ? `/compare/${bookMeta.slug}/${chapterNum - 1}` : null);
-	let nextChapterHref =
-		$derived(chapterNum < bookMeta.chapters ? `/compare/${bookMeta.slug}/${chapterNum + 1}` : null);
+	let prevChapterHref = $derived(
+		chapterNum > 1 ? `/compare/${bookMeta.slug}/${chapterNum - 1}` : null
+	);
+	let nextChapterHref = $derived(
+		chapterNum < bookMeta.chapters ? `/compare/${bookMeta.slug}/${chapterNum + 1}` : null
+	);
 
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
 		return $prefs.modernBookNames ? b.modernName : b.odrName;

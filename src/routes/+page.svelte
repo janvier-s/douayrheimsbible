@@ -58,7 +58,9 @@
 
 	onDestroy(() => readerObs?.disconnect());
 
-	let chapterNum = $derived(readerVisible && $readingPosition ? String($readingPosition.chapter) : '');
+	let chapterNum = $derived(
+		readerVisible && $readingPosition ? String($readingPosition.chapter) : ''
+	);
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';

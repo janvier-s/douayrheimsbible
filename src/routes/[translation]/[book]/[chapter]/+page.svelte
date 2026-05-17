@@ -9,30 +9,38 @@
 
 	let { data }: Props = $props();
 
-	let bookDisplayName = $derived($prefs.modernBookNames ? data.bookMeta.modernName : data.bookMeta.odrName);
+	let bookDisplayName = $derived(
+		$prefs.modernBookNames ? data.bookMeta.modernName : data.bookMeta.odrName
+	);
 
 	const SITE = 'https://thedouayrheims.com';
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
-	let pageTitle = $derived(`${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} in the ${data.seoName ?? data.translationLabel}`);
-	let pageDesc = $derived((() => {
-		const base = data.seoDesc || '';
-		if (base.length >= 80) return base;
-		const firstVerse = data.chapter?.verses?.[0]?.text ?? '';
-		const plain = firstVerse.replace(/<[^>]*>/g, '').trim();
-		const snippet = plain.length > 100 ? plain.slice(0, 100) + '…' : plain;
-		if (!snippet) return base;
-		return base ? `${base} ${snippet}`.slice(0, 160) : snippet.slice(0, 160);
-	})());
-	let pageUrl = $derived(data.chapter
-		? `${SITE}/${data.translationId}/${data.bookMeta.slug}/${data.chapter.chapter}`
-		: `${SITE}/${data.translationId}/${data.bookMeta.slug}/1`);
+	let pageTitle = $derived(
+		`${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} in the ${data.seoName ?? data.translationLabel}`
+	);
+	let pageDesc = $derived(
+		(() => {
+			const base = data.seoDesc || '';
+			if (base.length >= 80) return base;
+			const firstVerse = data.chapter?.verses?.[0]?.text ?? '';
+			const plain = firstVerse.replace(/<[^>]*>/g, '').trim();
+			const snippet = plain.length > 100 ? plain.slice(0, 100) + '…' : plain;
+			if (!snippet) return base;
+			return base ? `${base} ${snippet}`.slice(0, 160) : snippet.slice(0, 160);
+		})()
+	);
+	let pageUrl = $derived(
+		data.chapter
+			? `${SITE}/${data.translationId}/${data.bookMeta.slug}/${data.chapter.chapter}`
+			: `${SITE}/${data.translationId}/${data.bookMeta.slug}/1`
+	);
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
 	const bookId = SITE + '/#douay-rheims-bible';
-	let jsonLdTag =
-		$derived(data.chapter && !data.ntOnly
+	let jsonLdTag = $derived(
+		data.chapter && !data.ntOnly
 			? `${scriptOpen}${JSON.stringify({
 					'@context': 'https://schema.org',
 					'@type': 'Article',
@@ -60,7 +68,8 @@
 						]
 					}
 				})}${scriptClose}`
-			: '');
+			: ''
+	);
 </script>
 
 <svelte:head>

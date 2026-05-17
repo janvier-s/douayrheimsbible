@@ -58,7 +58,6 @@
 	let queryTokens: string[] = $state([]);
 	let crossScopeTotal = $state(0);
 
-
 	// ── Sliding pill (mode toggle) ──────────────────────────────────────
 	let modeToggleEl: HTMLElement | undefined = $state();
 	let modePillLeft = $state(0);
@@ -103,12 +102,6 @@
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
 	const TEXT_NOTES_EXAMPLES = ['Transubstantiation', 'Original sin'];
-
-
-
-
-
-
 
 	onDestroy(() => navOverride.set(null));
 
@@ -675,27 +668,30 @@
 	run(() => {
 		if (scopeTabsEl) measureScopeSlider(scope);
 	});
-	let currentExamples =
-		$derived(mode === 'verse'
+	let currentExamples = $derived(
+		mode === 'verse'
 			? VERSE_EXAMPLES
 			: scope === 'notes'
 				? TEXT_NOTES_EXAMPLES
-				: TEXT_VERSE_EXAMPLES);
-	let placeholder =
-		$derived(mode === 'verse'
+				: TEXT_VERSE_EXAMPLES
+	);
+	let placeholder = $derived(
+		mode === 'verse'
 			? 'Search for a verse — e.g. Matthew 16:18'
 			: scope === 'notes'
 				? 'Search notes & annotations — e.g. transubstantiation'
-				: 'Search the Bible — e.g. Thou art Peter');
+				: 'Search the Bible — e.g. Thou art Peter'
+	);
 	let heading = $derived(mode === 'verse' ? 'Verse Search' : 'Text Search');
-	let isHero =
-		$derived(!searched &&
-		!query &&
-		results.length === 0 &&
-		textResults.length === 0 &&
-		noteResults.length === 0);
-	let crossScopeTeaser =
-		$derived(searched && !loading && mode === 'text'
+	let isHero = $derived(
+		!searched &&
+			!query &&
+			results.length === 0 &&
+			textResults.length === 0 &&
+			noteResults.length === 0
+	);
+	let crossScopeTeaser = $derived(
+		searched && !loading && mode === 'text'
 			? computeCrossScope(
 					queryTokens,
 					scope,
@@ -703,7 +699,8 @@
 					crossScopeNoteResults,
 					crossScopeTotal
 				)
-			: null);
+			: null
+	);
 	// Keep TopBar nav button in sync with the first result's book/chapter
 	run(() => {
 		navOverride.set(

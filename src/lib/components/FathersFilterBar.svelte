@@ -73,30 +73,40 @@
 	}
 
 	// ── Derived data from entries ─────────────────────────────────────
-	let authorEntryCounts = $derived((() => {
-		const counts: Record<string, number> = {};
-		for (const e of allEntries) {
-			counts[e.author] = (counts[e.author] ?? 0) + 1;
-		}
-		return counts;
-	})());
+	let authorEntryCounts = $derived(
+		(() => {
+			const counts: Record<string, number> = {};
+			for (const e of allEntries) {
+				counts[e.author] = (counts[e.author] ?? 0) + 1;
+			}
+			return counts;
+		})()
+	);
 
-	let chapterAuthorsAll = $derived([...new Set(allEntries.map((e) => e.author))].sort((a, b) =>
-		sortKey(a).localeCompare(sortKey(b))
-	));
+	let chapterAuthorsAll = $derived(
+		[...new Set(allEntries.map((e) => e.author))].sort((a, b) =>
+			sortKey(a).localeCompare(sortKey(b))
+		)
+	);
 
-	let documentNames = $derived(new Set(allEntries.filter((e) => e.isDocument).map((e) => e.author)));
+	let documentNames = $derived(
+		new Set(allEntries.filter((e) => e.isDocument).map((e) => e.author))
+	);
 	let chapterAuthors = $derived(chapterAuthorsAll.filter((a) => !documentNames.has(a)));
 	let chapterDocuments = $derived(chapterAuthorsAll.filter((a) => documentNames.has(a)));
 
-	let availableCenturies = $derived(new Set(
-		allEntries.map((e) => getAuthorMeta(e.author).century).filter(Boolean)
-	));
-	let hasOtherCentury = $derived([...availableCenturies].some((c) => typeof c === 'number' && c >= 9));
-	let availableEras = $derived(new Set(allEntries.map((e) => getAuthorMeta(e.author).era).filter(Boolean)));
-	let availableTraditions = $derived(new Set(
-		allEntries.map((e) => getAuthorMeta(e.author).tradition).filter(Boolean)
-	));
+	let availableCenturies = $derived(
+		new Set(allEntries.map((e) => getAuthorMeta(e.author).century).filter(Boolean))
+	);
+	let hasOtherCentury = $derived(
+		[...availableCenturies].some((c) => typeof c === 'number' && c >= 9)
+	);
+	let availableEras = $derived(
+		new Set(allEntries.map((e) => getAuthorMeta(e.author).era).filter(Boolean))
+	);
+	let availableTraditions = $derived(
+		new Set(allEntries.map((e) => getAuthorMeta(e.author).tradition).filter(Boolean))
+	);
 </script>
 
 <svelte:window onclick={handleWindowClick} />
