@@ -171,7 +171,20 @@
 
 	function ensureObserver(): IntersectionObserver {
 		if (!observer) {
-			observer = createChapterObserver((slug, ch) => updatePosition(slug, ch));
+			observer = createChapterObserver(
+				(slug, ch) => updatePosition(slug, ch),
+				(slug, ch) => {
+					// A chapter heading dropped below the 30% mark (scrolling up).
+					// Activate the chapter that was loaded just before this one.
+					const idx = chapters.findIndex(
+						(c) => c.bookMeta.slug === slug && c.chapter.chapter === ch
+					);
+					if (idx > 0) {
+						const prev = chapters[idx - 1];
+						updatePosition(prev.bookMeta.slug, prev.chapter.chapter);
+					}
+				}
+			);
 		}
 		return observer;
 	}

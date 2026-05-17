@@ -6,24 +6,35 @@ export function shouldLoadNext(scrollY: number, innerHeight: number, docHeight: 
 }
 
 /**
- * Creates an IntersectionObserver that fires `onVisible(bookSlug, chapter)`
- * whenever a `[data-chapter-heading]` element scrolls into the top 20% of
- * the viewport.
+ * Creates an IntersectionObserver that fires callbacks whenever a
+ * `[data-chapter-heading]` element crosses the top-30% viewport boundary.
+ *
+ * - `onEnter(slug, ch)` — heading scrolled INTO the top-30% zone (scrolling down)
+ * - `onExitScrollUp(slug, ch)` — heading dropped BELOW the 30% mark (scrolling up);
+ *   the caller should activate the chapter that precedes (slug, ch).
  */
 export function createChapterObserver(
-	onVisible: (bookSlug: string, chapter: number) => void
+	onEnter: (bookSlug: string, chapter: number) => void,
+	onExitScrollUp?: (bookSlug: string, chapter: number) => void
 ): IntersectionObserver {
 	return new IntersectionObserver(
 		(entries) => {
 			for (const entry of entries) {
+				const el = entry.target as HTMLElement;
+				const slug = el.dataset.bookSlug ?? '';
+				const ch = parseInt(el.dataset.chapterNum ?? '0', 10);
+				if (!slug || ch <= 0) continue;
+
 				if (entry.isIntersecting) {
-					const slug = (entry.target as HTMLElement).dataset.bookSlug ?? '';
-					const ch = parseInt((entry.target as HTMLElement).dataset.chapterNum ?? '0', 10);
-					if (slug && ch > 0) onVisible(slug, ch);
+					onEnter(slug, ch);
+				} else if (onExitScrollUp && entry.boundingClientRect.top > 0) {
+					// top > 0 means the heading is still in the viewport but below
+					// the 30% zone — i.e. we scrolled UP and the heading dropped down.
+					onExitScrollUp(slug, ch);
 				}
 			}
 		},
-		{ rootMargin: '0px 0px -80% 0px', threshold: 0 }
+		{ rootMargin: '0px 0px -70% 0px', threshold: 0 }
 	);
 }
 
