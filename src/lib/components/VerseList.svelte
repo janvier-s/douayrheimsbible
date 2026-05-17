@@ -548,6 +548,9 @@
 
 	function setupPanelSync() {
 		panelSyncUnsub?.();
+		// Pre-seed with current value so the immediate subscribe fire on mount doesn't
+		// treat a stale panelScrollVerse as a new event and jump the reader to that verse.
+		lastSyncedVerse = get(studyPanel).panelScrollVerse;
 		panelSyncUnsub = studyPanel.subscribe((state) => {
 			if (state.panelScrollVerse === lastSyncedVerse) return;
 			lastSyncedVerse = state.panelScrollVerse;
