@@ -1819,6 +1819,12 @@ function matchDrcRefAt(text: string, pos: number): DrcRef | null {
 	// Skip whitespace
 	while (c < text.length && text[c] === ' ') c++;
 
+	// Handle explicit verse marker "v." (e.g. "Apoc. 13. v. 8.")
+	if (text.slice(c).startsWith('v.')) {
+		c += 2;
+		while (c < text.length && text[c] === ' ') c++;
+	}
+
 	if (c < text.length && /\d/.test(text[c])) {
 		// Check this isn't a new book abbreviation starting with a digit
 		const nextBookCheck = matchBookAt(text, c);
