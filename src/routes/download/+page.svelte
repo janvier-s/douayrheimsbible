@@ -48,7 +48,7 @@
 			</tr>
 			<tr>
 				<td><code>Original-Douay-Rheims-Bible.pdf</code></td>
-				<td>New Testament, text only (no notes)</td>
+				<td>Full Bible, text only (no notes)</td>
 				<td class="dl-size">4.8 MB</td>
 				<td>
 					<a
