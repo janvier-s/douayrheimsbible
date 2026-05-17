@@ -27,10 +27,15 @@ export function createChapterObserver(
 
 				if (entry.isIntersecting) {
 					onEnter(slug, ch);
-				} else if (onExitScrollUp && entry.boundingClientRect.top > 0) {
-					// top > 0 means the heading is still in the viewport but below
-					// the 30% zone — i.e. we scrolled UP and the heading dropped down.
-					onExitScrollUp(slug, ch);
+				} else if (onExitScrollUp) {
+					const top = entry.boundingClientRect.top;
+					// Only fire when the heading is inside the viewport but below the
+					// 30% zone (scrolling up). Ignore top < 0 (scrolled above viewport)
+					// and top > innerHeight (element below fold — e.g. freshly appended
+					// chapter heading firing its initial observation callback).
+					if (top > 0 && top < window.innerHeight) {
+						onExitScrollUp(slug, ch);
+					}
 				}
 			}
 		},
