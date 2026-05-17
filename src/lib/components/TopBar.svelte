@@ -9,7 +9,7 @@
 		getPrevNavBook,
 		getNextNavBook
 	} from '$lib/data/books';
-	import { slide, fade } from 'svelte/transition';
+	import { slide, fade, fly } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import { get } from 'svelte/store';
@@ -261,21 +261,26 @@
 					<span class="text-[11px] md:text-[14px] leading-tight font-medium"
 						>{currentTranslation.abbr}</span
 					>
-					<span
-						class="text-[12px] opacity-70 {translationOpen ? 'text-white/70' : ''} leading-none"
+					<svg
+						width="9"
+						height="6"
+						viewBox="0 0 9 6"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.8"
+						stroke-linecap="round"
+						stroke-linejoin="round"
 						aria-hidden="true"
+						class="trans-chevron"
+						class:trans-chevron--open={translationOpen}><path d="M1 1l3.5 3.5L8 1" /></svg
 					>
-						{translationOpen ? '▲' : '▼'}
-					</span>
 				</button>
 				{#if translationOpen}
 					<div
-						transition:slide={{ duration: 180 }}
-						class="absolute top-[calc(100%+8px)] left-0 bg-panel border border-border rounded-sm shadow-lg p-sm z-[60] w-96 font-ui"
+						in:fly={{ y: -6, duration: 160 }}
+						out:fade={{ duration: 100 }}
+						class="trans-panel absolute top-[calc(100%+6px)] left-0 z-[60] font-ui"
 					>
-						<p class="text-[11px] uppercase tracking-[0.15em] text-subtle mb-sm font-semibold">
-							Translation
-						</p>
 						{#each liveTranslations as t (t.id)}
 							{@const isCurrent = t.id === translationId}
 							{@const href =
@@ -283,21 +288,15 @@
 									? `/odr/${bookSlug}/${chapterNum}`
 									: `/${t.id}/${bookSlug}/${chapterNum}`}
 							{#if isCurrent}
-								<div
-									class="flex items-center justify-between px-sm py-[8px] rounded-sm bg-accent/10 mb-[2px]"
-								>
-									<div class="min-w-0 leading-snug">
-										<span class="text-foreground font-semibold text-[15px] block truncate"
-											>{t.label}</span
-										>
-										{#if t.micro}<span class="text-[11px] text-subtle font-medium block mb-[3px]"
-												>{t.micro}</span
-											>{/if}
+								<div class="trans-item trans-item--active">
+									<div class="trans-bar"></div>
+									<div class="trans-body">
+										<div class="trans-texts">
+											<span class="trans-label">{t.label}</span>
+											{#if t.micro}<span class="trans-micro">{t.micro}</span>{/if}
+										</div>
+										<span class="trans-year">{t.year}</span>
 									</div>
-									<span
-										class="text-[11px] text-accent font-semibold tracking-[0.1em] shrink-0 ml-[8px]"
-										>✓</span
-									>
 								</div>
 							{:else}
 								<a
@@ -305,18 +304,16 @@
 									onclick={() => {
 										translationOpen = false;
 									}}
-									class="flex items-center justify-between px-sm py-[8px] rounded-sm hover:bg-accent/5 transition-colors duration-fast mb-[2px]"
+									class="trans-item trans-item--link"
 								>
-									<div class="min-w-0 leading-snug">
-										<span class="text-foreground font-medium text-[15px] block truncate"
-											>{t.label}</span
-										>
-										{#if t.micro}<span class="text-[11px] text-subtle font-medium block mb-[3px]"
-												>{t.micro}</span
-											>{/if}
+									<div class="trans-bar"></div>
+									<div class="trans-body">
+										<div class="trans-texts">
+											<span class="trans-label">{t.label}</span>
+											{#if t.micro}<span class="trans-micro">{t.micro}</span>{/if}
+										</div>
+										<span class="trans-year">{t.year}</span>
 									</div>
-									<span class="text-[12px] text-subtle font-medium shrink-0 ml-[8px]">{t.year}</span
-									>
 								</a>
 							{/if}
 						{/each}
@@ -431,3 +428,110 @@
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="fixed inset-0 z-[49]" role="presentation" onclick={closeAll}></div>
 {/if}
+
+<style>
+	/* ── Translation selector chevron ───────────────────── */
+	.trans-chevron {
+		opacity: 0.6;
+		flex-shrink: 0;
+		transition: transform 200ms ease;
+	}
+	.trans-chevron--open {
+		transform: rotate(180deg);
+	}
+
+	/* ── Translation dropdown panel ─────────────────────── */
+	.trans-panel {
+		width: 296px;
+		background: var(--color-panel);
+		border: 1px solid var(--color-border);
+		border-radius: 5px;
+		box-shadow:
+			0 4px 8px rgba(0, 0, 0, 0.07),
+			0 12px 28px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+	}
+
+	.trans-item {
+		display: flex;
+		align-items: stretch;
+		min-height: 46px;
+		border-bottom: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+	}
+	.trans-item:last-child {
+		border-bottom: none;
+	}
+
+	.trans-bar {
+		width: 2px;
+		flex-shrink: 0;
+		background: transparent;
+		transition: background 130ms ease;
+	}
+
+	.trans-body {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 14px 10px 12px;
+		min-width: 0;
+	}
+
+	.trans-texts {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.trans-label {
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--color-text);
+		display: block;
+		line-height: 1.35;
+	}
+
+	.trans-micro {
+		font-size: 10.5px;
+		color: var(--color-subtle);
+		display: block;
+		margin-top: 2px;
+		line-height: 1.3;
+	}
+
+	.trans-year {
+		font-size: 11px;
+		color: var(--color-subtle);
+		white-space: nowrap;
+		flex-shrink: 0;
+		letter-spacing: 0.02em;
+	}
+
+	/* Active row */
+	.trans-item--active {
+		background: color-mix(in srgb, var(--color-accent) 7%, var(--color-panel));
+	}
+	.trans-item--active .trans-bar {
+		background: var(--color-accent);
+	}
+	.trans-item--active .trans-label {
+		font-weight: 600;
+	}
+	.trans-item--active .trans-year {
+		color: var(--color-accent);
+		font-weight: 600;
+	}
+
+	/* Hover row */
+	.trans-item--link {
+		cursor: pointer;
+		text-decoration: none;
+		transition: background 130ms ease;
+	}
+	.trans-item--link:hover {
+		background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-panel));
+	}
+	.trans-item--link:hover .trans-bar {
+		background: color-mix(in srgb, var(--color-accent) 40%, transparent);
+	}
+</style>

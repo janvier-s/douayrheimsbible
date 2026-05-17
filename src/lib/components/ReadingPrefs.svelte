@@ -91,7 +91,11 @@
 				{tab.label}
 			</button>
 		{/each}
-		<div class="tab-slider" style="transform: translateX({sliderIndex * 100}%)" aria-hidden="true"></div>
+		<div
+			class="tab-slider"
+			style="transform: translateX({sliderIndex * 100}%)"
+			aria-hidden="true"
+		></div>
 	</div>
 	<!-- Text tab -->
 	{#if activeTab === 'text'}
