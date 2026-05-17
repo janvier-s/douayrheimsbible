@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { fade } from 'svelte/transition';
 	import FathersBar from '$lib/components/FathersBar.svelte';
 	import FathersReader from '$lib/components/FathersReader.svelte';
 
@@ -77,7 +78,7 @@
 </svelte:head>
 
 {#key `${data.bookMeta.slug}-${data.chapter.chapter}`}
-	<div id="main-content" class="flex flex-col h-screen">
+	<div id="main-content" class="flex flex-col h-screen" in:fade={{ duration: 200 }}>
 		<FathersBar
 			bookMeta={data.bookMeta}
 			chapterNum={data.chapter.chapter}
