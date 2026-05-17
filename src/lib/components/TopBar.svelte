@@ -442,7 +442,7 @@
 
 	/* ── Translation dropdown panel ─────────────────────── */
 	.trans-panel {
-		width: 296px;
+		width: 330px;
 		background: var(--color-panel);
 		border: 1px solid var(--color-border);
 		border-radius: 5px;
@@ -455,7 +455,7 @@
 	.trans-item {
 		display: flex;
 		align-items: stretch;
-		min-height: 46px;
+		min-height: 52px;
 		border-bottom: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
 	}
 	.trans-item:last-child {
@@ -473,8 +473,8 @@
 		flex: 1;
 		display: flex;
 		align-items: center;
-		gap: 10px;
-		padding: 10px 14px 10px 12px;
+		gap: 12px;
+		padding: 12px 16px 12px 14px;
 		min-width: 0;
 	}
 
@@ -484,7 +484,7 @@
 	}
 
 	.trans-label {
-		font-size: 13px;
+		font-size: 14px;
 		font-weight: 500;
 		color: var(--color-text);
 		display: block;
@@ -492,7 +492,7 @@
 	}
 
 	.trans-micro {
-		font-size: 10.5px;
+		font-size: 11px;
 		color: var(--color-subtle);
 		display: block;
 		margin-top: 2px;
@@ -500,7 +500,7 @@
 	}
 
 	.trans-year {
-		font-size: 11px;
+		font-size: 12px;
 		color: var(--color-subtle);
 		white-space: nowrap;
 		flex-shrink: 0;
