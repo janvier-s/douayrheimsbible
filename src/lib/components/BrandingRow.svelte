@@ -9,6 +9,7 @@
 		pendingIdx: number;
 		onModeSelect: (e: CustomEvent<{ key: string; index: number }>) => void;
 		onLogoClick?: () => void;
+		logoHref?: string;
 		children?: import('svelte').Snippet;
 	}
 
@@ -18,6 +19,7 @@
 		pendingIdx,
 		onModeSelect,
 		onLogoClick = () => {},
+		logoHref = '/',
 		children
 	}: Props = $props();
 
@@ -76,7 +78,7 @@
 >
 	<!-- Logo -->
 	<a
-		href="/"
+		href={logoHref}
 		aria-label="Douay-Rheims"
 		class="flex items-center gap-[6px] group shrink-0"
 		onclick={onLogoClick}

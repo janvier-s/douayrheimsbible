@@ -6,7 +6,7 @@
 	import { browser } from '$app/environment';
 	import { get } from 'svelte/store';
 	import { prefs } from '$lib/stores/prefs';
-	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
+	import { studyPanel, scrollTrigger, readerSyncScrolling } from '$lib/stores/studyPanel';
 	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
@@ -558,10 +558,12 @@
 			const el = verseEls[state.panelScrollVerse];
 			if (el) {
 				programmaticReaderScroll = true;
+				readerSyncScrolling.set(true);
 				if (programmaticReaderScrollTimer) clearTimeout(programmaticReaderScrollTimer);
 				el.scrollIntoView({ behavior: 'smooth', block: 'center' });
 				programmaticReaderScrollTimer = setTimeout(() => {
 					programmaticReaderScroll = false;
+					readerSyncScrolling.set(false);
 				}, 800);
 			}
 		});

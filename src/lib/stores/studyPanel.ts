@@ -57,3 +57,9 @@ export const studyPanel = writable<StudyPanelState>({ ...defaults });
 // Producer sets a value; consumer reads it and nulls it after handling.
 
 export const scrollTrigger = writable<ScrollTrigger | null>(null);
+
+// ── Sync-scroll guard ─────────────────────────────────────────────────────────
+// Set by VerseList when it programmatically scrolls the reader window in
+// response to a panel-section change. BibleReader checks this in onScrollCheck
+// to suppress chapter loads triggered by the synthetic scroll event.
+export const readerSyncScrolling = writable(false);

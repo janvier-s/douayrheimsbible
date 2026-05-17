@@ -203,6 +203,7 @@
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
 		onLogoClick={closeAll}
+		logoHref={isChapterPage ? `${routeBase}/genesis/1` : '/'}
 	>
 		<!-- Mobile prefs toggle (TopBar-specific) -->
 		<button

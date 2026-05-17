@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { run, passive } from 'svelte/legacy';
+	import { get } from 'svelte/store';
 
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
@@ -17,7 +18,7 @@
 	} from '$lib/utils/infiniteScroll';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
-	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
+	import { studyPanel, scrollTrigger, readerSyncScrolling } from '$lib/stores/studyPanel';
 	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { createPanelResize } from '$lib/utils/panelResize';
 	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
@@ -195,7 +196,8 @@
 		const scrollY = window.scrollY;
 		chapters = chapters.slice(count);
 		await tick();
-		window.scrollTo({ top: Math.max(0, scrollY - removedHeight), behavior: 'instant' });
+		if (!destroyed)
+			window.scrollTo({ top: Math.max(0, scrollY - removedHeight), behavior: 'instant' });
 	}
 
 	/** Drop chapters from the back (oldest-loaded above viewport). No scroll compensation. */
@@ -268,7 +270,8 @@
 				];
 				await tick();
 				const newHeight = document.documentElement.scrollHeight;
-				window.scrollTo({ top: scrollY + (newHeight - oldHeight), behavior: 'instant' });
+				if (!destroyed)
+					window.scrollTo({ top: scrollY + (newHeight - oldHeight), behavior: 'instant' });
 				observeNewHeading(container!, ensureObserver(), targetBookMeta.slug, prevChNum);
 				// Prune chapters far below the viewport to cap DOM size.
 				const excess = chapters.length - MAX_CHAPTERS;
@@ -288,6 +291,7 @@
 	const COLUMN_WIDTHS = { narrow: 600, default: 750, wide: 920 };
 	let columnMaxWidth = $derived(COLUMN_WIDTHS[$prefs.columnWidth] ?? 750);
 
+	let destroyed = false;
 	let scrollReady = false;
 	let scrollRaf = 0;
 	let preloadTimer: ReturnType<typeof setTimeout> | null = null;
@@ -321,6 +325,7 @@
 
 	function onScrollCheck() {
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
+		if (get(readerSyncScrolling)) return;
 		const { scrollY, innerHeight } = window;
 		const docHeight = document.documentElement.scrollHeight;
 		// Prev loading is handled entirely by checkRollingPreload (reactive on
@@ -444,6 +449,7 @@
 	});
 
 	onDestroy(() => {
+		destroyed = true;
 		observer?.disconnect();
 		updatePosition.cancel();
 		if (browser) {
