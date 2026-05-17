@@ -510,6 +510,25 @@ body {
 	text-align: center;
 	line-height: 1.5;
 }
+
+.article-figure-link {
+	display: block;
+}
+
+.article-figure-link img {
+	transition: opacity 150ms ease;
+}
+
+.article-figure-link:hover img {
+	opacity: 0.85;
+}
+
+.fig-credit {
+	display: block;
+	font-size: 0.7rem;
+	color: color-mix(in srgb, var(--color-subtle) 70%, transparent);
+	margin-top: 2px;
+}
 /* allcapsToSmallcaps outputs <span class="sc"> for all small-caps text */
 .sc {
 	font-variant: small-caps;

@@ -72,13 +72,23 @@
 	</p>
 
 	<figure class="article-figure article-figure--float">
-		<div
-			class="article-figure-placeholder"
-			data-label="Title page of the King James Bible (1611) — Wikimedia Commons"
-		></div>
+		<a
+			href="/images/history/kjv-title-page-full.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/kjv-title-page.webp"
+				alt="Title page of the King James Bible, first edition (1611)"
+				width="400"
+				height="626"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>
-			Title page of the King James Version (1611), which drew significantly on the Rheims New
-			Testament its translators had studied
+			Title page of the King James Version (1611). Its translators named the Rheims New Testament in
+			their preface and drew on it extensively. <span class="fig-credit">Wikimedia Commons</span>
 		</figcaption>
 	</figure>
 
