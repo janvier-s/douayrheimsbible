@@ -45,6 +45,7 @@ export default [
 		},
 		rules: {
 			...svelte.configs.recommended.rules,
+			'no-undef': 'off',
 			'no-unused-vars': 'off',
 			'@typescript-eslint/no-unused-vars': [
 				'error',

@@ -217,7 +217,6 @@
 	);
 	run(() => {
 		if (computedFilteredCounts !== prevFilteredCounts) {
-			// eslint-disable-next-line no-useless-assignment -- tracks previous value for Svelte reactive equality check
 			prevFilteredCounts = computedFilteredCounts;
 			dispatch('filteredCounts', computedFilteredCounts);
 		}

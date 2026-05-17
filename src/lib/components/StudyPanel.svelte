@@ -703,7 +703,7 @@
 		bookData?.chapters.find((c) => c.chapter === currentChapterNum)
 	);
 	let articles = $derived(currentChapterData?.articles ?? []);
-	let hasArticles = $derived(articles.length > 0); // eslint-disable-line no-useless-assignment
+	let hasArticles = $derived(articles.length > 0);
 	let visibleTabs = $derived(
 		buildVisibleTabs(translationId, hasIntros, hasArticles, hasEndMatters, confIntro, haydockIntro)
 	);
@@ -722,7 +722,7 @@
 	);
 	run(() => {
 		if (bookData && bookData.book !== prevBook) {
-			prevBook = bookData.book; // eslint-disable-line no-useless-assignment
+			prevBook = bookData.book;
 
 			// If the tab was set from a URL ?tab= param, respect it on first load
 			if ($studyPanel.tabSetByUrl) {
@@ -820,7 +820,7 @@
 	let verseSections = $derived(buildVerseSections(currentChapterData, annotations));
 	run(() => {
 		if ($studyPanel.activeTab !== lastActiveTab) {
-			lastActiveTab = $studyPanel.activeTab; // eslint-disable-line no-useless-assignment
+			lastActiveTab = $studyPanel.activeTab;
 			sectionEls = {};
 			lastObservedKeys = '';
 		}

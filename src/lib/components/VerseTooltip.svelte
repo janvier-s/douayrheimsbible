@@ -122,7 +122,7 @@
 	run(() => {
 		if (visible && anchorEl) {
 			const rect = anchorEl.getBoundingClientRect();
-			x = rect.left + rect.width / 2; // eslint-disable-line no-useless-assignment
+			x = rect.left + rect.width / 2;
 			// Measure topbar height as ceiling
 			const topbar = document.querySelector('header.sticky');
 			const ceiling = topbar ? topbar.getBoundingClientRect().bottom : 0;
