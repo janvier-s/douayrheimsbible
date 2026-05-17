@@ -48,7 +48,6 @@
 			label: 'Study',
 			links: [
 				{ label: 'Compare Translations', href: '/compare' },
-				{ label: 'Articles', href: '/articles' },
 				{ label: 'Search', href: '/search' }
 			]
 		},
@@ -199,25 +198,17 @@
 
 <!-- Dropdown — OUTSIDE the backdrop-blur div to avoid stacking context trap -->
 {#if menuOpen}
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<nav class="site-menu" aria-label="Site navigation menu">
-		{#each navGroups as group, gi}
-			{#if gi > 0}
-				<div class="site-menu-divider" aria-hidden="true"></div>
-			{/if}
-			<p class="site-menu-group-label">{group.label}</p>
-			{#each group.links as link}
-				<a
-					href={link.href}
-					class="site-menu-link {isActive(link.href) ? 'active' : ''}"
-					onclick={closeMenu}
-				>
-					{link.label}
-					{#if isActive(link.href)}
-						<span class="site-menu-dot" aria-hidden="true"></span>
-					{/if}
-				</a>
-			{/each}
+		{#each navGroups as group}
+			<div class="site-menu-group">
+				<p class="site-menu-group-label">{group.label}</p>
+				{#each group.links as link}
+					<div class="site-menu-item {isActive(link.href) ? 'site-menu-item--active' : ''}">
+						<div class="site-menu-bar"></div>
+						<a href={link.href} class="site-menu-link" onclick={closeMenu}>{link.label}</a>
+					</div>
+				{/each}
+			</div>
 		{/each}
 	</nav>
 {/if}
@@ -229,22 +220,20 @@
 {/if}
 
 <style>
-	/* ── Dropdown ───────────────────────────────────────────── */
+	/* ── Site nav dropdown ──────────────────────────────────── */
 	.site-menu {
 		position: fixed;
 		top: 52px;
 		right: 8px;
 		background: var(--color-panel);
 		border: 1px solid var(--color-border);
-		border-radius: 6px;
+		border-radius: 5px;
 		box-shadow:
-			0 4px 6px -1px rgba(0, 0, 0, 0.06),
-			0 16px 40px -8px rgba(0, 0, 0, 0.2);
+			0 4px 8px rgba(0, 0, 0, 0.07),
+			0 12px 28px rgba(0, 0, 0, 0.1);
 		z-index: 9999;
-		min-width: 200px;
-		padding: 8px 0;
-		display: flex;
-		flex-direction: column;
+		width: 260px;
+		overflow: hidden;
 		animation: menu-in 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
 		transform-origin: top right;
 	}
@@ -252,7 +241,7 @@
 	@keyframes menu-in {
 		from {
 			opacity: 0;
-			transform: scale(0.94) translateY(-6px);
+			transform: scale(0.95) translateY(-4px);
 		}
 		to {
 			opacity: 1;
@@ -260,55 +249,67 @@
 		}
 	}
 
+	.site-menu-group {
+		padding: 6px 0 4px;
+	}
+
+	.site-menu-group + .site-menu-group {
+		border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+	}
+
 	.site-menu-group-label {
-		padding: 6px 14px 3px;
+		padding: 4px 14px 4px;
 		font-family: var(--font-ui);
 		font-size: 9px;
 		font-weight: 600;
-		letter-spacing: 0.16em;
+		letter-spacing: 0.18em;
 		text-transform: uppercase;
 		color: var(--color-subtle);
-		opacity: 0.6;
+		opacity: 0.65;
+	}
+
+	.site-menu-item {
+		display: flex;
+		align-items: stretch;
+		min-height: 42px;
+	}
+
+	.site-menu-bar {
+		width: 2px;
+		flex-shrink: 0;
+		background: transparent;
+		transition: background 130ms ease;
 	}
 
 	.site-menu-link {
+		flex: 1;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		padding: 7px 14px;
+		padding: 10px 14px 10px 12px;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 14px;
 		font-weight: 400;
-		color: var(--color-muted);
-		text-decoration: none;
-		transition:
-			background 80ms ease,
-			color 80ms ease;
-	}
-
-	.site-menu-link:hover {
-		background: color-mix(in srgb, var(--color-accent) 7%, transparent);
 		color: var(--color-text);
+		text-decoration: none;
+		transition: background 130ms ease;
 	}
 
-	.site-menu-link.active {
-		color: var(--color-accent);
+	.site-menu-item:hover .site-menu-bar {
+		background: color-mix(in srgb, var(--color-accent) 40%, transparent);
 	}
 
-	.site-menu-dot {
-		width: 4px;
-		height: 4px;
-		border-radius: 50%;
+	.site-menu-item:hover .site-menu-link {
+		background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-panel));
+	}
+
+	.site-menu-item--active .site-menu-bar {
 		background: var(--color-accent);
-		opacity: 0.7;
-		flex-shrink: 0;
 	}
 
-	.site-menu-divider {
-		height: 1px;
-		background: var(--color-border);
-		margin: 6px 0;
-		opacity: 0.5;
+	.site-menu-item--active .site-menu-link {
+		color: var(--color-accent);
+		background: color-mix(in srgb, var(--color-accent) 7%, var(--color-panel));
+		font-weight: 500;
 	}
 
 	.site-backdrop {
