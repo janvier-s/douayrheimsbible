@@ -63,13 +63,20 @@
 	</p>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/george-calvert.webp"
-			alt="Portrait of George Calvert, 1st Baron Baltimore (c. 1580–1632), by Daniel Mytens"
-			width="400"
-			height="634"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/george-calvert.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/george-calvert.webp"
+				alt="Portrait of George Calvert, 1st Baron Baltimore (c. 1580–1632), by Daniel Mytens"
+				width="400"
+				height="634"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>
 			George Calvert, 1st Baron Baltimore, whose son Cecil founded the Maryland colony
 		</figcaption>
@@ -117,13 +124,20 @@
 	<h2>Bishop Kenrick's Translation</h2>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/francis-kenrick.webp"
-			alt="Portrait of Bishop Francis Patrick Kenrick (1797–1863)"
-			width="400"
-			height="300"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/francis-kenrick.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/francis-kenrick.webp"
+				alt="Portrait of Bishop Francis Patrick Kenrick (1797–1863)"
+				width="400"
+				height="300"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>Bishop Francis Patrick Kenrick (1797–1863)</figcaption>
 	</figure>
 
@@ -167,13 +181,20 @@
 	<h2>Bishop Carroll and the First American Edition</h2>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/john-carroll.webp"
-			alt="Portrait of John Carroll (1735–1815), first Catholic bishop of the United States, by Gilbert Stuart"
-			width="400"
-			height="489"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/john-carroll.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/john-carroll.webp"
+				alt="Portrait of John Carroll (1735–1815), first Catholic bishop of the United States, by Gilbert Stuart"
+				width="400"
+				height="489"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>John Carroll (1735–1815), first Bishop of Baltimore</figcaption>
 	</figure>
 

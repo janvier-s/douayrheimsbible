@@ -139,10 +139,20 @@
 	<h2>The Vocabulary That Resulted</h2>
 
 	<figure class="article-figure article-figure--float">
-		<div
-			class="article-figure-placeholder"
-			data-label="Scan of Matthew 6:11 from the 1582 Rheims NT showing 'supersubstantial bread' alongside the Latin 'panem supersubstantialem' — Internet Archive first edition"
-		></div>
+		<a
+			href="/images/history/rheims-matthew-text-full.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/rheims-matthew-text.webp"
+				alt="Page from the 1582 Rheims New Testament showing Matthew 6, with 'supersubstantial bread' in the text and Latin annotations in the margin"
+				width="400"
+				height="562"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>
 			Matthew 6:11 in the 1582 Rheims NT: "supersubstantial bread" — a direct rendering of Jerome's
 			<em>panem supersubstantialem</em>, with no modern equivalent

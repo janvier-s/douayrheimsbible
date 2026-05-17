@@ -42,13 +42,23 @@
 	<h2>Two Prohibitions</h2>
 
 	<figure class="article-figure article-figure--float">
-		<div
-			class="article-figure-placeholder"
-			data-label="Portrait of Queen Elizabeth I — the Armada Portrait (1588) or similar — Wikimedia Commons"
-		></div>
+		<a
+			href="/images/history/rheims-forbidden-bible-full.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/rheims-forbidden-bible.webp"
+				alt="Page from the 1582 Rheims New Testament — the text whose possession was a criminal offence in Elizabethan England"
+				width="400"
+				height="562"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>
-			Queen Elizabeth I, under whose reign possession of Catholic texts was a criminal offence and
-			the Rheims New Testament was seized at English ports
+			The 1582 Rheims New Testament — possession of which was a criminal offence in Elizabethan
+			England, and whose copies were seized at English ports
 		</figcaption>
 	</figure>
 

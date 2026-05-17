@@ -2104,9 +2104,9 @@
 
 	/* ─── Verse-ref links (linkified references) ───── */
 	.panel-root :global(.verse-ref) {
-		color: var(--color-accent-text);
+		color: var(--color-subtle);
 		text-decoration: none;
-		border-bottom: 1px solid color-mix(in srgb, var(--color-accent-text) 40%, transparent);
+		border-bottom: 1px solid color-mix(in srgb, var(--color-subtle) 40%, transparent);
 		cursor: pointer;
 	}
 

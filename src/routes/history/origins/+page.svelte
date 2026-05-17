@@ -64,13 +64,20 @@
 	<h2>The English College at Douai</h2>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/cardinal-allen.webp"
-			alt="Portrait of Cardinal William Allen (1532–1594), founder of the English College at Douai"
-			width="400"
-			height="448"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/cardinal-allen.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/cardinal-allen.webp"
+				alt="Portrait of Cardinal William Allen (1532–1594), founder of the English College at Douai"
+				width="400"
+				height="448"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>Cardinal William Allen (1532–1594)</figcaption>
 	</figure>
 
@@ -94,19 +101,26 @@
 	</p>
 
 	<figure class="article-figure">
-		<picture>
-			<source
-				srcset="/images/history/english-college-douai-800.webp 800w, /images/history/english-college-douai-400.webp 400w"
-				type="image/webp"
-			/>
-			<img
-				src="/images/history/english-college-douai-800.webp"
-				alt="Engraving of the English College at Douai, founded 1568"
-				width="800"
-				height="551"
-				loading="lazy"
-			/>
-		</picture>
+		<a
+			href="/images/history/english-college-douai-800.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<picture>
+				<source
+					srcset="/images/history/english-college-douai-800.webp 800w, /images/history/english-college-douai-400.webp 400w"
+					type="image/webp"
+				/>
+				<img
+					src="/images/history/english-college-douai-800.webp"
+					alt="Engraving of the English College at Douai, founded 1568"
+					width="800"
+					height="551"
+					loading="lazy"
+				/>
+			</picture>
+		</a>
 		<figcaption>
 			The English College at Douai, founded 1568, where English Catholic scholars gathered in exile
 		</figcaption>
@@ -115,13 +129,20 @@
 	<h2>Gregory Martin and the Translation</h2>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/gregory-martin.webp"
-			alt="Portrait of Gregory Martin (c. 1542–1582), principal translator of the Douay-Rheims Bible"
-			width="320"
-			height="414"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/gregory-martin.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/gregory-martin.webp"
+				alt="Portrait of Gregory Martin (c. 1542–1582), principal translator of the Douay-Rheims Bible"
+				width="320"
+				height="414"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>Gregory Martin (c. 1542–1582)</figcaption>
 	</figure>
 

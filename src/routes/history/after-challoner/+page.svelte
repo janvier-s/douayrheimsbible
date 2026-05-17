@@ -71,13 +71,20 @@
 	<h2>Cotton's Catalogue</h2>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/cotton-rhemes-doway.webp"
-			alt="Title page of Henry Cotton's Rhemes and Doway (Oxford University Press, 1855)"
-			width="400"
-			height="681"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/cotton-rhemes-doway.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/cotton-rhemes-doway.webp"
+				alt="Title page of Henry Cotton's Rhemes and Doway (Oxford University Press, 1855)"
+				width="400"
+				height="681"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>Henry Cotton, <em>Rhemes and Doway</em> (1855)</figcaption>
 	</figure>
 

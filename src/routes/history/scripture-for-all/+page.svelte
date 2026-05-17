@@ -72,19 +72,26 @@
 	</p>
 
 	<figure class="article-figure">
-		<picture>
-			<source
-				srcset="/images/history/second-vatican-council-800.webp 800w, /images/history/second-vatican-council-400.webp 400w"
-				type="image/webp"
-			/>
-			<img
-				src="/images/history/second-vatican-council-800.webp"
-				alt="The Second Vatican Council in session at St Peter's Basilica"
-				width="800"
-				height="803"
-				loading="lazy"
-			/>
-		</picture>
+		<a
+			href="/images/history/second-vatican-council-800.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<picture>
+				<source
+					srcset="/images/history/second-vatican-council-800.webp 800w, /images/history/second-vatican-council-400.webp 400w"
+					type="image/webp"
+				/>
+				<img
+					src="/images/history/second-vatican-council-800.webp"
+					alt="The Second Vatican Council in session at St Peter's Basilica"
+					width="800"
+					height="803"
+					loading="lazy"
+				/>
+			</picture>
+		</a>
 		<figcaption>
 			The Second Vatican Council (1962–1965), whose Dogmatic Constitution <em>Dei Verbum</em> opened Scripture
 			to all the faithful
@@ -244,19 +251,26 @@
 	<h2>A Tradition of Encouragement</h2>
 
 	<figure class="article-figure">
-		<picture>
-			<source
-				srcset="/images/history/saint-jerome-800.webp 800w, /images/history/saint-jerome-400.webp 400w"
-				type="image/webp"
-			/>
-			<img
-				src="/images/history/saint-jerome-800.webp"
-				alt="Saint Jerome in His Study, painting"
-				width="800"
-				height="539"
-				loading="lazy"
-			/>
-		</picture>
+		<a
+			href="/images/history/saint-jerome-800.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<picture>
+				<source
+					srcset="/images/history/saint-jerome-800.webp 800w, /images/history/saint-jerome-400.webp 400w"
+					type="image/webp"
+				/>
+				<img
+					src="/images/history/saint-jerome-800.webp"
+					alt="Saint Jerome in His Study, painting"
+					width="800"
+					height="539"
+					loading="lazy"
+				/>
+			</picture>
+		</a>
 		<figcaption>
 			Saint Jerome (c. 347–420), whose Latin Vulgate made Scripture accessible to the Western Church
 			and whose letters urged all the faithful to read it

@@ -59,13 +59,20 @@
 	</p>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/edmund-campion.webp"
-			alt="Portrait of Saint Edmund Campion (c. 1540–1581), Jesuit priest executed at Tyburn"
-			width="340"
-			height="436"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/edmund-campion.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/edmund-campion.webp"
+				alt="Portrait of Saint Edmund Campion (c. 1540–1581), Jesuit priest executed at Tyburn"
+				width="340"
+				height="436"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>Saint Edmund Campion, executed 1581</figcaption>
 	</figure>
 

@@ -62,13 +62,20 @@
 	</p>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/richard-challoner.webp"
-			alt="Portrait of Bishop Richard Challoner (1691–1781), Vicar Apostolic of the London District"
-			width="400"
-			height="487"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/richard-challoner.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/richard-challoner.webp"
+				alt="Portrait of Bishop Richard Challoner (1691–1781), Vicar Apostolic of the London District"
+				width="400"
+				height="487"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>Bishop Richard Challoner (1691–1781)</figcaption>
 	</figure>
 

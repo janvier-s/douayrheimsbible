@@ -111,13 +111,20 @@
 	</p>
 
 	<figure class="article-figure article-figure--float">
-		<img
-			src="/images/history/pope-pius-xii.webp"
-			alt="Portrait of Pope Pius XII (1876–1958)"
-			width="400"
-			height="574"
-			loading="lazy"
-		/>
+		<a
+			href="/images/history/pope-pius-xii.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/pope-pius-xii.webp"
+				alt="Portrait of Pope Pius XII (1876–1958)"
+				width="400"
+				height="574"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>
 			Pope Pius XII, whose encyclical <em>Divino Afflante Spiritu</em> (1943) authorized translation from
 			the original Hebrew and Greek

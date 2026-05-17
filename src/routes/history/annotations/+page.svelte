@@ -58,10 +58,20 @@
 	<h2>Their Character</h2>
 
 	<figure class="article-figure">
-		<div
-			class="article-figure-placeholder"
-			data-label="Scan of a page from the 1582 Rheims NT showing the dense marginal and interlinear annotations alongside the biblical text — Internet Archive first edition"
-		></div>
+		<a
+			href="/images/history/rheims-annotations-full.webp"
+			target="_blank"
+			rel="noopener"
+			class="article-figure-link"
+		>
+			<img
+				src="/images/history/rheims-annotations.webp"
+				alt="Page from the 1582 Rheims New Testament showing the Gospel text with dense theological annotations in the margins and below the text"
+				width="400"
+				height="562"
+				loading="lazy"
+			/>
+		</a>
 		<figcaption>
 			A page from the 1582 Rheims New Testament, with theological annotations that often equalled or
 			exceeded the biblical text in length
