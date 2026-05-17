@@ -308,6 +308,7 @@
 
 	.site-menu-item:hover .site-menu-link {
 		background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-panel));
+		color: var(--color-accent);
 	}
 
 	.site-menu-item--active .site-menu-bar {

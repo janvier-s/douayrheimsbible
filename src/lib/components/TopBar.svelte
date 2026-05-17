@@ -534,4 +534,8 @@
 	.trans-item--link:hover .trans-bar {
 		background: color-mix(in srgb, var(--color-accent) 40%, transparent);
 	}
+	.trans-item--link:hover .trans-label,
+	.trans-item--link:hover .trans-year {
+		color: var(--color-accent);
+	}
 </style>
