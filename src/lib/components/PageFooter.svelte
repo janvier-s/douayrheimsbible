@@ -2,24 +2,34 @@
 	import { getNextNavBook } from '$lib/data/books';
 	import type { BookMeta } from '$lib/data/types';
 
-	export let bookMeta: BookMeta;
-	export let chapterNum: number;
-	export let totalChapters: number;
-	export let routeBase: string = '/odr';
-	export let showNav: boolean = true;
+	interface Props {
+		bookMeta: BookMeta;
+		chapterNum: number;
+		totalChapters: number;
+		routeBase?: string;
+		showNav?: boolean;
+	}
 
-	$: isLastChapter = chapterNum >= totalChapters;
-	$: nextNavBook = isLastChapter ? (getNextNavBook(bookMeta.slug) ?? null) : null;
+	let {
+		bookMeta,
+		chapterNum,
+		totalChapters,
+		routeBase = '/odr',
+		showNav = true
+	}: Props = $props();
 
-	$: nextHref = isLastChapter
+	let isLastChapter = $derived(chapterNum >= totalChapters);
+	let nextNavBook = $derived(isLastChapter ? (getNextNavBook(bookMeta.slug) ?? null) : null);
+
+	let nextHref = $derived(isLastChapter
 		? nextNavBook
 			? `${routeBase}/${nextNavBook.slug}/1`
 			: null
-		: `${routeBase}/${bookMeta.slug}/${chapterNum + 1}`;
+		: `${routeBase}/${bookMeta.slug}/${chapterNum + 1}`);
 
-	$: nextBook = nextNavBook;
-	$: nextLabel = nextBook ? nextBook.odrName : `Chapter ${chapterNum + 1}`;
-	$: nextSubLabel = nextBook ? 'Chapter 1' : null;
+	let nextBook = $derived(nextNavBook);
+	let nextLabel = $derived(nextBook ? nextBook.odrName : `Chapter ${chapterNum + 1}`);
+	let nextSubLabel = $derived(nextBook ? 'Chapter 1' : null);
 </script>
 
 {#if showNav}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { createEventDispatcher } from 'svelte';
 	import type { FathersEntry } from '$lib/data/fathers-types';
 	import { getAuthorMeta } from '$lib/data/fathers-authors';
@@ -14,9 +16,13 @@
 		type FathersFilterState
 	} from './fathersFilterUtils';
 
-	export let allEntries: FathersEntry[];
-	export let totalEntries: number;
-	export let expandAll: boolean;
+	interface Props {
+		allEntries: FathersEntry[];
+		totalEntries: number;
+		expandAll: boolean;
+	}
+
+	let { allEntries, totalEntries, expandAll }: Props = $props();
 
 	const dispatch = createEventDispatcher<{
 		filterChange: FathersFilterState;
@@ -24,22 +30,24 @@
 	}>();
 
 	// ── Filter state ──────────────────────────────────────────────────
-	let filtersOpen = false;
-	let authorDropdownOpen = false;
-	let authorDropdownEl: HTMLElement;
+	let filtersOpen = $state(false);
+	let authorDropdownOpen = $state(false);
+	let authorDropdownEl: HTMLElement | undefined = $state();
 
 	function handleWindowClick(e: MouseEvent) {
 		if (authorDropdownOpen && authorDropdownEl && !authorDropdownEl.contains(e.target as Node)) {
 			authorDropdownOpen = false;
 		}
 	}
-	let filter: FathersFilterState = createEmptyFilter();
+	let filter: FathersFilterState = $state(createEmptyFilter());
 
-	$: hasFilter = hasActiveFilter(filter);
-	$: activeFilterCount = filterCount(filter);
+	let hasFilter = $derived(hasActiveFilter(filter));
+	let activeFilterCount = $derived(filterCount(filter));
 
 	// Dispatch on any filter change
-	$: dispatch('filterChange', filter);
+	run(() => {
+		dispatch('filterChange', filter);
+	});
 
 	function clearFilters() {
 		filter = createEmptyFilter();
@@ -65,33 +73,33 @@
 	}
 
 	// ── Derived data from entries ─────────────────────────────────────
-	$: authorEntryCounts = (() => {
+	let authorEntryCounts = $derived((() => {
 		const counts: Record<string, number> = {};
 		for (const e of allEntries) {
 			counts[e.author] = (counts[e.author] ?? 0) + 1;
 		}
 		return counts;
-	})();
+	})());
 
-	$: chapterAuthorsAll = [...new Set(allEntries.map((e) => e.author))].sort((a, b) =>
+	let chapterAuthorsAll = $derived([...new Set(allEntries.map((e) => e.author))].sort((a, b) =>
 		sortKey(a).localeCompare(sortKey(b))
-	);
+	));
 
-	$: documentNames = new Set(allEntries.filter((e) => e.isDocument).map((e) => e.author));
-	$: chapterAuthors = chapterAuthorsAll.filter((a) => !documentNames.has(a));
-	$: chapterDocuments = chapterAuthorsAll.filter((a) => documentNames.has(a));
+	let documentNames = $derived(new Set(allEntries.filter((e) => e.isDocument).map((e) => e.author)));
+	let chapterAuthors = $derived(chapterAuthorsAll.filter((a) => !documentNames.has(a)));
+	let chapterDocuments = $derived(chapterAuthorsAll.filter((a) => documentNames.has(a)));
 
-	$: availableCenturies = new Set(
+	let availableCenturies = $derived(new Set(
 		allEntries.map((e) => getAuthorMeta(e.author).century).filter(Boolean)
-	);
-	$: hasOtherCentury = [...availableCenturies].some((c) => typeof c === 'number' && c >= 9);
-	$: availableEras = new Set(allEntries.map((e) => getAuthorMeta(e.author).era).filter(Boolean));
-	$: availableTraditions = new Set(
+	));
+	let hasOtherCentury = $derived([...availableCenturies].some((c) => typeof c === 'number' && c >= 9));
+	let availableEras = $derived(new Set(allEntries.map((e) => getAuthorMeta(e.author).era).filter(Boolean)));
+	let availableTraditions = $derived(new Set(
 		allEntries.map((e) => getAuthorMeta(e.author).tradition).filter(Boolean)
-	);
+	));
 </script>
 
-<svelte:window on:click={handleWindowClick} />
+<svelte:window onclick={handleWindowClick} />
 
 <!-- ── Toolbar row ────────────────────────────────────────── -->
 <div class="shrink-0 border-b border-border px-sm py-[8px] bg-panel flex items-center gap-[8px]">
@@ -100,7 +108,7 @@
 			{filtersOpen
 			? 'bg-interactive text-white border-interactive'
 			: 'border-border text-subtle hover:text-foreground'}"
-		on:click={() => (filtersOpen = !filtersOpen)}
+		onclick={() => (filtersOpen = !filtersOpen)}
 	>
 		Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
 	</button>
@@ -108,7 +116,7 @@
 	{#if hasFilter}
 		<button
 			class="text-[11px] text-subtle hover:text-accent transition-colors duration-fast"
-			on:click={clearFilters}
+			onclick={clearFilters}
 		>
 			Clear filters
 		</button>
@@ -120,7 +128,7 @@
 				{expandAll
 				? 'bg-interactive text-white border-interactive'
 				: 'border-border text-subtle hover:text-foreground'}"
-			on:click={() => dispatch('expandAllChange', !expandAll)}
+			onclick={() => dispatch('expandAllChange', !expandAll)}
 		>
 			{expandAll ? 'Collapse' : 'Expand all'}
 		</button>
@@ -137,7 +145,7 @@
 		<!-- Century -->
 		<span class="filter-label">Century</span>
 		<div class="flex items-center gap-[5px] flex-wrap">
-			<button class={chipClass(filter.century === 'all')} on:click={() => setCentury('all')}
+			<button class={chipClass(filter.century === 'all')} onclick={() => setCentury('all')}
 				>All</button
 			>
 			{#each CENTURIES as c}
@@ -148,7 +156,7 @@
 					title={avail
 						? `Filter to ${label} century`
 						: `No ${label} century entries in this chapter`}
-					on:click={() => avail && setCentury(c)}
+					onclick={() => avail && setCentury(c)}
 				>
 					{label}
 				</button>
@@ -158,20 +166,20 @@
 				title={hasOtherCentury
 					? 'Filter to 9th century and later'
 					: 'No 9th+ century entries in this chapter'}
-				on:click={() => hasOtherCentury && setCentury('other')}>9th+</button
+				onclick={() => hasOtherCentury && setCentury('other')}>9th+</button
 			>
 		</div>
 
 		<!-- Era -->
 		<span class="filter-label">Era</span>
 		<div class="flex items-center gap-[5px] flex-wrap">
-			<button class={chipClass(filter.era === 'all')} on:click={() => setEra('all')}>All</button>
+			<button class={chipClass(filter.era === 'all')} onclick={() => setEra('all')}>All</button>
 			{#each ERAS as { key, label }}
 				{@const avail = availableEras.has(key)}
 				<button
 					class={chipClass(filter.era === key, avail)}
 					title={avail ? `Filter to ${label} era` : `No ${label} entries in this chapter`}
-					on:click={() => avail && setEra(key)}>{label}</button
+					onclick={() => avail && setEra(key)}>{label}</button
 				>
 			{/each}
 		</div>
@@ -179,7 +187,7 @@
 		<!-- Tradition -->
 		<span class="filter-label">Tradition</span>
 		<div class="flex items-center gap-[5px] flex-wrap">
-			<button class={chipClass(filter.tradition === 'all')} on:click={() => setTradition('all')}
+			<button class={chipClass(filter.tradition === 'all')} onclick={() => setTradition('all')}
 				>All</button
 			>
 			{#each TRADITIONS as { key, label }}
@@ -187,7 +195,7 @@
 				<button
 					class={chipClass(filter.tradition === key, avail)}
 					title={avail ? `Filter to ${label} tradition` : `No ${label} entries in this chapter`}
-					on:click={() => avail && setTradition(key)}>{label}</button
+					onclick={() => avail && setTradition(key)}>{label}</button
 				>
 			{/each}
 		</div>
@@ -203,7 +211,7 @@
 						{filter.authors.size > 0
 						? 'bg-interactive text-white border-interactive'
 						: 'border-border text-subtle hover:text-foreground'}"
-					on:click={() => (authorDropdownOpen = !authorDropdownOpen)}
+					onclick={() => (authorDropdownOpen = !authorDropdownOpen)}
 				>
 					{filter.authors.size > 0 ? `${filter.authors.size} selected` : 'Select'}
 					<span class="text-[9px] opacity-70 ml-[3px]">{authorDropdownOpen ? '▲' : '▼'}</span>
@@ -226,7 +234,7 @@
 									<input
 										type="checkbox"
 										checked={selected}
-										on:change={() => toggleAuthor(author)}
+										onchange={() => toggleAuthor(author)}
 										class="accent-accent"
 									/>
 									<span class="flex-1 truncate">{author}</span>
@@ -250,7 +258,7 @@
 									<input
 										type="checkbox"
 										checked={selected}
-										on:change={() => toggleAuthor(doc)}
+										onchange={() => toggleAuthor(doc)}
 										class="accent-accent"
 									/>
 									<span class="flex-1 truncate">{doc}</span>
@@ -265,7 +273,7 @@
 			{#if filter.authors.size > 0}
 				<button
 					class="text-[10px] text-subtle hover:text-accent"
-					on:click={() => (filter = { ...filter, authors: new Set() })}>clear</button
+					onclick={() => (filter = { ...filter, authors: new Set() })}>clear</button
 				>
 			{/if}
 		</div>

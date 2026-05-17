@@ -1,17 +1,25 @@
 <script lang="ts">
+	import { run, createBubbler } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { createEventDispatcher, onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 
-	export let anchorEl: HTMLElement | null = null;
-	export let visible: boolean = false;
+	interface Props {
+		anchorEl?: HTMLElement | null;
+		visible?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let { anchorEl = null, visible = false, children }: Props = $props();
 
 	const dispatch = createEventDispatcher<{ dismiss: void }>();
 
 	const POPOVER_WIDTH = 300;
 	const GAP = 10;
 
-	let popoverStyle = '';
-	let above = false;
+	let popoverStyle = $state('');
+	let above = $state(false);
 
 	function computePosition(anchor: HTMLElement) {
 		const rect = anchor.getBoundingClientRect();
@@ -27,12 +35,16 @@
 			: `left:${left}px; top:${rect.bottom + GAP}px; width:${POPOVER_WIDTH}px;`;
 	}
 
-	$: if (visible && anchorEl) {
-		computePosition(anchorEl);
-	}
-	$: if (!visible) {
-		popoverStyle = '';
-	}
+	run(() => {
+		if (visible && anchorEl) {
+			computePosition(anchorEl);
+		}
+	});
+	run(() => {
+		if (!visible) {
+			popoverStyle = '';
+		}
+	});
 
 	function onScroll() {
 		dispatch('dismiss');
@@ -55,10 +67,10 @@
 		role="tooltip"
 		aria-live="polite"
 		style="position:fixed; {popoverStyle}"
-		on:mouseenter
-		on:mouseleave
+		onmouseenter={bubble('mouseenter')}
+		onmouseleave={bubble('mouseleave')}
 	>
-		<slot />
+		{@render children?.()}
 	</div>
 {/if}
 

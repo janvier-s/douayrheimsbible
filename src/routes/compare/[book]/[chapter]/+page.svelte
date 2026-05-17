@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { stopPropagation, createBubbler } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import type { PageData } from './$types';
@@ -10,7 +13,11 @@
 	import { fade } from 'svelte/transition';
 	import { stripTags, allcapsToSmallcaps } from '$lib/utils/text';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	// Set compare-specific font size on mount, restore on destroy
 	let prevFontSize = '';
@@ -26,30 +33,30 @@
 		}
 	});
 
-	$: ({ bookMeta, chapter, verseMaps } = data);
-	$: prevChapter = chapter.chapter > 1 ? chapter.chapter - 1 : null;
-	$: nextChapter = chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null;
+	let { bookMeta, chapter, verseMaps } = $derived(data);
+	let prevChapter = $derived(chapter.chapter > 1 ? chapter.chapter - 1 : null);
+	let nextChapter = $derived(chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null);
 
 	// Responsive column cap: 2 on mobile, MAX_COLS on desktop
-	let innerWidth = 0;
-	$: effectiveMax = innerWidth > 0 && innerWidth < 768 ? 2 : MAX_COLS;
+	let innerWidth = $state(0);
+	let effectiveMax = $derived(innerWidth > 0 && innerWidth < 768 ? 2 : MAX_COLS);
 
 	// Derived view state from store
-	$: orderedTranslations = $compareStore.order.map(
+	let orderedTranslations = $derived($compareStore.order.map(
 		(id: TranslationId) => TRANSLATIONS.find((t: Translation) => t.id === id)!
-	);
-	$: activeCols = orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id));
-	$: displayedCols = activeCols.slice(
+	));
+	let activeCols = $derived(orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id)));
+	let displayedCols = $derived(activeCols.slice(
 		$compareStore.columnOffset,
 		$compareStore.columnOffset + effectiveMax
-	);
-	$: needsScroll = activeCols.length > effectiveMax;
-	$: canScrollLeft = $compareStore.columnOffset > 0;
-	$: canScrollRight = $compareStore.columnOffset + effectiveMax < activeCols.length;
+	));
+	let needsScroll = $derived(activeCols.length > effectiveMax);
+	let canScrollLeft = $derived($compareStore.columnOffset > 0);
+	let canScrollRight = $derived($compareStore.columnOffset + effectiveMax < activeCols.length);
 
 	// Max-width scales with column count (405px per col → 2 cols = 810px)
-	$: containerMaxWidth = `${Math.min(displayedCols.length * 405, 1800)}px`;
-	$: isOT = bookMeta.testament === 'OT';
+	let containerMaxWidth = $derived(`${Math.min(displayedCols.length * 405, 1800)}px`);
+	let isOT = $derived(bookMeta.testament === 'OT');
 
 	// ── Konami code ────────────────────────────────────────────────────────────
 	const KONAMI_SEQUENCE = [
@@ -65,8 +72,8 @@
 		'a'
 	];
 	let konamiProgress = 0;
-	let showUnlockToast = false;
-	let konamiToastUnlocked = true;
+	let showUnlockToast = $state(false);
+	let konamiToastUnlocked = $state(true);
 
 	function onKonamiKeydown(e: KeyboardEvent) {
 		if (e.key === KONAMI_SEQUENCE[konamiProgress]) {
@@ -84,8 +91,8 @@
 	}
 
 	// Drag-to-reorder columns
-	let draggingId: TranslationId | null = null;
-	let hoveredVerse: number | null = null;
+	let draggingId: TranslationId | null = $state(null);
+	let hoveredVerse: number | null = $state(null);
 
 	function onColDragStart(e: DragEvent, id: TranslationId) {
 		draggingId = id;
@@ -108,7 +115,7 @@
 	}
 </script>
 
-<svelte:window bind:innerWidth on:keydown={onKonamiKeydown} />
+<svelte:window bind:innerWidth onkeydown={onKonamiKeydown} />
 
 <svelte:head>
 	<title>{bookMeta.odrName} {chapter.chapter} · Compare Translations — Douay-Rheims Bible</title>
@@ -150,7 +157,7 @@
 	<!-- Fixed carousel arrows — vertical rectangles, only when >MAX_COLS translations active -->
 	{#if needsScroll}
 		<button
-			on:click={() => compareStore.scrollBy(-1)}
+			onclick={() => compareStore.scrollBy(-1)}
 			disabled={!canScrollLeft}
 			aria-label="Previous translation"
 			class="fixed left-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
@@ -161,7 +168,7 @@
 			‹
 		</button>
 		<button
-			on:click={() => compareStore.scrollBy(1)}
+			onclick={() => compareStore.scrollBy(1)}
 			disabled={!canScrollRight}
 			aria-label="Next translation"
 			class="fixed right-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
@@ -216,9 +223,9 @@
 					role="columnheader"
 					aria-label={t.label}
 					tabindex="0"
-					on:dragstart={(e) => onColDragStart(e, t.id)}
-					on:dragover={(e) => onColDragOver(e, t.id)}
-					on:dragend={onColDragEnd}
+					ondragstart={(e) => onColDragStart(e, t.id)}
+					ondragover={(e) => onColDragOver(e, t.id)}
+					ondragend={onColDragEnd}
 					class="group relative px-[20px] max-md:px-[10px] py-[13px] max-md:py-[8px] flex items-center gap-[8px] max-md:gap-[4px] cursor-grab active:cursor-grabbing select-none bg-panel
 					{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}
 					{draggingId === t.id ? 'opacity-50' : ''}"
@@ -247,8 +254,8 @@
 					<button
 						class="absolute top-[5px] right-[5px] opacity-0 group-hover:opacity-100 transition-opacity duration-fast flex items-center justify-center w-[26px] h-[26px] rounded-[3px] text-[#9ca3af] hover:text-[#6b7280] hover:bg-[#9ca3af]/15"
 						aria-label="Remove {t.label}"
-						on:click|stopPropagation={() => compareStore.toggle(t.id, isOT)}
-						on:dragstart|stopPropagation
+						onclick={stopPropagation(() => compareStore.toggle(t.id, isOT))}
+						ondragstart={stopPropagation(bubble('dragstart'))}
 					>
 						<svg
 							width="11"
@@ -274,14 +281,14 @@
 		>
 			{#each chapter.verses.filter((v) => v.verse > 0) as v (v.verse)}
 				{#each displayedCols as t, colIdx (t.id)}
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
 					<div
 						class="verse-cell px-[16px] py-[12px] max-md:px-[5px] max-md:py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 						class:text-justify={$prefs.justifiedText}
 						class:verse-row-hover={hoveredVerse === v.verse}
-						on:mouseenter={() => (hoveredVerse = v.verse)}
-						on:mouseleave={() => (hoveredVerse = null)}
+						onmouseenter={() => (hoveredVerse = v.verse)}
+						onmouseleave={() => (hoveredVerse = null)}
 					>
 						{#if $prefs.showVerseNumbers}
 							<span

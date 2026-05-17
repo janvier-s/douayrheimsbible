@@ -3,8 +3,12 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { FONTS, getFontById, isSansFont } from '$lib/data/fonts';
 
-	export let compareMode = false;
-	$: activeFontSize = compareMode ? $prefs.compareFontSize : $prefs.fontSize;
+	interface Props {
+		compareMode?: boolean;
+	}
+
+	let { compareMode = false }: Props = $props();
+	let activeFontSize = $derived(compareMode ? $prefs.compareFontSize : $prefs.fontSize);
 
 	const THEMES = [
 		{ id: 'light', label: 'Light', bg: '#f8f5ef', fg: '#1c1710', lines: '#c8bfb0' },
@@ -13,13 +17,13 @@
 		{ id: 'oled', label: 'OLED', bg: '#000000', fg: '#e0e0e0', lines: '#2a2a2a' }
 	];
 
-	let currentTheme = 'auto';
-	let fontDropdownOpen = false;
+	let currentTheme = $state('auto');
+	let fontDropdownOpen = $state(false);
 
-	$: activeFontId = $prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily;
-	$: activeFont = getFontById(activeFontId);
-	$: activeFontStack =
-		activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit');
+	let activeFontId = $derived($prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily);
+	let activeFont = $derived(getFontById(activeFontId));
+	let activeFontStack =
+		$derived(activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit'));
 
 	onMount(() => {
 		currentTheme = document.documentElement.getAttribute('data-theme') ?? 'auto';
@@ -67,8 +71,8 @@
 		document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
 	}
 
-	let activeTab: 'text' | 'reading' | 'verse' = 'text';
-	let fontSectionEl: HTMLElement;
+	let activeTab: 'text' | 'reading' | 'verse' = $state('text');
+	let fontSectionEl: HTMLElement | undefined = $state();
 </script>
 
 <div class="text-sm font-ui">
@@ -82,7 +86,7 @@
 					{activeTab === tab.id
 					? 'border-accent text-accent'
 					: 'border-transparent text-subtle hover:text-foreground'}"
-				on:click={() => (activeTab = tab.id as typeof activeTab)}
+				onclick={() => (activeTab = tab.id as typeof activeTab)}
 			>
 				{tab.label}
 			</button>
@@ -99,7 +103,7 @@
 					max="20"
 					step="1"
 					value={activeFontSize}
-					on:input={(e) => {
+					oninput={(e) => {
 						const v = parseInt((e.target as HTMLInputElement).value);
 						const key = compareMode ? 'compareFontSize' : 'fontSize';
 						prefs.update((p) => ({ ...p, [key]: v }));
@@ -118,7 +122,7 @@
 								{$prefs.lineHeight === opt.value
 								? 'bg-accent text-white border-accent'
 								: 'border-border text-foreground hover:text-accent'}"
-							on:click={() => {
+							onclick={() => {
 								prefs.update((p) => ({ ...p, lineHeight: opt.value }));
 								document.documentElement.style.setProperty(
 									'--line-height-reader',
@@ -139,7 +143,7 @@
 					style="font-family: {activeFontStack};"
 					aria-expanded={fontDropdownOpen}
 					aria-haspopup="listbox"
-					on:click={() => {
+					onclick={() => {
 						fontDropdownOpen = !fontDropdownOpen;
 						if (fontDropdownOpen)
 							fontSectionEl?.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -162,7 +166,7 @@
 								class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast
 									{activeFontId === f.id ? 'text-accent' : 'text-foreground'}"
 								style="font-family: {f.stack};"
-								on:click={() => {
+								onclick={() => {
 									setDyslexia(false);
 									setFontWithBionic(f.id);
 									fontDropdownOpen = false;
@@ -175,7 +179,7 @@
 							class="w-full text-left px-sm py-[9px] text-[14px] font-medium hover:bg-accent hover:text-white transition-colors duration-fast border-t border-border
 								{activeFontId === 'grace' ? 'text-accent' : 'text-foreground'}"
 							style="font-family: 'Grace Dyslexic MD', sans-serif;"
-							on:click={() => {
+							onclick={() => {
 								setDyslexia(true);
 								fontDropdownOpen = false;
 							}}
@@ -192,7 +196,7 @@
 					{#each THEMES as t}
 						<button
 							title={t.label}
-							on:click={() => setTheme(t.id)}
+							onclick={() => setTheme(t.id)}
 							class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
 								{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
 							style="background: {t.bg};"
@@ -234,7 +238,7 @@
 								{$prefs.columnWidth === opt.value
 								? 'bg-accent text-white border-accent'
 								: 'border-border text-foreground hover:text-accent'}"
-							on:click={() =>
+							onclick={() =>
 								prefs.update((p) => ({
 									...p,
 									columnWidth: opt.value as 'narrow' | 'default' | 'wide'
@@ -250,7 +254,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.justifiedText}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							justifiedText: (e.target as HTMLInputElement).checked
@@ -264,7 +268,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.infiniteScroll}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							infiniteScroll: (e.target as HTMLInputElement).checked
@@ -278,7 +282,7 @@
 				<input
 					type="checkbox"
 					checked={($prefs.syncStudyScroll ?? true) && ($prefs.annotationSync ?? true)}
-					on:change={(e) => {
+					onchange={(e) => {
 						const v = (e.target as HTMLInputElement).checked;
 						prefs.update((p) => ({ ...p, syncStudyScroll: v, annotationSync: v }));
 					}}
@@ -291,7 +295,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.showChapterNav ?? true}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							showChapterNav: (e.target as HTMLInputElement).checked
@@ -306,7 +310,7 @@
 					<input
 						type="checkbox"
 						checked={!($prefs.skipHomepage ?? false)}
-						on:change={(e) =>
+						onchange={(e) =>
 							prefs.update((p) => ({
 								...p,
 								skipHomepage: !(e.target as HTMLInputElement).checked
@@ -321,7 +325,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.bionicReading}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							bionicReading: (e.target as HTMLInputElement).checked
@@ -341,7 +345,7 @@
 							max="5"
 							step="1"
 							value={$prefs.bionicFixation ?? 3}
-							on:input={(e) =>
+							oninput={(e) =>
 								prefs.update((p) => ({
 									...p,
 									bionicFixation: parseInt((e.target as HTMLInputElement).value)
@@ -359,7 +363,7 @@
 							max="4"
 							step="1"
 							value={$prefs.bionicSaccade ?? 0}
-							on:input={(e) =>
+							oninput={(e) =>
 								prefs.update((p) => ({
 									...p,
 									bionicSaccade: parseInt((e.target as HTMLInputElement).value)
@@ -377,7 +381,7 @@
 							max="1"
 							step="0.05"
 							value={$prefs.bionicOpacity ?? 1}
-							on:input={(e) => {
+							oninput={(e) => {
 								const v = parseFloat((e.target as HTMLInputElement).value);
 								prefs.update((p) => ({ ...p, bionicOpacity: v }));
 								document.documentElement.style.setProperty('--bionic-opacity', String(v));
@@ -397,7 +401,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.showVerseNumbers}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							showVerseNumbers: (e.target as HTMLInputElement).checked
@@ -411,7 +415,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.paragraphView}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							paragraphView: (e.target as HTMLInputElement).checked
@@ -427,7 +431,7 @@
 						<input
 							type="checkbox"
 							checked={$prefs.showDropcap ?? true}
-							on:change={(e) =>
+							onchange={(e) =>
 								prefs.update((p) => ({
 									...p,
 									showDropcap: (e.target as HTMLInputElement).checked
@@ -440,7 +444,7 @@
 						<input
 							type="checkbox"
 							checked={$prefs.hangingVerseNumbers ?? true}
-							on:change={(e) =>
+							onchange={(e) =>
 								prefs.update((p) => ({
 									...p,
 									hangingVerseNumbers: (e.target as HTMLInputElement).checked
@@ -456,7 +460,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.modernBookNames}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							modernBookNames: (e.target as HTMLInputElement).checked
@@ -470,7 +474,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.showPsalmNumbers}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							showPsalmNumbers: (e.target as HTMLInputElement).checked
@@ -484,7 +488,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.showSmallCaps ?? true}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							showSmallCaps: (e.target as HTMLInputElement).checked
@@ -498,7 +502,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.showItalics}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							showItalics: (e.target as HTMLInputElement).checked
@@ -512,7 +516,7 @@
 				<input
 					type="checkbox"
 					checked={$prefs.expandAmpersand ?? false}
-					on:change={(e) =>
+					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
 							expandAmpersand: (e.target as HTMLInputElement).checked

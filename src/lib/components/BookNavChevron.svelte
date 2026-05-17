@@ -1,7 +1,12 @@
 <script lang="ts">
-	export let direction: 'prev' | 'next';
-	/** true = double chevron (book jump «»), false = single chevron (chapter step ‹›) */
-	export let double: boolean = true;
+	
+	interface Props {
+		direction: 'prev' | 'next';
+		/** true = double chevron (book jump «»), false = single chevron (chapter step ‹›) */
+		double?: boolean;
+	}
+
+	let { direction, double = true }: Props = $props();
 </script>
 
 <svg

@@ -1,9 +1,13 @@
 <script lang="ts">
 	import BookNavChevron from './BookNavChevron.svelte';
 
-	export let href: string;
-	export let direction: 'prev' | 'next';
-	export let label: string;
+	interface Props {
+		href: string;
+		direction: 'prev' | 'next';
+		label: string;
+	}
+
+	let { href, direction, label }: Props = $props();
 </script>
 
 <div class="relative group/booknav shrink-0">

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { createEventDispatcher } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import { browser } from '$app/environment';
@@ -10,50 +12,47 @@
 	import { displayVerseRef } from '$lib/utils/fathers-display';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 
-	export let chapter: Chapter;
-	export let pericopes: FathersPericope[] = [];
-	export let verseEntryCounts: Record<number, number>;
-	export let filteredVerseEntryCounts: Record<number, number> | null;
-	export let selectedVerse: number | null;
-	export let bookSlug: string;
-	export let chapterNum: number;
-	export let isOT: boolean = false;
+	interface Props {
+		chapter: Chapter;
+		pericopes?: FathersPericope[];
+		verseEntryCounts: Record<number, number>;
+		filteredVerseEntryCounts: Record<number, number> | null;
+		selectedVerse: number | null;
+		bookSlug: string;
+		chapterNum: number;
+		isOT?: boolean;
+	}
+
+	let {
+		chapter,
+		pericopes = [],
+		verseEntryCounts,
+		filteredVerseEntryCounts,
+		selectedVerse,
+		bookSlug,
+		chapterNum,
+		isOT = false
+	}: Props = $props();
 
 	const dispatch = createEventDispatcher<{
 		selectVerse: number;
 		selectPericope: string;
 	}>();
 
-	// Map: startVerse → pericope (for injecting headers before the verse)
-	$: pericopeAtVerse = new Map(pericopes.map((p) => [p.startVerse, p]));
 
 	function handleVerseClick(verseNum: number) {
 		dispatch('selectVerse', verseNum);
 	}
 
 	// ── Translation selector ──────────────────────────────────────────
-	let translationId = 'odr';
-	let translationOpen = false;
+	let translationId = $state('odr');
+	let translationOpen = $state(false);
 
 	// Alternate verse text loaded from translation book JSON
-	let altVerses: Record<number, string> | null = null;
-	let lastAltKey = '';
+	let altVerses: Record<number, string> | null = $state(null);
+	let lastAltKey = $state('');
 
-	$: liveTranslations = TRANSLATIONS.filter((t) => t.live && !t.hidden);
-	$: currentTranslation =
-		liveTranslations.find((t) => t.id === translationId) ??
-		liveTranslations.find((t) => t.id === 'odr')!;
 
-	$: {
-		const key = `${translationId}/${bookSlug}/${chapterNum}`;
-		if (browser && translationId !== 'odr' && key !== lastAltKey) {
-			lastAltKey = key;
-			loadAltVerses(translationId, bookSlug, chapterNum);
-		} else if (translationId === 'odr') {
-			altVerses = null;
-			lastAltKey = '';
-		}
-	}
 
 	async function loadAltVerses(tid: string, slug: string, ch: number) {
 		try {
@@ -96,6 +95,22 @@
 		t = stripSuperscripts(t);
 		return showSmallCaps ? allcapsToSmallcaps(t) : t;
 	}
+	// Map: startVerse → pericope (for injecting headers before the verse)
+	let pericopeAtVerse = $derived(new Map(pericopes.map((p) => [p.startVerse, p])));
+	let liveTranslations = $derived(TRANSLATIONS.filter((t) => t.live && !t.hidden));
+	let currentTranslation =
+		$derived(liveTranslations.find((t) => t.id === translationId) ??
+		liveTranslations.find((t) => t.id === 'odr')!);
+	run(() => {
+		const key = `${translationId}/${bookSlug}/${chapterNum}`;
+		if (browser && translationId !== 'odr' && key !== lastAltKey) {
+			lastAltKey = key;
+			loadAltVerses(translationId, bookSlug, chapterNum);
+		} else if (translationId === 'odr') {
+			altVerses = null;
+			lastAltKey = '';
+		}
+	});
 </script>
 
 <div class="h-full flex flex-col">
@@ -109,7 +124,7 @@
 					{translationOpen
 					? 'bg-interactive text-white border-interactive'
 					: 'border-border text-foreground hover:text-accent'}"
-				on:click={() => (translationOpen = !translationOpen)}
+				onclick={() => (translationOpen = !translationOpen)}
 			>
 				{currentTranslation.abbr}
 				<span class="text-[9px] opacity-70">{translationOpen ? '▲' : '▼'}</span>
@@ -130,7 +145,7 @@
 									? 'bg-accent/10 font-semibold'
 									: 'hover:bg-accent/5'}"
 							{disabled}
-							on:click={() => {
+							onclick={() => {
 								if (!disabled) {
 									translationId = t.id;
 									translationOpen = false;
@@ -171,11 +186,11 @@
 
 				<!-- Pericope header injected before the first verse in its range -->
 				{#if pericope}
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
 					<div
 						class="pericope-header flex items-center gap-[8px] px-[6px] py-[6px] mt-[8px] mb-[2px] rounded-sm cursor-pointer transition-colors duration-fast border-l-2 border-accent/40 hover:bg-accent/10 hover:border-accent"
-						on:click={() => dispatch('selectPericope', pericope.verseRef)}
-						on:keydown={(e) => {
+						onclick={() => dispatch('selectPericope', pericope.verseRef)}
+						onkeydown={(e) => {
 							if (e.key === 'Enter' || e.key === ' ') {
 								e.preventDefault();
 								dispatch('selectPericope', pericope.verseRef);
@@ -199,13 +214,13 @@
 					</div>
 				{/if}
 
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<!-- svelte-ignore a11y_no_static_element_interactions -->
 				<div
 					class="flex items-start gap-[8px] rounded-sm px-[6px] py-[4px] transition-colors duration-fast group
 						{isSelected ? 'bg-accent/10' : ''}
 						{hasBadge ? 'cursor-pointer hover:bg-border/20' : ''}"
-					on:click={() => hasBadge && handleVerseClick(verse.verse)}
-					on:keydown={(e) => {
+					onclick={() => hasBadge && handleVerseClick(verse.verse)}
+					onkeydown={(e) => {
 						if ((e.key === 'Enter' || e.key === ' ') && hasBadge) {
 							e.preventDefault();
 							handleVerseClick(verse.verse);

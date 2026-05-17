@@ -11,6 +11,11 @@
 	import { afterNavigate, goto } from '$app/navigation';
 	import { getFontById, isSansFont } from '$lib/data/fonts';
 	import { navOverride } from '$lib/stores/navOverride';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	afterNavigate(({ from, to, type }) => {
 		if (type === 'popstate') return;
@@ -23,19 +28,19 @@
 	// isChapterPage: true only when we are actually on a chapter route (ODR or compare).
 	// readingPosition tracks infinite-scroll advances within a chapter page.
 	// navOverride lets non-chapter pages (search) show a contextual reference.
-	$: isChapterPage = !!$page.params.book && !!$page.params.chapter;
-	$: isHomePage = $page.url.pathname === '/';
-	$: translationId = ($page.params.translation as string) ?? 'odr';
-	$: bookSlug = isChapterPage
+	let isChapterPage = $derived(!!$page.params.book && !!$page.params.chapter);
+	let isHomePage = $derived($page.url.pathname === '/');
+	let translationId = $derived(($page.params.translation as string) ?? 'odr');
+	let bookSlug = $derived(isChapterPage
 		? ($readingPosition?.bookSlug ?? $page.params.book ?? '')
-		: ($navOverride?.bookSlug ?? $page.params.book ?? '');
-	$: chapterNum = isChapterPage
+		: ($navOverride?.bookSlug ?? $page.params.book ?? ''));
+	let chapterNum = $derived(isChapterPage
 		? $readingPosition
 			? String($readingPosition.chapter)
 			: ($page.params.chapter ?? '')
 		: $navOverride
 			? String($navOverride.chapter)
-			: '';
+			: '');
 
 	onMount(() => {
 		const p = $prefs;
@@ -85,7 +90,7 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleGlobalKeydown} />
+<svelte:window onkeydown={handleGlobalKeydown} />
 <a href="#main-content" class="skip-link">Skip to reading</a>
 <div class="min-h-screen bg-background text-foreground" style="font-family: var(--font-reader)">
 	{#if $page.data.showLayoutTopBar !== false}
@@ -99,7 +104,7 @@
 			{translationId}
 		/>
 	{/if}
-	<slot />
+	{@render children?.()}
 	<SiteFooter />
 </div>
 <PrayerModal />

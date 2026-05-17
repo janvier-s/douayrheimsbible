@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { run, createBubbler, stopPropagation } from 'svelte/legacy';
+
+	const bubble = createBubbler();
 	import { fade } from 'svelte/transition';
 	import { loadBook, loadTranslationBook } from '$lib/data/loader';
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
@@ -14,11 +17,25 @@
 		return (slug && SLUG_TO_NAME[slug]) || osisBook;
 	}
 
-	export let osisRanges: OsisRange[] = [];
-	export let anchorEl: HTMLElement | null = null;
-	export let visible: boolean = false;
-	/** Which translation's verses to show. Defaults to 'odr'. */
-	export let translationId: string = 'odr';
+	
+	interface Props {
+		osisRanges?: OsisRange[];
+		anchorEl?: HTMLElement | null;
+		visible?: boolean;
+		/** Which translation's verses to show. Defaults to 'odr'. */
+		translationId?: string;
+		onmouseenter?: (e: MouseEvent) => void;
+		onmouseleave?: (e: MouseEvent) => void;
+	}
+
+	let {
+		osisRanges = [],
+		anchorEl = null,
+		visible = false,
+		translationId = 'odr',
+		onmouseenter,
+		onmouseleave
+	}: Props = $props();
 
 	interface VerseEntry {
 		ref: string;
@@ -27,51 +44,22 @@
 		isChapter?: boolean;
 	}
 
-	let x = 0;
-	let y = 0;
-	let windowWidth = 1024;
-	let windowHeight = 768;
-	let loading = false;
-	let entries: VerseEntry[] = [];
-	let flipBelow = false;
-	let maxH = '60vh';
-	let tooltipEl: HTMLElement;
-	let needsScroll = false;
+	let x = $state(0);
+	let y = $state(0);
+	let windowWidth = $state(1024);
+	let windowHeight = $state(768);
+	let loading = $state(false);
+	let entries: VerseEntry[] = $state([]);
+	let flipBelow = $state(false);
+	let maxH = $state('60vh');
+	let tooltipEl: HTMLElement | undefined = $state();
+	let needsScroll = $state(false);
 
-	$: if (entries.length > 0 && tooltipEl) {
-		// Check after render if content overflows
-		requestAnimationFrame(() => {
-			needsScroll = tooltipEl.scrollHeight > tooltipEl.clientHeight + 20;
-		});
-	}
 
 	const TOOLTIP_WIDTH = 320;
 	const CLAMP_EDGE = TOOLTIP_WIDTH / 2 + 20;
-	$: left = Math.min(Math.max(x, CLAMP_EDGE), windowWidth - CLAMP_EDGE);
 
-	$: if (visible && anchorEl) {
-		const rect = anchorEl.getBoundingClientRect();
-		x = rect.left + rect.width / 2; // eslint-disable-line no-useless-assignment
-		// Measure topbar height as ceiling
-		const topbar = document.querySelector('header.sticky');
-		const ceiling = topbar ? topbar.getBoundingClientRect().bottom : 0;
-		const spaceAbove = rect.top - ceiling - 8;
-		const spaceBelow = windowHeight - rect.bottom - 16;
-		// Estimate tooltip height: ~80px per verse entry, ~40px per chapter entry + 30px for chrome
-		const verseCount = osisRanges.filter((r) => r.startVerse !== undefined).length;
-		const chapterCount = osisRanges.filter((r) => r.startVerse === undefined).length;
-		const estimatedH = Math.min(verseCount * 80 + chapterCount * 40 + 30, windowHeight * 0.6);
-		// Prefer above, but flip below if content won't fit above
-		flipBelow = spaceAbove < estimatedH && spaceBelow > spaceAbove;
-		y = flipBelow ? rect.bottom : rect.top;
-		maxH = `${Math.min(Math.max(flipBelow ? spaceBelow : spaceAbove, 120), windowHeight * 0.6)}px`;
-		loadEntries(osisRanges);
-	} else if (!visible) {
-		entries = [];
-		loading = false;
-	}
 
-	$: routeBase = translationId === 'odr' ? '/odr' : `/${translationId}`;
 
 	async function loadEntries(ranges: OsisRange[]) {
 		if (ranges.length === 0) return;
@@ -135,6 +123,40 @@
 		entries = result;
 		loading = false;
 	}
+	run(() => {
+		if (visible && anchorEl) {
+			const rect = anchorEl.getBoundingClientRect();
+			x = rect.left + rect.width / 2; // eslint-disable-line no-useless-assignment
+			// Measure topbar height as ceiling
+			const topbar = document.querySelector('header.sticky');
+			const ceiling = topbar ? topbar.getBoundingClientRect().bottom : 0;
+			const spaceAbove = rect.top - ceiling - 8;
+			const spaceBelow = windowHeight - rect.bottom - 16;
+			// Estimate tooltip height: ~80px per verse entry, ~40px per chapter entry + 30px for chrome
+			const verseCount = osisRanges.filter((r) => r.startVerse !== undefined).length;
+			const chapterCount = osisRanges.filter((r) => r.startVerse === undefined).length;
+			const estimatedH = Math.min(verseCount * 80 + chapterCount * 40 + 30, windowHeight * 0.6);
+			// Prefer above, but flip below if content won't fit above
+			flipBelow = spaceAbove < estimatedH && spaceBelow > spaceAbove;
+			y = flipBelow ? rect.bottom : rect.top;
+			maxH = `${Math.min(Math.max(flipBelow ? spaceBelow : spaceAbove, 120), windowHeight * 0.6)}px`;
+			loadEntries(osisRanges);
+		} else if (!visible) {
+			entries = [];
+			loading = false;
+		}
+	});
+	run(() => {
+		if (entries.length > 0 && tooltipEl) {
+			const el = tooltipEl;
+			// Check after render if content overflows
+			requestAnimationFrame(() => {
+				needsScroll = el.scrollHeight > el.clientHeight + 20;
+			});
+		}
+	});
+	let left = $derived(Math.min(Math.max(x, CLAMP_EDGE), windowWidth - CLAMP_EDGE));
+	let routeBase = $derived(translationId === 'odr' ? '/odr' : `/${translationId}`);
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} bind:innerHeight={windowHeight} />
@@ -150,11 +172,11 @@
 		style="left: {left}px; top: {y}px; max-height: {maxH};"
 		transition:fade={{ duration: 120 }}
 		role="tooltip"
-		on:mouseenter
-		on:mouseleave
-		on:focusin
-		on:focusout
-		on:wheel|stopPropagation
+		{onmouseenter}
+		{onmouseleave}
+		onfocusin={bubble('focusin')}
+		onfocusout={bubble('focusout')}
+		onwheel={stopPropagation(bubble('wheel'))}
 	>
 		<div class="rule"></div>
 

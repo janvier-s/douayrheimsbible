@@ -3,8 +3,8 @@
 	import { offline } from '$lib/stores/offline';
 	import { fade } from 'svelte/transition';
 
-	let show = false;
-	let dismissed = false;
+	let show = $state(false);
+	let dismissed = $state(false);
 
 	onMount(() => {
 		// Only show in installed PWA mode
@@ -43,7 +43,7 @@
 		</p>
 		<div class="install-actions">
 			<a href="/download" class="install-link">Go to Downloads</a>
-			<button class="install-dismiss" on:click={dismiss}>
+			<button class="install-dismiss" onclick={dismiss}>
 				Not now
 				<span class="install-hint"
 					>You can always download later from the <a href="/download" class="install-hint-link"

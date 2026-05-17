@@ -2,8 +2,12 @@
 <script lang="ts">
 	import type { InlineAnnotation } from '$lib/data/types';
 
-	export let text: string;
-	export let annotations: InlineAnnotation[] = [];
+	interface Props {
+		text: string;
+		annotations?: InlineAnnotation[];
+	}
+
+	let { text, annotations = [] }: Props = $props();
 
 	function renderText(raw: string): string {
 		// Text is from trusted build-time JSON; we only inject our own <button> tags
@@ -12,8 +16,8 @@
 		});
 	}
 
-	let openMarker: string | null = null;
-	let footnotesExpanded = false;
+	let openMarker: string | null = $state(null);
+	let footnotesExpanded = $state(false);
 
 	function handleTextClick(e: MouseEvent) {
 		const btn = (e.target as HTMLElement).closest('[data-marker]') as HTMLElement | null;
@@ -29,15 +33,15 @@
 		if (openMarker && e.key === 'Escape') openMarker = null;
 	}
 
-	$: sanitizedHtml = renderText(text);
-	$: activeAnnotation = annotations.find((a) => a.marker === openMarker) ?? null;
-	$: footnoteCount = annotations.length;
+	let sanitizedHtml = $derived(renderText(text));
+	let activeAnnotation = $derived(annotations.find((a) => a.marker === openMarker) ?? null);
+	let footnoteCount = $derived(annotations.length);
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
-<div class="relative" on:click={handleTextClick}>
+<div class="relative" onclick={handleTextClick}>
 	<div class="prose-text font-reader text-[13px] leading-relaxed text-foreground">
 		{@html sanitizedHtml}
 	</div>
@@ -55,7 +59,7 @@
 		<button
 			class="notes-toggle"
 			aria-expanded={footnotesExpanded}
-			on:click={() => (footnotesExpanded = !footnotesExpanded)}
+			onclick={() => (footnotesExpanded = !footnotesExpanded)}
 		>
 			<span class="notes-toggle-icon" aria-hidden="true">{footnotesExpanded ? '▲' : '▼'}</span>
 			{footnoteCount} note{footnoteCount > 1 ? 's' : ''}

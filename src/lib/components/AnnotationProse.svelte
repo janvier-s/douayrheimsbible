@@ -1,5 +1,7 @@
 <!-- src/lib/components/AnnotationProse.svelte -->
 <script lang="ts">
+	import { stopPropagation } from 'svelte/legacy';
+
 	import { onDestroy } from 'svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
@@ -9,14 +11,27 @@
 	import type { OsisRange } from '$lib/search/reference';
 	import type { AnnotationNote } from '$lib/data/types';
 
-	export let text: string;
-	export let notes: AnnotationNote[] = [];
-	/** Use stricter parsing to avoid false positives in patristic-heavy content */
-	export let conservativeLinks: boolean = false;
-	/** Also linkify bare (non-italic) DRC-style references like "Gen. 12. 22." */
-	export let linkifyBare: boolean = false;
-	/** Translation prefix for direct chapter links (e.g. "odr", "drc") */
-	export let translationPrefix: string | undefined = undefined;
+	
+	
+	
+	interface Props {
+		text: string;
+		notes?: AnnotationNote[];
+		/** Use stricter parsing to avoid false positives in patristic-heavy content */
+		conservativeLinks?: boolean;
+		/** Also linkify bare (non-italic) DRC-style references like "Gen. 12. 22." */
+		linkifyBare?: boolean;
+		/** Translation prefix for direct chapter links (e.g. "odr", "drc") */
+		translationPrefix?: string | undefined;
+	}
+
+	let {
+		text,
+		notes = [],
+		conservativeLinks = false,
+		linkifyBare = false,
+		translationPrefix = undefined
+	}: Props = $props();
 
 	/** Renumber numeric markers sequentially across the full text and notes. */
 	function renumber(
@@ -57,7 +72,7 @@
 		});
 	}
 
-	let proseEl: HTMLElement;
+	let proseEl: HTMLElement | undefined = $state();
 
 	function scrollToInlineMarker(marker: string) {
 		// Use data-mn attribute — more reliable than id for {@html}-injected elements
@@ -114,14 +129,14 @@
 		el.addEventListener('animationend', () => el.classList.remove('note-blink'), { once: true });
 	}
 
-	let openMn: string | null = null;
-	let popoverAnchorEl: HTMLElement | null = null;
+	let openMn: string | null = $state(null);
+	let popoverAnchorEl: HTMLElement | null = $state(null);
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
-	let openVerseRef: OsisRange[] = [];
-	let verseRefAnchorEl: HTMLElement | null = null;
-	let verseRefVisible = false;
-	let verseRefTimer: ReturnType<typeof setTimeout> | null = null;
+	let openVerseRef: OsisRange[] = $state([]);
+	let verseRefAnchorEl: HTMLElement | null = $state(null);
+	let verseRefVisible = $state(false);
+	let verseRefTimer: ReturnType<typeof setTimeout> | null = $state(null);
 
 	function dismiss() {
 		if (hoverTimer) {
@@ -194,22 +209,22 @@
 		if (verseRefTimer) clearTimeout(verseRefTimer);
 	});
 
-	$: ({ html: sequentialText, notes: sequentialNotes } = renumber(text, notes));
-	$: paragraphs = renderParagraphs(sequentialText);
-	$: activeNote = sequentialNotes.find((n) => String(n.marker) === openMn) ?? null;
+	let { html: sequentialText, notes: sequentialNotes } = $derived(renumber(text, notes));
+	let paragraphs = $derived(renderParagraphs(sequentialText));
+	let activeNote = $derived(sequentialNotes.find((n) => String(n.marker) === openMn) ?? null);
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
-<!-- svelte-ignore a11y_no_static_element_interactions a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y_no_static_element_interactions a11y_click_events_have_key_events -->
 <div
 	class="annotation-prose"
 	bind:this={proseEl}
-	on:mouseover={handleMouseover}
-	on:mouseout={handleMouseout}
-	on:focus={handleMouseover}
-	on:blur={handleMouseout}
-	on:click={(e) => {
+	onmouseover={handleMouseover}
+	onmouseout={handleMouseout}
+	onfocus={handleMouseover}
+	onblur={handleMouseout}
+	onclick={(e) => {
 		const btn = (e.target as HTMLElement).closest('.mn-marker') as HTMLElement | null;
 		if (btn) {
 			const marker = btn.dataset.mn;
@@ -229,7 +244,7 @@
 				<li class="ann-note-row" data-note-marker={note.marker}>
 					<button
 						class="ann-note-marker"
-						on:click|stopPropagation={() => scrollToInlineMarker(String(note.marker))}
+						onclick={stopPropagation(() => scrollToInlineMarker(String(note.marker)))}
 						aria-label="Go to marker {note.marker} in text">{note.marker}</button
 					>
 					<span class="ann-note-text"
@@ -264,10 +279,10 @@
 		osisRanges={openVerseRef}
 		anchorEl={verseRefAnchorEl}
 		visible={verseRefVisible}
-		on:mouseenter={() => {
+		onmouseenter={() => {
 			if (verseRefTimer) clearTimeout(verseRefTimer);
 		}}
-		on:mouseleave={() => {
+		onmouseleave={() => {
 			verseRefTimer = setTimeout(() => {
 				verseRefVisible = false;
 				verseRefAnchorEl = null;

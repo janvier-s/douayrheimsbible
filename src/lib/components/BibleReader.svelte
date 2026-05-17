@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run, passive } from 'svelte/legacy';
+
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
 	import { replaceState } from '$app/navigation';
@@ -23,18 +25,34 @@
 	import PageFooter from './PageFooter.svelte';
 	import { isMobile } from '$lib/stores/mobile';
 
-	export let initialBookMeta: BookMeta;
-	export let initialChapter: Chapter;
-	export let initialTotalChapters: number;
-	export let targetVerse: number | undefined = undefined;
-	export let enablePrevScroll: boolean = true;
-	export let routeBase: string = '/odr';
-	export let translationId: string = 'odr';
-	/** SSR-available book title for chapter 1 (e.g. "The Holy Gospel of Jesus Christ\naccording to John.").
+	
+	
+	interface Props {
+		initialBookMeta: BookMeta;
+		initialChapter: Chapter;
+		initialTotalChapters: number;
+		targetVerse?: number | undefined;
+		enablePrevScroll?: boolean;
+		routeBase?: string;
+		translationId?: string;
+		/** SSR-available book title for chapter 1 (e.g. "The Holy Gospel of Jesus Christ\naccording to John.").
 	 *  Passed from the page load function to avoid a post-mount CLS when currentBookData resolves. */
-	export let initialBookTitle: string | null = null;
-	/** SSR-available short title (e.g. "John"). Same rationale as initialBookTitle. */
-	export let initialShortTitle: string | null = null;
+		initialBookTitle?: string | null;
+		/** SSR-available short title (e.g. "John"). Same rationale as initialBookTitle. */
+		initialShortTitle?: string | null;
+	}
+
+	let {
+		initialBookMeta,
+		initialChapter,
+		initialTotalChapters,
+		targetVerse = undefined,
+		enablePrevScroll = true,
+		routeBase = '/odr',
+		translationId = 'odr',
+		initialBookTitle = null,
+		initialShortTitle = null
+	}: Props = $props();
 
 	/** Load a chapter from the correct data source based on translationId */
 	async function fetchChapter(
@@ -64,15 +82,15 @@
 		totalChapters: number;
 	}
 
-	let chapters: LoadedChapter[] = [
+	let chapters: LoadedChapter[] = $state([
 		{
 			bookMeta: initialBookMeta,
 			chapter: initialChapter,
 			totalChapters: initialTotalChapters
 		}
-	];
+	]);
 
-	let container: HTMLElement;
+	let container: HTMLElement | undefined = $state();
 	// Single mutex — next and prev never run concurrently.
 	// loadPrevChapter measures scrollHeight for compensation; a concurrent
 	// loadNextChapter's tick() may not have flushed yet, leaving oldHeight stale
@@ -86,25 +104,31 @@
 	// The inner panel width is managed exclusively via direct DOM (resize utility)
 	// to avoid Svelte's style binding overwriting the drag position on each
 	// debounce tick ($prefs.studyPanelWidth updates every 200ms during drag).
-	let liveWidth = '';
-	let panelDragging = false;
-	let reducedMotion = false;
+	let liveWidth = $state('');
+	let panelDragging = $state(false);
+	let reducedMotion = $state(false);
 	const resize = createPanelResize(
 		(w) => (liveWidth = w),
 		(d) => (panelDragging = d)
 	);
-	$: if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
-	$: mobileStudyMode = $isMobile && $prefs.readingMode === 'study';
-	let mobilePanelOpen = false;
-	$: if (!mobileStudyMode) mobilePanelOpen = false;
-	$: if ($scrollTrigger !== null && mobileStudyMode) mobilePanelOpen = true;
-	$: panelMaxWidth =
-		$prefs.readingMode === 'study' ? ($isMobile ? '100%' : `calc(${liveWidth} + 16px)`) : '0';
-	$: panelWidth = mobileStudyMode ? '100%' : '';
-	$: panelHeight = $isMobile
+	run(() => {
+		if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
+	});
+	let mobileStudyMode = $derived($isMobile && $prefs.readingMode === 'study');
+	let mobilePanelOpen = $state(false);
+	run(() => {
+		if (!mobileStudyMode) mobilePanelOpen = false;
+	});
+	run(() => {
+		if ($scrollTrigger !== null && mobileStudyMode) mobilePanelOpen = true;
+	});
+	let panelMaxWidth =
+		$derived($prefs.readingMode === 'study' ? ($isMobile ? '100%' : `calc(${liveWidth} + 16px)`) : '0');
+	let panelWidth = $derived(mobileStudyMode ? '100%' : '');
+	let panelHeight = $derived($isMobile
 		? 'calc(100lvh - var(--header-height) - 56px - env(safe-area-inset-bottom, 0px))'
-		: 'calc(100vh - var(--header-height))';
-	$: panelTransition = reducedMotion
+		: 'calc(100vh - var(--header-height))');
+	let panelTransition = $derived(reducedMotion
 		? 'none'
 		: panelDragging
 			? 'opacity 250ms ease'
@@ -112,22 +136,28 @@
 				? 'transform 320ms cubic-bezier(0.32, 0.72, 0, 1), opacity 200ms ease'
 				: $isMobile
 					? 'opacity 150ms ease'
-					: 'max-width 250ms ease, opacity 250ms ease';
-	let panelEl: HTMLElement;
-	$: if (panelEl) resize.bindPanel(panelEl);
+					: 'max-width 250ms ease, opacity 250ms ease');
+	let panelEl: HTMLElement | undefined = $state();
+	run(() => {
+		if (panelEl) resize.bindPanel(panelEl);
+	});
 	// Sync inner panel width when not dragging (initial render + settings changes).
 	// During drag, the resize utility sets panelEl.style.width directly.
-	$: if (panelEl && !panelDragging && !$isMobile) panelEl.style.width = $prefs.studyPanelWidth;
-	$: if (panelEl && $isMobile && $prefs.readingMode === 'study') panelEl.style.width = '100%';
+	run(() => {
+		if (panelEl && !panelDragging && !$isMobile) panelEl.style.width = $prefs.studyPanelWidth;
+	});
+	run(() => {
+		if (panelEl && $isMobile && $prefs.readingMode === 'study') panelEl.style.width = '100%';
+	});
 
 	// Re-evaluated whenever readingPosition changes (slug or chapter switch).
 	// After the initial loadBook in onMount, we assign directly to pick up the data.
 	// eslint-disable-next-line no-useless-assignment
-	let currentBookData: BookData | null = null;
-	$: {
+	let currentBookData: BookData | null = $state(null);
+	run(() => {
 		const slug = $readingPosition?.bookSlug ?? initialBookMeta.slug;
 		currentBookData = getCachedBook(slug);
-	}
+	});
 
 	const updatePosition = debounce((slug: string, ch: number) => {
 		replaceState(`${routeBase}/${slug}/${ch}`, {});
@@ -188,7 +218,7 @@
 					{ bookMeta: last.bookMeta, chapter: result.chapter, totalChapters: last.totalChapters }
 				];
 				await tick();
-				observeNewHeading(container, ensureObserver(), last.bookMeta.slug, nextChNum);
+				observeNewHeading(container!, ensureObserver(), last.bookMeta.slug, nextChNum);
 				// Prune chapters far above the viewport to cap DOM size.
 				const excess = chapters.length - MAX_CHAPTERS;
 				if (excess > 0) await pruneFront(excess);
@@ -237,7 +267,7 @@
 				await tick();
 				const newHeight = document.documentElement.scrollHeight;
 				window.scrollTo({ top: scrollY + (newHeight - oldHeight), behavior: 'instant' });
-				observeNewHeading(container, ensureObserver(), targetBookMeta.slug, prevChNum);
+				observeNewHeading(container!, ensureObserver(), targetBookMeta.slug, prevChNum);
 				// Prune chapters far below the viewport to cap DOM size.
 				const excess = chapters.length - MAX_CHAPTERS;
 				if (excess > 0) pruneBack(excess);
@@ -251,10 +281,10 @@
 		checkRollingPreload();
 	}
 
-	$: last = chapters[chapters.length - 1];
+	let last = $derived(chapters[chapters.length - 1]);
 
 	const COLUMN_WIDTHS = { narrow: 600, default: 750, wide: 920 };
-	$: columnMaxWidth = COLUMN_WIDTHS[$prefs.columnWidth] ?? 750;
+	let columnMaxWidth = $derived(COLUMN_WIDTHS[$prefs.columnWidth] ?? 750);
 
 	let scrollReady = false;
 	let scrollRaf = 0;
@@ -282,7 +312,9 @@
 		}
 		if (idx < 2) loadPrevChapter();
 	}
-	$: ($readingPosition, checkRollingPreload());
+	run(() => {
+		$readingPosition; checkRollingPreload();
+	});
 
 	function onScrollCheck() {
 		if (!browser || !$prefs.infiniteScroll || !scrollReady) return;
@@ -377,7 +409,7 @@
 			chapter: initialChapter.chapter,
 			routeBase
 		});
-		observeAllHeadings(container, ensureObserver());
+		observeAllHeadings(container!, ensureObserver());
 		window.addEventListener('scroll', onScroll, { passive: true });
 		if (translationId === 'odr') {
 			try {
@@ -417,7 +449,7 @@
 	});
 </script>
 
-<svelte:window on:mousemove={resize.onMousemove} on:mouseup={resize.onMouseup} />
+<svelte:window onmousemove={resize.onMousemove} onmouseup={resize.onMouseup} />
 
 <div class="flex items-start" data-mode={$prefs.readingMode}>
 	<main
@@ -485,11 +517,11 @@
 			aria-valuemax={640}
 			tabindex="0"
 			class="panel-resize-zone shrink-0 cursor-col-resize self-stretch outline-none max-md:hidden"
-			on:mousedown={resize.onDividerMousedown}
-			on:touchstart|passive={resize.onTouchStart}
-			on:touchmove|passive={resize.onTouchMove}
-			on:touchend|passive={resize.onTouchEnd}
-			on:keydown={resize.onKeydown}
+			onmousedown={resize.onDividerMousedown}
+			use:passive={['touchstart', () => resize.onTouchStart as EventListener]}
+			use:passive={['touchmove', () => resize.onTouchMove as EventListener]}
+			use:passive={['touchend', () => resize.onTouchEnd]}
+			onkeydown={resize.onKeydown}
 		>
 			<div class="panel-resize-bar">
 				<div class="panel-resize-grip" aria-hidden="true">

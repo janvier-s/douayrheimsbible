@@ -4,12 +4,16 @@
 	import FathersVerseList from './FathersVerseList.svelte';
 	import FathersCommentaryPanel from './FathersCommentaryPanel.svelte';
 
-	export let bookMeta: BookMeta;
-	export let chapter: Chapter;
-	export let fathersData: FathersChapterFile | null;
+	interface Props {
+		bookMeta: BookMeta;
+		chapter: Chapter;
+		fathersData: FathersChapterFile | null;
+	}
 
-	let selectedVerse: number | null = null;
-	let selectedPericope: string | null = null;
+	let { bookMeta, chapter, fathersData }: Props = $props();
+
+	let selectedVerse: number | null = $state(null);
+	let selectedPericope: string | null = $state(null);
 
 	function handleVerseSelect(e: CustomEvent<number>) {
 		const verse = e.detail;
@@ -22,13 +26,13 @@
 		selectedVerse = null;
 	}
 
-	let filteredVerseEntryCounts: Record<number, number> | null = null;
+	let filteredVerseEntryCounts: Record<number, number> | null = $state(null);
 
 	function handleFilteredCounts(e: CustomEvent<Record<number, number> | null>) {
 		filteredVerseEntryCounts = e.detail;
 	}
 
-	$: data = fathersData ?? { pericopes: [], verseEntryCounts: {}, totalEntries: 0 };
+	let data = $derived(fathersData ?? { pericopes: [], verseEntryCounts: {}, totalEntries: 0 });
 </script>
 
 <div class="flex flex-1 items-stretch min-h-0">

@@ -13,25 +13,29 @@
 	import { ALL_BOOKS, getPrevNavBook, getNextNavBook } from '$lib/data/books';
 	import type { BookMeta } from '$lib/data/types';
 
-	export let bookMeta: BookMeta;
-	export let chapterNum: number;
+	interface Props {
+		bookMeta: BookMeta;
+		chapterNum: number;
+	}
+
+	let { bookMeta, chapterNum }: Props = $props();
 
 	// Return URLs derived from the last known reading position or current compare context.
-	$: _base = $readingPosition?.routeBase ?? '/odr';
-	$: _slug = $readingPosition?.bookSlug ?? bookMeta.slug;
-	$: _ch = $readingPosition?.chapter ?? chapterNum;
-	$: readerHref = `${_base}/${_slug}/${_ch}`;
+	let _base = $derived($readingPosition?.routeBase ?? '/odr');
+	let _slug = $derived($readingPosition?.bookSlug ?? bookMeta.slug);
+	let _ch = $derived($readingPosition?.chapter ?? chapterNum);
+	let readerHref = $derived(`${_base}/${_slug}/${_ch}`);
 
 	// Build toggle items — study is always available (uses same href as reading)
-	$: modeItems = [
+	let modeItems = $derived([
 		{ key: 'reading', label: 'Read' },
 		{ key: 'study', label: 'Study' },
 		{ key: 'compare', label: 'Compare' },
 		{ key: 'fathers', label: 'Fathers' }
-	];
-	$: activeModeIdx = modeItems.findIndex((m) => m.key === 'compare');
+	]);
+	let activeModeIdx = $derived(modeItems.findIndex((m) => m.key === 'compare'));
 
-	let pendingIdx = -1;
+	let pendingIdx = $state(-1);
 
 	async function selectMode(key: string, index: number) {
 		if (key === 'compare') return; // already on compare
@@ -51,24 +55,24 @@
 		await selectMode(key, index);
 	}
 
-	let navOpen = false;
-	let prefsOpen = false;
-	let mobileTransOpen = false;
+	let navOpen = $state(false);
+	let prefsOpen = $state(false);
+	let mobileTransOpen = $state(false);
 
-	$: visibleTranslations = $konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden);
+	let visibleTranslations = $derived($konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden));
 
-	$: prevBook = getPrevNavBook(bookMeta.slug) ?? null;
-	$: nextBook = getNextNavBook(bookMeta.slug) ?? null;
-	$: prevChapterHref = chapterNum > 1 ? `/compare/${bookMeta.slug}/${chapterNum - 1}` : null;
-	$: nextChapterHref =
-		chapterNum < bookMeta.chapters ? `/compare/${bookMeta.slug}/${chapterNum + 1}` : null;
+	let prevBook = $derived(getPrevNavBook(bookMeta.slug) ?? null);
+	let nextBook = $derived(getNextNavBook(bookMeta.slug) ?? null);
+	let prevChapterHref = $derived(chapterNum > 1 ? `/compare/${bookMeta.slug}/${chapterNum - 1}` : null);
+	let nextChapterHref =
+		$derived(chapterNum < bookMeta.chapters ? `/compare/${bookMeta.slug}/${chapterNum + 1}` : null);
 
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
 	}
 
-	$: isOT = bookMeta.testament === 'OT';
-	$: navLabel = `${bookMeta.odrName} ${chapterNum}`;
+	let isOT = $derived(bookMeta.testament === 'OT');
+	let navLabel = $derived(`${bookMeta.odrName} ${chapterNum}`);
 
 	function closeAll() {
 		navOpen = false;
@@ -78,7 +82,7 @@
 </script>
 
 <svelte:window
-	on:keydown={(e) => {
+	onkeydown={(e) => {
 		if (e.key === 'Escape') closeAll();
 	}}
 />
@@ -109,7 +113,7 @@
 					{@const active = $compareStore.visible.has(t.id)}
 					<div class="relative group/tip">
 						<button
-							on:click={() => compareStore.toggle(t.id, isOT)}
+							onclick={() => compareStore.toggle(t.id, isOT)}
 							{disabled}
 							class="px-[9px] py-[3px] rounded-[3px] text-[11px] font-medium uppercase tracking-[0.1em] border transition-colors duration-fast
 								{disabled
@@ -142,7 +146,7 @@
 					{mobileTransOpen
 					? 'bg-interactive text-white border-interactive'
 					: 'text-foreground hover:text-accent'}"
-				on:click={() => {
+				onclick={() => {
 					mobileTransOpen = !mobileTransOpen;
 					navOpen = false;
 					prefsOpen = false;
@@ -167,7 +171,7 @@
 								type="checkbox"
 								checked={$compareStore.visible.has(t.id)}
 								{disabled}
-								on:change={() => compareStore.toggle(t.id, isOT)}
+								onchange={() => compareStore.toggle(t.id, isOT)}
 								class="accent-accent"
 							/>
 							<span class="text-[13px] text-foreground">{t.abbr}</span>
@@ -204,7 +208,7 @@
 			<button
 				class="flex items-center gap-[5px] px-[12px] md:px-[17px] py-[8px] md:py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
-				on:click={() => {
+				onclick={() => {
 					navOpen = !navOpen;
 					prefsOpen = false;
 					mobileTransOpen = false;
@@ -243,7 +247,7 @@
 				class="hidden sm:flex px-[8px] h-[28px] items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 				aria-label="Reading options"
-				on:click={() => {
+				onclick={() => {
 					prefsOpen = !prefsOpen;
 					navOpen = false;
 					mobileTransOpen = false;
@@ -257,7 +261,7 @@
 					rounded-[3px] transition-colors duration-fast
 					{prefsOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 				aria-label="Reading options"
-				on:click={() => {
+				onclick={() => {
 					prefsOpen = !prefsOpen;
 					navOpen = false;
 					mobileTransOpen = false;
@@ -299,8 +303,8 @@
 {/if}
 
 {#if navOpen || prefsOpen || mobileTransOpen}
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="fixed inset-0 z-[57]" role="presentation" on:click={closeAll}></div>
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="fixed inset-0 z-[57]" role="presentation" onclick={closeAll}></div>
 {/if}
 
 <!-- Bottom tab bar — mobile only -->

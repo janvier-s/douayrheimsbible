@@ -4,12 +4,25 @@
 	import { browser } from '$app/environment';
 	import { prefs } from '$lib/stores/prefs';
 
-	export let title: string;
-	export let subtitle: string = '';
-	export let ogImage: string = 'https://thedouayrheims.com/images/dr-1582-rheims.webp';
-	export let datePublished: string | undefined = undefined;
-	export let faqItems: Array<{ q: string; a: string }> = [];
-	export let navItems: Array<{ path: string; label: string }> | undefined = undefined;
+	interface Props {
+		title: string;
+		subtitle?: string;
+		ogImage?: string;
+		datePublished?: string | undefined;
+		faqItems?: Array<{ q: string; a: string }>;
+		navItems?: Array<{ path: string; label: string }> | undefined;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		title,
+		subtitle = '',
+		ogImage = 'https://thedouayrheims.com/images/dr-1582-rheims.webp',
+		datePublished = undefined,
+		faqItems = [],
+		navItems = undefined,
+		children
+	}: Props = $props();
 
 	const SITE = 'https://thedouayrheims.com';
 
@@ -36,12 +49,12 @@
 
 	const PROSE_WIDTHS = { narrow: 580, default: 700, wide: 860 };
 	const PROSE_SUBTITLE_WIDTHS = { narrow: 460, default: 560, wide: 680 };
-	$: proseWidth = PROSE_WIDTHS[$prefs.columnWidth] ?? 700;
-	$: proseSubtitleWidth = PROSE_SUBTITLE_WIDTHS[$prefs.columnWidth] ?? 560;
+	let proseWidth = $derived(PROSE_WIDTHS[$prefs.columnWidth] ?? 700);
+	let proseSubtitleWidth = $derived(PROSE_SUBTITLE_WIDTHS[$prefs.columnWidth] ?? 560);
 
-	$: canonicalUrl = SITE + $page.url.pathname;
+	let canonicalUrl = $derived(SITE + $page.url.pathname);
 
-	$: breadcrumbItems = (() => {
+	let breadcrumbItems = $derived((() => {
 		const parts = $page.url.pathname.split('/').filter(Boolean);
 		const items: Array<{ name: string; item: string }> = [{ name: 'Home', item: SITE + '/' }];
 		let current = SITE;
@@ -52,12 +65,12 @@
 		}
 		if (parts.length > 0) items.push({ name: title, item: canonicalUrl });
 		return items;
-	})();
+	})());
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
 
-	$: articleSchema = {
+	let articleSchema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'Article',
 		headline: title,
@@ -77,9 +90,9 @@
 			logo: { '@type': 'ImageObject', url: SITE + '/favicon-96x96.png' }
 		},
 		isPartOf: { '@type': 'WebSite', name: 'Douay-Rheims Bible', url: SITE }
-	};
+	});
 
-	$: breadcrumbSchema = {
+	let breadcrumbSchema = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
 		itemListElement: breadcrumbItems.map((item, i) => ({
@@ -88,10 +101,10 @@
 			name: item.name,
 			item: item.item
 		}))
-	};
+	});
 
-	$: faqSchema =
-		faqItems.length > 0
+	let faqSchema =
+		$derived(faqItems.length > 0
 			? {
 					'@context': 'https://schema.org',
 					'@type': 'FAQPage',
@@ -101,16 +114,16 @@
 						acceptedAnswer: { '@type': 'Answer', text: a }
 					}))
 				}
-			: null;
+			: null);
 
-	$: jsonLdHtml =
-		scriptOpen +
+	let jsonLdHtml =
+		$derived(scriptOpen +
 		JSON.stringify(articleSchema) +
 		scriptClose +
 		scriptOpen +
 		JSON.stringify(breadcrumbSchema) +
 		scriptClose +
-		(faqSchema ? scriptOpen + JSON.stringify(faqSchema) + scriptClose : '');
+		(faqSchema ? scriptOpen + JSON.stringify(faqSchema) + scriptClose : ''));
 
 	const NAV_ARTICLES = [
 		{ path: '/history', label: 'History' },
@@ -128,15 +141,15 @@
 		{ path: '/history/scripture-for-all', label: 'Scripture for All' }
 	];
 
-	let articleEl: HTMLElement;
+	let articleEl: HTMLElement | undefined = $state();
 
-	$: activeNav = navItems ?? NAV_ARTICLES;
-	$: isInNav = activeNav.some((a) => a.path === $page.url.pathname);
+	let activeNav = $derived(navItems ?? NAV_ARTICLES);
+	let isInNav = $derived(activeNav.some((a) => a.path === $page.url.pathname));
 
 	// TOC
 	type TocItem = { id: string; text: string };
-	let tocItems: TocItem[] = [];
-	let activeId = '';
+	let tocItems: TocItem[] = $state([]);
+	let activeId = $state('');
 	let scrollRaf = 0;
 
 	function slugify(text: string): string {
@@ -277,7 +290,7 @@
 		}}
 		bind:this={articleEl}
 	>
-		<slot />
+		{@render children?.()}
 	</article>
 
 	{#if faqItems.length > 0}

@@ -2,22 +2,31 @@
 	import type { FathersEntry } from '$lib/data/fathers-types';
 	import { linkifyBareRefs } from '$lib/search/crossRefParser';
 
-	export let entry: FathersEntry;
-	export let highlighted: boolean = false;
-	export let dimmed: boolean = false;
-	export let forceOpen: boolean = false;
+	interface Props {
+		entry: FathersEntry;
+		highlighted?: boolean;
+		dimmed?: boolean;
+		forceOpen?: boolean;
+	}
 
-	let expanded = false;
-	$: isOpen = forceOpen || expanded;
+	let {
+		entry,
+		highlighted = false,
+		dimmed = false,
+		forceOpen = false
+	}: Props = $props();
+
+	let expanded = $state(false);
+	let isOpen = $derived(forceOpen || expanded);
 
 	function toggle() {
 		if (!forceOpen) expanded = !expanded;
 	}
 
 	// The last footnote is always the source reference (PG, PL, CSEL, etc.)
-	$: sourceFootnoteIdx = entry.footnotes.length > 0 ? entry.footnotes.length - 1 : -1;
-	$: sourceFootnote = sourceFootnoteIdx >= 0 ? entry.footnotes[sourceFootnoteIdx] : null;
-	$: inlineFootnotes = entry.footnotes.slice(0, sourceFootnoteIdx);
+	let sourceFootnoteIdx = $derived(entry.footnotes.length > 0 ? entry.footnotes.length - 1 : -1);
+	let sourceFootnote = $derived(sourceFootnoteIdx >= 0 ? entry.footnotes[sourceFootnoteIdx] : null);
+	let inlineFootnotes = $derived(entry.footnotes.slice(0, sourceFootnoteIdx));
 
 	/** Replace {fn:N} with superscript footnote markers, stripping the last (source ref) marker */
 	function renderBody(text: string, lastFnIdx: number): string {
@@ -29,12 +38,12 @@
 		return linkifyBareRefs(html, 'odr');
 	}
 
-	$: bodyParagraphs = entry.body.split('\n\n').filter((p) => p.trim().length > 0);
+	let bodyParagraphs = $derived(entry.body.split('\n\n').filter((p) => p.trim().length > 0));
 
 	// Body text longer than 350 chars will be truncated by the 6em max-height
-	$: bodyTruncated = entry.body.length > 350;
+	let bodyTruncated = $derived(entry.body.length > 350);
 
-	$: buttonLabel = expanded
+	let buttonLabel = $derived(expanded
 		? 'Show less'
 		: bodyTruncated
 			? 'Show more'
@@ -42,7 +51,7 @@
 				? `Show ${inlineFootnotes.length} footnote${inlineFootnotes.length === 1 ? '' : 's'}`
 				: sourceFootnote
 					? 'Show source'
-					: 'Show more';
+					: 'Show more');
 </script>
 
 <article
@@ -94,7 +103,7 @@
 		{#if !forceOpen}
 			<button
 				class="text-[11px] text-subtle hover:text-accent transition-colors duration-fast mt-[4px] pb-[2px]"
-				on:click={toggle}
+				onclick={toggle}
 			>
 				{buttonLabel}
 			</button>

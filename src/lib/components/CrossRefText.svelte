@@ -3,22 +3,26 @@
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
 	import { parseOsis } from '$lib/search/reference';
 
-	export let text: string;
+	interface Props {
+		text: string;
+	}
 
-	$: tokens = tokenizeCrossRef(text);
+	let { text }: Props = $props();
+
+	let tokens = $derived(tokenizeCrossRef(text));
 
 	/** All OSIS ranges from the entire cross-ref string, grouped for one tooltip.
 	 *  Parse OSIS strings directly (not through bcv_parser) so DR/LXX Psalm
 	 *  numbers are preserved exactly as tokenized from the annotation text. */
-	$: allRanges = tokens
+	let allRanges = $derived(tokens
 		.filter((t): t is Extract<typeof t, { type: 'ref' }> => t.type === 'ref')
 		.flatMap((t) => {
 			const r = parseOsis(t.osis);
 			return r ? [r] : [];
-		});
+		}));
 
-	let anchorEl: HTMLElement | null = null;
-	let tooltipVisible = false;
+	let anchorEl: HTMLElement | null = $state(null);
+	let tooltipVisible = $state(false);
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
 	function handleMouseenter(e: MouseEvent) {
@@ -41,7 +45,7 @@
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<span class="cr-text" on:mouseenter={handleMouseenter} on:mouseleave={handleMouseleave}
+<span class="cr-text" onmouseenter={handleMouseenter} onmouseleave={handleMouseleave}
 	>{#each tokens as token, i}{#if token.type === 'text'}{token.content}{:else}{#if i > 0 && tokens[i - 1].type === 'ref'}{' '}{/if}{token.display ||
 				token.osis}{/if}{/each}</span
 >
@@ -50,8 +54,8 @@
 	osisRanges={allRanges}
 	{anchorEl}
 	visible={tooltipVisible}
-	on:mouseenter={handleTooltipMouseenter}
-	on:mouseleave={handleMouseleave}
+	onmouseenter={handleTooltipMouseenter}
+	onmouseleave={handleMouseleave}
 />
 
 <style>

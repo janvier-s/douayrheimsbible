@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { preventDefault } from 'svelte/legacy';
+
 	import { goto } from '$app/navigation';
 	import { parseReference } from '$lib/search/reference';
 	import { resolveReference } from '$lib/search/resolve';
 
-	let value = '';
+	let value = $state('');
 
 	async function handleSubmit() {
 		const trimmed = value.trim();
@@ -22,7 +24,7 @@
 	}
 </script>
 
-<form on:submit|preventDefault={handleSubmit} class="w-full relative">
+<form onsubmit={preventDefault(handleSubmit)} class="w-full relative">
 	<svg
 		class="absolute left-[9px] top-1/2 -translate-y-1/2 w-[16px] h-[16px] text-subtle pointer-events-none"
 		viewBox="0 0 20 20"

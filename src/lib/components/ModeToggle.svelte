@@ -1,17 +1,23 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { tick, createEventDispatcher } from 'svelte';
 
-	export let items: { key: string; label: string }[];
-	export let activeIndex: number;
-	export let pendingIndex: number = -1;
+	interface Props {
+		items: { key: string; label: string }[];
+		activeIndex: number;
+		pendingIndex?: number;
+	}
+
+	let { items, activeIndex, pendingIndex = -1 }: Props = $props();
 
 	const dispatch = createEventDispatcher<{ select: { key: string; index: number } }>();
 
-	$: displayIdx = pendingIndex >= 0 ? pendingIndex : activeIndex;
+	let displayIdx = $derived(pendingIndex >= 0 ? pendingIndex : activeIndex);
 
-	let toggleEl: HTMLElement;
-	let pillLeft = 0;
-	let pillWidth = 0;
+	let toggleEl: HTMLElement | undefined = $state();
+	let pillLeft = $state(0);
+	let pillWidth = $state(0);
 
 	async function measurePill(idx: number) {
 		await tick();
@@ -27,7 +33,9 @@
 		pillWidth = btn.offsetWidth;
 	}
 
-	$: if (toggleEl) measurePill(displayIdx);
+	run(() => {
+		if (toggleEl) measurePill(displayIdx);
+	});
 </script>
 
 <div
@@ -44,7 +52,7 @@
 			class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
 				{displayIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
 			aria-pressed={displayIdx === i}
-			on:click={() => dispatch('select', { key: item.key, index: i })}
+			onclick={() => dispatch('select', { key: item.key, index: i })}
 		>
 			{item.label}
 		</button>

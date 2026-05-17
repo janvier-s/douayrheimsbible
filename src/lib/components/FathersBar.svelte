@@ -12,24 +12,28 @@
 	import type { BookMeta } from '$lib/data/types';
 	import manifest from '../../../static/data/fathers/manifest.json';
 
-	export let bookMeta: BookMeta;
-	export let chapterNum: number;
-	export let totalChapters: number;
+	interface Props {
+		bookMeta: BookMeta;
+		chapterNum: number;
+		totalChapters: number;
+	}
 
-	$: modeItems = [
+	let { bookMeta, chapterNum, totalChapters }: Props = $props();
+
+	let modeItems = $derived([
 		{ key: 'reading', label: 'Read' },
 		{ key: 'study', label: 'Study' },
 		{ key: 'compare', label: 'Compare' },
 		{ key: 'fathers', label: 'Fathers' }
-	];
-	$: activeModeIdx = modeItems.findIndex((m) => m.key === 'fathers');
+	]);
+	let activeModeIdx = $derived(modeItems.findIndex((m) => m.key === 'fathers'));
 
-	let pendingIdx = -1;
+	let pendingIdx = $state(-1);
 
-	$: _base = $readingPosition?.routeBase ?? '/odr';
-	$: _slug = $readingPosition?.bookSlug ?? bookMeta.slug;
-	$: _ch = $readingPosition?.chapter ?? chapterNum;
-	$: readerHref = `${_base}/${_slug}/${_ch}`;
+	let _base = $derived($readingPosition?.routeBase ?? '/odr');
+	let _slug = $derived($readingPosition?.bookSlug ?? bookMeta.slug);
+	let _ch = $derived($readingPosition?.chapter ?? chapterNum);
+	let readerHref = $derived(`${_base}/${_slug}/${_ch}`);
 
 	async function selectMode(key: string, index: number) {
 		if (key === 'fathers') return;
@@ -52,19 +56,19 @@
 	const fathersManifest = manifest as Record<string, number[]>;
 
 	// Chapter nav: skip to nearest chapter that actually has fathers data
-	$: bookChapters = fathersManifest[bookMeta.slug] ?? [];
-	$: prevChapterHref = (() => {
+	let bookChapters = $derived(fathersManifest[bookMeta.slug] ?? []);
+	let prevChapterHref = $derived((() => {
 		for (let ch = chapterNum - 1; ch >= 1; ch--) {
 			if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
 		}
 		return null;
-	})();
-	$: nextChapterHref = (() => {
+	})());
+	let nextChapterHref = $derived((() => {
 		for (let ch = chapterNum + 1; ch <= totalChapters; ch++) {
 			if (bookChapters.includes(ch)) return `/fathers/${bookMeta.slug}/${ch}`;
 		}
 		return null;
-	})();
+	})());
 
 	// Book nav: skip books that have no fathers data at all
 	function findPrevFathersBook(slug: string): (typeof ALL_BOOKS)[number] | null {
@@ -77,11 +81,11 @@
 		while (b && !fathersManifest[b.slug]?.length) b = getNextNavBook(b.slug);
 		return b ?? null;
 	}
-	$: prevBook = findPrevFathersBook(bookMeta.slug);
-	$: nextBook = findNextFathersBook(bookMeta.slug);
+	let prevBook = $derived(findPrevFathersBook(bookMeta.slug));
+	let nextBook = $derived(findNextFathersBook(bookMeta.slug));
 
-	let navOpen = false;
-	let prefsOpen = false;
+	let navOpen = $state(false);
+	let prefsOpen = $state(false);
 
 	function closeAll() {
 		navOpen = false;
@@ -92,11 +96,11 @@
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
 	}
 
-	$: navLabel = `${bookMeta.odrName} ${chapterNum}`;
+	let navLabel = $derived(`${bookMeta.odrName} ${chapterNum}`);
 </script>
 
 <svelte:window
-	on:keydown={(e) => {
+	onkeydown={(e) => {
 		if (e.key === 'Escape') closeAll();
 	}}
 />
@@ -143,7 +147,7 @@
 			<button
 				class="flex items-center gap-[5px] px-[12px] md:px-[17px] py-[8px] md:py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
-				on:click={() => {
+				onclick={() => {
 					navOpen = !navOpen;
 					prefsOpen = false;
 				}}
@@ -181,7 +185,7 @@
 				class="hidden sm:flex px-[8px] h-[28px] items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 				aria-label="Reading options"
-				on:click={() => {
+				onclick={() => {
 					prefsOpen = !prefsOpen;
 					navOpen = false;
 				}}
@@ -193,7 +197,7 @@
 					rounded-[3px] transition-colors duration-fast
 					{prefsOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 				aria-label="Reading options"
-				on:click={() => {
+				onclick={() => {
 					prefsOpen = !prefsOpen;
 					navOpen = false;
 				}}
@@ -241,8 +245,8 @@
 {/if}
 
 {#if navOpen || prefsOpen}
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="fixed inset-0 z-[57]" role="presentation" on:click={closeAll}></div>
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="fixed inset-0 z-[57]" role="presentation" onclick={closeAll}></div>
 {/if}
 
 <!-- Mobile bottom tab bar -->

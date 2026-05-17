@@ -3,15 +3,19 @@
 	import BibleReader from '$lib/components/BibleReader.svelte';
 	import { prefs } from '$lib/stores/prefs';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: bookDisplayName = $prefs.modernBookNames ? data.bookMeta.modernName : data.bookMeta.odrName;
+	let { data }: Props = $props();
+
+	let bookDisplayName = $derived($prefs.modernBookNames ? data.bookMeta.modernName : data.bookMeta.odrName);
 
 	const SITE = 'https://thedouayrheims.com';
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
-	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} in the ${data.seoName ?? data.translationLabel}`;
-	$: pageDesc = (() => {
+	let pageTitle = $derived(`${data.bookMeta.odrName} ${data.chapter?.chapter ?? ''} in the ${data.seoName ?? data.translationLabel}`);
+	let pageDesc = $derived((() => {
 		const base = data.seoDesc || '';
 		if (base.length >= 80) return base;
 		const firstVerse = data.chapter?.verses?.[0]?.text ?? '';
@@ -19,16 +23,16 @@
 		const snippet = plain.length > 100 ? plain.slice(0, 100) + '…' : plain;
 		if (!snippet) return base;
 		return base ? `${base} ${snippet}`.slice(0, 160) : snippet.slice(0, 160);
-	})();
-	$: pageUrl = data.chapter
+	})());
+	let pageUrl = $derived(data.chapter
 		? `${SITE}/${data.translationId}/${data.bookMeta.slug}/${data.chapter.chapter}`
-		: `${SITE}/${data.translationId}/${data.bookMeta.slug}/1`;
+		: `${SITE}/${data.translationId}/${data.bookMeta.slug}/1`);
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
 	const bookId = SITE + '/#douay-rheims-bible';
-	$: jsonLdTag =
-		data.chapter && !data.ntOnly
+	let jsonLdTag =
+		$derived(data.chapter && !data.ntOnly
 			? `${scriptOpen}${JSON.stringify({
 					'@context': 'https://schema.org',
 					'@type': 'Article',
@@ -56,7 +60,7 @@
 						]
 					}
 				})}${scriptClose}`
-			: '';
+			: '');
 </script>
 
 <svelte:head>

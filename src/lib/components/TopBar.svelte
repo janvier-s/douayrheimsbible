@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { onMount, onDestroy } from 'svelte';
 	import {
 		ALL_BOOKS,
@@ -22,55 +24,67 @@
 	import BookNavLink from './BookNavLink.svelte';
 	import ChapterNavLink from './ChapterNavLink.svelte';
 
-	export let bookSlug: string;
-	export let chapterNum: string;
-	export let isChapterPage = false;
-	export let isHomePage = false;
-	export let hasStudyMode = false;
-	export let minimal = false;
-	export let translationId: string = 'odr';
+	interface Props {
+		bookSlug: string;
+		chapterNum: string;
+		isChapterPage?: boolean;
+		isHomePage?: boolean;
+		hasStudyMode?: boolean;
+		minimal?: boolean;
+		translationId?: string;
+	}
 
-	$: showTabBar = true;
+	let {
+		bookSlug,
+		chapterNum,
+		isChapterPage = false,
+		isHomePage = false,
+		hasStudyMode = false,
+		minimal = false,
+		translationId = 'odr'
+	}: Props = $props();
 
-	$: liveTranslations = TRANSLATIONS.filter((t) => t.live && !t.hidden);
-	$: currentTranslation =
-		liveTranslations.find((t) => t.id === translationId) ??
-		liveTranslations.find((t) => t.id === 'odr')!;
+	
 
-	let navOpen = false;
-	let prefsOpen = false;
-	let translationOpen = false;
+	let liveTranslations = $derived(TRANSLATIONS.filter((t) => t.live && !t.hidden));
+	let currentTranslation =
+		$derived(liveTranslations.find((t) => t.id === translationId) ??
+		liveTranslations.find((t) => t.id === 'odr')!);
 
-	$: bookMeta = getBookBySlug(bookSlug);
+	let navOpen = $state(false);
+	let prefsOpen = $state(false);
+	let translationOpen = $state(false);
 
-	$: displayName = bookMeta
+	let bookMeta = $derived(getBookBySlug(bookSlug));
+
+	let displayName = $derived(bookMeta
 		? $prefs.modernBookNames
 			? bookMeta.modernName
 			: bookMeta.odrName
-		: '';
+		: '');
 
-	$: psalmSuffix = (() => {
+	let psalmSuffix = $derived((() => {
 		if (!$prefs.showPsalmNumbers || bookMeta?.slug !== 'psalms' || !chapterNum) return '';
 		const prot = getHebPsalmNum(parseInt(chapterNum, 10));
 		return prot ? ` (${prot})` : '';
-	})();
+	})());
 
-	$: navLabel =
-		bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026';
+	let navLabel =
+		$derived(bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026');
 
-	$: prevBook = isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null;
-	$: nextBook = isChapterPage && bookMeta ? (getNextNavBook(bookMeta.slug) ?? null) : null;
+	let prevBook = $derived(isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
+	let nextBook = $derived(isChapterPage && bookMeta ? (getNextNavBook(bookMeta.slug) ?? null) : null);
 
-	$: routeBase = translationId === 'odr' ? '/odr' : `/${translationId}`;
-	$: chapterNumInt = parseInt(chapterNum, 10);
-	$: prevChapterHref =
-		isChapterPage && bookMeta && chapterNumInt > 1
+	let routeBase = $derived(translationId === 'odr' ? '/odr' : `/${translationId}`);
+	let chapterNumInt = $derived(parseInt(chapterNum, 10));
+	let prevChapterHref =
+		$derived(isChapterPage && bookMeta && chapterNumInt > 1
 			? `${routeBase}/${bookSlug}/${chapterNumInt - 1}`
-			: null;
-	$: nextChapterHref =
-		isChapterPage && bookMeta && chapterNumInt < bookMeta.chapters
+			: null);
+	let nextChapterHref =
+		$derived(isChapterPage && bookMeta && chapterNumInt < bookMeta.chapters
 			? `${routeBase}/${bookSlug}/${chapterNumInt + 1}`
-			: null;
+			: null);
 
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
@@ -83,17 +97,18 @@
 	}
 
 	// ── Mode toggle ─────────────────────────────────────────────────────────────
-	$: modeItems = [
+	let modeItems = $derived([
 		{ key: 'reading', label: 'Read' },
 		...(hasStudyMode ? [{ key: 'study', label: 'Study' }] : []),
 		{ key: 'compare', label: 'Compare' },
 		{ key: 'fathers', label: 'Fathers' }
-	];
-	$: activeModeIdx = modeItems.findIndex((m) => m.key === $prefs.readingMode);
+	]);
+	let activeModeIdx = $derived(modeItems.findIndex((m) => m.key === $prefs.readingMode));
 	// Show pill on chapter pages and home page; hide on other non-chapter pages (search, etc.)
-	$: displayModeIdx = isChapterPage || isHomePage ? (activeModeIdx >= 0 ? activeModeIdx : 0) : -1;
+	let displayModeIdx = $derived(isChapterPage || isHomePage ? (activeModeIdx >= 0 ? activeModeIdx : 0) : -1);
 
-	let pendingIdx = -1;
+	let showTabBar = $state(true);
+	let pendingIdx = $state(-1);
 
 	async function selectMode(key: string, index: number) {
 		if (!isChapterPage) {
@@ -159,13 +174,15 @@
 		}
 	});
 
-	$: if (browser) {
-		document.body.style.overflow = '';
-	}
+	run(() => {
+		if (browser) {
+			document.body.style.overflow = '';
+		}
+	});
 </script>
 
 <svelte:window
-	on:keydown={(e) => {
+	onkeydown={(e) => {
 		if (e.key === 'Escape') closeAll();
 	}}
 />
@@ -187,7 +204,7 @@
 			aria-label="Reading options"
 			aria-expanded={prefsOpen}
 			aria-haspopup="dialog"
-			on:click={togglePrefs}
+			onclick={togglePrefs}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +244,7 @@
 					{translationOpen ? 'bg-accent text-white' : 'text-foreground hover:text-accent'}"
 					aria-expanded={translationOpen}
 					aria-haspopup="listbox"
-					on:click={() => {
+					onclick={() => {
 						translationOpen = !translationOpen;
 						prefsOpen = false;
 						navOpen = false;
@@ -277,7 +294,7 @@
 							{:else}
 								<a
 									{href}
-									on:click={() => {
+									onclick={() => {
 										translationOpen = false;
 									}}
 									class="flex items-center justify-between px-sm py-[8px] rounded-sm hover:bg-accent/5 transition-colors duration-fast mb-[2px]"
@@ -328,7 +345,7 @@
 					aria-expanded={navOpen}
 					aria-haspopup="dialog"
 					aria-label="Navigate — {navLabel}"
-					on:click={() => {
+					onclick={() => {
 						navOpen = !navOpen;
 						prefsOpen = false;
 						translationOpen = false;
@@ -368,7 +385,7 @@
 					aria-expanded={prefsOpen}
 					aria-haspopup="dialog"
 					aria-label="Reading options"
-					on:click={() => {
+					onclick={() => {
 						prefsOpen = !prefsOpen;
 						translationOpen = false;
 						navOpen = false;
@@ -403,6 +420,6 @@
 {/if}
 
 {#if navOpen || prefsOpen || translationOpen}
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="fixed inset-0 z-[49]" role="presentation" on:click={closeAll}></div>
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="fixed inset-0 z-[49]" role="presentation" onclick={closeAll}></div>
 {/if}

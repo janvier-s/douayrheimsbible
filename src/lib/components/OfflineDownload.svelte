@@ -20,7 +20,7 @@
 			Download the complete site for offline reading, including all translations, annotations, and
 			study notes. Approximately 8&nbsp;MB.
 		</p>
-		<button class="offline-btn" on:click={offline.startDownload}>Download for offline use</button>
+		<button class="offline-btn" onclick={offline.startDownload}>Download for offline use</button>
 	</div>
 {:else if $offline.status === 'downloading'}
 	<div class="offline-card">
@@ -47,7 +47,7 @@
 {:else if $offline.status === 'error'}
 	<div class="offline-card">
 		<p class="offline-error">{$offline.error}</p>
-		<button class="offline-btn" on:click={offline.startDownload}>Retry download</button>
+		<button class="offline-btn" onclick={offline.startDownload}>Retry download</button>
 	</div>
 {/if}
 

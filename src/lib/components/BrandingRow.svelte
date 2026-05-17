@@ -3,16 +3,28 @@
 	import { page } from '$app/stores';
 	import { prayerOpen } from '$lib/stores/prayer';
 
-	export let modeItems: Array<{ key: string; label: string }>;
-	export let activeModeIdx: number;
-	export let pendingIdx: number;
-	export let onModeSelect: (e: CustomEvent<{ key: string; index: number }>) => void;
-	export let onLogoClick: () => void = () => {};
+	interface Props {
+		modeItems: Array<{ key: string; label: string }>;
+		activeModeIdx: number;
+		pendingIdx: number;
+		onModeSelect: (e: CustomEvent<{ key: string; index: number }>) => void;
+		onLogoClick?: () => void;
+		children?: import('svelte').Snippet;
+	}
 
-	$: isSearchPage = $page.url.pathname.startsWith('/search');
-	$: currentPath = $page.url.pathname;
+	let {
+		modeItems,
+		activeModeIdx,
+		pendingIdx,
+		onModeSelect,
+		onLogoClick = () => {},
+		children
+	}: Props = $props();
 
-	let menuOpen = false;
+	let isSearchPage = $derived($page.url.pathname.startsWith('/search'));
+	let currentPath = $derived($page.url.pathname);
+
+	let menuOpen = $state(false);
 
 	function closeMenu() {
 		menuOpen = false;
@@ -53,7 +65,7 @@
 </script>
 
 <svelte:window
-	on:keydown={(e) => {
+	onkeydown={(e) => {
 		if (e.key === 'Escape') closeMenu();
 	}}
 />
@@ -67,7 +79,7 @@
 		href="/"
 		aria-label="Douay-Rheims"
 		class="flex items-center gap-[6px] group shrink-0"
-		on:click={onLogoClick}
+		onclick={onLogoClick}
 	>
 		<span class="text-accent text-[15px] leading-none select-none" aria-hidden="true">✠</span>
 		<!-- Desktop: single line -->
@@ -130,7 +142,7 @@
 			rounded-[3px] transition-colors duration-fast
 			{$prayerOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 		aria-label="Prayer before reading"
-		on:click={() => prayerOpen.set(true)}
+		onclick={() => prayerOpen.set(true)}
 	>
 		<svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
 			<path
@@ -147,7 +159,7 @@
 		aria-label="Site navigation"
 		aria-expanded={menuOpen}
 		aria-haspopup="menu"
-		on:click={() => (menuOpen = !menuOpen)}
+		onclick={() => (menuOpen = !menuOpen)}
 	>
 		{#if menuOpen}
 			<svg
@@ -182,7 +194,7 @@
 	</button>
 
 	<!-- Slot for mobile-specific controls (e.g. TopBar's prefs toggle) -->
-	<slot />
+	{@render children?.()}
 </div>
 
 <!-- Dropdown — OUTSIDE the backdrop-blur div to avoid stacking context trap -->
@@ -198,7 +210,7 @@
 				<a
 					href={link.href}
 					class="site-menu-link {isActive(link.href) ? 'active' : ''}"
-					on:click={closeMenu}
+					onclick={closeMenu}
 				>
 					{link.label}
 					{#if isActive(link.href)}
@@ -213,7 +225,7 @@
 <!-- Backdrop -->
 {#if menuOpen}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<div class="site-backdrop" role="presentation" on:click={closeMenu}></div>
+	<div class="site-backdrop" role="presentation" onclick={closeMenu}></div>
 {/if}
 
 <style>

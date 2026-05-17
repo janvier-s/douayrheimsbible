@@ -2,11 +2,15 @@
 	import type { PageData } from './$types';
 	import BibleReader from '$lib/components/BibleReader.svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: pageUrl = `https://thedouayrheims.com/odr/${data.bookMeta.slug}/${data.chapter.chapter}`;
-	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} in the Original Douay-Rheims Bible`;
-	$: pageDesc = (() => {
+	let { data }: Props = $props();
+
+	let pageUrl = $derived(`https://thedouayrheims.com/odr/${data.bookMeta.slug}/${data.chapter.chapter}`);
+	let pageTitle = $derived(`${data.bookMeta.odrName} ${data.chapter.chapter} in the Original Douay-Rheims Bible`);
+	let pageDesc = $derived((() => {
 		const base = `Read ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} in the original Douay-Rheims Bible (1582–1610). Pre-Challoner English Catholic translation from the Latin Vulgate.`;
 		if (data.chapter.summary && data.chapter.summary !== '---') {
 			return `${base} ${data.chapter.summary.slice(0, 120)}`;
@@ -15,13 +19,13 @@
 		const plain = firstVerse.replace(/<[^>]*>/g, '').trim();
 		const snippet = plain.length > 100 ? plain.slice(0, 100) + '…' : plain;
 		return snippet ? `${base} ${snippet}`.slice(0, 160) : base;
-	})();
+	})());
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
 	const SITE = 'https://thedouayrheims.com';
 	const bookId = SITE + '/#douay-rheims-bible';
-	$: jsonLdTag = `${scriptOpen}${JSON.stringify({
+	let jsonLdTag = $derived(`${scriptOpen}${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@graph': [
 			{
@@ -75,7 +79,7 @@
 				}
 			}
 		]
-	})}${scriptClose}`;
+	})}${scriptClose}`);
 </script>
 
 <svelte:head>

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { getHebPsalmNum, getPrevNavBook, getNextNavBook } from '$lib/data/books';
 	import { onDestroy } from 'svelte';
@@ -11,16 +13,31 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
 
-	export let bookMeta: BookMeta;
-	export let chapter: Chapter;
-	export let targetVerse: number | undefined;
-	export let totalChapters: number;
-	export let showNav: boolean = true;
-	export let routeBase: string = '/odr';
-	export let translationId: string = 'odr';
-	export let headingLevel: 'h1' | 'h2' = 'h1';
-	export let bookTitle: string | null | undefined = undefined;
-	export let shortTitle: string | null | undefined = undefined;
+	interface Props {
+		bookMeta: BookMeta;
+		chapter: Chapter;
+		targetVerse: number | undefined;
+		totalChapters: number;
+		showNav?: boolean;
+		routeBase?: string;
+		translationId?: string;
+		headingLevel?: 'h1' | 'h2';
+		bookTitle?: string | null | undefined;
+		shortTitle?: string | null | undefined;
+	}
+
+	let {
+		bookMeta,
+		chapter,
+		targetVerse,
+		totalChapters,
+		showNav = true,
+		routeBase = '/odr',
+		translationId = 'odr',
+		headingLevel = 'h1',
+		bookTitle = undefined,
+		shortTitle = undefined
+	}: Props = $props();
 
 	function renderLine(line: string): string {
 		// Wrap Hebrew characters (U+0590–U+05FF, U+FB1D–U+FB4F) in a span
@@ -41,58 +58,11 @@
 		return $prefs.modernBookNames ? bm.modernName : bm.odrName;
 	}
 
-	$: prevNavBook = chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null;
-	$: prevNav =
-		chapter.chapter > 1
-			? {
-					slug: bookMeta.slug,
-					ch: chapter.chapter - 1,
-					label: `Ch. ${chapter.chapter - 1}`,
-					chLabel: null
-				}
-			: prevNavBook
-				? {
-						slug: prevNavBook.slug,
-						ch: prevNavBook.chapters,
-						label: bookLabel(prevNavBook),
-						chLabel: `Ch. ${prevNavBook.chapters}`
-					}
-				: null;
 
-	$: nextNavBook =
-		chapter.chapter >= totalChapters ? (getNextNavBook(bookMeta.slug) ?? null) : null;
-	$: nextNav =
-		chapter.chapter < totalChapters
-			? {
-					slug: bookMeta.slug,
-					ch: chapter.chapter + 1,
-					label: `Ch. ${chapter.chapter + 1}`,
-					chLabel: null
-				}
-			: nextNavBook
-				? {
-						slug: nextNavBook.slug,
-						ch: 1,
-						label: bookLabel(nextNavBook),
-						chLabel: 'Ch. 1'
-					}
-				: null;
 
-	$: hebrewPsalmNum = (() => {
-		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return null;
-		return getHebPsalmNum(chapter.chapter);
-	})();
 
-	let activeVerse: number | undefined = targetVerse;
-	$: if (targetVerse !== undefined) activeVerse = targetVerse;
+	let activeVerse: number | undefined = $state(targetVerse);
 
-	// Verse 0 is a summary continuation fragment — merge it into the summary display
-	$: verse0 = chapter.verses.find((v) => v.verse === 0);
-	$: fullSummary = verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? '');
-	$: displayVerses = verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses;
-	$: isStudyMode = $prefs.readingMode === 'study';
-	$: summaryHtml =
-		fullSummary && fullSummary !== '---' ? linkifySummary(fullSummary, isStudyMode) : '';
 
 	/** Strip trailing cross-reference text that follows the last </na> marker group.
 	 *  e.g. "<na>[1]</na><na>[2]</na> Gen. 12. 22. 2. Reg. 7. Psal. 131." → remove "Gen. 12. …"
@@ -173,10 +143,10 @@
 		if (!SLUG_TO_OSIS[slug]) SLUG_TO_OSIS[slug] = osis;
 	}
 
-	let svRefRanges: OsisRange[] = [];
-	let svRefAnchor: HTMLElement | null = null;
-	let svRefVisible = false;
-	let svRefTimer: ReturnType<typeof setTimeout> | null = null;
+	let svRefRanges: OsisRange[] = $state([]);
+	let svRefAnchor: HTMLElement | null = $state(null);
+	let svRefVisible = $state(false);
+	let svRefTimer: ReturnType<typeof setTimeout> | null = $state(null);
 
 	function handleSummaryOver(e: Event) {
 		const target = e.target as HTMLElement;
@@ -217,6 +187,55 @@
 	onDestroy(() => {
 		if (svRefTimer) clearTimeout(svRefTimer);
 	});
+	let prevNavBook = $derived(chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
+	let prevNav =
+		$derived(chapter.chapter > 1
+			? {
+					slug: bookMeta.slug,
+					ch: chapter.chapter - 1,
+					label: `Ch. ${chapter.chapter - 1}`,
+					chLabel: null
+				}
+			: prevNavBook
+				? {
+						slug: prevNavBook.slug,
+						ch: prevNavBook.chapters,
+						label: bookLabel(prevNavBook),
+						chLabel: `Ch. ${prevNavBook.chapters}`
+					}
+				: null);
+	let nextNavBook =
+		$derived(chapter.chapter >= totalChapters ? (getNextNavBook(bookMeta.slug) ?? null) : null);
+	let nextNav =
+		$derived(chapter.chapter < totalChapters
+			? {
+					slug: bookMeta.slug,
+					ch: chapter.chapter + 1,
+					label: `Ch. ${chapter.chapter + 1}`,
+					chLabel: null
+				}
+			: nextNavBook
+				? {
+						slug: nextNavBook.slug,
+						ch: 1,
+						label: bookLabel(nextNavBook),
+						chLabel: 'Ch. 1'
+					}
+				: null);
+	let hebrewPsalmNum = $derived((() => {
+		if (!$prefs.showPsalmNumbers || bookMeta.slug !== 'psalms') return null;
+		return getHebPsalmNum(chapter.chapter);
+	})());
+	run(() => {
+		if (targetVerse !== undefined) activeVerse = targetVerse;
+	});
+	// Verse 0 is a summary continuation fragment — merge it into the summary display
+	let verse0 = $derived(chapter.verses.find((v) => v.verse === 0));
+	let fullSummary = $derived(verse0 ? (chapter.summary ?? '') + ' ' + verse0.text : (chapter.summary ?? ''));
+	let displayVerses = $derived(verse0 ? chapter.verses.filter((v) => v.verse !== 0) : chapter.verses);
+	let isStudyMode = $derived($prefs.readingMode === 'study');
+	let summaryHtml =
+		$derived(fullSummary && fullSummary !== '---' ? linkifySummary(fullSummary, isStudyMode) : '');
 </script>
 
 {#if showNav && (prevNav || nextNav)}
@@ -286,14 +305,14 @@
 	</header>
 
 	{#if fullSummary && fullSummary !== '---'}
-		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions a11y_no_static_element_interactions a11y-mouse-events-have-key-events -->
+		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions, a11y_no_static_element_interactions a11y_mouse_events_have_key_events -->
 		<p
 			class="text-subtle font-reader italic mb-lg text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
-			on:click={handleSummaryClick}
-			on:mouseover={handleSummaryOver}
-			on:mouseout={handleSummaryOut}
-			on:focus={undefined}
-			on:blur={undefined}
+			onclick={handleSummaryClick}
+			onmouseover={handleSummaryOver}
+			onmouseout={handleSummaryOut}
+			onfocus={undefined}
+			onblur={undefined}
 		>
 			{@html summaryHtml}
 		</p>
@@ -303,10 +322,10 @@
 			anchorEl={svRefAnchor}
 			visible={svRefVisible}
 			{translationId}
-			on:mouseenter={() => {
+			onmouseenter={() => {
 				if (svRefTimer) clearTimeout(svRefTimer);
 			}}
-			on:mouseleave={() => {
+			onmouseleave={() => {
 				svRefTimer = setTimeout(() => {
 					svRefVisible = false;
 					svRefAnchor = null;

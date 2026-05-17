@@ -9,22 +9,26 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import { prefs } from '$lib/stores/prefs';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	// Sync hide for client-side navigation — app.html script only covers hard loads
 	if (browser && get(prefs).skipHomepage) {
 		document.documentElement.style.setProperty('visibility', 'hidden');
 	}
 
-	$: bookSlug = $readingPosition?.bookSlug ?? data.bookMeta.slug;
+	let bookSlug = $derived($readingPosition?.bookSlug ?? data.bookMeta.slug);
 
 	// Only show chapterNum (and thus the tab bar) once the reader section is in view
-	let readerVisible = false;
-	let readerEl: HTMLElement;
+	let readerVisible = $state(false);
+	let readerEl: HTMLElement | undefined = $state();
 	let readerObs: IntersectionObserver | null = null;
 
-	let reducedMotion = false;
-	let showSkipCheckbox = false;
+	let reducedMotion = $state(false);
+	let showSkipCheckbox = $state(false);
 
 	onMount(async () => {
 		if ($prefs.skipHomepage) {
@@ -54,7 +58,7 @@
 
 	onDestroy(() => readerObs?.disconnect());
 
-	$: chapterNum = readerVisible && $readingPosition ? String($readingPosition.chapter) : '';
+	let chapterNum = $derived(readerVisible && $readingPosition ? String($readingPosition.chapter) : '');
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
@@ -213,7 +217,7 @@
 
 			<button
 				class="hero-cta"
-				on:click={() =>
+				onclick={() =>
 					document
 						.getElementById('reader')
 						?.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth' })}
@@ -226,7 +230,7 @@
 					<input
 						type="checkbox"
 						checked={$prefs.skipHomepage}
-						on:change={(e) =>
+						onchange={(e) =>
 							prefs.update((p) => ({
 								...p,
 								skipHomepage: (e.target as HTMLInputElement).checked

@@ -8,26 +8,14 @@
 	import type { OsisRange } from '$lib/search/reference';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: article = data.article;
-	$: content = data.content;
-	$: translation = data.translation;
-	$: config = data.config;
-	$: section = article.section;
+	let { data }: Props = $props();
 
-	// Navigation: prev/next within the same section
-	$: sectionArticles = config.articles.filter((a) => a.section === section);
-	$: currentIdx = sectionArticles.findIndex((a) => a.slug === article.slug);
-	$: prev = currentIdx > 0 ? sectionArticles[currentIdx - 1] : null;
-	$: next = currentIdx < sectionArticles.length - 1 ? sectionArticles[currentIdx + 1] : null;
 
-	/** Confraternity data uses plain string paragraphs; ODR uses {text, notes} objects */
-	$: isPlainParagraphs =
-		contentType === 'paragraphs' &&
-		Array.isArray(content.paragraphs) &&
-		content.paragraphs.length > 0 &&
-		typeof content.paragraphs[0] === 'string';
+
 
 	// Detect content type from JSON shape
 	type ContentType =
@@ -64,14 +52,6 @@
 		return 'paragraphs';
 	}
 
-	$: contentType = detectType(content);
-	$: isTitlePage = article.slug === 'title-page';
-	$: isLastPage = currentIdx === sectionArticles.length - 1;
-	$: skipLinkify =
-		article.slug === 'contributors' ||
-		article.slug === 'abbreviations' ||
-		article.slug === 'commentators';
-	$: hasToc = Array.isArray(content.toc) && content.toc.length > 0;
 
 	/** Strip HTML tags to get plain text for search query */
 	function stripHtml(html: string): string {
@@ -120,7 +100,7 @@
 	};
 
 	/** Linkify "CHAP. N. V. N." / "Chap. N. V. N." / "V. N." patterns using book context */
-	let lastCorruptionChapter = 0;
+	let lastCorruptionChapter = $state(0);
 	function linkifyChapVerse(html: string, osisBook: string): string {
 		if (!osisBook) return html;
 		let result = html;
@@ -171,10 +151,10 @@
 	}
 
 	/* ── Verse tooltip state ─────────────────────────────────── */
-	let openVerseRef: OsisRange[] = [];
-	let verseRefAnchorEl: HTMLElement | null = null;
-	let verseRefVisible = false;
-	let verseRefTimer: ReturnType<typeof setTimeout> | null = null;
+	let openVerseRef: OsisRange[] = $state([]);
+	let verseRefAnchorEl: HTMLElement | null = $state(null);
+	let verseRefVisible = $state(false);
+	let verseRefTimer: ReturnType<typeof setTimeout> | null = $state(null);
 
 	function handleBodyMouseover(e: Event) {
 		const target = e.target as HTMLElement;
@@ -208,6 +188,30 @@
 	onDestroy(() => {
 		if (verseRefTimer) clearTimeout(verseRefTimer);
 	});
+	let article = $derived(data.article);
+	let content = $derived(data.content);
+	let translation = $derived(data.translation);
+	let config = $derived(data.config);
+	let section = $derived(article.section);
+	// Navigation: prev/next within the same section
+	let sectionArticles = $derived(config.articles.filter((a) => a.section === section));
+	let currentIdx = $derived(sectionArticles.findIndex((a) => a.slug === article.slug));
+	let prev = $derived(currentIdx > 0 ? sectionArticles[currentIdx - 1] : null);
+	let next = $derived(currentIdx < sectionArticles.length - 1 ? sectionArticles[currentIdx + 1] : null);
+	let contentType = $derived(detectType(content));
+	/** Confraternity data uses plain string paragraphs; ODR uses {text, notes} objects */
+	let isPlainParagraphs =
+		$derived(contentType === 'paragraphs' &&
+		Array.isArray(content.paragraphs) &&
+		content.paragraphs.length > 0 &&
+		typeof content.paragraphs[0] === 'string');
+	let isTitlePage = $derived(article.slug === 'title-page');
+	let isLastPage = $derived(currentIdx === sectionArticles.length - 1);
+	let skipLinkify =
+		$derived(article.slug === 'contributors' ||
+		article.slug === 'abbreviations' ||
+		article.slug === 'commentators');
+	let hasToc = $derived(Array.isArray(content.toc) && content.toc.length > 0);
 </script>
 
 <svelte:head>
@@ -279,8 +283,8 @@
 	<article
 		class="ref-body"
 		class:ref-body--centered={isTitlePage}
-		on:mouseover={handleBodyMouseover}
-		on:mouseout={handleBodyMouseout}
+		onmouseover={handleBodyMouseover}
+		onmouseout={handleBodyMouseout}
 	>
 		{#if contentType === 'paragraphs' && isPlainParagraphs}
 			<!-- Plain HTML paragraphs (Confraternity-style) -->
@@ -525,10 +529,10 @@
 			osisRanges={openVerseRef}
 			anchorEl={verseRefAnchorEl}
 			visible={verseRefVisible}
-			on:mouseenter={() => {
+			onmouseenter={() => {
 				if (verseRefTimer) clearTimeout(verseRefTimer);
 			}}
-			on:mouseleave={() => {
+			onmouseleave={() => {
 				verseRefTimer = setTimeout(() => {
 					verseRefVisible = false;
 					verseRefAnchorEl = null;

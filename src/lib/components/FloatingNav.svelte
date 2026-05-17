@@ -5,20 +5,31 @@
 	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
 	import { prefs } from '$lib/stores/prefs';
 
-	export let bookSlug: string;
-	export let chapterNum: number;
-	export let onClose: () => void;
-	export let compareMode: boolean = false;
-	export let translationId: string = 'odr';
-	export let routeBase: string = '';
+	interface Props {
+		bookSlug: string;
+		chapterNum: number;
+		onClose: () => void;
+		compareMode?: boolean;
+		translationId?: string;
+		routeBase?: string;
+	}
 
-	$: base =
-		routeBase ||
-		(compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`);
+	let {
+		bookSlug,
+		chapterNum,
+		onClose,
+		compareMode = false,
+		translationId = 'odr',
+		routeBase = ''
+	}: Props = $props();
+
+	let base =
+		$derived(routeBase ||
+		(compareMode ? '/compare' : translationId === 'odr' ? '/odr' : `/${translationId}`));
 
 	type Testament = 'OT' | 'NT';
-	let activeTestament: Testament = ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT';
-	let expandedBooks = new Set<string>(bookSlug ? [bookSlug] : []);
+	let activeTestament: Testament = $state(ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT');
+	let expandedBooks = $state(new Set<string>(bookSlug ? [bookSlug] : []));
 
 	const otBooks = ALL_BOOKS.filter((b) => b.testament === 'OT');
 	const ntBooks = ALL_BOOKS.filter((b) => b.testament === 'NT');
@@ -33,8 +44,8 @@
 		expandedBooks = next;
 	}
 
-	let otContainer: HTMLElement;
-	let ntContainer: HTMLElement;
+	let otContainer: HTMLElement | undefined = $state();
+	let ntContainer: HTMLElement | undefined = $state();
 
 	onMount(async () => {
 		await tick();
@@ -82,7 +93,7 @@
 	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window onkeydown={handleKeydown} />
 
 <div
 	class="fixed top-[var(--header-height)] left-1/2 -translate-x-1/2 z-[65] bg-panel border border-border rounded-sm shadow-xl w-80 max-h-[72vh] max-md:max-h-[calc(100vh-var(--header-height)-56px)] flex flex-col font-ui"
@@ -103,7 +114,7 @@
                {activeTestament === t
 					? 'bg-background text-accent border-b-2 border-accent'
 					: 'text-subtle hover:text-foreground'}"
-				on:click={() => (activeTestament = t)}
+				onclick={() => (activeTestament = t)}
 			>
 				{t === 'OT' ? 'Old Testament' : 'New Testament'}
 			</button>
@@ -135,7 +146,7 @@
                  {book.slug === bookSlug
 							? 'text-accent bg-background hover:bg-border'
 							: 'text-foreground hover:bg-border hover:text-accent'}"
-						on:click={() => toggleBook(book.slug)}
+						onclick={() => toggleBook(book.slug)}
 					>
 						<span class:italic={isAppendix}>{bookLabel(book.odrName, book.modernName)}</span>
 					</button>
@@ -150,7 +161,7 @@
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="{base}/{book.slug}/{ch}"
-									on:click={onClose}
+									onclick={onClose}
 									class="py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium leading-tight
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-accent text-white'
@@ -182,7 +193,7 @@
                  {book.slug === bookSlug
 							? 'text-accent bg-background hover:bg-border'
 							: 'text-foreground hover:bg-border hover:text-accent'}"
-						on:click={() => toggleBook(book.slug)}
+						onclick={() => toggleBook(book.slug)}
 					>
 						{bookLabel(book.odrName, book.modernName)}
 					</button>
@@ -197,7 +208,7 @@
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="{base}/{book.slug}/{ch}"
-									on:click={onClose}
+									onclick={onClose}
 									class="py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium leading-tight
                        {book.slug === bookSlug && ch === chapterNum
 										? 'bg-accent text-white'

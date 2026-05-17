@@ -3,7 +3,11 @@
 	import { cubicOut } from 'svelte/easing';
 	import ReadingPrefs from './ReadingPrefs.svelte';
 
-	export let compareMode = false;
+	interface Props {
+		compareMode?: boolean;
+	}
+
+	let { compareMode = false }: Props = $props();
 </script>
 
 <!-- Desktop panel -->

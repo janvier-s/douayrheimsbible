@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { prayerOpen } from '$lib/stores/prayer';
 	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
@@ -17,8 +19,8 @@
 		{ osis: '1Cor.2.2', book: '1Cor', startChapter: 2, endChapter: 2, startVerse: 2, endVerse: 2 }
 	];
 
-	let refAnchorEl: HTMLElement | null = null;
-	let refTooltipVisible = false;
+	let refAnchorEl: HTMLElement | null = $state(null);
+	let refTooltipVisible = $state(false);
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
 	function enterRef(e: MouseEvent) {
@@ -37,7 +39,7 @@
 		if (hoverTimer) clearTimeout(hoverTimer);
 	}
 
-	let tab: 'indulgences' | 'before' | 'after' = 'before';
+	let tab: 'indulgences' | 'before' | 'after' = $state('before');
 
 	function close() {
 		prayerOpen.set(false);
@@ -59,24 +61,26 @@
 		if (browser) document.removeEventListener('keydown', handleKey);
 	});
 
-	$: if (browser && $prayerOpen) {
-		document.body.style.overflow = 'hidden';
-		tab = 'before';
-	} else if (browser) {
-		document.body.style.overflow = '';
-	}
+	run(() => {
+		if (browser && $prayerOpen) {
+			document.body.style.overflow = 'hidden';
+			tab = 'before';
+		} else if (browser) {
+			document.body.style.overflow = '';
+		}
+	});
 </script>
 
 {#if $prayerOpen}
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<div
 		class="prayer-backdrop"
 		role="dialog"
 		aria-modal="true"
 		aria-labelledby="prayer-title"
 		tabindex="-1"
-		on:click={handleBackdrop}
-		on:keydown={handleKey}
+		onclick={handleBackdrop}
+		onkeydown={handleKey}
 	>
 		<div class="prayer-panel">
 			<div class="prayer-head">
@@ -84,18 +88,18 @@
 					<button
 						class="prayer-tab"
 						class:active={tab === 'indulgences'}
-						on:click={() => (tab = 'indulgences')}>Indulgences</button
+						onclick={() => (tab = 'indulgences')}>Indulgences</button
 					>
 					<button
 						class="prayer-tab"
 						class:active={tab === 'before'}
-						on:click={() => (tab = 'before')}>Before Reading</button
+						onclick={() => (tab = 'before')}>Before Reading</button
 					>
-					<button class="prayer-tab" class:active={tab === 'after'} on:click={() => (tab = 'after')}
+					<button class="prayer-tab" class:active={tab === 'after'} onclick={() => (tab = 'after')}
 						>After Reading</button
 					>
 				</div>
-				<button class="prayer-close" on:click={close} aria-label="Close">
+				<button class="prayer-close" onclick={close} aria-label="Close">
 					<svg
 						width="11"
 						height="11"
@@ -171,9 +175,9 @@
 						Jesus, and Him crucified.<br /><span class="prayer-ref"
 							>(<a
 								href="/odr/1-corinthians/13"
-								on:click={close}
-								on:mouseenter={enterRef}
-								on:mouseleave={leaveRef}
+								onclick={close}
+								onmouseenter={enterRef}
+								onmouseleave={leaveRef}
 								class="prayer-ref-link">1 Cor. 13:8; 2:2</a
 							>)</span
 						>
@@ -228,8 +232,8 @@
 	osisRanges={refRanges}
 	anchorEl={refAnchorEl}
 	visible={refTooltipVisible}
-	on:mouseenter={enterTooltip}
-	on:mouseleave={leaveRef}
+	onmouseenter={enterTooltip}
+	onmouseleave={leaveRef}
 />
 
 <style>

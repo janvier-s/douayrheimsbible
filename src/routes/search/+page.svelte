@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run, preventDefault } from 'svelte/legacy';
+
 	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
@@ -23,41 +25,44 @@
 		lookup: Record<string, string>;
 	}
 	let suggestionData: SuggestionData | null = null;
-	let relatedTerms: string[] = [];
+	let relatedTerms: string[] = $state([]);
 
-	export let data: { query: string; mode: SearchMode; scope: SearchScope };
+	interface Props {
+		data: { query: string; mode: SearchMode; scope: SearchScope };
+	}
 
-	let reducedMotion = false;
-	let inputEl: HTMLInputElement;
-	let query = data.query;
-	let mode: SearchMode = data.mode;
-	let scope: SearchScope = data.scope;
-	let results: SearchResultGroup[] = [];
-	let textResults: TextResultGroup[] = [];
-	let noteResults: NoteResult[] = [];
-	let textTotal = 0;
+	let { data }: Props = $props();
+
+	let reducedMotion = $state(false);
+	let inputEl: HTMLInputElement | undefined = $state();
+	let query = $state(data.query);
+	let mode: SearchMode = $state(data.mode);
+	let scope: SearchScope = $state(data.scope);
+	let results: SearchResultGroup[] = $state([]);
+	let textResults: TextResultGroup[] = $state([]);
+	let noteResults: NoteResult[] = $state([]);
+	let textTotal = $state(0);
 	let textLimit = 100;
-	let stopWordWarning = false;
-	let loading = false;
-	let searched = false;
-	let searchFailed = false;
+	let stopWordWarning = $state(false);
+	let loading = $state(false);
+	let searched = $state(false);
+	let searchFailed = $state(false);
 	let debounceTimer: ReturnType<typeof setTimeout>;
 	let searchGeneration = 0;
 	let lastDataQuery = data.query;
 	let lastDataMode = data.mode;
 	let lastDataScope = data.scope;
 
-	let crossScopeVerseResults: TextResultGroup[] = [];
-	let crossScopeNoteResults: NoteResult[] = [];
-	let queryTokens: string[] = [];
-	let crossScopeTotal = 0;
+	let crossScopeVerseResults: TextResultGroup[] = $state([]);
+	let crossScopeNoteResults: NoteResult[] = $state([]);
+	let queryTokens: string[] = $state([]);
+	let crossScopeTotal = $state(0);
 
-	$: verseResultCount = results.reduce((n, g) => n + g.verses.length, 0);
 
 	// ── Sliding pill (mode toggle) ──────────────────────────────────────
-	let modeToggleEl: HTMLElement;
-	let modePillLeft = 0;
-	let modePillWidth = 0;
+	let modeToggleEl: HTMLElement | undefined = $state();
+	let modePillLeft = $state(0);
+	let modePillWidth = $state(0);
 
 	async function measureModePill(m: SearchMode) {
 		await tick();
@@ -73,12 +78,11 @@
 		modePillWidth = w;
 		modePillLeft = m === 'verse' ? 0 : w;
 	}
-	$: if (modeToggleEl) measureModePill(mode);
 
 	// ── Sliding underline (scope tabs) ─────────────────────────────────
-	let scopeTabsEl: HTMLElement;
-	let scopeSliderLeft = 0;
-	let scopeSliderWidth = 0;
+	let scopeTabsEl: HTMLElement | undefined = $state();
+	let scopeSliderLeft = $state(0);
+	let scopeSliderWidth = $state(0);
 
 	async function measureScopeSlider(s: SearchScope) {
 		await tick();
@@ -89,60 +93,22 @@
 		scopeSliderLeft = btn.offsetLeft;
 		scopeSliderWidth = btn.offsetWidth;
 	}
-	$: if (scopeTabsEl) measureScopeSlider(scope);
-	let notAReferenceQuery = false;
-	let textSuggestionVerses = 0;
-	let textSuggestionNotes = 0;
+	let notAReferenceQuery = $state(false);
+	let textSuggestionVerses = $state(0);
+	let textSuggestionNotes = $state(0);
 	// Mirror flag: query in text mode looks like a verse reference
-	let isVerseReference = false;
-	let verseSuggestionCount = 0;
+	let isVerseReference = $state(false);
+	let verseSuggestionCount = $state(0);
 
 	const VERSE_EXAMPLES = ['Matthew 16:18', 'John 6:53-56', 'Luke 1:28, Revelation 12:1'];
 	const TEXT_VERSE_EXAMPLES = ['Thou art Peter', 'Full of grace', 'Daily bread'];
 	const TEXT_NOTES_EXAMPLES = ['Transubstantiation', 'Original sin'];
 
-	$: currentExamples =
-		mode === 'verse'
-			? VERSE_EXAMPLES
-			: scope === 'notes'
-				? TEXT_NOTES_EXAMPLES
-				: TEXT_VERSE_EXAMPLES;
 
-	$: placeholder =
-		mode === 'verse'
-			? 'Search for a verse — e.g. Matthew 16:18'
-			: scope === 'notes'
-				? 'Search notes & annotations — e.g. transubstantiation'
-				: 'Search the Bible — e.g. Thou art Peter';
 
-	$: heading = mode === 'verse' ? 'Verse Search' : 'Text Search';
 
-	$: isHero =
-		!searched &&
-		!query &&
-		results.length === 0 &&
-		textResults.length === 0 &&
-		noteResults.length === 0;
 
-	$: crossScopeTeaser =
-		searched && !loading && mode === 'text'
-			? computeCrossScope(
-					queryTokens,
-					scope,
-					crossScopeVerseResults,
-					crossScopeNoteResults,
-					crossScopeTotal
-				)
-			: null;
 
-	// Keep TopBar nav button in sync with the first result's book/chapter
-	$: navOverride.set(
-		results.length > 0
-			? { bookSlug: results[0].slug, chapter: results[0].chapter }
-			: textResults.length > 0
-				? { bookSlug: textResults[0].slug, chapter: textResults[0].chapter }
-				: null
-	);
 
 	onDestroy(() => navOverride.set(null));
 
@@ -702,6 +668,52 @@
 			return { label: 'verses', count: total, targetScope: 'verses' };
 		}
 	}
+	let verseResultCount = $derived(results.reduce((n, g) => n + g.verses.length, 0));
+	run(() => {
+		if (modeToggleEl) measureModePill(mode);
+	});
+	run(() => {
+		if (scopeTabsEl) measureScopeSlider(scope);
+	});
+	let currentExamples =
+		$derived(mode === 'verse'
+			? VERSE_EXAMPLES
+			: scope === 'notes'
+				? TEXT_NOTES_EXAMPLES
+				: TEXT_VERSE_EXAMPLES);
+	let placeholder =
+		$derived(mode === 'verse'
+			? 'Search for a verse — e.g. Matthew 16:18'
+			: scope === 'notes'
+				? 'Search notes & annotations — e.g. transubstantiation'
+				: 'Search the Bible — e.g. Thou art Peter');
+	let heading = $derived(mode === 'verse' ? 'Verse Search' : 'Text Search');
+	let isHero =
+		$derived(!searched &&
+		!query &&
+		results.length === 0 &&
+		textResults.length === 0 &&
+		noteResults.length === 0);
+	let crossScopeTeaser =
+		$derived(searched && !loading && mode === 'text'
+			? computeCrossScope(
+					queryTokens,
+					scope,
+					crossScopeVerseResults,
+					crossScopeNoteResults,
+					crossScopeTotal
+				)
+			: null);
+	// Keep TopBar nav button in sync with the first result's book/chapter
+	run(() => {
+		navOverride.set(
+			results.length > 0
+				? { bookSlug: results[0].slug, chapter: results[0].chapter }
+				: textResults.length > 0
+					? { bookSlug: textResults[0].slug, chapter: textResults[0].chapter }
+					: null
+		);
+	});
 </script>
 
 <svelte:head>
@@ -755,7 +767,7 @@
 		{/if}
 
 		<!-- Search bar -->
-		<form on:submit|preventDefault={onSubmit} role="search" class="mb-lg">
+		<form onsubmit={preventDefault(onSubmit)} role="search" class="mb-lg">
 			<div
 				class="flex items-center gap-[10px] rounded-[10px] px-[14px] h-[52px] border border-interactive
 				focus-within:border-subtle transition-colors duration-fast"
@@ -778,7 +790,7 @@
 				<input
 					bind:this={inputEl}
 					bind:value={query}
-					on:input={onInput}
+					oninput={onInput}
 					type="text"
 					{placeholder}
 					class="flex-1 bg-transparent border-none outline-none focus:ring-0 font-ui text-[15px] font-light text-foreground min-w-0"
@@ -814,14 +826,14 @@
 				<button
 					class="search-mode-btn relative z-10 px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] font-ui transition-colors duration-fast
 						{mode === 'verse' ? 'text-white' : 'text-subtle hover:text-foreground'}"
-					on:click={() => setMode('verse')}
+					onclick={() => setMode('verse')}
 				>
 					Verse Search
 				</button>
 				<button
 					class="search-mode-btn relative z-10 px-[16px] py-[7px] text-[12px] font-medium uppercase tracking-[0.08em] font-ui transition-colors duration-fast
 						{mode === 'text' ? 'text-white' : 'text-subtle hover:text-foreground'}"
-					on:click={() => setMode('text')}
+					onclick={() => setMode('text')}
 				>
 					Text Search
 				</button>
@@ -843,7 +855,7 @@
 							: 'text-subtle hover:text-foreground'}"
 						role="tab"
 						aria-selected={scope === 'verses'}
-						on:click={() => setScope('verses')}
+						onclick={() => setScope('verses')}
 					>
 						Verses
 					</button>
@@ -853,7 +865,7 @@
 							: 'text-subtle hover:text-foreground'}"
 						role="tab"
 						aria-selected={scope === 'notes'}
-						on:click={() => setScope('notes')}
+						onclick={() => setScope('notes')}
 					>
 						Notes & Annotations
 					</button>
@@ -869,7 +881,7 @@
 					{#each currentExamples as example}
 						<button
 							class="px-[12px] py-[6px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
-							on:click={() => onExampleClick(example)}
+							onclick={() => onExampleClick(example)}
 						>
 							{example}
 						</button>
@@ -900,7 +912,7 @@
 					<button
 						class="font-medium hover:underline"
 						style="color: var(--color-accent-text)"
-						on:click={() => {
+						onclick={() => {
 							if (crossScopeTeaser) setScope(crossScopeTeaser.targetScope);
 						}}
 						>Switch to {crossScopeTeaser.label === 'annotations'
@@ -963,7 +975,7 @@
 						<button
 							class="text-[14px] hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => setMode('text')}
+							onclick={() => setMode('text')}
 							>Click here to switch to Text Search to find "{query}" →</button
 						>
 						<span class="text-[12px]"
@@ -989,7 +1001,7 @@
 						<button
 							class="hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => onExampleClick('James 2:24')}>James 2:24</button
+							onclick={() => onExampleClick('James 2:24')}>James 2:24</button
 						>.
 					</p>
 				{:else}
@@ -1002,7 +1014,7 @@
 						<button
 							class="hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => onExampleClick('James 2:24')}>James 2:24</button
+							onclick={() => onExampleClick('James 2:24')}>James 2:24</button
 						>
 					</p>
 				{/if}
@@ -1023,7 +1035,7 @@
 								<a
 									href="/odr/{group.slug}/{group.chapter}"
 									class="hover:text-foreground transition-colors duration-fast"
-									on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
+									onclick={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 								>
 									{groupHeading(group)}
 								</a>
@@ -1049,7 +1061,7 @@
 							<a
 								href="/odr/{group.slug}/{group.chapter}"
 								class="inline-block mt-[8px] text-[11px] uppercase tracking-[0.15em] text-subtle hover:text-foreground transition-colors duration-fast font-medium"
-								on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
+								onclick={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 							>
 								Read full chapter →
 							</a>
@@ -1073,7 +1085,7 @@
 								<a
 									href="/odr/{group.slug}/{group.chapter}"
 									class="hover:text-foreground transition-colors duration-fast"
-									on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
+									onclick={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 								>
 									{groupHeading(group)}
 								</a>
@@ -1099,7 +1111,7 @@
 							<a
 								href="/odr/{group.slug}/{group.chapter}"
 								class="inline-block mt-[8px] text-[11px] uppercase tracking-[0.15em] text-subtle hover:text-foreground transition-colors duration-fast font-medium"
-								on:click={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
+								onclick={() => prefs.update((p) => ({ ...p, readingMode: 'reading' }))}
 							>
 								Read full chapter →
 							</a>
@@ -1110,7 +1122,7 @@
 						<div class="text-center pt-sm">
 							<button
 								class="px-[20px] py-[8px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
-								on:click={showMore}
+								onclick={showMore}
 							>
 								Show more results ({textTotal} total)
 							</button>
@@ -1134,7 +1146,7 @@
 										: `/odr/${note.slug}/${note.chapter}`}
 									class="font-ui text-[14px] font-semibold hover:text-foreground transition-colors duration-fast"
 									style="color: var(--color-accent-text)"
-									on:click={() => {
+									onclick={() => {
 										if (note.type !== 'reference')
 											prefs.update((p) => ({ ...p, readingMode: 'study' }));
 									}}
@@ -1172,7 +1184,7 @@
 						<div class="text-center pt-sm">
 							<button
 								class="px-[20px] py-[8px] rounded-[4px] border border-border text-[13px] text-subtle hover:text-foreground transition-colors duration-fast"
-								on:click={showMore}
+								onclick={showMore}
 							>
 								Show more results ({textTotal} total)
 							</button>
@@ -1210,7 +1222,7 @@
 						<button
 							class="text-[14px] hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => setMode('verse')}
+							onclick={() => setMode('verse')}
 							>Click here to switch to Verse Search to look up "{query}" →</button
 						>
 					</div>
@@ -1223,7 +1235,7 @@
 						<button
 							class="italic hover:underline"
 							style="color: var(--color-accent-text)"
-							on:click={() => onExampleClick(currentExamples[0])}>{currentExamples[0]}</button
+							onclick={() => onExampleClick(currentExamples[0])}>{currentExamples[0]}</button
 						>
 					</p>
 				{/if}

@@ -1,8 +1,17 @@
 <script lang="ts">
-	export let modeItems: Array<{ key: string; label: string }>;
-	export let activeModeIdx: number;
-	export let pendingIdx: number;
-	export let selectMode: (key: string, index: number) => void;
+	interface Props {
+		modeItems: Array<{ key: string; label: string }>;
+		activeModeIdx: number;
+		pendingIdx: number;
+		selectMode: (key: string, index: number) => void;
+	}
+
+	let {
+		modeItems,
+		activeModeIdx,
+		pendingIdx,
+		selectMode
+	}: Props = $props();
 </script>
 
 <nav
@@ -19,7 +28,7 @@
 					: 'text-subtle hover:text-foreground'}"
 				aria-label={item.label}
 				aria-pressed={activeModeIdx === i}
-				on:click={() => selectMode(item.key, i)}
+				onclick={() => selectMode(item.key, i)}
 			>
 				{#if item.key === 'reading'}
 					<svg

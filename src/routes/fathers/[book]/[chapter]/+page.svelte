@@ -3,18 +3,22 @@
 	import FathersBar from '$lib/components/FathersBar.svelte';
 	import FathersReader from '$lib/components/FathersReader.svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const SITE = 'https://thedouayrheims.com';
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
-	$: pageTitle = `${data.bookMeta.odrName} ${data.chapter.chapter} — Church Fathers · Douay-Rheims`;
-	$: pageDesc = `Patristic commentary on ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} from the Church Fathers. Early Christian interpretation alongside the Douay-Rheims text.`;
-	$: pageUrl = `${SITE}/fathers/${data.bookMeta.slug}/${data.chapter.chapter}`;
+	let pageTitle = $derived(`${data.bookMeta.odrName} ${data.chapter.chapter} — Church Fathers · Douay-Rheims`);
+	let pageDesc = $derived(`Patristic commentary on ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} from the Church Fathers. Early Christian interpretation alongside the Douay-Rheims text.`);
+	let pageUrl = $derived(`${SITE}/fathers/${data.bookMeta.slug}/${data.chapter.chapter}`);
 
 	const scriptOpen = '<' + 'script type="application/ld+json">';
 	const scriptClose = '</' + 'script>';
-	$: jsonLdTag = `${scriptOpen}${JSON.stringify({
+	let jsonLdTag = $derived(`${scriptOpen}${JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'Article',
 		headline: pageTitle,
@@ -46,7 +50,7 @@
 				}
 			]
 		}
-	})}${scriptClose}`;
+	})}${scriptClose}`);
 </script>
 
 <svelte:head>

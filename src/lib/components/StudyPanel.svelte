@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { tick, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
@@ -36,189 +38,55 @@
 	import { getBookBySlug } from '$lib/data/books';
 	import { TRANSLATIONS } from '$lib/stores/compare';
 
-	export let bookData: BookData | null = null;
-	export let translationId: string = 'odr';
-	export let onClose: (() => void) | null = null;
+	interface Props {
+		bookData?: BookData | null;
+		translationId?: string;
+		onClose?: (() => void) | null;
+	}
 
-	$: isOdr = translationId === 'odr';
-	$: hasTranslationNotes =
-		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox';
-	$: isDrc = translationId === 'drc';
-	$: isKnox = translationId === 'knox';
-	$: hasLinkifiedNotes = isOdr || isDrc || isKnox || isHaydock;
-	$: hasTranslationIntro = translationId === 'conf';
-	$: isConf = translationId === 'conf';
-	$: isHaydock = translationId === 'haydock';
-	$: translationMeta = TRANSLATIONS.find((t) => t.id === translationId);
+	let { bookData = null, translationId = 'odr', onClose = null }: Props = $props();
+
 
 	// ── Translation notes (DRC/CPDV) ────────────────────────────────
 	// Follows the same pattern as the ODR annotation loader below.
-	let translationNotes: TranslationNote[] | null = null;
-	let translationNotesLoading = false;
-	let lastTranslationNotesKey = '';
+	let translationNotes: TranslationNote[] | null = $state(null);
+	let translationNotesLoading = $state(false);
+	let lastTranslationNotesKey = $state('');
 
-	$: {
-		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
-		if (!isOdr && hasTranslationNotes && currentBookSlug && key !== lastTranslationNotesKey) {
-			lastTranslationNotesKey = key;
-			const id = translationId;
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			translationNotesLoading = true;
-			translationNotes = null;
-			loadTranslationNotes(id, slug, chNum, fetch)
-				.then((data) => {
-					if (`${id}/${slug}/${chNum}` === lastTranslationNotesKey) {
-						translationNotes = data;
-						translationNotesLoading = false;
-					}
-				})
-				.catch(() => {
-					if (`${id}/${slug}/${chNum}` === lastTranslationNotesKey) {
-						translationNotesLoading = false;
-					}
-				});
-		}
-	}
 
 	// ── Translation cross-refs (DRC) ────────────────────────────────
-	let translationCrossRefs: TranslationCrossRef[] | null = null;
-	let translationCrossRefsLoading = false;
-	let lastTranslationCrossRefsKey = '';
+	let translationCrossRefs: TranslationCrossRef[] | null = $state(null);
+	let translationCrossRefsLoading = $state(false);
+	let lastTranslationCrossRefsKey = $state('');
 
-	$: {
-		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
-		if ((isDrc || isHaydock) && currentBookSlug && key !== lastTranslationCrossRefsKey) {
-			lastTranslationCrossRefsKey = key;
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			translationCrossRefsLoading = true;
-			translationCrossRefs = null;
-			loadTranslationCrossRefs(isDrc ? 'drc' : 'haydock', slug, chNum, fetch)
-				.then((data) => {
-					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
-						translationCrossRefs = data;
-						translationCrossRefsLoading = false;
-					}
-				})
-				.catch(() => {
-					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
-						translationCrossRefsLoading = false;
-					}
-				});
-		} else if (!isDrc && !isHaydock) {
-			translationCrossRefs = null;
-		}
-	}
 
 	// ── Haydock commentary ──────────────────────────────────────────
-	let haydockCommentary: HaydockCommentaryEntry[] | null = null;
-	let haydockCommentaryLoading = false;
-	let lastHaydockCommentaryKey = '';
+	let haydockCommentary: HaydockCommentaryEntry[] | null = $state(null);
+	let haydockCommentaryLoading = $state(false);
+	let lastHaydockCommentaryKey = $state('');
 
-	$: {
-		const key = `haydock/${currentBookSlug}/${currentChapterNum}`;
-		if (isHaydock && currentBookSlug && key !== lastHaydockCommentaryKey) {
-			lastHaydockCommentaryKey = key;
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			haydockCommentaryLoading = true;
-			haydockCommentary = null;
-			loadHaydockCommentary(slug, chNum, fetch)
-				.then((data) => {
-					if (`haydock/${slug}/${chNum}` === lastHaydockCommentaryKey) {
-						haydockCommentary = data;
-						haydockCommentaryLoading = false;
-						// After Svelte renders the commentary sections, wire up the scroll observer
-						tick()
-							.then(() => tick())
-							.then(setupPanelObserver);
-					}
-				})
-				.catch(() => {
-					if (`haydock/${currentBookSlug}/${currentChapterNum}` === lastHaydockCommentaryKey) {
-						haydockCommentaryLoading = false;
-					}
-				});
-		} else if (!isHaydock) {
-			haydockCommentary = null;
-		}
-	}
 
 	// ── Haydock intro ───────────────────────────────────────────────
-	let haydockIntro: HaydockIntro | null = null;
-	let lastHaydockIntroSlug = '';
+	let haydockIntro: HaydockIntro | null = $state(null);
+	let lastHaydockIntroSlug = $state('');
 
-	$: {
-		if (isHaydock && currentBookSlug && currentBookSlug !== lastHaydockIntroSlug) {
-			lastHaydockIntroSlug = currentBookSlug;
-			const slug = currentBookSlug;
-			loadHaydockIntro(slug, fetch)
-				.then((data) => {
-					if (slug === lastHaydockIntroSlug) haydockIntro = data;
-				})
-				.catch(() => {});
-		} else if (!isHaydock) {
-			haydockIntro = null;
-		}
-	}
 
 	// ── Confraternity intro ─────────────────────────────────────────
-	let confIntro: ConfIntro | null = null;
-	let lastConfIntroSlug = '';
+	let confIntro: ConfIntro | null = $state(null);
+	let lastConfIntroSlug = $state('');
 
-	$: {
-		if (!isOdr && hasTranslationIntro && currentBookSlug && currentBookSlug !== lastConfIntroSlug) {
-			lastConfIntroSlug = currentBookSlug;
-			const slug = currentBookSlug;
-			confIntro = null;
-			loadConfIntro(slug, fetch).then((data) => {
-				if (slug === lastConfIntroSlug) {
-					confIntro = data;
-				}
-			});
-		}
-	}
 
 	// ── Confraternity footnotes ───────────────────────────────────
-	let confFootnotes: ConfChapterFootnotes | null = null;
-	let confFootnotesLoading = false;
-	let lastConfFootnotesKey = '';
+	let confFootnotes: ConfChapterFootnotes | null = $state(null);
+	let confFootnotesLoading = $state(false);
+	let lastConfFootnotesKey = $state('');
 
-	$: if (isConf && currentBookSlug && currentChapterNum) {
-		const key = `${currentBookSlug}/${currentChapterNum}`;
-		if (key !== lastConfFootnotesKey) {
-			lastConfFootnotesKey = key;
-			confFootnotesLoading = true;
-			confFootnotes = null;
-			loadConfFootnotes(currentBookSlug, currentChapterNum, fetch).then((data) => {
-				if (key === lastConfFootnotesKey) {
-					confFootnotes = data;
-					confFootnotesLoading = false;
-				}
-			});
-		}
-	}
 
 	// ── Confraternity commentary ──────────────────────────────────
-	let confCommentary: ConfChapterCommentary | null = null;
-	let confCommentaryLoading = false;
-	let lastConfCommentaryKey = '';
+	let confCommentary: ConfChapterCommentary | null = $state(null);
+	let confCommentaryLoading = $state(false);
+	let lastConfCommentaryKey = $state('');
 
-	$: if (isConf && currentBookSlug && currentChapterNum) {
-		const key = `${currentBookSlug}/${currentChapterNum}`;
-		if (key !== lastConfCommentaryKey) {
-			lastConfCommentaryKey = key;
-			confCommentaryLoading = true;
-			confCommentary = null;
-			loadConfCommentary(currentBookSlug, currentChapterNum, fetch).then((data) => {
-				if (key === lastConfCommentaryKey) {
-					confCommentary = data;
-					confCommentaryLoading = false;
-				}
-			});
-		}
-	}
 
 	function tabLabel(title: string): string {
 		if (/argument.*in general/i.test(title)) return 'General';
@@ -258,30 +126,9 @@
 			.join(' ');
 	}
 
-	$: intros = bookData?.intros ?? [];
-	$: hasIntros = intros.length > 0;
-	$: endMatters = bookData?.endMatters ?? [];
-	$: hasEndMatters = endMatters.length > 0;
 
 	type TabDef = { id: StudyTab; label: string };
 
-	$: visibleTabs = buildVisibleTabs(
-		translationId,
-		hasIntros,
-		hasArticles,
-		hasEndMatters,
-		confIntro,
-		haydockIntro
-	);
-	// Snap to first visible tab if the active tab isn't available for this translation
-	$: if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
-		studyPanel.update((s) => ({ ...s, activeTab: visibleTabs[0].id }));
-	}
-	$: showTabBar = visibleTabs.length > 1;
-	$: sliderIndex = Math.max(
-		0,
-		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
-	);
 
 	function buildVisibleTabs(
 		tid: string,
@@ -333,121 +180,21 @@
 
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
-	let prevBook: string | null = null;
-	$: if (bookData && bookData.book !== prevBook) {
-		prevBook = bookData.book; // eslint-disable-line no-useless-assignment
+	let prevBook: string | null = $state(null);
 
-		// If the tab was set from a URL ?tab= param, respect it on first load
-		if ($studyPanel.tabSetByUrl) {
-			const idx = intros.findIndex((i) => i.default);
-			studyPanel.update((s) => ({
-				...s,
-				tabSetByUrl: false,
-				activeIntroIndex: idx >= 0 ? idx : 0,
-				activeEndIndex: 0,
-				activeArticleIndex: 0
-			}));
-		} else {
-			const preferred = $prefs.studyDefaultTab;
-
-			let defaultTab: StudyTab;
-			if (translationId === 'odr') {
-				defaultTab = 'annotations';
-				if (preferred === 'annotations' || preferred === 'notes' || preferred === 'cross-refs') {
-					defaultTab = preferred;
-				}
-				if (preferred === 'intro' && hasIntros) defaultTab = 'intro';
-				if (preferred === 'article' && hasArticles) defaultTab = 'article';
-				if (preferred === 'end' && hasEndMatters) defaultTab = 'end';
-			} else if (translationId === 'conf') {
-				defaultTab = 'footnotes';
-				if (preferred === 'footnotes' || preferred === 'commentary') {
-					defaultTab = preferred;
-				}
-				if (
-					preferred === 'intro' &&
-					confIntro &&
-					(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
-				) {
-					defaultTab = 'intro';
-				}
-			} else if (isHaydock) {
-				defaultTab = 'commentary';
-				if (preferred === 'commentary' || preferred === 'cross-refs') {
-					defaultTab = preferred;
-				}
-				if (preferred === 'intro' && haydockIntro && haydockIntro.paragraphs.length > 0) {
-					defaultTab = 'intro';
-				}
-			} else if (hasTranslationNotes) {
-				defaultTab = 'notes';
-			} else {
-				defaultTab = 'annotations';
-			}
-
-			const idx = intros.findIndex((i) => i.default);
-			studyPanel.update((s) => ({
-				...s,
-				activeTab: defaultTab,
-				activeIntroIndex: idx >= 0 ? idx : 0,
-				activeEndIndex: 0,
-				activeArticleIndex: 0
-			}));
-		}
-	}
-
-	// If on the article tab but current chapter has no articles, fall back to annotations/commentary
-	$: if ($studyPanel.activeTab === 'article' && !hasArticles) {
-		studyPanel.update((s) => ({ ...s, activeTab: isOdr ? 'annotations' : 'commentary' }));
-	}
 
 	function switchTab(tab: StudyTab) {
 		studyPanel.update((s) => ({ ...s, activeTab: tab }));
 		prefs.update((p) => ({ ...p, studyDefaultTab: tab }));
 	}
 
-	// ── Current chapter data ─────────────────────────────────────────
-
-	$: currentChapterNum = $readingPosition?.chapter ?? 1;
-	$: currentBookSlug = $readingPosition?.bookSlug ?? '';
-	$: currentChapterData = bookData?.chapters.find((c) => c.chapter === currentChapterNum);
-	$: articles = currentChapterData?.articles ?? [];
-	$: hasArticles = articles.length > 0; // eslint-disable-line no-useless-assignment
 
 	// ── Annotation sidecar loading ───────────────────────────────────
 
-	let annotations: ChapterAnnotations | null = null;
-	let annotationsLoading = false;
-	let lastAnnotationKey = '';
+	let annotations: ChapterAnnotations | null = $state(null);
+	let annotationsLoading = $state(false);
+	let lastAnnotationKey = $state('');
 
-	$: {
-		const key = `${currentBookSlug}/${currentChapterNum}`;
-		if (key !== lastAnnotationKey && currentBookSlug) {
-			lastAnnotationKey = key;
-			// Capture these NOW, before any async gap
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			// Reset scroll instantly; the CSS slide-up animation handles the smooth transition
-			if (browser && panelScroll) panelScroll.scrollTop = 0;
-			sectionEls = {};
-			lastObservedKeys = '';
-			annotationsLoading = true;
-			annotations = null;
-			studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
-			loadAnnotations(slug, chNum, fetch)
-				.then((data) => {
-					if (`${slug}/${chNum}` === lastAnnotationKey) {
-						annotations = data;
-						annotationsLoading = false;
-					}
-				})
-				.catch(() => {
-					if (`${slug}/${chNum}` === lastAnnotationKey) {
-						annotationsLoading = false;
-					}
-				});
-		}
-	}
 
 	// ── Build verse sections for the commentary tab ──────────────────
 
@@ -458,7 +205,6 @@
 		annotationEntries: AnnotationEntry[];
 	}
 
-	$: verseSections = buildVerseSections(currentChapterData, annotations);
 
 	function buildVerseSections(
 		chapter: typeof currentChapterData,
@@ -536,7 +282,7 @@
 
 	// ── Shareable anchor links ───────────────────────────────────────
 
-	let copiedVerse: number | null = null;
+	let copiedVerse: number | null = $state(null);
 	let copiedTimer: ReturnType<typeof setTimeout> | null = null;
 
 	function copyVerseLink(verse: number) {
@@ -556,11 +302,11 @@
 
 	// ── Synced scroll ────────────────────────────────────────────────
 
-	let panelScroll: HTMLElement;
-	let sectionEls: Record<number, HTMLElement> = {};
+	let panelScroll: HTMLElement | undefined = $state();
+	let sectionEls: Record<number, HTMLElement> = $state({});
 	let programmaticScroll = false;
 	let programmaticScrollTimer: ReturnType<typeof setTimeout> | null = null;
-	let panelSectionObserver: IntersectionObserver | null = null;
+	let panelSectionObserver: IntersectionObserver | null = $state(null);
 	const intersectingVerses = new Set<number>();
 	let annotatedVerseTimer: ReturnType<typeof setTimeout> | null = null;
 	// (chapter-change scroll + sectionEls reset handled inside annotation loading reactive)
@@ -569,12 +315,7 @@
 	// Explicit clicks (scrollTrigger) still scroll the panel.
 
 	// Clear sectionEls on tab switch
-	let lastActiveTab: StudyTab | null = null;
-	$: if ($studyPanel.activeTab !== lastActiveTab) {
-		lastActiveTab = $studyPanel.activeTab; // eslint-disable-line no-useless-assignment
-		sectionEls = {};
-		lastObservedKeys = '';
-	}
+	let lastActiveTab: StudyTab | null = $state(null);
 
 	// Register one DOM element for every verse in a [start, end] range.
 	// Used by Conf commentary sections that span multiple verses.
@@ -618,7 +359,7 @@
 		}, 600);
 	}
 
-	let lastObservedKeys = '';
+	let lastObservedKeys = $state('');
 
 	function setupPanelObserver() {
 		if (!browser || !panelScroll || !$prefs.annotationSync || $prefs.readingMode !== 'study') {
@@ -687,26 +428,7 @@
 		}
 	}
 
-	$: if (verseSections && browser) {
-		tick().then(setupPanelObserver);
-	}
-	$: if ($studyPanel.activeTab && browser) {
-		tick().then(setupPanelObserver);
-	}
-	$: if (browser && !$prefs.annotationSync) {
-		panelSectionObserver?.disconnect();
-		panelSectionObserver = null;
-	}
-	$: if (browser && $prefs.readingMode !== 'study') {
-		panelSectionObserver?.disconnect();
-		panelSectionObserver = null;
-	}
 
-	// ── ScrollTrigger consumption ────────────────────────────────────
-
-	$: if ($scrollTrigger && panelScroll) {
-		handleScrollTrigger($scrollTrigger);
-	}
 
 	async function handleScrollTrigger(
 		trigger: NonNullable<import('$lib/stores/studyPanel').ScrollTrigger>
@@ -798,13 +520,12 @@
 		el.addEventListener('wheel', handleWheel, { passive: false });
 		wheelCleanup = () => el.removeEventListener('wheel', handleWheel);
 	}
-	$: if (panelScroll && browser) attachWheelHandler(panelScroll);
 
 	// ── Conf verse-ref tooltip state ────────────────────────────────
-	let confVerseRefs: OsisRange[] = [];
-	let confVerseRefAnchor: HTMLElement | null = null;
-	let confVerseRefVisible = false;
-	let confVerseRefTimer: ReturnType<typeof setTimeout> | null = null;
+	let confVerseRefs: OsisRange[] = $state([]);
+	let confVerseRefAnchor: HTMLElement | null = $state(null);
+	let confVerseRefVisible = $state(false);
+	let confVerseRefTimer: ReturnType<typeof setTimeout> | null = $state(null);
 
 	function handleConfRefOver(e: Event) {
 		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
@@ -843,6 +564,315 @@
 		if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
 		wheelCleanup?.();
 	});
+	let isOdr = $derived(translationId === 'odr');
+	let hasTranslationNotes =
+		$derived(translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox');
+	let isDrc = $derived(translationId === 'drc');
+	let isKnox = $derived(translationId === 'knox');
+	let isHaydock = $derived(translationId === 'haydock');
+	let hasLinkifiedNotes = $derived(isOdr || isDrc || isKnox || isHaydock);
+	let hasTranslationIntro = $derived(translationId === 'conf');
+	let isConf = $derived(translationId === 'conf');
+	let translationMeta = $derived(TRANSLATIONS.find((t) => t.id === translationId));
+	let currentBookSlug = $derived($readingPosition?.bookSlug ?? '');
+	// ── Current chapter data ─────────────────────────────────────────
+
+	let currentChapterNum = $derived($readingPosition?.chapter ?? 1);
+	run(() => {
+		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
+		if (!isOdr && hasTranslationNotes && currentBookSlug && key !== lastTranslationNotesKey) {
+			lastTranslationNotesKey = key;
+			const id = translationId;
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
+			translationNotesLoading = true;
+			translationNotes = null;
+			loadTranslationNotes(id, slug, chNum, fetch)
+				.then((data) => {
+					if (`${id}/${slug}/${chNum}` === lastTranslationNotesKey) {
+						translationNotes = data;
+						translationNotesLoading = false;
+					}
+				})
+				.catch(() => {
+					if (`${id}/${slug}/${chNum}` === lastTranslationNotesKey) {
+						translationNotesLoading = false;
+					}
+				});
+		}
+	});
+	run(() => {
+		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
+		if ((isDrc || isHaydock) && currentBookSlug && key !== lastTranslationCrossRefsKey) {
+			lastTranslationCrossRefsKey = key;
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
+			translationCrossRefsLoading = true;
+			translationCrossRefs = null;
+			loadTranslationCrossRefs(isDrc ? 'drc' : 'haydock', slug, chNum, fetch)
+				.then((data) => {
+					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
+						translationCrossRefs = data;
+						translationCrossRefsLoading = false;
+					}
+				})
+				.catch(() => {
+					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
+						translationCrossRefsLoading = false;
+					}
+				});
+		} else if (!isDrc && !isHaydock) {
+			translationCrossRefs = null;
+		}
+	});
+	run(() => {
+		const key = `haydock/${currentBookSlug}/${currentChapterNum}`;
+		if (isHaydock && currentBookSlug && key !== lastHaydockCommentaryKey) {
+			lastHaydockCommentaryKey = key;
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
+			haydockCommentaryLoading = true;
+			haydockCommentary = null;
+			loadHaydockCommentary(slug, chNum, fetch)
+				.then((data) => {
+					if (`haydock/${slug}/${chNum}` === lastHaydockCommentaryKey) {
+						haydockCommentary = data;
+						haydockCommentaryLoading = false;
+						// After Svelte renders the commentary sections, wire up the scroll observer
+						tick()
+							.then(() => tick())
+							.then(setupPanelObserver);
+					}
+				})
+				.catch(() => {
+					if (`haydock/${currentBookSlug}/${currentChapterNum}` === lastHaydockCommentaryKey) {
+						haydockCommentaryLoading = false;
+					}
+				});
+		} else if (!isHaydock) {
+			haydockCommentary = null;
+		}
+	});
+	run(() => {
+		if (isHaydock && currentBookSlug && currentBookSlug !== lastHaydockIntroSlug) {
+			lastHaydockIntroSlug = currentBookSlug;
+			const slug = currentBookSlug;
+			loadHaydockIntro(slug, fetch)
+				.then((data) => {
+					if (slug === lastHaydockIntroSlug) haydockIntro = data;
+				})
+				.catch(() => {});
+		} else if (!isHaydock) {
+			haydockIntro = null;
+		}
+	});
+	run(() => {
+		if (!isOdr && hasTranslationIntro && currentBookSlug && currentBookSlug !== lastConfIntroSlug) {
+			lastConfIntroSlug = currentBookSlug;
+			const slug = currentBookSlug;
+			confIntro = null;
+			loadConfIntro(slug, fetch).then((data) => {
+				if (slug === lastConfIntroSlug) {
+					confIntro = data;
+				}
+			});
+		}
+	});
+	run(() => {
+		if (isConf && currentBookSlug && currentChapterNum) {
+			const key = `${currentBookSlug}/${currentChapterNum}`;
+			if (key !== lastConfFootnotesKey) {
+				lastConfFootnotesKey = key;
+				confFootnotesLoading = true;
+				confFootnotes = null;
+				loadConfFootnotes(currentBookSlug, currentChapterNum, fetch).then((data) => {
+					if (key === lastConfFootnotesKey) {
+						confFootnotes = data;
+						confFootnotesLoading = false;
+					}
+				});
+			}
+		}
+	});
+	run(() => {
+		if (isConf && currentBookSlug && currentChapterNum) {
+			const key = `${currentBookSlug}/${currentChapterNum}`;
+			if (key !== lastConfCommentaryKey) {
+				lastConfCommentaryKey = key;
+				confCommentaryLoading = true;
+				confCommentary = null;
+				loadConfCommentary(currentBookSlug, currentChapterNum, fetch).then((data) => {
+					if (key === lastConfCommentaryKey) {
+						confCommentary = data;
+						confCommentaryLoading = false;
+					}
+				});
+			}
+		}
+	});
+	let intros = $derived(bookData?.intros ?? []);
+	let hasIntros = $derived(intros.length > 0);
+	let endMatters = $derived(bookData?.endMatters ?? []);
+	let hasEndMatters = $derived(endMatters.length > 0);
+	let currentChapterData = $derived(bookData?.chapters.find((c) => c.chapter === currentChapterNum));
+	let articles = $derived(currentChapterData?.articles ?? []);
+	let hasArticles = $derived(articles.length > 0); // eslint-disable-line no-useless-assignment
+	let visibleTabs = $derived(buildVisibleTabs(
+		translationId,
+		hasIntros,
+		hasArticles,
+		hasEndMatters,
+		confIntro,
+		haydockIntro
+	));
+	// Snap to first visible tab if the active tab isn't available for this translation
+	run(() => {
+		if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
+			studyPanel.update((s) => ({ ...s, activeTab: visibleTabs[0].id }));
+		}
+	});
+	let showTabBar = $derived(visibleTabs.length > 1);
+	let sliderIndex = $derived(Math.max(
+		0,
+		visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
+	));
+	run(() => {
+		if (bookData && bookData.book !== prevBook) {
+			prevBook = bookData.book; // eslint-disable-line no-useless-assignment
+
+			// If the tab was set from a URL ?tab= param, respect it on first load
+			if ($studyPanel.tabSetByUrl) {
+				const idx = intros.findIndex((i) => i.default);
+				studyPanel.update((s) => ({
+					...s,
+					tabSetByUrl: false,
+					activeIntroIndex: idx >= 0 ? idx : 0,
+					activeEndIndex: 0,
+					activeArticleIndex: 0
+				}));
+			} else {
+				const preferred = $prefs.studyDefaultTab;
+
+				let defaultTab: StudyTab;
+				if (translationId === 'odr') {
+					defaultTab = 'annotations';
+					if (preferred === 'annotations' || preferred === 'notes' || preferred === 'cross-refs') {
+						defaultTab = preferred;
+					}
+					if (preferred === 'intro' && hasIntros) defaultTab = 'intro';
+					if (preferred === 'article' && hasArticles) defaultTab = 'article';
+					if (preferred === 'end' && hasEndMatters) defaultTab = 'end';
+				} else if (translationId === 'conf') {
+					defaultTab = 'footnotes';
+					if (preferred === 'footnotes' || preferred === 'commentary') {
+						defaultTab = preferred;
+					}
+					if (
+						preferred === 'intro' &&
+						confIntro &&
+						(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
+					) {
+						defaultTab = 'intro';
+					}
+				} else if (isHaydock) {
+					defaultTab = 'commentary';
+					if (preferred === 'commentary' || preferred === 'cross-refs') {
+						defaultTab = preferred;
+					}
+					if (preferred === 'intro' && haydockIntro && haydockIntro.paragraphs.length > 0) {
+						defaultTab = 'intro';
+					}
+				} else if (hasTranslationNotes) {
+					defaultTab = 'notes';
+				} else {
+					defaultTab = 'annotations';
+				}
+
+				const idx = intros.findIndex((i) => i.default);
+				studyPanel.update((s) => ({
+					...s,
+					activeTab: defaultTab,
+					activeIntroIndex: idx >= 0 ? idx : 0,
+					activeEndIndex: 0,
+					activeArticleIndex: 0
+				}));
+			}
+		}
+	});
+	// If on the article tab but current chapter has no articles, fall back to annotations/commentary
+	run(() => {
+		if ($studyPanel.activeTab === 'article' && !hasArticles) {
+			studyPanel.update((s) => ({ ...s, activeTab: isOdr ? 'annotations' : 'commentary' }));
+		}
+	});
+	run(() => {
+		const key = `${currentBookSlug}/${currentChapterNum}`;
+		if (key !== lastAnnotationKey && currentBookSlug) {
+			lastAnnotationKey = key;
+			// Capture these NOW, before any async gap
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
+			// Reset scroll instantly; the CSS slide-up animation handles the smooth transition
+			if (browser && panelScroll) panelScroll.scrollTop = 0;
+			sectionEls = {};
+			lastObservedKeys = '';
+			annotationsLoading = true;
+			annotations = null;
+			studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
+			loadAnnotations(slug, chNum, fetch)
+				.then((data) => {
+					if (`${slug}/${chNum}` === lastAnnotationKey) {
+						annotations = data;
+						annotationsLoading = false;
+					}
+				})
+				.catch(() => {
+					if (`${slug}/${chNum}` === lastAnnotationKey) {
+						annotationsLoading = false;
+					}
+				});
+		}
+	});
+	let verseSections = $derived(buildVerseSections(currentChapterData, annotations));
+	run(() => {
+		if ($studyPanel.activeTab !== lastActiveTab) {
+			lastActiveTab = $studyPanel.activeTab; // eslint-disable-line no-useless-assignment
+			sectionEls = {};
+			lastObservedKeys = '';
+		}
+	});
+	run(() => {
+		if (verseSections && browser) {
+			tick().then(setupPanelObserver);
+		}
+	});
+	run(() => {
+		if ($studyPanel.activeTab && browser) {
+			tick().then(setupPanelObserver);
+		}
+	});
+	run(() => {
+		if (browser && !$prefs.annotationSync) {
+			panelSectionObserver?.disconnect();
+			panelSectionObserver = null;
+		}
+	});
+	run(() => {
+		if (browser && $prefs.readingMode !== 'study') {
+			panelSectionObserver?.disconnect();
+			panelSectionObserver = null;
+		}
+	});
+	// ── ScrollTrigger consumption ────────────────────────────────────
+
+	run(() => {
+		if ($scrollTrigger && panelScroll) {
+			handleScrollTrigger($scrollTrigger);
+		}
+	});
+	run(() => {
+		if (panelScroll && browser) attachWheelHandler(panelScroll);
+	});
 </script>
 
 <aside
@@ -858,7 +888,7 @@
 				<button
 					class="w-6 h-6 shrink-0 flex items-center justify-center rounded text-subtle hover:text-foreground transition-colors"
 					aria-label="Close study panel"
-					on:click={onClose}
+					onclick={onClose}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -889,7 +919,7 @@
 						aria-selected={$studyPanel.activeTab === tab.id}
 						class="tab-btn flex-1 pb-[9px] pt-[2px]"
 						class:tab-active={$studyPanel.activeTab === tab.id}
-						on:click={() => switchTab(tab.id)}
+						onclick={() => switchTab(tab.id)}
 					>
 						{tab.label}
 					</button>
@@ -915,7 +945,7 @@
 					<button
 						class="seg-btn"
 						class:seg-active={$studyPanel.activeIntroIndex === i}
-						on:click={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
+						onclick={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
 					>
 						{tabLabel(intro.title)}
 					</button>
@@ -934,14 +964,14 @@
 				<button
 					class="seg-btn"
 					class:seg-active={$studyPanel.activeConfIntroTab === 'bible'}
-					on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
+					onclick={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
 				>
 					Confraternity Bible
 				</button>
 				<button
 					class="seg-btn"
 					class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
-					on:click={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
+					onclick={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
 				>
 					Supplemental Commentary
 				</button>
@@ -961,7 +991,7 @@
 					<button
 						class="seg-btn"
 						class:seg-active={$studyPanel.activeArticleIndex === i}
-						on:click={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
+						onclick={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
 					>
 						{tabLabel(art.title)}
 					</button>
@@ -984,7 +1014,7 @@
 					<button
 						class="seg-btn"
 						class:seg-active={$studyPanel.activeEndIndex === i}
-						on:click={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
+						onclick={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
 					>
 						{tabLabel(em.title)}
 					</button>
@@ -1000,12 +1030,12 @@
 	{/if}
 
 	<!-- Scrollable content area -->
-	<!-- svelte-ignore a11y-no-static-element-interactions a11y-mouse-events-have-key-events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions, a11y_mouse_events_have_key_events -->
 	<div
 		class="panel-scroll flex-1 overflow-y-scroll"
 		bind:this={panelScroll}
-		on:mouseover={hasLinkifiedNotes || isConf ? handleConfRefOver : undefined}
-		on:mouseout={hasLinkifiedNotes || isConf ? handleConfRefOut : undefined}
+		onmouseover={hasLinkifiedNotes || isConf ? handleConfRefOver : undefined}
+		onmouseout={hasLinkifiedNotes || isConf ? handleConfRefOut : undefined}
 	>
 		<!-- ═══ ODR: Intro tab ═══ -->
 		{#if $studyPanel.activeTab === 'intro' && isOdr}
@@ -1066,11 +1096,11 @@
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
-								<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+								<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 								<div
 									class="verse-section-header"
 									class:verse-section-header-sticky={section.verse !== 0}
-									on:click={() => copyVerseLink(section.verse)}
+									onclick={() => copyVerseLink(section.verse)}
 								>
 									{section.label}
 									<button
@@ -1144,11 +1174,11 @@
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
-								<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+								<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 								<div
 									class="verse-section-header"
 									class:verse-section-header-sticky={section.verse !== 0}
-									on:click={() => copyVerseLink(section.verse)}
+									onclick={() => copyVerseLink(section.verse)}
 								>
 									{section.label}
 									<button
@@ -1237,10 +1267,10 @@
 								bind:this={sectionEls[section.verse]}
 								data-section-verse={section.verse}
 							>
-								<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+								<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 								<div
 									class="verse-section-header verse-section-header-sticky"
-									on:click={() => copyVerseLink(section.verse)}
+									onclick={() => copyVerseLink(section.verse)}
 								>
 									{section.label}
 									<button
@@ -1431,10 +1461,10 @@
 							bind:this={sectionEls[group.verse]}
 							data-section-verse={group.verse}
 						>
-							<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+							<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 							<div
 								class="verse-section-header verse-section-header-sticky"
-								on:click={() => copyVerseLink(group.verse)}
+								onclick={() => copyVerseLink(group.verse)}
 							>
 								{group.verse === 0 ? 'Chapter' : `Verse ${group.verse}`}
 								<button
@@ -1600,10 +1630,10 @@
 				osisRanges={confVerseRefs}
 				anchorEl={confVerseRefAnchor}
 				visible={confVerseRefVisible}
-				on:mouseenter={() => {
+				onmouseenter={() => {
 					if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
 				}}
-				on:mouseleave={() => {
+				onmouseleave={() => {
 					confVerseRefTimer = setTimeout(() => {
 						confVerseRefVisible = false;
 						confVerseRefAnchor = null;

@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
 	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
 	import { ABOUT_NAV } from '../nav';
 
-	let blessingOpen = false;
+	let blessingOpen = $state(false);
 
 	function closeBlessing() {
 		blessingOpen = false;
@@ -29,11 +31,13 @@
 		}
 	});
 
-	$: if (browser && blessingOpen) {
-		document.body.style.overflow = 'hidden';
-	} else if (browser) {
-		document.body.style.overflow = '';
-	}
+	run(() => {
+		if (browser && blessingOpen) {
+			document.body.style.overflow = 'hidden';
+		} else if (browser) {
+			document.body.style.overflow = '';
+		}
+	});
 </script>
 
 <svelte:head>
@@ -142,7 +146,7 @@
 		Prayers for this work are also welcome.
 		<button
 			class="blessing-trigger"
-			on:click={() => (blessingOpen = true)}
+			onclick={() => (blessingOpen = true)}
 			aria-label="Open a prayer for this work"
 		>
 			<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
@@ -166,8 +170,8 @@
 		tabindex="-1"
 		aria-modal="true"
 		aria-labelledby="blessing-title"
-		on:click={handleBlessingBackdrop}
-		on:keydown={handleBlessingKey}
+		onclick={handleBlessingBackdrop}
+		onkeydown={handleBlessingKey}
 	>
 		<div class="blessing-panel">
 			<div class="blessing-head">
@@ -175,7 +179,7 @@
 					<span class="blessing-cross" aria-hidden="true">✠</span>
 					<span>A Prayer for This Work</span>
 				</div>
-				<button class="blessing-close" on:click={closeBlessing} aria-label="Close">
+				<button class="blessing-close" onclick={closeBlessing} aria-label="Close">
 					<svg
 						width="11"
 						height="11"

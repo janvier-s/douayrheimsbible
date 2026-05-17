@@ -2,12 +2,16 @@
 	import type { PageData } from './$types';
 	import { TRANSLATION_CONFIGS } from '$lib/data/reference';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: config = data.config;
+	let { data }: Props = $props();
+
+	let config = $derived(data.config);
 
 	// Build grouped articles for display
-	$: groupedSections = config.sections.map((sec) => {
+	let groupedSections = $derived(config.sections.map((sec) => {
 		const sectionArticles = config.articles.filter((a) => a.section === sec.key);
 		return {
 			...sec,
@@ -16,9 +20,9 @@
 				articles: sectionArticles.filter((a) => a.category === cat.key)
 			}))
 		};
-	});
+	}));
 
-	$: otherTranslations = TRANSLATION_CONFIGS.filter((c) => c.id !== config.id);
+	let otherTranslations = $derived(TRANSLATION_CONFIGS.filter((c) => c.id !== config.id));
 </script>
 
 <svelte:head>

@@ -26,11 +26,11 @@
 		}
 	};
 
-	$: info = errors[$page.status] ?? {
+	let info = $derived(errors[$page.status] ?? {
 		latin: 'Error Ignotus',
 		heading: 'An Error Occurred',
 		message: $page.error?.message ?? 'Something unexpected hath occurred in our scriptorium.'
-	};
+	});
 </script>
 
 <svelte:head>

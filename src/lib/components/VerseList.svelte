@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { afterNavigate } from '$app/navigation';
 	import { onMount, onDestroy, tick } from 'svelte';
 	import { browser } from '$app/environment';
@@ -19,16 +21,26 @@
 		loadConfCommentary
 	} from '$lib/data/loader';
 	import type { HaydockCommentaryEntry } from '$lib/data/loader';
-	export let verses: Verse[];
-	export let targetVerse: number | undefined;
-	export let bookSlug: string;
-	export let chapterNum: number;
-	export let translationId: string = 'odr';
+	interface Props {
+		verses: Verse[];
+		targetVerse: number | undefined;
+		bookSlug: string;
+		chapterNum: number;
+		translationId?: string;
+	}
+
+	let {
+		verses,
+		targetVerse,
+		bookSlug,
+		chapterNum,
+		translationId = 'odr'
+	}: Props = $props();
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
 	// ── Paragraph data (lazy-loaded to avoid 28KB in initial bundle) ────
 	type ParagraphStarts = Record<string, Record<number, number[]>>;
-	let paragraphStarts: ParagraphStarts | null = null;
+	let paragraphStarts: ParagraphStarts | null = $state(null);
 
 	if (browser) {
 		import('$lib/data/paragraphs').then((m) => {
@@ -37,10 +49,10 @@
 	}
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
-	let drcCrossRefs: TranslationCrossRef[] | null = null;
-	let lastDrcKey = '';
+	let drcCrossRefs: TranslationCrossRef[] | null = $state(null);
+	let lastDrcKey = $state('');
 
-	$: {
+	run(() => {
 		const key = `${bookSlug}/${chapterNum}`;
 		if (browser && translationId === 'drc' && key !== lastDrcKey) {
 			lastDrcKey = key;
@@ -52,13 +64,13 @@
 		} else if (translationId !== 'drc') {
 			drcCrossRefs = null;
 		}
-	}
+	});
 
 	// ── Haydock commentary (loaded for hover popovers) ────
-	let haydockCommentary: HaydockCommentaryEntry[] | null = null;
-	let lastHaydockKey = '';
+	let haydockCommentary: HaydockCommentaryEntry[] | null = $state(null);
+	let lastHaydockKey = $state('');
 
-	$: {
+	run(() => {
 		const key = `${bookSlug}/${chapterNum}`;
 		if (browser && translationId === 'haydock' && key !== lastHaydockKey) {
 			lastHaydockKey = key;
@@ -70,14 +82,14 @@
 		} else if (translationId !== 'haydock') {
 			haydockCommentary = null;
 		}
-	}
+	});
 
 	// ── Translation notes (DRC / CPDV / Knox) ────────────────────────
-	let translationNotes: TranslationNote[] | null = null;
-	let lastTranslationNotesKey = '';
-	$: hasTranslationNotes =
-		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox';
-	$: {
+	let translationNotes: TranslationNote[] | null = $state(null);
+	let lastTranslationNotesKey = $state('');
+	let hasTranslationNotes =
+		$derived(translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox');
+	run(() => {
 		const key = `${translationId}/${bookSlug}/${chapterNum}`;
 		if (browser && hasTranslationNotes && key !== lastTranslationNotesKey) {
 			lastTranslationNotesKey = key;
@@ -91,13 +103,13 @@
 		} else if (!hasTranslationNotes) {
 			translationNotes = null;
 		}
-	}
+	});
 
 	// ── Confraternity footnotes + commentary ─────────────────────────
-	let confFootnotes: ConfChapterFootnotes | null = null;
-	let confCommentary: ConfChapterCommentary | null = null;
-	let lastConfKey = '';
-	$: {
+	let confFootnotes: ConfChapterFootnotes | null = $state(null);
+	let confCommentary: ConfChapterCommentary | null = $state(null);
+	let lastConfKey = $state('');
+	run(() => {
 		const key = `${bookSlug}/${chapterNum}`;
 		if (browser && translationId === 'conf' && key !== lastConfKey) {
 			lastConfKey = key;
@@ -115,11 +127,11 @@
 			confFootnotes = null;
 			confCommentary = null;
 		}
-	}
+	});
 
 	// ── Unified annotated-verse set ──────────────────────────────────
 	// Drives the dotted underline + click handler for every translation.
-	$: annotatedVerseSet = (() => {
+	let annotatedVerseSet = $derived.by(() => {
 		const set = new Set<number>();
 		if (translationId === 'odr') {
 			for (const v of verses) if (v.has_annotation) set.add(v.verse);
@@ -144,21 +156,23 @@
 			return set;
 		}
 		return set;
-	})();
+	});
 
-	let verseEls: Record<number, HTMLElement> = {};
+	let verseEls: Record<number, HTMLElement> = $state({});
 
 	// Lazy-load text-vide only when bionic reading is first enabled
-	let textVideFn: ((_text: string, _opts: object) => string) | null = null;
-	let bionicReady = false;
-	$: if ($prefs.bionicReading && !textVideFn) {
-		import('text-vide').then((m) => {
-			textVideFn = m.textVide;
-			bionicReady = true;
-		});
-	} else if (!$prefs.bionicReading) {
-		bionicReady = false;
-	}
+	let textVideFn: ((_text: string, _opts: object) => string) | null = $state(null);
+	let bionicReady = $state(false);
+	run(() => {
+		if ($prefs.bionicReading && !textVideFn) {
+			import('text-vide').then((m) => {
+				textVideFn = m.textVide;
+				bionicReady = true;
+			});
+		} else if (!$prefs.bionicReading) {
+			bionicReady = false;
+		}
+	});
 
 	function applyBionic(text: string): string {
 		if (!textVideFn) return text;
@@ -360,8 +374,8 @@
 		type: 'cross_ref' | 'note';
 	}
 
-	let openPopover: PopoverState | null = null;
-	let popoverAnchorEl: HTMLElement | null = null;
+	let openPopover: PopoverState | null = $state(null);
+	let popoverAnchorEl: HTMLElement | null = $state(null);
 	let hoverTimer: ReturnType<typeof setTimeout> | null = null;
 
 	/** Split concatenated Bible references onto separate lines.
@@ -457,7 +471,7 @@
 
 	// ── IntersectionObserver for scroll sync ─────────────────────────
 
-	let verseObserver: IntersectionObserver | null = null;
+	let verseObserver: IntersectionObserver | null = $state(null);
 	// Suppress activeVerse updates while programmatically scrolling the reader
 	// to avoid triggering a redundant panel re-scroll.
 	let programmaticReaderScroll = false;
@@ -505,13 +519,15 @@
 	// Disconnect first so we don't double-observe if Svelte re-runs this block.
 	// verseEls entries are kept — bind:this keeps them current; the loop below
 	// re-registers only live elements (el is non-null for mounted nodes).
-	$: if (verseObserver && verses) {
-		verseObserver.disconnect();
-		intersectingReaderVerses.clear();
-		for (const [, el] of Object.entries(verseEls)) {
-			if (el) verseObserver.observe(el);
+	run(() => {
+		if (verseObserver && verses) {
+			verseObserver.disconnect();
+			intersectingReaderVerses.clear();
+			for (const [, el] of Object.entries(verseEls)) {
+				if (el) verseObserver.observe(el);
+			}
 		}
-	}
+	});
 
 	onDestroy(() => {
 		verseObserver?.disconnect();
@@ -560,13 +576,13 @@
 	// defaults to 'reading'), so the hydrated HTML matches the pre-rendered HTML.
 	// After onMount fires, isStudy flips to the real value → triggers {#each}
 	// re-render → renderStudyMarkers runs and injects the marker buttons.
-	let mounted = false;
-	$: isStudy = mounted && $prefs.readingMode === 'study';
-	$: activeAnnotatedVerse = $studyPanel.annotatedVerse;
-	$: showItalics = $prefs.showItalics;
-	$: showSmallCaps = $prefs.showSmallCaps ?? true;
-	$: bionic = $prefs.bionicReading && bionicReady;
-	$: expandAmpersand = $prefs.expandAmpersand ?? false;
+	let mounted = $state(false);
+	let isStudy = $derived(mounted && $prefs.readingMode === 'study');
+	let activeAnnotatedVerse = $derived($studyPanel.annotatedVerse);
+	let showItalics = $derived($prefs.showItalics);
+	let showSmallCaps = $derived($prefs.showSmallCaps ?? true);
+	let bionic = $derived($prefs.bionicReading && bionicReady);
+	let expandAmpersand = $derived($prefs.expandAmpersand ?? false);
 
 	// Group verses into paragraphs using the paragraph reference data
 	function groupIntoParagraphs(
@@ -590,7 +606,7 @@
 		if (current.length > 0) groups.push(current);
 		return groups;
 	}
-	$: paragraphs = groupIntoParagraphs(verses, bookSlug, chapterNum, paragraphStarts);
+	let paragraphs = $derived(groupIntoParagraphs(verses, bookSlug, chapterNum, paragraphStarts));
 </script>
 
 {#if $prefs.paragraphView}
@@ -603,11 +619,11 @@
 			class:para-hanging={$prefs.showVerseNumbers && ($prefs.hangingVerseNumbers ?? true)}
 			class:para-dropcap={gi === 0 && ($prefs.showDropcap ?? true)}
 			style={gi > 0 ? 'margin-top: 1em' : ''}
-			on:mouseover={isStudy ? handleMarkerMouseover : undefined}
-			on:focus={isStudy ? handleMarkerMouseover : undefined}
-			on:mouseout={isStudy ? handleMarkerMouseout : undefined}
-			on:blur={isStudy ? handleMarkerMouseout : undefined}
-			on:click={(e) => isStudy && handleMarkerClick(e, 0)}
+			onmouseover={isStudy ? handleMarkerMouseover : undefined}
+			onfocus={isStudy ? handleMarkerMouseover : undefined}
+			onmouseout={isStudy ? handleMarkerMouseout : undefined}
+			onblur={isStudy ? handleMarkerMouseout : undefined}
+			onclick={(e) => isStudy && handleMarkerClick(e, 0)}
 		>
 			{#each group as v, vi (v.verse)}
 				{@const isDropcap = gi === 0 && vi === 0 && ($prefs.showDropcap ?? true)}
@@ -658,7 +674,7 @@
 				class:verse-active-annotation={isStudy &&
 					annotatedVerseSet.has(v.verse) &&
 					activeAnnotatedVerse === v.verse}
-				on:click={(e) => isStudy && handleVerseClick(e, v)}
+				onclick={(e) => isStudy && handleVerseClick(e, v)}
 				data-pagefind-meta="verse:{bookSlug} {chapterNum}:{v.verse}"
 			>
 				{#if $prefs.showVerseNumbers}
@@ -677,11 +693,11 @@
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
 					class:bionic-fade={bionic}
-					on:click={(e) => isStudy && handleMarkerClick(e, v.verse)}
-					on:mouseover={isStudy ? handleMarkerMouseover : undefined}
-					on:focus={isStudy ? handleMarkerMouseover : undefined}
-					on:mouseout={isStudy ? handleMarkerMouseout : undefined}
-					on:blur={isStudy ? handleMarkerMouseout : undefined}
+					onclick={(e) => isStudy && handleMarkerClick(e, v.verse)}
+					onmouseover={isStudy ? handleMarkerMouseover : undefined}
+					onfocus={isStudy ? handleMarkerMouseover : undefined}
+					onmouseout={isStudy ? handleMarkerMouseout : undefined}
+					onblur={isStudy ? handleMarkerMouseout : undefined}
 				>
 					{@html renderVerse(
 						v.text,
