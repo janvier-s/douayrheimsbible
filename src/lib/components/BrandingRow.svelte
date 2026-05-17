@@ -321,13 +321,13 @@
 	}
 
 	.site-menu-item--disabled {
-		pointer-events: none;
+		cursor: not-allowed;
 	}
 
 	.site-menu-item--disabled .site-menu-link {
 		color: var(--color-subtle);
 		opacity: 0.45;
-		cursor: default;
+		pointer-events: none;
 	}
 
 	.site-backdrop {

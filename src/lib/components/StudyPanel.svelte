@@ -1923,11 +1923,11 @@
 	.cr-marker,
 	.note-marker {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 12px;
 		font-weight: 600;
 		color: var(--color-accent-text);
 		flex-shrink: 0;
-		min-width: 18px;
+		min-width: 20px;
 	}
 
 	.cr-verse-tag {

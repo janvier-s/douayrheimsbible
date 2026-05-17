@@ -813,14 +813,14 @@
 	   the parent <p> has text-decoration which bleeds through child elements */
 	:global(.study-marker) {
 		position: relative;
-		font-size: 8px;
+		font-size: 10px;
 		font-family: var(--font-ui);
 		font-weight: 600;
 		vertical-align: super;
 		line-height: 1;
 		cursor: pointer;
 		border: none;
-		padding: 1px 3px;
+		padding: 2px 4px;
 		margin: 0 1px;
 		border-radius: 2px;
 		color: var(--color-accent-text);
