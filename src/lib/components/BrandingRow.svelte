@@ -48,6 +48,7 @@
 			label: 'Study',
 			links: [
 				{ label: 'Compare Translations', href: '/compare' },
+				{ label: 'Articles', href: '/articles', disabled: true },
 				{ label: 'Search', href: '/search' }
 			]
 		},
@@ -203,10 +204,17 @@
 			<div class="site-menu-group">
 				<p class="site-menu-group-label">{group.label}</p>
 				{#each group.links as link}
-					<div class="site-menu-item {isActive(link.href) ? 'site-menu-item--active' : ''}">
-						<div class="site-menu-bar"></div>
-						<a href={link.href} class="site-menu-link" onclick={closeMenu}>{link.label}</a>
-					</div>
+					{#if link.disabled}
+						<div class="site-menu-item site-menu-item--disabled">
+							<div class="site-menu-bar"></div>
+							<span class="site-menu-link">{link.label}</span>
+						</div>
+					{:else}
+						<div class="site-menu-item {isActive(link.href) ? 'site-menu-item--active' : ''}">
+							<div class="site-menu-bar"></div>
+							<a href={link.href} class="site-menu-link" onclick={closeMenu}>{link.label}</a>
+						</div>
+					{/if}
 				{/each}
 			</div>
 		{/each}
@@ -310,6 +318,16 @@
 		color: var(--color-accent);
 		background: color-mix(in srgb, var(--color-accent) 7%, var(--color-panel));
 		font-weight: 500;
+	}
+
+	.site-menu-item--disabled {
+		pointer-events: none;
+	}
+
+	.site-menu-item--disabled .site-menu-link {
+		color: var(--color-subtle);
+		opacity: 0.45;
+		cursor: default;
 	}
 
 	.site-backdrop {

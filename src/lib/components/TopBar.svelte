@@ -9,7 +9,7 @@
 		getPrevNavBook,
 		getNextNavBook
 	} from '$lib/data/books';
-	import { slide, fade, fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import { get } from 'svelte/store';
