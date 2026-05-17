@@ -292,6 +292,10 @@
 	let sectionEls: Record<number, HTMLElement> = $state({});
 	let programmaticScroll = false;
 	let programmaticScrollTimer: ReturnType<typeof setTimeout> | null = null;
+	// Set true inside setupPanelObserver for two rAFs after every fresh build, so the
+	// initial IO fires (sections entering view when content renders) don't push
+	// panelScrollVerse and pull the reader to a verse the user didn't navigate to.
+	let freshObserver = false;
 	let panelSectionObserver: IntersectionObserver | null = $state(null);
 	const intersectingVerses = new Set<number>();
 	let annotatedVerseTimer: ReturnType<typeof setTimeout> | null = null;
@@ -372,9 +376,10 @@
 			annotatedVerseTimer = null;
 		}
 		if (currentKeys === '') return;
+		freshObserver = true;
 		panelSectionObserver = new IntersectionObserver(
 			(entries) => {
-				if (programmaticScroll) return;
+				if (programmaticScroll || freshObserver) return;
 				for (const entry of entries) {
 					const verse = parseInt((entry.target as HTMLElement).dataset.sectionVerse ?? '-1');
 					if (verse < 0) continue;
@@ -412,6 +417,13 @@
 			const el = sectionEls[parseInt(key)];
 			if (el) panelSectionObserver.observe(el);
 		}
+		// Let the initial IO fires (sections entering view as content renders) be
+		// processed and suppressed, then open the observer to user-driven scrolls.
+		requestAnimationFrame(() =>
+			requestAnimationFrame(() => {
+				freshObserver = false;
+			})
+		);
 	}
 
 	async function handleScrollTrigger(
