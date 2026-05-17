@@ -73,25 +73,25 @@
 	}
 
 	let activeTab: 'text' | 'reading' | 'verse' = $state('text');
+	let sliderIndex = $derived(['text', 'reading', 'verse'].indexOf(activeTab));
 	let fontSectionEl: HTMLElement | undefined = $state();
 </script>
 
 <div class="text-sm font-ui">
 	<!-- Tab bar -->
 	<div
-		class="flex border-b border-border mb-md -mx-md px-md max-md:-mx-[20px] max-md:px-[20px] sticky top-0 z-10 bg-panel"
+		class="relative flex border-b border-border mb-md -mx-md px-md max-md:-mx-[20px] max-md:px-[20px] sticky top-0 z-10 bg-panel"
 	>
 		{#each [{ id: 'text', label: 'Text' }, { id: 'reading', label: 'Reading' }, { id: 'verse', label: 'Verse' }] as tab}
 			<button
-				class="flex-1 py-[8px] text-[11px] uppercase tracking-[0.12em] font-semibold transition-colors duration-fast border-b-2 -mb-px
-					{activeTab === tab.id
-					? 'border-accent text-accent'
-					: 'border-transparent text-subtle hover:text-foreground'}"
+				class="flex-1 py-[8px] text-[11px] uppercase tracking-[0.12em] font-semibold transition-colors duration-fast
+					{activeTab === tab.id ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 				onclick={() => (activeTab = tab.id as typeof activeTab)}
 			>
 				{tab.label}
 			</button>
 		{/each}
+		<div class="tab-slider" style="transform: translateX({sliderIndex * 100}%)" aria-hidden="true"></div>
 	</div>
 	<!-- Text tab -->
 	{#if activeTab === 'text'}
@@ -531,6 +531,24 @@
 </div>
 
 <style>
+	.tab-slider {
+		position: absolute;
+		bottom: -1px;
+		left: 21px;
+		height: 2px;
+		border-radius: 1px 1px 0 0;
+		background: var(--color-accent);
+		width: calc((100% - 42px) / 3);
+		transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	@media (max-width: 767px) {
+		.tab-slider {
+			left: 20px;
+			width: calc((100% - 40px) / 3);
+		}
+	}
+
 	.theme-card {
 		aspect-ratio: 3 / 4;
 	}
