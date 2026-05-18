@@ -1660,7 +1660,8 @@
 					<div class="empty-state">
 						<span class="empty-icon" aria-hidden="true">✦</span>
 						<p>
-							No study notes available for {translationMeta?.abbr ?? translationId.toUpperCase()}.
+							No study notes available for the {translationMeta?.label ??
+								translationId.toUpperCase()}.
 						</p>
 					</div>
 				{/if}

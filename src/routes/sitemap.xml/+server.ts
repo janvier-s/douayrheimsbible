@@ -12,8 +12,8 @@ const LIVE_TRANSLATIONS_NT_ONLY = ['conf'] as const;
 const SITE = 'https://thedouayrheims.com';
 
 // Static content published / last significantly updated
-const DATE_BIBLE_TEXT = '2024-03-01';
-const DATE_CONTENT = '2025-04-01';
+const DATE_BIBLE_TEXT = '2026-05-18';
+const DATE_CONTENT = '2026-05-18';
 const DATE_TODAY = new Date().toISOString().slice(0, 10);
 
 export const prerender = true;

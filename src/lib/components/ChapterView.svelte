@@ -54,11 +54,47 @@
 	}
 
 	function bookLabel(bm: BookMeta, override?: string | null): string {
+		if (translationId === 'vul' && bm.latinName) return bm.latinName;
 		if (!$prefs.modernBookNames && override) return override;
 		const useModern =
 			$prefs.modernBookNames || (translationId !== 'odr' && translationId !== 'drc');
 		return useModern ? bm.modernName : bm.odrName;
 	}
+
+	function toRoman(n: number): string {
+		if (n <= 0 || n >= 4000) return String(n);
+		const map: [number, string][] = [
+			[1000, 'M'],
+			[900, 'CM'],
+			[500, 'D'],
+			[400, 'CD'],
+			[100, 'C'],
+			[90, 'XC'],
+			[50, 'L'],
+			[40, 'XL'],
+			[10, 'X'],
+			[9, 'IX'],
+			[5, 'V'],
+			[4, 'IV'],
+			[1, 'I']
+		];
+		let r = '';
+		let x = n;
+		for (const [v, s] of map) {
+			while (x >= v) {
+				r += s;
+				x -= v;
+			}
+		}
+		return r;
+	}
+
+	let isVul = $derived(translationId === 'vul');
+	let chapterHeading = $derived(
+		isVul
+			? `${bookMeta.slug === 'psalms' ? 'Psalmus' : 'Caput'} ${toRoman(chapter.chapter)}`
+			: `${bookMeta.slug === 'psalms' ? 'Psalm' : 'Chapter'} ${chapter.chapter}`
+	);
 
 	let activeVerse: number | undefined = $state(targetVerse);
 
@@ -291,15 +327,19 @@
 {/if}
 
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
-	{#if chapter.chapter === 1 && bookTitle}
+	{#if chapter.chapter === 1 && (bookTitle || (isVul && bookMeta.latinName))}
 		<header class="book-title-header mb-[50px] text-center">
-			{#each bookTitle.split('\n') as line, i}
-				{#if i === 0}
-					<span class="book-title-main">{line}</span>
-				{:else}
-					<span class="book-title-sub">{@html renderLine(line)}</span>
-				{/if}
-			{/each}
+			{#if isVul && !bookTitle && bookMeta.latinName}
+				<span class="book-title-main">{bookMeta.latinName}</span>
+			{:else if bookTitle}
+				{#each bookTitle.split('\n') as line, i}
+					{#if i === 0}
+						<span class="book-title-main">{line}</span>
+					{:else}
+						<span class="book-title-sub">{@html renderLine(line)}</span>
+					{/if}
+				{/each}
+			{/if}
 		</header>
 	{/if}
 
@@ -311,8 +351,7 @@
 			this={headingLevel}
 			class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
 		>
-			{bookMeta.slug === 'psalms' ? 'Psalm' : 'Chapter'}
-			{chapter.chapter}{#if hebrewPsalmNum}<span
+			{chapterHeading}{#if hebrewPsalmNum && !isVul}<span
 					class="text-[1.1rem] text-subtle font-ui ml-[6px] tracking-normal"
 					>({hebrewPsalmNum})</span
 				>{/if}
