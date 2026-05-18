@@ -253,6 +253,37 @@
 			.join('<hr>');
 	}
 
+	/** If the note ends with a non-verse citation — either a trailing italic block such
+	 *  as "<i>Theod. q. 34. in Deut.</i>" or a plain-text patristic citation like
+	 *  "S. Aug. l. 4. de Gen. ad lit. c. 12." — promote it to its own line preceded
+	 *  by an em-dash. Apply AFTER linkifyDrcRefs so recognised verse references
+	 *  (already wrapped in <a class="verse-ref">) are excluded. */
+	function formatTrailingCitation(html: string): string {
+		const italic = html.match(/^([\s\S]+?[.?!])\s+(<i>((?:(?!<\/i>).)+)<\/i>)\s*$/);
+		if (italic) {
+			const inner = italic[3];
+			// Skip italics that resolve to nothing but Bible references (already
+			// linkified to <a class="verse-ref">) or bare verse markers like
+			// "v. 7. & 11.". Drop anchor tags + their content first so the remaining
+			// text is whatever wasn't a recognised reference; require a 3+ letter
+			// word there (e.g. "Aug.", "Theod.", "civit.") to format as a citation.
+			const withoutAnchors = inner.replace(/<a\b[^>]*>[\s\S]*?<\/a>/g, '');
+			const remaining = withoutAnchors.replace(/<[^>]+>/g, '');
+			if (/\b[A-Za-z]{3,}\b/.test(remaining)) {
+				return `${italic[1]}<br /><span class="note-citation">— ${italic[2]}</span>`;
+			}
+		}
+		// Plain-text patristic citation: must start with a known abbreviation prefix and
+		// contain at least two short "abbr." chunks so we don't catch normal prose.
+		const plain = html.match(
+			/^([\s\S]+?[.?!])\s+((?:S\.|St\.|D\.|Theod\.|Cf\.) (?:[^<.]*\.\s*){2,}[^<.]*\.)\s*$/
+		);
+		if (plain) {
+			return `${plain[1]}<br /><span class="note-citation">— ${plain[2]}</span>`;
+		}
+		return html;
+	}
+
 	/** Group flat commentary entries by verse for section rendering */
 	function groupByVerse(
 		entries: HaydockCommentaryEntry[]
@@ -1236,8 +1267,8 @@
 												>
 													<span class="note-marker">{sn.marker}</span>
 													<span class="note-text"
-														>{@html allcapsToSmallcaps(
-															linkifyDrcRefs(sn.text, translationId)
+														>{@html formatTrailingCitation(
+															allcapsToSmallcaps(linkifyDrcRefs(sn.text, translationId))
 														)}</span
 													>
 												</div>
@@ -1252,8 +1283,8 @@
 												>
 													<span class="note-marker">{note.label}</span>
 													<span class="note-text"
-														>{@html allcapsToSmallcaps(
-															linkifyDrcRefs(note.text, translationId)
+														>{@html formatTrailingCitation(
+															allcapsToSmallcaps(linkifyDrcRefs(note.text, translationId))
 														)}</span
 													>
 												</div>
@@ -2091,6 +2122,11 @@
 		font-style: italic;
 		color: var(--color-subtle);
 		font-size: 0.9em;
+	}
+
+	.note-text :global(.note-citation) {
+		display: inline-block;
+		margin-top: 4px;
 	}
 
 	/* Haydock commentary <hr> tags from --- separators */

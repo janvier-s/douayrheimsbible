@@ -10,6 +10,14 @@ import type {
 } from './types';
 import type { TranslationBook, TranslationNote, TranslationCrossRef } from './translation-types';
 import type { FathersChapterFile } from './fathers-types';
+import sidecarManifest from '../../../static/data/manifests/sidecars.json';
+
+/** Returns true if the given sidecar section has a file for `slug/chapter`. */
+function hasSidecar(section: string, slug: string, chapter: number): boolean {
+	const sec = (sidecarManifest as Record<string, Record<string, number[]>>)[section];
+	const chs = sec?.[slug];
+	return Array.isArray(chs) && chs.includes(chapter);
+}
 
 const bookCache = new Map<string, Promise<BookData>>();
 const resolvedCache = new Map<string, BookData>();
@@ -52,6 +60,10 @@ export function loadAnnotations(
 ): Promise<ChapterAnnotations | null> {
 	const key = `${slug}/${chapter}`;
 	if (!annotationCache.has(key)) {
+		if (!hasSidecar('annotations', slug, chapter)) {
+			annotationCache.set(key, Promise.resolve(null));
+			return annotationCache.get(key)!;
+		}
 		const path = `/data/odr/${slug}/annotations/${String(chapter).padStart(3, '0')}.json`;
 		const promise = fetch(path).then((res) => {
 			if (res.status === 404) return null; // no annotations for this chapter
@@ -80,6 +92,10 @@ export function loadTranslationNotes(
 ): Promise<TranslationNote[] | null> {
 	const key = `${id}/${slug}/${chapter}`;
 	if (!translationNotesCache.has(key)) {
+		if (!hasSidecar(`${id}-notes`, slug, chapter)) {
+			translationNotesCache.set(key, Promise.resolve(null));
+			return translationNotesCache.get(key)!;
+		}
 		const promise = fetch(`/data/${id}-notes/${slug}/${chapter}.json`).then((res) => {
 			if (res.status === 404) return null;
 			if (!res.ok) throw new Error(`Failed to load notes: ${res.status}`);
@@ -103,6 +119,10 @@ export function loadTranslationCrossRefs(
 ): Promise<TranslationCrossRef[] | null> {
 	const key = `${id}/${slug}/${chapter}`;
 	if (!translationCrossRefsCache.has(key)) {
+		if (!hasSidecar(`${id}-crossrefs`, slug, chapter)) {
+			translationCrossRefsCache.set(key, Promise.resolve(null));
+			return translationCrossRefsCache.get(key)!;
+		}
 		const promise = fetch(`/data/${id}-crossrefs/${slug}/${chapter}.json`).then((res) => {
 			if (res.status === 404) return null;
 			if (!res.ok) throw new Error(`Failed to load cross-refs: ${res.status}`);
@@ -131,6 +151,10 @@ export function loadHaydockCommentary(
 ): Promise<HaydockCommentaryEntry[] | null> {
 	const key = `${slug}/${chapter}`;
 	if (!haydockCommentaryCache.has(key)) {
+		if (!hasSidecar('haydock-commentary', slug, chapter)) {
+			haydockCommentaryCache.set(key, Promise.resolve(null));
+			return haydockCommentaryCache.get(key)!;
+		}
 		const promise = fetch(`/data/haydock-commentary/${slug}/${chapter}.json`).then((res) => {
 			if (res.status === 404) return null;
 			if (!res.ok) throw new Error(`Failed to load Haydock commentary: ${res.status}`);
@@ -203,6 +227,12 @@ export function loadConfFootnotes(
 	const cached = confFootnotesCache.get(key);
 	if (cached) return cached;
 
+	if (!hasSidecar('conf-footnotes', slug, chapter)) {
+		const empty = Promise.resolve(null);
+		confFootnotesCache.set(key, empty);
+		return empty;
+	}
+
 	const padded = String(chapter).padStart(3, '0');
 	const promise = fetch(`/data/conf-footnotes/${slug}/${padded}.json`).then((r) =>
 		r.ok ? (r.json() as Promise<ConfChapterFootnotes>) : null
@@ -224,6 +254,12 @@ export function loadConfCommentary(
 	const key = `${slug}/${chapter}`;
 	const cached = confCommentaryCache.get(key);
 	if (cached) return cached;
+
+	if (!hasSidecar('conf-commentary', slug, chapter)) {
+		const empty = Promise.resolve(null);
+		confCommentaryCache.set(key, empty);
+		return empty;
+	}
 
 	const padded = String(chapter).padStart(3, '0');
 	const promise = fetch(`/data/conf-commentary/${slug}/${padded}.json`).then((r) =>

@@ -24,6 +24,8 @@ export interface Translation {
 	micro?: string;
 	/** Hidden from the UI unless the Konami code has been entered */
 	hidden?: boolean;
+	/** Excluded from the side-by-side compare view (still available elsewhere) */
+	noCompare?: boolean;
 	/** SEO: human-readable name for page titles, e.g. "Douay-Rheims Challoner Bible" */
 	seoName?: string;
 	/** SEO: template for meta description. Use {book} and {chapter} as placeholders. */
@@ -92,6 +94,7 @@ export const TRANSLATIONS: Translation[] = [
 		live: true,
 		ntOnly: false,
 		fullHeader: true,
+		noCompare: true,
 		micro: 'DRC with Haydock Commentary',
 		seoName: 'Haydock Catholic Bible Commentary',
 		seoDesc:
@@ -100,7 +103,7 @@ export const TRANSLATIONS: Translation[] = [
 	{
 		id: 'conf',
 		label: 'Confraternity NT',
-		abbr: 'Confraternity',
+		abbr: 'Conf-NT',
 		year: '1941',
 		live: true,
 		ntOnly: true,

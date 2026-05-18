@@ -1935,7 +1935,36 @@ function findDrcRefs(text: string): DrcRef[] {
 
 	// Sort by position
 	refs.sort((a, b) => a.start - b.start);
-	return refs;
+
+	// Expansion pass: pick up "& N." continuations that chain another chapter to
+	// the previous ref's book (e.g. "Num. 28. & 29." → Num.28 + Num.29).
+	const expanded: DrcRef[] = [];
+	for (let i = 0; i < refs.length; i++) {
+		expanded.push(refs[i]);
+		// Re-derive the OSIS book from the previous ref to chain
+		const prevBook = refs[i].osis.split('.')[0];
+		let cursor = refs[i].end;
+		const nextStart = i + 1 < refs.length ? refs[i + 1].start : text.length;
+		// Pattern: optional whitespace + "&" + whitespace + chapter (+ optional period).
+		// The capture group locates the digits so the link wraps just the number.
+		const chainRe = /^(\s*&\s*)(\d+)(\.?)/;
+		while (cursor < nextStart) {
+			const slice = text.slice(cursor, nextStart);
+			const m = slice.match(chainRe);
+			if (!m) break;
+			const chapter = parseInt(m[2], 10);
+			const digitsStart = cursor + m[1].length;
+			const digitsEnd = digitsStart + m[2].length;
+			expanded.push({
+				start: digitsStart,
+				end: digitsEnd,
+				osis: `${prevBook}.${chapter}`
+			});
+			cursor = digitsEnd + m[3].length; // advance past optional trailing period
+		}
+	}
+	expanded.sort((a, b) => a.start - b.start);
+	return expanded;
 }
 
 /**

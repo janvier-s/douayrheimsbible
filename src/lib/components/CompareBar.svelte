@@ -60,7 +60,9 @@
 	let mobileTransOpen = $state(false);
 
 	let visibleTranslations = $derived(
-		$konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden)
+		($konamiUnlocked ? TRANSLATIONS : TRANSLATIONS.filter((t) => !t.hidden)).filter(
+			(t) => !t.noCompare
+		)
 	);
 
 	let prevBook = $derived(getPrevNavBook(bookMeta.slug) ?? null);

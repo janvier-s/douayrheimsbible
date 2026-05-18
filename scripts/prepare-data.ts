@@ -391,7 +391,89 @@ async function main() {
 		console.log('Fathers build skipped (source not available).');
 	}
 
+	await buildSidecarManifest();
 	await buildSearchIndexes();
+}
+
+/** Scans per-chapter sidecar dirs and writes a single manifest used to avoid
+ *  fetching files that don't exist (which would 404 in the browser console). */
+async function buildSidecarManifest() {
+	const manifestDir = join(PROJECT_ROOT, 'static', 'data', 'manifests');
+	await mkdir(manifestDir, { recursive: true });
+	const dataRoot = join(PROJECT_ROOT, 'static', 'data');
+
+	async function scanChapters(base: string): Promise<Record<string, number[]>> {
+		const out: Record<string, number[]> = {};
+		let slugs: string[];
+		try {
+			slugs = await readdir(base);
+		} catch {
+			return out;
+		}
+		for (const slug of slugs) {
+			const dir = join(base, slug);
+			let files: string[];
+			try {
+				files = await readdir(dir);
+			} catch {
+				continue;
+			}
+			const chs: number[] = [];
+			for (const f of files) {
+				const m = /^(\d+)\.json$/.exec(f);
+				if (m) chs.push(parseInt(m[1], 10));
+			}
+			if (chs.length) out[slug] = chs.sort((a, b) => a - b);
+		}
+		return out;
+	}
+
+	async function scanAnnotations(): Promise<Record<string, number[]>> {
+		const out: Record<string, number[]> = {};
+		const base = join(dataRoot, 'odr');
+		let slugs: string[];
+		try {
+			slugs = await readdir(base);
+		} catch {
+			return out;
+		}
+		for (const slug of slugs) {
+			const dir = join(base, slug, 'annotations');
+			let files: string[];
+			try {
+				files = await readdir(dir);
+			} catch {
+				continue;
+			}
+			const chs: number[] = [];
+			for (const f of files) {
+				const m = /^(\d+)\.json$/.exec(f);
+				if (m) chs.push(parseInt(m[1], 10));
+			}
+			if (chs.length) out[slug] = chs.sort((a, b) => a - b);
+		}
+		return out;
+	}
+
+	const sections = [
+		'odr-notes',
+		'drc-notes',
+		'drc-crossrefs',
+		'cpdv-notes',
+		'knox-notes',
+		'conf-footnotes',
+		'conf-commentary',
+		'haydock-commentary',
+		'haydock-crossrefs'
+	];
+	const manifest: Record<string, Record<string, number[]>> = {
+		annotations: await scanAnnotations()
+	};
+	for (const section of sections) {
+		manifest[section] = await scanChapters(join(dataRoot, section));
+	}
+	await writeFile(join(manifestDir, 'sidecars.json'), JSON.stringify(manifest));
+	console.log('✓ sidecar manifest written → static/data/manifests/sidecars.json');
 }
 
 main().catch((e) => {

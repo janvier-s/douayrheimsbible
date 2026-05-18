@@ -43,9 +43,9 @@
 
 	// Derived view state from store
 	let orderedTranslations = $derived(
-		$compareStore.order.map(
-			(id: TranslationId) => TRANSLATIONS.find((t: Translation) => t.id === id)!
-		)
+		$compareStore.order
+			.map((id: TranslationId) => TRANSLATIONS.find((t: Translation) => t.id === id)!)
+			.filter((t: Translation) => !t.noCompare)
 	);
 	let activeCols = $derived(
 		orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id))
@@ -302,7 +302,11 @@
 								>{v.verse}</span
 							>
 						{/if}
-						<span>{@html allcapsToSmallcaps(stripTags(verseMaps[t.id]?.[v.verse] ?? ''))}</span>
+						<span
+							>{@html allcapsToSmallcaps(
+								stripTags(verseMaps[t.id]?.[v.verse] ?? '').replace(/[¹²³⁴⁵⁶⁷⁸⁹⁰]+/g, '')
+							)}</span
+						>
 					</div>
 				{/each}
 			{/each}
