@@ -121,7 +121,7 @@
 <svelte:window bind:innerWidth onkeydown={onKonamiKeydown} />
 
 <svelte:head>
-	<title>{bookMeta.odrName} {chapter.chapter} · Compare Translations — Douay-Rheims Bible</title>
+	<title>{bookMeta.odrName} {chapter.chapter} · Compare with the Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
 		content="Compare {bookMeta.odrName} Chapter {chapter.chapter} side-by-side across multiple Bible translations: Original Douay-Rheims, Challoner, Vulgate, KJV, Knox, and more."

@@ -349,9 +349,34 @@
 		has been made to soften them. They are part of the text.
 	</p>
 
+	<h2>Errors and Typos</h2>
+
 	<p>
-		If you encounter an error in the text, a misformatted note, or any other problem, please use the
-		<a href="/contact">contact form</a> to report it. Every correction helps.
+		The purpose of this site is preservation and presentation, not correction. It is not a critical
+		edition, and it does not attempt to establish a definitive text. Where the source material
+		contains an error, the general principle is to reproduce it faithfully and note it rather than
+		silently correct it.
+	</p>
+
+	<p>
+		The only class of silent correction applied across the board is spelling modernisation: period
+		spellings have been brought in line with contemporary orthography to aid readability, while
+		leaving vocabulary, grammar, and sentence structure entirely untouched. Beyond this, the text is
+		presented as faithfully as possible to the currently available source material.
+	</p>
+
+	<p>
+		Where a clear error in the source material has been identified (a word omitted, a name misspelt,
+		a verse absorbed into a neighbouring verse), the correction is made and an editorial note is
+		added in the study panel to document what was changed and why. These notes are visually
+		distinguished from the original notes of the translators and commentators, and marked
+		<em>editorial</em>. The intent is transparency: the reader can see what the source contains,
+		what has been changed, and on what grounds.
+	</p>
+
+	<p>
+		If you encounter a problem in the text (a transcription error, a misformatted note, a truncated
+		passage), please use the <a href="/contact">contact form</a> to report it.
 	</p>
 
 	<h2>A Simple Idea</h2>

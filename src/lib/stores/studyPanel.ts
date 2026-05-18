@@ -13,7 +13,7 @@ export type StudyTab =
 
 export interface ScrollTrigger {
 	verse: number; // 0 = summary
-	type?: 'cross_ref' | 'note' | 'annotation';
+	type?: 'cross_ref' | 'note' | 'annotation' | 'editorial';
 	marker?: string; // e.g. "1", "a"
 }
 

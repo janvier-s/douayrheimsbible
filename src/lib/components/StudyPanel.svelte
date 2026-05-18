@@ -463,7 +463,7 @@
 			}
 		} else if (trigger.type === 'cross_ref') {
 			targetTab = 'cross-refs';
-		} else if (trigger.type === 'note') {
+		} else if (trigger.type === 'note' || trigger.type === 'editorial') {
 			targetTab = 'notes';
 		} else if (trigger.type === 'annotation') {
 			targetTab = 'annotations';
@@ -1164,7 +1164,7 @@
 								(s.verse === 0 && currentChapterData?.summary_notes?.length) ||
 								(s.verseData?.notes && s.verseData.notes.length > 0)
 						)}
-						{#if noteSections.length === 0}
+						{#if noteSections.length === 0 && !translationNotes?.length}
 							<div class="empty-state">
 								<span class="empty-icon" aria-hidden="true">✦</span>
 								<p>No notes for this chapter.</p>
@@ -1247,6 +1247,24 @@
 												</div>
 											{/each}
 										{/if}
+									</div>
+								{/each}
+							</div>
+						{/if}
+						{#if translationNotes && translationNotes.length > 0}
+							<div class="commentary-list odr-editorial-notes">
+								{#each translationNotes as note (note.verse)}
+									<div class="verse-section editorial-note">
+										<div class="verse-section-header verse-section-header-sticky">
+											Verse {note.verse}{#if note.editorial}
+												· editorial{/if}
+										</div>
+										<div class="note-row sub-section-inline">
+											<span class="note-marker editorial-panel-marker">†</span>
+											<span class="note-text"
+												>{@html allcapsToSmallcaps(linkifyDrcRefs(note.text, translationId))}</span
+											>
+										</div>
 									</div>
 								{/each}
 							</div>
@@ -2083,8 +2101,21 @@
 		border-bottom: none;
 	}
 
+	.odr-editorial-notes {
+		margin-top: 4px;
+	}
+
 	.editorial-note {
 		opacity: 0.78;
+	}
+
+	.editorial-note .verse-section-header-sticky {
+		color: var(--color-subtle);
+	}
+
+	.editorial-panel-marker {
+		color: var(--color-subtle);
+		font-size: 16px;
 	}
 
 	.editorial-tag {
@@ -2096,7 +2127,7 @@
 		border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
 		border-radius: 3px;
 		padding: 1px 5px;
-		margin-top: 5px;
+		margin-left: 6px;
 		vertical-align: middle;
 	}
 

@@ -207,6 +207,9 @@
 		function mkNote(l: string) {
 			return `<button class="study-marker" data-marker-type="note" data-marker="${l}" data-verse="${verseNum}" aria-label="Note ${l}">${l}</button>`;
 		}
+		function mkEditorial(l: string) {
+			return `<button class="study-marker editorial-marker" data-marker-type="editorial" data-marker="${l}" data-verse="${verseNum}" aria-label="Editorial note">${l}</button>`;
+		}
 
 		// <cr> may contain [N] cross-refs and (x) note refs mixed together
 		text = text.replace(/<cr>(.*?)<\/cr>/g, (_, content) => {
@@ -216,8 +219,9 @@
 			return buttons.length > 0 ? buttons.join('') : content;
 		});
 
-		// <na> may contain (x) note refs and [N] refs mixed together
+		// <na> may contain (x) note refs, [N] refs, or (†) editorial markers
 		text = text.replace(/<na>(.*?)<\/na>/g, (_, content) => {
+			if (content === '(†)') return mkEditorial('†');
 			const buttons: string[] = [];
 			for (const m of content.matchAll(/\((\w+)\)/g)) buttons.push(mkNote(m[1]));
 			for (const m of content.matchAll(/\[(\d+)\]/g)) buttons.push(mkNote(m[1]));
@@ -328,6 +332,7 @@
 		const type = btn.dataset.markerType as
 			| 'cross_ref'
 			| 'note'
+			| 'editorial'
 			| 'drc-crossref'
 			| 'haydock-commentary';
 		const marker = btn.dataset.marker ?? '';
@@ -345,6 +350,11 @@
 				annotatedVerse: verseNum
 			}));
 			scrollTrigger.set({ verse: verseNum, type: 'annotation', marker });
+			return;
+		}
+		if (type === 'editorial') {
+			studyPanel.update((s) => ({ ...s, activeTab: 'notes' as StudyTab }));
+			scrollTrigger.set({ verse: verseNum, type: 'editorial', marker });
 			return;
 		}
 		studyPanel.update((s) => ({ ...s, annotatedVerse: verseNum }));
@@ -846,6 +856,13 @@
 
 	:global(.study-marker:hover) {
 		opacity: 0.75;
+	}
+
+	:global(.editorial-marker) {
+		font-size: 15px;
+		color: var(--color-subtle);
+		background: color-mix(in srgb, var(--color-subtle) 12%, transparent);
+		cursor: pointer;
 	}
 
 	:global(.marker-popover-content) {
