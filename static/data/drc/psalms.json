@@ -315,7 +315,11 @@
         },
         {
           "verse": 7,
-          "text": "Rise up, O Lord, in thy anger: and be thou exalted in the borders of my enemies."
+          "text": "Rise up, O Lord, in thy anger: and be thou exalted in the borders of my enemies. And arise, O Lord my God, in the precept which thou hast commanded:"
+        },
+        {
+          "verse": 8,
+          "text": "and a congregation of people shall surround thee. And for their sakes return thou on high."
         },
         {
           "verse": 9,
@@ -386,6 +390,10 @@
         {
           "verse": 6,
           "text": "¹Thou hast made him a little less than the angels, thou hast crowned him with glory and honor: 7 and hast set him over the works of thy hands."
+        },
+        {
+          "verse": 7,
+          "text": "and hast set him over the works of thy hands."
         },
         {
           "verse": 8,
@@ -654,6 +662,10 @@
         {
           "verse": 2,
           "text": "How long, O Lord, wilt thou forget me unto the end? How long dost thou turn away thy face from me? How long shall I take counsels in my soul, sorrow in my heart all the day? 3 How long shall my enemy be exalted over me?"
+        },
+        {
+          "verse": 3,
+          "text": "How long shall my enemy be exalted over me?"
         },
         {
           "verse": 4,
@@ -1304,6 +1316,10 @@
         {
           "verse": 18,
           "text": "They have numbered all my bones. And they have looked and stared upon me. 19 ⁴They parted my garments amongst them; and upon my vesture they cast lots."
+        },
+        {
+          "verse": 19,
+          "text": "They parted my garments amongst them; and upon my vesture they cast lots."
         },
         {
           "verse": 20,
@@ -3417,7 +3433,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Unto the end. A psalm of David, 2 when Nathan the prophet came to him, after he had sinned with Bethsabee. 2 Kings 12."
+          "text": "Unto the end. A psalm of David,"
+        },
+        {
+          "verse": 2,
+          "text": "when Nathan the prophet came to him, after he had sinned with Bethsabee. 2 Kings 12."
         },
         {
           "verse": 3,
@@ -3760,6 +3780,10 @@
         {
           "verse": 8,
           "text": "For nothing shalt thou save them: in thy anger thou shalt break the people in pieces. O God, 9 I have declared to thee my life: thou hast set my tears in thy sight, as also in thy promise."
+        },
+        {
+          "verse": 9,
+          "text": "I have declared to thee my life: thou hast set my tears in thy sight, as also in thy promise."
         },
         {
           "verse": 10,
@@ -4158,6 +4182,10 @@
         {
           "verse": 8,
           "text": "Because thou hast been my helper."
+        },
+        {
+          "verse": 9,
+          "text": "my soul hath stuck close to thee: thy right hand hath received me."
         },
         {
           "verse": 10,
@@ -5180,6 +5208,14 @@
           "text": "For neither from the east, nor from the west, nor from the desert hills: 8 For God is the judge. One he putteth down, and another he lifteth up: 9 for in the hand of the Lord there is a cup of strong wine full of mixture."
         },
         {
+          "verse": 8,
+          "text": "for God is the judge. One he putteth down, and another he lifteth up:"
+        },
+        {
+          "verse": 9,
+          "text": "for in the hand of the Lord there is a cup of strong wine full of mixture. And he hath poured it out from this to that: but the dregs thereof are not emptied: all the sinners of the earth shall drink."
+        },
+        {
           "verse": 10,
           "text": "But I will declare forever: I will sing to the God of Jacob."
         },
@@ -5212,6 +5248,10 @@
         {
           "verse": 5,
           "text": "Thou enlightenest wonderfully from the everlasting hills. 6 All the foolish of heart were troubled."
+        },
+        {
+          "verse": 6,
+          "text": "All the foolish of heart were troubled. They have slept their sleep; and all the men of riches have found nothing in their hands."
         },
         {
           "verse": 7,
@@ -5304,12 +5344,24 @@
           "text": "Thy way, O God, is in the holy <i>place</i>: who is the great God like our God? 15 Thou art the God that dost wonders."
         },
         {
+          "verse": 15,
+          "text": "Thou art the God that dost wonders. Thou hast made thy power known among the nations:"
+        },
+        {
+          "verse": 16,
+          "text": "with thy arm thou hast redeemed thy people the children of Jacob and of Joseph."
+        },
+        {
           "verse": 17,
           "text": "The waters saw thee, O God, the waters saw thee: and they were afraid, and the depths were troubled."
         },
         {
           "verse": 18,
           "text": "Great was the noise of the waters: the clouds sent out a sound."
+        },
+        {
+          "verse": 19,
+          "text": "the voice of thy thunder in a wheel. Thy lightnings enlightened the world: the earth shook and trembled."
         },
         {
           "verse": 20,
@@ -5344,6 +5396,10 @@
         {
           "verse": 5,
           "text": "And he set up a testimony in Jacob: and made a law in Israel. How great things he commanded our fathers, that they should make the same known to their children: 6 That another generation might know them."
+        },
+        {
+          "verse": 6,
+          "text": "that another generation might know them. The children that should be born and should rise up, and declare them to their children."
         },
         {
           "verse": 7,
@@ -5436,6 +5492,14 @@
         {
           "verse": 29,
           "text": "So they did eat, and were filled exceedingly, and he gave them their desire: 30 they were not defrauded of that which they craved."
+        },
+        {
+          "verse": 30,
+          "text": "they were not defrauded of that which they craved. As yet their meat was in their mouth:"
+        },
+        {
+          "verse": 31,
+          "text": "and the wrath of God came upon them. And he slew the fat ones amongst them, and brought down the chosen men of Israel."
         },
         {
           "verse": 32,
@@ -5648,6 +5712,10 @@
           "text": "Lest they should say among the Gentiles: Where is their God? And let him be made known among the nations before our eyes,"
         },
         {
+          "verse": 11,
+          "text": "let the sighing of the prisoners come in before thee. According to the greatness of thy arm, take possession of the children of them that have been put to death."
+        },
+        {
           "verse": 12,
           "text": "And render to our neighbors sevenfold in their bosom: the reproach wherewith they have reproached thee, O Lord."
         },
@@ -5784,6 +5852,10 @@
           "text": "Hear, O my people, and I will testify to thee: O Israel, if thou wilt hearken to me, 10 there shall be ³no new god in thee: neither shalt thou adore a strange god."
         },
         {
+          "verse": 10,
+          "text": "there shall be no new god in thee: neither shalt thou adore a strange god."
+        },
+        {
           "verse": 11,
           "text": "For I am the Lord thy God, who brought thee out of the land of Egypt: open thy mouth wide, and I will fill it."
         },
@@ -5902,6 +5974,10 @@
         {
           "verse": 12,
           "text": "³Make their princes like Oreb, ⁴and Zeb, and Zebee, and Salmana."
+        },
+        {
+          "verse": 13,
+          "text": "who have said: Let us possess the sanctuary of God for an inheritance."
         },
         {
           "verse": 14,
@@ -6688,6 +6764,10 @@
           "text": "The floods have lifted up, O Lord: the floods have lifted up their voice."
         },
         {
+          "verse": 4,
+          "text": "with the noise of many waters. Wonderful are the surges of the sea: wonderful is the Lord on high."
+        },
+        {
           "verse": 5,
           "text": "Thy testimonies are become exceedingly credible: holiness becometh thy house, O Lord, unto length of days."
         }
@@ -6874,6 +6954,18 @@
           "text": "Bring ye to the Lord, O ye kindreds of the Gentiles, bring ye to the Lord glory and honor: 8 Bring to the Lord glory unto his name."
         },
         {
+          "verse": 8,
+          "text": "bring to the Lord glory unto his name. Bring up sacrifices, and come into his courts:"
+        },
+        {
+          "verse": 9,
+          "text": "adore ye the Lord in his holy court. Let all the earth be moved at his presence."
+        },
+        {
+          "verse": 10,
+          "text": "Say ye among the Gentiles, the Lord hath reigned. For he hath corrected the world, which shall not be moved: he will judge the people with justice."
+        },
+        {
           "verse": 11,
           "text": "Let the heavens rejoice, and let the earth be glad, let the sea be moved, and the fullness thereof:"
         },
@@ -6918,6 +7010,10 @@
         {
           "verse": 7,
           "text": "¹Let them be all confounded that adore graven things, and that glory in their idols. ²Adore him, all you his angels: 8 Sion heard, and was glad."
+        },
+        {
+          "verse": 8,
+          "text": "Sion heard, and was glad. And the daughters of Juda rejoiced, because of thy judgments, O Lord."
         },
         {
           "verse": 9,
@@ -6966,6 +7062,10 @@
           "text": "With long trumpets, and sound of cornet."
         },
         {
+          "verse": 7,
+          "text": "let the sea be moved and the fulness thereof: the world and they that dwell therein."
+        },
+        {
           "verse": 8,
           "text": "The rivers shall clap their hands, the mountains shall rejoice together"
         },
@@ -7002,6 +7102,10 @@
         {
           "verse": 6,
           "text": "Moses and Aaron among his priests: and Samuel among them that call upon his name."
+        },
+        {
+          "verse": 7,
+          "text": "he spoke to them in the pillar of the cloud. They kept his testimonies, and the commandment which he gave them."
         },
         {
           "verse": 8,
@@ -7190,6 +7294,10 @@
           "text": "They shall perish but thou remainest: and all of them shall grow old like a garment: and as a vesture thou shalt change them, and they shall be changed. 28 But thou art always the selfsame, and thy years shall not fail."
         },
         {
+          "verse": 28,
+          "text": "But thou art always the selfsame, and thy years shall not fail."
+        },
+        {
           "verse": 29,
           "text": "The children of thy servants shall continue and their seed shall be directed forever."
         }
@@ -7350,8 +7458,20 @@
           "text": "Bringing forth grass for cattle, and herb for the service of men."
         },
         {
+          "verse": 15,
+          "text": "and that wine may cheer the heart of man. That he may make the face cheerful with oil: and that bread may strengthen man's heart."
+        },
+        {
           "verse": 16,
           "text": "The trees of the field shall be filled, and the cedars of Libanus which he hath planted: 17 There the sparrows shall make their nests."
+        },
+        {
+          "verse": 17,
+          "text": "there the sparrows shall make their nests. The highest of them is the house of the heron."
+        },
+        {
+          "verse": 18,
+          "text": "The high hills are a refuge for the harts, the rock for the irchins."
         },
         {
           "verse": 19,
@@ -7380,6 +7500,10 @@
         {
           "verse": 25,
           "text": "<i>So is</i> this great sea, which stretcheth wide its arms: there are creeping things without number:"
+        },
+        {
+          "verse": 26,
+          "text": "There the ships shall go. This sea dragon which thou hast formed to play therein."
         },
         {
           "verse": 27,
@@ -7701,6 +7825,14 @@
           "text": "¹⁰And he said that he would destroy them: had not Moses his chosen stood before him in the breach:"
         },
         {
+          "verse": 24,
+          "text": "And they set at nought the desirable land. They believed not his word,"
+        },
+        {
+          "verse": 25,
+          "text": "and they murmured in their tents: they hearkened not to the voice of the Lord."
+        },
+        {
           "verse": 26,
           "text": "¹¹And he lifted up his hand over them: to overthrow them in the desert;"
         },
@@ -7751,6 +7883,10 @@
         {
           "verse": 38,
           "text": "And they shed innocent blood: the blood of their sons and of their daughters which they sacrificed to the idols of Chanaan. And the land was polluted with blood, 39 and was defiled with their works: and they went aside after their own inventions."
+        },
+        {
+          "verse": 39,
+          "text": "and was defiled with their works: and they went aside after their own inventions."
         },
         {
           "verse": 40,
@@ -8095,6 +8231,10 @@
           "text": "May they be before the Lord continually, and let the memory of them perish from the earth: 16 because he remembered not to show mercy,"
         },
         {
+          "verse": 16,
+          "text": "because he remembered not to shew mercy,"
+        },
+        {
           "verse": 17,
           "text": "But persecuted the poor man and the beggar; and the broken in heart, to put him to death."
         },
@@ -8213,6 +8353,10 @@
         {
           "verse": 5,
           "text": "He hath given food to them that fear him."
+        },
+        {
+          "verse": 6,
+          "text": "he will shew forth to his people the power of his works."
         },
         {
           "verse": 7,
@@ -8627,6 +8771,14 @@
         {
           "verse": 25,
           "text": "O Lord, save me: O Lord, give good success. 26 Blessed be he that cometh in the name of the Lord."
+        },
+        {
+          "verse": 26,
+          "text": "Blessed be he that cometh in the name of the Lord. We have blessed you out of the house of the Lord."
+        },
+        {
+          "verse": 27,
+          "text": "The Lord is God, and he hath shone upon us. Appoint a solemn day, with shady boughs, even to the horn of the altar."
         },
         {
           "verse": 28,
@@ -9528,7 +9680,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "They that trust in the Lord <i>shall be</i> as mount Sion: he shall not be moved forever that dwelleth 2 in Jerusalem. Mountains are round about it: so the Lord is round about his people from henceforth now and forever."
+          "text": "They that trust in the Lord <i>shall be</i> as mount Sion: he shall not be moved forever that dwelleth"
+        },
+        {
+          "verse": 2,
+          "text": "in Jerusalem. Mountains are round about it: so the Lord is round about his people from henceforth now and forever."
         },
         {
           "verse": 3,
@@ -9589,6 +9745,10 @@
         {
           "verse": 2,
           "text": "It is vain for you to rise before light, rise ye after you have sitten, you that eat the bread of sorrow. When he shall give sleep to his beloved, 3 Behold the inheritance of the Lord are children: the reward, the fruit of the womb."
+        },
+        {
+          "verse": 3,
+          "text": "behold the inheritance of the Lord are children: the reward, the fruit of the womb."
         },
         {
           "verse": 4,
@@ -9867,6 +10027,10 @@
           "text": "¹He bringeth up clouds from the end of the earth: he hath made lightnings for the rain. He bringeth forth winds out of his stores: 8 ²He slew the firstborn of Egypt from man even unto beast."
         },
         {
+          "verse": 8,
+          "text": "He slew the firstborn of Egypt from man even unto beast."
+        },
+        {
           "verse": 9,
           "text": "He sent forth signs and wonders in the midst of thee, O Egypt: upon Pharao, and upon all his servants."
         },
@@ -10083,6 +10247,10 @@
         {
           "verse": 1,
           "text": "I will praise thee, O Lord, with my whole heart: for thou hast heard the words of my mouth. I will sing praise to thee in the sight of the angels: 2 I will worship towards thy holy temple, and I will give glory to thy name. For thy mercy, and for thy truth: for thou hast magnified thy holy name above all."
+        },
+        {
+          "verse": 2,
+          "text": "I will worship towards thy holy temple, and I will give glory to thy name. For thy mercy, and for thy truth: for thou hast magnified thy holy name above all."
         },
         {
           "verse": 3,
@@ -10375,6 +10543,10 @@
           "text": "For the enemy hath persecuted my soul: he hath brought down my life to the earth. He hath made me to dwell in darkness as those that have been dead of old: 4 and my spirit is in anguish within me: my heart within me is troubled."
         },
         {
+          "verse": 4,
+          "text": "and my spirit is in anguish within me: my heart within me is troubled."
+        },
+        {
           "verse": 5,
           "text": "I remembered the days of old, I meditated on all thy works: I meditated upon the works of thy hands."
         },
@@ -10451,6 +10623,10 @@
         {
           "verse": 13,
           "text": "Their storehouses full, flowing out of this into that."
+        },
+        {
+          "verse": 14,
+          "text": "their oxen fat. There is no breach of wall, nor passage, nor crying out in their streets."
         },
         {
           "verse": 15,
@@ -10557,6 +10733,10 @@
           "text": "Alleluia. Praise¹ the Lord, O my soul, in my life I will praise the Lord: I will sing to my God as long as I shall be. Put not your trust in princes: The Lord lifteth up them that are cast down: the Lord loveth the just."
         },
         {
+          "verse": 2,
+          "text": "Praise the Lord, O my soul, in my life I will praise the Lord: I will sing to my God as long as I shall be. Put not your trust in princes:"
+        },
+        {
           "verse": 3,
           "text": "in the children of men, in whom there is no salvation."
         },
@@ -10575,6 +10755,10 @@
         {
           "verse": 7,
           "text": "Who keepeth truth forever: who executeth judgment for them that suffer wrong: who giveth food to the hungry. The Lord looseth them that are fettered: 8 the Lord enlighteneth the blind."
+        },
+        {
+          "verse": 8,
+          "text": "the Lord enlighteneth the blind. The Lord lifteth up them that are cast down: the Lord loveth the just."
         },
         {
           "verse": 9,
