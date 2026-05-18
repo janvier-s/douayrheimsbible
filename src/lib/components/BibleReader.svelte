@@ -495,6 +495,7 @@
 						targetVerse={item.chapter.chapter === initialChapter.chapter ? targetVerse : undefined}
 						totalChapters={item.totalChapters}
 						showNav={$prefs.showChapterNav}
+						{routeBase}
 						{translationId}
 						headingLevel={i === 0 ? 'h1' : 'h2'}
 						bookTitle={item.chapter.chapter === 1

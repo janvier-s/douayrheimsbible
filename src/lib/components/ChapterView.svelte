@@ -55,7 +55,9 @@
 
 	function bookLabel(bm: BookMeta, override?: string | null): string {
 		if (!$prefs.modernBookNames && override) return override;
-		return $prefs.modernBookNames ? bm.modernName : bm.odrName;
+		const useModern =
+			$prefs.modernBookNames || (translationId !== 'odr' && translationId !== 'drc');
+		return useModern ? bm.modernName : bm.odrName;
 	}
 
 	let activeVerse: number | undefined = $state(targetVerse);
@@ -184,12 +186,15 @@
 		if (svRefTimer) clearTimeout(svRefTimer);
 	});
 	let prevNavBook = $derived(chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
+	function chapterLabel(slug: string, num: number): string {
+		return slug === 'psalms' ? `Ps. ${num}` : `Ch. ${num}`;
+	}
 	let prevNav = $derived(
 		chapter.chapter > 1
 			? {
 					slug: bookMeta.slug,
 					ch: chapter.chapter - 1,
-					label: `Ch. ${chapter.chapter - 1}`,
+					label: chapterLabel(bookMeta.slug, chapter.chapter - 1),
 					chLabel: null
 				}
 			: prevNavBook
@@ -197,7 +202,7 @@
 						slug: prevNavBook.slug,
 						ch: prevNavBook.chapters,
 						label: bookLabel(prevNavBook),
-						chLabel: `Ch. ${prevNavBook.chapters}`
+						chLabel: chapterLabel(prevNavBook.slug, prevNavBook.chapters)
 					}
 				: null
 	);
@@ -209,7 +214,7 @@
 			? {
 					slug: bookMeta.slug,
 					ch: chapter.chapter + 1,
-					label: `Ch. ${chapter.chapter + 1}`,
+					label: chapterLabel(bookMeta.slug, chapter.chapter + 1),
 					chLabel: null
 				}
 			: nextNavBook
@@ -217,7 +222,7 @@
 						slug: nextNavBook.slug,
 						ch: 1,
 						label: bookLabel(nextNavBook),
-						chLabel: 'Ch. 1'
+						chLabel: chapterLabel(nextNavBook.slug, 1)
 					}
 				: null
 	);
@@ -306,7 +311,8 @@
 			this={headingLevel}
 			class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
 		>
-			Chapter {chapter.chapter}{#if hebrewPsalmNum}<span
+			{bookMeta.slug === 'psalms' ? 'Psalm' : 'Chapter'}
+			{chapter.chapter}{#if hebrewPsalmNum}<span
 					class="text-[1.1rem] text-subtle font-ui ml-[6px] tracking-normal"
 					>({hebrewPsalmNum})</span
 				>{/if}

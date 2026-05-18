@@ -340,7 +340,12 @@
 						<div class="w-[15px]" aria-hidden="true"></div>
 					{/if}
 					{#if prevChapterHref}
-						<ChapterNavLink href={prevChapterHref} direction="prev" chapter={chapterNumInt - 1} />
+						<ChapterNavLink
+							href={prevChapterHref}
+							direction="prev"
+							chapter={chapterNumInt - 1}
+							isPsalms={bookSlug === 'psalms'}
+						/>
 					{:else if isChapterPage}
 						<div class="w-[15px]" aria-hidden="true"></div>
 					{/if}
@@ -367,7 +372,12 @@
 					class="hidden md:flex absolute left-full top-1/2 -translate-y-1/2 items-center gap-[8px] pl-[8px]"
 				>
 					{#if nextChapterHref}
-						<ChapterNavLink href={nextChapterHref} direction="next" chapter={chapterNumInt + 1} />
+						<ChapterNavLink
+							href={nextChapterHref}
+							direction="next"
+							chapter={chapterNumInt + 1}
+							isPsalms={bookSlug === 'psalms'}
+						/>
 					{:else if isChapterPage}
 						<div class="w-[15px]" aria-hidden="true"></div>
 					{/if}

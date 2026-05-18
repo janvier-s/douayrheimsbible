@@ -193,7 +193,9 @@
 				href="/compare/{bookMeta.slug}/{prevChapter}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 			>
-				<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
+				<span class="text-[16px] leading-none">‹</span>
+				{bookMeta.slug === 'psalms' ? 'Ps.' : 'Ch.'}
+				{prevChapter}
 			</a>
 		{:else}
 			<span></span>
@@ -203,7 +205,8 @@
 				href="/compare/{bookMeta.slug}/{nextChapter}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 			>
-				Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
+				{bookMeta.slug === 'psalms' ? 'Ps.' : 'Ch.'}
+				{nextChapter} <span class="text-[16px] leading-none">›</span>
 			</a>
 		{:else}
 			<span></span>
@@ -316,7 +319,9 @@
 				href="/compare/{bookMeta.slug}/{prevChapter}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 			>
-				<span class="text-[16px] leading-none">‹</span> Ch. {prevChapter}
+				<span class="text-[16px] leading-none">‹</span>
+				{bookMeta.slug === 'psalms' ? 'Ps.' : 'Ch.'}
+				{prevChapter}
 			</a>
 		{:else}
 			<span></span>
@@ -326,7 +331,8 @@
 				href="/compare/{bookMeta.slug}/{nextChapter}"
 				class="flex items-center gap-[5px] text-subtle hover:text-accent transition-colors duration-fast text-[11px] uppercase tracking-[0.15em]"
 			>
-				Ch. {nextChapter} <span class="text-[16px] leading-none">›</span>
+				{bookMeta.slug === 'psalms' ? 'Ps.' : 'Ch.'}
+				{nextChapter} <span class="text-[16px] leading-none">›</span>
 			</a>
 		{:else}
 			<span></span>
