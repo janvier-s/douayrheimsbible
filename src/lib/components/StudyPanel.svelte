@@ -835,6 +835,18 @@
 	});
 	let verseSections = $derived(buildVerseSections(currentChapterData, annotations));
 	run(() => {
+		if (
+			isOdr &&
+			!annotationsLoading &&
+			annotations !== null &&
+			$studyPanel.activeTab === 'annotations' &&
+			hasTranslationNotes &&
+			verseSections.filter((s) => s.annotationEntries.length > 0).length === 0
+		) {
+			studyPanel.update((s) => ({ ...s, activeTab: 'notes' }));
+		}
+	});
+	run(() => {
 		if ($studyPanel.activeTab !== lastActiveTab) {
 			lastActiveTab = $studyPanel.activeTab;
 			sectionEls = {};
@@ -1089,7 +1101,7 @@
 						{#if annotationSections.length === 0}
 							<div class="empty-state">
 								<span class="empty-icon" aria-hidden="true">✦</span>
-								<p>No annotations for this chapter yet.</p>
+								<p>No annotations for this chapter.</p>
 							</div>
 						{:else}
 							<div class="commentary-list">
