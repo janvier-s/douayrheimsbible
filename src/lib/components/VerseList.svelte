@@ -656,9 +656,8 @@
 				>
 					{#if $prefs.showVerseNumbers && !isDropcap}
 						<sup
-							class="font-ui text-[10px] font-thin select-none tabular-nums {useRoman
-								? 'mr-[6px]'
-								: 'mr-[3px]'}"
+							class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
+							class:verse-num-roman={useRoman}
 							class:verse-num-hang={vi === 0 && ($prefs.hangingVerseNumbers ?? true)}
 							class:verse-num-hang-roman={useRoman &&
 								vi === 0 &&
@@ -774,6 +773,16 @@
 	:global(.verse-num-hang-roman) {
 		width: 2.5rem;
 		margin-left: -3rem;
+	}
+
+	:global(.verse-num-roman) {
+		display: inline-block;
+		padding-right: 0.9em;
+		margin-right: 0 !important;
+	}
+
+	:global(.verse-num-roman.verse-num-hang-roman) {
+		padding-right: 0.3em;
 	}
 
 	:global(.dropcap) {
