@@ -33,7 +33,12 @@
 	);
 	let expandedBooks = $state(new Set<string>(bookSlug ? [bookSlug] : []));
 
-	const otBooks = ALL_BOOKS.filter((b) => b.testament === 'OT');
+	const APPENDIX_SLUGS = new Set(['prayer-of-manasses', '3-esdras', '4-esdras']);
+	const TRANSLATIONS_WITH_APPENDIX = new Set(['odr', 'drc']);
+	let showAppendix = $derived(compareMode || TRANSLATIONS_WITH_APPENDIX.has(translationId));
+	let otBooks = $derived(
+		ALL_BOOKS.filter((b) => b.testament === 'OT' && (showAppendix || !APPENDIX_SLUGS.has(b.slug)))
+	);
 	const ntBooks = ALL_BOOKS.filter((b) => b.testament === 'NT');
 
 	function toggleBook(slug: string) {
