@@ -24,7 +24,7 @@
 		})
 	);
 
-	let otherTranslations = $derived(TRANSLATION_CONFIGS.filter((c) => c.id !== config.id));
+	let allTranslations = TRANSLATION_CONFIGS;
 </script>
 
 <svelte:head>
@@ -42,11 +42,14 @@
 	</header>
 
 	<!-- Translation selector -->
-	{#if otherTranslations.length > 0}
+	{#if allTranslations.length > 1}
 		<nav class="ref-translation-selector" aria-label="Translation selector">
-			<span class="ref-selector-current">{config.label}</span>
-			{#each otherTranslations as other}
-				<a href="/reference/{other.id}" class="ref-selector-link">{other.label}</a>
+			{#each allTranslations as t}
+				{#if t.id === config.id}
+					<span class="ref-selector-current" aria-current="page">{t.label}</span>
+				{:else}
+					<a href="/reference/{t.id}" class="ref-selector-link">{t.label}</a>
+				{/if}
 			{/each}
 		</nav>
 	{/if}
