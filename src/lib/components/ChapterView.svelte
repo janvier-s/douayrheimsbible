@@ -305,7 +305,7 @@
 	{#if chapter.chapter === 1 && (bookTitle || (isVul && bookMeta.latinName))}
 		<header class="book-title-header mb-[50px] text-center">
 			{#if isVul && !bookTitle && bookMeta.latinName}
-				<span class="book-title-main">{bookMeta.latinName}</span>
+				<span class="book-title-main uppercase">{bookMeta.latinName}</span>
 			{:else if bookTitle}
 				{#each bookTitle.split('\n') as line, i}
 					{#if i === 0}

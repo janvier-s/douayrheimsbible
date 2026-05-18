@@ -629,7 +629,12 @@
 			class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 			class:text-justify={$prefs.justifiedText}
 			class:bionic-fade={bionic}
-			class:para-hanging={$prefs.showVerseNumbers && ($prefs.hangingVerseNumbers ?? true)}
+			class:para-hanging={$prefs.showVerseNumbers &&
+				($prefs.hangingVerseNumbers ?? true) &&
+				!useRoman}
+			class:para-hanging-roman={$prefs.showVerseNumbers &&
+				($prefs.hangingVerseNumbers ?? true) &&
+				useRoman}
 			class:para-dropcap={gi === 0 && ($prefs.showDropcap ?? true)}
 			style={gi > 0 ? 'margin-top: 1em' : ''}
 			onmouseover={isStudy ? handleMarkerMouseover : undefined}
@@ -651,8 +656,13 @@
 				>
 					{#if $prefs.showVerseNumbers && !isDropcap}
 						<sup
-							class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
+							class="font-ui text-[10px] font-thin select-none tabular-nums {useRoman
+								? 'mr-[6px]'
+								: 'mr-[3px]'}"
 							class:verse-num-hang={vi === 0 && ($prefs.hangingVerseNumbers ?? true)}
+							class:verse-num-hang-roman={useRoman &&
+								vi === 0 &&
+								($prefs.hangingVerseNumbers ?? true)}
 							class:text-subtle={!isStudy || !annotatedVerseSet.has(v.verse)}
 							style={isStudy && annotatedVerseSet.has(v.verse)
 								? 'color: var(--color-accent-text)'
@@ -744,6 +754,10 @@
 		padding-left: 2rem;
 	}
 
+	.para-hanging-roman {
+		padding-left: 3rem;
+	}
+
 	.para-dropcap {
 		display: flow-root;
 	}
@@ -755,6 +769,11 @@
 		text-align: right;
 		padding-right: 0.3em;
 		box-sizing: border-box;
+	}
+
+	:global(.verse-num-hang-roman) {
+		width: 2.5rem;
+		margin-left: -3rem;
 	}
 
 	:global(.dropcap) {

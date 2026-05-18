@@ -126,7 +126,11 @@
 					: 'text-subtle hover:text-foreground'}"
 				onclick={() => (activeTestament = t)}
 			>
-				{t === 'OT' ? 'Old Testament' : 'New Testament'}
+				{#if translationId === 'vul' && !compareMode}
+					{t === 'OT' ? 'Vetus Testamentum' : 'Novum Testamentum'}
+				{:else}
+					{t === 'OT' ? 'Old Testament' : 'New Testament'}
+				{/if}
 			</button>
 		{/each}
 	</div>
@@ -165,8 +169,9 @@
 							transition:slide={{ duration: 180 }}
 							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
 							class:grid={true}
-							class:grid-cols-7={!($prefs.showPsalmNumbers && book.slug === 'psalms')}
-							class:grid-cols-5={$prefs.showPsalmNumbers && book.slug === 'psalms'}
+							class:grid-cols-4={useRoman}
+							class:grid-cols-7={!useRoman && !($prefs.showPsalmNumbers && book.slug === 'psalms')}
+							class:grid-cols-5={!useRoman && $prefs.showPsalmNumbers && book.slug === 'psalms'}
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
@@ -212,8 +217,9 @@
 							transition:slide={{ duration: 180 }}
 							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
 							class:grid={true}
-							class:grid-cols-7={!($prefs.showPsalmNumbers && book.slug === 'psalms')}
-							class:grid-cols-5={$prefs.showPsalmNumbers && book.slug === 'psalms'}
+							class:grid-cols-4={useRoman}
+							class:grid-cols-7={!useRoman && !($prefs.showPsalmNumbers && book.slug === 'psalms')}
+							class:grid-cols-5={!useRoman && $prefs.showPsalmNumbers && book.slug === 'psalms'}
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
