@@ -621,7 +621,7 @@
 
 {#if $prefs.paragraphView}
 	{#each paragraphs as group, gi (group[0].verse)}
-		<!-- svelte-ignore a11y_no_static_element_interactions a11y_click_events_have_key_events a11y_no_noninteractive_element_interactions -->
+		<!-- svelte-ignore a11y_no_static_element_interactions, a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 		<p
 			class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 			class:text-justify={$prefs.justifiedText}
@@ -673,7 +673,7 @@
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
 		{#each verses as v (v.verse)}
-			<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_noninteractive_element_interactions -->
+			<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 			<li
 				bind:this={verseEls[v.verse]}
 				id="v{v.verse}"
@@ -698,7 +698,7 @@
 						{v.verse}
 					</span>
 				{/if}
-				<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
+				<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions, a11y_no_noninteractive_element_interactions -->
 				<p
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}

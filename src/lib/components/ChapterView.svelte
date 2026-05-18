@@ -321,7 +321,7 @@
 	</header>
 
 	{#if fullSummary && fullSummary !== '---'}
-		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions, a11y_no_static_element_interactions a11y_mouse_events_have_key_events -->
+		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions, a11y_no_static_element_interactions, a11y_mouse_events_have_key_events -->
 		<p
 			class="text-subtle font-reader italic mb-lg text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)]"
 			onclick={handleSummaryClick}

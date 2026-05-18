@@ -40,7 +40,7 @@
 
 <svelte:window onkeydown={handleKeydown} />
 
-<!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 <div class="relative" onclick={handleTextClick}>
 	<div class="prose-text font-reader text-[13px] leading-relaxed text-foreground">
 		{@html sanitizedHtml}
