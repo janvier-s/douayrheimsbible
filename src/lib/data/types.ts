@@ -121,8 +121,10 @@ export interface BookMeta {
 	odrName: string;
 	/** Modern English name e.g. "Mark", "1 Kings" */
 	modernName: string;
-	/** Latin Vulgate name e.g. "Marcus", "Regum I" */
+	/** Latin Vulgate short name e.g. "Genesis", "I Regum", "Matthaeum" */
 	latinName?: string;
+	/** Latin Vulgate full title e.g. "Liber Genesis, Hebraice Beresith" */
+	latinTitle?: string;
 	testament: 'OT' | 'NT';
 	/** Total number of chapters */
 	chapters: number;

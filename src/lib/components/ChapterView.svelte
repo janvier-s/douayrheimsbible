@@ -302,10 +302,10 @@
 {/if}
 
 <article data-pagefind-body data-book={bookMeta.slug} data-chapter={chapter.chapter}>
-	{#if chapter.chapter === 1 && (bookTitle || (isVul && bookMeta.latinName))}
+	{#if chapter.chapter === 1 && (bookTitle || (isVul && (bookMeta.latinTitle || bookMeta.latinName)))}
 		<header class="book-title-header mb-[50px] text-center">
-			{#if isVul && !bookTitle && bookMeta.latinName}
-				<span class="book-title-main uppercase">{bookMeta.latinName}</span>
+			{#if isVul && (bookMeta.latinTitle || bookMeta.latinName)}
+				<span class="book-title-main uppercase">{bookMeta.latinTitle ?? bookMeta.latinName}</span>
 			{:else if bookTitle}
 				{#each bookTitle.split('\n') as line, i}
 					{#if i === 0}
