@@ -49,6 +49,8 @@ export interface ReadingPrefs {
 	// v19
 	hasVisitedHomepage: boolean;
 	skipHomepage: boolean;
+	// v20
+	romanNumerals: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -80,10 +82,11 @@ const DEFAULTS: ReadingPrefs = {
 	showDropcap: true,
 	hangingVerseNumbers: true,
 	hasVisitedHomepage: false,
-	skipHomepage: false
+	skipHomepage: false,
+	romanNumerals: true
 };
 
-const PREFS_VERSION = 19;
+const PREFS_VERSION = 20;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -172,6 +175,10 @@ function loadPrefs(): ReadingPrefs {
 		if (!parsed._v || parsed._v < 19) {
 			parsed.hasVisitedHomepage = true;
 			parsed.skipHomepage = false;
+		}
+		// v20 migration: add Vulgate Roman numerals toggle (on by default)
+		if (!parsed._v || parsed._v < 20) {
+			parsed.romanNumerals = true;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

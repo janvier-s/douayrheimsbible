@@ -5,9 +5,10 @@
 
 	interface Props {
 		compareMode?: boolean;
+		translationId?: string;
 	}
 
-	let { compareMode = false }: Props = $props();
+	let { compareMode = false, translationId = 'odr' }: Props = $props();
 </script>
 
 <!-- Desktop panel -->
@@ -17,7 +18,7 @@
 	role="dialog"
 	aria-label="Reading options"
 >
-	<ReadingPrefs {compareMode} />
+	<ReadingPrefs {compareMode} {translationId} />
 </div>
 
 <!-- Mobile top panel — slides down from header -->
@@ -32,6 +33,6 @@
 		class="px-[20px]"
 		style="height: 320px; overflow-y: auto; overscroll-behavior: contain; overflow-x: hidden;"
 	>
-		<ReadingPrefs {compareMode} />
+		<ReadingPrefs {compareMode} {translationId} />
 	</div>
 </div>

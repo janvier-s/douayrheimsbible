@@ -5,9 +5,11 @@
 
 	interface Props {
 		compareMode?: boolean;
+		translationId?: string;
 	}
 
-	let { compareMode = false }: Props = $props();
+	let { compareMode = false, translationId = 'odr' }: Props = $props();
+	let isVul = $derived(translationId === 'vul');
 	let activeFontSize = $derived(compareMode ? $prefs.compareFontSize : $prefs.fontSize);
 
 	const THEMES = [
@@ -474,6 +476,22 @@
 				/>
 				<span>Modern book names</span>
 			</label>
+
+			{#if isVul}
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={$prefs.romanNumerals}
+						onchange={(e) =>
+							prefs.update((p) => ({
+								...p,
+								romanNumerals: (e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<span>Roman numerals</span>
+				</label>
+			{/if}
 
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input

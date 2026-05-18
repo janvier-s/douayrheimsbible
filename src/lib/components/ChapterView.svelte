@@ -62,9 +62,10 @@
 	}
 
 	let isVul = $derived(translationId === 'vul');
+	let useRoman = $derived(isVul && $prefs.romanNumerals);
 	let chapterHeading = $derived(
 		isVul
-			? `${bookMeta.slug === 'psalms' ? 'Psalmus' : 'Caput'} ${toRoman(chapter.chapter)}`
+			? `${bookMeta.slug === 'psalms' ? 'Psalmus' : 'Caput'} ${useRoman ? toRoman(chapter.chapter) : chapter.chapter}`
 			: `${bookMeta.slug === 'psalms' ? 'Psalm' : 'Chapter'} ${chapter.chapter}`
 	);
 
@@ -195,9 +196,8 @@
 	});
 	let prevNavBook = $derived(chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
 	function chapterLabel(slug: string, num: number): string {
-		if (isVul) {
-			return slug === 'psalms' ? `Ps. ${toRoman(num)}` : `Cap. ${toRoman(num)}`;
-		}
+		const n = useRoman ? toRoman(num) : String(num);
+		if (isVul) return slug === 'psalms' ? `Ps. ${n}` : `Cap. ${n}`;
 		return slug === 'psalms' ? `Ps. ${num}` : `Ch. ${num}`;
 	}
 	let prevNav = $derived(

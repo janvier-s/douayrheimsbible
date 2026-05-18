@@ -31,7 +31,8 @@
 
 	let { verses, targetVerse, bookSlug, chapterNum, translationId = 'odr' }: Props = $props();
 	let isVul = $derived(translationId === 'vul');
-	const verseLabel = (n: number) => (isVul ? toRoman(n) : String(n));
+	let useRoman = $derived(isVul && $prefs.romanNumerals);
+	const verseLabel = (n: number) => (useRoman ? toRoman(n) : String(n));
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
 	// ── Paragraph data (lazy-loaded to avoid 28KB in initial bundle) ────

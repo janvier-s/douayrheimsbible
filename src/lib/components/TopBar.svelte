@@ -77,7 +77,7 @@
 	);
 
 	let chapterDisplay = $derived(
-		isVul && chapterNum ? toRoman(parseInt(chapterNum, 10)) : chapterNum
+		isVul && $prefs.romanNumerals && chapterNum ? toRoman(parseInt(chapterNum, 10)) : chapterNum
 	);
 	let navLabel = $derived(
 		bookMeta && chapterNum ? `${displayName} ${chapterDisplay}${psalmSuffix}` : 'Go to\u2026'
@@ -444,7 +444,7 @@
 {/if}
 
 {#if prefsOpen}
-	<PrefsPanel />
+	<PrefsPanel {translationId} />
 {/if}
 
 {#if navOpen || prefsOpen || translationOpen}

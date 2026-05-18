@@ -4,6 +4,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import { ALL_BOOKS, getHebPsalmNum } from '$lib/data/books';
 	import { prefs } from '$lib/stores/prefs';
+	import { toRoman } from '$lib/utils/text';
 
 	interface Props {
 		bookSlug: string;
@@ -36,6 +37,7 @@
 	const APPENDIX_SLUGS = new Set(['prayer-of-manasses', '3-esdras', '4-esdras']);
 	const TRANSLATIONS_WITH_APPENDIX = new Set(['odr', 'drc']);
 	let showAppendix = $derived(compareMode || TRANSLATIONS_WITH_APPENDIX.has(translationId));
+	let useRoman = $derived(!compareMode && translationId === 'vul' && $prefs.romanNumerals);
 	let otBooks = $derived(
 		ALL_BOOKS.filter((b) => b.testament === 'OT' && (showAppendix || !APPENDIX_SLUGS.has(b.slug)))
 	);
@@ -175,7 +177,7 @@
 										? 'bg-accent text-white'
 										: 'text-subtle'}"
 								>
-									<span class="block text-[14px]">{ch}</span>
+									<span class="block text-[14px]">{useRoman ? toRoman(ch) : ch}</span>
 									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
 										<span class="block text-[9px] opacity-60">{getHebPsalmNum(ch)}</span>
 									{/if}
@@ -222,7 +224,7 @@
 										? 'bg-accent text-white'
 										: 'text-subtle'}"
 								>
-									<span class="block text-[14px]">{ch}</span>
+									<span class="block text-[14px]">{useRoman ? toRoman(ch) : ch}</span>
 									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
 										<span class="block text-[9px] opacity-60">{getHebPsalmNum(ch)}</span>
 									{/if}
