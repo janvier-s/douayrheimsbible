@@ -7,6 +7,7 @@ export interface TranslationVerse {
 export interface TranslationNote {
 	verse: number;
 	text: string;
+	editorial?: boolean;
 }
 
 /** A single numbered cross-reference entry for DRC */

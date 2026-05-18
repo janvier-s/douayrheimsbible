@@ -4143,7 +4143,11 @@
         },
         {
           "verse": 12,
-          "text": "God hath spoken once, these two things have I heard, that power belongeth to God, 13 And mercy to thee, O Lord; ¹for thou wilt render to every man according to his works."
+          "text": "God hath spoken once, these two things have I heard, that power belongeth to God,"
+        },
+        {
+          "verse": 13,
+          "text": "And mercy to thee, O Lord; ¹for thou wilt render to every man according to his works."
         }
       ]
     },
@@ -9834,7 +9838,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Out of the depths I have cried to thee, O Lord: And he shall redeem Israel from all his iniquities."
+          "text": "Out of the depths I have cried to thee, O Lord:"
         },
         {
           "verse": 2,
@@ -9859,6 +9863,10 @@
         {
           "verse": 7,
           "text": "Because with the Lord there is mercy: and with him plentiful redemption."
+        },
+        {
+          "verse": 8,
+          "text": "And he shall redeem Israel from all his iniquities."
         }
       ]
     },

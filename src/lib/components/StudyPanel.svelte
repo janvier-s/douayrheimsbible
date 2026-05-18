@@ -563,7 +563,10 @@
 	});
 	let isOdr = $derived(translationId === 'odr');
 	let hasTranslationNotes = $derived(
-		translationId === 'drc' || translationId === 'cpdv' || translationId === 'knox'
+		translationId === 'drc' ||
+			translationId === 'cpdv' ||
+			translationId === 'knox' ||
+			translationId === 'odr'
 	);
 	let isDrc = $derived(translationId === 'drc');
 	let isKnox = $derived(translationId === 'knox');
@@ -578,7 +581,7 @@
 	let currentChapterNum = $derived($readingPosition?.chapter ?? 1);
 	run(() => {
 		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
-		if (!isOdr && hasTranslationNotes && currentBookSlug && key !== lastTranslationNotesKey) {
+		if (hasTranslationNotes && currentBookSlug && key !== lastTranslationNotesKey) {
 			lastTranslationNotesKey = key;
 			const id = translationId;
 			const slug = currentBookSlug;
@@ -1566,6 +1569,7 @@
 								<div
 									class="translation-note-entry"
 									class:verse-section-active={$studyPanel.annotatedVerse === note.verse}
+									class:editorial-note={note.editorial}
 									bind:this={sectionEls[note.verse]}
 									data-section-verse={note.verse}
 								>
@@ -1584,6 +1588,9 @@
 											<span class="note-text">{@html linkify(note.text)}</span>
 										{:else}
 											<span class="note-text">{note.text}</span>
+										{/if}
+										{#if note.editorial}
+											<span class="editorial-tag">editorial</span>
 										{/if}
 									</div>
 								</div>
@@ -2074,6 +2081,23 @@
 
 	.translation-note-entry:last-child {
 		border-bottom: none;
+	}
+
+	.editorial-note {
+		opacity: 0.78;
+	}
+
+	.editorial-tag {
+		display: inline-block;
+		font-size: 10px;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		color: var(--color-muted, #888);
+		border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+		border-radius: 3px;
+		padding: 1px 5px;
+		margin-top: 5px;
+		vertical-align: middle;
 	}
 
 	.note-body {
