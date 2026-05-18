@@ -43,14 +43,30 @@
 	);
 	const ntBooks = ALL_BOOKS.filter((b) => b.testament === 'NT');
 
-	function toggleBook(slug: string) {
+	async function toggleBook(slug: string) {
 		const next = new Set(expandedBooks);
-		if (next.has(slug)) {
+		const wasExpanded = next.has(slug);
+		if (wasExpanded) {
 			next.delete(slug);
 		} else {
 			next.add(slug);
 		}
 		expandedBooks = next;
+		if (!wasExpanded) {
+			await tick();
+			// Wait for the slide transition (180ms) to finish, then scroll the
+			// expanded chapter grid into view if it overflows the container bottom.
+			setTimeout(() => {
+				const container = activeTestament === 'OT' ? otContainer : ntContainer;
+				const grid = container?.querySelector(`[data-book-grid="${slug}"]`) as HTMLElement | null;
+				if (!container || !grid) return;
+				const gridRect = grid.getBoundingClientRect();
+				const containerRect = container.getBoundingClientRect();
+				if (gridRect.bottom > containerRect.bottom) {
+					grid.scrollIntoView({ block: 'end', behavior: 'smooth' });
+				}
+			}, 200);
+		}
 	}
 
 	let otContainer: HTMLElement | undefined = $state();
@@ -166,6 +182,7 @@
 					</button>
 					{#if expandedBooks.has(book.slug)}
 						<div
+							data-book-grid={book.slug}
 							transition:slide={{ duration: 180 }}
 							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
 							class:grid={true}
@@ -214,6 +231,7 @@
 					</button>
 					{#if expandedBooks.has(book.slug)}
 						<div
+							data-book-grid={book.slug}
 							transition:slide={{ duration: 180 }}
 							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
 							class:grid={true}

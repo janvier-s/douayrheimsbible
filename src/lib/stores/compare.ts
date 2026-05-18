@@ -41,7 +41,7 @@ export const TRANSLATIONS: Translation[] = [
 		ntOnly: false,
 		fullHeader: false,
 		micro: 'Source Text',
-		seoName: 'Clementine Vulgate (Latin)',
+		seoName: 'Clementine Vulgate Latin Bible',
 		seoDesc:
 			'Read {book} Chapter {chapter} in the Clementine Vulgate, the official Latin Bible of the Catholic Church (1592).'
 	},

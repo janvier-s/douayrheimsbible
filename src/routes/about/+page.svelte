@@ -353,9 +353,9 @@
 
 	<p>
 		The purpose of this site is preservation and presentation, not correction. It is not a critical
-		edition, and it does not attempt to establish a definitive text. Where the source material
-		contains an error, the general principle is to reproduce it faithfully and note it rather than
-		silently correct it.
+		edition, and it does not attempt to establish a definitive text. Where a clear error in the
+		source material is confirmed, the correction is made and indicated in the study panel by an
+		editorial note.
 	</p>
 
 	<p>

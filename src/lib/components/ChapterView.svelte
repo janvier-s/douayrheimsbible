@@ -305,7 +305,39 @@
 	{#if chapter.chapter === 1 && (bookTitle || (isVul && (bookMeta.latinTitle || bookMeta.latinName)))}
 		<header class="book-title-header mb-[50px] text-center">
 			{#if isVul && (bookMeta.latinTitle || bookMeta.latinName)}
-				<span class="book-title-main uppercase">{bookMeta.latinTitle ?? bookMeta.latinName}</span>
+				{@const rawLatin = bookMeta.latinTitle ?? bookMeta.latinName ?? ''}
+				{@const italicMatch = rawLatin.match(
+					/^(Liber|Epistula|Prophetia|Evangelium)(?: (I{1,3}|IV|V|VI{0,3}|IX|X{1,3}))?\s+(.+)$/
+				)}
+				{@const upperBreakMatch = !italicMatch
+					? rawLatin.match(/^(Canticum|Actus|Apocalypsis)\s+(.+)$/)
+					: null}
+				{#if italicMatch}
+					{@const italicPart = italicMatch[2]
+						? `${italicMatch[1]} ${italicMatch[2]}`
+						: italicMatch[1]}
+					{@const restParts = italicMatch[3].split(/,\s*/)}
+					<span class="book-title-prefix">{italicPart}</span>
+					{#each restParts as line, i}
+						{#if i === 0}
+							<span class="book-title-main uppercase">{line}</span>
+						{:else}
+							<span class="book-title-sub">{line}</span>
+						{/if}
+					{/each}
+				{:else if upperBreakMatch}
+					<span class="book-title-main uppercase">{upperBreakMatch[1]}</span>
+					<span class="book-title-main uppercase">{upperBreakMatch[2]}</span>
+				{:else}
+					{@const lines = rawLatin.split(/,\s*/)}
+					{#each lines as line, i}
+						{#if i === 0}
+							<span class="book-title-main uppercase">{line}</span>
+						{:else}
+							<span class="book-title-sub">{line}</span>
+						{/if}
+					{/each}
+				{/if}
 			{:else if bookTitle}
 				{#each bookTitle.split('\n') as line, i}
 					{#if i === 0}
@@ -386,6 +418,17 @@
 
 	.book-title-header {
 		padding: 30px 20px 0;
+	}
+
+	.book-title-prefix {
+		font-family: var(--font-reader);
+		font-size: 1rem;
+		font-style: italic;
+		font-weight: 400;
+		letter-spacing: 0.02em;
+		color: var(--color-subtle);
+		display: block;
+		margin-bottom: 6px;
 	}
 
 	.book-title-main {

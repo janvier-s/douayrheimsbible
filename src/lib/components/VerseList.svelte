@@ -771,7 +771,7 @@
 	}
 
 	:global(.verse-num-hang-roman) {
-		width: 2.5rem;
+		width: 2.2rem;
 		margin-left: -3rem;
 	}
 

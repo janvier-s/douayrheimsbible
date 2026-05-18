@@ -441,11 +441,7 @@
 			}
 		}
 		await tick();
-		// Scroll to top before setting scrollReady so the layout's afterNavigate
-		// double-rAF scrollTo(0) becomes a no-op (position unchanged → no scroll event).
-		// Guard: skip if user has already scrolled (e.g. via homepage CTA) so we
-		// don't cancel an in-flight smooth scroll.
-		if (browser && window.scrollY === 0) window.scrollTo({ top: 0, behavior: 'instant' });
+		if (browser) window.scrollTo({ top: 0, behavior: 'instant' });
 		// Block loadPrevChapter for 300ms — covers the ~33ms afterNavigate double-rAF
 		// and any microtask/rAF jitter, while still allowing free infinite scroll up
 		// once the page has settled.
