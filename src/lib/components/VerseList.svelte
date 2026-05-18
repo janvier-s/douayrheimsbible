@@ -10,7 +10,7 @@
 	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
-	import { allcapsToSmallcaps } from '$lib/utils/text';
+	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
 	import type { Verse, ConfChapterFootnotes, ConfChapterCommentary } from '$lib/data/types';
 	import type { TranslationCrossRef, TranslationNote } from '$lib/data/translation-types';
 	import {
@@ -30,6 +30,8 @@
 	}
 
 	let { verses, targetVerse, bookSlug, chapterNum, translationId = 'odr' }: Props = $props();
+	let isVul = $derived(translationId === 'vul');
+	const verseLabel = (n: number) => (isVul ? toRoman(n) : String(n));
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
 	// ── Paragraph data (lazy-loaded to avoid 28KB in initial bundle) ────
@@ -653,7 +655,7 @@
 							class:text-subtle={!isStudy || !annotatedVerseSet.has(v.verse)}
 							style={isStudy && annotatedVerseSet.has(v.verse)
 								? 'color: var(--color-accent-text)'
-								: ''}>{v.verse}</sup
+								: ''}>{verseLabel(v.verse)}</sup
 						>
 					{/if}
 					{@html renderVerse(
@@ -695,7 +697,7 @@
 							? 'color: var(--color-accent-text)'
 							: ''}
 					>
-						{v.verse}
+						{verseLabel(v.verse)}
 					</span>
 				{/if}
 				<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions, a11y_no_noninteractive_element_interactions -->

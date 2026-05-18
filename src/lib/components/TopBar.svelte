@@ -17,6 +17,7 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import { isMobile } from '$lib/stores/mobile';
 	import { TRANSLATIONS } from '$lib/stores/compare';
+	import { toRoman } from '$lib/utils/text';
 	import FloatingNav from './FloatingNav.svelte';
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
@@ -55,9 +56,16 @@
 	let translationOpen = $state(false);
 
 	let bookMeta = $derived(getBookBySlug(bookSlug));
+	let isVul = $derived(translationId === 'vul');
 
 	let displayName = $derived(
-		bookMeta ? ($prefs.modernBookNames ? bookMeta.modernName : bookMeta.odrName) : ''
+		bookMeta
+			? isVul && bookMeta.latinName
+				? bookMeta.latinName
+				: $prefs.modernBookNames
+					? bookMeta.modernName
+					: bookMeta.odrName
+			: ''
 	);
 
 	let psalmSuffix = $derived(
@@ -68,8 +76,11 @@
 		})()
 	);
 
+	let chapterDisplay = $derived(
+		isVul && chapterNum ? toRoman(parseInt(chapterNum, 10)) : chapterNum
+	);
 	let navLabel = $derived(
-		bookMeta && chapterNum ? `${displayName} ${chapterNum}${psalmSuffix}` : 'Go to\u2026'
+		bookMeta && chapterNum ? `${displayName} ${chapterDisplay}${psalmSuffix}` : 'Go to\u2026'
 	);
 
 	let prevBook = $derived(
@@ -93,6 +104,7 @@
 	);
 
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
+		if (isVul && b.latinName) return b.latinName;
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
 	}
 

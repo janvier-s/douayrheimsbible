@@ -4,7 +4,7 @@
 	import type { BookMeta, Chapter } from '$lib/data/types';
 	import { getHebPsalmNum, getPrevNavBook, getNextNavBook } from '$lib/data/books';
 	import { onDestroy } from 'svelte';
-	import { allcapsToSmallcaps } from '$lib/utils/text';
+	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
 	import { tokenizeCrossRef } from '$lib/search/crossRefParser';
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
 	import type { OsisRange } from '$lib/search/reference';
@@ -59,34 +59,6 @@
 		const useModern =
 			$prefs.modernBookNames || (translationId !== 'odr' && translationId !== 'drc');
 		return useModern ? bm.modernName : bm.odrName;
-	}
-
-	function toRoman(n: number): string {
-		if (n <= 0 || n >= 4000) return String(n);
-		const map: [number, string][] = [
-			[1000, 'M'],
-			[900, 'CM'],
-			[500, 'D'],
-			[400, 'CD'],
-			[100, 'C'],
-			[90, 'XC'],
-			[50, 'L'],
-			[40, 'XL'],
-			[10, 'X'],
-			[9, 'IX'],
-			[5, 'V'],
-			[4, 'IV'],
-			[1, 'I']
-		];
-		let r = '';
-		let x = n;
-		for (const [v, s] of map) {
-			while (x >= v) {
-				r += s;
-				x -= v;
-			}
-		}
-		return r;
 	}
 
 	let isVul = $derived(translationId === 'vul');
@@ -223,6 +195,9 @@
 	});
 	let prevNavBook = $derived(chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
 	function chapterLabel(slug: string, num: number): string {
+		if (isVul) {
+			return slug === 'psalms' ? `Ps. ${toRoman(num)}` : `Cap. ${toRoman(num)}`;
+		}
 		return slug === 'psalms' ? `Ps. ${num}` : `Ch. ${num}`;
 	}
 	let prevNav = $derived(

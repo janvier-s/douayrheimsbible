@@ -136,7 +136,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: '1-esdras',
 		odrName: '1 Esdras',
 		modernName: 'Ezra',
-		latinName: 'Esdrae',
+		latinName: 'Esdræ',
 		testament: 'OT',
 		chapters: 10,
 		hasConfraternity: false
@@ -145,7 +145,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: '2-esdras',
 		odrName: '2 Esdras',
 		modernName: 'Nehemiah',
-		latinName: 'Nehemiae',
+		latinName: 'Nehemiæ',
 		testament: 'OT',
 		chapters: 13,
 		hasConfraternity: false
@@ -154,7 +154,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: 'tobias',
 		odrName: 'Tobias',
 		modernName: 'Tobit',
-		latinName: 'Tobiae',
+		latinName: 'Tobiæ',
 		testament: 'OT',
 		chapters: 14,
 		hasConfraternity: false
@@ -181,7 +181,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: '1-machabees',
 		odrName: '1 Machabees',
 		modernName: '1 Maccabees',
-		latinName: 'Machabaeorum I',
+		latinName: 'Machabæorum I',
 		testament: 'OT',
 		chapters: 16,
 		hasConfraternity: false
@@ -190,7 +190,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: '2-machabees',
 		odrName: '2 Machabees',
 		modernName: '2 Maccabees',
-		latinName: 'Machabaeorum II',
+		latinName: 'Machabæorum II',
 		testament: 'OT',
 		chapters: 15,
 		hasConfraternity: false
@@ -363,7 +363,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: 'micheas',
 		odrName: 'Micheas',
 		modernName: 'Micah',
-		latinName: 'Michaeas',
+		latinName: 'Michæas',
 		testament: 'OT',
 		chapters: 7,
 		hasConfraternity: false
@@ -399,7 +399,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: 'aggeus',
 		odrName: 'Aggeus',
 		modernName: 'Haggai',
-		latinName: 'Aggaeus',
+		latinName: 'Aggæus',
 		testament: 'OT',
 		chapters: 2,
 		hasConfraternity: false
@@ -456,7 +456,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: 'matthew',
 		odrName: 'Matthew',
 		modernName: 'Matthew',
-		latinName: 'Matthaeus',
+		latinName: 'Matthæus',
 		testament: 'NT',
 		chapters: 28,
 		hasConfraternity: true
@@ -618,7 +618,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: 'hebrews',
 		odrName: 'Hebrews',
 		modernName: 'Hebrews',
-		latinName: 'ad Hebraeos',
+		latinName: 'ad Hebræos',
 		testament: 'NT',
 		chapters: 13,
 		hasConfraternity: true
@@ -681,7 +681,7 @@ export const ALL_BOOKS: BookMeta[] = [
 		slug: 'jude',
 		odrName: 'Jude',
 		modernName: 'Jude',
-		latinName: 'Judae',
+		latinName: 'Judæ',
 		testament: 'NT',
 		chapters: 1,
 		hasConfraternity: true

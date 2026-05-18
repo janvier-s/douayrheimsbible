@@ -65,8 +65,9 @@
 		if (e.key === 'Escape') onClose();
 	}
 
-	function bookLabel(odrName: string, modernName: string): string {
-		return $prefs.modernBookNames ? modernName : odrName;
+	function bookLabel(book: { odrName: string; modernName: string; latinName?: string }): string {
+		if (!compareMode && translationId === 'vul' && book.latinName) return book.latinName;
+		return $prefs.modernBookNames ? book.modernName : book.odrName;
 	}
 
 	function focusTrap(node: HTMLElement) {
@@ -155,7 +156,7 @@
 							: 'text-foreground hover:bg-border hover:text-accent'}"
 						onclick={() => toggleBook(book.slug)}
 					>
-						<span class:italic={isAppendix}>{bookLabel(book.odrName, book.modernName)}</span>
+						<span class:italic={isAppendix}>{bookLabel(book)}</span>
 					</button>
 					{#if expandedBooks.has(book.slug)}
 						<div
@@ -202,7 +203,7 @@
 							: 'text-foreground hover:bg-border hover:text-accent'}"
 						onclick={() => toggleBook(book.slug)}
 					>
-						{bookLabel(book.odrName, book.modernName)}
+						{bookLabel(book)}
 					</button>
 					{#if expandedBooks.has(book.slug)}
 						<div
