@@ -13,7 +13,7 @@ import type { FathersChapterFile } from './fathers-types';
 import sidecarManifest from '../../../static/data/manifests/sidecars.json';
 
 /** Returns true if the given sidecar section has a file for `slug/chapter`. */
-function hasSidecar(section: string, slug: string, chapter: number): boolean {
+export function hasSidecar(section: string, slug: string, chapter: number): boolean {
 	const sec = (sidecarManifest as Record<string, Record<string, number[]>>)[section];
 	const chs = sec?.[slug];
 	return Array.isArray(chs) && chs.includes(chapter);

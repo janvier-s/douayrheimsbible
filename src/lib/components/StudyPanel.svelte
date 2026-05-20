@@ -16,9 +16,11 @@
 		loadConfFootnotes,
 		loadConfCommentary,
 		loadHaydockCommentary,
-		loadHaydockIntro
+		loadHaydockIntro,
+		hasSidecar
 	} from '$lib/data/loader';
 	import type { HaydockCommentaryEntry, HaydockIntro } from '$lib/data/loader';
+	import fathersManifest from '../../../static/data/fathers/manifest.json';
 	import type {
 		BookData,
 		ChapterAnnotations,
@@ -610,6 +612,23 @@
 	// ── Current chapter data ─────────────────────────────────────────
 
 	let currentChapterNum = $derived($readingPosition?.chapter ?? 1);
+
+	// ── Cross-content availability (for annotations empty state CTAs) ─
+	let hasOdrNotes = $derived(
+		isOdr && !!currentBookSlug && hasSidecar('odr-notes', currentBookSlug, currentChapterNum)
+	);
+	let hasHaydock = $derived(
+		isOdr &&
+			!!currentBookSlug &&
+			hasSidecar('haydock-commentary', currentBookSlug, currentChapterNum)
+	);
+	let hasFathers = $derived(
+		isOdr &&
+			!!currentBookSlug &&
+			!!((fathersManifest as Record<string, number[]>)[currentBookSlug]?.includes(
+				currentChapterNum
+			))
+	);
 	run(() => {
 		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
 		if (hasTranslationNotes && currentBookSlug && key !== lastTranslationNotesKey) {
@@ -1136,6 +1155,28 @@
 							<div class="empty-state">
 								<span class="empty-icon" aria-hidden="true">✦</span>
 								<p>No annotations for this chapter.</p>
+								{#if hasOdrNotes || hasHaydock || hasFathers}
+									<div class="ann-cta-group">
+										{#if hasOdrNotes}
+											<button
+												class="ann-cta ann-cta-primary"
+												onclick={() => switchTab('notes')}
+											>Notes</button>
+										{/if}
+										{#if hasHaydock}
+											<a
+												class="ann-cta ann-cta-muted"
+												href="/haydock/{currentBookSlug}/{currentChapterNum}"
+											>Haydock Commentary</a>
+										{/if}
+										{#if hasFathers}
+											<a
+												class="ann-cta ann-cta-ghost"
+												href="/fathers/{currentBookSlug}/{currentChapterNum}"
+											>Church Fathers</a>
+										{/if}
+									</div>
+								{/if}
 							</div>
 						{:else}
 							<div class="commentary-list">
@@ -2100,6 +2141,60 @@
 		color: var(--color-subtle);
 		font-style: italic;
 		line-height: 1.5;
+	}
+
+	.ann-cta-group {
+		display: flex;
+		flex-direction: column;
+		gap: 7px;
+		width: 100%;
+		max-width: 220px;
+		margin-top: 6px;
+	}
+
+	.ann-cta {
+		display: block;
+		padding: 8px 16px;
+		border-radius: 4px;
+		font-size: 12.5px;
+		font-weight: 500;
+		font-style: normal;
+		text-decoration: none;
+		text-align: center;
+		cursor: pointer;
+		transition:
+			background-color 150ms ease,
+			color 150ms ease;
+		border: 1px solid transparent;
+	}
+
+	.ann-cta-primary {
+		background: var(--color-accent);
+		color: white;
+	}
+
+	.ann-cta-primary:hover {
+		background: color-mix(in srgb, var(--color-accent) 85%, black);
+	}
+
+	.ann-cta-muted {
+		background: color-mix(in srgb, var(--color-text) 8%, transparent);
+		color: var(--color-muted);
+		border-color: var(--color-border);
+	}
+
+	.ann-cta-muted:hover {
+		background: color-mix(in srgb, var(--color-text) 14%, transparent);
+	}
+
+	.ann-cta-ghost {
+		background: transparent;
+		color: var(--color-muted);
+		border-color: var(--color-border);
+	}
+
+	.ann-cta-ghost:hover {
+		background: color-mix(in srgb, var(--color-text) 5%, transparent);
 	}
 
 	.haydock-commentary-block {
