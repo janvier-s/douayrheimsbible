@@ -303,6 +303,12 @@
 
 	const COLUMN_WIDTHS = { narrow: 600, default: 750, wide: 920 };
 	let columnMaxWidth = $derived(COLUMN_WIDTHS[$prefs.columnWidth] ?? 750);
+	// Keep --column-max-width in sync so settings changes apply immediately.
+	// app.html sets this before first paint to prevent CLS on hydration.
+	run(() => {
+		if (browser)
+			document.documentElement.style.setProperty('--column-max-width', columnMaxWidth + 'px');
+	});
 
 	let destroyed = false;
 	let scrollReady = false;
@@ -477,7 +483,7 @@
 		bind:this={container}
 		class="flex-1 min-w-0 px-md max-md:px-[8px] pt-[20px] pb-xl max-md:pb-[80px]"
 	>
-		<div style="max-width: {columnMaxWidth}px;" class="mx-auto">
+		<div style="max-width: var(--column-max-width);" class="mx-auto">
 			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
 				<section class={i > 0 ? 'pt-[49px]' : ''}>
 					<div

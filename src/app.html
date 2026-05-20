@@ -10,6 +10,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#a62c2c" />
 		<link rel="alternate" type="application/rss+xml" title="Douay-Rheims Bible" href="/feed.xml" />
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/LibreBaskerville-latin.woff2"
+			crossorigin
+		/>
 		<!-- Flash-free theme + reader settings: apply before first paint -->
 		<script>
 			(function () {
@@ -26,6 +33,10 @@
 					}
 					if (fs) s.setProperty('--font-size-reader', fs + 'px');
 					if (prefs.lineHeight) s.setProperty('--line-height-reader', String(prefs.lineHeight));
+					// Apply column width before paint to prevent CLS on Bible reader pages
+					var colWidths = { narrow: 600, default: 750, wide: 920 };
+					var cw = colWidths[prefs.columnWidth];
+					s.setProperty('--column-max-width', (cw || 750) + 'px');
 					// Hide homepage before paint when user has opted to skip it
 					if (prefs.skipHomepage && window.location.pathname === '/') {
 						s.setProperty('visibility', 'hidden');

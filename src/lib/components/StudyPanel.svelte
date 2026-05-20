@@ -909,8 +909,11 @@
 	// ── ScrollTrigger consumption ────────────────────────────────────
 
 	run(() => {
-		if ($scrollTrigger && panelScroll) {
-			handleScrollTrigger($scrollTrigger);
+		const trigger = $scrollTrigger;
+		if (trigger && panelScroll) {
+			// Defer to next frame so the browser can paint the click response before
+			// doing the forced-layout work in scrollToSection (reduces INP).
+			requestAnimationFrame(() => handleScrollTrigger(trigger));
 		}
 	});
 	run(() => {
