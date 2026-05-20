@@ -101,7 +101,13 @@
         },
         {
           "verse": 1,
-          "text": "Tobias <na>[1]</na> of the tribe and city of Nephthali"
+          "text": "Tobias <na>[1]</na> of the tribe and city of Nephthali",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This book is read at Matins the third week of September."
+            }
+          ]
         }
       ]
     },
