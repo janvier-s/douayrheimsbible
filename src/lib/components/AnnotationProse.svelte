@@ -3,7 +3,7 @@
 	import { stopPropagation } from 'svelte/legacy';
 
 	import { onDestroy } from 'svelte';
-	import { allcapsToSmallcaps } from '$lib/utils/text';
+	import { allcapsToSmallcaps, formatTrailingCitation } from '$lib/utils/text';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
 	import { linkifyItalicRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
@@ -65,7 +65,7 @@
 			html = linkifyItalicRefs(html, conservativeLinks, translationPrefix);
 			if (linkifyBare) html = linkifyDrcRefs(html, translationPrefix);
 			html = allcapsToSmallcaps(html);
-			return html;
+			return formatTrailingCitation(html);
 		});
 	}
 
@@ -245,13 +245,15 @@
 						aria-label="Go to marker {note.marker} in text">{note.marker}</button
 					>
 					<span class="ann-note-text"
-						>{@html allcapsToSmallcaps(
-							linkifyBare
-								? linkifyDrcRefs(
-										linkifyItalicRefs(note.text, false, translationPrefix),
-										translationPrefix
-									)
-								: linkifyItalicRefs(note.text, false, translationPrefix)
+						>{@html formatTrailingCitation(
+							allcapsToSmallcaps(
+								linkifyBare
+									? linkifyDrcRefs(
+											linkifyItalicRefs(note.text, false, translationPrefix),
+											translationPrefix
+										)
+									: linkifyItalicRefs(note.text, false, translationPrefix)
+							)
 						)}</span
 					>
 				</li>

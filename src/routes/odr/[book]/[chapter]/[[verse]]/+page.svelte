@@ -107,7 +107,7 @@
 	{@html jsonLdTag}
 </svelte:head>
 
-{#key `${data.bookMeta.slug}-${data.chapter.chapter}`}
+{#key data}
 	<div>
 		<BibleReader
 			initialBookMeta={data.bookMeta}

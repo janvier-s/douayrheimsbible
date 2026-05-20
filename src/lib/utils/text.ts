@@ -125,6 +125,29 @@ export function allcapsToSmallcaps(html: string): string {
 	return result;
 }
 
+/** If a note ends with a trailing patristic citation — either an italic block like
+ *  "<i>S. Aug. l. 4. de Gen.</i>" or plain text like "S. Aug. l. 4. de Gen. c. 12." —
+ *  promote it to its own line preceded by an em-dash. Apply AFTER linkifyDrcRefs so
+ *  recognised verse references (already wrapped in <a>) are excluded. */
+export function formatTrailingCitation(html: string): string {
+	const italic = html.match(/^([\s\S]+?[.?!])\s+(<i>((?:(?!<\/i>).)+)<\/i>)\s*$/);
+	if (italic) {
+		const inner = italic[3];
+		const withoutAnchors = inner.replace(/<a\b[^>]*>[\s\S]*?<\/a>/g, '');
+		const remaining = withoutAnchors.replace(/<[^>]+>/g, '');
+		if (/\b[A-Za-z]{3,}\b/.test(remaining)) {
+			return `${italic[1]}<br /><span class="note-citation">— ${italic[2]}</span>`;
+		}
+	}
+	const plain = html.match(
+		/^([\s\S]+?[.?!])\s+((?:S\.|St\.|D\.|Theod\.|Cf\.) (?:[^<.]*\.\s*){2,}[^<.]*\.)\s*$/
+	);
+	if (plain) {
+		return `${plain[1]}<br /><span class="note-citation">— ${plain[2]}</span>`;
+	}
+	return html;
+}
+
 export function toRoman(n: number): string {
 	if (n <= 0 || n >= 4000) return String(n);
 	const map: [number, string][] = [

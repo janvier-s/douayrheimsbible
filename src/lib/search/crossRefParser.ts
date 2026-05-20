@@ -1033,6 +1033,11 @@ function normalizeForParser(text: string): string {
 		return `${ch}:${verses.join(', ')}`;
 	});
 
+	// Eccle./Eccl. disambiguation: Ecclesiastes only has 12 chapters; chapter > 12 = Sirach
+	result = result.replace(/\bEcclesiastes\s+(\d+)/g, (match, ch) => {
+		return parseInt(ch, 10) > 12 ? `Sirach ${ch}` : match;
+	});
+
 	return result;
 }
 
@@ -1973,21 +1978,28 @@ function findDrcRefs(text: string): DrcRef[] {
  * comma-separated verses: "Gen. 9. 4, 5, 6."
  */
 export function linkifyDrcRefs(text: string, translationPrefix?: string): string {
-	const refs = findDrcRefs(text);
-	if (refs.length === 0) return text;
+	// Don't process inside HTML tags — split on tag boundaries first
+	const parts = text.split(/(<[^>]*>)/);
+	return parts
+		.map((part) => {
+			if (part.startsWith('<')) return part;
+			const refs = findDrcRefs(part);
+			if (refs.length === 0) return part;
 
-	let result = '';
-	let lastEnd = 0;
+			let result = '';
+			let lastEnd = 0;
 
-	for (const ref of refs) {
-		if (ref.start < lastEnd) continue;
-		const matchedText = text.slice(ref.start, ref.end);
-		const url = refUrl(ref.osis, translationPrefix);
-		result += text.slice(lastEnd, ref.start);
-		result += `<a class="verse-ref" data-osis="${ref.osis}" href="${url}" target="_blank" rel="noopener">${matchedText}</a>`;
-		lastEnd = ref.end;
-	}
+			for (const ref of refs) {
+				if (ref.start < lastEnd) continue;
+				const matchedText = part.slice(ref.start, ref.end);
+				const url = refUrl(ref.osis, translationPrefix);
+				result += part.slice(lastEnd, ref.start);
+				result += `<a class="verse-ref" data-osis="${ref.osis}" href="${url}" target="_blank" rel="noopener">${matchedText}</a>`;
+				lastEnd = ref.end;
+			}
 
-	result += text.slice(lastEnd);
-	return result;
+			result += part.slice(lastEnd);
+			return result;
+		})
+		.join('');
 }
