@@ -1162,8 +1162,8 @@
 									<div class="ann-cta-wrap">
 										{#if hasOdrNotes}
 											<p class="ann-cta-header">
-												Brief notes on individual verses of this chapter are available in the
-												&ldquo;Notes&rdquo; tab.
+												Brief notes on individual verses are available in the &ldquo;Notes&rdquo;
+												tab.
 											</p>
 											<div class="ann-cta-bar">
 												<button class="ann-cta ann-cta-primary" onclick={() => switchTab('notes')}
