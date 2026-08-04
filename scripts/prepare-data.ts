@@ -71,12 +71,15 @@ function cleanVerseText(text: string): string {
 		text
 			// KJV: USFM word-level markup  \+w WORD|strong="HXXXX"\+w*
 			.replace(/\\\+w\s+(.*?)\|[^\\]*\\\+w\*/g, '$1')
+			// KJV: USFM translator-added-words markup  \+add WORD(S)\+add*
+			.replace(/\\\+add\s+(.*?)\\\+add\*/g, '$1')
 			// KJV: pilcrow paragraph markers
 			.replace(/¶\s*/g, '')
 			// Vulgate: section bracket markers
 			.replace(/[\[\]]/g, '')
-			// Knox: trailing footnote marker numbers (e.g. "...Christ.1" → "...Christ.")
-			.replace(/([.;?!,)…:a-zA-Z])\d{1,2}$/, '$1')
+			// Knox/DRC: inline footnote marker numbers glued to a word/punctuation, anywhere in
+			// the verse (e.g. "...Christ.1 And" → "...Christ. And", "strength.8 Not" → "strength. Not")
+			.replace(/([.;?!,)’”…:a-zA-Z])\d{1,2}(?=[\s)"'’”]|$)/g, '$1')
 			// Collapse runs of whitespace
 			.replace(/  +/g, ' ')
 			.trim()
