@@ -602,3 +602,27 @@ body {
 	background: color-mix(in srgb, var(--color-accent) 70%, transparent);
 	background-clip: padding-box;
 }
+
+/* ── Auto-hiding mobile chrome ──────────────────────────────────────────────
+   The bars slide out of view on scroll down and return on scroll up. Transform
+   only, so the text underneath never reflows. Visibility is driven from
+   $lib/stores/chrome; these rules only describe the motion. */
+
+.chrome-bar {
+	transition: transform 260ms cubic-bezier(0.32, 0.72, 0, 1);
+	will-change: transform;
+}
+
+.chrome-bar[data-chrome-hidden='true'] {
+	transform: translateY(-100%);
+}
+
+.chrome-bar-bottom[data-chrome-hidden='true'] {
+	transform: translateY(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.chrome-bar {
+		transition: none;
+	}
+}

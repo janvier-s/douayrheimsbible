@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import { run } from 'svelte/legacy';
+	import { onDestroy } from 'svelte';
+	import { isMobile } from '$lib/stores/mobile';
+	import { chromeHidden, suspendChrome, revealChrome } from '$lib/stores/chrome';
 	import { goto } from '$app/navigation';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -57,6 +61,14 @@
 
 	let navOpen = $state(false);
 	let prefsOpen = $state(false);
+
+	// Auto-hiding chrome. Open menus pin the bars: the prefs panel and floating
+	// nav are fixed at top: var(--header-height) and would hang over a gap.
+	let hideChrome = $derived($isMobile && $chromeHidden);
+	run(() => {
+		suspendChrome('comparebar-menus', navOpen || prefsOpen);
+	});
+	onDestroy(() => suspendChrome('comparebar-menus', false));
 	let mobileTransOpen = $state(false);
 
 	let visibleTranslations = $derived(
@@ -94,7 +106,12 @@
 	}}
 />
 
-<header class="sticky top-0 z-50 font-ui">
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<header
+	class="sticky top-0 z-50 font-ui chrome-bar"
+	data-chrome-hidden={hideChrome}
+	onfocusin={revealChrome}
+>
 	<!-- Row 1: branding + mode + search -->
 	<BrandingRow
 		{modeItems}

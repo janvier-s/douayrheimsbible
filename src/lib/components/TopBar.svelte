@@ -16,6 +16,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { isMobile } from '$lib/stores/mobile';
+	import { chromeHidden, suspendChrome, revealChrome } from '$lib/stores/chrome';
 	import { TRANSLATIONS } from '$lib/stores/compare';
 	import { toRoman } from '$lib/utils/text';
 	import FloatingNav from './FloatingNav.svelte';
@@ -54,6 +55,14 @@
 	let navOpen = $state(false);
 	let prefsOpen = $state(false);
 	let translationOpen = $state(false);
+
+	// Auto-hiding chrome. Any open menu pins the bars in place: the prefs panel
+	// and floating nav are fixed at top: var(--header-height), so they would
+	// hang over a gap if the header slid away underneath them.
+	let hideChrome = $derived($isMobile && $chromeHidden);
+	run(() => {
+		suspendChrome('topbar-menus', navOpen || prefsOpen || translationOpen);
+	});
 
 	let bookMeta = $derived(getBookBySlug(bookSlug));
 	let isVul = $derived(translationId === 'vul');
@@ -188,6 +197,7 @@
 	});
 
 	onDestroy(() => {
+		suspendChrome('topbar-menus', false);
 		if (browser) {
 			window.removeEventListener('popstate', onPopState);
 			document.body.style.overflow = '';
@@ -207,7 +217,12 @@
 	}}
 />
 
-<header class="sticky top-0 z-50 font-ui">
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<header
+	class="sticky top-0 z-50 font-ui chrome-bar"
+	data-chrome-hidden={hideChrome}
+	onfocusin={revealChrome}
+>
 	<!-- Row 1: branding + mode + search -->
 	<BrandingRow
 		{modeItems}

@@ -25,6 +25,7 @@
 	import StudyPanel from './StudyPanel.svelte';
 	import PageFooter from './PageFooter.svelte';
 	import { isMobile } from '$lib/stores/mobile';
+	import { suspendChrome } from '$lib/stores/chrome';
 
 	interface Props {
 		initialBookMeta: BookMeta;
@@ -117,6 +118,12 @@
 	let mobilePanelOpen = $state(false);
 	run(() => {
 		if (!mobileStudyMode) mobilePanelOpen = false;
+	});
+	// The mobile study panel is fixed between top: var(--header-height) and the
+	// tab bar, so it cannot follow a transformed header. Pin the bars while it
+	// is up rather than animate --header-height on every scroll frame.
+	run(() => {
+		suspendChrome('mobile-study-panel', mobileStudyMode && mobilePanelOpen);
 	});
 	run(() => {
 		if ($scrollTrigger !== null && mobileStudyMode) mobilePanelOpen = true;
@@ -465,6 +472,7 @@
 
 	onDestroy(() => {
 		destroyed = true;
+		suspendChrome('mobile-study-panel', false);
 		observer?.disconnect();
 		updatePosition.cancel();
 		if (browser) {

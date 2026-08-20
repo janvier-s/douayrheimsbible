@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { chromeHidden, revealChrome } from '$lib/stores/chrome';
+
 	interface Props {
 		modeItems: Array<{ key: string; label: string }>;
 		activeModeIdx: number;
@@ -7,11 +9,15 @@
 	}
 
 	let { modeItems, activeModeIdx, pendingIdx, selectMode }: Props = $props();
+
+	// Already md:hidden, so no breakpoint gate is needed here.
 </script>
 
 <nav
-	class="md:hidden fixed bottom-0 inset-x-0 z-[56] bg-glass backdrop-blur-sm border-t border-border font-ui"
+	class="md:hidden fixed bottom-0 inset-x-0 z-[56] bg-glass backdrop-blur-sm border-t border-border font-ui chrome-bar chrome-bar-bottom"
 	style="padding-bottom: env(safe-area-inset-bottom);"
+	data-chrome-hidden={$chromeHidden}
+	onfocusin={revealChrome}
 	aria-label="Main navigation"
 >
 	<div class="flex" style="height: 56px;">

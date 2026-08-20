@@ -11,6 +11,7 @@
 	import { afterNavigate, goto } from '$app/navigation';
 	import { getFontById, isSansFont } from '$lib/data/fonts';
 	import { navOverride } from '$lib/stores/navOverride';
+	import { revealChrome } from '$lib/stores/chrome';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
@@ -18,6 +19,9 @@
 	let { children }: Props = $props();
 
 	afterNavigate(({ from, to, type }) => {
+		// Before the early returns below: a new page must never open with the
+		// bars still tucked away from the previous page's scrolling.
+		revealChrome();
 		if (type === 'popstate') return;
 		if (from?.url.pathname === to?.url.pathname) return;
 		requestAnimationFrame(() =>
