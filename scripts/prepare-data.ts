@@ -7,7 +7,6 @@ import { buildSearchIndexes } from './build-search-index.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '..');
 const ODR_SOURCE = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR', 'ODR');
-const OUT_DIR = join(PROJECT_ROOT, 'static', 'data', 'odr');
 const ODR_PARENT = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR');
 
 export const SLUG_REMAP_DRC_KNOX: Record<string, string> = {
@@ -97,33 +96,20 @@ async function main() {
 		return;
 	}
 
-	await mkdir(OUT_DIR, { recursive: true });
-
-	const files = await readdir(ODR_SOURCE);
-	let count = 0;
-
-	for (const file of files) {
-		if (!file.endsWith('.json')) continue;
-
-		const raw = await readFile(join(ODR_SOURCE, file), 'utf-8');
-		const data = JSON.parse(raw);
-
-		// Skip non-book files (e.g. 00-intro.json)
-		if (!data.book) continue;
-
-		// Derive slug: strip leading NN- prefix, normalise known spelling variants
-		const rawSlug = file.replace(/^\d+-/, '').replace('.json', '');
-		const SLUG_MAP: Record<string, string> = {
-			'prayer-of-manasseh': 'prayer-of-manasses'
-		};
-		const slug = SLUG_MAP[rawSlug] ?? rawSlug;
-
-		await writeFile(join(OUT_DIR, `${slug}.json`), JSON.stringify(data));
-		count++;
-		console.log(`✓ ${slug}`);
-	}
-
-	console.log(`\nPrepared ${count} books → ${OUT_DIR}`);
+	// The ODR books are NOT regenerated here. static/data/odr/ is maintained in
+	// this repo and has moved well past the SCRIPTURA export: it carries
+	// book_title, short_title, hebrew_title and intros, which the export has
+	// never had, along with text and marginal-note corrections made since. Of the
+	// 77 books, 75 now differ. Copying the export over them would drop all of it.
+	//
+	// The copy step that used to live here also mis-derived slugs, stripping the
+	// leading digit from 1-corinthians and collapsing 1/2/3-john onto one name. It
+	// went unnoticed because ODR_SOURCE points a directory above the book files,
+	// so it read an empty list and wrote nothing. Reaching for the correct path
+	// without reading this would have overwritten the corpus.
+	//
+	// ODR_SOURCE is still probed above, as the test for whether this machine has
+	// the sources the translation copy below needs.
 
 	// Copy additional translation JSONs
 	for (const translation of TRANSLATIONS_TO_COPY) {
