@@ -3,7 +3,11 @@
 	import { stopPropagation } from 'svelte/legacy';
 
 	import { onDestroy } from 'svelte';
-	import { allcapsToSmallcaps, formatTrailingCitation } from '$lib/utils/text';
+	import {
+		allcapsToSmallcaps,
+		formatTrailingCitation,
+		splitAnnotationParagraphs
+	} from '$lib/utils/text';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
 	import { linkifyItalicRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
@@ -56,8 +60,8 @@
 	}
 
 	function renderParagraphs(raw: string): string[] {
-		return raw.split('\n\n').map((p) => {
-			let html = p.trim().replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
+		return splitAnnotationParagraphs(raw).map((p) => {
+			let html = p.replace(/<mn>([^<]+)<\/mn>/g, (_, raw) => {
 				// Normalise [1] → 1 for numeric markers; leave ◦ and others as-is
 				const display = raw.replace(/^\[(\d+)\]$/, '$1');
 				return `<button class="mn-marker" data-mn="${display}" aria-label="Marginal note ${display}">${display}</button>`;

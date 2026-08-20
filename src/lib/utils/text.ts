@@ -175,3 +175,39 @@ export function toRoman(n: number): string {
 	}
 	return r;
 }
+
+/** A paragraph holding nothing but marginal-note markers. */
+const MARKER_ONLY_PARAGRAPH = /^(?:<mn>[^<]*<\/mn>\s*)+$/;
+
+/**
+ * Split annotation text into paragraphs on blank lines, folding any paragraph
+ * that holds nothing but markers into the paragraph that follows.
+ *
+ * The source sometimes isolates a marker between blank lines:
+ *   "...enough said.\n\n<mn>◦</mn>\n\nThe fathers indeed..."
+ * The marker introduces the paragraph after it, so rendering that segment as a
+ * paragraph of its own strands the marker alone on a line. 87 such cases occur
+ * across the ODR corpus (James 2:24 among them).
+ */
+export function splitAnnotationParagraphs(raw: string): string[] {
+	const paragraphs: string[] = [];
+	let pendingMarkers = '';
+
+	for (const segment of raw.split('\n\n')) {
+		const part = segment.trim();
+		if (!part) continue;
+
+		if (MARKER_ONLY_PARAGRAPH.test(part)) {
+			pendingMarkers = pendingMarkers ? `${pendingMarkers} ${part}` : part;
+			continue;
+		}
+
+		paragraphs.push(pendingMarkers ? `${pendingMarkers} ${part}` : part);
+		pendingMarkers = '';
+	}
+
+	// A stranded marker with no paragraph after it keeps its own line.
+	if (pendingMarkers) paragraphs.push(pendingMarkers);
+
+	return paragraphs;
+}
