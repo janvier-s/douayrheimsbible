@@ -2,6 +2,7 @@ import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { loadBook, getChapter, loadTranslationBook } from '$lib/data/loader';
 import { getBookBySlug } from '$lib/data/books';
+import { kjvPsalmsForDr, precedingSplitSibling, alignDrPsalmToKjv } from '$lib/data/psalm-mapping';
 import { TRANSLATIONS } from '$lib/stores/compare';
 
 export const load: PageLoad = async ({ params, fetch }) => {
@@ -32,15 +33,65 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		odr: Object.fromEntries(chapter.verses.map((v) => [v.verse, v.text]))
 	};
 
+	// The KJV numbers the psalms from the Hebrew, every other translation here
+	// from the Vulgate, so its psalms need remapping onto the DR numbering the
+	// comparison rows are keyed by. Every other book joins on the plain number.
+	const remapPsalms = slug === 'psalms';
+	let kjvPsalmLabel: string | null = null;
+
 	for (let i = 0; i < otherTranslations.length; i++) {
 		const result = translationResults[i];
 		const t = otherTranslations[i];
-		if (result.status === 'fulfilled') {
-			const ch = result.value.chapters.find((c) => c.chapter === chapterNum);
-			verseMaps[t.id] = ch ? Object.fromEntries(ch.verses.map((v) => [v.verse, v.text])) : {};
-		} else {
+		if (result.status !== 'fulfilled') {
 			verseMaps[t.id] = {};
+			continue;
 		}
+
+		if (remapPsalms && t.id === 'kjv') {
+			const kjvChapters = kjvPsalmsForDr(chapterNum);
+			const kjvRefs = [];
+			const textByRef: Record<string, string> = {};
+			for (const num of kjvChapters) {
+				const ch = result.value.chapters.find((c) => c.chapter === num);
+				for (const v of ch?.verses ?? []) {
+					kjvRefs.push({ chapter: num, verse: v.verse });
+					textByRef[`${num}:${v.verse}`] = v.text;
+				}
+			}
+
+			const sibling = precedingSplitSibling(chapterNum);
+			const siblingCount = sibling
+				? (odrBookData.chapters.find((c) => c.chapter === sibling)?.verses ?? []).filter(
+						(v) => v.verse > 0
+					).length
+				: 0;
+
+			const mapping = alignDrPsalmToKjv({
+				drVerseCount: chapter.verses.filter((v) => v.verse > 0).length,
+				kjvRefs,
+				precedingSiblingVerseCount: siblingCount
+			});
+
+			verseMaps[t.id] = Object.fromEntries(
+				[...mapping].map(([drVerse, ref]) => [
+					drVerse,
+					textByRef[`${ref.chapter}:${ref.verse}`] ?? ''
+				])
+			);
+
+			// Surface the KJV's own numbering so a reader citing it is not misled.
+			const used = [...new Set([...mapping.values()].map((r) => r.chapter))];
+			if (used.length > 0) {
+				kjvPsalmLabel =
+					used.length === 1
+						? `Psalm ${used[0]}`
+						: `Psalms ${used[0]}\u2013${used[used.length - 1]}`;
+			}
+			continue;
+		}
+
+		const ch = result.value.chapters.find((c) => c.chapter === chapterNum);
+		verseMaps[t.id] = ch ? Object.fromEntries(ch.verses.map((v) => [v.verse, v.text])) : {};
 	}
 
 	return {
@@ -48,6 +99,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		chapter,
 		totalChapters: odrBookData.chapters.length,
 		verseMaps,
+		kjvPsalmLabel,
 		showLayoutTopBar: false
 	};
 };

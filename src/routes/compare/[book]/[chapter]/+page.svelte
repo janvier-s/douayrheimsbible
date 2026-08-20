@@ -33,7 +33,7 @@
 		}
 	});
 
-	let { bookMeta, chapter, verseMaps } = $derived(data);
+	let { bookMeta, chapter, verseMaps, kjvPsalmLabel } = $derived(data);
 	let prevChapter = $derived(chapter.chapter > 1 ? chapter.chapter - 1 : null);
 	let nextChapter = $derived(chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null);
 
@@ -248,7 +248,13 @@
 							>
 								{t.label}
 							</span>
-							<span class="text-[11px] text-subtle mt-[3px] block">{t.year}</span>
+							<span class="text-[11px] text-subtle mt-[3px] block">
+								{t.year}{#if t.id === 'kjv' && kjvPsalmLabel}<span
+										class="ml-[6px] text-accent"
+										title="The KJV numbers the psalms from the Hebrew; this page follows the Vulgate numbering."
+										>{kjvPsalmLabel}</span
+									>{/if}
+							</span>
 							{#if t.micro}
 								<span
 									class="text-[9px] uppercase tracking-[0.12em] text-accent/70 mt-[2px] block font-medium"

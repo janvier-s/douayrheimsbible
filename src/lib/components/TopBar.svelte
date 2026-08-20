@@ -6,6 +6,7 @@
 		ALL_BOOKS,
 		getBookBySlug,
 		getHebPsalmNum,
+		drFromHebPsalmNum,
 		getPrevNavBook,
 		getNextNavBook
 	} from '$lib/data/books';
@@ -16,6 +17,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { isMobile } from '$lib/stores/mobile';
+	import { kjvPsalmsForDr } from '$lib/data/psalm-mapping';
 	import { chromeHidden, suspendChrome, revealChrome } from '$lib/stores/chrome';
 	import { TRANSLATIONS } from '$lib/stores/compare';
 	import { toRoman } from '$lib/utils/text';
@@ -115,6 +117,18 @@
 	function bookNavLabel(b: (typeof ALL_BOOKS)[number]): string {
 		if (isVul && b.latinName) return b.latinName;
 		return $prefs.modernBookNames ? b.modernName : b.odrName;
+	}
+
+	// The KJV numbers the psalms from the Hebrew, everything else here from the
+	// Vulgate, so the chapter number is not portable across that boundary.
+	function translationHref(targetId: string): string {
+		const base = targetId === 'odr' ? '/odr' : `/${targetId}`;
+		if (bookSlug !== 'psalms' || targetId === translationId) {
+			return `${base}/${bookSlug}/${chapterNum}`;
+		}
+		const dr = translationId === 'kjv' ? drFromHebPsalmNum(chapterNumInt) : chapterNumInt;
+		const target = targetId === 'kjv' ? kjvPsalmsForDr(dr)[0] : dr;
+		return `${base}/${bookSlug}/${target || chapterNum}`;
 	}
 
 	function closeAll() {
@@ -311,10 +325,7 @@
 					>
 						{#each liveTranslations as t (t.id)}
 							{@const isCurrent = t.id === translationId}
-							{@const href =
-								t.id === 'odr'
-									? `/odr/${bookSlug}/${chapterNum}`
-									: `/${t.id}/${bookSlug}/${chapterNum}`}
+							{@const href = translationHref(t.id)}
 							{#if isCurrent}
 								<div class="trans-item trans-item--active">
 									<div class="trans-bar"></div>

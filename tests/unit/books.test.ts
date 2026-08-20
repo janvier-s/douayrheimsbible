@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { getBookBySlug, getBookByOdrName, getBookByModernName, ALL_BOOKS } from '$lib/data/books';
+import {
+	getBookBySlug,
+	getBookByOdrName,
+	getBookByModernName,
+	drFromHebPsalmNum,
+	ALL_BOOKS
+} from '$lib/data/books';
+import { kjvPsalmsForDr, precedingSplitSibling } from '$lib/data/psalm-mapping';
 
 describe('ALL_BOOKS', () => {
 	it('contains 76 books', () => {
@@ -57,5 +64,32 @@ describe('getBookByModernName', () => {
 
 	it('resolves Revelation', () => {
 		expect(getBookByModernName('Revelation')?.slug).toBe('apocalypse');
+	});
+});
+
+describe('drFromHebPsalmNum', () => {
+	it('round-trips the simple offsets', () => {
+		expect(drFromHebPsalmNum(23)).toBe(22);
+		expect(drFromHebPsalmNum(1)).toBe(1);
+		expect(drFromHebPsalmNum(150)).toBe(150);
+	});
+
+	it('collapses the merged psalms back onto one DR number', () => {
+		expect(drFromHebPsalmNum(9)).toBe(9);
+		expect(drFromHebPsalmNum(10)).toBe(9);
+		expect(drFromHebPsalmNum(114)).toBe(113);
+		expect(drFromHebPsalmNum(115)).toBe(113);
+	});
+
+	// This is the reverse of kjvPsalmsForDr in psalm-mapping.ts, so the two hold
+	// the same table of divergences from opposite ends. Walking all 150 psalms
+	// catches an edit to one that was not made to the other.
+	it('inverts kjvPsalmsForDr across the whole psalter', () => {
+		for (let dr = 1; dr <= 150; dr++) {
+			const firstKjv = kjvPsalmsForDr(dr)[0];
+			// Both halves of a psalm the Vulgate split land on the earlier half.
+			const expected = precedingSplitSibling(dr) ?? dr;
+			expect(drFromHebPsalmNum(firstKjv), `DR ${dr} -> KJV ${firstKjv}`).toBe(expected);
+		}
 	});
 });
