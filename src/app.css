@@ -281,6 +281,11 @@
 	--color-interactive: #696666;
 	--color-accent: #a62c2c;
 	--color-accent-text: #b84848;
+
+	/* Verse numbers follow --color-accent-text, which resolves per theme. Sepia
+	   overrides it below: #c15050 lands at 3.82:1 there, and these numbers are
+	   10-13px and thin, so they need AA contrast of their own. */
+	--color-verse-num: var(--color-accent-text);
 	--color-border: #e4dcd0;
 	--color-bg-glass: rgba(248, 245, 239, 0.94);
 	--color-heading: var(--color-text);
@@ -310,6 +315,7 @@
 	--color-interactive: #706860;
 	--color-accent: #8b2500;
 	--color-accent-text: #c15050;
+	--color-verse-num: #ab3d3d; /* 4.99:1 on the sepia page */
 	--color-border: #d8c8b0;
 	--color-bg-glass: rgba(242, 232, 216, 0.94);
 }

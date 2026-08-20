@@ -1042,8 +1042,8 @@
 									<div class="relative">
 										{#if $prefs.showVerseNumbers}
 											<span
-												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
-												>{v.verse}</span
+												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
+												style="color: var(--color-verse-num)">{v.verse}</span
 											>
 										{/if}
 										<p
@@ -1092,8 +1092,8 @@
 									<div class="relative">
 										{#if $prefs.showVerseNumbers}
 											<span
-												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] text-subtle"
-												>{v.verse}</span
+												class="absolute right-full pr-[0.5rem] w-[2.5rem] text-right font-ui text-[13px] max-md:text-[10px] font-thin select-none tabular-nums leading-[var(--line-height-reader)] pt-[0.15em]"
+												style="color: var(--color-verse-num)">{v.verse}</span
 											>
 										{/if}
 										<p

@@ -656,16 +656,16 @@
 				>
 					{#if $prefs.showVerseNumbers && !isDropcap}
 						<sup
-							class="font-ui text-[10px] font-thin select-none mr-[3px] tabular-nums"
+							class="font-ui text-[10px] select-none mr-[3px] tabular-nums"
 							class:verse-num-roman={useRoman}
 							class:verse-num-hang={vi === 0 && ($prefs.hangingVerseNumbers ?? true)}
 							class:verse-num-hang-roman={useRoman &&
 								vi === 0 &&
 								($prefs.hangingVerseNumbers ?? true)}
-							class:text-subtle={!isStudy || !annotatedVerseSet.has(v.verse)}
-							style={isStudy && annotatedVerseSet.has(v.verse)
-								? 'color: var(--color-accent-text)'
-								: ''}>{verseLabel(v.verse)}</sup
+							style="color: var(--color-verse-num); font-weight: {isStudy &&
+							annotatedVerseSet.has(v.verse)
+								? 600
+								: 300}">{verseLabel(v.verse)}</sup
 						>
 					{/if}
 					{@html renderVerse(
@@ -701,11 +701,11 @@
 			>
 				{#if $prefs.showVerseNumbers}
 					<span
-						class="font-ui text-[13px] max-md:text-[10px] font-thin select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em]"
-						class:text-subtle={!isStudy || !annotatedVerseSet.has(v.verse)}
-						style={isStudy && annotatedVerseSet.has(v.verse)
-							? 'color: var(--color-accent-text)'
-							: ''}
+						class="font-ui text-[13px] max-md:text-[10px] select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em]"
+						style="color: var(--color-verse-num); font-weight: {isStudy &&
+						annotatedVerseSet.has(v.verse)
+							? 600
+							: 300}"
 					>
 						{verseLabel(v.verse)}
 					</span>
