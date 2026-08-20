@@ -3,6 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import FathersBar from '$lib/components/FathersBar.svelte';
 	import FathersReader from '$lib/components/FathersReader.svelte';
+	import { chapterRefBookName } from '$lib/data/books';
 
 	interface Props {
 		data: PageData;
@@ -13,9 +14,8 @@
 	const SITE = 'https://thedouayrheims.com';
 	const OG_IMAGE = SITE + '/images/dr-1582-rheims.webp';
 
-	let pageTitle = $derived(
-		`${data.bookMeta.odrName} ${data.chapter.chapter} — Church Fathers · Douay-Rheims`
-	);
+	let refName = $derived(chapterRefBookName(data.bookMeta.slug, data.bookMeta.odrName));
+	let pageTitle = $derived(`${refName} ${data.chapter.chapter} according to the Church Fathers`);
 	let pageDesc = $derived(
 		`Patristic commentary on ${data.bookMeta.odrName} Chapter ${data.chapter.chapter} from the Church Fathers. Early Christian interpretation alongside the Douay-Rheims text.`
 	);
