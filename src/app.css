@@ -632,3 +632,12 @@ body {
 		transition: none;
 	}
 }
+
+/* Knox reproduced the Hebrew alphabetic acrostics in English, and the New
+   Advent text this data follows sets each stanza's initial in bold. <ac> marks
+   those letters so the pattern is visible in Psalms 24, 33, 36, 110, 111, 118
+   and 144, Lamentations 1-4, Proverbs 31 and Ecclesiasticus 51. Small caps
+   were tried first and read as an ordinary capital. */
+ac {
+	font-weight: 700;
+}

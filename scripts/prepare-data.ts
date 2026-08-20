@@ -3,11 +3,13 @@ import { readdir, readFile, writeFile, mkdir, access } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { buildSearchIndexes } from './build-search-index.js';
+import { cleanVerseText } from './clean-verse-text.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '..');
 const ODR_SOURCE = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR', 'ODR');
 const ODR_PARENT = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR');
+const KNOX_ACROSTICS_FILE = join(__dirname, 'data', 'knox-acrostics.json');
 
 export const SLUG_REMAP_DRC_KNOX: Record<string, string> = {
 	josue: 'joshua',
@@ -64,28 +66,54 @@ const TRANSLATIONS_TO_COPY = [
 	{ id: 'conf', srcDir: join(ODR_PARENT, 'Confraternity', 'JSON_Converted'), remap: false }
 ] as const;
 
-/** Clean translation verse text at build time so JSON/API consumers get clean data. */
-function cleanVerseText(text: string): string {
-	return (
-		text
-			// KJV: USFM word-level markup  \+w WORD|strong="HXXXX"\+w*
-			.replace(/\\\+w\s+(.*?)\|[^\\]*\\\+w\*/g, '$1')
-			// KJV: USFM translator-added-words markup  \+add WORD(S)\+add*
-			.replace(/\\\+add\s+(.*?)\\\+add\*/g, '$1')
-			// KJV: pilcrow paragraph markers
-			.replace(/¶\s*/g, '')
-			// Vulgate: section bracket markers
-			.replace(/[\[\]]/g, '')
-			// Knox/DRC: inline footnote marker numbers glued to a word/punctuation, anywhere in
-			// the verse (e.g. "...Christ.1 And" → "...Christ. And", "strength.8 Not" → "strength. Not")
-			.replace(/([.;?!,)’”…:a-zA-Z])\d{1,2}(?=[\s)"'’”]|$)/g, '$1')
-			// Collapse runs of whitespace
-			.replace(/  +/g, ' ')
-			.trim()
-	);
+/**
+ * Knox reproduced the Hebrew alphabetic acrostics in English, and the New
+ * Advent HTML this data descends from marks each stanza's initial with
+ * <strong>. The conversion dropped the tag and left a space behind, so verses
+ * arrive as "A h, blessed they".
+ *
+ * The space cannot be closed by rule. "A far from wrong-doing" runs together
+ * while "A man who has found a vigorous wife" keeps its space, and the letter
+ * alone does not say which, since A, I and O are also words. So the 479 sites
+ * are enumerated in knox-acrostics.json, taken from the markup itself; see
+ * generate-knox-acrostics.ts. Seven of them keep their space and are recorded
+ * so the list stays a full account of the acrostics rather than only the
+ * repairs.
+ */
+type AcrosticSite = [number, number, string, string, boolean];
+let knoxAcrostics: Record<string, AcrosticSite[]> = {};
+
+async function loadKnoxAcrostics() {
+	try {
+		knoxAcrostics = JSON.parse(await readFile(KNOX_ACROSTICS_FILE, 'utf-8'));
+	} catch {
+		console.log('knox-acrostics.json not found — Knox acrostic initials left as-is.');
+	}
+}
+
+/**
+ * Closes the gap after each acrostic initial in one verse and tags the letter.
+ *
+ * <ac> follows the convention the ODR data already uses for inline markup
+ * (<cr>, <na>, <mn>): the reader styles it, and stripTags drops it wherever
+ * plain text is wanted. The seven initials that are words in their own right
+ * keep their space and are tagged just the same, since they are as much a part
+ * of the acrostic as the rest.
+ */
+function markKnoxAcrostics(text: string, slug: string, chapter: number, verse: number): string {
+	const sites = knoxAcrostics[slug];
+	if (!sites) return text;
+	let out = text;
+	for (const [ch, v, letter, context, joins] of sites) {
+		if (ch !== chapter || v !== verse) continue;
+		const gap = joins ? '' : ' ';
+		out = out.replace(`${letter} ${context}`, `<ac>${letter}</ac>${gap}${context}`);
+	}
+	return out;
 }
 
 async function main() {
+	await loadKnoxAcrostics();
 	// Source data lives in SCRIPTURA (local only) — skip book copying on CI where
 	// static/data/odr/ is already committed, but always build search indexes.
 	try {
@@ -160,7 +188,13 @@ async function main() {
 				).map((ch) => ({
 					chapter: ch.chapter,
 					...(ch.summary ? { summary: ch.summary } : {}),
-					verses: ch.verses.map((v) => ({ verse: v.verse, text: cleanVerseText(v.text) }))
+					verses: ch.verses.map((v) => ({
+						verse: v.verse,
+						text:
+							translation.id === 'knox'
+								? markKnoxAcrostics(cleanVerseText(v.text), odrSlug, ch.chapter, v.verse)
+								: cleanVerseText(v.text)
+					}))
 				}))
 			};
 			if ((data as Record<string, unknown>).intro) {
