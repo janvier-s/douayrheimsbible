@@ -79,20 +79,24 @@
 			: ''
 	);
 
+	// The Hebrew numbering, shown beside the Vulgate one. Kept apart from the
+	// label so it can be set smaller and quieter than the psalm it qualifies.
 	let psalmSuffix = $derived(
 		(() => {
 			if (!$prefs.showPsalmNumbers || bookMeta?.slug !== 'psalms' || !chapterNum) return '';
 			const prot = getHebPsalmNum(parseInt(chapterNum, 10));
-			return prot ? ` (${prot})` : '';
+			return prot ? `(${prot})` : '';
 		})()
 	);
 
 	let chapterDisplay = $derived(
 		isVul && $prefs.romanNumerals && chapterNum ? toRoman(parseInt(chapterNum, 10)) : chapterNum
 	);
-	let navLabel = $derived(
-		bookMeta && chapterNum ? `${displayName} ${chapterDisplay}${psalmSuffix}` : 'Go to\u2026'
+	let navBase = $derived(
+		bookMeta && chapterNum ? `${displayName} ${chapterDisplay}` : 'Go to\u2026'
 	);
+	/** Screen readers get the two parts as one phrase. */
+	let navLabel = $derived(psalmSuffix ? `${navBase} ${psalmSuffix}` : navBase);
 
 	let prevBook = $derived(
 		isChapterPage && bookMeta ? (getPrevNavBook(bookMeta.slug) ?? null) : null
@@ -389,7 +393,7 @@
 					{/if}
 				</div>
 				<button
-					class="flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
+					class="group flex items-center gap-[7px] px-[17px] py-[10px] rounded-[3px] transition-colors duration-fast
 					{navOpen ? 'bg-accent text-white' : 'text-accent hover:bg-accent hover:text-white'}"
 					aria-expanded={navOpen}
 					aria-haspopup="dialog"
@@ -400,7 +404,13 @@
 						translationOpen = false;
 					}}
 				>
-					<span class="text-[13px] md:text-[16px] leading-tight font-medium">{navLabel}</span>
+					<span class="text-[13px] md:text-[16px] leading-tight font-medium"
+						>{navBase}{#if psalmSuffix}&nbsp;<span
+								class="text-[11px] md:text-[13px] {navOpen
+									? 'text-white/80'
+									: 'text-subtle group-hover:text-white/80'}">{psalmSuffix}</span
+							>{/if}</span
+					>
 					<span class="text-[12px] opacity-70 leading-none" aria-hidden="true"
 						>{navOpen ? '▲' : '▼'}</span
 					>
