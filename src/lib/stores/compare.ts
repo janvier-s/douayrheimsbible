@@ -219,16 +219,39 @@ function saveToStorage(state: CompareState) {
 
 function createCompareStore() {
 	const defaultOrder: TranslationId[] = TRANSLATIONS.map((t) => t.id);
-	const saved = loadFromStorage();
 	const { subscribe, update } = writable<CompareState>({
-		order: saved.order ?? defaultOrder,
-		visible: saved.visible ?? new Set(['odr', 'drc']),
+		order: defaultOrder,
+		visible: new Set(['odr', 'drc']),
 		showSummary: true,
 		columnOffset: 0
 	});
+	let hydrated = false;
 
 	return {
 		subscribe,
+		/**
+		 * Applies the saved column set. Call this from onMount, never earlier.
+		 *
+		 * The server has no localStorage, so it renders the default two columns.
+		 * Reading storage while the store is created puts the client's first
+		 * render out of step with that markup, and hydration walks the two
+		 * side by side: an extra column claims the DOM node the server wrote for
+		 * a different translation, so the heading updates but the verse text
+		 * stays behind. Waiting until after hydration makes the swap an ordinary
+		 * reactive update, which rewrites the text too.
+		 */
+		hydrate() {
+			if (hydrated) return;
+			hydrated = true;
+			const saved = loadFromStorage();
+			if (!saved.order && !saved.visible) return;
+			update((s) => ({
+				...s,
+				order: saved.order ?? s.order,
+				visible: saved.visible ?? s.visible,
+				columnOffset: 0
+			}));
+		},
 		toggle(id: TranslationId, isOT: boolean) {
 			update((s) => {
 				const t = TRANSLATIONS.find((x) => x.id === id)!;

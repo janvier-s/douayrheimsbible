@@ -22,6 +22,8 @@
 	// Set compare-specific font size on mount, restore on destroy
 	let prevFontSize = '';
 	onMount(() => {
+		// After hydration, never before: see compareStore.hydrate().
+		compareStore.hydrate();
 		prevFontSize = getComputedStyle(document.documentElement).getPropertyValue(
 			'--font-size-reader'
 		);
@@ -295,6 +297,8 @@
 				{#each displayedCols as t, colIdx (t.id)}
 					<!-- svelte-ignore a11y_no_static_element_interactions -->
 					<div
+						data-col-id={t.id}
+						data-verse={v.verse}
 						class="verse-cell px-[16px] py-[12px] max-md:px-[5px] max-md:py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 						class:text-justify={$prefs.justifiedText}
