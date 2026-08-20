@@ -44,6 +44,26 @@ export function precedingSplitSibling(dr: number): number | null {
 }
 
 /**
+ * Douay-Rheims psalms whose superscription runs to two verses.
+ *
+ * These four carry a historical note the KJV keeps inside its single heading:
+ * DR 50 opens "Unto the end, a Psalm of David," and only in verse 2 reaches
+ * "when Nathan the Prophet came to him", while the KJV prints both as one
+ * unnumbered title. Counting one title row there starts the body a row early
+ * and puts every verse of the psalm out by one.
+ *
+ * The set is closed. Every psalm whose Douay verse count exceeds the KJV body
+ * by two was read against the KJV heading: these four are titles, and Psalm 4's
+ * second extra verse is a genuine division of KJV 4:8.
+ */
+const TWO_VERSE_TITLE = new Set([50, 51, 53, 59]);
+
+/** How many Douay verses the superscription of a psalm occupies. */
+export function drTitleVerseCount(drPsalm: number): 1 | 2 {
+	return TWO_VERSE_TITLE.has(drPsalm) ? 2 : 1;
+}
+
+/**
  * Map a Douay-Rheims psalm's verse numbers onto KJV verse references.
  *
  * `kjvRefs` is the flattened, ordered verse list of `kjvPsalmsForDr(drPsalm)`.
@@ -52,25 +72,29 @@ export function precedingSplitSibling(dr: number): number | null {
  *
  * Alignment is positional. Where the Vulgate numbers the Hebrew superscription
  * as verse 1, the KJV leaves it an unnumbered heading, so the rows below it sit
- * one apart and mapping starts at DR verse 2. `titleRef` points at the KJV's
- * own superscription, kept as verse 0, and DR verse 1 maps onto it.
+ * apart and the body starts lower down. `titleRef` points at the KJV's own
+ * superscription, kept as verse 0, and DR verse 1 maps onto it. `titleVerses`
+ * says how many DR rows the title occupies; the KJV heading is shown against
+ * the first of them, having nothing further to say on the second.
  *
  * Passing `titleRef` is what makes that safe. A DR psalm carrying one more
  * verse than the KJV is not proof of a title: neither tradition gives Psalm 2
  * one, and the DR simply divides a verse differently there, so inferring a
  * title from the count alone slid the whole psalm down a row.
  *
- * This is exact for 144 of the 150 psalms. The six whose internal divisions
- * genuinely differ (DR 2, 4, 50, 51, 53, 59) land close and simply run out of
- * verses at the end rather than mapping to the wrong text.
+ * Two psalms are then left where the divisions genuinely differ: the Vulgate
+ * splits KJV 2:12 across DR 2:12-13 and KJV 4:8 across DR 4:9-10. Their last
+ * row has no counterpart and is left empty, rather than printing a KJV verse
+ * twice and inventing a division it does not make.
  */
 export function alignDrPsalmToKjv(opts: {
 	drVerseCount: number;
 	kjvRefs: KjvPsalmRef[];
 	titleRef?: KjvPsalmRef | null;
+	titleVerses?: 1 | 2;
 	precedingSiblingVerseCount?: number;
 }): Map<number, KjvPsalmRef> {
-	const { drVerseCount, titleRef = null, precedingSiblingVerseCount = 0 } = opts;
+	const { drVerseCount, titleRef = null, titleVerses = 1, precedingSiblingVerseCount = 0 } = opts;
 	const refs = precedingSiblingVerseCount
 		? opts.kjvRefs.slice(precedingSiblingVerseCount)
 		: opts.kjvRefs;
@@ -80,7 +104,7 @@ export function alignDrPsalmToKjv(opts: {
 
 	// A title row only exists where the KJV has a superscription and the DR has
 	// the spare verses to hold it.
-	const skipTitle = titleRef && drVerseCount > refs.length ? 1 : 0;
+	const skipTitle = titleRef && drVerseCount > refs.length ? titleVerses : 0;
 	if (skipTitle) mapping.set(1, titleRef!);
 
 	for (let i = 0; i < refs.length; i++) {

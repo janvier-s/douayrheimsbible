@@ -3,6 +3,7 @@ import {
 	kjvPsalmsForDr,
 	precedingSplitSibling,
 	alignDrPsalmToKjv,
+	drTitleVerseCount,
 	type KjvPsalmRef
 } from '$lib/data/psalm-mapping';
 
@@ -49,7 +50,42 @@ describe('precedingSplitSibling', () => {
 	});
 });
 
+describe('drTitleVerseCount', () => {
+	it('names the four psalms whose title runs to two verses', () => {
+		for (const n of [50, 51, 53, 59]) expect(drTitleVerseCount(n)).toBe(2);
+	});
+
+	it('gives every other psalm a single title verse', () => {
+		for (const n of [1, 2, 4, 22, 49, 52, 54, 58, 60, 118, 150]) {
+			expect(drTitleVerseCount(n)).toBe(1);
+		}
+	});
+});
+
 describe('alignDrPsalmToKjv', () => {
+	// DR 50 opens "Unto the end, a Psalm of David," and reaches "when Nathan the
+	// Prophet came to him" only in verse 2, while the KJV prints both as one
+	// heading. Counting a single title row started the body an entire row early.
+	it('carries a two-verse title without shifting the body', () => {
+		const m = alignDrPsalmToKjv({
+			drVerseCount: 21,
+			kjvRefs: refs(51, 19),
+			titleRef: { chapter: 51, verse: 0 },
+			titleVerses: 2
+		});
+		expect(m.get(1)).toEqual({ chapter: 51, verse: 0 });
+		expect(m.has(2)).toBe(false); // the KJV heading has nothing further to add
+		expect(m.get(3)).toEqual({ chapter: 51, verse: 1 });
+		expect(m.get(21)).toEqual({ chapter: 51, verse: 19 });
+		expect(m.size).toBe(20); // 19 body rows plus the title
+	});
+
+	it('leaves the last row empty where the divisions genuinely differ', () => {
+		// The Vulgate splits KJV 2:12 across DR 2:12-13.
+		const m = alignDrPsalmToKjv({ drVerseCount: 13, kjvRefs: refs(2, 12) });
+		expect(m.get(12)).toEqual({ chapter: 2, verse: 12 });
+		expect(m.has(13)).toBe(false);
+	});
 	it('maps one-to-one when the verse counts agree', () => {
 		// DR 22 has 23 verses, KJV 23 has 23.
 		const m = alignDrPsalmToKjv({ drVerseCount: 6, kjvRefs: refs(23, 6) });

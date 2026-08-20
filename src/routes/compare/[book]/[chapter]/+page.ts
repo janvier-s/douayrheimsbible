@@ -2,7 +2,12 @@ import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { loadBook, getChapter, loadTranslationBook } from '$lib/data/loader';
 import { getBookBySlug } from '$lib/data/books';
-import { kjvPsalmsForDr, precedingSplitSibling, alignDrPsalmToKjv } from '$lib/data/psalm-mapping';
+import {
+	kjvPsalmsForDr,
+	precedingSplitSibling,
+	alignDrPsalmToKjv,
+	drTitleVerseCount
+} from '$lib/data/psalm-mapping';
 import { TRANSLATIONS } from '$lib/stores/compare';
 
 export const load: PageLoad = async ({ params, fetch }) => {
@@ -80,6 +85,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 				// The second half of a split psalm continues the first; the
 				// superscription belongs to the first half only.
 				titleRef: sibling ? null : titleRef,
+				titleVerses: drTitleVerseCount(chapterNum),
 				precedingSiblingVerseCount: siblingCount
 			});
 
