@@ -377,7 +377,11 @@
 	}
 
 	:global(.mn-popover-marker) {
-		color: var(--color-accent);
+		/* The popover inverts the page: its background is --color-text. A raw
+		   --color-accent lands at 2.6:1 there in light mode and fails AA in every
+		   theme, so lift it toward the popover's own foreground (--color-bg).
+		   Keeps the red tint and clears 5.2:1 at worst across all four themes. */
+		color: color-mix(in srgb, var(--color-accent) 50%, var(--color-bg));
 		font-size: 9px;
 		font-weight: 700;
 		margin-right: 6px;
