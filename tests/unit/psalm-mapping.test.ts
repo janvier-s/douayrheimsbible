@@ -58,18 +58,45 @@ describe('alignDrPsalmToKjv', () => {
 		expect(m.size).toBe(6);
 	});
 
-	it('skips the superscription when DR carries one extra verse', () => {
-		const m = alignDrPsalmToKjv({ drVerseCount: 7, kjvRefs: refs(51, 6) });
-		expect(m.has(1)).toBe(false); // DR v1 is the Hebrew title
+	it('gives DR verse 1 the KJV superscription and shifts the rest down', () => {
+		const m = alignDrPsalmToKjv({
+			drVerseCount: 7,
+			kjvRefs: refs(51, 6),
+			titleRef: { chapter: 51, verse: 0 }
+		});
+		expect(m.get(1)).toEqual({ chapter: 51, verse: 0 }); // DR v1 is the Hebrew title
 		expect(m.get(2)).toEqual({ chapter: 51, verse: 1 });
 		expect(m.get(7)).toEqual({ chapter: 51, verse: 6 });
+	});
+
+	// Psalm 2 is untitled in both traditions; the DR just divides a verse
+	// differently. Inferring a title from the verse count slid it down a row.
+	it('shifts nothing when the KJV psalm has no superscription', () => {
+		const m = alignDrPsalmToKjv({ drVerseCount: 13, kjvRefs: refs(2, 12) });
+		expect(m.get(1)).toEqual({ chapter: 2, verse: 1 });
+		expect(m.get(2)).toEqual({ chapter: 2, verse: 2 });
+		expect(m.size).toBe(12); // the extra DR verse runs off the end
+	});
+
+	it('shifts nothing when the verse counts already agree, title or not', () => {
+		const m = alignDrPsalmToKjv({
+			drVerseCount: 6,
+			kjvRefs: refs(23, 6),
+			titleRef: { chapter: 23, verse: 0 }
+		});
+		expect(m.get(1)).toEqual({ chapter: 23, verse: 1 });
+		expect(m.size).toBe(6);
 	});
 
 	it('spans two KJV psalms for a merged DR psalm', () => {
 		// DR 9 (39 verses) covers KJV 9 (20) + KJV 10 (18), plus a title verse.
 		const kjvRefs = [...refs(9, 20), ...refs(10, 18)];
-		const m = alignDrPsalmToKjv({ drVerseCount: 39, kjvRefs });
-		expect(m.has(1)).toBe(false);
+		const m = alignDrPsalmToKjv({
+			drVerseCount: 39,
+			kjvRefs,
+			titleRef: { chapter: 9, verse: 0 }
+		});
+		expect(m.get(1)).toEqual({ chapter: 9, verse: 0 });
 		expect(m.get(2)).toEqual({ chapter: 9, verse: 1 });
 		expect(m.get(21)).toEqual({ chapter: 9, verse: 20 });
 		expect(m.get(22)).toEqual({ chapter: 10, verse: 1 });
@@ -98,10 +125,14 @@ describe('alignDrPsalmToKjv', () => {
 
 	it('degrades gracefully when the divisions genuinely differ', () => {
 		// DR 4 has 10 verses against KJV 4's 8: title plus one extra split.
-		const m = alignDrPsalmToKjv({ drVerseCount: 10, kjvRefs: refs(4, 8) });
-		expect(m.has(1)).toBe(false); // still treats v1 as the title
+		const m = alignDrPsalmToKjv({
+			drVerseCount: 10,
+			kjvRefs: refs(4, 8),
+			titleRef: { chapter: 4, verse: 0 }
+		});
+		expect(m.get(1)).toEqual({ chapter: 4, verse: 0 }); // still treats v1 as the title
 		expect(m.get(2)).toEqual({ chapter: 4, verse: 1 });
-		expect(m.size).toBe(8); // trailing DR verses simply go unmapped
+		expect(m.size).toBe(9); // trailing DR verses simply go unmapped
 	});
 
 	it('aligns from verse 1 when KJV has more verses than DR', () => {

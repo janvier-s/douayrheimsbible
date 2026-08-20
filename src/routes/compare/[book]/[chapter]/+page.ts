@@ -51,11 +51,19 @@ export const load: PageLoad = async ({ params, fetch }) => {
 			const kjvChapters = kjvPsalmsForDr(chapterNum);
 			const kjvRefs = [];
 			const textByRef: Record<string, string> = {};
+			// Verse 0 is the KJV superscription, an unnumbered heading in print. It
+			// belongs on the row where the Douay prints its own title, not in the
+			// run of numbered verses.
+			let titleRef: { chapter: number; verse: number } | null = null;
 			for (const num of kjvChapters) {
 				const ch = result.value.chapters.find((c) => c.chapter === num);
 				for (const v of ch?.verses ?? []) {
-					kjvRefs.push({ chapter: num, verse: v.verse });
 					textByRef[`${num}:${v.verse}`] = v.text;
+					if (v.verse === 0) {
+						if (num === kjvChapters[0]) titleRef = { chapter: num, verse: 0 };
+						continue;
+					}
+					kjvRefs.push({ chapter: num, verse: v.verse });
 				}
 			}
 
@@ -69,6 +77,9 @@ export const load: PageLoad = async ({ params, fetch }) => {
 			const mapping = alignDrPsalmToKjv({
 				drVerseCount: chapter.verses.filter((v) => v.verse > 0).length,
 				kjvRefs,
+				// The second half of a split psalm continues the first; the
+				// superscription belongs to the first half only.
+				titleRef: sibling ? null : titleRef,
 				precedingSiblingVerseCount: siblingCount
 			});
 

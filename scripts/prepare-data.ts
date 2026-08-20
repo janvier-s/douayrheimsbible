@@ -10,6 +10,7 @@ const PROJECT_ROOT = join(__dirname, '..');
 const ODR_SOURCE = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR', 'ODR');
 const ODR_PARENT = join(PROJECT_ROOT, '..', 'SCRIPTURA', 'sources', 'ODR');
 const KNOX_ACROSTICS_FILE = join(__dirname, 'data', 'knox-acrostics.json');
+const KJV_PSALM_TITLES_FILE = join(__dirname, 'data', 'kjv-psalm-titles.json');
 
 export const SLUG_REMAP_DRC_KNOX: Record<string, string> = {
 	josue: 'joshua',
@@ -92,6 +93,23 @@ async function loadKnoxAcrostics() {
 }
 
 /**
+ * KJV psalm superscriptions, recovered from the USFM \d markers the conversion
+ * dropped. They are stored as verse 0, the convention the ODR data already uses
+ * for text that belongs to a chapter rather than to a numbered verse: the KJV
+ * prints its superscription as an unnumbered heading, so calling it verse 1
+ * would put every later citation out by one.
+ */
+let kjvPsalmTitles: Record<string, string> = {};
+
+async function loadKjvPsalmTitles() {
+	try {
+		kjvPsalmTitles = JSON.parse(await readFile(KJV_PSALM_TITLES_FILE, 'utf-8'));
+	} catch {
+		console.log('kjv-psalm-titles.json not found — KJV psalms will have no superscriptions.');
+	}
+}
+
+/**
  * Closes the gap after each acrostic initial in one verse and tags the letter.
  *
  * <ac> follows the convention the ODR data already uses for inline markup
@@ -112,8 +130,20 @@ function markKnoxAcrostics(text: string, slug: string, chapter: number, verse: n
 	return out;
 }
 
+/** The KJV superscription for a psalm, as a verse 0, or nothing. */
+function kjvPsalmTitleVerse(
+	translationId: string,
+	slug: string,
+	chapter: number
+): Array<{ verse: number; text: string }> {
+	if (translationId !== 'kjv' || slug !== 'psalms') return [];
+	const title = kjvPsalmTitles[String(chapter)];
+	return title ? [{ verse: 0, text: title }] : [];
+}
+
 async function main() {
 	await loadKnoxAcrostics();
+	await loadKjvPsalmTitles();
 	// Source data lives in SCRIPTURA (local only) — skip book copying on CI where
 	// static/data/odr/ is already committed, but always build search indexes.
 	try {
@@ -188,13 +218,16 @@ async function main() {
 				).map((ch) => ({
 					chapter: ch.chapter,
 					...(ch.summary ? { summary: ch.summary } : {}),
-					verses: ch.verses.map((v) => ({
-						verse: v.verse,
-						text:
-							translation.id === 'knox'
-								? markKnoxAcrostics(cleanVerseText(v.text), odrSlug, ch.chapter, v.verse)
-								: cleanVerseText(v.text)
-					}))
+					verses: [
+						...kjvPsalmTitleVerse(translation.id, odrSlug, ch.chapter),
+						...ch.verses.map((v) => ({
+							verse: v.verse,
+							text:
+								translation.id === 'knox'
+									? markKnoxAcrostics(cleanVerseText(v.text), odrSlug, ch.chapter, v.verse)
+									: cleanVerseText(v.text)
+						}))
+					]
 				}))
 			};
 			if ((data as Record<string, unknown>).intro) {

@@ -50,19 +50,27 @@ export function precedingSplitSibling(dr: number): number | null {
  * For the second half of a split psalm, `precedingSiblingVerseCount` says how
  * many leading verses belong to the sibling.
  *
- * Alignment is positional. When DR carries more verses than the KJV, the first
- * is the Hebrew superscription the Vulgate numbers and the KJV leaves as an
- * unnumbered heading, so mapping starts at DR verse 2. This is exact for 142 of
- * the 150 psalms; the eight whose internal divisions genuinely differ (DR 4, 15,
- * 39, 50, 51, 53, 59, 76) land close and simply run out of verses at the end
- * rather than mapping to the wrong text.
+ * Alignment is positional. Where the Vulgate numbers the Hebrew superscription
+ * as verse 1, the KJV leaves it an unnumbered heading, so the rows below it sit
+ * one apart and mapping starts at DR verse 2. `titleRef` points at the KJV's
+ * own superscription, kept as verse 0, and DR verse 1 maps onto it.
+ *
+ * Passing `titleRef` is what makes that safe. A DR psalm carrying one more
+ * verse than the KJV is not proof of a title: neither tradition gives Psalm 2
+ * one, and the DR simply divides a verse differently there, so inferring a
+ * title from the count alone slid the whole psalm down a row.
+ *
+ * This is exact for 144 of the 150 psalms. The six whose internal divisions
+ * genuinely differ (DR 2, 4, 50, 51, 53, 59) land close and simply run out of
+ * verses at the end rather than mapping to the wrong text.
  */
 export function alignDrPsalmToKjv(opts: {
 	drVerseCount: number;
 	kjvRefs: KjvPsalmRef[];
+	titleRef?: KjvPsalmRef | null;
 	precedingSiblingVerseCount?: number;
 }): Map<number, KjvPsalmRef> {
-	const { drVerseCount, precedingSiblingVerseCount = 0 } = opts;
+	const { drVerseCount, titleRef = null, precedingSiblingVerseCount = 0 } = opts;
 	const refs = precedingSiblingVerseCount
 		? opts.kjvRefs.slice(precedingSiblingVerseCount)
 		: opts.kjvRefs;
@@ -70,8 +78,10 @@ export function alignDrPsalmToKjv(opts: {
 	const mapping = new Map<number, KjvPsalmRef>();
 	if (refs.length === 0 || drVerseCount <= 0) return mapping;
 
-	// DR ahead on verses means its first one is the superscription.
-	const skipTitle = drVerseCount > refs.length ? 1 : 0;
+	// A title row only exists where the KJV has a superscription and the DR has
+	// the spare verses to hold it.
+	const skipTitle = titleRef && drVerseCount > refs.length ? 1 : 0;
+	if (skipTitle) mapping.set(1, titleRef!);
 
 	for (let i = 0; i < refs.length; i++) {
 		const drVerse = 1 + skipTitle + i;
