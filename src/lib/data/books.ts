@@ -798,6 +798,15 @@ const _byModern = new Map(
 	)
 );
 
+/**
+ * Book name as it should read immediately before a chapter number. The book is
+ * "Psalms", but a single one of them is "Psalm 85". Callers pass the name they
+ * would otherwise use, so modern/Latin naming preferences still apply.
+ */
+export function chapterRefBookName(slug: string, name: string): string {
+	return slug === 'psalms' ? 'Psalm' : name;
+}
+
 export function getBookBySlug(slug: string): BookMeta | undefined {
 	return _bySlug.get(slug);
 }

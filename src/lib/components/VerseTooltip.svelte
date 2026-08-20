@@ -5,7 +5,7 @@
 	import { fade } from 'svelte/transition';
 	import { loadBook, loadTranslationBook } from '$lib/data/loader';
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
-	import { ALL_BOOKS } from '$lib/data/books';
+	import { ALL_BOOKS, chapterRefBookName } from '$lib/data/books';
 	import { stripTags } from '$lib/utils/text';
 	import { supportsHover } from '$lib/stores/mobile';
 	import type { OsisRange } from '$lib/search/reference';
@@ -15,7 +15,9 @@
 	for (const b of ALL_BOOKS) SLUG_TO_NAME[b.slug] = b.odrName;
 	function bookDisplayName(osisBook: string): string {
 		const slug = OSIS_TO_SLUG[osisBook];
-		return (slug && SLUG_TO_NAME[slug]) || osisBook;
+		if (!slug) return osisBook;
+		// Every caller here appends a chapter number, so the singular form applies.
+		return chapterRefBookName(slug, SLUG_TO_NAME[slug] ?? osisBook);
 	}
 
 	interface Props {
