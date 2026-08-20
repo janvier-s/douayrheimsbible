@@ -4,6 +4,7 @@
 	const bubble = createBubbler();
 	import { createEventDispatcher, onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
+	import { supportsHover } from '$lib/stores/mobile';
 
 	interface Props {
 		anchorEl?: HTMLElement | null;
@@ -12,6 +13,10 @@
 	}
 
 	let { anchorEl = null, visible = false, children }: Props = $props();
+
+	// Hover-only UI: suppressed on touch devices, where a tap would otherwise
+	// open this popover on top of the study panel it just opened.
+	let active = $derived(visible && $supportsHover);
 
 	const dispatch = createEventDispatcher<{ dismiss: void }>();
 
@@ -36,12 +41,12 @@
 	}
 
 	run(() => {
-		if (visible && anchorEl) {
+		if (active && anchorEl) {
 			computePosition(anchorEl);
 		}
 	});
 	run(() => {
-		if (!visible) {
+		if (!active) {
 			popoverStyle = '';
 		}
 	});
@@ -59,7 +64,7 @@
 	});
 </script>
 
-{#if visible && popoverStyle}
+{#if active && popoverStyle}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="marker-popover"

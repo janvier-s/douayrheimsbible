@@ -7,6 +7,7 @@
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
 	import { ALL_BOOKS } from '$lib/data/books';
 	import { stripTags } from '$lib/utils/text';
+	import { supportsHover } from '$lib/stores/mobile';
 	import type { OsisRange } from '$lib/search/reference';
 
 	/** Map OSIS book code → friendly display name via slug lookup */
@@ -42,6 +43,10 @@
 		href?: string;
 		isChapter?: boolean;
 	}
+
+	// Hover-only UI: suppressed on touch devices, where the synthetic mouseover
+	// from a tap would pop this open on top of whatever the tap actually did.
+	let active = $derived(visible && $supportsHover);
 
 	let x = $state(0);
 	let y = $state(0);
@@ -120,7 +125,7 @@
 		loading = false;
 	}
 	run(() => {
-		if (visible && anchorEl) {
+		if (active && anchorEl) {
 			const rect = anchorEl.getBoundingClientRect();
 			x = rect.left + rect.width / 2;
 			// Measure topbar height as ceiling
@@ -137,7 +142,7 @@
 			y = flipBelow ? rect.bottom : rect.top;
 			maxH = `${Math.min(Math.max(flipBelow ? spaceBelow : spaceAbove, 120), windowHeight * 0.6)}px`;
 			loadEntries(osisRanges);
-		} else if (!visible) {
+		} else if (!active) {
 			entries = [];
 			loading = false;
 		}
@@ -157,7 +162,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} bind:innerHeight={windowHeight} />
 
-{#if visible && (loading || entries.length > 0)}
+{#if active && (loading || entries.length > 0)}
 	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 	<div
 		class="tooltip"
