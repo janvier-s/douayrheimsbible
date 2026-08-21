@@ -139,8 +139,12 @@ export function formatTrailingCitation(html: string): string {
 			return `${italic[1]}<br /><span class="note-citation">— ${italic[2]}</span>`;
 		}
 	}
+	// [^<.]* already takes in the spaces between segments, so the \s* this once
+	// carried gave every space two ways to be matched and the pattern 2^n paths
+	// to explore before it could fail. Genesis has a citation of 30 segments in
+	// its "Sum and Partition" introduction, which wedged the study panel.
 	const plain = html.match(
-		/^([\s\S]+?[.?!])\s+((?:S\.|St\.|D\.|Theod\.|Cf\.) (?:[^<.]*\.\s*){2,}[^<.]*\.)\s*$/
+		/^([\s\S]+?[.?!])\s+((?:S\.|St\.|D\.|Theod\.|Cf\.) (?:[^<.]*\.){2,}[^<.]*\.)\s*$/
 	);
 	if (plain) {
 		return `${plain[1]}<br /><span class="note-citation">— ${plain[2]}</span>`;
