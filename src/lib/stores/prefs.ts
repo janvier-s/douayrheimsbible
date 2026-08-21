@@ -39,7 +39,8 @@ export interface ReadingPrefs {
 		| 'footnotes'
 		| 'annotations'
 		| 'notes'
-		| 'cross-refs';
+		| 'cross-refs'
+		| 'glossa';
 	// v13
 	annotationSync: boolean;
 	// v16
