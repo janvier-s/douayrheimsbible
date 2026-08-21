@@ -365,7 +365,7 @@ folds should have caught.
 - [ ] **Step 4: Run the test to verify it passes**
 
 Run: `npx vitest run tests/unit/glossa-lib.test.ts`
-Expected: PASS, 15 tests.
+Expected: PASS, 19 tests.
 
 - [ ] **Step 5: Lint and commit**
 
