@@ -447,6 +447,14 @@ async function main() {
 		console.log('Fathers build skipped (source not available).');
 	}
 
+	// ── Glossa Ordinaria (Latin, for the Vulgate panel) ─────────────
+	try {
+		await import('./build-glossa-data.js');
+		console.log('Glossa Ordinaria data built.');
+	} catch (e) {
+		console.log(`Glossa build skipped: ${e instanceof Error ? e.message : e}`);
+	}
+
 	await buildSidecarManifest();
 	await buildSearchIndexes();
 }
@@ -520,7 +528,8 @@ async function buildSidecarManifest() {
 		'conf-footnotes',
 		'conf-commentary',
 		'haydock-commentary',
-		'haydock-crossrefs'
+		'haydock-crossrefs',
+		'glossa'
 	];
 	const manifest: Record<string, Record<string, number[]>> = {
 		annotations: await scanAnnotations()
