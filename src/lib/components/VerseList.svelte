@@ -33,6 +33,20 @@
 	let isVul = $derived(translationId === 'vul');
 	let useRoman = $derived(isVul && $prefs.romanNumerals);
 	const verseLabel = (n: number) => (useRoman ? toRoman(n) : String(n));
+	/**
+	 * Roman numerals run far wider than digits, and a label that outgrows its
+	 * box overflows to the right, into the verse text: XXXVIII carries 48px of
+	 * ink in the 24px column, and text-align has nothing left to work with.
+	 * Sizing the column to the chapter's longest label keeps the numbers right
+	 * aligned and every verse starting on the same edge.
+	 */
+	let verseNumWidth = $derived(
+		useRoman
+			? // Never below the 1.5rem the column has when it holds digits, so the
+				// text edge does not shift about as short chapters are opened.
+				`max(1.5rem, ${Math.max(...verses.map((v) => verseLabel(v.verse).length), 1)}ch)`
+			: null
+	);
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
 	// ── Paragraph data (lazy-loaded to avoid 28KB in initial bundle) ────
@@ -705,7 +719,7 @@
 						style="color: var(--color-verse-num); font-weight: {isStudy &&
 						annotatedVerseSet.has(v.verse)
 							? 600
-							: 300}"
+							: 300}{verseNumWidth ? `; width: ${verseNumWidth}` : ''}"
 					>
 						{verseLabel(v.verse)}
 					</span>
