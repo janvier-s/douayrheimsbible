@@ -11,6 +11,7 @@ import type {
 import type { TranslationBook, TranslationNote, TranslationCrossRef } from './translation-types';
 import type { FathersChapterFile } from './fathers-types';
 import sidecarManifest from '../../../static/data/manifests/sidecars.json';
+import formatManifest from '../../../static/data/format/manifest.json';
 
 /** Returns true if the given sidecar section has a file for `slug/chapter`. */
 export function hasSidecar(section: string, slug: string, chapter: number): boolean {
@@ -132,6 +133,50 @@ export function loadTranslationCrossRefs(
 		translationCrossRefsCache.set(key, promise);
 	}
 	return translationCrossRefsCache.get(key)!;
+}
+
+// ── Per-translation reading format (per book) ───────────────────────
+//
+// A translation may ship its own paragraphing and poetry structure, generated
+// from its source edition. Translations without a sidecar fall back to the
+// shared CPDV paragraph starts in $lib/data/paragraphs.
+//
+// Block: [verse, offsetInVerse, kind] where kind 0 = prose, 1 = poetry, and
+// offsetInVerse is 0 unless the block opens partway through the verse.
+// Lines: verse -> character offsets at which to break the verse into lines.
+
+export type FormatBlock = [number, number, 0 | 1];
+
+export interface ChapterFormat {
+	b: FormatBlock[];
+	l: Record<string, number[]>;
+}
+
+export type BookFormat = Record<string, ChapterFormat>;
+
+const formatCache = new Map<string, Promise<BookFormat | null>>();
+
+export function hasFormat(id: string, slug: string): boolean {
+	return (formatManifest as Record<string, string[]>)[id]?.includes(slug) ?? false;
+}
+
+export function loadTranslationFormat(
+	id: string,
+	slug: string,
+	fetch: typeof globalThis.fetch
+): Promise<BookFormat | null> {
+	if (!hasFormat(id, slug)) return Promise.resolve(null);
+	const key = `${id}/${slug}`;
+	if (!formatCache.has(key)) {
+		const promise = fetch(`/data/format/${id}/${slug}.json`)
+			.then((res) => {
+				if (!res.ok) return null;
+				return res.json() as Promise<BookFormat>;
+			})
+			.catch(() => null);
+		formatCache.set(key, promise);
+	}
+	return formatCache.get(key)!;
 }
 
 // ── Haydock commentary (per chapter) ────────────────────────────────

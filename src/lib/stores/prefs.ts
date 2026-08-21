@@ -80,13 +80,13 @@ const DEFAULTS: ReadingPrefs = {
 	studyDefaultTab: 'commentary',
 	annotationSync: true,
 	showDropcap: true,
-	hangingVerseNumbers: true,
+	hangingVerseNumbers: false,
 	hasVisitedHomepage: false,
 	skipHomepage: false,
 	romanNumerals: true
 };
 
-const PREFS_VERSION = 20;
+const PREFS_VERSION = 21;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -179,6 +179,13 @@ function loadPrefs(): ReadingPrefs {
 		// v20 migration: add Vulgate Roman numerals toggle (on by default)
 		if (!parsed._v || parsed._v < 20) {
 			parsed.romanNumerals = true;
+		}
+		// v21 migration: paragraphs now mark their opening with an indented first
+		// line rather than a verse number hung in the margin. Anyone still on the
+		// old default moves across; a reader who prefers the hanging numbers can
+		// turn them back on under Reading options → Verse.
+		if (!parsed._v || parsed._v < 21) {
+			if (parsed.hangingVerseNumbers === true) parsed.hangingVerseNumbers = false;
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

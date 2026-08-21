@@ -18,9 +18,10 @@
 		loadHaydockCommentary,
 		loadTranslationNotes,
 		loadConfFootnotes,
-		loadConfCommentary
+		loadConfCommentary,
+		loadTranslationFormat
 	} from '$lib/data/loader';
-	import type { HaydockCommentaryEntry } from '$lib/data/loader';
+	import type { HaydockCommentaryEntry, BookFormat, ChapterFormat } from '$lib/data/loader';
 	interface Props {
 		verses: Verse[];
 		targetVerse: number | undefined;
@@ -58,6 +59,26 @@
 			paragraphStarts = m.PARAGRAPH_STARTS;
 		});
 	}
+
+	// ── Per-translation format (paragraphing + poetry from its own edition) ──
+	// The shared paragraph starts above come from CPDV and stand in for every
+	// translation. A translation that ships its own sidecar overrides them, so
+	// its text is broken up the way its own edition breaks it up.
+	let bookFormat: BookFormat | null = $state(null);
+	let lastFormatKey = $state('');
+
+	run(() => {
+		const key = `${translationId}/${bookSlug}`;
+		if (browser && key !== lastFormatKey) {
+			lastFormatKey = key;
+			bookFormat = null;
+			loadTranslationFormat(translationId, bookSlug, fetch).then((f) => {
+				if (lastFormatKey === key) bookFormat = f;
+			});
+		}
+	});
+
+	let chapterFormat = $derived(bookFormat?.[String(chapterNum)] ?? null);
 
 	// ── DRC cross-refs (loaded automatically for hover popovers) ────
 	let drcCrossRefs: TranslationCrossRef[] | null = $state(null);
@@ -305,6 +326,22 @@
 		return html.replace(/^([A-Za-zÀ-ÿ])/, '<span class="dropcap">$1</span>');
 	}
 
+	/**
+	 * Editorial labels the Vulgate carries inline: the speakers of the Canticle
+	 * (<Sponsa>, <Chorus Adolescentularum>), the Hebrew letters heading each
+	 * stanza of Lamentations (<Aleph>), and headings like <Prologus>.
+	 *
+	 * They are distinguished from the markup tags by their leading capital, and
+	 * without this they reach the DOM as unknown empty elements and vanish.
+	 */
+	const SPEAKER_RE = /<([A-ZÀ-Þ][^<>]*)>/g;
+	function renderSpeakerLabels(text: string): string {
+		return text.replace(
+			SPEAKER_RE,
+			(_m, label: string) => `<span class="speaker">${label}</span> `
+		);
+	}
+
 	function renderVerse(
 		text: string,
 		bionic: boolean,
@@ -316,6 +353,10 @@
 		isDropcap: boolean = false
 	): string {
 		let t = text;
+		if (SPEAKER_RE.test(t)) {
+			SPEAKER_RE.lastIndex = 0;
+			t = renderSpeakerLabels(t);
+		}
 		if (expandAmpersand) t = t.replace(/&amp;/g, 'and').replace(/&/g, 'and');
 		// Superscript markers (¹²³) — convert to buttons in study mode, strip in reading mode
 		if (SUPER_RE.test(t)) {
@@ -633,65 +674,185 @@
 		if (current.length > 0) groups.push(current);
 		return groups;
 	}
-	let paragraphs = $derived(groupIntoParagraphs(verses, bookSlug, chapterNum, paragraphStarts));
+	// ── Reading blocks ──────────────────────────────────────────────────
+	//
+	// A block is one paragraph of prose or one stanza of poetry. Where the
+	// translation ships its own format sidecar the blocks come from its own
+	// edition, poetry included; otherwise they are the shared CPDV paragraphs,
+	// which is what every translation used before the sidecars existed.
+
+	type Part = { verse: number; text: string; verseStart: boolean };
+	type ReadingBlock = { poetry: boolean; lines: Part[][] };
+
+	function buildBlocks(
+		vv: Verse[],
+		fmt: ChapterFormat | null,
+		slug: string,
+		ch: number,
+		starts: ParagraphStarts | null
+	): ReadingBlock[] {
+		if (!fmt) {
+			return groupIntoParagraphs(vv, slug, ch, starts).map((group) => ({
+				poetry: false,
+				lines: [group.map((v) => ({ verse: v.verse, text: v.text, verseStart: true }))]
+			}));
+		}
+
+		const startsBy = new Map<number, { off: number; poetry: boolean }[]>();
+		for (const [v, off, kind] of fmt.b) {
+			startsBy.set(v, [...(startsBy.get(v) ?? []), { off, poetry: kind === 1 }]);
+		}
+
+		const blocks: ReadingBlock[] = [];
+		const openBlock = (poetry: boolean) => {
+			blocks.push({ poetry, lines: [[]] });
+		};
+		const newLine = () => {
+			blocks[blocks.length - 1]?.lines.push([]);
+		};
+		const currentLine = (): Part[] => {
+			const b = blocks[blocks.length - 1];
+			return b.lines[b.lines.length - 1];
+		};
+
+		for (const verse of vv) {
+			const bs = [...(startsBy.get(verse.verse) ?? [])].sort((a, b) => a.off - b.off);
+			const breaks = [...(fmt.l[String(verse.verse)] ?? [])].sort((a, b) => a - b);
+
+			// Inside a stanza every verse opens its own line, which is how the
+			// source lays out poetry and why those breaks are not stored.
+			const open = blocks[blocks.length - 1];
+			if (open?.poetry && !bs.some((b) => b.off === 0)) newLine();
+			if (!open) openBlock(false);
+
+			const events = [
+				...bs.map((b) => ({ off: b.off, block: true, poetry: b.poetry })),
+				...breaks.map((o) => ({ off: o, block: false, poetry: false }))
+			].sort((a, b) => a.off - b.off || (a.block ? -1 : 1));
+
+			let pos = 0;
+			let started = false;
+			const emit = (text: string) => {
+				if (!text.trim()) return;
+				currentLine().push({ verse: verse.verse, text, verseStart: !started });
+				started = true;
+			};
+
+			for (const e of events) {
+				if (e.off > pos) {
+					emit(verse.text.slice(pos, e.off));
+					pos = e.off;
+				}
+				if (e.block) openBlock(e.poetry);
+				else newLine();
+			}
+			emit(verse.text.slice(pos));
+		}
+
+		return blocks.filter((b) => b.lines.some((l) => l.length > 0));
+	}
+
+	let blocks = $derived(buildBlocks(verses, chapterFormat, bookSlug, chapterNum, paragraphStarts));
+
+	// Two ways to show where a paragraph begins: hang its opening verse number
+	// out in the margin, or indent its first line the way a book does. Doing
+	// both would say the same thing twice, so the indent takes over whenever
+	// the hanging numbers are turned off.
+	let hangingNumbers = $derived($prefs.hangingVerseNumbers ?? false);
+	let indentParagraphs = $derived($prefs.showVerseNumbers ? !hangingNumbers : true);
+	/**
+	 * A gutter is only worth reserving if a number is going to hang in it.
+	 * Genesis opens its first paragraph on a dropcap and the next one in the
+	 * middle of a verse, so nothing ever fills the indent and the chapter reads
+	 * as pushed off its own left edge. Settled for the chapter rather than the
+	 * paragraph: were each paragraph to decide for itself, the ones opening
+	 * mid-verse would start a gutter's width left of the ones that do not.
+	 */
+	let proseHangs = $derived(
+		$prefs.showVerseNumbers &&
+			hangingNumbers &&
+			blocks.some(
+				(blk, bi) =>
+					!blk.poetry && blk.lines[0][0]?.verseStart && !(bi === 0 && ($prefs.showDropcap ?? true))
+			)
+	);
 </script>
 
 {#if $prefs.paragraphView}
-	{#each paragraphs as group, gi (group[0].verse)}
+	{#each blocks as blk, bi (blk.lines[0][0].verse + (blk.poetry ? 'y' : 'p') + bi)}
 		<!-- svelte-ignore a11y_no_static_element_interactions, a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 		<p
 			class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
-			class:text-justify={$prefs.justifiedText}
+			class:text-justify={$prefs.justifiedText && !blk.poetry}
+			class:poetry-block={blk.poetry}
 			class:bionic-fade={bionic}
-			class:para-hanging={$prefs.showVerseNumbers &&
-				($prefs.hangingVerseNumbers ?? true) &&
-				!useRoman}
-			class:para-hanging-roman={$prefs.showVerseNumbers &&
-				($prefs.hangingVerseNumbers ?? true) &&
-				useRoman}
-			class:para-dropcap={gi === 0 && ($prefs.showDropcap ?? true)}
-			style={gi > 0 ? 'margin-top: 1em' : ''}
+			class:para-hanging={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && !useRoman}
+			class:para-hanging-roman={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && useRoman}
+			class:para-dropcap={bi === 0 && !blk.poetry && ($prefs.showDropcap ?? true)}
+			class:para-indent={indentParagraphs && bi > 0 && !blk.poetry}
+			style={bi > 0 && !indentParagraphs ? 'margin-top: 1em' : ''}
 			onmouseover={isStudy ? handleMarkerMouseover : undefined}
 			onfocus={isStudy ? handleMarkerMouseover : undefined}
 			onmouseout={isStudy ? handleMarkerMouseout : undefined}
 			onblur={isStudy ? handleMarkerMouseout : undefined}
 			onclick={(e) => isStudy && handleMarkerClick(e, 0)}
 		>
-			{#each group as v, vi (v.verse)}
-				{@const isDropcap = gi === 0 && vi === 0 && ($prefs.showDropcap ?? true)}
-				<!-- inline anchor for intersection observer + scroll target -->
-				<span
-					bind:this={verseEls[v.verse]}
-					id="v{v.verse}"
-					data-verse-num={v.verse}
-					class:verse-active-annotation={isStudy &&
-						annotatedVerseSet.has(v.verse) &&
-						activeAnnotatedVerse === v.verse}
-				>
-					{#if $prefs.showVerseNumbers && !isDropcap}
-						<sup
-							class="font-ui text-[10px] select-none mr-[3px] tabular-nums"
-							class:verse-num-roman={useRoman}
-							class:verse-num-hang={vi === 0 && ($prefs.hangingVerseNumbers ?? true)}
-							class:verse-num-hang-roman={useRoman &&
-								vi === 0 &&
-								($prefs.hangingVerseNumbers ?? true)}
-							style="color: var(--color-verse-num); font-weight: {isStudy &&
-							annotatedVerseSet.has(v.verse)
-								? 600
-								: 300}">{verseLabel(v.verse)}</sup
-						>
-					{/if}
-					{@html renderVerse(
-						v.text,
-						bionic,
-						isStudy,
-						showItalics,
-						v.verse,
-						showSmallCaps,
-						expandAmpersand,
-						isDropcap
-					)}{' '}
+			{#each blk.lines as ln, li}
+				{#if li > 0 && !blk.poetry}<br />{/if}
+				<!-- Stanza lines are block-level so a verse number can hang in the
+				     gutter and every line of the stanza starts on one edge. Prose
+				     keeps its inline flow. -->
+				<span class={blk.poetry ? 'poetry-line' : 'contents'}>
+					{#each ln as part, pi (part.verse + ':' + part.text.slice(0, 12))}
+						{@const opensBlock = li === 0 && pi === 0}
+						{@const hangs = blk.poetry ? pi === 0 : opensBlock}
+						{@const hanging = hangs && (blk.poetry || proseHangs)}
+						{@const isDropcap =
+							bi === 0 && opensBlock && !blk.poetry && ($prefs.showDropcap ?? true)}
+						{#if part.verseStart}
+							<!-- inline anchor for intersection observer + scroll target -->
+							<span
+								bind:this={verseEls[part.verse]}
+								id="v{part.verse}"
+								data-verse-num={part.verse}
+								class:verse-active-annotation={isStudy &&
+									annotatedVerseSet.has(part.verse) &&
+									activeAnnotatedVerse === part.verse}
+							>
+								{#if $prefs.showVerseNumbers && !isDropcap}<sup
+										class="font-ui text-[10px] select-none mr-[3px] tabular-nums"
+										class:verse-num-roman={useRoman}
+										class:verse-num-hang={hanging}
+										class:verse-num-hang-roman={useRoman && hanging}
+										class:verse-num-inline={!hanging}
+										style="color: var(--color-verse-num); font-weight: {isStudy &&
+										annotatedVerseSet.has(part.verse)
+											? 600
+											: 300}">{verseLabel(part.verse)}</sup
+									>{hanging ? ' ' : '\u00a0'}{/if}{@html renderVerse(
+									part.text,
+									bionic,
+									isStudy,
+									showItalics,
+									part.verse,
+									showSmallCaps,
+									expandAmpersand,
+									isDropcap
+								)}{' '}
+							</span>
+						{:else}
+							{@html renderVerse(
+								part.text,
+								bionic,
+								isStudy,
+								showItalics,
+								part.verse,
+								showSmallCaps,
+								expandAmpersand,
+								false
+							)}{' '}
+						{/if}
+					{/each}
 				</span>
 			{/each}
 		</p>
@@ -763,6 +924,64 @@
 </MarkerPopover>
 
 <style>
+	/* Poetry, as the Clementine edition sets it: italic and indented from the
+	   prose around it. */
+	.poetry-block {
+		font-style: italic;
+	}
+
+	/* Each stanza line is its own block, so a line too long for the measure
+	   wraps under itself rather than back to the margin and a wrap never reads
+	   as a new line of verse. Every line starts on the same edge, which leaves
+	   the verse numbers hanging in the gutter beside them. */
+	.poetry-line {
+		display: block;
+		padding-left: 1.2em;
+		text-indent: -1.2em;
+		position: relative;
+	}
+
+	/* Lifting the number out of the inline flow is what keeps a numbered line
+	   starting on exactly the same edge as an unnumbered one: in flow it eats
+	   part of the line's negative indent and drags the verse left. */
+	.poetry-line :global(sup.verse-num-hang) {
+		position: absolute;
+		/* Anchored by its right edge rather than given a box to sit in: the
+		   right edge of the line's padding box is where the line's own first
+		   character starts, so every number ends the same short step before
+		   the verse whatever its length, and a numeral wider than any box we
+		   could guess at (CXXXVIII) grows leftward into the gutter instead of
+		   overflowing into the text. */
+		right: calc(100% + 0.5rem);
+		top: 0;
+		width: auto;
+		/* The in-flow gutter below sets its trailing margin with !important, to
+		   get past the utility class on the element; out of flow that margin
+		   would land on top of the offset above and double the gap. */
+		margin: 0 !important;
+		padding-right: 0;
+		text-indent: 0;
+		/* Out of flow, vertical-align no longer applies, so the number has to
+		   take the line's own height to sit beside the line it numbers. */
+		line-height: inherit;
+		vertical-align: baseline;
+	}
+
+	/* Verse numbers stay upright inside a stanza. */
+	.poetry-block :global(sup) {
+		font-style: normal;
+	}
+
+	/* Speakers of the Canticle, the Hebrew letters over each stanza of
+	   Lamentations, and headings like Prologus. */
+	:global(.speaker) {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 0.88em;
+		letter-spacing: 0.02em;
+		color: var(--color-verse-num);
+	}
+
 	.para-hanging {
 		padding-left: 2rem;
 	}
@@ -771,21 +990,33 @@
 		padding-left: 3rem;
 	}
 
+	/* Paragraphs run on with an indented first line, as a book sets them, so
+	   there is no band of space between them to break the column. */
+	.para-indent {
+		text-indent: 1em;
+	}
+
 	.para-dropcap {
 		display: flow-root;
 	}
 
+	/* In flow the number cannot be anchored to the text edge, so the box has to
+	   span the gutter exactly: width, trailing margin and the word space the
+	   markup collapses in after it add up to the paragraph's own indent, which
+	   is what puts the first line on the same edge as the ones that follow it.
+	   The margin carries !important past the utility class on the element. */
 	:global(.verse-num-hang) {
 		display: inline-block;
-		width: 1.6rem;
+		width: 1.5rem;
 		margin-left: -2rem;
+		margin-right: 0.25rem !important;
 		text-align: right;
-		padding-right: 0.3em;
+		padding-right: 0;
 		box-sizing: border-box;
 	}
 
 	:global(.verse-num-hang-roman) {
-		width: 2.2rem;
+		width: 2.5rem;
 		margin-left: -3rem;
 	}
 
@@ -796,7 +1027,30 @@
 	}
 
 	:global(.verse-num-roman.verse-num-hang-roman) {
-		padding-right: 0.3em;
+		padding-right: 0;
+		margin-right: 0.25rem !important;
+	}
+
+	/* A verse number set in the run of text opens the verse that follows it, so
+	   the space belongs in front of it. With the gap trailing instead, the
+	   number drifts toward the verse it has just ended and reads as part of it.
+	   Both gaps also carry a collapsed word space from the markup, so what is
+	   set here is only the part on top of that, and em resolves against the
+	   number's own small size rather than the reader's. */
+	:global(sup.verse-num-inline) {
+		margin-left: 0.2em;
+		margin-right: -0.1em !important;
+	}
+
+	:global(sup.verse-num-roman.verse-num-inline) {
+		/* Set inline rather than inline-block: an inline-block is an atomic box,
+		   and a browser will break the line at its edge whatever follows it, so
+		   the hard space that keeps the number with the word it opens only holds
+		   once the number is text like the rest of the line. */
+		display: inline;
+		padding-right: 0;
+		margin-left: 0.25em;
+		margin-right: -0.1em !important;
 	}
 
 	:global(.dropcap) {

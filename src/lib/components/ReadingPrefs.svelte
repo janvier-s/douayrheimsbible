@@ -450,7 +450,7 @@
 					<label class="flex items-center gap-sm cursor-pointer">
 						<input
 							type="checkbox"
-							checked={$prefs.hangingVerseNumbers ?? true}
+							checked={$prefs.hangingVerseNumbers ?? false}
 							onchange={(e) =>
 								prefs.update((p) => ({
 									...p,
