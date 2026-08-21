@@ -38,7 +38,11 @@
 	const APPENDIX_SLUGS = new Set(['prayer-of-manasses', '3-esdras', '4-esdras']);
 	const TRANSLATIONS_WITH_APPENDIX = new Set(['odr', 'drc']);
 	let showAppendix = $derived(compareMode || TRANSLATIONS_WITH_APPENDIX.has(translationId));
-	let useRoman = $derived(!compareMode && translationId === 'vul' && $prefs.romanNumerals);
+	let isVulReader = $derived(!compareMode && translationId === 'vul');
+	let useRoman = $derived(isVulReader && $prefs.romanNumerals);
+	// The Hebrew numbering glosses the Vulgate's own numbers, so beside the
+	// Vulgate itself it has nothing to add.
+	let showHebPsalmNums = $derived($prefs.showPsalmNumbers && !isVulReader);
 	let otBooks = $derived(
 		ALL_BOOKS.filter((b) => b.testament === 'OT' && (showAppendix || !APPENDIX_SLUGS.has(b.slug)))
 	);
@@ -199,8 +203,8 @@
 							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
 							class:grid={true}
 							class:grid-cols-4={useRoman}
-							class:grid-cols-7={!useRoman && !($prefs.showPsalmNumbers && book.slug === 'psalms')}
-							class:grid-cols-5={!useRoman && $prefs.showPsalmNumbers && book.slug === 'psalms'}
+							class:grid-cols-7={!useRoman && !(showHebPsalmNums && book.slug === 'psalms')}
+							class:grid-cols-5={!useRoman && showHebPsalmNums && book.slug === 'psalms'}
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
@@ -212,7 +216,7 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{useRoman ? toRoman(ch) : ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
+									{#if showHebPsalmNums && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
 										<span class="block text-[9px] opacity-60">{getHebPsalmNum(ch)}</span>
 									{/if}
 								</a>
@@ -248,8 +252,8 @@
 							class="px-[16px] pb-[10px] pt-[4px] gap-[4px]"
 							class:grid={true}
 							class:grid-cols-4={useRoman}
-							class:grid-cols-7={!useRoman && !($prefs.showPsalmNumbers && book.slug === 'psalms')}
-							class:grid-cols-5={!useRoman && $prefs.showPsalmNumbers && book.slug === 'psalms'}
+							class:grid-cols-7={!useRoman && !(showHebPsalmNums && book.slug === 'psalms')}
+							class:grid-cols-5={!useRoman && showHebPsalmNums && book.slug === 'psalms'}
 						>
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
@@ -261,7 +265,7 @@
 										: 'text-subtle'}"
 								>
 									<span class="block text-[14px]">{useRoman ? toRoman(ch) : ch}</span>
-									{#if $prefs.showPsalmNumbers && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
+									{#if showHebPsalmNums && book.slug === 'psalms' && getHebPsalmNum(ch) !== null}
 										<span class="block text-[9px] opacity-60">{getHebPsalmNum(ch)}</span>
 									{/if}
 								</a>

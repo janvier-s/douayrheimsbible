@@ -83,6 +83,9 @@
 	// label so it can be set smaller and quieter than the psalm it qualifies.
 	let psalmSuffix = $derived(
 		(() => {
+			// The Hebrew numbering glosses the Vulgate's own numbers, so beside the
+			// Vulgate itself it has nothing to add.
+			if (isVul) return '';
 			if (!$prefs.showPsalmNumbers || bookMeta?.slug !== 'psalms' || !chapterNum) return '';
 			const prot = getHebPsalmNum(parseInt(chapterNum, 10));
 			return prot ? `(${prot})` : '';
