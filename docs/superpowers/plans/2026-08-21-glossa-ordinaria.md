@@ -989,16 +989,21 @@ after the existing Haydock branch, add a parallel branch:
 ```ts
 		if (browser && translationId === 'vul' && key !== lastGlossaKey) {
 			lastGlossaKey = key;
-			loadGlossa(bookSlug, chapterNum, fetch).then((data) => {
-				if (`${bookSlug}/${chapterNum}` === lastGlossaKey) glossa = data;
-			});
+			loadGlossa(bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${bookSlug}/${chapterNum}` === lastGlossaKey) glossa = data;
+				})
+				.catch(() => {});
 		} else if (translationId !== 'vul') {
 			glossa = null;
 		}
 ```
 
 Read the surrounding block before editing and match how `key`, `bookSlug` and
-`chapterNum` are already derived there; reuse them rather than recomputing.
+`chapterNum` are already derived there; reuse them rather than recomputing. The
+trailing `.catch(() => {})` is required, not decorative: `loadGlossa` rejects on
+a non-ok response, and all five sibling loaders in this file absorb that the same
+way. Without it a failed fetch becomes an unhandled promise rejection.
 
 - [ ] **Step 2: Add the vul branch to annotatedVerseSet**
 
