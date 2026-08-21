@@ -728,6 +728,9 @@ git commit -m "feat(glossa): add the Glossa chapter loader"
 
 **Files:**
 - Modify: `src/lib/stores/studyPanel.ts:4-12` (the `StudyTab` union)
+- Modify: `src/lib/stores/prefs.ts:34` (a second, hand-duplicated copy of the
+  same union, typed out rather than imported; `switchTab` assigns a `StudyTab`
+  into `studyDefaultTab`, so leaving this one behind fails `npm run check`)
 - Modify: `src/lib/components/StudyPanel.svelte` (imports; state near line 66; `buildVisibleTabs` line 167; `groupByVerse` line 290; load block after line 688; render block after line 1655; styles)
 
 **Interfaces:**
@@ -845,9 +848,10 @@ After the Haydock commentary `run(() => { ... })` block (ends line 688), add:
 
 - [ ] **Step 6: Add the render block**
 
-After the Haydock cross-refs branch closes and before the final `{:else}` of the
-tab chain, add a branch. Place it directly after the Haydock commentary branch's
-closing `{/if}` (line 1655) so it sits with its siblings:
+Add a branch immediately after the Haydock cross-refs branch closes, which is
+the last Haydock branch in the chain. Locate it by its
+`<!-- ═══ Haydock: Cross-Refs tab ═══ -->` comment marker rather than by line
+number, since earlier edits in this task shift the file:
 
 ```svelte
 					<!-- ═══ Vulgate: Glossa Ordinaria tab ═══ -->
