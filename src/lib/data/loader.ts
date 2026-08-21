@@ -211,6 +211,41 @@ export function loadHaydockCommentary(
 	return haydockCommentaryCache.get(key)!;
 }
 
+// ── Glossa Ordinaria (per chapter) ──────────────────────────────────
+
+export interface GlossaEntry {
+	verse: number;
+	/** Catchword from the verse, present only where the build could verify it. */
+	lemma?: string;
+	text: string;
+	/** Absent for the anonymous gloss; the panel renders "Glossa" instead. */
+	author?: string;
+}
+
+const glossaCache = new Map<string, Promise<GlossaEntry[] | null>>();
+
+export function loadGlossa(
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<GlossaEntry[] | null> {
+	const key = `${slug}/${chapter}`;
+	if (!glossaCache.has(key)) {
+		if (!hasSidecar('glossa', slug, chapter)) {
+			glossaCache.set(key, Promise.resolve(null));
+			return glossaCache.get(key)!;
+		}
+		const promise = fetch(`/data/glossa/${slug}/${chapter}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load Glossa: ${res.status}`);
+			return res.json() as Promise<GlossaEntry[]>;
+		});
+		promise.then(null, () => glossaCache.delete(key));
+		glossaCache.set(key, promise);
+	}
+	return glossaCache.get(key)!;
+}
+
 // ── Haydock book introductions ──────────────────────────────────────
 
 export interface HaydockIntro {
