@@ -176,8 +176,9 @@ For each entry:
    characters.
 2. Normalise both the candidate and the verse text from
    `static/data/vul/<slug>.json`: lowercase, strip diacritics, fold `æ`/`œ` to
-   `ae`/`oe`, fold `j` to `i`, reduce punctuation to spaces, collapse
-   whitespace.
+   `ae`/`oe`, reduce punctuation to spaces, then fold `j` to `i` and `v` to
+   `u` (Latin treats each pair as one letter, and the Clementine text mixes
+   both forms).
 3. Keep the lemma only if the normalised candidate is a substring of the
    normalised verse and longer than two characters.
 
@@ -185,10 +186,10 @@ Verified, the lemma moves to its own field and is stripped from the body.
 Unverified, the entry text stays whole and no lemma is emitted. Nothing is ever
 split on a guess.
 
-This yields 11,806 lemmas, 81.5%. The stage prints the rate so a regression is
-visible in build output. The 18.5% that fail are entries opening with a work
-citation (`lib. IX Moral., cap. 7`), entries with damaged punctuation
-(`Percusseruntque. .`), and glosses attached to the Canticle rubric slots.
+This yields 11,859 lemmas, 81.9%. The stage prints the rate so a regression is
+visible in build output. The 18.1% that fail are entries opening with a work
+citation (`lib. IX Moral., cap. 7`), entries with no terminator at all, and
+glosses attached to the Canticle and Psalm 118 rubric slots.
 
 ### Output
 
@@ -210,7 +211,7 @@ order preserved inside each verse:
 `lemma` is omitted when unverified. `author` is omitted when anonymous, and the
 UI supplies `Glossa` at render time rather than baking it into the data.
 
-Simulated output: **1,124 files, 5.33 MB**, against the 11 MB
+Simulated output: **1,124 files, 5.26 MB**, against the 11 MB
 `static/data/haydock-commentary` already committed.
 
 ### Manifest
