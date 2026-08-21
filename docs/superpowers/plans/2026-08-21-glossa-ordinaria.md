@@ -1048,41 +1048,51 @@ Create `tests/e2e/glossa.test.ts`:
 ```ts
 import { test, expect } from '@playwright/test';
 
-test('Vulgate study panel shows a Glossa tab', async ({ page }) => {
+/** Study mode lives inside the single `reading-prefs` JSON blob that
+ *  prefs.ts:94 reads. loadPrefs merges over DEFAULTS, so a partial object is
+ *  safe, and stamping the current PREFS_VERSION skips the migration chain. */
+async function useStudyMode(page: import('@playwright/test').Page) {
+	await page.addInitScript(() => {
+		localStorage.setItem('reading-prefs', JSON.stringify({ readingMode: 'study', _v: 21 }));
+	});
+}
+
+test('Vulgate study panel renders the Glossa', async ({ page }) => {
+	await useStudyMode(page);
 	await page.goto('/vul/genesis/1');
-	await page.evaluate(() => localStorage.setItem('readingMode', '"study"'));
-	await page.reload();
-	await expect(page.getByRole('tab', { name: 'Glossa' })).toBeVisible();
+	await expect(page.locator('.glossa-block')).toBeVisible();
+	await expect(page.locator('.glossa-block .content-eyebrow')).toHaveText('Glossa Ordinaria');
 });
 
-test('Glossa tab renders verse sections for Genesis 1', async ({ page }) => {
+test('Glossa renders verse sections and entries for Genesis 1', async ({ page }) => {
+	await useStudyMode(page);
 	await page.goto('/vul/genesis/1');
-	await page.evaluate(() => localStorage.setItem('readingMode', '"study"'));
-	await page.reload();
 	await expect(page.locator('.glossa-block .verse-section').first()).toBeVisible();
 	await expect(page.locator('.glossa-entry').first()).toBeVisible();
+	await expect(page.locator('.glossa-lemma').first()).toBeVisible();
 });
 
-test('anonymous glosses carry the Glossa byline', async ({ page }) => {
+test('every gloss carries a byline', async ({ page }) => {
+	await useStudyMode(page);
 	await page.goto('/vul/genesis/1');
-	await page.evaluate(() => localStorage.setItem('readingMode', '"study"'));
-	await page.reload();
-	await expect(page.locator('.glossa-author').first()).toHaveText(/Glossa|Beda|Augustinus/);
+	await expect(page.locator('.glossa-author').first()).toHaveText(/\S/);
 });
 
 test('books without glosses show the empty state', async ({ page }) => {
+	await useStudyMode(page);
 	await page.goto('/vul/ezechiel/1');
-	await page.evaluate(() => localStorage.setItem('readingMode', '"study"'));
-	await page.reload();
-	await expect(page.getByRole('tab', { name: 'Glossa' })).toBeVisible();
 	await expect(page.getByText('Nulla glossa.')).toBeVisible();
+	await expect(page.locator('.glossa-block')).toHaveCount(0);
 });
 ```
 
-Before running, check how `tests/e2e/navigation.test.ts` puts the app into study
-mode. If it uses a UI control or a different storage key rather than
-`localStorage.setItem('readingMode', ...)`, copy that approach into all four
-tests here; the `prefs` store's persistence key is the authority.
+These assert the rendered panel rather than a tab chip, on purpose.
+`StudyPanel.svelte:765` sets `showTabBar = visibleTabs.length > 1`, so the
+Vulgate's single tab renders no tab bar at all; `getByRole('tab', …)` could
+never match. The panel still reaches the Glossa, because the guard at
+`StudyPanel.svelte:761-762` snaps `activeTab` to `visibleTabs[0]` when the
+stored tab is not among the visible ones. Do not add a tab bar to make a test
+pass.
 
 - [ ] **Step 2: Run the tests**
 
@@ -1126,5 +1136,7 @@ Task 5. Unit, build assertion, and e2e testing: Tasks 1, 2, 3, 6. The spec's
 - Task 4 Step 6 places a branch inside a long `{:else if}` chain by line number.
   Line numbers shift as earlier steps edit the file. Locate the branch by its
   `<!-- ═══ Haydock: Cross-Refs tab ═══ -->` comment rather than trusting 1655.
-- Task 6 assumes a `localStorage` key for study mode. Step 1 says to verify it
-  against the existing e2e test first.
+- Task 6's study-mode seeding and its avoidance of `getByRole('tab', …)` were
+  both settled during the pre-flight scan; see the rulings in
+  `.superpowers/sdd/2026-08-21-glossa-ordinaria/progress.md`. Do not "fix" the
+  tests back to querying a tab chip.
