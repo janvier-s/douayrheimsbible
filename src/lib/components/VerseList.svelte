@@ -125,9 +125,11 @@
 
 		if (browser && translationId === 'vul' && key !== lastGlossaKey) {
 			lastGlossaKey = key;
-			loadGlossa(bookSlug, chapterNum, fetch).then((data) => {
-				if (`${bookSlug}/${chapterNum}` === lastGlossaKey) glossa = data;
-			});
+			loadGlossa(bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${bookSlug}/${chapterNum}` === lastGlossaKey) glossa = data;
+				})
+				.catch(() => {});
 		} else if (translationId !== 'vul') {
 			glossa = null;
 		}
