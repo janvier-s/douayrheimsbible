@@ -396,7 +396,7 @@ Create `scripts/build-glossa-data.ts`. It mirrors `build-fathers-data.ts`: build
 
 ```ts
 // scripts/build-glossa-data.ts
-// @ts-nocheck — build script run with tsx
+// @ts-nocheck: build script run with tsx
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
