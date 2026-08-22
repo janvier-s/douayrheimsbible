@@ -18,9 +18,9 @@ export const FONTS: FontDef[] = [
 		stack: "'Source Serif 4', Georgia, serif"
 	},
 	{
-		id: 'montserrat',
-		label: 'Montserrat',
-		stack: "'Montserrat', sans-serif",
+		id: 'proxima-nova',
+		label: 'Proxima Nova',
+		stack: "'Proxima Nova', sans-serif",
 		dividerBefore: true
 	},
 	{
@@ -35,7 +35,7 @@ export const FONTS: FontDef[] = [
 	}
 ];
 
-export const SANS_FONT_IDS = ['montserrat', 'libre-franklin', 'noto-sans'];
+export const SANS_FONT_IDS = ['proxima-nova', 'libre-franklin', 'noto-sans'];
 
 export function getFontById(id: string): FontDef | undefined {
 	return FONTS.find((f) => f.id === id);

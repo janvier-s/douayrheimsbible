@@ -87,7 +87,7 @@ const DEFAULTS: ReadingPrefs = {
 	romanNumerals: true
 };
 
-const PREFS_VERSION = 21;
+const PREFS_VERSION = 22;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -103,9 +103,10 @@ function loadPrefs(): ReadingPrefs {
 		if (!parsed._v || parsed._v < 3) {
 			delete parsed.darkMode;
 		}
-		// v4 migration: lexend → montserrat, verdana → noto-sans
+		// v4 migration: lexend → proxima-nova (originally lexend → montserrat,
+		// which was itself replaced by proxima nova in v22), verdana → noto-sans
 		if (!parsed._v || parsed._v < 4) {
-			if (parsed.fontFamily === 'lexend') parsed.fontFamily = 'montserrat';
+			if (parsed.fontFamily === 'lexend') parsed.fontFamily = 'proxima-nova';
 			if (parsed.fontFamily === 'verdana') parsed.fontFamily = 'noto-sans';
 		}
 		// v5 migration: add readingMode and studyPanelWidth
@@ -187,6 +188,10 @@ function loadPrefs(): ReadingPrefs {
 		// turn them back on under Reading options → Verse.
 		if (!parsed._v || parsed._v < 21) {
 			if (parsed.hangingVerseNumbers === true) parsed.hangingVerseNumbers = false;
+		}
+		// v22 migration: montserrat replaced by proxima nova
+		if (!parsed._v || parsed._v < 22) {
+			if (parsed.fontFamily === 'montserrat') parsed.fontFamily = 'proxima-nova';
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
