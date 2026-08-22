@@ -2388,6 +2388,9 @@
 
 	/* ─── Glossa Ordinaria entries ───────────────────────────── */
 	.glossa-entry {
+		/* Gloss prose is reading matter, so it takes the reader face like
+		   .note-text and .prose-para do, rather than the panel's UI face. */
+		font-family: var(--font-reader);
 		margin-bottom: 1.1rem;
 	}
 
