@@ -61,7 +61,7 @@ const DEFAULTS: ReadingPrefs = {
 	justifiedText: false,
 	fontSize: 16,
 	lineHeight: 1.8,
-	fontFamily: 'libre-baskerville',
+	fontFamily: 'proxima-nova',
 	bionicReading: false,
 	dyslexiaFont: false,
 	readingMode: 'reading',
