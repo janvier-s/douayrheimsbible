@@ -10,6 +10,7 @@
 	import { getPrevNavBook } from '$lib/data/books';
 	import type { Chapter as ChapterType } from '$lib/data/types';
 	import { debounce } from '$lib/utils/debounce';
+	import { chapterTitles, type InitialTitles } from '$lib/utils/book-titles';
 	import {
 		shouldLoadNext,
 		createChapterObserver,
@@ -167,6 +168,26 @@
 	run(() => {
 		const slug = $readingPosition?.bookSlug ?? initialBookMeta.slug;
 		currentBookData = getCachedBook(slug);
+	});
+
+	// Book data for every rendered chapter, keyed by its own slug. Titles must not
+	// come from currentBookData: that follows the reading position, so scrolling up
+	// into the previous book relabelled the headers already on screen.
+	// Rebuilt whenever `chapters` changes (each load resolves loadBook before
+	// mutating it) and whenever bookDataVersion is bumped after the initial load.
+	let bookDataVersion = $state(0);
+	let bookDataBySlug: Record<string, BookData | null> = $state({});
+	run(() => {
+		void bookDataVersion;
+		const bySlug: Record<string, BookData | null> = {};
+		for (const c of chapters) bySlug[c.bookMeta.slug] = getCachedBook(c.bookMeta.slug);
+		bookDataBySlug = bySlug;
+	});
+
+	const initialTitles: InitialTitles = $derived({
+		slug: initialBookMeta.slug,
+		bookTitle: initialBookTitle,
+		shortTitle: initialShortTitle
 	});
 
 	const updatePosition = debounce((slug: string, ch: number) => {
@@ -449,6 +470,7 @@
 			try {
 				await loadBook(initialBookMeta.slug, fetch);
 				currentBookData = getCachedBook(initialBookMeta.slug);
+				bookDataVersion += 1;
 			} catch (e) {
 				console.warn('Failed to preload book data:', e);
 			}
@@ -493,6 +515,11 @@
 	>
 		<div style="max-width: var(--column-max-width);" class="mx-auto">
 			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
+				{@const titles = chapterTitles(
+					{ slug: item.bookMeta.slug, chapter: item.chapter.chapter },
+					bookDataBySlug[item.bookMeta.slug] ?? null,
+					initialTitles
+				)}
 				<section class={i > 0 ? 'pt-[49px]' : ''}>
 					<div
 						data-chapter-heading
@@ -508,12 +535,8 @@
 						{routeBase}
 						{translationId}
 						headingLevel={i === 0 ? 'h1' : 'h2'}
-						bookTitle={item.chapter.chapter === 1
-							? (currentBookData?.book_title ??
-								(item.bookMeta.slug === initialBookMeta.slug ? initialBookTitle : undefined))
-							: undefined}
-						shortTitle={currentBookData?.short_title ??
-							(item.bookMeta.slug === initialBookMeta.slug ? initialShortTitle : undefined)}
+						bookTitle={titles.bookTitle}
+						shortTitle={titles.shortTitle}
 					/>
 				</section>
 			{/each}
