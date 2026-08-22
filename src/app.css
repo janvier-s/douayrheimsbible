@@ -314,6 +314,8 @@
 
 	--font-reader:
 		'Gentium Plus', 'Libre Baskerville', 'SymbolFallback', Georgia, 'Times New Roman', serif;
+	/* Fixed Baskerville stack — unaffected by the reader font preference. */
+	--font-baskerville: 'Libre Baskerville', 'SymbolFallback', Georgia, 'Times New Roman', serif;
 	--font-ui: 'Gentium Plus', 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 	--font-size-reader: 16px;

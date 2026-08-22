@@ -356,7 +356,7 @@
 		</p>
 		<svelte:element
 			this={headingLevel}
-			class="font-reader text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
+			class="chapter-heading text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"
 		>
 			{chapterHeading}{#if hebrewPsalmNum && !isVul}<span
 					class="text-[1.1rem] text-subtle font-ui ml-[6px] tracking-normal"
@@ -431,8 +431,12 @@
 		margin-bottom: 6px;
 	}
 
+	.chapter-heading {
+		font-family: var(--font-baskerville);
+	}
+
 	.book-title-main {
-		font-family: var(--font-reader);
+		font-family: var(--font-baskerville);
 		font-size: 2rem;
 		font-weight: 400;
 		letter-spacing: 0.04em;
@@ -441,7 +445,7 @@
 	}
 
 	.book-title-sub {
-		font-family: var(--font-reader);
+		font-family: var(--font-baskerville);
 		font-size: 1.1rem;
 		font-style: italic;
 		letter-spacing: 0.02em;
