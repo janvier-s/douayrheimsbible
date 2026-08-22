@@ -17,9 +17,10 @@
 		loadConfCommentary,
 		loadHaydockCommentary,
 		loadHaydockIntro,
+		loadGlossa,
 		hasSidecar
 	} from '$lib/data/loader';
-	import type { HaydockCommentaryEntry, HaydockIntro } from '$lib/data/loader';
+	import type { HaydockCommentaryEntry, HaydockIntro, GlossaEntry } from '$lib/data/loader';
 	import fathersManifest from '../../../static/data/fathers/manifest.json';
 	import type {
 		BookData,
@@ -64,6 +65,11 @@
 	let haydockCommentary: HaydockCommentaryEntry[] | null = $state(null);
 	let haydockCommentaryLoading = $state(false);
 	let lastHaydockCommentaryKey = '';
+
+	// ── Glossa Ordinaria (Vulgate) ──────────────────────────────────
+	let glossa: GlossaEntry[] | null = $state(null);
+	let glossaLoading = $state(false);
+	let lastGlossaKey = '';
 
 	// ── Haydock intro ───────────────────────────────────────────────
 	let haydockIntro: HaydockIntro | null = $state(null);
@@ -167,6 +173,10 @@
 		}
 		if (tid === 'cpdv' || tid === 'knox') {
 			return [{ id: 'notes', label: 'Notes' }];
+		}
+		if (tid === 'vul') {
+			// Always shown, including the 18 books the Glossa never covered.
+			return [{ id: 'glossa', label: 'Glossa' }];
 		}
 		return [];
 	}
@@ -287,10 +297,10 @@
 	}
 
 	/** Group flat commentary entries by verse for section rendering */
-	function groupByVerse(
-		entries: HaydockCommentaryEntry[]
-	): { verse: number; entries: HaydockCommentaryEntry[] }[] {
-		const map = new Map<number, HaydockCommentaryEntry[]>();
+	function groupByVerse<T extends { verse: number }>(
+		entries: T[]
+	): { verse: number; entries: T[] }[] {
+		const map = new Map<number, T[]>();
 		for (const e of entries) {
 			if (!map.has(e.verse)) map.set(e.verse, []);
 			map.get(e.verse)!.push(e);
@@ -604,6 +614,7 @@
 	let isDrc = $derived(translationId === 'drc');
 	let isKnox = $derived(translationId === 'knox');
 	let isHaydock = $derived(translationId === 'haydock');
+	let isVul = $derived(translationId === 'vul');
 	let hasLinkifiedNotes = $derived(isOdr || isDrc || isKnox || isHaydock);
 	let hasTranslationIntro = $derived(translationId === 'conf');
 	let isConf = $derived(translationId === 'conf');
@@ -685,6 +696,34 @@
 				});
 		} else if (!isHaydock) {
 			haydockCommentary = null;
+		}
+	});
+	run(() => {
+		const key = `vul/${currentBookSlug}/${currentChapterNum}`;
+		if (isVul && currentBookSlug && key !== lastGlossaKey) {
+			lastGlossaKey = key;
+			const slug = currentBookSlug;
+			const chNum = currentChapterNum;
+			glossaLoading = true;
+			glossa = null;
+			loadGlossa(slug, chNum, fetch)
+				.then((data) => {
+					if (`vul/${slug}/${chNum}` === lastGlossaKey) {
+						glossa = data;
+						glossaLoading = false;
+						// After Svelte renders the sections, wire up the scroll observer
+						tick()
+							.then(() => tick())
+							.then(setupPanelObserver);
+					}
+				})
+				.catch(() => {
+					if (`vul/${currentBookSlug}/${currentChapterNum}` === lastGlossaKey) {
+						glossaLoading = false;
+					}
+				});
+		} else if (!isVul) {
+			glossa = null;
 		}
 	});
 	run(() => {
@@ -1676,6 +1715,49 @@
 						</div>
 					{/if}
 
+					<!-- ═══ Vulgate: Glossa Ordinaria tab ═══ -->
+				{:else if $studyPanel.activeTab === 'glossa' && isVul}
+					{#if glossaLoading}
+						<div class="empty-state"><p>Loading commentary...</p></div>
+					{:else if glossa && glossa.length > 0}
+						{@const grouped = groupByVerse(glossa)}
+						<div class="content-block glossa-block">
+							<p class="content-eyebrow">Glossa Ordinaria</p>
+							{#each grouped as group (group.verse)}
+								<div
+									class="verse-section"
+									class:verse-section-active={$studyPanel.annotatedVerse === group.verse}
+									bind:this={sectionEls[group.verse]}
+									data-section-verse={group.verse}
+								>
+									<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+									<div
+										class="verse-section-header verse-section-header-sticky"
+										onclick={() => copyVerseLink(group.verse)}
+									>
+										{group.verse === 0 ? 'Chapter' : `Verse ${group.verse}`}
+									</div>
+									{#each group.entries as entry, i}
+										<div class="glossa-entry" data-panel-id="panel-{group.verse}-glossa-{i}">
+											{#if entry.lemma}
+												<p class="glossa-lemma sc">{entry.lemma}</p>
+											{/if}
+											{#if entry.text}
+												<p class="glossa-text">{entry.text}</p>
+											{/if}
+											<p class="glossa-author">{entry.author ?? 'Glossa'}</p>
+										</div>
+									{/each}
+								</div>
+							{/each}
+						</div>
+					{:else}
+						<div class="empty-state">
+							<span class="empty-icon" aria-hidden="true">✦</span>
+							<p>Nulla glossa.</p>
+						</div>
+					{/if}
+
 					<!-- ═══ DRC/Knox/CPDV: Translation Notes tab ═══ -->
 				{:else if $studyPanel.activeTab === 'notes' && hasTranslationNotes}
 					{#if translationNotesLoading}
@@ -2302,6 +2384,34 @@
 		border: none;
 		border-top: 1px solid var(--color-border);
 		margin: 8px 0;
+	}
+
+	/* ─── Glossa Ordinaria entries ───────────────────────────── */
+	.glossa-entry {
+		margin-bottom: 1.1rem;
+	}
+
+	.glossa-entry:last-child {
+		margin-bottom: 0;
+	}
+
+	.glossa-lemma {
+		font-variant: small-caps;
+		letter-spacing: 0.04em;
+		font-weight: 600;
+		margin-bottom: 0.15rem;
+	}
+
+	.glossa-text {
+		line-height: 1.6;
+	}
+
+	.glossa-author {
+		margin-top: 0.2rem;
+		text-align: right;
+		font-style: italic;
+		opacity: 0.7;
+		font-size: 0.85em;
 	}
 
 	/* ─── Translation notes ────────────────────────────────────── */

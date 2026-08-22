@@ -19,9 +19,15 @@
 		loadTranslationNotes,
 		loadConfFootnotes,
 		loadConfCommentary,
-		loadTranslationFormat
+		loadTranslationFormat,
+		loadGlossa
 	} from '$lib/data/loader';
-	import type { HaydockCommentaryEntry, BookFormat, ChapterFormat } from '$lib/data/loader';
+	import type {
+		HaydockCommentaryEntry,
+		BookFormat,
+		ChapterFormat,
+		GlossaEntry
+	} from '$lib/data/loader';
 	interface Props {
 		verses: Verse[];
 		targetVerse: number | undefined;
@@ -101,6 +107,8 @@
 	// ── Haydock commentary (loaded for hover popovers) ────
 	let haydockCommentary: HaydockCommentaryEntry[] | null = $state(null);
 	let lastHaydockKey = $state('');
+	let glossa: GlossaEntry[] | null = $state(null);
+	let lastGlossaKey = '';
 
 	run(() => {
 		const key = `${bookSlug}/${chapterNum}`;
@@ -113,6 +121,17 @@
 				.catch(() => {});
 		} else if (translationId !== 'haydock') {
 			haydockCommentary = null;
+		}
+
+		if (browser && translationId === 'vul' && key !== lastGlossaKey) {
+			lastGlossaKey = key;
+			loadGlossa(bookSlug, chapterNum, fetch)
+				.then((data) => {
+					if (`${bookSlug}/${chapterNum}` === lastGlossaKey) glossa = data;
+				})
+				.catch(() => {});
+		} else if (translationId !== 'vul') {
+			glossa = null;
 		}
 	});
 
@@ -172,6 +191,10 @@
 		}
 		if (translationId === 'haydock') {
 			if (haydockCommentary) for (const e of haydockCommentary) set.add(e.verse);
+			return set;
+		}
+		if (translationId === 'vul') {
+			if (glossa) for (const e of glossa) set.add(e.verse);
 			return set;
 		}
 		if (hasTranslationNotes) {
