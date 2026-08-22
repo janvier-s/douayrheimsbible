@@ -50,6 +50,7 @@ function buildGlossa(source: string) {
 
 	let entries = 0;
 	let lemmas = 0;
+	let dropped = 0;
 	let files = 0;
 	let books = 0;
 
@@ -79,6 +80,12 @@ function buildGlossa(source: string) {
 					throw new Error(`Dangling Glossa ref ${slug} ${c.verse_ref} (${dir}/${file})`);
 				}
 				const { lemma, body } = extractLemma(c.text, vt);
+				// A handful of source entries carry an attribution and nothing else.
+				// They would render as a byline with no gloss above it, so drop them.
+				if (!lemma && !body) {
+					dropped++;
+					continue;
+				}
 				if (lemma) lemmas++;
 				const author = expandAuthor(c.author);
 				out.push({
@@ -103,7 +110,9 @@ function buildGlossa(source: string) {
 	}
 
 	const pct = ((lemmas / entries) * 100).toFixed(1);
-	console.log(`✓ Glossa: ${entries} entries, ${lemmas} lemmas (${pct}%).`);
+	console.log(
+		`✓ Glossa: ${entries} entries, ${lemmas} lemmas (${pct}%), ${dropped} empty dropped.`
+	);
 	console.log(`✓ Glossa: ${files} chapter files across ${books} books.`);
 }
 

@@ -80,10 +80,18 @@ Their directories exist and are mapped. They simply produce no output.
 3. **Tab always visible.** The Glossa tab shows on every Vulgate chapter. Where
    there is nothing, the tab renders an empty state. Ezechiel and the other 17
    empty books show the tab with that state rather than losing it.
-4. **Lemma promoted to a heading.** Each gloss opens with a catchword lifted
+4. **Lemma set inline in italics.** Each gloss opens with a catchword lifted
    from the verse (`Abortivo.`, `Quod si Christus non, etc.`). Where that
-   catchword can be verified against the verse text, it becomes a small-caps
-   heading above the gloss body.
+   catchword can be verified against the verse text, it leads the gloss inline
+   in italics, the way a glossed page reads.
+
+   Revised 2026-08-22, after seeing it rendered. This first shipped as a
+   small-caps heading above the gloss. Against real glosses, which often run to
+   a full column of Latin, a heading broke the run-on flow the Glossa is written
+   in and gave every entry a hard visual stop. Inline italics keep the catchword
+   scannable without splitting the entry in two. `font-synthesis: none` is set
+   so a family lacking a true italic renders upright rather than mechanically
+   slanted.
 
 ## Build stage
 
@@ -210,6 +218,10 @@ order preserved inside each verse:
 
 `lemma` is omitted when unverified. `author` is omitted when anonymous, and the
 UI supplies `Glossa` at render time rather than baking it into the data.
+
+Seven source entries carry an attribution and no text at all. They would render
+as a byline with no gloss above it, so the build drops them and reports the
+count. That leaves 14,479 entries emitted from 14,486 read.
 
 Simulated output: **1,124 files, 5.26 MB**, against the 11 MB
 `static/data/haydock-commentary` already committed.

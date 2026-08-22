@@ -1739,12 +1739,12 @@
 									</div>
 									{#each group.entries as entry, i}
 										<div class="glossa-entry" data-panel-id="panel-{group.verse}-glossa-{i}">
-											{#if entry.lemma}
-												<p class="glossa-lemma sc">{entry.lemma}</p>
-											{/if}
-											{#if entry.text}
-												<p class="glossa-text">{entry.text}</p>
-											{/if}
+											<p class="glossa-text">
+												<!-- {' '} is explicit: Svelte trims the whitespace around a block
+												     tag, which would run the lemma into the gloss body. -->
+												{#if entry.lemma}<em class="glossa-lemma">{entry.lemma}</em
+													>{' '}{/if}{entry.text}
+											</p>
 											<p class="glossa-author">{entry.author ?? 'Glossa'}</p>
 										</div>
 									{/each}
@@ -2395,11 +2395,13 @@
 		margin-bottom: 0;
 	}
 
+	/* The lemma is the catchword the gloss quotes from the verse. It leads the
+	   sentence inline, the way a glossed page reads, rather than sitting above
+	   it as a heading. font-synthesis is off so a family without a true italic
+	   falls back to upright instead of being mechanically slanted. */
 	.glossa-lemma {
-		font-variant: small-caps;
-		letter-spacing: 0.04em;
-		font-weight: 600;
-		margin-bottom: 0.15rem;
+		font-style: italic;
+		font-synthesis: none;
 	}
 
 	.glossa-text {
@@ -2410,6 +2412,7 @@
 		margin-top: 0.2rem;
 		text-align: right;
 		font-style: italic;
+		font-synthesis: none;
 		opacity: 0.7;
 		font-size: 0.85em;
 	}
