@@ -18,9 +18,9 @@ export const FONTS: FontDef[] = [
 		stack: "'Source Serif 4', Georgia, serif"
 	},
 	{
-		id: 'noto-sans',
-		label: 'Noto Sans',
-		stack: "'Noto Sans', sans-serif",
+		id: 'montserrat',
+		label: 'Montserrat',
+		stack: "'Montserrat', sans-serif",
 		dividerBefore: true
 	},
 	{
@@ -29,13 +29,13 @@ export const FONTS: FontDef[] = [
 		stack: "'Libre Franklin', sans-serif"
 	},
 	{
-		id: 'montserrat',
-		label: 'Montserrat',
-		stack: "'Montserrat', sans-serif"
+		id: 'noto-sans',
+		label: 'Noto Sans',
+		stack: "'Noto Sans', sans-serif"
 	}
 ];
 
-export const SANS_FONT_IDS = ['noto-sans', 'libre-franklin', 'montserrat'];
+export const SANS_FONT_IDS = ['montserrat', 'libre-franklin', 'noto-sans'];
 
 export function getFontById(id: string): FontDef | undefined {
 	return FONTS.find((f) => f.id === id);
