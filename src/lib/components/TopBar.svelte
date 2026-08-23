@@ -36,6 +36,9 @@
 		hasStudyMode?: boolean;
 		minimal?: boolean;
 		translationId?: string;
+		/** Homepage only: false hides the header until it reaches its sticky top
+		 *  position, so it fades in there instead of visibly scrolling into place. */
+		revealed?: boolean;
 	}
 
 	let {
@@ -45,7 +48,8 @@
 		isHomePage = false,
 		hasStudyMode = false,
 		minimal = false,
-		translationId = 'odr'
+		translationId = 'odr',
+		revealed = true
 	}: Props = $props();
 
 	let liveTranslations = $derived(TRANSLATIONS.filter((t) => t.live && !t.hidden));
@@ -242,6 +246,7 @@
 <header
 	class="sticky top-0 z-50 font-ui chrome-bar"
 	data-chrome-hidden={hideChrome}
+	data-home-pending={isHomePage && !revealed}
 	onfocusin={revealChrome}
 >
 	<!-- Row 1: branding + mode + search -->

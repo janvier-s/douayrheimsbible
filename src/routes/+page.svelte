@@ -30,6 +30,25 @@
 	let reducedMotion = $state(false);
 	let showSkipCheckbox = $state(false);
 
+	// Header stays hidden until it reaches its sticky top position, then fades
+	// in — instead of visibly riding up from the bottom of the viewport during
+	// the scroll into the reader section.
+	let headerReady = $state(false);
+	let headerFrame = 0;
+
+	function checkHeaderReveal() {
+		if (headerReady || !readerEl) return;
+		if (readerEl.getBoundingClientRect().top <= 0) headerReady = true;
+	}
+
+	function onHeaderScroll() {
+		if (headerReady || headerFrame) return;
+		headerFrame = requestAnimationFrame(() => {
+			headerFrame = 0;
+			checkHeaderReveal();
+		});
+	}
+
 	onMount(async () => {
 		if ($prefs.skipHomepage) {
 			await goto('/odr/genesis/1', { replaceState: true });
@@ -47,6 +66,13 @@
 		reducedMotion = mq.matches;
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
 
+		if (reducedMotion) {
+			headerReady = true;
+		} else {
+			window.addEventListener('scroll', onHeaderScroll, { passive: true });
+			checkHeaderReveal();
+		}
+
 		readerObs = new IntersectionObserver(
 			([entry]) => {
 				readerVisible = entry.isIntersecting;
@@ -56,7 +82,11 @@
 		if (readerEl) readerObs.observe(readerEl);
 	});
 
-	onDestroy(() => readerObs?.disconnect());
+	onDestroy(() => {
+		readerObs?.disconnect();
+		if (browser) window.removeEventListener('scroll', onHeaderScroll);
+		if (headerFrame) cancelAnimationFrame(headerFrame);
+	});
 
 	let chapterNum = $derived(
 		readerVisible && $readingPosition ? String($readingPosition.chapter) : ''
@@ -279,13 +309,14 @@
 
 <!-- ═══════════ READER ═══════════ -->
 <div id="reader" bind:this={readerEl}>
-	<TopBar {bookSlug} {chapterNum} hasStudyMode={true} isHomePage={true} />
+	<TopBar {bookSlug} {chapterNum} hasStudyMode={true} isHomePage={true} revealed={headerReady} />
 	<BibleReader
 		initialBookMeta={data.bookMeta}
 		initialChapter={data.chapter}
 		initialTotalChapters={data.totalChapters}
 		enablePrevScroll={false}
 		routeBase="/odr"
+		revealed={headerReady}
 	/>
 </div>
 
@@ -371,7 +402,7 @@
 	}
 
 	.hero-title-the {
-		font-family: var(--font-reader);
+		font-family: var(--font-baskerville);
 		font-size: 1.5rem;
 		font-weight: 400;
 		font-style: italic;
@@ -380,7 +411,7 @@
 	}
 
 	.hero-title-main {
-		font-family: var(--font-reader);
+		font-family: var(--font-baskerville);
 		font-size: clamp(2.8rem, 5vw, 4.2rem);
 		font-weight: 700;
 		color: var(--color-text);
@@ -389,7 +420,7 @@
 	}
 
 	.hero-title-sub {
-		font-family: var(--font-reader);
+		font-family: var(--font-baskerville);
 		font-size: clamp(2.2rem, 4vw, 3.4rem);
 		font-weight: 400;
 		color: var(--color-text);

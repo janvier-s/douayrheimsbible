@@ -24,6 +24,9 @@
 		headingLevel?: 'h1' | 'h2';
 		bookTitle?: string | null | undefined;
 		shortTitle?: string | null | undefined;
+		/** Homepage only: false hides the quick-nav until the parent signals it has
+		 *  reached the top, so it fades in there instead of visibly scrolling into place. */
+		navRevealed?: boolean;
 	}
 
 	let {
@@ -36,7 +39,8 @@
 		translationId = 'odr',
 		headingLevel = 'h1',
 		bookTitle = undefined,
-		shortTitle = undefined
+		shortTitle = undefined,
+		navRevealed = true
 	}: Props = $props();
 
 	function renderLine(line: string): string {
@@ -265,7 +269,10 @@
 </script>
 
 {#if showNav && (prevNav || nextNav)}
-	<nav class="flex justify-between items-center mb-lg font-ui">
+	<nav
+		class="flex justify-between items-center mb-lg font-ui chapter-quicknav"
+		data-home-pending={!navRevealed}
+	>
 		{#if prevNav}
 			<a
 				href="{routeBase}/{prevNav.slug}/{prevNav.ch}"
@@ -433,6 +440,22 @@
 
 	.chapter-heading {
 		font-family: var(--font-baskerville);
+	}
+
+	/* Homepage only: quick-nav stays hidden until the header reaches the top,
+	   then fades in with it — see navRevealed prop. */
+	.chapter-quicknav {
+		transition: opacity 400ms ease;
+	}
+	.chapter-quicknav[data-home-pending='true'] {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.chapter-quicknav {
+			transition: none;
+		}
 	}
 
 	.book-title-main {

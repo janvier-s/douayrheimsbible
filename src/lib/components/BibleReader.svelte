@@ -41,6 +41,10 @@
 		initialBookTitle?: string | null;
 		/** SSR-available short title (e.g. "John"). Same rationale as initialBookTitle. */
 		initialShortTitle?: string | null;
+		/** Homepage only: false hides the first chapter's quick-nav (prev/next chapter
+		 *  links) until it reaches the top alongside the header, so it fades in there
+		 *  instead of visibly scrolling into place. */
+		revealed?: boolean;
 	}
 
 	let {
@@ -52,7 +56,8 @@
 		routeBase = '/odr',
 		translationId = 'odr',
 		initialBookTitle = null,
-		initialShortTitle = null
+		initialShortTitle = null,
+		revealed = true
 	}: Props = $props();
 
 	/** Load a chapter from the correct data source based on translationId */
@@ -535,6 +540,7 @@
 						{routeBase}
 						{translationId}
 						headingLevel={i === 0 ? 'h1' : 'h2'}
+						navRevealed={i === 0 ? revealed : true}
 						bookTitle={titles.bookTitle}
 						shortTitle={titles.shortTitle}
 					/>
