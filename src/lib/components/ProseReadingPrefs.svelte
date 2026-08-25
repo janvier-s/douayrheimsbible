@@ -32,9 +32,9 @@
 			stack: "'Libre Franklin', sans-serif"
 		},
 		{
-			id: 'figtree',
-			label: 'Figtree',
-			stack: "'Figtree', sans-serif"
+			id: 'montserrat',
+			label: 'Montserrat',
+			stack: "'Montserrat', sans-serif"
 		}
 	];
 
@@ -92,7 +92,7 @@
 		}
 	}
 
-	const SANS_FONTS = ['noto-sans', 'libre-franklin', 'figtree'];
+	const SANS_FONTS = ['noto-sans', 'libre-franklin', 'montserrat'];
 
 	function setFontWithBionic(id: string) {
 		setFont(id);

@@ -18,9 +18,9 @@ export const FONTS: FontDef[] = [
 		stack: "'Source Serif 4', Georgia, serif"
 	},
 	{
-		id: 'figtree',
-		label: 'Figtree',
-		stack: "'Figtree', sans-serif",
+		id: 'montserrat',
+		label: 'Montserrat',
+		stack: "'Montserrat', sans-serif",
 		dividerBefore: true
 	},
 	{
@@ -35,7 +35,7 @@ export const FONTS: FontDef[] = [
 	}
 ];
 
-export const SANS_FONT_IDS = ['figtree', 'libre-franklin', 'noto-sans'];
+export const SANS_FONT_IDS = ['montserrat', 'libre-franklin', 'noto-sans'];
 
 export function getFontById(id: string): FontDef | undefined {
 	return FONTS.find((f) => f.id === id);
