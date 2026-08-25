@@ -61,7 +61,7 @@ const DEFAULTS: ReadingPrefs = {
 	justifiedText: false,
 	fontSize: 16,
 	lineHeight: 1.8,
-	fontFamily: 'proxima-nova',
+	fontFamily: 'figtree',
 	bionicReading: false,
 	dyslexiaFont: false,
 	readingMode: 'reading',
@@ -87,7 +87,7 @@ const DEFAULTS: ReadingPrefs = {
 	romanNumerals: true
 };
 
-const PREFS_VERSION = 22;
+const PREFS_VERSION = 23;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -104,7 +104,8 @@ function loadPrefs(): ReadingPrefs {
 			delete parsed.darkMode;
 		}
 		// v4 migration: lexend → proxima-nova (originally lexend → montserrat,
-		// which was itself replaced by proxima nova in v22), verdana → noto-sans
+		// which was itself replaced by proxima nova in v22, then figtree in v23),
+		// verdana → noto-sans
 		if (!parsed._v || parsed._v < 4) {
 			if (parsed.fontFamily === 'lexend') parsed.fontFamily = 'proxima-nova';
 			if (parsed.fontFamily === 'verdana') parsed.fontFamily = 'noto-sans';
@@ -192,6 +193,10 @@ function loadPrefs(): ReadingPrefs {
 		// v22 migration: montserrat replaced by proxima nova
 		if (!parsed._v || parsed._v < 22) {
 			if (parsed.fontFamily === 'montserrat') parsed.fontFamily = 'proxima-nova';
+		}
+		// v23 migration: proxima nova (unlicensed) replaced by figtree
+		if (!parsed._v || parsed._v < 23) {
+			if (parsed.fontFamily === 'proxima-nova') parsed.fontFamily = 'figtree';
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

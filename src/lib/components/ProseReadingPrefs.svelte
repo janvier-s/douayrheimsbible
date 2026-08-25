@@ -32,9 +32,9 @@
 			stack: "'Libre Franklin', sans-serif"
 		},
 		{
-			id: 'proxima-nova',
-			label: 'Proxima Nova',
-			stack: "'Proxima Nova', sans-serif"
+			id: 'figtree',
+			label: 'Figtree',
+			stack: "'Figtree', sans-serif"
 		}
 	];
 
@@ -92,7 +92,7 @@
 		}
 	}
 
-	const SANS_FONTS = ['noto-sans', 'libre-franklin', 'proxima-nova'];
+	const SANS_FONTS = ['noto-sans', 'libre-franklin', 'figtree'];
 
 	function setFontWithBionic(id: string) {
 		setFont(id);
