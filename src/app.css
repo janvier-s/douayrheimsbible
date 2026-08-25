@@ -504,7 +504,8 @@ body {
 .article-figure-placeholder::before {
 	content: attr(data-label);
 	font-family: var(--font-ui);
-	font-size: 0.75rem;
+	font-size: 0.85rem;
+	letter-spacing: 0.4px;
 	color: color-mix(in srgb, var(--color-text) 40%, transparent);
 	text-align: center;
 	max-width: 40ch;
@@ -514,7 +515,8 @@ body {
 .article-figure figcaption {
 	margin-top: 0.5rem;
 	font-family: var(--font-ui);
-	font-size: 0.75rem;
+	font-size: 0.85rem;
+	letter-spacing: 0.4px;
 	color: var(--color-subtle);
 	text-align: center;
 	line-height: 1.5;
