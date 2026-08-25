@@ -246,7 +246,7 @@
 	}
 
 	.stat-number {
-		font-family: 'Gotham', var(--font-ui);
+		font-family: 'Metropolis', var(--font-ui);
 		font-size: 2.6rem;
 		font-weight: 600;
 		line-height: 1;

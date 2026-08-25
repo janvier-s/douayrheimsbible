@@ -59,7 +59,7 @@
 			document.documentElement.style.setProperty('--font-reader', font?.stack ?? 'serif');
 			document.documentElement.style.setProperty(
 				'--font-ui',
-				"'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+				"'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 			);
 			document.documentElement.style.setProperty(
 				'--bionic-bold-weight',
