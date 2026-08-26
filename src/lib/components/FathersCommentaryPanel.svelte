@@ -4,8 +4,7 @@
 	import { createEventDispatcher, onDestroy, onMount, tick } from 'svelte';
 	import { browser } from '$app/environment';
 	import type { FathersChapterFile, FathersEntry } from '$lib/data/fathers-types';
-	import type { OsisRange } from '$lib/search/reference';
-	import { parseOsis } from '$lib/search/reference';
+	import { createVerseRefTooltip } from '$lib/utils/verseRefTooltip.svelte';
 	import { displayVerseRef } from '$lib/utils/fathers-display';
 	import { prefs } from '$lib/stores/prefs';
 	import { entryMatches, hasActiveFilter, type FathersFilterState } from './fathersFilterUtils';
@@ -91,43 +90,8 @@
 	}
 
 	// ── Verse-ref tooltip (hover popover for linkified refs) ─────────
-	let verseRefs: OsisRange[] = $state([]);
-	let verseRefAnchor: HTMLElement | null = $state(null);
-	let verseRefVisible = $state(false);
-	let verseRefTimer: ReturnType<typeof setTimeout> | null = $state(null);
-
-	function handleRefOver(e: Event) {
-		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
-		if (!vref) return;
-		if (verseRefTimer) clearTimeout(verseRefTimer);
-		const osis = vref.dataset.osis ?? '';
-		const refs = osis.split(',').flatMap((s) => {
-			const r = parseOsis(s.trim());
-			return r ? [r] : [];
-		});
-		if (refs.length > 0) {
-			verseRefs = refs;
-			verseRefAnchor = vref;
-			verseRefVisible = true;
-		}
-	}
-
-	function handleRefOut(e: Event) {
-		const me = e as MouseEvent;
-		const related = me.relatedTarget as HTMLElement | null;
-		if (related?.closest?.('.tooltip')) return;
-		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
-		if (vref) {
-			verseRefTimer = setTimeout(() => {
-				verseRefVisible = false;
-				verseRefAnchor = null;
-			}, 300);
-		}
-	}
-
-	onDestroy(() => {
-		if (verseRefTimer) clearTimeout(verseRefTimer);
-	});
+	const refTip = createVerseRefTooltip();
+	onDestroy(refTip.destroy);
 
 	// ── Lazy pericope rendering via IntersectionObserver ──────────────
 	let visiblePericopes: Set<number> = $state(new Set([0, 1, 2]));
@@ -252,8 +216,8 @@
 	<div
 		class="flex-1 overflow-y-auto styled-scroll"
 		bind:this={scrollContainer}
-		onmouseover={handleRefOver}
-		onmouseout={handleRefOut}
+		onmouseover={refTip.handleOver}
+		onmouseout={refTip.handleOut}
 	>
 		{#if chapterData.pericopes.length === 0}
 			<div class="p-lg text-center text-subtle text-[14px]">
@@ -328,17 +292,10 @@
 
 	<VerseTooltip
 		translationId="odr"
-		osisRanges={verseRefs}
-		anchorEl={verseRefAnchor}
-		visible={verseRefVisible}
-		onmouseenter={() => {
-			if (verseRefTimer) clearTimeout(verseRefTimer);
-		}}
-		onmouseleave={() => {
-			verseRefTimer = setTimeout(() => {
-				verseRefVisible = false;
-				verseRefAnchor = null;
-			}, 120);
-		}}
+		osisRanges={refTip.refs}
+		anchorEl={refTip.anchor}
+		visible={refTip.visible}
+		onmouseenter={refTip.cancelDismiss}
+		onmouseleave={refTip.scheduleDismiss}
 	/>
 </div>

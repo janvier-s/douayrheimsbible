@@ -5,8 +5,7 @@
 	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
-	import type { OsisRange } from '$lib/search/reference';
-
+	import type { OsisRange } from '$lib/search/osis';
 	const refRanges: OsisRange[] = [
 		{
 			osis: '1Cor.13.8',

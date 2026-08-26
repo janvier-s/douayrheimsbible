@@ -13,8 +13,8 @@
  * Usage: npx tsx scripts/extract-haydock-reference.ts <source-dir>
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import { readSfm, writeJson, cleanInline } from './sfm-lib.js';
 
 const SRC_DIR = process.argv[2];
 if (!SRC_DIR) {
@@ -26,43 +26,7 @@ const OUT_DIR = join(import.meta.dirname!, '..', 'static', 'data', 'reference', 
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
-function readSfm(filename: string): string {
-	return readFileSync(join(SRC_DIR, filename), 'utf-8');
-}
-
 /** Strip inline USFM markers, keeping readable text. */
-function cleanInline(text: string): string {
-	return (
-		text
-			// \w word\w* → word
-			.replace(/\\w\s+/g, '')
-			.replace(/\\w\*/g, '')
-			// \rq ref\rq* → ref (must remove \rq* BEFORE \rq to avoid leaving *)
-			.replace(/\\rq\*/g, '')
-			.replace(/\\rq/g, ' ')
-			// \it text\it* → <i>text</i>
-			.replace(/\\it\s+/g, '<i>')
-			.replace(/\\it\*/g, '</i>')
-			// \em text\em* → <i>text</i>
-			.replace(/\\em\s+/g, '<i>')
-			.replace(/\\em\*/g, '</i>')
-			// Strip \f footnotes (inline: \f ... \f*)
-			.replace(/\\f\s+.*?\\f\*/gs, '')
-			// Strip curly-brace footnotes used by Haydock: { text |}
-			.replace(/\{[^}]*\|?\}/g, '')
-			// remove other backslash markers that might remain
-			.replace(/\\ib\d*/g, '')
-			.replace(/\\iq\b/g, '')
-			.replace(/\\b\d*/g, '')
-			// remove stray backslash-tag remnants
-			.replace(/\\[a-z]+\d*/g, '')
-			// remove <> artifacts
-			.replace(/<>/g, ' ')
-			// collapse multiple spaces
-			.replace(/\s{2,}/g, ' ')
-			.trim()
-	);
-}
 
 /** Slugify a heading for use as an anchor ID */
 function slugify(text: string): string {
@@ -110,7 +74,7 @@ function extractParagraphs(
 		// Section headings (\is1, \is2) → bold paragraph, optionally with anchor
 		const isMatch = line.match(/^\\is\d?\s+(.*)/);
 		if (isMatch) {
-			const heading = cleanInline(isMatch[1]);
+			const heading = cleanInline(isMatch[1], { stripFootnotes: true });
 			if (heading) {
 				if (withToc && !isFirstHeading && heading.length >= 4) {
 					const id = slugify(heading);
@@ -130,7 +94,7 @@ function extractParagraphs(
 		// Title markers (\imt1, \imt3, \imt5) → bold paragraph, optionally with anchor
 		const imtMatch = line.match(/^\\imt\d?\s+(.*)/);
 		if (imtMatch) {
-			const heading = cleanInline(imtMatch[1]);
+			const heading = cleanInline(imtMatch[1], { stripFootnotes: true });
 			if (heading) {
 				if (withToc && !isFirstHeading && heading.length >= 4) {
 					const id = slugify(heading);
@@ -147,7 +111,7 @@ function extractParagraphs(
 		// Regular paragraph markers (\im, \ip, \ipi, \p)
 		const pMatch = line.match(/^\\(?:im|ip|ipi|p|v)\s+(.*)/);
 		if (pMatch) {
-			const text = cleanInline(pMatch[1]);
+			const text = cleanInline(pMatch[1], { stripFootnotes: true });
 			if (text) paras.push(text);
 			continue;
 		}
@@ -155,7 +119,7 @@ function extractParagraphs(
 		// \m lines (used in chapter summaries)
 		const mMatch = line.match(/^\\m\s+(.*)/);
 		if (mMatch) {
-			const text = cleanInline(mMatch[1]);
+			const text = cleanInline(mMatch[1], { stripFootnotes: true });
 			if (text) paras.push(text);
 			continue;
 		}
@@ -163,7 +127,7 @@ function extractParagraphs(
 		// \iq lines (quoted/emphasized)
 		const iqMatch = line.match(/^\\iq\s+(.*)/);
 		if (iqMatch) {
-			const text = cleanInline(iqMatch[1]);
+			const text = cleanInline(iqMatch[1], { stripFootnotes: true });
 			if (text && text !== '==============' && !text.match(/^=+$/)) paras.push(`<i>${text}</i>`);
 			continue;
 		}
@@ -171,7 +135,7 @@ function extractParagraphs(
 		// \ili list items
 		const iliMatch = line.match(/^\\ili\s+(.*)/);
 		if (iliMatch) {
-			const text = cleanInline(iliMatch[1]);
+			const text = cleanInline(iliMatch[1], { stripFootnotes: true });
 			if (text) paras.push(text);
 			continue;
 		}
@@ -186,7 +150,7 @@ function extractParagraphs(
 					.replace(/^\\tr\s+/, '')
 					.split(/\\t[hc]\d+\s*/)
 					.filter((c) => c.trim());
-				rows.push(cells.map((c) => cleanInline(c)));
+				rows.push(cells.map((c) => cleanInline(c, { stripFootnotes: true })));
 				j++;
 			}
 			if (rows.length > 0) {
@@ -226,19 +190,11 @@ function findPeriphBoundaries(lines: string[]): Array<{ name: string; line: numb
 	return boundaries;
 }
 
-function writeJson(subdir: string, slug: string, data: unknown): void {
-	const dir = join(OUT_DIR, subdir);
-	mkdirSync(dir, { recursive: true });
-	const file = join(dir, `${slug}.json`);
-	writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
-	console.log(`  → ${file}`);
-}
-
 // ── Main ──────────────────────────────────────────────────────────────────
 
-const frtRaw = readSfm('00-FRT-ENG[B]DRC1750[pd].p.sfm');
-const intRaw = readSfm('48-INT-ENG[B]DRC1750[pd].p.sfm');
-const bakRaw = readSfm('77-BAK-ENG[B]CPDV2009[pd].p.sfm');
+const frtRaw = readSfm(SRC_DIR, '00-FRT-ENG[B]DRC1750[pd].p.sfm');
+const intRaw = readSfm(SRC_DIR, '48-INT-ENG[B]DRC1750[pd].p.sfm');
+const bakRaw = readSfm(SRC_DIR, '77-BAK-ENG[B]CPDV2009[pd].p.sfm');
 
 const frtLines = frtRaw.split('\n');
 const intLines = intRaw.split('\n');
@@ -281,11 +237,11 @@ console.log();
 		if (line.startsWith('\\id ') || line.startsWith('\\ide ') || line.startsWith('\\toc')) continue;
 		const imtMatch = line.match(/^\\imt\d?\s+(.*)/);
 		if (imtMatch) {
-			const text = cleanInline(imtMatch[1]);
+			const text = cleanInline(imtMatch[1], { stripFootnotes: true });
 			if (text) paras.push(text);
 		}
 	}
-	writeJson('front', 'title-page', { paragraphs: paras });
+	writeJson(OUT_DIR, 'front', 'title-page', { paragraphs: paras });
 }
 
 // ── 2. Transcription Notes ────────────────────────────────────────────────
@@ -298,7 +254,7 @@ console.log();
 		const foreword = getPeriphRange('Foreword');
 		const end = foreword ? foreword.start : preface.end;
 		const { paragraphs } = extractParagraphs(frtLines, pubData.start, end);
-		writeJson('front', 'transcription-notes', { paragraphs });
+		writeJson(OUT_DIR, 'front', 'transcription-notes', { paragraphs });
 	}
 }
 
@@ -307,7 +263,7 @@ console.log();
 	const range = getPeriphRange('Foreword');
 	if (range) {
 		const { paragraphs } = extractParagraphs(frtLines, range.start, range.end);
-		writeJson('front', 'foreword', { paragraphs });
+		writeJson(OUT_DIR, 'front', 'foreword', { paragraphs });
 	}
 }
 
@@ -349,7 +305,7 @@ console.log();
 			// List items
 			const iliMatch = line.match(/^\\ili\s+(.*)/);
 			if (iliMatch) {
-				const text = cleanInline(iliMatch[1]);
+				const text = cleanInline(iliMatch[1], { stripFootnotes: true });
 				if (text) currentEntries.push(text);
 				continue;
 			}
@@ -358,19 +314,19 @@ console.log();
 			if (!currentLetter) {
 				const imtMatch = line.match(/^\\imt\d?\s+(.*)/);
 				if (imtMatch) {
-					const text = cleanInline(imtMatch[1]);
+					const text = cleanInline(imtMatch[1], { stripFootnotes: true });
 					if (text) introParagraphs.push(text);
 					continue;
 				}
 				const imMatch = line.match(/^\\im\s+(.*)/);
 				if (imMatch) {
-					const text = cleanInline(imMatch[1]);
+					const text = cleanInline(imMatch[1], { stripFootnotes: true });
 					if (text) introParagraphs.push(text);
 					continue;
 				}
 				const iqMatch = line.match(/^\\iq\s+(.*)/);
 				if (iqMatch) {
-					const text = cleanInline(iqMatch[1]);
+					const text = cleanInline(iqMatch[1], { stripFootnotes: true });
 					if (text && !text.match(/^=+$/)) introParagraphs.push(`<i>${text}</i>`);
 					continue;
 				}
@@ -381,7 +337,7 @@ console.log();
 			groups.push({ letter: currentLetter, entries: [...currentEntries] });
 		}
 
-		writeJson('front', 'commentators', {
+		writeJson(OUT_DIR, 'front', 'commentators', {
 			intro: introParagraphs,
 			entries: groups
 		});
@@ -393,7 +349,7 @@ console.log();
 	const range = getPeriphRange('Introduction to the Bible');
 	if (range) {
 		const { paragraphs } = extractParagraphs(frtLines, range.start, range.end);
-		writeJson('front', 'bible-history', { paragraphs });
+		writeJson(OUT_DIR, 'front', 'bible-history', { paragraphs });
 	}
 }
 
@@ -406,7 +362,7 @@ console.log();
 		const { paragraphs, toc } = extractParagraphs(frtLines, otStart.line, ntStart.line, true);
 		const data: Record<string, unknown> = { paragraphs };
 		if (toc) data.toc = toc;
-		writeJson('front', 'ot-introduction', data);
+		writeJson(OUT_DIR, 'front', 'ot-introduction', data);
 	}
 }
 
@@ -420,7 +376,7 @@ console.log();
 		const { paragraphs, toc } = extractParagraphs(frtLines, ntStart.line, chapStart.line, true);
 		const data: Record<string, unknown> = { paragraphs };
 		if (toc) data.toc = toc;
-		writeJson('front', 'nt-introduction', data);
+		writeJson(OUT_DIR, 'front', 'nt-introduction', data);
 	}
 }
 
@@ -429,7 +385,7 @@ console.log();
 	const { paragraphs, toc } = extractParagraphs(intLines, 0, intLines.length, true);
 	const data: Record<string, unknown> = { paragraphs };
 	if (toc) data.toc = toc;
-	writeJson('front', 'nt-preface', data);
+	writeJson(OUT_DIR, 'front', 'nt-preface', data);
 }
 
 // ── 9. Chapter Summaries ─────────────────────────────────────────────────
@@ -462,7 +418,7 @@ console.log();
 				if (currentTitle && currentEntries.length > 0) {
 					sections.push({ title: currentTitle, entries: [...currentEntries] });
 				}
-				currentTitle = cleanInline(isMatch[1]).replace(/\.$/, '');
+				currentTitle = cleanInline(isMatch[1], { stripFootnotes: true }).replace(/\.$/, '');
 				currentEntries = [];
 				continue;
 			}
@@ -470,7 +426,7 @@ console.log();
 			// Chapter entry
 			const mMatch = line.match(/^\\m\s+(.*)/);
 			if (mMatch) {
-				const text = cleanInline(mMatch[1]);
+				const text = cleanInline(mMatch[1], { stripFootnotes: true });
 				if (text) currentEntries.push(text);
 				continue;
 			}
@@ -480,7 +436,7 @@ console.log();
 			sections.push({ title: currentTitle, entries: [...currentEntries] });
 		}
 
-		writeJson('back', 'chapter-summaries', { sections });
+		writeJson(OUT_DIR, 'back', 'chapter-summaries', { sections });
 		console.log(
 			`  (${sections.length} books, ${sections.reduce((n, s) => n + s.entries.length, 0)} chapter entries)`
 		);
@@ -490,7 +446,7 @@ console.log();
 // ── 10. Apocrypha (from 77-BAK) ──────────────────────────────────────────
 {
 	const { paragraphs } = extractParagraphs(bakLines, 0, bakLines.length);
-	writeJson('back', 'apocrypha', { paragraphs });
+	writeJson(OUT_DIR, 'back', 'apocrypha', { paragraphs });
 }
 
 console.log('\nDone!');

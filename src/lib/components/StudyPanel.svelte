@@ -37,8 +37,7 @@
 	import CrossRefText from './CrossRefText.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { linkifyConfRefs, linkifyKnoxRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
-	import { parseOsis } from '$lib/search/reference';
-	import type { OsisRange } from '$lib/search/reference';
+	import { createVerseRefTooltip } from '$lib/utils/verseRefTooltip.svelte';
 	import { getBookBySlug } from '$lib/data/books';
 	import { TRANSLATIONS } from '$lib/stores/compare';
 
@@ -562,46 +561,13 @@
 	}
 
 	// ── Conf verse-ref tooltip state ────────────────────────────────
-	let confVerseRefs: OsisRange[] = $state([]);
-	let confVerseRefAnchor: HTMLElement | null = $state(null);
-	let confVerseRefVisible = $state(false);
-	let confVerseRefTimer: ReturnType<typeof setTimeout> | null = $state(null);
-
-	function handleConfRefOver(e: Event) {
-		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
-		if (!vref) return;
-		if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
-		const osis = vref.dataset.osis ?? '';
-		const refs = osis.split(',').flatMap((s) => {
-			const r = parseOsis(s.trim());
-			return r ? [r] : [];
-		});
-		if (refs.length > 0) {
-			confVerseRefs = refs;
-			confVerseRefAnchor = vref;
-			confVerseRefVisible = true;
-		}
-	}
-
-	function handleConfRefOut(e: Event) {
-		const me = e as MouseEvent;
-		// Don't dismiss if the mouse moved to the tooltip itself
-		const related = me.relatedTarget as HTMLElement | null;
-		if (related?.closest?.('.tooltip')) return;
-		const vref = (e.target as HTMLElement).closest('.verse-ref') as HTMLElement | null;
-		if (vref) {
-			confVerseRefTimer = setTimeout(() => {
-				confVerseRefVisible = false;
-				confVerseRefAnchor = null;
-			}, 300);
-		}
-	}
+	const confTip = createVerseRefTooltip();
 
 	onDestroy(() => {
 		panelSectionObserver?.disconnect();
 		if (programmaticScrollTimer) clearTimeout(programmaticScrollTimer);
 		if (annotatedVerseTimer) clearTimeout(annotatedVerseTimer);
-		if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
+		confTip.destroy();
 		wheelCleanup?.();
 	});
 	let isOdr = $derived(translationId === 'odr');
@@ -1141,8 +1107,8 @@
 	<div
 		class="panel-scroll flex-1 overflow-y-scroll"
 		bind:this={panelScroll}
-		onmouseover={hasLinkifiedNotes || isConf ? handleConfRefOver : undefined}
-		onmouseout={hasLinkifiedNotes || isConf ? handleConfRefOut : undefined}
+		onmouseover={hasLinkifiedNotes || isConf ? confTip.handleOver : undefined}
+		onmouseout={hasLinkifiedNotes || isConf ? confTip.handleOut : undefined}
 	>
 		{#key `${currentBookSlug}/${currentChapterNum}/${$studyPanel.activeTab}`}
 			<div in:fade={{ duration: 150 }}>
@@ -1848,18 +1814,11 @@
 				{#if hasLinkifiedNotes || isConf}
 					<VerseTooltip
 						{translationId}
-						osisRanges={confVerseRefs}
-						anchorEl={confVerseRefAnchor}
-						visible={confVerseRefVisible}
-						onmouseenter={() => {
-							if (confVerseRefTimer) clearTimeout(confVerseRefTimer);
-						}}
-						onmouseleave={() => {
-							confVerseRefTimer = setTimeout(() => {
-								confVerseRefVisible = false;
-								confVerseRefAnchor = null;
-							}, 120);
-						}}
+						osisRanges={confTip.refs}
+						anchorEl={confTip.anchor}
+						visible={confTip.visible}
+						onmouseenter={confTip.cancelDismiss}
+						onmouseleave={confTip.scheduleDismiss}
 					/>
 				{/if}
 			</div>

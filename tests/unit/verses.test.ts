@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { buildResultGroups, type SearchResultGroup } from '$lib/search/verses';
-import type { OsisRange } from '$lib/search/reference';
-
+import type { OsisRange } from '$lib/search/osis';
 // Mock fetch that returns known data
 const mockBookData = {
 	book: 'Matthew',

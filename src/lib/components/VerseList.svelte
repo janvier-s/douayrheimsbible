@@ -444,12 +444,16 @@
 
 	// ── Verse click (annotation) ─────────────────────────────────────
 
+	function openAnnotation(verse: number) {
+		studyPanel.update((s) => ({ ...s, annotatedVerse: verse }));
+		scrollTrigger.set({ verse, type: 'annotation' });
+	}
+
 	function handleVerseClick(e: MouseEvent, v: Verse) {
 		// Don't fire if a marker was clicked (handled above)
 		if ((e.target as HTMLElement).closest('[data-marker-type]')) return;
 		if (!annotatedVerseSet.has(v.verse)) return;
-		studyPanel.update((s) => ({ ...s, annotatedVerse: v.verse }));
-		scrollTrigger.set({ verse: v.verse, type: 'annotation' });
+		openAnnotation(v.verse);
 	}
 
 	// ── Marker hover popover ─────────────────────────────────────────
@@ -805,7 +809,7 @@
 	{#each blocks as blk, bi (blk.lines[0][0].verse + (blk.poetry ? 'y' : 'p') + bi)}
 		<!-- svelte-ignore a11y_no_static_element_interactions, a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 		<p
-			class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
+			class="para-block font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 			class:text-justify={$prefs.justifiedText && !blk.poetry}
 			class:poetry-block={blk.poetry}
 			class:bionic-fade={bionic}
@@ -883,12 +887,16 @@
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
 		{#each verses as v (v.verse)}
+			<!-- The click handler here is a mouse-only convenience: tapping anywhere on
+			     an annotated verse opens its annotation. Keyboard and screen-reader
+			     users get the equivalent through the focusable button rendered at the
+			     end of the verse below, so these suppressions do not hide a gap. -->
 			<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 			<li
 				bind:this={verseEls[v.verse]}
 				id="v{v.verse}"
 				data-verse-num={v.verse}
-				class="flex gap-sm max-md:gap-0"
+				class="relative flex gap-sm max-md:gap-0"
 				class:verse-target={targetVerse === v.verse}
 				class:verse-annotated={isStudy && annotatedVerseSet.has(v.verse)}
 				class:verse-active-annotation={isStudy &&
@@ -929,6 +937,20 @@
 						expandAmpersand
 					)}
 				</p>
+				{#if isStudy && annotatedVerseSet.has(v.verse)}
+					<!-- Keyboard and screen-reader route to the annotation. Most annotated
+					     verses (about 70% in ODR) carry no inline marker button, so without
+					     this their annotation is reachable by mouse only. Visually hidden
+					     until focused, so the reading column is unchanged for sighted users
+					     and the verse text stays plain text rather than becoming a widget. -->
+					<button
+						type="button"
+						class="verse-annotation-key"
+						onclick={() => openAnnotation(v.verse)}
+					>
+						Open annotation for verse {v.verse}
+					</button>
+				{/if}
 			</li>
 		{/each}
 	</ol>
@@ -947,6 +969,38 @@
 </MarkerPopover>
 
 <style>
+	/* Visually hidden until focused, then shown as a small chip pinned to the
+	   verse so the keyboard user can see what they have landed on. */
+	.verse-annotation-key {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.verse-annotation-key:focus-visible {
+		position: absolute;
+		right: 0;
+		top: -0.25rem;
+		z-index: 10;
+		width: auto;
+		height: auto;
+		clip-path: none;
+		padding: 0.15rem 0.5rem;
+		border-radius: 0.25rem;
+		font-family: var(--font-ui, inherit);
+		font-size: 0.75rem;
+		background: var(--color-bg, #fff);
+		color: var(--color-verse-num, inherit);
+		outline: 2px solid currentColor;
+		outline-offset: 1px;
+	}
+
 	/* Poetry, as the Clementine edition sets it: italic and indented from the
 	   prose around it. */
 	.poetry-block {
@@ -1013,8 +1067,14 @@
 		padding-left: 3rem;
 	}
 
-	/* Paragraphs run on with an indented first line, as a book sets them, so
-	   there is no band of space between them to break the column. */
+	/* A band of space after every paragraph and stanza. Collapses with the 1em
+	   top margin the hanging-number mode sets, so that mode keeps its own gap
+	   rather than gaining a second one. */
+	.para-block {
+		margin-bottom: 1rem;
+	}
+
+	/* Paragraphs run on with an indented first line, as a book sets them. */
 	.para-indent {
 		text-indent: 1em;
 	}

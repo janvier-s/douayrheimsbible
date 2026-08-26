@@ -1,6 +1,7 @@
 // tests/unit/crossRefParser.test.ts
 import { describe, it, expect } from 'vitest';
-import { tokenizeCrossRef, parseItalicRef, linkifyItalicRefs } from '$lib/search/crossRefParser';
+import { tokenizeCrossRef } from '$lib/search/crossRefParser';
+import { parseItalicRef, linkifyItalicRefs } from '$lib/search/crossRefItalic';
 
 describe('tokenizeCrossRef', () => {
 	it('parses a single verse reference', () => {

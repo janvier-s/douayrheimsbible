@@ -13,8 +13,8 @@
  * Usage: npx tsx scripts/extract-drc-reference.ts <source-dir>
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join } from 'path';
+import { readSfm, writeJson, cleanInline } from './sfm-lib.js';
 
 const SRC_DIR = process.argv[2];
 if (!SRC_DIR) {
@@ -26,57 +26,17 @@ const OUT_DIR = join(import.meta.dirname!, '..', 'static', 'data', 'reference', 
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
-function readSfm(filename: string): string {
-	return readFileSync(join(SRC_DIR, filename), 'utf-8');
-}
-
 /** Strip inline USFM markers, keeping readable text. */
-function cleanInline(text: string): string {
-	return (
-		text
-			// \w word\w* → word
-			.replace(/\\w\s+/g, '')
-			.replace(/\\w\*/g, '')
-			// \rq ref\rq* → ref  (must remove \rq* BEFORE \rq to avoid leaving *)
-			.replace(/\\rq\*/g, '')
-			.replace(/\\rq/g, ' ')
-			// \it text\it* → <i>text</i>
-			.replace(/\\it\s+/g, '<i>')
-			.replace(/\\it\*/g, '</i>')
-			// \em text\em* → <i>text</i>
-			.replace(/\\em\s+/g, '<i>')
-			.replace(/\\em\*/g, '</i>')
-			// remove other backslash markers that might remain
-			.replace(/\\ib\d*/g, '')
-			.replace(/\\iq\b/g, '')
-			.replace(/\\b\d*/g, '')
-			// remove stray backslash-tag remnants (e.g. \tcr)
-			.replace(/\\[a-z]+\d*/g, '')
-			// remove <> artifacts from source
-			.replace(/<>/g, ' ')
-			// collapse multiple spaces
-			.replace(/\s{2,}/g, ' ')
-			.trim()
-	);
-}
 
 /** Split a PSFM file into lines, skipping blank/comment lines. */
 function parseLines(content: string): string[] {
 	return content.split('\n').filter((l) => l.trim().length > 0);
 }
 
-function writeJson(subdir: string, slug: string, data: unknown): void {
-	const dir = join(OUT_DIR, subdir);
-	if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-	const path = join(dir, `${slug}.json`);
-	writeFileSync(path, JSON.stringify(data, null, 2) + '\n', 'utf-8');
-	console.log(`  wrote ${path}`);
-}
-
 // ── 00-FRT: Title Page, Preface, History ───────────────────────────────────
 
 function extractFrontMatter(): void {
-	const content = readSfm('00-FRT-ENG[B]DRC1750[pd].p.sfm');
+	const content = readSfm(SRC_DIR, '00-FRT-ENG[B]DRC1750[pd].p.sfm');
 	const lines = parseLines(content);
 
 	// -- Title Page: from \imt1 THE HOLY BIBLE to \periph Publication Data
@@ -97,7 +57,7 @@ function extractFrontMatter(): void {
 		}
 	}
 
-	writeJson('front', 'title-page', {
+	writeJson(OUT_DIR, 'front', 'title-page', {
 		paragraphs: titleLines.map((text) => ({ text, notes: [] }))
 	});
 
@@ -122,7 +82,7 @@ function extractFrontMatter(): void {
 		}
 	}
 
-	writeJson('front', 'preface', { paragraphs: prefaceParas });
+	writeJson(OUT_DIR, 'front', 'preface', { paragraphs: prefaceParas });
 
 	// -- History (Foreword): from \periph Foreword to \periph Old Testament Title Page
 	const historyParas: string[] = [];
@@ -149,13 +109,13 @@ function extractFrontMatter(): void {
 		}
 	}
 
-	writeJson('front', 'history', { paragraphs: historyParas });
+	writeJson(OUT_DIR, 'front', 'history', { paragraphs: historyParas });
 }
 
 // ── 48-INT: NT Preface ("The Preface To The Reader") ───────────────────────
 
 function extractNtPreface(): void {
-	const content = readSfm('48-INT-ENG[B]DRC1750[pd].p.sfm');
+	const content = readSfm(SRC_DIR, '48-INT-ENG[B]DRC1750[pd].p.sfm');
 	const lines = parseLines(content);
 
 	const paras: string[] = [];
@@ -181,13 +141,13 @@ function extractNtPreface(): void {
 		}
 	}
 
-	writeJson('front', 'nt-preface', { paragraphs: paras });
+	writeJson(OUT_DIR, 'front', 'nt-preface', { paragraphs: paras });
 }
 
 // ── 80-GLO: Glossary ("Hard Words Explicated") ────────────────────────────
 
 function extractGlossary(): void {
-	const content = readSfm('80-GLO-ENG[B]DRC1750[pd].p.sfm');
+	const content = readSfm(SRC_DIR, '80-GLO-ENG[B]DRC1750[pd].p.sfm');
 	const lines = parseLines(content);
 
 	interface WordEntry {
@@ -277,7 +237,7 @@ function extractGlossary(): void {
 
 	const titleHtml = `${title.toUpperCase()}<br><span class="ref-title-sub">${subtitle}</span>`;
 
-	writeJson('back', 'glossary', {
+	writeJson(OUT_DIR, 'back', 'glossary', {
 		section: 'drc-glossary',
 		title: titleHtml,
 		entries: groups
@@ -287,7 +247,7 @@ function extractGlossary(): void {
 // ── 77-BAK: Topical Index ──────────────────────────────────────────────────
 
 function extractTopicalIndex(): void {
-	const content = readSfm('77-BAK-ENG[B]CPDV2009[pd].p.sfm');
+	const content = readSfm(SRC_DIR, '77-BAK-ENG[B]CPDV2009[pd].p.sfm');
 	const lines = parseLines(content);
 
 	interface RawEntry {
@@ -342,7 +302,7 @@ function extractTopicalIndex(): void {
 		.sort((a, b) => a[0].localeCompare(b[0]))
 		.map(([letter, items]) => ({ letter, entries: items }));
 
-	writeJson('back', 'topical-index', {
+	writeJson(OUT_DIR, 'back', 'topical-index', {
 		section: 'drc-topical-index',
 		title: title.toUpperCase(),
 		entries
@@ -352,7 +312,7 @@ function extractTopicalIndex(): void {
 // ── 77-BAK: NT Chronological Index ─────────────────────────────────────────
 
 function extractChronologicalNt(): void {
-	const content = readSfm('77-BAK-ENG[B]CPDV2009[pd].p.sfm');
+	const content = readSfm(SRC_DIR, '77-BAK-ENG[B]CPDV2009[pd].p.sfm');
 	const lines = parseLines(content);
 
 	const paras: string[] = [];
@@ -400,7 +360,7 @@ function extractChronologicalNt(): void {
 		}
 	}
 
-	writeJson('back', 'chronological-nt', {
+	writeJson(OUT_DIR, 'back', 'chronological-nt', {
 		paragraphs: paras
 	});
 }
@@ -408,7 +368,7 @@ function extractChronologicalNt(): void {
 // ── 77-BAK: OT Chronological Index ─────────────────────────────────────────
 
 function extractChronologicalOt(): void {
-	const content = readSfm('77-BAK-ENG[B]CPDV2009[pd].p.sfm');
+	const content = readSfm(SRC_DIR, '77-BAK-ENG[B]CPDV2009[pd].p.sfm');
 	const lines = parseLines(content);
 
 	let inSection = false;
@@ -505,7 +465,7 @@ function extractChronologicalOt(): void {
 		paragraphs.push({ text, notes: [] });
 	}
 
-	writeJson('back', 'chronological-ot', {
+	writeJson(OUT_DIR, 'back', 'chronological-ot', {
 		section: 'drc-chronological-ot',
 		title: title,
 		paragraphs

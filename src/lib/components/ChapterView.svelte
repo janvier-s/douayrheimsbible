@@ -7,7 +7,7 @@
 	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
 	import { tokenizeCrossRef } from '$lib/search/crossRefParser';
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
-	import type { OsisRange } from '$lib/search/reference';
+	import type { OsisRange } from '$lib/search/osis';
 	import VerseList from './VerseList.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { prefs } from '$lib/stores/prefs';
@@ -73,6 +73,9 @@
 			: `${bookMeta.slug === 'psalms' ? 'Psalm' : 'Chapter'} ${chapter.chapter}`
 	);
 
+	// Seeded from the prop, then moved by verse clicks. Kept in sync with later
+	// `targetVerse` changes by the `run()` block below, so the
+	// `state_referenced_locally` warning here is expected.
 	let activeVerse: number | undefined = $state(targetVerse);
 
 	/** Strip trailing cross-reference text that follows the last </na> marker group.

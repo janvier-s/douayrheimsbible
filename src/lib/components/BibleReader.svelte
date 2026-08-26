@@ -23,7 +23,6 @@
 	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { createPanelResize } from '$lib/utils/panelResize';
 	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
-	import StudyPanel from './StudyPanel.svelte';
 	import PageFooter from './PageFooter.svelte';
 	import { isMobile } from '$lib/stores/mobile';
 	import { suspendChrome } from '$lib/stores/chrome';
@@ -88,6 +87,9 @@
 		totalChapters: number;
 	}
 
+	// Seeded from the initial props, then grown by infinite scroll and reset
+	// wholesale on navigation (see the `chapters = [...]` assignments below).
+	// The `state_referenced_locally` warnings on these three are expected.
 	let chapters: LoadedChapter[] = $state([
 		{
 			bookMeta: initialBookMeta,
@@ -121,6 +123,28 @@
 		if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
 	});
 	let mobileStudyMode = $derived($isMobile && $prefs.readingMode === 'study');
+
+	/** Study panel, loaded on first entry into study mode.
+	 *
+	 *  The panel and everything under it (AnnotationProse, crossRefParser and the
+	 *  ~150KB bible-passage-reference-parser grammar) used to sit in this route's
+	 *  eager module graph even though the default reading mode is 'reading' and
+	 *  the panel renders at opacity 0 until study mode is on. Server-rendering it
+	 *  produced only an empty shell, so nothing is lost by deferring it.
+	 *
+	 *  Once loaded it stays loaded: toggling back to reading mode hides the panel
+	 *  via the wrapper's width/opacity transition rather than unmounting it, which
+	 *  keeps the panel's own scroll and tab state across toggles. */
+	let StudyPanel: typeof import('./StudyPanel.svelte').default | null = $state(null);
+	let studyPanelRequested = false;
+
+	$effect(() => {
+		if ($prefs.readingMode !== 'study' || studyPanelRequested) return;
+		studyPanelRequested = true;
+		import('./StudyPanel.svelte').then((m) => {
+			StudyPanel = m.default;
+		});
+	});
 	let mobilePanelOpen = $state(false);
 	run(() => {
 		if (!mobileStudyMode) mobilePanelOpen = false;
@@ -595,11 +619,13 @@
 			</div>
 		</div>
 		<div bind:this={panelEl} class="shrink-0 h-full">
-			<StudyPanel
-				bookData={currentBookData}
-				{translationId}
-				onClose={mobileStudyMode ? () => (mobilePanelOpen = false) : null}
-			/>
+			{#if StudyPanel}
+				<StudyPanel
+					bookData={currentBookData}
+					{translationId}
+					onClose={mobileStudyMode ? () => (mobilePanelOpen = false) : null}
+				/>
+			{/if}
 		</div>
 	</div>
 </div>

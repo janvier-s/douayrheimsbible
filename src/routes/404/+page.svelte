@@ -2,7 +2,7 @@
 	<title>404 — Page Not Found · Douay-Rheims Bible</title>
 </svelte:head>
 
-<main class="error-page">
+<main id="main-content" class="error-page">
 	<div class="error-inner">
 		<div class="ornament" aria-hidden="true">✦</div>
 

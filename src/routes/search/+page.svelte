@@ -35,6 +35,10 @@
 
 	let reducedMotion = $state(false);
 	let inputEl: HTMLInputElement | undefined = $state();
+	// query/mode/scope are seeded from the URL-derived `data`, then owned by the
+	// user's typing. Later `data` changes are picked up deliberately via the
+	// lastData* comparison below, so the `state_referenced_locally` warnings on
+	// these are expected rather than missed reactivity.
 	let query = $state(data.query);
 	let mode: SearchMode = $state(data.mode);
 	let scope: SearchScope = $state(data.scope);

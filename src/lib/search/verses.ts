@@ -1,4 +1,4 @@
-import type { OsisRange } from './reference';
+import type { OsisRange } from './osis';
 import type { Verse } from '$lib/data/types';
 import { loadBook, getChapter } from '$lib/data/loader';
 import { OSIS_TO_SLUG } from './resolve';
