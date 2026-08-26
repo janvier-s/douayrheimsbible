@@ -131,16 +131,22 @@ screen-reader reading flow is unaffected.
 
 ### Open: paragraph view has a functional gap, not just an accessibility one
 
-`paragraphView` defaults to **true**, and that branch has no verse-level click handler at
-all, only marker clicks. On `/odr/1-corinthians/1` in the default view, markers exist for
-verses 1, 12, 14, 19, 25 and 31. Verse 5's annotation exists and opens fine in verse-list
-view, but in paragraph view **no user of any input method can reach it**.
+**Correction to an earlier draft of this section:** it claimed `paragraphView` defaults to
+`true`. It does not. `DEFAULTS.paragraphView` is `false` (`prefs.ts:59`) and no migration
+overrides it. The `true` reading came from stale `localStorage` in a shared browser profile
+being mistaken for the default. Verified with a cleared profile: a fresh visitor gets
+`paragraphView: false` and the verse-list view (31 `<li>`, 0 paragraph blocks).
 
-This is a pre-existing gap that predates this review, and closing it means deciding how an
-annotated verse should be indicated in flowing paragraph text. That is a visual design call,
-so it is left open rather than guessed at. Options: give paragraph view the same
-annotated-verse affordance the verse list has, render markers for markerless annotations, or
-accept that annotations are a verse-view feature and say so in the UI.
+The gap itself is real but narrower than that draft implied. The paragraph-view branch has
+no verse-level click handler, only marker clicks. On `/odr/1-corinthians/1` in paragraph
+view, markers exist for verses 1, 12, 14, 19, 25 and 31; verse 5's annotation opens fine in
+verse-list view but cannot be reached by any input method in paragraph view.
+
+Because the default is verse view, this affects only readers who deliberately turned
+paragraph view on. Closing it means deciding how an annotated verse should be indicated in
+flowing paragraph text, which is a visual design call, so it is left open. Options: give
+paragraph view the same annotated-verse affordance the verse list has, render markers for
+markerless annotations, or state in the UI that annotations are a verse-view feature.
 
 ---
 
