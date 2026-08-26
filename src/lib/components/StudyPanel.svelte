@@ -20,24 +20,23 @@
 		loadGlossa,
 		hasSidecar
 	} from '$lib/data/loader';
-	import type { HaydockCommentaryEntry, HaydockIntro, GlossaEntry } from '$lib/data/loader';
 	import fathersManifest from '../../../static/data/fathers/manifest.json';
-	import type {
-		BookData,
-		ChapterAnnotations,
-		AnnotationEntry,
-		Verse,
-		ConfChapterFootnotes,
-		ConfChapterCommentary,
-		ConfIntro
-	} from '$lib/data/types';
-	import type { TranslationNote, TranslationCrossRef } from '$lib/data/translation-types';
+	import type { BookData, ChapterAnnotations } from '$lib/data/types';
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import CrossRefText from './CrossRefText.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { linkifyConfRefs, linkifyKnoxRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
 	import { createVerseRefTooltip } from '$lib/utils/verseRefTooltip.svelte';
+	import {
+		tabLabel,
+		buildVisibleTabs,
+		buildVerseSections,
+		formatHaydockAttribution,
+		formatTrailingCitation,
+		groupByVerse
+	} from './studyPanelUtils';
+	import { createChapterResource } from '$lib/utils/chapterResource.svelte';
 	import { getBookBySlug } from '$lib/data/books';
 	import { TRANSLATIONS } from '$lib/stores/compare';
 
@@ -51,134 +50,20 @@
 
 	// ── Translation notes (DRC/CPDV) ────────────────────────────────
 	// Follows the same pattern as the ODR annotation loader below.
-	let translationNotes: TranslationNote[] | null = $state(null);
-	let translationNotesLoading = $state(false);
-	let lastTranslationNotesKey = '';
 
 	// ── Translation cross-refs (DRC) ────────────────────────────────
-	let translationCrossRefs: TranslationCrossRef[] | null = $state(null);
-	let translationCrossRefsLoading = $state(false);
-	let lastTranslationCrossRefsKey = '';
 
 	// ── Haydock commentary ──────────────────────────────────────────
-	let haydockCommentary: HaydockCommentaryEntry[] | null = $state(null);
-	let haydockCommentaryLoading = $state(false);
-	let lastHaydockCommentaryKey = '';
 
 	// ── Glossa Ordinaria (Vulgate) ──────────────────────────────────
-	let glossa: GlossaEntry[] | null = $state(null);
-	let glossaLoading = $state(false);
-	let lastGlossaKey = '';
 
 	// ── Haydock intro ───────────────────────────────────────────────
-	let haydockIntro: HaydockIntro | null = $state(null);
-	let lastHaydockIntroSlug = '';
 
 	// ── Confraternity intro ─────────────────────────────────────────
-	let confIntro: ConfIntro | null = $state(null);
-	let lastConfIntroSlug = '';
 
 	// ── Confraternity footnotes ───────────────────────────────────
-	let confFootnotes: ConfChapterFootnotes | null = $state(null);
-	let confFootnotesLoading = $state(false);
-	let lastConfFootnotesKey = '';
 
 	// ── Confraternity commentary ──────────────────────────────────
-	let confCommentary: ConfChapterCommentary | null = $state(null);
-	let confCommentaryLoading = $state(false);
-	let lastConfCommentaryKey = '';
-
-	function tabLabel(title: string): string {
-		if (/argument.*in general/i.test(title)) return 'General';
-		if (/argument/i.test(title)) return 'Argument';
-		if (/sum.*old/i.test(title)) return 'Sum (OT)';
-		if (/sum.*new/i.test(title)) return 'Sum (NT)';
-		if (/sum/i.test(title)) return 'Sum';
-		if (/moyses|moses/i.test(title)) return 'Of Moyses';
-		if (/recapitulation/i.test(title)) return 'Recapitulation';
-		if (/continuance.*church/i.test(title)) return 'Continuance';
-		if (/augustin/i.test(title)) return 'S. Augustin';
-		if (/end of the acts/i.test(title)) return 'End of Acts';
-		if (/other apostles/i.test(title)) return 'The Other Apostles';
-		if (/proemial/i.test(title)) return 'Proemial';
-		if (/interpretation.*scripture/i.test(title)) return 'Interpretation';
-		if (/annotations.*concerning/i.test(title)) return 'Annotations';
-		if (/prologue/i.test(title)) return 'Prologue';
-		if (/sapiential/i.test(title)) return 'Sapiential Books';
-		if (/prophetical/i.test(title)) return 'Prophetical Books';
-		if (/twelve less/i.test(title)) return 'Twelve Prophets';
-		if (/machabees.*historical/i.test(title)) return 'Machabees';
-		if (/epistle.*hebrews/i.test(title)) return 'Epistle';
-		if (/third book.*esdras/i.test(title)) return '3 Esdras';
-		if (/prophecy of/i.test(title)) return 'Prophecy';
-		if (/remonstrance/i.test(title)) return 'Remonstrance';
-		if (/general annotations/i.test(title)) return 'Annotations';
-		if (/brief note/i.test(title)) return 'Note';
-		if (/parables/i.test(title)) return 'Parables';
-		if (/declaration/i.test(title)) return 'Declaration';
-		if (/annotations upon/i.test(title)) return 'Annotations';
-		if (/catholic epistle/i.test(title)) return 'Catholic Epistles';
-		if (/sum.*gospels/i.test(title)) return 'Sum (Gospels)';
-		return title
-			.replace(/^the\s+/i, '')
-			.split(/\s+/)
-			.slice(0, 2)
-			.join(' ');
-	}
-
-	type TabDef = { id: StudyTab; label: string };
-
-	function buildVisibleTabs(
-		tid: string,
-		hasIntros: boolean,
-		hasArticles: boolean,
-		hasEndMatters: boolean,
-		confIntro: ConfIntro | null,
-		haydockIntro: HaydockIntro | null
-	): TabDef[] {
-		if (tid === 'odr') {
-			return [
-				...(hasIntros ? [{ id: 'intro' as StudyTab, label: 'Intro' }] : []),
-				{ id: 'annotations' as StudyTab, label: 'Annotations' },
-				{ id: 'notes' as StudyTab, label: 'Notes' },
-				{ id: 'cross-refs' as StudyTab, label: 'Cross-Refs' },
-				...(hasArticles ? [{ id: 'article' as StudyTab, label: 'Article' }] : []),
-				...(hasEndMatters ? [{ id: 'end' as StudyTab, label: 'End' }] : [])
-			];
-		}
-		if (tid === 'conf') {
-			const tabs: TabDef[] = [];
-			if (confIntro && (confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)) {
-				tabs.push({ id: 'intro', label: 'Intro' });
-			}
-			tabs.push({ id: 'footnotes', label: 'Footnotes' });
-			tabs.push({ id: 'commentary', label: 'Commentary' });
-			return tabs;
-		}
-		if (tid === 'drc') {
-			return [
-				{ id: 'notes', label: 'Notes' },
-				{ id: 'cross-refs', label: 'Cross-Refs' }
-			];
-		}
-		if (tid === 'haydock') {
-			const tabs: TabDef[] = [];
-			if (haydockIntro && haydockIntro.paragraphs.length > 0) {
-				tabs.push({ id: 'intro', label: 'Intro' });
-			}
-			tabs.push({ id: 'commentary', label: 'Commentary' });
-			tabs.push({ id: 'cross-refs', label: 'Cross-Refs' });
-			return tabs;
-		}
-		if (tid === 'cpdv' || tid === 'knox') {
-			return [{ id: 'notes', label: 'Notes' }];
-		}
-		if (tid === 'vul') {
-			// Always shown, including the 18 books the Glossa never covered.
-			return [{ id: 'glossa', label: 'Glossa' }];
-		}
-		return [];
-	}
 
 	// When book changes, set the active tab based on user preference and intro availability
 	// Track bookData identity so this only fires on book navigation, not on sub-tab clicks
@@ -196,118 +81,6 @@
 	let lastAnnotationKey = '';
 
 	// ── Build verse sections for the commentary tab ──────────────────
-
-	interface VerseSection {
-		verse: number;
-		label: string;
-		verseData: Verse | null;
-		annotationEntries: AnnotationEntry[];
-	}
-
-	function buildVerseSections(
-		chapter: typeof currentChapterData,
-		anns: ChapterAnnotations | null
-	): VerseSection[] {
-		if (!chapter) return [];
-		// Guard against stale annotations from a previously-visited chapter
-		const safeAnns = anns?.chapter === chapter.chapter ? anns : null;
-		const sections: VerseSection[] = [];
-
-		// Verse 0 is a summary continuation — merge its notes into the Summary section
-		const verse0 = chapter.verses.find((v) => v.verse === 0);
-		const hasSummaryNotes = chapter.summary_notes && chapter.summary_notes.length > 0;
-		const hasVerse0Content =
-			verse0 &&
-			((verse0.notes && verse0.notes.length > 0) ||
-				(verse0.cross_refs && verse0.cross_refs.length > 0));
-
-		if (hasSummaryNotes || hasVerse0Content) {
-			sections.push({
-				verse: 0,
-				label: 'Summary',
-				verseData: verse0 ?? null,
-				annotationEntries: []
-			});
-		}
-
-		// Verse sections (skip verse 0 — handled above)
-		for (const v of chapter.verses) {
-			if (v.verse === 0) continue;
-			const hasCrossRefs = v.cross_refs && v.cross_refs.length > 0;
-			const hasNotes = v.notes && v.notes.length > 0;
-			const annEntries = safeAnns?.annotations.filter((a) => a.verse === v.verse) ?? [];
-			const hasAnnotations = v.has_annotation && annEntries.length > 0;
-
-			if (hasCrossRefs || hasNotes || hasAnnotations) {
-				sections.push({
-					verse: v.verse,
-					label: `Verse ${v.verse}`,
-					verseData: v,
-					annotationEntries: annEntries
-				});
-			}
-		}
-
-		return sections;
-	}
-
-	/** Format trailing (Author) attribution as a styled citation line, per paragraph */
-	function formatHaydockAttribution(html: string): string {
-		return html
-			.split('<hr>')
-			.map((seg) =>
-				seg.replace(
-					/\(([A-Z][a-zA-Zé.'"  ]+)\)\s*$/,
-					'<br><span class="haydock-attribution">— $1</span>'
-				)
-			)
-			.join('<hr>');
-	}
-
-	/** If the note ends with a non-verse citation — either a trailing italic block such
-	 *  as "<i>Theod. q. 34. in Deut.</i>" or a plain-text patristic citation like
-	 *  "S. Aug. l. 4. de Gen. ad lit. c. 12." — promote it to its own line preceded
-	 *  by an em-dash. Apply AFTER linkifyDrcRefs so recognised verse references
-	 *  (already wrapped in <a class="verse-ref">) are excluded. */
-	function formatTrailingCitation(html: string): string {
-		const italic = html.match(/^([\s\S]+?[.?!])\s+(<i>((?:(?!<\/i>).)+)<\/i>)\s*$/);
-		if (italic) {
-			const inner = italic[3];
-			// Skip italics that resolve to nothing but Bible references (already
-			// linkified to <a class="verse-ref">) or bare verse markers like
-			// "v. 7. & 11.". Drop anchor tags + their content first so the remaining
-			// text is whatever wasn't a recognised reference; require a 3+ letter
-			// word there (e.g. "Aug.", "Theod.", "civit.") to format as a citation.
-			const withoutAnchors = inner.replace(/<a\b[^>]*>[\s\S]*?<\/a>/g, '');
-			const remaining = withoutAnchors.replace(/<[^>]+>/g, '');
-			if (/\b[A-Za-z]{3,}\b/.test(remaining)) {
-				return `${italic[1]}<br /><span class="note-citation">— ${italic[2]}</span>`;
-			}
-		}
-		// Plain-text patristic citation: must start with a known abbreviation prefix and
-		// contain at least two short "abbr." chunks so we don't catch normal prose.
-		const plain = html.match(
-			/^([\s\S]+?[.?!])\s+((?:S\.|St\.|D\.|Theod\.|Cf\.) (?:[^<.]*\.\s*){2,}[^<.]*\.)\s*$/
-		);
-		if (plain) {
-			return `${plain[1]}<br /><span class="note-citation">— ${plain[2]}</span>`;
-		}
-		return html;
-	}
-
-	/** Group flat commentary entries by verse for section rendering */
-	function groupByVerse<T extends { verse: number }>(
-		entries: T[]
-	): { verse: number; entries: T[] }[] {
-		const map = new Map<number, T[]>();
-		for (const e of entries) {
-			if (!map.has(e.verse)) map.set(e.verse, []);
-			map.get(e.verse)!.push(e);
-		}
-		return Array.from(map.entries())
-			.sort((a, b) => a[0] - b[0])
-			.map(([verse, entries]) => ({ verse, entries }));
-	}
 
 	// ── Shareable anchor links ───────────────────────────────────────
 
@@ -589,166 +362,77 @@
 	// ── Current chapter data ─────────────────────────────────────────
 
 	let currentChapterNum = $derived($readingPosition?.chapter ?? 1);
-	run(() => {
-		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
-		if (hasTranslationNotes && currentBookSlug && key !== lastTranslationNotesKey) {
-			lastTranslationNotesKey = key;
-			const id = translationId;
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			translationNotesLoading = true;
-			translationNotes = null;
-			loadTranslationNotes(id, slug, chNum, fetch)
-				.then((data) => {
-					if (`${id}/${slug}/${chNum}` === lastTranslationNotesKey) {
-						translationNotes = data;
-						translationNotesLoading = false;
-					}
-				})
-				.catch(() => {
-					if (`${id}/${slug}/${chNum}` === lastTranslationNotesKey) {
-						translationNotesLoading = false;
-					}
-				});
-		}
+	// ── Sidecar resources ────────────────────────────────────────────
+	// Each is keyed on the current translation/book/chapter; returning null from
+	// key() disables that resource and clears it. See chapterResource.svelte.ts.
+	const chapterKey = () => (currentBookSlug ? `${currentBookSlug}/${currentChapterNum}` : null);
+	const reobserve = () =>
+		tick()
+			.then(() => tick())
+			.then(setupPanelObserver);
+
+	const notesRes = createChapterResource({
+		key: () =>
+			hasTranslationNotes && currentBookSlug
+				? `${translationId}/${currentBookSlug}/${currentChapterNum}`
+				: null,
+		load: () => loadTranslationNotes(translationId, currentBookSlug, currentChapterNum, fetch)
 	});
-	run(() => {
-		const key = `${translationId}/${currentBookSlug}/${currentChapterNum}`;
-		if ((isDrc || isHaydock) && currentBookSlug && key !== lastTranslationCrossRefsKey) {
-			lastTranslationCrossRefsKey = key;
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			translationCrossRefsLoading = true;
-			translationCrossRefs = null;
-			loadTranslationCrossRefs(isDrc ? 'drc' : 'haydock', slug, chNum, fetch)
-				.then((data) => {
-					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
-						translationCrossRefs = data;
-						translationCrossRefsLoading = false;
-					}
-				})
-				.catch(() => {
-					if (`${translationId}/${slug}/${chNum}` === lastTranslationCrossRefsKey) {
-						translationCrossRefsLoading = false;
-					}
-				});
-		} else if (!isDrc && !isHaydock) {
-			translationCrossRefs = null;
-		}
+
+	const crossRefsRes = createChapterResource({
+		key: () => ((isDrc || isHaydock) && currentBookSlug ? chapterKey() : null),
+		load: () =>
+			loadTranslationCrossRefs(isDrc ? 'drc' : 'haydock', currentBookSlug, currentChapterNum, fetch)
 	});
-	run(() => {
-		const key = `haydock/${currentBookSlug}/${currentChapterNum}`;
-		if (isHaydock && currentBookSlug && key !== lastHaydockCommentaryKey) {
-			lastHaydockCommentaryKey = key;
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			haydockCommentaryLoading = true;
-			haydockCommentary = null;
-			loadHaydockCommentary(slug, chNum, fetch)
-				.then((data) => {
-					if (`haydock/${slug}/${chNum}` === lastHaydockCommentaryKey) {
-						haydockCommentary = data;
-						haydockCommentaryLoading = false;
-						// After Svelte renders the commentary sections, wire up the scroll observer
-						tick()
-							.then(() => tick())
-							.then(setupPanelObserver);
-					}
-				})
-				.catch(() => {
-					if (`haydock/${currentBookSlug}/${currentChapterNum}` === lastHaydockCommentaryKey) {
-						haydockCommentaryLoading = false;
-					}
-				});
-		} else if (!isHaydock) {
-			haydockCommentary = null;
-		}
+
+	const haydockCommentaryRes = createChapterResource({
+		key: () => (isHaydock && currentBookSlug ? chapterKey() : null),
+		load: () => loadHaydockCommentary(currentBookSlug, currentChapterNum, fetch),
+		onLoaded: reobserve
 	});
-	run(() => {
-		const key = `vul/${currentBookSlug}/${currentChapterNum}`;
-		if (isVul && currentBookSlug && key !== lastGlossaKey) {
-			lastGlossaKey = key;
-			const slug = currentBookSlug;
-			const chNum = currentChapterNum;
-			glossaLoading = true;
-			glossa = null;
-			loadGlossa(slug, chNum, fetch)
-				.then((data) => {
-					if (`vul/${slug}/${chNum}` === lastGlossaKey) {
-						glossa = data;
-						glossaLoading = false;
-						// After Svelte renders the sections, wire up the scroll observer
-						tick()
-							.then(() => tick())
-							.then(setupPanelObserver);
-					}
-				})
-				.catch(() => {
-					if (`vul/${currentBookSlug}/${currentChapterNum}` === lastGlossaKey) {
-						glossaLoading = false;
-					}
-				});
-		} else if (!isVul) {
-			glossa = null;
-		}
+
+	const glossaRes = createChapterResource({
+		key: () => (isVul && currentBookSlug ? chapterKey() : null),
+		load: () => loadGlossa(currentBookSlug, currentChapterNum, fetch),
+		onLoaded: reobserve
 	});
-	run(() => {
-		if (isHaydock && currentBookSlug && currentBookSlug !== lastHaydockIntroSlug) {
-			lastHaydockIntroSlug = currentBookSlug;
-			const slug = currentBookSlug;
-			loadHaydockIntro(slug, fetch)
-				.then((data) => {
-					if (slug === lastHaydockIntroSlug) haydockIntro = data;
-				})
-				.catch(() => {});
-		} else if (!isHaydock) {
-			haydockIntro = null;
-		}
+
+	const haydockIntroRes = createChapterResource({
+		key: () => (isHaydock && currentBookSlug ? currentBookSlug : null),
+		load: (slug) => loadHaydockIntro(slug, fetch)
 	});
-	run(() => {
-		if (!isOdr && hasTranslationIntro && currentBookSlug && currentBookSlug !== lastConfIntroSlug) {
-			lastConfIntroSlug = currentBookSlug;
-			const slug = currentBookSlug;
-			confIntro = null;
-			loadConfIntro(slug, fetch).then((data) => {
-				if (slug === lastConfIntroSlug) {
-					confIntro = data;
-				}
-			});
-		}
+
+	const confIntroRes = createChapterResource({
+		key: () => (!isOdr && hasTranslationIntro && currentBookSlug ? currentBookSlug : null),
+		load: (slug) => loadConfIntro(slug, fetch)
 	});
-	run(() => {
-		if (isConf && currentBookSlug && currentChapterNum) {
-			const key = `${currentBookSlug}/${currentChapterNum}`;
-			if (key !== lastConfFootnotesKey) {
-				lastConfFootnotesKey = key;
-				confFootnotesLoading = true;
-				confFootnotes = null;
-				loadConfFootnotes(currentBookSlug, currentChapterNum, fetch).then((data) => {
-					if (key === lastConfFootnotesKey) {
-						confFootnotes = data;
-						confFootnotesLoading = false;
-					}
-				});
-			}
-		}
+
+	const confFootnotesRes = createChapterResource({
+		key: () => (isConf && currentBookSlug ? chapterKey() : null),
+		load: () => loadConfFootnotes(currentBookSlug, currentChapterNum, fetch)
 	});
-	run(() => {
-		if (isConf && currentBookSlug && currentChapterNum) {
-			const key = `${currentBookSlug}/${currentChapterNum}`;
-			if (key !== lastConfCommentaryKey) {
-				lastConfCommentaryKey = key;
-				confCommentaryLoading = true;
-				confCommentary = null;
-				loadConfCommentary(currentBookSlug, currentChapterNum, fetch).then((data) => {
-					if (key === lastConfCommentaryKey) {
-						confCommentary = data;
-						confCommentaryLoading = false;
-					}
-				});
-			}
-		}
+
+	const confCommentaryRes = createChapterResource({
+		key: () => (isConf && currentBookSlug ? chapterKey() : null),
+		load: () => loadConfCommentary(currentBookSlug, currentChapterNum, fetch)
 	});
+
+	// Aliases so the markup below reads the same as before the extraction.
+	let translationNotes = $derived(notesRes.data);
+	let translationNotesLoading = $derived(notesRes.loading);
+	let translationCrossRefs = $derived(crossRefsRes.data);
+	let translationCrossRefsLoading = $derived(crossRefsRes.loading);
+	let haydockCommentary = $derived(haydockCommentaryRes.data);
+	let haydockCommentaryLoading = $derived(haydockCommentaryRes.loading);
+	let glossa = $derived(glossaRes.data);
+	let glossaLoading = $derived(glossaRes.loading);
+	let haydockIntro = $derived(haydockIntroRes.data);
+	let confIntro = $derived(confIntroRes.data);
+	let confFootnotes = $derived(confFootnotesRes.data);
+	let confFootnotesLoading = $derived(confFootnotesRes.loading);
+	let confCommentary = $derived(confCommentaryRes.data);
+	let confCommentaryLoading = $derived(confCommentaryRes.loading);
+
 	let intros = $derived(bookData?.intros ?? []);
 	let hasIntros = $derived(intros.length > 0);
 	let endMatters = $derived(bookData?.endMatters ?? []);
@@ -805,11 +489,7 @@
 					if (preferred === 'footnotes' || preferred === 'commentary') {
 						defaultTab = preferred;
 					}
-					if (
-						preferred === 'intro' &&
-						confIntro &&
-						(confIntro.bibleIntro.length > 0 || confIntro.commentaryIntro.length > 0)
-					) {
+					if (preferred === 'intro' && confIntro && confIntro.length > 0) {
 						defaultTab = 'intro';
 					}
 				} else if (isHaydock) {
@@ -1027,32 +707,6 @@
 					class="seg-slider"
 					style="width: {100 /
 						intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
-					aria-hidden="true"
-				></div>
-			</div>
-		</div>
-	{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
-		<div class="subtab-bar shrink-0">
-			<div class="segmented-control" style="grid-template-columns: repeat(2, 1fr)">
-				<button
-					class="seg-btn"
-					class:seg-active={$studyPanel.activeConfIntroTab === 'bible'}
-					onclick={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'bible' }))}
-				>
-					Confraternity Bible
-				</button>
-				<button
-					class="seg-btn"
-					class:seg-active={$studyPanel.activeConfIntroTab === 'commentary'}
-					onclick={() => studyPanel.update((s) => ({ ...s, activeConfIntroTab: 'commentary' }))}
-				>
-					Supplemental Commentary
-				</button>
-				<div
-					class="seg-slider"
-					style="width: 50%; transform: translateX({$studyPanel.activeConfIntroTab === 'bible'
-						? 0
-						: 100}%)"
 					aria-hidden="true"
 				></div>
 			</div>
@@ -1500,17 +1154,10 @@
 					<!-- ═══ Confraternity: Intro tab ═══ -->
 				{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
 					<div class="content-block">
-						{#if $studyPanel.activeConfIntroTab === 'bible'}
-							<p class="content-eyebrow">Introduction · Confraternity Bible</p>
-							{#each confIntro.bibleIntro as para}
-								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-							{/each}
-						{:else}
-							<p class="content-eyebrow">Introduction · Supplemental Commentary</p>
-							{#each confIntro.commentaryIntro as para}
-								<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-							{/each}
-						{/if}
+						<p class="content-eyebrow">Introduction · Confraternity Bible</p>
+						{#each confIntro as para}
+							<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+						{/each}
 					</div>
 
 					<!-- ═══ Confraternity: Footnotes tab ═══ -->

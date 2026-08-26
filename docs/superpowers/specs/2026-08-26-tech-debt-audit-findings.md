@@ -319,6 +319,37 @@ which is a user-visible inconsistency introduced by copy-paste.
 **Fix.** Extract a `createVerseRefTooltip()` utility covering the two identical sites. Leave
 `ChapterView` alone or pass the delay as a parameter and pick one value deliberately.
 
+### 2a. Two pre-existing bugs found while decomposing StudyPanel
+
+Both were confirmed against the committed tree before the refactor, so neither was
+introduced by it. Both are fixed.
+
+**`ConfIntro` described a shape that exists nowhere.** The type declared
+`{ book, bibleIntro: string[], commentaryIntro: string[] }`, but `prepare-data.ts` writes
+the source file's `introduction` array, so every `conf-intros/*.json` is a flat
+`string[]`. `loadConfIntro` cast the JSON to the wrong type, and `buildVisibleTabs` then
+read `confIntro.bibleIntro.length` on an array. Result: **every Confraternity page threw a
+TypeError, and the Intro tab never appeared.** Reproduced at HEAD at
+`StudyPanel.svelte:295`.
+
+Fixed by making the type match the data (`export type ConfIntro = string[]`) and rendering
+the flat paragraph list. The intro now appears. The bible/commentary segmented control was
+removed with it: the source has no such split, so both halves of the toggle drew from
+fields that never existed. `activeConfIntroTab` is now unused in the studyPanel store and
+is trivial cleanup for later.
+
+**Infinite 404 retry loop on the first book of a partial translation.** Both
+`loadNextChapter` and `loadPrevChapter` end with `checkRollingPreload()`, which calls
+straight back into them, and neither recorded a failure. `getPrevNavBook('matthew')`
+returns `malachie`, which does not exist in the New-Testament-only Confraternity text, so
+scrolling to the top of `/conf/matthew/1` produced an unbounded stream of 404s: **1,303
+requests observed in one sitting.**
+
+Fixed with a `failedChapters` set consulted before each attempt and written on both the
+throw path and the empty-result path. Measured on the same reproduction: **85 requests
+before the fix, 1 after.** Verified that ordinary infinite scroll still works in both
+directions (forward through Genesis 11 with front-pruning, then back to Genesis 1).
+
 ### 2. StudyPanel.svelte is 2,581 lines
 
 Composition: 983 lines of script, ~887 markup, ~711 style. It mixes tab construction, scroll
@@ -326,8 +357,33 @@ observation, an IntersectionObserver, verse-section registration, clipboard hand
 handling, and tooltip logic.
 
 For scale, April decomposed `FathersCommentaryPanel` as a P2 item when it hit **531 lines**.
-StudyPanel is nearly five times that and has never been split. Same treatment applies: lift
-the tab model and the scroll/observer logic into `$lib/utils`, leaving a panel shell.
+StudyPanel is nearly five times that and has never been split.
+
+**Done, in two steps. 2,541 → 2,187 lines (354 out, 14%).**
+
+1. **`src/lib/components/studyPanelUtils.ts`** takes the six pure functions (`tabLabel`,
+   `buildVisibleTabs`, `buildVerseSections`, `formatHaydockAttribution`,
+   `formatTrailingCitation`, `groupByVerse`). Now covered by **24 unit tests** in
+   `tests/unit/study-panel-utils.test.ts`, where before none of this was testable without
+   mounting the component.
+2. **`src/lib/utils/chapterResource.svelte.ts`** replaces eight copies of the same
+   twenty-line keyed-fetch-with-race-guard block. The copies had drifted: the Haydock
+   loader compared live values rather than the ones captured before the await, so a failed
+   fetch during navigation could leave `loading` stuck true, and the two Confraternity
+   loaders had no error path at all. One correct implementation now serves all eight.
+   `$derived` aliases keep every reference in the ~1,300 lines of markup unchanged.
+
+The `annotations` loader was deliberately left inline: it resets panel scroll, clears
+observer state and updates the studyPanel store before fetching, and folding that into the
+factory would have meant adding hooks that only one caller uses.
+
+Verified in a browser across all five panel translations (ODR annotations, DRC notes and
+cross-refs, Haydock intro and commentary, Vulgate glossa, Confraternity footnotes,
+commentary and intro), plus lint, 0 type errors, 238 tests and a clean build.
+
+Still worth doing later: the panel keeps ~700 lines of markup and ~700 of style, and 20 of
+the codebase's 59 `run()` shims live here. The tab bar is the obvious next component to
+lift out.
 
 ### 3. Accessibility: core verse interaction is mouse-only
 
