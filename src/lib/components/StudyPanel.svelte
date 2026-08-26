@@ -25,6 +25,8 @@
 	import AnnotationProse from './AnnotationProse.svelte';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import CrossRefText from './CrossRefText.svelte';
+	import StudyTabBar from './StudyTabBar.svelte';
+	import SegmentedControl from './SegmentedControl.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { linkifyConfRefs, linkifyKnoxRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
 	import { createVerseRefTooltip } from '$lib/utils/verseRefTooltip.svelte';
@@ -451,13 +453,6 @@
 			studyPanel.update((s) => ({ ...s, activeTab: visibleTabs[0].id }));
 		}
 	});
-	let showTabBar = $derived(visibleTabs.length > 1);
-	let sliderIndex = $derived(
-		Math.max(
-			0,
-			visibleTabs.findIndex((t) => t.id === $studyPanel.activeTab)
-		)
-	);
 	run(() => {
 		if (bookData && bookData.book !== prevBook) {
 			prevBook = bookData.book;
@@ -659,101 +654,30 @@
 			{/if}
 		</div>
 
-		<!-- Tabs with sliding underline -->
-		{#if showTabBar}
-			<div
-				class="tab-row relative flex px-[4px] gap-[2px]"
-				role="tablist"
-				aria-label="Study panel sections"
-			>
-				{#each visibleTabs as tab}
-					<button
-						role="tab"
-						aria-selected={$studyPanel.activeTab === tab.id}
-						class="tab-btn flex-1 pb-[9px] pt-[2px]"
-						class:tab-active={$studyPanel.activeTab === tab.id}
-						onclick={() => switchTab(tab.id)}
-					>
-						{tab.label}
-					</button>
-				{/each}
-				<!-- Single sliding underline -->
-				<div
-					class="tab-slider"
-					style="width: calc({100 /
-						visibleTabs.length}% - 4px); transform: translateX({sliderIndex * 100}%)"
-					aria-hidden="true"
-				></div>
-			</div>
-		{/if}
+		<StudyTabBar tabs={visibleTabs} activeTab={$studyPanel.activeTab} onSelect={switchTab} />
 
 		<div class="border-b border-border"></div>
 	</div>
 
 	<!-- Sub-tab segmented controls (outside scroll — applies to any translation) -->
-	{#if $studyPanel.activeTab === 'intro' && isOdr && intros.length > 1}
-		<div class="subtab-bar shrink-0">
-			<div class="segmented-control" style="grid-template-columns: repeat({intros.length}, 1fr)">
-				{#each intros as intro, i}
-					<button
-						class="seg-btn"
-						class:seg-active={$studyPanel.activeIntroIndex === i}
-						onclick={() => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
-					>
-						{tabLabel(intro.title)}
-					</button>
-				{/each}
-				<div
-					class="seg-slider"
-					style="width: {100 /
-						intros.length}%; transform: translateX({$studyPanel.activeIntroIndex * 100}%)"
-					aria-hidden="true"
-				></div>
-			</div>
-		</div>
-	{:else if $studyPanel.activeTab === 'article' && isOdr && articles.length > 1}
-		<div class="subtab-bar shrink-0">
-			<div class="segmented-control" style="grid-template-columns: repeat({articles.length}, 1fr)">
-				{#each articles as art, i}
-					<button
-						class="seg-btn"
-						class:seg-active={$studyPanel.activeArticleIndex === i}
-						onclick={() => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
-					>
-						{tabLabel(art.title)}
-					</button>
-				{/each}
-				<div
-					class="seg-slider"
-					style="width: {100 /
-						articles.length}%; transform: translateX({$studyPanel.activeArticleIndex * 100}%)"
-					aria-hidden="true"
-				></div>
-			</div>
-		</div>
-	{:else if $studyPanel.activeTab === 'end' && isOdr && endMatters.length > 1}
-		<div class="subtab-bar shrink-0">
-			<div
-				class="segmented-control"
-				style="grid-template-columns: repeat({endMatters.length}, 1fr)"
-			>
-				{#each endMatters as em, i}
-					<button
-						class="seg-btn"
-						class:seg-active={$studyPanel.activeEndIndex === i}
-						onclick={() => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
-					>
-						{tabLabel(em.title)}
-					</button>
-				{/each}
-				<div
-					class="seg-slider"
-					style="width: {100 /
-						endMatters.length}%; transform: translateX({$studyPanel.activeEndIndex * 100}%)"
-					aria-hidden="true"
-				></div>
-			</div>
-		</div>
+	{#if $studyPanel.activeTab === 'intro' && isOdr}
+		<SegmentedControl
+			items={intros}
+			activeIndex={$studyPanel.activeIntroIndex}
+			onSelect={(i) => studyPanel.update((s) => ({ ...s, activeIntroIndex: i }))}
+		/>
+	{:else if $studyPanel.activeTab === 'article' && isOdr}
+		<SegmentedControl
+			items={articles}
+			activeIndex={$studyPanel.activeArticleIndex}
+			onSelect={(i) => studyPanel.update((s) => ({ ...s, activeArticleIndex: i }))}
+		/>
+	{:else if $studyPanel.activeTab === 'end' && isOdr}
+		<SegmentedControl
+			items={endMatters}
+			activeIndex={$studyPanel.activeEndIndex}
+			onSelect={(i) => studyPanel.update((s) => ({ ...s, activeEndIndex: i }))}
+		/>
 	{/if}
 
 	<!-- Scrollable content area -->
@@ -1536,93 +1460,6 @@
 		user-select: none;
 	}
 
-	/* ─── Tabs ──────────────────────────────────────── */
-	.tab-row {
-		position: relative;
-	}
-
-	.tab-btn {
-		font-size: 12px;
-		font-weight: 400;
-		color: var(--color-subtle);
-		background: none;
-		border: none;
-		cursor: pointer;
-		letter-spacing: 0.02em;
-		transition: color var(--duration-fast);
-		font-family: var(--font-ui);
-	}
-
-	.tab-btn:hover {
-		color: var(--color-text);
-	}
-
-	.tab-active {
-		color: var(--color-accent);
-	}
-
-	.tab-slider {
-		position: absolute;
-		bottom: 0;
-		left: 4px;
-		height: 2px;
-		border-radius: 1px 1px 0 0;
-		background: var(--color-accent);
-		transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	/* ─── Segmented control (sub-tabs) ─────────────── */
-	.subtab-bar {
-		display: flex;
-		justify-content: center;
-		padding: 8px 16px;
-	}
-
-	.segmented-control {
-		display: inline-grid;
-		border: 1px solid var(--color-border);
-		border-radius: 6px;
-		overflow: hidden;
-		background: color-mix(in srgb, var(--color-foreground) 5%, var(--color-background));
-		position: relative;
-	}
-
-	.seg-btn {
-		grid-row: 1;
-		font-size: 11px;
-		font-weight: 500;
-		color: var(--color-subtle);
-		background: none;
-		border: none;
-		cursor: pointer;
-		font-family: var(--font-ui);
-		padding: 5px 16px;
-		position: relative;
-		z-index: 1;
-		text-align: center;
-		transition: color var(--duration-fast);
-	}
-
-	.seg-btn:hover {
-		color: var(--color-text);
-	}
-
-	.seg-active {
-		color: var(--color-accent);
-	}
-
-	.seg-slider {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		background: color-mix(in srgb, var(--color-accent) 15%, transparent);
-		transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
-		pointer-events: none;
-		grid-column: 1 / -1;
-		grid-row: 1;
-	}
-
 	/* ─── Scrollable pane ───────────────────────────── */
 	/* Force classic (always-visible) scrollbar on macOS WebKit */
 	.panel-scroll {
@@ -2134,10 +1971,6 @@
 
 	/* ─── Reduced motion ───────────────────────────────────────── */
 	@media (prefers-reduced-motion: reduce) {
-		.tab-slider {
-			transition: none;
-		}
-
 		.verse-section {
 			transition: none;
 		}
