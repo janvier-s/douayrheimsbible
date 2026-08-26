@@ -12,6 +12,7 @@
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { prefs } from '$lib/stores/prefs';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
+	import { translationCoversBook } from '$lib/stores/compare';
 
 	interface Props {
 		bookMeta: BookMeta;
@@ -201,7 +202,15 @@
 	onDestroy(() => {
 		if (svRefTimer) clearTimeout(svRefTimer);
 	});
-	let prevNavBook = $derived(chapter.chapter <= 1 ? (getPrevNavBook(bookMeta.slug) ?? null) : null);
+	// Only offer an adjacent book the current translation actually carries.
+	// Confraternity is NT-only, so the book before Matthew is Malachie, and the
+	// link would land the reader on a "book not available" page.
+	function navBookFor(get: (slug: string) => BookMeta | undefined): BookMeta | null {
+		const b = get(bookMeta.slug) ?? null;
+		return b && translationCoversBook(translationId, b.testament) ? b : null;
+	}
+
+	let prevNavBook = $derived(chapter.chapter <= 1 ? navBookFor(getPrevNavBook) : null);
 	function chapterLabel(slug: string, num: number): string {
 		const n = useRoman ? toRoman(num) : String(num);
 		if (isVul) return slug === 'psalms' ? `Ps. ${n}` : `Cap. ${n}`;
@@ -224,9 +233,7 @@
 					}
 				: null
 	);
-	let nextNavBook = $derived(
-		chapter.chapter >= totalChapters ? (getNextNavBook(bookMeta.slug) ?? null) : null
-	);
+	let nextNavBook = $derived(chapter.chapter >= totalChapters ? navBookFor(getNextNavBook) : null);
 	let nextNav = $derived(
 		chapter.chapter < totalChapters
 			? {
