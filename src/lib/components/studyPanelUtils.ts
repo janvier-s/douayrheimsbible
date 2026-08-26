@@ -117,6 +117,26 @@ export function buildVisibleTabs(
 	return [];
 }
 
+/** DOM id of a tab button, so the content region can point back at it. */
+export function studyTabId(tab: StudyTab): string {
+	return `study-tab-${tab}`;
+}
+
+/**
+ * Index of the active tab within the visible list.
+ *
+ * Clamped to 0: during a translation switch the new tab list lands a tick
+ * before the store's `activeTab` catches up, so the lookup can miss. Returning
+ * -1 there would send the sliding underline to -100% and leave `aria-labelledby`
+ * pointing at an id that is not in the document.
+ */
+export function activeTabIndex(tabs: TabDef[], activeTab: StudyTab): number {
+	return Math.max(
+		0,
+		tabs.findIndex((t) => t.id === activeTab)
+	);
+}
+
 /** Build the per-verse sections the ODR panel renders. */
 export function buildVerseSections(
 	chapter: Chapter | undefined,

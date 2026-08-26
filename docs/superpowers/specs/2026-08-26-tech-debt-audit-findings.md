@@ -412,6 +412,27 @@ behaviour rather than a regression.
    rather than `$state`, so they are untracked and the guards behave identically; the two
    `$state` writes settle on equality. `StudyPanel` no longer imports `svelte/legacy`.
 
+5. **The tablist completes the ARIA tabs pattern.** Extracting the tab bar exposed that its
+   `role="tab"` buttons had no `aria-controls`, that nothing in the panel carried
+   `role="tabpanel"`, and that there was no arrow-key navigation. The tabs now carry ids and
+   `aria-controls`; the scroll area is the tabpanel, labelled by the active tab; a roving
+   tabindex leaves exactly one tab stop for the whole bar; and ArrowLeft/ArrowRight/Home/End
+   move focus with automatic activation, which is the recommended behaviour when selecting is
+   cheap (here, two store writes with no fetch). The role and label are conditional on a
+   tablist actually existing, so Vulgate's single-tab panel gets neither a dangling role nor a
+   dangling IDREF. `activeTabIndex` and `studyTabId` moved into `studyPanelUtils` because both
+   the bar and the panel need the same clamped index and the same id scheme; a mismatch there
+   would point `aria-labelledby` at an element not in the document.
+
+   Two things fell out of this. The scroll area gained `tabindex="0"`, which it needed
+   independently: a tab whose content is all prose has nothing focusable in it, so the body
+   could not be scrolled from the keyboard at all. And `SegmentedControl`'s buttons gained
+   `aria-pressed`, since the sub-tab selection was conveyed only by colour.
+
+   The keydown handler sits on the buttons rather than the tablist. That is where focus
+   always is under a roving tabindex, and a listener on the container makes svelte-check
+   demand a `tabindex` on the tablist itself, which the pattern does not use.
+
 Still worth doing later: the panel keeps ~600 lines of markup and ~600 of style. Across the
 codebase 39 `run()` shims remain in 18 files, none of them here.
 

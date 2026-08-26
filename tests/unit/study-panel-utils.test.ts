@@ -5,7 +5,9 @@ import {
 	buildVerseSections,
 	formatHaydockAttribution,
 	formatTrailingCitation,
-	groupByVerse
+	groupByVerse,
+	activeTabIndex,
+	studyTabId
 } from '$lib/components/studyPanelUtils';
 import type { Chapter, ChapterAnnotations, ConfIntro } from '$lib/data/types';
 import type { HaydockIntro } from '$lib/data/loader';
@@ -98,6 +100,37 @@ describe('buildVisibleTabs', () => {
 
 	it('returns nothing for an unknown translation', () => {
 		expect(buildVisibleTabs('nope', true, true, true, noConf, noHaydock)).toEqual([]);
+	});
+});
+
+describe('activeTabIndex', () => {
+	const tabs = [
+		{ id: 'intro' as const, label: 'Intro' },
+		{ id: 'notes' as const, label: 'Notes' },
+		{ id: 'cross-refs' as const, label: 'Cross-Refs' }
+	];
+
+	it('finds the active tab', () => {
+		expect(activeTabIndex(tabs, 'intro')).toBe(0);
+		expect(activeTabIndex(tabs, 'cross-refs')).toBe(2);
+	});
+
+	it('clamps to 0 when the active tab is not in the list', () => {
+		// Happens for a tick after a translation switch, before the snap-to-first
+		// effect runs. A -1 here would send the underline to -100% and leave
+		// aria-labelledby pointing at an id that is not in the document.
+		expect(activeTabIndex(tabs, 'glossa')).toBe(0);
+	});
+
+	it('clamps to 0 for an empty list', () => {
+		expect(activeTabIndex([], 'notes')).toBe(0);
+	});
+});
+
+describe('studyTabId', () => {
+	it('is stable and distinct per tab', () => {
+		expect(studyTabId('cross-refs')).toBe('study-tab-cross-refs');
+		expect(studyTabId('notes')).not.toBe(studyTabId('intro'));
 	});
 });
 

@@ -23,7 +23,12 @@
 	<div class="subtab-bar shrink-0">
 		<div class="segmented-control" style="grid-template-columns: repeat({items.length}, 1fr)">
 			{#each items as item, i}
-				<button class="seg-btn" class:seg-active={activeIndex === i} onclick={() => onSelect(i)}>
+				<button
+					class="seg-btn"
+					class:seg-active={activeIndex === i}
+					aria-pressed={activeIndex === i}
+					onclick={() => onSelect(i)}
+				>
 					{tabLabel(item.title)}
 				</button>
 			{/each}

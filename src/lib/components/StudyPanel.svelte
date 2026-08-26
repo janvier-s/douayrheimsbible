@@ -34,7 +34,9 @@
 		buildVerseSections,
 		formatHaydockAttribution,
 		formatTrailingCitation,
-		groupByVerse
+		groupByVerse,
+		activeTabIndex,
+		studyTabId
 	} from './studyPanelUtils';
 	import { createChapterResource } from '$lib/utils/chapterResource.svelte';
 	import { getBookBySlug } from '$lib/data/books';
@@ -445,6 +447,16 @@
 	let visibleTabs = $derived(
 		buildVisibleTabs(translationId, hasIntros, hasArticles, hasEndMatters, confIntro, haydockIntro)
 	);
+
+	// The scroll area is only a tabpanel when there is a tablist to belong to.
+	// Vulgate has a single tab, so the bar is absent and the role would dangle.
+	const PANEL_ID = 'study-panel-content';
+	let hasTabBar = $derived(visibleTabs.length > 1);
+	let panelLabelledBy = $derived(
+		hasTabBar
+			? studyTabId(visibleTabs[activeTabIndex(visibleTabs, $studyPanel.activeTab)].id)
+			: undefined
+	);
 	// Snap to first visible tab if the active tab isn't available for this translation
 	$effect.pre(() => {
 		if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
@@ -652,7 +664,12 @@
 			{/if}
 		</div>
 
-		<StudyTabBar tabs={visibleTabs} activeTab={$studyPanel.activeTab} onSelect={switchTab} />
+		<StudyTabBar
+			tabs={visibleTabs}
+			activeTab={$studyPanel.activeTab}
+			onSelect={switchTab}
+			panelId={PANEL_ID}
+		/>
 
 		<div class="border-b border-border"></div>
 	</div>
@@ -679,9 +696,17 @@
 	{/if}
 
 	<!-- Scrollable content area -->
-	<!-- svelte-ignore a11y_no_static_element_interactions, a11y_mouse_events_have_key_events -->
+	<!-- The tab stop is for the scroll region itself: a tab whose content is all
+	     prose (a long intro, say) has nothing else focusable, so without it the
+	     body cannot be scrolled from the keyboard. svelte-check cannot see that
+	     the role is set, hence the third ignore. -->
+	<!-- svelte-ignore a11y_no_static_element_interactions, a11y_mouse_events_have_key_events, a11y_no_noninteractive_tabindex -->
 	<div
 		class="panel-scroll flex-1 overflow-y-scroll"
+		id={PANEL_ID}
+		role={hasTabBar ? 'tabpanel' : undefined}
+		aria-labelledby={panelLabelledBy}
+		tabindex="0"
 		bind:this={panelScroll}
 		onmouseover={hasLinkifiedNotes || isConf ? confTip.handleOver : undefined}
 		onmouseout={hasLinkifiedNotes || isConf ? confTip.handleOut : undefined}
