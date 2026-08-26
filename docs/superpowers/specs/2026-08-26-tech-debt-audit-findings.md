@@ -33,8 +33,14 @@ place. **19 files import from `svelte/legacy`**, with **59 `run()` call sites** 
 
 `run()` is the mechanical translation of `$:` and is a shim, not a destination. The original
 review checked for `$:` and found none, concluding the migration was finished. That was
-wrong. CLAUDE.md now documents the shim layer explicitly. Replacing the 59 `run()` blocks
-with `$derived` / `$effect` is unclaimed work, best done opportunistically per component.
+wrong. CLAUDE.md now documents the shim layer explicitly. Replacing the `run()` blocks with
+`$derived` / `$effect` is unclaimed work, best done opportunistically per component.
+
+**Progress: `StudyPanel`'s 20 are gone** (8 removed by the chapter-resource extraction, 12
+converted to `$effect.pre`), leaving **39 across 18 files**. Note for whoever picks up the
+rest: `run()` is `$effect.pre` *plus* a legacy escape hatch that downgrades a self-dirtying
+effect to MAYBE_DIRTY. A block that reads and writes the same store is relying on that
+hatch, so check it converges before converting.
 
 ### Correction B: the two "probable bugs" in P2-5 were not bugs
 
@@ -359,7 +365,7 @@ handling, and tooltip logic.
 For scale, April decomposed `FathersCommentaryPanel` as a P2 item when it hit **531 lines**.
 StudyPanel is nearly five times that and has never been split.
 
-**Done, in two steps. 2,541 → 2,187 lines (354 out, 14%).**
+**Done, in four steps. 2,541 → 2,021 lines (520 out, 20%).**
 
 1. **`src/lib/components/studyPanelUtils.ts`** takes the six pure functions (`tabLabel`,
    `buildVisibleTabs`, `buildVerseSections`, `formatHaydockAttribution`,
@@ -381,9 +387,33 @@ Verified in a browser across all five panel translations (ODR annotations, DRC n
 cross-refs, Haydock intro and commentary, Vulgate glossa, Confraternity footnotes,
 commentary and intro), plus lint, 0 type errors, 238 tests and a clean build.
 
-Still worth doing later: the panel keeps ~700 lines of markup and ~700 of style, and 20 of
-the codebase's 59 `run()` shims live here. The tab bar is the obvious next component to
-lift out.
+The effect conversion was exercised specifically for runaway effects, since that is the one
+way it could fail: every tab and sub-tab cycled three times per translation, a book change
+over real client-side navigation (sentinel-checked, not a reload), three reading/study mode
+round-trips, and a marker click driving the panel scroll. Console error and warning output
+was captured throughout and came back empty, with no `effect_update_depth_exceeded`. Where
+a probe showed the panel not following a programmatic reader scroll, the same probe was run
+against the stashed HEAD build and returned byte-identical numbers, confirming pre-existing
+behaviour rather than a regression.
+
+3. **`StudyTabBar.svelte` and `SegmentedControl.svelte`** lift the tab row and the sub-tab
+   picker out. The panel carried three near-identical copies of the segmented control,
+   differing only in which array they walked and which store index they wrote; they are now
+   one component used three times. Both own the "more than one item" guard that used to sit
+   at the call site, so the wrapper element is still absent rather than empty when there is
+   nothing to pick between. `.seg-slider` also picked up the `prefers-reduced-motion`
+   opt-out that `.tab-slider` already had, since the two animate identically and only one
+   was honouring the setting.
+4. **The 12 remaining `run()` shims became `$effect.pre`.** `run()` is not plain `$effect`:
+   it is `$effect.pre` plus a legacy escape hatch that downgrades a self-dirtying effect
+   from DIRTY to MAYBE_DIRTY to emulate `$:`. Several of these blocks write `$studyPanel`
+   while reading it, so each was checked for convergence first. All four guard variables
+   (`prevBook`, `lastAnnotationKey`, `lastActiveTab`, `lastObservedKeys`) are plain `let`
+   rather than `$state`, so they are untracked and the guards behave identically; the two
+   `$state` writes settle on equality. `StudyPanel` no longer imports `svelte/legacy`.
+
+Still worth doing later: the panel keeps ~600 lines of markup and ~600 of style. Across the
+codebase 39 `run()` shims remain in 18 files, none of them here.
 
 ### 3. Accessibility: core verse interaction is mouse-only
 

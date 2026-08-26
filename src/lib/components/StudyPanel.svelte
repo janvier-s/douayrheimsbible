@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { tick, onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { browser } from '$app/environment';
@@ -448,12 +446,12 @@
 		buildVisibleTabs(translationId, hasIntros, hasArticles, hasEndMatters, confIntro, haydockIntro)
 	);
 	// Snap to first visible tab if the active tab isn't available for this translation
-	run(() => {
+	$effect.pre(() => {
 		if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
 			studyPanel.update((s) => ({ ...s, activeTab: visibleTabs[0].id }));
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		if (bookData && bookData.book !== prevBook) {
 			prevBook = bookData.book;
 
@@ -513,12 +511,12 @@
 		}
 	});
 	// If on the article tab but current chapter has no articles, fall back to annotations/commentary
-	run(() => {
+	$effect.pre(() => {
 		if ($studyPanel.activeTab === 'article' && !hasArticles) {
 			studyPanel.update((s) => ({ ...s, activeTab: isOdr ? 'annotations' : 'commentary' }));
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		const key = `${currentBookSlug}/${currentChapterNum}`;
 		if (key !== lastAnnotationKey && currentBookSlug) {
 			lastAnnotationKey = key;
@@ -567,7 +565,7 @@
 			!!currentBookSlug &&
 			!!(fathersManifest as Record<string, number[]>)[currentBookSlug]?.includes(currentChapterNum)
 	);
-	run(() => {
+	$effect.pre(() => {
 		if (
 			isOdr &&
 			!annotationsLoading &&
@@ -579,30 +577,30 @@
 			studyPanel.update((s) => ({ ...s, activeTab: 'notes' }));
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		if ($studyPanel.activeTab !== lastActiveTab) {
 			lastActiveTab = $studyPanel.activeTab;
 			sectionEls = {};
 			lastObservedKeys = '';
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		if (verseSections && browser) {
 			tick().then(setupPanelObserver);
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		if ($studyPanel.activeTab && browser) {
 			tick().then(setupPanelObserver);
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		if (browser && !$prefs.annotationSync) {
 			panelSectionObserver?.disconnect();
 			panelSectionObserver = null;
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		if (browser && $prefs.readingMode !== 'study') {
 			panelSectionObserver?.disconnect();
 			panelSectionObserver = null;
@@ -610,7 +608,7 @@
 	});
 	// ── ScrollTrigger consumption ────────────────────────────────────
 
-	run(() => {
+	$effect.pre(() => {
 		const trigger = $scrollTrigger;
 		if (trigger && panelScroll) {
 			// Defer to next frame so the browser can paint the click response before
@@ -618,7 +616,7 @@
 			requestAnimationFrame(() => handleScrollTrigger(trigger));
 		}
 	});
-	run(() => {
+	$effect.pre(() => {
 		if (panelScroll && browser) attachWheelHandler(panelScroll);
 	});
 </script>
