@@ -340,10 +340,19 @@
 		return text.replace(SUPER_RE, '');
 	}
 
-	/** Wrap the first letter of rendered HTML in a dropcap span.
-	 *  Handles two leading-tag cases produced by the render pipeline:
-	 *  - <sc>Word</sc>...  (small-caps proper noun at verse start)
-	 *  - Plain letter (most verses) */
+	/** The source marks the word (or short phrase) after a chapter's opening
+	 *  drop cap with <sc>, matching the original print's small-caps run-on.
+	 *  That is a typesetting cue for where the drop cap goes, not the same
+	 *  small-caps styling <sc> carries mid-verse for divine names — so at the
+	 *  chapter open it is always unwrapped back to plain text, independent of
+	 *  the small-caps and drop-cap preferences. */
+	function stripOpeningSmallCaps(html: string): string {
+		const mark = html.match(/^<mark [^<>]*>/);
+		if (mark) return mark[0] + stripOpeningSmallCaps(html.slice(mark[0].length));
+		return html.replace(/^<sc>([\s\S]*?)<\/sc>/, '$1');
+	}
+
+	/** Wrap the first letter of rendered HTML in a dropcap span. */
 	function injectDropcap(html: string): string {
 		// A catchword that opens the verse would put its tint behind the dropcap,
 		// and a block of colour behind a three-line letter reads as a mistake.
@@ -354,13 +363,6 @@
 			const cap = inner.match(/^<span class="dropcap">[^<]*<\/span>/);
 			return cap ? cap[0] + mark[0] + inner.slice(cap[0].length) : mark[0] + inner;
 		}
-		// <sc>Letter...</sc> → pull first letter out of the sc tag
-		const sc = html.replace(
-			/^<sc>([A-Za-zÀ-ÿ])([^<]*)<\/sc>/,
-			'<span class="dropcap">$1</span><sc>$2</sc>'
-		);
-		if (sc !== html) return sc;
-		// Plain first letter
 		return html.replace(/^([A-Za-zÀ-ÿ])/, '<span class="dropcap">$1</span>');
 	}
 
@@ -388,6 +390,7 @@
 		verseNum: number,
 		smallCaps: boolean,
 		expandAmpersand: boolean,
+		isChapterOpen: boolean = false,
 		isDropcap: boolean = false,
 		lemmas: LemmaSpan[] | null = null
 	): string {
@@ -416,7 +419,8 @@
 			t = stripStudyMarkers(t, showItalics);
 		}
 		const t2 = bionic ? applyBionic(t) : t;
-		const result = smallCaps ? allcapsToSmallcaps(t2) : t2;
+		const t3 = isChapterOpen ? stripOpeningSmallCaps(t2) : t2;
+		const result = smallCaps ? allcapsToSmallcaps(t3) : t3;
 		// Dropcap: only when bionic is off (bionic wraps letters in <b>, complicating injection)
 		return isDropcap && !bionic ? injectDropcap(result) : result;
 	}
@@ -878,8 +882,8 @@
 						{@const opensBlock = li === 0 && pi === 0}
 						{@const hangs = blk.poetry ? pi === 0 : opensBlock}
 						{@const hanging = hangs && (blk.poetry || proseHangs)}
-						{@const isDropcap =
-							bi === 0 && opensBlock && !blk.poetry && ($prefs.showDropcap ?? true)}
+						{@const isChapterOpen = bi === 0 && opensBlock && !blk.poetry}
+						{@const isDropcap = isChapterOpen && ($prefs.showDropcap ?? true)}
 						{@const partLemmas = lemmaByVerse
 							? lemmasForPart(lemmaByVerse.get(part.verse) ?? [], part.off, part.text.length)
 							: null}
@@ -912,6 +916,7 @@
 									part.verse,
 									showSmallCaps,
 									expandAmpersand,
+									isChapterOpen,
 									isDropcap,
 									partLemmas
 								)}{' '}
@@ -926,6 +931,7 @@
 								showSmallCaps,
 								expandAmpersand,
 								false,
+								false,
 								partLemmas
 							)}{' '}
 						{/if}
@@ -937,6 +943,7 @@
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
 		{#each verses as v (v.verse)}
+			{@const isChapterOpen = v.verse === verses[0]?.verse}
 			<!-- The click handler here is a mouse-only convenience: tapping anywhere on
 			     an annotated verse opens its annotation. Keyboard and screen-reader
 			     users get the equivalent through the focusable button rendered at the
@@ -986,6 +993,7 @@
 						v.verse,
 						showSmallCaps,
 						expandAmpersand,
+						isChapterOpen,
 						false,
 						lemmaByVerse?.get(v.verse) ?? null
 					)}
@@ -1277,27 +1285,38 @@
 	   the parent <p> has text-decoration which bleeds through child elements */
 	/* Catchword tint: the words an annotation quotes, marked inside the verse.
 	   <mark> arrives with a UA yellow and a forced black foreground that would
-	   fight every theme, so both go and the tint is mixed from the accent.
+	   fight every theme, so both go and the tint is mixed from the accent at a
+	   strength the theme sets (see --lemma-fill-* in app.css).
+
+	   The rule underneath is what makes the mark carry its meaning. A fill soft
+	   enough to read through sits around 1.6:1 against the page, well under the
+	   3:1 that anything conveying information has to reach, and since the tint
+	   replaced the verse underline it is now the only thing saying which words
+	   are quoted. The rule clears that on its own in every theme (3.8:1 in
+	   sepia, 6.4:1 on OLED) and it is a line rather than a colour, so it still
+	   reads where hue does not. Drawn as an inset shadow so it costs no height
+	   and cannot shift the line box.
 
 	   data-depth counts the catchwords covering a run. Where two annotations
 	   quote overlapping words the tint deepens rather than nesting, which is
 	   also what lets a pair that crosses without nesting render at all. */
 	:global(mark.lemma) {
-		background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-1), transparent);
 		color: inherit;
 		border-radius: 2px;
-		/* Each wrapped line keeps its own rounded ends rather than one box
-		   stretched across the break. */
+		box-shadow: inset 0 -0.075em 0 var(--color-accent-text);
+		/* Each wrapped line keeps its own rounded ends and its own rule rather
+		   than one box stretched across the break. */
 		box-decoration-break: clone;
 		-webkit-box-decoration-break: clone;
 	}
 
 	:global(mark.lemma[data-depth='2']) {
-		background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-2), transparent);
 	}
 
 	:global(mark.lemma[data-depth='3']) {
-		background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-3), transparent);
 	}
 
 	:global(mark.lemma[data-marker-type]) {
@@ -1305,7 +1324,44 @@
 	}
 
 	:global(mark.lemma[data-marker-type]:hover) {
-		background: color-mix(in srgb, var(--color-accent) 26%, transparent);
+		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-2), transparent);
+	}
+
+	:global(mark.lemma[data-depth='2'][data-marker-type]:hover) {
+		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-3), transparent);
+	}
+
+	/* A reader who has asked for more contrast gets the deepest fill and a
+	   heavier rule; one who has asked for less keeps the rule, which is the part
+	   carrying the meaning, and loses most of the fill. */
+	@media (prefers-contrast: more) {
+		:global(mark.lemma) {
+			background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-2), transparent);
+			box-shadow: inset 0 -0.12em 0 var(--color-accent-text);
+		}
+
+		:global(mark.lemma[data-depth='2']),
+		:global(mark.lemma[data-depth='3']) {
+			background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-3), transparent);
+		}
+	}
+
+	@media (prefers-contrast: less) {
+		:global(mark.lemma),
+		:global(mark.lemma[data-depth='2']),
+		:global(mark.lemma[data-depth='3']) {
+			background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+		}
+	}
+
+	/* A marker's own chip is a translucent wash of the accent, and the tint under
+	   it is more of the same accent, so the two stack and the 10px digit ends up
+	   accent on accent: 2.38:1 in sepia, 2.95:1 in light, against the 4.5:1 that
+	   text this size needs. Mixing the chip over the page instead of over
+	   whatever it lands on makes it opaque, so a marker reads the same on a tint
+	   as off one. */
+	:global(mark.lemma .study-marker) {
+		background: color-mix(in srgb, var(--color-accent) 14%, var(--color-bg));
 	}
 
 	/* The dropcap sits in front of a catchword that opens the verse, so it keeps
