@@ -853,7 +853,7 @@
 	{#each blocks as blk, bi (blk.lines[0][0].verse + (blk.poetry ? 'y' : 'p') + bi)}
 		<!-- svelte-ignore a11y_no_static_element_interactions, a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 		<p
-			class="para-block font-reader verse-text leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
+			class="para-block font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 			class:text-justify={$prefs.justifiedText && !blk.poetry}
 			class:poetry-block={blk.poetry}
 			class:bionic-fade={bionic}
@@ -969,7 +969,7 @@
 				{/if}
 				<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions, a11y_no_noninteractive_element_interactions -->
 				<p
-					class="font-reader verse-text leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
+					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
 					class:bionic-fade={bionic}
 					onclick={(e) => isStudy && handleMarkerClick(e, v.verse)}
@@ -1125,12 +1125,6 @@
 	   rather than gaining a second one. */
 	.para-block {
 		margin-bottom: 1rem;
-	}
-
-	/* Montserrat reads slightly light at body weight — bumped via
-	   --font-weight-reader, set per selected font in ReadingPrefs/+layout. */
-	.verse-text {
-		font-weight: var(--font-weight-reader, 400);
 	}
 
 	/* Paragraphs run on with an indented first line, as a book sets them. */

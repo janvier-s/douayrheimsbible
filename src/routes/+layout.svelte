@@ -9,7 +9,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { afterNavigate, goto } from '$app/navigation';
-	import { getFontById, isSansFont } from '$lib/data/fonts';
+	import { getFontById, isSansFont, resolveBionicWeight } from '$lib/data/fonts';
 	import { navOverride } from '$lib/stores/navOverride';
 	import { revealChrome } from '$lib/stores/chrome';
 	interface Props {
@@ -68,7 +68,10 @@
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));
 		document.documentElement.style.setProperty('--bionic-opacity', String(p.bionicOpacity ?? 1));
 		const isSans = isSansFont(p.fontFamily) || p.dyslexiaFont;
-		document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
+		document.documentElement.style.setProperty(
+			'--bionic-bold-weight',
+			String(resolveBionicWeight(isSans, p.bionicBoldWeight ?? 'auto'))
+		);
 		if (p.dyslexiaFont) {
 			document.documentElement.style.setProperty(
 				'--font-reader',
@@ -78,10 +81,6 @@
 		} else {
 			const font = getFontById(p.fontFamily);
 			if (font) document.documentElement.style.setProperty('--font-reader', font.stack);
-			document.documentElement.style.setProperty(
-				'--font-weight-reader',
-				p.fontFamily === 'montserrat' ? '500' : '400'
-			);
 			document.documentElement.style.setProperty(
 				'--font-dropcap',
 				p.fontFamily === 'montserrat' ? 'var(--font-baskerville)' : 'inherit'

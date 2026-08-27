@@ -44,3 +44,11 @@ export function getFontById(id: string): FontDef | undefined {
 export function isSansFont(id: string): boolean {
 	return SANS_FONT_IDS.includes(id);
 }
+
+/**
+ * Bionic bold weight: 900/700 by default (sans/serif reading font), or the
+ * user's manual Heavy(700)/Lighter(600) override from bionicBoldWeight prefs.
+ */
+export function resolveBionicWeight(isSans: boolean, override: 'auto' | 600 | 700): number {
+	return override === 'auto' ? (isSans ? 900 : 700) : override;
+}
