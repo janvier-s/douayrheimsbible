@@ -405,6 +405,118 @@ async function main() {
 		console.log(`CPDV notes source not found at ${cpdvNotesSrc} — skipping.`);
 	}
 
+	// --- KJV chapter notes → static/data/kjv-notes/{odrSlug}/{chapter}.json ---
+	//
+	// Two source directories: kjv-notes (canonical, ODR-slug filenames already)
+	// and kjv-notes-apocrypha (KJV Apocrypha numbering, which does not line up
+	// 1:1 with ODR slugs/chapters — see the remap table below). Both were
+	// checked file-by-file against the ODR book list and the already-live
+	// static/data/kjv/*.json full text before writing this:
+	//
+	//   - kjv-notes-apocrypha's "1 Esdras"/"2 Esdras" are the KJV Apocrypha's
+	//     own Esdras books, distinct from canonical Ezra/Nehemiah (which ODR
+	//     also calls "1-esdras"/"2-esdras"). They land on ODR's "3-esdras" and
+	//     "4-esdras" instead.
+	//   - "jeremie.json" in kjv-notes-apocrypha is the Letter/Epistle of
+	//     Jeremiah, which ODR carries as Baruch chapter 6 (already integrated
+	//     into static/data/kjv/baruch.json, 73 verses) — not Jeremiah itself.
+	//   - "susanna" and "bel-and-dragon" are already folded into
+	//     static/data/kjv/daniel.json as chapters 13 and 14, verse numbers
+	//     unchanged.
+	//   - "prayer-of-azarias" lands in Daniel 3, verse N → verse N+23: Azarias'
+	//     own verses 1-23 open in the furnace before Nebuchadnezzar's KJV v24
+	//     ("astonied..."), so v1 of Azarias becomes Daniel 3:24, ...,
+	//     v68 becomes 3:91. static/data/kjv/daniel.json chapter 3 was spliced
+	//     to carry the Azariah text at exactly this offset (verses 1-23 kept,
+	//     Azariah's 68 verses inserted as 24-91, native 24-30 shifted to
+	//     92-98) — see the source KJV/JSON_Converted/32-daniel.json.
+	//   - "esther.json" exists in both source dirs (canonical ch. 1-10,
+	//     apocrypha ch. 12-16 — the Greek additions) with no chapter overlap,
+	//     so both just write into the same output directory.
+	//   - "prayer-of-manasses" already matches its ODR/app slug directly.
+	const kjvNotesCanonicalSrc = join(ODR_PARENT, 'KJV', 'kjv-notes');
+	const kjvNotesApocryphaSrc = join(ODR_PARENT, 'KJV', 'kjv-notes-apocrypha');
+	try {
+		await access(kjvNotesCanonicalSrc);
+		const kjvNotesOutBase = join(PROJECT_ROOT, 'static', 'data', 'kjv-notes');
+		await mkdir(kjvNotesOutBase, { recursive: true });
+		let kjvNotesCount = 0;
+
+		type KjvNotesFile = Array<{
+			chapter: number;
+			verses?: Array<{ verse: number; text: string }>;
+		}>;
+
+		async function writeKjvNotes(
+			odrSlug: string,
+			chapters: KjvNotesFile,
+			chapterOverride?: number,
+			verseOffset = 0
+		) {
+			const bookOutDir = join(kjvNotesOutBase, odrSlug);
+			for (const ch of chapters) {
+				if (!Array.isArray(ch.verses) || ch.verses.length === 0) continue;
+				await mkdir(bookOutDir, { recursive: true });
+				const outChapter = chapterOverride ?? ch.chapter;
+				const verses = verseOffset
+					? ch.verses.map((v) => ({ ...v, verse: v.verse + verseOffset }))
+					: ch.verses;
+				await writeFile(join(bookOutDir, `${outChapter}.json`), JSON.stringify(verses));
+				kjvNotesCount++;
+			}
+		}
+
+		for (const file of await readdir(kjvNotesCanonicalSrc)) {
+			if (!file.endsWith('.json')) continue;
+			const raw = await readFile(join(kjvNotesCanonicalSrc, file), 'utf-8');
+			const data = JSON.parse(raw) as KjvNotesFile;
+			if (!Array.isArray(data)) continue;
+			await writeKjvNotes(file.replace('.json', ''), data);
+		}
+
+		const APOCRYPHA_SLUG_REMAP: Record<string, string> = {
+			'1-esdras': '3-esdras',
+			'2-esdras': '4-esdras',
+			jeremie: 'baruch',
+			susanna: 'daniel',
+			'bel-and-dragon': 'daniel',
+			'prayer-of-azarias': 'daniel'
+		};
+		const APOCRYPHA_CHAPTER_OVERRIDE: Record<string, number> = {
+			jeremie: 6,
+			susanna: 13,
+			'bel-and-dragon': 14,
+			'prayer-of-azarias': 3
+		};
+		const APOCRYPHA_VERSE_OFFSET: Record<string, number> = {
+			'prayer-of-azarias': 23
+		};
+
+		try {
+			await access(kjvNotesApocryphaSrc);
+			for (const file of await readdir(kjvNotesApocryphaSrc)) {
+				if (!file.endsWith('.json')) continue;
+				const baseName = file.replace('.json', '');
+				const raw = await readFile(join(kjvNotesApocryphaSrc, file), 'utf-8');
+				const data = JSON.parse(raw) as KjvNotesFile;
+				if (!Array.isArray(data)) continue;
+				const odrSlug = APOCRYPHA_SLUG_REMAP[baseName] ?? baseName;
+				await writeKjvNotes(
+					odrSlug,
+					data,
+					APOCRYPHA_CHAPTER_OVERRIDE[baseName],
+					APOCRYPHA_VERSE_OFFSET[baseName] ?? 0
+				);
+			}
+		} catch {
+			console.log(`KJV apocrypha notes source not found at ${kjvNotesApocryphaSrc} — skipping.`);
+		}
+
+		console.log(`✓ kjv-notes: wrote ${kjvNotesCount} chapter note files → ${kjvNotesOutBase}`);
+	} catch {
+		console.log(`KJV notes source not found at ${kjvNotesCanonicalSrc} — skipping.`);
+	}
+
 	// --- Confraternity intros → static/data/conf-intros/{odrSlug}.json ---
 	const confIntroSrc = join(ODR_PARENT, 'Confraternity', 'JSON_Converted', 'JSON_intros');
 	try {
@@ -525,6 +637,7 @@ async function buildSidecarManifest() {
 		'drc-crossrefs',
 		'cpdv-notes',
 		'knox-notes',
+		'kjv-notes',
 		'conf-footnotes',
 		'conf-commentary',
 		'haydock-commentary',

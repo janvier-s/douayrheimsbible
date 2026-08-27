@@ -107,7 +107,7 @@ export function buildVisibleTabs(
 		tabs.push({ id: 'cross-refs', label: 'Cross-Refs' });
 		return tabs;
 	}
-	if (tid === 'cpdv' || tid === 'knox') {
+	if (tid === 'cpdv' || tid === 'knox' || tid === 'kjv') {
 		return [{ id: 'notes', label: 'Notes' }];
 	}
 	if (tid === 'vul') {

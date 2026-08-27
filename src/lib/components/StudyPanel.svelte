@@ -350,6 +350,7 @@
 		translationId === 'drc' ||
 			translationId === 'cpdv' ||
 			translationId === 'knox' ||
+			translationId === 'kjv' ||
 			translationId === 'odr'
 	);
 	let isDrc = $derived(translationId === 'drc');
