@@ -83,10 +83,19 @@ export interface InlineAnnotation {
 
 // ── Core data types ──────────────────────────────────────────────
 
+/** Where an annotation's catchword sits in the verse it annotates, as
+ *  `[start, length, part]` in characters of `text` with its markup included.
+ *  Derived by scripts/build-odr-lemmas.ts and checked by
+ *  scripts/odr-lemmas.corpus.test.ts; ODR only, and absent where a verse
+ *  carries no annotation. Sorted by start, and where two spans start together
+ *  the outer one comes first. */
+export type LemmaSpan = [start: number, length: number, part: number];
+
 export interface Verse {
 	verse: number;
 	text: string;
 	has_annotation?: boolean;
+	lemmas?: LemmaSpan[];
 	cross_refs?: CrossRef[];
 	notes?: VerseNote[];
 }

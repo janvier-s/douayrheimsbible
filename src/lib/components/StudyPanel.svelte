@@ -855,7 +855,7 @@
 										{#each section.annotationEntries as ann}
 											<div
 												class="annotation-block"
-												data-panel-id="panel-{section.verse}-annotation-{ann.part}"
+												data-panel-id="panel-{section.verse}-annotation-{ann.part ?? 1}"
 											>
 												{#if ann.title}<p class="annotation-title">
 														{@html allcapsToSmallcaps(ann.title)}
@@ -1629,6 +1629,7 @@
 	.cr-marker,
 	.note-marker {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		font-weight: 600;
 		color: var(--color-accent-text);
@@ -1638,6 +1639,7 @@
 
 	.cr-verse-tag {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 11px;
 		color: var(--color-muted);
 		margin-right: 6px;

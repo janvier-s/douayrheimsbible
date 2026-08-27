@@ -11,7 +11,13 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
-	import type { Verse, ConfChapterFootnotes, ConfChapterCommentary } from '$lib/data/types';
+	import { highlightLemmas, lemmasForPart } from '$lib/utils/lemmas';
+	import type {
+		Verse,
+		LemmaSpan,
+		ConfChapterFootnotes,
+		ConfChapterCommentary
+	} from '$lib/data/types';
 	import type { TranslationCrossRef, TranslationNote } from '$lib/data/translation-types';
 	import {
 		loadTranslationCrossRefs,
@@ -339,6 +345,15 @@
 	 *  - <sc>Word</sc>...  (small-caps proper noun at verse start)
 	 *  - Plain letter (most verses) */
 	function injectDropcap(html: string): string {
+		// A catchword that opens the verse would put its tint behind the dropcap,
+		// and a block of colour behind a three-line letter reads as a mistake.
+		// Find the letter inside the mark, then hoist the cap out in front of it.
+		const mark = html.match(/^<mark [^<>]*>/);
+		if (mark) {
+			const inner = injectDropcap(html.slice(mark[0].length));
+			const cap = inner.match(/^<span class="dropcap">[^<]*<\/span>/);
+			return cap ? cap[0] + mark[0] + inner.slice(cap[0].length) : mark[0] + inner;
+		}
 		// <sc>Letter...</sc> → pull first letter out of the sc tag
 		const sc = html.replace(
 			/^<sc>([A-Za-zÀ-ÿ])([^<]*)<\/sc>/,
@@ -373,9 +388,11 @@
 		verseNum: number,
 		smallCaps: boolean,
 		expandAmpersand: boolean,
-		isDropcap: boolean = false
+		isDropcap: boolean = false,
+		lemmas: LemmaSpan[] | null = null
 	): string {
-		let t = text;
+		// Before anything else: the offsets are into the text as it is stored.
+		let t = lemmas && lemmas.length > 0 ? highlightLemmas(text, lemmas, verseNum, isStudy) : text;
 		if (SPEAKER_RE.test(t)) {
 			SPEAKER_RE.lastIndex = 0;
 			t = renderSpeakerLabels(t);
@@ -415,7 +432,8 @@
 			| 'note'
 			| 'editorial'
 			| 'drc-crossref'
-			| 'haydock-commentary';
+			| 'haydock-commentary'
+			| 'lemma';
 		const marker = btn.dataset.marker ?? '';
 		const verseNum = parseInt(btn.dataset.verse ?? String(fallbackVerse));
 		if (type === 'drc-crossref') {
@@ -430,6 +448,13 @@
 				activeTab: 'commentary' as StudyTab,
 				annotatedVerse: verseNum
 			}));
+			scrollTrigger.set({ verse: verseNum, type: 'annotation', marker });
+			return;
+		}
+		if (type === 'lemma') {
+			// The tint is a second way into the annotation the inline marker already
+			// opens, so it routes to the same place with the part it belongs to.
+			studyPanel.update((s) => ({ ...s, annotatedVerse: verseNum }));
 			scrollTrigger.set({ verse: verseNum, type: 'annotation', marker });
 			return;
 		}
@@ -480,9 +505,14 @@
 			| 'cross_ref'
 			| 'note'
 			| 'drc-crossref'
-			| 'haydock-commentary';
+			| 'haydock-commentary'
+			| 'lemma';
 		const marker = btn.dataset.marker ?? '';
 		const verseNum = parseInt(btn.dataset.verse ?? '0');
+
+		// The tint says nothing a preview could add, and its marker is a part
+		// number, which would otherwise be read as a note label further down.
+		if (type === 'lemma') return null;
 
 		if (type === 'drc-crossref') {
 			const cr = drcCrossRefs?.find((c) => c.marker === parseInt(marker));
@@ -673,6 +703,20 @@
 	// re-render → renderStudyMarkers runs and injects the marker buttons.
 	let mounted = $state(false);
 	let isStudy = $derived(mounted && $prefs.readingMode === 'study');
+
+	/** The catchword spans to tint, by verse.
+	 *
+	 *  ODR alone records them, and only study mode shows them: the tint leads to
+	 *  the annotation panel, and outside study mode there is no panel to lead to.
+	 *  Hanging it on isStudy also keeps it clear of hydration, which discards a
+	 *  client {@html} that disagrees with the server's. isStudy is false until
+	 *  mount, so the server never renders a tint and the client always re-renders
+	 *  once it is up. */
+	let lemmaByVerse = $derived(
+		isStudy && translationId === 'odr'
+			? new Map(verses.filter((v) => v.lemmas?.length).map((v) => [v.verse, v.lemmas!]))
+			: null
+	);
 	let activeAnnotatedVerse = $derived($studyPanel.annotatedVerse);
 	let showItalics = $derived($prefs.showItalics);
 	let showSmallCaps = $derived($prefs.showSmallCaps ?? true);
@@ -708,7 +752,7 @@
 	// edition, poetry included; otherwise they are the shared CPDV paragraphs,
 	// which is what every translation used before the sidecars existed.
 
-	type Part = { verse: number; text: string; verseStart: boolean };
+	type Part = { verse: number; text: string; verseStart: boolean; off: number };
 	type ReadingBlock = { poetry: boolean; lines: Part[][] };
 
 	function buildBlocks(
@@ -721,7 +765,7 @@
 		if (!fmt) {
 			return groupIntoParagraphs(vv, slug, ch, starts).map((group) => ({
 				poetry: false,
-				lines: [group.map((v) => ({ verse: v.verse, text: v.text, verseStart: true }))]
+				lines: [group.map((v) => ({ verse: v.verse, text: v.text, verseStart: true, off: 0 }))]
 			}));
 		}
 
@@ -759,21 +803,21 @@
 
 			let pos = 0;
 			let started = false;
-			const emit = (text: string) => {
+			const emit = (text: string, off: number) => {
 				if (!text.trim()) return;
-				currentLine().push({ verse: verse.verse, text, verseStart: !started });
+				currentLine().push({ verse: verse.verse, text, verseStart: !started, off });
 				started = true;
 			};
 
 			for (const e of events) {
 				if (e.off > pos) {
-					emit(verse.text.slice(pos, e.off));
+					emit(verse.text.slice(pos, e.off), pos);
 					pos = e.off;
 				}
 				if (e.block) openBlock(e.poetry);
 				else newLine();
 			}
-			emit(verse.text.slice(pos));
+			emit(verse.text.slice(pos), pos);
 		}
 
 		return blocks.filter((b) => b.lines.some((l) => l.length > 0));
@@ -836,6 +880,9 @@
 						{@const hanging = hangs && (blk.poetry || proseHangs)}
 						{@const isDropcap =
 							bi === 0 && opensBlock && !blk.poetry && ($prefs.showDropcap ?? true)}
+						{@const partLemmas = lemmaByVerse
+							? lemmasForPart(lemmaByVerse.get(part.verse) ?? [], part.off, part.text.length)
+							: null}
 						{#if part.verseStart}
 							<!-- inline anchor for intersection observer + scroll target -->
 							<span
@@ -845,6 +892,7 @@
 								class:verse-active-annotation={isStudy &&
 									annotatedVerseSet.has(part.verse) &&
 									activeAnnotatedVerse === part.verse}
+								class:verse-tinted={lemmaByVerse?.has(part.verse)}
 							>
 								{#if $prefs.showVerseNumbers && !isDropcap}<sup
 										class="font-ui text-[10px] select-none mr-[3px] tabular-nums"
@@ -864,7 +912,8 @@
 									part.verse,
 									showSmallCaps,
 									expandAmpersand,
-									isDropcap
+									isDropcap,
+									partLemmas
 								)}{' '}
 							</span>
 						{:else}
@@ -876,7 +925,8 @@
 								part.verse,
 								showSmallCaps,
 								expandAmpersand,
-								false
+								false,
+								partLemmas
 							)}{' '}
 						{/if}
 					{/each}
@@ -899,6 +949,7 @@
 				class="relative flex gap-sm max-md:gap-0"
 				class:verse-target={targetVerse === v.verse}
 				class:verse-annotated={isStudy && annotatedVerseSet.has(v.verse)}
+				class:verse-tinted={lemmaByVerse?.has(v.verse)}
 				class:verse-active-annotation={isStudy &&
 					annotatedVerseSet.has(v.verse) &&
 					activeAnnotatedVerse === v.verse}
@@ -934,7 +985,9 @@
 						showItalics,
 						v.verse,
 						showSmallCaps,
-						expandAmpersand
+						expandAmpersand,
+						false,
+						lemmaByVerse?.get(v.verse) ?? null
 					)}
 				</p>
 				{#if isStudy && annotatedVerseSet.has(v.verse)}
@@ -1179,6 +1232,19 @@
 		text-decoration-color: var(--color-accent-text);
 	}
 
+	/* The tint names the words the annotation quotes, which is what the underline
+	   was for and more besides, so a verse that carries one drops the underline
+	   rather than wearing both under a bold number. A verse whose annotation
+	   quotes nothing keeps it: Psalms 9:21 is a note on how the Psalm is divided
+	   and has no catchword to tint. */
+	.verse-annotated.verse-tinted p,
+	.verse-annotated.verse-tinted:hover p,
+	.verse-active-annotation.verse-tinted p,
+	.verse-active-annotation.verse-annotated.verse-tinted p,
+	p .verse-active-annotation.verse-tinted {
+		text-decoration: none;
+	}
+
 	/* List view active annotation background */
 	.verse-active-annotation {
 		background: color-mix(in srgb, var(--color-accent) 6%, transparent);
@@ -1208,10 +1274,50 @@
 
 	/* Study marker superscript — colored badge so they're visible even when
 	   the parent <p> has text-decoration which bleeds through child elements */
+	/* Catchword tint: the words an annotation quotes, marked inside the verse.
+	   <mark> arrives with a UA yellow and a forced black foreground that would
+	   fight every theme, so both go and the tint is mixed from the accent.
+
+	   data-depth counts the catchwords covering a run. Where two annotations
+	   quote overlapping words the tint deepens rather than nesting, which is
+	   also what lets a pair that crosses without nesting render at all. */
+	:global(mark.lemma) {
+		background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+		color: inherit;
+		border-radius: 2px;
+		/* Each wrapped line keeps its own rounded ends rather than one box
+		   stretched across the break. */
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+	}
+
+	:global(mark.lemma[data-depth='2']) {
+		background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+	}
+
+	:global(mark.lemma[data-depth='3']) {
+		background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+	}
+
+	:global(mark.lemma[data-marker-type]) {
+		cursor: pointer;
+	}
+
+	:global(mark.lemma[data-marker-type]:hover) {
+		background: color-mix(in srgb, var(--color-accent) 26%, transparent);
+	}
+
+	/* The dropcap sits in front of a catchword that opens the verse, so it keeps
+	   its own colour rather than taking the tint's. */
+	:global(mark.lemma > .dropcap) {
+		background: none;
+	}
+
 	:global(.study-marker) {
 		position: relative;
 		font-size: 10px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-weight: 600;
 		vertical-align: super;
 		line-height: 1;
