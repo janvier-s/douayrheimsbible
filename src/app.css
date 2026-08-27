@@ -301,6 +301,8 @@
 
 	--font-size-reader: 16px;
 	--line-height-reader: 1.8;
+	--font-weight-reader: 400;
+	--font-dropcap: inherit;
 
 	--bionic-opacity: 1;
 	--bionic-bold-weight: 700;
@@ -445,6 +447,7 @@ body {
 	border: 1px solid var(--color-border);
 	border-radius: 2px;
 	font-family: var(--font-ui);
+	letter-spacing: 0.4px;
 	font-size: 13px;
 }
 
@@ -547,6 +550,7 @@ body {
 
 .search-mn {
 	font-family: var(--font-ui);
+	letter-spacing: 0.4px;
 	font-size: 9px;
 	font-weight: 600;
 	color: var(--color-accent-text);

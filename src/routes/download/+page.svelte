@@ -199,6 +199,7 @@
 
 	.repo-name {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 0.9rem;
 		font-weight: 500;
 		color: var(--color-text);
@@ -260,6 +261,7 @@
 
 	.dl-size {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 0.82rem;
 		color: var(--color-subtle);
 		white-space: nowrap;

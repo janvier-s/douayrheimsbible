@@ -62,6 +62,7 @@
 <style>
 	.cr-text {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 15px;
 		color: var(--color-text);
 		text-decoration: underline;

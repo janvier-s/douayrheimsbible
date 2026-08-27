@@ -284,6 +284,7 @@
 
 	.chapter-link {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 13px;
 		color: var(--color-accent-text);
 		text-decoration: none;

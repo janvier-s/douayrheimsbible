@@ -139,6 +139,7 @@
 		max-width: 440px;
 		text-align: center;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 	}
 
 	.notice-icon {

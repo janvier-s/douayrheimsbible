@@ -91,6 +91,7 @@
 
 	.footer-next-sub {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 11px;
 		color: var(--color-subtle);
 		font-weight: 400;
@@ -122,6 +123,7 @@
 
 	.footer-end-sub {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		color: var(--color-subtle);
 		font-weight: 300;

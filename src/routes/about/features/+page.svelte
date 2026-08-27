@@ -627,6 +627,7 @@
 
 	.screenshot-fig figcaption {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 11px;
 		color: var(--color-subtle);
 		margin-top: 8px;

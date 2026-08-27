@@ -161,6 +161,7 @@
 	:global(.fathers-fn) {
 		font-size: 9px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-weight: 600;
 		color: var(--color-accent-text);
 		cursor: default;
@@ -170,6 +171,7 @@
 
 	.source-ref {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-style: italic;
 		line-height: 1.5;
 	}

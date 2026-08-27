@@ -629,6 +629,7 @@
 
 	.toc-nav-link {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 13px;
 		line-height: 1.5;
 		padding: 4px 0;
@@ -663,6 +664,7 @@
 	.toc-section-item a {
 		display: block;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		line-height: 1.55;
 		padding: 3px 0;
@@ -749,6 +751,7 @@
 	.faq-icon {
 		flex-shrink: 0;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 18px;
 		font-weight: 300;
 		line-height: 1;

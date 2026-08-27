@@ -66,6 +66,7 @@
 		border: none;
 		cursor: pointer;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		padding: 5px 16px;
 		position: relative;
 		z-index: 1;

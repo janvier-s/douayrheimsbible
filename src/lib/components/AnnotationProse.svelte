@@ -308,6 +308,7 @@
 		color: #e56868;
 		font-size: 9px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-weight: 400;
 		vertical-align: super;
 		line-height: 1;
@@ -355,6 +356,7 @@
 
 	.ann-note-marker {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 10px;
 		font-weight: 600;
 		color: var(--color-accent-text);
@@ -373,6 +375,7 @@
 
 	.ann-note-text {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 15px;
 		font-weight: 300;
 	}

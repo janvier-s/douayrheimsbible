@@ -69,6 +69,14 @@
 		if (!font) return;
 		prefs.update((p) => ({ ...p, fontFamily: id }));
 		document.documentElement.style.setProperty('--font-reader', font.stack);
+		document.documentElement.style.setProperty(
+			'--font-weight-reader',
+			id === 'montserrat' ? '500' : '400'
+		);
+		document.documentElement.style.setProperty(
+			'--font-dropcap',
+			id === 'montserrat' ? 'var(--font-baskerville)' : 'inherit'
+		);
 	}
 
 	function setDyslexia(on: boolean) {
@@ -80,6 +88,8 @@
 			);
 			document.documentElement.style.setProperty('--font-ui', "'Grace Dyslexic MD', sans-serif");
 			document.documentElement.style.setProperty('--bionic-bold-weight', '900');
+			document.documentElement.style.setProperty('--font-weight-reader', '400');
+			document.documentElement.style.setProperty('--font-dropcap', 'inherit');
 		} else {
 			const font = FONTS.find((f) => f.id === $prefs.fontFamily);
 			document.documentElement.style.setProperty('--font-reader', font?.stack ?? 'serif');
@@ -89,6 +99,14 @@
 			);
 			const isSans = SANS_FONTS.includes($prefs.fontFamily);
 			document.documentElement.style.setProperty('--bionic-bold-weight', isSans ? '900' : '700');
+			document.documentElement.style.setProperty(
+				'--font-weight-reader',
+				$prefs.fontFamily === 'montserrat' ? '500' : '400'
+			);
+			document.documentElement.style.setProperty(
+				'--font-dropcap',
+				$prefs.fontFamily === 'montserrat' ? 'var(--font-baskerville)' : 'inherit'
+			);
 		}
 	}
 

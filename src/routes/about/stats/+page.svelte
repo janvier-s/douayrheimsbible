@@ -287,6 +287,7 @@
 		border: 1px solid transparent;
 		border-radius: 4px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 13px;
 		font-weight: 500;
 		color: var(--color-text) !important;

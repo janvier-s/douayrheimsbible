@@ -33,6 +33,9 @@
 					}
 					if (fs) s.setProperty('--font-size-reader', fs + 'px');
 					if (prefs.lineHeight) s.setProperty('--line-height-reader', String(prefs.lineHeight));
+					var isMontserrat = (prefs.fontFamily || 'montserrat') === 'montserrat';
+					s.setProperty('--font-weight-reader', isMontserrat ? '500' : '400');
+					s.setProperty('--font-dropcap', isMontserrat ? 'var(--font-baskerville)' : 'inherit');
 					// Apply column width before paint to prevent CLS on Bible reader pages
 					var colWidths = { narrow: 600, default: 750, wide: 920 };
 					var cw = colWidths[prefs.columnWidth];

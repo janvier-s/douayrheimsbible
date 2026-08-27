@@ -73,6 +73,7 @@
 
 	.install-text {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 13px;
 		line-height: 1.5;
 		color: var(--color-text);
@@ -120,6 +121,7 @@
 		border-radius: 3px;
 		background: transparent;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		font-weight: 500;
 		color: var(--color-subtle);

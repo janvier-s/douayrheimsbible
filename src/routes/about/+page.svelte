@@ -485,6 +485,7 @@
 
 	.gv {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 0.72em;
 		font-weight: 600;
 		color: var(--color-subtle);
@@ -563,6 +564,7 @@
 
 	.screenshot-fig figcaption {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 11px;
 		color: var(--color-subtle);
 		margin-top: 8px;
@@ -628,6 +630,7 @@
 
 	.facsimile-sub {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		color: var(--color-subtle);
 	}

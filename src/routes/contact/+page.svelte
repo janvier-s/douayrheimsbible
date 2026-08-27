@@ -375,6 +375,7 @@
 		border: 1px solid var(--color-border);
 		border-radius: 3px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 14px;
 		color: var(--color-text);
 		transition:
@@ -416,6 +417,7 @@
 		border: 1px solid var(--color-border);
 		border-radius: 3px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 14px;
 		color: var(--color-text);
 		appearance: none;
@@ -514,6 +516,7 @@
 
 	.submit-error {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		color: #c0392b;
 		margin: 0;

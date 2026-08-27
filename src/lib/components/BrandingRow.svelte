@@ -297,6 +297,7 @@
 		align-items: center;
 		padding: 10px 14px 10px 12px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 14px;
 		font-weight: 400;
 		color: var(--color-text);

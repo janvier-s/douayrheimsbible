@@ -78,6 +78,14 @@
 		} else {
 			const font = getFontById(p.fontFamily);
 			if (font) document.documentElement.style.setProperty('--font-reader', font.stack);
+			document.documentElement.style.setProperty(
+				'--font-weight-reader',
+				p.fontFamily === 'montserrat' ? '500' : '400'
+			);
+			document.documentElement.style.setProperty(
+				'--font-dropcap',
+				p.fontFamily === 'montserrat' ? 'var(--font-baskerville)' : 'inherit'
+			);
 		}
 		// app.html script handles pre-paint theme; sync post-hydration
 		const savedTheme = localStorage.getItem('theme');

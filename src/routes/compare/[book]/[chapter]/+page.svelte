@@ -399,6 +399,7 @@
 		border-radius: 4px;
 		box-shadow: 0 4px 24px color-mix(in srgb, var(--color-accent) 20%, transparent);
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		white-space: nowrap;
 	}
 

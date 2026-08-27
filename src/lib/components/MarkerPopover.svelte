@@ -86,6 +86,7 @@
 		font-size: 13px;
 		font-weight: 300;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		line-height: 1.5;
 		border-radius: 6px;
 		padding: 9px 12px;

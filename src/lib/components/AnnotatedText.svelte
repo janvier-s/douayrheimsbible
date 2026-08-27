@@ -89,6 +89,7 @@
 		font-size: 9px;
 		font-weight: 600;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		vertical-align: super;
 		line-height: 1;
 		cursor: pointer;
@@ -114,6 +115,7 @@
 		color: var(--color-bg);
 		font-size: 11px;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		line-height: 1.5;
 		border-radius: 4px;
 		padding: 8px 11px;
@@ -184,6 +186,7 @@
 		gap: 8px;
 		align-items: baseline;
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 11px;
 		line-height: 1.45;
 	}

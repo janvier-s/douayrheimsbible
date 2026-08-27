@@ -108,6 +108,7 @@
 
 	.ref-card-year {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		color: var(--color-subtle);
 	}
@@ -122,6 +123,7 @@
 
 	.ref-card-count {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 11px;
 		color: var(--color-subtle);
 		margin-top: 8px;

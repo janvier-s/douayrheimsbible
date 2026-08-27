@@ -153,6 +153,7 @@
 
 	.footer-col-link {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 13px;
 		color: var(--color-subtle);
 		text-decoration: none;
@@ -174,6 +175,7 @@
 
 	.footer-attribution p {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 11px;
 		color: var(--color-subtle);
 		font-weight: 300;

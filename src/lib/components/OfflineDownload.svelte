@@ -65,6 +65,7 @@
 
 	.offline-heading {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 14px;
 		font-weight: 600;
 		color: var(--color-text);
@@ -73,6 +74,7 @@
 
 	.offline-desc {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 14px;
 		color: var(--color-muted);
 		line-height: 1.55;
@@ -81,6 +83,7 @@
 
 	.offline-note {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 12px;
 		color: var(--color-subtle);
 		margin: 0;
@@ -88,6 +91,7 @@
 
 	.offline-error {
 		font-family: var(--font-ui);
+		letter-spacing: 0.4px;
 		font-size: 13px;
 		color: #c0392b;
 		margin: 0 0 12px;
