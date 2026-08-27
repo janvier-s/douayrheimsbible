@@ -785,6 +785,7 @@
         {
           "verse": 2,
           "text": "Lord, <na>(b)</na> rebuke me not in thy fury; nor <na>(c)</na> chastise me in thy wrath.",
+          "has_annotation": true,
           "notes": [
             {
               "label": "b",
@@ -26101,6 +26102,7 @@
         {
           "verse": 13,
           "text": "Thy kingdom is a kingdom <na>(h)</na> of all worlds: and thy dominion in all generation and generation. Our Lord is faithful in all his words, and holy in all his works.",
+          "has_annotation": true,
           "notes": [
             {
               "label": "h",
@@ -26111,7 +26113,6 @@
         {
           "verse": 14,
           "text": "Our Lord <na>(i)</na> lifteth up all that fall: and setteth up all that are bruised.",
-          "has_annotation": true,
           "notes": [
             {
               "label": "i",
