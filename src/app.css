@@ -267,6 +267,17 @@
 	font-style: normal;
 }
 
+/* Default tracking for .font-ui/.font-reader text, placed ahead of
+   @tailwind utilities so an explicit tracking-[...] utility on the same
+   element (equal specificity, later in the cascade) still wins. */
+.font-ui {
+	letter-spacing: 0.4px;
+}
+
+.font-reader {
+	letter-spacing: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

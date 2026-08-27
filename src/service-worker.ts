@@ -9,7 +9,11 @@ declare const self: ServiceWorkerGlobalScope;
 
 // ── Cache names ────────────────────────────────────────────────
 const SHELL = `shell-${version}`;
-const DATA = 'data-v1';
+/** Bumped when the shape of the data changes under readers who already hold it.
+ *  v1 -> v2: chapter files gained the catchword spans the reader tints. Every
+ *  reader who had opened a chapter before that was holding a copy without them
+ *  and, under the old cache-first rule, had no way of ever finding out. */
+const DATA = 'data-v2';
 
 // ── Asset categorization ───────────────────────────────────────
 const BUILD_SET = new Set(build);
@@ -25,14 +29,19 @@ self.addEventListener('install', (event) => {
 	);
 });
 
-// ── Activate: clean old shell caches ───────────────────────────
+// ── Activate: clean superseded shell and data caches ───────────
 self.addEventListener('activate', (event) => {
 	event.waitUntil(
 		caches
 			.keys()
 			.then((keys) =>
 				Promise.all(
-					keys.filter((k) => k.startsWith('shell-') && k !== SHELL).map((k) => caches.delete(k))
+					keys
+						.filter(
+							(k) =>
+								(k.startsWith('shell-') && k !== SHELL) || (k.startsWith('data-') && k !== DATA)
+						)
+						.map((k) => caches.delete(k))
 				)
 			)
 			.then(() => self.clients.claim())
@@ -54,9 +63,9 @@ self.addEventListener('fetch', (event) => {
 		return;
 	}
 
-	// Data files: cache-first, persistent cache (immutable content, survives deploys)
+	// Data files: stale-while-revalidate, persistent cache (survives deploys)
 	if (url.pathname.startsWith('/data/')) {
-		event.respondWith(cacheFirst(DATA, event.request));
+		event.respondWith(staleWhileRevalidate(DATA, event.request, event));
 		return;
 	}
 
@@ -150,6 +159,42 @@ async function broadcast(msg: unknown) {
 }
 
 // ── Cache strategies ───────────────────────────────────────────
+
+/** Hand back the cached copy at once, and replace it from the network in the
+ *  background for next time.
+ *
+ *  The data files were treated as immutable, which they were until a field was
+ *  added to every chapter. Under cache-first a reader who had opened a chapter
+ *  before a data change kept that copy for good: the request never reached the
+ *  network, so nothing could correct it, and clearing the browser cache did not
+ *  help because the copy lives in Cache Storage. This costs the reader no wait
+ *  and repairs itself on the next read.
+ *
+ *  The refresh is handed to waitUntil so the worker is not killed mid-flight
+ *  once the response has been returned. */
+async function staleWhileRevalidate(
+	cacheName: string,
+	request: Request,
+	event: FetchEvent
+): Promise<Response> {
+	const cache = await caches.open(cacheName);
+	const cached = await cache.match(request);
+
+	const refresh = fetch(request)
+		.then((response) => {
+			if (response.status === 200) cache.put(request, response.clone());
+			return response;
+		})
+		.catch(() => null);
+
+	if (cached) {
+		event.waitUntil(refresh);
+		return cached;
+	}
+
+	const response = await refresh;
+	return response ?? new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
+}
 
 async function cacheFirst(cacheName: string, request: Request): Promise<Response> {
 	const cache = await caches.open(cacheName);
