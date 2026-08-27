@@ -1286,63 +1286,50 @@
 	/* Catchword tint: the words an annotation quotes, marked inside the verse.
 	   <mark> arrives with a UA yellow and a forced black foreground that would
 	   fight every theme, so both go and the tint is mixed from the accent at a
-	   strength the theme sets (see --lemma-fill-* in app.css).
+	   colour the theme names (see --lemma-fill-* in app.css).
 
-	   The rule underneath is what makes the mark carry its meaning. A fill soft
-	   enough to read through sits around 1.6:1 against the page, well under the
-	   3:1 that anything conveying information has to reach, and since the tint
-	   replaced the verse underline it is now the only thing saying which words
-	   are quoted. The rule clears that on its own in every theme (3.8:1 in
-	   sepia, 6.4:1 on OLED) and it is a line rather than a colour, so it still
-	   reads where hue does not. Drawn as an inset shadow so it costs no height
-	   and cannot shift the line box.
+	   The fill is the whole of the mark. It is also the only thing saying which
+	   words are quoted, since the tint replaced the verse underline, so it is
+	   pitched to be read as a highlight on its own rather than as a wash under
+	   some other cue.
 
 	   data-depth counts the catchwords covering a run. Where two annotations
 	   quote overlapping words the tint deepens rather than nesting, which is
-	   also what lets a pair that crosses without nesting render at all. */
+	   also what lets a pair that crosses without nesting render at all. Two is
+	   as deep as the corpus goes; three shares the same fill so a later overlap
+	   cannot land somewhere untested. */
 	:global(mark.lemma) {
-		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-1), transparent);
+		background: var(--lemma-fill-1);
 		color: inherit;
 		border-radius: 2px;
-		box-shadow: inset 0 -0.075em 0 var(--color-accent-text);
-		/* Each wrapped line keeps its own rounded ends and its own rule rather
-		   than one box stretched across the break. */
+		/* Each wrapped line keeps its own rounded ends rather than one box
+		   stretched across the break. */
 		box-decoration-break: clone;
 		-webkit-box-decoration-break: clone;
 	}
 
-	:global(mark.lemma[data-depth='2']) {
-		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-2), transparent);
-	}
-
+	:global(mark.lemma[data-depth='2']),
 	:global(mark.lemma[data-depth='3']) {
-		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-3), transparent);
+		background: var(--lemma-fill-2);
 	}
 
 	:global(mark.lemma[data-marker-type]) {
 		cursor: pointer;
 	}
 
+	/* Hover draws a ring rather than deepening the fill, so the feedback is the
+	   same whether or not the run is already the deeper of the two, and so it
+	   costs the text no contrast. */
 	:global(mark.lemma[data-marker-type]:hover) {
-		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-2), transparent);
+		box-shadow: inset 0 0 0 1px var(--color-accent-text);
 	}
 
-	:global(mark.lemma[data-depth='2'][data-marker-type]:hover) {
-		background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-3), transparent);
-	}
-
-	/* A reader who has asked for more contrast gets the deepest fill and a
-	   heavier rule; one who has asked for less keeps the rule, which is the part
-	   carrying the meaning, and loses most of the fill. */
+	/* A reader who has asked for more contrast gets an outline, which is a shape
+	   rather than more colour. Deepening the fill instead would take contrast
+	   away from the text, which is the wrong direction for exactly this reader. */
 	@media (prefers-contrast: more) {
 		:global(mark.lemma) {
-			background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-2), transparent);
-			box-shadow: inset 0 -0.12em 0 var(--color-accent-text);
-		}
-
-		:global(mark.lemma[data-depth='2']),
-		:global(mark.lemma[data-depth='3']) {
-			background: color-mix(in srgb, var(--color-accent) var(--lemma-fill-3), transparent);
+			box-shadow: inset 0 0 0 1px var(--color-accent-text);
 		}
 	}
 
@@ -1350,7 +1337,7 @@
 		:global(mark.lemma),
 		:global(mark.lemma[data-depth='2']),
 		:global(mark.lemma[data-depth='3']) {
-			background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+			background: color-mix(in srgb, var(--lemma-fill-1) 55%, var(--color-bg));
 		}
 	}
 

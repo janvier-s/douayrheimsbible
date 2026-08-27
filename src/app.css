@@ -290,6 +290,22 @@
 	--color-bg-glass: rgba(248, 245, 239, 0.94);
 	--color-heading: var(--color-text);
 
+	/* Catchword tint: the fill behind the words an annotation quotes, and the
+	   deeper fill where two annotations quote words that overlap.
+	
+	   Named outright per theme rather than mixed from --color-accent. The accent
+	   is a dark brick on the light themes, and a dark base mixed down to a
+	   readable strength gives a muddy rose that reads as a stain rather than a
+	   highlight. Naming them also makes them tunable by eye, which is how a
+	   highlight colour actually gets chosen.
+	
+	   The fill is the only thing marking the quoted words, so it carries the
+	   whole signal. Against the page these run 1.9-2.1:1 for one catchword and
+	   2.4-2.5:1 for two, in every theme, with the verse text over them never
+	   below 5.6:1. */
+	--lemma-fill-1: #dd9999;
+	--lemma-fill-2: #d58989;
+
 	--header-height: 100px;
 
 	--font-reader:
@@ -322,6 +338,8 @@
 	--color-verse-num: #ab3d3d; /* 4.99:1 on the sepia page */
 	--color-border: #d8c8b0;
 	--color-bg-glass: rgba(242, 232, 216, 0.94);
+	--lemma-fill-1: #e29b8a;
+	--lemma-fill-2: #dd7f6e;
 }
 
 [data-theme='dark'] {
@@ -337,6 +355,8 @@
 	--color-border: #2e2b32;
 	--color-bg-glass: rgba(17, 17, 19, 0.94);
 	--color-heading: #c5bbb0;
+	--lemma-fill-1: #6b2e2f;
+	--lemma-fill-2: #863738;
 }
 
 [data-theme='oled'] {
@@ -352,6 +372,8 @@
 	--color-border: #1f1f1f;
 	--color-bg-glass: rgba(0, 0, 0, 0.96);
 	--color-heading: #a8a4b0;
+	--lemma-fill-1: #642626;
+	--lemma-fill-2: #7f3030;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -368,6 +390,8 @@
 		--color-border: #2e2b32;
 		--color-bg-glass: rgba(17, 17, 19, 0.94);
 		--color-heading: #c5bbb0;
+		--lemma-fill-1: #6b2e2f;
+		--lemma-fill-2: #863738;
 	}
 }
 
