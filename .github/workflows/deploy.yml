@@ -33,11 +33,35 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy --project-name=douayrheimsbible --branch=main
 
+      # The edge holds /data/* for 7 days (see _headers), so a deploy that
+      # changes a data file is invisible to anyone whose edge copy predates it
+      # until this runs. It has to fail loudly: curl -sS exits 0 on a rejected
+      # call, and Cloudflare answers 200 with success:false besides, so a broken
+      # token or a missing zone id used to leave a green tick and a stale site.
       - name: Purge Cloudflare CDN cache
         if: success()
+        env:
+          ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          curl -sS -X POST \
-            "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
-            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+          set -euo pipefail
+
+          if [ -z "${ZONE}" ]; then
+            echo "::error::CLOUDFLARE_ZONE_ID is not set. The deploy is live but readers keep the previous /data/* for up to 7 days."
+            exit 1
+          fi
+
+          response=$(curl -sS -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${TOKEN}" \
             -H "Content-Type: application/json" \
-            --data '{"purge_everything": true}'
+            --data '{"purge_everything": true}')
+
+          echo "$response"
+
+          if ! echo "$response" | jq -e '.success == true' > /dev/null; then
+            echo "::error::Cache purge refused. The deploy is live but readers keep the previous /data/* for up to 7 days. Check the token carries Zone -> Cache Purge."
+            exit 1
+          fi
+
+          echo "Cache purged."
