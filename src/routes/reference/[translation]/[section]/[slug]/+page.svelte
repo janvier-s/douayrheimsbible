@@ -3,9 +3,10 @@
 	import type { PageData } from './$types';
 	import AnnotationProse from '$lib/components/AnnotationProse.svelte';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
-	import { linkifyItalicRefs, linkifyBareRefs } from '$lib/search/crossRefParser';
-	import { parseOsis } from '$lib/search/reference';
-	import type { OsisRange } from '$lib/search/reference';
+	import { linkifyBareRefs } from '$lib/search/crossRefParser';
+	import { linkifyItalicRefs } from '$lib/search/crossRefItalic';
+	import { parseOsis } from '$lib/search/osis';
+	import type { OsisRange } from '$lib/search/osis';
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 
 	interface Props {

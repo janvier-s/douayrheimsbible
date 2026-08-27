@@ -57,11 +57,14 @@ export interface ConfChapterCommentary {
 	sections: ConfCommentarySection[];
 }
 
-export interface ConfIntro {
-	book: string;
-	bibleIntro: string[];
-	commentaryIntro: string[];
-}
+/** A book's Confraternity introduction: a flat list of paragraphs.
+ *
+ *  This mirrors what `prepare-data.ts` actually writes (the source file's
+ *  `introduction` array). It was previously declared as
+ *  `{ book, bibleIntro, commentaryIntro }`, which matched no file on disk, so
+ *  every Confraternity page threw a TypeError reading `bibleIntro.length` and
+ *  the Intro tab never appeared. */
+export type ConfIntro = string[];
 
 export interface ConfFrontMatter {
 	paragraphs: string[];

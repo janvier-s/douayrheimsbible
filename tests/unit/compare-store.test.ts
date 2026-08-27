@@ -68,3 +68,26 @@ describe('compareStore hydration', () => {
 		expect([...get(store).visible]).toContain('knox');
 	});
 });
+
+describe('translationCoversBook', () => {
+	it('keeps the OT away from NT-only translations', async () => {
+		const { translationCoversBook } = await import('$lib/stores/compare');
+		// The bug this exists for: canonical order puts Malachie before Matthew,
+		// so a naive prev-book link on Conf Matthew 1 offered an OT book.
+		expect(translationCoversBook('conf', 'OT')).toBe(false);
+		expect(translationCoversBook('conf', 'NT')).toBe(true);
+	});
+
+	it('lets full-Bible translations through either way', async () => {
+		const { translationCoversBook } = await import('$lib/stores/compare');
+		for (const tid of ['odr', 'drc', 'haydock', 'vul', 'knox']) {
+			expect(translationCoversBook(tid, 'OT')).toBe(true);
+			expect(translationCoversBook(tid, 'NT')).toBe(true);
+		}
+	});
+
+	it('does not block an unknown translation id', async () => {
+		const { translationCoversBook } = await import('$lib/stores/compare');
+		expect(translationCoversBook('nope', 'OT')).toBe(true);
+	});
+});

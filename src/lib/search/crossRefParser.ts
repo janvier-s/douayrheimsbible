@@ -1,5 +1,3 @@
-import type { OsisRange } from './reference';
-import { parseAllReferences } from './reference';
 import { OSIS_TO_SLUG } from './resolve';
 import { ALL_BOOKS } from '$lib/data/books';
 
@@ -17,7 +15,7 @@ for (const b of ALL_BOOKS) {
  * Chapter-only refs (e.g. "Gen.12") link directly to the reader page;
  * verse-level refs link to search.
  */
-function refUrl(osis: string, translationPrefix?: string): string {
+export function refUrl(osis: string, translationPrefix?: string): string {
 	if (translationPrefix) {
 		// Handle range refs: "Gen.1.1-Gen.1.3" → take first part
 		const baseOsis = osis.includes('-') ? osis.split('-')[0] : osis;
@@ -35,7 +33,7 @@ export type CrossRefToken =
 	| { type: 'ref'; osis: string; display: string; isVerse: boolean }
 	| { type: 'text'; content: string };
 
-const ABBREV_TO_OSIS: Record<string, string> = {
+export const ABBREV_TO_OSIS: Record<string, string> = {
 	// Pentateuch (full names + abbreviations)
 	Genesis: 'Gen',
 	Gen: 'Gen',
@@ -975,7 +973,7 @@ const NORMALISE_ABBREV_PATTERNS: ReadonlyArray<[RegExp, string]> = Object.freeze
  * Normalize old Douay-Rheims abbreviations in italic text to modern names
  * that parseAllReferences can handle.
  */
-function normalizeForParser(text: string): string {
+export function normalizeForParser(text: string): string {
 	let result = text;
 
 	// Handle numbered books like "1. Cor." → "1 Corinthians"
@@ -1039,79 +1037,6 @@ function normalizeForParser(text: string): string {
 	});
 
 	return result;
-}
-
-export function parseItalicRef(text: string, conservative = false): OsisRange[] | null {
-	// Quick check: if text has no digits, it's unlikely to be a reference
-	if (!/\d/.test(text)) return null;
-
-	// Check for patristic / non-biblical indicators — author names, work structures, Latin terms
-	if (
-		/\b(?:Homi|ho|Epist|Serm|Ser|Tract|lib|li|cont|Baptis|Martyres|Dialog|adv|Poenit|principio|Iovinian|Ambr|Hiero|Greg|Origen|Orig|Aug|Chrys|Clem|Cypr|Cyril|Iren|Tert|Ath|Bas|Epiph|Hilar|Isid|Prosp|Cassi|Alcuin|Bede|Anselm|Aquin|Bernard|Annot|Testa|Praef|Conc|Decret)\b/i.test(
-			text
-		)
-	)
-		return null;
-
-	// Latin citation context: "in c. 2.", "c. 8. v. 34.", "sub finem", "prope finem", "l. 2. de", "ad Ro."
-	if (/\b(?:prope|finem|ibidem|supra|infra)\b/i.test(text)) return null;
-	if (/\bc\.\s*\d/i.test(text)) return null;
-	if (/\bsub\s+\w/i.test(text)) return null;
-	if (/\bl\.\s*\d/i.test(text)) return null;
-	if (/\bad\s+[A-Z]/i.test(text)) return null;
-
-	// Greek text mixed with refs — likely a scholarly citation, not a standalone reference
-	if (/[\u0370-\u03FF\u1F00-\u1FFF]/.test(text)) return null;
-
-	// Four-digit year = publication reference, not Bible
-	if (/\b1[4-9]\d{2}\b/.test(text)) return null;
-
-	// Conservative mode: extra checks for reference pages with mixed patristic content
-	if (conservative) {
-		// Reject if text starts with a bare number+period followed by an abbreviation
-		// that is NOT a known numbered book. "1. Lu. v. 78." → "1Lu" not in map → reject.
-		// But "1. Cor. 4, 1." → "1Cor" IS in map → allow.
-		const leadingMatch = text.match(/^\s*(\d+)\.\s+([A-Z][a-z]\w*)/);
-		if (leadingMatch) {
-			const numberedKey = leadingMatch[1] + leadingMatch[2];
-			if (!ABBREV_TO_OSIS[numberedKey]) {
-				return null;
-			}
-		}
-		// Reject if text contains lowercase Latin words mixed with refs
-		// (genuine refs are mostly abbreviations + numbers)
-		const stripped = text
-			.replace(/<[^>]+>/g, '')
-			.replace(/\d+/g, '')
-			.replace(/[.,;:&v]/g, '')
-			.trim();
-		const words = stripped.split(/\s+/).filter((w) => w.length > 2);
-		const lowerWords = words.filter((w) => w[0] === w[0].toLowerCase());
-		if (lowerWords.length > 1) return null;
-	}
-
-	const normalized = normalizeForParser(text);
-	const refs = parseAllReferences(normalized);
-
-	return refs.length > 0 ? refs : null;
-}
-
-/**
- * Preprocess an HTML string: wrap <i> tags whose content parses as a Bible
- * reference in an <a class="verse-ref"> link. Non-ref italic spans are left untouched.
- */
-export function linkifyItalicRefs(
-	html: string,
-	conservative = false,
-	translationPrefix?: string
-): string {
-	return html.replace(/<i>([\s\S]*?)<\/i>/g, (match, content) => {
-		const refs = parseItalicRef(content, conservative);
-		if (!refs || refs.length === 0) return match;
-		const osisStr = refs.map((r) => r.osis).join(',');
-		const url = refUrl(osisStr, translationPrefix);
-		return `<a class="verse-ref" data-osis="${osisStr}" href="${url}" target="_blank" rel="noopener"><i>${content}</i></a>`;
-	});
 }
 
 /**

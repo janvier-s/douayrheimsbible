@@ -1,3 +1,4 @@
+import { parseOsis, type OsisRange } from './osis';
 import { bcv_parser } from 'bible-passage-reference-parser/esm/bcv_parser.js';
 import * as lang from 'bible-passage-reference-parser/esm/lang/en.js';
 
@@ -105,17 +106,6 @@ export function parseReference(input: string): ParsedReference | null {
 	};
 }
 
-export interface OsisRange {
-	/** Raw OSIS string e.g. "Matt.3.2-Matt.3.12" */
-	osis: string;
-	/** OSIS book code e.g. "Matt" */
-	book: string;
-	startChapter: number;
-	startVerse?: number;
-	endChapter: number;
-	endVerse?: number;
-}
-
 /**
  * Parse input into all OSIS references.
  * Handles multi-reference queries like "Matt 3:2-12, John 5:1-6".
@@ -154,20 +144,4 @@ export function parseAllReferences(input: string): OsisRange[] {
 	}
 
 	return ranges;
-}
-
-export function parseOsis(osis: string): OsisRange | null {
-	// Formats: "Book.Ch", "Book.Ch.V", "Book.Ch.V-Book.Ch.V", "Book.Ch-Book.Ch"
-	const rangeMatch = osis.match(/^([^.]+)\.(\d+)(?:\.(\d+))?(?:-[^.]+\.(\d+)(?:\.(\d+))?)?$/);
-	if (!rangeMatch) return null;
-
-	const [, book, sCh, sV, eCh, eV] = rangeMatch;
-	return {
-		osis,
-		book,
-		startChapter: parseInt(sCh, 10),
-		startVerse: sV ? parseInt(sV, 10) : undefined,
-		endChapter: eCh ? parseInt(eCh, 10) : parseInt(sCh, 10),
-		endVerse: eV ? parseInt(eV, 10) : sV ? parseInt(sV, 10) : undefined
-	};
 }

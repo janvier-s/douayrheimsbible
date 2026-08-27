@@ -30,6 +30,10 @@
 	);
 
 	type Testament = 'OT' | 'NT';
+	// Seeded from bookSlug on mount, then owned by the user's tab clicks.
+	// Every call site renders this component behind `{#if navOpen}`, so it
+	// remounts each time the nav opens and re-seeds from the current book.
+	// svelte-check's `state_referenced_locally` warning here is expected.
 	let activeTestament: Testament = $state(
 		ALL_BOOKS.find((b) => b.slug === bookSlug)?.testament ?? 'OT'
 	);

@@ -23,7 +23,6 @@
 	import type { StudyTab } from '$lib/stores/studyPanel';
 	import { createPanelResize } from '$lib/utils/panelResize';
 	import type { BookData, Chapter, BookMeta } from '$lib/data/types';
-	import StudyPanel from './StudyPanel.svelte';
 	import PageFooter from './PageFooter.svelte';
 	import { isMobile } from '$lib/stores/mobile';
 	import { suspendChrome } from '$lib/stores/chrome';
@@ -88,6 +87,9 @@
 		totalChapters: number;
 	}
 
+	// Seeded from the initial props, then grown by infinite scroll and reset
+	// wholesale on navigation (see the `chapters = [...]` assignments below).
+	// The `state_referenced_locally` warnings on these three are expected.
 	let chapters: LoadedChapter[] = $state([
 		{
 			bookMeta: initialBookMeta,
@@ -121,6 +123,28 @@
 		if (!panelDragging) liveWidth = $prefs.studyPanelWidth;
 	});
 	let mobileStudyMode = $derived($isMobile && $prefs.readingMode === 'study');
+
+	/** Study panel, loaded on first entry into study mode.
+	 *
+	 *  The panel and everything under it (AnnotationProse, crossRefParser and the
+	 *  ~150KB bible-passage-reference-parser grammar) used to sit in this route's
+	 *  eager module graph even though the default reading mode is 'reading' and
+	 *  the panel renders at opacity 0 until study mode is on. Server-rendering it
+	 *  produced only an empty shell, so nothing is lost by deferring it.
+	 *
+	 *  Once loaded it stays loaded: toggling back to reading mode hides the panel
+	 *  via the wrapper's width/opacity transition rather than unmounting it, which
+	 *  keeps the panel's own scroll and tab state across toggles. */
+	let StudyPanel: typeof import('./StudyPanel.svelte').default | null = $state(null);
+	let studyPanelRequested = false;
+
+	$effect(() => {
+		if ($prefs.readingMode !== 'study' || studyPanelRequested) return;
+		studyPanelRequested = true;
+		import('./StudyPanel.svelte').then((m) => {
+			StudyPanel = m.default;
+		});
+	});
 	let mobilePanelOpen = $state(false);
 	run(() => {
 		if (!mobileStudyMode) mobilePanelOpen = false;
@@ -228,6 +252,16 @@
 		return chapters.some((c) => c.bookMeta.slug === slug && c.chapter.chapter === ch);
 	}
 
+	/** Chapters we asked for and did not get.
+	 *
+	 *  Both loaders end by calling checkRollingPreload(), which calls straight back
+	 *  into them. Without this, a chapter that can never load retries forever: on
+	 *  a partial translation the book before the first one does not exist at all
+	 *  (Confraternity is New Testament only, so /conf/matthew/1 asks for Malachi),
+	 *  and scrolling to the top produced an unbounded stream of 404s. */
+	const failedChapters = new Set<string>();
+	const chapterKeyOf = (slug: string, ch: number) => `${slug}/${ch}`;
+
 	/** Drop chapters from the front (above viewport). Compensate scroll. */
 	async function pruneFront(count: number) {
 		if (count <= 0 || !container) return;
@@ -258,11 +292,14 @@
 		const nextChNum = last.chapter.chapter + 1;
 		if (nextChNum > last.totalChapters) return;
 		if (hasChapter(last.bookMeta.slug, nextChNum)) return;
+		if (failedChapters.has(chapterKeyOf(last.bookMeta.slug, nextChNum))) return;
 
 		loadingAny = true;
 		try {
 			const result = await fetchChapter(last.bookMeta.slug, nextChNum);
-			if (result.chapter) {
+			if (!result.chapter) {
+				failedChapters.add(chapterKeyOf(last.bookMeta.slug, nextChNum));
+			} else {
 				chapters = [
 					...chapters,
 					{ bookMeta: last.bookMeta, chapter: result.chapter, totalChapters: last.totalChapters }
@@ -274,6 +311,7 @@
 				if (excess > 0) await pruneFront(excess);
 			}
 		} catch (e) {
+			failedChapters.add(chapterKeyOf(last.bookMeta.slug, nextChNum));
 			console.warn('Failed to load chapter:', e);
 		} finally {
 			loadingAny = false;
@@ -297,11 +335,14 @@
 		}
 
 		if (hasChapter(targetBookMeta.slug, prevChNum)) return;
+		if (failedChapters.has(chapterKeyOf(targetBookMeta.slug, prevChNum))) return;
 
 		loadingAny = true;
 		try {
 			const result = await fetchChapter(targetBookMeta.slug, prevChNum);
-			if (result.chapter) {
+			if (!result.chapter) {
+				failedChapters.add(chapterKeyOf(targetBookMeta.slug, prevChNum));
+			} else {
 				// Measure immediately before DOM mutation — after tick() below,
 				// newHeight - oldHeight equals exactly the prepended chapter's height.
 				const scrollY = window.scrollY;
@@ -324,6 +365,7 @@
 				if (excess > 0) pruneBack(excess);
 			}
 		} catch (e) {
+			failedChapters.add(chapterKeyOf(targetBookMeta.slug, prevChNum));
 			console.warn('Failed to load chapter:', e);
 		} finally {
 			loadingAny = false;
@@ -595,11 +637,13 @@
 			</div>
 		</div>
 		<div bind:this={panelEl} class="shrink-0 h-full">
-			<StudyPanel
-				bookData={currentBookData}
-				{translationId}
-				onClose={mobileStudyMode ? () => (mobilePanelOpen = false) : null}
-			/>
+			{#if StudyPanel}
+				<StudyPanel
+					bookData={currentBookData}
+					{translationId}
+					onClose={mobileStudyMode ? () => (mobilePanelOpen = false) : null}
+				/>
+			{/if}
 		</div>
 	</div>
 </div>

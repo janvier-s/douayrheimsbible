@@ -154,6 +154,19 @@ export const TRANSLATIONS: Translation[] = [
 	}
 ];
 
+/**
+ * Whether a translation carries a given book.
+ *
+ * Confraternity is New Testament only, so canonical book order alone is not
+ * enough to build navigation on: the book before Matthew is Malachie, which
+ * Confraternity does not have. Callers that offer a link to an adjacent book
+ * need to check this first.
+ */
+export function translationCoversBook(tid: string, testament: 'OT' | 'NT'): boolean {
+	const t = TRANSLATIONS.find((x) => x.id === tid);
+	return !(t?.ntOnly && testament === 'OT');
+}
+
 export const MAX_COLS = 5;
 
 // ── Konami unlock ─────────────────────────────────────────────────────────────

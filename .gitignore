@@ -31,3 +31,19 @@ static/data/odr/search-notes-index.json
 
 # Brainstorming visual companion artifacts (local only)
 .superpowers/
+
+# iCloud Drive sync conflict copies ("foo 2.ts", "genesis 2/")
+*\ 2
+*\ 2.*
+*\ 2/
+
+# Test + tooling artifacts
+test-results/
+playwright-report/
+.playwright-mcp/
+
+# Local agent config
+.claude/
+
+# Ad-hoc screenshots dropped at the repo root
+/*.png

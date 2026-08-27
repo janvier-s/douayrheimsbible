@@ -10,9 +10,10 @@
 	} from '$lib/utils/text';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
-	import { linkifyItalicRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
-	import { parseOsis } from '$lib/search/reference';
-	import type { OsisRange } from '$lib/search/reference';
+	import { linkifyDrcRefs } from '$lib/search/crossRefParser';
+	import { linkifyItalicRefs } from '$lib/search/crossRefItalic';
+	import { parseOsis } from '$lib/search/osis';
+	import type { OsisRange } from '$lib/search/osis';
 	import type { AnnotationNote } from '$lib/data/types';
 
 	interface Props {

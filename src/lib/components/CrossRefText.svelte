@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { tokenizeCrossRef } from '$lib/search/crossRefParser';
 	import VerseTooltip from '$lib/components/VerseTooltip.svelte';
-	import { parseOsis } from '$lib/search/reference';
-
+	import { parseOsis } from '$lib/search/osis';
 	interface Props {
 		text: string;
 	}

@@ -8,8 +8,7 @@
 	import { ALL_BOOKS, chapterRefBookName } from '$lib/data/books';
 	import { stripTags } from '$lib/utils/text';
 	import { supportsHover } from '$lib/stores/mobile';
-	import type { OsisRange } from '$lib/search/reference';
-
+	import type { OsisRange } from '$lib/search/osis';
 	/** Map OSIS book code → friendly display name via slug lookup */
 	const SLUG_TO_NAME: Record<string, string> = {};
 	for (const b of ALL_BOOKS) SLUG_TO_NAME[b.slug] = b.odrName;
