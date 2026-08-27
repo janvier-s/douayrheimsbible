@@ -235,7 +235,7 @@
 	}}
 >
 	{#each paragraphs as para}
-		<p class="font-reader text-[16px] leading-[1.83] text-foreground">
+		<p class="font-reader text-[15px] leading-[1.6] text-foreground">
 			{@html para}
 		</p>
 	{/each}
