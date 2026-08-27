@@ -11,6 +11,13 @@
           "verse": 1,
           "text": "Blessed <na>(a)[1]</na> is the man, that hath <na>(b)</na> not gone in the counsel of the impious, & hath <na>(c)</na> not stood in the way of sinners, and hath <na>(d)</na> not sit in the chair of pestilence:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              41,
+              140,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -38,6 +45,13 @@
           "verse": 2,
           "text": "But <na>(e)</na> his will is in the way of our Lord, and in his law he will meditate day and night. <cr>[1]</cr>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              34,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ios. 1. 1. Hath not gone, not stood, not sit.]"
@@ -146,6 +160,13 @@
           "verse": 2,
           "text": "The <na>(c)</na> kings of the earth stood up, and the <na>(d)</na> Princes came together in one against our Lord, and against his Christ.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              119,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "c",
@@ -228,6 +249,13 @@
           "verse": 8,
           "text": "Ask of me, and I will give <na>(n)</na> thee the Gentiles, for thine inheritance, and thy possession <na>(o)</na> the ends of the earth.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              45,
+              35,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "n",
@@ -243,6 +271,13 @@
           "verse": 9,
           "text": "Thou shalt rule them in <na>(p)</na> a rod of iron, and as a potter's vessel thou shalt break them in pieces. <cr>[1]</cr>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              56,
+              20,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Apoc. 3. & 19."
@@ -259,6 +294,18 @@
           "verse": 10,
           "text": "And <na>(q)</na> now ye kings understand: take instruction you that judge the earth.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              21,
+              19,
+              1
+            ],
+            [
+              42,
+              41,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "q",
@@ -270,6 +317,13 @@
           "verse": 11,
           "text": "Serve our Lord in <na>(r)</na> fear: and rejoice to him with trembling.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              41,
+              29,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "r",
@@ -305,7 +359,19 @@
         {
           "verse": 1,
           "text": "The Psalm of David, when he fled from the face of Absalom his son.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              14,
+              1
+            ],
+            [
+              20,
+              37,
+              3
+            ]
+          ]
         },
         {
           "verse": 2,
@@ -372,6 +438,13 @@
           "verse": 6,
           "text": "I have <na>(i)</na> slept, and have <na>(k)</na> been at rest; and have <na>(l)</na> risen up, because our lord hath taken me.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              93,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "i",
@@ -437,6 +510,13 @@
           "verse": 1,
           "text": "Unto the end in <na>(a)</na> songs, the Psalm <na>(b)</na> of David.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              12,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -533,6 +613,13 @@
           "verse": 6,
           "text": "Sacrifice ye the sacrifice of <na>(q)</na> justice, and hope in our Lord. Many say: <na>(r)</na> Who sheweth us good things?",
           "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              33,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "q",
@@ -650,6 +737,13 @@
           "verse": 5,
           "text": "In <na>(e)</na> the morning I will stand by thee and will see: because thou art not a God that wilt iniquity.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              80,
+              28,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "e",
@@ -770,6 +864,13 @@
           "verse": 1,
           "text": "Unto <na>(a)</na> the end in songs, the Psalm of David for the octave. <cr>[1]</cr>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              55,
+              14,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Psa. 37."
@@ -786,6 +887,13 @@
           "verse": 2,
           "text": "Lord, <na>(b)</na> rebuke me not in thy fury; nor <na>(c)</na> chastise me in thy wrath.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              33,
+              54,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "b",
@@ -1128,6 +1236,13 @@
           "verse": 1,
           "text": "Unto <na>(a)</na> the end <na>(b)</na> for presses, the Psalm of David.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              43,
+              7,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -1761,6 +1876,13 @@
           "verse": 9,
           "text": "The impious walk round about: according to thy highness thou hast <na>(i)</na> multiplied the children of men.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              28,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "i",
@@ -1848,6 +1970,13 @@
           "verse": 1,
           "text": "Unto the end, a Psalm of David. The <na>(a)</na> fool hath said in his heart: There is no God. They are corrupt, and are become <na>(b)</na> abominable in their studies: there is <na>(c)</na> not that doth good no not one. <cr>[1]</cr>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              211,
+              10,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Psa. 52."
@@ -1964,6 +2093,13 @@
           "verse": 1,
           "text": "The Psalm of David. Lord who shall dwell in <na>(a)</na> thy tabernacle? Or who shall rest in thy holy hill?",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              18,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -2021,6 +2157,18 @@
           "verse": 5,
           "text": "That hath not given his money to <na>(i)</na> usury, and hath not taken <na>(k)</na> gifts upon the innocent, He that doth these things, shall not be moved for ever.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              110,
+              25,
+              1
+            ],
+            [
+              137,
+              27,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "i",
@@ -2108,6 +2256,13 @@
           "verse": 5,
           "text": "<na>(k)</na> Our Lord the portion of mine inheritance, and of my <na>(l)</na> cup: thou art he, that will restore mine inheritance unto me.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              40,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "k",
@@ -2178,6 +2333,13 @@
           "verse": 10,
           "text": "Because thou wilt not leave my soul <na>(t)</na> in hell: neither wilt give <na>(v)</na> thy holy one to see corruption <cr>[1]</cr>. Thou hast made <na>(w)</na> the ways of life known to me, thou shalt make me full of joy with <na>(x)</na> thy countenance: delectations on thy right hand, even to <na>(y)</na> the end.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              18,
+              38,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Act. 2. & 3."
@@ -2215,6 +2377,13 @@
           "verse": 1,
           "text": "The prayer of David. Hear, o Lord my <na>(a)</na> justice: attend my petition. With thine ears hear my prayer, <na>(b)</na> not in deceitful lips.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              19,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -2875,6 +3044,13 @@
           "verse": 8,
           "text": "The law of our Lord is immaculate <na>(h)</na> converting souls: the testimony of our Lord is faithful, giving wisdom to little ones.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              63,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "h",
@@ -3183,6 +3359,13 @@
           "verse": 1,
           "text": "Unto the end for the <na>(a)</na> morning enterprise, the Psalm <na>(b)</na> of David.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              39,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -3216,6 +3399,13 @@
           "verse": 3,
           "text": "My God I shall cry <na>(f)</na> by day, <na>(g)</na> & thou wilt not hear: and by night, and <na>(h)</na> not for folly unto me.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              55,
+              18,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "f",
@@ -3413,6 +3603,13 @@
           "verse": 17,
           "text": "Because many <na>(k)</na> dogs have compassed me: the counsel of the malignant hath besieged me. They have digged my hands and my feet:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              97,
+              16,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "k",
@@ -3484,6 +3681,18 @@
           "verse": 23,
           "text": "I will <na>(t)</na> declare thy name to my brethren: in the midst of the Church I will praise thee,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              51,
+              1
+            ],
+            [
+              53,
+              45,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "t",
@@ -3523,6 +3732,13 @@
           "verse": 27,
           "text": "The <na>(y)</na> poor shall eat, and shall be filled: and they shall praise our Lord that seek after him: their hearts <na>(z)</na> shall live for ever and ever.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              31,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "y",
@@ -4129,7 +4345,14 @@
         {
           "verse": 5,
           "text": "I have hated the Church of the malignant: and with the impious I will not sit.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              40,
+              1
+            ]
+          ]
         },
         {
           "verse": 6,
@@ -4538,6 +4761,13 @@
           "verse": 1,
           "text": "The Psalm of David, in the consummation <na>(a)</na> of the tabernacle. Bring <na>(b)</na> to our Lord ye children of God: bring to our Lord <na>(c)</na> the sons of rams.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              20,
+              50,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -5123,6 +5353,13 @@
           "verse": 1,
           "text": "To <na>(a)</na> David himself understanding. Blessed are they, <na>(b)</na> whose iniquities are forgiven: and whose sins <na>(c)</na> be covered. <cr>[1]</cr>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              30,
+              13,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Rom. 4. 1. Pet. 4."
@@ -5147,6 +5384,18 @@
           "verse": 2,
           "text": "Blessed is the man, to whom <na>(d)</na> our Lord hath not imputed sin, neither is there <na>(e)</na> guile in his spirit.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              55,
+              11,
+              1
+            ],
+            [
+              72,
+              49,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "d",
@@ -5492,6 +5741,13 @@
           "verse": 1,
           "text": "To <na>[1]</na> David, when he changed his countenance before <na>(a)</na> Abimelech, and he dismist him, and he went away <na>[2]</na>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              28,
+              26,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -5604,7 +5860,14 @@
         {
           "verse": 14,
           "text": "Stay thy tongue from evil: and thy lips that they speak not guile.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              15,
+              1
+            ]
+          ]
         },
         {
           "verse": 15,
@@ -7716,6 +7979,13 @@
           "verse": 7,
           "text": "Thy seat o God <na>(w)</na> for ever and ever: a rod of direction the rod of thy Kingdom.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              45,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "w",
@@ -7854,12 +8124,26 @@
         {
           "verse": 16,
           "text": "They shall be brought in joy and exultation: they shall be brought into the temple of the King.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              45,
+              49,
+              1
+            ]
+          ]
         },
         {
           "verse": 17,
           "text": "<na>(s)</na> For thy fathers there are born sons to thee: thou shalt make them Princes over all the earth.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              43,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "s",
@@ -8683,6 +8967,13 @@
           "verse": 14,
           "text": "<na>(m)</na> Immolate to God the sacrifice of praise, and <na>(n)</na> pay thy vows to the Highest.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              29,
+              23,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "m",
@@ -8778,7 +9069,14 @@
         {
           "verse": 2,
           "text": "when Nathan the Prophet came to him, after that he had sinned with Bethsabee.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              28,
+              1
+            ]
+          ]
         },
         {
           "verse": 3,
@@ -8844,6 +9142,13 @@
           "verse": 7,
           "text": "For behold I <na>(l)</na> was conceived in iniquities: & my mother conceived me in sins.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              11,
+              42,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "l",
@@ -8989,6 +9294,13 @@
           "verse": 19,
           "text": "A sacrifice to God is <na>(e)</na> an afflicted spirit: a contrite and humbled heart, o God, thou wilt not despise.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              2,
+              9,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "e",
@@ -11096,6 +11408,13 @@
           "verse": 12,
           "text": "Thou wilt <na>(s)</na> bless the crown of the year of thy goodness: <na>(t)</na> and thy fields shall be replenished with plenty.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              23,
+              15,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "s",
@@ -11614,6 +11933,13 @@
           "verse": 16,
           "text": "The <na>(z)</na> mountain of God a fat mountain. A mountain <na>(a)</na> curded as cheese, a <na>(b)</na> fat mountain:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              32,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "z",
@@ -11633,6 +11959,13 @@
           "verse": 17,
           "text": "why <na>(c)</na> suppose you curded mountains? A mountain, in which it hath well pleased God to dwell therein: for indeed our Lord will dwell even to the end.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              45,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "c",
@@ -14032,6 +14365,13 @@
           "verse": 40,
           "text": "How <na>(k)</na> often have they exasperated him in the desert: provoked him to wrath in the place without water.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              44,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "k",
@@ -16281,7 +16621,14 @@
         {
           "verse": 34,
           "text": "But my mercy I will not take away from him: neither will I hurt in my truth.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              38,
+              1
+            ]
+          ]
         },
         {
           "verse": 35,
@@ -16319,6 +16666,13 @@
           "verse": 39,
           "text": "But <na>[1]</na> thou hast repelled and despised: thou <na>(o)</na> hast deferred thy Christ.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              35,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "o",
@@ -16660,6 +17014,13 @@
           "verse": 5,
           "text": "With shield shall his truth compass thee: thou shalt not be afraid <na>(f)</na> of the fear in the night.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              42,
+              24,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "f",
@@ -17310,6 +17671,13 @@
           "verse": 8,
           "text": "<na>(k)</na> Today if ye shall hear his voice, harden not your hearts.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              47,
+              22,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "k",
@@ -17731,6 +18099,13 @@
           "verse": 5,
           "text": "Exalt ye the Lord our God, and adore <na>(e)</na> his foot-stool: because it is holy.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              31,
+              33,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "e",
@@ -18314,6 +18689,13 @@
           "verse": 5,
           "text": "Who <na>(h)</na> replenisheth thy desire in good things: thy youth <na>(i)</na> shall be renewed as the eagle's.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              57,
+              54,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "h",
@@ -18371,6 +18753,13 @@
           "verse": 9,
           "text": "He will <na>(q)</na> not be angry always: neither will he threaten for ever.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              40,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "q",
@@ -19193,7 +19582,14 @@
         {
           "verse": 10,
           "text": "And he saved them from the hand of them that hated them: and he redeemed them out of the hand of the enemy.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              61,
+              16,
+              1
+            ]
+          ]
         },
         {
           "verse": 11,
@@ -20141,6 +20537,18 @@
           "verse": 4,
           "text": "Our Lord <na>(i)</na> sware, and it shall not repent him: Thou art a Priest <na>(k)</na> for ever according to <na>(l)</na> the order of Melchisedech. <cr>[1]</cr>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              67,
+              30,
+              1
+            ],
+            [
+              98,
+              51,
+              2
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Heb. 5. v. 7."
@@ -20624,7 +21032,14 @@
         {
           "verse": 12,
           "text": "The idols of the gentiles are silver, and gold, the works of men's hands.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              46,
+              1
+            ]
+          ]
         },
         {
           "verse": 13,
@@ -26018,6 +26433,13 @@
           "verse": 1,
           "text": "Praising, <na>(a)</na> to David himself. I will exalt thee my God <na>(b)</na> the King: and I will bless thy name <na>(c)</na> for ever and <na>(d)</na> for ever.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              43,
+              15,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -26103,6 +26525,13 @@
           "verse": 13,
           "text": "Thy kingdom is a kingdom <na>(h)</na> of all worlds: and thy dominion in all generation and generation. Our Lord is faithful in all his words, and holy in all his works.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              104,
+              20,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "h",

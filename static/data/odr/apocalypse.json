@@ -72,6 +72,13 @@
           "verse": 1,
           "text": "<sc>The</sc> <na>[1]</na> Apocalypse of <sc>Jesus</sc> Christ which God gave him, to make manifest to his servants the things which must be done quickly: and signified, sending by his Angel to his servant John,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              10,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -97,6 +104,18 @@
           "verse": 4,
           "text": "John to the seven churches which are in Asia. Grace to you and peace from <cr>[1]</cr> him that is, and that was, and that shall come, and from the seven spirits which are in the sight of his throne,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              5,
+              21,
+              1
+            ],
+            [
+              139,
+              22,
+              2
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Exo. 3, 14."
@@ -119,6 +138,13 @@
           "verse": 6,
           "text": "and hath made us <cr>[1]</cr> a Kingdom and Priests to God and his Father, to him be glory and empire for ever and ever. Amen.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              32,
+              19,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "1. Pet. 1."
@@ -157,6 +183,13 @@
           "verse": 10,
           "text": "I was <na>[1]</na> in spirit on the Dominical day, and heard behind me a great voice as it were of a trumpet",
           "has_annotation": true,
+          "lemmas": [
+            [
+              29,
+              20,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -182,6 +215,13 @@
           "verse": 13,
           "text": "and in the midst of the seven candlesticks of gold, one <cr>[1]</cr> like to the Son of man, vested in a <na>[2]</na> priestly garment to the foot, & girded about near to the paps with a girdle of gold.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              93,
+              41,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "c podere Sap. 18. 24."
@@ -227,6 +267,18 @@
           "verse": 20,
           "text": "The Sacrament of the seven stars, which thou hast seen in my right hand, and the seven candlesticks of Gold. The seven stars, are the Angels of the seven Churches. And the seven candlesticks, are <na>[1]</na> the seven Churches.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              15,
+              1
+            ],
+            [
+              130,
+              32,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -250,6 +302,13 @@
           "verse": 1,
           "text": "<sc>And</sc> <na>[1]</na> to the Angel of the Church of Ephesus write, Thus saith he which holdeth the seven stars in his right hand, which walketh in the midst of the seven candlesticks of gold:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              91,
+              17,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -260,7 +319,14 @@
         {
           "verse": 2,
           "text": "I know thy works and labour, and thy patience: & that thou canst not bear evil men, & hast tried them which say themselves to be Apostles, and are not, and hast found them liars:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              7,
+              38,
+              1
+            ]
+          ]
         },
         {
           "verse": 3,
@@ -279,12 +345,31 @@
         {
           "verse": 5,
           "text": "Be mindful therefore from whence thou art fallen: and do penance, and do the first works. But if not: I come to thee, & will move thy candlestick out of his place, unless thou do penance.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              120,
+              9,
+              1
+            ]
+          ]
         },
         {
           "verse": 6,
           "text": "But this thou hast, because thou hatest the facts of the Nicolaites, which I also hate.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              20,
+              19,
+              1
+            ],
+            [
+              50,
+              17,
+              2
+            ]
+          ]
         },
         {
           "verse": 7,
@@ -347,6 +432,13 @@
           "verse": 14,
           "text": "But I have against thee a few things: because thou hast there, them that hold the doctrine of Balaam, who taught Balac <cr>[1]</cr> to cast a scandal before the children of Israel, to eat and commit fornication:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              132,
+              17,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Nu. 24, 14. 25, 2."
@@ -389,6 +481,13 @@
           "verse": 20,
           "text": "But I have against thee a few things: because thou permittest the <cr>[1]</cr> woman Jezabel, who calleth herself a prophetess, to teach, and to seduce my servants, to fornicate, and to eat of things sacrificed to idols.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              62,
+              30,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "3. Reg. 18."
@@ -398,12 +497,26 @@
         {
           "verse": 21,
           "text": "And I gave her a time that she might do penance: & she will not repent from her fornication.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 22,
           "text": "Behold I will cast her into a bed: and they that commit adultery with her, shall be in very great tribulation, unless they do penance from their works:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              34,
+              1
+            ]
+          ]
         },
         {
           "verse": 23,
@@ -437,7 +550,14 @@
         {
           "verse": 26,
           "text": "And he that shall overcome and keep my works unto the end, I will give him power over the nations,",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              59,
+              21,
+              1
+            ]
+          ]
         },
         {
           "verse": 27,
@@ -502,7 +622,14 @@
         {
           "verse": 5,
           "text": "He that shall overcome, shall thus be vested in white garments, and I will not put his name out of the book of life, and I will confess his name before my Father, and before his Angels.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              22,
+              1
+            ]
+          ]
         },
         {
           "verse": 6,
@@ -524,7 +651,14 @@
         {
           "verse": 9,
           "text": "Behold I will give of the synagogue of Satan, which say they be Jews, and are not, but do lie. Behold I will make them come and adore before thy feet. And they shall know that I have loved thee.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              128,
+              21,
+              1
+            ]
+          ]
         },
         {
           "verse": 10,
@@ -533,7 +667,14 @@
         {
           "verse": 11,
           "text": "Behold I come quickly: hold that which thou hast, that no man take thy crown.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              26,
+              1
+            ]
+          ]
         },
         {
           "verse": 12,
@@ -564,7 +705,14 @@
         {
           "verse": 16,
           "text": "But because thou art lukewarm, and neither cold nor hot, I will begin to vomit thee out of my mouth.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              21,
+              8,
+              1
+            ]
+          ]
         },
         {
           "verse": 17,
@@ -651,6 +799,13 @@
           "verse": 8,
           "text": "And the four beasts, every one of them had six wings round about: and within they are full of eyes. And they had no rest day and night, saying, <i>Holy, Holy, Holy, Lord God omnipotent,</i> <cr>[1]</cr> which was, and which is, and which shall come.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              147,
+              16,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Esa. 6, 3."
@@ -749,7 +904,14 @@
         {
           "verse": 8,
           "text": "And when he had opened the book, the four beasts and the four and twenty Seniors fell before the Lamb, having every one harps, and golden vials full of odours, which are the prayers of saints:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              170,
+              21,
+              1
+            ]
+          ]
         },
         {
           "verse": 9,
@@ -765,6 +927,13 @@
           "verse": 10,
           "text": "and <cr>[1]</cr> hast made us to our God <na>[2]</na> <alt>a Kingdom</alt> and Priests, and we shall reign upon the earth.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              54,
+              32,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "1. Pet. 2."
@@ -806,6 +975,13 @@
           "verse": 13,
           "text": "And every creature that is in heaven, and upon the earth, and under the earth, and that are in the sea, and that are therein: all did I hear saying: <cr>[1]</cr> To him that sitteth in the throne, and <na>[2]</na> to the Lamb, benediction and honour and glory and power for ever and ever.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              14,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Apoc. 4, 11."
@@ -863,17 +1039,43 @@
         {
           "verse": 9,
           "text": "And when he had opened the fifth seal: I saw under the altar the souls of them that were slain for the word of God, and for the testimony which they had.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              45,
+              15,
+              1
+            ]
+          ]
         },
         {
           "verse": 10,
           "text": "And they cried with a loud voice, saying: How long Lord (holy and true), judgest thou not and revengest thou not our blood of them that dwell on the earth?",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ],
+            [
+              94,
+              18,
+              2
+            ]
+          ]
         },
         {
           "verse": 11,
           "text": "And white stoles were given, to every one of them <na>[1]</na> one; and it was said to them, that they should rest yet a little time, till their fellow-servants be complete, and their brethren, that are to be slain even as they.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              134,
+              38,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -1159,7 +1361,14 @@
         {
           "verse": 4,
           "text": "and it was commanded them that they should not hurt the grass of the earth nor any green thing, nor any tree: but only men which have not the sign of God in their foreheads.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              75,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 5,
@@ -1177,7 +1386,14 @@
         {
           "verse": 7,
           "text": "And the similitudes of the locusts, like to horses prepared into battle: and upon their heads as it were crowns like to gold: and their faces as the faces of men.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              20,
+              1
+            ]
+          ]
         },
         {
           "verse": 8,
@@ -1247,6 +1463,13 @@
           "verse": 20,
           "text": "<na>[1]</na> And the rest of men which were not slain with these plagues, neither <na>[2]</na> have done penance from the works of their hands, not to adore devils and idols of gold and silver and brass and stone and wood, which neither can see, nor hear, nor walk,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              168,
+              13,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -1377,7 +1600,14 @@
         {
           "verse": 3,
           "text": "and I will give to my two witnesses, and they shall prophesy a thousand two hundred sixty days, clothed with sack-cloths.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              16,
+              1
+            ]
+          ]
         },
         {
           "verse": 4,
@@ -1537,12 +1767,26 @@
         {
           "verse": 6,
           "text": "& the woman fled into the wilderness where she had a place prepared of God, that there they might feed her a thousand two hundred sixty days.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              2,
+              14,
+              1
+            ]
+          ]
         },
         {
           "verse": 7,
           "text": "And there was made a great battle in heaven, Michael and his Angels fought with the dragon, and the dragon fought and his Angels:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              14,
+              1
+            ]
+          ]
         },
         {
           "verse": 8,
@@ -1587,7 +1831,14 @@
         {
           "verse": 15,
           "text": "And the serpent cast out of his mouth after the woman, water as it were a flood: that he might make her to be carried away with the flood.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              104,
+              18,
+              1
+            ]
+          ]
         },
         {
           "verse": 16,
@@ -1610,7 +1861,14 @@
         {
           "verse": 1,
           "text": "<sc>And</sc> I saw a beast coming up from the sea, having seven heads, and ten horns, & upon his horns ten diadems, and upon his heads names of blasphemy.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              17,
+              1
+            ]
+          ]
         },
         {
           "verse": 2,
@@ -1647,7 +1905,14 @@
         {
           "verse": 7,
           "text": "And it was given unto him to make battail with the saints, & to overcome them. And power was given him upon every tribe and people, and tongue, and nation,",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              31,
+              1
+            ]
+          ]
         },
         {
           "verse": 8,
@@ -1692,7 +1957,14 @@
         {
           "verse": 14,
           "text": "And he seduceth the inhabitants on the earth through the signs which were given him to do in the sight of the beast, saying to them that dwell on the earth, that they should make the image of the beast which hath the stroke of the sword, and lived.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              179,
+              22,
+              1
+            ]
+          ]
         },
         {
           "verse": 15,
@@ -1705,12 +1977,36 @@
         {
           "verse": 17,
           "text": "And that no man may buy or sell, but he that hath the character, or the name of the beast, or the number of his name.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              26,
+              1
+            ]
+          ]
         },
         {
           "verse": 18,
           "text": "Here is wisdom. He that hath understanding, let him count the number of the beast. For it is the number of a man; and the number of him is six hundred sixty six.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              44,
+              13,
+              1
+            ],
+            [
+              58,
+              10,
+              4
+            ],
+            [
+              87,
+              25,
+              2
+            ]
+          ]
         }
       ],
       "summary": "1. A beast rising up out of the sea, having seven heads and ten horns & ten diadems, 5. blasphemeth God, 7. and warreth against the Saints & destroyeth them. 11. And another beast rising out of the earth with two horns, was altogether for the foresaid beast, constraining men to make and adore the image thereof, and to have the character of his name."
@@ -1824,6 +2120,13 @@
           "verse": 13,
           "text": "<na>[1]</na> And I heard a voice from heaven, saying to me: Write, Blessed are the dead which die in our Lord. From hence-forth now, saith the Spirit, that they rest from their labours. For their works follow them.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              111,
+              20,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -2126,12 +2429,31 @@
         {
           "verse": 5,
           "text": "And in her forehead a name written, <i>Mystery:</i> Babylon the great, mother of the fornications and the abominations of the earth.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              7,
+              4
+            ],
+            [
+              52,
+              7,
+              1
+            ]
+          ]
         },
         {
           "verse": 6,
           "text": "And I saw the woman drunken of the blood of Saints, and of the blood of the Martyrs of <sc>Jesus</sc>. And I marveled when I had seen her, with great admiration.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              20,
+              20,
+              1
+            ]
+          ]
         },
         {
           "verse": 7,
@@ -2150,7 +2472,14 @@
         {
           "verse": 9,
           "text": "And here is understanding, that hath wisdom. The seven heads, are seven hills, upon which the woman sitteth, and they are seven kings.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              66,
+              11,
+              1
+            ]
+          ]
         },
         {
           "verse": 10,
@@ -2159,7 +2488,14 @@
         {
           "verse": 11,
           "text": "And the beast which was, and is not: the same also is the eight, and is of the seven, & goeth into destruction.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              37,
+              26,
+              1
+            ]
+          ]
         },
         {
           "verse": 12,
@@ -2209,7 +2545,14 @@
         {
           "verse": 18,
           "text": "And the woman which thou sawest: is the great city, which hath kingdom over the kings of the earth.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              36,
+              14,
+              1
+            ]
+          ]
         }
       ],
       "summary": "The harlot Babylon clothed with diverse ornaments, 6. and drunken of the blood of Martyrs, sitteth upon a beast that hath seven heads and ten horns: 7. all which things the Angel expoundeth."
@@ -2395,7 +2738,14 @@
         {
           "verse": 4,
           "text": "And the four and twenty Seniors fell down, and the four beasts, & adored God sitting upon the throne, saying: <i>Amen, Allelu-ia.</i>",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              113,
+              15,
+              1
+            ]
+          ]
         },
         {
           "verse": 5,
@@ -2418,7 +2768,14 @@
         {
           "verse": 8,
           "text": "And it was given to her that she clothe herself with silk glittering and white. For the silk are the justifications of Saints.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              101,
+              24,
+              1
+            ]
+          ]
         },
         {
           "verse": 9,
@@ -2439,6 +2796,13 @@
           "verse": 10,
           "text": "And <cr>[1]</cr> I fell before his feet, to adore him. And he saith to me: See thou do not; I am thy fellow-servant, and of thy brethren that have the testimony of <sc>Jesus</sc>. Adore God. For the testimony of <sc>Jesus</sc>, is the spirit of prophecy.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              23,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Apoc. 22, 9."
@@ -2535,7 +2899,14 @@
         {
           "verse": 2,
           "text": "And he apprehended the dragon the old serpent, which is the devil and Satan, and bound him for a thousand years.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              81,
+              9,
+              1
+            ]
+          ]
         },
         {
           "verse": 3,
@@ -2545,6 +2916,18 @@
           "verse": 4,
           "text": "And I saw seats: and they sat upon them, and judgement was given them, and the souls of the beheaded for the testimony of <sc>Jesus</sc>, and for the word of God, and that adored not the beast, nor his image, nor received his character in their foreheads or in their hands, and have lived, & reigned with Christ <na>[1]</na> a thousand years.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              11,
+              1
+            ],
+            [
+              71,
+              13,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -2555,17 +2938,43 @@
         {
           "verse": 5,
           "text": "The rest of the dead lived not, till the thousand years be consummate. This is the first resurrection.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              30,
+              1
+            ],
+            [
+              71,
+              30,
+              2
+            ]
+          ]
         },
         {
           "verse": 6,
           "text": "Blessed and holy is he that hath part in the first resurrection. In these the second death hath not power: but they shall be Priests of God and of Christ: and shall reign with him a thousand years.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              111,
+              21,
+              1
+            ]
+          ]
         },
         {
           "verse": 7,
           "text": "And when the thousand years shall be consummate, Satan shall be loosed out of his prison, and shall go forth and seduce <cr>[1]</cr> the nations that are upon the four corners of the earth, <na>[2]</na> Gog, and Magog, and shall gather them into battle, the number of whom is as the sand of the sea.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              49,
+              21,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ezech. 38, 14. 39, 2."
@@ -2581,12 +2990,26 @@
         {
           "verse": 8,
           "text": "And they ascended upon the breadth of the earth, and compassed the camp of the Saints, and the beloved city.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              63,
+              22,
+              1
+            ]
+          ]
         },
         {
           "verse": 9,
           "text": "And there came down fire from God out of heaven, and devoured them:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              20,
+              1
+            ]
+          ]
         },
         {
           "verse": 10,
@@ -2610,6 +3033,13 @@
           "verse": 12,
           "text": "And I saw the dead, great and little, standing in the sight of the throne, and <cr>[1]</cr> books were opened: and <na>[2]</na> another book was opened, which is of life: and the dead were judged of those things which were written in the books according to their works.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              128,
+              12,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Apoc. 3, 5. 21, 27."
@@ -2804,7 +3234,14 @@
         {
           "verse": 18,
           "text": "And the building of the wall thereof was of jasper stone: but the city it-self pure gold, like to pure glass.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              79,
+              9,
+              1
+            ]
+          ]
         },
         {
           "verse": 19,
@@ -2968,6 +3405,13 @@
           "verse": 11,
           "text": "He that hurteth, let him hurt yet: and he that is in filth, let him be filthy yet: and he that is just, <na>[1]</na> let him be justified yet: and let the holy be sanctified yet.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              15,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -3023,7 +3467,14 @@
         {
           "verse": 18,
           "text": "For I testify to every one hearing the words of the prophecy of this book, If any man shall add to these things, God shall add upon him the plagues written in this book.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              75,
+              20,
+              1
+            ]
+          ]
         },
         {
           "verse": 19,
@@ -3032,7 +3483,14 @@
         {
           "verse": 20,
           "text": "saith he that giveth testimony of these things. Yea I come quickly: Amen. Come Lord <sc>Jesus</sc>.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              74,
+              24,
+              1
+            ]
+          ]
         },
         {
           "verse": 21,

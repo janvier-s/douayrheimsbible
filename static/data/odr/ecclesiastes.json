@@ -114,6 +114,13 @@
           "verse": 18,
           "text": "for that in much <na>(d)</na> wisdom there is much indignation: and he that addeth knowledge, addeth also labour.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              9,
+              53,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "d",
@@ -424,7 +431,14 @@
         {
           "verse": 9,
           "text": "It is better therefore that two be together, than one: for they have profit of their society:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              43,
+              1
+            ]
+          ]
         },
         {
           "verse": 10,
@@ -1113,7 +1127,14 @@
         {
           "verse": 16,
           "text": "Woe to thee o land, whose king is a child, and whose Princes eat in the morning.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              41,
+              1
+            ]
+          ]
         },
         {
           "verse": 17,

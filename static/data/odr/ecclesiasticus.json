@@ -8054,7 +8054,14 @@
         {
           "verse": 10,
           "text": "Who art written in the judgements of times, to appease the wrath of our Lord, to reconcile the heart of the father to the son, and to restore the tribes of Jacob.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              15,
+              1
+            ]
+          ]
         },
         {
           "verse": 11,

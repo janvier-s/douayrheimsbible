@@ -85,6 +85,13 @@
           "verse": 6,
           "text": "But <cr>[1]</cr> let him ask in faith nothing doubting. For he that doubteth, is like to a wave of the sea, which is moved & carried about by the wind.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              29,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Mat. 21, 22. Mar. 11, 24."
@@ -129,7 +136,19 @@
         {
           "verse": 13,
           "text": "Let no man when he is tempted, say that he is tempted of God. For God is not a tempter of evils, and he tempteth no man.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              60,
+              1
+            ],
+            [
+              66,
+              29,
+              2
+            ]
+          ]
         },
         {
           "verse": 14,
@@ -144,7 +163,19 @@
         {
           "verse": 15,
           "text": "Afterward concupiscence when it hath conceived, bringeth forth sin. But sin when it is consummate, engendereth death.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              36,
+              1
+            ],
+            [
+              72,
+              44,
+              2
+            ]
+          ]
         },
         {
           "verse": 16,
@@ -208,6 +239,13 @@
           "verse": 25,
           "text": "But he that hath looked in the law of perfect liberty, and hath remained in it, not made a forgetful hearer, but a doer of the work; this man shall be <na>[1]</na> blessed in his deed.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              26,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -222,7 +260,14 @@
         {
           "verse": 27,
           "text": "Religion clean and unspotted with God and the Father, is this, to visit pupils and widows in their tribulation: and to keep himself unspotted from this world.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ]
+          ]
         }
       ],
       "summary": "We have to rejoice in persecution (but if we be patient, and withal abstain from all mortal sin) 9. considering how we shall be exalted and crowned for it, when the persecutor (who enricheth himself with our spoils) shall fade away. 13. But if any be tempted to fall, or to any other evil, let him not say, God is the author of it, who is the author of all good only. 19. Such points of the Cath. faith we must be content to learn without contradiction and anger, and to do accordingly. 26. Because otherwise we may talk of Religion, but indeed it is no Religion."
@@ -234,6 +279,13 @@
           "verse": 1,
           "text": "MY <cr>[1]</cr> brethren, Have not the faith of our Lord <sc>Jesus</sc> Christ of glory in acception of persons.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              88,
+              23,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Lev. 19, 15. Deu. 1, 16. Pro. 24, 23. Eccl. 42, 1."
@@ -281,6 +333,13 @@
           "verse": 10,
           "text": "And <cr>[1]</cr> whosoever shall keep the whole Law, but offendeth in one, is made guilty of all.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              75,
+              21,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Lev. 19, 37. Deu. 1, 18."
@@ -299,6 +358,13 @@
           "verse": 13,
           "text": "For judgement without mercy to him that hath not done mercy. And mercy <na>[1]</na> exalteth it-self above judgement.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              23,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -309,7 +375,14 @@
         {
           "verse": 14,
           "text": "What shall it profit, my brethren, if a man say he hath faith, but hath not works? Shall faith be able to save him?",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              61,
+              1
+            ]
+          ]
         },
         {
           "verse": 15,
@@ -354,6 +427,13 @@
           "verse": 21,
           "text": "Abraham our father was he not justified by works, <cr>[1]</cr> offering Isaac his son upon the altar?",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              48,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Gen. 22, 10."
@@ -363,12 +443,26 @@
         {
           "verse": 22,
           "text": "Seest thou that faith did work with his works: and by the works the faith was consummate?",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              16,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 23,
           "text": "And the Scripture was fulfilled, saying, <cr>[1]</cr> <i>Abraham believed God, and it was reputed him to justice, and he was called the friend of God.</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              132,
+              17,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Gen. 15, 6. Rom. 4, 3. Gal. 3."
@@ -378,12 +472,26 @@
         {
           "verse": 24,
           "text": "Do you see that by works a man is justified; & not by faith only?",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              47,
+              17,
+              1
+            ]
+          ]
         },
         {
           "verse": 25,
           "text": "And in like manner also <cr>[1]</cr> Rahab the harlot, was not she justified by works, receiving the messengers, and putting them forth another way?",
           "has_annotation": true,
+          "lemmas": [
+            [
+              37,
+              5,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ios. 2, 1. 18. and 6, 22."
@@ -393,7 +501,14 @@
         {
           "verse": 26,
           "text": "For even as the body without the spirit is dead: so also faith without works is dead.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              57,
+              27,
+              1
+            ]
+          ]
         }
       ],
       "summary": "Against acception of persons. 10. From all and every sin we must abstain, having in all our words and deeds, the Judgement before our eyes: wherein works of mercy shall be required of us, 14. and only faith shall not avail us. 18. And that the Catholic by his works sheweth that he hath faith: whereas; the Heretic hath no more faith than the Devil, talk he of faith never so much, and of justification thereby only, by the example of Abraham Ro. 4. For Abraham indeed was justified by works also, 25. and likewise Rehab."
@@ -405,6 +520,13 @@
           "verse": 1,
           "text": "BE <cr>[1]</cr> ye not many masters, my brethren, knowing that you receive the greater judgement.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              23,
+              12,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Mat. 23, 8."
@@ -560,6 +682,13 @@
           "verse": 8,
           "text": "<na>[1]</na> Approach to God, & he will approach to you. Cleanse your hands, ye sinners: and purify your hearts, ye double of mind.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              93,
+              18,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -656,7 +785,14 @@
         {
           "verse": 4,
           "text": "Behold the hire of the work-men that have reaped your fields, which is defrauded of you, cryeth: and their cry hath entered into the ears of the Lord of Sabboth.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              7,
+              8,
+              1
+            ]
+          ]
         },
         {
           "verse": 5,
@@ -714,6 +850,13 @@
           "verse": 12,
           "text": "But before all things, my brethren, <cr>[1]</cr> swear not, neither by heaven, nor by earth; nor other oath whatsoever. But let your talk be, yea, yea: no, no: that you fall not under judgement.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              49,
+              9,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Mt. 5, 34."
@@ -734,6 +877,18 @@
           "verse": 14,
           "text": "Is any man sick among you? let him bring in the priests of the Church, and let them pray over him, <cr>[1]</cr> anoiling him with oil in the name of our Lord.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              28,
+              1
+            ],
+            [
+              112,
+              21,
+              2
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Mr. 6, 13."
@@ -743,12 +898,41 @@
         {
           "verse": 15,
           "text": "And the prayer of faith shall save the sick: and our Lord shall lift him up: and if he be in sins, they shall be remitted him.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              19,
+              1
+            ],
+            [
+              24,
+              10,
+              2
+            ],
+            [
+              58,
+              17,
+              3
+            ],
+            [
+              99,
+              26,
+              4
+            ]
+          ]
         },
         {
           "verse": 16,
           "text": "<na>[1]</na><na>[2]</na> Confess therefore your sins one to another: and pray one for another, that you may be saved. For the continual prayer of a just man availeth much.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              17,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -764,6 +948,13 @@
           "verse": 17,
           "text": "<cr>[1]</cr> Elias was a man like unto us, passible: and with prayer he prayed that it might not rain upon the earth, and it rained not for three years and six months.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              69,
+              9,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "3. Reg. 17. Eccli. 48. Lu. 4, 25."
@@ -787,6 +978,18 @@
           "verse": 20,
           "text": "he must know that he which maketh a sinner to be converted from the error of his way, shall save his soul from death, and <na>[1]</na> covereth a multitude of sins.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              31,
+              1
+            ],
+            [
+              86,
+              10,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "1",

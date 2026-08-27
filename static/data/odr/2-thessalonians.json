@@ -118,12 +118,31 @@
         {
           "verse": 2,
           "text": "that you be not easily moved from your sense, nor be terrified, neither by spirit, nor by word, nor by epistle as sent by us, as though the day of our Lord were at hand.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              126,
+              17,
+              1
+            ]
+          ]
         },
         {
           "verse": 3,
           "text": "Let no man seduce you by any means, for unless there come <na>[1]</na> a revolt first, and the man of sin be revealed, the son of perdition,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              40,
+              45,
+              1
+            ],
+            [
+              91,
+              14,
+              4
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -135,6 +154,18 @@
           "verse": 4,
           "text": "which is an adversary & is extolled <na>[1]</na> above all that is called God, or that is worshipped, so that he sitteth in the temple of God, shewing himself as though he were God.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              8,
+              1
+            ],
+            [
+              121,
+              13,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -149,7 +180,14 @@
         {
           "verse": 6,
           "text": "And now what letteth, you know: that he may be revealed in his time.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              8,
+              12,
+              1
+            ]
+          ]
         },
         {
           "verse": 7,
@@ -167,7 +205,14 @@
         {
           "verse": 9,
           "text": "whose coming is according to the operation of Satan, in all power, and lying signs and wonders;",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              53,
+              12,
+              1
+            ]
+          ]
         },
         {
           "verse": 10,
@@ -199,6 +244,13 @@
           "verse": 15,
           "text": "Therefore, brethren, stand; and hold <na>[1]</na> the traditions which you have learned, whether it be by word, or by our epistle.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              54,
+              10,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -294,7 +346,14 @@
         {
           "verse": 10,
           "text": "For also when we were with you, this we denounced to you, that if any will not work, neither let him eat.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              85,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 11,
@@ -316,7 +375,19 @@
         {
           "verse": 14,
           "text": "And if any obey not our word, note him by an epistle:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              11,
+              8,
+              1
+            ],
+            [
+              30,
+              8,
+              2
+            ]
+          ]
         },
         {
           "verse": 15,

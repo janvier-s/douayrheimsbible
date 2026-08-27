@@ -288,7 +288,14 @@
         {
           "verse": 8,
           "text": "And do thou command the Priests, that carry the ark of the testament, and say to them: When you shall be entered into part of the water of Jordan, stand in it.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              12,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 9,
@@ -525,12 +532,26 @@
         {
           "verse": 15,
           "text": "Josue fell flat on the ground. And adoring he said: What speaketh my Lord to his servant?",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              35,
+              7,
+              1
+            ]
+          ]
         },
         {
           "verse": 16,
           "text": "Loose, saith he, thy shoe from thy feet: for the place wherein thou dost stand, is holy, And Josue did as it was commanded him.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              25,
+              1
+            ]
+          ]
         }
       ],
       "summary": "The kings of Chanaan are sore affrighted with the news of Israel's passage over Jordan. 2. Circumcision is again commanded, and observed, which had been omitted in the desert forty years. 10. They make their Pasch. 12. Manna ceaseth. 13. And an Angel appeareth to Josue."
@@ -3048,6 +3069,13 @@
           "verse": 2,
           "text": "and to the people he spake in this manner: Thus saith our Lord the God of Israel: Beyond the river did your fathers dwell from the beginning, Thare the father of Abraham, and <na>(a)</na> of Nachor: and they served strange gods.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              203,
+              24,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",
@@ -3190,7 +3218,14 @@
         {
           "verse": 30,
           "text": "and they buried him in the coasts of his possession in Thamnathsare, which is situated in the mountain of Ephraim, on the North part of mount Gaas.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              11,
+              1
+            ]
+          ]
         },
         {
           "verse": 31,

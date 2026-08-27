@@ -873,7 +873,14 @@
         {
           "verse": 7,
           "text": "And our Lord said to Samuel: Hear the voice of the people in all things which they speak to thee. For they have not rejected thee, but me, that I should not reign over them.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              116,
+              21,
+              1
+            ]
+          ]
         },
         {
           "verse": 8,
@@ -896,7 +903,14 @@
         {
           "verse": 11,
           "text": "and said: This shall be the right of the king, that shall reign over you: Your sons he will take, & put in his chariots, and will make them unto him the horsemen, and running footmen before his chariots,",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              24,
+              21,
+              1
+            ]
+          ]
         },
         {
           "verse": 12,
@@ -2039,7 +2053,14 @@
         {
           "verse": 7,
           "text": "And our Lord said to Samuel: Respect not his countenance, nor the tallness of his stature: because I have rejected him, neither do I judge according to the look of man: for man seeth those things which appear, but our Lord beholdeth the heart.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              223,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 8,
@@ -3702,6 +3723,13 @@
           "verse": 14,
           "text": "And he said to her: What manner of form hath he? Who said: An old man is come up, and he is clothed with a mantle. And Saul <na>[1]</na> understood that it was Samuel, and he bowed himself upon his face on the earth, and <na>(b)</na> adored.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              119,
+              47,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "b",

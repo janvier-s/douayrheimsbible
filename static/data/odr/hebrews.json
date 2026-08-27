@@ -76,6 +76,13 @@
           "verse": 3,
           "text": "<cr>[1]</cr> Who being the <na>[2]</na> brightness of his glory, and the <na>[3]</na> figure of his substance, and carrying all things by the word of his power, making purgation of sins, sitteth on the right hand of the Majesty in the high places:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              69,
+              23,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Sap. 7, 26."
@@ -118,6 +125,13 @@
           "verse": 6,
           "text": "And when again he bringeth in the first-begotten into the world, he saith, <i>And </i> <cr>[1]</cr> <i>let all the Angels of God adore him.</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              103,
+              31,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ps. 96, 8."
@@ -532,6 +546,13 @@
           "verse": 16,
           "text": "<na>[1]</na> Let us go therefore with confidence to the throne of grace: that we may obtain mercy, and find grace in seasonable aid.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              35,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -549,6 +570,13 @@
           "verse": 1,
           "text": "<sc>For</sc> <na>[1]</na> every high Priest taken from among men, is appointed for men in those things that pertain to God: that he may offer gifts and sacrifices for sins:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              17,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -568,6 +596,13 @@
           "verse": 4,
           "text": "<cr>[1]</cr> Neither doth any man take the honour to himself, but he that is called of God, <cr>[2]</cr> as Aaron.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              34,
+              26,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "2. Par. 26, 18."
@@ -581,6 +616,13 @@
           "verse": 5,
           "text": "So Christ also did not glorify himself that he might be made a high priest; but he that spake to him, <cr>[1]</cr> <i>My Son art thou, I this day have begotten thee.</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              15,
+              23,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ps. 2, 7."
@@ -591,6 +633,13 @@
           "verse": 6,
           "text": "As also in another place he saith, <cr>[1]</cr> <i>Thou art a priest for ever, according to the order of Melchisedech.</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              60,
+              17,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ps. 109, 4."
@@ -600,7 +649,19 @@
         {
           "verse": 7,
           "text": "Who in the days of his flesh, with a strong cry and tears, offering prayers and supplications to him that could save him from death, was heard for his reverence.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              30,
+              17,
+              1
+            ],
+            [
+              143,
+              17,
+              3
+            ]
+          ]
         },
         {
           "verse": 8,
@@ -609,7 +670,19 @@
         {
           "verse": 9,
           "text": "and being consummate, was made to all that obey him, cause of eternal salvation,",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              10,
+              1
+            ],
+            [
+              22,
+              15,
+              2
+            ]
+          ]
         },
         {
           "verse": 10,
@@ -618,7 +691,14 @@
         {
           "verse": 11,
           "text": "Of whom we have great speech and inexplicable to utter: because you are become weak to hear.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              33,
+              12,
+              1
+            ]
+          ]
         },
         {
           "verse": 12,
@@ -641,7 +721,14 @@
         {
           "verse": 1,
           "text": "<sc>Wherefore</sc> intermitting the word of the beginning of Christ, let us proceed to perfection, not again laying the foundation of penance from dead works, & of faith toward God,",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              116,
+              25,
+              1
+            ]
+          ]
         },
         {
           "verse": 2,
@@ -655,6 +742,13 @@
           "verse": 4,
           "text": "For <cr>[1]</cr> it is impossible for them that were once illuminated, have tasted also the heavenly gift, & were made partakers of the Holy Ghost,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              23,
+              10,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Heb. 10, 26."
@@ -690,7 +784,14 @@
         {
           "verse": 10,
           "text": "For God is not unjust, that he should forget your work & love which you have shewed in his name, which have ministered to the saints and do minister.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              17,
+              1
+            ]
+          ]
         },
         {
           "verse": 11,
@@ -747,6 +848,13 @@
           "verse": 1,
           "text": "<sc>For</sc> this Melchisedech, the king of Salem, Priest of the God most high, <cr>[1]</cr> who met Abraham returning from the slaughter of the kings, and blessed him:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              18,
+              12,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Gen. 14, 18."
@@ -766,12 +874,31 @@
         {
           "verse": 3,
           "text": "without father, without mother, without genealogy, having neither beginning of days nor end of life, but likened to the Son of God, continueth a Priest for ever.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ]
+          ]
         },
         {
           "verse": 4,
           "text": "And behold how great this man is, to whom also Abraham the Patriarch gave tithes of the principal things.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              6,
+              1
+            ],
+            [
+              74,
+              6,
+              2
+            ]
+          ]
         },
         {
           "verse": 5,
@@ -789,7 +916,14 @@
         {
           "verse": 7,
           "text": "But without all contradiction, that which is less, is blessed of the better.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              24,
+              1
+            ]
+          ]
         },
         {
           "verse": 8,
@@ -812,12 +946,31 @@
         {
           "verse": 11,
           "text": "If then consummation was by the Levitical priesthood (for under it the people received the Law) what necessity was there yet another priest to rise according to the order of Melchisedech, and not to be called according to the order of Aaron?",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              20,
+              1
+            ],
+            [
+              96,
+              14,
+              2
+            ]
+          ]
         },
         {
           "verse": 12,
           "text": "For the priesthood being translated, it is necessary that a translation of the Law also be made.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              10,
+              1
+            ]
+          ]
         },
         {
           "verse": 13,
@@ -845,6 +998,13 @@
           "verse": 17,
           "text": "For he witnesseth, <cr>[1]</cr> <i>That thou art a priest for ever, according to the order of Melchisedech.</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              49,
+              17,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ps. 109, 4."
@@ -854,12 +1014,26 @@
         {
           "verse": 18,
           "text": "Reprobation certes is made of the former commandment, because of the weakness and unprofitableness thereof.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              25,
+              1
+            ]
+          ]
         },
         {
           "verse": 19,
           "text": "For the Law brought nothing to perfection, but an introduction of a better hope, by the which we approach to God.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              12,
+              1
+            ]
+          ]
         },
         {
           "verse": 20,
@@ -869,6 +1043,13 @@
           "verse": 21,
           "text": "but this with an oath, by him that said unto him: <cr>[1]</cr> <i>Our Lord hath sworn, & it shall not repent him: thou art a Priest for ever)</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              9,
+              12,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ps. 109, 4."
@@ -883,6 +1064,13 @@
           "verse": 23,
           "text": "<na>[1]</na> And the other indeed were made Priests, being many, because that by death they were prohibited to continue:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              53,
+              10,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -916,6 +1104,13 @@
           "verse": 27,
           "text": "which hath not necessity daily (as the Priests) first <cr>[1]</cr> for his own sins to offer hosts, then for the peoples. For this he did once, in offering himself.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              126,
+              16,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Lev. 9, 7. 16, 6."
@@ -949,17 +1144,38 @@
         {
           "verse": 3,
           "text": "For every high priest is appointed to offer gifts and hosts, wherefore it is necessary that he also have something that he may offer:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              77,
+              22,
+              1
+            ]
+          ]
         },
         {
           "verse": 4,
           "text": "if then he were upon the earth, neither were he a priest: whereas there were that did offer gifts according to the Law,",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              30,
+              1
+            ]
+          ]
         },
         {
           "verse": 5,
           "text": "that <cr>[1]</cr> serve the exampler and shadow of heavenly things. As it was answered Moyses, when he finished the tabernacle, <na>[2]</na> See (quoth he) that thou make all things according to the exampler which was shewed thee in the mount.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              15,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Exo. 25, 9. 40."
@@ -1002,12 +1218,31 @@
         {
           "verse": 10,
           "text": "<i>For this is the Testament which I will dispose to the house of Israel after those days, saith our Lord: Giving my laws into their mind, and in their heart will I superscribe them: and I will be their God, and they shall be my people:</i>",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              122,
+              15,
+              1
+            ],
+            [
+              197,
+              9,
+              2
+            ]
+          ]
         },
         {
           "verse": 11,
           "text": "<i>and every one shall not teach his neighbour, and every one his brother, saying, Know our Lord: because all shall know me from the lesser to the greater of them:</i>",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              15,
+              1
+            ]
+          ]
         },
         {
           "verse": 12,
@@ -1054,6 +1289,13 @@
           "verse": 4,
           "text": "having a golden censer, and the ark of the testament covered about on every part with gold, in the which was a golden pot having Manna, and the rod of Aaron that had blossomed, and <cr>[1]</cr> the tables of the testament,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              109,
+              12,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "3. Reg. 8. 2. Par. 5."
@@ -1064,6 +1306,13 @@
           "verse": 5,
           "text": "and over it were <cr>[1]</cr> the Cherubins of glory over-shadowing the propitiatory, of which things it is not needful to speak now particularly.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              34,
+              9,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Exo. 25, 22."
@@ -1110,7 +1359,14 @@
         {
           "verse": 10,
           "text": "only in meats and in drinks, and diverse baptisms, and justices of the flesh laid on them until the time of correction.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              90,
+              28,
+              1
+            ]
+          ]
         },
         {
           "verse": 11,
@@ -1125,7 +1381,14 @@
         {
           "verse": 12,
           "text": "neither by the blood of goats or of calves, but by his own blood entered in once into the Holies, eternal redemption being found.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              98,
+              18,
+              1
+            ]
+          ]
         },
         {
           "verse": 13,
@@ -1153,7 +1416,14 @@
         {
           "verse": 15,
           "text": "And therefore he is the Mediator of the new Testament: that death being a mean, unto the redemption of these prevarications which were under the former testament, they that are called may receive the promise of eternal inheritance.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              100,
+              23,
+              1
+            ]
+          ]
         },
         {
           "verse": 16,
@@ -1186,6 +1456,13 @@
           "verse": 20,
           "text": "saying, <cr>[1]</cr> This is the blood of the Testament, which God hath commanded unto you.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              21,
+              17,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Exo. 24, 8."
@@ -1203,7 +1480,14 @@
         {
           "verse": 23,
           "text": "It is necessary therefore that the examplers of the celestials be cleansed with these: but the celestials themselves with better hosts than these.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              31,
+              13,
+              1
+            ]
+          ]
         },
         {
           "verse": 24,
@@ -1212,7 +1496,14 @@
         {
           "verse": 25,
           "text": "Nor that he should offer himself often, as the high priest entereth into the Holies, every year in the blood of others:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 26,
@@ -1246,6 +1537,13 @@
           "verse": 1,
           "text": "<sc>For</sc> <cr>[1]</cr> the law having a shadow of good things to come, not the very image of the things: every year with the self-same hosts which they offer incessantly, can never make the comers thereto perfect:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              41,
+              8,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Lev. 16, 14."
@@ -1255,7 +1553,14 @@
         {
           "verse": 2,
           "text": "otherwise they should have ceased to be offered, because the worshippers once cleansed should have no conscience of sin any longer.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              23,
+              1
+            ]
+          ]
         },
         {
           "verse": 3,
@@ -1264,12 +1569,31 @@
         {
           "verse": 4,
           "text": "For it is impossible that with the blood of oxen and goats sins should be taken away.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              10,
+              1
+            ]
+          ]
         },
         {
           "verse": 5,
           "text": "Therefore coming into the world he saith: <cr>[1]</cr> <i>Host and oblation thou wouldest not: but a body thou hast fitted to me:</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              58,
+              17,
+              1
+            ],
+            [
+              95,
+              10,
+              2
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ps. 39, 7."
@@ -1293,7 +1617,14 @@
         {
           "verse": 8,
           "text": "Saying before, <i>Because hosts and oblations & holocausts, & for sin thou wouldest not, neither did they please thee,</i> which are offered according to the law,",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              89,
+              28,
+              1
+            ]
+          ]
         },
         {
           "verse": 9,
@@ -1306,7 +1637,14 @@
         {
           "verse": 11,
           "text": "And every Priest indeed is ready daily ministering, and often offering the same hosts, which can never take away sins:",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              56,
+              29,
+              1
+            ]
+          ]
         },
         {
           "verse": 12,
@@ -1351,7 +1689,14 @@
         {
           "verse": 18,
           "text": "But where there is remission of these, now there is not an oblation for sins.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              16,
+              1
+            ]
+          ]
         },
         {
           "verse": 19,
@@ -1395,6 +1740,13 @@
           "verse": 26,
           "text": "For <cr>[1]</cr> if we sin willingly after the knowledge of the truth received, now there is not left an host for sins,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              19,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Heb. 6, 4."
@@ -1418,6 +1770,13 @@
           "verse": 29,
           "text": "<na>[1]</na> How much more think you, doth he deserve worse punishments which hath trodden the Son of God under-foot, and esteemed the blood of the testament polluted, wherein he is sanctified, and hath done contumely to the spirit of grace?",
           "has_annotation": true,
+          "lemmas": [
+            [
+              131,
+              26,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -1440,7 +1799,14 @@
         {
           "verse": 31,
           "text": "It is horrible to fall into the hands of the living God.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ]
+          ]
         },
         {
           "verse": 32,
@@ -1459,7 +1825,19 @@
         {
           "verse": 34,
           "text": "For, you both had compassion on them that were in bonds: and the spoil of your own goods you took with joy, knowing that you have a better and a permanent substance.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              5,
+              23,
+              1
+            ],
+            [
+              98,
+              8,
+              2
+            ]
+          ]
         },
         {
           "verse": 35,
@@ -1487,7 +1865,14 @@
         {
           "verse": 38,
           "text": "And my just liveth of faith: but if he withdraw himself, he shall not please my soul.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              12,
+              15,
+              1
+            ]
+          ]
         },
         {
           "verse": 39,
@@ -1503,6 +1888,18 @@
           "verse": 1,
           "text": "<sc>And</sc> faith is, <na>[1]</na> the substance of things to be hoped for, <na>[2]</na> the argument of things not appearing.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              8,
+              1
+            ],
+            [
+              113,
+              13,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -1558,6 +1955,13 @@
           "verse": 6,
           "text": "But without faith it is impossible to please God. For he that cometh to God, must believe that he is, and is a <na>[1]</na> rewarder to them that seek him.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              54,
+              14,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -1661,6 +2065,13 @@
           "verse": 21,
           "text": "<cr>[1]</cr> By faith, Jacob dying, blessed every one of the sons of Joseph: <cr>[2]</cr> and adored the top of his rod.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              94,
+              25,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Gen. 48, 15."
@@ -1768,6 +2179,13 @@
           "verse": 33,
           "text": "<na>[1]</na> who by faith overcame kingdoms, wrought justice, obtained promises, stopped the mouths of lions,",
           "has_annotation": true,
+          "lemmas": [
+            [
+              45,
+              15,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -1802,7 +2220,14 @@
         {
           "verse": 40,
           "text": "God for us providing some better thing, that they without us should not be consummate.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              21,
+              1
+            ]
+          ]
         }
       ],
       "summary": "He exhorteth them by the definition of faith, to stick unto God, though they see not yet his reward: shewing that all the Saints aforetime did the like, being all constant in faith, though not one of them received the promise, that is, the inheritance in heaven: but they and we now after the coming of Christ receive it together."
@@ -1844,6 +2269,13 @@
           "verse": 6,
           "text": "<cr>[1]</cr> <i>For whom our Lord loveth, he chasteneth; & he scourgeth every child that he receiveth.</i>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              59,
+              12,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "1. Pet. 2, 1."
@@ -1916,6 +2348,13 @@
           "verse": 17,
           "text": "For know ye that afterward also desiring to inherit the benediction, he was reprobated: <cr>[1]</cr> for he found not place of repentance, although with tears he had sought it.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              105,
+              12,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Gen. 27, 38."
@@ -2044,6 +2483,13 @@
           "verse": 2,
           "text": "And hospitality do not forget, for by this, certain being not aware, <cr>[1]</cr> have received Angels to harbour.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              11,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Gen. 18, 3. 19, 2. 3."
@@ -2057,7 +2503,14 @@
         {
           "verse": 4,
           "text": "Marriage honourable in all, & the bed undefiled. For, fornicators and adulterers God will judge.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              19,
+              1
+            ]
+          ]
         },
         {
           "verse": 5,
@@ -2081,6 +2534,13 @@
           "verse": 7,
           "text": "<na>[1]</na> Remember your Prelates, which have spoken the word of God to you: the end of whose conversation beholding, imitate their faith.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              22,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -2096,6 +2556,13 @@
           "verse": 9,
           "text": "With <na>[1]</na> various & strange doctrines be not led away. For it is best that the heart be established with grace, not with meats: which have not profited those that walk in them.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              120,
+              14,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -2106,7 +2573,14 @@
         {
           "verse": 10,
           "text": "We have an altar: whereof they have not power to eat which serve the tabernacle.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              16,
+              1
+            ]
+          ]
         },
         {
           "verse": 11,
@@ -2133,6 +2607,13 @@
           "verse": 15,
           "text": "By him therefore let us offer the host of praise always to God, that is to say, <cr>[1]</cr> the fruit of lips confessing to his name.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              30,
+              18,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ose. 14, 3."
@@ -2142,12 +2623,26 @@
         {
           "verse": 16,
           "text": "And beneficence and communication do not forget, for with such hosts God is promerited.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              69,
+              17,
+              1
+            ]
+          ]
         },
         {
           "verse": 17,
           "text": "Obey your Prelates, and be subject to them. For they watch as being to render account for your souls: that they may do this with joy, and not mourning. For this is not expedient for you.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              18,
+              1
+            ]
+          ]
         },
         {
           "verse": 18,

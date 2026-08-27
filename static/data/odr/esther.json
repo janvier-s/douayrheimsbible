@@ -809,6 +809,13 @@
           "verse": 1,
           "text": "Therefore <na>[1]</na> in the thirteenth day of the twelfth month, which we have said now before to be called Adar, when slaughter was prepared for all the Jews, and their enemies gaped after their blood, the case being changed to the contrary, the Jews began to be superiors, and <na>(a)</na> to revenge themselves of their adversaries.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              205,
+              22,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "a",

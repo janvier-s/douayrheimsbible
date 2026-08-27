@@ -194,6 +194,13 @@
           "verse": 5,
           "text": "be ye also yourselves super-edified as it were living stones, <na>[1]</na> <alt>spiritual houses</alt>, a holy priesthood, to offer spiritual hosts, acceptable to God by <sc>Jesus</sc> Christ.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              132,
+              15,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -276,6 +283,23 @@
           "verse": 13,
           "text": "<cr>[1]</cr> Be subject therefore to every <na>[2]</na> human <na>[3]</na> creature for God: whether it be to king, as excelling:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              10,
+              1
+            ],
+            [
+              34,
+              49,
+              2
+            ],
+            [
+              107,
+              21,
+              4
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Ro. 13, 1."
@@ -303,7 +327,14 @@
         {
           "verse": 16,
           "text": "as free, and not as having the freedom for a cloak of malice, but as the servants of God.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              13,
+              1
+            ]
+          ]
         },
         {
           "verse": 17,
@@ -318,7 +349,14 @@
         {
           "verse": 18,
           "text": "Servants be subject in all fear to your masters, not only to the good & modest, but also to the wayward.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              80,
+              23,
+              1
+            ]
+          ]
         },
         {
           "verse": 19,
@@ -530,6 +568,13 @@
           "verse": 19,
           "text": "In the which spirit coming he preached to <na>[1]</na> <alt>them</alt> also that were in prison:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              56,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -541,6 +586,13 @@
           "verse": 20,
           "text": "which had been incredulous sometime, <cr>[1]</cr> when they expected the patience of God in the days of Noe, when the ark was a building: in the which, few, that is, <cr>[2]</cr> eight souls were saved by water.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              15,
+              20,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Gen. 6. Mat. 24."
@@ -554,6 +606,18 @@
           "verse": 21,
           "text": "Whereunto Baptism being of the like form now saveth <na>[1]</na> <alt>you</alt> also: not the laying away of the filth of the flesh, but the examination of a good conscience toward God by the resurrection of <sc>Jesus</sc> Christ.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              24,
+              16,
+              1
+            ],
+            [
+              137,
+              36,
+              2
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -619,6 +683,13 @@
           "verse": 8,
           "text": "But before all things, having mutual charity continual among yourselves: because <cr>[1]</cr> charity covereth the multitude of sins.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              94,
+              16,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Prov. 10."
@@ -682,6 +753,13 @@
           "verse": 17,
           "text": "For <cr>[1]</cr> the time is that judgement begin of the house of God. And if first of us, what shall be the end of them that believe not the Gospel of God?",
           "has_annotation": true,
+          "lemmas": [
+            [
+              29,
+              20,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Hier. 25, 29."
@@ -692,6 +770,13 @@
           "verse": 18,
           "text": "And <cr>[1]</cr> if the just man shall scarce be saved, where shall the impious & sinner appear?",
           "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              11,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Prov. 11, 31."
@@ -712,6 +797,13 @@
           "verse": 1,
           "text": "<sc>The</sc> <na>[1]</na> seniors therefore that are among you, I beseech, myself a fellow senior with them & a witness of the Passions of Christ, who am also partaker of the glory which is to be revealed in time to come:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              7,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "1",
@@ -736,12 +828,31 @@
         {
           "verse": 3,
           "text": "neither as over-ruling the Clergy, but made examples of the flock from the heart.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              11,
+              11,
+              1
+            ],
+            [
+              23,
+              10,
+              2
+            ]
+          ]
         },
         {
           "verse": 4,
           "text": "And when the Prince of pastors shall appear, you shall receive the incorruptible crown of glory.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              81,
+              14,
+              1
+            ]
+          ]
         },
         {
           "verse": 5,
@@ -789,7 +900,14 @@
         {
           "verse": 13,
           "text": "The Church saluteth you, that is in Babylon, co-elect: and Mark my son.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              18,
+              1
+            ]
+          ]
         },
         {
           "verse": 14,

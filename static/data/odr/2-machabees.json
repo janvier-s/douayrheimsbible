@@ -1873,7 +1873,14 @@
         {
           "verse": 8,
           "text": "And they decreed by common precept & decree to all the nation of the Jews every year to keep these days.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              12,
+              1
+            ]
+          ]
         },
         {
           "verse": 9,
@@ -2442,6 +2449,13 @@
           "verse": 46,
           "text": "It is therefore <na>(h)</na> a holy, and healthful cogitation to pray for the dead, that they may be loosed from sins. <na>[1]</na>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              82,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "h",
@@ -2914,7 +2928,14 @@
         {
           "verse": 12,
           "text": "And the vision was in this manner: Onias who had been the high-Priest, a good and benign man, reverent to behold, modest of manners, and comely of speech, and who from a child was exercised in virtues, that he stretching forth the hands prayed for all the people of the Jews.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              237,
+              25,
+              1
+            ]
+          ]
         },
         {
           "verse": 13,
@@ -3052,7 +3073,14 @@
         {
           "verse": 39,
           "text": "And if well, and as is competent for a story, that myself also would: but if not so worthily it resteth to be pardoned me.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              74,
+              18,
+              1
+            ]
+          ]
         },
         {
           "verse": 40,

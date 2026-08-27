@@ -1216,7 +1216,14 @@
         {
           "verse": 1,
           "text": "But when Tobias tarried long because of the marriage, Tobias his father was careful, saying: Why thinkest thou doth my son tarry, or why is he held there?",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              16,
+              36,
+              1
+            ]
+          ]
         },
         {
           "verse": 2,
@@ -1462,6 +1469,13 @@
           "verse": 12,
           "text": "When thou didst pray with tears, and didst bury the dead, and left thy dinner, and didest hide the dead by day in thy house, and by night didst bury them, I <na>(c)</na> offered thy prayer to our Lord.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              155,
+              45,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "c",

@@ -92,12 +92,26 @@
         {
           "verse": 10,
           "text": "Who is there among you, that will shut the doors, & will kindle fire on my altar for naught? I have no will in you, saith the Lord of hosts: and gift I will not receive of your hand.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              93,
+              21,
+              1
+            ]
+          ]
         },
         {
           "verse": 11,
           "text": "<cr>[1]</cr> For from the rising of the sun even to the going down, great is my name among the Gentiles, and in every place there is sacrificing, and there is offered to my name a clean oblation: because my name is great among the Gentiles, saith the Lord of hosts.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              109,
+              35,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Psal. 112."

@@ -501,7 +501,14 @@
         {
           "verse": 11,
           "text": "He was taken away lest malice should change his understanding, or lest any guile might deceive his soul.",
-          "has_annotation": true
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              17,
+              1
+            ]
+          ]
         },
         {
           "verse": 12,
@@ -1787,6 +1794,13 @@
           "verse": 1,
           "text": "But all men be vain, in whom there is not the knowledge of God: and of these good things which are seen they could not understand him <na>(a)</na> that is, neither attending to the works have they agnised who was the workman: <cr>[1]</cr>",
           "has_annotation": true,
+          "lemmas": [
+            [
+              104,
+              50,
+              1
+            ]
+          ],
           "cross_refs": [
             {
               "text": "Rom. 1."
@@ -1986,6 +2000,13 @@
           "verse": 15,
           "text": "For the father being sorrowful with bitter mourning, made unto himself the image of his son quickly taken away: and him, that then was a dead man, now <na>(f)</na> he began to worship as God, and appointed holy things and sacrifices among his servants.",
           "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              87,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "f",
