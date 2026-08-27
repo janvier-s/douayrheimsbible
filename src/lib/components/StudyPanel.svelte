@@ -119,8 +119,34 @@
 	let annotatedVerseTimer: ReturnType<typeof setTimeout> | null = null;
 	// (chapter-change scroll + sectionEls reset handled inside annotation loading reactive)
 
-	// Reader→panel auto-scroll disabled (too many edge cases with infinite scroll).
-	// Explicit clicks (scrollTrigger) still scroll the panel.
+	// Reader→panel auto-scroll: follows the reader's free scroll by scrolling the
+	// panel to the matching section.
+	//
+	// syncVerse is a $derived, not a direct $studyPanel.activeVerse read inside the
+	// effect below — scrollToSection writes studyPanel.annotatedVerse, and any store
+	// update re-emits the whole object. An effect reading the store directly would
+	// re-run on that unrelated write and call scrollToSection again, looping forever
+	// (effect_update_depth_exceeded). $derived only propagates when the extracted
+	// value actually changes, so a same-verse annotatedVerse-only update is inert.
+	//
+	// scrollToSection also sets programmaticScroll, which suppresses the panel's own
+	// IntersectionObserver (above) from writing panelScrollVerse in response —
+	// otherwise that would pull the reader again and close a feedback loop the other
+	// way. VerseList only writes activeVerse for the chapter matching the current
+	// reading position, so a preloaded neighboring chapter (infinite scroll) can't
+	// steer the panel to the wrong section either.
+	let syncVerse = $derived($studyPanel.activeVerse);
+	$effect(() => {
+		if (
+			browser &&
+			$prefs.syncStudyScroll &&
+			$prefs.readingMode === 'study' &&
+			syncVerse != null &&
+			panelScroll
+		) {
+			scrollToSection(syncVerse);
+		}
+	});
 
 	// Clear sectionEls on tab switch
 	let lastActiveTab: StudyTab | null = null;
@@ -483,13 +509,9 @@
 
 				let defaultTab: StudyTab;
 				if (translationId === 'odr') {
+					// Always annotations on ODR — the studyDefaultTab preference (set by
+					// tab clicks in other translations) shouldn't steer this one.
 					defaultTab = 'annotations';
-					if (preferred === 'annotations' || preferred === 'notes' || preferred === 'cross-refs') {
-						defaultTab = preferred;
-					}
-					if (preferred === 'intro' && hasIntros) defaultTab = 'intro';
-					if (preferred === 'article' && hasArticles) defaultTab = 'article';
-					if (preferred === 'end' && hasEndMatters) defaultTab = 'end';
 				} else if (translationId === 'conf') {
 					defaultTab = 'footnotes';
 					if (preferred === 'footnotes' || preferred === 'commentary') {

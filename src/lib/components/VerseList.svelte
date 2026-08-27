@@ -622,6 +622,12 @@
 					}
 				}
 				if (programmaticReaderScroll || intersectingReaderVerses.size === 0) return;
+				// With infinite scroll, several chapters' VerseList instances can be mounted
+				// at once. Only the one matching the reader's current chapter may drive the
+				// panel — otherwise a preloaded neighboring chapter's observer can win the
+				// race and point the panel at the wrong chapter's section.
+				const pos = get(readingPosition);
+				if (!pos || bookSlug !== pos.bookSlug || chapterNum !== pos.chapter) return;
 				// Pick the topmost intersecting verse (smallest top value)
 				const active = [...intersectingReaderVerses.entries()].sort((a, b) => a[1] - b[1])[0][0];
 				// Clear annotatedVerse on free scroll so the underline doesn't persist on
