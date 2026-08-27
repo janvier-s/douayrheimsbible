@@ -148,6 +148,17 @@
 		translationOpen = false;
 	}
 
+	// The homepage has no study panel or split-pane layout, so a reader who
+	// leaves a chapter page in Study mode by clicking the logo would otherwise
+	// land there with the reading-mode preference still set to 'study' and no
+	// panel to show for it.
+	function handleLogoClick() {
+		closeAll();
+		if ($prefs.readingMode === 'study') {
+			prefs.update((p) => ({ ...p, readingMode: 'reading' }));
+		}
+	}
+
 	// ── Mode toggle ─────────────────────────────────────────────────────────────
 	let modeItems = $derived([
 		{ key: 'reading', label: 'Read' },
@@ -255,7 +266,7 @@
 		activeModeIdx={displayModeIdx}
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
-		onLogoClick={closeAll}
+		onLogoClick={handleLogoClick}
 		logoHref={isChapterPage ? `${routeBase}/genesis/1` : '/'}
 	>
 		<!-- Mobile prefs toggle (TopBar-specific) -->

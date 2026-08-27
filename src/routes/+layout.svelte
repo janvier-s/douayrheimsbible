@@ -9,7 +9,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { afterNavigate, goto } from '$app/navigation';
-	import { getFontById, isSansFont, resolveBionicWeight } from '$lib/data/fonts';
+	import { getFontById } from '$lib/data/fonts';
 	import { navOverride } from '$lib/stores/navOverride';
 	import { revealChrome } from '$lib/stores/chrome';
 	interface Props {
@@ -67,10 +67,9 @@
 		}
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));
 		document.documentElement.style.setProperty('--bionic-opacity', String(p.bionicOpacity ?? 1));
-		const isSans = isSansFont(p.fontFamily) || p.dyslexiaFont;
 		document.documentElement.style.setProperty(
 			'--bionic-bold-weight',
-			String(resolveBionicWeight(isSans, p.bionicBoldWeight ?? 'auto'))
+			String(p.bionicBoldWeight ?? 600)
 		);
 		if (p.dyslexiaFont) {
 			document.documentElement.style.setProperty(

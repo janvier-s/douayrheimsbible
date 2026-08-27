@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
-	import { resolveBionicWeight } from '$lib/data/fonts';
 
 	interface Props {
 		prefsOpen?: boolean;
@@ -84,10 +83,6 @@
 				"'Grace Dyslexic MD', sans-serif"
 			);
 			document.documentElement.style.setProperty('--font-ui', "'Grace Dyslexic MD', sans-serif");
-			document.documentElement.style.setProperty(
-				'--bionic-bold-weight',
-				String(resolveBionicWeight(true, $prefs.bionicBoldWeight))
-			);
 			document.documentElement.style.setProperty('--font-dropcap', 'inherit');
 		} else {
 			const font = FONTS.find((f) => f.id === $prefs.fontFamily);
@@ -96,11 +91,6 @@
 				'--font-ui',
 				"'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 			);
-			const isSans = SANS_FONTS.includes($prefs.fontFamily);
-			document.documentElement.style.setProperty(
-				'--bionic-bold-weight',
-				String(resolveBionicWeight(isSans, $prefs.bionicBoldWeight))
-			);
 			document.documentElement.style.setProperty(
 				'--font-dropcap',
 				$prefs.fontFamily === 'montserrat' ? 'var(--font-baskerville)' : 'inherit'
@@ -108,24 +98,9 @@
 		}
 	}
 
-	const SANS_FONTS = ['noto-sans', 'libre-franklin', 'montserrat'];
-
-	function setFontWithBionic(id: string) {
-		setFont(id);
-		const isSans = SANS_FONTS.includes(id);
-		document.documentElement.style.setProperty(
-			'--bionic-bold-weight',
-			String(resolveBionicWeight(isSans, $prefs.bionicBoldWeight))
-		);
-	}
-
-	function setBionicBoldWeight(value: 'auto' | 600 | 700) {
+	function setBionicBoldWeight(value: 600 | 700) {
 		prefs.update((p) => ({ ...p, bionicBoldWeight: value }));
-		const isSans = $prefs.dyslexiaFont || SANS_FONTS.includes($prefs.fontFamily);
-		document.documentElement.style.setProperty(
-			'--bionic-bold-weight',
-			String(resolveBionicWeight(isSans, value))
-		);
+		document.documentElement.style.setProperty('--bionic-bold-weight', String(value));
 	}
 
 	let activeTab: 'text' | 'reading' = $state('text');
@@ -222,7 +197,7 @@
 									style="font-family: {f.stack};"
 									onclick={() => {
 										setDyslexia(false);
-										setFontWithBionic(f.id);
+										setFont(f.id);
 										fontDropdownOpen = false;
 									}}
 								>
@@ -393,13 +368,13 @@
 						<div>
 							<span class="block mb-xs text-subtle">Bold weight</span>
 							<div class="flex gap-xs">
-								{#each [{ label: 'Auto', value: 'auto' }, { label: 'Heavy', value: 700 }, { label: 'Lighter', value: 600 }] as opt}
+								{#each [{ label: 'Lighter', value: 600 }, { label: 'Heavy', value: 700 }] as opt}
 									<button
 										class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
 											{$prefs.bionicBoldWeight === opt.value
 											? 'bg-accent text-white border-accent'
 											: 'border-border text-foreground hover:text-accent'}"
-										onclick={() => setBionicBoldWeight(opt.value as 'auto' | 600 | 700)}
+										onclick={() => setBionicBoldWeight(opt.value as 600 | 700)}
 									>
 										{opt.label}
 									</button>

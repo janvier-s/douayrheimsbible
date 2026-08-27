@@ -53,7 +53,7 @@ export interface ReadingPrefs {
 	// v20
 	romanNumerals: boolean;
 	// v25
-	bionicBoldWeight: 'auto' | 600 | 700;
+	bionicBoldWeight: 600 | 700;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -87,10 +87,10 @@ const DEFAULTS: ReadingPrefs = {
 	hasVisitedHomepage: false,
 	skipHomepage: false,
 	romanNumerals: true,
-	bionicBoldWeight: 'auto'
+	bionicBoldWeight: 600
 };
 
-const PREFS_VERSION = 25;
+const PREFS_VERSION = 26;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -206,9 +206,17 @@ function loadPrefs(): ReadingPrefs {
 		if (!parsed._v || parsed._v < 24) {
 			if (parsed.fontFamily === 'figtree') parsed.fontFamily = 'montserrat';
 		}
-		// v25 migration: add manual bionic bold weight override (auto by default)
+		// v25 migration: add manual bionic bold weight override (defaulted to
+		// Lighter; the "Auto" option itself was removed in v26)
 		if (!parsed._v || parsed._v < 25) {
-			parsed.bionicBoldWeight = 'auto';
+			parsed.bionicBoldWeight = 600;
+		}
+		// v26 migration: "Auto" bionic bold weight option removed; anyone who
+		// had picked it falls back to the new default, Lighter
+		if (!parsed._v || parsed._v < 26) {
+			if (parsed.bionicBoldWeight !== 600 && parsed.bionicBoldWeight !== 700) {
+				parsed.bionicBoldWeight = 600;
+			}
 		}
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));

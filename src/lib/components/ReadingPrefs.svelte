@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
-	import { FONTS, getFontById, isSansFont, resolveBionicWeight } from '$lib/data/fonts';
+	import { FONTS, getFontById } from '$lib/data/fonts';
+	import SettingHint from './SettingHint.svelte';
 
 	interface Props {
 		compareMode?: boolean;
@@ -57,10 +58,6 @@
 				"'Grace Dyslexic MD', sans-serif"
 			);
 			document.documentElement.style.setProperty('--font-ui', "'Grace Dyslexic MD', sans-serif");
-			document.documentElement.style.setProperty(
-				'--bionic-bold-weight',
-				String(resolveBionicWeight(true, $prefs.bionicBoldWeight))
-			);
 			document.documentElement.style.setProperty('--font-dropcap', 'inherit');
 		} else {
 			const font = getFontById($prefs.fontFamily);
@@ -70,35 +67,19 @@
 				"'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 			);
 			document.documentElement.style.setProperty(
-				'--bionic-bold-weight',
-				String(resolveBionicWeight(isSansFont($prefs.fontFamily), $prefs.bionicBoldWeight))
-			);
-			document.documentElement.style.setProperty(
 				'--font-dropcap',
 				$prefs.fontFamily === 'montserrat' ? 'var(--font-baskerville)' : 'inherit'
 			);
 		}
 	}
 
-	function setFontWithBionic(id: string) {
-		setFont(id);
-		document.documentElement.style.setProperty(
-			'--bionic-bold-weight',
-			String(resolveBionicWeight(isSansFont(id), $prefs.bionicBoldWeight))
-		);
-	}
-
-	function setBionicBoldWeight(value: 'auto' | 600 | 700) {
+	function setBionicBoldWeight(value: 600 | 700) {
 		prefs.update((p) => ({ ...p, bionicBoldWeight: value }));
-		const isSans = $prefs.dyslexiaFont || isSansFont($prefs.fontFamily);
-		document.documentElement.style.setProperty(
-			'--bionic-bold-weight',
-			String(resolveBionicWeight(isSans, value))
-		);
+		document.documentElement.style.setProperty('--bionic-bold-weight', String(value));
 	}
 
-	let activeTab: 'text' | 'reading' | 'verse' = $state('text');
-	let sliderIndex = $derived(['text', 'reading', 'verse'].indexOf(activeTab));
+	let activeTab: 'appearance' | 'reading' | 'text' = $state('appearance');
+	let sliderIndex = $derived(['appearance', 'reading', 'text'].indexOf(activeTab));
 	let fontSectionEl: HTMLElement | undefined = $state();
 </script>
 
@@ -107,7 +88,7 @@
 	<div
 		class="relative flex border-b border-border mb-md -mx-md px-md max-md:-mx-[20px] max-md:px-[20px] sticky top-0 z-10 bg-panel"
 	>
-		{#each [{ id: 'text', label: 'Text' }, { id: 'reading', label: 'Reading' }, { id: 'verse', label: 'Verse' }] as tab}
+		{#each [{ id: 'appearance', label: 'Appearance' }, { id: 'reading', label: 'Reading' }, { id: 'text', label: 'Text Options' }] as tab}
 			<button
 				class="flex-1 py-[8px] text-[11px] uppercase tracking-[0.12em] font-semibold transition-colors duration-fast
 					{activeTab === tab.id ? 'text-accent' : 'text-subtle hover:text-foreground'}"
@@ -122,11 +103,72 @@
 			aria-hidden="true"
 		></div>
 	</div>
-	<!-- Text tab -->
-	{#if activeTab === 'text'}
+	<!-- Appearance tab -->
+	{#if activeTab === 'appearance'}
 		<div class="space-y-[10px] max-md:pb-[20px]">
+			<label class="flex items-center gap-sm cursor-pointer">
+				<input
+					type="checkbox"
+					checked={$prefs.paragraphView}
+					onchange={(e) =>
+						prefs.update((p) => ({
+							...p,
+							paragraphView: (e.target as HTMLInputElement).checked
+						}))}
+					class="accent-accent"
+				/>
+				<SettingHint
+					text="Groups verses into flowing paragraphs instead of one line per verse, closer to how the 1582 print set the text."
+				>
+					<span>Paragraph view</span>
+				</SettingHint>
+			</label>
+
+			{#if $prefs.paragraphView}
+				<div class="pl-[20px] space-y-sm">
+					<label class="flex items-center gap-sm cursor-pointer">
+						<input
+							type="checkbox"
+							checked={$prefs.showDropcap ?? true}
+							onchange={(e) =>
+								prefs.update((p) => ({
+									...p,
+									showDropcap: (e.target as HTMLInputElement).checked
+								}))}
+							class="accent-accent"
+						/>
+						<SettingHint text="Enlarges the first letter of each chapter's opening word.">
+							<span>Drop cap</span>
+						</SettingHint>
+					</label>
+					<label class="flex items-center gap-sm cursor-pointer">
+						<input
+							type="checkbox"
+							checked={$prefs.hangingVerseNumbers ?? false}
+							onchange={(e) =>
+								prefs.update((p) => ({
+									...p,
+									hangingVerseNumbers: (e.target as HTMLInputElement).checked
+								}))}
+							class="accent-accent"
+						/>
+						<SettingHint
+							text="Sets verse numbers in the left margin instead of indenting each paragraph's first line."
+						>
+							<span>Hanging verse numbers</span>
+						</SettingHint>
+					</label>
+				</div>
+			{/if}
+
 			<label class="block">
-				<span class="block mb-xs">Font size: {activeFontSize}px</span>
+				<span class="block mb-xs">
+					<SettingHint
+						text="Adjusts the Scripture text size independently of your browser's zoom level."
+					>
+						Font size: {activeFontSize}px
+					</SettingHint>
+				</span>
 				<input
 					type="range"
 					min="12"
@@ -144,7 +186,11 @@
 			</label>
 
 			<div>
-				<span class="block mb-xs">Line spacing</span>
+				<span class="block mb-xs">
+					<SettingHint text="Tight fits more verses on screen; Wide eases long reading sessions.">
+						Line spacing
+					</SettingHint>
+				</span>
 				<div class="flex gap-xs">
 					{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.0 }] as opt}
 						<button
@@ -167,7 +213,11 @@
 			</div>
 
 			<div class="relative" bind:this={fontSectionEl}>
-				<span class="block mb-xs">Font</span>
+				<span class="block mb-xs">
+					<SettingHint text="Changes the typeface used for Scripture text (not menus or buttons).">
+						Font
+					</SettingHint>
+				</span>
 				<button
 					class="w-full border border-border rounded-sm px-sm py-[7px] bg-background text-foreground text-left flex items-center justify-between text-[14px] font-medium"
 					style="font-family: {activeFontStack};"
@@ -198,7 +248,7 @@
 								style="font-family: {f.stack};"
 								onclick={() => {
 									setDyslexia(false);
-									setFontWithBionic(f.id);
+									setFont(f.id);
 									fontDropdownOpen = false;
 								}}
 							>
@@ -221,7 +271,13 @@
 			</div>
 
 			<div class="max-md:mb-[8px]">
-				<span class="block mb-xs">Theme</span>
+				<span class="block mb-xs">
+					<SettingHint
+						text="Sets the background and text colors for the whole site, not just this panel."
+					>
+						Theme
+					</SettingHint>
+				</span>
 				<div class="flex gap-[6px]">
 					{#each THEMES as t}
 						<button
@@ -253,14 +309,14 @@
 					{/each}
 				</div>
 			</div>
-		</div>
-	{/if}
-
-	<!-- Reading tab -->
-	{#if activeTab === 'reading'}
-		<div class="space-y-md">
 			<div class="hidden md:block">
-				<span class="block mb-xs">Column width</span>
+				<span class="block mb-xs">
+					<SettingHint
+						text="Narrower columns can be easier to track line-to-line; Wide uses more of the screen."
+					>
+						Column width
+					</SettingHint>
+				</span>
 				<div class="flex gap-xs">
 					{#each [{ label: 'Narrow', value: 'narrow' }, { label: 'Default', value: 'default' }, { label: 'Wide', value: 'wide' }] as opt}
 						<button
@@ -279,21 +335,12 @@
 					{/each}
 				</div>
 			</div>
+		</div>
+	{/if}
 
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.justifiedText}
-					onchange={(e) =>
-						prefs.update((p) => ({
-							...p,
-							justifiedText: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Justified text</span>
-			</label>
-
+	<!-- Reading tab -->
+	{#if activeTab === 'reading'}
+		<div class="space-y-md">
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"
@@ -305,7 +352,11 @@
 						}))}
 					class="accent-accent"
 				/>
-				<span>Infinite scroll</span>
+				<SettingHint
+					text="Loads the next chapter automatically as you near the bottom, instead of requiring a tap to continue."
+				>
+					<span>Infinite scroll</span>
+				</SettingHint>
 			</label>
 
 			<label class="flex items-center gap-sm cursor-pointer">
@@ -318,7 +369,11 @@
 					}}
 					class="accent-accent"
 				/>
-				<span>Verse &amp; notes scroll sync</span>
+				<SettingHint
+					text="Keeps the Study panel's notes scrolled to match the verse currently in view."
+				>
+					<span>Verse &amp; notes scroll sync</span>
+				</SettingHint>
 			</label>
 
 			<label class="flex items-center gap-sm cursor-pointer">
@@ -332,7 +387,9 @@
 						}))}
 					class="accent-accent"
 				/>
-				<span>Chapter navigation</span>
+				<SettingHint text="Shows the previous/next chapter links above and below the text.">
+					<span>Chapter navigation</span>
+				</SettingHint>
 			</label>
 
 			{#if $prefs.hasVisitedHomepage}
@@ -347,7 +404,11 @@
 							}))}
 						class="accent-accent"
 					/>
-					<span>Show intro page</span>
+					<SettingHint
+						text="Shows the animated welcome page when you open the site, instead of jumping straight to Genesis 1."
+					>
+						<span>Show intro page</span>
+					</SettingHint>
 				</label>
 			{/if}
 
@@ -362,13 +423,21 @@
 						}))}
 					class="accent-accent"
 				/>
-				<span>Bionic Reading</span>
+				<SettingHint
+					text="Bolds the leading letters of each word as a guide for the eye; may help reading speed and focus."
+				>
+					<span>Bionic Reading</span>
+				</SettingHint>
 			</label>
 
 			{#if $prefs.bionicReading}
 				<div class="pl-[20px] space-y-sm">
 					<label class="block">
-						<span class="block mb-xs text-subtle">Fixation: {$prefs.bionicFixation ?? 3}</span>
+						<span class="block mb-xs text-subtle">
+							<SettingHint text="How many letters at the start of each word are bolded.">
+								Fixation: {$prefs.bionicFixation ?? 3}
+							</SettingHint>
+						</span>
 						<input
 							type="range"
 							min="1"
@@ -384,9 +453,11 @@
 						/>
 					</label>
 					<label class="block">
-						<span class="block mb-xs text-subtle"
-							>Saccade interval: {$prefs.bionicSaccade ?? 0}</span
-						>
+						<span class="block mb-xs text-subtle">
+							<SettingHint text="How many words to skip, unbolded, between each bolded word.">
+								Saccade interval: {$prefs.bionicSaccade ?? 0}
+							</SettingHint>
+						</span>
 						<input
 							type="range"
 							min="0"
@@ -402,9 +473,13 @@
 						/>
 					</label>
 					<label class="block">
-						<span class="block mb-xs text-subtle"
-							>Non-bold opacity: {Math.round(($prefs.bionicOpacity ?? 1) * 100)}%</span
-						>
+						<span class="block mb-xs text-subtle">
+							<SettingHint
+								text="Fades the non-bold portion of each word instead of leaving it full strength."
+							>
+								Non-bold opacity: {Math.round(($prefs.bionicOpacity ?? 1) * 100)}%
+							</SettingHint>
+						</span>
 						<input
 							type="range"
 							min="0"
@@ -420,15 +495,17 @@
 						/>
 					</label>
 					<div>
-						<span class="block mb-xs text-subtle">Bold weight</span>
+						<span class="block mb-xs text-subtle">
+							<SettingHint text="How bold the emphasized letters are.">Bold weight</SettingHint>
+						</span>
 						<div class="flex gap-xs">
-							{#each [{ label: 'Auto', value: 'auto' }, { label: 'Heavy', value: 700 }, { label: 'Lighter', value: 600 }] as opt}
+							{#each [{ label: 'Lighter', value: 600 }, { label: 'Heavy', value: 700 }] as opt}
 								<button
 									class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
 										{$prefs.bionicBoldWeight === opt.value
 										? 'bg-accent text-white border-accent'
 										: 'border-border text-foreground hover:text-accent'}"
-									onclick={() => setBionicBoldWeight(opt.value as 'auto' | 600 | 700)}
+									onclick={() => setBionicBoldWeight(opt.value as 600 | 700)}
 								>
 									{opt.label}
 								</button>
@@ -440,8 +517,8 @@
 		</div>
 	{/if}
 
-	<!-- Verse tab -->
-	{#if activeTab === 'verse'}
+	<!-- Text Options tab -->
+	{#if activeTab === 'text'}
 		<div class="space-y-md max-md:pb-[20px]">
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
@@ -454,139 +531,136 @@
 						}))}
 					class="accent-accent"
 				/>
-				<span>Verse numbers</span>
+				<SettingHint text="Shows the small numeral before each verse.">
+					<span>Verse numbers</span>
+				</SettingHint>
 			</label>
 
 			<label class="flex items-center gap-sm cursor-pointer">
 				<input
 					type="checkbox"
-					checked={$prefs.paragraphView}
+					checked={$prefs.justifiedText}
 					onchange={(e) =>
 						prefs.update((p) => ({
 							...p,
-							paragraphView: (e.target as HTMLInputElement).checked
+							justifiedText: (e.target as HTMLInputElement).checked
 						}))}
 					class="accent-accent"
 				/>
-				<span>Paragraph view</span>
+				<SettingHint
+					text="Stretches each line so both the left and right edges align, like a printed book."
+				>
+					<span>Justified text</span>
+				</SettingHint>
 			</label>
 
-			{#if $prefs.paragraphView}
-				<div class="pl-[20px] space-y-sm">
-					<label class="flex items-center gap-sm cursor-pointer">
-						<input
-							type="checkbox"
-							checked={$prefs.showDropcap ?? true}
-							onchange={(e) =>
-								prefs.update((p) => ({
-									...p,
-									showDropcap: (e.target as HTMLInputElement).checked
-								}))}
-							class="accent-accent"
-						/>
-						<span>Drop cap</span>
-					</label>
-					<label class="flex items-center gap-sm cursor-pointer">
-						<input
-							type="checkbox"
-							checked={$prefs.hangingVerseNumbers ?? false}
-							onchange={(e) =>
-								prefs.update((p) => ({
-									...p,
-									hangingVerseNumbers: (e.target as HTMLInputElement).checked
-								}))}
-							class="accent-accent"
-						/>
-						<span>Hanging verse numbers</span>
-					</label>
-				</div>
-			{/if}
-
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.modernBookNames}
-					onchange={(e) =>
-						prefs.update((p) => ({
-							...p,
-							modernBookNames: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Modern book names</span>
-			</label>
-
-			{#if isVul}
+			<div class="border-t border-border pt-md space-y-md">
 				<label class="flex items-center gap-sm cursor-pointer">
 					<input
 						type="checkbox"
-						checked={$prefs.romanNumerals}
+						checked={$prefs.modernBookNames}
 						onchange={(e) =>
 							prefs.update((p) => ({
 								...p,
-								romanNumerals: (e.target as HTMLInputElement).checked
+								modernBookNames: (e.target as HTMLInputElement).checked
 							}))}
 						class="accent-accent"
 					/>
-					<span>Roman numerals</span>
+					<SettingHint
+						text="Use familiar names (e.g. Hosea) instead of the Douay-Rheims originals (e.g. Osee)."
+					>
+						<span>Modern book names</span>
+					</SettingHint>
 				</label>
-			{/if}
 
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.showPsalmNumbers}
-					onchange={(e) =>
-						prefs.update((p) => ({
-							...p,
-							showPsalmNumbers: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Hebrew Psalm numbers</span>
-			</label>
+				{#if isVul}
+					<label class="flex items-center gap-sm cursor-pointer">
+						<input
+							type="checkbox"
+							checked={$prefs.romanNumerals}
+							onchange={(e) =>
+								prefs.update((p) => ({
+									...p,
+									romanNumerals: (e.target as HTMLInputElement).checked
+								}))}
+							class="accent-accent"
+						/>
+						<SettingHint
+							text="Show chapter numbers as roman numerals (I, II, III) instead of Arabic."
+						>
+							<span>Roman numerals</span>
+						</SettingHint>
+					</label>
+				{/if}
 
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.showSmallCaps ?? true}
-					onchange={(e) =>
-						prefs.update((p) => ({
-							...p,
-							showSmallCaps: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Small caps</span>
-			</label>
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={$prefs.showPsalmNumbers}
+						onchange={(e) =>
+							prefs.update((p) => ({
+								...p,
+								showPsalmNumbers: (e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<SettingHint
+						text="Number the Psalms by the Hebrew count instead of the Douay-Rheims' Septuagint-based count."
+					>
+						<span>Hebrew Psalm numbers</span>
+					</SettingHint>
+				</label>
 
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.showItalics}
-					onchange={(e) =>
-						prefs.update((p) => ({
-							...p,
-							showItalics: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>Italics (OT quotes in NT)</span>
-			</label>
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={$prefs.showSmallCaps ?? true}
+						onchange={(e) =>
+							prefs.update((p) => ({
+								...p,
+								showSmallCaps: (e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<SettingHint
+						text="Renders words like GOD and LORD in small capitals, matching the original print convention."
+					>
+						<span>Small caps</span>
+					</SettingHint>
+				</label>
 
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.expandAmpersand ?? false}
-					onchange={(e) =>
-						prefs.update((p) => ({
-							...p,
-							expandAmpersand: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<span>&amp; → and</span>
-			</label>
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={$prefs.showItalics}
+						onchange={(e) =>
+							prefs.update((p) => ({
+								...p,
+								showItalics: (e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<SettingHint text="Italicizes Old Testament passages quoted within the New Testament.">
+						<span>Italics (OT quotes in NT)</span>
+					</SettingHint>
+				</label>
+
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
+						checked={$prefs.expandAmpersand ?? false}
+						onchange={(e) =>
+							prefs.update((p) => ({
+								...p,
+								expandAmpersand: (e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<SettingHint text="Spell out every &amp; as “and”.">
+						<span>&amp; → and</span>
+					</SettingHint>
+				</label>
+			</div>
 		</div>
 	{/if}
 </div>
