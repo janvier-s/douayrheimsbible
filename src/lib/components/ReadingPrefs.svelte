@@ -106,23 +106,28 @@
 	<!-- Appearance tab -->
 	{#if activeTab === 'appearance'}
 		<div class="space-y-[10px] max-md:pb-[20px]">
-			<label class="flex items-center gap-sm cursor-pointer">
-				<input
-					type="checkbox"
-					checked={$prefs.paragraphView}
-					onchange={(e) =>
-						prefs.update((p) => ({
-							...p,
-							paragraphView: (e.target as HTMLInputElement).checked
-						}))}
-					class="accent-accent"
-				/>
-				<SettingHint
-					text="Groups verses into flowing paragraphs instead of one line per verse, closer to how the 1582 print set the text."
-				>
-					<span>Paragraph view</span>
-				</SettingHint>
-			</label>
+			<div>
+				<span class="block mb-xs">
+					<SettingHint
+						text="Groups verses into flowing paragraphs instead of one line per verse, closer to how the 1582 print set the text."
+					>
+						Verse format
+					</SettingHint>
+				</span>
+				<div class="flex gap-xs">
+					{#each [{ label: 'Verse-by-verse', value: false }, { label: 'Paragraph', value: true }] as opt}
+						<button
+							class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+								{$prefs.paragraphView === opt.value
+								? 'bg-accent text-white border-accent'
+								: 'border-border text-foreground hover:text-accent'}"
+							onclick={() => prefs.update((p) => ({ ...p, paragraphView: opt.value }))}
+						>
+							{opt.label}
+						</button>
+					{/each}
+				</div>
+			</div>
 
 			{#if $prefs.paragraphView}
 				<div class="pl-[20px] space-y-sm">
@@ -161,52 +166,41 @@
 				</div>
 			{/if}
 
-			<label class="block">
+			<div class="max-md:mb-[8px]">
 				<span class="block mb-xs">
 					<SettingHint
-						text="Adjusts the Scripture text size independently of your browser's zoom level."
+						text="Sets the background and text colors for the whole site, not just this panel."
 					>
-						Font size: {activeFontSize}px
+						Theme
 					</SettingHint>
 				</span>
-				<input
-					type="range"
-					min="12"
-					max="20"
-					step="1"
-					value={activeFontSize}
-					oninput={(e) => {
-						const v = parseInt((e.target as HTMLInputElement).value);
-						const key = compareMode ? 'compareFontSize' : 'fontSize';
-						prefs.update((p) => ({ ...p, [key]: v }));
-						document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
-					}}
-					class="w-full accent-accent"
-				/>
-			</label>
-
-			<div>
-				<span class="block mb-xs">
-					<SettingHint text="Tight fits more verses on screen; Wide eases long reading sessions.">
-						Line spacing
-					</SettingHint>
-				</span>
-				<div class="flex gap-xs">
-					{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.0 }] as opt}
+				<div class="flex gap-[6px]">
+					{#each THEMES as t}
 						<button
-							class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
-								{$prefs.lineHeight === opt.value
-								? 'bg-accent text-white border-accent'
-								: 'border-border text-foreground hover:text-accent'}"
-							onclick={() => {
-								prefs.update((p) => ({ ...p, lineHeight: opt.value }));
-								document.documentElement.style.setProperty(
-									'--line-height-reader',
-									String(opt.value)
-								);
-							}}
+							title={t.label}
+							onclick={() => setTheme(t.id)}
+							class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
+								{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
+							style="background: {t.bg};"
 						>
-							{opt.label}
+							<div class="theme-card-inner p-[7px] max-md:p-[4px]">
+								<div class="flex items-baseline gap-[3px] mb-[5px]">
+									<span
+										class="font-reader text-[15px] max-md:text-[11px] leading-none font-bold"
+										style="color: {t.fg};">A</span
+									>
+									<span
+										class="block h-[1.5px] flex-1 rounded-full"
+										style="background: {t.fg}; opacity: 0.5;"
+									></span>
+								</div>
+								<div class="space-y-[3px]">
+									<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+									<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
+									<span class="block h-[1.5px] w-[70%] rounded-full" style="background: {t.lines};"
+									></span>
+								</div>
+							</div>
 						</button>
 					{/each}
 				</div>
@@ -270,45 +264,57 @@
 				{/if}
 			</div>
 
-			<div class="max-md:mb-[8px]">
+			<label class="block">
 				<span class="block mb-xs">
 					<SettingHint
-						text="Sets the background and text colors for the whole site, not just this panel."
+						text="Adjusts the Scripture text size independently of your browser's zoom level."
 					>
-						Theme
+						Font size: {activeFontSize}px
 					</SettingHint>
 				</span>
-				<div class="flex gap-[6px]">
-					{#each THEMES as t}
+				<input
+					type="range"
+					min="12"
+					max="20"
+					step="1"
+					value={activeFontSize}
+					oninput={(e) => {
+						const v = parseInt((e.target as HTMLInputElement).value);
+						const key = compareMode ? 'compareFontSize' : 'fontSize';
+						prefs.update((p) => ({ ...p, [key]: v }));
+						document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
+					}}
+					class="w-full accent-accent"
+				/>
+			</label>
+
+			<div>
+				<span class="block mb-xs">
+					<SettingHint text="Tight fits more verses on screen; Wide eases long reading sessions.">
+						Line spacing
+					</SettingHint>
+				</span>
+				<div class="flex gap-xs">
+					{#each [{ label: 'Tight', value: 1.5 }, { label: 'Default', value: 1.8 }, { label: 'Wide', value: 2.0 }] as opt}
 						<button
-							title={t.label}
-							onclick={() => setTheme(t.id)}
-							class="theme-card flex-1 rounded-[4px] border-2 transition-colors duration-fast overflow-hidden
-								{currentTheme === t.id ? 'border-accent' : 'border-transparent'}"
-							style="background: {t.bg};"
+							class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
+								{$prefs.lineHeight === opt.value
+								? 'bg-accent text-white border-accent'
+								: 'border-border text-foreground hover:text-accent'}"
+							onclick={() => {
+								prefs.update((p) => ({ ...p, lineHeight: opt.value }));
+								document.documentElement.style.setProperty(
+									'--line-height-reader',
+									String(opt.value)
+								);
+							}}
 						>
-							<div class="theme-card-inner p-[7px] max-md:p-[4px]">
-								<div class="flex items-baseline gap-[3px] mb-[5px]">
-									<span
-										class="font-reader text-[15px] max-md:text-[11px] leading-none font-bold"
-										style="color: {t.fg};">A</span
-									>
-									<span
-										class="block h-[1.5px] flex-1 rounded-full"
-										style="background: {t.fg}; opacity: 0.5;"
-									></span>
-								</div>
-								<div class="space-y-[3px]">
-									<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
-									<span class="block h-[1.5px] rounded-full" style="background: {t.lines};"></span>
-									<span class="block h-[1.5px] w-[70%] rounded-full" style="background: {t.lines};"
-									></span>
-								</div>
-							</div>
+							{opt.label}
 						</button>
 					{/each}
 				</div>
 			</div>
+
 			<div class="hidden md:block">
 				<span class="block mb-xs">
 					<SettingHint
