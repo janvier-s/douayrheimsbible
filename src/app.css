@@ -285,7 +285,6 @@
 :root {
 	--color-bg: #fffdf9;
 	--color-panel: #ffffff;
-	--color-panel-alt: #f6f2ea;
 	--color-search-card: #ffffff;
 	--color-text: #1c1710;
 	--color-muted: #4a443e;
@@ -298,7 +297,7 @@
 	   overrides it below: #c15050 lands at 3.82:1 there, and these numbers are
 	   10-13px and thin, so they need AA contrast of their own. */
 	--color-verse-num: var(--color-accent-text);
-	--color-border: #ece3d4;
+	--color-border: #e4dcd0;
 	--color-bg-glass: rgba(255, 253, 249, 0.94);
 	--color-heading: var(--color-text);
 
@@ -339,8 +338,8 @@
 
 [data-theme='sepia'] {
 	--color-bg: #f8f5ef;
-	--color-panel: #fdf9f0;
-	--color-panel-alt: #f0e6d3;
+	--color-panel: #f9f2e6;
+	--color-panel-alt: #fdf9f0;
 	--color-search-card: #fef9f2;
 	--color-text: #2c1e10;
 	--color-muted: #4e3520;
