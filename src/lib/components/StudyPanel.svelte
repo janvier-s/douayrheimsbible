@@ -1612,7 +1612,7 @@
 	.verse-section-header-sticky {
 		position: sticky;
 		top: 0;
-		background: var(--color-panel);
+		background: color-mix(in srgb, var(--color-border) 45%, var(--color-panel));
 		z-index: 1;
 		text-align: center;
 		padding-top: 15px;
@@ -1626,7 +1626,7 @@
 	@supports (backdrop-filter: blur(1px)) {
 		@media screen and (-webkit-min-device-pixel-ratio: 0) {
 			.verse-section-header-sticky {
-				background: color-mix(in srgb, var(--color-panel) 97%, transparent);
+				background: color-mix(in srgb, var(--color-border) 45%, var(--color-panel));
 				backdrop-filter: blur(10px);
 				-webkit-backdrop-filter: blur(10px);
 			}

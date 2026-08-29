@@ -64,7 +64,7 @@
 		border: 1px solid var(--color-border);
 		border-radius: 4px;
 		overflow: hidden;
-		background: color-mix(in srgb, var(--color-border) 45%, transparent);
+		background: color-mix(in srgb, var(--color-border) 45%, var(--color-panel));
 	}
 
 	.mode-pill {
