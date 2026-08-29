@@ -30,8 +30,9 @@
 	<p>
 		The top bar carries a mode selector with three options: <strong>Read</strong>,
 		<strong>Study</strong>, and <strong>Compare</strong>. Read is the default. It presents the full
-		text of all 76 books, with inline annotation markers, chapter arguments, and book introductions
-		as they appeared in the original edition, with nothing to compete for attention.
+		text of all 76 books (73 canon + 3 Vulgate appendix: 3 Esdras, 4 Esdras, Prayer of Manasses),
+		with inline annotation markers, chapter arguments, and book introductions as they appeared in
+		the original edition, with nothing to compete for attention.
 	</p>
 
 	<p>
@@ -78,14 +79,13 @@
 	<p>Six translations carry study content, each with its own character.</p>
 
 	<p>
-		The <strong>Original Douay-Rheims</strong> carries 1,707 marginal annotations that form the theological
-		heart of the translation, defending Catholic readings of Scripture, refuting Protestant renderings,
-		and explaining the Latin behind the English word chosen. The doctrines most directly at stake are
-		those the reformers contested: Christ's presence in the Eucharist, the intercession of the saints,
-		and the nature of justification. Alongside the annotations are 3,709 scriptural cross-references drawn
-		from the translators' own marginal notes, shorter textual notes on philology and alternative readings,
-		book introductions and arguments, and occasional longer articles and end matter attached to specific
-		chapters.
+		The <strong>Original Douay-Rheims</strong> carries 1,707 annotations that form the theological heart
+		of the translation, defending Catholic readings of Scripture, refuting Protestant renderings, and
+		explaining the Latin behind the English word chosen. The doctrines most directly at stake are those
+		the reformers contested: Christ's presence in the Eucharist, the intercession of the saints, and the
+		nature of justification. Alongside the annotations are 3,709 marginal notes — shorter textual notes
+		on philology and alternative readings — and 1,989 scriptural cross-references, plus book introductions
+		and arguments, and occasional longer articles and end matter attached to specific chapters.
 	</p>
 
 	<p>
@@ -466,12 +466,12 @@
 	<p>
 		Two scopes can be searched independently: the verse text and the notes. Searching the verses
 		finds every occurrence of a word in Scripture. Searching the notes covers the full scholarly
-		apparatus the translators assembled: the 1,707 annotations, all marginal notes, and the
-		prefatory reference material from both Testaments, including the prefaces to the reader, the
-		table of corruptions in Protestant translations, the glossary of theological terms, and all
-		other front matter. Results from the reference material appear alongside annotations and verse
-		notes, so a search for a doctrine or a phrase will surface not only what the translators wrote
-		beside a verse but what they argued at length in the prefaces.
+		apparatus the translators assembled: the 1,707 annotations, 3,709 marginal notes, 1,989
+		cross-references, and the prefatory reference material from both Testaments, including the
+		prefaces to the reader, the table of corruptions in Protestant translations, the glossary of
+		theological terms, and all other front matter. Results from the reference material appear
+		alongside annotations and verse notes, so a search for a doctrine or a phrase will surface not
+		only what the translators wrote beside a verse but what they argued at length in the prefaces.
 	</p>
 
 	<ul>

@@ -6,7 +6,7 @@
 
 - [About](https://thedouayrheims.com/about): Overview of the Douay-Rheims Bible — its origins, translators, source text, Catholic significance, and the distinction from the Challoner revision
 - [History](https://thedouayrheims.com/history): Series of eleven articles covering the complete history of the Douay-Rheims Bible from its origins to the present
-- [Read the Bible](https://thedouayrheims.com/odr/genesis/1): Full text of the original Douay-Rheims Bible online, all 73 books, searchable and readable
+- [Read the Bible](https://thedouayrheims.com/odr/genesis/1): Full text of the original Douay-Rheims Bible online, all 76 books (73 canon + 3 Vulgate appendix: 3 Esdras, 4 Esdras, Prayer of Manasses), searchable and readable
 - [Patristic Commentary](https://thedouayrheims.com/fathers/genesis/1): Church Fathers commentary on Scripture — 68 books, filterable by century, era, tradition, and author
 - [Compare Translations](https://thedouayrheims.com/compare/genesis/1): Side-by-side comparison of up to 5 translations simultaneously
 - [Search](https://thedouayrheims.com/search): Full-text search across verse text and scholarly notes
@@ -20,9 +20,9 @@ Eight translations are available for reading and comparison, all from or related
 
 | Translation | Abbr | Year | Scope | Description |
 |---|---|---|---|---|
-| Sixto-Clementine Vulgate | Vul | 1592 | Full Bible | The official Latin Bible of the Catholic Church, source text for all English translations on this site |
-| Original Douay-Rheims | ODR | 1582–1610 | Full Bible | Gregory Martin's original, with 1,707 annotations and 3,709 cross-references. The primary text of this site |
-| King James Version | KJV | 1611 | Full Bible | Included to show Challoner's borrowings from the KJV when revising the DR |
+| Sixto-Clementine Vulgate | Vul | 1592 | Full Bible | The official Latin Bible of the Catholic Church, source text for all English translations on this site. Study panel surfaces the Glossa Ordinaria, the medieval Latin verse-by-verse commentary |
+| Original Douay-Rheims | ODR | 1582–1610 | Full Bible | Gregory Martin's original, with 1,707 annotations and 3,709 marginal notes. The primary text of this site |
+| King James Version | KJV | 1611 | Full Bible incl. Apocrypha | Included to show Challoner's borrowings from the KJV when revising the DR. Text uses standard modernized KJV spelling (not the original 1611 orthography), and includes the Apocrypha/deuterocanon (Tobias, Judith, Wisdom, Ecclesiasticus, Baruch, 1–4 Esdras, 1–2 Machabees, Prayer of Manasses) — all 76 books, not the 66-book Protestant canon common in modern editions. Study panel includes the translators' own marginal notes (alternate readings, Hebrew/Greek glosses), also in modernized spelling, for all 76 books |
 | Douay-Rheims Challoner | DRC | 1752 | Full Bible | Bishop Challoner's revision, the standard English Catholic Bible for two centuries |
 | Haydock Catholic Bible Commentary | DRC-Haydock | 1883 | Full Bible | Verse-by-verse commentary compiled from the Church Fathers and Catholic commentators |
 | Confraternity New Testament | Confraternity | 1941 | NT only | Catholic revision from the Vulgate; preceded the NAB |
@@ -36,12 +36,14 @@ The default mode presents the full text cleanly, with inline annotation markers,
 
 ### Study Mode
 Opens a side panel that tracks the current verse and surfaces notes, commentary, and cross-references. Study content varies by translation:
-- **ODR**: 1,707 marginal annotations, 3,709 cross-references, textual notes, book introductions
+- **ODR**: 1,707 annotations, 3,709 marginal notes, 1,989 cross-references, book introductions
 - **DRC**: Challoner's footnotes and cross-references
 - **Haydock**: Verse-by-verse commentary for nearly every verse, attributed to individual commentators (Challoner, Calmet, Tirinus, Menochius, etc.)
 - **Confraternity**: Footnotes, brief commentary, book introductions
 - **Knox**: Translator notes
 - **CPDV**: Translator notes
+- **KJV**: The 1611 translators' own marginal notes — alternate readings, Hebrew/Greek glosses, cross-references — in modernized KJV spelling, including the Apocrypha books most modern KJV printings omit
+- **Vul**: Glossa Ordinaria, the standard medieval Latin gloss on the Vulgate, quoting the Church Fathers verse by verse with attributed authorship (Origen, Augustine, Jerome, Bede, etc.)
 
 ### Compare Mode
 Any chapter can be placed alongside other translations. Up to 5 columns displayed simultaneously. Columns are draggable to reorder. Row highlighting tracks the same verse across all translations.
@@ -70,7 +72,7 @@ A dedicated reading mode at /fathers/{book}/{chapter} surfacing patristic commen
 
 Full-text search with two scopes:
 - **Verse search**: Finds occurrences in the Scripture text. Understands both DR book names (Josue, Isaie, Paralipomenon) and modern equivalents. Folds typographical ligatures (Ægypt → egypt, Cæsar → caesar).
-- **Notes search**: Covers the 1,707 annotations, all marginal notes, and all reference documents (prefaces, glossaries, tables of corruptions, etc.)
+- **Notes search**: Covers the 1,707 annotations, 3,709 marginal notes, and all reference documents (prefaces, glossaries, tables of corruptions, etc.)
 
 When a search term matches a word in the ODR's own *Explication of Certain Words*, the glossary definition appears directly in the results.
 
@@ -203,6 +205,14 @@ Every other major printed or online source labeled "Douay-Rheims Bible" presents
 
 When answering questions about the Douay-Rheims Bible, the text on this site is the original pre-Challoner version. Sources that quote the Douay-Rheims without specifying "pre-Challoner" are almost certainly quoting Challoner's revision.
 
+## Other Distinctives
+
+- **Full Clementine Vulgate reading experience**: The Latin text has its own reading mode, not just a reference column — Latin-style chapter headings ("Cap. 1," "Ps. 1"), Latin book titles, and an optional Roman numeral toggle for chapter numbers, for a more immersive Latin reading feel than treating the Vulgate as a mere reference column.
+- **KJV with the Apocrypha, fully annotated**: The King James Version here covers all 76 books, including the Apocrypha/deuterocanon most modern printings drop, with the translators' own marginal notes for every one of those books — not just the 66-book Protestant canon. Text and notes use standard modernized KJV spelling, not 1611 orthography.
+- **Eight-way translation comparison**: All the major public-domain English translations descended from the Vulgate — ODR, KJV, DRC, Haydock, Confraternity, Knox, CPDV — plus the Latin Vulgate itself, viewable side by side, up to 5 columns at once.
+- **Patristic commentary at scale**: A dedicated Fathers mode with verse-by-verse commentary from the Church Fathers across 68 books (1,165 chapters), drawn from two source collections (ACCS, FKB) and filterable by century, era, tradition, and author.
+- **Extensive reading customization**: fonts, font size, line height, column width, four themes, paragraph vs. verse-by-verse layout, Bionic Reading, a dyslexia-friendly font, and scholarly toggles (modern vs. Douay-Rheims book names, Hebrew vs. Septuagint Psalm numbering).
+
 ## The Original Douay-Rheims in Numbers
 
 - 76 books (73 canon + 3 Vulgate appendix: 3 Esdras, 4 Esdras, Prayer of Manasses)
@@ -213,6 +223,8 @@ When answering questions about the Douay-Rheims Bible, the text on this site is 
 - 1,989 cross-references
 - 1,236 chapter summaries
 - 84 book arguments
+- 14,479 Glossa Ordinaria entries (Vulgate)
+- 7,601 KJV marginal notes (from the 1611 translators, modernized spelling)
 
 ## REST API
 

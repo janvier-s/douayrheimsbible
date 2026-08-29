@@ -44,7 +44,7 @@
 		<li>
 			<strong>Original Douay-Rheims (1582–1610):</strong> The primary text of this site, described above
 			in detail. The first complete English translation of the Clementine Vulgate, with the full apparatus
-			of 1,707 annotations and 3,709 cross-references.
+			of 1,707 annotations and 3,709 marginal notes.
 		</li>
 		<li>
 			<strong>Douay-Rheims Challoner (1749–1752):</strong> Bishop Richard Challoner's revision of the
