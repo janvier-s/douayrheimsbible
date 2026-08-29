@@ -14,8 +14,8 @@
 	let activeFontSize = $derived(compareMode ? $prefs.compareFontSize : $prefs.fontSize);
 
 	const THEMES = [
-		{ id: 'light', label: 'Light', bg: '#f8f5ef', fg: '#1c1710', lines: '#c8bfb0' },
-		{ id: 'sepia', label: 'Sepia', bg: '#f2e8d8', fg: '#2c1e10', lines: '#c0a888' },
+		{ id: 'light', label: 'Light', bg: '#fffdf9', fg: '#1c1710', lines: '#c8bfb0' },
+		{ id: 'sepia', label: 'Sepia', bg: '#f8f5ef', fg: '#2c1e10', lines: '#c0a888' },
 		{ id: 'dark', label: 'Dark', bg: '#111113', fg: '#e8ddd0', lines: '#2e2b32' },
 		{ id: 'oled', label: 'OLED', bg: '#000000', fg: '#e0e0e0', lines: '#2a2a2a' }
 	];
