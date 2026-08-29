@@ -299,6 +299,7 @@
 	--color-verse-num: var(--color-accent-text);
 	--color-border: #e4dcd0;
 	--color-bg-glass: rgba(255, 253, 249, 0.94);
+	--color-verse-sticky-bg: var(--color-panel);
 	--color-heading: var(--color-text);
 
 	/* Catchword tint: the fill behind the words an annotation quotes, and the
@@ -350,6 +351,7 @@
 	--color-verse-num: #ab3d3d; /* 4.99:1 on the sepia page */
 	--color-border: #d8c8b0;
 	--color-bg-glass: rgba(253, 249, 240, 0.94);
+	--color-verse-sticky-bg: color-mix(in srgb, var(--color-border) 45%, var(--color-panel));
 	--lemma-fill-1: #f0d0b8;
 	--lemma-fill-2: #e6b494;
 }
