@@ -337,7 +337,7 @@
 }
 
 [data-theme='sepia'] {
-	--color-bg: #f8f5ef;
+	--color-bg: #fdf9f0;
 	--color-panel: #fdf9f0;
 	--color-panel-alt: #fffdf9;
 	--color-search-card: #fef9f2;
@@ -349,7 +349,7 @@
 	--color-accent-text: #c15050;
 	--color-verse-num: #ab3d3d; /* 4.99:1 on the sepia page */
 	--color-border: #d8c8b0;
-	--color-bg-glass: rgba(248, 245, 239, 0.94);
+	--color-bg-glass: rgba(253, 249, 240, 0.94);
 	--lemma-fill-1: #e29b8a;
 	--lemma-fill-2: #dd7f6e;
 }
@@ -413,7 +413,7 @@
 		--color-bg-glass: #fffdf9;
 	}
 	[data-theme='sepia'] {
-		--color-bg-glass: #f8f5ef;
+		--color-bg-glass: #fdf9f0;
 	}
 	[data-theme='dark'] {
 		--color-bg-glass: #111113;
