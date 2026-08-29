@@ -7,6 +7,7 @@ export default {
 			colors: {
 				background: 'var(--color-bg)',
 				panel: 'var(--color-panel)',
+				'panel-alt': 'var(--color-panel-alt, var(--color-panel))',
 				foreground: 'var(--color-text)',
 				muted: 'var(--color-muted)',
 				subtle: 'var(--color-subtle)',
