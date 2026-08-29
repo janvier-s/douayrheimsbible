@@ -11,7 +11,7 @@
 		},
 		{
 			q: 'How is the Douay-Rheims different from other English Bible translations?',
-			a: 'The Douay-Rheims is distinctive in three ways: it was translated from the Latin Vulgate rather than directly from the Hebrew and Greek; it preserves many Latinate theological terms such as "longsuffering," "supersubstantial," and "penance" that other translations render more loosely; and it reflects the doctrinal tradition of the Catholic Church through both its translation choices and its extensive annotations.'
+			a: 'The Douay-Rheims is distinctive in three ways: it was translated from the Latin Vulgate rather than directly from the Hebrew and Greek; it preserves many Latinate theological terms such as "longanimity," "supersubstantial," and "penance" that other translations render more loosely; and it reflects the doctrinal tradition of the Catholic Church through both its translation choices and its extensive annotations.'
 		},
 		{
 			q: 'Which version of the Douay-Rheims is presented on this site?',
@@ -54,8 +54,9 @@
 
 	<p>
 		The <a href="/odr/matthew/1">New Testament was published in 1582 at Rheims</a> in northern France,
-		and the Old Testament followed in two volumes from Douai (then in the Spanish Netherlands) in 1609
-		and 1610. The complete work therefore predates the King James Version of 1611 by several decades.
+		predating the King James Version of 1611 by nearly three decades. The Old Testament followed in two
+		volumes from Douai (then in the Spanish Netherlands) in 1609 and 1610, completing the work just one
+		year before the King James Bible appeared.
 	</p>
 
 	<figure class="article-figure">
@@ -91,7 +92,7 @@
 
 	<p>
 		His work was proofread and revised by William Allen, the founder of the English College at
-		Douai, together with Richard Bristow and Thomas Worthington, who also prepared the extensive
+		Douai, together with Richard Bristow and William Reynolds, who also prepared the extensive
 		theological annotations that accompanied the text. Martin did not live to see his Old Testament
 		published. He died of tuberculosis on 28 October 1582, the same year the New Testament appeared,
 		at approximately forty years of age.
@@ -105,19 +106,20 @@
 		Hebrew and Greek manuscripts for accuracy. This approach gave the translation a distinctively
 		Latinate vocabulary, with words like <em>supersubstantial</em>, <em>longanimity</em>, and
 		<em>benignity</em> appearing throughout. The
-		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Authorized_Version"
 			>Catholic Encyclopedia (1913)</a
-		> described the result as "so full of Latinisms as to be in places hardly intelligible." The translators
-		included a glossary to explain these terms, acknowledging the difficulty.
+		> described the result as "so full of latinisms as to be in places hardly readable, but withal scholarly
+		and accurate." The translators included a glossary to explain these terms, acknowledging the difficulty.
 	</p>
 
 	<p>
 		The translators did not work from a single Greek manuscript tradition. In places their Vulgate
 		source preserves readings that align with older manuscript families. For example, at <a
 			href="/odr/james/2">James 2:20</a
-		>, the original Douay-Rheims reads "idle" (from the Greek <em>arge</em>), a reading found in the
-		Codex Amiatinus, rather than "dead" (<em>nekra</em>) found in Erasmus's Textus Receptus and most
-		Protestant translations.
+		>, the original Douay-Rheims reads "idle" (from the Greek <em>arge</em>), the Alexandrian
+		reading found in Codex Sinaiticus and Codex Vaticanus (and reflected in the Vulgate's "otiosa"),
+		rather than "dead" (<em>nekra</em>) found in Erasmus's Textus Receptus and most Protestant
+		translations.
 	</p>
 
 	<h2>Why It Was Created</h2>
@@ -153,8 +155,9 @@
 		translation was made widely available to Protestant scholars through William Fulke's 1589
 		parallel edition, which printed both texts side by side. Fulke intended this as a refutation,
 		but it served instead as a convenient reference for the KJV committee. Saint John Henry Newman
-		later observed that the relationship between the two translations was closer than either
-		tradition liked to acknowledge.
+		later traced the irony a step further: when Bishop Challoner revised the Douay-Rheims in the
+		eighteenth century, the revision moved the Catholic Bible's own wording closer to the King James
+		Version it had once helped to shape.
 	</p>
 
 	<h2>Catholic Significance</h2>

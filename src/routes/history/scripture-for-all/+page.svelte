@@ -370,8 +370,10 @@
 			131–133 (Scripture in the life of the Church), and 2653 (Scripture and prayer)
 		</li>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 		<li>Pope Benedict XVI, <em>Verbum Domini</em> (2010)</li>
 		<li>

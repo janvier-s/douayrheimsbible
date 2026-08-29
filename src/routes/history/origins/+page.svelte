@@ -169,7 +169,7 @@
 	</p>
 
 	<p>
-		His work was not solitary. Allen, together with Richard Bristow and Thomas Worthington, reviewed
+		His work was not solitary. Allen, together with Richard Bristow and William Reynolds, reviewed
 		Martin's translation daily and prepared the extensive theological annotations that would
 		accompany the text. These notes were not mere commentary; they were carefully argued responses
 		to the doctrinal claims of the Protestant Reformers, addressing contested passages of Scripture
@@ -240,13 +240,14 @@
 	</p>
 
 	<p>
-		The English College had moved from Douai to Rheims in 1578 under pressure from the Spanish
-		authorities who governed the southern Netherlands; it returned to Douai in 1593, after the
-		political climate shifted. These moves consumed resources and administrative energy that might
-		otherwise have supported publication. The death of William Allen in 1594 removed the figure who
-		had driven the original project. The Old Testament manuscripts were carried between cities and
-		eventually prepared for the press by Thomas Worthington, who had become president of the English
-		College. He saw them through publication in 1609 and 1610.
+		The English College had moved from Douai to Rheims in 1578, driven out by the anti-Spanish,
+		Calvinist unrest convulsing the Low Countries and given refuge under the protection of the House
+		of Guise; it returned to Douai in 1593, after the political climate shifted. These moves
+		consumed resources and administrative energy that might otherwise have supported publication.
+		The death of William Allen in 1594 removed the figure who had driven the original project. The
+		Old Testament manuscripts were carried between cities and eventually prepared for the press by
+		Thomas Worthington, who had become president of the English College. He saw them through
+		publication in 1609 and 1610.
 	</p>
 
 	<p>
@@ -272,8 +273,10 @@
 			>
 		</li>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 	</ul>
 

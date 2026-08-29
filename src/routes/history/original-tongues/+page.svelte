@@ -54,21 +54,20 @@
 		The <a href="https://en.wikipedia.org/wiki/Council_of_Trent">Council of Trent</a>, in its fourth
 		session in 1546, issued a decree that would govern Catholic biblical translation for nearly four
 		hundred years. It declared that the Vulgate, long used throughout the Western Church, was to be
-		held "as authentic" for "public readings, discourses, disputations, preachings, and
-		explanations."
+		held "as authentic" for "public readings, disputations, sermons, and expositions."
 	</p>
 
 	<p>
 		This was a practical judgment, not a claim of textual perfection. The Council fathers were not
-		declaring Saint Jerome's Latin superior to the Hebrew and Greek from which it was translated.
-		The decree said as much: the Vulgate was declared authentic "without depreciating the Hebrew or
-		the Septuagint or any other version then in circulation." Its authority was what later
-		theologians would call juridical rather than critical. The Vulgate was the established, approved
-		standard for the Latin Church, the text on which centuries of liturgy, preaching, and
-		theological argument had been built. That history gave it a settled, practical authority for the
-		life of the Western Church. The Council confirmed that authority; it did not pronounce on
-		questions of textual scholarship. The Council of Trent's text is discussed in the <a
-			href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
+		declaring Saint Jerome's Latin superior to the Hebrew and Greek from which it was translated. As
+		the Catholic Encyclopedia later put it, the Council, "without depreciating the Hebrew or the
+		Septuagint or any other version then in circulation," approved the Vulgate for the Church's own
+		use. Its authority was what later theologians would call juridical rather than critical. The
+		Vulgate was the established, approved standard for the Latin Church, the text on which centuries
+		of liturgy, preaching, and theological argument had been built. That history gave it a settled,
+		practical authority for the life of the Western Church. The Council confirmed that authority; it
+		did not pronounce on questions of textual scholarship. The Council of Trent's text is discussed
+		in the <a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
 			>Catholic Encyclopedia (1913)</a
 		>.
 	</p>
@@ -171,9 +170,10 @@
 
 	<p>
 		The years after 1943 saw a rapid expansion of Catholic original-language scholarship. Ronald
-		Knox's translation, completed in 1949, was a significant exception: Knox translated from the
-		Vulgate, producing an elegant literary rendering that he described as a "rendering" rather than
-		a strictly scholarly translation. It showed that the Vulgate tradition could still produce
+		Knox's translation, completed in 1950 (the New Testament had appeared in 1945), was a
+		significant exception: Knox translated from the Vulgate, checked against the Hebrew and Greek
+		originals, producing an elegant literary rendering that he described as a "rendering" rather
+		than a strictly scholarly translation. It showed that the Vulgate tradition could still produce
 		distinguished work in English. But it was also, as the decades confirmed, a late flowering of
 		that tradition.
 	</p>
@@ -185,19 +185,20 @@
 		original texts. The Second Vatican Council's constitution on divine revelation,
 		<em>Dei Verbum</em> (1965), had in the meantime affirmed the direction
 		<em>Divino Afflante Spiritu</em> had set, calling for <q>suitable and correct translations</q> made
-		"from the original texts of the sacred books" and encouraging scholarly cooperation across confessional
-		lines in producing them. These translations marked the practical completion of the shift the 1943
-		encyclical had authorized.
+		"especially from the original texts of the sacred books" and encouraging scholarly cooperation across
+		confessional lines in producing them. These translations marked the practical completion of the shift
+		the 1943 encyclical had authorized.
 	</p>
 
 	<h2>Liturgiam Authenticam (2001)</h2>
 
 	<p>
-		In 2001, Pope Saint John Paul II's instruction <em>Liturgiam Authenticam</em> made the
-		requirement explicit and binding. New liturgical translations were to be made "directly from the
-		original texts" in Hebrew, Aramaic, or Greek. The <em>Nova Vulgata</em>, a revised Latin edition
-		completed in 1979, was designated as an "auxiliary tool," useful for confirming canonical verses
-		and maintaining continuity with Latin liturgical tradition, but no longer the translation base.
+		In 2001, the Congregation for Divine Worship's instruction <em>Liturgiam Authenticam</em>,
+		approved by Pope Saint John Paul II, made the requirement explicit and binding. New liturgical
+		translations were to be made "directly from the original texts" in Hebrew, Aramaic, or Greek.
+		The <em>Nova Vulgata</em>, a revised Latin edition completed in 1979, was designated as an
+		"auxiliary tool," useful for confirming canonical verses and maintaining continuity with Latin
+		liturgical tradition, but no longer the translation base.
 	</p>
 
 	<p>
@@ -249,7 +250,11 @@
 			>
 		</li>
 		<li>Second Vatican Council, <em>Dei Verbum</em> (1965)</li>
-		<li>Pope Saint John Paul II, <em>Liturgiam Authenticam</em> (2001)</li>
+		<li>
+			Congregation for Divine Worship and the Discipline of the Sacraments, <em
+				>Liturgiam Authenticam</em
+			> (2001)
+		</li>
 		<li>
 			Raymond E. Brown, cited in scholarship on <em>Divino Afflante Spiritu</em>; "Magna Carta for
 			biblical progress"

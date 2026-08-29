@@ -3,7 +3,7 @@
 	const FAQ = [
 		{
 			q: 'What Bible did American Catholics use in the nineteenth century?',
-			a: "American Catholics used the Douay-Rheims-Challoner Bible, in editions published by American Catholic publishers beginning in the early nineteenth century. The Fitzpatrick edition (1838) and Archbishop Kenrick's translation (1849-1860) were among the most significant American Catholic Bible publications of the period."
+			a: "American Catholics used the Douay-Rheims-Challoner Bible, in editions published by American Catholic publishers beginning in the early nineteenth century. The Fitzpatrick revision (early 1850s) and Archbishop Kenrick's translation (1849-1860) were among the most significant American Catholic Bible publications of the period."
 		},
 		{
 			q: 'Was the Douay-Rheims Bible important for Catholic immigrants to America?',
@@ -45,12 +45,14 @@
 	<h2>Maryland, 1634</h2>
 
 	<p>
-		The Douay-Rheims Bible in America begins with the founding of Maryland in 1634. When Cecelius
-		Calvert, the second Lord Baltimore, led his party of colonists to the Chesapeake, the settlement
-		included Catholic priests. John Shea, the nineteenth-century historian of the Catholic Church in
-		America, believed they brought the Rheims-Douai Bible with them. Whether or not that first
-		crossing carried a copy, the Bible entered American life during those early Maryland years, in
-		the hands of a community that had left England for the freedom to worship openly.
+		The Douay-Rheims Bible in America begins with the founding of Maryland in 1634. Roman Catholics
+		settled Maryland that year under Cecilius Calvert, the second Lord Baltimore, who directed the
+		colony from England while his brother Leonard led the party of colonists to the Chesapeake; the
+		settlement included Catholic priests. John Gilmary Shea, the nineteenth-century historian of the
+		Catholic Church in America, believed they brought the Rheims-Douai Bible with them. Whether or
+		not that first crossing carried a copy, the Bible entered American life during those early
+		Maryland years, in the hands of a community that had left England for the freedom to worship
+		openly.
 	</p>
 
 	<p>
@@ -110,15 +112,16 @@
 		The first American printing of a Catholic Bible did not appear until 1790, in Philadelphia: as
 		described in <a href="/history/challoner">The Challoner Revision</a>, Challoner's revised text
 		was published for the American Catholic community that had grown through the colonial period and
-		was finding its footing in a new nation. The first complete American Catholic Bible followed in
-		1805, also in Philadelphia, published by Mathew Carey, a Catholic immigrant from Ireland who had
-		become one of the most successful publishers in the young republic.
+		was finding its footing in a new nation. Mathew Carey, a Catholic immigrant from Ireland who had
+		become one of the most successful publishers in the young republic, printed that first edition
+		and followed it with a second, illustrated edition in 1805, also in Philadelphia.
 	</p>
 
 	<p>
-		Carey's edition was intended as a definitive Catholic Bible for the American market, and it was
-		widely circulated. It carried the Challoner text and annotations, now several generations
-		removed from the original Rheims-Douai of 1582, but still bearing the same name.
+		Carey's 1790 edition was intended as a definitive Catholic Bible for the American market, though
+		subscriptions fell short of what he had hoped and only a few hundred copies were printed. It
+		carried the Challoner text and annotations, now several generations removed from the original
+		Rheims-Douai of 1582, but still bearing the same name.
 	</p>
 
 	<h2>Bishop Kenrick's Translation</h2>
@@ -143,12 +146,13 @@
 
 	<p>
 		Bishop Francis Patrick Kenrick of Philadelphia, later Archbishop of Baltimore, undertook a
-		complete fresh translation of the entire Bible. His New Testament and Apocalypse appeared in New
-		York in 1849, with Old Testament volumes following in subsequent years. Kenrick translated
-		directly from the original languages with scholarly care, and his work represented the most
-		substantial American contribution to Catholic biblical scholarship in the nineteenth century.
-		Readers can compare the original pre-Challoner text with Kenrick's source material by reading <a
-			href="/odr/genesis/1">Genesis in the original Douay-Rheims</a
+		thorough revision of the Rheims translation. His Four Gospels appeared in New York in 1849, the
+		rest of the New Testament and the Apocalypse in 1851, with Old Testament volumes following in
+		subsequent years. Kenrick translated from the Latin Vulgate, diligently compared with the
+		original Greek text, and his work represented the most substantial American contribution to
+		Catholic biblical scholarship in the nineteenth century. Readers can compare the original
+		pre-Challoner text with Kenrick's source material by reading <a href="/odr/genesis/1"
+			>Genesis in the original Douay-Rheims</a
 		>.
 	</p>
 
@@ -210,9 +214,11 @@
 
 	<p>
 		The 1790 Carey Bible used Challoner's revised text, the only edition then readily available for
-		Catholic readers. It was an immediate success; Carey went on to print further Catholic Bible
-		editions in 1805, 1816, and beyond, and the New York publisher William Swords followed with
-		additional printings through the first decades of the nineteenth century. As
+		Catholic readers. Subscriptions ran well short of Carey's hopes, and only a few hundred copies
+		were printed for an American Catholic population of roughly 25,000; Carey nonetheless went on to
+		print further Catholic Bible editions in 1805, 1816, and beyond, and other publishers, including
+		Bernard Dornin in New York, followed with additional printings through the first decades of the
+		nineteenth century. As
 		<a href="https://books.google.com.py/books?id=F0dMAAAAIAAJ">Simms recorded</a>, by 1831 at least
 		fourteen American editions of the Douay-Rheims had appeared, all derived from Challoner's
 		revision.
@@ -234,8 +240,10 @@
 			difficult English reception
 		</li>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 		<li>
 			Rev. Henry Cotton, <em

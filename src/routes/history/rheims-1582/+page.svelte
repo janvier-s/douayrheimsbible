@@ -47,9 +47,8 @@
 		Jesuit priest and former Fellow of St John's College, Oxford, had been arrested, subjected to torture
 		in the Tower of London, and executed at Tyburn. The papal excommunication of Queen Elizabeth, issued
 		by Pope Saint Pius V in 1570, had placed every English Catholic in an impossible position: loyalty
-		to Rome was framed as treason, and treason carried the death sentence. Along the Atlantic coasts and
-		in the harbours of Spain, the fleet that would become the Armada was being assembled. England's fate,
-		many felt on both sides of the confessional divide, hung in the balance.
+		to Rome was framed as treason, and treason carried the death sentence. War with Spain was already
+		in the air. England's fate, many felt on both sides of the confessional divide, hung in the balance.
 	</p>
 
 	<p>
@@ -79,7 +78,7 @@
 	<h2>The Approbation</h2>
 
 	<p>
-		The volume arrived with a formal Approbation signed by four doctors of the Church at Rheims. In
+		The volume arrived with a formal Approbation signed by four doctors of theology at Rheims. In
 		measured Latin, it declared that the translation contained nothing contrary to Catholic doctrine
 		and nothing contrary to civil peace, and that it served the true faith, the common good, and the
 		integrity of Christian life. The four signatories were:
@@ -87,7 +86,7 @@
 	<ul>
 		<li>Pierre Remigius, Archdeacon of Rheims</li>
 		<li>Hubert Morus, Dean of the Rheims Chapter</li>
-		<li>Johannes le Bespits, Theologian and Chancellor of the University of Rheims</li>
+		<li>Joannes Le Besgue, Canon and Theologian, Chancellor of the University of Rheims</li>
 		<li>Guillaume Balbus, Professor of Theology at the Rheims College</li>
 	</ul>
 
@@ -140,9 +139,9 @@
 
 	<p>
 		Their stated motive for producing the translation at all was not a desire to place Scripture in
-		every Catholic hand. It was the extensive circulation of Protestant English Bibles. As the
-		preface explained, "the growing demand for such among Catholics finally forced them to provide
-		an English translation."
+		every Catholic hand. It was the extensive circulation of Protestant English Bibles. As Paris
+		Simms put it, "the growing demand for such among Catholics finally forced them to provide an
+		English translation."
 	</p>
 
 	<h2>The Protestant Counter-Offensive</h2>
@@ -172,22 +171,22 @@
 	<h2>What the Volume Contained</h2>
 
 	<p>
-		The physical volume that appeared in 1582 was a quarto, a page size roughly nine inches tall and
-		seven inches wide, running to approximately six hundred pages. It opened with a formal
-		Approbation signed by four doctors of theology at the English College, a printed authority that
-		declared the text free of doctrinal error and suitable for Catholic readers. It covered <a
-			href="/odr/matthew/1">the four Gospels</a
+		The physical volume that appeared in 1582 was a quarto, a page size roughly eight inches tall
+		and six inches wide, running to approximately 745 pages. It opened with a formal Approbation
+		signed by four doctors of theology at Rheims, a printed authority that declared the text free of
+		doctrinal error and suitable for Catholic readers. It covered <a href="/odr/matthew/1"
+			>the four Gospels</a
 		>, Acts, the Epistles, and the Apocalypse.
 	</p>
 
 	<p>
-		The Approbation was followed by a dedication to William Allen and then by a substantial preface
-		addressed "To the Right Welbeloved English Reader." This preface, several thousand words long,
-		gave the translators' full account of why they had undertaken the work, why the Catholic Church
-		now authorised the reading of Scripture in the vernacular, why the Vulgate was the correct
-		source text, and what distinguished their translation from Protestant versions. It was, in
-		itself, a polemical document of considerable skill, and it repays reading as an account of the
-		intellectual world in which the translation was produced.
+		The Approbation was followed by a substantial preface addressed "To the Right Welbeloved English
+		Reader." This preface, several thousand words long, gave the translators' full account of why
+		they had undertaken the work, why the Catholic Church now authorised the reading of Scripture in
+		the vernacular, why the Vulgate was the correct source text, and what distinguished their
+		translation from Protestant versions. It was, in itself, a polemical document of considerable
+		skill, and it repays reading as an account of the intellectual world in which the translation
+		was produced.
 	</p>
 
 	<p>
@@ -212,8 +211,10 @@
 			>
 		</li>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 		<li>
 			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>

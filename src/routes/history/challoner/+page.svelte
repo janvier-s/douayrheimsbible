@@ -49,7 +49,7 @@
 		<a href="https://en.wikipedia.org/wiki/Richard_Challoner">Richard Challoner</a> (1691–1781) was a
 		convert to Catholicism who rose to become the Vicar Apostolic of the London District, effectively
 		the senior Catholic bishop in England during one of the most difficult periods for English Catholics.
-		Appointed coadjutor in 1739 and taking full charge in 1758, he shepherded a persecuted community with
+		Appointed coadjutor in 1741 and taking full charge in 1758, he shepherded a persecuted community with
 		quiet determination for over four decades.
 	</p>
 
@@ -98,9 +98,9 @@
 			for clarity.
 		</li>
 		<li>
-			<strong>Corrected against multiple sources:</strong> Challoner checked the translation against the
-			Clementine Vulgate, as well as the original Greek and Hebrew manuscripts, incorporating improvements
-			from modern textual scholarship.
+			<strong>Corrected against the Vulgate:</strong> Challoner checked the translation against the Clementine
+			Vulgate and, in practice, against the wording of the King James Version, though his title pages
+			also claimed comparison with the Greek and Hebrew.
 		</li>
 		<li>
 			<strong>Stripped the annotations:</strong> The original's extensive theological notes, designed
@@ -110,11 +110,11 @@
 	</ul>
 
 	<p>
-		Cardinal Newman observed that Challoner's finished text <q
-			>approximates to the Protestant version</q
-		>
-		in its phrasing and diction, a consequence of his simplifications rather than any stated intention.
-		The Catholic Dictionary noted the same: "he has sacrificed force and vividness in some of his changes."
+		Cardinal Newman observed that Challoner's finished text is <q
+			>even nearer to the Protestant than it is to the Douay</q
+		>, not in grammatical structure but in phraseology and diction, despite both being revisions of
+		the same Vulgate. The Catholic Dictionary noted the same: "he has sacrificed force and vividness
+		in some of his changes."
 	</p>
 
 	<h2>Multiple Editions</h2>
@@ -128,8 +128,7 @@
 	<ul>
 		<li><strong>1749:</strong> First revised New Testament</li>
 		<li>
-			<strong>1750:</strong> Complete Bible, with approximately two hundred additional changes to the
-			New Testament
+			<strong>1750:</strong> Complete Bible, differing from the 1749 New Testament in about 124 passages
 		</li>
 		<li>
 			<strong>1752:</strong> Further New Testament revision, with over two thousand readings differing
@@ -253,10 +252,11 @@
 	<p>
 		The cumulative effect of Challoner's changes was dramatic. Cardinal John Henry Newman, writing
 		in
-		<a href="https://www.newmanreader.org/works/essays/volume1/index.html"
-			>Essays Critical and Historical</a
-		>, observed that the revisions <q>almost amounted to a new translation,</q> and that Challoner's
-		version was
+		<a href="https://www.newmanreader.org/works/tracts/douayrheims.html"
+			>Tracts Theological and Ecclesiastical</a
+		>, observed that the revisions to the Old Testament
+		<q>issue in little short of a new translation,</q>
+		and that Challoner's version was
 		<q>even nearer to the Protestant than it is to the Douay</q> in phraseology and diction, despite both
 		being translations of the same Latin Vulgate. In many passages, the Challoner text reads so differently
 		from Gregory Martin's original that they are barely recognizable as the same work.
@@ -282,8 +282,8 @@
 		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
 			>Catholic Encyclopedia (1913)</a
 		>
-		is direct on the scope of the intervention: Challoner's changes were "so considerable that scarcely
-		any verse remains as it was originally published."
+		quotes Cardinal Wiseman, who was direct on the scope of the intervention: Challoner's changes were
+		"so considerable that scarcely any sense remains as it was originally published."
 	</p>
 
 	<p>
@@ -296,12 +296,12 @@
 	</p>
 
 	<p>
-		The difference is not trivial. In 1 Kings 12:3, the original Douay-Rheims gives: "the Lord is
+		The difference is not trivial. In 1 Kings 12:5, the original Douay-Rheims gives: "the Lord is
 		witness against you, and his Christ is witness this day, that you have not found ought in my
 		hand." Challoner's version reads: "the Lord is witness against you, and his anointed is witness
-		this day, that you have not found aught in my hand." The typological link to Christ is present
-		in Martin's text; in Challoner's it is dissolved into a description. The same pattern recurs
-		throughout the Old Testament wherever the Vulgate uses "christum" in a Messianic context.
+		this day, that you have not found any thing in my hand." The typological link to Christ is
+		present in Martin's text; in Challoner's it is dissolved into a description. The same pattern
+		recurs throughout the Old Testament wherever the Vulgate uses "christum" in a Messianic context.
 	</p>
 
 	<p>
@@ -337,8 +337,10 @@
 	<h2>Sources</h2>
 	<ul>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 		<li>
 			Henry Barker, <em

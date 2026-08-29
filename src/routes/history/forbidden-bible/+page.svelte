@@ -150,10 +150,11 @@
 	<p>
 		The Rheims translators stated their position plainly: they had produced a vernacular Scripture
 		from pastoral necessity rather than from any belief that the laity had an inherent right to it.
-		The preface said so directly: they acted <q>not from choice, but from necessity.</q> The growing
-		circulation of Protestant English Bibles among Catholics had forced a response. Unless the
-		Church furnished its own English translation, its members would be reading Protestant versions
-		shaped by Protestant theological assumptions. The Rheims New Testament,
+		As Cotton put it, they judged it advisable <q>not from choice, but from necessity</q> to put
+		forth a version of their own. The growing circulation of Protestant English Bibles among
+		Catholics had forced a response. Unless the Church furnished its own English translation, its
+		members would be reading Protestant versions shaped by Protestant theological assumptions. The
+		Rheims New Testament,
 		<a href="/history/rheims-1582">published in a time of crisis</a>, was produced as a pastoral
 		corrective, accompanied by the annotations that supplied the doctrinal guidance its authors
 		considered inseparable from any proper reading of the text.
@@ -168,13 +169,13 @@
 	<h2>The Living Voice of the Church</h2>
 
 	<p>
-		Dr. John Milner, Vicar Apostolic of the Midland District, writing in 1808, gave clear expression
-		to the principle behind the licensing requirement. Where a more latitude-minded fellow bishop
-		had directed Challoner's more pointed annotations to be omitted from a new edition, Milner
-		objected that those notes were "precisely the part which is wanted at the present day to render
-		an English translation of the Sacred Text safe and profitable in the hands of the British
-		laity." Scripture, in Milner's understanding, could not be responsibly circulated without the
-		theological guidance necessary to read it correctly.
+		Dr. John Milner, Vicar Apostolic of the Midland District, writing around 1819, gave clear
+		expression to the principle behind the licensing requirement. Where a more latitude-minded
+		fellow bishop had directed Challoner's more pointed annotations to be omitted from a new
+		edition, Milner objected that those notes were "precisely the part which is wanted at the
+		present day to render an English translation of the Sacred Text safe and profitable in the hands
+		of the British laity." Scripture, in Milner's understanding, could not be responsibly circulated
+		without the theological guidance necessary to read it correctly.
 	</p>
 
 	<p>
@@ -230,11 +231,11 @@
 	<p>
 		The danger was concrete and documented. The Elizabethan settlement had imposed legal penalties
 		on Catholics through a succession of Acts: the Act of Uniformity (1559) set a fine of twelve
-		pence for each absence from Anglican Sunday services; the Recusancy Act of 1571 raised the
-		stakes further; and the Act of 1581, passed in the same year that <a
-			href="https://en.wikipedia.org/wiki/Saint Edmund_Campion">Saint Edmund Campion</a
-		> was arrested and executed, converted recusancy from a civil into a criminal matter and added felony
-		charges for those who harboured priests.
+		pence for each absence from Anglican Sunday services; the Act against Bulls from Rome (1571)
+		raised the stakes further; and the Act of 1581, passed in the same year that <a
+			href="https://en.wikipedia.org/wiki/Edmund_Campion">Saint Edmund Campion</a
+		> was arrested and executed, converted recusancy from a civil into a criminal matter, escalated the
+		fine to £20 per lunar month, and added felony charges for those who harboured priests.
 	</p>
 
 	<p>
@@ -269,8 +270,8 @@
 	</p>
 
 	<p>
-		The Church's own licensing requirement for vernacular Scripture had a separate history. Pope
-		Pius X's 1897 constitution <em>Officiorum ac Munerum</em> revised the rules of the Index of Forbidden
+		The Church's own licensing requirement for vernacular Scripture had a separate history. Pope Leo
+		XIII's 1897 constitution <em>Officiorum ac Munerum</em> revised the rules of the Index of Forbidden
 		Books and permitted Catholics to read approved vernacular translations without the individual bishop's
 		license that had been required since Trent. What had been a matter of personal permission granted
 		by a pastor became a general grant, provided the translation bore ecclesiastical approval. The practical

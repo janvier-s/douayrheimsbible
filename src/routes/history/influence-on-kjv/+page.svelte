@@ -7,7 +7,7 @@
 		},
 		{
 			q: 'What specific phrases did the King James Bible take from the Douay-Rheims?',
-			a: 'Among the best-documented examples: "long-suffering" (from the Rheims longanimitas), and numerous phrasings in the Pauline epistles. William Fulke\'s 1589 parallel edition, printed to refute the Rheims text, inadvertently gave KJV translators a convenient reference to the Catholic rendering of every verse.'
+			a: 'Among the best-documented examples: "engrafted word" (James 1:21) and "substance of things hoped for" (Hebrews 11:1), both carried over from the Rheims almost unchanged, and numerous phrasings in the Pauline epistles. William Fulke\'s 1589 parallel edition, printed to refute the Rheims text, inadvertently gave KJV translators a convenient reference to the Catholic rendering of every verse.'
 		},
 		{
 			q: 'How did the Rheims New Testament become available to Protestant translators?',
@@ -150,11 +150,13 @@
 	</p>
 
 	<p>
-		Cardinal Newman later observed that the relationship between the two traditions was closer than
-		either tradition liked to acknowledge. The KJV translators named the Rheims New Testament in
-		their preface. They drew on it extensively. The translation made by Catholic scholars in exile,
-		illegal in England, circulated primarily through a Protestant refutation, had shaped the
-		language of the most widely read English Bible in history.
+		Cardinal Newman later traced the irony a step further: the influence did not run only one way.
+		When Bishop Challoner revised the Douay-Rheims text in the eighteenth century, Newman observed,
+		the revision moved the Catholic Bible's own wording closer to the King James Version it had once
+		helped to shape. The KJV translators named the Rheims New Testament in their preface. They drew
+		on it extensively. The translation made by Catholic scholars in exile, illegal in England,
+		circulated primarily through a Protestant refutation, had shaped the language of the most widely
+		read English Bible in history.
 	</p>
 
 	<h2>The Greek Article</h2>
@@ -183,7 +185,7 @@
 		Beyond individual phrases, the Rheims New Testament contributed something more lasting:
 		vocabulary. The words through which English speakers discuss Christian faith entered the
 		language through Saint Jerome's Vulgate, and entered English through translations that followed
-		the Vulgate closely. H. H. Hoare, writing on the English Bible versions, listed the terms that
+		the Vulgate closely. H. W. Hoare, writing on the English Bible versions, listed the terms that
 		Saint Jerome gave to the Church: "Scripture, communion, grace, sanctification, justification,
 		spirit, salvation, glory, congregation, penance, propitiation, conversion, election, sacrament,
 		elements, discipline, eternity." All come from Saint Jerome's Bible. The Rheims translators were
@@ -210,7 +212,7 @@
 	</p>
 
 	<p>
-		H. H. Hoare, arriving at the same conclusion from a different direction, wrote that "the Douai
+		H. W. Hoare, arriving at the same conclusion from a different direction, wrote that "the Douai
 		Version has one great merit, which is wanting in our Authorized Version, namely, that it holds
 		fast to the principle of uniformity in its renderings whenever this principle is not prejudicial
 		to the sense. Moreover, for serious students, it is just the uncompromising fidelity of the
@@ -231,8 +233,10 @@
 			page; one quarter of Gospel amendments adopted Rheims readings
 		</li>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 	</ul>
 

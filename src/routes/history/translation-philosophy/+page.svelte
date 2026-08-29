@@ -91,11 +91,11 @@
 	<p>
 		The price of this decision became visible at certain passages where the Latin text itself was
 		obscure. Psalm 57:10 in the Rheims reads: "Before your thorns did understand the old Briar; as
-		living so in wrath he swalloweth them." Bishop Westcott, examining the passage much later, found
-		it impossible to construe; it had been rendered literally from a corrupted Latin text. The
-		Revised Version of 1881 would eventually make the passage intelligible: the image is of a
-		cooking fire scattered by desert wind before it heats the pot. Martin's rendering follows the
-		Latin faithfully; the Latin, in this instance, had ceased to make sense.
+		living so in wrath he swalloweth them." Barker judged that this literal rendering of a corrupted
+		Latin text "seems impossible to put into clear and plain language." The Revised Version of 1885
+		would eventually make the passage intelligible: the image is of a cooking fire scattered by
+		desert wind before it heats the pot. Martin's rendering follows the Latin faithfully; the Latin,
+		in this instance, had ceased to make sense.
 	</p>
 
 	<p>
@@ -115,7 +115,7 @@
 
 	<p>
 		The passage from Ephesians illustrates this most vividly. Chapter three, verses eight through
-		ten, in the Rheims:
+		eleven, in the Rheims:
 		<q
 			>To me the least of all the sainctes is given this grace, among the Gentils to euangelise the
 			unsearchable riches of Christ and to illuminate al men what is the dispensation of the
@@ -129,7 +129,7 @@
 	</p>
 
 	<p>
-		Among the other characteristic coinages: "commestation," "contristate," "odible," "exinanited
+		Among the other characteristic coinages: "commessations," "contristate," "odible," "exinanited
 		himself" (for the self-emptying of Philippians 2:7), "Purge the old leaven that you may be a new
 		paste, as you are azymes" (for 1 Corinthians 5:7). Martin knew these words were barbarous. He
 		used them because they preserved the theological precision of the Latin. Where a smooth English
@@ -182,8 +182,8 @@
 		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
 			>Catholic Encyclopedia (1913)</a
 		>
-		noted that the result was "so full of Latinisms as to be in places hardly intelligible," and the translators
-		included a glossary, acknowledging the difficulty openly.
+		noted that the result was "so full of latinisms as to be in places hardly readable, but withal scholarly
+		and accurate," and the translators included a glossary, acknowledging the difficulty openly.
 	</p>
 
 	<h2>What the Fidelity Gave</h2>
@@ -266,8 +266,10 @@
 			Douay-Rheims translation method
 		</li>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 		<li>
 			Rev. Henry Cotton, <em

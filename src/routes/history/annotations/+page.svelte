@@ -7,7 +7,7 @@
 		},
 		{
 			q: 'Who wrote the annotations in the Douay-Rheims Bible?',
-			a: 'The notes were written primarily by Richard Bristow and Thomas Worthington, working alongside William Allen at the English College. Gregory Martin translated the text; the annotations were a collaborative editorial addition intended to make the translation useful for Catholic readers navigating Protestant arguments.'
+			a: "The 1582 New Testament's notes were written primarily by Richard Bristow and William Reynolds, working alongside William Allen at the English College; Thomas Worthington prepared the notes for the 1609-1610 Old Testament. Gregory Martin translated the text; the annotations were a collaborative editorial addition intended to make the translation useful for Catholic readers navigating Protestant arguments."
 		},
 		{
 			q: 'Are the Douay-Rheims annotations still available to read?',
@@ -109,10 +109,12 @@
 	</p>
 
 	<p>
-		The argument prefixed to the <a href="/odr/john/1">Gospel of John</a> was particularly
-		characteristic. Cotton noted that it "treats professedly of Heresies; and contains much
-		condemnation of Protestants, of private judgment, vernacular translations, the general perusal
-		of Scripture." The notes to the
+		The same argumentative tradition persisted in later annotated Catholic editions. Cotton noted
+		that in Robert Witham's 1730 New Testament, the argument prefixed to the <a href="/odr/john/1"
+			>Gospel of John</a
+		>
+		"treats professedly of Heresies; and contains much condemnation of Protestants, of private judgment,
+		vernacular translations, the general perusal of Scripture." The notes to the
 		<a href="/odr/apocalypse/1">Apocalypse</a> were "preeminently controversial; designed to defend the
 		Church of Rome from the interpretations given by Protestant Divines." One of those notes ran to six
 		and a half pages of small print, arguing that the Pope could not be the Antichrist described in Revelation.
@@ -132,8 +134,8 @@
 		the Earl of Leicester and Sir Francis Walsingham as early as 1583 to write against the Rheims
 		version specifically. Archbishop Whitgift, who had little sympathy for Cartwright's Puritanism
 		but a great deal of concern about the Rheims annotations, eventually prohibited him from
-		continuing; the work did not fully appear until 1602, nearly twenty years after Cartwright had
-		begun it.
+		continuing; the work did not fully appear until 1618, nearly thirty-five years after Cartwright
+		had begun it, and after his own death.
 	</p>
 
 	<p>
@@ -181,9 +183,9 @@
 		When the King James translators gathered in 1604, Fulke's parallel edition was among the most
 		widely circulated English New Testaments in the country. The annotations they had intended to
 		refute became, through Fulke's inadvertent distribution, a working reference for the committee
-		producing the Protestant masterpiece. Ward Allen's analysis of the King James translators'
+		producing the Protestant masterpiece. Ward Allen's edition of the King James translators'
 		revision notes, published in 1969, found that a significant proportion of their proposed textual
-		improvements in the Gospels drew on readings first found in the Rheims translation. For a full
+		improvements in the Epistles drew on readings first found in the Rheims translation. For a full
 		account of this debt, see
 		<a href="/history/influence-on-kjv">How the Douay-Rheims Shaped the King James Bible</a>.
 	</p>
@@ -191,23 +193,19 @@
 	<p>
 		The annotations also shaped the tradition of Catholic biblical commentary in English. The
 		learned engagement with Scripture that Gregory Martin and Richard Bristow had modelled in 1582
-		continued, in modified form, through the centuries that followed. The
-		<a href="https://en.wikisource.org/wiki/Catholic_Encyclopedia_(1913)/Douay_Bible"
-			>Catholic Encyclopedia (1913)</a
-		>
-		records that the annotations remained the most cited element of the original edition in both Catholic
-		and Protestant scholarship for over a century after publication.
+		continued, in modified form, through the centuries that followed, as Witham's 1730 New Testament
+		and later annotated editions attest.
 	</p>
 
 	<h2>The Annotations After Challoner</h2>
 
 	<p>
 		<a href="/history/challoner">Bishop Challoner</a> did not carry the original annotations into his
-		revision. His editions of 1749 and 1752 replaced the dense polemical apparatus of Bristow and Worthington
-		with shorter, devotional notes suited to ordinary Catholic readers in eighteenth-century England.
-		The doctrinal arguments that had occupied hundreds of pages in the 1582 original were largely dropped;
-		Challoner drew on their substance in composing his briefer substitutes, but the original notes did
-		not survive the revision intact.
+		revision. His editions of 1749 and 1752 replaced the dense polemical apparatus of Bristow, Reynolds,
+		and Worthington with shorter, devotional notes suited to ordinary Catholic readers in eighteenth-century
+		England. The doctrinal arguments that had occupied hundreds of pages in the 1582 original were largely
+		dropped; Challoner drew on their substance in composing his briefer substitutes, but the original
+		notes did not survive the revision intact.
 	</p>
 
 	<p>
@@ -234,8 +232,10 @@
 			>, source for Geddes's and Mombert's characterizations of the annotations
 		</li>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>
 		</li>
 		<li>
 			Paris Marion Simms, <em>The Bible in America: Versions that have Played Their Part</em>

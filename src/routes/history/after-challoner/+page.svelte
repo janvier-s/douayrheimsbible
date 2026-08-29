@@ -58,14 +58,14 @@
 	<h2>McMahon, Troy, and the Irish Revisions</h2>
 
 	<p>
-		In 1783, a Dublin priest named Mr. McMahon, at the request of Archbishop Troy of Dublin,
-		undertook a further revision of <a href="/drc/matthew/1">Challoner's New Testament</a>.
-		McMahon's text introduced more than five hundred changes in some sections, departing from what
-		the Catholic Dictionary later described as Challoner's Protestant leanings. Archbishop Troy then
-		had the entire Bible collated with the Clementine Vulgate and issued the result in 1791,
-		producing what became known as Dr. Troy's Bible. In 1794, and again in 1803 and 1810, further
-		New Testament printings appeared, each claiming the Challoner lineage while differing in
-		significant respects from his actual text.
+		In 1783, a Dublin priest named Bernard MacMahon, at the request of Archbishop Carpenter of
+		Dublin, undertook a further revision of <a href="/drc/matthew/1">Challoner's New Testament</a>.
+		MacMahon's text introduced more than five hundred changes in some sections, departing from what
+		the Catholic Dictionary later described as Challoner's Protestant leanings. Eight years later,
+		in 1791, MacMahon was engaged again, this time by Carpenter's successor Archbishop Troy, to
+		collate the entire Bible with the Clementine Vulgate; the result became known as Dr. Troy's
+		Bible. In 1794, and again in 1803 and 1810, further New Testament printings appeared, each
+		claiming the Challoner lineage while differing in significant respects from his actual text.
 	</p>
 
 	<h2>Cotton's Catalogue</h2>
@@ -95,18 +95,19 @@
 		with precision. Educated men, he wrote, whether Protestant or Catholic, allowed themselves to
 		speak of "the Douay Bible" or "the Rhemish Testament" as though all copies of Holy Scripture
 		circulating among Catholics represented one and the same text, accompanied by one and the same
-		body of notes. They did not. Cotton's chronological list ran to nearly three hundred entries
+		body of notes. They did not. Cotton's chronological list ran to well over a hundred entries
 		spanning more than two and a half centuries.
 	</p>
 
 	<p>
-		By the mid-nineteenth century, Cotton identified four competing text traditions in active use.
-		The Murray and Denvir line, followed in Ireland, traced its descent from Challoner's earlier
-		editions. The Wiseman and Haydock line, used in England and America, followed either Dr. Troy's
-		revision or the later Challoner texts. The Haydock Bible, edited by the Rev. George Leo Haydock
-		and published in Manchester in 1811-12, was notable for restoring the original Rhemish
-		annotations of 1582 that Challoner had removed. Gibson's editions, published in Liverpool from
-		1816, represented yet another editorial position.
+		By the mid-nineteenth century, Newman's own analysis identified four competing text traditions
+		in active use. The Murray and Denvir line, followed in Ireland, traced its descent from
+		Challoner's earlier editions. The Wiseman and Haydock line, used in England and America,
+		followed either Dr. Troy's revision or the later Challoner texts. The Haydock Bible, edited by
+		the Rev. George Leo Haydock and published in Manchester in 1811-12, was notable for its new and
+		copious annotations, compiled from the writings of eminent commentators to replace the polemical
+		notes Challoner had removed. Gibson's editions, published in Liverpool from 1816, represented
+		yet another editorial position.
 	</p>
 
 	<h2>The Roman Catholic Bible Society</h2>
@@ -126,10 +127,10 @@
 		that the Old Testament had remained essentially stable since Challoner's 1750 revision as
 		described in <a href="/history/challoner">The Challoner Revision</a>, while the New Testament
 		had become a field of competing readings. Editors were forced to choose between this or that of
-		Challoner's three New Testament texts, or McMahon's revision as refined by Troy. No two editions
-		were identical, yet all were published under the same name. Newman identified approximately one
-		hundred and seventy textual variations in a sample of passages between Challoner's first edition
-		and later versions.
+		Challoner's three New Testament texts, or MacMahon's revision as refined by Troy. No two
+		editions were identical, yet all were published under the same name. Newman identified
+		approximately one hundred and seventy textual variations in a sample of seventy verses between
+		the pre-Challoner Douay Old Testament and Challoner's revision of it.
 	</p>
 
 	<h2>Independent Translators</h2>
@@ -139,9 +140,9 @@
 		a new translation from the original languages in 1792, concluding after reflection that patching
 		and piecing what had already been pieced and patched would produce only a strange composition.
 		He did not complete it. Dr. Lingard, the historian, translated the four Gospels in 1836. Bishop
-		Francis Patrick Kenrick of Philadelphia produced a complete translation of the New Testament and
-		Apocalypse in 1849, followed by volumes of the Old Testament: a substantial scholarly
-		achievement that received little official recognition from Rome.
+		Francis Patrick Kenrick of Philadelphia published the four Gospels in 1849, followed by the rest
+		of the New Testament and the Apocalypse in 1851, and then volumes of the Old Testament: a
+		substantial scholarly achievement.
 	</p>
 
 	<h2>An Abuse of Terms</h2>
@@ -172,8 +173,10 @@
 	<h2>Sources</h2>
 	<ul>
 		<li>
-			Cardinal John Henry Newman, <q>On the Rheims and Douay Version of Holy Scripture,</q> in
-			<em>Essays Critical and Historical</em>; primary source for Newman's analysis of the
+			Cardinal John Henry Newman, <q
+				>The History of the Text of the Rheims and Douay Version of Holy Scripture,</q
+			>
+			in <em>Tracts Theological and Ecclesiastical</em>; primary source for Newman's analysis of the
 			post-Challoner text traditions
 		</li>
 		<li>
