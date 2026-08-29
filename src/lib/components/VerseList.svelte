@@ -1210,7 +1210,7 @@
 		float: left;
 		margin-right: 0.06em;
 		margin-top: 0.24em;
-		color: var(--color-subtle);
+		color: var(--color-accent-text);
 	}
 
 	.verse-target {
