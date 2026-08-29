@@ -350,8 +350,8 @@
 	--color-verse-num: #ab3d3d; /* 4.99:1 on the sepia page */
 	--color-border: #d8c8b0;
 	--color-bg-glass: rgba(253, 249, 240, 0.94);
-	--lemma-fill-1: #e29b8a;
-	--lemma-fill-2: #dd7f6e;
+	--lemma-fill-1: #f0d0b8;
+	--lemma-fill-2: #e6b494;
 }
 
 [data-theme='dark'] {

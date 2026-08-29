@@ -1563,16 +1563,10 @@
 	}
 
 	.verse-section-active > .verse-section-header {
-		background: color-mix(
-			in srgb,
-			var(--color-accent) 6%,
-			var(--color-panel-alt, var(--color-panel))
-		);
+		background: color-mix(in srgb, var(--color-accent) 6%, var(--color-panel));
 		box-shadow:
-			-52px 0 0
-				color-mix(in srgb, var(--color-accent) 6%, var(--color-panel-alt, var(--color-panel))),
-			52px 0 0
-				color-mix(in srgb, var(--color-accent) 6%, var(--color-panel-alt, var(--color-panel)));
+			-52px 0 0 color-mix(in srgb, var(--color-accent) 6%, var(--color-panel)),
+			52px 0 0 color-mix(in srgb, var(--color-accent) 6%, var(--color-panel));
 		color: var(--color-accent);
 	}
 
@@ -1618,7 +1612,7 @@
 	.verse-section-header-sticky {
 		position: sticky;
 		top: 0;
-		background: var(--color-panel-alt, var(--color-panel));
+		background: var(--color-panel);
 		z-index: 1;
 		text-align: center;
 		padding-top: 15px;
@@ -1632,7 +1626,7 @@
 	@supports (backdrop-filter: blur(1px)) {
 		@media screen and (-webkit-min-device-pixel-ratio: 0) {
 			.verse-section-header-sticky {
-				background: color-mix(in srgb, var(--color-panel-alt, var(--color-panel)) 80%, transparent);
+				background: color-mix(in srgb, var(--color-panel) 80%, transparent);
 				backdrop-filter: blur(10px);
 				-webkit-backdrop-filter: blur(10px);
 			}
