@@ -10,7 +10,8 @@ export type StudyTab =
 	| 'annotations'
 	| 'notes'
 	| 'cross-refs'
-	| 'glossa';
+	| 'glossa'
+	| 'textual-notes';
 
 export interface ScrollTrigger {
 	verse: number; // 0 = summary

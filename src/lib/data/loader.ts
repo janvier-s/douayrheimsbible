@@ -246,6 +246,39 @@ export function loadGlossa(
 	return glossaCache.get(key)!;
 }
 
+// ── Textual notes (per chapter, Vulgate panel) ───────────────────────
+
+export interface TextualNoteEntry {
+	verse: number;
+	/** Original ref string, verbatim (may span verses/chapters, e.g. "Gen 1:1–4:15a"). */
+	ref: string;
+	note: string;
+}
+
+const textualNotesCache = new Map<string, Promise<TextualNoteEntry[] | null>>();
+
+export function loadTextualNotes(
+	slug: string,
+	chapter: number,
+	fetch: typeof globalThis.fetch
+): Promise<TextualNoteEntry[] | null> {
+	const key = `${slug}/${chapter}`;
+	if (!textualNotesCache.has(key)) {
+		if (!hasSidecar('textual-notes', slug, chapter)) {
+			textualNotesCache.set(key, Promise.resolve(null));
+			return textualNotesCache.get(key)!;
+		}
+		const promise = fetch(`/data/textual-notes/${slug}/${chapter}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load textual notes: ${res.status}`);
+			return res.json() as Promise<TextualNoteEntry[]>;
+		});
+		promise.then(null, () => textualNotesCache.delete(key));
+		textualNotesCache.set(key, promise);
+	}
+	return textualNotesCache.get(key)!;
+}
+
 // ── Haydock book introductions ──────────────────────────────────────
 
 export interface HaydockIntro {

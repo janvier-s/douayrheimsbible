@@ -16,6 +16,7 @@
 		loadHaydockCommentary,
 		loadHaydockIntro,
 		loadGlossa,
+		loadTextualNotes,
 		hasSidecar
 	} from '$lib/data/loader';
 	import fathersManifest from '../../../static/data/fathers/manifest.json';
@@ -34,6 +35,7 @@
 		buildVerseSections,
 		formatHaydockAttribution,
 		formatTrailingCitation,
+		formatTextualNote,
 		groupByVerse,
 		activeTabIndex,
 		studyTabId
@@ -426,6 +428,12 @@
 		onLoaded: reobserve
 	});
 
+	const textualNotesRes = createChapterResource({
+		key: () => (isVul && currentBookSlug ? chapterKey() : null),
+		load: () => loadTextualNotes(currentBookSlug, currentChapterNum, fetch),
+		onLoaded: reobserve
+	});
+
 	const haydockIntroRes = createChapterResource({
 		key: () => (isHaydock && currentBookSlug ? currentBookSlug : null),
 		load: (slug) => loadHaydockIntro(slug, fetch)
@@ -455,6 +463,8 @@
 	let haydockCommentaryLoading = $derived(haydockCommentaryRes.loading);
 	let glossa = $derived(glossaRes.data);
 	let glossaLoading = $derived(glossaRes.loading);
+	let textualNotes = $derived(textualNotesRes.data);
+	let textualNotesLoading = $derived(textualNotesRes.loading);
 	let haydockIntro = $derived(haydockIntroRes.data);
 	let confIntro = $derived(confIntroRes.data);
 	let confFootnotes = $derived(confFootnotesRes.data);
@@ -1305,7 +1315,6 @@
 					{:else if glossa && glossa.length > 0}
 						{@const grouped = groupByVerse(glossa)}
 						<div class="content-block glossa-block">
-							<p class="content-eyebrow">Glossa Ordinaria</p>
 							{#each grouped as group (group.verse)}
 								<div
 									class="verse-section"
@@ -1338,6 +1347,36 @@
 						<div class="empty-state">
 							<span class="empty-icon" aria-hidden="true">✦</span>
 							<p>Nulla glossa.</p>
+						</div>
+					{/if}
+
+					<!-- ═══ Vulgate: Textual Notes tab ═══ -->
+				{:else if $studyPanel.activeTab === 'textual-notes' && isVul}
+					{#if textualNotesLoading}
+						<div class="empty-state"><p>Loading notes...</p></div>
+					{:else if textualNotes && textualNotes.length > 0}
+						{@const grouped = groupByVerse(textualNotes)}
+						<div class="content-block glossa-block">
+							{#each grouped as group (group.verse)}
+								<div
+									class="verse-section verse-section-plain"
+									class:verse-section-active={$studyPanel.annotatedVerse === group.verse}
+									bind:this={sectionEls[group.verse]}
+									data-section-verse={group.verse}
+								>
+									{#each group.entries as entry, i}
+										<div class="glossa-entry" data-panel-id="panel-{group.verse}-textual-note-{i}">
+											<p class="textual-note-ref">{entry.ref}</p>
+											<p class="glossa-text">{@html formatTextualNote(entry.note)}</p>
+										</div>
+									{/each}
+								</div>
+							{/each}
+						</div>
+					{:else}
+						<div class="empty-state">
+							<span class="empty-icon" aria-hidden="true">✦</span>
+							<p>No textual notes for this chapter.</p>
 						</div>
 					{/if}
 
@@ -1539,6 +1578,13 @@
 	/* ─── Content ───────────────────────────────────── */
 	.content-block {
 		padding: 16px 52px;
+	}
+
+	/* Glossa/Textual Notes open straight on a sticky verse header (no eyebrow
+	   above it, unlike other tabs), so the block's own top padding is just
+	   dead space above the header — drop it. */
+	.content-block.glossa-block {
+		padding-top: 0;
 	}
 
 	.content-eyebrow {
@@ -1909,6 +1955,28 @@
 		font-synthesis: none;
 		opacity: 0.7;
 		font-size: 0.85em;
+	}
+
+	/* Textual-notes ref (e.g. "Gen 1:1–4:15a") leads the entry as a label,
+	   unlike the Glossa byline it's styled after — so it's left-aligned. */
+	.textual-note-ref {
+		margin-bottom: 0.2rem;
+		text-align: left;
+		font-style: italic;
+		font-synthesis: none;
+		opacity: 0.7;
+		font-size: 0.85em;
+	}
+
+	/* Textual notes have no sticky verse header (removed as redundant with the
+	   ref line), so the section needs its own padding for breathing room around
+	   the border-bottom that separates verse groups. */
+	.verse-section-plain {
+		padding: 18px 0;
+	}
+
+	.verse-section-plain .glossa-entry {
+		margin-bottom: 1.6rem;
 	}
 
 	/* ─── Translation notes ────────────────────────────────────── */

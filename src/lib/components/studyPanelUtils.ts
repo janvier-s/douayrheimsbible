@@ -111,8 +111,11 @@ export function buildVisibleTabs(
 		return [{ id: 'notes', label: 'Notes' }];
 	}
 	if (tid === 'vul') {
-		// Always shown, including the 18 books the Glossa never covered.
-		return [{ id: 'glossa', label: 'Glossa' }];
+		// Always shown, including books the Glossa / textual notes never covered.
+		return [
+			{ id: 'glossa', label: 'Glossa Ordinaria' },
+			{ id: 'textual-notes', label: 'Textual Notes' }
+		];
 	}
 	return [];
 }
@@ -227,6 +230,13 @@ export function formatTrailingCitation(html: string): string {
 		return `${plain[1]}<br /><span class="note-citation">— ${plain[2]}</span>`;
 	}
 	return html;
+}
+
+/** The textual-notes source marks italics with underscores (e.g. "_Vulgata-Lesebuch_").
+ *  Escape the note text first, then turn each underscore-delimited span into <em>. */
+export function formatTextualNote(text: string): string {
+	const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	return escaped.replace(/_([^_]+)_/g, '<em>$1</em>');
 }
 
 /** Group flat commentary entries by verse for section rendering */

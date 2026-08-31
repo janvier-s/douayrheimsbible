@@ -567,6 +567,14 @@ async function main() {
 		console.log(`Glossa build skipped: ${e instanceof Error ? e.message : e}`);
 	}
 
+	// ── Textual notes (for the Vulgate panel) ───────────────────────
+	try {
+		await import('./build-textual-notes-data.js');
+		console.log('Textual notes data built.');
+	} catch (e) {
+		console.log(`Textual notes build skipped: ${e instanceof Error ? e.message : e}`);
+	}
+
 	await buildSidecarManifest();
 	await buildSearchIndexes();
 }
@@ -642,7 +650,8 @@ async function buildSidecarManifest() {
 		'conf-commentary',
 		'haydock-commentary',
 		'haydock-crossrefs',
-		'glossa'
+		'glossa',
+		'textual-notes'
 	];
 	const manifest: Record<string, Record<string, number[]>> = {
 		annotations: await scanAnnotations()
