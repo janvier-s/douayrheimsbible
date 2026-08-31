@@ -25,6 +25,7 @@
 	import { allcapsToSmallcaps } from '$lib/utils/text';
 	import CrossRefText from './CrossRefText.svelte';
 	import StudyTabBar from './StudyTabBar.svelte';
+	import GlossaryPanel from './GlossaryPanel.svelte';
 	import SegmentedControl from './SegmentedControl.svelte';
 	import VerseTooltip from './VerseTooltip.svelte';
 	import { linkifyConfRefs, linkifyKnoxRefs, linkifyDrcRefs } from '$lib/search/crossRefParser';
@@ -744,7 +745,7 @@
 		onmouseover={hasLinkifiedNotes || isConf ? confTip.handleOver : undefined}
 		onmouseout={hasLinkifiedNotes || isConf ? confTip.handleOut : undefined}
 	>
-		{#key `${currentBookSlug}/${currentChapterNum}/${$studyPanel.activeTab}`}
+		{#key $studyPanel.activeTab === 'glossary' ? 'glossary' : `${currentBookSlug}/${currentChapterNum}/${$studyPanel.activeTab}`}
 			<div in:fade={{ duration: 150 }}>
 				<!-- ═══ ODR: Intro tab ═══ -->
 				{#if $studyPanel.activeTab === 'intro' && isOdr}
@@ -1379,6 +1380,10 @@
 							<p>No textual notes for this chapter.</p>
 						</div>
 					{/if}
+
+					<!-- ═══ Vulgate: Glossary tab ═══ -->
+				{:else if $studyPanel.activeTab === 'glossary' && isVul}
+					<GlossaryPanel />
 
 					<!-- ═══ DRC/Knox/CPDV: Translation Notes tab ═══ -->
 				{:else if $studyPanel.activeTab === 'notes' && hasTranslationNotes}

@@ -114,7 +114,8 @@ export function buildVisibleTabs(
 		// Always shown, including books the Glossa / textual notes never covered.
 		return [
 			{ id: 'glossa', label: 'Glossa Ordinaria' },
-			{ id: 'textual-notes', label: 'Textual Notes' }
+			{ id: 'textual-notes', label: 'Textual Notes' },
+			{ id: 'glossary', label: 'Glossary' }
 		];
 	}
 	return [];
@@ -237,6 +238,59 @@ export function formatTrailingCitation(html: string): string {
 export function formatTextualNote(text: string): string {
 	const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	return escaped.replace(/_([^_]+)_/g, '<em>$1</em>');
+}
+
+/** Normalizes a glossary headword variant for cross-ref matching: trim, lowercase,
+ *  drop a trailing period. Leading affix dashes ("-bilis") are meaningful and kept. */
+export function normalizeGlossaryTerm(s: string): string {
+	return s.trim().replace(/\.$/, '').toLowerCase();
+}
+
+/** A single glossary entry's word field may list several variants, and — for the
+ *  handful of pure-redirect entries — a "→ target" the entry itself points to
+ *  rather than defines. Only the part before any arrow is indexed as a lookup
+ *  variant; the target after the arrow belongs to a different entry. */
+export function glossaryWordVariants(word: string): string[] {
+	const alias = word.split('→')[0];
+	return alias
+		.split(',')
+		.map(normalizeGlossaryTerm)
+		.filter((v) => v.length > 0);
+}
+
+/** Formats glossary prose: escapes HTML, renders **bold** / *italic*, splits
+ *  blank-line-separated blocks (etymology vs. the literature list) into
+ *  paragraphs, and turns "→ target" cross-refs into clickable spans where
+ *  `resolveTarget` can find the referenced entry — plain text otherwise. */
+export function formatGlossaryContent(
+	text: string,
+	resolveTarget: (target: string) => string | null
+): string {
+	// Entries open with a translation gloss ("to take, to accept [nehmen].",
+	// sometimes prefixed with a grammar tag: "fem. abyss, Hades [Abgrund].")
+	// before the explanatory prose. Break after that first sentence so the two
+	// are visually distinct, rather than running them into one paragraph.
+	// Prefer breaking right after a bracketed gloss if there is one nearby —
+	// a bare first period can land inside a leading grammar-tag abbreviation
+	// ("fem.") instead of the sentence's real end.
+	const withLeadBreak = /^.{0,60}?\[[^\]]*\]\.\s+/.test(text)
+		? text.replace(/^(.{0,60}?\[[^\]]*\]\.)\s+/, '$1\n\n')
+		: text.replace(/^([^.]{2,}?\.)\s+/, '$1\n\n');
+	const escaped = withLeadBreak.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	const withBold = escaped.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+	const withItalics = withBold.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+	const withXrefs = withItalics.replace(/→\s*([^\n.;,()–→<\d]+)/g, (match, target: string) => {
+		const trimmed = target.trim();
+		const id = resolveTarget(normalizeGlossaryTerm(trimmed));
+		if (!id) return match;
+		return `→ <button type="button" class="glossary-xref" data-glossary-target="${id}">${trimmed}</button>`;
+	});
+	return withXrefs
+		.split(/\n\s*\n/)
+		.map((para) => para.trim())
+		.filter((para) => para.length > 0)
+		.map((para) => `<p>${para}</p>`)
+		.join('');
 }
 
 /** Group flat commentary entries by verse for section rendering */

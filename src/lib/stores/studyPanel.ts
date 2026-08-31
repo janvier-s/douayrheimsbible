@@ -11,7 +11,8 @@ export type StudyTab =
 	| 'notes'
 	| 'cross-refs'
 	| 'glossa'
-	| 'textual-notes';
+	| 'textual-notes'
+	| 'glossary';
 
 export interface ScrollTrigger {
 	verse: number; // 0 = summary

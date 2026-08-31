@@ -95,7 +95,7 @@ describe('buildVisibleTabs', () => {
 		).toEqual(['notes']);
 		expect(
 			buildVisibleTabs('vul', false, false, false, noConf, noHaydock).map((t) => t.id)
-		).toEqual(['glossa', 'textual-notes']);
+		).toEqual(['glossa', 'textual-notes', 'glossary']);
 	});
 
 	it('returns nothing for an unknown translation', () => {

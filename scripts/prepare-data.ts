@@ -575,6 +575,14 @@ async function main() {
 		console.log(`Textual notes build skipped: ${e instanceof Error ? e.message : e}`);
 	}
 
+	// ── Glossary (Latin vocabulary, for the Vulgate panel) ──────────
+	try {
+		await import('./build-glossary-data.js');
+		console.log('Glossary data built.');
+	} catch (e) {
+		console.log(`Glossary build skipped: ${e instanceof Error ? e.message : e}`);
+	}
+
 	await buildSidecarManifest();
 	await buildSearchIndexes();
 }

@@ -279,6 +279,29 @@ export function loadTextualNotes(
 	return textualNotesCache.get(key)!;
 }
 
+// ── Glossary (Latin vocabulary, global — not chapter-scoped) ─────────
+
+export interface GlossaryEntry {
+	letter: string;
+	word: string;
+	content: string;
+}
+
+let glossaryPromise: Promise<GlossaryEntry[]> | null = null;
+
+export function loadGlossary(fetch: typeof globalThis.fetch): Promise<GlossaryEntry[]> {
+	if (!glossaryPromise) {
+		glossaryPromise = fetch('/data/glossary/terms.json').then((res) => {
+			if (!res.ok) throw new Error(`Failed to load glossary: ${res.status}`);
+			return res.json() as Promise<GlossaryEntry[]>;
+		});
+		glossaryPromise.then(null, () => {
+			glossaryPromise = null;
+		});
+	}
+	return glossaryPromise;
+}
+
 // ── Haydock book introductions ──────────────────────────────────────
 
 export interface HaydockIntro {
