@@ -890,10 +890,7 @@
 												class="annotation-block"
 												data-panel-id="panel-{section.verse}-annotation-{ann.part ?? 1}"
 											>
-												{#if ann.title}<p class="annotation-title">
-														{@html allcapsToSmallcaps(ann.title)}
-													</p>{/if}
-												<AnnotationProse text={ann.text} notes={ann.notes} />
+												<AnnotationProse text={ann.text} notes={ann.notes} title={ann.title} />
 											</div>
 										{/each}
 									</div>

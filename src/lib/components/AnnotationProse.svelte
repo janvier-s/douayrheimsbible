@@ -19,6 +19,8 @@
 	interface Props {
 		text: string;
 		notes?: AnnotationNote[];
+		/** Optional heading rendered above the body, sharing a row with the copy button */
+		title?: string;
 		/** Use stricter parsing to avoid false positives in patristic-heavy content */
 		conservativeLinks?: boolean;
 		/** Also linkify bare (non-italic) DRC-style references like "Gen. 12. 22." */
@@ -30,6 +32,7 @@
 	let {
 		text,
 		notes = [],
+		title = undefined,
 		conservativeLinks = false,
 		linkifyBare = false,
 		translationPrefix = undefined
@@ -209,11 +212,51 @@
 	onDestroy(() => {
 		if (hoverTimer) clearTimeout(hoverTimer);
 		if (verseRefTimer) clearTimeout(verseRefTimer);
+		if (copiedTimer) clearTimeout(copiedTimer);
 	});
 
 	let { html: sequentialText, notes: sequentialNotes } = $derived(renumber(text, notes));
 	let paragraphs = $derived(renderParagraphs(sequentialText));
 	let activeNote = $derived(sequentialNotes.find((n) => String(n.marker) === openMn) ?? null);
+
+	// ── Copy with formatting, markers stripped ─────────────────────────
+	let copied = $state(false);
+	let copiedTimer: ReturnType<typeof setTimeout> | null = null;
+
+	function buildCopyHtml(): string {
+		return paragraphs
+			.map((p) => {
+				let html = p.replace(/<button class="mn-marker"[^>]*>[\s\S]*?<\/button>/g, '');
+				html = html.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/g, '$1');
+				html = html.replace(/<span class="sc">/g, '<span style="font-variant: small-caps;">');
+				return `<p>${html}</p>`;
+			})
+			.join('');
+	}
+
+	async function copyAnnotation() {
+		const html = buildCopyHtml();
+		const plain = html
+			.replace(/<br\s*\/?>/g, '\n')
+			.replace(/<\/p>/g, '\n\n')
+			.replace(/<[^>]+>/g, '')
+			.trim();
+		try {
+			await navigator.clipboard.write([
+				new ClipboardItem({
+					'text/html': new Blob([html], { type: 'text/html' }),
+					'text/plain': new Blob([plain], { type: 'text/plain' })
+				})
+			]);
+		} catch {
+			await navigator.clipboard.writeText(plain);
+		}
+		copied = true;
+		if (copiedTimer) clearTimeout(copiedTimer);
+		copiedTimer = setTimeout(() => {
+			copied = false;
+		}, 1500);
+	}
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
@@ -234,6 +277,32 @@
 		}
 	}}
 >
+	<div class="annotation-header-row">
+		{#if title}
+			<p class="annotation-title">{@html allcapsToSmallcaps(title)}</p>
+		{/if}
+		<button
+			class="copy-annotation-btn"
+			class:copied
+			onclick={stopPropagation(copyAnnotation)}
+			aria-label={copied ? 'Copied' : 'Copy annotation text'}
+		>
+			{#if copied}
+				<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"
+					><path
+						d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"
+					/></svg
+				>
+			{:else}
+				<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"
+					><path
+						d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"
+					/></svg
+				>
+			{/if}
+		</button>
+	</div>
+
 	{#each paragraphs as para}
 		<p class="font-reader text-[15px] leading-[1.6] text-foreground">
 			{@html para}
@@ -298,6 +367,57 @@
 <style>
 	.annotation-prose {
 		position: relative;
+	}
+
+	.annotation-header-row {
+		display: flex;
+		align-items: baseline;
+		justify-content: flex-end;
+		gap: 8px;
+	}
+
+	.annotation-title {
+		flex: 1 1 auto;
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--color-accent-text);
+		margin: 10px 0 8px;
+		font-family: var(--font-reader);
+		font-style: italic;
+	}
+
+	.copy-annotation-btn {
+		flex-shrink: 0;
+		align-self: center;
+		opacity: 0;
+		color: var(--color-subtle);
+		background: none;
+		border: none;
+		padding: 4px;
+		cursor: pointer;
+		line-height: 0;
+		transition: opacity 150ms ease;
+	}
+
+	.annotation-prose:hover .copy-annotation-btn,
+	.copy-annotation-btn:focus-visible {
+		opacity: 1;
+	}
+
+	.copy-annotation-btn:hover {
+		color: var(--color-accent);
+	}
+
+	.copy-annotation-btn.copied {
+		opacity: 1;
+		color: var(--color-accent);
+	}
+
+	@media (max-width: 767px) {
+		.annotation-title {
+			font-size: 12px;
+			margin: 6px 0 5px;
+		}
 	}
 
 	.annotation-prose p + p {
