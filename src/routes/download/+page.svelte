@@ -77,7 +77,7 @@
 			<strong><code>bible/tagged/</code></strong> — verse text with all original markup preserved (<code
 				>&lt;sc&gt;</code
 			>, <code>&lt;i&gt;</code>, footnote anchors, marginal note markers, cross-reference markers),
-			plus <code>cross_refs</code> arrays and inline footnotes.
+			plus <code>cross_refs</code> arrays and inline footnotes. This is the canonical form.
 		</li>
 		<li>
 			<strong><code>bible/raw/</code></strong> — plain prose text with all markup stripped. Footnotes
@@ -88,12 +88,24 @@
 			cross-references (<code>\x</code>).
 		</li>
 		<li>
-			<strong><code>annotations/</code></strong> — the 1,707 annotations with their sub-notes, one file
-			per chapter.
+			<strong><code>usfm-study/</code></strong> — the same USFM, plus the annotations as study notes
+			(<code>\ef</code>). Kept separate so the plain <code>usfm/</code> files stay small.
+		</li>
+		<li>
+			<strong><code>annotations/</code></strong> — the 1,677 annotations with their 3,609 sub-notes, one
+			file per chapter.
 		</li>
 		<li>
 			<strong><code>reference/</code></strong> — 26 JSON files for the original prefatory material: prefaces,
 			tables, glossaries, and historical tables from the 1582 and 1609–1610 editions.
+		</li>
+		<li>
+			<strong><code>index/lemmas/</code></strong> — the offset and length locating each annotation's catchword
+			in the verse it annotates, with the confidence tier of the match.
+		</li>
+		<li>
+			<strong><code>manifest.json</code></strong> — schema version, source commit, and counts for every
+			part of the bundle.
 		</li>
 	</ul>
 
