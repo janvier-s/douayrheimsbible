@@ -123,11 +123,25 @@ describe('the corpus markup', () => {
 		expect([...unbalanced].sort()).toEqual([...KNOWN_UNBALANCED].sort());
 	});
 
-	it('uses only the nine known tags', () => {
-		const legal = new Set([...Object.values(TAGS_BY_BLOCK)].flatMap((s) => [...s]));
-		expect([...legal].sort()).toEqual(
+	// Scans real text rather than comparing TAGS_BY_BLOCK against a hardcoded
+	// list, which would be a tautology over a constant in the library under
+	// test: it would pass unchanged if the corpus vanished. Reading the corpus
+	// is also what makes it say something test 1 cannot, which only reports
+	// that a tag was illegal *for its block*, never which tags exist at all.
+	it('uses only the nine known tags, counted over real text', () => {
+		const tagRe = /<\/?([a-zA-Z][a-zA-Z0-9-]*)>/g;
+		const found = new Set<string>();
+		for (const b of blocks) {
+			for (const m of b.text.matchAll(tagRe)) found.add(m[1]);
+			for (const n of b.notes) for (const m of n.text.matchAll(tagRe)) found.add(m[1]);
+		}
+		expect([...found].sort()).toEqual(
 			['alt', 'br', 'col-left', 'col-right', 'cr', 'i', 'mn', 'na', 'sc'].sort()
 		);
+
+		// and the library's vocabulary is exactly what the corpus uses
+		const declared = new Set([...Object.values(TAGS_BY_BLOCK)].flatMap((s) => [...s]));
+		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
 	it('binds 13,606 of 13,608 markers', () => {
