@@ -59,21 +59,39 @@ function readAnnotations(slug) {
 	return { byChapter, files, count, subNotes };
 }
 
-/** bible/raw/: the same tree with markup stripped and notes kept structured. */
+/** Strips every note's own text in place, using `ref` (already scoped to the
+ *  owning block) to name the note if stripMarkup ever has to report one. */
+function stripNotes(notes, block, ref) {
+	for (const note of notes ?? []) note.text = stripMarkup(note.text, block, `${ref} note`);
+}
+
+/** bible/raw/: the same tree with markup stripped, including note and
+ *  cross-reference bodies, and notes kept structured (as objects, not
+ *  flattened into the prose). */
 function toRaw(slug, book) {
 	const out = structuredClone(book);
-	for (const intro of out.intros ?? [])
+	for (const intro of out.intros ?? []) {
 		intro.text = stripMarkup(intro.text, 'prose', `${slug} intro`);
-	for (const end of out.endMatters ?? [])
+		stripNotes(intro.notes, 'prose', `${slug} intro`);
+	}
+	for (const end of out.endMatters ?? []) {
 		end.text = stripMarkup(end.text, 'prose', `${slug} endMatter`);
+		stripNotes(end.notes, 'prose', `${slug} endMatter`);
+	}
 	for (const chapter of out.chapters) {
 		const cref = `${slug} ${chapter.chapter}`;
 		if (chapter.summary)
 			chapter.summary = stripMarkup(chapter.summary, 'summary', `${cref} summary`);
-		for (const article of chapter.articles ?? [])
+		stripNotes(chapter.summary_notes, 'summary', `${cref} summary`);
+		for (const article of chapter.articles ?? []) {
 			article.text = stripMarkup(article.text, 'prose', `${cref} article`);
+			stripNotes(article.notes, 'prose', `${cref} article`);
+		}
 		for (const verse of chapter.verses) {
-			verse.text = stripMarkup(verse.text, 'verse', `${cref}:${verse.verse}`);
+			const vref = `${cref}:${verse.verse}`;
+			verse.text = stripMarkup(verse.text, 'verse', vref);
+			stripNotes(verse.notes, 'verse', vref);
+			stripNotes(verse.cross_refs, 'verse', vref);
 			delete verse.lemmas;
 		}
 	}
