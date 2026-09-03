@@ -43,24 +43,36 @@ interface Block {
 	block: BlockKind;
 }
 
-/** Every piece of marked-up text in the corpus, with the notes it resolves against. */
+/** Every piece of marked-up text in the corpus, with the notes it resolves against.
+ *
+ *  Titles and cross-reference bodies carry no markup today, but nothing keeps
+ *  them that way, and they are the same field set the literal-newline defect
+ *  hid in. They are visited so the invariants below cover them; each is a block
+ *  in its own right, with no notes of its own to resolve against. */
 function readBlocks(): Block[] {
 	const blocks: Block[] = [];
+	/** A title or cross-reference body: text with no apparatus behind it. */
+	const bare = (ref: string, text: string | null | undefined, block: BlockKind) => {
+		if (text) blocks.push({ ref, text, notes: [], block });
+	};
+
 	for (const meta of ALL_BOOKS) {
 		const slug = meta.slug;
 		const { data: book } = readJson<any>(join(ODR_DIR, `${slug}.json`));
 
-		(book.intros ?? []).forEach((i: any, n: number) =>
-			blocks.push({ ref: introRef(slug, n), text: i.text, notes: i.notes ?? [], block: 'prose' })
-		);
-		(book.endMatters ?? []).forEach((e: any, n: number) =>
+		(book.intros ?? []).forEach((i: any, n: number) => {
+			blocks.push({ ref: introRef(slug, n), text: i.text, notes: i.notes ?? [], block: 'prose' });
+			bare(`${introRef(slug, n)} title`, i.title, 'prose');
+		});
+		(book.endMatters ?? []).forEach((e: any, n: number) => {
 			blocks.push({
 				ref: endMatterRef(slug, n),
 				text: e.text,
 				notes: e.notes ?? [],
 				block: 'prose'
-			})
-		);
+			});
+			bare(`${endMatterRef(slug, n)} title`, e.title, 'prose');
+		});
 
 		for (const c of book.chapters) {
 			if (c.summary)
@@ -70,34 +82,41 @@ function readBlocks(): Block[] {
 					notes: c.summary_notes ?? [],
 					block: 'summary'
 				});
-			(c.articles ?? []).forEach((a: any, n: number) =>
+			(c.articles ?? []).forEach((a: any, n: number) => {
 				blocks.push({
 					ref: articleRef(slug, c.chapter, n),
 					text: a.text,
 					notes: a.notes ?? [],
 					block: 'prose'
-				})
-			);
-			for (const v of c.verses)
+				});
+				bare(`${articleRef(slug, c.chapter, n)} title`, a.title, 'prose');
+			});
+			for (const v of c.verses) {
 				blocks.push({
 					ref: verseRef(slug, c.chapter, v.verse),
 					text: v.text,
 					notes: v.notes ?? [],
 					block: 'verse'
 				});
+				(v.cross_refs ?? []).forEach((x: any, n: number) =>
+					bare(`${verseRef(slug, c.chapter, v.verse)} cross_ref[${n}]`, x.text, 'verse')
+				);
+			}
 		}
 
 		const annDir = join(ODR_DIR, slug, 'annotations');
 		if (!existsSync(annDir)) continue;
 		for (const f of readdirSync(annDir).filter((x) => x.endsWith('.json'))) {
 			const { data: sidecar } = readJson<any>(join(annDir, f));
-			for (const a of sidecar.annotations)
+			for (const a of sidecar.annotations) {
 				blocks.push({
 					ref: annotationRef(slug, sidecar.chapter, a),
 					text: a.text,
 					notes: a.notes ?? [],
 					block: 'prose'
 				});
+				bare(`${annotationRef(slug, sidecar.chapter, a)} title`, a.title, 'prose');
+			}
 		}
 	}
 	return blocks;
@@ -123,6 +142,16 @@ describe('the corpus markup', () => {
 	// position entered them: `matthew intro` alone covered three blocks.
 	// `3-esdras 2:1` is the one that remains, and it is pinned as a duplicate
 	// verse rather than a naming collision.
+	// Without this the invariants below could quietly stop covering a field and
+	// still pass: they only ever assert that nothing is wrong.
+	it('visits every title and cross-reference body', () => {
+		const titles = blocks.filter((b) => b.ref.endsWith(' title'));
+		const crossRefs = blocks.filter((b) => / cross_ref\[\d+\]$/.test(b.ref));
+		expect(titles).toHaveLength(1618);
+		expect(crossRefs).toHaveLength(1989);
+		expect(blocks).toHaveLength(43797);
+	});
+
 	it('names exactly one block per ref', () => {
 		const seen = new Map<string, number>();
 		for (const b of blocks) seen.set(b.ref, (seen.get(b.ref) ?? 0) + 1);
