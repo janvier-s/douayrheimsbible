@@ -12,7 +12,9 @@ import {
 	assertOnlyKnownDefects,
 	KNOWN_UNBOUND,
 	KNOWN_UNREFERENCED,
-	stripMarkup
+	stripMarkup,
+	BOOK_CODES,
+	usfmFilename
 } from './export-lib';
 
 describe('tokenize', () => {
@@ -216,5 +218,54 @@ describe('stripMarkup', () => {
 	it('is idempotent', () => {
 		const once = stripMarkup('a <i>b</i> <na>[1]</na> c', 'verse', 'ref');
 		expect(stripMarkup(once, 'verse', 'ref')).toBe(once);
+	});
+});
+
+describe('BOOK_CODES', () => {
+	it('covers all 76 books with unique codes and ordinals', () => {
+		const entries = Object.values(BOOK_CODES);
+		expect(entries).toHaveLength(76);
+		expect(new Set(entries.map((e) => e.usfm)).size).toBe(76);
+		expect(entries.map((e) => e.ordinal).sort((a, b) => a - b)).toEqual(
+			Array.from({ length: 76 }, (_, i) => i + 1)
+		);
+	});
+
+	it('maps the Douay names to their modern equivalents', () => {
+		expect(BOOK_CODES['1-kings'].usfm).toBe('1SA');
+		expect(BOOK_CODES['3-kings'].usfm).toBe('1KI');
+		expect(BOOK_CODES['1-paralipomenon'].usfm).toBe('1CH');
+		expect(BOOK_CODES['canticle-of-canticles'].usfm).toBe('SNG');
+		expect(BOOK_CODES['ecclesiasticus'].usfm).toBe('SIR');
+		expect(BOOK_CODES['apocalypse'].usfm).toBe('REV');
+	});
+
+	it('follows Vulgate numbering for the Esdras family', () => {
+		expect(BOOK_CODES['1-esdras'].usfm).toBe('EZR');
+		expect(BOOK_CODES['2-esdras'].usfm).toBe('NEH');
+		expect(BOOK_CODES['3-esdras'].usfm).toBe('1ES');
+		expect(BOOK_CODES['4-esdras'].usfm).toBe('2ES');
+	});
+
+	it('uses the composite code where the ODR ships a composite book', () => {
+		expect(BOOK_CODES['esther'].usfm).toBe('ESG');
+		expect(BOOK_CODES['daniel'].usfm).toBe('DAG');
+		expect(BOOK_CODES['baruch'].usfm).toBe('BAR');
+	});
+
+	it('orders the appendix books after the OT and before the NT', () => {
+		expect(BOOK_CODES['malachie'].ordinal).toBe(46);
+		expect(BOOK_CODES['prayer-of-manasses'].ordinal).toBe(47);
+		expect(BOOK_CODES['4-esdras'].ordinal).toBe(49);
+		expect(BOOK_CODES['matthew'].ordinal).toBe(50);
+	});
+
+	it('builds a zero-padded filename', () => {
+		expect(usfmFilename('genesis')).toBe('01-GEN.usfm');
+		expect(usfmFilename('apocalypse')).toBe('76-REV.usfm');
+	});
+
+	it('throws on an unknown slug', () => {
+		expect(() => usfmFilename('nonesuch')).toThrow(ExportError);
 	});
 });

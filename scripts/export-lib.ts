@@ -279,3 +279,116 @@ export function stripMarkup(text: string, block: BlockKind, ref: string): string
 	// Removing a marker leaves the space on either side of it.
 	return out.replace(/[ \t]{2,}/g, ' ').trim();
 }
+
+export interface BookCode {
+	/** USFM 3.0 book identifier, for \id. */
+	usfm: string;
+	/** Paratext's number for that identifier. Recorded in the manifest only. */
+	paratext: string;
+	/** Position in the ODR canon, 1-76. Drives the filename prefix. */
+	ordinal: number;
+}
+
+/**
+ * Every slug in books.ts, in ODR canonical order.
+ *
+ * Filenames use `ordinal`, not `paratext`, because Paratext numbers the
+ * deuterocanon from 68 up and would sort Tobias after Revelation. The ODR
+ * prints them among the OT, and a bundle named for the ODR should list them
+ * that way.
+ *
+ * Where the ODR ships a composite that USFM also publishes split, the
+ * composite code wins: ESG not EST (Esther has the Greek additions as ch.
+ * 11-16), DAG not DAN (Daniel has Susanna and Bel as ch. 13-14), BAR with the
+ * Letter of Jeremiah as ch. 6 rather than a separate LJE, and 2ES not
+ * EZA+5EZ+6EZ. Splitting would invent a structure the source does not have.
+ */
+export const BOOK_CODES: Readonly<Record<string, BookCode>> = {
+	genesis: { usfm: 'GEN', paratext: '01', ordinal: 1 },
+	exodus: { usfm: 'EXO', paratext: '02', ordinal: 2 },
+	leviticus: { usfm: 'LEV', paratext: '03', ordinal: 3 },
+	numbers: { usfm: 'NUM', paratext: '04', ordinal: 4 },
+	deuteronomy: { usfm: 'DEU', paratext: '05', ordinal: 5 },
+	josue: { usfm: 'JOS', paratext: '06', ordinal: 6 },
+	judges: { usfm: 'JDG', paratext: '07', ordinal: 7 },
+	ruth: { usfm: 'RUT', paratext: '08', ordinal: 8 },
+	'1-kings': { usfm: '1SA', paratext: '09', ordinal: 9 },
+	'2-kings': { usfm: '2SA', paratext: '10', ordinal: 10 },
+	'3-kings': { usfm: '1KI', paratext: '11', ordinal: 11 },
+	'4-kings': { usfm: '2KI', paratext: '12', ordinal: 12 },
+	'1-paralipomenon': { usfm: '1CH', paratext: '13', ordinal: 13 },
+	'2-paralipomenon': { usfm: '2CH', paratext: '14', ordinal: 14 },
+	'1-esdras': { usfm: 'EZR', paratext: '15', ordinal: 15 },
+	'2-esdras': { usfm: 'NEH', paratext: '16', ordinal: 16 },
+	tobias: { usfm: 'TOB', paratext: '68', ordinal: 17 },
+	judith: { usfm: 'JDT', paratext: '69', ordinal: 18 },
+	esther: { usfm: 'ESG', paratext: '70', ordinal: 19 },
+	'1-machabees': { usfm: '1MA', paratext: '78', ordinal: 20 },
+	'2-machabees': { usfm: '2MA', paratext: '79', ordinal: 21 },
+	job: { usfm: 'JOB', paratext: '18', ordinal: 22 },
+	psalms: { usfm: 'PSA', paratext: '19', ordinal: 23 },
+	proverbs: { usfm: 'PRO', paratext: '20', ordinal: 24 },
+	ecclesiastes: { usfm: 'ECC', paratext: '21', ordinal: 25 },
+	'canticle-of-canticles': { usfm: 'SNG', paratext: '22', ordinal: 26 },
+	wisdom: { usfm: 'WIS', paratext: '71', ordinal: 27 },
+	ecclesiasticus: { usfm: 'SIR', paratext: '72', ordinal: 28 },
+	isaie: { usfm: 'ISA', paratext: '23', ordinal: 29 },
+	jeremie: { usfm: 'JER', paratext: '24', ordinal: 30 },
+	lamentations: { usfm: 'LAM', paratext: '25', ordinal: 31 },
+	baruch: { usfm: 'BAR', paratext: '73', ordinal: 32 },
+	ezechiel: { usfm: 'EZK', paratext: '26', ordinal: 33 },
+	daniel: { usfm: 'DAG', paratext: '27', ordinal: 34 },
+	osee: { usfm: 'HOS', paratext: '28', ordinal: 35 },
+	joel: { usfm: 'JOL', paratext: '29', ordinal: 36 },
+	amos: { usfm: 'AMO', paratext: '30', ordinal: 37 },
+	abdias: { usfm: 'OBA', paratext: '31', ordinal: 38 },
+	jonas: { usfm: 'JON', paratext: '32', ordinal: 39 },
+	micheas: { usfm: 'MIC', paratext: '33', ordinal: 40 },
+	nahum: { usfm: 'NAM', paratext: '34', ordinal: 41 },
+	habacuc: { usfm: 'HAB', paratext: '35', ordinal: 42 },
+	sophonias: { usfm: 'ZEP', paratext: '36', ordinal: 43 },
+	aggeus: { usfm: 'HAG', paratext: '37', ordinal: 44 },
+	zacharias: { usfm: 'ZEC', paratext: '38', ordinal: 45 },
+	malachie: { usfm: 'MAL', paratext: '39', ordinal: 46 },
+	'prayer-of-manasses': { usfm: 'MAN', paratext: '84', ordinal: 47 },
+	'3-esdras': { usfm: '1ES', paratext: '82', ordinal: 48 },
+	'4-esdras': { usfm: '2ES', paratext: '83', ordinal: 49 },
+	matthew: { usfm: 'MAT', paratext: '41', ordinal: 50 },
+	mark: { usfm: 'MRK', paratext: '42', ordinal: 51 },
+	luke: { usfm: 'LUK', paratext: '43', ordinal: 52 },
+	john: { usfm: 'JHN', paratext: '44', ordinal: 53 },
+	acts: { usfm: 'ACT', paratext: '45', ordinal: 54 },
+	romans: { usfm: 'ROM', paratext: '46', ordinal: 55 },
+	'1-corinthians': { usfm: '1CO', paratext: '47', ordinal: 56 },
+	'2-corinthians': { usfm: '2CO', paratext: '48', ordinal: 57 },
+	galatians: { usfm: 'GAL', paratext: '49', ordinal: 58 },
+	ephesians: { usfm: 'EPH', paratext: '50', ordinal: 59 },
+	philippians: { usfm: 'PHP', paratext: '51', ordinal: 60 },
+	colossians: { usfm: 'COL', paratext: '52', ordinal: 61 },
+	'1-thessalonians': { usfm: '1TH', paratext: '53', ordinal: 62 },
+	'2-thessalonians': { usfm: '2TH', paratext: '54', ordinal: 63 },
+	'1-timothy': { usfm: '1TI', paratext: '55', ordinal: 64 },
+	'2-timothy': { usfm: '2TI', paratext: '56', ordinal: 65 },
+	titus: { usfm: 'TIT', paratext: '57', ordinal: 66 },
+	philemon: { usfm: 'PHM', paratext: '58', ordinal: 67 },
+	hebrews: { usfm: 'HEB', paratext: '59', ordinal: 68 },
+	james: { usfm: 'JAS', paratext: '60', ordinal: 69 },
+	'1-peter': { usfm: '1PE', paratext: '61', ordinal: 70 },
+	'2-peter': { usfm: '2PE', paratext: '62', ordinal: 71 },
+	'1-john': { usfm: '1JN', paratext: '63', ordinal: 72 },
+	'2-john': { usfm: '2JN', paratext: '64', ordinal: 73 },
+	'3-john': { usfm: '3JN', paratext: '65', ordinal: 74 },
+	jude: { usfm: 'JUD', paratext: '66', ordinal: 75 },
+	apocalypse: { usfm: 'REV', paratext: '67', ordinal: 76 }
+};
+
+export function bookCode(slug: string): BookCode {
+	const code = BOOK_CODES[slug];
+	if (!code) throw new ExportError(slug, 'no USFM book code for this slug');
+	return code;
+}
+
+export function usfmFilename(slug: string): string {
+	const { usfm, ordinal } = bookCode(slug);
+	return `${String(ordinal).padStart(2, '0')}-${usfm}.usfm`;
+}
