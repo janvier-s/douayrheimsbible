@@ -19,7 +19,18 @@ import { fileURLToPath } from 'url';
 import { homedir } from 'os';
 import { execSync } from 'child_process';
 import { readJson } from './odr-corpus-json.js';
-import { renderUsfm, stripMarkup, usfmFilename, bookCode, assertSafeOutDir } from './export-lib.js';
+import {
+	renderUsfm,
+	stripMarkup,
+	usfmFilename,
+	bookCode,
+	assertSafeOutDir,
+	introRef,
+	endMatterRef,
+	articleRef,
+	summaryRef,
+	verseRef
+} from './export-lib.js';
 import { ALL_BOOKS } from '../src/lib/data/books.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -79,25 +90,27 @@ function stripNotes(notes, block, ref) {
  *  flattened into the prose). */
 function toRaw(slug, book) {
 	const out = structuredClone(book);
-	for (const intro of out.intros ?? []) {
-		intro.text = stripMarkup(intro.text, 'prose', `${slug} intro`);
-		stripNotes(intro.notes, 'prose', `${slug} intro`);
-	}
-	for (const end of out.endMatters ?? []) {
-		end.text = stripMarkup(end.text, 'prose', `${slug} endMatter`);
-		stripNotes(end.notes, 'prose', `${slug} endMatter`);
-	}
+	(out.intros ?? []).forEach((intro, i) => {
+		const ref = introRef(slug, i);
+		intro.text = stripMarkup(intro.text, 'prose', ref);
+		stripNotes(intro.notes, 'prose', ref);
+	});
+	(out.endMatters ?? []).forEach((end, i) => {
+		const ref = endMatterRef(slug, i);
+		end.text = stripMarkup(end.text, 'prose', ref);
+		stripNotes(end.notes, 'prose', ref);
+	});
 	for (const chapter of out.chapters) {
-		const cref = `${slug} ${chapter.chapter}`;
-		if (chapter.summary)
-			chapter.summary = stripMarkup(chapter.summary, 'summary', `${cref} summary`);
-		stripNotes(chapter.summary_notes, 'summary', `${cref} summary`);
-		for (const article of chapter.articles ?? []) {
-			article.text = stripMarkup(article.text, 'prose', `${cref} article`);
-			stripNotes(article.notes, 'prose', `${cref} article`);
-		}
+		const sref = summaryRef(slug, chapter.chapter);
+		if (chapter.summary) chapter.summary = stripMarkup(chapter.summary, 'summary', sref);
+		stripNotes(chapter.summary_notes, 'summary', sref);
+		(chapter.articles ?? []).forEach((article, i) => {
+			const ref = articleRef(slug, chapter.chapter, i);
+			article.text = stripMarkup(article.text, 'prose', ref);
+			stripNotes(article.notes, 'prose', ref);
+		});
 		for (const verse of chapter.verses) {
-			const vref = `${cref}:${verse.verse}`;
+			const vref = verseRef(slug, chapter.chapter, verse.verse);
 			verse.text = stripMarkup(verse.text, 'verse', vref);
 			stripNotes(verse.notes, 'verse', vref);
 			stripNotes(verse.cross_refs, 'verse', vref);

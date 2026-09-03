@@ -185,6 +185,19 @@ describe('the known-defect list', () => {
 		expect(() => assertOnlyKnownDefects(r, notes, 'genesis 1:1')).toThrow(ExportError);
 	});
 
+	it('pins one marker, not the whole ref', () => {
+		// The same ref, with a second unbindable marker beyond the pinned one.
+		const notes = [{ label: '1', text: 'x' }];
+		const r = bindMarkers(
+			'<na>[1]</na> <na>[1]</na> <na>(z)</na>',
+			notes,
+			'verse',
+			'1-timothy 2:6'
+		);
+		expect(r.unbound).toEqual(['1', 'z']);
+		expect(() => assertOnlyKnownDefects(r, notes, '1-timothy 2:6')).toThrow(/marker z/);
+	});
+
 	it('allows a listed unreferenced note', () => {
 		const notes = [{ label: '1', text: 'x' }];
 		const r = bindMarkers('no marker here', notes, 'verse', 'john 1:51');
@@ -647,6 +660,25 @@ describe('renderUsfm', () => {
 			'\\cd his coming to judge the world. \\x - \\xt cap. 13.\\x* \\f - \\ft The Church in all nations.\\f*'
 		);
 		expect(out).not.toContain('\\v 0');
+	});
+
+	it('does not let a second intro inherit the first one’s pin', () => {
+		// `matthew intro[1] note 1` is pinned. Before refs carried their array
+		// position both intros answered to `matthew intro`, so the same note in
+		// intro[0] was excused by a pin written for intro[1].
+		const bare = { title: 'A', text: 'no marker here', notes: [] };
+		const pinned = { title: 'B', text: 'no marker here', notes: [{ marker: 1, text: 'x' }] };
+		const render = (intros: unknown[]) =>
+			renderUsfm(
+				'matthew',
+				{ ...book, intros },
+				new Map(),
+				{ includeAnnotations: false },
+				'Matthew'
+			);
+
+		expect(() => render([bare, pinned])).not.toThrow();
+		expect(() => render([pinned, bare])).toThrow(/matthew intro\[0\]/);
 	});
 
 	it('gives the pinned duplicate verse a segment letter', () => {

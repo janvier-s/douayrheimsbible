@@ -20,7 +20,15 @@ import {
 	TAGS_BY_BLOCK,
 	BOOK_CODES,
 	KNOWN_UNBALANCED,
+	KNOWN_UNBOUND,
+	KNOWN_UNREFERENCED,
 	KNOWN_DUPLICATE_VERSE,
+	introRef,
+	endMatterRef,
+	articleRef,
+	summaryRef,
+	verseRef,
+	annotationRef,
 	type BlockKind,
 	type NoteLike
 } from './export-lib';
@@ -42,34 +50,37 @@ function readBlocks(): Block[] {
 		const slug = meta.slug;
 		const { data: book } = readJson<any>(join(ODR_DIR, `${slug}.json`));
 
-		for (const i of book.intros ?? [])
-			blocks.push({ ref: `${slug} intro`, text: i.text, notes: i.notes ?? [], block: 'prose' });
-		for (const e of book.endMatters ?? [])
+		(book.intros ?? []).forEach((i: any, n: number) =>
+			blocks.push({ ref: introRef(slug, n), text: i.text, notes: i.notes ?? [], block: 'prose' })
+		);
+		(book.endMatters ?? []).forEach((e: any, n: number) =>
 			blocks.push({
-				ref: `${slug} endMatter`,
+				ref: endMatterRef(slug, n),
 				text: e.text,
 				notes: e.notes ?? [],
 				block: 'prose'
-			});
+			})
+		);
 
 		for (const c of book.chapters) {
 			if (c.summary)
 				blocks.push({
-					ref: `${slug} ${c.chapter} summary`,
+					ref: summaryRef(slug, c.chapter),
 					text: c.summary,
 					notes: c.summary_notes ?? [],
 					block: 'summary'
 				});
-			for (const a of c.articles ?? [])
+			(c.articles ?? []).forEach((a: any, n: number) =>
 				blocks.push({
-					ref: `${slug} ${c.chapter} article`,
+					ref: articleRef(slug, c.chapter, n),
 					text: a.text,
 					notes: a.notes ?? [],
 					block: 'prose'
-				});
+				})
+			);
 			for (const v of c.verses)
 				blocks.push({
-					ref: `${slug} ${c.chapter}:${v.verse}`,
+					ref: verseRef(slug, c.chapter, v.verse),
 					text: v.text,
 					notes: v.notes ?? [],
 					block: 'verse'
@@ -82,7 +93,7 @@ function readBlocks(): Block[] {
 			const { data: sidecar } = readJson<any>(join(annDir, f));
 			for (const a of sidecar.annotations)
 				blocks.push({
-					ref: `${slug} ann ${sidecar.chapter}:${a.verse}`,
+					ref: annotationRef(slug, sidecar.chapter, a),
 					text: a.text,
 					notes: a.notes ?? [],
 					block: 'prose'
@@ -107,6 +118,28 @@ function readAnnotations(slug: string): Map<number, any[]> {
 const blocks = readBlocks();
 
 describe('the corpus markup', () => {
+	// Every defect inventory is keyed by a ref, so a ref two blocks share lets a
+	// pin written for one excuse the other. 210 refs were shared before array
+	// position entered them: `matthew intro` alone covered three blocks.
+	// `3-esdras 2:1` is the one that remains, and it is pinned as a duplicate
+	// verse rather than a naming collision.
+	it('names exactly one block per ref', () => {
+		const seen = new Map<string, number>();
+		for (const b of blocks) seen.set(b.ref, (seen.get(b.ref) ?? 0) + 1);
+		const shared = [...seen].filter(([, n]) => n > 1).map(([ref]) => ref);
+		expect(shared.sort()).toEqual([...KNOWN_DUPLICATE_VERSE].sort());
+	});
+
+	// Every pinned ref must still match a block. A pin that stops matching is a
+	// repaired defect the export is still excusing, which is how the list rots.
+	it('pins only refs that exist', () => {
+		const refs = new Set(blocks.map((b) => b.ref));
+		const orphans = [...KNOWN_UNBOUND, ...KNOWN_UNREFERENCED, ...KNOWN_UNBALANCED].filter(
+			(entry) => ![...refs].some((r) => entry === r || entry.startsWith(`${r} `))
+		);
+		expect(orphans).toEqual([]);
+	});
+
 	it('reads every block without an illegal or unbalanced tag', () => {
 		const bad: string[] = [];
 		for (const b of blocks) {

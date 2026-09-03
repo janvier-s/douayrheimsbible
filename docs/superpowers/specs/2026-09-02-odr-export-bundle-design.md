@@ -139,9 +139,24 @@ Two markers in the corpus cannot bind, and both are transcription defects rather
 | `1 Timothy 2:6` | `…for all, <na>[1]</na> <alt>whose testimony</alt> in due times is confirmed. <na>[1]</na>` | marker `[1]` printed twice against a single note |
 | `Ecclesiasticus 14:10` | `…he shall not <na>(†)</na> have his fill of bread…` | `†` marker, and the verse has no `notes` array at all |
 
-A further **26 notes are never referenced** from their text (`1-john 4:21`, `john 21:25`, `matthew intro`, `romans intro`, `acts ann 8:38` among them).
+A further **26 notes are never referenced** from their text (`1-john 4:21`, `john 21:25`, `matthew intro[1]`, `romans intro[1]`, `acts ann 8:38` among them).
 
 These 28 cases are the complete known set. They are fixed data, so the export pins them: the tolerance list is enumerated in `export-lib.ts`, and anything *outside* it is fatal. A new unbound marker means the corpus changed and the export should stop.
+
+**The pins are keyed per defect, not per ref.** `KNOWN_UNREFERENCED` names a note (`${ref} note ${token}`) and `KNOWN_UNBOUND` names a marker (`${ref} marker ${token}`), so pinning `1-timothy 2:6`'s duplicate `[1]` does not excuse a second unbindable marker appearing in the same verse.
+
+**And a ref names exactly one block.** The obvious spellings did not: a book has up to three `intros`, `endMatters` and `articles` are arrays, and a verse may carry several annotations, so `matthew intro` covered three blocks, `romans intro` and `james intro` two each, `acts endMatter` two — 210 refs shared by more than one block in all, several of them pinned. Array position, or the annotation's own `part`, goes into the ref:
+
+| Block | Ref |
+|---|---|
+| intro | `matthew intro[1]` |
+| end matter | `acts endMatter[0]` |
+| chapter summary | `numbers 25 summary` |
+| article | `1-corinthians 14 article[0]` |
+| verse | `john 21:25` |
+| annotation | `romans ann 8:38`, or `romans ann 8:38[2]` where the source gives a `part` |
+
+The only ref two blocks still share is `3-esdras 2:1`, which is the duplicate verse above and pinned as such.
 
 #### Summary overflow: `verse: 0`
 
@@ -352,7 +367,7 @@ The export fails loudly rather than emitting damaged output. Fatal conditions:
 - a book slug with no USFM code in the map
 - a lemma span out of bounds for its tagged text
 
-The known-defect list is the 28 cases enumerated above, held as explicit refs in `export-lib.ts`. Encoding them as data rather than as a tolerant matcher is the point: a tolerant matcher would absorb the next defect silently, whereas an exact list makes any new one fail the build. If a listed defect is ever repaired in the corpus, its entry going unused is itself an error, so the list cannot rot.
+The known-defect list is the 28 cases enumerated above, held in `export-lib.ts` as explicit keys — one per unbindable marker, one per unreferenced note. Encoding them as data rather than as a tolerant matcher is the point: a tolerant matcher would absorb the next defect silently, whereas an exact list makes any new one fail the build. If a listed defect is ever repaired in the corpus, its entry going unused is itself an error, so the list cannot rot.
 
 Silent degradation is what let the published bundle drift. A dangling `\x` is worse than a failed build.
 

@@ -191,45 +191,79 @@ export function bindMarkers(
 }
 
 /**
- * The two markers in the corpus that cannot bind. Both are transcription
- * defects in the source, not forms the resolver fails to handle:
+ * The names the defect inventories below are keyed by.
+ *
+ * A ref must name exactly one block. The obvious forms do not: a book has up
+ * to three `intros`, `endMatters` and `articles` are arrays too, and a verse
+ * can carry several annotations, so `matthew intro` once covered three
+ * different blocks and 210 refs in all were shared. A pin written for one of
+ * them silently excused the others. Array position — or the annotation's own
+ * `part` — is what separates them.
+ *
+ * Built here so the renderer, the bundle script and the corpus test cannot
+ * drift apart on the spelling.
+ *
+ * `3-esdras 2:1` is the one ref two blocks still share, because the corpus
+ * numbers two entries verse 1 there; see KNOWN_DUPLICATE_VERSE.
+ */
+export const introRef = (slug: string, i: number) => `${slug} intro[${i}]`;
+export const endMatterRef = (slug: string, i: number) => `${slug} endMatter[${i}]`;
+export const articleRef = (slug: string, chapter: number, i: number) =>
+	`${slug} ${chapter} article[${i}]`;
+export const summaryRef = (slug: string, chapter: number) => `${slug} ${chapter} summary`;
+export const verseRef = (slug: string, chapter: number, verse: number) =>
+	`${slug} ${chapter}:${verse}`;
+export const annotationRef = (
+	slug: string,
+	chapter: number,
+	ann: { verse: number; part?: number }
+) => `${slug} ann ${chapter}:${ann.verse}${ann.part === undefined ? '' : `[${ann.part}]`}`;
+
+/**
+ * The two markers in the corpus that cannot bind, keyed per marker as
+ * `${ref} marker ${token}`. Both are transcription defects in the source, not
+ * forms the resolver fails to handle:
  *
  *   1-timothy 2:6        prints <na>[1]</na> twice against a single note
  *   ecclesiasticus 14:10 carries a <na>(†)</na> and has no notes array at all
+ *
+ * Per marker, not per ref, so the pin excuses exactly the token it names: a
+ * second unbindable marker added to 1-timothy 2:6 is still fatal. This matches
+ * KNOWN_UNREFERENCED, which has always been per note.
  */
 export const KNOWN_UNBOUND: ReadonlySet<string> = new Set([
-	'1-timothy 2:6',
-	'ecclesiasticus 14:10'
+	'1-timothy 2:6 marker 1',
+	'ecclesiasticus 14:10 marker †'
 ]);
 
 /** The 26 notes no marker references, as `${ref} note ${token}`. */
 export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
-	'1-corinthians 14 article note 8',
+	'1-corinthians 14 article[0] note 8',
 	'1-john 4:21 note 1',
 	'1-peter 5:14 note 1',
 	'3-kings 6:38 note 1',
-	'acts endMatter note 1',
 	'acts 15:41 note 1',
 	'acts ann 8:38 note 1',
 	'acts ann 8:38 note 2',
+	'acts endMatter[0] note 1',
 	'apocalypse 20:15 note 1',
-	'james intro note ◦',
+	'james intro[0] note ◦',
 	'john 1:51 note 1',
 	'john 21:25 note 1',
 	'john 21:25 note 2',
-	'matthew intro note 1',
-	'matthew intro note 2',
 	'matthew 16:28 note 1',
+	'matthew intro[1] note 1',
+	'matthew intro[1] note 2',
 	'psalms 98:6 note 1',
-	'romans intro note 1',
-	'romans intro note 2',
-	'romans intro note 3',
 	'romans 9:33 note 1',
 	'romans 10:16 note 1',
 	'romans ann 8:30 note 2',
 	'romans ann 8:38 note 1',
 	'romans ann 8:38 note 2',
-	'romans ann 9:14 note ◦'
+	'romans ann 9:14 note ◦',
+	'romans intro[1] note 1',
+	'romans intro[1] note 2',
+	'romans intro[1] note 3'
 ]);
 
 /**
@@ -272,8 +306,10 @@ export const KNOWN_DUPLICATE_VERSE: ReadonlySet<string> = new Set(['3-esdras 2:1
  * list makes a new one stop the build.
  */
 export function assertOnlyKnownDefects(result: BindResult, notes: NoteLike[], ref: string): void {
-	if (result.unbound.length && !KNOWN_UNBOUND.has(ref)) {
-		throw new ExportError(ref, `marker(s) ${result.unbound.join(', ')} bind to no note`);
+	for (const token of result.unbound) {
+		if (!KNOWN_UNBOUND.has(`${ref} marker ${token}`)) {
+			throw new ExportError(ref, `marker ${token} binds to no note`);
+		}
 	}
 	for (const i of result.unreferenced) {
 		const entry = `${ref} note ${noteKey(notes[i])}`;
@@ -865,7 +901,9 @@ export function renderUsfm(
 		`\\mt1 ${long}`
 	];
 
-	for (const intro of book.intros ?? []) lines.push(...renderProse(intro, `${slug} intro`));
+	for (const [i, intro] of (book.intros ?? []).entries()) {
+		lines.push(...renderProse(intro, introRef(slug, i)));
+	}
 
 	for (const chapter of book.chapters) {
 		lines.push(`\\c ${chapter.chapter}`);
@@ -875,7 +913,7 @@ export function renderUsfm(
 		const cd: string[] = [];
 
 		if (chapter.summary) {
-			const ref = `${slug} ${chapter.chapter} summary`;
+			const ref = summaryRef(slug, chapter.chapter);
 			const notes = chapter.summary_notes ?? [];
 			const bound = bindMarkers(chapter.summary, notes, 'summary', ref);
 			assertOnlyKnownDefects(bound, notes, ref);
@@ -891,14 +929,16 @@ export function renderUsfm(
 
 		const overflow = chapter.verses.find((v) => v.verse === SUMMARY_OVERFLOW_VERSE);
 		if (overflow) {
-			cd.push(renderSummaryOverflow(overflow, `${slug} ${chapter.chapter}:0`));
+			cd.push(
+				renderSummaryOverflow(overflow, verseRef(slug, chapter.chapter, SUMMARY_OVERFLOW_VERSE))
+			);
 		}
 
 		// 113 summaries and their notes carry literal newlines; \cd is one line.
 		if (cd.length) lines.push(`\\cd ${oneLine(cd.join(' '))}`);
 
-		for (const article of chapter.articles ?? []) {
-			lines.push(...renderProse(article, `${slug} ${chapter.chapter} article`));
+		for (const [i, article] of (chapter.articles ?? []).entries()) {
+			lines.push(...renderProse(article, articleRef(slug, chapter.chapter, i)));
 		}
 
 		const byVerse = new Map<number, Annotation[]>();
@@ -914,7 +954,7 @@ export function renderUsfm(
 		for (const verse of chapter.verses) {
 			// Folded into \cd above: it is a summary tail, not scripture.
 			if (verse.verse === SUMMARY_OVERFLOW_VERSE) continue;
-			const ref = `${slug} ${chapter.chapter}:${verse.verse}`;
+			const ref = verseRef(slug, chapter.chapter, verse.verse);
 			const nth = (seen.get(verse.verse) ?? 0) + 1;
 			seen.set(verse.verse, nth);
 			if (nth > 1 && !KNOWN_DUPLICATE_VERSE.has(ref)) {
@@ -926,13 +966,15 @@ export function renderUsfm(
 			const label = nth === 1 ? String(verse.verse) : `${verse.verse}${SEGMENTS[nth - 2]}`;
 			let line = renderVerse(verse, chapter.chapter, ref, label);
 			for (const ann of byVerse.get(verse.verse) ?? []) {
-				line += ` ${renderAnnotation(ann, chapter.chapter, `${slug} ann ${chapter.chapter}:${ann.verse}`)}`;
+				line += ` ${renderAnnotation(ann, chapter.chapter, annotationRef(slug, chapter.chapter, ann))}`;
 			}
 			lines.push(line);
 		}
 	}
 
-	for (const end of book.endMatters ?? []) lines.push(...renderProse(end, `${slug} endMatter`));
+	for (const [i, end] of (book.endMatters ?? []).entries()) {
+		lines.push(...renderProse(end, endMatterRef(slug, i)));
+	}
 
 	return `${lines.join('\n')}\n`;
 }
