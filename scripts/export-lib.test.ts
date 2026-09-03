@@ -12,6 +12,8 @@ import {
 	assertOnlyKnownDefects,
 	KNOWN_UNBOUND,
 	KNOWN_UNREFERENCED,
+	KNOWN_UNBALANCED,
+	balanceInline,
 	stripMarkup,
 	BOOK_CODES,
 	usfmFilename,
@@ -189,6 +191,25 @@ describe('the known-defect list', () => {
 		const notes = [{ label: '1', text: 'x' }];
 		const r = bindMarkers('no marker here', notes, 'verse', 'genesis 1:1');
 		expect(() => assertOnlyKnownDefects(r, notes, 'genesis 1:1')).toThrow(/unreferenced/);
+	});
+});
+
+describe('balanceInline', () => {
+	it('closes a tag left open at the end', () => {
+		expect(balanceInline('<i>S. Aug. &c.')).toBe('<i>S. Aug. &c.</i>');
+	});
+
+	it('drops a closer with no opener', () => {
+		expect(balanceInline("Theodotion's Edition.</i>")).toBe("Theodotion's Edition.");
+	});
+
+	it('leaves balanced text untouched', () => {
+		expect(balanceInline('the <i>Lord</i> God')).toBe('the <i>Lord</i> God');
+	});
+
+	it('is only applied to enumerated refs', () => {
+		expect(KNOWN_UNBALANCED.has('daniel ann 12:7')).toBe(true);
+		expect(KNOWN_UNBALANCED.size).toBe(1);
 	});
 });
 
@@ -371,6 +392,21 @@ describe('renderAnnotation', () => {
 	it('omits \\fq when the annotation has no title', () => {
 		const out = renderAnnotation({ verse: 1, title: null, text: 'body' }, 1, 'ref');
 		expect(out).toBe('\\ef - \\fr 1.1 \\ft body\\ef*');
+	});
+
+	it('still throws on unbalanced note formatting at an unlisted ref', () => {
+		expect(() =>
+			renderAnnotation(
+				{
+					verse: 1,
+					title: 'A.',
+					text: '<mn>[1]</mn> part',
+					notes: [{ marker: 1, text: '<i>unterminated' }]
+				},
+				1,
+				'ref'
+			)
+		).toThrow(ExportError);
 	});
 });
 

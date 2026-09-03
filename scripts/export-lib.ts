@@ -233,6 +233,18 @@ export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
 ]);
 
 /**
+ * The one annotation whose inline formatting does not balance inside a single
+ * note. Daniel 12:7 opens <i> on its list of Fathers in note 3 and closes it in
+ * note 4 — one italic run the printed source spread across two footnotes, which
+ * a string-per-note shape cannot represent. Rendered independently, note 3 has
+ * an unclosed tag and note 4 an orphaned closer.
+ *
+ * Listed rather than repaired: static/data/odr/ is hand-maintained and this
+ * export only reads it.
+ */
+export const KNOWN_UNBALANCED: ReadonlySet<string> = new Set(['daniel ann 12:7']);
+
+/**
  * Fail on any irregularity that is not one of the 28 recorded above.
  *
  * The list is data rather than a tolerance rule on purpose. A rule that simply
@@ -404,10 +416,49 @@ export interface Verse {
 
 const CHAR_MARKERS: Partial<Record<TagName, string>> = { i: 'it', sc: 'sc' };
 
+/**
+ * Drops a closing tag with no matching opener and appends closers for any tag
+ * still open at the end, leaving everything else byte for byte as it was.
+ * Void tags (<br>) are not tracked. Exists only for KNOWN_UNBALANCED refs; the
+ * text is otherwise left to fail tokenize()'s strict balance check.
+ */
+export function balanceInline(text: string): string {
+	const open: TagName[] = [];
+	let out = '';
+	let cursor = 0;
+
+	for (const m of text.matchAll(TAG_RE)) {
+		const [raw, slash, rawName] = m;
+		const name = rawName as TagName;
+		const at = m.index!;
+		out += text.slice(cursor, at);
+		cursor = at + raw.length;
+
+		if (VOID_TAGS.has(name)) {
+			out += raw;
+			continue;
+		}
+		if (slash === '/') {
+			if (open.length && open[open.length - 1] === name) {
+				open.pop();
+				out += raw;
+			}
+			// else: orphaned closer, dropped
+		} else {
+			open.push(name);
+			out += raw;
+		}
+	}
+	out += text.slice(cursor);
+	for (let i = open.length - 1; i >= 0; i--) out += `</${open[i]}>`;
+	return out;
+}
+
 /** Inline formatting only. Used for note bodies, where markers never occur. */
 function renderInline(text: string, block: BlockKind, ref: string): string {
+	const source = KNOWN_UNBALANCED.has(ref) ? balanceInline(text) : text;
 	let out = '';
-	for (const node of tokenize(text, block, ref)) {
+	for (const node of tokenize(source, block, ref)) {
 		if (node.kind === 'text') {
 			out += node.value;
 		} else if (CHAR_MARKERS[node.name]) {
