@@ -392,3 +392,119 @@ export function usfmFilename(slug: string): string {
 	const { usfm, ordinal } = bookCode(slug);
 	return `${String(ordinal).padStart(2, '0')}-${usfm}.usfm`;
 }
+
+export interface Verse {
+	verse: number;
+	text: string;
+	notes?: NoteLike[];
+	cross_refs?: Array<{ text: string }>;
+	has_annotation?: boolean;
+	lemmas?: Array<[number, number, number]>;
+}
+
+const CHAR_MARKERS: Partial<Record<TagName, string>> = { i: 'it', sc: 'sc' };
+
+/** Inline formatting only. Used for note bodies, where markers never occur. */
+function renderInline(text: string, block: BlockKind, ref: string): string {
+	let out = '';
+	for (const node of tokenize(text, block, ref)) {
+		if (node.kind === 'text') {
+			out += node.value;
+		} else if (CHAR_MARKERS[node.name]) {
+			out += node.close ? `\\${CHAR_MARKERS[node.name]}*` : `\\${CHAR_MARKERS[node.name]} `;
+		} else if (node.name === 'br') {
+			out += '\n';
+		}
+	}
+	return out;
+}
+
+/**
+ * One verse as USFM.
+ *
+ * <alt> marks the span a marginal variant applies to. USFM has no body-text
+ * marker for that, and needs none: \fq inside the note is exactly "the words
+ * this note is about". So the span stays plain in the body and is repeated as
+ * \fq in its footnote, which is the idiomatic form.
+ */
+export function renderVerse(verse: Verse, chapter: number, ref: string): string {
+	const notes = verse.notes ?? [];
+	const refs = verse.cross_refs ?? [];
+	const bound = bindMarkers(verse.text, notes, 'verse', ref);
+	assertOnlyKnownDefects(bound, notes, ref);
+
+	// Keyed by offset, and a list because one tag may carry several tokens:
+	// `<na>(c)[1]</na>` is two markers at one position, so both notes print.
+	const notesAt = new Map<number, MarkerHit[]>();
+	for (const hit of bound.hits) {
+		if (!notesAt.has(hit.start)) notesAt.set(hit.start, []);
+		notesAt.get(hit.start)!.push(hit);
+	}
+	const altFor = new Map<number, string>(); // marker offset -> alt words
+	const nodes = tokenize(verse.text, 'verse', ref);
+
+	// Pair each <alt> with the nearest marker on either side.
+	for (let i = 0; i < nodes.length; i++) {
+		const n = nodes[i];
+		if (n.kind !== 'tag' || n.close || n.name !== 'alt') continue;
+		let words = '';
+		for (let j = i + 1; j < nodes.length; j++) {
+			const m = nodes[j];
+			if (m.kind === 'tag' && m.close && m.name === 'alt') break;
+			if (m.kind === 'text') words += m.value;
+		}
+		const before = nodes
+			.slice(0, i)
+			.reverse()
+			.find((m) => m.kind === 'tag' && !m.close && m.name !== 'alt');
+		const after = nodes
+			.slice(i)
+			.find((m) => m.kind === 'tag' && !m.close && (m.name === 'na' || m.name === 'cr'));
+		const anchor =
+			before?.kind === 'tag' && (before.name === 'na' || before.name === 'cr') ? before : after;
+		if (anchor?.kind === 'tag') altFor.set(anchor.start, words.trim());
+	}
+
+	let out = `\\v ${verse.verse} `;
+	let crossRefIndex = 0;
+	let skipUntilClose: TagName | null = null;
+
+	for (const node of nodes) {
+		if (node.kind === 'text') {
+			if (!skipUntilClose) out += node.value;
+			continue;
+		}
+		if (skipUntilClose) {
+			if (node.close && node.name === skipUntilClose) skipUntilClose = null;
+			continue;
+		}
+		if (node.close) {
+			if (CHAR_MARKERS[node.name]) out += `\\${CHAR_MARKERS[node.name]}*`;
+			continue;
+		}
+		if (CHAR_MARKERS[node.name]) {
+			out += `\\${CHAR_MARKERS[node.name]} `;
+		} else if (node.name === 'na') {
+			skipUntilClose = 'na';
+			const alt = altFor.get(node.start);
+			// Empty when the marker is one of the pinned defects, in which case
+			// it prints nothing rather than a dangling \f.
+			for (const hit of notesAt.get(node.start) ?? []) {
+				const body = renderInline(notes[hit.noteIndex].text, 'verse', ref);
+				const fq = alt ? `\\fq ${alt} ` : '';
+				out += `\\f ${hit.token} \\fr ${chapter}.${verse.verse} ${fq}\\ft ${body}\\f*`;
+			}
+		} else if (node.name === 'cr') {
+			skipUntilClose = 'cr';
+			const target = refs[crossRefIndex++];
+			if (!target) throw new ExportError(ref, 'cross-reference marker with no cross_refs entry');
+			out += `\\x - \\xt ${target.text}\\x*`;
+		}
+		// <alt> delimiters themselves emit nothing; their words fall through as text.
+	}
+
+	if (crossRefIndex !== refs.length) {
+		throw new ExportError(ref, `${refs.length - crossRefIndex} cross_refs with no marker`);
+	}
+	return out.replace(/[ \t]{2,}/g, ' ').trimEnd();
+}

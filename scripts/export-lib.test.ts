@@ -14,7 +14,8 @@ import {
 	KNOWN_UNREFERENCED,
 	stripMarkup,
 	BOOK_CODES,
-	usfmFilename
+	usfmFilename,
+	renderVerse
 } from './export-lib';
 
 describe('tokenize', () => {
@@ -267,5 +268,56 @@ describe('BOOK_CODES', () => {
 
 	it('throws on an unknown slug', () => {
 		expect(() => usfmFilename('nonesuch')).toThrow(ExportError);
+	});
+});
+
+describe('renderVerse', () => {
+	it('emits \\v with plain text', () => {
+		expect(renderVerse({ verse: 3, text: 'And God said' }, 1, 'ref')).toBe('\\v 3 And God said');
+	});
+
+	it('maps <sc> and <i> to character markers', () => {
+		const out = renderVerse({ verse: 1, text: '<sc>Paul</sc> an <i>Apostle</i>' }, 1, 'ref');
+		expect(out).toBe('\\v 1 \\sc Paul\\sc* an \\it Apostle\\it*');
+	});
+
+	it('turns a note marker into a footnote reusing the original label', () => {
+		const out = renderVerse(
+			{ verse: 1, text: 'Paul <na>[1]</na> called', notes: [{ label: '1', text: 'The Epistle.' }] },
+			1,
+			'ref'
+		);
+		expect(out).toBe('\\v 1 Paul \\f 1 \\fr 1.1 \\ft The Epistle.\\f* called');
+	});
+
+	it('keeps a lettered label', () => {
+		const out = renderVerse(
+			{ verse: 2, text: 'x <na>(a)</na> y', notes: [{ label: 'a', text: 'note' }] },
+			5,
+			'ref'
+		);
+		expect(out).toContain('\\f a \\fr 5.2 \\ft note\\f*');
+	});
+
+	it('turns a cross-reference into \\x', () => {
+		const out = renderVerse(
+			{ verse: 14, text: 'but <cr>[1]</cr> Crispus', cross_refs: [{ text: 'Act. 18, 8.' }] },
+			1,
+			'ref'
+		);
+		expect(out).toBe('\\v 14 but \\x - \\xt Act. 18, 8.\\x* Crispus');
+	});
+
+	it('moves an <alt> span into its footnote as \\fq', () => {
+		const out = renderVerse(
+			{
+				verse: 4,
+				text: 'are you not <na>[1]</na> <alt>men</alt>?',
+				notes: [{ label: '1', text: '<i>carnal</i>' }]
+			},
+			3,
+			'ref'
+		);
+		expect(out).toBe('\\v 4 are you not \\f 1 \\fr 3.4 \\fq men \\ft \\it carnal\\it*\\f* men?');
 	});
 });
