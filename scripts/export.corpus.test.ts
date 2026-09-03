@@ -316,7 +316,19 @@ describe('the corpus markup', () => {
 					carriers++;
 					const ref = `${meta.slug} ${chapter.chapter}:0`;
 					const words = stripMarkup(zero.text, 'verse', ref).replace(/\s+/g, ' ');
-					const cd = lines.find((l) => l.startsWith('\\cd ') && l.includes(words));
+					// The fold keeps <i>/<sc> as \it/\sc, so the words are no longer a
+					// contiguous substring of the raw line. Drop the markers from the
+					// emitted \cd before looking for them; the words themselves still
+					// have to be there, in order.
+					// Closing markers first, and without eating a following space: only an
+					// opening marker consumes one, so `\sc*` before ` come` must leave it
+					// or the words run together as "Jesuscome".
+					const plain = (l: string) =>
+						l
+							.replace(/\\\+?[a-z0-9]+\*/g, '')
+							.replace(/\\\+?[a-z0-9]+ ?/g, '')
+							.replace(/\s+/g, ' ');
+					const cd = lines.find((l) => l.startsWith('\\cd ') && plain(l).includes(words));
 					if (!cd) missing.push(ref);
 				}
 			}
@@ -349,9 +361,11 @@ describe('the corpus markup', () => {
 						lost.push(`${meta.slug} ${chapter.chapter}:0 note`);
 					}
 				}
+				// Standalone \\xt, the one cross-reference form the \\cd content
+				// model admits; an \\x note there is a hard parse error.
 				for (const x of zero.cross_refs ?? []) {
 					crossRefs++;
-					if (!usfm.includes(`\\x - \\xt ${x.text}\\x*`)) {
+					if (!usfm.includes(`\\xt ${x.text}\\xt*`)) {
 						lost.push(`${meta.slug} ${chapter.chapter}:0 xref ${x.text}`);
 					}
 				}

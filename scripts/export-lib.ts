@@ -839,10 +839,16 @@ const SEGMENTS = 'bcdefghijklmnopqrstuvwxyz';
  *
  * The fragment is tagged as a verse, not a summary (`acts 7` puts <sc>Jesus</sc>
  * in one, which the summary vocabulary forbids), so it tokenizes as `verse`.
- * Its notes and cross-references travel with it in marker order, in the same
- * trailing \f/\x form \cd already gives summary notes — \cd is one line, so
- * no note can sit at its marker. 10 of the 49 carry notes and one, the Tobias
- * preface, carries five cross-references.
+ * Its notes and cross-references travel with it in marker order, trailing the
+ * text rather than sitting at their markers, because \cd is one line. 10 of
+ * the 49 carry notes and one, the Tobias preface, carries cross-references.
+ *
+ * A cross-reference leaves as a standalone `\xt …\xt*`, not the `\x …\x*`
+ * note a verse gets. The USFM 3 content model for \cd is
+ * `repeat1(choice(text, _characterMarker, fig, xt_standalone))`: it admits the
+ * standalone form and not the note, and unlike \f there is no \x alternative
+ * in _chapterContent to recover on, so an \x here is a hard parse error.
+ * See https://ubsicap.github.io/usfm/notes_basic/xrefs.html#xt
  */
 function renderSummaryOverflow(verse: Verse, ref: string): string {
 	const notes = verse.notes ?? [];
@@ -856,24 +862,47 @@ function renderSummaryOverflow(verse: Verse, ref: string): string {
 		notesAt.get(hit.start)!.push(hit);
 	}
 
-	let out = stripMarkup(verse.text, 'verse', ref);
+	// Walks the nodes rather than calling stripMarkup, which would discard the
+	// formatting: 34 of the 49 fragments carry <i> or <sc>, and acts 7 ends
+	// `<i>he commending his soul to <sc>Jesus</sc>…</i>`. \cd admits
+	// _characterMarker, so the emphasis survives the fold.
+	let body = '';
+	let trailer = '';
 	let crossRefIndex = 0;
+	let skipUntilClose: TagName | null = null;
+
 	for (const node of tokenize(verse.text, 'verse', ref)) {
-		if (node.kind !== 'tag' || node.close) continue;
-		if (node.name === 'na') {
+		if (node.kind === 'text') {
+			if (!skipUntilClose) body += node.value;
+			continue;
+		}
+		if (skipUntilClose) {
+			if (node.close && node.name === skipUntilClose) skipUntilClose = null;
+			continue;
+		}
+		if (node.close) {
+			// A \cd body is not a character environment, so these stay bare.
+			if (CHAR_MARKERS[node.name]) body += charMarker(CHAR_MARKERS[node.name]!, true, false);
+			continue;
+		}
+		if (CHAR_MARKERS[node.name]) {
+			body += charMarker(CHAR_MARKERS[node.name]!, false, false);
+		} else if (node.name === 'na') {
+			skipUntilClose = 'na';
 			for (const hit of notesAt.get(node.start) ?? []) {
-				out += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'verse', ref, true)}\\f*`;
+				trailer += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'verse', ref, true)}\\f*`;
 			}
 		} else if (node.name === 'cr') {
+			skipUntilClose = 'cr';
 			const target = refs[crossRefIndex++];
 			if (!target) throw new ExportError(ref, 'cross-reference marker with no cross_refs entry');
-			out += ` \\x - \\xt ${target.text}\\x*`;
+			trailer += ` \\xt ${target.text}\\xt*`;
 		}
 	}
 	if (crossRefIndex !== refs.length) {
 		throw new ExportError(ref, `${refs.length - crossRefIndex} cross_refs with no marker`);
 	}
-	return out;
+	return body + trailer;
 }
 
 export function renderUsfm(

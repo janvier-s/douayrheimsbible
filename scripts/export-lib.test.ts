@@ -656,10 +656,12 @@ describe('renderUsfm', () => {
 			{ includeAnnotations: false },
 			'Genesis'
 		);
+		// A \\cd admits xt_standalone and not a full \\x note.
 		expect(out).toContain(
-			'\\cd his coming to judge the world. \\x - \\xt cap. 13.\\x* \\f - \\ft The Church in all nations.\\f*'
+			'\\cd his coming to judge the world. \\xt cap. 13.\\xt* \\f - \\ft The Church in all nations.\\f*'
 		);
 		expect(out).not.toContain('\\v 0');
+		expect(out).not.toContain('\\x -');
 	});
 
 	it('does not let a second intro inherit the first one’s pin', () => {
