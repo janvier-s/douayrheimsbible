@@ -250,3 +250,32 @@ export function assertOnlyKnownDefects(result: BindResult, notes: NoteLike[], re
 		}
 	}
 }
+
+const MARKER_TAGS: ReadonlySet<TagName> = new Set<TagName>(['na', 'mn', 'cr']);
+
+/** Plain prose: markers gone entirely, formatting delimiters gone but their
+ *  words kept. Notes and cross-references survive as structured data in the
+ *  JSON alongside, so nothing is actually lost by dropping the anchors here. */
+export function stripMarkup(text: string, block: BlockKind, ref: string): string {
+	let out = '';
+	let skipUntilClose: TagName | null = null;
+
+	for (const node of tokenize(text, block, ref)) {
+		if (node.kind === 'tag') {
+			if (skipUntilClose) {
+				if (node.close && node.name === skipUntilClose) skipUntilClose = null;
+				continue;
+			}
+			if (!node.close && MARKER_TAGS.has(node.name)) {
+				skipUntilClose = node.name;
+				continue;
+			}
+			if (node.name === 'br') out += '\n';
+			continue;
+		}
+		if (!skipUntilClose) out += node.value;
+	}
+
+	// Removing a marker leaves the space on either side of it.
+	return out.replace(/[ \t]{2,}/g, ' ').trim();
+}

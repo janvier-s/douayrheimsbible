@@ -11,7 +11,8 @@ import {
 	bindMarkers,
 	assertOnlyKnownDefects,
 	KNOWN_UNBOUND,
-	KNOWN_UNREFERENCED
+	KNOWN_UNREFERENCED,
+	stripMarkup
 } from './export-lib';
 
 describe('tokenize', () => {
@@ -183,5 +184,37 @@ describe('the known-defect list', () => {
 		const notes = [{ label: '1', text: 'x' }];
 		const r = bindMarkers('no marker here', notes, 'verse', 'genesis 1:1');
 		expect(() => assertOnlyKnownDefects(r, notes, 'genesis 1:1')).toThrow(/unreferenced/);
+	});
+});
+
+describe('stripMarkup', () => {
+	it('keeps the words inside formatting tags', () => {
+		expect(stripMarkup('the <i>Lord</i> God', 'verse', 'ref')).toBe('the Lord God');
+		expect(stripMarkup('<sc>Paul</sc> called', 'verse', 'ref')).toBe('Paul called');
+	});
+
+	it('removes markers and their content', () => {
+		expect(stripMarkup('a <na>[1]</na> b', 'verse', 'ref')).toBe('a b');
+		expect(stripMarkup('a <cr>[1]</cr> b', 'verse', 'ref')).toBe('a b');
+	});
+
+	it('keeps the words inside <alt>', () => {
+		expect(stripMarkup('are you not <na>[1]</na> <alt>men</alt>?', 'verse', 'ref')).toBe(
+			'are you not men?'
+		);
+	});
+
+	it('turns <br> into a newline', () => {
+		expect(stripMarkup('one<br>two', 'prose', 'ref')).toBe('one\ntwo');
+	});
+
+	it('leaves no angle bracket behind', () => {
+		const messy = '<sc>A</sc> <i>b <na>(a)</na> c</i>';
+		expect(stripMarkup(messy, 'verse', 'ref')).not.toMatch(/[<>]/);
+	});
+
+	it('is idempotent', () => {
+		const once = stripMarkup('a <i>b</i> <na>[1]</na> c', 'verse', 'ref');
+		expect(stripMarkup(once, 'verse', 'ref')).toBe(once);
 	});
 });
