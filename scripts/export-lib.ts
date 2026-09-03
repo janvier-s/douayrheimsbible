@@ -417,6 +417,19 @@ export interface Verse {
 const CHAR_MARKERS: Partial<Record<TagName, string>> = { i: 'it', sc: 'sc' };
 
 /**
+ * A character marker, opening or closing.
+ *
+ * `nested` emits the `\+` form, which USFM 3 requires for a character marker
+ * used inside an existing character environment - a note body is one, so
+ * everything inside \f/\ef/\x nests and body text does not.
+ * See https://ubsicap.github.io/usfm/characters/nesting.html
+ */
+function charMarker(name: string, close: boolean, nested: boolean): string {
+	const prefix = nested ? '\\+' : '\\';
+	return close ? `${prefix}${name}*` : `${prefix}${name} `;
+}
+
+/**
  * Collapses every run of whitespace to one space.
  *
  * Only for values of markers whose content must stay on one line (\h, \toc1-3,
@@ -464,15 +477,21 @@ export function balanceInline(text: string): string {
 	return out;
 }
 
-/** Inline formatting only. Used for note bodies, where markers never occur. */
-function renderInline(text: string, block: BlockKind, ref: string): string {
+/**
+ * Inline formatting only. Used for note bodies, where markers never occur.
+ *
+ * `nested` is always true at every call site today - every one places the
+ * result inside a \f or \ef - but it stays explicit so a body-text caller
+ * cannot silently inherit the wrong form.
+ */
+function renderInline(text: string, block: BlockKind, ref: string, nested: boolean): string {
 	const source = KNOWN_UNBALANCED.has(ref) ? balanceInline(text) : text;
 	let out = '';
 	for (const node of tokenize(source, block, ref)) {
 		if (node.kind === 'text') {
 			out += node.value;
 		} else if (CHAR_MARKERS[node.name]) {
-			out += node.close ? `\\${CHAR_MARKERS[node.name]}*` : `\\${CHAR_MARKERS[node.name]} `;
+			out += charMarker(CHAR_MARKERS[node.name]!, node.close, nested);
 		} else if (node.name === 'br') {
 			out += '\n';
 		}
@@ -540,18 +559,19 @@ export function renderVerse(verse: Verse, chapter: number, ref: string): string 
 			continue;
 		}
 		if (node.close) {
-			if (CHAR_MARKERS[node.name]) out += `\\${CHAR_MARKERS[node.name]}*`;
+			// Body text, outside any character environment: no \+ prefix.
+			if (CHAR_MARKERS[node.name]) out += charMarker(CHAR_MARKERS[node.name]!, true, false);
 			continue;
 		}
 		if (CHAR_MARKERS[node.name]) {
-			out += `\\${CHAR_MARKERS[node.name]} `;
+			out += charMarker(CHAR_MARKERS[node.name]!, false, false);
 		} else if (node.name === 'na') {
 			skipUntilClose = 'na';
 			const alt = altFor.get(node.start);
 			// Empty when the marker is one of the pinned defects, in which case
 			// it prints nothing rather than a dangling \f.
 			for (const hit of notesAt.get(node.start) ?? []) {
-				const body = renderInline(notes[hit.noteIndex].text, 'verse', ref);
+				const body = renderInline(notes[hit.noteIndex].text, 'verse', ref, true);
 				const fq = alt ? `\\fq ${alt} ` : '';
 				out += `\\f ${hit.token} \\fr ${chapter}.${verse.verse} ${fq}\\ft ${body}\\f*`;
 			}
@@ -628,7 +648,8 @@ export function renderAnnotation(ann: Annotation, chapter: number, ref: string):
 			skip = true;
 			for (const ordinal of ordinalsAt.get(node.start) ?? []) body += superscript(ordinal);
 		} else if (CHAR_MARKERS[node.name]) {
-			body += node.close ? `\\${CHAR_MARKERS[node.name]}*` : `\\${CHAR_MARKERS[node.name]} `;
+			// The whole body sits inside \ef, so these nest.
+			body += charMarker(CHAR_MARKERS[node.name]!, node.close, true);
 		} else if (node.name === 'br') {
 			body += ' ';
 		}
@@ -646,7 +667,7 @@ export function renderAnnotation(ann: Annotation, chapter: number, ref: string):
 	parts.push(`\\ft ${body}`);
 
 	const trailing = bound.hits.map((hit, i) => {
-		const text = renderInline(notes[hit.noteIndex].text, 'prose', ref);
+		const text = renderInline(notes[hit.noteIndex].text, 'prose', ref, true);
 		return `\\fq ${superscript(i + 1)} \\ft ${text}`;
 	});
 
@@ -709,10 +730,11 @@ function renderProse(block: Prose, ref: string): string[] {
 		if (node.name === 'mn' && !node.close) {
 			skip = true;
 			for (const hit of notesAt.get(node.start) ?? []) {
-				flat += `\\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref)}\\f*`;
+				flat += `\\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref, true)}\\f*`;
 			}
 		} else if (CHAR_MARKERS[node.name]) {
-			flat += node.close ? `\\${CHAR_MARKERS[node.name]}*` : `\\${CHAR_MARKERS[node.name]} `;
+			// Body text of an \ip paragraph, outside any character environment.
+			flat += charMarker(CHAR_MARKERS[node.name]!, node.close, false);
 		} else if (node.name === 'br') {
 			flat += '\n';
 		}
@@ -767,7 +789,7 @@ export function renderUsfm(
 			// one thing that does not survive here; the JSON keeps it.
 			let cd = stripMarkup(chapter.summary, 'summary', ref);
 			for (const hit of bound.hits) {
-				cd += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref)}\\f*`;
+				cd += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref, true)}\\f*`;
 			}
 			// 113 summaries and their notes carry literal newlines; \cd is one line.
 			lines.push(`\\cd ${oneLine(cd)}`);

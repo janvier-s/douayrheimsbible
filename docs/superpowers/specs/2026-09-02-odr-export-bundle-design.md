@@ -268,8 +268,8 @@ Both trees are one `renderUsfm()` call differing by the `includeAnnotations` fla
 | `chapters[].summary` | `\cd` |
 | `summary_notes[]` | `\f + \ft …\f*` on the `\cd` |
 | `chapters[].articles` | `\is` heading + `\ip` |
-| `<sc>…</sc>` | `\sc …\sc*` |
-| `<i>…</i>` | `\it …\it*` |
+| `<sc>…</sc>` | `\sc …\sc*` in body text, `\+sc …\+sc*` inside a note |
+| `<i>…</i>` | `\it …\it*` in body text, `\+it …\+it*` inside a note |
 | `<br>`, and `\n\n` in prose | end the `\ip`, open a new one |
 | `<col-left>`, `<col-right>` | flattened to sequential text |
 | `<cr>…</cr>` + its `cross_refs` entry | `\x - \xt …\x*` inline at the marker |
@@ -280,10 +280,10 @@ Both trees are one `renderUsfm()` call differing by the `includeAnnotations` fla
 `<alt>` needs no invented body-text marker. USFM already models "the words this note is about" as `\fq` *inside* the note, which is exactly what `<alt>` encodes:
 
 ```usfm
-are you not \f 1 \fr 3.4 \fq men \ft \it carnal\it*\f* ?
+are you not \f 1 \fr 3.4 \fq men \ft \+it carnal\+it*\f* ?
 ```
 
-The span stays legible in the body, and the association survives in the form USFM was designed for.
+The span stays legible in the body, and the association survives in the form USFM was designed for. Note the `\+it`: a footnote is a character environment, so any character marker inside one takes the `\+` prefix on both the opening and the closing form. Body text takes the bare form. This is the rule stated below for `\+nd`, and it applies to every character marker this export emits.
 
 `\eft` does not exist. USFM 3.0 deliberately avoided minting parallel content markers for study notes: `\ef` reuses the ordinary footnote content markers (`\fr`, `\fq`, `\fk`, `\ft`). Confirmed against the spec, not assumed.
 

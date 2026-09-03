@@ -305,6 +305,13 @@ describe('renderVerse', () => {
 		expect(out).toBe('\\v 1 \\sc Paul\\sc* an \\it Apostle\\it*');
 	});
 
+	// Body text is outside any character environment, so these stay bare - the
+	// \+ form is only for markers nested inside a note. See the note-body tests.
+	it('leaves body-text character markers unprefixed', () => {
+		const out = renderVerse({ verse: 1, text: '<sc>Paul</sc> an <i>Apostle</i>' }, 1, 'ref');
+		expect(out).not.toContain('\\+');
+	});
+
 	it('collapses a literal newline in the verse text onto one line', () => {
 		const out = renderVerse({ verse: 1, text: 'And God\nsaid' }, 1, 'ref');
 		expect(out).toBe('\\v 1 And God said');
@@ -347,7 +354,8 @@ describe('renderVerse', () => {
 			3,
 			'ref'
 		);
-		expect(out).toBe('\\v 4 are you not \\f 1 \\fr 3.4 \\fq men \\ft \\it carnal\\it*\\f* men?');
+		// \+it, not \it: the note body is already inside the \f character environment.
+		expect(out).toBe('\\v 4 are you not \\f 1 \\fr 3.4 \\fq men \\ft \\+it carnal\\+it*\\f* men?');
 	});
 });
 
@@ -393,6 +401,25 @@ describe('renderAnnotation', () => {
 		);
 		expect(out).toContain('text ¹ more');
 		expect(out).toContain('\\fq ¹ \\ft src');
+	});
+
+	// The whole \ef body, and each trailing sub-note, sit inside a character
+	// environment: USFM 3 requires \+it there.
+	// https://ubsicap.github.io/usfm/characters/nesting.html
+	it('nests character markers inside the note with \\+', () => {
+		const out = renderAnnotation(
+			{
+				verse: 1,
+				title: 'A.',
+				text: 'see <i>Gen.</i> <mn>[1]</mn>',
+				notes: [{ marker: 1, text: '<sc>Aug.</sc>' }]
+			},
+			1,
+			'ref'
+		);
+		expect(out).toBe(
+			'\\ef - \\fr 1.1 \\fq A. \\ft see \\+it Gen.\\+it* ¹ \\fq ¹ \\ft \\+sc Aug.\\+sc*\\ef*'
+		);
 	});
 
 	it('omits \\fq when the annotation has no title', () => {
