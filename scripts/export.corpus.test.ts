@@ -318,6 +318,37 @@ describe('the corpus markup', () => {
 		expect([...repeated].sort()).toEqual([...KNOWN_DUPLICATE_VERSE].sort());
 	});
 
+	// 102 of the 106 <alt> spans anchor to an <na> and reach the reader as \fq
+	// inside the footnote; the other four anchor to a <cr>, and the cross-
+	// reference note's equivalent element is \xq. Asserting the count as well as
+	// the four strings is what catches a fifth appearing or one of these being
+	// re-anchored.
+	it('renders every <cr>-anchored <alt> span as \\xq', () => {
+		const expected: Record<string, string> = {
+			matthew: '\\x - \\xq make \\xt Gen. 1, 27.\\x*',
+			mark: '\\x - \\xq Esay the Prophet \\xt Esa. 40, 3.\\x*',
+			acts: '\\x - \\xq to our children \\xt Ps. 2, 7.\\x*',
+			jude: '\\x - \\xq which \\xt Gen. 4, 8.\\x*'
+		};
+		let total = 0;
+		const missing: string[] = [];
+		for (const meta of ALL_BOOKS) {
+			const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
+			const usfm = renderUsfm(
+				meta.slug,
+				book,
+				readAnnotations(meta.slug),
+				{ includeAnnotations: false },
+				meta.odrName
+			);
+			total += usfm.split('\\xq ').length - 1;
+			const want = expected[meta.slug];
+			if (want && !usfm.includes(want)) missing.push(meta.slug);
+		}
+		expect(missing).toEqual([]);
+		expect(total).toBe(4);
+	});
+
 	it('covers every book with a unique code', () => {
 		expect(ALL_BOOKS).toHaveLength(76);
 		expect(ALL_BOOKS.every((b) => BOOK_CODES[b.slug])).toBe(true);

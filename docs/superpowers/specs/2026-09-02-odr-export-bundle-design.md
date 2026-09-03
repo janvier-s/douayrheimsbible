@@ -191,6 +191,8 @@ It is New Testament only (21 books, 106 spans). It normally follows its marker, 
 
 So `<alt>` binds to the **nearest adjacent marker on either side**, and that marker may be a `<cr>`. A rule that only looks backwards for `<na>` misses five cases.
 
+The anchor decides the element the words come back as: `\fq` inside the `\f` when it is an `<na>`, `\xq` inside the `\x` when it is a `<cr>`. `\xq` is the cross-reference note's own "quotation from the scripture text" ([USFM cross-reference markers](https://ubsicap.github.io/usfm/notes_basic/xrefs.html)), so nothing has to be invented for the four `<cr>`-anchored spans — `matthew 19:4`, `mark 1:2`, `acts 13:33`, `jude 1:11`.
+
 ### Book codes: the composite-book rule
 
 Four places in the ODR carry a book that USFM also publishes in split form. One rule settles all of them:
@@ -304,7 +306,7 @@ Both trees are one `renderUsfm()` call differing by the `includeAnnotations` fla
 | `<col-left>`, `<col-right>` | flattened to sequential text |
 | `<cr>…</cr>` + its `cross_refs` entry | `\x - \xt …\x*` inline at the marker |
 | verse `notes[]` (`label`) | `\f <label> \fr c.v \ft …\f*`, reusing the original token |
-| `<alt>…</alt>` | body text kept plain; the span becomes `\fq` inside the bound note |
+| `<alt>…</alt>` | body text kept plain; the span becomes `\fq` inside the bound footnote, or `\xq` where it anchors to a `<cr>` |
 | annotations (`usfm-study/` only) | `\ef - \fr c.v \fq <title> \ft <text>\ef*` |
 
 `<alt>` needs no invented body-text marker. USFM already models "the words this note is about" as `\fq` *inside* the note, which is exactly what `<alt>` encodes:

@@ -360,6 +360,64 @@ describe('renderVerse', () => {
 		// \+it, not \it: the note body is already inside the \f character environment.
 		expect(out).toBe('\\v 4 are you not \\f 1 \\fr 3.4 \\fq men \\ft \\+it carnal\\+it*\\f* men?');
 	});
+
+	it('moves an <alt> span anchored to a <cr> into its \\x as \\xq', () => {
+		const out = renderVerse(
+			{
+				verse: 4,
+				text: 'he which did <cr>[1]</cr> <alt>make</alt> from the beginning,',
+				cross_refs: [{ text: 'Gen. 1, 27.' }]
+			},
+			19,
+			'ref'
+		);
+		expect(out).toBe(
+			'\\v 4 he which did \\x - \\xq make \\xt Gen. 1, 27.\\x* make from the beginning,'
+		);
+	});
+
+	it('anchors an <alt> between two <cr> to the one before it', () => {
+		const out = renderVerse(
+			{
+				verse: 2,
+				text: 'written in <cr>[1]</cr> <alt>Esay the Prophet</alt> <cr>[2]</cr> :',
+				cross_refs: [{ text: 'Esa. 40, 3.' }, { text: 'Mal. 3, 1.' }]
+			},
+			1,
+			'ref'
+		);
+		expect(out).toContain('\\x - \\xq Esay the Prophet \\xt Esa. 40, 3.\\x*');
+		// The second reference is not the anchor, so it stays bare.
+		expect(out).toContain('\\x - \\xt Mal. 3, 1.\\x*');
+	});
+
+	it('keeps a <cr> with no <alt> bare', () => {
+		const out = renderVerse(
+			{
+				verse: 33,
+				text: 'this same <cr>[1]</cr>, raising up <sc>Jesus</sc>',
+				cross_refs: [{ text: 'Ps. 2, 7.' }]
+			},
+			13,
+			'ref'
+		);
+		expect(out).toContain('\\x - \\xt Ps. 2, 7.\\x*');
+		expect(out).not.toContain('\\xq');
+	});
+
+	it('still sends an <alt> anchored to an <na> to \\fq, not \\xq', () => {
+		const out = renderVerse(
+			{
+				verse: 11,
+				text: 'way of <na>[2]</na> <alt>Cain</alt>:',
+				notes: [{ label: '2', text: 'gloss' }]
+			},
+			1,
+			'ref'
+		);
+		expect(out).toContain('\\fq Cain ');
+		expect(out).not.toContain('\\xq');
+	});
 });
 
 describe('renderAnnotation', () => {
@@ -515,7 +573,7 @@ describe('renderUsfm', () => {
 		expect(out).toContain('\\mt1 3 Esdras');
 	});
 
-	it('folds a verse-0 summary tail onto the \cd instead of emitting \v 0', () => {
+	it('folds a verse-0 summary tail onto the \\cd instead of emitting \\v 0', () => {
 		const spilled = {
 			...book,
 			chapters: [
@@ -536,7 +594,7 @@ describe('renderUsfm', () => {
 		expect(out).toContain('\\v 1 And Israel abode.');
 	});
 
-	it('makes the fragment the whole \cd when the chapter has no summary', () => {
+	it('makes the fragment the whole \\cd when the chapter has no summary', () => {
 		const noSummary = {
 			...book,
 			chapters: [
@@ -560,7 +618,7 @@ describe('renderUsfm', () => {
 		expect(out).not.toContain('\\v 0');
 	});
 
-	it('carries the fragment notes and cross-references onto the \cd', () => {
+	it('carries the fragment notes and cross-references onto the \\cd', () => {
 		const withApparatus = {
 			...book,
 			chapters: [

@@ -525,7 +525,10 @@ function renderInline(text: string, block: BlockKind, ref: string, nested: boole
  * <alt> marks the span a marginal variant applies to. USFM has no body-text
  * marker for that, and needs none: \fq inside the note is exactly "the words
  * this note is about". So the span stays plain in the body and is repeated as
- * \fq in its footnote, which is the idiomatic form.
+ * \fq in its footnote, which is the idiomatic form. Where the span anchors to
+ * a <cr> instead, the same words go in as \xq, the cross-reference note's
+ * equivalent element.
+ * See https://ubsicap.github.io/usfm/notes_basic/xrefs.html
  */
 export function renderVerse(
 	verse: Verse,
@@ -606,7 +609,13 @@ export function renderVerse(
 			skipUntilClose = 'cr';
 			const target = refs[crossRefIndex++];
 			if (!target) throw new ExportError(ref, 'cross-reference marker with no cross_refs entry');
-			out += `\\x - \\xt ${target.text}\\x*`;
+			// \xq is the cross-reference note's own "the words this note is
+			// about", the counterpart of \fq in a footnote. Four <alt> spans
+			// anchor to a <cr> rather than an <na> (matthew 19:4, mark 1:2,
+			// acts 13:33, jude 1:11) and would otherwise be computed and dropped.
+			const alt = altFor.get(node.start);
+			const xq = alt ? `\\xq ${alt} ` : '';
+			out += `\\x - ${xq}\\xt ${target.text}\\x*`;
 		}
 		// <alt> delimiters themselves emit nothing; their words fall through as text.
 	}
