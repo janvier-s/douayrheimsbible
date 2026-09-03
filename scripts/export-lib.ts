@@ -245,6 +245,26 @@ export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
 export const KNOWN_UNBALANCED: ReadonlySet<string> = new Set(['daniel ann 12:7']);
 
 /**
+ * The one chapter that numbers two different entries the same.
+ *
+ * 3-Esdras 2 holds verse 1 twice: once as "CYRUS king of the Persians…" and
+ * once as "Cyrus king of the Persians…" with malformed cross-reference residue
+ * ("2. . v. 22. 2. . v. 1. & 6. v. 3…") trailing it. Two readings of one verse,
+ * differing in capitalisation.
+ *
+ * This is a defect in static/data/odr/, which this export only reads. Which
+ * reading is canonical is an editorial judgment about scripture and belongs to
+ * the corpus maintainer, so the export neither repairs it nor picks a winner:
+ * the first entry keeps `\v 1` and the second becomes `\v 1b`. The segment
+ * letter is a placeholder that records a corpus defect. It is NOT a claim that
+ * the printed text has two segments, and no critical edition divides this verse.
+ *
+ * A repeated verse number at any other ref is fatal, like the other three
+ * inventories.
+ */
+export const KNOWN_DUPLICATE_VERSE: ReadonlySet<string> = new Set(['3-esdras 2:1']);
+
+/**
  * Fail on any irregularity that is not one of the 28 recorded above.
  *
  * The list is data rather than a tolerance rule on purpose. A rule that simply
@@ -507,7 +527,14 @@ function renderInline(text: string, block: BlockKind, ref: string, nested: boole
  * this note is about". So the span stays plain in the body and is repeated as
  * \fq in its footnote, which is the idiomatic form.
  */
-export function renderVerse(verse: Verse, chapter: number, ref: string): string {
+export function renderVerse(
+	verse: Verse,
+	chapter: number,
+	ref: string,
+	/** What follows `\v`. Defaults to the verse number; the caller overrides it
+	 *  only to add a segment letter for a pinned duplicate. */
+	label: string = String(verse.verse)
+): string {
 	const notes = verse.notes ?? [];
 	const refs = verse.cross_refs ?? [];
 	const bound = bindMarkers(verse.text, notes, 'verse', ref);
@@ -545,7 +572,7 @@ export function renderVerse(verse: Verse, chapter: number, ref: string): string 
 		if (anchor?.kind === 'tag') altFor.set(anchor.start, words.trim());
 	}
 
-	let out = `\\v ${verse.verse} `;
+	let out = `\\v ${label} `;
 	let crossRefIndex = 0;
 	let skipUntilClose: TagName | null = null;
 
@@ -759,6 +786,9 @@ function renderProse(block: Prose, ref: string): string[] {
  */
 export const SUMMARY_OVERFLOW_VERSE = 0;
 
+/** Verse-segment letters, from the second entry sharing a number. */
+const SEGMENTS = 'bcdefghijklmnopqrstuvwxyz';
+
 /**
  * A verse-0 fragment as \cd material: the words, then its apparatus.
  *
@@ -871,11 +901,21 @@ export function renderUsfm(
 		}
 
 		lines.push('\\p');
+		const seen = new Map<number, number>();
 		for (const verse of chapter.verses) {
 			// Folded into \cd above: it is a summary tail, not scripture.
 			if (verse.verse === SUMMARY_OVERFLOW_VERSE) continue;
 			const ref = `${slug} ${chapter.chapter}:${verse.verse}`;
-			let line = renderVerse(verse, chapter.chapter, ref);
+			const nth = (seen.get(verse.verse) ?? 0) + 1;
+			seen.set(verse.verse, nth);
+			if (nth > 1 && !KNOWN_DUPLICATE_VERSE.has(ref)) {
+				throw new ExportError(ref, `verse ${verse.verse} appears ${nth} times in this chapter`);
+			}
+			// Segment letters run b, c, … from the second entry. See
+			// KNOWN_DUPLICATE_VERSE: this records a corpus defect, not an
+			// editorial reading of the text.
+			const label = nth === 1 ? String(verse.verse) : `${verse.verse}${SEGMENTS[nth - 2]}`;
+			let line = renderVerse(verse, chapter.chapter, ref, label);
 			for (const ann of byVerse.get(verse.verse) ?? []) {
 				line += ` ${renderAnnotation(ann, chapter.chapter, `${slug} ann ${chapter.chapter}:${ann.verse}`)}`;
 			}

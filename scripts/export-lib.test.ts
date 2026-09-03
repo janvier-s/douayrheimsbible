@@ -13,6 +13,7 @@ import {
 	KNOWN_UNBOUND,
 	KNOWN_UNREFERENCED,
 	KNOWN_UNBALANCED,
+	KNOWN_DUPLICATE_VERSE,
 	balanceInline,
 	stripMarkup,
 	BOOK_CODES,
@@ -162,6 +163,8 @@ describe('the known-defect list', () => {
 	it('holds exactly the measured irregularities', () => {
 		expect(KNOWN_UNBOUND.size).toBe(2);
 		expect(KNOWN_UNREFERENCED.size).toBe(26);
+		expect(KNOWN_DUPLICATE_VERSE.size).toBe(1);
+		expect(KNOWN_DUPLICATE_VERSE.has('3-esdras 2:1')).toBe(true);
 	});
 
 	it('passes a clean bind', () => {
@@ -586,6 +589,68 @@ describe('renderUsfm', () => {
 			'\\cd his coming to judge the world. \\x - \\xt cap. 13.\\x* \\f - \\ft The Church in all nations.\\f*'
 		);
 		expect(out).not.toContain('\\v 0');
+	});
+
+	it('gives the pinned duplicate verse a segment letter', () => {
+		const doubled = {
+			...book,
+			chapters: [
+				{
+					chapter: 2,
+					verses: [
+						{ verse: 1, text: 'CYRUS king of the Persians' },
+						{ verse: 1, text: 'Cyrus king of the Persians' },
+						{ verse: 2, text: 'our Lord raised up the spirit' }
+					]
+				}
+			]
+		};
+		const out = renderUsfm(
+			'3-esdras',
+			doubled,
+			new Map(),
+			{ includeAnnotations: false },
+			'3 Esdras'
+		);
+		expect(out).toContain('\\v 1 CYRUS king of the Persians');
+		expect(out).toContain('\\v 1b Cyrus king of the Persians');
+		expect(out).toContain('\\v 2 our Lord raised up the spirit');
+	});
+
+	it('throws on a duplicate verse number at an unpinned ref', () => {
+		const doubled = {
+			...book,
+			chapters: [
+				{
+					chapter: 1,
+					verses: [
+						{ verse: 1, text: 'In the beginning' },
+						{ verse: 1, text: 'In the beginning, again' }
+					]
+				}
+			]
+		};
+		expect(() =>
+			renderUsfm('genesis', doubled, new Map(), { includeAnnotations: false }, 'Genesis')
+		).toThrow(ExportError);
+	});
+
+	it('does not extend the pin to another chapter of the same book', () => {
+		const doubled = {
+			...book,
+			chapters: [
+				{
+					chapter: 3,
+					verses: [
+						{ verse: 1, text: 'one' },
+						{ verse: 1, text: 'one again' }
+					]
+				}
+			]
+		};
+		expect(() =>
+			renderUsfm('3-esdras', doubled, new Map(), { includeAnnotations: false }, '3 Esdras')
+		).toThrow(/3-esdras 3:1/);
 	});
 
 	it('omits annotations unless asked, and includes them when asked', () => {

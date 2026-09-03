@@ -158,6 +158,21 @@ USFM verse numbers start at 1, so emitting these as `\v 0` is both invalid and a
 
 The fragments tokenize as `verse` blocks, not `summary` ones: `acts 7:0` contains `<sc>Jesus</sc>`, which the summary vocabulary forbids.
 
+#### The duplicate verse in 3-Esdras 2
+
+`3-esdras` chapter 2 numbers two entries `1`:
+
+```
+verse 1: "CYRUS king of the Persians reigning for the accomplishment of the word of our Lord by the mouth of Jeremy,"
+verse 1: "Cyrus king of the Persians reigning … by the mouth of Jeremy, 2. . v. 22. 2. . v. 1. & 6. v. 3. . v. 12. & 29. v."
+```
+
+Two readings of one verse, differing in capitalisation, the second trailing malformed cross-reference residue. It is the only repeated verse number in the corpus.
+
+This is a defect in `static/data/odr/`, which the export only reads. Which reading is canonical is an editorial judgment about scripture and belongs to the corpus maintainer, so the export neither repairs it nor silently drops one: the first keeps `\v 1`, the second becomes `\v 1b`. **The segment letter records a corpus defect. It is not a claim that the printed text divides this verse.**
+
+Pinned as `KNOWN_DUPLICATE_VERSE`, a fourth inventory on the same terms as the other three: a repeated verse number at any unpinned ref is fatal.
+
 #### `<alt>` anchoring
 
 `<alt>` marks the span of printed text a marginal variant reading applies to; the note supplies the alternative:
@@ -353,6 +368,7 @@ Unit tests on the pure lib: markup round-trips, nesting (`<sc>` inside `<i>`), s
 | `<mn>` in verse text, `<na>` in prose blocks | 0 |
 | tags outside the nine-tag vocabulary | 0 |
 | unbalanced tags (open ≠ close), `<br>` excepted | 0 |
+| chapters repeating a verse number | exactly the 1 listed |
 | marker tags inside a note body | 0 |
 | `<alt>` spans, each adjacent to a marker | 106 |
 | lemma spans out of bounds | 0 |

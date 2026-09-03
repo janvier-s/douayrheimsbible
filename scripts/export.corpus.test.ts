@@ -20,6 +20,7 @@ import {
 	TAGS_BY_BLOCK,
 	BOOK_CODES,
 	KNOWN_UNBALANCED,
+	KNOWN_DUPLICATE_VERSE,
 	type BlockKind,
 	type NoteLike
 } from './export-lib';
@@ -297,6 +298,24 @@ describe('the corpus markup', () => {
 		expect(lost).toEqual([]);
 		expect(notes).toBe(10);
 		expect(crossRefs).toBe(5);
+	});
+
+	// renderUsfm throws on an unpinned repeat, so the whole-corpus render above
+	// already proves the set is no larger than the pin. This asserts it is no
+	// smaller either: a pin that stops matching anything is itself a defect.
+	it('repeats a verse number at exactly the pinned refs', () => {
+		const repeated = new Set<string>();
+		for (const meta of ALL_BOOKS) {
+			const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
+			for (const c of book.chapters) {
+				const seen = new Set<number>();
+				for (const v of c.verses) {
+					if (seen.has(v.verse)) repeated.add(`${meta.slug} ${c.chapter}:${v.verse}`);
+					seen.add(v.verse);
+				}
+			}
+		}
+		expect([...repeated].sort()).toEqual([...KNOWN_DUPLICATE_VERSE].sort());
 	});
 
 	it('covers every book with a unique code', () => {
