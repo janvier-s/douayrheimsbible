@@ -1,0 +1,149 @@
+// scripts/build-export-bundle.ts
+// @ts-nocheck: build script run with tsx
+//
+// Builds the janvier-s/original-douay-rheims distribution bundle from the
+// committed corpus. The published bundle was hand-maintained and went stale
+// (it advertised 1,707 annotations against an actual 1,677); deriving every
+// copy in one run is what stops that recurring.
+//
+// Reads static/data/odr/** and static/data/reference/odr/**. Writes only to
+// --out. Never modifies the corpus.
+//
+//   npx tsx scripts/build-export-bundle.ts
+//   npx tsx scripts/build-export-bundle.ts --out /tmp/bundle
+//   npx tsx scripts/build-export-bundle.ts --only genesis
+
+import { readdirSync, existsSync, mkdirSync, writeFileSync, copyFileSync, rmSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
+import { readJson } from './odr-corpus-json.js';
+import { renderUsfm, stripMarkup, usfmFilename, bookCode } from './export-lib.js';
+import { ALL_BOOKS } from '../src/lib/data/books.js';
+
+const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
+const ODR_DIR = join(ROOT, 'static', 'data', 'odr');
+const REF_DIR = join(ROOT, 'static', 'data', 'reference', 'odr');
+
+const argOf = (flag, fallback) => {
+	const i = process.argv.indexOf(flag);
+	return i === -1 ? fallback : process.argv[i + 1];
+};
+const OUT = argOf('--out', join(ROOT, 'dist-export'));
+const ONLY = argOf('--only', null);
+
+/** The three non-book artifacts that live alongside the book files. */
+const SKIP = new Set(['search-index.json', 'search-notes-index.json', 'search-suggestions.json']);
+
+const write = (rel, body) => {
+	const path = join(OUT, rel);
+	mkdirSync(dirname(path), { recursive: true });
+	writeFileSync(path, body);
+};
+
+function readAnnotations(slug) {
+	const dir = join(ODR_DIR, slug, 'annotations');
+	const byChapter = new Map();
+	if (!existsSync(dir)) return { byChapter, files: 0, count: 0, subNotes: 0 };
+	let files = 0;
+	let count = 0;
+	let subNotes = 0;
+	for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+		files++;
+		const { data } = readJson(join(dir, file));
+		byChapter.set(data.chapter, data.annotations);
+		count += data.annotations.length;
+		for (const a of data.annotations) subNotes += (a.notes ?? []).length;
+		write(`annotations/${slug}/${file}`, JSON.stringify(data, null, 2));
+	}
+	return { byChapter, files, count, subNotes };
+}
+
+/** bible/raw/: the same tree with markup stripped and notes kept structured. */
+function toRaw(slug, book) {
+	const out = structuredClone(book);
+	for (const intro of out.intros ?? [])
+		intro.text = stripMarkup(intro.text, 'prose', `${slug} intro`);
+	for (const end of out.endMatters ?? [])
+		end.text = stripMarkup(end.text, 'prose', `${slug} endMatter`);
+	for (const chapter of out.chapters) {
+		const cref = `${slug} ${chapter.chapter}`;
+		if (chapter.summary)
+			chapter.summary = stripMarkup(chapter.summary, 'summary', `${cref} summary`);
+		for (const article of chapter.articles ?? [])
+			article.text = stripMarkup(article.text, 'prose', `${cref} article`);
+		for (const verse of chapter.verses) {
+			verse.text = stripMarkup(verse.text, 'verse', `${cref}:${verse.verse}`);
+			delete verse.lemmas;
+		}
+	}
+	return out;
+}
+
+rmSync(OUT, { recursive: true, force: true });
+
+const counts = {
+	books: 0,
+	chapters: 0,
+	verses: 0,
+	annotations: 0,
+	annotationFiles: 0,
+	subNotes: 0,
+	referenceFiles: 0
+};
+const books = [];
+
+for (const meta of ALL_BOOKS) {
+	if (ONLY && meta.slug !== ONLY) continue;
+	const file = `${meta.slug}.json`;
+	if (SKIP.has(file)) continue;
+	const { data: book } = readJson(join(ODR_DIR, file));
+	const anns = readAnnotations(meta.slug);
+
+	write(`bible/tagged/${file}`, JSON.stringify(book, null, 2));
+	write(`bible/raw/${file}`, JSON.stringify(toRaw(meta.slug, book), null, 2));
+	write(
+		`usfm/${usfmFilename(meta.slug)}`,
+		renderUsfm(meta.slug, book, anns.byChapter, { includeAnnotations: false }, meta.odrName)
+	);
+	write(
+		`usfm-study/${usfmFilename(meta.slug)}`,
+		renderUsfm(meta.slug, book, anns.byChapter, { includeAnnotations: true }, meta.odrName)
+	);
+
+	// Catchword spans are offsets into the tagged text and carry a match tier,
+	// so they ship as a separate index rather than inline where a consumer
+	// would read them as fact.
+	const lemmas = {};
+	for (const chapter of book.chapters) {
+		for (const verse of chapter.verses) {
+			if (verse.lemmas?.length) lemmas[`${chapter.chapter}:${verse.verse}`] = verse.lemmas;
+		}
+	}
+	if (Object.keys(lemmas).length) write(`index/lemmas/${file}`, JSON.stringify(lemmas, null, 2));
+
+	counts.books++;
+	counts.chapters += book.chapters.length;
+	for (const c of book.chapters) counts.verses += c.verses.length;
+	counts.annotations += anns.count;
+	counts.annotationFiles += anns.files;
+	counts.subNotes += anns.subNotes;
+	books.push({ slug: meta.slug, ...bookCode(meta.slug), chapters: book.chapters.length });
+}
+
+for (const testament of ['ot', 'nt']) {
+	for (const file of readdirSync(join(REF_DIR, testament)).filter((f) => f.endsWith('.json'))) {
+		mkdirSync(join(OUT, 'reference', testament), { recursive: true });
+		copyFileSync(join(REF_DIR, testament, file), join(OUT, 'reference', testament, file));
+		counts.referenceFiles++;
+	}
+}
+
+const commit = execSync('git rev-parse HEAD', { cwd: ROOT }).toString().trim();
+write(
+	'manifest.json',
+	`${JSON.stringify({ schema: 1, generated: new Date().toISOString(), commit, counts, books }, null, 2)}\n`
+);
+
+console.log(`wrote ${OUT}`);
+console.table(counts);

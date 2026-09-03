@@ -42,6 +42,9 @@ test-results/
 playwright-report/
 .playwright-mcp/
 
+# Generated distribution bundle
+dist-export/
+
 # Local agent config
 .claude/
 
