@@ -4,7 +4,15 @@
 // covered by export.corpus.test.ts.
 
 import { describe, it, expect } from 'vitest';
-import { tokenize, ExportError, parseMarkerTokens, bindMarkers } from './export-lib';
+import {
+	tokenize,
+	ExportError,
+	parseMarkerTokens,
+	bindMarkers,
+	assertOnlyKnownDefects,
+	KNOWN_UNBOUND,
+	KNOWN_UNREFERENCED
+} from './export-lib';
 
 describe('tokenize', () => {
 	it('splits text and tags, recording offsets into the tagged string', () => {
@@ -138,5 +146,42 @@ describe('bindMarkers', () => {
 	it('records the offset of each marker in the tagged text', () => {
 		const r = bindMarkers('ab <na>[1]</na>', [{ label: '1', text: 'x' }], 'verse', 'ref');
 		expect(r.hits[0]).toMatchObject({ start: 3, length: '<na>[1]</na>'.length });
+	});
+});
+
+describe('the known-defect list', () => {
+	it('holds exactly the measured irregularities', () => {
+		expect(KNOWN_UNBOUND.size).toBe(2);
+		expect(KNOWN_UNREFERENCED.size).toBe(26);
+	});
+
+	it('passes a clean bind', () => {
+		const notes = [{ label: '1', text: 'x' }];
+		const r = bindMarkers('<na>[1]</na>', notes, 'verse', 'genesis 1:1');
+		expect(() => assertOnlyKnownDefects(r, notes, 'genesis 1:1')).not.toThrow();
+	});
+
+	it('allows a listed unbound marker', () => {
+		const notes = [{ label: '1', text: 'x' }];
+		const r = bindMarkers('<na>[1]</na> <na>[1]</na>', notes, 'verse', '1-timothy 2:6');
+		expect(() => assertOnlyKnownDefects(r, notes, '1-timothy 2:6')).not.toThrow();
+	});
+
+	it('rejects the same defect at an unlisted ref', () => {
+		const notes = [{ label: '1', text: 'x' }];
+		const r = bindMarkers('<na>[1]</na> <na>[1]</na>', notes, 'verse', 'genesis 1:1');
+		expect(() => assertOnlyKnownDefects(r, notes, 'genesis 1:1')).toThrow(ExportError);
+	});
+
+	it('allows a listed unreferenced note', () => {
+		const notes = [{ label: '1', text: 'x' }];
+		const r = bindMarkers('no marker here', notes, 'verse', 'john 1:51');
+		expect(() => assertOnlyKnownDefects(r, notes, 'john 1:51')).not.toThrow();
+	});
+
+	it('rejects an unlisted unreferenced note', () => {
+		const notes = [{ label: '1', text: 'x' }];
+		const r = bindMarkers('no marker here', notes, 'verse', 'genesis 1:1');
+		expect(() => assertOnlyKnownDefects(r, notes, 'genesis 1:1')).toThrow(/unreferenced/);
 	});
 });

@@ -189,3 +189,64 @@ export function bindMarkers(
 	const unreferenced = notes.map((_, i) => i).filter((i) => !consumed.has(i));
 	return { hits, unbound, unreferenced };
 }
+
+/**
+ * The two markers in the corpus that cannot bind. Both are transcription
+ * defects in the source, not forms the resolver fails to handle:
+ *
+ *   1-timothy 2:6        prints <na>[1]</na> twice against a single note
+ *   ecclesiasticus 14:10 carries a <na>(†)</na> and has no notes array at all
+ */
+export const KNOWN_UNBOUND: ReadonlySet<string> = new Set([
+	'1-timothy 2:6',
+	'ecclesiasticus 14:10'
+]);
+
+/** The 26 notes no marker references, as `${ref} note ${token}`. */
+export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
+	'1-corinthians 14 article note 8',
+	'1-john 4:21 note 1',
+	'1-peter 5:14 note 1',
+	'3-kings 6:38 note 1',
+	'acts endMatter note 1',
+	'acts 15:41 note 1',
+	'acts ann 8:38 note 1',
+	'acts ann 8:38 note 2',
+	'apocalypse 20:15 note 1',
+	'james intro note ◦',
+	'john 1:51 note 1',
+	'john 21:25 note 1',
+	'john 21:25 note 2',
+	'matthew intro note 1',
+	'matthew intro note 2',
+	'matthew 16:28 note 1',
+	'psalms 98:6 note 1',
+	'romans intro note 1',
+	'romans intro note 2',
+	'romans intro note 3',
+	'romans 9:33 note 1',
+	'romans 10:16 note 1',
+	'romans ann 8:30 note 2',
+	'romans ann 8:38 note 1',
+	'romans ann 8:38 note 2',
+	'romans ann 9:14 note ◦'
+]);
+
+/**
+ * Fail on any irregularity that is not one of the 28 recorded above.
+ *
+ * The list is data rather than a tolerance rule on purpose. A rule that simply
+ * skipped unbindable markers would absorb the next defect in silence; an exact
+ * list makes a new one stop the build.
+ */
+export function assertOnlyKnownDefects(result: BindResult, notes: NoteLike[], ref: string): void {
+	if (result.unbound.length && !KNOWN_UNBOUND.has(ref)) {
+		throw new ExportError(ref, `marker(s) ${result.unbound.join(', ')} bind to no note`);
+	}
+	for (const i of result.unreferenced) {
+		const entry = `${ref} note ${noteKey(notes[i])}`;
+		if (!KNOWN_UNREFERENCED.has(entry)) {
+			throw new ExportError(ref, `unreferenced note ${noteKey(notes[i])}`);
+		}
+	}
+}
