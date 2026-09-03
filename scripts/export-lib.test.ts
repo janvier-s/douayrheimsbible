@@ -305,6 +305,11 @@ describe('renderVerse', () => {
 		expect(out).toBe('\\v 1 \\sc Paul\\sc* an \\it Apostle\\it*');
 	});
 
+	it('collapses a literal newline in the verse text onto one line', () => {
+		const out = renderVerse({ verse: 1, text: 'And God\nsaid' }, 1, 'ref');
+		expect(out).toBe('\\v 1 And God said');
+	});
+
 	it('turns a note marker into a footnote reusing the original label', () => {
 		const out = renderVerse(
 			{ verse: 1, text: 'Paul <na>[1]</na> called', notes: [{ label: '1', text: 'The Epistle.' }] },

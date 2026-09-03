@@ -417,6 +417,16 @@ export interface Verse {
 const CHAR_MARKERS: Partial<Record<TagName, string>> = { i: 'it', sc: 'sc' };
 
 /**
+ * Collapses every run of whitespace to one space.
+ *
+ * Only for values of markers whose content must stay on one line (\h, \toc1-3,
+ * \mt1, \cd, \v): the corpus has literal newlines inside them, and a USFM line
+ * that does not start with a backslash is unparseable. Deliberately NOT applied
+ * inside stripMarkup, whose `\n` for <br> is what renderProse splits \ip on.
+ */
+const oneLine = (text: string): string => text.replace(/\s+/g, ' ').trim();
+
+/**
  * Drops a closing tag with no matching opener and appends closers for any tag
  * still open at the end, leaving everything else byte for byte as it was.
  * Void tags (<br>) are not tracked. Exists only for KNOWN_UNBALANCED refs; the
@@ -557,7 +567,9 @@ export function renderVerse(verse: Verse, chapter: number, ref: string): string 
 	if (crossRefIndex !== refs.length) {
 		throw new ExportError(ref, `${refs.length - crossRefIndex} cross_refs with no marker`);
 	}
-	return out.replace(/[ \t]{2,}/g, ' ').trimEnd();
+	// oneLine, not just a space squeeze: 5 verse notes carry a literal newline,
+	// and the `verse` block kind permits no <br>, so no real break is lost.
+	return oneLine(out);
 }
 
 export interface Annotation {
@@ -725,8 +737,9 @@ export function renderUsfm(
 	const { usfm } = bookCode(slug);
 	// The three appendix books carry no book_title/short_title, so the caller
 	// supplies odrName from books.ts. USFM requires \h and \mt1.
-	const long = book.book_title ?? fallbackTitle;
-	const short = book.short_title ?? book.book ?? fallbackTitle;
+	// 34 book_title values carry a literal newline; \h/\toc/\mt1 are single-line.
+	const long = oneLine(book.book_title ?? fallbackTitle);
+	const short = oneLine(book.short_title ?? book.book ?? fallbackTitle);
 
 	const lines: string[] = [
 		`\\id ${usfm} Original Douay-Rheims (1582/1610)`,
@@ -756,7 +769,8 @@ export function renderUsfm(
 			for (const hit of bound.hits) {
 				cd += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref)}\\f*`;
 			}
-			lines.push(`\\cd ${cd}`);
+			// 113 summaries and their notes carry literal newlines; \cd is one line.
+			lines.push(`\\cd ${oneLine(cd)}`);
 		}
 
 		for (const article of chapter.articles ?? []) {

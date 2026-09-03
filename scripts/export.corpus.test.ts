@@ -16,6 +16,7 @@ import {
 	bindMarkers,
 	tokenize,
 	stripMarkup,
+	renderUsfm,
 	TAGS_BY_BLOCK,
 	BOOK_CODES,
 	KNOWN_UNBALANCED,
@@ -88,6 +89,18 @@ function readBlocks(): Block[] {
 		}
 	}
 	return blocks;
+}
+
+/** The annotation sidecars for one book, keyed by chapter, as the build loads them. */
+function readAnnotations(slug: string): Map<number, any[]> {
+	const byChapter = new Map<number, any[]>();
+	const dir = join(ODR_DIR, slug, 'annotations');
+	if (!existsSync(dir)) return byChapter;
+	for (const f of readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+		const { data } = readJson<any>(join(dir, f));
+		byChapter.set(data.chapter, data.annotations);
+	}
+	return byChapter;
 }
 
 const blocks = readBlocks();
@@ -183,6 +196,34 @@ describe('the corpus markup', () => {
 		const leaked = blocks.filter((b) => /[<>]/.test(stripMarkup(b.text, b.block, b.ref)));
 		expect(leaked.map((b) => b.ref)).toEqual([]);
 	});
+
+	// The invariant that USFM is a line-oriented format: every line is either a
+	// marker line or a continuation, and this export emits no continuations, so
+	// a line not starting with a backslash is unparseable. Its absence is what
+	// let 187 such lines ship, from literal newlines inside \\h/\\toc/\\mt1/\\cd/\\v
+	// values that the corpus stores unescaped.
+	it.each([false, true])(
+		'renders no line without a leading backslash (annotations: %s)',
+		(includeAnnotations) => {
+			const offenders: string[] = [];
+			for (const meta of ALL_BOOKS) {
+				const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
+				const usfm = renderUsfm(
+					meta.slug,
+					book,
+					readAnnotations(meta.slug),
+					{ includeAnnotations },
+					meta.odrName
+				);
+				usfm.split('\n').forEach((line, i) => {
+					if (line !== '' && !line.startsWith('\\')) {
+						offenders.push(`${meta.slug}:${i + 1}: ${line.slice(0, 60)}`);
+					}
+				});
+			}
+			expect(offenders).toEqual([]);
+		}
+	);
 
 	it('covers every book with a unique code', () => {
 		expect(ALL_BOOKS).toHaveLength(76);
