@@ -313,7 +313,7 @@ Both trees are one `renderUsfm()` call differing by the `includeAnnotations` fla
 | `intros[]` | `\is` + `\ip` |
 | `endMatters[]` | `\is` + `\ip`, emitted after the last chapter |
 | `chapters[].summary` | `\cd` |
-| `summary_notes[]` | `\f + \ft …\f*` on the `\cd` |
+| `summary_notes[]` | `\f - \ft …\f*` on the `\cd` |
 | `chapters[].articles` | `\is` heading + `\ip` |
 | `<sc>…</sc>` | `\sc …\sc*` in body text, `\+sc …\+sc*` inside a note |
 | `<i>…</i>` | `\it …\it*` in body text, `\+it …\+it*` inside a note |

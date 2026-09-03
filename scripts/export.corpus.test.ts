@@ -162,12 +162,24 @@ describe('the corpus markup', () => {
 
 	// Every pinned ref must still match a block. A pin that stops matching is a
 	// repaired defect the export is still excusing, which is how the list rots.
-	it('pins only refs that exist', () => {
-		const refs = new Set(blocks.map((b) => b.ref));
-		const orphans = [...KNOWN_UNBOUND, ...KNOWN_UNREFERENCED, ...KNOWN_UNBALANCED].filter(
-			(entry) => ![...refs].some((r) => entry === r || entry.startsWith(`${r} `))
-		);
-		expect(orphans).toEqual([]);
+	// Re-derives the defects instead of checking that each pin's ref exists
+	// somewhere. Anchoring on the ref alone let a pin outlive the note it
+	// named: repair the note, keep the verse, and the stale pin sits there
+	// silently excusing a defect that is gone. Set equality catches a dead pin
+	// and an unpinned defect in one assertion.
+	it('pins exactly the defects the corpus still has', () => {
+		const unbound: string[] = [];
+		const unreferenced: string[] = [];
+		for (const b of blocks) {
+			const r = bindMarkers(b.text, b.notes, b.block, b.ref);
+			for (const token of r.unbound) unbound.push(`${b.ref} marker ${token}`);
+			for (const i of r.unreferenced) {
+				const n = b.notes[i];
+				unreferenced.push(`${b.ref} note ${String(n.marker ?? n.label)}`);
+			}
+		}
+		expect(unbound.sort()).toEqual([...KNOWN_UNBOUND].sort());
+		expect(unreferenced.sort()).toEqual([...KNOWN_UNREFERENCED].sort());
 	});
 
 	it('reads every block without an illegal or unbalanced tag', () => {

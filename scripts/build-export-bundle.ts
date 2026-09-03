@@ -53,7 +53,6 @@ assertSafeOutDir(OUT, ROOT, homedir());
 const ONLY = argOf('--only', null);
 
 /** The three non-book artifacts that live alongside the book files. */
-const SKIP = new Set(['search-index.json', 'search-notes-index.json', 'search-suggestions.json']);
 
 const write = (rel, body) => {
 	const path = join(OUT, rel);
@@ -126,6 +125,7 @@ const counts = {
 	books: 0,
 	chapters: 0,
 	verses: 0,
+	usfmVerses: 0,
 	annotations: 0,
 	annotationFiles: 0,
 	subNotes: 0,
@@ -136,16 +136,19 @@ const books = [];
 for (const meta of ALL_BOOKS) {
 	if (ONLY && meta.slug !== ONLY) continue;
 	const file = `${meta.slug}.json`;
-	if (SKIP.has(file)) continue;
 	const { data: book } = readJson(join(ODR_DIR, file));
 	const anns = readAnnotations(meta.slug);
 
 	write(`bible/tagged/${file}`, JSON.stringify(book, null, 2));
 	write(`bible/raw/${file}`, JSON.stringify(toRaw(meta.slug, book), null, 2));
-	write(
-		`usfm/${usfmFilename(meta.slug)}`,
-		renderUsfm(meta.slug, book, anns.byChapter, { includeAnnotations: false }, meta.odrName)
+	const plainUsfm = renderUsfm(
+		meta.slug,
+		book,
+		anns.byChapter,
+		{ includeAnnotations: false },
+		meta.odrName
 	);
+	write(`usfm/${usfmFilename(meta.slug)}`, plainUsfm);
 	write(
 		`usfm-study/${usfmFilename(meta.slug)}`,
 		renderUsfm(meta.slug, book, anns.byChapter, { includeAnnotations: true }, meta.odrName)
@@ -165,6 +168,10 @@ for (const meta of ALL_BOOKS) {
 	counts.books++;
 	counts.chapters += book.chapters.length;
 	for (const c of book.chapters) counts.verses += c.verses.length;
+	// Two different true numbers: the corpus counts a summary that overran its
+	// field as a verse, and the USFM does not emit those. Naming only one of
+	// them "verses" is what let the manifest drift in the first place.
+	counts.usfmVerses += plainUsfm.split('\n').filter((l) => l.startsWith('\\v ')).length;
 	counts.annotations += anns.count;
 	counts.annotationFiles += anns.files;
 	counts.subNotes += anns.subNotes;

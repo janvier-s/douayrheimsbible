@@ -27,7 +27,7 @@ export class ExportError extends Error {
 }
 
 /** <br> is the one tag the corpus never closes. */
-export const VOID_TAGS: ReadonlySet<TagName> = new Set<TagName>(['br']);
+const VOID_TAGS: ReadonlySet<TagName> = new Set<TagName>(['br']);
 
 /** Measured against the whole corpus: each tag appears only where listed.
  *  Enforcing this is what catches an <na>/<mn> mix-up, which would otherwise
