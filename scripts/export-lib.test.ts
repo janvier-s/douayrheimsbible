@@ -15,7 +15,8 @@ import {
 	stripMarkup,
 	BOOK_CODES,
 	usfmFilename,
-	renderVerse
+	renderVerse,
+	renderAnnotation
 } from './export-lib';
 
 describe('tokenize', () => {
@@ -319,5 +320,55 @@ describe('renderVerse', () => {
 			'ref'
 		);
 		expect(out).toBe('\\v 4 are you not \\f 1 \\fr 3.4 \\fq men \\ft \\it carnal\\it*\\f* men?');
+	});
+});
+
+describe('renderAnnotation', () => {
+	it('emits \\ef with the catchword as \\fq', () => {
+		const out = renderAnnotation(
+			{ verse: 1, title: 'In the beginning.', text: 'Holy Moyses telleth.' },
+			1,
+			'ref'
+		);
+		expect(out).toBe('\\ef - \\fr 1.1 \\fq In the beginning. \\ft Holy Moyses telleth.\\ef*');
+	});
+
+	it('replaces each sub-note marker with a superscript and appends the notes', () => {
+		const out = renderAnnotation(
+			{
+				verse: 1,
+				title: 'A.',
+				text: '<mn>[1]</mn> First part <mn>[2]</mn> second part',
+				notes: [
+					{ marker: 1, text: 'S. Aug.' },
+					{ marker: 2, text: 'Contra Epist.' }
+				]
+			},
+			1,
+			'ref'
+		);
+		expect(out).toBe(
+			'\\ef - \\fr 1.1 \\fq A. \\ft ¹ First part ² second part \\fq ¹ \\ft S. Aug. \\fq ² \\ft Contra Epist.\\ef*'
+		);
+	});
+
+	it('numbers a ring marker by its ordinal, since the ring carries no number', () => {
+		const out = renderAnnotation(
+			{
+				verse: 2,
+				title: 'B.',
+				text: 'text <mn>◦</mn> more',
+				notes: [{ marker: '◦', text: 'src' }]
+			},
+			4,
+			'ref'
+		);
+		expect(out).toContain('text ¹ more');
+		expect(out).toContain('\\fq ¹ \\ft src');
+	});
+
+	it('omits \\fq when the annotation has no title', () => {
+		const out = renderAnnotation({ verse: 1, title: null, text: 'body' }, 1, 'ref');
+		expect(out).toBe('\\ef - \\fr 1.1 \\ft body\\ef*');
 	});
 });

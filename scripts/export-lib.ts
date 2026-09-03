@@ -508,3 +508,84 @@ export function renderVerse(verse: Verse, chapter: number, ref: string): string 
 	}
 	return out.replace(/[ \t]{2,}/g, ' ').trimEnd();
 }
+
+export interface Annotation {
+	verse: number;
+	part?: number;
+	title?: string | null;
+	text: string;
+	notes?: NoteLike[];
+}
+
+const SUPERSCRIPTS = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+const superscript = (n: number) =>
+	String(n)
+		.split('')
+		.map((d) => SUPERSCRIPTS[Number(d)])
+		.join('');
+
+/**
+ * One annotation as an \ef study note.
+ *
+ * USFM notes cannot nest: the spec allows nested character markers via the \+
+ * prefix, but there is no legal way to put an \f or \ef inside another. The
+ * corpus nonetheless has two levels of apparatus, so the sub-notes are
+ * flattened explicitly rather than misrepresented — each marker becomes a
+ * superscript where it stood, and the notes follow as a trailing \fq/\ft run
+ * inside the same \ef. Position, text, and association survive; structural
+ * containment does not.
+ *
+ * The superscript comes from the note's ordinal within the annotation, not
+ * from the marker token, because a '◦' carries no number to render.
+ */
+export function renderAnnotation(ann: Annotation, chapter: number, ref: string): string {
+	const notes = ann.notes ?? [];
+	const bound = bindMarkers(ann.text, notes, 'prose', ref);
+	assertOnlyKnownDefects(bound, notes, ref);
+
+	// A list per offset, since one tag may carry several tokens.
+	const ordinalsAt = new Map<number, number[]>();
+	bound.hits.forEach((hit, i) => {
+		if (!ordinalsAt.has(hit.start)) ordinalsAt.set(hit.start, []);
+		ordinalsAt.get(hit.start)!.push(i + 1);
+	});
+
+	let body = '';
+	let skip = false;
+	for (const node of tokenize(ann.text, 'prose', ref)) {
+		if (node.kind === 'text') {
+			if (!skip) body += node.value;
+			continue;
+		}
+		if (skip) {
+			if (node.close && node.name === 'mn') skip = false;
+			continue;
+		}
+		if (node.name === 'mn' && !node.close) {
+			skip = true;
+			for (const ordinal of ordinalsAt.get(node.start) ?? []) body += superscript(ordinal);
+		} else if (CHAR_MARKERS[node.name]) {
+			body += node.close ? `\\${CHAR_MARKERS[node.name]}*` : `\\${CHAR_MARKERS[node.name]} `;
+		} else if (node.name === 'br') {
+			body += ' ';
+		}
+		// <col-left>/<col-right> collapse: USFM has no column model inside a note.
+	}
+
+	// Paragraph breaks cannot survive inside a note either.
+	body = body
+		.replace(/\n+/g, ' ')
+		.replace(/[ \t]{2,}/g, ' ')
+		.trim();
+
+	const parts = [`\\ef - \\fr ${chapter}.${ann.verse}`];
+	if (ann.title) parts.push(`\\fq ${ann.title}`);
+	parts.push(`\\ft ${body}`);
+
+	const trailing = bound.hits.map((hit, i) => {
+		const text = renderInline(notes[hit.noteIndex].text, 'prose', ref);
+		return `\\fq ${superscript(i + 1)} \\ft ${text}`;
+	});
+
+	return `${[...parts, ...trailing].join(' ')}\\ef*`;
+}
