@@ -4,7 +4,7 @@
 // covered by export.corpus.test.ts.
 
 import { describe, it, expect } from 'vitest';
-import { tokenize, ExportError } from './export-lib';
+import { tokenize, ExportError, parseMarkerTokens, bindMarkers } from './export-lib';
 
 describe('tokenize', () => {
 	it('splits text and tags, recording offsets into the tagged string', () => {
@@ -40,5 +40,81 @@ describe('tokenize', () => {
 
 	it('rejects an unbalanced tag', () => {
 		expect(() => tokenize('a <i>b', 'verse', 'test 1:1')).toThrow(/unclosed/);
+	});
+});
+
+describe('parseMarkerTokens', () => {
+	it('reads a bracketed number', () => {
+		expect(parseMarkerTokens('[1]')).toEqual(['1']);
+	});
+
+	it('reads a parenthesised letter', () => {
+		expect(parseMarkerTokens('(a)')).toEqual(['a']);
+	});
+
+	it('reads a ring', () => {
+		expect(parseMarkerTokens('◦')).toEqual(['◦']);
+	});
+
+	it('reads several tokens from one tag', () => {
+		expect(parseMarkerTokens('(c)[1]')).toEqual(['c', '1']);
+	});
+});
+
+describe('bindMarkers', () => {
+	it('binds numeric and lettered markers by their token', () => {
+		const notes = [
+			{ label: 'a', text: 'first' },
+			{ label: '1', text: 'second' }
+		];
+		const r = bindMarkers('x <na>(a)</na> y <na>[1]</na>', notes, 'verse', 'ref');
+		expect(r.hits.map((h) => h.noteIndex)).toEqual([0, 1]);
+		expect(r.unbound).toEqual([]);
+		expect(r.unreferenced).toEqual([]);
+	});
+
+	it('binds two tokens carried by one tag', () => {
+		const notes = [
+			{ label: 'c', text: 'first' },
+			{ label: '1', text: 'second' }
+		];
+		const r = bindMarkers('x <na>(c)[1]</na>', notes, 'verse', 'ref');
+		expect(r.hits.map((h) => h.noteIndex)).toEqual([0, 1]);
+	});
+
+	it('binds the k-th occurrence to the k-th note carrying that token', () => {
+		const notes = [
+			{ marker: 1, text: 'first' },
+			{ marker: 1, text: 'second' }
+		];
+		const r = bindMarkers('<mn>[1]</mn> a <mn>[1]</mn>', notes, 'prose', 'ref');
+		expect(r.hits.map((h) => h.noteIndex)).toEqual([0, 1]);
+	});
+
+	it('falls back to the next unconsumed note for a ring that matches nothing', () => {
+		// The 1-esdras shape: rings interleaved with numbered notes.
+		const notes = [
+			{ marker: '◦', text: 'ring' },
+			{ marker: 1, text: 'one' }
+		];
+		const r = bindMarkers('<mn>◦</mn> a <mn>[1]</mn>', notes, 'prose', 'ref');
+		expect(r.hits.map((h) => h.noteIndex)).toEqual([0, 1]);
+		expect(r.unbound).toEqual([]);
+	});
+
+	it('reports a marker with no note', () => {
+		const r = bindMarkers('<na>[1]</na> <na>[1]</na>', [{ label: '1', text: 'x' }], 'verse', 'ref');
+		expect(r.hits).toHaveLength(1);
+		expect(r.unbound).toEqual(['1']);
+	});
+
+	it('reports a note no marker asked for', () => {
+		const r = bindMarkers('plain text', [{ label: '1', text: 'x' }], 'verse', 'ref');
+		expect(r.unreferenced).toEqual([0]);
+	});
+
+	it('records the offset of each marker in the tagged text', () => {
+		const r = bindMarkers('ab <na>[1]</na>', [{ label: '1', text: 'x' }], 'verse', 'ref');
+		expect(r.hits[0]).toMatchObject({ start: 3, length: '<na>[1]</na>'.length });
 	});
 });

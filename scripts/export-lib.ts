@@ -85,3 +85,96 @@ export function tokenize(text: string, block: BlockKind, ref: string): Node[] {
 	if (cursor < text.length) nodes.push({ kind: 'text', value: text.slice(cursor), start: cursor });
 	return nodes;
 }
+
+/** Markers come in three forms, and one tag may carry several: `(c)[1]` is two
+ *  markers at one position. Parsing content as a sequence rather than a single
+ *  label is what makes those 33 cases work. */
+const MARKER_TOKEN_RE = /\[(\d+)\]|\((.+?)\)|(◦)/g;
+
+export function parseMarkerTokens(content: string): string[] {
+	const out: string[] = [];
+	for (const m of content.matchAll(MARKER_TOKEN_RE)) out.push(m[1] ?? m[2] ?? m[3]);
+	return out.length ? out : [content];
+}
+
+export interface NoteLike {
+	/** Every notes array but a verse's keys on this. Number, or the string '◦'. */
+	marker?: number | string;
+	/** Verse notes key on this instead. A string: '1', or 'a'. */
+	label?: string;
+	text: string;
+}
+
+export interface MarkerHit {
+	token: string;
+	noteIndex: number;
+	/** Offset of the whole marker tag in the tagged text. */
+	start: number;
+	length: number;
+}
+
+export interface BindResult {
+	hits: MarkerHit[];
+	/** Tokens that matched no note. */
+	unbound: string[];
+	/** Indices of notes no marker referenced. */
+	unreferenced: number[];
+}
+
+const noteKey = (n: NoteLike) => String(n.marker ?? n.label);
+
+/**
+ * Bind every marker in `text` to an entry of `notes`.
+ *
+ * The rule, verified against the whole corpus: the k-th occurrence of token t
+ * binds to the k-th entry whose marker/label is t. A '◦' that matches no entry
+ * binds instead to the next not-yet-consumed note in array order, because one
+ * array can hold many notes all marked '◦' and the ring carries no number to
+ * tell them apart.
+ */
+export function bindMarkers(
+	text: string,
+	notes: NoteLike[],
+	block: BlockKind,
+	ref: string
+): BindResult {
+	const markerTag = block === 'prose' ? 'mn' : 'na';
+	const byToken = new Map<string, number[]>();
+	notes.forEach((n, i) => {
+		const k = noteKey(n);
+		if (!byToken.has(k)) byToken.set(k, []);
+		byToken.get(k)!.push(i);
+	});
+
+	const hits: MarkerHit[] = [];
+	const unbound: string[] = [];
+	const consumed = new Set<number>();
+	const taken = new Map<string, number>();
+
+	for (const node of tokenize(text, block, ref)) {
+		if (node.kind !== 'tag' || node.close || node.name !== markerTag) continue;
+		const full = `<${markerTag}>${node.content}</${markerTag}>`;
+		for (const token of parseMarkerTokens(node.content)) {
+			const nth = taken.get(token) ?? 0;
+			const slot = byToken.get(token)?.[nth];
+			if (slot !== undefined) {
+				taken.set(token, nth + 1);
+				consumed.add(slot);
+				hits.push({ token, noteIndex: slot, start: node.start, length: full.length });
+				continue;
+			}
+			if (token === '◦') {
+				const next = notes.findIndex((_, i) => !consumed.has(i));
+				if (next !== -1) {
+					consumed.add(next);
+					hits.push({ token, noteIndex: next, start: node.start, length: full.length });
+					continue;
+				}
+			}
+			unbound.push(token);
+		}
+	}
+
+	const unreferenced = notes.map((_, i) => i).filter((i) => !consumed.has(i));
+	return { hits, unbound, unreferenced };
+}
