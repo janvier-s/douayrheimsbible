@@ -786,3 +786,32 @@ export function renderUsfm(
 
 	return `${lines.join('\n')}\n`;
 }
+
+/**
+ * Refuses an output directory that the build would then delete recursively.
+ *
+ * The build's first act is `rmSync(OUT, { recursive: true, force: true })`, so
+ * a mistyped `--out` is destructive with no confirmation: `--out .` from the
+ * repo root removes the repo, `--out /` removes the filesystem. Pure string
+ * logic on already-resolved absolute paths, so it lives here and is tested.
+ *
+ * Rejects: a missing or empty value, a non-absolute path, the filesystem root,
+ * the home directory, the repo root, and any ancestor of the repo root (which
+ * is what catches `..` and `/Users`).
+ */
+export function assertSafeOutDir(out: string | undefined, root: string, home: string): void {
+	const ref = 'export --out';
+	if (!out || !out.trim()) throw new ExportError(ref, 'no output directory given');
+	if (!out.startsWith('/')) throw new ExportError(ref, `must be an absolute path, got ${out}`);
+
+	const trim = (p: string) => (p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p);
+	const o = trim(out);
+	const r = trim(root);
+	const h = trim(home);
+
+	if (o === '/') throw new ExportError(ref, 'refusing to delete the filesystem root');
+	if (o === h) throw new ExportError(ref, 'refusing to delete the home directory');
+	if (o === r) throw new ExportError(ref, 'refusing to delete the repository root');
+	if (r === o || r.startsWith(`${o}/`))
+		throw new ExportError(ref, `refusing to delete ${o}, which contains the repository`);
+}

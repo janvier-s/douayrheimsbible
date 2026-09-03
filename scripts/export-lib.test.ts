@@ -19,7 +19,8 @@ import {
 	usfmFilename,
 	renderVerse,
 	renderAnnotation,
-	renderUsfm
+	renderUsfm,
+	assertSafeOutDir
 } from './export-lib';
 
 describe('tokenize', () => {
@@ -485,5 +486,53 @@ describe('renderUsfm', () => {
 		const study = renderUsfm('genesis', book, anns, { includeAnnotations: true }, 'Genesis');
 		expect(plain).not.toContain('\\ef');
 		expect(study).toContain('\\ef - \\fr 1.1 \\fq Catchword. \\ft Comment.\\ef*');
+	});
+});
+
+describe('assertSafeOutDir', () => {
+	const ROOT = '/home/me/repo';
+	const HOME = '/home/me';
+	const ok = (p: string) => assertSafeOutDir(p, ROOT, HOME);
+
+	it('accepts a directory inside the repo', () => {
+		expect(() => ok('/home/me/repo/dist-export')).not.toThrow();
+	});
+
+	it('accepts a directory outside the repo that contains nothing of ours', () => {
+		expect(() => ok('/tmp/bundle')).not.toThrow();
+	});
+
+	it('rejects a missing or blank value', () => {
+		expect(() => ok(undefined as unknown as string)).toThrow(ExportError);
+		expect(() => ok('')).toThrow(ExportError);
+		expect(() => ok('   ')).toThrow(ExportError);
+	});
+
+	it('rejects a relative path, which is what `--out .` arrives as', () => {
+		expect(() => ok('.')).toThrow(/absolute/);
+		expect(() => ok('..')).toThrow(/absolute/);
+		expect(() => ok('dist')).toThrow(/absolute/);
+	});
+
+	it('rejects the filesystem root', () => {
+		expect(() => ok('/')).toThrow(/filesystem root/);
+	});
+
+	it('rejects the home directory', () => {
+		expect(() => ok('/home/me')).toThrow(/home directory/);
+		expect(() => ok('/home/me/')).toThrow(/home directory/);
+	});
+
+	it('rejects the repository root', () => {
+		expect(() => ok('/home/me/repo')).toThrow(/repository root/);
+		expect(() => ok('/home/me/repo/')).toThrow(/repository root/);
+	});
+
+	it('rejects any ancestor of the repository', () => {
+		expect(() => ok('/home')).toThrow(/contains the repository/);
+	});
+
+	it('does not mistake a sibling with a shared prefix for an ancestor', () => {
+		expect(() => ok('/home/me/repo-export')).not.toThrow();
 	});
 });

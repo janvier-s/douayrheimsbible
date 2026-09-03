@@ -14,11 +14,12 @@
 //   npx tsx scripts/build-export-bundle.ts --only genesis
 
 import { readdirSync, existsSync, mkdirSync, writeFileSync, copyFileSync, rmSync } from 'fs';
-import { join, dirname } from 'path';
+import { join, dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
+import { homedir } from 'os';
 import { execSync } from 'child_process';
 import { readJson } from './odr-corpus-json.js';
-import { renderUsfm, stripMarkup, usfmFilename, bookCode } from './export-lib.js';
+import { renderUsfm, stripMarkup, usfmFilename, bookCode, assertSafeOutDir } from './export-lib.js';
 import { ALL_BOOKS } from '../src/lib/data/books.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -29,7 +30,15 @@ const argOf = (flag, fallback) => {
 	const i = process.argv.indexOf(flag);
 	return i === -1 ? fallback : process.argv[i + 1];
 };
-const OUT = argOf('--out', join(ROOT, 'dist-export'));
+// Resolved and vetted before use: the build's first act deletes this directory
+// recursively, so a mistyped --out would be destructive with no confirmation.
+const OUT_ARG = argOf('--out', join(ROOT, 'dist-export'));
+// Checked before resolve() as well as after: resolve('') silently returns the
+// cwd, so `--out` with its value omitted would otherwise become "delete the
+// directory I happen to be standing in".
+assertSafeOutDir(OUT_ARG, ROOT, homedir());
+const OUT = resolve(OUT_ARG);
+assertSafeOutDir(OUT, ROOT, homedir());
 const ONLY = argOf('--only', null);
 
 /** The three non-book artifacts that live alongside the book files. */
