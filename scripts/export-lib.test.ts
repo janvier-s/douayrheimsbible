@@ -16,7 +16,8 @@ import {
 	BOOK_CODES,
 	usfmFilename,
 	renderVerse,
-	renderAnnotation
+	renderAnnotation,
+	renderUsfm
 } from './export-lib';
 
 describe('tokenize', () => {
@@ -370,5 +371,83 @@ describe('renderAnnotation', () => {
 	it('omits \\fq when the annotation has no title', () => {
 		const out = renderAnnotation({ verse: 1, title: null, text: 'body' }, 1, 'ref');
 		expect(out).toBe('\\ef - \\fr 1.1 \\ft body\\ef*');
+	});
+});
+
+const book = {
+	book: 'Genesis',
+	book_title: 'THE BOOK OF GENESIS',
+	short_title: 'Genesis',
+	intros: [{ title: 'THE ARGUMENT', text: 'First para.<br>Second para.' }],
+	chapters: [
+		{
+			chapter: 1,
+			summary: 'God created heaven.',
+			summary_notes: [],
+			verses: [{ verse: 1, text: 'In the beginning' }]
+		}
+	]
+};
+
+describe('renderUsfm', () => {
+	it('emits the identification and heading block', () => {
+		const out = renderUsfm('genesis', book, new Map(), { includeAnnotations: false }, 'Genesis');
+		expect(out).toContain('\\id GEN');
+		expect(out).toContain('\\usfm 3.0');
+		expect(out).toContain('\\ide UTF-8');
+		expect(out).toContain('\\h Genesis');
+		expect(out).toContain('\\mt1 THE BOOK OF GENESIS');
+	});
+
+	it('renders the intro, splitting paragraphs on <br>', () => {
+		const out = renderUsfm('genesis', book, new Map(), { includeAnnotations: false }, 'Genesis');
+		expect(out).toContain('\\is THE ARGUMENT');
+		expect(out).toContain('\\ip First para.');
+		expect(out).toContain('\\ip Second para.');
+	});
+
+	it('turns an intro marker into a footnote instead of leaking its token', () => {
+		const withNote = {
+			...book,
+			intros: [
+				{
+					title: 'ARG',
+					text: 'was written <mn>[1]</mn> by Moyses',
+					notes: [{ marker: 1, text: 'Gen. 1.' }]
+				}
+			]
+		};
+		const out = renderUsfm(
+			'genesis',
+			withNote,
+			new Map(),
+			{ includeAnnotations: false },
+			'Genesis'
+		);
+		expect(out).toContain('\\ip was written \\f - \\ft Gen. 1.\\f* by Moyses');
+		expect(out).not.toContain('[1]');
+	});
+
+	it('renders chapters, summaries, and verses', () => {
+		const out = renderUsfm('genesis', book, new Map(), { includeAnnotations: false }, 'Genesis');
+		expect(out).toContain('\\c 1');
+		expect(out).toContain('\\cd God created heaven.');
+		expect(out).toContain('\\v 1 In the beginning');
+	});
+
+	it('falls back to the supplied title when the book has none', () => {
+		const bare = { book: '3 Esdras', chapters: [{ chapter: 1, verses: [] }] };
+		const out = renderUsfm('3-esdras', bare, new Map(), { includeAnnotations: false }, '3 Esdras');
+		expect(out).toContain('\\id 1ES');
+		expect(out).toContain('\\h 3 Esdras');
+		expect(out).toContain('\\mt1 3 Esdras');
+	});
+
+	it('omits annotations unless asked, and includes them when asked', () => {
+		const anns = new Map([[1, [{ verse: 1, title: 'Catchword.', text: 'Comment.' }]]]);
+		const plain = renderUsfm('genesis', book, anns, { includeAnnotations: false }, 'Genesis');
+		const study = renderUsfm('genesis', book, anns, { includeAnnotations: true }, 'Genesis');
+		expect(plain).not.toContain('\\ef');
+		expect(study).toContain('\\ef - \\fr 1.1 \\fq Catchword. \\ft Comment.\\ef*');
 	});
 });

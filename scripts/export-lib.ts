@@ -589,3 +589,149 @@ export function renderAnnotation(ann: Annotation, chapter: number, ref: string):
 
 	return `${[...parts, ...trailing].join(' ')}\\ef*`;
 }
+
+export interface Prose {
+	title?: string;
+	text: string;
+	notes?: NoteLike[];
+}
+
+export interface Chapter {
+	chapter: number;
+	verses: Verse[];
+	summary?: string;
+	summary_notes?: NoteLike[];
+	articles?: Prose[];
+}
+
+export interface Book {
+	book: string;
+	book_title?: string;
+	short_title?: string;
+	intros?: Prose[];
+	endMatters?: Prose[];
+	chapters: Chapter[];
+}
+
+/**
+ * An intro, article, or end-matter block.
+ *
+ * Paragraphs are real \ip here rather than collapsing, because unlike a note
+ * body this is ordinary body text. Its <mn> markers become \f footnotes; they
+ * cannot be passed through renderInline, which would drop the delimiters and
+ * leave the marker's content ('[1]') sitting in the prose as literal text.
+ */
+function renderProse(block: Prose, ref: string): string[] {
+	const notes = block.notes ?? [];
+	const bound = bindMarkers(block.text, notes, 'prose', ref);
+	assertOnlyKnownDefects(bound, notes, ref);
+
+	const notesAt = new Map<number, MarkerHit[]>();
+	for (const hit of bound.hits) {
+		if (!notesAt.has(hit.start)) notesAt.set(hit.start, []);
+		notesAt.get(hit.start)!.push(hit);
+	}
+
+	let flat = '';
+	let skip = false;
+	for (const node of tokenize(block.text, 'prose', ref)) {
+		if (node.kind === 'text') {
+			if (!skip) flat += node.value;
+			continue;
+		}
+		if (skip) {
+			if (node.close && node.name === 'mn') skip = false;
+			continue;
+		}
+		if (node.name === 'mn' && !node.close) {
+			skip = true;
+			for (const hit of notesAt.get(node.start) ?? []) {
+				flat += `\\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref)}\\f*`;
+			}
+		} else if (CHAR_MARKERS[node.name]) {
+			flat += node.close ? `\\${CHAR_MARKERS[node.name]}*` : `\\${CHAR_MARKERS[node.name]} `;
+		} else if (node.name === 'br') {
+			flat += '\n';
+		}
+		// <col-left>/<col-right> have no USFM column model; their text runs on.
+	}
+
+	const lines: string[] = [];
+	if (block.title) lines.push(`\\is ${block.title}`);
+	for (const para of flat.split(/\n+/).map((p) => p.trim())) {
+		if (para) lines.push(`\\ip ${para}`);
+	}
+	return lines;
+}
+
+export function renderUsfm(
+	slug: string,
+	book: Book,
+	annotations: Map<number, Annotation[]>,
+	opts: { includeAnnotations: boolean },
+	fallbackTitle: string
+): string {
+	const { usfm } = bookCode(slug);
+	// The three appendix books carry no book_title/short_title, so the caller
+	// supplies odrName from books.ts. USFM requires \h and \mt1.
+	const long = book.book_title ?? fallbackTitle;
+	const short = book.short_title ?? book.book ?? fallbackTitle;
+
+	const lines: string[] = [
+		`\\id ${usfm} Original Douay-Rheims (1582/1610)`,
+		'\\usfm 3.0',
+		'\\ide UTF-8',
+		`\\h ${short}`,
+		`\\toc1 ${long}`,
+		`\\toc2 ${short}`,
+		`\\toc3 ${usfm}`,
+		`\\mt1 ${long}`
+	];
+
+	for (const intro of book.intros ?? []) lines.push(...renderProse(intro, `${slug} intro`));
+
+	for (const chapter of book.chapters) {
+		lines.push(`\\c ${chapter.chapter}`);
+
+		if (chapter.summary) {
+			const ref = `${slug} ${chapter.chapter} summary`;
+			const notes = chapter.summary_notes ?? [];
+			const bound = bindMarkers(chapter.summary, notes, 'summary', ref);
+			assertOnlyKnownDefects(bound, notes, ref);
+			// \cd is a single-line chapter description, so its notes trail the
+			// text rather than sitting at their markers. Marker position is the
+			// one thing that does not survive here; the JSON keeps it.
+			let cd = stripMarkup(chapter.summary, 'summary', ref);
+			for (const hit of bound.hits) {
+				cd += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref)}\\f*`;
+			}
+			lines.push(`\\cd ${cd}`);
+		}
+
+		for (const article of chapter.articles ?? []) {
+			lines.push(...renderProse(article, `${slug} ${chapter.chapter} article`));
+		}
+
+		const byVerse = new Map<number, Annotation[]>();
+		if (opts.includeAnnotations) {
+			for (const ann of annotations.get(chapter.chapter) ?? []) {
+				if (!byVerse.has(ann.verse)) byVerse.set(ann.verse, []);
+				byVerse.get(ann.verse)!.push(ann);
+			}
+		}
+
+		lines.push('\\p');
+		for (const verse of chapter.verses) {
+			const ref = `${slug} ${chapter.chapter}:${verse.verse}`;
+			let line = renderVerse(verse, chapter.chapter, ref);
+			for (const ann of byVerse.get(verse.verse) ?? []) {
+				line += ` ${renderAnnotation(ann, chapter.chapter, `${slug} ann ${chapter.chapter}:${ann.verse}`)}`;
+			}
+			lines.push(line);
+		}
+	}
+
+	for (const end of book.endMatters ?? []) lines.push(...renderProse(end, `${slug} endMatter`));
+
+	return `${lines.join('\n')}\n`;
+}
