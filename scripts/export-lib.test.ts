@@ -91,8 +91,7 @@ describe('bindMarkers', () => {
 		expect(r.hits.map((h) => h.noteIndex)).toEqual([0, 1]);
 	});
 
-	it('falls back to the next unconsumed note for a ring that matches nothing', () => {
-		// The 1-esdras shape: rings interleaved with numbered notes.
+	it('binds a ring marker directly when a note is itself keyed by it', () => {
 		const notes = [
 			{ marker: '◦', text: 'ring' },
 			{ marker: 1, text: 'one' }
@@ -100,6 +99,29 @@ describe('bindMarkers', () => {
 		const r = bindMarkers('<mn>◦</mn> a <mn>[1]</mn>', notes, 'prose', 'ref');
 		expect(r.hits.map((h) => h.noteIndex)).toEqual([0, 1]);
 		expect(r.unbound).toEqual([]);
+	});
+
+	it('falls back to the next unconsumed note for a ring that matches nothing', () => {
+		// The 1-peter-intro shape: no note is keyed '◦', so every ring must fall
+		// back to the next unclaimed note in array order.
+		const notes = [
+			{ marker: 1, text: 'one' },
+			{ marker: 2, text: 'two' }
+		];
+		const r = bindMarkers('<mn>◦</mn> a <mn>[2]</mn>', notes, 'prose', 'ref');
+		expect(r.hits.map((h) => h.noteIndex)).toEqual([0, 1]);
+		expect(r.unbound).toEqual([]);
+		expect(r.unreferenced).toEqual([]);
+	});
+
+	it('never binds one note twice, reporting the loser as unbound', () => {
+		const notes = [
+			{ marker: 1, text: 'one' },
+			{ marker: 2, text: 'two' }
+		];
+		const r = bindMarkers('<mn>◦</mn> a <mn>[1]</mn> b <mn>[2]</mn>', notes, 'prose', 'ref');
+		expect(new Set(r.hits.map((h) => h.noteIndex)).size).toBe(r.hits.length);
+		expect(r.unbound).toEqual(['1']);
 	});
 
 	it('reports a marker with no note', () => {

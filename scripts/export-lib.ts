@@ -155,14 +155,25 @@ export function bindMarkers(
 		if (node.kind !== 'tag' || node.close || node.name !== markerTag) continue;
 		const full = `<${markerTag}>${node.content}</${markerTag}>`;
 		for (const token of parseMarkerTokens(node.content)) {
-			const nth = taken.get(token) ?? 0;
-			const slot = byToken.get(token)?.[nth];
+			// A slot claimed by the ring fallback below is still on this token's
+			// list (e.g. a note keyed '1' that a stray '◦' already consumed), so
+			// skip past any already-consumed entries rather than trusting `taken`
+			// alone. A token whose every entry is spoken for falls through to
+			// unbound instead of double-binding someone else's note.
+			const slots = byToken.get(token) ?? [];
+			let nth = taken.get(token) ?? 0;
+			while (nth < slots.length && consumed.has(slots[nth])) nth++;
+			const slot = slots[nth];
 			if (slot !== undefined) {
 				taken.set(token, nth + 1);
 				consumed.add(slot);
 				hits.push({ token, noteIndex: slot, start: node.start, length: full.length });
 				continue;
 			}
+			// A '◦' stands in for a note whose real marker never made it into the
+			// text (or that isn't itself keyed '◦'). It claims the next unclaimed
+			// note in array order; the `consumed` check above is what keeps that
+			// claim from later being handed out a second time to a numbered token.
 			if (token === '◦') {
 				const next = notes.findIndex((_, i) => !consumed.has(i));
 				if (next !== -1) {
