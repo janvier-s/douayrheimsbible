@@ -496,6 +496,25 @@ function charMarker(name: string, close: boolean, nested: boolean): string {
 const oneLine = (text: string): string => text.replace(/\s+/g, ' ').trim();
 
 /**
+ * Emits character markers, tracking how many are already open so one opened
+ * inside another takes the nested form. USFM 3 wants \+sc inside an open \it
+ * exactly as it wants \+it inside a note: 14 body lines nest <sc> within <i>,
+ * mostly the divine name inside an italic quotation.
+ */
+function charMarkerStack(insideNote: boolean) {
+	let open = 0;
+	return (name: string, close: boolean): string => {
+		if (close) {
+			open = Math.max(0, open - 1);
+			return charMarker(name, true, insideNote || open > 0);
+		}
+		const nested = insideNote || open > 0;
+		open++;
+		return charMarker(name, false, nested);
+	};
+}
+
+/**
  * Drops a closing tag with no matching opener and appends closers for any tag
  * still open at the end, leaving everything else byte for byte as it was.
  * Void tags (<br>) are not tracked. Exists only for KNOWN_UNBALANCED refs; the
@@ -613,6 +632,7 @@ export function renderVerse(
 
 	let out = `\\v ${label} `;
 	let crossRefIndex = 0;
+	const emitChar = charMarkerStack(false);
 	let skipUntilClose: TagName | null = null;
 
 	for (const node of nodes) {
@@ -626,11 +646,11 @@ export function renderVerse(
 		}
 		if (node.close) {
 			// Body text, outside any character environment: no \+ prefix.
-			if (CHAR_MARKERS[node.name]) out += charMarker(CHAR_MARKERS[node.name]!, true, false);
+			if (CHAR_MARKERS[node.name]) out += emitChar(CHAR_MARKERS[node.name]!, true);
 			continue;
 		}
 		if (CHAR_MARKERS[node.name]) {
-			out += charMarker(CHAR_MARKERS[node.name]!, false, false);
+			out += emitChar(CHAR_MARKERS[node.name]!, false);
 		} else if (node.name === 'na') {
 			skipUntilClose = 'na';
 			const alt = altFor.get(node.start);
@@ -789,6 +809,7 @@ function renderProse(block: Prose, ref: string, inChapter = false): string[] {
 	}
 
 	let flat = '';
+	const emitChar = charMarkerStack(false);
 	let skip = false;
 	for (const node of tokenize(block.text, 'prose', ref)) {
 		if (node.kind === 'text') {
@@ -806,7 +827,7 @@ function renderProse(block: Prose, ref: string, inChapter = false): string[] {
 			}
 		} else if (CHAR_MARKERS[node.name]) {
 			// Body text of an \ip paragraph, outside any character environment.
-			flat += charMarker(CHAR_MARKERS[node.name]!, node.close, false);
+			flat += emitChar(CHAR_MARKERS[node.name]!, node.close);
 		} else if (node.name === 'br') {
 			flat += '\n';
 		}
@@ -877,6 +898,7 @@ function renderVerseInline(verse: Verse, ref: string): string {
 	let body = '';
 	let trailer = '';
 	let crossRefIndex = 0;
+	const emitChar = charMarkerStack(false);
 	let skipUntilClose: TagName | null = null;
 
 	for (const node of tokenize(verse.text, 'verse', ref)) {
@@ -890,11 +912,11 @@ function renderVerseInline(verse: Verse, ref: string): string {
 		}
 		if (node.close) {
 			// A \cd body is not a character environment, so these stay bare.
-			if (CHAR_MARKERS[node.name]) body += charMarker(CHAR_MARKERS[node.name]!, true, false);
+			if (CHAR_MARKERS[node.name]) body += emitChar(CHAR_MARKERS[node.name]!, true);
 			continue;
 		}
 		if (CHAR_MARKERS[node.name]) {
-			body += charMarker(CHAR_MARKERS[node.name]!, false, false);
+			body += emitChar(CHAR_MARKERS[node.name]!, false);
 		} else if (node.name === 'na') {
 			skipUntilClose = 'na';
 			for (const hit of notesAt.get(node.start) ?? []) {

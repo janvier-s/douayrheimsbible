@@ -443,6 +443,42 @@ describe('the corpus markup', () => {
 		expect(total).toBe(4);
 	});
 
+	// A character marker opened while another is already open takes the nested
+	// form, the same rule that governs markers inside a note. 14 body lines put
+	// <sc> inside <i>, mostly the divine name inside an italic quotation, and
+	// the reference grammar rejects the unnested form.
+	it.each([false, true])(
+		'nests a character marker opened inside another (annotations: %s)',
+		(ann) => {
+			const offenders: string[] = [];
+			for (const meta of ALL_BOOKS) {
+				const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
+				const usfm = renderUsfm(
+					meta.slug,
+					book,
+					readAnnotations(meta.slug),
+					{ includeAnnotations: ann },
+					meta.odrName
+				);
+				for (const line of usfm.split('\n')) {
+					let inNote = 0;
+					let charOpen = 0;
+					for (const tok of line.match(/\\\+?[a-z0-9]+\*?/g) ?? []) {
+						if (/^\\(f|ef|x)$/.test(tok)) inNote++;
+						else if (/^\\(f|ef|x)\*$/.test(tok)) inNote = Math.max(0, inNote - 1);
+						else if (inNote === 0 && /^\\(it|sc)$/.test(tok)) {
+							if (charOpen > 0) offenders.push(`${meta.slug}: ${tok} opened inside another`);
+							charOpen++;
+						} else if (inNote === 0 && /^\\\+(it|sc)$/.test(tok)) charOpen++;
+						else if (inNote === 0 && /^\\\+?(it|sc)\*$/.test(tok))
+							charOpen = Math.max(0, charOpen - 1);
+					}
+				}
+			}
+			expect(offenders).toEqual([]);
+		}
+	);
+
 	it('covers every book with a unique code', () => {
 		expect(ALL_BOOKS).toHaveLength(76);
 		expect(ALL_BOOKS.every((b) => BOOK_CODES[b.slug])).toBe(true);
