@@ -512,6 +512,82 @@ describe('renderUsfm', () => {
 		expect(out).toContain('\\mt1 3 Esdras');
 	});
 
+	it('folds a verse-0 summary tail onto the \cd instead of emitting \v 0', () => {
+		const spilled = {
+			...book,
+			chapters: [
+				{
+					chapter: 25,
+					summary: 'Phinees his zeal is commended',
+					summary_notes: [],
+					verses: [
+						{ verse: 0, text: 'by God, and rewarded.' },
+						{ verse: 1, text: 'And Israel abode.' }
+					]
+				}
+			]
+		};
+		const out = renderUsfm('genesis', spilled, new Map(), { includeAnnotations: false }, 'Genesis');
+		expect(out).toContain('\\cd Phinees his zeal is commended by God, and rewarded.');
+		expect(out).not.toContain('\\v 0');
+		expect(out).toContain('\\v 1 And Israel abode.');
+	});
+
+	it('makes the fragment the whole \cd when the chapter has no summary', () => {
+		const noSummary = {
+			...book,
+			chapters: [
+				{
+					chapter: 9,
+					verses: [
+						{ verse: 0, text: 'banquet of stolen water and hid bread.' },
+						{ verse: 1, text: 'Wisdom hath built herself an house.' }
+					]
+				}
+			]
+		};
+		const out = renderUsfm(
+			'genesis',
+			noSummary,
+			new Map(),
+			{ includeAnnotations: false },
+			'Genesis'
+		);
+		expect(out).toContain('\\cd banquet of stolen water and hid bread.');
+		expect(out).not.toContain('\\v 0');
+	});
+
+	it('carries the fragment notes and cross-references onto the \cd', () => {
+		const withApparatus = {
+			...book,
+			chapters: [
+				{
+					chapter: 97,
+					verses: [
+						{
+							verse: 0,
+							text: 'his coming <cr>[2]</cr> to judge the world. <na>[1]</na>',
+							notes: [{ label: '1', text: 'The Church in all nations.' }],
+							cross_refs: [{ text: 'cap. 13.' }]
+						},
+						{ verse: 1, text: 'Sing ye to our Lord.' }
+					]
+				}
+			]
+		};
+		const out = renderUsfm(
+			'genesis',
+			withApparatus,
+			new Map(),
+			{ includeAnnotations: false },
+			'Genesis'
+		);
+		expect(out).toContain(
+			'\\cd his coming to judge the world. \\x - \\xt cap. 13.\\x* \\f - \\ft The Church in all nations.\\f*'
+		);
+		expect(out).not.toContain('\\v 0');
+	});
+
 	it('omits annotations unless asked, and includes them when asked', () => {
 		const anns = new Map([[1, [{ verse: 1, title: 'Catchword.', text: 'Comment.' }]]]);
 		const plain = renderUsfm('genesis', book, anns, { includeAnnotations: false }, 'Genesis');

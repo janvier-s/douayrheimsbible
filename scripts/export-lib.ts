@@ -749,6 +749,58 @@ function renderProse(block: Prose, ref: string): string[] {
 	return lines;
 }
 
+/**
+ * The verse number the corpus uses for a summary that ran past its field.
+ *
+ * 49 chapters across 27 books store the tail of an over-long chapter summary
+ * as a verse numbered 0 — `numbers 25` keeps "by God, and rewarded." there,
+ * the end of the sentence its `summary` begins. USFM verse numbers start at 1
+ * and the text is not scripture, so nothing here may emit it as a verse.
+ */
+export const SUMMARY_OVERFLOW_VERSE = 0;
+
+/**
+ * A verse-0 fragment as \cd material: the words, then its apparatus.
+ *
+ * The fragment is tagged as a verse, not a summary (`acts 7` puts <sc>Jesus</sc>
+ * in one, which the summary vocabulary forbids), so it tokenizes as `verse`.
+ * Its notes and cross-references travel with it in marker order, in the same
+ * trailing \f/\x form \cd already gives summary notes — \cd is one line, so
+ * no note can sit at its marker. 10 of the 49 carry notes and one, the Tobias
+ * preface, carries five cross-references.
+ */
+function renderSummaryOverflow(verse: Verse, ref: string): string {
+	const notes = verse.notes ?? [];
+	const refs = verse.cross_refs ?? [];
+	const bound = bindMarkers(verse.text, notes, 'verse', ref);
+	assertOnlyKnownDefects(bound, notes, ref);
+
+	const notesAt = new Map<number, MarkerHit[]>();
+	for (const hit of bound.hits) {
+		if (!notesAt.has(hit.start)) notesAt.set(hit.start, []);
+		notesAt.get(hit.start)!.push(hit);
+	}
+
+	let out = stripMarkup(verse.text, 'verse', ref);
+	let crossRefIndex = 0;
+	for (const node of tokenize(verse.text, 'verse', ref)) {
+		if (node.kind !== 'tag' || node.close) continue;
+		if (node.name === 'na') {
+			for (const hit of notesAt.get(node.start) ?? []) {
+				out += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'verse', ref, true)}\\f*`;
+			}
+		} else if (node.name === 'cr') {
+			const target = refs[crossRefIndex++];
+			if (!target) throw new ExportError(ref, 'cross-reference marker with no cross_refs entry');
+			out += ` \\x - \\xt ${target.text}\\x*`;
+		}
+	}
+	if (crossRefIndex !== refs.length) {
+		throw new ExportError(ref, `${refs.length - crossRefIndex} cross_refs with no marker`);
+	}
+	return out;
+}
+
 export function renderUsfm(
 	slug: string,
 	book: Book,
@@ -779,6 +831,10 @@ export function renderUsfm(
 	for (const chapter of book.chapters) {
 		lines.push(`\\c ${chapter.chapter}`);
 
+		// The chapter description is the summary plus whatever the corpus spilled
+		// into a verse numbered 0; either half may be absent.
+		const cd: string[] = [];
+
 		if (chapter.summary) {
 			const ref = `${slug} ${chapter.chapter} summary`;
 			const notes = chapter.summary_notes ?? [];
@@ -787,13 +843,20 @@ export function renderUsfm(
 			// \cd is a single-line chapter description, so its notes trail the
 			// text rather than sitting at their markers. Marker position is the
 			// one thing that does not survive here; the JSON keeps it.
-			let cd = stripMarkup(chapter.summary, 'summary', ref);
+			let text = stripMarkup(chapter.summary, 'summary', ref);
 			for (const hit of bound.hits) {
-				cd += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref, true)}\\f*`;
+				text += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref, true)}\\f*`;
 			}
-			// 113 summaries and their notes carry literal newlines; \cd is one line.
-			lines.push(`\\cd ${oneLine(cd)}`);
+			cd.push(text);
 		}
+
+		const overflow = chapter.verses.find((v) => v.verse === SUMMARY_OVERFLOW_VERSE);
+		if (overflow) {
+			cd.push(renderSummaryOverflow(overflow, `${slug} ${chapter.chapter}:0`));
+		}
+
+		// 113 summaries and their notes carry literal newlines; \cd is one line.
+		if (cd.length) lines.push(`\\cd ${oneLine(cd.join(' '))}`);
 
 		for (const article of chapter.articles ?? []) {
 			lines.push(...renderProse(article, `${slug} ${chapter.chapter} article`));
@@ -809,6 +872,8 @@ export function renderUsfm(
 
 		lines.push('\\p');
 		for (const verse of chapter.verses) {
+			// Folded into \cd above: it is a summary tail, not scripture.
+			if (verse.verse === SUMMARY_OVERFLOW_VERSE) continue;
 			const ref = `${slug} ${chapter.chapter}:${verse.verse}`;
 			let line = renderVerse(verse, chapter.chapter, ref);
 			for (const ann of byVerse.get(verse.verse) ?? []) {

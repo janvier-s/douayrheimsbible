@@ -225,6 +225,80 @@ describe('the corpus markup', () => {
 		}
 	);
 
+	// The corpus numbers a summary that overran its field as verse 0. USFM
+	// verse numbers start at 1, so those 49 fragments must reach the reader as
+	// \cd text and never as scripture. Counting the chapters that carry one and
+	// checking each fragment's words landed in its \cd is what distinguishes
+	// "folded in" from "dropped".
+	it.each([false, true])(
+		'emits no \\v 0 and folds all 49 fragments into \\cd (annotations: %s)',
+		(includeAnnotations) => {
+			let carriers = 0;
+			const missing: string[] = [];
+			for (const meta of ALL_BOOKS) {
+				const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
+				const usfm = renderUsfm(
+					meta.slug,
+					book,
+					readAnnotations(meta.slug),
+					{ includeAnnotations },
+					meta.odrName
+				);
+				expect(usfm).not.toMatch(/^\\v 0\b/m);
+
+				const lines = usfm.split('\n');
+				for (const chapter of book.chapters) {
+					const zero = chapter.verses.find((v: any) => v.verse === 0);
+					if (!zero) continue;
+					carriers++;
+					const ref = `${meta.slug} ${chapter.chapter}:0`;
+					const words = stripMarkup(zero.text, 'verse', ref).replace(/\s+/g, ' ');
+					const cd = lines.find((l) => l.startsWith('\\cd ') && l.includes(words));
+					if (!cd) missing.push(ref);
+				}
+			}
+			expect(missing).toEqual([]);
+			expect(carriers).toBe(49);
+		}
+	);
+
+	// 10 of the 49 fragments carry notes and one carries cross-references; the
+	// fold must move the apparatus, not only the words.
+	it('keeps every verse-0 note and cross-reference in the bundle', () => {
+		let notes = 0;
+		let crossRefs = 0;
+		const lost: string[] = [];
+		for (const meta of ALL_BOOKS) {
+			const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
+			const usfm = renderUsfm(
+				meta.slug,
+				book,
+				readAnnotations(meta.slug),
+				{ includeAnnotations: false },
+				meta.odrName
+			);
+			for (const chapter of book.chapters) {
+				const zero = chapter.verses.find((v: any) => v.verse === 0);
+				if (!zero) continue;
+				for (const n of zero.notes ?? []) {
+					notes++;
+					if (!usfm.includes(n.text.replace(/\s+/g, ' '))) {
+						lost.push(`${meta.slug} ${chapter.chapter}:0 note`);
+					}
+				}
+				for (const x of zero.cross_refs ?? []) {
+					crossRefs++;
+					if (!usfm.includes(`\\x - \\xt ${x.text}\\x*`)) {
+						lost.push(`${meta.slug} ${chapter.chapter}:0 xref ${x.text}`);
+					}
+				}
+			}
+		}
+		expect(lost).toEqual([]);
+		expect(notes).toBe(10);
+		expect(crossRefs).toBe(5);
+	});
+
 	it('covers every book with a unique code', () => {
 		expect(ALL_BOOKS).toHaveLength(76);
 		expect(ALL_BOOKS.every((b) => BOOK_CODES[b.slug])).toBe(true);

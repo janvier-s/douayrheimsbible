@@ -143,6 +143,21 @@ A further **26 notes are never referenced** from their text (`1-john 4:21`, `joh
 
 These 28 cases are the complete known set. They are fixed data, so the export pins them: the tolerance list is enumerated in `export-lib.ts`, and anything *outside* it is fatal. A new unbound marker means the corpus changed and the export should stop.
 
+#### Summary overflow: `verse: 0`
+
+49 chapters across 27 books hold a verse numbered 0. It is never scripture: it is the tail of a chapter summary that ran past its field, and it finishes the summary's sentence.
+
+```
+numbers 25  summary: "…Phinees his zeal in stabbing to death two fornicators is commended"
+            verse 0: "by God, and rewarded."
+```
+
+USFM verse numbers start at 1, so emitting these as `\v 0` is both invalid and a claim that the editor's summary is text of the Bible. Each fragment is appended to the `\cd` it continues, and the chapter's verse loop skips it.
+
+12 of the 49 sit in a chapter with no `summary` at all — the head of the summary never made it into the corpus — so the fragment becomes the whole `\cd`. 10 carry `notes` and one, the Tobias preface at `tobias 0:0`, carries five `cross_refs`; those travel with the words, in marker order, in the same trailing `\f`/`\x` form `\cd` already gives summary notes, because a one-line `\cd` cannot keep a note at its marker.
+
+The fragments tokenize as `verse` blocks, not `summary` ones: `acts 7:0` contains `<sc>Jesus</sc>`, which the summary vocabulary forbids.
+
 #### `<alt>` anchoring
 
 `<alt>` marks the span of printed text a marginal variant reading applies to; the note supplies the alternative:
