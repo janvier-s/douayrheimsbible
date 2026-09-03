@@ -777,7 +777,7 @@ export interface Book {
  * cannot be passed through renderInline, which would drop the delimiters and
  * leave the marker's content ('[1]') sitting in the prose as literal text.
  */
-function renderProse(block: Prose, ref: string): string[] {
+function renderProse(block: Prose, ref: string, inChapter = false): string[] {
 	const notes = block.notes ?? [];
 	const bound = bindMarkers(block.text, notes, 'prose', ref);
 	assertOnlyKnownDefects(bound, notes, ref);
@@ -814,7 +814,10 @@ function renderProse(block: Prose, ref: string): string[] {
 	}
 
 	const lines: string[] = [];
-	if (block.title) lines.push(`\\is ${block.title}`);
+	// \is is an introduction marker: _chapterContent admits \ip but not \is, so a
+	// title after a \c has to be a section heading instead. \ip itself is legal
+	// in both positions and stays as it is.
+	if (block.title) lines.push(`\\${inChapter ? 's1' : 'is'} ${block.title}`);
 	for (const para of flat.split(/\n+/).map((p) => p.trim())) {
 		if (para) lines.push(`\\ip ${para}`);
 	}
@@ -830,6 +833,11 @@ function renderProse(block: Prose, ref: string): string[] {
  * and the text is not scripture, so nothing here may emit it as a verse.
  */
 export const SUMMARY_OVERFLOW_VERSE = 0;
+
+/** Tobias alone carries a chapter 0, and it holds the book's preface rather
+ *  than scripture. USFM chapters start at 1, so it goes out as introduction
+ *  paragraphs ahead of \c 1 instead of as a chapter of its own. */
+export const PREFACE_CHAPTER = 0;
 
 /** Verse-segment letters, from the second entry sharing a number. */
 const SEGMENTS = 'bcdefghijklmnopqrstuvwxyz';
@@ -850,7 +858,7 @@ const SEGMENTS = 'bcdefghijklmnopqrstuvwxyz';
  * in _chapterContent to recover on, so an \x here is a hard parse error.
  * See https://ubsicap.github.io/usfm/notes_basic/xrefs.html#xt
  */
-function renderSummaryOverflow(verse: Verse, ref: string): string {
+function renderVerseInline(verse: Verse, ref: string): string {
 	const notes = verse.notes ?? [];
 	const refs = verse.cross_refs ?? [];
 	const bound = bindMarkers(verse.text, notes, 'verse', ref);
@@ -935,6 +943,15 @@ export function renderUsfm(
 	}
 
 	for (const chapter of book.chapters) {
+		if (chapter.chapter !== PREFACE_CHAPTER) continue;
+		for (const verse of chapter.verses) {
+			const text = renderVerseInline(verse, verseRef(slug, chapter.chapter, verse.verse));
+			if (text.trim()) lines.push(`\\ip ${oneLine(text)}`);
+		}
+	}
+
+	for (const chapter of book.chapters) {
+		if (chapter.chapter === PREFACE_CHAPTER) continue;
 		lines.push(`\\c ${chapter.chapter}`);
 
 		// The chapter description is the summary plus whatever the corpus spilled
@@ -958,16 +975,14 @@ export function renderUsfm(
 
 		const overflow = chapter.verses.find((v) => v.verse === SUMMARY_OVERFLOW_VERSE);
 		if (overflow) {
-			cd.push(
-				renderSummaryOverflow(overflow, verseRef(slug, chapter.chapter, SUMMARY_OVERFLOW_VERSE))
-			);
+			cd.push(renderVerseInline(overflow, verseRef(slug, chapter.chapter, SUMMARY_OVERFLOW_VERSE)));
 		}
 
 		// 113 summaries and their notes carry literal newlines; \cd is one line.
 		if (cd.length) lines.push(`\\cd ${oneLine(cd.join(' '))}`);
 
 		for (const [i, article] of (chapter.articles ?? []).entries()) {
-			lines.push(...renderProse(article, articleRef(slug, chapter.chapter, i)));
+			lines.push(...renderProse(article, articleRef(slug, chapter.chapter, i), true));
 		}
 
 		const byVerse = new Map<number, Annotation[]>();
@@ -1002,7 +1017,7 @@ export function renderUsfm(
 	}
 
 	for (const [i, end] of (book.endMatters ?? []).entries()) {
-		lines.push(...renderProse(end, endMatterRef(slug, i)));
+		lines.push(...renderProse(end, endMatterRef(slug, i), true));
 	}
 
 	return `${lines.join('\n')}\n`;

@@ -23,6 +23,7 @@ import {
 	KNOWN_UNBOUND,
 	KNOWN_UNREFERENCED,
 	KNOWN_DUPLICATE_VERSE,
+	PREFACE_CHAPTER,
 	introRef,
 	endMatterRef,
 	articleRef,
@@ -328,8 +329,13 @@ describe('the corpus markup', () => {
 							.replace(/\\\+?[a-z0-9]+\*/g, '')
 							.replace(/\\\+?[a-z0-9]+ ?/g, '')
 							.replace(/\s+/g, ' ');
-					const cd = lines.find((l) => l.startsWith('\\cd ') && plain(l).includes(words));
-					if (!cd) missing.push(ref);
+					// The preface chapter is introduction material, not a chapter
+					// description, so its fragment lands in an \ip. Every other one
+					// belongs in a \cd, and asserting the right marker per chapter
+					// keeps this from passing on a fragment that went astray.
+					const marker = chapter.chapter === PREFACE_CHAPTER ? '\\ip ' : '\\cd ';
+					const carrier = lines.find((l) => l.startsWith(marker) && plain(l).includes(words));
+					if (!carrier) missing.push(ref);
 				}
 			}
 			expect(missing).toEqual([]);
