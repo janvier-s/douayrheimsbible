@@ -356,6 +356,29 @@ Therefore: **`bible/tagged/` and `annotations/` are canonical and lossless; `usf
 
 Note that annotations attach at *verse* granularity via an exact `verse` field, so `\ef` placement is exact. The fuzzy catchword matching is only needed for intra-verse highlighting, which is why it stays quarantined in `index/lemmas/`.
 
+## Known USFM Deviations
+
+The 1582/1610 source has an apparatus USFM 3 cannot express in full. Three constructs
+below are emitted knowingly, because every alternative alters the text. Counts are
+against `usfm/`; `usfm-study/` carries the same constructs plus the annotations. The
+JSON trees are canonical and lossless, so nothing here loses information from the
+bundle as a whole, only from the USFM projection of it.
+
+| Construct | Count | Why it stands |
+| --- | --- | --- |
+| `\f` inside an introduction `\ip` | 684, in 63 books | The introduction content model admits no note, and USFM 3 offers no sanctioned way to footnote an introduction (`\iex` shares the model). The printed source genuinely footnotes its introductions. Inlining the notes would alter the text; dropping them would lose it. |
+| `\f` inside a chapter article `\ip` | 589, in 10 books | Same construct, same reasoning, in the articles that sit between chapters. |
+| `\f` inside `\cd` | 220 | A parser makes the note a sibling of the `cd` paragraph rather than its content, so a consumer may render the chapter description without its notes. The alternative is to drop the association entirely. |
+| A `\sc` or `\it` span opened in body text and closed after `\f*`/`\x*` | 13 lines | The source italicises a phrase that a note interrupts. Tolerated by the grammar; a character environment straddling a note boundary is simply not something every renderer reconstructs. |
+
+Two further points a consumer should know. `\cd` is a single line, so a chapter
+summary's notes trail the description rather than sitting at their markers: marker
+*position* within a summary is the one thing the USFM does not carry, and the JSON
+keeps it. And 49 fragments the corpus numbers as verse 0 are summary text that overran
+its field, not scripture; they are folded into the `\cd` they continue, which is why
+`manifest.json` reports `verses` (37,180, the corpus) and `usfmVerses` (37,130, the
+`\v` lines emitted) as two separate numbers.
+
 ## Error Handling
 
 The export fails loudly rather than emitting damaged output. Fatal conditions:

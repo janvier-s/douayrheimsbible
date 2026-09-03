@@ -109,6 +109,14 @@
 		</li>
 	</ul>
 
+	<p>
+		The JSON trees are the canonical form and preserve everything the corpus holds. The USFM is a
+		faithful rendering of a 1582/1610 apparatus that USFM 3 cannot express in full, so a few
+		constructs, chiefly footnotes inside introductions and chapter descriptions, are emitted as
+		documented deviations rather than dropped or reworded. The repository records each one with its
+		count.
+	</p>
+
 	<a
 		href="https://github.com/janvier-s/original-douay-rheims"
 		target="_blank"
