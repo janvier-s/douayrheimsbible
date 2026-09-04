@@ -41,7 +41,7 @@
 				<td class="dl-size">27 MB</td>
 				<td>
 					<a
-						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible-Merged.pdf"
+						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v2.0/Original-Douay-Rheims-Bible-Merged.pdf"
 						class="dl-link">Download</a
 					>
 				</td>
@@ -52,7 +52,7 @@
 				<td class="dl-size">4.8 MB</td>
 				<td>
 					<a
-						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v1.0/Original-Douay-Rheims-Bible.pdf"
+						href="https://github.com/janvier-s/original-douay-rheims/releases/download/v2.0/Original-Douay-Rheims-Bible.pdf"
 						class="dl-link">Download</a
 					>
 				</td>
