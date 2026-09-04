@@ -286,14 +286,14 @@ usfm/<NN-BBB>.usfm          derived — \f + \x only (v1-compatible)
 usfm-study/<NN-BBB>.usfm    derived — the same, plus \ef annotations
 annotations/<book>/<NNN>.json   1,677 annotations, 397 files
 reference/{ot,nt}/*.json    26 files from static/data/reference/odr/, verbatim
-index/lemmas/<book>.json    derived — catchword spans, with match tier
+index/lemmas/<book>.json    derived — catchword spans into the tagged text
 ```
 
 ### Why `index/lemmas/` is separate
 
 `lemmas` is `[start, length, part]` where start/length are character offsets into the *tagged* text, markup included (`odr-lemma-lib.ts:18-22`), produced by fuzzy catchword matching across five confidence tiers down to `'partial'`.
 
-It is derived (`build-odr-lemmas.ts:68` deletes and regenerates it wholesale), it is coupled to markup byte offsets so any tag edit silently invalidates it, and it carries a confidence tier that inlining into verse objects would flatten into apparent fact. Separating it keeps `bible/tagged/` changing only when the text changes, and lets a consumer filter on `tier`.
+It is derived (`build-odr-lemmas.ts:68` deletes and regenerates it wholesale), it is coupled to markup byte offsets so any tag edit silently invalidates it, and it is a fuzzy result that inlining into verse objects would flatten into apparent fact. Separating it keeps `bible/tagged/` changing only when the text changes. The tier is tallied in the build report but not persisted (`build-odr-lemmas.ts:86,121` write `[start, length, part]`), so `SCHEMA.md` tells consumers to treat every span as best-effort.
 
 `SCHEMA.md` must state that these offsets are valid only against `bible/tagged/`.
 

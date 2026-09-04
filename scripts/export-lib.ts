@@ -1073,3 +1073,69 @@ export function assertSafeOutDir(out: string | undefined, root: string, home: st
 	if (r === o || r.startsWith(`${o}/`))
 		throw new ExportError(ref, `refusing to delete ${o}, which contains the repository`);
 }
+
+/** The fragment a chapter summary overran into, kept beside the summary it
+ *  completes rather than inside `verses[]`. */
+export interface SummaryContinuation {
+	text: string;
+	notes?: unknown[];
+	cross_refs?: unknown[];
+}
+
+/** Chapter keys in the order the JSON trees present them, so the folded
+ *  continuation lands next to the summary it belongs to rather than after
+ *  `articles`. Any key not listed keeps its original position after these. */
+const CHAPTER_KEY_ORDER = ['chapter', 'verses', 'summary', 'summary_notes', 'summary_continuation'];
+
+/**
+ * Folds each verse-0 fragment into the summary it completes.
+ *
+ * 49 chapters number a fragment `verse: 0`. It is never scripture: it is the
+ * tail of a chapter summary that ran past its field. Leaving it in `verses[]`
+ * makes every consumer that iterates verses render editorial matter as a verse,
+ * and leaves 12 chapters looking summary-less when the fragment *is* their
+ * whole summary.
+ *
+ * The text joins the summary. The fragment also keeps its own entry, because
+ * 10 fragments carry a note and the Tobias preface carries five
+ * cross-references: merging the words alone would drop 15 pieces of apparatus,
+ * which is what the previously published bundle did. Keeping the fragment
+ * beside the summary also preserves the seam, so a consumer can still tell
+ * which words overran.
+ *
+ * The apparatus is not converted. Verse notes key on `label` and summary notes
+ * on `marker`; moving one into the other would risk binding a fragment's note
+ * to an unrelated summary note of the same token.
+ *
+ * Returns a new book. The caller's copy is untouched, because the USFM render
+ * folds these fragments into `\cd` itself and needs them where they are.
+ */
+export function foldSummaryOverflow<T extends { chapters: Record<string, unknown>[] }>(book: T): T {
+	const out = structuredClone(book);
+
+	for (const chapter of out.chapters) {
+		const verses = chapter.verses as Record<string, unknown>[] | undefined;
+		const fragment = verses?.find((v) => v.verse === SUMMARY_OVERFLOW_VERSE);
+		if (!fragment) continue;
+
+		chapter.verses = verses!.filter((v) => v !== fragment);
+
+		const text = String(fragment.text ?? '');
+		const summary = chapter.summary ? String(chapter.summary) : '';
+		chapter.summary = summary ? `${summary} ${text}` : text;
+
+		const continuation: SummaryContinuation = { text };
+		if (Array.isArray(fragment.notes) && fragment.notes.length) continuation.notes = fragment.notes;
+		if (Array.isArray(fragment.cross_refs) && fragment.cross_refs.length)
+			continuation.cross_refs = fragment.cross_refs;
+		chapter.summary_continuation = continuation;
+
+		const ordered: Record<string, unknown> = {};
+		for (const key of CHAPTER_KEY_ORDER) if (key in chapter) ordered[key] = chapter[key];
+		for (const key of Object.keys(chapter)) if (!(key in ordered)) ordered[key] = chapter[key];
+		for (const key of Object.keys(chapter)) delete chapter[key];
+		Object.assign(chapter, ordered);
+	}
+
+	return out;
+}

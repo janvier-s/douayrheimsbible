@@ -101,7 +101,7 @@
 		</li>
 		<li>
 			<strong><code>index/lemmas/</code></strong> — the offset and length locating each annotation's catchword
-			in the verse it annotates, with the confidence tier of the match.
+			in the verse it annotates. The offsets index the tagged text, markup included.
 		</li>
 		<li>
 			<strong><code>manifest.json</code></strong> — schema version, source commit, and counts for every

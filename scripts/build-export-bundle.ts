@@ -29,7 +29,8 @@ import {
 	endMatterRef,
 	articleRef,
 	summaryRef,
-	verseRef
+	verseRef,
+	foldSummaryOverflow
 } from './export-lib.js';
 import { ALL_BOOKS } from '../src/lib/data/books.js';
 
@@ -116,8 +117,16 @@ function toRaw(slug, book) {
 			delete verse.lemmas;
 		}
 	}
-	return out;
+	// Folded last: each part is stripped under its own vocabulary first.
+	// A verse-0 fragment may carry <cr> or <sc>, which a summary may not,
+	// so joining the two before stripping would fail the tag check.
+	return foldSummaryOverflow(out);
 }
+
+/** Drops the inline catchword spans from a serialized book. They are
+ *  duplicated into index/lemmas/, and inline they read as fact when they
+ *  are a fuzzy match whose tier the tuple does not carry. */
+const dropLemmas = (key: string, value: unknown) => (key === 'lemmas' ? undefined : value);
 
 rmSync(OUT, { recursive: true, force: true });
 
@@ -139,7 +148,10 @@ for (const meta of ALL_BOOKS) {
 	const { data: book } = readJson(join(ODR_DIR, file));
 	const anns = readAnnotations(meta.slug);
 
-	write(`bible/tagged/${file}`, JSON.stringify(book, null, 2));
+	// Catchword spans ship in index/lemmas/ alone. A replacer rather than a
+	// delete because `book` is still needed intact for the USFM render and
+	// for the lemma index built below.
+	write(`bible/tagged/${file}`, JSON.stringify(foldSummaryOverflow(book), dropLemmas, 2));
 	write(`bible/raw/${file}`, JSON.stringify(toRaw(meta.slug, book), null, 2));
 	const plainUsfm = renderUsfm(
 		meta.slug,

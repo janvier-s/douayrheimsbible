@@ -10,6 +10,7 @@ import {
 	parseMarkerTokens,
 	bindMarkers,
 	assertOnlyKnownDefects,
+	foldSummaryOverflow,
 	KNOWN_UNBOUND,
 	KNOWN_UNREFERENCED,
 	KNOWN_UNBALANCED,
@@ -799,5 +800,76 @@ describe('assertSafeOutDir', () => {
 
 	it('does not mistake a sibling with a shared prefix for an ancestor', () => {
 		expect(() => ok('/home/me/repo-export')).not.toThrow();
+	});
+});
+
+describe('foldSummaryOverflow', () => {
+	const chapterWith = (extra = {}) => ({
+		chapters: [
+			{
+				chapter: 25,
+				verses: [
+					{ verse: 0, text: 'by God, and rewarded.', ...extra },
+					{ verse: 1, text: 'And Israel at that time abode in Settim,' }
+				],
+				summary: 'Phinees his zeal is commended',
+				articles: []
+			}
+		]
+	});
+
+	it('takes the fragment out of verses and completes the summary', () => {
+		const [c] = foldSummaryOverflow(chapterWith()).chapters;
+		expect(c.verses.map((v) => v.verse)).toEqual([1]);
+		expect(c.summary).toBe('Phinees his zeal is commended by God, and rewarded.');
+	});
+
+	it('keeps the fragment beside the summary, so the seam survives', () => {
+		const [c] = foldSummaryOverflow(chapterWith()).chapters;
+		expect(c.summary_continuation).toEqual({ text: 'by God, and rewarded.' });
+	});
+
+	it('makes the fragment the whole summary where the chapter has none', () => {
+		const book = chapterWith();
+		delete book.chapters[0].summary;
+		const [c] = foldSummaryOverflow(book).chapters;
+		expect(c.summary).toBe('by God, and rewarded.');
+	});
+
+	it('carries the apparatus across, which a text-only merge would drop', () => {
+		const notes = [{ label: '1', text: 'a note' }];
+		const cross_refs = [{ text: 'Gen. 1.' }];
+		const [c] = foldSummaryOverflow(chapterWith({ notes, cross_refs })).chapters;
+		expect(c.summary_continuation.notes).toEqual(notes);
+		expect(c.summary_continuation.cross_refs).toEqual(cross_refs);
+	});
+
+	it('omits empty apparatus arrays rather than shipping them', () => {
+		const [c] = foldSummaryOverflow(chapterWith({ notes: [], cross_refs: [] })).chapters;
+		expect(c.summary_continuation).toEqual({ text: 'by God, and rewarded.' });
+	});
+
+	it('puts the continuation next to the summary, not after articles', () => {
+		const [c] = foldSummaryOverflow(chapterWith()).chapters;
+		expect(Object.keys(c)).toEqual([
+			'chapter',
+			'verses',
+			'summary',
+			'summary_continuation',
+			'articles'
+		]);
+	});
+
+	it('leaves the input alone, because the USFM render still needs verse 0', () => {
+		const book = chapterWith();
+		foldSummaryOverflow(book);
+		expect(book.chapters[0].verses.map((v) => v.verse)).toEqual([0, 1]);
+		expect(book.chapters[0].summary).toBe('Phinees his zeal is commended');
+	});
+
+	it('does not touch a chapter that has no overflow', () => {
+		const book = { chapters: [{ chapter: 1, verses: [{ verse: 1, text: 'x' }], summary: 's' }] };
+		const [c] = foldSummaryOverflow(book).chapters;
+		expect(c).toEqual({ chapter: 1, verses: [{ verse: 1, text: 'x' }], summary: 's' });
 	});
 });

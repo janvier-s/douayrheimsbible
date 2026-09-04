@@ -24,6 +24,7 @@ import {
 	KNOWN_UNREFERENCED,
 	KNOWN_DUPLICATE_VERSE,
 	PREFACE_CHAPTER,
+	foldSummaryOverflow,
 	introRef,
 	endMatterRef,
 	articleRef,
@@ -482,5 +483,70 @@ describe('the corpus markup', () => {
 	it('covers every book with a unique code', () => {
 		expect(ALL_BOOKS).toHaveLength(76);
 		expect(ALL_BOOKS.every((b) => BOOK_CODES[b.slug])).toBe(true);
+	});
+});
+
+// The JSON counterpart of the \cd fold above. The previously published bundle
+// merged these fragments into the summary and dropped their apparatus with
+// them, losing 15 notes and cross-references; these numbers are what catches
+// that regression if the fold is ever rewritten.
+describe('the verse-0 fold in the JSON trees', () => {
+	const folded = () =>
+		ALL_BOOKS.map((meta) => ({
+			slug: meta.slug,
+			book: foldSummaryOverflow(readJson<any>(join(ODR_DIR, `${meta.slug}.json`)).data)
+		}));
+
+	it('leaves no verse 0 anywhere in verses[]', () => {
+		const offenders: string[] = [];
+		for (const { slug, book } of folded()) {
+			for (const chapter of book.chapters) {
+				if (chapter.verses.some((v: any) => v.verse === 0))
+					offenders.push(`${slug} ${chapter.chapter}`);
+			}
+		}
+		expect(offenders).toEqual([]);
+	});
+
+	it('records all 49 fragments as a summary continuation', () => {
+		const carriers = folded().flatMap(({ book }) =>
+			book.chapters.filter((c: any) => c.summary_continuation)
+		);
+		expect(carriers).toHaveLength(49);
+	});
+
+	it('keeps the 10 notes and 5 cross-references the words came with', () => {
+		let notes = 0;
+		let crossRefs = 0;
+		for (const { book } of folded()) {
+			for (const chapter of book.chapters) {
+				const cont = chapter.summary_continuation;
+				if (!cont) continue;
+				notes += cont.notes?.length ?? 0;
+				crossRefs += cont.cross_refs?.length ?? 0;
+			}
+		}
+		expect(notes).toBe(10);
+		expect(crossRefs).toBe(5);
+	});
+
+	it('gives the 12 summary-less chapters the summary the fragment holds', () => {
+		const gained: string[] = [];
+		for (const meta of ALL_BOOKS) {
+			const { data: raw } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
+			const book = foldSummaryOverflow(raw);
+			for (const [i, chapter] of book.chapters.entries()) {
+				if (!raw.chapters[i].summary && chapter.summary)
+					gained.push(`${meta.slug} ${chapter.chapter}`);
+			}
+		}
+		expect(gained).toHaveLength(12);
+	});
+
+	it('completes the summary rather than replacing it', () => {
+		const book = foldSummaryOverflow(readJson<any>(join(ODR_DIR, 'numbers.json')).data);
+		const chapter = book.chapters.find((c: any) => c.chapter === 25);
+		expect(chapter.summary).toMatch(/is commended by God, and rewarded\.$/);
+		expect(chapter.summary_continuation.text).toBe('by God, and rewarded.');
 	});
 });
