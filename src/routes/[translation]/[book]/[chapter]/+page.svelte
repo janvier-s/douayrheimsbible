@@ -74,6 +74,9 @@
 
 <svelte:head>
 	<title>{pageTitle}</title>
+	{#if data.hidden}
+		<meta name="robots" content="noindex" />
+	{/if}
 	{#if pageDesc}
 		<meta name="description" content={pageDesc} />
 	{/if}

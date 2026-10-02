@@ -19,7 +19,7 @@
 	import { isMobile } from '$lib/stores/mobile';
 	import { kjvPsalmsForDr } from '$lib/data/psalm-mapping';
 	import { chromeHidden, suspendChrome, revealChrome } from '$lib/stores/chrome';
-	import { TRANSLATIONS } from '$lib/stores/compare';
+	import { TRANSLATIONS, konamiUnlocked } from '$lib/stores/compare';
 	import { toRoman } from '$lib/utils/text';
 	import FloatingNav from './FloatingNav.svelte';
 	import BrandingRow from './BrandingRow.svelte';
@@ -52,7 +52,11 @@
 		revealed = true
 	}: Props = $props();
 
-	let liveTranslations = $derived(TRANSLATIONS.filter((t) => t.live && !t.hidden));
+	let liveTranslations = $derived(
+		TRANSLATIONS.filter(
+			(t) => (t.live || $konamiUnlocked) && (t.id === 'rsv2ce' ? $konamiUnlocked : !t.hidden)
+		)
+	);
 	let currentTranslation = $derived(
 		liveTranslations.find((t) => t.id === translationId) ??
 			liveTranslations.find((t) => t.id === 'odr')!

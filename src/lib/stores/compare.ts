@@ -10,7 +10,7 @@ export type TranslationId =
 	| 'cpdv'
 	| 'kjv'
 	| 'vul'
-	| 'rsv';
+	| 'rsv2ce';
 
 export interface Translation {
 	id: TranslationId;
@@ -127,6 +127,19 @@ export const TRANSLATIONS: Translation[] = [
 			"Read {book} Chapter {chapter} in the Knox Bible (1955), Ronald Knox's acclaimed literary Catholic translation from the Latin Vulgate."
 	},
 	{
+		id: 'rsv2ce',
+		label: 'Revised Standard Version, Second Catholic Edition',
+		abbr: 'RSV-2CE',
+		year: '2006',
+		live: false,
+		ntOnly: false,
+		fullHeader: false,
+		micro: 'Modern Catholic Translation',
+		hidden: true,
+		seoName: 'Revised Standard Version, Second Catholic Edition',
+		seoDesc: 'Read {book} Chapter {chapter} in the RSV Second Catholic Edition (2006).'
+	},
+	{
 		id: 'cpdv',
 		label: 'Catholic Public Domain Version',
 		abbr: 'CPDV',
@@ -138,19 +151,6 @@ export const TRANSLATIONS: Translation[] = [
 		seoName: 'Catholic Public Domain Version',
 		seoDesc:
 			'Read {book} Chapter {chapter} in the Catholic Public Domain Version (2009), a modern English translation from the Latin Vulgate.'
-	},
-	{
-		id: 'rsv',
-		label: 'Revised Standard Version, Second Catholic Edition',
-		abbr: 'RSV-2CE',
-		year: '2006',
-		live: false,
-		ntOnly: false,
-		fullHeader: false,
-		micro: 'Ecumenical Catholic Translation',
-		hidden: true,
-		seoName: 'Revised Standard Version, Second Catholic Edition',
-		seoDesc: 'Read {book} Chapter {chapter} in the RSV Second Catholic Edition (2006).'
 	}
 ];
 

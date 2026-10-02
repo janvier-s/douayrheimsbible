@@ -5,6 +5,7 @@
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import PrayerModal from '$lib/components/PrayerModal.svelte';
 	import InstallBanner from '$lib/components/InstallBanner.svelte';
+	import KonamiUnlock from '$lib/components/KonamiUnlock.svelte';
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -123,3 +124,4 @@
 </div>
 <PrayerModal />
 <InstallBanner />
+<KonamiUnlock />

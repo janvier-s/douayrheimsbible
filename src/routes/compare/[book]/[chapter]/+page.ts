@@ -24,9 +24,9 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	const chapter = getChapter(odrBookData, chapterNum);
 	if (!chapter) throw error(404, `Chapter ${chapterNum} not found`);
 
-	// Load all other live translations in parallel (skip RSV which is hidden)
+	// Load all other translations in parallel (including hidden ones so they are ready if unlocked)
 	const otherTranslations = TRANSLATIONS.filter(
-		(t) => t.id !== 'odr' && t.live && !(t.ntOnly && bookMeta.testament === 'OT')
+		(t) => t.id !== 'odr' && !(t.ntOnly && bookMeta.testament === 'OT')
 	);
 
 	const translationResults = await Promise.allSettled(

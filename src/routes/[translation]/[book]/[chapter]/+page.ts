@@ -2,17 +2,18 @@ import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { loadTranslationBook } from '$lib/data/loader';
 import { getBookBySlug } from '$lib/data/books';
-import { TRANSLATIONS, konamiUnlocked } from '$lib/stores/compare';
+import { TRANSLATIONS } from '$lib/stores/compare';
 import type { Chapter } from '$lib/data/types';
-import { get } from 'svelte/store';
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageLoad = async ({ params, fetch, setHeaders }) => {
 	const { translation: translationId, book: slug, chapter: chapterStr } = params;
 
 	const translation = TRANSLATIONS.find((t) => t.id === translationId && t.id !== 'odr');
 	if (!translation) throw error(404, `Unknown translation: ${translationId}`);
-	if (!translation.live && !get(konamiUnlocked))
-		throw error(403, `This translation is not yet available`);
+
+	if (translation.hidden) {
+		setHeaders({ 'X-Robots-Tag': 'noindex' });
+	}
 
 	const bookMeta = getBookBySlug(slug);
 	if (!bookMeta) throw error(404, `Book not found: ${slug}`);
@@ -24,7 +25,8 @@ export const load: PageLoad = async ({ params, fetch }) => {
 			totalChapters: 0,
 			translationId,
 			ntOnly: true,
-			translationLabel: translation.label
+			translationLabel: translation.label,
+			hidden: translation.hidden
 		};
 	}
 
@@ -49,6 +51,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		translationId,
 		ntOnly: false,
 		translationLabel: translation.label,
+		hidden: translation.hidden,
 		seoName: translation.seoName ?? translation.label,
 		seoDesc: (translation.seoDesc ?? '')
 			.replace(/\{book\}/g, bookMeta.odrName)
