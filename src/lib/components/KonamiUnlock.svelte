@@ -23,9 +23,17 @@
 			konamiProgress++;
 			if (konamiProgress === KONAMI_SEQUENCE.length) {
 				konamiProgress = 0;
-				konamiToastUnlocked = !$konamiUnlocked;
+				const willUnlock = !$konamiUnlocked;
+				konamiToastUnlocked = willUnlock;
 				konamiUnlocked.update((v) => !v);
 				showUnlockToast = true;
+
+				if (willUnlock) {
+					new Audio('/audio/konami_unlock.mp3').play().catch(() => {});
+				} else {
+					new Audio('/audio/konami_lock.mp3').play().catch(() => {});
+				}
+
 				setTimeout(() => (showUnlockToast = false), 4000);
 			}
 		} else {
