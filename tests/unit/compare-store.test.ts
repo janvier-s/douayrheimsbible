@@ -6,7 +6,7 @@ import { get } from 'svelte/store';
 vi.mock('$app/environment', () => ({ browser: true }));
 
 const SAVED = {
-	order: ['vul', 'odr', 'kjv', 'drc', 'haydock', 'conf', 'knox', 'cpdv', 'rsv'],
+	order: ['vul', 'odr', 'kjv', 'drc', 'haydock', 'conf', 'knox', 'rsv2ce', 'cpdv'],
 	visible: ['odr', 'kjv', 'drc']
 };
 
