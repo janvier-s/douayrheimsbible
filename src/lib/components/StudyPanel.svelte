@@ -680,7 +680,10 @@
 				<button
 					class="w-6 h-6 shrink-0 flex items-center justify-center rounded text-subtle hover:text-foreground transition-colors"
 					aria-label="Close study panel"
-					onclick={onClose}
+					onclick={(e) => {
+						e.stopPropagation();
+						onClose();
+					}}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

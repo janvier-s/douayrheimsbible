@@ -601,7 +601,6 @@
 		style:left={mobileStudyMode ? '0' : undefined}
 		style:right={mobileStudyMode ? '0' : undefined}
 		style:z-index={mobileStudyMode ? '40' : undefined}
-		style:pointer-events={mobileStudyMode && !mobilePanelOpen ? 'none' : undefined}
 		style:transform={mobileStudyMode
 			? mobilePanelOpen
 				? 'translateY(0)'
@@ -636,7 +635,28 @@
 				</div>
 			</div>
 		</div>
-		<div bind:this={panelEl} class="shrink-0 h-full">
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<div
+			bind:this={panelEl}
+			class="shrink-0 h-full"
+			onclick={() => {
+				if (mobileStudyMode && !mobilePanelOpen) mobilePanelOpen = true;
+			}}
+			ontouchstart={(e) => {
+				if (mobileStudyMode && !mobilePanelOpen && panelEl) {
+					panelEl.dataset.touchY = String(e.touches[0].clientY);
+				}
+			}}
+			ontouchend={(e) => {
+				if (mobileStudyMode && !mobilePanelOpen && panelEl?.dataset.touchY) {
+					const startY = parseFloat(panelEl.dataset.touchY);
+					const endY = e.changedTouches[0].clientY;
+					if (startY - endY > 20) mobilePanelOpen = true; // swipe up
+					delete panelEl.dataset.touchY;
+				}
+			}}
+		>
 			{#if StudyPanel}
 				<StudyPanel
 					bookData={currentBookData}
