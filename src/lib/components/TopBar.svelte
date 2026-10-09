@@ -525,6 +525,7 @@
 	/* ── Translation dropdown panel ─────────────────────── */
 	.trans-panel {
 		width: 330px;
+		max-width: calc(100vw - 20px);
 		background: var(--color-panel);
 		border: 1px solid var(--color-border);
 		border-radius: 5px;
