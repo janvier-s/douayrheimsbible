@@ -4,6 +4,8 @@
 	const bubble = createBubbler();
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
+	import { chromeHidden } from '$lib/stores/chrome';
+	import { isMobile } from '$lib/stores/mobile';
 	import type { PageData } from './$types';
 	import { prefs } from '$lib/stores/prefs';
 	import { compareStore, TRANSLATIONS, MAX_COLS } from '$lib/stores/compare';
@@ -38,6 +40,8 @@
 	let { bookMeta, chapter, verseMaps, kjvPsalmLabel } = $derived(data);
 	let prevChapter = $derived(chapter.chapter > 1 ? chapter.chapter - 1 : null);
 	let nextChapter = $derived(chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null);
+	
+	let hideChrome = $derived($isMobile && $chromeHidden);
 
 	// Responsive column cap: 2 on mobile, MAX_COLS on desktop
 	let innerWidth = $state(0);
@@ -190,8 +194,8 @@
 	>
 		<!-- Sticky column headers — draggable to reorder -->
 		<div
-			class="sticky top-[var(--header-height)] z-20 border-b-2 border-border grid"
-			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
+			class="sticky z-20 border-b-2 border-border grid transition-[top] duration-300"
+			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr)); top: {hideChrome ? '0px' : 'var(--header-height)'};"
 		>
 			{#each displayedCols as t, colIdx (t.id)}
 				<div
