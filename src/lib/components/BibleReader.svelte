@@ -604,7 +604,7 @@
 		style:transform={mobileStudyMode
 			? mobilePanelOpen
 				? 'translateY(0)'
-				: 'translateY(100%)'
+				: 'translateY(calc(100% + 11px))'
 			: undefined}
 		style:height={panelHeight}
 		style:max-width={panelMaxWidth}
