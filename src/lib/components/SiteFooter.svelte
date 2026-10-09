@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 
 	const columns = [
@@ -34,7 +35,7 @@
 		}
 	];
 
-	let tapCount = 0;
+	let tapCount = $state(0);
 	let tapTimeout: ReturnType<typeof setTimeout>;
 
 	function handleCrossTap() {
@@ -53,6 +54,18 @@
 		}
 	}
 </script>
+
+{#if tapCount >= 3}
+	<div
+		class="tap-toast"
+		in:fade={{ duration: 150 }}
+		out:fade={{ duration: 300 }}
+		role="status"
+		aria-live="polite"
+	>
+		You are now {7 - tapCount} taps away from a secret.
+	</div>
+{/if}
 
 <footer class="footer">
 	<!-- Ornamental divider -->
@@ -204,5 +217,24 @@
 		font-weight: 300;
 		text-align: center;
 		line-height: 1.6;
+	}
+
+	.tap-toast {
+		position: fixed;
+		bottom: 90px; /* Above the footer cross */
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 200;
+		padding: 10px 18px;
+		background: var(--color-text);
+		color: var(--color-bg);
+		border-radius: 20px;
+		font-family: var(--font-ui);
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 0.2px;
+		white-space: nowrap;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+		pointer-events: none;
 	}
 </style>
