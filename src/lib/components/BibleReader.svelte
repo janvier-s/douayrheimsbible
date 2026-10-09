@@ -644,15 +644,23 @@
 				if (mobileStudyMode && !mobilePanelOpen) mobilePanelOpen = true;
 			}}
 			ontouchstart={(e) => {
-				if (mobileStudyMode && !mobilePanelOpen && panelEl) {
+				if (mobileStudyMode && panelEl) {
 					panelEl.dataset.touchY = String(e.touches[0].clientY);
 				}
 			}}
 			ontouchend={(e) => {
-				if (mobileStudyMode && !mobilePanelOpen && panelEl?.dataset.touchY) {
+				if (mobileStudyMode && panelEl?.dataset.touchY) {
 					const startY = parseFloat(panelEl.dataset.touchY);
 					const endY = e.changedTouches[0].clientY;
-					if (startY - endY > 20) mobilePanelOpen = true; // swipe up
+
+					if (!mobilePanelOpen) {
+						if (startY - endY > 20) mobilePanelOpen = true; // swipe up
+					} else {
+						// Only allow swipe down to close if starting on the header
+						if (endY - startY > 20 && (e.target as Element).closest('.panel-header')) {
+							mobilePanelOpen = false; // swipe down
+						}
+					}
 					delete panelEl.dataset.touchY;
 				}
 			}}
