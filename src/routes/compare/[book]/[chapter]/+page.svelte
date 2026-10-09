@@ -40,7 +40,7 @@
 	let { bookMeta, chapter, verseMaps, kjvPsalmLabel } = $derived(data);
 	let prevChapter = $derived(chapter.chapter > 1 ? chapter.chapter - 1 : null);
 	let nextChapter = $derived(chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null);
-	
+
 	let hideChrome = $derived($isMobile && $chromeHidden);
 
 	// Responsive column cap: 2 on mobile, MAX_COLS on desktop
@@ -195,7 +195,9 @@
 		<!-- Sticky column headers — draggable to reorder -->
 		<div
 			class="sticky z-20 border-b-2 border-border grid transition-[top] duration-300"
-			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr)); top: {hideChrome ? '0px' : 'var(--header-height)'};"
+			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr)); top: {hideChrome
+				? '0px'
+				: 'var(--header-height)'};"
 		>
 			{#each displayedCols as t, colIdx (t.id)}
 				<div
