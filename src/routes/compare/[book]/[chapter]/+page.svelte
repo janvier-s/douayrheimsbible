@@ -56,12 +56,13 @@
 	let activeCols = $derived(
 		orderedTranslations.filter((t: Translation) => $compareStore.visible.has(t.id))
 	);
-	let displayedCols = $derived(
-		activeCols.slice($compareStore.columnOffset, $compareStore.columnOffset + effectiveMax)
+	let safeOffset = $derived(
+		Math.min($compareStore.columnOffset, Math.max(0, activeCols.length - effectiveMax))
 	);
+	let displayedCols = $derived(activeCols.slice(safeOffset, safeOffset + effectiveMax));
 	let needsScroll = $derived(activeCols.length > effectiveMax);
-	let canScrollLeft = $derived($compareStore.columnOffset > 0);
-	let canScrollRight = $derived($compareStore.columnOffset + effectiveMax < activeCols.length);
+	let canScrollLeft = $derived(safeOffset > 0);
+	let canScrollRight = $derived(safeOffset + effectiveMax < activeCols.length);
 
 	// Max-width scales with column count (405px per col → 2 cols = 810px)
 	let containerMaxWidth = $derived(`${Math.min(displayedCols.length * 405, 1800)}px`);
@@ -89,6 +90,30 @@
 
 	function onColDragEnd() {
 		draggingId = null;
+	}
+
+	let touchStartX = $state(0);
+	let touchStartY = $state(0);
+
+	function handleTouchStart(e: TouchEvent) {
+		touchStartX = e.touches[0].clientX;
+		touchStartY = e.touches[0].clientY;
+	}
+
+	function handleTouchEnd(e: TouchEvent) {
+		const touchEndX = e.changedTouches[0].clientX;
+		const touchEndY = e.changedTouches[0].clientY;
+		const deltaX = touchStartX - touchEndX;
+		const deltaY = touchStartY - touchEndY;
+
+		// Trigger horizontal swipe if mostly horizontal and significant enough
+		if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+			if (deltaX > 0 && canScrollRight) {
+				compareStore.scrollBy(1, effectiveMax);
+			} else if (deltaX < 0 && canScrollLeft) {
+				compareStore.scrollBy(-1, effectiveMax);
+			}
+		}
 	}
 </script>
 
@@ -134,7 +159,7 @@
 	<!-- Fixed carousel arrows — vertical rectangles, only when >MAX_COLS translations active -->
 	{#if needsScroll}
 		<button
-			onclick={() => compareStore.scrollBy(-1)}
+			onclick={() => compareStore.scrollBy(-1, effectiveMax)}
 			disabled={!canScrollLeft}
 			aria-label="Previous translation"
 			class="fixed left-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
@@ -145,7 +170,7 @@
 			‹
 		</button>
 		<button
-			onclick={() => compareStore.scrollBy(1)}
+			onclick={() => compareStore.scrollBy(1, effectiveMax)}
 			disabled={!canScrollRight}
 			aria-label="Next translation"
 			class="fixed right-[8px] top-[57%] -translate-y-1/2 z-40 w-[28px] h-[64px] flex items-center justify-center rounded-[4px] text-[22px] font-light transition-all duration-fast
@@ -191,6 +216,8 @@
 	<div
 		class="mx-auto border-x border-t border-border mt-[8px]"
 		style="max-width: {containerMaxWidth};"
+		ontouchstart={handleTouchStart}
+		ontouchend={handleTouchEnd}
 	>
 		<!-- Sticky column headers — draggable to reorder -->
 		<div
@@ -224,7 +251,9 @@
 							>
 								{t.label}
 							</span>
-							<span class="text-[11px] text-subtle mt-[3px] block">
+							<span
+								class="text-[11px] text-subtle mt-[3px] block {hideChrome ? 'max-md:hidden' : ''}"
+							>
 								{t.year}{#if t.id === 'kjv' && kjvPsalmLabel}<span
 										class="ml-[6px] text-accent"
 										title="The KJV numbers the psalms from the Hebrew; this page follows the Vulgate numbering."
@@ -233,8 +262,9 @@
 							</span>
 							{#if t.micro}
 								<span
-									class="text-[9px] uppercase tracking-[0.12em] text-accent/70 mt-[2px] block font-medium"
-									>{t.micro}</span
+									class="text-[9px] uppercase tracking-[0.12em] text-accent/70 mt-[2px] block font-medium {hideChrome
+										? 'max-md:hidden'
+										: ''}">{t.micro}</span
 								>
 							{/if}
 						</div>

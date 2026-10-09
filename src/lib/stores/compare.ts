@@ -275,9 +275,7 @@ function createCompareStore() {
 				} else {
 					next.add(id);
 				}
-				const activeCount = s.order.filter((tid) => next.has(tid)).length;
-				const offset = Math.min(s.columnOffset, Math.max(0, activeCount - MAX_COLS));
-				const nextState = { ...s, visible: next, columnOffset: offset };
+				const nextState = { ...s, visible: next };
 				saveToStorage(nextState);
 				return nextState;
 			});
@@ -289,10 +287,11 @@ function createCompareStore() {
 				return nextState;
 			});
 		},
-		scrollBy(delta: number) {
+		scrollBy(delta: number, maxCols: number = MAX_COLS) {
 			update((s) => {
 				const activeCount = s.order.filter((id) => s.visible.has(id)).length;
-				const offset = Math.max(0, Math.min(activeCount - MAX_COLS, s.columnOffset + delta));
+				const current = Math.min(s.columnOffset, Math.max(0, activeCount - maxCols));
+				const offset = Math.max(0, Math.min(activeCount - maxCols, current + delta));
 				return { ...s, columnOffset: offset };
 			});
 		},
