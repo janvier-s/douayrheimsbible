@@ -669,7 +669,7 @@
 				<StudyPanel
 					bookData={currentBookData}
 					{translationId}
-					onClose={mobileStudyMode ? () => (mobilePanelOpen = false) : null}
+					onClose={mobileStudyMode && mobilePanelOpen ? () => (mobilePanelOpen = false) : null}
 				/>
 			{/if}
 		</div>
