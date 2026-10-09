@@ -673,7 +673,7 @@
 >
 	<!-- Panel identity bar -->
 	<div class="panel-header shrink-0 flex flex-col">
-		<div class="flex items-center px-[14px] pt-[11px] pb-[10px]">
+		<div class="flex items-center px-[14px] min-h-[45px] pt-[11px] pb-[10px]">
 			{#if onClose}<div class="w-6 shrink-0"></div>{/if}
 			<span class="panel-title flex-1 text-center">Study Notes</span>
 			{#if onClose}
