@@ -115,114 +115,117 @@
 				</button>
 			</div>
 
-			{#if tab === 'before'}
-				<h2 id="prayer-title" class="prayer-title">Veni Sancte Spiritus</h2>
+			<div class="prayer-content styled-scroll">
+				{#if tab === 'before'}
+					<h2 id="prayer-title" class="prayer-title">Veni Sancte Spiritus</h2>
 
-				<div class="prayer-columns">
-					<div class="prayer-col">
-						<p class="prayer-lang">Latin</p>
-						<div class="prayer-body">
-							<p>
-								Veni, Sancte Spiritus,<br />
-								reple tuorum corda fidelium,<br />
-								et tui amoris in eis ignem accende.
-							</p>
-							<p class="prayer-versicles">
-								<span class="vr">℣.</span> Emitte Spiritum tuum et creabuntur.<br />
-								<span class="vr">℟.</span> Et renovabis faciem terrae.
-							</p>
-							<p>
-								<em>Oremus.</em><br />
-								Deus, qui corda fidelium Sancti Spiritus illustratione docuisti, da nobis in eodem Spiritu
-								recta sapere, et de eius semper consolatione gaudere. Per Christum Dominum nostrum. Amen.
-							</p>
+					<div class="prayer-columns">
+						<div class="prayer-col">
+							<p class="prayer-lang">Latin</p>
+							<div class="prayer-body">
+								<p>
+									Veni, Sancte Spiritus,<br />
+									reple tuorum corda fidelium,<br />
+									et tui amoris in eis ignem accende.
+								</p>
+								<p class="prayer-versicles">
+									<span class="vr">℣.</span> Emitte Spiritum tuum et creabuntur.<br />
+									<span class="vr">℟.</span> Et renovabis faciem terrae.
+								</p>
+								<p>
+									<em>Oremus.</em><br />
+									Deus, qui corda fidelium Sancti Spiritus illustratione docuisti, da nobis in eodem Spiritu
+									recta sapere, et de eius semper consolatione gaudere. Per Christum Dominum nostrum.
+									Amen.
+								</p>
+							</div>
+						</div>
+
+						<div class="prayer-divider" aria-hidden="true"></div>
+
+						<div class="prayer-col">
+							<p class="prayer-lang">English</p>
+							<div class="prayer-body">
+								<p>
+									Come, Holy Spirit,<br />
+									fill the hearts of Thy faithful<br />
+									and enkindle in them the fire of Thy love.
+								</p>
+								<p class="prayer-versicles">
+									<span class="vr">℣.</span> Send forth Thy Spirit and they shall be created.<br />
+									<span class="vr">℟.</span> And Thou shalt renew the face of the earth.
+								</p>
+								<p>
+									<em>Let us pray.</em><br />
+									O God, Who didst instruct the hearts of the faithful by the light of the Holy Spirit,
+									grant us by the same Spirit to have a right judgment in all things and ever to rejoice
+									in His consolation. Through Christ our Lord. Amen.
+								</p>
+							</div>
 						</div>
 					</div>
 
-					<div class="prayer-divider" aria-hidden="true"></div>
+					<p class="prayer-source">Veni Sancte Spiritus · Liturgy of the Hours</p>
+				{:else if tab === 'after'}
+					<h2 id="prayer-title" class="prayer-title">Prayer After Reading</h2>
 
-					<div class="prayer-col">
-						<p class="prayer-lang">English</p>
-						<div class="prayer-body">
-							<p>
-								Come, Holy Spirit,<br />
-								fill the hearts of Thy faithful<br />
-								and enkindle in them the fire of Thy love.
-							</p>
-							<p class="prayer-versicles">
-								<span class="vr">℣.</span> Send forth Thy Spirit and they shall be created.<br />
-								<span class="vr">℟.</span> And Thou shalt renew the face of the earth.
-							</p>
-							<p>
-								<em>Let us pray.</em><br />
-								O God, Who didst instruct the hearts of the faithful by the light of the Holy Spirit,
-								grant us by the same Spirit to have a right judgment in all things and ever to rejoice
-								in His consolation. Through Christ our Lord. Amen.
-							</p>
-						</div>
+					<div class="prayer-body prayer-body--single">
+						<p>
+							Let me not, O Lord, be puffed up with worldly wisdom, which passes away, but grant me
+							that love which never abates, that I may not choose to know anything among men but
+							Jesus, and Him crucified.<br /><span class="prayer-ref"
+								>(<a
+									href="/odr/1-corinthians/13"
+									onclick={close}
+									onmouseenter={enterRef}
+									onmouseleave={leaveRef}
+									class="prayer-ref-link">1 Cor. 13:8; 2:2</a
+								>)</span
+							>
+						</p>
+						<p>
+							I pray Thee, loving Jesus, that as Thou hast graciously given me to drink in with
+							delight the words of Thy knowledge, so Thou wouldst mercifully grant me to attain one
+							day to Thee, the Fountain of all Wisdom, and to appear forever before Thy face. Amen.
+						</p>
 					</div>
-				</div>
 
-				<p class="prayer-source">Veni Sancte Spiritus · Liturgy of the Hours</p>
-			{:else if tab === 'after'}
-				<h2 id="prayer-title" class="prayer-title">Prayer After Reading</h2>
+					<p class="prayer-source">Prayer of St. Bede the Venerable · c. 735</p>
+				{:else}
+					<h2 id="prayer-title" class="prayer-title">Indulgences for Reading Scripture</h2>
 
-				<div class="prayer-body prayer-body--single">
-					<p>
-						Let me not, O Lord, be puffed up with worldly wisdom, which passes away, but grant me
-						that love which never abates, that I may not choose to know anything among men but
-						Jesus, and Him crucified.<br /><span class="prayer-ref"
-							>(<a
-								href="/odr/1-corinthians/13"
-								onclick={close}
-								onmouseenter={enterRef}
-								onmouseleave={leaveRef}
-								class="prayer-ref-link">1 Cor. 13:8; 2:2</a
-							>)</span
-						>
-					</p>
-					<p>
-						I pray Thee, loving Jesus, that as Thou hast graciously given me to drink in with
-						delight the words of Thy knowledge, so Thou wouldst mercifully grant me to attain one
-						day to Thee, the Fountain of all Wisdom, and to appear forever before Thy face. Amen.
-					</p>
-				</div>
+					<div class="prayer-body prayer-body--single">
+						<p>
+							An indulgence of three years is granted to the faithful who read the Books of the
+							Bible for at least a quarter of an hour, with the reverence due to the Divine Word and
+							as spiritual reading.
+						</p>
+						<p>
+							To the faithful who piously read at least some verses of the Gospel and in addition,
+							while kissing the Gospel Book, devoutly recite one of the following invocations:
+							<em>"May our sins be blotted out through the words of the Gospel"</em> —
+							<em>"May the reading of the Gospel be our salvation and protection"</em> —
+							<em>"May Christ, the Son of God, teach us the words of the Holy Gospel"</em>:
+						</p>
+						<ul class="prayer-grants">
+							<li>an indulgence of 500 days is granted;</li>
+							<li>
+								a plenary indulgence under the usual conditions is granted to those who for a whole
+								month daily act in the way indicated above;
+							</li>
+							<li>
+								a plenary indulgence is granted at the hour of death to those who often during life
+								have performed this pious exercise, provided they have confessed and received
+								Communion, or at least having sorrow for their sins, they invoke the most holy name
+								of Jesus with their lips, if possible, or at least in their hearts, and humbly
+								accept death from the hand of God as the price of sin.
+							</li>
+						</ul>
+					</div>
 
-				<p class="prayer-source">Prayer of St. Bede the Venerable · c. 735</p>
-			{:else}
-				<h2 id="prayer-title" class="prayer-title">Indulgences for Reading Scripture</h2>
-
-				<div class="prayer-body prayer-body--single">
-					<p>
-						An indulgence of three years is granted to the faithful who read the Books of the Bible
-						for at least a quarter of an hour, with the reverence due to the Divine Word and as
-						spiritual reading.
-					</p>
-					<p>
-						To the faithful who piously read at least some verses of the Gospel and in addition,
-						while kissing the Gospel Book, devoutly recite one of the following invocations:
-						<em>"May our sins be blotted out through the words of the Gospel"</em> —
-						<em>"May the reading of the Gospel be our salvation and protection"</em> —
-						<em>"May Christ, the Son of God, teach us the words of the Holy Gospel"</em>:
-					</p>
-					<ul class="prayer-grants">
-						<li>an indulgence of 500 days is granted;</li>
-						<li>
-							a plenary indulgence under the usual conditions is granted to those who for a whole
-							month daily act in the way indicated above;
-						</li>
-						<li>
-							a plenary indulgence is granted at the hour of death to those who often during life
-							have performed this pious exercise, provided they have confessed and received
-							Communion, or at least having sorrow for their sins, they invoke the most holy name of
-							Jesus with their lips, if possible, or at least in their hearts, and humbly accept
-							death from the hand of God as the price of sin.
-						</li>
-					</ul>
-				</div>
-
-				<p class="prayer-source">Enchiridion Indulgentiarum, 694</p>
-			{/if}
+					<p class="prayer-source">Enchiridion Indulgentiarum, 694</p>
+				{/if}
+			</div>
 		</div>
 	</div>
 {/if}
@@ -267,7 +270,9 @@
 			0 2px 8px -2px rgba(0, 0, 0, 0.12);
 		width: 100%;
 		max-width: 580px;
-		padding: 32px 36px 28px;
+		display: flex;
+		flex-direction: column;
+		max-height: calc(100vh - 48px);
 		animation: panel-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
 	}
 
@@ -287,7 +292,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding: 32px 36px 0;
 		margin-bottom: 20px;
+		flex-shrink: 0;
+	}
+
+	.prayer-content {
+		padding: 0 36px 28px;
+		overflow-y: auto;
+		min-height: 0;
 	}
 
 	.prayer-tabs {
@@ -324,9 +337,9 @@
 
 	.prayer-close {
 		position: absolute;
-		right: 0;
+		right: 36px;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translateY(calc(-50% + 16px)); /* Center vertically against the 32px top padding */
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -458,8 +471,17 @@
 	}
 
 	@media (max-width: 560px) {
-		.prayer-panel {
-			padding: 24px 20px 20px;
+		.prayer-head {
+			padding: 24px 20px 0;
+		}
+
+		.prayer-content {
+			padding: 0 20px 20px;
+		}
+
+		.prayer-close {
+			right: 20px;
+			transform: translateY(calc(-50% + 12px));
 		}
 
 		.prayer-columns {
