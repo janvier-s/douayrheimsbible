@@ -73,12 +73,50 @@ function parsePsalmRef(
 	};
 }
 
+function parseCatholicExtra(
+	input: string
+): { book: string; chapter: number; verse?: number; endVerse?: number } | null {
+	// e.g. "Esther 11" or "Dan 14:1-5"
+	const m = input.match(
+		/^(Esther|Esth|Est|Daniel|Dan)\s*(\d+)(?:[:\s,]\s*(\d+)(?:\s*[-\u2013]\s*(\d+))?)?/i
+	);
+	if (!m) return null;
+	const bookName = m[1].toLowerCase();
+	let book = '';
+	if (bookName.startsWith('est')) book = 'Esth';
+	if (bookName.startsWith('dan')) book = 'Dan';
+
+	const chapter = parseInt(m[2], 10);
+	if (book === 'Esth' && chapter >= 11 && chapter <= 16) {
+		return {
+			book,
+			chapter,
+			verse: m[3] ? parseInt(m[3]) : undefined,
+			endVerse: m[4] ? parseInt(m[4]) : undefined
+		};
+	}
+	if (book === 'Dan' && chapter >= 13 && chapter <= 14) {
+		return {
+			book,
+			chapter,
+			verse: m[3] ? parseInt(m[3]) : undefined,
+			endVerse: m[4] ? parseInt(m[4]) : undefined
+		};
+	}
+	return null;
+}
+
 export function parseReference(input: string): ParsedReference | null {
 	const normalised = normaliseInput(input.trim()).replace(/^(\d)\s+/, '$1');
 
 	// Bypass bcv_parser for Psalms — Protestant verse counts differ from DR/LXX
 	const ps = parsePsalmRef(normalised);
 	if (ps) return { book: 'Ps', chapter: ps.chapter, verse: ps.verse };
+
+	// Bypass bcv_parser for Catholic additions (Esther 11-16, Daniel 13-14)
+	const cathExtra = parseCatholicExtra(normalised);
+	if (cathExtra)
+		return { book: cathExtra.book, chapter: cathExtra.chapter, verse: cathExtra.verse };
 
 	const result = parser.parse(normalised);
 	const passages = result.osis_and_indices();
@@ -122,6 +160,23 @@ export function parseAllReferences(input: string): OsisRange[] {
 			osis = ev !== undefined && ev !== sv ? `Ps.${ch}.${sv}-Ps.${ch}.${ev}` : `Ps.${ch}.${sv}`;
 		} else {
 			osis = `Ps.${ch}`;
+		}
+		const range = parseOsis(osis);
+		if (range) return [range];
+	}
+
+	// Bypass bcv_parser for Catholic additions (Esther 11-16, Daniel 13-14)
+	const cathExtra = parseCatholicExtra(normalised);
+	if (cathExtra) {
+		const { book, chapter: ch, verse: sv, endVerse: ev } = cathExtra;
+		let osis: string;
+		if (sv !== undefined) {
+			osis =
+				ev !== undefined && ev !== sv
+					? `${book}.${ch}.${sv}-${book}.${ch}.${ev}`
+					: `${book}.${ch}.${sv}`;
+		} else {
+			osis = `${book}.${ch}`;
 		}
 		const range = parseOsis(osis);
 		if (range) return [range];
