@@ -18,28 +18,39 @@
 	let showUnlockToast = $state(false);
 	let konamiToastUnlocked = $state(true);
 
+	function toggleKonami() {
+		konamiProgress = 0;
+		const willUnlock = !$konamiUnlocked;
+		konamiToastUnlocked = willUnlock;
+		konamiUnlocked.update((v) => !v);
+		showUnlockToast = true;
+
+		if (willUnlock) {
+			new Audio('/audio/konami_unlock.mp3').play().catch(() => {});
+		} else {
+			new Audio('/audio/konami_lock.mp3').play().catch(() => {});
+		}
+
+		setTimeout(() => (showUnlockToast = false), 4000);
+	}
+
 	export function onKonamiKeydown(e: KeyboardEvent) {
 		if (e.key === KONAMI_SEQUENCE[konamiProgress]) {
 			konamiProgress++;
 			if (konamiProgress === KONAMI_SEQUENCE.length) {
-				konamiProgress = 0;
-				const willUnlock = !$konamiUnlocked;
-				konamiToastUnlocked = willUnlock;
-				konamiUnlocked.update((v) => !v);
-				showUnlockToast = true;
-
-				if (willUnlock) {
-					new Audio('/audio/konami_unlock.mp3').play().catch(() => {});
-				} else {
-					new Audio('/audio/konami_lock.mp3').play().catch(() => {});
-				}
-
-				setTimeout(() => (showUnlockToast = false), 4000);
+				toggleKonami();
 			}
 		} else {
 			konamiProgress = e.key === KONAMI_SEQUENCE[0] ? 1 : 0;
 		}
 	}
+
+	import { onMount } from 'svelte';
+	onMount(() => {
+		const handler = () => toggleKonami();
+		window.addEventListener('konamitoggle', handler);
+		return () => window.removeEventListener('konamitoggle', handler);
+	});
 </script>
 
 <svelte:window onkeydown={onKonamiKeydown} />

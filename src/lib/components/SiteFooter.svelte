@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	const columns = [
 		{
 			heading: 'Scripture',
@@ -31,12 +33,33 @@
 			]
 		}
 	];
+
+	let tapCount = 0;
+	let tapTimeout: ReturnType<typeof setTimeout>;
+
+	function handleCrossTap() {
+		if ($page.url.pathname !== '/contact') return;
+
+		tapCount++;
+		clearTimeout(tapTimeout);
+
+		if (tapCount >= 7) {
+			tapCount = 0;
+			window.dispatchEvent(new CustomEvent('konamitoggle'));
+		} else {
+			tapTimeout = setTimeout(() => {
+				tapCount = 0;
+			}, 1000);
+		}
+	}
 </script>
 
 <footer class="footer">
 	<!-- Ornamental divider -->
 	<div class="footer-rule" aria-hidden="true">
-		<span class="footer-ornament">✠</span>
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<span class="footer-ornament" onclick={handleCrossTap}>✠</span>
 	</div>
 
 	<!-- Link columns -->
