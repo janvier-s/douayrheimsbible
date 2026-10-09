@@ -215,7 +215,7 @@
 	<!-- Table container — border-x provides outer left/right edges; bg-background outside contrasts with bg-panel inside cells -->
 	<div
 		class="mx-auto border-x border-t border-border mt-[8px]"
-		style="max-width: {containerMaxWidth};"
+		style="max-width: {containerMaxWidth}; overflow-anchor: none;"
 		ontouchstart={handleTouchStart}
 		ontouchend={handleTouchEnd}
 	>
@@ -251,22 +251,27 @@
 							>
 								{t.label}
 							</span>
-							<span
-								class="text-[11px] text-subtle mt-[3px] block {hideChrome ? 'max-md:hidden' : ''}"
+							<div
+								class="max-md:grid max-md:transition-[grid-template-rows,opacity] max-md:duration-300 {hideChrome
+									? 'max-md:grid-rows-[0fr] max-md:opacity-0'
+									: 'max-md:grid-rows-[1fr] max-md:opacity-100'}"
 							>
-								{t.year}{#if t.id === 'kjv' && kjvPsalmLabel}<span
-										class="ml-[6px] text-accent"
-										title="The KJV numbers the psalms from the Hebrew; this page follows the Vulgate numbering."
-										>{kjvPsalmLabel}</span
-									>{/if}
-							</span>
-							{#if t.micro}
-								<span
-									class="text-[9px] uppercase tracking-[0.12em] text-accent/70 mt-[2px] block font-medium {hideChrome
-										? 'max-md:hidden'
-										: ''}">{t.micro}</span
-								>
-							{/if}
+								<div class="max-md:overflow-hidden max-md:min-h-0">
+									<span class="text-[11px] text-subtle mt-[3px] block">
+										{t.year}{#if t.id === 'kjv' && kjvPsalmLabel}<span
+												class="ml-[6px] text-accent"
+												title="The KJV numbers the psalms from the Hebrew; this page follows the Vulgate numbering."
+												>{kjvPsalmLabel}</span
+											>{/if}
+									</span>
+									{#if t.micro}
+										<span
+											class="text-[9px] uppercase tracking-[0.12em] text-accent/70 mt-[2px] block font-medium"
+											>{t.micro}</span
+										>
+									{/if}
+								</div>
+							</div>
 						</div>
 					</div>
 					<button
