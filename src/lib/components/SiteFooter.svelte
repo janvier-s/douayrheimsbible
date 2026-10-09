@@ -50,22 +50,10 @@
 		} else {
 			tapTimeout = setTimeout(() => {
 				tapCount = 0;
-			}, 1000);
+			}, 1750);
 		}
 	}
 </script>
-
-{#if tapCount >= 3}
-	<div
-		class="tap-toast"
-		in:fade={{ duration: 150 }}
-		out:fade={{ duration: 300 }}
-		role="status"
-		aria-live="polite"
-	>
-		You are now {7 - tapCount} taps away from a secret.
-	</div>
-{/if}
 
 <footer class="footer">
 	<!-- Ornamental divider -->
@@ -73,6 +61,18 @@
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<span class="footer-ornament" onclick={handleCrossTap}>✠</span>
+
+		{#if tapCount >= 3}
+			<div
+				class="tap-toast"
+				in:fade={{ duration: 150 }}
+				out:fade={{ duration: 300 }}
+				role="status"
+				aria-live="polite"
+			>
+				You are now {7 - tapCount} taps away from a secret.
+			</div>
+		{/if}
 	</div>
 
 	<!-- Link columns -->
@@ -220,11 +220,12 @@
 	}
 
 	.tap-toast {
-		position: fixed;
-		bottom: 90px; /* Above the footer cross */
+		position: absolute;
+		bottom: 100%;
+		margin-bottom: 24px; /* Above the footer cross */
 		left: 50%;
 		transform: translateX(-50%);
-		z-index: 200;
+		z-index: 10;
 		padding: 10px 18px;
 		background: var(--color-text);
 		color: var(--color-bg);
