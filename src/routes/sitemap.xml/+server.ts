@@ -92,6 +92,7 @@ export function GET() {
 	urls.push(entry('/about/features', '0.8', 'monthly', DATE_CONTENT));
 	urls.push(entry('/about/translations', '0.8', 'monthly', DATE_CONTENT));
 	urls.push(entry('/about/stats', '0.7', 'monthly', DATE_CONTENT));
+	urls.push(entry('/changelog', '0.5', 'monthly', '2026-11-12'));
 
 	// Fathers/patristic commentary pages
 	for (const [slug, chapters] of Object.entries(fathersManifest)) {

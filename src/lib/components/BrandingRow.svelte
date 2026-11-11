@@ -62,6 +62,7 @@
 				{ label: 'About This Website', href: '/about' },
 				{ label: 'About the Translation', href: '/history/the-douay-rheims' },
 				{ label: 'History', href: '/history' },
+				{ label: 'Changelog', href: '/changelog' },
 				{ label: 'Contact', href: '/contact' }
 			]
 		}

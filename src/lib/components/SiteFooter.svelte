@@ -20,7 +20,8 @@
 				{ label: 'About This Website', href: '/about' },
 				{ label: 'History of the DR Bible', href: '/history' },
 				{ label: 'Articles', href: '/articles' },
-				{ label: 'Downloads', href: '/download' }
+				{ label: 'Downloads', href: '/download' },
+				{ label: 'Changelog', href: '/changelog' }
 			]
 		},
 		{
