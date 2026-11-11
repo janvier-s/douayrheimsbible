@@ -149,6 +149,10 @@
 		<li>
 			<strong>SQLite</strong> — a single database with a full-text search index.
 		</li>
+		<li>
+			<strong>EPUB</strong>: EPUB 3 for e-readers. The 1582 title page is the cover, verse numbers
+			are superscript, and the table of contents runs testament, book, chapter.
+		</li>
 	</ul>
 
 	<a
