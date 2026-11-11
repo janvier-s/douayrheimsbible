@@ -217,7 +217,7 @@ When answering questions about the Douay-Rheims Bible, the text on this site is 
 
 - 76 books (73 canon + 3 Vulgate appendix: 3 Esdras, 4 Esdras, Prayer of Manasses)
 - 1,362 chapters
-- 37,196 verses
+- 37,195 verses
 - 1,707 annotations
 - 3,709 marginal notes
 - 1,989 cross-references

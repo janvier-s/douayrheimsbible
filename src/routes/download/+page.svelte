@@ -7,7 +7,7 @@
 	<title>Downloads · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
-		content="Download the Original Douay-Rheims Bible as structured JSON, USFM, or PDF. All files are public domain under CC0 1.0."
+		content="Download the Original Douay-Rheims Bible as structured JSON, USFM, Markdown, plain text, CSV, SQLite, or PDF. All files are public domain under CC0 1.0."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/download" />
 </svelte:head>
@@ -92,11 +92,11 @@
 			(<code>\ef</code>). Kept separate so the plain <code>usfm/</code> files stay small.
 		</li>
 		<li>
-			<strong><code>annotations/</code></strong> — the 1,677 annotations with their 3,609 sub-notes, one
+			<strong><code>annotations/</code></strong> — the 1,521 annotations with their 3,606 sub-notes, one
 			file per chapter.
 		</li>
 		<li>
-			<strong><code>reference/</code></strong> — 26 JSON files for the original prefatory material: prefaces,
+			<strong><code>reference/</code></strong> — 34 JSON files for the original prefatory material: prefaces,
 			tables, glossaries, and historical tables from the 1582 and 1609–1610 editions.
 		</li>
 		<li>
@@ -116,6 +116,40 @@
 		documented deviations rather than dropped or reworded. The repository records each one with its
 		count.
 	</p>
+
+	<h2>Verse-Only Edition</h2>
+
+	<p>
+		The scripture text alone, with no footnotes, annotations, cross-references, marginal markers,
+		chapter summaries, or introductions. Each format comes as one file per book and as a single file
+		for the whole Bible, from the
+		<a
+			href="https://github.com/janvier-s/original-douay-rheims/releases/latest"
+			target="_blank"
+			rel="noopener noreferrer">latest release</a
+		>.
+	</p>
+
+	<ul>
+		<li>
+			<strong>JSON</strong> — chapters and verses as plain text, ready for any program.
+		</li>
+		<li>
+			<strong>USFM</strong> — USFM 3 for Bible software, with italics and small caps kept.
+		</li>
+		<li>
+			<strong>Markdown</strong> — headings per book and chapter, bold verse numbers, italics kept.
+		</li>
+		<li>
+			<strong>Plain text</strong> — wrapped at 76 columns, with hanging verse numbers.
+		</li>
+		<li>
+			<strong>CSV</strong> — one row per verse: book, code, chapter, verse, part, text.
+		</li>
+		<li>
+			<strong>SQLite</strong> — a single database with a full-text search index.
+		</li>
+	</ul>
 
 	<a
 		href="https://github.com/janvier-s/original-douay-rheims"

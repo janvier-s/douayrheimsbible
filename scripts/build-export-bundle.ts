@@ -18,6 +18,7 @@ import { join, dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { homedir } from 'os';
 import { execSync } from 'child_process';
+import { DatabaseSync } from 'node:sqlite';
 import { readJson } from './odr-corpus-json.js';
 import {
 	renderUsfm,
@@ -32,6 +33,16 @@ import {
 	verseRef,
 	foldSummaryOverflow
 } from './export-lib.js';
+import {
+	toVerseBook,
+	renderJson,
+	renderUsfmVerseOnly,
+	renderMarkdown,
+	renderText,
+	csvRows,
+	CSV_HEADER,
+	EDITION
+} from './verse-only-lib.js';
 import { ALL_BOOKS } from '../src/lib/data/books.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -141,6 +152,7 @@ const counts = {
 	referenceFiles: 0
 };
 const books = [];
+const verseBooks = [];
 
 for (const meta of ALL_BOOKS) {
 	if (ONLY && meta.slug !== ONLY) continue;
@@ -165,6 +177,14 @@ for (const meta of ALL_BOOKS) {
 		`usfm-study/${usfmFilename(meta.slug)}`,
 		renderUsfm(meta.slug, book, anns.byChapter, { includeAnnotations: true }, meta.odrName)
 	);
+
+	// Verse-only tree: scripture words, no apparatus of any kind.
+	const vb = toVerseBook(meta.slug, book, meta.odrName);
+	verseBooks.push(vb);
+	write(`verse-only/json/${meta.slug}.json`, `${renderJson(vb)}\n`);
+	write(`verse-only/usfm/${usfmFilename(meta.slug)}`, renderUsfmVerseOnly(vb));
+	write(`verse-only/markdown/${meta.slug}.md`, renderMarkdown(vb));
+	write(`verse-only/text/${meta.slug}.txt`, renderText(vb));
 
 	// Catchword spans are offsets into the tagged text and carry a match tier,
 	// so they ship as a separate index rather than inline where a consumer
@@ -196,6 +216,57 @@ for (const testament of ['ot', 'nt']) {
 		copyFileSync(join(REF_DIR, testament, file), join(OUT, 'reference', testament, file));
 		counts.referenceFiles++;
 	}
+}
+
+// Combined verse-only files, the CSV and the SQLite database.
+if (verseBooks.length) {
+	const NAME = 'original-douay-rheims';
+	write(
+		`verse-only/json/${NAME}.json`,
+		`${JSON.stringify(
+			{
+				edition: EDITION,
+				books: verseBooks.map((b) => JSON.parse(renderJson(b)))
+			},
+			null,
+			2
+		)}\n`
+	);
+	write(
+		`verse-only/markdown/${NAME}.md`,
+		`# The Douay-Rheims Bible\n\n*${EDITION}*\n\n${verseBooks
+			.map((b) => renderMarkdown(b, { headingLevel: 2 }))
+			.join('\n')}`
+	);
+	write(
+		`verse-only/text/${NAME}.txt`,
+		verseBooks.map((b) => renderText(b)).join('\n\n' + '*'.repeat(76) + '\n\n')
+	);
+	write(
+		`verse-only/csv/${NAME}.csv`,
+		`${[CSV_HEADER, ...verseBooks.flatMap(csvRows)].join('\n')}\n`
+	);
+
+	const dbPath = join(OUT, 'verse-only', 'sqlite', `${NAME}.sqlite`);
+	mkdirSync(dirname(dbPath), { recursive: true });
+	const db = new DatabaseSync(dbPath);
+	db.exec(`
+		CREATE TABLE books (ordinal INTEGER PRIMARY KEY, slug TEXT UNIQUE, code TEXT, title TEXT, short_title TEXT);
+		CREATE TABLE verses (book INTEGER REFERENCES books(ordinal), chapter INTEGER, verse INTEGER, part TEXT, text TEXT,
+			PRIMARY KEY (book, chapter, verse, part));
+		CREATE VIRTUAL TABLE verses_fts USING fts5(text, content='verses', content_rowid='rowid');
+	`);
+	const addBook = db.prepare('INSERT INTO books VALUES (?,?,?,?,?)');
+	const addVerse = db.prepare('INSERT INTO verses VALUES (?,?,?,?,?)');
+	db.exec('BEGIN');
+	for (const b of verseBooks) {
+		addBook.run(b.ordinal, b.slug, b.code, b.title, b.shortTitle);
+		for (const c of b.chapters)
+			for (const v of c.verses) addVerse.run(b.ordinal, c.chapter, v.verse, v.part, v.text);
+	}
+	db.exec('INSERT INTO verses_fts(rowid, text) SELECT rowid, text FROM verses; COMMIT');
+	db.exec("INSERT INTO verses_fts(verses_fts) VALUES ('optimize'); VACUUM");
+	db.close();
 }
 
 const commit = execSync('git rev-parse HEAD', { cwd: ROOT }).toString().trim();

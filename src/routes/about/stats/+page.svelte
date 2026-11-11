@@ -74,7 +74,7 @@
 			<span class="stat-label">Chapters</span>
 		</div>
 		<div class="stat-card">
-			<span class="stat-number">37,196</span>
+			<span class="stat-number">37,195</span>
 			<span class="stat-label">Verses</span>
 		</div>
 		<div class="stat-card">

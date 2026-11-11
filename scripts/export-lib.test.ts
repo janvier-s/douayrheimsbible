@@ -164,8 +164,7 @@ describe('the known-defect list', () => {
 	it('holds exactly the measured irregularities', () => {
 		expect(KNOWN_UNBOUND.size).toBe(2);
 		expect(KNOWN_UNREFERENCED.size).toBe(23);
-		expect(KNOWN_DUPLICATE_VERSE.size).toBe(1);
-		expect(KNOWN_DUPLICATE_VERSE.has('3-esdras 2:1')).toBe(true);
+		expect(KNOWN_DUPLICATE_VERSE.size).toBe(0);
 	});
 
 	it('passes a clean bind', () => {
@@ -684,7 +683,7 @@ describe('renderUsfm', () => {
 		expect(() => render([pinned, bare])).toThrow(/matthew intro\[0\]/);
 	});
 
-	it('gives the pinned duplicate verse a segment letter', () => {
+	it('refuses a repeated verse number, since none is excused any more', () => {
 		const doubled = {
 			...book,
 			chapters: [
@@ -698,16 +697,9 @@ describe('renderUsfm', () => {
 				}
 			]
 		};
-		const out = renderUsfm(
-			'3-esdras',
-			doubled,
-			new Map(),
-			{ includeAnnotations: false },
-			'3 Esdras'
-		);
-		expect(out).toContain('\\v 1 CYRUS king of the Persians');
-		expect(out).toContain('\\v 1b Cyrus king of the Persians');
-		expect(out).toContain('\\v 2 our Lord raised up the spirit');
+		expect(() =>
+			renderUsfm('3-esdras', doubled, new Map(), { includeAnnotations: false }, '3 Esdras')
+		).toThrow(/verse 1 appears 2 times/);
 	});
 
 	it('throws on a duplicate verse number at an unpinned ref', () => {

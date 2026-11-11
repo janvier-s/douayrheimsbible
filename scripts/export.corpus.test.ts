@@ -142,8 +142,8 @@ describe('the corpus markup', () => {
 	// Every defect inventory is keyed by a ref, so a ref two blocks share lets a
 	// pin written for one excuse the other. 210 refs were shared before array
 	// position entered them: `matthew intro` alone covered three blocks.
-	// `3-esdras 2:1` is the one that remains, and it is pinned as a duplicate
-	// verse rather than a naming collision.
+	// None remain: 3-esdras 2:1, the last, was a duplicate verse and was removed
+	// from the corpus on 2026-11-12.
 	// Without this the invariants below could quietly stop covering a field and
 	// still pass: they only ever assert that nothing is wrong.
 	it('visits every title and cross-reference body', () => {
@@ -151,10 +151,11 @@ describe('the corpus markup', () => {
 		const crossRefs = blocks.filter((b) => / cross_ref\[\d+\]$/.test(b.ref));
 		expect(titles).toHaveLength(1619);
 		// 1,989 before b2e0381c added 220 Sancta cross_refs (source: sancta).
-		expect(crossRefs).toHaveLength(2209);
+		// 2,209 before the duplicate 3-esdras 2:1 entry (and its one cross_ref) was removed.
+		expect(crossRefs).toHaveLength(2208);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
-		expect(blocks).toHaveLength(43879);
+		expect(blocks).toHaveLength(43877);
 	});
 
 	it('names exactly one block per ref', () => {

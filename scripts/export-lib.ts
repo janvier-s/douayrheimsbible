@@ -203,8 +203,8 @@ export function bindMarkers(
  * Built here so the renderer, the bundle script and the corpus test cannot
  * drift apart on the spelling.
  *
- * `3-esdras 2:1` is the one ref two blocks still share, because the corpus
- * numbers two entries verse 1 there; see KNOWN_DUPLICATE_VERSE.
+ * No ref is shared by two blocks; a repeated verse number is caught by
+ * KNOWN_DUPLICATE_VERSE.
  */
 export const introRef = (slug: string, i: number) => `${slug} intro[${i}]`;
 export const endMatterRef = (slug: string, i: number) => `${slug} endMatter[${i}]`;
@@ -276,24 +276,17 @@ export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
 export const KNOWN_UNBALANCED: ReadonlySet<string> = new Set(['daniel ann 12:7']);
 
 /**
- * The one chapter that numbers two different entries the same.
+ * Chapters that number two different entries the same. Now empty.
  *
- * 3-Esdras 2 holds verse 1 twice: once as "CYRUS king of the Persians…" and
- * once as "Cyrus king of the Persians…" with malformed cross-reference residue
- * ("2. . v. 22. 2. . v. 1. & 6. v. 3…") trailing it. Two readings of one verse,
- * differing in capitalisation.
- *
- * This is a defect in static/data/odr/, which this export only reads. Which
- * reading is canonical is an editorial judgment about scripture and belongs to
- * the corpus maintainer, so the export neither repairs it nor picks a winner:
- * the first entry keeps `\v 1` and the second becomes `\v 1b`. The segment
- * letter is a placeholder that records a corpus defect. It is NOT a claim that
- * the printed text has two segments, and no critical edition divides this verse.
- *
- * A repeated verse number at any other ref is fatal, like the other three
- * inventories.
+ * It held `3-esdras 2:1` until 2026-11-12, when the corpus was repaired: the
+ * chapter carried verse 1 twice, once as "CYRUS king of the Persians…" and once
+ * as a lower-cased copy with citation residue ("2. . v. 22. 2. . v. 1. …")
+ * trailing it. static/data/drc/3-esdras.json has the single entry, so the
+ * second was dropped from odr/ and odr-original/. The set stays as the
+ * mechanism: a repeated verse number at any ref is fatal, and a future one
+ * must be listed here, with its reason, to be excused.
  */
-export const KNOWN_DUPLICATE_VERSE: ReadonlySet<string> = new Set(['3-esdras 2:1']);
+export const KNOWN_DUPLICATE_VERSE: ReadonlySet<string> = new Set<string>();
 
 /**
  * Fail on any irregularity that is not one of the 28 recorded above.
