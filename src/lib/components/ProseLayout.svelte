@@ -362,7 +362,7 @@
 
 	.prose-eyebrow {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.28em;
 		color: var(--color-accent);
@@ -456,7 +456,7 @@
 
 	.prose-body :global(.comparison strong) {
 		display: block;
-		font-size: 10px;
+		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
 		color: var(--color-accent-text);
@@ -605,7 +605,7 @@
 
 	.toc-label {
 		font-family: var(--font-ui);
-		font-size: 9px;
+		font-size: 11px;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.24em;
@@ -712,7 +712,7 @@
 
 	.prose-faq-heading {
 		font-family: var(--font-ui);
-		font-size: 9px;
+		font-size: 11px;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.24em;

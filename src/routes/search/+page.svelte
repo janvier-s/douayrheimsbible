@@ -803,7 +803,7 @@
 				/>
 				<button
 					type="submit"
-					class="shrink-0 px-[14px] h-[36px] bg-accent text-white rounded-[4px] text-[13px] font-medium
+					class="shrink-0 px-[14px] h-[36px] bg-[var(--color-accent-fill,var(--color-accent))] text-white rounded-[4px] text-[13px] font-medium
 						hover:opacity-90 active:opacity-80 transition-opacity duration-fast"
 				>
 					Search

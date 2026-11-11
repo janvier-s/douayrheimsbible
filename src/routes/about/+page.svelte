@@ -14,7 +14,7 @@
 	<meta property="og:title" content="About This Website" />
 	<meta
 		property="og:description"
-		content="The first freely searchable digital edition of the Original Douay-Rheims Bible, with all 1,707 annotations, full-text search, and side-by-side comparison."
+		content="The first freely searchable digital edition of the Original Douay-Rheims Bible, with all 1,521 annotations, full-text search, and side-by-side comparison."
 	/>
 	<meta property="og:url" content="https://thedouayrheims.com/about" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -42,7 +42,7 @@
 		Rheims and Douai, priests formed in the continental tradition, working without the influence of
 		Tyndale, the Geneva Bible, or any of the Protestant versions that had already shaped the English
 		of their contemporaries. The language is deliberately Latinate, precise in its theological
-		vocabulary, and at times startlingly direct. The annotations, all 1,707 of them, form a
+		vocabulary, and at times startlingly direct. The annotations, all 1,521 of them, form a
 		sustained argument: point by point engagement with those Protestant translations, defending
 		Catholic readings of contested passages. The whole text is an act of witness to the faith of the
 		Church in Jesus Christ, produced by scholars in exile who expected martyrdom and wrote
@@ -227,6 +227,31 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			class="license-link">CC0 1.0 Universal →</a
+		>
+	</div>
+
+	<div class="license-block">
+		<p class="license-title">
+			<span class="license-cross" aria-hidden="true">✠</span> Credit · CC BY 4.0
+		</p>
+		<p class="license-body">
+			The Original Douay-Rheims, a modern edition by
+			<a href="https://sanctaclarapress.com" target="_blank" rel="noopener noreferrer"
+				>Sancta Clara Press</a
+			>
+			(sanctaclarapress.com), used under
+			<a
+				href="https://creativecommons.org/licenses/by/4.0/"
+				target="_blank"
+				rel="noopener noreferrer">CC BY 4.0</a
+			>. From that edition this site draws the original-spelling text, the inline clarifications
+			(Latin terms and glosses), and the facsimile scans of the 1582 and 1609 printings.
+		</p>
+		<a
+			href="https://creativecommons.org/licenses/by/4.0/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="license-link">CC BY 4.0 Attribution →</a
 		>
 	</div>
 
@@ -461,7 +486,7 @@
 
 	.gen-label {
 		font-family: var(--font-ui);
-		font-size: 9px;
+		font-size: 11px;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
@@ -613,7 +638,7 @@
 
 	.facsimile-label {
 		font-family: var(--font-ui);
-		font-size: 9px;
+		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.22em;
 		font-weight: 600;

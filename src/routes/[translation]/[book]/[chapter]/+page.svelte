@@ -186,17 +186,17 @@
 	}
 
 	.notice-btn-primary {
-		background: var(--color-accent);
+		background: var(--color-accent-fill, var(--color-accent));
 		color: white;
 	}
 
 	.notice-btn-primary:hover {
-		background: color-mix(in srgb, var(--color-accent) 85%, black);
+		background: color-mix(in srgb, var(--color-accent-fill, var(--color-accent)) 85%, black);
 	}
 
 	.notice-btn-secondary {
 		background: color-mix(in srgb, var(--color-accent) 8%, transparent);
-		color: var(--color-accent);
+		color: var(--color-accent-text);
 	}
 
 	.notice-btn-secondary:hover {

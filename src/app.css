@@ -347,7 +347,7 @@
 	--color-subtle: #6a4830;
 	--color-interactive: #706860;
 	--color-accent: #8b2500;
-	--color-accent-text: #c15050;
+	--color-accent-text: #b34545; /* 5.19:1 on the sepia page (#c15050 was 4.41) */
 	--color-verse-num: #ab3d3d; /* 4.99:1 on the sepia page */
 	--color-border: #d8c8b0;
 	--color-bg-glass: rgba(253, 249, 240, 0.94);
@@ -364,6 +364,7 @@
 	--color-muted: #8a8690;
 	--color-subtle: #a09ca8;
 	--color-interactive: #696666;
+	--color-accent-fill: #c24545; /* white on it: 4.96:1 (accent #d45050 gives 4.15) */
 	--color-accent: #d45050;
 	--color-accent-text: #e06868;
 	--color-border: #2e2b32;
@@ -378,9 +379,10 @@
 	--color-panel: #0f0f0f;
 	--color-search-card: #1a1a1a;
 	--color-text: #e0e0e0;
-	--color-muted: #666666;
+	--color-muted: #808080; /* 5.32:1 on black (#666 was 3.66) */
 	--color-subtle: #888888;
-	--color-interactive: #888888;
+	--color-interactive: #696666; /* white text on it: 5.69:1 (#888 was 3.54) */
+	--color-accent-fill: #c24545; /* white on it: 4.96:1 (accent #d45050 gives 4.15) */
 	--color-accent: #d45050;
 	--color-accent-text: #e06868;
 	--color-border: #1f1f1f;
@@ -399,6 +401,7 @@
 		--color-muted: #8a8690;
 		--color-subtle: #a09ca8;
 		--color-interactive: #696666;
+		--color-accent-fill: #c24545;
 		--color-accent: #d45050;
 		--color-accent-text: #e06868;
 		--color-border: #2e2b32;

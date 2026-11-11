@@ -38,6 +38,7 @@
 	});
 
 	let { bookMeta, chapter, verseMaps, kjvPsalmLabel } = $derived(data);
+
 	let prevChapter = $derived(chapter.chapter > 1 ? chapter.chapter - 1 : null);
 	let nextChapter = $derived(chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null);
 
@@ -317,7 +318,7 @@
 					>
 						{#if $prefs.showVerseNumbers}
 							<span
-								class="text-subtle font-ui text-[10px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-fit md:mr-[6px]"
+								class="text-subtle font-ui text-[11px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-fit md:mr-[6px]"
 								>{v.verse}</span
 							>
 						{/if}
