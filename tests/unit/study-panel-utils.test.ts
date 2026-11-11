@@ -59,6 +59,13 @@ describe('buildVisibleTabs', () => {
 		]);
 	});
 
+	it('odr: shows the facsimile tab last, only when the chapter has one', () => {
+		const ids = (fac: boolean) =>
+			buildVisibleTabs('odr', false, false, false, noConf, noHaydock, fac).map((t) => t.id);
+		expect(ids(false)).not.toContain('facsimile');
+		expect(ids(true).at(-1)).toBe('facsimile');
+	});
+
 	it('conf: shows intro only when the intro actually has content', () => {
 		const empty: ConfIntro = [];
 		expect(

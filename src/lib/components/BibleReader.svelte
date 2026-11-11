@@ -469,7 +469,8 @@
 					'footnotes',
 					'annotations',
 					'notes',
-					'cross-refs'
+					'cross-refs',
+					'facsimile'
 				];
 				if (validTabs.includes(urlTab)) {
 					studyPanel.update((s) => ({

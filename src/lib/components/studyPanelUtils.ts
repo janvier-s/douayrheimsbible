@@ -71,7 +71,8 @@ export function buildVisibleTabs(
 	hasArticles: boolean,
 	hasEndMatters: boolean,
 	confIntro: ConfIntro | null,
-	haydockIntro: HaydockIntro | null
+	haydockIntro: HaydockIntro | null,
+	hasFacsimile = false
 ): TabDef[] {
 	if (tid === 'odr') {
 		return [
@@ -80,7 +81,8 @@ export function buildVisibleTabs(
 			{ id: 'notes' as StudyTab, label: 'Notes' },
 			{ id: 'cross-refs' as StudyTab, label: 'Cross-Refs' },
 			...(hasArticles ? [{ id: 'article' as StudyTab, label: 'Article' }] : []),
-			...(hasEndMatters ? [{ id: 'end' as StudyTab, label: 'End' }] : [])
+			...(hasEndMatters ? [{ id: 'end' as StudyTab, label: 'End' }] : []),
+			...(hasFacsimile ? [{ id: 'facsimile' as StudyTab, label: 'Facsimile' }] : [])
 		];
 	}
 	if (tid === 'conf') {

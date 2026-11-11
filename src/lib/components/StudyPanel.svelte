@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { tick, onDestroy } from 'svelte';
+	import FacsimileViewer from './FacsimileViewer.svelte';
+	import { loadFacsimilePages, facsimileRange, type FacsimilePages } from '$lib/data/facsimile';
 	import { fade } from 'svelte/transition';
 	import { browser } from '$app/environment';
 	import { studyPanel, scrollTrigger } from '$lib/stores/studyPanel';
@@ -482,8 +484,29 @@
 	);
 	let articles = $derived(currentChapterData?.articles ?? []);
 	let hasArticles = $derived(articles.length > 0);
+	let facsimilePages = $state<Record<string, FacsimilePages> | null>(null);
+	let facsimileRun = $derived(
+		isOdr ? facsimileRange(facsimilePages, currentBookSlug, currentChapterNum) : null
+	);
+	let facsimileCount = $derived(facsimileRun ? facsimileRun[1] - facsimileRun[0] + 1 : 0);
+	$effect(() => {
+		if (isOdr && !facsimilePages) {
+			loadFacsimilePages().then(
+				(m) => (facsimilePages = m),
+				() => {} // no index: the tab simply stays hidden
+			);
+		}
+	});
 	let visibleTabs = $derived(
-		buildVisibleTabs(translationId, hasIntros, hasArticles, hasEndMatters, confIntro, haydockIntro)
+		buildVisibleTabs(
+			translationId,
+			hasIntros,
+			hasArticles,
+			hasEndMatters,
+			confIntro,
+			haydockIntro,
+			facsimileCount > 0
+		)
 	);
 
 	// The scroll area is only a tabpanel when there is a tablist to belong to.
@@ -497,7 +520,13 @@
 	);
 	// Snap to first visible tab if the active tab isn't available for this translation
 	$effect.pre(() => {
-		if (visibleTabs.length > 0 && !visibleTabs.some((t) => t.id === $studyPanel.activeTab)) {
+		// A ?tab=facsimile URL arrives before the page-count index has loaded; leave it alone until then.
+		const awaitingFacsimile = $studyPanel.activeTab === 'facsimile' && isOdr && !facsimilePages;
+		if (
+			visibleTabs.length > 0 &&
+			!awaitingFacsimile &&
+			!visibleTabs.some((t) => t.id === $studyPanel.activeTab)
+		) {
 			studyPanel.update((s) => ({ ...s, activeTab: visibleTabs[0].id }));
 		}
 	});
@@ -557,6 +586,17 @@
 		}
 	});
 	// If on the article tab but current chapter has no articles, fall back to annotations/commentary
+	$effect.pre(() => {
+		// Wait for the index to load before judging; a ?tab=facsimile URL must survive it.
+		if (
+			$studyPanel.activeTab === 'facsimile' &&
+			facsimilePages &&
+			currentChapterData &&
+			facsimileCount === 0
+		) {
+			studyPanel.update((s) => ({ ...s, activeTab: isOdr ? 'annotations' : 'commentary' }));
+		}
+	});
 	$effect.pre(() => {
 		if ($studyPanel.activeTab === 'article' && !hasArticles) {
 			studyPanel.update((s) => ({ ...s, activeTab: isOdr ? 'annotations' : 'commentary' }));
@@ -1139,6 +1179,36 @@
 						{#each confIntro as para}
 							<p class="prose-para">{@html linkifyConfRefs(para)}</p>
 						{/each}
+					<!-- ═══ ODR: Facsimile tab ═══ -->
+				{:else if $studyPanel.activeTab === 'facsimile' && isOdr}
+					{#if facsimileCount > 0}
+						<div class="content-block">
+							<p class="content-eyebrow">Facsimile · 1582 / 1609</p>
+							<p class="prose-para">
+								Scans of the original printing of this chapter. Select a page to enlarge it.
+							</p>
+							<FacsimileViewer
+								bookSlug={currentBookSlug}
+								chapter={currentChapterNum}
+								first={facsimileRun![0]}
+								count={facsimileCount}
+								bookName={bookData?.short_title ?? bookData?.book ?? ''}
+							/>
+							<p class="prose-para">
+								Facsimile scans courtesy of
+								<a href="https://sanctaclarapress.com" target="_blank" rel="noopener noreferrer"
+									>Sancta Clara Press</a
+								>
+								(sanctaclarapress.com).
+							</p>
+						</div>
+					{:else}
+						<div class="empty-state">
+							<span class="empty-icon" aria-hidden="true">✦</span>
+							<p>No facsimile for this chapter.</p>
+						</div>
+					{/if}
+
 					</div>
 
 					<!-- ═══ Confraternity: Footnotes tab ═══ -->
