@@ -149,16 +149,27 @@ describe('the corpus markup', () => {
 	it('visits every title and cross-reference body', () => {
 		const titles = blocks.filter((b) => b.ref.endsWith(' title'));
 		const crossRefs = blocks.filter((b) => / cross_ref\[\d+\]$/.test(b.ref));
-		expect(titles).toHaveLength(1618);
-		expect(crossRefs).toHaveLength(1989);
-		expect(blocks).toHaveLength(43797);
+		expect(titles).toHaveLength(1619);
+		// 1,989 before b2e0381c added 220 Sancta cross_refs (source: sancta).
+		expect(crossRefs).toHaveLength(2209);
+		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
+		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
+		expect(blocks).toHaveLength(43879);
 	});
 
 	it('names exactly one block per ref', () => {
 		const seen = new Map<string, number>();
 		for (const b of blocks) seen.set(b.ref, (seen.get(b.ref) ?? 0) + 1);
 		const shared = [...seen].filter(([, n]) => n > 1).map(([ref]) => ref);
-		expect(shared.sort()).toEqual([...KNOWN_DUPLICATE_VERSE].sort());
+		// A known duplicate verse repeats its cross_ref blocks too once both
+		// copies carry the Sancta-added reference (3-esdras 2:1 does).
+		const expected = [...seen.keys()].filter((ref) =>
+			[...KNOWN_DUPLICATE_VERSE].some((dup) => ref === dup || ref.startsWith(`${dup} cross_ref[`))
+		);
+		expect(shared.filter((ref) => !expected.includes(ref))).toEqual([]);
+		expect(shared.filter((ref) => KNOWN_DUPLICATE_VERSE.has(ref)).sort()).toEqual(
+			[...KNOWN_DUPLICATE_VERSE].sort()
+		);
 	});
 
 	// Every pinned ref must still match a block. A pin that stops matching is a
@@ -234,7 +245,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,606 of 13,608 markers', () => {
+	it('binds 13,723 of 13,725 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -242,9 +253,11 @@ describe('the corpus markup', () => {
 			bound += r.hits.length;
 			unbound += r.unbound.length;
 		}
-		expect(bound).toBe(13606);
+		// 13,606 before the annotation review (b2e0381c). It added 117 <mn>
+		// markers (4,875 to 4,992 across odr), and every one of them binds.
+		expect(bound).toBe(13723);
 		expect(unbound).toBe(2);
-		expect(bound + unbound).toBe(13608);
+		expect(bound + unbound).toBe(13725);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming
@@ -262,11 +275,12 @@ describe('the corpus markup', () => {
 		expect(doubled).toEqual([]);
 	});
 
-	it('leaves exactly 26 notes unreferenced', () => {
+	it('leaves exactly 23 notes unreferenced', () => {
 		let unreferenced = 0;
 		for (const b of blocks)
 			unreferenced += bindMarkers(b.text, b.notes, b.block, b.ref).unreferenced.length;
-		expect(unreferenced).toBe(26);
+		// 26 before b2e0381c, which gave acts ann 8:38 and romans ann 8:38 their markers.
+		expect(unreferenced).toBe(23);
 	});
 
 	it('strips to prose with no angle bracket surviving', () => {

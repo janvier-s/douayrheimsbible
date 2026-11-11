@@ -236,15 +236,13 @@ export const KNOWN_UNBOUND: ReadonlySet<string> = new Set([
 	'ecclesiasticus 14:10 marker †'
 ]);
 
-/** The 26 notes no marker references, as `${ref} note ${token}`. */
+/** The 23 notes no marker references, as `${ref} note ${token}`. */
 export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
 	'1-corinthians 14 article[0] note 8',
 	'1-john 4:21 note 1',
 	'1-peter 5:14 note 1',
 	'3-kings 6:38 note 1',
 	'acts 15:41 note 1',
-	'acts ann 8:38 note 1',
-	'acts ann 8:38 note 2',
 	'acts endMatter[0] note 1',
 	'apocalypse 20:15 note 1',
 	'james intro[0] note ◦',
@@ -258,7 +256,6 @@ export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
 	'romans 9:33 note 1',
 	'romans 10:16 note 1',
 	'romans ann 8:30 note 2',
-	'romans ann 8:38 note 1',
 	'romans ann 8:38 note 2',
 	'romans ann 9:14 note ◦',
 	'romans intro[1] note 1',
@@ -465,7 +462,7 @@ export interface Verse {
 	verse: number;
 	text: string;
 	notes?: NoteLike[];
-	cross_refs?: Array<{ text: string }>;
+	cross_refs?: Array<{ text: string; source?: string }>;
 	has_annotation?: boolean;
 	lemmas?: Array<[number, number, number]>;
 }
@@ -573,6 +570,23 @@ function renderInline(text: string, block: BlockKind, ref: string, nested: boole
 	}
 	return out;
 }
+/**
+ * Every cross_ref must be anchored by a <cr> marker, except the ones added
+ * from Sancta Clara Press (`source: 'sancta'`). Those are supplementary: they
+ * sit after the printed references, mostly with no marker of their own (216
+ * verses), and the study panel lists them by index. An unanchored one has no
+ * place in the text, so the export leaves it out rather than inventing one.
+ */
+function assertRefsConsumed(
+	refs: Array<{ text: string; source?: string }>,
+	consumed: number,
+	ref: string
+): void {
+	const missing = refs.slice(consumed).filter((r) => r.source !== 'sancta');
+	if (missing.length) {
+		throw new ExportError(ref, `${missing.length} cross_refs with no marker`);
+	}
+}
 
 /**
  * One verse as USFM.
@@ -676,9 +690,7 @@ export function renderVerse(
 		// <alt> delimiters themselves emit nothing; their words fall through as text.
 	}
 
-	if (crossRefIndex !== refs.length) {
-		throw new ExportError(ref, `${refs.length - crossRefIndex} cross_refs with no marker`);
-	}
+	assertRefsConsumed(refs, crossRefIndex, ref);
 	// oneLine, not just a space squeeze: 5 verse notes carry a literal newline,
 	// and the `verse` block kind permits no <br>, so no real break is lost.
 	return oneLine(out);
@@ -929,9 +941,7 @@ function renderVerseInline(verse: Verse, ref: string): string {
 			trailer += ` \\xt ${target.text}\\xt*`;
 		}
 	}
-	if (crossRefIndex !== refs.length) {
-		throw new ExportError(ref, `${refs.length - crossRefIndex} cross_refs with no marker`);
-	}
+	assertRefsConsumed(refs, crossRefIndex, ref);
 	return body + trailer;
 }
 

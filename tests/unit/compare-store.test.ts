@@ -6,7 +6,7 @@ import { get } from 'svelte/store';
 vi.mock('$app/environment', () => ({ browser: true }));
 
 const SAVED = {
-	order: ['vul', 'odr', 'kjv', 'drc', 'haydock', 'conf', 'knox', 'rsv2ce', 'cpdv'],
+	order: ['vul', 'odr', 'odr-orig', 'kjv', 'drc', 'haydock', 'conf', 'knox', 'rsv2ce', 'cpdv'],
 	visible: ['odr', 'kjv', 'drc']
 };
 
@@ -69,6 +69,22 @@ describe('compareStore hydration', () => {
 	});
 });
 
+describe('saved layout reset', () => {
+	it('discards a saved order that predates the current column list', async () => {
+		// Saved before odr-orig existed: one id short, so it must not be applied.
+		const stale = {
+			order: SAVED.order.filter((id) => id !== 'odr-orig'),
+			visible: ['odr', 'kjv']
+		};
+		localStorage.setItem('compareStore_v5', JSON.stringify(stale));
+		const store = await freshStore();
+		store.hydrate();
+		expect(get(store).order).not.toEqual(stale.order);
+		expect(get(store).order).toContain('odr-orig');
+		expect([...get(store).visible]).toEqual(['odr', 'drc']);
+	});
+});
+
 describe('translationCoversBook', () => {
 	it('keeps the OT away from NT-only translations', async () => {
 		const { translationCoversBook } = await import('$lib/stores/compare');
@@ -84,6 +100,12 @@ describe('translationCoversBook', () => {
 			expect(translationCoversBook(tid, 'OT')).toBe(true);
 			expect(translationCoversBook(tid, 'NT')).toBe(true);
 		}
+	});
+
+	it('lets the compare-only original-spelling column through either way', async () => {
+		const { translationCoversBook } = await import('$lib/stores/compare');
+		expect(translationCoversBook('odr-orig', 'OT')).toBe(true);
+		expect(translationCoversBook('odr-orig', 'NT')).toBe(true);
 	});
 
 	it('does not block an unknown translation id', async () => {
