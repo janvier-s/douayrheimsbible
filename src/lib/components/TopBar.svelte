@@ -54,7 +54,10 @@
 
 	let liveTranslations = $derived(
 		TRANSLATIONS.filter(
-			(t) => (t.live || $konamiUnlocked) && (t.id === 'rsv2ce' ? $konamiUnlocked : !t.hidden)
+			(t) =>
+				!t.compareOnly &&
+				(t.live || $konamiUnlocked) &&
+				(t.id === 'rsv2ce' ? $konamiUnlocked : !t.hidden)
 		)
 	);
 	let currentTranslation = $derived(

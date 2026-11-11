@@ -13,6 +13,9 @@
 //
 //   npx tsx scripts/build-odr-lemmas.ts            report only
 //   npx tsx scripts/build-odr-lemmas.ts --write    write spans into the chapter files
+//   npx tsx scripts/build-odr-lemmas.ts --dir=odr-original --write
+//                                                  same, for the original-spelling mirror
+//                                                  (offsets differ from the modern text)
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
 import { readJson, serialize } from './odr-corpus-json.js';
@@ -21,7 +24,8 @@ import { fileURLToPath } from 'url';
 import { resolveLemma, resolvePartialLemma } from './odr-lemma-lib.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ODR_DIR = join(dirname(__dirname), 'static', 'data', 'odr');
+const DIR_ARG = process.argv.find((a) => a.startsWith('--dir='))?.slice(6) ?? 'odr';
+const ODR_DIR = join(dirname(__dirname), 'static', 'data', DIR_ARG);
 const WRITE = process.argv.includes('--write');
 
 /** How far either side of the stated verse to look when a title does not match
@@ -38,6 +42,31 @@ function setLemmas(verse) {
 	for (const [key, value] of Object.entries(verse)) if (!(key in rebuilt)) rebuilt[key] = value;
 	for (const key of Object.keys(verse)) delete verse[key];
 	Object.assign(verse, rebuilt);
+}
+
+/** Original-spelling mirror only: carries a modern span across by word index when the
+ *  annotation title itself is still modern and so cannot be found in the original
+ *  text. Needs the two verses to split into the same whitespace tokens. */
+const ORIGINAL = DIR_ARG !== 'odr';
+const MODERN_DIR = join(dirname(__dirname), 'static', 'data', 'odr');
+function tokens(text) {
+	return [...text.matchAll(/\S+/g)].map((m) => [m.index, m.index + m[0].length]);
+}
+function alignSpan(modernText, originalText, start, length) {
+	const mt = tokens(modernText);
+	const ot = tokens(originalText);
+	if (mt.length !== ot.length) return null;
+	const first = mt.findIndex(([a, b]) => a <= start && start < b);
+	const last = mt.findIndex(([a, b]) => a < start + length && start + length <= b);
+	if (first < 0 || last < first) return null;
+	// Only whole-token spans are mapped; a span that starts or ends inside a token
+	// keeps its position within that token only if the token lengths agree.
+	const offStart = start - mt[first][0];
+	const offEnd = mt[last][1] - (start + length);
+	const newStart = ot[first][0] + offStart;
+	const newEnd = ot[last][1] - offEnd;
+	if (newStart < 0 || newEnd <= newStart) return null;
+	return { start: newStart, length: newEnd - newStart };
 }
 
 const books = readdirSync(ODR_DIR).filter((f) => f.endsWith('.json'));
@@ -65,6 +94,11 @@ for (const file of books) {
 	const chapters = new Map(book.chapters.map((c) => [c.chapter, c]));
 	// Spans are derived, so every run recomputes them from nothing. Leaving the
 	// last run's behind would have each one appending to it.
+	let modernChapters = null;
+	if (ORIGINAL) {
+		const modern = JSON.parse(readFileSync(join(MODERN_DIR, file), 'utf-8'));
+		modernChapters = new Map(modern.chapters.map((c) => [c.chapter, c]));
+	}
 	for (const chapter of book.chapters) for (const verse of chapter.verses) delete verse.lemmas;
 	let touched = false;
 
@@ -118,6 +152,17 @@ for (const file of books) {
 				// Only once the neighbours have been ruled out: an exact match next
 				// door is better evidence than a loose one here.
 				tally.partial++;
+				(verse.lemmas ??= []).push([loose.start, loose.length, ann.part ?? 1]);
+				touched = true;
+			} else if (
+				ORIGINAL &&
+				(loose = (() => {
+					const mv = modernChapters.get(sidecar.chapter)?.verses.find((v) => v.verse === ann.verse);
+					const cand = (mv?.lemmas ?? []).filter((l) => l[2] === (ann.part ?? 1))[0];
+					return mv && cand ? alignSpan(mv.text, verse.text, cand[0], cand[1]) : null;
+				})())
+			) {
+				tally.aligned = (tally.aligned ?? 0) + 1;
 				(verse.lemmas ??= []).push([loose.start, loose.length, ann.part ?? 1]);
 				touched = true;
 			} else {

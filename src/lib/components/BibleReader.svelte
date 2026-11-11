@@ -2,7 +2,7 @@
 	import { run, passive } from 'svelte/legacy';
 	import { get } from 'svelte/store';
 
-	import { onMount, onDestroy, tick } from 'svelte';
+	import { onMount, onDestroy, tick, untrack } from 'svelte';
 	import { browser } from '$app/environment';
 	import { replaceState } from '$app/navigation';
 	import ChapterView from './ChapterView.svelte';
@@ -65,7 +65,7 @@
 		chapterNum: number
 	): Promise<{ chapter: ChapterType | undefined; totalChapters: number }> {
 		if (translationId === 'odr') {
-			const bookData = await loadBook(slug, fetch);
+			const bookData = await loadBook(slug, fetch, get(prefs).spelling ?? 'modern');
 			return {
 				chapter: getChapter(bookData, chapterNum),
 				totalChapters: bookData.chapters[bookData.chapters.length - 1].chapter
@@ -98,6 +98,8 @@
 		}
 	]);
 
+	// Which spelling the loaded chapters are in (see syncSpelling below)
+	let shownSpelling: 'modern' | 'original' = $state('modern');
 	let container: HTMLElement | undefined = $state();
 	// Single mutex — next and prev never run concurrently.
 	// loadPrevChapter measures scrollHeight for compensation; a concurrent
@@ -196,7 +198,7 @@
 	let currentBookData: BookData | null = $state(null);
 	run(() => {
 		const slug = $readingPosition?.bookSlug ?? initialBookMeta.slug;
-		currentBookData = getCachedBook(slug);
+		currentBookData = getCachedBook(slug, shownSpelling) ?? getCachedBook(slug);
 	});
 
 	// Book data for every rendered chapter, keyed by its own slug. Titles must not
@@ -209,7 +211,9 @@
 	run(() => {
 		void bookDataVersion;
 		const bySlug: Record<string, BookData | null> = {};
-		for (const c of chapters) bySlug[c.bookMeta.slug] = getCachedBook(c.bookMeta.slug);
+		for (const c of chapters)
+			bySlug[c.bookMeta.slug] =
+				getCachedBook(c.bookMeta.slug, shownSpelling) ?? getCachedBook(c.bookMeta.slug);
 		bookDataBySlug = bySlug;
 	});
 
@@ -220,7 +224,8 @@
 	});
 
 	const updatePosition = debounce((slug: string, ch: number) => {
-		replaceState(`${routeBase}/${slug}/${ch}`, {});
+		const spellingQuery = get(prefs).spelling === 'original' ? '?spelling=original' : '';
+		replaceState(`${routeBase}/${slug}/${ch}${spellingQuery}`, {});
 		readingPosition.set({ bookSlug: slug, chapter: ch, routeBase });
 	}, 200);
 
@@ -439,7 +444,46 @@
 		});
 	}
 
+	// ── Modern / original spelling ───────────────────────────────────
+	// Pages are prerendered in modern spelling. When the reader prefers the original
+	// spelling (pref, or ?spelling=original in the URL), every loaded chapter is
+	// swapped for its counterpart in the other dataset, in place.
+	let spellingReady = $state(false);
+
+	async function syncSpelling(target: 'modern' | 'original') {
+		if (translationId !== 'odr' || target === shownSpelling) return;
+		const slugs = [...new Set(chapters.map((c) => c.bookMeta.slug))];
+		try {
+			const books = await Promise.all(slugs.map((slug) => loadBook(slug, fetch, target)));
+			// The reader may have toggled again while the books loaded
+			if (get(prefs).spelling !== target) return;
+			chapters = chapters.map((c) => {
+				const book = books[slugs.indexOf(c.bookMeta.slug)];
+				const swapped = getChapter(book, c.chapter.chapter);
+				return swapped ? { ...c, chapter: swapped } : c;
+			});
+			shownSpelling = target;
+		} catch (e) {
+			console.warn('Failed to switch spelling:', e);
+		}
+	}
+
+	$effect(() => {
+		const target = $prefs.spelling ?? 'modern';
+		if (!spellingReady) return;
+		untrack(() =>
+			syncSpelling(target).finally(() =>
+				document.documentElement.classList.remove('spelling-pending')
+			)
+		);
+	});
+
 	onMount(async () => {
+		const urlSpelling = new URLSearchParams(window.location.search).get('spelling');
+		if (urlSpelling === 'original' && $prefs.spelling !== 'original') {
+			prefs.update((p) => ({ ...p, spelling: 'original' }));
+		}
+		spellingReady = true;
 		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
 		reducedMotion = mq.matches;
 		mq.addEventListener('change', (e) => (reducedMotion = e.matches));
@@ -561,7 +605,7 @@
 		bind:this={container}
 		class="flex-1 min-w-0 px-md max-md:px-[8px] pt-[20px] pb-xl max-md:pb-[80px]"
 	>
-		<div style="max-width: var(--column-max-width);" class="mx-auto">
+		<div style="max-width: var(--column-max-width);" class="mx-auto" data-reader-chapters>
 			{#each chapters as item, i (item.bookMeta.slug + '-' + item.chapter.chapter)}
 				{@const titles = chapterTitles(
 					{ slug: item.bookMeta.slug, chapter: item.chapter.chapter },

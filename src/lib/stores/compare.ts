@@ -3,6 +3,7 @@ import { browser } from '$app/environment';
 
 export type TranslationId =
 	| 'odr'
+	| 'odr-orig'
 	| 'drc'
 	| 'haydock'
 	| 'conf'
@@ -26,6 +27,8 @@ export interface Translation {
 	hidden?: boolean;
 	/** Excluded from the side-by-side compare view (still available elsewhere) */
 	noCompare?: boolean;
+	/** Exists only as a compare column: no reading route, not in the translation menu */
+	compareOnly?: boolean;
 	/** SEO: human-readable name for page titles, e.g. "Douay-Rheims Challoner Bible" */
 	seoName?: string;
 	/** SEO: template for meta description. Use {book} and {chapter} as placeholders. */
@@ -59,6 +62,17 @@ export const TRANSLATIONS: Translation[] = [
 		seoName: 'Original Douay-Rheims Bible',
 		seoDesc:
 			'Read {book} Chapter {chapter} in the original Douay-Rheims Bible (1582-1610), the first complete English Catholic translation from the Latin Vulgate.'
+	},
+	{
+		id: 'odr-orig',
+		label: 'Original Douay-Rheims, original spelling',
+		abbr: 'ODR-Orig',
+		year: '1582–1610',
+		live: true,
+		ntOnly: false,
+		fullHeader: false,
+		compareOnly: true,
+		micro: '1582 and 1609 Spelling'
 	},
 	{
 		id: 'kjv',

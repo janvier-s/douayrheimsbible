@@ -94,7 +94,9 @@
 	}
 	// Map: startVerse → pericope (for injecting headers before the verse)
 	let pericopeAtVerse = $derived(new Map(pericopes.map((p) => [p.startVerse, p])));
-	let liveTranslations = $derived(TRANSLATIONS.filter((t) => t.live && !t.hidden));
+	let liveTranslations = $derived(
+		TRANSLATIONS.filter((t) => t.live && !t.hidden && !t.compareOnly)
+	);
 	let currentTranslation = $derived(
 		liveTranslations.find((t) => t.id === translationId) ??
 			liveTranslations.find((t) => t.id === 'odr')!

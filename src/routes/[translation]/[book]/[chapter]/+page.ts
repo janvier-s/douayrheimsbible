@@ -8,7 +8,9 @@ import type { Chapter } from '$lib/data/types';
 export const load: PageLoad = async ({ params, fetch, setHeaders }) => {
 	const { translation: translationId, book: slug, chapter: chapterStr } = params;
 
-	const translation = TRANSLATIONS.find((t) => t.id === translationId && t.id !== 'odr');
+	const translation = TRANSLATIONS.find(
+		(t) => t.id === translationId && t.id !== 'odr' && !t.compareOnly
+	);
 	if (!translation) throw error(404, `Unknown translation: ${translationId}`);
 
 	if (translation.hidden) {
