@@ -44,14 +44,14 @@
 	<title>In Numbers · The Original Douay-Rheims Bible</title>
 	<meta
 		name="description"
-		content="The Original Douay-Rheims Bible in numbers: 1,707 annotations, 3,709 cross-references, and the story of how this site was built."
+		content="The Original Douay-Rheims Bible in numbers: 1,521 annotations, 8,533 marginal notes, 2,209 cross-references, and the story of how this site was built."
 	/>
 	<link rel="canonical" href="https://thedouayrheims.com/about/stats" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="In Numbers" />
 	<meta
 		property="og:description"
-		content="The Original Douay-Rheims Bible in numbers: 1,707 annotations, 3,709 cross-references, and the story of how this site was built."
+		content="The Original Douay-Rheims Bible in numbers: 1,521 annotations, 8,533 marginal notes, 2,209 cross-references, and the story of how this site was built."
 	/>
 	<meta property="og:url" content="https://thedouayrheims.com/about/stats" />
 	<meta property="og:site_name" content="Douay-Rheims Bible" />
@@ -70,7 +70,7 @@
 			<span class="stat-label">Books</span>
 		</div>
 		<div class="stat-card">
-			<span class="stat-number">1,362</span>
+			<span class="stat-number">1,361</span>
 			<span class="stat-label">Chapters</span>
 		</div>
 		<div class="stat-card">
@@ -78,30 +78,30 @@
 			<span class="stat-label">Verses</span>
 		</div>
 		<div class="stat-card">
-			<span class="stat-number">1,707</span>
+			<span class="stat-number">1,521</span>
 			<span class="stat-label">Annotations</span>
 		</div>
 		<div class="stat-card">
-			<span class="stat-number">3,709</span>
+			<span class="stat-number">8,533</span>
 			<span class="stat-label">Marginal notes</span>
 		</div>
 		<div class="stat-card">
-			<span class="stat-number">1,989</span>
+			<span class="stat-number">2,209</span>
 			<span class="stat-label">Cross-references</span>
 		</div>
 		<div class="stat-card">
-			<span class="stat-number">1,236</span>
+			<span class="stat-number">1,235</span>
 			<span class="stat-label">Chapter summaries</span>
 		</div>
 		<div class="stat-card">
-			<span class="stat-number">84</span>
+			<span class="stat-number">85</span>
 			<span class="stat-label">Book arguments</span>
 		</div>
 	</div>
 
 	<p class="stats-note">
 		The 76 books include 73 of the Catholic canon and three further texts present in the Vulgate
-		appendix: 3 Esdras, 4 Esdras, and the Prayer of Manasses. The 84 book arguments exceed 76
+		appendix: 3 Esdras, 4 Esdras, and the Prayer of Manasses. The 85 book arguments exceed 76
 		because several books carry more than one prefatory section, a general introduction and separate
 		arguments for distinct parts.
 	</p>

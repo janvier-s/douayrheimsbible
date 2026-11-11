@@ -1,5 +1,18 @@
 <script lang="ts">
 	import ProseLayout from '$lib/components/ProseLayout.svelte';
+	import stats from '../../../../static/data/stats/challoner.json';
+
+	const fmt = (n: number) => n.toLocaleString('en-US');
+	const pct = (n: number, d: number) => Math.round((n / d) * 100);
+	const T = stats.totals;
+	const bookRows = stats.perBook
+		.filter((b) => b.compared >= 50)
+		.sort((a, b) => b.rewordedRate - a.rewordedRate);
+	const mostReworded = bookRows.slice(0, 5);
+	const leastReworded = bookRows.slice(-5).reverse();
+	const swaps = stats.topSwaps.slice(0, 12);
+	const swapNote = (from: string, to: string) =>
+		from === 'our' && to === 'the' ? ' (almost always "our Lord" becoming "the Lord")' : '';
 	const FAQ = [
 		{
 			q: 'What did Bishop Challoner change in the Douay-Rheims Bible?',
@@ -313,6 +326,44 @@
 		pre-Challoner text: Gregory Martin's translation, unaltered.
 	</p>
 
+	<h2>The Revision by the Numbers</h2>
+
+	<p>
+		The claims above can be measured. This site holds both texts verse by verse, so each verse of
+		the original (in modern spelling) can be set against the same verse in the Challoner revision.
+		Of {fmt(T.compared)} verses compared, {fmt(T.unchanged)} ({pct(T.unchanged, T.compared)}%) are
+		identical once punctuation and capitals are ignored, {fmt(T.spelling)} ({pct(
+			T.spelling,
+			T.compared
+		)}%) differ only in spelling, and {fmt(T.reworded)} ({pct(T.reworded, T.compared)}%) contain at
+		least one different word. Roughly nine verses in ten were reworded.
+	</p>
+
+	<h3>The most common word swaps</h3>
+
+	<ul>
+		{#each swaps as s}
+			<li>
+				{s.from} became {s.to}, {fmt(s.count)} times{swapNote(s.from, s.to)}
+			</li>
+		{/each}
+	</ul>
+
+	<h3>Where he changed most and least</h3>
+
+	<p>
+		Among books with at least fifty comparable verses, the share of reworded verses runs highest in
+		{mostReworded.map((b) => `${b.title} (${pct(b.reworded, b.compared)}%)`).join(', ')}. It runs
+		lowest in {leastReworded.map((b) => `${b.title} (${pct(b.reworded, b.compared)}%)`).join(', ')}.
+	</p>
+
+	<p class="challoner-method">
+		Method: verses are paired by number, or by the closest match within two verses where the two
+		texts number a passage differently ({fmt(T.renumbered)} verses). {fmt(T.unmatched)} verses with no
+		close counterpart and {fmt(T.skippedChapters)} chapters with unresolved numbering differences are
+		left out. A word counts as a spelling variant when it is one or two letters away from its counterpart.
+	</p>
+
 	<h2>Why the Original Matters</h2>
 
 	<p>
@@ -364,3 +415,10 @@
 		<a href="/history/after-challoner">After Challoner: A Bible in Dispute →</a>
 	</p>
 </ProseLayout>
+
+<style>
+	.challoner-method {
+		font-size: 0.875em;
+		opacity: 0.8;
+	}
+</style>

@@ -61,11 +61,32 @@ const ODR_OT_ARTICLES: ReferenceArticle[] = [
 		desc: 'Latin certification of fidelity to the Catholic faith.'
 	},
 	{
+		slug: 'censura-english',
+		title: 'Censura (English)',
+		section: 'ot',
+		category: 'front',
+		desc: 'An English rendering of the three divines’ Latin certification.'
+	},
+	{
 		slug: 'privilege',
 		title: 'Privilege',
 		section: 'ot',
 		category: 'front',
 		desc: 'French royal privilege granting exclusive printing rights.'
+	},
+	{
+		slug: 'to-the-curteous-reader',
+		title: 'To the Courteous Reader',
+		section: 'ot',
+		category: 'front',
+		desc: 'A short address to the reader at the head of the Old Testament.'
+	},
+	{
+		slug: 'marks-of-the-reader',
+		title: 'The Marks Used in This Edition',
+		section: 'ot',
+		category: 'front',
+		desc: 'The meaning of the numbers, crosses and other marks printed in the Old Testament.'
 	},
 	// Back matter
 	{
@@ -130,6 +151,27 @@ const ODR_OT_ARTICLES: ReferenceArticle[] = [
 		section: 'ot',
 		category: 'back',
 		desc: 'Index of principal theological and historical topics in the Old Testament.'
+	},
+	{
+		slug: 'job-recapitulation',
+		title: 'Recapitulation of the History of Job',
+		section: 'ot',
+		category: 'back',
+		desc: 'A brief summary of the sacred history of Job, with the translators\u2019 notes.'
+	},
+	{
+		slug: 'index',
+		title: 'A Particular Table (Index)',
+		section: 'ot',
+		category: 'back',
+		desc: 'The 1609 alphabetical index of the principal things in the text and annotations.'
+	},
+	{
+		slug: 'errata',
+		title: 'Faults Escaped in the Printing',
+		section: 'ot',
+		category: 'back',
+		desc: 'The printers\u2019 list of corrections for the Old Testament.'
 	}
 ];
 
@@ -155,6 +197,13 @@ const ODR_NT_ARTICLES: ReferenceArticle[] = [
 		section: 'nt',
 		category: 'front',
 		desc: 'On the translation of Scripture into the vulgar tongues and the principles of this translation.'
+	},
+	{
+		slug: 'marks-of-the-reader',
+		title: 'The Signification of the Numbers and Marks',
+		section: 'nt',
+		category: 'front',
+		desc: 'The meaning of the numbers and marks printed in the 1582 New Testament.'
 	},
 	{
 		slug: 'scripture-authority',
@@ -219,6 +268,13 @@ const ODR_NT_ARTICLES: ReferenceArticle[] = [
 		section: 'nt',
 		category: 'back',
 		desc: 'Chronological table of St. Peter\u2019s apostolic life and martyrdom.'
+	},
+	{
+		slug: 'errata-and-colophon',
+		title: 'Faults Corrected, and the Colophon',
+		section: 'nt',
+		category: 'back',
+		desc: 'The corrections to the 1582 printing and the closing colophon.'
 	}
 ];
 

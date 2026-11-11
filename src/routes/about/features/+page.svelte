@@ -79,12 +79,12 @@
 	<p>Six translations carry study content, each with its own character.</p>
 
 	<p>
-		The <strong>Original Douay-Rheims</strong> carries 1,707 annotations that form the theological heart
+		The <strong>Original Douay-Rheims</strong> carries 1,521 annotations that form the theological heart
 		of the translation, defending Catholic readings of Scripture, refuting Protestant renderings, and
 		explaining the Latin behind the English word chosen. The doctrines most directly at stake are those
 		the reformers contested: Christ's presence in the Eucharist, the intercession of the saints, and the
-		nature of justification. Alongside the annotations are 3,709 marginal notes — shorter textual notes
-		on philology and alternative readings — and 1,989 scriptural cross-references, plus book introductions
+		nature of justification. Alongside the annotations are 8,533 marginal notes — shorter textual notes
+		on philology and alternative readings — and 2,209 scriptural cross-references, plus book introductions
 		and arguments, and occasional longer articles and end matter attached to specific chapters.
 	</p>
 
@@ -466,7 +466,7 @@
 	<p>
 		Two scopes can be searched independently: the verse text and the notes. Searching the verses
 		finds every occurrence of a word in Scripture. Searching the notes covers the full scholarly
-		apparatus the translators assembled: the 1,707 annotations, 3,709 marginal notes, 1,989
+		apparatus the translators assembled: the 1,521 annotations, 8,533 marginal notes, 2,209
 		cross-references, and the prefatory reference material from both Testaments, including the
 		prefaces to the reader, the table of corruptions in Protestant translations, the glossary of
 		theological terms, and all other front matter. Results from the reference material appear
