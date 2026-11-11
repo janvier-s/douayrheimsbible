@@ -70,8 +70,8 @@
 	let useRoman = $derived(isVul && $prefs.romanNumerals);
 	let chapterHeading = $derived(
 		isVul
-			? `${bookMeta.slug === 'psalms' ? 'Psalmus' : 'Caput'} ${useRoman ? toRoman(chapter.chapter) : chapter.chapter}`
-			: `${bookMeta.slug === 'psalms' ? 'Psalm' : 'Chapter'} ${chapter.chapter}`
+			? `${bookMeta.slug === 'psalms' ? 'Psalmus' : bookLabel(bookMeta, shortTitle)} ${useRoman ? toRoman(chapter.chapter) : chapter.chapter}`
+			: `${bookMeta.slug === 'psalms' ? 'Psalm' : bookLabel(bookMeta, shortTitle)} ${chapter.chapter}`
 	);
 
 	// Seeded from the prop, then moved by verse clicks. Kept in sync with later
@@ -368,9 +368,6 @@
 	{/if}
 
 	<header class="mb-[35px]">
-		<p class="font-ui text-[11px] uppercase tracking-[0.3em] text-subtle mb-sm">
-			{bookLabel(bookMeta, shortTitle)}
-		</p>
 		<svelte:element
 			this={headingLevel}
 			class="chapter-heading text-[2.5rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-sm"

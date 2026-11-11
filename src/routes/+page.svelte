@@ -383,7 +383,7 @@
 
 	.hero-eyebrow {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 12px;
 		text-transform: uppercase;
 		letter-spacing: 0.28em;
 		color: var(--color-accent);
@@ -500,15 +500,14 @@
 	.hero-cta-arrow {
 		font-size: 14px;
 		display: inline-block;
-		animation: bounce 1.2s ease-in-out infinite;
+		animation: nudge 1.2s ease-out infinite alternate;
 	}
 
-	@keyframes bounce {
-		0%,
-		100% {
+	@keyframes nudge {
+		from {
 			transform: translateY(-1px);
 		}
-		50% {
+		to {
 			transform: translateY(2px);
 		}
 	}
@@ -541,7 +540,7 @@
 
 	.hero-caption {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 11px;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
 		color: var(--color-text);
