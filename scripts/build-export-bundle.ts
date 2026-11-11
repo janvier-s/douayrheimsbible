@@ -44,6 +44,7 @@ import {
 	EDITION
 } from './verse-only-lib.js';
 import { ALL_BOOKS } from '../src/lib/data/books.js';
+import { buildVerseOnlyEpubs, buildVerseOnlyOsis, buildVerseOnlyDocx } from './ebook-build.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const ODR_DIR = join(ROOT, 'static', 'data', 'odr');
@@ -267,6 +268,15 @@ if (verseBooks.length) {
 	db.exec('INSERT INTO verses_fts(rowid, text) SELECT rowid, text FROM verses; COMMIT');
 	db.exec("INSERT INTO verses_fts(verses_fts) VALUES ('optimize'); VACUUM");
 	db.close();
+}
+
+if (verseBooks.length) {
+	const testamentOf = Object.fromEntries(ALL_BOOKS.map((m) => [m.slug, m.testament]));
+	const ctx = { out: OUT, root: ROOT, refDir: REF_DIR, verseBooks, testamentOf, only: ONLY };
+	const only = (process.env.FORMATS ?? 'epub,osis,docx').split(',');
+	if (only.includes('epub')) await buildVerseOnlyEpubs(ctx);
+	if (only.includes('osis')) buildVerseOnlyOsis(ctx);
+	if (only.includes('docx')) await buildVerseOnlyDocx(ctx);
 }
 
 const commit = execSync('git rev-parse HEAD', { cwd: ROOT }).toString().trim();
