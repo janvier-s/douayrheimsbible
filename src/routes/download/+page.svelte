@@ -153,6 +153,14 @@
 			<strong>EPUB</strong>: EPUB 3 for e-readers. The 1582 title page is the cover, verse numbers
 			are superscript, and the table of contents runs testament, book, chapter.
 		</li>
+		<li>
+			<strong>OSIS</strong>: OSIS 2.1.1 XML for Bible software such as SWORD and Xiphos, with an
+			<code>osisID</code> on every book, chapter, and verse.
+		</li>
+		<li>
+			<strong>DOCX</strong>: Word documents with the 1582 title page, heading styles, and a table of
+			contents field.
+		</li>
 	</ul>
 
 	<a
