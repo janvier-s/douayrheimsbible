@@ -59,6 +59,8 @@ export interface ReadingPrefs {
 	bionicBoldWeight: 600 | 700;
 	// v27
 	showClarifications: boolean;
+	// v28
+	spelling: 'modern' | 'original';
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -93,10 +95,11 @@ const DEFAULTS: ReadingPrefs = {
 	skipHomepage: false,
 	romanNumerals: true,
 	bionicBoldWeight: 600,
-	showClarifications: false
+	showClarifications: false,
+	spelling: 'modern'
 };
 
-const PREFS_VERSION = 26;
+const PREFS_VERSION = 28;
 
 function loadPrefs(): ReadingPrefs {
 	if (!browser) return DEFAULTS;
@@ -224,6 +227,9 @@ function loadPrefs(): ReadingPrefs {
 				parsed.bionicBoldWeight = 600;
 			}
 		}
+		// v28 migration: add modern / original spelling switch for the ODR text
+		// (default 'modern'; DEFAULTS fills it in, only guard against a bad value)
+		if (parsed.spelling !== 'original') parsed.spelling = 'modern';
 		parsed._v = PREFS_VERSION;
 		localStorage.setItem('reading-prefs', JSON.stringify(parsed));
 		return { ...DEFAULTS, ...parsed };

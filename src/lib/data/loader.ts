@@ -21,28 +21,48 @@ export function hasSidecar(section: string, slug: string, chapter: number): bool
 	return Array.isArray(chs) && chs.includes(chapter);
 }
 
+export type Spelling = 'modern' | 'original';
+
+/** Directory under static/data/ that holds the ODR text in the given spelling. */
+const odrDir = (spelling: Spelling) => (spelling === 'original' ? 'odr-original' : 'odr');
+const cacheKey = (slug: string, spelling: Spelling) => `${spelling}/${slug}`;
+
 const bookCache = new Map<string, Promise<BookData>>();
 const resolvedCache = new Map<string, BookData>();
 
-/** Fetches the full book JSON with in-memory deduplication (also cached by browser + CDN) */
-export function loadBook(slug: string, fetch: typeof globalThis.fetch): Promise<BookData> {
-	if (!bookCache.has(slug)) {
-		const promise = fetch(`/data/odr/${slug}.json`).then((res) => {
-			if (!res.ok) throw new Error(`Book not found: ${slug}`);
-			return res.json() as Promise<BookData>;
-		});
+/**
+ * Fetches the full book JSON with in-memory deduplication (also cached by browser + CDN).
+ * `spelling: 'original'` reads the 1582/1609 spelling mirror; a book missing from it
+ * falls back to the modern text so the reader never breaks.
+ */
+export function loadBook(
+	slug: string,
+	fetch: typeof globalThis.fetch,
+	spelling: Spelling = 'modern'
+): Promise<BookData> {
+	const key = cacheKey(slug, spelling);
+	if (!bookCache.has(key)) {
+		const promise = fetch(`/data/${odrDir(spelling)}/${slug}.json`)
+			.then((res) => {
+				if (!res.ok) throw new Error(`Book not found: ${slug}`);
+				return res.json() as Promise<BookData>;
+			})
+			.catch((err) => {
+				if (spelling === 'original') return loadBook(slug, fetch, 'modern');
+				throw err;
+			});
 		promise.then(
-			(data) => resolvedCache.set(slug, data),
-			() => bookCache.delete(slug) // evict on failure so next call retries
+			(data) => resolvedCache.set(key, data),
+			() => bookCache.delete(key) // evict on failure so next call retries
 		);
-		bookCache.set(slug, promise);
+		bookCache.set(key, promise);
 	}
-	return bookCache.get(slug)!;
+	return bookCache.get(key)!;
 }
 
 /** Returns already-resolved BookData synchronously, or null if not yet loaded. */
-export function getCachedBook(slug: string): BookData | null {
-	return resolvedCache.get(slug) ?? null;
+export function getCachedBook(slug: string, spelling: Spelling = 'modern'): BookData | null {
+	return resolvedCache.get(cacheKey(slug, spelling)) ?? null;
 }
 
 /** Extracts a single chapter from a loaded book */
@@ -58,20 +78,27 @@ const annotationCache = new Map<string, Promise<ChapterAnnotations | null>>();
 export function loadAnnotations(
 	slug: string,
 	chapter: number,
-	fetch: typeof globalThis.fetch
+	fetch: typeof globalThis.fetch,
+	spelling: Spelling = 'modern'
 ): Promise<ChapterAnnotations | null> {
-	const key = `${slug}/${chapter}`;
+	const key = `${spelling}/${slug}/${chapter}`;
 	if (!annotationCache.has(key)) {
 		if (!hasSidecar('annotations', slug, chapter)) {
 			annotationCache.set(key, Promise.resolve(null));
 			return annotationCache.get(key)!;
 		}
-		const path = `/data/odr/${slug}/annotations/${String(chapter).padStart(3, '0')}.json`;
-		const promise = fetch(path).then((res) => {
-			if (res.status === 404) return null; // no annotations for this chapter
-			if (!res.ok) throw new Error(`Failed to load annotations: ${res.status}`);
-			return res.json() as Promise<ChapterAnnotations>;
-		});
+		const file = `${slug}/annotations/${String(chapter).padStart(3, '0')}.json`;
+		const promise = fetch(`/data/${odrDir(spelling)}/${file}`)
+			.then((res) => {
+				if (res.status === 404) return null; // no annotations for this chapter
+				if (!res.ok) throw new Error(`Failed to load annotations: ${res.status}`);
+				return res.json() as Promise<ChapterAnnotations>;
+			})
+			.then((data) =>
+				data === null && spelling === 'original'
+					? loadAnnotations(slug, chapter, fetch, 'modern')
+					: data
+			);
 		promise.then(null, () => annotationCache.delete(key)); // evict on failure so next call retries
 		annotationCache.set(key, promise);
 	}

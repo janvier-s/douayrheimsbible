@@ -47,6 +47,30 @@
 			})();
 		</script>
 		<script>
+			// Original-spelling readers: pages are prerendered in modern spelling, so keep the
+			// chapter text invisible (layout intact) until BibleReader has swapped it in.
+			(function () {
+				try {
+					if (location.pathname.indexOf('/odr/') !== 0) return;
+					var q = new URLSearchParams(location.search).get('spelling');
+					var p = JSON.parse(localStorage.getItem('reading-prefs') || '{}');
+					if (q === 'original' || (q !== 'modern' && p.spelling === 'original')) {
+						var d = document.documentElement;
+						d.classList.add('spelling-pending');
+						// Never leave the text hidden if the swap fails
+						setTimeout(function () {
+							d.classList.remove('spelling-pending');
+						}, 4000);
+					}
+				} catch (e) {}
+			})();
+		</script>
+		<style>
+			html.spelling-pending [data-reader-chapters] {
+				visibility: hidden;
+			}
+		</style>
+		<script>
 			// Remember a Reading options click made before JS hydrates; TopBar replays it.
 			document.addEventListener(
 				'click',

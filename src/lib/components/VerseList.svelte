@@ -494,7 +494,12 @@
 	// ── Inline clarifications (ODR only, off by default) ─────────────
 
 	let clarData: BookClarifications | null = $state(null);
-	let clarOn = $derived(translationId === 'odr' && ($prefs.showClarifications ?? false));
+	// Clarifications are keyed to the modern wording, so they stay off in original spelling.
+	let clarOn = $derived(
+		translationId === 'odr' &&
+			($prefs.showClarifications ?? false) &&
+			($prefs.spelling ?? 'modern') === 'modern'
+	);
 	$effect(() => {
 		if (!clarOn) return;
 		let live = true;

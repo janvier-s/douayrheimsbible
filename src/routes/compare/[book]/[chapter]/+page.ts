@@ -26,8 +26,12 @@ export const load: PageLoad = async ({ params, fetch }) => {
 
 	// Load all other translations in parallel (including hidden ones so they are ready if unlocked)
 	const otherTranslations = TRANSLATIONS.filter(
-		(t) => t.id !== 'odr' && !(t.ntOnly && bookMeta.testament === 'OT')
+		(t) => t.id !== 'odr' && !t.compareOnly && !(t.ntOnly && bookMeta.testament === 'OT')
 	);
+
+	// Same ODR text in 1582/1609 spelling (modern text stands in for any missing book)
+	const originalBook = await loadBook(slug, fetch, 'original').catch(() => null);
+	const originalChapter = originalBook ? getChapter(originalBook, chapterNum) : undefined;
 
 	const translationResults = await Promise.allSettled(
 		otherTranslations.map((t) => loadTranslationBook(t.id, slug, fetch))
@@ -35,7 +39,10 @@ export const load: PageLoad = async ({ params, fetch }) => {
 
 	// Build verse map per translation (plain objects — Map is not serializable by SvelteKit)
 	const verseMaps: Record<string, Record<number, string>> = {
-		odr: Object.fromEntries(chapter.verses.map((v) => [v.verse, v.text]))
+		odr: Object.fromEntries(chapter.verses.map((v) => [v.verse, v.text])),
+		'odr-orig': Object.fromEntries(
+			(originalChapter ?? chapter).verses.map((v) => [v.verse, v.text])
+		)
 	};
 
 	// The KJV numbers the psalms from the Hebrew, every other translation here

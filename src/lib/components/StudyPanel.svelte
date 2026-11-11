@@ -603,28 +603,35 @@
 		}
 	});
 	$effect.pre(() => {
-		const key = `${currentBookSlug}/${currentChapterNum}`;
+		const spelling = $prefs.spelling ?? 'modern';
+		const key = `${spelling}/${currentBookSlug}/${currentChapterNum}`;
 		if (key !== lastAnnotationKey && currentBookSlug) {
+			const chapterChanged = !lastAnnotationKey.endsWith(
+				`/${currentBookSlug}/${currentChapterNum}`
+			);
 			lastAnnotationKey = key;
 			// Capture these NOW, before any async gap
 			const slug = currentBookSlug;
 			const chNum = currentChapterNum;
-			// Reset scroll instantly; the CSS slide-up animation handles the smooth transition
-			if (browser && panelScroll) panelScroll.scrollTop = 0;
-			sectionEls = {};
-			lastObservedKeys = '';
+			// Reset scroll instantly; the CSS slide-up animation handles the smooth transition.
+			// A spelling switch re-fetches the same chapter and keeps the reader's place.
+			if (chapterChanged) {
+				if (browser && panelScroll) panelScroll.scrollTop = 0;
+				sectionEls = {};
+				lastObservedKeys = '';
+				studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
+			}
 			annotationsLoading = true;
 			annotations = null;
-			studyPanel.update((s) => ({ ...s, annotatedVerse: null, panelScrollVerse: null }));
-			loadAnnotations(slug, chNum, fetch)
+			loadAnnotations(slug, chNum, fetch, spelling)
 				.then((data) => {
-					if (`${slug}/${chNum}` === lastAnnotationKey) {
+					if (`${spelling}/${slug}/${chNum}` === lastAnnotationKey) {
 						annotations = data;
 						annotationsLoading = false;
 					}
 				})
 				.catch(() => {
-					if (`${slug}/${chNum}` === lastAnnotationKey) {
+					if (`${spelling}/${slug}/${chNum}` === lastAnnotationKey) {
 						annotationsLoading = false;
 					}
 				});
@@ -1172,13 +1179,6 @@
 						</div>
 					{/if}
 
-					<!-- ═══ Confraternity: Intro tab ═══ -->
-				{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
-					<div class="content-block">
-						<p class="content-eyebrow">Introduction · Confraternity Bible</p>
-						{#each confIntro as para}
-							<p class="prose-para">{@html linkifyConfRefs(para)}</p>
-						{/each}
 					<!-- ═══ ODR: Facsimile tab ═══ -->
 				{:else if $studyPanel.activeTab === 'facsimile' && isOdr}
 					{#if facsimileCount > 0}
@@ -1209,6 +1209,13 @@
 						</div>
 					{/if}
 
+					<!-- ═══ Confraternity: Intro tab ═══ -->
+				{:else if $studyPanel.activeTab === 'intro' && isConf && confIntro}
+					<div class="content-block">
+						<p class="content-eyebrow">Introduction · Confraternity Bible</p>
+						{#each confIntro as para}
+							<p class="prose-para">{@html linkifyConfRefs(para)}</p>
+						{/each}
 					</div>
 
 					<!-- ═══ Confraternity: Footnotes tab ═══ -->

@@ -294,7 +294,7 @@
           "lemmas": [
             [
               97,
-              17,
+              18,
               1
             ]
           ],
@@ -394,7 +394,7 @@
           "lemmas": [
             [
               13,
-              115,
+              120,
               1
             ]
           ],
@@ -476,7 +476,7 @@
           "lemmas": [
             [
               46,
-              21,
+              22,
               1
             ]
           ],
@@ -633,7 +633,7 @@
           "lemmas": [
             [
               4,
-              52,
+              53,
               2
             ],
             [
@@ -642,7 +642,7 @@
               1
             ],
             [
-              103,
+              105,
               24,
               3
             ]
@@ -714,7 +714,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              139,
+              138,
               12,
               1
             ]
@@ -820,8 +820,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              76,
-              16,
+              78,
+              15,
               1
             ]
           ],
@@ -866,7 +866,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              108,
+              109,
               13,
               1
             ]
@@ -894,7 +894,7 @@
           "lemmas": [
             [
               85,
-              12,
+              13,
               1
             ]
           ]
@@ -941,8 +941,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              53,
-              40,
+              54,
+              41,
               1
             ]
           ],
@@ -993,7 +993,7 @@
               1
             ],
             [
-              152,
+              151,
               10,
               2
             ]
@@ -1110,8 +1110,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              101,
-              12,
+              103,
+              13,
               1
             ]
           ]
@@ -1130,7 +1130,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              63,
+              66,
               17,
               1
             ]
@@ -1168,8 +1168,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              79,
-              24,
+              81,
+              26,
               1
             ]
           ]
@@ -1180,7 +1180,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              71,
+              74,
               11,
               1
             ]
@@ -1271,8 +1271,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              28,
-              16,
+              32,
+              13,
               1
             ]
           ],
@@ -1343,7 +1343,7 @@
           "lemmas": [
             [
               17,
-              11,
+              13,
               1
             ]
           ],
@@ -1361,8 +1361,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              101,
-              27,
+              99,
+              26,
               1
             ]
           ]
@@ -1385,8 +1385,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              63,
-              50,
+              64,
+              40,
               1
             ]
           ]
@@ -1464,7 +1464,7 @@
           "lemmas": [
             [
               60,
-              20,
+              21,
               1
             ]
           ]
@@ -1615,7 +1615,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              106,
+              104,
               11,
               1
             ]
@@ -1656,8 +1656,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              194,
-              12,
+              195,
+              13,
               1
             ]
           ],
@@ -2222,7 +2222,7 @@
           "lemmas": [
             [
               4,
-              15,
+              14,
               1
             ]
           ]
@@ -2332,7 +2332,7 @@
           "lemmas": [
             [
               34,
-              5,
+              6,
               1
             ]
           ]
@@ -2469,7 +2469,7 @@
           "lemmas": [
             [
               28,
-              23,
+              25,
               1
             ]
           ]
@@ -2574,7 +2574,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              85,
+              83,
               11,
               1
             ]
@@ -2624,8 +2624,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              19,
-              34,
+              18,
+              36,
               1
             ]
           ]
@@ -2666,7 +2666,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              47,
+              49,
               10,
               1
             ]
@@ -2870,7 +2870,7 @@
           "lemmas": [
             [
               0,
-              13,
+              12,
               1
             ]
           ]
@@ -3345,7 +3345,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              89,
+              90,
               19,
               1
             ]
@@ -3407,7 +3407,7 @@
           "lemmas": [
             [
               19,
-              12,
+              11,
               1
             ]
           ],
@@ -3537,7 +3537,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              134,
+              137,
               7,
               1
             ]
@@ -3634,14 +3634,7 @@
         {
           "verse": 5,
           "text": "Neyther shal thy name be called any more Abram: but thou shalt be called Abraham: because a father of many nations I haue made thee.",
-          "has_annotation": true,
-          "lemmas": [
-            [
-              103,
-              12,
-              1
-            ]
-          ]
+          "has_annotation": true
         },
         {
           "verse": 6,
@@ -3665,8 +3658,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              114,
-              20,
+              111,
+              19,
               1
             ]
           ]
@@ -3696,8 +3689,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              73,
-              18,
+              37,
+              52,
               1
             ]
           ]
@@ -4762,8 +4755,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              10,
-              29,
+              9,
+              28,
               1
             ]
           ]
@@ -5132,7 +5125,7 @@
           "lemmas": [
             [
               144,
-              33,
+              32,
               1
             ]
           ]
@@ -5179,7 +5172,7 @@
           "lemmas": [
             [
               20,
-              29,
+              28,
               1
             ]
           ]
@@ -5231,7 +5224,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              87,
+              91,
               13,
               1
             ]
@@ -5281,7 +5274,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              58,
+              59,
               15,
               1
             ]
@@ -5721,8 +5714,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              80,
-              22,
+              83,
+              23,
               1
             ]
           ]
@@ -5733,7 +5726,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              37,
+              38,
               8,
               1
             ]
@@ -5773,8 +5766,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              87,
-              35,
+              89,
+              36,
               1
             ]
           ]
@@ -6288,7 +6281,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              82,
+              84,
               5,
               1
             ]
@@ -6564,8 +6557,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              29,
-              14,
+              28,
+              15,
               1
             ]
           ]
@@ -6862,8 +6855,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              54,
-              26,
+              53,
+              28,
               1
             ]
           ]
@@ -6916,7 +6909,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              99,
+              98,
               17,
               1
             ]
@@ -7044,7 +7037,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              45,
+              46,
               24,
               1
             ]
@@ -7068,7 +7061,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              210,
+              215,
               25,
               1
             ]
@@ -7268,7 +7261,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              72,
+              73,
               14,
               1
             ]
@@ -7439,8 +7432,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              143,
-              19,
+              142,
+              18,
               1
             ]
           ]
@@ -7502,8 +7495,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              110,
-              25,
+              111,
+              26,
               1
             ]
           ]
@@ -7797,7 +7790,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              108,
+              111,
               37,
               1
             ]
@@ -8064,8 +8057,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              145,
-              13,
+              146,
+              14,
               1
             ]
           ]
@@ -8080,8 +8073,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              64,
-              20,
+              65,
+              7,
               1
             ]
           ],
@@ -8191,7 +8184,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              51,
+              52,
               16,
               1
             ]
@@ -8207,7 +8200,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              74,
+              76,
               13,
               1
             ]
@@ -8239,7 +8232,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              42,
+              41,
               23,
               1
             ]
@@ -8346,8 +8339,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              226,
-              9,
+              231,
+              8,
               1
             ]
           ],
@@ -8531,7 +8524,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              161,
+              163,
               10,
               1
             ]
@@ -8832,8 +8825,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              83,
-              23,
+              82,
+              24,
               1
             ]
           ]
@@ -8866,8 +8859,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              71,
-              28,
+              72,
+              27,
               1
             ]
           ],
@@ -8988,8 +8981,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              108,
-              9,
+              109,
+              10,
               1
             ]
           ]
@@ -9206,8 +9199,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              72,
-              17,
+              73,
+              16,
               1
             ]
           ]
@@ -9290,7 +9283,7 @@
             ],
             [
               163,
-              14,
+              15,
               2
             ]
           ],
@@ -9378,8 +9371,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              62,
-              42,
+              70,
+              35,
               1
             ]
           ],
@@ -9398,7 +9391,7 @@
           "lemmas": [
             [
               26,
-              19,
+              20,
               1
             ]
           ]
@@ -9426,7 +9419,7 @@
           "lemmas": [
             [
               17,
-              35,
+              29,
               1
             ]
           ],
@@ -9444,8 +9437,8 @@
           "has_annotation": true,
           "lemmas": [
             [
-              72,
-              31,
+              75,
+              22,
               1
             ]
           ]
@@ -9477,7 +9470,7 @@
           "lemmas": [
             [
               0,
-              25,
+              14,
               1
             ]
           ]
@@ -9683,7 +9676,7 @@
           "has_annotation": true,
           "lemmas": [
             [
-              58,
+              59,
               23,
               1
             ]
