@@ -1,0 +1,1846 @@
+{
+  "book": "lamentations",
+  "book_title": "The Threnes, that is to say,\nthe Lamentations of Jeremie the Prophet.",
+  "short_title": "Lamentations",
+  "hebrew_title": null,
+  "intros": [
+    {
+      "title": "THE ARGUMENT OF JEREMIE'S LAMENTATIONS.",
+      "text": "THESE <i>Lamentations</i>, in Greek called <i>Threni</i>, and by the Hebrew Rabbins entitled <i>Cinoth</i>, were <mn>[1]</mn> written by Jeremie before the greatest part of his other Prophecies (as seemeth most probable to S. Jerome) and were first sung at the death of Josias King of Juda. Again when King Sedecias with <mn>[2]</mn> many others were taken captives, many also slain, and the Temple and city of Jerusalem destroyed. But most especially he prophesieth the Jews' miserable estate, and just cause of Lamentation after Christ's coming, and their rejecting him. And therefore his Church singeth the same in the Anniversary, or Commemoration of his Passion and Death, and most piously inviteth all sinners, both Jews and Gentiles, to return unto Christ our Redeemer, saying: <i>Jerusalem, Jerusalem convertere ad Dominum Deum tuum</i>. In this little book the diligent reader will easily observe <mn>[3]</mn> many doleful pathetical speeches, poured out from a pensive heart, as in great calamities it commonly happeneth, with little connexion of sentences, but otherwise four whole chapters are very artificially compiled in verse, not by number of times, with measure of long & short <mn>[4]</mn> syllables, as the Greeks & Latins use, but after the Hebrew manner, observing number of syllables, and beginning every verse with a distinct letter, from the first to the last in order, with some small variety, of the Hebrew Alphabet. Doubtless with great mysteries, as S. Jerome judgeth, and <mn>[5]</mn> therefore explicateth the significations, and certain connexions of the two and twenty Hebrew letters: as we have noted upon the 118. Psalm: but above the capacity of our understanding. In the last chapter the Prophet omitting the observation of Initial letters, in twenty two verses prayeth lamentably, as the whole people shall pray in captivity.\n\nAnd it came to pass, after that Israel was brought into captivity, and Jerusalem was desolate, <mn>◦</mn> Jeremie the Prophet sat weeping, and he mourned with this lamentation upon Jerusalem, and with a pensive mind sighing, and wailing he said.",
+      "default": true,
+      "notes": [
+        {
+          "marker": 1,
+          "text": "It is probable that the Lamentations were written before his other prophecies."
+        },
+        {
+          "marker": 2,
+          "text": "<i>2. Paral. 35. v. 25.</i>"
+        },
+        {
+          "marker": 3,
+          "text": "Doleful speeches are commonly uttered without connexion of sentences."
+        },
+        {
+          "marker": 4,
+          "text": "These Lamentations are artificially composed."
+        },
+        {
+          "marker": 5,
+          "text": "And besides the historical sense contain hidden mysteries."
+        },
+        {
+          "marker": "◦",
+          "text": "These words are not Jeremie's, but added by the 70. or other Interpreter, as a Preface to his Lamentations."
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "HOW <na>[1]</na><na>[2]</na> doeth the citie ful of people, sitte solitarie: how is the ladie of the Gentiles become as a widow: the princesse of prouinces is made tributarie?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Aleph.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "The miserable change in Ierusalem made the beholders astonied.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<na>[1]</na> Weeping she hath wept in the night, and her teares are on her cheekes: there is none to comfort her of al her deare ones: al her freindes haue despised her, and are become her enimies.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Beth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "<na>[1]</na> Iudas is <na>(a)</na> gone into transmigration because of affliction, and the multitude of bondage: she hath dwelt among the Gentiles, neither hath she found rest: al her persecuters haue apprehended her within the straites.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Some Iewes seing their bretheren ledde captiues into Babylon, went into Ægypt, but there also were in miserie.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Ghimel.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<na>[1]</na> The waies of Sion mourne, because there are none that come to the solemnitie: al her gates are destroyed: her priestes sighing: her virgins lothsome, and herself is oppressed with bitternes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Daleth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "<na>[1]</na> Her aduersaries are made <na>(b)</na> in the head, her enemies are enriched: because our Lord hath spoken vpon her for the multitude of her iniquities: her litle ones are led into captiuitie, before the face of the afflicter.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "It is a desolate miserie when enimies obtaine dominion.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "He.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>[1]</na> And from the daughter of Sion al her beautie is departed: her princes are become as <na>(c)</na> rammes not fynding pastures: and they are gone without strength before the face of the pursewer.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Fleing from place to place to seeke relife.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Vau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<na>[1]</na> Ierusalem hath remembred the dayes of her affliction, and preuarication of al her thinges worthie to be desyred, which she had from the daies of old, when her people fel in the enimies hand, and there was no helper: the enemies haue sene her, and haue scorned her sabbathes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Zain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<na>[1]</na> Ierusalem hath sinned a sinne, therfore is she made vnstable: al that did glorifie her, haue despised her, because they haue sene her ignominie: but she sighing is turned backward.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Heth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<na>[1]</na> Her <na>(d)</na> filthines is on her feete, neither hath she remembred her end; she is pulled downe exceedingly, not hauing a comforter: see ô Lord mine affliction, because the enemie is exalted.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "Idolatry which is spiritual adultery.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Teth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<na>[1]</na> The enimie hath thrust his hand to al her thinges worthie to be desyred: because she hath sene the Gentiles enter into her sanctuarie, of whom thou gauest commandment that they should not enter into thy church.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Iod.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> Al her people sighing, and seeking bread: they haue geuen al precious thinges for meate to refresh the soule, see ô Lord and consider, because I am become vyle.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Caph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "<na>[1]</na> O al ye that passe by the way, attend, and see if there be sorow like to my sorow: because he hath made <na>(e)</na> vintage of me, as our Lord hath spoken in the day of the wrath of his furie.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "First Nabuchodonosor tooke away much treasure <i>4 Reg 24</i>. afterwards his capitaine Nabuzardan spoyled al <i>4 Reg. 25</i>.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Lamed.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> From on high he hath cast a fyre in my bones, and hath taught me: he hath spred a net for my feete, he hath turned me backward: he hath made me desolate, al the day consumed with sorow.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Mem.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "<na>[1]</na> The yoke of mine iniquities hath watched: they are folded together in his hand, and put vpon my necke: my strength is weakened: our Lord hath geuen me into the hand, from which I can not rise.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Nun.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "<na>[1]</na> Our Lord hath taken away al my magnifical ones out of the middes of me: he hath called a time against me, to destroy mine elect: our Lord hath troden the winepresse to the virgin the daughter of Iuda.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Samech.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<na>[1]</na> Therfore am I weeping, and mine eye shedding teares: because a comforter is made far from me, conuerting my soule: my children are become desolate because the enemie hath preuayled.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "<na>[1]</na> Sion hath spred forth her handes, there is none to comfort her: our Lord hath commanded against Iacob, round about him are his enemies: Ierusalem is become as a woman polluted with menstruous floores among them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Phe.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "<na>[1]</na> Our Lord is iust, because I haue prouoked his mouth to wrath: heare I beseech al ye peoples, and see my sorow: my virgins, and my yong men are gone into captiuitie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sade.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "<na>[1]</na> I haue called <na>(f)</na> my freindes, they haue deceiued me: my priestes and my ancientes are consumed in the citie: because they haue sought meat for themselues, to refresh their soule.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Ægypt wherin the Iewes trusted to finde ayde, could not, or at least, did not helpe them <i>Iere. 2. v. 18. & 37. v</i>. 4. & 6.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Coph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "<na>[1]</na> See ô Lord that I am in tribulation, my bellie is trubled: my hart is ouerturned in myself, because I am ful of bitternes: the sword killeth abrode, and at home it is <na>(g)</na> lyke death.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "At home in famine.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Res.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "<na>[1]</na> They haue heard that I doe sigh, and there is none to comfort me: al mine enimies haue heard mine euil, they haue reioyced, because thou hast done it: thou hast brought a day of consolation, and they shal be made lyke to me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sin.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "<na>[1]</na> Let al their euil enter in before thee: and vintage them, as thou hast vintaged me for al mine iniquities: for my sighings are manie, and my hart is sorowful.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Thau.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "HOW <na>[1]</na> <na>(a)</na> hath our Lord in his furie couered the daughter of Sion with darknes: cast forth the noble one of Israel from heauen to the earth, and hath not remembred the footestoole of his feete in the day of his furie.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Punishment permitted by God is truly ascribed to him as his fact.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Aleph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<na>[1]</na> Our Lord hath cast downe headlong, and hath not spared, al the beautiful thinges of Iacob: he hath destroyed in his furie the munitions of the virgin of Iuda, and cast it downe to the ground: he hath polluted the kingdom, and the princes therof.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Beth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "<na>[1]</na> He hath broken <na>(b)</na> euerie horne of Israel in the wrath of furie: he hath turned away his right hand backward from the face of the enemie: and he hath kinled in Iacob as it were the fyre of a flame deuouring round about.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Streingth and forces are called hornes, so euerie horne signifieth al their strength.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Ghimel.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<na>[1]</na> He hath bent his bow as an enemie, he hath fastned his right hand as an aduersarie: and he hath killed al, that was fayre to behold in the tabernacle of the daughter of Sion, he hath powred out his indignation as fyre.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Daleth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "<na>[1]</na> Our Lord is become as an enemie: he hath cast downe Israel headlong, he hath cast downe headlong al her walles: he hath destroyed the munitions therof, and hath replenished in the daughter of Iuda the humbled man and humbled woman.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>[1]</na> And he hath destroyed his tent as a garden, he hath throwen downe his tabernacle: our Lord hath brought festiuitie and sabbath in Sion to obliuion: and king and priest into reproch, and into the indignation of his furie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Vau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<na>[1]</na> Our Lord hath reiected, he <na>(c)</na> hath cursed his sanctification: he hath deliuered the walles of the towers therof into the hand of the enemie: they haue made a noyse in the house of our Lord, as in a solemne day.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Suffered his Sanctuarie to be polluted.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Zain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<na>[1]</na> Our Lord hath meant to destroy the wal of the daughter of Sion: he hath streched out his corde, and hath not turned away his hand from destruction: and the forewal hath mourned, and the wal is destroyed together.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Heth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<na>[1]</na> Her gates are fastned in the ground: he hath destroyed, and broken her barres: her king and her princes in the Gentiles: there is no law, and her prophets haue not found vision from our Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Teth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<na>[1]</na> The ancients of the daughter of Sion haue sitten on the ground, they haue held their peace: they haue sprinkled their heades with dust, they are girded with heare clothes, the virgins of Ierusalem haue cast downe their heades to the ground.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Iod.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> Myne eies haue fayled for teares, my bowels are trubled: my liuer is powred out on the earth, for the destruction of the daughter of my people, when the litle one, and the sucking faynted in the streetes of the towne.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Caph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "<na>[1]</na> They sayd to their mothers: Where is wheate and wyne? when they faynted as the wounded in the streets of the citie: when they yelded vp the ghostes in the bosome of their mothers.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Lamed.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> Wherto shal I compare thee? or wherto shal I liken thee ô daughter of Ierusalem: wherto shal I make thee equal, and comfort thee ô virgin daughter of Sion? For great is thy destruction <na>(d)</na> as the sea: who shal heale thee?",
+          "notes": [
+            {
+              "label": "d",
+              "text": "As the sea exceedeth al other waters, so the affliction of Ierusalem surpasseth other afflictions, which is spoken by <i>hyperbole</i>, to signifie the grenousnes therof.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Mem.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "<na>[1]</na> Thy prophetes haue sene false and foolish thinges for thee: neither haue they opened thyne iniquitie, to prouoke thee to penance, but they haue sene false burdens and banishements for thee.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Nun.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "<na>[1]</na> Al that passed by the way haue clapped their handes vpon thee: they haue hissed, and moued their head vpon the daughter of Ierusalem, saying: Is this the citie of perfect beautie, the ioy of al the earth?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Samech.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<na>[1]</na> Al thyne enemies haue opened their mouth vpon thee: they haue hissed, and gnashed with the teeth, and haue sayd: We wil deuour: Loe this is the day, which we expected: we haue found it, we haue sene it.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Phe.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "<na>[1]</na> Our Lord hath done the thinges that he meant, he hath accomplished his word, which he commanded from the dayes of old: he hath destroyed, and hath not spared, and he hath made the enemie ioyful ouer thee, and hath exalted the horne of thine aduersaries.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "<na>[1]</na> Their hart hath cryed to our Lord vpon the walles of the daughter of Sion: Shede teares as a torrent by day, and night: geue no rest to thyself, neither let the aple of thyne eye cease.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sade.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "<na>[1]</na> Arise, prayse in the night in the beginning of the watches: powre out thy hart as waters before the sight of our Lord: lift vp thy handes to him for the life of thy litle ones, which haue fainted for famine in the head of al high wayes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Coph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "<na>[1]</na> See ô Lord, and consider whom thou hast vintaged thus: <na>(e)</na> shal wemen then eate their owne fruite, litle ones of the measure of a spanne? is the priest, and the prophet slaine in the sanctuarie of our Lord?",
+          "notes": [
+            {
+              "label": "e",
+              "text": "This happened before in Samaria. <i>4. Reg. 6.</i> and in the siege of Jerusalem, by Titus and Vespasian.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Res.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "<na>[1]</na> The childe and the old man lay on the ground without: my virgins and my yongmen are fallen by the sword: thou hast killed in the day of thy furie: thou hast strooken, <na>(f)</na> neither hast thou had mercie.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "More severely than thou art accustomed.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Sin.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "<na>[1]</na> Thou hast called as it were to a solemne day, those that should terrifie me round about, and there was none in the day of the furie of our Lord, that escaped and was left: whom I brought vp, & nourished, mine enemie hath consumed them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Thau.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "I THE <na>[1]</na> man <na>(a)</na> that see my pouertie in the rod of his indignation.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Jeremy himself felt his part of this affliction.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Aleph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<na>[1]</na> He hath led me, and brought me into darknes and not into light.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Aleph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "<na>[1]</na> Only against me he hath turned and hath conuerted his hand al the day.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Aleph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<na>[1]</na> He hath made my skinne old and my flesh, he hath broken my bones.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Beth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "<na>[1]</na> He hath built round about me, and he hath compased me with <na>(b)</na> gaul, and <na>(c)</na> labour.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Ierusalem was ransaked by Nabuchodonosor.",
+              "kind": "gloss"
+            },
+            {
+              "label": "c",
+              "text": "and worse by Nabuzardan.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Beth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>[1]</na> In darke places he hath placed me as the euerlasting dead.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Beth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<na>[1]</na> He hath built round about against me, that I goe not forth: he hath aggrauated my fetters.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ghimel.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<na>[1]</na> Yea and when I shal crie, and aske, he hath excluded my prayer.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ghimel.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<na>[1]</na> He hath shut vp my wayes with square stones, he hath subuerted my pathes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ghimel.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<na>[1]</na> He is become vnto me a beare lying in waite: a lyon in secret places.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Daleth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> He hath subuerted my pathes, and hath broken me, he hath made me desolate.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Daleth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "<na>[1]</na> He hath bent his bow, and set me as a marke for the arrow.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Daleth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> He hath shot in my reines the daughters of his quiuer.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "<na>[1]</na> I am made a derision to al my people, their song al the day.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "<na>[1]</na> He hath replenished me with bitternes, he hath inebriated me with wormwood.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<na>[1]</na> And he <na>(d)</na> hath broken my teeth by number, he hath fed me with ashes.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "He describeth his greuous paines, as if his teeth were broken one by one.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Vau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "<na>[1]</na> And my soule is repelled from peace, I haue forgotten good thinges.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Vau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "<na>[1]</na> And I sayd: Mine end is <na>(e)</na> perished, and mine hope from our Lord.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "The end of my life is come.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Vau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "<na>[1]</na> Remember my pouertie, and transgression, the wormwood, and the gual.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Zain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "<na>[1]</na> Remembring I wil be mindful, and my soule shal languish in me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Zain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "<na>[1]</na> Recording this thing in my hart, therfore wil I hope.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Zain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "<na>[1]</na> The mercies of our Lord that we are not consumed: because his commiserations haue not fayled.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Heth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "<na>[1]</na><na>(f)</na> New in the morning, great is thy fidelite.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Heth.",
+              "kind": "gloss"
+            },
+            {
+              "label": "f",
+              "text": "God's mercies are every day renewed.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "<na>[1]</na> Our Lord is my portion, sayd my soule: therfore wil I expect him.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Heth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "<na>[1]</na> Our Lord is good to them that hope in him, to the soule that seeketh him.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Teth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 26,
+          "text": "<na>[1]</na> It is good to waite with silence for the saluation <na>(g)</na> of God.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "Which God wil geue.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Teth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 27,
+          "text": "<na>[1]</na> It is good for a man, when he beareth the yoke from his youth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Teth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 28,
+          "text": "<na>[1]</na> He shal sit solitarie, and hold his peace: because he hath lifted himselfe aboue himself.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Iod.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 29,
+          "text": "<na>[1]</na> He shal put his mouth in the dust, if perhaps there be hope.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Iod.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 30,
+          "text": "<na>[1]</na> He <na>(h)</na> shal geue the cheeke to him that striketh him, he shal be filled with reproches.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "Especially vnderstod of Christ. <i>Mat. 26</i>.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Iod.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 31,
+          "text": "<na>[1]</na> Because our Lord wil not reiect for euer.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Caph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 32,
+          "text": "<na>[1]</na> Because if he hath reiected, he wil also haue mercie, according to the multitude of his mercies.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Caph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 33,
+          "text": "<na>[1]</na> For he hath not humbled <na>(i)</na> from his hart, and cast of the children of men.",
+          "notes": [
+            {
+              "label": "i",
+              "text": "God punisheth his seruantes not to hurt them but for their good.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Caph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 34,
+          "text": "<na>[1]</na> To stamp vnder his fete al the prisoners of the earth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Lamed.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 35,
+          "text": "<na>[1]</na> To auert the iudgement of a man before the face of the Highest.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Lamed.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 36,
+          "text": "<na>[1]</na> To peruert a man in his iudgement, our Lord hath not knowne.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Lamed.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 37,
+          "text": "<na>[1]</na> Who is this, that hath commanded it to be done, our Lord not commanding it?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Mem.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 38,
+          "text": "<na>[1]</na> Out of the mouth of the Highest, there shal not procede neither euil thinges, <na>(k)</na> nor good.",
+          "notes": [
+            {
+              "label": "k",
+              "text": "The speach of such as denie Gods prouidence.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Mem.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 39,
+          "text": "<na>[1]</na> What hath the liuing man murmured, man for his sinnes?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Mem.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 40,
+          "text": "<na>[1]</na> Let vs search our wayes, & seeke, and returne to our Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Nun.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 41,
+          "text": "<na>[1]</na> Let vs lift vp our hartes with our handes to our Lord into the heauens.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Nun.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 42,
+          "text": "<na>[1]</na> We haue done wickedly, and prouoked to wrath: therfore thou art inexorable.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Nun.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 43,
+          "text": "<na>[1]</na> Thou hast couered in furie, and hast strooken vs: thou hast killed, and not spared.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Samech.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 44,
+          "text": "<na>[1]</na> Thou hast sette a cloude before thee, that prayer may not passe.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Samech.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 45,
+          "text": "<na>[1]</na> Thou hast made me to be rooted out, and abiect in the middes of the peoples.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Samech.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 46,
+          "text": "<na>[1]</na> Al the enemies haue opened their mouth vpon vs.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Phe.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 47,
+          "text": "<na>[1]</na><na>(l)</na> Prophecie is made vnto vs, feare, and snare, and destruction.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Phe.",
+              "kind": "gloss"
+            },
+            {
+              "label": "l",
+              "text": "Preaching of false prophets hath brought these euils vpon vs,",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 48,
+          "text": "<na>[1]</na> Myne eye hath shed streames of waters, in the destruction of the daughter of my people.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Phe.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 49,
+          "text": "<na>[1]</na> Myne eye is afflicted, neither hath it bene quiet, because there was no rest:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 50,
+          "text": "<na>[1]</na> Til our Lord regarded and looked from the heauens.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 51,
+          "text": "<na>[1]</na> Mine eye hath spoyled my soule for al the daughters of my citie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 52,
+          "text": "<na>[1]</na> Myne enemies in hunting haue caught me as a birde, without cause.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sade.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 53,
+          "text": "<na>[1]</na> My life is fallen into the lake, and they haue layd a stone vpon me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sade.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 54,
+          "text": "<na>[1]</na> The waters haue flowed ouer my head: I sayd: I am vndone.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sade.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 55,
+          "text": "<na>[1]</na> I haue inuocated thy name ô Lord from the lowest lake.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Coph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 56,
+          "text": "<na>[1]</na> Thou hast heard my voice: turne not away thine eare from my sobbings, and cries.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Coph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 57,
+          "text": "<na>[1]</na> Thou didst approch in the day, when I inuocated thee: thou hast sayd: Feare not.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Coph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 58,
+          "text": "<na>[1]</na> Thou hast iudged ô Lord the cause of my soule, redemer of my life.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Res.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 59,
+          "text": "<na>[1]</na> Thou hast seene ô Lord their iniquitie against me: <na>(m)</na> iudge my iudgement.",
+          "notes": [
+            {
+              "label": "m",
+              "text": "Iudge thou that which they haue iudged vniustly.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Res.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 60,
+          "text": "<na>[1]</na> Thou hast seene al their furie, al their cogitations against me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Res.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 61,
+          "text": "<na>[1]</na> Thou hast heard their reproch ô Lord, al their cogitations against me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sin.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 62,
+          "text": "<na>[1]</na> The lippes of them that rise vp against me; and their cogitations against me al the day.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sin.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 63,
+          "text": "<na>[1]</na> See their sitting downe, and their rysing vp, I am their psalme.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sin.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 64,
+          "text": "<na>[1]</na> Thou shalt render them a recompence ô Lord, according to the workes of their handes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Thau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 65,
+          "text": "<na>[1]</na> Thou shalt geue them <na>(n)</na> a shild of hart <na>(o)</na> thy labour.",
+          "notes": [
+            {
+              "label": "n",
+              "text": "Geue them the paine of hartie sorow:",
+              "kind": "gloss"
+            },
+            {
+              "label": "o",
+              "text": "Wherwith thou afflictest the wicked,",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Thau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 66,
+          "text": "<na>[1]</na> Thou shalt persecute in furie, and shalt destroy them from vnder the heauens ô Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Thau.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "HOW <na>[1]</na> is <na>(a)</na> the gold darkned, the best colour changed, the stones of the sanctuarie dispersed in the head of al streetes?",
+          "notes": [
+            {
+              "label": "a",
+              "text": "VVheras the Temple before glistered with gold, now there appeared burnt smokie walles, & pittiful ruines.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Aleph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<na>[1]</na> The noble children of Sion, & they that were clothed with the principal gold: how are they reputed as earthen vessels, the worke of the potters handes?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Beth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "<na>[1]</na> Yea euen <na>(b)</na> the lamiaes haue opened their breast, they haue geuen sucke to their yong, the daughter of my people is cruel, as <na>(c)</na> the ostrich in the desert.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Lamia hath a face like a woman, a body as other brutish beastes, is cruel to others, yet kind to her owne broode: but wemen of Ierusalem in extreme distresse were cruel to their owne children.",
+              "kind": "gloss"
+            },
+            {
+              "label": "c",
+              "text": "as the ostrich forsaking her egges.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Ghimel.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<na>[1]</na> The tongue of the suckling hath clouen to the roofe of his mouth for thirst: the litle ones haue asked bread, and there was none that brake it vnto them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Daleth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "<na>[1]</na> They that fed voluptuously, haue dyed in the wayes: they that were brought vp in scarlet, haue imbraced the dung.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>[1]</na> And the iniquitie of the daughter of my people is become greater then the sinne of Sodom: which was ouerthrowen in a moment, and handes tooke nothing in her.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Vau.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<na>[1]</na> Her Nazareites whiter then snow, purer then milke, ruddier then the old yuorie, fayrer then the sapphire.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Zain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<na>[1]</na> Their face is made blacker then coales, and they are <na>(d)</na> not knowne in the streetes: their skinne hath clouen to their bones, it is withered, and is made as wood.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "One could not know an other, though they were acquanted before.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Heth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<na>[1]</na> It was better with them that were slaine with the sword, then with them that were killed by famine: because these pyned away consumed by the barrennes of the countrie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Teth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<na>[1]</na> The handes of <na>(e)</na> pitiful wemen haue sodden their owne children: they were made their meate <na>(f)</na> in the destruction of <na>(g)</na> the daughter of my people.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "VVemen being by nature pitiful, were cruel to their owne children.",
+              "kind": "gloss"
+            },
+            {
+              "label": "f",
+              "text": "In the siege of Ierusalem.",
+              "kind": "gloss"
+            },
+            {
+              "label": "g",
+              "text": "In Hebrew phrase cities are called the daughters of the countrie.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Iod.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> Our Lord hath accomplished his furie, he hath powred out the wrath of his indignation: and he hath kindled a fyre in Sion, and it hath deuoured the fundations therof.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Caph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "<na>[1]</na> The kinges of the earth, and al the inhabitants of the world did not beleue, that the aduersarie and the enemie should enter in by the gates of Ierusalem.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Lamed.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> For the sinnes of her <na>(h)</na> prophets, and the iniquities of her priestes, which haue shed the bloud of iust men in the middes of her.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "False prophetes were called by the name of prophetes, as they semed in the world to be.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Mem.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "<na>[1]</na> The blind wandered in the streetes, they were polluted with bloud: and when they could not, they held their skirtes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Nun.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "<na>[1]</na> Depart ye polluted, they cryed to them: depart, get ye hence, touch not: for they brawled, & were moued: they said among the Gentiles: He wil adde no more to dwel among them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Samech.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<na>[1]</na> The face of our Lord hath diuided them, he wil not adde to respect them: they haue not reuerenced the faces of the priests, neither had they pitie on the ancients.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Phe.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "<na>[1]</na> Whiles we yet stood, our eyes fayled towards our vaine helpe, when we looked attentiue to a nation, that was not able to saue.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Ain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "<na>[1]</na> Our steppes slipped in the way of our streetes, our end draweth nere: our dayes are accomplished, because our end is come.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sade.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "<na>[1]</na> Our persecuters were swifter then the eagles of the heauen: vpon the mountaines they pursued vs, in the desert they lay in waite against vs.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Coph.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "<na>[1]</na> The spirit of our mouth <na>(i)</na> Christ our Lord is taken in our sinnes: to whom we haue said: In thy shadow shal we liue among the Gentiles.",
+          "notes": [
+            {
+              "label": "i",
+              "text": "This perteineth either to king Iosias slaine by the Ægyptians. <i>2. Par. 35</i>. or to Sedecias taken by the Chaldees. Mystically of Christ our Sauiour. <i>Is. 53. v. 5. S. Aug. li. 18. c. 33 de ciu</i>.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Res.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "<na>[1]</na> Reioyce, and be glad ô daughter of Edom, which dwellest in the Land of Hus: to thee also shal the cuppe come, thou shalt be made drunken, and naked.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Sin.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "<na>[1]</na> Thine iniquitie is accomplished ô daughter of Sion, he wil adde no more to transport thee: he hath visited thine iniquitie ô daughter of Edom, he hath discouered thy sinnes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Thau.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "REmember ô Lord what is fallen to vs: behold, and regard our reproch."
+        },
+        {
+          "verse": 2,
+          "text": "Our inheritance is turned to aliens: our houses to strangers."
+        },
+        {
+          "verse": 3,
+          "text": "We are made <na>(b)</na> pupils without father: our mothers are as it were widowes.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Manie were orphanes without fathers, & al were depriued of their king, who was as a father of al the people.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "Our water we haue drunke for money: our wood we haue bought for a price."
+        },
+        {
+          "verse": 5,
+          "text": "We were led by our neckes, no rest was geuen to the wearie."
+        },
+        {
+          "verse": 6,
+          "text": "We <na>(c)</na> haue geuen our hand to Ægypt, and to the Assyrians, that we might be filled with bread.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "We haue put ourselues to worke and trauel in strange countries to gette bread to eate.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "Our fathers haue sinned, and they are not: & we haue borne their iniquities."
+        },
+        {
+          "verse": 8,
+          "text": "Seruantes haue ruled ouer vs: there was none that would redeme vs out of their hand."
+        },
+        {
+          "verse": 9,
+          "text": "In peril of our liues did we fetch vs bread, <na>[1]</na> at the face of the sword in the desert.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>* in danger of the sword.</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "Our skinne was burnt as an ouen, by reason of the tempests of famine."
+        },
+        {
+          "verse": 11,
+          "text": "They humbled the wemen in Sion, and the virgins in the cities of Iuda."
+        },
+        {
+          "verse": 12,
+          "text": "The princes were hanged vp by the hand: they did not reuerence the faces of the ancients."
+        },
+        {
+          "verse": 13,
+          "text": "Yongmen they abused <na>(d)</na> vnchastly: and the children fel <na>(e)</na> in wood.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "They were made to grind naked in the mille:",
+              "kind": "gloss"
+            },
+            {
+              "label": "e",
+              "text": "And beaten with staves.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "The ancients decayed out of the gates: the yongmen out of the quier of the singers."
+        },
+        {
+          "verse": 15,
+          "text": "The ioy of our hart hath fayled, our quyre is turned into mourning."
+        },
+        {
+          "verse": 16,
+          "text": "The <na>(f)</na> crowne of our head is fallen: wo to vs, because we haue sinned.",
+          "notes": [
+            {
+              "label": "f",
+              "text": "They lost the glorie of a kingdom, and were subiect to strange and barbarous nations.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "Therfore is our hart made sorowful, therfore are our eyes darkned."
+        },
+        {
+          "verse": 18,
+          "text": "For mount Sion, because it is perished, foxes haue walked on it."
+        },
+        {
+          "verse": 19,
+          "text": "But thou ô Lord shalt remaine for euer, thy throne in generation and to generation."
+        },
+        {
+          "verse": 20,
+          "text": "Why wilt thou for euer be forgetful of vs? wilt thou forsake vs in length of daies?"
+        },
+        {
+          "verse": 21,
+          "text": "<na>(g)</na> Conuert vs ô Lord to thee, and we shal be conuerted: renew our dayes, as from the beginning.",
+          "notes": [
+            {
+              "label": "g",
+              "text": "As Iere: <i>31. v. 18.</i> and <i>S. Aug. l. de gratia & l. arb. c. 2. 4. &c.</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "But reiecting thou hast reiected vs, <na>(h)</na> thou art angrie against vs excedingly.",
+          "notes": [
+            {
+              "label": "h",
+              "text": "Hauing so seuerly punished vs, we beseech thee now to cease from more.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "spelling": "original"
+}

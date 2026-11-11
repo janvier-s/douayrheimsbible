@@ -1,0 +1,1713 @@
+{
+  "book": "esther",
+  "book_title": "The Book of Esther.",
+  "short_title": "Esther",
+  "hebrew_title": null,
+  "intros": [
+    {
+      "title": "THE ARGUMENT OF THE BOOK OF ESTHER.",
+      "text": "OF the authority of this book <i>only two or three ancient writers doubted</i>, before the Councels <mn>[1]</mn> <mn>[2]</mn> of Laodicea and Carthage declared it to be Canonical. <i>All the rest did ever esteem it as divine Scripture</i>. For albeit S. Jerome in his time found not certain parts thereof in the Hebrew, and therefore transposed the same to the end of the book, as now we have them: yet in the Greek he found all these sixteen chapters contained in ten. And it is not unprobable, that these parcels were sometimes in the Hebrew, as were diverse whole books which are now lost. But whether they were at any time in the Hebrew or no, the Church of Christ accounteth the whole Book of infallible authority, reading as well these parts, as the rest in her public office. And the Councel of Trent (sess. 4.) for more express declaration defineth <i>that all the books recited in the same Decree</i> (amongst which is Esther) <i>with all the parts thereof, as they are accustomed to be read in the Catholic Church, and be contained in the old vulgar Latin Edition, are sacred and Canonical Scripture</i>.\n\nIt containeth a particular great danger of the people of Israel, happening (as is probable) <mn>[1]</mn> shortly after their general relaxation, and return of some from the captivity of Babylon; and their delivery from it, through the godly zeal and other virtues of Queen Esther, directed herein by Mardocheus, who being also in imminent danger was delivered and advanced: and finally writ <mn>[2]</mn> the history, which may be divided into four parts, not by order of the chapters as they are here <mn>[3]</mn> transposed, but in order of time. First the author reporteth some things going before the people's danger, in the 11. 1. 2. 12. chapters, and part of the 3. Secondly, their danger and distress, in the rest of the 3. and part of 13. chapters. Thirdly, their delivery: from the 4. chapter to the midst of the 9. and rest of the 13. and in the 14. 15. and 16. Fourthly, the things that ensued hereupon, in the other half of the ninth chapter, the 10. chapter, and first verse of the eleventh.\n\nWhosoever will please to read this history, in order of the time as the things happened, adjoining the latter chapters, which are in the Greek, and not in Hebrew, may follow the letters of the Alphabet, as here we have placed them in the margent, beginning at the second verse of the 11. chapter, where he findeth the letter A. and when he cometh to B. return where the same letter is noted. ch. 1. And so in the rest follow the same direction.",
+      "default": true,
+      "notes": [
+        {
+          "marker": 1,
+          "text": "This whole book is canonical."
+        },
+        {
+          "marker": 2,
+          "text": "<i>Melito. S. Atha. S. Greg. Nazian. Origen apud Euseb. lib. 6. c. 25. hist.</i>"
+        },
+        {
+          "marker": 1,
+          "text": "The contents"
+        },
+        {
+          "marker": 2,
+          "text": "Written by Mardocheus."
+        },
+        {
+          "marker": 3,
+          "text": "Divided into four parts."
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "I N <na>[1]</na> the daies of Assuerus. who reigned from India vnto Æthiopia ouer an hundred twentie seuen prouinces:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part beginneth in the 11. ch.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "when he sate in the throne of his kingdõ, the citie Susã was in the begynning of his kingdom. <na>[1]</na>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "A. B.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "In the third yeare therfore of his empyre he made a great feast to al the princes, and to his seruantes, to the most valiant of the Persians, and the nobles of the Medes, and the rulers of the prouinces in his sight,"
+        },
+        {
+          "verse": 4,
+          "text": "that he might shew the riches of the glorie of his kingdom, and the greatnes, & vaunting of his might, a great time, to witte, an hundred & foure score dayes."
+        },
+        {
+          "verse": 5,
+          "text": "And when the daies of the feast were accomplished, he inuited al people, that was found in Susan, from the greatest to the least: and commanded seuen daies a feast to be prepared in the entrance of the garden, and of the wood, which was planted with royal garnishing and with hand."
+        },
+        {
+          "verse": 6,
+          "text": "And there hong on euerie side hangings of skie colour, and grene, and hyacinthine colour, held vp with cordes of silke, and of purple, which were put into rings of yuorie, and were held vp with marble pillers. Beddes also of gold and siluer, were placed in order vpon the floore paued with the emerauld, and the touch stone: which paynting adorned with meruelous varietie."
+        },
+        {
+          "verse": 7,
+          "text": "And they that were inuited, dranke in golden cuppes, and the meates were brought in change of vessels. Wine also plenteous and the best was set downe, as was worthie of a kings magnificence."
+        },
+        {
+          "verse": 8,
+          "text": "<na>(a)</na> Neither was there that compelled them to drinke that would not, but as the king had appointed, making ech of his princes ouerseer of euerie table, that euerie man might take what he would.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Modestie and temperance amongst heathen people condemneth Christianes that vrge men to drinke immoderatly, and so cause them to be drunke. <i>S. Au. Ser. 231. 232. de tempore</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "Vasthi also the queene made a feast for the wemen in the palace, where king Assuerus had accustomed to remayne."
+        },
+        {
+          "verse": 10,
+          "text": "Therfore the seuenth day, when the king was merier, and after very much drinking was wel warmed with wine, he commanded Maumam, and Bazatha, and Harbona, and Bagatha, and Abgatha, and Zethar, and Charchas, the seuen eunuches, that ministred in his sight,"
+        },
+        {
+          "verse": 11,
+          "text": "that they should bring in queene Vasthi before the king, the crowne set vpon her head, that he might shew her beautie to al the peoples and princes: for she was exceding beautiful."
+        },
+        {
+          "verse": 12,
+          "text": "Who refused, and contemned to come at the kings commandment, which he had commanded by the eunuches. Wherupon the king being wrath, and chaffed with <na>(b)</na> exceding furie,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The end of immoderate feasting is commonly browling. Here the king became furious, and the queene was dinorsed from him.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "( asked the wisemen, which after the manner of a king were alwayes present with him, and he did al thinges by their counsel, which knew the lawes, and rightes of the elders:"
+        },
+        {
+          "verse": 14,
+          "text": "(and the chiefe and nearest him were, Charsena, and Sethar, and Admatha, and Tharsis, and Mares, and Marsana, and Mamuchan, seuen dukes of the Persians, and of the Medes, which saw the face of the king, and were wont to sitt first after him)"
+        },
+        {
+          "verse": 15,
+          "text": "to what sentence Vasthi the queene should be subiect, that would not do Assuerus the kings commandment, which he had commanded by the eunuches."
+        },
+        {
+          "verse": 16,
+          "text": "And Mamuchan answered, the king hearing, and the princes: <na>(c)</na> Queene Vasthi hath not only hurt the king, but also al peoples, and princes, that are in al the prouinces of king Assuerus.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Brentius approueth the sentence of this parasite, but Iosephus. <i>li. 11 c 6</i>. Macrobius. <i>li 7. c. 1. Saturn. & Ierom ad Rustic</i>. and S. Ambrose. <i>l. de. Elia c. 14</i> iudge the queenes refusal lawful, and agreable to the Persians lawes, which prohibited maried wemen to come in sight of other men in great assemblies: neither had the king iust cause to break that law, for pleasing his phansie in his drunken humour. <i>v. 10</i>. Luther also wresteth this example in fauoure of adulterie, <i>par. 2. de diuortio. folio 177. Editionis vvitenber. Anno. 1553</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "For the word of the queene wil goe forth to al wemen, that they wil contemne their husbands, and wil say: King Assuerus commanded that the queene Vasthi should come in to him, and she would not."
+        },
+        {
+          "verse": 18,
+          "text": "And by this example al the wiues of the princes of the Persians and the Medes, wil little esteeme the commandmentes of their husbandes: wherfore the kings indignation is iust."
+        },
+        {
+          "verse": 19,
+          "text": "If it please thee, let an edict goe forth from thy face, and let it be written according to the law of the Persians and of Medes, which is not lawful to be transgressed, that Vasthi come in no more to the king, but an other, that is better then she, take her kingdome."
+        },
+        {
+          "verse": 20,
+          "text": "And let this be published into al the empire of thy prouinces (which is most large) and let al the wiues, as wel of the greater as of the lesser geue honour to their husbandes."
+        },
+        {
+          "verse": 21,
+          "text": "His counsel pleased the king, and the princes: and the king did according to the counsel of Mamuchan,"
+        },
+        {
+          "verse": 22,
+          "text": "and he sent letters to al the prouinces of his kingdome, as euerie nation could heare and reade, in diuers languages and characters, that the husbandes should be princes and maisters in their houses: and that this should be published through al peoples."
+        }
+      ],
+      "summary": "King Assuerus celebrateth a great banket to shew his glorie, 10. calleth quene Vasthi therto. who refusing to come, is by aduise of his counsel deposed. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "This book is read at matins the last week of September."
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "THESE thinges so done, after the indignation of king Assuerus was asswaged, he remembred Vasthi, and what she had done, or what she had suffered:"
+        },
+        {
+          "verse": 2,
+          "text": "and the kings seruantes and his ministers said: Let there be maydens sought for the king, virgins and beautiful,"
+        },
+        {
+          "verse": 3,
+          "text": "and let there be sent that may viewe through al prouinces beautiful maydens and virgins: and let them bring them to the citie of Susan, and deliuer them into the house of wemen vnder the hand of Egeus the eunuch, who is ouerseer of the kings wemen: and let them receiue wemens ornamentes, and other things necessarie to be vsed."
+        },
+        {
+          "verse": 4,
+          "text": "And which so euer among al shal please the kings eies, let her reigne for Vasthi. The word pleased the king: and so as they had suggested, he commanded to be done."
+        },
+        {
+          "verse": 5,
+          "text": "There was a man in the citie of Susan a Iew, named Mardocheus, the sonne of Iair, the sonne of Semei, the sonne of Cis, of the stocke of Iemini,"
+        },
+        {
+          "verse": 6,
+          "text": "who had beene transported from Ierusalem the same time, that Nabucodonosor the king of Babylon transported Iechonias the king of Iuda, <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "4. Reg. 24."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "who was the foster father of his brothers daughter Edissa, which by an other name was called Esther: and she had lost both her parentes: exceeding beautiful, and of comely face. And her father and mother being dead, Mardocheus adopted her for his daughter."
+        },
+        {
+          "verse": 8,
+          "text": "And when the kings commandment was bruited abrode, and according to his commandement many fayre virgins were brought to Susan, and were deliuered to Egeus the eunuch: <na>(a)</na> Esther also among the rest of the maydens was deliuered to him, that she might be kept in the number of the wemen.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Deut. <i>7. v. 3</i>. Israelites are forbid to marie with Gentiles, yet when there was no danger to be peruerted, and great hope of good, Esther by Mardocheus counsel consented to marie king Assuerus, though otherwise she <i>detested the bed of the incircumcised, and of euerie stranger. ch. 14. v. 15</i>. K. Dauid also maried the kings daughter of Gessur. <i>2. Reg. 3. v. 3</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "Who pleased him, and found grace in his sight. And he commanded the eunuch, that he should hasten the wemens ornamentes, and should deliuer her, her partes, & seuen the most beautiful maydens of the kings house, and should adorne and decke both her and her wayting maydes."
+        },
+        {
+          "verse": 10,
+          "text": "Who would not tel him her people and countrie. For Mardocheus had commanded her, that of this thing she should altogether keepe silence:"
+        },
+        {
+          "verse": 11,
+          "text": "who walked daily before the entrance of the house, wherin the chosen virgins were kept, taking care of Esthers welfare, and desirous to know what should chance vnto her."
+        },
+        {
+          "verse": 12,
+          "text": "And when the time of euerie virgin in order was come, that they should goe in to the king, al things accomplished that perteyned to wemens ornamentes, it was the twelfth moneth: yet so, that for six monethes they were anoynted with oyle of myrtle, and other six monethes they vsed certayne payntings and sweete spices."
+        },
+        {
+          "verse": 13,
+          "text": "And going in to the king, what soeuer they asked that perteyned to adorning they receiued: and being trimmed, as it pleased them, they passed from the chamber of the wemen to the kings chamber."
+        },
+        {
+          "verse": 14,
+          "text": "And she that went in at euening, came out in the morning, and from thence she was brought to the second house, that was vnder the hand of Susagazus the eunuch, who was chiefe ouer the kings concubines: neither had she power to returne any more to the king, vnlesse the king had willed, and had commanded her to come by name."
+        },
+        {
+          "verse": 15,
+          "text": "And the time by order coming about, the day was at hand, that Esther the daughter of Abihail the brother of Mardocheus, whom he had adopted for his daughter, should goe in to the king. Who sought not wemens ornamentes, but whatsoeuer Egeus the eunuch the keper of the virgins would, those things he gaue her to her adorning. For she was exceding fayre, and of incredible beautie, she semed to al mens eies gratious and amiable."
+        },
+        {
+          "verse": 16,
+          "text": "She therfore was brought to the chamber of king Assuerus the tenth moneth, which is called Tebeth, in the seuenth yeare of his reigne."
+        },
+        {
+          "verse": 17,
+          "text": "And the king loued her more then al the wemen, and she had grace and mercie before him aboue al the wemen, and he put the crowne of the kingdom on her head, and made her reigne in steede of Vasthi."
+        },
+        {
+          "verse": 18,
+          "text": "And he commanded a verie magnifical feast to be prepared to al the princes, and to his seruantes, for the coniunction, and mariage of Esther. And he gaue rest to al the prouinces, and bestowed giftes according to princely magnificence."
+        },
+        {
+          "verse": 19,
+          "text": "And when virgins were sought the second time and gathered together, Mardocheus taried at the kings gate,"
+        },
+        {
+          "verse": 20,
+          "text": "neither had Esther as yet vttered her countrie, & people, according to his cõmandment. For what soeuer he commanded, Esther obserued: and she did al thinges so as she was wont at that time, when he nourished her a litle one."
+        },
+        {
+          "verse": 21,
+          "text": "At that time therfore, when Mardocheus abode at the kings gate, Bagathan, and Thares were angrie, two of the kings eunuches, that were porters, and were chiefe in the first entrie of the palace: and they would make insurrection against the king, and kil him."
+        },
+        {
+          "verse": 22,
+          "text": "Wherof Mardocheus <na>(b)</na> gotte notice, and immediatly he told it to queene Esther: and she to the king in the name of Mardocheus, who had reported the thing vnto her.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Mardocheus hearing suspicious wordes and obseruing their actions sawe that they intended euel and informed the King; wherby their treson was discouered. <i>Rab. calom. & Iosep</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "It was examined, and found: and they were both hanged on a gibbet. And it was put in the histories, and registred in the cronicles before the king. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Cch. 12. v. 1."
+            }
+          ]
+        }
+      ],
+      "summary": "Inquirie being made of the best and fairest virgines, (5. Esther the vnknowe neece of Mardocheus a Iew) is preferred, 18. and made Queene in place of Vasthi; a mariage feast made, and presentes geuen. 21) Mardocheus detecteth traitors, and his seruice is recorded in the regester."
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "AFTER <na>[1]</na> these things king Assuerus aduanced Aman the sonne of Amadathi, which was of the stocke of Agag: & he put his throne aboue al the princes which he had.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "D",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And al the kings seruantes, that were in the doores of his pallace, bowed their knees, and adored Aman: for so the emperour had commanded them, <na>(a)</na> onlie Mardocheus did not bowe his knee, nor adore him.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Aman exacted such honour as heathen people gaue to their lesse goddes, which was also idolatrie. for Mardocheus was willing to giue him ciuil honour, <i>euen to kisse the steppes of his feete, but feared (and</i> refused) <i>to geue Godlie honour to him. ch. 13. v. 13. 14. S. Tho. 2. 2. q. 84. a. 1</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "To whom the kings seruantes, that were chiefe at the doores of the pallace, said: Why doest thou aboue the rest not obserue the kings commandment."
+        },
+        {
+          "verse": 4,
+          "text": "And when they said this often, and he would not heare, they told Aman, desirous to know whether he would perseuere in his sentence: for he had told them that he was a Iew."
+        },
+        {
+          "verse": 5,
+          "text": "Which when Aman had heard, and had proued by experience that Mardocheus bowed not his knee vnto him, nor adored him, he was angrie excedingly."
+        },
+        {
+          "verse": 6,
+          "text": "And he counted it a matter of nothing to lay his handes vpon Mardocheus alone: for he had heard that he was of the nation of the Iewes, and he would rather destroy al the nation of the Iewes, that were in the kingdom of Assuerus."
+        },
+        {
+          "verse": 7,
+          "text": "The first moneth (which is called Nisan) in the twelfth yeare of the reigne of Assuerus; the lot was cast into a potte which in Hebrew is called Phur, before Aman, <na>(b)</na> in what day and what moneth the nation of the Iewes should be slayne: and there came forth the twelfth moneth, which is called Adar.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Such is the preposterous fnrie of rancour, to appoint the day of executing his malice, before he had got the kings decree.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And Aman said to king Assuerus: There is a people dispersed through al the prouinces of thy kingdom, and separated one from an other, vsing new lawes and ceremonies, moreouer also contemning the kings ordinances: And thou knowest very wel that it is not expedient for thy kingdom that they waxe insolent by libertie."
+        },
+        {
+          "verse": 9,
+          "text": "If it please thee, decree that they may perish, and I wil pay ten thousand talentes to the cofferers of thy treasure."
+        },
+        {
+          "verse": 10,
+          "text": "<na>[1]</na> The king therfore tooke the ring that he vsed, from his hand, and gaue it to Aman the sonne of Amadathi of the progenie of Agag, the enemie of the Iewes,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The second part. The Iewes danger to be massacred.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "and he said to him: The siluer which thou doest promise, be it thine: but concerning the people doe that which pleaseth thee."
+        },
+        {
+          "verse": 12,
+          "text": "And the kings scribes were called in the first moneth, Nisan, the thirtenth day of the same moneth: and there was written, as Aman had commanded, to al the kings lieuftenantes, and iudges of the prouinces, and of diuers nations, as euerie nation could read, and heare according to the varietie of languages, in the name of king Assuerus: and the letters signed with his ring,"
+        },
+        {
+          "verse": 13,
+          "text": "were sent by the kings postes to al prouinces, that they should kil and destroy al the Iewes, from boy vnto old man, children, and wemen, in one day, that is, in the thirtenth of the twelth moneth, which is called Adar, and should spoyle them of their goodes. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ech. 13. v. 1."
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "<na>[1]</na> And <na>(c)</na> the content of the letters was this, that al prouinces might know, & prepare them selues against the day aforesayd.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The letter at large is in the seuen first verses of the <i>13 ch</i>. of which this is the summe.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "F",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "The postes that were sent, made hast to fulfil the kings cõmandment. And immediatly the edict hong in Susan, the king and Aman feasting, and al the Iewes that were in the citie, weeping."
+        }
+      ],
+      "summary": "Aman aduanced by the king, is much offended that Mardocheus doth not adore him. 6. and therfore procureth the kings decree, to destroy the whole nation of Iewes."
+    },
+    {
+      "chapter": 4,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "WHICH <na>[1]</na> things when Mardocheus had heard, he rent his garmentes, and was clothed with sackcloth, sprinkling ashes on his head: and in the streat of the middes of the citie he cried with a lowed voyce, shewing the anguish of his mind,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The third part. The delivery of the Jews from danger.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "and with this wayling going euen to the doores of the pallace: for it was not lawful for one clothed with sackcloth to enter the kings court."
+        },
+        {
+          "verse": 3,
+          "text": "In al prouinces also, townes, and places, to which the kings cruel decree was come, there was <na>(a)</na> great mourning with the Iewes, fasting, howling, and weeping, manie vsing sackcloth and ashes for their couch.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The first and best remedie in distresse is to do workes of penance for sinnes committed. <i>1. Cor. 11. v. 31</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And Esthers maides and the eunuches went in, and told her. Which she hearing was astonyed: and she sent a garment, that the sackcloth being taken away, they should put it on him: which he would not take."
+        },
+        {
+          "verse": 5,
+          "text": "And calling for Athach the eunuch, whom the king had geuen her for a seruant to Mardocheus, commanded him to goe and to learne of him, why he did this."
+        },
+        {
+          "verse": 6,
+          "text": "And Athach going forth went to Mardocheus standing in the streate of the citie, before the palace doore:"
+        },
+        {
+          "verse": 7,
+          "text": "who told him al thinges that had chanced, how Aman had promised, that he would bring siluer into the kings treasures for the slaughter of the Iewes."
+        },
+        {
+          "verse": 8,
+          "text": "He gaue him also a copie of the edict which hong in Susan, that he should shew it to the queene, and should admonish her to enter in to the king, and to intreate him for her people."
+        },
+        {
+          "verse": 9,
+          "text": "Athach returning told Ester al things, that Mardocheus had sayd."
+        },
+        {
+          "verse": 10,
+          "text": "Who answered him, and bad that he should say to Mardocheus:"
+        },
+        {
+          "verse": 11,
+          "text": "Al the kings seruantes, and al the prouinces that are vnder his dominion, know, that whether man, or woman, not called, shal enter in to the kings inner court, he must immediatly be slayne without al delay: vulesse perhaps the king stretch forth a golden rod vnto him, for a signe of clemencie, and so he may liue. I therfore how can I enter in to the king, which now these thirtie daies haue not bene called vnto him?"
+        },
+        {
+          "verse": 12,
+          "text": "Which when Mardocheus had heard,"
+        },
+        {
+          "verse": 13,
+          "text": "he sent word to Esther agayne, saying: Thincke not that thou mayst deliuer thy owne life only, becanse thou art in the kings house, aboue al the Iewes:"
+        },
+        {
+          "verse": 14,
+          "text": "for if thou wilt now hold thy peace, <na>(b)</na> the Iewes shal be deliuered by an other occasion: and thou, and thy fathers house shal perish. And who knoweth whether thou camest to the kingdom therfore, that in such a time thou mightst be readie?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Great confidence in Gods helpe when mans helpe fayleth: and in dede this meanes by mouing the kings hart to grant Esthers petition was Gods special worke.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And agayne Esther sent to Mardocheus in these wordes:"
+        },
+        {
+          "verse": 16,
+          "text": "Goe, and gather together al the Iewes, whom thou shalt find in Susan, and pray ye for me. Eate ye not; and drinke not in three dayes, and three nightes: and I with my handmaydes in like maner wil fast, and then wil I goe in to the king, doing agaynst the law, not called, and deliuering my self to death and to peril."
+        },
+        {
+          "verse": 17,
+          "text": "Mardocheus therfore went, and did al things that Esther had commanded him. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Gch. 15. v. 1."
+            }
+          ]
+        }
+      ],
+      "summary": "Al the Iewes lament their imminent danger. 5. Mardocheus willeth Esther to intreate the king for their saftie. 11. she fearing to goe to the king contrarie to his law vncalled, 15. yet they al fasting and praying for her, she doth it."
+    },
+    {
+      "chapter": 5,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "AND <cr>[1]</cr> the third day Esther put on royal garmentes, and stood in the court of the kings house, which was the inner agaynst the kings hal: but he sate vpon his throne in the consistorie of the palace, against the doore of the house. <na>[2]</na>",
+          "cross_refs": [
+            {
+              "text": "Ich. 15. v. 4."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "H",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And when he had seene Esther the queene standing, she pleased his eies, and he put forth toward her the golden rod, which he held in his hand: who going neere, kissed the top of his rod. <na>[1]</na>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "K",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "And the king said to her: What wilt thou queene Esther? what is thy request? yea if thou wilt aske the halfe part of the kingdom, it shal be geuen thee."
+        },
+        {
+          "verse": 4,
+          "text": "But she answered: If it please the king, I beseech thee that thou come to me this day, and Aman with thee to a banket, which I haue prepared."
+        },
+        {
+          "verse": 5,
+          "text": "And the king forthwith, cal ye Aman, quoth he, quickly, that he may obey Esthers wil. The king therfore and Aman came to the banket, which the queene had prepared for them."
+        },
+        {
+          "verse": 6,
+          "text": "And the king said to her, after that he had drunke wine aboundantly. What doest thou desire to be geuen thee? and for what thing askest thou? although thou aske the halfpart of my kingdom, thou shalt obteyne."
+        },
+        {
+          "verse": 7,
+          "text": "To whom Esther answered: <na>(a)</na> My petition, and requestes are these:",
+          "notes": [
+            {
+              "label": "a",
+              "text": "This prudence in delaying to propose her petition, increased the kings desire to know it, moued him to promise more assuredly, & so bond him the more to accomplish it.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "If I haue found grace in the kings sight, and if it please the king to geue that which I aske, and to fulfil my petition: let the king and Aman come to the banket, which I haue prepared them, and to morrow I wil open my wil to the king."
+        },
+        {
+          "verse": 9,
+          "text": "Aman therfore went forth that day ioyful and merie. And when he had seene Mardocheus sitting before the doores of the palace, and not onlie not to haue risen vp to him, but not so much as to haue moued from the place where he sate, he was wrath excedingly:"
+        },
+        {
+          "verse": 10,
+          "text": "and dissembling his anger, and returning into his house, he called together vnto him his freindes, and Zares his wife:"
+        },
+        {
+          "verse": 11,
+          "text": "and he declared to them the greatnesse of his riches, and the multitude of his children, and with how great glorie the king had aduanced him aboue al his princes and seruantes."
+        },
+        {
+          "verse": 12,
+          "text": "And after these things he said; Queene Esther also hath called none other to the banket with the king, but me: with whom to morow also I shal dine with the king."
+        },
+        {
+          "verse": 13,
+          "text": "And wheras I haue al these things, I thinke I haue nothing, so long as I shal see Mardocheus the Iew sitting before the kings doores."
+        },
+        {
+          "verse": 14,
+          "text": "And Zares his wife, & the rest of his frendes answered him: Cõmand a great beame to be prepared, hauing fiftie cubites in height, and speake in the morning to the king, that Mardocheus may be hanged vpon it, and so thou shalt goe ioyful with the king to the banket. The counsel pleased him, and he commanded an high gallowes to be prepared."
+        }
+      ],
+      "summary": "Esther standing in the kings sight he calleth her, 4. she requesteth that he and Aman wil dine with her. 7. Againe she inuiteth them. 9. Aman is more incensed against Mardocheus, prepareth high gallowes to hang him on."
+    },
+    {
+      "chapter": 6,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "THAT night the king <na>(a)</na> passed without sleepe, and he commanded the histories and chronicles of former times to be brought him. Which when they were read in his presence,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Gods eye which neuer slepeth saw whath Aman intended: and for execution of his owne diuiue iustice, vsed this meanes bey subtracting slepe that time from the king and inspiring his mind to heare the histories read, and to reward good seruice, donne. <i>Ioseph</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "they came to that place where it was written, how Mardocheus had vttered the treason of Bagathan, and Thares the eunuches, coueting to kil king Assuerus."
+        },
+        {
+          "verse": 3,
+          "text": "Which when the king had heard, he sayd: What honour and reward hath Mardocheus receiued for this fidelitie? His seruantes and ministers said to him: He hath receiued no reward at al."
+        },
+        {
+          "verse": 4,
+          "text": "And the king by and by, who is, quoth he, in the court? For Aman had entered the inner court of the kings house, that he might suggest to the king, and ne might command Mardocheus to be hanged fast on the gibbet, which was prepared for him."
+        },
+        {
+          "verse": 5,
+          "text": "The seruantes answered: Aman standeth in the court. And the king said: Let him come in."
+        },
+        {
+          "verse": 6,
+          "text": "And when he was come in, he said to him: What ought to be done to the man, whom the king is desirous to honour? But Aman <na>(b)</na> thinking in his hart, and supposing that the king would honour no other, but him self,",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Ambicious men are most blinde in conceite of their owne deserts, and fortunes.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "answered: The man, whom the king desireth to honour,"
+        },
+        {
+          "verse": 8,
+          "text": "ought to be clothed with the kings garmentes, and to be set vpon the horse, that is for the kings saddle, and to take the kings crowne vpon his head,"
+        },
+        {
+          "verse": 9,
+          "text": "and let the chiefe of the kings princes and nobles hold his horse, and going throuh the streat of the citie, crie, and say: So shal he be honoured, whomsoeuer the king wil honour."
+        },
+        {
+          "verse": 10,
+          "text": "And the king said to him: Make hast, and taking a robe and a horse, do that thou hast spoken, to Mardocheus the Iewe, which sitteth before the doores of the palace: Beware thou pretermitte nothing of those things, which thou hast spoken."
+        },
+        {
+          "verse": 11,
+          "text": "Aman therfore tooke a robe and a horse, and putting it on Mardocheus, and setting him on the horse, in the streat of the citie went before him, and cried: This honour is he worthie of, whomsoeuer the king is willing to honour."
+        },
+        {
+          "verse": 12,
+          "text": "And Mardocheus returned to the palace gate: and Aman made hast to goe into his house, mourning and his head couered:"
+        },
+        {
+          "verse": 13,
+          "text": "and he told Zares his wife, and his frendes al things, that had chaunced him. To whom the wise men whom he had in counsel, and his wife answered: <na>(c)</na> If Mardocheus be of the Iewes seede, before whom thou hast begune to fal, thou canst not resist him, but thou shalt fal in his sight.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Either they had read Gods promise to the Iewes. <i>Gen. 13. 15 &c</i>. or coniectured this by humaine prudence.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "As they were yet speaking, the kings eunuches came, and compelled him to goe quickly to the banket, which the queene had prepared."
+        }
+      ],
+      "summary": "The king hearing the good seruice of Mardocheus in detecting traitors, read in the chronicle (for which he had yet no rewarde) 4. commandeth Aman to honour him next to the king, 11. which he performeth."
+    },
+    {
+      "chapter": 7,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "THE king therfore and Aman went in, to drinke with the queene."
+        },
+        {
+          "verse": 2,
+          "text": "And the king said to her also the second day, after he was warme with wine: What is thy petition Esther, that it may be geuen thee? and what wilt thou haue done? although thou shalt aske the half part of my kingdome, thou shalt obteyne."
+        },
+        {
+          "verse": 3,
+          "text": "To whom she answered, <na>(a)</na> If I haue found grace in thyne eies ô king, and if it please thee, geue me my life for the which I make request, and my people for the which I besech.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "After three dayes fast of al the Iewes with prayers and other workes of penance, Esther asked and obtained the saftie of the whole people more precious to her then halfe of the kingdom.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "For we are deliuered I and my people, to be destroyed, murdered, and to perish. And would God we were sold for bondmen and bondwemen: it were a tolerable euil, and mourning I would hold my peace: but now it is our enemie, whose crueltie redoundeth vpon the king."
+        },
+        {
+          "verse": 5,
+          "text": "And king Assuerus answering, said: Who is this, and of what might, that he dare doe these things?"
+        },
+        {
+          "verse": 6,
+          "text": "And Esther said: It is this Aman our aduersarie and most wicked enemie. Which he hearing <na>(b)</na> forthwith was astonished, not enduring to beare the countenance of the king and of the queene.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Horrour of a guiltie conscience is commonly the first torment of a sinner. <i>S. Chrissocons. 4. de Lazaro</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "But the king being wrath rose vp, and from the place of the banket went into the garden set with trees. Aman also rose vp, to intreate Esther the queene for his life, for he vnderstood that there was euil prepared him of the king."
+        },
+        {
+          "verse": 8,
+          "text": "Who when he was returned out of the garden set with trees, and had entered into the place of the banket, he found Aman to haue fallen vpon the bed, wherin Esther lay, and he said: The queene also he wil force in my presence, in my house. Neither was the word yet passed from the kings mouth, and immediatly they couered his face."
+        },
+        {
+          "verse": 9,
+          "text": "And Harbona, <na>(c)</na> one of the eunuches which stood wayting on the king, sayd: Behold the gibbet, which he had prepared for Mardocheus, that spake for the king, standeth in Amans house, hauing in height fiftie cubites. To whom the king said: Hang him vpon it.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "VVhat litle trust in false freindshipe, when bad men once fal into disgrace.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "Aman therfore was hanged on the gibbet, which he had prepared for Mardocheus: and the kings wrath ceased."
+        }
+      ],
+      "summary": "Esther informeth the king that Mardocheus is her uncle, he is advanced in authority, 3. and contrary letters are sent that the Jews be saved, 11. and their enemies slain,"
+    },
+    {
+      "chapter": 8,
+      "verses": [
+        {
+          "verse": 0,
+          "text": "15. Mardocheus is in high honour, and his whole nation <i>is esteemed and feared by other people.</i>"
+        },
+        {
+          "verse": 1,
+          "text": "THAT day king Assuerus gaue vnto Esther the queene the house of Aman the Iewes aduersarie, and Mardocheus went in before the kings presence. For Esther confessed to him that he was her vncle."
+        },
+        {
+          "verse": 2,
+          "text": "And the king tooke the ring, which he had commanded to be taken agayne from Aman, and deliuered it to Mardochens. And Esther appointed Mardocheus also ouer her house."
+        },
+        {
+          "verse": 3,
+          "text": "Neither content with these things, she <na>(a)</na> fel downe at the kings feete, and she wept and speaking to him prayed him, that he would command that the malice of Aman the Agagite, and his most wicked deuises, which he had inuented agaynst the Iewes, should be of none effect.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Such honour is due to kinges, yea though they be Infideles, because they haue terrestrial maiestie and authoritie from God. And the contrarie opinion and behauiour of heretikes, <i>vvhich despice Dominion and blaspheme Maiestie</i>, is condemned by S. Iude, <i>in his Epistle. v. 8</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "But he after the maner put forth the golden scepter with his hand, by the which the signe of clemencie was shewed: and she rysing vp stood before him,"
+        },
+        {
+          "verse": 5,
+          "text": "and said: If it please the king, and if I haue found grace in his eies, and my request seme not contrarie to him, I besech thee, that the old letters of Aman the traytour and enemie of the Iewes, wherein he commanded that in al the kings prouinces they should perish, may by new letters be corrected."
+        },
+        {
+          "verse": 6,
+          "text": "For how can I abide the murder and slaughter of my people?"
+        },
+        {
+          "verse": 7,
+          "text": "And king Assuerus answered Esther the queene, and Mardocheus the Iewe: Amans house I haue geuen to Esther, and him self I haue commanded to be hanged on the gallowes, because he durst lay handes on the Iewes."
+        },
+        {
+          "verse": 8,
+          "text": "Write ye therfore to the Iewes, as pleaseth you, in the kings name, signing the letters with my ring. For this was the custome, that no man durst speake against the lettes, which were sent in the kings name, and were signed with his ring."
+        },
+        {
+          "verse": 9,
+          "text": "And the kings scribes and secretaries being cald for (and it was the time of the third moneth, which is called Siban) the three and twenteth day therof letters were written, as Mardocheus would, to the Iewes, and to the princes, and the lieuftenantes and iudges, which were rulers ouer the hundred and seuen and twentie prouinces, from India euen to Æthiopia: to prouince and prouince, to people and people, according to their languages and characters, and to the Iewes, according as they could read, and heare."
+        },
+        {
+          "verse": 10,
+          "text": "And the said letters, which were sent in the kings name, were signed with his ring, and sent by ryding postes: which running through al the prouinces, should preuent the old letters with the new messages."
+        },
+        {
+          "verse": 11,
+          "text": "To whom the king gaue commandment, that they should speake to the Iewes in euerie citie, and should command them to be gathered together in one, that they might stand for their liues, and might kil and destroy al their enemies with their wiues and children and al their houses, and to take the spoyle of them."
+        },
+        {
+          "verse": 12,
+          "text": "And there was appointed through al the prouinces one day of reuenge, that is, the thirtenth of the twelfth moneth Adar."
+        },
+        {
+          "verse": 13,
+          "text": "And this was the content of the letter, that in al landes and peoples, which were subiect to the empire of king Assuerus, it should be notified, the Iewes to be readie to be reuenged of their enemies."
+        },
+        {
+          "verse": 14,
+          "text": "And there went forth swift postes cariyng the massages, and the kinges edict hong in Susan."
+        },
+        {
+          "verse": 15,
+          "text": "But Mardocheus going forth out of the palace, and from the kinges presence, shining in royal garmentes, to wit, hyathinthine and skie colour, bearing a golden crowne on his head, and clothed with a silke and purple cloke. And the citie reioysed, and was glad."
+        },
+        {
+          "verse": 16,
+          "text": "But to the Iewes there semed a new light to rise, ioye, honour, and dauncing."
+        },
+        {
+          "verse": 17,
+          "text": "With al peoples, cities, and prouinces, whither soeuer the kinges commandmentes came, meruelous reioysing, feastes and banketes, and holie day: in so much that manie of the other nation and sect, were ioyned to their religion and ceremonies. For great terrour of the name of the Iewes had inuaded them al. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Lch. 16. v. 1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "THERFORE <na>[1]</na> in the thirtenth day of the twelth moneth, which we haue said now before to be called Adar, when slaughter was prepared for al the Iewes, and their enemies gaped after their bloud, the case being changed to the contrarie, the Iewes began to be superiours, and <na>(a)</na> to reuenge them selues of their aduersaries.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              205,
+              22,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "VVhere no more danger remaineth remission of iniuries is more commendable then reuenge, but where malice continueth, and new danger may probably ensue, instice is necessarie, and afterwards peace may be made more securely <i>S. Bernad, ser. 2. de verb. Apost</i>.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "M",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And they were gathered together in euerie citie, and towne, and place, to extend their hand against their enemies, and their persecutors. And none durst resist, because the feare of their greatnes did penetrate al peoples."
+        },
+        {
+          "verse": 3,
+          "text": "For both the iudges of the prouinces, and captaynes, and lieutenantes, and euerie dignitie, that was chiefe ouer euerie place and worke, extolled the Iewes for feare of Mardocheus:"
+        },
+        {
+          "verse": 4,
+          "text": "whom they knew to be prince of the palace, and to be able to doe very much: the fame also of his name increased dayly, and flew abroad through al mens mouthes."
+        },
+        {
+          "verse": 5,
+          "text": "Therfore the Iewes stroke their enemies with a great slaughter, and slew them, repaying them that which they had prepared to doe to them:"
+        },
+        {
+          "verse": 6,
+          "text": "in so much that in Susan also they killed fiue hundred men, besides the tenne sonnes of Aman the Agagite the enemie of the Iewes: whose names be these:"
+        },
+        {
+          "verse": 7,
+          "text": "Pharsandatha, and Delphon, and Esphatha,"
+        },
+        {
+          "verse": 8,
+          "text": "and Phoratha, and Adalia, and Aridatha,"
+        },
+        {
+          "verse": 9,
+          "text": "and Phermesta, and Arisai, and Aridai, and Iezatha."
+        },
+        {
+          "verse": 10,
+          "text": "Whom when they had slaine, they would not take prayes of their goodes."
+        },
+        {
+          "verse": 11,
+          "text": "And by and by the number of them that were killed in Susan, was brought to the king."
+        },
+        {
+          "verse": 12,
+          "text": "Who said to the queene: In the citie of Susan the Iewes haue killed fiue hundred men, besides the <na>(b)</na> ten sonnes of Aman: how great a slaughter thinkest thou doe they make in al the prouinces? what askest thou more, & what wilt thou that I cōmand to be done?",
+          "notes": [
+            {
+              "label": "b",
+              "text": "In the first slaughter Amans tenne sonnes were slayne and afterwards also hanged. <i>v. 14</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "To whom she answered: If it please the king, let there authoritie be geuen to the Iewes, that as they haue done to day in Susan, so also they may doe to morow, and that the tenne sonnes of Aman be hanged on gibbettes."
+        },
+        {
+          "verse": 14,
+          "text": "And the king commanded that it should be so done. And forthwith the edict hong in Susan, and the tenne sonnes of Aman were hanged."
+        },
+        {
+          "verse": 15,
+          "text": "The fourthtenth day of the moneth Adar the Iewes being gathered together, there were killed in Susan three hundred men: neither was their substance spoyled by them."
+        },
+        {
+          "verse": 16,
+          "text": "Yea and through al prouinces, which were subiect to the kings dominion, the Iewes stood for their liues, their enemies and persecutors being slayne: in so much that there was fully seuentie fiue thousand of them that were killed, and no man tooke any of their goodes."
+        },
+        {
+          "verse": 17,
+          "text": "And the thirtenth day of the moneth Adar was the first day with them al of the slaughter, & the fourtenth day they ceased to kil. Which they ordayned to be solemne, so that in it at al times afterward they gaue them selues to good chere, mirth & bankets. <na>[1]</na>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The fourth parth. Other thinges folowing their deliuerie from danger.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "But they that made the slaughter in the citie of Susan, were occupied in the slaughter the thirtenth and fourtenth day of the same moneth: and in the fiftenth day they ceased to kil. And therfore they ordayned the same a solemne day of good cheere and ioyfulnes."
+        },
+        {
+          "verse": 19,
+          "text": "But those Iewes, that abode in townes not walled and villages, ordayned the fourtenth day of the moneth Adar for bankettes and ioy, so that they reioyse in it, and send one an other portions of bankets and meates."
+        },
+        {
+          "verse": 20,
+          "text": "Mardocheus therfore wrote al these things, and being comprised in letters sent them to the Iewes, that abode in al the kings prouinees, as wel those that lay neere, as far of,"
+        },
+        {
+          "verse": 21,
+          "text": "that they should take <na>(c)</na> the fourtenth and fistenth day of the moneth Adar for feastes, and the yeare alwayes returning should celebrate them with solemne honour:",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The Iewes in Susan kept the fiftenth day holie. v. 18, those that dwelt in other places kept the fourtenth day.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "because in the same dayes the Iewes reuenged them selues of their enemies, and mourning and sorrow were turned into mirth and ioy, and that these should be dayes of good cheere and gladnesse, and they should send one to an other portions of meates, and should geue giftes to the poore."
+        },
+        {
+          "verse": 23,
+          "text": "And the Iewes receiued into a solemne rite al things, which they had begune to doe at that time, and which Mardocheus by letters had commanded to be done."
+        },
+        {
+          "verse": 24,
+          "text": "For Aman, the sonne of Amadathi of the stocke of Agag, the enemie and aduersarie of the Iewes, purposed euil against them, to kil them and destroy them: and he cast Phur, which in our language is turned, a lot."
+        },
+        {
+          "verse": 25,
+          "text": "And afterward Esther went, in to the king, beseching that his endeuours might by the kings letters be made voyde: & the euil that he had intended against the Iewes, might returne vpon his owne head. Finally they hong both him and his sonnes vpon the gallowes,"
+        },
+        {
+          "verse": 26,
+          "text": "and since that time these dayes are called Phurim, that is, of Lottes: because Phur, that is, a lot, was cast into the pot. And al things, that were done, are contayned in the volume of this epistle, that is, of this booke:"
+        },
+        {
+          "verse": 27,
+          "text": "and the thinges that they susteyned, and that were afterward changed, the Iewes <na>(d)</na> tooke vpon them selues and their seede, and vpon al, that would be ioyned to theyr religion, that it should be lawful for none to passe without solemnitie these dayes: which the writing testifieth, and certaine times require, as yeares continually succede one an other.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "A feast instituted by Mardocheus was accepted and obserued by al the Iewes. as a constitution agreable and not contrarie to the law <i>Deut. 4. v. 2. & 12. v. 32</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 28,
+          "text": "These are daies, which no obliuion shal euer put out: and al prouinces in al the world shal celebrate through out al generations: neither is there any citie, wherein the daies of Phurim, that is, of lottes, must not be obserued of the Iewes, and of their progenie, which is bound to these ceremonies."
+        },
+        {
+          "verse": 29,
+          "text": "And Esther the queene the daughter of Abihail, and Mardocheus the Iew wrote also the second epistle, that with al diligence this day should be established solemne for the time to come."
+        },
+        {
+          "verse": 30,
+          "text": "and they sent to al the Iewes, that were in the hundred and seuen and twentie prouinces of king Assuerus, that they should haue peace, and receiue truth,"
+        },
+        {
+          "verse": 31,
+          "text": "obseruing the Daies of lottes, and in their time should celebrate them with ioy: as Mardocheus and Esther had appoynted, and they tooke vpon them to be obserued of them selues, and of their seede, fastes, and cries, and the daies of Lottes,"
+        },
+        {
+          "verse": 32,
+          "text": "and al thinges, which are conteyned in the historie of this booke, which is called Esther."
+        }
+      ],
+      "summary": "The Iewes kil their enemies which would haue killed them. 6. namely the tenne sonns of Aman are hanged on gallowes, 13. more slaine the next day. 17. the day folowing is made holie, and so to be kept euerie yeare."
+    },
+    {
+      "chapter": 10,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "BVT king Assuerus made al the earth, and al the ilandes of the sea tributaries."
+        },
+        {
+          "verse": 2,
+          "text": "Whose strength and empire, and the dignitie and highnesse, wherewith he exalted Mardocheus, are written in the bookes of the Medes, and of the Persians:"
+        },
+        {
+          "verse": 3,
+          "text": "and how Mardocheus of the Iewes kinred was second after king Assuerus: and great with the Iewes, and acceptable to the people of his bretheren, seking good to his people, and speaking those things, which pertayned to the good of his seede. <na>(a)</na> <na>[1]</na>",
+          "notes": [
+            {
+              "label": "a",
+              "text": "S. Ierome here aduertiseth the reader that he found al hitherto in the Hebrew. And the parcels which folow only in the Septuaginta Greke Edition which either they translated out of the Hebrew, or added by inspiration of the Holie Ghost.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "<i>The Greke of the 72. Interpreters</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And Mardocheus said: These things are done of God."
+        },
+        {
+          "verse": 5,
+          "text": "I remember the dreame that I saw, signifying these verie things: neither was any of them frustrate."
+        },
+        {
+          "verse": 6,
+          "text": "The litle fountayne which grew into a riuer, and was turned into light, and into the sunne, and abounded into manie waters, is Esther, whom the king tooke to wife, and made her to be queene."
+        },
+        {
+          "verse": 7,
+          "text": "But the two dragons: I am, and Aman."
+        },
+        {
+          "verse": 8,
+          "text": "The nations, that were assembled: are they that endeuoured to destroy the name of the Iewes."
+        },
+        {
+          "verse": 9,
+          "text": "And my nation: is Israel, which cried to, our Lord, and our Lord hath saued his people: and he hath deliuered vs from al euils, and hath done great signes and wonders among the nations:"
+        },
+        {
+          "verse": 10,
+          "text": "and he commanded that there should be two lottes, one of the people of God, and the other of al Nations."
+        },
+        {
+          "verse": 11,
+          "text": "And both lottes are come to the day appointed euen now from that time before God to al nations:"
+        },
+        {
+          "verse": 12,
+          "text": "and our Lord hath remembred his people, and hath had mercie on his inheritance."
+        },
+        {
+          "verse": 13,
+          "text": "And these daies shal be obserued in the moneth of Adar the fourtenth, and fistenth day of the same moneth, with al diligence, and ioy of the people gathered into one assemblie, through out al the generations hereafter of the people of Israel."
+        }
+      ],
+      "summary": "Assuerus subdueth manie countries. 4. Mardocheus Vnderstandeth, and declareth his dreame. 9. God separateth his people from other nations by a better lotte."
+    },
+    {
+      "chapter": 11,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "IN <na>[1]</na> the fourth yeare when Ptolomee and Cleopatra reigned, Dositheus, which named himself a Priest, and of the Leuitical kinred, and Ptolomee his sonne brought this epistle of Phurim, which they sayd Lysimachus the sonne of Ptolomee did interprete in Ierusalem.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The first part. The presage, & occasion of Esther's advancement and Aman's persecuting the Jews. <i>This beginning was in the common edition, which is neither extant in Hebrew, nor with any of</i>",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<na>[1]</na> In the second yeare, when Artaxerxes the greatest reigned, in the first day of the moneth Nisan, Mardocheus the sonne of Iairi, the sonne of Semei, the sonne of Cis, of the tribe of Beniamin.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "A",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "A Iew which dwelt in the citie of Susan, a great man and among the first of the kings court, <na>(a)</na> saw a dreame.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Mardocheus had this dreame before Amans aduancement or his owne and the peoples danger.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<cr>[1]</cr> And he was of that number of captiues, whom Nabuchodonosor the king of Babylon had transported from Ierusalem with Ieconias the king of Iuda:",
+          "cross_refs": [
+            {
+              "text": "4. Reg. 24."
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "and this was his dreame: Thete appeared voices, and tumultes, and thunders and earth quakes, and perturbation vpon the earth:"
+        },
+        {
+          "verse": 6,
+          "text": "and behold <na>(b)</na> two great dragons, prepared one against an other into battel.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Mardocheus was a good dragon, and Aman a bad one.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "At whose crie al nations were raysed vppe, to fight against the nation of the iust."
+        },
+        {
+          "verse": 8,
+          "text": "And that was a day of darkenesse and danger, of tribulation and distresse, and great feare vpon the earth."
+        },
+        {
+          "verse": 9,
+          "text": "And the nation of the iust fearing their euils, was trubled, and prepared to death."
+        },
+        {
+          "verse": 10,
+          "text": "And they cried to God: and they cyring, <na>(c)</na> a litle fountayne grew into a verie great riuer, and abounded into verie manie waters.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Esther by her fountaine of teares and humble supplication, quenched a great flame of Gentiles against the Iewes. <i>ch. 10</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "Light and sunne arose, and the humble were exalted, and they deuoured the glorious."
+        },
+        {
+          "verse": 12,
+          "text": "Which when Mardocheus had seene, and risen out of his bed, he mused what God would doe: and he had it fixed in his mind, desirous to know what the dreame should signifie? <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Bch. 1. v. 1."
+            }
+          ]
+        }
+      ],
+      "summary": "The conspiracy of two eunuchs detected by Mardocheus, is repeated, 6. and Aman's malice against him for the same."
+    },
+    {
+      "chapter": 12,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "AND <na>[1]</na> he abode that time in the kings court with Bagatha and Thara the kings eunuches, which were porters of the palace.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "C",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And when he vnderstood their cogitations, and had throughly seene their cares he learned that they went about to lay hands on king Artaxerxes, and he told the king therof."
+        },
+        {
+          "verse": 3,
+          "text": "Who hauing them both in examination, when they had confesssd he commanded them to be led to death."
+        },
+        {
+          "verse": 4,
+          "text": "But the king wrote that which was done, in the comentaries: and Mardocheus also committed the memorie of the thing to wriring."
+        },
+        {
+          "verse": 5,
+          "text": "And the king commanded him, that he should abide in the court of the palace, geuing him giftes for the delation."
+        },
+        {
+          "verse": 6,
+          "text": "But Aman the sonne of Amadathi the Bugeite was most glorious before the king, and would hurt Mardocheus, and his people, <na>(a)</na> for the two eunuches of the king, which were put to death. <na>[1]</na>",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Here it appeareth that Aman was a fauouter of traitors or perhaps of the same conspiracie.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "D ch. 3. v. 1.",
+              "kind": "gloss"
+            }
+          ],
+          "cross_refs": [
+            {
+              "text": "ch. 3. v. 3",
+              "source": "sancta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 13,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "AND <na>[1]</na> this was the copie of the letter. The most great king Artaxerxes from India vnto Æthiopia, to the princes of an hundred and seuen and twentie prouinces, and to the captaynes, that are subiect to his empire, greeting.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "E",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "Wheras I reigned ouer manie nations, and had subdewed al the world to my dominion, I would not abuse the greatnes of my might, but with clemencie and lenitie gouerne my subiectes, that passing their life quietly without any terrour, they might enioy peace wished of al men."
+        },
+        {
+          "verse": 3,
+          "text": "But when I demanded of my counselers how this might be accomplished, <na>(a)</na> one that excelled the rest in wisedom and fidelitie, and was second after the king, Aman by name,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Great hurt to a king, that is ruled much by one counseler. Salomon teacheth, that <i>Where are manie counsellers, cogitations are confirmed. Prou. 15. v. 22</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "told me that there was a people dispersed through the whole world, which vsed new lawes, and doing against the customes of al Nations, contemned the cōmandmentes of kings, and brake the concord of al nations by their dissention."
+        },
+        {
+          "verse": 5,
+          "text": "Which when we had learned, seing one nation rebellious against al kind of men to vse peruerse lawes, and to goe against our commandmentes, and to disturbe the peace and concord of the prouinces subiect to vs,"
+        },
+        {
+          "verse": 6,
+          "text": "we haue commanded that whomsoeuer Aman shal shew, who is chiefe ouer al the prouinces, and second after the king, and whom we honour in steed of a father, they with their wiues and children be destroyed of their enemies, and that none haue pitie on them the fourtenth day of the twelfth moneth Adar of this present yeare:"
+        },
+        {
+          "verse": 7,
+          "text": "that the wicked men going downe to hel in one day, may restore the peace to our empire, which they had disturbed. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Fch. 3. v. 14. Hitherto the copy of the letter. That which followeth I found written after that place, where it is read,"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<na>[1]</na> But Mardocheus besought our Lord, mindeful of al his workes,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "G",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<na>[1]</na> and said: Lord Lord king omnipotent, for in thy dominion are al thinges set, and there is none that can resist thy wil, if thou determine to saue Israel.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle on wenesday in the 2. weke of Lent. And in a votiue Masse against Paganes.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "Thou madst heauen and earth, and whatsoeuer is conteyned in the compasse of heauen."
+        },
+        {
+          "verse": 11,
+          "text": "Thou art Lord of al, neither is there that can resist thy maiestie."
+        },
+        {
+          "verse": 12,
+          "text": "Thou vnderstandest al things, and knowest that I haue not done this for pride and contumelie, and any desire of glorie, that I adored not the proud Aman,"
+        },
+        {
+          "verse": 13,
+          "text": "( for gladly would I be readie for the saluation of Israel to kisse euen the steppes of his feete,)"
+        },
+        {
+          "verse": 14,
+          "text": "but I feared lest I should transferre the honour of my God to a man, and lest I should adore any except my God."
+        },
+        {
+          "verse": 15,
+          "text": "And now ô Lord king, the God of Abraham haue mercie vpon thy poople, because our enemies wil destroy vs, and extinguish thyne inheritance."
+        },
+        {
+          "verse": 16,
+          "text": "Despise not thy portion, which thou hast redemed to thyself out of Ægypt."
+        },
+        {
+          "verse": 17,
+          "text": "Heare my prayer, and be propitious to thy lot and corde, and turne our mourning into ioy, that liuing we may prayse thy name ô Lord, and doe not shut the mouthes of them that sing to thee."
+        },
+        {
+          "verse": 18,
+          "text": "Al Israel also with like mind and supplication cried to our Lord, because certayne death did hang ouer them."
+        }
+      ],
+      "summary": "A copie of the epistle which Aman sent to al prouinces to destroy the Iewes. 8. And Mardocheus his prayer for the people."
+    },
+    {
+      "chapter": 14,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "ESTHER also the queene fled to our Lord, fearing the peril that was at hand."
+        },
+        {
+          "verse": 2,
+          "text": "And when she had laid of her royal garmentes, she tooke clothes meete for weeping and mourning, and for diuers oyntmentes, filled her head with ashes and dung, and her bodie she humbled with fastes: and al the places, in which before she was accustomed to reioyse, she filled with tearing of her heares."
+        },
+        {
+          "verse": 3,
+          "text": "And she besought our Lord the God of Israel, saying: My Lord, which onlie art our king, helpe me solitarie woman, and which haue no other helper beside thee."
+        },
+        {
+          "verse": 4,
+          "text": "My peril is in my handes."
+        },
+        {
+          "verse": 5,
+          "text": "I haue heard of my father that thou Lord didst take Israel out from al Gentiles, and our fathers out of al their predecessours before, that thou mightst possesse an euerlasting inheritance, and thou hast done to them as thou hast spoken."
+        },
+        {
+          "verse": 6,
+          "text": "We haue sinned in thy sight, and therfore thou hast deliuered vs into the handes of our enemies:"
+        },
+        {
+          "verse": 7,
+          "text": "for we haue worshiped their goddes. Thou art iust ô Lord."
+        },
+        {
+          "verse": 8,
+          "text": "And now it suffiseth them not, that they oppresse vs with most hard seruitude, but imputing the force of their handes to the might of their idols,"
+        },
+        {
+          "verse": 9,
+          "text": "they wil change thy promisses, and destroy thine inheritance, and shut the mouthes of them that prayse thee, and extinguish the glorie of thy temple and altar,"
+        },
+        {
+          "verse": 10,
+          "text": "that they may open the mouthes of Gentiles, and prayse the strength of idols, and magnifie a carnal king for euer."
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> Deliuer not ô Lord thy scepter to them <na>(a)</na> that are not, lest they laugh at our ruine: but turne their counsel vpon them, and destroy him, that hath begune to do cruelly against vs.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "<i>Idoles are nothing in the world</i>. 1. Cor. 8. but bare imaginations of men.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "The Church vseth this prayer in the offertorie. the 22. sunday after Pentecost: as a parcel of holie Scripture.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "Remember ô Lord: and shew thy self to vs in the time of our tribulation, and geue me confidence Lord king of goddes, and of al power:"
+        },
+        {
+          "verse": 13,
+          "text": "geue me speach wel framed in my mouth in the presence of the lion, and turne his hart into the hatred of our enemie, that both him self may perish, and the rest that consent vnto him."
+        },
+        {
+          "verse": 14,
+          "text": "But deliuer vs in thy hand, and helpe me, hauing no other helpe, but thee ô Lord which hast the knowlege of al things,"
+        },
+        {
+          "verse": 15,
+          "text": "and knowest that I hate the glorie of the wicked, and <na>(b)</na> detest the bed of the vncircumcised, and of euerie stranger.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Of herselfe, nor for wordlie glorie she desired not to marie a heathen king but for the common good she maried him, God dispensing with the law in this behalf. <i>See ch. 2</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "Thou knowest my necessitie, that I abhorre the signe of my pride and glorie, which is vpon my head in the daies of my ostentation, and detest it as the cloth of a woman in her monthlie floores, and weare it not in the daies of my silence,"
+        },
+        {
+          "verse": 17,
+          "text": "and that I haue not eaten at Amans table, neither the kings banket hath pleased me, and that I haue not drunke the wine of libamentes:"
+        },
+        {
+          "verse": 18,
+          "text": "and that thy handmayde did neuer reioyse, since I was transported hither vnto this day, but in thee ô Lord the God of Abraham."
+        },
+        {
+          "verse": 19,
+          "text": "O God strong aboue al, heare the voyce of them, that haue no other hope, and deliuer vs from the hand of the wicked, and deliuer me from my feare."
+        }
+      ],
+      "summary": "Mardocheus causeth Esther to go to the king and entreat for the people. 10. She is terrified by his countenance, but God turneth his heart, and he calleth her courteously to him."
+    },
+    {
+      "chapter": 15,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "AND <na>[1]</na> he commanded her <i>(no doubt but Mardocheus commanded Esther</i>) that she should goe vnto the king, and make petition for her people and for her countrie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "G",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "Remember (quoth he) the daies of thy humilitie, how thou wast brought vp in my hand, because Aman the second after the king hath spoken against vs vnto death:"
+        },
+        {
+          "verse": 3,
+          "text": "and doe thou inuocate our Lord, and speake to the king for vs, & deliuer vs from death. <na>[1]</na>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "* H <i>ch. 13. v. 8. Moreover this also which followeth I found in the common Greek.</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<na>[1]</na> And in the third day she layd away <na>(a)</na> the garmentes which she ware, & was clothed in her glorie.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Vestimenta <i>oratus</i>, not <i>ornatus</i>, her playing weede.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "I",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And when she glistered in royal apparel, and had inuocated God the ruler and sauiour of al, she tooke two wayting maydes,"
+        },
+        {
+          "verse": 6,
+          "text": "and vpon the one in deede she leaned, as it were for dilicatnes and verie much tendernes not able to beare vp her bodie:"
+        },
+        {
+          "verse": 7,
+          "text": "but the other of the maydes folowed her ladie, bearing vp her garmentes trayling on the ground."
+        },
+        {
+          "verse": 8,
+          "text": "But her self in al her countenance of colour like the rose, also with gratious and shining eies <na>(b)</na> hid her mind ful of sorow, and exceding feare.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "A notable example for Noble women, how to kepe their state, & remaine neuertheles humble in hart.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "She therfore entring through al the doores in order, stood before the king, where he sate vpon the throne of his kingdom, clothed with royal garmentes, and glittering in gold, and pretious stones, and he was terrible to behold."
+        },
+        {
+          "verse": 10,
+          "text": "And when he had lifted vp his face, and with burning eies had shewed the furie of his breast, the Queene fel downe, and her colour being changed into palenes, she rested her wearie head vpon her handmayde."
+        },
+        {
+          "verse": 11,
+          "text": "And God turned the kings spirit in to mildnes, and in hast and fearing he lept out of the throne, and holding her vp in his armes, til she came to her self, spake her fayre with these wordes:"
+        },
+        {
+          "verse": 12,
+          "text": "What ayleth thee Esther? I am thy brother, feare not."
+        },
+        {
+          "verse": 13,
+          "text": "Thou shalt not die: for this law is not made for thee, but for the common sorte."
+        },
+        {
+          "verse": 14,
+          "text": "Come neere therfore, and touch the scepter."
+        },
+        {
+          "verse": 15,
+          "text": "And when she held her peace, he tooke the golden rod, & put it vpon her necke, and kissed her, and sayd: Why speakest thou not to me?"
+        },
+        {
+          "verse": 16,
+          "text": "Who answered: I saw thee, my Lord, <na>(c)</na> as an angel of God, and my hart was trubled for the feare of thy glorie.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "By this comparison of angels she ment that the king exceeded al or most part of men.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "For thou, my lord, art exceding maruelous, and thy face is ful of graces"
+        },
+        {
+          "verse": 18,
+          "text": "And when she spake, she fel downe agayne, and was almost in a sowne."
+        },
+        {
+          "verse": 19,
+          "text": "But the king was trubled, and al his seruantes did comfort her. <na>[1]</na>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "K <i>ch. 5. v. 2</i>.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter": 16,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "THE <na>[1]</na> great king Artaxerxes, from India to Æthiopia to the dukes and princes of an hundred twentie seuen prouinces, which obey our commandment, sendeth greeting.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "L",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "Manie haue abused vnto pride the goodnes of princes, and the honour, that hath beene bestowed vpon them:"
+        },
+        {
+          "verse": 3,
+          "text": "and they do not only endeuour to oppresse the kings subiectes, but not bearing the glorie that is geuen them, they worke treason against them that gaue it."
+        },
+        {
+          "verse": 4,
+          "text": "Neither are they content not to geue thankes for the benefittes, and to violate in them selues the lawes of humanitie, but they thincke they can escape the sentence of God also who seeth al things."
+        },
+        {
+          "verse": 5,
+          "text": "And they haue burst forth into so great madnes, that such as obserue diligently the offices committed vnto them, and do al thinges so that they are worthie of al mens prayse, them they endeuour to ouerthrow by subtil meanes of lies,"
+        },
+        {
+          "verse": 6,
+          "text": "whiles with craftie fraude they deceiue the simple eares of princes, and esteming others by their owne nature."
+        },
+        {
+          "verse": 7,
+          "text": "Which thing is proued both out of old histories, and by these thinges, which are done daily, how <na>(a)</na> the enterprises of kinges are depraued by the euil suggestions of certaine men",
+          "notes": [
+            {
+              "label": "a",
+              "text": "At last this king saw his owne errour in beleuing one false counseller ouer much. <i>Ch. 13. v. 3</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "Wherfore we must prouide for the peace of al prouinces."
+        },
+        {
+          "verse": 9,
+          "text": "Neither must you thincke, if we command diuers things, that it cometh of the lightnesse of our mind, but that we geue sentence according to the qualitie & necessitie of times, as the profite of the common wealth requireth"
+        },
+        {
+          "verse": 10,
+          "text": "And that you may more plainly vnderstand, that which we say, Aman the sonne of Amadathi, both in mind and countrie a Macedonian, and an aliene from the Persians bloud, and with his crueltie stayning our pietie, was receiued of vs a stranger:"
+        },
+        {
+          "verse": 11,
+          "text": "and found our humanitie so great towardes him, that he was called <na>(b)</na> our father, and was adored of al second after the king:",
+          "notes": [
+            {
+              "label": "b",
+              "text": "<i>Ch. 13. v. 6</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "who was puft vp with so great swelling of arrogancie, that he went about to depriue vs of kingdom and life."
+        },
+        {
+          "verse": 13,
+          "text": "For by certaine new deuises and not heard of before he hath sought to kil Mardocheus, by whose fidelitie and benefittes we liue, and Esther the felow of our kingdom with al their nation:"
+        },
+        {
+          "verse": 14,
+          "text": "thincking this that they being slayne, he might worke treason to our solitarines, and might transferre the kingdom of the Persians to the Macedonians"
+        },
+        {
+          "verse": 15,
+          "text": "But we haue found the Iewes, which were by that most wicked of men oppoynted to be slayne, in no fault at al, but contrariwise vsing iust lawes,"
+        },
+        {
+          "verse": 16,
+          "text": "and the children of the highest and the greatest, and alwayes louing God, by whose benefite the kingdom was geuen both to our fathers and to vs, and is kept vnto this day."
+        },
+        {
+          "verse": 17,
+          "text": "Wherfore know ye those letters, which he directed in our name, to be of none effect."
+        },
+        {
+          "verse": 18,
+          "text": "For the which heinous fact, before the gates of this citie, that is, of Susan, both him self that deuised it, and al his kinred hang on gibbettes: not we, but God repaying him that which he hath deserued."
+        },
+        {
+          "verse": 19,
+          "text": "But this edict, which we now send, let it be set forth in al cities, that it be lawful for the Iewes to vse their owne lawes."
+        },
+        {
+          "verse": 20,
+          "text": "Whom you must helpe, that those, which had prepared them selues to their slaughter, they may kil the thirtenth day of the twelfth moneth, which is called Adar."
+        },
+        {
+          "verse": 21,
+          "text": "For God omnipotent hath turned this day of sadnes and mourning into ioy to them."
+        },
+        {
+          "verse": 22,
+          "text": "Wherfore <na>(c)</na> count you also this day among other festiual daies, and celebrate it with al ioy, that hereafter also it may be knowne,",
+          "notes": [
+            {
+              "label": "c",
+              "text": "As Mardocheus suggested, the. king confirmed the obseruation of a feast in memorie of Gods benefice and so both Iewes and Gentiles kept it.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "that al, which faythfully obey the Persians, receiue worthie reward for their fidelitie: and they that lie in wayte against their kingdom, perish for their wicked fact."
+        },
+        {
+          "verse": 24,
+          "text": "And euerie prouince and citie, that wil not be partaker of this solemnitie, let it perish by sword and fyre, and let it so be destroyed, that not onlie men, but also beastes haue no accesse therto for euer, for an example of contempt, and disobedience. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Mch. 9. v. 1."
+            }
+          ]
+        }
+      ],
+      "summary": "A copie of king Artaxerxes letters, which he sent for the saftie of the Iewes, 10. declaring the insolencie of Aman, and dutiful seruice of Mardocheus and Esther, 20. commanding al his princes to assist the Iewes, and with them to celebrate the day which is changed from sorow to ioy."
+    }
+  ],
+  "spelling": "original"
+}

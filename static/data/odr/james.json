@@ -56,11 +56,12 @@
         },
         {
           "verse": 2,
-          "text": "<na>[1]</na> Esteem it, my brethren, all joy, when you shall fall into diverse tentations:",
+          "text": "<na>[1]</na> Esteem it, my brethren, all joy, when you shall fall into divers tentations:",
           "notes": [
             {
               "label": "1",
-              "text": "The Epistle for some Martyrs."
+              "text": "The Epistle for some Martyrs.",
+              "kind": "lectionary"
             }
           ]
         },
@@ -96,6 +97,9 @@
             {
               "text": "Mat. 21, 22. Mar. 11, 24."
             }
+          ],
+          "xrefs": [
+            "Ma. 21, 22. Mar. 11, 24."
           ]
         },
         {
@@ -104,7 +108,7 @@
         },
         {
           "verse": 8,
-          "text": "Aman double of mind is inconstant in all his ways."
+          "text": "A man double of mind is inconstant in all his ways."
         },
         {
           "verse": 9,
@@ -129,7 +133,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "The Epistle for Martyrs Bishops."
+              "text": "The Epistle for Martyrs Bishops.",
+              "kind": "lectionary"
             }
           ]
         },
@@ -156,7 +161,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "The ground of tentation to sin, is our concupiscence, & not God."
+              "text": "The ground of tentation to sin, is our concupiscence, & not God.",
+              "kind": "gloss"
             }
           ]
         },
@@ -183,7 +189,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "The Epistle on the 4. Sunday after Easter."
+              "text": "The Epistle on the 4. Sunday after Easter.",
+              "kind": "gloss"
             }
           ]
         },
@@ -210,7 +217,7 @@
         },
         {
           "verse": 21,
-          "text": "For the which thing casting away all uncleanness and aboundance of malice, in meekness receive the engrafted word, which is able to save your souls."
+          "text": "For the which thing casting away all uncleanness and aboundance of malice, in meekness receive the engraffed word, which is able to save your souls."
         },
         {
           "verse": 22,
@@ -223,7 +230,8 @@
           "notes": [
             {
               "label": "2",
-              "text": "The Epistle on the 5. Sunday after Easter."
+              "text": "The Epistle on the 5. Sunday after Easter.",
+              "kind": "gloss"
             }
           ]
         },
@@ -249,7 +257,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "Beatitude or salvation consisteth in well working."
+              "text": "Beatitude or salvation consisteth in well working.",
+              "kind": "gloss"
             }
           ]
         },
@@ -290,6 +299,9 @@
             {
               "text": "Lev. 19, 15. Deu. 1, 16. Pro. 24, 23. Eccl. 42, 1."
             }
+          ],
+          "xrefs": [
+            "Leu. 19, 15. Deu. 1, 16. Pro. 24, 23. Eccl. 42, 1."
           ]
         },
         {
@@ -318,7 +330,7 @@
         },
         {
           "verse": 8,
-          "text": "If not-withstanding you fulfill the royal law according to the Scriptures, <cr>[1]</cr> <i>Thou shalt love thy neighbour as thyself,</i> you do well:",
+          "text": "If not-withstanding you fulfil the royal law according to the Scriptures, <cr>[1]</cr> <i>Thou shalt love thy neighbour as thy self,</i> you do well:",
           "cross_refs": [
             {
               "text": "Lev. 19, 18. Mat. 22, 39. Rom. 13."
@@ -348,7 +360,7 @@
         },
         {
           "verse": 11,
-          "text": "For he that said, Thou shalt not commit adultery, said also, Thou shalt not kill. And if thou do not commit adultery, but shall kill; thou art made a transgressor of the Law."
+          "text": "For he that said, Thou shalt not commit advoutry, said also, Thou shalt not kill. And if thou do not commit advoutry, but shalt kill; thou art made a transgressor of the Law."
         },
         {
           "verse": 12,
@@ -368,7 +380,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>c κατακαυχᾶται.</i>"
+              "text": "<i>c κατακαυχᾶται.</i>",
+              "kind": "word"
             }
           ]
         },
@@ -395,7 +408,10 @@
         },
         {
           "verse": 16,
-          "text": "and one of you say to them, Go in peace, be warmed and filled; but you give them not the things that are necessary for the body; what shall it profit?"
+          "text": "and one of you say to them, Go in peace, be warmed and filled; but you give them not the things that are necessary for the body; what shall it profit?",
+          "xrefs": [
+            "1 Io. 3, 17."
+          ]
         },
         {
           "verse": 17,
@@ -415,11 +431,13 @@
           "notes": [
             {
               "label": "1",
-              "text": "He speaketh to all heretics that say, faith only without works doth justify, calling them vain men, and comparing them to Devils."
+              "text": "He speaketh to all heretics that say, faith only without works doth justify, calling them vain men, and comparing them to Devils.",
+              "kind": "gloss"
             },
             {
               "label": "2",
-              "text": "<i>dead</i>"
+              "text": "<i>dead</i>",
+              "kind": "gloss"
             }
           ]
         },
@@ -496,6 +514,9 @@
             {
               "text": "Ios. 2, 1. 18. and 6, 22."
             }
+          ],
+          "xrefs": [
+            "Ios. 2, 1. 18. and 6, 22."
           ]
         },
         {
@@ -540,6 +561,9 @@
             {
               "text": "Eccli. 14, 1. 19, 16."
             }
+          ],
+          "xrefs": [
+            "Eccl. 14, 1. 19, 16."
           ]
         },
         {
@@ -556,11 +580,13 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>c μεγαλαυχεῖ.</i>"
+              "text": "<i>c μεγαλαυχεῖ.</i>",
+              "kind": "word"
             },
             {
               "label": "2",
-              "text": "<i>little</i>"
+              "text": "<i>little</i>",
+              "kind": "gloss"
             }
           ]
         },
@@ -582,7 +608,7 @@
         },
         {
           "verse": 10,
-          "text": "Out of the self-same mouth proceedeth blessing & cursing. These things must not be so done, my brethren."
+          "text": "Out of the self same mouth proceedeth blessing & cursing. These things must not be so done, my brethren."
         },
         {
           "verse": 11,
@@ -594,7 +620,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>can it yield salt and sweet water.</i>"
+              "text": "<i>can it yield salt and sweet water.</i>",
+              "kind": "gloss"
             }
           ]
         },
@@ -612,7 +639,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "The difference betwixt the human wisdom, specially of heretics: and the wisdom of the Catholic Church & her children."
+              "text": "The difference betwixt the humane wisdom, specially of heretics: and the wisdom of the Catholic Church & her children.",
+              "kind": "gloss"
             }
           ]
         },
@@ -653,6 +681,9 @@
             {
               "text": "1. Io. 2, 15."
             }
+          ],
+          "xrefs": [
+            "1. Io. 2, 15."
           ]
         },
         {
@@ -670,13 +701,17 @@
           "notes": [
             {
               "label": "2",
-              "text": "The boldness of Heretics adding here the word <i>Scripture</i> to the text thus, <i>And the Scripture giveth greater grace.</i>"
+              "text": "The boldness of Heretics adding here the word <i>Scripture</i> to the text thus, <i>And the Scripture giveth greater grace.</i>",
+              "kind": "gloss"
             }
+          ],
+          "xrefs": [
+            "Prou. 3, 35. 1 Pet. 5, 5."
           ]
         },
         {
           "verse": 7,
-          "text": "Be subject therefore to God, but resist the devil, and he will fly from you."
+          "text": "Be subject therefore to God, but resist the devil, and he will flee from you."
         },
         {
           "verse": 8,
@@ -692,7 +727,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "c Free-will & man's own endeavor necessary in coming to God."
+              "text": "c Free-will & man's own endeavor necessary in coming to God.",
+              "kind": "gloss"
             }
           ]
         },
@@ -715,25 +751,30 @@
           "notes": [
             {
               "label": "1",
-              "text": "c He forbiddeth detraction, evil speaking, slandering."
+              "text": "c He forbiddeth detraction, evil speaking, slandering.",
+              "kind": "gloss"
             },
             {
               "label": "2",
-              "text": "c μὴ καταλαλεῖτε ἀλλήλων."
+              "text": "c μὴ καταλαλεῖτε ἀλλήλων.",
+              "kind": "word"
             }
           ]
         },
         {
           "verse": 12,
-          "text": "For there is one Lawmaker, and Judge that can destroy and deliver."
+          "text": "For there is one Law-maker, and Judge that can destroy and deliver."
         },
         {
           "verse": 13,
-          "text": "But thou, <cr>[1]</cr> what art thou that judgest thy neighbour? Behold now you that say, Today or tomorrow we will go into that city, and there certes will spend a year, and will traffic, and make our gain",
+          "text": "But thou, <cr>[1]</cr> what art thou that judgest thy neighbour? Behold now you that say, To day or tomorrow we will go into that city, and there certes will spend a year, and will traffic, and make our gain",
           "cross_refs": [
             {
               "text": "Ro. 14, 4."
             }
+          ],
+          "xrefs": [
+            "Ro. 14, 4."
           ]
         },
         {
@@ -746,7 +787,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "All promises and purposes of our worldly affairs are to be made under condition of God's good liking & pleasure:"
+              "text": "All promises and purposes of our worldly affairs are to be made under condition of God's good liking & pleasure:",
+              "kind": "gloss"
             }
           ]
         },
@@ -770,7 +812,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "A fearful description of the miseries that shall befall in the next life to the unmerciful covetous men."
+              "text": "A fearful description of the miseries that shall befall in the next life to the unmerciful covetous men.",
+              "kind": "gloss"
             }
           ]
         },
@@ -784,7 +827,7 @@
         },
         {
           "verse": 4,
-          "text": "Behold the hire of the work-men that have reaped your fields, which is defrauded of you, cryeth: and their cry hath entered into the ears of the Lord of Sabboth.",
+          "text": "Behold the hire of the workmen that have reaped your fields, which is defrauded of you, crieth: and their cry hath entered into the ears of the Lord of Sabboth.",
           "has_annotation": true,
           "lemmas": [
             [
@@ -804,7 +847,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>condemned</i>"
+              "text": "<i>condemned</i>",
+              "kind": "gloss"
             }
           ]
         },
@@ -814,7 +858,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "c He meaneth either fruit or rain."
+              "text": "c He meaneth either fruit or rain.",
+              "kind": "gloss"
             }
           ]
         },
@@ -824,7 +869,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>is at hand.</i>"
+              "text": "<i>is at hand.</i>",
+              "kind": "gloss"
             }
           ]
         },
@@ -838,7 +884,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>exitus mali</i>"
+              "text": "<i>exitus mali</i>",
+              "kind": "gloss"
             }
           ]
         },
@@ -869,7 +916,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "The Epistle in a votive Mass for the sick."
+              "text": "The Epistle in a votive Mass for the sick.",
+              "kind": "gloss"
             }
           ]
         },
@@ -936,11 +984,13 @@
           "notes": [
             {
               "label": "1",
-              "text": "b The Epistle in <i>Maioribus Litanijs</i> on S. Mark's day, and in the Rogation days."
+              "text": "b The Epistle in <i>Maioribus Litanijs</i> on S. Mark's day, and in the Rogation days.",
+              "kind": "lectionary"
             },
             {
               "label": "2",
-              "text": "b The heretics translate, <i>Acknowledge your sins. &c.</i> So little they can abide the very word of <i>confession.</i>"
+              "text": "b The heretics translate, <i>Acknowledge your sins. &c.</i> So little they can abide the very word of <i>confession.</i>",
+              "kind": "gloss"
             }
           ]
         },
@@ -959,6 +1009,9 @@
             {
               "text": "3. Reg. 17. Eccli. 48. Lu. 4, 25."
             }
+          ],
+          "xrefs": [
+            "3 reg. 17. Eccl. 48. Lu. 4, 25."
           ]
         },
         {
@@ -993,7 +1046,8 @@
           "notes": [
             {
               "label": "1",
-              "text": "He that hath the zeal of converting sinners, procureth thereby mercy and remission to himself: which is a singular grace."
+              "text": "He that hath the zeal of converting sinners, procureth thereby mercy and remission to himself: which is a singular grace.",
+              "kind": "gloss"
             }
           ]
         }

@@ -1,0 +1,3694 @@
+{
+  "book": "apocalypse",
+  "book_title": "The Apocalypse of John the Apostle.",
+  "short_title": "Apocalypse",
+  "hebrew_title": null,
+  "intros": [
+    {
+      "title": "THE ARGUMENT OF THE APOCALYPSE OF S. JOHN.",
+      "text": "That which the old Testament foretold of Christ himself, the Apostles could report the fulfilling thereof in the new Testament, by way of an history, even from his Conception to his Glorification. But of his Church, they could not do the like: because in their time it did but begin: being to continue long after them, even to the end of the world, and then at length to be glorified, as Christ her Spouse already is. Hereupon God would have S. Luke to report in the Acts of the Apostles, the story of the Church's beginning, and for the rest of it to the end, (that we might receive this benefit also by the Apostle's hands) he would S. John to tell us of it in this book by way of a prophecy. Of which book S. Hierome saith: <i>The Apocalypse of S. John hath as many sacraments or mysteries,</i> <mn>◦</mn> <i>as words.</i> Yea more than that, <i>In every word there are hid manifold and sundry senses.</i> Therefore it is very little that can here be noted, in respect. Yet to give the good Catholic (whose comfort is here) some little help, the book may be divided into five parts.\n\nThe first (after the prooem) containeth seven Epistles from Christ now in glory, to seven <mn>[1]</mn> <mn>[2]</mn> Churches of Asia, or (for, these he maketh all one) to the seven Bishops of those Churches: meaning not to those only, but to all his Churches & Bishops throughout the world: saying therefore in every one of them, to all in general: <i>He that hath an ear, let him hear what the Spirit saith to the Churches.</i> As also in every one he exhorteth us to fight manfully (in this spiritual warfare of ours against sin) for the victory, and in every one accordingly promiseth us a reward in heaven. But before this, in the beginning of every one, he partly commendeth, partly reprehendeth, and exhorteth to penance. Where this is much to be noted, and feared, that among so many, he reproveth somewhat in all, save only in two, which are the second & the sixth. In the beginning also of every one, he taketh some piece out of the apparition going before, to frame thereof his style agreeably to the matter of each Epistle.\n\nAfter this admonition to Pastors and their flocks: the second part followeth, wherein the <mn>[1]</mn> <mn>[2]</mn> Church and whole course thereof from the beginning to the end, is expressed in the opening of a book in God's hand, and the seven seals thereof, by Christ. For the which, he seeth praise sung now in heaven and earth, not only to the Godhead, as before, but also (after a new manner) to Christ according to his Manhood. And here, when he is come to the opening of the last seal, signifying Domesday, he letteth that matter alone for a while, and to speak more fully yet of the said course of the Church, he bringeth in another pageant (as it were) of seven Angels with <mn>[3]</mn> seven Trumpets. The effect of both the Seals & Trumpets, is this: That the Church beginning and proceeding, there should be raised against it, cruel persecutions, and pestilent heresies: and at length after all heresies, a certain most blasphemous Apostasy, being the next preparative to the coming of Antichrist: After all which, Antichrist himself in person shall appear in the time of the sixth seal, and sixth trumpet, persecuting and seducing (for the short time of his reign) more than all before him. The Church not withstanding shall still continue, and wade through all, because Christ her Spouse is stronger than all these adversaries. Who also straight after the said sixth time, shall in the seventh, come in majesty and judge all.\n\nOf the which judgement, deferring yet a while to speak at large, he doth first in the third <mn>[1]</mn> <mn>[2]</mn> part entreat more fully of the Devils working by Antichrist and his company against the Church, that the justice of Christ afterward in judging, may be more manifest.\n\nAt length therefore in the fourth part he cometh to the seven last plagues, the seventh of <mn>[1]</mn> <mn>[2]</mn> them containing the final damnation of the whole multitude, society or corps of the wicked, from the beginning of the world to the end. Which multitude, in the Gospel and first Epistle of this same S. John (as also in the other Scriptures commonly) is often called <i>Mundus, the world.</i> and here <mn>[3]</mn> he calleth it partly, <i>Meretricem, a whore or harlot</i>, because with her concupiscence she enticeth the carnal and earthly men away from God: partly, <i>Civitatem Babylon, the City of Babylon</i>, because it maketh war against Hierusalem the city of God, and Laboureth to hold God's people captive in sin, as it was shadowed in Nabuchodonosor & his Babylonians, leading and holding the Jews with their Hierusalem, in captivity, until Cyrus (in figure of Christ) delivered them. But whether all these seven plagues should be understood (as the seventh) of Domesday it-self, it is hard to define. More like it is, that the first six are to go before Domesday: but whether corporally and literally, (so as Moyses plagued Egypt) or rather spiritually, it is more hard to define. Yet it seemeth more easy, to understand them corporally, as also the plagues wherewith Elias and his fellow shall in the time of Antichrist plague the wicked (which peradventure shall be the same last plagues) whereof we read in this book c. 11. v. 6. But not content to have described thus the damnation of the whole adulterous & bloody society, he doth also expressly report of their three grand Captains' damnation, which are these, Antichrist, and his False-prophet, and the Devil himself the author of all this mischief.\n\nFinally, on the other side, in the fifth part he reporteth the unspeakable and everlasting <mn>[1]</mn> <mn>[2]</mn> glory, that the Church after all this suffering, shall by Christ her glorious Spouse be assumpted unto. And so he concludeth the book.",
+      "default": true,
+      "notes": [
+        {
+          "marker": "◦",
+          "text": "<i>Hier. ad Paulin.</i>"
+        },
+        {
+          "marker": 1,
+          "text": "<i>1. part.</i>"
+        },
+        {
+          "marker": 2,
+          "text": "<i>Ca. 1. 2. 3.</i>"
+        },
+        {
+          "marker": 1,
+          "text": "<i>2.</i>"
+        },
+        {
+          "marker": 2,
+          "text": "<i>Ca. 4. to the 8.</i>"
+        },
+        {
+          "marker": 3,
+          "text": "<i>Ca. 8. to the 12.</i>"
+        },
+        {
+          "marker": 1,
+          "text": "<i>3.</i>"
+        },
+        {
+          "marker": 2,
+          "text": "<i>C. 12. 13. 14.</i>"
+        },
+        {
+          "marker": 1,
+          "text": "<i>4.</i>"
+        },
+        {
+          "marker": 2,
+          "text": "<i>C. 15. to the 21.</i>"
+        },
+        {
+          "marker": 3,
+          "text": "<i>1. Io. 2. Apoc. 17.</i>"
+        },
+        {
+          "marker": 1,
+          "text": "<i>5.</i>"
+        },
+        {
+          "marker": 2,
+          "text": "<i>C. 21. 22.</i>"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>THE</sc> <na>[1]</na> Apocalypse of <sc>IESVS</sc> Christ, which God gaue him, to make manifest to his seruants the things which must be done quickly: and signified, sending by his Angel to his seruant Iohn,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              10,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle vpon Michelmas day Septemb. 29, & on the Apparition of S. Michael <i>Mai. 8</i>.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "who hath giuen testimonie to the word of God, and the testimonie of <sc>IESVS</sc> Christ, what things soeuer he hath seen."
+        },
+        {
+          "verse": 3,
+          "text": "Blessed is he that readeth and heareth the wordes of this prophecie: and <na>[1]</na> keepeth those thinges which be written in it. for the time is nigh.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "There be many (specially now a daies) that be great readers, hearers and talkers of Scriptures. but that is not ynough to make them good or blessed before God, except they keepe the things prescribed and taught therein, according to our Sauiours saying <i>(Luc. 11</i>.) Blessed are they that heare the word of God, and keepe it.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "Iohn to the seuen churches which are in Asia. Grace to you and peace from <cr>[1]</cr> him that is, and that was, and that shal come, and from the seuen spirites which are in the sight of his throne,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              5,
+              21,
+              1
+            ],
+            [
+              139,
+              22,
+              2
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Exo. 3, 14."
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "and from <sc>IESVS</sc> Christ who is the faithful witnes, the <cr>[1]</cr> first-borne of the dead, & the prince of the kings of the earth, who hath loued vs, and <cr>[2]</cr> washed vs from our sinnes in his bloud, ⊢",
+          "cross_refs": [
+            {
+              "text": "Col. 1."
+            },
+            {
+              "text": "Heb. 9. 1. Pet. 1."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "and hath made vs <cr>[1]</cr> a kingdom and priestes to God and his father, to him be glorie and empire for euer and euer. Amen.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              32,
+              19,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "1. Pet. 1."
+            },
+            {
+              "text": "1 Pet. 1. 1 Pet. 2",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "Behold he commeth with the cloudes, and euery eie shal see him, and <cr>[1]</cr> they that pricked him. And al the tribes of the earth shal bewaile them selues vpon him. yea, Amen.",
+          "cross_refs": [
+            {
+              "text": "Zach. 12."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<cr>[1]</cr> I am Alpha and Omega, the beginning and end, saith our Lord God, which is, and which was, and which shal come, the omnipotent.",
+          "cross_refs": [
+            {
+              "text": "Esa. 44. Apo. 21. 22. 13."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "I Iohn your brother and partaker in tribulation, and the kingdom, and patience in Christ <sc>IESVS</sc>, was in <na>[1]</na> the Iland, which is called Patmos, for the word of God and the testimonie of <sc>IESVS</sc>.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Banished thither for religion by Nero, or rather by Domitian, almost <i>60</i> yeres after Christes Ascension.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "I was <na>[1]</na> cin spirit on the Dominical day, and heard behind me a great voice as it were of a trompet",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              29,
+              20,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "I had a vision, and not with my corporal eies, but in spirit I beheld the similitudes of the thinges folovving.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "saying, That which thou seest, write in a booke: and send to the seuen churches which are in Asia, to Ephesus, and Smyrna, and Pergamus, and Thiatira, and Sardis, and Philadelphia, and Laodicia."
+        },
+        {
+          "verse": 12,
+          "text": "<na>[1]</na> bAnd I turned, to see the voice that spake with me. And being turned I saw seuen candlestickes of gold:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "b The 1 GENERAL VISION of the 7 according to S. Ambrose.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "& in the middes of the seuen candlestickes of gold, one <cr>[1]</cr> like to the Sonne of man, vested in a <na>[2]</na> cpriestly garment to the foote, and girded about neere to the pappes with a girdle of gold.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              93,
+              41,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "c podere Sap. 18. 24."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "It seemeth not to be Christ him self, but an Angel bearing Christes person, & vsing diuers speaches proper to Christ.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "and his head and heares were white, as white wool, & as snow, and his eies as the flame of fire."
+        },
+        {
+          "verse": 15,
+          "text": "and his feete like to latten, as in a burning fornace. and his voice as the voice of many waters:"
+        },
+        {
+          "verse": 16,
+          "text": "and he had in his right hand seuen starres. and from his mouth proceded a sharpe two edged sword: and his face, as the sunne shineth in his vertue."
+        },
+        {
+          "verse": 17,
+          "text": "And when I had seene him, I fel at his feete as dead. And he put his right hand vpon me, saying, Feare not. <cr>[1]</cr> I am the first and the last,",
+          "cross_refs": [
+            {
+              "text": "Esa. 41, 4. 44, 6."
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "and aliue, and was dead, and behold I am liuing for euer and euer, and haue the keies of death and of hel."
+        },
+        {
+          "verse": 19,
+          "text": "Write therefore the thinges which thou hast seene, and that are, and that must be done after these."
+        },
+        {
+          "verse": 20,
+          "text": "The sacrament of the seuen starres, which thou hast seene in my right hand, and the seuen candlestickes of Gold. the seuen starres, are the angels of the seuen churches. and the seuen candlestickes, are <na>[1]</na> the seuen churches.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              15,
+              1
+            ],
+            [
+              130,
+              32,
+              2
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "S. Irenæus alluding to this saith, <i>The Church euery where preacheth the truth, and this is the seuenfold candlesticke, bearing the light of Christ</i> &c. Li. <i>5. aduers. hær</i>.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "9 S. Iohn being banished in the ile Patmos, is commaunded to write to the seuen Churches of Asia (signified by the seuen candlestickes) that which he saw vpon a Sunday, round about the Sonne of man: 13 whose maner of apparition is described. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The 1. part. Seven epistles to the Churches."
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> to the Angel of the Church of Ephesus write, Thus saith he which holdeth the seuen starres in his right hand, which walketh in the middes of the seuen candlestickes of gold,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              91,
+              17,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "That which before he willed him to write to the church, he now willeth to be written to the Angels or Bishops of the same onely. where we see, it is al one, to the Church, and to the head or gouernour thereof.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "I know thy workes and labour, and thy patience: and that thou canst not beare euil men, and hast tried them which say them selues to be Apostles, and are not, and hast found them liars:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              7,
+              38,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "and thou hast patience, and hast borne for my name, and hast not fainted."
+        },
+        {
+          "verse": 4,
+          "text": "But I haue against thee a few thinges, bicause <na>[1]</na> thou hast left thy first charitie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "By this we see is plainely refuted that which some Heretikes hold, that a man once in grace or charitie can neuer fall from it.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "Be mindeful therfore from whence thou art fallen: and doe penance, and doe the first workes. But if not: I come to thee, and wil moue thy candlesticke out of his place, vnlesse thou doe penance.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              120,
+              9,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "but this thou hast, because thou hatest the factes of the Nicolaites, which I also hate.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              20,
+              19,
+              1
+            ],
+            [
+              50,
+              17,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "He that hath an eare, let him heare what the Spirit saith to the Churches, To him that ouercommeth, I wil giue to eate of the tree of life, which is in the Paradise of my God."
+        },
+        {
+          "verse": 8,
+          "text": "And to the Angel of the Church of Smyrna write, Thus saith <cr>[1]</cr> the first and the last, who was dead, and liueth,",
+          "cross_refs": [
+            {
+              "text": "Apoc. 1, 17."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "I know thy tribulation and thy <na>[1]</na> pouertie, but thou art riche: and thou art blasphemed of them that say them selues to be Iewes and are not, but are the synagogue of Satan.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This Church representeth the state of them that are spoiled of their goodes, emprisoned, & manifoldly afflicted for the catholike faith.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "Feare none of these thinges which thou shalt suffer. Behold the Deuil wil send some of you into prison that you may be tried: and you shal haue tribulation ten daies. Be thou faithful vntil death: and I wil giue thee <na>[1]</na> the crowne of life.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The singular reward of Martyrdom.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "He that hath an eare, let him heare what the Spirit saith to the Churches, He that shal ouercome, shal not be hurt of the <na>[1]</na> second death.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The death of the body is the first death: the death of the soule, the second. which Martyrs are surest to escape of al men.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And to the Angel of the Church of Pergamus write, Thus saith he that hath the sharpe two edged sword,"
+        },
+        {
+          "verse": 13,
+          "text": "I know where thou dwellest, where the seate of Satan is: and thou holdest my name, and hast not denied my faith. And in those daies Antipas my faithful witnesse, who was slaine among you, <na>[1]</na> where Satan dwelleth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The special residence of Satan is where the faithful are persecuted for Christes truth. where not to deny the Catholike faith for feare, is much here commended.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "But I haue against thee a few thinges: because thou hast there, them that hold the doctrine of Balaam, who taught Balac <cr>[1]</cr> to cast a scandal before the children of Israel, to eate and commit fornication:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              132,
+              17,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Nu. 24, 14. 25, 2."
+            }
+          ],
+          "xrefs": [
+            "Nu. 24, 14. 25, 2."
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "so hast thou also them that hold the doctrine of the Nicolaites."
+        },
+        {
+          "verse": 16,
+          "text": "In like maner doe penance. if not: I wil come to thee quickly, and wil fight against them with the sword of my mouth."
+        },
+        {
+          "verse": 17,
+          "text": "He that hath an eare, let him heare what the Spirit saith to the Churches, To him that ouercommeth I wil giue the hidden manna, and wil giue him a <na>[1]</na> white ccounter: and in the counter, a new name Written, which no man knoweth, but he that receiueth it.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>c ψῆφον calculum</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "And to the Angel of the Church of Thyatira write, Thus saith the Sonne of God, which hath eies as a flame of fire, and his feete like to latten."
+        },
+        {
+          "verse": 19,
+          "text": "I know thy <na>[1]</na> workes, and faith, and thy charitie, and ministerie, and thy patience and thy last workes moe then the former.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "None of these are any thing worth without the other.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "But I haue against thee a few thinges: because thou permittest the <cr>[1]</cr> woman Iezabel, who calleth her self a prophetesse, to teache, and to seduce my seruantes, to fornicate, and to eate of thinges sacrificed to idols.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              62,
+              30,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "3. Reg. 18."
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "And I gaue her a time that she might do penance: and she wil not repent from her fornication.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              19,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "Behold I wil cast her into a bedde: and they that commit aduoutrie with her, shal be in very great tribulation, vnlesse they do penance from their workes:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              34,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "and her children I wil kil vnto death, and al the Churches shal know <cr>[1]</cr> that I am he that searcheth the reines and hartes, and I wil giue to euery one of you <na>[2]</na> according to his workes.",
+          "cross_refs": [
+            {
+              "text": "1. Reg. 16. Ps. 7, 10. Ier. 11, 20."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "1 Reg. 16. Ps. 7, 10. Ier. 11, 20. · Who seeth not here that good workes deserue saluation, as il workes damnation: and that it is not faith alone that God rewardeth, but that faith which worketh by charitie?",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "But I say to you the rest which are at Thyatira, whosoeuer haue not this doctrine, which haue not knowen the <na>[1]</na> <alt>depth</alt> of Satan, as they say, I wil not cast vpon you an other weight.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>depthes</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "Yet that which you haue, hold til I come."
+        },
+        {
+          "verse": 26,
+          "text": "And he that shal ouercome and keepe my workes vnto the end: I wil giue him power ouer the nations,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              59,
+              21,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 27,
+          "text": "and <cr>[1]</cr> he shal rule them with a rod of yron, and as the vessel of a potter shal they be broken,",
+          "cross_refs": [
+            {
+              "text": "Ps. 2, 9."
+            }
+          ]
+        },
+        {
+          "verse": 28,
+          "text": "<na>[1]</na> as I also haue receiued of my father: and I wil giue him the morning starre.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This great priuilege of Saincts riseth of the power and pre-eminence of Christ, which his father gaue him according to his humanitie, and therfore to deny it to Saincts, is to deny it to Christ him self.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 29,
+          "text": "He that hath an eare, let him heare what the Spirit saith to the Churches."
+        }
+      ],
+      "summary": "He is commaunded to write diuers things to the churches of Ephesus, Smyrna, Pergamus, and Thyatira: praising them that had not admitted the doctrine of the Heretikes called Nicolaitæ, 22 and calling others by threates vnto penance: 26 and promising reward to him that manfully ouercommeth."
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> to the Angel of the Church of Sardis, write, Thus saith he that hath the seuen Spirites of God, and the seuen starres, I know thy workes, that thou hast the name that thou liuest, and thou art dead."
+        },
+        {
+          "verse": 2,
+          "text": "Be vigilant, and confirme the rest of the things which were to die. For I finde not thy workes ful before my God."
+        },
+        {
+          "verse": 3,
+          "text": "Haue in minde therfore in what maner thou hast receiued and heard: and keepe, and doe penance. If therfore thou watch not, <cr>[1]</cr> I wil come to thee as a theefe, & thou shalt not know what houre I wil come to thee.",
+          "cross_refs": [
+            {
+              "text": "1. Thes. 5, 2. 2. Pet. 3, 10. Apo. 16, 15."
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "But thou hast a few names in Sardis, <na>[1]</na> cwhich haue not defiled their garments: and they shal walke with me in whites, because they <na>[2]</na> are worthy.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Such as have not committed deadly sin after Baptism.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "Note that there is in man a worthinesse of the ioyes of heauen, by holy life. & this is a common speache in holy Scripture, that man is worthy of God, of heauen, of saluation.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "He that shal ouercome, shal thus be vested in white garmentes, and I wil not put his name out of the booke of life, and I wil confesse his name before my father, and before his Angels.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              22,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "He that hath an eare, let him heare what the Spirit saith to the Churches."
+        },
+        {
+          "verse": 7,
+          "text": "And to the Angel of the Church of Philadelphia write, Thus saith the Holy one and the True one, he that hath the <cr>[1]</cr> key of Dauid: he that openeth, and no man shutteth: shutteth, and no man openeth.",
+          "cross_refs": [
+            {
+              "text": "Esa. 22, 22."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "I know thy workes. Behold I haue giuen before thee a doore opened which no man can shut: because thou hast a litle power, and hast kept my word, and hast not denied my name."
+        },
+        {
+          "verse": 9,
+          "text": "Behold I wil giue of the synagogue of Satan, which say they be Iewes, and are not, but doe lie. Behold I wil make them come and adore before thy feete. and they shal know that I haue loued thee.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              128,
+              21,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "because thou hast kept the word of my patience, and I wil keepe thee from the houre of tentation, which shal come vpon the whole world to tempt the inhabitants on the earth."
+        },
+        {
+          "verse": 11,
+          "text": "Behold I come quickely: hold that which thou hast, that no man take thy crowne.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              26,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "He that shal ouercome, I wil make him a piller in the temple of my God: and he shal goe out no more: and I wil write vpon him the name of my God, and the name of the citie of my God, new Hierusalem which descendeth out of heauen from my God, and my new name."
+        },
+        {
+          "verse": 13,
+          "text": "He that hath an eare, let him heare what the Spirit saith to the Churches."
+        },
+        {
+          "verse": 14,
+          "text": "And to the Angel of the Church of Laodicia write, Thus saith <na>[1]</na> cAmen, the faithful and true witnesse, <na>[2]</na> which is the beginning of the creature of God.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c ὁ ἀμήν",
+              "kind": "word"
+            },
+            {
+              "label": "2",
+              "text": "Ecclesiastici 24, 9. 14. Col. 1, 15.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "I know thy workes, that thou art neither colde, nor hote. I would thou were colde, or hote."
+        },
+        {
+          "verse": 16,
+          "text": "But because thou art lukewarme, and neither cold nor hote, I wil begin to vomite thee out of my mouth.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              21,
+              8,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "Because thou saiest, That I am riche, and enriched, and lacke nothing: and knowest not that thou art a miser, and miserable, and poore, and blinde, and naked."
+        },
+        {
+          "verse": 18,
+          "text": "I counsel thee to bye of me gold fire-tried, that thou maiest be made riche: and maiest be clothed in white garmentes, that the confusion of thy nakednes appeare not: and with eie-salue anoint thine eies, that thou maiest see."
+        },
+        {
+          "verse": 19,
+          "text": "I, <cr>[1]</cr> whom I loue, do rebuke and chastise. Be zelous therfore and doe penance.",
+          "cross_refs": [
+            {
+              "text": "Prov. 3, 12. Heb. 12, 6."
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "Behold I stand at the doore and <na>[1]</na> knocke. if any man shal heare my voice, and open the gate, I wil enter in to him, and wil suppe with him, and he with me.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "God first calleth vpon man and knocketh at the doore of his hart: that is to say, offereth his grace. and it lieth in man to giue consent by free wil holpen also by his grace.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "He that shal ouercome, I wil giue vnto him to sitte with me in my throne: as I also haue ouercome, and haue sitten with my father in his throne."
+        },
+        {
+          "verse": 22,
+          "text": "He that hath an eare, let him heare what the Spirit saith to the Churches."
+        }
+      ],
+      "summary": "He is commaunded to write to the Churches of Sardis, Philadelphia, and Laodicia: recalling them that erre to penance by threatening, but praising the rest, and promising reward to him that ouercommeth: 15 detesting also the cold indifferent Christian. 20 He saith that God knocketh at the doore of mens hartes by offering his grace, for to enter in to him that wil open vnto him by consent of free wil."
+    },
+    {
+      "chapter": 4,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AFTER</sc> <na>[1]</na> these things I looked, and behold a doore open in heauen, and the first voice which I heard, vvas as it vvere of a trompet speaking vvith me, saying, Come vp hither, and I vvil shevv thee the thinges vvhich must be done quickly after these.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE 2 vision. In vvhich is represented vnto vs the glorie and maiestie of God in heauen, and the incessant honour & praises of al Angels and Saincts assisting him. Vvhich is resembled in the daily honour done to him by al orders and sortes of holy men in the Church militant also.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "Immediatly I vvas in spirit: and behold there vvas a seate sette in heauen, and vpon the seate one sitting."
+        },
+        {
+          "verse": 3,
+          "text": "And he that sate, vvas like in sight, to the Iasper stone, and the Sardine: and there vvas a raine-bovv round about the seate, like to the sight of an Emeraud."
+        },
+        {
+          "verse": 4,
+          "text": "And round about the seate, foure and twentie seates: and vpon the thrones, foure and twentie seniors sitting, clothed about in vvhite garmentes, and on their heades crovvnes of gold."
+        },
+        {
+          "verse": 5,
+          "text": "And from the throne proceeded lightenings, and voices, and thunders: and seuen lampes burning before the throne, vvhich are the seuen Spirites of God."
+        },
+        {
+          "verse": 6,
+          "text": "And in the sight of the seate, as it vvere a sea of glasse like to crystall: and in the middes of the seate and round about the seate <na>[1]</na> foure beastes ful of eies before and behind.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "These foure beastes, and the like described <i>Ezech. 1</i>. by the iudgement of the holy Doctors signifie the 4 Euangelistes, and in them al true preachers. the man, Mathevv: the lion, Marke: the calfe, Luke: the egle, Iohn: See the causes hereof in the Summe of the 4 Euangelist. <i>pag. 1. S. Grego. in 1 Ezech</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And the first beast, like to a lion: and the second beast, like to a calfe: and the third beast, hauing the face as it vvere of a man: and the fourth beast, like to an egle flying."
+        },
+        {
+          "verse": 8,
+          "text": "And the foure beastes, euery one of them had sixe vvinges round about: and vvithin they are ful of eies. and they had no rest day and night, saying, <i>Holy, Holy, Holy, Lord God omnipotent</i>, <cr>[1]</cr> vvhich vvas, and vvhich is, and vvhich shal come.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              147,
+              16,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Esa. 6, 3."
+            }
+          ],
+          "xrefs": [
+            "Es. 6, 3."
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And vvhen those beastes gaue glorie and honour and benediction to him that sitteth vpon the throne, that liueth for euer and euer:"
+        },
+        {
+          "verse": 10,
+          "text": "the foure and twentie seniors fel dovvne before him that sitteth in the throne, and adored him that liueth for euer and euer, and cast their crovvnes before the throne, saying,"
+        },
+        {
+          "verse": 11,
+          "text": "Thou art vvorthie O Lord our God to receiue glorie and honour and povver: because thou hast created al thinges, and for thy vvil they vvere and haue been created."
+        }
+      ],
+      "summary": "1 A doore being open in heauen, he saw one sitting in a throne, 4 and round about him foure and twentie seniors sitting, 6 and the foure beastes here described, 9 which with the 24 seniors continually glorified him that sate in the throne. <na>[1]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "The 2. part. First, the book with 7 seals. Secondly, 7 Angels with trumpets."
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> I savv in the right hand of him that sate vpon the throne, a <na>[2]</na> booke vvritten vvithin and vvithout, sealed vvith seuen seales.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE 3 VISION.",
+              "kind": "head"
+            },
+            {
+              "label": "2",
+              "text": "S. Gregorie taketh it to be the booke of holy Scripture. <i>li. 4. Dialog. c. 42</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And I savv a strong Angel, preaching vvith a loude voice, Vvho is vvorthie to open the booke, & to loose the seales thereof?"
+        },
+        {
+          "verse": 3,
+          "text": "And no man vvas able neither in heauen nor in earth, nor <na>[1]</na> vnder the earth, to open the booke, nor looke on it.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He speaketh not of the damned in Hel, of vvhom there could be no question: but of the faithful in Abrahams bosome, & in Purgatorie.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And I vvept much because no man vvas found vvorthie to open the booke, nor to see it."
+        },
+        {
+          "verse": 5,
+          "text": "And one of the seniors said to me, Vveepe not: behold <cr>[1]</cr> cthe <na>[2]</na> lion of the tribe of Iuda, the roote of Dauid, hath vvonne, to open the booke, and to loose the seuen seales thereof.",
+          "cross_refs": [
+            {
+              "text": "Gen. 49, 9."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "So did Iacob <i>(Gen. 49</i>) call Christ, for his kingly fortitude in subduing the vvorld vnto him.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Gen. 49, 9."
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>[1]</na> bAnd I savv, and behold in the middes of the throne and of the foure beastes and in the middes of the seniors, <na>[2]</na> a Lambe standing as it vvere slaine, hauing seuen hornes & seuen eies: vvhich are the seuen spirites of God, sent into al the earth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle vpon al-Hallovves eue.",
+              "kind": "lectionary"
+            },
+            {
+              "label": "2",
+              "text": "So Christ is called for that he is the immaculate host or sacrifice for our sinnes.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And he came, and receiued the booke out of the right hand of him that sate in the throne."
+        },
+        {
+          "verse": 8,
+          "text": "And vvhen he had opened the booke, the foure beastes and the foure and twentie seniors fel before the Lambe, hauing euery one harpes, and golden vials ful of odours, vvhich are the praiers of sainctes:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              170,
+              21,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "and they sang a nevv canticle, saying, Thou art vvorthie o Lord to take the booke, and to open the seales thereof: <na>[1]</na> because thou vvast slaine, and hast redeemed vs to God in thy bloud out of euery tribe and tonge and people and nation,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This maketh against the Caluinistes vvho are not content to say that vve merite not, but that Christ merited not for him self. Calu. <i>Philip. 2. v. 9</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "and <cr>[1]</cr> hast made vs to our God <na>[2]</na> <alt>a kingdom</alt> and priestes, and vve shal reigne vpon the earth.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              54,
+              32,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "1. Pet. 2."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "<i>kings</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<cr>[1]</cr> And I looked, and heard the voice of many Angels round about the throne, and of the beastes and of the seniors: and the number of them vvas <na>[2]</na> thousandes of thousandes,",
+          "cross_refs": [
+            {
+              "text": "Dan. 7. 10."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The Epistle in a votiue Masse of the holy Angels. · Dan. 7, 10.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "saying vvith a loud voice, The Lambe that vvas slaine, is vvorthie to receiue povver, and <na>[1]</na> <alt>diuinitie</alt>, and vvisedom, and strength, and honour, and glorie, and benediction. ⊢",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>riches</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "And euery creature that is in heauen, and vpon the earth, and vnder the earth, and that are in the sea, and that are therein: al did I heare saying, <cr>[1]</cr> To him that sitteth in the throne, & <na>[2]</na> to the Lambe, benediction and honour and glorie and povver for euer and euer.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              14,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Apoc. 4, 11."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Al the said creatures are bound to giue honour, not onely to God, but to Christ as man, and our redeemer: & so they here doe.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Apoc. 4, 11."
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "And the foure beastes said, Amen. And the foure and twentie seniors fel on their faces: and adored him that liueth for euer and euer. ⊢"
+        }
+      ],
+      "summary": "4 S. Iohn vveeping, because no man could open the booke sealed vvith seuen seales: 6 the Lambe that vvas slaine, opened it: vvhich being done, 9 the foure beastes and foure and tventie seniors, vvith an innumerable multitude of Angels & al creatures, did glorifie him excedingly."
+    },
+    {
+      "chapter": 6,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> I savv that the Lambe had opened one of the seuen seales, and I heard one of the foure beastes, saying, as it vvere the voice of thunder, Come, and see."
+        },
+        {
+          "verse": 2,
+          "text": "And I savv: And behold a vvhite horse, and he that sate vpon him had a bovv, and there vvas a crovvne giuen him, and he vvent forth conquering that he might conquer."
+        },
+        {
+          "verse": 3,
+          "text": "And vvhen he had opened the second seale, I heard the second beast, saying, Come, & see."
+        },
+        {
+          "verse": 4,
+          "text": "And there vvent forth an other horse, redde: and he that sate thereon, to him it vvas giuen that he should take peace from the earth, and that they should kil one an other, and a great svvord vvas giuen to him."
+        },
+        {
+          "verse": 5,
+          "text": "And vvhen he had opened the third seale, I heard the third beast, saying, Come, and see. And behold a blacke horse, and he that sate vpon him, had a balance in his hand."
+        },
+        {
+          "verse": 6,
+          "text": "And I heard as it vvere a voice in the middes of the foure beastes saying: Tvvo poundes of vvheate for a penie, and thrise tvvo poundes of barley for a penie, and vvine and oile hurt thou not."
+        },
+        {
+          "verse": 7,
+          "text": "And vvhen he had opened the fourth seale, I heard a voice of the fourth beast, saying, Come, & see."
+        },
+        {
+          "verse": 8,
+          "text": "And behold a pale horse: and he that sate vpon him, his name vvas death, and hel folovved him. and povver vvas giuen to him ouer the foure partes of the earth, to kil vvith svvord, vvith famine, and vvith death, and vvith beastes of the earth."
+        },
+        {
+          "verse": 9,
+          "text": "And vvhen he had opened the fifth seale: I savv vnder the altar the soules of them that vvere slaine for the vvord of God, and for the testimonie vvhich they had.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              45,
+              15,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "and they cried vvith a loude voice, saying, Hovv long Lord, holy & true, iudgest thou not and reuengest thou not our bloud of them that dvvel on the earth?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ],
+            [
+              94,
+              18,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "And vvhite stoles vvere giuen, to euery one of them <na>[1]</na> one: and it vvas said to them, that they should rest yet a litle time, til their fellovv-seruantes be complete, and their brethren, that are to be slaine euen as they.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              134,
+              38,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "This one stole signifieth the glorie or blisse of the soule onely. but at the day of iudgement they shal haue it doubled by adding the glorie of their body also.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And I savv, vvhen he had opened the sixt seale, and <na>[1]</na> cbehold there vvas made a great earth-quake, and the sunne became blacke as it vvere sacke cloth of heare: and the vvhole moone became as bloud:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The tribulation that shal fall in the time of Antichrist.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "and the starres from heauen fel vpon the earth, as the figge tree casteth her greene figges vvhen it is shaken of a great vvinde:"
+        },
+        {
+          "verse": 14,
+          "text": "and heauen departed as a booke folded together: and euery hil, and ilandes vvere moued out of their places."
+        },
+        {
+          "verse": 15,
+          "text": "And the kinges of the earth, & princes, and tribunes, and the riche, and the strong, and euery bond-man, and free-man hid them selues in the dennes and the rockes of mountaines."
+        },
+        {
+          "verse": 16,
+          "text": "And they say to the mountaines and the rockes: <cr>[1]</cr> Fall vpon vs, and hide vs from the face of him that sitteth vpon the throne, and from the vvrath of the Lambe:",
+          "cross_refs": [
+            {
+              "text": "Osee. 10. Lu. 23, 50."
+            }
+          ],
+          "xrefs": [
+            "Lu. 23, 50."
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "because the great day of their vvrath is come, and vvho shal be able to stand?"
+        }
+      ],
+      "summary": "1 Foure seales of the seuen being opened, there folovv diuerse effectes against the earth. 9 vvhen the fifth seale vvas opened, the soules of martyrs desire that the iudgement may be hastened: 12 and at the opening of the sixt, there are signes shevved of the iudgement to come."
+    },
+    {
+      "chapter": 7,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AFTER</sc> these things I savv foure Angels standing vpon the foure corners of the earth, holding the foure vvindes of the earth that they should not blovv vpon the land, nor vpon the sea, nor on any tree."
+        },
+        {
+          "verse": 2,
+          "text": "b <na>[1]</na> And I savv an other Angel ascending from the rising of the sunne, hauing the signe of the liuing God: & he cried vvith a loud voice to the foure Angels, to vvhom it vvas giuen to hurt the earth and the sea,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle vpon Al hallovves day.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "saying, Hurt not the earth and the sea, nor the trees, til <na>[1]</na> vve signe the seruants of our God in their foreheades.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "It is an allusion to the signe of the Crosse vvhich the faithful beare in their foreheads, to shevv they be not ashamed of Christ. <i>S. August. tract. 43. in Io</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And I heard the number of them that vvere signed, an hundred fourtie foure thousand vvere signed, <na>[1]</na> cof euery tribe of the children of Israël.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Of al the tribes put together, so many, 144000.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "Of the tribe of Iuda, tvvelue thousand signed. Of the tribe of Ruben, tvvelue thousand signed. Of the tribe of Gad, tvvelue thousand signed. <na>[1]</na>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He signifieth by these thousands and the multitude folovving al the elect: but the elect of the Ievves, to be in a certaine number: the elect of the Gentiles to be innumerable.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "Of the tribe of Aser, tvvelue thousand signed. Of the tribe of Nephthali, tvvelue thousand signed. Of the tribe of Manasses, tvvelue thousand signed."
+        },
+        {
+          "verse": 7,
+          "text": "Of the tribe of Simeon, tvvelue thousand signed. Of the tribe of Leui, tvvelue thousand signed. Of the tribe of Issachar, tvvelue thousand signed."
+        },
+        {
+          "verse": 8,
+          "text": "Of the tribe of Zabulon, tvvelue thousand signed. Of the tribe of Ioseph, tvvelue thousand signed. Of the tribe of Beniamin, tvvelue thousand signed."
+        },
+        {
+          "verse": 9,
+          "text": "After these things I savv <na>[1]</na> ca great multitude vvhich no man could number, of al nations, and tribes, and peoples, & tonges: standing before the throne, and in the sight of the Lambe, clothed in vvhite robes, and <na>[2]</na> palmes in their hands:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The elect of the Gentiles.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "Boughes of the palme tree be tokens of triumph and victorie.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "And they cried vvith a lovvd voice, saying, Saluation to our God vvhich sitteth vpon the throne, and to the Lambe."
+        },
+        {
+          "verse": 11,
+          "text": "and al the Angels stoode in the circuite of the throne and of the seniors and of the foure beastes: and they fel in the sight of the throne vpon their faces, and adored God,"
+        },
+        {
+          "verse": 12,
+          "text": "saying, Amen. Benediction, and glorie, and vvisedom, & thankesgiuing, honour and povver, and strength to our God for euer and euer. Amen. ⊢"
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> And one of the seniors ansvvered, & said to me, These that are clothed in the vvhite robes, vvho be they? & vvhence came they?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for many Martyrs.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "And I said to him, My Lord thou knovvest. And he said to me, These are they vvhich are come out of great tribulation, and haue vvashed their robes, and made them vvhite in the bloud of the Lambe."
+        },
+        {
+          "verse": 15,
+          "text": "<na>[1]</na> therfore they are before the throne of God, and they serue him day and night in his temple: and he that sitteth in the throne, shal dvvel ouer them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The glorie of Martyrs.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<cr>[1]</cr> they shal no more hunger nor thirst, neither shal the sunne fall vpon them, nor any heate.",
+          "cross_refs": [
+            {
+              "text": "Esa. 49, 10."
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "because the Lambe vvhich is in the middes of the throne, shal rule them, and shal conduct them to the liuing fountaines of vvaters, and <cr>[1]</cr> God vvil vvipe avvay al teares from their eies. ⊢",
+          "cross_refs": [
+            {
+              "text": "Esa. 25, 8. Apo. 21, 4."
+            }
+          ],
+          "xrefs": [
+            "Es. 25, 8. Apo. 21, 4."
+          ]
+        }
+      ],
+      "summary": "The earth being to be punished, 3 they are commaunded to saue them that are signed in their foreheads: 4 vvhich are described and numbered both of the Ievves and Gentiles, blessing God. 13 Of them that vvere clothed in vvhite stoles or long robes."
+    },
+    {
+      "chapter": 8,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> vvhen he had opened the seuenth seale, there vvas made silence in heauen, as it vvere halfe an houre.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE 4 VISION.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And I savv seuen Angels standing in the sight of God: and there vvere giuen to them seuen trompets."
+        },
+        {
+          "verse": 3,
+          "text": "And an other Angel came, and stoode <na>[1]</na> before the altar, hauing a golden censar: and there vvere giuen to him many incenses, that he should giue of the praiers of al sainctes vpon the altar of gold, vvhich is before the throne of God.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Priest standing at the altar praying & offering for the people in the time of the high mysteries, Christ him self also being present vpon the altar, is a figure of this thing, & thereunto he alludeth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And the smoke of the incenses cof the praiers <na>[1]</na> of the sainctes ascended from the hand of the Angel before God.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "If this be S. Michael or any Angel, and not Christ him self, as some take it, Angels offer vp the praiers of the faithful, as the 24 Elders did chap. 5. for this vvord, <i>Saincts</i>, is taken here for the holy persons on earth, as often in the Scripture: though it be not against the Scriptures, that the inferior Sainct or Angel in heauen should offer their praiers to God by their superiors there. But hereby vve conclude against the Protestants, that it derogateth not from Christ, that Angels or Saincts offer our praiers to God. as also it is plaine of Raphael <i>Tob. 12, 12</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And the Angel tooke the censar, and filled it of the fire of the altar, and cast it on the earth, and there vvere made thunders & voices and lightenings, and a great earthquake."
+        },
+        {
+          "verse": 6,
+          "text": "And the seuen Angels vvhich had the seuen trompets, prepared them selues to sound vvith the trompet."
+        },
+        {
+          "verse": 7,
+          "text": "And the first Angel sounded vvith the trompet, and there vvas made haile and fire, mingled in bloud, and it vvas cast on the earth, & the third part of the earth vvas burnt, & the third part of trees vvas burnt, and al greene grasse vvas burnt."
+        },
+        {
+          "verse": 8,
+          "text": "And the second Angel sounded vvith the trompet: and as it vvere a great mountaine burning vvith fire, vvas cast into the sea, and the third part of the sea vvas made bloud:"
+        },
+        {
+          "verse": 9,
+          "text": "and the third part of those creatures died, vvhich had liues in the sea, and the third part of the shippes perished."
+        },
+        {
+          "verse": 10,
+          "text": "And the third Angel sounded vvith the trompet, and a great starre fel from heauen, burning as it vvere a torche, and it fel on the third part of the floudes, and on the fountaines of vvaters:"
+        },
+        {
+          "verse": 11,
+          "text": "and the name of the starre is called vvormevvod. and the third part of the vvaters vvas made into Worme Wod: and many men died of the vvaters, because they vvere made bitter."
+        },
+        {
+          "verse": 12,
+          "text": "And the fourth Angel sounded vvith the trompet, and the third part of the sunne vvas smitten, and the third part of the moone, and the third part of the starres, so that the third part of them vvas darkened, and of the day there shined not the third part, and of the night in like maner."
+        },
+        {
+          "verse": 13,
+          "text": "And I looked, and heard the voice of one egle flying through the middes of heauen, saying vvith a loud voice, Vvo, vvo, vvo to the inhabiters on the earth: because of the rest of the voices of the three Angels vvhich vvere to sound vvith the trompet."
+        }
+      ],
+      "summary": "1 The seuenth seale being opened, there appeare Angels vvith trompets: 5 and vvhen an other Angel povvred out fire taken from the altar, vpon the earth, there folovv diuers tempestes. 7 In like maner, vvhiles foure Angels of the seuen sound their trompets, there fall sundrie plagues."
+    },
+    {
+      "chapter": 9,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> the fifth Angel sounded vvith the trompet, and I savv <na>[2]</na> a starre to haue fallen from heauen vpon the earth, and there vvas giuen to him the key of the pitte of bottomles depth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Most vnderstand al this of Heretikes.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "The fall of an Arch-heretike, as Arius, Luther, Caluin, out of the Church of God. Which haue the key of Hel to open & bring forth al the old condemned heresies buried before in the depth.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And he opened the pitte of the bottomles depth: and the smoke of the pitte ascended, as the smoke of a great fornace: and the sunne vvas darkened & the aier vvith the smoke of the pitte."
+        },
+        {
+          "verse": 3,
+          "text": "And from the smoke of the pitte there issued forth <na>[1]</na> clocustes into the earth. and povver vvas giuen to them, as the scorpions of the earth haue povver:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Innumerable pety heretikes folowing their Maisters after the opening & the smoke of the bottomlesse pit.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "and it vvas commaunded them that they should not hurt the grasse of the earth nor any greene thing, nor any tree: but onely men vvhich haue not the signe of God in their foreheads.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              75,
+              19,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "and it vvas giuen vnto them that they should not kil them: but that they should be tormented fiue monethes: and their tormentes as the tormentes of a scorpion vvhen he striketh a man."
+        },
+        {
+          "verse": 6,
+          "text": "And <cr>[1]</cr> in those daies men shal seeke for death, and shal not finde it: and they shal desire to die, & death shal flee from them.",
+          "cross_refs": [
+            {
+              "text": "Apoc. 6, 16."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And the similitudes of the locustes, like to horses prepared into battel: and vpon their heades as it vvere crovvnes like to gold: & their faces as the faces of men.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              20,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And they had heare as the heare of vvomen: & their teeth vvere as of lions."
+        },
+        {
+          "verse": 9,
+          "text": "And they had <na>[1]</na> habbergions as habbergions of yron, and the voice of their vvinges as the voice of the chariotes of many horses running into battel.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>c coats of mail, or other coats of fence.</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "and they had tailes like to scorpions, and stinges vvere in their tailes: and their povver vvas to hurt men fiue monethes."
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> and they had ouer them a king, the Angel of the bottomles depth, vvhose name in Hebrevv is <i>Abaddon</i>, and in Greeke <i>Apollyon</i>: in Latin hauing the name <i>Exterminans</i>. <na>[2]</na>",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The cheefe Maister of heretikes.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>אבדוןἀπολλύων,</i> In English, <i>Destroyer.</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "One vvoe is gone, & behold two vvoes come yet after these."
+        },
+        {
+          "verse": 13,
+          "text": "And the sixt Angel sounded vvith the trompet: and I heard one voice from the foure hornes of the golden altar, vvhich is before the eies of God,"
+        },
+        {
+          "verse": 14,
+          "text": "saying to the sixt Angel vvhich had the trompet, Loose the foure Angels vvhich are bound in the great riuer Euphrates."
+        },
+        {
+          "verse": 15,
+          "text": "And the foure Angels vvere loosed, vvho vvere prepared for an houre, and a day and a moneth and a yere: that they might kil the third part of men."
+        },
+        {
+          "verse": 16,
+          "text": "And the number of the armie of horsemen vvas tvventie thousand times ten thousand. And I heard the number of them."
+        },
+        {
+          "verse": 17,
+          "text": "And so I savv the horses in the vision: & they that sate vpon them, had habbergions of fire and of hyacinth and brimstone. & the heades of the horses vvere as it vvere the heads of lions: & from their mouth procedeth fire, & smoke, and brimstone."
+        },
+        {
+          "verse": 18,
+          "text": "And by these three plagues vvas slaine the third part of men,, of the fire and of the smoke and of the brimstone, vvhich proceded from their mouth."
+        },
+        {
+          "verse": 19,
+          "text": "For the povver of the horses is in their mouth, and in their tailes. for, their tailes be like to serpents, hauing heads: and in these they hurt."
+        },
+        {
+          "verse": 20,
+          "text": "<na>[1]</na> cAnd the rest of men vvhich vvere not slaine vvith these plagues, neither <na>[2]</na> haue done penance from the vvorkes of their hands, not to adore Deuils and Idols of gold and siluer and brasse and stone and vvood, vvhich neither can see, nor heare, nor vvalke,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              168,
+              13,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Pagans, Infidels, and sinful impenitent Catholikes must be condemned also.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "This phrase being the like both in greeke and latin, signifieth such sorowful & penal repentance as causeth a man to forsake his former sinnes and depart from them. <i>οὐ μετενόησαν ἐκ τῶν ἔργων</i>. See the same phrase. <i>c. 2, 21, 22. & Act. 8. v. 22</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "& haue not done penance from their murders, nor from their sorceries, nor from their fornication, nor from their theftes."
+        }
+      ],
+      "summary": "The fifth Angel sounding the trompet, a starre falleth. 3 The issuing forth of locustes from the smoke of the deepe pitte to vexe men, 7 and the description of them. 13 The sixt Angel sounding, foure Angels are let loose; 18 vvhich vvith a great troupe of horsemen do murder the third part of men."
+    },
+    {
+      "chapter": 10,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> I savv an other Angel, strong, descending from heauen, clothed vvith a cloude, and a raine-bovv on his head, and his face vvas as the sunne, and his feete as <na>[2]</na> <alt>`a piller</alt>' of fire.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "CHRIST the valiant Angel is here described.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>pillars</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "and he had in his hand a litle booke opened: and he put his right foote vpon the sea, and his left vpon the land."
+        },
+        {
+          "verse": 3,
+          "text": "and he cried vvith a loude voice, as vvhen a lion roareth. And vvhen he had cried, the seuen thunders spake their voices."
+        },
+        {
+          "verse": 4,
+          "text": "And vvhen the seuen thunders had spoken their voices, I vvas about to vvrite: and I heard a voice from heauen saying to me: Signe the things vvhich the seuen thunders haue spoken: and <na>[1]</na> vvrite them not.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Many great mysteries and truthes are to be preserued in the Church, vvhich for causes knovven to Gods prouidence are not to be vvritten in the booke of holy Scripture.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And <cr>[1]</cr> the Angel vvhich I savv standing vpon the sea and vpon the land, <na>[2]</na> clifted vp his hand to heauen,",
+          "cross_refs": [
+            {
+              "text": "Dan. 12, 7."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Dan. 12, 7. · This vvas the maner of taking an othe by the true God. as Deut. 32.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "and he svvare by him that liueth for euer and euer, that created heauen and those things vvhich are in it: and the earth, and those things vvhich are in it: and the sea, and those things vvhich are in it: That there shal be time no more:"
+        },
+        {
+          "verse": 7,
+          "text": "but in the daies of the voice of the seuenth Angel, vvhen the trompet shal beginne to sound, the mysterie of God shal be consummate, as he hath euangelized by his seruantes the Prophetes."
+        },
+        {
+          "verse": 8,
+          "text": "And I heard a voice from heauen againe speaking vvith me, and saying: Goe, and take the booke that is opened, of the hand of the Angel standing vpon the sea and vpon the land."
+        },
+        {
+          "verse": 9,
+          "text": "And I vvent to the Angel, saying vnto him, that he should giue me the booke. And he said to me, <cr>[1]</cr> Take the booke, and <na>[2]</na> cdeuoure it: and it shal make thy belly to be bitter, but in thy mouth it shal be <na>[3]</na> svveete as it vvere honie.",
+          "cross_refs": [
+            {
+              "text": "Ezec. 3, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "c By earnest study and meditation.",
+              "kind": "gloss"
+            },
+            {
+              "label": "3",
+              "text": "Ezec. 3, 1. · By earnest studie and meditation. · Svveete in the reading, but in fulfilling, somevvhat bitter, because it commaundeth vvorkes of penance and suffering of tribulations.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "And I tooke the booke of the hand of the Angel, and deuoured it: & it vvas in my mouth as it vvere honie, svveete. and vvhen I had deuoured it, my bellie vvas made bitter,"
+        },
+        {
+          "verse": 11,
+          "text": "and he said to me, Thou must againe prophecie to Nations, and peoples, and tonges, and many kinges."
+        }
+      ],
+      "summary": "An other strong Angel crying out, 3 seuen thunders do speake. 6 The Angel sweareth that there shal be time no more, but at the voice of the seuenth Angel the mysterie shal be fully accomplished. 9 He giueth Iohn a booke to deuoure."
+    },
+    {
+      "chapter": 11,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> there vvas giuen me a reede like vnto a rodde: and it vvas said to me, Arise, and measure the temple of God, and the altar, and them that adore in it."
+        },
+        {
+          "verse": 2,
+          "text": "but the court vvhich is vvithout the temple, cast forth, & measure not that: because it is giuen to the Gentiles, & they shal treade vnder foote the holy citie <na>[1]</na> two and fourtie monethes:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Three yeres and a halfe. vvhich is the time of Antichrists reigne and persecution.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "and I vvil giue to my tvvo vvitnesses, and they shal prophecie a thousand tvvo hundred sixtie daies, clothed vvith sacke-clothes.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "These are the tvvo oliue trees and the tvvo candlestickes that stand in the sight of the Lord of the earth."
+        },
+        {
+          "verse": 5,
+          "text": "And if any man vvil hurt them, fire shal come forth out of their mouthes, and shal deuoure their enemies. and if any man vvil hurt them: so must he be slaine."
+        },
+        {
+          "verse": 6,
+          "text": "These haue povver to shut heauen, that it raine not in the daies of their prophecie: and they haue povver ouer the vvaters to turne them into bloud, and to strike the earth vvith al plague as often as they vvil."
+        },
+        {
+          "verse": 7,
+          "text": "And vvhen they shal haue finished their testimonie: the <na>[1]</na> beast vvhich ascended from the depth, shal make vvarre against them, and shal ouercome them, and kil them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The great Antichrist.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And their bodies shal lie in the streates of the <na>[1]</na> cgreat citie, vvhich is called spiritually Sodom and Ægypt, vvhere their Lord also vvas crucified.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He meaneth Hierusalem, named Sodom and Ægypt for the imitation of thē in vvickednes. So that vve see his cheefe reigne shal be there, though his tyrannie may extend to al places of the vvorld.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And there shal of tribes, and peoples, and tonges, and Gentiles, see their bodies for three daies and a halfe: and they shal not suffer their bodies to be laid in monuments."
+        },
+        {
+          "verse": 10,
+          "text": "and the inhabitants of the earth <na>[1]</na> shal be glad vpon them, and make merie: and shal send giftes one to an other, because these tvvo prophets tormented them that dvvelt vpon the earth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The vvicked reioyce, vvhen holy men are executed by the tyrants of the vvorld, because their life and doctrine are burdenous vnto them.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "And after three daies and a halfe, the spirit of life from God entred into them. And they stoode vpon their feete, and great feare fel vpon them that savv them."
+        },
+        {
+          "verse": 12,
+          "text": "And they heard a loud voice from heauen saying to them, Come vp hither. And they vvent vp into heauen in a cloude: and their enemies savv them."
+        },
+        {
+          "verse": 13,
+          "text": "And in that houre there vvas made a great earthquake: and the tenth part of the citie fel: and there vvere slaine in the earthquake names of men seuen thousand: and the rest vvere cast into a feare, and gaue glorie to the God of heauen."
+        },
+        {
+          "verse": 14,
+          "text": "The second vvoe is gone: and behold the third vvoe vvil come quickly."
+        },
+        {
+          "verse": 15,
+          "text": "And the seuenth Angel sounded vvith a trompet: and there vvere made loude voices in heauen saying, <na>[1]</na> The kingdom of this vvorld is made our Lords & his Christs, and he shal reigne for euer and euer. Amen.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The kingdom of this vvorld vsurped before by Satan & Antichrist, shal aftervvard be Christes for euer.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "And the foure and tvventie seniours vvhich sitte on their seates in the sight of God, fel on their faces, and adored God,"
+        },
+        {
+          "verse": 17,
+          "text": "saying: Vve thanke thee Lord God omnipotent, vvhich art, and vvhich vvast, and vvhich shalt come: because thou hast receiued thy great povver, and hast reigned."
+        },
+        {
+          "verse": 18,
+          "text": "And the Gentiles vvere angrie, and thy vvrath is come, and the time of the dead, to be iudged, and <na>[1]</na> to render revvard to thy seruants the prophets and sainctes, and to them that feare thy name, litle and great, and to destroy them that haue corrupted the earth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "To repay the hire or vvages (for so both the Greeke vvord and the latin signifie) due to holy men, proueth against the protestants, that they did truely merite the same in this life.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "And the temple of God vvas opened in heauen: and the arke of his testament vvas seen in his temple, and there vvere made lightenings, and voices, and an earthquake and greate haile."
+        }
+      ],
+      "summary": "S. Iohn measuring the Temple, 3 heareth of two witnesses that shal preache: 7 whom the beast comming vp from the sea shal kil. 11 but they rising againe ascend into heauen, 13 and seuen thousand persons are slaine with an earthquake: 15 and at the sound of the seuenth Angel, the foure and twentie seniors giue praise and thankes to God."
+    },
+    {
+      "chapter": 12,
+      "verses": [
+        {
+          "verse": 0,
+          "text": "Michael fighting with the dragon overcometh him, 13. <i>who being thrown down to the earth, persecuteth the woman & her seed.</i>"
+        },
+        {
+          "verse": 1,
+          "text": "AND <na>[1]</na> a great signe appeared in heauen: <na>[2]</na> a vvoman clothed vvith the sunne, and the moone vnder her feete, & on her head a crovvne of tvvelue starres:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE 3 PART. The Dragons incredulous & persecuting multitude, and Antichrist the cheefe head thereof.",
+              "kind": "head"
+            },
+            {
+              "label": "2",
+              "text": "This is properly & principally spoken of the Church: and by allusion, of our B. Lady also.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "& being vvith childe, she cried also traueling, and is in anguish to be deliuered."
+        },
+        {
+          "verse": 3,
+          "text": "And there vvas seen an other signe in heauen, and behold <na>[1]</na> ca great red dragon hauing seuē heades, & ten hornes: and on his heades seuen diademes,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c The great Devil Lucifer.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "& his taile drevv <na>[1]</na> the third part of the starres of heauen, and cast them to the earth, and the dragon stoode before the vvoman vvhich vvas ready to be deliuered: that vvhen she should be deliuered, he might <na>[2]</na> cdeuoure her sonne.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The spirites that fall from their first state into Apostasie vvith him and by his meanes.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "The Diuels endeuour against the Churches children, and specially our B. Ladies onely sonne the head of the rest.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And she brought forth a man childe, vvho vvas <cr>[1]</cr> to gouerne al nations in an yron rodde: & her sonne vvas taken vp to God and to his throne,",
+          "cross_refs": [
+            {
+              "text": "Ps. 2, 9. Apoc. 2, 27."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "& the vvoman fled into the vvildernesse vvhere she had a place prepared of God, that there they might feede her a thousand tvvo hundred sixtie daies.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              2,
+              14,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And there vvas made a great battel in heauen, Michael and his Angels fought vvith the dragon, and the dragon fought and his Angels:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              14,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "and they preuailed not, neither vvas their place found any more in heauen."
+        },
+        {
+          "verse": 9,
+          "text": "And that great dragon vvas cast forth, the old serpent, vvhich is called the Deuil and Satan, vvhich seduceth the vvhole vvorld: and he vvas cast into the earth, & his Angels vvere throvven dovvne vvith him."
+        },
+        {
+          "verse": 10,
+          "text": "And I heard a great voice in heauen saying: Novv is there made saluation and force, and the kingdom of our God, and the povver of his Christ: because the accuser of our brethren is cast forth, vvho accused them before the sight of our God day and night."
+        },
+        {
+          "verse": 11,
+          "text": "And <na>[1]</na> they ouercame him by the bloud of the Lambe, and by the vvord of their testimonie, and they loued not their liues euen vnto death.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Vvhen the Angels or vve haue the victorie, vve must knovv it is by the bloud of Christ, and so al is referred alvvaies to him.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "Therfore reioyce ô heauens, and you that dvvel therein. Vvo to the earth and to the sea, because the Diuel is descended to you, hauing great vvrath, knovving that he hath a litle time."
+        },
+        {
+          "verse": 13,
+          "text": "And after the dragon savv that he vvas throvven into the earth, he persecuted the vvoman vvhich brought forth the man-childe:"
+        },
+        {
+          "verse": 14,
+          "text": "and there vvere giuen to the vvoman tvvo vvinges of a great egle, that shee might flie into the desert vnto her place, vvhere she is nourished for <na>[1]</na> a time & times, & halfe a time, from the face of the serpent.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This often insinuation that Antichrists reigne shal be but three yeres & a halfe (Dan. 7, 25. Apoc. 11, 2. 3. & in this chap. v. 6. c. 13, 5.) proueth that the heretikes be excedingly blinded vvith malice, that hold the Pope to be Antichrist, who hath ruled so many ages.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And the serpent cast out of his mouth after the vvoman, vvater as it vvere a floud: that he might make her to be caried avvay vvith the floud.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              104,
+              18,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "And the earth holpe the vvoman, and the earth opened her mouth, and svvallovved vp the floud vvhich the dragon cast out of his mouth."
+        },
+        {
+          "verse": 17,
+          "text": "And the dragon vvas angrie against the vvoman: and vvent to make battel vvith the rest of her seede, vvhich keepe the commaundements of God, and haue the testimonie of <sc>IESVS</sc> Christ."
+        },
+        {
+          "verse": 18,
+          "text": "And he stood vpon the sand of the sea."
+        }
+      ],
+      "summary": "4 The great dragon (the Diuel) vvatching the vvoman that brought forth a man childe, to deuoure it. God tooke avvay the childe to him self, and fed the vvoman in the desert. 7 Michael fighting vvith the dragon ouercometh him. 13 Vvho being throvven dovvne to the earth, persecuteth the vvoman & her seede."
+    },
+    {
+      "chapter": 13,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> I savv a beast comming vp from the sea, hauing seuen heades, and ten hornes, & vpon his hornes ten diademes, and vpon his heades names of blasphemie.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              17,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And the beast vvhich I savv, vvas like to a libarde, and his feete as of a beare, and his mouth, as the mouth of a lion. And the dragon gaue him his ovvne force and great povver."
+        },
+        {
+          "verse": 3,
+          "text": "And I savv one of his heades as it vvere slaine to death: and the vvound of his death vvas cured. And al the earth vvas <na>[1]</na> in admiration after the beast.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "They that now folovv the simplest & grossest heretikes that euer vvere vvithout seeing miracles, vvould then much more folovv this great seducer vvorking miracles.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And they adored the dragon vvhich gaue povver to the beast: and they adored the beast, saying, Vvho is like to the beast? and vvho shal be able to fight vvith it?"
+        },
+        {
+          "verse": 5,
+          "text": "And there vvas giuen to it a mouth speaking great things and blasphemies: and povver vvas giuen to it to vvorke tvvo and fourtie monethes."
+        },
+        {
+          "verse": 6,
+          "text": "And he opened his mouth vnto blasphemies tovvard God, <na>[1]</na> to blaspheme his name, and his tabernacle, and those that dvvel in heauen.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "No heretikes euer liker Antichrist, then these in our daies, specially in blasphemies against Gods Church, Sacraments, Sainctes, ministers, and al sacred thinges.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And it vvas giuē vnto him to make battail vvith the sainctes, & to ouercome them. And povver vvas giuen him vpon euery tribe and people, and tongue, and nation,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              31,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "and al that inhabite the earth, adored it, <cr>[1]</cr> vvhose names be not vvritten in the booke of life of the Lambe, vvhich vvas slaine from the beginning of the vvorld.",
+          "cross_refs": [
+            {
+              "text": "Apoc. 3, 5."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "If any man haue an eare, let him heare."
+        },
+        {
+          "verse": 10,
+          "text": "He that shal leade into captiuitie, goeth into captiuitie: <cr>[1]</cr> he that shal kil in the svvord, he must be killed vvith the svvord. here is the patience and the faith of sainctes.",
+          "cross_refs": [
+            {
+              "text": "Gen. 9, 6. Mt. 26, 52."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "And I savv <na>[1]</na> an other beast comming vp from the earth: and he had tvvo hornes, like to a lambe, & he spake as a dragon.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "An other false prophet inferior to Antichrist, shal vvorke vvonders also, but al referred to the honour of his maister Antichrist. So doth Caluin & other Arch-heretikes peruert the vvorld to the honour of Antichrist, and so do their scholers also for the honour of them.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And al the povver of the former beast he did in his sight: and he made the earth and the inhabitants therein, to adore the first beast, vvhose vvound of death vvas cured."
+        },
+        {
+          "verse": 13,
+          "text": "And he did many signes, so that he made also fire to come dovvne from heauen vnto the earth in the sight of men."
+        },
+        {
+          "verse": 14,
+          "text": "And he seduceth the inhabitants on the earth through the signes vvhich vvere giuē him to doe in the sight of the beast, saying to them that dvvel on the earth, that they should make the image of the beast vvhich hath the stroke of the svvord, and liued.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              179,
+              22,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And it vvas giuen him to giue spirit to the image of the beast, and that the image of the beast should speake: and should make, that vvhosoeuer shal not adore the image of the beast, be slaine."
+        },
+        {
+          "verse": 16,
+          "text": "And he shal make al, litle & great, and rich, and poore, and free-men, and bond-men, to haue a character in their right hand, or in their foreheads."
+        },
+        {
+          "verse": 17,
+          "text": "and that no man may bie or sel, but he that hath the character, or the name of the beast, or the number of his name.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              26,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "Here is vvisdom. He that hath vnderstanding, let him count the number of the beast. For it is the number of a man: & the number of him is sixe hundred sixtie sixe.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              44,
+              13,
+              1
+            ],
+            [
+              58,
+              10,
+              4
+            ],
+            [
+              87,
+              25,
+              2
+            ]
+          ]
+        }
+      ],
+      "summary": "1 A beast rising vp out of the sea, hauing seuen heades and ten hornes & ten diademes, 5 blasphemeth God, 7 and vvarreth against the Saincts & destroieth them. 11 And an other beast rising out of the earth vvith tvvo hornes, vvas altogether for the foresaid beast, constraining men to make and adore the image thereof, and to haue the character of his name."
+    },
+    {
+      "chapter": 14,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> I looked, & behold <na>[2]</na> a Lambe stoode vpon mount Sion, and vvith him an hundred fourtie foure thousand hauing his name, and the name of his Father vvritten in their foreheads.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle vpon S. Innocents day in Christmas.",
+              "kind": "lectionary"
+            },
+            {
+              "label": "2",
+              "text": "Christ, and the same number of elect that vvere signed <i>chap. 7</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And I heard a voice from heauen, as the voice of many vvaters, and as the voice of great thunder: and the voice vvhich I heard, as of harpers harping on their harpes."
+        },
+        {
+          "verse": 3,
+          "text": "And they sang as it vvere a nevv song before the seate and before the foure beastes, and the seniors, and no man could <na>[1]</na> <alt>say</alt> the song, but those hundred fourtie foure thousand, that vvere bought from the earth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>learne μαθεῖν</i>,",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "These are they vvhich vvere not defiled vvith vvomen. For they are <na>[1]</na> virgins. These folovv the Lambe vvhithersoeuer he shal goe. These vvere bought from among men, <na>[2]</na> cthe first fruites to God and the Lambe:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "One state of life more excellent then an other. and virgins for their puritie passing the rest, & al vvaies accompanying Christ according to the Churches hymne out of this place, <i>Quocunque pergit, virgines sequuntur &c</i>.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "This the Church applieth to the holy Innocents that died first for Christ.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "and in their mouth there vvas found no lie. for they are vvithout spot before the throne of God. ⊢"
+        },
+        {
+          "verse": 6,
+          "text": "And I savv an other Angel flying through the middes of heauen, hauing the eternal Gospel, to euangelize vnto them that sit vpon the earth, and vpon euery nation, and tribe, & tōge, & people:"
+        },
+        {
+          "verse": 7,
+          "text": "saying vvith a loud voice, Feare our Lord, and giue him honour, because the houre of his iudgement is come: and adore ye him <cr>[1]</cr> that made heauen and earth, the sea and al things that are in them, and the fountaines of vvaters.",
+          "cross_refs": [
+            {
+              "text": "Ps. 145. Act. 14."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And an other Angel folovved, saying, <cr>[1]</cr> Fallen fallen is that great <na>[2]</na> Babylon, vvhich of the vvine of the vvrath of her fornication made al nations to drinke.",
+          "cross_refs": [
+            {
+              "text": "Esa. 21. Ier. 51. Apo. 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Esa. 21. Ier. 51. Apo. 18. · The citie of the diuel, vvhich is the vniuersal societie of the vvicked misbeleuers & il liuers in the vvorld.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And the third Angel folovved them, saying vvith a loud voice, If any man adore the beast and his image, and receiue the character in his forehead, or in his hand:"
+        },
+        {
+          "verse": 10,
+          "text": "<na>[1]</na> he also shal drinke of the vvine of the vvrath of God, vvhich is mingled vvith pure vvine in the cuppe of his vvrath, and shal be tormented vvith fire & brimstone in the sight of the holy Angels and before the sight of the Lambe.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The great damnation that shal folovv them that forsake Christ & the Church, & vvorship Antichrist or his image.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "and the smoke of their tormentes shal ascend for euer & euer: neither haue they rest day and night, vvhich haue adored the beast, and his image, and if any man take the character of his name."
+        },
+        {
+          "verse": 12,
+          "text": "Here is the patience of sainctes, vvhich <na>[1]</na> keepe the commaundementes of God and the faith of <sc>IESVS</sc>.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Faith is not ynough to saluation, vvithout fulfilling of Gods commaundements.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> And I heard a voice from heauen, saying to me, Vvrite, Blessed are the dead vvhich die in our Lord. from hence forth novv, saith the Spirit, that they rest from their labours. for their vvorkes folovv them.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              111,
+              20,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in a daily Masse for the dead.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "And I savv, and behold a vvhite cloude: and vpon the cloude one sitting like to the Sonne of man, hauing on his head a crovvne of gold, and in his hand a sharpe sickle."
+        },
+        {
+          "verse": 15,
+          "text": "And an other Angel came forth from the temple, crying vvith a loud voice to him that sate vpon the cloude, <cr>[1]</cr> Thrust in thy sickle, and reape, because the houre is come to reape, for the haruest of the earth is drie.",
+          "cross_refs": [
+            {
+              "text": "Ioel 3. Mat. 13."
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "And he that sate vpon the cloude, thrust his sickle into the earth, and the earth vvas reaped."
+        },
+        {
+          "verse": 17,
+          "text": "And an other Angel came forth from the temple vvhich is in heauen, him self also hauing a sharpe sickle."
+        },
+        {
+          "verse": 18,
+          "text": "And an other Angel came forth from the altar, vvhich had povver ouer the fite: and he cried vvith a loud voice to him that had the sharpe sickle, saying, Thrust in thy sharpe sickle, and gather the clusters of the vineyard of the earth: because the grapes thereof be ripe."
+        },
+        {
+          "verse": 19,
+          "text": "And the Angel thrust his sharpe sickle into the earth, and gathered the vineyard of the earth, & cast it into the great <na>[1]</na> cpresse of the vvrath of God:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>ληνὸν lacum, fat, trough, lake</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "and the presse vvas troden vvithout the citie, and bloud came forth out of the presse, vp to the horse bridles, for a thousand sixe hundred furlongs."
+        }
+      ],
+      "summary": "1 Virgins follovv the Lambe vvhithersoeuer, singing a nevv canticle. 6 One Angel Euangelizeth the Gospel: 8 an other Angel telleth the fall of Babylon: 9 the third declareth their torments that haue adored the beast. Moreouer tvvo hauing sickles, 15 one of them is commaunded to reape dovvne the corne, 18 the other to gather the grapes as in vintage, vvhich are troden in the lake of Gods vvrath."
+    },
+    {
+      "chapter": 15,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> I savv an other signe in heauen great and maruelous: seuen Angels hauing the seuen last plagues. Because in them the vvrath of God is consummate.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The tribulations about the day of iudgement.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And I savv as it vvere <na>[1]</na> ca sea of glasse mingled vvith fire, and them that ouercame the beast and his image and the number of his name, standing vpon the sea of glasse, hauing the harpes of God:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Baptism.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "and singing <na>[1]</na> the song of Moyses the seruant of God, and the song of the Lambe, saying, Great and maruelous are thy vvorkes Lord God omnipotent: iust and true are thy vvaies King of the <na>[2]</na> <alt>vvorldes</alt>.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The song of Moyses and Christ, is the new Testament and the old.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>Saincts</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "Vvho shal not feare thee o Lord, and magnifie thy name? because thou only art holy, because al nations shal come, & adore in thy sight, because thy iudgements be manifest."
+        },
+        {
+          "verse": 5,
+          "text": "<na>[1]</na> And after these things I looked, and behold the temple of the tabernacle of testimonie vvas opened in heauen:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE FIFTH VISION.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "and there issued forth the seuen Angels, hauing the seuen plagues, from the temple: reuested vvith cleane and vvhite <na>[1]</na> <alt>stone</alt>, & girded about the breastes vvith girdles of gold.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>linen, λίνον, λίθον</i>.",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And one of the foure beastes, gaue to the seuen Angels seuen vials of gold ful of the vvrath of the God that liueth for euer and euer."
+        },
+        {
+          "verse": 8,
+          "text": "And the temple vvas filled vvith smoke at the maiestie of God, and at his povver: and no man could enter into the temple, til the seuen plagues of the seuen Angels vvere consummate."
+        }
+      ],
+      "summary": "2 They that had novv ouercome the beast and his image and the number of his name, do glorifie God. 6 To seuen Angels hauing the seuen last plagues, are giuen seuen cuppes full of the vvrath of God.<na>[1]</na> ",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "THE 4. PART. Of the last plagues & final damnation of the wicked."
+        }
+      ]
+    },
+    {
+      "chapter": 16,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> I heard a great voice out of the temple, saying to the seuen Angels: Goe, and poure out the seuen vials of the vvrath of God vpon the earth."
+        },
+        {
+          "verse": 2,
+          "text": "And the first vvent, and poured out his vial vpon the earth, and there vvas made a cruel and very sore vvound vpon men that had the character of the beast: and vpon them that adored the image thereof."
+        },
+        {
+          "verse": 3,
+          "text": "And the second Angel poured out his vial vpon the sea, and there vvas made bloud as it vvere of one dead: and euery liuing soul died in the sea."
+        },
+        {
+          "verse": 4,
+          "text": "And the third poured out his vial vpon the riuers & the fountaines of vvaters: and there vvas made bloud."
+        },
+        {
+          "verse": 5,
+          "text": "And I heard the Angel of the vvaters, saying: Thou art iust ô Lord, vvhich art, and vvhich vvast, the holy one, because thou hast iudged these things:"
+        },
+        {
+          "verse": 6,
+          "text": "<na>[1]</na> because they haue shed the bloud of the Sainctes and Prophets, & thou hast giuen them bloud to drinke. for they are vvorthie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The great reuenge that God vvil doe at the later day vpon the persecutors of his Saincts.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And I heard an other, saying: Yea Lord God omnipotent, true and iust are thy iudgements."
+        },
+        {
+          "verse": 8,
+          "text": "And the fourth Angel poured out his vial vpon the sunne, and it vvas giuen vnto him to afflict men vvith heate and fire:"
+        },
+        {
+          "verse": 9,
+          "text": "and men boiled vvith great heate, and <na>[1]</na> blasphemed the name of God hauing povver ouer these plagues, neither did they penance to giue him glorie.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The desperate and damned persons shal blaspheme God perpetually, vvhich shal be such onely as do not repent in this life.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "And the fift Angel poured out his vial vpon the seate of the beast: and his kingdom vvas made darke, and they together did eate their tonges for paine:"
+        },
+        {
+          "verse": 11,
+          "text": "& they blasphemed the God of heauen because of their paines and vvoundes, & <na>[1]</na> cdid not penance from their vvorkes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "See chap. <i>9. v. 20</i> in the margent.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And the sixt Angel poured out his vial vpon that great riuer Euphrâtes: and dried vp the vvater thereof that a vvay might be prepared to the kings from the rising of the sunne."
+        },
+        {
+          "verse": 13,
+          "text": "And I savv from the mouth <na>[1]</na> of the dragon, and from the mouth of the beast, and from the mouth of the false-prophet <na>[2]</na> <alt>three</alt> vncleane spirites in maner of frogges.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The dragon, is the Diuel: the beast, Antichrist, or the societie vvherof he is head: the false-prophet, either Antichrist him self, or the companie of Heretikes and seducers that follovv him.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>issue forth three</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "For they are the spirites of Diuels vvorking signes, and they goe forth to the kings of the vvhole earth to gather them into battel at the great day of the omnipotent God."
+        },
+        {
+          "verse": 15,
+          "text": "Behold <cr>[1]</cr> I come as a theefe: Blessed is he that vvatcheth, & keepeth his garments, that he <cr>[2]</cr> vvalke not naked, and they see his turpitude.",
+          "cross_refs": [
+            {
+              "text": "Apoc. 3."
+            },
+            {
+              "text": "2. Cor. 5, 3."
+            },
+            {
+              "text": "Apoc. 3. 2 Cor. 5:3",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "And he shal gather them into a place vvhich in Hebrevv is called <na>[1]</na> Armagedon.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c <i>The hill of sheaves,</i> by S. Hierom's interpretation.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "And the seuenth Angel poured out his vial vpon the aire, and there came forth a loud voice out of the temple from the throne, saying: It is done."
+        },
+        {
+          "verse": 18,
+          "text": "And there vvere made lighteninges, and voices, and thunders, and a great earthquake vvas made, such an one as neuer hath been since men vvere vpon the earth, such an earthquake, so great."
+        },
+        {
+          "verse": 19,
+          "text": "and <cr>[1]</cr> the great citie vvas made into three partes: and the cities of the Gentiles fel. And Babylon the great came into memorie before God, <na>[2]</na> to giue her the cuppe of vvine of the indignation of his vvrath.",
+          "cross_refs": [
+            {
+              "text": "Ier. 25, 15."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The citie or commonvvealth of the vvicked deuided into three partes: into infidels, Heretikes, and euil Catholikes. This citie is here called Babylon, vvhereof see the Annotat. vpon the next chapter <i>v. 5</i>. · Ier. 25, 15.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "And euery Iland fled, and mountaines vvere not found."
+        },
+        {
+          "verse": 21,
+          "text": "And great haile like a talent came dovvne from heauen vpon men: and men blasphemed God for the plague of the haile: because it vvas made exceeding great."
+        }
+      ],
+      "summary": "Vpon the povvring out of the seuen cuppes of Gods vvrath, on the land, the sea, the fountaines, the seat of the beast, Euphrâtes and the aire: there arise sundrie plagues in the vvorld."
+    },
+    {
+      "chapter": 17,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> there came one of the seuen Angels which had the seuen vials, & spake vvith me, saying, Come, I vvil shevv thee <na>[1]</na> the damnation of the great harlot, vvhich sitteth vpon <na>[2]</na> cmany vvaters,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The final damnation of the vvhole companie of the reprobate, called here the great vvhore.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "These many vvaters are many peoples. <i>v. 15</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "vvith vvhom the kings of the earth haue fornicated, and they vvhich inhabite the earth haue been drunke of the vvine of her vvhoredom."
+        },
+        {
+          "verse": 3,
+          "text": "And he tooke me avvay in spirit into the desert. And I savv a vvoman sitting vpon a scarlet coloured beast, ful of names of blasphemie, hauing seuen heades, and ten hornes."
+        },
+        {
+          "verse": 4,
+          "text": "And the vvoman vvas clothed round about vvith purple and scarlet, and gilted vvith gold, and pretious stone, and pearles, hauing a golden cup in her hand, ful of the abomination & filthines of her fornication."
+        },
+        {
+          "verse": 5,
+          "text": "And in her forehead a name vvritten, <i>Mysterie</i>: Babylon the great, mother of the fornications and the abominations of the earth.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              7,
+              4
+            ],
+            [
+              52,
+              7,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "And I savv the vvoman drunken of the bloud of the Sainctes, and of the bloud of the martyrs of <sc>IESVS</sc>. And I marueled vvhen I had seen her, vvith great admiration.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              20,
+              20,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And the Angel said to me, Vvhy doest thou maruel? I vvil tel thee the mysterie of the vvoman, and of the beast that carieth her, vvhich hath the seuen heades and the ten hornes."
+        },
+        {
+          "verse": 8,
+          "text": "The beast vvhich thou savvest, <na>[1]</na> vvas, and is not, and shal come vp out of the bottomeles depth, and goe into destruction: and the inhabitants on the earth (vvhose names are not vvritten in the booke of life from the making of the vvorld) shal maruel, seeing the beast that vvas, and is not.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "It signifieth the short reigne of Antichrist, vvho is the cheefe horne or head of the beast.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And here is vnderstanding, that hath vvisedom. The seuen heades: are seuen hilles, vpon vvhich the vvoman sitteth, and they are seuen kings.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              66,
+              11,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "Fiue are fallen, one is, and an other is not yet come: & vvhen he shal come, he must tarie a short time."
+        },
+        {
+          "verse": 11,
+          "text": "And the beast vvhich vvas, & is not: the same also is the eight, and is of the seuen, & goeth into destruction.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              37,
+              26,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And the ten hornes vvhich thou savvest: are <na>[1]</na> ten kings, vvhich haue not yet receiued kingdom, but <na>[2]</na> <alt>shal</alt> receiue povver as kings one houre after the beast.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Some expound it of ten smal kingdoms, into vvhich the Romane Empire shal be deuided, vvhich shal al serue Antichrist both in his life and a litle after.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "doe",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "These haue one counsel and force: and their povver they shal deliuer to the beast."
+        },
+        {
+          "verse": 14,
+          "text": "These shal fight vvith the Lambe, and the Lambe shal ouercome them, because <cr>[1]</cr> he is Lord of lordes, and King of kinges, and they that are vvith him, called, and elect, and faithful.",
+          "cross_refs": [
+            {
+              "text": "1. Tim. 6, 15. Apo. 19, 16."
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And he said to me, The vvaters vvhich thou savvest vvhere the harlot sitteth: are peoples, and nations, and tonges."
+        },
+        {
+          "verse": 16,
+          "text": "And the ten hornes vvhich thou savvest in the beast: these shal hate the harlot, and shal make her desolate and naked, and shal eate her flesh, and her they shal burne vvith fire."
+        },
+        {
+          "verse": 17,
+          "text": "for <na>[1]</na> God hath giuen into their hartes, to doe that vvhich pleaseth him: that they giue their kingdom to the beast, til the vvordes of God be cōsummate.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Not forcing or moouing any to folow Antichrist, but by his iust iudgement, & for punishment of their sinnes, permitting the malicious to beleeue and consent to him.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "And the vvoman vvhich thou savvest: is the great citie, vvhich hath kingdom ouer the kinges of the earth.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              36,
+              14,
+              1
+            ]
+          ]
+        }
+      ],
+      "summary": "The harlot Babylon clothed vvith diuers ornaments, 6 and drunken of the bloud of Martyrs, sitteth vpon a beast that hath seuen heades and ten hornes: 7 al vvhich things the Angel expoundeth."
+    },
+    {
+      "chapter": 18,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> after these things I savv an other Angel coming dovvne from heauen, hauing great povver: & the earth vvas illuminated of his glorie."
+        },
+        {
+          "verse": 2,
+          "text": "And he cried out in force, saying, <cr>[1]</cr> Fallen fallen is Babylon the great: and it is become the habitation of Deuils, and <na>[2]</na> cthe custodie of euery vncleane spirit, and the custodie of euery vncleane and hateful bird:",
+          "cross_refs": [
+            {
+              "text": "Apo. 14, 8."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "<i>c φυλακὴ</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "because al nations haue drunke of the vvine of the vvrath of her fornication: and the kings of the earth haue fornicated vvith her: and the marchants of the earth vvere made riche by the vertue of her delicacies."
+        },
+        {
+          "verse": 4,
+          "text": "And I heard an other voice from heauen, saying, Goe out from her my people: that you be not partakers of her sinnes, and receiue not of her plagues."
+        },
+        {
+          "verse": 5,
+          "text": "Because her sinnes are come euen to heauen, and God hath remembred her iniquities."
+        },
+        {
+          "verse": 6,
+          "text": "Render to her as she also hath rendred to you: & double ye double according to her vvorkes: In the cuppe vvherin she hath mingled, mingle ye double vnto her."
+        },
+        {
+          "verse": 7,
+          "text": "As much as she hath glorified her self, & hath been in delicacies, <cr>[1]</cr> so much giue her torment and mourning: because she saith in her hart, <na>[2]</na> I sit a queene, & Widovv I am not, and mourning I shal not see.",
+          "cross_refs": [
+            {
+              "text": "Esa. 47, 8."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The measure of paines & damnation, according to the vvicked pleasures or vnlawful delites of this life. vvhich is a sore sentence for such people as turne their vvhole life to lust and riot. · Es. 47, 8.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Es. 47, 8."
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "Therfore in one day shal her plagues come, death, and mourning, and famine, and vvith fire she shal be burnt: because God is strong that shal iudge her."
+        },
+        {
+          "verse": 9,
+          "text": "And <na>[1]</na> the kings of the earth, vvhich haue fornicated vvith her, & haue liued in delicacies, shal vveepe, & bevvaile them selues vpon her, vvhen they shal see the smoke of her burning:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Kings and Marchants are most encombered, dangered and drovvned in the pleasures of this vvorld: vvhose vvhole life & traficke is (if they be not exceding vertuous) to finde varietie of earthly pleasures. Vvho seing once the extreme end of their ioyes and of al that made their heauen here, to be turned into paines & damnation eternal, then shal houle & vveepe to late.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "standing farre of for the feare of her tormentes, saying, Vvo, vvo, that great citie Babylon, that strong citie: because in one houre is thy iudgement come."
+        },
+        {
+          "verse": 11,
+          "text": "And the marchantes of the earth shall vveepe, & mourne vpon her: because no man shal bye their merchandise any more,"
+        },
+        {
+          "verse": 12,
+          "text": "merchandise of gold and siluer and precious stone, and of pearle, and fine linnen, and purple, and silke, & scarlet, and al Thyne vvood, and al vessels of yuorie, and al vessels of precious stone and of brasse and yron and marble,"
+        },
+        {
+          "verse": 13,
+          "text": "and cynamon, and of odours, and ointement, and frankeincense, and vvine, and oile, and floure, & vvheate, and beastes, & sheepe, and horses, and chariotes, & slaues, and soules of men."
+        },
+        {
+          "verse": 14,
+          "text": "The apples of the desire of thy soul are departed from thee, & al fat and goodly thinges are perished from thee, and they shal no more finde them."
+        },
+        {
+          "verse": 15,
+          "text": "The marchantes of these things vvhich are made riche, shal stand farre from her for feare of her tormentes, vveeping and mourning,"
+        },
+        {
+          "verse": 16,
+          "text": "saying, Vvo, vvo, that great citie, vvhich vvas clothed vvith silke, and purple, and scarlet, and vvas gilted vvith gold, and pretious stone, and pearles:"
+        },
+        {
+          "verse": 17,
+          "text": "because in one houre are so great riches made desolate: and euery gouernour, and euery one that saileth into the lake, and the shipmen, and they that vvorke in the sea, stoode a farre of,"
+        },
+        {
+          "verse": 18,
+          "text": "and cried seeing the place of her burning, saying, Vvhat other is like to this great citie?"
+        },
+        {
+          "verse": 19,
+          "text": "And they threvv dust vpon their heades, and cried vveeping and mourning, saying: Vvo, vvo, that great citie, in the vvhich al vvere made riche that had shippes in the sea, of her prices: because in one houre she is desolate."
+        },
+        {
+          "verse": 20,
+          "text": "<na>[1]</na> cReioyce ouer her, heauen, and ye holy Apostles and Prophetes: because God hath iudged your iudgement of her.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Angels and al Saincts shal reioyce and laude God to see the vvicked confounded, and Gods iustice executed vpon their oppressors & persecutors. and this is that vvhich the Martyrs praied for, <i>chap. 6</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "And one strong Angel tooke vp as it vvere a great milstone, and threvv it into the sea, saying, <cr>[1]</cr> Vvith this violence shal <na>[2]</na> Babylon that great citie be throvven, and shal novv be found no more.",
+          "cross_refs": [
+            {
+              "text": "Ier. 51, 63."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Ier. 51, 63. · By this it seemeth cleere that the Apostle meaneth not any one citie, but the vniuersal companie of the reprobate, vvhich shal perish in the day of iudgement: the old prophets also naming the vvhole number of Gods enemies mystically, Babylon. as <i>Ierem. c. 52</i>.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Ier. 51, 63."
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "And the voice of harpers, & of Musicians, and of them that sing on shalme and trompet, shal no more be heard in thee, & euery artificer of euery art shal be found no more in thee, and the noise of the mill shal no more be heard in thee,"
+        },
+        {
+          "verse": 23,
+          "text": "and the light of the lampe shal no more shine in thee, and the voice of the bridegrome and the bride shal no more be heard in thee: because thy marchantes vvere the princes of the earth, because al nations haue erred in thine inchauntments."
+        },
+        {
+          "verse": 24,
+          "text": "And in her is found the bloud of the Prophets and Sainctes, and of al that vvere slaine in the earth."
+        }
+      ],
+      "summary": "The fall of Babylon, her iudgement, plagues and reuenges: for the vvhich, 9 the kings, 16 and marchants of the earth that sometime did cleaue vnto her, shal mourne bitterly: 20 but heauen, and the Apostles and Prophets shal reioyce."
+    },
+    {
+      "chapter": 19,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AFTER</sc> <na>[1]</na> theses things I heard as it vvere the voice of many multitudes in heauen saying, <i>Allelu-ia</i>. <na>[2]</na> Praise, and glorie, and povver is to our God:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for many Martyrs, between Easter & Whitsunday.",
+              "kind": "lectionary"
+            },
+            {
+              "label": "2",
+              "text": "ALLELVIA",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "because true & iust are his iudgementes vvhich hath iudged of the great harlot, that hath corrupted the earth in her vvhoredom, and hath reuenged the bloud of his seruants, of her handes."
+        },
+        {
+          "verse": 3,
+          "text": "And <na>[1]</na> againe they said, <i>Allelu-ia</i>. And her smoke ascendeth for euer and euer.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This often repeating of <i>Allelu-ia</i> in times of reioycing, the Church doth folow in her Seruice.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And the foure and tvventie seniors fel dovvne, and the foure beastes, & adored God sitting vpon the throne, saying: <i>Amen, Allelu-ia</i>.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              113,
+              15,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And a voice came out from the throne, saying: Say praise to our God al ye his seruantes: and you that feare him, litle and great."
+        },
+        {
+          "verse": 6,
+          "text": "And I heard as it vvere the voice of a great multitude, and as the voice of many vvaters, & as the voice of great thunders, saying, <i>Allelu-ia</i>: because our Lord God the omnipotent hath reigned."
+        },
+        {
+          "verse": 7,
+          "text": "Let vs be glad and reioyce, and giue glorie to him: because <na>[1]</na> the mariage of the Lambe is come, and his vvife hath prepared her self.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "At this day shal the vvhole Church of the elect be finally & perfectly for euer ioyned vnto Christ in mariage inseparable.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And it vvas giuen to her that she clothe her self vvith silke glittering and vvhite. For the silke are the iustifications of Sainctes.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              101,
+              24,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And he said to me, Vvrite, <cr>[1]</cr> Blessed be they that are called to the <na>[2]</na> supper of the mariage of the Lambe. ⊢ And he said to me, These vvordes of God, be true.",
+          "cross_refs": [
+            {
+              "text": "Mat. 22, Lu. 14,"
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Mat. 22. Lu. 14, · That is the feast of eternal life prepared for his spouse the Church.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Mat. 22. Lu. 14,"
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "And <cr>[1]</cr> I fel before his feete, to adore him. And he saith to me, See thou doe not: I am thy fellovv-seruant, and of thy brethren that haue the testimonie of <sc>IESVS</sc>. Adore God. For the testimonie of <sc>IESVS</sc>, is the spirit of prophecie.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              23,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Apoc. 22, 9."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "And I savv heauen opened, and behold a vvhite horse: and he that sate vpon him, vvas called Faithful and True, and vvith iustice he iudgeth & fighteth."
+        },
+        {
+          "verse": 12,
+          "text": "And his eies as a flame of fire, and on his head many diademes. hauing a name vvritten, vvhich no man knovveth but him self."
+        },
+        {
+          "verse": 13,
+          "text": "<cr>[1]</cr> And he vvas clothed vvith a garment sprinkled vvith bloud: & his name is called, ᶜ <na>[2]</na> <sc>THE VVORD OF GOD</sc>.",
+          "cross_refs": [
+            {
+              "text": "Esa. 63. 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Es. 63, 1. · ᶜ The second person in Trinitie, the Sonne or the Vvord of God, vvhich vvas made flesh. <i>Io. 1</i>.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Es. 63, 1."
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "And the hostes that are in heauen folovved him on vvhite horses clothed in vvhite and pure silke."
+        },
+        {
+          "verse": 15,
+          "text": "And out of his mouth procedeth a sharpe svvord: that in it he may strike the Gentiles. And <cr>[1]</cr> he shal rule them in a rod of yron: and he treadeth the vvine presse of the furie of the vvrath of God omnipotent.",
+          "cross_refs": [
+            {
+              "text": "Apoc. 2, 27."
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "And he hath in his garment and in his thigh vvritten, <cr>[1]</cr><na>[2]</na> <sc>KING OF KINGES AND LORD OF LORDES</sc>.",
+          "cross_refs": [
+            {
+              "text": "Apo. 17, 14."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Even according to his humanity also.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "And I savv one Angel standing in the sunne, & he cried vvith a loud voice saying to al the birdes that did flie by the middes of heauen, Come and assemble together to the great supper of God:"
+        },
+        {
+          "verse": 18,
+          "text": "that you may eate the flesh of kings, and the flesh of tribunes, and the flesh of valiants, and the flesh of horses & of them that sit on them, & the flesh of al freemen and bondmen, and of litle and great."
+        },
+        {
+          "verse": 19,
+          "text": "And I savv the beast and the kings of the earth, & their armies gathered to make vvarre vvith him that sate vpon the horse and vvith his armie."
+        },
+        {
+          "verse": 20,
+          "text": "And the beast vvas apprehended, and vvith him the false-prophet: vvhich vvrought signes before him, vvherevvith he seduced them that tooke the character of the beast, and that adored his image. These tvvo vvere cast aliue into the poole of fire burning also vvith brimstone."
+        },
+        {
+          "verse": 21,
+          "text": "And the rest vvere slaine by the svvord of him that sitteth vpon the horse, vvhich procedeth out of his mouth: and al the birdes vvere filled vvith their flesh."
+        }
+      ],
+      "summary": "1 The Saincts glorifying God for the iudgement pronounced vpon the harlot, 7 the mariage of the Lambe is prepared. 10 The Angel refuseth to be adored of S. Iohn. 11 There appeareth one ( vvho is the vvord of God, and the King of kings and Lord of lords ) sitting on a horse, vvith a great armie, and fighting against the beast and the kings of the earth and their armies: 17 the birdes of the aire being in the meane time called to deuoure their flesh."
+    },
+    {
+      "chapter": 20,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> I savv an Angel descending from heauen, hauing the key of the bottomles depth, and a great chaine in his hand.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "See in S. Augustine ( <i>li. 20. de Ciuit. c. 7. 8. & seq</i>. ) the exposition of this chapter.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And he apprehended the dragon the old serpent, vvhich is the Deuil and Satan, and bound him for a thousand yeres.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              81,
+              9,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "and he threvv him into the depth, and shut him vp, and sealed ouer him, that he seduce no more the nations, til the thousand yeres be consummate. and after these thinges he must be loosed a litle time."
+        },
+        {
+          "verse": 4,
+          "text": "And I savv seates: and they sate vpon them, & iudgement vvas giuen them, and the soules of the beheaded for the testimonie of <sc>IESVS</sc>, and for the vvord of God, and that adored not the beast, nor his image, nor receiued his character in their foreheads or in their handes, and haue liued, and reigned vvith Christ <na>[1]</na> a thousand yeres.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              11,
+              1
+            ],
+            [
+              71,
+              13,
+              2
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>Quid in millenario numero nisi ad proferendam nouam sobolem perfecta vniuersitas præscita generationis exprimitur? hinc per Ioannem dicitur, Et regnabunt cum illo mille annis, quia regnum sanctæ Ecclesiæ, vniuersitatis perfectione solidatur. D. Gregor. li. 9. Moral. c. 1</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "The rest of the dead liued not, til the thousand yeres be consummate. This is the first resurrection.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              30,
+              1
+            ],
+            [
+              71,
+              30,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "Blessed and holy is he that hath part in the first resurrection. in these the second death hath not povver: but they shal be priestes of God and of Christ: and shal reigne vvith him a thousand yeres.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              111,
+              21,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And vvhen the thousand yeres shal be consummate, Satan shal be loosed out of his prison, and shal goe forth, and seduce <cr>[1]</cr> the nations that are vpon the foure corners of the earth, <na>[2]</na> Gog, and Magog, and shal gather them into battel, the number of vvhom is as the sand of the sea.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              49,
+              21,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ezech. 38, 14. 39, 2."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Ezec. 38, 14. 39, 2. · S. Augustine thinketh that these do not signifie any certaine nations but al that shal then be ioyned vvith the Diuel and Antichrist against the Church. <i>li. 20. de Ciuit. c. 11</i>. See S. Hierom <i>in Ezech. li. 11</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And they ascended vpon the bredth of the earth, and compassed the campe of the Sainctes, and the beloued citie.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              63,
+              22,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And there came dovvne fire from God out of heauen, and deuoured them:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              20,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "and the Deuil vvhich seduced them, vvas cast into the poole of fire and brimstone, vvhere both the beast and the false-prophet shal be tormented day and night for euer and euer."
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> And I savv a great vvhite throne, and one sitting vpon it, from vvhose sight <na>[2]</na> earth and heauen fled, and there vvas no place found for them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE 6 VISION.",
+              "kind": "head"
+            },
+            {
+              "label": "2",
+              "text": "They shal then be new, not the substance, but the shape changed. <i>2 Pet. 3</i>. See S. Augustine. <i>li. 20. de Ciuit. c. 14</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And I savv the dead, great and litle, standing in the sight of the throne, and <cr>[1]</cr> ᶜ bookes vvere opened: and <na>[2]</na> an other booke vvas opened, vvhich is of life: and the dead vvere iudged of those thinges vvhich vvere vvritten in the bookes according to their vvorkes.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              128,
+              12,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Apoc. 3, 5. 21, 27."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "c The books of men's consciences, where it shall plainly be read what every man's life hath been.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "and the sea gaue the dead that vvere in it, and death and hel gaue their dead that vvere in them, and it vvas iudged of euery one according to their vvorkes."
+        },
+        {
+          "verse": 14,
+          "text": "And hel and death vvere cast into the poole of fire. This is the second death."
+        },
+        {
+          "verse": 15,
+          "text": "And <cr>[1]</cr> he that vvas not found vvritten in the booke of life, vvas cast into the poole of fire.",
+          "cross_refs": [
+            {
+              "text": "Mat. 24. Lu. 18, 8."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Such as doe no good workes, if they haue age and time to doe them, are not found in the booke of life.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "An Angel casteth the dragon ( or diuel ) bound, into the depth for a thousand yeres, in vvhich the soules of martyrs in the first resurrection shal raigne vvith Christ. 7 After vvhich yeres, Satan being let loose, shal raise Gog and Magog, an innumerable armie, against the beloued citie: 9 but a fire from heauen shal destroy them. 12 Then bookes are opened, and he that sitteth vpon the throne, iudgeth al the dead according to their vvorkes."
+    },
+    {
+      "chapter": 21,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> I savv a nevv heauen and a nevv earth. for <cr>[1]</cr> the first heauen, and the first earth vvas gone, & the sea novv is not.",
+          "cross_refs": [
+            {
+              "text": "Esa. 63, 17. 66, 21. 2. Pet. 3, 13."
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<na>[1]</na> And I Iohn savv ᶜ <na>[2]</na> the holy citie Hierusalem nevv descending from heauen, prepared of God, as a bride adorned for her husband.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the dedication of a Church.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "The Church triumphant.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "And I heard a loud voice from the throne saying: Behold <na>[1]</na> the tabernacle of God vvith men, and he vvil dvvel vvith them. And they shal be his people: and he God vvith them shal be their God.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "This tabernacle is Christ according to his humanitie.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "and <cr>[1]</cr> God shal <na>[2]</na> ᶜ vvipe avvay al teares from their eies: and death shal be no more. nor mourning, nor crying, neither shal there be sorovv any more, <na>[3]</na> <alt>vvhich</alt> first thinges are gone.",
+          "cross_refs": [
+            {
+              "text": "Esa. 25. 8. Apoc. 7, 17."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "c This happy day shall make an end of all the miseries of this mortality.",
+              "kind": "gloss"
+            },
+            {
+              "label": "3",
+              "text": "<i>because the</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And he that sate in the throne, said: <cr>[1]</cr> Behold I make al thinges nevv. ⊢ And he said to me: Vvrite, because these vvordes be most faithful and true.",
+          "cross_refs": [
+            {
+              "text": "Esa. 43, 19."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "And he said to me: It is done, <cr>[1]</cr> I am Alpha and O mega: the beginning and the end. To him that thirsteth I vvil giue of the fountaine of the vvater of life, gratis.",
+          "cross_refs": [
+            {
+              "text": "Apoc. 1, 8. 22, 13."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "He that shal ouercome, <na>[1]</na> shal possesse these thinges, and I vvil be his God: and he shal be my sonne.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He that hath the victorie against sinne in the Church militant, shal haue his revvard in the triumphant.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "But ᵉ <na>[1]</na> to the feareful, and incredulous, and execrable, and murderers, and fornicators, and sorcerers, and Idolaters, and al liers, their part shal be in the poole burning vvith fire and brimstone, vvhich is the second death.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Al that commit mortal sinnes and repent not, shal be damned.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<na>[1]</na> And there came one of the seuen Angels that had the vials ful of the seuen last plagues, and spake vvith me, saying: Come, & I vvil shevv thee the bride, the vvife of the Lambe.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE 7 AND LAST VISION.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "And he tooke me vp in spirit vnto a mountaine great and high: and he shevved me the holy citie Hierusalem descending out of heauen from God, hauing the glorie of God."
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na> and the light thereof like to a pretious stone, as it vvere to the iasper stone, euen as crystal.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The glory of the Church triumphant.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And it had a vvall great and high, hauing tvvelue gates, and in the gates tvvelue Angels, & names vvritten thereon, vvhich are ᶜ <na>[1]</na> the names of the tvvelue tribes of the children of Israel.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The names of the Patriarches and Apostles honorable and glorious in the triumphant Church.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "On the East, three gates: and on the North, three gates: and on the South, three gates: and on the Vvest, three gates."
+        },
+        {
+          "verse": 14,
+          "text": "And the vvall of the citie hauing tvvelue foundations: and in them, tvvelue names, of the tvvelue Apostles of the Lambe."
+        },
+        {
+          "verse": 15,
+          "text": "And he that spake vvith me, had a measure of a reede, of gold, to measure the citie and the gates thereof, and the vvall."
+        },
+        {
+          "verse": 16,
+          "text": "And <na>[1]</na> the citie is situated quadrangle-vvise, and the length thereof is as great as also the bredth: and he measured the citie vvith the reede for tvvelue thousand furlonges, & the length and height and bredth thereof be equal.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "See S. Hierom <i>ep. 17</i>. touching this description of the heauenly Hierusalem, vvhich is the Church triumphant, teaching that these things must be taken spiritually, not carnally.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "And he measured the vvall thereof of an hundred fourtie foure cubites, the measure of a man vvhich is of an Angel."
+        },
+        {
+          "verse": 18,
+          "text": "And the building of the vvall therof vvas of iasper stone: but the citie it self pure gold, like to pure glasse.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              79,
+              9,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "And the foundations of the vvall of the citie, vvere adorned vvith al pretious stone. The first foundation, the iasper: the second, the saphire: the third, the calcedonius: the fourth, the emerauld:"
+        },
+        {
+          "verse": 20,
+          "text": "the fifth, the sardonix: the sixt, the sardius: the seuenth, the chrysolithus: the eight, the beryllus: the ninthe, the topazius: the tenth, the chrysoprasus: the eleuenth, the hyacinthe: the tvvelfth, the amethyste."
+        },
+        {
+          "verse": 21,
+          "text": "And the tvvelue gates: there are tvvelue pearles, one to euery one: & euery gate vvas of one seueral pearle. & the streate of the citie pure gold, as it vvere transparent glasse."
+        },
+        {
+          "verse": 22,
+          "text": "And <na>[1]</na> temple I savv not therein. for our Lord the God omnipotent is the temple thereof, and the Lambe.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Al external sacrifice which now is necessarie dutie of the faithful, shal then cease and therfore there shal neede no material temple.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "And <cr>[1]</cr> the citie needeth not sunne nor moone, to shine in it. for the glorie of God hath illuminated it, and the Lambe is the lampe thereof.",
+          "cross_refs": [
+            {
+              "text": "Esa. 60, 19."
+            }
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "And <cr>[1]</cr> the Gentiles shal vvalke in the light of it: and the kinges of the earth shal bring their glorie and honour into it.",
+          "cross_refs": [
+            {
+              "text": "Esa. 60, 3."
+            }
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "And <cr>[1]</cr> the gates thereof shal not be shut by day: for there shal be no night there.",
+          "cross_refs": [
+            {
+              "text": "Esa. 60, 11."
+            }
+          ]
+        },
+        {
+          "verse": 26,
+          "text": "And they shal bring the glorie and honour of nations into it."
+        },
+        {
+          "verse": 27,
+          "text": "There shal <cr>[1]</cr> not enter into it any polluted thing, nor that doeth abomination and maketh lie, but <na>[2]</na> they that are vvritten in the booke of life of the Lambe.",
+          "cross_refs": [
+            {
+              "text": "Apo. 20, 12."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "None not perfectly cleansed of their sins, can enter into this heavenly Hierusalem.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "Heauen and earth being made nevv, S. Iohn seeth the nevv citie Hierusalem prepared and adorned for the spouse of the Lambe. 6 The iust are glorified, 7 and the vvicked thrust into the poole of fire. 12 The vvall and gates and foundations of the citie are described and measured: 18 al vvhich are gold and crystal, pretious stones and pearles. <na>[1]</na><na>[2]</na>",
+      "summary_notes": [
+        {
+          "marker": 1,
+          "text": "THE 5. PART."
+        },
+        {
+          "marker": 2,
+          "text": "The final glorification of the Church."
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> he shevved me a riuer of <na>[1]</na> <alt>liuing vvater</alt>, cleere as crystal, proceding from the seate of God and of the Lambe.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>vvater of life</i>,",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "In the middes of the streate thereof, and on both sides of the riuer, <na>[1]</na> the tree of life, yelding tvvelue fruites, rendring his fruite euery moneth, and the leaues of the tree for the curing of the Gentiles.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christ is our tree of life: in the Church, by the B. Sacramēt: & in heauen, by his visible presence and influence of life euerlasting both to our bodies and soules: of vvhō Salomon saith, <i>The tree of life to al that apprehend him. Prou. 3</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "And no curse shal be any more: and the seate of God and of the Lambe shal be in it, and his seruantes shal serue him."
+        },
+        {
+          "verse": 4,
+          "text": "And they shal see his face: and his name in their foreheads."
+        },
+        {
+          "verse": 5,
+          "text": "And <cr>[1]</cr> night shal be no more: and they shal not neede the light of lampe, nor the light of the sunne, because our Lord God doth illuminate them, and they shal reigne for euer and euer.",
+          "cross_refs": [
+            {
+              "text": "Apo. 21. Esa. 60."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>[1]</na> And he said to me, These vvordes are most faithful and true. And our Lord the God of the spirites of the prophetes, sent his Angel to shevv his seruantes those thinges vvhich must be done quickly.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "THE CONCLVSION.",
+              "kind": "head"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And behold I come quickly. Blessed is he that keepeth the vvordes of the prophecie of this booke."
+        },
+        {
+          "verse": 8,
+          "text": "And I Iohn vvhich haue heard, and seen these thinges. And <cr>[1]</cr> after I had heard and seen, I fel dovvne <na>[2]</na> to adore before the feete of the Angel vvhich shevved me these thinges:",
+          "cross_refs": [
+            {
+              "text": "Apo. 19, 10."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "You see it is al one to adore before the feete of the angel, & to adore the Angel: though, to adore him, be not expressed as in the 19 chap. <i>See the anōtatiō there v. 10</i>.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Apo. 19, 10."
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "and he said to me, See thou doe not, for I am thy fellovv-seruant, and of thy brethren the prophetes, and of them that keepe the vvordes of this booke. Adore God."
+        },
+        {
+          "verse": 10,
+          "text": "And he saith to me, Seale not the vvordes of the prophecie of this booke. for the time is neere."
+        },
+        {
+          "verse": 11,
+          "text": "He that hurteth, let him hurt yet: and he that is in filth, let him be filthie yet: and he that is iust, ᶜ <na>[1]</na> let him be iustified yet: and let the holy be sanctified yet.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              15,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Man by Gods grace & doing good vvorkes, doth increase his iustice.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "Behold I come quickly. and my revvard is vvith me, <cr>[1]</cr> to render to euery man <na>[2]</na> according to his vvorkes,",
+          "cross_refs": [
+            {
+              "text": "Ro. 2, 6."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Heauen is the revvard, hire, & repaiment for good vvorkes, in al the Scriptures. yet the aduersaries vvil not see it.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "I am <cr>[1]</cr> Alpha and O mega, the first and the last, the beginning and the end.",
+          "cross_refs": [
+            {
+              "text": "Apo. 21, 6. 1, 8."
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "Blessed are they that vvash their stoles: that their povver may be in the tree of life, and they may enter by the gates into the citie."
+        },
+        {
+          "verse": 15,
+          "text": "Vvithout are dogges and sorcerers, and the vnchast, and murderers, and seruers of Idols, & euery one that loueth and maketh a lie."
+        },
+        {
+          "verse": 16,
+          "text": "I <sc>IESVS</sc> haue sent mine Angel, to testifie to you these thinges in the Churches. I am the roote and stocke of Dauid, the bright and morning starre."
+        },
+        {
+          "verse": 17,
+          "text": "And the Spirit & the bride say, Come. And he that heareth, let him say, Come. And <cr>[1]</cr> he that thirsteth, let him come: and he that vvil, let him take the vvater of life gratis.",
+          "cross_refs": [
+            {
+              "text": "Esa. 55, 1."
+            }
+          ],
+          "xrefs": [
+            "Es. 55, 1."
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "For I testifie to euery one hearing the vvordes of the prophecie of this booke, If any man shal adde to these things, God shal adde vpon him the plagues vvritten in this booke.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              75,
+              20,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "And if any man shal diminish of the vvordes of the booke of this prophecie: God shal take avvay his part out of the booke of life, and out of the holy citie, and of these thinges that be vvritten in this booke."
+        },
+        {
+          "verse": 20,
+          "text": "saith he that giueth testimonie of these things. Yea I come quickely: Amen. Come Lord <sc>IESVS</sc>.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              74,
+              24,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "The grace of our Lord <sc>IESVS</sc> Christ be vvith you al. Amen."
+        }
+      ],
+      "summary": "The tree of life being vvatered vvith liuing vvater, yeldeth fruictes euery moneth. 3 There is neither curse nor night in the citie. 6 The Angel that shevved Iohn al these thinges, refuseth to be adored of him. 14 He telleth him that the iust shal enter into the citie, but the rest shal be cast forth. 18 Lastly, he protesteth and threateneth against them that shal presume to adde to this prophecie, or take avvay from the same."
+    }
+  ],
+  "spelling": "original"
+}

@@ -1,0 +1,438 @@
+{
+  "book": "2-thessalonians",
+  "book_title": "The Second Epistle of S. Paul\nto the Thessalonians.",
+  "short_title": "2 Thessalonians",
+  "hebrew_title": null,
+  "intros": [
+    {
+      "title": "THE ARGUMENT OF THE SECOND EPISTLE OF S. PAUL TO THE THESSALONIANS.",
+      "text": "THE second to the Thessalonians hath in the title as the first: <i>Paul and Silvanus and Timothee</i>, &c. And therefore it seemeth to have been written in the same place, to wit, at Corinth, where they remained <i>a year and six months</i>, & straight upon their answer to the first epistle. <mn>◦</mn>\n\nFirst he thanketh God for their increase, and perseverance (comforting them again in those persecutions) and prayeth for their accomplishment. Secondly he assureth them, that the day of Judgement is not at hand, putting them in remembrance what he told them thereof by word of mouth, when he was present (as therefore he biddeth them afterward to hold his Traditions <mn>◦</mn> unwritten, no less than the written) to wit, that all those persecutions and heresies, raised then, and afterward against the Catholic Church, were but the mystery of Antichrist, and not Antichrist himself. But that there should come at length a plain Apostasy, & then (the whole forerunning mystery being once perfitly wrought) should follow the revelation of Antichrist himself in person (as after all the mysteries of the old Testament, Christ JESUS our Lord came himself in the fulness of time.) And then at length after all this, the day of Judgement and second coming of Christ shall be at hand, and not before, whatsoever pretence of vision, or of some speech of mine (saith S. Paul) any make to seduce you withal, or of my former epistle, or any other. For which cause also, in the end of this epistle, he biddeth them to know his hand, <i>which is a sign in every epistle.</i>\n\nLastly he requesteth their prayers, and requireth them to keep his commandments and Traditions, namely that the poor which are able, get their own living with working, as he also gave them example, though he were not bound thereto.",
+      "default": true,
+      "notes": [
+        {
+          "marker": "◦",
+          "text": "<i>* Act. 18. v. 11.</i>"
+        },
+        {
+          "marker": "◦",
+          "text": "<i>* c. 2. v. 15.</i>"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>PAVL</sc> and Siluanus and Timothee: to the churche of the Thessalonians in God our Father and our Lord <sc>IESVS</sc> Christ."
+        },
+        {
+          "verse": 2,
+          "text": "Grace to you and peace from God our Father and our Lord <sc>IESVS</sc> Christ."
+        },
+        {
+          "verse": 3,
+          "text": "Vve ought to giue thankes alvvaies to God for you brethren, so as meete is, because your faith increaseth excedingly, and the charitie of euery one of you aboundeth tovvards eche other:"
+        },
+        {
+          "verse": 4,
+          "text": "so that vve our selues also glorie in you in the churches of God, for your patience, and faith in al your persecutions and tribulations, vvhich you sustaine"
+        },
+        {
+          "verse": 5,
+          "text": "for an example of the iust iudgement of God, that <na>[1]</na> you may be <na>[2]</na> ccounted vvorthie of the kingdom of God, for the vvhich also you suffer.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Note that by constant and patient suffering of afflictiōs for christ men are made vvorthie ( so the Greeke signifieth, as the Aduersaries them selues translate <i>v. 11</i>.) of the crovvne or kingdom of heauen, and so do merite and deserue the same. <i>See Anno. Luc. 20,35</i>. And the Apostle here saith that it is Gods iustice no lesse to repay glorie to the afflicted, then to render punishment to them that afflict, because of their contrarie deserts or merites.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>c καταξιωθῆναι ὑμᾶς</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "if yet it be iust vvith God to repay tribulation, to them that vexe you:"
+        },
+        {
+          "verse": 7,
+          "text": "and to you that are vexed, rest vvith vs in the reuelation of our Lord <sc>IESVS</sc> from heauen vvith the Angels of his povver, <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "1. Thes. 4, 16."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "in flame of fire, giuing reuenge to them that knovv not God, & that obey not the Gospel of our Lord <sc>IESVS</sc> Christ."
+        },
+        {
+          "verse": 9,
+          "text": "vvho shal suffer eternal paines in destruction, from the face of our Lord and from the glorie of his povver:"
+        },
+        {
+          "verse": 10,
+          "text": "vvhen he shal come to be <na>[1]</na> glorified in his sainctes, and to be made maruelous in al them that haue beleeued, because our testimonie concerning you vvas credited in that day.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christ shal be glorified in his Sainctes, that is, by the great and vnspeakable honour & exaltatiō of them he shal be honoured, as now he is: the honour vvhich the Church doth to them, not diminishing Christs glorie (as the Aduersaries folishly pretēd) but excedingly augmenting the same.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "Vvherein also vve pray alvvaies for you, that our God <na>[1]</na> cmake you vvorthie of his vocation, and accomplish al the good pleasure of his goodnesse & the vvorke of faith in povver,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>c ἀξιώσῃ</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "that the name of our Lord <sc>IESVS</sc> Christ may be glorified in you, and you in him, according to the grace of our God, and of our Lord <sc>IESVS</sc> Christ."
+        }
+      ],
+      "summary": "He thanketh God for their increase in faith and charitie, and constancie in persecution (assuring them that they merite thereby the kingdom of God, as their persecutors do damnation:) 11 and also praieth for their accomplishment."
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> <na>[1]</na> vve desire you, brethren, by the comming of our Lord <sc>IESVS</sc> Christ, and of our congregation into him:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in the Imber Saturday of Aduent.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "that you be not easily moued from your sense, nor be terrified, neither by spirit, nor by vvord, nor by epistle as sent by vs, as though the day of our Lord vvere at hand.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              126,
+              17,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "Let no man seduce you by any meanes, for vnlesse there come <na>[1]</na> ca reuolt first, and the man of sinne be reuealed, the sonne of perdition,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              40,
+              45,
+              1
+            ],
+            [
+              91,
+              14,
+              4
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>c ἀποστασία</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "vvhich is an aduersarie & is extolled <na>[1]</na> aboue al that is called God, or that is vvorshipped, so that he sitteth in the temple of God, shevving him self as though he vvere God.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              8,
+              1
+            ],
+            [
+              121,
+              13,
+              2
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Hovv then can the Pope be Antichrist, as the Heretikes fondly blaspheme, vvho is so far from being exalted aboue God, that he praieth most humbly not onely to christ, but also to his B. mother and al his Saincts.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "Remember you not, that vvhen I vvas yet vvith you, I told you these things?"
+        },
+        {
+          "verse": 6,
+          "text": "And novv vvhat letteth, you knovv: that he may be reuealed in his time.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              8,
+              12,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "( For novv the mysterie of iniquitie vvorketh: only that he vvhich novv holdeth, doe hold, vntil he be taken out of the vvay.)"
+        },
+        {
+          "verse": 8,
+          "text": "And then that vvicked one shal be reuealed <cr>[1]</cr> vvhom our Lord <sc>IESVS</sc> shal kil vvith the spirit of his mouth: & shal destroy vvith the manifestation of his aduent, him,",
+          "cross_refs": [
+            {
+              "text": "Esa. 11, 4."
+            }
+          ],
+          "xrefs": [
+            "Es. 11,4."
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "vvhose comming is according to the operation of Satan, in al povver, and lying signes and vvonders,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              53,
+              12,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "and in al seducing of iniquitie to them that perish, for that they haue not receiued the charitie of the truth that they might be saued."
+        },
+        {
+          "verse": 11,
+          "text": "Therfore <na>[1]</na> God vvil send them the operation of errour, to beleeue lying:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>Deus mittet</i> (saith S. Aug. <i>li. 20. de Ci. c. 19</i>.) <i>quia Deus Diabolum facere ista permittet. God vvil send, because God vvil permit the Diuel to do these things</i>. Vvhereby vve may take a general rule that Gods action or vvorking in such things is his permissiō. <i>See Annot. Ro.1.24</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "that al may be iudged vvhich haue not beleeued the truth, but haue consented to iniquitie."
+        },
+        {
+          "verse": 13,
+          "text": "But vve ought to giue thankes to God alvvaies for you, brethren beloued of God, that he hath chosen you first-fruites vnto saluation, in sanctification of spirit and faith of the truth:"
+        },
+        {
+          "verse": 14,
+          "text": "into the vvhich also he hath called you by our Gospel, vnto the purchasing of the glorie of our Lord <sc>IESVS</sc> Christ."
+        },
+        {
+          "verse": 15,
+          "text": "Therfore brethren stand: and hold <na>[1]</na> cthe traditions vvhich you haue learned, vvhether it be by vvord, or by our epistle.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              54,
+              10,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c τὰς παραδόσεις",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "And our Lord <sc>IESVS</sc> Christ him self, and God and our father vvhich hath loued vs, and hath giuen eternal consolation, and good hope in grace,"
+        },
+        {
+          "verse": 17,
+          "text": "<na>[1]</na><na>[2]</na> cexhort your hartes, and confirme you in euery good vvorke and vvorde.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c This vvord of exhorting implieth in it comfort and consolation: as 2. Cor. 1. v. 4. & 6.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "c παρακαλέσαι",
+              "kind": "word"
+            }
+          ]
+        }
+      ],
+      "summary": "He requireth them, in no case to thinke that Domesday is at hand, 3 repeating vnto them, that there must before come first a reuolt, secondly the reuelation also of Antichrist him self in person, and that Antichrist shal not permit any God to be vvorshipped but onely him self: that also vvith his lying vvonders he shal vvinne to him the incredulous Ievves. But Christ shal come then immediatly in maiestie, and destroy him and his. 13 Therfore he thanketh God for the faith of the Thessalonians, 15 and biddeth them sticke to his Traditions both vvritten and vnvvritten, & praieth God to confirme them."
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>FOR</sc> <cr>[1]</cr> the rest, brethren, pray for vs, that the vvord of God may haue course and be glorified, as also vvith you:",
+          "cross_refs": [
+            {
+              "text": "Eph. 6, 18. Col. 4, 3."
+            }
+          ],
+          "xrefs": [
+            "Ep. 6,18. Col. 4,3."
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "and that vve may be deliuered from importunate and naughtie men. for al men haue not faith."
+        },
+        {
+          "verse": 3,
+          "text": "But our Lord is faithful, vvho vvil confirme and keepe you from euil."
+        },
+        {
+          "verse": 4,
+          "text": "And vve haue confidence of you in our Lord, that the things vvhich vve commaund, both you doe, and vvil doe."
+        },
+        {
+          "verse": 5,
+          "text": "And our Lord direct your hartes in the charitie of God, and patience of Christ."
+        },
+        {
+          "verse": 6,
+          "text": "And vve denounce vnto you, brethren, in the name of our Lord <sc>IESVS</sc> Christ, that you vvithdravv your selues from euery brother vvalking inordinatly, and not according to the <na>[1]</na><na>[2]</na> ctradition vvhich they haue receiued of vs.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "a Here also (as is noted before <i>2 Thess. 2. 15</i>) the aduersaries in their translatiōs auoid the vvord, <i>Tradition</i>, being plaine in the Greeke, lest them selues might seeme to be noted as men vvalking inordinately, and not according to Apostolical <i>Tradition</i>, as al Schismatikes, Heretikes, and rebels to gods Church doe.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "c παράδοσιν",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "For your selues knovv hovv you ought to imitate vs: for vve haue not been vnquiet among you:"
+        },
+        {
+          "verse": 8,
+          "text": "<cr>[1]</cr> neither haue vve eaten bread of any man gratis, but in labour & in toile night and day vvorking, lest vve should burden any of you.",
+          "cross_refs": [
+            {
+              "text": "Act. 20. 1. Cor. 4. 1. Th. 2."
+            }
+          ],
+          "xrefs": [
+            "Act. 20. 1. Cor. 4. 1. Th. 2. 1. Cor. 9, 6."
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<cr>[1]</cr> Not as though vve had not authoritie: but that vve might giue our selues a paterne vnto you for to imitate vs.",
+          "cross_refs": [
+            {
+              "text": "1. Cor. 9, 6."
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "For also vvhen vve vvere vvith you, this vve denounced to you, that if any vvil not vvorke, neither let him eate.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              85,
+              19,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "For vve haue heard of certaine among you that vvalke vnquietly, vvorking nothing, but curiously meddling."
+        },
+        {
+          "verse": 12,
+          "text": "And to them that be such vve denounce, & beseeche them in our Lord <sc>IESVS</sc> Christ, that vvorking vvith silence, they eate their ovvne bread."
+        },
+        {
+          "verse": 13,
+          "text": "But you brethren <cr>[1]</cr> fainte not vvel-doing.",
+          "cross_refs": [
+            {
+              "text": "Gal. 6, 9."
+            }
+          ],
+          "xrefs": [
+            "Gal. 6, 9."
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "And if any obey not our vvord, note him by an epistle:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              11,
+              8,
+              1
+            ],
+            [
+              30,
+              8,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "and do not companie vvith him, that he may be confounded: and do not esteeme him as an enemie, but admonish him as a brother."
+        },
+        {
+          "verse": 16,
+          "text": "And the Lord of peace him self giue you euerlasting peace in euery place. Our Lord be vvith you al."
+        },
+        {
+          "verse": 17,
+          "text": "The salutation, vvith mine ovvne hand, Paules: vvhich is a signe in euery epistle. so I vvrite."
+        },
+        {
+          "verse": 18,
+          "text": "The grace of our Lord <sc>IESVS</sc> Christ be vvith you al. Amen."
+        }
+      ],
+      "summary": "He desireth their praiers, 4 and inculcateth his precepts and traditions, namely of vvorking quietly for their ovvne liuing, commaunding to excommunicate the disobedient."
+    }
+  ],
+  "spelling": "original"
+}

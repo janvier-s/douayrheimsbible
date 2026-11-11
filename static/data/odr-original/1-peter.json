@@ -1,0 +1,1036 @@
+{
+  "book": "1-peter",
+  "book_title": "The First Epistle of Peter the Apostle.",
+  "short_title": "1 Peter",
+  "hebrew_title": null,
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>PETER</sc> <na>[1]</na> an Apostle of <sc>IESVS</sc> Christ, to the electe strangers of the dispersion of Pontus, Galatia, Cappadocia, Asia, and Bithynia,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle <i>In Cathedra S. Petri Rome.</i> Ian. 18. <i>& Antiochiæ</i> Feb. 22.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "according to the prescience of God the Father, into sanctification of the Spirit, vnto the obedience and sprinkling of the bloud of <sc>IESVS</sc> Christ: Grace to you and peace be multiplied."
+        },
+        {
+          "verse": 3,
+          "text": "<cr>[1]</cr><na>[2]</na> Blessed be God and the father of our Lord <sc>IESVS</sc> Christ, vvho according to his great mercie hath regenerated vs vnto a liuely hope, by the resurrection of <sc>IESVS</sc> Christ from the dead,",
+          "cross_refs": [
+            {
+              "text": "2. Cor. 1, 3. Eph. 1, 3."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The Epistle for many martyrs.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "vnto an inheritance incorruptible, and incontaminate, and that can not fade, conserued in the heauens in you,"
+        },
+        {
+          "verse": 5,
+          "text": "(vvho in the vertue of God are kept by faith vnto saluation) ready to be reuealed in the last time."
+        },
+        {
+          "verse": 6,
+          "text": "vvherin you shal reioyce, a litle novv if you must be made heauy in diuerse tentations:"
+        },
+        {
+          "verse": 7,
+          "text": "that the probation of your faith much more pretious then gold (vvhich is proued by the fire) may be found vnto praise and glorie and honour in the reuelation of <sc>IESVS</sc> Christ: ⊢"
+        },
+        {
+          "verse": 8,
+          "text": "vvhom hauing not seen, you loue: in vvhom novv also not seing you beleeue: and beleeuing you reioyce vvith ioy vnspeakable and glorified,"
+        },
+        {
+          "verse": 9,
+          "text": "receiuing the end of your faith, the saluation of your soules."
+        },
+        {
+          "verse": 10,
+          "text": "Of the vvhich saluation the Prophetes inquired & searched, vvhich prophecied of the grace to come in you,"
+        },
+        {
+          "verse": 11,
+          "text": "searching vnto vvhich or vvhat maner of time the Spirit of Christ in them did signifie: foretelling those passions that are in Christ and the glories folovving:"
+        },
+        {
+          "verse": 12,
+          "text": "to vvhom it vvas reuealed, that not to thē selues, but to you they ministred those things vvhich novv are told you by them that haue euangelized to you, the holy Ghost being sent from heauen, on vvhom the Angels desire to looke."
+        },
+        {
+          "verse": 13,
+          "text": "For the vvhich cause hauing the loines of your <na>[1]</na> minde girded, sober, trust perfectly in that grace vvhich is offered you, in the reuelation of <sc>IESVS</sc> Christ,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Chastitie not onely of body but also of minde, is required. <i>S. Bede vpon this place</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "as children of obedience, not configurated to the former desires of your ignorance:"
+        },
+        {
+          "verse": 15,
+          "text": "but according to him that hath called you, the Holy one, be you also in al conuersation holy:"
+        },
+        {
+          "verse": 16,
+          "text": "because it is vvritten: <i>You shal be holy, because I am holy</i>. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Lev. 11, 19. 20, 7. Deu. 10. Ro. 2. Gal. 2."
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "And if you inuocate the Father, him vvhich vvithout acception of persons iudgeth according to euery ones <na>[1]</na> cvvorke: in feare conuerse ye the time of your peregrination.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Deu. 10. Ro. 2. Gal. 2. · God vvil iudge men according to euery ones vvorkes, and not by faith onely.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "Knovving that <cr>[1]</cr> not vvith corruptible things, gold or siluer, you are redeemed from your vaine conuersation of your fathers <na>[2]</na> tradition:",
+          "cross_refs": [
+            {
+              "text": "1. Cor. 6, 20. 7, 23."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "1 Cor. 6, 20. 7, 23. · He meaneth the errours of Gentility. or if he vvrite to the Iewes dispersed, he meaneth the yoke of the Law vvith the fond and heauy additions of their later Maisters, called <i>Deuterôses</i>. The Heretikes, to make it sound to the simple against the traditions of the Churche, corrupt the text thus, <i>Which you haue receiued by tradition of the fathers</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "but vvith the precious bloud as it vvere of an immaculate and vnspotted lambe, Christ,"
+        },
+        {
+          "verse": 20,
+          "text": "<cr>[1]</cr> foreknovven in deede before the constitution of the vvorld, but manifested in the last times for you,",
+          "cross_refs": [
+            {
+              "text": "Ro. 16, 25. Col. 1, 26. Tit. 1, 2."
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "vvhich by him are faithful in God vvho raised him from the dead, and hath giuen him glorie, that your faith and hope might be in God."
+        },
+        {
+          "verse": 22,
+          "text": "Making your soules chaste in obedience of charitie, in the sincere loue of the fraternitie from the hart loue ye one an other earnestly:"
+        },
+        {
+          "verse": 23,
+          "text": "borne againe not of corruptible seede, but incorruptible by the vvord of God vvho liueth and remaineth for euer."
+        },
+        {
+          "verse": 24,
+          "text": "For <cr>[1]</cr> <i>al flesh is as grasse: and al the glorie thereof as the floure of grasse. the grasse is vvithered, and the floure thereof is fallen avvay</i>.",
+          "cross_refs": [
+            {
+              "text": "Esa. 40, 6."
+            }
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "But the vvord of our Lord remaineth for euer, and this is the vvord that is euangelized among you."
+        }
+      ],
+      "summary": "He comforteth them in their persecutions ( being now by Baptisme made the children of God ) with the hope of their heauenly inheritance: 6 shewing how meritorious it is for them to be so constant in faith, 10 and confirming them therein with the authoritie of the Prophets and of the Holy Ghost. 15 Exhorting them to liue also accordingly in al holines, 15 considering the holines of God, the vprightnes of his iudgement, the price of their redemption by Christ, 22 and the vertue of the seede in them ( Which is grace regeneratiue in Baptisme ) foretold by the Prophet also."
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>LAYING</sc> <na>[1]</na> avvay therfore al malice, and al guile, and simulations, and enuies, and al detractions,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon Saturday in Easter week.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "as infants euen novv borne, reasonable, milke vvithout guile desire ye, that in it you may grovv vnto saluation."
+        },
+        {
+          "verse": 3,
+          "text": "if yet you haue tasted that our Lord is svveete."
+        },
+        {
+          "verse": 4,
+          "text": "Vnto vvhom approching, a liuing stone, of men in deede reprobated, but of God elect and made honorable:"
+        },
+        {
+          "verse": 5,
+          "text": "be ye also your selues superedified as it vvere liuing stones, <na>[1]</na> <alt>`spiritual houses</alt>', a holy priesthod, to offer spiritual hostes, acceptable to God by <sc>IESVS</sc> Christ.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              132,
+              15,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>`a spiritual house</i>,",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "For the vvhich cause the Scripture conteineth, <cr>[1]</cr> <i>Behold I put in Sion a principal corner stone elect, pretious. and he that shal beleeue in him, shal not be confounded</i>.",
+          "cross_refs": [
+            {
+              "text": "Esa. 28, 16."
+            }
+          ],
+          "xrefs": [
+            "Es. 28, 16."
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "To you therfore that beleeue, honour: but to them that beleeue not, <cr>[1]</cr> <i>the stone vvhich the builders reiected, the same is made into the head of the corner</i>:",
+          "cross_refs": [
+            {
+              "text": "Ps. 117. Mt. 21. Act. 4. Esa. 8. Ro. 9, 33. Exo. 19. Apoc. 1."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "and a stone of offense, and a rocke of scandal, to them that stumble at the vvord, neither doe beleeue <na>[1]</na> <alt>`vvherin also they are put</alt>'.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>`vvhereto also they are ordeined</i>.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Act. 4. · Es. 8. · Ro. 9, 33."
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "But you are an elect generation, a <na>[1]</na> ckingly priesthod, a holy nation, a people of purchase: that you may declare his vertues vvhich from darkenesse hath called you into his maruelous light.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Protestants can no more gather of this, that al Christians be Priests: then, that al be kings: as is most plaine <i>Apocalyp. 1, 6. and 5, 10. Thou hast made vs a kingdom ( or kings ) & priests</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<cr>[1]</cr> <i>Vvhich sometime not a people: but novv the people of God. Vvhich not hauing obtained mercie: but novv hauing obtained mercie</i>.",
+          "cross_refs": [
+            {
+              "text": "Ose. 2. Ro. 9."
+            }
+          ],
+          "xrefs": [
+            "Ose. 2. · Ro. 9. · Gal. 5, 16."
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<cr>[1]</cr> My deerest I beseche you as strangers & pilgrimes, <na>[2]</na> to refraine your selues from carnal desires which vvarre against the soule,",
+          "cross_refs": [
+            {
+              "text": "Gal. 5, 16."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The Epistle upon the 3 Sunday after Easter.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "hauing your conuersation good among the Gentiles: that in that vvherein they misreport of you as of malefactors, by the good vvorkes considering you, <cr>[1]</cr> they may glorifie God in the day of visitation.",
+          "cross_refs": [
+            {
+              "text": "Mt. 5, 16."
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "<cr>[1]</cr> Be subiect therfore to euery <na>[2]</na> humane <na>[3]</na> ccreature for God: vvhether it be to king, as excelling:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              10,
+              1
+            ],
+            [
+              34,
+              49,
+              2
+            ],
+            [
+              107,
+              21,
+              4
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ro. 13, 1."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "So is the Greeke. but the Protest. in fauour of temporal lavves made against the Cath. religion, translate it very falsely thus, <i>to al maner ordinance of man</i>: thē selues boldly reiecting Ecclesiastical decrees as mens ordinances. · κτίσει · Ro. 13, 1.",
+              "kind": "gloss"
+            },
+            {
+              "label": "3",
+              "text": "<i>c κτίσει.</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "or to rulers as sent by him to the reuenge of malefactors, but to the praise of the good:"
+        },
+        {
+          "verse": 15,
+          "text": "for so is the vvil of God, that doing vvel you may make the ignorance of vnvvise men to be dumme:"
+        },
+        {
+          "verse": 16,
+          "text": "as free, & not as hauing the freedom for a cloke of malice, but as the seruants of God.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              13,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "Honour al men. <na>[1]</na> cLoue the fraternitie. Feare God. Honour the king.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "In this speache is often commended the vnitie of al Christians among them selues.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "Seruants be subiect in al feare to your maisters, not only to the good & modest, but also to the vvaivvard.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              80,
+              23,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "For this is thanke, if for conscience of God a man sustaine sorovves, suffering vniustly."
+        },
+        {
+          "verse": 20,
+          "text": "For vvhat glorie is it: if sinning, and buffeted you suffer? but if doing vvel you sustaine patiently: this is thanke before God."
+        },
+        {
+          "verse": 21,
+          "text": "<na>[1]</na> For vnto this are you called: because Christ also suffred for <na>[2]</na> <alt>`vs</alt>', leauing <na>[3]</na> <alt>`you</alt>' an example that you may folovv his steppes.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 2 Sunday after Easter.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "you",
+              "kind": "gloss"
+            },
+            {
+              "label": "3",
+              "text": "<i>us</i>",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Es. 53, 9."
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "<cr>[1]</cr> <i>vvho did no sinne, neither vvas guile found in his mouth</i>.",
+          "cross_refs": [
+            {
+              "text": "Esa. 53, 9."
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "vvho vvhen he vvas reuiled, <na>[1]</na> cdid not reuile: vvhen he suffred, he threatened not: but deliuered him self to him that iudged him vniustly.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c ὀυκ ἀντελοιδόρει.",
+              "kind": "word"
+            }
+          ],
+          "xrefs": [
+            "Es. 53, 4."
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "vvho him self <cr>[1]</cr> bare our sinnes in his body vpon the tree: that dead to sinnes, we may liue to iustice. by vvhose stripes you are healed.",
+          "cross_refs": [
+            {
+              "text": "Esa. 53, 4. Mt. 8, 17."
+            }
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "For you vvere as sheepe straying: but you be conuerted novv to the Pastor and Bishop of your soules. ⊢"
+        }
+      ],
+      "summary": "Novv after their Baptisme, vvhat must be their meate: 4 and being come to Christ, hovv happie they be aboue their incredulous brethren, according to the Scriptures also. 11 VVherevpon he beseecheth them to shine in good life among the Heathen, so to procure their conuersion: 13 to be obedient subiects to higher Povvers ( hovvsoeuer some misconster Christian libertie ) 14 and seruants to obey their Maisters. 19 And so, doing vvel, though they suffer for it, it is very meritorious, 21 vvhereas Christ also not onely gaue them example, 24 but also by his death hath made them able to liue iustly."
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "IN <cr>[1]</cr> like maner also <na>[2]</na> let the vvomen be subiect to their husbandes: that if any beleeue not the vvord, by the conuersation of the vvomen vvithout the vvord they may be vvonne,",
+          "cross_refs": [
+            {
+              "text": "Eph. 5, 28. Col. 3, 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "How husbands should behave themselves toward their wives.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Eph. 5, 28. Col. 3, 18."
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "considering your chast conuersation in feare."
+        },
+        {
+          "verse": 3,
+          "text": "<cr>[1]</cr><na>[2]</na> VVhose trimming let it not be outvvardly the plaiting of heare, or laying on gold round about, or of putting on vestures:",
+          "cross_refs": [
+            {
+              "text": "1. Tim. 2, 9."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "1 Tim. 2, 9.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "but the man of the hart that is hidden, in the incorruptibilitie of a quiet and a modest spirit, vvhich is riche in the sight of God."
+        },
+        {
+          "verse": 5,
+          "text": "For so sometime the holy vvomen also that trusted in God, adorned them selues, subiect to their ovvne husbandes."
+        },
+        {
+          "verse": 6,
+          "text": "As <cr>[1]</cr> Sara obeied Abraham, calling him lord: <na>[2]</na> cvvhose daughters you are, doing vvel, and not fearing any perturbation.",
+          "cross_refs": [
+            {
+              "text": "Gen. 18."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "<i>c ἧς</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<na>[1]</na> Husbandes likevvise, dvvelling vvith them according to knovvledge, as vnto the vveaker feminine vessel imparting honour, as it vvere to the coheires also of the grace of life: that your praiers be not hindered.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "How husbands should behave themselves toward their wives.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<na>[1]</na> And <na>[2]</na> <alt>`in fine</alt>' al of one minde, hauing compassion, louers of the fraternitie, merciful, modest, humble.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the 5. Sunday after Pentecost.",
+              "kind": "lectionary"
+            },
+            {
+              "label": "2",
+              "text": "<i>`in faith</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<cr>[1]</cr> not rendering euil for euil, nor curse for curse: but contrarievvise, blessing: for vnto this are you called, that you may by inheritance possesse a benediction.",
+          "cross_refs": [
+            {
+              "text": "Pro. 17, 13. Mat. 5, 44."
+            }
+          ],
+          "xrefs": [
+            "Pro. 17, 13. Mat. 5, 44."
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<cr>[1]</cr> <i>For he that vvil loue life, and see good daies: let him refraine his tong from euil, and his lippes that they speake not guile</i>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 33, 13."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<i>Let him decline from euil, and doe good: let him enquire peace, and folovv it</i>:"
+        },
+        {
+          "verse": 12,
+          "text": "<i>because the eies of our Lord are vpon the iust, and his eares vnto their praiers: but the countenance of our Lord vpon them that doe euil things</i>."
+        },
+        {
+          "verse": 13,
+          "text": "And vvho is he that can hurt you, if you be emulators of good?"
+        },
+        {
+          "verse": 14,
+          "text": "But <cr>[1]</cr> & if you suffer ought for iustice, blessed are ye. And the feare of them feare ye not, & be not troubled.",
+          "cross_refs": [
+            {
+              "text": "Mat. 5, 10."
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "But sanctifie our Lord Christ in your hartes, ready alvvaies to satisfie euery one that asketh you a reason of that hope vvhich is in you:"
+        },
+        {
+          "verse": 16,
+          "text": "but vvith modestie and feare, hauing a good conscience: that in that vvhich they speake il of you, they may be confounded vvhich calumniate your good conuersation in Christ."
+        },
+        {
+          "verse": 17,
+          "text": "For it is better to suffer as doing vvel (if the vvil of God vvil haue it so) then doing il."
+        },
+        {
+          "verse": 18,
+          "text": "<na>[1]</na> Because Christ also died once for our sinnes, the iust for the vniust: that he might offer vs to God, mortified certes in flesh, but quickened in spirit.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle vpon friday in Easter vveeke.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "In the vvhich spirit comming he preached to <na>[1]</na> <alt>`them</alt>' also that vvere in prison:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              56,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>`those spirites</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "vvhich had been incredulous sometime, <cr>[1]</cr> vvhen they expected the patience of God in the daies of Noë, vvhen the arke vvas a building: in the vvhich, fevv, that is, <cr>[2]</cr> eight soules vvere saued by vvater.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              15,
+              20,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Gen. 6. Mat. 24."
+            },
+            {
+              "text": "Gen. 7, 7."
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "Vvherevnto Baptisme being of the like forme novv saueth <na>[1]</na> <alt>`you</alt>' also: not the laying avvay of the filth of the flesh, but the examination of a good conscience tovvard God by the resurrection of <sc>IESVS</sc> Christ.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              24,
+              16,
+              1
+            ],
+            [
+              137,
+              36,
+              2
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>us</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "vvho is on the right hand of God, ⊢ svvallovving death, that vve might be made heires of life euerlasting: being gone into heauen, Angels and Potentates and Povvers subiected to him."
+        }
+      ],
+      "summary": "The dutie of vviues and husbands to ech other. 9 None to doe or speake euil by their persecutors, 15 but to ansvver them alvvaies vvith modestie, and specially vvith innocencie, after the example of Christ most innocent: vvhose body though they killed, yet his soule liued and preached aftervvard to the soules in Hel ( namely to those in the time of Noës floud being a figure of our Baptisme ) rose againe, and ascended."
+    },
+    {
+      "chapter": 4,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>CHRIST</sc> therfore hauing suffered in the flesh, be you also armed vvith the same cogitation. because he that hath suffered in the flesh, hath ceased from sinnes:"
+        },
+        {
+          "verse": 2,
+          "text": "that novv not after the desires of men, but according to the vvil of God he liue the rest of his time in the flesh."
+        },
+        {
+          "verse": 3,
+          "text": "For the time past sufficeth (to accomplish the vvil of the Gentiles) them that haue vvalked in riotousnes, desires, excesse of vvine, banketings, potations, and vnlavvfnl seruices of Idols."
+        },
+        {
+          "verse": 4,
+          "text": "VVherein they maruel blaspheming, you not concurring into the same confusion of riotousnes."
+        },
+        {
+          "verse": 5,
+          "text": "vvho shal render account to him, vvhich is ready to iudge the liuing and the dead."
+        },
+        {
+          "verse": 6,
+          "text": "For, for this cause also vvas <na>[1]</na> it euangelized to the dead: that they may be iudged in deede according to men, in the flesh: but may liue according to God in the Spirit.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "It hath the same difficulty and sense that the other like vvordes haue before, <i>Chap. 3</i>. See the annotation there <i>v. 19</i>. and S. Aug. <i>ep. 69</i>, & Oecumenius <i>vpon this place</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<na>[1]</na> And the end of al <na>[2]</na> <alt>`shal approche</alt>'. Be vvise therfore: and vvatch in praiers.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "is at hand.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>`is at hand</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "But before al things, hauing mutual charitie continual among your selues: because <cr>[1]</cr> charitie couereth the multitude of sinnes.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              94,
+              16,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Prov. 10."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<cr>[1]</cr> Vsing hospitalitie one tovvard an other vvithout murmuring.",
+          "cross_refs": [
+            {
+              "text": "Ro. 12, Heb. 13."
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<cr>[1]</cr> Euery one as he hath receiued grace, ministring the same one tovvard an other: as good dispensers of the manifold grace of God.",
+          "cross_refs": [
+            {
+              "text": "Ro. 12, 6."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "If any man speake, as the vvordes of God. if any man minister: as of the povver, vvhich God administreth. that in al things God may be honoured by <sc>IESVS</sc> Christ: ⊢ to vvhom is glorie and empire for euer and euer. Amen."
+        },
+        {
+          "verse": 12,
+          "text": "My deerest, thinke it not strange in the feruour vvhich is to you for a tentation, as though some nevv thing happened to you:"
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> but communicating vvith the passions of Christ, be glad, that in the reuelation also of his glorie you may be glad reioycing.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for some Martyrs.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "<cr>[1]</cr> If you be reuiled in the name of Christ, you shal be blessed: because that vvhich is of the honour, glorie, and vertue of God, and the Spirit vvhich is his, shal rest vpon you.",
+          "cross_refs": [
+            {
+              "text": "Mt. 5, 11."
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "But let none of you suffer as a murderer, or a theefe, or a railer, or a coueter of other mens things."
+        },
+        {
+          "verse": 16,
+          "text": "But if as a Christian, let him not be ashamed, but let him glorifie God in this name."
+        },
+        {
+          "verse": 17,
+          "text": "for <cr>[1]</cr> the time is that iudgement begin of the house of God. And if first of vs: vvhat shal be the end of them that beleeue not the Gospel of God?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              29,
+              20,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Hier. 25, 29."
+            }
+          ],
+          "xrefs": [
+            "Hier. 25, 29."
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "And <cr>[1]</cr> if the iust man shal scarse be saued: vvhere shal the impious and sinner appeare?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              11,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Prov. 11, 31."
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "Therfore they also that suffer according to the vvil of God, let them commend their soules to the faithful creator, in good deedes. ⊢"
+        }
+      ],
+      "summary": "That they arme them selues to sinne no more after Baptisme, against the tentations of the Heathen, considering that the general end novv approcheth. 8 specially tovvard their euen-Christians to shevv their charitie, hospitalitie, and grace, doing al to the glorie of God. 12 And as for being persecuted because they are Christians, to reioyce, considering the revvard that they shal haue vvith Christ, and damnation that they auoid thereby."
+    },
+    {
+      "chapter": 5,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>THE</sc> <na>[1]</na> seniors therfore that are among you, I beseche, my self a fellovv senior vvith them and a vvitnesse of the passions of Christ, vvho am also partaker of that glorie vvhich is to be reuealed in time to come:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              7,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for S. Apollinaris <i>July 23</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "feede the flocke of God vvhich is among you, <na>[1]</na> cprouiding not by constrainte, but vvillingly according to God: <na>[2]</na> neither for filthie lucre sake, but voluntarily:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>c ἐπισκοποῦντες.</i>",
+              "kind": "word"
+            },
+            {
+              "label": "2",
+              "text": "Desire of lucre, or to exercise holy functions for gaine, is a filthy fault in the Clergie, and therfore much to be auoided.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "neither as ouerruling the Clergie, but made examples of the flocke from the hart.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              11,
+              11,
+              1
+            ],
+            [
+              23,
+              10,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And vvhen the prince of pastors shal appeare, you shal receiue the incorruptible crovvne of glorie.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              81,
+              14,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "In like maner ye yong men be subiect to the seniors. And do ye al insinuate humilitie one to an other, because <i>God resisteth the proude: and to the humble he giueth grace</i>.",
+          "xrefs": [
+            "Prou. 3. Iac. 4."
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<cr>[1]</cr><na>[2]</na> Be ye humbled therfore vnder the mightie hand of God, that he may exalt you in the time of visitation:",
+          "cross_refs": [
+            {
+              "text": "Prov. 3. Iac. 4. Iac. 4. Psa. 54. Mt. 6, 25."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Iac. 4.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Iac. 4."
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "casting al your carefulnes vpon him, because he hath care of you.",
+          "xrefs": [
+            "Psa. 54, Mt. 6, 25."
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "Be sober and vvatch: because your aduersarie the Diuel as a roaring lion goeth about, seeking vvhom he may deuoure."
+        },
+        {
+          "verse": 9,
+          "text": "vvhom resist ye, strong in faith: knovving that the self same affliction is made to that your fraternitie vvhich is in the vvorld."
+        },
+        {
+          "verse": 10,
+          "text": "But the God of al grace, vvhich hath called vs vnto his eternal glorie in Christ <sc>IESVS</sc>, he vvil perfite you hauing suffered a litle, and confirme, and stablish you."
+        },
+        {
+          "verse": 11,
+          "text": "To him be glorie and empire for euer and euer. Amen. ⊢"
+        },
+        {
+          "verse": 12,
+          "text": "By Syluanus a faithful brother to you, as I thinke, I haue breefely vvritten: beseching and testifying that this is the true grace of God, vvherein you stand."
+        },
+        {
+          "verse": 13,
+          "text": "The Church saluteth you, that is in Babylon, coëlect: and Marke my sonne.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              18,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "<cr>[1]</cr> Salute one an other in a holy kisse. Grace be to al you vvhich are in Christ <sc>IESVS</sc>. Amen.",
+          "cross_refs": [
+            {
+              "text": "Ro. 16, 16. 1. Cor. 16, 20. 2. Cor. 13, 12."
+            }
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Some of the English new translations turn it corruptly, <i>Parishes:</i> others, <i>heritages:</i> both, to avoid the most known, true, and common word in all Christian languages, to wit,",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "He exhorteth Priestes to feede their flockes, onely for Gods sake and revvard of heauen, vvithout al lordlines. 5 the laie to obey: al to be humble one tovvards an other. 8 to be constant in the Catho. faith, considering it is not man, but that lion the Diuel that persecuteth them, 9 as he doth the vvhole Church also, & that God vvil after a vvhile make them secure in heauen."
+    }
+  ],
+  "intros": [
+    {
+      "title": "THE ARGUMENT OF BOTH THE EPISTLES OF S. PETER, THE FIRST, AND THE SECOND.",
+      "text": "OF S. Peter we read at large, both in the Gospels, and in the Acts of the Apostles: and namely, that Christ designed him, and also made him his vicar (as S. Matthew <mn>◦</mn> for that cause in the catalogue of the Apostles, called him <i>Primus, the first</i> , and all antiquity, <i>Princeps Apostolorum, the Prince of the Apostles</i> ) and that he accordingly executed that office after Christ's departure, planting the Church first among the Jews in Hierusalem and in all that country and coasts about, as Christ also himself before had preached to the Jews alone.\n\nBut preaching at length to the Gentiles also, according to Christ's commission (Mat. 28. v. 19.) and being now come to Rome, the head city of the Gentiles, from thence he writeth this Epistle to his Christian Jews, having care of them in his absence, no less than when he was present: and not to the Jews that were at home, (belike because they had S. James, or his successor S. Simon Cleophae, resident with them) but <mn>◦</mn> to them that were dispersed in Pontus, Galatia, Cappadocia, and Bithynia.\n\nAnd that he writeth it from Rome, himself signifieth saying: <mn>[3]</mn> <i>The Church that is in Babylon saluteth you</i> . <mn>[4]</mn> Where by Babylon he meaneth Rome, as all antiquity doth interpret him: not, that he so calleth the Church of Rome, but the heathen state of the Roman empire, which then, and 300 years after, unto the conversion of Constantinus the Emperor, did persecute the elect Church of Rome, in so much that the first 33 Bishops thereof unto S. Silvester, were all Martyrs.\n\nFor the matter whereof he writeth, himself doth signify it in these words: <i>This lo the second Epistle I write to you, my dearest, in Which (Epistles</i> <mn>[5]</mn> <i>) I stir up by admonition, your sincere mind, that you may be mindful of those words &c.</i> So he saith there of both together. And again of the first to the same purpose, in another place: <mn>[6]</mn> <i>I have briefly written, beseeching and testifying that this is the true grace of God, wherein you stand</i> . For, there were at that time certain Seducers (as <mn>[7]</mn> S. August. also hath told us) who went about to teach <i>Only faith</i> , as though good works were not necessary, nor meritorious. There were also great persecutions, to compel them with terror to deny Christ & all his religion. He therefore exhorteth them accordingly, neither for persecution, neither by seduction to forsake it: though in the first, his exhortation is more principally against persecution: and in the second, more principally against seduction. The first epistle is noted to be very like to S. Paul's epistle to the Ephesians, in words also, and so thick of Scriptures, as though he spake nothing else.\n\nThe time when the first was written, is uncertain: the second was written a little before his death, as is gathered by his words in the same. c. 1. v. 14.",
+      "notes": [
+        {
+          "marker": 1,
+          "text": "<i>c. 10. v. 2.</i>"
+        },
+        {
+          "marker": 2,
+          "text": "<i>1. Pet. 1.</i>"
+        },
+        {
+          "marker": 3,
+          "text": "<i>1. Pet. 5.</i>"
+        },
+        {
+          "marker": 4,
+          "text": "* See the Annotation <i>1. Pet. 5. v. 13.</i>"
+        },
+        {
+          "marker": 5,
+          "text": "<i>2. Pet. 3.</i>"
+        },
+        {
+          "marker": 6,
+          "text": "<i>1. Pet. 5.</i>"
+        },
+        {
+          "marker": 7,
+          "text": "* See the Annotation upon S. James' epistle <i>c. 2. v. 21.</i>"
+        }
+      ]
+    }
+  ],
+  "spelling": "original"
+}

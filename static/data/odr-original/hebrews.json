@@ -1,0 +1,2820 @@
+{
+  "book": "hebrews",
+  "book_title": "The Epistle of S. Paul the Apostle\nto the Hebrews.",
+  "short_title": "Hebrews",
+  "hebrew_title": null,
+  "intros": [
+    {
+      "title": "THE ARGUMENT OF THE EPISTLE OF S. PAUL TO THE HEBREWS.",
+      "text": "THAT the Hebrews were not all the Jews, but only a part of them, it is manifest Act. 6: where the primitive Church of Hierusalem, although it consisted of Jews only, as we read Act. 2. yet is said to consist of two sorts, Greeks & Hebrews. Which again is manifest Phil. 3. where S. Paul comparing himself with the Judaical false-Apostles, saith, that he also is, <i>an Hebrew of Hebrews.</i> Finally, they seem to have been those Jews which were born in Jury, which for the most part dwelled also there. Therefore to the Christian Jews in Hierusalem and in the rest of Jury, S. Paul writeth this Epistle, out of Italy: saying thereupon, <i>The brethren of Italy salute you.</i> Heb. 13. By which words, & by these other in the same place, <i>Know ye our brother Timothee to be dismissed, with whom (if he come the sooner) I will see you</i>, it is evident, that he wrote this, not only after he was brought prisoner to Rome, wherein S. Luke endeth the Acts of the Apostles: but also after he was set at liberty there again.<br>Many causes are given of the Doctors, why writing to the Jews, he doth not put his name in the beginning, <i>Paul an Apostle &c.</i> as he doth lightly in his Epistles to the Churches and Bishops of the Gentiles. The most likely cause is, for that he was <i>the preacher and Apostle and Master of the</i> <mn>[1]</mn> <i>Gentiles.</i> And again in another place he saith , that himself was appointed the Apostle of the <mn>[2]</mn> Gentiles, as Peter of the Jews. Gal. 2. Only S. Peter therefore writing to the Jews, doth use this style: <i>Peter an Apostle of JESUS Christ &c.</i> because he was more peculiarly their Apostle, as <mn>[3]</mn> being the vicar of Christ, who was also himself more specially <i>the minister of the</i> <mn>[4]</mn> <mn>[5]</mn> <i>Circumcision</i>, that is (as himself speaketh) <i>not sent but to the sheep which were lost of the house of Israel.</i> Mat. 15.\n\nThe Argument of the Epistle S. Paul himself doth tell us in two words, calling it <i>verbum solatij,</i> <mn>◦</mn> <i>the word of solace and comfort.</i> Which also is plain in the whole course of the Epistle, namely in the tenth chapter. v. 32. &c. Where he exhorteth them to take great comfort and confidence in their manifold tribulations sustained of their own country-men the Jews, whereof the Apostle also maketh mention to the Thessalonians. 1. Thess. 2. v. 14. Those persecutions then of the obstinate incredulous Jews their country-men, was one great tentation unto them. Another tentation was, the persuasions that they brought unto them out of Scriptures, to cleave unto the Law, and not to believe in JESUS the dead man.\n\nAnd whereas the Jews did magnify their law, by the Prophets, and by the Angels by whom it was given, and by Moyses, and by their land of promise, into which Iosue brought them, and by their father Abraham, and by their Aaronical or Levitical priesthood and sacrifices, by their Tabernacle, & by their Testament: he sheweth, that our Lord JESUS, as being the natural son of God, passeth incomparably the Prophets, the Angels, and Moyses: that the Rest or quietness which God promised, was not in their earthly land, but in heaven: that his figure Melchisedec far passed Abraham: and that his priesthood, Sacrifice, Tabernacle, and testament, far passed theirs. In all which he shooteth often at these three marks: to take away the scandal of Christ's death, by giving them sundry good reasons & testimonies of it: to erect their minds from visible and earthly promises (to which only, the Jews were wholly bent) to invisible and heavenly: and to insinuate that the Ceremonies should now cease, the time of their correction by Christ being now come. The Epistle may be divided into these parts: the first, Of Christ's excellency above the Prophets, Angels, Moyses, and Iosue: c. 1. 2. 3. 4. The second, of his priesthood and excellency thereof above the priesthood of the old Testament: c. 5. unto the midst of the 10. The last part is of exhortation c. 10. v. 9. to the end of the Epistle.",
+      "default": true,
+      "notes": [
+        {
+          "marker": 1,
+          "text": "<i>2. Tim. 1.</i>"
+        },
+        {
+          "marker": 2,
+          "text": "<i>1. Tim. 2.</i>"
+        },
+        {
+          "marker": 3,
+          "text": "<i>1. Pet. 1.</i>"
+        },
+        {
+          "marker": 4,
+          "text": "* Yet was Christ head of the Gentiles also. So likewise his vicar S. Peter, notwithstanding his more peculiar Apostleship over the Jews."
+        },
+        {
+          "marker": 5,
+          "text": "<i>Rom. 5.</i>"
+        },
+        {
+          "marker": "◦",
+          "text": "<i>Heb. 13.</i>"
+        }
+      ]
+    },
+    {
+      "title": "THE EPISTLE OF S. PAUL THE APOSTLE TO THE HEBREWS.",
+      "text": "<mn>[1]</mn> Let the Christian Reader note the corruption and impudent boldness of our Adversaries, that upon a false private persuasion of their own, that S. Paul was not the author of this Epistle, <mn>[2]</mn> leave out his name in the title of the same, contrary to the authentical copies both Greek and Latin. In old time there was some doubt who should be the writer of it, but then, when it was no less doubted whether it were Canonical Scripture at all. <mn>[3]</mn> Afterward the whole Church (by which only we know the true Scriptures from other writings) held it and delivered it, as now she doth, to the faithful, for Canonical, and for S. Paul's Epistle. Notwithstanding the Adversaries would have refused the Epistle, as well as they do the Author, but that they falsely imagine certain places thereof to make against the Sacrifice of the Mass.",
+      "notes": [
+        {
+          "marker": 1,
+          "text": "Heretical corruption."
+        },
+        {
+          "marker": 2,
+          "text": "<i>* In the English Bible of the year 1579.</i>"
+        },
+        {
+          "marker": 3,
+          "text": "The Epistle to the Hebrews is, S. Paul's."
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>DIVERSELY</sc> <na>[1]</na> and many vvaies in times past God speaking to the fathers in the prophets:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle at the third Mass on Christmas day.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "last of al in these daies hath spoken to vs in his Sonne, vvhom he hath appointed heire of al, by vvhom he made also the vvorldes."
+        },
+        {
+          "verse": 3,
+          "text": "<cr>[1]</cr> Who being the <na>[2]</na> cbrightnesse of his glorie, and the <na>[3]</na> bfigure of his substance, & carying al things by the vvord of his povver, making purgation of sinnes, sitteth on the right hand of the Maiestie in the high places:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              69,
+              23,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Sap. 7, 26."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "<i>c ἀπαύγασμα</i>",
+              "kind": "word"
+            },
+            {
+              "label": "3",
+              "text": "<i>b χαρακτὴρ ὑποστάσεως</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<na>[1]</na> being made so much better then Angels, as he hath inherited a more excellent name aboue them.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The excellency of Christ above Angels.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "For to vvhich of the Angels hath he said at any time, <cr>[1]</cr> <i>Thou art my sonne, to day haue I begotten thee</i>? and againe, <cr>[2]</cr> <i>I wil be to him a father, and he shal be to me a sonne</i>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 2, 7."
+            },
+            {
+              "text": "2. Reg. 7, 14."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "And vvhen againe he bringeth in the first begotten into the vvorld, he saith, <i>And </i> <cr>[1]</cr> <i>let al the Angels of God adore him</i>.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              103,
+              31,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ps. 96, 8."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "And to the Angels truely he saith, <cr>[1]</cr> <i>He that maketh his Angels, spirites: and his ministers, a flame of fire</i>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 103, 4."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "But to the Sonne: <cr>[1]</cr> <i>Thy throne ô God for euer & euer: a rod of equitie, the rod of thy kingdom</i>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 44, 7."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<i>Thou hast loued iustice, and hated iniquitie: therfore thee, God, thy God hath anointed vvith the oile of exultation aboue thy fellovves</i>."
+        },
+        {
+          "verse": 10,
+          "text": "And, <cr>[1]</cr> <i>Thou in the beginning ô Lord didst found the earth: and the vvorkes of thy handes are the heauens</i>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 101. 26."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<i>They shal perish, but thou shalt continue: and they shal al vvaxe old as a garment</i>."
+        },
+        {
+          "verse": 12,
+          "text": "<i>And as a vesture shalt thou chaunge them, and they shal be changed: but thou art the self same, and thy yeres shal not faile</i>. ⊢"
+        },
+        {
+          "verse": 13,
+          "text": "But to vvhich of the Angels said he at any time: <cr>[1]</cr> <i>Sit on my right hand, vntil I make thine enemies the footestoole of</i> thy feete?",
+          "cross_refs": [
+            {
+              "text": "Ps. 109, 1. 1. Cor. 15, 25."
+            }
+          ],
+          "xrefs": [
+            "Ps. 109, 1. · 1. Cor. 15, 25."
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "Are they not al, <na>[1]</na> ministring spirits: sent to minister for them vvhich shal receiue the inheritance of saluation?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The holy Angels (saith S. Augustine) to the societie of vvhom vve aspire in this our peregrination, as they haue eternitie to continue, so also facilitie to knovv, and felicitie to rest: for they do helpe vs vvithout al difficultie, because vvith their spiritual motions pure and free, they labour or trauel not. <i>De Ciuit. li. 11. c. 31</i>.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "God spake to their fathers by the Prophets: but to them selues by his owne Sonne, 14. who incomparably passeth al the Angels."
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>THERFORE</sc> more aboundantly ought vve to obserue those things vvhich vve haue heard: <na>[1]</na><na>[2]</na> clest perhaps vve runne out.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "As that which runneth out of a broken vessel, or that runneth by, is lost.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>μὴ ποτε παραρρυῶμεν</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "For if the vvord that vvas spoken by Angels, became sure, and al preuarication and disobedience hath receiued a iust retribution of revvard:"
+        },
+        {
+          "verse": 3,
+          "text": "how shal we escape if vve neglect so great saluation? vvhich vvhen it vvas begonne to be declared by our Lord, of them that heard was confirmed on vs,"
+        },
+        {
+          "verse": 4,
+          "text": "<cr>[1]</cr> God vvithal testifying by signes, & vvonders, and diuers miracles, & distributions of the holy Ghost according to his vvil.",
+          "cross_refs": [
+            {
+              "text": "Mar. 16, 20."
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "For not to Angels hath God made subiect the world to come, whereof vve speake."
+        },
+        {
+          "verse": 6,
+          "text": "But one hath testified in a certaine place, saying: <cr>[1]</cr> <i>VVhat is man, that thou art mindeful of him: or the sonne of man, that thou visitest him</i>?",
+          "cross_refs": [
+            {
+              "text": "Ps. 8, 5."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<i>Thou didst minish him litle lesse then Angels: with glorie and honour thou hast crowned him, and constituted him ouer the workes of thy handes</i>."
+        },
+        {
+          "verse": 8,
+          "text": "<cr>[1]</cr> <i>Al things hast thou made subiect vnder his feete</i>. For in that he subiected al things to him, he left nothing not subiect to him. But novv vve see not as yet al things subiected to him.",
+          "cross_refs": [
+            {
+              "text": "1. Cor. 15. Eph. 1."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "But <cr>[1]</cr> him that vvas a litle lessened vnder the Angels, vve see <sc>IESVS</sc>, <na>[2]</na> because of the passion of death, crovvned with glorie and honour: that through the grace of God he might tast death for al.",
+          "cross_refs": [
+            {
+              "text": "Philip. 2, 8."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Philip. 2, <i>8</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "For it became him for vvhom al things, and by vvhom al things, that had brought many children into glorie, to consummate the author of their saluation, by his passion."
+        },
+        {
+          "verse": 11,
+          "text": "For he that sanctifieth, and they that be sanctified: al of one. For the which cause he is not ashamed to call them brethren,"
+        },
+        {
+          "verse": 12,
+          "text": "saying, <cr>[1]</cr> <i>I vvil declare thy name to my brethren: in the middes of the Church wil I praise thee</i>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 21, 23."
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "And againe, <cr>[1]</cr> <i>I vvil haue affiance in him</i>. And againe, <cr>[2]</cr> <i>Behold here am I and my children: vvhom God hath giuen me</i>.",
+          "cross_refs": [
+            {
+              "text": "Ps. 17, 3."
+            },
+            {
+              "text": "Esa. 8, 18."
+            }
+          ],
+          "xrefs": [
+            "Ps. 17, 3. · Es. 8, 18."
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "Therfore because the children haue communicated vvith flesh and bloud, him self also in like maner hath bene partaker of the same: that <cr>[1]</cr> by death he might destroy him that had the empire of death, that is to say, the Deuil:",
+          "cross_refs": [
+            {
+              "text": "Ose. 13, 14. 1. Cor. 15, 54."
+            }
+          ],
+          "xrefs": [
+            "Ose. 13, 14. 1. Cor. 15, 54."
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "and might deliuer them that by the feare of death through al their life vvere subiect to seruitude."
+        },
+        {
+          "verse": 16,
+          "text": "For no vvhere doth he take Angels: but <na>[1]</na> the cseede of Abraham he taketh.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The dignitie of man, in that Christ tooke our nature vnto his person in Deitie, and not the nature of Angels.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "VVherevpon he ought in al things to be like vnto his brethren: that he might become a merciful and faithful high Priest before God, that he might repropitiate the sinnes of the people."
+        },
+        {
+          "verse": 18,
+          "text": "For in that vvherein him self suffered and vvas tempted: he is able to helpe them also that are tempted."
+        }
+      ],
+      "summary": "He inferreth of the foresaid, that it shal be incomparably more damnable for them to neglect the new Testament then the old, 3 considering the irrefragable authoritie of the Apostles also. 5 Then he prosecuteth the excellencie of Christ aboue the Angels, 9 who neuertheles, was made lesser then Angels, to suffer and die for men, to destroy the dominion of the Diuel, 15 to deliuer men from feare of death, 17 and to be a fitte Priest for men."
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>WHEREFORE</sc> holy brethren, partakers of the heauenly vocation, consider the Apostle, & high priest of our confession <sc>IESVS</sc>:"
+        },
+        {
+          "verse": 2,
+          "text": "who is faithful to him that made him, as also <cr>[1]</cr> Moyses in al his house.",
+          "cross_refs": [
+            {
+              "text": "Nu. 12, 7."
+            }
+          ],
+          "xrefs": [
+            "Nu. 12, 7."
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "<na>[1]</na> For, this man is esteemed vvorthie of more ample glorie aboue Moyses, by so much as more ample glorie then the house, hath he that framed it.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The excellency of Christ above Moyses.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "For euery house is framed of some man. but he that created al things, is God."
+        },
+        {
+          "verse": 5,
+          "text": "And Moyses in deede vvas faithful in al his house as a seruant, for a testimonie of those things vvhich vvere to be said:"
+        },
+        {
+          "verse": 6,
+          "text": "but Christ as the Sonne in his ovvne house: which house are vve, if vve keepe firme the confidence and glorie of hope vnto the end."
+        },
+        {
+          "verse": 7,
+          "text": "Wherefore, as the holy Ghost saith, <cr>[1]</cr> <i>To day if you shal heare his voice</i>,",
+          "cross_refs": [
+            {
+              "text": "Ps. 94, 8."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<i>harden not your hartes as in the exacerbation according to the day of tentation in the desert</i>,"
+        },
+        {
+          "verse": 9,
+          "text": "<i>vvhere your fathers tempted me: proued & saw my vvorkes</i>"
+        },
+        {
+          "verse": 10,
+          "text": "<i>fourtie yeres. For the which cause I was offended vvith this generation, and said, They doe alvvaies erre in hart. And they haue not knowen my waies</i>."
+        },
+        {
+          "verse": 11,
+          "text": "<i>to whom I svvare in my vvrath, If they shal enter into my rest</i>."
+        },
+        {
+          "verse": 12,
+          "text": "Bevvare brethren, lest perhaps there be in some of you an euil hart of incredulitie, to depart from the liuing God."
+        },
+        {
+          "verse": 13,
+          "text": "but exhort your selues euery day, vvhiles to day is named, that none of you be obdurate vvith the fallacie of sinne,"
+        },
+        {
+          "verse": 14,
+          "text": "For vve be made partakers of Christ: yet so if vve keepe the <na>[1]</na> beginning of his substance firme vnto the end.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Faith is the groundworke of our creation in Christ, which if we hold not fast, al the building is lost.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "VVhile it is said, <i>To day if you shal heare his voice, do not obdurate your hartes as in that exacerbation</i>."
+        },
+        {
+          "verse": 16,
+          "text": "For some hearing did exasperate: but not al they that vvent out of Ægypt by Moyses."
+        },
+        {
+          "verse": 17,
+          "text": "And vvith vvhom vvas he offended fourtie yeres? vvas it not with them that sinned, <cr>[1]</cr> vvhose carcasses vvere ouerthrovven in the desert?",
+          "cross_refs": [
+            {
+              "text": "Nu. 14, 37. 21, 23."
+            }
+          ],
+          "xrefs": [
+            "Nu. 14, 37. 21, 23."
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "And to vvhom did he svveare that they should not enter into his rest: but to them that were incredulous?"
+        },
+        {
+          "verse": 19,
+          "text": "And vve see that they could not enter in, because of incredulitie."
+        }
+      ],
+      "summary": "By example of Christ (who is incomparably more excellent then Moyses also) he exhorteth them to be faithful vnto God. 7 Their reward shal be to enter into euerlasting rest, if they perseuere, as contrariwise to be excluded (as was shadowed in their forefathers in the wildernes) if they sinne and become incredulous."
+    },
+    {
+      "chapter": 4,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>LET</sc> vs feare therfore lest perhaps forsaking the promis of entring into his rest, some of you be thought to be vvanting."
+        },
+        {
+          "verse": 2,
+          "text": "For to vs also it hath been denounced, as also to them. but the vvord of hearing did not profit them, not mixt vvith faith of those things vvhich they heard."
+        },
+        {
+          "verse": 3,
+          "text": "For vve that haue beleeued, shal enter into the rest: as he said, <cr>[1]</cr> <i>As I svvare in my wrath, if they shal enter into my rest</i>: and truely the vvorkes from the foundation of the vvorld being perfited.",
+          "cross_refs": [
+            {
+              "text": "Ps. 94, 11."
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "For he said in a certaine place of the <cr>[1]</cr> seuenth day, thus: <na>[2]</na> <i>And God rested the seuenth day from al his workes</i>.",
+          "cross_refs": [
+            {
+              "text": "Gen. 2, 2."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Gen. 2, 2.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And againe in this, <i>If they shal enter into my rest</i>."
+        },
+        {
+          "verse": 6,
+          "text": "Because then it remaineth that certaine enter into it, and they to vvhom first it vvas preached, did not enter because of incredulitie:"
+        },
+        {
+          "verse": 7,
+          "text": "Againe he limiteth a certaine day: <cr>[1]</cr> <i>To day</i>, in Dauid saying, after so long time, as is aboue said, <i>To day if you shal heare his voice: doe not obdurate your hartes</i>.",
+          "cross_refs": [
+            {
+              "text": "Heb. 3, 7."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "For if <na>[1]</na> cIesus had giuen them rest: he vvould neuer speake of an other day aftervvard.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c So Iosue is called in Greek.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "Therfore there is left a sabbatisme for the people of God."
+        },
+        {
+          "verse": 10,
+          "text": "For he that is entred into his rest, the same also hath rested from his vvorkes, as God from his."
+        },
+        {
+          "verse": 11,
+          "text": "Let vs hasten therfore to enter into that rest: that no man fal into the same example of incredulitie."
+        },
+        {
+          "verse": 12,
+          "text": "For <na>[1]</na> the vvord of God is liuely and forcible, and more persing then any tvvo edged sword: and reaching vnto the diuision of the soule and the spirit, of the ioyntes also and the marowes, and a discerner of the cogitations and intentes of the hart.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "the word of God. Whatsoever God threateneth by his word concerning the punishment of sin and incredulity, shall be executed, be the offence never so secret, deep, or hidden in our hearts: because God's speech passeth easily and searcheth throughly every part, power, and faculty of man's soul.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "And there is no creature inuisible in his sight. but al things are naked and open to his eies, to vvhom our speache is."
+        },
+        {
+          "verse": 14,
+          "text": "Hauing therfore a great high Priest that hath entred the heauens, <sc>IESVS</sc> the sonne of God, let vs hold the confession."
+        },
+        {
+          "verse": 15,
+          "text": "For we haue not a high priest that can not haue compassion on our infirmities: but tempted in al things by similitude, except sinne."
+        },
+        {
+          "verse": 16,
+          "text": "<na>[1]</na> Let vs goe therfore vvith confidence to the throne of grace: that vve may obteine mercie, and finde grace in seasonable aide.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              35,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in a Masse for the election of the Pope.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "That they must feare to be excluded out of the foresaid rest (which he proueth out of the psalme) 12 considering that Christ seeth their most inward secretes. 14 And that he (as their Priest who also him self suffered) is able and ready to strengthen them in confession of their faith."
+    },
+    {
+      "chapter": 5,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>FOR</sc> <na>[1]</na> euery high Priest taken from among men, is appointed for men in those things that pertaine to God: that he may offer giftes and sacrifices for sinnes:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              26,
+              17,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon the feast of S. Thomas of Canterbury. Decem. 29. And in his Translation Iulij. 7. And for a Bishop that is a Confessor.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "that cā haue compassion on them that be ignorant and do erre: because him self also is compassed vvith infirmitie:"
+        },
+        {
+          "verse": 3,
+          "text": "& therfore he ought, as for the people, so also for him self to offer for sinnes."
+        },
+        {
+          "verse": 4,
+          "text": "<cr>[1]</cr> Neither doth any man take the honour to him self, but he that is called of God, <cr>[2]</cr> as Aaron. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              34,
+              26,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "2. Par. 26, 18."
+            },
+            {
+              "text": "1. Par. 23. 13."
+            },
+            {
+              "text": "Aaron. 2 Par. 26, 18. 1 Par. 23, 13",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "So Christ also did not glorifie him self that he might be made a high priest: but he that spake to him, <cr>[1]</cr> <i>My Sonne art thou, I this day haue begotten thee</i>.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              15,
+              23,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ps. 2, 7."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "As also in an other place he saith, <cr>[1]</cr> <i>Thou art a priest for euer, according to the order of Melchisedec</i>. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              60,
+              17,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ps. 109, 4."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "VVho in the daies of his flesh, vvith a strong crie and teares, offering praiers and supplications to him that could saue him from death, vvas heard for his reuerence. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              30,
+              17,
+              1
+            ],
+            [
+              143,
+              17,
+              3
+            ]
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And truely vvhereas he was the Sonne, he learned by those things vvhich he suffered, obedience:"
+        },
+        {
+          "verse": 9,
+          "text": "and being consummate, was made to al that obey him, cause of eternal saluation,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              10,
+              1
+            ],
+            [
+              22,
+              15,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "called of God a high priest according to the order of Melchisedec."
+        },
+        {
+          "verse": 11,
+          "text": "Of vvhome vve haue great speache and inexplicable to vtter: because you are become vveake to heare.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              33,
+              12,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "For vvhereas you ought to be maisters for your time, you neede to be taught againe your selues vvhat be the elements of the beginning of the vvordes of God: and you are become such as haue neede of milke, & not of strong meate."
+        },
+        {
+          "verse": 13,
+          "text": "For euery one that is partaker of milke, is vnskilful of the vvord of iustice: for he is a childe."
+        },
+        {
+          "verse": 14,
+          "text": "But strong meate is for the perfect, them that by custome haue their senses exercised to the discerning of good & euil."
+        }
+      ],
+      "summary": "That Christ being a man and infirme, was therein but as al Priests. and that he also was called of God to this office: offering as the others: 8 and suffered obediently for our example. 11 Of whose Priesthod he hath much to say, but that the Hebrues haue neede rather to heare their Catechisme againe."
+    },
+    {
+      "chapter": 6,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>VVHERFORE</sc> intermitting the vvord of the beginning of Christ, let vs proceede to perfection, not againe laying the foundation of penance from dead vvorkes, and of faith tovvard God,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              116,
+              25,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "of the doctrine of baptismes, and of imposition of handes, and of the resurrection of the dead, and of eternal iudgement."
+        },
+        {
+          "verse": 3,
+          "text": "And this shal we doe, if God vvill permit."
+        },
+        {
+          "verse": 4,
+          "text": "For <cr>[1]</cr> it is impossible for them that were once illuminated, haue tasted also the heauenly gift, and vvere made partakers of the holy Ghost,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              23,
+              10,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Heb. 10, 26."
+            }
+          ],
+          "xrefs": [
+            "Heb. 10, 26."
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "haue moreouer tasted the good vvord of God, and the povvers of the world to come,"
+        },
+        {
+          "verse": 6,
+          "text": "and are fallen: to be reneued againe to penance, crucifying againe to them selues the sonne of God, and making him a mockerie."
+        },
+        {
+          "verse": 7,
+          "text": "For the earth drinking the raine often comming vpon it, & bringing forth grasse commodious for them by vvhom it is tilled, receiueth blessing of God."
+        },
+        {
+          "verse": 8,
+          "text": "but bringing forth thornes and bryers, it is reprobate, and very neere a curse, whose end is, to be burnt."
+        },
+        {
+          "verse": 9,
+          "text": "But <na>[1]</na> vve confidently trust of you, my best beloued, better things and neerer to saluation: although we speake thus.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "It is euident by these wordes, against the Nouatians and the Caluinists, that S. Paul meant not precisely, that they had done, or could do any such sinne, whereby they should be put out of all hope of saluation, and be sure of damnation, during their life.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "For God is not vniust, that he should forget your vvorke & loue which you haue shevved in his name, vvhich haue ministred to the sainctes and do minister.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              17,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "And our desire is that euery one of you shevv forth the same carefulnesse to the accomplishing of hope vnto the end:"
+        },
+        {
+          "verse": 12,
+          "text": "that you become not slouthful, but imitatours of them which by faith and patience shal inherite the promisses."
+        },
+        {
+          "verse": 13,
+          "text": "For God promising to Abraham, because he had none greater by whom he might sweare, he sware by him self,"
+        },
+        {
+          "verse": 14,
+          "text": "saying, <cr>[1]</cr> Vnles blessing I shal blesse thee, and multiplying shal multiplie thee.",
+          "cross_refs": [
+            {
+              "text": "Gen. 22, 16."
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And so patiently enduring he obtained the promise."
+        },
+        {
+          "verse": 16,
+          "text": "For men svveare by a greater then them selues: and the end of al their controuersie, for the confirmation, is an othe."
+        },
+        {
+          "verse": 17,
+          "text": "VVherein God meaning more aboundantly to shevv to the heires of the promise the stabilitie of his counsel, he interposed an othe:"
+        },
+        {
+          "verse": 18,
+          "text": "that by tvvo things vnmoueable, vvhereby it is impossible for God to lie, vve may haue a most strong comfort. vvho haue fled to hold fast the hope proposed,"
+        },
+        {
+          "verse": 19,
+          "text": "vvhich vve haue as an anker of the soule, sure and firme, and going in into the inner partes of the vele,"
+        },
+        {
+          "verse": 20,
+          "text": "vvhere <sc>IESVS</sc> the precursor for vs is entered, made a high priest for euer according to the order of Melchisedec."
+        }
+      ],
+      "summary": "He exhorteth them to be perfect scholers, and not to neede to be Catechumens againe, 4 considering they can not be baptized againe: 9 and remembring their former good workes, for the which God wil not faile to performe them his promis, if they faile not to imitate Abraham by perseuerance in the faith with patience. 20 And so endeth his digression, and returneth to the matter of Christes Priesthod."
+    },
+    {
+      "chapter": 7,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>FOR</sc> this Melchisedec, the king of Salem, Priest of the God most high, <cr>[1]</cr> vvho mette Abraham returning from the slaughter of the kings, and blessed him:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              18,
+              12,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Gen. 14, 18."
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "to vvhom also Abraham deuided tithes of al: first in deede by interpretation, <na>[1]</na> the king of iustice: & then also king of Salem, which is to say, king of peace,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "∷ When the fathers & catholike expositours pike out allegories and mysteries out of the names of men, the Protestants not endued with the Spirit wherby the scriptures were giuen, deride their holy labours in the search of the same: but the Apostle findeth high mysterie in the very names of persons and places, as you see.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "without father, without mother, without genealogie, hauing neither beginning of daies nor end of life, but likened to the sonne of God, continueth a priest for euer.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And behold how great this man is, to whom also Abraham the Patriarke gaue tithes of the principal things.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              6,
+              1
+            ],
+            [
+              74,
+              6,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And certes <cr>[1]</cr> they of the sonnes of Leui that take the priesthod, haue commaundement to take tithes of the people according to the Law, that is to say, of their brethren: albeit them selues also issued out of the loines of Abraham.",
+          "cross_refs": [
+            {
+              "text": "Nu. 18, 21. Deu. 18, 1. Ios. 14, 4."
+            }
+          ],
+          "xrefs": [
+            "Nu. 18, 21. Deu. 18, 1. Ios. 14, 4."
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "but he whose generation is not numbered among them, tooke tithes of Abraham, and blessed him that had the promises."
+        },
+        {
+          "verse": 7,
+          "text": "But without al contradiction, that which is lesse, is blessed of the better.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              24,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "And here in deede, <na>[1]</na> men that die, receiue tithes: but there he hath witnes, that he liueth.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "∷ The tithes giuen to Melchisedech were not giuen as to a mere mortal man, as al of the tribe of Leui & Aarons order were: but as to one representing the Sonne of God, who now liueth and reigneth and holdeth his priesthod & the functions therof for euer.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And (that it may so be said) by Abraham Leui also, which receiued tithes, was tithed."
+        },
+        {
+          "verse": 10,
+          "text": "for as yet he was in his fathers loines, when Melchisedec mette him."
+        },
+        {
+          "verse": 11,
+          "text": "If then consummation was by the Leuitical priesthod (for vnder it the people receiued the Law) what necessitie was there yet an other priest to rise according to the order of Melchisedec, and not to be called according to the order of Aaron?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              20,
+              1
+            ],
+            [
+              96,
+              14,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "For the priesthod being translated, it is necessarie that a translation of the Law also be made.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              10,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "For he on whom these things be said, is of an other tribe, of the which, none attended on the altar."
+        },
+        {
+          "verse": 14,
+          "text": "For it is manifest that our Lord sprung of Iuda: in the which tribe Moyses spake nothing of <na>[1]</na> <alt>`priestes</alt>'.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>Priesthood.</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And yet it is much more euident: if according to the similitude of Melchisedec there arise an other priest,"
+        },
+        {
+          "verse": 16,
+          "text": "which was not made according to the Law of the carnal commaundement, but according to the power of life indissoluble."
+        },
+        {
+          "verse": 17,
+          "text": "For he witnesseth, <cr>[1]</cr> <i>That thou art a priest for euer, according to the order of Melchisedec</i>.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              49,
+              17,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ps. 109, 4."
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "Reprobation certes is made of the former commaundement, because of the weakenesse and vnprofitablenesse thereof.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              25,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "For the Law brought nothing to perfection, but an introduction of a better hope, by the which we approche to God.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              12,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "And in as much as it is not without an othe, (the other truely without an othe were made priestes:"
+        },
+        {
+          "verse": 21,
+          "text": "but this vvith an othe, by him that said vnto him: <cr>[1]</cr> <i>Our Lord hath svvorne, and it shal not repent him: thou art a priest for euer</i>)",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              9,
+              12,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ps. 109, 4."
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "by so much, is <sc>IESVS</sc> made a suretie of a better testament."
+        },
+        {
+          "verse": 23,
+          "text": "<na>[1]</na> And the other in deede vvere made priestes, being many, because that by death they vvere prohibited to continue:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              53,
+              10,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle upon S. Leo his day Iunii 28. and for some other Confessors Bishops.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "but this, for that he continueth for euer, hath an euerlasting priesthod."
+        },
+        {
+          "verse": 25,
+          "text": "vvhereby he is able to saue also for euer <na>[1]</na> <alt>`going</alt>' by him self to God: <na>[2]</na> alvvaies liuing to make intercession for vs.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "`them that goe",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "∷ Christ according to his humane nature praieth for vs, & continually representeth his former passion and merites to God the Father.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 26,
+          "text": "For it vvas seemely that vve should haue such a high priest, holy, innocent, impolluted, separated from sinners, and made higher then the heauens."
+        },
+        {
+          "verse": 27,
+          "text": "vvhich hath not necessitie daily (as the priestes) first <cr>[1]</cr> for his ovvne sinnes to offer hostes, then for the peoples. for this he did once, in offering him self. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              126,
+              16,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Lev. 9, 7. 16, 6."
+            }
+          ]
+        },
+        {
+          "verse": 28,
+          "text": "For the Law appointeth priestes them that haue infirmitie: but the vvord of the othe vvhich is after the Law, the Sonne for euer perfected."
+        }
+      ],
+      "summary": "To proue the Priesthod of Christ incomparably to excel the priesthod of Aaron (and therfore, that Leuitical priesthod now to cease, and that law also with it) he scanneth euery word of the verse alleaged out of the Psalme, Our Lord hath sworne: thou art a Priest for euer, according to the order of Melchisedec."
+    },
+    {
+      "chapter": 8,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>BVT</sc> the summe concerning those things vvhich be said, is: VVe haue such an high priest, vvho is sette on the right hand of the seate of maiestie in the heauens,"
+        },
+        {
+          "verse": 2,
+          "text": "a <na>[1]</na> minister of the holies, and of the true tabernacle, vvhich our Lord pight & not man.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Christ liuing and reigning in heauen, continueth his priestly function stil, and is minister not of Moyses Sancta & tabernacle, but of his owne body & bloud, which be the true holies, and tabernacle, not formed by man, but by Gods owne hand.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "For euery high priest is appointed to offer giftes and hostes: vvherfore it is necessarie that he also haue some thing that he may offer:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              77,
+              22,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "if then he vvere vpon the earth, neither vvere he a priest: vvhereas there vvere that did offer giftes according to the Lavv,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              30,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "that <cr>[1]</cr> cserue the exampler & shadow of heauenly things. As it vvas ansvvered Moyses, vvhen he finished the tabernacle, <na>[2]</na> See (quod he) that thou make al things according to the exampler vvhich vvas shevved thee in the mount.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              51,
+              15,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Exo. 25, 9. 40."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "c λατρεύουσι",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "But novv he hath obtained a better ministerie, by so much as he is mediatour of a better testament, vvhich is established in better promises."
+        },
+        {
+          "verse": 7,
+          "text": "For <na>[1]</na> if that former had been void of fault, there should not certes a place of a secōd been sought.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The promises and effectes of the Law were temporal, but the promises and effectes of Christes Sacraments in the Church be eternal.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "For blaming them, he saith: <cr>[1]</cr> <i>Behold the daies shal come, saith our Lord: and I wil consummate vpon the house of Israel, and vpon the house of Iuda a new Testament</i>:",
+          "cross_refs": [
+            {
+              "text": "Hier. 31, 31."
+            }
+          ],
+          "xrefs": [
+            "Hier. 31, 31."
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<i>not according to the testament vvhich I made to their fathers in the day that I tooke their hand to bring them</i> out of the land of Ægypt: because they did not continue <i>in my testament: and I neglected them, saith our Lord</i>."
+        },
+        {
+          "verse": 10,
+          "text": "<i>For this is the testament which I vvil dispose to the house of Israel after those daies, saith our Lord: Giuing my Lavves into their minde, & in their hart vvil I superscribe them: and I vvil be their God, and they shal be my people</i>:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              122,
+              15,
+              1
+            ],
+            [
+              197,
+              9,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<i>and euery one shall not teach his neighbour, and euery one his brother, saying, Knovv our Lord: because al shal know me from the lesser to the greater of them</i>:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              15,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "<i>because I wil be merciful to their iniquities, & their sinnes I wil not now remember</i>."
+        },
+        {
+          "verse": 13,
+          "text": "And in saying a nevv, the former he hath made old. And that vvhich grovveth auncient and vvaxeth old, is nigh to vtter decay."
+        }
+      ],
+      "summary": "Out of the same Psalme 109 he vrgeth this also, Sit thou on my right hand, shewing that the Leuitical tabernacle on earth, was but a shadow of his true Tabernacle in heauen: without which he should not be a Priest at all: 6 Whereas he is of a better Priesthod then they, as also he proueth by the excellencie of the new Testament aboue the old."
+    },
+    {
+      "chapter": 9,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>THE</sc> <cr>[1]</cr><na>[2]</na> former also in deede had iustifications <na>[3]</na> cof seruice, and a secular sanctuarie.",
+          "cross_refs": [
+            {
+              "text": "Exo. 25, 26. 1, 36."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The Epistle upon Imber Saturday <i>in Sept.</i>",
+              "kind": "lectionary"
+            },
+            {
+              "label": "3",
+              "text": "<i>c λατρείας.</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "For the tabernacle vvas made, the first, wherein vvere, the candlestickes, and the table, and the proposition of loaues, vvhich is called Holy."
+        },
+        {
+          "verse": 3,
+          "text": "But after the second vele, the tabernacle, vvhich is called <i>Sancta Sanctorum</i>:"
+        },
+        {
+          "verse": 4,
+          "text": "hauing a golden censar, and the arke of the testament couered about on euery part vvith gold, in the vvhich vvas ″ a golden potte hauing Manna, and the rod of Aaron that had blossomed, & <cr>[1]</cr> the tables of the testament,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              109,
+              12,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "3. Reg. 8. 2. Par. 5."
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "and ouer it vvere <cr>[1]</cr> the ″ Cherubins of glorie ouershadovving the propitiatorie. of vvhich things it is not needeful to speake novv particularly.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              34,
+              9,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Exo. 25, 22."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "But these things being so ordered, in the first tabernacle in deede the priests alvvaies entered, accomplishing offices of the sacrifices."
+        },
+        {
+          "verse": 7,
+          "text": "But in the second, <cr>[1]</cr> once a yere the high priest only: not vvithout bloud vvhich he offereth for his owne and the peoples ignorance:",
+          "cross_refs": [
+            {
+              "text": "Exo. 30, 10. Lev. 16, 2. 30."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "the holy Ghost signifying this, that the vvay of the holies was <na>[1]</na> not yet manifested, the former tabernacle as yet standing.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The way to heauen was not open before Christs passion. & therfore the Patriarches and good men of the old Testament were in some other place of rest vntil then.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "which is a cparable of the time present: according to vvhich are offered giftes and hostes, vvhich can not concerning the conscience make perfect <na>[1]</na><na>[2]</na> chim that serueth,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Al things done in the old Testament and priesthod were figures of Christes actions.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "τὸν λατρεύοντα.",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "onely in meates and in drinkes, and diuerse baptismes, and iustices of the flesh laid on them ″ vntil the time of correction.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              90,
+              28,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "But <na>[1]</na> bChrist assisting an high Priest of the good things to come, by a more ample and more perfect tabernacle not made vvith hand, that is, not of this creation:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle vpon Passion Sunday.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "neither by the bloud of goates or of calues, but by his ovvne bloud entered in once into the Holies, ″ eternal redemption being found. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              98,
+              18,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "For <cr>[1]</cr> if the bloud of goates and of oxen & the ashes of an heifer being sprinkled, sanctifieth the polluted to the cleansing of the flesh:",
+          "cross_refs": [
+            {
+              "text": "Lev. 9, 8. 16, 6. 14."
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "hovv much more <na>[1]</na> <alt>`hath</alt>' the bloud of Christ vvho by the holy Ghost offered him self vnspotted vnto God, <na>[2]</na> <alt>`cleansed</alt>' our conscience from dead vvorkes, to serue the liuing God?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>shall</i>",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>cleanse</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And therfore he is the mediatour of the nevv Testament: that death being a meane, vnto the redemption ″ of these preuarications vvhich vvere vnder the former testament, they that are called may receiue the promise of eternal inheritance. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              100,
+              23,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "For <cr>[1]</cr> vvhere there is a testament: the death of the testatour must of necessitie come betvvene.",
+          "cross_refs": [
+            {
+              "text": "Gal. 3, 15."
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "For a testament is confirmed in the dead: othervvise it is yet of no value, vvhiles he that tested, liueth."
+        },
+        {
+          "verse": 18,
+          "text": "Wherevpon neither vvas the first certes dedicated vvithout bloud."
+        },
+        {
+          "verse": 19,
+          "text": "For al the commaundement of the Lavv being read of Moyses to al the people: he taking the bloud of calues and goates vvith <na>[1]</na> vvater and scarlet wool and hyssope, sprinkled the very booke also it self and al the people,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Here we may learne that the Scriptures conteine not al necessarie rites or truthes, when neither the place to which the Apostle alludeth, nor any other, mentioneth half these ceremonies, but he had them by tradition.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "saying, ″ <cr>[1]</cr> This is the bloud of the Testament, which God hath commaunded vnto you.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              21,
+              17,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Exo. 24, 8."
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "The tabernacle also & al the vessel of the ministerie he in like maner sprinkled with bloud."
+        },
+        {
+          "verse": 22,
+          "text": "And al things almost according to the lavv are cleansed with bloud: and vvithout sheading of bloud there is not remission."
+        },
+        {
+          "verse": 23,
+          "text": "It is necessarie therfore that ″ the examplers of the cœlestials be cleansed vvith these: but the celestials them selues vvith better hostes then these.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              31,
+              13,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "For <sc>IESVS</sc> is not entred into Holies made vvith hand, examplers of the true: but into heauen it self, that he may appeare novv to the countenance of God for vs."
+        },
+        {
+          "verse": 25,
+          "text": "Nor that he should ″ offer him self often, as the high priest entereth into the Holies, euery yere in the bloud of others:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              19,
+              19,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 26,
+          "text": "othervvise he ought to haue suffered often from the beginning of the vvorld: but novv once in the consummation of the vvorldes, to the destruction of sinne, he hath appeared by his ovvne host."
+        },
+        {
+          "verse": 27,
+          "text": "And as it is appointed to men to die once, and after this, the iudgement:"
+        },
+        {
+          "verse": 28,
+          "text": "so also Christ vvas offered once <na>[1]</na><na>[2]</na> cto exhaust the sinnes of many. the second time he shal appeare without sinne to them that expect him, vnto saluation.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "By this word which signifieth to emptie or draw out euen to the botom, is declared the plentiful and perfect redemption of sinne by Christ.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "ad exhaurienda peccata.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "In the old Testament, that secular Sanctuarie had two partes: the one signifying that time, with the ceremonies therof for the emundation of the flesh: the other signifying heauen, which then was shut, vntil our High priest Christ entered into it, and that with his owne bloud, shed for the emundation of our consciences. Wherevpon he concludeth the excellencie of his tabernacle and host aboue the old. 25 Noting also the difference, that he entered but once (so effectual was that one blouddy offering of him self, for euer) wheras the Leuitical High priest entered euery yere once."
+    },
+    {
+      "chapter": 10,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>FOR</sc> <cr>[1]</cr> the lavv hauing a shadovv of good things to come, not the very image of the things: euery yere vvith the self same hostes which they offer incessantly, can neuer make the commers thereto perfect:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              41,
+              8,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Lev. 16, 14."
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "othervvise they should haue ceased to be offered, because the worshippers once cleansed should haue no conscience of sinne any longer.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              23,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "but in them there is made a commemoration of sinne euery yere."
+        },
+        {
+          "verse": 4,
+          "text": "for it is impossible that vvith the bloud of oxen and goates sinnes should be taken avvay.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              10,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "Therfore comming into the vvorld he saith: <cr>[1]</cr> <i>Host and oblation thou vvouldest not: but a body thou hast fitted to me</i>:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              58,
+              17,
+              1
+            ],
+            [
+              95,
+              10,
+              2
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ps. 39, 7."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<i>Holocaustes and </i> <na>[1]</na> <i>for sinne did not please thee</i>.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>For sinne</i>, is the proper name of a certaine sacrifice called in Hebrue חטאת: as Holocaust is an other kinde. <i>See the Annot. 2 Cor. 5. v. 21</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<i>Then said I, Behold I come: in the head of the booke it is vvritten of me: That I may doe thy vvil ô God</i>."
+        },
+        {
+          "verse": 8,
+          "text": "Saying before, <i>Because hostes and oblations, & holocaustes, & for sinne thou vvouldest not, neither did they please thee</i>, vvhich are offered according to the lavv,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              89,
+              28,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "<i>then said I, Behold I come that I may doe thy vvil ô God</i>: he taketh avvay the first, that he may establish that that folovveth."
+        },
+        {
+          "verse": 10,
+          "text": "In the vvhich vvil, vve are sanctified by the oblation of the body of <sc>IESVS</sc> Christ once."
+        },
+        {
+          "verse": 11,
+          "text": "And euery priest in deede is ready daily ministring, and often offering the same hostes, vvhich can neuer take avvay sinnes:",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              56,
+              29,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ps. 109",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "but this man offering one host for sinnes, for euer <cr>[1]</cr> sitteth on the right hand of God,",
+          "cross_refs": [
+            {
+              "text": "Ps. 109. 1. Cor. 15, 25."
+            },
+            {
+              "text": "sitteth. 1",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "hence forth expecting, vntil his enemies be put the footestoole of his feete."
+        },
+        {
+          "verse": 14,
+          "text": "For by one oblation hath he consummated for euer them that are sanctified."
+        },
+        {
+          "verse": 15,
+          "text": "And the holy Ghost also doth testifie to vs. For after that he said:",
+          "xrefs": [
+            "Hier. 31, 33, 34."
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<cr>[1]</cr> <i>And this is the Testament vvhich I wil make to them after those daies, saith our Lord, giuing my lavves </i> <na>[2]</na> <i>in their hartes, & in their</i> mindes vvil I superscribe them:",
+          "cross_refs": [
+            {
+              "text": "Hier. 31, 33, 34. Heb. 8, 8."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Heb. 8, 8. · This is partly fulfilled in & by the grace of the new testament, but it shal be perfectly accomplished in heauen.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "<i>and their sinnes and iniquities I wil now remember no more</i>."
+        },
+        {
+          "verse": 18,
+          "text": "But vvhere there is remission of these, novv there is not an oblation for sinnes.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              39,
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "Hauing therfore brethren confidence in the entring of the holies in the bloud of Christ:"
+        },
+        {
+          "verse": 20,
+          "text": "which <na>[1]</na><na>[2]</na> he hath cdedicated to vs a nevv and liuing vvay by the vele, that is, his flesh,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "To dedicat, is to be authour & beginner of a thing. The Protestants translate, <i>he hath prepared</i>, for their heresie that Christ was not the first man that entered into heauen.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>c ἐνεκαίνισεν</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "and a high priest ouer the house of God,"
+        },
+        {
+          "verse": 22,
+          "text": "let vs approche vvith a true hart in fulnesse of faith, hauing our hartes sprinkled from euil conscience, and our body washed vvith cleane vvater,"
+        },
+        {
+          "verse": 23,
+          "text": "let vs hold the confession of our hope vndeclining (for he is faithful that hath promised)"
+        },
+        {
+          "verse": 24,
+          "text": "and let vs consider one an other vnto the prouocation of charitie and of good vvorkes:"
+        },
+        {
+          "verse": 25,
+          "text": "not forsaking our assemblie as some are accustomed, but comforting, and so much the more as you see the day approching."
+        },
+        {
+          "verse": 26,
+          "text": "For <cr>[1]</cr> if vve sinne vvillingly after the knovvledge of the truth receiued, novv there is not left an host for sinnes,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              17,
+              19,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Heb. 6, 4."
+            }
+          ]
+        },
+        {
+          "verse": 27,
+          "text": "but a certaine terrible expectation of iudgement and rage of fire, vvhich shal consume the aduersaries."
+        },
+        {
+          "verse": 28,
+          "text": "A man making the lavv of Moyses frustrate: vvithout any mercie <cr>[1]</cr> dieth vnder tvvo or three vvitnesses.",
+          "cross_refs": [
+            {
+              "text": "Deu. 19, 15. Mat. 18, 16. Io. 8, 17."
+            }
+          ]
+        },
+        {
+          "verse": 29,
+          "text": "<na>[1]</na> how much more thinke you, doth he deserue vvorse punishements vvhich hath troden the sonne of God vnder foote, and estemed the bloud of the testament polluted, vvherein he is sanctified, and hath done contumelie to the spirit of grace?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              131,
+              26,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Heresie and Apostasie from the Catholike Faith, punishable by death.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 30,
+          "text": "For vve knovv him that said, <cr>[1]</cr> <i>Reuenge to me, I wil repay</i>. And againe, <cr>[2]</cr> <i>That our Lord vvil iudge his people</i>.",
+          "cross_refs": [
+            {
+              "text": "Deu. 32, 35. Rom. 12, 19."
+            },
+            {
+              "text": "Ps. 134, 14."
+            }
+          ]
+        },
+        {
+          "verse": 31,
+          "text": "It is horrible to fal into the handes of the liuing God.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 32,
+          "text": "<na>[1]</na> But call to minde the old daies: vvherein being illuminated, you sustained a great fight of passions.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for many Martyrs.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 33,
+          "text": "and on the one part certes by reproches and tribulations made a spectacle: and on the other part made companions of them that conuersed in such sort."
+        },
+        {
+          "verse": 34,
+          "text": "For, you both had compassion on them that vvere in bondes: and the spoile of your ovvne goodes you tooke vvith ioy, knovving that you haue a better and a permanent substance.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              5,
+              23,
+              1
+            ],
+            [
+              98,
+              8,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 35,
+          "text": "Do not therfore leese your <na>[1]</na> cconfidence, vvhich hath a great remuneration.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "Good workes make great confidence of saluation, & haue great reward.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 36,
+          "text": "For patience is necessarie for you: that doing the vvil of God, you may receiue the promise."
+        },
+        {
+          "verse": 37,
+          "text": "For <cr>[1]</cr> yet a litle and a very litle while, he that is to come, vvil come, and vvil not slacke.",
+          "cross_refs": [
+            {
+              "text": "Abac. 2, 3. Ro. 1, 17. Gal. 3, 12."
+            }
+          ],
+          "xrefs": [
+            "Abac. 2, 3. Ro. 1, 17. Gal. 3, 12."
+          ]
+        },
+        {
+          "verse": 38,
+          "text": "and my iust liueth of faith. ⊢ but if he vvithdravv him self, he shal not please my soule.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              12,
+              15,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 39,
+          "text": "But vve are not the children of vvithdravving vnto perdition: but of faith to the vvinning of the soule."
+        }
+      ],
+      "summary": "Because in the yerely feast of Expiation was only a commemoration of sinnes, therfore in place of al those old sacrifices the Psalme telleth vs of the oblation of Christes body. 10 Which he offered blouddily but once (the Leuitical Priests offering so euery day) because that once was sufficient for euer, 15 in that it purchased (as the prophet also witnesseth) remission of sinnes. 19 After al this he prosecuteth and exhorteth them vnto perseuerance, partly with the opening of Heauen by our high-priest, 26 partly with the terrour of damnation if they fall againe: 32 bidding them remember how much they had suffered already, and not lose their reward."
+    },
+    {
+      "chapter": 11,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> faith is, <na>[1]</na> the substance of things to be hoped for, <na>[2]</na> cthe argument of things not appearing.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              8,
+              1
+            ],
+            [
+              113,
+              13,
+              2
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "By this word substance is meant, that faith is the ground of our hope.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>c ἔλεγχος.</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "For in this the old men obtained testimonie."
+        },
+        {
+          "verse": 3,
+          "text": "<cr>[1]</cr> By faith, vve vnderstand that the worldes vvere framed by the vvord of God: that of inuisible things visible things might be made.",
+          "cross_refs": [
+            {
+              "text": "Gen. 1, 13."
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "<cr>[1]</cr> By faith, Abel offered a greater hoste to God then Cain: <cr>[2]</cr> by vvhich he obtained testimonie that he vvas iust, God giuing testimonie to his giftes, & by it, he being dead, yet speaketh.",
+          "cross_refs": [
+            {
+              "text": "Gen. 4, 4."
+            },
+            {
+              "text": "Mat. 23, 35."
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "<cr>[1]</cr> By faith <na>[2]</na> Henoch vvas translated, that he should not see death, and he vvas not found: because God translated him. for before his translation he had testimonie that he had pleased God.",
+          "cross_refs": [
+            {
+              "text": "Gen. 5, 24. Eccl. 44, 16."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Here it appeareth that Henoch yet liueth and is not dead: against the Caluinists. See the annot. <i>Apocal. chap. 11</i>. · Gen. 5, 24. Eccl. 44, 16.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Gen. 5, 24. Eccl. 44, 16."
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "But vvithout faith it is impossible to please God. For he that commeth to God, must beleeue that he is, and is a <na>[1]</na> revvarder to them that seeke him.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              54,
+              14,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "We must beleeue that God will reward all our good workes: for he is a rewarder of true iustice, not an accepter or imputer of that that is not.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<cr>[1]</cr> By faith, Noë hauing receiued an ansvver concerning those things vvhich as yet vvere not seen, fearing, framed the arke for the sauing of his house, by the vvhich he condemned the vvorld: and vvas instituted heire of the iustice vvhich is by faith.",
+          "cross_refs": [
+            {
+              "text": "Gen. 6, 13. Eccl. 44, 17."
+            }
+          ],
+          "xrefs": [
+            "Gen. 6, 13. Eccl. 44, 17."
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<cr>[1]</cr> By faith, he that is called, Abraham, obeied to goe forth into the place vvhich he vvas to receiue for inheritance: and he vvent forth, not knovving whither he vvent.",
+          "cross_refs": [
+            {
+              "text": "Gen. 12, 4. 13, 1."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "By faith, he abode in the land of promise, as in a strange land, dwelling in cottages vvith Isaac & Iacob the coheires of the same promise."
+        },
+        {
+          "verse": 10,
+          "text": "For he expected the citie that hath foundations: vvhose artificer and maker is God."
+        },
+        {
+          "verse": 11,
+          "text": "<cr>[1]</cr> By faith, Sara also her self being barren, receiued vertue in conceauing of seede, yea past the time of age: because she beleeued that he vvas faithful which had promised.",
+          "cross_refs": [
+            {
+              "text": "Gen. 17, 19. 18, 10. 21, 2. Eccli. 44. 22."
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "For the vvhich cause euen of one (and him quite dead) there rose as the starres of heauen in multitude, & as the sand that is by the sea shore innumerable.",
+          "xrefs": [
+            "Eccl. 44, 22."
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "According to faith died al these, not hauing receiued the promises, but beholding them a farre of, and saluting them, and confessing that they are pilgrimes & strangers vpon the earth,"
+        },
+        {
+          "verse": 14,
+          "text": "for they that say these things, doe signifie that they seeke a countrie."
+        },
+        {
+          "verse": 15,
+          "text": "And in deede if they had been mindeful of the same from vvhence they came forth, they had time verely to returne."
+        },
+        {
+          "verse": 16,
+          "text": "but novv they desire a better, that is to say, a heauenly. Therfore God is not confounded to be called their God. for he hath prepared them a citie."
+        },
+        {
+          "verse": 17,
+          "text": "<cr>[1]</cr> By faith, Abraham offered Isaac, vvhen he vvas tempted: and his onlie-begotten did he offer vvho had receiued the promises:",
+          "cross_refs": [
+            {
+              "text": "Gen. 22, 9."
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "(to vvhom it vvas said, <cr>[1]</cr> <i>That in Isaac shal seede be called to thee</i>.)",
+          "cross_refs": [
+            {
+              "text": "Gen. 21, 12. Rom. 9, 7."
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "accounting that God is able to raise vp euen from the dead. wherevpon he receiued him also <na>[1]</na> cfor a parable.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "That is, in figure and mysterie of Christ dead, & aliue againe.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "<cr>[1]</cr> By faith, also of things to come, Isaac blessed Iacob and Esau.",
+          "cross_refs": [
+            {
+              "text": "Gen. 27, 27. 36."
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "<cr>[1]</cr> By faith, Iacob dying, blessed euery one of the sonnes of Ioseph: <cr>[2]</cr> and adored the toppe of his rodde.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              94,
+              25,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Gen. 48, 15."
+            },
+            {
+              "text": "Gen. 47, 31."
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "<cr>[1]</cr> By faith, Ioseph dying, made mention of the going forth of the children of Israël: and gaue commaundement <na>[2]</na> concerning his bones.",
+          "cross_refs": [
+            {
+              "text": "Gen. 50, 24. 25."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Gen. 50, 24, 25. · The translation of Relikes or Saincts bodies, & the due regard and honour we ought to haue to the same, are proued hereby.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "<cr>[1]</cr> By faith, Moyses being borne, vvas hidde three monethes by his parents: because they savv him a proper infant, and they feared not <cr>[2]</cr> the kings edict.",
+          "cross_refs": [
+            {
+              "text": "Exo. 2, 2."
+            },
+            {
+              "text": "Exo. 1, 16."
+            }
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "<cr>[1]</cr> By faith, Moyses being made great, denied him self to be the sonne of Pharaos daughter:",
+          "cross_refs": [
+            {
+              "text": "Exo. 2, 11."
+            }
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "rather chosing to be afflicted vvith the people of God, then to haue the pleasure of temporal sinne,"
+        },
+        {
+          "verse": 26,
+          "text": "esteeming the reproche of Christ, greater riches then the treasure of the Ægyptians. for <na>[1]</na> he looked vnto the remuneration.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Protestants that deny we may or ought to doe good in respect or for reward in heauen, are hereby confuted.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 27,
+          "text": "<cr>[1]</cr> By faith, he left Ægypt: not fearing the fiercenes of the king. for him that is inuisible he susteined as if he had seen him.",
+          "cross_refs": [
+            {
+              "text": "Exo. 12, 37."
+            }
+          ]
+        },
+        {
+          "verse": 28,
+          "text": "By faith, he celebrated the Pasche, & the sheading of the bloud: that he which destroied the first-borne, might not touche them."
+        },
+        {
+          "verse": 29,
+          "text": "<cr>[1]</cr> By faith they passed the redde sea as it vvere by the drie land: vvhich the Ægyptians assaying, vvere deuoured.",
+          "cross_refs": [
+            {
+              "text": "Gen. 14, 22."
+            }
+          ]
+        },
+        {
+          "verse": 30,
+          "text": "<cr>[1]</cr> By faith the vvalles of Iericho fel dovvne, by the circuting of seuen daies.",
+          "cross_refs": [
+            {
+              "text": "Ios, 6, 20."
+            },
+            {
+              "text": "Jos. 6, 20",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 31,
+          "text": "<cr>[1]</cr> By faith, Rahab the harlot perished not vvith the incredulous, receiuing the spies vvith peace.",
+          "cross_refs": [
+            {
+              "text": "Ios. 6, 23. 25. 2, 3."
+            }
+          ]
+        },
+        {
+          "verse": 32,
+          "text": "And what shal I yet say? For the time vvil faile me telling of Gedeon, Barac, Sampson, Iephtè, Dauid, Samuël, & the prophets:"
+        },
+        {
+          "verse": 33,
+          "text": "<na>[1]</na> vvho by faith ouercame kingdoms, vvrought iustice, obteined promises, stopped the mouthes of lions,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              45,
+              15,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for SS. Fabian and Sebastian Ian. 20. S. Symphorosa cum septem filiis. Iul. 18. And for many Martyrs.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 34,
+          "text": "extinguished the force of fire, repelled the edge of the sword, recouered of their infirmitie, vvere made strong in battel, turned avvay the campe of forainers:"
+        },
+        {
+          "verse": 35,
+          "text": "vvomen receiued of resurrection their dead. and others vvere racked, not accepting redemption, that they might finde a better resurrection."
+        },
+        {
+          "verse": 36,
+          "text": "And others had trial of mockeries and stripes, moreouer also of bandes & prisons:"
+        },
+        {
+          "verse": 37,
+          "text": "they vvere stoned, they vvere hevved, they vvere tempted, they died in the slaughter of the sword, they vvent about in sheep-skinnes, in goates skinnes, needy, in distresse, afflicted:"
+        },
+        {
+          "verse": 38,
+          "text": "of vvhom the vvorld vvas not vvorthie. vvandering in desertes, in mountaines and dennes, and in caues of the earth."
+        },
+        {
+          "verse": 39,
+          "text": "And al these being approued by the testimonie of faith, ⊢ receiued not the promise,"
+        },
+        {
+          "verse": 40,
+          "text": "God for vs prouiding some better thing, that they vvithout vs should not be consummate.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              50,
+              21,
+              1
+            ]
+          ]
+        }
+      ],
+      "summary": "He exhorteth them by the definition of faith, to sticke vnto God, though they see not yet his reward: shewing that all the Saincts aforetime did the like, being all constant in faith, though not one of them receiued the promis, that is, the inheritance in heauen: but they and we now after the comming of Christ receiue it together."
+    },
+    {
+      "chapter": 12,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>AND</sc> therfore vve also hauing so great a cloud of vvitnesses put vpon vs: <cr>[1]</cr> laying avvay al vveight and sinne that compasseth vs, by patience let vs runne to the fight proposed vnto vs,",
+          "cross_refs": [
+            {
+              "text": "Col. 3, 8."
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "looking on the author of faith, and the consummator <sc>IESVS</sc>, vvho, ioy being proposed vnto him, sustained the crosse, contemning confusion, and sitteth on the right hand of the seate of God."
+        },
+        {
+          "verse": 3,
+          "text": "For, thinke diligently vpon him vvhich sustained of sinners such contradiction against him self: that you be not vvearied, fainting in your mindes."
+        },
+        {
+          "verse": 4,
+          "text": "For you haue not yet resisted vnto bloud, repugning against sinne:"
+        },
+        {
+          "verse": 5,
+          "text": "and you haue forgotten the consolation, vvhich speaketh to you, as it were to children, saying, <cr>[1]</cr> <i>My sonne, neglect not the discipline of our Lord: neither be thou vvearied vvhiles thou art rebuked of him</i>.",
+          "cross_refs": [
+            {
+              "text": "Prov. 3, 11. Apoc. 3, 19."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<cr>[1]</cr> <i>For vvhom our Lord loueth, he chasteneth: and he scourgeth euery childe that he receiueth</i>,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              59,
+              12,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "1. Pet. 2, 1."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "Perseuêre ye in discipline. As vnto children doth God offer him self to you. for vvhat sonne is there, vvhom the father doth not correct?"
+        },
+        {
+          "verse": 8,
+          "text": "But if you be vvithout discipline, vvhereof al be made partakers: then are you bastards, & not children."
+        },
+        {
+          "verse": 9,
+          "text": "Moreouer the fathers in deede of our flesh vve had for instructors, and we did reuerence them: shal vve not much more obey the Father of spirites, & liue?"
+        },
+        {
+          "verse": 10,
+          "text": "And they in deede for a time of fevv daies, according to their vvil instructed vs: but he, to that vvhich is profitable in receiuing of his sanctification."
+        },
+        {
+          "verse": 11,
+          "text": "And al discipline for the present certes seemeth not to be of ioy, but of sorovv: but aftervvard it vvil render to them that are exercised by it, most peaceable fruite of iustice."
+        },
+        {
+          "verse": 12,
+          "text": "For the vvhich cause stretch vp the slacked handes and the loose knees:"
+        },
+        {
+          "verse": 13,
+          "text": "and make straight steppes to your feete: that no man halting erre, but rather be healed."
+        },
+        {
+          "verse": 14,
+          "text": "<cr>[1]</cr> Folovv peace vvith al men, and holinesse: vvithout vvhich no man shal see God:",
+          "cross_refs": [
+            {
+              "text": "Rom. 12, 18."
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "looking diligently lest any man <na>[1]</na> be wanting to the grace of God: lest any roote of bitternes springing vp do hinder, and by it many be polluted.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "That we be not good, there is no lacke on Gods part, who offereth his grace to vs: but the defect is in our selues that are not answerable to Gods calling of vs and grace towards vs.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "Lest there be any fornicator or prophane person <cr>[1]</cr> cas Esau: <na>[2]</na> vvho for one dish of meate sold his first-birth-rightes.",
+          "cross_refs": [
+            {
+              "text": "Gen. 25, 33."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Such as forsake their saluation and religion to saue their lands and goods, are like Esau. · Gen. 25, 33.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "For know ye that aftervvard also desiring to inherite the benediction, he vvas reprobated: <cr>[1]</cr> for he found not place of repentance, although vvith teares he had sought it.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              105,
+              12,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Gen. 27, 38."
+            }
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "For you are not come to <cr>[1]</cr> a palpable mount, and an <na>[2]</na> <alt>`accessible</alt>' fire, and vvhirlevvinde, and darkenes, and storme,",
+          "cross_refs": [
+            {
+              "text": "Exo. 19, 20."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "<i>`kindled</i> (or) <i>burning</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "and the sound of trompet, & voice of wordes, which they that heard, excused them selues, that the vvord might not be spokē to them,"
+        },
+        {
+          "verse": 20,
+          "text": "( for they did not beare that which was said, <cr>[1]</cr> <i>And if a beast shal touche the mount, it shal be stoned</i>.",
+          "cross_refs": [
+            {
+              "text": "Exo. 19, 12."
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "And so terrible vvas it vvhich vvas seen, Moyses said: <i>I am frighted and tremble</i>."
+        },
+        {
+          "verse": 22,
+          "text": "But <na>[1]</na> you are come to mount Sion, and the citie of the liuing God, heauenly Hierusalem, and the assemblie of many thousand Angels,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The faithful are made fellowes of Angels & of al the perfect soules departed since the beginning of the world, and of Christ him self.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "& the Church of the first-borne, vvhich are vvritten in the heauens, and the iudge of all, God: and the spirites of the iust <na>[1]</na> cmade perfect,",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c τετελειωμένων.",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "and the mediator of the nevv Testament <sc>IESVS</sc>, and the sprinkling of bloud speaking better then <cr>[1]</cr> Abel.",
+          "cross_refs": [
+            {
+              "text": "Gen. 4, 10."
+            }
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "See that you refuse him not speaking. for if they escaped not, refusing him that spake vpon the earth: much more vve, that turne avvay from him speaking to vs from heauen."
+        },
+        {
+          "verse": 26,
+          "text": "VVhose voice moued the earth then: but novv he promiseth, saying, <cr>[1]</cr> <i>Yet once: and I wil moue not only the earth, but heauen also</i>.",
+          "cross_refs": [
+            {
+              "text": "Ag. 2, 7."
+            }
+          ],
+          "xrefs": [
+            "Ag. 2, 7."
+          ]
+        },
+        {
+          "verse": 27,
+          "text": "And in that he saieth, Yet once, he declareth the translation of moueable things as being made, that those things may remaine vvhich are vnmoueable."
+        },
+        {
+          "verse": 28,
+          "text": "Therfore receiuing an vnmoueable kingdom, vve haue grace: by the vvhich <na>[1]</na> clet vs serue pleasing God, vvith feare & reuerence.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c λατρεύωμεν.",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 29,
+          "text": "For <cr>[1]</cr> our God is a consuming fire.",
+          "cross_refs": [
+            {
+              "text": "Deu. 4, 24."
+            }
+          ]
+        }
+      ],
+      "summary": "By the foresaid examples he exhorteth them to patience, 2 and by example of Christ him self crucified, 5 and because this discipline is an argument that they be Gods children, 9 with whose rodde they should be much more content then with that of their carnal fathers: and because it bringeth iustification. 12 Exhorting them therfore to plucke vp their hartes, and to take faster footing: 18 considering that all being now so sweete, and not terrible as in the old Testament, their damnation, if they refuse to heare, wil be so much the greater."
+    },
+    {
+      "chapter": 13,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>LET</sc> <cr>[1]</cr> <na>[2]</na> cthe charitie of the fraternitie abide in you.",
+          "cross_refs": [
+            {
+              "text": "Rom. 12, 10. 1. Pet. 4."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "c ἡ φιλαδελφία.",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "And hospitalitie do not forget, for by this, certaine being not avvare, <cr>[1]</cr> haue receiued Angels to harbour.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              11,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Gen. 18, 3. 19, 2. 3."
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "Remember them in bondes, as if you vvere bound with them: and them that labour, as your selues also remaining in bodie."
+        },
+        {
+          "verse": 4,
+          "text": "Mariage honorable in all, and the bed vndefiled. For, fornicatours & aduouterers God vvil iudge.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              19,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "Let your maners be vvithout auarice: contented vvith things present. For he said, <cr>[1]</cr> <i>I vvil not leaue thee, neither vvil I forsake thee</i>.",
+          "cross_refs": [
+            {
+              "text": "Deu. 31. Ios. 1."
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "so that vve do confidently say: <cr>[1]</cr> <i>Our Lord is my helper: I vvil not feare vvhat man shal doe to me</i>.",
+          "cross_refs": [
+            {
+              "text": "Psal. 55, 12. 117, 6."
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "<na>[1]</na> Remember your Prelates, vvhich haue spoken the vvord of God to you: the end of vvhose conuersation beholding, imitate their faith.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              13,
+              22,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for S. Nicolas 6. Decemb. & S. Augustin our Apostle and for some other Confessors Bishops.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "<sc>IESVS</sc> Christ yesterday, and to day: the same also for euer."
+        },
+        {
+          "verse": 9,
+          "text": "VVith <na>[1]</na> various & strange doctrines be not led avvay. For it is best that the hart be established vvith grace, not vvith meates: vvhich haue not profited those that vvalke in them.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              120,
+              14,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "New, diuers, changeable, & strange doctrines to be auoided, for such be hereticall. Against which the best remedie or preseruatiue is, alwaies to looke backe to our first Apostles, & the holy fathers doctrine.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "VVe haue an altar: vvhereof they haue not povver to eate vvhich serue the tabernacle.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              16,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "For <cr>[1]</cr> the bodies of those beastes, vvhose bloud for sinne is caried into the holies by the high priest, are burned vvithout the campe.",
+          "cross_refs": [
+            {
+              "text": "Lev. 16, 27."
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "For the vvhich thing <sc>IESVS</sc> also, that he might sanctifie the people by his ovvne bloud, suffered vvithout the gate."
+        },
+        {
+          "verse": 13,
+          "text": "Let vs goe forth therfore to him vvithout the campe: carying his reproche."
+        },
+        {
+          "verse": 14,
+          "text": "For vve haue not here a permanent citie: but vve seeke that vvhich is to come."
+        },
+        {
+          "verse": 15,
+          "text": "By him therfore let vs offer the host of praise alvvaies to God, that is to say, <cr>[1]</cr> the fruite of lippes confessing to his name.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              30,
+              18,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ose. 14, 3."
+            }
+          ],
+          "xrefs": [
+            "Ose. 14, 3."
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "And beneficence aud communication do not forget: for vvith such hostes God is promerited.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              69,
+              17,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "Obey your Prelates, and be subiect to them. For they vvatch as being to render account for your soules: ⊢ that they may doe this vvith ioy, and not mourning. for this is not expedient for you.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              18,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "Pray for vs. for vve haue confidence that vve haue a good conscience, vvilling to conuerse vvel in all."
+        },
+        {
+          "verse": 19,
+          "text": "And I beseeche you the more to doe this, that I may the more spedily be restored to you."
+        },
+        {
+          "verse": 20,
+          "text": "And the God of peace vvhich brought out from the dead the great Pastor of the sheepe, in the bloud of the eternal testament, our Lord <sc>IESVS</sc> Christ:"
+        },
+        {
+          "verse": 21,
+          "text": "<na>[1]</na><na>[2]</na> cfitte you in al goodnes, that you may doe his vvil, doing in you that vvhich may please before him by <sc>IESVS</sc> Christ: to vvhom is glorie for euer and euer. Amen.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>καταρτίσαι</i>, that is, <i>make you perfect and absolute in al goodnes</i>.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>aptet vos</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "And I desire you brethren that you suffer the vvord of consolation. For in very fevv vvordes haue I vvritten to you."
+        },
+        {
+          "verse": 23,
+          "text": "Knovv you our brother Timothee to be dismissed: vvith vvhom (if he come the sooner) I vvil see you."
+        },
+        {
+          "verse": 24,
+          "text": "Salute al your prelates, and al the sainctes. The brethren of Italie salute you."
+        },
+        {
+          "verse": 25,
+          "text": "Grace be vvith you al. Amen."
+        }
+      ],
+      "summary": "He commandeth vnto them mutual loue, 2 hospitality, 3 compassion, 4 chastitie, 5 contentation, 7 imitation of the faith of their Catholike Prelates and Martyrs (not harkening to the doctrines of Heretikes, nor fearing the casting out of the Iewes synagogue) 17 and obedience to their present pastors. 18 And so with requesting their praiers, and praying for them, he endeth the Epistle."
+    }
+  ],
+  "spelling": "original"
+}

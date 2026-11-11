@@ -1,0 +1,1059 @@
+{
+  "book": "james",
+  "book_title": "The Catholic Epistle of James the Apostle.",
+  "short_title": "James",
+  "hebrew_title": null,
+  "intros": [
+    {
+      "title": "THE ARGUMENT OF THE EPISTLE OF S. JAMES.",
+      "text": "THIS Epistle (as the rest following) is directed specially, as S. Augustine saith, against the error of only faith, which some held at that time also, by misconstruing S. Paul's words. Yea not only that, but many other errors (which then also were annexed unto it, as they are now) doth this Apostle here touch expressly.<br>He saith therefore, that not only faith, but also good works are necessary: that not only faith, but also good works do justify: that they are acts of Religion, or service and worship of God: that to keep all the commandments of God, and so to abstain from all mortal sin, is not impossible, but necessary: that God is not author of sin, no not so much as of tentation to sin: that we must stay ourselves from sinning, with fear of our death, of the Judgement, of hell: and stir ourselves to doing of good, with our reward that we shall have for it in heaven. These points of the Catholic faith he commendeth earnestly unto us, inveighing vehemently against them that teach the contrary errors. Howbeit he doth withal admonish not to neglect such, but to seek their conversion, shewing them how meritorious a thing that is. Thus then he exhorteth generally to all good works, & dehorteth from all sin. But yet also namely to certain, & from certain: as, from acception of persons, from detraction and rash judging, from concupiscence and love of this world, from swearing: and, to prayer, to alms, to humility, confession and penance: but most copiously to patience in persecution.<br>Now, who this James was: It is not he, whose feast the Church keepeth the 25. of July, which was <mn>◦</mn> S. John's brother, and whose martyrdom we have Act. 12. but he, whom the Church worshippeth the first of May, who is called <i>Frater Domini, our Lord's brother</i>, and brother to Jude, and which was the first Bishop of Hierusalem, of whom we read Act. 15. & 21. and also Gal. 2. of whose wonderful austerity and purity of life, the Ecclesiastical stories do report. <i>Euseb. li. 2. c. 22. Hiero. in Catalogo.</i>\n\nTherefore as the old High-priest had power and charge over the Jews, not only in Hierusalem and Jury, but also dispersed in other Countries (as we understand Act. 9. v. 1, & 2.) so S. James likewise, being Bishop of Hierusalem, and having care not only of those Jews with whom he was resident there in Jury, but of all the rest also, writeth this Epistle, <i>To the twelve tribes that are in dispersion.</i> <mn>◦</mn> And in them, to all Christians universally dispersed through the world.\n\n<i>Catholic Epistle.</i> The word Catholic, though in the title of this Epistle & the rest following <mn>[1]</mn> (called, the Catholic Epistles) it be not wholly in the same sense, as it is in the Creed: yet the Protestants so fear and abhor the word altogether, that in some of their Bibles they leave it clean out, although it be in the Greek, and in some they had rather translate ridiculously thus, <i>The general Epistle &c.</i> whereas these are famously known and specified in antiquity, by the name <mn>[2]</mn> of Catholic Epistles, for that they are written to the whole Church, not to any peculiar people or person, as S. Paul's are.",
+      "default": true,
+      "notes": [
+        {
+          "marker": "◦",
+          "text": "Which James wrote this Epistle."
+        },
+        {
+          "marker": "◦",
+          "text": "<i>Ia. 1.</i> The Church readeth"
+        },
+        {
+          "marker": "◦",
+          "text": "these Catholic or Canonical Epistles in order at Matins, from the 4. Sunday after Easter until Whitsunday."
+        },
+        {
+          "marker": 1,
+          "text": "The Protestants abhor the word <i>Catholic</i>."
+        },
+        {
+          "marker": 2,
+          "text": "<i>Euseb. li. 2. hist. c. 22.</i>"
+        }
+      ]
+    },
+    {
+      "title": "THE CATHOLIC EPISTLE OF JAMES THE APOSTLE.",
+      "text": "The Church readeth these Catholic or Canonical Epistles in order at Matins, from the 4. Sunday after Easter until Whitsunday.\n\n<mn>[1]</mn> <i>Catholic Epistle.</i> The word Catholic, though in the title of this Epistle & the rest following (called, the Catholic Epistles) it be not wholly in the same sense, as it is in the Creed: yet the Protestants so fear and abhor the word altogether, that in some of their Bibles they leave it clean out, although it be in the Greek, and in some they had rather translate ridiculously thus, <i>The general Epistle &c.</i> whereas these are famously known and <mn>[2]</mn> specified in antiquity, by the name of Catholic Epistles, for that they are written to the whole Church, not to any peculiar people or person, as S. Paul's are.",
+      "notes": [
+        {
+          "marker": 1,
+          "text": "The Protestants abhor the word <i>Catholic</i> ."
+        },
+        {
+          "marker": 2,
+          "text": "<i>Euseb. li. 2. hist. c. 22.</i>"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>IAMES</sc> the seruant of God and of our Lord <sc>IESVS</sc> Christ, to the twelue tribes that are in dispersion, greeting."
+        },
+        {
+          "verse": 2,
+          "text": "<na>[1]</na> Esteeme it, my brethren, al ioy, when you shal fall into diuers tentations:",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for some Martyrs.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "knowing that <cr>[1]</cr> the probation of your faith worketh patience.",
+          "cross_refs": [
+            {
+              "text": "Ro. 5, 3."
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "And let patience haue a perfect worke: that you may be perfect & entire, failing in nothing."
+        },
+        {
+          "verse": 5,
+          "text": "But if any of you lacke wisedom, let him aske of God who giueth to al men aboundantly, and vpbraideth not: and it shal be giuen him."
+        },
+        {
+          "verse": 6,
+          "text": "But <cr>[1]</cr> let him aske in faith nothing doubting. for he that doubteth, is like to a waue of the sea, which is moued & caried about by the winde.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              29,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Mat. 21, 22. Mar. 11, 24."
+            }
+          ],
+          "xrefs": [
+            "Ma. 21, 22. Mar. 11, 24."
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "therfore let not that man thinke that he shal receiue any thing of our Lord."
+        },
+        {
+          "verse": 8,
+          "text": "A man double of minde is inconstant in al his waies."
+        },
+        {
+          "verse": 9,
+          "text": "But let the humble brother glorie, in his exaltation."
+        },
+        {
+          "verse": 10,
+          "text": "and the riche, in his humilitie, because <cr>[1]</cr> as the floure of grasse shal he passe:",
+          "cross_refs": [
+            {
+              "text": "Ps. 102, 15. Eccl. 14, 18. Esa. 4, 6. 1. Pet. 1, 24. Iob 5, 17."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "for the sunne rose with heate, & parched the grasse, and the floure of it fel away, and the beautie of the shape thereof perished: so the riche man also shal wither in his waies."
+        },
+        {
+          "verse": 12,
+          "text": "<na>[1]</na> Blessed is the man that suffereth tentation: for when he hath been proued, he shal receiue the crowne of life, which God hath promised to them that loue him. ⊢",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle for Martyrs Bishops.",
+              "kind": "lectionary"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "Let no man when he is tempted, say that he is tempted of God. for God is not a tempter of euils, and he tempteth no man.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              60,
+              1
+            ],
+            [
+              66,
+              29,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "But <na>[1]</na> euery one is tempted of his owne concupiscence abstracted and allured.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The ground of tentation to sinne, is our concupiscence, & not God.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "Afterward concupiscence when it hath conceiued, bringeth forth sinne. but sinne when it is consummate, ingendreth death.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              10,
+              36,
+              1
+            ],
+            [
+              72,
+              44,
+              2
+            ]
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<na>[1]</na> Do not erre therfore my deerest brethren.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle on the 4 Sunday after Easter.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "Euery best gift, and euery perfect gift, is from aboue, descending from the Father of lightes, with whom is no transmutation, nor shadowing of alteration."
+        },
+        {
+          "verse": 18,
+          "text": "Voluntarily hath he begotten vs by the word of truth, that we may be some beginning of his creature. ⊢"
+        },
+        {
+          "verse": 19,
+          "text": "You know my deerest brethren, And <cr>[1]</cr> let euery man be swift to heare: but slow to speake, and slow to anger.",
+          "cross_refs": [
+            {
+              "text": "Prov. 17, 27."
+            }
+          ]
+        },
+        {
+          "verse": 20,
+          "text": "For the anger of man worketh not the iustice of God."
+        },
+        {
+          "verse": 21,
+          "text": "For the which thing casting away al vncleannesse and aboundance of malice, in meekenesse receiue the engraffed word, which is able to saue your soules. ⊢"
+        },
+        {
+          "verse": 22,
+          "text": "<cr>[1]</cr> But <na>[2]</na> be doers of the word, and not hearers only, deceauing your selues.",
+          "cross_refs": [
+            {
+              "text": "Mat. 7, 21. Ro. 2, 13."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "The Epistle on the 4 Sunday after Easter.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "For if a man be a hearer of the word, and not a doer: he shal be compared to a man beholding the countenance of his natiuitie in a glasse."
+        },
+        {
+          "verse": 24,
+          "text": "For he considered him self, and went his way, and by and by forgat what an one he was."
+        },
+        {
+          "verse": 25,
+          "text": "But he that hath looked in the law of perfect libertie, and hath remained in it, not made a forgetful hearer, but a doer of the worke: this man shal be <na>[1]</na> blessed in his deede.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              26,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "Beatitude or saluation consisteth in wel working.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 26,
+          "text": "And if any man thinke him self to be religious, not bridling his tong, but seducing his hart: this mans religion is vaine."
+        },
+        {
+          "verse": 27,
+          "text": "Religion cleane and vnspotted with God and the Father, is this, to visite pupilles and widowes in their tribulation: & to keepe him self vnspotted from this world. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              14,
+              1
+            ]
+          ]
+        }
+      ],
+      "summary": "We haue to reioyce in persecution ( but if we be patient, and withal absteine from al mortal sinne ) 9 considering how we shal be exalted and crowned for it, when the persecutor ( who enricheth him self with our spoiles ) shal fade away. 13 But if any be tempted to fall, or to any other euil, let him not say, God is the author of it, who is the author of al good onely. 19 Such points of the Cath. faith we must be content to learne without contradiction and anger, and to doe accordingly. 26 Because otherwise we may talke of Religion, but in deede it is no Religion."
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "MY <cr>[1]</cr> brethren, Haue not the faith of our Lord <sc>IESVS</sc> Christ of glorie in acception of persons.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              88,
+              23,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Lev. 19, 15. Deu. 1, 16. Pro. 24, 23. Eccl. 42, 1."
+            }
+          ],
+          "xrefs": [
+            "Leu. 19, 15. Deu. 1, 16. Pro. 24, 23. Eccl. 42, 1."
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "For if there shal enter into your assemblie a man hauing a golden ring in goodly appareil, and there shal enter in a poore man in homely attire,"
+        },
+        {
+          "verse": 3,
+          "text": "& you haue respect to him that is clothed with the goodly appareil, and shal say to him, Sitte thou here wel: but say to the poore man, Stand thou there: or sitte vnder my foote-stoole:"
+        },
+        {
+          "verse": 4,
+          "text": "do you not iudge with your selues, and are become iudges of vniust cogitations?"
+        },
+        {
+          "verse": 5,
+          "text": "Heare my deerest brethren: hath not God chosen the poore in this world, riche in faith, and heires of the kingdom which God hath promised to them that loue him?"
+        },
+        {
+          "verse": 6,
+          "text": "But you haue dishonoured the poore man. Do not the riche oppresse you by might: and them selues drawe you to iudgements?"
+        },
+        {
+          "verse": 7,
+          "text": "Doe not they blaspheme the good name that is inuocated vpon you?"
+        },
+        {
+          "verse": 8,
+          "text": "If not-withstanding you fulfil the roial law according to the scriptures, <cr>[1]</cr> <i>Thou shalt loue thy neighbour as thy self</i>, you doe wel:",
+          "cross_refs": [
+            {
+              "text": "Lev. 19, 18. Mat. 22, 39. Rom. 13."
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "but if you accept persons, you worke sinne, reproued of the Law as transgressours."
+        },
+        {
+          "verse": 10,
+          "text": "And <cr>[1]</cr> whosoeuer shal keepe the whole Law, but offendeth in one: is made guilty of al.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              75,
+              21,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Lev. 19, 37. Deu. 1, 18."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "For he that said, Thou shalt not commit aduoutrie, said also, Thou shalt not kil. And if thou doe not commit aduoutrie, but shalt kil: thou art made a transgressour of the Law."
+        },
+        {
+          "verse": 12,
+          "text": "So speake ye, and so doe, as beginning to be iudged by the law of libertie."
+        },
+        {
+          "verse": 13,
+          "text": "For iudgement without mercie to him that hath not done mercie. And mercie <na>[1]</na> cexalteth it self aboue iudgement.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              23,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>c κατακαυχᾶται.</i>",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "What shal it profit my brethren, if a man say he hath faith, but hath not workes? Shal faith be able to saue him?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              61,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "And <cr>[1]</cr> if a brother or sister be naked, & lacke daily foode:",
+          "cross_refs": [
+            {
+              "text": "Io. 3, 17."
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "and one of you say to them, Goe in peace, be warmed & filled: but you giue them not the things that are necessarie for the bodie: what shal it profit?",
+          "xrefs": [
+            "1 Io. 3, 17."
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "So faith also, if it haue not workes, is dead in it self."
+        },
+        {
+          "verse": 18,
+          "text": "But some man saith, Thou hast faith, and I haue workes: shew me thy faith without workes: & I wil shew thee by workes my faith."
+        },
+        {
+          "verse": 19,
+          "text": "Thou beleeuest that there is one God. Thou doest wel: the deuils also beleeue and tremble."
+        },
+        {
+          "verse": 20,
+          "text": "But wilt thou know <na>[1]</na> ô vaine man, that faith without workes is <na>[2]</na> <alt>'idle</alt>?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He speaketh to al heretikes that say, faith onely without workes doth iustifie, calling them vaine men, and comparing them to Diuels.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>dead</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 21,
+          "text": "Abraham our father was he not iustified by workes, <cr>[1]</cr> offering Isaac his sonne vpon the altar?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              48,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Gen. 22, 10."
+            }
+          ]
+        },
+        {
+          "verse": 22,
+          "text": "Seest thou that faith did worke with his workes: and by the workes the faith was consummate?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              16,
+              19,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 23,
+          "text": "And the Scripture was fulfilled, saying, <cr>[1]</cr> <i>Abraham beleeued God, and it was reputed him to iustice, and he was called the freende of God</i>.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              132,
+              17,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Gen. 15, 6. Rom. 4, 3. Gal. 3."
+            }
+          ]
+        },
+        {
+          "verse": 24,
+          "text": "Do you see that by workes a man is iustified: & not by faith only?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              47,
+              17,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 25,
+          "text": "And in like maner also <cr>[1]</cr> Rahab the harlot, was not she iustified by workes, receiuing the messengers, and putting them forth an other way?",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              37,
+              5,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Ios. 2, 1. 18. and 6, 22."
+            }
+          ],
+          "xrefs": [
+            "Ios. 2, 1. 18. and 6, 22."
+          ]
+        },
+        {
+          "verse": 26,
+          "text": "For euen as the bodie without the spirit is dead: so also faith without workes is dead.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              57,
+              27,
+              1
+            ]
+          ]
+        }
+      ],
+      "summary": "Against acception of persons. 10 From al and euery sinne we must absteine, hauing in al our wordes and deedes, the Iudgement before our eies: wherein workes of mercie shal be required of vs, 14 and onely faith shal not auaile vs. 18 And that the Catholike by his workes sheweth that he hath faith: whereas the Heretike hath no more faith then the Diuel, talke he of faith neuer so much, and of iustification thereby onely, by the example of Abraham Ro. 4. For Abraham in deede was iustified by workes also, 25 and likewise Rahab."
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "BE <cr>[1]</cr> yee not many maisters my brethren, knowing that you receiue the greater iudgement,",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              23,
+              12,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Mat. 23, 8."
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "For in many things we offend al. <cr>[1]</cr> If any man offend not in word: this is a perfect man. he is able also with bridle to turne about the whole body.",
+          "cross_refs": [
+            {
+              "text": "Eccli. 14, 1. 19, 16."
+            }
+          ],
+          "xrefs": [
+            "Eccl. 14, 1. 19, 16."
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "And if we put bittes into the mouthes of horses that they may obey vs, we turne about al their body also."
+        },
+        {
+          "verse": 4,
+          "text": "And behold, the shippes, whereas they be great, and are driuen of strong windes: yet are they turned about with a litle sterne whither the violence of the director wil."
+        },
+        {
+          "verse": 5,
+          "text": "So the tongue also is certes a litle member, & <na>[1]</na> cvaunteth great things. Behold how <na>[2]</na> <alt>'much</alt>' fire what a great wood it kindleth?",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>c μεγαλαυχεῖ.</i>",
+              "kind": "word"
+            },
+            {
+              "label": "2",
+              "text": "<i>little</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "And the tongue, is fire, a whole world of iniquitie. The tongue is set among our members, which defileth the whole bodie, & inflameth the wheele of our natiuitie, inflamed of hel."
+        },
+        {
+          "verse": 7,
+          "text": "For al nature of beastes & foules and serpents & of the rest is tamed & hath been tamed by the nature of man."
+        },
+        {
+          "verse": 8,
+          "text": "but the tongue no man can tame, an vnquiet euil, ful of deadly poison."
+        },
+        {
+          "verse": 9,
+          "text": "By it we blesse God & the Father: & by it we curse men which are made after the similitude of God."
+        },
+        {
+          "verse": 10,
+          "text": "Out of the self same mouth procedeth blessing & cursing. These things must not be so done my brethren."
+        },
+        {
+          "verse": 11,
+          "text": "Doth the fountaine giue forth out of one hole sweete & soure water?"
+        },
+        {
+          "verse": 12,
+          "text": "Can, my brethren, the figge tree yeld grapes: or the vine, figges? So neither <na>[1]</na> <alt>'can the salt water yeld</alt>' sweete.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>can it yeld salt and sweete water</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "Who is wise and hath knowledge among you? Let him shew by good conuersation his working in mildenesse of wisedom."
+        },
+        {
+          "verse": 14,
+          "text": "But if you haue bitter zeale, and there be contentions in your hartes: glorie not and be not liers against the truth."
+        },
+        {
+          "verse": 15,
+          "text": "for this is not <na>[1]</na> wisedom descending from aboue: but earthly, sensual, diuelish.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The difference betwixt the humane wisedom, specially of heretikes: and the wisedom of the Catholike Church & her children.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "For where zeale and contention is: there is inconstancie, and euery peruerse worke."
+        },
+        {
+          "verse": 17,
+          "text": "But the wisedom that is from aboue, first certes is chast: then peaceable, modest, suasible, consenting to the good, ful of mercie and good fruites, not iudging, without simulation."
+        },
+        {
+          "verse": 18,
+          "text": "And the fruite of iustice, in peace is sowed, to them that make peace."
+        }
+      ],
+      "summary": "Against proud Maisters and authors of Sectes. 5 Of the manifold sinnes of the vnbrideled tongue. 13 The difference betwixt proud, contentious, and worldly wisedom, and that wisedom which is heauenly, peaceable, modest, and so forth."
+    },
+    {
+      "chapter": 4,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "<sc>FROM</sc> whence are warres & contentions among you? Are they not hereof? of your concupiscences which warre in your members?"
+        },
+        {
+          "verse": 2,
+          "text": "You couet: and haue not. you kil, & enuie: and can not obtaine. you contend and warre: and you haue not, because you aske not."
+        },
+        {
+          "verse": 3,
+          "text": "You aske, and receiue not: because you aske amisse: that you may consume it on your concupiscences."
+        },
+        {
+          "verse": 4,
+          "text": "Aduouterers, know you not that the <cr>[1]</cr> frendship of this world, is the enemie of God? Whosoeuer therfore wil be a frende of this world: is made an enemie of God.",
+          "cross_refs": [
+            {
+              "text": "1. Io. 2, 15."
+            }
+          ],
+          "xrefs": [
+            "1. Io. 2, 15."
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "Or do you thinke that the Scripture saieth in vaine: <i>To enuie doth the spirit couet which dwelleth in you</i>?"
+        },
+        {
+          "verse": 6,
+          "text": "And <cr>[1]</cr> giueth greater grace. For the which cause it saith, <na>[2]</na> <i>God resisteth the proud, & giueth grace to the humble</i>.",
+          "cross_refs": [
+            {
+              "text": "Prov. 3, 35. 1. Pet. 5, 5."
+            }
+          ],
+          "notes": [
+            {
+              "label": "2",
+              "text": "Prou. 3, 35. 1 Pet. 5, 5. · The boldnes of Hæretikes adding here the word <i>Scripture</i> to the text thus, <i>And the Scripture giueth greater grace</i>.",
+              "kind": "gloss"
+            }
+          ],
+          "xrefs": [
+            "Prou. 3, 35. 1 Pet. 5, 5."
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "Be subiect therfore to God, but resist the Deuil, and he wil flee from you."
+        },
+        {
+          "verse": 8,
+          "text": "<na>[1]</na> cApproche to God, & he wil approche to you. Cleanse your handes, ye sinners: and purifie your hartes, ye double of minde.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              93,
+              18,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "c Free-will & man's own endeavor necessary in coming to God.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "Be miserable, and mourne, & weepe: let your laughter be turned into mourning: and ioy, into sorow."
+        },
+        {
+          "verse": 10,
+          "text": "<cr>[1]</cr> Be humbled in the sight of our lord, and he wil exalt you.",
+          "cross_refs": [
+            {
+              "text": "1. Pet. 5, 6."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<na>[1]</na><na>[2]</na> cDetracte not one from an other my brethren. He that detracteth from his brother, or he that iudgeth his brother, detracteth from the Law, and iudgeth the Law. But if thou iudge the Law, thou art not a doer of the Law, but a iudge.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "He forbiddeth detraction, euil speaking, slaundering.",
+              "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "μὴ καταλαλεῖτε ἀλλήλων.",
+              "kind": "word"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "For there is one law-maker, and iudge that can destroy and deliuer."
+        },
+        {
+          "verse": 13,
+          "text": "But thou, <cr>[1]</cr> what art thou that iudgest thy neighbour? Behold now you that say, To day or to morow we wil goe into that citie, and there certes wil spend a yere, and wil traficke, and make our gaine (",
+          "cross_refs": [
+            {
+              "text": "Ro. 14, 4."
+            }
+          ],
+          "xrefs": [
+            "Ro. 14, 4."
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "who are ignorant what shal be on the morow. For what is your life? It is a vapour appearing for a litle while, and afterward it shal vanish away)"
+        },
+        {
+          "verse": 15,
+          "text": "for that you should say, <na>[1]</na> If our Lord wil: and, If we shal liue, we wil doe this or that.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "All promises and purposes of our worldly affairs are to be made under condition of God's good liking & pleasure:",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "But now you reioyce in your arrogancies. Al such reioycing, is wicked."
+        },
+        {
+          "verse": 17,
+          "text": "To one therfore knowing to doe good, and not doing it: to him it is sinne."
+        }
+      ],
+      "summary": "By concupiscence and loue of this world, we are made enemies to God: but we should rather humble vs to him, punishing our selues for our sinnes. 11 Against detraction, and rash iudging. 13 To remember alwaies the vncertentie of our life."
+    },
+    {
+      "chapter": 5,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "GOE to now ye riche men, weepe, <na>[1]</na> howling in your miseries which shal come to you.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "A feareful description of the miseries that shal befall in the next life to the vnmerciful couetous men.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "Your riches are corrupt: and your garmentes are eaten of mothes."
+        },
+        {
+          "verse": 3,
+          "text": "Your gold and siluer is rusted: and their rust shal be for a testimonie to you, and shal eate your flesh as fire. You haue stored to your selues wrath in the last daies."
+        },
+        {
+          "verse": 4,
+          "text": "Behold the hire of the workemen that haue reaped your fields, which is defrauded of you, crieth: and their crie hath entred into the eares of the Lord of Sabboth.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              7,
+              8,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "You haue made merie vpon the earth: and in riotousnes you haue nourished your hartes in the day of slaughter."
+        },
+        {
+          "verse": 6,
+          "text": "You haue <na>[1]</na> <alt>'presented</alt>, and slaine the iust one: and he resisted you not.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>condemned</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 7,
+          "text": "Be patient therfore brethren, vntil the comming of our Lord. Behold, the husband man expecteth the pretious fruite of the earth: patiently bearing til he receiue <na>[1]</na> cthe timely and the lateward.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "c He meaneth either fruit or rain.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "Be you also patient, and confirme your hartes: because the comming of our Lord <na>[1]</na> <alt>'wil approche</alt>.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>is at hand</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "Grudge not brethren one against an other: that you be not iudged. Behold, the iudge standeth before the gate."
+        },
+        {
+          "verse": 10,
+          "text": "Take an example, brethren, of <na>[1]</na> labour and patience, the prophetes: which spake in the name of our Lord.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>exitus mali</i>",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "Behold we account them blessed that haue suffered. The sufferance of Iob you haue heard, and the end of our Lord you haue seen, because our Lord is merciful and pitieful."
+        },
+        {
+          "verse": 12,
+          "text": "But before al things my brethren, <cr>[1]</cr> sweare not, neither by heauen, nor by earth, nor other othe whatsoeuer. But let your talke be, yea, yea: no, no: that you fall not vnder iudgement.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              49,
+              9,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Mt. 5, 34."
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "<na>[1]</na> Is any of you in heauinesse? let him pray. Is he of a cheereful hart? let him sing.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in a votiue Masse for the sicke.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "Is any man sicke among you? let him bring in the priestes of the Churche, and let them pray ouer him, <cr>[1]</cr> anoiling him with oile in the name of our Lord.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              28,
+              1
+            ],
+            [
+              112,
+              21,
+              2
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Mr. 6, 13."
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "and the praier of faith shal saue the sicke: and our Lord shal lift him vp: and if he be in sinnes, they shal be remitted him.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              4,
+              19,
+              1
+            ],
+            [
+              24,
+              10,
+              2
+            ],
+            [
+              58,
+              17,
+              3
+            ],
+            [
+              99,
+              26,
+              4
+            ]
+          ]
+        },
+        {
+          "verse": 16,
+          "text": "<na>[1]</na><na>[2]</na> Confesse therfore your sinnes one to an other: & pray one for an other that you may be saued. ⊢ for the continual praier of a iust man auaileth much.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              25,
+              17,
+              1
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "The Epistle in <i>Maioribus Litanijs</i> on S. Markes day, and in the Rogation daies.",
+              "kind": "lectionary"
+            },
+            {
+              "label": "2",
+              "text": "the heretikes translate, <i>Acknowledge your sinnes. &c</i>. So litle they can abide the very vvord of <i>confession</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 17,
+          "text": "<cr>[1]</cr> Elias was a man like vnto vs passible: and with praier he praied that it might not raine vpon the earth, and it rained not for three yeres and sixe monethes.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              69,
+              9,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "3. Reg. 17. Eccli. 48. Lu. 4, 25."
+            }
+          ],
+          "xrefs": [
+            "3 reg. 17. Eccl. 48. Lu. 4, 25."
+          ]
+        },
+        {
+          "verse": 18,
+          "text": "And <cr>[1]</cr> he praied againe: and the heauen gaue raine, and the earth yelded her fruite.",
+          "cross_refs": [
+            {
+              "text": "3. Reg. 18, 41."
+            }
+          ]
+        },
+        {
+          "verse": 19,
+          "text": "My brethren, if any of you shal erre from the truth, & a man conuert him:"
+        },
+        {
+          "verse": 20,
+          "text": "he must know that he which maketh a sinner to be conuerted from the errour of his way, shal saue his soule from death, and <na>[1]</na> couereth a multitude of sinnes. ⊢",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              27,
+              31,
+              1
+            ],
+            [
+              86,
+              10,
+              2
+            ]
+          ],
+          "notes": [
+            {
+              "label": "1",
+              "text": "He that hath the zeale of conuerting sinners, procureth thereby mercie and remission to him self: which is a singular grace.",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "By the damnation to come vpon the vnmerciful riche, he exhorteth the persecuted to patience, and by their owne reward, and by examples. 12 Not to sweare at all in common talke. 13 In affliction, to pray: in prosperitie, to sing: in sicknes, to call for the Priests, and that they pray ouer them and anoile them with oile: and that the sicke persons confesse their sinnes. 19 Finally, how meritorious it is, to conuert the erring vnto the Catholike faith, or the sinner to amendment of life."
+    }
+  ],
+  "spelling": "original"
+}

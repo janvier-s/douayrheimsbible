@@ -1,0 +1,498 @@
+{
+  "book": "malachie",
+  "book_title": "The Prophecy of Malachie.",
+  "short_title": "Malachie",
+  "hebrew_title": null,
+  "intros": [
+    {
+      "title": "THE PROPHECY OF MALACHIE.",
+      "text": "<i>MALACHIE</i> (whom. S. Jerome. and some others think to be Esdras prophesied last of the <mn>[1]</mn> <mn>[2]</mn> twelve, after that the temple was re-edified. He reprehendeth both Priests, and people, for that they did not offer their sacrifices with sincerity; foresheweth the rejection of the Jews, and calling of the Gentiles by Christ. Before whose first coming shall be one Precursor: and another before his last coming to judge.",
+      "default": true,
+      "notes": [
+        {
+          "marker": 1,
+          "text": "Much is contained in this brief Prophecy."
+        },
+        {
+          "marker": 2,
+          "text": "<i>In ca. 2. v. 7. & c. 3. v. 7.</i>"
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "THE burden of the word of our Lord to Israel in the hand of Malachie."
+        },
+        {
+          "verse": 2,
+          "text": "I haue loued you, sayth our Lord: & you haue sayd: Wherin hast thou loued vs? <na>(a)</na> Was not Esau brother to Iacob, sayth our Lord, and I loued Iacob,",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Gods peculiar loue was first shewed to the Israelits in preferring their progenitor Iacob and them his issue befor Esau & his ofspring, though in them there was no difference at al, the one neither deseruing more, nor lesse then the other, but of his mere mercie electing the one and iustly reiecting the other. wherof see the <i>Annot. Rom. 9</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "<cr>[1]</cr> but hated Esau? and I layd his mountaines into a wildernes, & his inheritance vnto the dragons of the desert.",
+          "cross_refs": [
+            {
+              "text": "Rom. 9. v. 13."
+            }
+          ]
+        },
+        {
+          "verse": 4,
+          "text": "But if Idumea shal say: We are destroyed, but returning we wil build the thinges that are destroyed: thus sayth the Lord of hosts: These shal build, and I wil destroy: and they shal be called the borders of impietie, and the people with whom our Lord is angrie <na>(b)</na> for euer.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "Againe lastly the same special vnderserued loue was shewed, in that the Idumeans subdued by the Chaldees remained in captiuitie, but the Israelite were now reduced into their countrie.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "And your eyes shal see: and you shal say: Our Lord be magnified vpon the border of Israel."
+        },
+        {
+          "verse": 6,
+          "text": "The sonne honoureth the father, and the seruant his lord: if then I be the father, where is my honour? and if I be the Lord, where is my feare: sayth the Lord of hosts? To you ô priests, that despise my name, & haue sayd: Wherin haue we despised thy name?"
+        },
+        {
+          "verse": 7,
+          "text": "<na>(c)</na> cYou offer vpon myne altar polluted bread: and you say: Wherin haue we polluted thee? In that you say: The table of our Lord is contemptible.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "Those that offer base and contemptible thinges to god shew that they esteme litle of God, and so by their fact dispise and contemne him.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "If you offer the blind to be immolated, is it not euil? and if you offer the lame and the feble is it not euil? offer it <na>(d)</na> to thy prince if it shal please him, or if he wil receiue thy face, sayth the Lord of hosts.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "If you dare not offer your worse thinges to your temporal prince, how dare you offer them to God?",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 9,
+          "text": "And now besech ye the face of God, that he may haue mercie on you (for by your hand hath this bene done) if by any meanes he wil receiue your faces, saith the Lord of hosts."
+        },
+        {
+          "verse": 10,
+          "text": "Who is there among you, that wil shut the doores, & wil kindle fire on my altar for naught? I haue no wil in you, sayth the Lord of hosts: and gift I wil not receiue of your hand.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              93,
+              21,
+              1
+            ]
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "<cr>[1]</cr> For from the rising of the sunne euen to the going downe, great is my name among the Gentils, & in euerie place there is sacrificing, and there is offered to my name a cleane oblation: because my name is great among the Gentils, sayth the Lord of hosts.",
+          "has_annotation": true,
+          "lemmas": [
+            [
+              109,
+              35,
+              1
+            ]
+          ],
+          "cross_refs": [
+            {
+              "text": "Psal. 112."
+            },
+            {
+              "text": "Psal. 1",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 12,
+          "text": "And you haue polluted it in that you say: The table of our Lord is contaminated: and that which is layd therupon, is contemptible with the fyre, that deuoureth it."
+        },
+        {
+          "verse": 13,
+          "text": "And you haue sayd: Loe of labour, and you puffed at it, sayth the Lord of hosts, and you brought in <na>(e)</na> of robberies <na>(f)</na> the lame; & the sicke, and brought in a gift: Why, shal I receiue it of your hand, sayth our Lord?",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Two defectes were in their sacrifices: they offered that which they gotte by robberie, or extorsion:",
+              "kind": "gloss"
+            },
+            {
+              "label": "f",
+              "text": "and not the best, but worse part therof.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "Cursed is the deceitful, that hath in his flocke a male, and making a vow immolateth the feeble to our Lord: because I am a great King, sayth the Lord of hosts, and my name is dreadful among the Gentils."
+        }
+      ],
+      "summary": "God shewed his especial loue towards the Iewes, in that he choise their progenitor Iacob, rather then Esau. 7. Priestes are reprehended, for not offering the best thinges in sacrifice. 10. The old sacrifices shal be reiected, and new farre more excellent shal be offered in al nations."
+    },
+    {
+      "chapter": 2,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "AND now to you this commandment <na>(a)</na> aô ye priests.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "Priestes coueting & scraping riches do greatly dishonour God: diminish the estimation of holie Sacraments & other rites, as though they were temporal to be bought & sold for money, & so do scandalize the weake.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<cr>[1]</cr> If you wil not heare, and if you wil not set it vpon the hart, to geue glorie to my name, sayth the Lord of hosts: I <na>(b)</na> wil send vpon you pouertie, & wil curse your blessings, and I wil curse them: because you haue not set it vpon the hart.",
+          "cross_refs": [
+            {
+              "text": "Levi. 26. Deu. 28."
+            }
+          ],
+          "notes": [
+            {
+              "label": "b",
+              "text": "Such are happie if God by suffering them to be spoyled, recal them to repentance. For otherwise they wil be depriued of eternal reward as being payed their wages already in this world. These our Sauiour calleth. <i>Hyrelinges, not true pastors. Ioa. 10</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "Behold I wil cast forth to you the arme, and wil spinkle vpon your face the dung of your solemnities, and it shal take you with it."
+        },
+        {
+          "verse": 4,
+          "text": "And you shal know that I sent you this commandment, that my couenant might be with Leui, sayth the Lord of hosts."
+        },
+        {
+          "verse": 5,
+          "text": "My couenant was with him of life and peace: & I gaue him feare: and he feared me, and at the face of my name he was afrayd."
+        },
+        {
+          "verse": 6,
+          "text": "The law of truth was in his mouth, and iniquitie was not found in his lippes in peace, and in equitie he walked with me, and turned away manie from iniquitie."
+        },
+        {
+          "verse": 7,
+          "text": "For <na>(c)</na> the lippes of the priest shal keepe knowlege, and the law they shal require of his mouth: because he is <na>(d)</na> the angel of the Lord of hosts.",
+          "notes": [
+            {
+              "label": "c",
+              "text": "The proper office of priests besides the administration of Sacraments is also to teach the people true doctrine:",
+              "kind": "gloss"
+            },
+            {
+              "label": "d",
+              "text": "as being the <i>Angel</i>, that is to say, <i>the messenger</i>, from God.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "But you haue departed out of the way, and haue scandalized manie in the law: you haue made voide the couenant of Leui, sayth the Lord of hosts."
+        },
+        {
+          "verse": 9,
+          "text": "<na>(e)</na> For which cause I also haue made you contemtible, and base to al peoples, as you haue not kept my wayes, and haue accepted face in the law.",
+          "notes": [
+            {
+              "label": "e",
+              "text": "Which holie functions priests not performing are made contemptible in this world and miserable in eternal torments. <i>Ep. Iud. v. 11</i>.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 10,
+          "text": "<cr>[1]</cr> Why, is there not one father of vs al? hath not one God created vs? why then doth euerie one of vs despise his brother, violating the couenant of our fathers?",
+          "cross_refs": [
+            {
+              "text": "Mat. 23. v. 9. Eph. 4. v. 5."
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "Iuda hath transgressed, and abomination was done in Israel, and in Ierusalem: because Iudas hath contaminated the sanctification of our Lord, which he loued, and hath had the daughter of a strange god."
+        },
+        {
+          "verse": 12,
+          "text": "Our Lord wil destroy the man, that hath done this, the master, & the scholar out of the tabernacles of Iacob, & him that offereth gift to the Lord of hosts. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Ioel 3. Zach. 14."
+            }
+          ]
+        },
+        {
+          "verse": 13,
+          "text": "And this agayne haue you done, you couered the altar of the Lord with teares, with weeping, and howling, so that I haue respect no more to sacrifice, neither do I accept any placable thing at your hand.",
+          "cross_refs": [
+            {
+              "text": "Amos 5. v. 22",
+              "source": "sancta"
+            }
+          ]
+        },
+        {
+          "verse": 14,
+          "text": "And you haue sayd: For what cause? because the Lord hath testified betwen thee, and the wife of thy youth, whom thou hast despised: and she thy partaker, and the wife of thy couenant."
+        },
+        {
+          "verse": 15,
+          "text": "Did not one make, and the residue of the spirit is his? And what doth one seeke, but the seede of God? Keepe ye then your spirit, and the wife of thy youth despise thou not."
+        },
+        {
+          "verse": 16,
+          "text": "When thou shalt hate, dismisse, sayth our Lord the God of Israel: but iniquitie shal couer his garment, saith the Lord of hosts, keepe ye your spirit, and do not despise."
+        },
+        {
+          "verse": 17,
+          "text": "<cr>[1]</cr> You haue in your wordes made our Lord to labour: and you sayd: Wherein haue we made him to labour? In that you say: Euerie one that doth euil, is good in the sight of our Lord, and such please him: or certes where is the God of iudgement?",
+          "cross_refs": [
+            {
+              "text": "Ephes. 4. v. 29."
+            }
+          ]
+        }
+      ],
+      "summary": "Priestes are further reprehended because they discharged not wel their great office. 10. Both they and others offended in marying strangers. 14. They ought to loue, and not lightly dismisse their wiues."
+    },
+    {
+      "chapter": 3,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "BEHOLD <cr>[1]</cr> I send <na>(a)</na> myne Angel, and he shal prepare the way before my face. And <na>(b)</na> forthwith shal come to his temple the Dominatour, whom you seeke, and <na>(c)</na> the Angel of the testament, whom you desire. Behold he cometh, sayth the Lord of hosts:",
+          "cross_refs": [
+            {
+              "text": "Mat. 11. v. 10. Mar. 1. Luc. 1. & 7. Psal. 131. v. 17."
+            }
+          ],
+          "notes": [
+            {
+              "label": "a",
+              "text": "S. John Baptist is called <i>an Angel</i> or messenger, because he was to be sent with special commission from God: and for his purity in Angelical life.",
+              "kind": "gloss"
+            },
+            {
+              "label": "b",
+              "text": "S. John was first conceived, likewise first born, and he first preached, and shortly after him our Saviour came.",
+              "kind": "gloss"
+            },
+            {
+              "label": "c",
+              "text": "Christ is the <i>Angel of the testament,</i> because he made the Pact of peace between God and man.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "and who shal be able to thinke the day of his aduent? and who shal stand to see him? For he as it were purging fyre, & as the herbe of fullers:"
+        },
+        {
+          "verse": 3,
+          "text": "and he shal sit purging, and clensing the siluer, and he shal purge the sonnes of Leui, and wil streyne them as gold, and as siluer, and they shal be offering sacrifices to our Lord in iustice."
+        },
+        {
+          "verse": 4,
+          "text": "And the sacrifice of Iuda and Ierusalem shal please our Lord, as the dayes of the world, and as the yeares of old."
+        },
+        {
+          "verse": 5,
+          "text": "And <na>(d)</na> dI wil come to you in iudgement, and <na>(e)</na> wil be a swift witnes to sorcerers, and aduouterers, and to the periured, and them that calumniate the hyre of the hyred man, the widowes, and pupils, and oppresse the stranger, nor haue feared me, sayth the Lord of hosts.",
+          "notes": [
+            {
+              "label": "d",
+              "text": "In the meane time God threatneth to punish al euen secrete sinnes:",
+              "kind": "gloss"
+            },
+            {
+              "label": "e",
+              "text": "knowen to him though not to other witnesses.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "For I the Lord, and I am not changed: and ye sonnes of Iacob are not consumed."
+        },
+        {
+          "verse": 7,
+          "text": "For from the dayes of your fathers you haue departed from mine ordinances, and haue not kept them. <cr>[1]</cr> Returne to me, and I wil returne to you, sayth the Lord of hosts. And you haue sayd: Wherin shal we returne?",
+          "cross_refs": [
+            {
+              "text": "Zach. 1. v. 3."
+            }
+          ]
+        },
+        {
+          "verse": 8,
+          "text": "Shal man fasten God, because you do fasten me? And you haue sayd: Wherin do we fasten thee? In tithes, and in first fruites."
+        },
+        {
+          "verse": 9,
+          "text": "And in penurie you are accursed, and you your whole nation fasten me."
+        },
+        {
+          "verse": 10,
+          "text": "Bring in <na>(f)</na> al the tithe into the barne: and let there be meate in my house, and proue me vpon this, sayth our Lord: if I open not vnto you the fludgates of heauen, and powre you out blessing euen to abundance,",
+          "notes": [
+            {
+              "label": "f",
+              "text": "Paying of tithes is most strictly commanded.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 11,
+          "text": "and I wil rebuke for you the deuourer, and he shal not corrupt the fruite of your land: neither shal the vine in the filde be barren, sayth the Lord of hosts."
+        },
+        {
+          "verse": 12,
+          "text": "And al Nations shal cal you blessed: for you shal be a land worthie to be desired, sayth the Lord of hosts."
+        },
+        {
+          "verse": 13,
+          "text": "Your wordes haue bene forcible vpon me, sayth the Lord."
+        },
+        {
+          "verse": 14,
+          "text": "And you sayd: What haue we spoken against thee? You haue sayd: <na>(g)[1]</na> He is vayne that serueth God, and what profite is it that we haue kept his precepts, and that we haue walked sorowful before the Lord of host?",
+          "notes": [
+            {
+              "label": "g",
+              "text": "Sinne of murmuring against God, is great blasphemie and not tolerable: For when they were punished by famine, for defrauding the Leuites of tithes, they blasphemously imputed it to God: as though he had not such care of his owne people, as he had of other nations, which had abundance of temporal goodes.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Iob. 21. v. 14. Isa. 58. v. 2.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 15,
+          "text": "Therfore now we cal the arrogant blessed, for they that doe impietie are builded, and they haue tempted God and are made safe."
+        },
+        {
+          "verse": 16,
+          "text": "Then spake they that feared our Lord, euerie one with his neighbour: and our Lord attended, and heard: and a booke of monument was writen before him for them that feare our Lord, and thinke on his name."
+        },
+        {
+          "verse": 17,
+          "text": "And they shal be to me, saith the Lord of hosts, in the day that I doe to my peculiar and I wil spare them, as a man spareth his sonne seruing him."
+        },
+        {
+          "verse": 18,
+          "text": "And you shal conuert, and shal see what is betwen the iust, and the impious: and betwen him that serueth God, and serueth him not."
+        }
+      ],
+      "summary": "A precurser shal come before Christ. 3. The Priesthood, and Sacrifice of the new law are pure, 5. God who seeth al sinners wil punish them: 10. but if they amend, they shal receiue Gods benefites. 13. Not euil men, but the good please God."
+    },
+    {
+      "chapter": 4,
+      "verses": [
+        {
+          "verse": 1,
+          "text": "FOR behold <na>(a)</na> the day shal come kindled as a furnace: and al the proude, and al that doe impietie shal be stubble: and the day coming shal inflame them, sayth the Lord of hosts, which shal not leaue them roote, and spring.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "In the day of iudgement it shal plainly appeare, what difference is betwen the iust and the wicked.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 2,
+          "text": "<cr>[1]</cr> And there shal rise to you that feare my name the Sunne of iustice, and health in his winges: and you shal goe forth, and shal leape as calues of the heard.",
+          "cross_refs": [
+            {
+              "text": "Zach. 3. v. 8. & 6. v. 11. Luc. 1. v. 78."
+            }
+          ]
+        },
+        {
+          "verse": 3,
+          "text": "And you shal treade the impious, when they shal be ashes vnder the sole of your feete in the day, that I doe, sayth the Lord of hosts."
+        },
+        {
+          "verse": 4,
+          "text": "<cr>[1]</cr> Remember ye the law of Moyses my seruant, which I commanded him in Horeb to al Israel precepts, & iudgements.",
+          "cross_refs": [
+            {
+              "text": "Exo. 20. Deut. 4. 5. & 6."
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "Behold I wil send you <na>(b)[1]</na> Elias the prophete, before the day of our Lord come great, and <na>(c)</na> dreadful.",
+          "notes": [
+            {
+              "label": "b",
+              "text": "The Septuagint for explication adde <i>Thesbites</i>. And S. Ierom. in <i>17. Mat</i> teacheth that Elias shal in dede come and restore al thinges.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Mat. 11. & 17. v. 11.",
+              "kind": "gloss"
+            },
+            {
+              "label": "c",
+              "text": "Christs first coming was in al mekenes not in terrour, but his coming to iudge wil be <i>dreadful</i>. And therfore the prophet here meaneth not S. Iohn Baptist, but that Elias himself shal come before the great and <i>dreadful</i> day of our Lord.",
+              "kind": "gloss"
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "And he shal conuert the hart of the fathers to the children & the hart of the children to their fathers: lest perhaps I come, and strike the earth with <na>[1]</na> anathema.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "<i>* utter destruction. The end of the Prophetical Books.</i>",
+              "kind": "gloss"
+            }
+          ]
+        }
+      ],
+      "summary": "In the terrible day of iudgement, the wicked shal be condemned, and the iust eternally rewarded. 5. Before which time Elias shal returne, and conuert the Iewes to Christ."
+    }
+  ],
+  "spelling": "original"
+}
