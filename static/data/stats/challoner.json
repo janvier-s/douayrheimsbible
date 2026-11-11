@@ -1,0 +1,1195 @@
+{
+ "totals": {
+  "unchanged": 2300,
+  "spelling": 530,
+  "reworded": 31709,
+  "compared": 34539,
+  "unmatched": 152,
+  "renumbered": 193,
+  "skippedChapters": 42
+ },
+ "perBook": [
+  {
+   "slug": "1-corinthians",
+   "title": "1 Corinthians",
+   "unchanged": 40,
+   "spelling": 5,
+   "reworded": 334,
+   "compared": 379,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.8812664907651715
+  },
+  {
+   "slug": "1-esdras",
+   "title": "1 Esdras",
+   "unchanged": 49,
+   "spelling": 9,
+   "reworded": 222,
+   "compared": 280,
+   "unmatched": 0,
+   "renumbered": 1,
+   "rewordedRate": 0.7928571428571428
+  },
+  {
+   "slug": "1-john",
+   "title": "1 John",
+   "unchanged": 14,
+   "spelling": 1,
+   "reworded": 90,
+   "compared": 105,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.8571428571428571
+  },
+  {
+   "slug": "1-kings",
+   "title": "1 Kings",
+   "unchanged": 8,
+   "spelling": 5,
+   "reworded": 755,
+   "compared": 768,
+   "unmatched": 0,
+   "renumbered": 23,
+   "rewordedRate": 0.9830729166666666
+  },
+  {
+   "slug": "1-machabees",
+   "title": "1 Machabees",
+   "unchanged": 20,
+   "spelling": 4,
+   "reworded": 831,
+   "compared": 855,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.9719298245614035
+  },
+  {
+   "slug": "1-paralipomenon",
+   "title": "1 Paralipomenon",
+   "unchanged": 132,
+   "spelling": 52,
+   "reworded": 700,
+   "compared": 884,
+   "unmatched": 4,
+   "renumbered": 2,
+   "rewordedRate": 0.7918552036199095
+  },
+  {
+   "slug": "1-peter",
+   "title": "1 Peter",
+   "unchanged": 5,
+   "spelling": 1,
+   "reworded": 99,
+   "compared": 105,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9428571428571428
+  },
+  {
+   "slug": "1-thessalonians",
+   "title": "1 Thessalonians",
+   "unchanged": 10,
+   "spelling": 1,
+   "reworded": 58,
+   "compared": 69,
+   "unmatched": 0,
+   "renumbered": 7,
+   "rewordedRate": 0.8405797101449275
+  },
+  {
+   "slug": "1-timothy",
+   "title": "1 Timothy",
+   "unchanged": 11,
+   "spelling": 1,
+   "reworded": 101,
+   "compared": 113,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.8938053097345132
+  },
+  {
+   "slug": "2-corinthians",
+   "title": "2 Corinthians",
+   "unchanged": 16,
+   "spelling": 5,
+   "reworded": 234,
+   "compared": 255,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9176470588235294
+  },
+  {
+   "slug": "2-esdras",
+   "title": "2 Esdras",
+   "unchanged": 68,
+   "spelling": 15,
+   "reworded": 321,
+   "compared": 404,
+   "unmatched": 0,
+   "renumbered": 1,
+   "rewordedRate": 0.7945544554455446
+  },
+  {
+   "slug": "2-john",
+   "title": "2 John",
+   "unchanged": 3,
+   "spelling": 0,
+   "reworded": 10,
+   "compared": 13,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.7692307692307693
+  },
+  {
+   "slug": "2-kings",
+   "title": "2 Kings",
+   "unchanged": 28,
+   "spelling": 3,
+   "reworded": 641,
+   "compared": 672,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.9538690476190477
+  },
+  {
+   "slug": "2-machabees",
+   "title": "2 Machabees",
+   "unchanged": 5,
+   "spelling": 3,
+   "reworded": 550,
+   "compared": 558,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.985663082437276
+  },
+  {
+   "slug": "2-paralipomenon",
+   "title": "2 Paralipomenon",
+   "unchanged": 11,
+   "spelling": 4,
+   "reworded": 784,
+   "compared": 799,
+   "unmatched": 0,
+   "renumbered": 1,
+   "rewordedRate": 0.981226533166458
+  },
+  {
+   "slug": "2-peter",
+   "title": "2 Peter",
+   "unchanged": 2,
+   "spelling": 1,
+   "reworded": 58,
+   "compared": 61,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9508196721311475
+  },
+  {
+   "slug": "2-thessalonians",
+   "title": "2 Thessalonians",
+   "unchanged": 3,
+   "spelling": 0,
+   "reworded": 44,
+   "compared": 47,
+   "unmatched": 0,
+   "renumbered": 7,
+   "rewordedRate": 0.9361702127659575
+  },
+  {
+   "slug": "2-timothy",
+   "title": "2 Timothy",
+   "unchanged": 4,
+   "spelling": 2,
+   "reworded": 76,
+   "compared": 82,
+   "unmatched": 1,
+   "renumbered": 1,
+   "rewordedRate": 0.926829268292683
+  },
+  {
+   "slug": "3-john",
+   "title": "3 John",
+   "unchanged": 1,
+   "spelling": 0,
+   "reworded": 13,
+   "compared": 14,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9285714285714286
+  },
+  {
+   "slug": "3-kings",
+   "title": "3 Kings",
+   "unchanged": 28,
+   "spelling": 14,
+   "reworded": 775,
+   "compared": 817,
+   "unmatched": 2,
+   "renumbered": 1,
+   "rewordedRate": 0.9485924112607099
+  },
+  {
+   "slug": "4-kings",
+   "title": "4 Kings",
+   "unchanged": 9,
+   "spelling": 4,
+   "reworded": 669,
+   "compared": 682,
+   "unmatched": 1,
+   "renumbered": 1,
+   "rewordedRate": 0.9809384164222874
+  },
+  {
+   "slug": "abdias",
+   "title": "Abdias",
+   "unchanged": 0,
+   "spelling": 0,
+   "reworded": 21,
+   "compared": 21,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 1
+  },
+  {
+   "slug": "acts",
+   "title": "Acts",
+   "unchanged": 55,
+   "spelling": 10,
+   "reworded": 774,
+   "compared": 839,
+   "unmatched": 3,
+   "renumbered": 1,
+   "rewordedRate": 0.9225268176400476
+  },
+  {
+   "slug": "aggeus",
+   "title": "Aggeus",
+   "unchanged": 2,
+   "spelling": 0,
+   "reworded": 36,
+   "compared": 38,
+   "unmatched": 0,
+   "renumbered": 1,
+   "rewordedRate": 0.9473684210526315
+  },
+  {
+   "slug": "amos",
+   "title": "Amos",
+   "unchanged": 0,
+   "spelling": 1,
+   "reworded": 131,
+   "compared": 132,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9924242424242424
+  },
+  {
+   "slug": "apocalypse",
+   "title": "Apocalypse",
+   "unchanged": 39,
+   "spelling": 8,
+   "reworded": 331,
+   "compared": 378,
+   "unmatched": 1,
+   "renumbered": 1,
+   "rewordedRate": 0.8756613756613757
+  },
+  {
+   "slug": "baruch",
+   "title": "Baruch",
+   "unchanged": 9,
+   "spelling": 0,
+   "reworded": 204,
+   "compared": 213,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.9577464788732394
+  },
+  {
+   "slug": "canticle-of-canticles",
+   "title": "Canticle of Canticles",
+   "unchanged": 6,
+   "spelling": 1,
+   "reworded": 93,
+   "compared": 100,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.93
+  },
+  {
+   "slug": "colossians",
+   "title": "Colossians",
+   "unchanged": 9,
+   "spelling": 4,
+   "reworded": 82,
+   "compared": 95,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.8631578947368421
+  },
+  {
+   "slug": "daniel",
+   "title": "Daniel",
+   "unchanged": 7,
+   "spelling": 1,
+   "reworded": 523,
+   "compared": 531,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.9849340866290018
+  },
+  {
+   "slug": "deuteronomy",
+   "title": "Deuteronomy",
+   "unchanged": 59,
+   "spelling": 26,
+   "reworded": 873,
+   "compared": 958,
+   "unmatched": 3,
+   "renumbered": 1,
+   "rewordedRate": 0.9112734864300627
+  },
+  {
+   "slug": "ecclesiastes",
+   "title": "Ecclesiastes",
+   "unchanged": 15,
+   "spelling": 4,
+   "reworded": 203,
+   "compared": 222,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9144144144144144
+  },
+  {
+   "slug": "ecclesiasticus",
+   "title": "Ecclesiasticus",
+   "unchanged": 66,
+   "spelling": 14,
+   "reworded": 1420,
+   "compared": 1500,
+   "unmatched": 4,
+   "renumbered": 4,
+   "rewordedRate": 0.9466666666666667
+  },
+  {
+   "slug": "ephesians",
+   "title": "Ephesians",
+   "unchanged": 17,
+   "spelling": 1,
+   "reworded": 137,
+   "compared": 155,
+   "unmatched": 0,
+   "renumbered": 1,
+   "rewordedRate": 0.8838709677419355
+  },
+  {
+   "slug": "esther",
+   "title": "Esther",
+   "unchanged": 10,
+   "spelling": 4,
+   "reworded": 251,
+   "compared": 265,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.9471698113207547
+  },
+  {
+   "slug": "exodus",
+   "title": "Exodus",
+   "unchanged": 87,
+   "spelling": 34,
+   "reworded": 1089,
+   "compared": 1210,
+   "unmatched": 1,
+   "renumbered": 3,
+   "rewordedRate": 0.9
+  },
+  {
+   "slug": "ezechiel",
+   "title": "Ezechiel",
+   "unchanged": 17,
+   "spelling": 2,
+   "reworded": 1172,
+   "compared": 1191,
+   "unmatched": 2,
+   "renumbered": 2,
+   "rewordedRate": 0.984047019311503
+  },
+  {
+   "slug": "galatians",
+   "title": "Galatians",
+   "unchanged": 10,
+   "spelling": 1,
+   "reworded": 120,
+   "compared": 131,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.916030534351145
+  },
+  {
+   "slug": "genesis",
+   "title": "Genesis",
+   "unchanged": 138,
+   "spelling": 52,
+   "reworded": 1268,
+   "compared": 1458,
+   "unmatched": 5,
+   "renumbered": 1,
+   "rewordedRate": 0.869684499314129
+  },
+  {
+   "slug": "habacuc",
+   "title": "Habacuc",
+   "unchanged": 1,
+   "spelling": 0,
+   "reworded": 53,
+   "compared": 54,
+   "unmatched": 2,
+   "renumbered": 1,
+   "rewordedRate": 0.9814814814814815
+  },
+  {
+   "slug": "hebrews",
+   "title": "Hebrews",
+   "unchanged": 24,
+   "spelling": 3,
+   "reworded": 276,
+   "compared": 303,
+   "unmatched": 0,
+   "renumbered": 1,
+   "rewordedRate": 0.9108910891089109
+  },
+  {
+   "slug": "isaie",
+   "title": "Isaie",
+   "unchanged": 38,
+   "spelling": 8,
+   "reworded": 1246,
+   "compared": 1292,
+   "unmatched": 4,
+   "renumbered": 3,
+   "rewordedRate": 0.9643962848297214
+  },
+  {
+   "slug": "james",
+   "title": "James",
+   "unchanged": 12,
+   "spelling": 2,
+   "reworded": 94,
+   "compared": 108,
+   "unmatched": 0,
+   "renumbered": 1,
+   "rewordedRate": 0.8703703703703703
+  },
+  {
+   "slug": "jeremie",
+   "title": "Jeremy",
+   "unchanged": 25,
+   "spelling": 16,
+   "reworded": 1322,
+   "compared": 1363,
+   "unmatched": 2,
+   "renumbered": 0,
+   "rewordedRate": 0.9699192956713133
+  },
+  {
+   "slug": "job",
+   "title": "Job",
+   "unchanged": 82,
+   "spelling": 7,
+   "reworded": 980,
+   "compared": 1069,
+   "unmatched": 2,
+   "renumbered": 0,
+   "rewordedRate": 0.9167446211412535
+  },
+  {
+   "slug": "joel",
+   "title": "Joel",
+   "unchanged": 2,
+   "spelling": 0,
+   "reworded": 71,
+   "compared": 73,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9726027397260274
+  },
+  {
+   "slug": "john",
+   "title": "John",
+   "unchanged": 136,
+   "spelling": 16,
+   "reworded": 684,
+   "compared": 836,
+   "unmatched": 4,
+   "renumbered": 21,
+   "rewordedRate": 0.8181818181818182
+  },
+  {
+   "slug": "jonas",
+   "title": "Jonas",
+   "unchanged": 0,
+   "spelling": 0,
+   "reworded": 48,
+   "compared": 48,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 1
+  },
+  {
+   "slug": "josue",
+   "title": "Josue",
+   "unchanged": 58,
+   "spelling": 19,
+   "reworded": 580,
+   "compared": 657,
+   "unmatched": 2,
+   "renumbered": 2,
+   "rewordedRate": 0.882800608828006
+  },
+  {
+   "slug": "jude",
+   "title": "Jude",
+   "unchanged": 0,
+   "spelling": 1,
+   "reworded": 24,
+   "compared": 25,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.96
+  },
+  {
+   "slug": "judges",
+   "title": "Judges",
+   "unchanged": 11,
+   "spelling": 3,
+   "reworded": 604,
+   "compared": 618,
+   "unmatched": 0,
+   "renumbered": 2,
+   "rewordedRate": 0.9773462783171522
+  },
+  {
+   "slug": "judith",
+   "title": "Judith",
+   "unchanged": 19,
+   "spelling": 1,
+   "reworded": 326,
+   "compared": 346,
+   "unmatched": 0,
+   "renumbered": 12,
+   "rewordedRate": 0.9421965317919075
+  },
+  {
+   "slug": "lamentations",
+   "title": "Lamentations",
+   "unchanged": 1,
+   "spelling": 0,
+   "reworded": 153,
+   "compared": 154,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9935064935064936
+  },
+  {
+   "slug": "leviticus",
+   "title": "Leviticus",
+   "unchanged": 50,
+   "spelling": 7,
+   "reworded": 799,
+   "compared": 856,
+   "unmatched": 2,
+   "renumbered": 1,
+   "rewordedRate": 0.9334112149532711
+  },
+  {
+   "slug": "luke",
+   "title": "Luke",
+   "unchanged": 154,
+   "spelling": 25,
+   "reworded": 969,
+   "compared": 1148,
+   "unmatched": 3,
+   "renumbered": 3,
+   "rewordedRate": 0.8440766550522648
+  },
+  {
+   "slug": "malachie",
+   "title": "Malachie",
+   "unchanged": 1,
+   "spelling": 0,
+   "reworded": 40,
+   "compared": 41,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.975609756097561
+  },
+  {
+   "slug": "mark",
+   "title": "Mark",
+   "unchanged": 91,
+   "spelling": 11,
+   "reworded": 491,
+   "compared": 593,
+   "unmatched": 1,
+   "renumbered": 1,
+   "rewordedRate": 0.8279932546374368
+  },
+  {
+   "slug": "matthew",
+   "title": "Matthew",
+   "unchanged": 211,
+   "spelling": 39,
+   "reworded": 764,
+   "compared": 1014,
+   "unmatched": 4,
+   "renumbered": 23,
+   "rewordedRate": 0.7534516765285996
+  },
+  {
+   "slug": "micheas",
+   "title": "Micheas",
+   "unchanged": 0,
+   "spelling": 0,
+   "reworded": 104,
+   "compared": 104,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 1
+  },
+  {
+   "slug": "nahum",
+   "title": "Nahum",
+   "unchanged": 0,
+   "spelling": 0,
+   "reworded": 47,
+   "compared": 47,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 1
+  },
+  {
+   "slug": "numbers",
+   "title": "Numbers",
+   "unchanged": 154,
+   "spelling": 44,
+   "reworded": 1087,
+   "compared": 1285,
+   "unmatched": 4,
+   "renumbered": 20,
+   "rewordedRate": 0.8459143968871595
+  },
+  {
+   "slug": "osee",
+   "title": "Osee",
+   "unchanged": 3,
+   "spelling": 1,
+   "reworded": 194,
+   "compared": 198,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.9797979797979798
+  },
+  {
+   "slug": "philemon",
+   "title": "Philemon",
+   "unchanged": 3,
+   "spelling": 0,
+   "reworded": 22,
+   "compared": 25,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.88
+  },
+  {
+   "slug": "philippians",
+   "title": "Philippians",
+   "unchanged": 5,
+   "spelling": 1,
+   "reworded": 98,
+   "compared": 104,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9423076923076923
+  },
+  {
+   "slug": "proverbs",
+   "title": "Proverbs",
+   "unchanged": 66,
+   "spelling": 10,
+   "reworded": 838,
+   "compared": 914,
+   "unmatched": 2,
+   "renumbered": 0,
+   "rewordedRate": 0.9168490153172867
+  },
+  {
+   "slug": "psalms",
+   "title": "Psalms",
+   "unchanged": 43,
+   "spelling": 4,
+   "reworded": 2276,
+   "compared": 2323,
+   "unmatched": 82,
+   "renumbered": 40,
+   "rewordedRate": 0.9797675419715884
+  },
+  {
+   "slug": "romans",
+   "title": "Romans",
+   "unchanged": 56,
+   "spelling": 9,
+   "reworded": 367,
+   "compared": 432,
+   "unmatched": 1,
+   "renumbered": 2,
+   "rewordedRate": 0.8495370370370371
+  },
+  {
+   "slug": "ruth",
+   "title": "Ruth",
+   "unchanged": 2,
+   "spelling": 4,
+   "reworded": 78,
+   "compared": 84,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.9285714285714286
+  },
+  {
+   "slug": "sophonias",
+   "title": "Sophonias",
+   "unchanged": 0,
+   "spelling": 0,
+   "reworded": 53,
+   "compared": 53,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 1
+  },
+  {
+   "slug": "titus",
+   "title": "Titus",
+   "unchanged": 5,
+   "spelling": 3,
+   "reworded": 38,
+   "compared": 46,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.8260869565217391
+  },
+  {
+   "slug": "tobias",
+   "title": "Tobias",
+   "unchanged": 20,
+   "spelling": 1,
+   "reworded": 256,
+   "compared": 277,
+   "unmatched": 1,
+   "renumbered": 0,
+   "rewordedRate": 0.924187725631769
+  },
+  {
+   "slug": "wisdom",
+   "title": "Wisdom",
+   "unchanged": 10,
+   "spelling": 2,
+   "reworded": 427,
+   "compared": 439,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.9726651480637813
+  },
+  {
+   "slug": "zacharias",
+   "title": "Zacharias",
+   "unchanged": 4,
+   "spelling": 0,
+   "reworded": 207,
+   "compared": 211,
+   "unmatched": 0,
+   "renumbered": 0,
+   "rewordedRate": 0.981042654028436
+  }
+ ],
+ "topSwaps": [
+  {
+   "from": "our",
+   "to": "the",
+   "count": 4969
+  },
+  {
+   "from": "because",
+   "to": "for",
+   "count": 669
+  },
+  {
+   "from": "into",
+   "to": "to",
+   "count": 453
+  },
+  {
+   "from": "which",
+   "to": "who",
+   "count": 442
+  },
+  {
+   "from": "unto",
+   "to": "to",
+   "count": 407
+  },
+  {
+   "from": "thine",
+   "to": "thy",
+   "count": 324
+  },
+  {
+   "from": "in",
+   "to": "with",
+   "count": 294
+  },
+  {
+   "from": "that",
+   "to": "who",
+   "count": 290
+  },
+  {
+   "from": "and",
+   "to": "now",
+   "count": 279
+  },
+  {
+   "from": "forth",
+   "to": "out",
+   "count": 258
+  },
+  {
+   "from": "mine",
+   "to": "my",
+   "count": 250
+  },
+  {
+   "from": "of",
+   "to": "by",
+   "count": 220
+  },
+  {
+   "from": "to",
+   "to": "for",
+   "count": 207
+  },
+  {
+   "from": "the",
+   "to": "a",
+   "count": 206
+  },
+  {
+   "from": "and",
+   "to": "but",
+   "count": 195
+  },
+  {
+   "from": "in",
+   "to": "by",
+   "count": 192
+  },
+  {
+   "from": "children",
+   "to": "sons",
+   "count": 166
+  },
+  {
+   "from": "be",
+   "to": "are",
+   "count": 153
+  },
+  {
+   "from": "as",
+   "to": "like",
+   "count": 143
+  },
+  {
+   "from": "but",
+   "to": "and",
+   "count": 142
+  },
+  {
+   "from": "impious",
+   "to": "wicked",
+   "count": 136
+  },
+  {
+   "from": "to",
+   "to": "unto",
+   "count": 134
+  },
+  {
+   "from": "a",
+   "to": "the",
+   "count": 130
+  },
+  {
+   "from": "of",
+   "to": "from",
+   "count": 125
+  },
+  {
+   "from": "to whom",
+   "to": "and",
+   "count": 115
+  },
+  {
+   "from": "was made",
+   "to": "came",
+   "count": 115
+  },
+  {
+   "from": "upon",
+   "to": "on",
+   "count": 115
+  },
+  {
+   "from": "in",
+   "to": "at",
+   "count": 114
+  },
+  {
+   "from": "moreover",
+   "to": "and",
+   "count": 111
+  },
+  {
+   "from": "philisthiims",
+   "to": "philistines",
+   "count": 111
+  },
+  {
+   "from": "which",
+   "to": "that",
+   "count": 108
+  },
+  {
+   "from": "and",
+   "to": "then",
+   "count": 105
+  },
+  {
+   "from": "which",
+   "to": "and",
+   "count": 101
+  },
+  {
+   "from": "who",
+   "to": "and he",
+   "count": 101
+  },
+  {
+   "from": "will",
+   "to": "shall",
+   "count": 97
+  },
+  {
+   "from": "the",
+   "to": "their",
+   "count": 97
+  },
+  {
+   "from": "shall",
+   "to": "will",
+   "count": 93
+  },
+  {
+   "from": "that",
+   "to": "which",
+   "count": 80
+  },
+  {
+   "from": "the",
+   "to": "its",
+   "count": 78
+  },
+  {
+   "from": "of",
+   "to": "for",
+   "count": 76
+  }
+ ],
+ "mostRewritten": [
+  {
+   "book": "Psalms",
+   "chapter": 108,
+   "verse": 1,
+   "ratio": 0.8,
+   "n": 30
+  },
+  {
+   "book": "2 Machabees",
+   "chapter": 8,
+   "verse": 23,
+   "ratio": 0.7941176470588236,
+   "n": 34
+  },
+  {
+   "book": "Psalms",
+   "chapter": 82,
+   "verse": 1,
+   "ratio": 0.7916666666666666,
+   "n": 24
+  },
+  {
+   "book": "Psalms",
+   "chapter": 9,
+   "verse": 1,
+   "ratio": 0.7903225806451613,
+   "n": 62
+  },
+  {
+   "book": "Acts",
+   "chapter": 8,
+   "verse": 8,
+   "ratio": 0.7894736842105263,
+   "n": 38
+  },
+  {
+   "book": "Psalms",
+   "chapter": 43,
+   "verse": 1,
+   "ratio": 0.7727272727272727,
+   "n": 44
+  },
+  {
+   "book": "Ezechiel",
+   "chapter": 32,
+   "verse": 11,
+   "ratio": 0.7647058823529411,
+   "n": 17
+  },
+  {
+   "book": "1 Kings",
+   "chapter": 31,
+   "verse": 13,
+   "ratio": 0.7631578947368421,
+   "n": 38
+  },
+  {
+   "book": "Psalms",
+   "chapter": 101,
+   "verse": 28,
+   "ratio": 0.7619047619047619,
+   "n": 42
+  },
+  {
+   "book": "Psalms",
+   "chapter": 148,
+   "verse": 5,
+   "ratio": 0.7619047619047619,
+   "n": 21
+  },
+  {
+   "book": "Psalms",
+   "chapter": 83,
+   "verse": 1,
+   "ratio": 0.7608695652173914,
+   "n": 46
+  },
+  {
+   "book": "Judges",
+   "chapter": 5,
+   "verse": 32,
+   "ratio": 0.7586206896551724,
+   "n": 29
+  },
+  {
+   "book": "Psalms",
+   "chapter": 89,
+   "verse": 1,
+   "ratio": 0.7536231884057971,
+   "n": 69
+  },
+  {
+   "book": "Psalms",
+   "chapter": 143,
+   "verse": 1,
+   "ratio": 0.75,
+   "n": 72
+  },
+  {
+   "book": "Genesis",
+   "chapter": 50,
+   "verse": 21,
+   "ratio": 0.75,
+   "n": 60
+  },
+  {
+   "book": "Psalms",
+   "chapter": 77,
+   "verse": 4,
+   "ratio": 0.75,
+   "n": 28
+  },
+  {
+   "book": "Psalms",
+   "chapter": 95,
+   "verse": 9,
+   "ratio": 0.736842105263158,
+   "n": 19
+  },
+  {
+   "book": "Psalms",
+   "chapter": 110,
+   "verse": 1,
+   "ratio": 0.7361111111111112,
+   "n": 72
+  },
+  {
+   "book": "Psalms",
+   "chapter": 141,
+   "verse": 4,
+   "ratio": 0.7307692307692308,
+   "n": 26
+  },
+  {
+   "book": "Psalms",
+   "chapter": 95,
+   "verse": 1,
+   "ratio": 0.7297297297297297,
+   "n": 74
+  },
+  {
+   "book": "Psalms",
+   "chapter": 8,
+   "verse": 7,
+   "ratio": 0.7241379310344828,
+   "n": 29
+  },
+  {
+   "book": "Psalms",
+   "chapter": 12,
+   "verse": 2,
+   "ratio": 0.7234042553191489,
+   "n": 47
+  },
+  {
+   "book": "Psalms",
+   "chapter": 74,
+   "verse": 7,
+   "ratio": 0.7234042553191489,
+   "n": 47
+  },
+  {
+   "book": "Psalms",
+   "chapter": 142,
+   "verse": 4,
+   "ratio": 0.7234042553191489,
+   "n": 47
+  },
+  {
+   "book": "3 Kings",
+   "chapter": 22,
+   "verse": 54,
+   "ratio": 0.7222222222222222,
+   "n": 36
+  }
+ ]
+}
