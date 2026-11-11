@@ -6,6 +6,7 @@
 	import PrayerModal from '$lib/components/PrayerModal.svelte';
 	import InstallBanner from '$lib/components/InstallBanner.svelte';
 	import KonamiUnlock from '$lib/components/KonamiUnlock.svelte';
+	import ClarificationPopover from '$lib/components/ClarificationPopover.svelte';
 	import { page } from '$app/stores';
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
@@ -125,3 +126,4 @@
 <PrayerModal />
 <InstallBanner />
 <KonamiUnlock />
+<ClarificationPopover />

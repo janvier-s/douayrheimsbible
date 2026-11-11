@@ -12,6 +12,8 @@
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
 	import { highlightLemmas, lemmasForPart } from '$lib/utils/lemmas';
+	import { applyClarifications, clarificationsForPart } from '$lib/utils/clarifications';
+	import type { BookClarifications, Clarification } from '$lib/utils/clarifications';
 	import type {
 		Verse,
 		LemmaSpan,
@@ -26,7 +28,8 @@
 		loadConfFootnotes,
 		loadConfCommentary,
 		loadTranslationFormat,
-		loadGlossa
+		loadGlossa,
+		loadClarifications
 	} from '$lib/data/loader';
 	import type {
 		HaydockCommentaryEntry,
@@ -392,7 +395,8 @@
 		expandAmpersand: boolean,
 		isChapterOpen: boolean = false,
 		isDropcap: boolean = false,
-		lemmas: LemmaSpan[] | null = null
+		lemmas: LemmaSpan[] | null = null,
+		clar: Clarification[] | null = null
 	): string {
 		// Before anything else: the offsets are into the text as it is stored.
 		let t = lemmas && lemmas.length > 0 ? highlightLemmas(text, lemmas, verseNum, isStudy) : text;
@@ -422,7 +426,9 @@
 		const t3 = isChapterOpen ? stripOpeningSmallCaps(t2) : t2;
 		const result = smallCaps ? allcapsToSmallcaps(t3) : t3;
 		// Dropcap: only when bionic is off (bionic wraps letters in <b>, complicating injection)
-		return isDropcap && !bionic ? injectDropcap(result) : result;
+		const final = isDropcap && !bionic ? injectDropcap(result) : result;
+		// Last, so it sees the finished HTML: marker buttons, bionic <b> runs and the drop cap.
+		return clar ? applyClarifications(final, clar) : final;
 	}
 
 	// ── Marker click handling ────────────────────────────────────────
@@ -483,6 +489,28 @@
 		if ((e.target as HTMLElement).closest('[data-marker-type]')) return;
 		if (!annotatedVerseSet.has(v.verse)) return;
 		openAnnotation(v.verse);
+	}
+
+	// ── Inline clarifications (ODR only, off by default) ─────────────
+
+	let clarData: BookClarifications | null = $state(null);
+	let clarOn = $derived(translationId === 'odr' && ($prefs.showClarifications ?? false));
+	$effect(() => {
+		if (!clarOn) return;
+		let live = true;
+		loadClarifications(bookSlug, fetch)
+			.then((d) => {
+				if (live) clarData = d;
+			})
+			.catch(() => {});
+		return () => {
+			live = false;
+		};
+	});
+	let verseTextByNum = $derived(new Map(verses.map((v) => [v.verse, v.text])));
+	const partVerseText = (n: number) => verseTextByNum.get(n) ?? '';
+	function clarsFor(verse: number): Clarification[] | undefined {
+		return clarOn ? clarData?.[chapterNum]?.[verse] : undefined;
 	}
 
 	// ── Marker hover popover ─────────────────────────────────────────
@@ -924,7 +952,13 @@
 									expandAmpersand,
 									isChapterOpen,
 									isDropcap,
-									partLemmas
+									partLemmas,
+									clarificationsForPart(
+										clarsFor(part.verse),
+										partVerseText(part.verse),
+										part.off,
+										part.text.length
+									)
 								)}{' '}
 							</span>
 						{:else}
@@ -938,7 +972,13 @@
 								expandAmpersand,
 								false,
 								false,
-								partLemmas
+								partLemmas,
+								clarificationsForPart(
+									clarsFor(part.verse),
+									partVerseText(part.verse),
+									part.off,
+									part.text.length
+								)
 							)}{' '}
 						{/if}
 					{/each}
@@ -1001,7 +1041,8 @@
 						expandAmpersand,
 						isChapterOpen,
 						false,
-						lemmaByVerse?.get(v.verse) ?? null
+						lemmaByVerse?.get(v.verse) ?? null,
+						clarsFor(v.verse) ?? null
 					)}
 				</p>
 				{#if isStudy && annotatedVerseSet.has(v.verse)}
@@ -1304,6 +1345,24 @@
 	   also what lets a pair that crosses without nesting render at all. Two is
 	   as deep as the corpus goes; three shares the same fill so a later overlap
 	   cannot land somewhere untested. */
+	/* Inline clarifications: a faint dotted underline, quiet enough to read past. */
+	:global(.clar) {
+		text-decoration: underline dotted;
+		text-decoration-color: var(--color-muted);
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.2em;
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+	}
+	:global(.clar:hover) {
+		text-decoration-color: var(--color-accent);
+	}
+	:global(.clar:focus-visible) {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
 	:global(mark.lemma) {
 		background: var(--lemma-fill-1);
 		color: inherit;

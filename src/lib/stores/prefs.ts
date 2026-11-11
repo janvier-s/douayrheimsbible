@@ -42,7 +42,8 @@ export interface ReadingPrefs {
 		| 'cross-refs'
 		| 'glossa'
 		| 'textual-notes'
-		| 'glossary';
+		| 'glossary'
+		| 'facsimile';
 	// v13
 	annotationSync: boolean;
 	// v16
@@ -56,6 +57,8 @@ export interface ReadingPrefs {
 	romanNumerals: boolean;
 	// v25
 	bionicBoldWeight: 600 | 700;
+	// v27
+	showClarifications: boolean;
 }
 
 const DEFAULTS: ReadingPrefs = {
@@ -89,7 +92,8 @@ const DEFAULTS: ReadingPrefs = {
 	hasVisitedHomepage: false,
 	skipHomepage: false,
 	romanNumerals: true,
-	bionicBoldWeight: 600
+	bionicBoldWeight: 600,
+	showClarifications: false
 };
 
 const PREFS_VERSION = 26;

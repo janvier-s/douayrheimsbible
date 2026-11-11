@@ -654,6 +654,24 @@
 				<label class="flex items-center gap-sm cursor-pointer">
 					<input
 						type="checkbox"
+						checked={$prefs.showClarifications ?? false}
+						onchange={(e) =>
+							prefs.update((p) => ({
+								...p,
+								showClarifications: (e.target as HTMLInputElement).checked
+							}))}
+						class="accent-accent"
+					/>
+					<SettingHint
+						text="Underlines words whose old sense differs from today's and opens the Latin and a short gloss when tapped. Clarifications by Sancta Clara Press, CC BY 4.0."
+					>
+						<span>Clarifications</span>
+					</SettingHint>
+				</label>
+
+				<label class="flex items-center gap-sm cursor-pointer">
+					<input
+						type="checkbox"
 						checked={$prefs.expandAmpersand ?? false}
 						onchange={(e) =>
 							prefs.update((p) => ({

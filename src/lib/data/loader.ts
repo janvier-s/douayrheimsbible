@@ -8,6 +8,7 @@ import type {
 	ConfFrontMatter,
 	ConfBackMatter
 } from './types';
+import type { BookClarifications } from '$lib/utils/clarifications';
 import type { TranslationBook, TranslationNote, TranslationCrossRef } from './translation-types';
 import type { FathersChapterFile } from './fathers-types';
 import sidecarManifest from '../../../static/data/manifests/sidecars.json';
@@ -494,4 +495,24 @@ export function loadFathersChapter(
 
 	fathersChapterCache.set(key, promise);
 	return promise;
+}
+
+// ── Inline clarifications (per book, ODR) ────────────────────────────
+
+const clarificationsCache = new Map<string, Promise<BookClarifications | null>>();
+
+export function loadClarifications(
+	slug: string,
+	fetch: typeof globalThis.fetch
+): Promise<BookClarifications | null> {
+	if (!clarificationsCache.has(slug)) {
+		const promise = fetch(`/data/odr-clarifications/${slug}.json`).then((res) => {
+			if (res.status === 404) return null;
+			if (!res.ok) throw new Error(`Failed to load clarifications: ${res.status}`);
+			return res.json() as Promise<BookClarifications>;
+		});
+		promise.then(null, () => clarificationsCache.delete(slug));
+		clarificationsCache.set(slug, promise);
+	}
+	return clarificationsCache.get(slug)!;
 }
