@@ -234,6 +234,13 @@
 
 	onMount(() => {
 		if (browser) window.addEventListener('popstate', onPopState);
+		const early = window as unknown as { __hydrated?: boolean };
+		// Replay a Reading options click made before hydration (see app.html).
+		if (browser && (window as unknown as { __earlyPrefs?: boolean }).__earlyPrefs) {
+			(window as unknown as { __earlyPrefs?: boolean }).__earlyPrefs = false;
+			if (!prefsOpen) togglePrefs();
+		}
+		if (browser) early.__hydrated = true;
 	});
 
 	onDestroy(() => {
@@ -271,6 +278,7 @@
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
 		onLogoClick={handleLogoClick}
+		onMenuOpen={closeAll}
 		logoHref={isChapterPage ? `${routeBase}/genesis/1` : '/'}
 	>
 		<!-- Mobile prefs toggle (TopBar-specific) -->
@@ -279,6 +287,7 @@
 				rounded-[3px] transition-colors duration-fast
 				{prefsOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 			aria-label="Reading options"
+			data-early-prefs
 			aria-expanded={prefsOpen}
 			aria-haspopup="dialog"
 			onclick={togglePrefs}
@@ -472,6 +481,7 @@
 					aria-expanded={prefsOpen}
 					aria-haspopup="dialog"
 					aria-label="Reading options"
+					data-early-prefs
 					onclick={() => {
 						prefsOpen = !prefsOpen;
 						translationOpen = false;

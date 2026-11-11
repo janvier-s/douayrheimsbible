@@ -9,6 +9,7 @@
 		pendingIdx: number;
 		onModeSelect: (e: CustomEvent<{ key: string; index: number }>) => void;
 		onLogoClick?: () => void;
+		onMenuOpen?: () => void;
 		logoHref?: string;
 		children?: import('svelte').Snippet;
 	}
@@ -19,6 +20,7 @@
 		pendingIdx,
 		onModeSelect,
 		onLogoClick = () => {},
+		onMenuOpen = () => {},
 		logoHref = '/',
 		children
 	}: Props = $props();
@@ -161,7 +163,10 @@
 		aria-label="Site navigation"
 		aria-expanded={menuOpen}
 		aria-haspopup="menu"
-		onclick={() => (menuOpen = !menuOpen)}
+		onclick={() => {
+			menuOpen = !menuOpen;
+			if (menuOpen) onMenuOpen();
+		}}
 	>
 		{#if menuOpen}
 			<svg

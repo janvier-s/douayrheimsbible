@@ -46,6 +46,17 @@
 				} catch (e) {}
 			})();
 		</script>
+		<script>
+			// Remember a Reading options click made before JS hydrates; TopBar replays it.
+			document.addEventListener(
+				'click',
+				function (e) {
+					if (!window.__hydrated && e.target.closest && e.target.closest('[data-early-prefs]'))
+						window.__earlyPrefs = true;
+				},
+				true
+			);
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

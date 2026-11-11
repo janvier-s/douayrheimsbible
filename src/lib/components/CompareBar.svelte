@@ -119,6 +119,7 @@
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
 		onLogoClick={closeAll}
+		onMenuOpen={closeAll}
 	/>
 
 	<!-- Row 2: compare controls -->

@@ -134,6 +134,10 @@
 		{pendingIdx}
 		onModeSelect={handleModeSelect}
 		onLogoClick={() => (navOpen = false)}
+		onMenuOpen={() => {
+			navOpen = false;
+			prefsOpen = false;
+		}}
 	/>
 
 	<!-- Row 2: chapter navigation -->
