@@ -149,7 +149,8 @@ describe('the corpus markup', () => {
 	it('visits every title and cross-reference body', () => {
 		const titles = blocks.filter((b) => b.ref.endsWith(' title'));
 		const crossRefs = blocks.filter((b) => / cross_ref\[\d+\]$/.test(b.ref));
-		expect(titles).toHaveLength(1619);
+		// 1,619 before the 4 Esdras epistle table moved out of 16:78 into endMatters.
+		expect(titles).toHaveLength(1620);
 		// 1,989 before b2e0381c added 220 Sancta cross_refs (source: sancta).
 		// 2,209 before the duplicate 3-esdras 2:1 entry (and its one cross_ref) was removed.
 		expect(crossRefs).toHaveLength(2208);
@@ -157,7 +158,8 @@ describe('the corpus markup', () => {
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
 		// see static/data/odr/versification.json).
-		expect(blocks).toHaveLength(43883);
+		// 43,883 before the 4 Esdras epistle table became an end matter (+1 title, +1 text).
+		expect(blocks).toHaveLength(43885);
 	});
 
 	it('names exactly one block per ref', () => {
