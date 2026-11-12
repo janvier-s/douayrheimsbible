@@ -49,7 +49,13 @@
         },
         {
           "verse": 7,
-          "text": "And Iosias gaue vnto the people that was found of sheepe, lambes, and kiddes, and goates thirtie thousand, calues three thousand."
+          "text": "And Iosias gaue vnto the people that was found of sheepe, lambes, and kiddes, and goates thirtie thousand, calues three thousand.",
+          "cross_refs": [
+            {
+              "text": "Leuit. 23. Num. 28.",
+              "source": "sancta"
+            }
+          ]
         },
         {
           "verse": 8,
@@ -287,7 +293,13 @@
         },
         {
           "verse": 57,
-          "text": "And they were his seruants vntil the Persians reigned in the fulfilling of the word of our Lord by the mouth of Ieremie:"
+          "text": "And they were his seruants vntil the Persians reigned in the fulfilling of the word of our Lord by the mouth of Ieremie:",
+          "cross_refs": [
+            {
+              "text": "Iere. 25. v. 12. & 29. v. 10.",
+              "source": "sancta"
+            }
+          ]
         },
         {
           "verse": 58,
@@ -317,7 +329,13 @@
         },
         {
           "verse": 2,
-          "text": "our Lord raysed vp the spirit of Cyrus king of the Persians, and he proclaymed in al his kingdomes, and that by writing,"
+          "text": "our Lord raysed vp the spirit of Cyrus king of the Persians, and he proclaymed in al his kingdomes, and that by writing,",
+          "cross_refs": [
+            {
+              "text": "2. Esd. 1. v. 1. & 6.",
+              "source": "sancta"
+            }
+          ]
         },
         {
           "verse": 3,
@@ -325,6 +343,10 @@
           "cross_refs": [
             {
               "text": "v. 3",
+              "source": "sancta"
+            },
+            {
+              "text": "Iere. 26. v. 12. & 29. v. 10.",
               "source": "sancta"
             }
           ]

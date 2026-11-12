@@ -154,7 +154,9 @@ describe('the corpus markup', () => {
 		expect(titles).toHaveLength(1621);
 		// 1,989 before b2e0381c added 220 Sancta cross_refs (source: sancta).
 		// 2,209 before the duplicate 3-esdras 2:1 entry (and its one cross_ref) was removed.
-		expect(crossRefs).toHaveLength(2208);
+		// 2,208 before the Sancta margin-citation pass: Ps 121:6, +54 missing 1609
+		// citations, less 36 Sancta entries that only repeated a printed one.
+		expect(crossRefs).toHaveLength(2227);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -162,7 +164,8 @@ describe('the corpus markup', () => {
 		// 43,883 before the 4 Esdras epistle table became an end matter (+1 title, +1 text).
 		// 43,885 before the summary-shift repair (+89 chapter summaries put back on the
 		// chapters they belong to) and the Ps 141 article (+1 title, +1 text).
-		expect(blocks).toHaveLength(43976);
+		// 43,976 before the Sancta margin-citation pass (+19 cross_refs).
+		expect(blocks).toHaveLength(43995);
 	});
 
 	it('names exactly one block per ref', () => {

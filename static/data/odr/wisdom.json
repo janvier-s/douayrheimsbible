@@ -1379,6 +1379,12 @@
         {
           "verse": 4,
           "text": "For whose cause, when water destroyed the earth, wisdom healed it again, governing <na>(c)</na> the just by contemptible wood.",
+          "cross_refs": [
+            {
+              "text": "Gen. 6.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "c",
@@ -1404,6 +1410,12 @@
         {
           "verse": 6,
           "text": "She delivered <na>(e)</na> the just, fleeing from the impious that perished, when the fire came down upon Pentapolis:",
+          "cross_refs": [
+            {
+              "text": "Gen. 19.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "e",
@@ -1985,6 +1997,10 @@
           "cross_refs": [
             {
               "text": "Ier. 10."
+            },
+            {
+              "text": "Isa. 44.",
+              "source": "sancta"
             }
           ],
           "xrefs": [

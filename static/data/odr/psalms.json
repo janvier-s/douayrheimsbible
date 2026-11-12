@@ -1725,6 +1725,12 @@
         {
           "verse": 21,
           "text": "Appoint Lord <na>(s)</na> a Lawgiver over them: that the Gentiles may know that they be men.",
+          "cross_refs": [
+            {
+              "text": "2. Thes. 2.",
+              "source": "sancta"
+            }
+          ],
           "has_annotation": true,
           "notes": [
             {
@@ -3207,6 +3213,12 @@
         {
           "verse": 35,
           "text": "That teacheth my hands to battle: and hast put mine arms <na>(d)</na> as a bow of brass.",
+          "cross_refs": [
+            {
+              "text": "2.Re.22.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "d",
@@ -3305,6 +3317,12 @@
         {
           "verse": 50,
           "text": "Therefore will I confess to thee among nations, o Lord: and will say <na>(i)</na> a Psalm to thy name.",
+          "cross_refs": [
+            {
+              "text": "2. Reg. 22. Rom. 15.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "i",
@@ -3416,6 +3434,12 @@
         {
           "verse": 8,
           "text": "The law of our Lord is immaculate <na>(h)</na> converting souls: the testimony of our Lord is faithful, giving wisdom to little ones.",
+          "cross_refs": [
+            {
+              "text": "Mat. 27. Mar. 15.",
+              "source": "sancta"
+            }
+          ],
           "has_annotation": true,
           "lemmas": [
             [
@@ -3450,6 +3474,12 @@
         {
           "verse": 12,
           "text": "For thy servant <na>(i)</na> keepeth them, in keeping them is <na>(k)</na> much reward.",
+          "cross_refs": [
+            {
+              "text": "Mat. 27. Mar. 15.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "i",
@@ -4791,6 +4821,12 @@
         {
           "verse": 19,
           "text": "Behold mine enemies, because they are multiplied, and with <na>(x)</na> unjust hatred hated me.",
+          "cross_refs": [
+            {
+              "text": "Ioan. 15.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "x",
@@ -8573,6 +8609,12 @@
         {
           "verse": 4,
           "text": "For <na>(d)</na> not by their own sword did they possess the land, and their own arm did not save them: But thy right hand, and thine arm, and the illumination of thy countenance: because <na>(e)</na> thou wast pleased in them.",
+          "cross_refs": [
+            {
+              "text": "See Iosue 23.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "d",
@@ -14912,7 +14954,13 @@
         },
         {
           "verse": 7,
-          "text": "They have burnt thy sanctuary with fire: they have polluted the tabernacle of thy name in the earth."
+          "text": "They have burnt thy sanctuary with fire: they have polluted the tabernacle of thy name in the earth.",
+          "cross_refs": [
+            {
+              "text": "4. Reg. 25.",
+              "source": "sancta"
+            }
+          ]
         },
         {
           "verse": 8,
@@ -19770,10 +19818,6 @@
           "cross_refs": [
             {
               "text": "1. Par. 16. v. 23."
-            },
-            {
-              "text": "1. Par. v. 23",
-              "source": "sancta"
             }
           ],
           "notes": [
@@ -21677,6 +21721,12 @@
         {
           "verse": 42,
           "text": "Because he was mindful of his holy word, which he had uttered to Abraham his servant.",
+          "cross_refs": [
+            {
+              "text": "Gen. 12.",
+              "source": "sancta"
+            }
+          ],
           "xrefs": [
             "Gen. 12."
           ]
@@ -21893,6 +21943,12 @@
         {
           "verse": 16,
           "text": "And they provoked Moyses in the camp: Aaron the <na>(o)</na> holy of our Lord.",
+          "cross_refs": [
+            {
+              "text": "Nu. 16.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "o",
@@ -22089,6 +22145,12 @@
         {
           "verse": 38,
           "text": "And <na>(x)</na> they shed innocent blood: the blood of their sons and of their daughters, which they sacrificed to the sculptils of Chanaan. And the land was infected with blood,",
+          "cross_refs": [
+            {
+              "text": "Iere. 19. v. 5.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "x",
@@ -26685,6 +26747,12 @@
         {
           "verse": 6,
           "text": "<na>(i)</na> Ask ye the things that are for the peace of Jerusalem: and <na>(k)</na> abundance to them that love thee.",
+          "cross_refs": [
+            {
+              "text": "Matt. 21. v. 22.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "i",
@@ -28018,6 +28086,12 @@
         {
           "verse": 5,
           "text": "Who made the heaven <na>(g)</na> in understanding: because his mercy is for ever.",
+          "cross_refs": [
+            {
+              "text": "Gen. 1.",
+              "source": "sancta"
+            }
+          ],
           "notes": [
             {
               "label": "g",
