@@ -149,46 +149,46 @@
 		<li>
 			<strong>SQLite</strong> — a single database with a full-text search index.
 		</li>
-		<li>
-			<strong>EPUB</strong>: EPUB 3 for e-readers. The 1582 title page is the cover, verse numbers
-			are superscript, and the table of contents runs testament, book, chapter.
-		</li>
-		<li>
-			<strong>OSIS</strong>: OSIS 2.1.1 XML for Bible software such as SWORD and Xiphos, with an
-			<code>osisID</code> on every book, chapter, and verse.
-		</li>
-		<li>
-			<strong>DOCX</strong>: Word documents with the 1582 title page, heading styles, and a table of
-			contents field.
-		</li>
 	</ul>
 
-	<h2>Study Edition</h2>
+	<h2>Reading Editions</h2>
 
 	<p>
-		The text with the printed apparatus: book introductions, chapter summaries, marginal notes and
-		cross-references as footnotes, and the extended annotations after their verse. The whole-Bible
-		files add the title pages, prefaces, tables, glossary, index, and errata as front and back
-		matter. Each format comes as one file per book and as a single file for the whole Bible, from
-		the
+		E-books, Word documents, Bible-software files, and web pages, from the
 		<a
 			href="https://github.com/janvier-s/original-douay-rheims/releases/latest"
 			target="_blank"
 			rel="noopener noreferrer">latest release</a
-		>.
+		>. Each file is a combination of an edition, a layout, and a format. Each combination comes as
+		one file per book and as a single file for the whole Bible.
 	</p>
 
 	<ul>
 		<li>
-			<strong>EPUB</strong>: real footnotes for e-readers, with a table of contents by testament,
-			book, and chapter.
+			<strong>Edition</strong>: <em>verse-only</em> is the scripture text alone. <em>Study</em>
+			adds the introductions, chapter summaries, notes and cross-references as footnotes, the extended
+			annotations after their verse, and, in the whole-Bible files, the prefaces, tables, glossary, and
+			index.
 		</li>
 		<li>
-			<strong>OSIS</strong>: annotations as <code>note type="study"</code>, summaries and
-			introductions as <code>div</code> elements, ready for Bible software.
+			<strong>Layout</strong>: <em>flowing</em> is one paragraph per chapter. <em>Paragraph</em>
+			uses the same paragraphs as the reading site. <em>Verse</em> puts each verse on its own line.
 		</li>
 		<li>
-			<strong>DOCX</strong>: Word footnotes, heading styles, and a table of contents field.
+			<strong>EPUB</strong>: EPUB 3 for e-readers, with a table of contents by testament, book, and
+			chapter.
+		</li>
+		<li>
+			<strong>HTML</strong>: one page per file that works offline, with a contents sidebar and a row
+			of chapter links under each book title.
+		</li>
+		<li>
+			<strong>DOCX</strong>: Word documents with heading styles, Word footnotes in the study
+			edition, and a contents page that links to every book and chapter.
+		</li>
+		<li>
+			<strong>OSIS</strong>: OSIS 2.1.1 XML for Bible software such as SWORD and Xiphos, with an
+			<code>osisID</code> on every book, chapter, and verse.
 		</li>
 	</ul>
 

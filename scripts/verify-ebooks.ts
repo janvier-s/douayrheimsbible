@@ -140,9 +140,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 	const edition = process.env.EDITION ?? 'verse-only';
 	let bad = 0,
 		n = 0;
-	const ext = { epub: '.epub', docx: '.docx', osis: '.osis.xml' };
+	const ext = { epub: '.epub', docx: '.docx', osis: '.osis.xml', html: '.html' };
+	const layout = process.env.LAYOUT ?? 'flowing';
 	for (const fmt of wanted.length ? wanted : Object.keys(ext)) {
-		const d = join(dir, edition, fmt);
+		const d = join(dir, edition, layout, fmt);
 		if (!existsSync(d)) continue;
 		for (const f of readdirSync(d).filter((x) => x.endsWith(ext[fmt]))) {
 			const m = f.match(/^\d+-(.+?)\.[a-z.]+$/);
