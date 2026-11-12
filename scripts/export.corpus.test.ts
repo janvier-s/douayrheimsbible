@@ -150,7 +150,8 @@ describe('the corpus markup', () => {
 		const titles = blocks.filter((b) => b.ref.endsWith(' title'));
 		const crossRefs = blocks.filter((b) => / cross_ref\[\d+\]$/.test(b.ref));
 		// 1,619 before the 4 Esdras epistle table moved out of 16:78 into endMatters.
-		expect(titles).toHaveLength(1620);
+		// 1620 before the Ps 141 'prophetical sense' article was split out of gloss q.
+		expect(titles).toHaveLength(1621);
 		// 1,989 before b2e0381c added 220 Sancta cross_refs (source: sancta).
 		// 2,209 before the duplicate 3-esdras 2:1 entry (and its one cross_ref) was removed.
 		expect(crossRefs).toHaveLength(2208);
@@ -159,7 +160,9 @@ describe('the corpus markup', () => {
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
 		// see static/data/odr/versification.json).
 		// 43,883 before the 4 Esdras epistle table became an end matter (+1 title, +1 text).
-		expect(blocks).toHaveLength(43885);
+		// 43,885 before the summary-shift repair (+89 chapter summaries put back on the
+		// chapters they belong to) and the Ps 141 article (+1 title, +1 text).
+		expect(blocks).toHaveLength(43976);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -250,7 +253,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,723 of 13,725 markers', () => {
+	it('binds 13,752 of 13,754 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -260,9 +263,10 @@ describe('the corpus markup', () => {
 		}
 		// 13,606 before the annotation review (b2e0381c). It added 117 <mn>
 		// markers (4,875 to 4,992 across odr), and every one of them binds.
-		expect(bound).toBe(13723);
+		// 13,723 before the psalm summary-shift repair restored 29 head-note markers.
+		expect(bound).toBe(13752);
 		expect(unbound).toBe(2);
-		expect(bound + unbound).toBe(13725);
+		expect(bound + unbound).toBe(13754);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming
@@ -549,7 +553,7 @@ describe('the verse-0 fold in the JSON trees', () => {
 		expect(crossRefs).toBe(5);
 	});
 
-	it('gives the 12 summary-less chapters the summary the fragment holds', () => {
+	it('gives the 2 summary-less chapters the summary the fragment holds', () => {
 		const gained: string[] = [];
 		for (const meta of ALL_BOOKS) {
 			const { data: raw } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
@@ -559,7 +563,8 @@ describe('the verse-0 fold in the JSON trees', () => {
 					gained.push(`${meta.slug} ${chapter.chapter}`);
 			}
 		}
-		expect(gained).toHaveLength(12);
+		// 12 before the summary-shift repair gave 10 of them their own argument.
+		expect(gained).toEqual(['tobias 0', 'ecclesiasticus 16']);
 	});
 
 	it('completes the summary rather than replacing it', () => {
