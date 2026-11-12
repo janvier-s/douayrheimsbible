@@ -2,7 +2,7 @@
 // @ts-nocheck: build helper run with tsx
 // DOCX export through pandoc. The Markdown is rendered by epub-lib.ts and
 // shared with the EPUB. This file owns what is DOCX-specific: the styled
-// reference document, the title page (title, subtitle, cover, page break),
+// reference document, the title page (title, subtitle, page break),
 // and a structural check of the finished file.
 
 import { mkdirSync, readFileSync, writeFileSync, rmSync } from 'fs';
@@ -34,7 +34,7 @@ export function restyle(styles: string): string {
 	patch('Heading3', 24);
 	patch('Title', 56);
 	patch('Subtitle', 28);
-	// The abstract heading is pandoc's; the title page needs only the cover.
+	// The abstract heading is pandoc's; it is hidden in case an abstract is ever added.
 	s = s.replace(
 		/(<w:style [^>]*w:styleId="AbstractTitle"[\s\S]*?)(<\/w:style>)/,
 		(_m, body, end) => body.replace(/<w:rPr>/, '<w:rPr><w:vanish />') + end
@@ -62,25 +62,16 @@ export function makeReferenceDocx(dir: string): string {
 	return out;
 }
 
-/** Title page lives in the abstract so it precedes the table of contents. */
-export function writeFrontMatter(dir: string, cover: string, name: string): string {
-	const path = join(dir, `front-${name}.yaml`);
-	const abstract = `![Title page of the 1582 Rheims New Testament](cover.jpg){width=4.2in}\n\n${PAGE_BREAK}`;
-	writeFileSync(path, `abstract: |\n${abstract.replace(/^/gm, '  ')}\n`);
-	return path;
-}
-
 export function buildDocx(
 	markdown: string,
 	meta,
 	outPath: string,
-	ctx: { work: string; cover: string; reference: string }
+	ctx: { work: string; reference: string }
 ) {
-	const frontFile = writeFrontMatter(ctx.work, ctx.cover, meta.identifier.replace(/\W+/g, '-'));
 	runPandoc(
 		'docx',
 		`${markdown.replace(/^/, PAGE_BREAK + '\n')}`,
-		{ ...meta, referenceDoc: ctx.reference, frontFile, cwd: ctx.work },
+		{ ...meta, referenceDoc: ctx.reference, cwd: ctx.work },
 		outPath
 	);
 }

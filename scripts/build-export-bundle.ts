@@ -286,7 +286,7 @@ if (verseBooks.length && process.env.EBOOKS !== 'none') {
 		only: ONLY
 	};
 	const formats = (process.env.FORMATS ?? 'epub,osis,docx,html').split(',');
-	const layouts = (process.env.LAYOUTS ?? 'flowing,paragraph,verse').split(',');
+	const layouts = (process.env.LAYOUTS ?? 'verse,paragraph,flowing').split(',');
 	for (const edition of (process.env.EDITIONS ?? 'verse-only,study').split(',')) {
 		for (const layout of layouts) await buildEbooks(ctx, edition, layout, formats);
 	}

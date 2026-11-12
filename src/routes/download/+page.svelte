@@ -159,8 +159,9 @@
 			href="https://github.com/janvier-s/original-douay-rheims/releases/latest"
 			target="_blank"
 			rel="noopener noreferrer">latest release</a
-		>. Each file is a combination of an edition, a layout, and a format. Each combination comes as
-		one file per book and as a single file for the whole Bible.
+		>. Each file is a combination of an edition, a layout, and a format. Each combination comes as a
+		single file for the whole Bible and as a separate zip of one file per book. Only the EPUB files
+		have a cover image.
 	</p>
 
 	<ul>
@@ -171,8 +172,8 @@
 			index.
 		</li>
 		<li>
-			<strong>Layout</strong>: <em>flowing</em> is one paragraph per chapter. <em>Paragraph</em>
-			uses the same paragraphs as the reading site. <em>Verse</em> puts each verse on its own line.
+			<strong>Layout</strong>: <em>verse</em> puts each verse on its own line. <em>Paragraph</em>
+			uses the same paragraphs as the reading site. <em>Flowing</em> is one paragraph per chapter.
 		</li>
 		<li>
 			<strong>EPUB</strong>: EPUB 3 for e-readers, with a table of contents by testament, book, and

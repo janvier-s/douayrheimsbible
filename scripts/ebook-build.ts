@@ -226,7 +226,6 @@ export async function buildEbooks(
 						b ? ed.bookMarkdown(b, fmt) : ed.wholeMarkdown(fmt),
 						{
 							...meta(b),
-							cover: 'cover.jpg',
 							css: 'odr.css',
 							template,
 							tocDepth: 2,
@@ -241,7 +240,7 @@ export async function buildEbooks(
 						b ? ed.bookMarkdown(b, fmt) : ed.wholeMarkdown(fmt),
 						{ ...meta(b), toc: false },
 						path,
-						{ work, cover, reference }
+						{ work, reference }
 					);
 			};
 			for (const b of ed.books) {
@@ -252,7 +251,7 @@ export async function buildEbooks(
 			if (!only) {
 				make(null, join(dir, wholeFile));
 				copyFileSync(join(dir, wholeFile), join(assets, `${WHOLE}-${tag}${ext}`));
-				zip(dir, [...files, wholeFile], join(assets, `${WHOLE}-${tag}-${fmt}.zip`));
+				zip(dir, files, join(assets, `${WHOLE}-${tag}${ext}.by-book.zip`));
 			}
 		}
 	} finally {
