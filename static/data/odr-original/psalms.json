@@ -75,7 +75,7 @@
         },
         {
           "verse": 3,
-          "text": "And he shal be as a tree, that is planted nigh to <na>(f)</na> the streames of waters, which shal geue his fruite in his time:<cr>[1]</cr> <na>(g)</na> <na>(h)</na> ",
+          "text": "And he shal be as a tree, that is planted nigh to <na>(f)</na> the streames of waters, which shal geue his fruite in his time: <cr>[1]</cr> And <na>(g)</na> his leafe shal not fal: and <na>(h)</na> al thinges whatsoeuer he shal doe, shal prosper.",
           "cross_refs": [
             {
               "text": "Jere. 17."
@@ -863,7 +863,11 @@
         },
         {
           "verse": 8,
-          "text": "But I in the multitude of <na>(i)</na> thy mercy. I wil enter into thy house: I wil adore toward <na>(k)</na> thy holie temple in thy <na>(l)</na> feare.",
+          "text": "The bloudie and deceitful man our Lord wil abhorre:"
+        },
+        {
+          "verse": 9,
+          "text": "But I in the multitude of <na>(i)</na> thy mercy. I wil enter into thy house: I wil adore toward <na>(k)</na> thy holie temple in thy <na>(l)</na> feare. Lord conduct me in thy iustice: because of mine enimies direct my way in thy sight.",
           "notes": [
             {
               "label": "i",
@@ -883,10 +887,6 @@
           ]
         },
         {
-          "verse": 9,
-          "text": "Lord conduct me in thy iustice: because of mine enimies direct my way in thy sight."
-        },
-        {
           "verse": 10,
           "text": "Because there is <na>(m)</na> no truth in their mouth: their hart is <na>(n)</na> vayne.",
           "notes": [
@@ -904,12 +904,7 @@
         },
         {
           "verse": 11,
-          "text": "Their throte is an <na>(o)</na> open sepulchre, they did <na>(p)</na> deceitfully with their tongues, <na>(q)</na> iudge them o God. <cr>[1]</cr>Let them faile of their cogitations, according to the multitude of their impieties expel them, because they haue prouoked thee ô Lord.",
-          "cross_refs": [
-            {
-              "text": "Psal. 13. Rom. 3."
-            }
-          ],
+          "text": "Their throte is an <na>(o)</na> open sepulchre, they did <na>(p)</na> deceitfully with their tongues, <na>(q)</na> iudge them o God.",
           "notes": [
             {
               "label": "o",
@@ -933,11 +928,16 @@
         },
         {
           "verse": 12,
-          "text": "And let al be glad, that hope in thee, they shal reioyce for euer: and thou shalt dwel in them. And al that loue thy name shal glorie in thee, because thou wilt rblesse the iust."
+          "text": "<cr>[1]</cr>Let them faile of their cogitations, according to the multitude of their impieties expel them, because they haue prouoked thee ô Lord.",
+          "cross_refs": [
+            {
+              "text": "Psal. 13. Rom. 3."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "<na>(r)</na> Lord, as with a shield of thy good wil, thou hast crowned vs.",
+          "text": "And let al be glad, that hope in thee, they shal reioyce for euer: and thou shalt dwel in them. And al that loue thy name shal glorie in thee, because thou wilt <na>(r)</na> blesse the iust.",
           "notes": [
             {
               "label": "r",
@@ -945,6 +945,10 @@
               "kind": "gloss"
             }
           ]
+        },
+        {
+          "verse": 14,
+          "text": "Lord, as with a shield of thy good wil, thou hast crowned vs."
         }
       ],
       "summary": "Iust men in affliction appeale to God, the reuenger of iniuries. 5. knowing and professing that God hateth iniquity. 9. therfore remitte their cause to him. 11. recite certaine enormious vices of the wicked. 13. and expect Gods final iudgement of the good and bad. <na>[1]</na>",
@@ -1239,40 +1243,40 @@
         },
         {
           "verse": 7,
-          "text": "Arise Lord in thy wrath: and <na>(g)</na> be exalted in the coastes of myne enemies. And arise ô Lord my God in the hprecept which thou hast cõmanded:",
+          "text": "Arise Lord in thy wrath: and <na>(g)</na> be exalted in the coastes of myne enemies. And arise ô Lord my God in the <na>(h)</na> precept which thou hast cõmanded:",
           "notes": [
             {
               "label": "g",
               "text": "Shew thy power.",
+              "kind": "gloss"
+            },
+            {
+              "label": "h",
+              "text": "Seing thou diddest command to make me king, it behoueth thee to protect me.",
               "kind": "gloss"
             }
           ]
         },
         {
           "verse": 8,
-          "text": "And arise, o Lord my God, in the <na>(h)</na> precept which thou hast commanded: and a <na>(i)</na> synagogue of peoples shall compass thee.",
+          "text": "and a <na>(i)</na> sinagogue of peoples shal compasse thee. And <na>(k)</na> for it returne on high:",
           "notes": [
-            {
-              "label": "h",
-              "text": "Seing thou diddest command to make me king, it behoueth thee to protect me.",
-              "kind": "gloss"
-            },
             {
               "label": "i",
               "text": "manie wil serue thee the only true God.",
+              "kind": "gloss"
+            },
+            {
+              "label": "k",
+              "text": "For this increase of faithful people.",
               "kind": "gloss"
             }
           ]
         },
         {
           "verse": 9,
-          "text": "<na>(k)</na> our Lord iudgeth peoples. Iudge me ô Lord according to <na>(l)</na> my iustice, and according to my innocencie <na>(m)</na> vpon me.",
+          "text": "our Lord iudgeth peoples. Iudge me ô Lord according to <na>(l)</na> my iustice, and according to my innocencie <na>(m)</na> vpon me.",
           "notes": [
-            {
-              "label": "k",
-              "text": "For this increase of faithful people.",
-              "kind": "gloss"
-            },
             {
               "label": "l",
               "text": "my iust cause against my particular enemies.",
@@ -1598,7 +1602,7 @@
         },
         {
           "verse": 8,
-          "text": "Their memorie hath perished wirh a sound: and our Lord abideth for <na>(i)</na> euer.",
+          "text": "Their memorie hath perished wirh a sound: and our Lord abideth for euer. He hath prepared his throne in <na>(i)</na> iudgement:",
           "notes": [
             {
               "label": "i",
@@ -1609,7 +1613,7 @@
         },
         {
           "verse": 9,
-          "text": "He hath prepared his throne in iiudgement: & he wil iudge the whole world in equitie, he wil iudge the people in iustice."
+          "text": "& he wil iudge the whole world in equitie, he wil iudge the people in iustice."
         },
         {
           "verse": 10,
@@ -1937,7 +1941,7 @@
         },
         {
           "verse": 5,
-          "text": "Our Lord is in his holie temple, our Lord his <na>(f)</na> seate is in heauen. His eies haue respect vnto the poore: his feieliddes examine the sonnes of men.",
+          "text": "His eies haue respect vnto the poore: his <na>(f)</na> eieliddes examine the sonnes of men.",
           "notes": [
             {
               "label": "f",
@@ -2139,7 +2143,7 @@
         },
         {
           "verse": 3,
-          "text": "How long shal mine enemies be exalted ouer me?"
+          "text": "How long shal mine enemies be exalted ouer me? Regard and heare me ô Lord my God."
         },
         {
           "verse": 4,
@@ -2154,11 +2158,11 @@
         },
         {
           "verse": 5,
-          "text": "They that truble me, wil reioyce if I be moued:"
+          "text": "They that truble me, wil reioyce if I be moued: but I haue hoped in thy mercie."
         },
         {
           "verse": 6,
-          "text": "but I haue hoped in thy mercie. My hart shal reioyce in thy saluation: I wil sing to our Lord which geueth me <na>(e)</na> good thinges: and I wil sing to the name of our Lord most high.",
+          "text": "My hart shal reioyce in thy saluation: I wil sing to our Lord which geueth me <na>(e)</na> good thinges: and I wil sing to the name of our Lord most high.",
           "notes": [
             {
               "label": "e",
@@ -2741,7 +2745,7 @@
         },
         {
           "verse": 8,
-          "text": "From them that resist <na>(l)</na> thy right hand keepe me, as the apple of the eie.",
+          "text": "From them that resist <na>(l)</na> thy right hand keepe me, as the apple of the eie. Vnder the shadowe of thy winges protect me:",
           "notes": [
             {
               "label": "l",
@@ -2752,7 +2756,7 @@
         },
         {
           "verse": 9,
-          "text": "from the <na>(m)</na> face of the impious, that haue afflicted me.",
+          "text": "from the <na>(m)</na> face of the impious, that haue afflicted me. Mine enemies haue compassed my soule,",
           "notes": [
             {
               "label": "m",
@@ -2763,7 +2767,7 @@
         },
         {
           "verse": 10,
-          "text": "Mine enemies haue compassed my soule, they haue shut vp their <na>(n)</na> fatte; their mouth hath spoken pride.",
+          "text": "they haue shut vp their <na>(n)</na> fatte; their mouth hath spoken pride.",
           "notes": [
             {
               "label": "n",
@@ -2854,7 +2858,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Vnto <na>(a)</na> the end, <na>(b)</na> to the seruant of our Lord Dauid, who spake to our Lord the wordes of this canticle, in the day, that our Lord deliuered him out of the hand of al his enemies, and out of the hand of <na>(c)</na> Saul, and he said: <na>[1]</na> <na>(d)</na> (2. Reg. <na>(e)</na> 22.)",
+          "text": "Vnto <na>(a)</na> the end, <na>(b)</na> to the seruant of our Lord Dauid, who spake to our Lord the wordes of this canticle, in the day, that our Lord deliuered him out of the hand of al his enemies, and out of the hand of <na>(c)</na> Saul, and he said: (2. Reg. 22.) <na>[1]</na> I wil <na>(d)</na> loue thee ô Lord <na>(e)</na> my strength:",
           "notes": [
             {
               "label": "a",
@@ -2890,7 +2894,7 @@
         },
         {
           "verse": 2,
-          "text": "I wil dloue thee ô Lord emy strength: Our Lord is my firmament, and my refuge, and my deliuere."
+          "text": "Our Lord is my firmament, and my refuge, and my deliuere."
         },
         {
           "verse": 3,
@@ -3364,7 +3368,7 @@
         },
         {
           "verse": 6,
-          "text": "He put his tabernacle in <na>(f)</na> the sunne: & himself as a <na>(g)</na> bridgrome coming forth of his bridechamber.",
+          "text": "He put his tabernacle in <na>(f)</na> the sunne: & himself as a <na>(g)</na> bridgrome coming forth of his bridechamber. He hath reioyced as a giant to runne the way,",
           "notes": [
             {
               "label": "f",
@@ -3380,7 +3384,7 @@
         },
         {
           "verse": 7,
-          "text": "He hath reioyced as a giant to runne the way, his comming forth from the toppe of heauen: And his recourse euen to the toppe therof: neither is there that can hide him selfe from his heate.",
+          "text": "his comming forth from the toppe of heauen: And his recourse euen to the toppe therof: neither is there that can hide him selfe from his heate.",
           "cross_refs": [
             {
               "text": "Luc. 24",
@@ -3919,7 +3923,7 @@
         },
         {
           "verse": 11,
-          "text": "Vpon thee I <na>(x)</na> haue bene cast from the matrice: <na>(y)</na> from my",
+          "text": "Vpon thee I <na>(x)</na> haue bene cast from the matrice: <na>(y)</na> from my mothers wombe thou art my God,",
           "notes": [
             {
               "label": "x",
@@ -3935,7 +3939,7 @@
         },
         {
           "verse": 12,
-          "text": "mothers wombe thou art my God, depart not from me. Because tribulation is verie nigh: because there is <na>(z)</na> not that wil helpe.",
+          "text": "depart not from me. Because tribulation is verie nigh: because there is <na>(z)</na> not that wil helpe.",
           "notes": [
             {
               "label": "z",
@@ -4015,8 +4019,15 @@
         },
         {
           "verse": 17,
-          "text": "Because manie <na>(k)</na> dogges haue compassed me: the counsel of the malignant hath besieged me.",
+          "text": "Because manie <na>(k)</na> dogges haue compassed me: the counsel of the malignant hath besieged me. They haue digged my handes and my feete:",
           "has_annotation": true,
+          "lemmas": [
+            [
+              100,
+              16,
+              1
+            ]
+          ],
           "notes": [
             {
               "label": "k",
@@ -4043,7 +4054,7 @@
         },
         {
           "verse": 19,
-          "text": "But themselues haue mconsidered and beheld me: they haue <na>(n)</na> deuided my garmentes among them, and vpon my <na>(o)</na> vesture they haue cast lot.",
+          "text": "they haue <na>(n)</na> deuided my garmentes among them, and vpon my <na>(o)</na> vesture they haue cast lot.",
           "notes": [
             {
               "label": "n",
@@ -4174,7 +4185,7 @@
         },
         {
           "verse": 28,
-          "text": "Al the endes of the earth <na>(a)</na> shal remember, and be conuerted to our Lord:",
+          "text": "Al the endes of the earth <na>(a)</na> shal remember, and be conuerted to our Lord: And al the families of the Gentiles shal adore in his sight.",
           "notes": [
             {
               "label": "a",
@@ -4288,7 +4299,7 @@
         },
         {
           "verse": 3,
-          "text": "Vpon cthe water of refection he hath <na>(d)</na> brought me vp: he hath dconuerted my soule. He hath conducted me vpon <na>(e)</na> the pathes of iustice, <na>(f)</na> for his name.",
+          "text": "he hath <na>(d)</na> conuerted my soule. He hath conducted me vpon <na>(e)</na> the pathes of iustice, <na>(f)</na> for his name.",
           "notes": [
             {
               "label": "d",
@@ -4535,7 +4546,7 @@
         },
         {
           "verse": 2,
-          "text": "TO THEE ô Lord I haue lifted vp bmy soule: my God in thee is my confidence, let me <na>(c)</na> not be ashamed:",
+          "text": "my God in thee is my confidence, let me <na>(c)</na> not be ashamed:",
           "notes": [
             {
               "label": "c",
@@ -5484,7 +5495,7 @@
         },
         {
           "verse": 10,
-          "text": "Our Lord maketh <na>(y)</na> to inhabite the floud: and our Lord <na>(z)</na> shal sit king for euer. Our Lord awil geue strength to his people: our Lord bwil blesse his people in peace.",
+          "text": "Our Lord maketh <na>(y)</na> to inhabite the floud: and our Lord <na>(z)</na> shal sit king for euer.",
           "notes": [
             {
               "label": "y",
@@ -6972,7 +6983,7 @@
         },
         {
           "verse": 7,
-          "text": "Thy iustice as the hilles of God: thy iudgementes are great depth.<na>(h)</na> ",
+          "text": "Thy iustice as the hilles of God: thy iudgementes are great depth. Men & <na>(h)</na> beastes thou wilt saue ô Lord:",
           "notes": [
             {
               "label": "h",
@@ -6983,7 +6994,7 @@
         },
         {
           "verse": 8,
-          "text": "Men & hbeastes thou wilt saue ô Lord: as thou <na>(i)</na> hast multiplied thy mercie ô God. But <na>(k)</na> the children of men, <na>(l)</na> shal hope in the couert of thy winges.",
+          "text": "as thou <na>(i)</na> hast multiplied thy mercie ô God. But <na>(k)</na> the children of men, <na>(l)</na> shal hope in the couert of thy winges.",
           "notes": [
             {
               "label": "i",
@@ -7877,7 +7888,7 @@
         },
         {
           "verse": 9,
-          "text": "In the ghead of the booke it is written of me, that I should doe thy wil: my God I would, and thy law in the middes of my hart."
+          "text": "that I should doe thy wil: my God I would, and thy law in the middes of my hart."
         },
         {
           "verse": 10,
@@ -8298,7 +8309,7 @@
         },
         {
           "verse": 9,
-          "text": "In <na>(p)</na> the day our Lord hath commanded his mercie: and <na>(q)</na> in the night a song of him.<na>(r)</na> ",
+          "text": "In <na>(p)</na> the day our Lord hath commanded his mercie: and <na>(q)</na> in the night a song of him. With me <na>(r)</na> is prayer to the God of my life:",
           "notes": [
             {
               "label": "p",
@@ -8319,7 +8330,7 @@
         },
         {
           "verse": 10,
-          "text": "With me ris prayer to the God of my life: I wil say to God: Thou art my defender. Why hast thou forgotten me? and why goe I sorowful, whiles mine enemie afflicteth me?"
+          "text": "I wil say to God: Thou art my defender. Why hast thou forgotten me? and why goe I sorowful, whiles mine enemie afflicteth me?"
         },
         {
           "verse": 11,
@@ -8408,7 +8419,7 @@
         },
         {
           "verse": 4,
-          "text": "And <na>(i)</na> I wil goe in to the altar of God: to God, which <na>(k)</na> maketh my youth <na>(l)</na> <na>(m)</na> <na>(n)</na> ioyful.",
+          "text": "And <na>(i)</na> I wil goe in to the altar of God: to God, which <na>(k)</na> maketh my youth ioyful.",
           "notes": [
             {
               "label": "i",
@@ -8419,7 +8430,13 @@
               "label": "k",
               "text": "who changest our old corruption into newness of life.",
               "kind": "gloss"
-            },
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "I wil confesse to thee <na>(l)</na> on the harpe <na>(m)</na> ô God <na>(n)</na> my God: <na>(o)</na> why art thou sorowful ô my soule? and dost thou trubel me?",
+          "notes": [
             {
               "label": "l",
               "text": "But to this purpose we praise God on the harpe, mortifying our affections.",
@@ -8434,18 +8451,18 @@
               "label": "n",
               "text": "See previous note",
               "kind": "gloss"
-            }
-          ]
-        },
-        {
-          "verse": 5,
-          "text": "I wil confesse to thee lon the harpe ô God my God: <na>(o)</na> why art thou sorowful ô my soule? and dost thou trubel me? <na>(p)</na> Hope in God, because yet <na>(q)</na> wil I cõfesse to him: the saluation <na>(r)</na> of my countenance, and <na>(s)</na> my God.",
-          "notes": [
+            },
             {
               "label": "o",
               "text": "Thou needest not therefore my soul, to be pensive or desolate.",
               "kind": "gloss"
-            },
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>(p)</na> Hope in God, because yet <na>(q)</na> wil I cõfesse to him: the saluation <na>(r)</na> of my countenance, and <na>(s)</na> my God.",
+          "notes": [
             {
               "label": "p",
               "text": "But trust in God,",
@@ -8906,7 +8923,7 @@
         },
         {
           "verse": 9,
-          "text": "<na>(a)</na> Myrrhe, and <na>(b)</na> Aloes, and <na>(c)</na> Cassia from thy <na>(d)</na> garmentes,",
+          "text": "<na>(a)</na> Myrrhe, and <na>(b)</na> Aloes, and <na>(c)</na> Cassia from thy <na>(d)</na> garmentes, from houses of yuorie; out of the which",
           "notes": [
             {
               "label": "a",
@@ -8932,7 +8949,7 @@
         },
         {
           "verse": 10,
-          "text": "<na>(e)</na> from houses of yuorie; out of the which the daughter of kinges haue delighted thee in thy honour.",
+          "text": "<na>(e)</na> the daughter of kinges haue delighted thee in thy honour.",
           "notes": [
             {
               "label": "e",
@@ -11183,7 +11200,7 @@
         },
         {
           "verse": 7,
-          "text": "They wil <na>(n)</na> inhabite and keepe secret: they wil obserue my <na>(o)</na> heele.",
+          "text": "They wil <na>(n)</na> inhabite and keepe secret: they wil obserue my heele. As they haue expected <na>(o)</na> my soule,",
           "notes": [
             {
               "label": "n",
@@ -11199,7 +11216,7 @@
         },
         {
           "verse": 8,
-          "text": "As they haue expected my soule, <na>(p)</na> for nothing shalt thou saue them: <na>(q)</na> in wrath thou wilt breake peoples.",
+          "text": "<na>(p)</na> for nothing shalt thou saue them: <na>(q)</na> in wrath thou wilt breake peoples. O God,",
           "notes": [
             {
               "label": "p",
@@ -11215,11 +11232,11 @@
         },
         {
           "verse": 9,
-          "text": "O God, I haue shewed my life to thee: thou hast set my teares in thy sight."
+          "text": "I haue shewed my life to thee: thou hast set my teares in thy sight. As also in thy promise:"
         },
         {
           "verse": 10,
-          "text": "As also in thy promise: then shal mine enemies be turned backward. In what day soeuer I shal inuocate thee: loe I haue knowne that thou art my God."
+          "text": "then shal mine enemies be turned backward. In what day soeuer I shal inuocate thee: loe I haue knowne that thou art my God."
         },
         {
           "verse": 11,
@@ -11312,7 +11329,7 @@
         },
         {
           "verse": 4,
-          "text": "He sent <na>(e)</na> from heauen, and deliuered me: he hath geuen into <na>(f)</na> reproche them that trode vpon me.",
+          "text": "He sent <na>(e)</na> from heauen, and deliuered me: he hath geuen into <na>(f)</na> reproche them that trode vpon me. God hath sent his mercie, and his truth,",
           "notes": [
             {
               "label": "e",
@@ -11328,7 +11345,7 @@
         },
         {
           "verse": 5,
-          "text": "God hath sent his mercie, and his truth, and hath deliuered my <na>(g)</na> soule out of the middes of <na>(h)</na> Lions whelpes: I slept trubled. The sonnes of men, their <na>(i)</na> teeth are weapons and arrowes: and their <na>(k)</na> tongue a sharpe sword.",
+          "text": "and hath deliuered my <na>(g)</na> soule out of the middes of <na>(h)</na> Lions whelpes: I slept trubled. The sonnes of men, their <na>(i)</na> teeth are weapons and arrowes: and their <na>(k)</na> tongue a sharpe sword.",
           "notes": [
             {
               "label": "g",
@@ -12358,7 +12375,7 @@
         },
         {
           "verse": 9,
-          "text": "my soule hath cleaued after thee: thy right hand hath receiued me."
+          "text": "And in the couert of thy winges I wil reioice, my soule hath cleaued after thee: thy right hand hath receiued me."
         },
         {
           "verse": 10,
@@ -12471,7 +12488,7 @@
         },
         {
           "verse": 8,
-          "text": "Man shal come to a deepe hart: and God shal be exalted.<na>(e)</na> ",
+          "text": "Man shal come to a deepe hart: and God shal be exalted. <na>(e)</na> Childrens arrowes are made their woundes:",
           "notes": [
             {
               "label": "e",
@@ -12482,7 +12499,7 @@
         },
         {
           "verse": 9,
-          "text": "and their tongues are weakned against them.<na>(f)</na> ",
+          "text": "and their tongues are weakned against them. Al that saw them <na>(f)</na> were trubled:",
           "notes": [
             {
               "label": "f",
@@ -12493,7 +12510,7 @@
         },
         {
           "verse": 10,
-          "text": "Al that saw them fwere trubled: and euerie man feared. And they shewed forth the workes of God: and they vnderstood his doinges."
+          "text": "and euerie man feared. And they shewed forth the workes of God: and they vnderstood his doinges."
         },
         {
           "verse": 11,
@@ -12737,7 +12754,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Vnto the end, a Canticle <na>(a)</na> of resurrection.<na>(b)</na> ",
+          "text": "Vnto the end, a Canticle <na>(a)</na> of resurrection. MAke ye <na>(b)</na> iubilation to God al the earth,",
           "notes": [
             {
               "label": "a",
@@ -12753,7 +12770,7 @@
         },
         {
           "verse": 2,
-          "text": "MAke ye biubilation to God al the earth, say a psalme to his name: geue glorie to his praise."
+          "text": "say a psalme to his name: geue glorie to his praise."
         },
         {
           "verse": 3,
@@ -13017,7 +13034,7 @@
         },
         {
           "verse": 7,
-          "text": "the earth hath yelded her <na>(g)</na> <na>(h)</na> fruite.",
+          "text": "the earth hath yelded her fruite. gGod, hour <na>(g)</na> God <na>(h)</na> blesse vs,",
           "notes": [
             {
               "label": "g",
@@ -13033,7 +13050,7 @@
         },
         {
           "verse": 8,
-          "text": "gGod, hour <na>(i)</na> God blesse vs, iGod blesse vs: and let al the endes of the earth feare him.",
+          "text": "<na>(i)</na> God blesse vs: and let al the endes of the earth feare him.",
           "notes": [
             {
               "label": "i",
@@ -13255,7 +13272,7 @@
         },
         {
           "verse": 16,
-          "text": "The <na>(z)</na> mountane of God a fat <na>(a)</na> <na>(b)</na> mountane.",
+          "text": "The <na>(z)</na> mountane of God a fat mountane. A mountane <na>(a)</na> crudded as cheese, a <na>(b)</na> fatte mountane:",
           "has_annotation": true,
           "lemmas": [
             [
@@ -13284,12 +13301,12 @@
         },
         {
           "verse": 17,
-          "text": "<na>(c)</na> A mountane acrudded as cheese, a bfatte mountane: why csuppose you crudded mountanes? A mountane, in which it hath wel pleased God to dwel therin: for in dede our Lord wil dwel euen to the end.",
+          "text": "why <na>(c)</na> suppose you crudded mountanes? A mountane, in which it hath wel pleased God to dwel therin: for in dede our Lord wil dwel euen to the end.",
           "has_annotation": true,
           "lemmas": [
             [
-              76,
-              21,
+              17,
+              29,
               1
             ]
           ],
@@ -13535,7 +13552,7 @@
         },
         {
           "verse": 34,
-          "text": "Sing ye to God, that mounteth vpon the heauen of heauen, to the East.<na>(f)</na> ",
+          "text": "Sing ye to God, that mounteth vpon the heauen of heauen, to the East. Behold he wil giue to his voice <na>(f)</na> the voice of strength,",
           "notes": [
             {
               "label": "f",
@@ -13546,7 +13563,7 @@
         },
         {
           "verse": 35,
-          "text": "Behold he wil giue to his voice fthe voice of strength, giue you glorie to God vpon Israel, his magnificence, and his powre in the cloudes."
+          "text": "giue you glorie to God vpon Israel, his magnificence, and his powre in the cloudes."
         },
         {
           "verse": 36,
@@ -14028,7 +14045,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "A Psalme <na>(a)</na> for Dauid, <na>(b)</na> of the sonnes of Ionadab, and <na>(c)</na> the former <na>(d)</na> captiues.",
+          "text": "A Psalme <na>(a)</na> for Dauid, <na>(b)</na> of the sonnes of Ionadab, and <na>(c)</na> the former captiues. IN thee ô Lord <na>(d)</na> dI haue hoped, let me not be confounded for euer:",
           "notes": [
             {
               "label": "a",
@@ -14054,7 +14071,7 @@
         },
         {
           "verse": 2,
-          "text": "IN <na>(e)</na> thee ô Lord dI haue hoped, let me not be confounded for euer: in ethy iustice deliuer me, and receiue me. Incline thine eare to me, and saue me.",
+          "text": "in <na>(e)</na> thy iustice deliuer me, and receiue me. Incline thine eare to me, and saue me.",
           "notes": [
             {
               "label": "e",
@@ -14084,11 +14101,11 @@
         },
         {
           "verse": 6,
-          "text": "Vpon thee haue I bene confirmed from the wombe: from my mothers bellie thou art my protector."
+          "text": "Vpon thee haue I bene confirmed from the wombe: from my mothers bellie thou art my protector. In thee is my singing alwaies:"
         },
         {
           "verse": 7,
-          "text": "In thee is my singing alwaies: I was made to manie as <na>(g)</na> ga wonder: and thou art a strong helper.",
+          "text": "I was made to manie as <na>(g)</na> ga wonder: and thou art a strong helper.",
           "notes": [
             {
               "label": "g",
@@ -14148,7 +14165,7 @@
         },
         {
           "verse": 15,
-          "text": "My mouth shal shew forth thy iustice: al the day thy saluation. Because <na>(l)</na> lI haue not <na>(m)</na> knowne <na>(n)</na> lerning,",
+          "text": "My mouth shal shew forth thy iustice: al the day thy saluation. Because <na>(l)</na> lI haue not knowne lerning, <na>(m)</na> mI wil enter into the <na>(n)</na> powres of our Lord:",
           "notes": [
             {
               "label": "l",
@@ -14169,7 +14186,7 @@
         },
         {
           "verse": 16,
-          "text": "mI wil enter into the npowres of our Lord: ô Lord I wil be mindful of thy iustice onely."
+          "text": "ô Lord I wil be mindful of thy iustice onely."
         },
         {
           "verse": 17,
@@ -14177,11 +14194,11 @@
         },
         {
           "verse": 18,
-          "text": "And vnto ancient age, and olde age: ô God forsake me not? Vntil I shew forth thy arme to al the generation, that is to come."
+          "text": "And vnto ancient age, and olde age: ô God forsake me not? Vntil I shew forth thy arme to al the generation, that is to come. Thy might,"
         },
         {
           "verse": 19,
-          "text": "Thy might, and thy iustice ô God euen to the highest, great meruailes which thou hast done: ô God who may be like to thee?"
+          "text": "and thy iustice ô God euen to the highest, great meruailes which thou hast done: ô God who may be like to thee?"
         },
         {
           "verse": 20,
@@ -14789,7 +14806,7 @@
         },
         {
           "verse": 4,
-          "text": "And they that hate thee haue gloried: in the middes of <na>(g)</na> gthy <na>(h)</na> solemnitie.",
+          "text": "And they that hate thee haue gloried: in the middes of <na>(g)</na> thy solemnitie. They haue sette <na>(h)</na> their signes, for signes:",
           "notes": [
             {
               "label": "g",
@@ -14805,7 +14822,7 @@
         },
         {
           "verse": 5,
-          "text": "and haue not knowne, <na>(i)</na> as in the issue on high.<na>(k)</na> ",
+          "text": "and haue not knowne, <na>(i)</na> as in the issue on high. As <na>(k)</na> in a wood of trees they haue with axes",
           "notes": [
             {
               "label": "i",
@@ -14821,7 +14838,7 @@
         },
         {
           "verse": 6,
-          "text": "As kin a wood of trees they haue with axes cut out the gates therof together: in hatchet, and chippeaxe they haue cast it downe."
+          "text": "cut out the gates therof together: in hatchet, and chippeaxe they haue cast it downe."
         },
         {
           "verse": 7,
@@ -15374,7 +15391,7 @@
         },
         {
           "verse": 3,
-          "text": "In the day of my tribulation I sought God, with my handes <na>(e)</na> in the night before him: and I <na>(f)</na> was not <na>(g)</na> deceiued.",
+          "text": "In the day of my tribulation I sought God, with my handes <na>(e)</na> in the night before him: and I <na>(f)</na> was not deceiued. My <na>(g)</na> soule refused to be comforted,",
           "notes": [
             {
               "label": "e",
@@ -15395,7 +15412,7 @@
         },
         {
           "verse": 4,
-          "text": "My gsoule refused to be comforted, I <na>(h)</na> was mindeful of God, and was delighted, and was exercised: and <na>(i)</na> my spirite fainted.",
+          "text": "I <na>(h)</na> was mindeful of God, and was delighted, and was exercised: and <na>(i)</na> my spirite fainted.",
           "notes": [
             {
               "label": "h",
@@ -15489,11 +15506,11 @@
         },
         {
           "verse": 15,
-          "text": "thou art the God that doest meruelous thinges."
+          "text": "thou art the God that doest meruelous thinges. Thou hast made thy powre knowne among peoples:"
         },
         {
           "verse": 16,
-          "text": "Thou hast made thy powre knowne among peoples: thou hast with thine arme redemed thy people, the children of <na>(q)</na> Iacob, and Ioseph.",
+          "text": "thou hast with thine arme redemed thy people, the children of <na>(q)</na> Iacob, and Ioseph.",
           "notes": [
             {
               "label": "q",
@@ -16528,7 +16545,7 @@
         },
         {
           "verse": 2,
-          "text": "Thou that rulest Israel, attend: that <na>(d)</na> conductest Ioseph as a <na>(e)</na> sheepe. <na>(f)</na>",
+          "text": "Thou that rulest Israel, attend: that <na>(d)</na> conductest Ioseph as a sheepe. Which sittest vpon the cherubs <na>(e)</na> be manifest <na>(f)</na>",
           "notes": [
             {
               "label": "d",
@@ -16549,7 +16566,7 @@
         },
         {
           "verse": 3,
-          "text": "Which sittest vpon the cherubs ebe manifest before fEphraim, Beniamin, and Manasses. Raise <na>(g)</na> vp gthy might, and come, to saue vs.",
+          "text": "before fEphraim, Beniamin, and Manasses. Raise <na>(g)</na> vp gthy might, and come, to saue vs.",
           "notes": [
             {
               "label": "g",
@@ -17427,7 +17444,7 @@
         },
         {
           "verse": 6,
-          "text": "Blessed is the man, whose helpe is from thee: he <na>(k)</na> khath",
+          "text": "Blessed is the man, whose helpe is from thee: he <na>(k)</na> hath disposed ascension in his hart,",
           "notes": [
             {
               "label": "k",
@@ -17438,7 +17455,7 @@
         },
         {
           "verse": 7,
-          "text": "disposed ascension in <na>(l)</na> his hart, in lthe vaile of teares, in the place, which he hath appointed.",
+          "text": "in <na>(l)</na> the vaile of teares, in the place, which he hath appointed.",
           "notes": [
             {
               "label": "l",
@@ -18253,11 +18270,11 @@
         },
         {
           "verse": 4,
-          "text": "I haue ordained a testament with mine elect, I haue sworne"
+          "text": "I haue ordained a testament with mine elect, I haue sworne to Dauid my seruant:"
         },
         {
           "verse": 5,
-          "text": "<na>(d)</na> to Dauid my seruant: dfor ever wil I prepare thy seede. And I wil build thy seat vnto generation and generation.",
+          "text": "<na>(d)</na> for ever wil I prepare thy seede. And I wil build thy seat vnto generation and generation.",
           "notes": [
             {
               "label": "d",
@@ -18644,7 +18661,7 @@
         },
         {
           "verse": 4,
-          "text": "Because <na>(f)</na> fa thousand years before thine eies, are as yesterday, that is past.",
+          "text": "Because <na>(f)</na> fa thousand years before thine eies, are as yesterday, that is past. And as a watch in the night,",
           "notes": [
             {
               "label": "f",
@@ -18655,7 +18672,7 @@
         },
         {
           "verse": 5,
-          "text": "And as a watch in the night, thinges that are counted nothing shal their years be."
+          "text": "thinges that are counted nothing shal their years be."
         },
         {
           "verse": 6,
@@ -19235,7 +19252,7 @@
         },
         {
           "verse": 3,
-          "text": "The <na>(l)</na> riuers ô Lord haue lifted vp: the riuers haue lifted vp their voice.",
+          "text": "The <na>(l)</na> riuers ô Lord haue lifted vp: the riuers haue lifted vp their voice. The riuers haue lifted vp their waues,",
           "notes": [
             {
               "label": "l",
@@ -19246,7 +19263,7 @@
         },
         {
           "verse": 4,
-          "text": "<na>(m)</na> The riuers haue lifted vp their waues, maboue the voices of manie waters. The surges of the sea are meruelous; <na>(n)</na> meruelous is our Lord on high.",
+          "text": "<na>(m)</na> aboue the voices of manie waters. The surges of the sea are meruelous; <na>(n)</na> meruelous is our Lord on high.",
           "notes": [
             {
               "label": "m",
@@ -19848,7 +19865,7 @@
         },
         {
           "verse": 7,
-          "text": "Let them al be confounded, that adore <na>(f)</na> sculptils: and that glorie in their idoles.",
+          "text": "Let them al be confounded, that adore <na>(f)</na> sculptils: and that glorie in their idoles. Adore him al ye his Angels:",
           "notes": [
             {
               "label": "f",
@@ -19859,7 +19876,7 @@
         },
         {
           "verse": 8,
-          "text": "<na>(g)</na> Adore him al ye his Angels: gSion heard, and was glad. And <na>(h)</na> the daughters of Iuda reioyced, because of thy iudgements ô Lord.",
+          "text": "<na>(g)</na> Sion heard, and was glad. And <na>(h)</na> the daughters of Iuda reioyced, because of thy iudgements ô Lord.",
           "notes": [
             {
               "label": "g",
@@ -20080,7 +20097,7 @@
         },
         {
           "verse": 6,
-          "text": "Moyses, and Aaron in his <na>(f)</na> priestes: and Samuel among them, that inuocate his name:<na>(g)</na> ",
+          "text": "Moyses, and Aaron in his <na>(f)</na> priestes: and Samuel among them, that inuocate his name: They inuocated our Lord <na>(g)</na> and he heard them:",
           "notes": [
             {
               "label": "f",
@@ -20101,7 +20118,7 @@
         },
         {
           "verse": 7,
-          "text": "They inuocated our Lord gand he heard them: in a piller of a cloud he spake to them. They kept his testimonies, & the precept which he gaue them."
+          "text": "in a piller of a cloud he spake to them. They kept his testimonies, & the precept which he gaue them."
         },
         {
           "verse": 8,
@@ -20829,7 +20846,7 @@
         },
         {
           "verse": 14,
-          "text": "because he hath knowen <na>(s)</na> our making.",
+          "text": "because he hath knowen <na>(s)</na> our making. He remembred that we are dust:",
           "notes": [
             {
               "label": "s",
@@ -20840,7 +20857,7 @@
         },
         {
           "verse": 15,
-          "text": "He remembred that we are dust: man, his daies are as grasse, as the floure of the filde so shal he florish."
+          "text": "man, his daies are as grasse, as the floure of the filde so shal he florish."
         },
         {
           "verse": 16,
@@ -20907,7 +20924,7 @@
         },
         {
           "verse": 2,
-          "text": "Thou hast put on <na>(a)</na> confession and beautie: being clothed with light as with a garment:",
+          "text": "Thou hast put on <na>(a)</na> confession and beautie: being clothed with light as with a garment: Stretching out the heauen as a skinne:",
           "notes": [
             {
               "label": "a",
@@ -20918,7 +20935,7 @@
         },
         {
           "verse": 3,
-          "text": "Stretching out the heauen as a skinne: which couerest the higher partes therof <na>(b)</na> with waters. Which <na>(c)</na> makest the cloude for thee to ascend on: which walkest vpon the winges of windes.",
+          "text": "which couerest the higher partes therof <na>(b)</na> with waters. Which <na>(c)</na> makest the cloude for thee to ascend on: which walkest vpon the winges of windes.",
           "notes": [
             {
               "label": "b",
@@ -21033,7 +21050,7 @@
         },
         {
           "verse": 14,
-          "text": "Bringing forth grasse for beastes, and herbe for the seruice of men.<na>(n)</na> ",
+          "text": "Bringing forth grasse for beastes, and herbe for the seruice of men. That thou mayst bring forth <na>(n)</na> bread out of the earth:",
           "notes": [
             {
               "label": "n",
@@ -21044,7 +21061,7 @@
         },
         {
           "verse": 15,
-          "text": "That thou mayst bring forth nbread out of the earth: and <na>(o)</na> wine may make the hart of man ioyful: That he may make the face chereful with <na>(p)</na> oile: and bread may confirme the hart of man.",
+          "text": "and <na>(o)</na> wine may make the hart of man ioyful: That he may make the face chereful with <na>(p)</na> oile: and bread may confirme the hart of man.",
           "notes": [
             {
               "label": "o",
@@ -21103,7 +21120,7 @@
         },
         {
           "verse": 25,
-          "text": "This great sea, and very large, there are <na>(r)</na> creeping beastes, wherof <na>(s)</na> there is no number.",
+          "text": "This great sea, and very large, there are <na>(r)</na> creeping beastes, wherof <na>(s)</na> there is no number. Litle beastes with great:",
           "notes": [
             {
               "label": "r",
@@ -21135,7 +21152,7 @@
         },
         {
           "verse": 27,
-          "text": "This tdragon, whom thou madest to vdelude: al expect of thee that thou geue them meate in season."
+          "text": "al expect of thee that thou geue them meate in season."
         },
         {
           "verse": 28,
@@ -21822,11 +21839,11 @@
         },
         {
           "verse": 21,
-          "text": "They forgat God, which saued them, which did great thinges"
+          "text": "They forgat God, which saued them, which did great thinges in Ægypt,"
         },
         {
           "verse": 22,
-          "text": "in Ægypt, meruelous thinges in the land of Cham, terrible thinges in the Read sea."
+          "text": "meruelous thinges in the land of Cham, terrible thinges in the Read sea."
         },
         {
           "verse": 23,
@@ -21849,7 +21866,7 @@
         },
         {
           "verse": 24,
-          "text": "and they estemed for naught the land that was to be desired.<cr>[1]</cr> ",
+          "text": "and they estemed for naught the land that was to be desired. <cr>[1]</cr> They did not beleue his word,",
           "cross_refs": [
             {
               "text": "Nu. 14."
@@ -21861,7 +21878,7 @@
         },
         {
           "verse": 25,
-          "text": "They did not beleue his word, and they murmured in their tabernacles: they heard not the voice of our Lord."
+          "text": "and they murmured in their tabernacles: they heard not the voice of our Lord."
         },
         {
           "verse": 26,
@@ -21945,7 +21962,7 @@
         },
         {
           "verse": 34,
-          "text": "And he playnely affirmed in his lippes: they destroyed not the nations, of which our Lord spake to them."
+          "text": "they destroyed not the nations, of which our Lord spake to them."
         },
         {
           "verse": 35,
@@ -21966,7 +21983,7 @@
         },
         {
           "verse": 38,
-          "text": "And <na>(x)</na> they shed innocent bloud: the bloud of their sonnes and of their daughters, which they sacrificed to the sculptils of Chanaan.",
+          "text": "And <na>(x)</na> they shed innocent bloud: the bloud of their sonnes and of their daughters, which they sacrificed to the sculptils of Chanaan. And the land was infected with bloud,",
           "notes": [
             {
               "label": "x",
@@ -21977,7 +21994,7 @@
         },
         {
           "verse": 39,
-          "text": "And the land was infected with bloud, and was contaminated in their workes: and they did fornicat in their inuentions."
+          "text": "and was contaminated in their workes: and they did fornicat in their inuentions."
         },
         {
           "verse": 40,
@@ -22891,7 +22908,7 @@
         },
         {
           "verse": 4,
-          "text": "He hath made <na>(e)</na> ea memorie of his meruelous workes;",
+          "text": "He hath made <na>(e)</na> ea memorie of his meruelous workes; merciful and pittiful Lord:",
           "notes": [
             {
               "label": "e",
@@ -22902,7 +22919,7 @@
         },
         {
           "verse": 5,
-          "text": "he hath geuen <na>(f)</na> meate to them that feare him.<na>(g)</na> ",
+          "text": "he hath geuen <na>(f)</na> meate to them that feare him. He wil be mindful for euer <na>(g)</na> of his testament:",
           "notes": [
             {
               "label": "f",
@@ -22918,7 +22935,7 @@
         },
         {
           "verse": 6,
-          "text": "<na>(h)</na> He wil be mindful for euer gof his testament: hthe force of his workes he wil shew forth to his people:",
+          "text": "<na>(h)</na> the force of his workes he wil shew forth to his people:",
           "notes": [
             {
               "label": "h",
@@ -22944,7 +22961,7 @@
         },
         {
           "verse": 9,
-          "text": "He sent <na>(k)</na> redemption to his people: he commanded his testament for euer.",
+          "text": "He sent <na>(k)</na> redemption to his people: he commanded his testament for euer. Holie, and terrible is his name:",
           "notes": [
             {
               "label": "k",
@@ -22955,7 +22972,7 @@
         },
         {
           "verse": 10,
-          "text": "<na>(l)</na> Holie, and terrible is his name: lthe feare of our Lord is the beginning of wisedom. Vnderstanding is good to al that doe it: his prayse remaineth for euer and euer.",
+          "text": "<na>(l)</na> the feare of our Lord is the beginning of wisedom. Vnderstanding is good to al that doe it: his prayse remaineth for euer and euer.",
           "notes": [
             {
               "label": "l",
@@ -23059,10 +23076,14 @@
         },
         {
           "verse": 8,
-          "text": "he shal not be moued til he looke ouer his enemies."
+          "text": "His hart is readie to hope in our Lord, his hart is confirmed:"
         },
         {
           "verse": 9,
+          "text": "he shal not be moued til he looke ouer his enemies."
+        },
+        {
+          "verse": 10,
           "text": "He distributed, he gaue to the poore: <na>(g)</na> his iustice remaineth for euer and euer <na>(h)</na> his horne shal be exalted in glorie. <cr>[1]</cr>",
           "cross_refs": [
             {
@@ -23083,7 +23104,7 @@
           ]
         },
         {
-          "verse": 10,
+          "verse": 11,
           "text": "The sinner shal see, and wil be angrie, he shal gnash his teeth and pine away: the desire of sinners shal perish.",
           "xrefs": [
             "2. Cor. 9."
@@ -23623,7 +23644,7 @@
         },
         {
           "verse": 7,
-          "text": "O Lord because mI am thy seruant: <na>(m)</na> I am thy seruant, and <na>(n)</na> the sonne of thy <na>(o)</na> handmaide.",
+          "text": "O Lord because mI am thy seruant: <na>(m)</na> I am thy seruant, and <na>(n)</na> the sonne of thy handmaide. Thou hast <na>(o)</na> broken my bondes:",
           "notes": [
             {
               "label": "m",
@@ -23644,7 +23665,7 @@
         },
         {
           "verse": 8,
-          "text": "Thou hast obroken my bondes: I wil sacrifice to thee the hoast of praise, and I wil inuocate the name of our Lord."
+          "text": "I wil sacrifice to thee the hoast of praise, and I wil inuocate the name of our Lord."
         },
         {
           "verse": 9,
@@ -23889,7 +23910,7 @@
         },
         {
           "verse": 19,
-          "text": "<na>(q)</na> Open ye the gates of iustice to me, being entred into them",
+          "text": "<na>(q)</na> Open ye the gates of iustice to me, being entred into them I wil confesse to our Lord:",
           "notes": [
             {
               "label": "q",
@@ -23900,7 +23921,7 @@
         },
         {
           "verse": 20,
-          "text": "I wil confesse to our Lord: <na>(r)</na> this is the gate of our Lord, the iust shal enter into it.",
+          "text": "<na>(r)</na> this is the gate of our Lord, the iust shal enter into it.",
           "notes": [
             {
               "label": "r",
@@ -26614,7 +26635,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "A gradual Canticle. BVt that our Lord awas in vs, let Israel now say: but that our Lord <na>(a)</na> was in vs,",
+          "text": "A gradual Canticle. BVt that our Lord <na>(a)</na> was in vs, let Israel now say:",
           "notes": [
             {
               "label": "a",
@@ -26834,6 +26855,10 @@
         {
           "verse": 6,
           "text": "Going they went and wept, casting their seedes."
+        },
+        {
+          "verse": 7,
+          "text": "But coming they shal come with exultation, carying their sheaues."
         }
       ],
       "summary": "Neither house nor city can be built, or kept without God's special providence and help, 3. those that trust in him shall prosper in their endeavours. <na>[1]</na>",
@@ -26992,7 +27017,7 @@
         },
         {
           "verse": 5,
-          "text": "Our Lord out of Sion blesse thee: and that thou mayst see the good thinges of Ierusalem al the dayes of thy life. And that thou mayst see thy dchildrens children, peace vpon Israel."
+          "text": "Our Lord out of Sion blesse thee: and that thou mayst see the good thinges of Ierusalem al the dayes of thy life."
         },
         {
           "verse": 6,
@@ -27117,7 +27142,7 @@
         },
         {
           "verse": 2,
-          "text": "FROM athe depthes I haue cried to thee ô Lord: Lord heare my voice: Let thine eares be intent, to the voice of my petition."
+          "text": "Lord heare my voice: Let thine eares be intent, to the voice of my petition."
         },
         {
           "verse": 3,
@@ -27132,7 +27157,7 @@
         },
         {
           "verse": 4,
-          "text": "Because with thee there is <na>(c)</na> propiciation: and for <na>(d)</na> thy law I haue expected thee ô Lord.",
+          "text": "Because with thee there is <na>(c)</na> propiciation: and for <na>(d)</na> thy law I haue expected thee ô Lord. My soule hath expected in his word:",
           "notes": [
             {
               "label": "c",
@@ -27148,7 +27173,7 @@
         },
         {
           "verse": 5,
-          "text": "My soule hath expected in his word: my soule hath hoped in our Lord."
+          "text": "my soule hath hoped in our Lord."
         },
         {
           "verse": 6,
@@ -28477,7 +28502,7 @@
         },
         {
           "verse": 3,
-          "text": "Which <na>(a)</na> haue deuised iniquitie in their hart: <na>(b)</na> al the day they did appoint battels.",
+          "text": "Which <na>(a)</na> haue deuised iniquitie in their hart: <na>(b)</na> al the day they did appoint battels. They haue whet their tongues as that of a serpent:",
           "notes": [
             {
               "label": "a",
@@ -28493,7 +28518,7 @@
         },
         {
           "verse": 4,
-          "text": "They haue whet their tongues as that of a serpent: the venome of aspes is vnder their lippes."
+          "text": "the venome of aspes is vnder their lippes."
         },
         {
           "verse": 5,
@@ -28687,7 +28712,7 @@
         },
         {
           "verse": 5,
-          "text": "The iust shal rebuke me in mercie, and <na>(f)</na> shal reprehend me: but let not the oyle of a sinner <na>(g)</na> fatte my head.<na>(h)</na> <na>(i)</na> ",
+          "text": "The iust shal rebuke me in mercie, and <na>(f)</na> shal reprehend me: but let not the oyle of a sinner <na>(g)</na> fatte my head. Because, <na>(h)</na> yet also my prayer is in their <na>(i)</na> good pleasures:",
           "notes": [
             {
               "label": "f",
@@ -28713,7 +28738,7 @@
         },
         {
           "verse": 6,
-          "text": "Because, hyet also my prayer is in <na>(k)</na> their igood pleasures: ktheir Iudges are swalowed vp ioyned to the rocke. <na>(l)</na> They shal heare my wordes <na>(m)</na> because they haue preuailed:",
+          "text": "<na>(k)</na> their Iudges are swalowed vp ioyned to the rocke. <na>(l)</na> They shal heare my wordes <na>(m)</na> because they haue preuailed:",
           "notes": [
             {
               "label": "k",
@@ -28734,7 +28759,7 @@
         },
         {
           "verse": 7,
-          "text": "<na>(n)</na> as the grossenes of the earth is broken out vpon the earth.<na>(o)</na> <na>(p)</na> ",
+          "text": "<na>(n)</na> as the grossenes of the earth is broken out vpon the earth. Our <na>(o)</na> bones are dissipated <na>(p)</na> nere to hel:",
           "notes": [
             {
               "label": "n",
@@ -28755,7 +28780,7 @@
         },
         {
           "verse": 8,
-          "text": "<na>(q)</na> Our obones are dissipated pnere to hel: qfor to thee ô Lord, Lord are mine eies; in thee haue I hoped, take not away my <na>[1]</na> soule.",
+          "text": "<na>(q)</na> for to thee ô Lord, Lord are mine eies; in thee haue I hoped, take not away my <na>[1]</na> soule.",
           "notes": [
             {
               "label": "q",
@@ -29093,7 +29118,7 @@
         },
         {
           "verse": 10,
-          "text": "teach me to doe thy wil, because thou art my God:<na>(q)</na> ",
+          "text": "teach me to doe thy wil, because thou art my God: Thy <na>(q)</na> good spirite wil conduct me into the right way:",
           "notes": [
             {
               "label": "q",
@@ -29104,11 +29129,11 @@
         },
         {
           "verse": 11,
-          "text": "for thy name sake ô Lord thou wilt quicken me, in thine equitie."
+          "text": "for thy name sake ô Lord thou wilt quicken me, in thine equitie. Thou wilt bring forth my soule out of tribulation:"
         },
         {
           "verse": 12,
-          "text": "Thou wilt bring forth my soule out of tribulation: and in thy mercie thou wilt destroy mine enemies. And thou wilt destroy al, that afflict my soule: because I am thy seruant."
+          "text": "and in thy mercie thou wilt destroy mine enemies. And thou wilt destroy al, that afflict my soule: because I am thy seruant."
         }
       ]
     },
@@ -29483,11 +29508,11 @@
         },
         {
           "verse": 2,
-          "text": "MY soule prayse thou our Lord, I wil praise our Lord in my life: I wil sing to my God as long as I shal be."
+          "text": "MY soule prayse thou our Lord, I wil praise our Lord in my life: I wil sing to my God as long as I shal be. Put not confidence in princes:"
         },
         {
           "verse": 3,
-          "text": "Put not confidence in <na>(b)</na> princes: in bthe sonnes of men, in whom there is no saluation.",
+          "text": "in <na>(b)</na> the sonnes of men, in whom there is no saluation.",
           "notes": [
             {
               "label": "b",
@@ -29517,11 +29542,11 @@
         },
         {
           "verse": 7,
-          "text": "Which keepeth truth for euer, doth iudgement for them that suffer wrong: geueth foode to the hungrie."
+          "text": "Which keepeth truth for euer, doth iudgement for them that suffer wrong: geueth foode to the hungrie. Our Lord looseth the fettered:"
         },
         {
           "verse": 8,
-          "text": "Our Lord looseth the fettered: our Lord illuminateth the blind. Our Lord lifteth vp the bruised, our Lord loueth the iust."
+          "text": "our Lord illuminateth the blind. Our Lord lifteth vp the bruised, our Lord loueth the iust."
         },
         {
           "verse": 9,
@@ -30079,7 +30104,7 @@
         },
         {
           "verse": 5,
-          "text": "Prayse ye him on wel sounding cymbals: prayse ye him on cymbales of iubilation: let euerie ispirit prayse our Lord."
+          "text": "Prayse ye him on wel sounding cymbals: prayse ye him on cymbales of iubilation:"
         },
         {
           "verse": 6,
