@@ -12,14 +12,12 @@ import { runPandoc } from './epub-lib.js';
 
 export const PAGE_BREAK = '```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```\n';
 
-const FONT = '<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" />';
+const FONT =
+	'<w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" />';
 
 /** Rewrites pandoc's default styles.xml: serif fonts, black centered headings, justified body. */
 export function restyle(styles: string): string {
-	let s = styles.replace(
-		/(<w:rPrDefault>\s*<w:rPr>\s*)<w:rFonts[^>]*\/>/,
-		`$1${FONT}`
-	);
+	let s = styles.replace(/(<w:rPrDefault>\s*<w:rPr>\s*)<w:rFonts[^>]*\/>/, `$1${FONT}`);
 	const patch = (id: string, size: number | null) => {
 		const re = new RegExp(`(<w:style [^>]*w:styleId="${id}"[\\s\\S]*?)(</w:style>)`);
 		s = s.replace(re, (_m, body, end) => {
@@ -72,9 +70,19 @@ export function writeFrontMatter(dir: string, cover: string, name: string): stri
 	return path;
 }
 
-export function buildDocx(markdown: string, meta, outPath: string, ctx: { work: string; cover: string; reference: string }) {
+export function buildDocx(
+	markdown: string,
+	meta,
+	outPath: string,
+	ctx: { work: string; cover: string; reference: string }
+) {
 	const frontFile = writeFrontMatter(ctx.work, ctx.cover, meta.identifier.replace(/\W+/g, '-'));
-	runPandoc('docx', `${markdown.replace(/^/, PAGE_BREAK + '\n')}`, { ...meta, referenceDoc: ctx.reference, frontFile, cwd: ctx.work }, outPath);
+	runPandoc(
+		'docx',
+		`${markdown.replace(/^/, PAGE_BREAK + '\n')}`,
+		{ ...meta, referenceDoc: ctx.reference, frontFile, cwd: ctx.work },
+		outPath
+	);
 }
 
 /** Structural check: the zip is sound and every XML part is well formed. */
@@ -82,10 +90,18 @@ export function checkDocx(path: string): string[] {
 	const problems: string[] = [];
 	const t = spawnSync('unzip', ['-tq', path], { encoding: 'utf8' });
 	if (t.status !== 0) return [`unzip -t failed: ${t.stdout}${t.stderr}`];
-	const parts = execFileSync('unzip', ['-Z1', path], { encoding: 'utf8' }).split('\n').filter((p) => /\.(xml|rels)$/.test(p));
+	const parts = execFileSync('unzip', ['-Z1', path], { encoding: 'utf8' })
+		.split('\n')
+		.filter((p) => /\.(xml|rels)$/.test(p));
 	for (const part of parts) {
-		const xml = execFileSync('unzip', ['-p', path, part.replace(/[[\]*?]/g, '\\$&')], { maxBuffer: 1 << 29 });
-		const r = spawnSync('xmllint', ['--noout', '-'], { input: xml, encoding: 'utf8', maxBuffer: 1 << 26 });
+		const xml = execFileSync('unzip', ['-p', path, part.replace(/[[\]*?]/g, '\\$&')], {
+			maxBuffer: 1 << 29
+		});
+		const r = spawnSync('xmllint', ['--noout', '-'], {
+			input: xml,
+			encoding: 'utf8',
+			maxBuffer: 1 << 26
+		});
 		if (r.status !== 0) problems.push(`${part}: ${r.stderr.split('\n')[0]}`);
 	}
 	if (!parts.includes('word/document.xml')) problems.push('no word/document.xml');

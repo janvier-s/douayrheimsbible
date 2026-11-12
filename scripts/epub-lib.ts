@@ -39,7 +39,10 @@ export function inlineMd(source: string, ref: string): string {
 		);
 		if (s === before) break;
 	}
-	return s.replace(/[\u0001-\u0004]/g, '').replace(/ {2,}/g, ' ').trim();
+	return s
+		.replace(/[\u0001-\u0004]/g, '')
+		.replace(/ {2,}/g, ' ')
+		.trim();
 }
 
 const refOf = (b: BookOut, chapter: number, label: string) => `${b.slug} ${chapter}:${label}`;
@@ -80,7 +83,9 @@ export function renderTitlePageMarkdown(tp: TitlePageJson): string {
 		for (const raw of text.split('\n')) {
 			const line = mdEscape(raw.trim());
 			if (!line) continue;
-			const withEm = line.replace(/\u0001([^\u0001\u0002]*)\u0002/g, '*$1*').replace(/[\u0001\u0002]/g, '');
+			const withEm = line
+				.replace(/\u0001([^\u0001\u0002]*)\u0002/g, '*$1*')
+				.replace(/[\u0001\u0002]/g, '');
 			lines.push(withEm);
 		}
 	}

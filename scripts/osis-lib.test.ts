@@ -12,7 +12,10 @@ const book = {
 			chapter: 1,
 			summary: 'SUMMARY <na>[1]</na>',
 			verses: [
-				{ verse: 1, text: 'In <cr>[1]</cr> the <sc>LORD</sc> made <i>heaven</i> & earth <na>(a)[1]</na>.' },
+				{
+					verse: 1,
+					text: 'In <cr>[1]</cr> the <sc>LORD</sc> made <i>heaven</i> & earth <na>(a)[1]</na>.'
+				},
 				{ verse: 2, text: 'First' },
 				{ verse: 2, text: 'Repeat <i>a <sc>B</sc></i> <lt>' }
 			]
@@ -31,7 +34,14 @@ describe('osis', () => {
 		expect(verseOsisId('Gen', 1, { verse: 2, part: 'b' })).toBe('Gen.1.2!b');
 	});
 	it('renders a book with book, chapter and verse ids and no apparatus', () => {
-		const vb = toVerseBook('genesis', { ...book, chapters: [{ ...book.chapters[0], verses: book.chapters[0].verses.slice(0, 2) }] } as never, 'Genesis');
+		const vb = toVerseBook(
+			'genesis',
+			{
+				...book,
+				chapters: [{ ...book.chapters[0], verses: book.chapters[0].verses.slice(0, 2) }]
+			} as never,
+			'Genesis'
+		);
 		const xml = renderOsis([{ heading: 'OT', books: [vb] }], { title: 'Genesis', whole: false });
 		expect(xml).toContain('<div type="book" osisID="Gen">');
 		expect(xml).toContain('<chapter osisID="Gen.1">');

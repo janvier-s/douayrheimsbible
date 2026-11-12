@@ -19,7 +19,10 @@ const book = {
 			summary: 'SUMMARY TEXT <na>[1]</na>',
 			verses: [
 				{ verse: 0, text: 'overflow of summary' },
-				{ verse: 1, text: 'In <cr>[1]</cr> the beginning <sc>GOD</sc> made <i>heaven</i> <na>(a)[1]</na>, and earth.' },
+				{
+					verse: 1,
+					text: 'In <cr>[1]</cr> the beginning <sc>GOD</sc> made <i>heaven</i> <na>(a)[1]</na>, and earth.'
+				},
 				{ verse: 2, text: 'Salt & <i> light </i> a*b_c^d~e' }
 			]
 		}
@@ -66,7 +69,10 @@ describe('renderWholeMarkdown', () => {
 	it('puts a testament heading and title page before its books', () => {
 		const tp = renderTitlePageMarkdown({
 			title: 't',
-			paragraphs: [{ text: 'THE\nHOLY BIBLE<br><span class="x">sub</span>' }, { text: '<i>Latin</i> & more' }]
+			paragraphs: [
+				{ text: 'THE\nHOLY BIBLE<br><span class="x">sub</span>' },
+				{ text: '<i>Latin</i> & more' }
+			]
 		});
 		const md = renderWholeMarkdown([{ heading: 'Old Testament', books: [vb], titlePage: tp }]);
 		expect(md.indexOf('# Old Testament')).toBeLessThan(md.indexOf('HOLY BIBLE'));

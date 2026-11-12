@@ -35,7 +35,8 @@ export function renderOsisBook(b: BookOut, indent = ''): string {
 		`${indent}<div type="book" osisID="${id}">`,
 		`${indent}\t<title type="main">${xmlEscape(b.shortTitle)}</title>`
 	];
-	if (b.title !== b.shortTitle) out.push(`${indent}\t<title type="sub">${xmlEscape(b.title)}</title>`);
+	if (b.title !== b.shortTitle)
+		out.push(`${indent}\t<title type="sub">${xmlEscape(b.title)}</title>`);
 	for (const c of b.chapters) {
 		out.push(`${indent}\t<chapter osisID="${id}.${c.chapter}">`);
 		out.push(`${indent}\t\t<title type="chapter">Chapter ${c.chapter}</title>`);
@@ -113,10 +114,11 @@ export function titleLinesOsis(paragraphs: { text: string }[]): string[] {
 			const line = raw.trim();
 			if (!line) continue;
 			lines.push(
-				xmlEscape(line).replace(/\u0001/g, '<hi type="italic">').replace(/\u0002/g, '</hi>')
+				xmlEscape(line)
+					.replace(/\u0001/g, '<hi type="italic">')
+					.replace(/\u0002/g, '</hi>')
 			);
 		}
 	}
 	return lines;
 }
-

@@ -37,8 +37,16 @@ function titlePages(refDir: string) {
 
 function parts(verseBooks, testamentOf, pages) {
 	return [
-		{ heading: 'The Old Testament', books: verseBooks.filter((b) => testamentOf[b.slug] === 'OT'), titlePage: pages.OT },
-		{ heading: 'The New Testament', books: verseBooks.filter((b) => testamentOf[b.slug] === 'NT'), titlePage: pages.NT }
+		{
+			heading: 'The Old Testament',
+			books: verseBooks.filter((b) => testamentOf[b.slug] === 'OT'),
+			titlePage: pages.OT
+		},
+		{
+			heading: 'The New Testament',
+			books: verseBooks.filter((b) => testamentOf[b.slug] === 'NT'),
+			titlePage: pages.NT
+		}
 	].filter((p) => p.books.length);
 }
 
@@ -55,22 +63,38 @@ export async function buildVerseOnlyEpubs({ out, root, refDir, verseBooks, testa
 		const files = [];
 		for (const b of verseBooks) {
 			const file = `${String(b.ordinal).padStart(2, '0')}-${b.slug}.epub`;
-			runPandoc('epub3', renderBookMarkdown(b), {
-				title: b.shortTitle,
-				subtitle: `${EPUB_SUBTITLE}, verse text only`,
-				identifier: `urn:odr:verse-only:${b.slug}`,
-				cover, css, splitLevel: 1, tocDepth: 2
-			}, join(dir, file));
+			runPandoc(
+				'epub3',
+				renderBookMarkdown(b),
+				{
+					title: b.shortTitle,
+					subtitle: `${EPUB_SUBTITLE}, verse text only`,
+					identifier: `urn:odr:verse-only:${b.slug}`,
+					cover,
+					css,
+					splitLevel: 1,
+					tocDepth: 2
+				},
+				join(dir, file)
+			);
 			files.push(file);
 		}
 		if (!only) {
 			const whole = `${WHOLE}.epub`;
-			runPandoc('epub3', renderWholeMarkdown(parts(verseBooks, testamentOf, titlePages(refDir))), {
-				title: 'The Douay-Rheims Bible',
-				subtitle: `${EPUB_SUBTITLE}, verse text only`,
-				identifier: 'urn:odr:verse-only:whole',
-				cover, css, splitLevel: 2, tocDepth: 3
-			}, join(dir, whole));
+			runPandoc(
+				'epub3',
+				renderWholeMarkdown(parts(verseBooks, testamentOf, titlePages(refDir))),
+				{
+					title: 'The Douay-Rheims Bible',
+					subtitle: `${EPUB_SUBTITLE}, verse text only`,
+					identifier: 'urn:odr:verse-only:whole',
+					cover,
+					css,
+					splitLevel: 2,
+					tocDepth: 3
+				},
+				join(dir, whole)
+			);
 			copyFileSync(join(dir, whole), join(assets, `${WHOLE}-verse-only.epub`));
 			zip(dir, [...files, whole], join(assets, `${WHOLE}-verse-only-epub.zip`));
 		}
@@ -89,16 +113,36 @@ export function buildVerseOnlyOsis({ out, refDir, verseBooks, testamentOf, only 
 	const files = [];
 	for (const b of verseBooks) {
 		const file = fileName(b, '.osis.xml');
-		writeFileSync(join(dir, file), renderOsis([{ heading: b.shortTitle, books: [b] }], { title: b.shortTitle, whole: false }));
+		writeFileSync(
+			join(dir, file),
+			renderOsis([{ heading: b.shortTitle, books: [b] }], { title: b.shortTitle, whole: false })
+		);
 		files.push(file);
 	}
 	if (!only) {
-		const tp = (t) => titleLinesOsis(JSON.parse(readFileSync(join(refDir, t, 'title-page.json'), 'utf8')).paragraphs);
+		const tp = (t) =>
+			titleLinesOsis(
+				JSON.parse(readFileSync(join(refDir, t, 'title-page.json'), 'utf8')).paragraphs
+			);
 		const whole = `${WHOLE}.osis.xml`;
-		writeFileSync(join(dir, whole), renderOsis([
-			{ heading: 'The Old Testament', books: verseBooks.filter((b) => testamentOf[b.slug] === 'OT'), titleLines: tp('ot') },
-			{ heading: 'The New Testament', books: verseBooks.filter((b) => testamentOf[b.slug] === 'NT'), titleLines: tp('nt') }
-		], { title: 'The Douay-Rheims Bible', whole: true }));
+		writeFileSync(
+			join(dir, whole),
+			renderOsis(
+				[
+					{
+						heading: 'The Old Testament',
+						books: verseBooks.filter((b) => testamentOf[b.slug] === 'OT'),
+						titleLines: tp('ot')
+					},
+					{
+						heading: 'The New Testament',
+						books: verseBooks.filter((b) => testamentOf[b.slug] === 'NT'),
+						titleLines: tp('nt')
+					}
+				],
+				{ title: 'The Douay-Rheims Bible', whole: true }
+			)
+		);
 		copyFileSync(join(dir, whole), join(assets, `${WHOLE}-verse-only.osis.xml`));
 		zip(dir, [...files, whole], join(assets, `${WHOLE}-verse-only-osis.zip`));
 	}
@@ -117,18 +161,32 @@ export async function buildVerseOnlyDocx({ out, root, refDir, verseBooks, testam
 		const files = [];
 		for (const b of verseBooks) {
 			const file = fileName(b, '.docx');
-			buildDocx(renderBookMarkdown(b), {
-				title: b.shortTitle, subtitle: `${EPUB_SUBTITLE}, verse text only`,
-				identifier: `urn:odr:verse-only:${b.slug}`, tocDepth: 2
-			}, join(dir, file), ctx);
+			buildDocx(
+				renderBookMarkdown(b),
+				{
+					title: b.shortTitle,
+					subtitle: `${EPUB_SUBTITLE}, verse text only`,
+					identifier: `urn:odr:verse-only:${b.slug}`,
+					tocDepth: 2
+				},
+				join(dir, file),
+				ctx
+			);
 			files.push(file);
 		}
 		if (!only) {
 			const whole = `${WHOLE}.docx`;
-			buildDocx(renderWholeMarkdown(parts(verseBooks, testamentOf, titlePages(refDir))), {
-				title: 'The Douay-Rheims Bible', subtitle: `${EPUB_SUBTITLE}, verse text only`,
-				identifier: 'urn:odr:verse-only:whole', tocDepth: 3
-			}, join(dir, whole), ctx);
+			buildDocx(
+				renderWholeMarkdown(parts(verseBooks, testamentOf, titlePages(refDir))),
+				{
+					title: 'The Douay-Rheims Bible',
+					subtitle: `${EPUB_SUBTITLE}, verse text only`,
+					identifier: 'urn:odr:verse-only:whole',
+					tocDepth: 3
+				},
+				join(dir, whole),
+				ctx
+			);
 			copyFileSync(join(dir, whole), join(assets, `${WHOLE}-verse-only.docx`));
 			zip(dir, [...files, whole], join(assets, `${WHOLE}-verse-only-docx.zip`));
 		}
