@@ -44,7 +44,8 @@ import {
 	EDITION
 } from './verse-only-lib.js';
 import { ALL_BOOKS } from '../src/lib/data/books.js';
-import { buildVerseOnlyEpubs, buildVerseOnlyOsis, buildVerseOnlyDocx } from './ebook-build.js';
+import { buildEbooks } from './ebook-build.js';
+import { toStudyBook } from './study-lib.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const ODR_DIR = join(ROOT, 'static', 'data', 'odr');
@@ -154,6 +155,7 @@ const counts = {
 };
 const books = [];
 const verseBooks = [];
+const studyBooks = [];
 
 for (const meta of ALL_BOOKS) {
 	if (ONLY && meta.slug !== ONLY) continue;
@@ -182,6 +184,8 @@ for (const meta of ALL_BOOKS) {
 	// Verse-only tree: scripture words, no apparatus of any kind.
 	const vb = toVerseBook(meta.slug, book, meta.odrName);
 	verseBooks.push(vb);
+	// Study model: binds every marker, so a defect stops the build here.
+	studyBooks.push(toStudyBook(meta.slug, book, anns.byChapter, meta.odrName));
 	write(`verse-only/json/${meta.slug}.json`, `${renderJson(vb)}\n`);
 	write(`verse-only/usfm/${usfmFilename(meta.slug)}`, renderUsfmVerseOnly(vb));
 	write(`verse-only/markdown/${meta.slug}.md`, renderMarkdown(vb));
@@ -270,13 +274,13 @@ if (verseBooks.length) {
 	db.close();
 }
 
-if (verseBooks.length) {
+if (verseBooks.length && process.env.EBOOKS !== 'none') {
 	const testamentOf = Object.fromEntries(ALL_BOOKS.map((m) => [m.slug, m.testament]));
-	const ctx = { out: OUT, root: ROOT, refDir: REF_DIR, verseBooks, testamentOf, only: ONLY };
-	const only = (process.env.FORMATS ?? 'epub,osis,docx').split(',');
-	if (only.includes('epub')) await buildVerseOnlyEpubs(ctx);
-	if (only.includes('osis')) buildVerseOnlyOsis(ctx);
-	if (only.includes('docx')) await buildVerseOnlyDocx(ctx);
+	const ctx = { out: OUT, root: ROOT, refDir: REF_DIR, verseBooks, studyBooks, testamentOf, only: ONLY };
+	const formats = (process.env.FORMATS ?? 'epub,osis,docx').split(',');
+	for (const edition of (process.env.EDITIONS ?? 'verse-only,study').split(',')) {
+		await buildEbooks(ctx, edition, formats);
+	}
 }
 
 const commit = execSync('git rev-parse HEAD', { cwd: ROOT }).toString().trim();

@@ -163,6 +163,35 @@
 		</li>
 	</ul>
 
+	<h2>Study Edition</h2>
+
+	<p>
+		The text with the printed apparatus: book introductions, chapter summaries, marginal notes and
+		cross-references as footnotes, and the extended annotations after their verse. The whole-Bible
+		files add the title pages, prefaces, tables, glossary, index, and errata as front and back
+		matter. Each format comes as one file per book and as a single file for the whole Bible, from
+		the
+		<a
+			href="https://github.com/janvier-s/original-douay-rheims/releases/latest"
+			target="_blank"
+			rel="noopener noreferrer">latest release</a
+		>.
+	</p>
+
+	<ul>
+		<li>
+			<strong>EPUB</strong>: real footnotes for e-readers, with a table of contents by testament,
+			book, and chapter.
+		</li>
+		<li>
+			<strong>OSIS</strong>: annotations as <code>note type="study"</code>, summaries and
+			introductions as <code>div</code> elements, ready for Bible software.
+		</li>
+		<li>
+			<strong>DOCX</strong>: Word footnotes, heading styles, and a table of contents field.
+		</li>
+	</ul>
+
 	<a
 		href="https://github.com/janvier-s/original-douay-rheims"
 		target="_blank"

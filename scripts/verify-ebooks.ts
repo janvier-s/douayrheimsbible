@@ -18,25 +18,38 @@ import { stripMarkup } from './export-lib.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const ODR = join(ROOT, 'static', 'data', 'odr');
-const norm = (s) => s.replace(/\s+/g, ' ').trim();
+const norm = (s) =>
+	s
+		.replace(/\s+/g, ' ')
+		.replace(/ ([,.;:!?)])/g, '$1')
+		.trim();
 
+/** `full` is every word in the file. `words` leaves out footnote markers and
+ *  inline notes, so a note sitting inside a verse does not split its words. */
 export function plainText(path) {
 	if (path.endsWith('.osis.xml')) {
-		return norm(
-			readFileSync(path, 'utf8')
-				.replace(/<\/?hi[^>]*>/g, '')
-				.replace(/<[^>]+>/g, ' ')
-				.replace(/&amp;/g, '&')
-				.replace(/&lt;/g, '<')
-				.replace(/&gt;/g, '>')
-		);
+		const xml = readFileSync(path, 'utf8');
+		const flat = (x) =>
+			norm(
+				x
+					.replace(/<\/?hi[^>]*>/g, '')
+					.replace(/<[^>]+>/g, ' ')
+					.replace(/&amp;/g, '&')
+					.replace(/&lt;/g, '<')
+					.replace(/&gt;/g, '>')
+					.replace(/ ([,.;:!?)])/g, '$1')
+			);
+		const noMarks = xml.replace(/<hi type="super">\d+<\/hi>/g, '');
+		return { raw: flat(xml), full: flat(noMarks), words: flat(noMarks.replace(/<note[\s\S]*?<\/note>/g, '')) };
 	}
-	return norm(
+	const full = norm(
 		execFileSync(process.env.PANDOC ?? 'pandoc', ['-t', 'plain', '--wrap=none', path], {
 			encoding: 'utf8',
 			maxBuffer: 1 << 28
 		})
 	);
+	const full2 = norm(full.replace(/\[\d+\]/g, ''));
+	return { raw: full, full: full2, words: full2 };
 }
 
 const clean = (t, kind, ref) => {
@@ -48,9 +61,10 @@ const clean = (t, kind, ref) => {
 };
 const head = (s, n = 45) => s.slice(0, n);
 
-export function checkBook(slug, rawText, edition) {
+export function checkBook(slug, { raw, full, words }, edition) {
 	// Small caps render upper case in plain text; compare case-insensitively.
-	const text = rawText.toLowerCase();
+	const text = full.toLowerCase();
+	const verseText = words.toLowerCase();
 	const { data: book } = readJson(join(ODR, `${slug}.json`));
 	const problems = [];
 	const scripture = book.chapters
@@ -64,12 +78,11 @@ export function checkBook(slug, rawText, edition) {
 		for (const v of ch.verses) {
 			if (v.verse === 0) continue;
 			const w = head(clean(v.text, 'verse', `${slug} ${ch.chapter}:${v.verse}`), 30);
-			if (w.length >= 8 && !text.includes(w.toLowerCase()))
+			if (w.length >= 8 && !verseText.includes(w.toLowerCase()))
 				problems.push(`missing verse ${ch.chapter}:${v.verse} "${w}"`);
 		}
 	}
-	if (edition !== 'verse-only') return problems;
-	if (/<\/?(na|cr|alt|mn|sc|i|br)>|\[\d+\]|&lt;|\\\*/.test(text))
+	if (edition === 'verse-only' && /<\/?(na|cr|alt|mn|sc|i|br)>|\[\d+\]|&lt;|\\\*/.test(raw))
 		problems.push('markup or marker residue in text');
 	const apparatus = [];
 	for (const [i, it] of (book.intros ?? []).entries())
@@ -83,7 +96,7 @@ export function checkBook(slug, rawText, edition) {
 		for (const a of ch.articles ?? [])
 			apparatus.push(['article', clean(a.text, 'prose', `${slug} article`)]);
 		for (const v of ch.verses)
-			for (const n of [...(v.notes ?? []), ...(v.cross_refs ?? [])])
+			for (const n of [...(v.notes ?? []), ...(v.cross_refs ?? []).filter((r) => r.source !== 'sancta')])
 				apparatus.push([`note ${ch.chapter}:${v.verse}`, clean(n.text, 'verse', `${slug} note`)]);
 	}
 	const annDir = join(ODR, slug, 'annotations');
@@ -98,9 +111,18 @@ export function checkBook(slug, rawText, edition) {
 		}
 	for (const [kind, t] of apparatus) {
 		const h = head(t);
-		// A note that quotes the verse itself is not a leak.
-		if (h.length >= 30 && !scripture.includes(h.toLowerCase()) && text.includes(h.toLowerCase()))
-			problems.push(`apparatus leaked: ${kind} "${h}"`);
+		if (h.length < 30) continue;
+		// Notes and annotations are notes in OSIS; everything else is checked against the words outside notes.
+		const inNote = kind.startsWith('note') || kind.startsWith('annotation');
+		const present = (inNote ? text : verseText).includes(h.toLowerCase());
+		if (edition === 'verse-only') {
+			// A note that quotes the verse itself is not a leak.
+			if (!scripture.includes(h.toLowerCase()) && present)
+				problems.push(`apparatus leaked: ${kind} "${h}"`);
+		} else if (!present) {
+			// The study edition must carry every note, annotation, summary and intro.
+			problems.push(`apparatus missing: ${kind} "${h}"`);
+		}
 	}
 	return problems;
 }

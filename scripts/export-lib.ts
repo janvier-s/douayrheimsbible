@@ -570,7 +570,7 @@ function renderInline(text: string, block: BlockKind, ref: string, nested: boole
  * verses), and the study panel lists them by index. An unanchored one has no
  * place in the text, so the export leaves it out rather than inventing one.
  */
-function assertRefsConsumed(
+export function assertRefsConsumed(
 	refs: Array<{ text: string; source?: string }>,
 	consumed: number,
 	ref: string
