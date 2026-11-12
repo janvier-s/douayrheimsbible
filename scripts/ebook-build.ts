@@ -5,7 +5,15 @@
 // plus the whole Bible, and to <out>/release-assets/ as the zip and the
 // whole-Bible file that ship on GitHub releases.
 
-import { mkdirSync, mkdtempSync, rmSync, readFileSync, readdirSync, writeFileSync, copyFileSync } from 'fs';
+import {
+	mkdirSync,
+	mkdtempSync,
+	rmSync,
+	readFileSync,
+	readdirSync,
+	writeFileSync,
+	copyFileSync
+} from 'fs';
 import { join } from 'path';
 import { execFileSync } from 'child_process';
 import sharp from 'sharp';
@@ -43,17 +51,55 @@ const readJson = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
  */
 const REF_ORDER = {
 	ot: {
-		front: ['approbatio', 'censura', 'censura-english', 'privilege', 'to-the-curteous-reader', 'preface', 'marks-of-the-reader'],
-		back: ['epistles-table', 'historical-table-age-1', 'historical-table-age-2', 'historical-table-age-3', 'historical-table-age-3b', 'historical-table-age-4', 'historical-table-age-5', 'historical-table-age-6', 'job-recapitulation', 'glossary', 'index', 'errata']
+		front: [
+			'approbatio',
+			'censura',
+			'censura-english',
+			'privilege',
+			'to-the-curteous-reader',
+			'preface',
+			'marks-of-the-reader'
+		],
+		back: [
+			'epistles-table',
+			'historical-table-age-1',
+			'historical-table-age-2',
+			'historical-table-age-3',
+			'historical-table-age-3b',
+			'historical-table-age-4',
+			'historical-table-age-5',
+			'historical-table-age-6',
+			'job-recapitulation',
+			'glossary',
+			'index',
+			'errata'
+		]
 	},
 	nt: {
-		front: ['censure', 'preface', 'scripture-authority', 'marks-of-the-reader', 'explication-words', 'apostles-creed'],
-		back: ['evangelical-history', 'table-paul', 'table-peter', 'table-catholic-truths', 'table-corruptions', 'table-epistles-gospels', 'errata-and-colophon']
+		front: [
+			'censure',
+			'preface',
+			'scripture-authority',
+			'marks-of-the-reader',
+			'explication-words',
+			'apostles-creed'
+		],
+		back: [
+			'evangelical-history',
+			'table-paul',
+			'table-peter',
+			'table-catholic-truths',
+			'table-corruptions',
+			'table-epistles-gospels',
+			'errata-and-colophon'
+		]
 	}
 };
 
 export function loadRefDocs(refDir: string, t: 'ot' | 'nt') {
-	const have = readdirSync(join(refDir, t)).filter((f) => f.endsWith('.json')).map((f) => f.replace('.json', ''));
+	const have = readdirSync(join(refDir, t))
+		.filter((f) => f.endsWith('.json'))
+		.map((f) => f.replace('.json', ''));
 	const listed = new Set([...REF_ORDER[t].front, ...REF_ORDER[t].back, 'title-page']);
 	const stray = have.filter((s) => !listed.has(s));
 	if (stray.length) throw new Error(`reference/${t}: no place assigned for ${stray.join(', ')}`);
@@ -72,14 +118,19 @@ function edition(name: 'verse-only' | 'study', ctx) {
 	const label = name === 'study' ? 'study edition' : 'verse text only';
 	const group = (t) => books.filter((b) => testamentOf[b.slug] === t);
 	const tp = { OT: titlePageJson(refDir, 'ot'), NT: titlePageJson(refDir, 'nt') };
-	const refs = name === 'study' ? { OT: loadRefDocs(refDir, 'ot'), NT: loadRefDocs(refDir, 'nt') } : null;
+	const refs =
+		name === 'study' ? { OT: loadRefDocs(refDir, 'ot'), NT: loadRefDocs(refDir, 'nt') } : null;
 	return {
 		name,
 		books,
 		subtitle: `${EPUB_SUBTITLE}, ${label}`,
-		bookMarkdown: (b) => (name === 'study' ? renderStudyBookMarkdown(b, newState()) : renderBookMarkdown(b)),
+		bookMarkdown: (b) =>
+			name === 'study' ? renderStudyBookMarkdown(b, newState()) : renderBookMarkdown(b),
 		wholeMarkdown: () => {
-			const parts = [['OT', 'The Old Testament'], ['NT', 'The New Testament']]
+			const parts = [
+				['OT', 'The Old Testament'],
+				['NT', 'The New Testament']
+			]
 				.map(([t, heading]) => ({ t, heading, books: group(t) }))
 				.filter((p) => p.books.length)
 				.map((p) => ({
@@ -93,10 +144,19 @@ function edition(name: 'verse-only' | 'study', ctx) {
 		},
 		osisBook: (b) =>
 			name === 'study'
-				? renderStudyOsis([{ heading: b.shortTitle, books: [b], front: [], back: [] }], { title: b.shortTitle, whole: false })
-				: renderOsis([{ heading: b.shortTitle, books: [b] }], { title: b.shortTitle, whole: false }),
+				? renderStudyOsis([{ heading: b.shortTitle, books: [b], front: [], back: [] }], {
+						title: b.shortTitle,
+						whole: false
+					})
+				: renderOsis([{ heading: b.shortTitle, books: [b] }], {
+						title: b.shortTitle,
+						whole: false
+					}),
 		osisWhole: () => {
-			const parts = [['OT', 'The Old Testament'], ['NT', 'The New Testament']]
+			const parts = [
+				['OT', 'The Old Testament'],
+				['NT', 'The New Testament']
+			]
 				.map(([t, heading]) => ({ t, heading, books: group(t) }))
 				.filter((p) => p.books.length)
 				.map((p) => ({
@@ -141,11 +201,25 @@ export async function buildEbooks(ctx, editionName: 'verse-only' | 'study', form
 			const make = (b, path) => {
 				if (fmt === 'osis') writeFileSync(path, b ? ed.osisBook(b) : ed.osisWhole());
 				else if (fmt === 'epub')
-					runPandoc('epub3', b ? ed.bookMarkdown(b) : ed.wholeMarkdown(), {
-						...meta(b), cover, css, splitLevel: b ? 1 : 2, tocDepth: b ? 2 : 3
-					}, path);
+					runPandoc(
+						'epub3',
+						b ? ed.bookMarkdown(b) : ed.wholeMarkdown(),
+						{
+							...meta(b),
+							cover,
+							css,
+							splitLevel: b ? 1 : 2,
+							tocDepth: b ? 2 : 3
+						},
+						path
+					);
 				else
-					buildDocx(b ? ed.bookMarkdown(b) : ed.wholeMarkdown(), { ...meta(b), tocDepth: b ? 2 : 3 }, path, { work, cover, reference });
+					buildDocx(
+						b ? ed.bookMarkdown(b) : ed.wholeMarkdown(),
+						{ ...meta(b), tocDepth: b ? 2 : 3 },
+						path,
+						{ work, cover, reference }
+					);
 			};
 			for (const b of ed.books) {
 				const f = fileName(b, ext);

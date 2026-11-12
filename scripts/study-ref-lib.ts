@@ -24,7 +24,12 @@ export function splitTitle(raw: string): { title: string; subs: string[] } {
 	const parts = raw
 		.replace(/<\/?span[^>]*>/gi, '')
 		.split(/<br\s*\/?>/i)
-		.map((s) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim())
+		.map((s) =>
+			s
+				.replace(/<[^>]+>/g, '')
+				.replace(/\s+/g, ' ')
+				.trim()
+		)
 		.filter(Boolean);
 	return { title: parts[0] ?? '', subs: parts.slice(1) };
 }
@@ -39,7 +44,9 @@ export function toRefDoc(slug: string, d: Json): RefDoc {
 	const blocks: RBlock[] = [];
 	const cellOf = (s: string) => plainInline(String(s ?? ''), 'prose', ref);
 	const prose = (text: string, notes: any[] = []) =>
-		splitParas(markedInline(text, 'prose', ref, { notes, noteBlock: 'prose', keepUnreferenced: true }));
+		splitParas(
+			markedInline(text, 'prose', ref, { notes, noteBlock: 'prose', keepUnreferenced: true })
+		);
 	const addProse = (text: string | null | undefined, notes?: any[]) => {
 		if (!text) return;
 		for (const inl of prose(text, notes)) blocks.push({ k: 'p', inl });
@@ -75,12 +82,14 @@ export function toRefDoc(slug: string, d: Json): RefDoc {
 
 	if (d.columns && d.entries) {
 		known = true;
-		const keys = d.entries[0]?.emperor !== undefined
-			? ['emperor', 'col1', 'col2', 'col3', 'desc']
-			: ['mt', 'mr', 'lu', 'io', 'desc'];
-		const head = d.entries[0]?.emperor !== undefined
-			? [d.columns[0], d.columns[1], d.columns[2], '', d.columns[3]]
-			: d.columns;
+		const keys =
+			d.entries[0]?.emperor !== undefined
+				? ['emperor', 'col1', 'col2', 'col3', 'desc']
+				: ['mt', 'mr', 'lu', 'io', 'desc'];
+		const head =
+			d.entries[0]?.emperor !== undefined
+				? [d.columns[0], d.columns[1], d.columns[2], '', d.columns[3]]
+				: d.columns;
 		let rows: Inline[][][] = [];
 		const closeTable = () => {
 			if (rows.length) blocks.push({ k: 'table', head: head.map(cellOf), rows });
@@ -94,7 +103,7 @@ export function toRefDoc(slug: string, d: Json): RefDoc {
 			rows.push(keys.map((k) => cellOf(e[k])));
 		}
 		closeTable();
-		for (const c of d.closing ?? []) addProse(c.text), c.note && addProse(c.note);
+		for (const c of d.closing ?? []) (addProse(c.text), c.note && addProse(c.note));
 	} else if (d.entries && d.entries[0]?.words) {
 		known = true;
 		for (const g of d.entries) {

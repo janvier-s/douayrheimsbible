@@ -44,7 +44,10 @@ describe('markedInline', () => {
 	});
 	it('stops on a marker that matches no note', () => {
 		expect(() =>
-			markedInline('A <na>[9]</na> b', 'verse', 'bad ref', { notes: notes('N'), noteBlock: 'verse' })
+			markedInline('A <na>[9]</na> b', 'verse', 'bad ref', {
+				notes: notes('N'),
+				noteBlock: 'verse'
+			})
 		).toThrow(ExportError);
 	});
 	it('stops on a cross-reference marker with no cross_refs entry', () => {
@@ -77,7 +80,13 @@ const book = {
 	book: 'tobias',
 	book_title: 'The Book\nof Tobias',
 	short_title: 'Tobias',
-	intros: [{ title: 'Intro title', text: 'INTRO <mn>[1]</mn> text', notes: [{ marker: 1, text: 'Intro note' }] }],
+	intros: [
+		{
+			title: 'Intro title',
+			text: 'INTRO <mn>[1]</mn> text',
+			notes: [{ marker: 1, text: 'Intro note' }]
+		}
+	],
 	chapters: [
 		{ chapter: 0, verses: [{ verse: 1, text: 'PREFACE words' }] },
 		{
@@ -86,7 +95,11 @@ const book = {
 			summary_notes: [{ marker: 1, text: 'Summary note' }],
 			verses: [
 				{ verse: 0, text: 'overflow words' },
-				{ verse: 1, text: 'One <i>two</i> & <sc>GOD</sc> <na>[1]</na>', notes: [{ label: '1', text: 'Verse <i>note</i>' }] },
+				{
+					verse: 1,
+					text: 'One <i>two</i> & <sc>GOD</sc> <na>[1]</na>',
+					notes: [{ label: '1', text: 'Verse <i>note</i>' }]
+				},
 				{ verse: 2, text: 'x' }
 			]
 		}
@@ -96,7 +109,17 @@ const book = {
 book.chapters[1].verses[2].text = 'Plain *star* _under_ ^up^';
 
 const annotations = new Map([
-	[1, [{ verse: 1, title: 'Ann title', text: 'Annotation <mn>[1]</mn> body', notes: [{ marker: 1, text: 'Sub note' }] }]]
+	[
+		1,
+		[
+			{
+				verse: 1,
+				title: 'Ann title',
+				text: 'Annotation <mn>[1]</mn> body',
+				notes: [{ marker: 1, text: 'Sub note' }]
+			}
+		]
+	]
 ]);
 const sb = toStudyBook('tobias', book as never, annotations as never, 'Tobias');
 
@@ -109,11 +132,27 @@ describe('toStudyBook', () => {
 		expect(sb.chapters).toHaveLength(1);
 	});
 	it('stops on a repeated verse number that is not pinned', () => {
-		const dup = { ...book, chapters: [{ chapter: 1, verses: [{ verse: 1, text: 'a' }, { verse: 1, text: 'b' }] }] };
+		const dup = {
+			...book,
+			chapters: [
+				{
+					chapter: 1,
+					verses: [
+						{ verse: 1, text: 'a' },
+						{ verse: 1, text: 'b' }
+					]
+				}
+			]
+		};
 		expect(() => toStudyBook('tobias', dup as never, new Map(), 'T')).toThrow(/appears 2 times/);
 	});
 	it('builds a book with no intro, summary or annotations without empty parts', () => {
-		const bare = toStudyBook('ruth', { book: 'ruth', chapters: [{ chapter: 1, verses: [{ verse: 1, text: 'Words' }] }] } as never, new Map(), 'Ruth');
+		const bare = toStudyBook(
+			'ruth',
+			{ book: 'ruth', chapters: [{ chapter: 1, verses: [{ verse: 1, text: 'Words' }] }] } as never,
+			new Map(),
+			'Ruth'
+		);
 		const md = renderStudyBookMarkdown(bare, newState());
 		expect(md).not.toMatch(/Introduction|Preface|End Matter|summary/);
 	});
@@ -157,23 +196,39 @@ describe('OSIS', () => {
 		expect(study).toContain('Sub note');
 	});
 	it('escapes and marks italics', () => {
-		expect(osisInline(plainInline('a & <i>b</i>', 'prose', 'x'))).toBe('a &amp; <hi type="italic">b</hi>');
+		expect(osisInline(plainInline('a & <i>b</i>', 'prose', 'x'))).toBe(
+			'a &amp; <hi type="italic">b</hi>'
+		);
 	});
 });
 
 describe('reference documents', () => {
 	it('splits a title from its sub-title span', () => {
-		expect(splitTitle('A TABLE<br><span class="s">Wherein x</span>')).toEqual({ title: 'A TABLE', subs: ['Wherein x'] });
+		expect(splitTitle('A TABLE<br><span class="s">Wherein x</span>')).toEqual({
+			title: 'A TABLE',
+			subs: ['Wherein x']
+		});
 	});
 	it('reads paragraphs, tables and letter groups', () => {
 		const d = toRefDoc('t', {
 			title: 'T',
-			paragraphs: [{ text: 'Para <mn>[1]</mn>', notes: [{ marker: 1, text: 'n' }] }, { table: [['H1', 'H2'], ['a', 'b']] }, { letter: 'A', entries: ['<i>Aaron</i> x'] }]
+			paragraphs: [
+				{ text: 'Para <mn>[1]</mn>', notes: [{ marker: 1, text: 'n' }] },
+				{
+					table: [
+						['H1', 'H2'],
+						['a', 'b']
+					]
+				},
+				{ letter: 'A', entries: ['<i>Aaron</i> x'] }
+			]
 		});
 		expect(d.blocks.map((b) => b.k)).toEqual(['p', 'table', 'h', 'p']);
 	});
 	it('rejects a shape it does not know', () => {
-		expect(() => toRefDoc('t', { title: 'T', mystery: [] })).toThrow(/unrecognised reference shape/);
+		expect(() => toRefDoc('t', { title: 'T', mystery: [] })).toThrow(
+			/unrecognised reference shape/
+		);
 	});
 });
 
@@ -202,7 +257,21 @@ describe('list-like text', () => {
 	it('writes a footnote whose text starts with a number with the full stop escaped', () => {
 		const vb = toStudyBook(
 			'jude',
-			{ book: 'jude', chapters: [{ chapter: 1, verses: [{ verse: 18, text: 'x <cr>[1]</cr> y', cross_refs: [{ text: '1. Tim. 4. 2. Pet. 3.' }] }] }] } as never,
+			{
+				book: 'jude',
+				chapters: [
+					{
+						chapter: 1,
+						verses: [
+							{
+								verse: 18,
+								text: 'x <cr>[1]</cr> y',
+								cross_refs: [{ text: '1. Tim. 4. 2. Pet. 3.' }]
+							}
+						]
+					}
+				]
+			} as never,
 			new Map(),
 			'Jude'
 		);

@@ -43,7 +43,9 @@ export function mdInline(inl: Inline[], st: MdState): string {
 		} else {
 			const id = ++st.n;
 			const catchword = n.catchword ? `**${mdEscape(ws(n.catchword))}** ` : '';
-			st.defs.push(`[^${id}]: ${catchword || ''}${catchword ? mdInline(n.body, newState()).trim() : escLead(mdInline(n.body, newState()).trim())}`);
+			st.defs.push(
+				`[^${id}]: ${catchword || ''}${catchword ? mdInline(n.body, newState()).trim() : escLead(mdInline(n.body, newState()).trim())}`
+			);
 			out += `[^${id}]`;
 		}
 	}
@@ -69,7 +71,8 @@ function blockMd(b: StudyBlock, st: MdState, cls: string, style: string, heading
 	const paras = b.paras.map((p) => para(p, st));
 	// The title leads the first paragraph; it keeps its own full stop if it has one.
 	const stop = (t: string) => (/[.!?:;]$/.test(t) ? t : `${t}.`);
-	if (b.title && !headingLevel && paras.length) paras[0] = `**${mdEscape(stop(b.title))}** ${paras[0]}`;
+	if (b.title && !headingLevel && paras.length)
+		paras[0] = `**${mdEscape(stop(b.title))}** ${paras[0]}`;
 	else if (b.title && !headingLevel) paras.push(`**${mdEscape(b.title)}**`);
 	out.push(div(cls, style, paras.join('\n\n')));
 	const defs = flushDefs(st);
@@ -77,7 +80,11 @@ function blockMd(b: StudyBlock, st: MdState, cls: string, style: string, heading
 	return out.join('\n');
 }
 
-export function renderStudyBookMarkdown(b: StudyBook, st: MdState, opts: { level?: number } = {}): string {
+export function renderStudyBookMarkdown(
+	b: StudyBook,
+	st: MdState,
+	opts: { level?: number } = {}
+): string {
 	const level = opts.level ?? 1;
 	const h = (n: number) => '#'.repeat(Math.min(6, level + n));
 	const out: string[] = [`${h(0)} ${mdEscape(b.shortTitle)}\n`];
@@ -154,7 +161,12 @@ export function renderRefDocMarkdown(d: RefDoc, st: MdState, level: number): str
 			const pad = (r: Inline[][]) => [...r, ...Array(width - r.length).fill([])];
 			const head = pad(b.head ?? []).map((c) => cell(c, st));
 			out.push(`| ${head.join(' | ')} |`, `|${' --- |'.repeat(width)}`);
-			for (const r of b.rows) out.push(`| ${pad(r).map((c) => cell(c, st)).join(' | ')} |`);
+			for (const r of b.rows)
+				out.push(
+					`| ${pad(r)
+						.map((c) => cell(c, st))
+						.join(' | ')} |`
+				);
 			out.push('');
 			flush();
 		}

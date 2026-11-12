@@ -77,7 +77,12 @@ export interface MarkerCtx {
  * Text with its markers resolved: each <na>/<mn> becomes a footnote node and
  * each <cr> a cross-reference node, at the position the marker stood.
  */
-export function markedInline(text: string, block: BlockKind, ref: string, ctx: MarkerCtx): Inline[] {
+export function markedInline(
+	text: string,
+	block: BlockKind,
+	ref: string,
+	ctx: MarkerCtx
+): Inline[] {
 	const notes = ctx.notes;
 	const refs = ctx.refs ?? [];
 	const bound = bindMarkers(text, notes, block, ref);
@@ -100,9 +105,15 @@ export function markedInline(text: string, block: BlockKind, ref: string, ctx: M
 			if (m.kind === 'tag' && m.close && m.name === 'alt') break;
 			if (m.kind === 'text') words += m.value;
 		}
-		const before = nodes.slice(0, i).reverse().find((m) => m.kind === 'tag' && !m.close && m.name !== 'alt');
-		const after = nodes.slice(i).find((m) => m.kind === 'tag' && !m.close && (m.name === 'na' || m.name === 'cr'));
-		const anchor = before?.kind === 'tag' && (before.name === 'na' || before.name === 'cr') ? before : after;
+		const before = nodes
+			.slice(0, i)
+			.reverse()
+			.find((m) => m.kind === 'tag' && !m.close && m.name !== 'alt');
+		const after = nodes
+			.slice(i)
+			.find((m) => m.kind === 'tag' && !m.close && (m.name === 'na' || m.name === 'cr'));
+		const anchor =
+			before?.kind === 'tag' && (before.name === 'na' || before.name === 'cr') ? before : after;
 		if (anchor?.kind === 'tag') altFor.set(anchor.start, words.trim());
 	}
 
@@ -194,7 +205,9 @@ export function splitParas(inl: Inline[]): Inline[][] {
 /** The words of an Inline[] with notes left out. */
 export function inlineText(inl: Inline[]): string {
 	return inl
-		.map((n) => (n.t === 'txt' ? n.v : n.t === 'i' || n.t === 'sc' ? inlineText(n.c) : n.t === 'br' ? ' ' : ''))
+		.map((n) =>
+			n.t === 'txt' ? n.v : n.t === 'i' || n.t === 'sc' ? inlineText(n.c) : n.t === 'br' ? ' ' : ''
+		)
 		.join('');
 }
 
@@ -236,7 +249,9 @@ const proseBlock = (
 	ref: string
 ): StudyBlock => ({
 	title: p.title ? oneLine(p.title) : undefined,
-	paras: splitParas(markedInline(p.text, 'prose', ref, { notes: p.notes ?? [], noteBlock: 'prose' }))
+	paras: splitParas(
+		markedInline(p.text, 'prose', ref, { notes: p.notes ?? [], noteBlock: 'prose' })
+	)
 });
 
 function verseInline(

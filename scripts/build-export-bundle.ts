@@ -276,7 +276,15 @@ if (verseBooks.length) {
 
 if (verseBooks.length && process.env.EBOOKS !== 'none') {
 	const testamentOf = Object.fromEntries(ALL_BOOKS.map((m) => [m.slug, m.testament]));
-	const ctx = { out: OUT, root: ROOT, refDir: REF_DIR, verseBooks, studyBooks, testamentOf, only: ONLY };
+	const ctx = {
+		out: OUT,
+		root: ROOT,
+		refDir: REF_DIR,
+		verseBooks,
+		studyBooks,
+		testamentOf,
+		only: ONLY
+	};
 	const formats = (process.env.FORMATS ?? 'epub,osis,docx').split(',');
 	for (const edition of (process.env.EDITIONS ?? 'verse-only,study').split(',')) {
 		await buildEbooks(ctx, edition, formats);

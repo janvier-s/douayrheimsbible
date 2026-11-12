@@ -111,7 +111,9 @@ export function renderRefDocOsis(d: RefDoc, type: string, indent: string): strin
 				);
 			}
 			for (const r of b.rows) {
-				out.push(`${indent}\t\t<row>${r.map((c) => `<cell>${osisInline(c).trim()}</cell>`).join('')}</row>`);
+				out.push(
+					`${indent}\t\t<row>${r.map((c) => `<cell>${osisInline(c).trim()}</cell>`).join('')}</row>`
+				);
 			}
 			out.push(`${indent}\t</table>`);
 		}
@@ -154,7 +156,11 @@ export function renderStudyOsis(
 		if (opts.whole) {
 			out.push('\t<div type="bookGroup">', `\t\t<title>${xmlEscape(p.heading)}</title>`);
 			if (p.titleLines?.length) {
-				out.push('\t\t<div type="titlePage">', `\t\t\t<p>${p.titleLines.join('<lb/>')}</p>`, '\t\t</div>');
+				out.push(
+					'\t\t<div type="titlePage">',
+					`\t\t\t<p>${p.titleLines.join('<lb/>')}</p>`,
+					'\t\t</div>'
+				);
 			}
 			for (const d of p.front) out.push(renderRefDocOsis(d, 'introduction', ind));
 		}

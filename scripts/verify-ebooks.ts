@@ -40,7 +40,11 @@ export function plainText(path) {
 					.replace(/ ([,.;:!?)])/g, '$1')
 			);
 		const noMarks = xml.replace(/<hi type="super">\d+<\/hi>/g, '');
-		return { raw: flat(xml), full: flat(noMarks), words: flat(noMarks.replace(/<note[\s\S]*?<\/note>/g, '')) };
+		return {
+			raw: flat(xml),
+			full: flat(noMarks),
+			words: flat(noMarks.replace(/<note[\s\S]*?<\/note>/g, ''))
+		};
 	}
 	const full = norm(
 		execFileSync(process.env.PANDOC ?? 'pandoc', ['-t', 'plain', '--wrap=none', path], {
@@ -96,7 +100,10 @@ export function checkBook(slug, { raw, full, words }, edition) {
 		for (const a of ch.articles ?? [])
 			apparatus.push(['article', clean(a.text, 'prose', `${slug} article`)]);
 		for (const v of ch.verses)
-			for (const n of [...(v.notes ?? []), ...(v.cross_refs ?? []).filter((r) => r.source !== 'sancta')])
+			for (const n of [
+				...(v.notes ?? []),
+				...(v.cross_refs ?? []).filter((r) => r.source !== 'sancta')
+			])
 				apparatus.push([`note ${ch.chapter}:${v.verse}`, clean(n.text, 'verse', `${slug} note`)]);
 	}
 	const annDir = join(ODR, slug, 'annotations');
