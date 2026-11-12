@@ -904,7 +904,12 @@
         },
         {
           "verse": 11,
-          "text": "Their throat is an <na>(o)</na> open sepulchre, they did <na>(p)</na> deceitfully with their tongues, <na>(q)</na> judge them o God",
+          "text": "<cr>[1]</cr> Their throat is an <na>(o)</na> open sepulchre, they did <na>(p)</na> deceitfully with their tongues, <na>(q)</na> judge them o God.",
+          "cross_refs": [
+            {
+              "text": "Psal. 13. Rom. 3."
+            }
+          ],
           "notes": [
             {
               "label": "o",
@@ -928,12 +933,7 @@
         },
         {
           "verse": 12,
-          "text": "<cr>[1]</cr>. Let them fail of their cogitations, according to the multitude of their impieties expel them, because they have provoked thee o Lord.",
-          "cross_refs": [
-            {
-              "text": "Psal. 13. Rom. 3."
-            }
-          ]
+          "text": "Let them fail of their cogitations, according to the multitude of their impieties expel them, because they have provoked thee o Lord."
         },
         {
           "verse": 13,
@@ -24025,7 +24025,8 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Alleluia. <na>[1]</na> Aleph. Doctrine. Blessed <na>(a)</na> are <na>(b)</na> the immaculate in the way: which <na>(c)</na> walk in the law of our Lord.",
+          "heading": "Aleph. Doctrine.",
+          "text": "Alleluia. <na>[1]</na> Blessed <na>(a)</na> are <na>(b)</na> the immaculate in the way: which <na>(c)</na> walk in the law of our Lord.",
           "notes": [
             {
               "label": "a",
@@ -24158,7 +24159,8 @@
         },
         {
           "verse": 9,
-          "text": "Beth. House. Wherein <na>(a)</na> doth a young man correct his way? <na>(b)</na> In keeping thy <na>[1]</na> words.",
+          "heading": "Beth. House.",
+          "text": "Wherein <na>(a)</na> doth a young man correct his way? <na>(b)</na> In keeping thy <na>[1]</na> words.",
           "notes": [
             {
               "label": "a",
@@ -24276,7 +24278,8 @@
         },
         {
           "verse": 17,
-          "text": "Gimel. Fullness. Render <na>(a)</na> to thy servant, <na>(b)</na> quicken me: <na>(c)</na> and I shall keep thy <na>[1]</na> words.",
+          "heading": "Gimel. Fullness.",
+          "text": "Render <na>(a)</na> to thy servant, <na>(b)</na> quicken me: <na>(c)</na> and I shall keep thy <na>[1]</na> words.",
           "notes": [
             {
               "label": "a",
@@ -24390,7 +24393,8 @@
         },
         {
           "verse": 25,
-          "text": "Daleth. Of Tables. My soul <na>(a)</na> hath cleaved to the pavement: <na>(b)</na> quicken me according to thy word.",
+          "heading": "Daleth. Of Tables.",
+          "text": "My soul <na>(a)</na> hath cleaved to the pavement: <na>(b)</na> quicken me according to thy word.",
           "notes": [
             {
               "label": "a",
@@ -24477,7 +24481,8 @@
         },
         {
           "verse": 33,
-          "text": "He. This thing. <na>(a)</na> Set me a law, o Lord, the way of thy justifications: <na>(b)</na> and I will seek after it always.",
+          "heading": "He. This thing.",
+          "text": "<na>(a)</na> Set me a law, o Lord, the way of thy justifications: <na>(b)</na> and I will seek after it always.",
           "notes": [
             {
               "label": "a",
@@ -24600,7 +24605,8 @@
         },
         {
           "verse": 41,
-          "text": "Vau. And. And <na>(a)</na> let thy mercy come upon me, o Lord: <na>(b)</na> thy salvation according to thy <na>[1]</na> word.",
+          "heading": "Vau. And.",
+          "text": "And <na>(a)</na> let thy mercy come upon me, o Lord: <na>(b)</na> thy salvation according to thy <na>[1]</na> word.",
           "notes": [
             {
               "label": "a",
@@ -24723,7 +24729,8 @@
         },
         {
           "verse": 49,
-          "text": "Zain. This. Be <na>(a)</na> mindful of thy word to thy servant, wherein thou hast given me hope.",
+          "heading": "Zain. This.",
+          "text": "Be <na>(a)</na> mindful of thy word to thy servant, wherein thou hast given me hope.",
           "notes": [
             {
               "label": "a",
@@ -24831,7 +24838,8 @@
         },
         {
           "verse": 57,
-          "text": "Heth. Life. My <na>(a)</na> portion, o Lord, I said to keep thy law.",
+          "heading": "Heth. Life.",
+          "text": "My <na>(a)</na> portion, o Lord, I said to keep thy law.",
           "notes": [
             {
               "label": "a",
@@ -24934,7 +24942,8 @@
         },
         {
           "verse": 65,
-          "text": "Teth. Good. Thou hast <na>(a)</na> done bounty with thy servant, o Lord: <na>(b)</na> according to thy word.",
+          "heading": "Teth. Good.",
+          "text": "Thou hast <na>(a)</na> done bounty with thy servant, o Lord: <na>(b)</na> according to thy word.",
           "notes": [
             {
               "label": "a",
@@ -25048,7 +25057,8 @@
         },
         {
           "verse": 73,
-          "text": "Iod. Beginning. Thy hands have made me, and formed me: <na>(a)</na> give me understanding, and I will learn thy commandments.",
+          "heading": "Iod. Beginning.",
+          "text": "Thy hands have made me, and formed me: <na>(a)</na> give me understanding, and I will learn thy commandments.",
           "notes": [
             {
               "label": "a",
@@ -25134,7 +25144,8 @@
         },
         {
           "verse": 81,
-          "text": "Caph. Hand, or Palm of the hand. My soul hath fainted for <na>(a)</na> thy salvation: and I have much hoped in thy word.",
+          "heading": "Caph. Hand, or Palm of the hand.",
+          "text": "My soul hath fainted for <na>(a)</na> thy salvation: and I have much hoped in thy word.",
           "notes": [
             {
               "label": "a",
@@ -25220,7 +25231,8 @@
         },
         {
           "verse": 89,
-          "text": "Lamed. Discipline. For ever Lord <na>(a)</na> thy word is permanent in heaven.",
+          "heading": "Lamed. Discipline.",
+          "text": "For ever Lord <na>(a)</na> thy word is permanent in heaven.",
           "notes": [
             {
               "label": "a",
@@ -25297,7 +25309,8 @@
         },
         {
           "verse": 97,
-          "text": "Mem. Of them. <na>(a)</na> How have I loved thy law, o Lord! All the day it is my meditation.",
+          "heading": "Mem. Of them.",
+          "text": "<na>(a)</na> How have I loved thy law, o Lord! All the day it is my meditation.",
           "notes": [
             {
               "label": "a",
@@ -25376,7 +25389,8 @@
         },
         {
           "verse": 105,
-          "text": "Nun. Everlasting. <na>(a)</na> Thy word is a lamp to my feet, and a light to my paths.",
+          "heading": "Nun. Everlasting.",
+          "text": "<na>(a)</na> Thy word is a lamp to my feet, and a light to my paths.",
           "notes": [
             {
               "label": "a",
@@ -25450,7 +25464,8 @@
         },
         {
           "verse": 113,
-          "text": "Samech. Help. I have <na>(a)</na> hated the unjust: and I have <na>(b)</na> loved thy law.",
+          "heading": "Samech. Help.",
+          "text": "I have <na>(a)</na> hated the unjust: and I have <na>(b)</na> loved thy law.",
           "notes": [
             {
               "label": "a",
@@ -25556,7 +25571,8 @@
         },
         {
           "verse": 121,
-          "text": "Ain. A fountain, or an eye. I <na>(a)</na> have done judgement and justice: <na>(b)</na> deliver me not to them that calumniate me.",
+          "heading": "Ain. A fountain, or an eye.",
+          "text": "I <na>(a)</na> have done judgement and justice: <na>(b)</na> deliver me not to them that calumniate me.",
           "notes": [
             {
               "label": "a",
@@ -25650,7 +25666,8 @@
         },
         {
           "verse": 129,
-          "text": "Phe. Mouth. Thy <na>(a)</na> testimonies are marvelous: <na>(b)</na> therefore hath my soul searched them.",
+          "heading": "Phe. Mouth.",
+          "text": "Thy <na>(a)</na> testimonies are marvelous: <na>(b)</na> therefore hath my soul searched them.",
           "notes": [
             {
               "label": "a",
@@ -25741,7 +25758,8 @@
         },
         {
           "verse": 137,
-          "text": "Sade. Justice. Thou art just, o Lord: and <na>(a)</na> thy judgement is right.",
+          "heading": "Sade. Justice.",
+          "text": "Thou art just, o Lord: and <na>(a)</na> thy judgement is right.",
           "notes": [
             {
               "label": "a",
@@ -25818,7 +25836,8 @@
         },
         {
           "verse": 145,
-          "text": "Coph. Vocation. I <na>(a)</na> have cried in my whole heart, hear me, o Lord: I will seek after thy justifications.",
+          "heading": "Coph. Vocation.",
+          "text": "I <na>(a)</na> have cried in my whole heart, hear me, o Lord: I will seek after thy justifications.",
           "notes": [
             {
               "label": "a",
@@ -25902,7 +25921,8 @@
         },
         {
           "verse": 153,
-          "text": "Res. Head. See <na>(a)</na> my humiliation, and deliver me: because I have not forgotten thy law.",
+          "heading": "Res. Head.",
+          "text": "See <na>(a)</na> my humiliation, and deliver me: because I have not forgotten thy law.",
           "notes": [
             {
               "label": "a",
@@ -25986,7 +26006,8 @@
         },
         {
           "verse": 161,
-          "text": "Sin. Tooth. Princes have persecuted me <na>(a)</na> without cause: and my <na>(b)</na> heart hath been afraid of thy words.",
+          "heading": "Sin. Tooth.",
+          "text": "Princes have persecuted me <na>(a)</na> without cause: and my <na>(b)</na> heart hath been afraid of thy words.",
           "notes": [
             {
               "label": "a",
@@ -26075,7 +26096,8 @@
         },
         {
           "verse": 169,
-          "text": "Tau. Sign. <na>(a)</na> Let my petition approach in thy sight, o Lord: according to thy word give me <na>(b)</na> understanding.",
+          "heading": "Tau. Sign.",
+          "text": "<na>(a)</na> Let my petition approach in thy sight, o Lord: according to thy word give me <na>(b)</na> understanding.",
           "notes": [
             {
               "label": "a",

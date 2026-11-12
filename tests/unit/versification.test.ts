@@ -23,13 +23,18 @@ describe('odrToPrevious / previousToOdr', () => {
 	it('translates a listed ODR verse and leaves unlisted ones alone', () => {
 		expect(odrToPrevious(mt17, 27)).toEqual([26]);
 		expect(odrToPrevious(mt17, 14)).toEqual([14]);
-		expect(odrToPrevious(ecclus29, 17)).toEqual([16, 17, 18]);
+		// 1609: 16 "Aboue the shilde of the mightie," / 17 "& aboue the speare ... thyne enemie."
+		expect(odrToPrevious(ecclus29, 16)).toEqual([16]);
+		expect(odrToPrevious(ecclus29, 17)).toEqual([17, 18]);
 		expect(odrToPrevious(ecclus29, 18)).toEqual([19]);
+		expect(odrToPrevious(ecclus29, 26)).toEqual([27]);
+		expect(odrToPrevious(ecclus29, 27)).toEqual([28]);
 	});
 	it('inverts, including a previous verse split over two ODR verses', () => {
 		expect(previousToOdr(mt17, 14)).toEqual([14, 15]);
 		expect(previousToOdr(mt17, 26)).toEqual([27]);
-		expect(previousToOdr(ecclus29, 16)).toEqual([16, 17]);
+		expect(previousToOdr(ecclus29, 16)).toEqual([16]);
+		expect(previousToOdr(ecclus29, 17)).toEqual([17]);
 		expect(previousToOdr(ecclus29, 18)).toEqual([17]);
 		expect(previousToOdr(ecclus29, 19)).toEqual([18]);
 		expect(previousToOdr(ps5, 9)).toEqual([9]);
@@ -65,8 +70,8 @@ describe('alignOdrToRows', () => {
 	it('shows a verse covering several rows once, with a pointer on the later rows', () => {
 		const out = alignOdrToRows(ecclus29, { 15: 'a', 16: 'b', 17: 'c', 18: 'd' });
 		expect(out[15]).toBe('a');
-		expect(out[16]).toBe('(16) b (17) c');
-		expect(out[17]).toBe('\u2191 (17)');
+		expect(out[16]).toBe('b');
+		expect(out[17]).toBe('c');
 		expect(out[18]).toBe('\u2191 (17)');
 		expect(out[19]).toBe('(18) d');
 	});

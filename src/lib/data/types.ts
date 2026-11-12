@@ -93,6 +93,10 @@ export type LemmaSpan = [start: number, length: number, part: number];
 
 export interface Verse {
 	verse: number;
+	/** A line the printed edition sets above this verse, outside the verse text:
+	 *  the Hebrew letter and its meaning that open each stanza of Psalm 118
+	 *  ("Iod. Beginning."). The reader starts a new block here and shows it. */
+	heading?: string;
 	text: string;
 	has_annotation?: boolean;
 	lemmas?: LemmaSpan[];

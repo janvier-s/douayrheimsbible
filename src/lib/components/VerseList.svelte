@@ -773,13 +773,14 @@
 		ch: number,
 		starts: ParagraphStarts | null
 	): Verse[][] {
-		const chStarts = starts?.[slug]?.[ch];
-		if (!chStarts || chStarts.length === 0) return [vv];
+		const chStarts = starts?.[slug]?.[ch] ?? [];
+		// A stanza heading always opens a paragraph, with or without paragraph data.
+		if (chStarts.length === 0 && !vv.some((v) => v.heading)) return [vv];
 		const startSet = new Set(chStarts);
 		const groups: Verse[][] = [];
 		let current: Verse[] = [];
 		for (const v of vv) {
-			if (startSet.has(v.verse) && current.length > 0) {
+			if ((startSet.has(v.verse) || v.heading) && current.length > 0) {
 				groups.push(current);
 				current = [];
 			}
@@ -796,7 +797,7 @@
 	// which is what every translation used before the sidecars existed.
 
 	type Part = { verse: number; text: string; verseStart: boolean; off: number };
-	type ReadingBlock = { poetry: boolean; lines: Part[][] };
+	type ReadingBlock = { poetry: boolean; lines: Part[][]; heading?: string };
 
 	function buildBlocks(
 		vv: Verse[],
@@ -808,6 +809,7 @@
 		if (!fmt) {
 			return groupIntoParagraphs(vv, slug, ch, starts).map((group) => ({
 				poetry: false,
+				heading: group[0].heading,
 				lines: [group.map((v) => ({ verse: v.verse, text: v.text, verseStart: true, off: 0 }))]
 			}));
 		}
@@ -818,8 +820,12 @@
 		}
 
 		const blocks: ReadingBlock[] = [];
+		// A heading waits for the next block opened, whether the heading verse
+		// opens it itself or the format sidecar opens one at the verse's start.
+		let pendingHeading: string | undefined;
 		const openBlock = (poetry: boolean) => {
-			blocks.push({ poetry, lines: [[]] });
+			blocks.push({ poetry, lines: [[]], heading: pendingHeading });
+			pendingHeading = undefined;
 		};
 		const newLine = () => {
 			blocks[blocks.length - 1]?.lines.push([]);
@@ -836,8 +842,14 @@
 			// Inside a stanza every verse opens its own line, which is how the
 			// source lays out poetry and why those breaks are not stored.
 			const open = blocks[blocks.length - 1];
-			if (open?.poetry && !bs.some((b) => b.off === 0)) newLine();
-			if (!open) openBlock(false);
+			const opensAtStart = bs.some((b) => b.off === 0);
+			if (verse.heading) {
+				pendingHeading = verse.heading;
+				if (!opensAtStart) openBlock(open?.poetry ?? false);
+			} else {
+				if (open?.poetry && !opensAtStart) newLine();
+				if (!open) openBlock(false);
+			}
 
 			const events = [
 				...bs.map((b) => ({ off: b.off, block: true, poetry: b.poetry })),
@@ -894,6 +906,11 @@
 
 {#if $prefs.paragraphView}
 	{#each blocks as blk, bi (blk.lines[0][0].verse + (blk.poetry ? 'y' : 'p') + bi)}
+		{#if blk.heading}
+			<h2 class="stanza-heading font-reader" class:stanza-heading-first={bi === 0}>
+				{blk.heading}
+			</h2>
+		{/if}
 		<!-- svelte-ignore a11y_no_static_element_interactions, a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 		<p
 			class="para-block font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
@@ -903,8 +920,8 @@
 			class:para-hanging={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && !useRoman}
 			class:para-hanging-roman={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && useRoman}
 			class:para-dropcap={bi === 0 && !blk.poetry && ($prefs.showDropcap ?? true)}
-			class:para-indent={indentParagraphs && bi > 0 && !blk.poetry}
-			style={bi > 0 && !indentParagraphs ? 'margin-top: 1em' : ''}
+			class:para-indent={indentParagraphs && bi > 0 && !blk.poetry && !blk.heading}
+			style={bi > 0 && !indentParagraphs && !blk.heading ? 'margin-top: 1em' : ''}
 			onmouseover={isStudy ? handleMarkerMouseover : undefined}
 			onfocus={isStudy ? handleMarkerMouseover : undefined}
 			onmouseout={isStudy ? handleMarkerMouseout : undefined}
@@ -995,6 +1012,13 @@
 	<ol class="list-none space-y-[0.7rem]">
 		{#each verses as v (v.verse)}
 			{@const isChapterOpen = v.verse === verses[0]?.verse}
+			{#if v.heading}
+				<li class="list-none">
+					<h2 class="stanza-heading font-reader" class:stanza-heading-first={isChapterOpen}>
+						{v.heading}
+					</h2>
+				</li>
+			{/if}
 			<!-- The click handler here is a mouse-only convenience: tapping anywhere on
 			     an annotated verse opens its annotation. Keyboard and screen-reader
 			     users get the equivalent through the focusable button rendered at the
@@ -1185,6 +1209,20 @@
 	   rather than gaining a second one. */
 	.para-block {
 		margin-bottom: 1rem;
+	}
+
+	/* A stanza heading (Psalm 118's Hebrew letters), centred between stanzas as
+	   the 1609 sets it. The block under it takes no indent and no extra top gap. */
+	.stanza-heading {
+		margin: 1.5rem 0 0.5rem;
+		text-align: center;
+		font-size: calc(var(--font-size-reader) * 0.9);
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		color: var(--color-heading);
+	}
+	.stanza-heading-first {
+		margin-top: 0;
 	}
 
 	/* Paragraphs run on with an indented first line, as a book sets them. */
