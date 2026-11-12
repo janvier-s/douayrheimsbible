@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Format staged files with Prettier so CI's `prettier --check .` never fails.
+# Files with unstaged edits are only checked (not rewritten), so we never
+# stage work the committer did not intend to commit.
+set -u
+cd "$(git rev-parse --show-toplevel)"
+
+fix=() ; check=()
+while IFS= read -r -d '' f; do
+  case "$f" in *.ts|*.js|*.svelte|*.css|*.json|*.md|*.html|*.yml|*.yaml) ;; *) continue ;; esac
+  if git diff --quiet -- "$f"; then fix+=("$f"); else check+=("$f"); fi
+done < <(git diff --cached --name-only --diff-filter=ACMR -z)
+
+if [ ${#fix[@]} -gt 0 ]; then
+  npx prettier --write --ignore-unknown --log-level warn "${fix[@]}" && git add -- "${fix[@]}"
+fi
+if [ ${#check[@]} -gt 0 ]; then
+  npx prettier --check --ignore-unknown --log-level warn "${check[@]}" || {
+    echo "pre-commit: the files above have unstaged edits, so they were not auto-formatted." >&2
+    echo "Run 'npx prettier --write <file>' and re-stage them." >&2
+    exit 1
+  }
+fi
