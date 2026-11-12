@@ -4,7 +4,17 @@
 // styled block; summaries, introductions, articles and end matter are
 // headed, ordered blocks. Everything is read from the model in study-lib.ts.
 
-import { mdEscape, NBSP, type Part } from './epub-lib.js';
+import {
+	mdEscape,
+	NBSP,
+	bookId,
+	chapterId,
+	chapterGrid,
+	renderContentsMarkdown,
+	type MdOpts,
+	type Part
+} from './epub-lib.js';
+import { makeBreaker } from './layout-lib.js';
 import type { Inline, StudyBlock, StudyBook } from './study-lib.js';
 import type { RefDoc, RBlock } from './study-ref-lib.js';
 
@@ -80,15 +90,20 @@ function blockMd(b: StudyBlock, st: MdState, cls: string, style: string, heading
 	return out.join('\n');
 }
 
-export function renderStudyBookMarkdown(
-	b: StudyBook,
-	st: MdState,
-	opts: { level?: number } = {}
-): string {
+export function renderStudyBookMarkdown(b: StudyBook, st: MdState, opts: MdOpts = {}): string {
 	const level = opts.level ?? 1;
+	const layout = opts.layout ?? 'flowing';
 	const h = (n: number) => '#'.repeat(Math.min(6, level + n));
-	const out: string[] = [`${h(0)} ${mdEscape(b.shortTitle)}\n`];
+	const out: string[] = [`${h(0)} ${mdEscape(b.shortTitle)} {#${bookId(b.slug)}}\n`];
 	if (b.title !== b.shortTitle) out.push(`*${mdEscape(b.title)}*\n`);
+	if (opts.grid) {
+		out.push(
+			`${chapterGrid(
+				b.slug,
+				b.chapters.map((c) => c.chapter)
+			)}\n`
+		);
+	}
 
 	if (b.intros.length) {
 		out.push(`${h(1)} Introduction\n`);
@@ -104,7 +119,7 @@ export function renderStudyBookMarkdown(
 	}
 
 	for (const c of b.chapters) {
-		out.push(`${h(1)} Chapter ${c.chapter}\n`);
+		out.push(`${h(1)} Chapter ${c.chapter} {#${chapterId(b.slug, c.chapter)}}\n`);
 		if (c.summary) {
 			out.push(div('summary', 'Summary', para(c.summary, st)));
 			const d = flushDefs(st);
@@ -119,7 +134,9 @@ export function renderStudyBookMarkdown(
 			const d = flushDefs(st);
 			if (d) out.push(d);
 		};
+		const breaks = makeBreaker(b.slug, c.chapter, layout);
 		for (const v of c.verses) {
+			if (run.length && breaks(v.verse) && !v.part) flush();
 			run.push(`^${v.label}^${NBSP}${para(v.inl, st)}`);
 			if (v.annotations.length) {
 				flush();
@@ -185,14 +202,18 @@ export interface StudyPart {
 }
 
 /** Testament (h1) > front matter, books (h2) > chapters (h3), back matter. */
-export function renderStudyWholeMarkdown(parts: StudyPart[]): string {
+export function renderStudyWholeMarkdown(
+	parts: StudyPart[],
+	opts: MdOpts & { contents?: boolean } = {}
+): string {
 	const st = newState();
 	const out: string[] = [];
+	if (opts.contents) out.push(renderContentsMarkdown(parts));
 	for (const p of parts) {
 		out.push(`# ${mdEscape(p.heading)}\n`);
 		if (p.titlePage) out.push(p.titlePage);
 		for (const d of p.front) out.push(renderRefDocMarkdown(d, st, 2));
-		for (const b of p.books) out.push(renderStudyBookMarkdown(b, st, { level: 2 }));
+		for (const b of p.books) out.push(renderStudyBookMarkdown(b, st, { ...opts, level: 2 }));
 		for (const d of p.back) out.push(renderRefDocMarkdown(d, st, 2));
 	}
 	return `${out.join('\n').replace(/\n+$/, '')}\n`;

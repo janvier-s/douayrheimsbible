@@ -81,3 +81,43 @@ describe('renderWholeMarkdown', () => {
 		expect(tp).not.toContain('<span');
 	});
 });
+
+describe('layouts and navigation', () => {
+	const two = toVerseBook(
+		'genesis',
+		{
+			book: 'genesis',
+			short_title: 'Genesis',
+			chapters: [
+				{ chapter: 1, verses: [1, 2, 3].map((verse) => ({ verse, text: `Word ${verse}` })) }
+			]
+		} as never,
+		'Genesis'
+	);
+	it('flowing puts a chapter in one paragraph, verse puts each verse in its own', () => {
+		const paras = (l) =>
+			renderBookMarkdown(two, { layout: l })
+				.split('\n\n')
+				.filter((p) => p.startsWith('^'));
+		expect(paras('flowing')).toHaveLength(1);
+		expect(paras('verse')).toHaveLength(3);
+	});
+	it('gives books and chapters ids that do not start with a digit', () => {
+		const md = renderBookMarkdown({ ...two, slug: '1-kings' });
+		expect(md).toContain('{#book-1-kings}');
+		expect(md).toContain('{#ch-1-kings-1}');
+	});
+	it('adds a chapter link row and a contents page when asked', () => {
+		const md = renderWholeMarkdown([{ heading: 'OT', books: [two] }], {
+			grid: true,
+			contents: true
+		});
+		expect(md).toContain('# Contents');
+		expect(md).toContain('[Genesis](#book-genesis): [1](#ch-genesis-1)');
+		expect(md.match(/\[1\]\(#ch-genesis-1\)/g)).toHaveLength(2);
+	});
+	it('applies the layout to the whole-Bible file too', () => {
+		const md = renderWholeMarkdown([{ heading: 'OT', books: [two] }], { layout: 'verse' });
+		expect(md.split('\n\n').filter((p) => p.startsWith('^'))).toHaveLength(3);
+	});
+});

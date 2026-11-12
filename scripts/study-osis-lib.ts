@@ -11,6 +11,7 @@
 // stood and the note texts after the annotation body.
 
 import { osisId } from './odr-books-osis.js';
+import { groupVerses, type Layout } from './layout-lib.js';
 import { xmlEscape, verseOsisId, OSIS_NS } from './osis-lib.js';
 import { EDITION } from './verse-only-lib.js';
 import type { Inline, StudyBlock, StudyBook } from './study-lib.js';
@@ -60,7 +61,7 @@ function divBlock(type: string, b: StudyBlock, indent: string): string[] {
 	return out;
 }
 
-export function renderStudyOsisBook(b: StudyBook, indent = ''): string {
+export function renderStudyOsisBook(b: StudyBook, indent = '', layout: Layout = 'flowing'): string {
 	const id = osisId(b.slug);
 	const t = `${indent}\t`;
 	const out = [
@@ -81,11 +82,18 @@ export function renderStudyOsisBook(b: StudyBook, indent = ''): string {
 			out.push(`${t}\t<div type="summary">`, `${t}\t\t${para(c.summary)}`, `${t}\t</div>`);
 		}
 		for (const a of c.articles) out.push(...divBlock('section', a, `${t}\t`));
-		for (const v of c.verses) {
-			const notes = v.annotations.map(studyNote).join('');
-			out.push(
-				`${t}\t<verse osisID="${verseOsisId(id, c.chapter, v)}">${osisInline(v.inl).trim()}${notes}</verse>`
-			);
+		const groups =
+			layout === 'flowing' ? [c.verses] : groupVerses(b.slug, c.chapter, c.verses, layout);
+		for (const g of groups) {
+			const pad = layout === 'flowing' ? `${t}\t` : `${t}\t\t`;
+			if (layout !== 'flowing') out.push(`${t}\t<p>`);
+			for (const v of g) {
+				const notes = v.annotations.map(studyNote).join('');
+				out.push(
+					`${pad}<verse osisID="${verseOsisId(id, c.chapter, v)}">${osisInline(v.inl).trim()}${notes}</verse>`
+				);
+			}
+			if (layout !== 'flowing') out.push(`${t}\t</p>`);
 		}
 		out.push(`${t}</chapter>`);
 	}
@@ -132,7 +140,7 @@ export interface StudyOsisPart {
 
 export function renderStudyOsis(
 	parts: StudyOsisPart[],
-	opts: { title: string; whole: boolean; workId?: string }
+	opts: { title: string; whole: boolean; workId?: string; layout?: Layout }
 ): string {
 	const workId = opts.workId ?? 'ODR';
 	const out = [
@@ -164,7 +172,7 @@ export function renderStudyOsis(
 			}
 			for (const d of p.front) out.push(renderRefDocOsis(d, 'introduction', ind));
 		}
-		for (const b of p.books) out.push(renderStudyOsisBook(b, ind));
+		for (const b of p.books) out.push(renderStudyOsisBook(b, ind, opts.layout));
 		if (opts.whole) {
 			for (const d of p.back) out.push(renderRefDocOsis(d, 'appendix', ind));
 			out.push('\t</div>');

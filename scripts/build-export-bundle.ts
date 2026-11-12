@@ -285,9 +285,10 @@ if (verseBooks.length && process.env.EBOOKS !== 'none') {
 		testamentOf,
 		only: ONLY
 	};
-	const formats = (process.env.FORMATS ?? 'epub,osis,docx').split(',');
+	const formats = (process.env.FORMATS ?? 'epub,osis,docx,html').split(',');
+	const layouts = (process.env.LAYOUTS ?? 'flowing,paragraph,verse').split(',');
 	for (const edition of (process.env.EDITIONS ?? 'verse-only,study').split(',')) {
-		await buildEbooks(ctx, edition, formats);
+		for (const layout of layouts) await buildEbooks(ctx, edition, layout, formats);
 	}
 }
 

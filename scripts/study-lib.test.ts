@@ -278,3 +278,29 @@ describe('list-like text', () => {
 		expect(renderStudyBookMarkdown(vb, newState())).toMatch(/\[\^1\]: 1\\\. Tim\. 4\./);
 	});
 });
+
+describe('study layouts', () => {
+	const sb2 = toStudyBook(
+		'psalms',
+		{
+			book: 'psalms',
+			chapters: [{ chapter: 1, verses: [1, 2, 3].map((verse) => ({ verse, text: `W${verse}` })) }]
+		} as never,
+		new Map([[1, [{ verse: 2, text: 'Ann' }]]]) as never,
+		'Z'
+	);
+	it('verse layout: a paragraph per verse; the annotation follows its verse', () => {
+		const md = renderStudyBookMarkdown(sb2, newState(), { layout: 'verse' });
+		expect(md.split('\n\n').filter((p) => p.startsWith('^'))).toHaveLength(3);
+		expect(md.indexOf('^2^')).toBeLessThan(md.indexOf('custom-style="Annotation"'));
+		expect(md.indexOf('custom-style="Annotation"')).toBeLessThan(md.indexOf('^3^'));
+	});
+	it('flowing layout: annotation still splits the paragraph', () => {
+		const md = renderStudyBookMarkdown(sb2, newState(), { layout: 'flowing' });
+		expect(md.split('\n\n').filter((p) => p.startsWith('^'))).toHaveLength(2);
+	});
+	it('OSIS wraps paragraphs in <p> except for flowing', () => {
+		expect(renderStudyOsisBook(sb2, '', 'verse').match(/<p>/g)).toHaveLength(3);
+		expect(renderStudyOsisBook(sb2, '', 'flowing')).not.toContain('<p>');
+	});
+});

@@ -6,6 +6,7 @@
 
 import { verseText, EDITION, type BookOut } from './verse-only-lib.js';
 import { osisId } from './odr-books-osis.js';
+import { groupVerses, type Layout } from './layout-lib.js';
 
 export const OSIS_NS = 'http://www.bibletechnologies.net/2003/OSIS/namespace';
 const SCHEMA = 'http://www.crosswire.org/osis/osisCore.2.1.1.xsd';
@@ -29,7 +30,7 @@ export function verseOsisId(book: string, chapter: number, v: { verse: number; p
 	return `${book}.${chapter}.${v.verse}${v.part ? `!${v.part}` : ''}`;
 }
 
-export function renderOsisBook(b: BookOut, indent = ''): string {
+export function renderOsisBook(b: BookOut, indent = '', layout: Layout = 'flowing'): string {
 	const id = osisId(b.slug);
 	const out = [
 		`${indent}<div type="book" osisID="${id}">`,
@@ -40,10 +41,18 @@ export function renderOsisBook(b: BookOut, indent = ''): string {
 	for (const c of b.chapters) {
 		out.push(`${indent}\t<chapter osisID="${id}.${c.chapter}">`);
 		out.push(`${indent}\t\t<title type="chapter">Chapter ${c.chapter}</title>`);
-		for (const v of c.verses) {
-			out.push(
-				`${indent}\t\t<verse osisID="${verseOsisId(id, c.chapter, v)}">${inlineOsis(v.source, `${b.slug} ${c.chapter}:${v.label}`)}</verse>`
-			);
+		// flowing: verses sit directly in the chapter; otherwise each block is a <p>.
+		const groups =
+			layout === 'flowing' ? [c.verses] : groupVerses(b.slug, c.chapter, c.verses, layout);
+		for (const g of groups) {
+			const pad = layout === 'flowing' ? `${indent}\t\t` : `${indent}\t\t\t`;
+			if (layout !== 'flowing') out.push(`${indent}\t\t<p>`);
+			for (const v of g) {
+				out.push(
+					`${pad}<verse osisID="${verseOsisId(id, c.chapter, v)}">${inlineOsis(v.source, `${b.slug} ${c.chapter}:${v.label}`)}</verse>`
+				);
+			}
+			if (layout !== 'flowing') out.push(`${indent}\t\t</p>`);
 		}
 		out.push(`${indent}\t</chapter>`);
 	}
@@ -77,7 +86,13 @@ function header(workId: string, title: string, description: string): string {
 /** One OSIS document: a single book, or a whole Bible in testament groups. */
 export function renderOsis(
 	parts: OsisPart[],
-	opts: { title: string; description?: string; workId?: string; whole: boolean }
+	opts: {
+		title: string;
+		description?: string;
+		workId?: string;
+		whole: boolean;
+		layout?: Layout;
+	}
 ): string {
 	const workId = opts.workId ?? 'ODR';
 	const out = [
@@ -94,7 +109,8 @@ export function renderOsis(
 				out.push(`\t\t\t<p>${part.titleLines.join('<lb/>')}</p>`, '\t\t</div>');
 			}
 		}
-		for (const b of part.books) out.push(renderOsisBook(b, opts.whole ? '\t\t' : '\t'));
+		for (const b of part.books)
+			out.push(renderOsisBook(b, opts.whole ? '\t\t' : '\t', opts.layout));
 		if (opts.whole) out.push('\t</div>');
 	}
 	out.push('</osisText>', '</osis>');

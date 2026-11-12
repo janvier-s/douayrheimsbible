@@ -29,9 +29,10 @@ import { buildDocx, makeReferenceDocx } from './docx-lib.js';
 import { newState, renderStudyBookMarkdown, renderStudyWholeMarkdown } from './study-md-lib.js';
 import { renderStudyOsis } from './study-osis-lib.js';
 import { toRefDoc } from './study-ref-lib.js';
+import type { Layout } from './layout-lib.js';
 
 export const WHOLE = 'original-douay-rheims';
-const EXT = { epub: '.epub', osis: '.osis.xml', docx: '.docx' };
+const EXT = { epub: '.epub', osis: '.osis.xml', docx: '.docx', html: '.html' };
 
 export async function makeCover(webp: string, outJpg: string) {
 	await sharp(webp).jpeg({ quality: 90 }).toFile(outJpg);
@@ -112,7 +113,7 @@ function titlePageJson(refDir: string, t: 'ot' | 'nt') {
 }
 
 /** Everything that differs between the two editions. */
-function edition(name: 'verse-only' | 'study', ctx) {
+function edition(name: 'verse-only' | 'study', ctx, layout: Layout) {
 	const { refDir, verseBooks, studyBooks, testamentOf } = ctx;
 	const books = name === 'study' ? studyBooks : verseBooks;
 	const label = name === 'study' ? 'study edition' : 'verse text only';
@@ -120,75 +121,87 @@ function edition(name: 'verse-only' | 'study', ctx) {
 	const tp = { OT: titlePageJson(refDir, 'ot'), NT: titlePageJson(refDir, 'nt') };
 	const refs =
 		name === 'study' ? { OT: loadRefDocs(refDir, 'ot'), NT: loadRefDocs(refDir, 'nt') } : null;
+	// DOCX and HTML get chapter links under each book title and a contents
+	// page; the EPUB has its own navigation document.
+	const mdOpts = (fmt: string) => ({ layout, grid: fmt === 'docx' || fmt === 'html' });
+	const testaments = () =>
+		[
+			['OT', 'The Old Testament'],
+			['NT', 'The New Testament']
+		]
+			.map(([t, heading]) => ({ t, heading, books: group(t) }))
+			.filter((p) => p.books.length);
 	return {
 		name,
 		books,
-		subtitle: `${EPUB_SUBTITLE}, ${label}`,
-		bookMarkdown: (b) =>
-			name === 'study' ? renderStudyBookMarkdown(b, newState()) : renderBookMarkdown(b),
-		wholeMarkdown: () => {
-			const parts = [
-				['OT', 'The Old Testament'],
-				['NT', 'The New Testament']
-			]
-				.map(([t, heading]) => ({ t, heading, books: group(t) }))
-				.filter((p) => p.books.length)
-				.map((p) => ({
-					heading: p.heading,
-					books: p.books,
-					titlePage: renderTitlePageMarkdown(tp[p.t]),
-					front: refs?.[p.t].front ?? [],
-					back: refs?.[p.t].back ?? []
-				}));
-			return name === 'study' ? renderStudyWholeMarkdown(parts) : renderWholeMarkdown(parts);
+		subtitle: `${EPUB_SUBTITLE}, ${label}, ${LAYOUT_LABEL[layout]}`,
+		bookMarkdown: (b, fmt: string) =>
+			name === 'study'
+				? renderStudyBookMarkdown(b, newState(), mdOpts(fmt))
+				: renderBookMarkdown(b, mdOpts(fmt)),
+		wholeMarkdown: (fmt: string) => {
+			const parts = testaments().map((p) => ({
+				heading: p.heading,
+				books: p.books,
+				titlePage: renderTitlePageMarkdown(tp[p.t]),
+				front: refs?.[p.t].front ?? [],
+				back: refs?.[p.t].back ?? []
+			}));
+			const o = { ...mdOpts(fmt), contents: fmt === 'docx' || fmt === 'html' };
+			return name === 'study' ? renderStudyWholeMarkdown(parts, o) : renderWholeMarkdown(parts, o);
 		},
 		osisBook: (b) =>
 			name === 'study'
 				? renderStudyOsis([{ heading: b.shortTitle, books: [b], front: [], back: [] }], {
 						title: b.shortTitle,
-						whole: false
+						whole: false,
+						layout
 					})
 				: renderOsis([{ heading: b.shortTitle, books: [b] }], {
 						title: b.shortTitle,
-						whole: false
+						whole: false,
+						layout
 					}),
 		osisWhole: () => {
-			const parts = [
-				['OT', 'The Old Testament'],
-				['NT', 'The New Testament']
-			]
-				.map(([t, heading]) => ({ t, heading, books: group(t) }))
-				.filter((p) => p.books.length)
-				.map((p) => ({
-					heading: p.heading,
-					books: p.books,
-					titleLines: titleLinesOsis(tp[p.t].paragraphs),
-					front: refs?.[p.t].front ?? [],
-					back: refs?.[p.t].back ?? []
-				}));
+			const parts = testaments().map((p) => ({
+				heading: p.heading,
+				books: p.books,
+				titleLines: titleLinesOsis(tp[p.t].paragraphs),
+				front: refs?.[p.t].front ?? [],
+				back: refs?.[p.t].back ?? []
+			}));
 			return name === 'study'
-				? renderStudyOsis(parts, { title: 'The Douay-Rheims Bible', whole: true })
-				: renderOsis(parts, { title: 'The Douay-Rheims Bible', whole: true });
+				? renderStudyOsis(parts, { title: 'The Douay-Rheims Bible', whole: true, layout })
+				: renderOsis(parts, { title: 'The Douay-Rheims Bible', whole: true, layout });
 		}
 	};
 }
 
-/** Builds the given formats of one edition. */
-export async function buildEbooks(ctx, editionName: 'verse-only' | 'study', formats: string[]) {
+const LAYOUT_LABEL = { flowing: 'flowing text', paragraph: 'paragraphs', verse: 'verse by verse' };
+
+/** Builds the given formats of one edition in one layout. */
+export async function buildEbooks(
+	ctx,
+	editionName: 'verse-only' | 'study',
+	layout: Layout,
+	formats: string[]
+) {
 	const { out, root, only } = ctx;
-	const ed = edition(editionName, ctx);
+	const ed = edition(editionName, ctx, layout);
 	const assets = join(out, 'release-assets');
 	mkdirSync(assets, { recursive: true });
 	const work = mkdtempSync(join(out, '.work-'));
-	const tag = editionName === 'study' ? 'study' : 'verse-only';
+	const tag = `${editionName}-${layout}`;
 	try {
 		const cover = join(work, 'cover.jpg');
 		await makeCover(join(root, 'static', 'images', 'dr-1582-rheims.webp'), cover);
 		const css = join(root, 'scripts', 'assets', 'epub.css');
+		copyFileSync(join(root, 'scripts', 'assets', 'odr.css'), join(work, 'odr.css'));
+		const template = join(root, 'scripts', 'assets', 'odr.html');
 		const reference = formats.includes('docx') ? makeReferenceDocx(work) : null;
 
 		for (const fmt of formats) {
-			const dir = join(out, editionName, fmt);
+			const dir = join(out, editionName, layout, fmt);
 			mkdirSync(dir, { recursive: true });
 			const ext = EXT[fmt];
 			const files = [];
@@ -203,20 +216,30 @@ export async function buildEbooks(ctx, editionName: 'verse-only' | 'study', form
 				else if (fmt === 'epub')
 					runPandoc(
 						'epub3',
-						b ? ed.bookMarkdown(b) : ed.wholeMarkdown(),
+						b ? ed.bookMarkdown(b, fmt) : ed.wholeMarkdown(fmt),
+						{ ...meta(b), cover, css, splitLevel: b ? 1 : 2, tocDepth: b ? 2 : 3 },
+						path
+					);
+				else if (fmt === 'html')
+					runPandoc(
+						'html5',
+						b ? ed.bookMarkdown(b, fmt) : ed.wholeMarkdown(fmt),
 						{
 							...meta(b),
-							cover,
-							css,
-							splitLevel: b ? 1 : 2,
-							tocDepth: b ? 2 : 3
+							cover: 'cover.jpg',
+							css: 'odr.css',
+							template,
+							tocDepth: 2,
+							cwd: work
 						},
 						path
 					);
 				else
+					// The contents page is built by the Markdown renderer as links, because
+					// a Word TOC field is empty until the reader updates it.
 					buildDocx(
-						b ? ed.bookMarkdown(b) : ed.wholeMarkdown(),
-						{ ...meta(b), tocDepth: b ? 2 : 3 },
+						b ? ed.bookMarkdown(b, fmt) : ed.wholeMarkdown(fmt),
+						{ ...meta(b), toc: false },
 						path,
 						{ work, cover, reference }
 					);

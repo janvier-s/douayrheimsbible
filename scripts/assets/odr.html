@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="$lang$">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>$pagetitle$</title>
+		$for(css)$
+		<link rel="stylesheet" href="$css$" />
+		$endfor$
+	</head>
+	<body>
+		$if(toc)$
+		<details id="menu" open>
+			<summary>Contents</summary>
+			<nav id="$idprefix$TOC" role="doc-toc">$table-of-contents$</nav>
+		</details>
+		$endif$
+		<main>
+			<header id="title-block-header">
+				$if(cover)$<img
+					class="cover"
+					src="$cover$"
+					alt="Title page of the 1582 Rheims New Testament"
+				/>
+				$endif$
+				<h1 class="title">$title$</h1>
+				$if(subtitle)$
+				<p class="subtitle">$subtitle$</p>
+				$endif$
+			</header>
+			$body$
+		</main>
+		<script>
+			(function () {
+				var menu = document.getElementById('menu');
+				if (!menu) return;
+				if (window.matchMedia('(max-width: 60rem)').matches) menu.removeAttribute('open');
+				// Collapse every branch except the one holding the chapter being read.
+				var items = menu.querySelectorAll('li');
+				Array.prototype.forEach.call(items, function (li) {
+					var sub = li.querySelector(':scope > ul');
+					if (!sub) return;
+					var a = li.querySelector(':scope > a');
+					var btn = document.createElement('button');
+					btn.type = 'button';
+					btn.className = 'twisty';
+					btn.setAttribute('aria-label', 'Show or hide');
+					btn.textContent = '▸';
+					li.insertBefore(btn, a);
+					li.classList.add('collapsed');
+					btn.addEventListener('click', function () {
+						li.classList.toggle('collapsed');
+						btn.textContent = li.classList.contains('collapsed') ? '▸' : '▾';
+					});
+				});
+				// A single book has one top entry; show its chapters straight away.
+				var tops = menu.querySelectorAll('nav > ul > li');
+				if (tops.length === 1) {
+					tops[0].classList.remove('collapsed');
+					var tb = tops[0].querySelector(':scope > .twisty');
+					if (tb) tb.textContent = '\u25BE';
+				}
+				function open(hash) {
+					if (!hash) return;
+					var a = menu.querySelector('a[href="' + hash + '"]');
+					for (
+						var li = a && a.closest('li');
+						li;
+						li = li.parentElement && li.parentElement.closest('li')
+					) {
+						li.classList.remove('collapsed');
+						var b = li.querySelector(':scope > .twisty');
+						if (b) b.textContent = '▾';
+					}
+				}
+				open(location.hash);
+				window.addEventListener('hashchange', function () {
+					open(location.hash);
+				});
+			})();
+		</script>
+	</body>
+</html>

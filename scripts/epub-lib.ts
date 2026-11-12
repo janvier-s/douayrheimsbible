@@ -5,6 +5,7 @@
 
 import { spawnSync } from 'child_process';
 import { verseText, EDITION, type BookOut } from './verse-only-lib.js';
+import { groupVerses, type Layout } from './layout-lib.js';
 
 // Smart punctuation, math, citations and the list/attribute extensions are
 // off so pandoc leaves the 1582/1609 spelling and punctuation exactly alone.
@@ -47,21 +48,69 @@ export function inlineMd(source: string, ref: string): string {
 
 const refOf = (b: BookOut, chapter: number, label: string) => `${b.slug} ${chapter}:${label}`;
 
-/** One chapter: a flowing paragraph with superscript verse numbers. */
-export function chapterParagraph(b: BookOut, c: BookOut['chapters'][number]): string {
-	return c.verses
-		.map((v) => `^${v.label}^${NBSP}${inlineMd(v.source, refOf(b, c.chapter, v.label))}`)
-		.join(' ');
+/** XHTML ids may not start with a digit, so "1-kings" becomes "ch-1-kings-1". */
+export const bookId = (slug: string) => `book-${slug}`;
+export const chapterId = (slug: string, n: number) => `ch-${slug}-${n}`;
+
+/** A row of chapter numbers, each a link to its chapter. */
+export function chapterGrid(slug: string, chapters: number[]): string {
+	return chapters.map((n) => `[${n}](#${chapterId(slug, n)})`).join(' \u00b7 ');
 }
 
-/** Book as Markdown. `level` is the heading level of the book title. */
-export function renderBookMarkdown(b: BookOut, opts: { level?: number } = {}): string {
+export interface MdOpts {
+	/** Heading level of the book title. */
+	level?: number;
+	layout?: Layout;
+	/** Put a row of chapter links under the book title (DOCX, HTML). */
+	grid?: boolean;
+}
+
+/** One chapter as paragraphs, laid out as `layout` says. */
+export function chapterBlocks(
+	b: BookOut,
+	c: BookOut['chapters'][number],
+	layout: Layout
+): string[] {
+	return groupVerses(b.slug, c.chapter, c.verses, layout).map((g) =>
+		g.map((v) => `^${v.label}^${NBSP}${inlineMd(v.source, refOf(b, c.chapter, v.label))}`).join(' ')
+	);
+}
+
+/** Book as Markdown. */
+export function renderBookMarkdown(b: BookOut, opts: MdOpts = {}): string {
 	const level = opts.level ?? 1;
 	const h = (n: number) => '#'.repeat(Math.min(6, level + n));
-	const out = [`${h(0)} ${mdEscape(b.shortTitle)}`, ''];
+	const out = [`${h(0)} ${mdEscape(b.shortTitle)} {#${bookId(b.slug)}}`, ''];
 	if (b.title !== b.shortTitle) out.push(`*${mdEscape(b.title)}*`, '');
+	if (opts.grid)
+		out.push(
+			chapterGrid(
+				b.slug,
+				b.chapters.map((c) => c.chapter)
+			),
+			''
+		);
 	for (const c of b.chapters) {
-		out.push(`${h(1)} Chapter ${c.chapter}`, '', chapterParagraph(b, c), '');
+		out.push(`${h(1)} Chapter ${c.chapter} {#${chapterId(b.slug, c.chapter)}}`, '');
+		for (const para of chapterBlocks(b, c, opts.layout ?? 'flowing')) out.push(para, '');
+	}
+	return `${out.join('\n').replace(/\n+$/, '')}\n`;
+}
+
+/** Whole-Bible contents page: each book linked, with its chapters. */
+export function renderContentsMarkdown(
+	parts: {
+		heading: string;
+		books: { slug: string; shortTitle: string; chapters: { chapter: number }[] }[];
+	}[]
+): string {
+	const out = ['# Contents {.unnumbered}', ''];
+	for (const p of parts) {
+		out.push(`**${mdEscape(p.heading)}**`, '');
+		for (const b of p.books) {
+			const nums = b.chapters.map((c) => c.chapter);
+			out.push(`[${mdEscape(b.shortTitle)}](#${bookId(b.slug)}): ${chapterGrid(b.slug, nums)}`, '');
+		}
 	}
 	return `${out.join('\n').replace(/\n+$/, '')}\n`;
 }
@@ -103,12 +152,16 @@ export interface Part {
  * Whole Bible: testament (h1) > book (h2) > chapter (h3). The title pages
  * come from reference/odr/<ot|nt>/title-page.json, already rendered.
  */
-export function renderWholeMarkdown(parts: Part[]): string {
+export function renderWholeMarkdown(
+	parts: Part[],
+	opts: MdOpts & { contents?: boolean } = {}
+): string {
 	const out: string[] = [];
+	if (opts.contents) out.push(renderContentsMarkdown(parts));
 	for (const part of parts) {
 		out.push(`# ${mdEscape(part.heading)}`, '');
 		if (part.titlePage) out.push(part.titlePage, '');
-		for (const b of part.books) out.push(renderBookMarkdown(b, { level: 2 }));
+		for (const b of part.books) out.push(renderBookMarkdown(b, { ...opts, level: 2 }));
 	}
 	return `${out.join('\n').replace(/\n+$/, '')}\n`;
 }
@@ -125,12 +178,14 @@ export interface PandocMeta {
 	splitLevel?: number;
 	/** DOCX only: YAML metadata file (title page abstract). */
 	frontFile?: string;
+	/** HTML only: pandoc template path. */
+	template?: string;
 	/** Directory pandoc runs in, so relative image paths leave no local path in the file. */
 	cwd?: string;
 }
 
 export function runPandoc(
-	to: 'epub3' | 'docx',
+	to: 'epub3' | 'docx' | 'html5',
 	markdown: string,
 	meta: PandocMeta,
 	outPath: string
@@ -153,7 +208,12 @@ export function runPandoc(
 	];
 	if (meta.subtitle) args.push('--metadata', `subtitle=${meta.subtitle}`);
 	if (meta.toc !== false) args.push('--toc', `--toc-depth=${meta.tocDepth ?? 3}`);
-	if (to === 'epub3') {
+	if (to === 'html5') {
+		args.push('--standalone', '--embed-resources', '--reference-location=block');
+		if (meta.template) args.push(`--template=${meta.template}`);
+		if (meta.css) args.push('--css', meta.css);
+		if (meta.cover) args.push('--variable', `cover=${meta.cover}`);
+	} else if (to === 'epub3') {
 		if (meta.cover) args.push(`--epub-cover-image=${meta.cover}`);
 		if (meta.css) args.push('--css', meta.css);
 		args.push(`--split-level=${meta.splitLevel ?? 2}`);

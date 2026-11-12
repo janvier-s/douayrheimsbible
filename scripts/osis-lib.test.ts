@@ -61,3 +61,24 @@ describe('osis', () => {
 		]);
 	});
 });
+
+describe('osis layouts', () => {
+	const vb = toVerseBook(
+		'psalms',
+		{
+			book: 'psalms',
+			short_title: 'Psalms',
+			chapters: [{ chapter: 1, verses: [1, 2, 3].map((verse) => ({ verse, text: `W${verse}` })) }]
+		} as never,
+		'Genesis'
+	);
+	const xml = (layout) =>
+		renderOsis([{ heading: 'OT', books: [vb] }], { title: 'G', whole: false, layout });
+	it('flowing has no <p>; verse has one <p> per verse', () => {
+		expect(xml('flowing')).not.toContain('<p>');
+		expect(xml('verse').match(/<p>/g)).toHaveLength(3);
+	});
+	it('paragraph with no data for the book is one <p> per chapter', () => {
+		expect(xml('paragraph').match(/<p>/g)).toHaveLength(1);
+	});
+});
