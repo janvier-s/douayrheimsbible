@@ -394,6 +394,7 @@
 		</p>
 
 		<VerseTooltip
+			numbering="odr"
 			osisRanges={svRefRanges}
 			anchorEl={svRefAnchor}
 			visible={svRefVisible}

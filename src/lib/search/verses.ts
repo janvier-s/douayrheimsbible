@@ -1,6 +1,7 @@
 import type { OsisRange } from './osis';
 import type { Verse } from '$lib/data/types';
-import { loadBook, getChapter } from '$lib/data/loader';
+import { loadBook, getChapter, loadVersification } from '$lib/data/loader';
+import { chapterVersification, previousRangeToOdr } from '$lib/utils/versification';
 import { OSIS_TO_SLUG } from './resolve';
 import { ALL_BOOKS } from '$lib/data/books';
 
@@ -36,17 +37,24 @@ export async function buildResultGroups(
 
 		try {
 			const bookData = await loadBook(slug, fetch);
+			const versification = await loadVersification(fetch);
 
 			// Handle cross-chapter ranges (rare but possible)
 			for (let ch = range.startChapter; ch <= range.endChapter; ch++) {
 				const chapter = getChapter(bookData, ch);
 				if (!chapter) continue;
 
-				const startV = ch === range.startChapter ? (range.startVerse ?? 1) : 1;
+				const cv = chapterVersification(versification, slug, ch);
+				const lastV = chapter.verses[chapter.verses.length - 1]?.verse ?? 999;
+				// A cited verse number is Vulgate-aligned; translate it onto ODR's division.
+				const startV =
+					ch === range.startChapter && range.startVerse !== undefined
+						? previousRangeToOdr(cv, range.startVerse).start
+						: 1;
 				const endV =
-					ch === range.endChapter
-						? (range.endVerse ?? chapter.verses[chapter.verses.length - 1]?.verse ?? 999)
-						: (chapter.verses[chapter.verses.length - 1]?.verse ?? 999);
+					ch === range.endChapter && range.endVerse !== undefined
+						? previousRangeToOdr(cv, range.endVerse).end
+						: lastV;
 
 				const verses = chapter.verses.filter((v) => v.verse >= startV && v.verse <= endV);
 				if (!verses.length) continue;

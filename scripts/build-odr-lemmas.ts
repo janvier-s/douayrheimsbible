@@ -13,19 +13,31 @@
 //
 //   npx tsx scripts/build-odr-lemmas.ts            report only
 //   npx tsx scripts/build-odr-lemmas.ts --write    write spans into the chapter files
-//   npx tsx scripts/build-odr-lemmas.ts --dir=odr-original --write
+//   npx tsx scripts/build-odr-lemmas.ts --dir=original --write   (external source, $ODR_ORIGINAL_DIR)
 //                                                  same, for the original-spelling mirror
 //                                                  (offsets differ from the modern text)
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
 import { readJson, serialize } from './odr-corpus-json.js';
-import { join, dirname } from 'path';
+import { join, dirname, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
+import { resolveOriginalDir } from './sync-odr-original.js';
 import { resolveLemma, resolvePartialLemma } from './odr-lemma-lib.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIR_ARG = process.argv.find((a) => a.startsWith('--dir='))?.slice(6) ?? 'odr';
-const ODR_DIR = join(dirname(__dirname), 'static', 'data', DIR_ARG);
+// 'odr' / 'odr-original' resolve under static/data. The original-spelling source of
+// truth lives outside the repo (see sync-odr-original.ts): pass --dir=original to
+// target it, or any absolute path. Writing into static/data/odr-original is pointless
+// because the next sync overwrites it.
+const ODR_DIR =
+	DIR_ARG === 'original'
+		? resolveOriginalDir()
+		: isAbsolute(DIR_ARG)
+			? DIR_ARG
+			: join(dirname(__dirname), 'static', 'data', DIR_ARG);
+// iCloud conflict copies ("001 2.json") must never be read: they duplicate lemmas.
+const isConflictCopy = (f) => /\s\d+\.json$/.test(f);
 const WRITE = process.argv.includes('--write');
 
 /** How far either side of the stated verse to look when a title does not match
@@ -69,7 +81,7 @@ function alignSpan(modernText, originalText, start, length) {
 	return { start: newStart, length: newEnd - newStart };
 }
 
-const books = readdirSync(ODR_DIR).filter((f) => f.endsWith('.json'));
+const books = readdirSync(ODR_DIR).filter((f) => f.endsWith('.json') && !isConflictCopy(f));
 const tally = {
 	exact: 0,
 	gapped: 0,
@@ -102,7 +114,9 @@ for (const file of books) {
 	for (const chapter of book.chapters) for (const verse of chapter.verses) delete verse.lemmas;
 	let touched = false;
 
-	for (const annFile of readdirSync(annDir).filter((f) => f.endsWith('.json'))) {
+	for (const annFile of readdirSync(annDir).filter(
+		(f) => f.endsWith('.json') && !isConflictCopy(f)
+	)) {
 		const sidecar = JSON.parse(readFileSync(join(annDir, annFile), 'utf-8'));
 		const chapter = chapters.get(sidecar.chapter);
 		if (!chapter)

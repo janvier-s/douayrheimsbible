@@ -349,6 +349,7 @@
 	</MarkerPopover>
 
 	<VerseTooltip
+		numbering="odr"
 		osisRanges={openVerseRef}
 		anchorEl={verseRefAnchorEl}
 		visible={verseRefVisible}

@@ -4,9 +4,11 @@
 	import { parseOsis } from '$lib/search/osis';
 	interface Props {
 		text: string;
+		/** Numbering the refs were written in; ODR's own cross-references use 'odr'. */
+		numbering?: 'vulgate' | 'odr';
 	}
 
-	let { text }: Props = $props();
+	let { text, numbering = 'vulgate' }: Props = $props();
 
 	let tokens = $derived(tokenizeCrossRef(text));
 
@@ -52,6 +54,7 @@
 >
 
 <VerseTooltip
+	{numbering}
 	osisRanges={allRanges}
 	{anchorEl}
 	visible={tooltipVisible}

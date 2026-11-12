@@ -15,7 +15,7 @@ const OUT_DIR = join(PROJECT_ROOT, 'static', 'data', 'textual-notes');
 function resolveSource(): string | null {
 	const candidates = [
 		process.env.TEXTUAL_NOTES_SOURCE,
-		join(homedir(), 'Documents', 'Bible n stuff', 'Websites', 'TDR', 'Vul Notes')
+		join(homedir(), 'Documents', 'Bible-n-stuff', 'Websites', 'TDR', 'Vul Notes')
 	];
 	for (const c of candidates) {
 		if (c && existsSync(c)) return c;

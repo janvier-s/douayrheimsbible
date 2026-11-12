@@ -1,3 +1,4 @@
+import type { Versification } from '$lib/utils/versification';
 import type {
 	BookData,
 	Chapter,
@@ -542,4 +543,17 @@ export function loadClarifications(
 		clarificationsCache.set(slug, promise);
 	}
 	return clarificationsCache.get(slug)!;
+}
+
+// ─── ODR verse division (1609/1582) vs Vulgate-aligned numbering ──────────────
+let versificationPromise: Promise<Versification> | null = null;
+
+/** Map of re-divided ODR chapters; resolves to {} when unavailable. */
+export function loadVersification(fetch: typeof globalThis.fetch): Promise<Versification> {
+	if (!versificationPromise) {
+		versificationPromise = fetch('/data/odr/versification.json')
+			.then((res) => (res.ok ? (res.json() as Promise<Versification>) : {}))
+			.catch(() => ({}));
+	}
+	return versificationPromise;
 }

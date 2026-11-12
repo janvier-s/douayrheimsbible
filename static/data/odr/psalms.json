@@ -852,7 +852,7 @@
         },
         {
           "verse": 7,
-          "text": "Thou hatest all that work iniquity: thou wilt <na>(h)</na> destroy all that speak lie. The bloody and deceitful man our Lord will abhor:",
+          "text": "Thou hatest all that work iniquity: thou wilt <na>(h)</na> destroy all that speak lie.",
           "notes": [
             {
               "label": "h",
@@ -863,7 +863,11 @@
         },
         {
           "verse": 8,
-          "text": "But I in the multitude of <na>(i)</na> thy mercy. I will enter into thy house: I will adore toward <na>(k)</na> thy holy temple in thy <na>(l)</na> fear.",
+          "text": "The bloody and deceitful man our Lord will abhor:"
+        },
+        {
+          "verse": 9,
+          "text": "But I in the multitude of <na>(i)</na> thy mercy. I will enter into thy house: I will adore toward <na>(k)</na> thy holy temple in thy <na>(l)</na> fear. Lord conduct me in thy justice: because of mine enemies direct my way in thy sight.",
           "notes": [
             {
               "label": "i",
@@ -883,10 +887,6 @@
           ]
         },
         {
-          "verse": 9,
-          "text": "Lord conduct me in thy justice: because of mine enemies direct my way in thy sight."
-        },
-        {
           "verse": 10,
           "text": "Because there is <na>(m)</na> no truth in their mouth: their heart is <na>(n)</na> vain.",
           "notes": [
@@ -904,12 +904,7 @@
         },
         {
           "verse": 11,
-          "text": "Their throat is an <na>(o)</na> open sepulchre, they did <na>(p)</na> deceitfully with their tongues, <na>(q)</na> judge them o God <cr>[1]</cr>. Let them fail of their cogitations, according to the multitude of their impieties expel them, because they have provoked thee o Lord.",
-          "cross_refs": [
-            {
-              "text": "Psal. 13. Rom. 3."
-            }
-          ],
+          "text": "Their throat is an <na>(o)</na> open sepulchre, they did <na>(p)</na> deceitfully with their tongues, <na>(q)</na> judge them o God",
           "notes": [
             {
               "label": "o",
@@ -933,11 +928,16 @@
         },
         {
           "verse": 12,
-          "text": "And let all be glad, that hope in thee, they shall rejoice for ever: and thou shalt dwell in them. And all that love thy name shall glory in thee,"
+          "text": "<cr>[1]</cr>. Let them fail of their cogitations, according to the multitude of their impieties expel them, because they have provoked thee o Lord.",
+          "cross_refs": [
+            {
+              "text": "Psal. 13. Rom. 3."
+            }
+          ]
         },
         {
           "verse": 13,
-          "text": "because thou wilt <na>(r)</na> bless the just. Lord, as with a shield of thy good will, thou hast crowned us.",
+          "text": "And let all be glad, that hope in thee, they shall rejoice for ever: and thou shalt dwell in them. And all that love thy name shall glory in thee, because thou wilt <na>(r)</na> bless the just.",
           "notes": [
             {
               "label": "r",
@@ -945,6 +945,10 @@
               "kind": "gloss"
             }
           ]
+        },
+        {
+          "verse": 14,
+          "text": "Lord, as with a shield of thy good will, thou hast crowned us."
         }
       ],
       "summary": "Just men in affliction appeal to God, the revenger of injuries, 5. knowing and professing that God hateth iniquity. 9. Therefore remit their cause to him, 11. recite certain enormous vices of the wicked, 13. and expect God's final judgement of good and bad. <na>[1]</na>",
@@ -1239,40 +1243,40 @@
         },
         {
           "verse": 7,
-          "text": "Arise Lord in thy wrath: and <na>(g)</na> be exalted in the coasts of mine enemies.",
+          "text": "Arise Lord in thy wrath: and <na>(g)</na> be exalted in the coasts of mine enemies. And arise, o Lord my God, in the <na>(h)</na> precept which thou hast commanded:",
           "notes": [
             {
               "label": "g",
               "text": "Shew thy power.",
+              "kind": "gloss"
+            },
+            {
+              "label": "h",
+              "text": "Seeing thou didst command to make me King, it behoveth thee to protect me.",
               "kind": "gloss"
             }
           ]
         },
         {
           "verse": 8,
-          "text": "And arise, o Lord my God, in the <na>(h)</na> precept which thou hast commanded: and a <na>(i)</na> synagogue of peoples shall compass thee.",
+          "text": "and a <na>(i)</na> synagogue of peoples shall compass thee. And <na>(k)</na> for it return on high:",
           "notes": [
-            {
-              "label": "h",
-              "text": "Seeing thou didst command to make me King, it behoveth thee to protect me.",
-              "kind": "gloss"
-            },
             {
               "label": "i",
               "text": "many will serve thee the only true God.",
+              "kind": "gloss"
+            },
+            {
+              "label": "k",
+              "text": "For this increase of faithful people.",
               "kind": "gloss"
             }
           ]
         },
         {
           "verse": 9,
-          "text": "And <na>(k)</na> for it return on high: our Lord judgeth peoples. Judge me, o Lord, according to <na>(l)</na> my justice, and according to my innocency <na>(m)</na> upon me.",
+          "text": "our Lord judgeth peoples. Judge me, o Lord, according to <na>(l)</na> my justice, and according to my innocency <na>(m)</na> upon me.",
           "notes": [
-            {
-              "label": "k",
-              "text": "For this increase of faithful people.",
-              "kind": "gloss"
-            },
             {
               "label": "l",
               "text": "My just cause against my particular enemies",
@@ -8415,7 +8419,7 @@
         },
         {
           "verse": 4,
-          "text": "And <na>(i)</na> I will go in to the altar of God: to God, which <na>(k)</na> maketh my youth joyful. I will confess to thee <na>(l)</na> on the harp <na>(m)</na> o God <na>(n)</na> my God:",
+          "text": "And <na>(i)</na> I will go in to the altar of God: to God, which <na>(k)</na> maketh my youth joyful.",
           "notes": [
             {
               "label": "i",
@@ -8426,7 +8430,13 @@
               "label": "k",
               "text": "who changest our old corruption into newness of life.",
               "kind": "gloss"
-            },
+            }
+          ]
+        },
+        {
+          "verse": 5,
+          "text": "I will confess to thee <na>(l)</na> on the harp <na>(m)</na> o God <na>(n)</na> my God: <na>(o)</na> why art thou sorrowful, o my soul? And why dost thou trouble me?",
+          "notes": [
             {
               "label": "l",
               "text": "But to this purpose we praise God on the harp, mortifying our affections.",
@@ -8441,18 +8451,18 @@
               "label": "n",
               "text": "See previous note",
               "kind": "gloss"
-            }
-          ]
-        },
-        {
-          "verse": 5,
-          "text": "<na>(o)</na> why art thou sorrowful, o my soul? And why dost thou trouble me? <na>(p)</na> Hope in God, because yet <na>(q)</na> will I confess to him: the salvation <na>(r)</na> of my countenance, and <na>(s)</na> my God.",
-          "notes": [
+            },
             {
               "label": "o",
               "text": "Thou needest not therefore my soul, to be pensive or desolate.",
               "kind": "gloss"
-            },
+            }
+          ]
+        },
+        {
+          "verse": 6,
+          "text": "<na>(p)</na> Hope in God, because yet <na>(q)</na> will I confess to him: the salvation <na>(r)</na> of my countenance, and <na>(s)</na> my God.",
+          "notes": [
             {
               "label": "p",
               "text": "But trust in God,",
@@ -23062,14 +23072,18 @@
         },
         {
           "verse": 7,
-          "text": "The just shall be in eternal memory: he shall not fear at the hearing of evil. His heart is ready to hope in our Lord,"
+          "text": "The just shall be in eternal memory: he shall not fear at the hearing of evil."
         },
         {
           "verse": 8,
-          "text": "his heart is confirmed: he shall not be moved till he look over his enemies."
+          "text": "His heart is ready to hope in our Lord, his heart is confirmed:"
         },
         {
           "verse": 9,
+          "text": "he shall not be moved till he look over his enemies."
+        },
+        {
+          "verse": 10,
           "text": "He distributed, he gave to the poor: <na>(g)</na> his justice remaineth for ever and ever, <na>(h)</na> his horn shall be exalted in glory. <cr>[1]</cr>",
           "cross_refs": [
             {
@@ -23090,7 +23104,7 @@
           ]
         },
         {
-          "verse": 10,
+          "verse": 11,
           "text": "The sinner shall see, and will be angry, he shall gnash his teeth and pine away: the desire of sinners shall perish.",
           "xrefs": [
             "2. Cor. 9."
@@ -26840,7 +26854,11 @@
         },
         {
           "verse": 6,
-          "text": "Going they went and wept, casting their seeds. But coming they shall come with exultation, carrying their sheaves."
+          "text": "Going they went and wept, casting their seeds."
+        },
+        {
+          "verse": 7,
+          "text": "But coming they shall come with exultation, carrying their sheaves."
         }
       ],
       "summary": "Neither house nor city can be built, or kept without God's special providence and help, 3. those that trust in him shall prosper in their endeavours. <na>[1]</na>",

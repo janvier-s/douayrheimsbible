@@ -3,7 +3,8 @@
 
 	const bubble = createBubbler();
 	import { fade } from 'svelte/transition';
-	import { loadBook, loadTranslationBook } from '$lib/data/loader';
+	import { loadBook, loadTranslationBook, loadVersification } from '$lib/data/loader';
+	import { chapterVersification, previousRangeToOdr } from '$lib/utils/versification';
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
 	import { ALL_BOOKS, chapterRefBookName } from '$lib/data/books';
 	import { stripTags } from '$lib/utils/text';
@@ -25,6 +26,12 @@
 		visible?: boolean;
 		/** Which translation's verses to show. Defaults to 'odr'. */
 		translationId?: string;
+		/**
+		 * Numbering the refs were written in. 'vulgate' (the default: commentary, Fathers,
+		 * prayers, typed citations) is translated onto ODR's 1609 division where ODR differs;
+		 * 'odr' is for refs ODR's own notes wrote against its own text.
+		 */
+		numbering?: 'vulgate' | 'odr';
 		onmouseenter?: (e: MouseEvent) => void;
 		onmouseleave?: (e: MouseEvent) => void;
 	}
@@ -34,6 +41,7 @@
 		anchorEl = null,
 		visible = false,
 		translationId = 'odr',
+		numbering = 'vulgate',
 		onmouseenter,
 		onmouseleave
 	}: Props = $props();
@@ -107,8 +115,13 @@
 					};
 				}
 
-				const endVerse = range.endVerse ?? range.startVerse!;
-				for (let v = range.startVerse!; v <= endVerse; v++) {
+				let firstVerse = range.startVerse!;
+				let endVerse = range.endVerse ?? range.startVerse!;
+				if (translationId === 'odr' && numbering === 'vulgate') {
+					const cv = chapterVersification(await loadVersification(fetch), slug, range.startChapter);
+					({ start: firstVerse, end: endVerse } = previousRangeToOdr(cv, firstVerse, endVerse));
+				}
+				for (let v = firstVerse; v <= endVerse; v++) {
 					const text = verseText(v);
 					if (text) {
 						result.push({

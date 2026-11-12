@@ -37,7 +37,7 @@
 		}
 	});
 
-	let { bookMeta, chapter, verseMaps, kjvPsalmLabel } = $derived(data);
+	let { bookMeta, chapter, rows, redivided, verseMaps, kjvPsalmLabel } = $derived(data);
 
 	let prevChapter = $derived(chapter.chapter > 1 ? chapter.chapter - 1 : null);
 	let nextChapter = $derived(chapter.chapter < bookMeta.chapters ? chapter.chapter + 1 : null);
@@ -298,33 +298,40 @@
 			{/each}
 		</div>
 
+		{#if redivided}
+			<p class="font-ui text-[11px] text-subtle px-[16px] py-[8px] border-b border-border bg-panel">
+				Rows use the Vulgate verse numbering. In this chapter the Original Douay-Rheims divides the
+				verses as printed in 1609, so its verse numbers appear in (parentheses).
+			</p>
+		{/if}
+
 		<!-- Verse grid: one cell per (verse × column) — CSS grid auto-flow aligns rows -->
 		<div
 			class="grid"
 			style="grid-template-columns: repeat({displayedCols.length}, minmax(0, 1fr));"
 		>
-			{#each chapter.verses.filter((v) => v.verse > 0) as v (v.verse)}
+			{#each rows as row (row)}
 				{#each displayedCols as t, colIdx (t.id)}
 					<!-- svelte-ignore a11y_no_static_element_interactions -->
 					<div
 						data-col-id={t.id}
-						data-verse={v.verse}
+						data-verse={row}
 						class="verse-cell px-[16px] py-[12px] max-md:px-[5px] max-md:py-[8px] border-b border-border bg-panel font-reader text-[length:var(--font-size-reader)] leading-[var(--line-height-reader)] flex items-start gap-[3px]
 						{colIdx < displayedCols.length - 1 ? 'border-r border-border' : ''}"
 						class:text-justify={$prefs.justifiedText}
-						class:verse-row-hover={hoveredVerse === v.verse}
-						onmouseenter={() => (hoveredVerse = v.verse)}
+						class:verse-row-hover={hoveredVerse === row}
+						onmouseenter={() => (hoveredVerse = row)}
 						onmouseleave={() => (hoveredVerse = null)}
 					>
 						{#if $prefs.showVerseNumbers}
 							<span
 								class="text-subtle font-ui text-[11px] font-light select-none shrink-0 tabular-nums pt-[0.25em] text-right w-fit md:mr-[6px]"
-								>{v.verse}</span
+								>{row}</span
 							>
 						{/if}
 						<span
 							>{@html allcapsToSmallcaps(
-								stripTags(verseMaps[t.id]?.[v.verse] ?? '').replace(/[¹²³⁴⁵⁶⁷⁸⁹⁰]+/g, '')
+								stripTags(verseMaps[t.id]?.[row] ?? '').replace(/[¹²³⁴⁵⁶⁷⁸⁹⁰]+/g, '')
 							)}</span
 						>
 					</div>

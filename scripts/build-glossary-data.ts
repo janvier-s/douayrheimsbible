@@ -17,7 +17,7 @@ function resolveSource(): string | null {
 		join(
 			homedir(),
 			'Documents',
-			'Bible n stuff',
+			'Bible-n-stuff',
 			'Websites',
 			'TDR',
 			'Glossary',

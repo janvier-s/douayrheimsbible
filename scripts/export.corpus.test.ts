@@ -155,7 +155,9 @@ describe('the corpus markup', () => {
 		expect(crossRefs).toHaveLength(2208);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
-		expect(blocks).toHaveLength(43877);
+		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
+		// see static/data/odr/versification.json).
+		expect(blocks).toHaveLength(43883);
 	});
 
 	it('names exactly one block per ref', () => {

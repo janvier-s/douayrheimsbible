@@ -1130,7 +1130,7 @@
 												data-panel-id="panel-{section.verse}-cross_ref-{ci + 1}"
 											>
 												<span class="cr-marker">{ci + 1}</span>
-												<CrossRefText text={cr.text} />
+												<CrossRefText text={cr.text} numbering="odr" />
 											</div>
 										{/each}
 									</div>

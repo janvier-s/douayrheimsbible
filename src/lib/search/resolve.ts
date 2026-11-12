@@ -1,3 +1,9 @@
+import versification from '../../../static/data/odr/versification.json';
+import {
+	chapterVersification,
+	previousRangeToOdr,
+	type Versification
+} from '$lib/utils/versification';
 import type { ParsedReference } from './reference';
 import { getBookByOdrName, getBookByModernName, getBookBySlug } from '$lib/data/books';
 
@@ -97,9 +103,15 @@ export function resolveReference(
 
 	if (!slug) return null;
 
-	const url = ref.verse
-		? `/odr/${slug}/${ref.chapter}#v${ref.verse}`
-		: `/odr/${slug}/${ref.chapter}`;
+	// A typed citation uses the Vulgate-aligned numbering; ODR follows the 1609
+	// division in a few chapters, so land on the ODR verse that starts the citation.
+	const verse = ref.verse
+		? previousRangeToOdr(
+				chapterVersification(versification as unknown as Versification, slug, ref.chapter),
+				ref.verse
+			).start
+		: undefined;
+	const url = verse ? `/odr/${slug}/${ref.chapter}#v${verse}` : `/odr/${slug}/${ref.chapter}`;
 
-	return { slug, chapter: ref.chapter, verse: ref.verse, url };
+	return { slug, chapter: ref.chapter, verse, url };
 }

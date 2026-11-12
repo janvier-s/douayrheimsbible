@@ -4,8 +4,9 @@
 	"version": "0.11.4",
 	"type": "module",
 	"scripts": {
+		"predev": "tsx scripts/sync-odr-original.ts",
 		"dev": "vite dev",
-		"prebuild": "tsx scripts/prepare-data.ts",
+		"prebuild": "tsx scripts/sync-odr-original.ts && tsx scripts/prepare-data.ts",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "(git config core.hooksPath .githooks 2>/dev/null || true) && (svelte-kit sync || echo '')",

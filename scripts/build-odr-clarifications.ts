@@ -3,7 +3,7 @@
  *
  * Input : ../sancta-scrape/data/<book>/<n>.json  (verses[].clarifications [{term, latin, gloss}])
  *         static/data/odr/<book>.json            (modernized text, what the reader shows)
- *         static/data/odr-original/<book>.json   (original spelling, used as a fallback)
+ *         $ODR_ORIGINAL_DIR/<book>.json (default ../odr-original; original spelling, used as a fallback)
  * Output: static/data/odr-clarifications/<book>.json  {chapter: {verse: [{term, latin, gloss, occurrence}]}}
  *         analysis/clarifications-unanchored.csv      everything that could not be anchored (not shipped)
  *
@@ -18,12 +18,13 @@
  */
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { resolveOriginalDir } from './sync-odr-original';
 import { visibleText, findTermMatches, type Clarification } from '../src/lib/utils/clarifications';
 
 const ROOT = process.cwd();
 const SANCTA = join(ROOT, '../sancta-scrape/data');
 const ODR = join(ROOT, 'static/data/odr');
-const ORIG = join(ROOT, 'static/data/odr-original');
+const ORIG = resolveOriginalDir();
 const OUT = join(ROOT, 'static/data/odr-clarifications');
 const REPORT = join(ROOT, 'analysis/clarifications-unanchored.csv');
 
