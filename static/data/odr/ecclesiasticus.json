@@ -3818,11 +3818,16 @@
         },
         {
           "verse": 15,
-          "text": "There is another <na>(d)</na> contrary speech, also to death, be it not found in the inheritance of Jacob.",
+          "text": "There is another <na>(d)</na> contrary speech, also <na>[1]</na> to death, be it not found in the inheritance of Jacob.",
           "notes": [
             {
               "label": "d",
               "text": "In oaths God is called to witness as he that cannot lie, but blasphemy attributeth that to God which perceiveth not to him or attributeth to some creature that which only belongeth to God, and so is a contrary sin to unlawful swearing. Both are mortal sins.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Both are mortal sins.",
               "kind": "gloss"
             }
           ]

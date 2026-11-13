@@ -256,7 +256,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,752 of 13,754 markers', () => {
+	it('binds 13,767 of 13,769 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -267,9 +267,10 @@ describe('the corpus markup', () => {
 		// 13,606 before the annotation review (b2e0381c). It added 117 <mn>
 		// markers (4,875 to 4,992 across odr), and every one of them binds.
 		// 13,723 before the psalm summary-shift repair restored 29 head-note markers.
-		expect(bound).toBe(13752);
+		// 13,752 before 15 missing 1609 margin notes were added, each with its marker.
+		expect(bound).toBe(13767);
 		expect(unbound).toBe(2);
-		expect(bound + unbound).toBe(13754);
+		expect(bound + unbound).toBe(13769);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming

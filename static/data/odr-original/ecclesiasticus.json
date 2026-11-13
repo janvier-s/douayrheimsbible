@@ -3818,11 +3818,16 @@
         },
         {
           "verse": 15,
-          "text": "There is an <na>(d)</na> other contrarie speach, also to death, be it not found in the inheritance of Iacob.",
+          "text": "There is an <na>(d)</na> other contrarie speach, also <na>[1]</na> to death, be it not found in the inheritance of Iacob.",
           "notes": [
             {
               "label": "d",
               "text": "In oathes God is called to witnes as he that can not lie, but blasphemie attributeth that to God which perceyueth not him, or attributeth to some creature that which only belongeth to God, and so is a contrarie sinne to vnlawful swearing.",
+              "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "Both are mortal sinnes.",
               "kind": "gloss"
             }
           ]

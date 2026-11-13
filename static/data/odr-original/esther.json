@@ -38,12 +38,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "I N <na>[1]</na> the daies of Assuerus. who reigned from India vnto Æthiopia ouer an hundred twentie seuen prouinces:",
+          "text": "I N <na>[1]</na><na>[2]</na> the daies of Assuerus. who reigned from India vnto Æthiopia ouer an hundred twentie seuen prouinces:",
           "notes": [
             {
               "label": "1",
               "text": "The first part beginneth in the 11. ch.",
               "kind": "head"
+            },
+            {
+              "label": "2",
+              "text": "This booke is read at mattins the last weeke of September.",
+              "kind": "lectionary"
             }
           ]
         },
@@ -1024,7 +1029,7 @@
         },
         {
           "verse": 3,
-          "text": "and how Mardocheus of the Iewes kinred was second after king Assuerus: and great with the Iewes, and acceptable to the people of his bretheren, seking good to his people, and speaking those things, which pertayned to the good of his seede. <na>(a)</na> <na>[1]</na>",
+          "text": "and how Mardocheus of the Iewes kinred was second after king Assuerus: and great with the Iewes, and acceptable to the people of his bretheren, seking good to his people, and speaking those things, which pertayned to the good of his seede. <na>(a)</na> <na>[1]</na> <na>[2]</na>",
           "notes": [
             {
               "label": "a",
@@ -1035,6 +1040,11 @@
               "label": "1",
               "text": "<i>The Greke of the 72. Interpreters</i>.",
               "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "<i>That which is in the Hebrew I haue expressed most faithfully. And these things that folow, I found written in the common edition, which are conteyned in the greke tongue and letters: and in the meane time this chapter was extant after the end of the booke: which according to our custome, we haue marked with an Obelus before it, that is to say, a broch.</i>",
+              "kind": "head"
             }
           ]
         },
@@ -1086,11 +1096,16 @@
       "verses": [
         {
           "verse": 1,
-          "text": "IN <na>[1]</na> the fourth yeare when Ptolomee and Cleopatra reigned, Dositheus, which named himself a Priest, and of the Leuitical kinred, and Ptolomee his sonne brought this epistle of Phurim, which they sayd Lysimachus the sonne of Ptolomee did interprete in Ierusalem.",
+          "text": "IN <na>[1]</na> the fourth yeare when Ptolomee and Cleopatra reigned, Dositheus, which named himself a Priest, and of the Leuitical kinred, and Ptolomee his sonne brought this epistle of Phurim, which they sayd Lysimachus the sonne of Ptolomee did interprete in Ierusalem. <na>[2]</na>",
           "notes": [
             {
               "label": "1",
-              "text": "The first part. The presage, & occasion of Esther's advancement and Aman's persecuting the Jews. <i>This beginning was in the common edition, which is neither extant in Hebrew, nor with any of</i>",
+              "text": "The first part. The presage, & occasion of Esther's advancement and Aman's persecuting the Jews.",
+              "kind": "head"
+            },
+            {
+              "label": "2",
+              "text": "<i>This beginning was in the common edition, which is neither extant in Hebrew, nor with any of the interpreters.</i> Except the 72.",
               "kind": "head"
             }
           ]
@@ -1178,7 +1193,7 @@
           ]
         }
       ],
-      "summary": "The first part. The presage, and occasion of Esthers aduancement and Amans persecuting the Iewes."
+      "summary": "An Appendix and conclusion of this historie. 2. The dreame of Mardocheus."
     },
     {
       "chapter": 12,

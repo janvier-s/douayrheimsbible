@@ -3106,7 +3106,14 @@
         },
         {
           "verse": 19,
-          "text": "They preuented me in the day of mine affliction: and our Lord was made my protectour."
+          "text": "<na>[1]</na> They preuented me in the day of mine affliction: and our Lord was made my protectour.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "So in the rest of this Psalme the Prophet speaketh for most part in proper termes, vvithout Metaphores or other figures. Yet in the mystical sense of Christ, and Christians.",
+              "kind": "gloss"
+            }
+          ]
         },
         {
           "verse": 20,
@@ -6185,11 +6192,16 @@
         },
         {
           "verse": 8,
-          "text": "I <na>(o)</na> wil geue thee vnderstanding, and wil instruct thee in the way, that thou shalt goe; I pwil fasten mine eies vpon thee.",
+          "text": "I <na>(o)</na> wil geue thee vnderstanding, and wil instruct thee in the way, that thou shalt goe; I <na>(p)</na> wil fasten mine eies vpon thee.",
           "notes": [
             {
               "label": "o",
               "text": "God speaketh: promising by these tribulations to geue his seruants <i>vnderstanding</i>, and instruction:",
+              "kind": "gloss"
+            },
+            {
+              "label": "p",
+              "text": "with perpetual protection.",
               "kind": "gloss"
             }
           ]
@@ -7142,7 +7154,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "A Psalme <na>(a)</na> to Dauid him self. HAVE <na>(b)</na> no emulation toward the malignant: neither enuie them that doe iniquitie.",
+          "text": "<na>[1]</na> A Psalme <na>(a)</na> to Dauid him self. HAVE <na>(b)</na> no emulation toward the malignant: neither enuie them that doe iniquitie.",
           "notes": [
             {
               "label": "a",
@@ -7153,6 +7165,11 @@
               "label": "b",
               "text": "Neither be thou offended that the wicked do prosper in this world, nor imitate them that thou maist also prosper.",
               "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "This Psalme is composed in order of the Alphabet, euerie distick beginning vvith a diuers letter, to moue the reader to diligent attention, which may serue in place of a larger cōmentarie,",
+              "kind": "head"
             }
           ]
         },

@@ -2548,15 +2548,7 @@
         },
         {
           "verse": 46,
-          "text": "It is therfore <na>(h)</na> a holie, and healthful cogitation to pray for the dead, that they may be loosed from sinnes. <na>[1]</na>",
-          "has_annotation": true,
-          "lemmas": [
-            [
-              0,
-              82,
-              1
-            ]
-          ],
+          "text": "It is therfore <na>(h)</na> a holie, and healthful cogitation to pray for the dead, that they may be loosed from sinnes. <na>[1]</na><na>[2]</na>",
           "notes": [
             {
               "label": "h",
@@ -2567,7 +2559,20 @@
               "label": "1",
               "text": "li. 1. c. 6. v. 18.",
               "kind": "gloss"
+            },
+            {
+              "label": "2",
+              "text": "This text is clere for praying for the dead.",
+              "kind": "gloss"
             }
+          ],
+          "has_annotation": true,
+          "lemmas": [
+            [
+              0,
+              82,
+              1
+            ]
           ]
         }
       ],

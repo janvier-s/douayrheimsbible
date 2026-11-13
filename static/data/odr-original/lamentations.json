@@ -1699,7 +1699,14 @@
       "verses": [
         {
           "verse": 1,
-          "text": "REmember ô Lord what is fallen to vs: behold, and regard our reproch."
+          "text": "<na>(a)</na> REmember ô Lord what is fallen to vs: behold, and regard our reproch.",
+          "notes": [
+            {
+              "label": "a",
+              "text": "The prophet foreseing in spirite their future state as if it had bene present, prayed in the same maner, as the whole people should pray when they were in such calamitie.",
+              "kind": "gloss"
+            }
+          ]
         },
         {
           "verse": 2,

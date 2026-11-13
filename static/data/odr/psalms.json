@@ -3106,7 +3106,14 @@
         },
         {
           "verse": 19,
-          "text": "They prevented me in the day of mine affliction: and our Lord was made my protector."
+          "text": "<na>[1]</na> They prevented me in the day of mine affliction: and our Lord was made my protector.",
+          "notes": [
+            {
+              "label": "1",
+              "text": "So in the rest of this Psalm the Prophet speaketh for most part in proper terms, without Metaphors or other figures. Yet in the mystical sense of Christ, and Christians.",
+              "kind": "gloss"
+            }
+          ]
         },
         {
           "verse": 20,
@@ -6185,11 +6192,16 @@
         },
         {
           "verse": 8,
-          "text": "I <na>(o)</na> will give thee understanding, and will instruct thee in the way, that thou shalt go: I will fasten mine eyes upon thee.",
+          "text": "I <na>(o)</na> will give thee understanding, and will instruct thee in the way, that thou shalt go: I <na>(p)</na> will fasten mine eyes upon thee.",
           "notes": [
             {
               "label": "o",
               "text": "God speaketh, promising by these tribulations to give his servants <i>understanding</i>, and instruction:",
+              "kind": "gloss"
+            },
+            {
+              "label": "p",
+              "text": "with perpetual protection.",
               "kind": "gloss"
             }
           ]
@@ -7142,7 +7154,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "A Psalm <na>(a)</na> to David himself. Have <na>(b)</na> no emulation toward the malignant: neither envy them that do iniquity.",
+          "text": "<na>[1]</na> A Psalm <na>(a)</na> to David himself. Have <na>(b)</na> no emulation toward the malignant: neither envy them that do iniquity.",
           "notes": [
             {
               "label": "a",
@@ -7153,6 +7165,11 @@
               "label": "b",
               "text": "Neither be thou offended that the wicked do prosper in this world, nor imitate them that thou mayst also prosper.",
               "kind": "gloss"
+            },
+            {
+              "label": "1",
+              "text": "This Psalm is composed in order of the Alphabet, every distick beginning with a divers letter, to move the reader to diligent attention, which may serve in place of a larger commentary,",
+              "kind": "head"
             }
           ]
         },
