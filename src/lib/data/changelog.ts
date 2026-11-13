@@ -12,7 +12,7 @@ export interface ChangelogEntry {
 export const CHANGELOG: ChangelogEntry[] = [
 	{
 		version: '1.6',
-		date: 'November 12, 2026',
+		date: 'November 12 to 13, 2026',
 		iso: '2026-11-12',
 		changes: [
 			'Switch the Douay-Rheims text between modern and original spelling.',
@@ -22,6 +22,9 @@ export const CHANGELOG: ChangelogEntry[] = [
 			'Copy annotations with their formatting intact.',
 			'Updated Challoner statistics and reference pages.',
 			'Removed a duplicated verse in 3 Esdras 2:1.',
+			'Original-spelling text: the 1609 and 1582 margin citations completed, and missing margin notes added, among them the Esther and Judith lectionary notes and the Psalm 36 alphabet note.',
+			'Corrected annotations: notes that showed the text of another note, notes cut short, and chapter summaries attached to the wrong chapter.',
+			'Restored the text of 4 Esdras 13:31.',
 			'Fixes to the mobile study panel and the Reading options menu.'
 		]
 	},
