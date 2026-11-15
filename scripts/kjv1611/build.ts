@@ -174,6 +174,11 @@ function build(): void {
 			else if (slug === 'esther') pool = sourcePool(src!, wits[0], mc.chapter);
 			else if (src) pool = sourcePool(src, wits[0], mc.chapter);
 			else pool = arulPool(wits[0], mc.chapter);
+			// The aruljohn source glues the Prologue to Ecclesiasticus 1:1; the modern KJV has none.
+			if (slug === 'ecclesiasticus' && mc.chapter === 1 && pool[0]?.text.length > 1000) {
+				const cut = pool[0].text.lastIndexOf('  All ');
+				if (cut > 0) pool[0] = { ...pool[0], text: pool[0].text.slice(cut).trim() };
+			}
 			void identity;
 
 			// map modern verse → pool entry

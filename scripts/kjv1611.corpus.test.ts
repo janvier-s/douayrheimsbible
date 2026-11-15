@@ -25,6 +25,21 @@ describe.skipIf(!existsSync(ORIG))('kjv-1611 corpus', () => {
 		expect(files.length).toBe(76);
 	});
 
+	it('has no verse wildly longer than its modern counterpart (e.g. a glued-on Prologue)', () => {
+		for (const f of files) {
+			const m = load(MODERN, f);
+			const o = load(ORIG, f);
+			for (const [i, mc] of m.chapters.entries())
+				for (const mv of mc.verses) {
+					const ov = o.chapters[i].verses.find((v) => v.verse === mv.verse);
+					if (!ov || ov.modern) continue;
+					expect(ov.text.length, `${f} ${mc.chapter}:${mv.verse}`).toBeLessThan(
+						mv.text.length * 5 + 60
+					);
+				}
+		}
+	});
+
 	it('has the same chapter/verse keys as kjv (except Psalm titles, verse 0)', () => {
 		for (const f of files) {
 			const m = load(MODERN, f);

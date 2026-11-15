@@ -3,6 +3,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { FONTS, getFontById } from '$lib/data/fonts';
 	import SettingHint from './SettingHint.svelte';
+	import { hasSpellingSwitch } from '$lib/utils/spelling';
 
 	interface Props {
 		compareMode?: boolean;
@@ -26,7 +27,9 @@
 	let activeFontId = $derived($prefs.dyslexiaFont ? 'grace' : $prefs.fontFamily);
 	let activeFont = $derived(getFontById(activeFontId));
 	let activeFontStack = $derived(
-		activeFontId === 'grace' ? "'Grace Dyslexic MD', sans-serif" : (activeFont?.stack ?? 'inherit')
+		activeFontId === 'grace'
+			? "'Grace Dyslexic MD', 'Gentium Plus Marks', sans-serif"
+			: (activeFont?.stack ?? 'inherit')
 	);
 
 	onMount(() => {
@@ -55,9 +58,12 @@
 		if (on) {
 			document.documentElement.style.setProperty(
 				'--font-reader',
-				"'Grace Dyslexic MD', sans-serif"
+				"'Grace Dyslexic MD', 'Gentium Plus Marks', sans-serif"
 			);
-			document.documentElement.style.setProperty('--font-ui', "'Grace Dyslexic MD', sans-serif");
+			document.documentElement.style.setProperty(
+				'--font-ui',
+				"'Grace Dyslexic MD', 'Gentium Plus Marks', sans-serif"
+			);
 			document.documentElement.style.setProperty('--font-dropcap', 'inherit');
 		} else {
 			const font = getFontById($prefs.fontFamily);
@@ -560,11 +566,13 @@
 				</SettingHint>
 			</label>
 
-			{#if translationId === 'odr' && !compareMode}
+			{#if hasSpellingSwitch(translationId, compareMode)}
 				<div>
 					<span class="block mb-xs">
 						<SettingHint
-							text="Read the Original Douay-Rheims in the 1582 and 1609 spelling, or in modern spelling. Notes and annotations follow. A few items have no original-spelling text and stay modern. Search uses modern spelling."
+							text={translationId === 'kjv'
+								? 'Read the King James Bible in its 1611 spelling (long s, u/v and i/j as printed), or in modern spelling. A few verses have no 1611 text and stay modern. Search uses modern spelling.'
+								: 'Read the Original Douay-Rheims in the 1582 and 1609 spelling, or in modern spelling. Notes and annotations follow. A few items have no original-spelling text and stay modern. Search uses modern spelling.'}
 						>
 							Spelling
 						</SettingHint>

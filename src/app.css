@@ -363,7 +363,8 @@
 	--header-height: 100px;
 
 	--font-reader:
-		'Gentium Plus', 'Libre Baskerville', 'SymbolFallback', Georgia, 'Times New Roman', serif;
+		'Gentium Plus', 'Gentium Plus Marks', 'Libre Baskerville', 'SymbolFallback', Georgia,
+		'Times New Roman', serif;
 	/* Fixed Baskerville stack — unaffected by the reader font preference. */
 	--font-baskerville: 'Libre Baskerville', 'SymbolFallback', Georgia, 'Times New Roman', serif;
 	--font-ui:
