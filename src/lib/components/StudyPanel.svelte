@@ -1194,13 +1194,6 @@
 								count={facsimileCount}
 								bookName={bookData?.short_title ?? bookData?.book ?? ''}
 							/>
-							<p class="prose-para">
-								Facsimile scans courtesy of
-								<a href="https://sanctaclarapress.com" target="_blank" rel="noopener noreferrer"
-									>Sancta Clara Press</a
-								>
-								(sanctaclarapress.com).
-							</p>
 						</div>
 					{:else}
 						<div class="empty-state">
@@ -1562,6 +1555,16 @@
 			</div>
 		{/key}
 	</div>
+
+	{#if $studyPanel.activeTab === 'facsimile' && isOdr && facsimileCount > 0}
+		<p class="panel-credit shrink-0">
+			Facsimile scans courtesy of Sancta Clara Press (<a
+				href="https://sanctaclarapress.com"
+				target="_blank"
+				rel="noopener noreferrer">sanctaclarapress.com</a
+			>).
+		</p>
+	{/if}
 </aside>
 
 <style>
@@ -1655,6 +1658,27 @@
 	.panel-scroll::-webkit-scrollbar-thumb:hover {
 		background: color-mix(in srgb, var(--color-accent) 70%, transparent);
 		background-clip: padding-box;
+	}
+
+	/* Source credit pinned under the scroll area (Facsimile tab). */
+	.panel-credit {
+		padding: 8px 52px 10px;
+		border-top: 1px solid var(--color-border);
+		font-family: var(--font-reader);
+		font-size: 12px;
+		font-style: italic;
+		line-height: 1.5;
+		color: var(--color-subtle);
+	}
+
+	.panel-credit a {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.panel-credit a:hover {
+		color: var(--color-foreground);
 	}
 
 	/* ─── Content ───────────────────────────────────── */

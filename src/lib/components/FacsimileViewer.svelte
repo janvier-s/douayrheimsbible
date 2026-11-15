@@ -99,7 +99,7 @@
 	>
 		{#if failed}
 			<p class="fac-error">This page could not be loaded.</p>
-		{:else}
+		{:else if current > 0}
 			{#key current}
 				<img
 					class="fac-full"
