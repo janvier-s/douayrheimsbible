@@ -11,6 +11,7 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
+	import { injectDropcap, stripOpeningSmallCaps } from '$lib/utils/dropcap';
 	import { highlightLemmas, lemmasForPart } from '$lib/utils/lemmas';
 	import { applyClarifications, clarificationsForPart } from '$lib/utils/clarifications';
 	import type { BookClarifications, Clarification } from '$lib/utils/clarifications';
@@ -343,32 +344,6 @@
 		return text.replace(SUPER_RE, '');
 	}
 
-	/** The source marks the word (or short phrase) after a chapter's opening
-	 *  drop cap with <sc>, matching the original print's small-caps run-on.
-	 *  That is a typesetting cue for where the drop cap goes, not the same
-	 *  small-caps styling <sc> carries mid-verse for divine names — so at the
-	 *  chapter open it is always unwrapped back to plain text, independent of
-	 *  the small-caps and drop-cap preferences. */
-	function stripOpeningSmallCaps(html: string): string {
-		const mark = html.match(/^<mark [^<>]*>/);
-		if (mark) return mark[0] + stripOpeningSmallCaps(html.slice(mark[0].length));
-		return html.replace(/^<sc>([\s\S]*?)<\/sc>/, '$1');
-	}
-
-	/** Wrap the first letter of rendered HTML in a dropcap span. */
-	function injectDropcap(html: string): string {
-		// A catchword that opens the verse would put its tint behind the dropcap,
-		// and a block of colour behind a three-line letter reads as a mistake.
-		// Find the letter inside the mark, then hoist the cap out in front of it.
-		const mark = html.match(/^<mark [^<>]*>/);
-		if (mark) {
-			const inner = injectDropcap(html.slice(mark[0].length));
-			const cap = inner.match(/^<span class="dropcap">[^<]*<\/span>/);
-			return cap ? cap[0] + mark[0] + inner.slice(cap[0].length) : mark[0] + inner;
-		}
-		return html.replace(/^([A-Za-zÀ-ÿ])/, '<span class="dropcap">$1</span>');
-	}
-
 	/**
 	 * Editorial labels the Vulgate carries inline: the speakers of the Canticle
 	 * (<Sponsa>, <Chorus Adolescentularum>), the Hebrew letters heading each
@@ -423,7 +398,9 @@
 			t = stripStudyMarkers(t, showItalics);
 		}
 		const t2 = bionic ? applyBionic(t) : t;
-		const t3 = isChapterOpen ? stripOpeningSmallCaps(t2) : t2;
+		// The opening run stays in small caps after the drop cap, as the print sets it.
+		// With small caps off, unwrap it so the drop cap still finds its letter.
+		const t3 = isChapterOpen && !smallCaps ? stripOpeningSmallCaps(t2) : t2;
 		const result = smallCaps ? allcapsToSmallcaps(t3) : t3;
 		// Dropcap: only when bionic is off (bionic wraps letters in <b>, complicating injection)
 		const final = isDropcap && !bionic ? injectDropcap(result) : result;

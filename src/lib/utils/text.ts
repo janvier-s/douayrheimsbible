@@ -75,6 +75,10 @@ const SC_MINOR = new Set([
 	'your'
 ]);
 
+/** Text that ends on a small-caps span followed only by whitespace and note
+ *  markers (raw <cr>/<na> tags or the study-mode buttons they render to). */
+const SC_CONTINUES = /<span class="sc">[^<]*<\/span>(?:\s|<(button|cr|na|mn)\b[^>]*>[^<]*<\/\1>)+$/;
+
 /** Normalize an ALL-CAPS word for small-caps rendering.
  *  Minor/function words → fully lowercase (uniform small caps).
  *  Content words → first letter upper, rest lower (full-size initial cap). */
@@ -118,9 +122,12 @@ export function allcapsToSmallcaps(html: string): string {
 	);
 	// Pass 3: ensure the first letter of each span is always capitalized
 	// (handles cases where a minor word ends up first after merge).
-	result = result.replace(
-		/<span class="sc">([a-z])/g,
-		(_, ch: string) => `<span class="sc">${ch.toUpperCase()}`
+	// A run split only by a note marker ("IN [1] THE beginning") is still one
+	// run, so its second half keeps its small first letter.
+	result = result.replace(/<span class="sc">([a-z])/g, (m, ch: string, at: number) =>
+		SC_CONTINUES.test(result.slice(Math.max(0, at - 400), at))
+			? m
+			: `<span class="sc">${ch.toUpperCase()}`
 	);
 	return result;
 }

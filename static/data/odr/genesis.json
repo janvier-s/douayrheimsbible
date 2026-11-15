@@ -264,17 +264,17 @@
       "verses": [
         {
           "verse": 1,
-          "text": "In <cr>[1]</cr> the beginning <sc>GOD</sc> created heaven and earth.",
+          "text": "<sc>In</sc> <cr>[1]</cr> <sc>the</sc> beginning <sc>GOD</sc> created heaven and earth.",
           "has_annotation": true,
           "lemmas": [
             [
               0,
-              67,
+              85,
               2
             ],
             [
               0,
-              29,
+              47,
               1
             ]
           ],
@@ -519,7 +519,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The <cr>[1]</cr> heavens therefore & the earth were fully finished, and all the furniture of them.",
+          "text": "<sc>The</sc> <cr>[1]</cr> heavens therefore & the earth were fully finished, and all the furniture of them.",
           "cross_refs": [
             {
               "text": "Exod. 20, 11. Deut. 5, 14. Heb. 4, 4."
@@ -710,11 +710,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "But <na>(a)</na> the serpent also was more subtile than all the beasts of the earth, which our Lord God had made. Which said to the woman: Why hath God commanded you, that you should not eat of every tree of Paradise?",
+          "text": "<sc>But</sc> <na>(a)</na> the serpent also was more subtile than all the beasts of the earth, which our Lord God had made. Which said to the woman: Why hath God commanded you, that you should not eat of every tree of Paradise?",
           "has_annotation": true,
           "lemmas": [
             [
-              139,
+              148,
               12,
               1
             ]
@@ -929,7 +929,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Adam knew Eve his wife, who conceived and brought forth Cain, saying: I have gotten a man through God."
+          "text": "<sc>And</sc> Adam knew Eve his wife, who conceived and brought forth Cain, saying: I have gotten a man through God."
         },
         {
           "verse": 2,
@@ -1144,7 +1144,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "This <cr>[1]</cr> is the book of the generation of Adam. In the day, when God created man, to the likeness of God made he him.",
+          "text": "<sc>This</sc> <cr>[1]</cr> is the book of the generation of Adam. In the day, when God created man, to the likeness of God made he him.",
           "cross_refs": [
             {
               "text": "Sap. 2, 24. Eccl. 17, 1."
@@ -1334,7 +1334,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And after that men began to be multiplied upon the earth, and had procreation of daughters,"
+          "text": "<sc>And</sc> after that men began to be multiplied upon the earth, and had procreation of daughters,"
         },
         {
           "verse": 2,
@@ -1517,7 +1517,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And our Lord said to him: Get thee in, thou and all thy house into the ark; for I have seen thee just <na>(a)</na> in my sight in this generation.",
+          "text": "<sc>And</sc> our Lord said to him: Get thee in, thou and all thy house into the ark; for I have seen thee just <na>(a)</na> in my sight in this generation.",
           "notes": [
             {
               "label": "a",
@@ -1690,7 +1690,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <na>[1]</na> God remembered Noe, and all the beasts, and all the cattle which were with him in the ark, and brought a wind upon the earth, and the waters decreased.",
+          "text": "<sc>And</sc> <na>[1]</na> God remembered Noe, and all the beasts, and all the cattle which were with him in the ark, and brought a wind upon the earth, and the waters decreased.",
           "notes": [
             {
               "label": "1",
@@ -2202,7 +2202,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And God blessed Noe and his sons, And he said to them: <na>(a)</na> Increase & multiply, and replenish the earth.",
+          "text": "<sc>And</sc> God blessed Noe and his sons, And he said to them: <na>(a)</na> Increase & multiply, and replenish the earth.",
           "notes": [
             {
               "label": "a",
@@ -2409,7 +2409,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "These are the generations of the sons of Noe, Sem, Cham, and Japheth: and children were born to them after the flood."
+          "text": "<sc>These</sc> are the generations of the sons of Noe, Sem, Cham, and Japheth: and children were born to them after the flood."
         },
         {
           "verse": 2,
@@ -2588,7 +2588,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And the earth was of one tongue, and all one speech."
+          "text": "<sc>And</sc> the earth was of one tongue, and all one speech."
         },
         {
           "verse": 2,
@@ -2780,7 +2780,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <cr>[1]</cr><na>[2]</na> our Lord said to Abram: Go forth of thy country, and out of thy kindred, and out of thy father's house, and come into a land which I will shew thee.",
+          "text": "<sc>And</sc> <cr>[1]</cr><na>[2]</na> our Lord said to Abram: Go forth of thy country, and out of thy kindred, and out of thy father's house, and come into a land which I will shew thee.",
           "cross_refs": [
             {
               "text": "Act. 7."
@@ -3152,7 +3152,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Abram therefore ascended out of Ægypt, he and his wife, and all that he had, and Lot with him to the south coast."
+          "text": "<sc>Abram</sc> therefore ascended out of Ægypt, he and his wife, and all that he had, and Lot with him to the south coast."
         },
         {
           "verse": 2,
@@ -3244,7 +3244,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And it came to pass in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamyts, and Thadal the king of Nations."
+          "text": "<sc>And</sc> it came to pass in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamyts, and Thadal the king of Nations."
         },
         {
           "verse": 2,
@@ -3382,7 +3382,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "When these things therefore were done, the word of our Lord was made to Abram by a vision saying: fear not Abram, I am thy Protector, and thy reward exceeding great."
+          "text": "<sc>When</sc> these things therefore were done, the word of our Lord was made to Abram by a vision saying: fear not Abram, I am thy Protector, and thy reward exceeding great."
         },
         {
           "verse": 2,
@@ -3525,7 +3525,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Sarai therefore the wife of Abram had brought forth no children; but having an handmaid, an Ægyptian named Agar,"
+          "text": "<sc>Sarai</sc> therefore the wife of Abram had brought forth no children; but having an handmaid, an Ægyptian named Agar,"
         },
         {
           "verse": 2,
@@ -3610,7 +3610,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And after that he began to be ninety and nine years old, our Lord appeared unto him, and said unto him: I am the God almighty: walk before me, and be <na>(a)</na> perfect.",
+          "text": "<sc>And</sc> after that he began to be ninety and nine years old, our Lord appeared unto him, and said unto him: I am the God almighty: walk before me, and be <na>(a)</na> perfect.",
           "notes": [
             {
               "label": "a",
@@ -3783,7 +3783,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And God appeared to him in the vale of Mambre as he sat in the door of his tent, in the very heat of the day."
+          "text": "<sc>And</sc> God appeared to him in the vale of Mambre as he sat in the door of his tent, in the very heat of the day."
         },
         {
           "verse": 2,
@@ -3958,7 +3958,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And the two <na>(a)</na> Angels came to Sodome at even, and Lot sitting in the gates of the city. Who when he had seen them, rose up & went to meet them: and adored prostrate unto the ground,",
+          "text": "<sc>And</sc> the two <na>(a)</na> Angels came to Sodome at even, and Lot sitting in the gates of the city. Who when he had seen them, rose up & went to meet them: and adored prostrate unto the ground,",
           "notes": [
             {
               "label": "a",
@@ -4158,7 +4158,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Abraham removed from thence into the south country and dwelt between Cades, and Sur: and he lived as a pilgrim in Gerara."
+          "text": "<sc>Abraham</sc> removed from thence into the south country and dwelt between Cades, and Sur: and he lived as a pilgrim in Gerara."
         },
         {
           "verse": 2,
@@ -4263,7 +4263,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <na>[1]</na> our Lord visited Sara, as he had promised: and fulfilled the things which he spake.",
+          "text": "<sc>And</sc> <na>[1]</na> our Lord visited Sara, as he had promised: and fulfilled the things which he spake.",
           "notes": [
             {
               "label": "1",
@@ -4448,11 +4448,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Which <cr>[1]</cr> things being done, <na>[2]</na> God tempted Abraham, and said to him: Abraham, Abraham. But he answered: Here I am.",
+          "text": "<sc>Which</sc> <cr>[1]</cr> things being done, <na>[2]</na> God tempted Abraham, and said to him: Abraham, Abraham. But he answered: Here I am.",
           "has_annotation": true,
           "lemmas": [
             [
-              55,
+              64,
               7,
               1
             ]
@@ -4599,7 +4599,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Sara lived an hundred twenty seven years."
+          "text": "<sc>And</sc> Sara lived an hundred twenty seven years."
         },
         {
           "verse": 2,
@@ -4699,7 +4699,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Abraham was old, and of many days, and our Lord had blessed him in all things."
+          "text": "<sc>And</sc> Abraham was old, and of many days, and our Lord had blessed him in all things."
         },
         {
           "verse": 2,
@@ -5009,7 +5009,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Abraham married another wife named Cetura:"
+          "text": "<sc>And</sc> Abraham married another wife named Cetura:"
         },
         {
           "verse": 2,
@@ -5204,7 +5204,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And when a famine was risen in the land, after that sterility that had chanced in the days of Abraham, Isaac went to Abimelech king of the Palestines into Gerara."
+          "text": "<sc>And</sc> when a famine was risen in the land, after that sterility that had chanced in the days of Abraham, Isaac went to Abimelech king of the Palestines into Gerara."
         },
         {
           "verse": 2,
@@ -5415,7 +5415,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <na>[1]</na> Isaac was old, and his eyes were dim, and he could not see: and he called Esau his elder son, and said to him: My son? Who answered: Here I am.",
+          "text": "<sc>And</sc> <na>[1]</na> Isaac was old, and his eyes were dim, and he could not see: and he called Esau his elder son, and said to him: My son? Who answered: Here I am.",
           "notes": [
             {
               "label": "1",
@@ -5663,7 +5663,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Isaac therefore called Jacob, and blessed him, and commanded him saying: Take not a wife of the stock of Chanaan;"
+          "text": "<sc>Isaac</sc> therefore called Jacob, and blessed him, and commanded him saying: Take not a wife of the stock of Chanaan;"
         },
         {
           "verse": 2,
@@ -5825,7 +5825,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Jacob therefore going on his journey, came into the East country."
+          "text": "<sc>Jacob</sc> therefore going on his journey, came into the East country."
         },
         {
           "verse": 2,
@@ -5999,7 +5999,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Rachel seeing she was unfruitful, <na>(a)</na> envied her sister, and said to her husband: Give me children, otherwise I shall die.",
+          "text": "<sc>And</sc> Rachel seeing she was unfruitful, <na>(a)</na> envied her sister, and said to her husband: Give me children, otherwise I shall die.",
           "notes": [
             {
               "label": "a",
@@ -6205,7 +6205,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "After he heard the words of Laban's sons saying: Jacob hath taken all that was our father's, and being enriched of his substance, is become great:"
+          "text": "<sc>After</sc> he heard the words of Laban's sons saying: Jacob hath taken all that was our father's, and being enriched of his substance, is become great:"
         },
         {
           "verse": 2,
@@ -6460,7 +6460,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Jacob also went on his journey that he had begun: and the Angels of God met him."
+          "text": "<sc>Jacob</sc> also went on his journey that he had begun: and the Angels of God met him."
         },
         {
           "verse": 2,
@@ -6617,7 +6617,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Jacob lifting up his eyes, saw Esau coming, and with him four hundred men: and he divided the children of Lia, and of Rachel, and of the two handmaids:"
+          "text": "<sc>And</sc> Jacob lifting up his eyes, saw Esau coming, and with him four hundred men: and he divided the children of Lia, and of Rachel, and of the two handmaids:"
         },
         {
           "verse": 2,
@@ -6710,7 +6710,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <na>[1]</na> Dina the daughter of Lia went forth to see the women of that country.",
+          "text": "<sc>And</sc> <na>[1]</na> Dina the daughter of Lia went forth to see the women of that country.",
           "notes": [
             {
               "label": "1",
@@ -6854,7 +6854,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "In the mean time God spake to Jacob: Arise, and go up to Bethel, and dwell there, and make an altar to God that appeared to thee when thou didst fly from Esau thy brother."
+          "text": "<sc>In the</sc> mean time God spake to Jacob: Arise, and go up to Bethel, and dwell there, and make an altar to God that appeared to thee when thou didst fly from Esau thy brother."
         },
         {
           "verse": 2,
@@ -7028,11 +7028,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And these are the generations of Esau, the same is Edom.",
+          "text": "<sc>And</sc> these are the generations of Esau, the same is Edom.",
           "has_annotation": true,
           "lemmas": [
             [
-              14,
+              23,
               23,
               1
             ]
@@ -7244,7 +7244,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Jacob dwelt in the land of Chanaan, wherein his father sojourned."
+          "text": "<sc>And</sc> Jacob dwelt in the land of Chanaan, wherein his father sojourned."
         },
         {
           "verse": 2,
@@ -7463,7 +7463,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "The <na>(a)</na> same time Judas going down from his brethren, turned in to a man an Odollamite, named Hiras.",
+          "text": "<sc>The</sc> <na>(a)</na> same time Judas going down from his brethren, turned in to a man an Odollamite, named Hiras.",
           "notes": [
             {
               "label": "a",
@@ -7618,7 +7618,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Therefore Joseph was brought into Ægypt, and Putiphar an Eunuch of Pharao, Prince of his army, a man of Ægypt bought him, at the hand of the Ismaelites, by whom he was brought."
+          "text": "<sc>Therefore</sc> Joseph was brought into Ægypt, and Putiphar an Eunuch of Pharao, Prince of his army, a man of Ægypt bought him, at the hand of the Ismaelites, by whom he was brought."
         },
         {
           "verse": 2,
@@ -7765,7 +7765,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "These things being so done, it chanced that two Eunuchs, the cupbearer of the king of Ægypt, and his baker, offended against their lord."
+          "text": "<sc>These</sc> things being so done, it chanced that two Eunuchs, the cupbearer of the king of Ægypt, and his baker, offended against their lord."
         },
         {
           "verse": 2,
@@ -7878,7 +7878,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "After two years <na>(a)</na> Pharao saw a dream. He thought he stood upon a river,",
+          "text": "<sc>After</sc> two years <na>(a)</na> Pharao saw a dream. He thought he stood upon a river,",
           "notes": [
             {
               "label": "a",
@@ -8163,7 +8163,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Jacob hearing that victuals were sold in Ægypt, he said to his sons: Why neglect ye?"
+          "text": "<sc>And</sc> Jacob hearing that victuals were sold in Ægypt, he said to his sons: Why neglect ye?"
         },
         {
           "verse": 2,
@@ -8367,7 +8367,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "In the mean time the famine did oppress all the land very sore."
+          "text": "<sc>In the</sc> mean time the famine did oppress all the land very sore."
         },
         {
           "verse": 2,
@@ -8552,7 +8552,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Joseph commanded the steward of his house, saying: Fill their sacks with corn, as much as they can hold: and put the money of every one in the top of his sack."
+          "text": "<sc>And</sc> Joseph commanded the steward of his house, saying: Fill their sacks with corn, as much as they can hold: and put the money of every one in the top of his sack."
         },
         {
           "verse": 2,
@@ -8722,7 +8722,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Joseph could no longer refrain many standing by in presence: whereupon he commanded that all should go forth, and no stranger should be present at their acknowledging one of another."
+          "text": "<sc>Joseph</sc> could no longer refrain many standing by in presence: whereupon he commanded that all should go forth, and no stranger should be present at their acknowledging one of another."
         },
         {
           "verse": 2,
@@ -8862,11 +8862,11 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And <na>[1]</na> Israel taking his journey with all things that he had came to the well of the oath, and killing there victims to the God of his father Isaac,",
+          "text": "<sc>And</sc> <na>[1]</na> Israel taking his journey with all things that he had came to the well of the oath, and killing there victims to the God of his father Isaac,",
           "has_annotation": true,
           "lemmas": [
             [
-              71,
+              80,
               28,
               1
             ]
@@ -9047,7 +9047,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Joseph therefore going in told Pharao, saying: My father and brethren, their sheep and herds, and all things that they possess, are come out of the Land of Chanaan; and behold they stay in the Land of Gessen."
+          "text": "<sc>Joseph</sc> therefore going in told Pharao, saying: My father and brethren, their sheep and herds, and all things that they possess, are come out of the Land of Chanaan; and behold they stay in the Land of Gessen."
         },
         {
           "verse": 2,
@@ -9220,7 +9220,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "These things being so done, it was told Joseph that his father was sick: who, taking his two sons Manasses and Ephraim, went forward."
+          "text": "<sc>These</sc> things being so done, it was told Joseph that his father was sick: who, taking his two sons Manasses and Ephraim, went forward."
         },
         {
           "verse": 2,
@@ -9355,7 +9355,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "And Jacob called his sons, and said to them: Come together, that I <na>(a)</na> may shew you the things that shall come to you in the last days.",
+          "text": "<sc>And</sc> Jacob called his sons, and said to them: Come together, that I <na>(a)</na> may shew you the things that shall come to you in the last days.",
           "notes": [
             {
               "label": "a",
@@ -9565,7 +9565,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "Which Joseph seeing fell upon his father's face weeping and kissing him."
+          "text": "<sc>Which</sc> Joseph seeing fell upon his father's face weeping and kissing him."
         },
         {
           "verse": 2,
