@@ -130,14 +130,14 @@ const name = (book: string, c: number, n: number) => `${book}-Chapter-${c}-${n}.
 export async function crawlBook(book: string, maxChapter = 150): Promise<string[]> {
 	let cur: { c: number; n: number } | undefined;
 	// start: first page filed under a low chapter number at a low page number
-	for (let n = 1; n <= 8 && !cur; n++)
-		for (let c = 0; c <= 4 && !cur; c++) if (await have(name(book, c, n))) cur = { c, n };
+	for (let n = 1; n <= 12 && !cur; n++)
+		for (let c = 0; c <= 6 && !cur; c++) if (await have(name(book, c, n))) cur = { c, n };
 	if (!cur) return [];
 	const files = [name(book, cur.c, cur.n)];
 	const W = book === 'Psalms' ? 14 : 5;
 	for (;;) {
 		let next: { c: number; n: number } | undefined;
-		for (let dn = 1; dn <= 2 && !next; dn++)
+		for (let dn = 1; dn <= 4 && !next; dn++)
 			for (let dc = 0; dc <= W && !next; dc++) {
 				if (cur.c + dc > maxChapter) break;
 				if (await have(name(book, cur.c + dc, cur.n + dn))) next = { c: cur.c + dc, n: cur.n + dn };
