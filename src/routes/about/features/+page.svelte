@@ -398,6 +398,13 @@
 			Septuagint and Latin Vulgate, and the Hebrew numbering used in most Protestant and modern Catholic
 			editions. The two traditions diverge at Psalm 9 and realign after Psalm 147.
 		</li>
+		<li>
+			<strong>Spelling:</strong> Reads the Original Douay-Rheims in its 1582 and 1609 spelling, and the
+			King James Version as printed in 1611: long s (ſ), the printer's abbreviations for “the” and “that”
+			(y with a small e or t above it), and the words the 1611 set in roman type to mark them as supplied.
+			The Apocrypha is given in the same spelling but without supplied-word marking, and the 1611 has
+			no Psalm titles to show.
+		</li>
 	</ul>
 
 	<h2>Prayer before Reading</h2>

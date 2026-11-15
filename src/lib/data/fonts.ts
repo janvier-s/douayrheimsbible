@@ -9,34 +9,34 @@ export const FONTS: FontDef[] = [
 	{
 		id: 'libre-baskerville',
 		label: 'Libre Baskerville',
-		stack: "'Libre Baskerville', Georgia, serif"
+		stack: "'Libre Baskerville', 'Gentium Plus Marks', Georgia, serif"
 	},
-	{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
+	{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', 'Gentium Plus Marks', Georgia, serif" },
 	{
 		id: 'im-fell-dw-pica',
 		label: 'IM Fell DW Pica',
-		stack: "'IM Fell DW Pica', 'IM Fell DW Pica SC', Georgia, serif"
+		stack: "'IM Fell DW Pica', 'IM Fell DW Pica SC', 'Gentium Plus Marks', Georgia, serif"
 	},
 	{
 		id: 'source-serif-4',
 		label: 'Source Serif',
-		stack: "'Source Serif 4', Georgia, serif"
+		stack: "'Source Serif 4', 'Gentium Plus Marks', Georgia, serif"
 	},
 	{
 		id: 'montserrat',
 		label: 'Montserrat',
-		stack: "'Montserrat', sans-serif",
+		stack: "'Montserrat', 'Gentium Plus Marks', sans-serif",
 		dividerBefore: true
 	},
 	{
 		id: 'libre-franklin',
 		label: 'Libre Franklin',
-		stack: "'Libre Franklin', sans-serif"
+		stack: "'Libre Franklin', 'Gentium Plus Marks', sans-serif"
 	},
 	{
 		id: 'noto-sans',
 		label: 'Noto Sans',
-		stack: "'Noto Sans', sans-serif"
+		stack: "'Noto Sans', 'Gentium Plus Marks', sans-serif"
 	}
 ];
 

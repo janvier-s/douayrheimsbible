@@ -255,6 +255,22 @@
 		>
 	</div>
 
+	<div class="license-block">
+		<p class="license-title">
+			<span class="license-cross" aria-hidden="true">✠</span> Sources · King James Version, 1611 spelling
+		</p>
+		<p class="license-body">
+			The King James Version in its 1611 spelling is built from a transcription of the 1611 text,
+			with the Apocrypha and the printer's abbreviations taken from
+			<a href="https://github.com/aruljohn/Bible-kjv-1611" target="_blank" rel="noopener noreferrer"
+				>aruljohn/Bible-kjv-1611</a
+			>. The long s is placed by reading the 1611 page images from
+			<a href="https://www.kingjamesbibleonline.org" target="_blank" rel="noopener noreferrer"
+				>kingjamesbibleonline.org</a
+			>, and checked against the proofread pages on Wikisource.
+		</p>
+	</div>
+
 	<h2 class="gen-subtitle">Genesis 1:1–2 across traditions</h2>
 
 	<p class="compare-intro">

@@ -54,6 +54,16 @@
 	font-style: italic;
 	font-display: fallback;
 }
+/* Long s and the printer's abbreviation marks (y + e/t) for the original-spelling texts:
+   the latin subsets of the reader fonts have none of them. */
+@font-face {
+	font-family: 'Gentium Plus Marks';
+	src: url('/fonts/GentiumPlus-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+017F, U+0364, U+036D;
+}
 /* Gentium Plus — polytonic Greek */
 @font-face {
 	font-family: 'Gentium Plus';
