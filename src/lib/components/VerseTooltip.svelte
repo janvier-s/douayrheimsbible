@@ -4,6 +4,8 @@
 	const bubble = createBubbler();
 	import { fade } from 'svelte/transition';
 	import { loadBook, loadTranslationBook, loadVersification } from '$lib/data/loader';
+	import { prefs } from '$lib/stores/prefs';
+	import { get } from 'svelte/store';
 	import { chapterVersification, previousRangeToOdr } from '$lib/utils/versification';
 	import { OSIS_TO_SLUG } from '$lib/search/resolve';
 	import { ALL_BOOKS, chapterRefBookName } from '$lib/data/books';
@@ -107,7 +109,12 @@
 						return verse ? stripTags(verse.text) : undefined;
 					};
 				} else {
-					const bookData = await loadTranslationBook(translationId, slug, fetch);
+					const bookData = await loadTranslationBook(
+						translationId,
+						slug,
+						fetch,
+						get(prefs).spelling ?? 'modern'
+					);
 					const chapter = bookData.chapters.find((c) => c.chapter === range.startChapter);
 					verseText = (v) => {
 						const verse = chapter?.verses.find((vr) => vr.verse === v);

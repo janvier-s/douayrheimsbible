@@ -10,6 +10,7 @@ export type TranslationId =
 	| 'knox'
 	| 'cpdv'
 	| 'kjv'
+	| 'kjv-orig'
 	| 'vul'
 	| 'rsv2ce';
 
@@ -86,6 +87,17 @@ export const TRANSLATIONS: Translation[] = [
 		seoName: 'King James Version',
 		seoDesc:
 			'Read {book} Chapter {chapter} in the King James Version (1611). Compare with the Douay-Rheims and other Catholic Bible translations.'
+	},
+	{
+		id: 'kjv-orig',
+		label: 'King James Version, 1611 spelling',
+		abbr: 'KJV-Orig',
+		year: '1611',
+		live: true,
+		ntOnly: false,
+		fullHeader: false,
+		compareOnly: true,
+		micro: '1611 Spelling'
 	},
 	{
 		id: 'drc',

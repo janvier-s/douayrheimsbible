@@ -6,7 +6,19 @@ import { get } from 'svelte/store';
 vi.mock('$app/environment', () => ({ browser: true }));
 
 const SAVED = {
-	order: ['vul', 'odr', 'odr-orig', 'kjv', 'drc', 'haydock', 'conf', 'knox', 'rsv2ce', 'cpdv'],
+	order: [
+		'vul',
+		'odr',
+		'odr-orig',
+		'kjv',
+		'kjv-orig',
+		'drc',
+		'haydock',
+		'conf',
+		'knox',
+		'rsv2ce',
+		'cpdv'
+	],
 	visible: ['odr', 'kjv', 'drc']
 };
 
@@ -82,6 +94,22 @@ describe('saved layout reset', () => {
 		expect(get(store).order).not.toEqual(stale.order);
 		expect(get(store).order).toContain('odr-orig');
 		expect([...get(store).visible]).toEqual(['odr', 'drc']);
+	});
+});
+
+describe('KJV 1611 spelling column', () => {
+	it('is a compare-only translation placed after the KJV', async () => {
+		const { TRANSLATIONS } = await import('$lib/stores/compare');
+		const t = TRANSLATIONS.find((x) => x.id === 'kjv-orig');
+		expect(t).toMatchObject({
+			label: 'King James Version, 1611 spelling',
+			abbr: 'KJV-Orig',
+			year: '1611',
+			compareOnly: true,
+			micro: '1611 Spelling'
+		});
+		const ids = TRANSLATIONS.map((x) => x.id);
+		expect(ids.indexOf('kjv-orig')).toBe(ids.indexOf('kjv') + 1);
 	});
 });
 

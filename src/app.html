@@ -53,7 +53,8 @@
 			// chapter text invisible (layout intact) until BibleReader has swapped it in.
 			(function () {
 				try {
-					if (location.pathname.indexOf('/odr/') !== 0) return;
+					if (location.pathname.indexOf('/odr/') !== 0 && location.pathname.indexOf('/kjv/') !== 0)
+						return;
 					var q = new URLSearchParams(location.search).get('spelling');
 					var p = JSON.parse(localStorage.getItem('reading-prefs') || '{}');
 					if (q === 'original' || (q !== 'modern' && p.spelling === 'original')) {

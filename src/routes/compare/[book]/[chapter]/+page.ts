@@ -43,6 +43,18 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		otherTranslations.map((t) => loadTranslationBook(t.id, slug, fetch))
 	);
 
+	// The KJV in 1611 spelling: same shape and numbering as the KJV, so it takes the KJV's
+	// route through the psalm remap below (a book missing from kjv-1611 resolves to modern KJV).
+	const kjvOrig = await loadTranslationBook('kjv', slug, fetch, 'original').then(
+		(value) => ({ status: 'fulfilled' as const, value }),
+		() => ({ status: 'rejected' as const })
+	);
+	const kjvOrigTranslation = TRANSLATIONS.find((t) => t.id === 'kjv-orig')!;
+	otherTranslations.push(kjvOrigTranslation);
+	translationResults.push(
+		kjvOrig as PromiseSettledResult<Awaited<ReturnType<typeof loadTranslationBook>>>
+	);
+
 	// Comparison rows are keyed on the Vulgate-aligned numbering every other column
 	// uses. In the chapters ODR re-divided to the 1609/1582 printing, the ODR columns
 	// are translated onto those rows through versification.json.
@@ -76,7 +88,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 			continue;
 		}
 
-		if (remapPsalms && t.id === 'kjv') {
+		if (remapPsalms && (t.id === 'kjv' || t.id === 'kjv-orig')) {
 			const kjvChapters = kjvPsalmsForDr(chapterNum);
 			const kjvRefs = [];
 			const textByRef: Record<string, string> = {};
@@ -84,10 +96,21 @@ export const load: PageLoad = async ({ params, fetch }) => {
 			// belongs on the row where the Douay prints its own title, not in the
 			// run of numbered verses.
 			let titleRef: { chapter: number; verse: number } | null = null;
+			// The 1611 text has no superscriptions, so its rows are laid out from the modern KJV
+			// (same chapters and verses) and filled with whatever 1611 text exists for each ref.
+			const modernKjv = translationResults[otherTranslations.findIndex((x) => x.id === 'kjv')];
+			const structure =
+				t.id === 'kjv-orig' && modernKjv?.status === 'fulfilled' ? modernKjv.value : result.value;
 			for (const num of kjvChapters) {
-				const ch = result.value.chapters.find((c) => c.chapter === num);
+				const ch = structure.chapters.find((c) => c.chapter === num);
+				const own = new Map(
+					(result.value.chapters.find((c) => c.chapter === num)?.verses ?? []).map((v) => [
+						v.verse,
+						v.text
+					])
+				);
 				for (const v of ch?.verses ?? []) {
-					textByRef[`${num}:${v.verse}`] = v.text;
+					textByRef[`${num}:${v.verse}`] = own.get(v.verse) ?? '';
 					if (v.verse === 0) {
 						if (num === kjvChapters[0]) titleRef = { chapter: num, verse: 0 };
 						continue;
@@ -150,7 +173,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
 		const extra = new Set(rows);
 		// The KJV and RSV-2CE number psalms (and some other chapters) from the Hebrew; leave them out.
 		for (const [id, m] of Object.entries(verseMaps)) {
-			if (id === 'kjv' || id === 'rsv2ce') continue;
+			if (id === 'kjv' || id === 'kjv-orig' || id === 'rsv2ce') continue;
 			for (const k of Object.keys(m)) if (Number(k) > 0 && m[Number(k)]) extra.add(Number(k));
 		}
 		rows = [...extra].sort((a, b) => a - b);

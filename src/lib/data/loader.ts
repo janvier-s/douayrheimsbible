@@ -440,21 +440,35 @@ export function loadConfCommentary(
 
 const translationBookCache = new Map<string, Promise<TranslationBook>>();
 
+/** Translations that also have a dataset in original spelling: id → directory under static/data/. */
+export const SPELLING_DIRS: Record<string, string> = { kjv: 'kjv-1611' };
+
 /**
  * Fetches a non-ODR translation book from /data/{id}/{slug}.json.
- * Caches per `{id}/{slug}` key. Follows the same pattern as loadBook().
+ * With `spelling: 'original'`, a translation listed in SPELLING_DIRS reads its original-spelling
+ * dataset instead (the KJV's 1611 text), falling back to the modern text when that book is missing.
+ * Caches per spelling and `{id}/{slug}`. Follows the same pattern as loadBook().
  */
 export function loadTranslationBook(
 	id: string,
 	slug: string,
-	fetch: typeof globalThis.fetch
+	fetch: typeof globalThis.fetch,
+	spelling: Spelling = 'modern'
 ): Promise<TranslationBook> {
-	const key = `${id}/${slug}`;
+	const dir = spelling === 'original' ? SPELLING_DIRS[id] : undefined;
+	const key = `${dir ? 'original' : 'modern'}:${id}/${slug}`;
 	if (!translationBookCache.has(key)) {
-		const promise = fetch(`/data/${id}/${slug}.json`).then((res) => {
-			if (!res.ok) throw new Error(`Book not found: ${id}/${slug}`);
-			return res.json() as Promise<TranslationBook>;
-		});
+		const modern = () =>
+			fetch(`/data/${id}/${slug}.json`).then((res) => {
+				if (!res.ok) throw new Error(`Book not found: ${id}/${slug}`);
+				return res.json() as Promise<TranslationBook>;
+			});
+		const promise = dir
+			? fetch(`/data/${dir}/${slug}.json`).then(
+					(res) => (res.ok ? (res.json() as Promise<TranslationBook>) : modern()),
+					() => modern()
+				)
+			: modern();
 		promise.then(null, () => translationBookCache.delete(key));
 		translationBookCache.set(key, promise);
 	}

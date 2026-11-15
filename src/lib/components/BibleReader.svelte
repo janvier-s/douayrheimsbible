@@ -6,7 +6,13 @@
 	import { browser } from '$app/environment';
 	import { replaceState } from '$app/navigation';
 	import ChapterView from './ChapterView.svelte';
-	import { loadBook, getChapter, getCachedBook, loadTranslationBook } from '$lib/data/loader';
+	import {
+		loadBook,
+		getChapter,
+		getCachedBook,
+		loadTranslationBook,
+		SPELLING_DIRS
+	} from '$lib/data/loader';
 	import { getPrevNavBook } from '$lib/data/books';
 	import type { Chapter as ChapterType } from '$lib/data/types';
 	import { debounce } from '$lib/utils/debounce';
@@ -71,7 +77,12 @@
 				totalChapters: bookData.chapters[bookData.chapters.length - 1].chapter
 			};
 		} else {
-			const bookData = await loadTranslationBook(translationId, slug, fetch);
+			const bookData = await loadTranslationBook(
+				translationId,
+				slug,
+				fetch,
+				get(prefs).spelling ?? 'modern'
+			);
 			const ch = bookData.chapters.find((c) => c.chapter === chapterNum);
 			// TranslationChapter is structurally compatible with Chapter
 			return {
@@ -451,15 +462,28 @@
 	let spellingReady = $state(false);
 
 	async function syncSpelling(target: 'modern' | 'original') {
-		if (translationId !== 'odr' || target === shownSpelling) return;
+		if (target === shownSpelling) return;
+		// The ODR and any translation with an original-spelling dataset (the KJV's 1611 text)
+		if (translationId !== 'odr' && !(translationId in SPELLING_DIRS)) return;
 		const slugs = [...new Set(chapters.map((c) => c.bookMeta.slug))];
 		try {
-			const books = await Promise.all(slugs.map((slug) => loadBook(slug, fetch, target)));
+			const books = await Promise.all(
+				slugs.map((slug) =>
+					translationId === 'odr'
+						? loadBook(slug, fetch, target)
+						: loadTranslationBook(translationId, slug, fetch, target)
+				)
+			);
 			// The reader may have toggled again while the books loaded
 			if (get(prefs).spelling !== target) return;
 			chapters = chapters.map((c) => {
 				const book = books[slugs.indexOf(c.bookMeta.slug)];
-				const swapped = getChapter(book, c.chapter.chapter);
+				const swapped =
+					translationId === 'odr'
+						? getChapter(book as BookData, c.chapter.chapter)
+						: (book.chapters.find((x) => x.chapter === c.chapter.chapter) as
+								| ChapterType
+								| undefined);
 				return swapped ? { ...c, chapter: swapped } : c;
 			});
 			shownSpelling = target;
