@@ -14,6 +14,7 @@ import { osisId } from './odr-books-osis.js';
 import { groupVerses, type Layout } from './layout-lib.js';
 import { xmlEscape, verseOsisId, OSIS_NS } from './osis-lib.js';
 import { EDITION } from './verse-only-lib.js';
+import { OSIS_WORK_ID } from './export-spelling.js';
 import type { Inline, StudyBlock, StudyBook } from './study-lib.js';
 import type { RefDoc } from './study-ref-lib.js';
 
@@ -142,7 +143,7 @@ export function renderStudyOsis(
 	parts: StudyOsisPart[],
 	opts: { title: string; whole: boolean; workId?: string; layout?: Layout }
 ): string {
-	const workId = opts.workId ?? 'ODR';
+	const workId = opts.workId ?? OSIS_WORK_ID;
 	const out = [
 		'<?xml version="1.0" encoding="UTF-8"?>',
 		`<osis xmlns="${OSIS_NS}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="${OSIS_NS} http://www.crosswire.org/osis/osisCore.2.1.1.xsd">`,

@@ -17,7 +17,7 @@ import { readdirSync, existsSync, mkdirSync, writeFileSync, copyFileSync, rmSync
 import { join, dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { homedir } from 'os';
-import { execSync } from 'child_process';
+import { execSync, execFileSync } from 'child_process';
 import { DatabaseSync } from 'node:sqlite';
 import { readJson } from './odr-corpus-json.js';
 import {
@@ -46,9 +46,10 @@ import {
 import { ALL_BOOKS } from '../src/lib/data/books.js';
 import { buildEbooks } from './ebook-build.js';
 import { toStudyBook } from './study-lib.js';
+import { DATA_DIR_NAME, FILE_STEM } from './export-spelling.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const ODR_DIR = join(ROOT, 'static', 'data', 'odr');
+const ODR_DIR = join(ROOT, 'static', 'data', DATA_DIR_NAME);
 const REF_DIR = join(ROOT, 'static', 'data', 'reference', 'odr');
 
 const argOf = (flag, fallback) => {
@@ -225,7 +226,7 @@ for (const testament of ['ot', 'nt']) {
 
 // Combined verse-only files, the CSV and the SQLite database.
 if (verseBooks.length) {
-	const NAME = 'original-douay-rheims';
+	const NAME = FILE_STEM;
 	write(
 		`verse-only/json/${NAME}.json`,
 		`${JSON.stringify(
@@ -272,6 +273,30 @@ if (verseBooks.length) {
 	db.exec('INSERT INTO verses_fts(rowid, text) SELECT rowid, text FROM verses; COMMIT');
 	db.exec("INSERT INTO verses_fts(verses_fts) VALUES ('optimize'); VACUUM");
 	db.close();
+
+	// Release assets for the verse-only data: a zip per per-book format, and the
+	// whole-Bible single files, zipped because they are plain text or SQLite.
+	if (!ONLY) {
+		const assets = join(OUT, 'release-assets');
+		mkdirSync(assets, { recursive: true });
+		for (const fmt of ['json', 'usfm', 'markdown', 'text']) {
+			execFileSync('zip', ['-q', '-r', join(assets, `${NAME}-verse-only-${fmt}.zip`), fmt], {
+				cwd: join(OUT, 'verse-only')
+			});
+		}
+		for (const [fmt, ext] of [
+			['markdown', 'md'],
+			['text', 'txt'],
+			['csv', 'csv'],
+			['sqlite', 'sqlite']
+		]) {
+			const from = join(OUT, 'verse-only', fmt, `${NAME}.${ext}`);
+			const named = join(OUT, 'verse-only', `${NAME}-verse-only.${ext}`);
+			copyFileSync(from, named);
+			execFileSync('zip', ['-q', '-j', join(assets, `${NAME}-verse-only.${ext}.zip`), named]);
+			rmSync(named);
+		}
+	}
 }
 
 if (verseBooks.length && process.env.EBOOKS !== 'none') {
@@ -286,7 +311,9 @@ if (verseBooks.length && process.env.EBOOKS !== 'none') {
 		only: ONLY
 	};
 	const formats = (process.env.FORMATS ?? 'epub,osis,docx,html').split(',');
-	const layouts = (process.env.LAYOUTS ?? 'verse,paragraph,flowing').split(',');
+	// 'flowing' still builds (LAYOUTS=flowing) but is not released by default: it
+	// is close to 'paragraph' and a third layout added a third to the release.
+	const layouts = (process.env.LAYOUTS ?? 'verse,paragraph').split(',');
 	for (const edition of (process.env.EDITIONS ?? 'verse-only,study').split(',')) {
 		for (const layout of layouts) await buildEbooks(ctx, edition, layout, formats);
 	}

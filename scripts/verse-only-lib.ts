@@ -22,7 +22,9 @@ import {
 	type TagName
 } from './export-lib.js';
 
-export const EDITION = 'Original Douay-Rheims (1582 NT / 1609 OT)';
+import { SPELLING_SUFFIX } from './export-spelling.js';
+
+export const EDITION = `Original Douay-Rheims (1582 NT / 1609 OT)${SPELLING_SUFFIX}`;
 
 /** One span style: what to emit around it. Absent means "words only". */
 export type Wrap = Partial<Record<'i' | 'sc', [open: string, close: string]>>;

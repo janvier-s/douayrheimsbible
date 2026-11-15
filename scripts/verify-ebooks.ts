@@ -15,9 +15,10 @@ import { execFileSync } from 'child_process';
 import { readJson } from './odr-corpus-json.js';
 import { ALL_BOOKS } from '../src/lib/data/books.js';
 import { stripMarkup } from './export-lib.js';
+import { DATA_DIR_NAME } from './export-spelling.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const ODR = join(ROOT, 'static', 'data', 'odr');
+const ODR = join(ROOT, 'static', 'data', DATA_DIR_NAME);
 const norm = (s) =>
 	s
 		.replace(/\s+/g, ' ')
@@ -52,7 +53,8 @@ export function plainText(path) {
 			maxBuffer: 1 << 28
 		})
 	);
-	const full2 = norm(full.replace(/\[\d+\]/g, ''));
+	// Footnote markers: [59] in EPUB and DOCX, superscript ⁵⁹ in HTML.
+	const full2 = norm(full.replace(/\[\d+\]/g, '').replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, ''));
 	return { raw: full, full: full2, words: full2 };
 }
 
@@ -64,25 +66,30 @@ const clean = (t, kind, ref) => {
 	}
 };
 const head = (s, n = 45) => s.slice(0, n);
+// Small caps render upper case in plain text, and long s upper-cases to S, so
+// compare case-insensitively with ſ folded to s.
+const fold = (s: string) => s.toLowerCase().replace(/ſ/g, 's');
 
 export function checkBook(slug, { raw, full, words }, edition) {
-	// Small caps render upper case in plain text; compare case-insensitively.
-	const text = full.toLowerCase();
-	const verseText = words.toLowerCase();
+	const text = fold(full);
+	const verseText = fold(words);
 	const { data: book } = readJson(join(ODR, `${slug}.json`));
 	const problems = [];
-	const scripture = book.chapters
-		.filter((c) => c.chapter !== 0)
-		.flatMap((c) => c.verses.filter((v) => v.verse !== 0).map((v) => clean(v.text, 'verse', slug)))
-		.join(' ')
-		.toLowerCase();
+	const scripture = fold(
+		book.chapters
+			.filter((c) => c.chapter !== 0)
+			.flatMap((c) =>
+				c.verses.filter((v) => v.verse !== 0).map((v) => clean(v.text, 'verse', slug))
+			)
+			.join(' ')
+	);
 	// Words must be there. Spot-check every verse by its opening words.
 	for (const ch of book.chapters) {
 		if (ch.chapter === 0) continue;
 		for (const v of ch.verses) {
 			if (v.verse === 0) continue;
 			const w = head(clean(v.text, 'verse', `${slug} ${ch.chapter}:${v.verse}`), 30);
-			if (w.length >= 8 && !verseText.includes(w.toLowerCase()))
+			if (w.length >= 8 && !verseText.includes(fold(w)))
 				problems.push(`missing verse ${ch.chapter}:${v.verse} "${w}"`);
 		}
 	}
@@ -121,10 +128,10 @@ export function checkBook(slug, { raw, full, words }, edition) {
 		if (h.length < 30) continue;
 		// Notes and annotations are notes in OSIS; everything else is checked against the words outside notes.
 		const inNote = kind.startsWith('note') || kind.startsWith('annotation');
-		const present = (inNote ? text : verseText).includes(h.toLowerCase());
+		const present = (inNote ? text : verseText).includes(fold(h));
 		if (edition === 'verse-only') {
 			// A note that quotes the verse itself is not a leak.
-			if (!scripture.includes(h.toLowerCase()) && present)
+			if (!scripture.includes(fold(h)) && present)
 				problems.push(`apparatus leaked: ${kind} "${h}"`);
 		} else if (!present) {
 			// The study edition must carry every note, annotation, summary and intro.
@@ -141,7 +148,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 	let bad = 0,
 		n = 0;
 	const ext = { epub: '.epub', docx: '.docx', osis: '.osis.xml', html: '.html' };
-	const layout = process.env.LAYOUT ?? 'flowing';
+	const layout = process.env.LAYOUT ?? 'verse';
 	for (const fmt of wanted.length ? wanted : Object.keys(ext)) {
 		const d = join(dir, edition, layout, fmt);
 		if (!existsSync(d)) continue;

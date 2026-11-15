@@ -30,12 +30,19 @@ import { newState, renderStudyBookMarkdown, renderStudyWholeMarkdown } from './s
 import { renderStudyOsis } from './study-osis-lib.js';
 import { toRefDoc } from './study-ref-lib.js';
 import type { Layout } from './layout-lib.js';
+import { FILE_STEM, ORIGINAL_SPELLING } from './export-spelling.js';
 
-export const WHOLE = 'original-douay-rheims';
+export const WHOLE = FILE_STEM;
 const EXT = { epub: '.epub', osis: '.osis.xml', docx: '.docx', html: '.html' };
 
+/** Formats whose whole-Bible file ships zipped: they are plain text and
+ *  shrink to about a quarter, where EPUB and DOCX are already compressed. */
+const ZIP_WHOLE = new Set(['html', 'osis']);
+
+/** The cover goes in the whole-Bible EPUB only. In the per-book EPUBs it was
+ *  most of the file (572 KB of 577 KB for 2 John) and over half the release. */
 export async function makeCover(webp: string, outJpg: string) {
-	await sharp(webp).jpeg({ quality: 90 }).toFile(outJpg);
+	await sharp(webp).jpeg({ quality: 80, mozjpeg: true }).toFile(outJpg);
 }
 
 const zip = (dir: string, files: string[], zipPath: string) => {
@@ -209,7 +216,7 @@ export async function buildEbooks(
 			const meta = (b) => ({
 				title: b ? b.shortTitle : 'The Douay-Rheims Bible',
 				subtitle: ed.subtitle,
-				identifier: `urn:odr:${tag}:${b ? b.slug : 'whole'}`
+				identifier: `urn:odr:${ORIGINAL_SPELLING ? 'original-spelling:' : ''}${tag}:${b ? b.slug : 'whole'}`
 			});
 			const make = (b, path) => {
 				if (fmt === 'osis') writeFileSync(path, b ? ed.osisBook(b) : ed.osisWhole());
@@ -217,7 +224,13 @@ export async function buildEbooks(
 					runPandoc(
 						'epub3',
 						b ? ed.bookMarkdown(b, fmt) : ed.wholeMarkdown(fmt),
-						{ ...meta(b), cover, css, splitLevel: b ? 1 : 2, tocDepth: b ? 2 : 3 },
+						{
+							...meta(b),
+							cover: b ? undefined : cover,
+							css,
+							splitLevel: b ? 1 : 2,
+							tocDepth: b ? 2 : 3
+						},
 						path
 					);
 				else if (fmt === 'html')
@@ -250,7 +263,11 @@ export async function buildEbooks(
 			}
 			if (!only) {
 				make(null, join(dir, wholeFile));
-				copyFileSync(join(dir, wholeFile), join(assets, `${WHOLE}-${tag}${ext}`));
+				const asset = `${WHOLE}-${tag}${ext}`;
+				if (ZIP_WHOLE.has(fmt)) {
+					copyFileSync(join(dir, wholeFile), join(work, asset));
+					zip(work, [asset], join(assets, `${asset}.zip`));
+				} else copyFileSync(join(dir, wholeFile), join(assets, asset));
 				zip(dir, files, join(assets, `${WHOLE}-${tag}${ext}.by-book.zip`));
 			}
 		}
