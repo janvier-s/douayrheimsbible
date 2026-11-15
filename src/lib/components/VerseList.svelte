@@ -867,6 +867,69 @@
 					!blk.poetry && blk.lines[0][0]?.verseStart && !(bi === 0 && ($prefs.showDropcap ?? true))
 			)
 	);
+
+	let showDropcap = $derived(($prefs.showDropcap ?? true) && !bionic);
+	/**
+	 * A chapter that opens on a one-line verse (Genesis 1:1) leaves the drop
+	 * cap hanging below its own text. A book lets the next line run on beside
+	 * the cap rather than drop under it, keeping the page's line rhythm.
+	 *
+	 * Paragraph view gets that from the float itself: nothing contains it, so
+	 * the next paragraph's first line wraps beside it, and all that is needed
+	 * is to drop that line's indent. Verse view cannot: each row is its own
+	 * formatting context and grows to hold the cap. There the row is pulled
+	 * back up to its text (capPull) and the next verse's first line indented
+	 * past the cap (capIndent). Both depend on how the text wraps, so both are
+	 * measured, against the text's line boxes rather than the row's height,
+	 * which the cap itself props open.
+	 */
+	let capPull = $state(0);
+	let capIndent = $state(0);
+	$effect(() => {
+		// Rerun whenever what is on the page changes.
+		void [verses, blocks, $prefs, showDropcap];
+		if (!browser || !showDropcap) {
+			capPull = capIndent = 0;
+			return;
+		}
+		let host: HTMLElement | null = null;
+		const measure = () => {
+			const cap = verseEls[verses[0]?.verse]?.querySelector<HTMLElement>('.dropcap');
+			host = cap?.closest('p') ?? null;
+			if (!cap || !host) return void (capPull = capIndent = 0);
+			const c = cap.getBoundingClientRect();
+			const h = host.getBoundingClientRect();
+			const width = Math.ceil(c.right - h.left + parseFloat(getComputedStyle(cap).marginRight));
+			const row = host.closest('li');
+			if (!row) {
+				capPull = 0;
+				const nextTop = host.nextElementSibling?.getBoundingClientRect().top ?? Infinity;
+				capIndent = c.bottom > nextTop + 1 ? width : 0;
+				return;
+			}
+			// The text after the cap, rounded out to whole line boxes.
+			const range = document.createRange();
+			range.setStartAfter(cap);
+			range.setEnd(host, host.childNodes.length);
+			const lh = parseFloat(getComputedStyle(host).lineHeight);
+			const lines = Math.max(
+				1,
+				Math.ceil((range.getBoundingClientRect().bottom - h.top) / lh - 0.01)
+			);
+			const hang = c.bottom - (h.top + lines * lh);
+			const next = row.nextElementSibling;
+			const gap = next ? parseFloat(getComputedStyle(next).marginTop) : 0;
+			capPull = hang > 0 ? hang : 0;
+			capIndent = hang > gap + 1 ? width : 0;
+		};
+		const ro = new ResizeObserver(measure);
+		tick().then(() => {
+			measure();
+			if (host) ro.observe(host);
+		});
+		document.fonts?.ready.then(measure);
+		return () => ro.disconnect();
+	});
 </script>
 
 {#if $prefs.paragraphView}
@@ -879,8 +942,10 @@
 			class:bionic-fade={bionic}
 			class:para-hanging={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && !useRoman}
 			class:para-hanging-roman={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && useRoman}
-			class:para-dropcap={bi === 0 && !blk.poetry && ($prefs.showDropcap ?? true)}
-			class:para-indent={indentParagraphs && bi > 0 && !blk.poetry}
+			class:para-indent={indentParagraphs && bi > 0 && !blk.poetry && !(bi === 1 && capIndent > 0)}
+			class:para-clear-cap={bi === 1 &&
+				$prefs.showVerseNumbers &&
+				(blk.poetry || (proseHangs && blk.lines[0][0]?.verseStart))}
 			style={bi > 0 && !indentParagraphs ? 'margin-top: 1em' : ''}
 			onmouseover={isStudy ? handleMarkerMouseover : undefined}
 			onfocus={isStudy ? handleMarkerMouseover : undefined}
@@ -968,10 +1033,16 @@
 			{/each}
 		</p>
 	{/each}
+	<!-- A chapter of one short paragraph would otherwise let the cap hang out
+	     past the end of the text. -->
+	<div class="clear-both"></div>
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
-		{#each verses as v (v.verse)}
-			{@const isChapterOpen = v.verse === verses[0]?.verse}
+		{#each verses as v, vi (v.verse)}
+			{@const isChapterOpen = vi === 0}
+			<!-- The cap may hang into the next row only when there is a next verse
+			     whose first line can make room for it. -->
+			{@const capMayHang = isChapterOpen && showDropcap && !!verses[1]}
 			<!-- The click handler here is a mouse-only convenience: tapping anywhere on
 			     an annotated verse opens its annotation. Keyboard and screen-reader
 			     users get the equivalent through the focusable button rendered at the
@@ -1007,6 +1078,11 @@
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
 					class:bionic-fade={bionic}
+					style={capMayHang && capPull > 0
+						? `margin-bottom: -${capPull}px`
+						: vi === 1 && capIndent > 0
+							? `text-indent: ${capIndent}px`
+							: undefined}
 					onclick={(e) => isStudy && handleMarkerClick(e, v.verse)}
 					onmouseover={isStudy ? handleMarkerMouseover : undefined}
 					onfocus={isStudy ? handleMarkerMouseover : undefined}
@@ -1022,7 +1098,7 @@
 						showSmallCaps,
 						expandAmpersand,
 						isChapterOpen,
-						false,
+						isChapterOpen && showDropcap,
 						lemmaByVerse?.get(v.verse) ?? null,
 						clarsFor(v.verse) ?? null
 					)}
@@ -1169,8 +1245,12 @@
 		text-indent: 1em;
 	}
 
-	.para-dropcap {
-		display: flow-root;
+	/* The drop cap is left free to hang below a one-line opening paragraph, so
+	   the next paragraph runs on beside it as in print. A paragraph whose
+	   opening number hangs in the gutter cannot: the number would land on the
+	   cap, so that paragraph starts below it instead. */
+	.para-clear-cap {
+		clear: left;
 	}
 
 	/* In flow the number cannot be anchored to the text edge, so the box has to
