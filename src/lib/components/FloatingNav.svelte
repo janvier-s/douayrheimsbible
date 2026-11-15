@@ -213,6 +213,7 @@
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="{base}/{book.slug}/{ch}"
+									aria-current={book.slug === bookSlug && ch === chapterNum ? 'page' : undefined}
 									onclick={onClose}
 									class="py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium leading-tight
                        {book.slug === bookSlug && ch === chapterNum
@@ -262,6 +263,7 @@
 							{#each Array.from({ length: book.chapters }, (_, i) => i + 1) as ch}
 								<a
 									href="{base}/{book.slug}/{ch}"
+									aria-current={book.slug === bookSlug && ch === chapterNum ? 'page' : undefined}
 									onclick={onClose}
 									class="py-[8px] rounded-[2px] hover:bg-accent hover:text-white transition-colors duration-fast text-center block tabular-nums font-medium leading-tight
                        {book.slug === bookSlug && ch === chapterNum
