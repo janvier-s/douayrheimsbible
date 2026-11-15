@@ -53,6 +53,18 @@ describe('resolveLemma', () => {
 		expect(highlighted(verse, 'Men of good will.')).toBe('men of good will');
 	});
 
+	it('matches a catchword set with w against a verse set with vv, keeping both vs', () => {
+		const verse =
+			'he that is not vvith me, is against me: and he that gathereth not vvith me, scattereth. And I say to you, Shal not be forgiuen to men, novv';
+		expect(highlighted(verse, 'With me.')).toBe('vvith me');
+		expect(highlighted(verse, 'To men, now.')).toBe('to men, novv');
+	});
+
+	it('reads long s as s', () => {
+		const verse = 'And they ſhal ſee the Sonne of man';
+		expect(highlighted(verse, 'Shal see.')).toBe('ſhal ſee');
+	});
+
 	it('reads the 1582 ampersand as the word the title spells out', () => {
 		const verse =
 			'<i>Behold a Virgin shall be with child, & bring forth a son, and they shall call his name Emmanuel,</i> <cr>[1]</cr> which being interpreted is, God with us.';

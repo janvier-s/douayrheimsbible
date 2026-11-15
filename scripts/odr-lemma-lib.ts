@@ -77,6 +77,14 @@ export function normalize(text: string): { norm: string; map: number[] } {
 			for (const c of ' and ') push(c, i);
 			continue;
 		}
+		// The print sets w as either "w" or "vv" (even within one line), so a
+		// catchword and its verse can disagree. Fold vv to w; long s (ſ) already
+		// folds to s under NFKD below.
+		if ((ch === 'v' || ch === 'V') && (text[i + 1] === 'v' || text[i + 1] === 'V')) {
+			push('w', i);
+			i++;
+			continue;
+		}
 		const folded = ch
 			.normalize('NFKD')
 			.replace(/[\u0300-\u036f]/g, '')
@@ -97,6 +105,13 @@ export function normalize(text: string): { norm: string; map: number[] } {
 		map.pop();
 	}
 	return { norm: norm.join(''), map };
+}
+
+/** Source index of the last character behind normalised position `n`: a "w"
+ *  folded from "vv" ends on the second v. */
+function foldedEnd(norm: string, map: number[], src: string, n: number): number {
+	const at = map[n];
+	return norm[n] === 'w' && /v/i.test(src[at] ?? '') ? at + 1 : at;
 }
 
 const NUMERALS: Record<string, string> = {
@@ -309,7 +324,7 @@ export function resolveLemma(title: string, verseText: string): LemmaSpan | null
 
 	const toRaw = (from: number, to: number, tier: MatchTier): LemmaSpan => {
 		const rawStart = plainMap[normMap[from]];
-		const rawEnd = plainMap[normMap[to]];
+		const rawEnd = plainMap[foldedEnd(norm, normMap, plain, to)];
 		const [s, e] = snapToBalance(verseText, rawStart, rawEnd);
 		return { start: s, length: e - s + 1, tier };
 	};
@@ -518,7 +533,7 @@ export function resolvePartialLemma(title: string, verseText: string): LemmaSpan
 	if (!best) return null;
 
 	const rawStart = plainMap[normMap[offsets[best.r.start][0]]];
-	const rawEnd = plainMap[normMap[offsets[best.r.end][1]]];
+	const rawEnd = plainMap[foldedEnd(norm, normMap, plain, offsets[best.r.end][1])];
 	const [s, e] = snapToBalance(verseText, rawStart, rawEnd);
 	return { start: s, length: e - s + 1, tier: 'partial' };
 }

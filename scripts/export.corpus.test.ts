@@ -165,7 +165,9 @@ describe('the corpus markup', () => {
 		// 43,885 before the summary-shift repair (+89 chapter summaries put back on the
 		// chapters they belong to) and the Ps 141 article (+1 title, +1 text).
 		// 43,976 before the Sancta margin-citation pass (+18 cross_refs).
-		expect(blocks).toHaveLength(43994);
+		// 43,994 before 4 Esdras 9:1 and 14:1 were restored (+2 verses); the
+		// Ecclesiasticus 16 fragment became that chapter's summary (-1 verse 0, +1 summary).
+		expect(blocks).toHaveLength(43996);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -330,12 +332,12 @@ describe('the corpus markup', () => {
 	);
 
 	// The corpus numbers a summary that overran its field as verse 0. USFM
-	// verse numbers start at 1, so those 49 fragments must reach the reader as
+	// verse numbers start at 1, so those 48 fragments must reach the reader as
 	// \cd text and never as scripture. Counting the chapters that carry one and
 	// checking each fragment's words landed in its \cd is what distinguishes
 	// "folded in" from "dropped".
 	it.each([false, true])(
-		'emits no \\v 0 and folds all 49 fragments into \\cd (annotations: %s)',
+		'emits no \\v 0 and folds all 48 fragments into \\cd (annotations: %s)',
 		(includeAnnotations) => {
 			let carriers = 0;
 			const missing: string[] = [];
@@ -379,11 +381,12 @@ describe('the corpus markup', () => {
 				}
 			}
 			expect(missing).toEqual([]);
-			expect(carriers).toBe(49);
+			// 49 before Ecclesiasticus 16's fragment became its chapter summary.
+			expect(carriers).toBe(48);
 		}
 	);
 
-	// 10 of the 49 fragments carry notes and one carries cross-references; the
+	// 10 of the 48 fragments carry notes and one carries cross-references; the
 	// fold must move the apparatus, not only the words.
 	it('keeps every verse-0 note and cross-reference in the bundle', () => {
 		let notes = 0;
@@ -535,11 +538,12 @@ describe('the verse-0 fold in the JSON trees', () => {
 		expect(offenders).toEqual([]);
 	});
 
-	it('records all 49 fragments as a summary continuation', () => {
+	it('records all 48 fragments as a summary continuation', () => {
 		const carriers = folded().flatMap(({ book }) =>
 			book.chapters.filter((c: any) => c.summary_continuation)
 		);
-		expect(carriers).toHaveLength(49);
+		// 49 before Ecclesiasticus 16's fragment became its chapter summary.
+		expect(carriers).toHaveLength(48);
 	});
 
 	it('keeps the 10 notes and 5 cross-references the words came with', () => {
@@ -557,7 +561,7 @@ describe('the verse-0 fold in the JSON trees', () => {
 		expect(crossRefs).toBe(5);
 	});
 
-	it('gives the 2 summary-less chapters the summary the fragment holds', () => {
+	it('gives the summary-less chapter the summary the fragment holds', () => {
 		const gained: string[] = [];
 		for (const meta of ALL_BOOKS) {
 			const { data: raw } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
@@ -567,8 +571,9 @@ describe('the verse-0 fold in the JSON trees', () => {
 					gained.push(`${meta.slug} ${chapter.chapter}`);
 			}
 		}
-		// 12 before the summary-shift repair gave 10 of them their own argument.
-		expect(gained).toEqual(['tobias 0', 'ecclesiasticus 16']);
+		// 12 before the summary-shift repair gave 10 of them their own argument;
+		// 2 before Ecclesiasticus 16 got its 1609 summary directly.
+		expect(gained).toEqual(['tobias 0']);
 	});
 
 	it('completes the summary rather than replacing it', () => {
