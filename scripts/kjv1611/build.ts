@@ -1,10 +1,10 @@
 // Builds static/data/kjv-1611 from the 66-book source + aruljohn Apocrypha.
-// Usage: npx tsx scripts/kjv1611/build.ts [--evidence=<tsv>]
+// Usage: npx tsx scripts/kjv1611/build.ts [--evidence=<tsv>] [--out=<dir>] [--only=<site slug>]
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync, unlinkSync } from 'fs';
 import { homedir } from 'os';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { SOURCE_SLUGS, APOCRYPHA } from './slugs';
+import { SOURCE_SLUGS, APOCRYPHA, sectionOf } from './slugs';
 import {
 	alignVerses,
 	applyLongS,
@@ -17,12 +17,55 @@ import {
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const HOME = join(homedir(), 'facsimiles/kjv-1611');
 const MODERN = join(ROOT, 'static/data/kjv');
-const OUT = join(ROOT, 'static/data/kjv-1611');
+const outArg = process.argv.find((a) => a.startsWith('--out='))?.slice(6);
+const OUT = outArg ?? join(ROOT, 'static/data/kjv-1611');
 
 type V = { verse: number; text: string };
 type Ch = { chapter: number; verses: V[] };
 type Book = { book: string; chapters: Ch[] };
 type Pool = { verse: number; text: string; witness: string }; // text = base (1611 spelling, ye for the)
+
+// --evidence=<tsv>: long-s evidence (evidence.ts) plus cluster-policy.json beside it.
+type Verdict = 'long' | 'round';
+const evidenceArg = process.argv.find((a) => a.startsWith('--evidence='))?.slice(11);
+const policyBySection: Record<string, ClusterPolicy> = evidenceArg
+	? JSON.parse(readFileSync(join(dirname(evidenceArg), 'cluster-policy.json'), 'utf8')).policy
+	: {};
+/** slug|chapter|verse → offset → verdict, for confident OCR readings only (Tesseract conf ≥ 80). */
+const overridesByVerse = new Map<string, Map<number, Verdict>>();
+/** low-confidence readings, kept for the conflicts list */
+const lowConf: {
+	slug: string;
+	ch: number;
+	v: number;
+	offset: number;
+	word: string;
+	verdict: Verdict;
+	conf: number;
+}[] = [];
+if (evidenceArg) {
+	for (const line of readFileSync(evidenceArg, 'utf8').split('\n').slice(1)) {
+		const c = line.split('\t');
+		if (c.length < 8 || (c[6] !== 'long' && c[6] !== 'round')) continue;
+		const conf = Number(c[7]);
+		if (conf >= 80) {
+			const key = `${c[0]}|${c[1]}|${c[2]}`;
+			(overridesByVerse.get(key) ?? overridesByVerse.set(key, new Map()).get(key)!).set(
+				Number(c[3]),
+				c[6] as Verdict
+			);
+		} else
+			lowConf.push({
+				slug: c[0],
+				ch: +c[1],
+				v: +c[2],
+				offset: +c[3],
+				word: c[4],
+				verdict: c[6] as Verdict,
+				conf
+			});
+	}
+}
 
 const readBook = (p: string): Book => JSON.parse(readFileSync(p, 'utf8'));
 const decode = (s: string) => s.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n));
@@ -93,7 +136,9 @@ function build(): void {
 	const only = process.argv.find((a) => a.startsWith('--only='))?.slice(7);
 	if (!existsSync(join(HOME, 'source'))) throw new Error(`missing ${HOME}/source`);
 	mkdirSync(OUT, { recursive: true });
-	for (const f of readdirSync(OUT)) if (f.endsWith('.json')) unlinkSync(join(OUT, f));
+	if (!only) for (const f of readdirSync(OUT)) if (f.endsWith('.json')) unlinkSync(join(OUT, f));
+	let overridden = 0;
+	const conflicts: string[] = [];
 	let totThorn = 0;
 	let totUnplaced = 0;
 	const lowSim: string[] = [];
@@ -164,7 +209,36 @@ function build(): void {
 				const r = placeAbbreviations(p.text, p.witness);
 				placed += r.placed;
 				unplaced += r.unplaced;
-				const text = applyLongS(r.text, {} as ClusterPolicy);
+				const policy = policyBySection[sectionOf(slug)] ?? {};
+				const ov = overridesByVerse.get(`${slug}|${mc.chapter}|${v.verse}`);
+				const text = applyLongS(r.text, policy, ov);
+				const rule = applyLongS(r.text, policy);
+				if (evidenceArg) {
+					if (ov)
+						for (const [o, vd] of ov)
+							if ((rule[o] === LONG_S) !== (vd === 'long') && /[A-Za-z]/.test(r.text[o + 1] ?? ''))
+								overridden++;
+					for (const l of lowConf.filter(
+						(x) => x.slug === slug && x.ch === mc.chapter && x.v === v.verse
+					)) {
+						if (
+							/[A-Za-z]/.test(r.text[l.offset + 1] ?? '') &&
+							(rule[l.offset] === LONG_S) !== (l.verdict === 'long')
+						)
+							conflicts.push(
+								[
+									slug,
+									mc.chapter,
+									v.verse,
+									l.offset,
+									l.word,
+									rule[l.offset] === LONG_S ? 'long' : 'round',
+									l.verdict,
+									l.conf
+								].join('\t')
+							);
+					}
+				}
 				longS += [...text].filter((c) => c === LONG_S).length;
 				verses++;
 				outVerses.push({ verse: v.verse, text });
@@ -179,6 +253,15 @@ function build(): void {
 		totUnplaced += unplaced;
 		console.log(
 			`${slug}: verses ${verses}${fallback ? ` (+${fallback} modern fallback)` : ''} ye-abbr placed ${placed} unplaced ${unplaced} ſ ${longS}`
+		);
+	}
+	if (evidenceArg && !only) {
+		writeFileSync(
+			join(dirname(evidenceArg), 'conflicts.tsv'),
+			'slug\tchapter\tverse\toffset\tword\trule\tocr\tconf\n' + conflicts.join('\n') + '\n'
+		);
+		console.log(
+			`evidence: ${overridden} confident overrides of the rule, ${conflicts.length} low-confidence conflicts`
 		);
 	}
 	console.log(`TOTAL abbr placed ${totThorn} unplaced ${totUnplaced}`);

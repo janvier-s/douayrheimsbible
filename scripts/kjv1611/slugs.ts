@@ -116,3 +116,12 @@ export const APOCRYPHA = [
 	'1-machabees',
 	'2-machabees'
 ];
+
+const NT_SLUGS = new Set(
+	'matthew mark luke john acts romans 1-corinthians 2-corinthians galatians ephesians philippians colossians 1-thessalonians 2-thessalonians 1-timothy 2-timothy titus philemon hebrews james 1-peter 2-peter 1-john 2-john 3-john jude apocalypse'.split(
+		' '
+	)
+);
+/** Book section for the per-section s-cluster policy (OT/Apocrypha/NT may differ, as the ODR's did). */
+export const sectionOf = (slug: string): 'OT' | 'APOC' | 'NT' =>
+	APOCRYPHA.includes(slug) ? 'APOC' : NT_SLUGS.has(slug) ? 'NT' : 'OT';
