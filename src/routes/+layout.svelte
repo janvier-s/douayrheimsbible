@@ -53,6 +53,21 @@
 	);
 
 	onMount(() => {
+		// Replay a Reading options click made before hydration (see app.html). The
+		// root layout mounts last, so whichever bar owns the button is live by now.
+		const w = window as unknown as { __hydrated?: boolean; __earlyPrefs?: HTMLElement | null };
+		w.__hydrated = true;
+		const early = w.__earlyPrefs;
+		w.__earlyPrefs = null;
+		if (early) {
+			const target = early.isConnected
+				? early
+				: Array.from(document.querySelectorAll<HTMLElement>('[data-early-prefs]')).find(
+						(el) => el.offsetParent !== null
+					);
+			if (target?.getAttribute('aria-expanded') !== 'true') target?.click();
+		}
+
 		const p = $prefs;
 		// Default to 15px on mobile for first-time visitors
 		const mobileFontApplied = localStorage.getItem('mobile-font-default');

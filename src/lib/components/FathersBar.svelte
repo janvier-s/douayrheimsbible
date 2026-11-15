@@ -210,6 +210,9 @@
 				class="hidden sm:flex px-[8px] h-[28px] items-center justify-center rounded-[3px] transition-colors duration-fast text-[13px] font-medium
 					{prefsOpen ? 'bg-accent text-white' : 'text-muted hover:text-accent'}"
 				aria-label="Reading options"
+				data-early-prefs
+				aria-expanded={prefsOpen}
+				aria-haspopup="dialog"
 				onclick={() => {
 					prefsOpen = !prefsOpen;
 					navOpen = false;
@@ -222,6 +225,9 @@
 					rounded-[3px] transition-colors duration-fast
 					{prefsOpen ? 'text-accent' : 'text-subtle hover:text-foreground'}"
 				aria-label="Reading options"
+				data-early-prefs
+				aria-expanded={prefsOpen}
+				aria-haspopup="dialog"
 				onclick={() => {
 					prefsOpen = !prefsOpen;
 					navOpen = false;

@@ -71,12 +71,14 @@
 			}
 		</style>
 		<script>
-			// Remember a Reading options click made before JS hydrates; TopBar replays it.
+			// Remember a Reading options click made before JS hydrates. The root layout
+			// replays it once every bar (TopBar, CompareBar, FathersBar) has its handlers.
 			document.addEventListener(
 				'click',
 				function (e) {
-					if (!window.__hydrated && e.target.closest && e.target.closest('[data-early-prefs]'))
-						window.__earlyPrefs = true;
+					if (window.__hydrated || !e.target.closest) return;
+					var el = e.target.closest('[data-early-prefs]');
+					if (el) window.__earlyPrefs = el;
 				},
 				true
 			);
