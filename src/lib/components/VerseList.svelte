@@ -11,6 +11,7 @@
 	import { readingPosition } from '$lib/stores/reading';
 	import MarkerPopover from '$lib/components/MarkerPopover.svelte';
 	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
+	import { injectDropcap, stripOpeningSmallCaps } from '$lib/utils/dropcap';
 	import { highlightLemmas, lemmasForPart } from '$lib/utils/lemmas';
 	import { applyClarifications, clarificationsForPart } from '$lib/utils/clarifications';
 	import type { BookClarifications, Clarification } from '$lib/utils/clarifications';
@@ -343,32 +344,6 @@
 		return text.replace(SUPER_RE, '');
 	}
 
-	/** The source marks the word (or short phrase) after a chapter's opening
-	 *  drop cap with <sc>, matching the original print's small-caps run-on.
-	 *  That is a typesetting cue for where the drop cap goes, not the same
-	 *  small-caps styling <sc> carries mid-verse for divine names — so at the
-	 *  chapter open it is always unwrapped back to plain text, independent of
-	 *  the small-caps and drop-cap preferences. */
-	function stripOpeningSmallCaps(html: string): string {
-		const mark = html.match(/^<mark [^<>]*>/);
-		if (mark) return mark[0] + stripOpeningSmallCaps(html.slice(mark[0].length));
-		return html.replace(/^<sc>([\s\S]*?)<\/sc>/, '$1');
-	}
-
-	/** Wrap the first letter of rendered HTML in a dropcap span. */
-	function injectDropcap(html: string): string {
-		// A catchword that opens the verse would put its tint behind the dropcap,
-		// and a block of colour behind a three-line letter reads as a mistake.
-		// Find the letter inside the mark, then hoist the cap out in front of it.
-		const mark = html.match(/^<mark [^<>]*>/);
-		if (mark) {
-			const inner = injectDropcap(html.slice(mark[0].length));
-			const cap = inner.match(/^<span class="dropcap">[^<]*<\/span>/);
-			return cap ? cap[0] + mark[0] + inner.slice(cap[0].length) : mark[0] + inner;
-		}
-		return html.replace(/^([A-Za-zÀ-ÿ])/, '<span class="dropcap">$1</span>');
-	}
-
 	/**
 	 * Editorial labels the Vulgate carries inline: the speakers of the Canticle
 	 * (<Sponsa>, <Chorus Adolescentularum>), the Hebrew letters heading each
@@ -423,7 +398,9 @@
 			t = stripStudyMarkers(t, showItalics);
 		}
 		const t2 = bionic ? applyBionic(t) : t;
-		const t3 = isChapterOpen ? stripOpeningSmallCaps(t2) : t2;
+		// The opening run stays in small caps after the drop cap, as the print sets it.
+		// With small caps off, unwrap it so the drop cap still finds its letter.
+		const t3 = isChapterOpen && !smallCaps ? stripOpeningSmallCaps(t2) : t2;
 		const result = smallCaps ? allcapsToSmallcaps(t3) : t3;
 		// Dropcap: only when bionic is off (bionic wraps letters in <b>, complicating injection)
 		const final = isDropcap && !bionic ? injectDropcap(result) : result;
@@ -902,6 +879,69 @@
 					!blk.poetry && blk.lines[0][0]?.verseStart && !(bi === 0 && ($prefs.showDropcap ?? true))
 			)
 	);
+
+	let showDropcap = $derived(($prefs.showDropcap ?? true) && !bionic);
+	/**
+	 * A chapter that opens on a one-line verse (Genesis 1:1) leaves the drop
+	 * cap hanging below its own text. A book lets the next line run on beside
+	 * the cap rather than drop under it, keeping the page's line rhythm.
+	 *
+	 * Paragraph view gets that from the float itself: nothing contains it, so
+	 * the next paragraph's first line wraps beside it, and all that is needed
+	 * is to drop that line's indent. Verse view cannot: each row is its own
+	 * formatting context and grows to hold the cap. There the row is pulled
+	 * back up to its text (capPull) and the next verse's first line indented
+	 * past the cap (capIndent). Both depend on how the text wraps, so both are
+	 * measured, against the text's line boxes rather than the row's height,
+	 * which the cap itself props open.
+	 */
+	let capPull = $state(0);
+	let capIndent = $state(0);
+	$effect(() => {
+		// Rerun whenever what is on the page changes.
+		void [verses, blocks, $prefs, showDropcap];
+		if (!browser || !showDropcap) {
+			capPull = capIndent = 0;
+			return;
+		}
+		let host: HTMLElement | null = null;
+		const measure = () => {
+			const cap = verseEls[verses[0]?.verse]?.querySelector<HTMLElement>('.dropcap');
+			host = cap?.closest('p') ?? null;
+			if (!cap || !host) return void (capPull = capIndent = 0);
+			const c = cap.getBoundingClientRect();
+			const h = host.getBoundingClientRect();
+			const width = Math.ceil(c.right - h.left + parseFloat(getComputedStyle(cap).marginRight));
+			const row = host.closest('li');
+			if (!row) {
+				capPull = 0;
+				const nextTop = host.nextElementSibling?.getBoundingClientRect().top ?? Infinity;
+				capIndent = c.bottom > nextTop + 1 ? width : 0;
+				return;
+			}
+			// The text after the cap, rounded out to whole line boxes.
+			const range = document.createRange();
+			range.setStartAfter(cap);
+			range.setEnd(host, host.childNodes.length);
+			const lh = parseFloat(getComputedStyle(host).lineHeight);
+			const lines = Math.max(
+				1,
+				Math.ceil((range.getBoundingClientRect().bottom - h.top) / lh - 0.01)
+			);
+			const hang = c.bottom - (h.top + lines * lh);
+			const next = row.nextElementSibling;
+			const gap = next ? parseFloat(getComputedStyle(next).marginTop) : 0;
+			capPull = hang > 0 ? hang : 0;
+			capIndent = hang > gap + 1 ? width : 0;
+		};
+		const ro = new ResizeObserver(measure);
+		tick().then(() => {
+			measure();
+			if (host) ro.observe(host);
+		});
+		document.fonts?.ready.then(measure);
+		return () => ro.disconnect();
+	});
 </script>
 
 {#if $prefs.paragraphView}
@@ -919,8 +959,14 @@
 			class:bionic-fade={bionic}
 			class:para-hanging={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && !useRoman}
 			class:para-hanging-roman={$prefs.showVerseNumbers && (blk.poetry || proseHangs) && useRoman}
-			class:para-dropcap={bi === 0 && !blk.poetry && ($prefs.showDropcap ?? true)}
-			class:para-indent={indentParagraphs && bi > 0 && !blk.poetry && !blk.heading}
+			class:para-indent={indentParagraphs &&
+				bi > 0 &&
+				!blk.poetry &&
+				!blk.heading &&
+				!(bi === 1 && capIndent > 0)}
+			class:para-clear-cap={bi === 1 &&
+				$prefs.showVerseNumbers &&
+				(blk.poetry || (proseHangs && blk.lines[0][0]?.verseStart))}
 			style={bi > 0 && !indentParagraphs && !blk.heading ? 'margin-top: 1em' : ''}
 			onmouseover={isStudy ? handleMarkerMouseover : undefined}
 			onfocus={isStudy ? handleMarkerMouseover : undefined}
@@ -1008,10 +1054,16 @@
 			{/each}
 		</p>
 	{/each}
+	<!-- A chapter of one short paragraph would otherwise let the cap hang out
+	     past the end of the text. -->
+	<div class="clear-both"></div>
 {:else}
 	<ol class="list-none space-y-[0.7rem]">
-		{#each verses as v (v.verse)}
-			{@const isChapterOpen = v.verse === verses[0]?.verse}
+		{#each verses as v, vi (v.verse)}
+			{@const isChapterOpen = vi === 0}
+			<!-- The cap may hang into the next row only when that row is a verse
+			     whose first line can make room for it, not a heading. -->
+			{@const capMayHang = isChapterOpen && showDropcap && !!verses[1] && !verses[1].heading}
 			{#if v.heading}
 				<li class="list-none">
 					<h2 class="stanza-heading font-reader" class:stanza-heading-first={isChapterOpen}>
@@ -1054,6 +1106,11 @@
 					class="font-reader leading-[var(--line-height-reader)] text-[length:var(--font-size-reader)]"
 					class:text-justify={$prefs.justifiedText}
 					class:bionic-fade={bionic}
+					style={capMayHang && capPull > 0
+						? `margin-bottom: -${capPull}px`
+						: vi === 1 && !v.heading && capIndent > 0
+							? `text-indent: ${capIndent}px`
+							: undefined}
 					onclick={(e) => isStudy && handleMarkerClick(e, v.verse)}
 					onmouseover={isStudy ? handleMarkerMouseover : undefined}
 					onfocus={isStudy ? handleMarkerMouseover : undefined}
@@ -1069,7 +1126,7 @@
 						showSmallCaps,
 						expandAmpersand,
 						isChapterOpen,
-						false,
+						isChapterOpen && showDropcap,
 						lemmaByVerse?.get(v.verse) ?? null,
 						clarsFor(v.verse) ?? null
 					)}
@@ -1214,6 +1271,7 @@
 	/* A stanza heading (Psalm 118's Hebrew letters), centred between stanzas as
 	   the 1609 sets it. The block under it takes no indent and no extra top gap. */
 	.stanza-heading {
+		clear: left;
 		margin: 1.5rem 0 0.5rem;
 		text-align: center;
 		font-size: calc(var(--font-size-reader) * 0.9);
@@ -1230,8 +1288,12 @@
 		text-indent: 1em;
 	}
 
-	.para-dropcap {
-		display: flow-root;
+	/* The drop cap is left free to hang below a one-line opening paragraph, so
+	   the next paragraph runs on beside it as in print. A paragraph whose
+	   opening number hangs in the gutter cannot: the number would land on the
+	   cap, so that paragraph starts below it instead. */
+	.para-clear-cap {
+		clear: left;
 	}
 
 	/* In flow the number cannot be anchored to the text edge, so the box has to
