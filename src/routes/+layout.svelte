@@ -53,6 +53,21 @@
 	);
 
 	onMount(() => {
+		// Replay a Reading options click made before hydration (see app.html). The
+		// root layout mounts last, so whichever bar owns the button is live by now.
+		const w = window as unknown as { __hydrated?: boolean; __earlyPrefs?: HTMLElement | null };
+		w.__hydrated = true;
+		const early = w.__earlyPrefs;
+		w.__earlyPrefs = null;
+		if (early) {
+			const target = early.isConnected
+				? early
+				: Array.from(document.querySelectorAll<HTMLElement>('[data-early-prefs]')).find(
+						(el) => el.offsetParent !== null
+					);
+			if (target?.getAttribute('aria-expanded') !== 'true') target?.click();
+		}
+
 		const p = $prefs;
 		// Default to 15px on mobile for first-time visitors
 		const mobileFontApplied = localStorage.getItem('mobile-font-default');
@@ -87,6 +102,11 @@
 				p.fontFamily === 'montserrat' ? 'var(--font-baskerville)' : 'inherit'
 			);
 		}
+		// The IM Fell DW Pica SC cut replaces synthesized small caps when that font is chosen
+		document.documentElement.toggleAttribute(
+			'data-sc-font',
+			!p.dyslexiaFont && p.fontFamily === 'im-fell-dw-pica'
+		);
 		// app.html script handles pre-paint theme; sync post-hydration
 		const savedTheme = localStorage.getItem('theme');
 		document.documentElement.setAttribute('data-theme', savedTheme || 'auto');
@@ -102,11 +122,6 @@
 			if ($page.url.pathname !== '/search') {
 				goto('/search');
 			}
-		// The IM Fell DW Pica SC cut replaces synthesized small caps when that font is chosen
-		document.documentElement.toggleAttribute(
-			'data-sc-font',
-			!p.dyslexiaFont && p.fontFamily === 'im-fell-dw-pica'
-		);
 		}
 	}
 </script>

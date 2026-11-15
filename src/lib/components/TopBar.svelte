@@ -237,13 +237,6 @@
 
 	onMount(() => {
 		if (browser) window.addEventListener('popstate', onPopState);
-		const early = window as unknown as { __hydrated?: boolean };
-		// Replay a Reading options click made before hydration (see app.html).
-		if (browser && (window as unknown as { __earlyPrefs?: boolean }).__earlyPrefs) {
-			(window as unknown as { __earlyPrefs?: boolean }).__earlyPrefs = false;
-			if (!prefsOpen) togglePrefs();
-		}
-		if (browser) early.__hydrated = true;
 	});
 
 	onDestroy(() => {
