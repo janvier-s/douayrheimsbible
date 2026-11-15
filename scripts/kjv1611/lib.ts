@@ -93,7 +93,8 @@ function witnessTokens(witness: string): WTok[] {
 }
 
 /**
- * Put yͤ where the witness has &thorn; (aligned to a base "ye"), and yͭ for every base "yt".
+ * Put yͤ where the witness has &thorn; (aligned to a base "ye"), and yͭ for every base "yt"
+ * (aruljohn writes &thorn; for both the and that, so a thorn may also align to a "yt").
  * Anchors are the non-thorn words that match in order (LCS); each thorn takes the next unused
  * "ye" in the base gap between its neighbouring anchors.
  */
@@ -149,13 +150,14 @@ export function placeAbbreviations(
 		}
 		const cands: number[] = [];
 		for (let b = prevBase + 1; b < nextBase; b++) {
-			if (bt[b].key === 'ye' && !replace.has(b)) cands.push(b);
+			if ((bt[b].key === 'ye' || bt[b].key === 'yt') && !replace.has(b)) cands.push(b);
 		}
 		let ci = 0;
 		while (wi < wt.length && (wt[wi].thorn || !anchor.has(wi))) {
 			if (wt[wi].thorn) {
 				if (ci < cands.length) {
-					replace.set(cands[ci++], THE_ABBR);
+					const cb = cands[ci++];
+					replace.set(cb, bt[cb].key === 'yt' ? THAT_ABBR : THE_ABBR);
 					placed++;
 				} else unplaced++;
 			}

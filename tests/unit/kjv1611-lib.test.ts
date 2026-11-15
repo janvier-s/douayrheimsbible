@@ -42,6 +42,10 @@ describe('placeAbbreviations', () => {
 	it('maps yt to the superscript t form', () => {
 		expect(placeAbbreviations('and yt is', 'and yt is').text).toBe('and yͭ is');
 	});
+	it('a thorn aligned to yt counts as placed and gives the that-abbreviation', () => {
+		const r = placeAbbreviations('consulted, yt they might', 'consulted, &thorn; they might');
+		expect(r).toMatchObject({ text: 'consulted, yͭ they might', placed: 1, unplaced: 0 });
+	});
 	it('reports unplaced', () => {
 		const r = placeAbbreviations('hello world', 'hello &thorn; world');
 		expect(r.unplaced).toBe(1);
