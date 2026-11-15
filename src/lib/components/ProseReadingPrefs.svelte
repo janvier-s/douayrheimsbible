@@ -16,6 +16,11 @@
 		},
 		{ id: 'sentinel', label: 'Sentinel', stack: "'Sentinel', Georgia, serif" },
 		{
+			id: 'im-fell-dw-pica',
+			label: 'IM Fell DW Pica',
+			stack: "'IM Fell DW Pica', 'IM Fell DW Pica SC', Georgia, serif"
+		},
+		{
 			id: 'source-serif-4',
 			label: 'Source Serif',
 			stack: "'Source Serif 4', Georgia, serif"

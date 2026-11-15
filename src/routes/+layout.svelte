@@ -102,6 +102,11 @@
 			if ($page.url.pathname !== '/search') {
 				goto('/search');
 			}
+		// The IM Fell DW Pica SC cut replaces synthesized small caps when that font is chosen
+		document.documentElement.toggleAttribute(
+			'data-sc-font',
+			!p.dyslexiaFont && p.fontFamily === 'im-fell-dw-pica'
+		);
 		}
 	}
 </script>

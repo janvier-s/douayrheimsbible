@@ -241,7 +241,7 @@
 
 	<ul>
 		<li>
-			<strong>Font:</strong> Six typefaces are available across two groups:
+			<strong>Font:</strong> Seven typefaces are available across two groups:
 			<ul>
 				<li>
 					<strong>Libre Baskerville</strong> (default): transitional serif. High contrast between thick
@@ -251,6 +251,11 @@
 				<li>
 					<strong>Sentinel</strong>: slab serif. Thick block-like serifs, sturdy and even-stroked.
 					Where transitional serifs are refined, slabs are confident and grounded.
+				</li>
+				<li>
+					<strong>IM Fell DW Pica</strong>: old-style serif. A revival of types cut in the 17th
+					century, with the uneven ink-worn look of period printing. Suits the original-spelling
+					texts.
 				</li>
 				<li>
 					<strong>Source Serif</strong>: humanist serif. Warmer and more calligraphic, proportions
