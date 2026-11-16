@@ -124,6 +124,15 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 - Mark 16:18: print (and the Sancta scrape) read "Miracles the Church by impoſition of hand" (no *in*); odr-original keeps it, odr reads "in the Church".
 - Gen 46:1 note: the print has "The eight and laſt part of this booke." before the argument (added to both texts).
 
+## Annotation title misprints (Nov 16 2026)
+Annotation `title` lemmas checked against the scans (Argon High). The print misprints; odr is corrected, odr-original keeps the print. Titles are plain strings, so there is no `(†)` marker.
+| Ref | Print | odr |
+|---|---|---|
+| Gen 1:1 | "In the beginnig." (n for ng) | "In the beginning." |
+| Gen 36:6 | "Departed from his btother." (t for r) | "…his brother." |
+| Gen 48:16 | "The Angel that delinereth me." (n for u) | "…delivereth me." |
+| Matt 5:32 (second note) | "Committeth aduontrie." (n for u; the prose reads "aduoutrie") | "Committeth adultery." |
+
 ## Open
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
   2 Mac 3:6/7, 2 Mac 6:21/22, Josue 11:8/9, Josue 13:17/18, 4 Esd 13:31/32, Acts 5:22/23, Apoc 21:10/11, Dan 3:91/92, Jer 34:15/16, Judges 2:16/17, Mark 10:48/49,

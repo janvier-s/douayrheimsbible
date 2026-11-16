@@ -152,7 +152,8 @@ describe('the corpus markup', () => {
 		// 1,619 before the 4 Esdras epistle table moved out of 16:78 into endMatters.
 		// 1620 before the Ps 141 'prophetical sense' article was split out of gloss q.
 		// 1,621 before the split Deut 30 annotation (verses 15 and 19) was merged back (-2 titles).
-		expect(titles).toHaveLength(1619);
+		// 1,619 before John 15:2 lost its two invented annotation parts (-2 titles; the print has only margin notes there).
+		expect(titles).toHaveLength(1617);
 		// 1,989 before b2e0381c added 220 Sancta cross_refs (source: sancta).
 		// 2,209 before the duplicate 3-esdras 2:1 entry (and its one cross_ref) was removed.
 		// 2,208 before the Sancta margin-citation pass: Ps 121:6, +54 missing 1609
@@ -171,7 +172,8 @@ describe('the corpus markup', () => {
 		// 43,996 before Job 26's chapter summary (the print has it) was added: +1 block.
 		// 43,997 before the 47 verse-0 summary fragments were folded into their summaries.
 		// 43,950 before the split Deut 30 annotation was merged back (-2 titles, -2 texts).
-		expect(blocks).toHaveLength(43946);
+		// 43,946 before John 15:2 lost its two invented annotation parts (-2 titles, -2 texts).
+		expect(blocks).toHaveLength(43942);
 	});
 
 	it('names exactly one block per ref', () => {

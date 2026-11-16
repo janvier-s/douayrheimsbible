@@ -203,7 +203,11 @@ const PERSON: Array<Set<string>> = [
  *  "Hung himself." heads a verse reading "hanged himself", and the annotation
  *  under it is about Judas hanging himself and nothing else. Add a pair here
  *  only when the annotation itself settles what the catchword points at. */
-const EQUIVALENT: Array<Set<string>> = [new Set(['hung', 'hanged'])];
+const EQUIVALENT: Array<Set<string>> = [
+	new Set(['hung', 'hanged']),
+	// The 1609 title "Going then." quotes a verse that reads "going therefore" (Matt 28:19)
+	new Set(['then', 'therefore', 'therfore'])
+];
 
 function sameWord(a: string, b: string): boolean {
 	if (a === b) return true;
