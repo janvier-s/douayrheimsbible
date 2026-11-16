@@ -123,6 +123,7 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 - Ps 101:5 h: print "al ſauour" = *savour*; odr read "favour" and now reads "savour".
 - Mark 16:18: print (and the Sancta scrape) read "Miracles the Church by impoſition of hand" (no *in*); odr-original keeps it, odr reads "in the Church".
 - Gen 46:1 note: the print has "The eight and laſt part of this booke." before the argument (added to both texts).
+- Num 19:2 [1]: print reads "(q. 36. in Num)" with no full stop after *Num*; odr-original follows the print, odr keeps its stop.
 
 ## Open
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
