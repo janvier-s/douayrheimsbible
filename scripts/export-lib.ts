@@ -34,7 +34,7 @@ const VOID_TAGS: ReadonlySet<TagName> = new Set<TagName>(['br']);
  *  resolve every note against the wrong array and still produce output. */
 export const TAGS_BY_BLOCK: Record<BlockKind, ReadonlySet<TagName>> = {
 	verse: new Set<TagName>(['i', 'na', 'cr', 'sc', 'alt']),
-	summary: new Set<TagName>(['i', 'na']),
+	summary: new Set<TagName>(['i', 'na', 'sc']),
 	prose: new Set<TagName>(['i', 'mn', 'sc', 'br', 'col-left', 'col-right'])
 };
 
@@ -251,7 +251,10 @@ export const KNOWN_UNBOUND: ReadonlySet<string> = new Set([
 	'exodus 32:28 marker †',
 	'jeremie 43:10 marker †',
 	'1-kings 21:1 marker †',
-	'isaie 24:19 marker †'
+	'isaie 24:19 marker †',
+	'deuteronomy 19:5 marker †',
+	'genesis 15 summary marker †',
+	'2-corinthians 5 summary marker †'
 ]);
 
 /** The 23 notes no marker references, as `${ref} note ${token}`. */

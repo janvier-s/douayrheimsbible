@@ -167,7 +167,9 @@ describe('the corpus markup', () => {
 		// 43,976 before the Sancta margin-citation pass (+18 cross_refs).
 		// 43,994 before 4 Esdras 9:1 and 14:1 were restored (+2 verses); the
 		// Ecclesiasticus 16 fragment became that chapter's summary (-1 verse 0, +1 summary).
-		expect(blocks).toHaveLength(43996);
+		// 43,996 before Job 26's chapter summary (the print has it) was added: +1 block.
+		// 43,997 before the 47 verse-0 summary fragments were folded into their summaries.
+		expect(blocks).toHaveLength(43950);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -271,9 +273,9 @@ describe('the corpus markup', () => {
 		// 13,723 before the psalm summary-shift repair restored 29 head-note markers.
 		// 13,752 before 15 missing 1609 margin notes were added, each with its marker.
 		expect(bound).toBe(13767);
-		// 13 more unbound: the (†) editorial markers added for print corrections.
-		expect(unbound).toBe(15);
-		expect(bound + unbound).toBe(13782);
+		// 16 more unbound: the (†) editorial markers added for print corrections.
+		expect(unbound).toBe(18);
+		expect(bound + unbound).toBe(13785);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming
@@ -333,12 +335,12 @@ describe('the corpus markup', () => {
 	);
 
 	// The corpus numbers a summary that overran its field as verse 0. USFM
-	// verse numbers start at 1, so those 48 fragments must reach the reader as
+	// verse numbers start at 1, so those fragments must reach the reader as
 	// \cd text and never as scripture. Counting the chapters that carry one and
 	// checking each fragment's words landed in its \cd is what distinguishes
 	// "folded in" from "dropped".
 	it.each([false, true])(
-		'emits no \\v 0 and folds all 48 fragments into \\cd (annotations: %s)',
+		'emits no \\v 0 and folds the remaining fragment into \\cd (annotations: %s)',
 		(includeAnnotations) => {
 			let carriers = 0;
 			const missing: string[] = [];
@@ -382,13 +384,15 @@ describe('the corpus markup', () => {
 				}
 			}
 			expect(missing).toEqual([]);
-			// 49 before Ecclesiasticus 16's fragment became its chapter summary.
-			expect(carriers).toBe(48);
+			// 48 before the other 47 fragments were folded into their chapters' summaries;
+			// only the Tobias preface (chapter 0) still numbers its text verse 0.
+			expect(carriers).toBe(1);
 		}
 	);
 
-	// 10 of the 48 fragments carry notes and one carries cross-references; the
-	// fold must move the apparatus, not only the words.
+	// The Tobias preface fragment carries 5 cross-references; the fold must move the
+	// apparatus, not only the words. (The other fragments' 10 notes now live in
+	// summary_notes.)
 	it('keeps every verse-0 note and cross-reference in the bundle', () => {
 		let notes = 0;
 		let crossRefs = 0;
@@ -422,7 +426,7 @@ describe('the corpus markup', () => {
 			}
 		}
 		expect(lost).toEqual([]);
-		expect(notes).toBe(10);
+		expect(notes).toBe(0);
 		expect(crossRefs).toBe(5);
 	});
 
@@ -539,15 +543,15 @@ describe('the verse-0 fold in the JSON trees', () => {
 		expect(offenders).toEqual([]);
 	});
 
-	it('records all 48 fragments as a summary continuation', () => {
+	it('records the one remaining fragment as a summary continuation', () => {
 		const carriers = folded().flatMap(({ book }) =>
 			book.chapters.filter((c: any) => c.summary_continuation)
 		);
-		// 49 before Ecclesiasticus 16's fragment became its chapter summary.
-		expect(carriers).toHaveLength(48);
+		// 48 before the 47 summary overflows were folded into `summary` in the data.
+		expect(carriers).toHaveLength(1);
 	});
 
-	it('keeps the 10 notes and 5 cross-references the words came with', () => {
+	it('keeps the 5 cross-references the words came with', () => {
 		let notes = 0;
 		let crossRefs = 0;
 		for (const { book } of folded()) {
@@ -558,7 +562,7 @@ describe('the verse-0 fold in the JSON trees', () => {
 				crossRefs += cont.cross_refs?.length ?? 0;
 			}
 		}
-		expect(notes).toBe(10);
+		expect(notes).toBe(0);
 		expect(crossRefs).toBe(5);
 	});
 
@@ -577,10 +581,17 @@ describe('the verse-0 fold in the JSON trees', () => {
 		expect(gained).toEqual(['tobias 0']);
 	});
 
-	it('completes the summary rather than replacing it', () => {
-		const book = foldSummaryOverflow(readJson<any>(join(ODR_DIR, 'numbers.json')).data);
-		const chapter = book.chapters.find((c: any) => c.chapter === 25);
-		expect(chapter.summary).toMatch(/is commended by God, and rewarded\.$/);
-		expect(chapter.summary_continuation.text).toBe('by God, and rewarded.');
+	it('holds the former overflow in the summary itself, with its notes as summary notes', () => {
+		const odr = (slug: string, ch: number) =>
+			readJson<any>(join(ODR_DIR, `${slug}.json`)).data.chapters.find((c: any) => c.chapter === ch);
+		const numbers = odr('numbers', 25);
+		expect(numbers.summary).toMatch(/is commended by God, and rewarded\.$/);
+		expect(numbers.verses.some((v: any) => v.verse === 0)).toBe(false);
+		// Psalm 97's head note was on verse 0; it is now summary note 1.
+		const psalm = odr('psalms', 97);
+		expect(psalm.summary).toMatch(/his coming to judge the world\. <na>\[1\]<\/na>$/);
+		expect(psalm.summary_notes).toEqual([
+			{ marker: 1, text: 'The Church in all nations.\nThe 6. key.', kind: 'head' }
+		]);
 	});
 });

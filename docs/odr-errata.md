@@ -78,9 +78,32 @@ Method: Peters' text layer (body = size 16 OT / size 15 NT, annotation blocks cu
 Differences left unexamined (judged Peters' own edits, not errors in the print): Peters-only insertions (e.g. 1 Cor 7:23 "a price", Tobias 2:12 "as also"), Peters omissions of words that both odr texts have (47 with no Challoner equivalent; skimmed, none looked like a print error), and ~100 spelling/word swaps such as matthew 12:20 "cast/send".
 
 
+## Deut 19:5 and Jer 22:12 (Nov 16 2026, Argon High on the page images)
+| Ref | Page (Argon) | Verdict |
+|---|---|---|
+| Deut 19:5 | "in cutting the wood of axe ſlipped out of his hand" (p. 436), so odr-original was already a faithful transcription | odr had silently corrected it ("in cutting of wood the axe"). Now "in cutting the wood of [the] <na>(†)</na> axe slipped out", print words kept, "the" supplied; editorial note in `odr-notes/deuteronomy/19.json` (Vulgate *in succisione lignorum securis fugerit*); marker pinned in `KNOWN_UNBOUND` (16 now) |
+| Jer 22:12 | "he shal not ſee anie this land more" (p. 585) | print slip (Vulgate *terram istam non videbit amplius*, "shall not see this land any more"); odr "see any this land more" already follows the print; no change, no note |
+
+## Chapter summaries and verse 0 (Nov 16 2026)
+Sancta's scraped headings hold every summary whole, so they were used as the reference for odr-original; odr was compared with odr-original word by word.
+
+**Verse-0 fragments: folded (decision Nov 16).** 47 chapters in odr (25 of them also in odr-original) had a summary cut mid-sentence with the tail stored as `verses[0]`. The tail now sits in `summary` in both texts and the verse-0 entry is gone; the 10 head notes that hung on verse 0 (Acts 13, Isaie 45, John 1, Mark 11, Matt 21, Psalms 39, 59, 76, 97, 142) are now `summary_notes` (`marker` 1, `kind` kept). Only the Tobias preface (chapter 0) still numbers its text verse 0; it is introduction matter, not an overflow, and keeps its `summary_continuation` handling. `<sc>` is now legal in summary blocks (John 1, Acts 7). Corpus pins updated (blocks 43,950; markers 13,767 bound + 18 unbound; one remaining fragment, 0 notes, 5 cross-references). The ChapterView/StudyPanel/exporter merge code is left in place for the Tobias case.
+
+**Fixed (clear defects):**
+- Stray `<i>…</i>` span starting mid-summary (about 57 characters into the overflow) and running to the end: 35 odr chapters, 2 odr-original (1 Mac 9, Acts 19). Sancta and the print have no italics there; tags removed.
+- 6 odr summaries had the first words of verse 1 appended (3 Esdras 1 and 4; 4 Esdras 4, 8, 13, 16); removed. Matt 1 and Abdias 1 had the margin citation ("Gen. 12. 22. 2. Reg. 7. Psal. 131.", "S. Epiph.") appended, a copy of the verse notes; removed. Abdias 1 regained "19." before "And redemption".
+- odr summaries missing words the print has (odr-original had them): 2 Mac 2 ("Holy fire, and the book of the law were conserved by"), 2 Par 34, 4 Kings 22, Deut 15, Exodus 2 (first clause), Exodus 5, Hebrews 5, Judith 15 (first clause), Numbers 33 (first clause), 4 Esdras 9 (end), Apoc 15 "seven", Luke 12 "so much", Baruch 3 "with a", Judges 17 "a graven, and a molten idol", Eccles 4 (word order restored to the print).
+- odr-original summaries that had fallen back to modern spelling (1 Kings 20, 2 Mac 2, 3 Kings 9, Daniel 2, Deut 22, Josue 3, Lev 12, Mark 11) were re-read against Sancta's verbatim heading and respelled; the verse-0 split point is unchanged.
+- Job 26 had no summary in either text; the print has one (page confirmed): added to both.
+
+**Looked at, not a defect:** Proverbs 10–29 and Tobias 0 have no summary in the print. Canticles 1–8: the argument is set as lettered margin notes (already in the verse notes), not a chapter summary. Lamentations 1–4: Sancta's "headings" are not a printed summary (Argon: no argument under CHAP.); Lam 5 and Hab 3 carry the heading + marker notes already.
+
+**Summary slips (decided):** where the print has a stray word odr now follows the print (Matt 21 "foretelleth his in two parables", Colossians 1 "the Gospel was not of"); where odr supplies a word the print lacks it is bracketed with a † marker and an editorial note on the summary (`odr-notes/<book>/<chapter>.json`, verse 0, shown as "Summary" in the study panel): Gen 15 "[a] strange land", 2 Cor 5 "may [go] to heaven". Markers pinned in `KNOWN_UNBOUND` (18 now).
+**Margin notes cut off in summary_notes:** Daniel 5 note restored from Sancta ("…4. Reg. 25. There reigned also … called Niglissar and Labosardach: as testify Eusebius, S. Jerome, S. Bede, and others"; the "4. Reg. 25." that had landed at the end of the summary belongs inside the note); Ecclesiasticus 44 "…thanks to God." (page confirmed, "thankes to God").
+
+**Sync:** the external `../odr-original` (Websites/odr-original) was brought in line for every odr-original file changed here (it also lacked the earlier Job 3:24, Job 4:5, 3 Kings 3:12 and 7:20, Psalm 85:5, Mark 14:9 and Ecclus 28:16 fixes).
+
 ## Open
-- Deut 19:5: the print is garbled ("in cutting the wood of axe slipped out"); not copied into odr.
-- Jer 22:12 "see any this land more": check against the Vulgate/Challoner.
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
   2 Mac 3:6/7, 2 Mac 6:21/22, Josue 11:8/9, Josue 13:17/18, 4 Esd 13:31/32, Acts 5:22/23, Apoc 21:10/11, Dan 3:91/92, Jer 34:15/16, Judges 2:16/17, Mark 10:48/49,
   Ps 77:5/6, 82:12/13, 107:9/10, 108:21/22, 124:1/2, Wisdom 10:12 — to be handled with the verse-count mismatches.

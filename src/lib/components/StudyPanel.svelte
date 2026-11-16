@@ -1051,7 +1051,7 @@
 								{#each translationNotes as note (note.verse)}
 									<div class="verse-section editorial-note">
 										<div class="verse-section-header verse-section-header-sticky">
-											Verse {note.verse}{#if note.editorial}
+											{note.verse === 0 ? 'Summary' : `Verse ${note.verse}`}{#if note.editorial}
 												· editorial{/if}
 										</div>
 										<div class="note-row sub-section-inline">
