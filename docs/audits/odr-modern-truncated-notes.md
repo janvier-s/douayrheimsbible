@@ -15,3 +15,16 @@ Two 1609 notes were corrected along the way:
 - **ezechiel 12:13 c**: was cut off at "Babylon,"; completed from the scrape.
 
 A re-run of the comparison finds no modern note shorter than three-quarters of its 1609 text.
+
+## Second pass (16 Nov 2026)
+
+The first pass only flagged notes under three-quarters of the 1609 length, so shorter tails were missed. A
+word-alignment check (does the modern note's last three words sit inside the 1609 note with two or more words
+after them?) found 40 more modern notes cut short, mid-phrase. All are completed: 16 from the Sancta scrape, the
+rest modernised by hand from the 1609 text (the scrape had no match).
+
+Also fixed: **psalms 43:25 s / 43:26 t**. The modern text had merged verse 26's text and note into note s and had
+no `(t)` marker; the marker and note are restored (bound markers 13,768).
+
+Not defects: notes where the 1609 print itself stops mid-phrase (e.g. Ps 2:7 l, Job 39:1 a), and the many short
+notes whose only gap is a leading margin citation, which the modern data keeps in `cross_refs`.
