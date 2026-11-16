@@ -50,3 +50,6 @@ dist-export/
 
 # Ad-hoc screenshots dropped at the repo root
 /*.png
+
+# Scraped Sancta Clara Press reference corpus (local only)
+static/data/odr-sancta/
