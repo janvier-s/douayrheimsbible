@@ -146,3 +146,5 @@ Lemma spans: `build-odr-lemmas` reports no change needed (the edits are in verse
 **Still open:** Acts 28:8 [1] stays as an addition with no print counterpart (see item 1).
 
 **Exports (Nov 16 2026):** `noteBody()` in `scripts/export-lib.ts` now carries `table_text` into exported footnotes (USFM, study and corpus checks) after the printed note, under "Table of Epistles and Gospels:"; `table_only` notes get the label in front.
+
+**Acts 28:8 [1] removed (Nov 16 2026).** Searched its words ("healing", "imposition of the Apostles hands") in the page scans (pp. 370-372), the Sancta scrape (its own comparison lists it as `not found in Sancta chapter`), Peters p. 299, Challoner's DRC text, Haydock Acts 28, Knox and CPDV notes: no source has it. The note and its `<na>[1]</na>` marker are deleted from `odr` and `odr-original`; the pinned corpus marker count drops by one (13,767 bound of 13,785).
