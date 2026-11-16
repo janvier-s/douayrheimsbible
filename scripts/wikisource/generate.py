@@ -130,8 +130,12 @@ def render_verse(v, ch):
             return tag + '{{MOUTER|' + n['text'] + '}}'
         return tag + '{{MOUTER|∷ ' + n['text'] + '}}∷ '
 
-    # A citation at the very end of the verse is printed in the margin with no * in the text.
-    raw = re.sub(r'\s*<cr>\[(\d+)\]</cr>\s*$', lambda m: ' ' + cr(m).replace('* ', '').replace('⟦cr:', '⟦crend:'), raw)
+    # Citations at the very end of the verse are printed in the margin with no * in the text
+    # (Matt 15:4 has two).
+    def crend(m):
+        return ' ' + ''.join(cr(c).replace('* ', '').replace('⟦cr:', '⟦crend:')
+                             for c in re.finditer(r'<cr>\[(\d+)\]</cr>', m.group(0)))
+    raw = re.sub(r'(?:\s*<cr>\[\d+\]</cr>)+\s*$', crend, raw)
     raw = re.sub(r'<cr>\[(\d+)\]</cr>\s*', cr, raw)
     raw = re.sub(r'<na>\[(\d+)\]</na>\s*', na, raw)
     lead = f'{{{{verse|chapter={ch}|verse={v["verse"]}}}}}' + ('' if v['verse'] == 1 else '† ')
@@ -146,7 +150,8 @@ def render_annotation(a):
         k, n = mns.pop(0) if mns else (None, None)
         if not n:
             return ''
-        if n['text'].lstrip().startswith('<i>'):  # citations are set in italic
+        # citations are set in italic, some behind the print's margin star ("* <i>Act. 15</i>.")
+        if re.match(r'\s*(?:\* )?<i>', n['text']):
             return f'⟦mn:{k}⟧' + '{{MINNER|' + n['text'] + '}}' + ('* ' if n.get('star') else '')
         return f'⟦mn:{k}⟧' + '{{MOUTER|' + n['text'] + '}}'
 
@@ -342,8 +347,11 @@ def move_bars(S):
 
 # Page starts the alignment gets wrong, each checked on the scan: the page's
 # first words (normalised as in norm(), joined by spaces).
+# '@annhead' / '@chap': the page opens with the ANNOTATIONS or CHAP. heading.
 PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is written heretikes',
-               ('matthew', 44): 'pvt on is not', ('matthew', 45): 'leade vs not s cypr'}
+               ('matthew', 44): 'pvt on is not', ('matthew', 45): 'leade vs not s cypr',
+               ('matthew', 57): 'lesser in the kingdom', ('matthew', 58): '@annhead',
+               ('matthew', 66): 'avthor os evil tertvl', ('matthew', 69): '@chap', ('matthew', 71): '@annhead'}
 
 
 def apply_page_starts(S, starts):
@@ -351,8 +359,15 @@ def apply_page_starts(S, starts):
         want = PAGE_STARTS.get((BOOK, FIRST + n))
         if not want:
             continue
-        want = want.split()
         lo, hi = max(0, starts[n] - 60), min(len(S), starts[n] + 60)
+        if want.startswith('@'):  # the page opens with a heading block: '@annhead' or '@chap'
+            heads = [i for i in range(lo, hi) if S[i]['kind'] == want[1:] and S[i - 1]['kind'] != want[1:]]
+            if heads:
+                starts[n] = min(heads, key=lambda i: abs(i - starts[n]))
+                continue
+            print(f'warning: page start override for {FIRST + n} not found near the estimate')
+            continue
+        want = want.split()
         cands = [i for i in range(lo, hi) if S[i]['norm'] == want[0]]
         for i in sorted(cands, key=lambda i: abs(i - starts[n])):
             got, j = [], i
@@ -368,9 +383,15 @@ def apply_page_starts(S, starts):
 
 
 # Paragraph starts the OCR misses, each checked on the scan (wiki page in brackets):
-# beside a drop cap (31, 39), on a page the OCR splits into two blocks (45), and 10:40 (55).
+# beside a drop cap (31, 39, 56), on a page the OCR splits into two blocks (45), 10:40 (55),
+# half indents inside a verse (12:39 'The vvicked' 60, 13:3 'Behold' 62), 13:19 (63),
+# 13:47 (65; the OCR gives its indent to 13:45, which opens with the same words) and 14:34 (68).
 MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 7): [[6, 0], [7, 0]],
-                ('matthew', 10): [[40, 0]]}
+                ('matthew', 10): [[40, 0]], ('matthew', 11): [[2, 0]], ('matthew', 12): [[39, 6]],
+                ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]]}
+
+# Paragraph starts the OCR reports where the scan has none: 13:45 (64) is flush left.
+NO_PARAS = {('matthew', 13): [[45, 0]]}
 
 
 def export_paragraphs(S, paras):
@@ -382,6 +403,8 @@ def export_paragraphs(S, paras):
         manual = [t.get('verse'), t.get('w')] in MANUAL_PARAS.get((BOOK, t['ch']), [])
         if manual:
             paras.add(i)
+        if [t.get('verse'), t.get('w')] in NO_PARAS.get((BOOK, t['ch']), []):
+            paras.discard(i)
         if (t.get('verse') == 1 and t.get('w') == 0) or manual or (i in paras and not t.get('nopara')):
             out.setdefault(str(t['ch']), []).append([t['verse'], t['w']])
     (OUT / 'paragraphs.json').write_text(json.dumps(out))
@@ -399,7 +422,7 @@ def main():
     apply_page_starts(S, starts)
     (OUT / 'tokens.json').write_text(json.dumps(
         [dict(ch=t.get('ch'), verse=t.get('verse'), w=t.get('w'), ann=t.get('ann'), kind=t['kind'],
-              tags=re.findall(r'⟦([^⟧]*)⟧', t['text']), ocr=t.get('ocr'))
+              tags=re.findall(r'⟦([^⟧]*)⟧', t['text']), ocr=t.get('ocr'), box=t.get('box'))
          for t in S if t['kind'] in ('verse', 'ann')], ensure_ascii=False))
     move_bars(S)
     export_paragraphs(S, paras)
@@ -427,6 +450,10 @@ def main():
         body = body.replace('{{MINNER|', '{{MarginNote|margin=' + side_inner + '|margin-width=65|text=')
         body = body.replace('{{MOUTER|', '{{MarginNote|margin=' + side_outer + '|margin-width=65|text=')
         catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', SENT.sub('', S[b]['text'])).strip() if b < len(S) else ''
+        if b < len(S) and S[b]['kind'] in ('annhead', 'chap', 'title'):
+            # the next page opens with a heading: take the print's catchword ("Annot-", "Chap.") from the OCR
+            tail = [l for l in p['text'].splitlines() if l.strip()]
+            catch = tail[-1].split()[-1] if tail else ''
         sig = ''
         for line in p['text'].splitlines()[-6:]:
             m = re.match(r'^\s*([A-Z]{1,2})\s+([ivjl]{1,5})\b', line)
