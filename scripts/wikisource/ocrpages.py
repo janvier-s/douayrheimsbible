@@ -9,6 +9,16 @@ from pathlib import Path
 import hashlib, re
 
 SCAN = Path.home() / 'facsimiles/ocr-2026-11-12/sancta-scan'
+IMG = Path.home() / 'facsimiles/sancta'
+
+
+def read_page_width(tsv):
+    """The page width the TSV coordinates are in (its level-1 row)."""
+    for line in tsv.read_text(errors='replace').splitlines()[1:3]:
+        f = line.split('\t')
+        if f[0] == '1':
+            return int(f[8])
+    return 0
 
 
 def read_tsv(path):
@@ -30,10 +40,22 @@ def _mode(values, bucket=10):
 
 
 def body_lines(words, page_width):
-    lines = {}
-    for w in words:
-        lines.setdefault((w['block'], w['par'], w['line']), []).append(w)
-    lines = [sorted(ws, key=lambda w: w['left']) for ws in lines.values()]
+    # Group words into lines by their vertical centre. Tesseract sometimes
+    # splits one printed line into two blocks (beside a drop cap, or under a
+    # full-width section), and its own line ids would then cut the line in half.
+    hs = sorted(w['height'] for w in words) or [40]
+    mh = hs[len(hs) // 2]
+    lines = []
+    for w in sorted(words, key=lambda w: w['top'] + w['height'] / 2):
+        c = w['top'] + w['height'] / 2
+        for ln in lines[-6:]:
+            if abs(ln['c'] - c) < 0.45 * mh:
+                ln['ws'].append(w)
+                ln['c'] = sum(x['top'] + x['height'] / 2 for x in ln['ws']) / len(ln['ws'])
+                break
+        else:
+            lines.append(dict(c=c, ws=[w]))
+    lines = [sorted(ln['ws'], key=lambda w: w['left']) for ln in lines]
     # The text column's left edge: the left value most lines have a word at
     # (margin notes and verse numbers vary, the column edge recurs), looking
     # only where a column can start (right-hand margin notes recur too).
@@ -52,7 +74,7 @@ def body_lines(words, page_width):
         h = sorted(w['height'] for w in ws)[len(ws) // 2]
         runs, run = [], [ws[0]]
         for x, y in zip(ws, ws[1:]):
-            if y['left'] - (x['left'] + x['width']) > 1.6 * h:
+            if y['left'] - (x['left'] + x['width']) > 3.2 * h:
                 runs.append(run); run = []
             run.append(y)
         runs.append(run)
@@ -65,22 +87,77 @@ def body_lines(words, page_width):
         if m:  # a verse number glued to the first word: measure from the word
             left += body[0]['width'] * len(m.group(1)) // len(body[0]['text'])
         conf = sum(w['conf'] for w in body) / len(body)
-        out.append(dict(left=left, right=right, top=min(w['top'] for w in body), conf=conf,
-                        words=[w['text'] for w in body]))
+        # A badly read text line still has some sure words and several real
+        # ones; the ornament and rule lines at a page top have neither.
+        sure = sum(1 for w in body if w['conf'] >= 80)
+        real = sum(1 for w in body if re.fullmatch(r'[A-Za-zſ,.;:]{3,}', w['text']))
+        if sure >= 2 and real >= 5:
+            conf = max(conf, 46)
+        out.append(dict(left=left, right=right, top=min(w['top'] for w in body), conf=conf, edge=edge,
+                        bottom=max(w['top'] + w['height'] for w in body),
+                        words=[w['text'] for w in body],
+                        boxes=[(w['left'], w['top'], w['width'], w['height']) for w in body]))
     body = [l for l in out if l['right'] - l['left'] > 0.40 * page_width and l['conf'] > 45]
     body.sort(key=lambda l: l['top'])
     if body and re.search(r'ACCORD|GOSPEL|CHA|EPISTLE|ACTES|APOCALYPSE', ' '.join(body[0]['words']), re.I) \
             and len(body[0]['words']) <= 8:
         body = body[1:]
-    for i, l in enumerate(body):
-        # Measure the indent against the neighbouring lines, which absorbs a
-        # skewed scan and a misjudged column edge.
-        near = sorted(x['left'] for x in body[max(0, i - 3):i] + body[i + 1:i + 4])
-        local = near[len(near) // 2] if near else edge
-        off = l['left'] - local
-        l['indent'] = 0.014 * page_width < off < 0.08 * page_width and l['left'] - edge < 0.1 * page_width
-        l['edge'] = edge
     return body
+
+
+def mark_indents(body, image_path, page_width):
+    """Flags paragraph indents from the ink on the scan.
+
+    The OCR misreads or drops the † and verse numbers that open lines, so the
+    word boxes say little about where a line really starts. The ink does: an
+    indented line starts about an em right of the column edge, while a line
+    opening with † starts at the edge (the † is ink too). Verse numbers and
+    margin notes sit left of the edge, outside the band we scan.
+    """
+    from PIL import Image
+    im = Image.open(image_path).convert('L')
+    px = im.load()
+    W, H = im.size
+    scale = W / page_width if page_width else 1
+    for l in body:
+        e = int(l['edge'] * scale)
+        top, bot = int(l['top'] * scale), int(l['bottom'] * scale)
+        mid_top = top + (bot - top) // 4          # skip ascenders of the line above
+        mid_bot = bot - (bot - top) // 4
+        # Ink runs across the band; a run starting well left of the edge is a
+        # verse number in the gutter, the first run after that opens the line.
+        ink, run_start, gap = None, None, 99
+        for x in range(max(0, e - 60), min(W, e + 160)):
+            dark = sum(1 for y in range(mid_top, mid_bot) if px[x, y] < 100) >= 2
+            if dark:
+                if gap >= 7:
+                    run_start = x
+                    if run_start >= e - 10:
+                        ink = run_start
+                        break
+                gap = 0
+            else:
+                gap += 1
+        l['ink'] = (ink / scale) if ink is not None else None
+    inks = [l['ink'] for l in body if l['ink'] is not None]
+    for i, l in enumerate(body):
+        near = sorted(x['ink'] for x in body[max(0, i - 4):i] + body[i + 1:i + 5] if x['ink'] is not None)
+        local = near[len(near) // 2] if near else (sorted(inks)[len(inks) // 2] if inks else 0)
+        em = (l['bottom'] - l['top']) * 0.3  # the print uses a full and a half indent
+        l['indent'] = l['ink'] is not None and em < l['ink'] - local < 0.08 * page_width
+
+
+def catchword(words, page_width):
+    """The word printed alone at the bottom right: the next page's first word."""
+    if not words:
+        return None
+    bottom = max(w['top'] for w in words)
+    low = [w for w in words if w['top'] > bottom - 120 and w['left'] > 0.55 * page_width
+           and re.search(r'[A-Za-zſ]{2,}', w['text']) and w['conf'] > 30]
+    if not low:
+        return None
+    w = max(low, key=lambda w: (w['top'] // 40, w['left']))
+    return w['text']
 
 
 def book_pages(book):
@@ -98,8 +175,12 @@ def book_pages(book):
                 words = read_tsv(tsv)
                 width = max((w['left'] + w['width'] for w in words), default=1)
                 seen[h] = len(pages)
-                pages.append(dict(chapters=[ch], src=f'{book}/{ch}/{n}', body=body_lines(words, width),
-                                  text=txt))
+                body = body_lines(words, width)
+                img = IMG / book / str(ch) / 'hires' / f'{n}.jpg'
+                if img.exists():
+                    mark_indents(body, img, max(width, read_page_width(tsv)))
+                pages.append(dict(chapters=[ch], src=f'{book}/{ch}/{n}', body=body, text=txt,
+                                  catch=catchword(words, width)))
             n += 1
     return pages
 

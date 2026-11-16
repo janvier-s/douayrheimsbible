@@ -7,7 +7,7 @@ annotations), aligns the sancta-scan OCR of each page to it, cuts the stream
 at the page starts and opens a paragraph wherever the print indents a line.
 Also writes report.txt: alignment quality per page and macron candidates.
 """
-import json, re, sys, difflib
+import json, os, re, sys, difflib
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -164,19 +164,25 @@ def align(pages, S):
     words = [S[i]['norm'] for i in idx]
     starts, paras, quality = [], set(), []
     cur = 0
+    prev_tail = None
+    prev_catch = ''
     for p in pages:
-        W, Windent, Wmark, Wraw, Wline = [], [], [], [], []
+        W, Windent, Wmark, Wraw, Wline, Wbox = [], [], [], [], [], []
         for li, line in enumerate(p['body']):
             first, pending = True, ''
-            for w in line['words']:
+            for w, box in zip(line['words'], line['boxes']):
                 n = norm(w)
                 lead = re.match(r'^[^A-Za-zſ]*', w).group(0)
                 if len(n) < 2:
                     pending += w
                     continue
+                # A mark glued to the end of the previous word ("And*") belongs to this one.
+                if W and re.search(r'[*"“”]$', Wraw[-1]) and not pending:
+                    pending = re.search(r'[*"“”]+$', Wraw[-1]).group(0)
                 marks = pending + lead
                 flag = ('*' if '*' in marks else '') + ('‖' if re.search(r'["“”\'‘’]', marks) else '')
                 W.append(n); Windent.append(line.get('indent') and first); Wmark.append(flag); Wraw.append(w)
+                Wbox.append((p['src'], box))
                 Wline.append(li)
                 first, pending = False, ''
         hi = min(len(words), cur + len(W) * 2 + 150)
@@ -192,6 +198,31 @@ def align(pages, S):
         while a > 0 and bb > (starts[-1] if starts else 0) and \
                 difflib.SequenceMatcher(None, W[a - 1], words[bb - 1]).ratio() >= 0.6:
             a -= 1; bb -= 1
+        # The previous page ends where its last solid match ends plus the OCR
+        # words left after it; together with the walk-back that brackets the
+        # start. Pick the position whose text best matches this page's first
+        # OCR line (often badly read, but rarely unrecognisable as a whole).
+        if starts and prev_tail is not None:
+            # Compare letters only: the OCR glues words ("tAndvvhen") and drops
+            # short ones, so word-by-word comparison misjudges the first line.
+            first_raw = next((l['words'] for l in p['body'] if l['words']), [])
+            fl = norm(''.join(first_raw))[:60]
+            fl = re.sub(r'^[t]+(?=[a-z])', '', fl) if fl[:1] == 't' and not fl.startswith('th') else fl
+            lo_c, hi_c = min(prev_tail, bb) - 6, max(prev_tail, bb) + 3
+            best, best_r = bb, -1
+            for pos in range(max(starts[-1] + 1, lo_c), min(len(words), hi_c + 1)):
+                cand = ''.join(words[pos:pos + 25])[:len(fl)]
+                r = difflib.SequenceMatcher(None, fl, cand, autojunk=False).ratio()
+                # The previous page's catchword is this page's first word.
+                if prev_catch and len(prev_catch) >= 2:
+                    wd = words[pos]
+                    if difflib.SequenceMatcher(None, prev_catch, wd).ratio() >= 0.75 or \
+                            (len(prev_catch) >= 3 and (wd.endswith(prev_catch) or wd.startswith(prev_catch))):
+                        r += 0.15
+                if r > best_r + 0.02 or (abs(r - best_r) <= 0.02 and abs(pos - bb) < abs(best - bb)):
+                    best, best_r = pos, r
+            if best_r >= 0.5:
+                bb = best
         starts.append(bb)
         for op, i1, i2, j1, j2 in sm.get_opcodes():
             if op == 'replace' and i2 - i1 == j2 - j1:
@@ -204,6 +235,9 @@ def align(pages, S):
         matched = sum(b.size for b in blocks)
         quality.append(matched / max(1, len(W)))
         seen_lines = set()
+        if os.environ.get('WS_DEBUG') == p['src']:
+            for b in blocks:
+                print('block', b.a, b.size, 'lines', sorted({Wline[b.a + k] for k in range(b.size)}), W[b.a:b.a + b.size][:6])
         for b in blocks:
             for k in range(b.size):
                 ti = idx[lo + b.b + k]
@@ -214,7 +248,13 @@ def align(pages, S):
                 if li not in seen_lines:
                     seen_lines.add(li)
                     if p['body'][li].get('indent'):
-                        sp = snap_para(S, ti)
+                        # estimate the line's first word: back off over the OCR
+                        # words before this match on the same line
+                        lead = sum(1 for x in range(ai) if Wline[x] == li)
+                        est = idx[max(0, lo + b.b + k - lead)]
+                        sp = snap_para(S, est, ti)
+                        if os.environ.get('WS_DEBUG'):
+                            print('indent', p['src'], ' '.join(p['body'][li]['words'])[:40], '| est', S[est].get('ch'), S[est].get('verse'), S[est].get('w'), '| ti', S[ti].get('verse'), S[ti].get('w'), '->', sp if sp < 0 else (S[sp].get('verse'), S[sp].get('w')))
                         if sp >= 0:
                             paras.add(sp)
                 t = S[ti]
@@ -222,12 +262,41 @@ def align(pages, S):
                 pre = re.match(r'^[^A-Za-zſ]*', pre).group(0)
                 ours = ('*' if ('*' in pre or '∷' in pre) else '') + ('‖' if '‖' in pre else '')
                 t['ocr'] = Wmark[b.a + k]
+                t['box'] = Wbox[b.a + k]
                 if ours != Wmark[b.a + k]:
-                    MARKDIFF.append(dict(page=len(starts) - 1, ch=t.get('ch'), verse=t.get('verse'), w=t.get('w'),
+                    MARKDIFF.append(dict(page=len(starts) - 1, box=Wbox[b.a + k], ch=t.get('ch'), verse=t.get('verse'), w=t.get('w'),
                                          ann=t.get('ann'), tags=re.findall(r'⟦([^⟧]*)⟧', t['text']),
                                          token=SENT.sub('', t['text'])[-40:], ocr=Wmark[b.a + k], ours=ours))
+        # An indented line with no solid match (glued or garbled OCR words):
+        # place it from the next matched block and accept only a nearby verse start.
+        for li, line in enumerate(p['body']):
+            if not line.get('indent') or li in seen_lines:
+                continue
+            first = next((x for x in range(len(W)) if Wline[x] == li), None)
+            nxt = next((b for b in blocks if b.a > first), None) if first is not None else None
+            if nxt is None:
+                continue
+            est_w = lo + nxt.b - (nxt.a - first)
+            if not (0 <= est_w < len(idx)):
+                continue
+            est = idx[est_w]
+            # Glued OCR words make the line look shorter than it is, so the
+            # estimate runs late: look back further than forward.
+            for d in (0, -1, -2, 1, -3, -4, 2, -5, -6, -7, -8):
+                j = est + d
+                if 0 <= j < len(S) and S[j]['kind'] == 'verse' and S[j].get('w') == 0:
+                    paras.add(j)
+                    seen_lines.add(li)
+                    break
+        if os.environ.get('WS_DEBUG'):
+            for li, line in enumerate(p['body']):
+                if line.get('indent') and li not in seen_lines:
+                    ws_ = [W[x] for x in range(len(W)) if Wline[x] == li]
+                    print('UNMATCHED indent', p['src'], li, ws_[:10])
         last = blocks[-1]
         cur = lo + last.b + last.size
+        prev_tail = cur + (len(W) - (last.a + last.size))
+        prev_catch = norm(p.get('catch') or '')
     # map word positions back to stream token indices
     starts = [idx[s] if s < len(idx) else len(S) for s in starts]
     if starts:
@@ -235,16 +304,23 @@ def align(pages, S):
     return starts, paras, quality
 
 
-def snap_para(S, ti):
-    """A print paragraph opens at a † (verse start) or, inside a verse, at a
-    sentence start. Snap the first matched word of an indented line to the
-    verse start when it is within two words of it; otherwise keep it only at a
-    sentence start."""
-    t = S[ti]
-    if t['kind'] == 'verse' and t.get('w', 99) <= 4:
-        return ti - t['w']
-    prev = SENT.sub('', re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}', '', S[ti - 1]['text'])).strip() if ti else '.'
-    return ti if re.search(r'[.:?!⊣]["’]*$', prev) or t['kind'] != 'verse' else -1
+def snap_para(S, est, ti):
+    """A print paragraph opens at a † (verse start) or, rarely, at a sentence
+    start inside a verse. Look around the estimated line start for the nearest
+    verse start (within three words), else a sentence start (within one word of
+    the first matched word); otherwise drop it."""
+    def plain(t):
+        return SENT.sub('', re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}', '', t['text'])).strip()
+    for d in (0, 1, -1, 2, -2, 3, -3):
+        j = est + d
+        if 0 <= j < len(S) and S[j]['kind'] == 'verse' and S[j].get('w') == 0 and abs(j - ti) <= 10:
+            return j
+    for j in (est, ti):
+        if S[j]['kind'] != 'verse':
+            return j
+        if j and re.search(r'[.:?!⊣]["’]*$', plain(S[j - 1])):
+            return j
+    return -1
 
 
 def move_bars(S):
@@ -264,7 +340,37 @@ def move_bars(S):
                 break
 
 
-MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]]}  # beside a drop cap (scans p. 31, 39)
+# Page starts the alignment gets wrong, each checked on the scan: the page's
+# first words (normalised as in norm(), joined by spaces).
+PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is written heretikes',
+               ('matthew', 44): 'pvt on is not', ('matthew', 45): 'leade vs not s cypr'}
+
+
+def apply_page_starts(S, starts):
+    for n in range(1, len(starts)):
+        want = PAGE_STARTS.get((BOOK, FIRST + n))
+        if not want:
+            continue
+        want = want.split()
+        lo, hi = max(0, starts[n] - 60), min(len(S), starts[n] + 60)
+        cands = [i for i in range(lo, hi) if S[i]['norm'] == want[0]]
+        for i in sorted(cands, key=lambda i: abs(i - starts[n])):
+            got, j = [], i
+            while len(got) < len(want) and j < len(S):
+                if S[j]['norm']:
+                    got.append(S[j]['norm'])
+                j += 1
+            if got == want:
+                starts[n] = i
+                break
+        else:
+            print(f'warning: page start override for {FIRST + n} not found near the estimate')
+
+
+# Paragraph starts the OCR misses, each checked on the scan (wiki page in brackets):
+# beside a drop cap (31, 39), on a page the OCR splits into two blocks (45), and 10:40 (55).
+MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 7): [[6, 0], [7, 0]],
+                ('matthew', 10): [[40, 0]]}
 
 
 def export_paragraphs(S, paras):
@@ -290,6 +396,7 @@ def main():
     pages = book_pages(BOOK)[:MAXP]
     OUT.mkdir(parents=True, exist_ok=True)
     starts, paras, quality = align(pages, S)
+    apply_page_starts(S, starts)
     (OUT / 'tokens.json').write_text(json.dumps(
         [dict(ch=t.get('ch'), verse=t.get('verse'), w=t.get('w'), ann=t.get('ann'), kind=t['kind'],
               tags=re.findall(r'⟦([^⟧]*)⟧', t['text']), ocr=t.get('ocr'))
@@ -312,7 +419,7 @@ def main():
         body = ''
         for i in range(a, b):
             t = S[i]
-            sep = '' if i == a else (' ' if not (t.get('block') or (i in paras and not t.get('nopara'))) else '\n\n')
+            sep = '' if i == a else (' ' if not (t.get('block') or (i in paras and t['kind'] == 'verse' and not t.get('nopara'))) else '\n\n')
             if t.get('block') and t['kind'] in ('title', 'annhead') and i > a and S[i - 1]['kind'] == t['kind']:
                 sep = '\n'
             body += sep + t['text']

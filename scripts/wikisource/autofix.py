@@ -28,6 +28,15 @@ for i, t in enumerate(toks):
         if tag.startswith('mn:') and t['ocr'] is not None and '*' in t['ocr']:
             stars.append((t['ch'], t['ann'], int(tag[3:])))
 
+_orig = json.loads((REPO / f'static/data/odr-original/{BOOK}.json').read_text())
+
+
+def lectionary_like(ch, v, label):
+    note = next((n for n in _orig['chapters'][ch - 1]['verses'][v - 1].get('notes', []) if n['label'] == label), None)
+    return bool(note) and (note.get('kind') in ('lectionary', 'head') or note.get('unmarked')
+                           or bool(re.match(r'^\s*THE (GO[SſF]PEL|EPI[SſF]TLE|[A-Z]+ PART|FIRST|SECOND|THIRD)', note['text'].upper())))
+
+
 verses = {}
 for t in toks:
     if t['kind'] == 'verse':
@@ -40,7 +49,10 @@ for (ch, v), ts in verses.items():
     c = crs[0]
     if c['ocr'] is None or '*' in c['ocr']:
         continue  # the OCR did not see this word, or agrees
-    hits = [n for n in nas if n['ocr'] is not None and '*' in n['ocr'] and n['w'] != c['w']]
+    # Only a note the print leaves unmarked can be the one sitting where the *
+    # belongs: the OCR reads a gloss's ∷ as * too, so a gloss proves nothing.
+    hits = [n for n in nas if n['ocr'] is not None and '*' in n['ocr'] and n['w'] != c['w']
+            and lectionary_like(ch, v, [g for g in n['tags'] if g.startswith('na:')][0][3:])]
     if len(hits) == 1:
         swaps.append((ch, v, int(c['tags'][0].split(':')[1]), c['w'],
                       [g for g in hits[0]['tags'] if g.startswith('na:')][0][3:], hits[0]['w']))

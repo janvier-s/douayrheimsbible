@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|CHA. V.|ACCORDING TO S. MATTHEVV.|13}}</noinclude>say to you, whosoeuer shal dimisse his vvife, ‖ excepting the cause of fornication, maketh her to ‖ committe aduoutrie: And he that shal marie her that is dimissed, committeth aduoutrie.
+<noinclude><pagequality level="1" user="" />{{rh|CHA. V.|ACCORDING TO S. MATTHEVV.|13}}</noinclude>him giue her a bil of diuorcement. {{verse|chapter=5|verse=33}}† But I say to you, whosoeuer shal dimisse his vvife, ‖ excepting the cause of fornication, maketh her to ‖ committe aduoutrie: And he that shal marie her that is dimissed, committeth aduoutrie.
 
 {{verse|chapter=5|verse=34}}† Agayne you haue heard that it vvas sayd to them of old, {{MarginNote|margin=left|margin-width=65|text=''Exo. 20, 7. Lev. 19, 11.''}}* Thou shalt not committe periurie: but thou shalt performe thy othes to our Lord. {{verse|chapter=5|verse=35}}† But I say to you ‖ not to sweare at al: neither by heauen, because it is the throne of God: neither by the earth, because it is the foote-stole of his feete: neither by Hierusalem, because it is the citie of the great King. {{verse|chapter=5|verse=36}}† Neither shalt thou sweare by thy head, because thou canst not make one heare vvhite or blacke. {{verse|chapter=5|verse=37}}† Let your talke be, yea, yea: no, no: and that vvhich is ouer & aboue these, is of euil.
 
@@ -11,6 +11,4 @@
 
 ''10. For iustice.''] {{MarginNote|margin=right|margin-width=65|text=False Martyrs.}}Heretikes and other malefactours sometime suffer willingly and stoutly: but they are not blessed, because they suffer not for iustice. For (sayth S. Aug.) they can not suffer for iustice, that haue deuided the Churche. and, where sound fayth or charitie is not, there cannot be iustice. ''Cont. ep. Parm. li. 1. c. 9. Ep. 50. Psal. 34. Conc. 2''. And so by this scripture are excluded al false Martyrs, as S. Augustine often declareth, and S. Cypr. ''de Vnit. Eccl. nu.8''.
 
-''12. Reward.''] In Latin and Greeke the word {{MarginNote|margin=right|margin-width=65|text=Merces. ''Μισθὸς.''}}signifieth very wages and hire dewe for workes, and so presupposeth a meritorious deede.
-
-''15. The light.''] This light of<noinclude>{{rh|||the}}</noinclude>
+''12. Reward.''] In Latin and Greeke the word {{MarginNote|margin=right|margin-width=65|text=Merces. ''Μισθὸς.''}}signifieth very wages and hire dewe for workes, and so presupposeth a meritorious deede.<noinclude>{{rh|||''15. The}}</noinclude>
