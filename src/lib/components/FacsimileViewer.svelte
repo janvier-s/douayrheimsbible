@@ -110,23 +110,28 @@
 			{/key}
 		{/if}
 	</div>
+	<button
+		type="button"
+		class="fac-nav fac-prev"
+		onclick={() => go(-1)}
+		disabled={position === 1}
+		aria-label="Previous page">‹</button
+	>
+	<button
+		type="button"
+		class="fac-nav fac-next"
+		onclick={() => go(1)}
+		disabled={position === pages.length}
+		aria-label="Next page">›</button
+	>
+	<button
+		type="button"
+		class="fac-nav fac-close"
+		onclick={() => dialogEl?.close()}
+		aria-label="Close">×</button
+	>
 	<div class="fac-bar">
-		<button
-			type="button"
-			onclick={() => go(-1)}
-			disabled={position === 1}
-			aria-label="Previous page">‹</button
-		>
 		<span aria-live="polite">Page {position} of {pages.length}</span>
-		<button
-			type="button"
-			onclick={() => go(1)}
-			disabled={position === pages.length}
-			aria-label="Next page">›</button
-		>
-		<button type="button" class="fac-close" onclick={() => dialogEl?.close()} aria-label="Close"
-			>×</button
-		>
 	</div>
 </dialog>
 
@@ -193,6 +198,7 @@
 		color: #fff;
 	}
 	.fac-dialog[open] {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 	}
@@ -221,11 +227,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
 		padding: 0.5rem 1rem calc(0.5rem + env(safe-area-inset-bottom));
 		font-size: 0.9rem;
 	}
-	.fac-bar button {
+	.fac-nav {
+		position: absolute;
+		z-index: 1;
 		min-width: 2.75rem;
 		min-height: 2.75rem;
 		font-size: 1.6rem;
@@ -236,11 +243,26 @@
 		border-radius: 999px;
 		cursor: pointer;
 	}
-	.fac-bar button:disabled {
+	.fac-nav:hover:not(:disabled) {
+		background: rgba(255, 255, 255, 0.25);
+	}
+	.fac-nav:disabled {
 		opacity: 0.3;
 		cursor: default;
 	}
+	.fac-prev,
+	.fac-next {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.fac-prev {
+		left: max(0.5rem, env(safe-area-inset-left));
+	}
+	.fac-next {
+		right: max(0.5rem, env(safe-area-inset-right));
+	}
 	.fac-close {
-		margin-left: auto;
+		top: max(0.5rem, env(safe-area-inset-top));
+		right: max(0.5rem, env(safe-area-inset-right));
 	}
 </style>
