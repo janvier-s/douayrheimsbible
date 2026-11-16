@@ -124,6 +124,9 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 - Mark 16:18: print (and the Sancta scrape) read "Miracles the Church by impoſition of hand" (no *in*); odr-original keeps it, odr reads "in the Church".
 - Gen 46:1 note: the print has "The eight and laſt part of this booke." before the argument (added to both texts).
 
+## Challoner-additions recheck (Nov 16 2026)
+- Gen 36:6 note: the print reads "chap. 22. v. 3" for Jacob's journey from Mesopotamia (the reference is Gen 32:3); odr-original keeps the misprint, odr kept "chap. 22" and now reads "v. 3" (was "v. 4", which the print does not have).
+
 ## Open
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
   2 Mac 3:6/7, 2 Mac 6:21/22, Josue 11:8/9, Josue 13:17/18, 4 Esd 13:31/32, Acts 5:22/23, Apoc 21:10/11, Dan 3:91/92, Jer 34:15/16, Judges 2:16/17, Mark 10:48/49,
