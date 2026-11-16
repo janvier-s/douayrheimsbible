@@ -11,6 +11,22 @@ export interface ChangelogEntry {
 /** Newest first. Written for readers: features and visible fixes only. */
 export const CHANGELOG: ChangelogEntry[] = [
 	{
+		version: '1.7',
+		date: 'November 15 to 16, 2026',
+		iso: '2026-11-15',
+		changes: [
+			'The original-spelling Douay-Rheims now follows the printed pages more closely, with the long s (ſ) and the printed vv, checked against the 1609 and 1582 facsimiles.',
+			'KJV 1611 in its original spelling, with a spelling switch on KJV pages and as a compare column.',
+			'Chapters open with a drop cap and small capitals, and the Reading options menu gains the IM Fell DW Pica font.',
+			'The modern and original spelling switch now sits next to the translation selector, and the facsimile viewer has side buttons for the previous and next page.',
+			'Original-spelling download bundle on the Downloads page.',
+			'Words the 1609 print has and the modern text lacked are restored. Where the print itself has a slip, the word is shown in brackets with a dagger (†) and an editorial note in the study panel; Daniel 12:7 carries one for a misprinted citation.',
+			'In the modern text, & is now written out as “and” and &c as “etc.”, and Latin quotations in the notes read “et”. The “& → and” option is gone from Reading options. The original spelling keeps the printed ampersand.',
+			'Corrected chapter summaries and annotations, among them Deuteronomy 30 and Job 26.',
+			'Fixed Reading options not opening when tapped before the page had finished loading.'
+		]
+	},
+	{
 		version: '1.6',
 		date: 'November 12 to 13, 2026',
 		iso: '2026-11-12',
