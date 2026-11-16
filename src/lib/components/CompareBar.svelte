@@ -127,8 +127,8 @@
 		class="bg-glass backdrop-blur-sm border-b border-border px-lg max-md:px-[8px] flex items-center gap-[10px] md:gap-[14px] relative"
 		style="height: 50px;"
 	>
-		<!-- Translation chips — desktop -->
-		<div class="hidden md:flex flex-col justify-center gap-[5px] shrink-0">
+		<!-- Translation chips — 2xl+ only: nine chips reach ~614px and would hit the centred selector below that -->
+		<div class="hidden 2xl:flex flex-col justify-center gap-[5px] shrink-0">
 			<span class="text-[9px] uppercase tracking-[0.15em] text-subtle leading-none font-medium"
 				>Translations</span
 			>
@@ -164,8 +164,8 @@
 			</div>
 		</div>
 
-		<!-- Translation dropdown — mobile -->
-		<div class="md:hidden relative shrink-0">
+		<!-- Translation dropdown — everything narrower than 2xl -->
+		<div class="2xl:hidden relative shrink-0">
 			<button
 				class="flex items-center gap-[4px] px-[8px] py-[4px] rounded-[3px] border border-border text-[11px] font-medium transition-colors duration-fast
 					{mobileTransOpen
