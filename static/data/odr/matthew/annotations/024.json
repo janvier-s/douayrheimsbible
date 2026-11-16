@@ -93,7 +93,8 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "<i>2. Thes. 2.</i>"
+          "text": "<i>2. Thes. 2.</i>",
+          "star": true
         }
       ]
     },
@@ -112,7 +113,8 @@
         },
         {
           "marker": 3,
-          "text": "<i>Act. 1, 12.</i>"
+          "text": "<i>Act. 1, 12.</i>",
+          "star": true
         }
       ]
     },

@@ -353,7 +353,9 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 57): 'lesser in the kingdom', ('matthew', 58): '@annhead',
                ('matthew', 66): 'avthor os evil tertvl', ('matthew', 69): '@chap', ('matthew', 71): '@annhead',
                ('matthew', 72): 'and there came to', ('matthew', 76): '@chap', ('matthew', 79): 'ones that beleeve in',
-               ('matthew', 81): 'nativitie an angel sor', ('matthew', 84): '@chap', ('matthew', 86): 'nations avg de verb'}
+               ('matthew', 81): 'nativitie an angel sor', ('matthew', 84): '@chap', ('matthew', 86): 'nations avg de verb',
+               ('matthew', 89): 'to lay hands vpon', ('matthew', 92): 'a man not attyred', ('matthew', 96): '@chap',
+               ('matthew', 101): 'i sow not gather', ('matthew', 102): '@annhead'}
 
 
 # Signature marks. The NT is printed in gatherings of four leaves (eight pages); the first
@@ -376,7 +378,7 @@ def signature(wiki):
 
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
-CATCHWORDS = {('matthew', 75): 'Chap.'}
+CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-'}
 
 
 def apply_page_starts(S, starts):
@@ -410,14 +412,17 @@ def apply_page_starts(S, starts):
 # Paragraph starts the OCR misses, each checked on the scan (wiki page in brackets):
 # beside a drop cap (31, 39, 56), on a page the OCR splits into two blocks (45), 10:40 (55),
 # half indents inside a verse (12:39 'The vvicked' 60, 13:3 'Behold' 62), 13:19 (63),
-# 13:47 (65; the OCR gives its indent to 13:45, which opens with the same words) and 14:34 (68).
+# 13:47 (65; the OCR gives its indent to 13:45, which opens with the same words), 14:34 (68),
+# 21:33 (88), 22:15 (90; the OCR gives its indent to 22:16), 23:16 (93) and 24:15 (96).
 MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 7): [[6, 0], [7, 0]],
                 ('matthew', 10): [[40, 0]], ('matthew', 11): [[2, 0]], ('matthew', 12): [[39, 6]],
-                ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]]}
+                ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]],
+                ('matthew', 21): [[33, 0]], ('matthew', 22): [[15, 0]], ('matthew', 23): [[16, 0]],
+                ('matthew', 24): [[15, 0]]}
 
-# Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81)
-# are flush left.
-NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]]}
+# Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81),
+# 22:16 (90, mid-line) are flush left.
+NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]]}
 
 
 def export_paragraphs(S, paras):

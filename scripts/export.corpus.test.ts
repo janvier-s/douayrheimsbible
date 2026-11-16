@@ -269,7 +269,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,765 of 13,783 markers', () => {
+	it('binds 13,764 of 13,782 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -285,10 +285,12 @@ describe('the corpus markup', () => {
 		// 13,768 before the Acts 28:8 [1] note (no print, Peters, scrape or Haydock source) was removed.
 		// 13,767 before the later-edition Matt 1:19 gloss (not in the 1582 print) was removed.
 		// 13,766 before the later-edition Matt 20:34 gloss (not in the 1582 print) was removed.
-		expect(bound).toBe(13765);
+		// 13,765 before the Matt 22:15 margin note (none in the 1582 print; a later-edition
+		// lectionary note in odr) was removed (2026-11-16).
+		expect(bound).toBe(13764);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
 		expect(unbound).toBe(18);
-		expect(bound + unbound).toBe(13783);
+		expect(bound + unbound).toBe(13782);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming

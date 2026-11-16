@@ -63,7 +63,8 @@
         },
         {
           "marker": 3,
-          "text": "<i>Eph. 4.</i>"
+          "text": "<i>Eph. 4.</i>",
+          "star": true
         },
         {
           "marker": 4,
