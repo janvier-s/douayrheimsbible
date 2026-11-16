@@ -120,7 +120,7 @@ describe('ODR verse note integrity', () => {
 				30,
 				15,
 				'e',
-				'Concupiscence of the flesh, & of the eyes. Envy, Luxury, Avarice, & Ambition.'
+				'Concupiscence of the flesh, and of the eyes. Envy, Luxury, Avarice, and Ambition.'
 			]
 		];
 
