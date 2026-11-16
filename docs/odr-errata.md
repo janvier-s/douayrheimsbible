@@ -118,6 +118,10 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 - Romans 5:2 (note 1): print reads "certaitie" (nasal tilde lost); odr-original keeps "certaintie".
 - Ps 81:7 h: the margin citation "Sap. 6." is in `cross_refs`; the stray "sap." fragment in the odr-original note text was removed.
 - The print sets a capital W for the "we" in saints' names inside lectionary notes ("S. MatthéWes day", "AlholoWes eue", "S. BartlemeWes day"); the data spells them with lower-case w.
+- Ps 81:8 k: print reads "that eing he is Lord of al" (the ſ dropped); odr-original keeps it, odr reads "seeing".
+- Ps 118:8 q: print reads "profitably leiſt a while" (for *left*); odr-original keeps it, odr reads "left".
+- Ps 101:5 h: print "al ſauour" = *savour*; odr read "favour" and now reads "savour".
+- Mark 16:18: print (and the Sancta scrape) read "Miracles the Church by impoſition of hand" (no *in*); odr-original keeps it, odr reads "in the Church".
 - Gen 46:1 note: the print has "The eight and laſt part of this booke." before the argument (added to both texts).
 
 ## Open

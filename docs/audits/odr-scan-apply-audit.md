@@ -90,3 +90,26 @@ Counts: 4 found in print (34, 35 in part, 40, 41) and fixed; 1 found as a varian
 5. Old dataset question still open: these audits found many notes whose text follows a different version than the page scans. Worth deciding which edition the odr-original notes are meant to follow before more word-level work.
 
 Not touched: `odr-original/hebrews/annotations/007.json` bodies and annotation titles.
+
+## Second pass: scrape, Peters and page re-reads (Nov 16 2026)
+
+Policy: the scan wins. Scrape = `sancta-scrape/data/<book>/<ch>.json`; Peters = `ocr-2026-11-12/peters-columns`; page reads with `agy --model gemini-3.8-flash-low`
+on crops of the hires pages (psalm notes are set inline under the verse, not in a margin).
+
+**The batch's `print_text` is not reliable for psalm notes.** Where it disagreed with both the scrape and our text, the page said otherwise: Ps 89:1 a, 83:4 g, 118:62 g
+(page and scrape = ours; the batch text was a blend of neighbouring notes), Ps 61:5 i (page = ours). Six of my first-pass edits were taken from those answers and were reverted after the page read:
+Ps 78:1 `fane` (print), Ps 81:8 `eing` (print misprint), Ps 101:5 `ſauour` (print; odr corrected to `savour`), Ps 118:8 `leiſt` (print), Isaie 45:4 `very` (print),
+Habacuc 3:1 `differed`, `& damnation` (print). Ps 81:7 h now ends `Sap. 6.` as printed. Confirmed on the page: Ps 25:4 (confidence of), 71:2 (is), 77:46 (a), 92:1 (in ſoule),
+107:4 (auerred), 117:12 (troupes), 131:11 (Act. 2), 140:2 (fume), Dan 11:38, Eccl 43:2 (ſenſles), Isa 3:1 (nere), 19:1 (B.), Mic 7:14 (rodde;), Gen 3:14, Num 19:2, Prov 27:3 and 27:5, Hab 3:1.
+Not visible on the crops: Eccl 43:2 "whoſe" (kept: the line break shows "by whoſe in-fluence"). Left as the batch gave them, unchecked on the page: Esther 11:1 `Amans`, `Iewes`.
+
+**Lectionary notes.** The scrape (which matches the page) has a print note at every one of these verses except 1 Cor 12:27, 2 Cor 10:17, 2 Tim 2:8, 2 Tim 3:10 and Acts 28:8.
+Our numbered notes are expansions of the print note (saints and dates added). Following "scan wins", the notes were reduced to the printed wording in both texts:
+1 Cor 4:9 [2], Luke 5:27 (orig), 6:12, 6:17, 10:1, 11:33, 12:35, Matt 9:9, 13:44, 19:3, 25:1 (Matt 4:18 already matched). The dates and extra saints dropped are listed in the git diff.
+
+| Result | Items |
+|---|---|
+| Print note found and text now follows it | 1 Cor 4:9, Luke 5:27, 6:12, 6:17, 10:1, 11:33, 12:35, Matt 4:18, 9:9, 13:44, 19:3, 25:1 |
+| Mark 16:18 | print and scrape both read "Miracles the Church…": orig correct, odr's `in` kept; errata |
+| Peters | silent on all of these lectionary notes; no vote from it |
+| **Still unsettled** | John 15:1 [1]/[2] (print has one note, "The Goſpel for one Martyr."; ours has two longer ones); and the five notes with **no print counterpart at all** (1 Cor 12:27 Bartholomew, 2 Cor 10:17 Lucy/Martha/Agnes/Potentiana, 2 Tim 2:8 and 3:10 George, Acts 28:8). They are additions, not in the scrape or on the page. Left in place pending a decision on whether to delete them. |
