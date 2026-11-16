@@ -13,8 +13,8 @@ entry at the same verse or within two verses, by best title similarity.
 - 1,507 have a scrape counterpart and were compared four ways. 12 have none (1 Kings 16:7, 1 Thess 5:21, Heb
   7:18, 7:19, 7:21, 7:23, 7:27, John 15:2 x2, Ps 9:21, Ps 15:10, Ps 33:14, Ps 49:14); those were compared with
   each other only.
-- Before fixing, 1,415 of the 1,507 agreed on all four titles by skeleton. 49 differed only between modern and
-  original (spelling and archaism, intended), leaving about 43 where a vote mattered.
+- Before fixing, 1,415 of the 1,507 agreed on all four titles by skeleton (spaced, so glued words show). 92
+  differed somewhere; the glue-tolerant skeleton cut that to 46 after the fixes, mostly spelling and archaism.
 - Fixed: 11 modern titles, 12 original titles (23 files, one title each). After the fixes 1,461 of 1,507 agree on
   all four by skeleton; the other 46 are the spelling and archaism differences listed under "Left alone".
 - Lemma spans rebuilt with `build-odr-lemmas.ts --write` for the 9 verses whose title changed. Every title still
