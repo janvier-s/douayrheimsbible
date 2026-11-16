@@ -39,6 +39,16 @@ Page readings: Gemini 3.8 Flash first pass, Gemini 4 Argon (High) second pass on
   doubled words Isaie 18:7 "expecting expecting", Isaie 41:2 "with with".
 - Isaie 24:19: print misprints "shal the earth the broken" (Argon on the page); odr reads "be broken" (Vulgate commovebitur), odr-original keeps "the".
 
+## Citation-number corrections (modern odr corrected, odr-original keeps the print)
+| Ref | Print (p. 803) | odr | Note |
+|---|---|---|---|
+| Daniel 12:7, note (e) | "Apo. 11. v. 14. &c." | "Apoc. 12. v. 14. etc." | The print misnumbers the Apocalypse chapter (Apoc 12:14 is the "time, times, and half a time" verse, cited as 12 in the annotation on the same verse). odr-original had been silently corrected; restored to the print on Nov 16 2026. Editorial note in `odr-notes/daniel/12.json`. |
+
+Other citation numbers changed in earlier commits were checked against the page images (Argon Medium, Nov 16 2026) and are transcription fixes, not print corrections: the print already reads the current number, so they need no site note.
+- b2e0381c (Nov 11 annotation review): Apoc 1 "Act. 15, 28", Apoc 12 "Dan. 10, 21", Apoc 19 "vers. 6", Gen 4 "27. v. 29", Matt 23 "c. 51" and "c. 61" (both printed); Gen 6 "600. yeare", Exodi. 32, Lev 18 "chap. 20", Acts 15 and John 6 notes (OCR).
+- 7000aeb9 (Nov 11 patristic citations): Heb 7 "ho. 17", Acts 23 "ep. 65. 69", Gal 5 "li. 15 de Trin.", Gen 9 "Li. 26 Moral.", Gen 27 "c. 37 de civit." and "ho. 53", James 2 "c. 27", John 10 "Trin. li. 7" and "tract. 48", John 13 "li. 3 de Sacr.", John 14 "c. 8".
+- Not checked against the print: Josue 24 "pag. 203" (was 186; a page cross-reference re-pointed with the verse re-division) and the Mar 24 ℣-reference fixes in summaries (editorial refs, not print text).
+
 ## Single-word candidates settled (Argon High on the page)
 | Ref | Page reading | Verdict |
 |---|---|---|
