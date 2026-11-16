@@ -43,6 +43,7 @@ def finish(s):
     s = s.replace('ſ', 's').replace('⊢', '⊣')
     s = re.sub(r'<sc>(.*?)</sc>', r'\1', s)
     s = re.sub(r'</?i>', "''", s)
+    s = re.sub(r'</?alt>', '', s)  # variant readings: the print's ` ' marks stay in the text
     return s.replace('<br>', '<br/>')
 
 
@@ -343,6 +344,23 @@ def move_bars(S):
                 S[j]['text'] = S[j]['text'][:m.end()] + '‖ ' + S[j]['text'][m.end():]
                 S[j]['ocr_bar_moved'] = True
                 break
+    # ‖ positions checked on the scan that neither the lemmas nor the OCR give
+    for i, t in enumerate(S):
+        if t['kind'] != 'verse':
+            continue
+        for frm, to in BARS.get((BOOK, t['ch'], t['verse']), []):
+            if t['w'] == frm:
+                assert '‖ ' in t['text'], (t['ch'], t['verse'], t['text'])
+                t['text'] = t['text'].replace('‖ ', '', 1)
+            if t['w'] == to:
+                m = re.match(r'^((?:⟦[^⟧]*⟧|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[*∷†] ?)*)', t['text'])
+                t['text'] = t['text'][:m.end()] + '‖ ' + t['text'][m.end():]
+
+
+# Wiki-only ‖ fixes, checked on the scan: (from word, to word) per verse, None = no bar.
+# 23:2 '‖ the chaire' (92); 25:34 has no ‖ in the print, 25:41 has '‖ Get' (101; the
+# annotation title '34. Come ye, 41 get ye away' gives only the first).
+BARS = {('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)]}
 
 
 # Page starts the alignment gets wrong, each checked on the scan: the page's
