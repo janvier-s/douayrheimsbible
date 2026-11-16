@@ -62,6 +62,18 @@ Single-word deletions (a, the, an, of, also, giveth, undertake, …) and the glu
   v. 3", a misprint for 32; recorded in `docs/odr-errata.md`).
 - No lemma spans moved; `npx vitest run`: 537 passed before and after, no pin edited.
 
+## Regression scan of the whole commit (Nov 16 2026)
+
+Run over all 130 annotation files 00721721 changed: word-level alignment (consonant skeletons) of modern-before and
+modern-after against odr-original, keeping mismatches that exist after but not before; non-word tokens against a
+vocabulary from the 1,000+ untouched annotations; length ratio; `<mn>` marker order. Results: 47 new mismatches
+(41 spelling variants such as `manner`/`maner`, `Dominic`/`dominike`, kept on purpose), 13 non-word hits (all real
+words: `Council`, `fantasies`, `colourable`, …), 0 length outliers, 0 marker differences.
+Six real regressions, all glue or spacing, fixed in modern against the print/odr-original:
+Gen 3:1 "itnot sin" to "is it not sin"; Gen 10:8 "hunter,</i>a giant" to "hunter,</i> a giant"; Wisdom 14:15
+"ofAssirians" to "of Assirians"; Apoc 12:7 "Church, militant ashe was" to "Church militant as he was";
+Luke 1:36 "August.2." to "August. 2."; Luke 3:23 "c. 2.3." to "c. 2. 3.". No lemma spans moved.
+
 ## Seen, not changed
 
 - Gen 36 note 6 (modern) ends the marker text "Esau's last parting from Jacob. (c)": the stray "(c)" is a margin-letter leak.
