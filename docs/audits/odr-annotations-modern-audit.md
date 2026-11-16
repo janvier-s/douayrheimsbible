@@ -31,9 +31,26 @@ the scrape is the one that differs and modern stays.
 - Spelling and style variants: `indeed`/`in deed`, `cannot`/`can not`, `free-will`/`free will`, `baptise`.
 - 1 John 2:1 (`Marie` for `M A R I E`) and Isa 37:35 (citation spacing).
 
+## Original-spelling annotations (odr-original)
+
+Checked against the scrape's `original` text and the modern text by the same vote. The 1609 words themselves
+are sound: no dropped words or OCR junk survive the vote (the only disagreement is note-marker placement).
+What was wrong is spelling:
+
+- 36 annotations (2 Cor 1:24, 2 Pet 1:15, Exod 7:3, Mark 2:10, Matt 7:21, 16:19, 17:9 and others) were whole
+  passages in modern spelling with a long s laid over them (`heretics`, `words`, `glory`, `Jude`). 1,176 words
+  were rewritten from the scrape's 1609 spelling (`heretikes`, `wordes`, `glorie`, `Iude`), with s turned to
+  ſ by the print rule: ſ for a non-final s except before f, before h and k in the Old Testament, final s
+  round, medial ss as ſſ. The scrape's `vv` and `w` were taken as they stand; the scrape cannot tell vv from
+  w, so those two are not independently verified.
+- 74 possessive apostrophes removed (`God's` to `Gods`, `Church's` to `Churches`). The scrape keeps them in
+  those annotations too, but the facsimile OCR has none (24 hits for `Pharaos heart`, `Churches authority`),
+  so the apostrophes are modern leaks.
+
 ## Still open
 
 - Psalm 49:14 (`The sacrifice of praise.]`), 1 John 5:3 (`Mat. 11, v. 30.`) and Gal 2:7 (`Calu. li. 4…`) are
   citations in the 1609 text that modern keeps in `cross_refs`.
-- Original-spelling annotations compared with the scrape's original text (375 annotations show gaps of four or
-  more words), and annotation titles, not yet reviewed.
+- Annotation titles (the `title` lemma) are not yet compared.
+- Hyphenated compounds and capitalisation in the original (`Palm-Sunday`, `work-days`) were not checked
+  against the scans.
