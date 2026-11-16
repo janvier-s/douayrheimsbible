@@ -227,13 +227,31 @@ export const annotationRef = (
  *   1-timothy 2:6        prints <na>[1]</na> twice against a single note
  *   ecclesiasticus 14:10 carries a <na>(†)</na> and has no notes array at all
  *
+ * and the <na>(†)</na> editorial markers. Those point at a sidecar note in
+ * odr-notes/<book>/<chapter>.json (shown in the study panel), not at the verse's
+ * own notes array, so they never bind here: one per print correction, pinned below.
+ *
  * Per marker, not per ref, so the pin excuses exactly the token it names: a
  * second unbindable marker added to 1-timothy 2:6 is still fatal. This matches
  * KNOWN_UNREFERENCED, which has always been per note.
  */
 export const KNOWN_UNBOUND: ReadonlySet<string> = new Set([
 	'1-timothy 2:6 marker 1',
-	'ecclesiasticus 14:10 marker †'
+	'ecclesiasticus 14:10 marker †',
+	// editorial markers for print corrections (odr-notes sidecar), Nov 16 2026
+	'1-esdras 2:50 marker †',
+	'2-esdras 7:13 marker †',
+	'2-esdras 7:39 marker †',
+	'2-kings 13:3 marker †',
+	'3-kings 10:7 marker †',
+	'2-paralipomenon 33:23 marker †',
+	'judges 6:22 marker †',
+	'job 20:29 marker †',
+	'exodus 24:4 marker †',
+	'exodus 32:28 marker †',
+	'jeremie 43:10 marker †',
+	'1-kings 21:1 marker †',
+	'isaie 24:19 marker †'
 ]);
 
 /** The 23 notes no marker references, as `${ref} note ${token}`. */
