@@ -23,6 +23,7 @@ export const CHANGELOG: ChangelogEntry[] = [
 			'Words the 1609 print has and the modern text lacked are restored. Where the print itself has a slip, the word is shown in brackets with a dagger (†) and an editorial note in the study panel; Daniel 12:7 carries one for a misprinted citation.',
 			'In the modern text, & is now written out as “and” and &c as “etc.”, and Latin quotations in the notes read “et”. The “& → and” option is gone from Reading options. The original spelling keeps the printed ampersand.',
 			'Corrected chapter summaries and annotations, among them Deuteronomy 30 and Job 26.',
+			'Saints’ days from the printed Table of Epistles and Gospels now show under the lectionary notes, labelled as coming from the Table.',
 			'Fixed Reading options not opening when tapped before the page had finished loading.'
 		]
 	},
