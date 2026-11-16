@@ -160,7 +160,8 @@ describe('the corpus markup', () => {
 		// 2,208 before the Sancta margin-citation pass: Ps 121:6, +54 missing 1609
 		// citations, less 37 Sancta entries that only repeated a printed one or a note.
 		// 2,226 before Matt 16:18's 'Io. 21, 15.' moved to 16:19, where the 1582 print has its *.
-		expect(crossRefs).toHaveLength(2227);
+		// 2,227 before Matt 8:17's 'Lu. 9, 57.' moved to 8:19, where the 1582 print has its *.
+		expect(crossRefs).toHaveLength(2228);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -176,7 +177,8 @@ describe('the corpus markup', () => {
 		// 43,950 before the split Deut 30 annotation was merged back (-2 titles, -2 texts).
 		// 43,946 before John 15:2 lost its two invented annotation parts (-2 titles, -2 texts).
 		// 43,942 before Matt 16:19 got its own cross_ref (Io. 21, 15.): +1 block.
-		expect(blocks).toHaveLength(43943);
+		// 43,943 before Matt 8:19 got its own cross_ref (Lu. 9, 57.): +1 block.
+		expect(blocks).toHaveLength(43944);
 	});
 
 	it('names exactly one block per ref', () => {
