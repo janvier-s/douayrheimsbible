@@ -113,3 +113,18 @@ Our numbered notes are expansions of the print note (saints and dates added). Fo
 | Mark 16:18 | print and scrape both read "Miracles the Church…": orig correct, odr's `in` kept; errata |
 | Peters | silent on all of these lectionary notes; no vote from it |
 | **Still unsettled** | John 15:1 [1]/[2] (print has one note, "The Goſpel for one Martyr."; ours has two longer ones); and the five notes with **no print counterpart at all** (1 Cor 12:27 Bartholomew, 2 Cor 10:17 Lucy/Martha/Agnes/Potentiana, 2 Tim 2:8 and 3:10 George, Acts 28:8). They are additions, not in the scrape or on the page. Left in place pending a decision on whether to delete them. |
+
+## Lectionary notes: the Table of Epistles and Gospels (Nov 16 2026)
+
+The saints' days in the numbered lectionary notes come from the print's back-of-book *Table of the Epistles and Gospels* (`static/data/reference/odr/nt/table-epistles-gospels.json`),
+placed at the verse where each reading begins. They are print content, but they are not margin notes. Decision: the margin note carries the printed wording only;
+the table-derived text is kept in an extra field on the same note, so no verse marker or label changes.
+
+- `table_text` (string): the former combined note text, on 1 Cor 4:9 [2], Luke 6:12, 6:17, 10:1, 11:33, 12:35, Matt 9:9, 13:44, 19:3, 25:1 and John 15:1 [1]
+  (John 15:1 [1] now reads "The Goſpel for one Martyr.", confirmed at verse 1 on the page). Both datasets.
+- `table_only: true`: notes with no margin counterpart, whose whole text is table-derived: 1 Cor 12:27 [1], 2 Cor 10:17 [2], 2 Tim 2:8 [1], 2 Tim 3:10 [1], John 15:1 [2].
+- Matt 4:18 and Luke 5:27 already equal the printed wording (their old text added nothing); no field.
+- The saints' possessives inside `table_text` keep the apostrophes of the reference table; the table's own print spelling has not been read from the page.
+- The reader does not display these fields yet, so the saints and dates no longer show beside those verses until the UI is taught to read `table_text` and `table_only`.
+- **Still open:** Acts 28:8 [1] ("Miraculous healing by imposition of the Apostles hands"). It is a gloss, not a table entry, and is in neither the scrape nor the page read. Left unchanged.
+- **Still open:** the Challoner-style additions removed in commit `00721721` (Rom 13:1, Matt 27:46 and any others) have not been re-checked against the page. Planned next.
