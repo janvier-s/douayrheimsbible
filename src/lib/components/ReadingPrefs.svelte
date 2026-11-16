@@ -41,10 +41,20 @@
 		localStorage.setItem('theme', id);
 	}
 
+	// Font changes alter the size scale (see sizeScale in fonts.ts) and, for IM Fell,
+	// the small-caps / verse-number cut, so re-apply both whenever the font changes.
+	function applyFontMetrics(fontId: string, dyslexia: boolean) {
+		const root = document.documentElement;
+		const size = compareMode ? $prefs.compareFontSize : $prefs.fontSize;
+		root.style.setProperty('--font-size-reader', `${readerFontPx(size, fontId, dyslexia)}px`);
+		root.toggleAttribute('data-sc-font', !dyslexia && fontId === 'im-fell-dw-pica');
+	}
+
 	function setFont(id: string) {
 		const font = getFontById(id);
 		if (!font) return;
 		prefs.update((p) => ({ ...p, fontFamily: id }));
+		applyFontMetrics(id, false);
 		document.documentElement.style.setProperty('--font-reader', font.stack);
 		document.documentElement.style.setProperty(
 			'--font-dropcap',
@@ -54,6 +64,7 @@
 
 	function setDyslexia(on: boolean) {
 		prefs.update((p) => ({ ...p, dyslexiaFont: on }));
+		applyFontMetrics($prefs.fontFamily, on);
 		if (on) {
 			document.documentElement.style.setProperty(
 				'--font-reader',
