@@ -356,6 +356,25 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 81): 'nativitie an angel sor', ('matthew', 84): '@chap', ('matthew', 86): 'nations avg de verb'}
 
 
+# Signature marks. The NT is printed in gatherings of four leaves (eight pages); the first
+# three rectos are signed X, X ij, X iij, and the fourth is unsigned. Gathering A starts at
+# wiki page 29 (the NT title). The OCR misreads the numeral often (57 'D ij' for D iij), so
+# the mark is computed, and the OCR only warns when it sees another letter. Checked on the
+# scans for A-H (pages 31-89).
+SIG_ALPHABET = 'ABCDEFGHIKLMNOPQRSTVXYZ'
+SIG_FIRST = {'matthew': 29}
+
+
+def signature(wiki):
+    k = wiki - SIG_FIRST.get(BOOK, 10 ** 6)
+    if k < 0 or k % 2 or k % 8 > 4:
+        return ''
+    g, n = divmod(k // 2, 4)
+    letters = SIG_ALPHABET[g % 23] * (g // 23 + 1)
+    letters = letters[0] + letters[1:].lower()
+    return letters + ['', ' ij', ' iij'][n]
+
+
 # Catchwords before a heading that the OCR garbles, checked on the scan.
 CATCHWORDS = {('matthew', 75): 'Chap.'}
 
@@ -461,11 +480,11 @@ def main():
             # the next page opens with a heading: take the print's catchword ("Annot-", "Chap.") from the OCR
             tail = [l for l in p['text'].splitlines() if l.strip()]
             catch = CATCHWORDS.get((BOOK, wiki)) or (tail[-1].split()[-1] if tail else '')
-        sig = ''
+        sig = signature(wiki)
         for line in p['text'].splitlines()[-6:]:
-            m = re.match(r'^\s*([A-Z]{1,2})\s+([ivjl]{1,5})\b', line)
-            if m:
-                sig = m.group(1) + ' ' + m.group(2).replace('l', 'i')
+            m = re.match(r'^\s*(?:\d{1,3}\s+)?([A-Z]{1,2})\s+([ivjl]{1,5})\b', line)
+            if m and (not sig or m.group(1) != sig.split()[0]):
+                print(f'warning: page {wiki}: OCR signature {m.group(1)} {m.group(2)}, computed {sig or "none"}')
         footer = f'{{{{rh||{sig}|{catch}}}}}' if (catch or sig) else ''
         (OUT / f'{wiki}.wiki').write_text('<noinclude><pagequality level="1" user="" />' + header +
                                           '</noinclude>' + body + '<noinclude>' + footer + '</noinclude>\n')

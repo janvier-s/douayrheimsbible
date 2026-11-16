@@ -16,4 +16,4 @@
 
 {{verse|chapter=7|verse=6}}† Giue not that which is ‖ holy to dogges: neither cast ye your pearles before swine, lest perhaps they treade them with their feete, and turning, al to teare you.
 
-{{verse|chapter=7|verse=7}}† {{MarginNote|margin=left|margin-width=65|text=''Lu. 11, 9.''}}* Aske, and it shal be giuen you: seeke, and you shal finde, knocke, and it shal be opened to you. {{verse|chapter=7|verse=8}}† For ‖ euery one that asketh, receiueth: and that seeketh, findeth: and to him<noinclude>{{rh|||that}}</noinclude>
+{{verse|chapter=7|verse=7}}† {{MarginNote|margin=left|margin-width=65|text=''Lu. 11, 9.''}}* Aske, and it shal be giuen you: seeke, and you shal finde, knocke, and it shal be opened to you. {{verse|chapter=7|verse=8}}† For ‖ euery one that asketh, receiueth: and that seeketh, findeth: and to him<noinclude>{{rh||C|that}}</noinclude>
