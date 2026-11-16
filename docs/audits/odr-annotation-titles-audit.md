@@ -97,3 +97,9 @@ rod`, which the lemma builder already handles. The builder anchors all 1,518 mod
 - Ps 49:14 original body: the leaked lemma ` The ſacrifice of praiſe. ] ` removed from the start of the text. A search of all 3,038 bodies for a bracketed lemma at the start found no other case.
 - 2 Macc 15:12 modern title: two stray markdown backticks removed (`…the people.\` And v. 14. \`Jeremie…`).
 - 30 original titles ended in the print's closing parenthesis (`Be not careful.).`, `But alſo the vvaivvard. ).`): delimiter stripped to a plain full stop, as in modern. Scan read of Matt 5:32 confirms `aduontrie` is the print's own misprint; kept, added to errata.
+
+## Fourth pass: the 8 parts without a scrape counterpart, scan read (Argon Low)
+
+- 1 Kings 16:7: print lemma `Beholdeth the hart.`; original title `heart` was modern, now `hart`.
+- Heb 7:18 and 7:21 (lemmas on hebrews/8/1.jpg, p. 618, under CHA. VII.): print `Of the former commaundement.` and `VVith an othe.`; original titles were modern (`commandment`, `With an oath`), now as printed. 7:19, 7:23 and 7:27 match the print.
+- John 15:2 (two parts): the print has no lemmas here, only margin notes at the two ∷ marks. The titles are editorial, taken from the verse words, so the original titles now follow the original verse spelling (`Euery branche in me.`, `More fruite.`). The bodies of these two parts do not match the print's margin notes (print: `Chriſt hath ſome branches in his body myſtical that be fruitleſ. therfore il liuers alſo may be members of Chriſt & the Church.` and `Man may cõtinually increaſe in iuſtice and ſanctification, ſo long as he liueth.`); not changed here, left for the body/margin-note pass.
