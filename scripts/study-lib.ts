@@ -28,7 +28,8 @@ import {
 	type BlockKind,
 	type NoteLike,
 	type TagName,
-	type MarkerHit
+	type MarkerHit,
+	noteBody
 } from './export-lib.js';
 
 export type Inline =
@@ -165,7 +166,7 @@ export function markedInline(
 					t: 'note',
 					kind: 'fn',
 					catchword: alt || undefined,
-					body: plainInline(notes[hit.noteIndex].text, ctx.noteBlock, ref)
+					body: plainInline(noteBody(notes[hit.noteIndex]), ctx.noteBlock, ref)
 				});
 			}
 		} else if (node.name === 'cr') {

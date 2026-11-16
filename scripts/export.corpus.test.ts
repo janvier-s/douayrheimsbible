@@ -32,7 +32,8 @@ import {
 	verseRef,
 	annotationRef,
 	type BlockKind,
-	type NoteLike
+	type NoteLike,
+	noteBody
 } from './export-lib';
 import { ALL_BOOKS } from '../src/lib/data/books';
 
@@ -232,7 +233,7 @@ describe('the corpus markup', () => {
 		for (const b of blocks) {
 			for (const n of b.notes) {
 				try {
-					tokenize(n.text, b.block, b.ref);
+					tokenize(noteBody(n), b.block, b.ref);
 				} catch {
 					unbalanced.add(b.ref);
 				}

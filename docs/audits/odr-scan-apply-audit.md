@@ -144,3 +144,5 @@ were unreliable and were not used as evidence).
 Lemma spans: `build-odr-lemmas` reports no change needed (the edits are in verse notes, not annotation passages); nothing written.
 
 **Still open:** Acts 28:8 [1] stays as an addition with no print counterpart (see item 1).
+
+**Exports (Nov 16 2026):** `noteBody()` in `scripts/export-lib.ts` now carries `table_text` into exported footnotes (USFM, study and corpus checks) after the printed note, under "Table of Epistles and Gospels:"; `table_only` notes get the label in front.

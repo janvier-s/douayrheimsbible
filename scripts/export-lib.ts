@@ -103,6 +103,19 @@ export interface NoteLike {
 	/** Verse notes key on this instead. A string: '1', or 'a'. */
 	label?: string;
 	text: string;
+	/** Lectionary notes: saints'-day text from the print's Table of Epistles and Gospels. */
+	table_text?: string;
+	/** The whole note comes from that Table (no margin note in the print). */
+	table_only?: boolean;
+}
+
+const TABLE_LABEL = 'Table of Epistles and Gospels:';
+
+/** A note's text as exported: the printed note, then any Table text under its label. */
+export function noteBody(n: NoteLike): string {
+	if (n.table_only) return `${TABLE_LABEL} ${n.text}`;
+	if (n.table_text) return `${n.text} ${TABLE_LABEL} ${n.table_text}`;
+	return n.text;
 }
 
 export interface MarkerHit {
@@ -685,7 +698,7 @@ export function renderVerse(
 			// Empty when the marker is one of the pinned defects, in which case
 			// it prints nothing rather than a dangling \f.
 			for (const hit of notesAt.get(node.start) ?? []) {
-				const body = renderInline(notes[hit.noteIndex].text, 'verse', ref, true);
+				const body = renderInline(noteBody(notes[hit.noteIndex]), 'verse', ref, true);
 				const fq = alt ? `\\fq ${alt} ` : '';
 				out += `\\f ${hit.token} \\fr ${chapter}.${verse.verse} ${fq}\\ft ${body}\\f*`;
 			}
@@ -785,7 +798,7 @@ export function renderAnnotation(ann: Annotation, chapter: number, ref: string):
 	parts.push(`\\ft ${body}`);
 
 	const trailing = bound.hits.map((hit, i) => {
-		const text = renderInline(notes[hit.noteIndex].text, 'prose', ref, true);
+		const text = renderInline(noteBody(notes[hit.noteIndex]), 'prose', ref, true);
 		return `\\fq ${superscript(i + 1)} \\ft ${text}`;
 	});
 
@@ -849,7 +862,7 @@ function renderProse(block: Prose, ref: string, inChapter = false): string[] {
 		if (node.name === 'mn' && !node.close) {
 			skip = true;
 			for (const hit of notesAt.get(node.start) ?? []) {
-				flat += `\\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref, true)}\\f*`;
+				flat += `\\f - \\ft ${renderInline(noteBody(notes[hit.noteIndex]), 'prose', ref, true)}\\f*`;
 			}
 		} else if (CHAR_MARKERS[node.name]) {
 			// Body text of an \ip paragraph, outside any character environment.
@@ -946,7 +959,7 @@ function renderVerseInline(verse: Verse, ref: string): string {
 		} else if (node.name === 'na') {
 			skipUntilClose = 'na';
 			for (const hit of notesAt.get(node.start) ?? []) {
-				trailer += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'verse', ref, true)}\\f*`;
+				trailer += ` \\f - \\ft ${renderInline(noteBody(notes[hit.noteIndex]), 'verse', ref, true)}\\f*`;
 			}
 		} else if (node.name === 'cr') {
 			skipUntilClose = 'cr';
@@ -1014,7 +1027,7 @@ export function renderUsfm(
 			// one thing that does not survive here; the JSON keeps it.
 			let text = stripMarkup(chapter.summary, 'summary', ref);
 			for (const hit of bound.hits) {
-				text += ` \\f - \\ft ${renderInline(notes[hit.noteIndex].text, 'prose', ref, true)}\\f*`;
+				text += ` \\f - \\ft ${renderInline(noteBody(notes[hit.noteIndex]), 'prose', ref, true)}\\f*`;
 			}
 			cd.push(text);
 		}

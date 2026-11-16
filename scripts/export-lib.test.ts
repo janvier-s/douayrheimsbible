@@ -5,6 +5,7 @@
 
 import { describe, it, expect } from 'vitest';
 import {
+	noteBody,
 	tokenize,
 	ExportError,
 	parseMarkerTokens,
@@ -863,5 +864,17 @@ describe('foldSummaryOverflow', () => {
 		const book = { chapters: [{ chapter: 1, verses: [{ verse: 1, text: 'x' }], summary: 's' }] };
 		const [c] = foldSummaryOverflow(book).chapters;
 		expect(c).toEqual({ chapter: 1, verses: [{ verse: 1, text: 'x' }], summary: 's' });
+	});
+});
+
+describe('noteBody', () => {
+	it('appends table_text under the Table label, prefixes table_only notes, and leaves plain notes alone', () => {
+		expect(noteBody({ text: 'Plain.' })).toBe('Plain.');
+		expect(noteBody({ text: 'The Gospel for one Martyr.', table_text: 'And S. George.' })).toBe(
+			'The Gospel for one Martyr. Table of Epistles and Gospels: And S. George.'
+		);
+		expect(noteBody({ text: 'S. Bartholomew.', table_only: true })).toBe(
+			'Table of Epistles and Gospels: S. Bartholomew.'
+		);
 	});
 });
