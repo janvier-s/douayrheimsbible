@@ -113,6 +113,13 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 
 **Sync:** the external `../odr-original` (Websites/odr-original) was brought in line for every odr-original file changed here (it also lacked the earlier Job 3:24, Job 4:5, 3 Kings 3:12 and 7:20, Psalm 85:5, Mark 14:9 and Ecclus 28:16 fixes).
 
+## Margin-note print misprints and oddities (scan apply, Nov 16 2026)
+- Ps 6:6 l: print reads "no cenuerſion" (for *conuerſion*); odr-original keeps the misprint, odr reads "no conversion."
+- Romans 5:2 (note 1): print reads "certaitie" (nasal tilde lost); odr-original keeps "certaintie".
+- Ps 81:7 h: the margin citation "Sap. 6." is in `cross_refs`; the stray "sap." fragment in the odr-original note text was removed.
+- The print sets a capital W for the "we" in saints' names inside lectionary notes ("S. MatthéWes day", "AlholoWes eue", "S. BartlemeWes day"); the data spells them with lower-case w.
+- Gen 46:1 note: the print has "The eight and laſt part of this booke." before the argument (added to both texts).
+
 ## Open
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
   2 Mac 3:6/7, 2 Mac 6:21/22, Josue 11:8/9, Josue 13:17/18, 4 Esd 13:31/32, Acts 5:22/23, Apoc 21:10/11, Dan 3:91/92, Jer 34:15/16, Judges 2:16/17, Mark 10:48/49,

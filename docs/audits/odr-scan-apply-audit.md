@@ -1,0 +1,92 @@
+# ODR scan-batch apply audit (Nov 16 2026)
+
+Input: `docs/audits/scan-batch-results.jsonl` (82 worklist notes, 85 questions) read against
+`static/data/odr-original` and `static/data/odr`. Method: normalised word diff between each `print_text` and our
+note (ignoring long s, vv, hyphenation, italics, leading marker), then a second diff of modern against the print for
+the notes where odr-original already matched. Fixes are exact string replacements on the raw JSON (62 edits, 28 files,
+48 lines, every old string unique in its file). Lemma spans re-run for both datasets: no change. `job.json` restored.
+`npx vitest run`: 537 passed before and after, no pins edited.
+
+## Counts
+
+| | notes |
+|---|---|
+| Worklist | 82 |
+| Found by the batch | 63 |
+| Not found by the batch ("absent") | 19 |
+| Edits applied | 62 (37 in odr-original, 25 in odr) in 28 files |
+| Found notes already right in both texts | 21 |
+
+## Fixed in odr-original
+
+- Wrong or missing word: Eccl 43:2 a (`ſenſes`→`ſenſles`, `whole`→`whoſe`), Ezech 20:14 c (`At`→`As`),
+  Ps 25:4 d (+`confidence of`), 71:2 d (+`is`), 77:46 r (stray `∷` where the print has `a`), 92:1 f (`a ſoule`→`in ſoule`),
+  107:4 c (`ſuffered`→`auerred`), 108:9 g (`poſte title`→`poſteritie`), 118:8 q (`leiſt`→`left`),
+  131:11 q (`Act. 1.`→`Act. 2. v. 30`), Isaie 19:1 a (+`B.` Sauiour), Daniel 11:38 n (opens "The God of povvre", not "Maozim,"),
+  Gen 3:14 c (St.→S., modernised words respelt), Hab 3:1 (modernised spellings respelt to print), 1 John 2:16 (stray "all." removed, respelt).
+- Spelling slips against the print: Ps 78:1 `fane`→`faine`, 81:8 `eing`→`ſeing`, 101:5 `ſauour`→`fauour`, 117:12 `trooper`→`troupes`,
+  140:2 `ſume`→`fume`, Isaie 3:1 `here`→`nere`, Isaie 45:4 (`li. 11. Antiq.`, `verie`), Numbers 19:2 c (`reueled and`, `diuers`), Micheas 7:14 `rodde;`, Ps 81:7 stray `sap.` removed.
+- Possessive apostrophes removed where the print confirms the form: Daniel 3:90 (`S. Ieroms vvordes.`), Esther 11:1 (`Amans`, `Iewes`),
+  Prov 27:3 (`fooles`; the note also continues "for it hath no mercie."), Prov 27:5 (`enemies`, `freindlie`),
+  Matt 4:18 (`Andrewes`), Matt 9:9 (`Matthewes`), Luke 6:12 (`Bartlemewes`), Luke 6:17 (`Alholowes eue`).
+- Gen 46:1: `Iacob`, `Ioſephs`, and the print's opening "The eight and laſt part of this booke." (also added to odr).
+
+## Fixed in odr (modern)
+
+- Stray letter after the cross-reference removed: 1 Mac 1:10 (D), 1:16 (F), 4:27 (O), 6:16 (S), 6:17 (V), 7:38 (B).
+- Words that differ from the print: 1 John 2:16 (`in his` removed), Amos 9:11 (`the Gentiles`), Deut 11:14 (`seeding and before harvest`),
+  Ezech 45:16 (`As the people`), Hab 3:2 (`an ox`), Joel 3:2 (`on the east side`), Judges 20:13 (`and contempt`), Numbers 19:10 (`needed`),
+  Ps 6:6 (`no conversion.`: the note was cut off), 49:14 (`sacrifice`), 55:6 (`wresting`), 61:5 (`A most`), 64:6 (`voice`), 81:1 (`process`), 82:5 (`Catholics`),
+  1 Peter 3:3 (`ours`), Romans 5:2 (`the certainty`), Prov 27:3 (note completed), Gen 46:1 (opening sentence).
+
+## Left, and why
+
+- Modern archaisms and spelling pairs: `Whilst`/`Whiles`, `astonished`/`astonied`, `bound`/`bond`, `indeed`/`in dede`, `always`/`Alwayes`, `Saint`/`S.` (modern expands the abbreviation throughout).
+- `Gētils`, `certaitie` (tilde), `quæſt.` vs print `queſt.`: ligature and abbreviation conventions already decided elsewhere.
+- Leviticus 23:36 "(h)" vs the print's `∷` marker: marker convention, not text.
+- Habacuc 3:1 ends "and Damnation" in our text; the Flash read has no "and" (single witness, left).
+- Whole-note divergences, **unsettled**: Ps 61:5 i, 83:4 g, 89:1 a, 107:4 c, 118:8 q, 118:62 g. The batch's print text is a different (often shorter) wording of the note than ours
+  (e.g. Ps 89:1 cites Genebrard, S. Hieronymus ep. 139 and S. Remigius; ours is a long gloss about Esdras). Only the single words the questions asked about were applied.
+  These need a full re-read from the page, and a decision about which edition our note text follows.
+- Ps 6:6, Ps 48:15 and similar: the batch's print text runs on into the next lettered note; our split is correct (not a defect).
+
+## The 19 "absent" notes, re-checked
+
+The batch's explanation (lectionary notes live in a back index) is wrong. The lectionary readings are printed in the **inner (gutter) margin** beside the verse, e.g.
+`The Gospel vpõ S. Matthewes day.` at Matt 9:9 (hires/1.jpg, left gutter, y≈1650). The batch read only the outer margin. The margin OCR files
+(`<n>.left.txt` / `.right.txt`) carry the text; a few are OCR-garbled.
+
+The 1582 print's wording is often **not** the wording of our numbered ("1"/"2") notes, which list saints and dates the print does not carry at that verse. Those were left unchanged.
+
+| # | Ref | Result |
+|---|---|---|
+| 0 | 1 Cor 4:9 [2] | Print has `a The Epiſtle vpon S. Iames day, Iul. 25.` (v. 9) and `b The Epiſtle for a Confeſſor that is not a Biſhop.` (v. 10). No Simon and Jude. **Unsettled**, left. |
+| 1 | 1 Cor 12:27 [1] | Print near v. 27 has no Bartholomew note; the gutter note at 13:1 is `The Epiſtle vpon the Sunday of Quinquageſme`. **Unsettled**, left. |
+| 10 | 2 Cor 10:17 [2] | Gutter notes on the page are glosses and a Greek note; no Lucy/Martha/Agnes/Potentiana. **Unsettled**, left. |
+| 11, 12 | 2 Tim 2:8, 3:10 | No George's-day note on either page (glosses and citations only). **Unsettled**, left. |
+| 13 | Acts 28:8 | Neither margin shows the gloss on the page read; OCR search for "imposition" finds nothing. **Unsettled**; `Apoſtles` kept. |
+| 30 | John 15:1 [2] | Print gutter: `The Goſpel vpõ Sunday after the Aſcenſion` (p. 3); no George. **Unsettled**, left. |
+| 33 | Luke 5:27 [2] | Gutter notes are `...vpõ the 4 Sunday after Pentecoſt`, `...Friday in Whitſonweeke`; no Matthew's eve. **Unsettled**, left. |
+| 34 | Luke 6:12 [1] | **Found**: `The Goſpel vpõ S. BartlemeWes day.` (image read). Possessive fixed. |
+| 35 | Luke 6:17 [1] | **Found in part**: `The Goſpel vpõ AlholoWes eue. And for many Martyrs.` (image read). `Allhallows'` → `Alholowes`; Fabian, Sebastian and Dionyse not printed here, left. |
+| 36 | Luke 10:1 [1] | Print gutter has only `b The Goſpel vpon the Aſſumption of our Lady Aug. 15` (v. 38). No Mark or Luke. **Unsettled**, left. |
+| 37 | Luke 11:33 [2] | Print: `The Goſpel for a Confeſſor that is Biſhop.` (page 2). No Martin. Left. |
+| 38 | Luke 12:35 [1] | Print: `The goſpel for a Cõfeſſor that is not a Biſhop` and `...for S. Paulinus Iun. 22.`. No Silvester/Antony/Dominic. Left. |
+| 39 | Mark 16:18 [1] | Gloss not located (the page's gutter shows `The Goſpel vpõ the Aſcenſion day.` at v. 14 and cross-references only). **Unsettled**; the `in` question stays open. |
+| 40 | Matt 4:18 [2] | **Found**: `The Goſpel vpõ S. Andrewes day.` Possessive fixed. |
+| 41 | Matt 9:9 [2] | **Found** (image read): `The Goſpel vpõ S. MatthéWes day.` (no date in the print). `Matthewes` fixed; "Sept. 21." is ours, left. |
+| 42 | Matt 13:44 [1] | Print: `The Goſpel for Virgins & other holy Women` (13:3 gutter, p. 3). No Lucy or Anne. Left. |
+| 43 | Matt 19:3 [1] | **Found as a variant**: `The Goſpel for Mariage. And for S. Agatha Febr. 5.` (no possessive). Our wording differs; left. |
+| 44 | Matt 25:1 [1] | Print: `The Goſpel for holy Virgins.` at v. 1; no Catharine. Left. |
+
+Counts: 4 found in print (34, 35 in part, 40, 41) and fixed; 1 found as a variant (43) and left; 14 not carrying our wording (left, unsettled).
+
+## Unsettled summary
+
+1. The six whole-note psalm divergences above.
+2. 14 lectionary notes whose saints/dates are not in the print margin at that verse (full list above); may belong to another edition's lectionary, or sit on a page not read.
+3. Acts 28:8 and Mark 16:18 glosses, not located.
+4. Daniel 3:90: the batch's transcription read `vvrordes`; `vvordes` is a best reading (medium confidence).
+5. Old dataset question still open: these audits found many notes whose text follows a different version than the page scans. Worth deciding which edition the odr-original notes are meant to follow before more word-level work.
+
+Not touched: `odr-original/hebrews/annotations/007.json` bodies and annotation titles.
