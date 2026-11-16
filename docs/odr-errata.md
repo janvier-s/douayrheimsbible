@@ -113,6 +113,14 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 
 **Sync:** the external `../odr-original` (Websites/odr-original) was brought in line for every odr-original file changed here (it also lacked the earlier Job 3:24, Job 4:5, 3 Kings 3:12 and 7:20, Psalm 85:5, Mark 14:9 and Ecclus 28:16 fixes).
 
+## Annotation title misprints (Nov 16 2026)
+Annotation `title` lemmas checked against the scans (Argon High). The print misprints; odr is corrected, odr-original keeps the print. Titles are plain strings, so there is no `(†)` marker.
+| Ref | Print | odr |
+|---|---|---|
+| Gen 1:1 | "In the beginnig." (n for ng) | "In the beginning." |
+| Gen 36:6 | "Departed from his btother." (t for r) | "…his brother." |
+| Gen 48:16 | "The Angel that delinereth me." (n for u) | "…delivereth me." |
+
 ## Open
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
   2 Mac 3:6/7, 2 Mac 6:21/22, Josue 11:8/9, Josue 13:17/18, 4 Esd 13:31/32, Acts 5:22/23, Apoc 21:10/11, Dan 3:91/92, Jer 34:15/16, Judges 2:16/17, Mark 10:48/49,
