@@ -16,7 +16,17 @@
 	let isOpen = $state(false);
 	// A few scans are missing at the source; their thumbnails are dropped.
 	let broken = $state<number[]>([]);
-	let touchStartX = 0;
+
+	const MAX_ZOOM = 8;
+	let scale = $state(1);
+	let tx = $state(0);
+	let ty = $state(0);
+	let dragging = $state(false);
+	let stageEl = $state<HTMLDivElement>();
+	const pointers = new Map<number, { x: number; y: number }>();
+	let pinchDist = 0;
+	let swipeStartX = 0;
+	let moved = false;
 
 	const pages = $derived(
 		Array.from({ length: count }, (_, i) => first + i).filter((p) => !broken.includes(p))
@@ -35,21 +45,116 @@
 		if (i < 0 || i >= pages.length) return;
 		current = pages[i];
 		failed = false;
+		resetZoom();
+	}
+
+	function resetZoom() {
+		scale = 1;
+		tx = 0;
+		ty = 0;
+	}
+
+	// Keep the zoomed page from being dragged out of view.
+	function clamp() {
+		if (!stageEl) return;
+		const maxX = (stageEl.clientWidth * (scale - 1)) / 2;
+		const maxY = (stageEl.clientHeight * (scale - 1)) / 2;
+		tx = Math.min(maxX, Math.max(-maxX, tx));
+		ty = Math.min(maxY, Math.max(-maxY, ty));
+	}
+
+	// Zoom to `next`, keeping the point (px, py), in client coords, fixed on screen.
+	function zoomAt(next: number, px: number, py: number) {
+		if (!stageEl) return;
+		next = Math.min(MAX_ZOOM, Math.max(1, next));
+		const r = stageEl.getBoundingClientRect();
+		const dx = px - (r.left + r.width / 2);
+		const dy = py - (r.top + r.height / 2);
+		const k = next / scale;
+		tx = dx - k * (dx - tx);
+		ty = dy - k * (dy - ty);
+		scale = next;
+		if (scale === 1) resetZoom();
+		else clamp();
+	}
+
+	function zoomBy(factor: number) {
+		if (!stageEl) return;
+		const r = stageEl.getBoundingClientRect();
+		zoomAt(scale * factor, r.left + r.width / 2, r.top + r.height / 2);
+	}
+
+	function onWheel(e: WheelEvent) {
+		e.preventDefault();
+		// Trackpad pinch arrives as ctrl+wheel with small deltas.
+		zoomAt(scale * Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0015)), e.clientX, e.clientY);
+	}
+
+	// Svelte registers wheel handlers as passive, so attach by hand to allow preventDefault.
+	function wheelAction(node: HTMLElement) {
+		node.addEventListener('wheel', onWheel, { passive: false });
+		return { destroy: () => node.removeEventListener('wheel', onWheel) };
+	}
+
+	function onPointerDown(e: PointerEvent) {
+		(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+		pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+		moved = false;
+		if (pointers.size === 1) swipeStartX = e.clientX;
+		if (pointers.size === 2) {
+			const [a, b] = [...pointers.values()];
+			pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+		}
+		dragging = true;
+	}
+
+	function onPointerMove(e: PointerEvent) {
+		const prev = pointers.get(e.pointerId);
+		if (!prev) return;
+		const cur = { x: e.clientX, y: e.clientY };
+		if (Math.abs(cur.x - swipeStartX) > 4) moved = true;
+		pointers.set(e.pointerId, cur);
+		if (pointers.size === 2) {
+			const [a, b] = [...pointers.values()];
+			const dist = Math.hypot(a.x - b.x, a.y - b.y);
+			if (pinchDist > 0) zoomAt(scale * (dist / pinchDist), (a.x + b.x) / 2, (a.y + b.y) / 2);
+			pinchDist = dist;
+		} else if (pointers.size === 1 && scale > 1) {
+			tx += cur.x - prev.x;
+			ty += cur.y - prev.y;
+			clamp();
+		}
+	}
+
+	function onPointerUp(e: PointerEvent) {
+		if (!pointers.delete(e.pointerId)) return;
+		pinchDist = 0;
+		if (pointers.size === 0) {
+			dragging = false;
+			// Swipe to turn the page, only on touch and only when not zoomed in.
+			const dx = e.clientX - swipeStartX;
+			if (e.pointerType === 'touch' && scale === 1 && moved && Math.abs(dx) > 50) {
+				go(dx < 0 ? 1 : -1);
+			}
+		}
+	}
+
+	function onDoubleClick(e: MouseEvent) {
+		if (scale > 1) resetZoom();
+		else zoomAt(2.5, e.clientX, e.clientY);
 	}
 
 	function onKey(e: KeyboardEvent) {
 		if (e.key === 'ArrowRight') go(1);
 		else if (e.key === 'ArrowLeft') go(-1);
+		else if (e.key === '+' || e.key === '=') zoomBy(1.5);
+		else if (e.key === '-' || e.key === '_') zoomBy(1 / 1.5);
+		else if (e.key === '0') resetZoom();
 	}
 
 	function onDialogClick(e: MouseEvent) {
 		// Clicks on the backdrop land on the dialog element itself.
 		if (e.target === dialogEl) dialogEl?.close();
-	}
-
-	function onTouchEnd(e: TouchEvent) {
-		const dx = e.changedTouches[0].clientX - touchStartX;
-		if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
 	}
 
 	// Warm the next page so arrow-through feels instant.
@@ -93,9 +198,16 @@
 >
 	<div
 		class="fac-stage"
+		class:zoomed={scale > 1}
+		class:dragging
 		role="presentation"
-		ontouchstart={(e) => (touchStartX = e.touches[0].clientX)}
-		ontouchend={onTouchEnd}
+		bind:this={stageEl}
+		use:wheelAction
+		onpointerdown={onPointerDown}
+		onpointermove={onPointerMove}
+		onpointerup={onPointerUp}
+		onpointercancel={onPointerUp}
+		ondblclick={onDoubleClick}
 	>
 		{#if failed}
 			<p class="fac-error">This page could not be loaded.</p>
@@ -105,6 +217,8 @@
 					class="fac-full"
 					src={facsimileImageUrl(bookSlug, chapter, current)}
 					alt="1609 printing, {bookName} {chapter}, page {position} of {pages.length}"
+					style:transform="translate({tx}px, {ty}px) scale({scale})"
+					draggable="false"
 					onerror={() => (failed = true)}
 				/>
 			{/key}
@@ -131,6 +245,26 @@
 		aria-label="Close">×</button
 	>
 	<div class="fac-bar">
+		<span class="fac-zoom">
+			<button
+				type="button"
+				onclick={() => zoomBy(1 / 1.5)}
+				disabled={scale <= 1}
+				aria-label="Zoom out">−</button
+			>
+			<button
+				type="button"
+				onclick={resetZoom}
+				disabled={scale === 1}
+				aria-label="Fit page to screen">Fit</button
+			>
+			<button
+				type="button"
+				onclick={() => zoomBy(1.5)}
+				disabled={scale >= MAX_ZOOM}
+				aria-label="Zoom in">+</button
+			>
+		</span>
 		<span aria-live="polite">Page {position} of {pages.length}</span>
 	</div>
 </dialog>
@@ -208,27 +342,63 @@
 	.fac-stage {
 		flex: 1;
 		min-height: 0;
-		overflow: auto;
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		padding: 0.75rem;
+		position: relative;
+		overflow: hidden;
+		touch-action: none;
+		user-select: none;
 	}
+	.fac-stage.zoomed {
+		cursor: grab;
+	}
+	.fac-stage.zoomed.dragging {
+		cursor: grabbing;
+	}
+	/* Fill the stage and letterbox, so the whole page fits with no scrolling. */
 	.fac-full {
-		max-width: 100%;
-		max-height: 100%;
+		position: absolute;
+		inset: 0.75rem;
+		width: calc(100% - 1.5rem);
+		height: calc(100% - 1.5rem);
 		object-fit: contain;
-		margin: auto;
+		transform-origin: center;
+		will-change: transform;
+		pointer-events: none;
 	}
 	.fac-error {
-		margin: auto;
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-items: center;
+		margin: 0;
 	}
 	.fac-bar {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		gap: 1.25rem;
 		padding: 0.5rem 1rem calc(0.5rem + env(safe-area-inset-bottom));
 		font-size: 0.9rem;
+	}
+	.fac-zoom {
+		display: inline-flex;
+		gap: 0.25rem;
+	}
+	.fac-zoom button {
+		min-width: 2.75rem;
+		min-height: 2.75rem;
+		font-size: 1.1rem;
+		color: inherit;
+		background: rgba(255, 255, 255, 0.12);
+		border: none;
+		border-radius: 999px;
+		cursor: pointer;
+	}
+	.fac-zoom button:hover:not(:disabled) {
+		background: rgba(255, 255, 255, 0.25);
+	}
+	.fac-zoom button:disabled {
+		opacity: 0.3;
+		cursor: default;
 	}
 	.fac-nav {
 		position: absolute;
