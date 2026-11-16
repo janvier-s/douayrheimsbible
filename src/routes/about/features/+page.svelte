@@ -305,10 +305,6 @@
 			<strong>Small caps:</strong> Used in the original for important proper nouns and significant passages.
 			Can be turned off for a more uniform appearance.
 		</li>
-		<li>
-			<strong>Ampersand:</strong> The original uses <em>&amp;</em> throughout. A toggle expands
-			these to <em>and</em> for modern readability.
-		</li>
 	</ul>
 
 	<div class="options-row">

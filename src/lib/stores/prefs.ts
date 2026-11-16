@@ -28,8 +28,6 @@ export interface ReadingPrefs {
 	showSmallCaps: boolean;
 	// v10
 	compareFontSize: number;
-	// v11
-	expandAmpersand: boolean;
 	// v12
 	studyDefaultTab:
 		| 'intro'
@@ -86,7 +84,6 @@ const DEFAULTS: ReadingPrefs = {
 	showItalics: true,
 	showSmallCaps: true,
 	compareFontSize: 14,
-	expandAmpersand: false,
 	studyDefaultTab: 'commentary',
 	annotationSync: true,
 	showDropcap: true,
@@ -154,10 +151,6 @@ function loadPrefs(): ReadingPrefs {
 		// v10 migration: add separate compare font size
 		if (!parsed._v || parsed._v < 10) {
 			parsed.compareFontSize = 13;
-		}
-		// v11 migration: add expand ampersand toggle
-		if (!parsed._v || parsed._v < 11) {
-			parsed.expandAmpersand = false;
 		}
 		// v12 migration: add study default tab preference
 		if (!parsed._v || parsed._v < 12) {

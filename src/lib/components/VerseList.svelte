@@ -367,7 +367,6 @@
 		showItalics: boolean,
 		verseNum: number,
 		smallCaps: boolean,
-		expandAmpersand: boolean,
 		isChapterOpen: boolean = false,
 		isDropcap: boolean = false,
 		lemmas: LemmaSpan[] | null = null,
@@ -379,7 +378,6 @@
 			SPEAKER_RE.lastIndex = 0;
 			t = renderSpeakerLabels(t);
 		}
-		if (expandAmpersand) t = t.replace(/&amp;/g, 'and').replace(/&/g, 'and');
 		// Superscript markers (¹²³) — convert to buttons in study mode, strip in reading mode
 		if (SUPER_RE.test(t)) {
 			SUPER_RE.lastIndex = 0;
@@ -741,7 +739,6 @@
 	let showItalics = $derived($prefs.showItalics);
 	let showSmallCaps = $derived($prefs.showSmallCaps ?? true);
 	let bionic = $derived($prefs.bionicReading && bionicReady);
-	let expandAmpersand = $derived($prefs.expandAmpersand ?? false);
 
 	// Group verses into paragraphs using the paragraph reference data
 	function groupIntoParagraphs(
@@ -1017,7 +1014,6 @@
 									showItalics,
 									part.verse,
 									showSmallCaps,
-									expandAmpersand,
 									isChapterOpen,
 									isDropcap,
 									partLemmas,
@@ -1037,7 +1033,6 @@
 								showItalics,
 								part.verse,
 								showSmallCaps,
-								expandAmpersand,
 								false,
 								false,
 								partLemmas,
@@ -1124,7 +1119,6 @@
 						showItalics,
 						v.verse,
 						showSmallCaps,
-						expandAmpersand,
 						isChapterOpen,
 						isChapterOpen && showDropcap,
 						lemmaByVerse?.get(v.verse) ?? null,

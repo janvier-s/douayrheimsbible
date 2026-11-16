@@ -673,22 +673,6 @@
 						<span>Clarifications</span>
 					</SettingHint>
 				</label>
-
-				<label class="flex items-center gap-sm cursor-pointer">
-					<input
-						type="checkbox"
-						checked={$prefs.expandAmpersand ?? false}
-						onchange={(e) =>
-							prefs.update((p) => ({
-								...p,
-								expandAmpersand: (e.target as HTMLInputElement).checked
-							}))}
-						class="accent-accent"
-					/>
-					<SettingHint text="Spell out every &amp; as “and”.">
-						<span>&amp; → and</span>
-					</SettingHint>
-				</label>
 			</div>
 		</div>
 	{/if}
