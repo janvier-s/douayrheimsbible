@@ -244,27 +244,24 @@
 		onclick={() => dialogEl?.close()}
 		aria-label="Close">×</button
 	>
+	<div class="fac-zoom" role="group" aria-label="Zoom">
+		<button
+			type="button"
+			onclick={() => zoomBy(1 / 1.5)}
+			disabled={scale <= 1}
+			aria-label="Zoom out">−</button
+		>
+		<button type="button" onclick={resetZoom} disabled={scale === 1} aria-label="Fit page to screen"
+			>Fit</button
+		>
+		<button
+			type="button"
+			onclick={() => zoomBy(1.5)}
+			disabled={scale >= MAX_ZOOM}
+			aria-label="Zoom in">+</button
+		>
+	</div>
 	<div class="fac-bar">
-		<span class="fac-zoom">
-			<button
-				type="button"
-				onclick={() => zoomBy(1 / 1.5)}
-				disabled={scale <= 1}
-				aria-label="Zoom out">−</button
-			>
-			<button
-				type="button"
-				onclick={resetZoom}
-				disabled={scale === 1}
-				aria-label="Fit page to screen">Fit</button
-			>
-			<button
-				type="button"
-				onclick={() => zoomBy(1.5)}
-				disabled={scale >= MAX_ZOOM}
-				aria-label="Zoom in">+</button
-			>
-		</span>
 		<span aria-live="polite">Page {position} of {pages.length}</span>
 	</div>
 </dialog>
@@ -330,6 +327,10 @@
 		border: none;
 		background: #0b0b0b;
 		color: #fff;
+		overflow: hidden;
+	}
+	:global(html:has(.fac-dialog[open])) {
+		overflow: hidden;
 	}
 	.fac-dialog[open] {
 		position: relative;
@@ -380,21 +381,32 @@
 		font-size: 0.9rem;
 	}
 	.fac-zoom {
+		position: absolute;
+		z-index: 1;
+		top: max(0.5rem, env(safe-area-inset-top));
+		left: max(0.5rem, env(safe-area-inset-left));
 		display: inline-flex;
-		gap: 0.25rem;
+		align-items: stretch;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: 6px;
+		background: rgba(0, 0, 0, 0.55);
 	}
 	.fac-zoom button {
-		min-width: 2.75rem;
-		min-height: 2.75rem;
-		font-size: 1.1rem;
+		min-width: 2.5rem;
+		min-height: 2.5rem;
+		padding: 0 0.6rem;
+		font-size: 0.95rem;
 		color: inherit;
-		background: rgba(255, 255, 255, 0.12);
+		background: none;
 		border: none;
-		border-radius: 999px;
 		cursor: pointer;
 	}
+	.fac-zoom button + button {
+		border-left: 1px solid rgba(255, 255, 255, 0.25);
+	}
 	.fac-zoom button:hover:not(:disabled) {
-		background: rgba(255, 255, 255, 0.25);
+		background: rgba(255, 255, 255, 0.18);
 	}
 	.fac-zoom button:disabled {
 		opacity: 0.3;
