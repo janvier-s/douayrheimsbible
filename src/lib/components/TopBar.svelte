@@ -25,6 +25,8 @@
 	import BrandingRow from './BrandingRow.svelte';
 	import BottomTabBar from './BottomTabBar.svelte';
 	import PrefsPanel from './PrefsPanel.svelte';
+	import ModeToggle from './ModeToggle.svelte';
+	import { hasSpellingSwitch } from '$lib/utils/spelling';
 	import BookNavLink from './BookNavLink.svelte';
 	import ChapterNavLink from './ChapterNavLink.svelte';
 
@@ -392,6 +394,19 @@
 				{/if}
 			</div>
 
+			<!-- Modern / original spelling (ODR and KJV) -->
+			{#if hasSpellingSwitch(translationId, false)}
+				<ModeToggle
+					items={[
+						{ key: 'modern', label: 'Modern' },
+						{ key: 'original', label: 'Original' }
+					]}
+					activeIndex={$prefs.spelling === 'original' ? 1 : 0}
+					on:select={(e) =>
+						prefs.update((p) => ({ ...p, spelling: e.detail.key as 'modern' | 'original' }))}
+				/>
+			{/if}
+
 			<!-- Center: button is the centered anchor; chevrons float out absolutely so button never shifts -->
 			<div
 				class="md:absolute md:left-1/2 md:-translate-x-1/2 max-md:flex-1 max-md:flex max-md:justify-center relative flex items-center"
@@ -432,7 +447,7 @@
 						translationOpen = false;
 					}}
 				>
-					<span class="text-[13px] md:text-[16px] leading-tight font-medium"
+					<span class="text-[13px] md:text-[16px] leading-tight font-medium whitespace-nowrap"
 						>{navBase}{#if psalmSuffix}&nbsp;<span
 								class="text-[11px] md:text-[13px] {navOpen
 									? 'text-white/80'

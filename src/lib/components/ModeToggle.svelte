@@ -49,7 +49,7 @@
 	{/if}
 	{#each items as item, i (item.key)}
 		<button
-			class="mode-btn relative z-10 px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
+			class="mode-btn relative z-10 px-[6px] md:px-[10px] py-[5px] transition-colors duration-fast whitespace-nowrap
 				{displayIdx === i ? 'text-white' : 'text-subtle hover:text-foreground'}"
 			aria-pressed={displayIdx === i}
 			onclick={() => dispatch('select', { key: item.key, index: i })}

@@ -3,7 +3,6 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { FONTS, getFontById } from '$lib/data/fonts';
 	import SettingHint from './SettingHint.svelte';
-	import { hasSpellingSwitch } from '$lib/utils/spelling';
 
 	interface Props {
 		compareMode?: boolean;
@@ -565,38 +564,6 @@
 					<span>Justified text</span>
 				</SettingHint>
 			</label>
-
-			{#if hasSpellingSwitch(translationId, compareMode)}
-				<div>
-					<span class="block mb-xs">
-						<SettingHint
-							text={translationId === 'kjv'
-								? 'Read the King James Bible in its 1611 spelling (long s, u/v and i/j as printed), or in modern spelling. A few verses have no 1611 text and stay modern. Search uses modern spelling.'
-								: 'Read the Original Douay-Rheims in the 1582 and 1609 spelling, or in modern spelling. Notes and annotations follow. A few items have no original-spelling text and stay modern. Search uses modern spelling.'}
-						>
-							Spelling
-						</SettingHint>
-					</span>
-					<div class="flex gap-xs" role="group" aria-label="Spelling">
-						{#each [{ label: 'Modern', value: 'modern' }, { label: 'Original', value: 'original' }] as opt}
-							<button
-								class="flex-1 py-xs border rounded-sm text-xs transition-colors duration-fast
-									{($prefs.spelling ?? 'modern') === opt.value
-									? 'bg-accent text-white border-accent'
-									: 'border-border text-foreground hover:text-accent'}"
-								aria-pressed={($prefs.spelling ?? 'modern') === opt.value}
-								onclick={() =>
-									prefs.update((p) => ({ ...p, spelling: opt.value as 'modern' | 'original' }))}
-							>
-								{opt.label}
-							</button>
-						{/each}
-					</div>
-					<p class="mt-xs text-xs text-subtle">
-						Some verses and notes remain in modern spelling where no original text was available.
-					</p>
-				</div>
-			{/if}
 
 			<div class="border-t border-border pt-md space-y-md">
 				<label class="flex items-center gap-sm cursor-pointer">
