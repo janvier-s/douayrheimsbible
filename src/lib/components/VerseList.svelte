@@ -13,6 +13,8 @@
 	import { allcapsToSmallcaps, toRoman } from '$lib/utils/text';
 	import { injectDropcap, stripOpeningSmallCaps } from '$lib/utils/dropcap';
 	import { highlightLemmas, lemmasForPart } from '$lib/utils/lemmas';
+	import { getBookBySlug } from '$lib/data/books';
+	import { PRINT_CITATION_MARK, PRINT_UNMARKED_MARK, printNoteMarks } from '$lib/utils/printMarks';
 	import { applyClarifications, clarificationsForPart } from '$lib/utils/clarifications';
 	import type { BookClarifications, Clarification } from '$lib/utils/clarifications';
 	import type {
@@ -272,16 +274,28 @@
 	 *  Handles multi-marker patterns like [1][2], [1](d), (a)(a), (a)[1].
 	 *  Embeds data-verse so hover can look up content without DOM traversal. */
 	function renderStudyMarkers(text: string, verseNum: number): string {
+		// In the original-spelling NT the buttons show the printed marks; the
+		// label stays in data-marker, so lookup and scrolling are unchanged.
+		const marks = noteMarksByVerse?.get(verseNum);
 		function mkCr(n: string) {
-			return `<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" data-verse="${verseNum}" aria-label="Cross-reference ${n}">${n}</button>`;
+			const shown = noteMarksByVerse ? PRINT_CITATION_MARK : n;
+			return `<button class="study-marker" data-marker-type="cross_ref" data-marker="${n}" data-verse="${verseNum}" aria-label="Cross-reference ${n}">${shown}</button>`;
 		}
 		function mkNote(l: string) {
-			return `<button class="study-marker" data-marker-type="note" data-marker="${l}" data-verse="${verseNum}" aria-label="Note ${l}">${l}</button>`;
+			const shown = noteMarksByVerse ? (marks?.get(l) ?? l) : l;
+			return `<button class="study-marker" data-marker-type="note" data-marker="${l}" data-verse="${verseNum}" aria-label="Note ${l}">${shown}</button>`;
 		}
 		function mkEditorial(l: string) {
 			return `<button class="study-marker editorial-marker" data-marker-type="editorial" data-marker="${l}" data-verse="${verseNum}" aria-label="Editorial note">${l}</button>`;
 		}
 
+		// A citation stored at the very end of the verse stands in the print's
+		// margin with no * in the text, so it gets the unmarked sign.
+		if (noteMarksByVerse) {
+			text = text.replace(/<cr>\[(\d+)\]<\/cr>\s*$/, (_, n) =>
+				mkCr(n).replace(`>${PRINT_CITATION_MARK}</button>`, `>${PRINT_UNMARKED_MARK}</button>`)
+			);
+		}
 		// <cr> may contain [N] cross-refs and (x) note refs mixed together
 		text = text.replace(/<cr>(.*?)<\/cr>/g, (_, content) => {
 			const buttons: string[] = [];
@@ -373,7 +387,10 @@
 		clar: Clarification[] | null = null
 	): string {
 		// Before anything else: the offsets are into the text as it is stored.
-		let t = lemmas && lemmas.length > 0 ? highlightLemmas(text, lemmas, verseNum, isStudy) : text;
+		let t =
+			lemmas && lemmas.length > 0
+				? highlightLemmas(text, lemmas, verseNum, isStudy, noteMarksByVerse !== null)
+				: text;
 		if (SPEAKER_RE.test(t)) {
 			SPEAKER_RE.lastIndex = 0;
 			t = renderSpeakerLabels(t);
@@ -744,6 +761,18 @@
 		isStudy && translationId === 'odr'
 			? new Map(verses.filter((v) => v.lemmas?.length).map((v) => [v.verse, v.lemmas!]))
 			: null
+	);
+	/** The 1582 Rheims NT in original spelling shows its printed marks (*, ∷, ‖)
+	 *  in place of our numbers. The modern text, and the 1609 OT, whose marks
+	 *  have not been checked against the print yet, keep the numbers. */
+	let printMarks = $derived(
+		translationId === 'odr' &&
+			($prefs.spelling ?? 'modern') === 'original' &&
+			getBookBySlug(bookSlug)?.testament === 'NT'
+	);
+	/** label → printed mark, by verse; null when the numbers are shown. */
+	let noteMarksByVerse = $derived(
+		printMarks ? new Map(verses.map((v) => [v.verse, printNoteMarks(v.notes)])) : null
 	);
 	let activeAnnotatedVerse = $derived($studyPanel.annotatedVerse);
 	let showItalics = $derived($prefs.showItalics);
@@ -1529,6 +1558,11 @@
 	   text this size needs. Mixing the chip over the page instead of over
 	   whatever it lands on makes it opaque, so a marker reads the same on a tint
 	   as off one. */
+	:global(.print-mark) {
+		color: var(--color-accent, currentColor);
+		margin-right: 0.15em;
+	}
+
 	:global(mark.lemma .study-marker) {
 		background: color-mix(in srgb, var(--color-accent) 14%, var(--color-bg));
 	}
