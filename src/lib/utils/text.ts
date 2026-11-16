@@ -84,7 +84,11 @@ const SC_CONTINUES = /<span class="sc">[^<]*<\/span>(?:\s|<(button|cr|na|mn)\b[^
  *  Content words → first letter upper, rest lower (full-size initial cap). */
 function normalizeScWord(word: string): string {
 	const lower = word.toLowerCase();
-	if (SC_MINOR.has(lower)) return lower;
+	// The original-spelling text prints a capital W as VV, so VVAS is "was" (minor)
+	// and VVORD is a content word whose initial cap is both Vs: "VVord", not "Vvord".
+	const isVV = lower.startsWith('vv');
+	if (SC_MINOR.has(isVV ? 'w' + lower.slice(2) : lower)) return lower;
+	if (isVV) return 'VV' + lower.slice(2);
 	return word.charAt(0) + word.slice(1).toLowerCase();
 }
 
@@ -124,7 +128,8 @@ export function allcapsToSmallcaps(html: string): string {
 	// (handles cases where a minor word ends up first after merge).
 	// A run split only by a note marker ("IN [1] THE beginning") is still one
 	// run, so its second half keeps its small first letter.
-	result = result.replace(/<span class="sc">([a-z])/g, (m, ch: string, at: number) =>
+	// An initial vv is a capital W in the original spelling, so both letters rise.
+	result = result.replace(/<span class="sc">(vv|[a-z])/g, (m, ch: string, at: number) =>
 		SC_CONTINUES.test(result.slice(Math.max(0, at - 400), at))
 			? m
 			: `<span class="sc">${ch.toUpperCase()}`
