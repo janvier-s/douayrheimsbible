@@ -59,7 +59,14 @@ Tests 537 passed; no span moved.
   Eccles 10:16, Ecclus 48:10, Ps 3:1, Ps 50:2). Not checked for VV.
 - Case in the print not followed by the title: Matt 17:19 `Why could not We.` and Matt 19:27 `What ſhal We haue.`
   (capital We), John 1:1 `Was the Word,`. Titles lowercase these; left as is (case, not splitting).
-- Broad sweep of every multi-word title for glued-vs-spaced: 958 of 1,516 titles have the same word count in OCR as
-  in our title (spacing confirmed). 452 were cropped onto 23 sheets, only one of which was read (agy quota
-  exhausted); the rest are unread. Sheets and the build script were scratch files, not committed.
+- Broad sweep: of 1,516 titles, 958 have the same word count in OCR as ours (spacing confirmed). The other 452
+  multi-word titles were cropped from the hires scans onto 23 sheets and read with agy (`gemini-3.8-flash-low`).
+  363 matched our spacing as printed. The remaining 89 were mostly crops that caught verse body text or
+  line-end hyphens, not lemmas; the real candidates were rechecked by eye:
+  John 21:18 `An other` and John 21:17 `Feede my ſheepe` are spaced as ours (the flash read glued was wrong).
+  One real defect: Apoc 22:20 lemma prints `Come Lord Ieſus.`; title (both datasets, and the scrape) had `Ieſu` /
+  `Jesu`. Fixed in odr-original and odr; the lemma span was rebuilt.
+- Still unverified from a lemma strip (crop caught verse text): Gen 17:14 `shal be` (verse prints `ſhalbe`),
+  Gen 47:31 `To the beds head.` (strip reads `bedshead`, gap very narrow; verse and scrape say `beds head`),
+  Mark 2:25 `In neceſſity.` (verse prints `neceſsitie`), Mark 5:28 `If I ſhal touch.` (verse `touche`).
 - No print misprints turned up, so `odr-errata.md` is unchanged.
