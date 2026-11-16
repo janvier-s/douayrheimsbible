@@ -88,3 +88,6 @@ rod`, which the lemma builder already handles. The builder anchors all 1,518 mod
 
 - Hyphenation of compounds in original titles (`over-rule`-type) is unchecked beyond the scrape; the scrape
   strips hyphens in places.
+
+- Ps 49:14 original: scan (Argon Low) shows the print has `14. 23. The ſacrifice of praiſe.]`. The title was `23.`, with the lemma left at the start of the annotation body; title restored to `23. The ſacrifice of praiſe.`. The body still begins ` The ſacrifice of praiſe. ] For better…` (not touched; modern's body has no lemma), so the lemma shows twice until that is removed.
+- The 12 parts with no scrape were checked against Peters: 11 match; Ps 49:14 was settled by the scan (above).
