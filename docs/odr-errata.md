@@ -107,3 +107,5 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
   2 Mac 3:6/7, 2 Mac 6:21/22, Josue 11:8/9, Josue 13:17/18, 4 Esd 13:31/32, Acts 5:22/23, Apoc 21:10/11, Dan 3:91/92, Jer 34:15/16, Judges 2:16/17, Mark 10:48/49,
   Ps 77:5/6, 82:12/13, 107:9/10, 108:21/22, 124:1/2, Wisdom 10:12 — to be handled with the verse-count mismatches.
+
+**Deut 30 annotation (Nov 16 2026):** the print (p. 459, Argon) sets verses 15 and 19 inside the verse-11 annotation ("…God him ſelf anſwereth: 15. That he hath ſet before thee…"), not as entries of their own. odr and odr-original now both have annotations for verses 6 and 11 only; odr-original's "Free-will." margin note moved onto verse 11, and the two orphan catchword spans were rebuilt.
