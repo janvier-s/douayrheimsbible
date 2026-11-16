@@ -89,5 +89,11 @@ rod`, which the lemma builder already handles. The builder anchors all 1,518 mod
 - Hyphenation of compounds in original titles (`over-rule`-type) is unchecked beyond the scrape; the scrape
   strips hyphens in places.
 
-- Ps 49:14 original: scan (Argon Low) shows the print has `14. 23. The ſacrifice of praiſe.]`. The title was `23.`, with the lemma left at the start of the annotation body; title restored to `23. The ſacrifice of praiſe.`. The body still begins ` The ſacrifice of praiſe. ] For better…` (not touched; modern's body has no lemma), so the lemma shows twice until that is removed.
+- Ps 49:14 original: scan (Argon Low) shows the print has `14. 23. The ſacrifice of praiſe.]`. The title was `23.`, with the lemma left at the start of the annotation body; title restored to `23. The ſacrifice of praiſe.`. The body still begins ` The ſacrifice of praiſe. ] For better…` (not touched; modern's body has no lemma), so the lemma showed twice; the body leak was removed in the next pass.
 - The 12 parts with no scrape were checked against Peters: 11 match; Ps 49:14 was settled by the scan (above).
+
+## Third pass: bodies and stray characters in titles
+
+- Ps 49:14 original body: the leaked lemma ` The ſacrifice of praiſe. ] ` removed from the start of the text. A search of all 3,038 bodies for a bracketed lemma at the start found no other case.
+- 2 Macc 15:12 modern title: two stray markdown backticks removed (`…the people.\` And v. 14. \`Jeremie…`).
+- 30 original titles ended in the print's closing parenthesis (`Be not careful.).`, `But alſo the vvaivvard. ).`): delimiter stripped to a plain full stop, as in modern. Scan read of Matt 5:32 confirms `aduontrie` is the print's own misprint; kept, added to errata.

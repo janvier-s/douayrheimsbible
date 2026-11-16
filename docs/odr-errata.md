@@ -120,6 +120,7 @@ Annotation `title` lemmas checked against the scans (Argon High). The print misp
 | Gen 1:1 | "In the beginnig." (n for ng) | "In the beginning." |
 | Gen 36:6 | "Departed from his btother." (t for r) | "…his brother." |
 | Gen 48:16 | "The Angel that delinereth me." (n for u) | "…delivereth me." |
+| Matt 5:32 (second note) | "Committeth aduontrie." (n for u; the prose reads "aduoutrie") | "Committeth adultery." |
 
 ## Open
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
