@@ -38,10 +38,28 @@ intended.
 - Hyphenated: `Firſt-borne` (Matt 1:25), a real printed hyphen mid-line.
 - Glued: `himſelf` (Wis 14:15), `herſelf` (Prov 9:1), `themſelues` (Num 6:2).
 
+## Second pass: initial W vs VV (41 titles starting W)
+
+Crops of the 80 W-titles that could be located were cut from the `hires/` scans using the OCR word boxes
+(note: TSV coordinates are for `hires/<n>.jpg`, not the plain jpg) and read by eye. About 45 strips showed the
+lemma itself; the rest caught verse text. Every lemma read as an italic single-glyph `W`, with three exceptions
+fixed in the same commit:
+
+| Verse | Was | Now |
+|---|---|---|
+| 1 John 3:22 | `We ſhal receiue, becauſe.` | `VVe ſhal receiue, becauſe.` |
+| Exod 2:3 | `When she could not conceal him.` | `VVhen she could not conceal him.` |
+| Prov 2:13 | `Who leaue the right way.` | `Who leaue the right vvay.` |
+
+Tests 537 passed; no span moved.
+
 ## Unsettled / not done
 
-- 41 original titles begin with `W` (`Who is made.`, `What ſocietie.`, ...) and 4 with `VV`. Whether each of the 41 is
-  printed `VV` was not checked; only Prov 9:1 was, because it surfaced here. A follow-up scan pass would settle it.
-- Titles outside the compound list were not checked for space-vs-glue beyond the scrape comparison, which agrees
-  with ours except for the spelling cases in `odr-annotation-titles-audit.md`.
+- About 35 W titles were not read from a lemma strip (the crop caught verse text, or no box matched; 4 had none:
+  Eccles 10:16, Ecclus 48:10, Ps 3:1, Ps 50:2). Not checked for VV.
+- Case in the print not followed by the title: Matt 17:19 `Why could not We.` and Matt 19:27 `What ſhal We haue.`
+  (capital We), John 1:1 `Was the Word,`. Titles lowercase these; left as is (case, not splitting).
+- Broad sweep of every multi-word title for glued-vs-spaced: 958 of 1,516 titles have the same word count in OCR as
+  in our title (spacing confirmed). 452 were cropped onto 23 sheets, only one of which was read (agy quota
+  exhausted); the rest are unread. Sheets and the build script were scratch files, not committed.
 - No print misprints turned up, so `odr-errata.md` is unchanged.
