@@ -10,10 +10,14 @@ python3 -I autofix.py <repo> <book> <tokens.json> <chapters a-b> [--write]
    moves to the note's place, the note to the verse start, and a lectionary
    note is typed as such.
 Both are applied to odr-original and odr (by word index; skipped when the
-two texts disagree on word count up to that point).
+two texts disagree on word count up to that point). Each file keeps its own
+JSON format (compact or indent=2, see jsonfmt.py).
 """
 import json, re, sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from jsonfmt import write_like  # noqa: E402
 
 REPO, BOOK, TOK = Path(sys.argv[1]), sys.argv[2], Path(sys.argv[3])
 A, B = map(int, sys.argv[4].split('-'))
@@ -111,7 +115,7 @@ for ds in ('odr-original', 'odr'):
                       f'    {before[:150]}\n    {after[:150]}')
         verse['text'] = after
     if WRITE:
-        bp.write_text(json.dumps(book, ensure_ascii=False, separators=(',', ':')))
+        write_like(bp, book)
     for ch, ai, k in stars:
         ap = REPO / f'static/data/{ds}/{BOOK}/annotations/{ch:03d}.json'
         a = json.loads(ap.read_text())
@@ -119,6 +123,6 @@ for ds in ('odr-original', 'odr'):
         report.append(f'{ds} {ch} ann#{ai} "{a["annotations"][ai]["title"]}" note {k} star: {n["text"][:50]}')
         n['star'] = True
         if WRITE:
-            ap.write_text(json.dumps(a, ensure_ascii=False, separators=(',', ':')))
+            write_like(ap, a)
 print('\n'.join(report))
 print(f'{len(swaps)} swaps, {len(stars)} stars', '(written)' if WRITE else '(dry run)')
