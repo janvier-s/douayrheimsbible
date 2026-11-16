@@ -159,7 +159,8 @@ describe('the corpus markup', () => {
 		// 2,209 before the duplicate 3-esdras 2:1 entry (and its one cross_ref) was removed.
 		// 2,208 before the Sancta margin-citation pass: Ps 121:6, +54 missing 1609
 		// citations, less 37 Sancta entries that only repeated a printed one or a note.
-		expect(crossRefs).toHaveLength(2226);
+		// 2,226 before Matt 16:18's 'Io. 21, 15.' moved to 16:19, where the 1582 print has its *.
+		expect(crossRefs).toHaveLength(2227);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -174,7 +175,8 @@ describe('the corpus markup', () => {
 		// 43,997 before the 47 verse-0 summary fragments were folded into their summaries.
 		// 43,950 before the split Deut 30 annotation was merged back (-2 titles, -2 texts).
 		// 43,946 before John 15:2 lost its two invented annotation parts (-2 titles, -2 texts).
-		expect(blocks).toHaveLength(43942);
+		// 43,942 before Matt 16:19 got its own cross_ref (Io. 21, 15.): +1 block.
+		expect(blocks).toHaveLength(43943);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -265,7 +267,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,766 of 13,784 markers', () => {
+	it('binds 13,765 of 13,783 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -280,10 +282,11 @@ describe('the corpus markup', () => {
 		// 13,767 before the Ps 43:26 (t) marker was restored.
 		// 13,768 before the Acts 28:8 [1] note (no print, Peters, scrape or Haydock source) was removed.
 		// 13,767 before the later-edition Matt 1:19 gloss (not in the 1582 print) was removed.
-		expect(bound).toBe(13766);
+		// 13,766 before the later-edition Matt 20:34 gloss (not in the 1582 print) was removed.
+		expect(bound).toBe(13765);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
 		expect(unbound).toBe(18);
-		expect(bound + unbound).toBe(13784);
+		expect(bound + unbound).toBe(13783);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming

@@ -351,7 +351,13 @@ def move_bars(S):
 PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is written heretikes',
                ('matthew', 44): 'pvt on is not', ('matthew', 45): 'leade vs not s cypr',
                ('matthew', 57): 'lesser in the kingdom', ('matthew', 58): '@annhead',
-               ('matthew', 66): 'avthor os evil tertvl', ('matthew', 69): '@chap', ('matthew', 71): '@annhead'}
+               ('matthew', 66): 'avthor os evil tertvl', ('matthew', 69): '@chap', ('matthew', 71): '@annhead',
+               ('matthew', 72): 'and there came to', ('matthew', 76): '@chap', ('matthew', 79): 'ones that beleeve in',
+               ('matthew', 81): 'nativitie an angel sor', ('matthew', 84): '@chap', ('matthew', 86): 'nations avg de verb'}
+
+
+# Catchwords before a heading that the OCR garbles, checked on the scan.
+CATCHWORDS = {('matthew', 75): 'Chap.'}
 
 
 def apply_page_starts(S, starts):
@@ -359,7 +365,7 @@ def apply_page_starts(S, starts):
         want = PAGE_STARTS.get((BOOK, FIRST + n))
         if not want:
             continue
-        lo, hi = max(0, starts[n] - 60), min(len(S), starts[n] + 60)
+        lo, hi = max(0, starts[n] - 150), min(len(S), starts[n] + 150)
         if want.startswith('@'):  # the page opens with a heading block: '@annhead' or '@chap'
             heads = [i for i in range(lo, hi) if S[i]['kind'] == want[1:] and S[i - 1]['kind'] != want[1:]]
             if heads:
@@ -390,8 +396,9 @@ MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 
                 ('matthew', 10): [[40, 0]], ('matthew', 11): [[2, 0]], ('matthew', 12): [[39, 6]],
                 ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]]}
 
-# Paragraph starts the OCR reports where the scan has none: 13:45 (64) is flush left.
-NO_PARAS = {('matthew', 13): [[45, 0]]}
+# Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81)
+# are flush left.
+NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]]}
 
 
 def export_paragraphs(S, paras):
@@ -453,7 +460,7 @@ def main():
         if b < len(S) and S[b]['kind'] in ('annhead', 'chap', 'title'):
             # the next page opens with a heading: take the print's catchword ("Annot-", "Chap.") from the OCR
             tail = [l for l in p['text'].splitlines() if l.strip()]
-            catch = tail[-1].split()[-1] if tail else ''
+            catch = CATCHWORDS.get((BOOK, wiki)) or (tail[-1].split()[-1] if tail else '')
         sig = ''
         for line in p['text'].splitlines()[-6:]:
             m = re.match(r'^\s*([A-Z]{1,2})\s+([ivjl]{1,5})\b', line)
