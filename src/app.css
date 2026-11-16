@@ -637,6 +637,22 @@ body {
 	font-variant: normal;
 }
 
+/* IM Fell DW Pica: verse numbers follow the reader font too. Its x-height is
+   ~25% smaller than Montserrat's, so the numerals are scaled up to match. */
+:root[data-sc-font] .verse-num {
+	font-family: var(--font-reader);
+	font-size: 12.5px;
+	font-variant-numeric: lining-nums;
+}
+:root[data-sc-font] span.verse-num {
+	font-size: 16px;
+}
+@media (max-width: 767px) {
+	:root[data-sc-font] span.verse-num {
+		font-size: 12.5px;
+	}
+}
+
 .search-mn {
 	font-family: var(--font-ui);
 	letter-spacing: 0.4px;

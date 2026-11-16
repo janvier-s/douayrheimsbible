@@ -8,6 +8,7 @@
 	import { isMobile } from '$lib/stores/mobile';
 	import type { PageData } from './$types';
 	import { prefs } from '$lib/stores/prefs';
+	import { readerFontPx } from '$lib/data/fonts';
 	import { compareStore, TRANSLATIONS, MAX_COLS } from '$lib/stores/compare';
 	import type { TranslationId, Translation } from '$lib/stores/compare';
 	import CompareBar from '$lib/components/CompareBar.svelte';
@@ -29,7 +30,10 @@
 		prevFontSize = getComputedStyle(document.documentElement).getPropertyValue(
 			'--font-size-reader'
 		);
-		document.documentElement.style.setProperty('--font-size-reader', `${$prefs.compareFontSize}px`);
+		document.documentElement.style.setProperty(
+			'--font-size-reader',
+			`${readerFontPx($prefs.compareFontSize, $prefs.fontFamily, $prefs.dyslexiaFont)}px`
+		);
 	});
 	onDestroy(() => {
 		if (browser && prevFontSize) {

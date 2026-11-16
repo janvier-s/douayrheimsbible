@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { prefs } from '$lib/stores/prefs';
+	import { readerFontPx } from '$lib/data/fonts';
 
 	interface Props {
 		prefsOpen?: boolean;
@@ -144,7 +145,10 @@
 						oninput={(e) => {
 							const v = parseInt((e.target as HTMLInputElement).value);
 							prefs.update((p) => ({ ...p, fontSize: v }));
-							document.documentElement.style.setProperty('--font-size-reader', `${v}px`);
+							document.documentElement.style.setProperty(
+								'--font-size-reader',
+								`${readerFontPx(v, $prefs.fontFamily, $prefs.dyslexiaFont)}px`
+							);
 						}}
 						class="w-full accent-accent"
 					/>

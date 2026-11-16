@@ -11,7 +11,7 @@
 	import { prefs } from '$lib/stores/prefs';
 	import { readingPosition } from '$lib/stores/reading';
 	import { afterNavigate, goto } from '$app/navigation';
-	import { getFontById } from '$lib/data/fonts';
+	import { getFontById, readerFontPx } from '$lib/data/fonts';
 	import { navOverride } from '$lib/stores/navOverride';
 	import { revealChrome } from '$lib/stores/chrome';
 	interface Props {
@@ -78,9 +78,15 @@
 		) {
 			localStorage.setItem('mobile-font-default', '1');
 			prefs.update((pr) => ({ ...pr, fontSize: 15 }));
-			document.documentElement.style.setProperty('--font-size-reader', '15px');
+			document.documentElement.style.setProperty(
+				'--font-size-reader',
+				`${readerFontPx(15, p.fontFamily, p.dyslexiaFont)}px`
+			);
 		} else {
-			document.documentElement.style.setProperty('--font-size-reader', `${p.fontSize}px`);
+			document.documentElement.style.setProperty(
+				'--font-size-reader',
+				`${readerFontPx(p.fontSize, p.fontFamily, p.dyslexiaFont)}px`
+			);
 		}
 		document.documentElement.style.setProperty('--line-height-reader', String(p.lineHeight));
 		document.documentElement.style.setProperty('--bionic-opacity', String(p.bionicOpacity ?? 1));

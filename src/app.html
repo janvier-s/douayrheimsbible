@@ -31,7 +31,10 @@
 					if (!fs && window.matchMedia('(max-width: 767px)').matches) {
 						fs = 15;
 					}
-					if (fs) s.setProperty('--font-size-reader', fs + 'px');
+					// Keep in sync with sizeScale in src/lib/data/fonts.ts
+					var scales = { sentinel: 17 / 16, 'im-fell-dw-pica': 20 / 16, 'source-serif-4': 17 / 16 };
+					var sc = prefs.dyslexiaFont ? 18 / 16 : scales[prefs.fontFamily] || 1;
+					if (fs) s.setProperty('--font-size-reader', Math.round(fs * sc * 100) / 100 + 'px');
 					if (prefs.lineHeight) s.setProperty('--line-height-reader', String(prefs.lineHeight));
 					var isMontserrat = (prefs.fontFamily || 'montserrat') === 'montserrat';
 					s.setProperty('--font-dropcap', isMontserrat ? 'var(--font-baskerville)' : 'inherit');

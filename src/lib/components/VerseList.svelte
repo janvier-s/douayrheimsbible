@@ -998,7 +998,7 @@
 								class:verse-tinted={lemmaByVerse?.has(part.verse)}
 							>
 								{#if $prefs.showVerseNumbers && !isDropcap}<sup
-										class="font-ui text-[10px] select-none mr-[3px] tabular-nums"
+										class="font-ui verse-num text-[10px] select-none mr-[3px] tabular-nums"
 										class:verse-num-roman={useRoman}
 										class:verse-num-hang={hanging}
 										class:verse-num-hang-roman={useRoman && hanging}
@@ -1087,7 +1087,7 @@
 			>
 				{#if $prefs.showVerseNumbers}
 					<span
-						class="font-ui text-[13px] max-md:text-[10px] select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em]"
+						class="font-ui verse-num text-[13px] max-md:text-[10px] select-none w-6 max-md:w-fit max-md:mr-[5px] shrink-0 text-right tabular-nums leading-[var(--line-height-reader)] pt-[0.15em] max-md:pt-[0.25em]"
 						style="color: var(--color-verse-num); font-weight: {isStudy &&
 						annotatedVerseSet.has(v.verse)
 							? 600
