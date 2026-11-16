@@ -1035,9 +1035,17 @@
 												>
 													<span class="note-marker">{note.label}</span>
 													<span class="note-text"
-														>{@html formatTrailingCitation(
+														>{#if note.table_only}<span class="note-table-label"
+																>Table of Epistles and Gospels:</span
+															>{/if}{' '}{@html formatTrailingCitation(
 															allcapsToSmallcaps(linkifyDrcRefs(note.text, translationId))
-														)}</span
+														)}{#if note.table_text}<span class="note-table"
+																><span class="note-table-label">Table of Epistles and Gospels:</span
+																>
+																{@html allcapsToSmallcaps(
+																	linkifyDrcRefs(note.table_text, translationId)
+																)}</span
+															>{/if}</span
 													>
 												</div>
 											{/each}
@@ -1823,6 +1831,23 @@
 	.note-text {
 		font-family: var(--font-reader);
 		font-size: 15px;
+	}
+
+	/* Saints' days from the print's Table of Epistles and Gospels: quieter than the margin note. */
+	.note-table {
+		display: block;
+		margin-top: 3px;
+		font-size: 0.92em;
+		color: var(--color-muted, #888);
+	}
+
+	.note-table-label {
+		font-family: var(--font-ui, inherit);
+		font-size: 10px;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		color: var(--color-subtle, var(--color-muted, #888));
+		margin-right: 5px;
 	}
 
 	/* Metropolis Italic only exists at weight 400/600 — inherit panel weight (500)

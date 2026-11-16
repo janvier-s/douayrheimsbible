@@ -498,6 +498,10 @@
 	interface PopoverState {
 		label: string;
 		content: string;
+		/** Table of Epistles and Gospels text, set apart from the printed note. */
+		table?: string;
+		/** The whole note comes from the Table (no margin note in the print). */
+		tableOnly?: boolean;
 		type: 'cross_ref' | 'note';
 	}
 
@@ -557,7 +561,13 @@
 				(n) => n.label === marker || n.label === `(${marker})` || n.label === `[${marker}]`
 			);
 			if (!note) return null;
-			return { label: note.label, content: note.text, type };
+			return {
+				label: note.label,
+				content: note.text,
+				table: note.table_text,
+				tableOnly: note.table_only,
+				type
+			};
 		}
 	}
 
@@ -1152,7 +1162,15 @@
 	on:mouseleave={schedulePopoverDismiss}
 >
 	{#if openPopover}
-		<span class="marker-popover-content">{@html allcapsToSmallcaps(openPopover.content)}</span>
+		<span class="marker-popover-content"
+			>{#if openPopover.tableOnly}<span class="marker-popover-table-label"
+					>Table of Epistles and Gospels:</span
+				>{/if}{' '}{@html allcapsToSmallcaps(openPopover.content)}{#if openPopover.table}<span
+					class="marker-popover-table"
+					><span class="marker-popover-table-label">Table of Epistles and Gospels:</span>
+					{@html allcapsToSmallcaps(openPopover.table)}</span
+				>{/if}</span
+		>
 	{/if}
 </MarkerPopover>
 
@@ -1564,5 +1582,20 @@
 	:global(.marker-popover-content) {
 		opacity: 0.9;
 		white-space: pre-line;
+	}
+
+	:global(.marker-popover-table) {
+		display: block;
+		margin-top: 4px;
+		font-size: 0.92em;
+		opacity: 0.75;
+	}
+
+	:global(.marker-popover-table-label) {
+		font-size: 10px;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		opacity: 0.8;
+		margin-right: 5px;
 	}
 </style>

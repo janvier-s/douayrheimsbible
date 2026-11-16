@@ -7,6 +7,12 @@ export interface CrossRef {
 export interface VerseNote {
 	label: string;
 	text: string;
+	kind?: string;
+	/** Saints'-day text from the print's back-of-book Table of Epistles and Gospels,
+	 *  kept beside the printed margin note in `text`. */
+	table_text?: string;
+	/** The note's whole text comes from that Table; the print has no margin note here. */
+	table_only?: boolean;
 }
 
 export interface SummaryNote {

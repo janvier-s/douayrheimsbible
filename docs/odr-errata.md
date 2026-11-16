@@ -123,6 +123,7 @@ Sancta's scraped headings hold every summary whole, so they were used as the ref
 - Ps 101:5 h: print "al ſauour" = *savour*; odr read "favour" and now reads "savour".
 - Mark 16:18: print (and the Sancta scrape) read "Miracles the Church by impoſition of hand" (no *in*); odr-original keeps it, odr reads "in the Church".
 - Gen 46:1 note: the print has "The eight and laſt part of this booke." before the argument (added to both texts).
+- Num 19:2 [1]: print reads "(q. 36. in Num)" with no full stop after *Num*; odr-original follows the print, odr keeps its stop.
 
 ## Annotation title misprints (Nov 16 2026)
 Annotation `title` lemmas checked against the scans (Argon High). The print misprints; odr is corrected, odr-original keeps the print. Titles are plain strings, so there is no `(†)` marker.

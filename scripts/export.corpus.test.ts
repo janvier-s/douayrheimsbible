@@ -32,7 +32,8 @@ import {
 	verseRef,
 	annotationRef,
 	type BlockKind,
-	type NoteLike
+	type NoteLike,
+	noteBody
 } from './export-lib';
 import { ALL_BOOKS } from '../src/lib/data/books';
 
@@ -234,7 +235,7 @@ describe('the corpus markup', () => {
 		for (const b of blocks) {
 			for (const n of b.notes) {
 				try {
-					tokenize(n.text, b.block, b.ref);
+					tokenize(noteBody(n), b.block, b.ref);
 				} catch {
 					unbalanced.add(b.ref);
 				}
@@ -264,7 +265,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,768 of 13,786 markers', () => {
+	it('binds 13,767 of 13,785 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -277,10 +278,11 @@ describe('the corpus markup', () => {
 		// 13,723 before the psalm summary-shift repair restored 29 head-note markers.
 		// 13,752 before 15 missing 1609 margin notes were added, each with its marker.
 		// 13,767 before the Ps 43:26 (t) marker was restored.
-		expect(bound).toBe(13768);
+		// 13,768 before the Acts 28:8 [1] note (no print, Peters, scrape or Haydock source) was removed.
+		expect(bound).toBe(13767);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
 		expect(unbound).toBe(18);
-		expect(bound + unbound).toBe(13786);
+		expect(bound + unbound).toBe(13785);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming

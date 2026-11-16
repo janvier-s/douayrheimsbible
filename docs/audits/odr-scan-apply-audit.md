@@ -128,3 +128,23 @@ the table-derived text is kept in an extra field on the same note, so no verse m
 - The reader does not display these fields yet, so the saints and dates no longer show beside those verses until the UI is taught to read `table_text` and `table_only`.
 - **Still open:** Acts 28:8 [1] ("Miraculous healing by imposition of the Apostles hands"). It is a gloss, not a table entry, and is in neither the scrape nor the page read. Left unchanged.
 - **Still open:** the Challoner-style additions removed in commit `00721721` (Rom 13:1, Matt 27:46 and any others) have not been re-checked against the page. Planned next.
+
+## Four page-scan checks (Nov 16 2026)
+
+Pages read from the hires/plain page images in `~/facsimiles/sancta/` (crops in 4 overlapping bands, then read by eye; `agy` transcriptions of Acts bands
+were unreliable and were not used as evidence).
+
+| # | Note | Result |
+|---|---|---|
+| 1 | Acts 28:8 [1] "Miraculous healing by impoſition of the Apoſtles hands." | **Absent from the print.** Read the whole of p. 370 (Acts 28, bottom: v. 5-7, left margin carries only the Malta note of v. 1 and right margin the verse-5 cross-reference), p. 371 (v. 8-17: no marginal text beside v. 7-13 on either side) and p. 372 (v. 24-28: only the Esa. 6, 9 cross-references and the v. 27 gloss). No note near Acts 28:7-10. **Not deleted**; left in both texts, flagged here as an addition with no print counterpart. |
+| 2 | Esther 11:1 [1] | **Found, one defect fixed.** The note is set across the left and right margins of the v. 1 area (pp. 1052-1053): `The firſt part. The preſage, and occaſion of Eſthers aduancement` / `and Amans perſecuting the Iewes.` No apostrophes confirmed. The print spells out `and`; ours had `&`, now `and` (odr-original only). |
+| 3 | Ecclesiasticus 43:2 a | **Confirmed, no change.** Page 1 ends `Of which al cor-/poral crea-`; the next page's margin runs `tures receiue / their light: & / by whoſe in-/fluence al ge-/neration of / creatures pro-/cedeth: wher-/of is this / Maxime in / Philoſophie,`. `whoſe` is right. |
+| 4 | Numbers 19:2 [1] | **Found, fixed.** Print: `The ſame things ſaith S. Auguſt. (q. 33.) and Theodoret (q. 36. in Num) which were ſhadowed and prefigured in the old Teſtament, are reueled and manifeſted in the New. And this ſpecial ſacrifice prefigured diuers particular things in Chriſts Paſſiõ.` odr-original: `Aug.` → `Auguſt.`, `Theodo.` → `Theodoret`, `&` → `and`, `Num.)` → `Num)`. odr: `Aug.` → `August.`, `Theodo.` → `Theodoret`, `Num.)` → `Num)`. (`ſhadowed` in the print's gutter looks long-ſ; our text keeps the round s before h per the print rules, not changed.) |
+
+Lemma spans: `build-odr-lemmas` reports no change needed (the edits are in verse notes, not annotation passages); nothing written.
+
+**Still open:** Acts 28:8 [1] stays as an addition with no print counterpart (see item 1).
+
+**Exports (Nov 16 2026):** `noteBody()` in `scripts/export-lib.ts` now carries `table_text` into exported footnotes (USFM, study and corpus checks) after the printed note, under "Table of Epistles and Gospels:"; `table_only` notes get the label in front.
+
+**Acts 28:8 [1] removed (Nov 16 2026).** Searched its words ("healing", "imposition of the Apostles hands") in the page scans (pp. 370-372), the Sancta scrape (its own comparison lists it as `not found in Sancta chapter`), Peters p. 299, Challoner's DRC text, Haydock Acts 28, Knox and CPDV notes: no source has it. The note and its `<na>[1]</na>` marker are deleted from `odr` and `odr-original`; the pinned corpus marker count drops by one (13,767 bound of 13,785).
