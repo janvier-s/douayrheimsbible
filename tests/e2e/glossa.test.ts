@@ -13,7 +13,10 @@ test('Vulgate study panel renders the Glossa', async ({ page }) => {
 	await useStudyMode(page);
 	await page.goto('/vul/genesis/1');
 	await expect(page.locator('.glossa-block')).toBeVisible();
-	await expect(page.locator('.glossa-block .content-eyebrow')).toHaveText('Glossa Ordinaria');
+	await expect(page.getByRole('tab', { name: 'Glossa Ordinaria' })).toHaveAttribute(
+		'aria-selected',
+		'true'
+	);
 });
 
 test('Glossa renders verse sections and entries for Genesis 1', async ({ page }) => {
