@@ -15,7 +15,8 @@ entry at the same verse or within two verses, by best title similarity.
   each other only.
 - Before fixing, 1,415 of the 1,507 agreed on all four titles by skeleton (spaced, so glued words show). 92
   differed somewhere; the glue-tolerant skeleton cut that to 46 after the fixes, mostly spelling and archaism.
-- Fixed: 11 modern titles, 12 original titles (23 files, one title each). After the fixes 1,461 of 1,507 agree on
+- Fixed: 11 modern titles, 12 original titles (23 files, one title each), plus 5 modern titles restored to the
+  1609 wording and Matt 17:20 in both datasets (see the second pass). After the fixes 1,461 of 1,507 agree on
   all four by skeleton; the other 46 are the spelling and archaism differences listed under "Left alone".
 - Lemma spans rebuilt with `build-odr-lemmas.ts --write` for the 9 verses whose title changed. Every title still
   anchors; the pins in `scripts/export.corpus.test.ts` did not move, so no pin was edited. `npx vitest run`:
@@ -46,6 +47,23 @@ entry at the same verse or within two verses, by best title similarity.
   `coates`, Matt 9:20 `years` to `yeres`, Ps 31:2 `ſins` to `ſinnes`, Rom 1:24 `up` to `vp`, 2 Cor 1:24
   `over-rule` to `ouerrule` (the scrape, the facsimile OCR and the annotation body all have `ouerrule`).
 
+## Second pass: titles restored to the 1609 wording, scans read
+
+Five modern titles had been adjusted to the modern verse where the 1609 title differs from its verse: Matt 10:12
+(`Peace to this house`), 13:11 (`To you is given`), 13:29 (`Lest you pluck up also`), 28:19 (`Going then`), Rom 8:17
+(`Yet if they suffer`). These were restored to the 1609 wording; the title is a quotation of the print, and the
+tint is the thing to adapt. Result: 4 of 5 tint exactly as before (the partial tier already handles them). Matt
+28:19 narrowed to `going`, so `then`/`therefore`/`therfore` was added as an equivalent pair in `EQUIVALENT` in
+`scripts/odr-lemma-lib.ts`; it now tints `going therefore` (modern) and `going therfore` (original).
+
+Scan reads (page images read with `agy --model gemini-4-argon-high`):
+
+- Gen 1:1 original `In the beginnig.`: printed `beginnig`. Original is right; modern `beginning` is right.
+- Gen 36:6 `btother` and Gen 48:16 `delinereth`: both printed that way (a turned `t` and `n`). Original is right.
+- Matt 17:20: printed `Faith as muſtard ſeed.` with no `a`. Modern and original titles corrected to drop `a`
+  (2 more titles; original now fixed in 13, modern in 12). The original tint now spans `faith as a muſtard ſeede`.
+- Ps 9:21: no lemma is printed. The annotation begins `21. After the 21. verſe…`. The empty title is correct.
+
 ## Titles that do not appear in their verse
 
 Titles are lemmas, often shortened or paraphrased, so absence is not an error. With every punctuation-separated
@@ -59,11 +77,6 @@ rod`, which the lemma builder already handles. The builder anchors all 1,518 mod
 
 ## Left alone
 
-- Modern titles adjusted to the modern verse where the 1609 title differs from its own verse: Matt 10:12 (`Peace
-  be to`), 13:11 (`it is given`), 13:29 (`perhaps`), 28:19 (`therefore` for `then`), Rom 8:17 (`we suffer` for
-  `they suffer`). The scrape agrees with the 1609 title, so by the vote these are wrong, but the title is the
-  anchor for the lemma tint, and fixing it would drop the tint on a verse that reads exactly so. Decision for
-  the owner.
 - Archaisms and spelling variants intentional in modern: `cannot`, `in deed`, `Cherubins` (scrape modern says
   `Cherubims`), `Melchisedech`, `Hierusalem`, `middes`, `etc.` vs `&c.`, `Saints` vs `Saincts`, `Ægyptian`.
 - Scrape typos, not ours: Matt 17:21 `aud`, Matt 5:33 and 17:19 trailing `.)`, Gen 36:6 `/` in place of `8.`.
@@ -71,16 +84,7 @@ rod`, which the lemma builder already handles. The builder anchors all 1,518 mod
   our title matches the verse.
 - Ps 33:14 and 49:14: known (title carries a citation; see `odr-annotations-modern-audit.md`).
 
-## Needs the scans (not changed)
+## Still open
 
-- Gen 1:1 original `In the beginnig.`: scrape original has the same typo; the title is in no verse form. Print
-  typo or transcription slip? Scan `~/facsimiles/sancta/genesis/1/hires/`.
-- Gen 36:6 original `btother` and Gen 48:16 original `delinereth`: scrape original and the scan OCR both read
-  so, which suggests the 1609 print has these misprints. Left as printed; modern reads `brother` and `delivereth`.
-- Matt 17:20 `Faith as a mustard seed.`: modern and original have `a`; scrape modern and original both drop it
-  (the verse has it).
-- Ps 9:21: title empty in modern, original and scrape; the annotation may have lost its lemma.
-- Matt 28:19 (`Going then` in the 1609, scrape both) and the other four harmonised titles above, if the owner
-  wants the original title restored in modern.
 - Hyphenation of compounds in original titles (`over-rule`-type) is unchecked beyond the scrape; the scrape
   strips hyphens in places.
