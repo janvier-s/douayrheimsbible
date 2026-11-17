@@ -5,11 +5,11 @@ One row per book. "Checked" means the data (`static/data/odr-original`, plus
 "Proofread" means a person read the generated wiki pages against the scan, which is
 what Wikisource quality level 3 requires. Nothing is posted yet.
 
-| Book    | Wiki pages | Checked against the scans  | Wiki pages generated | Proofread | Posted |
-| ------- | ---------- | -------------------------- | -------------------- | --------- | ------ |
-| Matthew | 31-113     | yes, complete (2026-11-17) | yes, all 83          | no        | no     |
-| Mark    | 114-       | partial (NT-wide passes)   | no                   | no        | no     |
-| others  |            | partial (NT-wide passes)   | no                   | no        | no     |
+| Book    | Wiki pages | Checked against the scans   | Wiki pages generated | Proofread | Posted |
+| ------- | ---------- | --------------------------- | -------------------- | --------- | ------ |
+| Matthew | 31-113     | yes, complete (2026-11-17)  | yes, all 83          | no        | no     |
+| Mark    | 114-160    | prep: OCR vote (2026-11-17) | scratch only         | no        | no     |
+| others  |            | partial (NT-wide passes)    | no                   | no        | no     |
 
 ## Matthew: what "checked" covers
 
@@ -49,6 +49,13 @@ citation abbreviations (Cyr. l., Mat., Hierom.), and no a/b/c letter keys in
 A15.9 (`odr` never carries them; the `<mn>` markers key the notes). Print
 misprints `odr-original` keeps and `odr` spells correctly: penanee, weas,
 manifodly, ehe, aud, ttuly.
+
+## Mark: preparation (2026-11-17)
+
+Transkribus + Tesseract vote, see `docs/audits/mark-transkribus-findings.md`. Applied:
+240 w/vv words (per word, from the vote and crops; every data w-word settled), nine half-modernised annotations
+read whole on the scan, two summary notes, one extra word (16:1a1). Generator setup
+done (pages 115-160, argument 114 and Luke's argument 161 not generated). Open: Steps 1-6 of the playbook.
 
 ## Other books: NT-wide passes already done
 
