@@ -31,13 +31,18 @@ Rounds 1-12b, 2026-11-16 to 2026-11-17, branch `janvier-s/odr-wikisource`
 Known leftovers: none that block posting. The wiki pages are `generated` in
 `manifest.json` (not proofread), so they would go up at quality level 1.
 
-Modern text (`odr`): content fixes were mirrored, but a comparison on 2026-11-17
-found about 35 content differences where `odr` still has later-edition or OCR text
-that `odr-original` dropped after the scan check (e.g. 8:5 lectionary note lacks
-"Lu. 7, 1."; 16:13 note adds "And upon S. Leo his day April 11"; annotation
-citations "In Ps. 66" / "sec. Io." for the print's 69 / 10; 23:29 lacks "ye").
-Structure (verses, markers, notes, cross-refs, lemmas, annotations) is identical.
-Not yet synced.
+Modern text (`odr`): synced on 2026-11-17 (step 6). Structure, word alignment
+and numbers now differ only by spelling and `odr`'s own conventions; 29 content
+fixes went into `odr` and the scan check found 4 slips in `odr-original` (8:23
+"4." Sunday, A16.18 margin "ſec. Io.", A6.13 margin "Iac. 1.", a missing space in
+23:35). Kept in `odr` on purpose: corrections of real print misprints (A3.2
+"2. Cor. 7, 9" for the print's 1 Cor.; A6.13 "de do. persev." for "bo."; A13.8
+"Iovin." for "Iouia."; titles "adultery" for "aduontrie" and "Supersubstantial"
+for "Superſtantial"), "our Lord's Body" for "our L. Body" (A27.24 note), its own
+citation abbreviations (Cyr. l., Mat., Hierom.), and no a/b/c letter keys in
+A15.9 (`odr` never carries them; the `<mn>` markers key the notes). Print
+misprints `odr-original` keeps and `odr` spells correctly: penanee, weas,
+manifodly, ehe, aud, ttuly.
 
 ## Other books: NT-wide passes already done
 
