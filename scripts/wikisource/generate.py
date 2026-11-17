@@ -391,9 +391,11 @@ CREND_AT = {('matthew', 27, 35): 24}
 # the lemma spans are right (the titles quote 'Chaire of Moyses' and 'Come ye'). A span
 # in 25:41 would tint words whose click opens 25:41's annotations, of which there are none.
 # 26:27 '‖ he gaue thankes' (103): the 26:26 'Bleſſed.' annotation covers both verbs;
-# 26:75 '‖ he vvept bitterly' (106; the lemma is the title's 'Wept bitterly').
+# 26:75 '‖ he vvept bitterly' (106; the lemma is the title's 'Wept bitterly');
+# 28:20 'vvith you ‖ al daies' (113; the title is 'With you al daies').
 BARS = {('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)],
-        ('matthew', 26, 27): [(None, 4)], ('matthew', 26, 75): [(24, 23)]}
+        ('matthew', 26, 27): [(None, 4)], ('matthew', 26, 75): [(24, 23)],
+        ('matthew', 28, 20): [(15, 17)]}
 
 
 # Page starts the alignment gets wrong, each checked on the scan: the page's
