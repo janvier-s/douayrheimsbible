@@ -158,7 +158,8 @@ def render_annotation(a):
         if not n:
             return ''
         # citations are set in italic, some behind the print's margin star ("* <i>Act. 15</i>.")
-        if re.match(r'\s*(?:\* )?<i>', n['text']):
+        # or a letter keyed to the text ("a <i>Aug. Ser. de tēp. 251</i>", 15:9 on page 71)
+        if re.match(r'\s*(?:\* |[a-z] )?<i>', n['text']):
             return f'⟦mn:{k}⟧' + '{{MINNER|' + n['text'] + '}}' + ('* ' if n.get('star') else '')
         return f'⟦mn:{k}⟧' + '{{MOUTER|' + n['text'] + '}}'
 
