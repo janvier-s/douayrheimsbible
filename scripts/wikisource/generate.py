@@ -7,6 +7,7 @@ annotations), aligns the sancta-scan OCR of each page to it, cuts the stream
 at the page starts and opens a paragraph wherever the print indents a line.
 Also writes report.txt: alignment quality per page and macron candidates.
 """
+import unicodedata
 import json, os, re, sys, difflib
 from pathlib import Path
 
@@ -31,8 +32,13 @@ ROMAN = ['', 'I', 'II', 'III', 'IIII', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'
 
 
 SENT = re.compile(r'⟦[^⟧]*⟧')
-# {{dropinitial|T|fl={{verse|...}}}}: fl puts the verse number inside the floated cap
-DROPI = re.compile(r'\{\{dropinitial\|([^{}|]*)(?:\|fl=\{\{[^{}]*\}\})?\}\}')
+# {{dropinitial|T|image=...|imgsize=...|fl={{verse|...}}}}: fl puts the verse number inside
+# the floated cap; image is the print's woodcut (on Commons), T its alt text
+DROPI = re.compile(r'\{\{dropinitial\|([^{}|]*)(?:\|(?:image|imgsize)=[^{}|]*)*(?:\|fl=\{\{[^{}]*\}\})?\}\}')
+# Woodcut initials, headpieces and tailpieces on Commons, from ornaments.py commons:
+# initial 'book/ch' -> file, letter, imgsize; headpiece/tailpiece book -> file, width.
+_ORN = REPO / 'wikisource/1582-rhemes-nt/ornaments.json'
+ORNAMENTS = json.loads(_ORN.read_text()) if _ORN.exists() else {}
 
 
 def norm(w):
@@ -89,9 +95,11 @@ def sc_wiki(s):
     return s.replace(SC0, '{{sc|').replace(SC1, '}}')
 
 
-def drop_initial(s):
+def drop_initial(s, ch=None):
     """The first letter of a chapter's verse 1 is a drop cap: {{dropinitial|T}}HEN. The verse
-    number goes inside the float (fl=), or the floated cap lands before it: "T1AKE"."""
+    number goes inside the float (fl=), or the floated cap lands before it: "T1AKE". With
+    the chapter's woodcut on Commons, the cap is that image and the letter its alt text."""
+    orn = ORNAMENTS.get('initial', {}).get(f'{BOOK}/{ch}')
     parts = re.split(r'(\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|⟦[^⟧]*⟧|<[^>]*>)', s)
     for k in range(0, len(parts), 2):
         m = re.search(r'[A-Za-zæœ]', parts[k])
@@ -100,16 +108,21 @@ def drop_initial(s):
             for j in range(1, k, 2):
                 if parts[j].startswith('{{verse|'):
                     fl, parts[j] = '|fl=' + parts[j], ''
-            parts[k] = parts[k][:m.start()] + '{{dropinitial|' + m.group(0) + fl + '}}' + parts[k][m.end():]
+            img = ''
+            if orn:
+                if orn['letter'] != m.group(0).upper():
+                    print(f'warning: {BOOK} {ch}: woodcut {orn["letter"]}, data starts {m.group(0)}')
+                img = f"|image={orn['file']}|imgsize={orn['imgsize']}"
+            parts[k] = parts[k][:m.start()] + '{{dropinitial|' + m.group(0) + img + fl + '}}' + parts[k][m.end():]
             break
     return ''.join(parts)
 
 
-def finish(s, dropcap=False):
+def finish(s, dropcap=False, ch=None):
     s = s.replace('ſ', 's').replace('⊢', '⊣')
     s = sc_marks(s, dropcap)
     if dropcap:
-        s = drop_initial(s)
+        s = drop_initial(s, ch)
     s = re.sub(r'</?i>', "''", s)
     s = re.sub(r'</?alt>', '', s)  # variant readings: the print's ` ' marks stay in the text
     return s.replace('<br>', '<br/>')
@@ -146,7 +159,11 @@ def build_stream(book, ann):
     for chap in book['chapters']:
         ch = chap['chapter']
         if ch == 1:
-            S += tokens_of('{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|DING TO MATTHEW.}}}}', block=True, ch=ch, kind='title')
+            hp = ORNAMENTS.get('headpiece', {}).get(BOOK)
+            tt = tokens_of('{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|DING TO MATTHEW.}}}}', block=True, ch=ch, kind='title')
+            if hp:  # the woodcut band above the book title, riding on the title's first word
+                tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
+            S += tt
         side = (chap.get('summary_notes') or [{}])[0].get('text', '')
         head = ''
         if side and not ITALIC_REF.match(side):
@@ -161,7 +178,7 @@ def build_stream(book, ann):
         if s:
             S += tokens_of(pre + "{{c|''" + finish(s) + "''}}", block=True, ch=ch, kind='summary')
         for v in chap['verses']:
-            vt = tokens_of(finish(render_verse(v, ch), dropcap=v['verse'] == 1), ch=ch, kind='verse', verse=v['verse'])
+            vt = tokens_of(finish(render_verse(v, ch), dropcap=v['verse'] == 1, ch=ch), ch=ch, kind='verse', verse=v['verse'])
             vt[0]['vstart'] = True
             for k, t in enumerate(vt):
                 t['w'] = k
@@ -183,6 +200,9 @@ def build_stream(book, ann):
                 at = tokens_of(finish(render_annotation(a, ch, ai)), ch=ch, kind='ann', ann=ai)
                 at[0]['block'] = True
                 S += at
+    tp = ORNAMENTS.get('tailpiece', {}).get(BOOK)
+    if tp:  # the fleuron closing the book, after its last annotation
+        S[-1]['text'] += f"\n\n{{{{c|[[File:{tp['file']}|{tp['width']}]]}}}}"
     return S
 
 
@@ -245,6 +265,8 @@ def render_annotation(a, ch=None, ai=None):
             return f'⟦mn:{k}⟧' + '{{MINNER|' + n['text'] + '}}' + ('* ' if n.get('star') else '')
         return f'⟦mn:{k}⟧' + '{{MOUTER|' + n['text'] + '}}'
 
+    # the margin marker sits outside the text line: no space before it ahead of punctuation ("ground</i> <mn>[3]</mn>.")
+    text = re.sub(r'\s+(<mn>[^<]*</mn>)(?=\s*[,.;:?!)])', r'\1', text)
     text = re.sub(r'<mn>[^<]*</mn>\s*', mn, text)
     return f"''{a['verse']}. {a['title']}''] {text}"
 
@@ -520,7 +542,9 @@ def signature(wiki):
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
 CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
-              ('mark', 160): 'THE'}
+              ('mark', 160): 'THE',
+              # printed catchwords longer than the first word of the next page, read on the scan
+              ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 
 def apply_page_starts(S, starts):
@@ -603,6 +627,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     report = []
     verso_t, recto_t = RUNNING[BOOK]
+    ital_carry = False
     for n, p in enumerate(pages):
         wiki = FIRST + n
         a, b = starts[n], (starts[n + 1] if n + 1 < len(starts) else len(S))
@@ -625,6 +650,14 @@ def main():
                 sep = '\n'
             body += sep + t['text']
         body = SENT.sub('', body)
+        # italics are balanced per page (an unclosed '' breaks the page view): close at the page end, reopen on the next
+        if ital_carry:
+            body = "''" + body
+        if len(re.findall(r"(?<!')''(?!')", body)) % 2:
+            body += "''"
+            ital_carry = True
+        else:
+            ital_carry = False
         body = body.replace('{{MINNER|', '{{MarginNote|margin=' + side_inner + '|margin-width=65|text=')
         body = body.replace('{{MOUTER|', '{{MarginNote|margin=' + side_outer + '|margin-width=65|text=')
         catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', DROPI.sub(r'\1', SENT.sub('', S[b]['text']))).strip() if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
@@ -632,15 +665,21 @@ def main():
             # the next page opens with a heading: take the print's catchword ("Annot-", "Chap.") from the OCR
             tail = [l for l in p['text'].splitlines() if l.strip()]
             catch = CATCHWORDS.get((BOOK, wiki)) or (tail[-1].split()[-1] if tail else '')
+        catch = CATCHWORDS.get((BOOK, wiki), catch)
         sig = signature(wiki)
         for line in p['text'].splitlines()[-6:]:
             m = re.match(r'^\s*(?:\d{1,3}\s+)?([A-Z]{1,2})\s+([ivjl]{1,5})\b', line)
             if m and (not sig or m.group(1) != sig.split()[0]):
                 print(f'warning: page {wiki}: OCR signature {m.group(1)} {m.group(2)}, computed {sig or "none"}')
-        footer = f'{{{{rh||{sig}|{catch}}}}}' if (catch or sig) else ''
-        (OUT / f'{wiki}.wiki').write_text('<noinclude><pagequality level="1" user="" />' + header +
+        if catch.count("''") % 2:
+            catch += "''"  # the catchword is cut from the next page's start, which may open an italic
+        if "''" in catch and not sig:
+            footer = f'{{{{continues|{catch}}}}}'  # Wikisource's template for a footer catchword (as proofread on pp. 38, 44)
+        else:
+            footer = f'{{{{rh||{sig}|{catch}}}}}' if (catch or sig) else ''
+        (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + header +
                                           # the print's ‖ is a small raised mark; ″ read as quotes
-                                          '</noinclude>' + sc_wiki(body).replace('‖', '{{sup|‖}}') + '<noinclude>' + sc_wiki(footer) + '</noinclude>\n')
+                                          '</noinclude>' + sc_wiki(body).replace('‖', '{{sup|‖}}') + '<noinclude>' + sc_wiki(footer) + '</noinclude>\n'))
         report.append(f'{wiki} {p["src"]} ch{p["chapters"]} tokens {a}-{b} match {quality[n]:.0%}')
     report.append('\nMark differences (wiki page, ch:v, our token, OCR mark, our mark):')
     for d in MARKDIFF:

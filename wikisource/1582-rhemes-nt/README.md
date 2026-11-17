@@ -17,6 +17,8 @@ book against the scans, learned on Matthew, is in [PLAYBOOK.md](PLAYBOOK.md).
 # 1. generate pages for a book from the data and the OCR (scratch output)
 python3 -I scripts/wikisource/generate.py "$PWD" matthew 31 /tmp/ws-out
 # 2. read report.txt (mark differences against the scan), fix the data, repeat
+# 2b. lint the output (exit 1 on errors; see the docstring for the checks)
+python3 -I scripts/wikisource/lint.py /tmp/ws-out
 # 3. once the chapters are checked against the scans, publish those pages here
 python3 -I scripts/wikisource/publish.py /tmp/ws-out 31-41
 ```
