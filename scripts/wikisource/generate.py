@@ -97,6 +97,13 @@ def build_stream(book, ann):
             vt[0]['vstart'] = True
             for k, t in enumerate(vt):
                 t['w'] = k
+            # a verse-end citation printed beside an earlier line (it may be on another page)
+            to = CREND_AT.get((BOOK, ch, v['verse']))
+            if to is not None:
+                m = next(re.search(r'⟦crend:\d+⟧\{\{MINNER\|[^{}]*\}\}', t['text']) for t in vt if '⟦crend:' in t['text'])
+                for t in vt:
+                    t['text'] = t['text'].replace(m.group(0), '')
+                vt[to]['text'] = m.group(0) + vt[to]['text']
             if v['verse'] == 1:
                 for t in vt[:14]:
                     t['nopara'] = True
@@ -369,6 +376,12 @@ def move_bars(S):
             if t['w'] == to:
                 m = re.match(r'^((?:⟦[^⟧]*⟧|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[*∷†] ?)*)', t['text'])
                 t['text'] = t['text'][:m.end()] + '‖ ' + t['text'][m.end():]
+
+
+# Citations with no * in the print (stored at the verse end) whose margin note the print sets
+# beside an earlier word, on an earlier page: (book, chapter, verse) -> word.
+# 27:35 'Pſ. 21, 19' beside 'They deuided' (109; the verse ends on 110).
+CREND_AT = {('matthew', 27, 35): 24}
 
 
 # Wiki-only ‖ fixes, checked on the scan: (from word, to word) per verse, None = no bar.

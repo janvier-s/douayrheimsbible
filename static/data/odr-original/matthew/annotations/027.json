@@ -30,7 +30,7 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "They that execute lawes againſt their conſcience, are like to Pilate."
+          "text": "They that execute lawes againſt their cōſcience, are like to Pilate."
         }
       ]
     },
@@ -41,7 +41,7 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "Chriſt derided in the B. Sacrament, euen as vpon the Croſſe."
+          "text": "Chriſt derided in the B. Sacrament, euen as vpō the Croſſe."
         }
       ]
     },
@@ -56,7 +56,7 @@
         },
         {
           "marker": 2,
-          "text": "Deteſtable blaſphemy of Calvin. And other Miniſters of his ſchool."
+          "text": "Caluins blaſphemie."
         }
       ]
     },
@@ -71,11 +71,12 @@
         },
         {
           "marker": 2,
-          "text": "<i>S. Hier. in hunc locum.</i>"
+          "text": "<i>S. Hiero. in hunc locum.</i>"
         },
         {
           "marker": 3,
-          "text": "* <i>to. 1, Concil</i>."
+          "text": "* <i>to. 1, Cōcil</i>.",
+          "star": true
         },
         {
           "marker": 4,
