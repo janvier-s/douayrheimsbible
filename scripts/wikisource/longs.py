@@ -9,7 +9,12 @@ before f. A final s stays round; capitals, Greek and Hebrew are untouched.
   fheweth; the 1609 body text is mostly round there), round before k.
 KEEP_ROUND lists the forms the scans print otherwise. Notes that already contain ſ
 are skipped, so a rerun changes nothing; Matthew 1-20 was done by hand (c7a31e5d).
-Abbreviations ending in s (Seſs., Theſs.) keep the round final s: check on a scan.
+Abbreviations: the rule leaves an abbreviation's last s round (Chrys.), but the print
+sets it long before the period, in both testaments: Pſ., Chryſ., Chriſ., Theſ.,
+Epheſ., Ioſ., verſ., Baptiſ., Ambroſ., Dionyſ., Baſ., Geneſ., remiſ., hæreſ.,
+Catechiſ., Confeſ., Arauſ., aduerſ. (about 60 read on the scans, none round; Nov 17 2026).
+Seſs. and Theſs. are the print's ß ligature (ſs) and stay; Nyſſ. and the 1609
+Theſſ. (Judges 9:8) print two long s. Applied by hand after the rule (see git log).
 Applied in 0ffb97e0. Each file keeps its own JSON format (jsonfmt.write_like).
 """
 import collections, json, re, sys
