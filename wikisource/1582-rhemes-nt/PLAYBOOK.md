@@ -31,6 +31,15 @@ should take far fewer. Log progress in `BOOKS.md`.
   7-10 x/y/w/h, same coordinates as hires). Tesseract reads ſ as f, ſſ as
   ff/fl/ii/il/ei, ſs as "fs", ∷ and † as `*`, ‖ as a quote mark, macrons as é or not
   at all, the ct ligature as é.
+- Transkribus OCR (Mark on; better than Tesseract: ~90% vs ~65% page match):
+  `transkribus.py <strip_dir> <xml_dir>` splits stitched-strip PAGE XML into
+  `~/facsimiles/transkribus/pages/<role>/<id>.{tsv,txt,jpg}` + `manifest.json`
+  (Tesseract TSV layout, page frame; margin words in blocks 90/91; word boxes
+  estimated from the ink when the strip had no word segmentation). Run the
+  generator with `WS_OCR=transkribus`. Pages with broken line segmentation are
+  flagged (`fragments`); use Tesseract or a PAGE_STARTS override there.
+  `ocrdiff.py <book> <out>` is the two-OCR vote against odr-original (findings TSV).
+  Transkribus outputs ſ as s, vv as vv/vy/vu, I as l, † as f/t glued to the word.
 - `generate.py` writes `tokens.json` (each data word with its scan box) and
   `report.txt` (wiki page → scan page, mark differences). Use the boxes to locate
   crops; reading positions off a thumbnail is ~10% off.

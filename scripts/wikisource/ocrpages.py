@@ -10,6 +10,8 @@ import hashlib, re
 
 SCAN = Path.home() / 'facsimiles/ocr-2026-11-12/sancta-scan'
 IMG = Path.home() / 'facsimiles/sancta'
+# Per-page Transkribus OCR written by transkribus.py (same TSV layout, page frame).
+TK = Path.home() / 'facsimiles/transkribus/pages'
 
 
 def read_page_width(tsv):
@@ -39,7 +41,8 @@ def _mode(values, bucket=10):
     return c.most_common(1)[0][0] * bucket if c else 0
 
 
-def body_lines(words, page_width):
+def body_lines(words, page_width, edge=None):
+    """edge: the text column's left x when the caller knows it (Transkribus split)."""
     # Group words into lines by their vertical centre. Tesseract sometimes
     # splits one printed line into two blocks (beside a drop cap, or under a
     # full-width section), and its own line ids would then cut the line in half.
@@ -66,7 +69,7 @@ def body_lines(words, page_width):
             c[k] += 1
     merged = {k: c[k - 1] + c[k] + c[k + 1] for k in c if 0.05 * page_width <= k * 10 <= 0.45 * page_width}
     best = max(merged, key=lambda k: (merged[k], c[k])) if merged else 0
-    edge = min((k for k in (best - 1, best, best + 1) if c[k]), default=best) * 10
+    edge = min((k for k in (best - 1, best, best + 1) if c[k]), default=best) * 10 if edge is None else edge
     out = []
     for ws in lines:
         # Split at wide gaps (margin notes sit on the same baseline) and keep
@@ -160,7 +163,33 @@ def catchword(words, page_width):
     return w['text']
 
 
-def book_pages(book):
+def transkribus_pages(book):
+    """Pages of one book from the Transkribus split, in strip order.
+
+    Words in TSV blocks 90/91 were tagged as left/right margin by the splitter;
+    they are kept out of the body lines but still count for the catchword."""
+    import json
+    pages = []
+    for m in json.loads((TK / book / 'manifest.json').read_text()):
+        tsv = TK / book / f"{m['id']}.tsv"
+        words = read_tsv(tsv)
+        width = read_page_width(tsv) or max((w['left'] + w['width'] for w in words), default=1)
+        body = body_lines([w for w in words if w['block'] < 90], width, edge=m.get('edge'))
+        img = TK / book / f"{m['id']}.jpg"
+        if img.exists():
+            mark_indents(body, img, width)
+        chs = [int(m['id'].split('/')[0])] if m['src'] == 'sancta' else []
+        pages.append(dict(chapters=chs, src=f"{book}/{m['id']}", pdf=m.get('pdf'), body=body,
+                          text=(TK / book / f"{m['id']}.txt").read_text(errors='replace'),
+                          catch=catchword(words, width)))
+    return pages
+
+
+def book_pages(book, source=None):
+    """source: 'tesseract' (sancta-scan, default) or 'transkribus'; env WS_OCR sets it."""
+    import os
+    if (source or os.environ.get('WS_OCR', 'tesseract')) == 'transkribus':
+        return transkribus_pages(book)
     pages, seen = [], {}
     chapters = sorted((int(p.name) for p in (SCAN / book).iterdir() if p.name.isdigit()))
     for ch in chapters:

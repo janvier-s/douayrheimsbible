@@ -17,7 +17,11 @@ REPO, BOOK, FIRST, OUT = Path(sys.argv[1]), sys.argv[2], int(sys.argv[3]), Path(
 MAXP = int(sys.argv[5]) if len(sys.argv) > 5 else 10 ** 6
 DATA = REPO / 'static/data/odr-original'
 # Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
-RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.')}
+# Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
+# its pages stay as they are; Transkribus reads the print better from Mark on.
+OCR_SOURCE = {'mark': 'transkribus'}
+RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
+           'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.')}  # mark: read on 1/2, 5/1, 16/1
 # Marks in chapter summaries are not in the data yet: words to star, per chapter.
 # Matt 2-28 summaries were checked on the scans (round 10): they print no marks.
 SUMMARY_STARS = {('matthew', 1): ['Abraham', 'Dauid. 18']}
@@ -280,6 +284,17 @@ def align(pages, S):
         lo = max(0, cur - 40)
         sm = difflib.SequenceMatcher(None, W, words[lo:hi], autojunk=False)
         blocks = [b for b in sm.get_matching_blocks() if b.size >= 3]
+        # A short match far ahead of the last one is a stray phrase (often from a
+        # page's chapter summary, which is not in the stream); it would drag the
+        # cursor and every later page with it.
+        kept = []
+        for b in blocks:
+            if kept and b.size < 5:
+                k = kept[-1]
+                if b.b - (k.b + k.size) > 3 * (b.a - (k.a + k.size)) + 60:
+                    continue
+            kept.append(b)
+        blocks = kept
         if not blocks:
             starts.append(cur); quality.append(0.0); continue
         b0 = blocks[0]
@@ -474,7 +489,9 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 89): 'to lay hands vpon', ('matthew', 92): 'a man not attyred', ('matthew', 96): '@chap',
                ('matthew', 101): 'i sow not gather', ('matthew', 102): '@annhead',
                ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
-               ('matthew', 113): 'wil persvade him and'}
+               ('matthew', 113): 'wil persvade him and',
+               # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
+               ('mark', 152): 'sorraine sovldiars so shal'}
 
 
 # Signature marks. The NT is printed in gatherings of four leaves (eight pages); the first
@@ -483,10 +500,10 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
 # the mark is computed, and the OCR only warns when it sees another letter. Checked on the
 # scans for A-H (pages 31-89).
 SIG_ALPHABET = 'ABCDEFGHIKLMNOPQRSTVXYZ'
-SIG_FIRST = {'matthew': 29}
+SIG_FIRST = {'matthew': 29, 'mark': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
 # "HOLY" beside the page number, "weeke." under it, top outer corner (checked on the scans):
 # (first wiki page, last wiki page, pages without it).
-HOLY_WEEK = {'matthew': (86, 113, {95, 107})}
+HOLY_WEEK = {'matthew': (86, 113, {95, 107}), 'mark': (144, 160, set())}  # mark: on every page, checked
 
 
 def signature(wiki):
@@ -502,7 +519,8 @@ def signature(wiki):
 # Catchwords before a heading that the OCR garbles, checked on the scan.
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
 CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
-              ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE'}
+              ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
+              ('mark', 160): 'THE'}
 
 
 def apply_page_starts(S, starts):
@@ -572,7 +590,7 @@ def main():
     for f in sorted((DATA / BOOK / 'annotations').glob('*.json')):
         a = json.loads(f.read_text()); ann[a['chapter']] = a['annotations']
     S = build_stream(book, ann)
-    pages = book_pages(BOOK)[:MAXP]
+    pages = book_pages(BOOK, os.environ.get('WS_OCR') or OCR_SOURCE.get(BOOK, 'tesseract'))[:MAXP]
     OUT.mkdir(parents=True, exist_ok=True)
     starts, paras, quality = align(pages, S)
     apply_page_starts(S, starts)
