@@ -10,6 +10,9 @@ a page here; the next publish would overwrite it.
 
 ## Workflow
 
+Progress per book is logged in [BOOKS.md](BOOKS.md); the method for checking a
+book against the scans, learned on Matthew, is in [PLAYBOOK.md](PLAYBOOK.md).
+
 ```bash
 # 1. generate pages for a book from the data and the OCR (scratch output)
 python3 -I scripts/wikisource/generate.py "$PWD" matthew 31 /tmp/ws-out
