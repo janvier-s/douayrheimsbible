@@ -159,7 +159,10 @@ describe('the corpus markup', () => {
 		// 2,209 before the duplicate 3-esdras 2:1 entry (and its one cross_ref) was removed.
 		// 2,208 before the Sancta margin-citation pass: Ps 121:6, +54 missing 1609
 		// citations, less 37 Sancta entries that only repeated a printed one or a note.
-		expect(crossRefs).toHaveLength(2226);
+		// 2,226 before Matt 16:18's 'Io. 21, 15.' moved to 16:19, where the 1582 print has its *.
+		// 2,227 before Matt 8:17's 'Lu. 9, 57.' moved to 8:19, where the 1582 print has its *.
+		// 2,228 before Jude 1:11 gained the print's 'Nu. 22.' and 'Nu. 16.' (2026-11-17).
+		expect(crossRefs).toHaveLength(2230);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -174,7 +177,10 @@ describe('the corpus markup', () => {
 		// 43,997 before the 47 verse-0 summary fragments were folded into their summaries.
 		// 43,950 before the split Deut 30 annotation was merged back (-2 titles, -2 texts).
 		// 43,946 before John 15:2 lost its two invented annotation parts (-2 titles, -2 texts).
-		expect(blocks).toHaveLength(43942);
+		// 43,942 before Matt 16:19 got its own cross_ref (Io. 21, 15.): +1 block.
+		// 43,943 before Matt 8:19 got its own cross_ref (Lu. 9, 57.): +1 block.
+		// 43,944 before Jude 1:11 got the print's Nu. 22. and Nu. 16. cross_refs (+2 blocks; 2026-11-17).
+		expect(blocks).toHaveLength(43946);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -265,7 +271,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,767 of 13,785 markers', () => {
+	it('binds 13,759 of 13,776 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -279,10 +285,19 @@ describe('the corpus markup', () => {
 		// 13,752 before 15 missing 1609 margin notes were added, each with its marker.
 		// 13,767 before the Ps 43:26 (t) marker was restored.
 		// 13,768 before the Acts 28:8 [1] note (no print, Peters, scrape or Haydock source) was removed.
-		expect(bound).toBe(13767);
+		// 13,767 before the later-edition Matt 1:19 gloss (not in the 1582 print) was removed.
+		// 13,766 before the later-edition Matt 20:34 gloss (not in the 1582 print) was removed.
+		// 13,765 before the Matt 22:15 margin note (none in the 1582 print; a later-edition
+		// lectionary note in odr) was removed (2026-11-16).
+		// 13,764 before four variant-reading notes the 1582 print does not have were
+		// removed with their <alt> spans (Acts 9:20, Luke 3:31, Rom 7:1, 1 Tim 2:6;
+		// 2026-11-17). 1 Tim 2:6 also lost its second, unbound <na>[1].
+		// 13,760 before the later-edition Jude 1:11 lectionary note (S. Silverius; not in
+		// the 1582 print, whose * there is the Nu. 22. citation) was removed (2026-11-17).
+		expect(bound).toBe(13759);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
-		expect(unbound).toBe(18);
-		expect(bound + unbound).toBe(13785);
+		expect(unbound).toBe(17);
+		expect(bound + unbound).toBe(13776);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming
@@ -455,20 +470,15 @@ describe('the corpus markup', () => {
 		expect([...repeated].sort()).toEqual([...KNOWN_DUPLICATE_VERSE].sort());
 	});
 
-	// 102 of the 106 <alt> spans anchor to an <na> and reach the reader as \fq
-	// inside the footnote; the other four anchor to a <cr>, and the cross-
-	// reference note's equivalent element is \xq. Asserting the count as well as
-	// the four strings is what catches a fifth appearing or one of these being
-	// re-anchored.
-	it('renders every <cr>-anchored <alt> span as \\xq', () => {
-		const expected: Record<string, string> = {
-			matthew: '\\x - \\xq make \\xt Gen. 1, 27.\\x*',
-			mark: '\\x - \\xq Esay the Prophet \\xt Esa. 40, 3.\\x*',
-			acts: '\\x - \\xq to our children \\xt Ps. 2, 7.\\x*',
-			jude: '\\x - \\xq which \\xt Gen. 4, 8.\\x*'
-		};
+	// Every <alt> span anchors to its variant-reading <na> and reaches the reader
+	// as \fq inside the footnote; none anchors to a <cr> (which would render as
+	// \xq in a cross-reference note). The last three, Mark 1:2, Acts 13:33 and
+	// Jude 1:11, had the variant <na> on the next words and the <cr> on the span;
+	// on 2026-11-17 the 1582 scans put the variant (`…, inner margin) on the span
+	// and the citation at the verse end or at its own * (Jude 1:11 "* Cain").
+	// Matt 19:4 was the same defect, fixed earlier the same day.
+	it('anchors no <alt> span to a <cr>', () => {
 		let total = 0;
-		const missing: string[] = [];
 		for (const meta of ALL_BOOKS) {
 			const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
 			const usfm = renderUsfm(
@@ -479,11 +489,8 @@ describe('the corpus markup', () => {
 				meta.odrName
 			);
 			total += usfm.split('\\xq ').length - 1;
-			const want = expected[meta.slug];
-			if (want && !usfm.includes(want)) missing.push(meta.slug);
 		}
-		expect(missing).toEqual([]);
-		expect(total).toBe(4);
+		expect(total).toBe(0);
 	});
 
 	// A character marker opened while another is already open takes the nested

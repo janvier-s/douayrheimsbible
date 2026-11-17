@@ -179,7 +179,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "The Epiſtle vpon Saturday in Eaſter week.",
+              "text": "The Epiſtle vpon Saturday in Eaſter weeke.",
               "kind": "gloss"
             }
           ]
@@ -211,7 +211,8 @@
             {
               "label": "1",
               "text": "<i>`a ſpiritual houſe</i>,",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -243,7 +244,8 @@
             {
               "label": "1",
               "text": "<i>`vvhereto alſo they are ordeined</i>.",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ],
           "xrefs": [
@@ -284,7 +286,7 @@
           "notes": [
             {
               "label": "2",
-              "text": "The Epiſtle vpon the 3 Sunday after Eaſter.",
+              "text": "The Epiſtle vpō the 3 Sunday after Eaſter.",
               "kind": "gloss"
             }
           ]
@@ -394,18 +396,20 @@
           "notes": [
             {
               "label": "1",
-              "text": "The Epiſtle vpon the 2 Sunday after Eaſter.",
+              "text": "The Epiſtle vpō the 2 Sunday after Eaſter.",
               "kind": "gloss"
             },
             {
               "label": "2",
-              "text": "you",
-              "kind": "gloss"
+              "text": "<i>`you</i>",
+              "kind": "gloss",
+              "unmarked": true
             },
             {
               "label": "3",
-              "text": "<i>vs</i>",
-              "kind": "gloss"
+              "text": "<i>`vs</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ],
           "xrefs": [
@@ -540,7 +544,8 @@
             {
               "label": "2",
               "text": "<i>`in faith</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -624,7 +629,8 @@
             {
               "label": "1",
               "text": "<i>`thoſe ſpirites</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -667,8 +673,9 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>vs</i>",
-              "kind": "gloss"
+              "text": "<i>`vs</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -725,7 +732,8 @@
             {
               "label": "2",
               "text": "<i>`is at hand</i>.",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

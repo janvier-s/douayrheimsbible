@@ -137,6 +137,58 @@ Annotation `title` lemmas checked against the scans (Argon High). The print misp
 ## Challoner-additions recheck (Nov 16 2026)
 - Gen 36:6 note: the print reads "chap. 22. v. 3" for Jacob's journey from Mesopotamia (the reference is Gen 32:3); odr-original keeps the misprint, odr kept "chap. 22" and now reads "v. 3" (was "v. 4", which the print does not have).
 
+## Matthew: odr synced with the scan-checked odr-original (Nov 17 2026)
+Commits c9bed0b9 and 6cd4e12d. odr-original Matthew was checked against the 1582 scans (rounds 1-12b); odr still had later-edition or OCR text in these places. Doubtful readings were checked on word crops of the scans.
+
+**Applied to the modern text (odr):**
+| Ref | Was | Now (print) |
+|---|---|---|
+| Matt 2:13 | "and fly into Ægypt" | "and flee into Ægypt" |
+| Matt 7:24 | "heareth these words" | "heareth these my words" |
+| Matt 17:20 | "Remove from thence thither" | "Remove from hence thither" |
+| Matt 23:29 | "Pharisees, Hypocrites:" | "Pharisees, ye Hypocrites:" |
+| Matt 5 summary | "their offices." | "their office." |
+| Matt 11 summary | "25 praying God's wisdom" | "25 praising God's wisdom" |
+| Matt 12 summary | "damned, as foretelling" | "damned, 43. foretelling" |
+| Matt 15 summary | "which they reprove:" | "which they reproved:" |
+| Matt 19 summary | "the ease of a man … shall be in the first" | "the case of a man … shall be (as in the first" |
+| Matt 27 summary | "fulfulling" (odr typo) | "fulfilling" |
+| Matt 21 side note | "THE FIFTH part of this Gospel. Of the Holy Week" | "THE FIFTH part, of the Holy Week" |
+| Matt 2:1 note | "<i>Twelfth</i> -day" (odr typo) | "<i>Twelfth-day</i>" |
+| Matt 8:5 note | (no citation) | adds "Lu. 7, 1." |
+| Matt 12:38 note | "upon Imber Wednesday, the first week" | "upon Wednesday the first week" |
+| Matt 16:13 note | "… And upon S. Leo his day April 11." | removed (later edition) |
+| Matt 21:10 note | "upon Tuesday in the first week" | "upon Tuesday the first week" |
+| Matt 21:33 note | "the 2. week" | "the second week" |
+| Matt 5:10 annotation | "Psal. 34. Conc. 3." | "Conc. 2." |
+| Matt 10:12 annotation note | "Aug. civit." | "Aug. de civit." |
+| Matt 12:32 annotation | "the Publicans, a Samaritane, and" | "the Publicans, and" |
+| Matt 13:8 annotation | "li. de Virginit." | "li. de S. Virginit." |
+| Matt 14:12 annotation | "Ruff. li. 2. c. 27. 28." | "c. 28. 27." |
+| Matt 16:18 annotation | "himself expoundeth it" | "himself expounded it" |
+| Matt 16:18 annotation note | "In Ps. 66." | "In Ps. 69." |
+| Matt 16:18 annotation note | "… to. 7. Leo ep. 89." | "Leo ep. 89." removed |
+| Matt 16:18 annotation note | "De util. cred. c. 17." | "Psal. cont. part. Donati. De util. cred. c. 17." |
+| Matt 16:27 annotation | "Ser. 35." | "Ser. 85." |
+| Matt 26:26 annotation note | "1. Cor. 10, 16." | "1. Cor. 10." |
+| Matt 26:28 annotation | "and there also in the Latin." | "and in the Latin here." |
+
+**Applied to odr-original (transcription):** 8:23 note "3." → "4." Sunday after the Epiphanie; Matt 6:13 annotation margin "In Expos. orat. Do." regains "Iac. 1."; Matt 16:18 annotation margin "ſec. 10." → "ſec. Io."; 23:35 "Barachias,vvhom" → "Barachias, vvhom". Wiki pages 45, 48, 74, 94 regenerated.
+
+**Print misprints corrected in odr, kept in odr-original:**
+| Ref | Print | odr |
+|---|---|---|
+| Matt 3:2 annotation | "1 Cor. 7, 9" | "2. Cor. 7, 9" (2 Cor 7:9 is the verse meant) |
+| Matt 6:13 annotation | "li. de bo. perſeu." | "de do. persev." (De dono perseverantiae) |
+| Matt 13:8 annotation | "adu. Iouia." | "Iovin." (Jovinian) |
+| Matt 6:11 annotation title | "Superſtantial bread." | "Supersubstantial bread." (the prose reads "Superſubſtantial") |
+| Matt 3, 5, 27, 28 summaries | "penanee", "weas", "manifodly", "ehe" | penance, was, manifoldly, the |
+| Matt 6:12, 17:20 annotations | "ttuly", "aud" (also the 17:21 title "Prayer aud faſting") | truly, and |
+
+**Kept on purpose in odr:** "our Lord's Body" for the print's "our L. Body" (Matt 27:24 annotation note); odr's citation abbreviations (Cyr. l., l., Mat., Hierom.); the a/b/c letter keys of the Matt 15:9 annotation are not carried (odr never has them; the `<mn>` markers key the notes).
+
+**Unconfirmed:** Matt 16:27 "Ser. 85" and Matt 16:18 "In Ps. 69" follow the print; odr's earlier 35 and 66 may have been corrections of print misprints.
+
 ## Open
 - Verse-boundary shifts between print and odr (same clause sits in the neighbouring verse): 1 Kings 4:4/5, 1 Mac 16:9/10, 1 Par 9:8/9,
   2 Mac 3:6/7, 2 Mac 6:21/22, Josue 11:8/9, Josue 13:17/18, 4 Esd 13:31/32, Acts 5:22/23, Apoc 21:10/11, Dan 3:91/92, Jer 34:15/16, Judges 2:16/17, Mark 10:48/49,

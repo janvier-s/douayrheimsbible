@@ -8,7 +8,7 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "Horrour of conscience."
+          "text": "Horrour of conſcience."
         }
       ]
     },
@@ -19,7 +19,7 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "Desperation."
+          "text": "Deſperation."
         }
       ]
     },
@@ -30,7 +30,7 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "They that execute lawes against their conscience, are like to Pilate."
+          "text": "They that execute lawes againſt their cōſcience, are like to Pilate."
         }
       ]
     },
@@ -41,7 +41,7 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "Christ derided in the B. Sacrament, euen as vpon the Crosse."
+          "text": "Chriſt derided in the B. Sacrament, euen as vpō the Croſſe."
         }
       ]
     },
@@ -52,11 +52,11 @@
       "notes": [
         {
           "marker": 1,
-          "text": "<i>Catechis. Calu. & Instit. li. 2 16</i>."
+          "text": "<i>Catechiſ. Calu. & Inſtit. li. 2 16</i>."
         },
         {
           "marker": 2,
-          "text": "Detestable blasphemy of Calvin. And other Ministers of his school."
+          "text": "Caluins blaſphemie."
         }
       ]
     },
@@ -67,15 +67,16 @@
       "notes": [
         {
           "marker": 1,
-          "text": "Reuerent vsing of our L. Body."
+          "text": "Reuerent vſing of our L. Body."
         },
         {
           "marker": 2,
-          "text": "<i>S. Hier. in hunc locum.</i>"
+          "text": "<i>S. Hiero. in hunc locum.</i>"
         },
         {
           "marker": 3,
-          "text": "* <i>to. 1, Concil</i>."
+          "text": "* <i>to. 1, Cōcil</i>.",
+          "star": true
         },
         {
           "marker": 4,

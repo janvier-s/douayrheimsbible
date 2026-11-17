@@ -13,6 +13,8 @@ export interface VerseNote {
 	table_text?: string;
 	/** The note's whole text comes from that Table; the print has no margin note here. */
 	table_only?: boolean;
+	/** The print sets this note in the margin with no mark in the text. */
+	unmarked?: boolean;
 }
 
 export interface SummaryNote {
@@ -25,6 +27,8 @@ export interface SummaryNote {
 export interface AnnotationNote {
 	marker: string | number;
 	text: string;
+	/** The 1582 print anchors this margin note with a * in the annotation text. */
+	star?: boolean;
 }
 
 export interface AnnotationEntry {

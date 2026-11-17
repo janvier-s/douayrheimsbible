@@ -13,6 +13,10 @@ export function stripOpeningSmallCaps(html: string): string {
  *  text opens on a small-caps run, the cap comes out of that run and the rest
  *  of it stays in small caps: drop cap "I", then "n the" in small caps. */
 export function injectDropcap(html: string): string {
+	// A margin note the print sets with no mark in the text is still a button
+	// at the verse start in study mode. Leave it in front and cap the letter after it.
+	const lead = html.match(/^(?:<button [^<>]*>[^<]*<\/button>\s*)+/);
+	if (lead) return lead[0] + injectDropcap(html.slice(lead[0].length));
 	// A catchword that opens the verse would put its tint behind the dropcap,
 	// and a block of colour behind a three-line letter reads as a mistake.
 	// Find the letter inside the mark, then hoist the cap out in front of it.

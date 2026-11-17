@@ -163,7 +163,7 @@ describe('bindMarkers', () => {
 
 describe('the known-defect list', () => {
 	it('holds exactly the measured irregularities', () => {
-		expect(KNOWN_UNBOUND.size).toBe(18);
+		expect(KNOWN_UNBOUND.size).toBe(17);
 		expect(KNOWN_UNREFERENCED.size).toBe(23);
 		expect(KNOWN_DUPLICATE_VERSE.size).toBe(0);
 	});
@@ -176,8 +176,8 @@ describe('the known-defect list', () => {
 
 	it('allows a listed unbound marker', () => {
 		const notes = [{ label: '1', text: 'x' }];
-		const r = bindMarkers('<na>[1]</na> <na>[1]</na>', notes, 'verse', '1-timothy 2:6');
-		expect(() => assertOnlyKnownDefects(r, notes, '1-timothy 2:6')).not.toThrow();
+		const r = bindMarkers('<na>[1]</na> <na>(†)</na>', notes, 'verse', 'ecclesiasticus 14:10');
+		expect(() => assertOnlyKnownDefects(r, notes, 'ecclesiasticus 14:10')).not.toThrow();
 	});
 
 	it('rejects the same defect at an unlisted ref', () => {
@@ -190,13 +190,13 @@ describe('the known-defect list', () => {
 		// The same ref, with a second unbindable marker beyond the pinned one.
 		const notes = [{ label: '1', text: 'x' }];
 		const r = bindMarkers(
-			'<na>[1]</na> <na>[1]</na> <na>(z)</na>',
+			'<na>[1]</na> <na>(†)</na> <na>(z)</na>',
 			notes,
 			'verse',
-			'1-timothy 2:6'
+			'ecclesiasticus 14:10'
 		);
-		expect(r.unbound).toEqual(['1', 'z']);
-		expect(() => assertOnlyKnownDefects(r, notes, '1-timothy 2:6')).toThrow(/marker z/);
+		expect(r.unbound).toEqual(['†', 'z']);
+		expect(() => assertOnlyKnownDefects(r, notes, 'ecclesiasticus 14:10')).toThrow(/marker z/);
 	});
 
 	it('allows a listed unreferenced note', () => {

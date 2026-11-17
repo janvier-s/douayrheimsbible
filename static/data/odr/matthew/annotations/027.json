@@ -52,11 +52,11 @@
       "notes": [
         {
           "marker": 1,
-          "text": "<i>Catechis. Calv. and Instit. li. 2. 16. 5. 10.</i>"
+          "text": "<i>Catechis. Calv. and Instit. li. 2. 16.</i>"
         },
         {
           "marker": 2,
-          "text": "Detestable blasphemy of Calvin. And other Ministers of his school."
+          "text": "Calvin's blasphemy."
         }
       ]
     },
@@ -71,11 +71,12 @@
         },
         {
           "marker": 2,
-          "text": "<i>S. Hier. in hunc locum.</i>"
+          "text": "<i>S. Hiero. in hunc locum.</i>"
         },
         {
           "marker": 3,
-          "text": "<i>* to. 1. Concil.</i>"
+          "text": "<i>* to. 1. Concil.</i>",
+          "star": true
         },
         {
           "marker": 4,

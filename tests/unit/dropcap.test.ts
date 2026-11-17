@@ -17,6 +17,15 @@ describe('injectDropcap', () => {
 		);
 	});
 
+	it('caps the first letter after a leading study-mode marker button', () => {
+		// Matthew 1:1 in original spelling: the margin gloss has no printed mark,
+		// so its button opens the verse, before "THE booke".
+		const btn = '<button class="study-marker" data-marker-type="note" data-marker="2">◦</button>';
+		expect(injectDropcap(`${btn} <span class="sc">The</span> booke`)).toBe(
+			`${btn} <span class="dropcap">T</span><span class="sc">he</span> booke`
+		);
+	});
+
 	it('keeps a run split by a study-mode marker button in one case', () => {
 		const btn =
 			'<button class="study-marker" data-marker="1" aria-label="Cross-reference 1">1</button>';

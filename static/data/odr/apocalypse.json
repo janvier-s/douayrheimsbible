@@ -563,7 +563,8 @@
             {
               "label": "1",
               "text": "<i>depths</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -988,7 +989,8 @@
             {
               "label": "2",
               "text": "<i>kings</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -1015,7 +1017,8 @@
             {
               "label": "1",
               "text": "<i>riches</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -1582,7 +1585,8 @@
             {
               "label": "2",
               "text": "<i>pillars</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2138,7 +2142,8 @@
             {
               "label": "1",
               "text": "<i>learn μαθεῖν,</i>",
-              "kind": "word"
+              "kind": "word",
+              "unmarked": true
             }
           ]
         },
@@ -2320,7 +2325,8 @@
             {
               "label": "2",
               "text": "<i>Saints</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2346,7 +2352,8 @@
             {
               "label": "1",
               "text": "<i>linen λίνον λίθον.</i>",
-              "kind": "word"
+              "kind": "word",
+              "unmarked": true
             }
           ]
         },
@@ -2451,7 +2458,8 @@
             {
               "label": "2",
               "text": "<i>issue forth three</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2632,7 +2640,8 @@
             {
               "label": "2",
               "text": "do",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -3291,7 +3300,8 @@
             {
               "label": "3",
               "text": "<i>because the</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -3504,7 +3514,8 @@
             {
               "label": "1",
               "text": "<i>water of life,</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

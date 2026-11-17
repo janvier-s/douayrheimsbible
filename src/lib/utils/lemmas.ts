@@ -25,8 +25,11 @@ export function highlightLemmas(
 	text: string,
 	lemmas: LemmaSpan[],
 	verseNum: number,
-	isStudy: boolean
+	isStudy: boolean,
+	/** Set ‖ before each catchword, as the 1582 Rheims NT prints it. */
+	printMark = false
 ): string {
+	const starts = new Set(lemmas.map(([start]) => start));
 	const edges = new Set<number>([0, text.length]);
 	for (const [start, length] of lemmas) {
 		edges.add(start);
@@ -52,6 +55,8 @@ export function highlightLemmas(
 		const opens = isStudy
 			? ` data-marker-type="lemma" data-marker="${inner[2]}" data-verse="${verseNum}"`
 			: '';
+		if (printMark && starts.has(from))
+			out += '<span class="print-mark" aria-hidden="true">‖</span>';
 		out += `<mark class="lemma"${opens} data-depth="${Math.min(covering.length, 3)}">${slice}</mark>`;
 	}
 	return out;
