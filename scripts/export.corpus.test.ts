@@ -463,14 +463,15 @@ describe('the corpus markup', () => {
 		expect([...repeated].sort()).toEqual([...KNOWN_DUPLICATE_VERSE].sort());
 	});
 
-	// 102 of the 106 <alt> spans anchor to an <na> and reach the reader as \fq
-	// inside the footnote; the other four anchor to a <cr>, and the cross-
-	// reference note's equivalent element is \xq. Asserting the count as well as
+	// 103 of the 106 <alt> spans anchor to an <na> and reach the reader as \fq
+	// inside the footnote; the other three anchor to a <cr>, and the cross-
+	// reference note's equivalent element is \xq. (2026-11-17: Matt 19:4 "make"
+	// moved from the <cr> to its variant note "make man"; the 1582 scan prints
+	// Gen. 1, 27. in the margin with no * in the text.) Asserting the count as well as
 	// the four strings is what catches a fifth appearing or one of these being
 	// re-anchored.
 	it('renders every <cr>-anchored <alt> span as \\xq', () => {
 		const expected: Record<string, string> = {
-			matthew: '\\x - \\xq make \\xt Gen. 1, 27.\\x*',
 			mark: '\\x - \\xq Esay the Prophet \\xt Esa. 40, 3.\\x*',
 			acts: '\\x - \\xq to our children \\xt Ps. 2, 7.\\x*',
 			jude: '\\x - \\xq which \\xt Gen. 4, 8.\\x*'
@@ -491,7 +492,7 @@ describe('the corpus markup', () => {
 			if (want && !usfm.includes(want)) missing.push(meta.slug);
 		}
 		expect(missing).toEqual([]);
-		expect(total).toBe(4);
+		expect(total).toBe(3);
 	});
 
 	// A character marker opened while another is already open takes the nested

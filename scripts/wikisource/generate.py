@@ -117,6 +117,7 @@ def render_verse(v, ch):
         raw = raw[:start] + '‖ ' + raw[start:]
     refs = [r for r in v.get('cross_refs', []) if r.get('source') != 'sancta']
     notes = {n['label']: n for n in v.get('notes', [])}
+    variants = set(re.findall(r'<na>\[(\d+)\]</na>\s*<alt>', raw))
 
     def cr(m):
         i = int(m.group(1)) - 1
@@ -127,6 +128,11 @@ def render_verse(v, ch):
         if not n:
             return ''
         tag = f'⟦na:{m.group(1)}⟧'
+        # A variant reading (the note anchored to an <alt> span) is set in the inner
+        # margin with no mark: the print's ` ' around the words are the mark
+        # (checked on the scans: 14:3, 19:4, 23:25).
+        if m.group(1) in variants:
+            return tag + '{{MINNER|' + n['text'] + '}}'
         if n.get('kind') in ('lectionary', 'head') or n.get('unmarked') or n.get('table_only'):
             return tag + '{{MOUTER|' + n['text'] + '}}'
         return tag + '{{MOUTER|∷ ' + n['text'] + '}}∷ '
@@ -360,6 +366,9 @@ def move_bars(S):
 # Wiki-only ‖ fixes, checked on the scan: (from word, to word) per verse, None = no bar.
 # 23:2 '‖ the chaire' (92); 25:34 has no ‖ in the print, 25:41 has '‖ Get' (101; the
 # annotation title '34. Come ye, 41 get ye away' gives only the first).
+# These stay out of the data on purpose: the site draws ‖ before each tinted lemma, and
+# the lemma spans are right (the titles quote 'Chaire of Moyses' and 'Come ye'). A span
+# in 25:41 would tint words whose click opens 25:41's annotations, of which there are none.
 BARS = {('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)]}
 
 
