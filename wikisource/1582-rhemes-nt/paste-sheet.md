@@ -3,6 +3,12 @@
 For posting the Matthew pages by hand. Generated from `pages/<n>.wiki`; regenerate it if
 the pages change. The `.wiki` files themselves are not edited.
 
+**Paste helper (easier):** from the repo root run `python3 -I scripts/wikisource/paste_helper.py`.
+It opens a local page (127.0.0.1 only) with copy buttons for header, body, footer and summary,
+an "Open edit page" button, and a posted checklist saved in `paste-state.json` next to this file.
+Shortcuts: ←/→ pages, 1-4 copy header/body/footer/summary, E edit page, P toggle posted, N next unposted.
+The manual steps below do the same by hand.
+
 For each page:
 
 1. Open the page's edit link.
