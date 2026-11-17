@@ -18,6 +18,7 @@ MAXP = int(sys.argv[5]) if len(sys.argv) > 5 else 10 ** 6
 DATA = REPO / 'static/data/odr-original'
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEVV.')}
 # Marks in chapter summaries are not in the data yet: words to star, per chapter.
+# Matt 2-28 summaries were checked on the scans (round 10): they print no marks.
 SUMMARY_STARS = {('matthew', 1): ['Abraham', 'Dauid. 18']}
 ITALIC_REF = re.compile(r'^\s*(<i>)?\s*[0-9]?\.?\s*[A-Z][a-zæ]*\.\s*[0-9]')
 ROMAN = ['', 'I', 'II', 'III', 'IIII', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIIII', 'XV',
