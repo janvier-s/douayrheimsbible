@@ -84,14 +84,14 @@ def build_stream(book, ann):
         side = (chap.get('summary_notes') or [{}])[0].get('text', '')
         head = ''
         if side and not ITALIC_REF.match(side):
-            m = re.match(r'(\S+ \S+)(.*)', side)
+            m = re.match(r'(\S+ \S+)(.*)', finish(side))
             head = '{{MOUTER|{{sc|' + m.group(1).capitalize() + '}}' + m.group(2) + '}}'
         S += tokens_of(head + '{{c|{{larger|{{sc|Chap. ' + ROMAN[ch] + '.}}}}}}', block=True, ch=ch, kind='chap')
         s = re.sub(r'<na>\[\d+\]</na>\s*', '', chap.get('summary', '')).strip()
         for w in SUMMARY_STARS.get((BOOK, ch), []):
             s = s.replace(w, '* ' + w, 1)
         refs = [n['text'] for n in chap.get('summary_notes', []) if ITALIC_REF.match(n['text'])]
-        pre = ''.join('{{MINNER|' + f"''{r}''" + '}}' for r in refs)
+        pre = ''.join('{{MINNER|' + f"''{finish(r)}''" + '}}' for r in refs)
         if s:
             S += tokens_of(pre + "{{c|''" + finish(s) + "''}}", block=True, ch=ch, kind='summary')
         for v in chap['verses']:
