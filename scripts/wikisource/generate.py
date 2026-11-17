@@ -16,7 +16,8 @@ from ocrpages import book_pages  # noqa: E402
 REPO, BOOK, FIRST, OUT = Path(sys.argv[1]), sys.argv[2], int(sys.argv[3]), Path(sys.argv[4])
 MAXP = int(sys.argv[5]) if len(sys.argv) > 5 else 10 ** 6
 DATA = REPO / 'static/data/odr-original'
-RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEVV.')}
+# Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
+RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.')}
 # Marks in chapter summaries are not in the data yet: words to star, per chapter.
 # Matt 2-28 summaries were checked on the scans (round 10): they print no marks.
 SUMMARY_STARS = {('matthew', 1): ['Abraham', 'Dauid. 18']}
@@ -79,7 +80,7 @@ def build_stream(book, ann):
     for chap in book['chapters']:
         ch = chap['chapter']
         if ch == 1:
-            S += tokens_of('{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|DING TO MATTHEVV.}}}}', block=True, ch=ch, kind='title')
+            S += tokens_of('{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|DING TO MATTHEW.}}}}', block=True, ch=ch, kind='title')
         side = (chap.get('summary_notes') or [{}])[0].get('text', '')
         head = ''
         if side and not ITALIC_REF.match(side):

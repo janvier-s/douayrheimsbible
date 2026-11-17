@@ -1,6 +1,6 @@
 <noinclude><pagequality level="1" user="" />{{rh|||3}}</noinclude>{{c|{{xx-larger|THE HOLY GOSPEL}}}}
 {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}
-{{c|{{larger|DING TO MATTHEVV.}}}}
+{{c|{{larger|DING TO MATTHEW.}}}}
 
 {{MarginNote|margin=right|margin-width=65|text={{sc|The first}} part of this Goſpel, of the Infancie of our Sauiour Chriſt.}}{{c|{{larger|{{sc|Chap. I.}}}}}}
 
