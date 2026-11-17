@@ -139,6 +139,10 @@ for n in ...; do cmp -s <out>/$n.wiki wikisource/1582-rhemes-nt/pages/$n.wiki ||
 python3 -I scripts/wikisource/publish.py <out> <a>-<b>   # one range per call
 ```
 
+Rendering conventions (generator): `<sc>` → `{{sc|Iesvs}}` (capital + small caps, as
+printed; the word after a verse-1 drop cap stays in capitals); the annotation mark ‖ →
+`{{sup|‖}}` (″ read as quotation marks). The data keeps `<sc>` and ‖.
+
 Check the word diff of every changed page; pages you did not mean to change must stay
 byte-identical. Before each commit: `npx vitest run`, `npm run check`,
 `npx prettier --check scripts/wikisource wikisource`. Commit messages list each

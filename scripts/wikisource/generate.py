@@ -600,7 +600,8 @@ def main():
                 print(f'warning: page {wiki}: OCR signature {m.group(1)} {m.group(2)}, computed {sig or "none"}')
         footer = f'{{{{rh||{sig}|{catch}}}}}' if (catch or sig) else ''
         (OUT / f'{wiki}.wiki').write_text('<noinclude><pagequality level="1" user="" />' + header +
-                                          '</noinclude>' + sc_wiki(body) + '<noinclude>' + sc_wiki(footer) + '</noinclude>\n')
+                                          # the print's ‖ is a small raised mark; ″ read as quotes
+                                          '</noinclude>' + sc_wiki(body).replace('‖', '{{sup|‖}}') + '<noinclude>' + sc_wiki(footer) + '</noinclude>\n')
         report.append(f'{wiki} {p["src"]} ch{p["chapters"]} tokens {a}-{b} match {quality[n]:.0%}')
     report.append('\nMark differences (wiki page, ch:v, our token, OCR mark, our mark):')
     for d in MARKDIFF:
