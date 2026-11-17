@@ -105,7 +105,7 @@ def build_stream(book, ann):
         if anns:
             S += tokens_of('{{c|{{larger|A N N O T A T I O N S}}}} {{c|{{sc|Chap. ' + ROMAN[ch] + '.}}}}', block=True, ch=ch, kind='annhead')
             for ai, a in enumerate(anns):
-                at = tokens_of(finish(render_annotation(a)), ch=ch, kind='ann', ann=ai)
+                at = tokens_of(finish(render_annotation(a, ch, ai)), ch=ch, kind='ann', ann=ai)
                 at[0]['block'] = True
                 S += at
     return S
@@ -149,7 +149,14 @@ def render_verse(v, ch):
     return lead + raw
 
 
-def render_annotation(a):
+# Italic annotation notes the print sets in the OUTER margin, beside the side headings,
+# though they look like citations: (book, chapter, annotation index, note index), checked
+# on the scans. Greek words on page 107 (26:26 τὸν ἄρτον, 26:28 ἐκχυνόμενον); the Greek
+# notes on pages 36, 44 and 58 do sit in the inner margin.
+OUTER_NOTES = {('matthew', 26, 5, 3), ('matthew', 26, 8, 0)}
+
+
+def render_annotation(a, ch=None, ai=None):
     text = a['text'].strip()
     mns = list(enumerate(a.get('notes', [])))
 
@@ -159,7 +166,7 @@ def render_annotation(a):
             return ''
         # citations are set in italic, some behind the print's margin star ("* <i>Act. 15</i>.")
         # or a letter keyed to the text ("a <i>Aug. Ser. de tēp. 251</i>", 15:9 on page 71)
-        if re.match(r'\s*(?:\* |[a-z] )?<i>', n['text']):
+        if re.match(r'\s*(?:\* |[a-z] )?<i>', n['text']) and (BOOK, ch, ai, k) not in OUTER_NOTES:
             return f'⟦mn:{k}⟧' + '{{MINNER|' + n['text'] + '}}' + ('* ' if n.get('star') else '')
         return f'⟦mn:{k}⟧' + '{{MOUTER|' + n['text'] + '}}'
 
@@ -370,7 +377,10 @@ def move_bars(S):
 # These stay out of the data on purpose: the site draws ‖ before each tinted lemma, and
 # the lemma spans are right (the titles quote 'Chaire of Moyses' and 'Come ye'). A span
 # in 25:41 would tint words whose click opens 25:41's annotations, of which there are none.
-BARS = {('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)]}
+# 26:27 '‖ he gaue thankes' (103): the 26:26 'Bleſſed.' annotation covers both verbs;
+# 26:75 '‖ he vvept bitterly' (106; the lemma is the title's 'Wept bitterly').
+BARS = {('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)],
+        ('matthew', 26, 27): [(None, 4)], ('matthew', 26, 75): [(24, 23)]}
 
 
 # Page starts the alignment gets wrong, each checked on the scan: the page's
@@ -383,7 +393,9 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 72): 'and there came to', ('matthew', 76): '@chap', ('matthew', 79): 'ones that beleeve in',
                ('matthew', 81): 'nativitie an angel sor', ('matthew', 84): '@chap', ('matthew', 86): 'nations avg de verb',
                ('matthew', 89): 'to lay hands vpon', ('matthew', 92): 'a man not attyred', ('matthew', 96): '@chap',
-               ('matthew', 101): 'i sow not gather', ('matthew', 102): '@annhead'}
+               ('matthew', 101): 'i sow not gather', ('matthew', 102): '@annhead',
+               ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
+               ('matthew', 113): 'wil persvade him and'}
 
 
 # Signature marks. The NT is printed in gatherings of four leaves (eight pages); the first
@@ -406,7 +418,9 @@ def signature(wiki):
 
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
-CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-'}
+# The book's last page has no next token: its catchword (the next book's first word) goes here too.
+CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
+              ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE'}
 
 
 def apply_page_starts(S, starts):
@@ -449,8 +463,9 @@ MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 
                 ('matthew', 24): [[15, 0]]}
 
 # Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81),
-# 22:16 (90, mid-line) are flush left.
-NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]]}
+# 22:16 (90, mid-line) are flush left; 26:2 (mid-line) and 26:3 (102) sit beside the drop cap.
+NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]],
+            ('matthew', 26): [[2, 0], [3, 0]]}
 
 
 def export_paragraphs(S, paras):
@@ -508,7 +523,7 @@ def main():
         body = SENT.sub('', body)
         body = body.replace('{{MINNER|', '{{MarginNote|margin=' + side_inner + '|margin-width=65|text=')
         body = body.replace('{{MOUTER|', '{{MarginNote|margin=' + side_outer + '|margin-width=65|text=')
-        catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', SENT.sub('', S[b]['text'])).strip() if b < len(S) else ''
+        catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', SENT.sub('', S[b]['text'])).strip() if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
         if b < len(S) and S[b]['kind'] in ('annhead', 'chap', 'title'):
             # the next page opens with a heading: take the print's catchword ("Annot-", "Chap.") from the OCR
             tail = [l for l in p['text'].splitlines() if l.strip()]
