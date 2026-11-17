@@ -27,11 +27,13 @@ ROMAN = ['', 'I', 'II', 'III', 'IIII', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'
 
 
 SENT = re.compile(r'⟦[^⟧]*⟧')
+# {{dropinitial|T|fl={{verse|...}}}}: fl puts the verse number inside the floated cap
+DROPI = re.compile(r'\{\{dropinitial\|([^{}|]*)(?:\|fl=\{\{[^{}]*\}\})?\}\}')
 
 
 def norm(w):
     w = SENT.sub('', w)
-    w = re.sub(r'\{\{dropinitial\|([^{}|]*)\}\}', r'\1', w)  # the drop cap is still a letter of the word
+    w = DROPI.sub(r'\1', w)  # the drop cap is still a letter of the word
     w = re.sub(r'\{\{[^{}]*\}\}', '', w)
     w = w.lower().replace('ſ', 's').replace('f', 's').replace('vv', 'w').replace('u', 'v').replace('j', 'i')
     w = w.translate(str.maketrans('āēīōūñ', 'aeiovn'))
@@ -84,12 +86,17 @@ def sc_wiki(s):
 
 
 def drop_initial(s):
-    """The first letter of a chapter's verse 1 is a drop cap: {{dropinitial|T}}HEN."""
+    """The first letter of a chapter's verse 1 is a drop cap: {{dropinitial|T}}HEN. The verse
+    number goes inside the float (fl=), or the floated cap lands before it: "T1AKE"."""
     parts = re.split(r'(\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|⟦[^⟧]*⟧|<[^>]*>)', s)
     for k in range(0, len(parts), 2):
         m = re.search(r'[A-Za-zæœ]', parts[k])
         if m:
-            parts[k] = parts[k][:m.start()] + '{{dropinitial|' + m.group(0) + '}}' + parts[k][m.end():]
+            fl = ''
+            for j in range(1, k, 2):
+                if parts[j].startswith('{{verse|'):
+                    fl, parts[j] = '|fl=' + parts[j], ''
+            parts[k] = parts[k][:m.start()] + '{{dropinitial|' + m.group(0) + fl + '}}' + parts[k][m.end():]
             break
     return ''.join(parts)
 
@@ -602,7 +609,7 @@ def main():
         body = SENT.sub('', body)
         body = body.replace('{{MINNER|', '{{MarginNote|margin=' + side_inner + '|margin-width=65|text=')
         body = body.replace('{{MOUTER|', '{{MarginNote|margin=' + side_outer + '|margin-width=65|text=')
-        catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', re.sub(r'\{\{dropinitial\|(.)\}\}', r'\1', SENT.sub('', S[b]['text']))).strip() if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
+        catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', DROPI.sub(r'\1', SENT.sub('', S[b]['text']))).strip() if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
         if b < len(S) and S[b]['kind'] in ('annhead', 'chap', 'title'):
             # the next page opens with a heading: take the print's catchword ("Annot-", "Chap.") from the OCR
             tail = [l for l in p['text'].splitlines() if l.strip()]
