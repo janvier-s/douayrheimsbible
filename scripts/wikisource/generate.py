@@ -41,9 +41,50 @@ def margin(side, text):
     return f'{{{{MarginNote|margin={side}|margin-width=65|text={text}}}}}'
 
 
-def finish(s):
+# Small caps. The data writes <sc>IESVS</sc>; the print sets a full capital and small
+# capitals ("Iesvs", "Marie"; "This is Iesvs the king of the iewes"; "For this is my
+# blovd"). Each word is wrapped in two private-use sentinels, which norm() drops, so
+# alignment and page splitting see plain words; sc_wiki() turns them into {{sc|...}}
+# per page, merging neighbours. The word after a verse-1 drop cap is full capitals.
+SC0, SC1 = '', ''
+SC_NAMES = {'iesvs', 'iesv', 'iesu', 'marie', 'christ'}
+
+
+def sc_marks(s, dropcap=False):
+    def span(m):
+        prefix = SENT.sub('', re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}', '', s[:m.start()]))
+        drop = dropcap and not re.search(r'[A-Za-zſ]', prefix)
+        parts = re.split(r'(\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|⟦[^⟧]*⟧)', m.group(1))
+        i = 0  # word index in the span, margin notes and sentinels skipped
+        for k in range(0, len(parts), 2):
+            out = []
+            for w in parts[k].split(' '):
+                mm = re.match(r'^([^\wſ]*)([\wſ]+)(.*)$', w)
+                if not mm:
+                    out.append(w)
+                    continue
+                core = mm.group(2)
+                if (drop and i == 0) or not (core.isupper() or core.islower()):
+                    out.append(w)  # the drop-cap word, or a mixed-case word ("For"): not small caps
+                else:
+                    low = core.lower()
+                    if core.isupper() and (i == 0 or low in SC_NAMES):
+                        low = low[0].upper() + low[1:]
+                    out.append(mm.group(1) + SC0 + low + SC1 + mm.group(3))
+                i += 1
+            parts[k] = ' '.join(out)
+        return ''.join(parts)
+    return re.sub(r'<sc>(.*?)</sc>', span, s)
+
+
+def sc_wiki(s):
+    s = re.sub(SC1 + r'([^\w{}<>\n' + SC0 + SC1 + ']*)' + SC0, r'\1', s)
+    return s.replace(SC0, '{{sc|').replace(SC1, '}}')
+
+
+def finish(s, dropcap=False):
     s = s.replace('ſ', 's').replace('⊢', '⊣')
-    s = re.sub(r'<sc>(.*?)</sc>', r'\1', s)
+    s = sc_marks(s, dropcap)
     s = re.sub(r'</?i>', "''", s)
     s = re.sub(r'</?alt>', '', s)  # variant readings: the print's ` ' marks stay in the text
     return s.replace('<br>', '<br/>')
@@ -95,7 +136,7 @@ def build_stream(book, ann):
         if s:
             S += tokens_of(pre + "{{c|''" + finish(s) + "''}}", block=True, ch=ch, kind='summary')
         for v in chap['verses']:
-            vt = tokens_of(finish(render_verse(v, ch)), ch=ch, kind='verse', verse=v['verse'])
+            vt = tokens_of(finish(render_verse(v, ch), dropcap=v['verse'] == 1), ch=ch, kind='verse', verse=v['verse'])
             vt[0]['vstart'] = True
             for k, t in enumerate(vt):
                 t['w'] = k
@@ -559,7 +600,7 @@ def main():
                 print(f'warning: page {wiki}: OCR signature {m.group(1)} {m.group(2)}, computed {sig or "none"}')
         footer = f'{{{{rh||{sig}|{catch}}}}}' if (catch or sig) else ''
         (OUT / f'{wiki}.wiki').write_text('<noinclude><pagequality level="1" user="" />' + header +
-                                          '</noinclude>' + body + '<noinclude>' + footer + '</noinclude>\n')
+                                          '</noinclude>' + sc_wiki(body) + '<noinclude>' + sc_wiki(footer) + '</noinclude>\n')
         report.append(f'{wiki} {p["src"]} ch{p["chapters"]} tokens {a}-{b} match {quality[n]:.0%}')
     report.append('\nMark differences (wiki page, ch:v, our token, OCR mark, our mark):')
     for d in MARKDIFF:
