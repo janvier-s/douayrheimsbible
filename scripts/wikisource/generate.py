@@ -420,6 +420,9 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
 # scans for A-H (pages 31-89).
 SIG_ALPHABET = 'ABCDEFGHIKLMNOPQRSTVXYZ'
 SIG_FIRST = {'matthew': 29}
+# "HOLY" beside the page number, "weeke." under it, top outer corner (checked on the scans):
+# (first wiki page, last wiki page, pages without it).
+HOLY_WEEK = {'matthew': (86, 113, {95, 107})}
 
 
 def signature(wiki):
@@ -525,7 +528,11 @@ def main():
         side_inner, side_outer = ('left', 'right') if wiki % 2 else ('right', 'left')
         chs = [t['ch'] for t in S[a:b] if t['kind'] == 'verse'] or [S[a]['ch'] if a < len(S) else 0]
         cha = f'CHA. {ROMAN[max(chs)]}.'
-        header = (f'{{{{rh|{cha}|{recto_t}|{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}|{verso_t}|{cha}}}}}')
+        hw = HOLY_WEEK.get(BOOK)
+        num = printed
+        if hw and hw[0] <= wiki <= hw[1] and wiki not in hw[2]:
+            num = f'{printed} HOLY weeke.' if wiki % 2 else f'HOLY weeke. {printed}'
+        header = (f'{{{{rh|{cha}|{recto_t}|{num}}}}}' if wiki % 2 else f'{{{{rh|{num}|{verso_t}|{cha}}}}}')
         if n == 0:
             header = f'{{{{rh|||{printed}}}}}'
         body = ''
