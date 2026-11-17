@@ -26,11 +26,19 @@ LECT = re.compile(r'Go[sſ]pel|Epi[sſ]tle|feast|fea[sſ]t|Sunday|part of this',
 
 toks = [t for t in json.loads(TOK.read_text()) if t['ch'] and A <= t['ch'] <= B]
 
+# Star proposals checked on the scans and found wrong: (book, chapter, annotation
+# index, note index). Matt 3 "Doe penance.": the OCR's * is the print's ∷ before
+# "Greeke Word" (Tesseract reads ∷ as *). Matt 13 "They haue ſhut.": the * before
+# "Which" belongs to the Iren. citation (note 1, starred); the side heading "God is
+# not the author of euil." has no mark in the text.
+KNOWN_FALSE_STARS = {('matthew', 3, 1, 4), ('matthew', 13, 2, 0)}
+
 stars, swaps = [], []
 for i, t in enumerate(toks):
     for tag in t['tags']:
         if tag.startswith('mn:') and t['ocr'] is not None and '*' in t['ocr']:
-            stars.append((t['ch'], t['ann'], int(tag[3:])))
+            if (BOOK, t['ch'], t['ann'], int(tag[3:])) not in KNOWN_FALSE_STARS:
+                stars.append((t['ch'], t['ann'], int(tag[3:])))
 
 _orig = json.loads((REPO / f'static/data/odr-original/{BOOK}.json').read_text())
 
