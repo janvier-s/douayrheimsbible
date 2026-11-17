@@ -28,6 +28,12 @@ Rounds 1-12b, 2026-11-16 to 2026-11-17, branch `janvier-s/odr-wikisource`
   (`odr-original/matthew/paragraphs.json`), running heads incl. "HOLY weeke.",
   signature marks, catchwords.
 
+Round 13 (2026-11-17, user report on page 37): 6 notes stored as `gloss` that the
+print sets with no ∷ (lectionary 4:1, 4:18, 9:18, 1:1; headings 4:12, 6:9), 9 `<cr>`
+before italic quotations moved to the verse end, 4:12's two citations under one `*`
+merged, 4:18's `*` moved after "IESVS". The same kind problem exists in other books
+(~58 NT, ~15 OT gloss notes with lectionary or part-heading text; not fixed).
+
 Known leftovers: none that block posting. The wiki pages are `generated` in
 `manifest.json` (not proofread), so they would go up at quality level 1.
 

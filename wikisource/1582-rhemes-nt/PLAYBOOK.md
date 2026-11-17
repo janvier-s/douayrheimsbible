@@ -53,7 +53,20 @@ pages stay byte-identical after any generator change.
    - `<cr>` at word 0 (OCR reads the verse-start † as `*`).
    - Drop-cap verse 1: usually no `*`; the citation goes to the verse end, the
      lectionary `<na>` to the start.
-   - `<cr>` before an italic OT quotation: usually margin-only (verse end).
+   - `<cr>` before an italic OT quotation: usually margin-only (verse end; after a
+     closing `⊢`, as `⊢ <cr>[1]</cr>`). Matthew had 9 left inline (3:3, 4:7, 4:10,
+     4:15, 9:13, 11:10, 12:7, 13:35, 19:18); 3 really have the `*` (6:9, 16:19, 19:19).
+   - Two citations under one `*` (two refs side by side in the margin): one
+     cross_ref entry holding both (`Mr. 1, 14. Luc. 4, 14.`), never two `<cr>`.
+   - Note kinds before anything else: list every `kind: 'gloss'` note whose text is
+     a lectionary note ("The Goſpel vpō…"), a part heading ("THE THIRD part of the
+     Goſpel…") or a side heading ("The PATER NOSTER."). The generator and the site
+     (`src/lib/utils/printMarks.ts`) print a ∷ for every gloss; these have none.
+     Check each on a word crop, then set `lectionary` / `head` in both datasets.
+     Not every heading is unmarked: "THE firſt worke of iuſtice" (Matt 6:2, 6:5,
+     6:16) does carry ∷ in text and margin. Matthew had 5 (4:1, 4:12, 4:18, 6:9,
+     9:18); the OCR diff missed them all: each sits beside a † or a citation `*`,
+     which the OCR also reads as `*`, so the extra mark does not show.
 3. Print paragraphs (very important to the user): full AND half indents both start
    paragraphs; exceptions go in MANUAL_PARAS / NO_PARAS / PAGE_STARTS. Write
    `paragraphs.json` only for checked chapters.

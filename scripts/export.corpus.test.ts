@@ -162,7 +162,9 @@ describe('the corpus markup', () => {
 		// 2,226 before Matt 16:18's 'Io. 21, 15.' moved to 16:19, where the 1582 print has its *.
 		// 2,227 before Matt 8:17's 'Lu. 9, 57.' moved to 8:19, where the 1582 print has its *.
 		// 2,228 before Jude 1:11 gained the print's 'Nu. 22.' and 'Nu. 16.' (2026-11-17).
-		expect(crossRefs).toHaveLength(2230);
+		// 2,230 before Matt 4:12's 'Mr. 1, 14.' and 'Luc. 4, 14.' became one entry: the 1582
+		// print has one * for both (2026-11-17).
+		expect(crossRefs).toHaveLength(2229);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -180,7 +182,8 @@ describe('the corpus markup', () => {
 		// 43,942 before Matt 16:19 got its own cross_ref (Io. 21, 15.): +1 block.
 		// 43,943 before Matt 8:19 got its own cross_ref (Lu. 9, 57.): +1 block.
 		// 43,944 before Jude 1:11 got the print's Nu. 22. and Nu. 16. cross_refs (+2 blocks; 2026-11-17).
-		expect(blocks).toHaveLength(43946);
+		// 43,946 before Matt 4:12's two cross_refs became one, as printed (-1 block; 2026-11-17).
+		expect(blocks).toHaveLength(43945);
 	});
 
 	it('names exactly one block per ref', () => {
