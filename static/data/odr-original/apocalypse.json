@@ -558,12 +558,13 @@
         },
         {
           "verse": 24,
-          "text": "But I ſay to you the reſt vvhich are at Thyatira, whoſoeuer haue not this doctrine, which haue not knowen the <na>[1]</na> <alt>depth</alt> of Satan, as they ſay, I vvil not caſt vpon you an other weight.",
+          "text": "But I ſay to you the reſt vvhich are at Thyatira, whoſoeuer haue not this doctrine, which haue not knowen the <na>[1]</na> <alt>`depth</alt>' of Satan, as they ſay, I vvil not caſt vpon you an other weight.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>depthes</i>.",
-              "kind": "gloss"
+              "text": "<i>`depthes</i>.",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -970,12 +971,12 @@
         },
         {
           "verse": 10,
-          "text": "and <cr>[1]</cr> haſt made vs to our God <na>[2]</na> <alt>a kingdom</alt> and prieſtes, and vve ſhal reigne vpon the earth.",
+          "text": "and <cr>[1]</cr> haſt made vs to our God <na>[2]</na> <alt>`a kingdom</alt>' and prieſtes, and vve ſhal reigne vpon the earth.",
           "has_annotation": true,
           "lemmas": [
             [
               54,
-              33,
+              35,
               1
             ]
           ],
@@ -987,8 +988,9 @@
           "notes": [
             {
               "label": "2",
-              "text": "<i>kings</i>",
-              "kind": "gloss"
+              "text": "<i>`kinges</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -1010,12 +1012,13 @@
         },
         {
           "verse": 12,
-          "text": "ſaying vvith a loud voice, The Lambe that vvas ſlaine, is vvorthie to receiue povver, and <na>[1]</na> <alt>diuinitie</alt>, and vviſedom, and ſtrength, and honour, and glorie, and benediction. ⊢",
+          "text": "ſaying vvith a loud voice, The Lambe that vvas ſlaine, is vvorthie to receiue povver, and <na>[1]</na> <alt>`diuinitie</alt>', and vviſedom, and ſtrength, and honour, and glorie, and benediction. ⊢",
           "notes": [
             {
               "label": "1",
-              "text": "<i>riches</i>",
-              "kind": "gloss"
+              "text": "<i>`riches</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -1581,8 +1584,9 @@
             },
             {
               "label": "2",
-              "text": "<i>pillars</i>",
-              "kind": "gloss"
+              "text": "<i>`pillers</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2133,12 +2137,13 @@
         },
         {
           "verse": 3,
-          "text": "And they ſang as it vvere a nevv ſong before the ſeate and before the foure beaſtes, and the ſeniors, and no man could <na>[1]</na> <alt>ſay</alt> the ſong, but thoſe hundred fourtie foure thouſand, that vvere bought from the earth.",
+          "text": "And they ſang as it vvere a nevv ſong before the ſeate and before the foure beaſtes, and the ſeniors, and no man could <na>[1]</na> <alt>`ſay</alt>' the ſong, but thoſe hundred fourtie foure thouſand, that vvere bought from the earth.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>learne μαθεῖν</i>,",
-              "kind": "word"
+              "text": "<i>`learne μαθεῖν</i>,",
+              "kind": "word",
+              "unmarked": true
             }
           ]
         },
@@ -2310,7 +2315,7 @@
         },
         {
           "verse": 3,
-          "text": "and ſinging <na>[1]</na> the ſong of Moyſes the ſeruant of God, and the ſong of the Lambe, ſaying, Great and maruelous are thy vvorkes Lord God omnipotent: iuſt and true are thy vvaies King of the <na>[2]</na> <alt>vvorldes</alt>.",
+          "text": "and ſinging <na>[1]</na> the ſong of Moyſes the ſeruant of God, and the ſong of the Lambe, ſaying, Great and maruelous are thy vvorkes Lord God omnipotent: iuſt and true are thy vvaies King of the <na>[2]</na> <alt>`vvorldes</alt>'.",
           "notes": [
             {
               "label": "1",
@@ -2319,8 +2324,9 @@
             },
             {
               "label": "2",
-              "text": "<i>Saincts</i>.",
-              "kind": "gloss"
+              "text": "<i>`Saincts</i>.",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2341,12 +2347,13 @@
         },
         {
           "verse": 6,
-          "text": "and there iſſued forth the ſeuen Angels, hauing the ſeuen plagues, from the temple: reueſted vvith cleane and vvhite <na>[1]</na> <alt>ſtone</alt>, & girded about the breaſtes vvith girdles of gold.",
+          "text": "and there iſſued forth the ſeuen Angels, hauing the ſeuen plagues, from the temple: reueſted vvith cleane and vvhite <na>[1]</na> <alt>`ſtone</alt>', & girded about the breaſtes vvith girdles of gold.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>linen, λίνον, λίθον</i>.",
-              "kind": "word"
+              "text": "<i>`linen, λίνον, λίθον</i>.",
+              "kind": "word",
+              "unmarked": true
             }
           ]
         },
@@ -2441,7 +2448,7 @@
         },
         {
           "verse": 13,
-          "text": "And I ſavv from the mouth <na>[1]</na> of the dragon, and from the mouth of the beaſt, and from the mouth of the falſe-prophet <na>[2]</na> <alt>three</alt> vncleane ſpirites in maner of frogges.",
+          "text": "And I ſavv from the mouth <na>[1]</na> of the dragon, and from the mouth of the beaſt, and from the mouth of the falſe-prophet <na>[2]</na> <alt>`three</alt>' vncleane ſpirites in maner of frogges.",
           "notes": [
             {
               "label": "1",
@@ -2450,8 +2457,9 @@
             },
             {
               "label": "2",
-              "text": "<i>iſſue forth three</i>.",
-              "kind": "gloss"
+              "text": "<i>`iſſue forth three</i>.",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2622,7 +2630,7 @@
         },
         {
           "verse": 12,
-          "text": "And the ten hornes vvhich thou ſaweſt: are <na>[1]</na> ten kings, vvhich haue not yet receiued kingdom, but <na>[2]</na> <alt>ſhal</alt> receiue povver as kings one houre after the beaſt.",
+          "text": "And the ten hornes vvhich thou ſaweſt: are <na>[1]</na> ten kings, vvhich haue not yet receiued kingdom, but <na>[2]</na> <alt>`ſhal</alt>' receiue povver as kings one houre after the beaſt.",
           "notes": [
             {
               "label": "1",
@@ -2631,8 +2639,9 @@
             },
             {
               "label": "2",
-              "text": "doe",
-              "kind": "gloss"
+              "text": "<i>`doe</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -3276,7 +3285,7 @@
         },
         {
           "verse": 4,
-          "text": "and <cr>[1]</cr> God ſhal <na>[2]</na> vvipe avvay al teares from their eies: and death ſhal be no more. nor mourning, nor crying, neither ſhal there be ſorovv any more, <na>[3]</na> <alt>vvhich</alt> firſt thinges are gone.",
+          "text": "and <cr>[1]</cr> God ſhal <na>[2]</na> vvipe avvay al teares from their eies: and death ſhal be no more. nor mourning, nor crying, neither ſhal there be ſorovv any more, <na>[3]</na> <alt>`vvhich</alt>' firſt thinges are gone.",
           "cross_refs": [
             {
               "text": "Eſa. 25. 8. Apoc. 7, 17."
@@ -3290,8 +3299,9 @@
             },
             {
               "label": "3",
-              "text": "<i>becauſe the</i>",
-              "kind": "gloss"
+              "text": "<i>`becauſe the</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -3499,12 +3509,13 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>AND</sc> he ſhevved me a riuer of <na>[1]</na> <alt>liuing water</alt>, cleere as cryſtal, proceding from the ſeate of God and of the Lambe.",
+          "text": "<sc>AND</sc> he ſhevved me a riuer of <na>[1]</na> <alt>`liuing water</alt>', cleere as cryſtal, proceding from the ſeate of God and of the Lambe.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>vvater of life</i>,",
-              "kind": "gloss"
+              "text": "<i>`vvater of life</i>,",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

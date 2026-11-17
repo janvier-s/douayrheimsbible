@@ -437,7 +437,8 @@
             {
               "label": "2",
               "text": "<i>dead</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -586,7 +587,8 @@
             {
               "label": "2",
               "text": "<i>little</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -621,7 +623,8 @@
             {
               "label": "1",
               "text": "<i>can it yield salt and sweet water.</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -848,7 +851,8 @@
             {
               "label": "1",
               "text": "<i>condemned</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -870,7 +874,8 @@
             {
               "label": "1",
               "text": "<i>is at hand.</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

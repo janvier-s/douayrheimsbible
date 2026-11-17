@@ -1026,8 +1026,9 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>Prieſthod.</i>",
-              "kind": "gloss"
+              "text": "<i>`Prieſthod.</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -1134,8 +1135,9 @@
           "notes": [
             {
               "label": "1",
-              "text": "`them that goe",
-              "kind": "gloss"
+              "text": "<i>`them that goe</i>",
+              "kind": "gloss",
+              "unmarked": true
             },
             {
               "label": "2",
@@ -1469,13 +1471,15 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>ſhal</i>",
-              "kind": "gloss"
+              "text": "<i>`ſhal</i>",
+              "kind": "gloss",
+              "unmarked": true
             },
             {
               "label": "2",
-              "text": "<i>cleanſe</i>",
-              "kind": "gloss"
+              "text": "<i>`cleanſe</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2480,7 +2484,8 @@
             {
               "label": "2",
               "text": "<i>`kindled</i> (or) <i>burning</i>.",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

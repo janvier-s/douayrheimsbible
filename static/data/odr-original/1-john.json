@@ -926,7 +926,8 @@
             {
               "label": "2",
               "text": "<i>`not to death</i>.",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

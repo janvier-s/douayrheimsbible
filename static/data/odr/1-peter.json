@@ -211,7 +211,8 @@
             {
               "label": "1",
               "text": "<i>a spiritual house,</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -243,7 +244,8 @@
             {
               "label": "1",
               "text": "<i>whereto also they are ordained.</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ],
           "xrefs": [
@@ -400,12 +402,14 @@
             {
               "label": "2",
               "text": "you",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             },
             {
               "label": "3",
               "text": "<i>us</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ],
           "xrefs": [
@@ -540,7 +544,8 @@
             {
               "label": "2",
               "text": "<i>in faith</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -624,7 +629,8 @@
             {
               "label": "1",
               "text": "<i>those spirits</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -668,7 +674,8 @@
             {
               "label": "1",
               "text": "<i>us</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -725,7 +732,8 @@
             {
               "label": "2",
               "text": "<i>is at hand.</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

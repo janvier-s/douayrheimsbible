@@ -269,7 +269,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,764 of 13,782 markers', () => {
+	it('binds 13,760 of 13,777 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -287,10 +287,13 @@ describe('the corpus markup', () => {
 		// 13,766 before the later-edition Matt 20:34 gloss (not in the 1582 print) was removed.
 		// 13,765 before the Matt 22:15 margin note (none in the 1582 print; a later-edition
 		// lectionary note in odr) was removed (2026-11-16).
-		expect(bound).toBe(13764);
+		// 13,764 before four variant-reading notes the 1582 print does not have were
+		// removed with their <alt> spans (Acts 9:20, Luke 3:31, Rom 7:1, 1 Tim 2:6;
+		// 2026-11-17). 1 Tim 2:6 also lost its second, unbound <na>[1].
+		expect(bound).toBe(13760);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
-		expect(unbound).toBe(18);
-		expect(bound + unbound).toBe(13782);
+		expect(unbound).toBe(17);
+		expect(bound + unbound).toBe(13777);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming
@@ -463,21 +466,15 @@ describe('the corpus markup', () => {
 		expect([...repeated].sort()).toEqual([...KNOWN_DUPLICATE_VERSE].sort());
 	});
 
-	// 103 of the 106 <alt> spans anchor to an <na> and reach the reader as \fq
-	// inside the footnote; the other three anchor to a <cr>, and the cross-
-	// reference note's equivalent element is \xq. (2026-11-17: Matt 19:4 "make"
-	// moved from the <cr> to its variant note "make man"; the 1582 scan prints
-	// Gen. 1, 27. in the margin with no * in the text.) Asserting the count as well as
-	// the four strings is what catches a fifth appearing or one of these being
-	// re-anchored.
-	it('renders every <cr>-anchored <alt> span as \\xq', () => {
-		const expected: Record<string, string> = {
-			mark: '\\x - \\xq Esay the Prophet \\xt Esa. 40, 3.\\x*',
-			acts: '\\x - \\xq to our children \\xt Ps. 2, 7.\\x*',
-			jude: '\\x - \\xq which \\xt Gen. 4, 8.\\x*'
-		};
+	// Every <alt> span anchors to its variant-reading <na> and reaches the reader
+	// as \fq inside the footnote; none anchors to a <cr> (which would render as
+	// \xq in a cross-reference note). The last three, Mark 1:2, Acts 13:33 and
+	// Jude 1:11, had the variant <na> on the next words and the <cr> on the span;
+	// on 2026-11-17 the 1582 scans put the variant (`…, inner margin) on the span
+	// and the citation at the verse end or at its own * (Jude 1:11 "* Cain").
+	// Matt 19:4 was the same defect, fixed earlier the same day.
+	it('anchors no <alt> span to a <cr>', () => {
 		let total = 0;
-		const missing: string[] = [];
 		for (const meta of ALL_BOOKS) {
 			const { data: book } = readJson<any>(join(ODR_DIR, `${meta.slug}.json`));
 			const usfm = renderUsfm(
@@ -488,11 +485,8 @@ describe('the corpus markup', () => {
 				meta.odrName
 			);
 			total += usfm.split('\\xq ').length - 1;
-			const want = expected[meta.slug];
-			if (want && !usfm.includes(want)) missing.push(meta.slug);
 		}
-		expect(missing).toEqual([]);
-		expect(total).toBe(3);
+		expect(total).toBe(0);
 	});
 
 	// A character marker opened while another is already open takes the nested

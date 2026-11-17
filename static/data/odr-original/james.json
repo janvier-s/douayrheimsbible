@@ -427,7 +427,7 @@
         },
         {
           "verse": 20,
-          "text": "But vvilt thou knovv <na>[1]</na> ô vaine man, that faith vvithout vvorkes is <na>[2]</na> <alt>'idle</alt>?",
+          "text": "But vvilt thou knovv <na>[1]</na> ô vaine man, that faith vvithout vvorkes is <na>[2]</na> <alt>`idle</alt>'?",
           "notes": [
             {
               "label": "1",
@@ -436,8 +436,9 @@
             },
             {
               "label": "2",
-              "text": "<i>dead</i>.",
-              "kind": "gloss"
+              "text": "<i>`dead</i>.",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -576,7 +577,7 @@
         },
         {
           "verse": 5,
-          "text": "So the tongue alſo is certes a litle member, & <na>[1]</na> cvaunteth great things. Behold how <na>[2]</na> <alt>'much</alt>' fire what a great vvood it kindleth?",
+          "text": "So the tongue alſo is certes a litle member, & <na>[1]</na> cvaunteth great things. Behold how <na>[2]</na> <alt>`much</alt>' fire what a great vvood it kindleth?",
           "notes": [
             {
               "label": "1",
@@ -585,8 +586,9 @@
             },
             {
               "label": "2",
-              "text": "<i>litle</i>",
-              "kind": "gloss"
+              "text": "<i>`litle</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -616,12 +618,13 @@
         },
         {
           "verse": 12,
-          "text": "Can, my brethren, the figge tree yeld grapes: or the vine, figges? So neither <na>[1]</na> <alt>'can the ſalt water yeld</alt>' ſweete.",
+          "text": "Can, my brethren, the figge tree yeld grapes: or the vine, figges? So neither <na>[1]</na> <alt>`can the ſalt water yeld</alt>' ſweete.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>can it yeld ſalt and ſweete water</i>.",
-              "kind": "gloss"
+              "text": "<i>`can it yeld ſalt and ſvveete vvater</i>.",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -843,12 +846,13 @@
         },
         {
           "verse": 6,
-          "text": "You haue <na>[1]</na> <alt>'preſented</alt>, and ſlaine the iuſt one: and he reſiſted you not.",
+          "text": "You haue <na>[1]</na> <alt>`preſented</alt>', and ſlaine the iuſt one: and he reſiſted you not.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>condemned</i>",
-              "kind": "gloss"
+              "text": "<i>`condemned</i>",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -865,12 +869,13 @@
         },
         {
           "verse": 8,
-          "text": "Be you alſo patient, and confirme your hartes: becauſe the comming of our Lord <na>[1]</na> <alt>'vvil approche</alt>.",
+          "text": "Be you alſo patient, and confirme your hartes: becauſe the comming of our Lord <na>[1]</na> <alt>`vvil approche</alt>'.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>is at hand</i>.",
-              "kind": "gloss"
+              "text": "<i>`is at hand</i>.",
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

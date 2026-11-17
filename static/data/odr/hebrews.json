@@ -1027,7 +1027,8 @@
             {
               "label": "1",
               "text": "<i>Priesthood.</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -1135,7 +1136,8 @@
             {
               "label": "1",
               "text": "them that go",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             },
             {
               "label": "2",
@@ -1470,12 +1472,14 @@
             {
               "label": "1",
               "text": "<i>shall</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             },
             {
               "label": "2",
               "text": "<i>cleanse</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },
@@ -2480,7 +2484,8 @@
             {
               "label": "2",
               "text": "<i>kindled</i> (or) <i>burning.</i>",
-              "kind": "gloss"
+              "kind": "gloss",
+              "unmarked": true
             }
           ]
         },

@@ -249,7 +249,6 @@ export const annotationRef = (
  * KNOWN_UNREFERENCED, which has always been per note.
  */
 export const KNOWN_UNBOUND: ReadonlySet<string> = new Set([
-	'1-timothy 2:6 marker 1',
 	'ecclesiasticus 14:10 marker †',
 	// editorial markers for print corrections (odr-notes sidecar), Nov 16 2026
 	'1-esdras 2:50 marker †',
