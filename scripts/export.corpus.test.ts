@@ -161,7 +161,8 @@ describe('the corpus markup', () => {
 		// citations, less 37 Sancta entries that only repeated a printed one or a note.
 		// 2,226 before Matt 16:18's 'Io. 21, 15.' moved to 16:19, where the 1582 print has its *.
 		// 2,227 before Matt 8:17's 'Lu. 9, 57.' moved to 8:19, where the 1582 print has its *.
-		expect(crossRefs).toHaveLength(2228);
+		// 2,228 before Jude 1:11 gained the print's 'Nu. 22.' and 'Nu. 16.' (2026-11-17).
+		expect(crossRefs).toHaveLength(2230);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -178,7 +179,8 @@ describe('the corpus markup', () => {
 		// 43,946 before John 15:2 lost its two invented annotation parts (-2 titles, -2 texts).
 		// 43,942 before Matt 16:19 got its own cross_ref (Io. 21, 15.): +1 block.
 		// 43,943 before Matt 8:19 got its own cross_ref (Lu. 9, 57.): +1 block.
-		expect(blocks).toHaveLength(43944);
+		// 43,944 before Jude 1:11 got the print's Nu. 22. and Nu. 16. cross_refs (+2 blocks; 2026-11-17).
+		expect(blocks).toHaveLength(43946);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -269,7 +271,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,760 of 13,777 markers', () => {
+	it('binds 13,759 of 13,776 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -290,10 +292,12 @@ describe('the corpus markup', () => {
 		// 13,764 before four variant-reading notes the 1582 print does not have were
 		// removed with their <alt> spans (Acts 9:20, Luke 3:31, Rom 7:1, 1 Tim 2:6;
 		// 2026-11-17). 1 Tim 2:6 also lost its second, unbound <na>[1].
-		expect(bound).toBe(13760);
+		// 13,760 before the later-edition Jude 1:11 lectionary note (S. Silverius; not in
+		// the 1582 print, whose * there is the Nu. 22. citation) was removed (2026-11-17).
+		expect(bound).toBe(13759);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
 		expect(unbound).toBe(17);
-		expect(bound + unbound).toBe(13777);
+		expect(bound + unbound).toBe(13776);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming
