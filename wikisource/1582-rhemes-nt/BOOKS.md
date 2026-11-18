@@ -223,7 +223,7 @@ Open, chapters 7-10:
 - Macrons of chapters 3-6 (verse text, margins, annotation bodies) are still not done, except the ones
   listed in round 2; known: 5 annotation "wēche" (the print has "with the wēche roſe vp").
 
-Resume at page 145 (11:9): ch 11 starts on 144 (read), pages 145-160 unchecked.
+Resume at page 145 (11:9): done in round 4.
 
 ## Mark: round 4, chapters 11:9-14 with the chapter 13 and 14 annotations (2026-11-18)
 
@@ -258,7 +258,7 @@ Seen / already right / changed:
 
 Open: step 6 word alignment for chapters 11-14; chapter 11-14 paragraph indents were taken from the OCR and checked at the verses above.
 
-Resume at page 157 (15:8-32 seen at 0.4, marks 15:28 etc. not yet fixed): chapters 15-16 are the last round.
+Resume at page 157: done in round 5.
 
 ## Mark: round 5, chapters 15-16 and the chapter 15-16 annotations (2026-11-18)
 
