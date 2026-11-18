@@ -372,6 +372,12 @@ Seen and plain: "common" 7:18/7:20/7:23, "conuenient" 14:59, "ſtanders" 14:69/7
 Ch 4 margin "The Church viſibly increa-ſing": the a before the hyphen does carry a stroke above it (a short bar or tick). A barred a makes no sense there
 (the next line begins "ſing"), so it is left "increaſing". Not changed.
 
+**Round 8: ch 1-2 and 15-16 band reads with `agy --model gemini-4-argon-low` (2026-11-18).** 11 pages (mark/1/1-3, 2/1-2, 15/1-3, 16/1-3) as 6 full-width
+bands at 0.85 each, same question as round 7. Argon reported 9 words; 8 were already in odr-original (preparatiō, remiſsiō, iudgemēt, aſſiſtāce,
+Executīg, vpō, whē, ch 16 vpō). One was new and is barred on a 3x crop: 1:31 "incōtinent" (changed, odr-original only; page 116 republished
+locally). It reported no barred word on the other bands; it was not asked for plain-vs-barred pairs, so a missed word is possible. Nothing changed on its word alone.
+None of the Mark pages 114-160 exists on en.wikisource yet; `wikipost.py` edits existing pages only, so nothing was posted.
+
 **Print misprints that `odr-original` keeps (task 3).** PERMANENT RULE (user, 2026-11-18): odr-original and the wiki pages are reproductions of the
 1582 print, keeping its misprints and original spelling; only odr (modern) receives fixes. So this is a list of print misprints that stay in
 odr-original (do NOT correct them there); odr already has the correct word in every case except the ch 14 summary, fixed in odr this round.
