@@ -21,6 +21,12 @@ DATA = REPO / 'static/data/odr-original'
 # Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
 # its pages stay as they are; Transkribus reads the print better from Mark on.
 OCR_SOURCE = {'mark': 'transkribus'}
+# Last line of the book title on its first page ("THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO ...").
+TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.'}
+# Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
+ARGUMENT = {'mark': 114}
+# First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
+FIRST_HEAD_CHA = {'mark'}
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
            'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.')}  # mark: read on 1/2, 5/1, 16/1
 # Marks in chapter summaries are not in the data yet: words to star, per chapter.
@@ -38,7 +44,8 @@ DROPI = re.compile(r'\{\{dropinitial\|([^{}|]*)(?:\|(?:image|imgsize)=[^{}|]*)*(
 # Woodcut initials, headpieces and tailpieces on Commons, from ornaments.py commons:
 # initial 'book/ch' -> file, letter, imgsize; headpiece/tailpiece book -> file, width.
 _ORN = REPO / 'wikisource/1582-rhemes-nt/ornaments.json'
-ORNAMENTS = json.loads(_ORN.read_text()) if _ORN.exists() else {}
+# WS_NO_ORNAMENTS=1 leaves them out (plain {{dropinitial|T}}), as the published pages are for now.
+ORNAMENTS = json.loads(_ORN.read_text()) if _ORN.exists() and not os.environ.get('WS_NO_ORNAMENTS') else {}
 
 
 def norm(w):
@@ -160,7 +167,7 @@ def build_stream(book, ann):
         ch = chap['chapter']
         if ch == 1:
             hp = ORNAMENTS.get('headpiece', {}).get(BOOK)
-            tt = tokens_of('{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|DING TO MATTHEW.}}}}', block=True, ch=ch, kind='title')
+            tt = tokens_of('{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|' + TITLE_END[BOOK] + '}}}}', block=True, ch=ch, kind='title')
             if hp:  # the woodcut band above the book title, riding on the title's first word
                 tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
             S += tt
@@ -494,7 +501,8 @@ CREND_AT = {('matthew', 27, 35): 24}
 # 26:27 '‖ he gaue thankes' (103): the 26:26 'Bleſſed.' annotation covers both verbs;
 # 26:75 '‖ he vvept bitterly' (106; the lemma is the title's 'Wept bitterly');
 # 28:20 'vvith you ‖ al daies' (113; the title is 'With you al daies').
-BARS = {('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)],
+BARS = {('mark', 1, 12): [(9, 8)], ('mark', 1, 35): [(11, 10)],
+        ('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)],
         ('matthew', 26, 27): [(None, 4)], ('matthew', 26, 75): [(24, 23)],
         ('matthew', 28, 20): [(15, 17)]}
 
@@ -513,6 +521,7 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
                ('matthew', 113): 'wil persvade him and',
                # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
+               ('mark', 120): '@annhead',
                ('mark', 152): 'sorraine sovldiars so shal'}
 
 
@@ -542,9 +551,14 @@ def signature(wiki):
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
 CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
-              ('mark', 160): 'THE',
+              ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 160): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
+
+
+# Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
+# Rendered {{hws|de|desert.}} at the page end and {{hwe|sert.|desert.}} at the next page's start.
+SPLIT_WORDS = {('mark', 115): ('de', 'sert.', 'desert.')}
 
 
 def apply_page_starts(S, starts):
@@ -608,8 +622,54 @@ def export_paragraphs(S, paras):
     (OUT / 'paragraphs.json').write_text(json.dumps(out))
 
 
+def write_argument(book, wiki):
+    """The Argument page before chapter 1 (mark 114), from the book's first intro. The print
+    sets it in italic, with quotations in roman: the data's <i> spans are the roman ones.
+    Its margin notes stand in the outer margin; a note starting with '*' prints a '*' in the text."""
+    intro = book['intros'][0]
+    notes = {str(n['marker']): n['text'] for n in intro.get('notes', [])}
+    side = 'left' if wiki % 2 == 0 else 'right'
+
+    def mark(m):
+        t = notes[m.group(1).strip('[]')]
+        return margin(side, finish(t)) + ('* ' if t.startswith('*') else '')
+
+    paras = []
+    # the four parts each start a printed line: paragraphs here (the linter allows no <br/>)
+    for k, ptext in enumerate(re.split(r'\n\n|<br/?>', intro['text'])):
+        ptext = re.sub(r'\s*<mn>([^<]*)</mn>\s*', lambda m: ' ⟦mn' + m.group(1) + '⟧', ptext.strip())
+        out = ''
+        for j, seg in enumerate(re.split(r'</?i>', ptext)):  # odd segments were <i>: roman in the print
+            # margin marks at a run's edge stay outside the italic
+            lead, core, trail = re.match(r'^((?:\s|⟦[^⟧]*⟧)*)(.*?)((?:\s|⟦[^⟧]*⟧)*)$', seg, re.S).groups()
+            if core:
+                core = core if j % 2 else f"''{core}''"
+            out += lead + core + trail
+        # a margin note inside an italic run: close the run around it
+        parts = re.split(r'(⟦mn[^⟧]*⟧ ?)', out)
+        for q in range(1, len(parts), 2):
+            m = re.match(r'⟦mn([^⟧]*)⟧', parts[q])
+            ital = len(re.findall(r"(?<!')''(?!')", ''.join(parts[:q]))) % 2
+            parts[q] = ("''" if ital else '') + mark(m) + ("''" if ital else '')
+        out = re.sub(r"(?<!')''''(?!')", '', ''.join(parts))
+        out = re.sub(r"^''(\{\{dropinitial\|[^{}]*\}\})", r"\1''", finish(out, dropcap=(k == 0)))
+        out = re.sub(r'\s+([),.;:])', r'\1', re.sub(r'\(\s+', '(', out))
+        paras.append(re.sub(r'  +', ' ', out).strip())
+    t1, t2 = re.match(r'(.* OF) (.*)', intro['title']).groups()
+    body = f'{{{{c|{{{{x-larger|{t1}}}}}}}}}\n{{{{c|{{{{larger|{t2}}}}}}}}}\n\n' + '\n\n'.join(paras)
+    catch = CATCHWORDS.get((BOOK, wiki), '')
+    (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />'
+                                      f'{{{{rh|{wiki - 28}||}}}}</noinclude>' + sc_wiki(body) +
+                                      '<noinclude>' + (f'{{{{rh|||{catch}}}}}' if catch else '') + '</noinclude>\n'))
+
+
 def main():
+    global FIRST
     book = json.loads((DATA / f'{BOOK}.json').read_text())
+    if ARGUMENT.get(BOOK) == FIRST:
+        OUT.mkdir(parents=True, exist_ok=True)
+        write_argument(book, FIRST)
+        FIRST += 1
     ann = {}
     for f in sorted((DATA / BOOK / 'annotations').glob('*.json')):
         a = json.loads(f.read_text()); ann[a['chapter']] = a['annotations']
@@ -619,7 +679,7 @@ def main():
     starts, paras, quality = align(pages, S)
     apply_page_starts(S, starts)
     (OUT / 'tokens.json').write_text(json.dumps(
-        [dict(ch=t.get('ch'), verse=t.get('verse'), w=t.get('w'), ann=t.get('ann'), kind=t['kind'],
+        [dict(ch=t.get('ch'), verse=t.get('verse'), w=t.get('w'), ann=t.get('ann'), kind=t['kind'], text=SENT.sub('', t['text']),
               tags=re.findall(r'⟦([^⟧]*)⟧', t['text']), ocr=t.get('ocr'), box=t.get('box'))
          for t in S if t['kind'] in ('verse', 'ann')], ensure_ascii=False))
     move_bars(S)
@@ -641,7 +701,7 @@ def main():
             num = f'{printed} HOLY weeke.' if wiki % 2 else f'HOLY weeke. {printed}'
         header = (f'{{{{rh|{cha}|{recto_t}|{num}}}}}' if wiki % 2 else f'{{{{rh|{num}|{verso_t}|{cha}}}}}')
         if n == 0:
-            header = f'{{{{rh|||{printed}}}}}'
+            header = f'{{{{rh|{cha if BOOK in FIRST_HEAD_CHA else ""}||{printed}}}}}'
         body = ''
         for i in range(a, b):
             t = S[i]
@@ -650,6 +710,14 @@ def main():
                 sep = '\n'
             body += sep + t['text']
         body = SENT.sub('', body)
+        sp = SPLIT_WORDS.get((BOOK, wiki))
+        if sp:
+            body += ' {{hws|' + sp[0] + '|' + sp[2] + '}}'
+        sp = SPLIT_WORDS.get((BOOK, wiki - 1))
+        if sp:
+            m = re.match(r'^((?:\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[*∷†‖] ?)*)' + re.escape(sp[2]), body)
+            assert m, (wiki, body[:80])
+            body = body[:m.end() - len(sp[2])] + '{{hwe|' + sp[1] + '|' + sp[2] + '}}' + body[m.end():]
         # italics are balanced per page (an unclosed '' breaks the page view): close at the page end, reopen on the next
         if ital_carry:
             body = "''" + body

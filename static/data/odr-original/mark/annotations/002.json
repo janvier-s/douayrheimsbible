@@ -42,7 +42,7 @@
       "verse": 10,
       "part": 2,
       "title": "In earth.",
-      "text": "<mn>[1]</mn> This power that the Sonne of man hath to remitte ſinnes in earth, was neuer taken from him, but dureth ſtill in his Sacraments, and miniſters, by whom he remitteth ſinnes in the Church, and not in heauen only. For concerning ſinne, there is one court of conſcience in earth, and another in heauen: and the iudgement in heauen foloweth and approueth this on earth: as is plaine by the wordes of our Sauiour to Peter firſt, and then to al the Apoſtles, <mn>[2]</mn> <i>Whatſoeuer you ſhal bind vpon earth, ſhal be bound in heauen: Whatſoeuer you ſhal looſe vpon earth, ſhal be looſed in heauen</i>: Wherevpon S. Hierom ſaith <mn>[3]</mn>, <i>That Prieſts hauing the keies of the kingdom of heauen, iudge after a ſort before the day of iudgement</i>. And S. Chryſoſt. li. 3. de Sacerd. paul. poſt princip. <i>more at large.</i>",
+      "text": "<mn>[1]</mn> This power that the Sonne of man hath to remitte ſinnes in earth, was neuer taken from him, but dureth ſtill in his Sacraments, and miniſters, by whom he remitteth ſinnes in the Church, and not in heauen only. For concerning ſinne, there is one court of conſcience in earth, and an other in heauen: and the iudgement in heauen foloweth and approueth this on earth: as is plaine by the wordes of our Sauiour to Peter firſt, and then to al the Apoſtles, <mn>[2]</mn> <i>Whatſoeuer you ſhal bind vpon earth, ſhal be bound in heauen: Whatſoeuer you ſhal looſe vpon earth, ſhal be looſed in heauen</i>: Wherevpon S. Hierom ſaith <mn>[3]</mn>, <i>That Prieſts hauing the keies of the kingdom of heauen, iudge after a ſort before the day of iudgement</i>. And S. Chryſoſt. li. 3. de Sacerd. paul. poſt princip. <i>more at large.</i>",
       "notes": [
         {
           "marker": 1,
@@ -65,7 +65,8 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "<i>Amb. li. 2. off. c. 28.</i>"
+          "text": "<i>Amb. li. 2 off. c. 28.</i>",
+          "star": true
         }
       ]
     }

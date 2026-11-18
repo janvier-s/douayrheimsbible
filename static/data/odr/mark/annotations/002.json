@@ -65,7 +65,8 @@
       "notes": [
         {
           "marker": "◦",
-          "text": "<i>Amb. li. 2. off. c. 28.</i>"
+          "text": "<i>Amb. li. 2. off. c. 28.</i>",
+          "star": true
         }
       ]
     }
