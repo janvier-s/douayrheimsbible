@@ -1,0 +1,40 @@
+<noinclude><pagequality level="1" user="" /></noinclude>{{Center|THE}}
+
+{{center|{{xx-larger|NEVV TESTAMENT}}}}
+{{center block|{{larger|OF IESVS CHRIST, TRANSLATED FAITHFVLLY INTO ENGLISH,}}}}
+{{center block|out of the authentical Latin, according to the beſt corrected copies of the ſame, diligently conferred vvith the Greeke and other editions in diuers languages: Vvith {{small-caps|Argvments}} of bookes and chapters, {{small-caps|Annotations}}, and other neceſſarie helpes, for the better vnderſtanding of the text, and ſpecially for the diſcouerie of the {{small-caps|Corrvptions}} of diuers late tranſlations, and for cleeting the {{small-caps|Controversies}} in religion, of theſe daies:
+}}
+
+{{center|{{small-caps|In the English College of Rhemes.}}}}
+
+{{center block|
+{{center|Pſal. 118.}}
+
+''Da mihi intellectum, & ſcrutabor legem tuam, & cuſtodiam illam in toto corde meo.''
+
+{{center|That is,}}
+
+Giue me vnderſtanding, and I vvil ſearche thy lavv, and vvil keepe it vvith my vvhole hart.
+}}
+
+
+{{center block|
+{{center|S. Aug. tract. 2. in Epiſt. Ioan.}}
+
+{{smaller block|''Omnia quæ leguntur in Scripturis ſanctis, ad inſtructionem & ſalutem noſtram intentè oportet audire: maximè tamen memoriæ commendanda ſunt, quæ aduerſus Hæreticos valent plurimùm: quorum inſidiæ, infirmiores quoſque & negligentiores circumuenire non ceſſant.''}}
+
+{{center|That is,}}
+
+{{smaller block|Al things that are readde in holy Scriptures, vve muſt heare vvith great attention, to our inſtruction and ſaluation: but thoſe things ſpecially muſt be commended to memorie, vvhich make moſt againſt Heretikes: vvhoſe deceites ceaſe not to circumuent and beguile al the vveaker ſort and the more negligent perſons.}}
+}}
+
+
+{{center|
+{{larger|PRINTED AT RHEMES,{{br}}
+by Iohn Fogny.}}{{br}}
+{{rule|5em}}
+1582.
+}}
+
+{{center|CVM PRIVILEGIO.}}
+{{nop}}<noinclude></noinclude>
