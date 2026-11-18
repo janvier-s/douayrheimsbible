@@ -336,6 +336,17 @@ clearly indented line (a "†" or "† \*" line set in from the left edge) carri
 lines (e.g. 14:25 area, 15:22, 16:20) have none. No change to the data, no page republished. Limit: at 0.55 a one-letter shift of a †
 line is invisible; only clear indents (about 3 letters) were judged.
 
+**Stars with no margin note (task 6, decided with the user: "star plus empty margin note").** 12:38 "doctrine, _ Take heede" and 13:34
+"authoritie _ ouer ech" now carry `<cr>[1]</cr>` with a blank `cross_refs` entry (`{"text": ""}`) in both datasets (`build-odr-lemmas.ts` run for
+both, only those two verses changed). The generator prints a blank citation as the bare `*` with no margin note (`render_verse`, so no
+empty MarginNote on the wiki); pages 148 and 151 gain one `*` each. The site's reader will show a marker with an empty citation for these
+two verses (not checked in a browser). Export corpus counts did not change.
+
+**Round 6 summary (open after it).** Done: macrons ch 3-6 and 15-16 as far as the bands could show (see above; verse text and margins of
+ch 3-6 were hinted by the Tesseract TSVs only, not read in bands), all annotation title closers, "Leu.", the `odr` word alignment, ch 11-16
+indents, the two orphan stars. Still open for Mark: the ch 4 margin "increa-ſing" (a barred a?), macrons of ch 3-6 verse text and margins
+beyond what the Tesseract hints showed, `odr` print misprints (4:16, 8:25, 12:31) left correct in `odr`.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.

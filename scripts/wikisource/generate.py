@@ -227,7 +227,8 @@ def render_verse(v, ch):
 
     def cr(m):
         i = int(m.group(1)) - 1
-        return f'⟦cr:{m.group(1)}⟧' + ('{{MINNER|' + f"''{refs[i]['text']}''" + '}}' if i < len(refs) else '') + '* '
+        # A blank citation is a bare * in the print with no margin note (Mark 12:38, 13:34): the star alone.
+        return f'⟦cr:{m.group(1)}⟧' + ('{{MINNER|' + f"''{refs[i]['text']}''" + '}}' if i < len(refs) and refs[i]['text'].strip() else '') + '* '
 
     def na(m):
         n = notes.get(m.group(1))
