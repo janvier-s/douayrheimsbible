@@ -164,7 +164,9 @@ describe('the corpus markup', () => {
 		// 2,228 before Jude 1:11 gained the print's 'Nu. 22.' and 'Nu. 16.' (2026-11-17).
 		// 2,230 before Matt 4:12's 'Mr. 1, 14.' and 'Luc. 4, 14.' became one entry: the 1582
 		// print has one * for both (2026-11-17).
-		expect(crossRefs).toHaveLength(2229);
+		// 2,229 before Mark 14:25's 'See Annot. in Mat. c. 26, 29.' became a gloss note (the print has
+		// a ∷ and a margin gloss there, not a citation; 2026-11-18).
+		expect(crossRefs).toHaveLength(2228);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -183,7 +185,8 @@ describe('the corpus markup', () => {
 		// 43,943 before Matt 8:19 got its own cross_ref (Lu. 9, 57.): +1 block.
 		// 43,944 before Jude 1:11 got the print's Nu. 22. and Nu. 16. cross_refs (+2 blocks; 2026-11-17).
 		// 43,946 before Matt 4:12's two cross_refs became one, as printed (-1 block; 2026-11-17).
-		expect(blocks).toHaveLength(43945);
+		// 43,945 before Mark 14:25's cross_ref became a gloss note (-1 block; 2026-11-18).
+		expect(blocks).toHaveLength(43944);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -274,7 +277,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,759 of 13,776 markers', () => {
+	it('binds 13,760 of 13,777 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -297,10 +300,12 @@ describe('the corpus markup', () => {
 		// 2026-11-17). 1 Tim 2:6 also lost its second, unbound <na>[1].
 		// 13,760 before the later-edition Jude 1:11 lectionary note (S. Silverius; not in
 		// the 1582 print, whose * there is the Nu. 22. citation) was removed (2026-11-17).
-		expect(bound).toBe(13759);
+		// 13,759 before Mark 14:25's former cross_ref became a bound gloss note (2026-11-18).
+		expect(bound).toBe(13760);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
 		expect(unbound).toBe(17);
-		expect(bound + unbound).toBe(13776);
+		// 13,776 before Mark 14:25's cross_ref became a bound gloss marker (2026-11-18).
+		expect(bound + unbound).toBe(13777);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming

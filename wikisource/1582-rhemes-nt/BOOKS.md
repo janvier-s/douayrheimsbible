@@ -225,6 +225,41 @@ Open, chapters 7-10:
 
 Resume at page 145 (11:9): ch 11 starts on 144 (read), pages 145-160 unchecked.
 
+## Mark: round 4, chapters 11:9-14 with the chapter 13 and 14 annotations (2026-11-18)
+
+Pages 145-156 (11:9 to 14:72, the annotations of chapters 11-14, and the chapter 15 summary with 15:1-8 on page 156,
+which share that page) were read on two-page sheets at 0.4, margin and word crops, and published. `paragraphs.json`
+now has chapters 1-14. Chapter 15 from 15:9 on and chapter 16 (pages 157-160) are NOT checked.
+
+Seen / already right / changed:
+
+- Margin-only citations (the print has no `*` before the italic Old Testament quotation): 11:9, 11:17, 12:10, 12:26,
+  12:29, 12:31, 12:36 (cross_ref kept), 13:14 (after the `‖`; the `*` was before it), 14:27: `<cr>` moved to the verse end
+  in both datasets. Drop-cap verse 1 stars removed in 12:1, 13:1, 14:1, 15:1 (citation to the verse end).
+  11:20: the `*` stands after "And", not before it.
+- Headings with no ∷ in text or margin (kind `head`, both datasets): MVNDAY. (11:12), TVESDAY. (11:20), the Chap. XIII
+  side headings (13:1 "See the Annotations vpon S. Matthew c. 24.", 13:4 TVESDAY night., 13:7, 13:9, 13:12, 13:13),
+  TENEBRÆ Wedneſday. (14:1), MAVNDY Thurſday. (14:12), THVRSDAY night. (14:26), GOOD FRIDAY. (15:1). 11:20 lectionary note
+  now reads "b The Goſpel for S. Gregorius…" (the print keys it with a superscript b before 11:22 "And Iesvs"; Matthew 15:9
+  does the same with "a").
+- 14:25 "of the fruite ∷ of the vine": the print has a ∷ and a roman gloss "See Annot. in Mat. c. 26, 29." in the
+  outer margin, not a citation: the cross_ref became a gloss note (both datasets; `export.corpus.test.ts` counts updated).
+- Citation spelling as printed: 14:22 "Luc. 21, 19." (both datasets). Annotation star: 13 ann 14 "abomination of deſolation _
+  which by Antichriſt" (Hyppolyt. note). 12:38 "doctrine, _ Take heede" and 13:34 "authoritie _ ouer ech" carry a `_` in the
+  print but no margin note beside them: left as is (cannot be represented; open).
+- Annotation titles: ")" on ch 12 ann 19, 24, 24 (`PAREN_TITLES`); the others of chapters 11-14 read "]" on the crops and sheets (13 ann 6, 14, 22
+  and 14 ann 6, 22, 23, 71 only at 0.4).
+- Macrons (odr-original): 12:43 margin "mā", 14:23 margin "cōmaundement", 14:51 "vpō the bare", 14:64 margin
+  "predictiō" and "takē". Chapter 11-14 verse text has no other macron the Tesseract hints or the crops showed.
+- Page structure (generate.py): 149 starts "ſhal receiue larger iudgement" (148 ends "theſe", catchword "ſhal"); 151 starts "be." (150
+  ends "neither ſhal", catchword "be."); catchwords "And" (149, as printed, not AND), "ring" (152) with hea-/ring in SPLIT_WORDS,
+  "ANNOT." (155); 156 opens with ANNOTATIONS Chap. XIIII. (PAGE_STARTS '@annhead'); MANUAL_PARAS 11:15 (word 5), 12:13, 12:35, 12:41, 13:32;
+  NO_PARAS 13:33. Pages 114-144 regenerate byte-identical.
+
+Open: step 6 word alignment for chapters 11-14; chapter 11-14 paragraph indents were taken from the OCR and checked at the verses above.
+
+Resume at page 157 (15:8-32 seen at 0.4, marks 15:28 etc. not yet fixed): chapters 15-16 are the last round.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.

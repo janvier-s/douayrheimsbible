@@ -258,7 +258,8 @@ SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 
 
 # Annotation titles the print closes with ")" instead of "]" (read on the scans): (book, chapter, annotation index).
 PAREN_TITLES = {('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
-                ('mark', 10, 0), ('mark', 10, 1), ('mark', 10, 2), ('mark', 10, 3), ('mark', 10, 4)}
+                ('mark', 10, 0), ('mark', 10, 1), ('mark', 10, 2), ('mark', 10, 3), ('mark', 10, 4),
+                ('mark', 12, 1), ('mark', 12, 2), ('mark', 12, 3)}
 
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
@@ -531,7 +532,7 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
                ('matthew', 113): 'wil persvade him and',
                # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
-               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake', ('mark', 141): '@chap', ('mark', 144): '@annhead',
+               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake', ('mark', 141): '@chap', ('mark', 144): '@annhead', ('mark', 149): 'shal receiue larger iudgement', ('mark', 151): 'be and vnles the lord', ('mark', 156): '@annhead',
                ('mark', 152): 'sorraine sovldiars so shal'}
 
 
@@ -562,7 +563,7 @@ def signature(wiki):
 CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
               ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
-              ('mark', 130): 'he', ('mark', 140): 'Chap. X.', ('mark', 143): 'ANNOT', ('mark', 160): 'THE',
+              ('mark', 130): 'he', ('mark', 140): 'Chap. X.', ('mark', 143): 'ANNOT', ('mark', 149): 'And', ('mark', 152): 'ring', ('mark', 155): 'ANNOT.', ('mark', 160): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
@@ -570,7 +571,7 @@ CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matth
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
 # Rendered {{hws|de|desert.}} at the page end and {{hwe|sert.|desert.}} at the next page's start.
 SPLIT_WORDS = {('mark', 115): ('de', 'sert.', 'desert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
-               ('mark', 129): ('He', 'rodias', 'Herodias')}
+               ('mark', 129): ('He', 'rodias', 'Herodias'), ('mark', 152): ('hea', 'ring', 'hearing')}
 
 
 def apply_page_starts(S, starts):
@@ -611,13 +612,14 @@ MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 
                 ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]],
                 ('matthew', 21): [[33, 0]], ('matthew', 22): [[15, 0]], ('matthew', 23): [[16, 0]],
                 ('matthew', 24): [[15, 0]], ('mark', 4): [[3, 3]], ('mark', 5): [[35, 0]],
-                ('mark', 8): [[22, 0]], ('mark', 9): [[38, 0]]}
+                ('mark', 8): [[22, 0]], ('mark', 9): [[38, 0]], ('mark', 11): [[15, 5]],
+                ('mark', 12): [[13, 0], [35, 0], [41, 0]], ('mark', 13): [[32, 0]]}
 
 # Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81),
 # 22:16 (90, mid-line) are flush left; 26:2 (mid-line) and 26:3 (102) sit beside the drop cap.
 NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]],
             ('matthew', 26): [[2, 0], [3, 0]], ('mark', 4): [[3, 0]], ('mark', 6): [[50, 7]],
-            ('mark', 7): [[26, 0], [27, 0]], ('mark', 9): [[3, 0]]}
+            ('mark', 7): [[26, 0], [27, 0]], ('mark', 9): [[3, 0]], ('mark', 13): [[33, 0]]}
 
 
 def export_paragraphs(S, paras):

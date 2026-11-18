@@ -25,7 +25,8 @@
       "notes": [
         {
           "marker": 1,
-          "text": "<i>Hyppolyt. li. de Antichristo. Cypr. de Coen. Do. nu. 2.</i>"
+          "text": "<i>Hyppolyt. li. de Antichristo. Cypr. de Coen. Do. nu. 2.</i>",
+          "star": true
         },
         {
           "marker": 2,
