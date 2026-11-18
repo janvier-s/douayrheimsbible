@@ -291,6 +291,20 @@ Open:
   still "Lev." (print: "Leu. 19, 18." read at 0.4).
 - Step 6 word alignment between `odr` and `odr-original` for chapters 3-16, and the paragraph indents of chapters 11-16 (OCR + eye).
 
+## Mark: round 6, macrons and follow-ups (2026-11-18)
+
+**Macrons, chapters 3-6 and 15-16 (odr-original only).** Method: the annotation regions of the scans were cut into bands at 0.8-0.85
+and read by `agy --model gemini-3.8-flash-low` (as the user asked), the Tesseract TSVs gave é/ë/~ hints, and every candidate was
+checked on a 1.8-2x crop before the data changed. Flash low is unreliable on its own: it invented words ("finne"), missed the known
+"wēche", reported "vnderſtãd" twice where only the second is barred, and marked "Ascenſion" and "edification" (plain on the crops).
+Changed (7): 5:42 "wēche" (verse text), ch 4 annotation "vnderſtād" (hearers might not …), ch 6 annotation "cōgruity",
+ch 15 annotations "iudgemēt" and "aſſiſtāce", ch 15 margin "Executīg lawes againſt innocents." (the bar is over the i), ch 16 annotation
+"mentiōneth". Seen and plain: ch 4 "vnderſtand" (first), "Aſcenſion" (160 margins), "edification", "Sainćts" (Tesseract's é there is the ct
+ligature), "Cyrenêan" (15:21, the data already has the circumflex). Not decided: ch 4 margin "The Church viſibly increa-ſing": the
+a before the hyphen looks barred but the word makes no sense that way; left as "increaſing". The ch 3-6 verse text and margins were not
+read in bands, only through the Tesseract hints (hints: 4/1 "thofé", 5/2 "féa" = "ſea", both plain).
+Pages 125, 128, 132, 158, 159, 160 changed (one word each, 159 two); all others byte-identical.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.
