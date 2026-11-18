@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Woodcut review</title>
+		<style>
+			:root {
+				--bg: #f6f3ec;
+				--panel: #fffdf8;
+				--ink: #22201c;
+				--muted: #6f6a60;
+				--line: #ddd6c8;
+				--accent: #8a3b12;
+				--good: #2f6b3a;
+				--none: #9b2c2c;
+				--todo: #b9b2a3;
+				--sel: #c8641e;
+			}
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--bg: #1b1a18;
+					--panel: #24221f;
+					--ink: #ece7dc;
+					--muted: #a39d90;
+					--line: #3a3732;
+					--accent: #e0915a;
+					--good: #6fbf7e;
+					--none: #e27c7c;
+					--todo: #5d584f;
+					--sel: #f0a060;
+				}
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				font:
+					14px/1.4 system-ui,
+					sans-serif;
+				background: var(--bg);
+				color: var(--ink);
+				display: grid;
+				grid-template-columns: 230px 1fr;
+				grid-template-rows: auto 1fr;
+				height: 100vh;
+			}
+			header {
+				grid-column: 1 / 3;
+				display: flex;
+				gap: 12px;
+				align-items: center;
+				flex-wrap: wrap;
+				padding: 8px 14px;
+				border-bottom: 1px solid var(--line);
+				background: var(--panel);
+			}
+			header h1 {
+				font-size: 15px;
+				margin: 0 8px 0 0;
+			}
+			.progress {
+				color: var(--muted);
+			}
+			.spacer {
+				flex: 1;
+			}
+			button,
+			.seg label {
+				font: inherit;
+				border: 1px solid var(--line);
+				background: var(--bg);
+				color: var(--ink);
+				border-radius: 6px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+			button:hover {
+				border-color: var(--accent);
+			}
+			button.primary {
+				background: var(--accent);
+				color: #fff;
+				border-color: var(--accent);
+			}
+			button.on-none {
+				background: var(--none);
+				color: #fff;
+				border-color: var(--none);
+			}
+			button.on-good {
+				background: var(--good);
+				color: #fff;
+				border-color: var(--good);
+			}
+			.seg {
+				display: inline-flex;
+			}
+			.seg input {
+				display: none;
+			}
+			.seg label {
+				border-radius: 0;
+				margin-left: -1px;
+			}
+			.seg label:first-of-type {
+				border-radius: 6px 0 0 6px;
+			}
+			.seg label:last-of-type {
+				border-radius: 0 6px 6px 0;
+			}
+			.seg input:checked + label {
+				background: var(--ink);
+				color: var(--bg);
+			}
+			nav {
+				overflow: auto;
+				border-right: 1px solid var(--line);
+				background: var(--panel);
+				padding: 6px 0;
+			}
+			nav .grp {
+				font-size: 11px;
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+				color: var(--muted);
+				padding: 10px 12px 2px;
+			}
+			nav a {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				padding: 4px 12px;
+				color: inherit;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			nav a.cur {
+				background: var(--bg);
+				font-weight: 600;
+			}
+			nav .dot {
+				width: 9px;
+				height: 9px;
+				border-radius: 50%;
+				background: var(--todo);
+				flex: none;
+			}
+			nav .dot.good {
+				background: var(--good);
+			}
+			nav .dot.none {
+				background: var(--none);
+			}
+			nav .n {
+				margin-left: auto;
+				color: var(--muted);
+				font-size: 12px;
+			}
+			main {
+				overflow: auto;
+				padding: 14px 18px 60px;
+			}
+			.bar {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				flex-wrap: wrap;
+				margin-bottom: 6px;
+			}
+			.bar h2 {
+				margin: 0;
+				font-size: 20px;
+			}
+			.hint {
+				color: var(--muted);
+				margin: 4px 0 12px;
+			}
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(var(--cell, 200px), 1fr));
+				gap: 12px;
+			}
+			.card {
+				position: relative;
+				background: var(--panel);
+				border: 2px solid var(--line);
+				border-radius: 8px;
+				padding: 6px;
+				cursor: pointer;
+				user-select: none;
+			}
+			.card:hover {
+				border-color: var(--muted);
+			}
+			.card.picked {
+				border-color: var(--sel);
+				box-shadow: 0 0 0 2px var(--sel);
+			}
+			.card .imgs {
+				display: flex;
+				gap: 4px;
+				background: #fff;
+				border-radius: 4px;
+			}
+			.card img {
+				width: 100%;
+				min-width: 0;
+				height: auto;
+				display: block;
+				image-rendering: auto;
+			}
+			.card .cap {
+				display: flex;
+				justify-content: space-between;
+				gap: 6px;
+				font-size: 12px;
+				margin-top: 4px;
+			}
+			.card .cap .w {
+				color: var(--muted);
+			}
+			.badge {
+				position: absolute;
+				top: -9px;
+				left: -9px;
+				width: 26px;
+				height: 26px;
+				border-radius: 50%;
+				background: var(--sel);
+				color: #fff;
+				font-weight: 700;
+				display: grid;
+				place-items: center;
+			}
+			.tag {
+				font-size: 11px;
+				border-radius: 4px;
+				padding: 0 5px;
+				border: 1px solid var(--line);
+				color: var(--muted);
+			}
+			.tag.auto {
+				border-color: var(--good);
+				color: var(--good);
+			}
+			.tag.bad {
+				border-color: var(--none);
+				color: var(--none);
+			}
+			.zoombtn {
+				position: absolute;
+				top: 8px;
+				right: 8px;
+				opacity: 0;
+				padding: 2px 7px;
+			}
+			.card:hover .zoombtn {
+				opacity: 1;
+			}
+			textarea {
+				width: 100%;
+				max-width: 640px;
+				font: inherit;
+				padding: 6px;
+				border-radius: 6px;
+				border: 1px solid var(--line);
+				background: var(--panel);
+				color: var(--ink);
+			}
+			#viewer {
+				position: fixed;
+				inset: 0;
+				background: rgba(10, 10, 10, 0.92);
+				display: none;
+				z-index: 10;
+			}
+			#viewer.open {
+				display: block;
+			}
+			#viewer .stage {
+				position: absolute;
+				inset: 0;
+				overflow: hidden;
+				cursor: grab;
+			}
+			#viewer .stage.drag {
+				cursor: grabbing;
+			}
+			#viewer .stage .pair {
+				position: absolute;
+				transform-origin: 0 0;
+				display: flex;
+				gap: 20px;
+			}
+			#viewer .stage img {
+				background: #fff;
+				display: block;
+			}
+			#viewer .top {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				padding: 10px 14px;
+				color: #eee;
+				background: linear-gradient(#000a, #0000);
+				z-index: 2;
+			}
+			#viewer .top button {
+				background: #222;
+				color: #eee;
+				border-color: #555;
+			}
+			#viewer .top .t {
+				font-weight: 600;
+			}
+			#viewer .top .k {
+				color: #aaa;
+				font-size: 12px;
+			}
+			#viewer .top {
+				flex-wrap: wrap;
+			}
+			#viewer .top button.on {
+				background: var(--sel);
+				border-color: var(--sel);
+				color: #fff;
+			}
+			#viewer .strip {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				gap: 6px;
+				overflow-x: auto;
+				padding: 8px 10px;
+				background: #000c;
+				z-index: 2;
+			}
+			#viewer .strip div {
+				position: relative;
+				flex: none;
+				border: 2px solid #444;
+				border-radius: 4px;
+				cursor: pointer;
+				background: #fff;
+			}
+			#viewer .strip div.cur {
+				border-color: #fff;
+			}
+			#viewer .strip div.picked {
+				border-color: var(--sel);
+			}
+			#viewer .strip img {
+				height: 64px;
+				display: block;
+			}
+			#viewer .strip span {
+				position: absolute;
+				top: 1px;
+				left: 1px;
+				background: var(--sel);
+				color: #fff;
+				font: 700 11px system-ui;
+				border-radius: 3px;
+				padding: 0 4px;
+			}
+			@media (max-width: 700px) {
+				body {
+					grid-template-columns: 1fr;
+					grid-template-rows: auto auto 1fr;
+				}
+				header {
+					grid-column: 1;
+				}
+				nav {
+					max-height: 30vh;
+					border-right: 0;
+					border-bottom: 1px solid var(--line);
+				}
+				main {
+					padding: 12px 16px 60px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>1582 Rhemes woodcuts</h1>
+			<span class="progress" id="progress"></span>
+			<span class="spacer"></span>
+			<span class="seg" title="What the prints show">
+				<input type="radio" name="view" id="v-raw" value="raw" checked /><label for="v-raw"
+					>Scan</label
+				>
+				<input type="radio" name="view" id="v-clean" value="clean" /><label for="v-clean"
+					>Cleaned</label
+				>
+				<input type="radio" name="view" id="v-both" value="both" /><label for="v-both">Both</label>
+			</span>
+			<label>Size <input type="range" id="size" min="120" max="520" step="20" value="220" /></label>
+			<button id="import">Import…</button>
+			<button class="primary" id="export">Export review.json</button>
+			<input type="file" id="file" accept=".json" hidden />
+		</header>
+		<nav id="nav"></nav>
+		<main id="main"></main>
+
+		<div id="viewer">
+			<div class="top">
+				<span class="t" id="vt"></span>
+				<span class="k"
+					>wheel zoom · drag pan · ←/→ next print (zoom kept) · P pick · 1/2/3 rank · 0 unpick · C
+					scan/cleaned · F fit · Esc</span
+				>
+				<span class="spacer"></span>
+				<button id="vprev">‹ Prev</button><button id="vnext">Next ›</button>
+				<button id="vpick">Pick</button>
+				<button data-rank="1">#1</button><button data-rank="2">#2</button
+				><button data-rank="3">#3</button> <button id="vfit">Fit</button
+				><button id="vclose">Close</button>
+			</div>
+			<div class="stage" id="stage"><div class="pair" id="pair"></div></div>
+			<div class="strip" id="strip"></div>
+		</div>
+
+		<script>
+			const DATA = /*DATA*/ null;
+			const KEY = 'orn-review-v1';
+			let state = {};
+			try {
+				state = JSON.parse(localStorage.getItem(KEY) || '{}');
+			} catch (e) {
+				state = {};
+			}
+			const save = () => {
+				try {
+					localStorage.setItem(KEY, JSON.stringify(state));
+				} catch (e) {}
+			};
+			let view = 'raw',
+				cur = 0;
+			try {
+				view = localStorage.getItem(KEY + ':view') || 'raw';
+				cur = +(localStorage.getItem(KEY + ':cur') || 0);
+			} catch (e) {}
+			document.getElementById('v-' + view).checked = true;
+
+			const st = (id) => state[id] || (state[id] = { picks: [], verdict: null, note: '' });
+			function status(b) {
+				const s = state[b.id];
+				if (!s) return 'todo';
+				if (s.verdict === 'none') return 'none';
+				if (s.picks.length || s.verdict === 'auto') return 'good';
+				return 'todo';
+			}
+
+			function renderNav() {
+				const nav = document.getElementById('nav');
+				nav.innerHTML = '';
+				let grp = null;
+				DATA.forEach((b, i) => {
+					const g =
+						b.kind === 'initial'
+							? 'Letter ' + b.letter
+							: b.kind === 'headpiece'
+								? 'Headpieces'
+								: 'Tailpieces';
+					if (g !== grp) {
+						grp = g;
+						const d = document.createElement('div');
+						d.className = 'grp';
+						d.textContent = g;
+						nav.appendChild(d);
+					}
+					const a = document.createElement('a');
+					a.className = i === cur ? 'cur' : '';
+					a.innerHTML = `<span class="dot ${status(b)}"></span><span>${b.short}</span><span class="n">${b.prints.length}</span>`;
+					a.onclick = () => go(i);
+					nav.appendChild(a);
+				});
+				const done = DATA.filter((b) => status(b) !== 'todo').length;
+				document.getElementById('progress').textContent = `${done} / ${DATA.length} reviewed`;
+			}
+
+			function imgsHTML(p) {
+				const one = (src) => `<img loading="lazy" src="${src}" alt="${p.where}">`;
+				if (view === 'both') return one(p.raw) + one(p.clean);
+				return one(view === 'raw' ? p.raw : p.clean);
+			}
+
+			function renderMain() {
+				const b = DATA[cur],
+					s = st(b.id),
+					m = document.getElementById('main');
+				const verdictBtn = (v, label, cls) =>
+					`<button data-verdict="${v}" class="${s.verdict === v ? cls : ''}">${label}</button>`;
+				m.innerHTML = `
+    <div class="bar">
+      <h2>${b.title}</h2>
+      <span class="tag">${b.prints.length} print${b.prints.length > 1 ? 's' : ''}</span>
+      <span class="spacer"></span>
+      ${verdictBtn('auto', 'Keep auto pick', 'on-good')}
+      ${verdictBtn('none', 'None good', 'on-none')}
+      <button id="clear">Clear</button>
+      <button id="prev">← Prev</button><button class="primary" id="next">Next →</button>
+    </div>
+    <p class="hint">Click prints to rank your top 3 (click again to drop). Double-click or Z on a print to zoom. Keys: ←/→ block, N none, A auto.</p>
+    <div class="grid" id="grid"></div>
+    <p><textarea id="note" rows="2" placeholder="Note (optional): e.g. all prints over-inked at the foot">${s.note || ''}</textarea></p>`;
+				const grid = m.querySelector('#grid');
+				b.prints.forEach((p, i) => {
+					const c = document.createElement('div');
+					const rank = s.picks.indexOf(p.name);
+					c.className = 'card' + (rank >= 0 ? ' picked' : '');
+					c.innerHTML =
+						(rank >= 0 ? `<span class="badge">${rank + 1}</span>` : '') +
+						`<button class="zoombtn" title="Zoom">⤢</button><div class="imgs">${imgsHTML(p)}</div>
+       <div class="cap"><span>${p.where}</span><span class="w">${p.w}×${p.h}
+       ${p.name === b.auto ? '<span class="tag auto">auto</span>' : ''}${p.bad ? '<span class="tag bad">bad crop</span>' : ''}</span></div>`;
+					c.onclick = (e) => {
+						if (e.target.classList.contains('zoombtn')) {
+							openViewer(i);
+							return;
+						}
+						togglePick(p.name);
+					};
+					c.ondblclick = () => openViewer(i);
+					c.onmouseenter = () => {
+						hover = i;
+					};
+					grid.appendChild(c);
+				});
+				m.querySelectorAll('[data-verdict]').forEach(
+					(btn) =>
+						(btn.onclick = () => {
+							s.verdict = s.verdict === btn.dataset.verdict ? null : btn.dataset.verdict;
+							if (s.verdict === 'none') s.picks = [];
+							save();
+							render();
+						})
+				);
+				m.querySelector('#clear').onclick = () => {
+					state[b.id] = { picks: [], verdict: null, note: s.note };
+					save();
+					render();
+				};
+				m.querySelector('#prev').onclick = () => go(cur - 1);
+				m.querySelector('#next').onclick = () => go(cur + 1);
+				m.querySelector('#note').oninput = (e) => {
+					s.note = e.target.value;
+					save();
+				};
+			}
+			let hover = -1;
+
+			function togglePick(name) {
+				const s = st(DATA[cur].id);
+				const k = s.picks.indexOf(name);
+				if (k >= 0) s.picks.splice(k, 1);
+				else {
+					if (s.picks.length >= 3) s.picks.pop();
+					s.picks.push(name);
+				}
+				if (s.picks.length && s.verdict) s.verdict = null;
+				save();
+				render(true);
+			}
+
+			function setRank(name, r) {
+				// r = 1..3, or 0 to unpick
+				const s = st(DATA[cur].id);
+				const k = s.picks.indexOf(name);
+				if (k >= 0) s.picks.splice(k, 1);
+				if (r > 0) s.picks.splice(Math.min(r - 1, s.picks.length), 0, name);
+				s.picks = s.picks.slice(0, 3);
+				if (s.picks.length && s.verdict) s.verdict = null;
+				save();
+				render(true);
+			}
+
+			function render(keepScroll) {
+				const y = document.getElementById('main').scrollTop;
+				renderNav();
+				renderMain();
+				if (keepScroll) document.getElementById('main').scrollTop = y;
+				if (vOpen) drawViewer();
+			}
+			function go(i) {
+				cur = (i + DATA.length) % DATA.length;
+				try {
+					localStorage.setItem(KEY + ':cur', cur);
+				} catch (e) {}
+				render();
+				document.getElementById('main').scrollTop = 0;
+			}
+
+			document.querySelectorAll('input[name=view]').forEach(
+				(r) =>
+					(r.onchange = () => {
+						view = r.value;
+						try {
+							localStorage.setItem(KEY + ':view', view);
+						} catch (e) {}
+						render(true);
+					})
+			);
+			const size = document.getElementById('size');
+			size.oninput = () => document.documentElement.style.setProperty('--cell', size.value + 'px');
+			size.oninput();
+
+			// export / import
+			document.getElementById('export').onclick = () => {
+				const out = {};
+				DATA.forEach((b) => {
+					if (state[b.id]) out[b.id] = { first_use: b.first, ...state[b.id] };
+				});
+				const blob = new Blob([JSON.stringify(out, null, 1)], { type: 'application/json' });
+				const a = document.createElement('a');
+				a.href = URL.createObjectURL(blob);
+				a.download = 'review.json';
+				a.click();
+			};
+			document.getElementById('import').onclick = () => document.getElementById('file').click();
+			document.getElementById('file').onchange = async (e) => {
+				const f = e.target.files[0];
+				if (!f) return;
+				try {
+					const j = JSON.parse(await f.text());
+					for (const k in j) {
+						const { first_use, ...rest } = j[k];
+						state[k] = rest;
+					}
+					save();
+					render();
+				} catch (err) {
+					alert('Could not read that file: ' + err.message);
+				}
+			};
+
+			// zoom viewer
+			let vOpen = false,
+				vi = 0,
+				vview = 'raw',
+				z = 1,
+				tx = 0,
+				ty = 0;
+			const viewer = document.getElementById('viewer'),
+				stage = document.getElementById('stage'),
+				pair = document.getElementById('pair');
+			function openViewer(i) {
+				vi = i;
+				vOpen = true;
+				vview = view === 'clean' ? 'clean' : 'raw';
+				viewer.classList.add('open');
+				drawViewer(true);
+			}
+			function closeViewer() {
+				vOpen = false;
+				viewer.classList.remove('open');
+			}
+			function drawViewer(fit) {
+				const b = DATA[cur],
+					p = b.prints[vi],
+					s = st(b.id),
+					rank = s.picks.indexOf(p.name);
+				document.getElementById('vt').textContent =
+					`${b.short} · ${p.where} (${vi + 1}/${b.prints.length}) · ${view === 'both' ? 'scan + cleaned' : vview}` +
+					(rank >= 0 ? ` · pick #${rank + 1}` : '');
+				document.getElementById('vpick').textContent = rank >= 0 ? 'Unpick' : 'Pick';
+				document
+					.querySelectorAll('#viewer [data-rank]')
+					.forEach((btn) => btn.classList.toggle('on', +btn.dataset.rank === rank + 1));
+				const strip = document.getElementById('strip');
+				if (strip.dataset.block !== b.id || strip.childElementCount !== b.prints.length) {
+					strip.dataset.block = b.id;
+					strip.innerHTML = b.prints
+						.map(
+							(q, i) =>
+								`<div data-i="${i}" title="${q.where}"><img loading="lazy" src="${q.raw}"></div>`
+						)
+						.join('');
+					strip.querySelectorAll('div').forEach(
+						(d) =>
+							(d.onclick = () => {
+								vi = +d.dataset.i;
+								drawViewer();
+							})
+					);
+				}
+				strip.querySelectorAll('div').forEach((d, i) => {
+					const r = s.picks.indexOf(b.prints[i].name);
+					d.className = (i === vi ? 'cur ' : '') + (r >= 0 ? 'picked' : '');
+					const old = d.querySelector('span');
+					if (old) old.remove();
+					if (r >= 0) d.insertAdjacentHTML('beforeend', `<span>${r + 1}</span>`);
+				});
+				const curThumb = strip.children[vi];
+				if (curThumb) curThumb.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+				const srcs = view === 'both' ? [p.raw, p.clean] : [vview === 'raw' ? p.raw : p.clean];
+				pair.innerHTML = srcs
+					.map((s) => `<img src="${s}" width="${p.w}" height="${p.h}" draggable="false">`)
+					.join('');
+				if (fit) {
+					const W = stage.clientWidth,
+						H = stage.clientHeight - 140,
+						pw = p.w * srcs.length + 20 * (srcs.length - 1);
+					z = Math.min(W / pw, H / p.h) * 0.92;
+					tx = (W - pw * z) / 2;
+					ty = 50 + (H - p.h * z) / 2;
+				}
+				apply();
+			}
+			const apply = () => {
+				pair.style.transform = `translate(${tx}px,${ty}px) scale(${z})`;
+			};
+			stage.addEventListener(
+				'wheel',
+				(e) => {
+					e.preventDefault();
+					const f = Math.exp(-e.deltaY * 0.0015),
+						r = stage.getBoundingClientRect();
+					const mx = e.clientX - r.left,
+						my = e.clientY - r.top;
+					tx = mx - (mx - tx) * f;
+					ty = my - (my - ty) * f;
+					z *= f;
+					apply();
+				},
+				{ passive: false }
+			);
+			let dragFrom = null;
+			stage.addEventListener('pointerdown', (e) => {
+				dragFrom = [e.clientX - tx, e.clientY - ty];
+				stage.classList.add('drag');
+				stage.setPointerCapture(e.pointerId);
+			});
+			stage.addEventListener('pointermove', (e) => {
+				if (dragFrom) {
+					tx = e.clientX - dragFrom[0];
+					ty = e.clientY - dragFrom[1];
+					apply();
+				}
+			});
+			stage.addEventListener('pointerup', () => {
+				dragFrom = null;
+				stage.classList.remove('drag');
+			});
+			document.getElementById('vclose').onclick = closeViewer;
+			const step = (d) => {
+				const n = DATA[cur].prints.length;
+				vi = (vi + d + n) % n;
+				drawViewer();
+			}; // zoom kept
+			document.getElementById('vprev').onclick = () => step(-1);
+			document.getElementById('vnext').onclick = () => step(1);
+			document.getElementById('vfit').onclick = () => drawViewer(true);
+			document.querySelectorAll('#viewer [data-rank]').forEach(
+				(btn) =>
+					(btn.onclick = () => {
+						const p = DATA[cur].prints[vi],
+							rank = st(DATA[cur].id).picks.indexOf(p.name) + 1;
+						setRank(p.name, rank === +btn.dataset.rank ? 0 : +btn.dataset.rank);
+					})
+			);
+			// pointer: a click (no drag) does nothing, so panning never picks by accident
+			stage.addEventListener('dblclick', () => drawViewer(true));
+			document.getElementById('vpick').onclick = () => togglePick(DATA[cur].prints[vi].name);
+
+			document.addEventListener('keydown', (e) => {
+				if (e.target.tagName === 'TEXTAREA') return;
+				const n = DATA[cur].prints.length;
+				if (vOpen) {
+					if (e.key === 'Escape') closeViewer();
+					else if (e.key === 'ArrowRight' || e.key === ' ') {
+						e.preventDefault();
+						step(1);
+					} else if (e.key === 'ArrowLeft') step(-1);
+					else if (e.key.toLowerCase() === 'p') togglePick(DATA[cur].prints[vi].name);
+					else if ('0123'.includes(e.key)) setRank(DATA[cur].prints[vi].name, +e.key);
+					else if (e.key.toLowerCase() === 'f') drawViewer(true);
+					else if (e.key.toLowerCase() === 'c') {
+						vview = vview === 'raw' ? 'clean' : 'raw';
+						drawViewer();
+					}
+					return;
+				}
+				if (e.key === 'ArrowRight') go(cur + 1);
+				else if (e.key === 'ArrowLeft') go(cur - 1);
+				else if (e.key.toLowerCase() === 'z' && hover >= 0) openViewer(hover);
+				else if (e.key.toLowerCase() === 'n') document.querySelector('[data-verdict=none]').click();
+				else if (e.key.toLowerCase() === 'a') document.querySelector('[data-verdict=auto]').click();
+			});
+
+			if (!DATA || !DATA.length) document.getElementById('main').textContent = 'No data embedded.';
+			else {
+				cur = Math.min(cur, DATA.length - 1);
+				render();
+			}
+		</script>
+	</body>
+</html>

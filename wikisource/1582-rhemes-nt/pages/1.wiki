@@ -2,32 +2,30 @@
 
 {{center|{{xx-larger|NEVV TESTAMENT}}}}
 {{center block|{{larger|OF IESVS CHRIST, TRANSLATED FAITHFVLLY INTO ENGLISH,}}}}
-{{center block|out of the authentical Latin, according to the beſt corrected copies of the ſame, diligently conferred vvith the Greeke and other editions in diuers languages: Vvith {{small-caps|Argvments}} of bookes and chapters, {{small-caps|Annotations}}, and other neceſſarie helpes, for the better vnderſtanding of the text, and ſpecially for the diſcouerie of the {{small-caps|Corrvptions}} of diuers late tranſlations, and for cleeting the {{small-caps|Controversies}} in religion, of theſe daies:
+{{center block|out of the authentical Latin, according to the be{{ls}}t corrected copies of the {{ls}}ame, diligently conferred vvith the Greeke and other editions in diuers languages: Vvith {{small-caps|Argvments}} of bookes and chapters, {{small-caps|Annotations}}, and other nece{{ls}}{{ls}}arie helpes, for the better vnder{{ls}}tanding of the text, and {{ls}}pecially for the di{{ls}}couerie of the {{small-caps|Corrvptions}} of diuers late tran{{ls}}lations, and for cleeting the {{small-caps|Controversies}} in religion, of the{{ls}}e daies:
 }}
 
 {{center|{{small-caps|In the English College of Rhemes.}}}}
 
 {{center block|
-{{center|Pſal. 118.}}
+{{center|P{{ls}}al. 118.}}
 
-''Da mihi intellectum, & ſcrutabor legem tuam, & cuſtodiam illam in toto corde meo.''
+''Da mihi intellectum, & {{ls}}crutabor legem tuam, & cu{{ls}}todiam illam in toto corde meo.''
 
 {{center|That is,}}
 
-Giue me vnderſtanding, and I vvil ſearche thy lavv, and vvil keepe it vvith my vvhole hart.
+Giue me vnder{{ls}}tanding, and I vvil {{ls}}earche thy lavv, and vvil keepe it vvith my vvhole hart.
 }}
-
 
 {{center block|
-{{center|S. Aug. tract. 2. in Epiſt. Ioan.}}
+{{center|S. Aug. tract. 2. in Epi{{ls}}t. Ioan.}}
 
-{{smaller block|''Omnia quæ leguntur in Scripturis ſanctis, ad inſtructionem & ſalutem noſtram intentè oportet audire: maximè tamen memoriæ commendanda ſunt, quæ aduerſus Hæreticos valent plurimùm: quorum inſidiæ, infirmiores quoſque & negligentiores circumuenire non ceſſant.''}}
+{{smaller block|''Omnia quæ leguntur in Scripturis {{ls}}anctis, ad in{{ls}}tructionem & {{ls}}alutem no{{ls}}tram intentè oportet audire: maximè tamen memoriæ commendanda {{ls}}unt, quæ aduer{{ls}}us Hæreticos valent plurimùm: quorum in{{ls}}idiæ, infirmiores quo{{ls}}que & negligentiores circumuenire non ce{{ls}}{{ls}}ant.''}}
 
 {{center|That is,}}
 
-{{smaller block|Al things that are readde in holy Scriptures, vve muſt heare vvith great attention, to our inſtruction and ſaluation: but thoſe things ſpecially muſt be commended to memorie, vvhich make moſt againſt Heretikes: vvhoſe deceites ceaſe not to circumuent and beguile al the vveaker ſort and the more negligent perſons.}}
+{{smaller block|Al things that are readde in holy Scriptures, vve mu{{ls}}t heare vvith great attention, to our in{{ls}}truction and {{ls}}aluation: but tho{{ls}}e things {{ls}}pecially mu{{ls}}t be commended to memorie, vvhich make mo{{ls}}t again{{ls}}t Heretikes: vvho{{ls}}e deceites cea{{ls}}e not to circumuent and beguile al the vveaker {{ls}}ort and the more negligent per{{ls}}ons.}}
 }}
-
 
 {{center|
 {{larger|PRINTED AT RHEMES,{{br}}

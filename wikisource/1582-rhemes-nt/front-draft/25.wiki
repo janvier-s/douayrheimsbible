@@ -1,27 +1,27 @@
-<noinclude><pagequality level="1" user="" /></noinclude>{{c|{{larger|THE SIGNIFICATION OR MEANING OF THE NVMBERS AND MARKES vſed in this Nevv Teſtament.}}}}
+<noinclude><pagequality level="1" user="" /></noinclude>{{c|{{larger|THE SIGNIFICATION OR MEANING OF THE NVMBERS AND MARKES v{{ls}}ed in this Nevv Te{{ls}}tament.}}}}
 
-THE numbers in the inner margent of the text, ſhevv the number of verſes in euery Chapter.
+THE numbers in the inner margent of the text, {{ls}}hevv the number of ver{{ls}}es in euery Chapter.
 
-The numbers in the Arguments before euery Chapter, point to the ſame numbers of verſes in the text, treating of the ſame matter.
+The numbers in the Arguments before euery Chapter, point to the {{ls}}ame numbers of ver{{ls}}es in the text, treating of the {{ls}}ame matter.
 
-The numbers in the beginning of the Annotations, ſignifie, that the Annotation is vpon ſuch a verſe of the text.
+The numbers in the beginning of the Annotations, {{ls}}ignifie, that the Annotation is vpon {{ls}}uch a ver{{ls}}e of the text.
 
-The numbers in the inner margent, or els vvhere, ioyned to the citations of Scripture, if they be vvritten thus, ''Gen.'' 4,16. the firſt is the chapter, the ſecond is the verſe. If thus, ''Gen.'' 4.16. both are the Chapters. If thus, ''Gen.'' 4,16.17.18. the firſt is the chapter, al the reſt, the verſes. If thus, ''Gen.'' 4,16.5,7. it ſignifieth, ''chap.'' 4. ''verſ.'' 16. and ''chap.'' 5. ''verſ.'' 7.
+The numbers in the inner margent, or els vvhere, ioyned to the citations of Scripture, if they be vvritten thus, ''Gen.'' 4,16. the fir{{ls}}t is the chapter, the {{ls}}econd is the ver{{ls}}e. If thus, ''Gen.'' 4.16. both are the Chapters. If thus, ''Gen.'' 4,16.17.18. the fir{{ls}}t is the chapter, al the re{{ls}}t, the ver{{ls}}es. If thus, ''Gen.'' 4,16.5,7. it {{ls}}ignifieth, ''chap.'' 4. ''ver{{ls}}.'' 16. and ''chap.'' 5. ''ver{{ls}}.'' 7.
 
-† This croſſe ſignifieth the beginning of euery verſe.
+† This cro{{ls}}{{ls}}e {{ls}}ignifieth the beginning of euery ver{{ls}}e.
 
-" This marke in the text, ſignifieth that there is an Annotation vpon that vvord or vvordes vvhich folovv the ſaid marke.
+‖ This marke in the text, {{ls}}ignifieth that there is an Annotation vpon that vvord or vvordes vvhich folovv the {{ls}}aid marke.
 
-* This ſtarre in the text, or in the Annotatiōs, ſignifieth the allegations cited ouer againſt the ſame in the margent, or ſome other thing anſvvering therevnto.
+* This {{ls}}tarre in the text, or in the Annotatiōs, {{ls}}ignifieth the allegations cited ouer again{{ls}}t the {{ls}}ame in the margent, or {{ls}}ome other thing an{{ls}}vvering therevnto.
 
-[ ] This marke ſhevveth an other reading in the margent. And if there be nothing in the margent, it ſignifieth that thoſe vvordes are not in ſome copies.
+[ ] This marke {{ls}}hevveth an other reading in the margent. And if there be nothing in the margent, it {{ls}}ignifieth that tho{{ls}}e vvordes are not in {{ls}}ome copies.
 
-⁘ c b Theſe notes in the text, referre the reader to the ſelf ſame in the margent.
+⁘ c b The{{ls}}e notes in the text, referre the reader to the {{ls}}elf {{ls}}ame in the margent.
 
 Mt. for Matthevv.
 
 Mr. for Marke.
 
-┫ This marke ſignifieth the ending of Goſpels and Epiſtles.
+┫ This marke {{ls}}ignifieth the ending of Go{{ls}}pels and Epi{{ls}}tles.
 
-Their beginning is knovven by the margent, vvhere directly at the beginning of them, is ſet, ''The Goſpel, or, The Epiſtle vpon ſuch a day.'' And if it could not be ſo ſet directly (becauſe of other marginal notes ) then b is the marke of their beginning. And if ſome fevv by ouerſight be not noted in the margent, it is ſupplied in the table of Epiſtles and Goſpels, at the end of this booke.<noinclude>{{rh|||d|THE}}</noinclude>
+Their beginning is knovven by the margent, vvhere directly at the beginning of them, is {{ls}}et, ''The Go{{ls}}pel, or, The Epi{{ls}}tle vpon {{ls}}uch a day.'' And if it could not be {{ls}}o {{ls}}et directly (becau{{ls}}e of other marginal notes) then b is the marke of their beginning. And if {{ls}}ome fevv by ouer{{ls}}ight be not noted in the margent, it is {{ls}}upplied in the table of Epi{{ls}}tles and Go{{ls}}pels, at the end of this booke.<noinclude>{{rh|||d|THE}}</noinclude>

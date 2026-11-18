@@ -147,6 +147,8 @@ def ocr_pages(book, source):
                 pages.append((m['id'],) + page_streams(tsv, source, m['id']))
     for m in json.loads((O.TK / book / 'manifest.json').read_text()):
         tsv = O.TK / book / f"{m['id']}.tsv" if source == 'tk' else O.SCAN / book / f"{m['id']}.tsv"
+        if source != 'tk' and not tsv.exists():  # PDF pages (Luke, John) have no sancta scan: Tesseract on the cut page
+            tsv = O.TK / book / f"{m['id']}.tess.tsv"
         if tsv.exists():
             pages.append((m['id'],) + page_streams(tsv, source, m['id']))
     return pages
@@ -367,8 +369,10 @@ def run(book, out_dir):
                 continue
             if any(key(clean_ocr(o)) == k for o in other) and 0 <= i < len(D):
                 loc, sec = body[i][1], body[i][2]
+                jw = next((src['tk']['Ob'][j] for ii, j in src['tk']['ins'] if ii == i and src['tk']['Ob'][j][0] == w), None)
                 rows.append(dict(cls='missing', conf='both', sec=sec, loc=loc, data='-', tk=w, ts=w,
-                                 ctx=ctx(i) + ' + ' + w))
+                                 ctx=ctx(i) + ' + ' + w,
+                                 **(dict(page=jw[1], box=','.join(map(str, jw[3]))) if jw else {})))
                 stats[f'{sec}:missing:both'] += 1
 
     # ------------------------------------------------ margins

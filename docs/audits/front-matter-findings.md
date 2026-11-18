@@ -70,3 +70,31 @@ Uncommitted, not posted. Partial pass: the items below were checked on crops; th
 ## Posted, rest of 1-30
 - Pages 1, 11-19, 29, 30 edited over other users' text and 20-28 created (revs 16471770 ... 16471804, account Sokonok), same edit summary. Page status could not be changed (proofreadpage_notallowedtext), so existing pagequality tags were kept (p1 level 3; p16-19, 29, 30 level 0). New pages 20-28 are level 1.
 - All of PDF pages 1-30 are now on en.wikisource. Drafts in wikisource/1582-rhemes-nt/pages/1-30.wiki and front-draft/ remain uncommitted.
+
+## Tenth pass: Wikisource Orthography style guide & {{ls}} migration
+- User:Beardo noted on User_talk:Sokonok (2026-11-18 19:57 UTC) that raw `ſ` in Main space is discouraged, recommending `{{ls}}` per [[Wikisource:Style guide/Orthography#Best Practices]].
+- Adopted Beardo's fixes to p18 (italic closures and {{hws}} continuation) and Sokonok's manual fixes to p3, 8, 11-17, 19.
+- Converted all 2,922 occurrences of raw `ſ` across pages 1-30 to `{{ls}}`. In Page namespace, `{{ls}}` displays `ſ` (matching the scan); in Mainspace, it displays modern `s` (avoiding search/display degradation).
+- Fixed OCR catchword mark on p25 (`" This marke` -> `‖ This marke`).
+- Normalized punctuation spacing per style guide (removed extra space before colons, inside parentheses, multiple spaces after sentence periods, and trailing line whitespace).
+- Updated `scripts/wikisource/lint.py` to allow optional parameters on `{{MarginNote}}` (such as `margin-offset`). Lint passes with 0 errors.
+
+## Eleventh pass: Formatting Refinements & Page Break Hyphenation (Pages 1–132)
+- Implemented `{{hws}}`/`{{hwe}}` across page breaks:
+  - Page 10 → 11: `{{hws|Ha|Hauing}}` / `{{hwe|uing|Hauing}}`
+  - Page 12 → 13: `{{hws|Catho|Catholike}}` / `{{hwe|like|Catholike}}`
+  - Page 18 → 19: `{{hws|accor|according}}` / `{{hwe|ding|according}}`
+  - Page 21 → 22: `{{hws|{{ls}}ignifi|{{ls}}ignification}}` / `{{hwe|cation|{{ls}}ignification}}`
+  - Page 23 → 24: `S. {{hws|Mat|Matthevv}}` / `{{hwe|thevv|Matthevv}}`
+- Converted ALL-CAPS to small-caps `{{sc|...}}` only for emphatic words in prose:
+  - Page 21: `{{sc|In this ovr translation}},`
+  - Page 26: `{{sc|Canonical Scriptvres}}`, `{{sc|Catholike Chvrche}}`, `{{sc|Catholike Chvrch}}`
+  - Page 27: `{{sc|Catholike Chvrch}}` (3 occurrences)
+  - Left running headers and book lists intact as requested.
+- Cleaned up line breaks and margin note formatting:
+  - Page 1: collapsed extra blank lines (`\n\n\n` -> `\n\n`).
+  - Page 10: reunited split margin note text and restored main text swallowed by OCR into the margin note.
+  - Page 11: removed 4 accidental newlines after `text=\n` in `{{MarginNote}}`; joined hyphenated `ther- fore` -> `therfore`.
+- Adopted concurrent proofreading edits from community contributor User:ShakespeareFan00:
+  - Pages 7, 10, 14, 18, 20, 24, 29: merged italic closures around margin notes and joined words split across margin notes.
+- Fully verified all pages 1–132 against live Wikisource: 0 to post, 0 skipped, 0 lint errors.

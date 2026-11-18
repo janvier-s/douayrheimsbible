@@ -1,17 +1,17 @@
 <noinclude><pagequality level="3" user="ChristusRex" /></noinclude>{{center|{{x-larger|THE CENSVRE AND}} {{larger|APPROBATION.}}}}
 
-{{dropinitial|C}}{{sc|vm}} huius verſionis ac æditionis authores, nobis de fide & eruditione ſint probè cogniti, aliiq́ue S. Theologiæ & linguæ Anglicanæ peritiſsimi viri conteſtati ſint, nihil in hoc opere reperiri, quod non ſit Catholicę Eccleſię doctrinæ, & pietati conſentaneum, vel quod vllo modo poteſtati ac paci ciuili repugnet, ſed omnia potius veram fidem, Reip. bonum, vitæq́ue ac morum probitatem promouere: ex ipſorum fide cenſemus iſta vtiliter excudi & publicari poſſe. 
+{{dropinitial|C}}{{sc|vm}} huius ver{{ls}}ionis ac æditionis authores, nobis de fide & eruditione {{ls}}int probè cogniti, aliiq́ue S. Theologiæ & linguæ Anglicanæ periti{{ls}}simi viri conte{{ls}}tati {{ls}}int, nihil in hoc opere reperiri, quod non {{ls}}it Catholicę Eccle{{ls}}ię doctrinæ, & pietati con{{ls}}entaneum, vel quod vllo modo pote{{ls}}tati ac paci ciuili repugnet, {{ls}}ed omnia potius veram fidem, Reip. bonum, vitæq́ue ac morum probitatem promouere: ex ip{{ls}}orum fide cen{{ls}}emus i{{ls}}ta vtiliter excudi & publicari po{{ls}}{{ls}}e.
 
-{{hanging indent|::PETRVS REMIGIVS ''Archidiaconus maior Metropolitana inſignis Eccleſiæ Rhemenſis, Iuris Canonici Doctor, Archiepiſcopatus Rhemenſis generalis Vicarius.''}}
+{{hanging indent|::PETRVS REMIGIVS ''Archidiaconus maior Metropolitana in{{ls}}ignis Eccle{{ls}}iæ Rhemen{{ls}}is, Iuris Canonici Doctor, Archiepi{{ls}}copatus Rhemen{{ls}}is generalis Vicarius.''}}
 
-{{hanging indent|::HVBERTVS MORVS, ''Rhemenſis Eccleſiæ Decanus, & Eccleſiaſtes, & in ſacratißima Theologiæ facultate Doctor.''}}
+{{hanging indent|::HVBERTVS MORVS, ''Rhemen{{ls}}is Eccle{{ls}}iæ Decanus, & Eccle{{ls}}ia{{ls}}tes, & in {{ls}}acratißima Theologiæ facultate Doctor.''}}
 
-{{hanging indent|::IOANNES LE BESGVE, ''Canonicus Rhemenſis, Doctor Theologus, & Cancellarius Academiæ Rhemenſis.''}}
+{{hanging indent|::IOANNES LE BESGVE, ''Canonicus Rhemen{{ls}}is, Doctor Theologus, & Cancellarius Academiæ Rhemen{{ls}}is.''}}
 
-{{hanging indent|::GVLIELMVS BALBVS, ''Theologiæ profeſſor, Collegij Rhemenſis Archimagiſter.''}}
+{{hanging indent|::GVLIELMVS BALBVS, ''Theologiæ profe{{ls}}{{ls}}or, Collegij Rhemen{{ls}}is Archimagi{{ls}}ter.''}}
 
-{{center|S. Auguſt. lib. 1. c. 3. de ſerm. Do. in monte.}}
+{{center|S. Augu{{ls}}t. lib. 1. c. 3. de {{ls}}erm. Do. in monte.}}
 
-Paupertate ſpiritus peruenitur ad Scripturarū cognitionem: vbi oportet hominem ſe mitem præbere, ne peruicacibus concertationibus indocilis reddatur.
+Paupertate {{ls}}piritus peruenitur ad Scripturarū cognitionem: vbi oportet hominem {{ls}}e mitem præbere, ne peruicacibus concertationibus indocilis reddatur.
 
-''Vve come to the vnderſtanding of ſcriptures through pouertie of ſpirit: vvhere a man muſt ſhevv him ſelf meeke-minded, leſt by ſtubburne contentions, he become incapable and vnapt to be taught.''<noinclude>{{right|THE}}</noinclude>
+''Vve come to the vnder{{ls}}tanding of {{ls}}criptures through pouertie of {{ls}}pirit: vvhere a man mu{{ls}}t {{ls}}hevv him {{ls}}elf meeke-minded, le{{ls}}t by {{ls}}tubburne contentions, he become incapable and vnapt to be taught.''<noinclude>{{right|THE}}</noinclude>

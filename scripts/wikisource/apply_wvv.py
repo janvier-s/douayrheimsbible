@@ -94,7 +94,7 @@ def main(book, tsv, cls, write):
     anns = {}
     for f in sorted((ORIG / book / 'annotations').glob('*.json')):
         a = json.loads(f.read_text()); anns[a['chapter']] = a
-    rows = [r for r in csv.DictReader(open(tsv), delimiter='\t') if r['cls'] == cls]
+    rows = [r for r in csv.DictReader(open(tsv), delimiter='\t', quoting=csv.QUOTE_NONE) if r['cls'] == cls]
     # Several rows can hit one text: apply occurrence-indexed edits from the back.
     done, skipped, touched = [], [], set()
     rows.sort(key=lambda r: (r['loc'], -int(r['occ'] or 0)))

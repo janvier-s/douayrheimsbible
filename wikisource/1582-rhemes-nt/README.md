@@ -34,7 +34,7 @@ live page first and never overwrites a Wikisource proofreader's edits.
 
 ## Conventions (follow Page 4, the proofread preface)
 
-- `ſ` is written `s`; u/v, vv and macrons (`cōmaunded`, `vpō`) are kept as printed.
+- `ſ` is written `{{ls}}` (or modern `s` in mainspace transclusion) per [Wikisource Style guide/Orthography#Best Practices](https://en.wikisource.org/wiki/Wikisource:Style_guide/Orthography#Best_Practices); u/v, vv and macrons (`cōmaunded`, `vpō`) are kept as printed.
 - Printed marks stay in the text: `†` verse start, `*` citation, `∷` gloss, `‖` annotation catchword, `⊣` end of a liturgical reading.
 - Margin notes use `{{MarginNote}}`: citations in the inner margin, glosses and lectionary notes in the outer one.
 - Pages go up at quality level 1 (not proofread) unless a person has proofread them against the scan.

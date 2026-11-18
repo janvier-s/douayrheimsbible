@@ -126,7 +126,7 @@ def lint(d):
         for m in SENT.finditer(t):
             out.append(('E-sentinel', n, f'leftover {m.group(0)!r} near …{near(t, m.start(), m.end())}'))
         for tpl in margin_notes(body):
-            if not re.match(r'MarginNote\|margin=(left|right)\|margin-width=\d+\|text=', tpl):
+            if not (re.search(r'\|margin=(left|right)\b', tpl) and re.search(r'\|margin-width=\d+\b', tpl) and '|text=' in tpl):
                 out.append(('E-margin', n, f'malformed margin note: {tpl[:70]!r}'))
             elif not INNER.sub('', tpl.split('|text=', 1)[1]).strip():
                 out.append(('E-margin', n, 'empty margin note'))

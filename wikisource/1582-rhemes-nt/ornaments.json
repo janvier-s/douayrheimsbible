@@ -1,0 +1,1440 @@
+{
+	"headpiece": {
+		"1-corinthians": {
+			"file": "Rhemes New Testament 1582 headpiece (John).png",
+			"width": "600px"
+		},
+		"1-john": {
+			"file": "Rhemes New Testament 1582 headpiece (Philippians).png",
+			"width": "600px"
+		},
+		"1-thessalonians": {
+			"file": "Rhemes New Testament 1582 headpiece (Philippians).png",
+			"width": "600px"
+		},
+		"1-timothy": {
+			"file": "Rhemes New Testament 1582 headpiece (Philippians).png",
+			"width": "600px"
+		},
+		"2-corinthians": {
+			"file": "Rhemes New Testament 1582 headpiece (2 Corinthians).png",
+			"width": "600px"
+		},
+		"2-thessalonians": {
+			"file": "Rhemes New Testament 1582 headpiece (2 Corinthians).png",
+			"width": "600px"
+		},
+		"2-timothy": {
+			"file": "Rhemes New Testament 1582 headpiece (2 Corinthians).png",
+			"width": "600px"
+		},
+		"apocalypse": {
+			"file": "Rhemes New Testament 1582 headpiece (2 Corinthians).png",
+			"width": "600px"
+		},
+		"colossians": {
+			"file": "Rhemes New Testament 1582 headpiece (Ephesians).png",
+			"width": "600px"
+		},
+		"ephesians": {
+			"file": "Rhemes New Testament 1582 headpiece (Ephesians).png",
+			"width": "600px"
+		},
+		"galatians": {
+			"file": "Rhemes New Testament 1582 headpiece (2 Corinthians).png",
+			"width": "600px"
+		},
+		"hebrews": {
+			"file": "Rhemes New Testament 1582 headpiece (Ephesians).png",
+			"width": "600px"
+		},
+		"james": {
+			"file": "Rhemes New Testament 1582 headpiece (Ephesians).png",
+			"width": "600px"
+		},
+		"john": {
+			"file": "Rhemes New Testament 1582 headpiece (John).png",
+			"width": "600px"
+		},
+		"jude": {
+			"file": "Rhemes New Testament 1582 headpiece (Jude).png",
+			"width": "590px"
+		},
+		"luke": {
+			"file": "Rhemes New Testament 1582 headpiece (Matthew).png",
+			"width": "510px"
+		},
+		"mark": {
+			"file": "Rhemes New Testament 1582 headpiece (Mark).png",
+			"width": "515px"
+		},
+		"matthew": {
+			"file": "Rhemes New Testament 1582 headpiece (Matthew).png",
+			"width": "510px"
+		},
+		"philippians": {
+			"file": "Rhemes New Testament 1582 headpiece (Philippians).png",
+			"width": "600px"
+		},
+		"romans": {
+			"file": "Rhemes New Testament 1582 headpiece (John).png",
+			"width": "600px"
+		},
+		"titus": {
+			"file": "Rhemes New Testament 1582 headpiece (Philippians).png",
+			"width": "600px"
+		}
+	},
+	"initial": {
+		"1-corinthians/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"1-corinthians/10": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"1-corinthians/11": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"1-corinthians/12": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"1-corinthians/13": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"1-corinthians/14": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"1-corinthians/15": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"1-corinthians/16": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"1-corinthians/2": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"1-corinthians/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"1-corinthians/4": {
+			"file": "Rhemes New Testament 1582 initial S, scrolling foliage.png",
+			"imgsize": "155px",
+			"letter": "S"
+		},
+		"1-corinthians/5": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"1-corinthians/6": {
+			"file": "Rhemes New Testament 1582 initial D, a mask among foliage.png",
+			"imgsize": "125px",
+			"letter": "D"
+		},
+		"1-corinthians/7": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"1-corinthians/8": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"1-corinthians/9": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"1-john/1": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"1-john/2": {
+			"file": "Rhemes New Testament 1582 initial M, a grotesque mask.png",
+			"imgsize": "225px",
+			"letter": "M"
+		},
+		"1-john/3": {
+			"file": "Rhemes New Testament 1582 initial S, scrolling foliage.png",
+			"imgsize": "155px",
+			"letter": "S"
+		},
+		"1-john/4": {
+			"file": "Rhemes New Testament 1582 initial M, a child.png",
+			"imgsize": "185px",
+			"letter": "M"
+		},
+		"1-john/5": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"1-peter/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"1-peter/2": {
+			"file": "Rhemes New Testament 1582 initial L, flowers and foliage.png",
+			"imgsize": "150px",
+			"letter": "L"
+		},
+		"1-peter/3": {
+			"file": "Rhemes New Testament 1582 initial I, foliage.png",
+			"imgsize": "155px",
+			"letter": "I"
+		},
+		"1-peter/4": {
+			"file": "Rhemes New Testament 1582 initial C, a lion.png",
+			"imgsize": "185px",
+			"letter": "C"
+		},
+		"1-peter/5": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"1-thessalonians/1": {
+			"file": "Rhemes New Testament 1582 initial P, a bird.png",
+			"imgsize": "185px",
+			"letter": "P"
+		},
+		"1-thessalonians/2": {
+			"file": "Rhemes New Testament 1582 initial F, a lion.png",
+			"imgsize": "140px",
+			"letter": "F"
+		},
+		"1-thessalonians/3": {
+			"file": "Rhemes New Testament 1582 initial F, a hooded figure.png",
+			"imgsize": "140px",
+			"letter": "F"
+		},
+		"1-thessalonians/4": {
+			"file": "Rhemes New Testament 1582 initial F, leafy sprays.png",
+			"imgsize": "100px",
+			"letter": "F"
+		},
+		"1-thessalonians/5": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"1-timothy/1": {
+			"file": "Rhemes New Testament 1582 initial P, a bird.png",
+			"imgsize": "185px",
+			"letter": "P"
+		},
+		"1-timothy/2": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"1-timothy/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"1-timothy/4": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"1-timothy/5": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"1-timothy/6": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"2-corinthians/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"2-corinthians/10": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"2-corinthians/11": {
+			"file": "Rhemes New Testament 1582 initial V, a grotesque mask and flowers.png",
+			"imgsize": "155px",
+			"letter": "V"
+		},
+		"2-corinthians/12": {
+			"file": "Rhemes New Testament 1582 initial I, an old man in a cap.png",
+			"imgsize": "145px",
+			"letter": "I"
+		},
+		"2-corinthians/13": {
+			"file": "Rhemes New Testament 1582 initial L, a standing child.png",
+			"imgsize": "155px",
+			"letter": "L"
+		},
+		"2-corinthians/2": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"2-corinthians/3": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"2-corinthians/4": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"2-corinthians/5": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"2-corinthians/6": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"2-corinthians/7": {
+			"file": "Rhemes New Testament 1582 initial H, a seated figure.png",
+			"imgsize": "135px",
+			"letter": "H"
+		},
+		"2-corinthians/8": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"2-corinthians/9": {
+			"file": "Rhemes New Testament 1582 initial F, a lion.png",
+			"imgsize": "140px",
+			"letter": "F"
+		},
+		"2-john/1": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"2-peter/1": {
+			"file": "Rhemes New Testament 1582 initial S, interlaced foliage.png",
+			"imgsize": "205px",
+			"letter": "S"
+		},
+		"2-peter/2": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"2-peter/3": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"2-thessalonians/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"2-thessalonians/2": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"2-thessalonians/3": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"2-timothy/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"2-timothy/2": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"2-timothy/3": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"2-timothy/4": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"3-john/1": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"acts/1": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"acts/10": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/11": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"acts/12": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/13": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/14": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/15": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/16": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"acts/17": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/18": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/19": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/2": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"acts/20": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/21": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/22": {
+			"file": "Rhemes New Testament 1582 initial M, a grotesque mask.png",
+			"imgsize": "225px",
+			"letter": "M"
+		},
+		"acts/23": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/24": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"acts/25": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"acts/26": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"acts/27": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/28": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/4": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/5": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"acts/6": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"acts/7": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"acts/8": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"acts/9": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"apocalypse/1": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"apocalypse/10": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"apocalypse/11": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"apocalypse/12": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"apocalypse/13": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"apocalypse/14": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"apocalypse/15": {
+			"file": "Rhemes New Testament 1582 initial A, leafy sprays.png",
+			"imgsize": "100px",
+			"letter": "A"
+		},
+		"apocalypse/16": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"apocalypse/17": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"apocalypse/18": {
+			"file": "Rhemes New Testament 1582 initial A, leafy sprays.png",
+			"imgsize": "100px",
+			"letter": "A"
+		},
+		"apocalypse/19": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"apocalypse/2": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"apocalypse/20": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"apocalypse/21": {
+			"file": "Rhemes New Testament 1582 initial A, leafy sprays.png",
+			"imgsize": "100px",
+			"letter": "A"
+		},
+		"apocalypse/22": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"apocalypse/3": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"apocalypse/4": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"apocalypse/5": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"apocalypse/6": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"apocalypse/7": {
+			"file": "Rhemes New Testament 1582 initial A, leafy sprays.png",
+			"imgsize": "100px",
+			"letter": "A"
+		},
+		"apocalypse/8": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"apocalypse/9": {
+			"file": "Rhemes New Testament 1582 initial A, leafy sprays.png",
+			"imgsize": "100px",
+			"letter": "A"
+		},
+		"colossians/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"colossians/2": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"colossians/3": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"colossians/4": {
+			"file": "Rhemes New Testament 1582 initial Y, leafy sprays.png",
+			"imgsize": "105px",
+			"letter": "Y"
+		},
+		"ephesians/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"ephesians/2": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"ephesians/3": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"ephesians/4": {
+			"file": "Rhemes New Testament 1582 initial I, an old man in a cap.png",
+			"imgsize": "145px",
+			"letter": "I"
+		},
+		"ephesians/5": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"ephesians/6": {
+			"file": "Rhemes New Testament 1582 initial C, a lion mask.png",
+			"imgsize": "150px",
+			"letter": "C"
+		},
+		"galatians/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"galatians/2": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"galatians/3": {
+			"file": "Rhemes New Testament 1582 initial O, a bearded head.png",
+			"imgsize": "140px",
+			"letter": "O"
+		},
+		"galatians/4": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"galatians/5": {
+			"file": "Rhemes New Testament 1582 initial S, interlaced foliage.png",
+			"imgsize": "205px",
+			"letter": "S"
+		},
+		"galatians/6": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"hebrews/1": {
+			"file": "Rhemes New Testament 1582 initial D, two figures among vines.png",
+			"imgsize": "230px",
+			"letter": "D"
+		},
+		"hebrews/10": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"hebrews/11": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"hebrews/12": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"hebrews/13": {
+			"file": "Rhemes New Testament 1582 initial L, flowers and foliage.png",
+			"imgsize": "150px",
+			"letter": "L"
+		},
+		"hebrews/2": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"hebrews/3": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"hebrews/4": {
+			"file": "Rhemes New Testament 1582 initial L, flowers and foliage.png",
+			"imgsize": "150px",
+			"letter": "L"
+		},
+		"hebrews/5": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"hebrews/6": {
+			"file": "Rhemes New Testament 1582 initial V, a bearded old man.png",
+			"imgsize": "135px",
+			"letter": "V"
+		},
+		"hebrews/7": {
+			"file": "Rhemes New Testament 1582 initial F, a hooded figure.png",
+			"imgsize": "140px",
+			"letter": "F"
+		},
+		"hebrews/8": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"hebrews/9": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"james/1": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"james/2": {
+			"file": "Rhemes New Testament 1582 initial M, a grotesque mask.png",
+			"imgsize": "225px",
+			"letter": "M"
+		},
+		"james/3": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"james/4": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"james/5": {
+			"file": "Rhemes New Testament 1582 initial G, leafy sprays.png",
+			"imgsize": "100px",
+			"letter": "G"
+		},
+		"john/1": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"john/10": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"john/11": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"john/12": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"john/13": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"john/14": {
+			"file": "Rhemes New Testament 1582 initial L, a dragon.png",
+			"imgsize": "185px",
+			"letter": "L"
+		},
+		"john/15": {
+			"file": "Rhemes New Testament 1582 initial I, foliage.png",
+			"imgsize": "155px",
+			"letter": "I"
+		},
+		"john/16": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"john/17": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"john/18": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"john/19": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"john/2": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"john/20": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"john/21": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"john/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"john/4": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"john/5": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"john/6": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"john/7": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"john/8": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"john/9": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"jude/1": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"luke/1": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"luke/10": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"luke/11": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"luke/12": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/13": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"luke/14": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/15": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"luke/16": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/17": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"luke/18": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/19": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"luke/2": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"luke/20": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"luke/21": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/22": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"luke/23": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/24": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"luke/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/4": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"luke/5": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"luke/6": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"luke/7": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"luke/8": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"luke/9": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"mark/1": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"mark/10": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"mark/11": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"mark/12": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"mark/13": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"mark/14": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"mark/15": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"mark/16": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"mark/2": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"mark/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"mark/4": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"mark/5": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"mark/6": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"mark/7": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"mark/8": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"mark/9": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"matthew/1": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"matthew/10": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/11": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"matthew/12": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/13": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"matthew/14": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"matthew/15": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"matthew/16": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/17": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"matthew/18": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"matthew/19": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/2": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"matthew/20": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"matthew/21": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"matthew/22": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/23": {
+			"file": "Rhemes New Testament 1582 initial T, leafy sprays.png",
+			"imgsize": "85px",
+			"letter": "T"
+		},
+		"matthew/24": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"matthew/25": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"matthew/26": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"matthew/27": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/28": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"matthew/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/4": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"matthew/5": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"matthew/6": {
+			"file": "Rhemes New Testament 1582 initial T, leafy sprays.png",
+			"imgsize": "85px",
+			"letter": "T"
+		},
+		"matthew/7": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"matthew/8": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"matthew/9": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"philemon/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"philippians/1": {
+			"file": "Rhemes New Testament 1582 initial P, a bird.png",
+			"imgsize": "185px",
+			"letter": "P"
+		},
+		"philippians/2": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"philippians/3": {
+			"file": "Rhemes New Testament 1582 initial F, scrolling foliage.png",
+			"imgsize": "190px",
+			"letter": "F"
+		},
+		"philippians/4": {
+			"file": "Rhemes New Testament 1582 initial T, an urn and foliage.png",
+			"imgsize": "205px",
+			"letter": "T"
+		},
+		"romans/1": {
+			"file": "Rhemes New Testament 1582 initial P, flowers and foliage.png",
+			"imgsize": "230px",
+			"letter": "P"
+		},
+		"romans/10": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"romans/11": {
+			"file": "Rhemes New Testament 1582 initial I, two horned animals.png",
+			"imgsize": "185px",
+			"letter": "I"
+		},
+		"romans/12": {
+			"file": "Rhemes New Testament 1582 initial I, an old man in a cap.png",
+			"imgsize": "145px",
+			"letter": "I"
+		},
+		"romans/13": {
+			"file": "Rhemes New Testament 1582 initial L, a standing child.png",
+			"imgsize": "155px",
+			"letter": "L"
+		},
+		"romans/14": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"romans/15": {
+			"file": "Rhemes New Testament 1582 initial A, scrolling foliage with grotesque heads.png",
+			"imgsize": "140px",
+			"letter": "A"
+		},
+		"romans/16": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		},
+		"romans/2": {
+			"file": "Rhemes New Testament 1582 initial F, a hooded figure.png",
+			"imgsize": "140px",
+			"letter": "F"
+		},
+		"romans/3": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"romans/4": {
+			"file": "Rhemes New Testament 1582 initial V, a grotesque mask and flowers.png",
+			"imgsize": "155px",
+			"letter": "V"
+		},
+		"romans/5": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"romans/6": {
+			"file": "Rhemes New Testament 1582 initial W, foliage.png",
+			"imgsize": "105px",
+			"letter": "W"
+		},
+		"romans/7": {
+			"file": "Rhemes New Testament 1582 initial A, two satyrs.png",
+			"imgsize": "185px",
+			"letter": "A"
+		},
+		"romans/8": {
+			"file": "Rhemes New Testament 1582 initial T, a bird and a human head.png",
+			"imgsize": "150px",
+			"letter": "T"
+		},
+		"romans/9": {
+			"file": "Rhemes New Testament 1582 initial I, foliage.png",
+			"imgsize": "155px",
+			"letter": "I"
+		},
+		"titus/1": {
+			"file": "Rhemes New Testament 1582 initial P, a bird.png",
+			"imgsize": "185px",
+			"letter": "P"
+		},
+		"titus/2": {
+			"file": "Rhemes New Testament 1582 initial B, heads among foliage.png",
+			"imgsize": "235px",
+			"letter": "B"
+		},
+		"titus/3": {
+			"file": "Rhemes New Testament 1582 initial A, a bearded man.png",
+			"imgsize": "115px",
+			"letter": "A"
+		}
+	},
+	"tailpiece": {
+		"2-peter": {
+			"file": "Rhemes New Testament 1582 tailpiece (Philippians).png",
+			"width": "415px"
+		},
+		"2-thessalonians": {
+			"file": "Rhemes New Testament 1582 tailpiece (2 Thessalonians).png",
+			"width": "195px"
+		},
+		"3-john": {
+			"file": "Rhemes New Testament 1582 tailpiece (Philippians).png",
+			"width": "415px"
+		},
+		"apocalypse": {
+			"file": "Rhemes New Testament 1582 tailpiece (Apocalypse (Revelation)).png",
+			"width": "425px"
+		},
+		"colossians": {
+			"file": "Rhemes New Testament 1582 tailpiece (Galatians).png",
+			"width": "190px"
+		},
+		"galatians": {
+			"file": "Rhemes New Testament 1582 tailpiece (Galatians).png",
+			"width": "190px"
+		},
+		"hebrews": {
+			"file": "Rhemes New Testament 1582 tailpiece (2 Thessalonians).png",
+			"width": "195px"
+		},
+		"jude": {
+			"file": "Rhemes New Testament 1582 tailpiece (Jude).png",
+			"width": "240px"
+		},
+		"luke": {
+			"file": "Rhemes New Testament 1582 tailpiece (Luke).png",
+			"width": "315px"
+		},
+		"matthew": {
+			"file": "Rhemes New Testament 1582 tailpiece (Matthew).png",
+			"width": "190px"
+		},
+		"philippians": {
+			"file": "Rhemes New Testament 1582 tailpiece (Philippians).png",
+			"width": "415px"
+		},
+		"romans": {
+			"file": "Rhemes New Testament 1582 tailpiece (Romans).png",
+			"width": "340px"
+		}
+	}
+}
