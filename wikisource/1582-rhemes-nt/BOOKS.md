@@ -327,7 +327,8 @@ extra "diverse"); 6 ann 1 "plain in Luke" (odr had "S. Luke"); 5:12 note "Aug. t
 print opens 49 at "haue mercie vpon me.": the margin numbers 48 and 49 were read on a crop; odr had the sentence in 48); 11:22 the key letter
 "b" before "And Iesvs" (orig had it, odr not; it keys the 11:20 lectionary note "b The Gospel…"). 10 differences fixed (11 string edits), no change to odr-original, no wiki page changes.
 Left as the print has them in odr-original and NOT copied to odr (print misprints, odr keeps the correct word): 4:16 "thy likevvise", 8:25
-"be began to ſee" (and "he"), 12:31 "loue they neighbour". Decide with the user if odr should show them.
+"be began to ſee" (and "he"), 12:31 "loue they neighbour". RESOLVED (user, 2026-11-18, PERMANENT RULE): odr-original and the wiki pages
+reproduce the 1582 print and keep its misprints and original spelling; only odr (modern) receives fixes. odr already has the correct words here.
 The macron words in odr-original (vnderſtād, cōgruity, wēche, …) fold to their plain forms and match odr.
 
 **Paragraph indents, chapters 11-16 (task 5).** Every page 144-160 (mark/11/1 to 16/2) was cut into a left-edge strip (x 200-760, 0.55) with
@@ -371,7 +372,10 @@ Seen and plain: "common" 7:18/7:20/7:23, "conuenient" 14:59, "ſtanders" 14:69/7
 Ch 4 margin "The Church viſibly increa-ſing": the a before the hyphen does carry a stroke above it (a short bar or tick). A barred a makes no sense there
 (the next line begins "ſing"), so it is left "increaſing". Not changed.
 
-**Print misprints that `odr` corrects (task 3).** Found by aligning the two datasets word by word (ſ, vv, macrons, long forms folded), then listing
+**Print misprints that `odr-original` keeps (task 3).** PERMANENT RULE (user, 2026-11-18): odr-original and the wiki pages are reproductions of the
+1582 print, keeping its misprints and original spelling; only odr (modern) receives fixes. So this is a list of print misprints that stay in
+odr-original (do NOT correct them there); odr already has the correct word in every case except the ch 14 summary, fixed in odr this round.
+Found by aligning the two datasets word by word (ſ, vv, macrons, long forms folded), then listing
 single-word differences where both words are English words (dictionary check) or the one-letter differences left after the 1582 spelling folds.
 Complete list for Mark, as far as that finds them (the print reads, odr has):
 
@@ -379,8 +383,8 @@ Complete list for Mark, as far as that finds them (the print reads, odr has):
 - 8:25 "be began to ſee" (odr "he began to see")
 - 12:31 "loue they neighbour" (odr "love thy neighbour")
 - 6:46 lectionary note "The Goſpel on Saterday after Aſhweneſday." (the d is missing in print; odr "Ashwednesday") - found this round, crop read.
-- ch 14 summary "43 taken of thee Ievves men" ("thee" for "the"); odr reads "43. taken of Jews' men" and has no "the" at all: odr lacks a word the print has
-  (corrected to "the" in print terms), so that one is also a gap in odr. Decide with the user whether odr should read "taken of the Jews' men".
+- ch 14 summary "43 taken of thee Ievves men" ("thee" for "the"); odr read "43. taken of Jews' men" (no "the" at all), a gap in odr. FIXED in odr this
+  round: it now reads "taken of the Jews' men". odr-original keeps "thee Ievves".
   Looked at and NOT misprints (print forms of 1582): "impoſsibile" 10:27, "Archſynagogs", "Bying", "yere", "ſkrippe", "Heretike", "Relikes".
   This detector is weak for a misprint that is also a different valid word and for ones inside text that had no odr counterpart, so the list may not be complete.
 
