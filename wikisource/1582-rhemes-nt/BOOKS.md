@@ -376,6 +376,9 @@ Ch 4 margin "The Church viſibly increa-ſing": the a before the hyphen does car
 bands at 0.85 each, same question as round 7. Argon reported 9 words; 8 were already in odr-original (preparatiō, remiſsiō, iudgemēt, aſſiſtāce,
 Executīg, vpō, whē, ch 16 vpō). One was new and is barred on a 3x crop: 1:31 "incōtinent" (changed, odr-original only; page 116 republished
 locally). It reported no barred word on the other bands; it was not asked for plain-vs-barred pairs, so a missed word is possible. Nothing changed on its word alone.
+Same 66 bands re-read with `gemini-4-hydrogen-low`: it reported the same 8 known words as argon (it missed the same 3: "Mā", "Sacramēts", "mentiōneth", so on
+these chapters recall was equal, 8 of 11 each) and one new candidate, 2:2 "thāt" ("heard that", page 1 last line). On a 5x crop it is a short ink tick above the
+right shoulder of the h, not a bar over the a, so no change. Nothing else new: ch 1-2 and 15-16 are done to the limit of both readers.
 POSTED (user approved page creation for the bot, 2026-11-18): `wikipost.py --create` (createonly, never overwrites) created Mark pages 114-160 (47 pages, level 1 Not proofread); a dry run afterwards shows live equals ours for all 47.
 
 **Print misprints that `odr-original` keeps (task 3).** PERMANENT RULE (user, 2026-11-18): odr-original and the wiki pages are reproductions of the
