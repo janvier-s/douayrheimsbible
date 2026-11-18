@@ -12,7 +12,8 @@
         },
         {
           "marker": 2,
-          "text": "<i>Euſeb. Ec. Hiſt. li. 1 c. 6. ex Ioſepho</i>."
+          "text": "<i>Euſeb. Ec. Hiſt. li. 1 c. 6. ex Ioſepho</i>.",
+          "star": true
         },
         {
           "marker": 3,
@@ -24,7 +25,7 @@
         },
         {
           "marker": 5,
-          "text": "Ezech. 7, 26. <i>Io. 16, 13. Luc. 22 and 10</i>."
+          "text": "<i>Io. 16, 13. Luc. 22 and 10</i>."
         }
       ]
     },

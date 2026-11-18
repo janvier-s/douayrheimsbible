@@ -260,6 +260,37 @@ Open: step 6 word alignment for chapters 11-14; chapter 11-14 paragraph indents 
 
 Resume at page 157 (15:8-32 seen at 0.4, marks 15:28 etc. not yet fixed): chapters 15-16 are the last round.
 
+## Mark: round 5, chapters 15-16 and the chapter 15-16 annotations (2026-11-18)
+
+Pages 157-160 (15:8-32, 15:33-16:12, 16:12-20 with the chapter 16 annotations) were read on two-page sheets at 0.4, margin and
+word crops, and published, together with 145 and 150 (their `‖` had been published on stale lemma spans in round 4: after moving
+markers run `build-odr-lemmas.ts --write` for both datasets BEFORE generating the pages you publish). `paragraphs.json` now has
+chapters 1-16. Every Mark page 114-160 is published; Mark is checked against the scans except what is open below.
+
+Seen / already right / changed:
+
+- Margin-only citations (no `*` before the italic quotation): 15:28, 15:34; drop-cap 16:1 star removed (citation to the
+  verse end). 16:7: the ∷ stands at "and ∷ Peter" and the `*` at "see him, _ as he told you" (they were swapped; the margin
+  gloss lost a stray " · Mr. 14, 28." in odr-original). 16:19: the `_`stands after "vnto them,"; "The Ascension." has
+no ∷ (kind`head`), like EASTER DAY. (16:2); "The Goſpel vpō Easter day." (16:1) is a lectionary note.
+- 16:14 citation "Io. 20, 26." → "Io. 20, 19." (the print; both datasets). The print has "Lu. 25, 51." at 16:19: the data keeps its
+  correction "Lu. 24, 51." (misprint rule).
+- 16:18: the gloss "Miracles the Church by imposition of hand." (∷ in the text) is NOT in the 1582 print (no margin note,
+  no ∷; the OCR agrees): removed with its marker from both datasets (`export.corpus.test.ts` counts updated).
+- Annotation stars: 15 ann 11 "_ partly" (Euseb. note), 16 ann 1 "_ ſhe first before al other, \* and they next" (both notes). 15 ann 11 had
+  "Ezech. 7, 26." twice in odr-original (the second note belongs to Io. 16, 13. Luc. 22 and 10, in the left margin): fixed.
+- Page structure (generate.py): 158 ends "according to" with catchword "the", 159 starts "the Prophet" (PAGE_STARTS); MANUAL_PARAS
+  15:33 (top of page 158, indented), NO_PARAS 15:36 (mid-line). Pages 114-144 and 146-156 regenerate byte-identical.
+
+Open:
+
+- Macrons of chapters 15-16 margin notes and annotation bodies were read at 0.4 only (pages 157-160): not done. 159 margin "Executig lawes
+  againſt innocents." reads "Executig" in the print (possibly a macron); the data still has "Executing".
+- Chapters 3-6 macrons and ")" titles, chapters 1-6 and 11-16 annotation titles other than the ones listed in rounds 3-4 were not
+  cropped (rounds 1-2 and the 0.4 sheets read "]"); the 12:38 and 13:34 stars without a margin note; 12:31 citation "Leu." in the data is
+  still "Lev." (print: "Leu. 19, 18." read at 0.4).
+- Step 6 word alignment between `odr` and `odr-original` for chapters 3-16, and the paragraph indents of chapters 11-16 (OCR + eye).
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.

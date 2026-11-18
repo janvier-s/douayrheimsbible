@@ -12,11 +12,13 @@
         },
         {
           "marker": 2,
-          "text": "<i>Mr. 16, 9.</i>"
+          "text": "<i>Mr. 16, 9.</i>",
+          "star": true
         },
         {
           "marker": 3,
-          "text": "<i>Mt. 28. 9.</i>"
+          "text": "<i>Mt. 28. 9.</i>",
+          "star": true
         }
       ]
     },

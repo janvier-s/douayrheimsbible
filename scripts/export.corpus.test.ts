@@ -277,7 +277,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,760 of 13,777 markers', () => {
+	it('binds 13,759 of 13,776 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -301,11 +301,13 @@ describe('the corpus markup', () => {
 		// 13,760 before the later-edition Jude 1:11 lectionary note (S. Silverius; not in
 		// the 1582 print, whose * there is the Nu. 22. citation) was removed (2026-11-17).
 		// 13,759 before Mark 14:25's former cross_ref became a bound gloss note (2026-11-18).
-		expect(bound).toBe(13760);
+		// 13,760 before the later-edition Mark 16:18 gloss (not in the 1582 print) was removed (2026-11-18).
+		expect(bound).toBe(13759);
 		// 16 more unbound: the (†) editorial markers added for print corrections.
 		expect(unbound).toBe(17);
 		// 13,776 before Mark 14:25's cross_ref became a bound gloss marker (2026-11-18).
-		expect(bound + unbound).toBe(13777);
+		// 13,777 before the later-edition Mark 16:18 gloss was removed (2026-11-18).
+		expect(bound + unbound).toBe(13776);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming

@@ -20,15 +20,17 @@ DATA = REPO / 'static/data/odr-original'
 # Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
 # Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
 # its pages stay as they are; Transkribus reads the print better from Mark on.
-OCR_SOURCE = {'mark': 'transkribus'}
+OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus'}
 # Last line of the book title on its first page ("THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO ...").
-TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.'}
+TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.'}
 # Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
-ARGUMENT = {'mark': 114}
+ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242}
 # First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
-FIRST_HEAD_CHA = {'mark'}
+FIRST_HEAD_CHA = {'mark', 'luke', 'john'}
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
-           'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.')}  # mark: read on 1/2, 5/1, 16/1
+           'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.'),
+           'luke': ('THE GOSPEL', 'ACCORDING TO S. LVKE.'),  # read on pdf 163, 164
+           'john': ('THE GOSPEL', 'ACCORDING TO S. IOHN.')}  # read on pdf 245, 246  # mark: read on 1/2, 5/1, 16/1
 # Marks in chapter summaries are not in the data yet: words to star, per chapter.
 # Matt 2-28 summaries were checked on the scans (round 10): they print no marks.
 SUMMARY_STARS = {('matthew', 1): ['Abraham', 'Dauid. 18']}
@@ -532,7 +534,7 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
                ('matthew', 113): 'wil persvade him and',
                # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
-               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake', ('mark', 141): '@chap', ('mark', 144): '@annhead', ('mark', 149): 'shal receiue larger iudgement', ('mark', 151): 'be and vnles the lord', ('mark', 156): '@annhead',
+               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake', ('mark', 141): '@chap', ('mark', 144): '@annhead', ('mark', 149): 'shal receiue larger iudgement', ('mark', 151): 'be and vnles the lord', ('mark', 156): '@annhead', ('mark', 159): 'the prophet saying the law',
                ('mark', 152): 'sorraine sovldiars so shal'}
 
 
@@ -542,10 +544,11 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
 # the mark is computed, and the OCR only warns when it sees another letter. Checked on the
 # scans for A-H (pages 31-89).
 SIG_ALPHABET = 'ABCDEFGHIKLMNOPQRSTVXYZ'
-SIG_FIRST = {'matthew': 29, 'mark': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
+SIG_FIRST = {'matthew': 29, 'mark': 29, 'luke': 29, 'john': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
 # "HOLY" beside the page number, "weeke." under it, top outer corner (checked on the scans):
 # (first wiki page, last wiki page, pages without it).
-HOLY_WEEK = {'matthew': (86, 113, {95, 107}), 'mark': (144, 160, set())}  # mark: on every page, checked
+HOLY_WEEK = {'matthew': (86, 113, {95, 107}), 'mark': (144, 160, set()),
+             'luke': (222, 237, {233, 234}), 'john': (282, 307, {289, 304, 305})}  # luke/john: read on the head corners of every page  # mark: on every page, checked
 
 
 def signature(wiki):
@@ -613,13 +616,13 @@ MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 
                 ('matthew', 21): [[33, 0]], ('matthew', 22): [[15, 0]], ('matthew', 23): [[16, 0]],
                 ('matthew', 24): [[15, 0]], ('mark', 4): [[3, 3]], ('mark', 5): [[35, 0]],
                 ('mark', 8): [[22, 0]], ('mark', 9): [[38, 0]], ('mark', 11): [[15, 5]],
-                ('mark', 12): [[13, 0], [35, 0], [41, 0]], ('mark', 13): [[32, 0]]}
+                ('mark', 12): [[13, 0], [35, 0], [41, 0]], ('mark', 13): [[32, 0]], ('mark', 15): [[33, 0]]}
 
 # Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81),
 # 22:16 (90, mid-line) are flush left; 26:2 (mid-line) and 26:3 (102) sit beside the drop cap.
 NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]],
             ('matthew', 26): [[2, 0], [3, 0]], ('mark', 4): [[3, 0]], ('mark', 6): [[50, 7]],
-            ('mark', 7): [[26, 0], [27, 0]], ('mark', 9): [[3, 0]], ('mark', 13): [[33, 0]]}
+            ('mark', 7): [[26, 0], [27, 0]], ('mark', 9): [[3, 0]], ('mark', 13): [[33, 0]], ('mark', 15): [[36, 0]]}
 
 
 def export_paragraphs(S, paras):
@@ -717,7 +720,8 @@ def main():
             num = f'{printed} HOLY weeke.' if wiki % 2 else f'HOLY weeke. {printed}'
         header = (f'{{{{rh|{cha}|{recto_t}|{num}}}}}' if wiki % 2 else f'{{{{rh|{num}|{verso_t}|{cha}}}}}')
         if n == 0:
-            header = f'{{{{rh|{cha if BOOK in FIRST_HEAD_CHA else ""}||{printed}}}}}'
+            fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if BOOK in FIRST_HEAD_CHA else ''
+            header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'
         body = ''
         for i in range(a, b):
             t = S[i]
