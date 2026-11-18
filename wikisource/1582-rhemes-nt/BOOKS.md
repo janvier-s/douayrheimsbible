@@ -316,6 +316,20 @@ Chapters 1-16 titles are now all read on crops.
 odr-original; pages 41 and 148 republished. Matthew pages 39 and 81 differ from a fresh generation only in the side heading
 "{{sc|The}} Sermon / fourth" (SIDE_SC, a later generator change): not republished here.
 
+**Step 6 word alignment, `odr` against `odr-original`, Mark ch 3-16 (task 4).** 995 units (verse text, verse notes, cross-refs, chapter
+summaries, annotation titles/bodies/notes) per dataset; unit sets, marker sequences, cross-ref counts, note kinds/labels and annotation
+verse numbers are identical (753 verses and annotations compared, 0 differences). Aligned with ſ→s, vv→w, macrons dropped, "&" ignored:
+127 insert/delete/unequal hits, 3 number differences, 863 word pairs. Almost all are spelling (themselves/them ſelues, another/an other,
+cannot/can not, indeed/in deede, "&" for "and", Jewry/Ievvrie, …), which is intended. Content differences found and fixed in `odr`
+only (the print form, read on crops): 3:10 "as many as had hurts" (odr lacked the second "as"); 3 ann 2 "and so names elsewhere" (odr had an
+extra "diverse"); 6 ann 1 "plain in Luke" (odr had "S. Luke"); 5:12 note "Aug. tract. 6 in ep. Io." (odr said 9); 7 summary "32." (odr 31);
+12 summary "38." (odr 18); 16 ann 0 note "body now dead" (odr "being dead"); 12 ann 1 "Leu. 18, 16." (odr "Lev."); 10:48/49 ("Sonne of Dauid," ends 48, the
+print opens 49 at "haue mercie vpon me.": the margin numbers 48 and 49 were read on a crop; odr had the sentence in 48); 11:22 the key letter
+"b" before "And Iesvs" (orig had it, odr not; it keys the 11:20 lectionary note "b The Gospel…"). 10 differences fixed (11 string edits), no change to odr-original, no wiki page changes.
+Left as the print has them in odr-original and NOT copied to odr (print misprints, odr keeps the correct word): 4:16 "thy likevvise", 8:25
+"be began to ſee" (and "he"), 12:31 "loue they neighbour". Decide with the user if odr should show them.
+The macron words in odr-original (vnderſtād, cōgruity, wēche, …) fold to their plain forms and match odr.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.
