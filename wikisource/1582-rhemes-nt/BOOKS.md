@@ -305,6 +305,12 @@ a before the hyphen looks barred but the word makes no sense that way; left as "
 read in bands, only through the Tesseract hints (hints: 4/1 "thofé", 5/2 "féa" = "ſea", both plain).
 Pages 125, 128, 132, 158, 159, 160 changed (one word each, 159 two); all others byte-identical.
 
+**Annotation title closers, chapters 1-6 and 11-16 (all 58 titles cropped at 1.3-1.7x).** ")" in the print: ch 2 all six, ch 3 all six
+and ch 6 ann 0 ("3. The carpenter.)"): 13 added to `PAREN_TITLES` (the earlier 14 stay). "]" in the print: ch 1 all eight, ch 4 all four,
+ch 5 all five, ch 6 ann 1-4 (6:13a "With oile.]" included), ch 11 both, ch 13 all four, ch 14 all six, ch 15 all three, ch 16 all four.
+Ch 12 ann 0 "]", ann 1-3 ")" (already listed). Pages 120, 122, 131 changed (only the closers); all others byte-identical.
+Chapters 1-16 titles are now all read on crops.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.

@@ -259,7 +259,7 @@ def render_verse(v, ch):
 SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 1)}
 
 # Annotation titles the print closes with ")" instead of "]" (read on the scans): (book, chapter, annotation index).
-PAREN_TITLES = {('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
+PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in range(6)], ('mark', 6, 0), ('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
                 ('mark', 10, 0), ('mark', 10, 1), ('mark', 10, 2), ('mark', 10, 3), ('mark', 10, 4),
                 ('mark', 12, 1), ('mark', 12, 2), ('mark', 12, 3)}
 
