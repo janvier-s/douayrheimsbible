@@ -311,6 +311,11 @@ ch 5 all five, ch 6 ann 1-4 (6:13a "With oile.]" included), ch 11 both, ch 13 al
 Ch 12 ann 0 "]", ann 1-3 ")" (already listed). Pages 120, 122, 131 changed (only the closers); all others byte-identical.
 Chapters 1-16 titles are now all read on crops.
 
+**"Leu." for "Lev." (task 3, both datasets).** Crops of the margins: Mark 12:31 "Leu. 19," and Matthew 5:34 "(Exo. 20, 7.) Leu. 19, 11." and
+5:43 "Leu. 19, 18." all read "Leu." (the L of the Matthew crops is cut by the crop window, "eu." is clear). Changed 3 in odr and 3 in
+odr-original; pages 41 and 148 republished. Matthew pages 39 and 81 differ from a fresh generation only in the side heading
+"{{sc|The}} Sermon / fourth" (SIDE_SC, a later generator change): not republished here.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.
