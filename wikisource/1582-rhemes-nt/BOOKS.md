@@ -347,6 +347,43 @@ ch 3-6 were hinted by the Tesseract TSVs only, not read in bands), all annotatio
 indents, the two orphan stars. Still open for Mark: the ch 4 margin "increa-ſing" (a barred a?), macrons of ch 3-6 verse text and margins
 beyond what the Tesseract hints showed, `odr` print misprints (4:16, 8:25, 12:31) left correct in `odr`.
 
+## Mark: round 7, macron band reads of chapters 3-14 and the misprint list (2026-11-18)
+
+**Method.** Every hires page of mark/3/1 to mark/14/4 (36 pages) was cut into full-width bands (13 pages as 4 bands at 0.75 for ch 3-7, then
+all 36 as 6 bands at 0.85) and each band was read by `agy --model gemini-4-hydrogen-low` with the question "list every word with a bar over a
+vowel". Every candidate not already in `odr-original` was located (hydrogen gives a rough bounding box, usable to about +-50 px; the
+Tesseract TSV was used where it had the word) and read on a 2.6-3.5x crop by me before the data changed.
+**How reliable hydrogen low was.** Recall was good: of the 31 distinct barred word forms `odr-original` already has in ch 3-14, it reported 29
+(missed "contentatiō" and "mā"; "mā" was a lower-case form in a note). Precision on new candidates was lower: it reported 10 new words that are really barred (all changed below) and 4 wrong ones:
+"perſecutiō" (ch 4 summary; the n is printed and the mark over the o is an accent-like tick, so no macron), "conueniēt" (6:21; the tick over the
+word is the descender of the line above), "cutiō"/"ciēt" fragments of those and of "ſufficiēt", plus words already in the data ("cōſcience", "Cōfeſſor").
+It also reported a barred word for only one of two or three identical words (14:56 "cōuenient" but not 14:59 plain; 14:47 "ſtāders" but not 14:69/70
+plain), which the crops confirmed. Its bounding boxes were wrong for 3 of 11 requests (a second ask with the phrase fixed them). It never invented a
+word this time. Nothing was changed on its word alone.
+
+**Changed (10 words, odr-original only; ch 3-6 are the chapters of task 1, ch 7-14 of task 2).**
+2 annotation note "Mā hath power to remit ſinnes." (the note sits on page 120, ch 3/1); 3:21 margin "frēdes" (worldly frēdes); 6:13 note "Sacramēt of
+extreme vnction"; 7:15 verse "cōmon"; 8 note "to chalēge by the ſpirit"; 11:21 "remēbring"; 11:25 note "frō his hart"; 12:33 gloss "ſufficiēt"; 14:47
+"ſtāders"; 14:56 "cōuenient". Pages 120, 121, 129, 133, 136, 145, 148, 154, 155 changed (one or two words each); all other pages byte-identical.
+Seen and already in the data: "Sacramēts" (ch 2 note), "vpō", "cōſcience", "Cōfeſſor", "deſcēded" (9:9), "Abſtinēce", "parēts", "perfectiō",
+"predictiō", "tentatiō", "cōgruity", "wēche", "vnderſtād" (ch 4 and the ch 5 annotation).
+Seen and plain: "common" 7:18/7:20/7:23, "conuenient" 14:59, "ſtanders" 14:69/70, "remembred" 14:72, "perſecution" (ch 4 summary has an accent-like tick over the o, not a macron).
+Ch 4 margin "The Church viſibly increa-ſing": the a before the hyphen does carry a stroke above it (a short bar or tick). A barred a makes no sense there
+(the next line begins "ſing"), so it is left "increaſing". Not changed.
+
+**Print misprints that `odr` corrects (task 3).** Found by aligning the two datasets word by word (ſ, vv, macrons, long forms folded), then listing
+single-word differences where both words are English words (dictionary check) or the one-letter differences left after the 1582 spelling folds.
+Complete list for Mark, as far as that finds them (the print reads, odr has):
+
+- 4:16 "thy likevvise" (odr "they likewise")
+- 8:25 "be began to ſee" (odr "he began to see")
+- 12:31 "loue they neighbour" (odr "love thy neighbour")
+- 6:46 lectionary note "The Goſpel on Saterday after Aſhweneſday." (the d is missing in print; odr "Ashwednesday") - found this round, crop read.
+- ch 14 summary "43 taken of thee Ievves men" ("thee" for "the"); odr reads "43. taken of Jews' men" and has no "the" at all: odr lacks a word the print has
+  (corrected to "the" in print terms), so that one is also a gap in odr. Decide with the user whether odr should read "taken of the Jews' men".
+  Looked at and NOT misprints (print forms of 1582): "impoſsibile" 10:27, "Archſynagogs", "Bying", "yere", "ſkrippe", "Heretike", "Relikes".
+  This detector is weak for a misprint that is also a different valid word and for ones inside text that had no odr counterpart, so the list may not be complete.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.
