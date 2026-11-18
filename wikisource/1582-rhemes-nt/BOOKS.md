@@ -115,7 +115,7 @@ Open, for the next Mark rounds (ch 3 from 3:6, pages 121-160):
   OCR of Matthew reads "Leu." 11 times, "Lev." twice; check those two on the scan.
 - Words hyphenated across a page break: add to `SPLIT_WORDS` as found (catchword = the
   second half).
-- The generator writes "c. 3" as "c.3" in annotation citations (Matthew too); not changed.
+- Fixed 2026-11-18: the generator glued a trailing number to the word before it ("c.3" for the data's "c. 3"); 62 spaces restored on 34 pages (Matthew 31-107, Mark 117-120).
 
 ## Other books: NT-wide passes already done
 

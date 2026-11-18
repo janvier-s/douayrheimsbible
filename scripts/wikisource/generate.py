@@ -155,7 +155,8 @@ def tokens_of(text, **meta):
         i += 1
     if cur.strip():
         if toks and not norm(cur):
-            toks[-1] += cur  # trailing template or mark
+            # trailing template or mark sticks to the word; a trailing number keeps its space ("c. 3")
+            toks[-1] += (' ' if re.match(r"\s*(?:'')?\d", cur) else '') + cur
         else:
             toks.append(cur)
     return [dict(text=t, norm=norm(t), **meta) for t in toks]
