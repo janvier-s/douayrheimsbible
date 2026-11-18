@@ -2,7 +2,7 @@
 
 usage:
   wikipost.py --check-login
-  wikipost.py FIRST-LAST [--summary TEXT] [--post] [--delay SECONDS (default 12: Wikisource rate-limits after about 8 edits)]
+  wikipost.py FIRST-LAST [--summary TEXT] [--post] [--create (also create pages that do not exist yet; createonly, never overwrites)] [--delay SECONDS (default 12: Wikisource rate-limits after about 8 edits)]
 
 Default is a DRY RUN: it logs in, fetches each live page, and prints what would change. Nothing is
 written without --post (and --summary). Rules it enforces:
@@ -72,6 +72,10 @@ class Wiki:
         return self.call({'action': 'edit', 'title': f'Page:{INDEX}/{n}', 'text': text, 'summary': summary,
                           'baserevid': baserevid, 'nocreate': 1, 'token': self.csrf}, post=True)
 
+    def create(self, n, text, summary):
+        return self.call({'action': 'edit', 'title': f'Page:{INDEX}/{n}', 'text': text, 'summary': summary,
+                          'createonly': 1, 'token': self.csrf}, post=True)
+
 
 def norm(t):
     return re.sub(r'(<pagequality level="\d" )user="[^"]*"', r'\1user=""', t).rstrip('\n')
@@ -88,6 +92,7 @@ def main():
         return
     first, last = map(int, a[0].split('-'))
     post = '--post' in a
+    create = '--create' in a
     opt = lambda k, d=None: a[a.index(k) + 1] if k in a else d
     summary = opt('--summary')
     delay = float(opt('--delay', 12))
@@ -106,8 +111,25 @@ def main():
             continue
         ours = f.read_text()
         live = w.live(n)
+        if live is None and not create:
+            print(f'{n}: not on Wikisource (add --create to create it)')
+            continue
         if live is None:
-            print(f'{n}: not on Wikisource (this tool only edits existing pages)')
+            todo += 1
+            print(f'{n}: would create ({len(ours)} chars)')
+            if post:
+                r = w.create(n, ours, summary)
+                if 'error' in r:
+                    print(f'{n}: ERROR {r["error"].get("code")}: {r["error"].get("info")}')
+                    break
+                ent = manifest.get(str(n), {})
+                ent.update(sha1=hashlib.sha1(ours.encode()).hexdigest(), status='posted', revid=r['edit'].get('newrevid'))
+                ent.pop('changed_since_post', None)
+                manifest[str(n)] = ent
+                manifest_path.write_text(json.dumps(manifest, indent=1) + '\n')
+                posted += 1
+                print(f'{n}: created (rev {ent["revid"]})')
+                time.sleep(delay)
             continue
         if norm(ours) == norm(live['text']):
             continue
