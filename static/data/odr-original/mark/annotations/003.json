@@ -23,7 +23,8 @@
         },
         {
           "marker": 2,
-          "text": "<i>Act. 1.</i>"
+          "text": "<i>Act. 1.</i>",
+          "star": true
         }
       ]
     },
@@ -38,7 +39,8 @@
         },
         {
           "marker": 2,
-          "text": "<i>Mt. 16.</i>"
+          "text": "<i>Mt. 16.</i>",
+          "star": true
         }
       ]
     },

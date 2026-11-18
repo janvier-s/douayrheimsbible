@@ -502,7 +502,7 @@ CREND_AT = {('matthew', 27, 35): 24}
 # 26:27 '‖ he gaue thankes' (103): the 26:26 'Bleſſed.' annotation covers both verbs;
 # 26:75 '‖ he vvept bitterly' (106; the lemma is the title's 'Wept bitterly');
 # 28:20 'vvith you ‖ al daies' (113; the title is 'With you al daies').
-BARS = {('mark', 1, 12): [(9, 8)], ('mark', 1, 35): [(11, 10)],
+BARS = {('mark', 1, 12): [(9, 8)], ('mark', 1, 35): [(11, 10)], ('mark', 6, 9): [(8, 11)],
         ('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)],
         ('matthew', 26, 27): [(None, 4)], ('matthew', 26, 75): [(24, 23)],
         ('matthew', 28, 20): [(15, 17)]}
@@ -522,7 +522,7 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
                ('matthew', 113): 'wil persvade him and',
                # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
-               ('mark', 120): '@annhead',
+               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake',
                ('mark', 152): 'sorraine sovldiars so shal'}
 
 
@@ -552,14 +552,16 @@ def signature(wiki):
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
 CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
-              ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 160): 'THE',
+              ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
+              ('mark', 130): 'he', ('mark', 160): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
 # Rendered {{hws|de|desert.}} at the page end and {{hwe|sert.|desert.}} at the next page's start.
-SPLIT_WORDS = {('mark', 115): ('de', 'sert.', 'desert.')}
+SPLIT_WORDS = {('mark', 115): ('de', 'sert.', 'desert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
+               ('mark', 129): ('He', 'rodias', 'Herodias')}
 
 
 def apply_page_starts(S, starts):
@@ -599,12 +601,12 @@ MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 
                 ('matthew', 10): [[40, 0]], ('matthew', 11): [[2, 0]], ('matthew', 12): [[39, 6]],
                 ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]],
                 ('matthew', 21): [[33, 0]], ('matthew', 22): [[15, 0]], ('matthew', 23): [[16, 0]],
-                ('matthew', 24): [[15, 0]]}
+                ('matthew', 24): [[15, 0]], ('mark', 4): [[3, 3]], ('mark', 5): [[35, 0]]}
 
 # Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81),
 # 22:16 (90, mid-line) are flush left; 26:2 (mid-line) and 26:3 (102) sit beside the drop cap.
 NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]],
-            ('matthew', 26): [[2, 0], [3, 0]]}
+            ('matthew', 26): [[2, 0], [3, 0]], ('mark', 4): [[3, 0]], ('mark', 6): [[50, 7]]}
 
 
 def export_paragraphs(S, paras):

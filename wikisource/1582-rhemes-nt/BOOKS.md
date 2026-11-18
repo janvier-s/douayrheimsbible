@@ -108,14 +108,65 @@ and all numbers match between `odr` and `odr-original`; no full word alignment w
 Open, for the next Mark rounds (ch 3 from 3:6, pages 121-160):
 
 - Lowercase speech-start "what/why/who" after a comma in odr-original verses where the print
-  has a capital W: Mark 5:31, 6:3 still to check; Matthew 27:4 "ſaid, what", 27:23 "why
+  has a capital W: Mark 5:31 fixed and 6:3 right as it is (round 2); Matthew 27:4 "ſaid, what", 27:23 "why
   vvhat" are published that way (check on the scan).
-- "Lev." in Mark cross_refs (6:18, 7:10, 9:48, 12:31) where `xrefs` has "Leu.": check each
+- "Lev." in Mark cross_refs (6:18 done in round 2: "Leu."; 7:10, 9:48, 12:31 still) where `xrefs` has "Leu.": check each
   on the scan. Matthew 5:34 and 5:43 (published) also read "Lev." in our data; the Tesseract
   OCR of Matthew reads "Leu." 11 times, "Lev." twice; check those two on the scan.
 - Words hyphenated across a page break: add to `SPLIT_WORDS` as found (catchword = the
   second half).
 - Fixed 2026-11-18: the generator glued a trailing number to the word before it ("c.3" for the data's "c. 3"); 62 spaces restored on 34 pages (Matthew 31-107, Mark 117-120).
+
+## Mark: round 2, chapters 3:6-6 and the chapter 6 annotations (2026-11-18)
+
+Pages 121-132 (3:6 to 6:56, the annotations of chapters 3-6, and 7:1-7 with the chapter 7
+summary, which share page 132) were read on two-page sheets at 0.4, margin crops and word
+crops, and published. `paragraphs.json` now has chapters 1-6 (chapter 7 not yet). Chapter 7
+past verse 7 is NOT checked (pages 133-160 are neither published nor read).
+
+Seen / already right / changed:
+
+- Marks: 4 drop-cap verses (4:1, 5:1, 6:1, 7:1) carried a `*` the print lacks: citation moved to
+  the verse end. 7:6 had a `*` before the italic quotation the print lacks: citation to the verse
+  end. 3 annotation stars the print has (3: "Twelue" Act. 1, "Peter" Mt. 16; 4: "And ſleepe" 1. Cor. 3;
+  the OCR vote found two, the third was a `‖` in the OCR). All other verse `*`, ∷, ‖ and `†`
+  positions on pages 121-132 already right. 6:9 ‖ stands before "tvvo" (BARS, wiki-only).
+- Text: 4:11 margin note was cut after "heare and": now "… read neuer ſo much, they cannot
+  vnderſtand. Bed. in 4 Marc." (both datasets). 5:31 "Who hath touched me?" has the capital W
+  (odr-original only). Kept: 4:16 "thy likevvise" (misprint in the print, as seen), 6:3 "why,"
+  (the print's w is lowercase), 5:39 margin "Ser."/annotation margin "ſer." as printed.
+- Citations: 5:1 "Mat. 8, 28. Luc. 8, 26." (data had "Mt. … Lu."), 6:18 "Lev." → "Leu." (u as printed),
+  6:32 "Mt. 14, 13." (data had a full stop), 6:46 "Io. 6, 16.", annotation margins "Marc. 5, 36."
+  and "Chryſ. ho. 49, in Mt." (commas). Other citations on the pages already right.
+- Page structure (generate.py): CHA. IIII. heading and its summary open page 123 (they were at the
+  end of 122; PAGE_STARTS '@chap', catchword "Chap. IIII." on 122); page 131 starts "he blessed"
+  (130 ends "heauen,", catchword "he"); words split across a page break: forth-vvith (127/128) and
+  He-rodias (129/130) in SPLIT_WORDS with the catchword = second half; MANUAL_PARAS 4:3 word 3
+  ("Behold" opens the paragraph, not "Heare ye") and 5:35; NO_PARAS 4:3 word 0 and 6:50 word 7
+  ("And immediatly" is mid-line after "trou-/bled."). Matthew pages regenerate byte-identical.
+
+Findings for other chapters/books:
+
+- Drop-cap verse 1 stars again (4 of 4 in this round); the OCR does not show them.
+- Citations with `Mat.`/`Luc.` full forms printed where our data has `Mt.`/`Lu.` (5:1): the data's
+  `xrefs` is no guide; read every citation. Transkribus margin reading is too noisy to automate it.
+- Page breaks in the middle of a line can be one word off (130/131): check each page's first and
+  last words against the scan, not only the catchwords.
+- Tesseract/Transkribus have no macrons: Step 4 (macron hints from the Tesseract TSV) is NOT done
+  for Mark 3-6; margin notes with printed macrons ("Sacramēt" in the 6:13 note) are still plain.
+
+Open, chapters 3-6:
+
+- Macrons (verse text, margin notes, annotation bodies) for chapters 3-6.
+- Annotation title 7 "13. With Oile)." (second annotation of 6:13): the print has a capital O and
+  ")" instead of "]"; the generator prints "''13. With oile.''] ". Left as is.
+- Step 6 word alignment between `odr` and `odr-original` for chapters 3-6 was not run; stars,
+  markers, citations and notes were edited in both datasets together.
+- Paragraph indents were taken from the OCR and checked by eye where a line looked doubtful (4:3,
+  5:35, 6:50 fixed); no page was measured line by line.
+
+Resume at page 133 (7:8): generate with `WS_NO_ORNAMENTS=1 … mark 114 <out> 46`, publish 133 onwards
+only once chapter 7 is checked (page 132's chapter 7 part is already read).
 
 ## Other books: NT-wide passes already done
 
