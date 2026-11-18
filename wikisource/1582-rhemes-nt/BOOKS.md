@@ -330,6 +330,12 @@ Left as the print has them in odr-original and NOT copied to odr (print misprint
 "be began to ſee" (and "he"), 12:31 "loue they neighbour". Decide with the user if odr should show them.
 The macron words in odr-original (vnderſtād, cōgruity, wēche, …) fold to their plain forms and match odr.
 
+**Paragraph indents, chapters 11-16 (task 5).** Every page 144-160 (mark/11/1 to 16/2) was cut into a left-edge strip (x 200-760, 0.55) with
+a red tick at each of the 35 paragraph starts `paragraphs.json` has for chapters 11-16 (all had a scan box). Read against the print: every
+clearly indented line (a "†" or "† \*" line set in from the left edge) carries a tick, and no tick sits on a flush line; flush "† And …"
+lines (e.g. 14:25 area, 15:22, 16:20) have none. No change to the data, no page republished. Limit: at 0.55 a one-letter shift of a †
+line is invisible; only clear indents (about 3 letters) were judged.
+
 ## Other books: NT-wide passes already done
 
 These fixed one class of error across the NT; the books were not read in full.
