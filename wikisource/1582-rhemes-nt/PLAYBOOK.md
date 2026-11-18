@@ -84,6 +84,12 @@ pages stay byte-identical after any generator change.
    BARS (wiki-only).
 5. Removing a note or splitting a cross_ref changes the counts in
    `scripts/export.corpus.test.ts`: update with a dated comment.
+6. Verse numbering and chapter breaks: compare the print's numbers with the data at every chapter
+   start. The 1582 print can open a chapter earlier than the Vulgate (Mark IX starts at Vulgate 8:39). The
+   data follows the print: move the verse, renumber the chapter, shift its annotation `verse` numbers and
+   `odr-clarifications`, and add the chapter to `static/data/odr/versification.json`.
+7. Annotation titles close with "]" or ")" as the compositor chose: crop the title closers of every
+   chapter (`PAREN_TITLES` in generate.py).
 
 Fastest read: two-page side-by-side sheets of the hires scans at 0.36 scale are
 legible for marks, indents and note wording (~1k tokens/page). Crop only doubtful

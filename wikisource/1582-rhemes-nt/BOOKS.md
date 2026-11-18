@@ -110,7 +110,7 @@ Open, for the next Mark rounds (ch 3 from 3:6, pages 121-160):
 - Lowercase speech-start "what/why/who" after a comma in odr-original verses where the print
   has a capital W: Mark 5:31 fixed and 6:3 right as it is (round 2); Matthew 27:4 "ſaid, what", 27:23 "why
   vvhat" are published that way (check on the scan).
-- "Lev." in Mark cross_refs (6:18 done in round 2: "Leu."; 7:10, 9:48, 12:31 still) where `xrefs` has "Leu.": check each
+- "Lev." in Mark cross_refs (6:18 done in round 2: "Leu."; 7:10 and 9:49 in round 3; 12:31 still) where `xrefs` has "Leu.": check each
   on the scan. Matthew 5:34 and 5:43 (published) also read "Lev." in our data; the Tesseract
   OCR of Matthew reads "Leu." 11 times, "Lev." twice; check those two on the scan.
 - Words hyphenated across a page break: add to `SPLIT_WORDS` as found (catchword = the
@@ -167,6 +167,63 @@ Open, chapters 3-6:
 
 Resume at page 133 (7:8): generate with `WS_NO_ORNAMENTS=1 … mark 114 <out> 46`, publish 133 onwards
 only once chapter 7 is checked (page 132's chapter 7 part is already read).
+
+## Mark: round 3, chapters 7:8-10 and the chapter 10 annotations (2026-11-18)
+
+Pages 132-144 (7:1-7 already read; 7:8 to 10:52, the annotations of chapters 7-10, and 11:1-8 with
+the chapter 11 summary, which share page 144) were read on two-page sheets at 0.4, margin and word
+crops, and published. `paragraphs.json` now has chapters 1-10. Chapters 11-16 (pages 145-160) are NOT
+checked. Generate with `WS_NO_ORNAMENTS=1 WS_OCR=transkribus … mark 114 <out> 46`.
+
+**Verse numbering (decided with the user): the data now follows the 1582 print at Mark 8/9.** The
+print opens chapter IX with "And he said to them, Amen I say to you…" (Vulgate 8:39) and numbers the
+rest of the chapter one higher (9:2 "And after six daies", … 9:50). In BOTH datasets 8:39 became 9:1
+(drop-cap "AND", citation "Mt. 16, 27. 17, 1. Lu. 9, 27." at the verse end, no `*`) and old 9:n is 9:n+1
+(ch 8 has 38 verses, ch 9 has 50; the total is unchanged). Moved with it: the ch 9 annotation `verse`
+numbers (4, 13, 38; the print titles read "4. Elias With Moyſes.)", "13.", "38."), `odr-clarifications`
+(`scandalize` 9:42 → 9:43) and `static/data/odr/versification.json` (new `mark` → `9`, so compare, search and tooltips map
+ODR 9:n to Vulgate n-1; ODR 9:1 and 9:2 share Vulgate row 1, Vulgate 8:39 has no ODR verse). The
+other things keyed on Vulgate numbers (`textual-notes`, `table-epistles-gospels.json` refs such as the
+Wednesday of the Imber week "Mark 9:16-28") were left alone. Old 9:1 (now 9:2) carries the ∷ before "And" with the gloss
+"See the Annotations vpon the 17 of S. Matthew." (it had been on old 9:2, "And his garments"). Print
+page 109 ends with the chapter IX summary and the catchword AND; 110 opens with the drop-cap verse.
+
+Seen / already right / changed:
+
+- Marks: 3 drop-cap verses carried a `*` the print lacks (8:1, 10:1, 11:1): citations moved to the verse
+  end. 10:19 had `*` and ∷ swapped: the print has "the ∷ com-maundements, _ Commit not…" (gloss on
+  "commaundements", citation before the quotation). Two annotation stars the print has: 8 ann 7
+  "(as _ he did mankind" (Gen. 1, 22, 28, marker moved from after "them )" to after "as") and 10 ann 30
+  "is, _ that he wil giue" (Hiero. in 19 Mat). All other verse `_`, ∷, ‖ and † positions on pages
+  133-144 were already right.
+- Headings: 11:1 "PALME Sunday." has no ∷ in text or margin: kind `head` (both datasets); the ch 11
+  summary note is `head`, not `gloss`. Generator: the side heading prints "THE fourth" as `{{sc|The}} fourth`
+  and `{{sc|Holy}}` (`SIDE_SC`), "THE THIRD" stays `{{sc|The third}}`.
+- Citations: 7:10 and 9:49 "Lev." → "Leu." (as printed, both datasets; 12:31 still to check). Annotation
+  10 ann 4 ended with "Aug. ep. 119 c. 19." in the body: the print has it only in the margin: removed.
+- Annotation titles: the print closes some with ")" instead of "]". `PAREN_TITLES` in generate.py lists
+  them: ch 7 ann 33, 34, ch 9 all three, ch 10 all five, and 6:13b (page 132, now "13. With Oile)." with the capital
+  O in odr-original). ch 7 ann 2, 7, 11, 15 and ch 8 all four are "]". Chapters 1-6 and 11-16 were NOT scanned for ")" (the
+  generator prints "]" everywhere else): check them.
+- Macrons (odr-original only), seen on crops: 7:9 "thē", 8:19 "fragmēts" (8:20 plain), 9:9 "deſcēded"
+  (print "deſcē-ded"), 9:14 "cōming"; margins "parēts", "Abſtinēce", "cōtemne", "vpō" (7:15), "Gods
+  cōmaundements" (10:19); annotation bodies "cōdeſcend" (8 ann 36), "contentatiō" and "cōſcience" (10 ann 30).
+  Tesseract does not show macrons: its "é" is a macron only some of the time ("Amén", "Gofpéel" are plain),
+  and the m/n-dropped words it gives are rare. A read of the annotation blocks at 0.8 is what finds them.
+- Page structure (generate.py): 141 opens with the Chap. X heading and summary (PAGE_STARTS '@chap',
+  catchword "Chap. X." on 140); 144 opens with ANNOTATIONS Chap. X. (PAGE_STARTS '@annhead', catchword
+  "ANNOT" on 143); MANUAL_PARAS 8:22 and 9:38 (indented, the OCR missed them), NO_PARAS 7:26, 7:27 and 9:3
+  (mid-line or flush beside the drop cap). Chapters 3-6 pages 121-131 regenerate byte-identical.
+
+Open, chapters 7-10:
+
+- Paragraph indents were checked by eye on the sheets and by crop at 9:37, 7:26-27 only.
+- Step 6 word alignment between `odr` and `odr-original` for chapters 7-10 was not run (structure,
+  markers, notes, cross-refs, stars edited in both together).
+- Macrons of chapters 3-6 (verse text, margins, annotation bodies) are still not done, except the ones
+  listed in round 2; known: 5 annotation "wēche" (the print has "with the wēche roſe vp").
+
+Resume at page 145 (11:9): ch 11 starts on 144 (read), pages 145-160 unchecked.
 
 ## Other books: NT-wide passes already done
 

@@ -175,8 +175,9 @@ def build_stream(book, ann):
         side = (chap.get('summary_notes') or [{}])[0].get('text', '')
         head = ''
         if side and not ITALIC_REF.match(side):
-            m = re.match(r'(\S+ \S+)(.*)', finish(side))
-            head = '{{MOUTER|{{sc|' + m.group(1).capitalize() + '}}' + m.group(2) + '}}'
+            # "THE THIRD part": both words in small caps; "THE fourth part": the lower-case word stays roman
+            m = re.match(r'(\S+(?: [A-Z]{2,}\b)?)(.*)', finish(side))
+            head = '{{MOUTER|{{sc|' + m.group(1).capitalize() + '}}' + SIDE_SC.get((BOOK, ch), lambda x: x)(m.group(2)) + '}}'
         S += tokens_of(head + '{{c|{{larger|{{sc|Chap. ' + ROMAN[ch] + '.}}}}}}', block=True, ch=ch, kind='chap')
         s = re.sub(r'<na>\[\d+\]</na>\s*', '', chap.get('summary', '')).strip()
         for w in SUMMARY_STARS.get((BOOK, ch), []):
@@ -252,6 +253,13 @@ def render_verse(v, ch):
     return lead + raw
 
 
+# Words of a chapter's side heading the print sets in small caps besides its first words (read on the scans).
+SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 1)}
+
+# Annotation titles the print closes with ")" instead of "]" (read on the scans): (book, chapter, annotation index).
+PAREN_TITLES = {('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
+                ('mark', 10, 0), ('mark', 10, 1), ('mark', 10, 2), ('mark', 10, 3), ('mark', 10, 4)}
+
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
 # on the scans. Greek words on page 107 (26:26 τὸν ἄρτον, 26:28 ἐκχυνόμενον); the Greek
@@ -276,7 +284,8 @@ def render_annotation(a, ch=None, ai=None):
     # the margin marker sits outside the text line: no space before it ahead of punctuation ("ground</i> <mn>[3]</mn>.")
     text = re.sub(r'\s+(<mn>[^<]*</mn>)(?=\s*[,.;:?!)])', r'\1', text)
     text = re.sub(r'<mn>[^<]*</mn>\s*', mn, text)
-    return f"''{a['verse']}. {a['title']}''] {text}"
+    close = ')' if (BOOK, ch, ai) in PAREN_TITLES else ']'
+    return f"''{a['verse']}. {a['title']}''{close} {text}"
 
 
 MARKDIFF = []
@@ -522,7 +531,7 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
                ('matthew', 113): 'wil persvade him and',
                # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
-               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake',
+               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake', ('mark', 141): '@chap', ('mark', 144): '@annhead',
                ('mark', 152): 'sorraine sovldiars so shal'}
 
 
@@ -553,7 +562,7 @@ def signature(wiki):
 CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
               ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
-              ('mark', 130): 'he', ('mark', 160): 'THE',
+              ('mark', 130): 'he', ('mark', 140): 'Chap. X.', ('mark', 143): 'ANNOT', ('mark', 160): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
@@ -601,12 +610,14 @@ MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 
                 ('matthew', 10): [[40, 0]], ('matthew', 11): [[2, 0]], ('matthew', 12): [[39, 6]],
                 ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]],
                 ('matthew', 21): [[33, 0]], ('matthew', 22): [[15, 0]], ('matthew', 23): [[16, 0]],
-                ('matthew', 24): [[15, 0]], ('mark', 4): [[3, 3]], ('mark', 5): [[35, 0]]}
+                ('matthew', 24): [[15, 0]], ('mark', 4): [[3, 3]], ('mark', 5): [[35, 0]],
+                ('mark', 8): [[22, 0]], ('mark', 9): [[38, 0]]}
 
 # Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81),
 # 22:16 (90, mid-line) are flush left; 26:2 (mid-line) and 26:3 (102) sit beside the drop cap.
 NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]],
-            ('matthew', 26): [[2, 0], [3, 0]], ('mark', 4): [[3, 0]], ('mark', 6): [[50, 7]]}
+            ('matthew', 26): [[2, 0], [3, 0]], ('mark', 4): [[3, 0]], ('mark', 6): [[50, 7]],
+            ('mark', 7): [[26, 0], [27, 0]], ('mark', 9): [[3, 0]]}
 
 
 def export_paragraphs(S, paras):

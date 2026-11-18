@@ -4,7 +4,7 @@
     {
       "verse": 4,
       "title": "Permitted.",
-      "text": " <mn>[1]</mn> Some things are permitted, though not approued or allowed, to auoid greater inconueniences. No man may doe euil for any cauſe, but he may permit other mens euils for diuerſe cauſes: as God him ſelf doeth, who can doe no euil. So doth the Prince and Common-wealth permit leſſer euils to eſchew greater, and ſo may the Holy Church much more (as S. Auguſtine <mn>[2]</mn> ſaith ſhe doeth) being placed among much chaffe and much cockle, tolerate many things: and yet whatſoeuer is againſt faith and good life, ſhe neither approueth, nor diſſembleth with ſilence, nor committeth. Aug. ep. 119 c. 19.",
+      "text": " <mn>[1]</mn> Some things are permitted, though not approued or allowed, to auoid greater inconueniences. No man may doe euil for any cauſe, but he may permit other mens euils for diuerſe cauſes: as God him ſelf doeth, who can doe no euil. So doth the Prince and Common-wealth permit leſſer euils to eſchew greater, and ſo may the Holy Church much more (as S. Auguſtine <mn>[2]</mn> ſaith ſhe doeth) being placed among much chaffe and much cockle, tolerate many things: and yet whatſoeuer is againſt faith and good life, ſhe neither approueth, nor diſſembleth with ſilence, nor committeth.",
       "notes": [
         {
           "marker": 1,
@@ -46,7 +46,7 @@
     {
       "verse": 30,
       "title": "An hundred times ſo much.",
-      "text": " <mn>[1]</mn> Sometime God doth ſo bleſſe men alſo in worldly benefites that haue forſaken al for him, as S. Gregorie, S. Auguſtine, and S. Paulinus: but the principal meaning is, <mn>[2]</mn> that he wil giue to ſuch men in this life aboundance of grace and ſpiritual comfort and contentation and ioy of conſcience (as they feele which haue experience) the which ſpiritual giftes excede the temporal commodities more then an hundred fold. in ſo much that he that hath fully forſaken but ſmal things for religion, would not forſake religion to haue al the world.",
+      "text": " <mn>[1]</mn> Sometime God doth ſo bleſſe men alſo in worldly benefites that haue forſaken al for him, as S. Gregorie, S. Auguſtine, and S. Paulinus: but the principal meaning is, <mn>[2]</mn> that he wil giue to ſuch men in this life aboundance of grace and ſpiritual comfort and contentatiō and ioy of cōſcience (as they feele which haue experience) the which ſpiritual giftes excede the temporal commodities more then an hundred fold. in ſo much that he that hath fully forſaken but ſmal things for religion, would not forſake religion to haue al the world.",
       "notes": [
         {
           "marker": 1,
@@ -54,7 +54,8 @@
         },
         {
           "marker": 2,
-          "text": "<i>Hiero. in 19 Mat</i>."
+          "text": "<i>Hiero. in 19 Mat</i>.",
+          "star": true
         }
       ]
     }

@@ -10,7 +10,7 @@
     {
       "verse": 7,
       "title": "Blessed them.",
-      "text": "So is it in some ancient Greek <mn>[1]</mn> copies, agreeable to our Latin, and in S. Luke <mn>[2]</mn> expressly in the common Greek text, <mn>[3]</mn> that he blessed the five loaves and the two fishes: which must be always marked against the Heretics, which deny this blessing to pertain to the creatures, but feign it always to be referred to God for thanks-giving. For if it were so, he would have said grace but once for that whole refection: but he did severally bless both the bread first, and afterward the fishes also, multiplying them by his said blessing (as he did mankind and other creatures in the beginning by blessing them <mn>[4]</mn> ) and so working effectually some change or alteration in the very creatures themselves.",
+      "text": "So is it in some ancient Greek <mn>[1]</mn> copies, agreeable to our Latin, and in S. Luke <mn>[2]</mn> expressly in the common Greek text, <mn>[3]</mn> that he blessed the five loaves and the two fishes: which must be always marked against the Heretics, which deny this blessing to pertain to the creatures, but feign it always to be referred to God for thanks-giving. For if it were so, he would have said grace but once for that whole refection: but he did severally bless both the bread first, and afterward the fishes also, multiplying them by his said blessing (as <mn>[4]</mn> he did mankind and other creatures in the beginning by blessing them ) and so working effectually some change or alteration in the very creatures themselves.",
       "notes": [
         {
           "marker": 1,
@@ -26,7 +26,8 @@
         },
         {
           "marker": 4,
-          "text": "<i>Gen. 1, 22. 28.</i>"
+          "text": "<i>Gen. 1, 22. 28.</i>",
+          "star": true
         }
       ]
     },
