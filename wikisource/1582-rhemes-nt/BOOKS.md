@@ -8,7 +8,7 @@ what Wikisource quality level 3 requires. Nothing is posted yet.
 | Book    | Wiki pages | Checked against the scans  | Wiki pages generated | Proofread | Posted |
 | ------- | ---------- | -------------------------- | -------------------- | --------- | ------ |
 | Matthew | 31-113     | yes, complete (2026-11-17) | yes, all 83          | no        | no     |
-| Mark    | 114-160    | ch 1-2 + argument (11-18)  | 114-120 published    | no        | no     |
+| Mark    | 114-160    | ch 1-2 + argument (11-18)  | 114-160 published    | no        | no     |
 | others  |            | partial (NT-wide passes)   | no                   | no        | no     |
 
 ## Matthew: what "checked" covers
