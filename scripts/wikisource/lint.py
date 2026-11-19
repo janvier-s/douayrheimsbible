@@ -18,7 +18,7 @@ Checks (E = error, W = warning):
   E-gap       page files missing from the numeric run
   W-header    no {{rh}} running head, or no {{rh}} footer
   W-space     double space, space before , . ; : ? ! ), space after (, trailing space
-  W-mark      verse without † after {{verse}} (except verse 1), or a doubled †
+  W-mark      stray † after {{verse}}
   W-quote     straight or curly double quotes in the body (the print has none)
 """
 import re
@@ -149,11 +149,9 @@ def lint(d):
             elif v != last_v + 1:
                 out.append(('E-verse', n, f'{ch}:{v} follows {ch}:{last_v}'))
             last_ch, last_v = ch, v
-            after = body[m.end():m.end() + 2]
-            if v != 1 and not after.startswith('†'):
-                out.append(('W-mark', n, f'{ch}:{v} has no † after the verse number'))
-            elif after == '††':
-                out.append(('W-mark', n, f'{ch}:{v} has a doubled †'))
+            after = body[m.end():m.end() + 3]
+            if '†' in after:
+                out.append(('W-mark', n, f'{ch}:{v} has stray † after the verse number'))
 
         # spacing and quotes
         for lineno, line in enumerate(body.split('\n'), 1):

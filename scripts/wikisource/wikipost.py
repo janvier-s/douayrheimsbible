@@ -2,20 +2,22 @@
 
 usage:
   wikipost.py --check-login
-  wikipost.py FIRST-LAST [--summary TEXT] [--post] [--create (also create pages that do not exist yet; createonly, never overwrites)] [--delay SECONDS (default 12: Wikisource rate-limits after about 8 edits)]
+  wikipost.py FIRST-LAST [--summary TEXT] [--post] [--diff] [--create (also create pages that do not exist yet; createonly, never overwrites)] [--delay SECONDS (default 12: Wikisource rate-limits after about 8 edits)]
 
 Default is a DRY RUN: it logs in, fetches each live page, and prints what would change. Nothing is
 written without --post (and --summary). Rules it enforces:
   * the linter must report no errors on pages/
-  * a page is skipped when live already equals ours (ignoring the user="" attribute)
+  * a page is skipped when live already equals ours (ignoring pagequality user="")
   * a page is skipped when its newest live revision is not by the posting account, unless
     --adopt-others lists it (somebody else edited it: review their change first)
+  * live pagequality level (e.g. level 3 "Proofread") and proofreader user are preserved
+    so bot uploads never demote human proofreading status back to level 1
   * the edit carries baserevid, so MediaWiki refuses it if the page changed since we fetched it
-  * pages are saved as they are (pagequality level 1, "Not proofread"); no status is set
+  * --diff displays the exact unified diff between live Wikisource and local wikitext
 Credentials: the bot password in the macOS keychain, service "wikisource-bot" (account
 "User@botname"); never printed, never stored in the repo.
 """
-import hashlib, http.cookiejar, json, re, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
+import difflib, hashlib, http.cookiejar, json, re, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -84,7 +86,19 @@ class Wiki:
 
 
 def norm(t):
-    return re.sub(r'(<pagequality level="\d" )user="[^"]*"', r'\1user=""', t).rstrip('\n')
+    return re.sub(r'<pagequality level="\d" user="[^"]*"\s*/>', '<pagequality />', t).rstrip('\n')
+
+
+def preserve_pagequality(ours, live):
+    """Retain live page quality level and proofreader user if live >= ours."""
+    m_live = re.search(r'(<pagequality level="(\d)" user="([^"]*)"\s*/>)', live)
+    m_ours = re.search(r'(<pagequality level="(\d)" user="([^"]*)"\s*/>)', ours)
+    if m_live and m_ours:
+        live_lvl = int(m_live.group(2))
+        ours_lvl = int(m_ours.group(2))
+        if live_lvl > ours_lvl or (live_lvl == ours_lvl and m_live.group(3)):
+            return ours[:m_ours.start()] + m_live.group(1) + ours[m_ours.end():]
+    return ours
 
 
 def main():
@@ -105,6 +119,7 @@ def main():
             pages.append(int(part))
     post = '--post' in a
     create = '--create' in a
+    show_diff = '--diff' in a
     opt = lambda k, d=None: a[a.index(k) + 1] if k in a else d
     summary = opt('--summary')
     delay = float(opt('--delay', 12))
@@ -147,19 +162,38 @@ def main():
             continue
         if live['user'] != me.split('@')[0] and n not in adopt:
             print(f'{n}: SKIP newest live revision is by {live["user"]}; review their edit, then --adopt-others {n}')
+            if show_diff:
+                diff = list(difflib.unified_diff(
+                    ours.splitlines(keepends=True),
+                    live['text'].splitlines(keepends=True),
+                    fromfile=f'local/{n}.wiki',
+                    tofile=f'live/{n} (rev {live["revid"]} by {live["user"]})'
+                ))
+                for dl in diff:
+                    print('  ' + dl.rstrip())
             skipped += 1
             continue
         todo += 1
         added = len(ours) - len(live['text'])
         print(f'{n}: would change (live rev {live["revid"]}, {added:+d} chars)')
+        if show_diff:
+            diff = list(difflib.unified_diff(
+                live['text'].splitlines(keepends=True),
+                ours.splitlines(keepends=True),
+                fromfile=f'live/{n} (rev {live["revid"]} by {live["user"]})',
+                tofile=f'local/{n}.wiki'
+            ))
+            for dl in diff:
+                print('  ' + dl.rstrip())
         if post:
-            r = w.edit(n, ours, summary, live['revid'])
+            ours_post = preserve_pagequality(ours, live['text'])
+            r = w.edit(n, ours_post, summary, live['revid'])
             if 'error' in r:
                 print(f'{n}: ERROR {r["error"].get("code")}: {r["error"].get("info")}')
                 break
             e = r['edit']
             ent = manifest.get(str(n), {})
-            ent.update(sha1=hashlib.sha1(ours.encode()).hexdigest(), status='posted', revid=e.get('newrevid', live['revid']))
+            ent.update(sha1=hashlib.sha1(ours_post.encode()).hexdigest(), status='posted', revid=e.get('newrevid', live['revid']))
             ent.pop('changed_since_post', None)
             manifest[str(n)] = ent
             manifest_path.write_text(json.dumps(manifest, indent=1) + '\n')

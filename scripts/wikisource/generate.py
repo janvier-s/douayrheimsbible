@@ -283,7 +283,7 @@ def render_verse(v, ch):
     raw = re.sub(r'(?:\s*<cr>\[\d+\]</cr>)+\s*$', crend, raw)
     raw = re.sub(r'<cr>\[(\d+)\]</cr>\s*', cr, raw)
     raw = re.sub(r'<na>\[(\d+)\]</na>\s*', na, raw)
-    lead = f'{{{{verse|chapter={ch}|verse={v["verse"]}}}}}' + ('' if v['verse'] == 1 else '† ')
+    lead = f'{{{{verse|chapter={ch}|verse={v["verse"]}}}}} '
     return lead + raw
 
 
