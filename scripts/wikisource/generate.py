@@ -20,25 +20,26 @@ DATA = REPO / 'static/data/odr-original'
 # Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
 # Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
 # its pages stay as they are; Transkribus reads the print better from Mark on.
-OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus', 'acts': 'transkribus'}
+OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus', 'acts': 'transkribus', 'romans': 'transkribus'}
 # Last line of the book title on its first page ("THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO ...").
-TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.', 'acts': 'APOSTLES.'}
+TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.', 'acts': 'APOSTLES.', 'romans': 'TO THE ROMANES.'}
 # Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
 ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242, 'acts': 314}
 # John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
 # (first part, continuation, whole word, the text that follows it).
-ARGUMENT_SPLIT = {'john': ('Pas', 'sion', 'Passion', 'beheaded')}
+ARGUMENT_SPLIT = {'john': ('Paſ', 'ſion', 'Paſsion', 'beheaded')}
 # Argument notes printed in the INNER margin (read on pdf242: "Iren. li. 2. c. 39." beside chap. 5, 1).
 INNER_ARGUMENT_NOTES = {'Iren. li. 2. c. 39.'}
 # First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
 FIRST_HEAD_CHA = {'mark', 'luke', 'john'}
 # Number of scripture pages (excluding end-matter tables/creed) for book alignment.
-SCRIPTURE_PAGES = {'acts': 85}
+SCRIPTURE_PAGES = {'acts': 85, 'romans': 42}
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
            'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.'),
            'luke': ('THE GOSPEL', 'ACCORDING TO S. LVKE.'),  # read on pdf 163, 164
            'john': ('THE GOSPEL', 'ACCORDING TO S. IOHN.'),  # read on pdf 245, 246  # mark: read on 1/2, 5/1, 16/1
-           'acts': ('THE ACTES', 'OF THE APOSTLES.')}
+           'acts': ('THE ACTES', 'OF THE APOSTLES.'),
+           'romans': ('THE EPISTLE OF S. PAVL', 'TO THE ROMANES.')}
 # Marks in chapter summaries are not in the data yet: words to star, per chapter.
 # Matt 2-28 summaries were checked on the scans (round 10): they print no marks.
 SUMMARY_STARS = {('matthew', 1): ['Abraham', 'Dauid. 18']}
@@ -135,8 +136,12 @@ def drop_initial(s, ch=None):
     return ''.join(parts)
 
 
+def to_ls(text):
+    return text.replace('ſ', '{{ls}}')
+
+
 def finish(s, dropcap=False, ch=None):
-    s = s.replace('ſ', 's').replace('⊢', '⊣')
+    s = s.replace('⊢', '⊣')
     s = sc_marks(s, dropcap)
     if dropcap:
         s = drop_initial(s, ch)
@@ -181,14 +186,18 @@ def build_stream(book, ann):
             if BOOK == 'acts':
                 ch_note = (chap.get('summary_notes') or [{}])[0].get('text', '')
                 title_wiki = '{{MOUTER|' + finish(ch_note) + '}}\n{{c|{{xx-larger|THE ACTES OF THE}}}}\n{{c|{{x-larger|APOSTLES.}}}}'
+            elif BOOK == 'romans':
+                ch_note = (chap.get('summary_notes') or [{}])[0].get('text', '')
+                note_str = ('{{MOUTER|' + finish(ch_note) + '}}\n') if ch_note else ''
+                title_wiki = note_str + '{{c|{{xx-larger|THE EPISTLE OF}}}}\n{{c|{{x-larger|PAVL THE APOSTLE}}}}\n{{c|{{larger|TO THE ROMANES.}}}}'
             else:
                 title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n{{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}\n{{c|{{larger|' + TITLE_END[BOOK] + '}}}}'
             tt = tokens_of(title_wiki, block=True, ch=ch, kind='title')
             if hp:  # the woodcut band above the book title, riding on the title's first word
                 tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
             S += tt
-        if BOOK == 'acts' and ch == 1:
-            side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '')
+        if (BOOK == 'acts' or BOOK == 'romans') and ch == 1:
+            side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '') if BOOK == 'acts' else ''
         else:
             side = (chap.get('summary_notes') or [{}])[0].get('text', '')
         head = ''
@@ -229,8 +238,8 @@ def build_stream(book, ann):
                 S += at
     if BOOK == 'acts':
         trailer = (
-            "\n\n{{c|{{smaller|The end of the Actes of the Apostles.}}}}\n"
-            "{{c|{{smaller|Whereunto we ioyne for the readers behalfe, two Tables of the two cheefe Apostles, and a note of the rest, as an abridgement of the said booke, and a supply of some things not there mentioned.}}}}"
+            "\n\n{{c|{{smaller|The end of the Actes of the Apoſtles.}}}}\n"
+            "{{c|{{smaller|Vvherevnto we ioyne for the readers behalfe, tvvo Tables of the tvvo cheefe Apoſtles, and a note of the reſt, as an abridgement of the ſaid booke, and a ſupply of ſome things not there mentioned.}}}}"
         )
         S[-1]['text'] += trailer
     tp = ORNAMENTS.get('tailpiece', {}).get(BOOK)
@@ -600,7 +609,7 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
 # the mark is computed, and the OCR only warns when it sees another letter. Checked on the
 # scans for A-H (pages 31-89).
 SIG_ALPHABET = 'ABCDEFGHIKLMNOPQRSTVXYZ'
-SIG_FIRST = {'matthew': 29, 'mark': 29, 'luke': 29, 'john': 29, 'acts': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
+SIG_FIRST = {'matthew': 29, 'mark': 29, 'luke': 29, 'john': 29, 'acts': 29, 'romans': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
 # "HOLY" beside the page number, "weeke." under it, top outer corner (checked on the scans):
 # (first wiki page, last wiki page, pages without it).
 HOLY_WEEK = {'matthew': (86, 113, {95, 107}), 'mark': (144, 160, set()),
@@ -619,32 +628,32 @@ def signature(wiki):
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
-CATCHWORDS = {('john', 242): 'sion', ('john', 243): 'THE', ('john', 245): 'the', ('john', 247): 'CHAP. II.', ('john', 249): 'to',
+CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the', ('john', 247): 'CHAP. II.', ('john', 249): 'to',
               ('john', 251): 'led.', ('john', 252): 'CHAP.', ('john', 253): 'band.', ('john', 254): 'haue', ('john', 256): 'AFTER', ('john', 259): 'that', ('john', 260): 'to',
-              ('john', 263): 'ANNOT.', ('john', 264): 'nedly', ('john', 265): "''62. If''", ('john', 266): 'Schisma-', ('john', 267): 'ueiled.', ('john', 269): 'AND', ('john', 270): '† Againe', ('john', 271): 'God',
+              ('john', 263): 'ANNOT.', ('john', 264): 'nedly', ('john', 265): "''62. If''", ('john', 266): 'Schiſma-', ('john', 267): 'ueiled.', ('john', 269): 'AND', ('john', 270): '† Againe', ('john', 271): 'God',
               ('john', 272): 'CHAP.', ('john', 275): 'Amen,', ('john', 276): 'of', ('john', 277): "''1. Climeth''", ('john', 280): 'therfore',
-              ('john', 284): 'per', ('john', 286): 'directed', ('john', 288): 'ANNOT.', ('john', 289): 'I AM', ('john', 291): 'These',
+              ('john', 284): 'per', ('john', 286): 'directed', ('john', 288): 'ANNOT.', ('john', 289): 'I AM', ('john', 291): 'Theſe',
               ('john', 293): "''13. The''", ('john', 294): '† I', ('john', 295): 'CHAP.', ('john', 297): '† {{sc|Iesvs}}',
               ('john', 301): 'AND', ('john', 305): 'CHAP.', ('john', 307): '(if', ('john', 308): 'THE',
               ('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
-              ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
+              ('mark', 114): 'THE', ('mark', 115): 'ſert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
               ('mark', 130): 'he', ('mark', 140): 'Chap. X.', ('mark', 143): 'ANNOT', ('mark', 149): 'And', ('mark', 152): 'ring', ('mark', 155): 'ANNOT.', ('mark', 160): 'THE',
-              ('luke', 161): 'THE', ('luke', 166): "''36. Elisabeth''", ('luke', 172): "''20. He''",
-              ('luke', 178): "''24. The''", ('luke', 196): "''21. To''", ('luke', 200): "''27. Blessed''",
+              ('luke', 161): 'THE', ('luke', 166): "''36. Eliſabeth''", ('luke', 172): "''20. He''",
+              ('luke', 178): "''24. The''", ('luke', 196): "''21. To''", ('luke', 200): "''27. Bleſſed''",
               ('luke', 204): "''11. Be''", ('luke', 241): 'THE',
-              ('acts', 401): 'THE',
+              ('acts', 401): 'THE', ('romans', 451): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
-# Rendered {{hws|de|desert.}} at the page end and {{hwe|sert.|desert.}} at the next page's start.
-SPLIT_WORDS = {('mark', 115): ('de', 'sert.', 'desert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
+# Rendered {{hws|de|de{{ls}}ert.|title=desert.}} at the page end and {{hwe|{{ls}}ert.|de{{ls}}ert.}} at the next page's start.
+SPLIT_WORDS = {('mark', 115): ('de', 'ſert.', 'deſert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
                ('mark', 129): ('He', 'rodias', 'Herodias'), ('mark', 152): ('hea', 'ring', 'hearing'),
-               ('john', 251): ('fil', 'led.', 'filled.'), ('john', 253): ('hus', 'band.', 'husband.'),
-               ('john', 264): ('vnlear', 'nedly', 'vnlearnedly'), ('john', 266): ('Schisma', 'tikes,', 'Schismatikes,'),
-               ('john', 267): ('mar', 'ueiled,', 'marueiled,'), ('john', 284): ('sup', 'per,', 'supper,')}
+               ('john', 251): ('fil', 'led.', 'filled.'), ('john', 253): ('huſ', 'band.', 'huſband.'),
+               ('john', 264): ('vnlear', 'nedly', 'vnlearnedly'), ('john', 266): ('Schiſma', 'tikes,', 'Schiſmatikes,'),
+               ('john', 267): ('mar', 'ueiled,', 'marueiled,'), ('john', 284): ('ſup', 'per,', 'ſupper,')}
 
 
 def apply_page_starts(S, starts):
@@ -752,7 +761,9 @@ def write_argument(book, wiki):
     if sp:  # the Argument runs over two scan pages, the second word broken across them
         first, cont, full, after = sp
         i = body.index(f'{full} {after}')
-        pages = [body[:i] + '{{hws|' + first + '|' + full + '}}', '{{hwe|' + cont + '|' + full + '}}' + body[i + len(full):]]
+        clean_title = full.replace('ſ', 's')
+        pages = [body[:i] + '{{hws|' + to_ls(first) + '|' + to_ls(full) + '|title=' + clean_title + '}}',
+                 '{{hwe|' + to_ls(cont) + '|' + to_ls(full) + '}}' + body[i + len(full):]]
         pages[1] = pages[1].replace('margin=left', 'margin=right')  # odd page: outer margin on the right
     for k, text in enumerate(pages):
         pg = wiki + k
@@ -761,9 +772,9 @@ def write_argument(book, wiki):
         footer = f'{{{{rh||{sig}|{catch}}}}}' if (sig or catch) else ''
         head = f'{{{{rh|{pg - 28}||}}}}' if k == 0 else f'{{{{rh|||{pg - 28}}}}}'  # k = 0 keeps the form of Mark's and Luke's published page
         text = re.sub(r'(?m)^(Whose excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
-        (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + head +
-                                        '</noinclude>' + sc_wiki(text) +
-                                        '<noinclude>' + footer + '</noinclude>\n'))
+        (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(head) +
+                                        '</noinclude>' + to_ls(sc_wiki(text)) +
+                                        '<noinclude>' + to_ls(footer) + '</noinclude>\n'))
 
 
 def main():
@@ -817,12 +828,16 @@ def main():
         body = SENT.sub('', body)
         sp = SPLIT_WORDS.get((BOOK, wiki))
         if sp:
-            body += ' {{hws|' + sp[0] + '|' + sp[2] + '}}'
+            if 'ſ' in sp[2]:
+                clean_title = sp[2].replace('ſ', 's')
+                body += ' {{hws|' + to_ls(sp[0]) + '|' + to_ls(sp[2]) + '|title=' + clean_title + '}}'
+            else:
+                body += ' {{hws|' + sp[0] + '|' + sp[2] + '}}'
         sp = SPLIT_WORDS.get((BOOK, wiki - 1))
         if sp:
             m = re.match(r'^((?:\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[*∷†‖] ?)*)' + re.escape(sp[2]), body)
             assert m, (wiki, body[:80])
-            body = body[:m.end() - len(sp[2])] + '{{hwe|' + sp[1] + '|' + sp[2] + '}}' + body[m.end():]
+            body = body[:m.end() - len(sp[2])] + '{{hwe|' + to_ls(sp[1]) + '|' + to_ls(sp[2]) + '}}' + body[m.end():]
         # italics are balanced per page (an unclosed '' breaks the page view): close at the page end, reopen on the next
         if ital_carry:
             body = "''" + body
@@ -850,9 +865,9 @@ def main():
             footer = f'{{{{continues|{catch}}}}}'  # Wikisource's template for a footer catchword (as proofread on pp. 38, 44)
         else:
             footer = f'{{{{rh||{sig}|{catch}}}}}' if (catch or sig) else ''
-        (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + header +
+        (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(header) +
                                           # the print's ‖ is a small raised mark; ″ read as quotes
-                                          '</noinclude>' + sc_wiki(body).replace('‖', '{{sup|‖}}') + '<noinclude>' + sc_wiki(footer) + '</noinclude>\n'))
+                                          '</noinclude>' + to_ls(sc_wiki(body).replace('‖', '{{sup|‖}}')) + '<noinclude>' + to_ls(sc_wiki(footer)) + '</noinclude>\n'))
         report.append(f'{wiki} {p["src"]} ch{p["chapters"]} tokens {a}-{b} match {quality[n]:.0%}')
     report.append('\nMark differences (wiki page, ch:v, our token, OCR mark, our mark):')
     for d in MARKDIFF:
