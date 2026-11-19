@@ -51,13 +51,15 @@ Any element with `background` anywhere in its inline `style` attribute matches a
 
 ### Orthography & Transcription Standards
 
-1. **Long `s` vs. Modern `s`**:
-   - Pages 1–30 (Title, Approbation, Preface): preserve long `ſ`.
-   - Pages 31 onwards (all Scripture and subsequent end-matter): use modern `s`.
+1. **Long `s` (`ſ`) & Renaissance Orthography**:
+   - Preserved throughout the entire work (never modernize `ſ` to modern `s`).
+   - **Wikisource (`.wiki`)**: Use `{{ls}}` for long-s (`ſ`), `{{ls}}{{ls}}` for double long-s (`ſſ`), and `{{ls}}s` for `ſs` (displays as long-s in Page namespace; renders as modern `s` on transclusion for searchability).
+   - **Master TEI XML (`A16049.xml`)**: Preserve literal Unicode long-s `ſ` (`U+017F`) throughout.
+   - Retain 1582 print distribution of `u`/`v`, `vv`/`w`, macrons/titlos (`cōmaunded`, `vpō`), and ligatures (`æ`, `œ`, `&c.`).
 2. **Unicode NFC Normalization**:
    - All text must be normalized to Unicode NFC (canonical decomposition followed by canonical composition). MediaWiki enforces NFC upon save; non-NFC text causes checksum mismatches.
-3. **Typography & Ligatures**:
-   - Preserve `æ`, `œ`, `&c.`, and Renaissance roman/italic distinctions.
+3. **Typography & Layout**:
+   - Preserve Renaissance roman/italic distinctions.
    - Use standard `†` marks following verse numbers (except verse 1).
    - No double quotes `"` in the body text (the 1582 print does not use them).
    - Running heads and footers must use `{{rh|...}}` and `{{continues|...}}` templates.
