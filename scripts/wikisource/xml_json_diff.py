@@ -11,7 +11,34 @@ import xml.etree.ElementTree as ET
 
 REPO = Path(__file__).resolve().parents[2]
 XML = Path('/Users/Janvier/Documents/Bible-n-stuff/original-douay-rheims-nt/A16049.xml')
-BOOKN = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John'}
+BOOKN = {
+    'matthew': ('gospel', 'Matthew'),
+    'mark': ('gospel', 'Mark'),
+    'luke': ('gospel', 'Luke'),
+    'john': ('gospel', 'John'),
+    'acts': ('book', 'Acts of the Apostles'),
+    'romans': ('epistle', 'Romans'),
+    '1-corinthians': ('epistle', '1 Corinthians'),
+    '2-corinthians': ('epistle', '2 Corinthians'),
+    'galatians': ('epistle', 'Galatians'),
+    'ephesians': ('epistle', 'Ephesians'),
+    'philippians': ('epistle', 'Philippians'),
+    'colossians': ('epistle', 'Colossians'),
+    '1-thessalonians': ('epistle', '1 Thessalonians'),
+    '2-thessalonians': ('epistle', '2 Thessalonians'),
+    '1-timothy': ('epistle', '1 Timothy'),
+    '2-timothy': ('epistle', '2 Timothy'),
+    'titus': ('epistle', 'Titus'),
+    'hebrews': ('epistle', 'Hebrews'),
+    'james': ('epistle', 'James'),
+    '1-peter': ('epistle', '1 Peter'),
+    '2-peter': ('epistle', '2 Peter'),
+    '1-john': ('epistle', '1 John'),
+    '2-john': ('epistle', '2 John'),
+    '3-john': ('epistle', '3 John'),
+    'jude': ('epistle', 'Jude'),
+    'apocalypse': ('book', 'Apocalypse'),
+}
 
 
 def ln(e):
@@ -105,10 +132,14 @@ def _add_text(st, s):
 
 def xml_chapters(book):
     root = ET.parse(XML).getroot()
+    btype, bname = BOOKN[book]
+    gos = None
     for d in root.iter():
-        if ln(d) == 'div' and d.get('type') == 'gospel' and d.get('n') == BOOKN[book]:
+        if ln(d) == 'div' and d.get('type') == btype and d.get('n') == bname:
             gos = d
             break
+    if gos is None:
+        raise ValueError(f"Book {book} not found")
     chs = {}
     for ch in gos:
         if ln(ch) == 'div' and ch.get('type') == 'chapter':
