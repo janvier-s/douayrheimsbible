@@ -1,8 +1,8 @@
-<noinclude><pagequality level="1" user="" />{{rh|376||}}</noinclude>{{c|{{larger|{{sc|Of the Other Apostles.}}}}}}
+<noinclude><pagequality level="1" user="" />{{rh|376||}}</noinclude>{{c|{{larger|{{sc|Of the Other Apo{{ls}}tles.}}}}}}
 
-{{dropinitial|T}}HE Actes of the rest of the tvvelue Apostles be not much vvritten of in this booke: but as * other Ecclesiastical writers do testifie, they preached specially in these nations, as folovveth.{{MarginNote|margin=left|margin-width=65|text=''Genebr. out of diuers authors.''}} ''Andrevv in Achaia, Iohn in Asia, Philip in Phrygia, Iames in Ievvrie, Bartholomevv in Scythia, Thomas in India, Matthevv in Aethiopia, Simon in Persia, Thaddæus in Mesopotamia, the other Iames in Spaine, Matthias in Palestine.'' So distributing them selues through out the vvorld, to gather one Catholike Church of al Nations, according as Christ gaue them commission ''Mat. 28, 19:'' and as it vvas prophecied of them before Psal. 18. ''Their sound is gone forth into euery countrie, and their wordes into the endes of the whole world.'' But before they departed one from an other (the time vvhereof is not certainely knovven) * al Tvvelue assembling together,{{MarginNote|margin=left|margin-width=65|text=''Ruffi. in expos. Symb. Apost. Ambr. ser. 38. Hiero. ep. 61. c. 9. aduers erro. Io. Hieros.''}} & ful of the Holy Ghost, eche laying dovvne his sentence, agreed vpon tvvelue principal articles of the Christian faith, and appointed them for a rule to al beleeuers: Vvhich is therfore called and is {{sc|the Apostles Crede:}} ''Not vvritten in paper,'' as the Scripture, ''but from the Apostles deliuered by tradition.'' Ruff. & Hiero. locis citatis. Vvhich, as of old ''(Hiero. cont. Lucifer)'' so at this day al solemnely professe in their Baptisme, either by them selues or by others: and al that be of age and capacitie, are bound to know and beleeue euery article of the same. Vvhich are these that folovv.
+{{dropinitial|T}}HE Actes of the re{{ls}}t of the tvvelue Apo{{ls}}tles be not much vvritten of in this booke: but as * other Eccle{{ls}}ia{{ls}}tical writers do te{{ls}}tifie, they preached {{ls}}pecially in the{{ls}}e nations, as folovveth.{{MarginNote|margin=left|margin-width=65|text=''Genebr. out of diuers authors.''}} ''Andrevv in Achaia, Iohn in A{{ls}}ia, Philip in Phrygia, Iames in Ievvrie, Bartholomevv in Scythia, Thomas in India, Matthevv in Aethiopia, Simon in Per{{ls}}ia, Thaddæus in Me{{ls}}opotamia, the other Iames in Spaine, Matthias in Pale{{ls}}tine.'' So di{{ls}}tributing them {{ls}}elues through out the vvorld, to gather one Catholike Church of al Nations, according as Chri{{ls}}t gaue them commi{{ls}}sion ''Mat. 28, 19:'' and as it vvas prophecied of them before P{{ls}}al. 18. ''Their {{ls}}ound is gone forth into euery countrie, and their wordes into the endes of the whole world.'' But before they departed one from an other (the time vvhereof is not certainely knovven) * al Tvvelue a{{ls}}{{ls}}embling together,{{MarginNote|margin=left|margin-width=65|text=''Ruffi. in expo{{ls}}. Symb. Apo{{ls}}t. Ambr. {{ls}}er. 38. Hiero. ep. 61. c. 9. aduers erro. Io. Hiero{{ls}}.''}} & ful of the Holy Gho{{ls}}t, eche laying dovvne his {{ls}}entence, agreed vpon tvvelue principal articles of the Chri{{ls}}tian faith, and appointed them for a rule to al beleeuers: Vvhich is therfore called and is {{sc|the Apo{{ls}}tles Crede:}} ''Not vvritten in paper,'' as the Scripture, ''but from the Apo{{ls}}tles deliuered by tradition.'' Ruff. & Hiero. locis citatis. Vvhich, as of old ''(Hiero. cont. Lucifer)'' {{ls}}o at this day al {{ls}}olemnely profe{{ls}}se in their Bapti{{ls}}me, either by them {{ls}}elues or by others: and al that be of age and capacitie, are bound to know and beleeue euery article of the {{ls}}ame. Vvhich are the{{ls}}e that folovv.
 
-{{c|{{larger|{{sc|The Apostles Crede, or Symbolvm Apostolorvm.}}}}}}
+{{c|{{larger|{{sc|The Apo{{ls}}tles Crede, or Symbolvm Apo{{ls}}tolorvm.}}}}}}
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 50%; vertical-align: top; padding-right: 15px;' |
@@ -15,36 +15,36 @@
 | style='vertical-align: top;' | And in ''{{sc|Iesvs Christ}},'' his only Sonne, our Lord.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='vertical-align: top;' | Vvho vvas conceiued by the Holy Ghost, borne of the Virgin ''{{sc|Marie}}.''
+| style='vertical-align: top;' | Vvho vvas conceiued by the Holy Gho{{ls}}t, borne of the Virgin ''{{sc|Marie}}.''
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 4
-| style='vertical-align: top;' | Suffered vnder Pontius Pilate, was crucified, dead, and buried: Descended into Hel.
+| style='vertical-align: top;' | Suffered vnder Pontius Pilate, was crucified, dead, and buried: De{{ls}}cended into Hel.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 5
-| style='vertical-align: top;' | The third day he rose againe from death:
+| style='vertical-align: top;' | The third day he ro{{ls}}e againe from death:
 |}
 | style='width: 50%; vertical-align: top;' |
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 25px; text-align: right; vertical-align: top; padding-right: 8px;' | 6
-| style='vertical-align: top;' | Ascended into heauen: Sitteth at the right hand of God the Father almightie.
+| style='vertical-align: top;' | A{{ls}}cended into heauen: Sitteth at the right hand of God the Father almightie.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 7
-| style='vertical-align: top;' | From thence he shal come to iudge the quicke and the dead.
+| style='vertical-align: top;' | From thence he {{ls}}hal come to iudge the quicke and the dead.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 8
-| style='vertical-align: top;' | ''I beleeue'' in the Holy Ghost.
+| style='vertical-align: top;' | ''I beleeue'' in the Holy Gho{{ls}}t.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
-| style='vertical-align: top;' | The holy ''Catholike Church:'' the communion of saincts.
+| style='vertical-align: top;' | The holy ''Catholike Church:'' the communion of {{ls}}aincts.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
-| style='vertical-align: top;' | Forgiuenesse of sinnes.
+| style='vertical-align: top;' | Forgiuene{{ls}}{{ls}}e of {{ls}}innes.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
-| style='vertical-align: top;' | Resurrection of the flesh.
+| style='vertical-align: top;' | Re{{ls}}urrection of the fle{{ls}}h.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='vertical-align: top;' | Life euerlasting. Amen.
+| style='vertical-align: top;' | Life euerla{{ls}}ting. Amen.
 |}
 |}<noinclude>{{rh|||THE}}</noinclude>

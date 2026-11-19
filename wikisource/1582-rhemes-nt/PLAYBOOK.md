@@ -175,3 +175,7 @@ Check the word diff of every changed page; pages you did not mean to change must
 byte-identical. Before each commit: `npx vitest run`, `npm run check`,
 `npx prettier --check scripts/wikisource wikisource`. Commit messages list each
 change with an honest count (seen / already right / changed).
+
+## Cheap whole-NT triage (XML vs odr-original)
+
+`python3 scripts/wikisource/triage.py` prints one ~60-line report: page/manifest/lint state plus per-book counts of w/vv, long-s, macron, stray anchor letters, wording, verse-boundary and margin-note findings. Drill down with `triage.py <book> --detail <kind> --limit N`. Findings are candidates: check them on the Transkribus text, since EEBO is not ground truth. Hide reviewed-and-fine ones with `triage.py --accept <book> <kind>`.

@@ -1,5 +1,5 @@
 <noinclude><pagequality level="1" user="" />{{rh|||281}}</noinclude>
-{{c|{{larger|THE SVMME, AND THE ORDER OF THE EVANGELICAL HISTORIE, gathered breifly out of al foure, euen vnto Christs Ascension.}}}}
+{{c|{{larger|THE SVMME, AND THE ORDER OF THE EVANGELICAL HISTORIE, gathered breifly out of al foure, euen vnto Chri{{ls}}ts A{{ls}}cen{{ls}}ion.}}}}
 
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
@@ -13,101 +13,101 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='vertical-align: top;' | {{dropinitial|T}}HE preface mouing the Reader to receiue CHRIST, being the aeternal VVORD of God, the life and the light.{{MarginNote|margin=right|margin-width=65|text=THE 1 PART, conteining the Infancie of Christ and the time that he liued obscurely.}}
+| style='vertical-align: top;' | {{dropinitial|T}}HE preface mouing the Reader to receiue CHRIST, being the aeternal VVORD of God, the life and the light.{{MarginNote|margin=right|margin-width=65|text=THE 1 PART, conteining the Infancie of Chri{{ls}}t and the time that he liued ob{{ls}}curely.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The Angel telleth Zacharie of the conception of Iohn Baptist, Christs Precursor: and Elizabeth conceiueth him.
+| style='vertical-align: top;' | The Angel telleth Zacharie of the conception of Iohn Bapti{{ls}}t, Chri{{ls}}ts Precur{{ls}}or: and Elizabeth conceiueth him.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The same Angel doing his message to the B. Virgin, CHRIST is incarnate in her wombe.
+| style='vertical-align: top;' | The {{ls}}ame Angel doing his me{{ls}}{{ls}}age to the B. Virgin, CHRIST is incarnate in her wombe.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Our B. Ladie visiteth Elizabeth: and Iohn Baptist is borne, and circuncised.
+| style='vertical-align: top;' | Our B. Ladie vi{{ls}}iteth Elizabeth: and Iohn Bapti{{ls}}t is borne, and circunci{{ls}}ed.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The Angel telleth Ioseph that his vvise is vvith childe by the Holy Ghost.
+| style='vertical-align: top;' | The Angel telleth Io{{ls}}eph that his vvi{{ls}}e is vvith childe by the Holy Gho{{ls}}t.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The genealogie of Christ.
+| style='vertical-align: top;' | The genealogie of Chri{{ls}}t.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The birth of Christ in Bethlehem, and his circuncision.
+| style='vertical-align: top;' | The birth of Chri{{ls}}t in Bethlehem, and his circunci{{ls}}ion.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The Sages come from the East, and adore Christ.
+| style='vertical-align: top;' | The Sages come from the Ea{{ls}}t, and adore Chri{{ls}}t.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Christ is presented in the Temple: vvhere Simeon and Anna prophecie of him.
+| style='vertical-align: top;' | Chri{{ls}}t is pre{{ls}}ented in the Temple: vvhere Simeon and Anna prophecie of him.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Ioseph vvith the childe and his mother, fleeth into Aegypt: and returneth to Nazareth.
+| style='vertical-align: top;' | Io{{ls}}eph vvith the childe and his mother, fleeth into Aegypt: and returneth to Nazareth.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Iesus being sought of his parents, is found in the Temple among the Doctors.
+| style='vertical-align: top;' | Ie{{ls}}us being {{ls}}ought of his parents, is found in the Temple among the Doctors.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Iohn the Baptist preacheth and baptizeth, preparing al to receiue Christ: and among other, Christ is baptized of him.{{MarginNote|margin=right|margin-width=65|text=The 2 part, conteining the time of the preparatiō̄ toward his manifestation.}}
+| style='vertical-align: top;' | Iohn the Bapti{{ls}}t preacheth and baptizeth, preparing al to receiue Chri{{ls}}t: and among other, Chri{{ls}}t is baptized of him.{{MarginNote|margin=right|margin-width=65|text=The 2 part, conteining the time of the preparatiō̄ toward his manife{{ls}}tation.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 4
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 4
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Christ fasteth fourtie daies, and is tempted in the vvildernesse.
+| style='vertical-align: top;' | Chri{{ls}}t fa{{ls}}teth fourtie daies, and is tempted in the vvilderne{{ls}}{{ls}}e.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='vertical-align: top;' | Iohn giueth testimonie of Christ to the legates of the Ievves, to the people, and to his ovvne disciples.
+| style='vertical-align: top;' | Iohn giueth te{{ls}}timonie of Chri{{ls}}t to the legates of the Ievves, to the people, and to his ovvne di{{ls}}ciples.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='vertical-align: top;' | Christ vvorketh his first miracle, turning vvater into vvine at a mariage.
+| style='vertical-align: top;' | Chri{{ls}}t vvorketh his fir{{ls}}t miracle, turning vvater into vvine at a mariage.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='vertical-align: top;' | In the feast of Pasche he casteth out the biers and sellers in the Temple, insinuating to the Iewes his death and resurrectiō̄.{{MarginNote|margin=right|margin-width=65|text=THE 1. PASCHE.}}
+| style='vertical-align: top;' | In the fea{{ls}}t of Pa{{ls}}che he ca{{ls}}teth out the biers and {{ls}}ellers in the Temple, in{{ls}}inuating to the Iewes his death and re{{ls}}urrectiō̄.{{MarginNote|margin=right|margin-width=65|text=THE 1. PASCHE.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='vertical-align: top;' | He teacheth Nicodemus by night: and baptizeth in Iurie by the ministerie of his disciples. vvherevpon a question is moued to Iohn about their tvvo baptismes.
+| style='vertical-align: top;' | He teacheth Nicodemus by night: and baptizeth in Iurie by the mini{{ls}}terie of his di{{ls}}ciples. vvherevpon a que{{ls}}tion is moued to Iohn about their tvvo bapti{{ls}}mes.
 |}<noinclude>{{rh|Nn||Iohn}}</noinclude>

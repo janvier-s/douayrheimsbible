@@ -39,12 +39,12 @@ Any element with `background` anywhere in its inline `style` attribute matches a
 
 ---
 
-### Zero-Token Facsimile Policy
+### Auditing Against the Source
 
-- **Never load facsimile image bytes into the context window.**
-- Always audit text and layout against Transkribus OCR exports:
+- Check text and layout against the Transkribus OCR exports first, because they are cheap to read:
   - Text: `/Users/Janvier/facsimiles/transkribus/pages/.../pdf*.txt`
   - Word coordinates & layout: `/Users/Janvier/facsimiles/transkribus/pages/.../pdf*.tsv`
+- When the OCR cannot settle a reading (macron/stroke marks, `w` vs `vv`, long-s), crop the word from the facsimile using the TSV boxes, collage the crops into one image and look at it. Prefer one collage per batch over many single-image reads.
 - Do not trust EEBO-TCP transcription (`A16049.xml`) blindly: EEBO typists frequently dropped lines (homoeoteleuton), misread Renaissance contractions/abbreviations, and introduced typist errors.
 
 ---

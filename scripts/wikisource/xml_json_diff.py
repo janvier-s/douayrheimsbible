@@ -6,11 +6,11 @@ Per chapter: summary text and the annotation text. Writes a TSV and prints a sum
 Usage: xml_json_diff.py <book> [out.tsv]      (book: matthew mark luke john)
 """
 from pathlib import Path
-import difflib, json, re, sys, unicodedata
+import difflib, functools, json, re, sys, unicodedata
 import xml.etree.ElementTree as ET
 
 REPO = Path(__file__).resolve().parents[2]
-XML = Path('/Users/Janvier/Documents/Bible-n-stuff/original-douay-rheims-nt/A16049.xml')
+XML = REPO / 'sources/eebo-tcp/A16049.xml'  # identical copy of original-douay-rheims-nt/A16049.xml
 BOOKN = {
     'matthew': ('gospel', 'Matthew'),
     'mark': ('gospel', 'Mark'),
@@ -130,8 +130,13 @@ def _add_text(st, s):
     st.ev.append(('raw', s))
 
 
+@functools.lru_cache(maxsize=1)
+def xml_root():
+    return ET.parse(XML).getroot()
+
+
 def xml_chapters(book):
-    root = ET.parse(XML).getroot()
+    root = xml_root()
     btype, bname = BOOKN[book]
     gos = None
     for d in root.iter():
@@ -144,6 +149,8 @@ def xml_chapters(book):
     for ch in gos:
         if ln(ch) == 'div' and ch.get('type') == 'chapter':
             chs[int(ch.get('n'))] = ch
+    if not chs:  # one-chapter epistles (2 John, 3 John, Jude): verses sit directly in the book div
+        chs[1] = gos
     return chs
 
 
@@ -296,4 +303,5 @@ def main(book, outp):
     print(book, stats, kinds, '->', outp)
 
 
-main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else f'/tmp/{sys.argv[1]}_xml_json.tsv')
+if __name__ == '__main__':
+    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else f'/tmp/{sys.argv[1]}_xml_json.tsv')
