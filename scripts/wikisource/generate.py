@@ -262,7 +262,8 @@ SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 
 # Annotation titles the print closes with ")" instead of "]" (read on the scans): (book, chapter, annotation index).
 PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in range(6)], ('mark', 6, 0), ('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
                 ('mark', 10, 0), ('mark', 10, 1), ('mark', 10, 2), ('mark', 10, 3), ('mark', 10, 4),
-                ('mark', 12, 1), ('mark', 12, 2), ('mark', 12, 3)}
+                ('mark', 12, 1), ('mark', 12, 2), ('mark', 12, 3),
+                *[('luke', 13, i) for i in range(5)], ('luke', 14, 0)}
 
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
@@ -568,6 +569,9 @@ CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matth
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
               ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
               ('mark', 130): 'he', ('mark', 140): 'Chap. X.', ('mark', 143): 'ANNOT', ('mark', 149): 'And', ('mark', 152): 'ring', ('mark', 155): 'ANNOT.', ('mark', 160): 'THE',
+              ('luke', 161): 'THE', ('luke', 166): "''36. Elisabeth''", ('luke', 172): "''20. He''",
+              ('luke', 178): "''24. The''", ('luke', 196): "''21. To''", ('luke', 200): "''27. Blessed''",
+              ('luke', 204): "''11. Be''", ('luke', 241): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
@@ -678,9 +682,11 @@ def write_argument(book, wiki):
     t1, t2 = re.match(r'(.* OF) (.*)', intro['title']).groups()
     body = f'{{{{c|{{{{x-larger|{t1}}}}}}}}}\n{{{{c|{{{{larger|{t2}}}}}}}}}\n\n' + '\n\n'.join(paras)
     catch = CATCHWORDS.get((BOOK, wiki), '')
+    sig = signature(wiki)
+    footer = f'{{{{rh||{sig}|{catch}}}}}' if (sig or catch) else ''
     (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />'
                                       f'{{{{rh|{wiki - 28}||}}}}</noinclude>' + sc_wiki(body) +
-                                      '<noinclude>' + (f'{{{{rh|||{catch}}}}}' if catch else '') + '</noinclude>\n'))
+                                      '<noinclude>' + footer + '</noinclude>\n'))
 
 
 def main():

@@ -7,8 +7,10 @@ what Wikisource quality level 3 requires. Nothing is posted yet.
 
 | Book    | Wiki pages | Checked against the scans  | Wiki pages generated | Proofread | Posted |
 | ------- | ---------- | -------------------------- | -------------------- | --------- | ------ |
-| Matthew | 31-113     | yes, complete (2026-11-17) | yes, all 83          | no        | no     |
-| Mark    | 114-160    | ch 1-2 + argument (11-18)  | 114-160 published    | no        | no     |
+| Matthew | 31-113     | yes, complete (2026-11-17) | yes, all 83          | no        | yes    |
+| Mark    | 114-160    | yes, complete (2026-11-18) | yes, all 47          | no        | yes    |
+| Luke    | 161-241    | yes, complete (2026-11-19) | yes, all 81          | no        | yes    |
+| John    | 242-300    | in progress                | pending              | no        | no     |
 | others  |            | partial (NT-wide passes)   | no                   | no        | no     |
 
 ## Matthew: what "checked" covers
@@ -396,6 +398,31 @@ Complete list for Mark, as far as that finds them (the print reads, odr has):
   round: it now reads "taken of the Jews' men". odr-original keeps "thee Ievves".
   Looked at and NOT misprints (print forms of 1582): "impoſsibile" 10:27, "Archſynagogs", "Bying", "yere", "ſkrippe", "Heretike", "Relikes".
   This detector is weak for a misprint that is also a different valid word and for ones inside text that had no odr counterpart, so the list may not be complete.
+
+## Luke: critical audit, XML backfill, and publication (2026-11-19)
+
+Pages 161–241 (print pages 133–213, 81 pages total) audited against 1582 print facsimiles, Transkribus findings, and TEI XML gaps.
+
+- **Scope & Pagination**:
+  - Argument of S. Luke begins on page 161 (Signature `R iij`, catchword `THE`).
+  - Chapter 1 opens on page 162.
+  - Final page of Luke is page 241 (Signature `Dd iij`, catchword `THE` pointing to John's Argument on page 242).
+- **Data Fixes (`odr-original` & `odr`)**:
+  - Fixed parenthesis spacing in Luke 2:22-23 and 6:13 in `odr-original/luke.json`.
+  - Removed stray leading parenthesis characters from annotation titles/bodies in `005.json`, `013.json`, and `014.json`.
+- **Generator Improvements (`scripts/wikisource/generate.py`)**:
+  - Added Luke chapters 13 and 14:23 to `PAREN_TITLES`.
+  - Added printed catchwords to `CATCHWORDS` (pp. 161, 166, 172, 178, 196, 200, 204, 241).
+  - Updated `write_argument()` to dynamically emit signature `R iij` and catchword `THE` on page 161.
+- **TEI XML Backfill (`A16049.xml`)**:
+  - Created and executed `scripts/wikisource/backfill_luke_xml.py`.
+  - Backfilled all 111 non-duplicate content gaps (25 polytonic Greek readings, 86 English/Latin/rubrics).
+  - Preserved 6 microfilm duplicate page gaps (`<gap reason="duplicate" extent="1 page"/>`) on microfilm facs 104–107.
+  - Tagged small caps (`<hi rend="smallcaps">`) across all 24 chapters for sacred names (`IESVS`, `IESV`, `MARIE`), Words of Institution (Luke 22:19, 20), and Titulus Crucis (Luke 23:38).
+- **Wikisource Posting**:
+  - Generated all 81 pages (`161.wiki` through `241.wiki`).
+  - Lint verified with `scripts/wikisource/lint.py`: **0 error(s), 0 warning(s)**.
+  - Published live to Wikisource via `wikipost.py --post --create --adopt-others 201,202` (79 created, 2 adopted).
 
 ## Other books: NT-wide passes already done
 
