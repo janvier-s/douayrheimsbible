@@ -25,6 +25,9 @@ OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus
 TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.'}
 # Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
 ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242}
+# John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
+# (first part, continuation, whole word, the text that follows it).
+ARGUMENT_SPLIT = {'john': ('Pas', 'sion', 'Passion', 'beheaded')}
 # First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
 FIRST_HEAD_CHA = {'mark', 'luke', 'john'}
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
@@ -257,19 +260,37 @@ def render_verse(v, ch):
 
 
 # Words of a chapter's side heading the print sets in small caps besides its first words (read on the scans).
-SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 1)}
+SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 1),
+           ('john', 1): lambda x: x.replace('THE ACTES', '{{sc|The actes}}', 1),
+           ('john', 5): lambda x: x.replace('THE ACTES', '{{sc|The actes}}', 1),
+           ('john', 6): lambda x: x.replace('HIS ACTES', '{{sc|His actes}}', 1),
+           ('john', 12): lambda x: x.replace('THE 4', '{{sc|The}} 4', 1)}
 
 # Annotation titles the print closes with ")" instead of "]" (read on the scans): (book, chapter, annotation index).
 PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in range(6)], ('mark', 6, 0), ('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
                 ('mark', 10, 0), ('mark', 10, 1), ('mark', 10, 2), ('mark', 10, 3), ('mark', 10, 4),
                 ('mark', 12, 1), ('mark', 12, 2), ('mark', 12, 3),
-                *[('luke', 13, i) for i in range(5)], ('luke', 14, 0)}
+                *[('luke', 13, i) for i in range(5)], ('luke', 14, 0),
+                ('john', 1, 1), *[('john', 2, i) for i in range(6)], *[('john', 4, i) for i in range(2)],
+                *[('john', 5, i) for i in range(4)], *[('john', 6, i) for i in range(5, 16)],
+                *[('john', 10, i) for i in range(5)], *[('john', 12, i) for i in range(2)],
+                *[('john', 13, i) for i in range(4)], *[('john', 14, i) for i in range(4)],
+                ('john', 15, 1), ('john', 15, 3), ('john', 15, 4), ('john', 15, 5),
+                *[('john', 16, i) for i in range(2)], *[('john', 17, i) for i in range(3)],
+                *[('john', 19, i) for i in range(1, 4)], *[('john', 20, i) for i in range(4)]}
 
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
 # on the scans. Greek words on page 107 (26:26 τὸν ἄρτον, 26:28 ἐκχυνόμενον); the Greek
 # notes on pages 36, 44 and 58 do sit in the inner margin.
-OUTER_NOTES = {('matthew', 26, 5, 3), ('matthew', 26, 8, 0)}
+OUTER_NOTES = {('matthew', 26, 5, 3), ('matthew', 26, 8, 0), ('john', 2, 3, 1), ('john', 2, 5, 0),
+               ('john', 3, 0, 1), ('john', 3, 1, 0), ('john', 3, 1, 2), ('john', 4, 0, 1), ('john', 4, 0, 3),
+               ('john', 4, 1, 1), ('john', 4, 1, 2), ('john', 6, 1, 1), ('john', 6, 1, 3), ('john', 6, 1, 5),
+               ('john', 6, 2, 0), ('john', 6, 5, 1), ('john', 6, 7, 1), ('john', 6, 12, 0), ('john', 6, 12, 1),
+               ('john', 6, 12, 3), ('john', 6, 13, 1), ('john', 6, 15, 1), ('john', 8, 0, 2),
+               ('john', 10, 3, 1), ('john', 13, 1, 1), ('john', 20, 0, 1), ('john', 20, 0, 3),
+               ('john', 20, 2, 1), ('john', 20, 2, 2), ('john', 20, 3, 2), ('john', 20, 3, 3),
+               ('john', 21, 0, 1), ('john', 21, 0, 2), ('john', 21, 0, 4), ('john', 21, 0, 6), ('john', 21, 1, 0)}
 
 
 def render_annotation(a, ch=None, ai=None):
@@ -537,7 +558,16 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('matthew', 113): 'wil persvade him and',
                # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
                ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake', ('mark', 141): '@chap', ('mark', 144): '@annhead', ('mark', 149): 'shal receiue larger iudgement', ('mark', 151): 'be and vnles the lord', ('mark', 156): '@annhead', ('mark', 159): 'the prophet saying the law',
-               ('mark', 152): 'sorraine sovldiars so shal'}
+               ('mark', 152): 'sorraine sovldiars so shal',
+               ('john', 246): 'the lambe os god', ('john', 247): 'vs in a sort', ('john', 248): '@chap', ('john', 250): 'to worke miracles',
+               ('john', 253): '@chap', ('john', 257): '@chap',
+               ('john', 261): 'to him there is a boy', ('john', 264): '@annhead', ('john', 267): 'schismatikes heretikes or apostataes',
+               ('john', 270): '@chap', ('john', 273): '@chap', ('john', 276): '@chap', ('john', 277): 'os blinde men',
+               ('john', 281): 'thersore walked no more', ('john', 286): 'to whom i shal reach',
+               ('john', 287): 'directed by the holy ghost', ('john', 289): '@annhead', ('john', 290): 'i am the trve vine',
+               ('john', 292): '@chap', ('john', 296): '@chap', ('john', 300): 'tooke his garments',
+               ('john', 302): '@chap', ('john', 304): 'os the qvantitie space', ('john', 306): '@chap',
+               ('john', 308): 'is he acknowledge'}
 
 
 # Signature marks. The NT is printed in gatherings of four leaves (eight pages); the first
@@ -565,7 +595,14 @@ def signature(wiki):
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
-CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
+CATCHWORDS = {('john', 242): 'sion', ('john', 243): 'THE', ('john', 245): 'the', ('john', 247): 'CHAP. II.', ('john', 249): 'to',
+              ('john', 251): 'led.', ('john', 252): 'CHAP.', ('john', 253): 'band.', ('john', 254): 'haue', ('john', 256): 'AFTER', ('john', 259): 'that', ('john', 260): 'to',
+              ('john', 263): 'ANNOT.', ('john', 264): 'nedly', ('john', 265): "''62. If''", ('john', 266): 'Schisma-', ('john', 267): 'ueiled.', ('john', 269): 'AND', ('john', 270): '† Againe', ('john', 271): 'God',
+              ('john', 272): 'CHAP.', ('john', 275): 'Amen,', ('john', 276): 'of', ('john', 277): "''1. Climeth''", ('john', 280): 'therfore',
+              ('john', 284): 'per', ('john', 286): 'directed', ('john', 288): 'ANNOT.', ('john', 289): 'I AM', ('john', 291): 'These',
+              ('john', 293): "''13. The''", ('john', 294): '† I', ('john', 295): 'CHAP.', ('john', 297): '† {{sc|Iesvs}}',
+              ('john', 301): 'AND', ('john', 305): 'CHAP.', ('john', 307): '(if', ('john', 308): 'THE',
+              ('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
               ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
               ('mark', 114): 'THE', ('mark', 115): 'sert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
               ('mark', 130): 'he', ('mark', 140): 'Chap. X.', ('mark', 143): 'ANNOT', ('mark', 149): 'And', ('mark', 152): 'ring', ('mark', 155): 'ANNOT.', ('mark', 160): 'THE',
@@ -579,7 +616,10 @@ CATCHWORDS = {('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matth
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
 # Rendered {{hws|de|desert.}} at the page end and {{hwe|sert.|desert.}} at the next page's start.
 SPLIT_WORDS = {('mark', 115): ('de', 'sert.', 'desert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
-               ('mark', 129): ('He', 'rodias', 'Herodias'), ('mark', 152): ('hea', 'ring', 'hearing')}
+               ('mark', 129): ('He', 'rodias', 'Herodias'), ('mark', 152): ('hea', 'ring', 'hearing'),
+               ('john', 251): ('fil', 'led.', 'filled.'), ('john', 253): ('hus', 'band.', 'husband.'),
+               ('john', 264): ('vnlear', 'nedly', 'vnlearnedly'), ('john', 266): ('Schisma', 'tikes,', 'Schismatikes,'),
+               ('john', 267): ('mar', 'ueiled,', 'marueiled,'), ('john', 284): ('sup', 'per,', 'supper,')}
 
 
 def apply_page_starts(S, starts):
@@ -651,11 +691,11 @@ def write_argument(book, wiki):
     sets it in italic, with quotations in roman: the data's <i> spans are the roman ones.
     Its margin notes stand in the outer margin; a note starting with '*' prints a '*' in the text."""
     intro = book['intros'][0]
-    notes = {str(n['marker']): n['text'] for n in intro.get('notes', [])}
+    notes = iter(n['text'] for n in intro.get('notes', []))  # in the order their markers appear in the text
     side = 'left' if wiki % 2 == 0 else 'right'
 
     def mark(m):
-        t = notes[m.group(1).strip('[]')]
+        t = next(notes)
         return margin(side, finish(t)) + ('* ' if t.startswith('*') else '')
 
     paras = []
@@ -681,12 +721,23 @@ def write_argument(book, wiki):
         paras.append(re.sub(r'  +', ' ', out).strip())
     t1, t2 = re.match(r'(.* OF) (.*)', intro['title']).groups()
     body = f'{{{{c|{{{{x-larger|{t1}}}}}}}}}\n{{{{c|{{{{larger|{t2}}}}}}}}}\n\n' + '\n\n'.join(paras)
-    catch = CATCHWORDS.get((BOOK, wiki), '')
-    sig = signature(wiki)
-    footer = f'{{{{rh||{sig}|{catch}}}}}' if (sig or catch) else ''
-    (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />'
-                                      f'{{{{rh|{wiki - 28}||}}}}</noinclude>' + sc_wiki(body) +
-                                      '<noinclude>' + footer + '</noinclude>\n'))
+    sp = ARGUMENT_SPLIT.get(BOOK)
+    pages = [body]
+    if sp:  # the Argument runs over two scan pages, the second word broken across them
+        first, cont, full, after = sp
+        i = body.index(f'{full} {after}')
+        pages = [body[:i] + '{{hws|' + first + '|' + full + '}}', '{{hwe|' + cont + '|' + full + '}}' + body[i + len(full):]]
+        pages[1] = pages[1].replace('margin=left', 'margin=right')  # odd page: outer margin on the right
+    for k, text in enumerate(pages):
+        pg = wiki + k
+        catch = CATCHWORDS.get((BOOK, pg), '')
+        sig = signature(pg)
+        footer = f'{{{{rh||{sig}|{catch}}}}}' if (sig or catch) else ''
+        head = f'{{{{rh|{pg - 28}||}}}}' if k == 0 else f'{{{{rh|||{pg - 28}}}}}'  # k = 0 keeps the form of Mark's and Luke's published page
+        text = re.sub(r'(?m)^(Whose excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
+        (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + head +
+                                        '</noinclude>' + sc_wiki(text) +
+                                        '<noinclude>' + footer + '</noinclude>\n'))
 
 
 def main():
@@ -695,7 +746,7 @@ def main():
     if ARGUMENT.get(BOOK) == FIRST:
         OUT.mkdir(parents=True, exist_ok=True)
         write_argument(book, FIRST)
-        FIRST += 1
+        FIRST += 2 if BOOK in ARGUMENT_SPLIT else 1
     ann = {}
     for f in sorted((DATA / BOOK / 'annotations').glob('*.json')):
         a = json.loads(f.read_text()); ann[a['chapter']] = a['annotations']

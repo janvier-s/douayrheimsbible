@@ -4,18 +4,6 @@
     {
       "verse": 4,
       "part": 1,
-      "title": "Unless it abide.",
-      "text": "<mn>◦</mn> Whosoever by Heresy or Schism or for any other cause is cut of or separated from the Church, he can do no meritorious work to Salvation.",
-      "notes": [
-        {
-          "marker": "◦",
-          "text": "No salvation out of the Church."
-        }
-      ]
-    },
-    {
-      "verse": 4,
-      "part": 2,
       "title": "Unless you abide.",
       "text": "<mn>◦</mn> These conditional speeches, <i>if you remain in the vine, if you keep my commandments</i>, and such like, give us to wit that we be not sure to persist or persevere, nor to be saved, but under conditions to be fulfilled by us. <i>Aug. de corrept. and gra. c. 13.</i>",
       "notes": [
@@ -26,13 +14,20 @@
       ]
     },
     {
+      "verse": 4,
+      "part": 2,
+      "title": "Unless it abide.",
+      "text": "Whosoever by Heresy or Schism or for any other cause is cut of or separated from the Church, he can do no meritorious work to Salvation.",
+      "notes": []
+    },
+    {
       "verse": 10,
       "title": "Keep my precepts.",
       "text": "<mn>◦</mn> This careful and often admonition of keeping his commandments, proveth that a Christian man's life is not only or principally in faith, but in good works.",
       "notes": [
         {
           "marker": "◦",
-          "text": "Only faith sufficeth not to salvation."
+          "text": "Not only faith."
         }
       ]
     },

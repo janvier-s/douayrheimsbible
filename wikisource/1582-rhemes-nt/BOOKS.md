@@ -10,7 +10,7 @@ what Wikisource quality level 3 requires. Nothing is posted yet.
 | Matthew | 31-113     | yes, complete (2026-11-17) | yes, all 83          | no        | yes    |
 | Mark    | 114-160    | yes, complete (2026-11-18) | yes, all 47          | no        | yes    |
 | Luke    | 161-241    | yes, complete (2026-11-19) | yes, all 81          | no        | yes    |
-| John    | 242-300    | in progress                | pending              | no        | no     |
+| John    | 242-308    | yes, complete (2026-11-19) | yes, all 67          | no        | yes    |
 | others  |            | partial (NT-wide passes)   | no                   | no        | no     |
 
 ## Matthew: what "checked" covers
@@ -423,6 +423,31 @@ Pages 161–241 (print pages 133–213, 81 pages total) audited against 1582 pri
   - Generated all 81 pages (`161.wiki` through `241.wiki`).
   - Lint verified with `scripts/wikisource/lint.py`: **0 error(s), 0 warning(s)**.
   - Published live to Wikisource via `wikipost.py --post --create --adopt-others 201,202` (79 created, 2 adopted).
+
+## John: critical audit, XML backfill, and publication (2026-11-19)
+
+Pages 242–308 (print pages 214–280, 67 pages total) audited against 1582 print facsimiles, Transkribus findings, and TEI XML gaps.
+
+- **Scope & Pagination**:
+  - Argument of S. Iohns Gospel runs across two scan pages (`242.wiki` and `243.wiki`, printed pp. 214–215), with `Pas-sion` split across the page break (`{{hws|Pas|Passion}}` / `{{hwe|sion|Passion}}`).
+  - Chapter 1 opens on page 244 (printed p. 216, running head `216 || CHAP. I.`).
+  - Final page of John is page 308 (printed p. 280, catchword `THE` pointing to the Evangelical History harmony table on p. 281 / scan 309).
+- **Data Fixes (`odr-original` & `odr`)**:
+  - Word and orthography fixes applied via `apply_wordfixes.py` and `fix_john_argument.py` (Argument notes, `Iewes`/`Ievves`, `eighteth`, `Mat. 4, 12)`, half-modernised annotations in 19:17a1, 20:21a2, 20:23a4, 21:17a1).
+  - Restored exact 1582 spelling in chapter division summary notes (Chapters 1, 5, 6, 12).
+  - Corrected John 1:29 variant reading markup (`<alt><i>\`ſinne</i>’</alt>`) and moved `AGNVS DEI at Maſſe.` before the quotation.
+  - Corrected John 13:1 `MAVNDY THVRSDAY.` rubric placement, John 15:4 annotation order (`Vnles you abide.` before `Vnles it abide.`), John 19:15 annotation verse number (`15. His owne croſſe.]`), John 5, 6, 20, and 21 annotation marginal note alignments, and moved `* See li. 1. ep. 72...` from John 21:25 verse cross-refs to the John 21:17 annotation on S. Gregory.
+- **Generator Improvements (`scripts/wikisource/generate.py`)**:
+  - Configured `ARGUMENT_SPLIT` for John's two-page Argument (pp. 242–243).
+  - Configured `SIDE_SC`, `PAREN_TITLES`, `OUTER_NOTES`, `PAGE_STARTS`, `CATCHWORDS`, and `SPLIT_WORDS` (`fil-led.`, `hus-band.`, `vnlear-nedly`, `Schisma-tikes,`, `mar-ueiled,`, `sup-per,`) for John.
+- **TEI XML Backfill (`A16049.xml`)**:
+  - Created and executed `scripts/wikisource/backfill_john_xml.py`.
+  - Backfilled all 116 content gaps in John (4 polytonic Greek readings in `<foreign xml:lang="grc">`, 112 English/Latin/citation/rubric gaps).
+  - Tagged small caps (`<hi rend="smallcaps">`) across the Argument and all 21 chapters for sacred names (`IESVS`, `CHRIST`, `MARIE`, `WORD`/`VVORD`, `MESSIAS`), drop-cap continuations, Incarnation prologue (1:14), Titulus Crucis (19:19), Words of Forgiveness (20:23), pastoral commission (21:15–17), and liturgical/division rubrics.
+- **Wikisource Posting**:
+  - Generated all 67 pages (`242.wiki` through `308.wiki`).
+  - Lint verified with `scripts/wikisource/lint.py`: **0 error(s)** on John pages.
+  - Published live to Wikisource via `wikipost.py 242-308 --create --post --delay 12` (all 67 pages created and recorded in `manifest.json`).
 
 ## Other books: NT-wide passes already done
 

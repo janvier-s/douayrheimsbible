@@ -4,18 +4,6 @@
     {
       "verse": 4,
       "part": 1,
-      "title": "Vnles it abide.",
-      "text": " <mn>◦</mn> Whoſoeuer by Hereſie or Schiſme or for any other cauſe is cut of or ſeparated from the Church, he can do no meritorious worke to Saluation.",
-      "notes": [
-        {
-          "marker": "◦",
-          "text": "No ſalvation out of the Church."
-        }
-      ]
-    },
-    {
-      "verse": 4,
-      "part": 2,
       "title": "Vnles you abide.",
       "text": " <mn>◦</mn> Theſe conditional ſpeaches, <i>If you remaine in the vine, If you keepe my commaundements</i>, and ſuch like, giue vs to wit that we be not ſure to perſiſt or perſeuêre, nor to be ſaued, but vnder conditions to be fulfilled by vs. <i>Aug. de corrept. & gra. c. 13</i>.",
       "notes": [
@@ -26,13 +14,20 @@
       ]
     },
     {
+      "verse": 4,
+      "part": 2,
+      "title": "Vnles it abide.",
+      "text": " Whoſoeuer by Hereſie or Schiſme or for any other cauſe is cut of or ſeparated from the Church, he can do no meritorious worke to Saluation.",
+      "notes": []
+    },
+    {
       "verse": 10,
-      "title": "Keepe my praecepts.",
+      "title": "Keepe my precepts.",
       "text": " <mn>◦</mn> This careful and often admonition of keeping his commaundements, proueth that a Chriſtian mans life is not onely or principally in faith, but in good workes.",
       "notes": [
         {
           "marker": "◦",
-          "text": "Only faith ſufficeth not to ſalvation."
+          "text": "Not onely faith."
         }
       ]
     },
