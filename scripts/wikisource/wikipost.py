@@ -96,7 +96,13 @@ def main():
     if a[0] == '--check-login':
         print(f'logged in as {me}')
         return
-    first, last = map(int, a[0].split('-'))
+    pages = []
+    for part in a[0].split(','):
+        if '-' in part:
+            first, last = map(int, part.split('-'))
+            pages.extend(range(first, last + 1))
+        else:
+            pages.append(int(part))
     post = '--post' in a
     create = '--create' in a
     opt = lambda k, d=None: a[a.index(k) + 1] if k in a else d
@@ -111,7 +117,7 @@ def main():
     manifest_path = ROOT / 'manifest.json'
     manifest = json.loads(manifest_path.read_text())
     todo = skipped = posted = 0
-    for n in range(first, last + 1):
+    for n in pages:
         f = ROOT / 'pages' / f'{n}.wiki'
         if not f.exists():
             continue
