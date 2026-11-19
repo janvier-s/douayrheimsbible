@@ -20,22 +20,23 @@ DATA = REPO / 'static/data/odr-original'
 # Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
 # Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
 # its pages stay as they are; Transkribus reads the print better from Mark on.
-OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus'}
+OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus', 'acts': 'transkribus'}
 # Last line of the book title on its first page ("THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO ...").
-TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.'}
+TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.', 'acts': 'APOSTLES.'}
 # Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
-ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242}
+ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242, 'acts': 314}
 # John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
 # (first part, continuation, whole word, the text that follows it).
 ARGUMENT_SPLIT = {'john': ('Pas', 'sion', 'Passion', 'beheaded')}
 # Argument notes printed in the INNER margin (read on pdf242: "Iren. li. 2. c. 39." beside chap. 5, 1).
 INNER_ARGUMENT_NOTES = {'Iren. li. 2. c. 39.'}
 # First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
-FIRST_HEAD_CHA = {'mark', 'luke', 'john'}
+FIRST_HEAD_CHA = {'mark', 'luke', 'john', 'acts'}
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
            'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.'),
            'luke': ('THE GOSPEL', 'ACCORDING TO S. LVKE.'),  # read on pdf 163, 164
-           'john': ('THE GOSPEL', 'ACCORDING TO S. IOHN.')}  # read on pdf 245, 246  # mark: read on 1/2, 5/1, 16/1
+           'john': ('THE GOSPEL', 'ACCORDING TO S. IOHN.'),  # read on pdf 245, 246  # mark: read on 1/2, 5/1, 16/1
+           'acts': ('THE ACTES', 'OF THE APOSTLES.')}
 # Marks in chapter summaries are not in the data yet: words to star, per chapter.
 # Matt 2-28 summaries were checked on the scans (round 10): they print no marks.
 SUMMARY_STARS = {('matthew', 1): ['Abraham', 'Dauid. 18']}
@@ -175,7 +176,11 @@ def build_stream(book, ann):
         ch = chap['chapter']
         if ch == 1:
             hp = ORNAMENTS.get('headpiece', {}).get(BOOK)
-            tt = tokens_of('{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|' + TITLE_END[BOOK] + '}}}}', block=True, ch=ch, kind='title')
+            if BOOK == 'acts':
+                title_wiki = '{{c|{{xx-larger|THE ACTES OF THE}}}} {{c|{{x-larger|APOSTLES.}}}}'
+            else:
+                title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|' + TITLE_END[BOOK] + '}}}}'
+            tt = tokens_of(title_wiki, block=True, ch=ch, kind='title')
             if hp:  # the woodcut band above the book title, riding on the title's first word
                 tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
             S += tt

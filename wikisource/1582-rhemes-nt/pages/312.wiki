@@ -1,0 +1,159 @@
+<noinclude><pagequality level="1" user="" />{{rh|284||Mt. Mr. Lu. Io.}}</noinclude>
+{| style='border: none; background: transparent; width: 100%;'
+|-
+| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 15
+| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | The parables of the lost sheepe, of the grote, and of the prodigal sonne.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | The parable of the vniust bailife.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | Of the indissolubilitie of matrimonie.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | The riche glutton and Lazarus.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 17
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | Vvo to scandalizers. The force of faith euen to the mouing of trees vvith a vvord.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | Of the Pharisee and the Publicane that vvent to pray.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He imposeth or laieth his handes vpon litle children, and exhorteth a yong riche man to forsake al and become perfect.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | The parable of the vvorkemen hired into the vineyard.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
+| style='vertical-align: top;' | He raiseth Lazarus, and the Iewes cō̄sult hovv to destroy him.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He foretelleth his death, and denieth the request of Zebedees tvvo sonnes, asking the tvvo cheefe places about him.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He healeth a blinde man before his entring into Iericho.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | Zachaeus the Publicane entertaineth Christ. The parable of the ten poundes deliuered to ten seruants.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He healeth tvvo blinde men as he goeth out of Iericho.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 26
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='vertical-align: top;' | At a supper in Bethánia, Marie povvred ointment vpon him.{{MarginNote|margin=right|margin-width=65|text=PALME sunday.}}
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='vertical-align: top;' | Riding vpon an asse he entreth gloriously into Hierusalem.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='vertical-align: top;' | He healeth the lame and the blinde, and Gentiles desire to see him.{{MarginNote|margin=right|margin-width=65|text=The 6 part, conteining the holy weeke of his Passion in Hierusalem.}}
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He curseth the figtree, and casteth the biers and sellers out of the Temple.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19.20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | To his enemies the Ievves, he auoucheth his povver by Iohns Baptisme vvhich vvas of God, and foretelleth their reprobation, vvith the Gentils vocation in their place, by parables: as the parable of the tvvo sonnes, the one promising to doe, the other doing his fathers commaundement.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | The parable of the vineyard let out to husbandmen that killed both the seruants and the sonne sent to require fruite.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | The parable of the king that made a mariage for his sonne, inuiting ghests to the feast, and they vvould not come.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He ansvvereth their question of paying tribute to Caesar, and the Sadducees question of the Resurrection.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He ansvvereth the Pharisees question, of the greatest commaundement.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He putteth them to silence vvith this question concerning CHRIST, hovv he could be Dauids sonne.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 23
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He biddeth them doe as the Scribes teach, but not as they doe.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He extolleth and preferreth the poore vvidovves offering.
+|-
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 13
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
+| style='text-align: right; vertical-align: top; padding-right: 8px;' |
+| style='vertical-align: top;' | He foretelleth to some of his Disciples, the destruction of the Temple and of Hierusalem: and by that occasion, vvhat things shalbe before the consummation of the vvorld, and Antichrist in the consummation, and then incontinent Domesday, vvarning vs to prepare our selues against his comming.{{MarginNote|margin=right|margin-width=65|text=TVESDAY night.}}
+|}<noinclude>{{rh|||he}}</noinclude>
