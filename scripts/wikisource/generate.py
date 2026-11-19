@@ -28,6 +28,8 @@ ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242}
 # John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
 # (first part, continuation, whole word, the text that follows it).
 ARGUMENT_SPLIT = {'john': ('Pas', 'sion', 'Passion', 'beheaded')}
+# Argument notes printed in the INNER margin (read on pdf242: "Iren. li. 2. c. 39." beside chap. 5, 1).
+INNER_ARGUMENT_NOTES = {'Iren. li. 2. c. 39.'}
 # First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
 FIRST_HEAD_CHA = {'mark', 'luke', 'john'}
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
@@ -696,7 +698,8 @@ def write_argument(book, wiki):
 
     def mark(m):
         t = next(notes)
-        return margin(side, finish(t)) + ('* ' if t.startswith('*') else '')
+        s = ('right' if side == 'left' else 'left') if t in INNER_ARGUMENT_NOTES else side
+        return margin(s, finish(t)) + ('* ' if t.startswith('*') else '')
 
     paras = []
     # the four parts each start a printed line: paragraphs here (the linter allows no <br/>)
