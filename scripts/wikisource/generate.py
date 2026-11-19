@@ -31,7 +31,9 @@ ARGUMENT_SPLIT = {'john': ('Pas', 'sion', 'Passion', 'beheaded')}
 # Argument notes printed in the INNER margin (read on pdf242: "Iren. li. 2. c. 39." beside chap. 5, 1).
 INNER_ARGUMENT_NOTES = {'Iren. li. 2. c. 39.'}
 # First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
-FIRST_HEAD_CHA = {'mark', 'luke', 'john', 'acts'}
+FIRST_HEAD_CHA = {'mark', 'luke', 'john'}
+# Number of scripture pages (excluding end-matter tables/creed) for book alignment.
+SCRIPTURE_PAGES = {'acts': 85}
 RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
            'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.'),
            'luke': ('THE GOSPEL', 'ACCORDING TO S. LVKE.'),  # read on pdf 163, 164
@@ -177,14 +179,18 @@ def build_stream(book, ann):
         if ch == 1:
             hp = ORNAMENTS.get('headpiece', {}).get(BOOK)
             if BOOK == 'acts':
-                title_wiki = '{{c|{{xx-larger|THE ACTES OF THE}}}} {{c|{{x-larger|APOSTLES.}}}}'
+                ch_note = (chap.get('summary_notes') or [{}])[0].get('text', '')
+                title_wiki = '{{MOUTER|' + finish(ch_note) + '}}\n{{c|{{xx-larger|THE ACTES OF THE}}}}\n{{c|{{x-larger|APOSTLES.}}}}'
             else:
-                title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}} {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}} {{c|{{larger|' + TITLE_END[BOOK] + '}}}}'
+                title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n{{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}\n{{c|{{larger|' + TITLE_END[BOOK] + '}}}}'
             tt = tokens_of(title_wiki, block=True, ch=ch, kind='title')
             if hp:  # the woodcut band above the book title, riding on the title's first word
                 tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
             S += tt
-        side = (chap.get('summary_notes') or [{}])[0].get('text', '')
+        if BOOK == 'acts' and ch == 1:
+            side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '')
+        else:
+            side = (chap.get('summary_notes') or [{}])[0].get('text', '')
         head = ''
         if side and not ITALIC_REF.match(side):
             # "THE THIRD part": both words in small caps; "THE fourth part": the lower-case word stays roman
@@ -221,6 +227,12 @@ def build_stream(book, ann):
                 at = tokens_of(finish(render_annotation(a, ch, ai)), ch=ch, kind='ann', ann=ai)
                 at[0]['block'] = True
                 S += at
+    if BOOK == 'acts':
+        trailer = (
+            "\n\n{{c|{{smaller|The end of the Actes of the Apostles.}}}}\n"
+            "{{c|{{smaller|Whereunto we ioyne for the readers behalfe, two Tables of the two cheefe Apostles, and a note of the rest, as an abridgement of the said booke, and a supply of some things not there mentioned.}}}}"
+        )
+        S[-1]['text'] += trailer
     tp = ORNAMENTS.get('tailpiece', {}).get(BOOK)
     if tp:  # the fleuron closing the book, after its last annotation
         S[-1]['text'] += f"\n\n{{{{c|[[File:{tp['file']}|{tp['width']}]]}}}}"
@@ -271,7 +283,12 @@ SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 
            ('john', 1): lambda x: x.replace('THE ACTES', '{{sc|The actes}}', 1),
            ('john', 5): lambda x: x.replace('THE ACTES', '{{sc|The actes}}', 1),
            ('john', 6): lambda x: x.replace('HIS ACTES', '{{sc|His actes}}', 1),
-           ('john', 12): lambda x: x.replace('THE 4', '{{sc|The}} 4', 1)}
+           ('john', 12): lambda x: x.replace('THE 4', '{{sc|The}} 4', 1),
+           ('acts', 1): lambda x: x.replace('The 1. part.', '{{sc|The}} 1. part.', 1),
+           ('acts', 2): lambda x: x.replace('The 2. part.', '{{sc|The}} 2. part.', 1),
+           ('acts', 8): lambda x: x.replace('The 3. part.', '{{sc|The}} 3. part.', 1).replace('THE propagation', '{{sc|The propagation}}', 1),
+           ('acts', 10): lambda x: x.replace('The 4. part.', '{{sc|The}} 4. part.', 1).replace('THE propagation', '{{sc|The propagation}}', 1),
+           ('acts', 13): lambda x: x.replace('The 5 part.', '{{sc|The}} 5 part.', 1)}
 
 # Annotation titles the print closes with ")" instead of "]" (read on the scans): (book, chapter, annotation index).
 PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in range(6)], ('mark', 6, 0), ('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
@@ -583,7 +600,7 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
 # the mark is computed, and the OCR only warns when it sees another letter. Checked on the
 # scans for A-H (pages 31-89).
 SIG_ALPHABET = 'ABCDEFGHIKLMNOPQRSTVXYZ'
-SIG_FIRST = {'matthew': 29, 'mark': 29, 'luke': 29, 'john': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
+SIG_FIRST = {'matthew': 29, 'mark': 29, 'luke': 29, 'john': 29, 'acts': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
 # "HOLY" beside the page number, "weeke." under it, top outer corner (checked on the scans):
 # (first wiki page, last wiki page, pages without it).
 HOLY_WEEK = {'matthew': (86, 113, {95, 107}), 'mark': (144, 160, set()),
@@ -616,6 +633,7 @@ CATCHWORDS = {('john', 242): 'sion', ('john', 243): 'THE', ('john', 245): 'the',
               ('luke', 161): 'THE', ('luke', 166): "''36. Elisabeth''", ('luke', 172): "''20. He''",
               ('luke', 178): "''24. The''", ('luke', 196): "''21. To''", ('luke', 200): "''27. Blessed''",
               ('luke', 204): "''11. Be''", ('luke', 241): 'THE',
+              ('acts', 401): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
@@ -759,7 +777,8 @@ def main():
     for f in sorted((DATA / BOOK / 'annotations').glob('*.json')):
         a = json.loads(f.read_text()); ann[a['chapter']] = a['annotations']
     S = build_stream(book, ann)
-    pages = book_pages(BOOK, os.environ.get('WS_OCR') or OCR_SOURCE.get(BOOK, 'tesseract'))[:MAXP]
+    max_p = min(MAXP, SCRIPTURE_PAGES.get(BOOK, 10 ** 6))
+    pages = book_pages(BOOK, os.environ.get('WS_OCR') or OCR_SOURCE.get(BOOK, 'tesseract'))[:max_p]
     OUT.mkdir(parents=True, exist_ok=True)
     starts, paras, quality = align(pages, S)
     apply_page_starts(S, starts)
@@ -823,7 +842,7 @@ def main():
         sig = signature(wiki)
         for line in p['text'].splitlines()[-6:]:
             m = re.match(r'^\s*(?:\d{1,3}\s+)?([A-Z]{1,2})\s+([ivjl]{1,5})\b', line)
-            if m and (not sig or m.group(1) != sig.split()[0]):
+            if m and (not sig or m.group(1).upper() != sig.split()[0].upper()):
                 print(f'warning: page {wiki}: OCR signature {m.group(1)} {m.group(2)}, computed {sig or "none"}')
         if catch.count("''") % 2:
             catch += "''"  # the catchword is cut from the next page's start, which may open an italic
