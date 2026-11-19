@@ -13,6 +13,7 @@ Checks (E = error, W = warning):
   E-sentinel  leftover generator sentinels (⟦ ⟧) or unreplaced {{MINNER| {{MOUTER|
   E-margin    {{MarginNote}} lacking margin=left|right, margin-width, or text, or empty
   E-verse     verse numbers out of order, repeated or skipped (across pages, per chapter)
+  E-darkmode  table style contains 'background' (triggers MediaWiki night-mode color:#202122) or '!' (th header borders/shading)
   E-nfc       text not in Unicode NFC (MediaWiki saves NFC, so live would never match: Greek oxia vs tonos)
   E-gap       page files missing from the numeric run
   W-header    no {{rh}} running head, or no {{rh}} footer
@@ -130,6 +131,14 @@ def lint(d):
                 out.append(('E-margin', n, f'malformed margin note: {tpl[:70]!r}'))
             elif not INNER.sub('', tpl.split('|text=', 1)[1]).strip():
                 out.append(('E-margin', n, 'empty margin note'))
+
+        # dark mode / table checks
+        for tbl in re.finditer(r'\{[|].*?\|\}', body, re.S):
+            tbl_text = tbl.group(0)
+            for m in re.finditer(r'style=[\'"][^\'"]*\bbackground\b', tbl_text, re.I):
+                out.append(('E-darkmode', n, "table style contains 'background' which triggers MediaWiki night-mode color:#202122; omit background entirely"))
+            for m in re.finditer(r'^\s*!(?:[^\n]*\||[^\n]+)', tbl_text, re.M):
+                out.append(('E-darkmode', n, "table header '!' (th) creates default browser/skin borders and shading; use standard '|' (td) with bold text instead"))
 
         # verse sequence and marks
         for m in VERSE.finditer(body):
