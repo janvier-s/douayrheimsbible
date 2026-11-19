@@ -15,7 +15,7 @@ written without --post (and --summary). Rules it enforces:
 Credentials: the bot password in the macOS keychain, service "wikisource-bot" (account
 "User@botname"); never printed, never stored in the repo.
 """
-import hashlib, http.cookiejar, json, re, subprocess, sys, time, urllib.parse, urllib.request
+import hashlib, http.cookiejar, json, re, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -46,8 +46,14 @@ class Wiki:
             req = urllib.request.Request(API, data=data, headers={'User-Agent': UA})
         else:
             req = urllib.request.Request(API + '?' + data.decode(), headers={'User-Agent': UA})
-        with self.op.open(req, timeout=60) as r:
-            return json.load(r)
+        for attempt in range(5):
+            try:
+                with self.op.open(req, timeout=60) as r:
+                    return json.load(r)
+            except (ConnectionResetError, urllib.error.URLError, TimeoutError) as e:
+                if attempt == 4:
+                    raise
+                time.sleep(2 * (attempt + 1))
 
     def login(self):
         user, pw = keychain()
