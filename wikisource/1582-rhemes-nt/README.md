@@ -12,6 +12,9 @@ a page here; the next publish would overwrite it.
 
 Progress per book is logged in [BOOKS.md](BOOKS.md); the method for checking a
 book against the scans, learned on Matthew, is in [PLAYBOOK.md](PLAYBOOK.md).
+The comprehensive editorial rules, typesetting conventions (small caps, long-s, lists,
+margin notes, `{{hws}}`, NFC), and XML maintenance procedures are documented in
+[RULES.md](RULES.md).
 
 ```bash
 # 1. generate pages for a book from the data and the OCR (scratch output)

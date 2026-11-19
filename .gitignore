@@ -53,3 +53,7 @@ dist-export/
 
 # Scraped Sancta Clara Press reference corpus (local only)
 static/data/odr-sancta/
+
+# Raw external sources (EEBO-TCP XML, etc.)
+sources/
+

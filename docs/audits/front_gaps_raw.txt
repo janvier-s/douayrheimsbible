@@ -1,0 +1,996 @@
+=== GAP 01 (offset 19051..19161) ===
+PRE:
+riptu<g ref="char:EOLhyphen"/>res, and no vulgar tranſlation commonly vſed or occupied of the multitude, yet they vvere 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                  <desc>•</desc>
+               </gap>
+POST:
+xtant in Engliſh euen before the troubles that Vvicleffe and his folovvers raiſed in our Church, as appeareth, as well b
+
+=== GAP 02 (offset 24413..24523) ===
+PRE:
+en"/>differently, at their pleaſure.</note> as euer before, ſo alſo vpon more experience of the maladie of this time the
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                  <desc>•</desc>
+               </gap>
+POST:
+ before, haue taken more exacte order both for the readers and tranſlatours in theſe later ages, then of old: yet we muſ
+
+=== GAP 03 (offset 25918..26028) ===
+PRE:
+ in the primitiue Church.</note> Monaſteries, Colleges, Churches, in Biſhops, Prieſts, and ſome other deuout principal L
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                  <desc>•</desc>
+               </gap>
+POST:
+y mens houſes and handes: who vſed them with ſeare and reuerence, and ſpecially ſuch partes as perteined to good life an
+
+=== GAP 04 (offset 26494..26610) ===
+PRE:
+ing the hymnes
+<pb facs="tcp:2646:4"/> and pſalmes either in knowen or vnknowen languages,<note place="margin">Hovv the 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 word">
+                     <desc>〈◊〉</desc>
+                  </gap>
+POST:
+ of thoſe daies did read them, vvith what hu<g ref="char:EOLhyphen"/>militie and reli<g ref="char:EOLhyphen"/>gion, and 
+
+=== GAP 05 (offset 29095..29211) ===
+PRE:
+cience ſo eaſy, that can be had without a maiſter (which S. Auguſtine alſo affirmeth,<note place="margin">Hiero. ep. 103
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+. 6.</note> 
+               <hi>De vtilitate cred. cap. 7.)</hi> nor that men preſume in any occupation to teach that th
+
+=== GAP 06 (offset 32025..32143) ===
+PRE:
+o folovv their Paſtors in ſinceritie &amp; ſimplicitie: vvhereof excellently ſaith S. Auguſtine,<note place="margin">De 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="2 letters">
+                     <desc>••</desc>
+                  </gap>
+POST:
+gone Chriſt. c. 33.</note> 
+               <hi>Fidei ſimplicitate &amp; ſinceritate lactati, nutriamur in Chriſto: &amp;
+
+=== GAP 07 (offset 47891..48007) ===
+PRE:
+ſeeth: but the great corruption &amp; decay of faith hereby,<note place="margin">Scriptures er<g ref="char:EOLhyphen"/>r
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+neouſly ex<g ref="char:EOLhyphen"/>pounded accor<g ref="char:EOLhyphen"/>ding to euery vvicked mans priuate fanſie.</not
+
+=== GAP 08 (offset 54409..54525) ===
+PRE:
+and mockery of Gods holy vvord. ſo they charge him: them ſelues (and the Zuinglians of Zuricke,<note place="margin">Ioſt
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+ Sim lerus in vi<g ref="char:EOLunhyphen"/>ta Bullin<g ref="char:EOLhyphen"/>geri.</note> vvhoſe tranſlations Luther the
+
+=== GAP 09 (offset 60398..60514) ===
+PRE:
+enit miniſtrari, ſed miniſtrare:</hi> and, <hi>Neque nubent, neque nubentur:</hi>
+               <note place="margin">Lu
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+. 13.</note> in his commentaries vpon theſe places. and, <hi>Non capit Pro<g ref="char:EOLunhyphen"/>phetam perire extra
+
+=== GAP 10 (offset 62684..62800) ===
+PRE:
+ctrine there neither) and finding by experience this ſaying of S. Auguſtine to be moſt true,<note place="margin">De doct
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+. Chriſt. lib. 3. cap. 10.</note> 
+               <hi>If the preiu<g ref="char:EOLhyphen"/>dice of any erreneous perſuaſ
+
+=== GAP 11 (offset 67005..67121) ===
+PRE:
+ip<g ref="char:EOLhyphen"/>ture moſt certainely and euidently ſhevveth and pointeth vnto.<note place="margin">Many cauſe
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+ vvhy this nevv Teſtament is tra<g ref="char:cmbAbbrStroke">̄</g>ſlated accor<g ref="char:EOLhyphen"/>ding to the aun<g 
+
+=== GAP 12 (offset 70151..70261) ===
+PRE:
+yphen"/>lovving the Greeke.</note> both the phraſe and the word, that delicate Heretikes therfore reprehend it of rudene
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                  <desc>•</desc>
+               </gap>
+POST:
+. And that it fol<g ref="char:EOLhyphen"/>lovveth the Greeke far more exactly then the Proteſtants tranſlations, beſide 
+
+=== GAP 13 (offset 70519..70620) ===
+PRE:
+ces, we appeale to theſe. Tit. 3. 14. <hi>Curent bonis operibus prae<g ref="char:EOLhyphen"/>eſſe.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. Engl. bib. 1577, <hi>to mainteine good vvorkes.</hi> and Hebr. 10, 20. <hi>Viam nobis initiatut,</hi> 
+               
+
+=== GAP 14 (offset 70740..70841) ===
+PRE:
+. Engl. bib. 1577, <hi>to mainteine good vvorkes.</hi> and Hebr. 10, 20. <hi>Viam nobis initiatut,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. Engliſh Bib. <hi>he prepared.</hi> So in theſe vvordes, <hi>Iuſti<g ref="char:EOLhyphen"/>ficationes, Traditiones, Ido
+
+=== GAP 15 (offset 71755..71871) ===
+PRE:
+en"/>prehending an other.</note> and tranſlating euery man according to his fantaſie, that
+<note n="*" place="margin">Co
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+hla. c. 11 de Ca<g ref="char:EOLhyphen"/>no. Script. authorit<gap reason="illegible" resp="#TECH" extent="1 letter">
+   
+
+=== GAP 16 (offset 71932..72048) ===
+PRE:
+                    <desc>•</desc>
+                  </gap>hla. c. 11 de Ca<g ref="char:EOLhyphen"/>no. Script. authorit
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+
+                  <g ref="char:EOLhyphen"/>
+                  <gap reason="illegible" resp="#TECH" extent="2 letters">
+
+
+=== GAP 17 (offset 72111..72229) ===
+PRE:
+                  <desc>•</desc>
+                  </gap>
+                  <g ref="char:EOLhyphen"/>
+                  
+GAP:
+<gap reason="illegible" resp="#TECH" extent="2 letters">
+                     <desc>••</desc>
+                  </gap>
+POST:
+.</note>Luther ſaid, If the vvorld ſhould ſtand any long time, vve muſt receiue a<g ref="char:EOLhyphen"/>gaine (which h
+
+=== GAP 18 (offset 73669..73785) ===
+PRE:
+>10. It is not onely better then al other Latin tra<g ref="char:cmbAbbrStroke">̄</g>ſlations,<note place="margin">It is 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 word">
+                     <desc>〈◊〉</desc>
+                  </gap>
+POST:
+ then the vulgar Greeke text it ſelf.</note> but then the Greeke text it ſelf, in thoſe places where they diſagree.</p>
+
+
+=== GAP 19 (offset 75914..76015) ===
+PRE:
+rates in his Eccleſiaſtical hiſtorie readeth ſo in the Greeke,<note place="margin">Li. 7. c. 32.</note> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+ &amp;c.</p>
+            <p>But the proofe is more pregnant out of the Aduerſaries them ſelues. They forſake the Greeke 
+
+=== GAP 20 (offset 76732..76839) ===
+PRE:
+ verſ. 1. ſaying, <hi>The firſt couenant,</hi> for that vvhich is in the Greeke.<note place="margin">
+                  
+GAP:
+<gap reason="foreign">
+                     <desc>〈 in non-Latin alphabet 〉</desc>
+                  </gap>
+POST:
+
+               </note> 
+               <hi>The firſt tabernacle.</hi> vvhere they put, <hi>couenant,</hi> not as of the
+
+=== GAP 21 (offset 77357..77464) ===
+PRE:
+ine, <hi>Ro. 11, verſ.</hi> 21. They tranſlate not according to the Greeke text,<note place="margin">
+                  
+GAP:
+<gap reason="foreign">
+                     <desc>〈 in non-Latin alphabet 〉</desc>
+                  </gap>
+POST:
+
+               </note> 
+               <hi>Temporiſeruientes, ſeruing the time,</hi> vvhich Beza ſaith muſt needes be a
+
+=== GAP 22 (offset 78345..78452) ===
+PRE:
+r:cmbAbbrStroke">̄</g>modious and eaſie, according as it is in the vulgar Latin.<note place="margin">
+                  
+GAP:
+<gap reason="foreign">
+                     <desc>〈 in non-Latin alphabet 〉</desc>
+                  </gap>
+POST:
+
+               </note> Again, <hi>Ia.</hi> 5, 12. they leaue the Greeke, and folovv the vulgar Latin, ſaying, <hi>leſt 
+
+=== GAP 23 (offset 79980..80096) ===
+PRE:
+d ſuch like.<note place="margin">See No. Teſt. Graec. Rob. Ste<g ref="char:EOLhyphen"/>phani in folio, <hi>and</hi> Criſ
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+ins.</note> Yea the Greeke text in theſe ſuperfluities condemneth it ſelf, and iuſtifieth the vulgar Latin excedingly: a
+
+=== GAP 24 (offset 80644..80754) ===
+PRE:
+EOLhyphen"/>forementioned in the end of the <hi>Pater noſter,</hi> hath a marke of ſuperfluitie in the Greeke text thus 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 word">
+                  <desc>〈◊〉</desc>
+               </gap>
+POST:
+
+               <g ref="char:punc">▪</g> and <hi>Marc.</hi> 6, 11 theſe vvordes, <hi>Amen I ſay to you, it ſhal be more 
+
+=== GAP 25 (offset 82530..82646) ===
+PRE:
+on
+<pb facs="tcp:2646:9"/> vvhich be blameth, is grounded vpon the authoritie of other Greeke copies, &amp; thoſe moſt a
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+ncient. Yea in ſome number of places vve haue obſerued, that the reading or the Latin text of the old Interpreter, thoug
+
+=== GAP 26 (offset 85346..85447) ===
+PRE:
+punc">▪</g> namely 2 <hi>Pet. 1, 10. Satague vt per bona opera certam veſtram vocationem faciatis.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. and Marc. 8. v. 7. <hi>Et ipſos benedixit,</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in no
+
+=== GAP 27 (offset 85513..85614) ===
+PRE:
+〈 in non-Latin alphabet 〉</desc>
+               </gap>. and Marc. 8. v. 7. <hi>Et ipſos benedixit,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+.</p>
+            <p>3 If theſe marginal Greeke copies be thought leſſe authentical then the Greeke text, the Aduerſarie
+
+=== GAP 28 (offset 86787..86894) ===
+PRE:
+an would thinke it muſt be rather as in the Greeke text,<note place="margin">Codex ve<g ref="char:EOLhyphen"/>ronenſis. 
+GAP:
+<gap reason="foreign">
+                     <desc>〈 in non-Latin alphabet 〉</desc>
+                  </gap>
+POST:
+.</note> 
+               <hi>A litle fire vvhat a great vvood it kindleth!</hi> But an approued auncient Greeke copie al
+
+=== GAP 29 (offset 87427..87528) ===
+PRE:
+>verſ</hi> 19. Segregant <hi>ſemetipſos.</hi> likewiſe 2 Epheſ 2. <hi>Quòd elegerit vos primitias:</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+ in ſome Greeke copies. Gagn. &amp; 2 <hi>Cor. 9. Veſtra amulatio,</hi> 
+               <gap reason="foreign">
+         
+
+=== GAP 30 (offset 87616..87717) ===
+PRE:
+t 〉</desc>
+               </gap> in ſome Greeke copies. Gagn. &amp; 2 <hi>Cor. 9. Veſtra amulatio,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. ſo hath one Greeke copie. Beza.</p>
+            <p>5 If al their copies be not ſufficient, the auncient Greeke fathers
+
+=== GAP 31 (offset 88031..88138) ===
+PRE:
+ 6, 20. Prophanat vo<g ref="char:EOLhyphen"/>cum nouitates.</hi>
+               <note place="margin">
+                  
+GAP:
+<gap reason="foreign">
+                     <desc>〈 in non-Latin alphabet 〉</desc>
+                  </gap>
+POST:
+
+               </note> So readeth S. Chryſoſtom and expoundeth it againſt Heretical &amp; erroneous nouelties. Yet now 
+
+=== GAP 32 (offset 89677..89784) ===
+PRE:
+ 5. v. 17. <hi>Donationis &amp; iuſtitiae.</hi> ſo readeth Theodorete in Greeke.<note place="margin">
+                  
+GAP:
+<gap reason="foreign">
+                     <desc>〈 in non-Latin alphabet 〉</desc>
+                  </gap>
+POST:
+
+               </note> &amp; <hi>Lu. 2. v.</hi> 14. Origen &amp; S. Chryſoſtom reade, <hi>Hominibus bonae voluntatis,</
+
+=== GAP 33 (offset 90317..90418) ===
+PRE:
+ as Marc. 7, 3. <hi>Niſi crebro lauerint.</hi> Eraſmus thin<g ref="char:EOLhyphen"/>keth that he did read in the Greeke 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>often:</hi> and Beza and others commend his coniecture, yea and the Engliſh Bibles are ſo tranſlated. vvhereas nov
+
+=== GAP 34 (offset 90546..90647) ===
+PRE:
+ten:</hi> and Beza and others commend his coniecture, yea and the Engliſh Bibles are ſo tranſlated. vvhereas novv it is 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+ vvhich ſignifieth the length of the arme vp to the elbovv. And vvho vvould not thinke that the Euangeliſt ſhould ſay, T
+
+=== GAP 35 (offset 96294..96395) ===
+PRE:
+nd Latin copies. For example, Mat. 10. <hi>The firſt Simon, Vvho is called Peter.</hi> I thinke (ſaith Beza) this vvord 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+,<note place="margin">In An<g ref="char:EOLhyphen"/>not. No. Teſt. an. 1556.</note> 
+               <hi>firſt,</hi> hath
+
+=== GAP 36 (offset 97073..97174) ===
+PRE:
+er, haue crept by corruption into the text out of the margent. And 1 <hi>Cor.</hi> 15. He thinketh the Apoſtle ſaid not 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>victorie,</hi> as it is in al Greeke copies, but <gap reason="foreign">
+                  <desc>〈 in non-Latin alp
+
+=== GAP 37 (offset 97229..97330) ===
+PRE:
+     <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>, <hi>victorie,</hi> as it is in al Greeke copies, but 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>contention.</hi> And <hi>Act.</hi> 13. he calleth it a manifeſt errour, that in the Greeke it is, 400 <hi>yeres,</
+
+=== GAP 38 (offset 97601..97702) ===
+PRE:
+.</hi> 16. he recke<g ref="char:EOLhyphen"/>neth vp a vvhole catalogue of corruptions. namely <hi>Marc. 12. v.</hi> 42. 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>Vvhich is a farthing:</hi> and <hi>Act. 8. v.</hi> 26. <gap reason="foreign">
+                  <desc>〈 in non-Lat
+
+=== GAP 39 (offset 97763..97864) ===
+PRE:
+desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>, <hi>Vvhich is a farthing:</hi> and <hi>Act. 8. v.</hi> 26. 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>This is deſert.</hi> and <hi>Act. 7. v.</hi> 16 the name of Abraham, &amp; ſuch like. Al vvhich he thinketh to hau
+
+=== GAP 40 (offset 98400..98501) ===
+PRE:
+d Teſtament) that Iacob vvent dovvne into Aegypt vvith 75 ſoules. And <hi>Luc. 3. v.</hi> 36. he thinketh theſe vvordes 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>Vvhich vvas of Cainan,</hi>
+               <note place="margin">They ſtanding preciſely vpon the Hebrue of the old
+
+=== GAP 41 (offset 98813..98929) ===
+PRE:
+f force denie the one of them.</note> to be ſo falſe, that he leaueth them cleane out in<note n="*" place="margin">An. D
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+. 1556 and 1565.</note> both his editions of the nevv Teſtament: ſaying, that he is bold ſo to doe, by the authoritie of
+
+=== GAP 42 (offset 101605..101706) ===
+PRE:
+ ſuch places where they dare not tranſlate the Greeke, becauſe it is for vs &amp; againſt them. as when they tranſlate, 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>ordinances,</hi> and not, <hi>iuſtification,</hi> and that of pur<g ref="char:EOLhyphen"/>poſe as Beza confeſſeth 
+
+=== GAP 43 (offset 101846..101947) ===
+PRE:
+i> and not, <hi>iuſtification,</hi> and that of pur<g ref="char:EOLhyphen"/>poſe as Beza confeſſeth <hi>Luc.</hi> 1, 6. 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>ordinances,</hi> or <hi>inſtructions,</hi> and not <hi>traditions,</hi> in the better part. 2 <hi>Theſſ.</hi> 2, 1
+
+=== GAP 44 (offset 102070..102171) ===
+PRE:
+hi>ordinances,</hi> or <hi>inſtructions,</hi> and not <hi>traditions,</hi> in the better part. 2 <hi>Theſſ.</hi> 2, 15. 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>Elders,</hi> and not <hi>Prieſts:</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in non-Lat
+
+=== GAP 45 (offset 102232..102333) ===
+PRE:
+desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>, <hi>Elders,</hi> and not <hi>Prieſts:</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>images</hi> rather then <hi>idols.</hi> and eſpecially when S. Luke in the Greeke ſo maketh for vs (the vulgar Lat
+
+=== GAP 46 (offset 102595..102711) ===
+PRE:
+or them and vs) that Beza ſaith it is a corruption crept out of the margent into the text.<note place="margin">Luc. 22. 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 word">
+                     <desc>〈◊〉</desc>
+                  </gap>
+POST:
+, <gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>0.
+
+=== GAP 47 (offset 102713..102829) ===
+PRE:
+. <gap reason="illegible" resp="#TECH" extent="1 word">
+                     <desc>〈◊〉</desc>
+                  </gap>, 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+0.</note> Vvhat neede theſe abſurd diuiſes and falſe dealings with the Greeke text,<note place="margin">For the real pre
+
+=== GAP 48 (offset 104450..104551) ===
+PRE:
+ure our ſelues of our predeſtination,<note place="margin">Againſt ſpecial aſſurance of ſaluation.</note> in the Greeke, 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>I am probably perſuaded that neither death nor life</hi> &amp;c. In the Euange<g ref="char:EOLhyphen"/>liſts about
+
+=== GAP 49 (offset 105890..106006) ===
+PRE:
+ n="*" place="margin">Againſt D. Sand. Rocke pag. 147. See Kemniſ. in exam. Co<g ref="char:cmbAbbrStroke">̄</g>c. Trid. 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 word">
+                     <desc>〈◊〉</desc>
+                  </gap>
+POST:
+. 4.</note> the worſt of al other.) If it be, the Greeke (as you ſee) is more, and ſo both Greeke and Latin and conſeque
+
+=== GAP 50 (offset 106588..106706) ===
+PRE:
+ theſe phraſes and ſpeaches,<note place="margin">Mat. 3. &amp; 11. Eph. 5. Luc. 1. Heb. 13.</note> 
+               <hi>P
+GAP:
+<gap reason="illegible" resp="#TECH" extent="2 letters">
+                     <desc>••</desc>
+                  </gap>
+POST:
+
+                  <g ref="char:EOLhyphen"/>nitentiam agite. Sacramentum hoc magnum eſt.</hi> AVE GRATIA PLENA. <hi>Tali
+
+=== GAP 51 (offset 107125..107243) ===
+PRE:
+ally or partially, or rather prophetically, ſo long before they were in controuerſie? thirdly, doth he not ſay for <hi>p
+GAP:
+<gap reason="illegible" resp="#TECH" extent="2 letters">
+                     <desc>••</desc>
+                  </gap>
+POST:
+nitentiam agite,</hi> in an other place, <hi>p<gap reason="illegible" resp="#TECH" extent="2 letters">
+                 
+
+=== GAP 52 (offset 107289..107407) ===
+PRE:
+"2 letters">
+                     <desc>••</desc>
+                  </gap>nitentiam agite,</hi> in an other place, <hi>p
+GAP:
+<gap reason="illegible" resp="#TECH" extent="2 letters">
+                     <desc>••</desc>
+                  </gap>
+POST:
+nitemini:</hi>
+               <note place="margin">Mar. 1. <gap reason="foreign">
+                     <desc>〈 in non-La
+
+=== GAP 53 (offset 107466..107573) ===
+PRE:
+                     <desc>••</desc>
+                  </gap>nitemini:</hi>
+               <note place="margin">Mar. 1. 
+GAP:
+<gap reason="foreign">
+                     <desc>〈 in non-Latin alphabet 〉</desc>
+                  </gap>
+POST:
+. Luc. 16. v. 20.</note> and doth he not tranſlate other myſteries, by the vvord, <hi>Sacramentum,</hi> as <hi>Apoc. 17,
+
+=== GAP 54 (offset 108801..108919) ===
+PRE:
+. 10, 29? Vvhich he doth not, but in al theſe places ſaith ſimply, <hi>Vt digni habeamini,</hi> and, <hi>Qui digni habeb
+GAP:
+<gap reason="illegible" resp="#TECH" extent="2 letters">
+                     <desc>••</desc>
+                  </gap>
+POST:
+tur.</hi> and how can it be iudged Papiſtical or partial, when he ſaith,<note place="margin">in ep. ad Hebr.</note> 
+   
+
+=== GAP 55 (offset 109077..109193) ===
+PRE:
+iſtical or partial, when he ſaith,<note place="margin">in ep. ad Hebr.</note> 
+               <hi>Talibus hoſtiis promer
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+tur Deus, Heb. 13?</hi> Vvas Primaſius alſo S. Augu<g ref="char:EOLhyphen"/>ſtines ſcholer, a Papiſt, for vſing this tex
+
+=== GAP 56 (offset 109501..109617) ===
+PRE:
+t,<note place="margin">Ep. 14 &amp; 18.</note> for vſing ſo often this ſpeach, <hi>promereri Dominum iuſtis operibus, po
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+nitentia, &amp;c.?</hi> or is there any difference, but that S. Cyptian vſeth it as a deponent more latinly, the other a
+
+=== GAP 57 (offset 110794..110910) ===
+PRE:
+hi> and, <hi>Tunc red<g ref="char:EOLhyphen"/>det vnicuique ſecundum operaſua.</hi> and,<note place="margin">Mat. 16. la
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+. 2.</note> 
+               <hi>Nunquid poterit ſides ſaluare eum? Ex operi<g ref="char:EOLhyphen"/>bus iuſtificatur hom
+
+=== GAP 58 (offset 113428..113544) ===
+PRE:
+at the firſt may ſeeme ſtrange, &amp; wil eſteeme it more, when they ſhal<note n="*" place="margin">See the laſt Table a
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+ the end of the booke.</note> otherwiſe be taught to vnderſtand it, then if it were the common knowen Engliſh.</p>
+     
+
+=== GAP 59 (offset 119012..119128) ===
+PRE:
+ not conueniently be tranſlated.<note place="margin">Phil. 3.</note> as when S. Paul ſaith, <hi>conciſio, non circumciſi
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+:</hi> how can we but folow his very wordes and alluſion? And how is it poſſible to expreſſe <hi>Euangelizo,</hi>
+      
+
+=== GAP 60 (offset 123832..123948) ===
+PRE:
+n. vvhich we might ſay perhaps, <hi>the firy hel,</hi> by the Hebrue phraſe in ſuch ſpeaches,<note place="margin">Gehenn
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+ ignis.</note> but not, <hi>hel fire,</hi> as commonly it is tranſlated. Likevviſe <hi>Luc.</hi> 4, 36. Vvhat <hi>vvord<
+
+=== GAP 61 (offset 124799..124909) ===
+PRE:
+ court and in courtly or other ſecular vvritings?</p>
+            <p>Vve adde the Greeke in the margent for diuers cauſe
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                  <desc>•</desc>
+               </gap>
+POST:
+.<note place="margin">The Greeke added often in the margent for many cauſes.</note> Sometime vvhen the ſenſe is hard, th
+
+=== GAP 62 (offset 125187..125288) ===
+PRE:
+it and ſee if he can helpe him ſelf better then by our tranſlation. as Luc 11. <hi>Nolite extolli.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. and againe, <hi>Quod ſupereſt date eleemoſynam.</hi> 
+               <gap reason="foreign">
+                  <desc>〈 
+
+=== GAP 63 (offset 125359..125460) ===
+PRE:
+non-Latin alphabet 〉</desc>
+               </gap>. and againe, <hi>Quod ſupereſt date eleemoſynam.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. Sometime to take away the am<g ref="char:EOLhyphen"/>biguitie of the Latin or Engliſh, as Luc. 11. Et <hi>domus ſuprad
+
+=== GAP 64 (offset 126158..126259) ===
+PRE:
+might otherwiſe conceiue the tranſlation to be falſe as <hi>Philip. 4. v.</hi> 6. But in euery thing by praier, &amp;c. 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, not, <hi>in al praier,</hi> as in the Latin it may ſeeme. Some<g ref="char:EOLhyphen"/>time when the Latin neither dot
+
+=== GAP 65 (offset 126607..126708) ===
+PRE:
+te place="margin">Mat. 4.</note> 
+               <hi>Illi foli ſeruies, him only ſhalt thou ſerue,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. And <hi>Act.</hi> 6. Nicolas a <hi>ſtranger</hi> of Antioche, <gap reason="foreign">
+                  <desc>〈 in non-
+
+=== GAP 66 (offset 126772..126873) ===
+PRE:
+c>〈 in non-Latin alphabet 〉</desc>
+               </gap>. And <hi>Act.</hi> 6. Nicolas a <hi>ſtranger</hi> of Antioche, 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, and, <hi>Ro. 9. The ſeruice,</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in non-Latin alphab
+
+=== GAP 67 (offset 126925..127026) ===
+PRE:
+        <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>, and, <hi>Ro. 9. The ſeruice,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. and <hi>Eph.</hi> 1. to <hi>perfite, inſtaurare omnia in Chriſto,</hi> 
+               <gap reason="foreign">
+        
+
+=== GAP 68 (offset 127115..127216) ===
+PRE:
+ 〉</desc>
+               </gap>. and <hi>Eph.</hi> 1. to <hi>perfite, inſtaurare omnia in Chriſto,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. And, <hi>Vvherein he hath gratified vs,</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in non-L
+
+=== GAP 69 (offset 127279..127380) ===
+PRE:
+sc>〈 in non-Latin alphabet 〉</desc>
+               </gap>. And, <hi>Vvherein he hath gratified vs,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. &amp; Eph. 6. <hi>Put on the armour,</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in non-Lati
+
+=== GAP 70 (offset 127440..127541) ===
+PRE:
+<desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>. &amp; Eph. 6. <hi>Put on the armour,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. and a number the like. Sometime, when the Greeke hath two ſenſes, and the Latin but one, we adde the Greeke. 2. Cor. 1
+
+=== GAP 71 (offset 128151..128252) ===
+PRE:
+ Greeke maketh for vs more then the Latin. as, Seniores,<note place="margin">Act. 15. 2 Theſ. 2.</note> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. <hi>Vt digni habeamini.</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉<
+
+=== GAP 72 (offset 128299..128400) ===
+PRE:
+             <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>. <hi>Vt digni habeamini.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. <hi>Qui effundetur,</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</des
+
+=== GAP 73 (offset 128443..128544) ===
+PRE:
+                 <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>. <hi>Qui effundetur,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>Praecepta,</hi> 
+               <gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+  
+
+=== GAP 74 (offset 128582..128683) ===
+PRE:
+n">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>, <hi>Praecepta,</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. &amp; Io. 21. <gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>, <
+
+=== GAP 75 (offset 128699..128800) ===
+PRE:
+   <gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>. &amp; Io. 21. 
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>Paſce &amp; rege.</hi> And ſometime to ſhew the falſe tranſlation of the Heretike,<note place="margin">1. Cor. 11.
+
+=== GAP 76 (offset 129006..129107) ===
+PRE:
+e,<note place="margin">1. Cor. 11.</note> as when Beza ſaith, <hi>Hoc poculum in meo ſanguine qui.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. <hi>Luc.</hi> 22. &amp;, <hi>Que<g ref="char:cmbAbbrStroke">̄</g> oportet coelo co<g ref="char:cmbAbbrStroke">̄</g>tin
+
+=== GAP 77 (offset 129253..129354) ===
+PRE:
+ <hi>Que<g ref="char:cmbAbbrStroke">̄</g> oportet coelo co<g ref="char:cmbAbbrStroke">̄</g>tineri.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+, <hi>Act.</hi> 3. Thus we vſe the Greeke diuers waies, &amp; eſteeme of it as it is worthie, &amp; taken al co<g ref="c
+
+=== GAP 78 (offset 130723..130833) ===
+PRE:
+ay not in the title of bookes, in the firſt page, S. Mat<g ref="char:EOLhyphen"/>thevv,
+<pb facs="tcp:2646:13"/> S. Paul
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                  <desc>•</desc>
+               </gap>
+POST:
+ becauſe it is ſo neither in Greeke nor Latin.<note place="margin">In the begin<g ref="char:EOLhyphen"/>ning of bookes, 
+
+=== GAP 79 (offset 132383..132499) ===
+PRE:
+v the pointing moſt agreable to the Greeke and to the fathers commentaries.<note place="margin">The pointing ſometime al
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+e<g ref="char:EOLhyphen"/>
+                  <gap reason="illegible" resp="#TECH" extent="1 letter">
+                   
+
+=== GAP 80 (offset 132544..132660) ===
+PRE:
+nt="1 letter">
+                     <desc>•</desc>
+                  </gap>e<g ref="char:EOLhyphen"/>
+                  
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+ed.</note> As Col. 1, 10. <hi>Ambu<g ref="char:EOLhyphen"/>lantes dignè Deo, per omnia placentes. Vvalking vvorthy of Go
+
+=== GAP 81 (offset 132827..132928) ===
+PRE:
+EOLhyphen"/>lantes dignè Deo, per omnia placentes. Vvalking vvorthy of God, in al things pleaſing.</hi> 
+               
+GAP:
+<gap reason="foreign">
+                  <desc>〈 in non-Latin alphabet 〉</desc>
+               </gap>
+POST:
+. <hi>Eph.</hi> 1, 17. Vve point thus, <hi>Deus Domini noſtri Ieſu Chriſti, pater gloriae.</hi> as in the Greeke, and S.
+
+=== GAP 82 (offset 133793..133909) ===
+PRE:
+. v. 8. <hi>praeſentiam,</hi> not, <hi>praeſcientiam,</hi> 2 Pet. 1. v. 16. Heb. 13. <hi>latuerunt,</hi> not, <hi>placue
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                     <desc>•</desc>
+                  </gap>
+POST:
+unt.</hi>
+            </p>
+            <p>Thus we haue endeuoured by al meanes to ſatisfie the indifferent reader, and t
+
+=== GAP 83 (offset 146211..146336) ===
+PRE:
+<q>
+                  <pb facs="tcp:2646:15"/> 
+                  <bibl>Vincentius Lirinenſis li. cont. prophanas haereſ
+GAP:
+<gap reason="illegible" resp="#TECH" extent="3 letters">
+                        <desc>•••</desc>
+                     </gap>
+POST:
+ Nouationes.</bibl>
+                  <p>Here perhaps ſome man may aſke, vvhether heretikes alſo vſe not the teſti<g ref
+
+=== GAP 84 (offset 147153..147281) ===
+PRE:
+ad the vvorkes of Paulus Samoſatenus, of Priſcillian, of Eunomian, of Iouinian,<note n="*" place="margin">Of Caluin, of 
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                           <desc>•</desc>
+                        </gap>
+POST:
+uel, of the reſt.</note> of the other plagues &amp; peſtilences: thou ſhalt finde an infinite heape of exam<g ref="char:
+
+=== GAP 85 (offset 148161..148283) ===
+PRE:
+ſely contemne the oracles of God. So that they doe like vnto them, vvhich vvhen they vvil prepare certaine bitter potion
+GAP:
+<gap reason="illegible" resp="#TECH" extent="1 letter">
+                        <desc>•</desc>
+                     </gap>
+POST:
+ for children, do firſt anoint the brimmes of the cup vvith honie, that the vn<g ref="char:EOLhyphen"/>warie age, vvhen 
+
+=== GAP 86 (offset 148802..148926) ===
+PRE:
+           <q>
+                  <bibl>Vincentius Lirinenſis in his golden booke before cited, aduerſus prophanas haereſ
+GAP:
+<gap reason="illegible" resp="#TECH" extent="2 letters">
+                        <desc>••</desc>
+                     </gap>
+POST:
+ Nouationes.</bibl>
+                  <p>Here ſome man perhaps may aſke, for aſmuch as the Canon of the Scrip<g ref="cha

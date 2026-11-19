@@ -4,7 +4,7 @@
 
 {{hanging indent|::PETRVS REMIGIVS ''Archidiaconus maior Metropolitana in{{ls}}ignis Eccle{{ls}}iæ Rhemen{{ls}}is, Iuris Canonici Doctor, Archiepi{{ls}}copatus Rhemen{{ls}}is generalis Vicarius.''}}
 
-{{hanging indent|::HVBERTVS MORVS, ''Rhemen{{ls}}is Eccle{{ls}}iæ Decanus, & Eccle{{ls}}ia{{ls}}tes, & in {{ls}}acratißima Theologiæ facultate Doctor.''}}
+{{hanging indent|::HVBERTVS MORVS, ''Rhemen{{ls}}is Eccle{{ls}}iæ Decanus, & Eccle{{ls}}ia{{ls}}tes, & in {{ls}}acrati{{ls}}simæ Theologiæ facultate Doctor.''}}
 
 {{hanging indent|::IOANNES LE BESGVE, ''Canonicus Rhemen{{ls}}is, Doctor Theologus, & Cancellarius Academiæ Rhemen{{ls}}is.''}}
 
@@ -14,4 +14,4 @@
 
 Paupertate {{ls}}piritus peruenitur ad Scripturarū cognitionem: vbi oportet hominem {{ls}}e mitem præbere, ne peruicacibus concertationibus indocilis reddatur.
 
-''Vve come to the vnder{{ls}}tanding of {{ls}}criptures through pouertie of {{ls}}pirit: vvhere a man mu{{ls}}t {{ls}}hevv him {{ls}}elf meeke-minded, le{{ls}}t by {{ls}}tubburne contentions, he become incapable and vnapt to be taught.''<noinclude>{{right|THE}}</noinclude>
+''Vve come to the vnder{{ls}}tanding of Scriptures through pouertie of {{ls}}pirit: vvhere a man mu{{ls}}t {{ls}}hevv him{{ls}}elf meeke-minded, le{{ls}}t by {{ls}}tubburne contentions, he become incapable and vnapt to be taught.''<noinclude>{{right|THE}}</noinclude>
