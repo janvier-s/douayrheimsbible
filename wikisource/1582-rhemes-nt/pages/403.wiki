@@ -2,7 +2,7 @@
 
 {{sc|Non}} ''ita coelum splendescit, quando radios sol demittit, quemadmodum'' {{sc|Romanorvm Vrbs}} ''duas illas lampades vbique terrarum effundens.'' Chrys. in ep. Ro. hom. 32 in moral.
 
-{| style='border: none; background: transparent; width: 100%;'
+{| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 50%; vertical-align: top; padding-right: 15px;' |
 ''Prudent. in Hymno de S. Laurent.''
@@ -17,12 +17,12 @@
 |}
 
 {{c|{{larger|{{sc|Table of S. Paul.}}}}}}
-{| style='border: none; background: transparent; width: 100%;'
+{| style='border-collapse: collapse; border: none; width: 100%;'
 |-
-! style='width: 65px; text-align: right; vertical-align: top; padding-right: 8px;' | Tiberij
-! style='width: 70px; text-align: right; vertical-align: top; padding-right: 8px;' | Natiuit.
-! style='width: 50px; text-align: right; vertical-align: top; padding-right: 8px;' | Ascen.
-! style='vertical-align: top;' |
+| style='width: 65px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Tiberij'''
+| style='width: 70px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Natiuit.'''
+| style='width: 50px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Ascen.'''
+| style='vertical-align: top;' |
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
@@ -74,10 +74,10 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | He preacheth in Lycaonia, and at Lystra is almost stoned to death. He appointeth Priests in euery Church, and returning by Pisidia, came againe to Antioche vvhence they first departed. ''Act. 14.''
 |-
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Claudij
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Natiuit.
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Ascen.
-! style='vertical-align: top;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Claudij'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Natiuit.'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Ascen.'''
+| style='vertical-align: top;' |
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 52
@@ -114,10 +114,10 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | Thence comming to Hierusalem he is taken, ''Act. 21:'' and from the Tribune Lysias deliuered to Felix the Gouernour, ''Act. 23:'' and by him left to Festus, ''Act. 24.'' he appealeth to Caesar, ''Act. 25:'' and so is {{sc|sent to Rome}}, ''Act. 27:'' vvhere he arriueth. ''Act. 28.''
 |-
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Neronis
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Natiuit.
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Ascen.
-! style='vertical-align: top;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Neronis'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Natiuit.'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Ascen.'''
+| style='vertical-align: top;' |
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 58

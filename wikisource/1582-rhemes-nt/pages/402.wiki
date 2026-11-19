@@ -3,12 +3,12 @@
 Wherein though it be not possible to set dovvne the precise and vndoubted time or yere of euery thing, because neither S. Luke nor others do note particularly and orderly the moments of euery action of the said Apostles: yet vve folovv the most probable and plaine plat that vve finde in holy Scripture and auncient vvriters.{{MarginNote|margin=left|margin-width=65|text=''See the annot. Rom. 16, 15. Gal. 1.''}} Whereby the studious reader may easily discouer the foly of the Protestants, that can finde no time vvhen * Peter might possibly come to Rome, be Bishop, and die there: diuers things in S. Paules actes being no lesse hard to reconcile to the course of S. Lukes narration, then any thing touching the historie of S. Peter, namely his * three yeres preaching in Arabia: al vvhich must needes be true, vvhether vve hit the very iust time or no, and hovv so euer authors differ about the same.
 
 {{c|{{larger|{{sc|Table of S. Peter.}}}}}}
-{| style='border: none; background: transparent; width: 100%;'
+{| style='border-collapse: collapse; border: none; width: 100%;'
 |-
-! style='width: 65px; text-align: right; vertical-align: top; padding-right: 8px;' | Tiberij
-! style='width: 70px; text-align: right; vertical-align: top; padding-right: 8px;' | Nat. Dñi.
-! style='width: 50px; text-align: right; vertical-align: top; padding-right: 8px;' | Ascen.
-! style='vertical-align: top;' |
+| style='width: 65px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Tiberij'''
+| style='width: 70px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dñi.'''
+| style='width: 50px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Ascen.'''
+| style='vertical-align: top;' |
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 34
@@ -70,10 +70,10 @@ Wherein though it be not possible to set dovvne the precise and vndoubted time o
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | At Hierusalem he is cast into prison after the putting of S. Iames to death, by the commaundement of Herod. he is praied for by the vvhole Church, & deliuered out of prison by an Angel. ''Act. 12.''
 |-
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Claudij
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Nat. Dñi.
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Ascen.
-! style='vertical-align: top;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Claudij'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dñi.'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Ascen.'''
+| style='vertical-align: top;' |
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 44
@@ -110,10 +110,10 @@ Wherein though it be not possible to set dovvne the precise and vndoubted time o
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | He vvriteth his second epistle a litle before his death, vvhich Christ reuealed to him to be at hand, ''2 Pet. 1.'' He taketh order for his successor.
 |-
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Neronis
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Nat. Dñi.
-! style='text-align: right; vertical-align: top; padding-right: 8px;' | Ascen.
-! style='vertical-align: top;' |
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Neronis'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dñi.'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Ascen.'''
+| style='vertical-align: top;' |
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 70

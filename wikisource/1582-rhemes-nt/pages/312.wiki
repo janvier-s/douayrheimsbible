@@ -1,5 +1,5 @@
 <noinclude><pagequality level="1" user="" />{{rh|284||Mt. Mr. Lu. Io.}}</noinclude>
-{| style='border: none; background: transparent; width: 100%;'
+{| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
