@@ -38,35 +38,40 @@ When a word is hyphenated across a page break, Wikisource uses `{{hws|...}}` (hy
 
 ---
 
-## 2. Small Capitals (`{{sc}}`) & Sacred Names
+## 2. Small Capitals (`{{sc}}` / `<hi rend="smallcaps">`) & Sacred Names
 
-The 1582 edition employs distinct typographic hierarchies using small capitals.
+The 1582 edition employs distinct typographic hierarchies using small capitals. To ensure the TEI XML serves as an authoritative digital master from which any downstream format (Wikisource, website JSON, EPUB, LaTeX) can be generated without loss of typographic distinction, small capitals are explicitly tagged in both Wikisource and the TEI XML corpus.
 
 ### 2.1 Sacred Names in Text (`IESVS`, `LORD`, `GOD`)
 
 In continuous prose and verse text, sacred names are set with a standard full capital for the initial letter and small capitals for the remainder:
 
-- Print: **I<small>ESVS</small>** → Wikisource: `{{sc|Iesvs}}`
-- Print: **I<small>ESVM</small>** → Wikisource: `{{sc|Iesvm}}`
-- Print: **I<small>ESV</small>** → Wikisource: `{{sc|Iesv}}`
-- Print: **C<small>HRIST</small>** → Wikisource: `{{sc|Christ}}`
-- Print: **L<small>ORD</small>** → Wikisource: `{{sc|Lord}}`
-- Print: **G<small>OD</small>** → Wikisource: `{{sc|God}}`
+- Print: **I<small>ESVS</small>** → Wikisource: `{{sc|Iesvs}}` → XML: `<hi rend="smallcaps">Iesvs</hi>`
+- Print: **I<small>ESVM</small>** → Wikisource: `{{sc|Iesvm}}` → XML: `<hi rend="smallcaps">Iesvm</hi>`
+- Print: **I<small>ESV</small>** → Wikisource: `{{sc|Iesv}}` → XML: `<hi rend="smallcaps">Iesv</hi>`
+- Print: **C<small>HRIST</small>** → Wikisource: `{{sc|Christ}}` → XML: `<hi rend="smallcaps">Christ</hi>`
+- Print: **L<small>ORD</small>** → Wikisource: `{{sc|Lord}}` → XML: `<hi rend="smallcaps">Lord</hi>`
+- Print: **G<small>OD</small>** → Wikisource: `{{sc|God}}` → XML: `<hi rend="smallcaps">God</hi>`
+- Print: **M<small>ARIE</small>** → Wikisource: `{{sc|Marie}}` → XML: `<hi rend="smallcaps">Marie</hi>`
 
 ### 2.2 Capitalized Small Capitals in Display and Title Typography
 
 In running heads, section headings, book arguments, and solemn declarations, words often appear in letter-spaced capitals or capitalized small caps:
 
-- Where the scan clearly shows capitalized small caps (e.g. **I E S V M** or **I E S V S C H R I S T**):
+- Where the scan clearly shows capitalized small caps (e.g. **I E S V M**, **A V E G R A T I A P L E N A**, or **I E S V S C H R I S T**):
   - Do **not** leave them as naked spaced letters (`I E S V M`) from raw OCR.
-  - Wrap the small capitals in `{{sc|...}}`: e.g. `{{sc|Iesvm}}` or `{{sc|I E S V M}}` per visual weight in the scan.
-  - If the initial letter is a full-height display capital and the subsequent letters are spaced small caps, format as `I {{sc|e s v m}}` or `{{sc|Iesvm}}`.
+  - Wrap the small capitals in `{{sc|...}}` in Wikisource and `<hi rend="smallcaps">...</hi>` in TEI XML.
+  - Examples:
+    - `{{sc|Ave gratia plena}}` / `<hi rend="smallcaps">Ave gratia plena</hi>`
+    - `{{sc|Sauiour}}` / `<hi rend="smallcaps">Sauiour</hi>`
+    - `{{sc|Gospel}}` / `<hi rend="smallcaps">Gospel</hi>`
 
 ### 2.3 Post-Drop-Cap Continuation
 
 At the start of a chapter following a large decorative drop-cap (initial woodcut), the remainder of the first word (and sometimes the following word) is set in capitals or small capitals:
 
-- Example (Page 31, Matt 1:1): Initial **T**, followed by `{{sc|He booke}}`.
+- Example (Page 31, Matt 1:1): Initial **T**, followed by `{{sc|He booke}}` (Wikisource) / `<seg rend="decorInit">T</seg><hi rend="smallcaps">He</hi> booke` (XML).
+- Example (Page 25): `{{dropinitial|T}}H{{sc|e}} numbers` (Wikisource) / `<seg rend="decorInit">T</seg>H<hi rend="smallcaps">e</hi> numbers` (XML).
 
 ---
 
