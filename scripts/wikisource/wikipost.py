@@ -101,6 +101,20 @@ def preserve_pagequality(ours, live):
     return ours
 
 
+def check_live_lint(w, n):
+    """Check if Parsoid or MediaWiki flagged any linter or tracking category error on the live page."""
+    title = f'Page:{INDEX}/{n}'
+    res = w.call({'action': 'query', 'list': 'linterrors', 'lnttitle': title})
+    lints = res.get('query', {}).get('linterrors', [])
+    c_res = w.call({'action': 'query', 'titles': title, 'prop': 'categories'})
+    pages = c_res.get('query', {}).get('pages', [])
+    cats = [c['title'] for c in pages[0].get('categories', [])] if pages else []
+    tracking = [c for c in cats if any(k in c.lower() for k in [
+        'invalid template', 'duplicate arguments', 'reference errors', 'script errors'
+    ])]
+    return lints, tracking
+
+
 def main():
     a = sys.argv[1:]
     if not a:
@@ -199,6 +213,12 @@ def main():
             manifest_path.write_text(json.dumps(manifest, indent=1) + '\n')
             posted += 1
             print(f'{n}: posted (rev {ent["revid"]})')
+            lints, tracking = check_live_lint(w, n)
+            if lints or tracking:
+                for le in lints:
+                    print(f'   ⚠️ LINTER ALERT on {n}: {le.get("category")} {le.get("params")} at {le.get("location")}')
+                for tc in tracking:
+                    print(f'   ⚠️ TRACKING ALERT on {n}: {tc}')
             time.sleep(delay)
     print(f'{todo} to post, {skipped} skipped' + (f', {posted} posted' if post else ' (dry run; add --post --summary "…" to write)'))
 
