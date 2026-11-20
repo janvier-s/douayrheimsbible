@@ -56,11 +56,12 @@ Any element with `background` anywhere in its inline `style` attribute matches a
    - **Wikisource (`.wiki`)**: Use `{{ls}}` for long-s (`ſ`), `{{ls}}{{ls}}` for double long-s (`ſſ`), and `{{ls}}s` for `ſs` (displays as long-s in Page namespace; renders as modern `s` on transclusion for searchability).
    - **Master TEI XML (`A16049.xml`)**: Preserve literal Unicode long-s `ſ` (`U+017F`) throughout.
    - Retain 1582 print distribution of `u`/`v`, `vv`/`w`, macrons/titlos (`cōmaunded`, `vpō`), and ligatures (`æ`, `œ`, `&c.`).
+   - Before and after any change to pages or data, `lint.py` must report 0 errors. `E-loss`/`E-shift` mean a print feature was lost against git HEAD: fix the cause, don't override, unless the owner approved the change (`--allow-loss`/`--allow-shift … --reason`). `wikipost.py` applies the same check against the live revision.
 2. **Unicode NFC Normalization**:
    - All text must be normalized to Unicode NFC (canonical decomposition followed by canonical composition). MediaWiki enforces NFC upon save; non-NFC text causes checksum mismatches.
 3. **Typography & Layout**:
    - Preserve Renaissance roman/italic distinctions.
-   - Use standard `†` marks following verse numbers (except verse 1).
+   - No `†` after `{{verse|…}}` markers: the owner's editorial decision. Verse numbers can't sit in the margin because of reflow, so the print's verse-start `†` has no purpose there (removed in cff02c6f; lint `W-mark` enforces it). This is the only print mark removed; never remove any other.
    - No double quotes `"` in the body text (the 1582 print does not use them).
    - Running heads and footers must use `{{rh|...}}` and `{{continues|...}}` templates.
 
