@@ -41,7 +41,7 @@ _LETTER_BEFORE = r'(?<![^\W\d_])'
 _TABLE = {
     'ls': ('decrease', 's', 'plain', 'ſ'),
     's': ('info', None, 'plain', '[sS]'),
-    'macron': ('decrease', None, 'nfd', '[̄̃]'),
+    'macron': ('decrease', None, 'nfd', '[\u0304\u0303]'),
     'ae': ('decrease', None, 'plain', '[æÆ]'),
     'oe': ('decrease', None, 'plain', '[œŒ]'),
     'etc': ('decrease', None, 'plain', '&c'),
@@ -99,4 +99,59 @@ def compare(before: str, after: str) -> list:
             out.append(Finding(f.name, kind, a[f.name], b[f.name]))
         elif f.guard == 'increase' and b[f.name] > a[f.name]:
             out.append(Finding(f.name, 'loss', a[f.name], b[f.name]))
+    return out
+
+
+_FLAGS = ('--allow-loss', '--allow-shift', '--reason')
+
+
+def _scope(spec: str) -> tuple:
+    feature, _, pages = spec.strip().partition(':')
+    if feature not in FEATURES:
+        sys.exit(f'unknown fidelity feature {feature!r} (known: {", ".join(FEATURES)})')
+    if pages in ('', '*'):
+        return feature, 0, 10 ** 9
+    first, _, last = pages.partition('-')
+    try:
+        return feature, int(first), int(last or first)
+    except ValueError:
+        sys.exit(f'bad page scope in {spec!r}: use FEATURE:*, FEATURE:n or FEATURE:a-b')
+
+
+def parse_overrides(argv: list) -> Overrides:
+    """--allow-loss/--allow-shift FEATURE:SCOPE[,...] (repeatable) and the --reason they require."""
+    loss, shift, reason = [], [], ''
+    for i, a in enumerate(argv):
+        if a in _FLAGS:
+            if i + 1 >= len(argv):
+                sys.exit(f'{a} needs a value')
+            v = argv[i + 1]
+            if a == '--reason':
+                reason = v.strip()
+            else:
+                (loss if a == '--allow-loss' else shift).extend(_scope(x) for x in v.split(',') if x.strip())
+    if (loss or shift) and not reason:
+        sys.exit('--allow-loss/--allow-shift need --reason "why this print feature may change"')
+    return Overrides(loss, shift, reason)
+
+
+def strip_override_args(argv: list) -> list:
+    out, skip = [], False
+    for a in argv:
+        if skip:
+            skip = False
+        elif a in _FLAGS:
+            skip = True
+        else:
+            out.append(a)
+    return out
+
+
+def refusals(page: int, before: str, after: str, ov: Overrides) -> list:
+    """Messages for the findings no override of the same kind covers on this page."""
+    out = []
+    for f in compare(before, after):
+        allowed = ov.loss if f.kind == 'loss' else ov.shift
+        if not any(feat == f.feature and a <= page <= b for feat, a, b in allowed):
+            out.append(f'{f.feature} {f.kind} {f.before}→{f.after}')
     return out

@@ -45,3 +45,32 @@ def test_macron_loss_and_quote_added():
 
 def test_identical_and_gain_are_clean():
     assert compare('vpon', 'vpō') == []
+
+
+import pytest
+from fidelity import parse_overrides, strip_override_args, refusals
+
+
+def test_overrides_require_reason():
+    with pytest.raises(SystemExit):
+        parse_overrides(['--allow-shift', 'ls:114-160'])
+
+
+def test_override_scopes():
+    ov = parse_overrides(['--allow-shift', 'ls:114-160,vv:*', '--reason', 'ſs per XML'])
+    assert refusals(120, 'Pa{{ls}}{{ls}}ion', 'Pa{{ls}}sion', ov) == []
+    assert refusals(200, 'Pa{{ls}}{{ls}}ion', 'Pa{{ls}}sion', ov) == ['ls shift 2→1']
+
+
+def test_shift_override_does_not_cover_loss():
+    ov = parse_overrides(['--allow-shift', 'macron:*', '--reason', 'x'])
+    assert refusals(1, 'vpō', 'vpo', ov) == ['macron loss 1→0']
+
+
+def test_strip_override_args():
+    assert strip_override_args(['pages', '--allow-loss', 'ls:3', '--reason', 'r', '--quiet']) == ['pages', '--quiet']
+
+
+def test_unknown_feature_rejected():
+    with pytest.raises(SystemExit):
+        parse_overrides(['--allow-loss', 'longs:*', '--reason', 'typo'])
