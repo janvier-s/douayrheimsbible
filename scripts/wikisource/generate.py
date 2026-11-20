@@ -147,11 +147,52 @@ def to_ls(text):
     return text.replace('ſ', '{{ls}}')
 
 
-def finish(s, dropcap=False, ch=None):
+# A run of all-caps words (2+ letters each) in running text or a margin note: the print's
+# small capitals. Not a template name ({{MINNER|), a roman numeral or a heading word.
+CAPS_RUN = re.compile(r"(?<![\w{])(?<!\{\{)([A-ZÆŒ]{2,}(?:[ ][A-ZÆŒ]{2,})*)(?![\wſ|])")
+CAPS_SKIP = re.compile(r'^(?:[IVXLC]+|CHAP|CHA|ANNOT|ANNOTATIONS|SS)$')  # SS. (Saints): an abbreviation in capitals
+GREEK = re.compile(r'[\u0370-\u03ff\u1f00-\u1fff](?:[^A-Za-z{}|\n\']*[\u0370-\u03ff\u1f00-\u1fff])?')
+
+
+def caps_to_sc(s):
+    """Wraps all-caps words in <sc>…</sc> for sc_marks (IESVS -> {{sc|Iesvs}}); <sc> spans and
+    template names are left alone. No long-s is added inside: capitals have none (owner 2026-11-21)."""
+    def run(m):
+        words = m.group(1).split(' ')
+        out, cur = [], []
+        for w in words + [None]:
+            if w is None or CAPS_SKIP.match(w):
+                if cur:
+                    out.append('<sc>' + ' '.join(cur) + '</sc>')
+                    cur = []
+                if w is not None:
+                    out.append(w)
+            else:
+                cur.append(w)
+        return ' '.join(out)
+    parts = re.split(r'(<sc>.*?</sc>)', s)
+    return ''.join(p if p.startswith('<sc>') else CAPS_RUN.sub(run, p) for p in parts)
+
+
+def greek_lang(s):
+    """Greek runs (first to last Greek letter) in {{lang|grc|…}}; italics and punctuation stay put."""
+    return GREEK.sub(lambda m: '{{lang|grc|' + m.group(0) + '}}', s)
+
+
+def tidy_space(s):
+    """No space before ) , . ; : and none after ( (lint W-space); line breaks are kept."""
+    return re.sub(r'\( +', '(', re.sub(r' +([),.;:])', r'\1', s))
+
+
+def finish(s, dropcap=False, ch=None, caps=True):
     s = s.replace('⊢', '⊣')
-    s = sc_marks(s, dropcap)
+    s = sc_marks(caps_to_sc(s) if caps else s, dropcap)
     if dropcap:
         s = drop_initial(s, ch)
+        # the rest of the drop-cap word, set in capitals: small caps ({{dropinitial|A}}ND -> {{sc|Nd}})
+        s = re.sub(r'(\{\{dropinitial\|(?:[^{}]|\{\{[^{}]*\}\})*\}\})([A-Z]+)(?![a-zſ])',
+                   lambda m: m.group(1) + '{{sc|' + m.group(2)[0] + m.group(2)[1:].lower() + '}}', s)  # its own span
+    s = greek_lang(s)
     s = re.sub(r'</?i>', "''", s)
     s = re.sub(r'</?alt>', '', s)  # variant readings: the print's ` ' marks stay in the text
     return s.replace('<br>', '<br/>')
@@ -210,7 +251,7 @@ def build_stream(book, ann):
         head = ''
         if side and not ITALIC_REF.match(side):
             # "THE THIRD part": both words in small caps; "THE fourth part": the lower-case word stays roman
-            m = re.match(r'(\S+(?: [A-Z]{2,}\b)?)(.*)', finish(side))
+            m = re.match(r'(\S+(?: [A-Z]{2,}\b)?)(.*)', finish(side, caps=False))  # the side head sets its own small caps (SIDE_SC)
             head = '{{MOUTER|{{sc|' + m.group(1).capitalize() + '}}' + SIDE_SC.get((BOOK, ch), lambda x: x)(m.group(2)) + '}}'
         S += tokens_of(head + '{{c|{{larger|{{sc|Chap. ' + ROMAN[ch] + '.}}}}}}', block=True, ch=ch, kind='chap')
         s = re.sub(r'<na>\[\d+\]</na>\s*', '', chap.get('summary', '')).strip()
@@ -846,7 +887,7 @@ def main(argv):
             if t.get('block') and t['kind'] in ('title', 'annhead') and i > a and S[i - 1]['kind'] == t['kind']:
                 sep = '\n'
             body += sep + t['text']
-        body = SENT.sub('', body)
+        body = tidy_space(SENT.sub('', body))
         sp = SPLIT_WORDS.get((BOOK, wiki))
         if sp:
             clean_title = sp[2].replace('ſ', 's')

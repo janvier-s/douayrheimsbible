@@ -109,3 +109,59 @@ def test_nop_only_on_paragraph_end(mark_pages):
 def test_hw_titles_plain(mark_pages):
     assert '{{hws|de|de{{ls}}ert.|title=desert.}}' in mark_pages[115]
     assert '{{hwe|{{ls}}ert.|de{{ls}}ert.|title=desert.}}' in mark_pages[116]
+
+
+def fin(s, **kw):
+    import generate
+    return generate.sc_wiki(generate.finish(s, **kw))
+
+
+def test_caps_to_sc():
+    assert fin('IESVS said') == '{{sc|Iesvs}} said'
+    assert fin('{{MOUTER|THE GOSPEL vpon Munday.}}') == '{{MOUTER|{{sc|The gospel}} vpon Munday.}}'
+    assert fin('{{MOUTER|MVNDAY.}}And') == '{{MOUTER|{{sc|Mvnday}}.}}And'
+    assert fin('CHAP. XII. ANNOT.') == 'CHAP. XII. ANNOT.'
+    assert fin('S. Peter and A man') == 'S. Peter and A man'
+    assert 'ſ' not in fin('MESSIAS')  # owner 2026-11-21: no long-s inside small caps (capitals have none)
+
+
+def test_dropcap_rest_small_caps():
+    import generate
+    generate.BOOK = 'mark'
+    assert fin('{{verse|chapter=1|verse=1}}THE beginning', dropcap=True, ch=1) == \
+        '{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} beginning'
+    assert fin('{{verse|chapter=12|verse=1}}AT that time', dropcap=True, ch=12).startswith(
+        '{{dropinitial|A|fl={{verse|chapter=12|verse=1}}}}{{sc|T}} that')
+    assert fin('{{verse|chapter=2|verse=1}}And it', dropcap=True, ch=2) == \
+        '{{dropinitial|A|fl={{verse|chapter=2|verse=1}}}}nd it'
+
+
+def test_greek_lang():
+    import generate
+    assert generate.greek_lang("''Μισθὸς.''") == "''{{lang|grc|Μισθὸς}}.''"
+    assert generate.greek_lang('λατρεύσεις.') == '{{lang|grc|λατρεύσεις}}.'
+    assert generate.greek_lang("''Μετανοεῖν. Μετάνοια.''") == "''{{lang|grc|Μετανοεῖν. Μετάνοια}}.''"
+    assert generate.greek_lang('no greek here') == 'no greek here'
+
+
+def test_tidy_space():
+    import generate
+    assert generate.tidy_space('them )') == 'them)'
+    assert generate.tidy_space('erre , and') == 'erre, and'
+    assert generate.tidy_space('( so') == '(so'
+    assert generate.tidy_space('{{verse|chapter=1|verse=2}} And') == '{{verse|chapter=1|verse=2}} And'
+    assert generate.tidy_space('end.\n\nNext') == 'end.\n\nNext'
+
+
+def test_caps_abbreviations_stay():
+    assert fin('SS. Peter and Paul') == 'SS. Peter and Paul'
+
+
+def test_no_nested_sc(mark_pages):
+    assert not [n for n, t in mark_pages.items() if '{{sc|{{sc|' in t]
+
+
+def test_dropcap_rest_not_merged():
+    import generate
+    generate.BOOK = 'matthew'
+    assert fin('{{verse|chapter=2|verse=1}}WHEN IESVS', dropcap=True, ch=2).endswith('}}{{sc|Hen}} {{sc|Iesvs}}')
