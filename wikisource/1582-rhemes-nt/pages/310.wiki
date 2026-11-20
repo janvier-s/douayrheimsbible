@@ -186,4 +186,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 6
 | style='vertical-align: top;' | He feedeth 5000 men vvith fiue loaues.
-|}<noinclude>{{rh|||He}}</noinclude>
+|}<noinclude>{{continues|He}}</noinclude>

@@ -102,4 +102,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | and {{ls}}o ble{{ls}}sing them, A{{ls}}cendeth into heauen.{{MarginNote|margin=right|margin-width=65|text=ASCENSION day.}}
-|}<noinclude>{{rh|Nn iij||THE}}</noinclude>
+|}<noinclude>{{continues|THE}}</noinclude>

@@ -81,3 +81,18 @@ def test_ocr_by_page_matches_generator_numbering():
     assert min(tk) == 115 and max(tk) == 160
     assert 'CHA. II.' in tk[118]  # transkribus page 4 of Mark (index 3), as generate.py numbers it
     assert min(reconcile.ocr_by_page('john', 'tesseract')) == 244
+
+
+FROZEN = {*range(1, 31), *range(309, 317), *range(402, 410)}
+
+
+def test_frozen_marked():
+    import json
+    manifest = json.loads(reconcile.MANIFEST.read_text())
+    frozen = {int(k) for k, e in manifest.items() if e.get('source') == 'frozen'}
+    assert frozen == FROZEN
+    books = reconcile.load_books(reconcile.REPO)
+    for b, cfg in books.items():
+        assert not FROZEN & set(range(cfg['first'], cfg['last'] + 1)), b
+    covered = FROZEN.union(*(range(c['first'], c['last'] + 1) for c in books.values()))
+    assert covered == set(range(1, 452))  # every page is generated or frozen

@@ -66,3 +66,12 @@ def test_e_status(tmp_path):
 
 def test_w_header_footer_optional(tmp_path):
     assert 'W-header' not in codes(tmp_path, 'text', foot='')
+
+
+def test_w_linebreak_exempts_verse_and_open_templates(tmp_path):
+    assert 'W-linebreak' not in codes(tmp_path, ":''Hic nempe iam regnant duo''\n:''Apostolorum principes:''")
+    assert 'W-linebreak' not in codes(tmp_path, '{{center|\nPsal. 118.\nThat is,\n}}')
+
+
+def test_w_nop_exempts_table_end(tmp_path):
+    assert 'W-nop' not in codes(tmp_path, "{|\n| cell\n|}", "\n{| style='x'\n| more\n|}")

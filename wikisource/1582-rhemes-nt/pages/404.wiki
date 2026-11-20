@@ -47,4 +47,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
 | style='vertical-align: top;' | Life euerla{{ls}}ting. Amen.
 |}
-|}<noinclude>{{rh|||THE}}</noinclude>
+|}<noinclude>{{continues|THE}}</noinclude>

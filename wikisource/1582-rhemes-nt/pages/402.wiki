@@ -119,4 +119,4 @@ Wherein though it be not po{{ls}}sible to {{ls}}et dovvne the preci{{ls}}e and v
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 70
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 37
 | style='vertical-align: top;' | He vvas finally crucified at Rome. ''See the la{{ls}}t Annot. Ioan. c. 21.''
-|}<noinclude>{{rh|||FOELI-}}</noinclude>
+|}<noinclude>{{continues|FOELI-}}</noinclude>

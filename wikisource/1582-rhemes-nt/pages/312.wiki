@@ -156,4 +156,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | He foretelleth to {{ls}}ome of his Di{{ls}}ciples, the de{{ls}}truction of the Temple and of Hieru{{ls}}alem: and by that occa{{ls}}ion, vvhat things {{ls}}halbe before the con{{ls}}ummation of the vvorld, and Antichri{{ls}}t in the con{{ls}}ummation, and then incontinent Dome{{ls}}day, vvarning vs to prepare our {{ls}}elues again{{ls}}t his comming.{{MarginNote|margin=right|margin-width=65|text=TVESDAY night.}}
-|}<noinclude>{{rh|||he}}</noinclude>
+|}<noinclude>{{continues|he}}</noinclude>

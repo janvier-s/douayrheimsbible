@@ -4,4 +4,4 @@
 
 {{MarginNote|margin=right|margin-width=65|text=The Latin text {{ls}}ometime noted in the margent.}}Item vve adde the Latin vvord {{ls}}ometime in the margent, vvhen either vve can not fully expre{{ls}}{{ls}}e it, (as ''Act. 8.'' They tooke order for Steuens funeral, ''Curauerunt Stephanum.'' and, Al take not this vvord, ''Non omnes capiunt.) or vvhen the reader might thinke, it can not be as vve tran{{ls}}late. as, Luc. 8.'' A {{ls}}torme of winde de{{ls}}cended into the lake, and they vvere filled, ''& complebantur. and Io. 5.'' vvhen Ie{{ls}}us knevv that he had novv a long time, ''quia iam multum tempus haberet.'' meaning, in his infirmitie,
 
-This preci{{ls}}e folovving of our Latin text, in neither adding nor dimini{{ls}}hing, is the cau{{ls}}e why we {{ls}}ay not in the title of bookes, in the fir{{ls}}t page, S. {{hws|Mat|Matthevv}}<noinclude>{{continues|thevv}}</noinclude>
+This preci{{ls}}e folovving of our Latin text, in neither adding nor dimini{{ls}}hing, is the cau{{ls}}e why we {{ls}}ay not in the title of bookes, in the fir{{ls}}t page, S. {{hws|Mat|Matthevv|title=Matthevv}}<noinclude>{{continues|thevv}}</noinclude>

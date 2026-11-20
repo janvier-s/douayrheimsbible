@@ -53,7 +53,7 @@ INNER = re.compile(r'\{\{[^{}]*\}\}')
 
 
 SIGNATURE = re.compile(r'^([A-Z])(?:(?i:\1){1,2})?(?: ij| iij)?$')  # A, Aa, Aaa (+ ij, iij): the gathering letter
-BLOCKLINE = re.compile(r'^(?:\{\{c\||\{\||\||\{\{nop\}\}|==)')
+BLOCKLINE = re.compile(r'^(?:\{\{c\||\{\||\||\{\{nop\}\}|==|:)')  # centred, table, nop, heading, indented verse
 OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\||CHAP\.|''\d)")
 LEAD_NOTES = re.compile(r'^(?:\s|\{\{MarginNote\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\})*')
 
@@ -233,8 +233,11 @@ def lint(d, ov=None):
             elif re.search(r"\{\{|''|ſ", title.group(1)):
                 out.append(('E-hw-title', n, f'hyphen template title must be plain text: {tpl[:60]}'))
 
+        depth = 0  # template depth at the start of each line: breaks inside {{center|…}} blocks are layout
         for a_line, b_line in zip(body.split('\n'), body.split('\n')[1:]):
-            if a_line.strip() and b_line.strip() and not (BLOCKLINE.match(a_line) or BLOCKLINE.match(b_line) or a_line.rstrip().endswith('}}')):
+            depth += a_line.count('{{') - a_line.count('}}')
+            if depth == 0 and a_line.strip() and b_line.strip() and not (
+                    BLOCKLINE.match(a_line) or BLOCKLINE.match(b_line) or a_line.rstrip().endswith('}}')):
                 out.append(('W-linebreak', n, f'single line break inside a paragraph near …{a_line[-30:]!r}'))
         bodies[n] = body
 
@@ -306,7 +309,8 @@ def lint(d, ov=None):
             out.append(('W-quote', n, f'quote mark near …{near(flat, m.start(), m.end())}'))
     for n, body in bodies.items():
         nxt = bodies.get(n + 1)
-        if nxt is not None and OPENS_PARA.match(LEAD_NOTES.sub('', nxt)) and not body.rstrip().endswith('\n{{nop}}'):
+        ends = body.rstrip()
+        if nxt is not None and OPENS_PARA.match(LEAD_NOTES.sub('', nxt)) and not ends.endswith(('\n{{nop}}', '|}')):
             out.append(('W-nop', n, f'page {n + 1} opens a paragraph: end this page with {{{{nop}}}} on its own line'))
     return out
 

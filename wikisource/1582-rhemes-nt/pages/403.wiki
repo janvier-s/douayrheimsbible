@@ -143,4 +143,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 70
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 37
 | style='vertical-align: top;' | He vvas beheaded at Rome, the {{ls}}ame day that Peter vvas crucified. ''S. Ambro{{ls}}. {{ls}}er. 66. 68. S. Maximus.''
-|}<noinclude>{{rh|||OF THE}}</noinclude>
+|}<noinclude>{{continues|OF THE}}</noinclude>

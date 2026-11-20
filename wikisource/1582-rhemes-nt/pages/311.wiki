@@ -150,4 +150,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | He healeth him that had a drop{{ls}}ie, on the Sabboth: and teacheth them to renounce al things in compari{{ls}}on of him.
-|}<noinclude>{{rh|Nn ij||}}</noinclude>
+|}<noinclude></noinclude>

@@ -110,4 +110,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
 | style='vertical-align: top;' | He teacheth Nicodemus by night: and baptizeth in Iurie by the mini{{ls}}terie of his di{{ls}}ciples. vvherevpon a que{{ls}}tion is moued to Iohn about their tvvo bapti{{ls}}mes.
-|}<noinclude>{{rh|Nn||Iohn}}</noinclude>
+|}<noinclude>{{continues|Iohn}}</noinclude>
