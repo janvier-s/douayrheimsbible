@@ -171,6 +171,87 @@ def cmd_status(write=False):
         write_like(MANIFEST, manifest)
 
 
+def ocr_by_page(book, source):
+    """OCR page text keyed by wiki page, numbered as generate.py numbers them (after the Argument)."""
+    import generate
+    from ocrpages import book_pages
+    cfg = load_books(REPO)[book]
+    first = cfg['first']
+    if generate.ARGUMENT.get(book) == first:
+        first += 2 if book in generate.ARGUMENT_SPLIT else 1
+    return {first + n: p['text'] for n, p in enumerate(book_pages(book, source)) if first + n <= cfg['last']}
+
+
+def git_lock():
+    common = subprocess.run(['git', '-C', str(REPO), 'rev-parse', '--git-common-dir'], capture_output=True, text=True).stdout.strip()
+    return (REPO / common).resolve() / 'odr-data.lock'
+
+
+def cmd_ladder(book):
+    """Decide every letter-shape / spelling conflict of the book; write reconcile/BOOK.jsonl."""
+    import ladder
+    cfg = load_books(REPO)[book]
+    tokens = ladder.xml_tokens(ladder.XML.read_text(), book)
+    same_book = ladder.same_book_counts(tokens)
+    tk, ts = ocr_by_page(book, 'transkribus'), ocr_by_page(book, 'tesseract')
+    decisions, unaligned = [], []
+    with tempfile.TemporaryDirectory() as tmp:
+        gen = generate_book(book, Path(tmp) / book)
+        for n in range(cfg['first'], cfg['last'] + 1):
+            g = gen / f'{n}.wiki'
+            if not g.exists():
+                continue
+            for c in ladder.conflicts((PAGES / f'{n}.wiki').read_text(), g.read_text(), n, unaligned):
+                decisions.append(ladder.decide(c, ladder.locate_xml(c, tokens),
+                                               ladder.readings(tk.get(n), c.committed, c.generated),
+                                               ladder.readings(ts.get(n), c.committed, c.generated), same_book))
+    out = WS / 'reconcile' / f'{book}.jsonl'
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(''.join(json.dumps(dict(page=d.conflict.page, committed=d.conflict.committed, generated=d.conflict.generated,
+                                           before=d.conflict.before, after=d.conflict.after, rung=d.rung, winner=d.winner,
+                                           evidence=d.evidence), ensure_ascii=False) + '\n' for d in decisions))
+    for (rung, winner), k in sorted(collections.Counter((d.rung, d.winner) for d in decisions).items()):
+        print(f'rung {rung} {winner or "unresolved":10} {k}')
+    print(f'unaligned differences (not word for word): {len(unaligned)}')
+    for d in decisions:
+        if d.rung == 4:
+            print(f'  rung 4: page {d.conflict.page}: {d.conflict.committed} / {d.conflict.generated} ({d.evidence})')
+    return decisions, unaligned
+
+
+def load_decisions(book):
+    import ladder
+    out = []
+    for line in (WS / 'reconcile' / f'{book}.jsonl').read_text().splitlines():
+        r = json.loads(line)
+        c = ladder.Conflict(r['page'], r['committed'], r['generated'], r['before'], r['after'])
+        out.append(ladder.Decision(c, r['rung'], r['winner'], r['evidence']))
+    return out
+
+
+def cmd_adopt(book, argv):
+    """Dry run unless --write: write the committed-wins readings into odr-original."""
+    import fidelity
+    import ladder
+    ov = fidelity.parse_overrides(argv)
+    decisions = load_decisions(book)
+    if '--write' not in argv:
+        import shutil as sh
+        with tempfile.TemporaryDirectory() as tmp:
+            files = []
+            for f in ladder.book_files(REPO, book):
+                dst = Path(tmp) / f.relative_to(REPO)
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                sh.copyfile(f, dst)
+                files.append(dst)
+            applied, unlocated = ladder.adopt(files, decisions, ov, Path(tmp) / 'lock')
+    else:
+        applied, unlocated = ladder.adopt(ladder.book_files(REPO, book), decisions, ov, git_lock())
+    print(f'{"applied" if "--write" in argv else "would apply"}: {len(applied)}; unlocated: {len(unlocated)}')
+    for d, why in unlocated:
+        print(f'  page {d.conflict.page}: {d.conflict.committed} / {d.conflict.generated}: {why}')
+
+
 def main(argv):
     if not argv:
         sys.exit(__doc__)
@@ -179,6 +260,10 @@ def main(argv):
         cmd_diff(rest[0], rest[rest.index('--jsonl') + 1] if '--jsonl' in rest else None)
     elif cmd == 'write':
         cmd_write(rest[0])
+    elif cmd == 'ladder':
+        cmd_ladder(rest[0])
+    elif cmd == 'adopt':
+        cmd_adopt(rest[0], rest[1:])
     elif cmd == 'status':
         cmd_status('--write' in rest)
     else:

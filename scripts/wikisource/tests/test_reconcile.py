@@ -73,3 +73,11 @@ def test_mark_status(tmp_path):
     manifest = {'1': {'status': 'posted'}, '2': {'status': 'posted', 'source': 'frozen'}}
     assert reconcile.mark_status(tmp_path, manifest, base) == {1: 'changed'}
     assert manifest == {'1': {'status': 'changed'}, '2': {'status': 'posted', 'source': 'frozen'}}
+
+
+@needs_ocr
+def test_ocr_by_page_matches_generator_numbering():
+    tk = reconcile.ocr_by_page('mark', 'transkribus')
+    assert min(tk) == 115 and max(tk) == 160
+    assert 'CHA. II.' in tk[118]  # transkribus page 4 of Mark (index 3), as generate.py numbers it
+    assert min(reconcile.ocr_by_page('john', 'tesseract')) == 244
