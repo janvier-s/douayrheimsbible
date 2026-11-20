@@ -241,10 +241,25 @@ def readings(text, c, g):
 
 # ---- decision ------------------------------------------------------------------------
 
+# apply_longs_pages.py (Gemini, 2026-11-19) wrote ſs into every word holding one of these stems,
+# without reading the print. Where the XML reads ſſ at that place, the XML settles it (owner 2026-11-21).
+FS_STEMS = ('passion', 'remiss', 'possib', 'confess', 'necess', 'bless', 'compass', 'commiss', 'profess',
+            'permiss', 'intercess', 'intermiss', 'oppress', 'success', 'coloss', 'messi', 'dimiss', 'kiss',
+            'express', 'discuss', 'peritissim', 'sacratissim', 'nouissim', 'cassian', 'thess', 'sess')
+
+
+def _stem_rule(c):
+    k, g = core(c.committed), core(c.generated)
+    return ('ſs' in k and 'ſſ' in g and k.replace('ſ', 's') == g.replace('ſ', 's')
+            and any(st in fold(k) for st in FS_STEMS))
+
+
 def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
     side = {core(c.committed): 'committed', core(c.generated): 'generated'}
     xml = core(xml_forms[0]) if len(xml_forms) == 1 else None
     ocr = {core(f) for f in ocr_forms}
+    if xml == core(c.generated) and _stem_rule(c) and not (ocr - {xml}):
+        return Decision(c, 2, 'generated', f'xml {xml}; committed ſs from the stem rule (owner 2026-11-21)')
     if xml in side and xml in ocr:
         return Decision(c, 1, side[xml], f'xml {xml} + transkribus')
     if xml in side and side[xml] == 'committed':

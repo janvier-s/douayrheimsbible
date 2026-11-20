@@ -63,7 +63,7 @@ def test_rung2_xml_matches_committed():
 
 
 def test_rung3_book_majority():
-    d = ladder.decide(C('Paſsion', 'Paſſion'), ['Paſſion'], [], [], Counter({'Paſſion': 6, 'Paſsion': 1}))
+    d = ladder.decide(C('Aſsyria', 'Aſſyria'), ['Aſſyria'], [], [], Counter({'Aſſyria': 6, 'Aſsyria': 1}))
     assert (d.rung, d.winner) == (3, 'generated')
 
 
@@ -133,9 +133,9 @@ def test_adopt_skips_generated_winners_and_is_idempotent(tmp_path):
 
 
 def test_book_majority_excludes_this_occurrence():
-    d = ladder.decide(C('Paſsion', 'Paſſion'), ['Paſſion'], [], [], Counter({'Paſſion': 1}))
+    d = ladder.decide(C('Aſsyria', 'Aſſyria'), ['Aſſyria'], [], [], Counter({'Aſſyria': 1}))
     assert (d.rung, d.winner) == (4, '')
-    d = ladder.decide(C('Paſsion', 'Paſſion'), ['Paſſion'], [], [], Counter({'Paſſion': 3, 'Paſsion': 1}))
+    d = ladder.decide(C('Aſsyria', 'Aſſyria'), ['Aſſyria'], [], [], Counter({'Aſſyria': 3, 'Aſsyria': 1}))
     assert (d.rung, d.winner) == (3, 'generated')  # 2:1 elsewhere
 
 
@@ -153,3 +153,13 @@ def test_words_keep_inline_templates_joined():
     un = []
     ladder.conflicts(head + 'x AND it' + foot, head + 'x {{dropinitial|A}}{{sc|Nd}} it' + foot, 5, un)
     assert un == []
+
+
+def test_stem_rule_ss_settled_by_xml():
+    # owner 2026-11-21: the committed ſs came from apply_longs_pages.py's stem list, not the print
+    d = ladder.decide(C('neceſsitie', 'neceſſitie'), ['neceſſitie'], [], [], Counter())
+    assert (d.rung, d.winner) == (2, 'generated') and 'stem rule' in d.evidence
+    d = ladder.decide(C('Maſſ', 'Maſs'), ['Maſs'], [], [], Counter())  # not a stem-rule word
+    assert d.rung == 4
+    d = ladder.decide(C('neceſsitie', 'neceſſitie'), [], [], [], Counter())  # no XML reading: still open
+    assert d.rung == 4
