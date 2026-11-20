@@ -1,6 +1,8 @@
 """Lint generated Wikisource page files. Read-only: fix the generator or the data, regenerate.
 
 usage: lint.py PAGES_DIR [--only CODE,CODE] [--skip CODE,CODE] [--quiet]
+               [--allow-loss FEATURE:SCOPE[,...]] [--allow-shift FEATURE:SCOPE[,...]] --reason TEXT
+SCOPE is *, a page n or a range a-b; features are listed in fidelity.py.
 Exit status 1 if any error is found (warnings do not fail).
 
 Checks (E = error, W = warning):
@@ -18,15 +20,22 @@ Checks (E = error, W = warning):
   E-darkmode  table style contains 'background' (triggers MediaWiki night-mode color:#202122) or '!' (th header borders/shading)
   E-nfc       text not in Unicode NFC (MediaWiki saves NFC, so live would never match: Greek oxia vs tonos)
   E-gap       page files missing from the numeric run
+  E-loss      a print feature (long s, macron, vv, italics, small caps...) dropped against git HEAD,
+              or a modern form (w, j, double quote) appeared; fix the cause, or --allow-loss with --reason
+  E-shift     a print feature turned into its modern sibling vs HEAD (ſ→s, vv→w); --allow-shift with --reason
   W-header    no {{rh}} running head, or no {{rh}} footer
   W-space     double space, space before , . ; : ? ! ), space after (, trailing space
   W-mark      stray † after {{verse}}
   W-quote     straight or curly double quotes in the body (the print has none)
 """
 import re
+import subprocess
 import sys
 import unicodedata
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import fidelity  # noqa: E402
 
 NOINC = re.compile(r'<noinclude>.*?</noinclude>', re.S)
 ITAL = re.compile(r"(?<!')''(?!')")
@@ -78,9 +87,40 @@ def near(s, a, b, w=22):
     return repr(s[max(0, a - w):b + w])
 
 
-def lint(d):
-    """List of (code, page, message)."""
+def head_texts(d, nums):
+    """{n: page text in git HEAD}; pages not in HEAD, or a directory outside git, are left out."""
+    pre = subprocess.run(['git', '-C', str(d), 'rev-parse', '--show-prefix'], capture_output=True, text=True)
+    if pre.returncode:
+        return {}
+    req = ''.join(f'HEAD:{pre.stdout.strip()}{n}.wiki\n' for n in nums).encode()
+    raw = subprocess.run(['git', '-C', str(d), 'cat-file', '--batch'], input=req, capture_output=True).stdout
+    out, i = {}, 0
+    for n in nums:
+        j = raw.index(b'\n', i)
+        head = raw[i:j].split()
+        if len(head) == 3 and head[1] == b'blob':
+            size = int(head[2])
+            out[n] = raw[j + 1:j + 1 + size].decode()
+            i = j + 1 + size + 1
+        else:
+            i = j + 1
+    return out
+
+
+def fidelity_vs_head(d, ov):
+    """E-loss / E-shift for each page whose print features dropped against git HEAD."""
+    files = {int(f.stem): f for f in Path(d).glob('*.wiki')}
+    base = head_texts(d, sorted(files))
     out = []
+    for n in sorted(base):
+        for msg in fidelity.refusals(n, base[n], files[n].read_text(), ov):
+            out.append(('E-shift' if ' shift ' in msg else 'E-loss', n, msg + ' vs HEAD'))
+    return out
+
+
+def lint(d, ov=None):
+    """List of (code, page, message). With overrides `ov`, also the fidelity check against git HEAD."""
+    out = fidelity_vs_head(d, ov) if ov is not None else []
     files = sorted(Path(d).glob('*.wiki'), key=lambda f: int(f.stem))
     nums = [int(f.stem) for f in files]
     for a, b in zip(nums, nums[1:]):
@@ -218,13 +258,14 @@ def lint(d):
 
 
 def main():
-    args = sys.argv[1:]
+    ov = fidelity.parse_overrides(sys.argv[1:])
+    args = fidelity.strip_override_args(sys.argv[1:])
     if not args or args[0].startswith('-'):
         sys.exit(__doc__)
     opt = {a: args[i + 1] for i, a in enumerate(args) if a in ('--only', '--skip') and i + 1 < len(args)}
     only = set(opt.get('--only', '').split(',')) - {''}
     skip = set(opt.get('--skip', '').split(',')) - {''}
-    res = [r for r in lint(args[0]) if (not only or r[0] in only) and r[0] not in skip]
+    res = [r for r in lint(args[0], ov) if (not only or r[0] in only) and r[0] not in skip]
     if '--quiet' not in args:
         for code, n, msg in res:
             print(f'{n}: {code} {msg}')
