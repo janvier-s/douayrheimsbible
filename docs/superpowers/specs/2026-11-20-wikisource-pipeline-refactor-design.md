@@ -155,6 +155,26 @@ The record format is `wikisource/1582-rhemes-nt/fixes/<book>.jsonl`, one JSON ob
   - `paste-sheet.md`, `paste_helper.py` and `scriptorium-request.md` are archived if no longer used (owner confirms).
   - `docs/audits/*.md` stay as history and are not rewritten.
 
+### 4.7 Wikisource conformance (owner, 2026-11-20)
+
+Pages must follow en.wikisource Page: namespace conventions, keeping the print's text. Two editors (ShakespeareFan00, Beardo) had to correct the bot's pages; their fixes, Wikisource:Style guide, Help:Formatting conventions, Help:Page breaks, Template:Continues, Template:Hyphenated word start and Help:Proofread give these rules. Counts are from the 451 committed pages on 2026-11-20.
+
+| Rule | Where it's enforced | Pages affected now |
+|---|---|---|
+| Catchword in `{{continues\|…}}`, never in a `{{rh}}` cell | generator; lint `W-catchword` | 413 |
+| No printer's signature marks (e.g. "D iij"): **owner's editorial decision**, following Help:Formatting conventions | generator; lint `W-signature` | 170 |
+| Every `{{hws}}`/`{{hwe}}` has a plain-text `title=` | generator; lint `E-hw-title` (replaces `E-hwe-title`, which only covered words with markup) | 21 |
+| A paragraph that ends at the foot of a page gets `{{nop}}` on its own line | generator; lint `W-nop` | about 68 |
+| Italics never stay open across a template that has `''` inside it (sidenotes, spans) | lint `E-tpl-italic` (extends `E-margin-italic`) | 0 |
+| Italics in header and footer are balanced | lint `E-foot-ital` | 0 |
+| No single line breaks inside a paragraph | lint `W-linebreak` | 2 (pp. 1, 403) |
+| Page status is honest: level ≥ 3 needs a named proofreader; the generator emits level 1, and `wikipost` keeps the live level | lint `E-status` | 2 (pp. 7, 10) |
+| Human edits are never reverted: adopt them into the data after checking against the scan, or report them to the owner | `wikipost` `last_author` skip (exists) | — |
+
+Posting conduct: the owner keeps posting from their own account at the 12 s spacing, as now. Wikisource:Bots asks for a separate flagged bot account and more than 60 s between edits until it's flagged. The owner knows this and decided against it, provided the posting stays moderate. No code enforces it.
+
+The owner's editorial removals from the print, which are the only allowed ones: the † after verse markers, and printer's signature marks. Everything else in the print is kept.
+
 ### 4.6 Tests
 
 `pytest` in `scripts/wikisource/tests/`, stdlib plus pytest only, no network:
@@ -172,7 +192,7 @@ Before each commit: `pytest scripts/wikisource/tests`, `lint`, and the existing 
 | # | Phase | Exit criterion |
 |---|---|---|
 | 0 | Safety net: `fidelity.py`, guard in `lint` and `wikipost`, pytest scaffold, fix the AGENTS.md dagger rule; fetch all live pages (read-only) and confirm they equal the committed pages (record any exceptions) | Guard blocks a synthetic long-s loss; live == committed or exceptions listed |
-| 1 | Reconcile (§4.1), book by book, with collages for ſs/ſſ | Golden tests pass for all generated books; frozen pages marked |
+| 1 | Reconcile (§4.1) book by book using the evidence ladder, and build the §4.7 conformance rules into the generator and lint | Golden tests pass for all generated books; the §4.7 lint checks report 0 errors; frozen pages marked |
 | 2 | Docs rewrite (§4.5) | One rules doc, one playbook, short AGENTS.md; no contradictions |
 | 3 | Shared core plus `rh` CLI; migrate the comparison tools and the generator config | Golden tests still pass; triage/diff output equivalent on all books |
 | 4 | Fixes ledger; convert backfills and one-offs; `sync-odr` | Ledger replays as a no-op on current data and reproduces it from pre-backfill versions |
@@ -197,6 +217,7 @@ The owner chose A on 2026-11-20 and left the order of work to Claude.
 - Front matter should be generated too, not hand-maintained; defer it if it is a major sticking point.
 - Ornament images: not yet. Generator output for them stays switched off until the owner reviews or uploads them.
 - No reposts to Wikisource during the refactor; everything is reconciled locally.
+- Follow Wikisource guidelines and formatting conventions (§4.7). Drop printer's signature marks. Keep posting from the owner's own account at 12 s spacing.
 
 ## 8. Calls made by Claude (open to correction)
 
