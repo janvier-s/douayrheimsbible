@@ -174,7 +174,9 @@ def cmd_status(write=False):
 def ocr_by_page(book, source):
     """OCR page text keyed by wiki page, numbered as generate.py numbers them (after the Argument)."""
     import generate
-    from ocrpages import book_pages
+    from ocrpages import TK, book_pages
+    if source == 'transkribus' and not (TK / book / 'manifest.json').exists():
+        return {}  # Matthew was read with Tesseract only
     cfg = load_books(REPO)[book]
     first = cfg['first']
     if generate.ARGUMENT.get(book) == first:

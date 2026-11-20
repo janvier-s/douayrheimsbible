@@ -96,3 +96,9 @@ def test_frozen_marked():
         assert not FROZEN & set(range(cfg['first'], cfg['last'] + 1)), b
     covered = FROZEN.union(*(range(c['first'], c['last'] + 1) for c in books.values()))
     assert covered == set(range(1, 452))  # every page is generated or frozen
+
+
+@needs_ocr
+def test_ocr_by_page_missing_source_is_empty():
+    assert reconcile.ocr_by_page('matthew', 'transkribus') == {}
+    assert min(reconcile.ocr_by_page('matthew', 'tesseract')) == 31
