@@ -47,3 +47,8 @@ def test_cli_exit_codes(git_pages):
     assert run().returncode == 1
     assert run('--allow-shift', 'ls:*', '--reason', 'r').returncode == 0
     assert run('--allow-shift', 'ls:*').returncode != 0
+
+
+def test_lint_message_shows_where(git_pages):
+    msgs = [m for c, n, m in lint.lint(git_pages, fidelity.parse_overrides([])) if c == 'E-shift']
+    assert 'Pa{{ls}}{{ls}}ion → Passion' in msgs[0]

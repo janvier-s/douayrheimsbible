@@ -196,7 +196,7 @@ def main():
             skipped += 1
             continue
         ours_post = preserve_pagequality(ours, live['text'])
-        refused = fidelity.refusals(n, live['text'], ours_post, ov)
+        refused = fidelity.refusals(n, live['text'], ours_post, ov, with_where=True)
         if refused:
             print(f'{n}: REFUSED fidelity vs live rev {live["revid"]}: ' + '; '.join(refused))
             skipped += 1

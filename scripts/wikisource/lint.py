@@ -113,7 +113,7 @@ def fidelity_vs_head(d, ov):
     base = head_texts(d, sorted(files))
     out = []
     for n in sorted(base):
-        for msg in fidelity.refusals(n, base[n], files[n].read_text(), ov):
+        for msg in fidelity.refusals(n, base[n], files[n].read_text(), ov, with_where=True):
             out.append(('E-shift' if ' shift ' in msg else 'E-loss', n, msg + ' vs HEAD'))
     return out
 

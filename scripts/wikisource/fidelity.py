@@ -10,6 +10,7 @@ override names the feature, the pages and a reason.
     parse_overrides(argv) -> Overrides
     refusals(page, before, after, ov) -> [message]
 """
+import difflib
 import re
 import sys
 import unicodedata
@@ -57,6 +58,12 @@ _TABLE = {
     'margin_note': ('decrease', None, 'raw', r'\{\{MarginNote\|'),
     'verse': ('decrease', None, 'raw', r'\{\{verse\|'),
     'dagger': ('decrease', None, 'plain', '†'),
+    'quad': ('decrease', None, 'plain', '∷'),
+    'star': ('decrease', None, 'plain', r'\*'),
+    'tack': ('decrease', None, 'plain', '⊣'),
+    'bar': ('decrease', None, 'plain', '‖'),
+    'dropinitial': ('decrease', None, 'raw', r'\{\{dropinitial\|'),
+    'size': ('decrease', None, 'raw', r'\{\{(?:x+-)?(?:larger|smaller|large|small)\|'),
 }
 FEATURES = {n: Feature(n, g, s) for n, (g, s, _, _) in _TABLE.items()}
 _PATTERNS = {n: (src, re.compile(p)) for n, (_, _, src, p) in _TABLE.items()}
@@ -156,11 +163,34 @@ def override_args(argv: list) -> list:
     return out
 
 
-def refusals(page: int, before: str, after: str, ov: Overrides) -> list:
-    """Messages for the findings no override of the same kind covers on this page."""
+# words (with {{ls}} inside them), template openers with their name, closers, tags, single marks
+_TOKEN = re.compile(r'(?:\{\{ls\}\}|[^\s<>{}|=\[\]])+|\{\{[^{}|]*\|?|\}\}|<[^>]*>|\S')
+
+
+def where(before: str, after: str, feature: str, limit: int = 3) -> list:
+    """Up to `limit` 'old words → new words' changes that alter the count of `feature`."""
+    a, b = _TOKEN.findall(before), _TOKEN.findall(after)
+    out = []
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        if op == 'equal':
+            continue
+        old, new = ' '.join(a[i1:i2]), ' '.join(b[j1:j2])
+        if count(old)[feature] != count(new)[feature]:
+            out.append(f'{old[:60] or "∅"} → {new[:60] or "∅"}')
+            if len(out) == limit:
+                break
+    return out
+
+
+def refusals(page: int, before: str, after: str, ov: Overrides, with_where: bool = False) -> list:
+    """Messages for the findings no override of the same kind covers on this page;
+    with_where adds the first changed words that cause each."""
     out = []
     for f in compare(before, after):
         allowed = ov.loss if f.kind == 'loss' else ov.shift
         if not any(feat == f.feature and a <= page <= b for feat, a, b in allowed):
-            out.append(f'{f.feature} {f.kind} {f.before}→{f.after}')
+            msg = f'{f.feature} {f.kind} {f.before}→{f.after}'
+            if with_where:
+                msg += ' at: ' + ' | '.join(where(before, after, f.feature))
+            out.append(msg)
     return out

@@ -59,3 +59,9 @@ def test_dry_run_reports_refusal(fake_env, capsys):
     sys.argv[:] = ['wikipost.py', '1-2']
     wikipost.main()
     assert '1: REFUSED fidelity' in capsys.readouterr().out and fake_env.edited == []
+
+
+def test_refusal_shows_where(fake_env, capsys):
+    sys.argv[:] = ['wikipost.py', '1']
+    wikipost.main()
+    assert 'Pa{{ls}}{{ls}}ion → Passion' in capsys.readouterr().out

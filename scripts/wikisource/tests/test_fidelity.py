@@ -85,3 +85,22 @@ def test_override_args_keeps_only_override_flags():
 def test_override_args_value_equal_to_other_arg():
     from fidelity import override_args
     assert override_args(['s', '--summary', 's', '--reason', 's']) == ['--reason', 's']
+
+
+def test_frequent_print_marks_guarded():
+    kinds = {(x.feature, x.kind) for x in compare('∷ the * ⊣ ‖ word', 'the word')}
+    assert kinds == {('quad', 'loss'), ('star', 'loss'), ('tack', 'loss'), ('bar', 'loss')}
+    assert [x.feature for x in compare('{{dropinitial|A}}nd {{larger|THE}}', 'And THE')] == ['dropinitial', 'size']
+
+
+def test_where_locates_the_changed_words():
+    from fidelity import where
+    before = 'a Pa{{ls}}{{ls}}ion b {{ls}}aid c'
+    after = 'a Pa{{ls}}sion b {{ls}}aid c'
+    assert where(before, after, 'ls') == ['Pa{{ls}}{{ls}}ion → Pa{{ls}}sion']
+
+
+def test_where_splits_words_from_markup():
+    from fidelity import where
+    assert where("x</noinclude>Pa{{ls}}{{ls}}ion<noinclude>", "x</noinclude>Passion<noinclude>", 'ls') == ['Pa{{ls}}{{ls}}ion → Passion']
+    assert where("{{sc|The}} word", "The word", 'sc') == ['{{sc| → ∅']
