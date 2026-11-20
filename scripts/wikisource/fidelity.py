@@ -147,6 +147,15 @@ def strip_override_args(argv: list) -> list:
     return out
 
 
+def override_args(argv: list) -> list:
+    """Only the override flags and their values, to pass on to lint.py."""
+    out = []
+    for i, a in enumerate(argv):
+        if a in _FLAGS:
+            out += argv[i:i + 2]
+    return out
+
+
 def refusals(page: int, before: str, after: str, ov: Overrides) -> list:
     """Messages for the findings no override of the same kind covers on this page."""
     out = []

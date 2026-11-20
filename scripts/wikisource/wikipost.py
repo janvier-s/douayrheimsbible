@@ -12,6 +12,9 @@ written without --post (and --summary). Rules it enforces:
     --adopt-others lists it (somebody else edited it: review their change first)
   * live pagequality level (e.g. level 3 "Proofread") and proofreader user are preserved
     so bot uploads never demote human proofreading status back to level 1
+  * fidelity: a page whose print features (long s, macrons, vv, italics, small caps...) would drop
+    against the live revision is REFUSED, dry run included, unless
+    --allow-loss/--allow-shift FEATURE:SCOPE[,...] --reason TEXT covers it (see fidelity.py)
   * the edit carries baserevid, so MediaWiki refuses it if the page changed since we fetched it
   * --diff displays the exact unified diff between live Wikisource and local wikitext
 Credentials: the bot password in the macOS keychain, service "wikisource-bot" (account
@@ -19,6 +22,9 @@ Credentials: the bot password in the macOS keychain, service "wikisource-bot" (a
 """
 import difflib, hashlib, http.cookiejar, json, re, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import fidelity  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1] / 'wikisource/1582-rhemes-nt'
@@ -116,7 +122,9 @@ def check_live_lint(w, n):
 
 
 def main():
-    a = sys.argv[1:]
+    ov = fidelity.parse_overrides(sys.argv[1:])
+    ov_args = fidelity.override_args(sys.argv[1:])
+    a = fidelity.strip_override_args(sys.argv[1:])
     if not a:
         sys.exit(__doc__)
     w = Wiki()
@@ -140,7 +148,7 @@ def main():
     adopt = {int(x) for x in opt('--adopt-others', '').split(',') if x}
     if post and not summary:
         sys.exit('--post needs --summary')
-    lint = subprocess.run([sys.executable, '-I', str(HERE / 'lint.py'), str(ROOT / 'pages'), '--quiet'], capture_output=True, text=True)
+    lint = subprocess.run([sys.executable, '-I', str(HERE / 'lint.py'), str(ROOT / 'pages'), '--quiet', *ov_args], capture_output=True, text=True)
     if lint.returncode:
         sys.exit('lint errors; run lint.py first\n' + lint.stdout)
     manifest_path = ROOT / 'manifest.json'
@@ -187,6 +195,12 @@ def main():
                     print('  ' + dl.rstrip())
             skipped += 1
             continue
+        ours_post = preserve_pagequality(ours, live['text'])
+        refused = fidelity.refusals(n, live['text'], ours_post, ov)
+        if refused:
+            print(f'{n}: REFUSED fidelity vs live rev {live["revid"]}: ' + '; '.join(refused))
+            skipped += 1
+            continue
         todo += 1
         added = len(ours) - len(live['text'])
         print(f'{n}: would change (live rev {live["revid"]}, {added:+d} chars)')
@@ -200,7 +214,6 @@ def main():
             for dl in diff:
                 print('  ' + dl.rstrip())
         if post:
-            ours_post = preserve_pagequality(ours, live['text'])
             r = w.edit(n, ours_post, summary, live['revid'])
             if 'error' in r:
                 print(f'{n}: ERROR {r["error"].get("code")}: {r["error"].get("info")}')

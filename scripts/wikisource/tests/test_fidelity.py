@@ -74,3 +74,14 @@ def test_strip_override_args():
 def test_unknown_feature_rejected():
     with pytest.raises(SystemExit):
         parse_overrides(['--allow-loss', 'longs:*', '--reason', 'typo'])
+
+
+def test_override_args_keeps_only_override_flags():
+    from fidelity import override_args
+    argv = ['1-2', '--post', '--allow-shift', 'ls:1', '--summary', 's', '--reason', 'per XML']
+    assert override_args(argv) == ['--allow-shift', 'ls:1', '--reason', 'per XML']
+
+
+def test_override_args_value_equal_to_other_arg():
+    from fidelity import override_args
+    assert override_args(['s', '--summary', 's', '--reason', 's']) == ['--reason', 's']
