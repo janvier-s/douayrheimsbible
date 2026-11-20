@@ -12,6 +12,8 @@ Checks (E = error, W = warning):
   E-tag       <noinclude>/<pagequality> structure broken; stray <i> <b> <br> <na> <cr> <alt> tags
   E-sentinel  leftover generator sentinels (⟦ ⟧) or unreplaced {{MINNER| {{MOUTER|
   E-margin    {{MarginNote}} lacking margin=left|right, margin-width, or text, or empty
+  E-hwe-title hyphen template (hwe/hws) with {{ls}} missing |title= (prevents invalid HTML)
+  E-margin-italic MarginNote inside unclosed italics (breaks MediaWiki column layout)
   E-verse     verse numbers out of order, repeated or skipped (across pages, per chapter)
   E-darkmode  table style contains 'background' (triggers MediaWiki night-mode color:#202122) or '!' (th header borders/shading)
   E-nfc       text not in Unicode NFC (MediaWiki saves NFC, so live would never match: Greek oxia vs tonos)
@@ -131,6 +133,49 @@ def lint(d):
                 out.append(('E-margin', n, f'malformed margin note: {tpl[:70]!r}'))
             elif not INNER.sub('', tpl.split('|text=', 1)[1]).strip():
                 out.append(('E-margin', n, 'empty margin note'))
+
+        # hws/hwe title parameter check (required when param 2 has {{ls}} to avoid malformed HTML in Page: space)
+        for m in re.finditer(r'\{\{(?:hwe|hws)\|', body):
+            depth, j = 1, m.end()
+            while j < len(body) and depth:
+                if body.startswith('{{', j):
+                    depth, j = depth + 1, j + 2
+                elif body.startswith('}}', j):
+                    depth, j = depth - 1, j + 2
+                else:
+                    j += 1
+            tpl = body[m.start():j]
+            if '{{ls}}' in tpl and '|title=' not in tpl:
+                out.append(('E-hwe-title', n, f'hyphen template requires |title= to prevent invalid HTML: {tpl[:50]}'))
+
+        # margin note inside unclosed italics check (MediaWiki parser issue: italics cannot extend over floated span)
+        for para in body.split('\n\n'):
+            pos = 0
+            in_ital = False
+            while pos < len(para):
+                if para.startswith('{{', pos):
+                    depth, j = 1, pos + 2
+                    while j < len(para) and depth:
+                        if para.startswith('{{', j):
+                            depth, j = depth + 1, j + 2
+                        elif para.startswith('}}', j):
+                            depth, j = depth - 1, j + 2
+                        else:
+                            j += 1
+                    tmpl = para[pos:j]
+                    pos = j
+                    if tmpl.startswith('{{MarginNote') and in_ital:
+                        out.append(('E-margin-italic', n, f'MarginNote inside unclosed italics near …{near(para, pos - len(tmpl), pos)}'))
+                elif para.startswith("'''''", pos):
+                    in_ital = not in_ital
+                    pos += 5
+                elif para.startswith("'''", pos):
+                    pos += 3
+                elif para.startswith("''", pos):
+                    in_ital = not in_ital
+                    pos += 2
+                else:
+                    pos += 1
 
         # dark mode / table checks
         for tbl in re.finditer(r'\{[|].*?\|\}', body, re.S):

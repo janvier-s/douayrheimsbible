@@ -763,7 +763,7 @@ def write_argument(book, wiki):
         i = body.index(f'{full} {after}')
         clean_title = full.replace('ſ', 's')
         pages = [body[:i] + '{{hws|' + to_ls(first) + '|' + to_ls(full) + '|title=' + clean_title + '}}',
-                 '{{hwe|' + to_ls(cont) + '|' + to_ls(full) + '}}' + body[i + len(full):]]
+                 '{{hwe|' + to_ls(cont) + '|' + to_ls(full) + '|title=' + clean_title + '}}' + body[i + len(full):]]
         pages[1] = pages[1].replace('margin=left', 'margin=right')  # odd page: outer margin on the right
     for k, text in enumerate(pages):
         pg = wiki + k
@@ -828,16 +828,14 @@ def main():
         body = SENT.sub('', body)
         sp = SPLIT_WORDS.get((BOOK, wiki))
         if sp:
-            if 'ſ' in sp[2]:
-                clean_title = sp[2].replace('ſ', 's')
-                body += ' {{hws|' + to_ls(sp[0]) + '|' + to_ls(sp[2]) + '|title=' + clean_title + '}}'
-            else:
-                body += ' {{hws|' + sp[0] + '|' + sp[2] + '}}'
+            clean_title = sp[2].replace('ſ', 's')
+            body += ' {{hws|' + to_ls(sp[0]) + '|' + to_ls(sp[2]) + '|title=' + clean_title + '}}'
         sp = SPLIT_WORDS.get((BOOK, wiki - 1))
         if sp:
             m = re.match(r'^((?:\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[*∷†‖] ?)*)' + re.escape(sp[2]), body)
             assert m, (wiki, body[:80])
-            body = body[:m.end() - len(sp[2])] + '{{hwe|' + to_ls(sp[1]) + '|' + to_ls(sp[2]) + '}}' + body[m.end():]
+            clean_title = sp[2].replace('ſ', 's')
+            body = body[:m.end() - len(sp[2])] + '{{hwe|' + to_ls(sp[1]) + '|' + to_ls(sp[2]) + '|title=' + clean_title + '}}' + body[m.end():]
         # italics are balanced per page (an unclosed '' breaks the page view): close at the page end, reopen on the next
         if ital_carry:
             body = "''" + body
