@@ -14,8 +14,10 @@ Checks (E = error, W = warning):
   E-tag       <noinclude>/<pagequality> structure broken; stray <i> <b> <br> <na> <cr> <alt> tags
   E-sentinel  leftover generator sentinels (⟦ ⟧) or unreplaced {{MINNER| {{MOUTER|
   E-margin    {{MarginNote}} lacking margin=left|right, margin-width, or text, or empty
-  E-hwe-title hyphen template (hwe/hws) with {{ls}} missing |title= (prevents invalid HTML)
-  E-margin-italic MarginNote inside unclosed italics (breaks MediaWiki column layout)
+  E-hw-title  every {{hws}}/{{hwe}} needs a plain-text |title= (no {{…}}, '' or ſ) (Template:Hyphenated word start)
+  E-tpl-italic italics open across a {{MarginNote}} or any template with '' inside (breaks the layout)
+  E-foot-ital italics unbalanced in the running head or the footer
+  E-status    <pagequality> level 3 or more without a named proofreader
   E-verse     verse numbers out of order, repeated or skipped (across pages, per chapter)
   E-darkmode  table style contains 'background' (triggers MediaWiki night-mode color:#202122) or '!' (th header borders/shading)
   E-nfc       text not in Unicode NFC (MediaWiki saves NFC, so live would never match: Greek oxia vs tonos)
@@ -23,7 +25,11 @@ Checks (E = error, W = warning):
   E-loss      a print feature (long s, macron, vv, italics, small caps...) dropped against git HEAD,
               or a modern form (w, j, double quote) appeared; fix the cause, or --allow-loss with --reason
   E-shift     a print feature turned into its modern sibling vs HEAD (ſ→s, vv→w); --allow-shift with --reason
-  W-header    no {{rh}} running head, or no {{rh}} footer
+  W-header    no {{rh}} running head
+  W-catchword catchword in a footer {{rh}} cell: it belongs in {{continues|…}}
+  W-signature printer's signature mark in the footer (owner: signatures are left out)
+  W-nop       the next page opens a paragraph but this page does not end with {{nop}} on its own line
+  W-linebreak single line break inside a paragraph
   W-space     double space, space before , . ; : ? ! ), space after (, trailing space
   W-mark      stray † after {{verse}}
   W-quote     straight or curly double quotes in the body (the print has none)
@@ -44,6 +50,33 @@ VERSE = re.compile(r'\{\{verse\|chapter=(\d+)\|verse=(\d+)\}\}')
 TAGS = re.compile(r'</?(?:i|b|br|na|cr|alt|em|strong|span|div|p)\b[^>]*>', re.I)
 SENT = re.compile(r'[⟦⟧]|\{\{MINNER\||\{\{MOUTER\|')
 INNER = re.compile(r'\{\{[^{}]*\}\}')
+
+
+SIGNATURE = re.compile(r'^([A-Z])(?:(?i:\1){1,2})?(?: ij| iij)?$')  # A, Aa, Aaa (+ ij, iij): the gathering letter
+BLOCKLINE = re.compile(r'^(?:\{\{c\||\{\||\||\{\{nop\}\}|==)')
+OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\||CHAP\.|''\d)")
+LEAD_NOTES = re.compile(r'^(?:\s|\{\{MarginNote\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\})*')
+
+
+def rh_cells(block):
+    """The cells of each {{rh|…}} in a block, split at top-level pipes."""
+    out = []
+    for m in re.finditer(r'\{\{rh\|', block):
+        depth, j, cells, cur = 1, m.end(), [], ''
+        while j < len(block) and depth:
+            if block.startswith('{{', j):
+                depth, cur, j = depth + 1, cur + '{{', j + 2
+            elif block.startswith('}}', j):
+                depth, j = depth - 1, j + 2
+                if depth:
+                    cur += '}}'
+            elif block[j] == '|' and depth == 1:
+                cells.append(cur)
+                cur, j = '', j + 1
+            else:
+                cur, j = cur + block[j], j + 1
+        out.append(cells + [cur])
+    return out
 
 
 def braces(t):
@@ -127,6 +160,7 @@ def lint(d, ov=None):
         if b != a + 1:
             out.append(('E-gap', a, f'pages {a + 1}-{b - 1} missing from the run'))
     last_ch = last_v = None
+    bodies = {}
     for f in files:
         n = int(f.stem)
         t = f.read_text()
@@ -143,19 +177,27 @@ def lint(d, ov=None):
             out.append(('E-tag', n, 'does not end with </noinclude>'))
         for m in TAGS.finditer(body):
             out.append(('E-tag', n, f'stray tag {m.group(0)!r}'))
-        heads = len(re.findall(r'\{\{(?:rh|continues)\|', t))
-        if heads == 0:
+        blocks = re.findall(r'<noinclude>(.*?)</noinclude>', t, re.S)
+        if not blocks or '{{rh|' not in blocks[0]:
             out.append(('W-header', n, 'no {{rh}} running head'))
-        elif heads == 1:
-            out.append(('W-header', n, 'no {{rh}} footer (signature / catchword)'))
+        m = re.search(r'<pagequality level="(\d)" user="([^"]*)"', t)
+        if m and int(m.group(1)) >= 3 and not m.group(2).strip():
+            out.append(('E-status', n, f'pagequality level {m.group(1)} without a named proofreader: use level 1'))
+        foot = blocks[-1] if len(blocks) > 1 else ''
+        for cells in rh_cells(foot):
+            if len(cells) > 2 and cells[2].strip():
+                out.append(('W-catchword', n, f'catchword {cells[2]!r} in a footer {{{{rh}}}}: use {{{{continues|…}}}}'))
+            sig = [c for k, c in enumerate(cells) if SIGNATURE.match(c.strip()) and (k == 1 or ' ' in c.strip())]
+            if sig:  # a bare letter only in the centre cell, where the print sets it; with ij/iij anywhere
+                out.append(('W-signature', n, f'signature mark in the footer: {foot[:60]!r}'))
 
         # italics and bold
         ni = len(ITAL.findall(body))
         if ni % 2:
             out.append(('E-ital', n, f'unbalanced italics ({ni} markers): close at the page end, reopen on the next'))
-        for blk in re.findall(r'<noinclude>(.*?)</noinclude>', t, re.S):
+        for blk in blocks:
             if len(ITAL.findall(blk)) % 2:
-                out.append(('E-ital', n, f'unbalanced italics in running head/footer: {blk[-60:]!r}'))
+                out.append(('E-foot-ital', n, f'unbalanced italics in running head/footer: {blk[-60:]!r}'))
         nb = len(BOLD.findall(body))
         if nb % 2:
             out.append(('E-bold', n, f"odd number of ''' ({nb})"))
@@ -185,8 +227,16 @@ def lint(d, ov=None):
                 else:
                     j += 1
             tpl = body[m.start():j]
-            if '{{ls}}' in tpl and '|title=' not in tpl:
-                out.append(('E-hwe-title', n, f'hyphen template requires |title= to prevent invalid HTML: {tpl[:50]}'))
+            title = re.search(r'\|title=((?:[^{}|]|\{\{[^{}]*\}\})*)', tpl)
+            if not title:
+                out.append(('E-hw-title', n, f'hyphen template without |title=: {tpl[:50]}'))
+            elif re.search(r"\{\{|''|ſ", title.group(1)):
+                out.append(('E-hw-title', n, f'hyphen template title must be plain text: {tpl[:60]}'))
+
+        for a_line, b_line in zip(body.split('\n'), body.split('\n')[1:]):
+            if a_line.strip() and b_line.strip() and not (BLOCKLINE.match(a_line) or BLOCKLINE.match(b_line) or a_line.rstrip().endswith('}}')):
+                out.append(('W-linebreak', n, f'single line break inside a paragraph near …{a_line[-30:]!r}'))
+        bodies[n] = body
 
         # margin note inside unclosed italics check (MediaWiki parser issue: italics cannot extend over floated span)
         for para in body.split('\n\n'):
@@ -204,8 +254,8 @@ def lint(d, ov=None):
                             j += 1
                     tmpl = para[pos:j]
                     pos = j
-                    if tmpl.startswith('{{MarginNote') and in_ital:
-                        out.append(('E-margin-italic', n, f'MarginNote inside unclosed italics near …{near(para, pos - len(tmpl), pos)}'))
+                    if in_ital and (tmpl.startswith('{{MarginNote') or "''" in tmpl):
+                        out.append(('E-tpl-italic', n, f'template inside unclosed italics near …{near(para, pos - len(tmpl), pos)}'))
                 elif para.startswith("'''''", pos):
                     in_ital = not in_ital
                     pos += 5
@@ -254,6 +304,10 @@ def lint(d, ov=None):
             flat = INNER.sub('', flat)
         for m in re.finditer(r'["“”]', flat):
             out.append(('W-quote', n, f'quote mark near …{near(flat, m.start(), m.end())}'))
+    for n, body in bodies.items():
+        nxt = bodies.get(n + 1)
+        if nxt is not None and OPENS_PARA.match(LEAD_NOTES.sub('', nxt)) and not body.rstrip().endswith('\n{{nop}}'):
+            out.append(('W-nop', n, f'page {n + 1} opens a paragraph: end this page with {{{{nop}}}} on its own line'))
     return out
 
 
