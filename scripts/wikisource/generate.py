@@ -610,27 +610,31 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('john', 308): 'is he acknowledge'}
 
 
-# Signature marks. The NT is printed in gatherings of four leaves (eight pages); the first
-# three rectos are signed X, X ij, X iij, and the fourth is unsigned. Gathering A starts at
-# wiki page 29 (the NT title). The OCR misreads the numeral often (57 'D ij' for D iij), so
-# the mark is computed, and the OCR only warns when it sees another letter. Checked on the
-# scans for A-H (pages 31-89).
-SIG_ALPHABET = 'ABCDEFGHIKLMNOPQRSTVXYZ'
-SIG_FIRST = {'matthew': 29, 'mark': 29, 'luke': 29, 'john': 29, 'acts': 29, 'romans': 29}  # mark: checked M ij 119 … R ij 159 (8 signed pages)
 # "HOLY" beside the page number, "weeke." under it, top outer corner (checked on the scans):
 # (first wiki page, last wiki page, pages without it).
 HOLY_WEEK = {'matthew': (86, 113, {95, 107}), 'mark': (144, 160, set()),
              'luke': (222, 237, {233, 234}), 'john': (282, 307, {289, 304, 305})}  # luke/john: read on the head corners of every page  # mark: on every page, checked
 
 
-def signature(wiki):
-    k = wiki - SIG_FIRST.get(BOOK, 10 ** 6)
-    if k < 0 or k % 2 or k % 8 > 4:
+def footer(catch):
+    """The page foot: the catchword in {{continues}} (Template:Continues); printer's signature
+    marks are left out (owner's editorial decision, Help:Formatting conventions)."""
+    if not catch:
         return ''
-    g, n = divmod(k // 2, 4)
-    letters = SIG_ALPHABET[g % 23] * (g // 23 + 1)
-    letters = letters[0] + letters[1:].lower()
-    return letters + ['', ' ij', ' iij'][n]
+    if len(re.findall(r"(?<!')''(?!')", catch)) % 2:
+        catch += "''"  # the catchword is cut from the next page's start, which may open an italic
+    return '{{continues|' + catch + '}}'
+
+
+def opens_para(S, i, paras):
+    """Token i starts a new paragraph (a block, or a verse the print indents)."""
+    t = S[i]
+    return bool(t.get('block') or (i in paras and t['kind'] == 'verse' and not t.get('nopara')))
+
+
+def end_body(body, next_opens):
+    """A paragraph that ends at the page foot gets {{nop}} on its own line (Help:Page breaks)."""
+    return body + '\n{{nop}}' if next_opens else body
 
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
@@ -776,14 +780,12 @@ def write_argument(book, wiki):
         pages[1] = pages[1].replace('margin=left', 'margin=right')  # odd page: outer margin on the right
     for k, text in enumerate(pages):
         pg = wiki + k
-        catch = CATCHWORDS.get((BOOK, pg), '')
-        sig = signature(pg)
-        footer = f'{{{{rh||{sig}|{catch}}}}}' if (sig or catch) else ''
+        foot = footer(CATCHWORDS.get((BOOK, pg), ''))
         head = f'{{{{rh|{pg - 28}||}}}}' if k == 0 else f'{{{{rh|||{pg - 28}}}}}'  # k = 0 keeps the form of Mark's and Luke's published page
         text = re.sub(r'(?m)^(Whose excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
         (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(head) +
                                         '</noinclude>' + to_ls(sc_wiki(text)) +
-                                        '<noinclude>' + to_ls(footer) + '</noinclude>\n'))
+                                        '<noinclude>' + to_ls(foot) + '</noinclude>\n'))
 
 
 def main(argv):
@@ -840,7 +842,7 @@ def main(argv):
         body = ''
         for i in range(a, b):
             t = S[i]
-            sep = '' if i == a else (' ' if not (t.get('block') or (i in paras and t['kind'] == 'verse' and not t.get('nopara'))) else '\n\n')
+            sep = '' if i == a else ('\n\n' if opens_para(S, i, paras) else ' ')
             if t.get('block') and t['kind'] in ('title', 'annhead') and i > a and S[i - 1]['kind'] == t['kind']:
                 sep = '\n'
             body += sep + t['text']
@@ -863,6 +865,7 @@ def main(argv):
             ital_carry = True
         else:
             ital_carry = False
+        body = end_body(body, b < len(S) and opens_para(S, b, paras))
         body = body.replace('{{MINNER|', '{{MarginNote|margin=' + side_inner + '|margin-width=65|text=')
         body = body.replace('{{MOUTER|', '{{MarginNote|margin=' + side_outer + '|margin-width=65|text=')
         catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', DROPI.sub(r'\1', SENT.sub('', S[b]['text']))).strip() if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
@@ -871,20 +874,10 @@ def main(argv):
             tail = [l for l in p['text'].splitlines() if l.strip()]
             catch = CATCHWORDS.get((BOOK, wiki)) or (tail[-1].split()[-1] if tail else '')
         catch = CATCHWORDS.get((BOOK, wiki), catch)
-        sig = signature(wiki)
-        for line in p['text'].splitlines()[-6:]:
-            m = re.match(r'^\s*(?:\d{1,3}\s+)?([A-Z]{1,2})\s+([ivjl]{1,5})\b', line)
-            if m and (not sig or m.group(1).upper() != sig.split()[0].upper()):
-                print(f'warning: page {wiki}: OCR signature {m.group(1)} {m.group(2)}, computed {sig or "none"}')
-        if catch.count("''") % 2:
-            catch += "''"  # the catchword is cut from the next page's start, which may open an italic
-        if "''" in catch and not sig:
-            footer = f'{{{{continues|{catch}}}}}'  # Wikisource's template for a footer catchword (as proofread on pp. 38, 44)
-        else:
-            footer = f'{{{{rh||{sig}|{catch}}}}}' if (catch or sig) else ''
+        foot = footer(catch)
         (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(header) +
                                           # the print's ‖ is a small raised mark; ″ read as quotes
-                                          '</noinclude>' + to_ls(sc_wiki(body).replace('‖', '{{sup|‖}}')) + '<noinclude>' + to_ls(sc_wiki(footer)) + '</noinclude>\n'))
+                                          '</noinclude>' + to_ls(sc_wiki(body).replace('‖', '{{sup|‖}}')) + '<noinclude>' + to_ls(sc_wiki(foot)) + '</noinclude>\n'))
         report.append(f'{wiki} {p["src"]} ch{p["chapters"]} tokens {a}-{b} match {quality[n]:.0%}')
     report.append('\nMark differences (wiki page, ch:v, our token, OCR mark, our mark):')
     for d in MARKDIFF:

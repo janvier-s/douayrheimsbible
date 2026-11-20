@@ -63,3 +63,49 @@ def test_john_argument_generates(tmp_path):
     hws = re.search(r'\{\{hws\|((?:[^|{}]|\{\{ls\}\})*)\|((?:[^|{}]|\{\{ls\}\})*)', a)
     hwe = re.search(r'\{\{hwe\|((?:[^|{}]|\{\{ls\}\})*)\|((?:[^|{}]|\{\{ls\}\})*)', b)
     assert hws and hwe and hws.group(2) == hwe.group(2) == 'Pa{{ls}}{{ls}}ion'
+
+
+def body_of(t):
+    return re.match(r'^<noinclude>.*?</noinclude>(.*)<noinclude>(.*?)</noinclude>\n?$', t, re.S).groups()
+
+
+def test_footer_markup_catchwords():
+    import generate
+    assert generate.footer("''6. It is''") == "{{continues|''6. It is''}}"
+    assert generate.footer("''62. If") == "{{continues|''62. If''}}"
+    assert generate.footer('{{sc|the}}') == '{{continues|{{sc|the}}}}'
+    assert generate.footer('') == ''
+
+
+def test_end_body():
+    import generate
+    assert generate.end_body('x', True) == 'x\n{{nop}}'
+    assert generate.end_body('x', False) == 'x'
+
+
+@pytest.fixture(scope='module')
+def mark_pages(tmp_path_factory):
+    if not (ocrpages.TK.exists() and ocrpages.SCAN.exists()):
+        pytest.skip('OCR not on this machine')
+    out = run('mark', 114, tmp_path_factory.mktemp('mark'))
+    return {int(p.stem): p.read_text() for p in out.glob('*.wiki')}
+
+
+def test_no_signature_or_rh_footer(mark_pages):
+    foots = {n: body_of(t)[1] for n, t in mark_pages.items()}
+    assert not [n for n, f in foots.items() if '{{rh' in f]
+    assert foots[119] == '{{continues|ANNOT.}}'
+
+
+def test_nop_only_on_paragraph_end(mark_pages):
+    nops = [n for n, t in mark_pages.items() if body_of(t)[0].endswith('\n{{nop}}')]
+    assert nops and 160 not in nops
+    for n in nops:  # the next page opens a paragraph, so it does not start mid-sentence
+        nxt = re.sub(r'^(\{\{MarginNote\|(?:[^{}]|\{\{[^{}]*\}\})*\}\}\s*)+', '', body_of(mark_pages[n + 1])[0])
+        assert not re.match(r'[a-zſ]', nxt), (n, nxt[:40])
+    assert sum(1 for t in mark_pages.values() if '{{nop}}' in t) == len(nops)
+
+
+def test_hw_titles_plain(mark_pages):
+    assert '{{hws|de|de{{ls}}ert.|title=desert.}}' in mark_pages[115]
+    assert '{{hwe|{{ls}}ert.|de{{ls}}ert.|title=desert.}}' in mark_pages[116]
