@@ -165,3 +165,14 @@ def test_dropcap_rest_not_merged():
     import generate
     generate.BOOK = 'matthew'
     assert fin('{{verse|chapter=2|verse=1}}WHEN IESVS', dropcap=True, ch=2).endswith('}}{{sc|Hen}} {{sc|Iesvs}}')
+
+
+def test_norm_keeps_small_caps_letters():
+    import generate
+    assert generate.norm('{{dropinitial|A|fl={{verse|chapter=2|verse=1}}}}{{sc|Nd}}') == 'and'
+    assert generate.norm('{{sc|Iesvs}},') == 'iesvs'
+
+
+def test_chapter_opening_word_starts_its_page(mark_pages):
+    tail = re.compile(r'\{\{dropinitial\|(?:[^{}]|\{\{[^{}]*\}\})*\}\}\{\{sc\|[^{}]*\}\}(?:\n\{\{nop\}\})?$')
+    assert not [n for n, t in mark_pages.items() if tail.search(body_of(t)[0])]

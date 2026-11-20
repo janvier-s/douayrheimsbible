@@ -69,6 +69,7 @@ ORNAMENTS = {}
 def norm(w):
     w = SENT.sub('', w)
     w = DROPI.sub(r'\1', w)  # the drop cap is still a letter of the word
+    w = re.sub(r'\{\{sc\|([^{}]*)\}\}', r'\1', w)  # so are small caps
     w = re.sub(r'\{\{[^{}]*\}\}', '', w)
     w = w.lower().replace('ſ', 's').replace('f', 's').replace('vv', 'w').replace('u', 'v').replace('j', 'i')
     w = w.translate(str.maketrans('āēīōūñ', 'aeiovn'))

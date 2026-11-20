@@ -144,3 +144,12 @@ def test_small_caps_words_not_in_ladder():
     foot = '<noinclude></noinclude>\n'
     assert ladder.conflicts(head + 'on {{sc|Ea{{ls}}ter day}} morning' + foot,
                             head + 'on {{sc|Easter day}} morning' + foot, 159) == []
+
+
+def test_words_keep_inline_templates_joined():
+    assert ladder.words("{{lang|grc|Μετάνοια}}. and") == ['Μετάνοια.', 'and']
+    head = '<noinclude><pagequality level="1" user="" />{{rh|1|X|Y}}</noinclude>'
+    foot = '<noinclude></noinclude>\n'
+    un = []
+    ladder.conflicts(head + 'x AND it' + foot, head + 'x {{dropinitial|A}}{{sc|Nd}} it' + foot, 5, un)
+    assert un == []

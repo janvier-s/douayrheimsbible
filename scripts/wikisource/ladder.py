@@ -67,8 +67,10 @@ def _untemplate(m):
     if name == 'ls':
         return 'ſ'
     if name == 'sc':  # marked: small caps hold no long-s (owner 2026-11-21), so they are not ladder conflicts
-        return ' ' + ' '.join(SC_MARK + w for w in rest.split()) + ' '
-    if name in ('lang', 'larger', 'x-larger', 'xx-larger', 'smaller', 'c', 'continues'):
+        return ' '.join(SC_MARK + w for w in rest.split(' '))  # inline: no padding, so 'A' + 'Nd' stay one word
+    if name == 'lang':
+        return rest.split('|')[-1]
+    if name in ('larger', 'x-larger', 'xx-larger', 'smaller', 'c', 'continues'):
         return ' ' + rest.split('|')[-1] + ' '
     if name == 'dropinitial':
         return rest.split('|')[0]
