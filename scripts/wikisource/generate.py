@@ -14,9 +14,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from ocrpages import book_pages  # noqa: E402
 
-REPO, BOOK, FIRST, OUT = Path(sys.argv[1]), sys.argv[2], int(sys.argv[3]), Path(sys.argv[4])
-MAXP = int(sys.argv[5]) if len(sys.argv) > 5 else 10 ** 6
+# Set by main(argv); the defaults let the module be imported (tests) without side effects.
+REPO = Path(__file__).resolve().parents[2]
+BOOK, FIRST, OUT, MAXP = '', 0, None, 10 ** 6
 DATA = REPO / 'static/data/odr-original'
+BOOKS_JSON = 'wikisource/1582-rhemes-nt/books.json'
+
+
+def load_books(repo):
+    """Per-book run table: first/last wiki page, ornaments flag, golden flag."""
+    return json.loads((Path(repo) / BOOKS_JSON).read_text())
 # Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
 # Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
 # its pages stay as they are; Transkribus reads the print better from Mark on.
@@ -26,8 +33,8 @@ TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'D
 # Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
 ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242, 'acts': 314}
 # John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
-# (first part, continuation, whole word, the text that follows it).
-ARGUMENT_SPLIT = {'john': ('Paſ', 'ſion', 'Paſsion', 'beheaded')}
+# (letters before the break, the word that follows the broken one); the whole word is read from the data.
+ARGUMENT_SPLIT = {'john': (3, 'beheaded')}
 # Argument notes printed in the INNER margin (read on pdf242: "Iren. li. 2. c. 39." beside chap. 5, 1).
 INNER_ARGUMENT_NOTES = {'Iren. li. 2. c. 39.'}
 # First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
@@ -54,9 +61,9 @@ SENT = re.compile(r'⟦[^⟧]*⟧')
 DROPI = re.compile(r'\{\{dropinitial\|([^{}|]*)(?:\|(?:image|imgsize)=[^{}|]*)*(?:\|fl=\{\{[^{}]*\}\})?\}\}')
 # Woodcut initials, headpieces and tailpieces on Commons, from ornaments.py commons:
 # initial 'book/ch' -> file, letter, imgsize; headpiece/tailpiece book -> file, width.
-_ORN = REPO / 'wikisource/1582-rhemes-nt/ornaments.json'
-# WS_NO_ORNAMENTS=1 leaves them out (plain {{dropinitial|T}}), as the published pages are for now.
-ORNAMENTS = json.loads(_ORN.read_text()) if _ORN.exists() and not os.environ.get('WS_NO_ORNAMENTS') else {}
+# Off unless books.json sets "ornaments": true for the book or --ornaments is given (owner: off for now).
+ORN_JSON = 'wikisource/1582-rhemes-nt/ornaments.json'
+ORNAMENTS = {}
 
 
 def norm(w):
@@ -759,8 +766,10 @@ def write_argument(book, wiki):
     sp = ARGUMENT_SPLIT.get(BOOK)
     pages = [body]
     if sp:  # the Argument runs over two scan pages, the second word broken across them
-        first, cont, full, after = sp
-        i = body.index(f'{full} {after}')
+        cut, after = sp
+        m = re.search(r'(\S+) ' + re.escape(after), body)
+        full, i = m.group(1), m.start()
+        first, cont = full[:cut], full[cut:]
         clean_title = full.replace('ſ', 's')
         pages = [body[:i] + '{{hws|' + to_ls(first) + '|' + to_ls(full) + '|title=' + clean_title + '}}',
                  '{{hwe|' + to_ls(cont) + '|' + to_ls(full) + '|title=' + clean_title + '}}' + body[i + len(full):]]
@@ -777,13 +786,23 @@ def write_argument(book, wiki):
                                         '<noinclude>' + to_ls(footer) + '</noinclude>\n'))
 
 
-def main():
-    global FIRST
+def main(argv):
+    global REPO, BOOK, FIRST, OUT, MAXP, DATA, ORNAMENTS
+    orn_flag = '--ornaments' in argv
+    argv = [a for a in argv if a != '--ornaments']
+    REPO, BOOK, FIRST, OUT = Path(argv[0]), argv[1], int(argv[2]), Path(argv[3])
+    DATA = REPO / 'static/data/odr-original'
+    cfg = load_books(REPO).get(BOOK, {})
+    MAXP = int(argv[4]) if len(argv) > 4 else None  # None: stop at books.json "last"
+    orn = REPO / ORN_JSON
+    ORNAMENTS = json.loads(orn.read_text()) if orn.exists() and (orn_flag or cfg.get('ornaments')) else {}
     book = json.loads((DATA / f'{BOOK}.json').read_text())
     if ARGUMENT.get(BOOK) == FIRST:
         OUT.mkdir(parents=True, exist_ok=True)
         write_argument(book, FIRST)
         FIRST += 2 if BOOK in ARGUMENT_SPLIT else 1
+    if MAXP is None:
+        MAXP = cfg['last'] - FIRST + 1 if 'last' in cfg else 10 ** 6
     ann = {}
     for f in sorted((DATA / BOOK / 'annotations').glob('*.json')):
         a = json.loads(f.read_text()); ann[a['chapter']] = a['annotations']
@@ -878,4 +897,5 @@ def main():
     print('\n'.join(report[:40]))
 
 
-main()
+if __name__ == '__main__':
+    main(sys.argv[1:])

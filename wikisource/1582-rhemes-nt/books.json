@@ -1,0 +1,8 @@
+{
+	"matthew": { "first": 31, "last": 113, "ornaments": false, "golden": false },
+	"mark": { "first": 114, "last": 160, "ornaments": false, "golden": false },
+	"luke": { "first": 161, "last": 241, "ornaments": false, "golden": false },
+	"john": { "first": 242, "last": 308, "ornaments": false, "golden": false },
+	"acts": { "first": 317, "last": 401, "ornaments": false, "golden": false },
+	"romans": { "first": 410, "last": 451, "ornaments": false, "golden": false }
+}

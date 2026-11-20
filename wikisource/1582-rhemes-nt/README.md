@@ -27,8 +27,9 @@ python3 -I scripts/wikisource/publish.py /tmp/ws-out 31-41
 ```
 
 Starting a book at its Argument page (Mark: 114) generates that page too. Set
-`WS_NO_ORNAMENTS=1` to leave out the woodcut images that `ornaments.json` adds; the
-published pages have none yet.
+Woodcut images from `ornaments.json` are off unless `books.json` sets `"ornaments": true`
+for the book or `--ornaments` is given (owner: off for now). Without a page count, generation
+stops at the book's `last` page in `books.json`.
 
 `manifest.json` tracks each page: `sha1` of the text and `status`
 (`generated` → `reviewed` → `posted`, with the posted `revid`). A page that changes
