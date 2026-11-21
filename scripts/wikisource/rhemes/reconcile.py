@@ -212,8 +212,24 @@ def cmd_verify(book):
     return bad
 
 
-def cmd_ladder(book):
-    """Decide every letter-shape / spelling conflict of the book; write reconcile/BOOK.jsonl."""
+def cmd_ladder(book, overwrite=False):
+    """Decide every letter-shape / spelling conflict of the book; write reconcile/BOOK.jsonl.
+
+    Refuses (exit 1) when that file already holds decisions, unless overwrite: once the pages
+    are written the conflicts are gone, so a rerun would replace the record with nothing.
+    Holds the data lock throughout (it reads the data and writes the record).
+    """
+    out = WS / 'reconcile' / f'{book}.jsonl'
+    if out.exists() and not overwrite:
+        n = sum(1 for x in out.read_text().splitlines() if x.strip())
+        if n:
+            print(f'{out} has {n} recorded decisions; not replacing them (--overwrite to rerun the ladder anyway)')
+            sys.exit(1)
+    with data_lock(lock_path()):
+        return _ladder(book, out)
+
+
+def _ladder(book, out):
     from . import ladder
     cfg = load_books(REPO)[book]
     tokens = ladder.xml_tokens(sources.xml_text(), book)
@@ -234,7 +250,6 @@ def cmd_ladder(book):
     scans = WS / 'reconcile' / 'scan-readings.jsonl'
     if scans.exists():  # rung 4 words read on the facsimile (owner-approved collages)
         decisions = ladder.apply_readings(decisions, [json.loads(x) for x in scans.read_text().splitlines() if x.strip()])
-    out = WS / 'reconcile' / f'{book}.jsonl'
     out.parent.mkdir(exist_ok=True)
     out.write_text(''.join(json.dumps(dict(page=d.conflict.page, committed=d.conflict.committed, generated=d.conflict.generated,
                                            before=d.conflict.before, after=d.conflict.after, rung=d.rung, winner=d.winner,
@@ -292,7 +307,7 @@ def main(argv=None):
     elif cmd == 'write':
         cmd_write(rest[0])
     elif cmd == 'ladder':
-        cmd_ladder(rest[0])
+        cmd_ladder(rest[0], '--overwrite' in rest)
     elif cmd == 'adopt':
         cmd_adopt(rest[0], rest[1:])
     elif cmd == 'verify':

@@ -122,3 +122,34 @@ def test_verify_flags_loser_at_the_place():
     pages = {300: head + 'great the compaſsion of God. And then the compaſſion of God here<noinclude></noinclude>\n'}
     d = ladder.Decision(ladder.Conflict(300, 'compaſsion', 'compaſſion', ['vvith', 'great', 'the'], ['of', 'God.', 'And']), 3, 'generated', 'x')
     assert reconcile.verify_decisions([d], pages) == [d]
+
+
+def _no_generate(*a, **k):
+    raise AssertionError('ladder did work before refusing')
+
+
+def test_ladder_refuses_to_overwrite(tmp_path, monkeypatch, capsys):
+    from rhemes import reconcile
+    monkeypatch.setattr(reconcile, 'WS', tmp_path)
+    monkeypatch.setattr(reconcile, 'generate_book', _no_generate)
+    monkeypatch.setenv('RHEMES_LOCK', str(tmp_path / 'lock'))
+    f = tmp_path / 'reconcile/tiny.jsonl'
+    f.parent.mkdir()
+    f.write_text('{"page": 1}\n{"page": 2}\n')
+    with pytest.raises(SystemExit) as e:
+        reconcile.main(['ladder', 'tiny'])
+    assert e.value.code == 1
+    assert 'has 2 recorded decisions' in capsys.readouterr().out
+    assert f.read_text() == '{"page": 1}\n{"page": 2}\n'
+    assert not (tmp_path / 'lock').exists()
+
+
+def test_ladder_holds_lock(tmp_path, monkeypatch):
+    from rhemes import reconcile
+    from rhemes.lock import LockHeld
+    monkeypatch.setattr(reconcile, 'WS', tmp_path)
+    monkeypatch.setattr(reconcile, 'generate_book', _no_generate)
+    monkeypatch.setenv('RHEMES_LOCK', str(tmp_path / 'lock'))
+    (tmp_path / 'lock').mkdir()
+    with pytest.raises(LockHeld, match='data lock held'):
+        reconcile.main(['ladder', 'tiny', '--overwrite'])
