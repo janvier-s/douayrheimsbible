@@ -1602,20 +1602,17 @@
  "314": {
   "sha1": "9b414f3d8fe11adb0b3e4c5a35f8de2623385ba3",
   "status": "changed",
-  "revid": 16474744,
-  "source": "frozen"
+  "revid": 16474744
  },
  "315": {
   "sha1": "2bb40e44b9a642fc6d1356ac4727300d5ba8631c",
   "status": "changed",
-  "revid": 16474745,
-  "source": "frozen"
+  "revid": 16474745
  },
  "316": {
   "sha1": "45587d1fcfb673f52a956989f621ba878648321e",
   "status": "changed",
-  "revid": 16474746,
-  "source": "frozen"
+  "revid": 16474746
  },
  "317": {
   "sha1": "f670710efd276aa6031ac11a2ec56f89c3488726",
@@ -2063,32 +2060,27 @@
  "405": {
   "sha1": "01cac986c1216cc4d58c6406661cc3126bd24152",
   "status": "changed",
-  "revid": 16474874,
-  "source": "frozen"
+  "revid": 16474874
  },
  "406": {
   "sha1": "786e37f0112a1c291ca2afe01bd79b46bd1d37be",
   "status": "changed",
-  "revid": 16474875,
-  "source": "frozen"
+  "revid": 16474875
  },
  "407": {
   "sha1": "f30e3f7eefb202a9332048f4d96180bb0cd749ec",
   "status": "changed",
-  "revid": 16475098,
-  "source": "frozen"
+  "revid": 16475098
  },
  "408": {
   "sha1": "5b5af49e49e40352f78768f79515fd89cce17de0",
   "status": "changed",
-  "revid": 16475099,
-  "source": "frozen"
+  "revid": 16475099
  },
  "409": {
   "sha1": "7e27a2a7875ecb8250b2a493b6abd69f992e1601",
   "status": "changed",
-  "revid": 16474881,
-  "source": "frozen"
+  "revid": 16474881
  },
  "410": {
   "sha1": "560568422d0fb074032317fe358b2d7281d0f0de",

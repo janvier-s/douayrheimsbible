@@ -48,13 +48,18 @@ Known limits that remain: `adopt` can still skip as "done" a generated form that
 
 ## Frozen pages
 
-No generator makes these 46 pages, so they are kept as committed (`manifest.json` `source: frozen`). The §4.7 points were fixed by hand on 36 of them (810ea1aa).
+No generator makes these 38 pages, so they are kept as committed (`manifest.json` `source: frozen`). The §4.7 points were fixed by hand (810ea1aa).
 
 | Pages | What | Why frozen | Estimated cost to generate later |
 |---|---|---|---|
 | 1–30 | Front matter (title, preface, tables of contents) | One-off layouts the generator has no model for | High for little gain; keeping them frozen is reasonable |
 | 309–313, 402–404 | Tables (Evangelical History, tables between books) | The generator has no table support | Medium: a table renderer plus data for 8 pages |
-| 314–316, 405–409 | Acts Argument, General Argument | Their `odr-original` intros are in modernised spelling (no vv, u/v, I/J), so generating them would lose print features | Medium: restore the intros in original spelling from A16049.xml and the scans, then add them to the generator, which already handles Mark's and John's Arguments |
+
+**Arguments restored (owner 2026-11-21).** The Acts Argument (314–316), the General Argument of the Epistles and Romans' own Argument (405–409) are now generated. Their `odr-original` intros were in modernised spelling. They were rebuilt from the frozen pages, which hold the print transcription, after an XML comparison and the scans found seven errors on those pages:
+- `préaching` (315), `Philémon` (405), `holpē` and `perſeuêre` (406), `trāsferred` (407), `iuſtificatiō` (408): accents and macrons the pages had dropped;
+- the note `* Epih. Hær. 42` (408), which the page had as `Hæer.` and in italic. The print sets it in roman, and `Epih` is the print's own misprint.
+
+Two XML differences could not be located on the scan, `thē`/`them` and `be`/`he`, so the page forms stand. Mark's and John's Argument output is unchanged: their golden tests pass.
 
 ## Missing Commons files (19)
 

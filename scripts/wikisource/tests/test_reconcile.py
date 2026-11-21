@@ -83,7 +83,7 @@ def test_ocr_by_page_matches_generator_numbering():
     assert min(reconcile.ocr_by_page('john', 'tesseract')) == 244
 
 
-FROZEN = {*range(1, 31), *range(309, 317), *range(402, 410)}
+FROZEN = {*range(1, 31), *range(309, 314), *range(402, 405)}  # Arguments 314-316, 405-409 generated (owner 2026-11-21)
 
 
 def test_frozen_marked():

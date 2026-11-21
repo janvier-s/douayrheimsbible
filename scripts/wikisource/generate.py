@@ -31,7 +31,19 @@ OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus
 # Last line of the book title on its first page ("THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO ...").
 TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.', 'acts': 'APOSTLES.', 'romans': 'TO THE ROMANES.'}
 # Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
-ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242, 'acts': 314}
+ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242, 'acts': 314, 'romans': 405}
+# Intros printed as the Argument, in print order (Romans: the General Argument of the Epistles, then its own).
+ARGUMENT_INTROS = {'romans': [1, 0]}
+# Arguments set in roman with italic quotations (the data's <i> is italic); Mark's, Luke's and John's are italic.
+ARGUMENT_ROMAN = {'acts', 'romans'}
+# The title lines as printed, where the title does not split at its last ' OF'.
+ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'THE ACTES OF THE APOSTLES.')],
+                   ('romans', 1): [('x-larger', '❧ THE ARGVMENT OF THE'), ('larger', 'EPISTLES IN GENERAL.')],
+                   ('romans', 0): [('larger', 'THE TIME VVHEN THE EPISTLE'), ('larger', 'TO THE ROMANES VVAS VVRITTEN,'),
+                                   ('larger', "''and the Argument thereof.''")]}
+# Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
+ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
+                   'romans': ['beleeued him to be', 'any Catholike of this time.', 'Gal. 4. ſaying', 'may, and geuing no offence']}
 # John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
 # (letters before the break, the word that follows the broken one); the whole word is read from the data.
 ARGUMENT_SPLIT = {'john': (3, 'beheaded')}
@@ -736,7 +748,7 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('luke', 161): 'THE', ('luke', 166): "''36. Eliſabeth''", ('luke', 172): "''20. He''",
               ('luke', 178): "''24. The''", ('luke', 196): "''21. To''", ('luke', 200): "''27. Bleſſed''",
               ('luke', 204): "''11. Be''", ('luke', 241): 'THE',
-              ('acts', 401): 'THE', ('romans', 418): 'VVHAT', ('romans', 451): 'THE',
+              ('acts', 316): 'THE', ('acts', 401): 'THE', ('romans', 407): 'Gal. 4.', ('romans', 409): 'THE', ('romans', 418): 'VVHAT', ('romans', 451): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
@@ -818,13 +830,19 @@ def write_argument(book, wiki):
     """The Argument page before chapter 1 (mark 114), from the book's first intro. The print
     sets it in italic, with quotations in roman: the data's <i> spans are the roman ones.
     Its margin notes stand in the outer margin; a note starting with '*' prints a '*' in the text."""
-    intro = book['intros'][0]
+    roman = BOOK in ARGUMENT_ROMAN
+    body = ''
+    for ii in ARGUMENT_INTROS.get(BOOK, [0]):
+        body += ('\n\n' if body else '') + argument_body(book['intros'][ii], ii, roman)
+    write_argument_pages(body, wiki)
+
+
+def argument_body(intro, ii, roman):
     notes = iter(n['text'] for n in intro.get('notes', []))  # in the order their markers appear in the text
-    side = 'left' if wiki % 2 == 0 else 'right'
 
     def mark(m):
         t = next(notes)
-        s = ('right' if side == 'left' else 'left') if t in INNER_ARGUMENT_NOTES else side
+        s = '\x02' if t in INNER_ARGUMENT_NOTES else '\x01'  # outer / inner: the page's parity decides
         return margin(s, finish(t)) + ('* ' if t.startswith('*') else '')
 
     paras = []
@@ -836,7 +854,7 @@ def write_argument(book, wiki):
             # margin marks at a run's edge stay outside the italic
             lead, core, trail = re.match(r'^((?:\s|⟦[^⟧]*⟧)*)(.*?)((?:\s|⟦[^⟧]*⟧)*)$', seg, re.S).groups()
             if core:
-                core = core if j % 2 else f"''{core}''"
+                core = core if (j % 2) != roman else f"''{core}''"
             out += lead + core + trail
         # a margin note inside an italic run: close the run around it
         parts = re.split(r'(⟦mn[^⟧]*⟧ ?)', out)
@@ -848,8 +866,17 @@ def write_argument(book, wiki):
         out = re.sub(r"^''(\{\{dropinitial\|[^{}]*\}\})", r"\1''", finish(out, dropcap=(k == 0)))
         out = re.sub(r'\s+([),.;:])', r'\1', re.sub(r'\(\s+', '(', out))
         paras.append(re.sub(r'  +', ' ', out).strip())
-    t1, t2 = re.match(r'(.* OF) (.*)', intro['title']).groups()
-    body = f'{{{{c|{{{{x-larger|{t1}}}}}}}}}\n{{{{c|{{{{larger|{t2}}}}}}}}}\n\n' + '\n\n'.join(paras)
+    lines = ARGUMENT_TITLES.get((BOOK, ii))
+    if not lines:
+        t1, t2 = re.match(r'(.* OF) (.*)', intro['title']).groups()
+        lines = [('x-larger', t1), ('larger', t2)]
+    head = '\n'.join(f'{{{{c|{{{{{size}|{line}}}}}}}}}' for size, line in lines)
+    body = re.sub(r'<sup>([^<]*)</sup>', r'{{sup|\1}}', head + '\n\n' + '\n\n'.join(paras))
+    # the word after a drop initial is set in capitals in the print (FTER, HE), not small capitals
+    return re.sub(r'(\{\{dropinitial\|[^{}]*\}\})\{\{sc\|([^{}]*)\}\}', lambda m: m.group(1) + m.group(2).upper(), body)
+
+
+def write_argument_pages(body, wiki):
     sp = ARGUMENT_SPLIT.get(BOOK)
     pages = [body]
     if sp:  # the Argument runs over two scan pages, the second word broken across them
@@ -860,11 +887,19 @@ def write_argument(book, wiki):
         clean_title = full.replace('ſ', 's')
         pages = [body[:i] + '{{hws|' + to_ls(first) + '|' + to_ls(full) + '|title=' + clean_title + '}}',
                  '{{hwe|' + to_ls(cont) + '|' + to_ls(full) + '|title=' + clean_title + '}}' + body[i + len(full):]]
-        pages[1] = pages[1].replace('margin=left', 'margin=right')  # odd page: outer margin on the right
+    for snippet in ARGUMENT_BREAKS.get(BOOK, []):
+        i = pages[-1].index(snippet)
+        pages[-1:] = [pages[-1][:i].rstrip(' '), pages[-1][i:]]
     for k, text in enumerate(pages):
         pg = wiki + k
-        foot = footer(CATCHWORDS.get((BOOK, pg), ''))
-        head = f'{{{{rh|{pg - 28}||}}}}' if k == 0 else f'{{{{rh|||{pg - 28}}}}}'  # k = 0 keeps the form of Mark's and Luke's published page
+        outer = 'left' if pg % 2 == 0 else 'right'
+        text = text.replace('\x01', outer).replace('\x02', 'right' if outer == 'left' else 'left')
+        nxt = pages[k + 1].split()[0] if BOOK in ARGUMENT_BREAKS and k + 1 < len(pages) else ''
+        foot = footer(CATCHWORDS.get((BOOK, pg), nxt))
+        if k == len(pages) - 1 and BOOK in ARGUMENT_BREAKS:
+            text += '\n{{nop}}'  # the next page opens a book
+        left = pg % 2 == 0 or (k == 0 and BOOK in ('mark', 'luke'))  # Mark's and Luke's published first page
+        head = f'{{{{rh|{pg - 28}||}}}}' if left else f'{{{{rh|||{pg - 28}}}}}'
         text = re.sub(r'(?m)^(Who[sſ]e excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
         (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(rh_small_caps(head)) +
                                         '</noinclude>' + to_ls(sc_wiki(text)) +
@@ -885,7 +920,7 @@ def main(argv):
     if ARGUMENT.get(BOOK) == FIRST:
         OUT.mkdir(parents=True, exist_ok=True)
         write_argument(book, FIRST)
-        FIRST += 2 if BOOK in ARGUMENT_SPLIT else 1
+        FIRST += 2 if BOOK in ARGUMENT_SPLIT else len(ARGUMENT_BREAKS.get(BOOK, [])) + 1
     if MAXP is None:
         MAXP = cfg['last'] - FIRST + 1 if 'last' in cfg else 10 ** 6
     ann = {}
