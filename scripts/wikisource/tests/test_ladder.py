@@ -2,8 +2,8 @@
 import json
 from collections import Counter
 
-import fidelity
-import ladder
+from rhemes import fidelity
+from rhemes import ladder
 
 XML = '''<TEI><text><body>
 <div n="Matthew" type="gospel"><p>the Paſſion of our Lord in Matthew</p></div>

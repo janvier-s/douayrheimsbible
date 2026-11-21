@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-import ocrpages
-import reconcile
+from rhemes import ocrpages
+from rhemes import reconcile
 
 REPO = Path(__file__).resolve().parents[3]
 BOOKS = json.loads((REPO / 'wikisource/1582-rhemes-nt/books.json').read_text())

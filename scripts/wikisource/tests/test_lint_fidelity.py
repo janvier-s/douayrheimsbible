@@ -4,10 +4,10 @@ from pathlib import Path
 
 import pytest
 
-import fidelity
-import lint
+from rhemes import fidelity
+from rhemes import lint
 
-LINT = str(Path(__file__).resolve().parents[1] / 'lint.py')
+LINT = [str(Path(__file__).resolve().parents[1] / 'rh.py'), 'lint']
 GIT = ['git', '-c', 'user.email=t@t', '-c', 'user.name=t', '-c', 'commit.gpgsign=false']
 
 
@@ -43,7 +43,7 @@ def test_lint_no_baseline(tmp_path, git_pages):
 
 
 def test_cli_exit_codes(git_pages):
-    run = lambda *extra: subprocess.run([sys.executable, '-I', LINT, str(git_pages), '--quiet', '--only', 'E-loss,E-shift', *extra], capture_output=True, text=True)
+    run = lambda *extra: subprocess.run([sys.executable, '-I', *LINT, str(git_pages), '--quiet', '--only', 'E-loss,E-shift', *extra], capture_output=True, text=True)
     assert run().returncode == 1
     assert run('--allow-shift', 'ls:*', '--reason', 'r').returncode == 0
     assert run('--allow-shift', 'ls:*').returncode != 0

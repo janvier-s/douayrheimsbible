@@ -1,5 +1,5 @@
 """§4.7 Wikisource conformance codes in lint.py, on tiny fixture pages."""
-import lint
+from rhemes import lint
 
 PAGE = '<noinclude><pagequality level="{lvl}" user="{user}" />{{{{rh|1|X|Y}}}}</noinclude>{body}<noinclude>{foot}</noinclude>\n'
 

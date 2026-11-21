@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
-import ocrpages
-import reconcile
+from rhemes import ocrpages
+from rhemes import reconcile
 
 needs_ocr = pytest.mark.skipif(not (ocrpages.TK.exists() and ocrpages.SCAN.exists()), reason='OCR not on this machine')
 
@@ -105,7 +105,7 @@ def test_ocr_by_page_missing_source_is_empty():
 
 
 def test_verify_decisions_against_pages():
-    import ladder
+    from rhemes import ladder
     head = '<noinclude><pagequality level="1" user="" />{{rh|1|X|Y}}</noinclude>'
     pages = {216: head + 'the 13 Sunday after Pentecoſt. And it came<noinclude></noinclude>\n',
              217: head + 'his Lords Paſſion beheaded, laſt<noinclude></noinclude>\n'}
@@ -117,7 +117,7 @@ def test_verify_decisions_against_pages():
 
 def test_verify_flags_loser_at_the_place():
     # the winner shows up nearby with two weak context words, but the losing form sits at the place itself
-    import ladder
+    from rhemes import ladder
     head = '<noinclude><pagequality level="1" user="" />{{rh|1|X|Y}}</noinclude>'
     pages = {300: head + 'great the compaſsion of God. And then the compaſſion of God here<noinclude></noinclude>\n'}
     d = ladder.Decision(ladder.Conflict(300, 'compaſsion', 'compaſſion', ['vvith', 'great', 'the'], ['of', 'God.', 'And']), 3, 'generated', 'x')

@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-import fidelity
-import lint
+from rhemes import fidelity
+from rhemes import lint
 
 REPO = Path(__file__).resolve().parents[3]
 WS = REPO / 'wikisource/1582-rhemes-nt'

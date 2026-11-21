@@ -2,7 +2,7 @@ import sys
 
 import pytest
 
-import wikipost
+from rhemes import wikipost
 
 PAGE = '<noinclude><pagequality level="1" user="" />{{rh|||}}</noinclude>{text}<noinclude>{{rh|||}}</noinclude>'
 

@@ -6,16 +6,16 @@ from pathlib import Path
 
 import pytest
 
-import ocrpages
+from rhemes import ocrpages
 
 HERE = Path(__file__).resolve().parents[1]
 REPO = HERE.parents[1]
-GEN = str(HERE / 'generate.py')
+GEN = [str(HERE / 'rh.py'), 'generate']
 needs_ocr = pytest.mark.skipif(not (ocrpages.TK.exists() and ocrpages.SCAN.exists()), reason='OCR not on this machine')
 
 
 def run(book, first, out, *extra):
-    r = subprocess.run([sys.executable, '-I', GEN, str(REPO), book, str(first), str(out), *map(str, extra)],
+    r = subprocess.run([sys.executable, '-I', *GEN, str(REPO), book, str(first), str(out), *map(str, extra)],
                        capture_output=True, text=True)
     assert r.returncode == 0, r.stderr[-800:]
     return out
@@ -23,14 +23,14 @@ def run(book, first, out, *extra):
 
 def test_import_has_no_side_effects(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
-    sys.modules.pop('generate', None)
-    import generate  # noqa: F401
+    sys.modules.pop('rhemes.generate', None)
+    from rhemes import generate  # noqa: F401
     assert list(tmp_path.iterdir()) == []
     assert callable(generate.main)
 
 
 def test_load_books():
-    import generate
+    from rhemes import generate
     b = generate.load_books(REPO)
     assert b['mark'] == {'first': 114, 'last': 160, 'ornaments': False, 'golden': b['mark']['golden']}
     assert all(v['ornaments'] is False for v in b.values())
@@ -70,7 +70,7 @@ def body_of(t):
 
 
 def test_footer_markup_catchwords():
-    import generate
+    from rhemes import generate
     assert generate.footer("''6. It is''") == "{{continues|''6. It is''}}"
     assert generate.footer("''62. If") == "{{continues|''62. If''}}"
     assert generate.footer('{{sc|the}}') == '{{continues|{{sc|the}}}}'
@@ -78,7 +78,7 @@ def test_footer_markup_catchwords():
 
 
 def test_end_body():
-    import generate
+    from rhemes import generate
     assert generate.end_body('x', True) == 'x\n{{nop}}'
     assert generate.end_body('x', False) == 'x'
 
@@ -112,7 +112,7 @@ def test_hw_titles_plain(mark_pages):
 
 
 def fin(s, **kw):
-    import generate
+    from rhemes import generate
     return generate.sc_wiki(generate.finish(s, **kw))
 
 
@@ -126,7 +126,7 @@ def test_caps_to_sc():
 
 
 def test_dropcap_rest_small_caps():
-    import generate
+    from rhemes import generate
     generate.BOOK = 'mark'
     assert fin('{{verse|chapter=1|verse=1}}THE beginning', dropcap=True, ch=1) == \
         '{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} beginning'
@@ -137,7 +137,7 @@ def test_dropcap_rest_small_caps():
 
 
 def test_greek_lang():
-    import generate
+    from rhemes import generate
     assert generate.greek_lang("''Μισθὸς.''") == "''{{lang|grc|Μισθὸς}}.''"
     assert generate.greek_lang('λατρεύσεις.') == '{{lang|grc|λατρεύσεις}}.'
     assert generate.greek_lang("''Μετανοεῖν. Μετάνοια.''") == "''{{lang|grc|Μετανοεῖν. Μετάνοια}}.''"
@@ -145,7 +145,7 @@ def test_greek_lang():
 
 
 def test_tidy_space():
-    import generate
+    from rhemes import generate
     assert generate.tidy_space('them )') == 'them)'
     assert generate.tidy_space('erre , and') == 'erre, and'
     assert generate.tidy_space('( so') == '(so'
@@ -162,13 +162,13 @@ def test_no_nested_sc(mark_pages):
 
 
 def test_dropcap_rest_not_merged():
-    import generate
+    from rhemes import generate
     generate.BOOK = 'matthew'
     assert fin('{{verse|chapter=2|verse=1}}WHEN IESVS', dropcap=True, ch=2).endswith('}}{{sc|Hen}} {{sc|Iesvs}}')
 
 
 def test_norm_keeps_small_caps_letters():
-    import generate
+    from rhemes import generate
     assert generate.norm('{{dropinitial|A|fl={{verse|chapter=2|verse=1}}}}{{sc|Nd}}') == 'and'
     assert generate.norm('{{sc|Iesvs}},') == 'iesvs'
 
@@ -179,7 +179,7 @@ def test_chapter_opening_word_starts_its_page(mark_pages):
 
 
 def test_annotation_note_before_title():
-    import generate
+    from rhemes import generate
     generate.BOOK = 'matthew'
     a = {'verse': 18, 'title': 'Thou art Peter.', 'text': 'Chriſt <mn>[1]</mn> foretold',
          'notes': [{'marker': 1, 'text': '<i>Cyril.</i>'}, {'text': 'PETER.', 'place': 'before'}]}
@@ -189,14 +189,14 @@ def test_annotation_note_before_title():
 
 
 def test_dropcap_verse_opens_a_paragraph():
-    import generate
+    from rhemes import generate
     S = [{'kind': 'verse', 'text': 'end.'}, {'kind': 'verse', 'text': '{{dropinitial|A|fl={{verse|chapter=16|verse=1}}}}ND'}]
     assert generate.opens_para(S, 1, set())
     assert not generate.opens_para(S, 0, set())
 
 
 def test_dropcap_after_margin_note_opens_a_paragraph():
-    import generate
+    from rhemes import generate
     S = [{'kind': 'verse', 'text': '⟦mn:0⟧{{MOUTER|The Goſpel vpō the 19 Sunday.}}{{dropinitial|A|fl={{verse|chapter=22|verse=1}}}}ND'}]
     assert generate.opens_para(S, 0, set())
 
@@ -208,14 +208,14 @@ def test_john_argument_heading_centred(tmp_path):
 
 
 def test_tidy_space_collapses_double_spaces():
-    import generate
+    from rhemes import generate
     assert generate.tidy_space("text=∷ ''Exod''.}}∷  {{verse|chapter=13|verse=18}} the") == \
         "text=∷ ''Exod''.}}∷ {{verse|chapter=13|verse=18}} the"
     assert generate.tidy_space('a\n\nb') == 'a\n\nb'
 
 
 def test_rh_small_caps():
-    import generate
+    from rhemes import generate
     f = generate.rh_small_caps
     assert f('{{rh|82|THE GOSPEL|CHA. VI.}}') == '{{rh|82|{{sc|the gospel}}|{{sc|Cha. VI.}}}}'
     assert f('{{rh|CHA. XXI.|ACCORDING TO S. MATTHEW.|83 HOLY weeke.}}') == \
@@ -229,6 +229,6 @@ def test_rh_small_caps():
 
 
 def test_lemma_must_start_a_word():
-    import generate
+    from rhemes import generate
     with pytest.raises(ValueError):
         generate.render_verse({'verse': 1, 'text': 'by faith, let vs haue peace', 'lemmas': [[11, 6, 1]]}, 5)

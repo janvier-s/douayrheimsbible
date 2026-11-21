@@ -1,64 +1,8 @@
-"""Fetch live Page: wikitext from en.wikisource and diff it against our pages/.
-
-usage: wikifetch.py FIRST-LAST OUT_DIR [--index Index_title.pdf]
-Writes OUT_DIR/<n>.wiki (live text), OUT_DIR/revs.json ({n: {revid, user, timestamp}}) and prints
-which pages differ from wikisource/1582-rhemes-nt/pages. Read-only, no login needed.
-"""
-import json, re, sys, time, urllib.parse, urllib.request
+"""Moved to rhemes/wikifetch.py; run: python3 -I scripts/wikisource/rh.py fetch."""
+import sys
 from pathlib import Path
 
-API = 'https://en.wikisource.org/w/api.php'
-UA = 'douay-rheims-wikisource-tools/0.1 (page proofreading helper)'
-ROOT = Path(__file__).resolve().parents[2] / 'wikisource/1582-rhemes-nt'
-INDEX = '1582_Rhemes_New_Testament.pdf'
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _shim  # noqa: E402
 
-
-def get(params):
-    url = API + '?' + urllib.parse.urlencode({**params, 'format': 'json', 'formatversion': 2})
-    with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': UA}), timeout=60) as r:
-        return json.load(r)
-
-
-def fetch(nums):
-    out = {}
-    for i in range(0, len(nums), 25):
-        chunk = nums[i:i + 25]
-        titles = '|'.join(f'Page:{INDEX}/{n}' for n in chunk)
-        d = get({'action': 'query', 'prop': 'revisions', 'rvprop': 'ids|content|timestamp|user', 'rvslots': 'main', 'titles': titles})
-        for p in d['query']['pages']:
-            n = int(p['title'].rsplit('/', 1)[1])
-            if 'missing' in p:
-                out[n] = None
-                continue
-            r = p['revisions'][0]
-            out[n] = {'text': r['slots']['main']['content'], 'revid': r['revid'], 'user': r['user'], 'timestamp': r['timestamp']}
-        time.sleep(1)
-    return out
-
-
-def norm(t):
-    """Live text with MediaWiki's per-save user="…" and trailing newline normalised away."""
-    return re.sub(r'(<pagequality level="\d" )user="[^"]*"', r'\1user=""', t).rstrip('\n')
-
-
-def main():
-    a, b = map(int, sys.argv[1].split('-'))
-    out = Path(sys.argv[2])
-    out.mkdir(parents=True, exist_ok=True)
-    live = fetch(list(range(a, b + 1)))
-    revs, differ = {}, []
-    for n, v in live.items():
-        if v is None:
-            print(f'{n}: not on Wikisource yet')
-            continue
-        (out / f'{n}.wiki').write_text(v['text'])
-        revs[n] = {k: v[k] for k in ('revid', 'user', 'timestamp')}
-        ours = ROOT / 'pages' / f'{n}.wiki'
-        if ours.exists() and norm(ours.read_text()) != norm(v['text']):
-            differ.append(n)
-    (out / 'revs.json').write_text(json.dumps(revs, indent=1))
-    print(f'{len(revs)} live pages fetched; {len(differ)} differ from ours: {differ}')
-
-
-if __name__ == '__main__':
-    main()
+_shim.run(__name__, 'rhemes.wikifetch', 'fetch')

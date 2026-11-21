@@ -1,4 +1,4 @@
-from fidelity import count, compare
+from rhemes.fidelity import count, compare
 
 
 def test_counts_print_features():
@@ -48,7 +48,7 @@ def test_identical_and_gain_are_clean():
 
 
 import pytest
-from fidelity import parse_overrides, strip_override_args, refusals
+from rhemes.fidelity import parse_overrides, strip_override_args, refusals
 
 
 def test_overrides_require_reason():
@@ -77,13 +77,13 @@ def test_unknown_feature_rejected():
 
 
 def test_override_args_keeps_only_override_flags():
-    from fidelity import override_args
+    from rhemes.fidelity import override_args
     argv = ['1-2', '--post', '--allow-shift', 'ls:1', '--summary', 's', '--reason', 'per XML']
     assert override_args(argv) == ['--allow-shift', 'ls:1', '--reason', 'per XML']
 
 
 def test_override_args_value_equal_to_other_arg():
-    from fidelity import override_args
+    from rhemes.fidelity import override_args
     assert override_args(['s', '--summary', 's', '--reason', 's']) == ['--reason', 's']
 
 
@@ -94,13 +94,13 @@ def test_frequent_print_marks_guarded():
 
 
 def test_where_locates_the_changed_words():
-    from fidelity import where
+    from rhemes.fidelity import where
     before = 'a Pa{{ls}}{{ls}}ion b {{ls}}aid c'
     after = 'a Pa{{ls}}sion b {{ls}}aid c'
     assert where(before, after, 'ls') == ['Pa{{ls}}{{ls}}ion → Pa{{ls}}sion']
 
 
 def test_where_splits_words_from_markup():
-    from fidelity import where
+    from rhemes.fidelity import where
     assert where("x</noinclude>Pa{{ls}}{{ls}}ion<noinclude>", "x</noinclude>Passion<noinclude>", 'ls') == ['Pa{{ls}}{{ls}}ion → Passion']
     assert where("{{sc|The}} word", "The word", 'sc') == ['{{sc| → ∅']
