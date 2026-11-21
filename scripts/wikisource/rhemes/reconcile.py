@@ -15,7 +15,8 @@ from pathlib import Path
 from typing import NamedTuple
 
 from . import paths
-from .generate import load_books
+from .sources import load_books, ocr_by_page
+from . import sources
 from .jsonfmt import write_like
 from .wikipost import norm
 
@@ -207,19 +208,6 @@ def cmd_verify(book):
     return bad
 
 
-def ocr_by_page(book, source):
-    """OCR page text keyed by wiki page, numbered as generate.py numbers them (after the Argument)."""
-    from . import generate
-    from .ocrpages import TK, book_pages
-    if source == 'transkribus' and not (TK / book / 'manifest.json').exists():
-        return {}  # Matthew was read with Tesseract only
-    cfg = load_books(REPO)[book]
-    first = cfg['first']
-    if generate.ARGUMENT.get(book) == first:
-        first += 2 if book in generate.ARGUMENT_SPLIT else 1
-    return {first + n: p['text'] for n, p in enumerate(book_pages(book, source)) if first + n <= cfg['last']}
-
-
 def git_lock():
     common = subprocess.run(['git', '-C', str(REPO), 'rev-parse', '--git-common-dir'], capture_output=True, text=True).stdout.strip()
     return (REPO / common).resolve() / 'odr-data.lock'
@@ -229,7 +217,7 @@ def cmd_ladder(book):
     """Decide every letter-shape / spelling conflict of the book; write reconcile/BOOK.jsonl."""
     from . import ladder
     cfg = load_books(REPO)[book]
-    tokens = ladder.xml_tokens(ladder.XML.read_text(), book)
+    tokens = ladder.xml_tokens(sources.xml_text(), book)
     same_book = ladder.same_book_counts(tokens)
     tk, ts = ocr_by_page(book, 'transkribus'), ocr_by_page(book, 'tesseract')
     decisions, unaligned = [], []
@@ -281,14 +269,14 @@ def cmd_adopt(book, argv):
         import shutil as sh
         with tempfile.TemporaryDirectory() as tmp:
             files = []
-            for f in ladder.book_files(REPO, book):
+            for f in sources.data_files(book, REPO):
                 dst = Path(tmp) / f.relative_to(REPO)
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 sh.copyfile(f, dst)
                 files.append(dst)
             applied, unlocated = ladder.adopt(files, decisions, ov, Path(tmp) / 'lock')
     else:
-        applied, unlocated = ladder.adopt(ladder.book_files(REPO, book), decisions, ov, git_lock())
+        applied, unlocated = ladder.adopt(sources.data_files(book, REPO), decisions, ov, git_lock())
     print(f'{"applied" if "--write" in argv else "would apply"}: {len(applied)}; unlocated: {len(unlocated)}')
     for d, why in unlocated:
         print(f'  page {d.conflict.page}: {d.conflict.committed} / {d.conflict.generated}: {why}')

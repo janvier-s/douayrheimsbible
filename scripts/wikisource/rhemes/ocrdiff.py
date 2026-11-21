@@ -20,7 +20,7 @@ from pathlib import Path
 from collections import Counter, defaultdict
 import difflib, json, re, sys
 
-from . import ocrpages as O, paths
+from . import paths, sources as O
 from .transkribus import tag_margins, PAGE_W
 
 REPO = paths.REPO

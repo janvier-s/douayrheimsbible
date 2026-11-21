@@ -10,7 +10,6 @@ Rungs, cheapest first; the first that settles a conflict wins:
   4. Unresolved: a scan crop, only after the owner has seen the count.
 """
 import json
-import os
 import re
 import unicodedata
 import xml.etree.ElementTree as ET
@@ -22,7 +21,6 @@ import sys
 from . import fidelity, text
 from .jsonfmt import write_like
 
-XML = Path(os.environ.get('RHEMES_XML', Path.home() / 'Documents/Bible-n-stuff/original-douay-rheims-nt/A16049.xml'))
 BOOK_DIV = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John',
             'acts': 'Acts of the Apostles', 'romans': 'Romans'}
 LADDER_CLASSES = {'ls:ss', 'ls:other', 'macron', 'text'}
@@ -495,11 +493,6 @@ def adopt(files, decisions, ov, lock):
         return applied, unlocated
     finally:
         lock.rmdir()
-
-
-def book_files(repo, book):
-    base = Path(repo) / 'static/data/odr-original'
-    return [base / f'{book}.json', *sorted((base / book / 'annotations').glob('*.json'))]
 
 
 def same_book_counts(tokens):

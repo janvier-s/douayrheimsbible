@@ -9,10 +9,9 @@ from pathlib import Path
 import difflib, functools, json, re, sys, unicodedata
 import xml.etree.ElementTree as ET
 
-from . import paths
+from . import paths, sources
 
 REPO = paths.REPO
-XML = REPO / 'sources/eebo-tcp/A16049.xml'  # identical copy of original-douay-rheims-nt/A16049.xml
 BOOKN = {
     'matthew': ('gospel', 'Matthew'),
     'mark': ('gospel', 'Mark'),
@@ -134,7 +133,7 @@ def _add_text(st, s):
 
 @functools.lru_cache(maxsize=1)
 def xml_root():
-    return ET.parse(XML).getroot()
+    return ET.parse(sources.xml_path()).getroot()
 
 
 def xml_chapters(book):

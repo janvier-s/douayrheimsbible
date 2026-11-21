@@ -11,8 +11,8 @@ import unicodedata
 import json, os, re, sys, difflib
 from pathlib import Path
 
-from .ocrpages import book_pages
-from . import paths, text
+from .sources import book_pages
+from . import paths, sources, text
 
 # Set by main(argv); the defaults let the module be imported (tests) without side effects.
 REPO = paths.REPO
@@ -21,9 +21,7 @@ DATA = REPO / 'static/data/odr-original'
 BOOKS_JSON = 'wikisource/1582-rhemes-nt/books.json'
 
 
-def load_books(repo):
-    """Per-book run table: first/last wiki page, ornaments flag, golden flag."""
-    return json.loads((Path(repo) / BOOKS_JSON).read_text())
+load_books = sources.load_books
 # Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
 # Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
 # its pages stay as they are; Transkribus reads the print better from Mark on.
