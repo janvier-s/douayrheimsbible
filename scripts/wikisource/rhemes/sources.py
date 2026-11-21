@@ -228,37 +228,72 @@ def book_pages(book, source=None):
     import os
     if (source or os.environ.get('WS_OCR', 'tesseract')) == 'transkribus':
         return transkribus_pages(book)
-    pages, seen = [], {}
-    chapters = sorted((int(p.name) for p in (SCAN / book).iterdir() if p.name.isdigit()))
-    for ch in chapters:
-        n = 1
-        while (SCAN / book / str(ch) / f'{n}.tsv').exists():
-            tsv = SCAN / book / str(ch) / f'{n}.tsv'
-            txt = (SCAN / book / str(ch) / f'{n}.txt').read_text(errors='replace')
-            h = hashlib.sha1(re.sub(r'\s+', '', txt).encode()).hexdigest()
-            if h in seen:
-                pages[seen[h]]['chapters'].append(ch)
-            else:
-                words = read_tsv(tsv)
-                width = max((w['left'] + w['width'] for w in words), default=1)
-                seen[h] = len(pages)
-                body = body_lines(words, width)
-                img = IMG / book / str(ch) / 'hires' / f'{n}.jpg'
-                if img.exists():
-                    mark_indents(body, img, max(width, read_page_width(tsv)))
-                pages.append(dict(chapters=[ch], src=f'{book}/{ch}/{n}', body=body, text=txt,
-                                  catch=catchword(words, width)))
-            n += 1
+    pages = []
+    for ch, n, tsv, txt, also in scan_pages(book):
+        words = read_tsv(tsv)
+        width = max((w['left'] + w['width'] for w in words), default=1)
+        body = body_lines(words, width)
+        img = IMG / book / str(ch) / 'hires' / f'{n}.jpg'
+        if img.exists():
+            mark_indents(body, img, max(width, read_page_width(tsv)))
+        pages.append(dict(chapters=[ch] + also, src=f'{book}/{ch}/{n}', body=body, text=txt,
+                          catch=catchword(words, width)))
     return pages
 
 
+def scan_pages(book):
+    """The sancta-scan pages of one book, in order: (chapter, n, Tesseract tsv, text, later chapters
+    that start on it). A chapter that starts mid-page repeats that page; the repeat is merged."""
+    out, seen = [], {}
+    for ch in sorted(int(p.name) for p in (SCAN / book).iterdir() if p.name.isdigit()):
+        n = 1
+        while (SCAN / book / str(ch) / f'{n}.tsv').exists():
+            txt = (SCAN / book / str(ch) / f'{n}.txt').read_text(errors='replace')
+            h = hashlib.sha1(re.sub(r'\s+', '', txt).encode()).hexdigest()
+            if h in seen:
+                out[seen[h]][4].append(ch)
+            else:
+                seen[h] = len(out)
+                out.append((ch, n, SCAN / book / str(ch) / f'{n}.tsv', txt, []))
+            n += 1
+    return out
+
+
+VISION = '.vision.tsv'
+
+
+def scan_vision(book, ch, n):
+    """Apple Vision's reading of one sancta-scan page (rh.py ocr-vision on the hires image)."""
+    return IMG / book / str(ch) / 'hires' / f'{n}{VISION}'
+
+
+def tsv_text(tsv):
+    """A TSV's words as text, one OCR line per line."""
+    lines = {}
+    for w in read_tsv(tsv):
+        lines.setdefault((w['block'], w['par'], w['line']), []).append(w['text'])
+    return '\n'.join(' '.join(ws) for ws in lines.values())
+
+
+def vision_pages(book):
+    """Vision's text per page, in book_pages order: on the Transkribus cut pages where the book has
+    them, else on the sancta scans (Matthew). A page without a .vision.tsv gives ''."""
+    if (TK / book / 'manifest.json').exists():
+        tsvs = [TK / book / f"{m['id']}{VISION}" for m in json.loads((TK / book / 'manifest.json').read_text())]
+    else:
+        tsvs = [scan_vision(book, ch, n) for ch, n, *_ in scan_pages(book)]
+    return [dict(text=tsv_text(t) if t.exists() else '') for t in tsvs]
+
+
 def ocr_by_page(book, source):
-    """OCR page text keyed by wiki page, numbered as generate.py numbers them (after the Argument)."""
+    """OCR page text keyed by wiki page, numbered as generate.py numbers them (after the Argument).
+    source: 'tesseract', 'transkribus' or 'vision'."""
     from . import config
     if source == 'transkribus' and not (TK / book / 'manifest.json').exists():
-        return {}  # Matthew was read with Tesseract only
+        return {}  # Matthew was read with Tesseract only (and Vision: source 'vision')
     cfg = load_books()[book]
     first = cfg['first']
     if config.book(book).argument_page == first:  # chapter 1 starts after the Argument's pages
         first += config.argument_pages(book)
-    return {first + n: p['text'] for n, p in enumerate(book_pages(book, source)) if first + n <= cfg['last']}
+    pages = vision_pages(book) if source == 'vision' else book_pages(book, source)
+    return {first + n: p['text'] for n, p in enumerate(pages) if first + n <= cfg['last'] and (p['text'] or source != 'vision')}

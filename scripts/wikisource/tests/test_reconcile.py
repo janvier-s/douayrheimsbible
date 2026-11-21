@@ -104,6 +104,12 @@ def test_ocr_by_page_missing_source_is_empty():
     assert min(reconcile.ocr_by_page('matthew', 'tesseract')) == 31
 
 
+def test_vision_numbered_like_tesseract():
+    """Matthew's Vision reading (sancta scans) is keyed by the same wiki pages as its Tesseract."""
+    vis, ts = reconcile.ocr_by_page('matthew', 'vision'), reconcile.ocr_by_page('matthew', 'tesseract')
+    assert vis.keys() == ts.keys() and min(vis) == 31
+
+
 def test_verify_decisions_against_pages():
     from rhemes import ladder
     head = '<noinclude><pagequality level="1" user="" />{{rh|1|X|Y}}</noinclude>'

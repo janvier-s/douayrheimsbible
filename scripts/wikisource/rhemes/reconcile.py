@@ -237,7 +237,8 @@ def _ladder(book, out):
     cfg = load_books(REPO)[book]
     tokens = ladder.xml_tokens(sources.xml_text(), book)
     same_book = ladder.same_book_counts(tokens)
-    tk, ts = ocr_by_page(book, 'transkribus'), ocr_by_page(book, 'tesseract')
+    # a book without Transkribus (Matthew) has Apple Vision in its place, as in diff ocr; neither counts for s against ſ
+    tk, ts = ocr_by_page(book, 'transkribus') or ocr_by_page(book, 'vision'), ocr_by_page(book, 'tesseract')
     decisions, unaligned = [], []
     with tempfile.TemporaryDirectory() as tmp:
         gen = generate_book(book, Path(tmp) / book)

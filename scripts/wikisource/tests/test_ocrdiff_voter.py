@@ -34,3 +34,22 @@ def test_third_voter_prefers_vision(tmp_path, monkeypatch):
 def test_third_voter_falls_back_to_tesseract(tmp_path, monkeypatch):
     _book(tmp_path, monkeypatch, vision=False)
     assert [w[0] for w in ocrdiff.ocr_pages('acts', 'ts')[0][1]] == ['tesseract']
+
+
+def test_book_without_transkribus_votes_vision_against_tesseract(tmp_path, monkeypatch):
+    """Matthew: Vision on the sancta scan in the 'tk' slot, Tesseract in 'ts'; a repeated page is read once."""
+    scan, img = tmp_path / 'scan', tmp_path / 'img'
+    for ch in (1, 2):
+        (scan / 'matthew' / str(ch)).mkdir(parents=True)
+        (img / 'matthew' / str(ch) / 'hires').mkdir(parents=True)
+    _tsv(scan / 'matthew/1/1.tsv', 'tesseract')
+    (scan / 'matthew/1/1.txt').write_text('page one')
+    _tsv(scan / 'matthew/2/1.tsv', 'tesseract')
+    (scan / 'matthew/2/1.txt').write_text('page one')  # chapter 2 starts on the same page
+    _tsv(img / 'matthew/1/hires/1.vision.tsv', 'vision')
+    monkeypatch.setattr(O, 'TK', tmp_path / 'tk')
+    monkeypatch.setattr(O, 'SCAN', scan)
+    monkeypatch.setattr(O, 'IMG', img)
+    [(pid, body, _)] = ocrdiff.ocr_pages('matthew', 'tk')
+    assert pid == '1/1' and [w[0] for w in body] == ['vision']
+    assert [w[0] for w in ocrdiff.ocr_pages('matthew', 'ts')[0][1]] == ['tesseract']

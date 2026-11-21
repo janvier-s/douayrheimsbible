@@ -15,7 +15,9 @@ Separate passes report w vs vv (glyph class per witness) and Tesseract's ſ evid
 
 Usage: python3 -I scripts/wikisource/rh.py diff ocr <book> <out_dir>
 Writes <out_dir>/<book>-findings.tsv (one row per location) and prints a summary
-as JSON for the report. Needs transkribus.py's split (pages/<book>/manifest.json).
+as JSON for the report. Reads transkribus.py's split (pages/<book>/manifest.json); a book
+without one (Matthew) votes Apple Vision against Tesseract on the sancta scans, and its
+'tk' column is then Vision (rh.py ocr-vision ~/facsimiles/sancta/<book>/*/hires).
 """
 from pathlib import Path
 from collections import Counter, defaultdict
@@ -147,7 +149,11 @@ def third_voter(d, pid, scan):
 
 
 def ocr_pages(book, source):
-    """[(page id, body, margin)] for the book's argument then its pages."""
+    """[(page id, body, margin)] for the book's argument then its pages. A book without a
+    Transkribus split (Matthew) is read on the sancta scans instead: Apple Vision in the 'tk'
+    slot, Tesseract in 'ts', page ids 'chapter/n'."""
+    if not (O.TK / book / 'manifest.json').exists():
+        return scan_ocr_pages(book, source)
     pages = []
     arg = O.TK / f'{book}-argument'
     if (arg / 'manifest.json').exists():
@@ -159,6 +165,17 @@ def ocr_pages(book, source):
         tsv = O.TK / book / f"{m['id']}.tsv" if source == 'tk' else third_voter(O.TK / book, m['id'], O.SCAN / book)
         if tsv.exists():
             pages.append((m['id'],) + page_streams(tsv, source, m['id']))
+    return pages
+
+
+def scan_ocr_pages(book, source):
+    """ocr_pages on the sancta scans: Vision ('tk') or Tesseract ('ts'). Both carry Tesseract's
+    TSV layout, so both have their margins tagged by the column-edge rule."""
+    pages = []
+    for ch, n, tess, *_ in O.scan_pages(book):
+        tsv = O.scan_vision(book, ch, n) if source == 'tk' else tess
+        if tsv.exists():
+            pages.append((f'{ch}/{n}',) + page_streams(tsv, 'ts', f'{ch}/{n}'))
     return pages
 
 
