@@ -68,7 +68,7 @@
 {"page": 55, "committed": "bleſsing", "generated": "bleſſing", "before": ["to", "geue", "their"], "after": ["where", "they", "come."], "rung": 3, "winner": "generated", "evidence": "book majority 1:14; xml bleſſing"}
 {"page": 55, "committed": "bleſsing", "generated": "bleſſing", "before": ["they", "come.", "Which"], "after": ["muſt", "needes", "be"], "rung": 3, "winner": "generated", "evidence": "book majority 1:14; xml bleſſing"}
 {"page": 55, "committed": "Confeſse", "generated": "Confeſſe", "before": ["ſelf", "Beelzebub.", "32."], "after": ["me.", "Confeſsing", "of"], "rung": 3, "winner": "generated", "evidence": "ocr Confeſſe; xml Confeſſe"}
-{"page": 55, "committed": "Confeſsing", "generated": "Confeſſing", "before": ["32.", "Confeſse", "me."], "after": ["of", "Chriſt", "and"], "rung": 4, "winner": "", "evidence": "xml -; book 1:1"}
+{"page": 55, "committed": "Confeſsing", "generated": "Confeſſing", "before": ["32.", "Confeſse", "me."], "after": ["of", "Chriſt", "and"], "rung": 4, "winner": "generated", "evidence": "scan collage 2026-11-21 (owner: settle the open words): print Confeſſing"}
 {"page": 55, "committed": "confeſsing", "generated": "confeſſing", "before": ["eſteemeth", "the", "open"], "after": ["of", "him,", "that"], "rung": 3, "winner": "generated", "evidence": "book majority 1:2; xml confeſſing"}
 {"page": 55, "committed": "confeſse", "generated": "confeſſe", "before": ["perſecuted:", "ſo", "to"], "after": ["him,", "and", "his"], "rung": 3, "winner": "generated", "evidence": "book majority 0:4; xml confeſſe"}
 {"page": 56, "committed": "goſpel", "generated": "gospel", "before": ["which", "their", "new"], "after": ["breedeth.", "Beza", "in"], "rung": 2, "winner": "committed", "evidence": "xml goſpel"}
@@ -76,7 +76,7 @@
 {"page": 56, "committed": "bleſsed", "generated": "bleſſed", "before": ["is", "preached:", "and"], "after": ["is", "he", "that"], "rung": 3, "winner": "generated", "evidence": "book majority 0:24"}
 {"page": 57, "committed": "confeſse", "generated": "confeſſe", "before": ["10,", "21.", "I"], "after": ["to", "thee", "O"], "rung": 3, "winner": "generated", "evidence": "book majority 0:5"}
 {"page": 58, "committed": "confeſsion,", "generated": "confeſſion,", "before": ["penitents", "comming", "to"], "after": ["τοὺς", "μετανοοῦντας.", "Sozom."], "rung": 3, "winner": "generated", "evidence": "book majority 0:5; xml confeſſion"}
-{"page": 58, "committed": "poſsible.", "generated": "poſſible.", "before": ["ſweete.", "The", "commaundements"], "after": ["What", "is", "this"], "rung": 4, "winner": "", "evidence": "xml -; book 3:4"}
+{"page": 58, "committed": "poſsible.", "generated": "poſſible.", "before": ["ſweete.", "The", "commaundements"], "after": ["What", "is", "this"], "rung": 4, "winner": "generated", "evidence": "scan collage 2026-11-21 (owner: settle the open words): print poſſible."}
 {"page": 58, "committed": "vnpoſsible", "generated": "vnpoſſible", "before": ["ſay,", "they", "are"], "after": ["to", "be", "kept."], "rung": 3, "winner": "generated", "evidence": "ocr vnpoſſible; xml vnpoſſible"}
 {"page": 58, "committed": "poſseſse", "generated": "poſſeſſe", "before": ["the", "deuil", "ſhal"], "after": ["their", "Nation,", "46"], "rung": 3, "winner": "generated", "evidence": "book majority 0:6; xml poſſeſſe"}
 {"page": 59, "committed": "Es.", "generated": "Eſ.", "before": ["ſhal", "he", "ſhew"], "after": ["42,", "1.", "He"], "rung": 3, "winner": "generated", "evidence": "book majority 0:4"}
@@ -105,7 +105,7 @@
 {"page": 71, "committed": "Paſsion,", "generated": "Paſſion,", "before": ["his", "Croſſe", "and"], "after": ["that", "he", "alſo"], "rung": 2, "winner": "committed", "evidence": "xml Paſsion"}
 {"page": 71, "committed": "neceſsarie", "generated": "neceſſarie", "before": ["one", "to", "be"], "after": ["to", "ſaluation."], "rung": 3, "winner": "generated", "evidence": "book majority 0:13; xml neceſſarie"}
 {"page": 72, "committed": "Bleſsed", "generated": "Bleſſed", "before": ["ſaid", "to", "him,"], "after": ["art", "thou", "Simon"], "rung": 3, "winner": "generated", "evidence": "book majority 0:14"}
-{"page": 73, "committed": "profeſsiō", "generated": "profeſſiō", "before": ["the", "cheefe)", "the"], "after": ["of", "that", "high"], "rung": 3, "winner": "generated", "evidence": "xml profeſſiō; committed ſs from the stem rule (owner 2026-11-21)"}
+{"page": 73, "committed": "profeſsiō", "generated": "profeſſiō", "before": ["the", "cheefe)", "the"], "after": ["of", "that", "high"], "rung": 4, "winner": "generated", "evidence": "scan collage 2026-11-21: print profeſſiō"}
 {"page": 73, "committed": "neceſsarie", "generated": "neceſſarie", "before": ["faith,", "was", "a"], "after": ["qualitie", "and", "condition"], "rung": 3, "winner": "generated", "evidence": "book majority 0:13; xml neceſſarie"}
 {"page": 73, "committed": "Bleſsed", "generated": "Bleſſed", "before": ["in", "Mat", "17."], "after": ["art", "thou.", "Though"], "rung": 3, "winner": "generated", "evidence": "ocr Bleſſed; xml Bleſſed"}
 {"page": 73, "committed": "profeſsed", "generated": "profeſſed", "before": ["before", "beleued", "and"], "after": ["the", "ſame", "thing"], "rung": 3, "winner": "generated", "evidence": "book majority 0:1; xml profeſſed"}
@@ -144,7 +144,7 @@
 {"page": 81, "committed": "ſucceſsors,", "generated": "ſucceſſors,", "before": ["them", "to", "their"], "after": ["euery", "one", "in"], "rung": 3, "winner": "generated", "evidence": "book majority 0:6; xml ſucceſſors"}
 {"page": 81, "committed": "confeſsed", "generated": "confeſſed", "before": ["the", "Nouatians,", "who"], "after": ["that", "the", "Prieſts"], "rung": 3, "winner": "generated", "evidence": "ocr confeſſed; xml confeſſed"}
 {"page": 81, "committed": "Eccleſ.", "generated": "Eccles.", "before": ["Cypr.", "de", "vnit."], "after": ["nu.", "7.", "8"], "rung": 3, "winner": "committed", "evidence": "book majority 1:0"}
-{"page": 81, "committed": "Paſsion.", "generated": "Paſſion.", "before": ["Iurie", "toward", "his"], "after": ["Chap.", "XIX.", "He"], "rung": 4, "winner": "", "evidence": "xml -; book 8:6"}
+{"page": 81, "committed": "Paſsion.", "generated": "Paſſion.", "before": ["Iurie", "toward", "his"], "after": ["Chap.", "XIX.", "He"], "rung": 4, "winner": "generated", "evidence": "scan collage 2026-11-21 (owner: settle the open words): print Paſſion."}
 {"page": 81, "committed": "paſſing", "generated": "paſsing", "before": ["As", "alſo", "what"], "after": ["revvard", "they", "ſhal"], "rung": 3, "winner": "generated", "evidence": "ocr paſsing; xml paſsing"}
 {"page": 81, "committed": "dimiſse", "generated": "dimiſſe", "before": ["a", "man", "to"], "after": ["his", "vvife,", "for"], "rung": 3, "winner": "generated", "evidence": "ocr dimiſſe; xml dimiſſe"}
 {"page": 81, "committed": "dimiſse", "generated": "dimiſſe", "before": ["diuorce,", "and", "to"], "after": ["her?", "He", "ſaith"], "rung": 3, "winner": "generated", "evidence": "ocr dimiſſe; xml dimiſſe"}
@@ -153,7 +153,7 @@
 {"page": 82, "committed": "dimiſsed,", "generated": "dimiſſed,", "before": ["her", "that", "is"], "after": ["committeth", "aduoutrie.", "His"], "rung": 3, "winner": "generated", "evidence": "book majority 0:6; xml dimiſſed"}
 {"page": 82, "committed": "poſseſsions.", "generated": "poſſeſſions.", "before": ["he", "had", "many"], "after": ["And", "Iesvs", "ſaid"], "rung": 3, "winner": "generated", "evidence": "xml poſſeſſions; committed ſs from the stem rule (owner 2026-11-21)"}
 {"page": 82, "committed": "impoſsible:", "generated": "impoſſible:", "before": ["men", "this", "is"], "after": ["but", "vvith", "God"], "rung": 3, "winner": "generated", "evidence": "xml impoſſible; committed ſs from the stem rule (owner 2026-11-21)"}
-{"page": 82, "committed": "poſsible.", "generated": "poſſible.", "before": ["al", "things", "are"], "after": ["The", "Goſpel", "vpō"], "rung": 4, "winner": "", "evidence": "xml -; book 3:4"}
+{"page": 82, "committed": "poſsible.", "generated": "poſſible.", "before": ["al", "things", "are"], "after": ["The", "Goſpel", "vpō"], "rung": 4, "winner": "generated", "evidence": "scan collage 2026-11-21 (owner: settle the open words): print poſſible."}
 {"page": 83, "committed": "poſseſse", "generated": "poſſeſſe", "before": ["fold,", "and", "ſhal"], "after": ["life", "euerlaſting.⊣", "And"], "rung": 3, "winner": "generated", "evidence": "book majority 0:6; xml poſſeſſe"}
 {"page": 83, "committed": "dimiſse", "generated": "dimiſſe", "before": ["aduoutrie", "one", "may"], "after": ["an", "other,", "Mat."], "rung": 3, "winner": "generated", "evidence": "book majority 0:10; xml dimiſſe"}
 {"page": 83, "committed": "impoſsible,", "generated": "impoſſible,", "before": ["ſay", "it", "is"], "after": ["and", "that", "for"], "rung": 3, "winner": "generated", "evidence": "xml impoſſible; committed ſs from the stem rule (owner 2026-11-21)"}
@@ -164,7 +164,7 @@
 {"page": 83, "committed": "bleſsing", "generated": "bleſſing", "before": ["of", "Religious", "mens"], "after": ["ſee", "Ruffin.", "li."], "rung": 3, "winner": "generated", "evidence": "book majority 1:14; xml bleſſing"}
 {"page": 83, "committed": "neceſsary", "generated": "neceſſary", "before": ["commaundements,", "which", "is"], "after": ["for", "euery", "man:"], "rung": 3, "winner": "generated", "evidence": "book majority 0:2; xml neceſſary"}
 {"page": 83, "committed": "profeſse,", "generated": "profeſſe,", "before": ["Religious", "men", "doe"], "after": ["according", "to", "Chriſtes"], "rung": 3, "winner": "generated", "evidence": "book majority 0:1; xml profeſſe"}
-{"page": 83, "committed": "poſsible.", "generated": "poſſible.", "before": ["26.", "Al", "things"], "after": ["This", "of", "the"], "rung": 2, "winner": "committed", "evidence": "xml poſsible"}
+{"page": 83, "committed": "poſsible.", "generated": "poſſible.", "before": ["26.", "Al", "things"], "after": ["This", "of", "the"], "rung": 4, "winner": "committed", "evidence": "scan collage 2026-11-21: print poſsible."}
 {"page": 83, "committed": "poſsible", "generated": "poſſible", "before": ["nedels", "eye,", "being"], "after": ["to", "God,", "although"], "rung": 3, "winner": "generated", "evidence": "xml poſſible; committed ſs from the stem rule (owner 2026-11-21)"}
 {"page": 85, "committed": "compaſsion", "generated": "compaſſion", "before": ["And", "Iesvs", "hauing"], "after": ["on", "them,", "touched"], "rung": 3, "winner": "generated", "evidence": "xml compaſſion; committed ſs from the stem rule (owner 2026-11-21)"}
 {"page": 86, "committed": "bleſsed,", "generated": "bleſſed,", "before": ["34.", "Come", "ye"], "after": ["poſseſse", "the", "kingdom"], "rung": 3, "winner": "generated", "evidence": "book majority 0:23; xml bleſſed"}

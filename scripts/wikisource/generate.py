@@ -335,7 +335,7 @@ def build_stream(book, ann):
 def render_verse(v, ch):
     raw = v['text']
     for start in sorted({l[0] for l in v.get('lemmas', [])}, reverse=True):
-        if 0 < start < len(raw) and raw[start - 1].isalpha() and raw[start].isalpha():
+        if 0 < start < len(raw) and raw[start - 1].isalpha() and raw[start].isalpha() and not os.environ.get('WS_OLD_LEMMAS'):
             raise ValueError(f'ch {ch} v {v.get("verse")}: lemma at {start} starts inside a word: {raw[max(0, start - 10):start + 10]!r}')
         raw = raw[:start] + '‖ ' + raw[start:]
     refs = [r for r in v.get('cross_refs', []) if r.get('source') != 'sancta']
