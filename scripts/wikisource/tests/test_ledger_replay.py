@@ -47,3 +47,70 @@ def test_xml_ledger_replays_history(tmp_path):
     rep = fixes.apply([fixes.Entry.from_dict({**e.to_dict(), 'target': ['xml']}) for e in xml_entries], ctx, write=True)
     assert rep.counts()['conflict'] == 0, [r.problems for r in rep.rows if r.problems][:5]
     assert _text(x.read_bytes().decode()) == _text(p.read_bytes().decode())
+
+
+def _git(*args):
+    return subprocess.run(['git', '-C', str(paths.REPO), *args], capture_output=True, check=True).stdout
+
+
+def _checkout_book(rev, book, dest):
+    """The book's odr-original and odr files at rev, in a repo layout under dest."""
+    for root in ('static/data/odr-original', 'static/data/odr'):
+        names = _git('ls-tree', '-r', '--name-only', rev, '--', f'{root}/{book}.json', f'{root}/{book}/annotations').decode().split()
+        for n in names:
+            (dest / n).parent.mkdir(parents=True, exist_ok=True)
+            (dest / n).write_bytes(_git('show', f'{rev}:{n}'))
+
+
+def _shape(s):
+    from rhemes import text
+    return text.fold_chars(s).replace('VV', 'W')
+
+
+def test_json_entries_replay_history(tmp_path):
+    """The JSON entries of each commit named in their evidence ("applied in <hash>"), applied in ledger order to
+    the text at <hash>^, give the text at <hash> at their loc. Where the same commit also ran a letter-shape
+    bulk pass (ſ, vv: the baseline, spec §8), the replay runs on the letter-shape fold (_shape) where an old
+    text is not in <hash>^ as it stands, and the result must equal <hash>'s text, or its fold: the bulk pass is
+    then the only other change at that loc."""
+    import re
+    from rhemes import loc as locmod
+    groups = {}
+    for es in _all().values():
+        for e in es:
+            if set(e.target) & {'odr-original', 'odr'}:
+                m = re.search(r'applied in ([0-9a-f]{7,})', e.evidence)
+                assert m, e.id
+                groups.setdefault((m.group(1), e.book), []).append(e)
+    assert groups, 'no JSON entries'
+    for (rev, book), es in groups.items():
+        before, after = tmp_path / f'{rev}-a', tmp_path / f'{rev}-b'
+        _checkout_book(f'{rev}^', book, before)
+        _checkout_book(rev, book, after)
+        for t in ('odr-original', 'odr'):
+            sa = locmod.load_store(before / fixes.ROOTS[t], book)
+            sb = locmod.load_store(after / fixes.ROOTS[t], book)
+            cur, folded = {}, set()
+            for e in es:
+                if t not in e.target:
+                    continue
+                old, new = e.pair(t)
+                if e.rest not in cur:
+                    c, k = locmod.resolve(sa, e.rest)
+                    cur[e.rest] = c.get(k)
+                v = cur[e.rest]
+                if e.is_value:
+                    assert v == old, (rev, e.id, t, 'value is not old')
+                    cur[e.rest] = new
+                    continue
+                if e.rest not in folded and v.count(old) != 1:
+                    folded.add(e.rest)
+                    v = _shape(v)
+                if e.rest in folded:
+                    old, new = _shape(old), _shape(new)
+                assert v.count(old) == 1, (rev, e.id, t, v.count(old))
+                cur[e.rest] = v.replace(old, new, 1)
+            for rest, v in cur.items():
+                c, k = locmod.resolve(sb, rest)
+                want = c.get(k)
+                assert v == want or _shape(v) == _shape(want), (rev, rest, t)
