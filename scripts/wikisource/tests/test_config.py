@@ -16,8 +16,11 @@ CODE_SHAPED = ['ARGUMENT_TITLES', 'ARGUMENT_BREAKS', 'ARGUMENT_SPLIT', 'INNER_AR
 
 
 def old_tables():
-    src = subprocess.run(['git', '-C', str(HERE), 'show', f'{BASE}:scripts/wikisource/rhemes/generate.py'],
-                         capture_output=True, text=True, check=True).stdout
+    r = subprocess.run(['git', '-C', str(HERE), 'show', f'{BASE}:scripts/wikisource/rhemes/generate.py'],
+                       capture_output=True, text=True)
+    if r.returncode:
+        pytest.skip(f'migration check: commit {BASE[:8]} (the old tables) is not in this clone')
+    src = r.stdout
     ns = {}
     for node in ast.parse(src).body:
         if isinstance(node, ast.Assign) and isinstance(node.targets[0], ast.Name) and node.targets[0].id in PLAIN + CODE_SHAPED:
@@ -25,30 +28,43 @@ def old_tables():
     return ns
 
 
+def config_mismatches(books, old):
+    """(book, field) where a book the old tables knew now differs from them. Books added later are not checked."""
+    known = set(old['RUNNING']) | set(old['TITLE_END'])
+    want = lambda name: dict(
+        ocr=old['OCR_SOURCE'].get(name, 'tesseract'), title_end=old['TITLE_END'].get(name),
+        argument_page=old['ARGUMENT'].get(name), argument_intros=tuple(old['ARGUMENT_INTROS'].get(name, [0])),
+        argument_roman=name in old['ARGUMENT_ROMAN'], first_head_cha=name in old['FIRST_HEAD_CHA'],
+        scripture_pages=old['SCRIPTURE_PAGES'].get(name), running=old['RUNNING'].get(name),
+        holy_week=old['HOLY_WEEK'].get(name))
+    return [(name, f) for name, b in books.items() if name in known
+            for f, v in want(name).items() if getattr(b, f) != v]
+
+
+def override_mismatches(ov, old):
+    """Tables that lost or changed an old entry. New entries (a new book) are fine."""
+    bad = []
+    for n in CODE_SHAPED:
+        new, was = ov[n], old[n]
+        if isinstance(was, (set, frozenset)):
+            ok = was <= new
+        elif n == 'SIDE_SC':  # lambdas: same result on a sample
+            ok = all(k in new and new[k]('x the Holy Ghost y') == f('x the Holy Ghost y') for k, f in was.items())
+        else:
+            ok = all(k in new and new[k] == v for k, v in was.items())
+        if not ok:
+            bad.append(n)
+    return bad
+
+
 def test_config_matches_old_tables():
     from rhemes import config
-    old = old_tables()
-    for name, b in config.books().items():
-        assert b.ocr == old['OCR_SOURCE'].get(name, 'tesseract'), name
-        assert b.title_end == old['TITLE_END'].get(name), name
-        assert b.argument_page == old['ARGUMENT'].get(name), name
-        assert list(b.argument_intros) == old['ARGUMENT_INTROS'].get(name, [0]), name
-        assert b.argument_roman == (name in old['ARGUMENT_ROMAN']), name
-        assert b.first_head_cha == (name in old['FIRST_HEAD_CHA']), name
-        assert b.scripture_pages == old['SCRIPTURE_PAGES'].get(name), name
-        assert b.running == old['RUNNING'].get(name), name
-        assert b.holy_week == old['HOLY_WEEK'].get(name), name
+    assert config_mismatches(config.books(), old_tables()) == []
 
 
 def test_overrides_match_old_tables():
     from rhemes import overrides
-    old = old_tables()
-    for n in CODE_SHAPED:
-        if n == 'SIDE_SC':  # lambdas: same keys, same result on a sample
-            assert overrides.SIDE_SC.keys() == old[n].keys()
-            assert all(overrides.SIDE_SC[k]('x the Holy Ghost y') == old[n][k]('x the Holy Ghost y') for k in old[n])
-        else:
-            assert getattr(overrides, n) == old[n], n
+    assert override_mismatches({n: getattr(overrides, n) for n in CODE_SHAPED}, old_tables()) == []
 
 
 def test_generator_has_no_book_tables():
@@ -68,3 +84,34 @@ def test_defaults_for_a_new_book():
     b = config.from_dict('1-corinthians', {'first': 452, 'last': 500})
     assert (b.ocr, b.argument_page, b.argument_intros, b.argument_roman, b.holy_week, b.ornaments, b.golden) == \
         ('tesseract', None, (0,), False, None, False, False)
+
+
+def test_migration_checks_allow_a_new_book():
+    """Adding a book (PLAYBOOK "Start a new book") must not trip the migration checks."""
+    from rhemes import config, overrides
+    old = old_tables()
+    books = dict(config.books())
+    books['1-corinthians'] = config.from_dict('1-corinthians', {'first': 452, 'last': 500, 'running': ['A', 'B'],
+                                                                'title_end': 'TO THE CORINTHIANS.'})
+    ov = {n: getattr(overrides, n) for n in CODE_SHAPED}
+    ov['PAGE_STARTS'] = {**ov['PAGE_STARTS'], ('1-corinthians', 3): 'some words'}
+    ov['INNER_ARGUMENT_NOTES'] = ov['INNER_ARGUMENT_NOTES'] | {'Aug. li. 1.'}
+    assert config_mismatches(books, old) == []
+    assert override_mismatches(ov, old) == []
+
+
+def test_migration_checks_catch_a_changed_value():
+    from rhemes import config, overrides
+    old = old_tables()
+    books = dict(config.books())
+    books['mark'] = books['mark']._replace(title_end='DING TO MARK.')
+    ov = {n: getattr(overrides, n) for n in CODE_SHAPED}
+    ov['CREND_AT'] = {}
+    assert config_mismatches(books, old) == [('mark', 'title_end')]
+    assert override_mismatches(ov, old) == ['CREND_AT']
+
+
+def test_old_tables_skip_without_the_base_commit(monkeypatch):
+    monkeypatch.setitem(globals(), 'BASE', '0' * 40)
+    with pytest.raises(pytest.skip.Exception):
+        old_tables()
