@@ -53,6 +53,8 @@
 
 ## Questions for the owner (asked once, in this review)
 
+**Answered 2026-11-21:** Q1 yes (Task 6 runs). Q2 later (Task 7 is skipped). Q3: odr-original and the pages keep the print's misprints, and odr gets the corrections; there is no citation exception.
+
 1. **Archive `paste-sheet.md`, `paste-state.json`, `paste_helper.py` and `scriptorium-request.md`?** Nothing references them except each other and the spec. The last change to any of them was 2026-11-18, and wikipost has done the posting since. If yes, Task 6 moves the two `.md` files into `docs/archive/wikisource/`, deletes `paste-state.json` and `paste_helper.py` (git history keeps them), and lists each one with its last commit in `docs/archive/wikisource/README.md`. If no, they stay and get a one-line "not part of the workflow" header.
 2. **The other repos.** Spec §4.5 also slims `original-douay-rheims-nt/RULES.md` to TEI specifics with a link here, and updates the umbrella `README.md` in `original-douay-rheims-1st-edition-critical/` (not a git repo). Both are outside this worktree. Do Task 7 (commit in the NT repo, no push; edit the umbrella README in place), or leave both for later?
 3. **The Matt 11:25 citation** (contradiction 14): keep the PLAYBOOK's exception (corrected citations stay corrected in the pages), or does the permanent "keep the misprint" rule cover citations too? The plan writes whatever you answer. Until then, RULES records the rule without the exception, plus an open item.
