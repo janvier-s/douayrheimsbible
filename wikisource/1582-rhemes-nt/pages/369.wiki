@@ -4,4 +4,5 @@
 
 {{c|{{larger|{{sc|Chap. XVII.}}}}}}
 
-{{c|''Hovv in other parts of Macedonia he planted the Church, and namely at The{{ls}}salonica, 5 where the ob{{ls}}tinate Iewes are {{ls}}o malicious, that they pur{{ls}}ue him al{{ls}}o into Berœa. 14 From whence being conducted into Greece, he preacheth at Athens both to the Iewes and Gentiles, di{{ls}}puting vvith the Philo{{ls}}ophers, 19 and in Areopagus, per{{ls}}uading them from their Idols vnto one God and IESVS CHRIST rai{{ls}}ed from the dead.''}}<noinclude>{{rh||Vv iij|AND}}</noinclude>
+{{c|''Hovv in other parts of Macedonia he planted the Church, and namely at The{{ls}}{{ls}}alonica, 5 where the ob{{ls}}tinate Iewes are {{ls}}o malicious, that they pur{{ls}}ue him al{{ls}}o into Berœa. 14 From whence being conducted into Greece, he preacheth at Athens both to the Iewes and Gentiles, di{{ls}}puting vvith the Philo{{ls}}ophers, 19 and in Areopagus, per{{ls}}uading them from their Idols vnto one God and {{sc|Iesvs Christ}} rai{{ls}}ed from the dead.''}}
+{{nop}}<noinclude>{{continues|A}}</noinclude>

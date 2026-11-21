@@ -34,3 +34,7 @@
 {"book": "romans", "page": 421, "committed": "iustificatió,", "generated": "iuſtificatió,", "reading": "iuſtificatió,", "evidence": "inferred 2026-11-21 (iuſtification read on luke p166); not legible on the crop"}
 {"book": "romans", "page": 423, "committed": "inclusiuè", "generated": "incluſiuè", "reading": "incluſiuè", "evidence": "scan collage 2026-11-21"}
 {"book": "romans", "page": 430, "committed": "Novvithstandĩg", "generated": "Novvithſtandĩg", "reading": "Novvithſtandĩg", "evidence": "scan collage 2026-11-21"}
+{"book": "acts", "page": 325, "committed": "saluatiõ:", "generated": "ſaluatiõ:", "reading": "ſaluatiõ:", "evidence": "inferred 2026-11-21 (XML ſaluatio (EEBO drops the tilde) and word-initial ſ throughout this print); not cropped"}
+{"book": "acts", "page": 339, "committed": "sanctificatiõ.", "generated": "ſanctificatiõ.", "reading": "ſanctificatiõ.", "evidence": "inferred 2026-11-21 (word-initial ſ throughout this print (ſanctification read with ſ on the scans)); not cropped"}
+{"book": "acts", "page": 353, "committed": "Cæsaréa,", "generated": "Cæſaréa,", "reading": "Cæſaréa,", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts scans pp. 345, 346, 352); not cropped"}
+{"book": "acts", "page": 382, "committed": "Cæsaréa.", "generated": "Cæſaréa.", "reading": "Cæſaréa.", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts scans pp. 345, 346, 352); not cropped"}

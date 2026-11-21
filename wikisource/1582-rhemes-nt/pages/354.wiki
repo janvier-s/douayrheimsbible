@@ -2,8 +2,7 @@
 
 {{verse|chapter=12|verse=24}} But the vvord of our Lord increa{{ls}}ed and multiplied. {{verse|chapter=12|verse=25}} And Barnabas and Saul returned from Hieru{{ls}}alem, hauing accompli{{ls}}hed their {{MarginNote|margin=right|margin-width=65|text=''Act. 11, 29.''}}* mini{{ls}}terie, taking vvith them Iohn that vvas {{ls}}urnamed Marke.
 
-{{c|{{larger|A N N O T A T I O N S}}}}
-{{c|{{sc|Chap. XII.}}}}
+{{c|{{larger|A N N O T A T I O N S}}}}{{c|{{sc|Chap. XII.}}}}
 
 ''5. Praier vvas made.''] The Church praied ince{{ls}}{{ls}}antly for her cheefe Pa{{ls}}tor, and was heard of God: and al Chri{{ls}}tian people are vvarned thereby to pray for their Bi{{ls}}hopes and Pa{{ls}}tors in pri{{ls}}on.
 
@@ -15,4 +14,6 @@
 
 {{MarginNote|margin=left|margin-width=65|text={{sc|The}} 5 part. The taking of the Go{{ls}}pel away from the ob{{ls}}tinate Iewes, and geuing of it to the Gentils, by the mini{{ls}}terie of Paul and Barnabas.}}{{c|{{larger|{{sc|Chap. XIII.}}}}}}
 
-{{c|''The preachers of the Church of Antioche preparing them {{ls}}elues, the Holy Gho{{ls}}t out of them al, choo{{ls}}eth Saul and Barnabas. 3 They being fir{{ls}}t con{{ls}}ecrated Bi{{ls}}hops, 4 goe their appointed circuite ouer al the land of Cypres, the Procon{{ls}}ul vvhereof is al{{ls}}o conuerted, {{ls}}eing the miraculous excecation of a Iew by Paul. 13 Thence, into Pamphilia: 14 and Pi{{ls}}idia, vvhere in Antioche Paul preacheth to the Ievves, {{ls}}hewing that I E S V S is Chri{{ls}}t, 38 and that in him is {{ls}}aluation, and not in their Lavv of Moy{{ls}}es: 40 vvarning them to bevvare of the reprobation foretold by the Prophets. 44 But the next Sabboth, they bla{{ls}}pheming, he in plaine termes for{{ls}}aketh them, and turneth to the Gentiles. Whereat the Gentils be as glad on the contrarie {{ls}}ide. 50 Finally the Ievves rai{{ls}}ing per{{ls}}ecution, they for{{ls}}ake them, pronouncing them to be ob{{ls}}tinate contemners.''}} {{dropinitial|A|image=Rhemes New Testament 1582 initial A, two satyrs.png|imgsize=185px|fl={{verse|chapter=13|verse=1}}}}ND there vvere in the Church vvhich vvas at Antioche, Prophets and Doctors, among vvhom vvas Barnabas, & Simon that vvas called Niger, and Lucius of Cyréne, and Manahen vvho was the<noinclude>{{rh|||fo{{ls}}ter-brother}}</noinclude>
+{{c|''The preachers of the Church of Antioche preparing them {{ls}}elues, the Holy Gho{{ls}}t out of them al, choo{{ls}}eth Saul and Barnabas. 3 They being fir{{ls}}t con{{ls}}ecrated Bi{{ls}}hops, 4 goe their appointed circuite ouer al the land of Cypres, the Procon{{ls}}ul vvhereof is al{{ls}}o conuerted, {{ls}}eing the miraculous excecation of a Iew by Paul. 13 Thence, into Pamphilia: 14 and Pi{{ls}}idia, vvhere in Antioche Paul preacheth to the Ievves, {{ls}}hewing that I E S V S is Chri{{ls}}t, 38 and that in him is {{ls}}aluation, and not in their Lavv of Moy{{ls}}es: 40 vvarning them to bevvare of the reprobation foretold by the Prophets. 44 But the next Sabboth, they bla{{ls}}pheming, he in plaine termes for{{ls}}aketh them, and turneth to the Gentiles. Whereat the Gentils be as glad on the contrarie {{ls}}ide. 50 Finally the Ievves rai{{ls}}ing per{{ls}}ecution, they for{{ls}}ake them, pronouncing them to be ob{{ls}}tinate contemners.''}}
+
+{{dropinitial|A|fl={{verse|chapter=13|verse=1}}}}{{sc|Nd}} there vvere in the Church vvhich vvas at Antioche, Prophets and Doctors, among vvhom vvas Barnabas, & Simon that vvas called Niger, and Lucius of Cyréne, and Manahen vvho was the<noinclude>{{continues|fo{{ls}}ter-brother}}</noinclude>
