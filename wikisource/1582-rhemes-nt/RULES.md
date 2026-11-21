@@ -1,239 +1,345 @@
-# 1582 Rhemes New Testament — Editorial Rules & Transcription Conventions
+# 1582 Rhemes New Testament: rules
 
-This document records the exact rules, typesetting conventions, and technical requirements established for transcribing, proofreading, and publishing the **1582 Rhemes New Testament** on English Wikisource ([Index:1582_Rhemes_New_Testament.pdf](https://en.wikisource.org/wiki/Index:1582_Rhemes_New_Testament.pdf)) and maintaining the corresponding EEBO-TCP TEI XML corpus (`A16049.xml` in [original-douay-rheims-nt](https://github.com/janvier-s/original-douay-rheims-nt)).
+These are the rules for the 1582 Rhemes New Testament on English Wikisource ([Index:1582_Rhemes_New_Testament.pdf](https://en.wikisource.org/wiki/Index:1582_Rhemes_New_Testament.pdf)), for the data the pages are generated from (`static/data/odr-original`, `static/data/odr`) and for the TEI source `A16049.xml`. This file is the authority: where another doc disagrees, this one wins. [PLAYBOOK.md](PLAYBOOK.md) says how to do the work.
 
-Every rule here has been learned through audits against high-resolution facsimiles (Sancta Clara, Peters, Bodleian) and community proofreading on Wikisource. **Always check your work against these rules and run the linter before publishing.**
+Every rule ends with an `Enforced by:` line naming the lint code (`E-…` error, `W-…` warning, from `scripts/wikisource/lint.py`), the fidelity feature (`scripts/wikisource/fidelity.py`) or the tool that checks it. A rule that no code checks says `review (no code)`. The [Enforcement index](#enforcement-index) maps each code and feature back to its rule; `scripts/wikisource/tests/test_docs.py` keeps the two in step.
 
----
+## 1. The print wins
 
-## 1. Hyphen Split Across Page Boundaries (`{{hws}}` / `{{hwe}}`)
+### 1.1 Reproduce the facsimile
 
-When a word is hyphenated across a page break, Wikisource uses `{{hws|...}}` (hyphen-word-start) at the end of the first page and `{{hwe|...}}` (hyphen-word-end) at the beginning of the next page so the word is joined seamlessly when transcluded to the mainspace.
+Reproduce the 1582 print as faithfully as possible: long s, u/v and i/j, vv and w, macrons and titlos, ligatures, roman and italic, small caps, the print's marks and its layout. Never modernise or normalise a print form. Fidelity features are counted on every page: lint refuses a drop against git `HEAD`, and `wikipost.py` against the live revision. A drop that is meant (one of §2, or a reading settled by the evidence ladder, §6.3) needs `--allow-loss FEATURE:SCOPE` or `--allow-shift FEATURE:SCOPE` with `--reason "…"`, and the reason goes in the commit message. A shift is a feature that turned into its modern sibling (ſ→s, vv→w).
 
-### The Rule: Always provide `title=` when the word contains templates or markup
+Enforced by: `E-loss`, `E-shift`, wikipost, golden tests
 
-`{{hws}}` generates an underlying HTML span:
+### 1.2 Misprints are kept; only odr is corrected
 
-```html
-<span class="hyphen-split" title="FULLWORD">PREFIX-</span>
-```
+`odr-original` and the wiki pages reproduce the print with its misprints (`thy likevvise`, `be began`, `thee Ievves`), citations included. Only `odr` (modern spelling) gets corrections. A content fix (wording, notes, marks, citations, later-edition text) goes into both datasets, each in its own spelling; a spelling fix (ſ, vv, macrons, 1582 forms) goes into `odr-original` only. Don't add words that the print lacks, and follow its word order and its verse numbering (Mark IX opens at Vulgate 8:39).
 
-> [!CAUTION]
-> If parameter 2 contains any template (like `{{ls}}`, `{{sc}}`), formatting (like `''`), or HTML quotes, MediaWiki expands the template **inside the HTML `title` attribute**, creating corrupt HTML that breaks transclusion and fails site validation:
->
-> ❌ **Broken (corrupts HTML):**
-> `{{hws|{{ls}}ignifi|{{ls}}ignification}}`  
-> Expands to: `<span class="hyphen-split" title="<span class="long-s">ſ</span>ignification">...</span>`
->
-> ✅ **Correct:**
-> `{{hws|{{ls}}ignifi|{{ls}}ignification|title=signification}}`  
-> Expands to: `<span class="hyphen-split" title="signification">...</span>`
+Enforced by: review (no code)
 
-### Summary:
+### 1.3 The print over EEBO-TCP
 
-- **Parameter 1**: The printed prefix on page N (including `{{ls}}` if present, e.g. `{{ls}}ignifi`).
-- **Parameter 2**: The visual full word with formatting (e.g. `{{ls}}ignification`).
-- **`|title=` Parameter**: **Mandatory** whenever parameter 2 contains `{{ls}}`, formatting, or special markup. Must contain clean plain text (ASCII/Unicode without nested HTML or templates).
-- On page N+1, mirror with `{{hwe|suffix|fullword}}` (e.g. `{{hwe|cation|{{ls}}ignification}}`).
+`A16049.xml` is evidence, not ground truth. EEBO typists dropped lines (homoeoteleuton), misread contractions and made typing errors. Where the XML and the print disagree, the print wins.
 
----
+Enforced by: review (no code)
 
-## 2. Small Capitals (`{{sc}}` / `<hi rend="smallcaps">`) & Sacred Names
+## 2. The owner's editorial removals (the only ones)
 
-The 1582 edition employs distinct typographic hierarchies using small capitals. To ensure the TEI XML serves as an authoritative digital master from which any downstream format (Wikisource, website JSON, EPUB, LaTeX) can be generated without loss of typographic distinction, small capitals are explicitly tagged in both Wikisource and the TEI XML corpus.
+### 2.1 No † after verse numbers
 
-### 2.1 Sacred Names in Text (`IESVS`, `LORD`, `GOD`)
+The print's verse-start † is left out, because the verse numbers can't sit in the margin once the text reflows. Every other † stays (§4.8).
 
-In continuous prose and verse text, sacred names are set with a standard full capital for the initial letter and small capitals for the remainder:
+Enforced by: `W-mark`
 
-- Print: **I<small>ESVS</small>** → Wikisource: `{{sc|Iesvs}}` → XML: `<hi rend="smallcaps">Iesvs</hi>`
-- Print: **I<small>ESVM</small>** → Wikisource: `{{sc|Iesvm}}` → XML: `<hi rend="smallcaps">Iesvm</hi>`
-- Print: **I<small>ESV</small>** → Wikisource: `{{sc|Iesv}}` → XML: `<hi rend="smallcaps">Iesv</hi>`
-- Print: **C<small>HRIST</small>** → Wikisource: `{{sc|Christ}}` → XML: `<hi rend="smallcaps">Christ</hi>`
-- Print: **L<small>ORD</small>** → Wikisource: `{{sc|Lord}}` → XML: `<hi rend="smallcaps">Lord</hi>`
-- Print: **G<small>OD</small>** → Wikisource: `{{sc|God}}` → XML: `<hi rend="smallcaps">God</hi>`
-- Print: **M<small>ARIE</small>** → Wikisource: `{{sc|Marie}}` → XML: `<hi rend="smallcaps">Marie</hi>`
+### 2.2 No printer's signatures
 
-### 2.2 Capitalized Small Capitals in Display and Title Typography
+Signature marks in the foot (`D iij`) are left out, following Help:Formatting conventions.
 
-In running heads, section headings, book arguments, and solemn declarations, words often appear in letter-spaced capitals or capitalized small caps:
+Enforced by: `W-signature`, generator
 
-- Where the scan clearly shows capitalized small caps (e.g. **I E S V M**, **A V E G R A T I A P L E N A**, or **I E S V S C H R I S T**):
-  - Do **not** leave them as naked spaced letters (`I E S V M`) from raw OCR.
-  - Wrap the small capitals in `{{sc|...}}` in Wikisource and `<hi rend="smallcaps">...</hi>` in TEI XML.
-  - Examples:
-    - `{{sc|Ave gratia plena}}` / `<hi rend="smallcaps">Ave gratia plena</hi>`
-    - `{{sc|Sauiour}}` / `<hi rend="smallcaps">Sauiour</hi>`
-    - `{{sc|Gospel}}` / `<hi rend="smallcaps">Gospel</hi>`
+### 2.3 Ornament images off for now
 
-### 2.3 Post-Drop-Cap Continuation
+Woodcut initials, headpieces and tailpieces aren't emitted. 19 of the files aren't on Commons yet. A book gets them when `books.json` sets `"ornaments": true` for it (or `--ornaments` is given), after the owner has reviewed or uploaded the files.
 
-At the start of a chapter following a large decorative drop-cap (initial woodcut), the remainder of the first word (and sometimes the following word) is set in capitals or small capitals:
+Enforced by: books.json, generator
 
-- Example (Page 31, Matt 1:1): Initial **T**, followed by `{{sc|He booke}}` (Wikisource) / `<seg rend="decorInit">T</seg><hi rend="smallcaps">He</hi> booke` (XML).
-- Example (Page 25): `{{dropinitial|T}}H{{sc|e}} numbers` (Wikisource) / `<seg rend="decorInit">T</seg>H<hi rend="smallcaps">e</hi> numbers` (XML).
+## 3. Orthography
 
----
+### 3.1 Long s
 
-## 3. Long-s (`ſ`) & Early Modern Orthography
+Pages write long s as `{{ls}}`: `{{ls}}{{ls}}` for ſſ and `{{ls}}s` for ſs (`po{{ls}}sible`). It shows as ſ in the Page: namespace and as s when transcluded, so the text stays searchable. The data and `A16049.xml` keep the literal ſ (U+017F). Round `s` is counted for information, so that a shift ſ→s shows.
 
-### 3.1 Wikisource (`.wiki`) vs XML Corpus (`.xml`)
+Enforced by: `ls`, `s`, `E-shift`
 
-- **Wikisource Pages**: Always use `{{ls}}` for the long-s character (`ſ`).  
-  _Why?_ The `{{ls}}` template displays `ſ` in the Page: namespace to match the facsimile, but automatically resolves to modern `s` in mainspace transclusion, preserving full-text searchability and accessibility.
-- **EEBO-TCP XML (`A16049.xml`)**: Always store the literal Unicode long-s `ſ` (`U+017F`). Do not use wiki templates in XML.
+### 3.2 Long s in small caps and abbreviations
 
-### 3.2 Orthographic Rules
+Inside `{{sc|…}}` long s is set as round s (`{{sc|the gospel}}`). Elsewhere an abbreviation ends in ſ before its point, as printed: `P{{ls}}.`, `Chry{{ls}}.`, `Ambro{{ls}}.`.
 
-- **`u` and `v`**: Retain exact 1582 print distribution (`vpō`, `vnto`, `euery`, `haue`, `giue`, `loue`).
-- **`vv` vs `w`**: Retain `vv` where printed as two separate characters (`vvorke`, `vvould`, `vvhen`). Roman margin notes often use a roman `w` that resembles a capital `W`; retain `w` there.
-- **Macrons / Titlos**: Vowels with macrons indicating an omitted _m_ or _n_ (`cōmaunded`, `vpō`, `frō`, `thē`, `mā`) must be preserved as precomposed Unicode characters or combining macrons in strict NFC form.
-- **Ligatures**:
-  - Double long-s: `ſſ` (two `{{ls}}` in wiki: `{{ls}}{{ls}}`).
-  - Long-s + short-s: `ſs` (`{{ls}}s` in wiki; often appears as `ß` in italic summaries).
-  - Abbreviations ending in _s_: End in long-s before punctuation (e.g. `P{{ls}}.` for Psalm, `Chry{{ls}}.` for Chrysostom).
-- **No modern quotation marks**: The 1582 text never uses curly or straight double quotes (`"`, `“`, `”`). Quotations are indicated by italics or marginal pointers.
+Enforced by: generator, golden tests
 
----
+### 3.3 u/v and i/j
 
-## 4. Numbered & Ordered Lists: Paragraphs vs `#` / `<ol>`
+Keep the print's distribution: `vpō`, `vnto`, `euery`, `haue`, `Iesvs`. A modern `j` doesn't appear.
 
-Early Modern books do not use modern HTML-style indented numbered lists.
+Enforced by: `v_initial`, `u_initial`, `j`
 
-> [!IMPORTANT]
-> **Never use MediaWiki `#` or `<ol>` in running prose.**
->
-> 1. **Margin Note Collision**: Browser `<ol>` elements inject a default `40px` (`2.5em`) left padding. On verso pages with `margin=left`, this shifts the entire column inward and causes left-margin notes to overlap text or require brittle `margin-offset=22` adjustments.
-> 2. **Page Break Disruption**: Native MediaWiki `#` lists cannot span across page breaks without resetting to `1.` or requiring raw `<ol start="...">` tags.
-> 3. **Typesetting Fidelity**: The 1582 print sets numbered items as standard paragraphs with hanging or inline numerals.
+### 3.4 vv and w
 
-### Correct Practice:
+Keep vv where the print has two letters (`vvorke`, `vvhen`) and w where it has one. The roman w in the margin notes looks like a capital W; it is still w. The OCR often reads vv as w, so check it on the scan.
 
-Format numbered items as plain paragraphs with standard line breaks:
+Enforced by: `vv`, `w`
 
-```wikitext
-1. The firſt reaſon is...
+### 3.5 Macrons and titlos
 
-2. The ſecond conſideration...
-```
+Keep each macron or titlo for an omitted m or n (`cōmaunded`, `vpō`, `thē`, `Quĩquagesme`).
 
-Or, if italicized in print:
+Enforced by: `macron`
 
-```wikitext
-''1. The firſt reaſon...''
+### 3.6 Ligatures and &c.
 
-''2. The ſecond conſideration...''
-```
+Keep æ, œ and &c. as printed.
 
----
+Enforced by: `ae`, `oe`, `etc`
 
-## 5. Margin Notes (`{{MarginNote}}`)
+### 3.7 NFC
 
-Margin notes are placed using the standard `{{MarginNote}}` template.
+All text is Unicode NFC. MediaWiki saves NFC, so a non-NFC page never matches live (Greek oxia becomes tonos, combining marks recompose). Generators and tools normalise before writing.
 
-### 5.1 Placement & Margins
+Enforced by: `E-nfc`
 
-- **Recto Pages (Odd numbers)**:
-  - **Outer margin**: `margin=right` (used for glosses, subject summaries, lectionary directions).
-  - **Inner margin**: `margin=left` (used for Scripture cross-references and citations).
-- **Verso Pages (Even numbers)**:
-  - **Outer margin**: `margin=left` (used for glosses, subject summaries, lectionary directions).
-  - **Inner margin**: `margin=right` (used for Scripture cross-references and citations).
-- **Front Matter**: Follow the physical layout of the page (usually outer margins, or both margins for parallel annotations).
+### 3.8 No double quotes
 
-### 5.2 Mandatory Parameters
+The print has no double quotes; quotations are in italics. The OCR reads the annotation mark ‖ as a quote mark (§4.8).
 
-Every `{{MarginNote}}` must include:
+Enforced by: `dquote`, `W-quote`
 
-1. `|margin=left` or `|margin=right`
-2. `|margin-width=65` (standard fixed width across all pages)
-3. `|text=...` (the note content; must never be empty)
-4. `|margin-offset=<n>` (optional: vertical offset in pixels or line units to align with a specific line or prevent overlapping adjacent notes)
+### 3.9 Greek
 
-### 5.3 Formatting Inside Margin Notes
+Polytonic Greek goes in `{{lang|grc|…}}` with its accents, breathings and iota subscripts as printed. In the XML it is `<foreign xml:lang="grc">`; a legible passage is never left as `<gap>`.
 
-- **Line breaks**: Use `{{br}}`. Never use `<br>` or literal newlines inside `|text=`.
-- **Italics**: Must be self-contained within each note (`''...''`).
-- **Punctuation spacing**: Do **not** leave a space before `{{MarginNote}}` when it immediately precedes punctuation:
-  - ✅ `...confe{{ls}}{{ls}}ion{{MarginNote|margin=right|margin-width=65|text=...}}:`
-  - ❌ `...confe{{ls}}{{ls}}ion {{MarginNote|margin=right|margin-width=65|text=...}}:`
+Enforced by: generator
 
----
+## 4. Typography
 
-## 6. Page Break Formatting Balance
+### 4.1 Roman and italic
 
-MediaWiki parses every page in the `Page:` namespace as an independent document.
+Set roman and italic as printed. Each Page: is parsed alone, so an italic run that crosses a page break is closed at the end of one page and reopened at the start of the next. Never write four or more apostrophes in a row. The running head and the footer are balanced on their own.
 
-> [!WARNING]
-> Unbalanced markup across page boundaries causes parser corruption and immediate linter failure (`E-ital`, `E-bold`).
+Enforced by: `italic`, `E-ital`, `E-foot-ital`
 
-- **Italics across page breaks**:
-  - Close the italic tag before the end of Page N: `...end of page text.''`
-  - Reopen the italic tag at the beginning of Page N+1: `''Start of next page text...`
-- **Bold across page breaks**: Follow the same close-and-reopen rule for `'''`.
-- **Never use 4+ consecutive apostrophes**: `''''` causes parser ambiguity between italics and bold.
+### 4.2 Nothing inside an open italic run
 
----
+A margin note, or any template with `''` inside, never sits inside an open italic run: close the italics before it and reopen them after. Each note's own italics are self-contained.
 
-## 7. Unicode Normalization: Strict NFC
+Enforced by: `E-tpl-italic`
 
-All text saved to Wikisource is automatically normalized by MediaWiki to **NFC** (Normalization Form C: canonical decomposition, followed by canonical composition).
+### 4.3 Bold
 
-- **Why it matters**: If files on disk are saved in NFD (decomposed) or non-standard Unicode:
-  - Greek oxia (`U+1FFD`) is normalized by MediaWiki to tonos (`U+0384`).
-  - Combining characters will recompose.
-  - Local diffs will forever report spurious changes against live pages, breaking automated sync and verification.
-- **Rule**: All generator scripts, audit tools, and manual edits must normalize text with `unicodedata.normalize('NFC', text)` before saving. This is enforced as error `E-nfc` in `lint.py`.
+Bold (`'''`) is balanced on each page.
 
----
+Enforced by: `E-bold`
 
-## 8. Polytonic Greek & Foreign Text
+### 4.4 Small caps
 
-- **Wikisource Pages**:
-  - Wrap polytonic Greek in `{{lang|grc|...}}`.
-  - Accents (acute, grave, circumflex), breathings (smooth, rough), and iota subscripts must be fully restored from facsimiles.
-- **EEBO-TCP XML**:
-  - Wrap Greek in `<foreign xml:lang="grc">...</foreign>`.
-  - Never leave legible Greek passages as `<gap>` or transliterated Latin.
+Small capitals are kept as `{{sc|…}}` (in the XML, `<hi rend="smallcaps">`):
 
----
+- sacred names with a full capital first: `{{sc|Iesvs}}`, `{{sc|Christ}}`, `{{sc|Lord}}`, `{{sc|God}}`;
+- display capitals in headings and arguments, never left as spaced letters from the OCR;
+- the rest of the first word after a drop initial (§4.6).
 
-## 9. EEBO-TCP XML Maintenance & README Numbers
+Enforced by: `sc`
 
-The source XML (`sources/eebo-tcp/A16049.xml`) and its upstream repository [original-douay-rheims-nt](https://github.com/janvier-s/original-douay-rheims-nt) serve as the digital transcription foundation.
+### 4.5 Running heads
 
-### When Backfilling Gaps or Correcting Text:
+Running heads use `{{rh|…}}`, in small caps: the middle title in lowercase (`{{sc|the gospel}}`, `{{sc|according to s. matthew.}}`), the side words capitalized (`{{sc|Cha. VI.}}`, `{{sc|Holy}} weeke.`), Roman numerals kept as capitals. Front-matter pages 1–28 have no running head in the print, so they carry the only `W-header` warnings.
 
-1. **Restore Gaps**: Replace `<gap .../>` elements with the verified reading (wrapped in `<foreign xml:lang="grc">` for Greek, or supplied text).
-2. **Remove OCR / Printer Duplications**: Delete duplicated marginal notes or repeated phrases resulting from historical transcription errors.
-3. **Recount XML Tags**: Always run an exact tag count on the XML file:
-   - `<gap>`
-   - `<desc>`
-   - `<foreign>`
-   - `<note>`
-4. **Update README.md**:
-   - Update the tag count tables in the README to reflect the exact new numbers (e.g. decreasing `gap` count, increasing `foreign` count).
-5. **Update `<teiHeader>`**:
-   - Add a `<change>` entry inside `<revisionDesc>` documenting the date, editor, and scope of corrections.
-6. **XML Well-Formedness Check**:
-   - Always validate the XML using `python3 -c "import xml.etree.ElementTree as ET; ET.parse('A16049.xml')"` before committing.
+Enforced by: `W-rh-caps`, `W-header`
 
----
+### 4.6 Drop initials
 
-## 10. Wikisource Bot Publishing Protocol
+A chapter's woodcut initial is `{{dropinitial|…}}`, carrying the verse marker, with the rest of the word in small caps: `{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} booke`.
 
-All automated publishing via `scripts/wikisource/wikipost.py` must adhere strictly to Wikimedia bot and proofreading policies:
+Enforced by: `dropinitial`
 
-1. **Pre-Publish Linting**:
-   - Always run `python3 scripts/wikisource/lint.py <pages_dir>` first.
-   - Zero errors (`0 error(s)`) is required. Warnings should be reviewed.
-2. **Protection of Human Edits**:
-   - The bot checks `last_author` on every page.
-   - If another user edited the page, the bot will skip it.
-   - Inspect their edits manually against the 1582 scans. If their improvements are valid or our audit encompasses them, pass `--adopt-others <page_numbers>` explicitly.
-3. **Rate Limiting**:
-   - Use `--delay 12` (minimum 12 seconds between page edits) to prevent HTTP 429 throttling and respect Wikimedia API guidelines.
-4. **Descriptive Edit Summaries**:
-   - Include specific descriptions of changes made (e.g. `audit against 1582 print: restore margin notes, polytonic Greek, fix hws title, NFC`).
-5. **Manifest Tracking**:
-   - Every published page must have its SHA1, live `revid`, and status `posted` updated in `wikisource/1582-rhemes-nt/manifest.json`.
+### 4.7 Type sizes
+
+Larger and smaller type are kept with `{{larger|…}}`, `{{smaller|…}}` and their variants.
+
+Enforced by: `size`
+
+### 4.8 Print marks
+
+The print's marks stay in the text: `*` (citation), `∷` (gloss), `‖` (annotation mark, written `{{sup|‖}}`), `⊣` (end of a liturgical reading), and † wherever it isn't a verse start. Lectionary notes and headings that the print sets without a ∷ have none.
+
+Enforced by: `star`, `quad`, `bar`, `sup_bar`, `tack`, `dagger`
+
+## 5. Page structure and Wikisource conventions
+
+### 5.1 Page skeleton
+
+A page is `<noinclude><pagequality level="1" user="" />{{rh|…}}</noinclude>`, then the body, then `<noinclude>{{continues|…}}</noinclude>`. Braces are balanced. There are no stray `<i>`, `<b>`, `<br>` or data tags (`<na>`, `<cr>`, `<alt>`) and no generator sentinels (`⟦ ⟧`, `{{MINNER|`, `{{MOUTER|`).
+
+Enforced by: `E-tag`, `E-brace`, `E-sentinel`
+
+### 5.2 Honest page status
+
+The generator writes level 1 (not proofread). Level 3 or more needs a named proofreader who read the page against the scan. `wikipost.py` keeps the live page's level and proofreader, so a post never demotes a human's proofreading.
+
+Enforced by: `E-status`, wikipost
+
+### 5.3 Margin notes
+
+Margin notes are `{{MarginNote|margin=left|margin-width=65|text=…}}` (or `margin=right`), never empty. On recto (odd) pages the inner margin is left and the outer right; on verso pages it's the reverse. Citations go in the inner margin; glosses, summaries and lectionary notes go in the outer. A margin `*` before a citation stays in the note (`* Mr. 12, 18.`). Line breaks inside `text=` are `{{br}}`. Leave no space before the template when punctuation follows it.
+
+Enforced by: `E-margin`, `margin_note`
+
+### 5.4 Verse markers
+
+Verses are `{{verse|chapter=N|verse=M}}` in the print's order and numbering, with none repeated or skipped.
+
+Enforced by: `verse`, `E-verse`
+
+### 5.5 The annotation mark never splits a word
+
+`{{sup|‖}}` sits before the word its annotation explains, never inside a word. A one- or two-letter fragment before it means a stale lemma offset.
+
+Enforced by: `E-lemma-split`
+
+### 5.6 Hyphenated words across pages
+
+A word split across a page break is `{{hws|prefix|full word|title=…}}` at the foot and `{{hwe|suffix|full word|title=…}}` at the head of the next page. Both always carry a plain-text `title=`, with no templates, `''` or ſ: `{{hws|Ha|Hauing|title=Hauing}}` (Template:Hyphenated word start).
+
+Enforced by: `E-hw-title`
+
+### 5.7 Catchwords
+
+The print's catchword goes in `{{continues|…}}` in the footer, never in a `{{rh}}` cell.
+
+Enforced by: `W-catchword`
+
+### 5.8 {{nop}} at a paragraph's foot
+
+When a paragraph ends at the foot of a page and the next page opens a new one, the page ends with `{{nop}}` on its own line (Help:Page breaks).
+
+Enforced by: `W-nop`
+
+### 5.9 No single line breaks
+
+A paragraph is one line; paragraphs are separated by a blank line. The print's paragraphs, full and half indents alike, are kept.
+
+Enforced by: `W-linebreak`
+
+### 5.10 Spacing
+
+No double spaces, no space before `, . ; : ? ! )` or after `(`, no trailing spaces.
+
+Enforced by: `W-space`
+
+### 5.11 No list markup
+
+Never use `#` or `<ol>` in running text: the list padding pushes the column into the left margin notes, and a list can't continue across a page break. Numbered items are plain paragraphs (`1. The firſt reaſon…`).
+
+Enforced by: generator
+
+### 5.12 Tables in dark mode
+
+MediaWiki's night mode forces dark text on any element whose style contains `background`. So tables never use `background` in a style, and never use `!` header cells: use `|` cells with `'''bold'''`. The container is `{| style='border-collapse: collapse; border: none; width: 100%;'`.
+
+Enforced by: `E-darkmode`
+
+### 5.13 Complete page run
+
+`pages/` holds every page from 1 to the last, with no gaps.
+
+Enforced by: `E-gap`
+
+## 6. Sources and data
+
+### 6.1 Pages come from the data
+
+The pages are generated from `static/data/odr-original` by `generate.py`. Never edit a generated page: fix the data or the generator and regenerate. The frozen pages (`manifest.json` `source: frozen`: front matter 1–30, the tables 309–313 and 402–404) have no generator and are edited by hand, still under lint's fidelity check. No script sweeps over `pages/*.wiki` or the live pages.
+
+Enforced by: golden tests, `E-loss`, `E-shift`
+
+### 6.2 Data writes
+
+Data JSON is written only through `jsonfmt.write_like()`, which keeps each file's format, while holding the `.git/odr-data.lock` mkdir lock. Scripts run as `python3 -I`.
+
+Enforced by: review (no code)
+
+### 6.3 The evidence ladder
+
+Letter-shape and spelling conflicts are settled by the evidence ladder in [PLAYBOOK.md](PLAYBOOK.md#the-evidence-ladder), cheapest first: the XML with an OCR reading, the XML alone, OCR or the book's majority, and scans last, because they cost the most tokens. Every decision is kept in `reconcile/<book>.jsonl`, and every scan reading in `reconcile/scan-readings.jsonl`.
+
+Enforced by: reconcile verify
+
+### 6.4 Maintaining A16049.xml
+
+`A16049.xml` (repo `original-douay-rheims-nt`) keeps the literal ſ and no wiki templates. When you restore a `<gap>` or remove a transcription duplicate: recount `<gap>`, `<desc>`, `<foreign>` and `<note>` and update the counts in that repo's README; add a `<change>` to `<revisionDesc>`; and check that the file still parses (`python3 -c "import xml.etree.ElementTree as ET; ET.parse('A16049.xml')"`).
+
+Enforced by: review (no code)
+
+## 7. Posting to Wikisource
+
+### 7.1 Only with the owner's approval
+
+Pages are posted only with the owner's approval, from the owner's own account, at least 12 s apart. The owner chose this over a separate bot account, provided the posting stays moderate.
+
+Enforced by: wikipost, review (no code)
+
+### 7.2 Never revert a human edit
+
+`wikipost.py` skips a page whose newest revision is by someone else. Check that editor's change against the scan. A valid change goes into the data, and only then is the page posted with `--adopt-others`. An invalid one is reported to the owner, never silently overwritten.
+
+Enforced by: wikipost
+
+### 7.3 No fidelity loss against live
+
+`wikipost.py` refuses, dry run included, any page whose print features would drop against the live revision, unless `--allow-loss`/`--allow-shift FEATURE:SCOPE --reason "…"` covers it. The edit carries `baserevid`, so MediaWiki refuses it if the page changed in the meantime.
+
+Enforced by: wikipost
+
+## Open items
+
+- Acts p. 367 `neceſſary`: not read on the scan yet.
+- 19 ornament files missing on Commons (listed in `docs/audits/2026-11-21-phase1-reconcile.md`): ornaments stay off (§2.3).
+- The frozen pages (§6.1) have no generator. Front matter is costly to generate for little gain; the eight table pages would need a table renderer.
+
+## Enforcement index
+
+| Code or feature | Kind    | Rule  |
+| --------------- | ------- | ----- |
+| `E-loss`        | lint    | §1.1  |
+| `E-shift`       | lint    | §1.1  |
+| `W-mark`        | lint    | §2.1  |
+| `W-signature`   | lint    | §2.2  |
+| `ls`            | feature | §3.1  |
+| `s`             | feature | §3.1  |
+| `E-shift`       | lint    | §3.1  |
+| `v_initial`     | feature | §3.3  |
+| `u_initial`     | feature | §3.3  |
+| `j`             | feature | §3.3  |
+| `vv`            | feature | §3.4  |
+| `w`             | feature | §3.4  |
+| `macron`        | feature | §3.5  |
+| `ae`            | feature | §3.6  |
+| `oe`            | feature | §3.6  |
+| `etc`           | feature | §3.6  |
+| `E-nfc`         | lint    | §3.7  |
+| `dquote`        | feature | §3.8  |
+| `W-quote`       | lint    | §3.8  |
+| `italic`        | feature | §4.1  |
+| `E-ital`        | lint    | §4.1  |
+| `E-foot-ital`   | lint    | §4.1  |
+| `E-tpl-italic`  | lint    | §4.2  |
+| `E-bold`        | lint    | §4.3  |
+| `sc`            | feature | §4.4  |
+| `W-rh-caps`     | lint    | §4.5  |
+| `W-header`      | lint    | §4.5  |
+| `dropinitial`   | feature | §4.6  |
+| `size`          | feature | §4.7  |
+| `star`          | feature | §4.8  |
+| `quad`          | feature | §4.8  |
+| `bar`           | feature | §4.8  |
+| `sup_bar`       | feature | §4.8  |
+| `tack`          | feature | §4.8  |
+| `dagger`        | feature | §4.8  |
+| `E-tag`         | lint    | §5.1  |
+| `E-brace`       | lint    | §5.1  |
+| `E-sentinel`    | lint    | §5.1  |
+| `E-status`      | lint    | §5.2  |
+| `E-margin`      | lint    | §5.3  |
+| `margin_note`   | feature | §5.3  |
+| `verse`         | feature | §5.4  |
+| `E-verse`       | lint    | §5.4  |
+| `E-lemma-split` | lint    | §5.5  |
+| `E-hw-title`    | lint    | §5.6  |
+| `W-catchword`   | lint    | §5.7  |
+| `W-nop`         | lint    | §5.8  |
+| `W-linebreak`   | lint    | §5.9  |
+| `W-space`       | lint    | §5.10 |
+| `E-darkmode`    | lint    | §5.12 |
+| `E-gap`         | lint    | §5.13 |
+| `E-loss`        | lint    | §6.1  |
+| `E-shift`       | lint    | §6.1  |
