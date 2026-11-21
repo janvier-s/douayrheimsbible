@@ -27,8 +27,8 @@ export interface VerseSection {
 
 /** Shorten a front-matter title into something that fits a tab. */
 export function tabLabel(title: string): string {
-	if (/argument.*in general/i.test(title)) return 'General';
-	if (/argument/i.test(title)) return 'Argument';
+	if (/arg[uv]ment.*in general/i.test(title)) return 'General';
+	if (/arg[uv]ment/i.test(title)) return 'Argument';
 	if (/sum.*old/i.test(title)) return 'Sum (OT)';
 	if (/sum.*new/i.test(title)) return 'Sum (NT)';
 	if (/sum/i.test(title)) return 'Sum';
