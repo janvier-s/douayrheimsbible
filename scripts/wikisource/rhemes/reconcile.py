@@ -4,6 +4,7 @@ python3 -I scripts/wikisource/rh.py reconcile diff|ladder|adopt|write|verify BOO
 python3 -I scripts/wikisource/rh.py status [--write]
 """
 import collections
+import contextlib
 import difflib
 import json
 import re
@@ -162,14 +163,16 @@ def cmd_write(book):
 
 
 def cmd_status(write=False):
-    manifest = json.loads(MANIFEST.read_text())
-    if manifest.get('266', {}).get('revid') == 16474655:  # live revid by ShakespeareFan00 (audit 2026-11-20)
-        manifest['266']['revid'] = 16475295
-    changes = mark_status(PAGES, manifest)
-    print(f'{len(changes)} status changes:', ' '.join(f'{n}:{s}' for n, s in sorted(changes.items())))
-    print('changed pages:', sum(e.get('status') == 'changed' for e in manifest.values()))
-    if write:
-        write_like(MANIFEST, manifest)
+    """With write, the whole read-mark-write holds the lock, so no other writer's change is lost."""
+    with data_lock(lock_path()) if write else contextlib.nullcontext():
+        manifest = json.loads(MANIFEST.read_text())
+        if manifest.get('266', {}).get('revid') == 16474655:  # live revid by ShakespeareFan00 (audit 2026-11-20)
+            manifest['266']['revid'] = 16475295
+        changes = mark_status(PAGES, manifest)
+        print(f'{len(changes)} status changes:', ' '.join(f'{n}:{s}' for n, s in sorted(changes.items())))
+        print('changed pages:', sum(e.get('status') == 'changed' for e in manifest.values()))
+        if write:
+            write_like(MANIFEST, manifest)
 
 
 def verify_decisions(decisions, pages):

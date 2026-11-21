@@ -22,7 +22,6 @@ REPO = paths.REPO
 BOOK, FIRST, OUT, MAXP = '', 0, None, 10 ** 6
 CFG = config.from_dict('', {'first': 0, 'last': 0})  # the book's books.json entry, set by main
 DATA = REPO / 'static/data/odr-original'
-BOOKS_JSON = 'wikisource/1582-rhemes-nt/books.json'
 
 
 load_books = sources.load_books
@@ -744,6 +743,8 @@ def main(argv):
     DATA = REPO / 'static/data/odr-original'
     cfg = load_books(REPO).get(BOOK, {})
     CFG = config.from_dict(BOOK, cfg or {'first': FIRST, 'last': 0})  # a book not in books.json: defaults
+    if CFG.running is None:
+        sys.exit(f"books.json {BOOK}: no 'running' ([verso, recto] running heads); add it first (PLAYBOOK 'Start a new book')")
     MAXP = int(argv[4]) if len(argv) > 4 else None  # None: stop at books.json "last"
     orn = REPO / ORN_JSON
     ORNAMENTS = json.loads(orn.read_text()) if orn.exists() and (orn_flag or cfg.get('ornaments')) else {}

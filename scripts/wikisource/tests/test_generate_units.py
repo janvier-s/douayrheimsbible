@@ -232,3 +232,10 @@ def test_lemma_must_start_a_word():
     from rhemes import generate
     with pytest.raises(ValueError):
         generate.render_verse({'verse': 1, 'text': 'by faith, let vs haue peace', 'lemmas': [[11, 6, 1]]}, 5)
+
+
+def test_book_without_running_names_the_key(tmp_path):
+    r = subprocess.run([sys.executable, '-I', *GEN, str(REPO), 'no-such-book', '452', str(tmp_path / 'out')],
+                       capture_output=True, text=True)
+    assert r.returncode != 0
+    assert "'running'" in r.stderr and 'TypeError' not in r.stderr

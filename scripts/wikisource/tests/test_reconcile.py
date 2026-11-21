@@ -153,3 +153,16 @@ def test_ladder_holds_lock(tmp_path, monkeypatch):
     (tmp_path / 'lock').mkdir()
     with pytest.raises(LockHeld, match='data lock held'):
         reconcile.main(['ladder', 'tiny', '--overwrite'])
+
+
+def test_status_write_holds_lock(tmp_path, monkeypatch):
+    from rhemes import reconcile
+    from rhemes.lock import LockHeld
+    (tmp_path / 'manifest.json').write_text('{}\n')
+    monkeypatch.setattr(reconcile, 'MANIFEST', tmp_path / 'manifest.json')
+    monkeypatch.setattr(reconcile, 'mark_status', lambda *a, **k: {})
+    monkeypatch.setenv('RHEMES_LOCK', str(tmp_path / 'lock'))
+    (tmp_path / 'lock').mkdir()
+    reconcile.main(['status'])  # read-only: works while the lock is held
+    with pytest.raises(LockHeld, match='data lock held'):
+        reconcile.main(['status', '--write'])
