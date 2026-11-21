@@ -19,7 +19,7 @@ Hard rules:
 3. **Never reduce fidelity silently.** `E-loss`/`E-shift` mean a print feature was lost: fix the cause. Override only for a decided change, with `--allow-loss`/`--allow-shift FEATURE:SCOPE --reason "…"`, and put the reason in the commit message.
 4. **Never post to Wikisource without the owner's approval**, and never revert another editor's change (RULES §7).
 5. **Before each commit**, run `python3 -m pytest -q scripts/wikisource/tests` and `python3 -I scripts/wikisource/lint.py wikisource/1582-rhemes-nt/pages --quiet` (0 errors).
-6. Scripts run as `python3 -I`, text is NFC, and data JSON is written only through `jsonfmt.write_like()` while holding `.git/odr-data.lock`.
+6. Scripts run as `python3 -I`, text is NFC, and data JSON is written only through `jsonfmt.write_like()` while holding `$(git rev-parse --git-common-dir)/odr-data.lock`.
 7. Read the XML and the OCR before the scans; scans cost the most tokens and are the last resort.
 
 ---

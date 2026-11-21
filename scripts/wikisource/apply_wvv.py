@@ -6,7 +6,7 @@ the same number of vv, or where the letters cannot be lined up, is skipped and
 listed. Capitals follow the data (W -> VV).
 
 Usage: python3 scripts/wikisource/apply_wvv.py <book> <findings.tsv> <class> [--write]
-  class: w_for_vv or vv_for_w. Hold .git/odr-data.lock around --write.
+  class: w_for_vv or vv_for_w. Hold $(git rev-parse --git-common-dir)/odr-data.lock around --write.
 """
 from pathlib import Path
 import csv, json, re, sys

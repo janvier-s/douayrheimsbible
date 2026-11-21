@@ -5,7 +5,7 @@ How to do the work. What is allowed is in [RULES.md](RULES.md), which wins where
 ## Ground rules
 
 - The print wins (RULES §1). Fix the data or the generator, never a generated page (RULES §6.1).
-- Hold `.git/odr-data.lock` (mkdir/rmdir) around every data write, page write and commit. Write data JSON only with `jsonfmt.write_like()` (RULES §6.2). Don't hold the lock while reading scans.
+- Hold `$(git rev-parse --git-common-dir)/odr-data.lock` (mkdir/rmdir; from a worktree it is in the main checkout's `.git`) around every data write, page write and commit. Write data JSON only with `jsonfmt.write_like()` (RULES §6.2). Don't hold the lock while reading scans.
 - Run scripts as `python3 -I`. The isolated Python has PIL but no numpy.
 - Nothing is posted without the owner's approval (RULES §7).
 - Scans are the last resort: read the XML and the OCR first (below).
@@ -22,10 +22,12 @@ How to do the work. What is allowed is in [RULES.md](RULES.md), which wins where
 
 Conflicts of letter shape or spelling between two readings (ſs/ſſ, ſ/s, macrons, vv/w) are settled cheapest first, and the first rung that settles one wins (`ladder.py`):
 
-1. `A16049.xml` equals one side, and an OCR reading shows the same shape.
-2. The XML alone, when it equals the committed page. The XML also settles the stem-rule ſs cases (owner 2026-11-21).
-3. OCR readings that agree with one side (Transkribus doesn't count for s against ſ, and a reading with sſ, which the print never sets, never counts), otherwise the book's majority form in the XML (at least 2:1). A majority of one occurrence decides only where the XML at the place is silent.
+1. `A16049.xml` equals one side, and the Transkribus reading shows the same form.
+2. The XML alone, when it equals the committed page.
+3. Otherwise, the first of these that applies: OCR readings (Tesseract and Transkribus) that all point to one side; the book's majority form in the XML, at least 2:1, not counting the XML at this place (a form seen only once elsewhere never overrules the XML here); in a macron conflict, the side with the macron; in a stem-rule ſs/ſſ conflict, the XML when it equals the generated side (owner 2026-11-21).
 4. The scans, only for what is still unsettled, and only after the owner has seen the count. Batch them into one crop collage per round.
+
+The XML counts only when it gives one form at the place, and not when the two sides fold to the same word but the XML word differs (a mislocation). In a macron conflict an XML form without the macron is no evidence, since EEBO expands contractions, and only forms with a macron count toward the book's majority. Transkribus doesn't count for s against ſ, and a reading with sſ, which the print never sets, never counts.
 
 Scan readings go in `reconcile/scan-readings.jsonl`, one per line: `{"book", "page", "committed", "generated", "reading", "evidence"}`. A scan reading takes precedence at any rung. A reading that matches neither side stays open unless it carries `"replace": true`, so mark that only after reading the crop. Each book's decisions are in `reconcile/<book>.jsonl`; an empty `winner` means the word is still open.
 

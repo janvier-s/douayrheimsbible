@@ -244,13 +244,13 @@ Enforced by: golden tests, `E-loss`, `E-shift`
 
 ### 6.2 Data writes
 
-Data JSON is written only through `jsonfmt.write_like()`, which keeps each file's format, while holding the `.git/odr-data.lock` mkdir lock. Scripts run as `python3 -I`.
+Data JSON is written only through `jsonfmt.write_like()`, which keeps each file's format, while holding the `$(git rev-parse --git-common-dir)/odr-data.lock` mkdir lock (in a worktree that is the main checkout's `.git`). Scripts run as `python3 -I`.
 
 Enforced by: review (no code)
 
 ### 6.3 The evidence ladder
 
-Letter-shape and spelling conflicts are settled by the evidence ladder in [PLAYBOOK.md](PLAYBOOK.md#the-evidence-ladder), cheapest first: the XML with an OCR reading, the XML alone, OCR or the book's majority, and scans last, because they cost the most tokens. Every decision is kept in `reconcile/<book>.jsonl`, and every scan reading in `reconcile/scan-readings.jsonl`.
+Letter-shape and spelling conflicts are settled by the evidence ladder in [PLAYBOOK.md](PLAYBOOK.md#the-evidence-ladder), cheapest first: the XML with an OCR reading, the XML alone, then OCR, the book's majority, the macron and the stem rule, and scans last, because they cost the most tokens. Every decision is kept in `reconcile/<book>.jsonl`, and every scan reading in `reconcile/scan-readings.jsonl`.
 
 Enforced by: reconcile verify
 

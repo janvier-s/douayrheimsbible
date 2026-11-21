@@ -3,6 +3,8 @@ in RULES.md, every rule names what enforces it, and retired rules stay retired."
 import re
 from pathlib import Path
 
+import pytest
+
 import fidelity
 import lint
 
@@ -26,16 +28,38 @@ def index_rows():
     return re.findall(r'^\|\s*`([^`]+)`\s*\|\s*(lint|feature)\s*\|\s*(§\d+\.\d+)\s*\|', text[1], re.M)
 
 
-def rule_blocks():
-    """{'§N.M': text of the ### N.M block, up to the next ## or ### heading}."""
-    text = RULES.read_text().split('## Enforcement index', 1)[0]
+def rule_blocks(text=None):
+    """{'§N.M': text of the ### N.M block, up to the next ## or ### heading}; a repeated number is an error."""
+    text = (RULES.read_text() if text is None else text).split('## Enforcement index', 1)[0]
     parts = re.split(r'^(#{2,3} .*)$', text, flags=re.M)
     blocks = {}
     for head, body in zip(parts[1::2], parts[2::2]):
         m = re.match(r'### (\d+\.\d+) ', head)
         if m:
-            blocks['§' + m.group(1)] = body
+            key = '§' + m.group(1)
+            if key in blocks:
+                raise ValueError(f'rule {key} appears twice')
+            blocks[key] = body
     return blocks
+
+
+PLAIN_ENFORCERS = {'generator', 'golden tests', 'wikipost', 'reconcile verify', 'books.json', 'ladder', 'review (no code)'}
+
+
+def bad_enforcers(line):
+    """Items of an Enforced by line that are neither a real lint code or feature nor a known enforcer."""
+    known = lint_codes() | set(fidelity.FEATURES)
+    bad = []
+    for item in (s.strip() for s in line.split(',')):
+        m = re.fullmatch(r'`([^`]+)`', item)
+        if not (m.group(1) in known if m else item in PLAIN_ENFORCERS):
+            bad.append(item)
+    return bad
+
+
+def section_refs(text):
+    """Every §N or §N.M named in a text."""
+    return set(re.findall(r'§\d+(?:\.\d+)?', text))
 
 
 def enforced_lines(block):
@@ -89,7 +113,8 @@ def test_every_rule_names_its_enforcer():
 
 
 def test_retired_rules_absent():
-    retired = ['† verse start', 'bot approval', 'changed_since_post', 'only where the scan shows it', 'SIG_FIRST']
+    retired = ['† verse start', 'bot approval', 'changed_since_post', 'only where the scan shows it', 'SIG_FIRST',
+               '`.git/odr-data.lock`']
     for doc in DOCS:
         found = [r for r in retired if r in doc.read_text()]
         assert not found, (doc.name, found)
@@ -100,3 +125,34 @@ def test_agents_md_is_short():
     section = text.split('\n## 1.', 1)[1].split('\n## 2.', 1)[0]
     assert len(section.splitlines()) <= 40
     assert 'RULES.md' in section and 'PLAYBOOK.md' in section
+
+
+# ---- stricter checks (final review 2026-11-21) ---------------------------------------
+
+def test_bad_enforcers_flags_unknown_items():
+    assert bad_enforcers('tbd') == ['tbd']
+    assert bad_enforcers('review') == ['review']
+    assert bad_enforcers('`E-nope`, generator') == ['`E-nope`']
+    assert bad_enforcers('`E-ital`, `ls`, generator, golden tests, wikipost, reconcile verify, books.json, ladder, review (no code)') == []
+
+
+def test_every_rule_uses_known_enforcers():
+    for sec, block in rule_blocks().items():
+        assert not bad_enforcers(enforced_lines(block)[0]), sec
+
+
+def test_duplicate_rule_heading_rejected():
+    with pytest.raises(ValueError):
+        rule_blocks('## 6. Data\n\n### 6.4 New\n\nx\n\n### 6.4 Old\n\nEnforced by: generator\n')
+
+
+def test_section_refs_finds_rule_and_section_numbers():
+    assert section_refs('see RULES §9.4, (RULES §7) and §1.1.') == {'§9.4', '§7', '§1.1'}
+
+
+def test_every_section_reference_exists():
+    text = RULES.read_text()
+    known = set(rule_blocks()) | {'§' + n for n in re.findall(r'^## (\d+)\. ', text, re.M)}
+    for doc in DOCS:
+        missing = section_refs(doc.read_text()) - known
+        assert not missing, (doc.name, sorted(missing))
