@@ -1,8 +1,8 @@
 # Luke and John: word, missing and extra findings (2026-11-18)
 
 After the w/vv pass, `ocrdiff.py luke|john` was rerun and every finding class was read on the
-scan (crop sheets). Fixes are in `scripts/wikisource/apply_wordfixes.py` (the edit list; it
-asserts each old string occurs once) plus the whole-word Luke 1:sum Precurſor/Circunciſion fix.
+scan (crop sheets). The fixes were applied by `apply_wordfixes.py`, since deleted; they are now
+ledger entries in `wikisource/1582-rhemes-nt/fixes/{luke,john}.jsonl` (`docs/archive/scripts.md`), plus the whole-word Luke 1:sum Precurſor/Circunciſion fix.
 
 - **missing** (Luke 75, John 178): all margin notes, catchwords, signatures (Hh iij) or the
   John 20:15-17 margin notes that Transkribus tagged as body on pdf302. No real missing word.

@@ -234,8 +234,20 @@ def test_lemma_must_start_a_word():
         generate.render_verse({'verse': 1, 'text': 'by faith, let vs haue peace', 'lemmas': [[11, 6, 1]]}, 5)
 
 
-def test_book_without_running_names_the_key(tmp_path):
-    r = subprocess.run([sys.executable, '-I', *GEN, str(REPO), 'no-such-book', '452', str(tmp_path / 'out')],
+def test_book_without_running_writes_its_argument_then_names_the_key(tmp_path):
+    """A new book's Argument needs no running heads: it is written, then the run stops on the missing key."""
+    import json
+    repo = tmp_path / 'repo'
+    ws = repo / 'wikisource/1582-rhemes-nt'
+    ws.mkdir(parents=True)
+    acts = json.loads((REPO / 'wikisource/1582-rhemes-nt/books.json').read_text())['acts']
+    del acts['running']
+    (ws / 'books.json').write_text(json.dumps({'acts': acts}))
+    (repo / 'static/data').mkdir(parents=True)
+    (repo / 'static/data/odr-original').symlink_to(REPO / 'static/data/odr-original')
+    out = tmp_path / 'out'
+    r = subprocess.run([sys.executable, '-I', *GEN, str(repo), 'acts', str(acts['argument_page']), str(out)],
                        capture_output=True, text=True)
     assert r.returncode != 0
-    assert "'running'" in r.stderr and 'TypeError' not in r.stderr
+    assert "'running'" in r.stderr and 'Traceback' not in r.stderr
+    assert (out / f"{acts['argument_page']}.wiki").exists()

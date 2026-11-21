@@ -743,8 +743,6 @@ def main(argv):
     DATA = REPO / 'static/data/odr-original'
     cfg = load_books(REPO).get(BOOK, {})
     CFG = config.from_dict(BOOK, cfg or {'first': FIRST, 'last': 0})  # a book not in books.json: defaults
-    if CFG.running is None:
-        sys.exit(f"books.json {BOOK}: no 'running' ([verso, recto] running heads); add it first (PLAYBOOK 'Start a new book')")
     MAXP = int(argv[4]) if len(argv) > 4 else None  # None: stop at books.json "last"
     orn = REPO / ORN_JSON
     ORNAMENTS = json.loads(orn.read_text()) if orn.exists() and (orn_flag or cfg.get('ornaments')) else {}
@@ -753,6 +751,8 @@ def main(argv):
         OUT.mkdir(parents=True, exist_ok=True)
         write_argument(book, FIRST)
         FIRST += config.argument_pages(BOOK, REPO)
+    if CFG.running is None:  # the Argument needs none; the scripture pages do
+        sys.exit(f"books.json {BOOK}: no 'running' ([verso, recto] running heads); add it before generating the scripture pages (PLAYBOOK 'Start a new book')")
     if MAXP is None:
         MAXP = cfg['last'] - FIRST + 1 if 'last' in cfg else 10 ** 6
     ann = {}
