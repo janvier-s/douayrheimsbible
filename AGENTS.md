@@ -4,82 +4,23 @@ This repository (`douayrheimsbible`) contains both the SvelteKit web application
 
 ---
 
-## 1. Wikisource 1582 Rhemes New Testament Guidelines
+## 1. Wikisource: 1582 Rhemes New Testament
 
-All wikitext pages live under `wikisource/1582-rhemes-nt/pages/` and are tracked in `manifest.json`.
+The pipeline in `scripts/wikisource/` generates the pages in `wikisource/1582-rhemes-nt/pages/` from `static/data/odr-original` for [Index:1582_Rhemes_New_Testament.pdf](https://en.wikisource.org/wiki/Index:1582_Rhemes_New_Testament.pdf). Read these before you change anything:
 
-### Table Styling & Dark Mode Rules (CRITICAL)
+- [`wikisource/1582-rhemes-nt/RULES.md`](wikisource/1582-rhemes-nt/RULES.md) says what is allowed: transcription, typography, page conventions, posting. It is the authority.
+- [`wikisource/1582-rhemes-nt/PLAYBOOK.md`](wikisource/1582-rhemes-nt/PLAYBOOK.md) says how: sources, the evidence ladder, the `reconcile.py` loop, checking a book against the scans, posting.
+- [`wikisource/1582-rhemes-nt/BOOKS.md`](wikisource/1582-rhemes-nt/BOOKS.md) gives the status of each book.
 
-MediaWiki's Vector 2022 night mode stylesheet includes an aggressive selector:
+Hard rules:
 
-```css
-html.skin-theme-clientpref-night .mw-parser-output [style*='background'] {
-	color: #202122;
-}
-```
-
-Any element with `background` anywhere in its inline `style` attribute matches and forces text to `#202122` (dark charcoal), causing unreadable dark text on dark backgrounds.
-
-1. **Never use `background` in inline styles**:
-   - DO NOT write `background: transparent;`, `background: none;`, or any background color in `{|`, `|-`, or `|` style tags.
-   - HTML tables and cells are transparent by default. Omit the `background` property entirely.
-2. **Never use `!` (`<th>`) for table headers**:
-   - `!` emits HTML `<th>`, which triggers default user-agent and MediaWiki theme cell borders and dark/light shading that clashes in dark mode.
-   - Use standard table cells `|` (`<td>`) with bold wikitext instead:
-     ```wikitext
-     | style='width: 35px; text-align: right; padding-right: 8px;' | '''Mt.'''
-     ```
-3. **Standard Table Container**:
-   ```wikitext
-   {| style='border-collapse: collapse; border: none; width: 100%;'
-   ```
-4. **Pre-flight Linter Enforcement**:
-   - Every page must pass `scripts/wikisource/lint.py` with **0 errors**.
-   - `lint.py` automatically enforces rule `E-darkmode` (flags any `background` style or `!` header within tables).
-
----
-
-### Auditing Against the Source
-
-- Check text and layout against the Transkribus OCR exports first, because they are cheap to read:
-  - Text: `/Users/Janvier/facsimiles/transkribus/pages/.../pdf*.txt`
-  - Word coordinates & layout: `/Users/Janvier/facsimiles/transkribus/pages/.../pdf*.tsv`
-- When the OCR cannot settle a reading (macron/stroke marks, `w` vs `vv`, long-s), crop the word from the facsimile using the TSV boxes, collage the crops into one image and look at it. Prefer one collage per batch over many single-image reads.
-- Do not trust EEBO-TCP transcription (`A16049.xml`) blindly: EEBO typists frequently dropped lines (homoeoteleuton), misread Renaissance contractions/abbreviations, and introduced typist errors.
-
----
-
-### Orthography & Transcription Standards
-
-1. **Long `s` (`ſ`) & Renaissance Orthography**:
-   - Preserved throughout the entire work (never modernize `ſ` to modern `s`).
-   - **Wikisource (`.wiki`)**: Use `{{ls}}` for long-s (`ſ`), `{{ls}}{{ls}}` for double long-s (`ſſ`), and `{{ls}}s` for `ſs` (displays as long-s in Page namespace; renders as modern `s` on transclusion for searchability).
-   - **Master TEI XML (`A16049.xml`)**: Preserve literal Unicode long-s `ſ` (`U+017F`) throughout.
-   - Retain 1582 print distribution of `u`/`v`, `vv`/`w`, macrons/titlos (`cōmaunded`, `vpō`), and ligatures (`æ`, `œ`, `&c.`).
-   - Before and after any change to pages or data, `lint.py` must report 0 errors. `E-loss`/`E-shift` mean a print feature was lost against git HEAD: fix the cause, don't override, unless the owner approved the change (`--allow-loss`/`--allow-shift … --reason`). `wikipost.py` applies the same check against the live revision.
-2. **Unicode NFC Normalization**:
-   - All text must be normalized to Unicode NFC (canonical decomposition followed by canonical composition). MediaWiki enforces NFC upon save; non-NFC text causes checksum mismatches.
-3. **Typography & Layout**:
-   - Preserve Renaissance roman/italic distinctions.
-   - No `†` after `{{verse|…}}` markers: the owner's editorial decision. Verse numbers can't sit in the margin because of reflow, so the print's verse-start `†` has no purpose there (removed in cff02c6f; lint `W-mark` enforces it). This is the only print mark removed; never remove any other.
-   - No double quotes `"` in the body text (the 1582 print does not use them).
-   - Running heads and footers must use `{{rh|...}}` and `{{continues|...}}` templates.
-
----
-
-### Publication Workflow
-
-1. Regenerate pages using `scripts/wikisource/generate.py`.
-2. Run linter:
-   ```bash
-   python3 scripts/wikisource/lint.py wikisource/1582-rhemes-nt/pages
-   ```
-   **Must output 0 errors.**
-3. Post pages live using `scripts/wikisource/wikipost.py`:
-   ```bash
-   python3 scripts/wikisource/wikipost.py START-END
-   ```
-4. Update and commit `manifest.json` with the newly assigned MediaWiki revision IDs (`revid`).
+1. **The print wins.** Never modernise ſ, vv, u/v, macrons, ligatures, italics or small caps. `odr-original` and the pages keep the print's misprints; only `odr` is corrected.
+2. **Never edit a generated page.** Fix the data or the generator and regenerate. Only the frozen pages (`source: frozen` in `manifest.json`) are edited by hand.
+3. **Never reduce fidelity silently.** `E-loss`/`E-shift` mean a print feature was lost: fix the cause. Override only for a decided change, with `--allow-loss`/`--allow-shift FEATURE:SCOPE --reason "…"`, and put the reason in the commit message.
+4. **Never post to Wikisource without the owner's approval**, and never revert another editor's change (RULES §7).
+5. **Before each commit**, run `python3 -m pytest -q scripts/wikisource/tests` and `python3 -I scripts/wikisource/lint.py wikisource/1582-rhemes-nt/pages --quiet` (0 errors).
+6. Scripts run as `python3 -I`, text is NFC, and data JSON is written only through `jsonfmt.write_like()` while holding `.git/odr-data.lock`.
+7. Read the XML and the OCR before the scans; scans cost the most tokens and are the last resort.
 
 ---
 
