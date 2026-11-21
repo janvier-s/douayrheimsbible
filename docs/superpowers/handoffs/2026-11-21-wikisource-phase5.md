@@ -39,3 +39,15 @@ Write the **Phase 5 plan** with superpowers:writing-plans, and get the owner's r
 - `apply_longs_pages.py`, `fix_live.py`, `remove_verse_daggers.py`, `build_matthew_replacements.py`, `audit_all_267.py`, `audit_all_front.py`, `check_live_linter.py`, `publish.py`, `update_ot_index.py`: page sweeps and one-offs. Check that each is unused first.
 
 Deferred minors still open: `status --write` writes the manifest without the lock; `rhemes/generate.py` keeps a dead `BOOKS_JSON` constant; a new book without `running` gives an unclear `TypeError`; `fix_live.py` prints old script names (it goes in Phase 5 anyway).
+
+## Done (Phase 5, 2026-11-21)
+
+Plan: `docs/superpowers/plans/2026-11-21-wikisource-phase5-cleanup.md`. Commits `1680c21d` (plan), `a4d4e35f`, `80f517c7`, `f9795149`, and this note.
+
+- `scripts/wikisource/` now holds only `rhemes/`, `tests/`, `rh.py`, `_shim.py` and the shims. `tests/test_layout.py` enforces that, checks that every shim's target module exists, and checks that no live doc names a deleted script.
+- All 19 candidates are deleted and listed in `docs/archive/scripts.md` with their last commits. The ledger covers the data one-offs, including the seven `apply_wordfixes` edits at John 19:17a1, which are now at loc 19:15a1.
+- The owner did not choose an alternative to the plan's defaults, so `check_live_linter.py` and `update_ot_index.py` were deleted (restore them from git if wanted) and `front-draft/` was kept.
+- Deferred minors closed: `status --write` reads, marks and writes the manifest under the lock; `rh.py generate` names a missing `running` key; the dead `BOOKS_JSON` constant is gone. `fix_live.py` was deleted along with the other one-offs.
+- "For the owner" w/vv items: closed by the other session in `012ddb29` and `14f713ce`. `detect wvv` now places each finding by its context and reads Mark's old TSV, and 8 Luke/John entries were applied.
+
+Still open: the `sync-odr` shortlist for the owner (`docs/audits/2026-11-21-sync-odr-mark-john.md`); removing the shims (a later release, spec §4.3); posting (owner's approval, RULES §7).
