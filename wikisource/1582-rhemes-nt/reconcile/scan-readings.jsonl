@@ -51,3 +51,10 @@
 {"book": "acts", "page": 391, "committed": "Cæsaréa,", "generated": "Cæſaréa,", "reading": "Cæſaréa,", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts scans pp. 345, 346, 352); not cropped"}
 {"book": "acts", "page": 392, "committed": "Cæsaréa", "generated": "Cæſaréa", "reading": "Cæſaréa", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts scans pp. 345, 346, 352); not cropped"}
 {"book": "acts", "page": 399, "committed": "Syracûsa,", "generated": "Syracûſa,", "reading": "Syracûſa,", "evidence": "inferred 2026-11-21 (XML Syracùſa shows the ſ); not cropped"}
+{"book": "romans", "page": 421, "committed": "saluatió,", "generated": "ſaluatió,", "reading": "ſaluatió,", "evidence": "inferred 2026-11-21 (word-initial ſ; XML ſaluatio; print ſaluation on the same opening); not cropped"}
+{"book": "romans", "page": 423, "committed": "iustificatió,", "generated": "iuſtificatió,", "reading": "iuſtificatió,", "evidence": "scan collage 2026-11-21: print iuſtificatió,"}
+{"book": "romans", "page": 423, "committed": "resurrectió,", "generated": "reſurrectió,", "reading": "reſurrectió,", "evidence": "scan collage 2026-11-21: print reſurrectió,"}
+{"book": "romans", "page": 432, "committed": "vnderstãd", "generated": "vnderſtãd", "reading": "vnderſtãd", "evidence": "scan collage 2026-11-21: print vnderſtãd"}
+{"book": "romans", "page": 437, "committed": "Eglis.", "generated": "Egliſ.", "reading": "Egliſ.", "evidence": "scan collage 2026-11-21: print Egliſ."}
+{"book": "romans", "page": 446, "committed": "cõscience", "generated": "cõſcience", "reading": "cõſcience", "evidence": "scan collage 2026-11-21: print cõſcience"}
+{"book": "romans", "page": 449, "committed": "Tryphósa:", "generated": "Tryphóſa:", "reading": "Tryphóſa:", "evidence": "scan collage 2026-11-21: print Tryphóſa:"}
