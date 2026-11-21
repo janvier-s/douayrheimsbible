@@ -1,0 +1,94 @@
+{{:MediaWiki:Proofreadpage_index_template
+|Type=book
+|Title=The Nevv Testament of Iesus Christ, translated faithfully into English, out of the authentical Latin
+|Subtitle=according to the be{{ls}}t corrected copies of the {{ls}}ame, diligently conferred vvith the Greeke and other editions in diuers languages: vvith {{small-caps|Argvments}} of bookes and chapters, {{small-caps|Annotations}}, and other nece{{ls}}{{ls}}arie helpes, for the better vnder{{ls}}tanding of the text, and {{ls}}pecially for the di{{ls}}couerie of the {{small-caps|Corrvptions}} of diuers late tran{{ls}}lations, and for cleering the {{small-caps|Controversies}} in religion, of the{{ls}}e daies
+|Language=en
+|Volume=3
+|Author=
+|Translator=[[w:English College, Douai|English College of Rhemes]]<br />([[w:Gregory Martin (scholar)|Gregory Martin]])
+|Editor=[[Author:William Allen (1532-1594)|William Allen]] and [[w:Richard Bristow|Richard Bristow]]
+|Illustrator=
+|School=
+|Publisher=[[w:John Fogny|Iohn Fogny]]
+|Address=[[w:Reims|Rhemes]], France
+|Year=1582
+|Key=New Testament of Iesus Christ (1582)
+|ISBN=
+|OCLC=3164802
+|LCCN=16019327
+|BNF_ARK=
+|ARC=
+|DOI=
+|Source=pdf
+|Image=1
+|Progress=C
+|Transclusion=no
+|Validation_date=
+|Pages=<pagelist 1=Title 2to28=roman 29=1 774to800=Table/>
+|Volumes=* [[Index:1609_Doway_Old_Testament.pdf|Volume 1: Old Testament (1609, Genesis to Job)]]
+* [[Index:1610_Douai_Old_Testament.pdf|Volume 2: Old Testament (1610, Psalms to 2 Machabees)]]
+* [[Index:1582_Rhemes_New_Testament.pdf|Volume 3: New Testament (1582, Matthew to Apocalypse)]]
+|Remarks={{div col|colwidth=18em}}
+'''Front matter'''
+* [[Page:1582 Rhemes New Testament.pdf/1|Title page]]
+* [[Page:1582 Rhemes New Testament.pdf/2|The Censure and Approbation]] {{smaller|(p. ii)}}
+* [[Page:1582 Rhemes New Testament.pdf/3|The Preface to the Reader]] {{smaller|(p. iii)}}
+** [[Page:1582 Rhemes New Testament.pdf/12|Of the Annotations]] {{smaller|(p. xii)}}
+** [[Page:1582 Rhemes New Testament.pdf/13|Why the old vulgar Latin is translated]] {{smaller|(p. xiii)}}
+** [[Page:1582 Rhemes New Testament.pdf/21|The maner of this translation]] {{smaller|(p. xxi)}}
+* [[Page:1582 Rhemes New Testament.pdf/25|The Signification of the Numbers and Markes]] {{smaller|(p. xxv)}}
+* [[Page:1582 Rhemes New Testament.pdf/26|The Bookes of the Nevv Testament]] {{smaller|(p. xxvi)}}
+* [[Page:1582 Rhemes New Testament.pdf/27|The Infallible Authoritie of the Scriptures (S. Augustine)]] {{smaller|(p. xxvii)}}
+'''Gospels'''
+* [[Page:1582 Rhemes New Testament.pdf/29|The Summe of the Nevv Testament]] {{smaller|(p. 1)}}
+* [[Page:1582 Rhemes New Testament.pdf/30|S. Matthew]] {{smaller|(p. 2)}}
+*: {{smaller|Chapters: [[Page:1582 Rhemes New Testament.pdf/31|1]] · [[Page:1582 Rhemes New Testament.pdf/33|2]] · [[Page:1582 Rhemes New Testament.pdf/35|3]] · [[Page:1582 Rhemes New Testament.pdf/37|4]] · [[Page:1582 Rhemes New Testament.pdf/39|5]] · [[Page:1582 Rhemes New Testament.pdf/42|6]] · [[Page:1582 Rhemes New Testament.pdf/45|7]] · [[Page:1582 Rhemes New Testament.pdf/47|8]] · [[Page:1582 Rhemes New Testament.pdf/50|9]] · [[Page:1582 Rhemes New Testament.pdf/53|10]] · [[Page:1582 Rhemes New Testament.pdf/56|11]] · [[Page:1582 Rhemes New Testament.pdf/58|12]] · [[Page:1582 Rhemes New Testament.pdf/62|13]] · [[Page:1582 Rhemes New Testament.pdf/66|14]] · [[Page:1582 Rhemes New Testament.pdf/69|15]] · [[Page:1582 Rhemes New Testament.pdf/72|16]] · [[Page:1582 Rhemes New Testament.pdf/76|17]] · [[Page:1582 Rhemes New Testament.pdf/78|18]] · [[Page:1582 Rhemes New Testament.pdf/81|19]] · [[Page:1582 Rhemes New Testament.pdf/84|20]] · [[Page:1582 Rhemes New Testament.pdf/86|21]] · [[Page:1582 Rhemes New Testament.pdf/90|22]] · [[Page:1582 Rhemes New Testament.pdf/92|23]] · [[Page:1582 Rhemes New Testament.pdf/96|24]] · [[Page:1582 Rhemes New Testament.pdf/99|25]] · [[Page:1582 Rhemes New Testament.pdf/102|26]] · [[Page:1582 Rhemes New Testament.pdf/108|27]] · [[Page:1582 Rhemes New Testament.pdf/112|28]]}}
+* [[Page:1582 Rhemes New Testament.pdf/114|S. Marke]] {{smaller|(p. 86)}}
+*: {{smaller|Chapters: [[Page:1582 Rhemes New Testament.pdf/115|1]] · [[Page:1582 Rhemes New Testament.pdf/118|2]] · [[Page:1582 Rhemes New Testament.pdf/120|3]] · [[Page:1582 Rhemes New Testament.pdf/123|4]] · [[Page:1582 Rhemes New Testament.pdf/126|5]] · [[Page:1582 Rhemes New Testament.pdf/128|6]] · [[Page:1582 Rhemes New Testament.pdf/132|7]] · [[Page:1582 Rhemes New Testament.pdf/135|8]] · [[Page:1582 Rhemes New Testament.pdf/138|9]] · [[Page:1582 Rhemes New Testament.pdf/141|10]] · [[Page:1582 Rhemes New Testament.pdf/144|11]] · [[Page:1582 Rhemes New Testament.pdf/146|12]] · [[Page:1582 Rhemes New Testament.pdf/150|13]] · [[Page:1582 Rhemes New Testament.pdf/152|14]] · [[Page:1582 Rhemes New Testament.pdf/156|15]] · [[Page:1582 Rhemes New Testament.pdf/159|16]]}}
+* [[Page:1582 Rhemes New Testament.pdf/161|S. Luke]] {{smaller|(p. 133)}}
+* [[Page:1582 Rhemes New Testament.pdf/242|S. Iohn]] {{smaller|(p. 214)}}
+* [[Page:1582 Rhemes New Testament.pdf/309|The Summe and Order of the Euangelical Historie]] {{smaller|(p. 281)}}
+'''Actes'''
+* [[Page:1582 Rhemes New Testament.pdf/314|The Actes of the Apostles]] {{smaller|(p. 286)}}
+'''S. Paules Epistles'''
+* [[Page:1582 Rhemes New Testament.pdf/405|The Argument of the Epistles in General]] {{smaller|(p. 377)}}
+* [[Page:1582 Rhemes New Testament.pdf/407|Romanes]] {{smaller|(p. 379)}}
+* [[Page:1582 Rhemes New Testament.pdf/452|1 Corinthians]] {{smaller|(p. 424)}}
+* [[Page:1582 Rhemes New Testament.pdf/496|2 Corinthians]] {{smaller|(p. 468)}}
+* [[Page:1582 Rhemes New Testament.pdf/522|Galatians]] {{smaller|(p. 494)}}
+* [[Page:1582 Rhemes New Testament.pdf/540|Ephesians]] {{smaller|(p. 512)}}
+* [[Page:1582 Rhemes New Testament.pdf/553|Philippians]] {{smaller|(p. 525)}}
+* [[Page:1582 Rhemes New Testament.pdf/563|Colossians]] {{smaller|(p. 535)}}
+* [[Page:1582 Rhemes New Testament.pdf/573|1 Thessalonians]] {{smaller|(p. 545)}}
+* [[Page:1582 Rhemes New Testament.pdf/580|2 Thessalonians]] {{smaller|(p. 552)}}
+* [[Page:1582 Rhemes New Testament.pdf/591|1 Timothee]] {{smaller|(p. 563)}}
+* [[Page:1582 Rhemes New Testament.pdf/613|2 Timothee]] {{smaller|(p. 585)}}
+* [[Page:1582 Rhemes New Testament.pdf/622|Titus]] {{smaller|(p. 594)}}
+* [[Page:1582 Rhemes New Testament.pdf/627|Philemon]] {{smaller|(p. 599)}}
+* [[Page:1582 Rhemes New Testament.pdf/629|Hebrevves]] {{smaller|(p. 601)}}
+'''Catholike Epistles'''
+* [[Page:1582 Rhemes New Testament.pdf/668|Iames]] {{smaller|(p. 640)}}
+* [[Page:1582 Rhemes New Testament.pdf/682|1 Peter]] {{smaller|(p. 654)}}
+* [[Page:1582 Rhemes New Testament.pdf/694|2 Peter]] {{smaller|(p. 666)}}
+* [[Page:1582 Rhemes New Testament.pdf/702|1 Iohn]] {{smaller|(p. 674)}}
+* [[Page:1582 Rhemes New Testament.pdf/716|2 Iohn]] {{smaller|(p. 688)}}
+* [[Page:1582 Rhemes New Testament.pdf/718|3 Iohn]] {{smaller|(p. 690)}}
+* [[Page:1582 Rhemes New Testament.pdf/720|Iude]] {{smaller|(p. 692)}}
+'''Apocalypse'''
+* [[Page:1582 Rhemes New Testament.pdf/724|The Apocalypse of S. Iohn]] {{smaller|(p. 696)}}
+'''Tables'''
+* [[Page:1582 Rhemes New Testament.pdf/774|A Table of the Epistles and Gospels]]
+* [[Page:1582 Rhemes New Testament.pdf/777|An Ample and Particular Table (of Controversies)]]
+* [[Page:1582 Rhemes New Testament.pdf/799|The Explication of Certaine Wordes]]
+* [[Page:1582 Rhemes New Testament.pdf/800|The Faultes Corrected]]
+{{div col end}}
+{{smaller|First edition of the Rheims New Testament (STC 2884, ESTC S102491, Herbert 177). Translated from the Latin Vulgate by Gregory Martin; annotations and chapter arguments by Richard Bristow; revised by William Allen. Printed by John Fogny at Rhemes, 1582. Thomas Worthington is also credited with assisting. Scan: [[iarchive:nevvtestamentofi00mart|Internet Archive]].}}
+|Width=
+|Header=
+|Footer=
+|wikipedia=Douay–Rheims Bible
+|commons=File:1582 Rhemes New Testament.pdf
+|wikidata=Q142234272
+|portal=The Bible
+|tmplver=
+}}
