@@ -121,7 +121,8 @@ def conflicts(committed, generated, page, unaligned=None):
             if SC_MARK in c + g or c == g or c.lower() == g.lower() or _cls(c, g) not in LADDER_CLASSES:
                 continue
             ctx = [w.replace(SC_MARK, '') for w in A]
-            out.append(Conflict(page, c, g, ctx[max(0, i1 + k - 3):i1 + k], ctx[i1 + k + 1:i1 + k + 4]))
+            wordy = lambda ws: [w for w in ws if re.search(r'[\wſ]', w)]  # a bare '.' or ']' locates nothing
+            out.append(Conflict(page, c, g, wordy(ctx[max(0, i1 + k - 6):i1 + k])[-3:], wordy(ctx[i1 + k + 1:i1 + k + 7])[:3]))
     return out
 
 
@@ -254,9 +255,19 @@ def _stem_rule(c):
             and any(st in fold(k) for st in FS_STEMS))
 
 
+def _has_macron(w):
+    return any(ch in '\u0304\u0303' for ch in unicodedata.normalize('NFD', w))
+
+
 def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
     side = {core(c.committed): 'committed', core(c.generated): 'generated'}
     xml = core(xml_forms[0]) if len(xml_forms) == 1 else None
+    if _has_macron(c.committed) != _has_macron(c.generated):
+        # EEBO expands contractions: an XML form without the macron is no evidence against it,
+        # so a macron conflict is settled by OCR or the scans only
+        if xml and not _has_macron(xml):
+            xml = None
+        same_book = Counter({k: v for k, v in same_book.items() if _has_macron(k)})
     ocr = {core(f) for f in ocr_forms}
     if xml in side and xml in ocr:
         return Decision(c, 1, side[xml], f'xml {xml} + transkribus')
@@ -272,6 +283,9 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
     if max(a, b) and max(a, b) >= 2 * min(a, b):
         w = 'committed' if a > b else 'generated'
         return Decision(c, 3, w, f'book majority {a}:{b}' + (f'; xml {xml}' if xml else ''))
+    if _has_macron(c.committed) != _has_macron(c.generated):  # nothing against the print's contraction
+        w = 'committed' if _has_macron(c.committed) else 'generated'
+        return Decision(c, 3, w, 'macron kept: an expanded form is no evidence against it')
     if xml == core(c.generated) and _stem_rule(c):  # only where nothing else settles it
         return Decision(c, 3, 'generated', f'xml {xml}; committed ſs from the stem rule (owner 2026-11-21)')
     return Decision(c, 4, '', f'xml {xml or "-"}; book {a}:{b}')
@@ -279,24 +293,28 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
 
 # ---- adopt ---------------------------------------------------------------------------
 
-_SEP = r'(?:\s|<[^>]+>|⟦[^⟧]*⟧)+'
+_SEP = r'(?:\s|<[^>]+>|⟦[^⟧]*⟧|\[\d+\])+'  # spaces, tags, sentinels, cross-reference marks [1]
 _ADOPT_COMBOS = [(3, 3), (2, 2), (1, 1), (2, 0), (0, 2), (1, 0), (0, 1), (0, 0)]
 
 
-def _leaves(obj, out):
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            if isinstance(v, str):
-                out.append((obj, k))
-            else:
-                _leaves(v, out)
-    elif isinstance(obj, list):
-        for k, v in enumerate(obj):
-            if isinstance(v, str):
-                out.append((obj, k))
-            else:
-                _leaves(v, out)
+def _leaves(obj, out, path=()):
+    """String leaves as (container, key, path), in document order."""
+    items = obj.items() if isinstance(obj, dict) else enumerate(obj) if isinstance(obj, list) else ()
+    for k, v in items:
+        if isinstance(v, str):
+            out.append((obj, k, path + (k,)))
+        else:
+            _leaves(v, out, path + (k,))
     return out
+
+
+def _mirrors(p, q):
+    """Two leaves hold the same fact when their paths part at keys of one object
+    (a verse's cross_refs[i].text and xrefs[i]), not at different list items."""
+    i = 0
+    while i < min(len(p), len(q)) and p[i] == q[i]:
+        i += 1
+    return i < min(len(p), len(q)) and {p[i], q[i]} == {'cross_refs', 'xrefs'}
 
 
 def _pattern(before, word, after):
@@ -305,8 +323,22 @@ def _pattern(before, word, after):
 
 
 def _find(leaves, before, word, after):
+    """Matches in the file's strings joined in document order (a verse and its notes read on),
+    as (leaf, start, end) of the word itself, which must lie inside one string."""
     pat = _pattern(before, word, after)
-    return [(slot, m) for slot in leaves for m in pat.finditer(slot[0][slot[1]])]
+    starts, pos = [], 0
+    for obj, key, _ in leaves:
+        starts.append(pos)
+        pos += len(obj[key]) + 1
+    joined = '\n'.join(obj[key] for obj, key, _ in leaves)
+    out = []
+    for m in pat.finditer(joined):
+        a, z = m.span(1)
+        i = max(k for k, st in enumerate(starts) if st <= a)
+        if z <= starts[i] + len(leaves[i][0][leaves[i][1]]) and not any(
+                h[0] is leaves[i] or _mirrors(h[0][2], leaves[i][2]) for h in out):  # a mirrored copy is the same place
+            out.append((leaves[i], a - starts[i], z - starts[i]))
+    return out
 
 
 def adopt(files, decisions, ov, lock):
@@ -341,14 +373,20 @@ def adopt(files, decisions, ov, lock):
             if found in (None, 'ambiguous'):
                 unlocated.append((d, f'{found or "not found"}: {c.generated!r} near {" ".join(c.before)} | {" ".join(c.after)}'))
                 continue
-            f, ((obj, key), m) = found
+            f, ((obj, key, path), a, z) = found
             old = obj[key]
-            new = unicodedata.normalize('NFC', old[:m.start(1)] + c.committed + old[m.end(1):])
+            new = unicodedata.normalize('NFC', old[:a] + c.committed + old[z:])
             refused = fidelity.refusals(c.page, old, new, ov)
             if refused:
                 unlocated.append((d, 'fidelity: ' + '; '.join(refused)))
                 continue
             obj[key] = new
+            tail = _pattern([], c.generated, c.after[:2])
+            for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
+                if p2 != path and _mirrors(p2, path):
+                    ms = list(tail.finditer(o2[k2]))
+                    if len(ms) == 1:
+                        o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + c.committed + o2[k2][ms[0].end(1):])
             dirty.add(f)
             applied.append((d, f))
         for f in dirty:

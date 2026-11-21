@@ -182,3 +182,77 @@ def test_scan_readings_override_rung4():
 def test_stem_rule_only_where_otherwise_unresolved():
     d = ladder.decide(C('neceſsitie', 'neceſſitie'), ['neceſſitie'], [], [], Counter({'neceſsitie': 4, 'neceſſitie': 1}))
     assert (d.rung, d.winner) == (3, 'committed') and 'majority' in d.evidence
+
+
+def test_context_skips_punctuation_only_words():
+    head = '<noinclude><pagequality level="1" user="" />{{rh|1|X|Y}}</noinclude>'
+    foot = '<noinclude></noinclude>\n'
+    got = ladder.conflicts(head + 'our Lord . P{{ls}}. 117, 26.' + foot, head + 'our Lord . Ps. 117, 26.' + foot, 145)
+    assert got == [ladder.Conflict(145, 'Pſ.', 'Ps.', ['our', 'Lord'], ['117,', '26.'])]
+
+
+def test_adopt_context_across_note_strings(tmp_path):
+    f = tmp_path / 'mark.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [
+        {'verse': 9, 'text': 'in the name of our Lord.', 'notes': [{'text': 'Ps. 117, 26.'}]},
+        {'verse': 10, 'text': 'Hosanna in the highest.', 'notes': [{'text': 'Ps. 117, 26.'}]}]}]}, ensure_ascii=False, indent=2) + '\n')
+    c = ladder.Conflict(145, 'Pſ.', 'Ps.', ['of', 'our', 'Lord.'], ['117,', '26.'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    assert len(applied) == 1 and unlocated == []
+    d = json.loads(f.read_text())['chapters'][0]['verses']
+    assert d[0]['notes'][0]['text'] == 'Pſ. 117, 26.' and d[1]['notes'][0]['text'] == 'Ps. 117, 26.'
+
+
+def test_adopt_updates_mirrored_copies(tmp_path):
+    f = tmp_path / 'mark.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [
+        {'verse': 9, 'text': 'name of our Lord. [1]', 'cross_refs': [{'text': 'Ps. 117, 26.'}], 'xrefs': ['Ps. 117, 26.']},
+        {'verse': 30, 'text': 'other words', 'cross_refs': [{'text': 'Ps. 117, 26.'}], 'xrefs': ['Ps. 117, 26.']}]}]},
+        ensure_ascii=False) + '\n')
+    c = ladder.Conflict(145, 'Pſ.', 'Ps.', ['of', 'our', 'Lord.'], ['117,', '26.'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    assert unlocated == [] and len(applied) == 1
+    v = json.loads(f.read_text())['chapters'][0]['verses']
+    assert (v[0]['cross_refs'][0]['text'], v[0]['xrefs'][0]) == ('Pſ. 117, 26.', 'Pſ. 117, 26.')
+    assert (v[1]['cross_refs'][0]['text'], v[1]['xrefs'][0]) == ('Ps. 117, 26.', 'Ps. 117, 26.')
+
+
+def test_adopt_mirrors_with_different_strings(tmp_path):
+    f = tmp_path / 'mark.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [
+        {'verse': 21, 'text': 'the Sonne of man in deede goeth,', 'cross_refs': [{'text': 'Ps. 40, 10.'}], 'xrefs': ['Ps. 40, 10. · Mt. 26, 26.']},
+        {'verse': 30, 'text': 'x', 'cross_refs': [{'text': 'Ps. 40, 10.'}]}]}]}, ensure_ascii=False) + '\n')
+    c = ladder.Conflict(153, 'Pſ.', 'Ps.', ['in', 'deede', 'goeth,'], ['40,', '10.'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    assert unlocated == []
+    v = json.loads(f.read_text())['chapters'][0]['verses']
+    assert v[0]['cross_refs'][0]['text'] == 'Pſ. 40, 10.' and v[0]['xrefs'][0] == 'Pſ. 40, 10. · Mt. 26, 26.'
+    assert v[1]['cross_refs'][0]['text'] == 'Ps. 40, 10.'
+
+
+def test_adopt_verse_fix_leaves_its_notes(tmp_path):
+    f = tmp_path / 'mark.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [
+        {'verse': 1, 'text': 'our Lords Paſſion beheaded, laſt', 'notes': [{'text': 'Paſſion beheaded, laſt'}]}]}]},
+        ensure_ascii=False) + '\n')
+    ov = fidelity.parse_overrides(['--allow-shift', 'ls:*', '--reason', 't'])
+    applied, _ = ladder.adopt([f], [dec(C('Paſsion', 'Paſſion'))], ov, tmp_path / 'lock')
+    v = json.loads(f.read_text())['chapters'][0]['verses'][0]
+    assert len(applied) == 1 and v['text'] == 'our Lords Paſsion beheaded, laſt' and v['notes'][0]['text'] == 'Paſſion beheaded, laſt'
+
+
+def test_expanded_xml_never_beats_a_macron():
+    # EEBO expands contractions: its commaundement is no evidence against the print's cōmaundement
+    d = ladder.decide(C('cōmaundement', 'commaundement'), ['commaundement'], [], [], Counter({'commaundement': 5}))
+    assert d.winner != 'generated'
+    d = ladder.decide(C('commaundement', 'cōmaundement'), ['commaundement'], [], [], Counter({'commaundement': 5}))
+    assert d.winner != 'committed'
+    d = ladder.decide(C('cōmaundement', 'commaundement'), [], [], ['commaundement'], Counter())
+    assert (d.rung, d.winner) == (3, 'generated')  # an OCR reading still counts
+
+
+def test_unsettled_macron_conflict_keeps_the_macron():
+    d = ladder.decide(C('cōmaundement', 'commaundement'), ['commaundement'], [], [], Counter({'commaundement': 5}))
+    assert (d.rung, d.winner) == (3, 'committed') and 'macron' in d.evidence
+    d = ladder.decide(C('commaundement', 'cōmaundement'), [], [], [], Counter())
+    assert (d.rung, d.winner) == (3, 'generated')
