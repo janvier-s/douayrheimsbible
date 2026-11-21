@@ -32,7 +32,7 @@ def test_import_has_no_side_effects(tmp_path, monkeypatch):
 def test_load_books():
     from rhemes import generate
     b = generate.load_books(REPO)
-    assert b['mark'] == {'first': 114, 'last': 160, 'ornaments': False, 'golden': b['mark']['golden']}
+    assert {k: b['mark'][k] for k in ('first', 'last', 'ornaments')} == {'first': 114, 'last': 160, 'ornaments': False}
     assert all(v['ornaments'] is False for v in b.values())
 
 

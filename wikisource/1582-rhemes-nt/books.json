@@ -1,8 +1,88 @@
 {
-	"matthew": { "first": 31, "last": 113, "ornaments": false, "golden": true },
-	"mark": { "first": 114, "last": 160, "ornaments": false, "golden": true },
-	"luke": { "first": 161, "last": 241, "ornaments": false, "golden": true },
-	"john": { "first": 242, "last": 308, "ornaments": false, "golden": true },
-	"acts": { "first": 314, "last": 401, "ornaments": false, "golden": true },
-	"romans": { "first": 405, "last": 451, "ornaments": false, "golden": true }
+	"matthew": {
+		"first": 31,
+		"last": 113,
+		"ornaments": false,
+		"golden": true,
+		"title_end": "DING TO MATTHEW.",
+		"running": ["THE GOSPEL", "ACCORDING TO S. MATTHEW."],
+		"holy_week": {
+			"first": 86,
+			"last": 113,
+			"skip": [95, 107]
+		}
+	},
+	"mark": {
+		"first": 114,
+		"last": 160,
+		"ornaments": false,
+		"golden": true,
+		"ocr": "transkribus",
+		"title_end": "DING TO MARKE.",
+		"argument_page": 114,
+		"first_head_cha": true,
+		"running": ["THE GOSPEL", "ACCORDING TO S. MARKE."],
+		"holy_week": {
+			"first": 144,
+			"last": 160,
+			"skip": []
+		}
+	},
+	"luke": {
+		"first": 161,
+		"last": 241,
+		"ornaments": false,
+		"golden": true,
+		"ocr": "transkribus",
+		"title_end": "DING TO LVKE.",
+		"argument_page": 161,
+		"first_head_cha": true,
+		"running": ["THE GOSPEL", "ACCORDING TO S. LVKE."],
+		"holy_week": {
+			"first": 222,
+			"last": 237,
+			"skip": [233, 234]
+		}
+	},
+	"john": {
+		"first": 242,
+		"last": 308,
+		"ornaments": false,
+		"golden": true,
+		"ocr": "transkribus",
+		"title_end": "DING TO IOHN.",
+		"argument_page": 242,
+		"first_head_cha": true,
+		"running": ["THE GOSPEL", "ACCORDING TO S. IOHN."],
+		"holy_week": {
+			"first": 282,
+			"last": 307,
+			"skip": [289, 304, 305]
+		}
+	},
+	"acts": {
+		"first": 314,
+		"last": 401,
+		"ornaments": false,
+		"golden": true,
+		"ocr": "transkribus",
+		"title_end": "APOSTLES.",
+		"argument_page": 314,
+		"argument_roman": true,
+		"scripture_pages": 85,
+		"running": ["THE ACTES", "OF THE APOSTLES."]
+	},
+	"romans": {
+		"first": 405,
+		"last": 451,
+		"ornaments": false,
+		"golden": true,
+		"ocr": "transkribus",
+		"title_end": "TO THE ROMANES.",
+		"argument_page": 405,
+		"argument_intros": [1, 0],
+		"argument_roman": true,
+		"scripture_pages": 42,
+		"running": ["THE EPISTLE OF S. PAVL", "TO THE ROMANES."]
+	}
 }

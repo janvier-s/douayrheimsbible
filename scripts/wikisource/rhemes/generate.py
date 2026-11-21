@@ -12,54 +12,20 @@ import json, os, re, sys, difflib
 from pathlib import Path
 
 from .sources import book_pages
-from . import paths, sources, text
+from . import config, paths, sources, text
+from .overrides import (ARGUMENT_TITLES, ARGUMENT_BREAKS, ARGUMENT_SPLIT, INNER_ARGUMENT_NOTES, SUMMARY_STARS,
+                        SIDE_SC, PAREN_TITLES, OUTER_NOTES, CREND_AT, BARS, PAGE_STARTS, CATCHWORDS, SPLIT_WORDS,
+                        MANUAL_PARAS, NO_PARAS)
 
 # Set by main(argv); the defaults let the module be imported (tests) without side effects.
 REPO = paths.REPO
 BOOK, FIRST, OUT, MAXP = '', 0, None, 10 ** 6
+CFG = config.from_dict('', {'first': 0, 'last': 0})  # the book's books.json entry, set by main
 DATA = REPO / 'static/data/odr-original'
 BOOKS_JSON = 'wikisource/1582-rhemes-nt/books.json'
 
 
 load_books = sources.load_books
-# Matthew's recto heads (pages 33-113) and title (page 31) print a single W sort, not vv.
-# Which OCR the alignment reads (WS_OCR overrides). Matthew was done with Tesseract and
-# its pages stay as they are; Transkribus reads the print better from Mark on.
-OCR_SOURCE = {'mark': 'transkribus', 'luke': 'transkribus', 'john': 'transkribus', 'acts': 'transkribus', 'romans': 'transkribus'}
-# Last line of the book title on its first page ("THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO ...").
-TITLE_END = {'matthew': 'DING TO MATTHEW.', 'mark': 'DING TO MARKE.', 'luke': 'DING TO LVKE.', 'john': 'DING TO IOHN.', 'acts': 'APOSTLES.', 'romans': 'TO THE ROMANES.'}
-# Wiki page of the book's Argument, printed before chapter 1 (generated when it is the first page asked for).
-ARGUMENT = {'mark': 114, 'luke': 161, 'john': 242, 'acts': 314, 'romans': 405}
-# Intros printed as the Argument, in print order (Romans: the General Argument of the Epistles, then its own).
-ARGUMENT_INTROS = {'romans': [1, 0]}
-# Arguments set in roman with italic quotations (the data's <i> is italic); Mark's, Luke's and John's are italic.
-ARGUMENT_ROMAN = {'acts', 'romans'}
-# The title lines as printed, where the title does not split at its last ' OF'.
-ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'THE ACTES OF THE APOSTLES.')],
-                   ('romans', 1): [('x-larger', '❧ THE ARGVMENT OF THE'), ('larger', 'EPISTLES IN GENERAL.')],
-                   ('romans', 0): [('larger', 'THE TIME VVHEN THE EPISTLE'), ('larger', 'TO THE ROMANES VVAS VVRITTEN,'),
-                                   ('larger', "''and the Argument thereof.''")]}
-# Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
-ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
-                   'romans': ['beleeued him to be', 'any Catholike of this time.', 'Gal. 4. ſaying', 'may, and geuing no offence']}
-# John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
-# (letters before the break, the word that follows the broken one); the whole word is read from the data.
-ARGUMENT_SPLIT = {'john': (3, 'beheaded')}
-# Argument notes printed in the INNER margin (read on pdf242: "Iren. li. 2. c. 39." beside chap. 5, 1).
-INNER_ARGUMENT_NOTES = {'Iren. li. 2. c. 39.'}
-# First pages whose head prints the chapter beside the page number (mark 115: "CHA. I." … "87").
-FIRST_HEAD_CHA = {'mark', 'luke', 'john'}
-# Number of scripture pages (excluding end-matter tables/creed) for book alignment.
-SCRIPTURE_PAGES = {'acts': 85, 'romans': 42}
-RUNNING = {'matthew': ('THE GOSPEL', 'ACCORDING TO S. MATTHEW.'),
-           'mark': ('THE GOSPEL', 'ACCORDING TO S. MARKE.'),
-           'luke': ('THE GOSPEL', 'ACCORDING TO S. LVKE.'),  # read on pdf 163, 164
-           'john': ('THE GOSPEL', 'ACCORDING TO S. IOHN.'),  # read on pdf 245, 246  # mark: read on 1/2, 5/1, 16/1
-           'acts': ('THE ACTES', 'OF THE APOSTLES.'),
-           'romans': ('THE EPISTLE OF S. PAVL', 'TO THE ROMANES.')}
-# Marks in chapter summaries are not in the data yet: words to star, per chapter.
-# Matt 2-28 summaries were checked on the scans (round 10): they print no marks.
-SUMMARY_STARS = {('matthew', 1): ['Abraham', 'Dauid. 18']}
 ITALIC_REF = re.compile(r'^\s*(<i>)?\s*[0-9]?\.?\s*[A-Z][a-zæ]*\.\s*[0-9]')
 ROMAN = ['', 'I', 'II', 'III', 'IIII', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIIII', 'XV',
          'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI', 'XXII', 'XXIII', 'XXIIII', 'XXV', 'XXVI', 'XXVII', 'XXVIII']
@@ -275,7 +241,7 @@ def build_stream(book, ann):
                 note_str = ('{{MOUTER|' + finish(ch_note) + '}}\n') if ch_note else ''
                 title_wiki = note_str + '{{c|{{xx-larger|THE EPISTLE OF}}}}\n{{c|{{x-larger|PAVL THE APOSTLE}}}}\n{{c|{{larger|TO THE ROMANES.}}}}'
             else:
-                title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n{{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}\n{{c|{{larger|' + TITLE_END[BOOK] + '}}}}'
+                title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n{{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             tt = tokens_of(title_wiki, block=True, ch=ch, kind='title')
             if hp:  # the woodcut band above the book title, riding on the title's first word
                 tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
@@ -373,43 +339,8 @@ def render_verse(v, ch):
     return lead + raw
 
 
-# Words of a chapter's side heading the print sets in small caps besides its first words (read on the scans).
-SIDE_SC = {('mark', 11): lambda x: x.replace(' the Holy ', ' the {{sc|Holy}} ', 1),
-           ('john', 1): lambda x: x.replace('THE ACTES', '{{sc|The actes}}', 1),
-           ('john', 5): lambda x: x.replace('THE ACTES', '{{sc|The actes}}', 1),
-           ('john', 6): lambda x: x.replace('HIS ACTES', '{{sc|His actes}}', 1),
-           ('john', 12): lambda x: x.replace('THE 4', '{{sc|The}} 4', 1),
-           ('acts', 1): lambda x: x.replace('The 1. part.', '{{sc|The}} 1. part.', 1),
-           ('acts', 2): lambda x: x.replace('The 2. part.', '{{sc|The}} 2. part.', 1),
-           ('acts', 8): lambda x: x.replace('The 3. part.', '{{sc|The}} 3. part.', 1).replace('THE propagation', '{{sc|The propagation}}', 1),
-           ('acts', 10): lambda x: x.replace('The 4. part.', '{{sc|The}} 4. part.', 1).replace('THE propagation', '{{sc|The propagation}}', 1),
-           ('acts', 13): lambda x: x.replace('The 5 part.', '{{sc|The}} 5 part.', 1)}
 
-# Annotation titles the print closes with ")" instead of "]" (read on the scans): (book, chapter, annotation index).
-PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in range(6)], ('mark', 6, 0), ('mark', 6, 5), ('mark', 7, 4), ('mark', 7, 5), ('mark', 9, 0), ('mark', 9, 1), ('mark', 9, 2),
-                ('mark', 10, 0), ('mark', 10, 1), ('mark', 10, 2), ('mark', 10, 3), ('mark', 10, 4),
-                ('mark', 12, 1), ('mark', 12, 2), ('mark', 12, 3),
-                *[('luke', 13, i) for i in range(5)], ('luke', 14, 0),
-                ('john', 1, 1), *[('john', 2, i) for i in range(6)], *[('john', 4, i) for i in range(2)],
-                *[('john', 5, i) for i in range(4)], *[('john', 6, i) for i in range(5, 16)],
-                *[('john', 10, i) for i in range(5)], *[('john', 12, i) for i in range(2)],
-                *[('john', 13, i) for i in range(4)], *[('john', 14, i) for i in range(4)],
-                ('john', 15, 1), ('john', 15, 3), ('john', 15, 4), ('john', 15, 5),
-                *[('john', 16, i) for i in range(2)], *[('john', 17, i) for i in range(3)],
-                *[('john', 19, i) for i in range(1, 4)], *[('john', 20, i) for i in range(4)]}
 
-# Italic annotation notes the print sets in the OUTER margin, beside the side headings,
-# though they look like citations: (book, chapter, annotation index, note index), checked
-# on the scans. Greek words on page 107 (26:26 τὸν ἄρτον, 26:28 ἐκχυνόμενον); the Greek
-# notes on pages 36, 44 and 58 do sit in the inner margin.
-OUTER_NOTES = {('matthew', 26, 5, 3), ('matthew', 26, 8, 0), ('john', 2, 3, 1), ('john', 2, 5, 0),
-               ('john', 3, 0, 1), ('john', 3, 1, 0), ('john', 3, 1, 2), ('john', 4, 0, 1), ('john', 4, 0, 3),
-               ('john', 4, 1, 1), ('john', 4, 1, 2), ('john', 6, 1, 1), ('john', 6, 1, 3), ('john', 6, 1, 5),
-               ('john', 6, 2, 0), ('john', 6, 5, 1), ('john', 6, 7, 1), ('john', 6, 12, 0), ('john', 6, 12, 1),
-               ('john', 6, 12, 3), ('john', 6, 13, 1), ('john', 6, 15, 1), ('john', 8, 0, 2),
-               ('john', 10, 3, 1), ('john', 13, 1, 1), ('john', 20, 0, 1), ('john', 20, 0, 3),
-               ('john', 20, 2, 1), ('john', 20, 2, 2), ('john', 20, 3, 2), ('john', 20, 3, 3),
-               ('john', 21, 0, 1), ('john', 21, 0, 2), ('john', 21, 0, 4), ('john', 21, 0, 6), ('john', 21, 1, 0)}
 
 
 def render_annotation(a, ch=None, ai=None):
@@ -643,58 +574,12 @@ def move_bars(S):
                 t['text'] = t['text'][:m.end()] + '‖ ' + t['text'][m.end():]
 
 
-# Citations with no * in the print (stored at the verse end) whose margin note the print sets
-# beside an earlier word, on an earlier page: (book, chapter, verse) -> word.
-# 27:35 'Pſ. 21, 19' beside 'They deuided' (109; the verse ends on 110).
-CREND_AT = {('matthew', 27, 35): 24}
 
 
-# Wiki-only ‖ fixes, checked on the scan: (from word, to word) per verse, None = no bar.
-# 23:2 '‖ the chaire' (92); 25:34 has no ‖ in the print, 25:41 has '‖ Get' (101; the
-# annotation title '34. Come ye, 41 get ye away' gives only the first).
-# These stay out of the data on purpose: the site draws ‖ before each tinted lemma, and
-# the lemma spans are right (the titles quote 'Chaire of Moyses' and 'Come ye'). A span
-# in 25:41 would tint words whose click opens 25:41's annotations, of which there are none.
-# 26:27 '‖ he gaue thankes' (103): the 26:26 'Bleſſed.' annotation covers both verbs;
-# 26:75 '‖ he vvept bitterly' (106; the lemma is the title's 'Wept bitterly');
-# 28:20 'vvith you ‖ al daies' (113; the title is 'With you al daies').
-BARS = {('mark', 1, 12): [(9, 8)], ('mark', 1, 35): [(11, 10)], ('mark', 6, 9): [(8, 11)],
-        ('matthew', 23, 2): [(3, 2)], ('matthew', 25, 34): [(14, None)], ('matthew', 25, 41): [(None, 14)],
-        ('matthew', 26, 27): [(None, 4)], ('matthew', 26, 75): [(24, 23)],
-        ('matthew', 28, 20): [(15, 17)]}
 
 
-# Page starts the alignment gets wrong, each checked on the scan: the page's
-# first words (normalised as in norm(), joined by spaces).
-# '@annhead' / '@chap': the page opens with the ANNOTATIONS or CHAP. heading.
-PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is written heretikes',
-               ('matthew', 44): 'pvt on is not', ('matthew', 45): 'leade vs not s cypr',
-               ('matthew', 57): 'lesser in the kingdom', ('matthew', 58): '@annhead',
-               ('matthew', 66): 'avthor os evil tertvl', ('matthew', 69): '@chap', ('matthew', 71): '@annhead',
-               ('matthew', 72): 'and there came to', ('matthew', 76): '@chap', ('matthew', 79): 'ones that beleeve in',
-               ('matthew', 81): 'nativitie an angel sor', ('matthew', 84): '@chap', ('matthew', 86): 'nations avg de verb',
-               ('matthew', 89): 'to lay hands vpon', ('matthew', 92): 'a man not attyred', ('matthew', 96): '@chap',
-               ('matthew', 101): 'i sow not gather', ('matthew', 102): '@annhead',
-               ('matthew', 107): 'thovgh now not only', ('matthew', 108): '@chap',
-               ('matthew', 113): 'wil persvade him and',
-               # Transkribus broke the lines of sancta 13/3, which pulls 152's start late
-               ('mark', 120): '@annhead', ('mark', 123): '@chap', ('mark', 131): 'he blessed and brake', ('mark', 141): '@chap', ('mark', 144): '@annhead', ('mark', 149): 'shal receiue larger iudgement', ('mark', 151): 'be and vnles the lord', ('mark', 156): '@annhead', ('mark', 159): 'the prophet saying the law',
-               ('mark', 152): 'sorraine sovldiars so shal',
-               ('john', 246): 'the lambe os god', ('john', 247): 'vs in a sort', ('john', 248): '@chap', ('john', 250): 'to worke miracles',
-               ('john', 253): '@chap', ('john', 257): '@chap',
-               ('john', 261): 'to him there is a boy', ('john', 264): '@annhead', ('john', 267): 'schismatikes heretikes or apostataes',
-               ('john', 270): '@chap', ('john', 273): '@chap', ('john', 276): '@chap', ('john', 277): 'os blinde men',
-               ('john', 281): 'thersore walked no more', ('john', 286): 'to whom i shal reach',
-               ('john', 287): 'directed by the holy ghost', ('john', 289): '@annhead', ('john', 290): 'i am the trve vine',
-               ('john', 292): '@chap', ('john', 296): '@chap', ('john', 300): 'tooke his garments',
-               ('john', 302): '@chap', ('john', 304): 'os the qvantitie space', ('john', 306): '@chap',
-               ('john', 308): 'is he acknowledge'}
 
 
-# "HOLY" beside the page number, "weeke." under it, top outer corner (checked on the scans):
-# (first wiki page, last wiki page, pages without it).
-HOLY_WEEK = {'matthew': (86, 113, {95, 107}), 'mark': (144, 160, set()),
-             'luke': (222, 237, {233, 234}), 'john': (282, 307, {289, 304, 305})}  # luke/john: read on the head corners of every page  # mark: on every page, checked
 
 
 def footer(catch):
@@ -720,34 +605,8 @@ def end_body(body, next_opens):
     return body + '\n{{nop}}' if next_opens else body
 
 
-# Catchwords before a heading that the OCR garbles, checked on the scan.
-# The book's last page has no next token: its catchword (the next book's first word) goes here too.
-CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the', ('john', 247): 'CHAP. II.', ('john', 249): 'to',
-              ('john', 251): 'led.', ('john', 252): 'CHAP.', ('john', 253): 'band.', ('john', 254): 'haue', ('john', 256): 'AFTER', ('john', 259): 'that', ('john', 260): 'to',
-              ('john', 263): 'ANNOT.', ('john', 264): 'nedly', ('john', 265): "''62. If''", ('john', 266): 'Schiſma-', ('john', 267): 'ueiled.', ('john', 269): 'AND', ('john', 270): '† Againe', ('john', 271): 'God',
-              ('john', 272): 'CHAP.', ('john', 275): 'Amen,', ('john', 276): 'of', ('john', 277): "''1. Climeth''", ('john', 280): 'therfore',
-              ('john', 284): 'per', ('john', 286): 'directed', ('john', 288): 'ANNOT.', ('john', 289): 'I AM', ('john', 291): 'Theſe',
-              ('john', 293): "''13. The''", ('john', 294): '† I', ('john', 295): 'CHAP.', ('john', 297): '† {{sc|Iesvs}}',
-              ('john', 301): 'AND', ('john', 305): 'CHAP.', ('john', 307): '(if', ('john', 308): 'THE',
-              ('matthew', 75): 'Chap.', ('matthew', 95): 'Cha. XXIIII.', ('matthew', 101): 'ANNOT-',
-              ('matthew', 107): 'Chap. XXVII.', ('matthew', 113): 'THE',
-              ('mark', 114): 'THE', ('mark', 115): 'ſert.', ('mark', 119): 'ANNOT.', ('mark', 122): 'Chap. IIII.', ('mark', 127): 'vvith', ('mark', 129): 'rodias',
-              ('mark', 130): 'he', ('mark', 140): 'Chap. X.', ('mark', 143): 'ANNOT', ('mark', 149): 'And', ('mark', 152): 'ring', ('mark', 155): 'ANNOT.', ('mark', 160): 'THE',
-              ('luke', 161): 'THE', ('luke', 166): "''36. Eliſabeth''", ('luke', 172): "''20. He''",
-              ('luke', 178): "''24. The''", ('luke', 196): "''21. To''", ('luke', 200): "''27. Bleſſed''",
-              ('luke', 204): "''11. Be''", ('luke', 241): 'THE',
-              ('acts', 316): 'THE', ('acts', 401): 'THE', ('romans', 407): 'Gal. 4.', ('romans', 409): 'THE', ('romans', 418): 'VVHAT', ('romans', 451): 'THE',
-              # printed catchwords longer than the first word of the next page, read on the scan
-              ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 
-# Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
-# Rendered {{hws|de|de{{ls}}ert.|title=desert.}} at the page end and {{hwe|{{ls}}ert.|de{{ls}}ert.}} at the next page's start.
-SPLIT_WORDS = {('mark', 115): ('de', 'ſert.', 'deſert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
-               ('mark', 129): ('He', 'rodias', 'Herodias'), ('mark', 152): ('hea', 'ring', 'hearing'),
-               ('john', 251): ('fil', 'led.', 'filled.'), ('john', 253): ('huſ', 'band.', 'huſband.'),
-               ('john', 264): ('vnlear', 'nedly', 'vnlearnedly'), ('john', 266): ('Schiſma', 'tikes,', 'Schiſmatikes,'),
-               ('john', 267): ('mar', 'ueiled,', 'marueiled,'), ('john', 284): ('ſup', 'per,', 'ſupper,')}
 
 
 def apply_page_starts(S, starts):
@@ -778,24 +637,7 @@ def apply_page_starts(S, starts):
             print(f'warning: page start override for {FIRST + n} not found near the estimate')
 
 
-# Paragraph starts the OCR misses, each checked on the scan (wiki page in brackets):
-# beside a drop cap (31, 39, 56), on a page the OCR splits into two blocks (45), 10:40 (55),
-# half indents inside a verse (12:39 'The vvicked' 60, 13:3 'Behold' 62), 13:19 (63),
-# 13:47 (65; the OCR gives its indent to 13:45, which opens with the same words), 14:34 (68),
-# 21:33 (88), 22:15 (90; the OCR gives its indent to 22:16), 23:16 (93) and 24:15 (96).
-MANUAL_PARAS = {('matthew', 1): [[2, 0]], ('matthew', 5): [[3, 0]], ('matthew', 7): [[6, 0], [7, 0]],
-                ('matthew', 10): [[40, 0]], ('matthew', 11): [[2, 0]], ('matthew', 12): [[39, 6]],
-                ('matthew', 13): [[3, 10], [19, 0], [47, 0]], ('matthew', 14): [[34, 0]],
-                ('matthew', 21): [[33, 0]], ('matthew', 22): [[15, 0]], ('matthew', 23): [[16, 0]],
-                ('matthew', 24): [[15, 0]], ('mark', 4): [[3, 3]], ('mark', 5): [[35, 0]],
-                ('mark', 8): [[22, 0]], ('mark', 9): [[38, 0]], ('mark', 11): [[15, 5]],
-                ('mark', 12): [[13, 0], [35, 0], [41, 0]], ('mark', 13): [[32, 0]], ('mark', 15): [[33, 0]]}
 
-# Paragraph starts the OCR reports where the scan has none: 13:45 (64), 19:5 and 19:8 (81),
-# 22:16 (90, mid-line) are flush left; 26:2 (mid-line) and 26:3 (102) sit beside the drop cap.
-NO_PARAS = {('matthew', 13): [[45, 0]], ('matthew', 19): [[5, 0], [8, 0]], ('matthew', 22): [[16, 0]],
-            ('matthew', 26): [[2, 0], [3, 0]], ('mark', 4): [[3, 0]], ('mark', 6): [[50, 7]],
-            ('mark', 7): [[26, 0], [27, 0]], ('mark', 9): [[3, 0]], ('mark', 13): [[33, 0]], ('mark', 15): [[36, 0]]}
 
 
 def export_paragraphs(S, paras):
@@ -818,9 +660,9 @@ def write_argument(book, wiki):
     """The Argument page before chapter 1 (mark 114), from the book's first intro. The print
     sets it in italic, with quotations in roman: the data's <i> spans are the roman ones.
     Its margin notes stand in the outer margin; a note starting with '*' prints a '*' in the text."""
-    roman = BOOK in ARGUMENT_ROMAN
+    roman = CFG.argument_roman
     body = ''
-    for ii in ARGUMENT_INTROS.get(BOOK, [0]):
+    for ii in CFG.argument_intros:
         body += ('\n\n' if body else '') + argument_body(book['intros'][ii], ii, roman)
     write_argument_pages(body, wiki)
 
@@ -895,17 +737,18 @@ def write_argument_pages(body, wiki):
 
 
 def main(argv):
-    global REPO, BOOK, FIRST, OUT, MAXP, DATA, ORNAMENTS
+    global REPO, BOOK, FIRST, OUT, MAXP, DATA, ORNAMENTS, CFG
     orn_flag = '--ornaments' in argv
     argv = [a for a in argv if a != '--ornaments']
     REPO, BOOK, FIRST, OUT = Path(argv[0]), argv[1], int(argv[2]), Path(argv[3])
     DATA = REPO / 'static/data/odr-original'
     cfg = load_books(REPO).get(BOOK, {})
+    CFG = config.from_dict(BOOK, cfg or {'first': FIRST, 'last': 0})  # a book not in books.json: defaults
     MAXP = int(argv[4]) if len(argv) > 4 else None  # None: stop at books.json "last"
     orn = REPO / ORN_JSON
     ORNAMENTS = json.loads(orn.read_text()) if orn.exists() and (orn_flag or cfg.get('ornaments')) else {}
     book = json.loads((DATA / f'{BOOK}.json').read_text())
-    if ARGUMENT.get(BOOK) == FIRST:
+    if CFG.argument_page == FIRST:
         OUT.mkdir(parents=True, exist_ok=True)
         write_argument(book, FIRST)
         FIRST += 2 if BOOK in ARGUMENT_SPLIT else len(ARGUMENT_BREAKS.get(BOOK, [])) + 1
@@ -915,8 +758,8 @@ def main(argv):
     for f in sorted((DATA / BOOK / 'annotations').glob('*.json')):
         a = json.loads(f.read_text()); ann[a['chapter']] = a['annotations']
     S = build_stream(book, ann)
-    max_p = min(MAXP, SCRIPTURE_PAGES.get(BOOK, 10 ** 6))
-    pages = book_pages(BOOK, os.environ.get('WS_OCR') or OCR_SOURCE.get(BOOK, 'tesseract'))[:max_p]
+    max_p = min(MAXP, CFG.scripture_pages or 10 ** 6)
+    pages = book_pages(BOOK, os.environ.get('WS_OCR') or CFG.ocr)[:max_p]
     OUT.mkdir(parents=True, exist_ok=True)
     starts, paras, quality = align(pages, S)
     apply_page_starts(S, starts)
@@ -928,7 +771,7 @@ def main(argv):
     export_paragraphs(S, paras)
     OUT.mkdir(parents=True, exist_ok=True)
     report = []
-    verso_t, recto_t = RUNNING[BOOK]
+    verso_t, recto_t = CFG.running
     ital_carry = False
     for n, p in enumerate(pages):
         wiki = FIRST + n
@@ -937,13 +780,13 @@ def main(argv):
         side_inner, side_outer = ('left', 'right') if wiki % 2 else ('right', 'left')
         chs = [t['ch'] for t in S[a:b] if t['kind'] == 'verse'] or [S[a]['ch'] if a < len(S) else 0]
         cha = f'CHA. {ROMAN[max(chs)]}.'
-        hw = HOLY_WEEK.get(BOOK)
+        hw = CFG.holy_week
         num = printed
         if hw and hw[0] <= wiki <= hw[1] and wiki not in hw[2]:
             num = f'{printed} HOLY weeke.' if wiki % 2 else f'HOLY weeke. {printed}'
         header = (f'{{{{rh|{cha}|{recto_t}|{num}}}}}' if wiki % 2 else f'{{{{rh|{num}|{verso_t}|{cha}}}}}')
         if n == 0:
-            fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if BOOK in FIRST_HEAD_CHA else ''
+            fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'
         body = ''
         for i in range(a, b):
