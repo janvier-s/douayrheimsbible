@@ -1,4 +1,4 @@
-<noinclude><pagequality level="3" user="ChristusRex" /></noinclude>{{center|{{x-larger|THE CENSVRE AND}} {{larger|APPROBATION.}}}}
+<noinclude><pagequality level="3" user="ChristusRex" /></noinclude>{{center|{{x-larger|THE CENSVRE AND}}{{br}}{{larger|APPROBATION.}}}}
 
 {{dropinitial|C}}{{sc|vm}} huius ver{{ls}}ionis ac æditionis authores, nobis de fide & eruditione {{ls}}int probè cogniti, aliiq́ue S. Theologiæ & linguæ Anglicanæ periti{{ls}}simi viri conte{{ls}}tati {{ls}}int, nihil in hoc opere reperiri, quod non {{ls}}it Catholicę Eccle{{ls}}ię doctrinæ, & pietati con{{ls}}entaneum, vel quod vllo modo pote{{ls}}tati ac paci ciuili repugnet, {{ls}}ed omnia potius veram fidem, Reip. bonum, vitæq́ue ac morum probitatem promouere: ex ip{{ls}}orum fide cen{{ls}}emus i{{ls}}ta vtiliter excudi & publicari po{{ls}}{{ls}}e.
 

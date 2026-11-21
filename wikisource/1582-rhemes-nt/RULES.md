@@ -132,7 +132,7 @@ Enforced by: `sc`
 
 ### 4.5 Running heads
 
-Running heads use `{{rh|…}}`, in small caps: the middle title in lowercase (`{{sc|the gospel}}`, `{{sc|according to s. matthew.}}`), the side words capitalized (`{{sc|Cha. VI.}}`, `{{sc|Holy}} weeke.`), Roman numerals kept as capitals. Front-matter pages 1–28 have no running head in the print, so they carry the only `W-header` warnings.
+Running heads use `{{rh|…}}`, in small caps: the middle title in lowercase (`{{sc|the gospel}}`, `{{sc|according to s. matthew.}}`), the side words capitalized (`{{sc|Cha. VI.}}`, `{{sc|Holy}} weeke.`), Roman numerals kept as capitals. The centred head of the Preface pages (4–24) is `{{rh/1|{{larger|{{sc|the preface}}}}}}` and `{{sc|to the reader.}}`, in lowercase small caps the same way. The other front-matter pages (1–3, 25–28) have no running head in the print, so they carry the only `W-header` warnings.
 
 Enforced by: `W-rh-caps`, `W-header`
 
