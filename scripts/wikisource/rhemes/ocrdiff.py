@@ -1,4 +1,5 @@
-"""Three-way word diff for one book: Transkribus + Tesseract OCR against odr-original.
+"""Three-way word diff for one book: Transkribus + a second OCR (Apple Vision, else Tesseract;
+see third_voter) against odr-original.
 
 Majority vote: a reading is a finding when BOTH OCRs agree with each other and
 differ from our data. Single-OCR disagreements are only counted (OCR noise).
@@ -135,19 +136,27 @@ def join_hyphens(ws):
     return out
 
 
+def third_voter(d, pid, scan):
+    """The second OCR beside Transkribus ('ts'): Apple Vision on the cut page (vision_ocr.swift),
+    which reads vv and wording better than Tesseract; else Tesseract on the sancta scan (Matthew,
+    Mark), else Tesseract on the cut page (.tess.tsv)."""
+    for tsv in (d / f'{pid}.vision.tsv', scan / f'{pid}.tsv' if scan else None, d / f'{pid}.tess.tsv'):
+        if tsv and tsv.exists():
+            return tsv
+    return d / f'{pid}.tess.tsv'
+
+
 def ocr_pages(book, source):
     """[(page id, body, margin)] for the book's argument then its pages."""
     pages = []
     arg = O.TK / f'{book}-argument'
     if (arg / 'manifest.json').exists():
         for m in json.loads((arg / 'manifest.json').read_text()):
-            tsv = arg / f"{m['id']}.tsv" if source == 'tk' else arg / f"{m['id']}.tess.tsv"
+            tsv = arg / f"{m['id']}.tsv" if source == 'tk' else third_voter(arg, m['id'], None)
             if tsv.exists():
                 pages.append((m['id'],) + page_streams(tsv, source, m['id']))
     for m in json.loads((O.TK / book / 'manifest.json').read_text()):
-        tsv = O.TK / book / f"{m['id']}.tsv" if source == 'tk' else O.SCAN / book / f"{m['id']}.tsv"
-        if source != 'tk' and not tsv.exists():  # PDF pages (Luke, John) have no sancta scan: Tesseract on the cut page
-            tsv = O.TK / book / f"{m['id']}.tess.tsv"
+        tsv = O.TK / book / f"{m['id']}.tsv" if source == 'tk' else third_voter(O.TK / book, m['id'], O.SCAN / book)
         if tsv.exists():
             pages.append((m['id'],) + page_streams(tsv, source, m['id']))
     return pages
