@@ -24,7 +24,7 @@ REPO = HERE.parents[1]
 WS = REPO / 'wikisource/1582-rhemes-nt'
 PAGES = WS / 'pages'
 MANIFEST = WS / 'manifest.json'
-LIVE_BASE = '1517589a'  # the commit whose pages equal the live pages: the 1-451 repost (owner 2026-11-21; dry run after it: 0 to post)
+LIVE_BASE = '7aeb7d8f'  # the commit whose pages equal the live pages: 1-451 repost (1517589a) + six long s fixes posted 2026-11-21
 
 
 def generate_book(book, out, ornaments=None):
