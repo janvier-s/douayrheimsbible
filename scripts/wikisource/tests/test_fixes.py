@@ -249,3 +249,18 @@ def test_forbidden_out_covers_repo_and_main_checkout(tmp_path):
     assert fixes.forbidden_out(main / 'static/data/x.jsonl')
     assert fixes.forbidden_out(paths.FIXES / 'x.jsonl')
     assert not fixes.forbidden_out(tmp_path / 'x.jsonl')
+
+
+def test_apply_shifts_lemma_spans(repo):
+    """A text edit that changes the length moves the spans after it, and stretches one around it."""
+    p = repo / 'static/data/odr-original/tiny.json'
+    bj = json.loads(p.read_text())
+    v = bj['chapters'][0]['verses'][0]
+    t = v['text']
+    spans = {'In the': None, 'beginning vvas the vvord': None, 'vvith God': None}
+    v['lemmas'] = [[t.index(s), len(s), 1] for s in spans]
+    p.write_text(json.dumps(bj, ensure_ascii=False) + '\n')
+    rep = fixes.apply([E(old='vvas the vvord,', new='was the word,', allow=['vv:shift', 'w:loss'], note='test')], ctx(repo), write=True)
+    assert rep.written
+    v = orig(repo)['chapters'][0]['verses'][0]
+    assert [v['text'][a:a + n] for a, n, _ in v['lemmas']] == ['In the', 'beginning was the word', 'vvith God']

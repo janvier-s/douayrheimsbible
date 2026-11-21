@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import NamedTuple
 import sys
 
-from . import fidelity, text
+from . import fidelity, lemmas, text
 from .jsonfmt import write_like
 
 BOOK_DIV = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John',
@@ -396,19 +396,6 @@ def _find(leaves, before, word, after):
     return out
 
 
-def _shift_lemmas(obj, key, old, new, z):
-    """A verse's lemmas are [start, length, n] offsets into its text: keep them on their words
-    when an edit ending at old[z] changes the text's length."""
-    delta = len(new) - len(old)
-    if key != 'text' or not delta or not isinstance(obj, dict):
-        return
-    for lm in obj.get('lemmas', []):
-        if lm[0] >= z:
-            lm[0] += delta
-        elif lm[0] + lm[1] >= z:
-            lm[1] += delta
-
-
 def adopt(files, decisions, ov):
     """Writes each committed-wins reading into the data files. The generated form must occur
     exactly once in its context; an edit that loses a print feature needs an override.
@@ -476,7 +463,7 @@ def adopt(files, decisions, ov):
             old = obj[key]
             new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
             obj[key] = new
-            _shift_lemmas(obj, key, old, new, z)
+            lemmas.shift(obj, key, old, new, a, z)
             for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
                 if p2 != path and _mirrors(p2, path, _same_ref(o2[k2], old) and _orphan(leaves[f], p2, o2[k2])
                                                     and _orphan(leaves[f], path, old)):

@@ -26,7 +26,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from . import fidelity, loc as locmod, paths, sources, xmlspan
+from . import fidelity, lemmas, loc as locmod, paths, sources, xmlspan
 from .lock import data_lock
 
 KEYS = ('id', 'target', 'loc', 'old', 'new', 'odr_old', 'odr_new', 'evidence', 'date', 'note', 'allow', 'superseded_by')
@@ -354,7 +354,11 @@ def _run(entries, ctx):
                         else:
                             cont[key] = new
                     else:
-                        cont[key] = cont[key].replace(old, new, 1)
+                        before = cont[key]
+                        cont[key] = before.replace(old, new, 1)
+                        # the verse's lemma spans are offsets into this text: keep them on their words
+                        at = before.find(old)
+                        lemmas.shift(cont, key, before, cont[key], at, at + len(old))
                     ctx.touched.setdefault((t, e.book), set()).add(_chapter_of(e.rest))
                 row.changed.append(t)
         rows.append(row)
