@@ -3,12 +3,8 @@ in RULES.md, every rule names what enforces it, and retired rules stay retired."
 import re
 from pathlib import Path
 
-import pytest
-
 import fidelity
 import lint
-
-pytestmark = pytest.mark.xfail(reason='Phase 2 docs pending', strict=False)
 
 REPO = Path(__file__).resolve().parents[3]
 WS = REPO / 'wikisource/1582-rhemes-nt'
