@@ -323,7 +323,14 @@ def split(strip_dir, xml_dir, out=OUT_DEFAULT):
 
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
+    vision = '--no-vision' not in argv
+    argv = [a for a in argv if a != '--no-vision']
     ms, probs = split(*argv[:3])
+    if vision:  # the second OCR for diff ocr (ocrdiff.third_voter)
+        from . import visionocr
+        out = Path(argv[2]) if len(argv) > 2 else Path(OUT_DEFAULT)
+        imgs = visionocr.pending([out / role for role in ms])
+        print(f'vision: {visionocr.run(imgs) if imgs else 0} of {len(imgs)} pages read')
     for role, ps in ms.items():
         est = sum(p['words_estimated'] for p in ps)
         print(f'{role}: {len(ps)} pages, {sum(p["lines"] for p in ps)} lines, {est} with estimated word boxes')

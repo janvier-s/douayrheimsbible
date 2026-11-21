@@ -20,7 +20,8 @@ COMMANDS = {
     'fetch': ('wikifetch', []),          # FIRST-LAST OUT_DIR [--index …]
     'live-check': ('livecheck', []),     # [PAGES…] [--all-overwritten] [--pending]
     'post': ('wikipost', []),            # FIRST-LAST [--post] [--summary …] …
-    'ocr-split': ('transkribus', []),    # STRIP_DIR XML_DIR [OUT]
+    'ocr-split': ('transkribus', []),    # STRIP_DIR XML_DIR [OUT] [--no-vision]
+    'ocr-vision': ('visionocr', []),     # [--force] PATH…  (Apple Vision, macOS)
     'crops': ('cropsheet', []),          # MARKDIFF.json OUT.jpg A-B [filter]
     'ornaments': ('ornaments', []),      # detect|clean|sheet|dedupe|commons|review OUT … (needs numpy/scipy)
     'fix check': ('fixes', ['check']),   # [BOOK…] [--repo R] [--fixes D]

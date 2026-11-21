@@ -21,7 +21,7 @@ def test_rh_lists_commands(tmp_path):
     assert r.returncode == 2
     for cmd in ['generate', 'lint', 'triage', 'diff xml', 'diff ocr', 'reconcile', 'status',
                 'fetch', 'live-check', 'post', 'ocr-split', 'crops', 'ornaments', 'fix check', 'fix apply',
-                'fix propose-diff', 'fix propose-live', 'detect', 'sync-odr']:
+                'fix propose-diff', 'fix propose-live', 'detect', 'sync-odr', 'ocr-vision']:
         assert cmd in r.stdout, cmd
 
 
