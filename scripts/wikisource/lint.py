@@ -54,7 +54,7 @@ INNER = re.compile(r'\{\{[^{}]*\}\}')
 
 SIGNATURE = re.compile(r'^([A-Z])(?:(?i:\1){1,2})?(?: ij| iij)?$')  # A, Aa, Aaa (+ ij, iij): the gathering letter
 BLOCKLINE = re.compile(r'^(?:\{\{c\||\{\||\||\{\{nop\}\}|==|:)')  # centred, table, nop, heading, indented verse
-OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\||CHAP\.|''\d)")
+OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\||CHAP\.|''\d+\. )")  # ''12. Word.''] heads an annotation
 LEAD_NOTES = re.compile(r'^(?:\s|\{\{MarginNote\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\})*')
 
 
@@ -213,7 +213,7 @@ def lint(d, ov=None):
         for tpl in margin_notes(body):
             if not (re.search(r'\|margin=(left|right)\b', tpl) and re.search(r'\|margin-width=\d+\b', tpl) and '|text=' in tpl):
                 out.append(('E-margin', n, f'malformed margin note: {tpl[:70]!r}'))
-            elif not INNER.sub('', tpl.split('|text=', 1)[1]).strip():
+            elif not INNER.sub('', re.sub(r'\{\{(?:lang\|[^|{}]*|sc)\|([^{}]*)\}\}', r'\1', tpl.split('|text=', 1)[1])).strip():
                 out.append(('E-margin', n, 'empty margin note'))
 
         # hws/hwe title parameter check (required when param 2 has {{ls}} to avoid malformed HTML in Page: space)
@@ -312,7 +312,8 @@ def lint(d, ov=None):
         ends = body.rstrip()
         lead = LEAD_NOTES.sub('', nxt or '')
         # a book, Argument or section title (THE SVMME…): its own transclusion; chapter headings are not
-        new_work = lead.startswith(('{{c|{{x-larger|', '{{c|{{xx-larger|', '{{c|{{larger|THE '))
+        new_work = lead.startswith(('{{c|{{x-larger|', '{{c|{{xx-larger|')) or (
+            lead.startswith('{{c|{{larger|') and not re.match(r'\{\{c\|\{\{larger\|(?:\{\{sc\|Chap|A N N O T)', lead))
         if nxt is not None and OPENS_PARA.match(lead) and not new_work and not ends.endswith(('\n{{nop}}', '|}')):
             out.append(('W-nop', n, f'page {n + 1} opens a paragraph: end this page with {{{{nop}}}} on its own line'))
     return out

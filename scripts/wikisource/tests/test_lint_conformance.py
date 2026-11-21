@@ -85,3 +85,17 @@ def test_w_nop_not_before_a_new_book_or_argument(tmp_path):
 def test_w_nop_not_before_a_new_section_but_before_a_chapter(tmp_path):
     assert 'W-nop' not in codes(tmp_path, 'end of Iohn.', '{{c|{{larger|THE SVMME, AND THE ORDER}}}}\n\ntext')
     assert 'W-nop' in codes(tmp_path, 'end of chapter.', '{{c|{{larger|{{sc|Chap. II.}}}}}}\n\ntext')
+
+
+def test_margin_note_with_only_greek_is_not_empty(tmp_path):
+    assert 'E-margin' not in codes(tmp_path, 'a {{MarginNote|margin=left|margin-width=65|text={{lang|grc|Προσετίθει}}}}b')
+    assert 'E-margin' in codes(tmp_path, 'a {{MarginNote|margin=left|margin-width=65|text={{nop}}}}b')
+
+
+def test_w_nop_italic_continuation_is_not_an_annotation_head(tmp_path):
+    assert 'W-nop' not in codes(tmp_path, "and ''in epiſto. 85 ad Euagrium''.", "''2'', Where he checketh")
+    assert 'W-nop' in codes(tmp_path, 'the end.', "''12. Then.''] text")
+
+
+def test_w_nop_not_before_a_small_caps_section_title(tmp_path):
+    assert 'W-nop' not in codes(tmp_path, 'end.', '{{c|{{larger|{{sc|The Svmme of the Actes}}}}}}\n\ntext')

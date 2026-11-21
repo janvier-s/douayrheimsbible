@@ -205,3 +205,10 @@ def test_dropcap_after_margin_note_opens_a_paragraph():
 def test_john_argument_heading_centred(tmp_path):
     run('john', 242, tmp_path, 3)
     assert '{{c|{{larger|Who{{ls}}e excellencie' in (tmp_path / '243.wiki').read_text()
+
+
+def test_tidy_space_collapses_double_spaces():
+    import generate
+    assert generate.tidy_space("text=∷ ''Exod''.}}∷  {{verse|chapter=13|verse=18}} the") == \
+        "text=∷ ''Exod''.}}∷ {{verse|chapter=13|verse=18}} the"
+    assert generate.tidy_space('a\n\nb') == 'a\n\nb'

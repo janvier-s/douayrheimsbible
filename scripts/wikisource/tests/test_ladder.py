@@ -341,3 +341,4 @@ def test_adopt_weak_context_done_is_not_trusted(tmp_path):
     applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert len(applied) == 1 and v[1]['cross_refs'][0]['text'] == 'Pſ. 40, 10. 108, 8.'
+

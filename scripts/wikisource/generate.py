@@ -182,7 +182,7 @@ def greek_lang(s):
 
 def tidy_space(s):
     """No space before ) , . ; : and none after ( (lint W-space); line breaks are kept."""
-    return re.sub(r'\( +', '(', re.sub(r' +([),.;:])', r'\1', s))
+    return re.sub(r'  +', ' ', re.sub(r'\( +', '(', re.sub(r' +([),.;:])', r'\1', s)))
 
 
 def finish(s, dropcap=False, ch=None, caps=True):
