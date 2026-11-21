@@ -150,9 +150,9 @@ Enforced by: `size`
 
 ### 4.8 Print marks
 
-The print's marks stay in the text: `*` (citation), `∷` (gloss), `‖` (annotation mark, written `{{sup|‖}}`), `⊣` (end of a liturgical reading), and † wherever it isn't a verse start. Lectionary notes and headings that the print sets without a ∷ have none.
+The print's marks stay in the text: `*` (citation), `∷` (gloss), `‖` (annotation mark, written `{{sup|‖}}`), `⊣` (end of a liturgical reading), and † wherever it isn't a verse start. Lectionary notes and headings that the print sets without a ∷ have none. In the data, a verse note's place is `<na>` and a citation's `<cr>`; a ledger entry may not drop one without an `allow`.
 
-Enforced by: `star`, `quad`, `bar`, `sup_bar`, `tack`, `dagger`
+Enforced by: `star`, `quad`, `bar`, `sup_bar`, `tack`, `dagger`, `note_mark`
 
 ## 5. Page structure and Wikisource conventions
 
@@ -256,7 +256,7 @@ Enforced by: reconcile verify
 
 ### 6.4 Maintaining A16049.xml
 
-`A16049.xml` (repo `original-douay-rheims-nt`) keeps the literal ſ and no wiki templates. When you restore a `<gap>` or remove a transcription duplicate: recount `<gap>`, `<desc>`, `<foreign>` and `<note>` and update the counts in that repo's README; add a `<change>` to `<revisionDesc>`; and check that the file still parses (`python3 -c "import xml.etree.ElementTree as ET; ET.parse('A16049.xml')"`). Then record the edit in the ledger (§6.5): commit it in that repo and run `rh.py fix propose-diff xml <before> <after> --out <dir>`. That command turns the diff into entries; check them, then append them.
+`A16049.xml` (repo `original-douay-rheims-nt`) keeps the literal ſ and no wiki templates. When you restore a `<gap>` or remove a transcription duplicate: recount `<gap>`, `<desc>`, `<foreign>` and `<note>` and update the counts in that repo's README; add a `<change>` to `<revisionDesc>`; and check that the file still parses (`python3 -c "import xml.etree.ElementTree as ET; ET.parse('A16049.xml')"`). Then record the edit in the ledger (§6.5): commit it in that repo and run `rh.py fix propose-diff xml <before> <after> --out <dir>`. That command turns the diff into entries; check them, then append them. It never adds an `allow` by itself: an edit that loses a print feature is printed, and gets an `allow` and a `note` only once you have checked the scan.
 
 Enforced by: review (no code)
 
@@ -336,6 +336,7 @@ Enforced by: wikipost
 | `size`          | feature | §4.7  |
 | `star`          | feature | §4.8  |
 | `quad`          | feature | §4.8  |
+| `note_mark`     | feature | §4.8  |
 | `bar`           | feature | §4.8  |
 | `sup_bar`       | feature | §4.8  |
 | `tack`          | feature | §4.8  |

@@ -1,6 +1,6 @@
 """Propose ledger entries from the difference between two versions of A16049.xml.
 
-    rh.py fix propose-diff xml REV_A REV_B --out DIR [--repo XML_REPO]
+    rh.py fix propose-diff xml REV_A REV_B --out DIR [--repo XML_REPO] [--allow-note "reason"]
 
 REV_A and REV_B are commits of the XML repo (default: the repo holding sources.xml_path()).
 Writes DIR/<book>.jsonl, one proposal file per book that changed; never writes the ledger.
@@ -12,6 +12,10 @@ word at a time on both sides, until old is unique in the text as it stands when 
 applied (entries apply in document order), new is unique in the after-text, old does not occur
 in the after-text, and old is not inside new. Evidence: every commit in REV_A..REV_B where the
 count of old or new in the book's span changes (git's pickaxe, computed here).
+
+An edit that trips the fidelity gate gets no allow unless --allow-note gives the decision's
+reason (then allow lists the findings and note is that reason); otherwise it is printed, and
+the reviewer adds allow + note after checking the scan, or drops the edit.
 """
 import difflib
 import re
@@ -23,7 +27,6 @@ from . import fidelity, fixes, paths, sources, xmlspan
 
 MERGE = 40
 MAX_WIDEN = 400
-ALLOW_NOTE = 'historical audit commit, owner-approved 2026-11-19'
 _CHAP = re.compile(r'<div n="(\d+)" type="chapter"')
 _VERSE = re.compile(r'<seg type="milestoneunit">verse </seg>\s*(\d+)')
 _BOOKDIV = re.compile(r'<div n="[^"]*" type="(?:gospel|book|epistle|prophecy|apocalypse)"')
@@ -154,7 +157,7 @@ def edit_pairs(x, y):
     return out
 
 
-def derive_book(book, x, y, taken, evidence=None, date='1970-01-01'):
+def derive_book(book, x, y, taken, evidence=None, date='1970-01-01', allow_note=None):
     out = []
     for old, new, j1 in edit_pairs(x, y):
         loc = _loc(book, y, j1)
@@ -163,13 +166,13 @@ def derive_book(book, x, y, taken, evidence=None, date='1970-01-01'):
         e = {'id': _next_id(book, rest, taken), 'target': ['xml'], 'loc': loc, 'old': old, 'new': new,
              'evidence': ev, 'date': dt}
         allow = sorted({f'{f.feature}:{f.kind}' for f in fidelity.compare(old, new)})
-        if allow:
-            e['allow'], e['note'] = allow, ALLOW_NOTE
+        if allow and allow_note:  # only a decision the caller states; never assumed
+            e['allow'], e['note'] = allow, allow_note
         out.append(fixes.Entry.from_dict(e))
     return out
 
 
-def derive_xml(before, after, existing_ids=frozenset(), evidence=None, date='1970-01-01'):
+def derive_xml(before, after, existing_ids=frozenset(), evidence=None, date='1970-01-01', allow_note=None):
     sa = {k: (s, e) for k, s, e in xmlspan.spans(before)}
     sb = {k: (s, e) for k, s, e in xmlspan.spans(after)}
     if list(sa) != list(sb):
@@ -179,7 +182,7 @@ def derive_xml(before, after, existing_ids=frozenset(), evidence=None, date='197
     for k in sa:
         x, y = before[slice(*sa[k])], after[slice(*sb[k])]
         if x != y:
-            out[k] = derive_book(k, x, y, taken, evidence, date)
+            out[k] = derive_book(k, x, y, taken, evidence, date, allow_note)
     return out
 
 
@@ -213,29 +216,22 @@ def evidence_from(versions):
     return evidence
 
 
-def _forbidden(out):
-    o = Path(out).resolve()
-    for p in (paths.FIXES, paths.REPO / 'static/data'):
-        p = p.resolve()
-        if o == p or p in o.parents:
-            return True
-    return False
-
-
 def main(argv):
-    args, out, repo = [], None, None
+    args, out, repo, note = [], None, None, None
     it = iter(argv)
     for a in it:
         if a == '--out':
             out = next(it)
         elif a == '--repo':
             repo = next(it)
+        elif a == '--allow-note':
+            note = next(it)
         else:
             args.append(a)
     if len(args) != 3 or args[0] != 'xml' or not out:
         print(__doc__)
         return 2
-    if _forbidden(out):
+    if fixes.forbidden_out(out):
         print(f'--out {out}: proposals never go under fixes/ or static/data; review them, then append')
         return 2
     repo = Path(repo) if repo else sources.xml_path().parent
@@ -244,11 +240,14 @@ def main(argv):
     before = _git(repo, 'show', f'{ra}:A16049.xml').decode('utf-8')
     after = _git(repo, 'show', f'{rb}:A16049.xml').decode('utf-8')
     taken = {e.id for p in paths.FIXES.glob('*.jsonl') for e in fixes.load_ledger(p.stem)}
-    res = derive_xml(before, after, taken, evidence_from(versions))
+    res = derive_xml(before, after, taken, evidence_from(versions), allow_note=note)
     Path(out).mkdir(parents=True, exist_ok=True)
     for book, es in res.items():
         fixes.write_ledger(Path(out) / f'{book}.jsonl', es)
         print(f'{book}: {len(es)} entries ({sum(1 for e in es if e.allow)} with allow)')
+        for e in es:
+            for p in ([] if e.allow else fixes._fidelity(e, 'xml')):
+                print(f'  {e.id}: {p}')
     return 0
 
 

@@ -186,3 +186,66 @@ def test_lock_held_message(repo, tmp_path):
                         '--fixes', str(repo / 'fixes')], capture_output=True, text=True, env=env)
     assert r.returncode == 3, r.stderr[-800:]
     assert 'data lock held' in r.stdout + r.stderr and 'Traceback' not in r.stderr
+
+
+# ---- whole-branch review (2026-11-21) ----
+
+def test_write_all_or_nothing_across_json_and_xml(repo):
+    good = E()
+    bad_xml = E(id='matthew-1-1-a', target=['xml'], loc='matthew 1:1', old='vnique matthew', new='<hi>vnique matthew')
+    before = (repo / 'static/data/odr-original/tiny.json').read_bytes()
+    rep = fixes.apply([good, bad_xml], ctx(repo), write=True)
+    assert not rep.written and rep.rows[1].state == 'conflict'
+    assert any('does not parse' in p for p in rep.rows[1].problems)
+    assert (repo / 'static/data/odr-original/tiny.json').read_bytes() == before
+    assert fixes.apply([good, bad_xml], ctx(repo)).rows[1].state == 'conflict'  # the dry run says so too
+
+
+def test_value_entry_on_xml_rejected():
+    e = E(id='tiny-1-1-a', target=['xml'], loc='tiny 1:1#star', old=None, new=True)
+    assert any('xml' in p for p in fixes.validate(e, set()))
+
+
+def test_annotation_loc_checks_its_verse(repo):
+    e = E(id='tiny-1-99a1-a', loc='tiny 1:99a1#star', old=None, new=True)
+    assert fixes.states(e, ctx(repo)) == {'odr-original': 'conflict'}
+
+
+def test_fidelity_sees_data_and_xml_markup():
+    from rhemes import fidelity
+    feats = lambda a, b: {f.feature for f in fidelity.compare(a, b)}  # noqa: E731
+    assert 'italic' in feats('<hi>in ſide,</hi> 1.', 'in ſide, 1.')
+    assert 'sc' in feats('<hi rend="smallcaps">Corpvs</hi>', 'Corpvs')
+    assert 'sc' in feats('<sc>Iesvs</sc>', 'Iesvs')
+    assert 'margin_note' in feats('a <mn>[1]</mn> b', 'a b')
+    assert 'note_mark' in feats('a <na>[1]</na> <cr>[2]</cr> b', 'a <cr>[2]</cr> b')
+
+
+def test_value_star_removal_is_a_loss(repo):
+    e = E(id='tiny-1-1a1-a', loc='tiny 1:1a1/mn1#star', old=True, new=None)
+    assert any('star' in p for p in fixes._fidelity(e, 'odr-original'))
+
+
+def test_cli_ledger_error_is_a_message(tmp_path):
+    (tmp_path / 'tiny.jsonl').write_text('{"id": "x"}\n')
+    r = subprocess.run([sys.executable, '-I', str(paths.HERE / 'rh.py'), 'fix', 'check', 'tiny', '--fixes', str(tmp_path)],
+                       capture_output=True, text=True)
+    assert r.returncode == 1 and 'Traceback' not in r.stderr and 'tiny' in r.stderr + r.stdout
+
+
+def test_repo_without_xml_refuses_xml_targets(repo, tmp_path):
+    d = tmp_path / 'fx'
+    d.mkdir()
+    (d / 'matthew.jsonl').write_text(fixes.dumps(E(id='matthew-1-1-a', target=['xml'], loc='matthew 1:1',
+                                                   old='vnique matthew', new='vniqve matthew')) + '\n')
+    assert fixes.main(['apply', 'matthew', '--repo', str(repo), '--fixes', str(d), '--write']) == 2
+    assert fixes.main(['apply', 'matthew', '--repo', str(repo), '--xml', str(repo / 'A16049.xml'), '--fixes', str(d)]) == 0
+
+
+def test_forbidden_out_covers_repo_and_main_checkout(tmp_path):
+    from rhemes.lock import lock_path
+    assert fixes.forbidden_out(tmp_path / 'static/data/x.jsonl', repo=tmp_path)
+    main = lock_path().parent.parent
+    assert fixes.forbidden_out(main / 'static/data/x.jsonl')
+    assert fixes.forbidden_out(paths.FIXES / 'x.jsonl')
+    assert not fixes.forbidden_out(tmp_path / 'x.jsonl')

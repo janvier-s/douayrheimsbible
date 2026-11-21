@@ -1,7 +1,10 @@
 """The fixes ledger: every data fix is one record in wikisource/1582-rhemes-nt/fixes/<book>.jsonl.
 
-    rh.py fix check [BOOK…] [--repo R] [--fixes D]
-    rh.py fix apply BOOK [--write] [--only ID,…] [--repo R] [--fixes D]
+    rh.py fix check [BOOK…] [--repo R [--xml X]] [--fixes D]
+    rh.py fix apply BOOK [--write] [--only ID,…] [--repo R [--xml X]] [--fixes D]
+
+--repo moves the JSON stores only: entries with an xml target are refused unless --xml names
+the XML that goes with that repo.
 
 A record (keys in this order; the last five optional):
     id, target, loc, old, new, odr_old, odr_new, evidence, date, note, allow, superseded_by
@@ -132,6 +135,8 @@ def validate(entry, ids_seen, book=None, all_ids=None):
         if unicodedata.normalize('NFC', s) != s:
             p.append(f'not NFC: {s[:40]!r}')
             break
+    if e.is_value and 'xml' in (e.target or ()):
+        p.append('a #key value entry cannot target xml')
     if not e.is_value:
         for t in e.target or ():
             old, new = e.pair(t)
@@ -277,7 +282,10 @@ def _fidelity(entry, t):
         return []
     old, new = entry.pair(t)
     if entry.is_value:
-        old, new = json.dumps(old, ensure_ascii=False), json.dumps(new, ensure_ascii=False)
+        if entry.rest.endswith('#star'):  # star: true is the print's *
+            old, new = '*' if old else '', '*' if new else ''
+        else:
+            old, new = json.dumps(old, ensure_ascii=False), json.dumps(new, ensure_ascii=False)
     allowed = set(entry.allow or ())
     return [f'fidelity: {f.feature} {f.kind} {f.before}→{f.after} (add "allow":["{f.feature}:{f.kind}"] with a note)'
             for f in fidelity.compare(old, new) if f'{f.feature}:{f.kind}' not in allowed]
@@ -350,7 +358,20 @@ def _run(entries, ctx):
                     ctx.touched.setdefault((t, e.book), set()).add(_chapter_of(e.rest))
                 row.changed.append(t)
         rows.append(row)
+    _check_xml(rows, ctx)
     return rows
+
+
+def _check_xml(rows, ctx):
+    """The XML must still parse after the run's edits; if not, every row that edited it is a conflict."""
+    if not ctx.xml_dirty:
+        return
+    try:
+        ET.fromstring(ctx.xml_text.encode('utf-8'))
+    except ET.ParseError as ex:
+        for r in rows:
+            if 'xml' in r.changed:
+                r.problems.append(f'xml: the XML does not parse after the edits ({ex})')
 
 
 def _chapter_of(rest):
@@ -363,7 +384,6 @@ def _save(ctx):
     for (t, book), touched in ctx.touched.items():
         locmod.save_store(ctx.store(t, book), touched)
     if ctx.xml_dirty:
-        ET.fromstring(ctx.xml_text.encode('utf-8'))
         ctx.xml.write_bytes(ctx.xml_text.encode('utf-8'))
 
 
@@ -388,16 +408,33 @@ def _short(v, n=60):
 
 
 def _opts(argv):
-    o = {'write': False, 'only': None, 'repo': None, 'fixes': None, 'args': []}
+    o = {'write': False, 'only': None, 'repo': None, 'xml': None, 'fixes': None, 'args': []}
     it = iter(argv)
     for a in it:
         if a == '--write':
             o['write'] = True
-        elif a in ('--only', '--repo', '--fixes'):
+        elif a in ('--only', '--repo', '--xml', '--fixes'):
             o[a[2:]] = next(it)
         else:
             o['args'].append(a)
     return o
+
+
+def _xml_refused(entries, o):
+    if o['repo'] and not o['xml'] and any('xml' in e.target and e.superseded_by is None for e in entries):
+        print('--repo moves the JSON only: pass --xml with the XML that goes with it (xml targets here)')
+        return True
+    return False
+
+
+def forbidden_out(out, repo=None):
+    """True when a proposal file would land in the ledger or in data (this worktree, --repo, the main checkout)."""
+    from .lock import lock_path
+    o = Path(out).resolve()
+    roots = [paths.FIXES, paths.REPO / 'static/data', lock_path().parent.parent / 'static/data']
+    if repo:
+        roots.append(Path(repo) / 'static/data')
+    return any(o == p.resolve() or p.resolve() in o.parents for p in roots)
 
 
 def main(argv):
@@ -410,7 +447,10 @@ def main(argv):
         books = o['args'] or sorted(p.stem for p in root.glob('*.jsonl'))
         bad = 0
         for b in books:
-            rep = apply(load_ledger(b, root), Ctx(o['repo']))
+            entries = load_ledger(b, root)
+            if _xml_refused(entries, o):
+                return 2
+            rep = apply(entries, Ctx(o['repo'], o['xml']))
             print(f'{b}: {rep.summary()}')
             for r in rep.rows:
                 if r.state == 'conflict':
@@ -425,7 +465,9 @@ def main(argv):
     if o['only']:
         want = set(o['only'].split(','))
         entries = [e for e in entries if e.id in want]
-    rep = apply(entries, Ctx(o['repo']), write=o['write'])
+    if _xml_refused(entries, o):
+        return 2
+    rep = apply(entries, Ctx(o['repo'], o['xml']), write=o['write'])
     for r in rep.rows:
         if r.state in ('pending', 'conflict'):
             for t in r.entry.target:

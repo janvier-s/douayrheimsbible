@@ -66,3 +66,12 @@ def test_derive_ids_avoid_existing():
 def test_propose_diff_refuses_ledger_out(tmp_path):
     from rhemes import paths
     assert fixderive.main(['xml', 'ee79a5e', 'HEAD', '--out', str(paths.FIXES)]) == 2
+
+
+def test_derive_never_invents_an_approval():
+    before = BEFORE
+    after = BEFORE.replace('ſ', 's', 1)
+    es = [e for v in fixderive.derive_xml(before, after).values() for e in v]
+    assert es and all(e.allow is None and e.note is None for e in es)
+    es = [e for v in fixderive.derive_xml(before, after, allow_note='checked on the scan, p. 12').values() for e in v]
+    assert all(e.allow and e.note == 'checked on the scan, p. 12' for e in es)

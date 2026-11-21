@@ -96,7 +96,7 @@ def test_json_entries_replay_history(tmp_path):
                     continue
                 old, new = e.pair(t)
                 if e.rest not in cur:
-                    c, k = locmod.resolve(sa, e.rest)
+                    c, k = locmod.resolve(sa, e.rest, check_verse=False)
                     cur[e.rest] = c.get(k)
                 v = cur[e.rest]
                 if e.is_value:
@@ -111,6 +111,13 @@ def test_json_entries_replay_history(tmp_path):
                 assert v.count(old) == 1, (rev, e.id, t, v.count(old))
                 cur[e.rest] = v.replace(old, new, 1)
             for rest, v in cur.items():
-                c, k = locmod.resolve(sb, rest)
+                c, k = locmod.resolve(sb, rest, check_verse=False)
                 want = c.get(k)
                 assert v == want or _shape(v) == _shape(want), (rev, rest, t)
+
+
+def test_ledger_entries_pass_the_gate():
+    """Every live entry would pass apply's fidelity check if it were pending (allow + note where decided)."""
+    bad = [(e.id, p) for es in _all().values() for e in es if e.superseded_by is None
+           for t in e.target for p in fixes._fidelity(e, t)]
+    assert not bad, bad[:20]

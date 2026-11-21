@@ -45,8 +45,9 @@ def save_store(store, touched):
         write_like(store.root / store.book / 'annotations' / f'{c:03d}.json', store.anns[c])
 
 
-def find_text(book_json, anns, loc):
-    """(container, key) holding the text at loc."""
+def find_text(book_json, anns, loc, check_verse=True):
+    """(container, key) holding the text at loc. An annotation must be on the loc's verse, unless
+    check_verse is False (replaying history, where verses were since renumbered)."""
     m = re.fullmatch(r'arg:(\d+|title)', loc)
     if m:
         it = book_json['intros'][0 if m.group(1) == 'title' else int(m.group(1))]
@@ -60,6 +61,8 @@ def find_text(book_json, anns, loc):
     m = re.fullmatch(r'(\d+):(\d+)a(\d+)(:title|/mn(.+))?', loc)
     if m:
         a = anns[int(m.group(1))]['annotations'][int(m.group(3)) - 1]
+        if check_verse and a.get('verse') != int(m.group(2)):
+            raise ValueError(f'{loc}: annotation {m.group(3)} of chapter {m.group(1)} is on verse {a.get("verse")}')
         if m.group(4) == ':title':
             return a, 'title'
         if m.group(5):
@@ -77,20 +80,20 @@ def find_text(book_json, anns, loc):
     raise ValueError(loc)
 
 
-def resolve(store, loc):
+def resolve(store, loc, check_verse=True):
     """(container, key) at loc, with the #key suffix and intro notes (arg:N/nM); ValueError if it doesn't resolve."""
     base, _, hkey = loc.partition('#')
     try:
         m = re.fullmatch(r'arg:(\d+)/n(.+)', base)
         k = re.fullmatch(r'(\d+:\d+a\d+)/mn\.(\d+)', base)
         if k:
-            a, _ = find_text(store.bj, store.anns, k.group(1))
+            a, _ = find_text(store.bj, store.anns, k.group(1), check_verse)
             cont, key = a['notes'][int(k.group(2)) - 1], 'text'
         elif m:
             it = store.bj['intros'][int(m.group(1))]
             cont, key = next(n for n in it['notes'] if str(n.get('marker')) == m.group(2)), 'text'
         else:
-            cont, key = find_text(store.bj, store.anns, base)
+            cont, key = find_text(store.bj, store.anns, base, check_verse)
     except (IndexError, KeyError, StopIteration, AssertionError, TypeError) as e:
         raise ValueError(f'{loc}: {type(e).__name__}') from None
     return (cont, hkey) if hkey else (cont, key)

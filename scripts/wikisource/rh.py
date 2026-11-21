@@ -49,12 +49,16 @@ def main(argv):
         print(__doc__ + '\ncommands:\n' + '\n'.join(f'  {c}' for c in COMMANDS))
         return 2
     mod, args = r
+    from rhemes.fixes import LedgerError
     from rhemes.lock import LockHeld
     try:
         return importlib.import_module(f'rhemes.{mod}').main(args)
     except LockHeld as e:
         print(e, file=sys.stderr)
         return 3
+    except LedgerError as e:
+        print(f'ledger: {e}', file=sys.stderr)
+        return 1
 
 
 if __name__ == '__main__':

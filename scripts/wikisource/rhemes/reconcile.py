@@ -220,12 +220,12 @@ def cmd_ladder(book, overwrite=False):
     Holds the data lock throughout (it reads the data and writes the record).
     """
     out = WS / 'reconcile' / f'{book}.jsonl'
-    if out.exists() and not overwrite:
-        n = sum(1 for x in out.read_text().splitlines() if x.strip())
-        if n:
-            print(f'{out} has {n} recorded decisions; not replacing them (--overwrite to rerun the ladder anyway)')
-            sys.exit(1)
     with data_lock(lock_path()):
+        if out.exists() and not overwrite:
+            n = sum(1 for x in out.read_text().splitlines() if x.strip())
+            if n:
+                print(f'{out} has {n} recorded decisions; not replacing them (--overwrite to rerun the ladder anyway)')
+                sys.exit(1)
         return _ladder(book, out)
 
 

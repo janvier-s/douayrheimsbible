@@ -271,7 +271,6 @@ def _opt(argv, name, default=None):
 
 
 def main(argv):
-    from .detectors import _forbidden
     argv, out = _opt(argv, '--out')
     argv, repo = _opt(argv, '--repo', paths.REPO)
     argv, mins = _opt(argv, '--min-spelling', MIN_SPELLING)
@@ -279,7 +278,7 @@ def main(argv):
     if not argv or any(a.startswith('--') for a in argv):
         print(__doc__)
         return 2
-    if out and _forbidden(out):
+    if out and fixes.forbidden_out(out, repo):
         print(f'--out {out}: proposals never go under fixes/ or static/data; review them, then append')
         return 2
     load = {}

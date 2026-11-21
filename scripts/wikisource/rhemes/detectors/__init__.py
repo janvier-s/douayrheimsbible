@@ -124,19 +124,10 @@ def _entry(book, rest, target, old, new, evidence, date, taken, odr=None):
 
 
 def ledger_ids(book, root=None):
-    try:
-        return {e.id for e in fixes.load_ledger(book, root)}
-    except fixes.LedgerError:
+    """The ids in the book's ledger (none when it has no file); a broken ledger raises LedgerError."""
+    if not (Path(root or paths.FIXES) / f'{book}.jsonl').exists():
         return set()
-
-
-def _forbidden(out):
-    o = Path(out).resolve()
-    for p in (paths.FIXES, paths.REPO / 'static/data'):
-        p = p.resolve()
-        if o == p or p in o.parents:
-            return True
-    return False
+    return {e.id for e in fixes.load_ledger(book, root)}
 
 
 def _opt(argv, name):
@@ -150,7 +141,7 @@ def main(argv):
     from . import longs, stars, wvv
     argv, out = _opt(argv, '--out')
     argv, repo = _opt(argv, '--repo')
-    if out and _forbidden(out):
+    if out and fixes.forbidden_out(out, repo):
         print(f'--out {out}: proposals never go under fixes/ or static/data; review them, then append')
         return 2
     rules = {'stars': (stars, 4), 'wvv': (wvv, 4), 'longs': (longs, 2)}
