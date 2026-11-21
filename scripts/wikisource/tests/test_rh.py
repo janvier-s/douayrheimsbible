@@ -38,3 +38,13 @@ def test_old_name_prints_new_command(tmp_path):
                          cwd=tmp_path, capture_output=True, text=True)
     assert 'rh.py lint' in old.stderr
     assert old.stdout == new.stdout
+
+
+def test_package_imports_are_relative():
+    """A bare `import ladder` inside rhemes/ works only through the shim, which Phase 5 deletes."""
+    import re
+    names = {p.stem for p in (HERE / 'rhemes').glob('*.py')} | {'xml_json_diff', 'check_live_edits'}
+    bad = [f'{p.name}:{i}' for p in (HERE / 'rhemes').glob('*.py')
+           for i, line in enumerate(p.read_text().splitlines(), 1)
+           if (m := re.match(r'\s*(?:from|import) (\w+)\b', line)) and m.group(1) in names]
+    assert not bad, bad

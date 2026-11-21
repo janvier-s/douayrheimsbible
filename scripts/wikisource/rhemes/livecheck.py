@@ -11,13 +11,11 @@ Usage:
 import difflib, json, re, sys, time
 from pathlib import Path
 
-from . import paths, wikipost
+from . import paths, text, wikipost
 
 ROOT = paths.WS
 
-def norm_text(t):
-    # Strip user attribute and trailing whitespace
-    return re.sub(r'(<pagequality level="\d" )user="[^"]*"', r'\1user=""', t).rstrip('\n')
+norm_text = text.pagequality_blank_user
 
 def extract_pagequality(t):
     m = re.search(r'<pagequality level="(\d)" user="([^"]*)"', t)

@@ -39,7 +39,7 @@ Usage:
 from pathlib import Path
 import collections, difflib, hashlib, json, re, subprocess, sys, unicodedata
 
-from . import paths, xmldiff as X
+from . import paths, text, xmldiff as X
 
 REPO = X.REPO
 ROOT = REPO / 'wikisource/1582-rhemes-nt'
@@ -48,8 +48,7 @@ MAC = '\x01'
 CHECKED = {'matthew', 'mark', 'luke', 'john'}  # BOOKS.md: checked against the scans
 BOOKS = list(X.BOOKN)
 
-def fold_char(s):
-    return s.replace('ſ', 's').replace('æ', 'ae').replace('œ', 'oe').replace('vv', 'w')
+fold_char = text.fold_chars
 
 
 def fine_json(text):
@@ -245,8 +244,7 @@ def audit_book(book):
     return nverses, rows
 
 
-def fold_key(w):
-    return re.sub(r'[^a-z0-9]', '', fold_char(w))
+fold_key = text.fold_key
 
 
 def collapse_splits(rows, c, xv, jv):
@@ -284,7 +282,7 @@ TEXT_KINDS = {'w/vv', 'longs', 'macron', 'stray-letter', 'text', 'lig', 'spacing
 def wiki_plain(src):
     """wikitext -> verse-text-like plain string (margin notes, verse numbers, running heads dropped)."""
     src = re.sub(r'<noinclude>.*?</noinclude>', ' ', src, flags=re.S)
-    src = src.replace('{{ls}}', 'ſ')
+    src = text.wiki_to_ls(src)
     for _ in range(6):
         src = re.sub(r'\{\{(?:verse|rh|continues|MarginNote)\|[^{}]*\}\}', ' ', src)
         src = re.sub(r'\{\{[A-Za-z]+\|([^{}|]*)\}\}', r'\1', src)

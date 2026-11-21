@@ -17,6 +17,8 @@ import unicodedata
 from collections import Counter
 from typing import NamedTuple
 
+from . import text
+
 
 class Feature(NamedTuple):
     name: str
@@ -69,25 +71,9 @@ FEATURES = {n: Feature(n, g, s) for n, (g, s, _, _) in _TABLE.items()}
 _PATTERNS = {n: (src, re.compile(p)) for n, (_, _, src, p) in _TABLE.items()}
 
 _NOINC = re.compile(r'<noinclude>.*?</noinclude>', re.S)
-_FILE = re.compile(r'\[\[(?:File|Image):[^\]]*\]\]', re.I)
-_ATTR = re.compile(r'\b[\w-]+="[^"]*"')
-_TAG = re.compile(r'<[^>]*>')
-_KEY = re.compile(r'\|\s*[A-Za-z][\w-]*\s*=')
-_BARE_TEMPLATE = re.compile(r'\{\{[^|{}]*\}\}')
-_TEMPLATE_NAME = re.compile(r'\{\{[^|{}]*\|')
 
 
-def plain(text: str) -> str:
-    """The print text of wikitext: template names, parameter keys, tags, attributes and files removed."""
-    t = unicodedata.normalize('NFC', text).replace('{{ls}}', 'ſ')
-    t = _FILE.sub(' ', t)
-    t = _ATTR.sub(' ', t)
-    t = _TAG.sub(' ', t)
-    t = _KEY.sub('|', t)
-    while _BARE_TEMPLATE.search(t):
-        t = _BARE_TEMPLATE.sub(' ', t)
-    t = _TEMPLATE_NAME.sub(' ', t)
-    return t.replace('}}', ' ').replace('|', ' ')
+plain = text.wiki_to_plain
 
 
 def count(text: str) -> Counter:

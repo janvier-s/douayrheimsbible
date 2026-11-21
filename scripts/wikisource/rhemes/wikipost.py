@@ -23,7 +23,7 @@ Credentials: the bot password in the macOS keychain, service "wikisource-bot" (a
 import difflib, hashlib, http.cookiejar, json, re, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
-from . import fidelity, paths
+from . import fidelity, paths, text
 
 ROOT = paths.WS
 API = 'https://en.wikisource.org/w/api.php'
@@ -89,8 +89,7 @@ class Wiki:
                           'createonly': 1, 'token': self.csrf}, post=True)
 
 
-def norm(t):
-    return re.sub(r'<pagequality level="\d" user="[^"]*"\s*/>', '<pagequality />', t).rstrip('\n')
+norm = text.pagequality_bare
 
 
 def preserve_pagequality(ours, live):

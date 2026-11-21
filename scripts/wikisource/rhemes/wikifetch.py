@@ -9,7 +9,7 @@ from pathlib import Path
 
 API = 'https://en.wikisource.org/w/api.php'
 UA = 'douay-rheims-wikisource-tools/0.1 (page proofreading helper)'
-from . import paths
+from . import paths, text
 
 ROOT = paths.WS
 INDEX = '1582_Rhemes_New_Testament.pdf'
@@ -38,9 +38,7 @@ def fetch(nums):
     return out
 
 
-def norm(t):
-    """Live text with MediaWiki's per-save user="…" and trailing newline normalised away."""
-    return re.sub(r'(<pagequality level="\d" )user="[^"]*"', r'\1user=""', t).rstrip('\n')
+norm = text.pagequality_blank_user
 
 
 def main(argv=None):

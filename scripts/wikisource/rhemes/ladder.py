@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import NamedTuple
 import sys
 
-from . import fidelity
+from . import fidelity, text
 from .jsonfmt import write_like
 
 XML = Path(os.environ.get('RHEMES_XML', Path.home() / 'Documents/Bible-n-stuff/original-douay-rheims-nt/A16049.xml'))
@@ -43,16 +43,10 @@ class Decision(NamedTuple):
     evidence: str
 
 
-def fold(w):
-    """Comparison key: no marks or punctuation, lower case, ſ→s, vv→w, v→u, j→i."""
-    w = ''.join(ch for ch in unicodedata.normalize('NFD', w) if not unicodedata.combining(ch))
-    w = w.lower().replace('ſ', 's').replace('vv', 'w').replace('v', 'u').replace('j', 'i')
-    return re.sub(r'[^a-zæœ]', '', w)
+fold = text.fold_word
 
 
-def core(w):
-    """The word without surrounding punctuation."""
-    return re.sub(r'^[^\wſ]+|[^\wſ]+$', '', w or '')
+core = text.core
 
 
 # ---- page side -----------------------------------------------------------------------
@@ -98,8 +92,8 @@ def _body(t):
 
 
 def _cls(c, g):
-    from reconcile import classify
-    return classify(c.replace('ſ', '{{ls}}'), g.replace('ſ', '{{ls}}'))
+    from .reconcile import classify
+    return classify(text.ls_to_wiki(c), text.ls_to_wiki(g))
 
 
 def conflicts(committed, generated, page, unaligned=None):

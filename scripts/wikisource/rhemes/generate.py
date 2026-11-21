@@ -12,7 +12,7 @@ import json, os, re, sys, difflib
 from pathlib import Path
 
 from .ocrpages import book_pages
-from . import paths
+from . import paths, text
 
 # Set by main(argv); the defaults let the module be imported (tests) without side effects.
 REPO = paths.REPO
@@ -67,10 +67,8 @@ ROMAN = ['', 'I', 'II', 'III', 'IIII', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'
          'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI', 'XXII', 'XXIII', 'XXIIII', 'XXV', 'XXVI', 'XXVII', 'XXVIII']
 
 
-SENT = re.compile(r'⟦[^⟧]*⟧')
-# {{dropinitial|T|image=...|imgsize=...|fl={{verse|...}}}}: fl puts the verse number inside
-# the floated cap; image is the print's woodcut (on Commons), T its alt text
-DROPI = re.compile(r'\{\{dropinitial\|([^{}|]*)(?:\|(?:image|imgsize)=[^{}|]*)*(?:\|fl=\{\{[^{}]*\}\})?\}\}')
+SENT = text.SENT
+DROPI = text.DROPI
 # Woodcut initials, headpieces and tailpieces on Commons, from ornaments.py commons:
 # initial 'book/ch' -> file, letter, imgsize; headpiece/tailpiece book -> file, width.
 # Off unless books.json sets "ornaments": true for the book or --ornaments is given (owner: off for now).
@@ -78,14 +76,7 @@ ORN_JSON = 'wikisource/1582-rhemes-nt/ornaments.json'
 ORNAMENTS = {}
 
 
-def norm(w):
-    w = SENT.sub('', w)
-    w = DROPI.sub(r'\1', w)  # the drop cap is still a letter of the word
-    w = re.sub(r'\{\{sc\|([^{}]*)\}\}', r'\1', w)  # so are small caps
-    w = re.sub(r'\{\{[^{}]*\}\}', '', w)
-    w = w.lower().replace('ſ', 's').replace('f', 's').replace('vv', 'w').replace('u', 'v').replace('j', 'i')
-    w = w.translate(str.maketrans('āēīōūñ', 'aeiovn'))
-    return re.sub(r'[^a-zæœ]', '', w)
+norm = text.wiki_word_key
 
 
 def margin(side, text):
@@ -191,8 +182,7 @@ def drop_initial(s, ch=None):
     return ''.join(parts)
 
 
-def to_ls(text):
-    return text.replace('ſ', '{{ls}}')
+to_ls = text.ls_to_wiki
 
 
 # A run of all-caps words (2+ letters each) in running text or a margin note: the print's
