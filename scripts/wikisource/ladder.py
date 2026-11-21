@@ -170,7 +170,8 @@ def xml_tokens(xml_text, book):
         tail, el.tail = el.tail, None
         _walk(el, main, notes)
         el.tail = tail
-    return ''.join(main).replace('\x00', '').split(), ''.join(notes).split()
+    nfc = lambda s: unicodedata.normalize('NFC', s)  # EEBO strokes are combining marks; the pages are NFC
+    return nfc(''.join(main).replace('\x00', '')).split(), nfc(''.join(notes)).split()
 
 
 _COMBOS = [(3, 3), (2, 2), (3, 0), (0, 3), (2, 1), (1, 2), (2, 0), (0, 2), (1, 1)]
@@ -426,6 +427,15 @@ def adopt(files, decisions, ov, lock):
                 done = [1 for f in data for _ in _find(leaves[f], before, c.committed, after)]
                 hits = [(f, h) for f in data for h in _find(leaves[f], before, c.generated, after)]
                 full = (kb, ka) == (min(3, len(c.before)), min(3, len(c.after)))
+                if done and not hits and not full and (kb == 0) != (ka == 0):
+                    # one-sided context can run into a neighbouring string; the other side decides
+                    ob, oa = (c.before[-ka:], []) if kb == 0 else ([], c.after[:kb])
+                    if len(ob) + len(oa) == kb + ka:
+                        odone = [1 for f in data for _ in _find(leaves[f], ob, c.committed, oa)]
+                        ohits = [(f, h) for f in data for h in _find(leaves[f], ob, c.generated, oa)]
+                        if not odone and len(ohits) == 1:
+                            found = ohits
+                            break
                 if done and (not hits or full):
                     found = 'done'  # already applied (with the full context, a generated form is another place)
                     break

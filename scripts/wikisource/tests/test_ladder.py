@@ -375,3 +375,27 @@ def test_adopt_same_citation_twice_in_one_verse(tmp_path):
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert unlocated == [] and v[0]['cross_refs'][2]['text'] == 'Pſ. 50, 6.' and v[0]['notes'][0]['text'].endswith('Pſ. 50, 6.')
     assert v[1]['cross_refs'][0]['text'] == 'Ps. 50, 6.'
+
+
+def test_adopt_one_sided_done_yields_to_opposite_side(tmp_path):
+    # Romans p417: 'vnder their lippes' + 'Pſ.' matches v13's own cross_ref (Pſ. 5, 11.),
+    # but the reading belongs to v14's 'Ps. 9, 7. Es. 19, 7.', which only the after-context finds.
+    verses = [{'verse': 13, 'text': '<i>of aſpes vnder their lippes</i>.', 'cross_refs': [{'text': 'Pſ. 5, 11.'}]},
+              {'verse': 14, 'text': '<i>Vvhoſe mouth</i>:', 'cross_refs': [{'text': 'Ps. 9, 7. Es. 19, 7.'}]}]
+    f = tmp_path / 'romans.json'
+    f.write_text(json.dumps({'chapters': [{'verses': verses}]}, ensure_ascii=False) + '\n')
+    c = ladder.Conflict(417, 'Pſ.', 'Ps.', ['vnder', 'their', 'lippes'], ['9,', '7.', 'Es.'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    v = json.loads(f.read_text())['chapters'][0]['verses']
+    assert unlocated == [] and len(applied) == 1 and v[1]['cross_refs'][0]['text'] == 'Pſ. 9, 7. Es. 19, 7.'
+    assert v[0]['cross_refs'][0]['text'] == 'Pſ. 5, 11.'
+
+
+def test_xml_tokens_nfc_abbreviation_stroke():
+    # EEBO writes the stroke as a combining U+0304 (Romans p431 childrē); the pages are NFC
+    xml = ('<TEI><text><body><div n="Mark" type="gospel"><p>not they that are the '
+           'childre<g ref="char:cmbAbbrStroke">̄</g> of the fleſh</p></div></body></text></TEI>')
+    main, _ = ladder.xml_tokens(xml, 'mark')
+    assert 'childrē' in main
+    c = ladder.Conflict(431, 'childrē', 'children', ['that', 'are', 'the'], ['of', 'the', 'fleſh,'])
+    assert ladder.decide(c, ladder.locate_xml(c, (main, [])), [], ['children'], Counter()).winner == 'committed'
