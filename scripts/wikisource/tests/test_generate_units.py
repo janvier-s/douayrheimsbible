@@ -193,3 +193,9 @@ def test_dropcap_verse_opens_a_paragraph():
     S = [{'kind': 'verse', 'text': 'end.'}, {'kind': 'verse', 'text': '{{dropinitial|A|fl={{verse|chapter=16|verse=1}}}}ND'}]
     assert generate.opens_para(S, 1, set())
     assert not generate.opens_para(S, 0, set())
+
+
+def test_dropcap_after_margin_note_opens_a_paragraph():
+    import generate
+    S = [{'kind': 'verse', 'text': '⟦mn:0⟧{{MOUTER|The Goſpel vpō the 19 Sunday.}}{{dropinitial|A|fl={{verse|chapter=22|verse=1}}}}ND'}]
+    assert generate.opens_para(S, 0, set())

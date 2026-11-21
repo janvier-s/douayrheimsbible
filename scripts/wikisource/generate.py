@@ -674,7 +674,8 @@ def opens_para(S, i, paras):
     """Token i starts a new paragraph (a block, or a verse the print indents)."""
     t = S[i]
     return bool(t.get('block') or (i in paras and t['kind'] == 'verse' and not t.get('nopara'))
-                or t['text'].startswith('{{dropinitial'))  # a chapter's first verse
+                or re.sub(r'^(?:⟦[^⟧]*⟧|\{\{M(?:INNER|OUTER)\|(?:[^{}]|\{\{[^{}]*\}\})*\}\}|\s)*', '', t['text'])
+                .startswith('{{dropinitial'))  # a chapter's first verse, after any margin notes
 
 
 def end_body(body, next_opens):
