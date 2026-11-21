@@ -207,6 +207,9 @@ def cmd_ladder(book):
                 decisions.append(ladder.decide(c, ladder.locate_xml(c, tokens),
                                                ladder.readings(tk.get(n), c.committed, c.generated),
                                                ladder.readings(ts.get(n), c.committed, c.generated), same_book))
+    scans = WS / 'reconcile' / 'scan-readings.jsonl'
+    if scans.exists():  # rung 4 words read on the facsimile (owner-approved collages)
+        decisions = ladder.apply_readings(decisions, [json.loads(x) for x in scans.read_text().splitlines() if x.strip()])
     out = WS / 'reconcile' / f'{book}.jsonl'
     out.parent.mkdir(exist_ok=True)
     out.write_text(''.join(json.dumps(dict(page=d.conflict.page, committed=d.conflict.committed, generated=d.conflict.generated,
@@ -216,7 +219,7 @@ def cmd_ladder(book):
         print(f'rung {rung} {winner or "unresolved":10} {k}')
     print(f'unaligned differences (not word for word): {len(unaligned)}')
     for d in decisions:
-        if d.rung == 4:
+        if d.rung == 4 and not d.winner:
             print(f'  rung 4: page {d.conflict.page}: {d.conflict.committed} / {d.conflict.generated} ({d.evidence})')
     return decisions, unaligned
 

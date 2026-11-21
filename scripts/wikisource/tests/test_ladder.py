@@ -158,8 +158,27 @@ def test_words_keep_inline_templates_joined():
 def test_stem_rule_ss_settled_by_xml():
     # owner 2026-11-21: the committed ſs came from apply_longs_pages.py's stem list, not the print
     d = ladder.decide(C('neceſsitie', 'neceſſitie'), ['neceſſitie'], [], [], Counter())
-    assert (d.rung, d.winner) == (2, 'generated') and 'stem rule' in d.evidence
+    assert (d.rung, d.winner) == (3, 'generated') and 'stem rule' in d.evidence
+    d = ladder.decide(C('neceſsitie', 'neceſſitie'), ['neceſſitie'], [], ['neceſsitie'], Counter())
+    assert (d.rung, d.winner) == (3, 'committed')  # an OCR reading of the shape still decides first
     d = ladder.decide(C('Maſſ', 'Maſs'), ['Maſs'], [], [], Counter())  # not a stem-rule word
     assert d.rung == 4
     d = ladder.decide(C('neceſsitie', 'neceſſitie'), [], [], [], Counter())  # no XML reading: still open
     assert d.rung == 4
+
+
+def test_scan_readings_override_rung4():
+    c = C('Paſſ.', 'Paſs.', page=232)
+    ds = [ladder.Decision(c, 4, '', 'xml -'), ladder.Decision(C('a', 'b', page=1), 2, 'committed', 'xml a')]
+    rd = [{'page': 232, 'committed': 'Paſſ.', 'generated': 'Paſs.', 'reading': 'Paſ.', 'evidence': 'scan 2026-11-21'},
+          {'page': 9, 'committed': 'x', 'generated': 'y', 'reading': 'y', 'evidence': 'scan'}]
+    out = ladder.apply_readings(ds, rd)
+    assert out[0] == ladder.Decision(c._replace(committed='Paſ.'), 4, 'committed', 'scan 2026-11-21: print Paſ.')
+    assert out[1] == ds[1]
+    rd[0]['reading'] = 'Paſs.'  # the print agrees with the data: the generated side wins
+    assert ladder.apply_readings(ds, rd)[0] == ladder.Decision(c, 4, 'generated', 'scan 2026-11-21: print Paſs.')
+
+
+def test_stem_rule_only_where_otherwise_unresolved():
+    d = ladder.decide(C('neceſsitie', 'neceſſitie'), ['neceſſitie'], [], [], Counter({'neceſsitie': 4, 'neceſſitie': 1}))
+    assert (d.rung, d.winner) == (3, 'committed') and 'majority' in d.evidence

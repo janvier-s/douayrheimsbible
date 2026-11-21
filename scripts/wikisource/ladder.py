@@ -258,8 +258,6 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
     side = {core(c.committed): 'committed', core(c.generated): 'generated'}
     xml = core(xml_forms[0]) if len(xml_forms) == 1 else None
     ocr = {core(f) for f in ocr_forms}
-    if xml == core(c.generated) and _stem_rule(c) and not (ocr - {xml}):
-        return Decision(c, 2, 'generated', f'xml {xml}; committed ſs from the stem rule (owner 2026-11-21)')
     if xml in side and xml in ocr:
         return Decision(c, 1, side[xml], f'xml {xml} + transkribus')
     if xml in side and side[xml] == 'committed':
@@ -274,6 +272,8 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
     if max(a, b) and max(a, b) >= 2 * min(a, b):
         w = 'committed' if a > b else 'generated'
         return Decision(c, 3, w, f'book majority {a}:{b}' + (f'; xml {xml}' if xml else ''))
+    if xml == core(c.generated) and _stem_rule(c):  # only where nothing else settles it
+        return Decision(c, 3, 'generated', f'xml {xml}; committed ſs from the stem rule (owner 2026-11-21)')
     return Decision(c, 4, '', f'xml {xml or "-"}; book {a}:{b}')
 
 
@@ -365,3 +365,22 @@ def book_files(repo, book):
 
 def same_book_counts(tokens):
     return Counter(core(t) for stream in tokens for t in stream)
+
+
+def apply_readings(decisions, readings):
+    """Rung 4 settled from the scans: readings are {page, committed, generated, reading, evidence}.
+    The print reading wins; when it is neither side, it replaces the committed form (adopt writes it)."""
+    rd = {(r['page'], r['committed'], r['generated']): r for r in readings}
+    out = []
+    for d in decisions:
+        c = d.conflict
+        r = rd.get((c.page, c.committed, c.generated))
+        if d.rung != 4 or not r:
+            out.append(d)
+            continue
+        ev = f"{r['evidence']}: print {r['reading']}"
+        if r['reading'] == c.generated:
+            out.append(Decision(c, 4, 'generated', ev))
+        else:
+            out.append(Decision(c._replace(committed=r['reading']), 4, 'committed', ev))
+    return out
