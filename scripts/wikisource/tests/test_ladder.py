@@ -268,3 +268,40 @@ def test_readings_use_the_context_line():
     text = 'this you shal receiue the greater iudgement. b\nvveightier things of the lavv,iudgemét,and mercie,and faith,'
     c = ladder.Conflict(93, 'iudgemēt,', 'iudgement,', ['of', 'the', 'lavv,'], ['and', 'mercie,', 'and'])
     assert ladder.readings(text, c.committed, c.generated, c.before + c.after) == ['iudgemēt,']
+
+
+def test_adopt_word_core_and_spaced_punctuation(tmp_path):
+    f = book(tmp_path, ['S. Paul writeth of him by name to the Coloſsians : <i>Luke the</i> Phyſicion'])
+    c = ladder.Conflict(161, 'Coloſſians:', 'Coloſsians:', ['name', 'to', 'the'], ['Luke', 'the'])
+    ov = fidelity.parse_overrides([])
+    applied, unlocated = ladder.adopt([f], [dec(c)], ov, tmp_path / 'lock')
+    assert unlocated == [] and 'the Coloſſians : <i>Luke' in f.read_text()
+
+
+def test_adopt_mirror_shifted_one_verse(tmp_path):
+    verses = [{'verse': 16, 'text': 'God forbid.', 'xrefs': ['Ps. 117, 22.']},
+              {'verse': 17, 'text': 'that is vvritten, <i>The ſtone</i>?', 'cross_refs': [{'text': 'Ps. 117, 22.'}]}]
+    c = ladder.Conflict(224, 'Pſ.', 'Ps.', ['that', 'is', 'vvritten,'], ['117,', '22.', 'The'])
+    f = tmp_path / 'luke.json'
+    f.write_text(json.dumps({'chapters': [{'verses': verses}]}, ensure_ascii=False) + '\n')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    v = json.loads(f.read_text())['chapters'][0]['verses']
+    assert unlocated == [] and v[0]['xrefs'][0] == v[1]['cross_refs'][0]['text'] == 'Pſ. 117, 22.'
+    # a third copy of the citation elsewhere: genuinely ambiguous, nothing written
+    f.write_text(json.dumps({'chapters': [{'verses': verses + [{'verse': 40, 'text': 'x', 'cross_refs': [{'text': 'Ps. 117, 22.'}]}]}]},
+                            ensure_ascii=False) + '\n')
+    before = f.read_text()
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    assert len(unlocated) == 1 and f.read_text() == before
+
+
+def test_adopt_done_wins_over_another_occurrence(tmp_path):
+    f = tmp_path / 'mark.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [{'verse': 28, 'text': 'vvas the firſt cōmaundement of al. And'}]}]},
+                            ensure_ascii=False) + '\n')
+    (tmp_path / 'ann.json').write_text(json.dumps({'annotations': [{'title': 'vvas the firſt commaundement of al. And'}]},
+                                                  ensure_ascii=False) + '\n')
+    c = ladder.Conflict(148, 'cōmaundement', 'commaundement', ['vvas', 'the', 'firſt'], ['of', 'al.', 'And'])
+    before = (tmp_path / 'ann.json').read_text()
+    applied, unlocated = ladder.adopt([f, tmp_path / 'ann.json'], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    assert applied == [] and unlocated == [] and (tmp_path / 'ann.json').read_text() == before

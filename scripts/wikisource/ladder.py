@@ -303,7 +303,7 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
 
 # ---- adopt ---------------------------------------------------------------------------
 
-_SEP = r'(?:\s|<[^>]+>|⟦[^⟧]*⟧|\[\d+\])+'  # spaces, tags, sentinels, cross-reference marks [1]
+_SEP = r'(?:\s|<[^>]+>|⟦[^⟧]*⟧|\[\d+\]|[.,;:?!()\]])+'  # spaces, tags, sentinels, [1] marks, punctuation
 _ADOPT_COMBOS = [(3, 3), (2, 2), (1, 1), (2, 0), (0, 2), (1, 0), (0, 1), (0, 0)]
 
 
@@ -318,18 +318,41 @@ def _leaves(obj, out, path=()):
     return out
 
 
-def _mirrors(p, q):
-    """Two leaves hold the same fact when their paths part at keys of one object
-    (a verse's cross_refs[i].text and xrefs[i]), not at different list items."""
+def _orphan(leaves, path, text):
+    """A cross_refs/xrefs copy whose own verse has no partner copy of the same string."""
+    k = next((j for j, x in enumerate(path) if x in ('cross_refs', 'xrefs')), None)
+    if k is None:
+        return False
+    other = 'xrefs' if path[k] == 'cross_refs' else 'cross_refs'
+    return not any(p2[:k] == path[:k] and len(p2) > k and p2[k] == other and o[key] == text for o, key, p2 in leaves)
+
+
+def _mirrors(p, q, same_string=False):
+    """Two leaves hold the same fact: a verse's cross_refs[i].text and xrefs[i]; with the same
+    string also when the xrefs copy sits one verse off (a known shift in the data) and both
+    copies are orphans (the caller checks that)."""
     i = 0
     while i < min(len(p), len(q)) and p[i] == q[i]:
         i += 1
-    return i < min(len(p), len(q)) and {p[i], q[i]} == {'cross_refs', 'xrefs'}
+    if i >= min(len(p), len(q)):
+        return False
+    if {p[i], q[i]} == {'cross_refs', 'xrefs'}:
+        return True
+    return (same_string and isinstance(p[i], int) and isinstance(q[i], int) and abs(p[i] - q[i]) == 1
+            and i + 1 < min(len(p), len(q)) and {p[i + 1], q[i + 1]} == {'cross_refs', 'xrefs'})
 
 
 def _pattern(before, word, after):
-    parts = [re.escape(w) for w in before] + ['(' + re.escape(word) + ')'] + [re.escape(w) for w in after]
+    """Words are matched by their cores (the page tidies 'Coloſsians :' to 'Coloſsians:')."""
+    ctx = lambda ws: [re.escape(core(w)) for w in ws if core(w)]
+    parts = ctx(before) + ['(' + re.escape(core(word)) + ')'] + ctx(after)
     return re.compile(r'(?<![\wſ])' + _SEP.join(parts) + r'(?![\wſ])')
+
+
+def _pair(leaves, a, b):
+    """Same string and both orphans: allowed to mirror across one verse."""
+    ta, tb = a[0][a[1]], b[0][b[1]]
+    return ta == tb and _orphan(leaves, a[2], ta) and _orphan(leaves, b[2], tb)
 
 
 def _find(leaves, before, word, after):
@@ -346,7 +369,8 @@ def _find(leaves, before, word, after):
         a, z = m.span(1)
         i = max(k for k, st in enumerate(starts) if st <= a)
         if z <= starts[i] + len(leaves[i][0][leaves[i][1]]) and not any(
-                h[0] is leaves[i] or _mirrors(h[0][2], leaves[i][2]) for h in out):  # a mirrored copy is the same place
+                h[0] is leaves[i] or _mirrors(h[0][2], leaves[i][2], _pair(leaves, h[0], leaves[i]))
+                for h in out):  # a mirrored copy is the same place
             out.append((leaves[i], a - starts[i], z - starts[i]))
     return out
 
@@ -368,15 +392,15 @@ def adopt(files, decisions, ov, lock):
             found = None
             for kb, ka in _ADOPT_COMBOS:
                 before, after = c.before[-kb:] if kb else [], c.after[:ka]
+                if [1 for f in data for _ in _find(leaves[f], before, c.committed, after)]:
+                    found = 'done'  # already applied here; a generated form elsewhere is another place
+                    break
                 hits = [(f, h) for f in data for h in _find(leaves[f], before, c.generated, after)]
                 if len(hits) == 1:
                     found = hits[0]
                     break
                 if len(hits) > 1:
                     found = 'ambiguous'
-                    break
-                if [1 for f in data for _ in _find(leaves[f], before, c.committed, after)]:
-                    found = 'done'
                     break
             if found == 'done':
                 continue
@@ -385,7 +409,7 @@ def adopt(files, decisions, ov, lock):
                 continue
             f, ((obj, key, path), a, z) = found
             old = obj[key]
-            new = unicodedata.normalize('NFC', old[:a] + c.committed + old[z:])
+            new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
             refused = fidelity.refusals(c.page, old, new, ov)
             if refused:
                 unlocated.append((d, 'fidelity: ' + '; '.join(refused)))
@@ -393,10 +417,11 @@ def adopt(files, decisions, ov, lock):
             obj[key] = new
             tail = _pattern([], c.generated, c.after[:2])
             for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
-                if p2 != path and _mirrors(p2, path):
+                if p2 != path and _mirrors(p2, path, o2[k2] == old and _orphan(leaves[f], p2, old)
+                                                    and _orphan(leaves[f], path, old)):
                     ms = list(tail.finditer(o2[k2]))
                     if len(ms) == 1:
-                        o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + c.committed + o2[k2][ms[0].end(1):])
+                        o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + core(c.committed) + o2[k2][ms[0].end(1):])
             dirty.add(f)
             applied.append((d, f))
         for f in dirty:
