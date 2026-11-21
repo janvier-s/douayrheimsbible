@@ -12,4 +12,4 @@ What is here:
 - `manifest.json`: one entry per page, with `sha1`, `revid` (the revision posted) and `status`. `posted` means the page equals the live page; `changed` means it differs and waits for the owner's next post. Frozen pages also have `source: frozen`.
 - `books.json`: each generated book's `first` and `last` page, `ornaments` (off) and `golden` (a regeneration test guards its pages).
 - `reconcile/`: the evidence-ladder decisions per book (`<book>.jsonl`) and the scan readings (`scan-readings.jsonl`).
-- `ornaments.json`, `front-draft/`: the woodcut ornament map (unused while ornaments are off) and older drafts of the front-matter pages 1–30, used by `audit_all_front.py` (the committed pages in `pages/` are the ones that count).
+- `ornaments.json`, `front-draft/`: the woodcut ornament map (unused while ornaments are off) and older drafts of the front-matter pages 1–30, which the deleted front-matter audit compared against (`docs/archive/scripts.md`; the committed pages in `pages/` are the ones that count).

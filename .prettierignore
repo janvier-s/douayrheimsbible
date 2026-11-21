@@ -5,7 +5,7 @@ docs/
 # Generated static data
 static/data/
 
-# Generated Wikisource pages and their manifest (scripts/wikisource/publish.py)
+# Generated Wikisource pages and their manifest (python3 -I scripts/wikisource/rh.py reconcile write)
 wikisource/*/manifest.json
 
 # Build output
