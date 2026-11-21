@@ -198,3 +198,22 @@ def test_detect_refuses_ledger_out(tmp_path):
     from rhemes import detectors
     assert detectors.main(['longs', 'john', '--out', str(paths.FIXES / 'john.jsonl')]) == 2
     assert detectors.main(['longs', 'john', '--out', str(paths.REPO / 'static/data/x.jsonl')]) == 2
+
+
+def test_wvv_xml_vote():
+    assert wvv.xml_vote({'and', 'andrevv'}, 'Andrew', 'Andrevv') == 'agree'
+    assert wvv.xml_vote({'and', 'andrew'}, 'Andrew', 'Andrevv') == 'against'
+    assert wvv.xml_vote({'and'}, 'Andrew', 'Andrevv') == ''
+    assert wvv.xml_vote(None, 'Andrew', 'Andrevv') == ''
+
+
+def test_wvv_xml_words_reads_matthew():
+    xml = wvv.xml_words('matthew')
+    assert 'andrevv' in xml('4:18') and xml('4:sum') is None
+
+
+def test_wvv_context_stops_at_the_string_edge():
+    """ctx runs on past a verse end; at the string's end only the words there are compared."""
+    assert wvv.replace_at('beſide children & women.', 'women.', 'beſide children [women.] And hauing', 'vvomen.') == 'beſide children & vvomen.'
+    assert wvv.replace_at('<sc>AND</sc> when he', 'when', 'of ſwine. AND [when] he was', 'vvhen') == '<sc>AND</sc> vvhen he'
+    assert wvv.replace_at('but when he', 'when', 'of ſwine. AND [when] he was', 'vvhen') is None

@@ -53,3 +53,9 @@ def test_book_without_transkribus_votes_vision_against_tesseract(tmp_path, monke
     [(pid, body, _)] = ocrdiff.ocr_pages('matthew', 'tk')
     assert pid == '1/1' and [w[0] for w in body] == ['vision']
     assert [w[0] for w in ocrdiff.ocr_pages('matthew', 'ts')[0][1]] == ['tesseract']
+
+
+def test_add_xml_reads_the_xml_word_by_context():
+    rows = [dict(ctx='ſwine. AND when he [was] come downe from the'), dict(ctx='no such [context] anywhere at all'), dict()]
+    ocrdiff.add_xml('matthew', rows)
+    assert [r['xml'] for r in rows] == ['vvas', '', '']

@@ -494,7 +494,7 @@ def main(argv=None):
     allrows = [(b, r) for b, (_, rows, _) in results.items() for r in rows]
     for kind, note in (('w/vv', 'JSON w where XML vv = candidates for modernised w'), ('macron', 'JSON spelled out where XML has a stroke')):
         cnt = collections.Counter(('checked Mt-Jn' if b in CHECKED else 'unchecked') for b, r in allrows if r[2] == kind)
-        print(f'{kind}: {dict(cnt)}  ({note}; Mt-Jn were settled by scan vote, so XML is likely wrong there)')
+        print(f'{kind}: {dict(cnt)}  ({note}; settle them with rh.py diff ocr, whose xml column is the XML vote, then rh.py detect wvv)')
     for kind, n in (('stray-letter', 8), ('text', 8), ('longs', 6), ('macron', 5), ('note-digits', 6), ('verse-split', 9), ('verse-xml', 4)):
         rr = [(b, r) for b, r in allrows if r[2] == kind]
         if not rr:

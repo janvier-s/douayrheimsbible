@@ -12,6 +12,7 @@ words of the page their anchor landed on (and the next page) and aligned there.
 Known OCR habits are folded before comparing: ſ/s/f, vv/w/vy/vu, u/v, i/j, l for I
 at word start, † read as f/t glued to the next word, hyphen breaks, macrons (vpō = vpon).
 Separate passes report w vs vv (glyph class per witness) and Tesseract's ſ evidence.
+Each finding also carries the XML's word at that place (column xml, by context; '' when unsure).
 
 Usage: python3 -I scripts/wikisource/rh.py diff ocr <book> <out_dir>
 Writes <out_dir>/<book>-findings.tsv (one row per location) and prints a summary
@@ -544,7 +545,8 @@ def run(book, out_dir):
             bd, bo = best(r['data']), best(r['tk'])
             r['modern'] = 'like-ocr' if bo > bd and bo >= 0.8 else ('like-data' if bd >= 0.8 else '?')
 
-    cols = ['cls', 'conf', 'sec', 'loc', 'occ', 'data', 'tk', 'ts', 'modern', 'page', 'box', 'ctx']
+    add_xml(book, rows)
+    cols = ['cls', 'conf', 'sec', 'loc', 'occ', 'data', 'tk', 'ts', 'xml', 'modern', 'page', 'box', 'ctx']
     with open(out_dir / f'{book}-findings.tsv', 'w') as f:
         f.write('\t'.join(cols) + '\n')
         for r in rows:
@@ -555,6 +557,18 @@ def run(book, out_dir):
                    longs=len(longs), longs_ex=longs[:15])
     (out_dir / f'{book}-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=1))
     return summary
+
+
+def add_xml(book, rows):
+    """r['xml']: the A16049.xml word at each finding's place, found by its context as the
+    reconcile ladder finds it (ladder.locate_xml); '' where the context is not unique."""
+    from types import SimpleNamespace
+    from . import ladder
+    tokens = ladder.xml_tokens(O.xml_text(), book)
+    for r in rows:
+        m = re.fullmatch(r'(.*)\[(.*?)\](.*)', r.get('ctx') or '')
+        hit = ladder.locate_xml(SimpleNamespace(before=m.group(1).split(), after=m.group(3).split()), tokens) if m else []
+        r['xml'] = hit[0] if hit else ''
 
 
 def main(argv=None):

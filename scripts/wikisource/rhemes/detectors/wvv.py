@@ -9,9 +9,14 @@ A row whose ctx brackets the word ("… [word] …") is placed by that context (
 folded, so neighbours respelled since the audit still match); a row whose context no longer
 shows the data word there is skipped, so a rerun on fixed data proposes nothing. occ (the
 n-th occurrence in the audit-time text) only places rows without a bracketed context.
+
+The XML votes on verse text: a respelling the XML verse contradicts (it has the data's form and
+not the new one) is held back and printed for a scan check. Summaries and annotations are not in
+the XML stream, so there the two OCRs decide alone.
 """
 import csv
 import re
+import sys
 from pathlib import Path
 
 from . import load, snapshot, propose_from
@@ -69,20 +74,55 @@ def _folded(s):
 
 
 def replace_at(text, word, ctx, new):
-    """Replaces the one occurrence of word whose neighbours match ctx ("… [word] …"), or None."""
+    """Replaces the one occurrence of word whose neighbours match ctx ("… [word] …"), or None.
+    Near a string's start or end only the neighbours present there are compared."""
     m = re.fullmatch(r'(.*)\[(.*?)\](.*)', ctx)
     fb, fa = _folded(m.group(1))[-2:], _folded(m.group(3))[:2]
+    def near(have, want, before):
+        # the context runs on across verse and section ends; at the string's edge, fewer words are there to match
+        n = min(len(have), len(want))
+        return (have[len(have) - n:] == want[len(want) - n:]) if before else have[:n] == want[:n]
     hits = [mt for mt in _hits(text, word)
-            if (not fb or _folded(text[:mt.start()])[-len(fb):] == fb)
-            and _folded(text[mt.end():])[:len(fa)] == fa]
+            if near(_folded(text[:mt.start()]), fb, True) and near(_folded(text[mt.end():]), fa, False)]
     if len(hits) != 1:
         return None
     mt = hits[0]
     return text[:mt.start()] + new + text[mt.end():]
 
 
-def run(store, rows):
-    """Applies the rows to the store in memory; returns (done, skipped)."""
+def xml_words(book):
+    """xml(loc) -> the set of words in the XML verse at 'ch:v' (lowercase, ſ and w/vv kept), or None."""
+    from .. import triage, xmldiff
+    if book not in xmldiff.BOOKN:
+        return lambda loc: None
+    chapters, cache = xmldiff.xml_chapters(book), {}
+
+    def xml(loc):
+        m = re.fullmatch(r'(\d+):(\d+)', loc)
+        if not m or int(m.group(1)) not in chapters:
+            return None
+        c, v = int(m.group(1)), int(m.group(2))
+        if c not in cache:
+            cache[c] = triage.xml_verses(chapters[c])
+        got = cache[c].get(v)
+        return set(got[0].replace(triage.MAC, '').split()) if got else None
+    return xml
+
+
+def xml_vote(words, old, new):
+    """'agree' (XML has the new form), 'against' (it has only the old one) or '' (no say)."""
+    if words is None:
+        return ''
+    k = lambda w: w.lower().replace('ſ', 's')
+    have = {k(w) for w in words}
+    if k(new) in have:
+        return 'agree'
+    return 'against' if k(old) in have else ''
+
+
+def run(store, rows, xml=None):
+    """Applies the rows to the store in memory; returns (done, skipped). Rows the XML verse
+    contradicts are skipped with the reason 'xml <old form>'."""
     done, skipped = [], []
     # Several rows can hit one text: apply occurrence-indexed edits from the back.
     rows = sorted(rows, key=lambda r: (r['loc'], -int(r.get('occ') or 0)))
@@ -92,6 +132,9 @@ def run(store, rows):
         new_core = respell(core, re.sub(r'[^\wſ]', '', r['tk']))
         if new_core is None or new_core == core or nvv(new_core) != nvv(re.sub(r'[^\wſ]', '', r['ts']).replace('f', 's')):
             skipped.append((r['loc'], w, r['tk'], r['ts'], new_core))
+            continue
+        if xml and r.get('sec', 'verse') == 'verse' and xml_vote(xml(r['loc']), core, new_core) == 'against':
+            skipped.append((r['loc'], w, r['tk'], r['ts'], f'xml {core}'))
             continue
         cont, k = find_text(store.bj, store.anns, r['loc'])
         ctx = r.get('ctx') or ''
@@ -113,7 +156,9 @@ def propose(repo, book, tsv, cls):
         rows = [r for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE) if r['cls'] == cls]
     stores = load(repo, book, ('odr-original',))
     before = snapshot(stores)
-    run(stores['odr-original'], rows)
+    done, skipped = run(stores['odr-original'], rows, xml_words(book))
+    for sk in skipped:
+        print('held back: ' + ' '.join(map(str, sk)), file=sys.stderr)
     return propose_from(book, before, stores, f'detect wvv {tsv.name}',
                         allow_note=f'w/vv set as the Transkribus reading shows it (ocrdiff {cls}); check on the scan')
 
