@@ -21,7 +21,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from . import paths, sources as O
+from . import fixes, paths, sources as O
 from .ocrdiff import key as fold, word_boxes
 from .transkribus import PAGE_W
 
@@ -223,7 +223,7 @@ def _macrons(w):
 FEATURE = {
     'wvv': lambda w: re.findall('vv|w', w.lower()),
     'macron': _macrons,
-    'longs': lambda w: [c for c in w if c in 'sſ'],
+    'longs': lambda w: [c for c in w.lower() if c in 'sſ'],
     'wording': fold,
 }
 
@@ -251,6 +251,143 @@ def trusted(scores, n_min=30, acc=0.98):
     """The (model, prompt, kind)s agy may settle alone: enough cases, nearly all right, never confidently wrong."""
     return {k for k, s in scores.items()
             if s['n'] >= n_min and s['right'] >= acc * s['n'] and s['confidently_wrong'] == 0}
+
+
+# ---------------------------------------------------------------- Acts/Romans: open findings and routing
+
+TRIAGE_KINDS = ('w/vv', 'macron', 'longs', 'text')
+
+
+def _tri(w):
+    """A data word as triage writes it: lower case, ſ kept, macron as ~, no punctuation."""
+    out = []
+    for ch in unicodedata.normalize('NFD', unicodedata.normalize('NFC', w).lower()):
+        if ch in '\u0304\u0303':
+            out.append('~')
+        elif not unicodedata.combining(ch):
+            out.append(ch)
+    return re.sub(r'[^\w~]+|_', '', ''.join(out))
+
+
+def _core(w):
+    return re.sub(r'^[(\[]+|[.,;:?!)\]]+$', '', unicodedata.normalize('NFC', w or ''))
+
+
+def _settled(f):
+    """Both OCRs show one side's form for every kind (the cheap rungs settle it). The OCR cannot see
+    macrons, so a macron conflict is never settled by it."""
+    if 'macron' in f['kinds']:
+        return False
+    for k in f['kinds']:
+        F = FEATURE[k]
+        if not (f['tk'] and F(f['tk']) == F(f['ts']) and F(f['tk']) in (F(f['data']), F(f['xml']))):
+            return False
+    return True
+
+
+def findings_from(book, rows, boxes, chapters):
+    """Open findings ({id, book, loc, occ, data, xml, tk, ts, page, box, kinds}) from triage rows of the
+    chapters, placed on the word boxes; a word with no box is kept with box None (for Claude)."""
+    A, B = chapters
+    out = []
+    for c, n, kind, a, b, *_ in rows:
+        if kind not in TRIAGE_KINDS or not (A <= c <= B):
+            continue
+        loc = f'{c}:{n}'
+        xs, js = a.split(), b.split()
+        pairs = list(zip(xs, js)) if len(xs) == len(js) else [(a, b)]
+        for xw, jw in pairs:
+            if xw == jw:
+                continue
+            xml = unicodedata.normalize('NFC', xw.replace('~', '\u0304'))
+            cands = sorted(k for k in boxes if k[0] == loc and _tri(k[1]) == jw)
+            for k in cands or [(loc, jw, 0)]:
+                v = boxes.get(k)
+                f = dict(book=book, loc=loc, occ=k[2], data=k[1], xml=xml, tk=v['tk'] if v else '',
+                         ts=v['ts'] if v else '', page=v['page'] if v else None, box=list(v['box']) if v else None,
+                         kinds=item_kinds(k[1], xml))
+                f['id'] = (f"{book}:{f['page']}:{','.join(map(str, f['box']))}" if v
+                           else f"{book}:{loc}:{k[1]}:{k[2]}")
+                if not _settled(f):
+                    out.append(f)
+    return out
+
+
+def open_findings(book, chapters):
+    from . import triage
+    return findings_from(book, triage.audit_book(book)[1], word_boxes(book), chapters)
+
+
+def route(findings, readings, use, trusted_set):
+    """(kept, to_claude). Kept: a box, every kind trusted for `use`, two runs that read the same word,
+    and that word showing one side's form (the data's or the XML's) in every kind."""
+    kept, claude = [], []
+    for f in findings:
+        runs = readings.get(f['id']) or []
+        def why():
+            if not f['box']:
+                return 'no-box'
+            if not all(tuple(use) + (k,) in trusted_set for k in f['kinds']):
+                return 'untrusted-kind'
+            if len(runs) < 2 or None in runs:
+                return 'no-reading'
+            if len({_core(r) for r in runs}) > 1:
+                return 'runs-disagree'
+            r = _core(runs[0])
+            if not any(all(FEATURE[k](r) == FEATURE[k](side) for k in f['kinds']) for side in (f['data'], f['xml'])) \
+                    or fold(r) not in (fold(f['data']), fold(f['xml'])):
+                return 'neither-side'
+            return None
+        reason = why()
+        if reason:
+            claude.append(dict(f, reason=reason))
+        else:
+            kept.append(dict(f, reading=_core(runs[0])))
+    return kept, claude
+
+
+def propose(repo, book, kept, use, date=None, taken=None):
+    """Ledger entries that set each kept word to agy's reading (none where the data already reads so)."""
+    from .detectors import ledger_ids, load, snapshot, propose_from
+    from .detectors.wvv import replace_nth
+    from .loc import find_text
+    date = date or datetime.date.today().isoformat()
+    taken = set(ledger_ids(book) if taken is None else taken)
+    stores = load(repo, book, ('odr-original',))
+    st, es = stores['odr-original'], []
+    for k in sorted(kept, key=lambda k: (k['loc'], -k['occ'])):
+        core = _core(k['data'])
+        if k['reading'] == core:
+            continue
+        before = snapshot(stores)
+        cont, i = find_text(st.bj, st.anns, k['loc'])
+        out = replace_nth(cont[i], k['data'], k['occ'], k['data'].replace(core, k['reading']))
+        if out is None:
+            continue
+        cont[i] = out
+        ev = f"agy {use[0]} {use[1]} {date}; XML {k['xml']}; Transkribus/Tesseract {k['tk']}/{k['ts']}"
+        new = propose_from(book, before, stores, ev, taken=taken, date=date,
+                           allow_note='spelling as agy read it on the scan (rh.py agy read)')
+        taken |= {e.id for e in new}
+        es += new
+    return es
+
+
+def sheet(items, path):
+    """One labelled contact sheet of the crops Claude must read."""
+    from PIL import ImageDraw
+    rows = [(f"{it['loc']} {it['data']} | xml {it['xml']} | {it['reason']}", crop(it['book'], it['page'], tuple(it['box'])))
+            for it in items if it['box']]
+    if not rows:
+        return
+    W = max(max(im.width for _, im in rows), 600)
+    out = Image.new('L', (W, sum(im.height + 22 for _, im in rows)), 255)
+    d, y = ImageDraw.Draw(out), 0
+    for label, im in rows:
+        d.text((4, y + 4), label, fill=0)
+        out.paste(im.convert('L'), (0, y + 20))
+        y += im.height + 22
+    out.save(path, quality=88)
 
 
 # ---------------------------------------------------------------- CLI
@@ -300,5 +437,45 @@ def main(argv=None):
             scores=[dict(model=m, prompt=p, kind=k, **s) for (m, p, k), s in sorted(scores.items())],
             trusted=[list(t) for t in sorted(ok)], agreed_differently=wrong), ensure_ascii=False, indent=1) + '\n')
         return 0
+    if cmd == 'read':
+        return read_main(argv[1:])
     print(__doc__, file=sys.stderr)
     return 2
+
+
+def read_main(argv):
+    book, out = argv[0], _arg(argv, '--out')
+    repo = Path(_arg(argv, '--repo', paths.REPO))
+    if not out or fixes.forbidden_out(out, repo):
+        print('--out FILE is required, and never under fixes/ or static/data: review the proposals, then append',
+              file=sys.stderr)
+        return 2
+    A, B = map(int, _arg(argv, '--chapters').split('-'))
+    use = tuple(_arg(argv, '--use').split(':'))
+    trust = {tuple(t) for t in json.loads(CAL_PATH.read_text())['trusted']}
+    fs = open_findings(book, (A, B))
+    ask = [f for f in fs if f['box'] and all(use + (k,) in trust for k in f['kinds'])]
+    for f in ask:
+        f['image'] = crop(book, f['page'], tuple(f['box']))
+    readings = read_all(ask, *use) if ask else {}
+    for f in ask:
+        del f['image']
+    kept, claude = route(fs, readings, use, trust)
+    es = propose(repo, book, kept, use)
+    Path(out).write_text(''.join(fixes.dumps(e) + '\n' for e in es))
+    with open(f'{out}.claude.tsv', 'w') as fh:
+        fh.write('reason\tloc\tdata\txml\ttk\tts\tpage\tbox\n')
+        for c in claude:
+            fh.write('\t'.join(str(c[k] if k != 'box' else ','.join(map(str, c['box'] or []))) for k in
+                               ('reason', 'loc', 'data', 'xml', 'tk', 'ts', 'page', 'box')) + '\n')
+    sheet(claude, f'{out}.claude.jpg')
+    log = RECONCILE / 'agy-readings.jsonl'
+    with open(log, 'a') as fh:
+        for k in kept:
+            fh.write(json.dumps(dict(id=k['id'], book=book, loc=k['loc'], data=k['data'], xml=k['xml'],
+                                     reading=k['reading'], model=use[0], prompt=use[1],
+                                     date=datetime.date.today().isoformat()), ensure_ascii=False) + '\n')
+    from collections import Counter
+    print(f"{book} {A}-{B}: {len(fs)} open; agy kept {len(kept)}, proposed {len(es)} entries in {out}; "
+          f"to Claude {len(claude)} {dict(Counter(c['reason'] for c in claude))}")
+    return 0

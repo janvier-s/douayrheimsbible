@@ -256,3 +256,92 @@ def test_macron_words_count_even_when_the_ocr_misread_them():
     boxes = {'mark': {('1:1', 'incōtinent', 0): _box('incōtinent', 'incontinent', 'incétinent')}}
     key = agyread.select_key(boxes, {'mark': []}, 0, 3, 1)
     assert [(k['truth'], k['stratum']) for k in key] == [('incōtinent', 'hard')]
+
+
+# ---------------------------------------------------------------- Task 4: open findings, routing, proposals
+
+TRIAGE = [  # audit_book rows: (chapter, verse, kind, xml, json, json ctx, xml ctx); lower case, ~ = macron
+    (1, 1, 'w/vv', 'vvhich', 'which', '', ''),
+    (1, 2, 'macron', 'vpo~', 'vpon', '', ''),
+    (1, 3, 'longs', 'ſelf', 'self', '', ''),
+    (1, 4, 'w/vv', 'vvhen', 'when', '', ''),
+    (1, 5, 'n-text', 'x', 'y', '', ''),
+    (9, 1, 'w/vv', 'vvas', 'was', '', ''),
+]
+TBOX = {('1:1', 'which', 0): _box('which', 'vvhich', 'vvhich'),   # both OCRs side with the XML: settled
+        ('1:2', 'vpon,', 0): _box('vpon,', 'vpo', 'vpo'),          # OCR drops macrons: open
+        ('1:3', 'Self', 0): _box('Self', 'Self', 'felf'),           # OCRs disagree: open
+        ('9:1', 'was', 0): _box('was', 'vvas', 'was')}              # outside the chapters asked for
+
+
+def test_findings_from_keeps_only_open_ones_in_range():
+    fs = agyread.findings_from('acts', TRIAGE, TBOX, (1, 5))
+    got = {(f['loc'], f['data'], f['xml']): f for f in fs}
+    assert set(got) == {('1:2', 'vpon,', 'vpō'), ('1:3', 'Self', 'ſelf'), ('1:4', 'when', 'vvhen')}
+    assert got[('1:4', 'when', 'vvhen')]['box'] is None          # no word box: still listed, for Claude
+    assert got[('1:2', 'vpon,', 'vpō')]['kinds'] == ['macron']
+    assert got[('1:2', 'vpon,', 'vpō')]['id'] == 'acts:pdf1:1,2,3,4'
+
+
+def _f(id_, data, xml, kinds, box=(1, 2, 3, 4)):
+    return dict(id=id_, book='acts', loc='1:1', occ=0, data=data, xml=xml, tk='', ts='', page='pdf1', box=box, kinds=kinds)
+
+
+USE = ('gemini-4-argon-low', 'targeted')
+TRUST = {USE + ('wvv',), USE + ('macron',)}
+
+
+def test_route_keeps_only_trusted_and_agreeing():
+    fs = [_f('a', 'which', 'vvhich', ['wvv']), _f('b', 'vpon', 'vpō', ['macron']), _f('c', 'when', 'vvhen', ['wvv']),
+          _f('d', 'Self', 'ſelf', ['longs']), _f('e', 'what', 'vvhat', ['wvv'], box=None), _f('g', 'who', 'vvho', ['wvv']),
+          _f('h', 'whom', 'vvhō', ['macron', 'wvv'])]
+    rd = {'a': ['vvhich', 'vvhich'], 'b': ['vpō', 'vpō'], 'c': ['vvhen', 'when'], 'd': ['ſelf', 'ſelf'],
+          'g': [None, 'vvho'], 'h': ['vvhom', 'vvhom']}
+    kept, claude = agyread.route(fs, rd, USE, TRUST)
+    assert [(k['id'], k['reading']) for k in kept] == [('a', 'vvhich'), ('b', 'vpō')]
+    assert {c['id']: c['reason'] for c in claude} == {
+        'c': 'runs-disagree', 'd': 'untrusted-kind', 'e': 'no-box', 'g': 'no-reading', 'h': 'neither-side'}
+
+
+def test_word_with_two_kinds_needs_both_trusted():
+    kept, claude = agyread.route([_f('a', 'ſhewed', 'ſhevved', ['longs', 'wvv'])], {'a': ['ſhevved'] * 2}, USE, TRUST)
+    assert kept == [] and claude[0]['reason'] == 'untrusted-kind'
+
+
+def _repo(t, verse):
+    for root in ('odr-original', 'odr'):
+        _book_json(t / 'static/data' / root, 'acts', verse)
+
+
+def _book_json(root, slug, verse):
+    import json
+    (root / slug / 'annotations').mkdir(parents=True)
+    (root / f'{slug}.json').write_text(json.dumps({'book': slug, 'intros': [], 'chapters': [
+        {'chapter': 1, 'summary': 'S.', 'verses': [{'verse': 1, 'text': verse}]}]}, ensure_ascii=False))
+    (root / slug / 'annotations/001.json').write_text(json.dumps({'chapter': 1, 'annotations': []}))
+
+
+def test_propose_writes_ledger_entry_with_agy_evidence(tmp_path):
+    _repo(tmp_path, 'and he which came, which went.')
+    k = dict(_f('a', 'which', 'vvhich', ['wvv']), occ=1, tk='which', ts='vvhich', reading='vvhich')
+    es = agyread.propose(tmp_path, 'acts', [k], USE, date='2026-11-21')
+    assert len(es) == 1
+    e = es[0]
+    assert e.loc == 'acts 1:1' and e.old == 'came, which went.' and e.new == 'came, vvhich went.'
+    assert e.evidence.startswith('agy gemini-4-argon-low targeted 2026-11-21; XML vvhich; Transkribus/Tesseract which/vvhich')
+
+
+def test_rerun_after_apply_proposes_nothing(tmp_path):
+    _repo(tmp_path, 'and he vvhich came.')
+    k = dict(_f('a', 'vvhich', 'vvhich', ['wvv']), reading='vvhich')
+    assert agyread.propose(tmp_path, 'acts', [k], USE, date='2026-11-21') == []
+
+
+def test_read_refuses_out_under_fixes(tmp_path, capsys):
+    out = agyread.paths.REPO / 'wikisource/1582-rhemes-nt/fixes/x.jsonl'
+    assert agyread.main(['read', 'acts', '--chapters', '1-1', '--use', 'm:plain', '--out', str(out)]) == 2
+    assert not out.exists()
+
+
+def test_longs_feature_ignores_case():
+    assert agyread.FEATURE['longs']('Self') == agyread.FEATURE['longs']('self') != agyread.FEATURE['longs']('ſelf')
