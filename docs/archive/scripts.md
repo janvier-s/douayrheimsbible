@@ -19,7 +19,7 @@ Deleted in Phase 5 of the Wikisource pipeline refactor (owner, 2026-11-21: one-o
 | `scripts/wikisource/remove_verse_daggers.py` | cff02c6f (2026-11-19) | Removed `†` after `{{verse}}` on every page (a page sweep) | The generator; the dagger rule was retired in Phase 0 |
 | `scripts/wikisource/build_matthew_replacements.py` | 00c03647 (2026-11-19) | Built Matthew's gap replacements (17 Greek words) from `docs/audits/matthew_267_full.json` | XML entries in `fixes/matthew.jsonl` |
 | `scripts/wikisource/audit_all_267.py` | 00c03647 (2026-11-19) | One-off audit of the same 267 Matthew gaps | `rh.py triage`, `rh.py diff xml` |
-| `scripts/wikisource/audit_all_front.py` | e2078fc4 (2026-11-19) | One-off audit of pages 1–30 against `A16049.xml` (read `front-draft/`) | `rh.py triage front` |
+| `scripts/wikisource/audit_all_front.py` | e2078fc4 (2026-11-19) | One-off audit of pages 1–30 against `A16049.xml` (read `front-draft/`) | Nothing: `rh.py triage` needs odr-original data, and the front matter has none (its pages are frozen); restore from git to re-audit |
 | `scripts/wikisource/publish.py` | ffbc5178 (2026-11-16) | Copied checked pages from a generate run into `pages/` and updated the manifest | `rh.py reconcile write` |
 | `scripts/wikisource/check_live_linter.py` | 494f0400 (2026-11-20) | Asked MediaWiki's Parsoid linter and tracking categories about live pages | Nothing (Phase 5 plan's default; restore from git if wanted); `rh.py lint` checks the conformance rules locally |
 | `scripts/wikisource/update_ot_index.py` | ad72d293 (2026-11-19) | Updated the Index pages of the 1609/1610 Old Testament volumes (outside this pipeline) | Nothing (Phase 5 plan's default; restore from git if wanted) |
