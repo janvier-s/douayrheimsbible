@@ -256,3 +256,15 @@ def test_unsettled_macron_conflict_keeps_the_macron():
     assert (d.rung, d.winner) == (3, 'committed') and 'macron' in d.evidence
     d = ladder.decide(C('commaundement', 'cōmaundement'), [], [], [], Counter())
     assert (d.rung, d.winner) == (3, 'generated')
+
+
+def test_mislocated_xml_word_is_ignored():
+    # context matched, but the XML word there is another word: no reading
+    d = ladder.decide(C('poſsible.', 'poſſible.'), ['ſweete'], [], [], Counter())
+    assert d.evidence.startswith('xml -')
+
+
+def test_readings_use_the_context_line():
+    text = 'this you shal receiue the greater iudgement. b\nvveightier things of the lavv,iudgemét,and mercie,and faith,'
+    c = ladder.Conflict(93, 'iudgemēt,', 'iudgement,', ['of', 'the', 'lavv,'], ['and', 'mercie,', 'and'])
+    assert ladder.readings(text, c.committed, c.generated, c.before + c.after) == ['iudgemēt,']

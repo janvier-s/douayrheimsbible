@@ -75,3 +75,8 @@ def test_w_linebreak_exempts_verse_and_open_templates(tmp_path):
 
 def test_w_nop_exempts_table_end(tmp_path):
     assert 'W-nop' not in codes(tmp_path, "{|\n| cell\n|}", "\n{| style='x'\n| more\n|}")
+
+
+def test_w_nop_not_before_a_new_book_or_argument(tmp_path):
+    assert 'W-nop' not in codes(tmp_path, 'end of the gospel.', '{{c|{{x-larger|THE ARGVMENT OF}}}}\n\ntext')
+    assert 'W-nop' not in codes(tmp_path, 'end of the argument.', '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n\ntext')

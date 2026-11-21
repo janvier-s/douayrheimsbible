@@ -377,7 +377,9 @@ OUTER_NOTES = {('matthew', 26, 5, 3), ('matthew', 26, 8, 0), ('john', 2, 3, 1), 
 
 def render_annotation(a, ch=None, ai=None):
     text = a['text'].strip()
-    mns = list(enumerate(a.get('notes', [])))
+    # a note with "place": "before" is a margin heading beside the annotation's title (Matt 16:18 "PETER.")
+    before = ''.join('{{MOUTER|' + n['text'] + '}}' for n in a.get('notes', []) if n.get('place') == 'before')
+    mns = [(k, n) for k, n in enumerate(a.get('notes', [])) if n.get('place') != 'before']
 
     def mn(m):
         k, n = mns.pop(0) if mns else (None, None)
@@ -393,7 +395,7 @@ def render_annotation(a, ch=None, ai=None):
     text = re.sub(r'\s+(<mn>[^<]*</mn>)(?=\s*[,.;:?!)])', r'\1', text)
     text = re.sub(r'<mn>[^<]*</mn>\s*', mn, text)
     close = ')' if (BOOK, ch, ai) in PAREN_TITLES else ']'
-    return f"''{a['verse']}. {a['title']}''{close} {text}"
+    return f"{before}''{a['verse']}. {a['title']}''{close} {text}"
 
 
 MARKDIFF = []
@@ -671,7 +673,8 @@ def footer(catch):
 def opens_para(S, i, paras):
     """Token i starts a new paragraph (a block, or a verse the print indents)."""
     t = S[i]
-    return bool(t.get('block') or (i in paras and t['kind'] == 'verse' and not t.get('nopara')))
+    return bool(t.get('block') or (i in paras and t['kind'] == 'verse' and not t.get('nopara'))
+                or t['text'].startswith('{{dropinitial'))  # a chapter's first verse
 
 
 def end_body(body, next_opens):

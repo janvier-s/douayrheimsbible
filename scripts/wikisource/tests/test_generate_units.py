@@ -176,3 +176,20 @@ def test_norm_keeps_small_caps_letters():
 def test_chapter_opening_word_starts_its_page(mark_pages):
     tail = re.compile(r'\{\{dropinitial\|(?:[^{}]|\{\{[^{}]*\}\})*\}\}\{\{sc\|[^{}]*\}\}(?:\n\{\{nop\}\})?$')
     assert not [n for n, t in mark_pages.items() if tail.search(body_of(t)[0])]
+
+
+def test_annotation_note_before_title():
+    import generate
+    generate.BOOK = 'matthew'
+    a = {'verse': 18, 'title': 'Thou art Peter.', 'text': 'Chriſt <mn>[1]</mn> foretold',
+         'notes': [{'marker': 1, 'text': '<i>Cyril.</i>'}, {'text': 'PETER.', 'place': 'before'}]}
+    out = generate.render_annotation(a, 16, 0)
+    assert out.startswith("{{MOUTER|PETER.}}''18. Thou art Peter.'']")
+    assert '{{MINNER|<i>Cyril.</i>}}' in out
+
+
+def test_dropcap_verse_opens_a_paragraph():
+    import generate
+    S = [{'kind': 'verse', 'text': 'end.'}, {'kind': 'verse', 'text': '{{dropinitial|A|fl={{verse|chapter=16|verse=1}}}}ND'}]
+    assert generate.opens_para(S, 1, set())
+    assert not generate.opens_para(S, 0, set())

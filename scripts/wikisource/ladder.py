@@ -234,9 +234,17 @@ def ocr_reading(tok, c, g):
     return None
 
 
-def readings(text, c, g):
-    """The sides the OCR text of the conflict's page supports ([] when it supports both)."""
-    got = {r for tok in (text or '').split() for r in [ocr_reading(tok, c, g)] if r}
+def readings(text, c, g, context=()):
+    """The sides the OCR text of the conflict's page supports ([] when it supports both). With
+    context words, only the OCR lines holding one of them count: the same word may stand
+    elsewhere on the page in another form."""
+    keys = {fold(w) for w in context if len(fold(w)) > 3}
+    toks = []
+    for line in (text or '').splitlines():
+        words = [w for w in re.split(r'[\s,;:]+', line) if w]
+        if not keys or keys & {fold(w.replace('f', 's')) for w in words} or keys & {fold(w) for w in words}:
+            toks += words
+    got = {r for tok in toks for r in [ocr_reading(tok, c, g)] if r}
     return sorted(got) if len(got) == 1 else []
 
 
@@ -262,6 +270,8 @@ def _has_macron(w):
 def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
     side = {core(c.committed): 'committed', core(c.generated): 'generated'}
     xml = core(xml_forms[0]) if len(xml_forms) == 1 else None
+    if xml and fold(c.committed) == fold(c.generated) and fold(xml) != fold(c.generated):
+        xml = None  # the context matched but the word there is another one: a mislocation
     if _has_macron(c.committed) != _has_macron(c.generated):
         # EEBO expands contractions: an XML form without the macron is no evidence against it,
         # so a macron conflict is settled by OCR or the scans only
