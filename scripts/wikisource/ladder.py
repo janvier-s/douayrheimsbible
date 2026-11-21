@@ -316,7 +316,7 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
 
 # ---- adopt ---------------------------------------------------------------------------
 
-_SEP = r'(?:\s|<[^>]+>|⟦[^⟧]*⟧|\[\d+\]|[.,;:?!()\]])+'  # spaces, tags, sentinels, [1] marks, punctuation
+_SEP = r'(?:\s|<[^>]+>|⟦[^⟧]*⟧|\[\d+\]|[.,;:?!()\]&⊢⊣])+'  # spaces, tags, sentinels, [1] marks, punctuation
 _ADOPT_COMBOS = [(3, 3), (2, 2), (1, 1), (2, 0), (0, 2), (1, 0), (0, 1), (0, 0)]
 
 
@@ -331,13 +331,18 @@ def _leaves(obj, out, path=()):
     return out
 
 
+def _same_ref(a, b):
+    """The same citation: equal, or one is a segment of the other's ' · '-joined list."""
+    return a == b or a in b.split(' · ') or b in a.split(' · ')
+
+
 def _orphan(leaves, path, text):
     """A cross_refs/xrefs copy whose own verse has no partner copy of the same string."""
     k = next((j for j, x in enumerate(path) if x in ('cross_refs', 'xrefs')), None)
     if k is None:
         return False
     other = 'xrefs' if path[k] == 'cross_refs' else 'cross_refs'
-    return not any(p2[:k] == path[:k] and len(p2) > k and p2[k] == other and o[key] == text for o, key, p2 in leaves)
+    return not any(p2[:k] == path[:k] and len(p2) > k and p2[k] == other and _same_ref(o[key], text) for o, key, p2 in leaves)
 
 
 def _mirrors(p, q, same_string=False):
@@ -365,7 +370,7 @@ def _pattern(before, word, after):
 def _pair(leaves, a, b):
     """Same string and both orphans: allowed to mirror across one verse."""
     ta, tb = a[0][a[1]], b[0][b[1]]
-    return ta == tb and _orphan(leaves, a[2], ta) and _orphan(leaves, b[2], tb)
+    return _same_ref(ta, tb) and _orphan(leaves, a[2], ta) and _orphan(leaves, b[2], tb)
 
 
 def _find(leaves, before, word, after):
@@ -430,7 +435,7 @@ def adopt(files, decisions, ov, lock):
             obj[key] = new
             tail = _pattern([], c.generated, c.after[:2])
             for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
-                if p2 != path and _mirrors(p2, path, o2[k2] == old and _orphan(leaves[f], p2, old)
+                if p2 != path and _mirrors(p2, path, _same_ref(o2[k2], old) and _orphan(leaves[f], p2, o2[k2])
                                                     and _orphan(leaves[f], path, old)):
                     ms = list(tail.finditer(o2[k2]))
                     if len(ms) == 1:

@@ -311,3 +311,21 @@ def test_readings_ambiguous_when_the_word_repeats_in_the_line():
     text = ('tAnd | difpofeto you, as my father difpofed to me, a kingd6: 29\n'
             't that you may eate & drinke vpon my table in my kingdom, 30,')  # Tesseract, Luke p230
     assert ladder.readings(text, 'kingdō:', 'kingdom:', ['to', 'me,', 'a'], ['that', 'you', 'may']) == []
+
+
+def test_adopt_ampersand_separator(tmp_path):
+    f = book(tmp_path, ['So readeth S. Ambroſe <i>in Ps. 45. & ſer. 20 in Ps. 118.</i>', 'other in Ps. 45. here'])
+    c = ladder.Conflict(307, 'Pſ.', 'Ps.', ['S.', 'Ambroſe', 'in'], ['45.', 'ſer.', '20'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    assert unlocated == [] and 'in Pſ. 45. & ſer. 20 in Ps. 118.' in f.read_text()
+
+
+def test_adopt_shifted_mirror_with_joined_xrefs(tmp_path):
+    f = tmp_path / 'john.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [
+        {'verse': 25, 'text': '<i>That they hated me gratis</i>. <cr>[1]</cr>', 'cross_refs': [{'text': 'Ps. 24, 19.'}]},
+        {'verse': 26, 'text': 'x', 'xrefs': ['Ps. 24, 19. · Act. 2, 1.']}]}]}, ensure_ascii=False) + '\n')
+    c = ladder.Conflict(291, 'Pſ.', 'Ps.', ['hated', 'me', 'gratis'], ['24,', '19.', 'Act.'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    v = json.loads(f.read_text())['chapters'][0]['verses']
+    assert unlocated == [] and v[0]['cross_refs'][0]['text'] == 'Pſ. 24, 19.' and v[1]['xrefs'][0] == 'Pſ. 24, 19. · Act. 2, 1.'
