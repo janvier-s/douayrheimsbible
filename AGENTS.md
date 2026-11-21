@@ -11,6 +11,7 @@ The pipeline in `scripts/wikisource/` generates the pages in `wikisource/1582-rh
 - [`wikisource/1582-rhemes-nt/RULES.md`](wikisource/1582-rhemes-nt/RULES.md) says what is allowed: transcription, typography, page conventions, posting. It is the authority.
 - [`wikisource/1582-rhemes-nt/PLAYBOOK.md`](wikisource/1582-rhemes-nt/PLAYBOOK.md) says how: sources, the evidence ladder, the `rh.py reconcile` loop, checking a book against the scans, posting.
 - [`wikisource/1582-rhemes-nt/BOOKS.md`](wikisource/1582-rhemes-nt/BOOKS.md) gives the status of each book.
+- `wikisource/1582-rhemes-nt/fixes/<book>.jsonl` is the fixes ledger: every data fix is one entry, applied with `rh.py fix apply` (RULES §6.5).
 
 Hard rules:
 

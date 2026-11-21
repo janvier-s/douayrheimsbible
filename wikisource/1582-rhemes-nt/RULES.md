@@ -244,7 +244,7 @@ Enforced by: golden tests, `E-loss`, `E-shift`
 
 ### 6.2 Data writes
 
-Data JSON is written only through `jsonfmt.write_like()`, which keeps each file's format, while holding the `$(git rev-parse --git-common-dir)/odr-data.lock` mkdir lock (in a worktree that is the main checkout's `.git`). Scripts run as `python3 -I`.
+Data JSON is written only through `jsonfmt.write_like()`, which keeps each file's format, while holding the `$(git rev-parse --git-common-dir)/odr-data.lock` mkdir lock (in a worktree that is the main checkout's `.git`). Scripts run as `python3 -I`. `rh.py fix apply --write` and `rh.py reconcile adopt --write` do both.
 
 Enforced by: review (no code)
 
@@ -256,9 +256,24 @@ Enforced by: reconcile verify
 
 ### 6.4 Maintaining A16049.xml
 
-`A16049.xml` (repo `original-douay-rheims-nt`) keeps the literal ſ and no wiki templates. When you restore a `<gap>` or remove a transcription duplicate: recount `<gap>`, `<desc>`, `<foreign>` and `<note>` and update the counts in that repo's README; add a `<change>` to `<revisionDesc>`; and check that the file still parses (`python3 -c "import xml.etree.ElementTree as ET; ET.parse('A16049.xml')"`).
+`A16049.xml` (repo `original-douay-rheims-nt`) keeps the literal ſ and no wiki templates. When you restore a `<gap>` or remove a transcription duplicate: recount `<gap>`, `<desc>`, `<foreign>` and `<note>` and update the counts in that repo's README; add a `<change>` to `<revisionDesc>`; and check that the file still parses (`python3 -c "import xml.etree.ElementTree as ET; ET.parse('A16049.xml')"`). Then record the edit in the ledger (§6.5): commit it in that repo and run `rh.py fix propose-diff xml <before> <after> --out <dir>`. That command turns the diff into entries; check them, then append them.
 
 Enforced by: review (no code)
+
+### 6.5 The fixes ledger
+
+Every data fix is one entry in `fixes/<book>.jsonl`, applied with `rh.py fix apply`. That command is a dry run unless you pass `--write`. With `--write` it takes the lock, writes all or nothing, and refuses a fidelity loss. The XML's front matter and the microfilm appendix use `fixes/front.jsonl` and `fixes/back.jsonl`. An entry is one JSON line with these keys, in this order:
+
+- `id`: `<book>-<loc>-<letter>`, unique in the file.
+- `target`: some of `odr-original`, `odr` and `xml`.
+- `loc`: `<book> <loc>`, as in `rhemes/loc.py` (`1:6a2/mn1`, `arg:0`, `3:sum`). `#key` sets another key of the same object; `old`/`new` are then JSON values, and `null` means the key is absent.
+- `old`, `new`: the text before and after, unique in its string. `odr_old`/`odr_new` give the same change in `odr`'s modern spelling.
+- `evidence`: what you read (a scan page, the OCR, the XML), and `date`.
+- Optional: `note`, `allow` and `superseded_by` (a later entry, or `git <hash>`, that changed it again).
+
+A decided fidelity change goes in the entry as `"allow": ["FEATURE:loss|shift"]`, with its reason in `note`, not as `--allow-*` on the command line. `rh.py detect`, `rh.py sync-odr` and `rh.py fix propose-live` only propose entries: a person checks each one and appends it. The bulk passes before the ledger (ſ, vv, macrons) and the ladder's decisions (`reconcile/<book>.jsonl`) are not entries.
+
+Enforced by: fix check
 
 ## 7. Posting to Wikisource
 

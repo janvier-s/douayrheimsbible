@@ -43,7 +43,7 @@ def rule_blocks(text=None):
     return blocks
 
 
-PLAIN_ENFORCERS = {'generator', 'golden tests', 'wikipost', 'reconcile verify', 'books.json', 'ladder', 'review (no code)'}
+PLAIN_ENFORCERS = {'fix check', 'generator', 'golden tests', 'wikipost', 'reconcile verify', 'books.json', 'ladder', 'review (no code)'}
 
 
 def bad_enforcers(line):
@@ -161,9 +161,9 @@ def test_every_section_reference_exists():
 # ---- Phase 3: the docs name rh.py commands, not the old scripts ----
 
 OLD_SCRIPTS = ['triage', 'reconcile', 'lint', 'generate', 'wikipost', 'wikifetch', 'check_live_edits', 'ocrdiff',
-               'xml_json_diff', 'transkribus']
+               'xml_json_diff', 'transkribus', 'autofix', 'apply_wvv', 'longs']
 OLD_NAME = re.compile(r'(?<![/\w])(' + '|'.join(OLD_SCRIPTS) + r')\.py\b')
-RH_CMD = re.compile(r'rh\.py ((?:diff (?:xml|ocr))|[a-z][a-z-]*)')
+RH_CMD = re.compile(r'rh\.py ((?:diff (?:xml|ocr))|(?:fix [a-z-]+)|[a-z][a-z-]*)')
 
 
 def test_docs_name_rh_commands():
@@ -173,3 +173,18 @@ def test_docs_name_rh_commands():
     cmds = [(d.name, m.group(1)) for d in DOCS for m in RH_CMD.finditer(d.read_text())]
     assert cmds, 'the docs should name at least one rh.py command'
     assert all(c in rh.COMMANDS for _, c in cmds), [x for x in cmds if x[1] not in rh.COMMANDS]
+
+
+# ---- Phase 4: the fixes ledger ----
+
+def test_docs_ledger():
+    rule = rule_blocks()['§6.5']
+    assert 'fixes/<book>.jsonl' in rule and 'rh.py fix apply' in rule and 'allow' in rule
+    assert 'rh.py fix propose-diff xml' in rule_blocks()['§6.4']
+    play = (WS / 'PLAYBOOK.md').read_text()
+    step10 = re.search(r'^10\. \*\*Sync odr.*$', play, re.M).group(0)
+    assert 'rh.py sync-odr' in step10
+    assert '## Record a fix' in play and 'rh.py fix check' in play
+    post3 = re.search(r'^3\. \*\*A page someone else edited.*$', play, re.M).group(0)
+    assert 'rh.py fix propose-live' in post3
+    assert 'fixes/' in (REPO / 'AGENTS.md').read_text()

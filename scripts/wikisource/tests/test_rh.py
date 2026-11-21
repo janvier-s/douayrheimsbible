@@ -20,7 +20,8 @@ def test_rh_lists_commands(tmp_path):
     r = subprocess.run([sys.executable, '-I', RH], cwd=tmp_path, capture_output=True, text=True)
     assert r.returncode == 2
     for cmd in ['generate', 'lint', 'triage', 'diff xml', 'diff ocr', 'reconcile', 'status',
-                'fetch', 'live-check', 'post', 'ocr-split', 'crops', 'ornaments', 'fix check', 'fix apply']:
+                'fetch', 'live-check', 'post', 'ocr-split', 'crops', 'ornaments', 'fix check', 'fix apply',
+                'fix propose-diff', 'fix propose-live', 'detect', 'sync-odr']:
         assert cmd in r.stdout, cmd
 
 

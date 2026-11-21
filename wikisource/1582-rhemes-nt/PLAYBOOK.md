@@ -31,13 +31,24 @@ The XML counts only when it gives one form at the place, and not when the two si
 
 Scan readings go in `reconcile/scan-readings.jsonl`, one per line: `{"book", "page", "committed", "generated", "reading", "evidence"}`. A scan reading takes precedence at any rung. A reading that matches neither side stays open unless it carries `"replace": true`, so mark that only after reading the crop. Each book's decisions are in `reconcile/<book>.jsonl`; an empty `winner` means the word is still open.
 
+## Record a fix
+
+Every data fix is a ledger entry (RULES §6.5):
+
+1. **Write the entry:** append one line to `wikisource/1582-rhemes-nt/fixes/<book>.jsonl`. Its `evidence` names what you read.
+2. **Check:** `python3 -I scripts/wikisource/rh.py fix check <book>` validates the file and shows each entry as pending, applied or in conflict.
+3. **Dry run:** `rh.py fix apply <book>` shows each change and any fidelity problem. Add `allow` and a `note` only for a decided change.
+4. **Write:** `rh.py fix apply <book> --write`, then regenerate (Change a generated book, step 2 on). Commit the ledger line together with the data.
+
+`rh.py detect stars|wvv|longs`, `rh.py sync-odr` and `rh.py fix propose-live` write proposals with `--out <file>`, never under `fixes/` or `static/data`. Check each proposal, then append it.
+
 ## Change a generated book
 
 The loop Phase 1 ran for each book (`books.json` lists them: Matthew to Romans, with golden tests).
 
-1. **Fix the data.** Edit `static/data/odr-original/<book>/` (and `static/data/odr/<book>/` for content fixes, RULES §1.2) under the lock. If you moved markers, rebuild the lemmas: `npx tsx scripts/build-odr-lemmas.ts --write` and `npx tsx scripts/build-odr-lemmas.ts --dir=odr-original --write`. A ‖ the lemmas get wrong goes in `BARS` in `rhemes/overrides.py` (wiki only). If you remove a note or split a cross_ref, update the counts in `scripts/export.corpus.test.ts` with a dated comment.
+1. **Fix the data** with ledger entries (Record a fix, above) for `odr-original`, and also for `odr` when the fix is to content (RULES §1.2). If you moved markers, rebuild the lemmas: `npx tsx scripts/build-odr-lemmas.ts --write` and `npx tsx scripts/build-odr-lemmas.ts --dir=odr-original --write`. A ‖ the lemmas get wrong goes in `BARS` in `rhemes/overrides.py` (wiki only). If you remove a note or split a cross_ref, update the counts in `scripts/export.corpus.test.ts` with a dated comment.
 2. **See the difference:** `python3 -I scripts/wikisource/rh.py reconcile diff <book> [--jsonl <out>]` counts the word differences between a fresh generation and `pages/`, by class (`ls:ss`, `ls:other`, `sc`, `foot`, `text`, …).
-3. **Letter-shape conflicts:** `rh.py reconcile ladder <book>` decides each one by the ladder above, writes `reconcile/<book>.jsonl` and prints the count per rung, then the rung-4 words. Stop there and report the rung-4 count to the owner before reading any scan.
+3. **Letter-shape conflicts:** `rh.py reconcile ladder <book>` decides each one by the ladder above, writes `reconcile/<book>.jsonl` and prints the count per rung, then the rung-4 words. It refuses to replace a file that already holds decisions; pass `--overwrite` to rerun it anyway. Stop there and report the rung-4 count to the owner before reading any scan.
 4. **Adopt the committed readings that won:** `rh.py reconcile adopt <book>` is a dry run. Then run `rh.py reconcile adopt <book> --write`, adding `--allow-shift ls:<first>-<last> --reason "…"` where the ladder turns ſs into ſſ or back. It writes `odr-original` under the lock and the fidelity guard.
 5. **Write the pages:** `rh.py reconcile write <book>` copies each regenerated page that differs into `pages/`. It never touches a frozen page.
 6. **Verify:** `rh.py reconcile verify <book>` must report `0 decisions not shown on the pages`.
@@ -69,9 +80,9 @@ Then work through these, about five chapters per round:
 5. **Annotation titles** close with `]` or `)` as the compositor chose: check every chapter's closers (`PAREN_TITLES`).
 6. **Margin notes.** Citations in print form (`2 Re. 12, 24.`); a margin `*` before a citation stays in the note text and is not `star: true`. Lectionary notes often carry later-edition text (saints' days, apostrophe possessives): replace it with the 1582 text in both datasets. A note that the margin lacks but the Table of Epistles and Gospels has (`static/data/reference/odr/nt/table-epistles-gospels.json`) is kept. `vpon` against `vpō` varies, so follow each note. Modern spelling in a gloss (Saviour) means a later edition.
 7. **Annotations:** titles, stars (`star: true` is a `*` in the annotation text), bodies.
-8. **Spelling (odr-original only):** macrons, w/vv, and long s by `longs.py`'s rules (an abbreviation ends in ſ: `Pſ.`, `Chryſ.`). For verse-text macrons, align each chapter's data words with the TSV words and flag OCR é/ë/~ against data vowel+m/n; about 80 % are real, so confirm each on a crop. ſs against ſſ goes through the ladder.
+8. **Spelling (odr-original only):** macrons, w/vv (`rh.py detect wvv`), and long s by the rules of `rh.py detect longs` (an abbreviation ends in ſ: `Pſ.`, `Chryſ.`). For verse-text macrons, align each chapter's data words with the TSV words and flag OCR é/ë/~ against data vowel+m/n; about 80 % are real, so confirm each on a crop. ſs against ſſ goes through the ladder.
 9. **Modern-spelling leftovers:** word-align `odr-original` with `odr` across the NT annotations (fold ſ→s, vv→w). Words this book keeps in modern form where the rest of the NT differs are suspects. If the OCR reads the same as the data, that is the print form.
-10. **Sync odr:** the book's `odr` and `odr-original` must match in structure (verses, markers, notes, cross_refs, lemmas, annotations). Word-align them with spelling folded; every difference that is content and not spelling needs the print's form in `odr` as well (RULES §1.2).
+10. **Sync odr:** `rh.py sync-odr <book>`. The book's `odr` and `odr-original` must match in structure (locs, markers, `*`, notes, lemmas). The command lists every difference in structure, and every content difference left once spelling is folded. A word pair seen 3 or more times in the corpus counts as spelling. Each content difference needs the print's form in `odr` as well (RULES §1.2). With `--out`, it proposes one `odr` entry per difference; modernise its `new` before you append it.
 
 ## Cheap eye checks
 
@@ -84,7 +95,7 @@ Then work through these, about five chapters per round:
 
 1. The owner approves the page range.
 2. Dry run: `python3 -I scripts/wikisource/rh.py post <first>-<last>`. It needs lint to be clean, fetches each live page, and prints what would change. It refuses a fidelity loss against live, and skips pages that are already equal. Add `--diff` to see the exact diff.
-3. **A page someone else edited** is skipped (`SKIP newest live revision is by …`). Read their change (`rh.py fetch <first>-<last> <out>` or `rh.py live-check <pages>`) against the scan. If it's right, put it into the data (above) and regenerate, then pass `--adopt-others <n>[,<n>…]`. If it's wrong, report it to the owner; never overwrite it silently (RULES §7.2).
+3. **A page someone else edited** is skipped (`SKIP newest live revision is by …`). Fetch it with `rh.py fetch <first>-<last> <out>`, then run `rh.py fix propose-live <out>`. That proposes an `odr-original` entry for each change it can place and lists the rest. Check each change against the scan. If it's right, append the entry (adding `odr`/`xml` targets where they apply), apply it and regenerate, then pass `--adopt-others <n>[,<n>…]`. If it's wrong, report it to the owner; never overwrite it silently (RULES §7.2).
 4. Post: `rh.py post <first>-<last> --post --summary "…"`, adding scoped `--allow-loss`/`--allow-shift FEATURE:SCOPE --reason "…"` only for a planned change. The default `--delay` is 12 s; keep it at 12 or more. `--create` also creates pages that don't exist yet. The credentials come from the macOS keychain.
 5. `rh.py post` writes each page's `sha1`, `status: posted` and `revid` into `manifest.json`. Set `LIVE_BASE` in `rhemes/reconcile.py` to the commit whose pages now equal live, and commit the manifest with it.
 
