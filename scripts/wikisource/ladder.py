@@ -234,18 +234,31 @@ def ocr_reading(tok, c, g):
     return None
 
 
-def readings(text, c, g, context=()):
-    """The sides the OCR text of the conflict's page supports ([] when it supports both). With
-    context words, only the OCR lines holding one of them count: the same word may stand
-    elsewhere on the page in another form."""
-    keys = {fold(w) for w in context if len(fold(w)) > 3}
-    toks = []
-    for line in (text or '').splitlines():
-        words = [w for w in re.split(r'[\s,;:]+', line) if w]
-        if not keys or keys & {fold(w.replace('f', 's')) for w in words} or keys & {fold(w) for w in words}:
-            toks += words
-    got = {r for tok in toks for r in [ocr_reading(tok, c, g)] if r}
-    return sorted(got) if len(got) == 1 else []
+def readings(text, c, g, before=(), after=()):
+    """The side the OCR text of the conflict's page supports, as a one-item list, or [].
+    With context, the OCR token taken is the one that could be this word (its first letters
+    fold alike, so a garbled 'kingd6' counts) and whose neighbours best match the context;
+    a tie, or fewer than two context hits, gives no reading."""
+    toks = [w for w in re.split(r'[\s,;:|]+', text or '') if w]
+    if not (before or after):
+        got = {r for tok in toks for r in [ocr_reading(tok, c, g)] if r}
+        return sorted(got) if len(got) == 1 else []
+    stem = min(fold(c), fold(g), key=len)[:5]
+    fb = [fold(w) for w in before if len(fold(w)) >= 2]
+    fa = [fold(w) for w in after if len(fold(w)) >= 2]
+    ft = [fold(t.replace('f', 's')) for t in toks]
+    scored = []
+    for i, t in enumerate(toks):
+        if len(stem) < 4 or not (fold(t).startswith(stem) or ft[i].startswith(stem)):
+            continue
+        near_b = {fold(x) for x in toks[max(0, i - 4):i]} | set(ft[max(0, i - 4):i])
+        near_a = {fold(x) for x in toks[i + 1:i + 5]} | set(ft[i + 1:i + 5])
+        scored.append((sum(w in near_b for w in fb) + sum(w in near_a for w in fa), t))
+    scored.sort(reverse=True)
+    if not scored or scored[0][0] < 2 or (len(scored) > 1 and scored[1][0] == scored[0][0]):
+        return []
+    r = ocr_reading(scored[0][1], c, g)
+    return [r] if r else []
 
 
 # ---- decision ------------------------------------------------------------------------

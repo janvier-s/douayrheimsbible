@@ -205,8 +205,8 @@ def cmd_ladder(book):
                 continue
             for c in ladder.conflicts((PAGES / f'{n}.wiki').read_text(), g.read_text(), n, unaligned):
                 decisions.append(ladder.decide(c, ladder.locate_xml(c, tokens),
-                                               ladder.readings(tk.get(n), c.committed, c.generated, c.before + c.after),
-                                               ladder.readings(ts.get(n), c.committed, c.generated, c.before + c.after),
+                                               ladder.readings(tk.get(n), c.committed, c.generated, c.before, c.after),
+                                               ladder.readings(ts.get(n), c.committed, c.generated, c.before, c.after),
                                                same_book))
     scans = WS / 'reconcile' / 'scan-readings.jsonl'
     if scans.exists():  # rung 4 words read on the facsimile (owner-approved collages)

@@ -267,7 +267,7 @@ def test_mislocated_xml_word_is_ignored():
 def test_readings_use_the_context_line():
     text = 'this you shal receiue the greater iudgement. b\nvveightier things of the lavv,iudgemét,and mercie,and faith,'
     c = ladder.Conflict(93, 'iudgemēt,', 'iudgement,', ['of', 'the', 'lavv,'], ['and', 'mercie,', 'and'])
-    assert ladder.readings(text, c.committed, c.generated, c.before + c.after) == ['iudgemēt,']
+    assert ladder.readings(text, c.committed, c.generated, c.before, c.after) == ['iudgemēt,']
 
 
 def test_adopt_word_core_and_spaced_punctuation(tmp_path):
@@ -305,3 +305,9 @@ def test_adopt_done_wins_over_another_occurrence(tmp_path):
     before = (tmp_path / 'ann.json').read_text()
     applied, unlocated = ladder.adopt([f, tmp_path / 'ann.json'], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
     assert applied == [] and unlocated == [] and (tmp_path / 'ann.json').read_text() == before
+
+
+def test_readings_ambiguous_when_the_word_repeats_in_the_line():
+    text = ('tAnd | difpofeto you, as my father difpofed to me, a kingd6: 29\n'
+            't that you may eate & drinke vpon my table in my kingdom, 30,')  # Tesseract, Luke p230
+    assert ladder.readings(text, 'kingdō:', 'kingdom:', ['to', 'me,', 'a'], ['that', 'you', 'may']) == []
