@@ -26,6 +26,7 @@ COMMANDS = {
     'fix check': ('fixes', ['check']),   # [BOOK…] [--repo R] [--fixes D]
     'fix apply': ('fixes', ['apply']),   # BOOK [--write] [--only ID,…] [--repo R] [--fixes D]
     'fix propose-diff': ('fixderive', []),  # xml REV_A REV_B --out DIR [--repo XML_REPO]
+    'fix propose-live': ('fixlive', []),  # FETCH_DIR [PAGE…] [--out FILE] [--repo R]
     'sync-odr': ('syncodr', []),         # BOOK… [--min-spelling N] [--corpus all|nt|B,…] [--out FILE]
     'detect': ('detectors', []),         # stars|wvv|longs BOOK … [--out FILE] [--repo R]
 }
