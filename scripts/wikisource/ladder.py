@@ -208,40 +208,42 @@ def _same_letter(a, b):
     return fold(a) == fold(b) or a == b
 
 
-def ocr_reading(tok, c, g):
+def ocr_reading(tok, c, g, round_s=True):
     """Which side (c or g) an OCR token supports, or None. For a letter-shape conflict the OCR
-    must show the shape: f where the side has ſ, s where it has s."""
+    must show the shape: f (or ſ) where a side has ſ. Tesseract reads ſ as f, so its s is a
+    round s (round_s=True); Transkribus mostly prints plain s for ſ (spec §4.1), so there an
+    s shows nothing (round_s=False)."""
     t = core(tok).lower()
     if fold(c) != fold(g):
         hits = [x for x in (c, g) if fold(t) == fold(x)]
         return hits[0] if len(hits) == 1 else None
-    for x in (c, g):
+
+    def consistent(x):
         xl = core(x).lower()
         if len(xl) != len(t):
-            continue
-        ok = True
+            return False
         for a, b in zip(xl, t):
             if a == 'ſ':
-                ok = b == 'f'
+                ok = b in ('fſ' if round_s else 'fſs')
             elif a == 's':
                 ok = b == 's'
             else:
                 ok = _same_letter(a, b)
             if not ok:
-                break
-        if ok and any(ch in 'ſs' for ch in xl):
-            return x
-    return None
+                return False
+        return True
+    hits = [x for x in (c, g) if consistent(x)]
+    return hits[0] if len(hits) == 1 else None
 
 
-def readings(text, c, g, before=(), after=()):
+def readings(text, c, g, before=(), after=(), round_s=True):
     """The side the OCR text of the conflict's page supports, as a one-item list, or [].
     With context, the OCR token taken is the one that could be this word (its first letters
     fold alike, so a garbled 'kingd6' counts) and whose neighbours best match the context;
     a tie, or fewer than two context hits, gives no reading."""
     toks = [w for w in re.split(r'[\s,;:|]+', text or '') if w]
     if not (before or after):
-        got = {r for tok in toks for r in [ocr_reading(tok, c, g)] if r}
+        got = {r for tok in toks for r in [ocr_reading(tok, c, g, round_s)] if r}
         return sorted(got) if len(got) == 1 else []
     stem = min(fold(c), fold(g), key=len)[:5]
     fb = [fold(w) for w in before if len(fold(w)) >= 2]
@@ -257,7 +259,7 @@ def readings(text, c, g, before=(), after=()):
     scored.sort(reverse=True)
     if not scored or scored[0][0] < 2 or (len(scored) > 1 and scored[1][0] == scored[0][0]):
         return []
-    r = ocr_reading(scored[0][1], c, g)
+    r = ocr_reading(scored[0][1], c, g, round_s)
     return [r] if r else []
 
 
@@ -331,6 +333,12 @@ def _leaves(obj, out, path=()):
     return out
 
 
+def _verse(path):
+    """The path of the verse (or annotation) a leaf belongs to."""
+    k = next((j for j, x in enumerate(path) if x in ('verses', 'annotations', 'intros')), None)
+    return path[:k + 2] if k is not None else path
+
+
 def _same_ref(a, b):
     """The same citation: equal, or one is a segment of the other's ' · '-joined list."""
     return a == b or a in b.split(' · ') or b in a.split(' · ')
@@ -362,7 +370,7 @@ def _mirrors(p, q, same_string=False):
 
 def _pattern(before, word, after):
     """Words are matched by their cores (the page tidies 'Coloſsians :' to 'Coloſsians:')."""
-    ctx = lambda ws: [re.escape(core(w)) for w in ws if core(w)]
+    ctx = lambda ws: [re.sub('[sſ]', '[sſ]', re.escape(core(w))) for w in ws if core(w)]  # the page may hold ſ the data lacks yet
     parts = ctx(before) + ['(' + re.escape(core(word)) + ')'] + ctx(after)
     return re.compile(r'(?<![\wſ])' + _SEP.join(parts) + r'(?![\wſ])')
 
@@ -402,6 +410,9 @@ def adopt(files, decisions, ov, lock):
     try:
         data = {Path(f): json.loads(Path(f).read_text()) for f in files}
         leaves = {f: _leaves(o, []) for f, o in data.items()}
+        for f in leaves:  # NFC, as all text must be (the page is); a written file is NFC throughout
+            for o, k, _ in leaves[f]:
+                o[k] = unicodedata.normalize('NFC', o[k])
         applied, unlocated, dirty = [], [], set()
         for d in decisions:
             if d.winner != 'committed':
@@ -418,25 +429,32 @@ def adopt(files, decisions, ov, lock):
                 if done and (not hits or full):
                     found = 'done'  # already applied (with the full context, a generated form is another place)
                     break
+                if not done and len(hits) > 1 and len({f for f, _ in hits}) == 1 and len({_verse(h[0][2]) for _, h in hits}) == 1:
+                    found = hits  # one verse shows the citation twice (cross_refs and a gloss): both are this place
+                    break
                 if done or len(hits) > 1:
                     found = 'ambiguous'
                     break
                 if len(hits) == 1:
-                    found = hits[0]
+                    found = hits
                     break
             if found == 'done':
                 continue
             if found in (None, 'ambiguous'):
                 unlocated.append((d, f'{found or "not found"}: {c.generated!r} near {" ".join(c.before)} | {" ".join(c.after)}'))
                 continue
-            f, ((obj, key, path), a, z) = found
-            old = obj[key]
-            new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
-            refused = fidelity.refusals(c.page, old, new, ov)
+            refused = []
+            for f, ((obj, key, path), a, z) in found:
+                old = obj[key]
+                new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
+                refused += fidelity.refusals(c.page, old, new, ov)
             if refused:
                 unlocated.append((d, 'fidelity: ' + '; '.join(refused)))
                 continue
-            obj[key] = new
+            for f, ((obj, key, path), a, z) in sorted(found, key=lambda h: -h[1][1]):  # right to left within a string
+                old = obj[key]
+                new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
+                obj[key] = new
             tail = _pattern([], c.generated, c.after[:2])
             for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
                 if p2 != path and _mirrors(p2, path, _same_ref(o2[k2], old) and _orphan(leaves[f], p2, o2[k2])
@@ -444,8 +462,8 @@ def adopt(files, decisions, ov, lock):
                     ms = list(tail.finditer(o2[k2]))
                     if len(ms) == 1:
                         o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + core(c.committed) + o2[k2][ms[0].end(1):])
-            dirty.add(f)
-            applied.append((d, f))
+            dirty.update(fh for fh, _ in found)
+            applied.append((d, found[0][0]))
         for f in dirty:
             write_like(f, data[f])
         return applied, unlocated

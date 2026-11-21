@@ -342,3 +342,36 @@ def test_adopt_weak_context_done_is_not_trusted(tmp_path):
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert len(applied) == 1 and v[1]['cross_refs'][0]['text'] == 'Pſ. 40, 10. 108, 8.'
 
+
+
+def test_transkribus_plain_s_is_no_evidence_of_round_s():
+    # Transkribus mostly prints plain s for ſ (spec §4.1): only f or ſ shows the shape
+    assert ladder.ocr_reading('cõscience', 'cõscience', 'cõſcience', round_s=False) is None
+    assert ladder.ocr_reading('cõſcience', 'cõscience', 'cõſcience', round_s=False) == 'cõſcience'
+    assert ladder.ocr_reading('cõfcience', 'cõscience', 'cõſcience', round_s=False) == 'cõſcience'
+    # Tesseract reads ſ as f, so its s is a round s
+    assert ladder.ocr_reading('cõscience', 'cõscience', 'cõſcience') == 'cõscience'
+
+
+def test_adopt_normalises_nfc_data(tmp_path):
+    import unicodedata
+    f = tmp_path / 'r.json'
+    f.write_text(json.dumps({'n': [{'text': unicodedata.normalize('NFD', 'euery mans cõſcience in Iudaical meates')}]}, ensure_ascii=False))
+    c = ladder.Conflict(446, 'cõscience', 'cõſcience', ['concerning', 'euery', 'mans'], ['in', 'Iudaical', 'meates'])
+    ov = fidelity.parse_overrides(['--allow-shift', 'ls:*', '--reason', 't'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], ov, tmp_path / 'lock')
+    assert unlocated == [] and 'mans cõscience in' in f.read_text()
+    assert unicodedata.is_normalized('NFC', f.read_text())
+
+
+def test_adopt_same_citation_twice_in_one_verse(tmp_path):
+    f = tmp_path / 'romans.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [
+        {'verse': 4, 'text': 'God is true:', 'cross_refs': [{'text': 'Io. 3, 33.'}, {'text': 'Ps. 115, 11.'}, {'text': 'Ps. 50, 6.'}],
+         'notes': [{'text': 'mere men. · Io. 3, 33. Ps. 115, 11. Ps. 50, 6.'}]},
+        {'verse': 9, 'text': 'x', 'cross_refs': [{'text': 'Ps. 50, 6.'}]}]}]}, ensure_ascii=False) + '\n')
+    c = ladder.Conflict(416, 'Pſ.', 'Ps.', ['Pſ.', '115,', '11.'], ['50,', '6.', 'euery'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    v = json.loads(f.read_text())['chapters'][0]['verses']
+    assert unlocated == [] and v[0]['cross_refs'][2]['text'] == 'Pſ. 50, 6.' and v[0]['notes'][0]['text'].endswith('Pſ. 50, 6.')
+    assert v[1]['cross_refs'][0]['text'] == 'Ps. 50, 6.'
