@@ -60,3 +60,8 @@ def test_usage_texts_name_rh_commands():
     bad = [(p.name, m.group(0)) for p in (HERE / 'rhemes').glob('*.py')
            for m in old.finditer(ast.get_docstring(ast.parse(p.read_text())) or '')]
     assert not bad, bad
+
+
+def test_rh_routes_agy():
+    import rh
+    assert rh.resolve(['agy', 'key']) == ('agyread', ['key'])

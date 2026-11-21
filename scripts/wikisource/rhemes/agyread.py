@@ -6,10 +6,14 @@
 
 Spec: docs/superpowers/specs/2026-11-21-agy-scan-reading-design.md.
 """
+import csv
+import datetime
 import hashlib
 import io
 import json
+import random
 import re
+import sys
 import subprocess
 import tempfile
 import unicodedata
@@ -17,12 +21,18 @@ from pathlib import Path
 
 from PIL import Image
 
-from . import sources as O
+from . import paths, sources as O
+from .ocrdiff import key as fold, word_boxes
 from .transkribus import PAGE_W
 
 CACHE = Path.home() / 'facsimiles/agy-cache'
 BATCH = 30
 BAND = (0.25, 0.95)  # the part of a Transkribus box that holds its line (checked on John pdf244)
+RECONCILE = paths.REPO / 'wikisource/1582-rhemes-nt/reconcile'
+KEY_PATH = RECONCILE / 'agy-key.jsonl'
+CAL_PATH = RECONCILE / 'agy-calibration.json'
+MODELS = ('gemini-4-argon-low', 'gemini-4-argon-high')
+HARD = ('w_for_vv', 'vv_for_w', 'word')
 SCALE = 1.4  # PLAYBOOK: letter shapes need about 1.4x; 0.5-0.85x misleads
 MACRONS = set('āēīōūȳĀĒĪŌŪȲ') | {'̄'}
 
@@ -138,3 +148,151 @@ def read_all(items, model, prompt, cache=CACHE, runs=2, batch=BATCH):
             for i, r in read_batch(items[k:k + batch], model, prompt, run, cache).items():
                 out[i].append(r)
     return out
+
+
+# ---------------------------------------------------------------- the answer key
+
+def item_kinds(truth, *others):
+    """Kinds of the printed word and of the forms the OCR offered instead (a wrong macron is a macron error)."""
+    k = set().union(*(kinds(w) for w in (truth, *others) if w))
+    return sorted(k - {'wording'} or k)
+
+
+def _item(book, loc, word, v, stratum):
+    l, t, w, h = v['box']
+    return dict(id=f"{book}:{v['page']}:{l},{t},{w},{h}", book=book, loc=loc, page=v['page'], box=list(v['box']),
+                truth=word, kinds=item_kinds(word, v['tk'], v['ts']), stratum=stratum)
+
+
+def select_key(boxes, rows, n_hard=150, n_ordinary=150, seed=1582):
+    """Answer-key items from {book: word_boxes} and {book: audit TSV rows}: the words the OCR misread
+    (hard; found again by folded form when respelled since the audit; a row without occ only when
+    unique in its loc) and a seeded sample of w/vv, macron and ſ words the OCRs agreed on (ordinary).
+    The truth is the word in odr-original now (Mark–John are checked against the scans)."""
+    hard, seen = [], set()
+    for book in sorted(rows):
+        bx = boxes.get(book, {})
+        for r in rows[book]:
+            if r['cls'] not in HARD:
+                continue
+            cands = sorted(k for k in bx if k[0] == r['loc'] and fold(k[1]) == fold(r['data']))
+            if r.get('occ') not in (None, ''):
+                cands = [k for k in cands if k[2] == int(r['occ'])]
+            elif len(cands) != 1:
+                continue
+            if cands and (book, cands[0]) not in seen:
+                seen.add((book, cands[0]))
+                hard.append(_item(book, cands[0][0], cands[0][1], bx[cands[0]], 'hard'))
+    ordinary = []
+    for book in sorted(boxes):
+        for k, v in sorted(boxes[book].items()):
+            if (book, k) in seen or not kinds(k[1]) - {'wording'}:
+                continue
+            if fold(v['tk']) == fold(v['ts']) == fold(k[1]):
+                ordinary.append(_item(book, k[0], k[1], v, 'ordinary'))
+    rnd = random.Random(seed)
+    pick = lambda xs, n: rnd.sample(xs, n) if len(xs) > n else xs
+    return sorted(pick(hard, n_hard) + pick(ordinary, n_ordinary), key=lambda x: x['id'])
+
+
+def build_key(books=('mark', 'luke', 'john'), **kw):
+    rows = {b: list(csv.DictReader(open(paths.REPO / f'docs/audits/{b}-transkribus-findings.tsv'), delimiter='\t'))
+            for b in books}
+    return select_key({b: word_boxes(b) for b in books}, rows, **kw)
+
+
+# ---------------------------------------------------------------- scoring
+
+def _macrons(w):
+    base = [c for c in unicodedata.normalize('NFD', w.lower().replace('vv', 'w')) if c.isalpha() or c == '\u0304']
+    out, n = [], 0
+    for c in base:
+        if c == '\u0304':
+            out.append((n - 1, base_prev))
+        else:
+            base_prev, n = c, n + 1
+    return out
+
+
+FEATURE = {
+    'wvv': lambda w: re.findall('vv|w', w.lower()),
+    'macron': _macrons,
+    'longs': lambda w: [c for c in w if c in 'sſ'],
+    'wording': fold,
+}
+
+
+def score(key, readings):
+    """{(model, prompt, kind): {n, agree, right, confidently_wrong}}; readings[(model, prompt)][id] = [run1, run2].
+    agree: both runs read and show the same feature; right: they agree and match the key;
+    confidently_wrong: they agree on a feature the print does not have."""
+    out = {}
+    for (model, prompt), rd in readings.items():
+        for it in key:
+            runs = rd.get(it['id'], [])
+            for k in it['kinds']:
+                s = out.setdefault((model, prompt, k), dict(n=0, agree=0, right=0, confidently_wrong=0))
+                s['n'] += 1
+                f = FEATURE[k]
+                if len(runs) >= 2 and None not in runs and len({repr(f(r)) for r in runs}) == 1:
+                    s['agree'] += 1
+                    ok = f(runs[0]) == f(it['truth'])
+                    s['right' if ok else 'confidently_wrong'] += 1
+    return out
+
+
+def trusted(scores, n_min=30, acc=0.98):
+    """The (model, prompt, kind)s agy may settle alone: enough cases, nearly all right, never confidently wrong."""
+    return {k for k, s in scores.items()
+            if s['n'] >= n_min and s['right'] >= acc * s['n'] and s['confidently_wrong'] == 0}
+
+
+# ---------------------------------------------------------------- CLI
+
+def _arg(argv, name, default=None):
+    return argv[argv.index(name) + 1] if name in argv else default
+
+
+def calibrate(key, models, prompts, cache=CACHE):
+    readings = {}
+    for it in key:
+        it['image'] = crop(it['book'], it['page'], tuple(it['box']))
+    for m in models:
+        for p in prompts:
+            print(f'agy {m} {p}: {len(key)} crops x 2 runs', file=sys.stderr, flush=True)
+            readings[(m, p)] = read_all(key, m, p, cache)
+    for it in key:
+        del it['image']
+    return readings
+
+
+def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    cmd = argv[0] if argv else ''
+    if cmd == 'key':
+        key = build_key()
+        KEY_PATH.write_text(''.join(json.dumps(k, ensure_ascii=False) + '\n' for k in key))
+        print(f"{KEY_PATH.name}: {len(key)} items ({sum(k['stratum'] == 'hard' for k in key)} hard)")
+        return 0
+    if cmd == 'calibrate':
+        key = [json.loads(l) for l in KEY_PATH.read_text().splitlines()]
+        models = _arg(argv, '--models', ','.join(MODELS)).split(',')
+        prompts = _arg(argv, '--prompts', ','.join(PROMPTS)).split(',')
+        readings = calibrate(key, models, prompts)
+        scores = score(key, readings)
+        ok = trusted(scores)
+        print(f"{'model':22} {'prompt':9} {'kind':8} {'n':>4} {'agree':>6} {'right':>6} {'conf-wrong':>10}")
+        for (m, p, k), s in sorted(scores.items()):
+            print(f"{m:22} {p:9} {k:8} {s['n']:4} {s['agree']:6} {s['right']:6} {s['confidently_wrong']:10}"
+                  + ('  TRUSTED' if (m, p, k) in ok else ''))
+        wrong = [dict(id=it['id'], model=m, prompt=p, truth=it['truth'], runs=rd.get(it['id']))
+                 for (m, p), rd in readings.items() for it in key
+                 if rd.get(it['id']) and None not in rd[it['id']] and rd[it['id']][0] == rd[it['id']][1]
+                 and rd[it['id']][0] != it['truth']]
+        CAL_PATH.write_text(json.dumps(dict(
+            date=datetime.date.today().isoformat(),
+            scores=[dict(model=m, prompt=p, kind=k, **s) for (m, p, k), s in sorted(scores.items())],
+            trusted=[list(t) for t in sorted(ok)], agreed_differently=wrong), ensure_ascii=False, indent=1) + '\n')
+        return 0
+    print(__doc__, file=sys.stderr)
+    return 2

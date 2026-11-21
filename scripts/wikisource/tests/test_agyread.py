@@ -152,3 +152,94 @@ def test_changed_prompt_text_is_not_served_from_cache(fake_agy, tmp_path, monkey
     agyread.read_batch(_items(1), 'm', 'plain', 1, tmp_path)
     monkeypatch.setitem(agyread.PROMPTS, 'plain', agyread.PROMPTS['plain'] + ' Take care.')
     assert agyread.read_batch(_items(1), 'm', 'plain', 1, tmp_path) == {'i0': 'b'}
+
+
+# ---------------------------------------------------------------- Task 3: key, scoring, trust
+
+def _box(w, tk=None, ts=None):
+    return dict(page='pdf1', box=(1, 2, 3, 4), tk=tk or w, ts=ts or w)
+
+
+BOXES = {'john': {
+    ('1:1', 'vvhich', 0): _box('vvhich', 'which', 'which'),     # OCR misread: a hard case once audited
+    ('1:2', 'frō', 0): _box('frō'),
+    ('1:3', 'ſelf', 0): _box('ſelf'),
+    ('1:4', 'Lord', 0): _box('Lord'),
+    ('1:5', 'vvhen', 0): _box('vvhen'),
+    ('1:6', 'vvas', 1): _box('vvas'),                            # the audit said 'was', since respelled
+}}
+ROWS = {'john': [dict(cls='w_for_vv', loc='1:1', data='vvhich', occ='0'),
+                 dict(cls='vv_for_w', loc='1:6', data='was', occ='1'),
+                 dict(cls='missing', loc='1:4', data='Lord', occ='0')]}
+
+
+def test_select_key_strata():
+    key = agyread.select_key(BOXES, ROWS, n_hard=10, n_ordinary=10, seed=1)
+    by = {(k['loc'], k['truth']): k for k in key}
+    assert by[('1:1', 'vvhich')]['stratum'] == 'hard'
+    assert by[('1:6', 'vvas')]['stratum'] == 'hard'           # found again by its folded form
+    assert by[('1:2', 'frō')]['stratum'] == 'ordinary'
+    assert ('1:4', 'Lord') not in by                            # no w/vv, macron or ſ: not ordinary; 'missing' is not hard
+    assert by[('1:1', 'vvhich')]['kinds'] == ['wvv']
+    assert by[('1:1', 'vvhich')]['id'] == 'john:pdf1:1,2,3,4'
+
+
+def test_select_key_is_seeded_and_capped():
+    a = agyread.select_key(BOXES, ROWS, n_hard=10, n_ordinary=2, seed=1)
+    assert a == agyread.select_key(BOXES, ROWS, n_hard=10, n_ordinary=2, seed=1)
+    assert sum(k['stratum'] == 'ordinary' for k in a) == 2
+
+
+def test_kinds_of_an_item_include_the_ocr_form():
+    """'from' printed, OCR 'frō': a reading frō must be scored as a macron error."""
+    key = agyread.select_key({'john': {('1:1', 'from', 0): _box('from', 'frō', 'frō')}},
+                             {'john': [dict(cls='word', loc='1:1', data='from', occ='0')]}, 5, 5, 1)
+    assert key[0]['kinds'] == ['macron']
+
+
+K1 = dict(id='a', truth='vvhich', kinds=['wvv'])
+
+
+def _score(runs, item=K1):
+    return agyread.score([item], {('m', 'plain'): {item['id']: runs}})[('m', 'plain', item['kinds'][0])]
+
+
+def test_score_confidently_wrong():
+    assert _score(['which', 'which']) == dict(n=1, agree=1, right=0, confidently_wrong=1)
+
+
+def test_score_disagreement_is_not_confidently_wrong():
+    assert _score(['vvhich', 'which']) == dict(n=1, agree=0, right=0, confidently_wrong=0)
+
+
+def test_score_missing_reading_is_not_agreement():
+    assert _score([None, None]) == dict(n=1, agree=0, right=0, confidently_wrong=0)
+
+
+def test_score_compares_only_the_kind_feature():
+    item = dict(id='b', truth='ſhevved,', kinds=['wvv', 'longs'])
+    s = agyread.score([item], {('m', 'plain'): {'b': ['shevved', 'shevved']}})
+    assert s[('m', 'plain', 'wvv')]['right'] == 1
+    assert s[('m', 'plain', 'longs')]['confidently_wrong'] == 1
+
+
+def test_score_macron_feature():
+    item = dict(id='c', truth='incōtinent', kinds=['macron'])
+    assert agyread.score([item], {('m', 'p'): {'c': ['incōtinent', 'incōtinent']}})[('m', 'p', 'macron')]['right'] == 1
+    assert agyread.score([item], {('m', 'p'): {'c': ['incontinent'] * 2}})[('m', 'p', 'macron')]['confidently_wrong'] == 1
+    assert agyread.score([item], {('m', 'p'): {'c': ['īncotinent'] * 2}})[('m', 'p', 'macron')]['confidently_wrong'] == 1
+
+
+def test_trust_bar_edges():
+    s = {('m', 'p', 'wvv'): dict(n=29, agree=29, right=29, confidently_wrong=0),
+         ('m', 'p', 'macron'): dict(n=50, agree=49, right=49, confidently_wrong=0),
+         ('m', 'p', 'longs'): dict(n=50, agree=49, right=48, confidently_wrong=0),
+         ('m', 'p', 'wording'): dict(n=100, agree=100, right=99, confidently_wrong=1)}
+    assert agyread.trusted(s) == {('m', 'p', 'macron')}
+
+
+def test_row_without_occ_counts_only_when_unique_in_its_loc():
+    boxes = {'mark': {('1:1', 'vvas', 0): _box('vvas'), ('1:1', 'vvas', 1): _box('vvas'), ('1:2', 'vvho', 0): _box('vvho')}}
+    rows = {'mark': [dict(cls='w_for_vv', loc='1:1', data='vvas'), dict(cls='w_for_vv', loc='1:2', data='who')]}
+    key = agyread.select_key(boxes, rows, 10, 0, 1)
+    assert [(k['loc'], k['truth']) for k in key] == [('1:2', 'vvho')]
