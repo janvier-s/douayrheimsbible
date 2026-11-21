@@ -25,6 +25,7 @@ COMMANDS = {
     'ornaments': ('ornaments', []),      # detect|clean|sheet|dedupe|commons|review OUT … (needs numpy/scipy)
     'fix check': ('fixes', ['check']),   # [BOOK…] [--repo R] [--fixes D]
     'fix apply': ('fixes', ['apply']),   # BOOK [--write] [--only ID,…] [--repo R] [--fixes D]
+    'fix propose-diff': ('fixderive', []),  # xml REV_A REV_B --out DIR [--repo XML_REPO]
 }
 
 

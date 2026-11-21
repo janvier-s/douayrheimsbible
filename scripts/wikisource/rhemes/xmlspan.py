@@ -1,9 +1,10 @@
 """A16049.xml cut into per-book character spans, so a fix's `old` is looked up in its own book only.
 
-spans(xml) partitions the content of <text>: `front` runs from the end of <text …> to <body;
+spans(xml) partitions <text>'s content plus its closing tag: `front` runs from the end of <text …> to <body;
 inside <body> each top-level <div starts a section: a book div gets its book key, an argument
 the next book's key, any other section the previous key (`front` before the first book);
-`back` runs from the end of </body> to </text>, and exists (whitespace) even with no <back>.
+`back` runs from </body> through </text> (both tags included, so an insertion of <back> has
+anchors), and exists even with no <back> element.
 Neighbouring sections with the same key merge. Found on the raw text, never by parsing, so
 offsets are offsets into the file's own characters.
 """
@@ -55,12 +56,12 @@ def spans(xml):
             keys.append(nxt)
         else:
             keys.append(None)
-    raw = [('front', a, divs[0][0] if divs else body_close + len('</body>'))]
+    raw = [('front', a, divs[0][0] if divs else body_close)]
     for i, (off, _) in enumerate(divs):
         key = keys[i] or raw[-1][0]
-        stop = divs[i + 1][0] if i + 1 < len(divs) else body_close + len('</body>')
+        stop = divs[i + 1][0] if i + 1 < len(divs) else body_close
         raw.append((key, off, stop))
-    raw.append(('back', body_close + len('</body>'), b))
+    raw.append(('back', body_close, b + len('</text>')))
     out = []
     for k, s, e in raw:
         if out and out[-1][0] == k:

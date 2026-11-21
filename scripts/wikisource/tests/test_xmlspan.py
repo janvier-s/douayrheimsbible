@@ -25,7 +25,7 @@ SYN = '''<TEI><teiHeader>h</teiHeader>
 def test_spans_partition():
     sp = xmlspan.spans(SYN)
     a = SYN.index('>', SYN.index('<text')) + 1
-    b = SYN.index('</text>')
+    b = SYN.index('</text>') + len('</text>')
     assert sp[0][1] == a and sp[-1][2] == b
     assert ''.join(SYN[s:e] for _, s, e in sp) == SYN[a:b]
     assert [k for k, _, _ in sp] == ['front', 'matthew', 'mark', 'back']
@@ -34,7 +34,7 @@ def test_spans_partition():
     s, e = xmlspan.span(SYN, 'mark')
     assert '>H<' in SYN[s:e] and '>A2<' in SYN[s:e]
     s, e = xmlspan.span(SYN, 'back')
-    assert SYN[s:e].strip() == ''
+    assert SYN[s:e] == '</body>\n</text>'
 
 
 def test_book_key():
