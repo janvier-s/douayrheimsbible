@@ -121,14 +121,15 @@ def _next_id(book, rest, taken):
     return base + _letter(i)
 
 
-def derive_book(book, x, y, taken, evidence=None, date='1970-01-01'):
+def edit_pairs(x, y):
+    """[(old, new, j1)] turning x into y when applied in order: each old unique in the text as it then stands,
+    each new unique in y, no old left in y, old never inside new (j1: the edit's offset in y)."""
     edits = _edits(x, y)
     cur, d, out = x, 0, []
     k = 0
     while k < len(edits):
         i1, i2, j1, j2 = edits[k]
-        a, b = _left(y, j1, False), None  # word boundaries first
-        L = j1 - a
+        L = j1 - _left(y, j1, False)
         R = _right(x, i2, False) - i2
         for _ in range(MAX_WIDEN):
             nxt = edits[k + 1] if k + 1 < len(edits) else None
@@ -144,9 +145,18 @@ def derive_book(book, x, y, taken, evidence=None, date='1970-01-01'):
             L = j1 - _left(y, j1 - L, True)
             R = _right(x, i2 + R, True) - i2
         else:
-            raise ValueError(f'{book}: cannot make the edit at {j1} unique')
+            raise ValueError(f'cannot make the edit at {j1} unique')
         cur = cur[:i1 + d - L] + new + cur[i2 + d + R:]
         d += len(new) - len(old)
+        out.append((old, new, j1))
+        k += 1
+    assert cur == y, 'edit pairs do not reproduce the after-text'
+    return out
+
+
+def derive_book(book, x, y, taken, evidence=None, date='1970-01-01'):
+    out = []
+    for old, new, j1 in edit_pairs(x, y):
         loc = _loc(book, y, j1)
         rest = loc.split(' ', 1)[1]
         ev, dt = (evidence(book, old, new) if evidence else ('xml diff', date))
@@ -156,8 +166,6 @@ def derive_book(book, x, y, taken, evidence=None, date='1970-01-01'):
         if allow:
             e['allow'], e['note'] = allow, ALLOW_NOTE
         out.append(fixes.Entry.from_dict(e))
-        k += 1
-    assert cur == y, f'{book}: derived entries do not reproduce the after-text'
     return out
 
 

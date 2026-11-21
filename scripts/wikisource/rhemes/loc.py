@@ -3,7 +3,8 @@
 A loc (without the book) is one of
     arg:N | arg:title | arg:N/nM                 an intro's text, the first intro's title, an intro note
     C:sum | C:sum/nM                             a chapter summary, a summary note (by marker)
-    C:VaN | C:VaN:title | C:VaN/mnM              annotation N of chapter C (counted in the chapter), its title, a margin note
+    C:VaN | C:VaN:title | C:VaN/mnM | C:VaN/mn.K annotation N of chapter C (counted in the chapter), its title,
+                                                 a margin note by marker, or the K-th (where markers repeat)
     C:V | C:V/noteL | C:V/crN                    a verse, a verse note (by label), a cross reference
 optionally followed by #key, which selects another key of the same container (a value entry).
 
@@ -81,7 +82,11 @@ def resolve(store, loc):
     base, _, hkey = loc.partition('#')
     try:
         m = re.fullmatch(r'arg:(\d+)/n(.+)', base)
-        if m:
+        k = re.fullmatch(r'(\d+:\d+a\d+)/mn\.(\d+)', base)
+        if k:
+            a, _ = find_text(store.bj, store.anns, k.group(1))
+            cont, key = a['notes'][int(k.group(2)) - 1], 'text'
+        elif m:
             it = store.bj['intros'][int(m.group(1))]
             cont, key = next(n for n in it['notes'] if str(n.get('marker')) == m.group(2)), 'text'
         else:
@@ -126,5 +131,7 @@ def iter_locs(store):
             yield here, a, 'text'
             if isinstance(a.get('title'), str):
                 yield here + ':title', a, 'title'
-            for n in _unique(a.get('notes') or [], 'marker'):
-                yield f'{here}/mn{n.get("marker")}', n, 'text'
+            notes = a.get('notes') or []
+            uniq = [id(x) for x in _unique(notes, 'marker')]
+            for j, n in enumerate(notes, 1):
+                yield (f'{here}/mn{n.get("marker")}' if id(n) in uniq else f'{here}/mn.{j}'), n, 'text'
