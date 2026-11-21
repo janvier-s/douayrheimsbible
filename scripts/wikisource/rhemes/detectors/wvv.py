@@ -4,6 +4,11 @@ Each w of the data word is set from the Transkribus reading at the same letter p
 vv (read vv/vy/vu) or w (read w/W). A word where the two OCRs do not show the same number
 of vv, or where the letters cannot be lined up, is skipped. Capitals follow the data
 (W -> VV). class: w_for_vv or vv_for_w.
+
+A row whose ctx brackets the word ("… [word] …") is placed by that context (words compared
+folded, so neighbours respelled since the audit still match); a row whose context no longer
+shows the data word there is skipped, so a rerun on fixed data proposes nothing. occ (the
+n-th occurrence in the audit-time text) only places rows without a bracketed context.
 """
 import csv
 import re
@@ -11,6 +16,7 @@ from pathlib import Path
 
 from . import load, snapshot, propose_from
 from ..loc import find_text
+from ..text import fold_word
 
 VV = ('vv', 'vy', 'vu', 'uv', 'yv')
 
@@ -44,13 +50,34 @@ def nvv(w):
     return len(re.findall('|'.join(VV), w.lower()))
 
 
-def replace_nth(text, word, occ, new):
-    hits = [mt for mt in re.finditer(re.escape(word), text)
+def _hits(text, word):
+    return [mt for mt in re.finditer(re.escape(word), text)
             if (mt.start() == 0 or re.match(r'[\s>(]', text[mt.start() - 1]))
             and (mt.end() == len(text) or re.match(r'[\s<]', text[mt.end()]))]
+
+
+def replace_nth(text, word, occ, new):
+    hits = _hits(text, word)
     if occ >= len(hits):
         return None
     mt = hits[occ]
+    return text[:mt.start()] + new + text[mt.end():]
+
+
+def _folded(s):
+    return [f for f in (fold_word(w) for w in re.sub(r'<[^>]+>', ' ', s).split()) if f]
+
+
+def replace_at(text, word, ctx, new):
+    """Replaces the one occurrence of word whose neighbours match ctx ("… [word] …"), or None."""
+    m = re.fullmatch(r'(.*)\[(.*?)\](.*)', ctx)
+    fb, fa = _folded(m.group(1))[-2:], _folded(m.group(3))[:2]
+    hits = [mt for mt in _hits(text, word)
+            if (not fb or _folded(text[:mt.start()])[-len(fb):] == fb)
+            and _folded(text[mt.end():])[:len(fa)] == fa]
+    if len(hits) != 1:
+        return None
+    mt = hits[0]
     return text[:mt.start()] + new + text[mt.end():]
 
 
@@ -58,7 +85,7 @@ def run(store, rows):
     """Applies the rows to the store in memory; returns (done, skipped)."""
     done, skipped = [], []
     # Several rows can hit one text: apply occurrence-indexed edits from the back.
-    rows = sorted(rows, key=lambda r: (r['loc'], -int(r['occ'] or 0)))
+    rows = sorted(rows, key=lambda r: (r['loc'], -int(r.get('occ') or 0)))
     for r in rows:
         w = r['data']
         core = re.sub(r'^[(\[]+|[.,;:?!)\]]+$', '', w)
@@ -67,7 +94,11 @@ def run(store, rows):
             skipped.append((r['loc'], w, r['tk'], r['ts'], new_core))
             continue
         cont, k = find_text(store.bj, store.anns, r['loc'])
-        out = replace_nth(cont[k], w, int(r['occ'] or 0), w.replace(core, new_core))
+        ctx = r.get('ctx') or ''
+        if re.search(r'\[.*?\]', ctx):
+            out = replace_at(cont[k], w, ctx, w.replace(core, new_core))
+        else:
+            out = replace_nth(cont[k], w, int(r.get('occ') or 0), w.replace(core, new_core))
         if out is None:
             skipped.append((r['loc'], w, r['tk'], r['ts'], 'not found'))
             continue

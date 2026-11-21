@@ -109,6 +109,40 @@ def test_wvv_apply_equals_old_write(tmp_path, cls):
     assert _files(a) == _files(b)
 
 
+def _wvv_ctx(t, text, rows, cols=('cls', 'loc', 'data', 'tk', 'ts', 'occ', 'ctx')):
+    _book(t / 'static/data/odr-original', 'tiny', [{'verse': 1, 'text': text}], [])
+    (t / 'f.tsv').write_text(''.join('\t'.join(r) + '\n' for r in [cols, *rows]))
+    return [(e.old, e.new) for e in wvv.propose(t, 'tiny', t / 'f.tsv', 'w_for_vv')]
+
+
+def test_wvv_ctx_picks_the_flagged_word(tmp_path):
+    """occ counts the words of the audit-time text; the context names the word itself."""
+    got = _wvv_ctx(tmp_path, 'hearing the word of God at one word and more.',
+                   [('w_for_vv', '1:1', 'word', 'vvord', 'vvord', '0', 'of God at one [word] and more.')])
+    assert got == [('one word and', 'one vvord and')]
+
+
+def test_wvv_rerun_on_fixed_data_proposes_nothing(tmp_path):
+    """The flagged word is already vv: the next w-form word is not the one the OCR read."""
+    got = _wvv_ctx(tmp_path, 'hearing the word of God at one vvord and more.',
+                   [('w_for_vv', '1:1', 'word', 'vvord', 'vvord', '0', 'of God at one [word] and more.')])
+    assert got == []
+
+
+def test_wvv_ctx_folds_neighbours_already_respelled(tmp_path):
+    got = _wvv_ctx(tmp_path, 'working, Chriſtes vvord and internal working, that in',
+                   [('w_for_vv', '1:1', 'working,', 'vvorking,', 'vvorking,', '0', 'Chriſtes word and internal [working,] that in')])
+    assert got == [('internal working, that', 'internal vvorking, that')]
+
+
+def test_wvv_reads_rows_without_occ(tmp_path):
+    """Mark's findings file predates the occ column; the context places each word."""
+    got = _wvv_ctx(tmp_path, 'the word of God at one word and more.',
+                   [('w_for_vv', '1:1', 'word', 'vvord', 'vvord', 'at one [word] and')],
+                   cols=('cls', 'loc', 'data', 'tk', 'ts', 'ctx'))
+    assert got == [('one word and', 'one vvord and')]
+
+
 def test_wvv_vv_for_w_carries_allow(tmp_path):
     _wvv_fixture(tmp_path)
     e, = wvv.propose(tmp_path, 'tiny', tmp_path / 'f.tsv', 'vv_for_w')

@@ -72,7 +72,9 @@ def test_json_entries_replay_history(tmp_path):
     the text at <hash>^, give the text at <hash> at their loc. Where the same commit also ran a letter-shape
     bulk pass (ſ, vv: the baseline, spec §8), the replay runs on the letter-shape fold (_shape) where an old
     text is not in <hash>^ as it stands, and the result must equal <hash>'s text, or its fold: the bulk pass is
-    then the only other change at that loc."""
+    then the only other change at that loc. An entry that names no commit is a fix recorded since the ledger
+    (PLAYBOOK "Record a fix": committed with its data, so it cannot name its own commit); test_ledger_noop_on_current
+    checks that it is applied."""
     import re
     from rhemes import loc as locmod
     groups = {}
@@ -80,7 +82,8 @@ def test_json_entries_replay_history(tmp_path):
         for e in es:
             if set(e.target) & {'odr-original', 'odr'}:
                 m = re.search(r'applied in ([0-9a-f]{7,})', e.evidence)
-                assert m, e.id
+                if not m:
+                    continue
                 groups.setdefault((m.group(1), e.book), []).append(e)
     assert groups, 'no JSON entries'
     for (rev, book), es in groups.items():
