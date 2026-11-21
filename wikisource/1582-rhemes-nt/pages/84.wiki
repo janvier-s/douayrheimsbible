@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|56|THE GOSPEL|CHA. XX.}}</noinclude>{{c|{{larger|{{sc|Chap. XX.}}}}}}
+<noinclude><pagequality level="1" user="" />{{rh|56|{{sc|the gospel}}|{{sc|Cha. XX.}}}}</noinclude>{{c|{{larger|{{sc|Chap. XX.}}}}}}
 
 {{c|''To {{ls}}hew how through Gods grace the Iewes {{ls}}halbe ouerrunne of the Gentils, although they beginne after, he bringeth a parable of men working {{ls}}oner and later in the vineyard, but the later revvarded in the end euen as the fir{{ls}}t. 17 He reuealeth more to his Di{{ls}}ciples touching his pa{{ls}}sion: 20 Bidding the ambitious two {{ls}}uiters to thinke rather of {{ls}}uffering with him: 24 And teaching vs (in the re{{ls}}t of his Di{{ls}}ciples) not to be greeued at our Eccle{{ls}}ia{{ls}}tical Superiors, con{{ls}}idering they are (as he was him {{ls}}elf) to toile for our Saluation. 29 Then going out of Iericho, he geueth {{ls}}ight vnto tvvo blind.''}}
 

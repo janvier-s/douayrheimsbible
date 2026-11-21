@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|134||CHAP. I.}}</noinclude>{{c|{{xx-larger|THE HOLY GOSPEL}}}}
+<noinclude><pagequality level="1" user="" />{{rh|134||{{sc|Chap. I.}}}}</noinclude>{{c|{{xx-larger|THE HOLY GOSPEL}}}}
 {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}
 {{c|{{larger|DING TO LVKE.}}}}
 

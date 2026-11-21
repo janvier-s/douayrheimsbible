@@ -109,3 +109,11 @@ def test_e_lemma_split(tmp_path):
     assert 'E-lemma-split' not in codes(tmp_path, 'that{{sup|‖}} Abraham did finde')
     assert 'E-lemma-split' in codes(tmp_path, 'and vn{{sup|‖}} to them')
     assert 'E-lemma-split' not in codes(tmp_path, 'and that{{sup|‖}} he is come')  # a whole word: placed by hand
+
+
+def test_w_rh_caps(tmp_path):
+    page = '<noinclude><pagequality level="1" user="" />{head}</noinclude>text<noinclude></noinclude>\n'
+    (tmp_path / '1.wiki').write_text(page.format(head='{{rh|82|THE GOSPEL|CHA. VI.}}'))
+    assert 'W-rh-caps' in {c for c, n, m in lint.lint(tmp_path)}
+    (tmp_path / '1.wiki').write_text(page.format(head='{{rh|82|{{sc|the gospel}}|{{sc|Cha. VI.}}}}'))
+    assert 'W-rh-caps' not in {c for c, n, m in lint.lint(tmp_path)}

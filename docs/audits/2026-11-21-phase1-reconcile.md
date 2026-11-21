@@ -23,7 +23,7 @@ Branch `wikisource-refactor-phase0`, plan `docs/superpowers/plans/2026-11-21-wik
 | Acts | 317–401 | foot 84, ls:ss 141, ls:other 72, greek 39, sc 29, ornament 28 | r1 c10/g1 · r2 c14 · r3 c14/g167 · r4 c1/g24 · open 3 | 85/85 |
 | Romans | 410–451 | foot 40, ls:ss 75, ls:other 56, greek 18, ornament 18, space 16 | r1 c8/g3 · r2 c14 · r3 c19/g85 · r4 c3/g11 | 42/42 |
 
-Scan readings (`reconcile/scan-readings.jsonl`): 61 in all. 36 were read on crop collages (Matthew 4, Mark 2, Luke 4, John 5, Acts 9, Romans 12). 25 were inferred from the same word already read on the scans, or from a print rule that the XML supports (Acts 20, John 2, Romans 2, Luke 1). Each line gives its evidence. The 89 stem-rule `ſs` cases were settled by the XML at rung 2, as the owner decided.
+Scan readings (`reconcile/scan-readings.jsonl`): 61 in all. 36 were read on crop collages (Matthew 4, Mark 2, Luke 4, John 5, Acts 9, Romans 12). 25 were inferred from the same word already read on the scans, or from a print rule that the XML supports (Acts 20, John 2, Romans 2, Luke 1). Each line gives its evidence. The 89 stem-rule `ſs` cases were settled by the XML, as the owner decided: at rung 2, or at rung 3 where nothing else settled them. One of them, Romans 410 `intermiſsion`, is ſs in print and was kept from the scan.
 
 Overrides used (in each book's commit message): `--allow-shift ls:<book range>` for the ladder's ſs/ſſ changes. `--allow-loss` was used only under the owner's decisions: long-s inside `{{sc}}` becomes round s, printer's signatures (`vv:`) are dropped, and woodcut initials (`v_initial:`) are dropped while ornaments are off.
 

@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|CHA. I.||87}}</noinclude>{{c|{{xx-larger|THE HOLY GOSPEL}}}}
+<noinclude><pagequality level="1" user="" />{{rh|{{sc|Cha. I.}}||87}}</noinclude>{{c|{{xx-larger|THE HOLY GOSPEL}}}}
 {{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}
 {{c|{{larger|DING TO MARKE.}}}}
 

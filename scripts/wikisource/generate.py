@@ -116,6 +116,41 @@ def sc_marks(s, dropcap=False):
     return re.sub(r'<sc>(.*?)</sc>', span, s)
 
 
+RH = re.compile(r'\{\{rh\|((?:[^{}]|\{\{[^{}]*\}\})*)\}\}')
+_CAPS = re.compile(r"[A-Z]{2,}[.,:;]?")
+_ROMAN = re.compile(r"[IVXLC]+[.,:;]?")
+
+
+def _rh_side(cell):
+    """Runs of capital words become capitalized small caps; Roman numerals inside a run stay capitals."""
+    toks, out, run = cell.split(' '), [], []
+    for tok in toks + [None]:
+        if tok is not None and (_CAPS.fullmatch(tok) and not (run and _ROMAN.fullmatch(tok)) or run and _ROMAN.fullmatch(tok)):
+            run.append(tok if run and _ROMAN.fullmatch(tok) else tok[0] + tok[1:].lower())
+            continue
+        if run:
+            out.append('{{sc|' + ' '.join(run) + '}}')
+            run = []
+        if tok is not None:
+            out.append(tok)
+    return ' '.join(out)
+
+
+def rh_small_caps(text):
+    """Running heads in small caps (owner 2026-11-21): the title in the middle all lowercase,
+    the side words (CHA., HOLY) capitalized, Roman numerals kept as capitals."""
+    def one(m):
+        parts = re.split(r'\|(?![^{]*\}\})', m.group(1))
+        if len(parts) != 3:
+            return m.group(0)
+        a, b, c = parts
+        if re.search(r'[A-Z]{2}', b) and '{{' not in b:
+            b = '{{sc|' + b.lower() + '}}'
+        side = lambda x: x if '{{' in x else _rh_side(x)
+        return '{{rh|' + side(a) + '|' + b + '|' + side(c) + '}}'
+    return RH.sub(one, text)
+
+
 def sc_wiki(s):
     s = re.sub(SC1 + r'([^\w{}<>\n' + SC0 + SC1 + ']*)' + SC0, r'\1', s)
     return s.replace(SC0, '{{sc|').replace(SC1, '}}')
@@ -300,6 +335,8 @@ def build_stream(book, ann):
 def render_verse(v, ch):
     raw = v['text']
     for start in sorted({l[0] for l in v.get('lemmas', [])}, reverse=True):
+        if 0 < start < len(raw) and raw[start - 1].isalpha() and raw[start].isalpha():
+            raise ValueError(f'ch {ch} v {v.get("verse")}: lemma at {start} starts inside a word: {raw[max(0, start - 10):start + 10]!r}')
         raw = raw[:start] + '‖ ' + raw[start:]
     refs = [r for r in v.get('cross_refs', []) if r.get('source') != 'sancta']
     notes = {n['label']: n for n in v.get('notes', [])}
@@ -829,7 +866,7 @@ def write_argument(book, wiki):
         foot = footer(CATCHWORDS.get((BOOK, pg), ''))
         head = f'{{{{rh|{pg - 28}||}}}}' if k == 0 else f'{{{{rh|||{pg - 28}}}}}'  # k = 0 keeps the form of Mark's and Luke's published page
         text = re.sub(r'(?m)^(Who[sſ]e excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
-        (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(head) +
+        (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(rh_small_caps(head)) +
                                         '</noinclude>' + to_ls(sc_wiki(text)) +
                                         '<noinclude>' + to_ls(foot) + '</noinclude>\n'))
 
@@ -921,7 +958,7 @@ def main(argv):
             catch = CATCHWORDS.get((BOOK, wiki)) or (tail[-1].split()[-1] if tail else '')
         catch = CATCHWORDS.get((BOOK, wiki), catch)
         foot = footer(catch)
-        (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(header) +
+        (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(rh_small_caps(header)) +
                                           # the print's ‖ is a small raised mark; ″ read as quotes
                                           '</noinclude>' + to_ls(sc_wiki(body).replace('‖', '{{sup|‖}}')) + '<noinclude>' + to_ls(sc_wiki(foot)) + '</noinclude>\n'))
         report.append(f'{wiki} {p["src"]} ch{p["chapters"]} tokens {a}-{b} match {quality[n]:.0%}')

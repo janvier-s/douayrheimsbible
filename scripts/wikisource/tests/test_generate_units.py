@@ -212,3 +212,23 @@ def test_tidy_space_collapses_double_spaces():
     assert generate.tidy_space("text=∷ ''Exod''.}}∷  {{verse|chapter=13|verse=18}} the") == \
         "text=∷ ''Exod''.}}∷ {{verse|chapter=13|verse=18}} the"
     assert generate.tidy_space('a\n\nb') == 'a\n\nb'
+
+
+def test_rh_small_caps():
+    import generate
+    f = generate.rh_small_caps
+    assert f('{{rh|82|THE GOSPEL|CHA. VI.}}') == '{{rh|82|{{sc|the gospel}}|{{sc|Cha. VI.}}}}'
+    assert f('{{rh|CHA. XXI.|ACCORDING TO S. MATTHEW.|83 HOLY weeke.}}') == \
+        '{{rh|{{sc|Cha. XXI.}}|{{sc|according to s. matthew.}}|83 {{sc|Holy}} weeke.}}'
+    assert f('{{rh|HOLY weeke. 82|THE GOSPEL|CHA. XXI.}}') == '{{rh|{{sc|Holy}} weeke. 82|{{sc|the gospel}}|{{sc|Cha. XXI.}}}}'
+    assert f('{{rh|1||CHAP. I.}}') == '{{rh|1||{{sc|Chap. I.}}}}'
+    assert f('{{rh|4||Mt. Mr. Lu. Io.}}') == '{{rh|4||Mt. Mr. Lu. Io.}}'
+    assert f('{{rh|||12}}') == '{{rh|||12}}'
+    done = '{{rh|82|{{sc|the gospel}}|{{sc|Cha. VI.}}}}'
+    assert f(done) == done  # idempotent
+
+
+def test_lemma_must_start_a_word():
+    import generate
+    with pytest.raises(ValueError):
+        generate.render_verse({'verse': 1, 'text': 'by faith, let vs haue peace', 'lemmas': [[11, 6, 1]]}, 5)

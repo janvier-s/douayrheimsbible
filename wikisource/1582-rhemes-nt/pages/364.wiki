@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|336|THE ACTES|CHA. XV.}}</noinclude>Paul cho{{ls}}ing Silas departed, being deliuered of the brethren to the grace of God.
+<noinclude><pagequality level="1" user="" />{{rh|336|{{sc|the actes}}|{{sc|Cha. XV.}}}}</noinclude>Paul cho{{ls}}ing Silas departed, being deliuered of the brethren to the grace of God.
 
 {{verse|chapter=15|verse=41}} And he vvalked through Syria and Cilicia, confirming the Churches: {{MarginNote|margin=right|margin-width=65|text=''Luc. 10, 11.''}}* commaunding them to keepe the præcepts of the Apo{{ls}}tles and the Auncients.
 

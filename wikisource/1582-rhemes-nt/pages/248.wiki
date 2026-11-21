@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|220|THE GOSPEL|CHA. II.}}</noinclude>{{c|{{larger|{{sc|Chap. II.}}}}}}
+<noinclude><pagequality level="1" user="" />{{rh|220|{{sc|the gospel}}|{{sc|Cha. II.}}}}</noinclude>{{c|{{larger|{{sc|Chap. II.}}}}}}
 
 {{c|''At the reque{{ls}}t of his mother he vvorketh his fir{{ls}}t miracle, turning vvater into vvine at a mariage in Galilee, although the time of his manife{{ls}}tation be not yet come. 12 Then in Hieru{{ls}}alem at Pa{{ls}}che, being but one, and yet ob{{ls}}cure, he throweth out of the Temple mo{{ls}}t miraculou{{ls}}ly al the marchantes. 28 And being yet of the blind Iewes a{{ls}}ked a {{ls}}igne, he {{ls}}ignifieth {{ls}}o long before, that they {{ls}}hould kill him, but he wil ri{{ls}}e againe the third day. 23 Which al{{ls}}o pre{{ls}}ently they vvould doe, but that he knovving their fal{{ls}}es hartes (though many beleeue in him) vvil not tarie among them.''}}
 

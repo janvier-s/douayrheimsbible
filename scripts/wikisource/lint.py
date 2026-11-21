@@ -27,6 +27,7 @@ Checks (E = error, W = warning):
               or a modern form (w, j, double quote) appeared; fix the cause, or --allow-loss with --reason
   E-shift     a print feature turned into its modern sibling vs HEAD (ſ→s, vv→w); --allow-shift with --reason
   W-header    no {{rh}} running head
+  W-rh-caps   capital words in {{rh}} outside {{sc}} (owner: title in lowercase small caps, side words capitalized)
   W-catchword catchword in a footer {{rh}} cell: it belongs in {{continues|…}}
   W-signature printer's signature mark in the footer (owner: signatures are left out)
   W-nop       the next page opens a paragraph but this page does not end with {{nop}} on its own line
@@ -181,6 +182,10 @@ def lint(d, ov=None):
         blocks = re.findall(r'<noinclude>(.*?)</noinclude>', t, re.S)
         if not blocks or '{{rh|' not in blocks[0]:
             out.append(('W-header', n, 'no {{rh}} running head'))
+        for m in re.finditer(r'\{\{rh\|((?:[^{}]|\{\{[^{}]*\}\})*)\}\}', blocks[0] if blocks else ''):
+            bare = re.sub(r'\{\{sc\|[^{}]*\}\}', '', m.group(1))
+            if re.search(r'\b[A-Z]{2,}', re.sub(r'\b[IVXLC]+\.', '', bare)):
+                out.append(('W-rh-caps', n, f'capitals in the running head: use small caps ({m.group(0)[:50]})'))
         m = re.search(r'<pagequality level="(\d)" user="([^"]*)"', t)
         if m and int(m.group(1)) >= 3 and not m.group(2).strip():
             out.append(('E-status', n, f'pagequality level {m.group(1)} without a named proofreader: use level 1'))

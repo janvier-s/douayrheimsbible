@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|4|THE GOSPEL|CHA. I.}}</noinclude>begat {{sup|‖}} Io{{ls}}eph the {{sup|‖}} hu{{ls}}band of {{sc|Marie}}: {{MarginNote|margin=left|margin-width=65|text=∷ ''de qua''.}}∷ of vvhom vvas borne {{sc|Iesvs}}, vvho is called {{sc|Christ}}.⊣
+<noinclude><pagequality level="1" user="" />{{rh|4|{{sc|the gospel}}|{{sc|Cha. I.}}}}</noinclude>begat {{sup|‖}} Io{{ls}}eph the {{sup|‖}} hu{{ls}}band of {{sc|Marie}}: {{MarginNote|margin=left|margin-width=65|text=∷ ''de qua''.}}∷ of vvhom vvas borne {{sc|Iesvs}}, vvho is called {{sc|Christ}}.⊣
 
 {{verse|chapter=1|verse=17}} Therefore al the generations from Abraham vnto Dauid, fourtene generations. And from Dauid to the Tran{{ls}}migration of Babylon, fourtene generations. And from the Tran{{ls}}migration of Babylon vnto {{sc|Christ}}, fourtene generations.
 

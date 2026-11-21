@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|CHA. XXVI.|OF THE APOSTLES.|365}}</noinclude>haue brought him forth to you, and e{{ls}}pecially to thee, king Agrippa, that examination being made, I may haue vvhat to vvrite. {{verse|chapter=25|verse=27}} For it {{ls}}eemeth to me vvithout rea{{ls}}on, to {{ls}}end a pri{{ls}}oner, & not to {{ls}}ignifie {{MarginNote|margin=right|margin-width=65|text=∷ ''{{lang|grc|τὰς κατ ἀυτοῦ αἰτίας}}.''}}∷ his cau{{ls}}es.
+<noinclude><pagequality level="1" user="" />{{rh|{{sc|Cha. XXVI.}}|{{sc|of the apostles.}}|365}}</noinclude>haue brought him forth to you, and e{{ls}}pecially to thee, king Agrippa, that examination being made, I may haue vvhat to vvrite. {{verse|chapter=25|verse=27}} For it {{ls}}eemeth to me vvithout rea{{ls}}on, to {{ls}}end a pri{{ls}}oner, & not to {{ls}}ignifie {{MarginNote|margin=right|margin-width=65|text=∷ ''{{lang|grc|τὰς κατ ἀυτοῦ αἰτίας}}.''}}∷ his cau{{ls}}es.
 
 {{c|{{larger|{{sc|Chap. XXVI.}}}}}}
 

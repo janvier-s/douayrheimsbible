@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|166|THE GOSPEL|CHA. X.}}</noinclude>fir{{ls}}t to take my leaue of them that are at home. {{verse|chapter=9|verse=62}} {{sc|Iesvs}} {{ls}}aid to him, {{sup|‖}} No man putting his hand to the plough, and looking backe, is apt for the kingdom of God.
+<noinclude><pagequality level="1" user="" />{{rh|166|{{sc|the gospel}}|{{sc|Cha. X.}}}}</noinclude>fir{{ls}}t to take my leaue of them that are at home. {{verse|chapter=9|verse=62}} {{sc|Iesvs}} {{ls}}aid to him, {{sup|‖}} No man putting his hand to the plough, and looking backe, is apt for the kingdom of God.
 
 {{c|{{larger|A N N O T A T I O N S}}}}{{c|{{sc|Chap. IX.}}}}
 
