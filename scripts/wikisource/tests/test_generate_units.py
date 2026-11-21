@@ -199,3 +199,9 @@ def test_dropcap_after_margin_note_opens_a_paragraph():
     import generate
     S = [{'kind': 'verse', 'text': '⟦mn:0⟧{{MOUTER|The Goſpel vpō the 19 Sunday.}}{{dropinitial|A|fl={{verse|chapter=22|verse=1}}}}ND'}]
     assert generate.opens_para(S, 0, set())
+
+
+@needs_ocr
+def test_john_argument_heading_centred(tmp_path):
+    run('john', 242, tmp_path, 3)
+    assert '{{c|{{larger|Who{{ls}}e excellencie' in (tmp_path / '243.wiki').read_text()

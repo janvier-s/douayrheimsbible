@@ -329,3 +329,15 @@ def test_adopt_shifted_mirror_with_joined_xrefs(tmp_path):
     applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert unlocated == [] and v[0]['cross_refs'][0]['text'] == 'Pſ. 24, 19.' and v[1]['xrefs'][0] == 'Pſ. 24, 19. · Act. 2, 1.'
+
+
+def test_adopt_weak_context_done_is_not_trusted(tmp_path):
+    f = tmp_path / 'john.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [
+        {'verse': 18, 'text': 'one', 'cross_refs': [{'text': 'Pſ. 40, 10.'}]},
+        {'verse': 12, 'text': 'the ſonne of perdition, that the ſcripture', 'cross_refs': [{'text': 'Ps. 40, 10. 108, 8.'}]}]}]},
+        ensure_ascii=False) + '\n')
+    c = ladder.Conflict(294, 'Pſ.', 'Ps.', ['perdition,', 'that', 'the'], ['40,', '10.', '108,'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    v = json.loads(f.read_text())['chapters'][0]['verses']
+    assert len(applied) == 1 and v[1]['cross_refs'][0]['text'] == 'Pſ. 40, 10. 108, 8.'

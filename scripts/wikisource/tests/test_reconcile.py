@@ -102,3 +102,14 @@ def test_frozen_marked():
 def test_ocr_by_page_missing_source_is_empty():
     assert reconcile.ocr_by_page('matthew', 'transkribus') == {}
     assert min(reconcile.ocr_by_page('matthew', 'tesseract')) == 31
+
+
+def test_verify_decisions_against_pages():
+    import ladder
+    head = '<noinclude><pagequality level="1" user="" />{{rh|1|X|Y}}</noinclude>'
+    pages = {216: head + 'the 13 Sunday after Pentecoſt. And it came<noinclude></noinclude>\n',
+             217: head + 'his Lords Paſſion beheaded, laſt<noinclude></noinclude>\n'}
+    ok = ladder.Decision(ladder.Conflict(216, 'Pentecoſt.', 'Pentecost.', ['13', 'Sunday', 'after'], ['And', 'it', 'came']), 3, 'committed', 'x')
+    bad = ladder.Decision(ladder.Conflict(217, 'Paſsion', 'Paſſion', ['his', 'Lords'], ['beheaded,', 'laſt']), 3, 'committed', 'x')
+    open4 = ladder.Decision(ladder.Conflict(217, 'a', 'b', [], []), 4, '', 'x')
+    assert reconcile.verify_decisions([ok, bad, open4], pages) == [bad]

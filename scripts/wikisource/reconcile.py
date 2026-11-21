@@ -171,6 +171,44 @@ def cmd_status(write=False):
         write_like(MANIFEST, manifest)
 
 
+def verify_decisions(decisions, pages):
+    """Decisions whose winning form the page does not show at its place. pages: {n: wikitext};
+    the word is looked for on its page and the next (it may cross the break), with at least two
+    context words around it."""
+    import ladder
+    bad = []
+    for d in decisions:
+        if not d.winner:
+            continue
+        c = d.conflict
+        want = ladder.core(c.committed if d.winner == 'committed' else c.generated)
+        ctx_b = {ladder.fold(w) for w in c.before}
+        ctx_a = {ladder.fold(w) for w in c.after}
+        ok = False
+        for n in (c.page, c.page + 1):
+            ws = ladder.words(ladder._body(pages.get(n, '')))
+            for i, w in enumerate(ws):
+                if ladder.core(w.replace(ladder.SC_MARK, '')) == want:
+                    hits = len(ctx_b & {ladder.fold(x) for x in ws[max(0, i - 4):i]}) + \
+                        len(ctx_a & {ladder.fold(x) for x in ws[i + 1:i + 5]})
+                    if hits >= min(2, len(ctx_b) + len(ctx_a)):
+                        ok = True
+        if not ok:
+            bad.append(d)
+    return bad
+
+
+def cmd_verify(book):
+    cfg = load_books(REPO)[book]
+    pages = {n: (PAGES / f'{n}.wiki').read_text() for n in range(cfg['first'], cfg['last'] + 2) if (PAGES / f'{n}.wiki').exists()}
+    bad = verify_decisions(load_decisions(book), pages)
+    for d in bad:
+        c = d.conflict
+        print(f'  page {c.page}: {d.winner} {c.committed if d.winner == "committed" else c.generated} not shown ({d.evidence})')
+    print(f'{book}: {len(bad)} decisions not shown on the pages')
+    return bad
+
+
 def ocr_by_page(book, source):
     """OCR page text keyed by wiki page, numbered as generate.py numbers them (after the Argument)."""
     import generate
@@ -270,6 +308,8 @@ def main(argv):
         cmd_ladder(rest[0])
     elif cmd == 'adopt':
         cmd_adopt(rest[0], rest[1:])
+    elif cmd == 'verify':
+        sys.exit(1 if cmd_verify(rest[0]) else 0)
     elif cmd == 'status':
         cmd_status('--write' in rest)
     else:

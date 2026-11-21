@@ -311,7 +311,8 @@ def lint(d, ov=None):
         nxt = bodies.get(n + 1)
         ends = body.rstrip()
         lead = LEAD_NOTES.sub('', nxt or '')
-        new_work = lead.startswith(('{{c|{{x-larger|', '{{c|{{xx-larger|'))  # a book or Argument title: its own transclusion
+        # a book, Argument or section title (THE SVMME…): its own transclusion; chapter headings are not
+        new_work = lead.startswith(('{{c|{{x-larger|', '{{c|{{xx-larger|', '{{c|{{larger|THE '))
         if nxt is not None and OPENS_PARA.match(lead) and not new_work and not ends.endswith(('\n{{nop}}', '|}')):
             out.append(('W-nop', n, f'page {n + 1} opens a paragraph: end this page with {{{{nop}}}} on its own line'))
     return out

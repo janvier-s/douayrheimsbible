@@ -828,7 +828,7 @@ def write_argument(book, wiki):
         pg = wiki + k
         foot = footer(CATCHWORDS.get((BOOK, pg), ''))
         head = f'{{{{rh|{pg - 28}||}}}}' if k == 0 else f'{{{{rh|||{pg - 28}}}}}'  # k = 0 keeps the form of Mark's and Luke's published page
-        text = re.sub(r'(?m)^(Whose excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
+        text = re.sub(r'(?m)^(Who[sſ]e excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
         (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(head) +
                                         '</noinclude>' + to_ls(sc_wiki(text)) +
                                         '<noinclude>' + to_ls(foot) + '</noinclude>\n'))

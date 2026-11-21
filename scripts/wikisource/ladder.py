@@ -317,7 +317,7 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
 # ---- adopt ---------------------------------------------------------------------------
 
 _SEP = r'(?:\s|<[^>]+>|⟦[^⟧]*⟧|\[\d+\]|[.,;:?!()\]&⊢⊣])+'  # spaces, tags, sentinels, [1] marks, punctuation
-_ADOPT_COMBOS = [(3, 3), (2, 2), (1, 1), (2, 0), (0, 2), (1, 0), (0, 1), (0, 0)]
+_ADOPT_COMBOS = [(3, 3), (3, 2), (2, 3), (2, 2), (3, 0), (0, 3), (1, 1), (2, 0), (0, 2), (1, 0), (0, 1), (0, 0)]
 
 
 def _leaves(obj, out, path=()):
@@ -410,15 +410,19 @@ def adopt(files, decisions, ov, lock):
             found = None
             for kb, ka in _ADOPT_COMBOS:
                 before, after = c.before[-kb:] if kb else [], c.after[:ka]
-                if [1 for f in data for _ in _find(leaves[f], before, c.committed, after)]:
-                    found = 'done'  # already applied here; a generated form elsewhere is another place
-                    break
+                if len(before) < kb or len(after) < ka:
+                    continue
+                done = [1 for f in data for _ in _find(leaves[f], before, c.committed, after)]
                 hits = [(f, h) for f in data for h in _find(leaves[f], before, c.generated, after)]
+                full = (kb, ka) == (min(3, len(c.before)), min(3, len(c.after)))
+                if done and (not hits or full):
+                    found = 'done'  # already applied (with the full context, a generated form is another place)
+                    break
+                if done or len(hits) > 1:
+                    found = 'ambiguous'
+                    break
                 if len(hits) == 1:
                     found = hits[0]
-                    break
-                if len(hits) > 1:
-                    found = 'ambiguous'
                     break
             if found == 'done':
                 continue

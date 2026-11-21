@@ -80,3 +80,8 @@ def test_w_nop_exempts_table_end(tmp_path):
 def test_w_nop_not_before_a_new_book_or_argument(tmp_path):
     assert 'W-nop' not in codes(tmp_path, 'end of the gospel.', '{{c|{{x-larger|THE ARGVMENT OF}}}}\n\ntext')
     assert 'W-nop' not in codes(tmp_path, 'end of the argument.', '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n\ntext')
+
+
+def test_w_nop_not_before_a_new_section_but_before_a_chapter(tmp_path):
+    assert 'W-nop' not in codes(tmp_path, 'end of Iohn.', '{{c|{{larger|THE SVMME, AND THE ORDER}}}}\n\ntext')
+    assert 'W-nop' in codes(tmp_path, 'end of chapter.', '{{c|{{larger|{{sc|Chap. II.}}}}}}\n\ntext')
