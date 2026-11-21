@@ -1,6 +1,6 @@
 """Lint generated Wikisource page files. Read-only: fix the generator or the data, regenerate.
 
-usage: lint.py PAGES_DIR [--only CODE,CODE] [--skip CODE,CODE] [--quiet]
+usage: rh.py lint PAGES_DIR [--only CODE,CODE] [--skip CODE,CODE] [--quiet]
                [--allow-loss FEATURE:SCOPE[,...]] [--allow-shift FEATURE:SCOPE[,...]] --reason TEXT
 SCOPE is *, a page n or a range a-b; features are listed in fidelity.py.
 Exit status 1 if any error is found (warnings do not fail).

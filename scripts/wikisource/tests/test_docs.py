@@ -156,3 +156,20 @@ def test_every_section_reference_exists():
     for doc in DOCS:
         missing = section_refs(doc.read_text()) - known
         assert not missing, (doc.name, sorted(missing))
+
+
+# ---- Phase 3: the docs name rh.py commands, not the old scripts ----
+
+OLD_SCRIPTS = ['triage', 'reconcile', 'lint', 'generate', 'wikipost', 'wikifetch', 'check_live_edits', 'ocrdiff',
+               'xml_json_diff', 'transkribus']
+OLD_NAME = re.compile(r'(?<![/\w])(' + '|'.join(OLD_SCRIPTS) + r')\.py\b')
+RH_CMD = re.compile(r'rh\.py ((?:diff (?:xml|ocr))|[a-z][a-z-]*)')
+
+
+def test_docs_name_rh_commands():
+    import rh
+    old = [(d.name, m.group(0)) for d in DOCS for m in OLD_NAME.finditer(d.read_text())]
+    assert not old, old
+    cmds = [(d.name, m.group(1)) for d in DOCS for m in RH_CMD.finditer(d.read_text())]
+    assert cmds, 'the docs should name at least one rh.py command'
+    assert all(c in rh.COMMANDS for _, c in cmds), [x for x in cmds if x[1] not in rh.COMMANDS]

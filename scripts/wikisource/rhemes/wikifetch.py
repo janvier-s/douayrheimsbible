@@ -1,6 +1,6 @@
 """Fetch live Page: wikitext from en.wikisource and diff it against our pages/.
 
-usage: wikifetch.py FIRST-LAST OUT_DIR [--index Index_title.pdf]
+usage: rh.py fetch FIRST-LAST OUT_DIR [--index Index_title.pdf]
 Writes OUT_DIR/<n>.wiki (live text), OUT_DIR/revs.json ({n: {revid, user, timestamp}}) and prints
 which pages differ from wikisource/1582-rhemes-nt/pages. Read-only, no login needed.
 """

@@ -26,13 +26,13 @@ check on the Transkribus text, never auto-fixes. Reviewed-and-fine findings go i
 scripts/wikisource/triage-accepted.txt (--accept) and are then hidden.
 
 Usage:
-  triage.py                         overview of all books
-  triage.py acts romans             overview of chosen books
-  triage.py acts --detail text      list findings of one kind (cap with --limit, default 40)
-  triage.py acts --detail all --tsv out.tsv
-  triage.py --accept acts text      add all current acts/text findings to the accepted list
-  triage.py --no-pages              skip page/lint section
-  triage.py --live                  findings re-tested against the live pages (31-451) and the
+  rh.py triage                     overview of all books
+  rh.py triage acts romans         overview of chosen books
+  rh.py triage acts --detail text  list findings of one kind (cap with --limit, default 40)
+  rh.py triage acts --detail all --tsv out.tsv
+  rh.py triage --accept acts text  add all current acts/text findings to the accepted list
+  rh.py triage --no-pages          skip page/lint section
+  rh.py triage --live              findings re-tested against the live pages (31-451) and the
                                     Transkribus OCR text; --live <book> --detail <kind>
                                     [--status tk-xml|tk-none|tk-json] lists them
 """

@@ -1,6 +1,6 @@
 """Contact sheet of scan crops for mark differences, for checking by eye.
 
-python3 -I scripts/wikisource/cropsheet.py <markdiff.json> <out.jpg> <chapters a-b> [filter]
+python3 -I scripts/wikisource/rh.py crops <markdiff.json> <out.jpg> <chapters a-b> [filter]
 
 filter: 'star' (ours * / OCR none, the default), 'all'.
 """

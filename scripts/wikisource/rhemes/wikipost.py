@@ -1,8 +1,8 @@
 """Post generated pages to en.wikisource (Page: namespace), safely.
 
 usage:
-  wikipost.py --check-login
-  wikipost.py FIRST-LAST [--summary TEXT] [--post] [--diff] [--create (also create pages that do not exist yet; createonly, never overwrites)] [--delay SECONDS (default 12: Wikisource rate-limits after about 8 edits)]
+  rh.py post --check-login
+  rh.py post FIRST-LAST [--summary TEXT] [--post] [--diff] [--create (also create pages that do not exist yet; createonly, never overwrites)] [--delay SECONDS (default 12: Wikisource rate-limits after about 8 edits)]
 
 Default is a DRY RUN: it logs in, fetches each live page, and prints what would change. Nothing is
 written without --post (and --summary). Rules it enforces:

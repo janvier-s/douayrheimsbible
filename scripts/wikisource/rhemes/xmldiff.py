@@ -3,7 +3,7 @@
 Per verse: word diff of the text; the margin notes in order (text + the two words before the anchor).
 Per chapter: summary text and the annotation text. Writes a TSV and prints a summary.
 
-Usage: xml_json_diff.py <book> [out.tsv]      (book: matthew mark luke john)
+Usage: rh.py diff xml <book> [out.tsv]      (book: matthew mark luke john)
 """
 from pathlib import Path
 import difflib, functools, json, re, sys, unicodedata

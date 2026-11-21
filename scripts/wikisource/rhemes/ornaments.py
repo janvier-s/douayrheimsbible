@@ -6,10 +6,10 @@ than type, so they are found as dense blobs in a smoothed ink map. Nothing is re
 cleaning is deskew-free levels + threshold + despeckle; potrace then vectorises the
 cleaned bitmap.
 
-  uv run --with numpy,scipy,pillow python scripts/wikisource/ornaments.py detect OUT [book...]
-  uv run --with numpy,scipy,pillow python scripts/wikisource/ornaments.py clean OUT
-  uv run --with numpy,scipy,pillow python scripts/wikisource/ornaments.py sheet OUT
-  uv run --with numpy,scipy,pillow,scikit-image python scripts/wikisource/ornaments.py dedupe OUT
+  uv run --with numpy,scipy,pillow python scripts/wikisource/rh.py ornaments detect OUT [book...]
+  uv run --with numpy,scipy,pillow python scripts/wikisource/rh.py ornaments clean OUT
+  uv run --with numpy,scipy,pillow python scripts/wikisource/rh.py ornaments sheet OUT
+  uv run --with numpy,scipy,pillow,scikit-image python scripts/wikisource/rh.py ornaments dedupe OUT
 """
 import difflib
 import json

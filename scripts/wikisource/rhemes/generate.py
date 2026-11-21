@@ -1,6 +1,6 @@
 """Wikisource page generator v2: page breaks and paragraphs from the OCR.
 
-python3 -I scripts/wikisource/generate.py <repo> <book> <first-wiki-page> <outdir> [max-pages]
+python3 -I scripts/wikisource/rh.py generate <repo> <book> <first-wiki-page> <outdir> [max-pages]
 
 Builds one token stream for the book from odr-original (headings, verses,
 annotations), aligns the sancta-scan OCR of each page to it, cuts the stream

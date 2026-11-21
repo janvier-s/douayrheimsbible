@@ -21,7 +21,7 @@ boxes estimated from the line: the line's x extent shared out by character count
 Those rows carry conf 50 and the manifest records words_estimated, so box-based
 checks (crops, indents) know they are approximate.
 
-Usage: python3 scripts/wikisource/transkribus.py <strip_dir> <xml_dir> [out_dir]
+Usage: python3 -I scripts/wikisource/rh.py ocr-split <strip_dir> <xml_dir> [out_dir]
   e.g. transkribus.py ~/facsimiles/transkribus/mark/h30k ~/facsimiles/transkribus/mark/OCR
 """
 from pathlib import Path

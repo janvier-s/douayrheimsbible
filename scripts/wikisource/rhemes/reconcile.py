@@ -1,6 +1,7 @@
 """Reconcile the committed Wikisource pages with generate.py (spec §4.1).
 
-python3 -I scripts/wikisource/reconcile.py diff|ladder|adopt|write|status ...
+python3 -I scripts/wikisource/rh.py reconcile diff|ladder|adopt|write|verify BOOK ...
+python3 -I scripts/wikisource/rh.py status [--write]
 """
 import collections
 import difflib

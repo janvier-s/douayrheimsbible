@@ -48,3 +48,14 @@ def test_package_imports_are_relative():
            for i, line in enumerate(p.read_text().splitlines(), 1)
            if (m := re.match(r'\s*(?:from|import) (\w+)\b', line)) and m.group(1) in names]
     assert not bad, bad
+
+
+def test_usage_texts_name_rh_commands():
+    """Module docstrings are printed as usage; they name rh.py commands, not the old scripts."""
+    import ast
+    import re
+    old = re.compile(r'(?:scripts/wikisource/|^\s*(?:[Uu]sage:\s*)?)(triage|reconcile|lint|generate|wikipost|wikifetch|'
+                     r'check_live_edits|ocrdiff|xml_json_diff|transkribus|cropsheet)\.py\b', re.M)
+    bad = [(p.name, m.group(0)) for p in (HERE / 'rhemes').glob('*.py')
+           for m in old.finditer(ast.get_docstring(ast.parse(p.read_text())) or '')]
+    assert not bad, bad

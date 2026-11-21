@@ -12,7 +12,7 @@ Known OCR habits are folded before comparing: ſ/s/f, vv/w/vy/vu, u/v, i/j, l fo
 at word start, † read as f/t glued to the next word, hyphen breaks, macrons (vpō = vpon).
 Separate passes report w vs vv (glyph class per witness) and Tesseract's ſ evidence.
 
-Usage: python3 scripts/wikisource/ocrdiff.py <book> <out_dir>
+Usage: python3 -I scripts/wikisource/rh.py diff ocr <book> <out_dir>
 Writes <out_dir>/<book>-findings.tsv (one row per location) and prints a summary
 as JSON for the report. Needs transkribus.py's split (pages/<book>/manifest.json).
 """

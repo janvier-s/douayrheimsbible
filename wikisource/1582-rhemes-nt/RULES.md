@@ -2,13 +2,13 @@
 
 These are the rules for the 1582 Rhemes New Testament on English Wikisource ([Index:1582_Rhemes_New_Testament.pdf](https://en.wikisource.org/wiki/Index:1582_Rhemes_New_Testament.pdf)), for the data the pages are generated from (`static/data/odr-original`, `static/data/odr`) and for the TEI source `A16049.xml`. This file is the authority: where another doc disagrees, this one wins. [PLAYBOOK.md](PLAYBOOK.md) says how to do the work.
 
-Every rule ends with an `Enforced by:` line naming the lint code (`E-…` error, `W-…` warning, from `scripts/wikisource/lint.py`), the fidelity feature (`scripts/wikisource/fidelity.py`) or the tool that checks it. A rule that no code checks says `review (no code)`. The [Enforcement index](#enforcement-index) maps each code and feature back to its rule; `scripts/wikisource/tests/test_docs.py` keeps the two in step.
+Every rule ends with an `Enforced by:` line naming the lint code (`E-…` error, `W-…` warning, from `scripts/wikisource/rhemes/lint.py`), the fidelity feature (`scripts/wikisource/rhemes/fidelity.py`) or the tool that checks it. A rule that no code checks says `review (no code)`. The [Enforcement index](#enforcement-index) maps each code and feature back to its rule; `scripts/wikisource/tests/test_docs.py` keeps the two in step.
 
 ## 1. The print wins
 
 ### 1.1 Reproduce the facsimile
 
-Reproduce the 1582 print as faithfully as possible: long s, u/v and i/j, vv and w, macrons and titlos, ligatures, roman and italic, small caps, the print's marks and its layout. Never modernise or normalise a print form. Fidelity features are counted on every page: lint refuses a drop against git `HEAD`, and `wikipost.py` against the live revision. A drop that is meant (one of §2, or a reading settled by the evidence ladder, §6.3) needs `--allow-loss FEATURE:SCOPE` or `--allow-shift FEATURE:SCOPE` with `--reason "…"`, and the reason goes in the commit message. A shift is a feature that turned into its modern sibling (ſ→s, vv→w).
+Reproduce the 1582 print as faithfully as possible: long s, u/v and i/j, vv and w, macrons and titlos, ligatures, roman and italic, small caps, the print's marks and its layout. Never modernise or normalise a print form. Fidelity features are counted on every page: lint refuses a drop against git `HEAD`, and `rh.py post` against the live revision. A drop that is meant (one of §2, or a reading settled by the evidence ladder, §6.3) needs `--allow-loss FEATURE:SCOPE` or `--allow-shift FEATURE:SCOPE` with `--reason "…"`, and the reason goes in the commit message. A shift is a feature that turned into its modern sibling (ſ→s, vv→w).
 
 Enforced by: `E-loss`, `E-shift`, wikipost, golden tests
 
@@ -164,7 +164,7 @@ Enforced by: `E-tag`, `E-brace`, `E-sentinel`
 
 ### 5.2 Honest page status
 
-The generator writes level 1 (not proofread). Level 3 or more needs a named proofreader who read the page against the scan. `wikipost.py` keeps the live page's level and proofreader, so a post never demotes a human's proofreading.
+The generator writes level 1 (not proofread). Level 3 or more needs a named proofreader who read the page against the scan. `rh.py post` keeps the live page's level and proofreader, so a post never demotes a human's proofreading.
 
 Enforced by: `E-status`, wikipost
 
@@ -238,7 +238,7 @@ Enforced by: `E-gap`
 
 ### 6.1 Pages come from the data
 
-The pages are generated from `static/data/odr-original` by `generate.py`. Never edit a generated page: fix the data or the generator and regenerate. The frozen pages (`manifest.json` `source: frozen`: front matter 1–30, the tables 309–313 and 402–404) have no generator and are edited by hand, still under lint's fidelity check. No script sweeps over `pages/*.wiki` or the live pages.
+The pages are generated from `static/data/odr-original` by `rh.py generate` (`scripts/wikisource/rhemes/generate.py`). Never edit a generated page: fix the data or the generator and regenerate. The frozen pages (`manifest.json` `source: frozen`: front matter 1–30, the tables 309–313 and 402–404) have no generator and are edited by hand, still under lint's fidelity check. No script sweeps over `pages/*.wiki` or the live pages.
 
 Enforced by: golden tests, `E-loss`, `E-shift`
 
@@ -270,13 +270,13 @@ Enforced by: wikipost, review (no code)
 
 ### 7.2 Never revert a human edit
 
-`wikipost.py` skips a page whose newest revision is by someone else. Check that editor's change against the scan. A valid change goes into the data, and only then is the page posted with `--adopt-others`. An invalid one is reported to the owner, never silently overwritten.
+`rh.py post` skips a page whose newest revision is by someone else. Check that editor's change against the scan. A valid change goes into the data, and only then is the page posted with `--adopt-others`. An invalid one is reported to the owner, never silently overwritten.
 
 Enforced by: wikipost
 
 ### 7.3 No fidelity loss against live
 
-`wikipost.py` refuses, dry run included, any page whose print features would drop against the live revision, unless `--allow-loss`/`--allow-shift FEATURE:SCOPE --reason "…"` covers it. The edit carries `baserevid`, so MediaWiki refuses it if the page changed in the meantime.
+`rh.py post` refuses, dry run included, any page whose print features would drop against the live revision, unless `--allow-loss`/`--allow-shift FEATURE:SCOPE --reason "…"` covers it. The edit carries `baserevid`, so MediaWiki refuses it if the page changed in the meantime.
 
 Enforced by: wikipost
 

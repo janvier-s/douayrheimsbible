@@ -1,9 +1,9 @@
 # Book status: 1582 Rhemes NT on Wikisource
 
-State on 2026-11-21. From Phase 3 on, `rh status` will generate this table from `manifest.json` and `books.json`; until then, update it by hand when a book's state changes.
+State on 2026-11-21. Update it by hand when a book's state changes.
 
 - **Checked:** the data (`odr-original`, and `odr` for content) was read against the 1582 scans and fixed.
-- **Generated:** `generate.py` writes the pages, and a golden test (`books.json` `golden: true`) holds them byte for byte.
+- **Generated:** `rh.py generate` writes the pages, and a golden test (`books.json` `golden: true`) holds them byte for byte.
 - **Proofread:** a person read the pages against the scan (Wikisource level 3 or more, with a named proofreader).
 - **Posted:** the live page equals `pages/<n>.wiki` (`manifest.json` `status: posted`).
 
