@@ -13,6 +13,7 @@ import csv, json, re, sys
 
 sys.path.insert(0, str(Path(__file__).parent))
 from jsonfmt import write_like  # noqa: E402
+from rhemes.loc import find_text  # noqa: E402,F401  (moved; apply_wordfixes imports it from here)
 
 ORIG = Path(__file__).resolve().parents[2] / 'static/data/odr-original'
 VV = ('vv', 'vy', 'vu', 'uv', 'yv')
@@ -45,38 +46,6 @@ def respell(data, tk):
 
 def nvv(w):
     return len(re.findall('|'.join(VV), w.lower()))
-
-
-def find_text(book_json, anns, loc):
-    """(container, key) holding the text at loc."""
-    m = re.fullmatch(r'arg:(\d+|title)', loc)
-    if m:
-        it = book_json['intros'][0 if m.group(1) == 'title' else int(m.group(1))]
-        return it, 'title' if m.group(1) == 'title' else 'text'
-    m = re.fullmatch(r'(\d+):sum(?:/n(.+))?', loc)
-    if m:
-        ch = book_json['chapters'][int(m.group(1)) - 1]
-        if m.group(2):
-            return next(n for n in ch['summary_notes'] if str(n.get('marker')) == m.group(2)), 'text'
-        return ch, 'summary'
-    m = re.fullmatch(r'(\d+):(\d+)a(\d+)(:title|/mn(.+))?', loc)
-    if m:
-        a = anns[int(m.group(1))]['annotations'][int(m.group(3)) - 1]
-        if m.group(4) == ':title':
-            return a, 'title'
-        if m.group(5):
-            return next(n for n in a['notes'] if str(n.get('marker')) == m.group(5)), 'text'
-        return a, 'text'
-    m = re.fullmatch(r'(\d+):(\d+)(?:/note(.+)|/cr(\d+))?', loc)
-    if m:
-        v = book_json['chapters'][int(m.group(1)) - 1]['verses'][int(m.group(2)) - 1]
-        assert v['verse'] == int(m.group(2))
-        if m.group(3):
-            return next(n for n in v['notes'] if str(n.get('label')) == m.group(3)), 'text'
-        if m.group(4):
-            return v['cross_refs'][int(m.group(4)) - 1], 'text'
-        return v, 'text'
-    raise ValueError(loc)
 
 
 def replace_nth(text, word, occ, new):
