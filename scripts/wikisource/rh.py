@@ -23,6 +23,8 @@ COMMANDS = {
     'ocr-split': ('transkribus', []),    # STRIP_DIR XML_DIR [OUT]
     'crops': ('cropsheet', []),          # MARKDIFF.json OUT.jpg A-B [filter]
     'ornaments': ('ornaments', []),      # detect|clean|sheet|dedupe|commons|review OUT … (needs numpy/scipy)
+    'fix check': ('fixes', ['check']),   # [BOOK…] [--repo R] [--fixes D]
+    'fix apply': ('fixes', ['apply']),   # BOOK [--write] [--only ID,…] [--repo R] [--fixes D]
 }
 
 
@@ -43,7 +45,12 @@ def main(argv):
         print(__doc__ + '\ncommands:\n' + '\n'.join(f'  {c}' for c in COMMANDS))
         return 2
     mod, args = r
-    return importlib.import_module(f'rhemes.{mod}').main(args)
+    from rhemes.lock import LockHeld
+    try:
+        return importlib.import_module(f'rhemes.{mod}').main(args)
+    except LockHeld as e:
+        print(e, file=sys.stderr)
+        return 3
 
 
 if __name__ == '__main__':

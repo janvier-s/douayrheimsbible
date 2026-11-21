@@ -1,6 +1,7 @@
 """The odr-data lock (RULES §6.2): a folder in the git common dir, made with mkdir, so only one
 writer touches the data or the pages at a time. In a worktree the common dir is the main checkout's .git."""
 import contextlib
+import os
 import subprocess
 from pathlib import Path
 
@@ -12,6 +13,8 @@ class LockHeld(RuntimeError):
 
 
 def lock_path():
+    if os.environ.get('RHEMES_LOCK'):  # tests point it elsewhere
+        return Path(os.environ['RHEMES_LOCK'])
     common = subprocess.run(['git', '-C', str(paths.REPO), 'rev-parse', '--git-common-dir'],
                             capture_output=True, text=True, check=True).stdout.strip()
     return (paths.REPO / common).resolve() / 'odr-data.lock'
