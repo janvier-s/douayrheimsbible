@@ -10,4 +10,4 @@
 
 {{verse|chapter=4|verse=33}} And vvith many {{ls}}uch parables he {{ls}}pake to them the vvord, according as they vvere able to heare: {{verse|chapter=4|verse=34}} and vvithout parable he did not {{ls}}peake vnto them. but apart, he explicated al things to his Di{{ls}}ciples.
 
-{{verse|chapter=4|verse=35}} And he {{ls}}aith to them in that day, vvhen euening vvas come, {{MarginNote|margin=right|margin-width=65|text=''Mt. 8, 23. Lu. 8, 22.''}}* Let vs pa{{ls}}{{ls}}e ouer to the other {{ls}}ide. {{verse|chapter=4|verse=36}} And dimi{{ls}}sing the multitude, they take him {{ls}}o as he vvas in the boate: and there<noinclude>{{rh|||vvere}}</noinclude>
+{{verse|chapter=4|verse=35}} And he {{ls}}aith to them in that day, vvhen euening vvas come, {{MarginNote|margin=right|margin-width=65|text=''Mt. 8, 23. Lu. 8, 22.''}}* Let vs pa{{ls}}{{ls}}e ouer to the other {{ls}}ide. {{verse|chapter=4|verse=36}} And dimi{{ls}}sing the multitude, they take him {{ls}}o as he vvas in the boate: and there<noinclude>{{continues|vvere}}</noinclude>
