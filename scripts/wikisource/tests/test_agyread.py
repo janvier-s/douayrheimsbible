@@ -243,3 +243,16 @@ def test_row_without_occ_counts_only_when_unique_in_its_loc():
     rows = {'mark': [dict(cls='w_for_vv', loc='1:1', data='vvas'), dict(cls='w_for_vv', loc='1:2', data='who')]}
     key = agyread.select_key(boxes, rows, 10, 0, 1)
     assert [(k['loc'], k['truth']) for k in key] == [('1:2', 'vvho')]
+
+
+def test_ordinary_sample_is_even_across_kinds():
+    boxes = {'john': {**{(f'1:{i}', f'vvas{i}', 0): _box(f'vvas{i}') for i in range(40)},
+                      **{(f'2:{i}', f'frō{i}', 0): _box(f'frō{i}') for i in range(4)}}}
+    key = agyread.select_key(boxes, {'john': []}, 0, 6, 1)
+    assert sum('macron' in k['kinds'] for k in key) == 2 and len(key) == 6
+
+
+def test_macron_words_count_even_when_the_ocr_misread_them():
+    boxes = {'mark': {('1:1', 'incōtinent', 0): _box('incōtinent', 'incontinent', 'incétinent')}}
+    key = agyread.select_key(boxes, {'mark': []}, 0, 3, 1)
+    assert [(k['truth'], k['stratum']) for k in key] == [('incōtinent', 'hard')]

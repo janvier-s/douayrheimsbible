@@ -188,11 +188,17 @@ def select_key(boxes, rows, n_hard=150, n_ordinary=150, seed=1582):
         for k, v in sorted(boxes[book].items()):
             if (book, k) in seen or not kinds(k[1]) - {'wording'}:
                 continue
-            if fold(v['tk']) == fold(v['ts']) == fold(k[1]):
-                ordinary.append(_item(book, k[0], k[1], v, 'ordinary'))
+            agree = fold(v['tk']) == fold(v['ts']) == fold(k[1])
+            if agree or 'macron' in kinds(k[1]):   # macron words are rare (~50 in Mark–John): take misread ones too
+                ordinary.append(_item(book, k[0], k[1], v, 'ordinary' if agree else 'hard'))
     rnd = random.Random(seed)
     pick = lambda xs, n: rnd.sample(xs, n) if len(xs) > n else xs
-    return sorted(pick(hard, n_hard) + pick(ordinary, n_ordinary), key=lambda x: x['id'])
+    # ordinary: an even share per kind (macron words are rare: a plain sample can miss them all)
+    chosen, ks = [], ('macron', 'longs', 'wvv')
+    for i, k in enumerate(ks):
+        pool = [x for x in ordinary if k in x['kinds'] and x not in chosen]
+        chosen += pick(pool, (n_ordinary - len(chosen)) // (len(ks) - i))
+    return sorted(pick(hard, n_hard) + chosen, key=lambda x: x['id'])
 
 
 def build_key(books=('mark', 'luke', 'john'), **kw):
