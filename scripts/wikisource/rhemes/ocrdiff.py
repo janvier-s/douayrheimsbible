@@ -286,9 +286,8 @@ def wclass_ocr(w):
 
 # ---------------------------------------------------------------- run
 
-def run(book, out_dir):
-    out_dir = Path(out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+def _align_sources(book):
+    """(body, margin, D, src): the data streams and each OCR's body words aligned to them."""
     body, margin = data_streams(book)
     D = [w for w, _, _ in body]
     src = {}
@@ -297,6 +296,37 @@ def run(book, out_dir):
         Ob = [w for p in pages for w in p[1]]
         pairs, ins = align(D, [w[0] for w in Ob])
         src[s] = dict(pages=pages, Ob=Ob, pairs=pairs, ins=ins)
+    return body, margin, D, src
+
+
+def word_boxes(book):
+    """{(loc, data word, occ): {page, box, tk, ts}} for every body word Transkribus read.
+
+    box is the Transkribus word's (l, t, w, h) in the PAGE_W frame (several OCR words for one data
+    word: their union on the first word's page). occ counts as in run(): the n-th time this word
+    occurs in its loc. tk/ts are the joined OCR readings ('' where an OCR has none)."""
+    body, _, _, src = _align_sources(book)
+    out, seen = {}, Counter()
+    for i, (w, loc, _) in enumerate(body):
+        occ = seen[(loc, w)]
+        seen[(loc, w)] += 1
+        js = src['tk']['pairs'][i][0]
+        if not js:
+            continue
+        ws = [src['tk']['Ob'][j] for j in js]
+        page = ws[0][1]
+        bs = [o[3] for o in ws if o[1] == page]
+        l, t = min(b[0] for b in bs), min(b[1] for b in bs)
+        r, btm = max(b[0] + b[2] for b in bs), max(b[1] + b[3] for b in bs)
+        read = lambda s: ' '.join(src[s]['Ob'][j][0] for j in src[s]['pairs'][i][0])
+        out[(loc, w, occ)] = dict(page=page, box=(l, t, r - l, btm - t), tk=read('tk'), ts=read('ts'))
+    return out
+
+
+def run(book, out_dir):
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    body, margin, D, src = _align_sources(book)
 
     def reading(s, i):
         js, op = src[s]['pairs'][i]
