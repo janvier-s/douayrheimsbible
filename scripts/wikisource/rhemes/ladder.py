@@ -409,90 +409,85 @@ def _shift_lemmas(obj, key, old, new, z):
             lm[1] += delta
 
 
-def adopt(files, decisions, ov, lock):
+def adopt(files, decisions, ov):
     """Writes each committed-wins reading into the data files. The generated form must occur
     exactly once in its context; an edit that loses a print feature needs an override.
     Returns (applied, unlocated): lists of (decision, file) and (decision, reason)."""
-    lock = Path(lock)
-    lock.mkdir()  # raises if another writer holds it
-    try:
-        data = {Path(f): json.loads(Path(f).read_text()) for f in files}
-        leaves = {f: _leaves(o, []) for f, o in data.items()}
-        for f in leaves:  # NFC, as all text must be (the page is); a written file is NFC throughout
-            for o, k, _ in leaves[f]:
-                s = o[k]
-                o[k] = unicodedata.normalize('NFC', s)
-                if k == 'text' and len(o[k]) != len(s) and isinstance(o, dict):  # lemmas follow their words
-                    for lm in o.get('lemmas', []):
-                        e = len(unicodedata.normalize('NFC', s[:lm[0] + lm[1]]))
-                        lm[0] = len(unicodedata.normalize('NFC', s[:lm[0]]))
-                        lm[1] = e - lm[0]
-        applied, unlocated, dirty = [], [], set()
-        for d in decisions:
-            if d.winner != 'committed':
+    data = {Path(f): json.loads(Path(f).read_text()) for f in files}
+    leaves = {f: _leaves(o, []) for f, o in data.items()}
+    for f in leaves:  # NFC, as all text must be (the page is); a written file is NFC throughout
+        for o, k, _ in leaves[f]:
+            s = o[k]
+            o[k] = unicodedata.normalize('NFC', s)
+            if k == 'text' and len(o[k]) != len(s) and isinstance(o, dict):  # lemmas follow their words
+                for lm in o.get('lemmas', []):
+                    e = len(unicodedata.normalize('NFC', s[:lm[0] + lm[1]]))
+                    lm[0] = len(unicodedata.normalize('NFC', s[:lm[0]]))
+                    lm[1] = e - lm[0]
+    applied, unlocated, dirty = [], [], set()
+    for d in decisions:
+        if d.winner != 'committed':
+            continue
+        c = d.conflict
+        found = None
+        for kb, ka in _ADOPT_COMBOS:
+            before, after = c.before[-kb:] if kb else [], c.after[:ka]
+            if len(before) < kb or len(after) < ka:
                 continue
-            c = d.conflict
-            found = None
-            for kb, ka in _ADOPT_COMBOS:
-                before, after = c.before[-kb:] if kb else [], c.after[:ka]
-                if len(before) < kb or len(after) < ka:
-                    continue
-                done = [1 for f in data for _ in _find(leaves[f], before, c.committed, after)]
-                hits = [(f, h) for f in data for h in _find(leaves[f], before, c.generated, after)]
-                full = (kb, ka) == (min(3, len(c.before)), min(3, len(c.after)))
-                if done and not hits and not full and (kb == 0) != (ka == 0):
-                    # one-sided context can run into a neighbouring string; the other side decides
-                    ob, oa = (c.before[-ka:], []) if kb == 0 else ([], c.after[:kb])
-                    if len(ob) + len(oa) == kb + ka:
-                        odone = [1 for f in data for _ in _find(leaves[f], ob, c.committed, oa)]
-                        ohits = [(f, h) for f in data for h in _find(leaves[f], ob, c.generated, oa)]
-                        if not odone and len(ohits) == 1:
-                            found = ohits
-                            break
-                if done and (not hits or full):
-                    found = 'done'  # already applied (with the full context, a generated form is another place)
-                    break
-                if not done and len(hits) > 1 and len({f for f, _ in hits}) == 1 and len({_verse(h[0][2]) for _, h in hits}) == 1:
-                    found = hits  # one verse shows the citation twice (cross_refs and a gloss): both are this place
-                    break
-                if done or len(hits) > 1:
-                    found = 'ambiguous'
-                    break
-                if len(hits) == 1:
-                    found = hits
-                    break
-            if found == 'done':
-                continue
-            if found in (None, 'ambiguous'):
-                unlocated.append((d, f'{found or "not found"}: {c.generated!r} near {" ".join(c.before)} | {" ".join(c.after)}'))
-                continue
-            refused = []
-            for f, ((obj, key, path), a, z) in found:
-                old = obj[key]
-                new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
-                refused += fidelity.refusals(c.page, old, new, ov)
-            if refused:
-                unlocated.append((d, 'fidelity: ' + '; '.join(refused)))
-                continue
-            tail = _pattern([], c.generated, c.after[:2])
-            for f, ((obj, key, path), a, z) in sorted(found, key=lambda h: -h[1][1]):  # right to left within a string
-                old = obj[key]
-                new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
-                obj[key] = new
-                _shift_lemmas(obj, key, old, new, z)
-                for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
-                    if p2 != path and _mirrors(p2, path, _same_ref(o2[k2], old) and _orphan(leaves[f], p2, o2[k2])
-                                                        and _orphan(leaves[f], path, old)):
-                        ms = list(tail.finditer(o2[k2]))
-                        if len(ms) == 1:
-                            o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + core(c.committed) + o2[k2][ms[0].end(1):])
-            dirty.update(fh for fh, _ in found)
-            applied.append((d, found[0][0]))
-        for f in dirty:
-            write_like(f, data[f])
-        return applied, unlocated
-    finally:
-        lock.rmdir()
+            done = [1 for f in data for _ in _find(leaves[f], before, c.committed, after)]
+            hits = [(f, h) for f in data for h in _find(leaves[f], before, c.generated, after)]
+            full = (kb, ka) == (min(3, len(c.before)), min(3, len(c.after)))
+            if done and not hits and not full and (kb == 0) != (ka == 0):
+                # one-sided context can run into a neighbouring string; the other side decides
+                ob, oa = (c.before[-ka:], []) if kb == 0 else ([], c.after[:kb])
+                if len(ob) + len(oa) == kb + ka:
+                    odone = [1 for f in data for _ in _find(leaves[f], ob, c.committed, oa)]
+                    ohits = [(f, h) for f in data for h in _find(leaves[f], ob, c.generated, oa)]
+                    if not odone and len(ohits) == 1:
+                        found = ohits
+                        break
+            if done and (not hits or full):
+                found = 'done'  # already applied (with the full context, a generated form is another place)
+                break
+            if not done and len(hits) > 1 and len({f for f, _ in hits}) == 1 and len({_verse(h[0][2]) for _, h in hits}) == 1:
+                found = hits  # one verse shows the citation twice (cross_refs and a gloss): both are this place
+                break
+            if done or len(hits) > 1:
+                found = 'ambiguous'
+                break
+            if len(hits) == 1:
+                found = hits
+                break
+        if found == 'done':
+            continue
+        if found in (None, 'ambiguous'):
+            unlocated.append((d, f'{found or "not found"}: {c.generated!r} near {" ".join(c.before)} | {" ".join(c.after)}'))
+            continue
+        refused = []
+        for f, ((obj, key, path), a, z) in found:
+            old = obj[key]
+            new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
+            refused += fidelity.refusals(c.page, old, new, ov)
+        if refused:
+            unlocated.append((d, 'fidelity: ' + '; '.join(refused)))
+            continue
+        tail = _pattern([], c.generated, c.after[:2])
+        for f, ((obj, key, path), a, z) in sorted(found, key=lambda h: -h[1][1]):  # right to left within a string
+            old = obj[key]
+            new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
+            obj[key] = new
+            _shift_lemmas(obj, key, old, new, z)
+            for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
+                if p2 != path and _mirrors(p2, path, _same_ref(o2[k2], old) and _orphan(leaves[f], p2, o2[k2])
+                                                    and _orphan(leaves[f], path, old)):
+                    ms = list(tail.finditer(o2[k2]))
+                    if len(ms) == 1:
+                        o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + core(c.committed) + o2[k2][ms[0].end(1):])
+        dirty.update(fh for fh, _ in found)
+        applied.append((d, found[0][0]))
+    for f in dirty:
+        write_like(f, data[f])
+    return applied, unlocated
 
 
 def same_book_counts(tokens):

@@ -108,27 +108,26 @@ def test_adopt_refuses_non_unique(tmp_path):
     f = book(tmp_path, ['our Lords Paſſion beheaded', 'our Lords Paſſion beheaded'])
     before = f.read_bytes()
     applied, unlocated = ladder.adopt([f], [dec(C('Paſsion', 'Paſſion', after=('beheaded',)))],
-                                      fidelity.parse_overrides(['--allow-shift', 'ls:*', '--reason', 't']), tmp_path / 'lock')
+                                      fidelity.parse_overrides(['--allow-shift', 'ls:*', '--reason', 't']))
     assert applied == [] and len(unlocated) == 1 and f.read_bytes() == before
 
 
 def test_adopt_guards_fidelity(tmp_path):
     f = book(tmp_path, ['after our Lords Paſſion beheaded, laſt of al'])
     c = C('Paſsion', 'Paſſion')
-    applied, unlocated = ladder.adopt([f], [dec(c)], NO, tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], NO)
     assert applied == [] and unlocated[0][1].startswith('fidelity')
     ov = fidelity.parse_overrides(['--allow-shift', 'ls:100-200', '--reason', 't'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], ov, tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], ov)
     assert len(applied) == 1 and unlocated == []
     text = f.read_text()
     assert 'Lords Paſsion beheaded' in text and text.startswith('{\n  "chapters"') and text.endswith('\n')
-    assert not (tmp_path / 'lock').exists()
 
 
 def test_adopt_skips_generated_winners_and_is_idempotent(tmp_path):
     f = book(tmp_path, ['our Lords cōmaunding beheaded'])
     c = C('cōmaunding', 'commaunding', after=('beheaded',))
-    applied, unlocated = ladder.adopt([f], [dec(c), dec(C('x', 'y'), 'generated')], NO, tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c), dec(C('x', 'y'), 'generated')], NO)
     assert applied == [] and unlocated == []  # already applied: committed form present, generated absent
 
 
@@ -206,7 +205,7 @@ def test_adopt_context_across_note_strings(tmp_path):
         {'verse': 9, 'text': 'in the name of our Lord.', 'notes': [{'text': 'Ps. 117, 26.'}]},
         {'verse': 10, 'text': 'Hosanna in the highest.', 'notes': [{'text': 'Ps. 117, 26.'}]}]}]}, ensure_ascii=False, indent=2) + '\n')
     c = ladder.Conflict(145, 'Pſ.', 'Ps.', ['of', 'our', 'Lord.'], ['117,', '26.'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     assert len(applied) == 1 and unlocated == []
     d = json.loads(f.read_text())['chapters'][0]['verses']
     assert d[0]['notes'][0]['text'] == 'Pſ. 117, 26.' and d[1]['notes'][0]['text'] == 'Ps. 117, 26.'
@@ -219,7 +218,7 @@ def test_adopt_updates_mirrored_copies(tmp_path):
         {'verse': 30, 'text': 'other words', 'cross_refs': [{'text': 'Ps. 117, 26.'}], 'xrefs': ['Ps. 117, 26.']}]}]},
         ensure_ascii=False) + '\n')
     c = ladder.Conflict(145, 'Pſ.', 'Ps.', ['of', 'our', 'Lord.'], ['117,', '26.'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     assert unlocated == [] and len(applied) == 1
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert (v[0]['cross_refs'][0]['text'], v[0]['xrefs'][0]) == ('Pſ. 117, 26.', 'Pſ. 117, 26.')
@@ -232,7 +231,7 @@ def test_adopt_mirrors_with_different_strings(tmp_path):
         {'verse': 21, 'text': 'the Sonne of man in deede goeth,', 'cross_refs': [{'text': 'Ps. 40, 10.'}], 'xrefs': ['Ps. 40, 10. · Mt. 26, 26.']},
         {'verse': 30, 'text': 'x', 'cross_refs': [{'text': 'Ps. 40, 10.'}]}]}]}, ensure_ascii=False) + '\n')
     c = ladder.Conflict(153, 'Pſ.', 'Ps.', ['in', 'deede', 'goeth,'], ['40,', '10.'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     assert unlocated == []
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert v[0]['cross_refs'][0]['text'] == 'Pſ. 40, 10.' and v[0]['xrefs'][0] == 'Pſ. 40, 10. · Mt. 26, 26.'
@@ -245,7 +244,7 @@ def test_adopt_verse_fix_leaves_its_notes(tmp_path):
         {'verse': 1, 'text': 'our Lords Paſſion beheaded, laſt', 'notes': [{'text': 'Paſſion beheaded, laſt'}]}]}]},
         ensure_ascii=False) + '\n')
     ov = fidelity.parse_overrides(['--allow-shift', 'ls:*', '--reason', 't'])
-    applied, _ = ladder.adopt([f], [dec(C('Paſsion', 'Paſſion'))], ov, tmp_path / 'lock')
+    applied, _ = ladder.adopt([f], [dec(C('Paſsion', 'Paſſion'))], ov)
     v = json.loads(f.read_text())['chapters'][0]['verses'][0]
     assert len(applied) == 1 and v['text'] == 'our Lords Paſsion beheaded, laſt' and v['notes'][0]['text'] == 'Paſſion beheaded, laſt'
 
@@ -283,7 +282,7 @@ def test_adopt_word_core_and_spaced_punctuation(tmp_path):
     f = book(tmp_path, ['S. Paul writeth of him by name to the Coloſsians : <i>Luke the</i> Phyſicion'])
     c = ladder.Conflict(161, 'Coloſſians:', 'Coloſsians:', ['name', 'to', 'the'], ['Luke', 'the'])
     ov = fidelity.parse_overrides([])
-    applied, unlocated = ladder.adopt([f], [dec(c)], ov, tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], ov)
     assert unlocated == [] and 'the Coloſſians : <i>Luke' in f.read_text()
 
 
@@ -293,14 +292,14 @@ def test_adopt_mirror_shifted_one_verse(tmp_path):
     c = ladder.Conflict(224, 'Pſ.', 'Ps.', ['that', 'is', 'vvritten,'], ['117,', '22.', 'The'])
     f = tmp_path / 'luke.json'
     f.write_text(json.dumps({'chapters': [{'verses': verses}]}, ensure_ascii=False) + '\n')
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert unlocated == [] and v[0]['xrefs'][0] == v[1]['cross_refs'][0]['text'] == 'Pſ. 117, 22.'
     # a third copy of the citation elsewhere: genuinely ambiguous, nothing written
     f.write_text(json.dumps({'chapters': [{'verses': verses + [{'verse': 40, 'text': 'x', 'cross_refs': [{'text': 'Ps. 117, 22.'}]}]}]},
                             ensure_ascii=False) + '\n')
     before = f.read_text()
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     assert len(unlocated) == 1 and f.read_text() == before
 
 
@@ -312,7 +311,7 @@ def test_adopt_done_wins_over_another_occurrence(tmp_path):
                                                   ensure_ascii=False) + '\n')
     c = ladder.Conflict(148, 'cōmaundement', 'commaundement', ['vvas', 'the', 'firſt'], ['of', 'al.', 'And'])
     before = (tmp_path / 'ann.json').read_text()
-    applied, unlocated = ladder.adopt([f, tmp_path / 'ann.json'], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f, tmp_path / 'ann.json'], [dec(c)], fidelity.parse_overrides([]))
     assert applied == [] and unlocated == [] and (tmp_path / 'ann.json').read_text() == before
 
 
@@ -325,7 +324,7 @@ def test_readings_ambiguous_when_the_word_repeats_in_the_line():
 def test_adopt_ampersand_separator(tmp_path):
     f = book(tmp_path, ['So readeth S. Ambroſe <i>in Ps. 45. & ſer. 20 in Ps. 118.</i>', 'other in Ps. 45. here'])
     c = ladder.Conflict(307, 'Pſ.', 'Ps.', ['S.', 'Ambroſe', 'in'], ['45.', 'ſer.', '20'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     assert unlocated == [] and 'in Pſ. 45. & ſer. 20 in Ps. 118.' in f.read_text()
 
 
@@ -335,7 +334,7 @@ def test_adopt_shifted_mirror_with_joined_xrefs(tmp_path):
         {'verse': 25, 'text': '<i>That they hated me gratis</i>. <cr>[1]</cr>', 'cross_refs': [{'text': 'Ps. 24, 19.'}]},
         {'verse': 26, 'text': 'x', 'xrefs': ['Ps. 24, 19. · Act. 2, 1.']}]}]}, ensure_ascii=False) + '\n')
     c = ladder.Conflict(291, 'Pſ.', 'Ps.', ['hated', 'me', 'gratis'], ['24,', '19.', 'Act.'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert unlocated == [] and v[0]['cross_refs'][0]['text'] == 'Pſ. 24, 19.' and v[1]['xrefs'][0] == 'Pſ. 24, 19. · Act. 2, 1.'
 
@@ -347,7 +346,7 @@ def test_adopt_weak_context_done_is_not_trusted(tmp_path):
         {'verse': 12, 'text': 'the ſonne of perdition, that the ſcripture', 'cross_refs': [{'text': 'Ps. 40, 10. 108, 8.'}]}]}]},
         ensure_ascii=False) + '\n')
     c = ladder.Conflict(294, 'Pſ.', 'Ps.', ['perdition,', 'that', 'the'], ['40,', '10.', '108,'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert len(applied) == 1 and v[1]['cross_refs'][0]['text'] == 'Pſ. 40, 10. 108, 8.'
 
@@ -368,7 +367,7 @@ def test_adopt_normalises_nfc_data(tmp_path):
     f.write_text(json.dumps({'n': [{'text': unicodedata.normalize('NFD', 'euery mans cõſcience in Iudaical meates')}]}, ensure_ascii=False))
     c = ladder.Conflict(446, 'cõscience', 'cõſcience', ['concerning', 'euery', 'mans'], ['in', 'Iudaical', 'meates'])
     ov = fidelity.parse_overrides(['--allow-shift', 'ls:*', '--reason', 't'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], ov, tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], ov)
     assert unlocated == [] and 'mans cõscience in' in f.read_text()
     assert unicodedata.is_normalized('NFC', f.read_text())
 
@@ -380,7 +379,7 @@ def test_adopt_same_citation_twice_in_one_verse(tmp_path):
          'notes': [{'text': 'mere men. · Io. 3, 33. Ps. 115, 11. Ps. 50, 6.'}]},
         {'verse': 9, 'text': 'x', 'cross_refs': [{'text': 'Ps. 50, 6.'}]}]}]}, ensure_ascii=False) + '\n')
     c = ladder.Conflict(416, 'Pſ.', 'Ps.', ['Pſ.', '115,', '11.'], ['50,', '6.', 'euery'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert unlocated == [] and v[0]['cross_refs'][2]['text'] == 'Pſ. 50, 6.' and v[0]['notes'][0]['text'].endswith('Pſ. 50, 6.')
     assert v[1]['cross_refs'][0]['text'] == 'Ps. 50, 6.'
@@ -394,7 +393,7 @@ def test_adopt_one_sided_done_yields_to_opposite_side(tmp_path):
     f = tmp_path / 'romans.json'
     f.write_text(json.dumps({'chapters': [{'verses': verses}]}, ensure_ascii=False) + '\n')
     c = ladder.Conflict(417, 'Pſ.', 'Ps.', ['vnder', 'their', 'lippes'], ['9,', '7.', 'Es.'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]), tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], fidelity.parse_overrides([]))
     v = json.loads(f.read_text())['chapters'][0]['verses']
     assert unlocated == [] and len(applied) == 1 and v[1]['cross_refs'][0]['text'] == 'Pſ. 9, 7. Es. 19, 7.'
     assert v[0]['cross_refs'][0]['text'] == 'Pſ. 5, 11.'
@@ -433,7 +432,7 @@ def test_adopt_shifts_lemma_offsets(tmp_path):
     f.write_text(json.dumps({'chapters': [{'verses': [{'verse': 1, 'text': text, 'lemmas': [[start, 3, 1], [2, 3, 2]]}]}]},
                             ensure_ascii=False) + '\n')
     c = ladder.Conflict(421, 'therfore', 'therefore', ['BEING', 'iuſtified'], ['by', 'faith,', 'let'])
-    applied, unlocated = ladder.adopt([f], [dec(c)], NO, tmp_path / 'lock')
+    applied, unlocated = ladder.adopt([f], [dec(c)], NO)
     v = json.loads(f.read_text())['chapters'][0]['verses'][0]
     assert unlocated == [] and v['text'][v['lemmas'][0][0]:].startswith('let vs')
     assert v['lemmas'][1] == [2, 3, 2]  # before the edit: unchanged

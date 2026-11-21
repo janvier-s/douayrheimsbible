@@ -17,6 +17,7 @@ from typing import NamedTuple
 from . import paths
 from .sources import load_books, ocr_by_page
 from . import sources
+from .lock import data_lock, lock_path
 from .jsonfmt import write_like
 from .wikipost import norm
 
@@ -151,10 +152,12 @@ def cmd_diff(book, jsonl=None):
 
 
 def cmd_write(book):
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = sources.manifest()
     with tempfile.TemporaryDirectory() as tmp:
         gen = generate_book(book, Path(tmp) / book)
-        print('written:', write_pages(book, gen, PAGES, manifest))
+        with data_lock(lock_path()):
+            written = write_pages(book, gen, PAGES, manifest)
+        print('written:', written)
 
 
 def cmd_status(write=False):
@@ -206,11 +209,6 @@ def cmd_verify(book):
         print(f'  page {c.page}: {d.winner} {c.committed if d.winner == "committed" else c.generated} not shown ({d.evidence})')
     print(f'{book}: {len(bad)} decisions not shown on the pages')
     return bad
-
-
-def git_lock():
-    common = subprocess.run(['git', '-C', str(REPO), 'rev-parse', '--git-common-dir'], capture_output=True, text=True).stdout.strip()
-    return (REPO / common).resolve() / 'odr-data.lock'
 
 
 def cmd_ladder(book):
@@ -274,9 +272,10 @@ def cmd_adopt(book, argv):
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 sh.copyfile(f, dst)
                 files.append(dst)
-            applied, unlocated = ladder.adopt(files, decisions, ov, Path(tmp) / 'lock')
+            applied, unlocated = ladder.adopt(files, decisions, ov)
     else:
-        applied, unlocated = ladder.adopt(sources.data_files(book, REPO), decisions, ov, git_lock())
+        with data_lock(lock_path()):
+            applied, unlocated = ladder.adopt(sources.data_files(book, REPO), decisions, ov)
     print(f'{"applied" if "--write" in argv else "would apply"}: {len(applied)}; unlocated: {len(unlocated)}')
     for d, why in unlocated:
         print(f'  page {d.conflict.page}: {d.conflict.committed} / {d.conflict.generated}: {why}')
