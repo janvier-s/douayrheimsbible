@@ -182,18 +182,20 @@ def verify_decisions(decisions, pages):
             continue
         c = d.conflict
         want = ladder.core(c.committed if d.winner == 'committed' else c.generated)
+        lose = ladder.core(c.generated if d.winner == 'committed' else c.committed)
         ctx_b = {ladder.fold(w) for w in c.before}
         ctx_a = {ladder.fold(w) for w in c.after}
-        ok = False
+        best = {want: -1, lose: -1}
         for n in (c.page, c.page + 1):
             ws = ladder.words(ladder._body(pages.get(n, '')))
             for i, w in enumerate(ws):
-                if ladder.core(w.replace(ladder.SC_MARK, '')) == want:
+                k = ladder.core(w.replace(ladder.SC_MARK, ''))
+                if k in best:
                     hits = len(ctx_b & {ladder.fold(x) for x in ws[max(0, i - 4):i]}) + \
                         len(ctx_a & {ladder.fold(x) for x in ws[i + 1:i + 5]})
-                    if hits >= min(2, len(ctx_b) + len(ctx_a)):
-                        ok = True
-        if not ok:
+                    best[k] = max(best[k], hits)
+        # the winner must show with its context, and the loser must not sit at the place more surely
+        if best[want] < min(2, len(ctx_b) + len(ctx_a)) or (want != lose and best[lose] > best[want]):
             bad.append(d)
     return bad
 

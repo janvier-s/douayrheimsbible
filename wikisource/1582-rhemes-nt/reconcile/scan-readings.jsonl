@@ -7,7 +7,7 @@
 {"book": "luke", "page": 166, "committed": "iustificatió,", "generated": "iuſtificatió,", "reading": "iuſtificatió,", "evidence": "scan collage 2026-11-21"}
 {"book": "luke", "page": 178, "committed": "interceſsion", "generated": "interceſſion", "reading": "interceſſion", "evidence": "scan collage 2026-11-21"}
 {"book": "luke", "page": 198, "committed": "perseuêre", "generated": "perſeuêre", "reading": "perſeuêre", "evidence": "scan collage 2026-11-21"}
-{"book": "luke", "page": 232, "committed": "Paſſ.", "generated": "Paſs.", "reading": "Paſ.", "evidence": "scan collage 2026-11-21"}
+{"book": "luke", "page": 232, "committed": "Paſſ.", "generated": "Paſs.", "reading": "Paſs.", "evidence": "scan collage 2026-11-21; re-read 2026-11-21 on pdf232 (de Paſs.), the first reading Paſ. was a misread"}
 {"book": "john", "page": 270, "committed": "perseuére:", "generated": "perſeuére:", "reading": "perſeuére:", "evidence": "inferred 2026-11-21 (perſeuêre read on luke p198); not legible on the crop"}
 {"book": "john", "page": 277, "committed": "ſuſpēſe?", "generated": "ſuſpenſe?", "reading": "ſuſpēſe?", "evidence": "scan collage 2026-11-21"}
 {"book": "john", "page": 296, "committed": "Maſſ", "generated": "Maſs", "reading": "Maſſ", "evidence": "scan collage 2026-11-21"}
@@ -30,7 +30,7 @@
 {"book": "acts", "page": 401, "committed": "Whereunto", "generated": "Vvherevnto", "reading": "Vvherevnto", "evidence": "scan collage 2026-11-21"}
 {"book": "romans", "page": 410, "committed": "agaĩst", "generated": "agaĩſt", "reading": "agaĩſt", "evidence": "scan collage 2026-11-21"}
 {"book": "romans", "page": 410, "committed": "natiōs,", "generated": "natiōſ,", "reading": "natiōs,", "evidence": "scan collage 2026-11-21"}
-{"book": "romans", "page": 411, "committed": "uncleanneſſ.", "generated": "uncleanneſs.", "reading": "vncleanneſſe.", "evidence": "scan collage 2026-11-21"}
+{"book": "romans", "page": 411, "committed": "uncleanneſſ.", "generated": "uncleanneſs.", "reading": "vncleanneſſe.", "evidence": "scan collage 2026-11-21", "replace": true}
 {"book": "romans", "page": 421, "committed": "iustificatió,", "generated": "iuſtificatió,", "reading": "iuſtificatió,", "evidence": "inferred 2026-11-21 (iuſtification read on luke p166); not legible on the crop"}
 {"book": "romans", "page": 423, "committed": "inclusiuè", "generated": "incluſiuè", "reading": "incluſiuè", "evidence": "scan collage 2026-11-21"}
 {"book": "romans", "page": 430, "committed": "Novvithstandĩg", "generated": "Novvithſtandĩg", "reading": "Novvithſtandĩg", "evidence": "scan collage 2026-11-21"}
@@ -58,3 +58,4 @@
 {"book": "romans", "page": 437, "committed": "Eglis.", "generated": "Egliſ.", "reading": "Egliſ.", "evidence": "scan collage 2026-11-21: print Egliſ."}
 {"book": "romans", "page": 446, "committed": "cõscience", "generated": "cõſcience", "reading": "cõſcience", "evidence": "scan collage 2026-11-21: print cõſcience"}
 {"book": "romans", "page": 449, "committed": "Tryphósa:", "generated": "Tryphóſa:", "reading": "Tryphóſa:", "evidence": "scan collage 2026-11-21: print Tryphóſa:"}
+{"book": "romans", "page": 410, "committed": "intermiſsion", "generated": "intermiſſion", "reading": "intermiſsion", "evidence": "scan 2026-11-21 (pdf410, whole-branch review): print intermiſsion against XML intermiſſion"}

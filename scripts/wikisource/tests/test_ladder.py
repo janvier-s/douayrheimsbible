@@ -170,7 +170,7 @@ def test_stem_rule_ss_settled_by_xml():
 def test_scan_readings_override_rung4():
     c = C('Paſſ.', 'Paſs.', page=232)
     ds = [ladder.Decision(c, 4, '', 'xml -'), ladder.Decision(C('a', 'b', page=1), 2, 'committed', 'xml a')]
-    rd = [{'page': 232, 'committed': 'Paſſ.', 'generated': 'Paſs.', 'reading': 'Paſ.', 'evidence': 'scan 2026-11-21'},
+    rd = [{'page': 232, 'committed': 'Paſſ.', 'generated': 'Paſs.', 'reading': 'Paſ.', 'evidence': 'scan 2026-11-21', 'replace': True},
           {'page': 9, 'committed': 'x', 'generated': 'y', 'reading': 'y', 'evidence': 'scan'}]
     out = ladder.apply_readings(ds, rd)
     assert out[0] == ladder.Decision(c._replace(committed='Paſ.'), 4, 'committed', 'scan 2026-11-21: print Paſ.')
@@ -399,3 +399,50 @@ def test_xml_tokens_nfc_abbreviation_stroke():
     assert 'childrē' in main
     c = ladder.Conflict(431, 'childrē', 'children', ['that', 'are', 'the'], ['of', 'the', 'fleſh,'])
     assert ladder.decide(c, ladder.locate_xml(c, (main, [])), [], ['children'], Counter()).winner == 'committed'
+
+
+def test_stem_rule_xml_beats_a_one_to_nothing_majority():
+    # p300: print compaſſion, XML ſſ at this place; one ſs elsewhere in the book must not outvote it
+    c = C('compaſsion', 'compaſſion')
+    d = ladder.decide(c, ['compaſſion'], [], [], Counter({'compaſsion': 1, 'compaſſion': 1}))
+    assert d.winner == 'generated' and 'stem rule' in d.evidence
+
+
+def test_lone_majority_never_overrules_the_xml_here():
+    c = C('Aſsyria', 'Aſſyria')
+    assert ladder.decide(c, [], [], [], Counter({'Aſsyria': 1})).winner == 'committed'  # XML silent: 1:0 decides
+    d = ladder.decide(c, ['Aſſyria'], [], [], Counter({'Aſsyria': 1, 'Aſſyria': 1}))  # XML here says ſſ
+    assert d.rung == 4
+    d = ladder.decide(c, ['Aſſyria'], [], [], Counter({'Aſsyria': 2, 'Aſſyria': 1}))
+    assert d.winner == 'committed' and 'majority 2:0' in d.evidence
+
+
+def test_adopt_shifts_lemma_offsets(tmp_path):
+    text = '<sc>BEING</sc> iuſtified therefore by faith, let vs haue peace'
+    start = text.index('let')
+    f = tmp_path / 'romans.json'
+    f.write_text(json.dumps({'chapters': [{'verses': [{'verse': 1, 'text': text, 'lemmas': [[start, 3, 1], [2, 3, 2]]}]}]},
+                            ensure_ascii=False) + '\n')
+    c = ladder.Conflict(421, 'therfore', 'therefore', ['BEING', 'iuſtified'], ['by', 'faith,', 'let'])
+    applied, unlocated = ladder.adopt([f], [dec(c)], NO, tmp_path / 'lock')
+    v = json.loads(f.read_text())['chapters'][0]['verses'][0]
+    assert unlocated == [] and v['text'][v['lemmas'][0][0]:].startswith('let vs')
+    assert v['lemmas'][1] == [2, 3, 2]  # before the edit: unchanged
+
+
+def test_scan_reading_matching_neither_side_stays_open():
+    d = ladder.Decision(C('Paſs.', 'Pass.'), 4, '', 'xml -')
+    r = {'page': 120, 'committed': 'Paſs.', 'generated': 'Pass.', 'reading': 'Paſ.', 'evidence': 'scan'}
+    out = ladder.apply_readings([d], [r])
+    assert out[0].winner == '' and 'neither' in out[0].evidence
+    out = ladder.apply_readings([d], [dict(r, replace=True)])
+    assert out[0].winner == 'committed' and out[0].conflict.committed == 'Paſ.'
+
+
+def test_scan_reading_beats_any_rung():
+    # Romans p410: the stem rule gives the XML's ſſ, but the print reads intermiſsion
+    c = C('intermiſsion', 'intermiſſion', page=410)
+    d = ladder.Decision(c, 3, 'generated', 'xml intermiſſion; committed ſs from the stem rule (owner 2026-11-21)')
+    r = {'page': 410, 'committed': 'intermiſsion', 'generated': 'intermiſſion', 'reading': 'intermiſsion', 'evidence': 'scan'}
+    out = ladder.apply_readings([d], [r])
+    assert (out[0].rung, out[0].winner) == (4, 'committed')

@@ -113,3 +113,12 @@ def test_verify_decisions_against_pages():
     bad = ladder.Decision(ladder.Conflict(217, 'Paſsion', 'Paſſion', ['his', 'Lords'], ['beheaded,', 'laſt']), 3, 'committed', 'x')
     open4 = ladder.Decision(ladder.Conflict(217, 'a', 'b', [], []), 4, '', 'x')
     assert reconcile.verify_decisions([ok, bad, open4], pages) == [bad]
+
+
+def test_verify_flags_loser_at_the_place():
+    # the winner shows up nearby with two weak context words, but the losing form sits at the place itself
+    import ladder
+    head = '<noinclude><pagequality level="1" user="" />{{rh|1|X|Y}}</noinclude>'
+    pages = {300: head + 'great the compaſsion of God. And then the compaſſion of God here<noinclude></noinclude>\n'}
+    d = ladder.Decision(ladder.Conflict(300, 'compaſsion', 'compaſſion', ['vvith', 'great', 'the'], ['of', 'God.', 'And']), 3, 'generated', 'x')
+    assert reconcile.verify_decisions([d], pages) == [d]

@@ -306,7 +306,8 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
     # the form elsewhere in the book: the XML occurrence at this place does not vote again
     a = same_book.get(core(c.committed), 0) - (xml == core(c.committed))
     b = same_book.get(core(c.generated), 0) - (xml == core(c.generated))
-    if max(a, b) and max(a, b) >= 2 * min(a, b):
+    lone = max(a, b) < 2 and xml in side and side[xml] != ('committed' if a > b else 'generated')
+    if max(a, b) and max(a, b) >= 2 * min(a, b) and not lone:  # one occurrence elsewhere never overrules the XML here
         w = 'committed' if a > b else 'generated'
         return Decision(c, 3, w, f'book majority {a}:{b}' + (f'; xml {xml}' if xml else ''))
     if _has_macron(c.committed) != _has_macron(c.generated):  # nothing against the print's contraction
@@ -402,6 +403,19 @@ def _find(leaves, before, word, after):
     return out
 
 
+def _shift_lemmas(obj, key, old, new, z):
+    """A verse's lemmas are [start, length, n] offsets into its text: keep them on their words
+    when an edit ending at old[z] changes the text's length."""
+    delta = len(new) - len(old)
+    if key != 'text' or not delta or not isinstance(obj, dict):
+        return
+    for lm in obj.get('lemmas', []):
+        if lm[0] >= z:
+            lm[0] += delta
+        elif lm[0] + lm[1] >= z:
+            lm[1] += delta
+
+
 def adopt(files, decisions, ov, lock):
     """Writes each committed-wins reading into the data files. The generated form must occur
     exactly once in its context; an edit that loses a print feature needs an override.
@@ -413,7 +427,13 @@ def adopt(files, decisions, ov, lock):
         leaves = {f: _leaves(o, []) for f, o in data.items()}
         for f in leaves:  # NFC, as all text must be (the page is); a written file is NFC throughout
             for o, k, _ in leaves[f]:
-                o[k] = unicodedata.normalize('NFC', o[k])
+                s = o[k]
+                o[k] = unicodedata.normalize('NFC', s)
+                if k == 'text' and len(o[k]) != len(s) and isinstance(o, dict):  # lemmas follow their words
+                    for lm in o.get('lemmas', []):
+                        e = len(unicodedata.normalize('NFC', s[:lm[0] + lm[1]]))
+                        lm[0] = len(unicodedata.normalize('NFC', s[:lm[0]]))
+                        lm[1] = e - lm[0]
         applied, unlocated, dirty = [], [], set()
         for d in decisions:
             if d.winner != 'committed':
@@ -461,17 +481,18 @@ def adopt(files, decisions, ov, lock):
             if refused:
                 unlocated.append((d, 'fidelity: ' + '; '.join(refused)))
                 continue
+            tail = _pattern([], c.generated, c.after[:2])
             for f, ((obj, key, path), a, z) in sorted(found, key=lambda h: -h[1][1]):  # right to left within a string
                 old = obj[key]
                 new = unicodedata.normalize('NFC', old[:a] + core(c.committed) + old[z:])
                 obj[key] = new
-            tail = _pattern([], c.generated, c.after[:2])
-            for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
-                if p2 != path and _mirrors(p2, path, _same_ref(o2[k2], old) and _orphan(leaves[f], p2, o2[k2])
-                                                    and _orphan(leaves[f], path, old)):
-                    ms = list(tail.finditer(o2[k2]))
-                    if len(ms) == 1:
-                        o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + core(c.committed) + o2[k2][ms[0].end(1):])
+                _shift_lemmas(obj, key, old, new, z)
+                for o2, k2, p2 in leaves[f]:  # mirrored copies (cross_refs / xrefs) change with it
+                    if p2 != path and _mirrors(p2, path, _same_ref(o2[k2], old) and _orphan(leaves[f], p2, o2[k2])
+                                                        and _orphan(leaves[f], path, old)):
+                        ms = list(tail.finditer(o2[k2]))
+                        if len(ms) == 1:
+                            o2[k2] = unicodedata.normalize('NFC', o2[k2][:ms[0].start(1)] + core(c.committed) + o2[k2][ms[0].end(1):])
             dirty.update(fh for fh, _ in found)
             applied.append((d, found[0][0]))
         for f in dirty:
@@ -498,12 +519,14 @@ def apply_readings(decisions, readings):
     for d in decisions:
         c = d.conflict
         r = rd.get((c.page, c.committed, c.generated))
-        if d.rung != 4 or not r:
+        if not r:  # the print, read on the scan, settles it whatever the other rungs said
             out.append(d)
             continue
         ev = f"{r['evidence']}: print {r['reading']}"
         if r['reading'] == c.generated:
             out.append(Decision(c, 4, 'generated', ev))
+        elif r['reading'] != c.committed and not r.get('replace'):
+            out.append(Decision(c, 4, '', f'{ev} (neither side: check the reading, then mark it replace)'))
         else:
             out.append(Decision(c._replace(committed=r['reading']), 4, 'committed', ev))
     return out

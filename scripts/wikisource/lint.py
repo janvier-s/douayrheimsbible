@@ -20,6 +20,7 @@ Checks (E = error, W = warning):
   E-status    <pagequality> level 3 or more without a named proofreader
   E-verse     verse numbers out of order, repeated or skipped (across pages, per chapter)
   E-darkmode  table style contains 'background' (triggers MediaWiki night-mode color:#202122) or '!' (th header borders/shading)
+  E-lemma-split  the annotation mark ‖ splits a word (a lemma offset off by some letters)
   E-nfc       text not in Unicode NFC (MediaWiki saves NFC, so live would never match: Greek oxia vs tonos)
   E-gap       page files missing from the numeric run
   E-loss      a print feature (long s, macron, vv, italics, small caps...) dropped against git HEAD,
@@ -233,6 +234,8 @@ def lint(d, ov=None):
             elif re.search(r"\{\{|''|ſ", title.group(1)):
                 out.append(('E-hw-title', n, f'hyphen template title must be plain text: {tpl[:60]}'))
 
+        for m in re.finditer(r"(?:^|[\s(])[^\W\d_]{1,2}\{\{sup\|‖\}\} [a-zſ]", body):  # 'l{{sup|‖}} et': the mark inside 'let'
+            out.append(('E-lemma-split', n, f'‖ splits a word: {body[max(0, m.start() - 15):m.end() + 10]}'))
         depth = 0  # template depth at the start of each line: breaks inside {{center|…}} blocks are layout
         for a_line, b_line in zip(body.split('\n'), body.split('\n')[1:]):
             depth += a_line.count('{{') - a_line.count('}}')

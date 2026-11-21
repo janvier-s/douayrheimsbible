@@ -18,12 +18,12 @@ Branch `wikisource-refactor-phase0`, plan `docs/superpowers/plans/2026-11-21-wik
 |---|---|---|---|---|
 | Matthew | 31–113 | foot 75, ls:ss 191, ls:other 42, text 31, space 28, sc 11 | r2 c25 · r3 c2/g192 · r4 c1/g1 · open 4 | 83/83 |
 | Mark | 114–160 | foot 45, ls:ss 83, ls:other 24, text 16, space 16, hw 6 | r2 c22 · r3 c8/g68 · r4 g1 · open 1 | 47/47 |
-| Luke | 161–241 | foot 76, ls:ss 196, sc 51, ls:other 49, text 30, greek 25 | r1 c9 · r2 c32 · r3 c12/g191 · r4 c1/g4 · open 3 | 81/81 |
-| John | 242–308 | foot 67, ls:ss 120, ls:other 42, sc 37, ornament 22, text 20 | r1 c6 · r2 c25 · r3 c15/g113 · r4 c3/g2 | 67/67 |
-| Acts | 317–401 | foot 84, ls:ss 141, ls:other 72, greek 39, sc 29, ornament 28 | r1 c10/g1 · r2 c14 · r3 c15/g166 · r4 c1/g24 · open 3 | 85/85 |
-| Romans | 410–451 | foot 40, ls:ss 75, ls:other 56, greek 18, ornament 18, space 16 | r1 c8/g3 · r2 c15 · r3 c21/g85 · r4 c1/g10 | 42/42 |
+| Luke | 161–241 | foot 76, ls:ss 196, sc 51, ls:other 49, text 30, greek 25 | r1 c9 · r2 c32 · r3 c10/g193 · r4 g5 · open 3 | 81/81 |
+| John | 242–308 | foot 67, ls:ss 120, ls:other 42, sc 37, ornament 22, text 20 | r1 c6 · r2 c25 · r3 c13/g115 · r4 c3/g2 | 67/67 |
+| Acts | 317–401 | foot 84, ls:ss 141, ls:other 72, greek 39, sc 29, ornament 28 | r1 c10/g1 · r2 c14 · r3 c14/g167 · r4 c1/g24 · open 3 | 85/85 |
+| Romans | 410–451 | foot 40, ls:ss 75, ls:other 56, greek 18, ornament 18, space 16 | r1 c8/g3 · r2 c14 · r3 c19/g85 · r4 c3/g11 | 42/42 |
 
-Scan readings (`reconcile/scan-readings.jsonl`): 60 in all. 35 were read on crop collages (Matthew 4, Mark 2, Luke 4, John 5, Acts 9, Romans 11). 25 were inferred from the same word already read on the scans, or from a print rule that the XML supports (Acts 20, John 2, Romans 2, Luke 1). Each line gives its evidence. The 89 stem-rule `ſs` cases were settled by the XML at rung 2, as the owner decided.
+Scan readings (`reconcile/scan-readings.jsonl`): 61 in all. 36 were read on crop collages (Matthew 4, Mark 2, Luke 4, John 5, Acts 9, Romans 12). 25 were inferred from the same word already read on the scans, or from a print rule that the XML supports (Acts 20, John 2, Romans 2, Luke 1). Each line gives its evidence. The 89 stem-rule `ſs` cases were settled by the XML at rung 2, as the owner decided.
 
 Overrides used (in each book's commit message): `--allow-shift ls:<book range>` for the ladder's ſs/ſſ changes. `--allow-loss` was used only under the owner's decisions: long-s inside `{{sc}}` becomes round s, printer's signatures (`vv:`) are dropped, and woodcut initials (`v_initial:`) are dropped while ornaments are off.
 
@@ -32,6 +32,19 @@ Overrides used (in each book's commit message): `--allow-shift ls:<book range>` 
 1. **Transkribus can't tell s from ſ.** It prints round s for every long-s, so its readings no longer vote on s vs ſ (`round_s=False`); Tesseract still does. All five books reconciled before this fix were re-checked against their pre-reconcile commits. 38 committed-side readings no longer held (Luke 11, John 4, Acts 23) and were reverted in `odr-original` (fb6e64da).
 2. **EEBO's abbreviation stroke is a combining mark.** `A16049.xml` writes it as U+0304, so an NFC form like `childrē` never matched and rung 2 couldn't settle these macrons. The XML tokens are now NFC-normalised (9ccb673c). Re-laddering all six books flipped one winner: Romans p431 `childrē`.
 3. **One-sided context in `adopt`.** A "done" found with before-context only could run into the next string, as at Romans p417, where `Pſ.` matched v13's own cross-reference. It now defers when the after-context finds the place (9ccb673c).
+
+## Corrections after the whole-branch review
+
+One whole-branch review (most capable model) found four defects that had reached the data and pages. All four are fixed, and the fixes are checked on the scans where the print decides:
+
+1. **A lone occurrence elsewhere in the book (1:0) overruled the XML at the place itself** on seven stem-rule `ſs`. A book majority with a single occurrence now decides only where the XML at the place is silent. Six of the seven became ſſ, and the print confirms each one (crops: Luke 190 `confeſ-ſeth`, 207 `permiſſion`; John 300 `compaſſion`, 304 `remiſſion`; Acts 376 `confeſſing`; Romans 430 `Paſ-ſion`). The seventh, Romans 410, reads `intermiſsion` in print, against the XML, so a scan reading keeps it. Scan readings now take precedence at any rung.
+2. **`adopt` left verse `lemmas` offsets stale** when an edit changed a verse's length (Romans 5:1 `therfore`, 5:12), so `‖` split a word. `adopt` now shifts the offsets, including on its NFC pass. Eight lemmas were already misplaced before this phase and are realigned: Luke 2:34, 6:13; Acts 8:26, 10:47; Romans 3:28, 4:1, 4:7, 10:20. Romans 4:7 and 10:20 had given a doubled `‖ ‖`, and the scans show one mark. The new lint code `E-lemma-split` flags a one- or two-letter fragment before `{{sup|‖}}`.
+3. **A misread scan reading** (Luke 232 `Paſ.`) had removed a letter. The print reads `de Paſs.`. A scan reading that matches neither side now stays open unless it is marked `replace`; only Romans 411 `vncleanneſſe.` is marked, after its collage reading.
+4. **Small-caps words are outside the ladder.** A one-off comparison of every `{{sc}}` word with the base found two real changes. Matthew pp. 87 and 96 `TVESDAY` → `TVSEDAY`: the XML reads `Tvſeday` there, while Mark and Luke read `Tveſday`. Matthew p. 89: the margin note is `HOSANNA.` in capitals on the scan. The narrower spans `{{sc|The}} fourth` follow the XML (`THE fourth part`).
+
+Also: `verify` now flags a decision whose losing form sits at the place more surely than the winner, and `adopt` updates each hit's mirrored copies, not only the last hit's. Romans p. 418 `did :11` is corrected in the data to `did: 11`, as in the XML. The 11 is a verse number in the chapter summary.
+
+Known limits that remain: `adopt` can still skip as "done" a generated form that shares all six context words with a committed one elsewhere, although `verify`'s loser check would now report it. Small-caps words are still compared outside the ladder.
 
 ## Frozen pages
 
@@ -77,7 +90,7 @@ Prepared files are in `~/facsimiles/ornaments-1582-nt/commons`. Once they are up
    - Luke: p203 Confeſsors, p219 Quĩquagesme., p221 Confeſsors
    - Acts: p336 Iosuè,, p367 neceſsary, p392 Iesvs,
 
-   Most of these were settled by Transkribus before correction 1 above. One scan collage would settle them.
+   Most of these were settled by Transkribus before Transkribus stopped counting for s vs ſ (ladder correction 1 above). One scan collage would settle them.
 2. **Upload the 19 ornament files**, or leave ornaments off.
 3. **Frozen Arguments (314–316, 405–409):** restore the intros in original spelling so they can be generated, or keep them frozen.
 4. **Reposting:** 440 pages are `changed` against live. Posting stays with the owner (`wikipost.py`, which checks fidelity against the live revision).

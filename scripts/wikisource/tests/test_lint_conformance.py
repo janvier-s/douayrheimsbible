@@ -99,3 +99,13 @@ def test_w_nop_italic_continuation_is_not_an_annotation_head(tmp_path):
 
 def test_w_nop_not_before_a_small_caps_section_title(tmp_path):
     assert 'W-nop' not in codes(tmp_path, 'end.', '{{c|{{larger|{{sc|The Svmme of the Actes}}}}}}\n\ntext')
+
+
+def test_e_lemma_split(tmp_path):
+    # a lemma offset off by a letter puts the ‖ inside a word (Romans p421 'l{{sup|‖}} et vs')
+    assert 'E-lemma-split' in codes(tmp_path, 'faith, l{{sup|‖}} et vs haue peace')
+    assert 'E-lemma-split' in codes(tmp_path, 'as b{{sup|‖}} y one man')
+    assert 'E-lemma-split' not in codes(tmp_path, 'faith, {{sup|‖}} let vs haue peace')
+    assert 'E-lemma-split' not in codes(tmp_path, 'that{{sup|‖}} Abraham did finde')
+    assert 'E-lemma-split' in codes(tmp_path, 'and vn{{sup|‖}} to them')
+    assert 'E-lemma-split' not in codes(tmp_path, 'and that{{sup|‖}} he is come')  # a whole word: placed by hand
