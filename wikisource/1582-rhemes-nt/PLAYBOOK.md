@@ -24,7 +24,7 @@ Conflicts of letter shape or spelling between two readings (ſs/ſſ, ſ/s, macr
 
 1. `A16049.xml` equals one side, and an OCR reading shows the same shape.
 2. The XML alone, when it equals the committed page. The XML also settles the stem-rule ſs cases (owner 2026-11-21).
-3. OCR readings that agree with one side (Transkribus doesn't count for s against ſ), otherwise the book's majority form in the XML (at least 2:1). A majority of one occurrence decides only where the XML at the place is silent.
+3. OCR readings that agree with one side (Transkribus doesn't count for s against ſ, and a reading with sſ, which the print never sets, never counts), otherwise the book's majority form in the XML (at least 2:1). A majority of one occurrence decides only where the XML at the place is silent.
 4. The scans, only for what is still unsettled, and only after the owner has seen the count. Batch them into one crop collage per round.
 
 Scan readings go in `reconcile/scan-readings.jsonl`, one per line: `{"book", "page", "committed", "generated", "reading", "evidence"}`. A scan reading takes precedence at any rung. A reading that matches neither side stays open unless it carries `"replace": true`, so mark that only after reading the crop. Each book's decisions are in `reconcile/<book>.jsonl`; an empty `winner` means the word is still open.

@@ -48,9 +48,9 @@ Enforced by: books.json, generator
 
 ### 3.1 Long s
 
-Pages write long s as `{{ls}}`: `{{ls}}{{ls}}` for ſſ and `{{ls}}s` for ſs (`po{{ls}}sible`). It shows as ſ in the Page: namespace and as s when transcluded, so the text stays searchable. The data and `A16049.xml` keep the literal ſ (U+017F). Round `s` is counted for information, so that a shift ſ→s shows.
+Pages write long s as `{{ls}}`: `{{ls}}{{ls}}` for ſſ and `{{ls}}s` for ſs (`po{{ls}}sible`). It shows as ſ in the Page: namespace and as s when transcluded, so the text stays searchable. The data and `A16049.xml` keep the literal ſ (U+017F). Round `s` is counted for information, so that a shift ſ→s shows. The print never sets round s before long s (sſ), so a page or reading with `s{{ls}}` is a misread.
 
-Enforced by: `ls`, `s`, `E-shift`
+Enforced by: `ls`, `s`, `E-shift`, ladder
 
 ### 3.2 Long s in small caps and abbreviations
 
