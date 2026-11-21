@@ -16,4 +16,4 @@
 
 {{verse|chapter=7|verse=6}} Giue not that which is {{sup|‖}} holy to dogges: neither ca{{ls}}t ye your pearles before {{ls}}wine, le{{ls}}t perhaps they treade them with their feete, and turning, al to teare you.
 
-{{verse|chapter=7|verse=7}} {{MarginNote|margin=left|margin-width=65|text=''Lu. 11, 9.''}}* A{{ls}}ke, and it {{ls}}hal be giuen you: {{ls}}eeke, and you {{ls}}hal finde, knocke, and it {{ls}}hal be opened to you. {{verse|chapter=7|verse=8}} For {{sup|‖}} euery one that a{{ls}}keth, receiueth: and that {{ls}}eeketh, findeth: and to him<noinclude>{{rh||C|that}}</noinclude>
+{{verse|chapter=7|verse=7}} {{MarginNote|margin=left|margin-width=65|text=''Lu. 11, 9.''}}* A{{ls}}ke, and it {{ls}}hal be giuen you: {{ls}}eeke, and you {{ls}}hal finde, knocke, and it {{ls}}hal be opened to you. {{verse|chapter=7|verse=8}} For {{sup|‖}} euery one that a{{ls}}keth, receiueth: and that {{ls}}eeketh, findeth: and to him<noinclude>{{continues|that}}</noinclude>

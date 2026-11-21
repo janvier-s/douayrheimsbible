@@ -2,7 +2,7 @@
 
 ''17. Your light.''] The good life of the Clergie edifieth much, and is Gods great honour: Whereas the contrarie di{{ls}}honoureth him.
 
-''20. One of the{{ls}}e.''] Behold how nece{{ls}}sarie it is, not only to beleeue, but to keepe al the commaundements, euen the very lea{{ls}}t.
+''20. One of the{{ls}}e.''] Behold how nece{{ls}}{{ls}}arie it is, not only to beleeue, but to keepe al the commaundements, euen the very lea{{ls}}t.
 
 ''21. Your iu{{ls}}tice.''] {{MarginNote|margin=left|margin-width=65|text=True inherent iu{{ls}}tice.}}It is our iu{{ls}}tice, when it is geuen vs of God. ''Aug. in P{{ls}}. 30. Conc. 1. De Sp. & lit. c. 9''. So that Chri{{ls}}tians are truely iu{{ls}}t, and haue in them {{ls}}elues inhærent iu{{ls}}tice, by doing Gods commaundements. Without which iu{{ls}}tice of workes no man of age can be {{ls}}aued. ''Aug. de fid. & oper. c. 16''. Whereby we {{ls}}ee {{ls}}aluation, iu{{ls}}tice, and iu{{ls}}tification, not to come of only fayth, or imputation of Chri{{ls}}tes iu{{ls}}tice.
 
@@ -10,7 +10,7 @@
 
 ''24. Gift at the altar.''] Beware of coming to the holy altar or any Sacrament out of charitie. But be fir{{ls}}t reconciled to thy brother, and much more to the Catholike Churche, which is the whole brotherhod of Chri{{ls}}tian men, ''Heb. 13, 1''.
 
-''33. Excepting the cau{{ls}}e of fornication.''] This exception is onely to {{ls}}hew, that for this one cau{{ls}}e a man may put away his wife for euer: but not that he may marrie another: as it is mo{{ls}}t plaine in S. Marke and S. Luke, who leaue out this exception, {{ls}}aying: {{MarginNote|margin=left|margin-width=65|text=Mariage a Sacrament, and is not di{{ls}}{{ls}}olued by diuorce.}}{{MarginNote|margin=right|margin-width=65|text=''Mr. 10, 11. Lu. 16, 18.''}}''Who{{ls}}oeuer dimi{{ls}}seth his wife and marieth an other, committeth aduoutrie''. See the Annot. Luc. 19, 9. But if both parties be in one and the {{ls}}ame fault, then can neither of them not {{ls}}o much as diuorce or put away the other.
+''33. Excepting the cau{{ls}}e of fornication.''] This exception is onely to {{ls}}hew, that for this one cau{{ls}}e a man may put away his wife for euer: but not that he may marrie another: as it is mo{{ls}}t plaine in S. Marke and S. Luke, who leaue out this exception, {{ls}}aying: {{MarginNote|margin=left|margin-width=65|text=Mariage a Sacrament, and is not di{{ls}}{{ls}}olued by diuorce.}}{{MarginNote|margin=right|margin-width=65|text=''Mr. 10, 11. Lu. 16, 18.''}}''Who{{ls}}oeuer dimi{{ls}}{{ls}}eth his wife and marieth an other, committeth aduoutrie''. See the Annot. Luc. 19, 9. But if both parties be in one and the {{ls}}ame fault, then can neither of them not {{ls}}o much as diuorce or put away the other.
 
 ''33. Committeth aduontrie.''] The knot of Mariage is a thing of {{ls}}o great a Sacrament, that not by {{ls}}eparation it {{ls}}elf of the parties it can be loo{{ls}}ed, being not lawful neither for the one part nor the other, to marie agayne vpon diuorce. ''Aug. de bo. Coniug. c. 7''.
 
@@ -20,6 +20,9 @@
 
 {{c|{{larger|{{sc|Chap. VI.}}}}}}
 
-{{c|''In this {{ls}}econd chapter of his Sermon, he controwleth the Phari{{ls}}ees iu{{ls}}tice (that is, their almes, prayer, and fa{{ls}}ting) for the {{ls}}cope and intention therof, which was vaine glorie. 19 Their end al{{ls}}o was to be riche, but ours mu{{ls}}t not be {{ls}}o much as in nece{{ls}}saries.''}} {{dropinitial|T|fl={{verse|chapter=6|verse=1}}}}{{sc|Ake}} good heede that you doe not your {{sup|‖}} iu{{ls}}tice before men, to be {{ls}}een of them: otherwi{{ls}}e reward you {{ls}}hall not haue with your father which is in heauen.
+{{c|''In this {{ls}}econd chapter of his Sermon, he controwleth the Phari{{ls}}ees iu{{ls}}tice (that is, their almes, prayer, and fa{{ls}}ting) for the {{ls}}cope and intention therof, which was vaine glorie. 19 Their end al{{ls}}o was to be riche, but ours mu{{ls}}t not be {{ls}}o much as in nece{{ls}}{{ls}}aries.''}}
 
-{{verse|chapter=6|verse=2}} Therfore when thou {{MarginNote|margin=left|margin-width=65|text=∷ {{sc|The fir{{ls}}t}} worke of iu{{ls}}tice.}}∷ doe{{ls}}t an almes-deede, {{ls}}ound not a trompet before thee, as the hypocrites doe in the Synagogues and in the {{ls}}treetes, that they may be honoured of men: Amen I {{ls}}ay to you, they haue receiued their reward. {{verse|chapter=6|verse=3}} But when thou doe{{ls}}t an almes-deede, let not thy left hand know vvhat thy right hand doeth: {{verse|chapter=6|verse=4}} that thy almes-deede may be in {{ls}}ecrete, and thy father vvhich {{ls}}eeth in {{ls}}ecrete, vvil {{sup|‖}} repay the.⊣<noinclude>{{rh|||And}}</noinclude>
+{{dropinitial|T|fl={{verse|chapter=6|verse=1}}}}{{sc|Ake}} good heede that you doe not your {{sup|‖}} iu{{ls}}tice before men, to be {{ls}}een of them: otherwi{{ls}}e reward you {{ls}}hall not haue with your father which is in heauen.
+
+{{verse|chapter=6|verse=2}} Therfore when thou {{MarginNote|margin=left|margin-width=65|text=∷ {{sc|The}} fir{{ls}}t worke of iu{{ls}}tice.}}∷ doe{{ls}}t an almes-deede, {{ls}}ound not a trompet before thee, as the hypocrites doe in the Synagogues and in the {{ls}}treetes, that they may be honoured of men: Amen I {{ls}}ay to you, they haue receiued their reward. {{verse|chapter=6|verse=3}} But when thou doe{{ls}}t an almes-deede, let not thy left hand know vvhat thy right hand doeth: {{verse|chapter=6|verse=4}} that thy almes-deede may be in {{ls}}ecrete, and thy father vvhich {{ls}}eeth in {{ls}}ecrete, vvil {{sup|‖}} repay the.⊣
+{{nop}}<noinclude>{{continues|And}}</noinclude>

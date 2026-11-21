@@ -1,7 +1,6 @@
 <noinclude><pagequality level="1" user="" />{{rh|CHA. XXI.|ACCORDING TO S. MATTHEW.|61 HOLY weeke.}}</noinclude>to lay hands vpon him, they feared the multitudes: becau{{ls}}e they held him as a Prophet.⊣
 
-{{c|{{larger|A N N O T A T I O N S}}}}
-{{c|{{sc|Chap. XXI.}}}}
+{{c|{{larger|A N N O T A T I O N S}}}}{{c|{{sc|Chap. XXI.}}}}
 
 ''2. You {{ls}}hal finde.''] Chri{{ls}}t by diuine power both knewe where the{{ls}}e bea{{ls}}ts were, being ab{{ls}}ent, and commaunded them for his v{{ls}}e, being an other mans, and {{ls}}odenly made the colt fitte to be ridden on, neuer broken before.
 
@@ -9,7 +8,7 @@
 
 ''8. Garments in the way.''] The{{ls}}e offices of honour done to our Sauiour extraordinarily, were very acceptable: and for a memory hereof the holy Church maketh a {{ls}}olemne {{MarginNote|margin=right|margin-width=65|text=Proce{{ls}}{{ls}}ion on Palme-{{ls}}unday with the B. Sacrament.}}Proce{{ls}}{{ls}}ion euery yere vpon this day, {{ls}}pecially in our Countrie when it was Catholike, with the B. Sacrament reuerently caried, as it were Chri{{ls}}t vpon the a{{ls}}{{ls}}e, and {{ls}}trawing of ru{{ls}}hes and floures, bearing of Palmes, {{ls}}etting vp boughes, {{ls}}predding and hanging vp the riche{{ls}}t clothes, the quire and queri{{ls}}ters {{ls}}inging as here the children and the people. {{MarginNote|margin=right|margin-width=65|text=Al deuout offices in that kinde, exceding grateful.}}al done in a very goodly ceremonie to the honour of Chri{{ls}}t and the memorie of his triumphe vpon this day. The like {{ls}}eruice and the like duties done to him in al other {{ls}}olemne Proce{{ls}}{{ls}}ions of the B. Sacrament, and otherwi{{ls}}e, be vndoubtedly no le{{ls}}{{ls}}e grateful.
 
-''9. Ho{{ls}}anna.''] {{MarginNote|margin=right|margin-width=65|text={{sc|Ho{{ls}}anna}}.}}The{{ls}}e very wordes of ioyful crie and triumphant voice of gratulation to our Sauiour, holy Church v{{ls}}eth alwaies in the Preface of the Ma{{ls}}{{ls}}e, as it were the voice of the Prie{{ls}}t and al the people (who then {{ls}}pecially are attent and deuout) immediatly before the Con{{ls}}ecration and Eleuation, as it were expecting, and reioycing at his comming.
+''9. Ho{{ls}}anna.''] {{MarginNote|margin=right|margin-width=65|text=Ho{{ls}}anna.}}The{{ls}}e very wordes of ioyful crie and triumphant voice of gratulation to our Sauiour, holy Church v{{ls}}eth alwaies in the Preface of the Ma{{ls}}{{ls}}e, as it were the voice of the Prie{{ls}}t and al the people (who then {{ls}}pecially are attent and deuout) immediatly before the Con{{ls}}ecration and Eleuation, as it were expecting, and reioycing at his comming.
 
 ''13. Hou{{ls}}e of prayer.''] Note here that he calleth external {{ls}}acrifice (out of the Prophete E{{ls}}ay) prayer. For he {{ls}}peaketh of the Temple, which was builded properly and principally for {{ls}}acrifice.
 
@@ -23,4 +22,5 @@
 
 {{c|{{larger|{{sc|Chap. XXII.}}}}}}
 
-{{c|''Yet by one other parable he fore{{ls}}heweth the mo{{ls}}t de{{ls}}erued reprobation of the earthly and per{{ls}}ecuting Iewes, and the gratious vocation of the Gentils in their place. 15 Then he defeateth the {{ls}}nare of the Phari{{ls}}ees and Herodians about paying tribute to Cæ{{ls}}ar. 23 He an{{ls}}wereth al{{ls}}o the inuention of the Sadducees again{{ls}}t the Re{{ls}}urrection: 34 and a que{{ls}}tion that the Phari{{ls}}ees a{{ls}}ke to po{{ls}}e him: turning and po{{ls}}ing them againe, becau{{ls}}e they imagined that Chri{{ls}}t {{ls}}hould be no more then a man: 46 and {{ls}}o he putteth al the bu{{ls}}y Sectes to {{ls}}ilence.''}}<noinclude>{{rh||H iij|AND}}</noinclude>
+{{c|''Yet by one other parable he fore{{ls}}heweth the mo{{ls}}t de{{ls}}erued reprobation of the earthly and per{{ls}}ecuting Iewes, and the gratious vocation of the Gentils in their place. 15 Then he defeateth the {{ls}}nare of the Phari{{ls}}ees and Herodians about paying tribute to Cæ{{ls}}ar. 23 He an{{ls}}wereth al{{ls}}o the inuention of the Sadducees again{{ls}}t the Re{{ls}}urrection: 34 and a que{{ls}}tion that the Phari{{ls}}ees a{{ls}}ke to po{{ls}}e him: turning and po{{ls}}ing them againe, becau{{ls}}e they imagined that Chri{{ls}}t {{ls}}hould be no more then a man: 46 and {{ls}}o he putteth al the bu{{ls}}y Sectes to {{ls}}ilence.''}}
+{{nop}}<noinclude>{{continues|A}}</noinclude>
