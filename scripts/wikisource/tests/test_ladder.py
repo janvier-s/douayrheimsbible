@@ -167,6 +167,15 @@ def test_stem_rule_ss_settled_by_xml():
     assert d.rung == 4
 
 
+def test_round_then_long_s_ocr_never_votes():
+    # the print never sets sſ (round s, then long s): such an OCR reading is a misread (Romans 421)
+    for ocr, tess in ((['remisſion'], []), ([], ['remisſion'])):
+        d = ladder.decide(C('remiſsion', 'remisſion'), ['remiſſion'], ocr, tess, Counter())
+        assert d.rung == 4 and d.winner == ''
+    d = ladder.decide(C('remiſsion', 'remisſion'), ['remiſſion'], ['remisſion'], ['remiſsion'], Counter())
+    assert (d.rung, d.winner) == (3, 'committed')  # a sound OCR reading still votes
+
+
 def test_scan_readings_override_rung4():
     c = C('Paſſ.', 'Paſs.', page=232)
     ds = [ladder.Decision(c, 4, '', 'xml -'), ladder.Decision(C('a', 'b', page=1), 2, 'committed', 'xml a')]

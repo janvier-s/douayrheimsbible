@@ -294,7 +294,9 @@ def decide(c, xml_forms, ocr_forms, tess_forms, same_book):
         if xml and not _has_macron(xml):
             xml = None
         same_book = Counter({k: v for k, v in same_book.items() if _has_macron(k)})
-    ocr = {core(f) for f in ocr_forms}
+    # the print never sets sſ (round s, then long s): an OCR reading with it is a misread and never votes
+    ocr = {core(f) for f in ocr_forms if 'sſ' not in f}
+    tess_forms = [f for f in tess_forms if 'sſ' not in f]
     if xml in side and xml in ocr:
         return Decision(c, 1, side[xml], f'xml {xml} + transkribus')
     if xml in side and side[xml] == 'committed':

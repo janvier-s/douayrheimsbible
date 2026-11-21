@@ -69,3 +69,9 @@
 {"book": "luke", "page": 221, "committed": "Confeſsors", "generated": "Confeſſors", "reading": "Confeſſors", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
 {"book": "acts", "page": 336, "committed": "Iosuè,", "generated": "Ioſuè,", "reading": "Ioſuè,", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
 {"book": "acts", "page": 392, "committed": "Iesvs,", "generated": "Ieſvs,", "reading": "Iesvs,", "evidence": "scan collage 2026-11-21 (owner: settle the open words); set in capitals (IESVS): round s"}
+{"book": "romans", "page": 421, "committed": "remiſsion", "generated": "remisſion", "reading": "remiſſion", "evidence": "scan 2026-11-21 pdf421 (badges only of our remiſſion of ſinnes)", "replace": true}
+{"book": "mark", "page": 141, "committed": "Paſsion.", "generated": "Paſſion.", "reading": "Paſſion.", "evidence": "scan collage 2026-11-21 mark/10/1 (toward his Paſſion. Chap. X.): ſſ ligature, as A16049"}
+{"book": "mark", "page": 154, "committed": "poſsible", "generated": "poſſible", "reading": "poſſible", "evidence": "scan collage 2026-11-21 mark/14/3 (al things are poſ-|ſible to thee): long s both sides of the break, as A16049"}
+{"book": "luke", "page": 233, "committed": "Paſsion", "generated": "Paſſion", "reading": "Paſſion", "evidence": "scan collage 2026-11-21 pdf233 (benefites of his Paſſion vnto vs): ſſ ligature, as A16049"}
+{"book": "romans", "page": 442, "committed": "neceſsitie,", "generated": "neceſſitie,", "reading": "neceſſitie,", "evidence": "scan collage 2026-11-21 pdf442 (ſubiect of neceſſitie, not only): ſſ ligature, as A16049"}
+{"book": "romans", "page": 447, "committed": "Praiſe", "generated": "Praise", "reading": "Praiſe", "evidence": "scan 2026-11-21 pdf447 (And againe, Praiſe al ye Gentils): italic long s; the OCR Praise was a misread"}
