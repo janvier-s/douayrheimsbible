@@ -73,3 +73,12 @@ def books(repo=None):
 
 def book(name, repo=None):
     return from_dict(name, sources.load_books(repo)[name])
+
+
+def argument_pages(name, repo=None):
+    """Wiki pages the book's Argument takes before chapter 1: 0 without one, 2 when one word is split
+    across its two pages (John), else one per page break in the print (Acts 3, Romans 5) or 1."""
+    from .overrides import ARGUMENT_BREAKS, ARGUMENT_SPLIT
+    if book(name, repo).argument_page is None:
+        return 0
+    return 2 if name in ARGUMENT_SPLIT else len(ARGUMENT_BREAKS.get(name, [])) + 1

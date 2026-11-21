@@ -255,11 +255,10 @@ def book_pages(book, source=None):
 def ocr_by_page(book, source):
     """OCR page text keyed by wiki page, numbered as generate.py numbers them (after the Argument)."""
     from . import config
-    from .overrides import ARGUMENT_SPLIT
     if source == 'transkribus' and not (TK / book / 'manifest.json').exists():
         return {}  # Matthew was read with Tesseract only
     cfg = load_books()[book]
     first = cfg['first']
-    if config.book(book).argument_page == first:
-        first += 2 if book in ARGUMENT_SPLIT else 1
+    if config.book(book).argument_page == first:  # chapter 1 starts after the Argument's pages
+        first += config.argument_pages(book)
     return {first + n: p['text'] for n, p in enumerate(book_pages(book, source)) if first + n <= cfg['last']}

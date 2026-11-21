@@ -49,3 +49,20 @@ def test_data_files_and_ocr_by_page_live_in_sources():
 def test_ocrpages_is_sources():
     from rhemes import ocrpages, sources
     assert ocrpages.book_pages is sources.book_pages and ocrpages.TK == sources.TK and ocrpages.SCAN == sources.SCAN
+
+
+def test_argument_pages():
+    """Wiki pages the Argument takes before chapter 1: one rule for the generator and the OCR keying."""
+    from rhemes import config
+    assert {b: config.argument_pages(b) for b in ['matthew', 'mark', 'luke', 'john', 'acts', 'romans']} == \
+        {'matthew': 0, 'mark': 1, 'luke': 1, 'john': 2, 'acts': 3, 'romans': 5}
+
+
+@pytest.mark.skipif(not Path.home().joinpath('facsimiles/transkribus/pages').exists(), reason='OCR not on this machine')
+def test_ocr_by_page_starts_at_chapter_one():
+    """The first OCR page (the chapter-1 page) is keyed to the wiki page where the generator puts chapter 1:
+    Acts 317 and Romans 410 come after multi-page Arguments (314-316, 405-409)."""
+    from rhemes import sources
+    for src in ('transkribus', 'tesseract'):
+        firsts = {b: min(sources.ocr_by_page(b, src)) for b in ['mark', 'john', 'acts', 'romans']}
+        assert firsts == {'mark': 115, 'john': 244, 'acts': 317, 'romans': 410}, (src, firsts)

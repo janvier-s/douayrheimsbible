@@ -751,7 +751,7 @@ def main(argv):
     if CFG.argument_page == FIRST:
         OUT.mkdir(parents=True, exist_ok=True)
         write_argument(book, FIRST)
-        FIRST += 2 if BOOK in ARGUMENT_SPLIT else len(ARGUMENT_BREAKS.get(BOOK, [])) + 1
+        FIRST += config.argument_pages(BOOK, REPO)
     if MAXP is None:
         MAXP = cfg['last'] - FIRST + 1 if 'last' in cfg else 10 ** 6
     ann = {}
