@@ -1,0 +1,59 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{x-larger|{{rh|Hagar fleeth.|Chap.xvij.|Abraham.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude><sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. bee builded by her.''}} obtaine children by her: and Abram hearkened to the voice of Sarai.
+
+{{verse|16|3}}And Sarai Abrams wife, tooke Hagar her maid, the Egyptian, after Abram had dwelt ten yeeres in the land of Canaan, and gaue her to her huſband Abram, to be his wife.
+
+{{verse|16|4}}¶ And he went in vnto Hagar, and ſhe conceiued: And when ſhee ſaw that ſhee had conceiued, her miſtreſſe was deſpiſed in her eyes.
+
+{{verse|16|5}}And Sarai ſaid vnto Abram, My wrong be vpon thee: I haue giuen my maid into thy boſome, and when ſhee ſaw that ſhe had conceiued, I was deſpiſed in her eyes: the LORD iudge betweene me and thee.
+
+{{verse|16|6}}But Abram ſaid vnto Sarai, Behold, thy maid {{smaller|is}} in thy hand; doe to her <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. that which is good in thy eyes.''}} as it pleaſeth thee. And when Sarai <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. afflicted her.''}} dealt hardly with her, ſhee fled from her face.
+
+{{verse|16|7}}¶ And the Angel of the LORD found her by a fountaine of water, in the wilderneſſe, by the fountaine, in the way to Shur:
+
+{{verse|16|8}}And he ſaid, Hagar Sarais maid, whence cameſt thou? and whither wilt thou goe? And ſhe ſaid, I flee from the face of my miſtreſſe Sarai.
+
+{{verse|16|9}}And the Angel of the LORD ſaid vnto her, Returne to thy miſtreſſe, and ſubmit thy ſelfe vnder her hands.
+
+{{verse|16|10}}And the Angel of the LORD ſaid vnto her, I will multiply thy ſeede exceedingly, that it ſhall not be numbred for multitude.
+
+{{verse|16|11}}And the angel of the LORD ſaid vnto her, Behold, thou {{smaller|art}} with child, and ſhalt beare a ſonne, and ſhalt call his name  ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ That is, ''God ſhall heare.''}} Iſhmael; becauſe the LORD hath heard thy affliction.
+
+{{verse|16|12}}And he will be a wilde man; his hand {{smaller|will}} {{smaller|be}} againſt euery man, and euery mans hand againſt him: *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Chap.25.18.}} ⁊ he ſhal dwell in the preſence of all his brethren.
+
+{{verse|16|13}}And ſhee called the name of the LORD that ſpake vnto her, Thou God ſeeſt me: for ſhe ſaid, Haue I alſo here looked after him that ſeeth me?
+
+{{verse|16|14}}Wherefore the well was called, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Chap.24.62.}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ That is, ''the well of him that liueth and ſeeeth me.''}} Beer-lahai-roi: Behold, It is betweene Cadeſh and Bered.
+
+{{verse|16|15}}¶ And Hagar bare Abram a ſonne: and Abram called his ſonnes name, which Hagar bare, Iſhmael.
+
+{{verse|16|16}}And Abram was foureſcore and ſix yeeres old, when Hagar bare Iſhmael to Abram.
+
+==={{Chapter|17|CHAP. XVII.}}===
+
+{{smaller block|[[#17:1|1]] God reneweth the Couenant. [[#17:5|5]] Abram his name is changed, in token of a greater bleſſing. [[#17:10|10]] Circumciſion is inſtituted. [[#17:15|15]] Sarai her name is changed, and ſhe bleſſed. [[#17:17|17]] Izſaac is promiſed. [[#17:23|23]] Abram and Iſmael are circumciſed.}}
+
+{{Verse|17|1|notext=}} {{dropinitial|A|image=King James Bible (1611) page A5v (A).png|imgsize=100px}}Nd when Abram was ninetie yeres old and nine, the LORD appeared to Abram, and ſaid vnto him, I am the almightie God, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Chap.5.22.}} walke before me, and be thou ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, vpright or ſincere.''}} perfect.
+
+{{verse|17|2}}And I wil make my covenant betweene me and thee, and will multiply thee exceedingly.
+
+{{verse|17|3}}And Abram fell on his face, and God talked with him, ſaying,
+
+{{verse|17|4}}As for me, behold, my couenant {{smaller|is}} with thee, and thou ſhalt be a *{{MarginNote|margin=right|margin-width=65|text-align=left|text=}} father of ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. multitude of nations.''}} many nations.
+
+{{verse|17|5}}Neither ſhall thy name any more be called Abram, but thy name ſhall bee Abraham: *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Rom.4.17}} for a father of many nations haue I made thee.
+
+{{verse|17|6}}And I will make thee exceeding fruitfull, and I will make nations of thee, and Kings ſhall come out of thee.
+
+{{verse|17|7}}And I will eſtabliſh my couenant betweene me and thee, and thy ſeede after thee, in their generations for an euerlaſting couenant, to bee a God vnto thee, and to thy ſeed after thee.
+
+{{verse|17|8}}And I will giue vnto thee, and to thy ſeed after thee, the land <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. of thy ſoiournings.''}} wherein thou art a ſtranger, all the land of Canaan, for an euerlaſting poſſeſſion, and I will be their God.
+
+{{verse|17|9}}¶ And God ſaid vnto Abraham, Thou ſhalt keepe my couenant therefore, thou, and thy ſeede after thee, in their generations.
+
+{{verse|17|10}}This {{smaller|is}} my couenant, which yee ſhall keepe betweene me and you, and thy ſeed after thee: *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Acts 7.8.}} euery man-child among you ſhall be circumciſed.
+
+{{verse|17|11}}And ye ſhall circumciſe the fleſh of your foreſkinne; and it ſhal be a *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Acts 7.8. rom.4.11.}} token of the couenant betwixt me and you.
+
+{{verse|17|12}}And he that is <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. a ſonne of eight dayes.''}} eight dayes olde, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Leuit.12.3. luke 2.21 iohn 7.22.}} ſhalbe circumciſed among you, euery man-child in your generations, he that is borne in the houſe, or bought with money of any ſtranger, which {{smaller|is}} not of thy ſeed.
+
+{{verse|17|13}}He that is borne in thy houſe, and he that is bought with thy money, muſt<noinclude>{{rh||& 2|needs}}</noinclude>
