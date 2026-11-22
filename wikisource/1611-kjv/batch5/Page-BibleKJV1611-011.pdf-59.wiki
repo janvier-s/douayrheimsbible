@@ -1,0 +1,68 @@
+<noinclude><pagequality level="1" user="Sp1nd01" /></noinclude><section begin="end-psalmes" />{{Verse|150|1|notext=}} {{dropinitial|P|image=King James Bible (1611) page A2r (P).png|imgsize=100px}}†{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Halleluiah.''}} Raiſe ye the {{LORD}}. Praiſe God in his Sanctuarie: Praiſe him in the firmament of his power.
+
+{{Verse|150|2}} Praiſe him for his mightie actes: Praiſe him according to his excellent greatneſſe.
+
+{{Verse|150|3}} Praiſe him with the ſound of the ǁ{{MarginNote|margin=right|margin-width=65|text-align=left|text=ǁ ''Or, Cornet.''}} Trumpet: Prayſe him with the Pſalterie and Harpe.
+
+{{Verse|150|4}} Praiſe him with the timbrell and ǁ{{MarginNote|margin=right|margin-width=65|text-align=left|text=ǁ ''Or, Pipe.''}} dance: praiſe him with ſtringed inſtruments, and Organes.
+
+{{Verse|150|5}} Praiſe him upon the loud cymbals: praiſe him upon the high ſounding cymbals.
+
+{{Verse|150|6}} Let euery thing that hath breath, praiſe the {{LORD}}. Praiſe yee the {{LORD}}.
+
+{{rule}}
+{{rule}}
+<section end="end-psalmes" />
+<section begin="proverbs" />[[File:King James Bible (1611) page D4v.xcf|center|600px]]
+{{rule}}
+{{nop}}
+==¶ THE PROVERBES.==
+
+==={{Chapter|1|CHAP. I.}}===
+{{smaller block|[[#1:1|1]] The vſe of the Prouerbes. [[#1:7|7]] An exhortation to feare God and beleeue his word. [[#1:10|10]] To auoyd the intiſings of ſinners. [[#1:20|20]] Wiſdome complaineth of her contempt. [[#1:24|24]] She threatneth her contemners.}}
+
+{{Verse|1|1|notext=}}{{dropinitial|T|image=King James Bible (1611) page A2v (T).png|imgsize=100px}}HE Prouerbes of Solomon the ſonne of Dauid, King of Iſrael,
+
+{{Verse|1|2}} To knowe wiſedome and inſtruction, to perceiue the words of vnderſtanding,
+
+{{Verse|1|3}} To receiue the inſtruction of wiſdome, iuſtice, and iudgement ⁊ †{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. equities.''}} equitie,
+
+{{Verse|1|4}} To giue ſubtiltie to the ſimple, to the yong man knowledge and ǁ{{MarginNote|margin=right|margin-width=65|text-align=left|text=ǁ ''Or, aduiſement''}} diſcretion.
+
+{{Verse|1|5}} A wiſe {{smaller|man}} wil heare, and wil increaſe learning: and a man of vnderſtanding ſhall attaine vnto wiſe counſels:
+
+{{Verse|1|6}}To vnderſtand a prouerbe, and ǁ{{MarginNote|margin=right|margin-width=65|text-align=left|text=ǁ ''Or, an eloquent ſpeach.''}} the interpretation; the wordes of the wiſe, and their darke ſayings.
+
+{{Verse|1|7}} ¶ *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Iob 28.28. pſal 111.10 prou.9.10.}} The feare of the {{sc|Lord}} {{smaller|is}} ǁ{{MarginNote|margin=right|margin-width=65|text-align=left|text=ǁ ''Or, the principall part.''}} the beginning of knowledge: {{smaller|but}} fooles deſpiſe wiſedome and inſtruction.
+
+{{Verse|1|8}} My ſonne, heare the inſtruction of thy father, and forſake not the law of thy mother.
+
+{{Verse|1|9}} For they {{smaller|shall be}} †{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. an adding.''}} an ornament of grace vnto thy head, and chaines about thy necke.
+
+{{Verse|1|10}} ¶ My ſonne, if ſinners entiſe thee, conſent thou not.
+
+{{Verse|1|11}} If they ſay, Come with vs, let vs lay wait for blood, let vs lurke priuily for the innocent without cauſe:
+
+{{Verse|1|12}} Let vs ſwallow them vp aliue, as the graue, and whole, as thoſe that goe downe into the pit:
+
+{{Verse|1|13}} Wee ſhall finde all precious ſubſtance, wee ſhall fill our houſes with ſpoile:
+
+{{Verse|1|14}} Caſt in thy lot among vs, let vs all haue one purſe:
+
+{{Verse|1|15}} My ſonne, walke not thou in the way with them; refraine thy foot from their path:
+
+{{Verse|1|16}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Iſa.59.7. rom.3.15.}} For their feete runne to euil, and make haſte to ſhed blood.
+
+{{Verse|1|17}} Surely in vaine the net is ſpread †{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. is the eyes of euery thing that hath a wing.''}} in the ſight of any bird.
+
+{{Verse|1|18}} And they lay wait for their {{smaller|owne}} blood, they lurke priuily for their {{smaller|owne}} liues.
+
+{{Verse|1|19}} So {{smaller|are}} the waies of euery one that is greedie of gaine: {{smaller|which}} taketh away the life of the owners thereof.
+
+{{Verse|1|20}} ¶ †{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. wiſedomes, that is, excellent wiſedome.''}} Wiſedome crieth without,  ſhe *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Prou.8.1.}} vttereth her voice in the ſtreets:
+
+{{Verse|1|21}} Shee crieth in the chiefe place of concourſe, in the openings of the gates: in the city ſhe vttereth her words, {{smaller|ſaying,}}
+
+{{Verse|1|22}} How long, ye ſimple ones, will ye loue ſimplicitie? and the ſcorners delight in their ſcorning, and fooles hate knowledge?
+
+{{Verse|1|23}} Turne you at my reproofe: behold, I will powre out my ſpirit vnto <section end="proverbs" /><noinclude></noinclude>
