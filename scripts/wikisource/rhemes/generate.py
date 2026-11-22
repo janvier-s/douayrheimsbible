@@ -916,7 +916,12 @@ def main(argv):
             body = sidenotes_body(body, side_inner, side_outer)
         body = body.replace('{{MINNER|', '{{MarginNote|margin=' + side_inner + '|margin-width=65|text=')
         body = body.replace('{{MOUTER|', '{{MarginNote|margin=' + side_outer + '|margin-width=65|text=')
-        catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', DROPI.sub(r'\1', SENT.sub('', S[b]['text']))).strip() if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
+        def _catch(k):
+            return re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', DROPI.sub(r'\1', SENT.sub('', S[k]['text']))).strip()
+        bc = b
+        while bc + 1 < len(S) and re.fullmatch(r'[a-d]', _catch(bc)):
+            bc += 1  # a margin letter before the first word is not the printer's catchword
+        catch = _catch(bc) if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
         if b < len(S) and S[b]['kind'] in ('annhead', 'chap', 'title'):
             # the next page opens with a heading: take the print's catchword ("Annot-", "Chap.") from the OCR
             tail = [l for l in p['text'].splitlines() if l.strip()]

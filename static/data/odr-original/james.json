@@ -977,11 +977,11 @@
         },
         {
           "verse": 16,
-          "text": "<na>[1]</na><na>[2]</na> Confeſſe therfore your ſinnes one to an other: & pray one for an other that you may be ſaued. ⊢ for the continual praier of a iuſt man auaileth much.",
+          "text": "b <na>[1]</na><na>[2]</na> Confeſſe therfore your ſinnes one to an other: & pray one for an other that you may be ſaued. ⊢ for the continual praier of a iuſt man auaileth much.",
           "has_annotation": true,
           "lemmas": [
             [
-              25,
+              27,
               17,
               1
             ]
@@ -989,7 +989,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "The Epiſtle in <i>Maioribus Litanijs</i> on S. Markes day, and in the Rogation daies.",
+              "text": "b The Epiſtle in <i>Maioribus Litanijs</i> on S. Markes day, and in the Rogation daies.",
               "kind": "lectionary"
             },
             {
