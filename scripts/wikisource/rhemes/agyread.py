@@ -435,7 +435,7 @@ def main(argv=None):
         wrong = [dict(id=it['id'], model=m, prompt=p, truth=it['truth'], runs=rd.get(it['id']))
                  for (m, p), rd in readings.items() for it in key
                  if rd.get(it['id']) and None not in rd[it['id']] and rd[it['id']][0] == rd[it['id']][1]
-                 and rd[it['id']][0] != it['truth']]
+                 and rd[it['id']][0] != unicodedata.normalize('NFC', it['truth'])]
         CAL_PATH.write_text(json.dumps(dict(
             date=datetime.date.today().isoformat(),
             scores=[dict(model=m, prompt=p, kind=k, **s) for (m, p, k), s in sorted(scores.items())],

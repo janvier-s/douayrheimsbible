@@ -1,213 +1,231 @@
 {
- "date": "2026-11-21",
+ "date": "2026-11-22",
  "scores": [
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "kind": "longs",
+   "n": 75,
+   "agree": 64,
+   "right": 61,
+   "confidently_wrong": 3
+  },
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "kind": "macron",
+   "n": 54,
+   "agree": 36,
+   "right": 16,
+   "confidently_wrong": 20
+  },
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "kind": "wording",
+   "n": 14,
+   "agree": 14,
+   "right": 13,
+   "confidently_wrong": 1
+  },
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "kind": "wvv",
+   "n": 171,
+   "agree": 161,
+   "right": 147,
+   "confidently_wrong": 14
+  },
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "kind": "longs",
+   "n": 75,
+   "agree": 68,
+   "right": 65,
+   "confidently_wrong": 3
+  },
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "kind": "macron",
+   "n": 54,
+   "agree": 35,
+   "right": 18,
+   "confidently_wrong": 17
+  },
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "kind": "wording",
+   "n": 14,
+   "agree": 13,
+   "right": 13,
+   "confidently_wrong": 0
+  },
+  {
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "kind": "wvv",
+   "n": 171,
+   "agree": 162,
+   "right": 157,
+   "confidently_wrong": 5
+  },
   {
    "model": "gemini-4-argon-high",
    "prompt": "plain",
    "kind": "longs",
-   "n": 79,
-   "agree": 78,
+   "n": 75,
+   "agree": 74,
    "right": 74,
-   "confidently_wrong": 4
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-high",
    "prompt": "plain",
    "kind": "macron",
-   "n": 51,
-   "agree": 51,
-   "right": 43,
-   "confidently_wrong": 8
+   "n": 54,
+   "agree": 54,
+   "right": 51,
+   "confidently_wrong": 3
   },
   {
    "model": "gemini-4-argon-high",
    "prompt": "plain",
    "kind": "wording",
-   "n": 21,
-   "agree": 21,
+   "n": 14,
+   "agree": 14,
    "right": 14,
-   "confidently_wrong": 7
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-high",
    "prompt": "plain",
    "kind": "wvv",
-   "n": 179,
-   "agree": 175,
+   "n": 171,
+   "agree": 167,
    "right": 167,
-   "confidently_wrong": 8
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-high",
    "prompt": "targeted",
    "kind": "longs",
-   "n": 79,
-   "agree": 18,
+   "n": 75,
+   "agree": 17,
    "right": 17,
-   "confidently_wrong": 1
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-high",
    "prompt": "targeted",
    "kind": "macron",
-   "n": 51,
-   "agree": 5,
-   "right": 5,
+   "n": 54,
+   "agree": 8,
+   "right": 8,
    "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-high",
    "prompt": "targeted",
    "kind": "wording",
-   "n": 21,
-   "agree": 6,
+   "n": 14,
+   "agree": 4,
    "right": 4,
-   "confidently_wrong": 2
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-high",
    "prompt": "targeted",
    "kind": "wvv",
-   "n": 179,
-   "agree": 36,
-   "right": 33,
-   "confidently_wrong": 3
+   "n": 171,
+   "agree": 35,
+   "right": 35,
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "plain",
    "kind": "longs",
-   "n": 79,
-   "agree": 64,
+   "n": 75,
+   "agree": 61,
    "right": 61,
-   "confidently_wrong": 3
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "plain",
    "kind": "macron",
-   "n": 51,
-   "agree": 38,
-   "right": 32,
-   "confidently_wrong": 6
+   "n": 54,
+   "agree": 42,
+   "right": 39,
+   "confidently_wrong": 3
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "plain",
    "kind": "wording",
-   "n": 21,
-   "agree": 19,
+   "n": 14,
+   "agree": 13,
    "right": 13,
-   "confidently_wrong": 6
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "plain",
    "kind": "wvv",
-   "n": 179,
-   "agree": 144,
+   "n": 171,
+   "agree": 137,
    "right": 136,
-   "confidently_wrong": 8
+   "confidently_wrong": 1
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
    "kind": "longs",
-   "n": 79,
-   "agree": 57,
+   "n": 75,
+   "agree": 54,
    "right": 54,
-   "confidently_wrong": 3
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
    "kind": "macron",
-   "n": 51,
-   "agree": 38,
-   "right": 32,
-   "confidently_wrong": 6
+   "n": 54,
+   "agree": 42,
+   "right": 40,
+   "confidently_wrong": 2
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
    "kind": "wording",
-   "n": 21,
-   "agree": 20,
+   "n": 14,
+   "agree": 13,
    "right": 13,
-   "confidently_wrong": 7
+   "confidently_wrong": 0
   },
   {
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
    "kind": "wvv",
-   "n": 179,
-   "agree": 148,
-   "right": 143,
-   "confidently_wrong": 5
+   "n": 171,
+   "agree": 142,
+   "right": 142,
+   "confidently_wrong": 0
   }
  ],
- "trusted": [],
+ "trusted": [
+  [
+   "gemini-4-argon-high",
+   "plain",
+   "longs"
+  ]
+ ],
  "agreed_differently": [
-  {
-   "id": "john:pdf243:1003,1160,75,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
-   "id": "john:pdf243:1380,1078,80,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
-   "id": "john:pdf247:1409,796,76,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "otherwiſe",
-   "runs": [
-    "other-",
-    "other-"
-   ]
-  },
-  {
-   "id": "john:pdf247:613,530,28,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "frō",
-   "runs": [
-    "frō",
-    "frō"
-   ]
-  },
-  {
-   "id": "john:pdf252:1283,1013,34,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "mã",
-   "runs": [
-    "mā",
-    "mā"
-   ]
-  },
-  {
-   "id": "john:pdf256:1395,1331,129,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "Adoration,",
-   "runs": [
-    "Adoratiō,",
-    "Adoratiō,"
-   ]
-  },
   {
    "id": "john:pdf269:1254,1043,104,60",
    "model": "gemini-4-argon-low",
@@ -219,126 +237,6 @@
    ]
   },
   {
-   "id": "john:pdf277:1396,361,68,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "ſuſpēſe?",
-   "runs": [
-    "Iuſ-",
-    "Iuſ-"
-   ]
-  },
-  {
-   "id": "luke:pdf167:1362,412,105,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "vvorthines",
-   "runs": [
-    "vvorthi-",
-    "vvorthi-"
-   ]
-  },
-  {
-   "id": "luke:pdf170:673,1029,109,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "womā,",
-   "runs": [
-    "woman,",
-    "woman,"
-   ]
-  },
-  {
-   "id": "luke:pdf180:1392,604,191,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "Bartholomevv,",
-   "runs": [
-    "Bartholo-",
-    "Bartholo-"
-   ]
-  },
-  {
-   "id": "luke:pdf182:1625,1351,84,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "pardon,",
-   "runs": [
-    "pardō,",
-    "pardō,"
-   ]
-  },
-  {
-   "id": "luke:pdf186:1446,2166,96,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "vvicked",
-   "runs": [
-    "vvic-",
-    "vvic-"
-   ]
-  },
-  {
-   "id": "luke:pdf197:1081,1010,74,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "nevv",
-   "runs": [
-    "nevve",
-    "nevve"
-   ]
-  },
-  {
-   "id": "luke:pdf197:240,1206,174,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "Contemplatiue,",
-   "runs": [
-    "Contēplatiue,",
-    "Contēplatiue,"
-   ]
-  },
-  {
-   "id": "luke:pdf202:1175,1140,65,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "mans",
-   "runs": [
-    "mās",
-    "mās"
-   ]
-  },
-  {
-   "id": "luke:pdf210:1088,161,119,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "warre",
-   "runs": [
-    "vvarre",
-    "vvarre"
-   ]
-  },
-  {
-   "id": "luke:pdf218:626,552,90,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "vvent.",
-   "runs": [
-    "vvent.)",
-    "vvent.)"
-   ]
-  },
-  {
-   "id": "luke:pdf223:1262,1453,151,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "recommended",
-   "runs": [
-    "recōmended",
-    "recōmended"
-   ]
-  },
-  {
    "id": "luke:pdf228:1144,879,217,60",
    "model": "gemini-4-argon-low",
    "prompt": "plain",
@@ -346,26 +244,6 @@
    "runs": [
     "drunkeneſſe",
     "drunkeneſſe"
-   ]
-  },
-  {
-   "id": "mark:11/1:1615,932,59,47",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "contentatiō",
-   "runs": [
-    "con-",
-    "con-"
-   ]
-  },
-  {
-   "id": "mark:11/2:932,2166,74,72",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "alſo",
-   "runs": [
-    "that",
-    "that"
    ]
   },
   {
@@ -389,96 +267,6 @@
    ]
   },
   {
-   "id": "mark:16/2:1533,1025,57,71",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "folovved.",
-   "runs": [
-    "ſo-",
-    "ſo-"
-   ]
-  },
-  {
-   "id": "mark:16/2:1591,1408,43,38",
-   "model": "gemini-4-argon-low",
-   "prompt": "plain",
-   "truth": "without",
-   "runs": [
-    "ithout",
-    "ithout"
-   ]
-  },
-  {
-   "id": "john:pdf243:1003,1160,75,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
-   "id": "john:pdf243:1380,1078,80,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
-   "id": "john:pdf247:1409,796,76,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "otherwiſe",
-   "runs": [
-    "other-",
-    "other-"
-   ]
-  },
-  {
-   "id": "john:pdf247:613,530,28,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "frō",
-   "runs": [
-    "frō",
-    "frō"
-   ]
-  },
-  {
-   "id": "john:pdf249:1345,1865,109,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "ſtrangers,",
-   "runs": [
-    "ſtrāgers,",
-    "ſtrāgers,"
-   ]
-  },
-  {
-   "id": "john:pdf252:1283,1013,34,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "mã",
-   "runs": [
-    "mā",
-    "mā"
-   ]
-  },
-  {
-   "id": "john:pdf256:1395,1331,129,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "Adoration,",
-   "runs": [
-    "Adoratiō,",
-    "Adoratiō,"
-   ]
-  },
-  {
    "id": "john:pdf269:1254,1043,104,60",
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
@@ -486,16 +274,6 @@
    "runs": [
     "Vvhy",
     "Vvhy"
-   ]
-  },
-  {
-   "id": "john:pdf277:1396,361,68,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "ſuſpēſe?",
-   "runs": [
-    "Iuſ-",
-    "Iuſ-"
    ]
   },
   {
@@ -509,56 +287,6 @@
    ]
   },
   {
-   "id": "luke:pdf167:1362,412,105,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "vvorthines",
-   "runs": [
-    "vvorthi-",
-    "vvorthi-"
-   ]
-  },
-  {
-   "id": "luke:pdf170:673,1029,109,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "womā,",
-   "runs": [
-    "woman,",
-    "woman,"
-   ]
-  },
-  {
-   "id": "luke:pdf180:1392,604,191,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "Bartholomevv,",
-   "runs": [
-    "Bartholo-",
-    "Bartholo-"
-   ]
-  },
-  {
-   "id": "luke:pdf182:1625,1351,84,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "pardon,",
-   "runs": [
-    "pardō,",
-    "pardō,"
-   ]
-  },
-  {
-   "id": "luke:pdf186:1446,2166,96,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "vvicked",
-   "runs": [
-    "vvic-",
-    "vvic-"
-   ]
-  },
-  {
    "id": "luke:pdf189:960,1733,130,60",
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
@@ -566,56 +294,6 @@
    "runs": [
     "cōmeih",
     "cōmeih"
-   ]
-  },
-  {
-   "id": "luke:pdf197:1081,1010,74,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "nevv",
-   "runs": [
-    "nevve",
-    "nevve"
-   ]
-  },
-  {
-   "id": "luke:pdf197:240,1206,174,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "Contemplatiue,",
-   "runs": [
-    "Contēplatiue,",
-    "Contēplatiue,"
-   ]
-  },
-  {
-   "id": "luke:pdf202:1175,1140,65,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "mans",
-   "runs": [
-    "mās",
-    "mās"
-   ]
-  },
-  {
-   "id": "luke:pdf218:626,552,90,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "vvent.",
-   "runs": [
-    "vvent.)",
-    "vvent.)"
-   ]
-  },
-  {
-   "id": "luke:pdf223:1262,1453,151,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "recommended",
-   "runs": [
-    "recōmended",
-    "recōmended"
    ]
   },
   {
@@ -639,16 +317,6 @@
    ]
   },
   {
-   "id": "luke:pdf228:1522,1865,94,60",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "commemoration",
-   "runs": [
-    "cōmemo-",
-    "cōmemo-"
-   ]
-  },
-  {
    "id": "luke:pdf230:1279,1613,173,60",
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
@@ -656,26 +324,6 @@
    "runs": [
     "vvritten",
     "vvritten"
-   ]
-  },
-  {
-   "id": "mark:11/1:1615,932,59,47",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "contentatiō",
-   "runs": [
-    "con-",
-    "con-"
-   ]
-  },
-  {
-   "id": "mark:11/2:932,2166,74,72",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "alſo",
-   "runs": [
-    "that",
-    "that"
    ]
   },
   {
@@ -689,16 +337,6 @@
    ]
   },
   {
-   "id": "mark:15/3:613,2250,48,69",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "iudgemēt",
-   "runs": [
-    "and",
-    "and"
-   ]
-  },
-  {
    "id": "mark:16/2:1317,1642,129,71",
    "model": "gemini-4-argon-low",
    "prompt": "targeted",
@@ -709,36 +347,6 @@
    ]
   },
   {
-   "id": "mark:16/2:1533,1025,57,71",
-   "model": "gemini-4-argon-low",
-   "prompt": "targeted",
-   "truth": "folovved.",
-   "runs": [
-    "ſo-",
-    "ſo-"
-   ]
-  },
-  {
-   "id": "john:pdf243:1003,1160,75,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
-   "id": "john:pdf243:1380,1078,80,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
    "id": "john:pdf243:711,1238,59,60",
    "model": "gemini-4-argon-high",
    "prompt": "plain",
@@ -746,56 +354,6 @@
    "runs": [
     "ſavv",
     "ſavv"
-   ]
-  },
-  {
-   "id": "john:pdf247:1409,796,76,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "otherwiſe",
-   "runs": [
-    "other-",
-    "other-"
-   ]
-  },
-  {
-   "id": "john:pdf247:613,530,28,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "frō",
-   "runs": [
-    "frō",
-    "frō"
-   ]
-  },
-  {
-   "id": "john:pdf249:1345,1865,109,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "ſtrangers,",
-   "runs": [
-    "ſtrāgers,",
-    "ſtrāgers,"
-   ]
-  },
-  {
-   "id": "john:pdf252:1283,1013,34,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "mã",
-   "runs": [
-    "mā",
-    "mā"
-   ]
-  },
-  {
-   "id": "john:pdf256:1395,1331,129,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "Adoration,",
-   "runs": [
-    "Adoratiō,",
-    "Adoratiō,"
    ]
   },
   {
@@ -809,16 +367,6 @@
    ]
   },
   {
-   "id": "john:pdf277:1396,361,68,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "ſuſpēſe?",
-   "runs": [
-    "luſ-",
-    "luſ-"
-   ]
-  },
-  {
    "id": "john:pdf299:824,273,67,60",
    "model": "gemini-4-argon-high",
    "prompt": "plain",
@@ -826,116 +374,6 @@
    "runs": [
     "Vve",
     "Vve"
-   ]
-  },
-  {
-   "id": "luke:pdf167:1362,412,105,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "vvorthines",
-   "runs": [
-    "vvorthi-",
-    "vvorthi-"
-   ]
-  },
-  {
-   "id": "luke:pdf170:673,1029,109,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "womā,",
-   "runs": [
-    "woman,",
-    "woman,"
-   ]
-  },
-  {
-   "id": "luke:pdf180:1392,604,191,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "Bartholomevv,",
-   "runs": [
-    "Bartholo-",
-    "Bartholo-"
-   ]
-  },
-  {
-   "id": "luke:pdf182:1625,1351,84,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "pardon,",
-   "runs": [
-    "pardō,",
-    "pardō,"
-   ]
-  },
-  {
-   "id": "luke:pdf186:1446,2166,96,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "vvicked",
-   "runs": [
-    "vvic-",
-    "vvic-"
-   ]
-  },
-  {
-   "id": "luke:pdf197:1081,1010,74,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "nevv",
-   "runs": [
-    "nevve",
-    "nevve"
-   ]
-  },
-  {
-   "id": "luke:pdf197:240,1206,174,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "Contemplatiue,",
-   "runs": [
-    "Contēplatiue,",
-    "Contēplatiue,"
-   ]
-  },
-  {
-   "id": "luke:pdf202:1175,1140,65,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "mans",
-   "runs": [
-    "mās",
-    "mās"
-   ]
-  },
-  {
-   "id": "luke:pdf210:1088,161,119,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "warre",
-   "runs": [
-    "vvarre",
-    "vvarre"
-   ]
-  },
-  {
-   "id": "luke:pdf218:626,552,90,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "vvent.",
-   "runs": [
-    "vvent.)",
-    "vvent.)"
-   ]
-  },
-  {
-   "id": "luke:pdf223:1262,1453,151,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "recommended",
-   "runs": [
-    "recōmended",
-    "recōmended"
    ]
   },
   {
@@ -949,46 +387,6 @@
    ]
   },
   {
-   "id": "luke:pdf228:1522,1865,94,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "commemoration",
-   "runs": [
-    "cōmemo-",
-    "cōmemo-"
-   ]
-  },
-  {
-   "id": "mark:11/1:1615,932,59,47",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "contentatiō",
-   "runs": [
-    "con-",
-    "con-"
-   ]
-  },
-  {
-   "id": "mark:11/2:932,2166,74,72",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "alſo",
-   "runs": [
-    "that",
-    "that"
-   ]
-  },
-  {
-   "id": "mark:15/3:613,2250,48,69",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "iudgemēt",
-   "runs": [
-    "and",
-    "and"
-   ]
-  },
-  {
    "id": "mark:16/2:1317,1642,129,71",
    "model": "gemini-4-argon-high",
    "prompt": "plain",
@@ -996,36 +394,6 @@
    "runs": [
     "mentioneth",
     "mentioneth"
-   ]
-  },
-  {
-   "id": "mark:16/2:1533,1025,57,71",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "folovved.",
-   "runs": [
-    "fo-",
-    "fo-"
-   ]
-  },
-  {
-   "id": "mark:16/2:1591,1408,43,38",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "without",
-   "runs": [
-    "ithout",
-    "ithout"
-   ]
-  },
-  {
-   "id": "mark:9/2:285,1133,182,61",
-   "model": "gemini-4-argon-high",
-   "prompt": "plain",
-   "truth": "deſcēded",
-   "runs": [
-    "betwixt",
-    "betwixt"
    ]
   },
   {
@@ -1039,26 +407,6 @@
    ]
   },
   {
-   "id": "john:pdf243:1003,1160,75,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "targeted",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
-   "id": "john:pdf243:1380,1078,80,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "targeted",
-   "truth": "when",
-   "runs": [
-    "vvhen",
-    "vvhen"
-   ]
-  },
-  {
    "id": "john:pdf243:711,1238,59,60",
    "model": "gemini-4-argon-high",
    "prompt": "targeted",
@@ -1069,53 +417,673 @@
    ]
   },
   {
-   "id": "john:pdf247:1409,796,76,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "targeted",
-   "truth": "otherwiſe",
+   "id": "john:pdf245:602,1379,180,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "vnlooſe.",
    "runs": [
-    "other-",
-    "other-"
+    "vnlooſe.†",
+    "vnlooſe.†"
    ]
   },
   {
-   "id": "john:pdf247:613,530,28,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "targeted",
-   "truth": "frō",
+   "id": "john:pdf259:1013,1413,51,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "was",
    "runs": [
-    "frō",
-    "frō"
+    "vvas",
+    "vvas"
    ]
   },
   {
-   "id": "john:pdf249:1345,1865,109,60",
-   "model": "gemini-4-argon-high",
-   "prompt": "targeted",
-   "truth": "ſtrangers,",
+   "id": "john:pdf269:1254,1043,104,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "VVhy",
    "runs": [
-    "ſtrāgers,",
-    "ſtrāgers,"
+    "Vvhy",
+    "Vvhy"
+   ]
+  },
+  {
+   "id": "john:pdf271:749,938,59,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "ſelf",
+   "runs": [
+    "ſelt",
+    "ſelt"
+   ]
+  },
+  {
+   "id": "john:pdf287:1360,333,90,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "toward",
+   "runs": [
+    "tovvard",
+    "tovvard"
+   ]
+  },
+  {
+   "id": "john:pdf291:470,1209,146,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "Whoſoeuer",
+   "runs": [
+    "VVhoſoeuer",
+    "VVhoſoeuer"
+   ]
+  },
+  {
+   "id": "john:pdf294:1158,1966,59,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "alſo",
+   "runs": [
+    "alſo,",
+    "alſo,"
+   ]
+  },
+  {
+   "id": "john:pdf299:824,273,67,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "VVe",
+   "runs": [
+    "Vve",
+    "Vve"
+   ]
+  },
+  {
+   "id": "john:pdf300:826,1132,220,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "cōſummate.",
+   "runs": [
+    "cōlumniate.",
+    "cōlumniate."
+   ]
+  },
+  {
+   "id": "john:pdf304:530,934,95,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "woman",
+   "runs": [
+    "vvoman",
+    "vvoman"
+   ]
+  },
+  {
+   "id": "luke:pdf164:1506,1580,106,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "ſpokē",
+   "runs": [
+    "ſpoke",
+    "ſpoke"
+   ]
+  },
+  {
+   "id": "luke:pdf170:1297,1159,75,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "would",
+   "runs": [
+    "vvould",
+    "vvould"
+   ]
+  },
+  {
+   "id": "luke:pdf170:673,1029,109,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "woman,",
+   "runs": [
+    "vvoman,",
+    "vvoman,"
+   ]
+  },
+  {
+   "id": "luke:pdf172:576,1440,85,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "vvho",
+   "runs": [
+    "†vvho",
+    "†vvho"
+   ]
+  },
+  {
+   "id": "luke:pdf172:588,1541,87,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "vvho",
+   "runs": [
+    "†*vvho",
+    "†*vvho"
+   ]
+  },
+  {
+   "id": "luke:pdf175:1196,2187,127,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "wiſedom.",
+   "runs": [
+    "vviſedom.",
+    "vviſedom."
+   ]
+  },
+  {
+   "id": "luke:pdf196:1178,1453,59,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "ſaid",
+   "runs": [
+    "laid",
+    "laid"
+   ]
+  },
+  {
+   "id": "luke:pdf202:1175,1140,65,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "mās",
+   "runs": [
+    "mãs",
+    "mãs"
+   ]
+  },
+  {
+   "id": "luke:pdf208:1238,817,84,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "workes",
+   "runs": [
+    "vvorkes",
+    "vvorkes"
+   ]
+  },
+  {
+   "id": "luke:pdf208:1277,1793,33,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "ſit",
+   "runs": [
+    "ſic",
+    "ſic"
+   ]
+  },
+  {
+   "id": "luke:pdf210:1088,161,119,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "vvarre",
+   "runs": [
+    "yvvarre",
+    "yvvarre"
+   ]
+  },
+  {
+   "id": "luke:pdf218:1108,1107,23,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "his",
+   "runs": [
+    "of",
+    "of"
+   ]
+  },
+  {
+   "id": "luke:pdf218:716,319,37,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "vve",
+   "runs": [
+    "yve",
+    "yve"
+   ]
+  },
+  {
+   "id": "luke:pdf228:1144,879,217,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "drunkēneſſe",
+   "runs": [
+    "drunkenneſſe",
+    "drunkenneſſe"
+   ]
+  },
+  {
+   "id": "luke:pdf241:1069,1405,52,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "with",
+   "runs": [
+    "vvith",
+    "vvith"
+   ]
+  },
+  {
+   "id": "mark:11/1:590,954,191,55",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "cōſcience",
+   "runs": [
+    "cõſcience",
+    "cõſcience"
+   ]
+  },
+  {
+   "id": "mark:11/2:1226,1644,206,72",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "remēbring,",
+   "runs": [
+    "remẽbring,",
+    "remẽbring,"
+   ]
+  },
+  {
+   "id": "mark:12/3:955,864,302,70",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "cōmaundement",
+   "runs": [
+    "cõmaundement",
+    "cõmaundement"
+   ]
+  },
+  {
+   "id": "mark:14/1:675,382,119,44",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "Wonders.",
+   "runs": [
+    "vvonders.]",
+    "vvonders.]"
+   ]
+  },
+  {
+   "id": "mark:14/3:1044,2152,80,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "vpō",
+   "runs": [
+    "vpõ",
+    "vpõ"
+   ]
+  },
+  {
+   "id": "mark:14/3:871,1792,152,58",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "ſtāders",
+   "runs": [
+    "ſtãders",
+    "ſtãders"
+   ]
+  },
+  {
+   "id": "mark:14/4:1268,515,201,63",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "cōuenient.",
+   "runs": [
+    "cõuenient.",
+    "cõuenient."
+   ]
+  },
+  {
+   "id": "mark:16/1:669,215,125,67",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "aſſiſtāce",
+   "runs": [
+    "aſſiſtãce",
+    "aſſiſtãce"
+   ]
+  },
+  {
+   "id": "mark:16/2:1317,1642,129,71",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "mentiōneth",
+   "runs": [
+    "mentiõneth",
+    "mentiõneth"
+   ]
+  },
+  {
+   "id": "mark:3/3:1290,1783,32,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "we",
+   "runs": [
+    "vve",
+    "vve"
+   ]
+  },
+  {
+   "id": "mark:6/1:524,116,192,94",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "wēche",
+   "runs": [
+    "vvẽche",
+    "vvẽche"
+   ]
+  },
+  {
+   "id": "mark:6/1:772,1186,94,42",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "whole.",
+   "runs": [
+    "vvhole.",
+    "vvhole."
+   ]
+  },
+  {
+   "id": "mark:7/1:491,389,102,42",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "cōgruity",
+   "runs": [
+    "cõgruity",
+    "cõgruity"
+   ]
+  },
+  {
+   "id": "mark:7/2:372,977,180,62",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "cōmon.",
+   "runs": [
+    "cõmon.",
+    "cõmon."
+   ]
+  },
+  {
+   "id": "mark:8/2:993,663,162,67",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "fragmēts",
+   "runs": [
+    "fragmẽts",
+    "fragmẽts"
+   ]
+  },
+  {
+   "id": "mark:9/2:604,1737,175,77",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "plain",
+   "truth": "cōming",
+   "runs": [
+    "cõming",
+    "cõming"
+   ]
+  },
+  {
+   "id": "john:pdf246:820,1390,178,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "knovveſt",
+   "runs": [
+    "vvknovveſt",
+    "vvknovveſt"
    ]
   },
   {
    "id": "john:pdf252:1283,1013,34,60",
-   "model": "gemini-4-argon-high",
+   "model": "gemini-3.8-flash-low",
    "prompt": "targeted",
-   "truth": "mã",
+   "truth": "mā",
    "runs": [
-    "mā",
-    "mā"
+    "mã",
+    "mã"
    ]
   },
   {
    "id": "john:pdf256:1395,1331,129,60",
-   "model": "gemini-4-argon-high",
+   "model": "gemini-3.8-flash-low",
    "prompt": "targeted",
-   "truth": "Adoration,",
+   "truth": "Adoratiō,",
    "runs": [
-    "Adoratiō,",
-    "Adoratiō,"
+    "Adoratiõ,",
+    "Adoratiõ,"
+   ]
+  },
+  {
+   "id": "john:pdf257:835,1946,185,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "Therevpō",
+   "runs": [
+    "Therevpõ",
+    "Therevpõ"
+   ]
+  },
+  {
+   "id": "john:pdf258:1164,1025,68,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "giuē",
+   "runs": [
+    "giuẽ",
+    "giuẽ"
+   ]
+  },
+  {
+   "id": "john:pdf261:599,2036,81,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "vvhē",
+   "runs": [
+    "vvhẽ",
+    "vvhẽ"
+   ]
+  },
+  {
+   "id": "john:pdf269:1254,1043,104,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "VVhy",
+   "runs": [
+    "Vvhy",
+    "Vvhy"
+   ]
+  },
+  {
+   "id": "john:pdf271:749,938,59,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "ſelf",
+   "runs": [
+    "ſelt",
+    "ſelt"
+   ]
+  },
+  {
+   "id": "john:pdf299:824,273,67,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "VVe",
+   "runs": [
+    "Vve",
+    "Vve"
+   ]
+  },
+  {
+   "id": "luke:pdf170:1297,1159,75,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "would",
+   "runs": [
+    "vvould",
+    "vvould"
+   ]
+  },
+  {
+   "id": "luke:pdf175:1196,2187,127,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "wiſedom.",
+   "runs": [
+    "vviſedom.",
+    "vviſedom."
+   ]
+  },
+  {
+   "id": "luke:pdf179:350,332,84,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "folovv",
+   "runs": [
+    "folōvv",
+    "folōvv"
+   ]
+  },
+  {
+   "id": "luke:pdf197:240,1206,174,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "Contēplatiue,",
+   "runs": [
+    "Contẽplatiue,",
+    "Contẽplatiue,"
+   ]
+  },
+  {
+   "id": "luke:pdf200:719,1387,201,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "monumēts",
+   "runs": [
+    "monumẽts",
+    "monumẽts"
+   ]
+  },
+  {
+   "id": "luke:pdf202:1175,1140,65,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "mās",
+   "runs": [
+    "mãs",
+    "mãs"
+   ]
+  },
+  {
+   "id": "luke:pdf207:990,1305,124,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "childrē",
+   "runs": [
+    "childrẽ",
+    "childrẽ"
+   ]
+  },
+  {
+   "id": "luke:pdf208:1277,1793,33,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "ſit",
+   "runs": [
+    "ſic",
+    "ſic"
+   ]
+  },
+  {
+   "id": "luke:pdf209:555,475,174,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "recōpenſe",
+   "runs": [
+    "recõpenſe",
+    "recõpenſe"
+   ]
+  },
+  {
+   "id": "luke:pdf209:892,781,73,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "ſent",
+   "runs": [
+    "lent",
+    "lent"
+   ]
+  },
+  {
+   "id": "luke:pdf223:1262,1453,151,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "recōmended",
+   "runs": [
+    "recõmended",
+    "recõmended"
+   ]
+  },
+  {
+   "id": "luke:pdf228:1144,879,217,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "drunkēneſſe",
+   "runs": [
+    "drunkenneſſe",
+    "drunkenneſſe"
+   ]
+  },
+  {
+   "id": "luke:pdf232:677,1917,97,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "Iulianū.",
+   "runs": [
+    "Iulianũ.",
+    "Iulianũ."
+   ]
+  },
+  {
+   "id": "luke:pdf232:859,1251,66,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "Law,",
+   "runs": [
+    "Lavv,",
+    "Lavv,"
+   ]
+  },
+  {
+   "id": "mark:3/3:1290,1783,32,60",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "we",
+   "runs": [
+    "We",
+    "We"
+   ]
+  },
+  {
+   "id": "mark:7/2:1230,244,148,74",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "thē,",
+   "runs": [
+    "Wel",
+    "Wel"
+   ]
+  },
+  {
+   "id": "mark:argument/pdf114:446,962,140,51",
+   "model": "gemini-3.8-flash-low",
+   "prompt": "targeted",
+   "truth": "Philēmon.",
+   "runs": [
+    "Philemon.",
+    "Philemon."
    ]
   }
  ]

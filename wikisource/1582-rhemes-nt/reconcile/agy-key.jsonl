@@ -6,8 +6,8 @@
 {"id": "john:pdf242:1458,1910,79,60", "book": "john", "loc": "arg:0", "page": "pdf242", "box": [1458, 1910, 79, 60], "truth": "ovvne", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf242:1478,1197,117,60", "book": "john", "loc": "arg:0", "page": "pdf242", "box": [1478, 1197, 117, 60], "truth": "vvriting", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf242:723,1789,106,60", "book": "john", "loc": "arg:0", "page": "pdf242", "box": [723, 1789, 106, 60], "truth": "vvordes", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "john:pdf243:1003,1160,75,60", "book": "john", "loc": "arg:0", "page": "pdf243", "box": [1003, 1160, 75, 60], "truth": "when", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "john:pdf243:1380,1078,80,60", "book": "john", "loc": "arg:0", "page": "pdf243", "box": [1380, 1078, 80, 60], "truth": "when", "kinds": ["wvv"], "stratum": "hard"}
+{"id": "john:pdf243:1003,1160,75,60", "book": "john", "loc": "arg:0", "page": "pdf243", "box": [1003, 1160, 75, 60], "truth": "vvhen", "kinds": ["wvv"], "stratum": "hard"}
+{"id": "john:pdf243:1380,1078,80,60", "book": "john", "loc": "arg:0", "page": "pdf243", "box": [1380, 1078, 80, 60], "truth": "vvhen", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf243:391,1618,44,60", "book": "john", "loc": "arg:0", "page": "pdf243", "box": [391, 1618, 44, 60], "truth": "from", "kinds": ["wording"], "stratum": "hard"}
 {"id": "john:pdf243:454,1450,63,60", "book": "john", "loc": "arg:0", "page": "pdf243", "box": [454, 1450, 63, 60], "truth": "was", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf243:711,1238,59,60", "book": "john", "loc": "arg:0", "page": "pdf243", "box": [711, 1238, 59, 60], "truth": "ſavv:", "kinds": ["longs", "wvv"], "stratum": "hard"}
@@ -20,25 +20,24 @@
 {"id": "john:pdf247:1017,295,101,60", "book": "john", "loc": "1:1a1", "page": "pdf247", "box": [1017, 295, 101, 60], "truth": "ſentence", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "john:pdf247:1047,563,130,60", "book": "john", "loc": "1:1a2", "page": "pdf247", "box": [1047, 563, 130, 60], "truth": "tovvardes", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "john:pdf247:1198,896,100,60", "book": "john", "loc": "1:1a3", "page": "pdf247", "box": [1198, 896, 100, 60], "truth": "Apoſtle", "kinds": ["longs"], "stratum": "hard"}
-{"id": "john:pdf247:1409,796,76,60", "book": "john", "loc": "1:1a3", "page": "pdf247", "box": [1409, 796, 76, 60], "truth": "otherwiſe", "kinds": ["longs", "wvv"], "stratum": "ordinary"}
-{"id": "john:pdf247:613,530,28,60", "book": "john", "loc": "1:1a2", "page": "pdf247", "box": [613, 530, 28, 60], "truth": "frō", "kinds": ["macron"], "stratum": "ordinary"}
+{"id": "john:pdf247:613,530,28,60", "book": "john", "loc": "1:1a2", "page": "pdf247", "box": [613, 530, 28, 60], "truth": "frō", "kinds": ["macron"], "stratum": "ordinary"}
 {"id": "john:pdf248:1371,383,81,60", "book": "john", "loc": "2:sum", "page": "pdf248", "box": [1371, 383, 81, 60], "truth": "vvould", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf248:1424,418,51,60", "book": "john", "loc": "2:sum", "page": "pdf248", "box": [1424, 418, 51, 60], "truth": "vvil", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "john:pdf248:801,1767,112,60", "book": "john", "loc": "2:12", "page": "pdf248", "box": [801, 1767, 112, 60], "truth": "vvent", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "john:pdf249:1031,142,111,60", "book": "john", "loc": "2:16", "page": "pdf249", "box": [1031, 142, 111, 60], "truth": "houſe", "kinds": ["longs"], "stratum": "ordinary"}
-{"id": "john:pdf249:1345,1865,109,60", "book": "john", "loc": "2:4a3", "page": "pdf249", "box": [1345, 1865, 109, 60], "truth": "ſtrangers,", "kinds": ["longs"], "stratum": "hard"}
+{"id": "john:pdf249:1345,1865,109,60", "book": "john", "loc": "2:4a3", "page": "pdf249", "box": [1345, 1865, 109, 60], "truth": "ſtrāgers,", "kinds": ["longs", "macron"], "stratum": "hard"}
 {"id": "john:pdf249:752,1564,72,60", "book": "john", "loc": "2:3a2", "page": "pdf249", "box": [752, 1564, 72, 60], "truth": "vvaies", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf250:1378,367,58,60", "book": "john", "loc": "2:15a5", "page": "pdf250", "box": [1378, 367, 58, 60], "truth": "That", "kinds": ["wording"], "stratum": "hard"}
 {"id": "john:pdf250:629,974,960,98", "book": "john", "loc": "3:sum", "page": "pdf250", "box": [629, 974, 960, 98], "truth": "vnderſtāding,", "kinds": ["longs", "macron"], "stratum": "hard"}
 {"id": "john:pdf251:612,166,47,60", "book": "john", "loc": "3:11", "page": "pdf251", "box": [612, 166, 47, 60], "truth": "ſay", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "john:pdf251:675,793,75,60", "book": "john", "loc": "3:17", "page": "pdf251", "box": [675, 793, 75, 60], "truth": "ſent", "kinds": ["longs"], "stratum": "ordinary"}
-{"id": "john:pdf252:1283,1013,34,60", "book": "john", "loc": "3:5a1", "page": "pdf252", "box": [1283, 1013, 34, 60], "truth": "mã", "kinds": ["wording"], "stratum": "hard"}
+{"id": "john:pdf252:1283,1013,34,60", "book": "john", "loc": "3:5a1", "page": "pdf252", "box": [1283, 1013, 34, 60], "truth": "mā", "kinds": ["macron"], "stratum": "hard"}
 {"id": "john:pdf254:1344,1620,106,60", "book": "john", "loc": "4:32", "page": "pdf254", "box": [1344, 1620, 106, 60], "truth": "meate", "kinds": ["wording"], "stratum": "hard"}
 {"id": "john:pdf254:937,951,121,60", "book": "john", "loc": "4:25", "page": "pdf254", "box": [937, 951, 121, 60], "truth": "knovv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf255:506,1746,66,60", "book": "john", "loc": "4:53", "page": "pdf255", "box": [506, 1746, 66, 60], "truth": "The", "kinds": ["wording"], "stratum": "hard"}
 {"id": "john:pdf256:1284,936,53,60", "book": "john", "loc": "4:23a2", "page": "pdf256", "box": [1284, 936, 53, 60], "truth": "vvas", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf256:1356,1264,129,60", "book": "john", "loc": "4:23a2", "page": "pdf256", "box": [1356, 1264, 129, 60], "truth": "othervviſe", "kinds": ["longs", "wvv"], "stratum": "ordinary"}
-{"id": "john:pdf256:1395,1331,129,60", "book": "john", "loc": "4:23a2", "page": "pdf256", "box": [1395, 1331, 129, 60], "truth": "Adoration,", "kinds": ["wording"], "stratum": "hard"}
+{"id": "john:pdf256:1395,1331,129,60", "book": "john", "loc": "4:23a2", "page": "pdf256", "box": [1395, 1331, 129, 60], "truth": "Adoratiō,", "kinds": ["macron"], "stratum": "hard"}
 {"id": "john:pdf256:397,174,57,60", "book": "john", "loc": "4:20a1", "page": "pdf256", "box": [397, 174, 57, 60], "truth": "Lavv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf257:329,1739,115,60", "book": "john", "loc": "5:15", "page": "pdf257", "box": [329, 1739, 115, 60], "truth": "vvay,", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "john:pdf257:353,1118,138,60", "book": "john", "loc": "5:8", "page": "pdf257", "box": [353, 1118, 138, 60], "truth": "vvalke.", "kinds": ["wvv"], "stratum": "ordinary"}
@@ -67,7 +66,6 @@
 {"id": "john:pdf273:453,1226,85,60", "book": "john", "loc": "9:6", "page": "pdf273", "box": [453, 1226, 85, 60], "truth": "theſe", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "john:pdf276:1174,423,47,60", "book": "john", "loc": "10:3", "page": "pdf276", "box": [1174, 423, 47, 60], "truth": "mā", "kinds": ["macron"], "stratum": "ordinary"}
 {"id": "john:pdf276:701,1607,118,60", "book": "john", "loc": "10:14", "page": "pdf276", "box": [701, 1607, 118, 60], "truth": "knovv", "kinds": ["wvv"], "stratum": "ordinary"}
-{"id": "john:pdf277:1396,361,68,60", "book": "john", "loc": "10:24", "page": "pdf277", "box": [1396, 361, 68, 60], "truth": "ſuſpēſe?", "kinds": ["longs", "macron"], "stratum": "hard"}
 {"id": "john:pdf280:724,143,122,60", "book": "john", "loc": "11:32", "page": "pdf280", "box": [724, 143, 122, 60], "truth": "vvhere", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "john:pdf281:1173,521,287,60", "book": "john", "loc": "11:56", "page": "pdf281", "box": [1173, 521, 287, 60], "truth": "cōmaundemēt,", "kinds": ["macron"], "stratum": "ordinary"}
 {"id": "john:pdf282:1009,2075,139,60", "book": "john", "loc": "12:23", "page": "pdf282", "box": [1009, 2075, 139, 60], "truth": "ſaying,", "kinds": ["longs"], "stratum": "ordinary"}
@@ -94,13 +92,12 @@
 {"id": "luke:pdf164:454,453,100,60", "book": "luke", "loc": "1:34", "page": "pdf164", "box": [454, 453, 100, 60], "truth": "Hovv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf165:437,1631,117,60", "book": "luke", "loc": "1:74", "page": "pdf165", "box": [437, 1631, 117, 60], "truth": "vvithout", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf166:947,559,109,60", "book": "luke", "loc": "1:3a1", "page": "pdf166", "box": [947, 559, 109, 60], "truth": "vvriting,", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf167:1362,412,105,60", "book": "luke", "loc": "1:43a12", "page": "pdf167", "box": [1362, 412, 105, 60], "truth": "vvorthines", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf167:310,979,53,60", "book": "luke", "loc": "1:75a15", "page": "pdf167", "box": [310, 979, 53, 60], "truth": "vvas", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf168:575,620,119,60", "book": "luke", "loc": "2:11", "page": "pdf168", "box": [575, 620, 119, 60], "truth": "vvhich", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf168:891,1187,103,60", "book": "luke", "loc": "2:17", "page": "pdf168", "box": [891, 1187, 103, 60], "truth": "vvord", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf170:1297,1159,75,60", "book": "luke", "loc": "2:34a3", "page": "pdf170", "box": [1297, 1159, 75, 60], "truth": "would", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "luke:pdf170:1322,2188,80,60", "book": "luke", "loc": "3:sum", "page": "pdf170", "box": [1322, 2188, 80, 60], "truth": "vvhoſe", "kinds": ["longs", "wvv"], "stratum": "hard"}
-{"id": "luke:pdf170:673,1029,109,60", "book": "luke", "loc": "2:19a2", "page": "pdf170", "box": [673, 1029, 109, 60], "truth": "womā,", "kinds": ["macron", "wvv"], "stratum": "hard"}
+{"id": "luke:pdf170:673,1029,109,60", "book": "luke", "loc": "2:19a2", "page": "pdf170", "box": [673, 1029, 109, 60], "truth": "woman,", "kinds": ["macron", "wvv"], "stratum": "hard"}
 {"id": "luke:pdf170:919,2119,55,60", "book": "luke", "loc": "3:sum", "page": "pdf170", "box": [919, 2119, 55, 60], "truth": "tvvo", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf172:576,1440,85,60", "book": "luke", "loc": "3:31", "page": "pdf172", "box": [576, 1440, 85, 60], "truth": "vvho", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf172:588,1541,87,60", "book": "luke", "loc": "3:32", "page": "pdf172", "box": [588, 1541, 87, 60], "truth": "vvho", "kinds": ["wvv"], "stratum": "ordinary"}
@@ -115,12 +112,11 @@
 {"id": "luke:pdf179:316,366,70,60", "book": "luke", "loc": "5:28a8", "page": "pdf179", "box": [316, 366, 70, 60], "truth": "vvord", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf179:350,332,84,60", "book": "luke", "loc": "5:28a8", "page": "pdf179", "box": [350, 332, 84, 60], "truth": "folovv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf179:571,364,129,60", "book": "luke", "loc": "5:28a8", "page": "pdf179", "box": [571, 364, 129, 60], "truth": "vvorking,", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf180:1392,604,191,60", "book": "luke", "loc": "6:14", "page": "pdf180", "box": [1392, 604, 191, 60], "truth": "Bartholomevv,", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf181:285,776,54,60", "book": "luke", "loc": "6:35", "page": "pdf181", "box": [285, 776, 54, 60], "truth": "vpō", "kinds": ["macron"], "stratum": "ordinary"}
 {"id": "luke:pdf181:923,883,209,60", "book": "luke", "loc": "6:37", "page": "pdf181", "box": [923, 883, 209, 60], "truth": "cōdemned.", "kinds": ["macron"], "stratum": "hard"}
 {"id": "luke:pdf182:1197,1249,74,60", "book": "luke", "loc": "6:13a4", "page": "pdf182", "box": [1197, 1249, 74, 60], "truth": "ovvne", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf182:1327,1385,77,60", "book": "luke", "loc": "6:13a4", "page": "pdf182", "box": [1327, 1385, 77, 60], "truth": "vvhich", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf182:1625,1351,84,60", "book": "luke", "loc": "6:13a4", "page": "pdf182", "box": [1625, 1351, 84, 60], "truth": "pardon,", "kinds": ["wording"], "stratum": "hard"}
+{"id": "luke:pdf182:1625,1351,84,60", "book": "luke", "loc": "6:13a4", "page": "pdf182", "box": [1625, 1351, 84, 60], "truth": "pardō,", "kinds": ["macron"], "stratum": "hard"}
 {"id": "luke:pdf182:430,2088,108,60", "book": "luke", "loc": "6:14a5", "page": "pdf182", "box": [430, 2088, 108, 60], "truth": "Andrevv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf182:712,1517,31,60", "book": "luke", "loc": "6:13a4", "page": "pdf182", "box": [712, 1517, 31, 60], "truth": "vſe", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "luke:pdf182:978,882,106,60", "book": "luke", "loc": "6:12a3", "page": "pdf182", "box": [978, 882, 106, 60], "truth": "inſtantly", "kinds": ["longs"], "stratum": "ordinary"}
@@ -129,7 +125,6 @@
 {"id": "luke:pdf185:948,382,106,60", "book": "luke", "loc": "7:32", "page": "pdf185", "box": [948, 382, 106, 60], "truth": "ſitting", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "luke:pdf186:1096,783,126,60", "book": "luke", "loc": "7:44a2", "page": "pdf186", "box": [1096, 783, 126, 60], "truth": "othervviſe", "kinds": ["longs", "wvv"], "stratum": "hard"}
 {"id": "luke:pdf186:1176,1183,62,60", "book": "luke", "loc": "7:50a3", "page": "pdf186", "box": [1176, 1183, 62, 60], "truth": "moſt", "kinds": ["longs"], "stratum": "ordinary"}
-{"id": "luke:pdf186:1446,2166,96,60", "book": "luke", "loc": "8:2", "page": "pdf186", "box": [1446, 2166, 96, 60], "truth": "vvicked", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf186:1489,1085,59,60", "book": "luke", "loc": "7:50a3", "page": "pdf186", "box": [1489, 1085, 59, 60], "truth": "novv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf188:1071,1484,139,60", "book": "luke", "loc": "8:30", "page": "pdf188", "box": [1071, 1484, 139, 60], "truth": "becauſe", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "luke:pdf189:645,1269,95,60", "book": "luke", "loc": "8:45", "page": "pdf189", "box": [645, 1269, 95, 60], "truth": "vvere", "kinds": ["wvv"], "stratum": "ordinary"}
@@ -148,8 +143,8 @@
 {"id": "luke:pdf196:1242,1760,91,60", "book": "luke", "loc": "10:40", "page": "pdf196", "box": [1242, 1760, 91, 60], "truth": "vvho", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf196:491,1294,231,60", "book": "luke", "loc": "10:35", "page": "pdf196", "box": [491, 1294, 231, 60], "truth": "vvhatſoeuer", "kinds": ["longs", "wvv"], "stratum": "hard"}
 {"id": "luke:pdf196:825,1036,75,60", "book": "luke", "loc": "10:33", "page": "pdf196", "box": [825, 1036, 75, 60], "truth": "vvas", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf197:1081,1010,74,60", "book": "luke", "loc": "10:30a3", "page": "pdf197", "box": [1081, 1010, 74, 60], "truth": "nevv", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf197:240,1206,174,60", "book": "luke", "loc": "10:42a4", "page": "pdf197", "box": [240, 1206, 174, 60], "truth": "Contemplatiue,", "kinds": ["wording"], "stratum": "hard"}
+{"id": "luke:pdf197:1081,1010,74,60", "book": "luke", "loc": "10:30a3", "page": "pdf197", "box": [1081, 1010, 74, 60], "truth": "nevve", "kinds": ["wvv"], "stratum": "hard"}
+{"id": "luke:pdf197:240,1206,174,60", "book": "luke", "loc": "10:42a4", "page": "pdf197", "box": [240, 1206, 174, 60], "truth": "Contēplatiue,", "kinds": ["macron"], "stratum": "hard"}
 {"id": "luke:pdf197:246,1006,60,60", "book": "luke", "loc": "10:30a3", "page": "pdf197", "box": [246, 1006, 60, 60], "truth": "Lavv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf197:291,1106,58,60", "book": "luke", "loc": "10:30a3", "page": "pdf197", "box": [291, 1106, 58, 60], "truth": "vvho", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf197:995,1076,73,60", "book": "luke", "loc": "10:30a3", "page": "pdf197", "box": [995, 1076, 73, 60], "truth": "ſinne,", "kinds": ["longs"], "stratum": "ordinary"}
@@ -158,7 +153,7 @@
 {"id": "luke:pdf201:548,339,100,60", "book": "luke", "loc": "11:27a1", "page": "pdf201", "box": [548, 339, 100, 60], "truth": "vvoman", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf201:898,702,53,60", "book": "luke", "loc": "11:41a3", "page": "pdf201", "box": [898, 702, 53, 60], "truth": "vvill", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf201:961,835,69,60", "book": "luke", "loc": "11:46a4", "page": "pdf201", "box": [961, 835, 69, 60], "truth": "Lavv,", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf202:1175,1140,65,60", "book": "luke", "loc": "12:16", "page": "pdf202", "box": [1175, 1140, 65, 60], "truth": "mans", "kinds": ["wording"], "stratum": "hard"}
+{"id": "luke:pdf202:1175,1140,65,60", "book": "luke", "loc": "12:16", "page": "pdf202", "box": [1175, 1140, 65, 60], "truth": "mās", "kinds": ["macron"], "stratum": "hard"}
 {"id": "luke:pdf205:1265,271,77,60", "book": "luke", "loc": "12:11a2", "page": "pdf205", "box": [1265, 271, 77, 60], "truth": "vvhich", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf205:393,767,91,60", "book": "luke", "loc": "12:14a3", "page": "pdf205", "box": [393, 767, 91, 60], "truth": "vvriteth", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf205:463,268,77,60", "book": "luke", "loc": "12:11a2", "page": "pdf205", "box": [463, 268, 77, 60], "truth": "vvhich", "kinds": ["wvv"], "stratum": "hard"}
@@ -174,7 +169,7 @@
 {"id": "luke:pdf209:555,475,174,60", "book": "luke", "loc": "14:14", "page": "pdf209", "box": [555, 475, 174, 60], "truth": "recōpenſe", "kinds": ["longs", "macron"], "stratum": "hard"}
 {"id": "luke:pdf209:611,1246,136,60", "book": "luke", "loc": "14:21", "page": "pdf209", "box": [611, 1246, 136, 60], "truth": "maiſter", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "luke:pdf209:892,781,73,60", "book": "luke", "loc": "14:17", "page": "pdf209", "box": [892, 781, 73, 60], "truth": "ſent", "kinds": ["longs"], "stratum": "ordinary"}
-{"id": "luke:pdf210:1088,161,119,60", "book": "luke", "loc": "14:31", "page": "pdf210", "box": [1088, 161, 119, 60], "truth": "warre", "kinds": ["wvv"], "stratum": "hard"}
+{"id": "luke:pdf210:1088,161,119,60", "book": "luke", "loc": "14:31", "page": "pdf210", "box": [1088, 161, 119, 60], "truth": "vvarre", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf210:1268,267,88,60", "book": "luke", "loc": "14:31", "page": "pdf210", "box": [1268, 267, 88, 60], "truth": "vvith", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf210:381,157,107,60", "book": "luke", "loc": "14:31", "page": "pdf210", "box": [381, 157, 107, 60], "truth": "vvhat", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf210:846,211,142,60", "book": "luke", "loc": "14:31", "page": "pdf210", "box": [846, 211, 142, 60], "truth": "dovvne", "kinds": ["wvv"], "stratum": "hard"}
@@ -186,13 +181,12 @@
 {"id": "luke:pdf218:1108,1107,23,60", "book": "luke", "loc": "18:sum", "page": "pdf218", "box": [1108, 1107, 23, 60], "truth": "his", "kinds": ["wording"], "stratum": "hard"}
 {"id": "luke:pdf218:1420,910,50,60", "book": "luke", "loc": "18:sum", "page": "pdf218", "box": [1420, 910, 50, 60], "truth": "fevv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf218:492,222,50,60", "book": "luke", "loc": "17:10a1", "page": "pdf218", "box": [492, 222, 50, 60], "truth": "vvil", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf218:626,552,90,60", "book": "luke", "loc": "17:14a3:title", "page": "pdf218", "box": [626, 552, 90, 60], "truth": "vvent.", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf218:688,1008,41,60", "book": "luke", "loc": "18:sum", "page": "pdf218", "box": [688, 1008, 41, 60], "truth": "vve", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf218:716,319,37,60", "book": "luke", "loc": "17:10a1", "page": "pdf218", "box": [716, 319, 37, 60], "truth": "vve", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf221:898,1756,47,60", "book": "luke", "loc": "19:15", "page": "pdf221", "box": [898, 1756, 47, 60], "truth": "mā", "kinds": ["macron"], "stratum": "hard"}
 {"id": "luke:pdf222:426,629,101,60", "book": "luke", "loc": "19:26", "page": "pdf222", "box": [426, 629, 101, 60], "truth": "euery", "kinds": ["wording"], "stratum": "hard"}
 {"id": "luke:pdf223:1113,1919,93,60", "book": "luke", "loc": "20:sum", "page": "pdf223", "box": [1113, 1919, 93, 60], "truth": "vvorthy", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "luke:pdf223:1262,1453,151,60", "book": "luke", "loc": "19:8a2", "page": "pdf223", "box": [1262, 1453, 151, 60], "truth": "recommended", "kinds": ["wording"], "stratum": "hard"}
+{"id": "luke:pdf223:1262,1453,151,60", "book": "luke", "loc": "19:8a2", "page": "pdf223", "box": [1262, 1453, 151, 60], "truth": "recōmended", "kinds": ["macron"], "stratum": "hard"}
 {"id": "luke:pdf223:1337,2086,95,60", "book": "luke", "loc": "20:sum", "page": "pdf223", "box": [1337, 2086, 95, 60], "truth": "bevvare", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf223:921,1227,95,60", "book": "luke", "loc": "19:8a2", "page": "pdf223", "box": [921, 1227, 95, 60], "truth": "ovvne,", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf226:1100,710,99,60", "book": "luke", "loc": "20:35a1", "page": "pdf226", "box": [1100, 710, 99, 60], "truth": "vvorkes", "kinds": ["wvv"], "stratum": "hard"}
@@ -203,7 +197,6 @@
 {"id": "luke:pdf228:1100,206,100,60", "book": "luke", "loc": "21:26", "page": "pdf228", "box": [1100, 206, 100, 60], "truth": "heauē", "kinds": ["macron"], "stratum": "hard"}
 {"id": "luke:pdf228:1144,879,217,60", "book": "luke", "loc": "21:34", "page": "pdf228", "box": [1144, 879, 217, 60], "truth": "drunkēneſſe", "kinds": ["longs", "macron"], "stratum": "hard"}
 {"id": "luke:pdf228:1298,2062,115,60", "book": "luke", "loc": "22:sum", "page": "pdf228", "box": [1298, 2062, 115, 60], "truth": "ſvveating", "kinds": ["longs", "wvv"], "stratum": "hard"}
-{"id": "luke:pdf228:1522,1865,94,60", "book": "luke", "loc": "22:sum", "page": "pdf228", "box": [1522, 1865, 94, 60], "truth": "commemoration", "kinds": ["wording"], "stratum": "hard"}
 {"id": "luke:pdf228:794,2096,73,60", "book": "luke", "loc": "22:sum", "page": "pdf228", "box": [794, 2096, 73, 60], "truth": "Ievves", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf229:1297,875,58,60", "book": "luke", "loc": "22:9", "page": "pdf229", "box": [1297, 875, 58, 60], "truth": "vve", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "luke:pdf230:1279,1613,173,60", "book": "luke", "loc": "22:37", "page": "pdf230", "box": [1279, 1613, 173, 60], "truth": "vvritten,", "kinds": ["wvv"], "stratum": "hard"}
@@ -238,10 +231,8 @@
 {"id": "luke:pdf241:795,567,78,60", "book": "luke", "loc": "24:30a1", "page": "pdf241", "box": [795, 567, 78, 60], "truth": "epiſtle", "kinds": ["longs"], "stratum": "ordinary"}
 {"id": "mark:1/2:1359,2034,198,60", "book": "mark", "loc": "1:31", "page": "1/2", "box": [1359, 2034, 198, 60], "truth": "incōtinent", "kinds": ["macron"], "stratum": "hard"}
 {"id": "mark:1/2:911,492,45,60", "book": "mark", "loc": "1:16", "page": "1/2", "box": [911, 492, 45, 60], "truth": "ſea", "kinds": ["longs"], "stratum": "ordinary"}
-{"id": "mark:11/1:1615,932,59,47", "book": "mark", "loc": "10:30a5", "page": "11/1", "box": [1615, 932, 59, 47], "truth": "contentatiō", "kinds": ["macron"], "stratum": "hard"}
 {"id": "mark:11/1:590,954,191,55", "book": "mark", "loc": "10:30a5", "page": "11/1", "box": [590, 954, 191, 55], "truth": "cōſcience", "kinds": ["longs", "macron"], "stratum": "hard"}
 {"id": "mark:11/2:1226,1644,206,72", "book": "mark", "loc": "11:21", "page": "11/2", "box": [1226, 1644, 206, 72], "truth": "remēbring,", "kinds": ["macron"], "stratum": "hard"}
-{"id": "mark:11/2:932,2166,74,72", "book": "mark", "loc": "11:25", "page": "11/2", "box": [932, 2166, 74, 72], "truth": "alſo", "kinds": ["longs"], "stratum": "hard"}
 {"id": "mark:12/1:1230,704,65,64", "book": "mark", "loc": "11:31", "page": "12/1", "box": [1230, 704, 65, 64], "truth": "vve", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "mark:12/1:1521,756,63,76", "book": "mark", "loc": "11:32", "page": "12/1", "box": [1521, 756, 63, 76], "truth": "vve", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "mark:12/1:577,858,84,76", "book": "mark", "loc": "11:32", "page": "12/1", "box": [577, 858, 84, 76], "truth": "vvas", "kinds": ["wvv"], "stratum": "hard"}
@@ -265,12 +256,9 @@
 {"id": "mark:15/1:797,333,64,43", "book": "mark", "loc": "14:4a1", "page": "15/1", "box": [797, 333, 64, 43], "truth": "novv", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "mark:15/1:954,1533,138,69", "book": "mark", "loc": "15:1", "page": "15/1", "box": [954, 1533, 138, 69], "truth": "vvhole", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "mark:15/3:1229,2207,50,45", "book": "mark", "loc": "15:11a1", "page": "15/3", "box": [1229, 2207, 50, 45], "truth": "God", "kinds": ["wording"], "stratum": "hard"}
-{"id": "mark:15/3:613,2250,48,69", "book": "mark", "loc": "15:11a1", "page": "15/3", "box": [613, 2250, 48, 69], "truth": "iudgemēt", "kinds": ["macron"], "stratum": "hard"}
 {"id": "mark:15/3:924,863,158,76", "book": "mark", "loc": "15:40", "page": "15/3", "box": [924, 863, 158, 76], "truth": "vvomen", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "mark:16/1:669,215,125,67", "book": "mark", "loc": "15:11a1", "page": "16/1", "box": [669, 215, 125, 67], "truth": "aſſiſtāce", "kinds": ["longs", "macron"], "stratum": "hard"}
 {"id": "mark:16/2:1317,1642,129,71", "book": "mark", "loc": "16:16a3", "page": "16/2", "box": [1317, 1642, 129, 71], "truth": "mentiōneth", "kinds": ["macron"], "stratum": "hard"}
-{"id": "mark:16/2:1533,1025,57,71", "book": "mark", "loc": "16:20", "page": "16/2", "box": [1533, 1025, 57, 71], "truth": "folovved.", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "mark:16/2:1591,1408,43,38", "book": "mark", "loc": "16:1a1", "page": "16/2", "box": [1591, 1408, 43, 38], "truth": "without", "kinds": ["wvv"], "stratum": "ordinary"}
 {"id": "mark:2/2:878,1879,103,60", "book": "mark", "loc": "2:26", "page": "2/2", "box": [878, 1879, 103, 60], "truth": "vnder", "kinds": ["wording"], "stratum": "hard"}
 {"id": "mark:3/1:1483,1475,74,60", "book": "mark", "loc": "3:sum", "page": "3/1", "box": [1483, 1475, 74, 60], "truth": "ovvne", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "mark:3/1:795,1340,79,60", "book": "mark", "loc": "3:sum", "page": "3/1", "box": [795, 1340, 79, 60], "truth": "vvhere", "kinds": ["wvv"], "stratum": "hard"}
@@ -295,6 +283,5 @@
 {"id": "mark:9/1:1327,385,133,75", "book": "mark", "loc": "8:36", "page": "9/1", "box": [1327, 385, 133, 75], "truth": "vvhole", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "mark:9/1:488,166,101,77", "book": "mark", "loc": "8:34", "page": "9/1", "box": [488, 166, 101, 77], "truth": "vvith", "kinds": ["wvv"], "stratum": "hard"}
 {"id": "mark:9/1:752,542,127,71", "book": "mark", "loc": "8:38", "page": "9/1", "box": [752, 542, 127, 71], "truth": "vvordes", "kinds": ["wvv"], "stratum": "hard"}
-{"id": "mark:9/2:285,1133,182,61", "book": "mark", "loc": "9:9", "page": "9/2", "box": [285, 1133, 182, 61], "truth": "deſcēded", "kinds": ["longs", "macron", "wvv"], "stratum": "hard"}
 {"id": "mark:9/2:604,1737,175,77", "book": "mark", "loc": "9:14", "page": "9/2", "box": [604, 1737, 175, 77], "truth": "cōming", "kinds": ["macron"], "stratum": "hard"}
 {"id": "mark:argument/pdf114:446,962,140,51", "book": "mark", "loc": "arg:0", "page": "argument/pdf114", "box": [446, 962, 140, 51], "truth": "Philēmon.", "kinds": ["macron"], "stratum": "hard"}
