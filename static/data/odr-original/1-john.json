@@ -99,7 +99,7 @@
       "verses": [
         {
           "verse": 1,
-          "text": "MY litle children, theſe things I vvrite to you, that you ſinne not. But & if any man ſhal ſinne, vve haue an <na>[1]</na> caduocate vvith the Father, <sc>IESVS</sc> Chriſt the iuſt:",
+          "text": "MY litle children, theſe things I vvrite to you, that you ſinne not. But & if any man ſhal ſinne, vve haue an c <na>[1]</na> caduocate vvith the Father, <sc>IESVS</sc> Chriſt the iuſt:",
           "has_annotation": true,
           "lemmas": [
             [
@@ -109,14 +109,14 @@
             ],
             [
               107,
-              25,
+              27,
               2
             ]
           ],
           "notes": [
             {
               "label": "1",
-              "text": "<i>παράκλητον.</i>",
+              "text": "<i>c παράκλητον.</i>",
               "kind": "word"
             }
           ]
@@ -220,11 +220,11 @@
         },
         {
           "verse": 18,
-          "text": "Litle children, it is the laſt houre, & as you haue heard, that <na>[1]</na> Antichriſt commeth: now there are become many antichriſtes: vvhereby vve knovv, that it is the laſt houre.",
+          "text": "Litle children, it is the laſt houre, & as you haue heard, that c <na>[1]</na> Antichriſt commeth: now there are become many antichriſtes: vvhereby vve knovv, that it is the laſt houre.",
           "has_annotation": true,
           "lemmas": [
             [
-              118,
+              120,
               17,
               1
             ]
@@ -232,7 +232,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>ὁ ἀντίχριςος.</i>",
+              "text": "<i>c ὁ ἀντίχριςος.</i>",
               "kind": "word"
             }
           ]
@@ -268,11 +268,11 @@
         },
         {
           "verse": 20,
-          "text": "But you haue <na>[1]</na> the cvnction from the Holy one, and knovv al things.",
+          "text": "But you haue c <na>[1]</na> the cvnction from the Holy one, and knovv al things.",
           "has_annotation": true,
           "lemmas": [
             [
-              62,
+              64,
               15,
               1
             ]
@@ -280,7 +280,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>χρῖσμα Chriſma. whereof Chriſt & Chriſtians</i>.",
+              "text": "<i>c χρῖσμα Chriſma. whereof Chriſt & Chriſtians</i>.",
               "kind": "gloss"
             }
           ]
@@ -318,11 +318,11 @@
         },
         {
           "verse": 27,
-          "text": "And you, the vnction vvhich you haue receiued from him, let it abide in you. And you haue no neede that any man teache you: but as his vnction teacheth you of al things, and it is true, and it is no lie. And as it hath taught you, abide <na>[1]</na> in him.",
+          "text": "And you, the vnction vvhich you haue receiued from him, let it abide in you. And you haue no neede that any man teache you: but as his vnction teacheth you of al things, and it is true, and it is no lie. And as it hath taught you, abide c <na>[1]</na> in him.",
           "notes": [
             {
               "label": "1",
-              "text": "or, <i>in it</i>.",
+              "text": "c or, <i>in it</i>.",
               "kind": "gloss"
             }
           ]
@@ -361,11 +361,11 @@
         },
         {
           "verse": 2,
-          "text": "My deereſt, novv we are the ſonnes of God: & it hath not yet appeared vvhat we ſhal be. VVe know that when he ſhal appeare, we ſhal be like to him: becauſe vve ſhal <na>[1]</na> ſee him as he is.",
+          "text": "My deereſt, novv we are the ſonnes of God: & it hath not yet appeared vvhat we ſhal be. VVe know that when he ſhal appeare, we ſhal be like to him: becauſe vve ſhal c <na>[1]</na> ſee him as he is.",
           "notes": [
             {
               "label": "1",
-              "text": "How we ſhal ſee God, & be like vnto him in the next life, ſee S. Auguſtine <i>ep. 111. 112. & li. 12. de ciuit. Dei c. 29</i>.",
+              "text": "c How we ſhal ſee God, & be like vnto him in the next life, ſee S. Auguſtine <i>ep. 111. 112. & li. 12. de ciuit. Dei c. 29</i>.",
               "kind": "gloss"
             }
           ]
@@ -624,7 +624,7 @@
         },
         {
           "verse": 3,
-          "text": "and euery ſpirit that diſſolueth <sc>IESVS</sc>, is not of God: and this is <na>[1]</na> cantichriſt, of vvhom you haue heard that he commeth, and novv he is in the vvorld.",
+          "text": "and euery ſpirit that diſſolueth <sc>IESVS</sc>, is not of God: and this is c <na>[1]</na> cantichriſt, of vvhom you haue heard that he commeth, and novv he is in the vvorld.",
           "has_annotation": true,
           "lemmas": [
             [
@@ -636,7 +636,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>τὸ τοῦ ἀντίχριςτου.</i>",
+              "text": "<i>c τὸ τοῦ ἀντίχριςτου.</i>",
               "kind": "word"
             }
           ]
@@ -888,7 +888,7 @@
         },
         {
           "verse": 15,
-          "text": "And <na>[1]</na> vve knovv that he heareth vs whatſoeuer vve ſhal aſke: vve knovv that vve haue the petitions vvhich vve requeſt of him.",
+          "text": "And c <na>[1]</na> vve knovv that he heareth vs whatſoeuer vve ſhal aſke: vve knovv that vve haue the petitions vvhich vve requeſt of him.",
           "notes": [
             {
               "label": "1",
@@ -916,11 +916,11 @@
         },
         {
           "verse": 17,
-          "text": "Al <na>[1]</na> iniquitie, is ſinne. And there is a ſinne <na>[2]</na> <alt>`to death</alt>'.",
+          "text": "Al c <na>[1]</na> iniquitie, is ſinne. And there is a ſinne <na>[2]</na> <alt>`to death</alt>'.",
           "notes": [
             {
               "label": "1",
-              "text": "<i>ἀδικία</i>",
+              "text": "<i>c ἀδικία</i>",
               "kind": "word"
             },
             {

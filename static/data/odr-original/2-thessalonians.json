@@ -42,7 +42,7 @@
         },
         {
           "verse": 5,
-          "text": "for an example of the iuſt iudgement of God, that <na>[1]</na> you may be <na>[2]</na> counted vvorthie of the kingdom of God, for the vvhich alſo you ſuffer.",
+          "text": "for an example of the iuſt iudgement of God, that <na>[1]</na> you may be c <na>[2]</na> counted vvorthie of the kingdom of God, for the vvhich alſo you ſuffer.",
           "notes": [
             {
               "label": "1",
@@ -51,7 +51,7 @@
             },
             {
               "label": "2",
-              "text": "<i>καταξιωθῆναι ὑμᾶς</i>",
+              "text": "<i>c καταξιωθῆναι ὑμᾶς</i>",
               "kind": "word"
             }
           ]
@@ -90,11 +90,11 @@
         },
         {
           "verse": 11,
-          "text": "Vvherein alſo vve pray alvvaies for you, that our God <na>[1]</na> make you vvorthie of his vocation, and accompliſh al the good pleaſure of his goodneſſe & the vvorke of faith in povver,",
+          "text": "Vvherein alſo vve pray alvvaies for you, that our God c <na>[1]</na> make you vvorthie of his vocation, and accompliſh al the good pleaſure of his goodneſſe & the vvorke of faith in povver,",
           "notes": [
             {
               "label": "1",
-              "text": "<i>ἀξιώσῃ</i>",
+              "text": "<i>c ἀξιώσῃ</i>",
               "kind": "word"
             }
           ]
@@ -134,16 +134,16 @@
         },
         {
           "verse": 3,
-          "text": "Let no man ſeduce you by any meanes, for vnleſſe there come <na>[1]</na> a reuolt firſt, and the man of ſinne be reuealed, the ſonne of perdition,",
+          "text": "Let no man ſeduce you by any meanes, for vnleſſe there come c <na>[1]</na> a reuolt firſt, and the man of ſinne be reuealed, the ſonne of perdition,",
           "has_annotation": true,
           "lemmas": [
             [
               41,
-              46,
+              48,
               1
             ],
             [
-              93,
+              95,
               16,
               4
             ]
@@ -151,7 +151,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "<i>ἀποστασία</i>",
+              "text": "<i>c ἀποστασία</i>",
               "kind": "word"
             }
           ]
@@ -253,11 +253,11 @@
         },
         {
           "verse": 15,
-          "text": "Therfore brethren ſtand: and hold <na>[1]</na> the traditions vvhich you haue learned, vvhether it be by vvord, or by our epiſtle.",
+          "text": "Therfore brethren ſtand: and hold c <na>[1]</na> the traditions vvhich you haue learned, vvhether it be by vvord, or by our epiſtle.",
           "has_annotation": true,
           "lemmas": [
             [
-              51,
+              53,
               10,
               1
             ]
@@ -265,7 +265,7 @@
           "notes": [
             {
               "label": "1",
-              "text": "τὰς παραδόσεις",
+              "text": "c τὰς παραδόσεις",
               "kind": "word"
             }
           ]
@@ -276,16 +276,16 @@
         },
         {
           "verse": 17,
-          "text": "<na>[1]</na><na>[2]</na> cexhort your hartes, and confirme you in euery good vvorke and vvorde.",
+          "text": "c <na>[1]</na><na>[2]</na> cexhort your hartes, and confirme you in euery good vvorke and vvorde.",
           "notes": [
             {
               "label": "1",
-              "text": "This vvord of exhorting implieth in it comfort and conſolation: as 2. Cor. 1. v. 4. & 6.",
+              "text": "c This vvord of exhorting implieth in it comfort and conſolation: as 2. Cor. 1. v. 4. & 6.",
               "kind": "gloss"
             },
             {
               "label": "2",
-              "text": "παρακαλέσαι",
+              "text": "c παρακαλέσαι",
               "kind": "word"
             }
           ]
@@ -326,7 +326,7 @@
         },
         {
           "verse": 6,
-          "text": "And vve denounce vnto you, brethren, in the name of our Lord <sc>IESVS</sc> Chriſt, that you vvithdravv your ſelues from euery brother vvalking inordinatly, and not according to the <na>[1]</na><na>[2]</na> ctradition vvhich they haue receiued of vs.",
+          "text": "And vve denounce vnto you, brethren, in the name of our Lord <sc>IESVS</sc> Chriſt, that you vvithdravv your ſelues from euery brother vvalking inordinatly, and not according to the c <na>[1]</na><na>[2]</na> ctradition vvhich they haue receiued of vs.",
           "notes": [
             {
               "label": "1",
@@ -335,7 +335,7 @@
             },
             {
               "label": "2",
-              "text": "παράδοσιν",
+              "text": "c παράδοσιν",
               "kind": "word"
             }
           ]
