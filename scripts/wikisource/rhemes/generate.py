@@ -48,13 +48,13 @@ def margin(side, text):
 
 # The sidenotes format (books.json "sidenotes": [first, last]), after the validated 1610 Douai
 # Old Testament pages (Page:1610_Douai_Old_Testament.pdf/336, /337): {{sidenotes begin}} …
-# {{sidenotes end}} around the page, {{verseline|ch|v}}† at each verse with the print's dagger,
+# {{sidenotes end}} around the page, {{verse|chapter=ch|verse=v}}† at each verse with the print's dagger
+# ({{verse}}, not the 1610 pages' {{verseline}}, whose white background shows in dark mode),
 # and each note in {{outside L|…}} (left margin) or {{outside RL|…}} (right) right after its
 # anchor in the text ("the * {{outside L|''Luc. 3, 31.''}} generation"). A note the print sets
 # without an anchor (lectionary notes, headings, glosses like "Virginitie preferred") has none.
 _NOTE_SENT = r'\{\{M(?:INNER|OUTER)\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\}'
-_DROP_VERSE = re.compile(r'\{\{dropinitial\|([^{}|]*)((?:\|(?:image|imgsize)=[^{}|]*)*)'
-                         r'\|fl=\{\{verse\|chapter=(\d+)\|verse=(\d+)\}\}\}\}')
+RIGHT_NOTE = 'outside RL'  # right on the Page:, left in the main namespace (Template:Outside RL)
 
 
 def _positional(tpl_open, body, i):
@@ -78,11 +78,11 @@ def sidenotes_body(body, side_inner, side_outer):
     # the anchor (* or ∷) goes before its note, as the 1610 pages set it
     body = re.sub(rf'((?:{_NOTE_SENT} ?)+)([*∷]) ?',
                   lambda m: m.group(2) + ' ' + m.group(1).rstrip() + ' ', body)
-    body = _DROP_VERSE.sub(r'{{verseline|\3|\4}}{{di|\1\2}}', body)
-    body = re.sub(r'\{\{verse\|chapter=(\d+)\|verse=(\d+)\}\} ?', r'{{verseline|\1|\2}}† ', body)
-    tpl = {'left': '{{outside L|', 'right': '{{outside RL|'}
+    # the print's verse-start †; a chapter's first verse sits in its drop initial's fl= and has none
+    body = re.sub(r'(\{\{verse\|chapter=\d+\|verse=\d+\}\})(?!\}) ?', r'\1† ', body)
+    tpl = {'left': '{{outside L|', 'right': '{{' + RIGHT_NOTE + '|'}
     body = body.replace('{{MINNER|', tpl[side_inner]).replace('{{MOUTER|', tpl[side_outer])
-    for t in ('{{outside L|', '{{outside RL|'):
+    for t in ('{{outside L|', '{{' + RIGHT_NOTE + '|'):
         for i in reversed([m.start() for m in re.finditer(re.escape(t), body)]):
             if _positional(t, body, i):
                 body = body[:i + len(t)] + '1=' + body[i + len(t):]

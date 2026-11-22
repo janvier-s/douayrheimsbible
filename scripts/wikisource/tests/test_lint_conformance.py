@@ -135,4 +135,7 @@ def test_sidenotes_format(tmp_path):
     assert 'E-margin' in side_codes(tmp_path, 'a {{outside L|{{nop}}}} b')
     assert 'W-mark' in side_codes(tmp_path, '{{verseline|1|1}}{{di|T}}{{sc|He}} x {{verseline|1|2}} And')  # † left out
     assert 'E-verse' in side_codes(tmp_path, '{{verseline|1|1}}{{di|T}}HE {{verseline|1|3}}† x')
+    v = '{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} x {{verse|chapter=1|verse=2}}'
+    assert 'W-mark' not in side_codes(tmp_path, v + '† And')
+    assert 'W-mark' in side_codes(tmp_path, v + ' And')
     assert 'E-tpl-italic' in side_codes(tmp_path, "''open * {{outside L|x}} close''")

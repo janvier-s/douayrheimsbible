@@ -34,7 +34,7 @@ Checks (E = error, W = warning):
   W-nop       the next page opens a paragraph but this page does not end with {{nop}} on its own line
   W-linebreak single line break inside a paragraph
   W-space     double space, space before , . ; : ? ! ), space after (, trailing space
-  W-mark      {{verseline}} without the print's † (a chapter's drop initial has none)
+  W-mark      on a sidenotes page, a verse marker without the print's † (a chapter's drop initial has none)
   W-quote     straight or curly double quotes in the body (the print has none)
 """
 import re
@@ -309,7 +309,8 @@ def lint(d, ov=None):
                 out.append(('E-verse', n, f'{ch}:{v} follows {ch}:{last_v}'))
             last_ch, last_v = ch, v
             # the print sets † at every verse start but a chapter's first, under its drop initial (§2.1)
-            if m.group(3) and not body.startswith(('†', '{{di|'), m.end()):
+            in_drop = body.startswith('}}', m.end())  # {{dropinitial|T|fl={{verse|…}}}}: no † under the initial
+            if (m.group(3) or '{{sidenotes begin}}' in t) and not in_drop and not body.startswith(('†', '{{di|'), m.end()):
                 out.append(('W-mark', n, f'{ch}:{v} lacks the print\'s † after the verse number'))
 
         # spacing and quotes
