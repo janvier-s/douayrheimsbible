@@ -158,7 +158,7 @@
 {"page": 307, "committed": "Pſ.", "generated": "Ps.", "before": ["S.", "Ambroſe", "in"], "after": ["45.", "ſer.", "20"], "rung": 2, "winner": "committed", "evidence": "xml Pſ"}
 {"page": 307, "committed": "Pſ.", "generated": "Ps.", "before": ["ſer.", "20", "in"], "after": ["118.", "S.", "Aug."], "rung": 2, "winner": "committed", "evidence": "xml Pſ"}
 {"page": 308, "committed": "Succeſsors.", "generated": "Succeſſors.", "before": ["alſo", "to", "his"], "after": ["Peters", "ſucceſsors", "ſuccede"], "rung": 3, "winner": "generated", "evidence": "book majority 0:2"}
-{"page": 308, "committed": "ſucceſsors", "generated": "ſucceſſors", "before": ["his", "Succeſsors.", "Peters"], "after": ["ſuccede", "hĩ", "in"], "rung": 3, "winner": "generated", "evidence": "book majority 0:6; xml ſucceſſors"}
+{"page": 308, "committed": "ſucceſsors", "generated": "ſucceſſors", "before": ["his", "Succeſsors.", "Peters"], "after": ["ſuccede", "hī", "in"], "rung": 3, "winner": "generated", "evidence": "book majority 0:6; xml ſucceſſors"}
 {"page": 308, "committed": "oppreſsed,", "generated": "oppreſſed,", "before": ["patrone", "to", "the"], "after": ["father", "to", "the"], "rung": 3, "winner": "generated", "evidence": "ocr oppreſſed; xml oppreſſed"}
 {"page": 308, "committed": "Succeſsors:", "generated": "Succeſſors:", "before": ["Peter", "and", "his"], "after": ["yet", "would", "he"], "rung": 3, "winner": "generated", "evidence": "book majority 0:1; xml Succeſſors"}
 {"page": 308, "committed": "ſucceſsors", "generated": "ſucceſſors", "before": ["alſo", "to", "his"], "after": ["the", "Popes", "of"], "rung": 3, "winner": "generated", "evidence": "book majority 0:6; xml ſucceſſors"}

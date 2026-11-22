@@ -18,7 +18,7 @@
 {"book": "acts", "page": 319, "committed": "Gethsémani.", "generated": "Gethſémani.", "reading": "Gethſémani.", "evidence": "scan collage 2026-11-21"}
 {"book": "acts", "page": 321, "committed": "Mesopotámia,", "generated": "Meſopotámia,", "reading": "Meſopotámia,", "evidence": "scan collage 2026-11-21"}
 {"book": "acts", "page": 345, "committed": "Cæsaréa,", "generated": "Cæſaréa,", "reading": "Cæſaréa,", "evidence": "scan collage 2026-11-21"}
-{"book": "acts", "page": 346, "committed": "cõuerse", "generated": "cõuerſe", "reading": "cõuerſe", "evidence": "inferred 2026-11-21 (medial s is ſ in this print (cõuerſe)); not legible on the crop"}
+{"book": "acts", "page": 346, "committed": "cōuerse", "generated": "cōuerſe", "reading": "cōuerſe", "evidence": "inferred 2026-11-21 (medial s is ſ in this print (cōuerſe)); not legible on the crop"}
 {"book": "acts", "page": 346, "committed": "Cæsaréa.", "generated": "Cæſaréa.", "reading": "Cæſaréa.", "evidence": "scan collage 2026-11-21"}
 {"book": "acts", "page": 350, "committed": "Cæsaréa.", "generated": "Cæſaréa.", "reading": "Cæſaréa.", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts pp. 345, 346, 352); not legible on the crop"}
 {"book": "acts", "page": 352, "committed": "Cæsaréa", "generated": "Cæſaréa", "reading": "Cæſaréa", "evidence": "scan collage 2026-11-21"}
@@ -28,14 +28,14 @@
 {"book": "acts", "page": 386, "committed": "Cæsaréa.", "generated": "Cæſaréa.", "reading": "Cæſaréa.", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts pp. 345, 346, 352); not legible on the crop"}
 {"book": "acts", "page": 390, "committed": "verſ.5", "generated": "vers.5", "reading": "verſ.5", "evidence": "inferred 2026-11-21 (ſ before an abbreviation point, as anniuerſ. read on matthew p75); not legible on the crop"}
 {"book": "acts", "page": 401, "committed": "Whereunto", "generated": "Vvherevnto", "reading": "Vvherevnto", "evidence": "scan collage 2026-11-21"}
-{"book": "romans", "page": 410, "committed": "agaĩst", "generated": "agaĩſt", "reading": "agaĩſt", "evidence": "scan collage 2026-11-21"}
+{"book": "romans", "page": 410, "committed": "agaīst", "generated": "agaīſt", "reading": "agaīſt", "evidence": "scan collage 2026-11-21"}
 {"book": "romans", "page": 410, "committed": "natiōs,", "generated": "natiōſ,", "reading": "natiōs,", "evidence": "scan collage 2026-11-21"}
 {"book": "romans", "page": 411, "committed": "uncleanneſſ.", "generated": "uncleanneſs.", "reading": "vncleanneſſe.", "evidence": "scan collage 2026-11-21", "replace": true}
 {"book": "romans", "page": 421, "committed": "iustificatió,", "generated": "iuſtificatió,", "reading": "iuſtificatió,", "evidence": "inferred 2026-11-21 (iuſtification read on luke p166); not legible on the crop"}
 {"book": "romans", "page": 423, "committed": "inclusiuè", "generated": "incluſiuè", "reading": "incluſiuè", "evidence": "scan collage 2026-11-21"}
-{"book": "romans", "page": 430, "committed": "Novvithstandĩg", "generated": "Novvithſtandĩg", "reading": "Novvithſtandĩg", "evidence": "scan collage 2026-11-21"}
-{"book": "acts", "page": 325, "committed": "saluatiõ:", "generated": "ſaluatiõ:", "reading": "ſaluatiõ:", "evidence": "inferred 2026-11-21 (XML ſaluatio (EEBO drops the tilde) and word-initial ſ throughout this print); not cropped"}
-{"book": "acts", "page": 339, "committed": "sanctificatiõ.", "generated": "ſanctificatiõ.", "reading": "ſanctificatiõ.", "evidence": "inferred 2026-11-21 (word-initial ſ throughout this print (ſanctification read with ſ on the scans)); not cropped"}
+{"book": "romans", "page": 430, "committed": "Novvithstandīg", "generated": "Novvithſtandīg", "reading": "Novvithſtandīg", "evidence": "scan collage 2026-11-21"}
+{"book": "acts", "page": 325, "committed": "saluatiō:", "generated": "ſaluatiō:", "reading": "ſaluatiō:", "evidence": "inferred 2026-11-21 (XML ſaluatio (EEBO drops the tilde) and word-initial ſ throughout this print); not cropped"}
+{"book": "acts", "page": 339, "committed": "sanctificatiō.", "generated": "ſanctificatiō.", "reading": "ſanctificatiō.", "evidence": "inferred 2026-11-21 (word-initial ſ throughout this print (ſanctification read with ſ on the scans)); not cropped"}
 {"book": "acts", "page": 353, "committed": "Cæsaréa,", "generated": "Cæſaréa,", "reading": "Cæſaréa,", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts scans pp. 345, 346, 352); not cropped"}
 {"book": "acts", "page": 382, "committed": "Cæsaréa.", "generated": "Cæſaréa.", "reading": "Cæſaréa.", "evidence": "inferred 2026-11-21 (Cæſaréa read on acts scans pp. 345, 346, 352); not cropped"}
 {"book": "luke", "page": 221, "committed": "austêre", "generated": "auſtêre", "reading": "auſtêre", "evidence": "inferred 2026-11-21 (XML auſtêre; medial ſ); not cropped"}
@@ -54,9 +54,9 @@
 {"book": "romans", "page": 421, "committed": "saluatió,", "generated": "ſaluatió,", "reading": "ſaluatió,", "evidence": "inferred 2026-11-21 (word-initial ſ; XML ſaluatio; print ſaluation on the same opening); not cropped"}
 {"book": "romans", "page": 423, "committed": "iustificatió,", "generated": "iuſtificatió,", "reading": "iuſtificatió,", "evidence": "scan collage 2026-11-21: print iuſtificatió,"}
 {"book": "romans", "page": 423, "committed": "resurrectió,", "generated": "reſurrectió,", "reading": "reſurrectió,", "evidence": "scan collage 2026-11-21: print reſurrectió,"}
-{"book": "romans", "page": 432, "committed": "vnderstãd", "generated": "vnderſtãd", "reading": "vnderſtãd", "evidence": "scan collage 2026-11-21: print vnderſtãd"}
+{"book": "romans", "page": 432, "committed": "vnderstād", "generated": "vnderſtād", "reading": "vnderſtād", "evidence": "scan collage 2026-11-21: print vnderſtād"}
 {"book": "romans", "page": 437, "committed": "Eglis.", "generated": "Egliſ.", "reading": "Egliſ.", "evidence": "scan collage 2026-11-21: print Egliſ."}
-{"book": "romans", "page": 446, "committed": "cõscience", "generated": "cõſcience", "reading": "cõſcience", "evidence": "scan collage 2026-11-21: print cõſcience"}
+{"book": "romans", "page": 446, "committed": "cōscience", "generated": "cōſcience", "reading": "cōſcience", "evidence": "scan collage 2026-11-21: print cōſcience"}
 {"book": "romans", "page": 449, "committed": "Tryphósa:", "generated": "Tryphóſa:", "reading": "Tryphóſa:", "evidence": "scan collage 2026-11-21: print Tryphóſa:"}
 {"book": "romans", "page": 410, "committed": "intermiſsion", "generated": "intermiſſion", "reading": "intermiſsion", "evidence": "scan 2026-11-21 (pdf410, whole-branch review): print intermiſsion against XML intermiſſion"}
 {"book": "matthew", "page": 55, "committed": "Confeſsing", "generated": "Confeſſing", "reading": "Confeſſing", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
@@ -65,7 +65,7 @@
 {"book": "matthew", "page": 82, "committed": "poſsible.", "generated": "poſſible.", "reading": "poſſible.", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
 {"book": "mark", "page": 156, "committed": "Paſſ.", "generated": "Paſs.", "reading": "Paſs.", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
 {"book": "luke", "page": 203, "committed": "Confeſsors", "generated": "Confeſſors", "reading": "Confeſſors", "evidence": "inferred 2026-11-21 (the same lectionary heading on p221 reads confeſſor on the scan); not cropped"}
-{"book": "luke", "page": 219, "committed": "Quĩquagesme.", "generated": "Quĩquageſme.", "reading": "Quĩquageſme.", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
+{"book": "luke", "page": 219, "committed": "Quīquagesme.", "generated": "Quīquageſme.", "reading": "Quīquageſme.", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
 {"book": "luke", "page": 221, "committed": "Confeſsors", "generated": "Confeſſors", "reading": "Confeſſors", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
 {"book": "acts", "page": 336, "committed": "Iosuè,", "generated": "Ioſuè,", "reading": "Ioſuè,", "evidence": "scan collage 2026-11-21 (owner: settle the open words)"}
 {"book": "acts", "page": 392, "committed": "Iesvs,", "generated": "Ieſvs,", "reading": "Iesvs,", "evidence": "scan collage 2026-11-21 (owner: settle the open words); set in capitals (IESVS): round s"}

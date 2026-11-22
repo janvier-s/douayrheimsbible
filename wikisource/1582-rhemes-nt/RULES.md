@@ -72,9 +72,9 @@ Enforced by: `vv`, `w`
 
 ### 3.5 Macrons and titlos
 
-Keep each macron or titlo for an omitted m or n (`cōmaunded`, `vpō`, `thē`, `Quĩquagesme`).
+Keep each macron or titlo for an omitted m or n (`cōmaunded`, `vpō`, `thē`, `Quīquagesme`). Write it as the macron U+0304 (precomposed where NFC has a form: ō, ē, ā, ū, ī; combining on n and q: n̄, q̄), as `A16049.xml` does. A tilde (U+0303: õ, ã, ñ) is an OCR code point, never the print's.
 
-Enforced by: `macron`
+Enforced by: `macron`, data tests
 
 ### 3.6 Ligatures and &c.
 
@@ -84,9 +84,9 @@ Enforced by: `ae`, `oe`, `etc`
 
 ### 3.7 NFC
 
-All text is Unicode NFC. MediaWiki saves NFC, so a non-NFC page never matches live (Greek oxia becomes tonos, combining marks recompose). Generators and tools normalise before writing.
+All text is Unicode NFC. MediaWiki saves NFC, so a non-NFC page never matches live (Greek oxia becomes tonos, combining marks recompose). Generators and tools normalise before writing, and the data tests (`tests/test_data_encoding.py`) check every string of `odr-original` and `odr`.
 
-Enforced by: `E-nfc`
+Enforced by: `E-nfc`, data tests
 
 ### 3.8 No double quotes
 
@@ -262,7 +262,7 @@ Enforced by: review (no code)
 
 ### 6.5 The fixes ledger
 
-Every data fix is one entry in `fixes/<book>.jsonl`, applied with `rh.py fix apply`. That command is a dry run unless you pass `--write`. With `--write` it takes the lock, writes all or nothing, and refuses a fidelity loss. The XML's front matter and the microfilm appendix use `fixes/front.jsonl` and `fixes/back.jsonl`. An entry is one JSON line with these keys, in this order:
+Every data fix is one entry in `fixes/<book>.jsonl`, applied with `rh.py fix apply`. That command is a dry run unless you pass `--write`. With `--write` it takes the lock, writes all or nothing, and refuses a fidelity loss. The XML's front matter and the microfilm appendix use `fixes/front.jsonl` and `fixes/back.jsonl`. Fixes to the 1609/10 Old Testament data (no pages yet) go in `docs/fixes-ot/<book>.jsonl`, in the same format with `A11777.xml` as the XML; check and apply them with `--fixes docs/fixes-ot`. An entry is one JSON line with these keys, in this order:
 
 - `id`: `<book>-<loc>-<letter>`, unique in the file.
 - `target`: some of `odr-original`, `odr` and `xml`.

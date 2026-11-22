@@ -1,0 +1,1 @@
+{"id": "judith-10-18-a", "target": ["odr-original"], "loc": "judith 10:18", "old": "wemẽ", "new": "wemē", "evidence": "encoding: the data had a tilde (U+0303) for the abbreviation stroke, which the print, the XML and RULES §3.5 write as a macron (U+0304); the tilde came from OCR; A11777.xml has wemē here", "date": "2026-11-22"}

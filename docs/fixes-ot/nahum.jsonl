@@ -1,0 +1,1 @@
+{"id": "nahum-3-7-a", "target": ["odr-original"], "loc": "nahum 3:7", "old": "cõforter", "new": "cōforter", "evidence": "encoding: the data had a tilde (U+0303) for the abbreviation stroke, which the print, the XML and RULES §3.5 write as a macron (U+0304); the tilde came from OCR; A11777.xml has cōforter here", "date": "2026-11-22"}

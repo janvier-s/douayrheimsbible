@@ -43,7 +43,7 @@ def rule_blocks(text=None):
     return blocks
 
 
-PLAIN_ENFORCERS = {'fix check', 'generator', 'golden tests', 'wikipost', 'reconcile verify', 'books.json', 'ladder', 'review (no code)'}
+PLAIN_ENFORCERS = {'fix check', 'generator', 'golden tests', 'wikipost', 'reconcile verify', 'books.json', 'ladder', 'data tests', 'review (no code)'}
 
 
 def bad_enforcers(line):

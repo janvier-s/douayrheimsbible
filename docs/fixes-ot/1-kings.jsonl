@@ -1,0 +1,1 @@
+{"id": "1-kings-22-14-a", "target": ["odr-original"], "loc": "1-kings 22:14", "old": "commandmẽt", "new": "commandmēt", "evidence": "encoding: the data had a tilde (U+0303) for the abbreviation stroke, which the print, the XML and RULES §3.5 write as a macron (U+0304); the tilde came from OCR; A11777.xml has commandmēt here", "date": "2026-11-22"}

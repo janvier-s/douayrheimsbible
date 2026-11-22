@@ -1,0 +1,1 @@
+{"id": "colossians-arg-0-a", "target": ["odr-original"], "loc": "colossians arg:0", "old": "cõtinually", "new": "cōtinually", "evidence": "encoding: the data had a tilde (U+0303) for the abbreviation stroke, which the print, the XML and RULES §3.5 write as a macron (U+0304); the tilde came from OCR; A16049.xml has cōtinually here", "date": "2026-11-22"}

@@ -1,0 +1,1 @@
+{"id": "2-paralipomenon-36-22-noteb-a", "target": ["odr-original"], "loc": "2-paralipomenon 36:22/noteb", "old": "cõcluſion", "new": "cōcluſion", "evidence": "encoding: the data had a tilde (U+0303) for the abbreviation stroke, which the print, the XML and RULES §3.5 write as a macron (U+0304); the tilde came from OCR; A11777.xml has cōcluſion here", "date": "2026-11-22"}

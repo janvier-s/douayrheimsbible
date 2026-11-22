@@ -1,0 +1,1 @@
+{"id": "zacharias-14-2-notea-a", "target": ["odr-original"], "loc": "zacharias 14:2/notea", "old": "deſtructiõ", "new": "deſtructiō", "evidence": "encoding: the data had a tilde (U+0303) for the abbreviation stroke, which the print, the XML and RULES §3.5 write as a macron (U+0304); the tilde came from OCR; A11777.xml has deſtructiō here", "date": "2026-11-22"}
