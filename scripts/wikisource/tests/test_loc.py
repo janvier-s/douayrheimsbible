@@ -13,6 +13,15 @@ def test_iter_locs_round_trip():
     assert seen > 1000
 
 
+def test_chapters_by_number_not_position():
+    # Tobias starts with a chapter 0 (the preface), so chapter N is not chapters[N - 1]
+    store = loc.load_store(paths.DATA, 'tobias')
+    assert store.bj['chapters'][0]['chapter'] == 0
+    for rest, cont, key in loc.iter_locs(store):
+        c2, k2 = loc.resolve(store, rest)
+        assert c2 is cont and k2 == key, rest
+
+
 def test_resolve_hash_key():
     store = loc.load_store(paths.DATA, 'john')
     cont, key = loc.resolve(store, '1:1a1#star')

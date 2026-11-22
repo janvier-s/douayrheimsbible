@@ -45,6 +45,11 @@ def save_store(store, touched):
         write_like(store.root / store.book / 'annotations' / f'{c:03d}.json', store.anns[c])
 
 
+def _chapter(book_json, n):
+    """Chapter n by its number: a book can start at chapter 0 (Tobias has its preface there)."""
+    return next(ch for ch in book_json['chapters'] if ch['chapter'] == n)
+
+
 def find_text(book_json, anns, loc, check_verse=True):
     """(container, key) holding the text at loc. An annotation must be on the loc's verse, unless
     check_verse is False (replaying history, where verses were since renumbered)."""
@@ -54,7 +59,7 @@ def find_text(book_json, anns, loc, check_verse=True):
         return it, 'title' if m.group(1) == 'title' else 'text'
     m = re.fullmatch(r'(\d+):sum(?:/n(.+))?', loc)
     if m:
-        ch = book_json['chapters'][int(m.group(1)) - 1]
+        ch = _chapter(book_json, int(m.group(1)))
         if m.group(2):
             return next(n for n in ch['summary_notes'] if str(n.get('marker')) == m.group(2)), 'text'
         return ch, 'summary'
@@ -70,7 +75,7 @@ def find_text(book_json, anns, loc, check_verse=True):
         return a, 'text'
     m = re.fullmatch(r'(\d+):(\d+)(?:/note(.+)|/cr(\d+))?', loc)
     if m:
-        v = book_json['chapters'][int(m.group(1)) - 1]['verses'][int(m.group(2)) - 1]
+        v = _chapter(book_json, int(m.group(1)))['verses'][int(m.group(2)) - 1]
         assert v['verse'] == int(m.group(2))
         if m.group(3):
             return next(n for n in v['notes'] if str(n.get('label')) == m.group(3)), 'text'
