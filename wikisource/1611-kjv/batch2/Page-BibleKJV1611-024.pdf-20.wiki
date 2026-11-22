@@ -1,0 +1,66 @@
+<noinclude><pagequality level="2" user="Mathmitch7" />{{x-larger|{{rh|Chriſt aboue|To the Hebrewes.|the Angels.}}}} {{rule}}</noinclude>me, euen thine owne ſelfe beſides:
+
+{{verse|1|20}} Yea, brother, let mee haue ioy of thee in the Lord: refreſh my bowles in the Lord.
+
+{{verse|1|21}} Hauing confidence in thy obedience, I wrote vnto thee, knowing that thou wilt alſo doe more then I ſay.
+
+{{verse|1|22}} But withall prepare mee alſo a lodging: for I truſt that through your prayers I ſhall be giuen vnto you.
+
+{{verse|1|23}} There ſalute thee Epaphras, my fellow priſoner in Chriſt Ieſus:
+
+{{verse|1|24}} Marcus, Ariſtarchus, Demas, Lucas, my fellow labourers.
+
+{{verse|1|25}} The grace of our Lord Ieſus Chriſt {{smaller|be}} with your ſpirit. Amen.
+
+{{dent|2em|0em|{{overfloat left|depth=1em|¶}}Written from Rome to Philemon, by Oneſimus a ſeruant.}}
+
+{{rule}}
+{{rule}}
+<section end="philemon" />
+<section begin="hebrewes" />
+[[File:King James Bible (1611) page A3v.xcf|center|600px]]
+{{rule}}
+{{nop}}
+==¶ THE EPISTLE OF PAVL the Apoſtle to the Hebrewes.==
+
+==={{Chapter|1|CHAP. I.}}===
+{{smaller block|[[#1:1|1]] Christ in theſe laſt times comming to vs from the Father, [[#1:4|4]] is preferred aboue the Angels, both in Perſon and Office.}}
+
+{{image missing}}
+{{Verse|1|1|notext=}}{{dropinitial|G}}Od who at ſundry times, and in diuers manners, ſpake in time paſt vnto the Fathers by the Prophets,
+
+{{verse|1|2}} Hath in theſe laſt dayes ſpoken vnto vs by {{smaller|his}} Sonne, whom he hath appointed heire of all things, by whom alſo he made the worlds,
+
+{{verse|1|3}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Wiſ.7.26.}}Who being the brightneſſe of his glory, and the expreſſe image of his perſon, and vpholding all things by the word of his power, when hee had by himſelfe purged our ſinnes, ſate down on {{tooltip|yͤ|the}} right hand of the Maieſtie on high,
+
+{{verse|1|4}} Being made ſo much better then the Angels, as hee hath by inheritance obtained a more excellent Name then they.
+
+{{verse|1|5}} For vnto which of the Angels ſaid he at any time, Thou art my ſonne, this day haue I begotten thee? And again, I will be to him a Father, and he ſhall be to me a Sonne.
+
+{{verse|1|6}} And againe, when he bringeth in the firſt begotten into the world, hee ſaith, And let all the Angels of God worſhip him.
+
+{{verse|1|7}} And of the Angels he ſaith: Who maketh his Angels ſpirits, and his miniſters a flame of fire.
+
+{{verse|1|8}} But vnto the Sonne, {{smaller|he ſaith,}} Thy throne, O God, {{smaller|is}} for euer and euer: a ſcepter of <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Gr. rightneſſe, or ſtraightnes.''}} righteouſneſſe {{smaller|is}} the ſcepter of thy kingdome.
+
+{{verse|1|9}} Thou haſt loued righteouſneſſe, and hated iniquitie, therefore God, {{smaller|euen}} thy God hath anointed thee with the oyle of gladneſſe aboue thy fellowes.
+
+{{verse|1|10}} And, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Pſa.102.2. eſa.34.4.}} thou Lord in the beginning, haſt layed the foundation of the earth: and the heauens are the works of thine hands.
+
+{{verse|1|11}} They ſhall periſh, but thou remaineſt: and they all ſhal waxe old as doth a garment.
+
+{{verse|1|12}} And as a veſture ſhalt thou fold them vp, and they ſhall be changed, but thou art the ſame, and thy yeeres ſhall not faile?
+
+{{verse|1|13}} But to which of the Angels ſaid hee at any time, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Pſal.110.1. matt.22.44.}} Sit on my right hand, vntill I make thine enemies thy footſtoole?
+
+{{verse|1|14}} Are they not all miniſtring ſpirits, ſent foorth to miniſter for them, who ſhall be heires of ſaluation?
+
+
+==={{Chapter|2|CHAP. II.}}===
+{{smaller block|[[#2:1|1]] Wee ought to bee obedient to Chriſ Ieſus, [[#2:5|5]] and that becauſe he vouchſafed to take our nature vpon him, [[#2:14|14]] as it was neceſſarie.}}
+
+{{image missing}}
+{{Verse|2|1|notext=}}{{dropinitial|T}}Herefore we ought to giue the more earneſt heede to the things which we haue heard, leſt at any time we ſhould <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Gr. run out as leaking veſſels.''}} let them ſlip.
+
+<noinclude>{{verse|2|2}} For</noinclude>
+{{nop}}<noinclude><!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>
