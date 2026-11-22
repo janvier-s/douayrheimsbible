@@ -26,7 +26,7 @@ Keys of a book in books.json (only `first` and `last` are required):
                     top outer corner, from wiki page first to last except the skip pages (checked on
                     the scans; Luke and John read on the head corners of every page, Mark on every page)
   sidenotes         [first, last]: wiki pages written in the sidenotes format ({{sidenotes begin}},
-                    {{verseline}}† and {{outside L}}/{{outside RL}}, after Page:1610_Douai_Old_Testament.pdf/336);
+                    {{verse|…|align=float}}† and {{outside L}}/{{outside R}}, after Page:1610_Douai_Old_Testament.pdf/336);
                     the other pages keep {{MarginNote}} and {{verse}} until the owner moves them
 """
 from typing import NamedTuple

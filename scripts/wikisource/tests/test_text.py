@@ -34,7 +34,8 @@ def test_wiki_word_key(w, key):
 @pytest.mark.parametrize('w, p', [('po{{ls}}sible <i>and</i> {{sc|Lord}}', 'poſsible  and   Lord '),
                                   ('{{rh|12|{{sc|the gospel}}|x}}', ' 12  the gospel  x '),
                                   ('[[File:a.png|20px]] b', '  b'),
-                                  ('{{verse|chapter=1|verse=2}}text', ' 1 2 text')])
+                                  ('{{verse|chapter=1|verse=2}}text', ' 1 2 text'),
+                                  ('{{verse|chapter=1|verse=2|align=float}}text', ' 1 2 text')])
 def test_wiki_to_plain(w, p):
     assert text.wiki_to_plain(w) == p
 

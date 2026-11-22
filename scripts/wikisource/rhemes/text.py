@@ -65,7 +65,7 @@ def wiki_word_key(w):
 
 def wiki_to_plain(text: str) -> str:
     """The print text of wikitext: template names, parameter keys, tags, attributes and files removed."""
-    t = wiki_to_ls(nfc(text))
+    t = wiki_to_ls(nfc(text)).replace('|align=float}}', '}}')
     t = _FILE.sub(' ', t)
     t = _ATTR.sub(' ', t)
     t = _TAG.sub(' ', t)

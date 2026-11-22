@@ -28,7 +28,7 @@ Enforced by: review (no code)
 
 ### 2.1 The verse-start † is kept
 
-The print sets † at the start of every verse but a chapter's first, which opens with the drop initial. In the sidenotes format (§5.3) the page keeps it: `{{verse|chapter=1|verse=2}}† Abraham begat`. The owner reversed the earlier removal on 2026-11-22. Pages still in the old format (`{{verse|…}}`, no †) get it when they move to sidenotes. Every other † stays too (§4.8).
+The print sets † at the start of every verse but a chapter's first, which opens with the drop initial. In the sidenotes format (§5.3) the page keeps it: `{{verse|chapter=1|verse=2|align=float}}† Abraham begat`. The owner reversed the earlier removal on 2026-11-22. Pages still in the old format (`{{verse|…}}`, no †) get it when they move to sidenotes. Every other † stays too (§4.8).
 
 Enforced by: `W-mark`
 
@@ -170,7 +170,7 @@ Enforced by: `E-status`, wikipost
 
 ### 5.3 Margin notes
 
-The pages are moving to the sidenotes format of the validated 1610 Douai Old Testament pages ([Page:1610_Douai_Old_Testament.pdf/336](https://en.wikisource.org/wiki/Page:1610_Douai_Old_Testament.pdf/336), 337). `books.json` `sidenotes: [first, last]` names the pages already moved (Matthew 1, pages 31–33, since 2026-11-22). On those pages each note is `{{outside L|…}}` (left margin) or `{{outside RL|…}}` (right), set straight after its anchor in the text, as the print shows it: a citation after its `*` (`the * {{outside L|''Luc. 3, 31.''}} generation`), a gloss after its `∷`, which the print repeats in the note (`∷ {{outside RL|∷ ''de qua''.}} of vvhom`). A note the print sets without an anchor (lectionary notes, headings, the annotations' side notes such as `Virginitie preferred`) has none. The side follows the print, note by note: by default as below, with the exceptions in `overrides.py` (`INNER_NOTES`, `OUTER_NOTES`). The text goes in `1=` when it holds a top-level `=`, and a line that would open with `*` or `#` starts with `<nowiki/>`.
+The pages are moving to the sidenotes format of the validated 1610 Douai Old Testament pages ([Page:1610_Douai_Old_Testament.pdf/336](https://en.wikisource.org/wiki/Page:1610_Douai_Old_Testament.pdf/336), 337). `books.json` `sidenotes: [first, last]` names the pages already moved (Matthew 1, pages 31–33, since 2026-11-22). On those pages each note is `{{outside L|…}}` (left margin) or `{{outside R|…}}` (right; it stays on the right for readers too, which the owner chose over `{{outside RL}}` on 2026-11-22), set straight after its anchor in the text, as the print shows it: a citation after its `*` (`the * {{outside L|''Luc. 3, 31.''}} generation`), a gloss after its `∷`, which the print repeats in the note (`∷ {{outside RL|∷ ''de qua''.}} of vvhom`). A note the print sets without an anchor (lectionary notes, headings, the annotations' side notes such as `Virginitie preferred`) has none. The side follows the print, note by note: by default as below, with the exceptions in `overrides.py` (`INNER_NOTES`, `OUTER_NOTES`). The text goes in `1=` when it holds a top-level `=`, and a line that would open with `*` or `#` starts with `<nowiki/>`.
 
 On the other pages, margin notes are `{{MarginNote|margin=left|margin-width=65|text=…}}` (or `margin=right`), never empty. On recto (odd) pages the inner margin is left and the outer right; on verso pages it's the reverse. Citations go in the inner margin; glosses, summaries and lectionary notes go in the outer. A margin `*` before a citation stays in the note (`* Mr. 12, 18.`). Line breaks inside `text=` are `{{br}}`. Leave no space before the template when punctuation follows it.
 
@@ -178,7 +178,7 @@ Enforced by: `E-margin`, `margin_note`
 
 ### 5.4 Verse markers
 
-Verses are `{{verse|chapter=N|verse=M}}` (in the sidenotes format followed by the print's †, §2.1; not `{{verseline}}`, whose white background shows in dark mode) in the print's order and numbering, with none repeated or skipped.
+Verses are `{{verse|chapter=N|verse=M}}`. In the sidenotes format they are `{{verse|chapter=N|verse=M|align=float}}` followed by the print's † (§2.1): the number floats in the left margin, as `{{verseline}}` sets it on the 1610 pages, without `{{verseline}}`'s white background, which shows in dark mode. A chapter's first verse stays in its drop initial's `fl=` (§4.6). Verses are in the print's order and numbering, with none repeated or skipped.
 
 Enforced by: `verse`, `E-verse`
 

@@ -48,13 +48,15 @@ def margin(side, text):
 
 # The sidenotes format (books.json "sidenotes": [first, last]), after the validated 1610 Douai
 # Old Testament pages (Page:1610_Douai_Old_Testament.pdf/336, /337): {{sidenotes begin}} …
-# {{sidenotes end}} around the page, {{verse|chapter=ch|verse=v}}† at each verse with the print's dagger
-# ({{verse}}, not the 1610 pages' {{verseline}}, whose white background shows in dark mode),
-# and each note in {{outside L|…}} (left margin) or {{outside RL|…}} (right) right after its
+# {{sidenotes end}} around the page, {{verse|chapter=ch|verse=v|align=float}}† at each verse with the
+# print's dagger (the number floats in the left margin, as {{verseline}} sets it on the 1610 pages, but
+# without {{verseline}}'s white background, which shows in dark mode; a chapter's first verse stays in
+# its drop initial's fl=), and each note in {{outside L|…}} (left margin) or {{outside R|…}} (right,
+# on the Page: and in the main namespace; the owner chose this over {{outside RL}}) right after its
 # anchor in the text ("the * {{outside L|''Luc. 3, 31.''}} generation"). A note the print sets
 # without an anchor (lectionary notes, headings, glosses like "Virginitie preferred") has none.
 _NOTE_SENT = r'\{\{M(?:INNER|OUTER)\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\}'
-RIGHT_NOTE = 'outside RL'  # right on the Page:, left in the main namespace (Template:Outside RL)
+RIGHT_NOTE = 'outside R'  # right on the Page: and in the main namespace (Template:Outside R)
 
 
 def _positional(tpl_open, body, i):
@@ -79,7 +81,7 @@ def sidenotes_body(body, side_inner, side_outer):
     body = re.sub(rf'((?:{_NOTE_SENT} ?)+)([*∷]) ?',
                   lambda m: m.group(2) + ' ' + m.group(1).rstrip() + ' ', body)
     # the print's verse-start †; a chapter's first verse sits in its drop initial's fl= and has none
-    body = re.sub(r'(\{\{verse\|chapter=\d+\|verse=\d+\}\})(?!\}) ?', r'\1† ', body)
+    body = re.sub(r'\{\{verse\|(chapter=\d+\|verse=\d+)\}\}(?!\}) ?', r'{{verse|\1|align=float}}† ', body)
     tpl = {'left': '{{outside L|', 'right': '{{' + RIGHT_NOTE + '|'}
     body = body.replace('{{MINNER|', tpl[side_inner]).replace('{{MOUTER|', tpl[side_outer])
     for t in ('{{outside L|', '{{' + RIGHT_NOTE + '|'):

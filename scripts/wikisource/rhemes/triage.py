@@ -284,7 +284,7 @@ def wiki_plain(src):
     src = re.sub(r'<noinclude>.*?</noinclude>', ' ', src, flags=re.S)
     src = text.wiki_to_ls(src)
     for _ in range(6):
-        src = re.sub(r'\{\{(?:verse|verseline|rh|continues|MarginNote|outside R?L)\|[^{}]*\}\}', ' ', src)
+        src = re.sub(r'\{\{(?:verse|verseline|rh|continues|MarginNote|outside R?L|outside R)\|[^{}]*\}\}', ' ', src)
         src = re.sub(r'\{\{[A-Za-z]+\|([^{}|]*)\}\}', r'\1', src)
     return fine_json(src)
 

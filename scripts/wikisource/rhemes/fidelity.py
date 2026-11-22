@@ -58,7 +58,7 @@ _TABLE = {
     'italic': ('decrease', None, 'raw', r"(?<!')''(?!')|<i>|<hi>"),
     'sc': ('decrease', None, 'raw', r'\{\{sc\||<sc>|<hi rend="smallcaps">'),
     'sup_bar': ('decrease', None, 'raw', r'\{\{sup\|‖\}\}'),
-    'margin_note': ('decrease', None, 'raw', r'\{\{MarginNote\||\{\{outside R?L\||<mn>'),
+    'margin_note': ('decrease', None, 'raw', r'\{\{MarginNote\||\{\{outside (?:R?L|R)\||<mn>'),
     'note_mark': ('decrease', None, 'raw', r'<na>|<cr>'),
     'verse': ('decrease', None, 'raw', r'\{\{verse(?:line)?\|'),
     'dagger': ('decrease', None, 'plain', '†'),

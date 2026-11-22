@@ -258,5 +258,5 @@ def test_sidenotes_body():
     b = generate.sidenotes_body(
         "{{MOUTER|Lect.}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} of the {{MINNER|''Luc. 3.''}}* generation. "
         "{{verse|chapter=1|verse=2}} name {{MOUTER|∷ a=b}}∷ {{sc|Iesvs}}.\n\n{{MINNER|''Gen. 1.''}}* And", 'left', 'right')
-    assert b == ("{{outside RL|Lect.}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} of the * {{outside L|''Luc. 3.''}} generation. "
-                 "{{verse|chapter=1|verse=2}}† name ∷ {{outside RL|1=∷ a=b}} {{sc|Iesvs}}.\n\n<nowiki/>* {{outside L|''Gen. 1.''}} And")
+    assert b == ("{{outside R|Lect.}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} of the * {{outside L|''Luc. 3.''}} generation. "
+                 "{{verse|chapter=1|verse=2|align=float}}† name ∷ {{outside R|1=∷ a=b}} {{sc|Iesvs}}.\n\n<nowiki/>* {{outside L|''Gen. 1.''}} And")
