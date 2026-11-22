@@ -139,8 +139,11 @@ def test_call_agy_parses_json_and_raises_on_failure(monkeypatch, tmp_path):
         seen['cmd'] = cmd
         return subprocess.CompletedProcess(cmd, 0, '{"items": [{"n": 1, "reading": "vvhich"}]}', '')
     monkeypatch.setattr(agyread.subprocess, 'run', run)
+    (tmp_path / '01.png').write_bytes(b'')
     assert agyread.call_agy('gemini-4-argon-low', 'P', tmp_path) == [{'n': 1, 'reading': 'vvhich'}]
     assert seen['cmd'][:3] == ['agy', '--model', 'gemini-4-argon-low'] and str(tmp_path) in seen['cmd']
+    prompt = seen['cmd'][seen['cmd'].index('-p') + 1]
+    assert str(tmp_path / '01.png') in prompt and 'Do not run any shell command' in prompt
     monkeypatch.setattr(agyread.subprocess, 'run',
                         lambda cmd, **kw: subprocess.CompletedProcess(cmd, 0, 'not json', ''))
     with pytest.raises(agyread.AgyError):

@@ -31,7 +31,7 @@ BAND = (0.25, 0.95)  # the part of a Transkribus box that holds its line (checke
 RECONCILE = paths.REPO / 'wikisource/1582-rhemes-nt/reconcile'
 KEY_PATH = RECONCILE / 'agy-key.jsonl'
 CAL_PATH = RECONCILE / 'agy-calibration.json'
-MODELS = ('gemini-4-argon-low', 'gemini-4-argon-high')
+MODELS = ('gemini-4-argon-low', 'gemini-4-argon-high', 'gemini-3.8-flash-low', 'gemini-3.8-flash-high')
 HARD = ('w_for_vv', 'vv_for_w', 'word')
 SCALE = 1.4  # PLAYBOOK: letter shapes need about 1.4x; 0.5-0.85x misleads
 MACRONS = set('āēīōūȳĀĒĪŌŪȲ') | {'̄'}
@@ -94,8 +94,12 @@ class AgyError(Exception):
 
 def call_agy(model, prompt, image_dir):
     """agy's [{n, reading}] for the numbered images in image_dir; AgyError on a failed run or bad JSON."""
+    # Name every file and forbid commands: flash otherwise lists the folder with Bash, which headless
+    # mode denies, and returns nothing.
+    files = ', '.join(str(f) for f in sorted(Path(image_dir).glob('*.png')))
     cmd = ['agy', '--model', model, '--add-dir', str(image_dir), '--mode', 'accept-edits',
-           '-p', f'{prompt} The images are in {image_dir}. Answer with one item per image, n = its number.',
+           '-p', f'{prompt} Do not run any shell command; open each image directly with your file-viewing'
+                 f' tool: {files}. Answer with one item per image, n = the number in its file name.',
            '--output-format', 'json', '--json-schema', json.dumps(SCHEMA)]
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
     if r.returncode:
