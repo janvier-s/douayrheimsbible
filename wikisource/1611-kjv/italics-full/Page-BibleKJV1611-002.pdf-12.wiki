@@ -1,0 +1,59 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{rh|Abram in Egypt.|Geneſis|Abram and Lot.}} {{rule}} 
+
+<!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>the Weſt, and Hai on the Eaſt: and there hee builded an altar vnto the LORD, and called vpon the Name of the LORD.
+
+{{verse|12|9}}And Abram iourneyed, ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Heb.'' in ''going and iourneying.''}} going on ſtill toward the South.
+
+{{verse|12|10}}¶ And there was a famine in the land, and Abram went downe into Egypt, to ſoiourne there: for the famine {{smaller|was}} grieuous in the land.
+
+{{verse|12|11}}And it came to paſſe when he was come neere to enter into Egypt, that he ſaid vnto Sarai his wife, Behold now, I know that thou {{smaller|art}} a faire woman to looke vpon.
+
+{{verse|12|12}}Therefore it ſhall come to paſſe, when the Egyptians ſhall ſee thee, that they ſhall ſay, This is his wife: and they will kill me, but they will ſaue thee aliue.
+
+{{verse|12|13}}Say, I pray thee, thou {{smaller|art}} my ſiſter, that it may be wel with me, for thy ſake; and my ſoule ſhall liue, becauſe of thee.
+
+{{verse|12|14}}¶ And it came to paſſe, that when Abram was come into Egypt, the Egyptians beheld the woman, that ſhee {{smaller|was}} very faire.
+
+{{verse|12|15}}The Princes alſo of Pharaoh ſaw her, and commended her before Pharaoh: and the woman was taken into Pharaohs houſe.
+
+{{verse|12|16}}And he entreated Abram well for her ſake: and he had ſheepe, and oxen, and hee aſſes, and men ſeruants, and maidſeruants, and ſhee aſſes, and camels.
+
+{{verse|12|17}}And the LORD plagued Pharaoh ⁊ his houſe with great plagues, becauſe of Sarai Abrams wife.
+
+{{verse|12|18}}And Pharaoh called Abram, and ſaid, What {{smaller|is}} this {{smaller|that}} thou haſt done vnto me? Why diddeſt thou not tell me, that ſhe {{smaller|was}} thy wife?
+
+{{verse|12|19}}Why ſaideſt thou, Shee {{smaller|is}} my ſiſter? so I might haue taken {{smaller|her}} to mee to wife: now therfore behold, thy wife, take {{smaller|her}} and goe thy way.
+
+{{verse|12|20}}And Pharaoh cõmanded {{smaller|his}} men concerning him: and they ſent him away, and his wife, and all that he had.
+
+==={{Chapter|13|CHAP. XIII.}}===
+
+{{smaller block|[[#13:1|1]] Abram and Lot returne out of Egypt. [[#13:7|7]] By diſagreement they part aſunder. [[#13:10|10]] Lot goeth to wicked Sodom. [[#13:14|14]] God renueth the promiſe to Abram. [[#13:18|18]] He remoueth to Hebron, and there buildeth an Altar.}}
+
+{{Verse|13|1|notext=}} {{dropinitial|A|image=King James Bible (1611) page A4v (A).png|imgsize=100px}}Nd Abram went vp out of Egypt, he and his wife, and all that he had, and Lot with him, into the South.
+
+{{verse|13|2}}And Abram {{smaller|was}} very rich in cattell, in ſiluer, and in gold.
+
+{{verse|13|3}}And hee went on his iourneyes from the South, euen to Beth⸗el, vnto the place where his tent had bene at the beginning, betweene Beth⸗el and Hai:
+
+{{verse|13|4}}Vnto the *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Chap.12.7.}} place of the altar, which he had made there at the firſt: and there Abram called on the Name of the LORD.
+
+{{verse|13|5}}¶ And Lot alſo which went with Abram, had flocks and heards, ⁊ tents.
+
+{{verse|13|6}}And the land was not able to beare them, that they might dwell together: for their ſubſtance was great, ſo that they could not dwell together.
+
+{{verse|13|7}}And there was a ſtrife betweene the heardmen of Abrams cattell, and the heardmen of Lots cattell: And the Canaanite, and the Perizzite dwelled then in the land.
+
+{{verse|13|8}}And Abram ſaid vnto Lot, Let there be no ſtrife, I pray thee, betweene mee and thee, and betweene my heardmen and thy heardmen: for wee {{smaller|bee}} <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. men brethren.''}} brethren.
+
+{{verse|13|9}}{{smaller|Is}} not the whole land before thee? Separate thy ſelfe, I pray thee, from mee: if {{smaller|thou}} {{smaller|wilt take}} the left hand, then I will goe to the right: or if {{smaller|thou}} {{smaller|depart}} to the right hand, then I will goe to the left.
+
+{{verse|13|10}}And Lot lifted vp his eyes, and beheld all the plaine of Iordane, that it {{smaller|was}} well watered euery where before the Lord deſtroyed Sodome and Gomorah, {{smaller|euen}} as the garden of the LORD, like the land of Egypt, as thou commeſt vnto Zoar.
+
+{{verse|13|11}}Then Lot choſe him all the plaine of Iordane: and Lot iourneyed Eaſt{{smaller|;}} and they ſeparated themſelues the one from the other.
+
+{{verse|13|12}}Abram dwelled in the land of Canaan, and Lot dwelled in the cities of the plaine, and pitched {{smaller|his}} tent toward Sodome.
+
+{{verse|13|13}}But the men of Sodome {{smaller|were}} wicked, and ſinners before the LORD exceedingly.
+
+{{verse|13|14}}¶ And the LORD ſaid vnto Abram, after that Lot was ſeparated from him, Lift vp now thine eyes, and looke from the place where thou art, {{hws|North|Northward}}<noinclude></noinclude>

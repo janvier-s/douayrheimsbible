@@ -1,0 +1,61 @@
+<noinclude><pagequality level="3" user="Mathmitch7" />{{x-larger|{{rh|Iſaac is borne.|Geneſis|Hagar comforted.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ {{sup|†}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>with thee, and with all {{smaller|other}}: thus ſhee was reproued.
+
+{{verse|20|17}} ¶ So Abraham prayed vnto God: and God healed Abimelech, and his wife, and his maid-ſeruants, and they bare {{smaller|children}}.
+
+{{verse|20|18}} For the LORD had faſt cloſed vp all the wombes of the houſe of Abimelech, becauſe of Sarah Abrahams wife.
+
+==={{Chapter|21|CHAP. XXI.}}===
+
+{{smaller block|[[#21:1|1]] Iſaac is borne. [[#21:4|4]] He is circumciſed. [[#21:6|6]] Sarahs ioy. [[#21:9|9]] Hagar & Iſmael are caſt forth. [[#21:15|15]] Hagar in diſtreſſe. [[#21:17|17]] The Angel comforteth her. [[#21:22|22]] Abimelechs couenant with Abraham at Beer-ſheba.}}
+
+{{Verse|21|1|notext=}} {{dropinitial|A|image=King James Bible (1611) page A3v (A).png|imgsize=100px}}Nd the LORD viſited Sarah as he had ſaid, and the LORD did vnto Sarah *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* [[#17:19|Chap. 17. 19.]] and [[#18:10|18. 10.]]}} as he had ſpoken.
+
+{{verse|21|2}} For Sarah *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Acts 7. 8. Gal. 4. 22. Heb. 11. 11.}} conceiued, and bare Abraham a ſonne in his old age, at the ſet time, of which God had ſpoken to him.
+
+{{verse|21|3}} And Abraham called the name of his ſonne, that was borne vnto him, whom Sarah bare to him, Iſaac.
+
+{{verse|21|4}} And Abraham circumciſed his ſonne Iſaac, being eight dayes old, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* [[#12:17|Chap. 17. 12.]]}} as God had commanded him.
+
+{{verse|21|5}} And Abraham was an hundred yeeres old, when his ſonne Iſaac was borne vnto him.
+
+{{verse|21|6}} ¶ And Sarah ſaid, God hath made me laugh, {{smaller|ſo that}} all that heare, will laugh with me.
+
+{{verse|21|7}} And ſhe ſaid, Who would haue ſaid vnto Abraham, that Sarah ſhould haue giuen children ſuck? for I haue borne {{smaller|him}} a ſonne in his old age.
+
+{{verse|21|8}} And the child grew, and was weaned: and Abraham made a great feaſt, the {{smaller|ſame}} day that Iſaac was weaned.
+
+{{verse|21|9}} ¶ And Sarah ſaw the ſonne of Hagar the Egyptian, which ſhee had borne vnto Abraham, mocking.
+
+{{verse|21|10}} Wherfore ſhe ſaid vnto Abraham, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Gal. 4. 30}} Caſt out this bond woman, and her ſonne" for the ſonne of this bond woman ſhall not be heire with my ſonne, {{smaller|euen}} with Iſaac.
+
+{{verse|21|11}} And the thing was very grieuous in Abrahams ſight, becauſe of his ſonne.
+
+{{verse|21|12}} ¶ And God ſaid vnto Abraham, Let it not be grieuous in thy ſight, becauſe of the lad, and becauſe of thy bond woman. In all that Sarah hath ſaid vnto thee, hearken vnto her voice: for in Iſaac ſhall thy ſeed be called.
+
+{{verse|21|13}} And alſo, of the ſonne of the bond woman will I make a nation, becauſe he {{smaller|is}} thy ſeed.
+
+{{verse|21|14}} And Abraham roſe vp earely in the morning, and tooke bread, and a bottle of water, and gaue {{smaller|it}} vnto Hagar, (putting {{smaller|it}} on her ſhoulder,) and the child, and ſent her away: and ſhee departed, and wandered in the wilderneſſe of Beer-ſheba.
+
+{{verse|21|15}} And the water was ſpent in the bottle, and ſhee caſt the child vnder one of the ſhrubs.
+
+{{verse|21|16}} And ſhe went, and ſate her downe ouer againſt {{smaller|him}}, a good way off, as it were a bow ſhoot: for ſhe ſaid, Let me not ſee the death of the child. And ſhee ſate ouer against {{smaller|him}}, and lift vp her voice, and wept.
+
+{{verse|21|17}} And God heard the voice of the lad, and the Angel of God called to Hagar out of heauen, and ſaid vnto her, What aileth thee, Hagar? feare not: for God hath heard the voice of the ladde, where he {{smaller|is}}.
+
+{{verse|21|18}} Ariſe, lift vp the lad, and hold him in thine hand: for I will make him a great nation.
+
+{{verse|21|19}} And God opened her eyes, and ſhe ſaw a well of water, and ſhee went, and filled the bottle with water, and gaue the lad drinke.
+
+{{verse|21|20}} And God was with the lad, and he grew, and dwelt in the wilderneſſe, and became an archer.
+
+{{verse|21|21}} And hee dwelt in the wilderneſſe of Paran: and his mother tooke him a wife out of the land of Egypt.
+
+{{verse|21|22}} ¶ And it came to paſſe at that time, that Abimelech and Phichol the chiefe captaine of his hoſte ſpake vnto Abraham, ſaying, God {{smaller|is}} with thee in all that thou doeſt.
+
+{{verse|21|23}} Now therefore ſweare vnto mee here by God, that thou wilt not {{sup|†}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebrew. if thou ſhalt lie vnto me.''}} deale falſly with me, nor with my ſonne, nor with my ſonnes ſonne: {{smaller|but}} according to the kindneſſe that I haue done vnto thee, thou ſhalt doe vnto me, and to the land wherein thou haſt ſoiourned.
+
+{{verse|21|24}} And Abraham ſaide, I will ſweare.
+
+{{verse|21|25}} And Abraham reproued Abimelech, becauſe of a well of water, which Abimelechs ſeruants had violently taken away.
+
+{{verse|21|26}} And Abimelech ſaide, I wote<noinclude>{{rh|||not}}</noinclude>

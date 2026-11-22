@@ -1,0 +1,42 @@
+<noinclude><pagequality level="4" user="Firejuggler86" />{{rh|The creation|Chap.j.|of the world.}}</noinclude>[[File:King James Bible (1611) page A2r.xcf|center|600px]]
+=={{uc|The First Booke of Moses,}} called {{uc|Genesis.}}==
+
+==={{Chapter|1|CHAP. I.}}===
+
+{{smaller block|[[#1:1|1]] The creation of Heauen and Earth, [[#1:3|3]] of the light, [[#1:6|6]] of the firmament, [[#1:9|9]] of the earth ſeparated from the waters, [[#1:11|11]] and made fruitfull, [[#1:14|14]] of the Sunne, Moone, and Starres, [[#1:20|20]] of fiſh and fowle, [[#1:24|24]] of beaſts and cattell, [[#1:26|26]] of Man in the Image of God. [[#1:29|29]] Alſo the appointment of food.}}
+
+{{Verse|1|1|notext=}}{{dropinitial|I|image=King James Bible (1611) page A1r (I).xcf|imgsize=100px}}N *{{MarginNote|margin=right|margin-width=65|text=* Pſal. 33. 6. and 136. 5. acts. 14. 15. and 17. 24. hebr. 11. 3.}}the beginning God created the Heauen, and the Earth.
+
+{{Verse|1|2}} And the earth was without forme, and voyd; and darkeneſſe {{smaller|was}} vpon the face of the deepe: and the Spirit of God mooued vpon the face of the waters.
+
+{{Verse|1|3}} And God ſaid, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 2. Cor. 4. 6.}} Let there be light: and there was light.
+
+{{Verse|1|4}} And God ſaw the light, that {{smaller|it was}} good: and God diuided †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. betweene the light and betweene the darkeneſſe.''}} the light from the darkeneſſe.
+
+{{Verse|1|5}} And God called the light, Day, and the darkneſſe he called Night: †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. and the euening was, and the morning was &c.''}} and the euening and the morning were the firſt day.
+
+{{Verse|1|6}} ¶ And God ſaid, *{{MarginNote|margin=right|margin-width=65|text=* Pſal. 136. 5. ier. 10. 12 and 51. 15.}} Let there be a †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. Expanſion.''}} firmament in the midſt of the waters: and let it diuide the waters from the waters.
+
+{{Verse|1|7}} And God made the firmament; and diuided the waters, which {{smaller|were}} vnder the firmament, from the waters, which {{smaller|were}} aboue the firmament: and it was ſo.
+
+{{Verse|1|8}} And God called the *{{MarginNote|margin=right|margin-width=65|text=* Ier. 51. 15.}} firmament, Heauen: and the euening and the morning were the ſecond day.
+
+{{Verse|1|9}} ¶ And God ſaid, *{{MarginNote|margin=right|margin-width=65|text=* Pſal. 33. 7. and 136. 5. iob. 38. 8.}} Let the waters vnder the heauen be gathered together vnto one place, and let the dry {{smaller|land}} appeare: and it was ſo.
+
+{{Verse|1|10}} And God called the drie {{smaller|land}}, Earth, and the gathering together of the waters called hee, Seas: and God ſaw that {{smaller|it was}} good.
+
+{{Verse|1|11}} And God ſaid, Let the Earth bring foorth †{{MarginNote|margin=right|margin-width=65|text=† ''Heb. tender graſſe.''}} graſſe, the herbe yeelding ſeed, {{smaller|and}} the fruit tree, yeelding fruit after his kinde, whoſe ſeed {{smaller|is}} in it ſelfe, vpon the earth: and it was ſo.
+
+{{Verse|1|12}} And the earth brought foorth graſſe, {{smaller|and}} herbe yeelding ſeed after his kinde, and the tree yeelding fruit, whoſe ſeed {{smaller|was}} in it ſelfe, after his kinde: and God ſaw that {{smaller|it was}} good.
+
+{{Verse|1|13}} And the euening and the morning were the third day.
+
+{{Verse|1|14}} ¶ And God ſaid, Let there bee *{{MarginNote|margin=right|margin-width=65|text=* Deu. 4. 19 pſal. 136. 7.}} lights in the firmament of the heauen, to diuide †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. betweene the day and betweene the night.''}} the day from the night: and let them be for ſignes and for ſeaſons, and for dayes and yeeres.
+
+{{Verse|1|15}} And let them be for lights in the firmament of the heauen, to giue light vpon the earth: and it was ſo.
+
+{{Verse|1|16}} And God made two great lights: the greater light †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. for the rule of the day, &c.''}} to rule the day, and the leſſer light to rule the night: {{smaller|he made}} the ſtarres alſo.
+
+{{Verse|1|17}} And God ſet them in the firmament of the heauen, to giue light vpon the earth:
+
+{{Verse|1|18}} And to *{{MarginNote|margin=right|margin-width=65|text=* Ier. 31. 35}} rule ouer the day, and<noinclude>{{right|ouer}}</noinclude>

@@ -1,0 +1,40 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{x-larger|{{rh|Haman hanged.|Chap.viij.|Eſthers requeſt.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>Then Haman was afraid ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, at the preſence of.''}} before the King and the Queene.
+
+{{verse|7|7}}¶ And the king ariſing from the banquet of wine in his wrath, {{smaller|went}} into the palace garden: and Haman ſtood vp to make requeſt for his life to Eſther the Queene: for he ſaw that there was euill determined againſt him by the King.
+
+{{verse|7|8}}Then the king returned out of the palace garden, into the place of the banquet of wine, and Haman was fallen vpon the bed whereon Eſther {{smaller|was}}. Then ſaid the King, Will hee force the Queene alſo <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. with me.''}} before me in the houſe? As the word went out of the Kings mouth, they couered Hamans face.
+
+{{verse|7|9}}And Harbonah one of the chamberlaines, ſaid before the king; Behold alſo the <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. tree.''}} gallowes, fiftie cubites high, which Haman had made for Mordecai, who had ſpoken good for the king, ſtandeth in the houſe of Haman. Then the king ſaid, Hang him thereon.
+
+{{verse|7|10}}So they hanged Haman on the gallows that he had prepared for Mordecai. Then was the Kings wrath pacified.
+
+==={{Chapter|8|CHAP. VIII.}}===
+
+{{smaller block|[[#8:1|1]] Mordecai is aduanced. [[#8:3|3]] Eſther maketh ſuite to reuerſe Hamans letters. [[#8:7|7]] Ahaſuerus granteth to the Iewes to defend themſelues. [[#8:15|15]] Mordecais honour, and the Iewes ioy.}}
+
+{{verse|8|1|notext=}} {{dropinitial|O|image=King James Bible (1611) page A5r (O).png|imgsize=100px}}N that day did the King Ahaſuerus giue the houſe of Haman, the Iewes enemy, vnto Eſther the Queene; and Mordecai came before the King; for Eſther hade told what he {{smaller|was}} vnto her.
+
+{{verse|8|2}}And the king tooke off his Ring which he had taken from Haman, and gaue it vnto Mordecai. And Eſther ſet Mordecai ouer the houſe of Haman.
+
+{{verse|8|3}}¶ And Eſther ſpake yet againe before the king, and fell downe at his feet, <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. and ſhe wept and beſought him.''}} and beſought him with teares, to put away the miſchiefe of Haman the Agagite, and his deuice, that he had deuiſed againſt the Iewes.
+
+{{verse|8|4}}Then the king helde out the golden ſcepter toward Eſther. so Eſther aroſe, and ſtood before the king,
+
+{{verse|8|5}}And ſaid, If it pleaſe the king, and if I haue found fauour in his ſight, and the thing ſeeme right before the king, and I bee pleaſing in his eyes, let it {{smaller|be}} written to reuerſe <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. the deuice.''}} the letters deuiſed by Haman the ſonne of Hammedatha the Agagite, ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, who wrote.''}} which hee wrote to deſtroy the Iewes, which {{smaller|are}} in all the kings prouinces.
+
+{{verse|8|6}}For how can I <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. be able that I may ſee.''}} endure to ſee the euill that ſhall come vnto my people? or how can I endure to ſee the deſtruction of my kinred?
+
+{{verse|8|7}}¶ Then the king Ahaſuerus ſaid vnto Eſther the Queene, and to Mordecai the Iewe, Behold, I haue giuen Eſther the houſe of Haman, and him they haue hanged vpon the gallowes, becauſe hee layde his hand vpon the Iewes.
+
+{{verse|8|8}}Write ye alſo for the Iewes, as it liketh you, in the Kings name, and ſeale {{smaller|it}} with the Kings ring: for the writing which is written in the Kings name, and ſealed with the Kings ring, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* ''See'' [[#1:19|''Chap.'' 1.19.]]}} may no man reuerſe.
+
+{{verse|8|9}}Then were the kings ſcribes called at that time, in the third moneth, (that {{smaller|is}}, the month Siuan) on the three and twentieth {{smaller|day}} thereof, and it was written (according to all that Mordecai commanded) vnto the Iewes, and to the Lieutenants, and the deputies and rulers of the prouinces, which {{smaller|are}} from India vnto Ethiopia, an hundred, twentie and ſeuen prouinces, vnto euery prouince according to the writing thereof, and vnto euery people after their language, and to the Iewes, according to their writing, and according to their language.
+
+{{verse|8|10}}And he wrote in the king Ahaſuerus name, and ſealed {{smaller|it}} with the kings Ring, {{smaller|and}} ſent letters by Poſtes, on horſebacke, {{smaller|and}} riders on mules, camels, {{smaller|and}} yong dromedaries:
+
+{{verse|8|11}}Wherein the King granted the Iewes, which {{smaller|were}} in euery citie, to gather themſelues together, and to ſtand for their life, to deſtroy, to ſlay, and to cauſe to periſh all the power of the people and prouince that would aſſault them, {{smaller|both}} little ones, and women, and {{smaller|to take}} the ſpoile of them for a pray:
+
+{{verse|8|12}}Vpon one day, in all the prouinces of king Ahaſuerus, {{smaller|namely}} vpon the thirteenth day of the twelfth moneth, which {{smaller|is}} the moneth Adar.
+
+{{verse|8|13}}The copy of the writing, for a commandement to bee giuen in euery prouince, {{smaller|was}} <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. reuealed.''}} publiſhed vnto all people, and that the Iewes ſhould be readie againſt that day, to auenge themſelues on their enemies.
+{{nop}}<noinclude>{{right|{{verse|8|14}}{{smaller|So}}}}</noinclude>

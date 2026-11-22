@@ -1,0 +1,41 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{x-larger|{{rh|A new Feaſt|Chap.x.|is ordeined.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>ſame, they reſted, and made it a day of feaſting and gladneſſe.
+
+{{verse|9|19}}Therefore the Iewes of the villages, that dwelt in the vnwalled townes, made the foureteenth day of the moneth Adar, {{smaller|a day}} {{smaller|of}} gladneſſe and feaſting, and a good day, and of ſending portions one to another.
+
+{{verse|9|20}}¶ And Mordecai wrote theſe things, and ſent letters vnto all the Iewes, that {{smaller|were}} in all the prouinces of the king Ahaſuerus, {{smaller|both}} nigh ⁊ farre,
+
+{{verse|9|21}}To ſtabliſh {{smaller|this}} among them, that they ſhould keepe the fourteenth day of the moneth Adar, and the fifteenth day of the ſame, yeerely:
+
+{{verse|9|22}}As the dayes wherein the Iewes reſted from their enemies, ⁊ the moneth which was turned vnto them, from ſorrow to ioy, and from mourning into a good day: that they ſhould make them daies of feaſting and ioy, and of ſending portions one to another, and gifts to the poore.
+
+{{verse|9|23}}And the Iewes vndertooke to doe, as they had begun, and as Mordecai had written vnto them:
+
+{{verse|9|24}}Becauſe Haman the ſonne of Hammedatha the Agagite, the enemie of all the Iewes, had deuiſed againſt the Iewes to deſtroy them, and had caſt Pur, (that {{smaller|is}}, the lot) to <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. cruſh.''}} conſume them, and to deſtroy them.
+
+{{verse|9|25}}But <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. when ſhe came.''}} when {{smaller|Eſther}} came before the king, he commanded by letters, that his wicked deuice which he deuiſed againſt the Iewes, ſhould returne vpon his owne head, and that he and his ſonnes, ſhould be hanged on the gallous.
+
+{{verse|9|26}}Wherefore they called theſe dayes Purim, after the name of ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''That is, Lot.''}} Pur: therefore for all the words of this letter, and {{smaller|of}} {{smaller|that}} which they had ſeene concerning this matter, and which had come vnto them,
+
+{{verse|9|27}}The Iewes ordeined, and tooke vpon them, and vpon their ſeed, and vpon all ſuch as ioyned themſelues vnto them, ſo as it ſhould not <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. paſſe.''}} faile, that they would keepe theſe two dayes, according to their writing, and according to their {{smaller|appointed}} time, euery yeere:
+
+{{verse|9|28}}And {{smaller|that}} theſe dayes {{smaller|ſhould be}} remembred, and kept throughout euery generation, euery family, euery prouince, and euery citie, and {{smaller|that}} theſe dayes of Purim ſhould not <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. paſſe.''}} faile from among the Iewes, nor the memoriall of them <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. be ended.''}} periſh from their ſeed.
+
+{{verse|9|29}}Then Eſther the Queene, the daughter of Abihail, and Mordecai the Iew, wrote with <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. all ſtrength.''}} all authoritie, to confirme this ſecond letter of Purim.
+
+{{verse|9|30}}And hee ſent the letters vnto all the Iewes, to the hundred, twentie and ſeuen prouinces of the kingdome of Ahaſuerus, {{smaller|with}} wordes of peace and trueth:
+
+{{verse|9|31}}To confirme theſe dayes of Purim, in their times {{smaller|appointed}}, according as Mordecai the Iew, and Eſther the Queene had enioyned them, and as they had decreed <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. for their ſoules.''}} for themſelues and for their ſeed, the matters of the faſtings and their cry.
+
+{{verse|9|32}}And the decree of Eſther confirmed theſe matters of Purim, and it was written in the booke.
+
+==={{Chapter|10|CHAP. X.}}===
+
+{{smaller block|[[#10:1|1]] Ahaſuerus his greatneſſe. [[#9:3|3]] Mordecais aduancement.}}
+
+{{verse|10|1|notext=}} {{dropinitial|A|image=King James Bible (1611) page A5v (A).png|imgsize=100px}}Nd the king Ahaſuerus layde a tribute vpon the land, and vpon the Iſles of the ſea.
+
+{{verse|10|2}}And all the actes of his power, and of his might, and the declaration of the greatneſſe of Mordecai, whereunto the king <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. made him great.''}} aduanced him, {{smaller|are}} they not written in the booke of the Chronicles of the kings of Media and Perſia?
+
+{{verse|10|3}}For Mordecai the Iew {{smaller|was}} next vnto King Ahaſuerus, and great among the Iewes, and accepted of the multitude of his brethren, ſeeking the wealth of his people, and ſpeaking peace to all his ſeed.
+
+{{nop}}<noinclude>{{rule}}{{right|{{x-larger|¶ {{sp|THE}}}}}}{{rule}}</noinclude>

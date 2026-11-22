@@ -1,0 +1,61 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />__NOTOC__</noinclude>[[File:King James Bible (1611) page A2r.xcf|600px|center]]
+{{rule}}
+{{rule}}
+{{nop}}
+==¶ THE BOOKE OF Pſalmes.==
+{{rule}}
+
+==={{Chapter|1|PSALME I.}}===
+
+{{smaller block|[[#1:1|1]] The happineſſe of the godly. [[#1:4|4]] The vnhappineſſe of the vngodly.}}
+
+{{Verse|1|1|notext=}} {{dropinitial|B|image=King James Bible (1611) page A2r (B).png|imgsize=100px}}Leſſed *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Prou. 4. 14.}} {{smaller|is}} the man that walketh not in the counſell of the ǁ{{MarginNote|margin=right|margin-width=65|text=ǁ ''Or, wicked.''}} vngodly, nor ſtandeth in the way of ſinners, nor ſitteth in the ſeat of the ſcornefull.
+
+{{Verse|1|2}} But his delight {{smaller|is}} in the Law of the {{small-caps|Lord}}, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Ioſh. 1. 8. pſal. 119. 1. iere. 17. 8.}} and in his Law doeth he meditate day and night.
+
+{{Verse|1|3}} And he ſhalbe like a tree planted by the riuers of water, that bringeth foorth his fruit in his ſeaſon, his leafe alſo ſhall not †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. fade.''}} wither, and whatſoeuer he doeth, ſhall proſper.
+
+{{Verse|1|4}} The vngodly {{smaller|are}} not ſo: but {{smaller|are}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Pſal. 34. 5. iſa. 17. 13.}} like the chaffe, which the winde driueth away.
+
+{{Verse|1|5}} Therefore the vngodly ſhall not ſtand in the iudgement, nor ſinners in the Congregation of the righteous.
+
+{{Verse|1|6}} For the {{small-caps|Lord}} knoweth the way of the righteous: but the way of the vngodly ſhall periſh.
+
+==={{Chapter|2|PSAL. II.}}===
+
+{{smaller block|[[#2:1|1]] The kingdome of Chriſt. [[#2:10|10]] Kings are exhorted to accept it.}}
+
+{{Verse|2|1|notext=}} {{dropinitial|W|image=King James Bible (1611) page A5r (W).png|imgsize=100px}}Hy *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Acts. 4. 25.}} do the heathen ǁ{{MarginNote|margin=right|margin-width=65|text=ǁ ''Or, tumultuouſly aſſemble?''}} rage, and the people †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. meditate.''}} imagine a vaine thing?
+
+{{Verse|2|2}} The Kings of the earth ſet themſelues, and the rulers take counſell together, againſt the {{small-caps|Lord}}, and againſt his Anoynted, {{smaller|ſaying}},
+
+{{Verse|2|3}} Let vs breake their bandes aſunder, and caſt away their cords from vs.
+
+{{Verse|2|4}} {{*}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Prou. 1. 26.}} Hee that ſitteth in the heauens ſhal laugh: the {{small-caps|Lord}} ſhall haue them in deriſion.
+
+{{Verse|2|5}} Then ſhall hee ſpeake vnto them in his wrath, and ǁ{{MarginNote|margin=right|margin-width=65|text=ǁ ''Or, trouble.''}} vexe them in his ſore diſpleaſure.
+
+{{Verse|2|6}} Yet haue I ſet †{{MarginNote|margin=right|margin-width=65|text=† ''Hebr. anointed.''}} my King †{{MarginNote|margin=right|margin-width=65|text=ǁ ''Hebr. vpon Sion, the hill of my Holineſſe.''}} vpon my holy hill of Sion.
+
+{{Verse|2|7}} {{*}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Acts. 13. 33. heb. 1. 5.}} I will declare ǁ{{MarginNote|margin=right|margin-width=65|text=ǁ ''Or, for a decree.''}} the decree: the {{small-caps|Lord}} hath ſaid vnto mee, Thou {{smaller|art}} my ſonne, this day haue I begotten thee.
+
+{{Verse|2|8}} {{*}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Pſal. 72. 8.}} Aſke of me, and I ſhall giue {{smaller|thee}} the heathen {{smaller|for}} thine inheritance, and the vttermoſt parts of the earth {{smaller|for}} thy poſſeſſion.
+
+{{Verse|2|9}} {{*}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Apoc. 2. 27. and 19. 15.}} Thou ſhalt breake them with a rod of iron, thou ſhalt daſh them in pieces like a potters veſſell.
+
+{{Verse|2|10}} Bee wiſe now therefore, O yee Kings: be inſtructed ye Iudges of the earth.
+
+{{Verse|2|11}} Serue the {{small-caps|Lord}} with feare, and reioyce with trembling.
+
+{{Verse|2|12}} Kiſſe the Sonne leſt he be angry, and ye periſh {{smaller|from}} the way, when his wrath is kindled but a little: {{*}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Prou. 16. 20. iſa. 30. 18. iete. 17. 7. rom. 9. 33 and 10. 11. 1. pet. 2. 6.}} Bleſſed {{smaller|are}} all they that put their truſt in him.
+
+==={{Chapter|3|PSAL. III.}}===
+
+{{smaller block|The ſecuritie of Gods protection}}
+
+¶ *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 2.Sam. 15.15.}} A Pſalme of Dauid when he fled from Abſalom his ſonne.
+
+{{Verse|3|1|notext=}} {{dropinitial|L|image=King James Bible (1611) page A2r (L).png|imgsize=100px}}{{sc|Ord}}, how are they increaſed that trouble mee? many are they that riſe vp againſt me.
+
+{{Verse|3|2}} Many {{smaller|there bee which}} ſay of my ſoule, {{smaller|There is}} no helpe for him in God. Selah.
+{{nop}}<noinclude></noinclude>

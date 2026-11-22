@@ -1,0 +1,44 @@
+<noinclude><pagequality level="3" user="Sp1nd01" />{{x-larger|{{rh|Eſther Queene.|Chap.iij.|Hamans ſuit.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>moneths with ſweet odours, and with {{smaller|other}} things for the purifying of the women.)
+
+{{verse|2|13}}Then thus came {{smaller|euery}} maiden vnto the king, whatſoeuer ſhe deſired, was giuen her, to goe with her out of the houſe of the women, vnto the kings houſe.
+
+{{verse|2|14}}In the euening ſhe went, and on the morrowe ſhe returned into the ſecond houſe of the women, to the cuſtodie of Shaaſhgaz the kings chamberlen, which kept the concubines: ſhee came in vnto the king no more, except the king delighted in her, and that ſhee were called by name.
+
+{{verse|2|15}}¶ Now when the turne of Eſther, the daughter of Abihail, the vncle of Mordecai (who had taken her for his daughter) was come, to goe in vnto the king: ſhe required nothing, but what Hegai the kings chamberlen the keeper of the women, appointed: And Eſther obtained fauour in the ſight of all them that looked vpon her.
+
+{{verse|2|16}}So Eſther was taken vnto king Ahaſuerus, into his houſe royall, in the tenth moneth (which {{smaller|is}} the moneth Tebeth) in the ſeuenth yeere of his reigne.
+
+{{verse|2|17}}And the king loued Eſther aboue all the women, and ſhe obtained grace and ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, kindneſſe.''}} fauour <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. before him.''}} in his ſight, more then all the virgins; ſo that hee ſet the royall crowne vpon her head, and made her queene, in ſtead of Vaſthi.
+
+{{verse|2|18}}Then the king made a great feaſt vnto all his princes and his ſeruants, {{smaller|euen}} Eſthers feaſt, and hee made a <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. reſt.''}} releaſe to the prouinces, and gaue gifts, according to the ſtate of the king.
+
+{{verse|2|19}}And when the virgins were gathered together the ſecond time, then Mordecai ſate in the kings gate.
+
+{{verse|2|20}}Eſther had not {{smaller|yet}} ſhewed her kindred, nor her people, as Mordecai had charged her: For Eſther did the commandement of Mordecai, like as when ſhe was brought vp with him.
+
+{{verse|2|21}}¶ In thoſe dayes, (while Mordecai ſate in the kings gate) two of the kings chamberlens, ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, Bigthana, [[#6:2|chap.6.2.]]''}} Bigthan and Tereſh, of thoſe which kept <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. the threſhold.''}} the doore, were wroth, and ſought to lay hand on the king Ahaſuerus.
+
+{{verse|2|22}}And the thing was knowen to Mordecai, who told {{smaller|it}} vnto Eſther the Queene, and Eſther certified the king {{smaller|thereof}}, in Mordecais name.
+
+{{verse|2|23}}And when inquiſition was made of the matter, it was found out; therfore they were both hanged on a tree: and it was written in the booke of the chronicles before the king.
+
+==={{Chapter|3|CHAP. III.}}===
+
+{{smaller block|[[#3:1|1]] Haman aduanced by the king, and deſpiſed by Mordecai, ſeeketh reuenge vpon all the Iewes. [[#3:7|7]] Hee caſteth Lots. [[#3:8|8]] Hee obtaineth by calumniation, a Decree of the king, to put the Iewes to death.}}
+
+{{verse|3|1|notext=}} {{dropinitial|A|image=King James Bible (1611) page A3v (A).png|imgsize=100px}}Fter theſe things did king Ahaſuerus promote Haman, the ſonne of Amedatha the Agagite, and aduanced him, and ſet his ſeate aboue all the princes that {{smaller|were}} with him.
+
+{{verse|3|2}}And all the kings ſeruants, that {{smaller|were}} in the kings gate, bowed, and reuerenced Haman, for the king had ſo commanded concerning {{smaller|him}}: but Mordecai bowed not, nor did {{smaller|him}} reuerence.
+
+{{verse|3|3}}Then the kings ſeruants, which {{smaller|were}} in the kings gate, ſayd vnto Mordecai, Why tranſgreſſeſt thou the kings commandement?
+
+{{verse|3|4}}Now it came to paſſe, when they ſpake daily vnto him, and he hearkened not vnto them; that they told Haman, to ſee whether Mordecai his matters would ſtand, for he had told them that he {{smaller|was}} a Iewe.
+
+{{verse|3|5}}And when Haman ſaw that Mordecai bowed not, nor did him reuerence, then was Haman full of wrath.
+
+{{verse|3|6}}And hee thought ſcorne to lay hands on Mordecai alone, for they had ſhewed him the people of Mordecai: wherefore Haman ſought to deſtroy all the Iewes, that {{smaller|were}} throughout the whole kingdome of Ahaſuerus, {{smaller|euen}} the people of Mordecai.
+
+{{verse|3|7}}¶ In the firſt moneth (that is, the moneth Niſan) in the twelfth yeere of king Ahaſuerus, they caſt Pur, that {{smaller|is}}, the lot, before Haman, from the day to day, and from moneth to moneth, {{smaller|to}} the twelfth moneth, that {{smaller|is}} the moneth Adar.
+
+{{verse|3|8}}¶ And Haman ſaide vnto king Ahaſuerus: There is a certaine people ſcattered abroad, and diſperſed among the people, in all the prouinces of thy kingdome, and their lawes {{smaller|are}} diuerſe from all people, neither keepe they the kings lawes; therefore it {{smaller|is}} not <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. meete or, equall.''}} for the kings profit to ſuffer them.
+{{nop}}<noinclude>{{right|By 3{{gap}}{{verse|3|9}}If}}</noinclude>

@@ -1,0 +1,38 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{x-larger|{{rh|The kings, and|Chap.j.|Queenes feaſts.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>[[File:King James Bible (1611) page D4v.xcf|center|600px]]
+=={{uc|The Booke of}} Eſther.==
+
+==={{Chapter|1|CHAP. I.}}===
+
+{{smaller block|[[#1:1|1]] Ahaſuerus maketh royall feaſts. [[#1:10|10]] Vaſthi, ſent for, refuſeth to come. [[#1:13|13]] Ahaſuerus, by the counſell of Memucan, maketh the decree of mens ſoueraigntie.}}
+
+{{Verse|1|1|notext=}} {{dropinitial|N|image=King James Bible (1611) page A5r (N).png|imgsize=100px}}Ow it came to paſſe in the dayes of Ahaſuerus, (this {{smaller|is}} Ahaſuerus which reigned from India, euen vnto Ethiopia, ouer an hundred, and ſeuen and twentie prouinces.)
+
+{{verse|1|2}}{{smaller|That}} in thoſe dayes, when the King Ahaſuerus ſate on the throne of his kingdome, which {{smaller|was}} in Shuſhan the palace:
+
+{{verse|1|3}}In the third yeere of his reigne, he made a feaſt vnto all his Princes, and his ſeruants, the power of Perſia and Media, the Nobles and Princes of the prouinces {{smaller|being}} before him.
+
+{{verse|1|4}}When he ſhewed the riches of his glorious kingdome, and the honour of his excellent maieſtie, many dayes, {{smaller|euen}} an hundred and foureſcore dayes.
+
+{{verse|1|5}}And when theſe dayes were expired, the king made a feaſt vnto all the people that were <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. found.''}} preſent in Shuſhan the palace, both vnto great and ſmall, ſeuen dayes, in the court of the garden of the kings palace.
+
+{{verse|1|6}}{{smaller|Where were}} white, greene, and ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, violet.''}} blew {{smaller|hangings}}, faſtened with cords of fine linnen, and purple, to ſiluer rings, and pollers of marble: the beds {{smaller|were}} of gold and ſiluer, vpon a pauement of ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, of porphyre, and marble, and alabaſter, and ſtone of blew colour.''}} red, and blewe, and white, and blacke marble.
+
+{{verse|1|7}}And they gaue {{smaller|them}} drinke in veſſels of gold, (the veſſels being diuers one from another) and <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. wine of the kingdome.''}} royall wine in abundance, according to the <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. according to the hand of the king.''}} ſtate of the king.
+
+{{verse|1|8}}And the drinking {{smaller|was}} according to the law, none did compell: for the king had appointed to all the officers of his houſe, that they ſhould doe according to euery mans pleaſure.
+
+{{verse|1|9}}Alſo Vaſthi the Queene made a feaſt for the women, {{smaller|in}} the royall houſe which {{smaller|belonged}} to king Ahaſuerus.
+
+{{verse|1|10}}¶ On the ſeuenth day, when the heart of the King was merry with wine, he commanded Mehuman, Biztha, Harbona, Bigtha, and Abagtha, Zethar, and Carcas, the ſeuen ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, Eunuches.''}} chamberlens that ſerued in the preſence of Ahaſuerus the king,
+
+{{verse|1|11}}To bring Vaſthi the Queene before the king, with the Crowne royall, to ſhew the people, and the Princes her beautie: for ſhe {{smaller|was}} <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. good of countenance.''}} faire to looke on.
+
+{{verse|1|12}}But the Queene Vaſthi refuſed to come at the Kings commandement <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. which'' was ''by the hand of his Eunuches.''}} by his chamberlens: therefore was the King very wroth, and his anger burned in him.
+
+{{verse|1|13}}¶ Then the king ſaide to the wiſe men, which knew the times (for ſo {{smaller|was}} the Kings maner towards all that knew law, and iudgement:
+
+{{verse|1|14}}And the next vnto him, {{smaller|was}} Carſhena, Shethar, Admatha, Tarſhis, Meres, Marſena, {{smaller|and}} Memucan, the ſeuen *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Ezra.7.14.}} Princes of Perſia, {{smaller|and}} Media, which ſaw the Kings face, {{smaller|and}} which ſate the firſt in the kingdome.)
+
+{{verse|1|15}}<sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Hebr. what to doe?''}} What ſhall wee doe vnto the Queene Vaſthi, according to law, becauſe ſhe hath not performed the commandement of the king Ahaſuerus, by the chamberlens?
+
+{{verse|1|16}}And Memucan anſwered before the king and the Princes; Vaſthi the Queene hath not done wrong to the king onely, but alſo to all the Princes, and to all the people that {{smaller|are}} in all the<noinclude>{{right|By 2{{gap}}pro-}}</noinclude>
