@@ -46,7 +46,7 @@ def margin(side, text):
     return f'{{{{MarginNote|margin={side}|margin-width=65|text={text}}}}}'
 
 
-# The sidenotes format (books.json "sidenotes": [first, last]), after the validated 1610 Douai
+# The sidenotes format (the default; books.json "sidenotes": false or [first, last] narrows it), after the validated 1610 Douai
 # Old Testament pages (Page:1610_Douai_Old_Testament.pdf/336, /337): {{sidenotes begin}} …
 # {{sidenotes end}} around the page, {{verse|chapter=ch|verse=v|align=float}}† at each verse with the
 # print's dagger (the number floats in the left margin, as {{verseline}} sets it on the 1610 pages, but
@@ -127,7 +127,9 @@ def _drop_opening(body):
 
 def sidenotes_page(wiki):
     s = CFG.sidenotes
-    return bool(s) and s[0] <= wiki <= s[1]
+    if isinstance(s, tuple):
+        return s[0] <= wiki <= s[1]
+    return bool(s)
 
 
 # Small caps. The data writes <sc>IESVS</sc>; the print sets a full capital and small
@@ -807,15 +809,23 @@ def write_argument_pages(body, wiki):
     for k, text in enumerate(pages):
         pg = wiki + k
         outer = 'left' if pg % 2 == 0 else 'right'
-        text = text.replace('\x01', outer).replace('\x02', 'right' if outer == 'left' else 'left')
+        inner = 'right' if outer == 'left' else 'left'
+        side = sidenotes_page(pg)
+        if side:  # \x01 outer, \x02 inner: the sentinels sidenotes_body() resolves
+            text = sidenotes_body(text.replace(margin('\x01', '')[:-2], '{{MOUTER|').replace(margin('\x02', '')[:-2], '{{MINNER|'), inner, outer)
+        text = text.replace('\x01', outer).replace('\x02', inner)
         nxt = pages[k + 1].split()[0] if BOOK in ARGUMENT_BREAKS and k + 1 < len(pages) else ''
         foot = footer(CATCHWORDS.get((BOOK, pg), nxt))
+        if side:
+            head_open, foot = '{{sidenotes begin}}', (foot + '\n' if foot else '') + '{{sidenotes end}}'
+        else:
+            head_open = ''
         if k == len(pages) - 1 and BOOK in ARGUMENT_BREAKS:
             text += '\n{{nop}}'  # the next page opens a book
         left = pg % 2 == 0 or (k == 0 and BOOK in ('mark', 'luke'))  # Mark's and Luke's published first page
         head = f'{{{{rh|{pg - 28}||}}}}' if left else f'{{{{rh|||{pg - 28}}}}}'
         text = re.sub(r'(?m)^(Who[sſ]e excellencie [^\n]*)$', r'{{c|{{larger|\1}}}}', text)  # John: the print's centred heading
-        (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(rh_small_caps(head)) +
+        (OUT / f'{pg}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + head_open + to_ls(rh_small_caps(head)) +
                                         '</noinclude>' + to_ls(sc_wiki(text)) +
                                         '<noinclude>' + to_ls(foot) + '</noinclude>\n'))
 

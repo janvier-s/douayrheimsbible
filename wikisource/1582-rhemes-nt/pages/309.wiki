@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|||281}}</noinclude>
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|||281}}</noinclude>
 {{c|{{larger|THE SVMME, AND THE ORDER OF THE EVANGELICAL HISTORIE, gathered breifly out of al foure, euen vnto Chri{{ls}}ts A{{ls}}cen{{ls}}ion.}}}}
 
 {| style='border-collapse: collapse; border: none; width: 100%;'
@@ -13,7 +13,7 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='vertical-align: top;' | {{dropinitial|T}}HE preface mouing the Reader to receiue CHRIST, being the aeternal VVORD of God, the life and the light.{{MarginNote|margin=right|margin-width=65|text=THE 1 PART, conteining the Infancie of Chri{{ls}}t and the time that he liued ob{{ls}}curely.}}
+| style='vertical-align: top;' | {{dropinitial|T}}HE preface mouing the Reader to receiue CHRIST, being the aeternal VVORD of God, the life and the light.{{outside R|THE 1 PART, conteining the Infancie of Chri{{ls}}t and the time that he liued ob{{ls}}curely.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
@@ -79,7 +79,7 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Iohn the Bapti{{ls}}t preacheth and baptizeth, preparing al to receiue Chri{{ls}}t: and among other, Chri{{ls}}t is baptized of him.{{MarginNote|margin=right|margin-width=65|text=The 2 part, conteining the time of the preparatiō̄ toward his manife{{ls}}tation.}}
+| style='vertical-align: top;' | Iohn the Bapti{{ls}}t preacheth and baptizeth, preparing al to receiue Chri{{ls}}t: and among other, Chri{{ls}}t is baptized of him.{{outside R|The 2 part, conteining the time of the preparatiō̄ toward his manife{{ls}}tation.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 4
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
@@ -103,11 +103,12 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='vertical-align: top;' | In the fea{{ls}}t of Pa{{ls}}che he ca{{ls}}teth out the biers and {{ls}}ellers in the Temple, in{{ls}}inuating to the Iewes his death and re{{ls}}urrectiō̄.{{MarginNote|margin=right|margin-width=65|text=THE 1. PASCHE.}}
+| style='vertical-align: top;' | In the fea{{ls}}t of Pa{{ls}}che he ca{{ls}}teth out the biers and {{ls}}ellers in the Temple, in{{ls}}inuating to the Iewes his death and re{{ls}}urrectiō̄.{{outside R|THE 1. PASCHE.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
 | style='vertical-align: top;' | He teacheth Nicodemus by night: and baptizeth in Iurie by the mini{{ls}}terie of his di{{ls}}ciples. vvherevpon a que{{ls}}tion is moued to Iohn about their tvvo bapti{{ls}}mes.
-|}<noinclude>{{continues|Iohn}}</noinclude>
+|}<noinclude>{{continues|Iohn}}
+{{sidenotes end}}</noinclude>

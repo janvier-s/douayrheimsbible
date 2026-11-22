@@ -94,7 +94,7 @@ def mark_pages(tmp_path_factory):
 def test_no_signature_or_rh_footer(mark_pages):
     foots = {n: body_of(t)[1] for n, t in mark_pages.items()}
     assert not [n for n, f in foots.items() if '{{rh' in f]
-    assert foots[119] == '{{continues|ANNOT.}}'
+    assert foots[119] == '{{continues|ANNOT.}}\n{{sidenotes end}}'
 
 
 def test_nop_only_on_paragraph_end(mark_pages):

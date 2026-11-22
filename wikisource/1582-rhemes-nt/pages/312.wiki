@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" />{{rh|284||Mt. Mr. Lu. Io.}}</noinclude>
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|284||Mt. Mr. Lu. Io.}}</noinclude>
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
@@ -83,7 +83,7 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='vertical-align: top;' | At a {{ls}}upper in Bethánia, Marie povvred ointment vpon him.{{MarginNote|margin=right|margin-width=65|text=PALME {{ls}}unday.}}
+| style='vertical-align: top;' | At a {{ls}}upper in Bethánia, Marie povvred ointment vpon him.{{outside R|PALME {{ls}}unday.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
@@ -95,7 +95,7 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='vertical-align: top;' | He healeth the lame and the blinde, and Gentiles de{{ls}}ire to {{ls}}ee him.{{MarginNote|margin=right|margin-width=65|text=The 6 part, conteining the holy weeke of his Pa{{ls}}sion in Hieru{{ls}}alem.}}
+| style='vertical-align: top;' | He healeth the lame and the blinde, and Gentiles de{{ls}}ire to {{ls}}ee him.{{outside R|The 6 part, conteining the holy weeke of his Pa{{ls}}sion in Hieru{{ls}}alem.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
@@ -155,5 +155,6 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 13
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He foretelleth to {{ls}}ome of his Di{{ls}}ciples, the de{{ls}}truction of the Temple and of Hieru{{ls}}alem: and by that occa{{ls}}ion, vvhat things {{ls}}halbe before the con{{ls}}ummation of the vvorld, and Antichri{{ls}}t in the con{{ls}}ummation, and then incontinent Dome{{ls}}day, vvarning vs to prepare our {{ls}}elues again{{ls}}t his comming.{{MarginNote|margin=right|margin-width=65|text=TVESDAY night.}}
-|}<noinclude>{{continues|he}}</noinclude>
+| style='vertical-align: top;' | He foretelleth to {{ls}}ome of his Di{{ls}}ciples, the de{{ls}}truction of the Temple and of Hieru{{ls}}alem: and by that occa{{ls}}ion, vvhat things {{ls}}halbe before the con{{ls}}ummation of the vvorld, and Antichri{{ls}}t in the con{{ls}}ummation, and then incontinent Dome{{ls}}day, vvarning vs to prepare our {{ls}}elues again{{ls}}t his comming.{{outside R|TVESDAY night.}}
+|}<noinclude>{{continues|he}}
+{{sidenotes end}}</noinclude>

@@ -1,11 +1,11 @@
-<noinclude><pagequality level="1" user="" />{{rh|282||Mt. Mr. Lu. Io.}}</noinclude>
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|282||Mt. Mr. Lu. Io.}}</noinclude>
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 4
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 4
-| style='vertical-align: top;' | After Iohns empri{{ls}}onment, Chri{{ls}}t returning into Galilee by Samaria, talketh vvith the Samaritane vvoman.{{MarginNote|margin=right|margin-width=65|text=The 3 part, from the time that he began (Mat. 4, 12 &amp; 17.) to manife{{ls}}t him {{ls}}elf, by preaching and miracles.}}
+| style='vertical-align: top;' | After Iohns empri{{ls}}onment, Chri{{ls}}t returning into Galilee by Samaria, talketh vvith the Samaritane vvoman.{{outside R|The 3 part, from the time that he began (Mat. 4, 12 &amp; 17.) to manife{{ls}}t him {{ls}}elf, by preaching and miracles.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
@@ -83,7 +83,7 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 5
-| style='vertical-align: top;' | He healeth him on the Sabboth day that lay at the Probatica and had been di{{ls}}ea{{ls}}ed 38 yeres.{{MarginNote|margin=right|margin-width=65|text=THE 2 PASCHE.}}
+| style='vertical-align: top;' | He healeth him on the Sabboth day that lay at the Probatica and had been di{{ls}}ea{{ls}}ed 38 yeres.{{outside R|THE 2 PASCHE.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
@@ -186,4 +186,5 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 6
 | style='vertical-align: top;' | He feedeth 5000 men vvith fiue loaues.
-|}<noinclude>{{continues|He}}</noinclude>
+|}<noinclude>{{continues|He}}
+{{sidenotes end}}</noinclude>

@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" /></noinclude>ued the Go{{ls}}pel it {{ls}}elf by the preaching of Catholikes.
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}</noinclude>ued the Go{{ls}}pel it {{ls}}elf by the preaching of Catholikes.
 
 ''Againe li. de vtilit. credend. cap. 14.''
 
@@ -12,7 +12,7 @@ Thou {{ls}}ee{{ls}}t then in this matter what force the authoritie of the {{sc|C
 
 ''Tertullian li. De præ{{ls}}criptionibus,'' bringeth in the {{sc|Catholike Chvrch}} ''{{ls}}peaking thus to all Heretikes.''
 
-Vvho are you, vvhen, and from vvhence came you? vvhat doe you in my {{MarginNote|margin=left|margin-width=65|text=''ô Luther, Zuinglius, Caluin. * Their {{ls}}cholers & folovvers.''}}po{{ls}}{{ls}}e{{ls}}sion, that are none of mine? by vvhat right (Marcion) doe{{ls}}t thou cut dovvne my wood? vvho gaue the licence (ô Valentine) to turne the cour{{ls}}e of my fountaines? by vvhat authoritie(Apelles) doe{{ls}}t thou remoue my boundes? and * you the re{{ls}}t, vvhy do yovv {{ls}}ovv and feede for the{{ls}}e companions at your plea{{ls}}ure? It is my po{{ls}}{{ls}}e{{ls}}sion, I po{{ls}}{{ls}}e{{ls}}{{ls}}e it of old, I haue a{{ls}}{{ls}}ured origins thereof, euen from tho{{ls}}e authors vvho{{ls}}e the thing vvas. I am the heire of the Apo{{ls}}tles. As they prouided by their te{{ls}}tament,as they comitted it to my credite,as they adiured me, {{ls}}o doe I hold it. You {{ls}}urely they di{{ls}}herited alvvaies and haue ca{{ls}}t you of, as forainers, as enemies.
+Vvho are you, vvhen, and from vvhence came you? vvhat doe you in my {{outside L|''ô Luther, Zuinglius, Caluin. * Their {{ls}}cholers & folovvers.''}}po{{ls}}{{ls}}e{{ls}}sion, that are none of mine? by vvhat right (Marcion) doe{{ls}}t thou cut dovvne my wood? vvho gaue the licence (ô Valentine) to turne the cour{{ls}}e of my fountaines? by vvhat authoritie(Apelles) doe{{ls}}t thou remoue my boundes? and * you the re{{ls}}t, vvhy do yovv {{ls}}ovv and feede for the{{ls}}e companions at your plea{{ls}}ure? It is my po{{ls}}{{ls}}e{{ls}}sion, I po{{ls}}{{ls}}e{{ls}}{{ls}}e it of old, I haue a{{ls}}{{ls}}ured origins thereof, euen from tho{{ls}}e authors vvho{{ls}}e the thing vvas. I am the heire of the Apo{{ls}}tles. As they prouided by their te{{ls}}tament,as they comitted it to my credite,as they adiured me, {{ls}}o doe I hold it. You {{ls}}urely they di{{ls}}herited alvvaies and haue ca{{ls}}t you of, as forainers, as enemies.
 
 ''Againe in the {{ls}}ame booke.''
 
@@ -23,4 +23,5 @@ Encountering vvith {{ls}}uch by Scriptures, auaileth nothing, but to ouerturne a
 ''S. Hierom aduer{{ls}}us Luciferianos in fine.''
 
 Let them not flatter them {{ls}}elues, if they {{ls}}eeme in their ovvne conceite to affirme that vvhich they {{ls}}ay, out of the chapters of Scripture: vvhereas the Diuel al{{ls}}o {{ls}}pake {{ls}}ome thinges out of the Scriptures, and the Scriptures con{{ls}}i{{ls}}t not in the reading, but in the vnder{{ls}}tanding.
-{{nop}}<noinclude>{{continues|Vincentius}}</noinclude>
+{{nop}}<noinclude>{{continues|Vincentius}}
+{{sidenotes end}}</noinclude>

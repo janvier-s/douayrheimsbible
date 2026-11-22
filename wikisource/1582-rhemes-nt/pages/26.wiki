@@ -1,4 +1,4 @@
-<noinclude><pagequality level="1" user="" /></noinclude>{{c|{{larger|THE BOOKES OF THE NEVV Te{{ls}}tament, according to the counte of the Catholike Churche.}}}}
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}</noinclude>{{c|{{larger|THE BOOKES OF THE NEVV Te{{ls}}tament, according to the counte of the Catholike Churche.}}}}
 
 4 GOSPELS.
 
@@ -70,4 +70,5 @@ THe excellencie of the Canonical authoritie of the old and new Te{{ls}}tament, i
 
 ''S. Augu{{ls}}tine cont. Epi{{ls}}t. fundamenti cap. 5.''
 
-I for my part, vvould not beleeue the Go{{ls}}pel,vnles the authoritie of the {{sc|Catholike Chvrch}} moued me. They therfore whom I obeied {{ls}}aying,Beleeue the Go{{ls}}pel: vvhy {{ls}}hould I not beleeue them {{ls}}aying, Beleeue not {{MarginNote|margin=right|margin-width=65|text=* ''Luther, Caluin.''}}* Manichæus?Choo{{ls}}e vvhether thou vvilt. If thou wilt {{ls}}ay, Beleeue the Catholikes:loe they vvarne me that I giue no credite vnto you: and therefore beleeuing them,I mu{{ls}}t needes not beleeue thee. If thou {{ls}}ay, Beleeue not the Catholikes:it is not the right vvay,by the Go{{ls}}pel to driue me to the faith of Manichæus, becau{{ls}}e I beleeued<noinclude>{{continues|ued}}</noinclude>
+I for my part, vvould not beleeue the Go{{ls}}pel,vnles the authoritie of the {{sc|Catholike Chvrch}} moued me. They therfore whom I obeied {{ls}}aying,Beleeue the Go{{ls}}pel: vvhy {{ls}}hould I not beleeue them {{ls}}aying, Beleeue not * {{outside R|* ''Luther, Caluin.''}} Manichæus?Choo{{ls}}e vvhether thou vvilt. If thou wilt {{ls}}ay, Beleeue the Catholikes:loe they vvarne me that I giue no credite vnto you: and therefore beleeuing them,I mu{{ls}}t needes not beleeue thee. If thou {{ls}}ay, Beleeue not the Catholikes:it is not the right vvay,by the Go{{ls}}pel to driue me to the faith of Manichæus, becau{{ls}}e I beleeued<noinclude>{{continues|ued}}
+{{sidenotes end}}</noinclude>

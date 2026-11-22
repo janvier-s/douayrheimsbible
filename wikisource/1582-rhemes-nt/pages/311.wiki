@@ -1,11 +1,11 @@
-<noinclude><pagequality level="1" user="" />{{rh|Mt. Mr. Lu. Io.||283}}</noinclude>
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|Mt. Mr. Lu. Io.||283}}</noinclude>
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 6
-| style='vertical-align: top;' | He rea{{ls}}oneth of Manna, and of the true bread from heauen.{{MarginNote|margin=right|margin-width=65|text=THE 3 PASCHE.}}
+| style='vertical-align: top;' | He rea{{ls}}oneth of Manna, and of the true bread from heauen.{{outside R|THE 3 PASCHE.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 15
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 7
@@ -47,7 +47,7 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 8
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The time that he vvil pa{{ls}}{{ls}}e out of this vvorld, novv dravving nigh, he maketh Peter, for confe{{ls}}sing him to be Chri{{ls}}t, the Rocke vpon vvhich he vvil build his Church, promi{{ls}}ing to giue him the keies of heauen, and vvithal foretelleth, that he mu{{ls}}t {{ls}}uffer in Hieru{{ls}}alem, and that al mu{{ls}}t be ready to {{ls}}uffer vvith him.{{MarginNote|margin=right|margin-width=65|text=The 4 part, from the time that he began (Mat. 16, 21) to foretel to his Di{{ls}}ciples, that he mu{{ls}}t goe &amp; {{ls}}uffer in Hieru{{ls}}alem.}}
+| style='vertical-align: top;' | The time that he vvil pa{{ls}}{{ls}}e out of this vvorld, novv dravving nigh, he maketh Peter, for confe{{ls}}sing him to be Chri{{ls}}t, the Rocke vpon vvhich he vvil build his Church, promi{{ls}}ing to giue him the keies of heauen, and vvithal foretelleth, that he mu{{ls}}t {{ls}}uffer in Hieru{{ls}}alem, and that al mu{{ls}}t be ready to {{ls}}uffer vvith him.{{outside R|The 4 part, from the time that he began (Mat. 16, 21) to foretel to his Di{{ls}}ciples, that he mu{{ls}}t goe &amp; {{ls}}uffer in Hieru{{ls}}alem.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 17
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
@@ -89,7 +89,7 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 7
-| style='vertical-align: top;' | Leauing Galilee he goeth into Iurie, and the Samaritanes vvil not receiue him.{{MarginNote|margin=right|margin-width=65|text=The 5 part, of his going into Ievvrie toward his Pa{{ls}}sion.}}
+| style='vertical-align: top;' | Leauing Galilee he goeth into Iurie, and the Samaritanes vvil not receiue him.{{outside R|The 5 part, of his going into Ievvrie toward his Pa{{ls}}sion.}}
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
@@ -150,4 +150,4 @@
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
 | style='text-align: right; vertical-align: top; padding-right: 8px;' |
 | style='vertical-align: top;' | He healeth him that had a drop{{ls}}ie, on the Sabboth: and teacheth them to renounce al things in compari{{ls}}on of him.
-|}<noinclude></noinclude>
+|}<noinclude>{{sidenotes end}}</noinclude>

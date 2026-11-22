@@ -25,9 +25,10 @@ Keys of a book in books.json (only `first` and `last` are required):
   holy_week         {"first", "last", "skip"}: "HOLY" beside the page number, "weeke." under it,
                     top outer corner, from wiki page first to last except the skip pages (checked on
                     the scans; Luke and John read on the head corners of every page, Mark on every page)
-  sidenotes         [first, last]: wiki pages written in the sidenotes format ({{sidenotes begin}},
-                    {{verse|…|align=float}}† and {{outside L}}/{{outside R}}, after Page:1610_Douai_Old_Testament.pdf/336);
-                    the other pages keep {{MarginNote}} and {{verse}} until the owner moves them
+  sidenotes         the sidenotes format ({{sidenotes begin}}, {{verse|…|align=float}}† and
+                    {{outside L}}/{{outside R}}, after Page:1610_Douai_Old_Testament.pdf/336) is the default for
+                    every page; false keeps a book on {{MarginNote}} and {{verse}}, [first, last] limits it
+                    to those wiki pages
 """
 from typing import NamedTuple
 
@@ -49,7 +50,7 @@ class Book(NamedTuple):
     scripture_pages: int | None = None
     running: tuple | None = None
     holy_week: tuple | None = None  # (first, last, frozenset of skipped pages)
-    sidenotes: tuple | None = None  # (first, last) wiki pages in the sidenotes format
+    sidenotes: bool | tuple = True  # True (the whole book), False, or (first, last) wiki pages
 
 
 KEYS = set(Book._fields) - {'name'}
@@ -63,7 +64,7 @@ def from_dict(name, d):
     d = dict(d)
     if 'argument_intros' in d:
         d['argument_intros'] = tuple(d['argument_intros'])
-    if 'sidenotes' in d:
+    if isinstance(d.get('sidenotes'), list):
         d['sidenotes'] = tuple(d['sidenotes'])
     if 'running' in d:
         d['running'] = tuple(d['running'])
