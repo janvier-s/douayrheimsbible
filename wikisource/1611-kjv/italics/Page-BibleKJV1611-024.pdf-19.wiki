@@ -1,0 +1,61 @@
+<noinclude><pagequality level="3" user="Mathmitch7" />{{x-larger|{{rh|Pauls requeſt|chap.j.|for Oneſimus.}}}} {{rule}}</noinclude>{{verse|3|10}} A man that is an heretike, after the firſt and ſecond admonition, reiect:
+
+{{verse|3|11}} Knowing that hee that is ſuch, is ſubuerted, and ſinneth, being condemned of himſelfe.
+
+{{verse|3|12}} When I ſhall ſend Artemas vnto thee, or Tychicus, be diligent to come vnto mee to Nicopolis: for I haue determined there to winter.
+
+{{verse|3|13}} Bring Zenas the Lawyer, and Apollos, on their iourney diligently, that nothing be wanting vnto them.
+
+{{verse|3|14}} And let ours alſo learne to ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, profeſſe honeſt trades''}} maintaine good workes for neceſſarie vſes, that they be not vnfruitfull.
+
+{{verse|3|15}} All that are with mee ſalute thee. Greete them that loue vs in the faith. Grace be with you all. Amen.
+
+{{dent|2em|0em|{{overfloat left|depth=1em|¶}} It was written to Titus ordeined the firſt Biſhop of the Church of the Cretians, from Nicopolis of Macedonia.}}
+
+{{rule}}
+{{rule}}
+<section begin="philemon" />[[File:King James Bible (1611) page D4v.xcf|center|600px]]
+{{rule}}
+{{nop}}
+==¶ THE EPISTLE OF Paul to Philemon.==
+
+==={{Chapter|1|CHAP. I.}}===
+{{smaller block|[[#1:4|4]] Hee reioyceth to heare of the faith and loue of Philemon, [[#1:9|9]] Whom he deſireth to forgiue his ſeruant Oneſimus, and louingly to receiue him againe.}}
+
+{{Verse|1|1|notext=}}{{dropinitial|P|image=King James Bible (1611) page A3r (P).png|imgsize=100px}}Aul a priſoner of Ieſus Chriſt, ⁊ Timothie {{smaller|our}} brother vnto Philemon our dearely beloued, and fellow labourer,
+
+{{Verse|1|2}} And to {{smaller|our}} beloued Apphia, and Archippus our fellow Souldier, and to the Church in thy houſe.
+
+{{verse|1|3}} Grace to you, and peace from God our Father, and the Lord Ieſus Chriſt.
+
+{{verse|1|4}} I thanke my God, making mention of thee alwayes in my prayers,
+
+{{verse|1|5}} Hearing of thy loue, and faith, which thou haſt toward the Lord Ieſus, and toward all Saints:
+
+{{verse|1|6}} That the communication of thy faith may become effectuall by the acknowledging of euery good thing, which is in you in Chriſt Ieſus.
+
+{{verse|1|7}} For wee haue great ioy and conſolation in thy loue, becauſe the bowels of the Saints are refreſhed by thee, brother.
+
+{{verse|1|8}} Wherefore, though I might bee much bolde in Chriſt to enioyne thee that which is conuenient;
+
+{{verse|1|9}} Yet for loues ſake I rather beſeech {{smaller|thee}}, being ſuch a one as Paul the aged, and now alſo a priſoner of Ieſus Chriſt.
+
+{{verse|1|10}} I beſeech thee for my ſonne Oneſimus, whome I haue begotten in my bonds,
+
+{{verse|1|11}} Which in time paſt was to thee vnprofitable: but now profitable to thee and to me:
+
+{{verse|1|12}} Whom I haue ſent againe: thou therfore receiue him, that is mine owne bowels.
+
+{{verse|1|13}} Whome I would haue reteined with mee, that in thy ſtead hee might haue miniſtred vnto me in the bonds of the Goſpel.
+
+{{verse|1|14}} But without thy minde would I doe nothing, that thy benefite ſhould not bee as it were of neceſſitie, but willingly.
+
+{{verse|1|15}} For perhaps hee therefore departed for a ſeaſon, that thou ſhouldeſt receiue him for euer:
+
+{{verse|1|16}} Not now as a ſeruant, but aboue a ſeruant, a brother beloued, ſpecially to mee, but how much more vnto thee, both in the fleſh, and in the Lord?
+
+{{verse|1|17}} If thou count mee therefore a partner, receiue him as my ſelfe.
+
+{{verse|1|18}} If hee hath wronged thee, or oweth {{smaller|thee ought}}, put that on mine account.
+
+{{verse|1|19}} I Paul haue written {{smaller|it}} with mine own hand, I will repay {{smaller|it}}: albeit I doe not ſay to thee how thou oweſt vnto <noinclude>me,</noinclude><section end="philemon" /><noinclude><!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>
