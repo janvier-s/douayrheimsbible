@@ -174,6 +174,8 @@ The pages are moving to the sidenotes format of the validated 1610 Douai Old Tes
 
 On the other pages, margin notes are `{{MarginNote|margin=left|margin-width=65|text=…}}` (or `margin=right`), never empty. On recto (odd) pages the inner margin is left and the outer right; on verso pages it's the reverse. Citations go in the inner margin; glosses, summaries and lectionary notes go in the outer. A margin `*` before a citation stays in the note (`* Mr. 12, 18.`). Line breaks inside `text=` are `{{br}}`. Leave no space before the template when punctuation follows it.
 
+**Margin letters.** Where the print sets a letter (`a`, `b`, `c`, `d`) over the annotated word, it sets the same letter at the head of the margin note, and the XML has `<note n="c">`. `odr-original` keeps both: `c <na>[1]</na>` in the verse text and `c …` at the start of the note (inside the `<i>` for a Greek note). `odr` carries no letters: its note text has none and its text has no letter. A letter at the end of a verse text (Romans 8:37) is the marker for the next verse's note and stays. When the XML puts a note in a verse and the data has it in the next, move the note and its anchor in both datasets (John 10:16). A misprinted citation in such a note stays in `odr-original` and the XML and is corrected in `odr` (Acts 22:20: print `Act. 7, 38`, `odr` `7, 58`).
+
 Enforced by: `E-margin`, `margin_note`
 
 ### 5.4 Verse markers
