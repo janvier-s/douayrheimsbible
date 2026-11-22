@@ -6,7 +6,7 @@ Wherein though it be not po{{ls}}sible to {{ls}}et dovvne the preci{{ls}}e and v
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 65px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Tiberij'''
-| style='width: 70px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dñi.'''
+| style='width: 70px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dn̄i.'''
 | style='width: 50px; text-align: right; vertical-align: top; padding-right: 8px;' | '''A{{ls}}cen.'''
 | style='vertical-align: top;' |
 |-
@@ -71,7 +71,7 @@ Wherein though it be not po{{ls}}sible to {{ls}}et dovvne the preci{{ls}}e and v
 | style='vertical-align: top;' | At Hieru{{ls}}alem he is ca{{ls}}t into pri{{ls}}on after the putting of S. Iames to death, by the commaundement of Herod. he is praied for by the vvhole Church, & deliuered out of pri{{ls}}on by an Angel. ''Act. 12.''
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Claudij'''
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dñi.'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dn̄i.'''
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | '''A{{ls}}cen.'''
 | style='vertical-align: top;' |
 |-
@@ -111,7 +111,7 @@ Wherein though it be not po{{ls}}sible to {{ls}}et dovvne the preci{{ls}}e and v
 | style='vertical-align: top;' | He vvriteth his {{ls}}econd epi{{ls}}tle a litle before his death, vvhich Chri{{ls}}t reuealed to him to be at hand, ''2 Pet. 1.'' He taketh order for his {{ls}}ucce{{ls}}sor.
 |-
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Neronis'''
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dñi.'''
+| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dn̄i.'''
 | style='text-align: right; vertical-align: top; padding-right: 8px;' | '''A{{ls}}cen.'''
 | style='vertical-align: top;' |
 |-
