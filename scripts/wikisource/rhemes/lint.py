@@ -56,7 +56,7 @@ INNER = re.compile(r'\{\{[^{}]*\}\}')
 
 SIGNATURE = re.compile(r'^([A-Z])(?:(?i:\1){1,2})?(?: ij| iij)?$')  # A, Aa, Aaa (+ ij, iij): the gathering letter
 BLOCKLINE = re.compile(r'^(?:\{\{c\||\{\||\||\{\{nop\}\}|==|:)')  # centred, table, nop, heading, indented verse
-OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\{verseline\|\d+\|1\}\}\{\{di\||\{\||CHAP\.|''\d+\. )")  # ''12. Word.''] heads an annotation
+OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\{verse\|chapter=\d+\|verse=1\|align=float\}\}|\{\{verseline\|\d+\|1\}\}\{\{di\||\{\||CHAP\.|''\d+\. )")  # ''12. Word.''] heads an annotation
 LEAD_NOTES = re.compile(r'^(?:\s|\{\{(?:MarginNote|outside (?:R?L|R))\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\})*')
 
 
@@ -309,7 +309,8 @@ def lint(d, ov=None):
                 out.append(('E-verse', n, f'{ch}:{v} follows {ch}:{last_v}'))
             last_ch, last_v = ch, v
             # the print sets † at every verse start but a chapter's first, under its drop initial (§2.1)
-            in_drop = body.startswith('}}', m.end())  # {{dropinitial|T|fl={{verse|…}}}}: no † under the initial
+            # {{dropinitial|T|fl={{verse|…}}}}, or a chapter's first verse set before its initial: no †
+            in_drop = body.startswith('}}', m.end()) or v == 1
             if (m.group(3) or '{{sidenotes begin}}' in t) and not in_drop and not body.startswith(('†', '{{di|'), m.end()):
                 out.append(('W-mark', n, f'{ch}:{v} lacks the print\'s † after the verse number'))
 

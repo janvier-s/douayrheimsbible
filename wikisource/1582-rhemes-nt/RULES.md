@@ -138,7 +138,7 @@ Enforced by: `W-rh-caps`, `W-header`
 
 ### 4.6 Drop initials
 
-A chapter's woodcut initial is `{{dropinitial|…}}`, carrying the verse marker, with the rest of the word in small caps: `{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} booke`. The sidenotes format (§5.3) keeps this form.
+A chapter's woodcut initial is `{{dropinitial|…}}`, carrying the verse marker, with the rest of the word in small caps: `{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} booke`. In the sidenotes format (§5.3) the verse number goes in the margin like the others, before the initial, and so does a left note whose anchor falls in the lines beside the initial (a float after the initial is pushed right by its width): `{{verse|chapter=1|verse=1|align=float}}{{outside L|''Luc. 3, 31.''}}{{dropinitial|T}}{{sc|He}} booke of the * generation`. The verse numbers are placed by `Index:1582_Rhemes_New_Testament.pdf/styles.css`, which sets them just left of the text column, so that a drop initial or a note on the same line cannot push them aside.
 
 Enforced by: `dropinitial`
 
@@ -178,7 +178,7 @@ Enforced by: `E-margin`, `margin_note`
 
 ### 5.4 Verse markers
 
-Verses are `{{verse|chapter=N|verse=M}}`. In the sidenotes format they are `{{verse|chapter=N|verse=M|align=float}}` followed by the print's † (§2.1): the number floats in the left margin, as `{{verseline}}` sets it on the 1610 pages, without `{{verseline}}`'s white background, which shows in dark mode. A chapter's first verse stays in its drop initial's `fl=` (§4.6). Verses are in the print's order and numbering, with none repeated or skipped.
+Verses are `{{verse|chapter=N|verse=M}}`. In the sidenotes format they are `{{verse|chapter=N|verse=M|align=float}}` followed by the print's † (§2.1): the number floats in the left margin, as `{{verseline}}` sets it on the 1610 pages, without `{{verseline}}`'s white background, which shows in dark mode. A chapter's first verse is set before its drop initial (§4.6). Verses are in the print's order and numbering, with none repeated or skipped.
 
 Enforced by: `verse`, `E-verse`
 

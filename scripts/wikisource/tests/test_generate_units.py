@@ -258,5 +258,15 @@ def test_sidenotes_body():
     b = generate.sidenotes_body(
         "{{MOUTER|Lect.}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} of the {{MINNER|''Luc. 3.''}}* generation. "
         "{{verse|chapter=1|verse=2}} name {{MOUTER|∷ a=b}}∷ {{sc|Iesvs}}.\n\n{{MINNER|''Gen. 1.''}}* And", 'left', 'right')
-    assert b == ("{{outside R|Lect.}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} of the * {{outside L|''Luc. 3.''}} generation. "
+    assert b == ("{{outside R|Lect.}}{{verse|chapter=1|verse=1|align=float}}{{outside L|''Luc. 3.''}}{{dropinitial|T}}{{sc|He}} of the * generation. "
                  "{{verse|chapter=1|verse=2|align=float}}† name ∷ {{outside R|1=∷ a=b}} {{sc|Iesvs}}.\n\n<nowiki/>* {{outside L|''Gen. 1.''}} And")
+
+
+def test_sidenotes_drop_opening():
+    from rhemes import generate
+    # verse 1 leaves the drop initial for the margin; a left note beside the initial goes before it
+    b = generate.sidenotes_body("{{MOUTER|Lect.}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} of the "
+                                "{{MINNER|''Luc. 3.''}}* generation. " + 'x ' * 100 + "{{MINNER|''Late.''}}* y\n\nz", 'left', 'right')
+    assert b.startswith("{{outside R|Lect.}}{{verse|chapter=1|verse=1|align=float}}{{outside L|''Luc. 3.''}}"
+                        "{{dropinitial|T}}{{sc|He}} of the * generation. x ")
+    assert "x * {{outside L|''Late.''}} y\n\nz" in b  # far from the initial: stays by its anchor

@@ -88,8 +88,41 @@ def sidenotes_body(body, side_inner, side_outer):
         for i in reversed([m.start() for m in re.finditer(re.escape(t), body)]):
             if _positional(t, body, i):
                 body = body[:i + len(t)] + '1=' + body[i + len(t):]
+    body = _drop_opening(body)
     # a line opening with * or # would become a list
     return re.sub(r'(?m)^([*#])', r'<nowiki/>\1', body)
+
+
+_DROP = re.compile(r'\{\{dropinitial\|([^{}|]+)\|fl=\{\{verse\|(chapter=\d+\|verse=\d+)\}\}\}\}')
+_LEFT_NOTE = re.compile(r"\{\{outside L\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\} ?")
+DROP_SPAN = 160  # print characters beside a drop initial (about its two lines in the reader's column)
+
+
+def _drop_opening(body):
+    """A chapter's opening: the verse number comes out of the drop initial's fl= into the margin
+    ({{verse|…|align=float}} before the initial), and a left note anchored in the lines beside the
+    initial is set before it, since a float after the initial is pushed right by its width."""
+    def rep(m):
+        rest = body[m.end():]
+        end = rest.find('\n')
+        para = rest if end < 0 else rest[:end]
+        notes = []
+        for n in _LEFT_NOTE.finditer(para):
+            if len(' '.join(text.wiki_to_plain(para[:n.start()]).split())) > DROP_SPAN:
+                break
+            notes.append(n)
+        kept = ''.join(n.group(0).rstrip() for n in notes)
+        for n in reversed(notes):
+            para = para[:n.start()] + para[n.end():]
+        return (f'{{{{verse|{m.group(2)}|align=float}}}}{kept}{{{{dropinitial|{m.group(1)}}}}}', para, len(rest[:end]) if end >= 0 else len(rest))
+    out, i = [], 0
+    for m in _DROP.finditer(body):
+        if m.start() < i:
+            continue
+        head, para, consumed = rep(m)
+        out.append(body[i:m.start()] + head + para)
+        i = m.end() + consumed
+    return ''.join(out) + body[i:]
 
 
 def sidenotes_page(wiki):
