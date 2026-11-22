@@ -1,0 +1,8 @@
+# Persistent, scan-backed corrections to the generated kjv-1611 text.
+# Applied by build.ts AFTER applyLongS(), so `replace` must use output orthography
+# (ſ, yͤ/yͭ, ⁊). `find` must occur exactly once in the verse or the build fails.
+# Columns: slug  chapter  verse  find  replace  reason  witness
+# Blank lines and lines beginning with # are ignored.
+slug	chapter	verse	find	replace	reason	witness
+philemon	1	1	&	⁊	the 1611 print uses the Tironian et glyph; see proofread Page:BibleKJV1611-024.pdf/19 and the Wikisource Philemon transcription	wikisource-1611
+philemon	1	25	Amen.	Amen. ¶ Written from Rome to Philemon, by Oneſimus a ſeruant.	the subscription after v25 is present in the site's Original-1611 HTML and in the scan, but was dropped from the frozen source JSON	kingjamesbibleonline-html

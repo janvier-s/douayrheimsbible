@@ -1,5 +1,8 @@
 // Builds static/data/kjv-1611 from the 66-book source + aruljohn Apocrypha.
-// Usage: npx tsx scripts/kjv1611/build.ts [--evidence=<tsv>] [--out=<dir>] [--only=<site slug>]
+// Usage: npx tsx scripts/kjv1611/build.ts [--evidence=<tsv>] [--out=<dir>] [--only=<site slug>] [--fixes=<tsv>]
+// Persistent scan-backed corrections live in scripts/kjv1611/fixes.tsv and are applied to
+// every build (override with --fixes). They run after long-s placement, so replacement
+// text must already use the output orthography (ſ, ⁊, yͤ/yͭ).
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync, unlinkSync } from 'fs';
 import { homedir } from 'os';
 import { join, dirname } from 'path';
@@ -69,6 +72,59 @@ if (evidenceArg) {
 
 const readBook = (p: string): Book => JSON.parse(readFileSync(p, 'utf8'));
 const decode = (s: string) => s.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n));
+
+// --fixes=<tsv>: persistent, scan-backed corrections keyed by slug/chapter/verse.
+// TSV columns: slug chapter verse find replace reason witness. '#' comments are ignored.
+type Fix = {
+	key: string;
+	slug: string;
+	ch: number;
+	v: number;
+	find: string;
+	replace: string;
+	reason: string;
+	witness: string;
+};
+const fixesArg = process.argv.find((a) => a.startsWith('--fixes='))?.slice(8);
+const fixesPath = fixesArg ?? join(ROOT, 'scripts/kjv1611/fixes.tsv');
+const fixesByVerse = new Map<string, Fix[]>();
+const consumedFixes = new Set<string>();
+if (existsSync(fixesPath)) {
+	for (const [i, line] of readFileSync(fixesPath, 'utf8').split('\n').entries()) {
+		if (!line.trim() || line.startsWith('#')) continue;
+		const c = line.split('\t');
+		if (c[0] === 'slug') continue; // header
+		if (c.length < 5)
+			throw new Error(`${fixesPath}:${i + 1}: expected at least 5 tab-separated columns`);
+		const fix: Fix = {
+			key: `${c[0]}|${c[1]}|${c[2]}|${c[3]}`,
+			slug: c[0],
+			ch: +c[1],
+			v: +c[2],
+			find: c[3],
+			replace: c[4],
+			reason: c[5] ?? '',
+			witness: c[6] ?? ''
+		};
+		const key = `${fix.slug}|${fix.ch}|${fix.v}`;
+		(fixesByVerse.get(key) ?? fixesByVerse.set(key, []).get(key)!).push(fix);
+	}
+}
+
+/** Apply the ledger entries for one verse, checking each `find` occurs exactly once. */
+function applyFixes(slug: string, ch: number, v: number, text: string): string {
+	for (const f of fixesByVerse.get(`${slug}|${ch}|${v}`) ?? []) {
+		const count = text.split(f.find).length - 1;
+		if (count !== 1)
+			throw new Error(
+				`fix ${f.key}: expected exactly 1 occurrence of ${JSON.stringify(f.find)}, found ${count} ` +
+					`(${f.witness}: ${f.reason})`
+			);
+		text = text.replace(f.find, f.replace);
+		consumedFixes.add(f.key);
+	}
+	return text;
+}
 
 function arul(name: string): Book {
 	const b = readBook(join(HOME, 'aruljohn', `${name}.json`));
@@ -198,7 +254,11 @@ function build(): void {
 				if (pi === undefined) {
 					if (slug === 'esther' || (slug === 'daniel' && mc.chapter === 3 && v.verse === 24)) {
 						// Additions to Esther and Dan 3:24 are in neither source: keep the modern text, flagged.
-						outVerses.push({ verse: v.verse, text: v.text, modern: true });
+						outVerses.push({
+							verse: v.verse,
+							text: applyFixes(slug, mc.chapter, v.verse, v.text),
+							modern: true
+						});
 						fallback++;
 						continue;
 					}
@@ -207,7 +267,11 @@ function build(): void {
 				const p = pool[pi - 1];
 				if (!p.text.trim()) {
 					// verse blank in the 1611 source: keep the modern text, flagged
-					outVerses.push({ verse: v.verse, text: v.text, modern: true });
+					outVerses.push({
+						verse: v.verse,
+						text: applyFixes(slug, mc.chapter, v.verse, v.text),
+						modern: true
+					});
 					fallback++;
 					continue;
 				}
@@ -246,7 +310,7 @@ function build(): void {
 				}
 				longS += [...text].filter((c) => c === LONG_S).length;
 				verses++;
-				outVerses.push({ verse: v.verse, text });
+				outVerses.push({ verse: v.verse, text: applyFixes(slug, mc.chapter, v.verse, text) });
 			}
 			chapters.push({ chapter: mc.chapter, verses: outVerses });
 		}
@@ -259,6 +323,11 @@ function build(): void {
 		console.log(
 			`${slug}: verses ${verses}${fallback ? ` (+${fallback} modern fallback)` : ''} ye-abbr placed ${placed} unplaced ${unplaced} ſ ${longS}`
 		);
+	}
+	if (!only) {
+		const unused = [...fixesByVerse.values()].flat().filter((f) => !consumedFixes.has(f.key));
+		if (unused.length)
+			throw new Error(`fixes.tsv: entries with no matching verse: ${unused.map((f) => f.key).join(', ')}`);
 	}
 	if (evidenceArg && !only) {
 		writeFileSync(
