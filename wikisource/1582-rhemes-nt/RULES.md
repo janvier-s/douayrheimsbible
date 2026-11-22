@@ -28,7 +28,7 @@ Enforced by: review (no code)
 
 ### 2.1 The verse-start † is kept
 
-The print sets † at the start of every verse but a chapter's first, which opens with the drop initial. In the sidenotes format (§5.3) the page keeps it: `{{verseline|1|2}}† Abraham begat`. The owner reversed the earlier removal on 2026-11-22. Pages still in the old format (`{{verse|…}}`, no †) get it when they move to sidenotes. Every other † stays too (§4.8).
+The print sets † at the start of every verse but a chapter's first, which opens with the drop initial. In the sidenotes format (§5.3) the page keeps it: `{{verse|chapter=1|verse=2}}† Abraham begat`. The owner reversed the earlier removal on 2026-11-22. Pages still in the old format (`{{verse|…}}`, no †) get it when they move to sidenotes. Every other † stays too (§4.8).
 
 Enforced by: `W-mark`
 
@@ -138,7 +138,7 @@ Enforced by: `W-rh-caps`, `W-header`
 
 ### 4.6 Drop initials
 
-A chapter's woodcut initial is `{{dropinitial|…}}`, carrying the verse marker, with the rest of the word in small caps: `{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} booke`. In the sidenotes format (§5.3) the verse marker stands before it and the initial is `{{di|…}}`: `{{verseline|1|1}}{{di|T}}{{sc|He}} booke`.
+A chapter's woodcut initial is `{{dropinitial|…}}`, carrying the verse marker, with the rest of the word in small caps: `{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} booke`. The sidenotes format (§5.3) keeps this form.
 
 Enforced by: `dropinitial`
 
@@ -178,7 +178,7 @@ Enforced by: `E-margin`, `margin_note`
 
 ### 5.4 Verse markers
 
-Verses are `{{verse|chapter=N|verse=M}}` (in the sidenotes format `{{verseline|N|M}}`, followed by the print's †, §2.1) in the print's order and numbering, with none repeated or skipped.
+Verses are `{{verse|chapter=N|verse=M}}` (in the sidenotes format followed by the print's †, §2.1; not `{{verseline}}`, whose white background shows in dark mode) in the print's order and numbering, with none repeated or skipped.
 
 Enforced by: `verse`, `E-verse`
 
