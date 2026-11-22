@@ -251,3 +251,12 @@ def test_book_without_running_writes_its_argument_then_names_the_key(tmp_path):
     assert r.returncode != 0
     assert "'running'" in r.stderr and 'Traceback' not in r.stderr
     assert (out / f"{acts['argument_page']}.wiki").exists()
+
+
+def test_sidenotes_body():
+    from rhemes import generate
+    b = generate.sidenotes_body(
+        "{{MOUTER|Lect.}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} of the {{MINNER|''Luc. 3.''}}* generation. "
+        "{{verse|chapter=1|verse=2}} name {{MOUTER|∷ a=b}}∷ {{sc|Iesvs}}.\n\n{{MINNER|''Gen. 1.''}}* And", 'left', 'right')
+    assert b == ("{{outside RL|Lect.}}{{verseline|1|1}}{{di|T}}{{sc|He}} of the * {{outside L|''Luc. 3.''}} generation. "
+                 "{{verseline|1|2}}† name ∷ {{outside RL|1=∷ a=b}} {{sc|Iesvs}}.\n\n<nowiki/>* {{outside L|''Gen. 1.''}} And")

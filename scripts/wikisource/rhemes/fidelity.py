@@ -58,15 +58,15 @@ _TABLE = {
     'italic': ('decrease', None, 'raw', r"(?<!')''(?!')|<i>|<hi>"),
     'sc': ('decrease', None, 'raw', r'\{\{sc\||<sc>|<hi rend="smallcaps">'),
     'sup_bar': ('decrease', None, 'raw', r'\{\{sup\|‖\}\}'),
-    'margin_note': ('decrease', None, 'raw', r'\{\{MarginNote\||<mn>'),
+    'margin_note': ('decrease', None, 'raw', r'\{\{MarginNote\||\{\{outside R?L\||<mn>'),
     'note_mark': ('decrease', None, 'raw', r'<na>|<cr>'),
-    'verse': ('decrease', None, 'raw', r'\{\{verse\|'),
+    'verse': ('decrease', None, 'raw', r'\{\{verse(?:line)?\|'),
     'dagger': ('decrease', None, 'plain', '†'),
     'quad': ('decrease', None, 'plain', '∷'),
     'star': ('decrease', None, 'plain', r'\*'),
     'tack': ('decrease', None, 'plain', '⊣'),
     'bar': ('decrease', None, 'plain', '‖'),
-    'dropinitial': ('decrease', None, 'raw', r'\{\{dropinitial\|'),
+    'dropinitial': ('decrease', None, 'raw', r'\{\{(?:dropinitial|di)\|'),
     'size': ('decrease', None, 'raw', r'\{\{(?:x+-)?(?:larger|smaller|large|small)\|'),
 }
 FEATURES = {n: Feature(n, g, s) for n, (g, s, _, _) in _TABLE.items()}

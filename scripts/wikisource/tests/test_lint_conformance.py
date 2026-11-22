@@ -117,3 +117,22 @@ def test_w_rh_caps(tmp_path):
     assert 'W-rh-caps' in {c for c, n, m in lint.lint(tmp_path)}
     (tmp_path / '1.wiki').write_text(page.format(head='{{rh|82|{{sc|the gospel}}|{{sc|Cha. VI.}}}}'))
     assert 'W-rh-caps' not in {c for c, n, m in lint.lint(tmp_path)}
+
+
+SIDE = '<noinclude><pagequality level="1" user="" />{{{{sidenotes begin}}}}{{{{rh|1|X|Y}}}}</noinclude>{body}<noinclude>{foot}</noinclude>\n'
+
+
+def side_codes(tmp_path, body, foot='{{sidenotes end}}'):
+    (tmp_path / '1.wiki').write_text(SIDE.format(body=body, foot=foot))
+    return {c for c, n, m in lint.lint(tmp_path)}
+
+
+def test_sidenotes_format(tmp_path):
+    ok = '{{verseline|1|1}}{{di|T}}{{sc|He}} booke of the * {{outside L|x}} generation. {{verseline|1|2}}† And ∷ {{outside RL|∷ y}} so.'
+    assert not {'E-margin', 'W-mark', 'E-verse'} & side_codes(tmp_path, ok)
+    assert 'E-margin' in side_codes(tmp_path, ok, foot='{{continues|And}}')  # no {{sidenotes end}}
+    assert 'E-margin' not in side_codes(tmp_path, ok, foot='{{continues|And}}\n{{sidenotes end}}')
+    assert 'E-margin' in side_codes(tmp_path, 'a {{outside L|{{nop}}}} b')
+    assert 'W-mark' in side_codes(tmp_path, '{{verseline|1|1}}{{di|T}}{{sc|He}} x {{verseline|1|2}} And')  # † left out
+    assert 'E-verse' in side_codes(tmp_path, '{{verseline|1|1}}{{di|T}}HE {{verseline|1|3}}† x')
+    assert 'E-tpl-italic' in side_codes(tmp_path, "''open * {{outside L|x}} close''")

@@ -10,7 +10,8 @@
 			"first": 86,
 			"last": 113,
 			"skip": [95, 107]
-		}
+		},
+		"sidenotes": [31, 33]
 	},
 	"mark": {
 		"first": 114,

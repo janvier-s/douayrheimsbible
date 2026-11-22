@@ -63,12 +63,14 @@ def _untemplate(m):
         return rest.split('|')[-1]
     if name in ('larger', 'x-larger', 'xx-larger', 'smaller', 'c', 'continues'):
         return ' ' + rest.split('|')[-1] + ' '
-    if name == 'dropinitial':
+    if name in ('dropinitial', 'di'):
         return rest.split('|')[0]
     if name == 'hws':
         return ' ' + rest.split('|')[1] + ' '  # the whole word stands at the page end
     if name == 'MarginNote':
         return ' ' + rest.split('text=', 1)[-1] + ' '
+    if name in ('outside L', 'outside RL'):
+        return ' ' + (rest[2:] if rest.startswith('1=') else rest) + ' '
     return ' '  # verse, nop, sup, hwe (the whole word was given on the page before), rh
 
 

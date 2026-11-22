@@ -104,3 +104,11 @@ def test_where_splits_words_from_markup():
     from rhemes.fidelity import where
     assert where("x</noinclude>Pa{{ls}}{{ls}}ion<noinclude>", "x</noinclude>Passion<noinclude>", 'ls') == ['Pa{{ls}}{{ls}}ion → Passion']
     assert where("{{sc|The}} word", "The word", 'sc') == ['{{sc| → ∅']
+
+
+def test_sidenotes_markup_counted_like_the_old():
+    old = count("{{MarginNote|margin=left|margin-width=65|text=x}}{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}HE {{verse|chapter=1|verse=2}} a")
+    new = count("{{outside L|x}}{{verseline|1|1}}{{di|T}}HE {{verseline|1|2}}† a")
+    for f in ('margin_note', 'verse', 'dropinitial'):
+        assert old[f] == new[f] == (2 if f == 'verse' else 1), f
+    assert new['dagger'] == old['dagger'] + 1

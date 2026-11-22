@@ -13,7 +13,8 @@ Checks (E = error, W = warning):
   E-brace     {{ }} unbalanced
   E-tag       <noinclude>/<pagequality> structure broken; stray <i> <b> <br> <na> <cr> <alt> tags
   E-sentinel  leftover generator sentinels (⟦ ⟧) or unreplaced {{MINNER| {{MOUTER|
-  E-margin    {{MarginNote}} lacking margin=left|right, margin-width, or text, or empty
+  E-margin    {{MarginNote}} lacking margin=left|right, margin-width, or text, or empty;
+              {{outside L}}/{{outside RL}} empty, or a sidenotes page without {{sidenotes begin}}/{{sidenotes end}}
   E-hw-title  every {{hws}}/{{hwe}} needs a plain-text |title= (no {{…}}, '' or ſ) (Template:Hyphenated word start)
   E-tpl-italic italics open across a {{MarginNote}} or any template with '' inside (breaks the layout)
   E-foot-ital italics unbalanced in the running head or the footer
@@ -33,7 +34,7 @@ Checks (E = error, W = warning):
   W-nop       the next page opens a paragraph but this page does not end with {{nop}} on its own line
   W-linebreak single line break inside a paragraph
   W-space     double space, space before , . ; : ? ! ), space after (, trailing space
-  W-mark      stray † after {{verse}}
+  W-mark      {{verseline}} without the print's † (a chapter's drop initial has none)
   W-quote     straight or curly double quotes in the body (the print has none)
 """
 import re
@@ -47,7 +48,7 @@ from . import fidelity
 NOINC = re.compile(r'<noinclude>.*?</noinclude>', re.S)
 ITAL = re.compile(r"(?<!')''(?!')")
 BOLD = re.compile(r"(?<!')'''(?!')")
-VERSE = re.compile(r'\{\{verse\|chapter=(\d+)\|verse=(\d+)\}\}')
+VERSE = re.compile(r'\{\{verse\|chapter=(\d+)\|verse=(\d+)\}\}|\{\{verseline\|(\d+)\|(\d+)\}\}')
 TAGS = re.compile(r'</?(?:i|b|br|na|cr|alt|em|strong|span|div|p)\b[^>]*>', re.I)
 SENT = re.compile(r'[⟦⟧]|\{\{MINNER\||\{\{MOUTER\|')
 INNER = re.compile(r'\{\{[^{}]*\}\}')
@@ -55,8 +56,8 @@ INNER = re.compile(r'\{\{[^{}]*\}\}')
 
 SIGNATURE = re.compile(r'^([A-Z])(?:(?i:\1){1,2})?(?: ij| iij)?$')  # A, Aa, Aaa (+ ij, iij): the gathering letter
 BLOCKLINE = re.compile(r'^(?:\{\{c\||\{\||\||\{\{nop\}\}|==|:)')  # centred, table, nop, heading, indented verse
-OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\||CHAP\.|''\d+\. )")  # ''12. Word.''] heads an annotation
-LEAD_NOTES = re.compile(r'^(?:\s|\{\{MarginNote\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\})*')
+OPENS_PARA = re.compile(r"^(?:\{\{c\||\{\{dropinitial|\{\{verseline\|\d+\|1\}\}\{\{di\||\{\||CHAP\.|''\d+\. )")  # ''12. Word.''] heads an annotation
+LEAD_NOTES = re.compile(r'^(?:\s|\{\{(?:MarginNote|outside R?L)\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\})*')
 
 
 def rh_cells(block):
@@ -104,8 +105,8 @@ def braces(t):
 
 
 def margin_notes(t):
-    """Yield the text of each {{MarginNote|...}}, nesting respected."""
-    for m in re.finditer(r'\{\{MarginNote\|', t):
+    """Yield the text of each {{MarginNote|...}}, {{outside L|...}} and {{outside RL|...}}, nesting respected."""
+    for m in re.finditer(r'\{\{(?:MarginNote|outside R?L)\|', t):
         depth, j = 1, m.end()
         while j < len(t) and depth:
             if t.startswith('{{', j):
@@ -178,6 +179,10 @@ def lint(d, ov=None):
             out.append(('E-tag', n, 'does not end with </noinclude>'))
         for m in TAGS.finditer(body):
             out.append(('E-tag', n, f'stray tag {m.group(0)!r}'))
+        if '{{outside' in body or '{{sidenotes' in t:
+            blocks_ = re.findall(r'<noinclude>(.*?)</noinclude>', t, re.S)
+            if len(blocks_) != 2 or '{{sidenotes begin}}' not in blocks_[0] or not blocks_[1].rstrip().endswith('{{sidenotes end}}'):
+                out.append(('E-margin', n, '{{outside …}} notes need {{sidenotes begin}} in the header and {{sidenotes end}} at the end of the footer'))
         blocks = re.findall(r'<noinclude>(.*?)</noinclude>', t, re.S)
         if not blocks or '{{rh|' not in blocks[0]:
             out.append(('W-header', n, 'no {{rh}} running head'))
@@ -220,6 +225,11 @@ def lint(d, ov=None):
         for m in SENT.finditer(t):
             out.append(('E-sentinel', n, f'leftover {m.group(0)!r} near …{near(t, m.start(), m.end())}'))
         for tpl in margin_notes(body):
+            if tpl.startswith('outside'):
+                note = re.sub(r'^outside R?L\|(?:1=)?', '', tpl)
+                if not INNER.sub('', re.sub(r'\{\{(?:lang\|[^|{}]*|sc)\|([^{}]*)\}\}', r'\1', note)).strip():
+                    out.append(('E-margin', n, 'empty margin note'))
+                continue
             if not (re.search(r'\|margin=(left|right)\b', tpl) and re.search(r'\|margin-width=\d+\b', tpl) and '|text=' in tpl):
                 out.append(('E-margin', n, f'malformed margin note: {tpl[:70]!r}'))
             elif not INNER.sub('', re.sub(r'\{\{(?:lang\|[^|{}]*|sc)\|([^{}]*)\}\}', r'\1', tpl.split('|text=', 1)[1])).strip():
@@ -268,7 +278,7 @@ def lint(d, ov=None):
                             j += 1
                     tmpl = para[pos:j]
                     pos = j
-                    if in_ital and (tmpl.startswith('{{MarginNote') or "''" in tmpl):
+                    if in_ital and (tmpl.startswith(('{{MarginNote', '{{outside')) or "''" in tmpl):
                         out.append(('E-tpl-italic', n, f'template inside unclosed italics near …{near(para, pos - len(tmpl), pos)}'))
                 elif para.startswith("'''''", pos):
                     in_ital = not in_ital
@@ -291,16 +301,16 @@ def lint(d, ov=None):
 
         # verse sequence and marks
         for m in VERSE.finditer(body):
-            ch, v = int(m.group(1)), int(m.group(2))
+            ch, v = int(m.group(1) or m.group(3)), int(m.group(2) or m.group(4))
             if ch != last_ch:
                 if v != 1:
                     out.append(('E-verse', n, f'chapter {ch} starts at verse {v}'))
             elif v != last_v + 1:
                 out.append(('E-verse', n, f'{ch}:{v} follows {ch}:{last_v}'))
             last_ch, last_v = ch, v
-            after = body[m.end():m.end() + 3]
-            if '†' in after:
-                out.append(('W-mark', n, f'{ch}:{v} has stray † after the verse number'))
+            # the print sets † at every verse start but a chapter's first, under its drop initial (§2.1)
+            if m.group(3) and not body.startswith(('†', '{{di|'), m.end()):
+                out.append(('W-mark', n, f'{ch}:{v} lacks the print\'s † after the verse number'))
 
         # spacing and quotes
         for lineno, line in enumerate(body.split('\n'), 1):
@@ -311,7 +321,7 @@ def lint(d, ov=None):
                 plain = INNER.sub('X', plain)
             for m in re.finditer(r'\S  +\S|\s[,.;:?!)]|\(\s', plain):
                 out.append(('W-space', n, f'{m.group(0)!r} near …{near(plain, m.start(), m.end())}'))
-        for m in re.finditer(r'\s\{\{MarginNote\|(?:[^{}]|\{\{[^{}]*\}\})*\}\}[,.;:?!)]', body):
+        for m in re.finditer(r'\s\{\{(?:MarginNote|outside R?L)\|(?:[^{}]|\{\{[^{}]*\}\})*\}\}[,.;:?!)]', body):
             out.append(('W-space', n, f'space before a margin note that precedes punctuation near …{near(body, m.start(), m.start() + 1)}'))
         flat = body
         while INNER.search(flat):

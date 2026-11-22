@@ -26,9 +26,9 @@ Enforced by: review (no code)
 
 ## 2. The owner's editorial removals (the only ones)
 
-### 2.1 No † after verse numbers
+### 2.1 The verse-start † is kept
 
-The print's verse-start † is left out, because the verse numbers can't sit in the margin once the text reflows. Every other † stays (§4.8).
+The print sets † at the start of every verse but a chapter's first, which opens with the drop initial. In the sidenotes format (§5.3) the page keeps it: `{{verseline|1|2}}† Abraham begat`. The owner reversed the earlier removal on 2026-11-22. Pages still in the old format (`{{verse|…}}`, no †) get it when they move to sidenotes. Every other † stays too (§4.8).
 
 Enforced by: `W-mark`
 
@@ -138,7 +138,7 @@ Enforced by: `W-rh-caps`, `W-header`
 
 ### 4.6 Drop initials
 
-A chapter's woodcut initial is `{{dropinitial|…}}`, carrying the verse marker, with the rest of the word in small caps: `{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} booke`.
+A chapter's woodcut initial is `{{dropinitial|…}}`, carrying the verse marker, with the rest of the word in small caps: `{{dropinitial|T|fl={{verse|chapter=1|verse=1}}}}{{sc|He}} booke`. In the sidenotes format (§5.3) the verse marker stands before it and the initial is `{{di|…}}`: `{{verseline|1|1}}{{di|T}}{{sc|He}} booke`.
 
 Enforced by: `dropinitial`
 
@@ -158,7 +158,7 @@ Enforced by: `star`, `quad`, `bar`, `sup_bar`, `tack`, `dagger`, `note_mark`
 
 ### 5.1 Page skeleton
 
-A page is `<noinclude><pagequality level="1" user="" />{{rh|…}}</noinclude>`, then the body, then `<noinclude>{{continues|…}}</noinclude>`. Braces are balanced. There are no stray `<i>`, `<b>`, `<br>` or data tags (`<na>`, `<cr>`, `<alt>`) and no generator sentinels (`⟦ ⟧`, `{{MINNER|`, `{{MOUTER|`).
+A page is `<noinclude><pagequality level="1" user="" />{{rh|…}}</noinclude>`, then the body, then `<noinclude>{{continues|…}}</noinclude>`. A page in the sidenotes format (§5.3) opens its header with `{{sidenotes begin}}` and ends its footer with `{{sidenotes end}}` on its own line. Braces are balanced. There are no stray `<i>`, `<b>`, `<br>` or data tags (`<na>`, `<cr>`, `<alt>`) and no generator sentinels (`⟦ ⟧`, `{{MINNER|`, `{{MOUTER|`).
 
 Enforced by: `E-tag`, `E-brace`, `E-sentinel`
 
@@ -170,13 +170,15 @@ Enforced by: `E-status`, wikipost
 
 ### 5.3 Margin notes
 
-Margin notes are `{{MarginNote|margin=left|margin-width=65|text=…}}` (or `margin=right`), never empty. On recto (odd) pages the inner margin is left and the outer right; on verso pages it's the reverse. Citations go in the inner margin; glosses, summaries and lectionary notes go in the outer. A margin `*` before a citation stays in the note (`* Mr. 12, 18.`). Line breaks inside `text=` are `{{br}}`. Leave no space before the template when punctuation follows it.
+The pages are moving to the sidenotes format of the validated 1610 Douai Old Testament pages ([Page:1610_Douai_Old_Testament.pdf/336](https://en.wikisource.org/wiki/Page:1610_Douai_Old_Testament.pdf/336), 337). `books.json` `sidenotes: [first, last]` names the pages already moved (Matthew 1, pages 31–33, since 2026-11-22). On those pages each note is `{{outside L|…}}` (left margin) or `{{outside RL|…}}` (right), set straight after its anchor in the text, as the print shows it: a citation after its `*` (`the * {{outside L|''Luc. 3, 31.''}} generation`), a gloss after its `∷`, which the print repeats in the note (`∷ {{outside RL|∷ ''de qua''.}} of vvhom`). A note the print sets without an anchor (lectionary notes, headings, the annotations' side notes such as `Virginitie preferred`) has none. The side follows the print, note by note: by default as below, with the exceptions in `overrides.py` (`INNER_NOTES`, `OUTER_NOTES`). The text goes in `1=` when it holds a top-level `=`, and a line that would open with `*` or `#` starts with `<nowiki/>`.
+
+On the other pages, margin notes are `{{MarginNote|margin=left|margin-width=65|text=…}}` (or `margin=right`), never empty. On recto (odd) pages the inner margin is left and the outer right; on verso pages it's the reverse. Citations go in the inner margin; glosses, summaries and lectionary notes go in the outer. A margin `*` before a citation stays in the note (`* Mr. 12, 18.`). Line breaks inside `text=` are `{{br}}`. Leave no space before the template when punctuation follows it.
 
 Enforced by: `E-margin`, `margin_note`
 
 ### 5.4 Verse markers
 
-Verses are `{{verse|chapter=N|verse=M}}` in the print's order and numbering, with none repeated or skipped.
+Verses are `{{verse|chapter=N|verse=M}}` (in the sidenotes format `{{verseline|N|M}}`, followed by the print's †, §2.1) in the print's order and numbering, with none repeated or skipped.
 
 Enforced by: `verse`, `E-verse`
 

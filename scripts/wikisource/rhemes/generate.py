@@ -14,7 +14,7 @@ from pathlib import Path
 from .sources import book_pages
 from . import config, paths, sources, text
 from .overrides import (ARGUMENT_TITLES, ARGUMENT_BREAKS, ARGUMENT_SPLIT, INNER_ARGUMENT_NOTES, SUMMARY_STARS,
-                        SIDE_SC, PAREN_TITLES, OUTER_NOTES, CREND_AT, BARS, PAGE_STARTS, CATCHWORDS, SPLIT_WORDS,
+                        SIDE_SC, PAREN_TITLES, OUTER_NOTES, INNER_NOTES, CREND_AT, BARS, PAGE_STARTS, CATCHWORDS, SPLIT_WORDS,
                         MANUAL_PARAS, NO_PARAS)
 
 # Set by main(argv); the defaults let the module be imported (tests) without side effects.
@@ -44,6 +44,55 @@ norm = text.wiki_word_key
 
 def margin(side, text):
     return f'{{{{MarginNote|margin={side}|margin-width=65|text={text}}}}}'
+
+
+# The sidenotes format (books.json "sidenotes": [first, last]), after the validated 1610 Douai
+# Old Testament pages (Page:1610_Douai_Old_Testament.pdf/336, /337): {{sidenotes begin}} …
+# {{sidenotes end}} around the page, {{verseline|ch|v}}† at each verse with the print's dagger,
+# and each note in {{outside L|…}} (left margin) or {{outside RL|…}} (right) right after its
+# anchor in the text ("the * {{outside L|''Luc. 3, 31.''}} generation"). A note the print sets
+# without an anchor (lectionary notes, headings, glosses like "Virginitie preferred") has none.
+_NOTE_SENT = r'\{\{M(?:INNER|OUTER)\|(?:[^{}]|\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\})*\}\}'
+_DROP_VERSE = re.compile(r'\{\{dropinitial\|([^{}|]*)((?:\|(?:image|imgsize)=[^{}|]*)*)'
+                         r'\|fl=\{\{verse\|chapter=(\d+)\|verse=(\d+)\}\}\}\}')
+
+
+def _positional(tpl_open, body, i):
+    """Add 1= to the {{outside …|…}} opening at i when its text has a top-level '=' (it would
+    otherwise be read as a named parameter)."""
+    depth, j = 1, i + len(tpl_open)
+    while j < len(body) and depth:
+        if body.startswith('{{', j):
+            depth, j = depth + 1, j + 2
+        elif body.startswith('}}', j):
+            depth, j = depth - 1, j + 2
+        else:
+            if depth == 1 and body[j] == '=':
+                return True
+            j += 1
+    return False
+
+
+def sidenotes_body(body, side_inner, side_outer):
+    """The page body in the sidenotes format (see above); the MINNER/MOUTER sentinels resolved."""
+    # the anchor (* or ∷) goes before its note, as the 1610 pages set it
+    body = re.sub(rf'((?:{_NOTE_SENT} ?)+)([*∷]) ?',
+                  lambda m: m.group(2) + ' ' + m.group(1).rstrip() + ' ', body)
+    body = _DROP_VERSE.sub(r'{{verseline|\3|\4}}{{di|\1\2}}', body)
+    body = re.sub(r'\{\{verse\|chapter=(\d+)\|verse=(\d+)\}\} ?', r'{{verseline|\1|\2}}† ', body)
+    tpl = {'left': '{{outside L|', 'right': '{{outside RL|'}
+    body = body.replace('{{MINNER|', tpl[side_inner]).replace('{{MOUTER|', tpl[side_outer])
+    for t in ('{{outside L|', '{{outside RL|'):
+        for i in reversed([m.start() for m in re.finditer(re.escape(t), body)]):
+            if _positional(t, body, i):
+                body = body[:i + len(t)] + '1=' + body[i + len(t):]
+    # a line opening with * or # would become a list
+    return re.sub(r'(?m)^([*#])', r'<nowiki/>\1', body)
+
+
+def sidenotes_page(wiki):
+    s = CFG.sidenotes
+    return bool(s) and s[0] <= wiki <= s[1]
 
 
 # Small caps. The data writes <sc>IESVS</sc>; the print sets a full capital and small
@@ -324,7 +373,8 @@ def render_verse(v, ch):
             return tag + '{{MINNER|' + n['text'] + '}}'
         if n.get('kind') in ('lectionary', 'head') or n.get('unmarked') or n.get('table_only'):
             return tag + '{{MOUTER|' + n['text'] + '}}'
-        return tag + '{{MOUTER|∷ ' + n['text'] + '}}∷ '
+        side = 'MINNER' if (BOOK, ch, v['verse'], m.group(1)) in INNER_NOTES else 'MOUTER'
+        return tag + '{{' + side + '|∷ ' + n['text'] + '}}∷ '
 
     # Citations at the very end of the verse are printed in the margin with no * in the text
     # (Matt 15:4 has two).
@@ -816,6 +866,9 @@ def main(argv):
         else:
             ital_carry = False
         body = end_body(body, b < len(S) and opens_para(S, b, paras))
+        sidenotes = sidenotes_page(wiki)
+        if sidenotes:
+            body = sidenotes_body(body, side_inner, side_outer)
         body = body.replace('{{MINNER|', '{{MarginNote|margin=' + side_inner + '|margin-width=65|text=')
         body = body.replace('{{MOUTER|', '{{MarginNote|margin=' + side_outer + '|margin-width=65|text=')
         catch = re.sub(r'\{\{(?:[^{}]|\{\{[^{}]*\}\})*\}\}|[‖∷*†]', '', DROPI.sub(r'\1', SENT.sub('', S[b]['text']))).strip() if b < len(S) else CATCHWORDS.get((BOOK, wiki), '')
@@ -825,6 +878,9 @@ def main(argv):
             catch = CATCHWORDS.get((BOOK, wiki)) or (tail[-1].split()[-1] if tail else '')
         catch = CATCHWORDS.get((BOOK, wiki), catch)
         foot = footer(catch)
+        if sidenotes:
+            header = '{{sidenotes begin}}' + header
+            foot = (foot + '\n' if foot else '') + '{{sidenotes end}}'
         (OUT / f'{wiki}.wiki').write_text(unicodedata.normalize('NFC', '<noinclude><pagequality level="1" user="" />' + to_ls(rh_small_caps(header)) +
                                           # the print's ‖ is a small raised mark; ″ read as quotes
                                           '</noinclude>' + to_ls(sc_wiki(body).replace('‖', '{{sup|‖}}')) + '<noinclude>' + to_ls(sc_wiki(foot)) + '</noinclude>\n'))

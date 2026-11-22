@@ -51,6 +51,11 @@ PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in r
 # though they look like citations: (book, chapter, annotation index, note index), checked
 # on the scans. Greek words on page 107 (26:26 τὸν ἄρτον, 26:28 ἐκχυνόμενον); the Greek
 # notes on pages 36, 44 and 58 do sit in the inner margin.
+# Verse glosses the print sets in the INNER margin, beside the citations, though they carry
+# the gloss mark ∷: (book, chapter, verse, note label), checked on the scans. Matt 1:16
+# "∷ de qua." sits in the right (inner) margin of page 4 (wiki 32), not the outer.
+INNER_NOTES = {('matthew', 1, 16, '1')}
+
 OUTER_NOTES = {('matthew', 26, 5, 3), ('matthew', 26, 8, 0), ('john', 2, 3, 1), ('john', 2, 5, 0),
                ('john', 3, 0, 1), ('john', 3, 1, 0), ('john', 3, 1, 2), ('john', 4, 0, 1), ('john', 4, 0, 3),
                ('john', 4, 1, 1), ('john', 4, 1, 2), ('john', 6, 1, 1), ('john', 6, 1, 3), ('john', 6, 1, 5),
