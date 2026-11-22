@@ -1,0 +1,53 @@
+<noinclude><pagequality level="3" user="Mathmitch7" />{{x-larger|{{rh|Lots inceſt.|Chap.xx.|Abraham in Gerar.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ {{sup|†}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>two daughters with him: for hee feared to dwell in Zoar, and he dwelt in a caue, he and his two daughters.
+
+{{verse|19|31}} And the firſt borne ſaide vnto the yonger, Our father is old, and there is not a man in the earth, to come in vnto vs, after the manner of all the earth.
+
+{{verse|19|32}} Come, let vs make our father drinke wine, and we will lye with him, that we may preſerue ſeed of our father.
+
+{{verse|19|33}} And they made their father drinke wine that night, ⁊ the firſt borne went in, and lay with her father: and he perceiued not, when ſhee lay downe, nor when ſhe aroſe.
+
+{{verse|19|34}} And it came to paſſe on the morrow, that the firſt borne ſaide vnto the yonger, Behold, I lay yeſternight with my father: let vs make him drinke wine this night alſo, and goe thou in, and lye with him, that we may preſerue ſeed of our father.
+
+{{verse|19|35}} And they made their father drinke wine that night alſo, and the yonger aroſe, and lay with him: and he perceiued not, when ſhe lay downe, nor when ſhe aroſe.
+
+{{verse|19|36}} Thus were both the daughters of Lot with childe by their father.
+
+{{verse|19|37}} And the firſt borne bare a ſonne, and called his name Moab: the ſame {{smaller|is}} the father of the Moabites vnto this day.
+
+{{verse|19|38}} And the yonger, ſhe alſo bare a ſonne, and called his name Ben-ammi: the ſame {{smaller|is}} the father of the children of Ammon, vnto this day.
+
+==={{Chapter|20|CHAP. XX.}}===
+
+{{smaller block|[[#20:1|1]] Abraham ſoiourneth at Gerar, [[#20:2|2]] denieth his wife, and loſeth her. [[#20:3|3]] Abimelech is reproued for her in a dreame. [[#20:9|9]] He rebuketh Abraham, [[#20:14|14]] reſtoreth Sarah, [[#20:16|16]] and reprooueth her. [[#20:17|17]] Hee is healed by Abrahams prayer.}}
+
+{{Verse|20|1|notext=}} {{dropinitial|A|image=King James Bible (1611) page A3v (A).png|imgsize=100px}}Nd Abraham iourneyed from thence, toward the South-Countrey, and dwelled betweene Cadeſh and Shur, and ſoiourned in Gerar.
+
+{{verse|20|2}} And Abraham ſaid of Sarah his wife, She is my ſiſter: And Abimelech King of Gerar ſent, and tooke Sarah.
+
+{{verse|20|3}} but God came to Abimelech in a dreame by night, and ſaid to him, Behold, thou {{smaller|art but}} a dead man, for the woman which thou haſt taken: for ſhee is {{sup|†}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. married to an husband.''}} a mans wife.
+
+{{verse|20|4}} But Abimelech had not come neere her: and he ſaid, LORD, wilt thou ſlay alſo a righteous nation?
+
+{{verse|20|5}} Said he not vnto me, She is ſiſter? and ſhe, euen ſhe herſelfe ſaid, Hee is my brother: in the ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, ſimplicitie or ſinceritie.''}} integritie of my heart, and innocencie of my hands haue I done this.
+
+{{verse|20|6}} And God ſaide vnto him in a dreame, Yea, I know that thou didſt this in the integritie of thy heart: for I alſo withheld thee from ſinning againſt mee, therefore ſuffered I thee not to touch her.
+
+{{verse|20|7}} Now therefore reſtore the man {{smaller|his}} wife: for he {{smaller|is}} a Prophet, and he ſhal pray for thee, and thou ſhalt liue: and if thou reſtore {{smaller|her}} not, know thou that thou ſhalt ſurely die, thou, and all that {{smaller|are}} thine.
+
+{{verse|20|8}} Therefore Abimelech roſe earely in the morning, and called all his ſeruants, and told all theſe things in their eares: and the men were ſore afraid.
+
+{{verse|20|9}} Then Abimelech called Abraham, and ſaid vnto him, What haſt thou done vnto vs? and what haue I offended thee, that thou haſt brought on me, and on my kingdome a great ſinne? thou haſt done deeds vnto mee that ought not to be done.
+
+{{verse|20|10}} And Abimelech ſaid vnto Abraham, What ſaweſt thou, that thou haſt done this thing?
+
+{{verse|20|11}} And Abraham ſaid, Becauſe I thought, Surely the feare of God {{smaller|is}} not in this place: and they will ſlay mee for my wiues ſake.
+
+{{verse|20|12}} And yet indeed {{smaller|ſhee}} {{smaller|is}} my ſiſter: ſhe {{smaller|is}} the daughter of my father, but not the daughter of my mother; and ſhee became my wife.
+
+{{verse|20|13}} And it came to paſſe when God cauſed me to wander from my fathers houſe, that I ſaid vnto her, This {{smaller|is}} thy kindneſſe which thou ſhalt ſhew vnto me; at euery place whither wee ſhall come, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* [[#12:13|Chap. 12. 13.]]}} ſay of me, He {{smaller|is}} my brother.
+
+{{verse|20|14}} And Abimelech tooke ſheepe and oxen, and men-ſeruants, and women ſeruants, and gaue {{smaller|them}} vnto Abraham, and reſtored him Sarah his wife.
+
+{{verse|20|15}} And Abimelech ſaid, Behold, my land {{smaller|is}} before thee; dwel {{sup|†}}{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. as ''is'' good in thine eyes.''}} where it pleaſeth thee.
+
+{{verse|20|16}} And vnto Sarah hee ſaid, Behold, I haue giuen thy brother a thouſand {{smaller|pieces}} of ſiluer: behold, he {{smaller|is}} to thee a couering of the eyes, vnto all that are<noinclude>{{rh|||with}}</noinclude>
