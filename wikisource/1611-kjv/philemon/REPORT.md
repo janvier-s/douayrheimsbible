@@ -1,17 +1,20 @@
-# KJV 1611 Wikisource — Philemon pilot (draft, nothing posted)
+# KJV 1611 Wikisource — Philemon pilot (posted 2026-11-22)
 
 ## What this is
 
-Draft corrections to the two existing scan-backed `Page:` pages that carry
-Philemon in the [Bible (King James Version, 1611)](https://en.wikisource.org/wiki/Bible_(King_James_Version,_1611))
+Scan-backed corrections to the two existing `Page:` pages that carry Philemon
+in the [Bible (King James Version, 1611)](https://en.wikisource.org/wiki/Bible_(King_James_Version,_1611))
 edition:
 
-- `Page:BibleKJV1611-024.pdf/19` (currently quality 3)
-- `Page:BibleKJV1611-024.pdf/20` (currently quality 2)
+- `Page:BibleKJV1611-024.pdf/19` — posted as [rev 16482015](https://en.wikisource.org/w/index.php?title=Page:BibleKJV1611-024.pdf/19&oldid=16482015)
+- `Page:BibleKJV1611-024.pdf/20` — posted as [rev 16482016](https://en.wikisource.org/w/index.php?title=Page:BibleKJV1611-024.pdf/20&oldid=16482016)
 
-The draft files are `Page-BibleKJV1611-024.pdf-19.wiki` and
-`Page-BibleKJV1611-024.pdf-20.wiki` in this folder. **Nothing was posted to
-Wikisource** and no page quality level was changed.
+Both edits were made under the `Sokonok@douayrheims` account with the summary
+"Proofread: correct 11 scan-backed transcription errors in Philemon (1611 KJV)".
+The files `Page-BibleKJV1611-024.pdf-19.wiki` and
+`Page-BibleKJV1611-024.pdf-20.wiki` in this folder are the exact text that was
+posted. Page quality levels were deliberately left unchanged (3 and 2
+respectively), so the original proofreader attribution remains intact.
 
 ## Data updates (this session)
 
@@ -65,7 +68,7 @@ checked against the site's Original-1611 text and the scan-backed Wikisource tra
 | 19 | 18 | `but that on mine account` | `put that on mine account` | Scan OCR `put that ou mine ac-count` |
 | 19 | 19 | `to thee thou oweſt` | `to thee how thou oweſt` | Scan OCR has an intervening word (`folb`); local text has `how` |
 | 20 | 21 | `more that I ſay` | `more then I ſay` | Scan OCR `moze then lay` |
-| 20 | 23 | `Epaphias` | `Epaphras` | Local 1611 text; scan OCR `@paphias` (noisy) — **needs human confirmation** |
+| 20 | 23 | `Epaphias` | `Epaphras` | Local 1611 text; kingjamesbibleonline.org's 1611 verse page and three other 1611 witnesses read *Epaphras*; scan OCR `@paphias` is blackletter *r* read as *i* |
 | 20 | 25 | `with you ſpirit` | `with your ſpirit` | Scan OCR `lith pour (pirit` = "with your ſpirit" |
 
 ## Deliberately not changed
