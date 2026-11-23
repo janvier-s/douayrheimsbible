@@ -1,0 +1,14 @@
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|||425}}</noinclude>{{c|{{xx-larger|THE FIRST EPISTLE}}}}
+{{c|{{x-larger|OF PAVL TO THE}}}}
+{{c|{{larger|CORINTHIANS.}}}}
+
+{{outside R|{{sc|The}} 1. part. Of Schi{{ls}}ms that were about their baptizers & preachers.}}{{c|{{larger|{{sc|Chap. I.}}}}}}
+
+{{c|''After {{ls}}alutation, 4 hauing acknowledged the graces of their Churche, 10 he dehorteth them from their Schi{{ls}}matical boa{{ls}}ting again{{ls}}t one an other in their baptizers (telling them that they mu{{ls}}t boa{{ls}}t onely in Chri{{ls}}t for their Bapti{{ls}}me) 17 and in their preachers, vvho had the vvi{{ls}}edom of vvordes: telling them that it is the preaching of the Cro{{ls}}{{ls}}e, vvhereby God {{ls}}aueth the world, and vvherein onely Chri{{ls}}tians {{ls}}hould boa{{ls}}t: 26 {{ls}}eing God of purpo{{ls}}e cho{{ls}}e the contemptible, that {{ls}}o him {{ls}}elf might haue the glorie.''}}
+
+{{verse|chapter=1|verse=1|align=float}}{{dropinitial|P}}{{sc|Avl}} {{outside R|The Epi{{ls}}tle vpon the 10. Sunday after Penteco{{ls}}t.}}called to be an Apo{{ls}}tle of {{sc|Iesvs}} Chri{{ls}}t, by the vvil of God, and Só{{ls}}thenes a brother, {{verse|chapter=1|verse=2|align=float}}† to the Church of God that is at Corinth, to the {{ls}}anctified in Chri{{ls}}t {{sc|Iesvs}}, called to be {{ls}}aincts, vvith al that inuocate the name of our Lord {{sc|Iesvs}} Chri{{ls}}t in euery place of theirs and ours. {{verse|chapter=1|verse=3|align=float}}† Grace to you and peace from God our father and our Lord {{sc|Iesvs}} Chri{{ls}}t.
+
+{{verse|chapter=1|verse=4|align=float}}† I giue thankes to my God alvvaies for you for the grace of God that is giuen you in Chri{{ls}}t {{sc|Iesvs}}, {{verse|chapter=1|verse=5|align=float}}† that in al things you be made riche in him, in al vtterance, and {{sup|‖}} in al knovvledge, {{verse|chapter=1|verse=6|align=float}}† (as the te{{ls}}timonie of Chri{{ls}}t is confirmed in you,) {{verse|chapter=1|verse=7|align=float}}† {{ls}}o that nothing is vvanting to you in any grace, expecting the reuelation of our Lord {{sc|Iesvs}} Chri{{ls}}t, {{verse|chapter=1|verse=8|align=float}}† vvho al{{ls}}o vvil confirme you vnto the end vvithout crime, in the day of the comming of our Lord {{sc|Iesvs}} Chri{{ls}}t. {{verse|chapter=1|verse=9|align=float}}† God is faithful: by vvhom you are called into the {{ls}}ocietie of his {{ls}}onne {{sc|Iesvs}} Chri{{ls}}t our Lord.
+
+{{verse|chapter=1|verse=10|align=float}}† And I be{{ls}}eeche you brethren by the name of our Lord {{sc|Iesvs}} Chri{{ls}}t, that you al {{ls}}ay one thing, and that there be no {{ls}}chi{{ls}}mes among you: but that you be perfect in one {{ls}}en{{ls}}e, & in<noinclude>{{continues|one}}
+{{sidenotes end}}</noinclude>

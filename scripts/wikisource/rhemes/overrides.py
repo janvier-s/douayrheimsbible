@@ -5,7 +5,10 @@ Plain per-book values are in books.json (config.py). Moved verbatim from generat
 ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'THE ACTES OF THE APOSTLES.')],
                    ('romans', 1): [('x-larger', '❧ THE ARGVMENT OF THE'), ('larger', 'EPISTLES IN GENERAL.')],
                    ('romans', 0): [('larger', 'THE TIME VVHEN THE EPISTLE'), ('larger', 'TO THE ROMANES VVAS VVRITTEN,'),
-                                   ('larger', "''and the Argument thereof.''")]}
+                                   ('larger', "''and the Argument thereof.''")],
+                   ('1-corinthians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
+                                          ('larger', 'FIRST EPISTLE TO THE'),
+                                          ('larger', 'CORINTHIANS.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
@@ -127,6 +130,7 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('luke', 178): "''24. The''", ('luke', 196): "''21. To''", ('luke', 200): "''27. Bleſſed''",
               ('luke', 204): "''11. Be''", ('luke', 241): 'THE',
               ('acts', 316): 'THE', ('acts', 401): 'THE', ('romans', 407): 'Gal. 4.', ('romans', 409): 'THE', ('romans', 418): 'VVHAT', ('romans', 451): 'THE',
+              ('1-corinthians', 452): 'THE', ('1-corinthians', 496): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 

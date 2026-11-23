@@ -325,6 +325,8 @@ def build_stream(book, ann):
                 ch_note = (chap.get('summary_notes') or [{}])[0].get('text', '')
                 note_str = ('{{MOUTER|' + finish(ch_note) + '}}\n') if ch_note else ''
                 title_wiki = note_str + '{{c|{{xx-larger|THE EPISTLE OF}}}}\n{{c|{{x-larger|PAVL THE APOSTLE}}}}\n{{c|{{larger|TO THE ROMANES.}}}}'
+            elif BOOK == '1-corinthians':
+                title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             else:
                 title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n{{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             tt = tokens_of(title_wiki, block=True, ch=ch, kind='title')

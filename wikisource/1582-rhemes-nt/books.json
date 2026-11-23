@@ -84,5 +84,17 @@
 		"argument_roman": true,
 		"scripture_pages": 42,
 		"running": ["THE EPISTLE OF S. PAVL", "TO THE ROMANES."]
+	},
+	"1-corinthians": {
+		"first": 452,
+		"last": 496,
+		"ornaments": false,
+		"golden": false,
+		"ocr": "transkribus",
+		"title_end": "CORINTHIANS.",
+		"argument_page": 452,
+		"argument_roman": true,
+		"scripture_pages": 44,
+		"running": ["THE FIRST EPISTLE OF S. PAVL", "TO THE CORINTHIANS."]
 	}
 }

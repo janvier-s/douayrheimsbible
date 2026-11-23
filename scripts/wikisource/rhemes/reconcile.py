@@ -24,7 +24,7 @@ from .jsonfmt import write_like
 from .wikipost import norm
 
 REPO, WS, PAGES, MANIFEST = paths.REPO, paths.WS, paths.PAGES, paths.MANIFEST
-LIVE_BASE = '759bf68c'  # the commit whose pages equal the live pages: front-matter heads posted 2026-11-21 (pages 2-24)
+LIVE_BASE = '446c2a8f'  # the commit whose pages equal the live pages: sidenotes format posted 2026-11-22 (444 pages)
 
 
 def generate_book(book, out, ornaments=None):
@@ -143,6 +143,8 @@ def cmd_diff(book, jsonl=None):
             if not g.exists():
                 print(f'page {n}: not generated')
                 continue
+            if not c.exists():
+                continue
             d = word_diffs(c.read_text(), g.read_text(), n)
             same += not d
             diffs += d
@@ -244,9 +246,10 @@ def _ladder(book, out):
         gen = generate_book(book, Path(tmp) / book)
         for n in range(cfg['first'], cfg['last'] + 1):
             g = gen / f'{n}.wiki'
-            if not g.exists():
+            c_path = PAGES / f'{n}.wiki'
+            if not g.exists() or not c_path.exists():
                 continue
-            for c in ladder.conflicts((PAGES / f'{n}.wiki').read_text(), g.read_text(), n, unaligned):
+            for c in ladder.conflicts(c_path.read_text(), g.read_text(), n, unaligned):
                 decisions.append(ladder.decide(c, ladder.locate_xml(c, tokens),
                                                ladder.readings(tk.get(n), c.committed, c.generated, c.before, c.after, round_s=False),
                                                ladder.readings(ts.get(n), c.committed, c.generated, c.before, c.after),

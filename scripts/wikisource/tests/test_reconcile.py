@@ -95,7 +95,7 @@ def test_frozen_marked():
     for b, cfg in books.items():
         assert not FROZEN & set(range(cfg['first'], cfg['last'] + 1)), b
     covered = FROZEN.union(*(range(c['first'], c['last'] + 1) for c in books.values()))
-    assert covered == set(range(1, 452))  # every page is generated or frozen
+    assert covered == set(range(1, max(c['last'] for c in books.values()) + 1))  # every page is generated or frozen
 
 
 @needs_ocr
