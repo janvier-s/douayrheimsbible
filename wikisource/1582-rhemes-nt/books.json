@@ -135,7 +135,7 @@
 		"first": 553,
 		"last": 562,
 		"ornaments": false,
-		"golden": false,
+		"golden": true,
 		"ocr": "transkribus",
 		"title_end": "PHILIPPIANS.",
 		"argument_page": 553,
