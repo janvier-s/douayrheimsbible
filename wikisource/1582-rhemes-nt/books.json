@@ -89,7 +89,7 @@
 		"first": 452,
 		"last": 496,
 		"ornaments": false,
-		"golden": false,
+		"golden": true,
 		"ocr": "transkribus",
 		"title_end": "CORINTHIANS.",
 		"argument_page": 452,
