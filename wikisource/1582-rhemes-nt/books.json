@@ -111,7 +111,7 @@
 		"first": 522,
 		"last": 539,
 		"ornaments": false,
-		"golden": false,
+		"golden": true,
 		"ocr": "transkribus",
 		"title_end": "GALATIANS.",
 		"argument_page": 522,
