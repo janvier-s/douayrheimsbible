@@ -23,7 +23,7 @@ from .jsonfmt import write_like
 
 BOOK_DIV = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John',
             'acts': 'Acts of the Apostles', 'romans': 'Romans', '1-corinthians': '1 Corinthians',
-            '2-corinthians': '2 Corinthians'}
+            '2-corinthians': '2 Corinthians', 'galatians': 'Galatians'}
 LADDER_CLASSES = {'ls:ss', 'ls:other', 'macron', 'text'}
 
 

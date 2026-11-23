@@ -32,7 +32,9 @@ PAGE_H, PAGE_W = 2710, 1897
 OUT_DEFAULT = Path.home() / 'facsimiles/transkribus/pages'
 # (strip book, page id) -> role. Arguments get '<book>-argument' so book_pages skips them.
 ROLE_OVERRIDES = {('mark', '16/3'): 'luke-argument', ('mark', 'argument/pdf114'): 'mark-argument',
-                  **{('b', f'pdf{p}'): '2-corinthians' for p in range(497, 503)}}
+                  **{('b', f'pdf{p}'): '2-corinthians' for p in range(497, 503)},
+                  ('c', 'pdf522'): 'galatians-argument',
+                  ('c', 'pdf540'): 'ephesians'}
 PDF_OF = {('mark', '16/3'): 161, ('mark', 'argument/pdf114'): 114}
 
 

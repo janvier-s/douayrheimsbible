@@ -8,7 +8,10 @@ ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'TH
                                    ('larger', "''and the Argument thereof.''")],
                    ('1-corinthians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
                                           ('larger', 'FIRST EPISTLE TO THE'),
-                                          ('larger', 'CORINTHIANS.')]}
+                                          ('larger', 'CORINTHIANS.')],
+                   ('galatians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
+                                  ('larger', 'EPISTLE OF S. PAVL TO'),
+                                  ('larger', 'THE GALATIANS.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
@@ -132,6 +135,7 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('acts', 316): 'THE', ('acts', 401): 'THE', ('romans', 407): 'Gal. 4.', ('romans', 409): 'THE', ('romans', 418): 'VVHAT', ('romans', 451): 'THE',
               ('1-corinthians', 452): 'THE', ('1-corinthians', 496): 'THE',
               ('2-corinthians', 521): 'THE',
+              ('galatians', 522): 'THE', ('galatians', 539): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
