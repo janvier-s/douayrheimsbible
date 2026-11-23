@@ -329,7 +329,7 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK == '2-corinthians':
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
-            elif BOOK == 'galatians':
+            elif BOOK in ('galatians', 'ephesians'):
                 title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             else:
                 title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n{{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'

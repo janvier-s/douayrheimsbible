@@ -118,5 +118,17 @@
 		"argument_roman": true,
 		"scripture_pages": 17,
 		"running": ["THE EPISTLE OF S. PAVL", "TO THE GALATIANS."]
+	},
+	"ephesians": {
+		"first": 540,
+		"last": 552,
+		"ornaments": false,
+		"golden": false,
+		"ocr": "transkribus",
+		"title_end": "EPHESIANS.",
+		"argument_page": 540,
+		"argument_roman": true,
+		"scripture_pages": 12,
+		"running": ["THE EPISTLE OF S. PAVL", "TO THE EPHESIANS."]
 	}
 }

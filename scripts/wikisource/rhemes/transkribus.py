@@ -34,7 +34,9 @@ OUT_DEFAULT = Path.home() / 'facsimiles/transkribus/pages'
 ROLE_OVERRIDES = {('mark', '16/3'): 'luke-argument', ('mark', 'argument/pdf114'): 'mark-argument',
                   **{('b', f'pdf{p}'): '2-corinthians' for p in range(497, 503)},
                   ('c', 'pdf522'): 'galatians-argument',
-                  ('c', 'pdf540'): 'ephesians'}
+                  ('c', 'pdf540'): 'ephesians-argument',
+                  ('c', 'pdf553'): 'philippians-argument',
+                  ('c', 'pdf554'): 'philippians'}
 PDF_OF = {('mark', '16/3'): 161, ('mark', 'argument/pdf114'): 114}
 
 
