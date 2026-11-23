@@ -24,7 +24,8 @@ State on 2026-11-21. Update it by hand when a book's state changes.
 | 540–552 | Ephesians (Argument 540)                    | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
 | 553–562 | Philippians (Argument 553)                  | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
 | 563–572 | Colossians (Argument 563)                   | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
-| 573–    | 1 Thessalonians to the Apocalypse           | partial: NT-wide passes                    | no          | no        | no               |
+| 573–580 | 1 Thessalonians (Argument 573)              | yes (2026-11-24)                           | yes, golden | no        | no               |
+| 581–    | 2 Thessalonians to the Apocalypse           | partial: NT-wide passes                    | no          | no        | no               |
 
 The NT-wide passes fixed one class of error across the whole NT without reading each book in full: variant readings, lectionary notes (vpon → vpō), annotation margin notes, and a few one-offs.
 

@@ -1,170 +1,222 @@
 {
-	"matthew": {
-		"first": 31,
-		"last": 113,
-		"ornaments": false,
-		"golden": true,
-		"title_end": "DING TO MATTHEW.",
-		"running": ["THE GOSPEL", "ACCORDING TO S. MATTHEW."],
-		"holy_week": {
-			"first": 86,
-			"last": 113,
-			"skip": [95, 107]
-		}
-	},
-	"mark": {
-		"first": 114,
-		"last": 160,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "DING TO MARKE.",
-		"argument_page": 114,
-		"first_head_cha": true,
-		"running": ["THE GOSPEL", "ACCORDING TO S. MARKE."],
-		"holy_week": {
-			"first": 144,
-			"last": 160,
-			"skip": []
-		}
-	},
-	"luke": {
-		"first": 161,
-		"last": 241,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "DING TO LVKE.",
-		"argument_page": 161,
-		"first_head_cha": true,
-		"running": ["THE GOSPEL", "ACCORDING TO S. LVKE."],
-		"holy_week": {
-			"first": 222,
-			"last": 237,
-			"skip": [233, 234]
-		}
-	},
-	"john": {
-		"first": 242,
-		"last": 308,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "DING TO IOHN.",
-		"argument_page": 242,
-		"first_head_cha": true,
-		"running": ["THE GOSPEL", "ACCORDING TO S. IOHN."],
-		"holy_week": {
-			"first": 282,
-			"last": 307,
-			"skip": [289, 304, 305]
-		}
-	},
-	"acts": {
-		"first": 314,
-		"last": 401,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "APOSTLES.",
-		"argument_page": 314,
-		"argument_roman": true,
-		"scripture_pages": 85,
-		"running": ["THE ACTES", "OF THE APOSTLES."]
-	},
-	"romans": {
-		"first": 405,
-		"last": 451,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "TO THE ROMANES.",
-		"argument_page": 405,
-		"argument_intros": [1, 0],
-		"argument_roman": true,
-		"scripture_pages": 42,
-		"running": ["THE EPISTLE OF S. PAVL", "TO THE ROMANES."]
-	},
-	"1-corinthians": {
-		"first": 452,
-		"last": 496,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "CORINTHIANS.",
-		"argument_page": 452,
-		"argument_roman": true,
-		"scripture_pages": 44,
-		"running": ["THE FIRST EPISTLE OF S. PAVL", "TO THE CORINTHIANS."]
-	},
-	"2-corinthians": {
-		"first": 497,
-		"last": 521,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "CORINTHIANS.",
-		"scripture_pages": 25,
-		"running": ["THE SECOND EPISTLE OF S. PAVL", "TO THE CORINTHIANS."]
-	},
-	"galatians": {
-		"first": 522,
-		"last": 539,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "GALATIANS.",
-		"argument_page": 522,
-		"argument_roman": true,
-		"scripture_pages": 17,
-		"running": ["THE EPISTLE OF S. PAVL", "TO THE GALATIANS."]
-	},
-	"ephesians": {
-		"first": 540,
-		"last": 552,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "EPHESIANS.",
-		"argument_page": 540,
-		"argument_roman": true,
-		"scripture_pages": 12,
-		"running": ["THE EPISTLE OF S. PAVL", "TO THE EPHESIANS."]
-	},
-	"philippians": {
-		"first": 553,
-		"last": 562,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "PHILIPPIANS.",
-		"argument_page": 553,
-		"argument_roman": true,
-		"scripture_pages": 9,
-		"running": ["THE EPISTLE OF S. PAVL", "TO THE PHILIPPIANS."]
-	},
-	"colossians": {
-		"first": 563,
-		"last": 572,
-		"ornaments": false,
-		"golden": true,
-		"ocr": "transkribus",
-		"title_end": "COLOSSIANS.",
-		"argument_page": 563,
-		"argument_roman": true,
-		"scripture_pages": 9,
-		"running": ["THE EPISTLE OF S. PAVL", "TO THE COLOSSIANS."]
-	},
-	"1-thessalonians": {
-		"first": 573,
-		"last": 580,
-		"ornaments": false,
-		"golden": false,
-		"ocr": "transkribus",
-		"title_end": "THESSALONIANS.",
-		"argument_page": 573,
-		"argument_roman": true,
-		"scripture_pages": 7,
-		"running": ["THE FIRST EPISTLE OF S. PAVL", "TO THE THESSALONIANS."]
-	}
+  "matthew": {
+    "first": 31,
+    "last": 113,
+    "ornaments": false,
+    "golden": true,
+    "title_end": "DING TO MATTHEW.",
+    "running": [
+      "THE GOSPEL",
+      "ACCORDING TO S. MATTHEW."
+    ],
+    "holy_week": {
+      "first": 86,
+      "last": 113,
+      "skip": [
+        95,
+        107
+      ]
+    }
+  },
+  "mark": {
+    "first": 114,
+    "last": 160,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "DING TO MARKE.",
+    "argument_page": 114,
+    "first_head_cha": true,
+    "running": [
+      "THE GOSPEL",
+      "ACCORDING TO S. MARKE."
+    ],
+    "holy_week": {
+      "first": 144,
+      "last": 160,
+      "skip": []
+    }
+  },
+  "luke": {
+    "first": 161,
+    "last": 241,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "DING TO LVKE.",
+    "argument_page": 161,
+    "first_head_cha": true,
+    "running": [
+      "THE GOSPEL",
+      "ACCORDING TO S. LVKE."
+    ],
+    "holy_week": {
+      "first": 222,
+      "last": 237,
+      "skip": [
+        233,
+        234
+      ]
+    }
+  },
+  "john": {
+    "first": 242,
+    "last": 308,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "DING TO IOHN.",
+    "argument_page": 242,
+    "first_head_cha": true,
+    "running": [
+      "THE GOSPEL",
+      "ACCORDING TO S. IOHN."
+    ],
+    "holy_week": {
+      "first": 282,
+      "last": 307,
+      "skip": [
+        289,
+        304,
+        305
+      ]
+    }
+  },
+  "acts": {
+    "first": 314,
+    "last": 401,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "APOSTLES.",
+    "argument_page": 314,
+    "argument_roman": true,
+    "scripture_pages": 85,
+    "running": [
+      "THE ACTES",
+      "OF THE APOSTLES."
+    ]
+  },
+  "romans": {
+    "first": 405,
+    "last": 451,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "TO THE ROMANES.",
+    "argument_page": 405,
+    "argument_intros": [
+      1,
+      0
+    ],
+    "argument_roman": true,
+    "scripture_pages": 42,
+    "running": [
+      "THE EPISTLE OF S. PAVL",
+      "TO THE ROMANES."
+    ]
+  },
+  "1-corinthians": {
+    "first": 452,
+    "last": 496,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "CORINTHIANS.",
+    "argument_page": 452,
+    "argument_roman": true,
+    "scripture_pages": 44,
+    "running": [
+      "THE FIRST EPISTLE OF S. PAVL",
+      "TO THE CORINTHIANS."
+    ]
+  },
+  "2-corinthians": {
+    "first": 497,
+    "last": 521,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "CORINTHIANS.",
+    "scripture_pages": 25,
+    "running": [
+      "THE SECOND EPISTLE OF S. PAVL",
+      "TO THE CORINTHIANS."
+    ]
+  },
+  "galatians": {
+    "first": 522,
+    "last": 539,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "GALATIANS.",
+    "argument_page": 522,
+    "argument_roman": true,
+    "scripture_pages": 17,
+    "running": [
+      "THE EPISTLE OF S. PAVL",
+      "TO THE GALATIANS."
+    ]
+  },
+  "ephesians": {
+    "first": 540,
+    "last": 552,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "EPHESIANS.",
+    "argument_page": 540,
+    "argument_roman": true,
+    "scripture_pages": 12,
+    "running": [
+      "THE EPISTLE OF S. PAVL",
+      "TO THE EPHESIANS."
+    ]
+  },
+  "philippians": {
+    "first": 553,
+    "last": 562,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "PHILIPPIANS.",
+    "argument_page": 553,
+    "argument_roman": true,
+    "scripture_pages": 9,
+    "running": [
+      "THE EPISTLE OF S. PAVL",
+      "TO THE PHILIPPIANS."
+    ]
+  },
+  "colossians": {
+    "first": 563,
+    "last": 572,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "COLOSSIANS.",
+    "argument_page": 563,
+    "argument_roman": true,
+    "scripture_pages": 9,
+    "running": [
+      "THE EPISTLE OF S. PAVL",
+      "TO THE COLOSSIANS."
+    ]
+  },
+  "1-thessalonians": {
+    "first": 573,
+    "last": 580,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "title_end": "THESSALONIANS.",
+    "argument_page": 573,
+    "argument_roman": true,
+    "scripture_pages": 7,
+    "running": [
+      "THE FIRST EPISTLE OF S. PAVL",
+      "TO THE THESSALONIANS."
+    ]
+  }
 }
