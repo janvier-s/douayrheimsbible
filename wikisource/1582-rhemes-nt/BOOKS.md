@@ -20,7 +20,7 @@ State on 2026-11-21. Update it by hand when a book's state changes.
 | 405–451 | Romans (Epistles' Argument and own 405–409) | partial: NT-wide passes, Phase 1 reconcile | yes, golden | no        | yes (2026-11-21) |
 | 452–496 | 1 Corinthians (Argument 452)                | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
 | 497–521 | 2 Corinthians                               | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
-| 522–539 | Galatians (Argument 522)                    | yes (2026-11-23)                           | yes, golden | no        | no               |
+| 522–539 | Galatians (Argument 522)                    | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
 | 540–552 | Ephesians (Argument 540)                    | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
 | 553–    | Philippians to the Apocalypse               | partial: NT-wide passes                    | no          | no        | no               |
 
