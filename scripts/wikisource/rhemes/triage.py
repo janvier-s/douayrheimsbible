@@ -277,7 +277,7 @@ def collapse_splits(rows, c, xv, jv):
 LIVE = {'matthew': (31, 113), 'mark': (114, 160), 'luke': (161, 241), 'john': (242, 308),
         'acts': (309, 404), 'romans': (405, 451), '1-corinthians': (452, 496),
         '2-corinthians': (497, 521), 'galatians': (522, 539),
-        'ephesians': (540, 552)}  # wiki page ranges (BOOKS.md / git log)
+        'ephesians': (540, 552), 'philippians': (553, 562)}  # wiki page ranges (BOOKS.md / git log)
 TEXT_KINDS = {'w/vv', 'longs', 'macron', 'stray-letter', 'text', 'lig', 'spacing'}  # anchor-letter is expected, not checked
 
 

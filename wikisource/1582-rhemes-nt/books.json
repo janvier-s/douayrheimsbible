@@ -130,5 +130,17 @@
 		"argument_roman": true,
 		"scripture_pages": 12,
 		"running": ["THE EPISTLE OF S. PAVL", "TO THE EPHESIANS."]
+	},
+	"philippians": {
+		"first": 553,
+		"last": 562,
+		"ornaments": false,
+		"golden": false,
+		"ocr": "transkribus",
+		"title_end": "PHILIPPIANS.",
+		"argument_page": 553,
+		"argument_roman": true,
+		"scripture_pages": 9,
+		"running": ["THE EPISTLE OF S. PAVL", "TO THE PHILIPPIANS."]
 	}
 }

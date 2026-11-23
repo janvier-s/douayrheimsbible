@@ -14,7 +14,10 @@ ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'TH
                                   ('larger', 'THE GALATIANS.')],
                    ('ephesians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
                                   ('larger', 'EPISTLE OF S. PAVL TO'),
-                                  ('larger', 'THE EPHESIANS.')]}
+                                  ('larger', 'THE EPHESIANS.')],
+                   ('philippians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
+                                        ('larger', 'EPISTLE OF S. PAVL TO'),
+                                        ('larger', 'THE PHILIPPIANS.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
@@ -54,7 +57,10 @@ PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in r
                 *[('john', 13, i) for i in range(4)], *[('john', 14, i) for i in range(4)],
                 ('john', 15, 1), ('john', 15, 3), ('john', 15, 4), ('john', 15, 5),
                 *[('john', 16, i) for i in range(2)], *[('john', 17, i) for i in range(3)],
-                *[('john', 19, i) for i in range(1, 4)], *[('john', 20, i) for i in range(4)]}
+                *[('john', 19, i) for i in range(1, 4)], *[('john', 20, i) for i in range(4)],
+                ('philippians', 2, 0), ('philippians', 2, 1), ('philippians', 2, 2), ('philippians', 2, 4),
+                ('philippians', 3, 0), ('philippians', 3, 1), ('philippians', 3, 2),
+                ('philippians', 4, 0), ('philippians', 4, 1), ('philippians', 4, 2)}
 
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
@@ -140,6 +146,8 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('2-corinthians', 521): 'THE',
               ('galatians', 522): 'THE', ('galatians', 539): 'THE',
               ('ephesians', 540): 'THE', ('ephesians', 552): 'THE',
+              ('philippians', 553): 'THE', ('philippians', 554): 'ſo', ('philippians', 555): "''1. Bi{{ls}}hop.''",
+              ('philippians', 560): 'Therfore', ('philippians', 562): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
