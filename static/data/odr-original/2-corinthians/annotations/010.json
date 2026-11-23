@@ -4,7 +4,7 @@
     {
       "verse": 4,
       "title": "vveapons.",
-      "text": " <mn>[1]</mn> He meaneth the ample ſpiritual and Apoſtolical povver giuen by Chriſt for the puniſhment of falſe Apoſtles, Heretikes, and rebelles to Gods Church, vvho are here noted ſpecially by pride and inſolence (vvhich is the proper marke of ſuch fellowes) <mn>[2]</mn> to extoll them ſelues aboue the meaſure of the ſcience of God, vvhich conſiſteth in humble obedience to the faith and the preachers of the ſame.",
+      "text": " <mn>[1]</mn> He meaneth the ample ſpiritual and Apoſtolical povver giuen by Chriſt for the puniſhment of falſe Apoſtles, Heretikes, and rebelles to Gods Church, vvho are here noted ſpecially by pride and inſolence (vvhich is the proper marke of ſuch fellovves) <mn>[2]</mn> to extoll them ſelues aboue the meaſure of the ſcience of God, vvhich conſiſteth in humble obedience to the faith and the preachers of the ſame.",
       "notes": [
         {
           "marker": 1,
@@ -27,7 +27,8 @@
         },
         {
           "marker": 2,
-          "text": "<i>Caluin. vpon this place</i>."
+          "text": "<i>Caluin. vpon this place</i>.",
+          "star": true
         },
         {
           "marker": 3,
@@ -38,7 +39,7 @@
     {
       "verse": 8,
       "title": "Vnto edification.",
-      "text": " <mn>◦</mn> This great povver of the Churches cenſures, ſpecially of Excommunication, as it was giuen for the good and ſaluation of the people, ſo it muſt not be vſed againſt the innocent: no nor yet vpon Heretikes or other offenders, but where and vvhen it may by likelihod benefite either the parties, or the people, or may be executed vvithout the hurt or perturbation of the vvhole Church, as often times it can not be, by reaſon of the multitude of offenders. Which cauſed the Apoſtle here to ſignifie that he vvould not vſe his vttermoſt authoritie againſt the falſe Apoſtles which diſturbed them, till them ſelues were in perfect obedience vnto him. leſt by puniſhing the principal offenders, a greater diſturbance and reuolt might fall among the people, if they vvere not before in perfect obedience.",
+      "text": " <mn>◦</mn> This great povver of the Churches cenſures, ſpecially of Excommunication, as it was giuen for the good and ſaluation of the people, ſo it muſt not be vſed againſt the innocent: no nor yet vpon Heretikes or other offenders, but vvhere and vvhen it may by likelihod benefite either the parties, or the people, or may be executed vvithout the hurt or perturbation of the vvhole Church, as often times it can not be, by reaſon of the multitude of offenders. Which cauſed the Apoſtle here to ſignifie that he vvould not vſe his vttermoſt authoritie againſt the falſe Apoſtles vvhich diſturbed them, till them ſelues vvere in perfect obedience vnto him. leſt by puniſhing the principal offenders, a greater diſturbance and reuolt might fall among the people, if they vvere not before in perfect obedience.",
       "notes": [
         {
           "marker": "◦",

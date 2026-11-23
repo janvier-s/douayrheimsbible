@@ -96,5 +96,15 @@
 		"argument_roman": true,
 		"scripture_pages": 44,
 		"running": ["THE FIRST EPISTLE OF S. PAVL", "TO THE CORINTHIANS."]
+	},
+	"2-corinthians": {
+		"first": 497,
+		"last": 521,
+		"ornaments": false,
+		"golden": false,
+		"ocr": "transkribus",
+		"title_end": "CORINTHIANS.",
+		"scripture_pages": 25,
+		"running": ["THE SECOND EPISTLE OF S. PAVL", "TO THE CORINTHIANS."]
 	}
 }
