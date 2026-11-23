@@ -147,7 +147,7 @@
 		"first": 563,
 		"last": 572,
 		"ornaments": false,
-		"golden": false,
+		"golden": true,
 		"ocr": "transkribus",
 		"title_end": "COLOSSIANS.",
 		"argument_page": 563,
