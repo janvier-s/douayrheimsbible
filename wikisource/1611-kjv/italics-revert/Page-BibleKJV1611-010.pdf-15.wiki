@@ -1,0 +1,43 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{x-larger|{{rh|Her faſt, and ſuit.|Chap.v.|to the King.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>ſelfe that thou ſhalt eſcape in the kings houſe, more then all the Iewes.
+
+{{verse|4|14}}For if thou altogether holdeſt thy peace at this time, {{smaller|then}} ſhall there <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. reſpiration.''}} enlargement and diliuerance ariſe to the Iewes from another place, but thou and thy fathers houſe ſhall be deſtroyed: And who knoweth, whether thou art come to the kingdome for {{smaller|ſuch}} a time as this?
+
+{{verse|4|15}}¶ Then Eſther bade {{smaller|them}} returne Mordecai {{smaller|this anſwere:}}
+
+{{verse|4|16}}Goe, gather together all the Iewes that are <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. found.''}} preſent in Shuſhan, and faſt yee for me, and neither eate nor drinke three dayes, night or day: I alſo and my maidens will faſt like wiſe, and ſo will I goe in vnto the king, which {{smaller|is}} not according to the Law, and if I periſh, I periſh.
+
+==={{Chapter|5|CHAP. V.}}===
+
+{{smaller block|[[#5:1|1]] Eſther aduenturing on the kings fauour, obteineth the grace of the golden ſcepter, and inuiteth the king and Haman to a banquet. [[#5:6|6]] She being incouraged by the king in her ſuit, inuiteth them to another banquet the next day. [[#5:9|9]] Haman proud of his aduancement, repineth at the contempt of Mordecai. [[#5:14|14]] By the counſell of Zereſh, he buildeth for him a paire of gallous.}}
+
+{{verse|4|1|notext=}} {{dropinitial|N|image=King James Bible (1611) page A4r (N).png|imgsize=100px}}Ow it came to paſſe on the third day, that Eſther put on her royall {{smaller|apparell}}, and ſtood in the inner court of the kings houſe, ouer against the kings houſe: and the King ſate vpon his royall throne in the royall houſe, ouer againſt the gate of the houſe.
+
+{{verse|5|2}}And it was ſo, when the king ſaw Eſther, the Queene ſtanding in the court, {{smaller|that}} ſhee obtained fauour in his ſight: and the king helde out to Eſther the golden ſcepter that {{smaller|was}} in his hand: So Eſther drew neere, and touched the top of the ſcepter.
+
+{{verse|5|3}}Then ſayd the King vnto her, what wilt thou, Queene Eſther? and what {{smaller|is}} thy requeſt? it ſhall be euen giuen thee to the halfe of the kingdome.
+
+{{verse|5|4}}And Eſther anſwered, If it ſeeme good vnto the King, let the King and Haman come this day vnto the banquet that I haue prepared for him.
+
+{{verse|5|5}}Then the King ſayd, Cauſe Haman to make haſte, that he may doe as Eſther hath ſaid: So the king and Haman came to the banquet that Eſther had prepared.
+
+{{verse|5|6}}¶ And the king ſaid vnto Eſther at the banquet of wine, What {{smaller|is}} thy petition, and it ſhall be granted thee? and what is thy requeſt? euen to the halfe of the kingdome it ſhall be performed.
+
+{{verse|5|7}}Then anſwered Eſther, and ſaid, My petition, and my requeſt {{smaller|is}},
+
+{{verse|5|8}}If I haue found fauour in the ſight of the king, and if it pleaſe the king to grant my petition, and <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. to doe.''}} to performe my requeſt, let the king, and Haman, come to the banquet that I ſhall prepare for them, and I wil do to morow, as the king hath ſaid.
+
+{{verse|5|9}}¶ Then went Haman foorth that day, ioyfull, and with a glad heart: but when Haman ſaw Mordecai in the kings gate, that hee ſtood not vp, nor mooued for him, hee was full of indignation againſt Mordecai.
+
+{{verse|5|10}}Neuertheleſſe Haman refrained himſelfe, and when he came home, hee ſent and <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. cauſed to come.''}} called for his friends, and Zereſh his wife.
+
+{{verse|5|11}}And Haman told them of the glory of his riches, and the multitude of his children, and all the things wherein the king had promoted him, and how he had aduanced him aboue the Princes, and ſeruants of the king.
+
+{{verse|5|12}}Haman ſaid moreouer, Yea Eſther the Queene did let no man come in with the king vnto the banquet that ſhe had prepared, but my ſelfe; and to morrow am I inuited vnto her alſo with the king.
+
+{{verse|5|13}}Yet all this auaileth me nothing, ſo long as I ſee Mordecai the Iew ſitting at the kings gate.
+
+{{verse|5|14}}¶ Then ſaide Zereſh his wife, and all his friends vnto him, Let a <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. tree.''}} gallous be made of fifty cubits hie, and to morrow ſpeake thou vnto the king, that Mordecai may be hanged thereon: then goe thou in merily with the king vnto the banquet. And the thing pleaſed Haman, and hee cauſed the gallous to be made.
+
+==={{Chapter|6|CHAP. VI.}}===
+
+{{smaller block/s}}[[#6:1|1]] Ahaſuerus reading in the Chronicles of the good ſeruice done by Mordecai, taketh care for his reward. [[#6:4|4]] Haman comming to ſue that Mordecai might bee hanged, vnawares<noinclude>{{right|giueth}}{{smaller block/e}}</noinclude>

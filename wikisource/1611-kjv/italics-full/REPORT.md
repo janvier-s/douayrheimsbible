@@ -11,7 +11,8 @@ were skipped. Multi-word spans are wrapped word-by-word, which renders the same.
 
 ## Scope
 
-- **48 pages**, **252 insertions** (individual marks).
+- **48 pages**, **252 insertions** posted (individual marks); **248 net** after
+  the four removals noted below.
 - 344 italics were already present on the live pages and were left untouched.
 - 4 candidates could not be matched to a live verse and were omitted.
 - The five pages from the earlier italics batch are excluded; page `024.pdf/4`
@@ -21,7 +22,7 @@ were skipped. Multi-word spans are wrapped word-by-word, which renders the same.
 
 | Book | Marks |
 |---|---:|
-| `genesis` | 231 |
+| `genesis` | 231 (227 net) |
 | `esther` | 91 |
 | `philippians` | 41 |
 | `colossians` | 32 |
@@ -41,7 +42,7 @@ were skipped. Multi-word spans are wrapped word-by-word, which renders the same.
 
 | Page | Marks | Revision |
 |---|---:|---:|
-| `BibleKJV1611-002.pdf/1` | 2 | 14667899 |
+| `BibleKJV1611-002.pdf/1` | 2 posted; 0 net | 14667899 |
 | `BibleKJV1611-002.pdf/10` | 3 | 14861682 |
 | `BibleKJV1611-002.pdf/11` | 1 | 11485606 |
 | `BibleKJV1611-002.pdf/12` | 17 | 11485617 |
@@ -52,7 +53,7 @@ were skipped. Multi-word spans are wrapped word-by-word, which renders the same.
 | `BibleKJV1611-002.pdf/17` | 5 | 14675689 |
 | `BibleKJV1611-002.pdf/18` | 1 | 14674490 |
 | `BibleKJV1611-002.pdf/19` | 11 | 14675770 |
-| `BibleKJV1611-002.pdf/2` | 4 | 11123978 |
+| `BibleKJV1611-002.pdf/2` | 4 posted; 2 net | 11123978 |
 | `BibleKJV1611-002.pdf/20` | 5 | 14675897 |
 | `BibleKJV1611-002.pdf/3` | 2 | 11123979 |
 | `BibleKJV1611-002.pdf/4` | 2 | 11301360 |
@@ -96,3 +97,36 @@ All 48 edits were made under `Sokonok@douayrheims` with the summary
 "Proofread: restore 1611 supplied-word italics (KJV 1611)", each guarded by its
 live revid. All 48 pages were verified byte-for-byte against their drafts after
 posting. Quality levels and all other text were left unchanged.
+
+## Post-correction: supplied-word cross-check (2026-11-22)
+
+The owner subsequently edited `BibleKJV1611-002.pdf/1` as rev `16482245`,
+summary "Fixed accidental extra supplied word". The diff removed the two
+`{{smaller|land}}` marks inserted by this sweep in Genesis 1:9 and 1:10. Those
+were the only insertions on that page, so its net contribution is now **0**.
+
+A further verified correction was posted to `BibleKJV1611-002.pdf/2` as rev
+`16482298`, removing the sweep's `{{smaller|owne}}` at 1:27 and `{{smaller|there}}`
+at 1:30 (keeping the pre-existing `{{smaller|is}}`). That page's net contribution
+is now **2**. The sweep's net total is therefore **248** marks. The local build
+ledger and generated `genesis.json` were updated to match; rebuilds changed only
+the affected verses.
+
+CrossWire's [KJV 1611 page](https://wiki.crosswire.org/KJV_1611) is a manually
+transcribed Genesis 1 from the UPenn 1611 scan and preserves the original
+supplied-word italics. It is better evidence for that chapter than our local
+`<i>` data, which tracks the 1769 Blayney supplied-word scheme rather than the
+1611 print. The other 1611 datasets checked (Textus Receptus Bibles,
+kingjamesbibleonline.org, aruljohn) are plain-text transcriptions with no
+supplied-word markup, so they can neither confirm nor refute individual marks.
+
+| Verse | Sweep inserted | CrossWire 1611 | Current live | Assessment |
+|---|---|---|---|---|
+| 1:9 | `land` | plain | plain | owner-corrected ✅ |
+| 1:10 | `land` | plain | plain | owner-corrected ✅ |
+| 1:27 | `owne` | plain | plain | removed in rev `16482298` ✅ |
+| 1:30 | `there is` | only `is` | `there {{smaller|is}}` | `there` removed in rev `16482298` ✅ |
+
+CrossWire is a single-chapter sample, not a complete replacement dataset; the
+final authority remains the 1611 scan. The remaining Genesis 1 marks match both
+CrossWire and the pre-sweep Wikisource proofreading.

@@ -5,6 +5,8 @@ Usage (python3 -I scripts/ot/prep.py ...):
   pages <set>           print the ordered page list (id, role, source image)
   run <set>             copy pages to ~/facsimiles/transkribus-ot/pages/<set>/, then Vision, then Tesseract, then strips
   ocr <set>             only the Vision + Tesseract steps (skips pages already read)
+  pack <name> <set>...  OCR any unread set, then stack the sets back to back into shared strips
+                        ~/facsimiles/transkribus-ot/<name>/<name>-NN.jpg (offsets.json keeps each page's book)
   stack <set>           only the strips: ~/facsimiles/transkribus-ot/<set>/<set>-NN.jpg + offsets.json
 
 A book's pages come from ~/facsimiles/sancta/manifest.json: chapter N lists the pages it touches, and the last
@@ -52,6 +54,9 @@ def book_pages(book):
             if '/hires/' in p:
                 continue
             f = SANCTA / p
+            if not f.exists():                       # listed in the manifest but never scraped: a gap, not a crash
+                print(f'WARNING gap: {p} is in the manifest but not on disk; skipped', file=sys.stderr)
+                continue
             h = hashlib.md5(f.read_bytes()).hexdigest()
             if h not in seen:
                 seen.add(h)
@@ -90,8 +95,19 @@ def ocr(s):
 
 
 def stack(s):
-    d, pl = OUT / s, pages(s)
+    stack_pages(s, pages(s))
+
+
+def pack(name, books):
+    """Several sets stacked back to back into shared strips (no part-empty strip per book)."""
+    stack_pages(name, [r for b in books for r in pages(b)])
+
+
+def stack_pages(s, pl):
+    d = OUT / s
     d.mkdir(parents=True, exist_ok=True)
+    for old in d.glob(f'{s}-*.jpg'):                     # a re-stack must not leave strips from a longer earlier run
+        old.unlink()
     man = {}
     for k in range(0, len(pl), PER):
         grp = pl[k:k + PER]
@@ -122,6 +138,10 @@ def main(a):
     elif cmd == 'pages':
         for r in pages(a[1]):
             print(r[0], r[1], r[2])
+    elif cmd == 'pack':                                  # pack <name> <set>... : strips shared across books
+        for b in a[2:]:
+            ocr(b)                                       # no-op for sets already read
+        pack(a[1], a[2:])
     elif cmd in ('run', 'ocr', 'stack'):
         if cmd in ('run', 'ocr'):
             ocr(a[1])

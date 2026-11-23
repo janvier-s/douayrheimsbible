@@ -1,0 +1,41 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{x-larger|{{rh|Vaſthi put away.|Eſther.|The kings decree.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>prouinces of the king Ahaſuerus.
+
+{{verse|1|17}}For {{smaller|this}} deed of the queene ſhall come abroad vnto all women, ſo that they ſhal deſpiſe their huſbands in their eyes, when it ſhall bee reported; The king Ahaſuerus commanded Vaſthi the queene to be brought in before him, but ſhe came not.
+
+{{verse|1|18}}{{smaller|Likewiſe}} ſhall the Ladies of Perſia and Media ſay this day vnto all the kings princes, which haue heard of the deed of the Queene. Thus {{smaller|ſhall there ariſe}} too much contempt and wrath.
+
+{{verse|1|19}}<sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. if it be good with the king.''}} If it pleaſe the king, let there go a royall commandement <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. from before him.''}} from him, and let it bee written among the lawes of the Perſians, and the Medes, <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. that it paſſe not away.''}} that it be not altered, that Vaſthi come no more before king Ahaſuerus, and let the king giue her royall eſtate <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. vnto her companion.''}} vnto another that is better than ſhe.
+
+{{verse|1|20}}And when the kings decree, which he ſhal make, ſhalbe publiſhed throughout all his empire, (for it is great:) all the wiues ſhall giue to their huſbands honour, both to great and ſmall.
+
+{{verse|1|21}}and the ſaying <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. was good in the eyes of the king.''}} pleaſed the king and the princes, and the king did according to the word of Memucan:
+
+{{verse|1|22}}For he ſent letters into all the kings prouinces, into euery prouince, according to the writing thereof, and to euery people after their language, that euery man ſhould beare rule in his owne houſe, and <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. that one ſhould publiſh'' it ''according to the Language of his people.''}} that {{smaller|it}} ſhould be publiſhed according to the language of euerie people.
+
+==={{Chapter|2|CHAP. II.}}===
+
+{{smaller block|[[#2:1|1]] Out of the choiſe of virgines, a Queene is to be choſen. [[#2:5|5]] Mordecai the nurſing father of Eſther. [[#2:8|8]] Eſther is preferred by Hegai before the reſt. [[#2:12|12]] The maner of purification, & going in to the king. [[#2:15|15]] Eſther beſt pleaſing the king, is made Queene. [[#2:21|21]] Mordecai diſcouering a treaſon, is recorded in the Chronicles.}}
+
+{{verse|2|1|notext=}} {{dropinitial|A|image=King James Bible (1611) page A1v (A).png|imgsize=100px}}Fter theſe things, when the wrath of king Ahaſuerus was appeaſed, hee remembred Vaſthi, and what ſhee had done, and what was decreed againſt her.
+
+{{verse|2|2}}Then ſaide the kings ſeruants, that miniſtered vnto him, Let there bee faire yong virgins ſought for the king:
+
+{{verse|2|3}}And let the king appoint officers in all the prouinces of his kingdome, that they may gather together all the faire yong virgins vnto Shuſhan the palace, to the houſe of the women <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. vnto the hand.''}} vnto the cuſtodie of ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, Hegai, [[#2:8|ver.8.]]''}} Hege the kings chamberlaine, keeper of the women, and let their things for purification bee giuen {{smaller|them}}:
+
+{{verse|2|4}}And let the maiden which pleaſeth the king, bee Queene in ſtead of Vaſthi. And the thing pleaſed the king, and he did ſo.
+
+{{verse|2|5}}¶ {{smaller|Now}} in Shuſhan the palace, there was a certaine Iew, whoſe name {{smaller|was}} Mordecai, the ſonne of Iair, the ſonne of Shimei, the ſonne of Kiſh, a Beniamite,
+
+{{verse|2|6}}*{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 2.King.24.15. ier.24.1. and 2.chro.36.10.}} Who had bene carried away from Ieruſalem, with the captiuitie which had bene caried away with Ioconiah king of Iudah, whom Nebuchadnezzar the King of Babylon had caried away.
+
+{{verse|2|7}}And hee <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. nouriſhed.''}} brought vp Hadaſſah (that is Eſther) his vncles daughter, for ſhe had neither father nor mother, and the maid was <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. faire of forme, and good of countenance.''}} faire and beautiful, whom Mordecai (when her father and mother were dead) tooke for his owne daughter.
+
+{{verse|2|8}}¶ So it came to paſſe, when the kings commandement and his decree was heard, and when many maidens were gathered together vnto Shuſhan the palace, to the cuſtodie of Hegai, that Eſther was brought {{smaller|alſo}} vnto the kings houſe, to the cuſtodie of Hegai, keeper of the women.
+
+{{verse|2|9}}And the maiden pleaſed him, and ſhe obtained kindneſſe of him, and hee ſpeedily gaue her her things for purification, with <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. her portions.''}} ſuch things as belonged to her, and ſeuen maidens, which were meet to be giuen her, out of the Kings houſe, and <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. he changed her.''}} hee preferred her and her maids, vnto the beſt {{smaller|place}} of the houſe of the women.
+
+{{verse|2|10}}Eſther had not ſhewed her people, nor her kinred: for Mordecai had charged her, that ſhe ſhould not ſhew {{smaller|it}}.
+
+{{verse|2|11}}And Mordecai walked euery day before the court of the womens houſe, <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. to know the peace.''}} to know how Eſther did, and what ſhould become of her.
+
+{{verse|2|12}}¶ Now when euery maids turne was come, to goe in to King Ahaſuerus, after that ſhee had bene twelue moneths, according to the maner of the women (for ſo were the dayes of their purifications accompliſhed, {{smaller|to wit,}} ſixe moneths with oile of myrrhe, and ſixe<noinclude>{{right|moneths}}</noinclude>

@@ -1,0 +1,48 @@
+<noinclude><pagequality level="3" user="Mathmitch7" />{{rh|The generation|Chap.j.|of Chriſt.}}</noinclude>[[File:King James Bible (1611) page A2r.xcf|center|600px]]
+=={{uc|The Gospel According}} to {{uc|S.Matthew.}}==
+
+==={{Chapter|1|CHAP. I.}}===
+
+{{smaller block|[[#1:1|1]] The genealogie of Chriſt from Abraham to Ioſeph. [[#1:18|18]] Hee was conceiued by the holy Ghoſt, and borne of the Virgin Mary when ſhe was eſpouſed to Ioſeph. [[#1:19|19]] The Angel ſatiſfieth the miſdeeming thoughts of Ioſeph, and interpreteth the names of Chriſt.}}
+
+{{missingimage}}
+{{Verse|1|1|notext=}}{{dropinitial|T}}HE booke of the *{{MarginNote|margin=right|margin-width=65|text=* Luke 3. 23.}} generation of Ieſus Chriſt, the ſonne of Dauid, the ſonne of Abraham.
+
+{{Verse|1|2}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Gen. 21. 3.}} Abraham begate Iſaac, and *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Gen. 25. 26.}} Iſaac begate Iacob, and *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Gen. 29. 35.}} Iacob begate Iudas and his brethren.
+
+{{Verse|1|3}} And *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Gen. 38. 27.}} Iudas begate Phares and Zara of Thamar, and *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 1. Chro. 2. 5. ruth. 4. 18.}} Phares begate Eſrom, and Eſrom begate Aram.
+
+{{Verse|1|4}} And Aram begate Aminadab, and Aminadab begate Naaſſon, and Naaſſon begate Salmon.
+
+{{Verse|1|5}} And Salmon begat Boos of Rachab, and Boos begate Obed of Ruth, and Obed begate Ieſſe.
+
+{{Verse|1|6}} And *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 1. Sam. 16. 1. and 17. 12.}} Ieſſe begate Dauid the King, ⁊ *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 2. Sam. 12. 24.}} Dauid the King begat Solomon of her {{smaller|that had bin}} the wife of Urias.
+
+{{Verse|1|7}} And *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 1. Chro. 3. 10.}} Solomon begat Roboam, and Roboam begate Abia, and Abia begate Aſa.
+
+{{Verse|1|8}} And Aſa begate Ioſaphat, and Ioſaphat begate Ioram, and Ioram begate Ozias.
+
+{{Verse|1|9}} And Ozias begat Ioatham, and Ioatham begate Achas, and Achas begate Ezekias.
+
+{{Verse|1|10}} And *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 2. King. 20. 21. 1. chro. 3. 13.}} Ezekias begate Manaſſes, and Manaſſes begate Amon, and Amon begate Ioſias.
+
+{{Verse|1|11}} And ǁ{{MarginNote|margin=right|margin-width=65|text=ǁ ''Some read, Ioſias begate Iakim, and Iakim begat Iechonias.''}} Ioſias begate Iechonias and his brethren, about the time they were caried away to Babylon.
+
+{{Verse|1|12}} And after they were brought to Babylon, *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* 1. Chro. 3. 16, 17.}} Iechonias begat Salathiel, and Salathiel begate Zorobabel.
+
+{{Verse|1|13}} And Zorobabel begat Abiud, and Abiud begat Eliakim, and Eliakim begate Azor.
+
+{{Verse|1|14}} And Azor begat Sadoc, ⁊ Sadoc begat Achim, and Achim begat Eliud.
+
+{{Verse|1|15}} And Eliud begate Eleazar, and Eleazar begate Matthan, and Matthan begate Iacob.
+
+{{Verse|1|16}} And Iacob begate Ioſeph the huſband of Mary, of whom was borne Ieſus, who is called Chriſt.
+
+{{Verse|1|17}} So all the generations from Abraham to Dauid, are fourteene generations: and from Dauid vntill the carying away into Babylon, are foureteene generations: and from the carying away into Babylon vnto Chriſt, are fourteene generations.
+
+{{Verse|1|18}} ¶ Now the *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Luke 1. 27.}} birth of Ieſus Chriſt was on this wiſe: When as his mother Mary was eſpouſed to Ioſeph (before they came together) ſhee was found with childe of the holy Ghoſt.
+
+{{Verse|1|19}} Then Ioſeph her huſband being a iuſt man, and not willing to make her a publique example, was minded to put her away priuily.
+
+{{Verse|1|20}} But while hee thought on theſe things, behold, the Angel of the Lord appeared vnto him in a dreame, ſaying, Ioſeph thou ſonne of Dauid, feare not to take vnto thee Mary thy wife; for that which is conceiued in her, is of the holy Ghoſt.
+{{nop}}<noinclude>{{rh|||{{Verse|1|21}} And}}</noinclude>

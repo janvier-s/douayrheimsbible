@@ -1,0 +1,56 @@
+<noinclude><pagequality level="2" user="Mathmitch7" />{{x-larger|{{rh|Salutations.|1.Theſſalonians.|Effectuall faith.}}}} {{rule}}</noinclude>grace, ſeaſoned with ſalt, that you may know how yee ought to anſwere euery man.
+
+{{verse|4|7}} All my ſtate ſhall Tychicus declare vnto, {{smaller|who is}} a beloued brother, and a faithfull miniſter, and fellow ſeruant in the Lord:
+
+{{verse|4|8}} Whom I haue ſent vnto you for the ſame purpoſe, that hee might know your eſtate, and comfort your hearts.
+
+{{verse|4|9}} With Oneſimus, a faithfull and beloued brother, who is one of you. They ſhall make knowen vnto you all things which {{smaller|are}} done here.
+
+{{verse|4|10}} Ariſtarchus my fellow priſoner ſaluteth you, and Marcus ſiſters ſonne to Barnabas, (touching whome yee receiued commandements; if he come vnto you, receiue him:)
+
+{{verse|4|11}} And Ieſus, which is called Iuſtus, who are of the circumciſion. Theſe onely are my fellow workers vnto the kingdome of god, which haue beene a comfort vnto me.
+
+{{verse|4|12}} Epaphras, who is one of you, a ſeruant of Chriſt, ſaluteth you, alwaies ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, ſtriuing''}} labouring feruently for you in praiers, that ye may ſtand perfect, and ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, filled.''}} complete in all the will of God.
+
+{{verse|4|13}} For I beare him record, that hee hath a great zeale for you, and them {{smaller|that are}} in Laodicea, and them in Hierapolis.
+
+{{verse|4|14}} Luke the beloued phyſician, and Demas greet you.
+
+{{verse|4|15}} Salute the brethren which are in Laodicea, and Nymphas, ⁊ the church which is in his houſe.
+
+{{verse|4|16}} And when this Epiſtle is read amongſt you, cauſe that it be read alſo in the church of the Laodiceans: and that ye likewiſe reade the Epiſtle from Laodicea,
+
+{{verse|4|17}} And ſay to Archippus, Take heede to the miniſterie, which thou haſt receiued in the Lord, that thous fulfill it.
+
+{{verse|4|18}} The ſalutation by the hand of me Paul. Remember my bonds. Grace be with you. Amen.
+
+{{right|¶ Written from Rome to the Coloſſians, by Tychicus and Oneſimus.}}
+{{dhr}}
+{{rule}}
+{{rule}}
+{{nop}}
+<section begin="thessalonians" />[[File:King James Bible (1611) page D4v.xcf|center|600px]]
+{{rule}}
+{{xx-larger|¶ THE FIRST EPISTLE OF<br />Paul the Apoſtle to the Theſſalonians.}}
+{{rule}}
+
+{{x-larger|{{chapter|1|CHAP. I.}}}}
+
+{{smaller| [[#1:1|1]] The Theſſalonians are giuen to vnderſtand both how mindfull of them S. Paul was at all times in thankſ-giuing, & prayer: [[#1:5|5]] and alſo how well he was perſwaded of the truth, and ſinceritie of their faith, & conuerſion to God.}}
+
+{{missing image}}
+{{verse|1|1|notext=}}{{di|P}}Aul and Siluanus, and Timotheus, vnto the Church of the Theſſalonians, {{smaller|which is}} {{smaller|in}} God the Father, and in the Lord Ieſus Chriſt: grace {{smaller|be}} vnto you, and peace from God our Father, and the Lord Ieſus Chriſt.
+
+{{verse|1|2}} We giue thankes to God alwaies for you all, making mention of you in our prayers,
+
+{{verse|1|3}} Remembring without ceaſing your worke of faith, and labour of loue, and patience of hope in our Lord Ieſus Chriſt, in the ſight of God and our Father:
+
+{{verse|1|4}} Knowing, brethren ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, beloued of God, your election.''}} beloued, your election of God.
+
+{{verse|1|5}} For our Goſpel came not vnto you in word onely: but alſo in power, and in the holy Ghoſt, and in much aſſurance, as yee know what maner of men we were among you for your ſake.
+
+{{verse|1|6}} And yee became followers of vs, and of the Lord, hauing receiued the word in much affliction, with ioy of the holy Ghoſt:
+
+{{verse|1|7}} So that ye were enſamples to all that beleeue in Macedonia and Achaia,
+{{nop}}<section end="thessalonians" /><noinclude>{{right|{{verse|1|8}} For}}
+<!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>

@@ -1,0 +1,43 @@
+<noinclude><pagequality level="1" user="Sp1nd01" />{{x-larger|{{rh|Hamans ſuit made.|Eſther.|knowen to Eſther.}}}} {{rule}} <!-- useful info for KJV Common characters: ſ ¶ ⁊ ⸗ <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Note text''}} *{{MarginNote|margin=right|margin-width=65|text-align=left|text=* Note text}} ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Note text''}}  Remember that v and u are combined, "v" appears at beginnings of words and "u" in the middle Remember that i and j are combined, use "i" or "I" in all cases.--></noinclude>{{verse|3|9}}If it pleaſe the king, let it be written, <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. to deſtroy them.''}} that they may be deſtroyed: and I will <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. weigh.''}} pay ten thouſand talents of ſiluer to the handes of thoſe that haue the charge of the buſineſſe, to bring {{smaller|it}} into the kings treaſuries.
+
+{{verse|3|10}}And the king tooke his ring from his hand, and gaue it vnto Haman the ſonne of Ammedatha the Agagite, the Iewes ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, oppreſſour.''}} enemie.
+
+{{verse|3|11}}And the king ſaide vnto Haman, The ſiluer {{smaller|is}} giuen to thee, the people alſo, to doe with them, as it ſeemeth good to thee.
+
+{{verse|3|12}}Then were the kings ‖{{MarginNote|margin=right|margin-width=65|text-align=left|text=‖ ''Or, ſecretaries.''}} ſcribes called on the thirteenth day of the firſt moneth, and there was written, according to all that Haman had commanded, vnto the kings Lieutenants, and the gouernours that {{smaller|were}} ouer euery prouince, and to the rulers of euery people of euery prouince, according to the writing thereof, and {{smaller|to}} euery people, after their language, in the name of king Ahaſuerus was it written, and ſealed with the kings ring.
+
+{{verse|3|13}}And the letters were ſent by poſts into all the kings prouinces, to deſtroy, to kill, and to cauſe to periſh all Iewes, both yong and olde, litle children and women, in one day, {{smaller|euen}} vpon the thirteenth {{smaller|day}} of the twelfth moneth (which {{smaller|is}} the moneth Adar) and {{smaller|to take}} the ſpoile of them for a pray.
+
+{{verse|3|14}}The copie of the writing for a commandement to bee giuen in euery prouince, was publiſhed vnto all people, that they ſhould bee ready againſt that day.
+
+{{verse|3|15}}The poſtes went out, being haſtened by the kings commandement, and the decree was giuen in Shuſhan the palace: and the king and Haman ſate downe to drinke, but the citie Shuſhan was perplexed.
+
+==={{Chapter|4|CHAP. IIII.}}===
+
+{{smaller block|[[#4:1|1]] The great mourning of Mordecai and the Iewes. [[#4:4|4]] Eſther vnderſtanding it, ſendeth to Mordecai, who ſheweth the cauſe, and aduiſeth her to vndertake the ſuit. [[#4:10|10]] Shee excuſing her ſelfe is threatned by Mordecai. [[#4:15|15]] She appointing a faſt, vndertaketh the ſuit.}}
+
+{{verse|4|1|notext=}} {{dropinitial|W|image=King James Bible (1611) page A5r (W).png|imgsize=100px}}Hen Mordecai perceiued all that was done, Mordecai rent his clothes, and put on ſackcloth with aſhes, and went out into the midſt of the citie, and cried with a loud and a bitter crie:
+
+{{verse|4|2}}and came euen before the kings gate: for none {{smaller|might}} enter into the kings gate clothed with ſackcloth.
+
+{{verse|4|3}}And in euery prouince, whither ſoeuer the kings commandement, and his decree came, {{smaller|there was}} great mourning among the Iewes, and faſting, and weeping, and wailing, and <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. ſackecloth and aſhes were laid vnder many.''}} many lay in ſackcloth and aſhes.
+
+{{verse|4|4}}¶ So Eſthers maides and her <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. Eunuches.''}} chamberlaines came, and told it her: then was the Queene exceedingly grieued, and ſhe ſent raiment to clothe Mordecai, and to take away the ſackcloth from him: but he receiued {{smaller|it}} not.
+
+{{verse|4|5}}Then called Eſther for Hatach, one of the kings chamberlaines, <sup>†</sup>{{MarginNote|margin=right|margin-width=65|text-align=left|text=† ''Heb. whom he had ſet before her.''}} whom he had appointed to attend vpon her, and gaue him a commandement to Mordecai, to know what it {{smaller|was}}, and why it {{smaller|was}}.
+
+{{verse|4|6}}So Hatach went forth to Mordecai, vnto the ſtreet of the citie, which {{smaller|was}} before the kings gate:
+
+{{verse|4|7}}And Mordecai tolde him of all that had happened vnto him, and of the ſumme of the money that Haman had promiſed to pay to the Kings treaſuries for the Iewes, to deſtroy them.
+
+{{verse|4|8}}Alſo he gaue him the copie of the writing of the decree, that was giuen at Shuſhan to deſtroy them, to ſhewe {{smaller|it}} vnto Eſther, and to declare {{smaller|it}} vnto her, and to charge her that ſhe ſhould goe in vnto the king, to make ſupplication vnto him, and to make requeſt before him, for her people.
+
+{{verse|4|9}}And Hatach came and told Eſther the words of Mordecai.
+
+{{verse|4|10}}¶ Againe Eſther ſpake vnto Hatach, and gaue him commandement vnto Mordecai;
+
+{{verse|4|11}}All the Kings ſeruants, and the people of the kings prouinces do know, that whoſoeuer, whether man or woman, ſhall come vnto the King into the inner court, who is not called, {{smaller|there is}} one lawe of his to put him to death, except ſuch to whom the King ſhall hold out the golden ſcepter, that he may liue: but I haue not beene called to come in vnto the King, theſe thirtie dayes.
+
+{{verse|4|12}}And they tolde to Mordecai Eſthers words.
+
+{{verse|4|13}}Then Mordecai commanded to anſwere Eſther; Thinke not with thy<noinclude>{{right|ſelfe}}</noinclude>
