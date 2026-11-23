@@ -24,7 +24,8 @@ from .jsonfmt import write_like
 BOOK_DIV = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John',
             'acts': 'Acts of the Apostles', 'romans': 'Romans', '1-corinthians': '1 Corinthians',
             '2-corinthians': '2 Corinthians', 'galatians': 'Galatians', 'ephesians': 'Ephesians',
-            'philippians': 'Philippians', 'colossians': 'Colossians'}
+            'philippians': 'Philippians', 'colossians': 'Colossians',
+            '1-thessalonians': '1 Thessalonians'}
 LADDER_CLASSES = {'ls:ss', 'ls:other', 'macron', 'text'}
 
 
