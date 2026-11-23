@@ -21,7 +21,8 @@ State on 2026-11-21. Update it by hand when a book's state changes.
 | 452–496 | 1 Corinthians (Argument 452)                | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
 | 497–521 | 2 Corinthians                               | yes (2026-11-23)                           | yes, golden | no        | yes (2026-11-23) |
 | 522–539 | Galatians (Argument 522)                    | yes (2026-11-23)                           | yes, golden | no        | no               |
-| 540–    | Ephesians to the Apocalypse                 | partial: NT-wide passes                    | no          | no        | no               |
+| 540–552 | Ephesians (Argument 540)                    | yes (2026-11-23)                           | yes, golden | no        | no               |
+| 553–    | Philippians to the Apocalypse               | partial: NT-wide passes                    | no          | no        | no               |
 
 The NT-wide passes fixed one class of error across the whole NT without reading each book in full: variant readings, lectionary notes (vpon → vpō), annotation margin notes, and a few one-offs.
 

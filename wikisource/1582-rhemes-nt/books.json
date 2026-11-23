@@ -123,7 +123,7 @@
 		"first": 540,
 		"last": 552,
 		"ornaments": false,
-		"golden": false,
+		"golden": true,
 		"ocr": "transkribus",
 		"title_end": "EPHESIANS.",
 		"argument_page": 540,
