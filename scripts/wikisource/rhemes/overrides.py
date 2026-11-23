@@ -17,7 +17,10 @@ ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'TH
                                   ('larger', 'THE EPHESIANS.')],
                    ('philippians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
                                         ('larger', 'EPISTLE OF S. PAVL TO'),
-                                        ('larger', 'THE PHILIPPIANS.')]}
+                                        ('larger', 'THE PHILIPPIANS.')],
+                   ('colossians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
+                                       ('larger', 'EPISTLE OF S. PAVL TO'),
+                                       ('larger', 'THE COLOSSIANS.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
@@ -60,7 +63,10 @@ PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in r
                 *[('john', 19, i) for i in range(1, 4)], *[('john', 20, i) for i in range(4)],
                 ('philippians', 2, 0), ('philippians', 2, 1), ('philippians', 2, 2), ('philippians', 2, 4),
                 ('philippians', 3, 0), ('philippians', 3, 1), ('philippians', 3, 2),
-                ('philippians', 4, 0), ('philippians', 4, 1), ('philippians', 4, 2)}
+                ('philippians', 4, 0), ('philippians', 4, 1), ('philippians', 4, 2),
+                ('colossians', 1, 0),
+                *[('colossians', 2, i) for i in range(7)],
+                *[('colossians', 3, i) for i in range(2)]}
 
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
@@ -123,7 +129,8 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('john', 287): 'directed by the holy ghost', ('john', 289): '@annhead', ('john', 290): 'i am the trve vine',
                ('john', 292): '@chap', ('john', 296): '@chap', ('john', 300): 'tooke his garments',
                ('john', 302): '@chap', ('john', 304): 'os the qvantitie space', ('john', 306): '@chap',
-               ('john', 308): 'is he acknowledge'}
+               ('john', 308): 'is he acknowledge',
+               ('colossians', 566): '@annhead', ('colossians', 570): '@chap'}
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
@@ -148,6 +155,8 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('ephesians', 540): 'THE', ('ephesians', 552): 'THE',
               ('philippians', 553): 'THE', ('philippians', 554): 'ſo', ('philippians', 555): "''1. Bi{{ls}}hop.''",
               ('philippians', 560): 'Therfore', ('philippians', 562): 'THE',
+              ('colossians', 563): 'THE', ('colossians', 565): 'ANNOT.', ('colossians', 566): 'FOR',
+              ('colossians', 568): 'deceitfully', ('colossians', 569): 'CHAP.', ('colossians', 572): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 

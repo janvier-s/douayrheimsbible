@@ -142,5 +142,17 @@
 		"argument_roman": true,
 		"scripture_pages": 9,
 		"running": ["THE EPISTLE OF S. PAVL", "TO THE PHILIPPIANS."]
+	},
+	"colossians": {
+		"first": 563,
+		"last": 572,
+		"ornaments": false,
+		"golden": false,
+		"ocr": "transkribus",
+		"title_end": "COLOSSIANS.",
+		"argument_page": 563,
+		"argument_roman": true,
+		"scripture_pages": 9,
+		"running": ["THE EPISTLE OF S. PAVL", "TO THE COLOSSIANS."]
 	}
 }
