@@ -163,8 +163,8 @@ describe('bindMarkers', () => {
 
 describe('the known-defect list', () => {
 	it('holds exactly the measured irregularities', () => {
-		expect(KNOWN_UNBOUND.size).toBe(17);
-		expect(KNOWN_UNREFERENCED.size).toBe(23);
+		expect(KNOWN_UNBOUND.size).toBe(16);
+		expect(KNOWN_UNREFERENCED.size).toBe(21);
 		expect(KNOWN_DUPLICATE_VERSE.size).toBe(0);
 	});
 

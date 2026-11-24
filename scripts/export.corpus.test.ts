@@ -166,7 +166,8 @@ describe('the corpus markup', () => {
 		// print has one * for both (2026-11-17).
 		// 2,229 before Mark 14:25's 'See Annot. in Mat. c. 26, 29.' became a gloss note (the print has
 		// a ∷ and a margin gloss there, not a citation; 2026-11-18).
-		expect(crossRefs).toHaveLength(2228);
+		// 2,228 before 1 Cor–Apocalypse 1582 scan audit restored 4 missing cross_refs (2026-11-24).
+		expect(crossRefs).toHaveLength(2232);
 		// 43,797 before b2e0381c: +220 Sancta cross_refs and +1 title, less the 156
 		// annotation continuation parts it joined (1,677 to 1,521 annotations) and 3 notes.
 		// 43,877 before 13 chapters were re-divided to the 1609/1582 printing (net +6 verses;
@@ -186,7 +187,8 @@ describe('the corpus markup', () => {
 		// 43,944 before Jude 1:11 got the print's Nu. 22. and Nu. 16. cross_refs (+2 blocks; 2026-11-17).
 		// 43,946 before Matt 4:12's two cross_refs became one, as printed (-1 block; 2026-11-17).
 		// 43,945 before Mark 14:25's cross_ref became a gloss note (-1 block; 2026-11-18).
-		expect(blocks).toHaveLength(43944);
+		// 43,944 before 1 Cor–Apocalypse 1582 scan audit restored 4 missing cross_refs + 1 block (+5 blocks; 2026-11-24).
+		expect(blocks).toHaveLength(43949);
 	});
 
 	it('names exactly one block per ref', () => {
@@ -277,7 +279,7 @@ describe('the corpus markup', () => {
 		expect([...declared].sort()).toEqual([...found].sort());
 	});
 
-	it('binds 13,759 of 13,776 markers', () => {
+	it('binds 13,763 of 13,779 markers', () => {
 		let bound = 0;
 		let unbound = 0;
 		for (const b of blocks) {
@@ -302,12 +304,12 @@ describe('the corpus markup', () => {
 		// the 1582 print, whose * there is the Nu. 22. citation) was removed (2026-11-17).
 		// 13,759 before Mark 14:25's former cross_ref became a bound gloss note (2026-11-18).
 		// 13,760 before the later-edition Mark 16:18 gloss (not in the 1582 print) was removed (2026-11-18).
-		expect(bound).toBe(13759);
-		// 16 more unbound: the (†) editorial markers added for print corrections.
-		expect(unbound).toBe(17);
-		// 13,776 before Mark 14:25's cross_ref became a bound gloss marker (2026-11-18).
-		// 13,777 before the later-edition Mark 16:18 gloss was removed (2026-11-18).
-		expect(bound + unbound).toBe(13776);
+		// 13,759 before 1 Cor–Apocalypse audit & John 21:25 <na>[2] bound 4 more markers (2026-11-24).
+		expect(bound).toBe(13763);
+		// 15 more unbound: the (†) editorial markers added for print corrections (2 Cor 5 summary resolved).
+		expect(unbound).toBe(16);
+		// 13,776 before 1 Cor–Apocalypse audit & John 21:25 <na>[2] (+4 bound, -1 unbound; 2026-11-24).
+		expect(bound + unbound).toBe(13779);
 	});
 
 	// BindResult cannot report a double-bind on its own: two markers claiming
@@ -325,12 +327,13 @@ describe('the corpus markup', () => {
 		expect(doubled).toEqual([]);
 	});
 
-	it('leaves exactly 23 notes unreferenced', () => {
+	it('leaves exactly 21 notes unreferenced', () => {
 		let unreferenced = 0;
 		for (const b of blocks)
 			unreferenced += bindMarkers(b.text, b.notes, b.block, b.ref).unreferenced.length;
 		// 26 before b2e0381c, which gave acts ann 8:38 and romans ann 8:38 their markers.
-		expect(unreferenced).toBe(23);
+		// 23 before James intro[0] note ◦ and John 21:25 note 2 were bound (2026-11-24).
+		expect(unreferenced).toBe(21);
 	});
 
 	it('strips to prose with no angle bracket surviving', () => {

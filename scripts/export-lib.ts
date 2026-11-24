@@ -265,11 +265,10 @@ export const KNOWN_UNBOUND: ReadonlySet<string> = new Set([
 	'1-kings 21:1 marker †',
 	'isaie 24:19 marker †',
 	'deuteronomy 19:5 marker †',
-	'genesis 15 summary marker †',
-	'2-corinthians 5 summary marker †'
+	'genesis 15 summary marker †'
 ]);
 
-/** The 23 notes no marker references, as `${ref} note ${token}`. */
+/** The 21 notes no marker references, as `${ref} note ${token}`. */
 export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
 	'1-corinthians 14 article[0] note 8',
 	'1-john 4:21 note 1',
@@ -278,10 +277,8 @@ export const KNOWN_UNREFERENCED: ReadonlySet<string> = new Set([
 	'acts 15:41 note 1',
 	'acts endMatter[0] note 1',
 	'apocalypse 20:15 note 1',
-	'james intro[0] note ◦',
 	'john 1:51 note 1',
 	'john 21:25 note 1',
-	'john 21:25 note 2',
 	'matthew 16:28 note 1',
 	'matthew intro[1] note 1',
 	'matthew intro[1] note 2',
