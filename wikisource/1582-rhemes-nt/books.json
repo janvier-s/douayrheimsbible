@@ -264,7 +264,7 @@
     "first": 623,
     "last": 627,
     "ornaments": false,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "title_end": "TITVS.",
     "scripture_pages": 5,

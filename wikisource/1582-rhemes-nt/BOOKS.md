@@ -28,7 +28,8 @@ State on 2026-11-21. Update it by hand when a book's state changes.
 | 581–590 | 2 Thessalonians                             | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
 | 591–613 | 1 Timothy (Argument 591)                    | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
 | 614–622 | 2 Timothy                                   | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
-| 623–    | Titus to the Apocalypse                     | partial: NT-wide passes                    | no          | no        | no               |
+| 623–627 | Titus                                       | yes (2026-11-24)                           | yes, golden | no        | no               |
+| 628–    | Philemon to the Apocalypse                  | partial: NT-wide passes                    | no          | no        | no               |
 
 The NT-wide passes fixed one class of error across the whole NT without reading each book in full: variant readings, lectionary notes (vpon → vpō), annotation margin notes, and a few one-offs.
 
