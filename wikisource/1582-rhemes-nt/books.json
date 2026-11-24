@@ -330,7 +330,7 @@
     "first": 695,
     "last": 701,
     "ornaments": false,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "scripture_pages": 7,
     "running": [
