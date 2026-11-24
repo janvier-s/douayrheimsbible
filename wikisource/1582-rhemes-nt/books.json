@@ -236,7 +236,7 @@
     "first": 591,
     "last": 613,
     "ornaments": false,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "title_end": "TIMOTHEE.",
     "argument_page": 591,
