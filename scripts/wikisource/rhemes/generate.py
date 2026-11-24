@@ -335,6 +335,8 @@ def build_stream(book, ann):
                 title_wiki = ''
             elif BOOK == 'titus':
                 title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{larger|OF PAVL TO TITVS.}}}}'
+            elif BOOK == 'hebrews':
+                title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{x-larger|OF PAVL THE APOSTLE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('galatians', 'ephesians', 'philippians', 'colossians'):
@@ -346,6 +348,21 @@ def build_stream(book, ann):
                 if hp:  # the woodcut band above the book title, riding on the title's first word
                     tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
                 S += tt
+                if BOOK == 'hebrews':
+                    intro = book['intros'][1]
+                    notes = intro.get('notes', [])
+                    note_tpls = {
+                        1: '{{MOUTER|' + finish(notes[0]['text']) + '}}',
+                        2: '{{MINNER|' + finish(notes[1]['text']) + '}}* ',
+                        3: '{{MOUTER|' + finish(notes[2]['text']) + '}}',
+                    }
+                    ptext = intro['text']
+                    for m_num, tpl in note_tpls.items():
+                        ptext = re.sub(rf'<mn>\[{m_num}\]</mn>\s*', tpl, ptext)
+                    ptext = finish(ptext)
+                    tt_intro = tokens_of(ptext, ch=ch, kind='intro')
+                    tt_intro[0]['block'] = True
+                    S += tt_intro
         if BOOK != 'philemon':
             if (BOOK == 'acts' or BOOK == 'romans') and ch == 1:
                 side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '') if BOOK == 'acts' else ''

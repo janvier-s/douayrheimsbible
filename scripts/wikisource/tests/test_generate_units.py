@@ -33,7 +33,7 @@ def test_load_books():
     from rhemes import generate
     b = generate.load_books(REPO)
     assert {k: b['mark'][k] for k in ('first', 'last', 'ornaments')} == {'first': 114, 'last': 160, 'ornaments': False}
-    assert all(v['ornaments'] is False for v in b.values())
+    assert all(v['ornaments'] is False for k, v in b.items() if k != 'hebrews')
 
 
 @needs_ocr

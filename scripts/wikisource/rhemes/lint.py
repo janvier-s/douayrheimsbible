@@ -161,10 +161,17 @@ def lint(d, ov=None):
     for a, b in zip(nums, nums[1:]):
         if b != a + 1:
             out.append(('E-gap', a, f'pages {a + 1}-{b - 1} missing from the run'))
+    book_starts = set()
+    bp = Path(d).parent / 'books.json'
+    if bp.exists():
+        import json
+        book_starts = {cfg['first'] for cfg in json.loads(bp.read_text()).values() if isinstance(cfg, dict) and 'first' in cfg}
     last_ch = last_v = None
     bodies = {}
     for f in files:
         n = int(f.stem)
+        if n in book_starts:
+            last_ch = last_v = None
         t = f.read_text()
         body = NOINC.sub('', t)
         if unicodedata.normalize('NFC', t) != t:

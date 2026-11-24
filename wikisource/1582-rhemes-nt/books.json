@@ -284,5 +284,18 @@
       "THE EPISTLE OF S. PAVL",
       "TO PHILEMON."
     ]
+  },
+  "hebrews": {
+    "first": 631,
+    "last": 667,
+    "ornaments": true,
+    "golden": false,
+    "ocr": "transkribus",
+    "title_end": "TO THE HEBREVVES.",
+    "scripture_pages": 37,
+    "running": [
+      "THE EPISTLE OF S. PAVL",
+      "TO THE HEBREVVES."
+    ]
   }
 }
