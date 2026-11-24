@@ -342,7 +342,7 @@
     "first": 702,
     "last": 716,
     "ornaments": false,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "title_end": "THE APOSTLE.",
     "argument_page": 702,
