@@ -246,5 +246,18 @@
       "THE FIRST EPISTLE OF S. PAVL",
       "TO TIMOTHEE."
     ]
+  },
+  "2-timothy": {
+    "first": 614,
+    "last": 622,
+    "ornaments": false,
+    "golden": false,
+    "ocr": "transkribus",
+    "title_end": "TIMOTHEE.",
+    "scripture_pages": 9,
+    "running": [
+      "THE SECOND EPISTLE OF S. PAVL",
+      "TO TIMOTHEE."
+    ]
   }
 }

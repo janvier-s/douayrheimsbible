@@ -180,12 +180,22 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('1-timothy', 607): 'Apo{{ls}}tle', ('1-timothy', 608): "''{{ls}}entence''",
               ('1-timothy', 610): 'ctrine', ('1-timothy', 611): 'ANNOT.',
               ('1-timothy', 612): "''effect,''", ('1-timothy', 613): 'THE',
+              ('2-timothy', 614): 'of',
+              ('2-timothy', 615): 'ſtian',
+              ('2-timothy', 616): 'Contend',
+              ('2-timothy', 617): 'among',
+              ('2-timothy', 618): 'ſinnes,',
+              ('2-timothy', 619): 'ſaluation,',
+              ('2-timothy', 620): 'iudge:',
+              ('2-timothy', 621): 'Hovv.',
+              ('2-timothy', 622): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
 # Rendered {{hws|de|de{{ls}}ert.|title=desert.}} at the page end and {{hwe|{{ls}}ert.|de{{ls}}ert.}} at the next page's start.
-SPLIT_WORDS = {('1-timothy', 610): ('do-', 'ctrine', 'doctrine'),
+SPLIT_WORDS = {('2-timothy', 615): ('Chri-', 'ſtian', 'Chriſtian'),
+               ('1-timothy', 610): ('do-', 'ctrine', 'doctrine'),
                ('1-thessalonians', 577): ('gi-', 'uen', 'giuen'),
                ('mark', 115): ('de', 'ſert.', 'deſert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
                ('mark', 129): ('He', 'rodias', 'Herodias'), ('mark', 152): ('hea', 'ring', 'hearing'),

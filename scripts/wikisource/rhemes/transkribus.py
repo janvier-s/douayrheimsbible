@@ -45,7 +45,9 @@ ROLE_OVERRIDES = {('mark', '16/3'): 'luke-argument', ('mark', 'argument/pdf114')
                   ('c', 'pdf591'): '1-timothy-argument',
                   ('c', 'pdf592'): '1-timothy',
                   **{('c', f'pdf{p}'): '1-timothy' for p in range(610, 614)},
-                  ('c', 'pdf614'): '2-timothy'}
+                  ('c', 'pdf614'): '2-timothy',
+                  ('c', 'pdf622'): '2-timothy',
+                  ('c', 'pdf623'): 'titus'}
 PDF_OF = {('mark', '16/3'): 161, ('mark', 'argument/pdf114'): 114}
 
 

@@ -27,7 +27,8 @@ BOOK_DIV = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John'
             'philippians': 'Philippians', 'colossians': 'Colossians',
             '1-thessalonians': '1 Thessalonians',
             '2-thessalonians': '2 Thessalonians',
-            '1-timothy': '1 Timothy'}
+            '1-timothy': '1 Timothy',
+            '2-timothy': '2 Timothy'}
 LADDER_CLASSES = {'ls:ss', 'ls:other', 'macron', 'text'}
 
 
