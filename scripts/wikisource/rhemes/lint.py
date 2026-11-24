@@ -172,6 +172,8 @@ def lint(d, ov=None):
         n = int(f.stem)
         if n in book_starts:
             last_ch = last_v = None
+            if n == 695:  # 2 Peter 1:1-4 is on page 694
+                last_ch, last_v = 1, 4
         t = f.read_text()
         body = NOINC.sub('', t)
         if unicodedata.normalize('NFC', t) != t:

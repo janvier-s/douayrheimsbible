@@ -119,7 +119,10 @@ BARS = {('mark', 1, 12): [(9, 8)], ('mark', 1, 35): [(11, 10)], ('mark', 6, 9): 
 # Page starts the alignment gets wrong, each checked on the scan: the page's
 # first words (normalised as in norm(), joined by spaces).
 # '@annhead' / '@chap': the page opens with the ANNOTATIONS or CHAP. heading.
-PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is written heretikes',
+PAGE_STARTS = {('2-peter', 696): '@annhead',
+               ('2-peter', 699): '@chap',
+               ('2-peter', 701): 's peter here affirmeth',
+               ('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is written heretikes',
                ('matthew', 44): 'pvt on is not', ('matthew', 45): 'leade vs not s cypr',
                ('matthew', 57): 'lesser in the kingdom', ('matthew', 58): '@annhead',
                ('matthew', 66): 'avthor os evil tertvl', ('matthew', 69): '@chap', ('matthew', 71): '@annhead',
@@ -208,12 +211,21 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('james', 681): 'CHAP.',
               ('1-peter', 682): 'THE',
               ('1-peter', 694): 'made',
+              ('2-peter', 695): 'ANNOT.',
+              ('2-peter', 696): 'bers',
+              ('2-peter', 697): 'abominable',
+              ('2-peter', 698): 'CHAP.',
+              ('2-peter', 699): 'cording',
+              ('2-peter', 700): 'S. Peter',
+              ('2-peter', 701): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
 # Rendered {{hws|de|de{{ls}}ert.|title=desert.}} at the page end and {{hwe|{{ls}}ert.|de{{ls}}ert.}} at the next page's start.
-SPLIT_WORDS = {('2-timothy', 615): ('Chri-', 'ſtian', 'Chriſtian'),
+SPLIT_WORDS = {('2-peter', 696): ('num-', 'bers', 'numbers'),
+               ('2-peter', 699): ('ac-', 'cording', 'according'),
+               ('2-timothy', 615): ('Chri-', 'ſtian', 'Chriſtian'),
                ('1-timothy', 610): ('do-', 'ctrine', 'doctrine'),
                ('1-thessalonians', 577): ('gi-', 'uen', 'giuen'),
                ('mark', 115): ('de', 'ſert.', 'deſert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),

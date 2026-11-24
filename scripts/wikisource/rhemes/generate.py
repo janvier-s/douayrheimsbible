@@ -344,6 +344,8 @@ def build_stream(book, ann):
                 title_wiki = note_str + '{{c|{{xx-larger|THE CATHOLIKE}}}}\n{{c|{{x-larger|EPISTLE OF IAMES}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK == '1-peter':
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PETER THE APOSTLE.}}}}'
+            elif BOOK == '2-peter':
+                title_wiki = ''
             elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('galatians', 'ephesians', 'philippians', 'colossians'):
@@ -384,7 +386,7 @@ def build_stream(book, ann):
                     tt_intro = tokens_of(ptext, ch=ch, kind='intro')
                     tt_intro[0]['block'] = True
                     S += tt_intro
-        if BOOK != 'philemon':
+        if BOOK != 'philemon' and not (BOOK == '2-peter' and ch == 1):
             if (BOOK == 'acts' or BOOK == 'romans') and ch == 1:
                 side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '') if BOOK == 'acts' else ''
             else:
@@ -403,6 +405,19 @@ def build_stream(book, ann):
             if s:
                 S += tokens_of(pre + "{{c|''" + finish(s) + "''}}", block=True, ch=ch, kind='summary')
         for v in chap['verses']:
+            if BOOK == '2-peter' and ch == 1:
+                if v['verse'] in (1, 2, 3):
+                    continue
+                if v['verse'] == 4:
+                    cut = 'that by theſe you may be'
+                    idx = v['text'].index(cut) + len(cut)
+                    rem = v['text'][idx:].strip()
+                    vt = tokens_of(finish(rem), ch=ch, kind='verse', verse=4)
+                    vt[0]['vstart'] = True
+                    for k, t in enumerate(vt):
+                        t['w'] = k
+                    S += vt
+                    continue
             vt = tokens_of(finish(render_verse(v, ch), dropcap=v['verse'] == 1, ch=ch), ch=ch, kind='verse', verse=v['verse'])
             vt[0]['vstart'] = True
             for k, t in enumerate(vt):
@@ -1019,7 +1034,7 @@ def main(argv):
                 header = f'{{{{rh|{printed}||}}}}'
         elif BOOK == '1-peter' and wiki == 694:
             header = f'{{{{rh|{printed}|{{{{sc|the second epistle.}}}}|{cha}}}}}'
-        elif n == 0:
+        elif n == 0 and BOOK != '2-peter':
             fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'
         body = ''
