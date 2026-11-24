@@ -206,7 +206,9 @@ const PERSON: Array<Set<string>> = [
 const EQUIVALENT: Array<Set<string>> = [
 	new Set(['hung', 'hanged']),
 	// The 1609 title "Going then." quotes a verse that reads "going therefore" (Matt 28:19)
-	new Set(['then', 'therefore', 'therfore'])
+	new Set(['then', 'therefore', 'therfore']),
+	// The 1582 title "To the ruin." quotes a verse that reads "unto the ruin" (Luke 2:34)
+	new Set(['to', 'unto'])
 ];
 
 function sameWord(a: string, b: string): boolean {
@@ -334,8 +336,13 @@ export function resolveLemma(title: string, verseText: string): LemmaSpan | null
 	};
 
 	for (const variant of variants) {
-		const at = norm.indexOf(variant);
-		if (at >= 0) return toRaw(at, at + variant.length - 1, 'exact');
+		let from = 0;
+		while (from <= norm.length - variant.length) {
+			const at = norm.indexOf(variant, from);
+			if (at < 0) break;
+			if (at === 0 || norm[at - 1] === ' ') return toRaw(at, at + variant.length - 1, 'exact');
+			from = at + 1;
+		}
 	}
 
 	const tokens = norm.split(' ');
@@ -350,19 +357,25 @@ export function resolveLemma(title: string, verseText: string): LemmaSpan | null
 
 	const squeezed = norm.replace(/ /g, '');
 	for (const variant of variants) {
-		const at = squeezed.indexOf(variant.replace(/ /g, ''));
-		if (at < 0) continue;
-		// Walk the squeezed offset back to a normalised one
-		let seen = 0;
-		let from = -1;
-		let to = -1;
-		for (let i = 0; i < norm.length; i++) {
-			if (norm[i] === ' ') continue;
-			if (seen === at) from = i;
-			if (seen === at + variant.replace(/ /g, '').length - 1) to = i;
-			seen++;
+		const needle = variant.replace(/ /g, '');
+		let searchFrom = 0;
+		while (searchFrom <= squeezed.length - needle.length) {
+			const at = squeezed.indexOf(needle, searchFrom);
+			if (at < 0) break;
+			// Walk the squeezed offset back to a normalised one
+			let seen = 0;
+			let from = -1;
+			let to = -1;
+			for (let i = 0; i < norm.length; i++) {
+				if (norm[i] === ' ') continue;
+				if (seen === at) from = i;
+				if (seen === at + needle.length - 1) to = i;
+				seen++;
+			}
+			if (from >= 0 && to >= from && (from === 0 || norm[from - 1] === ' '))
+				return toRaw(from, to, 'despaced');
+			searchFrom = at + 1;
 		}
-		if (from >= 0 && to >= from) return toRaw(from, to, 'despaced');
 	}
 
 	for (const variant of variants) {

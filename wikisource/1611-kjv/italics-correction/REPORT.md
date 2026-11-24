@@ -6,10 +6,10 @@
 
 Two marks inserted by the full italics sweep are removed:
 
-| Verse | Before | After |
-|---|---|---|
-| Genesis 1:27 | `in his {{smaller|owne}} Image` | `in his owne Image` |
-| Genesis 1:30 | `wherein {{smaller|there}} {{smaller|is}} life` | `wherein there {{smaller|is}} life` |
+| Verse        | Before             | After             |
+| ------------ | ------------------ | ----------------- | ------------------- | ------------------------ | ---------- |
+| Genesis 1:27 | `in his {{smaller  | owne}} Image`     | `in his owne Image` |
+| Genesis 1:30 | `wherein {{smaller | there}} {{smaller | is}} life`          | `wherein there {{smaller | is}} life` |
 
 Everything else on the page is byte-for-byte unchanged.
 

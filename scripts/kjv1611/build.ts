@@ -327,7 +327,9 @@ function build(): void {
 	if (!only) {
 		const unused = [...fixesByVerse.values()].flat().filter((f) => !consumedFixes.has(f.key));
 		if (unused.length)
-			throw new Error(`fixes.tsv: entries with no matching verse: ${unused.map((f) => f.key).join(', ')}`);
+			throw new Error(
+				`fixes.tsv: entries with no matching verse: ${unused.map((f) => f.key).join(', ')}`
+			);
 	}
 	if (evidenceArg && !only) {
 		writeFileSync(

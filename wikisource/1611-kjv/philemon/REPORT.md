@@ -3,7 +3,7 @@
 ## What this is
 
 Scan-backed corrections to the two existing `Page:` pages that carry Philemon
-in the [Bible (King James Version, 1611)](https://en.wikisource.org/wiki/Bible_(King_James_Version,_1611))
+in the [Bible (King James Version, 1611)](<https://en.wikisource.org/wiki/Bible_(King_James_Version,_1611)>)
 edition:
 
 - `Page:BibleKJV1611-024.pdf/19` — posted as [rev 16482015](https://en.wikisource.org/w/index.php?title=Page:BibleKJV1611-024.pdf/19&oldid=16482015)
@@ -27,10 +27,10 @@ npx tsx scripts/kjv1611/build.ts --evidence=$HOME/facsimiles/kjv-1611/long-s-evi
 npx tsx scripts/kjv1611/build.ts --evidence=$HOME/facsimiles/kjv-1611/long-s-evidence.tsv --only=genesis
 ```
 
-| Book | Verse | Change | Evidence |
-|---|---|---|---|
-| Philemon | 1:1 | `&` → `⁊` | The print uses the Tironian et; confirmed by the proofread scan transcription. |
-| Philemon | 1:25 | subscription restored: `¶ Written from Rome to Philemon, by Oneſimus a ſeruant.` | Present in the site's Original-1611 HTML and in the scan, but dropped from the frozen source JSON. |
+| Book     | Verse | Change                                                                           | Evidence                                                                                           |
+| -------- | ----- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Philemon | 1:1   | `&` → `⁊`                                                                        | The print uses the Tironian et; confirmed by the proofread scan transcription.                     |
+| Philemon | 1:25  | subscription restored: `¶ Written from Rome to Philemon, by Oneſimus a ſeruant.` | Present in the site's Original-1611 HTML and in the scan, but dropped from the frozen source JSON. |
 
 Genesis 1 was collated against the two local 1611 scan pages and needed **no data
 change**. The `voyd,` / `voyd;` question at 1:2 was left alone: the local scan OCR and
@@ -57,19 +57,19 @@ checked against the site's Original-1611 text and the scan-backed Wikisource tra
 
 ## Corrections (11 total)
 
-| Page | Verse | Live text | Draft text | Evidence |
-|---|---|---|---|---|
-| 19 | 3 | `Ieſus Christ` | `Ieſus Chriſt` | Local 1611 text; scan OCR `Chilt` (ſ misread) |
-| 19 | 6 | `in Christ Ieſus` | `in Chriſt Ieſus` | Local 1611 text; same ſ convention |
-| 19 | 9 | `fof loues ſake` | `for loues ſake` | Scan OCR `foz` (r → z) |
-| 19 | 13 | `miniſtered` | `miniſtred` | Scan OCR `baueminitred` = "haue miniſtred" |
-| 19 | 16 | `a brotther beloued` | `a brother beloued` | Scan OCR `a brother beloued` |
-| 19 | 16 | `boh in the fleſh` | `both in the fleſh` | Scan OCR `but bolb much` (both) |
-| 19 | 18 | `but that on mine account` | `put that on mine account` | Scan OCR `put that ou mine ac-count` |
-| 19 | 19 | `to thee thou oweſt` | `to thee how thou oweſt` | Scan OCR has an intervening word (`folb`); local text has `how` |
-| 20 | 21 | `more that I ſay` | `more then I ſay` | Scan OCR `moze then lay` |
-| 20 | 23 | `Epaphias` | `Epaphras` | Local 1611 text; kingjamesbibleonline.org's 1611 verse page and three other 1611 witnesses read *Epaphras*; scan OCR `@paphias` is blackletter *r* read as *i* |
-| 20 | 25 | `with you ſpirit` | `with your ſpirit` | Scan OCR `lith pour (pirit` = "with your ſpirit" |
+| Page | Verse | Live text                  | Draft text                 | Evidence                                                                                                                                                       |
+| ---- | ----- | -------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 19   | 3     | `Ieſus Christ`             | `Ieſus Chriſt`             | Local 1611 text; scan OCR `Chilt` (ſ misread)                                                                                                                  |
+| 19   | 6     | `in Christ Ieſus`          | `in Chriſt Ieſus`          | Local 1611 text; same ſ convention                                                                                                                             |
+| 19   | 9     | `fof loues ſake`           | `for loues ſake`           | Scan OCR `foz` (r → z)                                                                                                                                         |
+| 19   | 13    | `miniſtered`               | `miniſtred`                | Scan OCR `baueminitred` = "haue miniſtred"                                                                                                                     |
+| 19   | 16    | `a brotther beloued`       | `a brother beloued`        | Scan OCR `a brother beloued`                                                                                                                                   |
+| 19   | 16    | `boh in the fleſh`         | `both in the fleſh`        | Scan OCR `but bolb much` (both)                                                                                                                                |
+| 19   | 18    | `but that on mine account` | `put that on mine account` | Scan OCR `put that ou mine ac-count`                                                                                                                           |
+| 19   | 19    | `to thee thou oweſt`       | `to thee how thou oweſt`   | Scan OCR has an intervening word (`folb`); local text has `how`                                                                                                |
+| 20   | 21    | `more that I ſay`          | `more then I ſay`          | Scan OCR `moze then lay`                                                                                                                                       |
+| 20   | 23    | `Epaphias`                 | `Epaphras`                 | Local 1611 text; kingjamesbibleonline.org's 1611 verse page and three other 1611 witnesses read _Epaphras_; scan OCR `@paphias` is blackletter _r_ read as _i_ |
+| 20   | 25    | `with you ſpirit`          | `with your ſpirit`         | Scan OCR `lith pour (pirit` = "with your ſpirit"                                                                                                               |
 
 ## Deliberately not changed
 
