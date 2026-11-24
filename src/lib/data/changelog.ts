@@ -11,6 +11,18 @@ export interface ChangelogEntry {
 /** Newest first. Written for readers: features and visible fixes only. */
 export const CHANGELOG: ChangelogEntry[] = [
 	{
+		version: '1.8',
+		date: 'November 17 to 24, 2026',
+		iso: '2026-11-24',
+		changes: [
+			'Completed the page-by-page 1582 facsimile audit across the entire Rheims New Testament — from Matthew through the Apocalypse — bringing the original-spelling text, annotations, chapter summaries, and marginal notes into line with the first edition.',
+			'Restored polytonic Greek, Hebrew, and Aramaic citations across the New Testament annotations and margin notes, along with missing marginal markers, cross-references, and lectionary headings.',
+			'Published all 800 pages of the 1582 Rheims New Testament (including front matter, Gospel and Acts tables, back-matter tables, Explication of Hard Words, and Errata) on English Wikisource, kept in sync with the site data and open TEI XML edition.',
+			'Synchronized the modern-spelling Douay-Rheims New Testament with the verified 1582 readings and fixed minor spacing and punctuation slips across verses and annotations.',
+			'Hid scrollbars in the facsimile viewer and moved its zoom controls to the top-left.'
+		]
+	},
+	{
 		version: '1.7',
 		date: 'November 15 to 16, 2026',
 		iso: '2026-11-15',
