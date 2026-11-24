@@ -33,7 +33,9 @@ ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'TH
                                     ('larger', 'THE EPISTLES OF S. PETER, THE'),
                                     ('larger', 'FIRST, AND THE SECOND.')],
                    ('1-john', 0): [('x-larger', 'THE ARGVMENT OF S.'),
-                                   ('larger', 'IOHNS THREE EPISTLES.')]}
+                                   ('larger', 'IOHNS THREE EPISTLES.')],
+                   ('jude', 0): [('x-larger', 'THE ARGVMENT OF THE'),
+                                 ('larger', 'EPISTLE OF S. IVDE.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
@@ -80,7 +82,8 @@ PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in r
                 ('colossians', 1, 0),
                 *[('colossians', 2, i) for i in range(7)],
                 *[('colossians', 3, i) for i in range(2)],
-                ('2-john', 1, 0), ('2-john', 1, 1), ('2-john', 1, 3)}
+                ('2-john', 1, 0), ('2-john', 1, 1), ('2-john', 1, 3),
+                ('jude', 1, 3)}
 
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
@@ -122,7 +125,9 @@ BARS = {('mark', 1, 12): [(9, 8)], ('mark', 1, 35): [(11, 10)], ('mark', 6, 9): 
 # Page starts the alignment gets wrong, each checked on the scan: the page's
 # first words (normalised as in norm(), joined by spaces).
 # '@annhead' / '@chap': the page opens with the ANNOTATIONS or CHAP. heading.
-PAGE_STARTS = {('2-peter', 696): '@annhead',
+PAGE_STARTS = {('jude', 722): 'sor the body os moyses',
+               ('jude', 723): '@annhead',
+               ('2-peter', 696): '@annhead',
                ('2-peter', 699): '@chap',
                ('2-peter', 701): 's peter here affirmeth',
                ('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is written heretikes',
@@ -226,6 +231,10 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('2-john', 717): 'cated.',
               ('2-john', 718): 'of',
               ('3-john', 719): 'THE',
+              ('jude', 720): 'THE',
+              ('jude', 721): 'for',
+              ('jude', 722): 'ANNOT.',
+              ('jude', 723): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 

@@ -37,7 +37,8 @@ BOOK_DIV = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John'
             '2-peter': '2 Peter',
             '1-john': '1 John',
             '2-john': '2 John',
-            '3-john': '3 John'}
+            '3-john': '3 John',
+            'jude': 'Jude'}
 LADDER_CLASSES = {'ls:ss', 'ls:other', 'macron', 'text'}
 
 

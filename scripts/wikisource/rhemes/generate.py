@@ -346,6 +346,8 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PETER THE APOSTLE.}}}}'
             elif BOOK == '1-john':
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF IOHN THE APOSTLE.}}}}'
+            elif BOOK == 'jude':
+                title_wiki = '{{c|{{xx-larger|THE CATHOLIKE}}}}\n{{c|{{x-larger|EPISTLE OF IVDE}}}}\n{{c|{{larger|THE APOSTLE.}}}}'
             elif BOOK in ('2-peter', '2-john', '3-john'):
                 title_wiki = ''
             elif BOOK in ('2-corinthians', '2-thessalonians'):
@@ -388,7 +390,7 @@ def build_stream(book, ann):
                     tt_intro = tokens_of(ptext, ch=ch, kind='intro')
                     tt_intro[0]['block'] = True
                     S += tt_intro
-        if BOOK != 'philemon' and not (BOOK in ('2-peter', '2-john', '3-john') and ch == 1):
+        if BOOK != 'philemon' and not (BOOK in ('2-peter', '2-john', '3-john', 'jude') and ch == 1):
             if (BOOK == 'acts' or BOOK == 'romans') and ch == 1:
                 side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '') if BOOK == 'acts' else ''
             else:
@@ -453,7 +455,7 @@ def build_stream(book, ann):
             S += vt
         anns = ann.get(ch, [])
         if anns:
-            if BOOK in ('philemon', '2-john'):
+            if BOOK in ('philemon', '2-john', 'jude'):
                 S += tokens_of('{{c|{{larger|ANNOT.}}}}', block=True, ch=ch, kind='annhead')
             else:
                 S += tokens_of('{{c|{{larger|A N N O T A T I O N S}}}} {{c|{{sc|Chap. ' + ROMAN[ch] + '.}}}}', block=True, ch=ch, kind='annhead')
@@ -1106,7 +1108,14 @@ def main(argv):
                 header = f'{{{{rh|{printed}|THE THIRD EPISTLE|}}}}'
         elif BOOK == '3-john' and wiki == 719:
             header = f'{{{{rh||{recto_t}|{printed}}}}}'
-        elif n == 0 and BOOK not in ('2-peter', '2-john', '3-john'):
+        elif BOOK == 'jude':
+            if wiki == 721:
+                header = f'{{{{rh|||{printed}}}}}'
+            elif wiki == 722:
+                header = f'{{{{rh|{printed}|{verso_t}|}}}}'
+            elif wiki == 723:
+                header = f'{{{{rh||{recto_t}|{printed}}}}}'
+        elif n == 0 and BOOK not in ('2-peter', '2-john', '3-john', 'jude'):
             fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'
         body = ''

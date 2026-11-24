@@ -287,7 +287,8 @@ LIVE = {'matthew': (31, 113), 'mark': (114, 160), 'luke': (161, 241), 'john': (2
         '2-peter': (695, 701),
         '1-john': (702, 716),
         '2-john': (717, 718),
-        '3-john': (719, 719)}  # wiki page ranges (BOOKS.md / git log)
+        '3-john': (719, 719),
+        'jude': (720, 723)}  # wiki page ranges (BOOKS.md / git log)
 TEXT_KINDS = {'w/vv', 'longs', 'macron', 'stray-letter', 'text', 'lig', 'spacing'}  # anchor-letter is expected, not checked
 
 
@@ -371,7 +372,7 @@ def pages_section():
     out.append(f'pages: {len(m)} in manifest; local differs from posted: {ranges(changed)}; not in manifest: {ranges(never)}')
     g = subprocess.run(['git', 'status', '--short', '--', 'wikisource/1582-rhemes-nt/pages', 'static/data/odr-original'],
                        cwd=REPO, capture_output=True, text=True).stdout.split('\n')
-    dirty_pages = [int(re.search(r'pages/(\d+)\.wiki', l).group(1)) for l in g if 'pages/' in l]
+    dirty_pages = [int(m.group(1)) for l in g if 'pages/' in l and (m := re.search(r'pages/(\d+)\.wiki', l))]
     dirty_data = [Path(l.split()[-1]).stem for l in g if 'odr-original' in l]
     out.append(f'git-dirty: {len(dirty_pages)} pages ({ranges(sorted(dirty_pages))}); data: {", ".join(dirty_data) or "none"}')
     lint = subprocess.run([sys.executable, '-I', str(paths.RH), 'lint', str(ROOT / 'pages')], capture_output=True, text=True)

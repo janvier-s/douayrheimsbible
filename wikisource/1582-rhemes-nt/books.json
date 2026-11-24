@@ -375,5 +375,18 @@
       "THE THIRD EPISTLE",
       "OF S. IOHN."
     ]
+  },
+  "jude": {
+    "first": 720,
+    "last": 723,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "argument_page": 720,
+    "scripture_pages": 3,
+    "running": [
+      "THE EPISTLE",
+      "OF S. IVDE."
+    ]
   }
 }
