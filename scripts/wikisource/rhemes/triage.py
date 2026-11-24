@@ -281,7 +281,8 @@ LIVE = {'matthew': (31, 113), 'mark': (114, 160), 'luke': (161, 241), 'john': (2
         'colossians': (563, 572), '1-thessalonians': (573, 580), '2-thessalonians': (581, 590),
         '1-timothy': (591, 613), '2-timothy': (614, 622),
         'titus': (623, 627), 'philemon': (628, 630),
-        'hebrews': (631, 667)}  # wiki page ranges (BOOKS.md / git log)
+        'hebrews': (631, 667),
+        'james': (668, 681)}  # wiki page ranges (BOOKS.md / git log)
 TEXT_KINDS = {'w/vv', 'longs', 'macron', 'stray-letter', 'text', 'lig', 'spacing'}  # anchor-letter is expected, not checked
 
 

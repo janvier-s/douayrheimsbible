@@ -337,6 +337,11 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{larger|OF PAVL TO TITVS.}}}}'
             elif BOOK == 'hebrews':
                 title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{x-larger|OF PAVL THE APOSTLE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
+            elif BOOK == 'james':
+                intro = book['intros'][1]
+                ch_note, _, _ = intro['text'].partition('\n\n')
+                note_str = ('{{MOUTER|' + finish(ch_note) + '}}\n') if ch_note else ''
+                title_wiki = note_str + '{{c|{{xx-larger|THE CATHOLIKE}}}}\n{{c|{{x-larger|EPISTLE OF IAMES}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('galatians', 'ephesians', 'philippians', 'colossians'):
@@ -357,6 +362,20 @@ def build_stream(book, ann):
                         3: '{{MOUTER|' + finish(notes[2]['text']) + '}}',
                     }
                     ptext = intro['text']
+                    for m_num, tpl in note_tpls.items():
+                        ptext = re.sub(rf'<mn>\[{m_num}\]</mn>\s*', tpl, ptext)
+                    ptext = finish(ptext)
+                    tt_intro = tokens_of(ptext, ch=ch, kind='intro')
+                    tt_intro[0]['block'] = True
+                    S += tt_intro
+                if BOOK == 'james':
+                    intro = book['intros'][1]
+                    _, _, ptext = intro['text'].partition('\n\n')
+                    notes = intro.get('notes', [])
+                    note_tpls = {
+                        1: '{{MOUTER|' + finish(notes[0]['text']) + '}}',
+                        2: '{{MOUTER|' + finish(notes[1]['text']) + '}}* ',
+                    }
                     for m_num, tpl in note_tpls.items():
                         ptext = re.sub(rf'<mn>\[{m_num}\]</mn>\s*', tpl, ptext)
                     ptext = finish(ptext)

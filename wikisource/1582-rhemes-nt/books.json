@@ -297,5 +297,19 @@
       "THE EPISTLE OF S. PAVL",
       "TO THE HEBREVVES."
     ]
+  },
+  "james": {
+    "first": 668,
+    "last": 681,
+    "ornaments": false,
+    "golden": false,
+    "ocr": "transkribus",
+    "title_end": "THE APOSTLE.",
+    "argument_page": 668,
+    "scripture_pages": 13,
+    "running": [
+      "THE EPISTLE",
+      "OF S. IAMES."
+    ]
   }
 }
