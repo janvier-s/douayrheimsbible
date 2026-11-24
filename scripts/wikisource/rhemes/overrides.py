@@ -138,7 +138,8 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('john', 308): 'is he acknowledge',
                ('colossians', 566): '@annhead', ('colossians', 570): '@chap',
                ('1-thessalonians', 577): '@chap', ('1-thessalonians', 579): '@chap',
-               ('1-timothy', 597): '@chap', ('1-timothy', 611): 'doctrine which is according'}
+               ('1-timothy', 597): '@chap', ('1-timothy', 611): 'doctrine which is according',
+               ('philemon', 630): 'his epistles to the'}
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
@@ -194,6 +195,9 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('titus', 625): 'good',
               ('titus', 626): 'thee:',
               ('titus', 627): 'PAVL',
+              ('philemon', 628): 'vvilt',
+              ('philemon', 629): 'his',
+              ('philemon', 630): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 

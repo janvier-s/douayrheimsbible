@@ -47,13 +47,17 @@ def spans(xml):
     b = xml.index('</text>', body_close)
     divs = _top_divs(xml, body_in, body_close)
     keys = []
-    for i, (_, at) in enumerate(divs):
+    for i, (off, at) in enumerate(divs):
         if 'n' in at and at.get('type') in _BOOK_TYPES:
             keys.append(book_key(at['type'], at['n']))
         elif at.get('type') == 'argument':
-            nxt = next((book_key(x['type'], x['n']) for _, x in divs[i + 1:]
-                        if 'n' in x and x.get('type') in _BOOK_TYPES), None)
-            keys.append(nxt)
+            snippet = xml[off:off + 120]
+            if 'PHILEMON' in snippet:
+                keys.append('philemon')
+            else:
+                nxt = next((book_key(x['type'], x['n']) for _, x in divs[i + 1:]
+                            if 'n' in x and x.get('type') in _BOOK_TYPES), None)
+                keys.append(nxt)
         else:
             keys.append(None)
     raw = [('front', a, divs[0][0] if divs else body_close)]

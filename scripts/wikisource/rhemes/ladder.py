@@ -29,7 +29,8 @@ BOOK_DIV = {'matthew': 'Matthew', 'mark': 'Mark', 'luke': 'Luke', 'john': 'John'
             '2-thessalonians': '2 Thessalonians',
             '1-timothy': '1 Timothy',
             '2-timothy': '2 Timothy',
-            'titus': 'Titus'}
+            'titus': 'Titus',
+            'philemon': 'Philemon'}
 LADDER_CLASSES = {'ls:ss', 'ls:other', 'macron', 'text'}
 
 
@@ -159,7 +160,11 @@ def xml_tokens(xml_text, book):
     root = ET.fromstring(xml_text)
     name = BOOK_DIV[book]
     parent_of = {c: p for p in root.iter() for c in p}
-    div = next(d for d in root.iter() if _local(d.tag) == 'div' and d.get('n') == name)
+    if book == 'philemon':
+        div = next(d for d in root.iter() if _local(d.tag) == 'div' and d.get('type') == 'argument'
+                   and 'PHILEMON' in ((d.find('{http://www.tei-c.org/ns/1.0}head') if d.find('{http://www.tei-c.org/ns/1.0}head') is not None else ET.Element('')).text or ''))
+    else:
+        div = next(d for d in root.iter() if _local(d.tag) == 'div' and d.get('n') == name)
     sibs = list(parent_of[div])
     i = sibs.index(div)
     j = i

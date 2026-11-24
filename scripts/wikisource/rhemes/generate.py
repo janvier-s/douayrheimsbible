@@ -331,6 +331,8 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK == '2-timothy':
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
+            elif BOOK == 'philemon':
+                title_wiki = ''
             elif BOOK == 'titus':
                 title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{larger|OF PAVL TO TITVS.}}}}'
             elif BOOK in ('2-corinthians', '2-thessalonians'):
@@ -339,27 +341,29 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             else:
                 title_wiki = '{{c|{{xx-larger|THE HOLY GOSPEL}}}}\n{{c|{{x-larger|OF IESVS CHRIST ACCOR-}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
-            tt = tokens_of(title_wiki, block=True, ch=ch, kind='title')
-            if hp:  # the woodcut band above the book title, riding on the title's first word
-                tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
-            S += tt
-        if (BOOK == 'acts' or BOOK == 'romans') and ch == 1:
-            side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '') if BOOK == 'acts' else ''
-        else:
-            side = (chap.get('summary_notes') or [{}])[0].get('text', '')
-        head = ''
-        if side and not ITALIC_REF.match(side):
-            # "THE THIRD part": both words in small caps; "THE fourth part": the lower-case word stays roman
-            m = re.match(r'(\S+(?: [A-Z]{2,}\b)?)(.*)', finish(side, caps=False))  # the side head sets its own small caps (SIDE_SC)
-            head = '{{MOUTER|{{sc|' + m.group(1).capitalize() + '}}' + SIDE_SC.get((BOOK, ch), lambda x: x)(m.group(2)) + '}}'
-        S += tokens_of(head + '{{c|{{larger|{{sc|Chap. ' + ROMAN[ch] + '.}}}}}}', block=True, ch=ch, kind='chap')
-        s = re.sub(r'<na>\[\d+\]</na>\s*', '', chap.get('summary', '')).strip()
-        for w in SUMMARY_STARS.get((BOOK, ch), []):
-            s = s.replace(w, '* ' + w, 1)
-        refs = [n['text'] for n in chap.get('summary_notes', []) if ITALIC_REF.match(n['text'])]
-        pre = ''.join('{{MINNER|' + f"''{finish(r)}''" + '}}' for r in refs)
-        if s:
-            S += tokens_of(pre + "{{c|''" + finish(s) + "''}}", block=True, ch=ch, kind='summary')
+            if title_wiki:
+                tt = tokens_of(title_wiki, block=True, ch=ch, kind='title')
+                if hp:  # the woodcut band above the book title, riding on the title's first word
+                    tt[0]['text'] = f"{{{{c|[[File:{hp['file']}|{hp['width']}]]}}}}\n" + tt[0]['text']
+                S += tt
+        if BOOK != 'philemon':
+            if (BOOK == 'acts' or BOOK == 'romans') and ch == 1:
+                side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '') if BOOK == 'acts' else ''
+            else:
+                side = (chap.get('summary_notes') or [{}])[0].get('text', '')
+            head = ''
+            if side and not ITALIC_REF.match(side):
+                # "THE THIRD part": both words in small caps; "THE fourth part": the lower-case word stays roman
+                m = re.match(r'(\S+(?: [A-Z]{2,}\b)?)(.*)', finish(side, caps=False))  # the side head sets its own small caps (SIDE_SC)
+                head = '{{MOUTER|{{sc|' + m.group(1).capitalize() + '}}' + SIDE_SC.get((BOOK, ch), lambda x: x)(m.group(2)) + '}}'
+            S += tokens_of(head + '{{c|{{larger|{{sc|Chap. ' + ROMAN[ch] + '.}}}}}}', block=True, ch=ch, kind='chap')
+            s = re.sub(r'<na>\[\d+\]</na>\s*', '', chap.get('summary', '')).strip()
+            for w in SUMMARY_STARS.get((BOOK, ch), []):
+                s = s.replace(w, '* ' + w, 1)
+            refs = [n['text'] for n in chap.get('summary_notes', []) if ITALIC_REF.match(n['text'])]
+            pre = ''.join('{{MINNER|' + f"''{finish(r)}''" + '}}' for r in refs)
+            if s:
+                S += tokens_of(pre + "{{c|''" + finish(s) + "''}}", block=True, ch=ch, kind='summary')
         for v in chap['verses']:
             vt = tokens_of(finish(render_verse(v, ch), dropcap=v['verse'] == 1, ch=ch), ch=ch, kind='verse', verse=v['verse'])
             vt[0]['vstart'] = True
@@ -378,7 +382,10 @@ def build_stream(book, ann):
             S += vt
         anns = ann.get(ch, [])
         if anns:
-            S += tokens_of('{{c|{{larger|A N N O T A T I O N S}}}} {{c|{{sc|Chap. ' + ROMAN[ch] + '.}}}}', block=True, ch=ch, kind='annhead')
+            if BOOK == 'philemon':
+                S += tokens_of('{{c|{{larger|ANNOT.}}}}', block=True, ch=ch, kind='annhead')
+            else:
+                S += tokens_of('{{c|{{larger|A N N O T A T I O N S}}}} {{c|{{sc|Chap. ' + ROMAN[ch] + '.}}}}', block=True, ch=ch, kind='annhead')
             for ai, a in enumerate(anns):
                 at = tokens_of(finish(render_annotation(a, ch, ai)), ch=ch, kind='ann', ann=ai)
                 at[0]['block'] = True
@@ -389,13 +396,16 @@ def build_stream(book, ann):
             "{{c|{{smaller|Vvherevnto we ioyne for the readers behalfe, tvvo Tables of the tvvo cheefe Apoſtles, and a note of the reſt, as an abridgement of the ſaid booke, and a ſupply of ſome things not there mentioned.}}}}"
         )
         S[-1]['text'] += trailer
-    elif BOOK in ('1-thessalonians', '1-timothy', '2-timothy', 'titus'):
-        next_book = {'1-thessalonians': '2-thessalonians', '1-timothy': '2-timothy', '2-timothy': 'titus', 'titus': 'philemon'}[BOOK]
-        ch_num = {'1-thessalonians': 5, '1-timothy': 6, '2-timothy': 4, 'titus': 3}[BOOK]
+    elif BOOK in ('1-thessalonians', '1-timothy', '2-timothy', 'titus', 'philemon'):
+        next_book = {'1-thessalonians': '2-thessalonians', '1-timothy': '2-timothy', '2-timothy': 'titus', 'titus': 'philemon', 'philemon': 'hebrews'}[BOOK]
+        ch_num = {'1-thessalonians': 5, '1-timothy': 6, '2-timothy': 4, 'titus': 3, 'philemon': 1}[BOOK]
         b2 = json.loads((DATA / f'{next_book}.json').read_text())
         if BOOK == 'titus':
             intro = {'text': b2['chapters'][0]['summary'], 'notes': []}
             lines = [('larger', 'THE EPISTLE OF PAVL TO PHILEMON.'), ('larger', 'THE ARGVMENT.')]
+        elif BOOK == 'philemon':
+            intro = b2['intros'][0]
+            lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'EPISTLE OF S. PAVL TO THE'), ('larger', 'HEBREVVES.')]
         else:
             intro = b2['intros'][0]
             if BOOK == '1-thessalonians':
@@ -939,7 +949,14 @@ def main(argv):
         if hw and hw[0] <= wiki <= hw[1] and wiki not in hw[2]:
             num = f'{printed} HOLY weeke.' if wiki % 2 else f'HOLY weeke. {printed}'
         header = (f'{{{{rh|{cha}|{recto_t}|{num}}}}}' if wiki % 2 else f'{{{{rh|{num}|{verso_t}|{cha}}}}}')
-        if n == 0:
+        if BOOK == 'philemon':
+            if wiki == 628:
+                header = f'{{{{rh|{printed}|{verso_t}|}}}}'
+            elif wiki == 629:
+                header = f'{{{{rh||{recto_t}|{printed}}}}}'
+            else:
+                header = f'{{{{rh|{printed}||}}}}'
+        elif n == 0:
             fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'
         body = ''

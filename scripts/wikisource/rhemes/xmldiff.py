@@ -30,6 +30,7 @@ BOOKN = {
     '1-timothy': ('epistle', '1 Timothy'),
     '2-timothy': ('epistle', '2 Timothy'),
     'titus': ('epistle', 'Titus'),
+    'philemon': ('epistle', 'Philemon'),
     'hebrews': ('epistle', 'Hebrews'),
     'james': ('epistle', 'James'),
     '1-peter': ('epistle', '1 Peter'),
@@ -138,12 +139,16 @@ def xml_root():
 
 def xml_chapters(book):
     root = xml_root()
-    btype, bname = BOOKN[book]
-    gos = None
-    for d in root.iter():
-        if ln(d) == 'div' and d.get('type') == btype and d.get('n') == bname:
-            gos = d
-            break
+    if book == 'philemon':
+        gos = next((d for d in root.iter() if ln(d) == 'div' and d.get('type') == 'argument'
+                    and 'PHILEMON' in ((d.find('{http://www.tei-c.org/ns/1.0}head') if d.find('{http://www.tei-c.org/ns/1.0}head') is not None else ET.Element('')).text or '')), None)
+    else:
+        btype, bname = BOOKN[book]
+        gos = None
+        for d in root.iter():
+            if ln(d) == 'div' and d.get('type') == btype and d.get('n') == bname:
+                gos = d
+                break
     if gos is None:
         raise ValueError(f"Book {book} not found")
     chs = {}
