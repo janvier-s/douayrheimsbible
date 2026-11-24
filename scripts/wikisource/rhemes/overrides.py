@@ -35,11 +35,14 @@ ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'TH
                    ('1-john', 0): [('x-larger', 'THE ARGVMENT OF S.'),
                                    ('larger', 'IOHNS THREE EPISTLES.')],
                    ('jude', 0): [('x-larger', 'THE ARGVMENT OF THE'),
-                                 ('larger', 'EPISTLE OF S. IVDE.')]}
+                                 ('larger', 'EPISTLE OF S. IVDE.')],
+                   ('apocalypse', 0): [('x-larger', 'THE ARGVMENT OF THE'),
+                                       ('larger', 'APOCALYPSE OF S. IOHN.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
-                   'romans': ['beleeued him to be', 'any Catholike of this time.', 'Gal. 4. ſaying', 'may, and geuing no offence']}
+                   'romans': ['beleeued him to be', 'any Catholike of this time.', 'Gal. 4. ſaying', 'may, and geuing no offence'],
+                   'apocalypse': ['comming of Antichriſt: After al']}
 
 # John's Argument is two scan pages (pdf242-243), the word Pas-sion broken at the page end:
 # (letters before the break, the word that follows the broken one); the whole word is read from the data.
@@ -235,6 +238,8 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('jude', 721): 'for',
               ('jude', 722): 'ANNOT.',
               ('jude', 723): 'THE',
+              ('apocalypse', 724): 'comming',
+              ('apocalypse', 725): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 

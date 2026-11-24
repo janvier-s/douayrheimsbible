@@ -262,7 +262,7 @@ def collapse_splits(rows, c, xv, jv):
     xall = ' '.join(xv[v][0] for v in sorted(xv) if v > 0)
     fs = verse_findings(xall, ' '.join(jall))
     nbad = len([r for r in rows if r[0] == c and r[2] == 'text'])
-    if sum(f[0] == 'text' for f in fs) * 2 > nbad:
+    if nbad == 0 or sum(f[0] == 'text' for f in fs) * 2 > nbad:
         return rows  # not a boundary cascade: keep the per-verse view
     def verse_at(off):
         i = max(k for k in range(len(starts)) if starts[k] <= off)
@@ -288,7 +288,8 @@ LIVE = {'matthew': (31, 113), 'mark': (114, 160), 'luke': (161, 241), 'john': (2
         '1-john': (702, 716),
         '2-john': (717, 718),
         '3-john': (719, 719),
-        'jude': (720, 723)}  # wiki page ranges (BOOKS.md / git log)
+        'jude': (720, 723),
+        'apocalypse': (724, 773)}  # wiki page ranges (BOOKS.md / git log)
 TEXT_KINDS = {'w/vv', 'longs', 'macron', 'stray-letter', 'text', 'lig', 'spacing'}  # anchor-letter is expected, not checked
 
 

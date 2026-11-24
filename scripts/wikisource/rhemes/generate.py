@@ -348,6 +348,10 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF IOHN THE APOSTLE.}}}}'
             elif BOOK == 'jude':
                 title_wiki = '{{c|{{xx-larger|THE CATHOLIKE}}}}\n{{c|{{x-larger|EPISTLE OF IVDE}}}}\n{{c|{{larger|THE APOSTLE.}}}}'
+            elif BOOK == 'apocalypse':
+                title_note = 'The Church readeth this booke at Mattins frō the 3. Sonday after Eaſter vnto the 4.'
+                note_str = '{{MOUTER|' + finish(title_note) + '}}\n'
+                title_wiki = note_str + '{{c|{{xx-larger|THE APOCALYPSE}}}}\n{{c|{{x-larger|OF IOHN THE APOSTLE.}}}}'
             elif BOOK in ('2-peter', '2-john', '3-john'):
                 title_wiki = ''
             elif BOOK in ('2-corinthians', '2-thessalonians'):
@@ -1014,7 +1018,12 @@ def write_argument_pages(body, wiki):
                  '{{hwe|' + to_ls(cont) + '|' + to_ls(full) + '|title=' + clean_title + '}}' + body[i + len(full):]]
     for snippet in ARGUMENT_BREAKS.get(BOOK, []):
         i = pages[-1].index(snippet)
-        pages[-1:] = [pages[-1][:i].rstrip(' '), pages[-1][i:]]
+        left_page = pages[-1][:i].rstrip(' ')
+        right_page = pages[-1][i:]
+        if left_page.count("''") % 2 != 0:
+            left_page += "''"
+            right_page = "''" + right_page
+        pages[-1:] = [left_page, right_page]
     for k, text in enumerate(pages):
         pg = wiki + k
         outer = 'left' if pg % 2 == 0 else 'right'
@@ -1115,7 +1124,10 @@ def main(argv):
                 header = f'{{{{rh|{printed}|{verso_t}|}}}}'
             elif wiki == 723:
                 header = f'{{{{rh||{recto_t}|{printed}}}}}'
-        elif n == 0 and BOOK not in ('2-peter', '2-john', '3-john', 'jude'):
+        elif BOOK == 'apocalypse':
+            if wiki == 726:
+                header = f'{{{{rh|{printed}||}}}}'
+        elif n == 0 and BOOK not in ('2-peter', '2-john', '3-john', 'jude', 'apocalypse'):
             fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'
         body = ''

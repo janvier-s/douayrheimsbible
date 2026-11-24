@@ -388,5 +388,18 @@
       "THE EPISTLE",
       "OF S. IVDE."
     ]
+  },
+  "apocalypse": {
+    "first": 724,
+    "last": 773,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "argument_page": 724,
+    "scripture_pages": 48,
+    "running": [
+      "THE APOCALYPSE.",
+      "THE APOCALYPSE."
+    ]
   }
 }
