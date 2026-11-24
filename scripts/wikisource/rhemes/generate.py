@@ -327,6 +327,8 @@ def build_stream(book, ann):
                 title_wiki = note_str + '{{c|{{xx-larger|THE EPISTLE OF}}}}\n{{c|{{x-larger|PAVL THE APOSTLE}}}}\n{{c|{{larger|TO THE ROMANES.}}}}'
             elif BOOK in ('1-corinthians', '1-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
+            elif BOOK == '1-timothy':
+                title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('galatians', 'ephesians', 'philippians', 'colossians'):
@@ -383,10 +385,15 @@ def build_stream(book, ann):
             "{{c|{{smaller|Vvherevnto we ioyne for the readers behalfe, tvvo Tables of the tvvo cheefe Apoſtles, and a note of the reſt, as an abridgement of the ſaid booke, and a ſupply of ſome things not there mentioned.}}}}"
         )
         S[-1]['text'] += trailer
-    elif BOOK == '1-thessalonians':
-        b2 = json.loads((DATA / '2-thessalonians.json').read_text())
+    elif BOOK in ('1-thessalonians', '1-timothy'):
+        next_book = '2-thessalonians' if BOOK == '1-thessalonians' else '2-timothy'
+        ch_num = 5 if BOOK == '1-thessalonians' else 6
+        b2 = json.loads((DATA / f'{next_book}.json').read_text())
         intro = b2['intros'][0]
-        lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'SECOND EPISTLE OF S. PAVL'), ('larger', 'TO THE THESSALONIANS.')]
+        if BOOK == '1-thessalonians':
+            lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'SECOND EPISTLE OF S. PAVL'), ('larger', 'TO THE THESSALONIANS.')]
+        else:
+            lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'SECOND EPISTLE OF S. PAVL'), ('larger', 'TO TIMOTHEE.')]
         head = '\n'.join(f'{{{{c|{{{{{size}|{line}}}}}}}}}' for size, line in lines)
         notes = iter(n['text'] for n in intro.get('notes', []))
         def mark(m):
@@ -411,11 +418,11 @@ def build_stream(book, ann):
             out = re.sub(r'\s+([),.;:])', r'\1', re.sub(r'\(\s+', '(', out))
             paras.append(re.sub(r'  +', ' ', out).strip())
         p0 = head + '\n\n' + re.sub(r'(\{\{dropinitial\|[^{}]*\}\})\{\{sc\|([^{}]*)\}\}', lambda m: m.group(1) + m.group(2).upper(), paras[0])
-        tt0 = tokens_of(p0, ch=5, kind='ann')
+        tt0 = tokens_of(p0, ch=ch_num, kind='ann')
         tt0[0]['block'] = True
         S += tt0
         for p in paras[1:]:
-            tt_p = tokens_of(p, ch=5, kind='ann')
+            tt_p = tokens_of(p, ch=ch_num, kind='ann')
             tt_p[0]['block'] = True
             S += tt_p
     tp = ORNAMENTS.get('tailpiece', {}).get(BOOK)

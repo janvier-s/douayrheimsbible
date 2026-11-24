@@ -231,5 +231,20 @@
       "THE SECOND EPISTLE OF S. PAVL",
       "TO THE THESSALONIANS."
     ]
+  },
+  "1-timothy": {
+    "first": 591,
+    "last": 613,
+    "ornaments": false,
+    "golden": false,
+    "ocr": "transkribus",
+    "title_end": "TIMOTHEE.",
+    "argument_page": 591,
+    "argument_roman": true,
+    "scripture_pages": 22,
+    "running": [
+      "THE FIRST EPISTLE OF S. PAVL",
+      "TO TIMOTHEE."
+    ]
   }
 }

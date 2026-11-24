@@ -23,7 +23,10 @@ ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'TH
                                        ('larger', 'THE COLOSSIANS.')],
                    ('1-thessalonians', 0): [('x-larger', '❧ THE ARGVMENT OF THE'),
                                             ('larger', 'FIRST EPISTLE OF S. PAVL TO'),
-                                            ('larger', 'THE THESSALONIANS.')]}
+                                            ('larger', 'THE THESSALONIANS.')],
+                   ('1-timothy', 0): [('x-larger', 'THE ARGVMENT OF THE'),
+                                      ('larger', 'FIRST EPISTLE OF S. PAVL TO'),
+                                      ('larger', 'TIMOTHEE.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
@@ -134,7 +137,8 @@ PAGE_STARTS = {('matthew', 37): 'salvation bvt it is', ('matthew', 39): 'it is w
                ('john', 302): '@chap', ('john', 304): 'os the qvantitie space', ('john', 306): '@chap',
                ('john', 308): 'is he acknowledge',
                ('colossians', 566): '@annhead', ('colossians', 570): '@chap',
-               ('1-thessalonians', 577): '@chap', ('1-thessalonians', 579): '@chap'}
+               ('1-thessalonians', 577): '@chap', ('1-thessalonians', 579): '@chap',
+               ('1-timothy', 597): '@chap', ('1-timothy', 611): 'doctrine which is according'}
 
 # Catchwords before a heading that the OCR garbles, checked on the scan.
 # The book's last page has no next token: its catchword (the next book's first word) goes here too.
@@ -170,12 +174,19 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('2-thessalonians', 585): 'worship', ('2-thessalonians', 586): '9. In',
               ('2-thessalonians', 587): 'that', ('2-thessalonians', 588): 'vnquiet',
               ('2-thessalonians', 589): 'Religious', ('2-thessalonians', 590): 'THE',
+              ('1-timothy', 591): 'THE', ('1-timothy', 595): "''4. Vvho''", ('1-timothy', 596): 'CHAP.',
+              ('1-timothy', 600): 'apprehen{{ls}}ion', ('1-timothy', 601): 'exerci{{ls}}e',
+              ('1-timothy', 603): "''5. Sanctified.''", ('1-timothy', 605): 'A Seniour',
+              ('1-timothy', 607): 'Apo{{ls}}tle', ('1-timothy', 608): "''{{ls}}entence''",
+              ('1-timothy', 610): 'ctrine', ('1-timothy', 611): 'ANNOT.',
+              ('1-timothy', 612): "''effect,''", ('1-timothy', 613): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
 # Rendered {{hws|de|de{{ls}}ert.|title=desert.}} at the page end and {{hwe|{{ls}}ert.|de{{ls}}ert.}} at the next page's start.
-SPLIT_WORDS = {('1-thessalonians', 577): ('gi-', 'uen', 'giuen'),
+SPLIT_WORDS = {('1-timothy', 610): ('do-', 'ctrine', 'doctrine'),
+               ('1-thessalonians', 577): ('gi-', 'uen', 'giuen'),
                ('mark', 115): ('de', 'ſert.', 'deſert.'), ('mark', 127): ('forth', 'vvith', 'forthvvith'),
                ('mark', 129): ('He', 'rodias', 'Herodias'), ('mark', 152): ('hea', 'ring', 'hearing'),
                ('john', 251): ('fil', 'led.', 'filled.'), ('john', 253): ('huſ', 'band.', 'huſband.'),

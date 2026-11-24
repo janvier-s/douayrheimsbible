@@ -1,0 +1,14 @@
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|564||}}</noinclude>{{c|{{xx-larger|THE FIRST EPISTLE}}}}
+{{c|{{x-larger|OF PAVL TO}}}}
+{{c|{{larger|TIMOTHEE.}}}}
+
+{{c|{{larger|{{sc|Chap. I.}}}}}}
+
+{{c|''He recommendeth vnto him, to inhibite certaine Ievves vvho iangled of the Lavv as though it vvere contrarie to his preaching. 11 Again{{ls}}t vvhom he auoucheth his mini{{ls}}terie, though he acknovvledge his vnvvorthines.''}}
+
+{{verse|chapter=1|verse=1|align=float}}{{dropinitial|P}}{{sc|Avl}} an Apo{{ls}}tle of {{sc|Iesvs}} Chri{{ls}}t according to the commandement of God our {{ls}}auiour, and of Chri{{ls}}t {{sc|Iesvs}} our hope: {{verse|chapter=1|verse=2|align=float}}† to Timothee his beloued {{ls}}onne in the faith. Grace, mercie, and peace from God the father, and from Chri{{ls}}t {{sc|Iesvs}} our Lord.
+
+{{verse|chapter=1|verse=3|align=float}}† As I de{{ls}}ired thee to remaine at Ephe{{ls}}us vvhen I vvent into Macedonia, that thou {{ls}}houlde{{ls}}t denounce to certaine {{sup|‖}} not to teache othervvi{{ls}}e, {{verse|chapter=1|verse=4|align=float}}† nor to attend {{sup|‖}} to fables and genealogies hauing no ende: vvhich mini{{ls}}ter {{sup|‖}} que{{ls}}tions rather then the edifying of God vvhich is in faith. {{verse|chapter=1|verse=5|align=float}}† But the ende of {{sup|‖}} the precept is charitie from a pure hart, and ∷ {{outside L|∷ ∷ S. Augu{{ls}}tine {{ls}}aith, He that li{{ls}}t to haue the hope of heauē let him looke that he haue a good cō{{ls}}ciēce. to haue a good con{{ls}}cience, let him beleeue & vvorke vvel. for that he beleueth, he hath of faith: that he vvorketh, he hath of charitie. Præfat. ''in P{{ls}}a. 31''.}} a good con{{ls}}cience, and a faith not feined. {{verse|chapter=1|verse=6|align=float}}† From the vvhich things certaine {{ls}}traying, are turned into c ∷ {{outside L|∷ ''c {{lang|grc|ματαιολογίαν}}'',}} vaine talke, {{verse|chapter=1|verse=7|align=float}}† {{sup|‖}} de{{ls}}irous to be doctors of the Lavv, not vnder{{ls}}tanding neither vvhat things they {{ls}}peake, nor of vvhat they affirme. {{verse|chapter=1|verse=8|align=float}}† But vve know that * {{outside R|''Ro. 7, 12.''}} the Lavv is good, if a man v{{ls}}e it lavvfully: {{verse|chapter=1|verse=9|align=float}}† knovving this that {{sup|‖}} the Lavv is not made to the iu{{ls}}t man, but to the vniu{{ls}}t and di{{ls}}obedient, to the impious and {{ls}}inners, to the vvicked and contaminate, to killers of fathers and killers of mothers, to murderers, {{verse|chapter=1|verse=10|align=float}}† to fornicatours, to lyers vvith man-kinde, to man-{{ls}}tealers, to liers, to periured per{{ls}}ons, and vvhat other thing {{ls}}oeuer is contrarie to {{ls}}ound doctrine,
+
+{{verse|chapter=1|verse=11|align=float}}† vvhich<noinclude>{{continues|is}}
+{{sidenotes end}}</noinclude>
