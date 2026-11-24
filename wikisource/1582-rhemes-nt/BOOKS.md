@@ -32,7 +32,8 @@ State on 2026-11-21. Update it by hand when a book's state changes.
 | 628–630 | Philemon                                    | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
 | 631–667 | Hebrews                                     | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
 | 668–681 | James                                       | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
-| 682–    | 1 Peter to the Apocalypse                   | partial: NT-wide passes                    | no          | no        | no               |
+| 682–694 | 1 Peter                                     | yes (2026-11-24)                           | yes, golden | no        | no               |
+| 695–    | 2 Peter to the Apocalypse                   | partial: NT-wide passes                    | no          | no        | no               |
 
 The NT-wide passes fixed one class of error across the whole NT without reading each book in full: variant readings, lectionary notes (vpon → vpō), annotation margin notes, and a few one-offs.
 
