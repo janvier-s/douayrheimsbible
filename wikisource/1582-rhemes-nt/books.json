@@ -223,7 +223,7 @@
     "first": 581,
     "last": 590,
     "ornaments": false,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "title_end": "THESSALONIANS.",
     "scripture_pages": 10,
