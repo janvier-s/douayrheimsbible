@@ -3,121 +3,121 @@
 Wherein though it be not po{{ls}}sible to {{ls}}et dovvne the preci{{ls}}e and vndoubted time or yere of euery thing, becau{{ls}}e neither S. Luke nor others do note particularly and orderly the moments of euery action of the {{ls}}aid Apo{{ls}}tles: yet vve folovv the mo{{ls}}t probable and plaine plat that vve finde in holy Scripture and auncient vvriters.{{outside L|''See the annot. Rom. 16, 15. Gal. 1.''}} Whereby the {{ls}}tudious reader may ea{{ls}}ily di{{ls}}couer the foly of the Prote{{ls}}tants, that can finde no time vvhen * Peter might po{{ls}}sibly come to Rome, be Bi{{ls}}hop, and die there: diuers things in S. Paules actes being no le{{ls}}{{ls}}e hard to reconcile to the cour{{ls}}e of S. Lukes narration, then any thing touching the hi{{ls}}torie of S. Peter, namely his * three yeres preaching in Arabia: al vvhich mu{{ls}}t needes be true, vvhether vve hit the very iu{{ls}}t time or no, and hovv {{ls}}o euer authors differ about the {{ls}}ame.
 
 {{c|{{larger|{{sc|Table of S. Peter.}}}}}}
-{| style='border-collapse: collapse; border: none; width: 100%;'
+{| style='border-collapse: collapse; border: 1px solid #888; width: 100%;'
 |-
-| style='width: 65px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Tiberij'''
-| style='width: 70px; text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dn̄i.'''
-| style='width: 50px; text-align: right; vertical-align: top; padding-right: 8px;' | '''A{{ls}}cen.'''
-| style='vertical-align: top;' |
+| style='border: 1px solid #888; width: 65px; text-align: right; vertical-align: top; padding: 3px 6px;' | '''Tiberij'''
+| style='border: 1px solid #888; width: 70px; text-align: right; vertical-align: top; padding: 3px 6px;' | '''Nat. Dn̄i.'''
+| style='border: 1px solid #888; width: 50px; text-align: right; vertical-align: top; padding: 3px 6px;' | '''A{{ls}}cen.'''
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' |
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 34
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='vertical-align: top;' | {{dropinitial|P}}ETER cau{{ls}}eth the Di{{ls}}ciples to procede to the election of an other Apo{{ls}}tle in Iudas roome. ''Act. 1.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 18
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 34
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | {{dropinitial|P}}ETER cau{{ls}}eth the Di{{ls}}ciples to procede to the election of an other Apo{{ls}}tle in Iudas roome. ''Act. 1.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Receiuing vvith the re{{ls}}t the gifts of the Holy Gho{{ls}}t on Whit{{ls}}unday, he made the fir{{ls}}t Sermon, and conuerted 3000. ''Act. 2.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Receiuing vvith the re{{ls}}t the gifts of the Holy Gho{{ls}}t on Whit{{ls}}unday, he made the fir{{ls}}t Sermon, and conuerted 3000. ''Act. 2.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He cureth one borne lame, preacheth Chri{{ls}}t and penance to the Ievves: {{ls}}o that 5000 beleeued. ''Act. 3 & 4.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He cureth one borne lame, preacheth Chri{{ls}}t and penance to the Ievves: {{ls}}o that 5000 beleeued. ''Act. 3 & 4.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He is impri{{ls}}oned, relea{{ls}}ed againe, threatened and commaunded to preache no more: but he vvith Iohn an{{ls}}vvereth, that they mu{{ls}}t obey God more then man. ''Act. 4.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He is impri{{ls}}oned, relea{{ls}}ed againe, threatened and commaunded to preache no more: but he vvith Iohn an{{ls}}vvereth, that they mu{{ls}}t obey God more then man. ''Act. 4.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He {{ls}}triketh to death vvith a vvord, Ananias and Saphira, for {{ls}}acrilege. ''Act. 5.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He {{ls}}triketh to death vvith a vvord, Ananias and Saphira, for {{ls}}acrilege. ''Act. 5.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He is {{ls}}ent vvith Iohn to Samaria, to confirme the nevvly baptized, vvhere he reproueth Simon Magus. ''Act. 8.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He is {{ls}}ent vvith Iohn to Samaria, to confirme the nevvly baptized, vvhere he reproueth Simon Magus. ''Act. 8.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 35
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='vertical-align: top;' | He healeth Aeneas at Lydda, and rai{{ls}}eth Tabitha from death at Ioppe. ''Act. 9.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 35
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He healeth Aeneas at Lydda, and rai{{ls}}eth Tabitha from death at Ioppe. ''Act. 9.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He is vvarned and taught by a vi{{ls}}ion, to preach to Cornelius a Gentil. ''Act. 10.'' He defendeth his receiuing of the Gentiles ''Act. 11.'' and recordeth ''(Act. 15)'' that God called the fir{{ls}}t Gentiles by his mini{{ls}}terie, {{ls}}o that Paules fir{{ls}}t preaching to them, and his going to Arabia, mu{{ls}}t be after this. ''See S. Chry{{ls}}. in Act. ho. 22. Eu{{ls}}eb. li. 2 c. 3.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He is vvarned and taught by a vi{{ls}}ion, to preach to Cornelius a Gentil. ''Act. 10.'' He defendeth his receiuing of the Gentiles ''Act. 11.'' and recordeth ''(Act. 15)'' that God called the fir{{ls}}t Gentiles by his mini{{ls}}terie, {{ls}}o that Paules fir{{ls}}t preaching to them, and his going to Arabia, mu{{ls}}t be after this. ''See S. Chry{{ls}}. in Act. ho. 22. Eu{{ls}}eb. li. 2 c. 3.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 36
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='vertical-align: top;' | He continueth preaching in diuers partes of Iurie and the prouinces adioyning. About tvvo yeres after this, S. Paul vi{{ls}}iteth him at Hieru{{ls}}alem. ''Gal. 1.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 36
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 3
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He continueth preaching in diuers partes of Iurie and the prouinces adioyning. About tvvo yeres after this, S. Paul vi{{ls}}iteth him at Hieru{{ls}}alem. ''Gal. 1.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He preacheth in Syria and the Prouinces of A{{ls}}ia minor, Bythynia, Pontus, Galatia, Cappodocia, ordaining Bi{{ls}}hops and Prie{{ls}}ts in diuers places. ''1 Pet. 1. Nicepho. li. 2 c. 35. Platina in Petro.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He preacheth in Syria and the Prouinces of A{{ls}}ia minor, Bythynia, Pontus, Galatia, Cappodocia, ordaining Bi{{ls}}hops and Prie{{ls}}ts in diuers places. ''1 Pet. 1. Nicepho. li. 2 c. 35. Platina in Petro.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 23
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 39
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 6
-| style='vertical-align: top;' | He goeth to Antioche, preaching there, and making that his Seate, yet not remaining there continually, but for the affaires of the Church, departing thence, {{ls}}ometime to Hieru{{ls}}alem, {{ls}}ometime to other places. ''Hiero. in Catalogo. Ignat. ad Magne{{ls}}ianos.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 23
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 39
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 6
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He goeth to Antioche, preaching there, and making that his Seate, yet not remaining there continually, but for the affaires of the Church, departing thence, {{ls}}ometime to Hieru{{ls}}alem, {{ls}}ometime to other places. ''Hiero. in Catalogo. Ignat. ad Magne{{ls}}ianos.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | At Hieru{{ls}}alem he is ca{{ls}}t into pri{{ls}}on after the putting of S. Iames to death, by the commaundement of Herod. he is praied for by the vvhole Church, & deliuered out of pri{{ls}}on by an Angel. ''Act. 12.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | At Hieru{{ls}}alem he is ca{{ls}}t into pri{{ls}}on after the putting of S. Iames to death, by the commaundement of Herod. he is praied for by the vvhole Church, & deliuered out of pri{{ls}}on by an Angel. ''Act. 12.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Claudij'''
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dn̄i.'''
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''A{{ls}}cen.'''
-| style='vertical-align: top;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | '''Claudij'''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | '''Nat. Dn̄i.'''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | '''A{{ls}}cen.'''
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' |
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 44
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
-| style='vertical-align: top;' | Auoiding the furie of Herod, he leaueth Iurie againe. He appointeth Euodius Bi{{ls}}hop in Antioche, ''Eu{{ls}}eb. in Chron. & li. 2 c. 16. Suidas, Ignat. ad Antiochen.'' And pa{{ls}}{{ls}}ing by Corinth, {{sc|he came to Rome}}, to conuince Simon Magus. ''Hiero. in Catalogo. Eu{{ls}}eb. li. 2 c. 12. 13. 24. Concil. to. 1.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 44
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 11
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Auoiding the furie of Herod, he leaueth Iurie againe. He appointeth Euodius Bi{{ls}}hop in Antioche, ''Eu{{ls}}eb. in Chron. & li. 2 c. 16. Suidas, Ignat. ad Antiochen.'' And pa{{ls}}{{ls}}ing by Corinth, {{sc|he came to Rome}}, to conuince Simon Magus. ''Hiero. in Catalogo. Eu{{ls}}eb. li. 2 c. 12. 13. 24. Concil. to. 1.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He approueth & declareth the Go{{ls}}pel of S. Marke to be Canonical. ''Hiero. in Catalo. Eu{{ls}}eb. li. 2 c. 14.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He approueth & declareth the Go{{ls}}pel of S. Marke to be Canonical. ''Hiero. in Catalo. Eu{{ls}}eb. li. 2 c. 14.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Hauing founded the Church at Rome, and planted his Apo{{ls}}tolical Seate there, aftervvard ab{{ls}}ent from the citie (either expelled thence vvith other Ievves, ''Cornel. Tacit. in Claudio:'' or rather according to the office of his Apo{{ls}}tle{{ls}}hip) leauing it for a time, he vi{{ls}}ited other Churches, and came to Hieru{{ls}}alem againe, v{{ls}}ing both in his ab{{ls}}ence and pre{{ls}}ence, Linus and Cletus for his coadiutors. ''To. 2 Concil. pag. 656, Epiph. to. 2. Haere{{ls}}. 27.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Hauing founded the Church at Rome, and planted his Apo{{ls}}tolical Seate there, aftervvard ab{{ls}}ent from the citie (either expelled thence vvith other Ievves, ''Cornel. Tacit. in Claudio:'' or rather according to the office of his Apo{{ls}}tle{{ls}}hip) leauing it for a time, he vi{{ls}}ited other Churches, and came to Hieru{{ls}}alem againe, v{{ls}}ing both in his ab{{ls}}ence and pre{{ls}}ence, Linus and Cletus for his coadiutors. ''To. 2 Concil. pag. 656, Epiph. to. 2. Haere{{ls}}. 27.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 52
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
-| style='vertical-align: top;' | He holdeth the fir{{ls}}t Councel. ''Act. 15.'' He is reprehended at Antioche by S. Paul. ''Galat. 1.'' except that difference fell before the Councel, as {{ls}}ome thinke. ''Augu{{ls}}t. ep. 19.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 9
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 52
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 18
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He holdeth the fir{{ls}}t Councel. ''Act. 15.'' He is reprehended at Antioche by S. Paul. ''Galat. 1.'' except that difference fell before the Councel, as {{ls}}ome thinke. ''Augu{{ls}}t. ep. 19.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He returneth to Rome againe, the Romane faith by his diligence novv made famous through the vvorld. ''Ro. 1. & 15. Theodoret. in 16. Ro.'' Thence he vvriteth his fir{{ls}}t epi{{ls}}tle. ''1 Pet. 5. Eu{{ls}}eb. li. 2 c. 14. Hiero. in Catalogo.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He returneth to Rome againe, the Romane faith by his diligence novv made famous through the vvorld. ''Ro. 1. & 15. Theodoret. in 16. Ro.'' Thence he vvriteth his fir{{ls}}t epi{{ls}}tle. ''1 Pet. 5. Eu{{ls}}eb. li. 2 c. 14. Hiero. in Catalogo.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He {{ls}}endeth S. Marke to Alexandria, and others to plant the faith in diuers partes of the vvorld. ''Grego. li. 5 ep. 60. & li. 6 ep. 37. Nicepho. li. 2 c. 35.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He {{ls}}endeth S. Marke to Alexandria, and others to plant the faith in diuers partes of the vvorld. ''Grego. li. 5 ep. 60. & li. 6 ep. 37. Nicepho. li. 2 c. 35.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He vvriteth his {{ls}}econd epi{{ls}}tle a litle before his death, vvhich Chri{{ls}}t reuealed to him to be at hand, ''2 Pet. 1.'' He taketh order for his {{ls}}ucce{{ls}}sor.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He vvriteth his {{ls}}econd epi{{ls}}tle a litle before his death, vvhich Chri{{ls}}t reuealed to him to be at hand, ''2 Pet. 1.'' He taketh order for his {{ls}}ucce{{ls}}sor.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Neronis'''
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''Nat. Dn̄i.'''
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | '''A{{ls}}cen.'''
-| style='vertical-align: top;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | '''Neronis'''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | '''Nat. Dn̄i.'''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | '''A{{ls}}cen.'''
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' |
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 70
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 37
-| style='vertical-align: top;' | He vvas finally crucified at Rome. ''See the la{{ls}}t Annot. Ioan. c. 21.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 14
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 70
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 37
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He vvas finally crucified at Rome. ''See the la{{ls}}t Annot. Ioan. c. 21.''
 |}<noinclude>{{continues|FOELI-}}
 {{sidenotes end}}</noinclude>

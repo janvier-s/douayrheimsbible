@@ -1,160 +1,160 @@
 <noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|284||Mt. Mr. Lu. Io.}}</noinclude>
-{| style='border-collapse: collapse; border: none; width: 100%;'
+{| style='border-collapse: collapse; border: 1px solid #888; width: 100%;'
 |-
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 15
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The parables of the lo{{ls}}t {{ls}}heepe, of the grote, and of the prodigal {{ls}}onne.
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' | 15
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The parables of the lo{{ls}}t {{ls}}heepe, of the grote, and of the prodigal {{ls}}onne.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The parable of the vniu{{ls}}t bailife.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The parable of the vniu{{ls}}t bailife.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Of the indi{{ls}}{{ls}}olubilitie of matrimonie.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 10
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Of the indi{{ls}}{{ls}}olubilitie of matrimonie.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The riche glutton and Lazarus.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The riche glutton and Lazarus.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 17
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Vvo to {{ls}}candalizers. The force of faith euen to the mouing of trees vvith a vvord.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 17
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Vvo to {{ls}}candalizers. The force of faith euen to the mouing of trees vvith a vvord.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Of the Phari{{ls}}ee and the Publicane that vvent to pray.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 18
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Of the Phari{{ls}}ee and the Publicane that vvent to pray.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He impo{{ls}}eth or laieth his handes vpon litle children, and exhorteth a yong riche man to for{{ls}}ake al and become perfect.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 10
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He impo{{ls}}eth or laieth his handes vpon litle children, and exhorteth a yong riche man to for{{ls}}ake al and become perfect.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The parable of the vvorkemen hired into the vineyard.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The parable of the vvorkemen hired into the vineyard.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
-| style='vertical-align: top;' | He rai{{ls}}eth Lazarus, and the Iewes cō̄{{ls}}ult hovv to de{{ls}}troy him.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 11
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He rai{{ls}}eth Lazarus, and the Iewes cō̄{{ls}}ult hovv to de{{ls}}troy him.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He foretelleth his death, and denieth the reque{{ls}}t of Zebedees tvvo {{ls}}onnes, a{{ls}}king the tvvo cheefe places about him.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 10
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He foretelleth his death, and denieth the reque{{ls}}t of Zebedees tvvo {{ls}}onnes, a{{ls}}king the tvvo cheefe places about him.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He healeth a blinde man before his entring into Iericho.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 18
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He healeth a blinde man before his entring into Iericho.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Zachaeus the Publicane entertaineth Chri{{ls}}t. The parable of the ten poundes deliuered to ten {{ls}}eruants.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Zachaeus the Publicane entertaineth Chri{{ls}}t. The parable of the ten poundes deliuered to ten {{ls}}eruants.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He healeth tvvo blinde men as he goeth out of Iericho.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 18
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He healeth tvvo blinde men as he goeth out of Iericho.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 26
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='vertical-align: top;' | At a {{ls}}upper in Bethánia, Marie povvred ointment vpon him.{{outside R|PALME {{ls}}unday.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 26
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 14
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | At a {{ls}}upper in Bethánia, Marie povvred ointment vpon him.{{outside R|PALME {{ls}}unday.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='vertical-align: top;' | Riding vpon an a{{ls}}{{ls}}e he entreth gloriou{{ls}}ly into Hieru{{ls}}alem.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 21
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 11
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Riding vpon an a{{ls}}{{ls}}e he entreth gloriou{{ls}}ly into Hieru{{ls}}alem.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='vertical-align: top;' | He healeth the lame and the blinde, and Gentiles de{{ls}}ire to {{ls}}ee him.{{outside R|The 6 part, conteining the holy weeke of his Pa{{ls}}sion in Hieru{{ls}}alem.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 21
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He healeth the lame and the blinde, and Gentiles de{{ls}}ire to {{ls}}ee him.{{outside R|The 6 part, conteining the holy weeke of his Pa{{ls}}sion in Hieru{{ls}}alem.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He cur{{ls}}eth the figtree, and ca{{ls}}teth the biers and {{ls}}ellers out of the Temple.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 21
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 11
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He cur{{ls}}eth the figtree, and ca{{ls}}teth the biers and {{ls}}ellers out of the Temple.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 19.20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | To his enemies the Ievves, he auoucheth his povver by Iohns Bapti{{ls}}me vvhich vvas of God, and foretelleth their reprobation, vvith the Gentils vocation in their place, by parables: as the parable of the tvvo {{ls}}onnes, the one promi{{ls}}ing to doe, the other doing his fathers commaundement.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 21
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 11
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 19.20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | To his enemies the Ievves, he auoucheth his povver by Iohns Bapti{{ls}}me vvhich vvas of God, and foretelleth their reprobation, vvith the Gentils vocation in their place, by parables: as the parable of the tvvo {{ls}}onnes, the one promi{{ls}}ing to doe, the other doing his fathers commaundement.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The parable of the vineyard let out to hu{{ls}}bandmen that killed both the {{ls}}eruants and the {{ls}}onne {{ls}}ent to require fruite.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 21
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The parable of the vineyard let out to hu{{ls}}bandmen that killed both the {{ls}}eruants and the {{ls}}onne {{ls}}ent to require fruite.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The parable of the king that made a mariage for his {{ls}}onne, inuiting ghe{{ls}}ts to the fea{{ls}}t, and they vvould not come.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 22
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The parable of the king that made a mariage for his {{ls}}onne, inuiting ghe{{ls}}ts to the fea{{ls}}t, and they vvould not come.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He an{{ls}}vvereth their que{{ls}}tion of paying tribute to Cae{{ls}}ar, and the Sadducees que{{ls}}tion of the Re{{ls}}urrection.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 22
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He an{{ls}}vvereth their que{{ls}}tion of paying tribute to Cae{{ls}}ar, and the Sadducees que{{ls}}tion of the Re{{ls}}urrection.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He an{{ls}}vvereth the Phari{{ls}}ees que{{ls}}tion, of the greate{{ls}}t commaundement.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 22
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He an{{ls}}vvereth the Phari{{ls}}ees que{{ls}}tion, of the greate{{ls}}t commaundement.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He putteth them to {{ls}}ilence vvith this que{{ls}}tion concerning CHRIST, hovv he could be Dauids {{ls}}onne.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 22
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He putteth them to {{ls}}ilence vvith this que{{ls}}tion concerning CHRIST, hovv he could be Dauids {{ls}}onne.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 23
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He biddeth them doe as the Scribes teach, but not as they doe.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 23
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He biddeth them doe as the Scribes teach, but not as they doe.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He extolleth and preferreth the poore vvidovves offering.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He extolleth and preferreth the poore vvidovves offering.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 13
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He foretelleth to {{ls}}ome of his Di{{ls}}ciples, the de{{ls}}truction of the Temple and of Hieru{{ls}}alem: and by that occa{{ls}}ion, vvhat things {{ls}}halbe before the con{{ls}}ummation of the vvorld, and Antichri{{ls}}t in the con{{ls}}ummation, and then incontinent Dome{{ls}}day, vvarning vs to prepare our {{ls}}elues again{{ls}}t his comming.{{outside R|TVESDAY night.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 24
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 13
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 21
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He foretelleth to {{ls}}ome of his Di{{ls}}ciples, the de{{ls}}truction of the Temple and of Hieru{{ls}}alem: and by that occa{{ls}}ion, vvhat things {{ls}}halbe before the con{{ls}}ummation of the vvorld, and Antichri{{ls}}t in the con{{ls}}ummation, and then incontinent Dome{{ls}}day, vvarning vs to prepare our {{ls}}elues again{{ls}}t his comming.{{outside R|TVESDAY night.}}
 |}<noinclude>{{continues|he}}
 {{sidenotes end}}</noinclude>

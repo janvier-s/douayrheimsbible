@@ -83,7 +83,7 @@ def test_ocr_by_page_matches_generator_numbering():
     assert min(reconcile.ocr_by_page('john', 'tesseract')) == 244
 
 
-FROZEN = {*range(1, 31), *range(309, 314), *range(402, 405)}  # Arguments 314-316, 405-409 generated (owner 2026-11-21)
+FROZEN = {*range(1, 31), *range(309, 314), *range(402, 405), *range(774, 801)}  # Arguments 314-316, 405-409 generated (owner 2026-11-21); back matter 774-800 frozen
 
 
 def test_frozen_marked():
@@ -95,7 +95,7 @@ def test_frozen_marked():
     for b, cfg in books.items():
         assert not FROZEN & set(range(cfg['first'], cfg['last'] + 1)), b
     covered = FROZEN.union(*(range(c['first'], c['last'] + 1) for c in books.values()))
-    assert covered == set(range(1, max(c['last'] for c in books.values()) + 1))  # every page is generated or frozen
+    assert covered == set(range(1, max(covered) + 1))  # every page is generated or frozen
 
 
 @needs_ocr

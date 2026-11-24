@@ -1,114 +1,114 @@
 <noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|||281}}</noinclude>
 {{c|{{larger|THE SVMME, AND THE ORDER OF THE EVANGELICAL HISTORIE, gathered breifly out of al foure, euen vnto Chri{{ls}}ts A{{ls}}cen{{ls}}ion.}}}}
 
-{| style='border-collapse: collapse; border: none; width: 100%;'
+{| style='border-collapse: collapse; border: 1px solid #888; width: 100%;'
 |-
-| style='width: 35px; text-align: right; padding-right: 8px;' | '''Mt.'''
-| style='width: 35px; text-align: right; padding-right: 8px;' | '''Mr.'''
-| style='width: 35px; text-align: right; padding-right: 8px;' | '''Lu.'''
-| style='width: 35px; text-align: right; padding-right: 8px;' | '''Io.'''
-| style='text-align: left;' |
+| style='border: 1px solid #888; width: 35px; text-align: right; padding: 3px 6px;' | '''Mt.'''
+| style='border: 1px solid #888; width: 35px; text-align: right; padding: 3px 6px;' | '''Mr.'''
+| style='border: 1px solid #888; width: 35px; text-align: right; padding: 3px 6px;' | '''Lu.'''
+| style='border: 1px solid #888; width: 35px; text-align: right; padding: 3px 6px;' | '''Io.'''
+| style='border: 1px solid #888; text-align: left; padding: 3px 6px;' |
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='vertical-align: top;' | {{dropinitial|T}}HE preface mouing the Reader to receiue CHRIST, being the aeternal VVORD of God, the life and the light.{{outside R|THE 1 PART, conteining the Infancie of Chri{{ls}}t and the time that he liued ob{{ls}}curely.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | {{dropinitial|T}}HE preface mouing the Reader to receiue CHRIST, being the aeternal VVORD of God, the life and the light.{{outside R|THE 1 PART, conteining the Infancie of Chri{{ls}}t and the time that he liued ob{{ls}}curely.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The Angel telleth Zacharie of the conception of Iohn Bapti{{ls}}t, Chri{{ls}}ts Precur{{ls}}or: and Elizabeth conceiueth him.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The Angel telleth Zacharie of the conception of Iohn Bapti{{ls}}t, Chri{{ls}}ts Precur{{ls}}or: and Elizabeth conceiueth him.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The {{ls}}ame Angel doing his me{{ls}}{{ls}}age to the B. Virgin, CHRIST is incarnate in her wombe.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The {{ls}}ame Angel doing his me{{ls}}{{ls}}age to the B. Virgin, CHRIST is incarnate in her wombe.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Our B. Ladie vi{{ls}}iteth Elizabeth: and Iohn Bapti{{ls}}t is borne, and circunci{{ls}}ed.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Our B. Ladie vi{{ls}}iteth Elizabeth: and Iohn Bapti{{ls}}t is borne, and circunci{{ls}}ed.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The Angel telleth Io{{ls}}eph that his vvi{{ls}}e is vvith childe by the Holy Gho{{ls}}t.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The Angel telleth Io{{ls}}eph that his vvi{{ls}}e is vvith childe by the Holy Gho{{ls}}t.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The genealogie of Chri{{ls}}t.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 3
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The genealogie of Chri{{ls}}t.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The birth of Chri{{ls}}t in Bethlehem, and his circunci{{ls}}ion.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The birth of Chri{{ls}}t in Bethlehem, and his circunci{{ls}}ion.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | The Sages come from the Ea{{ls}}t, and adore Chri{{ls}}t.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The Sages come from the Ea{{ls}}t, and adore Chri{{ls}}t.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Chri{{ls}}t is pre{{ls}}ented in the Temple: vvhere Simeon and Anna prophecie of him.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Chri{{ls}}t is pre{{ls}}ented in the Temple: vvhere Simeon and Anna prophecie of him.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Io{{ls}}eph vvith the childe and his mother, fleeth into Aegypt: and returneth to Nazareth.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Io{{ls}}eph vvith the childe and his mother, fleeth into Aegypt: and returneth to Nazareth.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Ie{{ls}}us being {{ls}}ought of his parents, is found in the Temple among the Doctors.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Ie{{ls}}us being {{ls}}ought of his parents, is found in the Temple among the Doctors.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Iohn the Bapti{{ls}}t preacheth and baptizeth, preparing al to receiue Chri{{ls}}t: and among other, Chri{{ls}}t is baptized of him.{{outside R|The 2 part, conteining the time of the preparatiō̄ toward his manife{{ls}}tation.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 3
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 3
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Iohn the Bapti{{ls}}t preacheth and baptizeth, preparing al to receiue Chri{{ls}}t: and among other, Chri{{ls}}t is baptized of him.{{outside R|The 2 part, conteining the time of the preparatiō̄ toward his manife{{ls}}tation.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 4
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 4
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Chri{{ls}}t fa{{ls}}teth fourtie daies, and is tempted in the vvilderne{{ls}}{{ls}}e.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 4
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 4
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Chri{{ls}}t fa{{ls}}teth fourtie daies, and is tempted in the vvilderne{{ls}}{{ls}}e.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='vertical-align: top;' | Iohn giueth te{{ls}}timonie of Chri{{ls}}t to the legates of the Ievves, to the people, and to his ovvne di{{ls}}ciples.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Iohn giueth te{{ls}}timonie of Chri{{ls}}t to the legates of the Ievves, to the people, and to his ovvne di{{ls}}ciples.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='vertical-align: top;' | Chri{{ls}}t vvorketh his fir{{ls}}t miracle, turning vvater into vvine at a mariage.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Chri{{ls}}t vvorketh his fir{{ls}}t miracle, turning vvater into vvine at a mariage.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='vertical-align: top;' | In the fea{{ls}}t of Pa{{ls}}che he ca{{ls}}teth out the biers and {{ls}}ellers in the Temple, in{{ls}}inuating to the Iewes his death and re{{ls}}urrectiō̄.{{outside R|THE 1. PASCHE.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | In the fea{{ls}}t of Pa{{ls}}che he ca{{ls}}teth out the biers and {{ls}}ellers in the Temple, in{{ls}}inuating to the Iewes his death and re{{ls}}urrectiō̄.{{outside R|THE 1. PASCHE.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='vertical-align: top;' | He teacheth Nicodemus by night: and baptizeth in Iurie by the mini{{ls}}terie of his di{{ls}}ciples. vvherevpon a que{{ls}}tion is moued to Iohn about their tvvo bapti{{ls}}mes.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 3
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He teacheth Nicodemus by night: and baptizeth in Iurie by the mini{{ls}}terie of his di{{ls}}ciples. vvherevpon a que{{ls}}tion is moued to Iohn about their tvvo bapti{{ls}}mes.
 |}<noinclude>{{continues|Iohn}}
 {{sidenotes end}}</noinclude>

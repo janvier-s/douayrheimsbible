@@ -1,0 +1,69 @@
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}</noinclude>{{c|{{larger|❧ A TABLE OF THE EPISTLES AND GOSPELS, AFTER THE ROMANE VSE, VPON SVNDAIES, HOLIDAIES, and other principal daies of the yere, for {{ls}}uch as are de{{ls}}irous to knovv and reade them according to this tran{{ls}}lation. And therfore the Epi{{ls}}tles taken out of the old Te{{ls}}tament are omitted, till the edition thereof.}}}}
+
+{{c|''Vpon Sundaies, Imber Daies, and other Feries.''}}
+
+{{dropinitial|T}}{{sc|he}} 1. {{sc|svnday}} in Aduent, Epi{{ls}}tle pag. 415. Go{{ls}}pel pag. 199.
+
+The 2. Sunday in Aduent, Ep. 419. Go{{ls}}p. 18.
+
+The 3 Sunday in Aduēt, Ep. 533. Go{{ls}}. 217.
+
+Vvene{{ls}}day Imber in Aduent, *{{outside L|* ''The Epi{{ls}}tles omitted are taken out of the Old Te{{ls}}tamēt.''}} Go{{ls}}p. 135.
+
+Friday Imber in Aduent, Go{{ls}}p. 136.
+
+Saturday Imber in Aduent, Ep. 554. Go{{ls}}. 143.
+
+The 4 Sunday in Aduent, Ep. 432. Go{{ls}}p. 143.
+
+Chri{{ls}}tmas eue, Ep. 382. Go{{ls}}p. 4.
+
+{| style='border-collapse: collapse; border: 1px solid #888; width: 100%;'
+|-
+| style='width: 180px; border: 1px solid #888; vertical-align: middle; padding: 3px 8px;' rowspan='3' | ''{{sc|Christmas}}'' day at the
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 8px;' | fir{{ls}}t ma{{ls}}{{ls}}e, Ep. 597. Go{{ls}}p. 139.
+|-
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 8px;' | {{ls}}econd Ma{{ls}}{{ls}}e, Epi{{ls}}t. 598. Go{{ls}}p. 140.
+|-
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 8px;' | third Ma{{ls}}{{ls}}e, Ep. 603. Go{{ls}}. 216.
+|}
+
+S. Steuen, Ep 305. Go{{ls}}p. 66.
+
+S. Iohn the Euang. Go{{ls}}p, 279.
+
+Childermas day, Ep. 724, Go{{ls}}p. 5.
+
+S. Thomas of Canterburie, Ep. 608. Go{{ls}}. 248.
+
+The Sūday within the Octaue of Chri{{ls}}tmas, Ep. 504. as on Twelfth eue. Go{{ls}}p. 14. ver{{ls}}e 33 vnto 41.
+
+The {{sc|Circvmcision}} of our Lord, Ep. 597. Go{{ls}}p. 140.
+
+Tvvelfth Eue, Ep. 504. Go{{ls}}p. 6.
+
+The {{sc|Epiphanie}} of our Lord called Tvvelfth day, Go{{ls}}p. 5.
+
+The 1 Sunday after the Epiphanie. Ep. 412. Go{{ls}}p. 141.
+
+The 2 Sunday after the Epiphanie, Ep. 413. Go{{ls}}p. 220.
+
+The 3 Sunday after the Epiphanie, Epi{{ls}}. 413. Go{{ls}}p. 19.
+
+The 4 Sunday after the Epiph. Ep. 414. Go{{ls}}p. 20.
+
+The 5 Sunday after the Epiph. Ep. 542. Go{{ls}}p. 35.
+
+The 6 Sunday after the Epiph. Ep. 546. Go{{ls}}p. 36.
+
+The Sunday of Septuage{{ls}}me, Ep. 443. Go{{ls}}p. 56.
+
+The Sunday of Sexage{{ls}}me. Ep. 489. Go{{ls}}p. 159.
+
+The Sunday of Quinquage{{ls}}me, Epi{{ls}}t. 456. Go{{ls}}p. 191.
+
+Vpon A{{ls}}h wene{{ls}}day, Go{{ls}}p. 15.
+
+Thur{{ls}}day after A{{ls}}hwene{{ls}}day, Go{{ls}}p. 20.
+{{nop}}<noinclude>{{continues|Friday}}
+{{sidenotes end}}</noinclude>

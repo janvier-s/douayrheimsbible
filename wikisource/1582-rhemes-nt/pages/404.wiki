@@ -6,46 +6,46 @@
 {| style='border-collapse: collapse; border: none; width: 100%;'
 |-
 | style='width: 50%; vertical-align: top; padding-right: 15px;' |
-{| style='border-collapse: collapse; border: none; width: 100%;'
+{| style='border-collapse: collapse; border: 1px solid #888; width: 100%;'
 |-
-| style='width: 25px; text-align: right; vertical-align: top; padding-right: 8px;' | 1
-| style='vertical-align: top;' | I Beleeue ''in God the Father,'' almightie, creator of heauen and earth.
+| style='border: 1px solid #888; width: 25px; text-align: right; vertical-align: top; padding: 3px 6px;' | 1
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | I Beleeue ''in God the Father,'' almightie, creator of heauen and earth.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 2
-| style='vertical-align: top;' | And in ''{{sc|Iesvs Christ}},'' his only Sonne, our Lord.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 2
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | And in ''{{sc|Iesvs Christ}},'' his only Sonne, our Lord.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 3
-| style='vertical-align: top;' | Vvho vvas conceiued by the Holy Gho{{ls}}t, borne of the Virgin ''{{sc|Marie}}.''
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 3
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Vvho vvas conceiued by the Holy Gho{{ls}}t, borne of the Virgin ''{{sc|Marie}}.''
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 4
-| style='vertical-align: top;' | Suffered vnder Pontius Pilate, was crucified, dead, and buried: De{{ls}}cended into Hel.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 4
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Suffered vnder Pontius Pilate, was crucified, dead, and buried: De{{ls}}cended into Hel.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 5
-| style='vertical-align: top;' | The third day he ro{{ls}}e againe from death:
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 5
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The third day he ro{{ls}}e againe from death:
 |}
 | style='width: 50%; vertical-align: top;' |
-{| style='border-collapse: collapse; border: none; width: 100%;'
+{| style='border-collapse: collapse; border: 1px solid #888; width: 100%;'
 |-
-| style='width: 25px; text-align: right; vertical-align: top; padding-right: 8px;' | 6
-| style='vertical-align: top;' | A{{ls}}cended into heauen: Sitteth at the right hand of God the Father almightie.
+| style='border: 1px solid #888; width: 25px; text-align: right; vertical-align: top; padding: 3px 6px;' | 6
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | A{{ls}}cended into heauen: Sitteth at the right hand of God the Father almightie.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 7
-| style='vertical-align: top;' | From thence he {{ls}}hal come to iudge the quicke and the dead.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 7
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | From thence he {{ls}}hal come to iudge the quicke and the dead.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 8
-| style='vertical-align: top;' | ''I beleeue'' in the Holy Gho{{ls}}t.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 8
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | ''I beleeue'' in the Holy Gho{{ls}}t.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 9
-| style='vertical-align: top;' | The holy ''Catholike Church:'' the communion of {{ls}}aincts.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 9
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The holy ''Catholike Church:'' the communion of {{ls}}aincts.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 10
-| style='vertical-align: top;' | Forgiuene{{ls}}{{ls}}e of {{ls}}innes.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 10
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Forgiuene{{ls}}{{ls}}e of {{ls}}innes.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 11
-| style='vertical-align: top;' | Re{{ls}}urrection of the fle{{ls}}h.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 11
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Re{{ls}}urrection of the fle{{ls}}h.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 12
-| style='vertical-align: top;' | Life euerla{{ls}}ting. Amen.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 12
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Life euerla{{ls}}ting. Amen.
 |}
 |}<noinclude>{{continues|THE}}
 {{sidenotes end}}</noinclude>

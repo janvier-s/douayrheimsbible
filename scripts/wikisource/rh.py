@@ -31,6 +31,7 @@ COMMANDS = {
     'sync-odr': ('syncodr', []),         # BOOK… [--min-spelling N] [--corpus all|nt|B,…] [--out FILE]
     'detect': ('detectors', []),
     'agy': ('agyread', []),              # key | calibrate [--models M,…] [--prompts P,…] | read BOOK …         # stars|wvv|longs BOOK … [--out FILE] [--repo R]
+    'backmatter': ('backmatter', []),    # [--xml PATH] [--out DIR] [--update-manifest]
 }
 
 

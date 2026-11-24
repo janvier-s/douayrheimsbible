@@ -1,106 +1,106 @@
 <noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|Mt. Mr. Lu. Io.||285}}</noinclude>
-{| style='border-collapse: collapse; border: none; width: 100%;'
+{| style='border-collapse: collapse; border: 1px solid #888; width: 100%;'
 |-
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 26
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 14
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' | 22
-| style='width: 35px; text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Iudas bargaineth vvith the Ievves to betray him. and tvvo of his di{{ls}}ciples prepare the Pa{{ls}}chal lambe.{{outside R|TENEBRE vvene{{ls}}day.}}
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' | 26
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' | 14
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' | 22
+| style='border: 1px solid #888; width: 35px; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Iudas bargaineth vvith the Ievves to betray him. and tvvo of his di{{ls}}ciples prepare the Pa{{ls}}chal lambe.{{outside R|TENEBRE vvene{{ls}}day.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 13
-| style='vertical-align: top;' | At the {{ls}}upper he vva{{ls}}heth his Apo{{ls}}tles feete.{{outside R|MAVNDY thur{{ls}}day.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 13
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | At the {{ls}}upper he vva{{ls}}heth his Apo{{ls}}tles feete.{{outside R|MAVNDY thur{{ls}}day.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 26
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | He in{{ls}}tituteth the Sacrifice of his body and bloud in the B. Sacrament.{{outside R|The 4 Pa{{ls}}che.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 26
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 14
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 22
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He in{{ls}}tituteth the Sacrifice of his body and bloud in the B. Sacrament.{{outside R|The 4 Pa{{ls}}che.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 26
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 13
-| style='vertical-align: top;' | He foretelleth that one of the Tvvelue {{ls}}hal betray him (appea{{ls}}ing their contention for the {{ls}}uperioritie) and that they {{ls}}hal al deny him.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 26
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 14
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 22
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 13
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He foretelleth that one of the Tvvelue {{ls}}hal betray him (appea{{ls}}ing their contention for the {{ls}}uperioritie) and that they {{ls}}hal al deny him.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 14
-| style='vertical-align: top;' | His {{ls}}ermon after {{ls}}upper.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 14
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | His {{ls}}ermon after {{ls}}upper.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 17
-| style='vertical-align: top;' | His prayer to his father.{{outside R|Al THVRSDAY night &amp; GOOD FRIDAY.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 17
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | His prayer to his father.{{outside R|Al THVRSDAY night &amp; GOOD FRIDAY.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 26.27
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 14.15
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 22.23
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 18.19
-| style='vertical-align: top;' | The {{ls}}torie of his Pa{{ls}}sion and burial, from thur{{ls}}day at night, til the next day at euentide.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 26.27
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 14.15
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 22.23
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 18.19
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | The {{ls}}torie of his Pa{{ls}}sion and burial, from thur{{ls}}day at night, til the next day at euentide.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 28
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='vertical-align: top;' | He ri{{ls}}eth the third day,{{outside R|EASTER DAY.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 28
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 24
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | He ri{{ls}}eth the third day,{{outside R|EASTER DAY.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='vertical-align: top;' | appeareth fir{{ls}}t to Marie Magdalene.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | appeareth fir{{ls}}t to Marie Magdalene.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 28
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Then to the other vvomen.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 28
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Then to the other vvomen.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Then to Peter. ver. 34. then to the tvvo di{{ls}}ciples going into Emmaus. ver. 15.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 24
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Then to Peter. ver. 34. then to the tvvo di{{ls}}ciples going into Emmaus. ver. 15.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='vertical-align: top;' | Then to the di{{ls}}ciples gathered together in a hou{{ls}}e at Hieru{{ls}}alem, vvhen he entred the doores being {{ls}}hut, and gaue them povver to remit and reteine {{ls}}innes.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 24
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Then to the di{{ls}}ciples gathered together in a hou{{ls}}e at Hieru{{ls}}alem, vvhen he entred the doores being {{ls}}hut, and gaue them povver to remit and reteine {{ls}}innes.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 20
-| style='vertical-align: top;' | Then, vpon Lovv-Sunday, to the di{{ls}}ciples likevvi{{ls}}e gathered together, and Thomas among them.{{outside R|LOVV SVNday.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 20
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Then, vpon Lovv-Sunday, to the di{{ls}}ciples likevvi{{ls}}e gathered together, and Thomas among them.{{outside R|LOVV SVNday.}}
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 21
-| style='vertical-align: top;' | Then, at the {{ls}}ea of Tiberias, to Peter &amp; the re{{ls}}t that were fi{{ls}}hing. vvhere he committeth his {{ls}}heepe to Peter.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 21
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Then, at the {{ls}}ea of Tiberias, to Peter &amp; the re{{ls}}t that were fi{{ls}}hing. vvhere he committeth his {{ls}}heepe to Peter.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 28
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Then, to the di{{ls}}ciples vpon a mount in Galilee: giuing them commi{{ls}}sion to preache and baptize through out the vvhole vvorld.
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 28
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Then, to the di{{ls}}ciples vpon a mount in Galilee: giuing them commi{{ls}}sion to preache and baptize through out the vvhole vvorld.
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | Then in Bethánia, vvhere he promi{{ls}}eth to {{ls}}end the holy Gho{{ls}}t (bidding them tarie in the meane time in Hieru{{ls}}alem)
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 24
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | Then in Bethánia, vvhere he promi{{ls}}eth to {{ls}}end the holy Gho{{ls}}t (bidding them tarie in the meane time in Hieru{{ls}}alem)
 |-
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 16
-| style='text-align: right; vertical-align: top; padding-right: 8px;' | 24
-| style='text-align: right; vertical-align: top; padding-right: 8px;' |
-| style='vertical-align: top;' | and {{ls}}o ble{{ls}}sing them, A{{ls}}cendeth into heauen.{{outside R|ASCENSION day.}}
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 16
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' | 24
+| style='border: 1px solid #888; text-align: right; vertical-align: top; padding: 3px 6px;' |
+| style='border: 1px solid #888; vertical-align: top; padding: 3px 6px;' | and {{ls}}o ble{{ls}}sing them, A{{ls}}cendeth into heauen.{{outside R|ASCENSION day.}}
 |}<noinclude>{{continues|THE}}
 {{sidenotes end}}</noinclude>
