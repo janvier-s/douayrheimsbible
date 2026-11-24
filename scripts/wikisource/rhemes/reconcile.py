@@ -24,7 +24,7 @@ from .jsonfmt import write_like
 from .wikipost import norm
 
 REPO, WS, PAGES, MANIFEST = paths.REPO, paths.WS, paths.PAGES, paths.MANIFEST
-LIVE_BASE = 'c9ace89b'  # the commit whose pages equal the live pages: 2 Timothy posted 2026-11-24 (pages 614-622)
+LIVE_BASE = 'e1235ba7'  # the commit whose pages equal the live pages: Titus posted 2026-11-24 (pages 623-627)
 
 
 def generate_book(book, out, ornaments=None):
