@@ -289,7 +289,7 @@
     "first": 631,
     "last": 667,
     "ornaments": true,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "title_end": "TO THE HEBREVVES.",
     "scripture_pages": 37,
