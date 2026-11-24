@@ -346,7 +346,7 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PETER THE APOSTLE.}}}}'
             elif BOOK == '1-john':
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF IOHN THE APOSTLE.}}}}'
-            elif BOOK == '2-peter':
+            elif BOOK in ('2-peter', '2-john', '3-john'):
                 title_wiki = ''
             elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
@@ -388,7 +388,7 @@ def build_stream(book, ann):
                     tt_intro = tokens_of(ptext, ch=ch, kind='intro')
                     tt_intro[0]['block'] = True
                     S += tt_intro
-        if BOOK != 'philemon' and not (BOOK == '2-peter' and ch == 1):
+        if BOOK != 'philemon' and not (BOOK in ('2-peter', '2-john', '3-john') and ch == 1):
             if (BOOK == 'acts' or BOOK == 'romans') and ch == 1:
                 side = (chap.get('summary_notes') or [{}, {}])[1].get('text', '') if BOOK == 'acts' else ''
             else:
@@ -420,6 +420,22 @@ def build_stream(book, ann):
                         t['w'] = k
                     S += vt
                     continue
+            if BOOK == '2-john' and ch == 1:
+                if v['verse'] in (1, 2, 3):
+                    continue
+            if BOOK == '3-john' and ch == 1:
+                if v['verse'] < 7:
+                    continue
+                if v['verse'] == 7:
+                    cut = 'taking nothing'
+                    idx = v['text'].index(cut) + len(cut)
+                    rem = v['text'][idx:].strip()
+                    vt = tokens_of(finish(rem), ch=ch, kind='verse', verse=7)
+                    vt[0]['vstart'] = True
+                    for k, t in enumerate(vt):
+                        t['w'] = k
+                    S += vt
+                    continue
             vt = tokens_of(finish(render_verse(v, ch), dropcap=v['verse'] == 1, ch=ch), ch=ch, kind='verse', verse=v['verse'])
             vt[0]['vstart'] = True
             for k, t in enumerate(vt):
@@ -437,7 +453,7 @@ def build_stream(book, ann):
             S += vt
         anns = ann.get(ch, [])
         if anns:
-            if BOOK == 'philemon':
+            if BOOK in ('philemon', '2-john'):
                 S += tokens_of('{{c|{{larger|ANNOT.}}}}', block=True, ch=ch, kind='annhead')
             else:
                 S += tokens_of('{{c|{{larger|A N N O T A T I O N S}}}} {{c|{{sc|Chap. ' + ROMAN[ch] + '.}}}}', block=True, ch=ch, kind='annhead')
@@ -536,6 +552,31 @@ def build_stream(book, ann):
         for v in ch1['verses'][:3]:
             raw_v = render_verse(v, 1)
             vt = tokens_of(finish(raw_v, dropcap=(v['verse'] == 1), ch=1), ch=5, kind='verse', verse=v['verse'])
+            vt[0]['vstart'] = True
+            for k, t in enumerate(vt):
+                t['w'] = k
+            if v['verse'] == 1:
+                for t in vt[:14]:
+                    t['nopara'] = True
+            S += vt
+    elif BOOK == '2-john':
+        b3 = json.loads((DATA / '3-john.json').read_text())
+        ch1 = b3['chapters'][0]
+        summary = ch1.get('summary', '')
+        head = '{{c|{{xx-larger|THE THIRD EPISTLE}}}}\n{{c|{{x-larger|OF IOHN THE APOSTLE.}}}}'
+        if summary:
+            head += "\n\n{{c|''" + finish(summary) + "''}}"
+        tt_head = tokens_of(head, ch=1, kind='ann')
+        tt_head[0]['block'] = True
+        S += tt_head
+        for v in ch1['verses']:
+            if v['verse'] > 7:
+                break
+            raw_v = render_verse(v, 1)
+            if v['verse'] == 7:
+                cut_idx = raw_v.index('taking nothing') + len('taking nothing')
+                raw_v = raw_v[:cut_idx]
+            vt = tokens_of(finish(raw_v, dropcap=(v['verse'] == 1), ch=1), ch=1, kind='verse', verse=v['verse'])
             vt[0]['vstart'] = True
             for k, t in enumerate(vt):
                 t['w'] = k
@@ -1058,7 +1099,14 @@ def main(argv):
             header = f'{{{{rh|{printed}|{{{{sc|the second epistle.}}}}|{cha}}}}}'
         elif BOOK == '1-john' and wiki == 716:
             header = f'{{{{rh|{printed}|{{{{sc|the second epistle}}}}|}}}}'
-        elif n == 0 and BOOK != '2-peter':
+        elif BOOK == '2-john':
+            if wiki == 717:
+                header = f'{{{{rh||{recto_t}|{printed}}}}}'
+            elif wiki == 718:
+                header = f'{{{{rh|{printed}|THE THIRD EPISTLE|}}}}'
+        elif BOOK == '3-john' and wiki == 719:
+            header = f'{{{{rh||{recto_t}|{printed}}}}}'
+        elif n == 0 and BOOK not in ('2-peter', '2-john', '3-john'):
             fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'
         body = ''

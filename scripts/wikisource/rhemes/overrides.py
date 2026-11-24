@@ -79,7 +79,8 @@ PAREN_TITLES = {*[('mark', 2, i) for i in range(6)], *[('mark', 3, i) for i in r
                 ('philippians', 4, 0), ('philippians', 4, 1), ('philippians', 4, 2),
                 ('colossians', 1, 0),
                 *[('colossians', 2, i) for i in range(7)],
-                *[('colossians', 3, i) for i in range(2)]}
+                *[('colossians', 3, i) for i in range(2)],
+                ('2-john', 1, 0), ('2-john', 1, 1), ('2-john', 1, 3)}
 
 # Italic annotation notes the print sets in the OUTER margin, beside the side headings,
 # though they look like citations: (book, chapter, annotation index, note index), checked
@@ -222,12 +223,16 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('2-peter', 701): 'THE',
               ('1-john', 702): 'THE',
               ('1-john', 716): '† I vvas',
+              ('2-john', 717): 'cated.',
+              ('2-john', 718): 'of',
+              ('3-john', 719): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
 # Words the print hyphenates across a page break: wiki page -> (first part, rest, whole word).
 # Rendered {{hws|de|de{{ls}}ert.|title=desert.}} at the page end and {{hwe|{{ls}}ert.|de{{ls}}ert.}} at the next page's start.
-SPLIT_WORDS = {('2-peter', 696): ('num-', 'bers', 'numbers'),
+SPLIT_WORDS = {('2-john', 717): ('excommuni-', 'cated', 'excommunicated'),
+               ('2-peter', 696): ('num-', 'bers', 'numbers'),
                ('2-peter', 699): ('ac-', 'cording', 'according'),
                ('2-timothy', 615): ('Chri-', 'ſtian', 'Chriſtian'),
                ('1-timothy', 610): ('do-', 'ctrine', 'doctrine'),

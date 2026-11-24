@@ -174,6 +174,10 @@ def lint(d, ov=None):
             last_ch = last_v = None
             if n == 695:  # 2 Peter 1:1-4 is on page 694
                 last_ch, last_v = 1, 4
+            if n == 717:  # 2 John 1:1-3 is on page 716
+                last_ch, last_v = 1, 3
+            if n == 719:  # 3 John 1:1-7 is on page 718
+                last_ch, last_v = 1, 7
         t = f.read_text()
         body = NOINC.sub('', t)
         if unicodedata.normalize('NFC', t) != t:
@@ -311,6 +315,8 @@ def lint(d, ov=None):
         # verse sequence and marks
         for m in VERSE.finditer(body):
             ch, v = int(m.group(1) or m.group(3)), int(m.group(2) or m.group(4))
+            if n == 718 and v == 1:  # 3 John begins mid-page on page 718
+                last_ch = last_v = None
             if ch != last_ch:
                 if v != 1:
                     out.append(('E-verse', n, f'chapter {ch} starts at verse {v}'))

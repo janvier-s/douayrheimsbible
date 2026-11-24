@@ -351,5 +351,29 @@
       "THE FIRST EPISTLE",
       "OF S. IOHN."
     ]
+  },
+  "2-john": {
+    "first": 717,
+    "last": 718,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "scripture_pages": 2,
+    "running": [
+      "THE SECOND EPISTLE",
+      "OF S. IOHN."
+    ]
+  },
+  "3-john": {
+    "first": 719,
+    "last": 719,
+    "ornaments": false,
+    "golden": true,
+    "ocr": "transkribus",
+    "scripture_pages": 1,
+    "running": [
+      "THE THIRD EPISTLE",
+      "OF S. IOHN."
+    ]
   }
 }
