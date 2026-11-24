@@ -277,7 +277,7 @@
     "first": 628,
     "last": 630,
     "ornaments": false,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "scripture_pages": 3,
     "running": [
