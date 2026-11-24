@@ -39,6 +39,7 @@ State on 2026-11-21. Update it by hand when a book's state changes.
 | 719     | 3 John (Argument & 1:1–7 on 718; 1:8–14 on 719) | yes (2026-11-24)                      | yes, golden | no        | yes (2026-11-24) |
 | 720–723 | Jude (Argument 720, Epistle & Annot. 721–723) | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
 | 724–773 | Apocalypse (Argument 724–725, Text & Annot. 726–773) | yes (2026-11-24)                           | yes, golden | no        | yes (2026-11-24) |
+| 774–800 | Back matter (Tables of Epistles & Gospels, Controversies, Hard Words, Errata) | yes (2026-11-24) | no (frozen; `rh.py backmatter`) | no | yes (2026-11-24) |
 
 The NT-wide passes fixed one class of error across the whole NT without reading each book in full: variant readings, lectionary notes (vpon → vpō), annotation margin notes, and a few one-offs.
 
