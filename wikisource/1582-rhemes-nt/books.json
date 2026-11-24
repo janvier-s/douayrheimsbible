@@ -251,7 +251,7 @@
     "first": 614,
     "last": 622,
     "ornaments": false,
-    "golden": false,
+    "golden": true,
     "ocr": "transkribus",
     "title_end": "TIMOTHEE.",
     "scripture_pages": 9,
