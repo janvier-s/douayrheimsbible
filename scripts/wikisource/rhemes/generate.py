@@ -327,7 +327,7 @@ def build_stream(book, ann):
                 title_wiki = note_str + '{{c|{{xx-larger|THE EPISTLE OF}}}}\n{{c|{{x-larger|PAVL THE APOSTLE}}}}\n{{c|{{larger|TO THE ROMANES.}}}}'
             elif BOOK in ('1-corinthians', '1-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
-            elif BOOK == '2-corinthians':
+            elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('galatians', 'ephesians', 'philippians', 'colossians'):
                 title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'

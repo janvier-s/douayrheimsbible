@@ -218,5 +218,18 @@
       "THE FIRST EPISTLE OF S. PAVL",
       "TO THE THESSALONIANS."
     ]
+  },
+  "2-thessalonians": {
+    "first": 581,
+    "last": 590,
+    "ornaments": false,
+    "golden": false,
+    "ocr": "transkribus",
+    "title_end": "THESSALONIANS.",
+    "scripture_pages": 10,
+    "running": [
+      "THE SECOND EPISTLE OF S. PAVL",
+      "TO THE THESSALONIANS."
+    ]
   }
 }

@@ -298,10 +298,10 @@
       "verses": [
         {
           "verse": 1,
-          "text": "<sc>For</sc> <cr>[1]</cr> the rest, brethren, pray for us, that the word of God may have course and be glorified, as also with you:",
+          "text": "<sc>For</sc> the rest, brethren, pray for us, that the word of God may have course and be glorified, as also with you: <cr>[1]</cr>",
           "cross_refs": [
             {
-              "text": "Eph. 6, 18. Col. 4, 3."
+              "text": "Ep. 6, 18."
             }
           ],
           "xrefs": [
@@ -310,7 +310,12 @@
         },
         {
           "verse": 2,
-          "text": "and that we may be delivered from importunate and naughty men. For all men have not faith."
+          "text": "and that we may be delivered from importunate and naughty men. For all men have not faith. <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Col. 4, 3."
+            }
+          ]
         },
         {
           "verse": 3,
@@ -342,14 +347,22 @@
         },
         {
           "verse": 7,
-          "text": "For yourselves know how you ought to imitate us: for we have not been unquiet among you:"
+          "text": "For yourselves know how you ought to imitate us: for we have not been unquiet among you: <cr>[1]</cr>",
+          "cross_refs": [
+            {
+              "text": "Act. 20."
+            }
+          ]
         },
         {
           "verse": 8,
-          "text": "<cr>[1]</cr> neither have we eaten bread of any man gratis, but in labour and in toil night and day working, lest we should burden any of you.",
+          "text": "<cr>[1]</cr><cr>[2]</cr> neither have we eaten bread of any man gratis, but in labour and in toil night and day working, lest we should burden any of you.",
           "cross_refs": [
             {
-              "text": "Act. 20. 1. Cor. 4. 1. Th. 2."
+              "text": "1. Cor. 4."
+            },
+            {
+              "text": "1. Th. 2."
             }
           ],
           "xrefs": [

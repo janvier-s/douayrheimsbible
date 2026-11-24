@@ -165,6 +165,11 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('1-thessalonians', 575): 'are', ('1-thessalonians', 576): 'FOR',
               ('1-thessalonians', 577): 'uen', ('1-thessalonians', 578): 'CHAP.',
               ('1-thessalonians', 579): 'that', ('1-thessalonians', 580): 'THE',
+              ('2-thessalonians', 581): 'concerning', ('2-thessalonians', 582): 'lying:',
+              ('2-thessalonians', 583): 'magnus.', ('2-thessalonians', 584): 'the',
+              ('2-thessalonians', 585): 'worship', ('2-thessalonians', 586): '9. In',
+              ('2-thessalonians', 587): 'that', ('2-thessalonians', 588): 'vnquiet',
+              ('2-thessalonians', 589): 'Religious', ('2-thessalonians', 590): 'THE',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 
