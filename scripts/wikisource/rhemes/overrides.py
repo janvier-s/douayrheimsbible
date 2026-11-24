@@ -189,6 +189,11 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('2-timothy', 620): 'iudge:',
               ('2-timothy', 621): 'Hovv.',
               ('2-timothy', 622): 'THE',
+              ('titus', 623): 'muſt',
+              ('titus', 624): 'Iohn',
+              ('titus', 625): 'good',
+              ('titus', 626): 'thee:',
+              ('titus', 627): 'PAVL',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 

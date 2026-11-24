@@ -1,0 +1,13 @@
+<noinclude><pagequality level="1" user="" />{{sidenotes begin}}{{rh|||595}}</noinclude>{{c|{{xx-larger|THE EPISTLE}}}}
+{{c|{{larger|OF PAVL TO TITVS.}}}}
+
+{{c|{{larger|{{sc|Chap. I.}}}}}}
+
+{{c|''Of what qualitie the Prie{{ls}}ts and Bi{{ls}}hops mu{{ls}}t be: 9 namely learned, con{{ls}}idering the Iudaical {{ls}}educers of that time. 12 That the Creten{{ls}}ians mu{{ls}}t be roughly v{{ls}}ed, to haue them continue {{ls}}ound in faith.''}}
+
+{{verse|chapter=1|verse=1|align=float}}{{dropinitial|P}}{{sc|Avl}} the {{ls}}eruant of God, and an Apo{{ls}}tle of {{sc|Iesvs}} Chri{{ls}}t according to the faith of the elect of God and knowledge of the truth: vvhich is according to pietie {{verse|chapter=1|verse=2|align=float}}† into the hope of life euerla{{ls}}ting, vvhich he promi{{ls}}ed that lieth not, God, * {{outside L|''2. Tim. 1, 9.''}} before the {{ls}}ecular times: {{verse|chapter=1|verse=3|align=float}}† but hath manife{{ls}}ted in due times his vvord in preaching, vvhich is committed to me according to the precept of our Sauiour God: {{verse|chapter=1|verse=4|align=float}}† to Titus my beloued {{ls}}onne according to the common faith, grace and peace from God the father, and Chri{{ls}}t {{sc|Iesvs}} our Sauiour.
+
+{{verse|chapter=1|verse=5|align=float}}† For this cau{{ls}}e left I thee in Crete, that thou {{ls}}houlde{{ls}}t reforme the things that are vvanting, and {{ls}}houlde{{ls}}t {{sup|‖}} ordaine prie{{ls}}tes by cities, as I al{{ls}}o appointed thee: {{verse|chapter=1|verse=6|align=float}}† * {{outside L|''1. Tim. 3, 2.''}} if any be vvithout crime, the hu{{ls}}band {{sup|‖}} of one vvife, hauing faithful children, not in the accu{{ls}}ation of riote, or not obedient. {{verse|chapter=1|verse=7|align=float}}† For a Bi{{ls}}hop mu{{ls}}t be vvithout crime, as the {{ls}}tevvard of God: not proud, not angrie, not giuen to vvine, no {{ls}}triker, not couetous of filthy lucre: {{verse|chapter=1|verse=8|align=float}}† but giuen to ho{{ls}}pitalitie, gentle, {{ls}}ober, iu{{ls}}t, holy, continent: {{verse|chapter=1|verse=9|align=float}}† embracing that faithful vvord vvhich is according to doctrine, that he may be able to exhort in {{ls}}ound doctrine, & to reproue them that gaine{{ls}}ay it.
+
+{{verse|chapter=1|verse=10|align=float}}† For there be many di{{ls}}obedient, vaine-{{ls}}peakers, and {{ls}}educers, e{{ls}}pecially they that are of the Circumci{{ls}}ion. {{verse|chapter=1|verse=11|align=float}}† vvho<noinclude>{{continues|mu{{ls}}t}}
+{{sidenotes end}}</noinclude>

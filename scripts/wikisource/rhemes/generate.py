@@ -331,6 +331,8 @@ def build_stream(book, ann):
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK == '2-timothy':
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
+            elif BOOK == 'titus':
+                title_wiki = '{{c|{{xx-larger|THE EPISTLE}}}}\n{{c|{{larger|OF PAVL TO TITVS.}}}}'
             elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('galatians', 'ephesians', 'philippians', 'colossians'):
@@ -387,17 +389,21 @@ def build_stream(book, ann):
             "{{c|{{smaller|Vvherevnto we ioyne for the readers behalfe, tvvo Tables of the tvvo cheefe Apoſtles, and a note of the reſt, as an abridgement of the ſaid booke, and a ſupply of ſome things not there mentioned.}}}}"
         )
         S[-1]['text'] += trailer
-    elif BOOK in ('1-thessalonians', '1-timothy', '2-timothy'):
-        next_book = '2-thessalonians' if BOOK == '1-thessalonians' else ('2-timothy' if BOOK == '1-timothy' else 'titus')
-        ch_num = 5 if BOOK == '1-thessalonians' else (6 if BOOK == '1-timothy' else 4)
+    elif BOOK in ('1-thessalonians', '1-timothy', '2-timothy', 'titus'):
+        next_book = {'1-thessalonians': '2-thessalonians', '1-timothy': '2-timothy', '2-timothy': 'titus', 'titus': 'philemon'}[BOOK]
+        ch_num = {'1-thessalonians': 5, '1-timothy': 6, '2-timothy': 4, 'titus': 3}[BOOK]
         b2 = json.loads((DATA / f'{next_book}.json').read_text())
-        intro = b2['intros'][0]
-        if BOOK == '1-thessalonians':
-            lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'SECOND EPISTLE OF S. PAVL'), ('larger', 'TO THE THESSALONIANS.')]
-        elif BOOK == '1-timothy':
-            lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'SECOND EPISTLE OF S. PAVL'), ('larger', 'TO TIMOTHEE.')]
+        if BOOK == 'titus':
+            intro = {'text': b2['chapters'][0]['summary'], 'notes': []}
+            lines = [('larger', 'THE EPISTLE OF PAVL TO PHILEMON.'), ('larger', 'THE ARGVMENT.')]
         else:
-            lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'EPISTLE OF S. PAVL'), ('larger', 'TO TITVS.')]
+            intro = b2['intros'][0]
+            if BOOK == '1-thessalonians':
+                lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'SECOND EPISTLE OF S. PAVL'), ('larger', 'TO THE THESSALONIANS.')]
+            elif BOOK == '1-timothy':
+                lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'SECOND EPISTLE OF S. PAVL'), ('larger', 'TO TIMOTHEE.')]
+            else:
+                lines = [('x-larger', 'THE ARGVMENT OF THE'), ('larger', 'EPISTLE OF S. PAVL'), ('larger', 'TO TITVS.')]
         head = '\n'.join(f'{{{{c|{{{{{size}|{line}}}}}}}}}' for size, line in lines)
         notes = iter(n['text'] for n in intro.get('notes', []))
         def mark(m):
