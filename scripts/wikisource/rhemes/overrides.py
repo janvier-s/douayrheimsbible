@@ -31,7 +31,9 @@ ARGUMENT_TITLES = {('acts', 0): [('x-larger', 'THE ARGVMENT OF'), ('larger', 'TH
                                   ('larger', 'EPISTLE OF S. IAMES.')],
                    ('1-peter', 0): [('x-larger', 'THE ARGVMENT OF BOTH'),
                                     ('larger', 'THE EPISTLES OF S. PETER, THE'),
-                                    ('larger', 'FIRST, AND THE SECOND.')]}
+                                    ('larger', 'FIRST, AND THE SECOND.')],
+                   ('1-john', 0): [('x-larger', 'THE ARGVMENT OF S.'),
+                                   ('larger', 'IOHNS THREE EPISTLES.')]}
 
 # Multi-page Arguments: the text that opens each following page (read on the scans, pdf314-316, pdf405-409).
 ARGUMENT_BREAKS = {'acts': ['Gentiles, by the miniſterie', 'Ievves, and conſequently'],
@@ -218,6 +220,8 @@ CATCHWORDS = {('john', 242): 'ſion', ('john', 243): 'THE', ('john', 245): 'the'
               ('2-peter', 699): 'cording',
               ('2-peter', 700): 'S. Peter',
               ('2-peter', 701): 'THE',
+              ('1-john', 702): 'THE',
+              ('1-john', 716): '† I vvas',
               # printed catchwords longer than the first word of the next page, read on the scan
               ('matthew', 38): "''6. It is''", ('matthew', 44): "''13. Leade vs not:''", ('matthew', 91): "''11. A man''", ('matthew', 94): "''3. What''"}
 

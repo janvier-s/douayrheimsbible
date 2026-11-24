@@ -284,7 +284,8 @@ LIVE = {'matthew': (31, 113), 'mark': (114, 160), 'luke': (161, 241), 'john': (2
         'hebrews': (631, 667),
         'james': (668, 681),
         '1-peter': (682, 694),
-        '2-peter': (695, 701)}  # wiki page ranges (BOOKS.md / git log)
+        '2-peter': (695, 701),
+        '1-john': (702, 716)}  # wiki page ranges (BOOKS.md / git log)
 TEXT_KINDS = {'w/vv', 'longs', 'macron', 'stray-letter', 'text', 'lig', 'spacing'}  # anchor-letter is expected, not checked
 
 

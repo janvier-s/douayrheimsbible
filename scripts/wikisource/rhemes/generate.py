@@ -344,6 +344,8 @@ def build_stream(book, ann):
                 title_wiki = note_str + '{{c|{{xx-larger|THE CATHOLIKE}}}}\n{{c|{{x-larger|EPISTLE OF IAMES}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK == '1-peter':
                 title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PETER THE APOSTLE.}}}}'
+            elif BOOK == '1-john':
+                title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF IOHN THE APOSTLE.}}}}'
             elif BOOK == '2-peter':
                 title_wiki = ''
             elif BOOK in ('2-corinthians', '2-thessalonians'):
@@ -513,6 +515,26 @@ def build_stream(book, ann):
             if v['verse'] == 4:
                 cut_idx = raw_v.index('that by theſe you may be') + len('that by theſe you may be')
                 raw_v = raw_v[:cut_idx]
+            vt = tokens_of(finish(raw_v, dropcap=(v['verse'] == 1), ch=1), ch=5, kind='verse', verse=v['verse'])
+            vt[0]['vstart'] = True
+            for k, t in enumerate(vt):
+                t['w'] = k
+            if v['verse'] == 1:
+                for t in vt[:14]:
+                    t['nopara'] = True
+            S += vt
+    elif BOOK == '1-john':
+        b2 = json.loads((DATA / '2-john.json').read_text())
+        ch1 = b2['chapters'][0]
+        summary = ch1.get('summary', '')
+        head = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF IOHN THE APOSTLE.}}}}'
+        if summary:
+            head += "\n\n{{c|''" + finish(summary) + "''}}"
+        tt_head = tokens_of(head, ch=5, kind='ann')
+        tt_head[0]['block'] = True
+        S += tt_head
+        for v in ch1['verses'][:3]:
+            raw_v = render_verse(v, 1)
             vt = tokens_of(finish(raw_v, dropcap=(v['verse'] == 1), ch=1), ch=5, kind='verse', verse=v['verse'])
             vt[0]['vstart'] = True
             for k, t in enumerate(vt):
@@ -1034,6 +1056,8 @@ def main(argv):
                 header = f'{{{{rh|{printed}||}}}}'
         elif BOOK == '1-peter' and wiki == 694:
             header = f'{{{{rh|{printed}|{{{{sc|the second epistle.}}}}|{cha}}}}}'
+        elif BOOK == '1-john' and wiki == 716:
+            header = f'{{{{rh|{printed}|{{{{sc|the second epistle}}}}|}}}}'
         elif n == 0 and BOOK != '2-peter':
             fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'

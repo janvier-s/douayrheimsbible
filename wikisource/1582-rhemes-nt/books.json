@@ -337,5 +337,19 @@
       "THE SECOND EPISTLE",
       "OF S. PETER."
     ]
+  },
+  "1-john": {
+    "first": 702,
+    "last": 716,
+    "ornaments": false,
+    "golden": false,
+    "ocr": "transkribus",
+    "title_end": "THE APOSTLE.",
+    "argument_page": 702,
+    "scripture_pages": 14,
+    "running": [
+      "THE FIRST EPISTLE",
+      "OF S. IOHN."
+    ]
   }
 }
