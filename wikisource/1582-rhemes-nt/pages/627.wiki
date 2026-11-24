@@ -11,5 +11,6 @@
 {{c|{{larger|THE EPISTLE OF PAVL TO PHILEMON.}}}}
 {{c|{{larger|THE ARGVMENT.}}}}
 
-{{dropinitial|H}}earing of Philémons vertue, vvho vvas a Colo{{ls}}{{ls}}ian, he vvriteth a familiar letter from Rome (being pri{{ls}}oner there) about his fugitiue {{ls}}eruant One{{ls}}imus: not doubting but that he might commaund him, yet rather reque{{ls}}ting that he vvil forgiue him, yea and receiue him as he vvould Paul him {{ls}}elf, who al{{ls}}o hopeth to come vnto him.<noinclude>{{continues|PAVL}}
+{{dropinitial|H}}earing of Philémons vertue, vvho vvas a Colo{{ls}}{{ls}}ian, he vvriteth a familiar letter from Rome (being pri{{ls}}oner there) about his fugitiue {{ls}}eruant One{{ls}}imus: not doubting but that he might commaund him, yet rather reque{{ls}}ting that he vvil forgiue him, yea and receiue him as he vvould Paul him {{ls}}elf, who al{{ls}}o hopeth to come vnto him.
+{{nop}}<noinclude>{{continues|PAVL}}
 {{sidenotes end}}</noinclude>

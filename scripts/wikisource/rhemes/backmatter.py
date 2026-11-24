@@ -72,130 +72,6 @@ CATCHWORDS: dict[int, str] = {
 # Pages where a complete entry ends at the foot and a new entry opens on the next page.
 NOP_PAGES = {774, 775, 776, 781, 782, 784, 799}
 
-# Scan-verified resolutions for the 41 <gap> tags in the back matter, in exact document order.
-# Each entry is (page, replacement_text).
-GAP_RESOLUTIONS: list[tuple[int, str]] = [
-    (774, "2"),                    # 1: Goſ. <gap/>17. -> Goſ. 217.
-    (774, "p."),                   # 2: Goſ<gap/> 135. -> Goſp. 135.
-    (774, "2"),                    # 3: Ep. 38<gap/>. -> Ep. 382.
-    (774, "f"),                    # 4: Tvvel<gap/>th Eue -> Tvvelfth Eue
-    (774, "41"),                   # 5: Ep. <gap/>3. Goſp. 220. -> Ep. 413.
-    (775, "ſp"),                   # 6: go<gap/>. 265 -> goſp. 265
-    (775, "e"),                    # 7: The Aſcenſion <gap/>ue -> eue
-    (776, "E"),                    # 8: CANDL<gap/>NAS -> CANDLEMAS (N->M fixed below)
-    (776, "E"),                    # 9: HOLY ROOD<gap/> -> HOLY ROODE
-    (776, "e"),                    # 10: Paules eu<gap/>, -> eue,
-    (776, "ſ"),                    # 11: Al-<gap/>oules -> Al-ſoules
-    (778, "e"),                    # 12: Entrem<gap/> -> Extreme (fixed below)
-    (778, "n"),                    # 13: V<gap/>cti -> Vncti
-    (778, "on"),                   # 14: Vncti<gap/>. -> Vnction.
-    (779, "1"),                    # 15: nu. 3<gap/>. -> nu. 31.
-    (779, "1"),                    # 16: 2<gap/>7 marg. -> 217 marg.
-    (779, "4"),                    # 17: pa <gap/>88. -> pa. 488.
-    (779, "5"),                    # 18: marg. <gap/>98. -> marg. 598.
-    (779, "5. p. "),               # 19: p. 5<gap/>5 616 -> p. 55. p. 616 (fixed below)
-    (779, "1."),                   # 20: pag 219 nu. <gap/> p. 250. -> nu. 1.
-    (779, "1"),                    # 21: 55<gap/> marg. -> 551 marg.
-    (779, "s"),                    # 22: Paſ<gap/>ion -> Paſsion
-    (788, "1"),                    # 23: 7<gap/>. nu. 84. -> 71. nu. 24. (84->24 below)
-    (789, "{{lang|grc|μετάνοια}}"),  # 24: Greeke <gap/> &
-    (789, "{{lang|grc|μετανοεῖν}}"), # 25: & <gap/> ſignifie
-    (789, "8"),                    # 26: penāce. p. <gap/>. 30. -> p. 8. 30.
-    (789, "1"),                    # 27: 645. nu. <gap/>3. -> nu. 13.
-    (792, "8"),                    # 28: pag. 4<gap/>0. -> pag. 480.
-    (792, "cle"),                  # 29: Vvi<gap/>fiſtes -> Vviclefiſtes
-    (793, "See"),                  # 30: p. 471. nu. 5. <gap/>
-    (793, "S"),                    # 31: <gap/>chiſme. -> Schiſme.
-    (793, "Ne"),                   # 32: <gap/>uters -> Neuters
-    (794, "1"),                    # 33: 393. 39<gap/> marg. -> 391 marg.
-    (796, "2"),                    # 34: 67<gap/>. -> 672.
-    (796, "73"),                   # 35: 5<gap/>8. -> 673. (cleaned below)
-    (799, "e"),                    # 36: Azym<gap/>s, -> Azymes,
-    (799, "2"),                    # 37: pag. 7<gap/>3. -> pag. 723.
-    (800, "o"),                    # 38: D<gap/>minical -> Dominical
-    (800, "ſcandal"),              # 39: The <gap/> of the croſſe -> The ſcandal
-    (800, "{{lang|grc|ἃ ἐυλογοῦμεν}}"),  # 40: errata row 446 fault (overridden by table)
-    (800, "{{lang|grc|ὃ ἐυλογοῦμεν}}"),  # 41: errata row 446 corr (overridden by table)
-]
-
-# Scan-verified EEBO-TCP transcription fixes (applied per page, in literal ſ form before {{ls}}).
-# Never alters genuine 1582 print misprints (RULES §1.2); fixes only EEBO keyboard/OCR errors.
-PAGE_FIXES: dict[int, list[tuple[str, str]]] = {
-    774: [
-        ("Fridday Imber", "Friday Imber"),
-        ("Thurſday after Aſhweneſday, Goſp. 10.", "Thurſday after Aſhweneſday, Goſp. 20."),
-    ],
-    776: [
-        ("CANDLENAS day", "CANDLEMAS day"),
-        ("The NATIVITIS of our Lady", "The NATIVITIE of our Lady"),
-    ],
-    778: [
-        ("of the Chruch militant", "of the Church militant"),
-        ("hoſpitalitie to Preiſts", "hoſpitalitie to Prieſts"),
-        ("701. of Chruches, ibidem.", "701. of Churches, ibidem."),
-        ("letters to expneſſe his name", "letters to expreſſe his name"),
-        ("Anoiling. ''See E.'' Entreme Vnction.", "''Anoiling.'' See E. ''Extreme Vnction.''"),
-    ],
-    779: [
-        ("p. 224 nu. 31.", "p. 224. nu. 31."),
-        ("pa 488.", "pa. 488."),
-        ("p. 55. p. 5 616", "p. 55. p. 616."),
-        ("Biſhops & Prieſts belſsing", "Biſhops & Prieſts bleſsing"),
-        ("pag 219 nu. 1. p. 250.", "pag. 219. nu. 1. p. 250."),
-    ],
-    780: [
-        ("borovved ſome ceremonios of", "borovved ſome ceremonies of"),
-    ],
-    783: [
-        ("the firſt receiued ſaith of", "the firſt receiued faith of"),
-    ],
-    784: [
-        ("The iuſtent men doe feare.", "The iuſteſt men doe feare."),
-    ],
-    787: [
-        ("Vvhy it îs ſo often attributed to ſaith.", "Vvhy it is ſo often attributed to faith."),
-    ],
-    788: [
-        ("ſhauen în the primitiue", "ſhauen in the primitiue"),
-        ("lying miracles. 71. nu. 84.", "lying miracles. 71. nu. 24."),
-        ("Exemites.", "Eremites."),
-    ],
-    792: [
-        ("in matters of ſaith &", "in matters of faith &"),
-    ],
-    793: [
-        ("in the Chruch. ibid.", "in the Church. ibid."),
-        ("Eremities.", "Eremites."),
-    ],
-    794: [
-        ("the Apoſtles traditon,", "the Apoſtles tradition,"),
-    ],
-    796: [
-        ("Corè, Darhan, Abiron.", "Corè, Dathan, Abiron."),
-        ("672. 5738.", "672. 673."),
-    ],
-    799: [
-        ("vvhich maketh vorkes meritorious.", "vvhich maketh vvorkes meritorious."),
-        ("a man ſhal be demned.", "a man ſhal be damned."),
-        ("Zeale and ſeruor to heare", "Zeale and feruor to heare"),
-        ("more thou the bare letter.", "more then the bare letter."),
-        ("''Commeſſſations,''", "''Commeſſations,''"),
-        ("''likevviſe'' Cooperation, Cooperateurs.", "likevviſe ''Cooperation, Cooperateurs.''"),
-        ("''Didrael. me,''", "''Didrachme,''"),
-    ],
-    800: [
-        ("qualitie vvhere of a man", "qualitie vvhereof a man"),
-        ("''Noophyte,''", "''Neophyte,''"),
-        ("the Paſchal Iambe.", "the Paſchal lambe."),
-        ("ſpace of fifte daies.", "ſpace of fiftie daies."),
-        ("p. 386. 387.", "p. 336. 387."),
-        ("propoſed and for vpon the table", "propoſed and ſet vpon the table"),
-        ("make a roconcillation for them.", "make a reconciliation for them."),
-        ("''Sabbatiſmt,''", "''Sabbatiſme,''"),
-        ("order of Angles.", "order of Angels."),
-    ],
-}
-
 # Scan-verified Errata table on page 800 (from pdf800.jpg).
 # Columns: (page_str, fault_wikitext, correction_wikitext)
 ERRATA_ROWS: list[tuple[str, str, str]] = [
@@ -307,7 +183,6 @@ class BackmatterParser:
 
     def __init__(self) -> None:
         self.page = 773
-        self.gap_idx = 0
         # page -> list of block strings (each block separated by \n\n on the page)
         self.pages: dict[int, list[str]] = {p: [] for p in range(774, 801)}
         self.cur_buf: list[str] = []
@@ -344,17 +219,6 @@ class BackmatterParser:
             self._emit("''")
             self._strip_next_ws = True
 
-    def _next_gap(self) -> str:
-        if self.gap_idx >= len(GAP_RESOLUTIONS):
-            raise RuntimeError(f"Unexpected extra <gap> on page {self.page}")
-        exp_page, repl = GAP_RESOLUTIONS[self.gap_idx]
-        if exp_page != self.page:
-            raise RuntimeError(
-                f"Gap #{self.gap_idx + 1}: expected page {exp_page}, got {self.page}"
-            )
-        self.gap_idx += 1
-        return repl
-
     def walk_inline(self, el: ET.Element, *, in_head: bool = False) -> None:
         tag = _tag(el)
 
@@ -363,7 +227,12 @@ class BackmatterParser:
             return
 
         if tag == "gap":
-            self._emit(self._next_gap())
+            raise RuntimeError(f"Unresolved <gap> on page {self.page}: {ET.tostring(el, encoding='unicode')}")
+
+        if tag == "foreign":
+            lang = el.attrib.get("{http://www.w3.org/XML/1998/namespace}lang", "grc")
+            txt = "".join(el.itertext()).strip()
+            self._emit(f"{{{{lang|{lang}|{txt}}}}}")
             return
 
         if tag == "g":
@@ -484,9 +353,6 @@ class BackmatterParser:
             elif ctag == "p":
                 tbl = child.find("t:table", NS)
                 if tbl is not None:
-                    # Consume the 2 foreign <gap> elements inside the XML table so gap count matches
-                    for _ in tbl.findall(".//t:gap", NS):
-                        self._next_gap()
                     heading, table_wikitext = _render_errata_table()
                     self.pages[self.page].append(heading)
                     self.pages[self.page].append(table_wikitext)
@@ -541,20 +407,12 @@ def _fix_page_breaks(pages: dict[int, list[str]]) -> None:
     pages[799][0] = "{{hwe|tion|iu{{ls}}tification|title=iustification}}. " + pages[799][0]
 
 
-def _postprocess_block(
-    block: str, page: int, is_table_or_heading: bool, matched_fixes: set[tuple[int, str]]
-) -> str:
+def _postprocess_block(block: str, page: int, is_table_or_heading: bool) -> str:
     """Normalise whitespace, typography, macrons, and long-s on a single block."""
     if block.startswith("{|") or block.startswith("{{rule"):
         return unicodedata.normalize("NFC", block)
 
     s = _clean_ws(block).strip()
-
-    # Apply scan-verified EEBO typo fixes
-    for old, new in PAGE_FIXES.get(page, []):
-        if old in s:
-            s = s.replace(old, new)
-            matched_fixes.add((page, old))
 
     # Drop-cap adjustments for alphabetical sections in Table of Controversies (pp. 777–799)
     if page == 777 and "{{dropinitial|A}}BSOLVTION" in s:
@@ -604,16 +462,14 @@ def _postprocess_block(
     return unicodedata.normalize("NFC", s)
 
 
-def _assemble_page(
-    page: int, blocks: list[str], matched_fixes: set[tuple[int, str]]
-) -> str:
+def _assemble_page(page: int, blocks: list[str]) -> str:
     rh = RUNNING_HEADERS[page]
     header = f'<noinclude><pagequality level="1" user="" />{{{{sidenotes begin}}}}{rh}</noinclude>'
 
     cleaned = []
     for b in blocks:
         is_special = b.startswith(("{{c|", "{|", "{{rule"))
-        cb = _postprocess_block(b, page, is_special, matched_fixes)
+        cb = _postprocess_block(b, page, is_special)
         if cb:
             cleaned.append(cb)
 
@@ -647,22 +503,11 @@ def generate(xml_path: Path | None = None) -> dict[int, str]:
     for d in divs:
         parser.process_div(d)
 
-    if parser.gap_idx != len(GAP_RESOLUTIONS):
-        raise RuntimeError(
-            f"Resolved {parser.gap_idx} gaps, expected {len(GAP_RESOLUTIONS)}"
-        )
-
     _fix_page_breaks(parser.pages)
 
-    matched_fixes: set[tuple[int, str]] = set()
     result: dict[int, str] = {}
     for p in range(774, 801):
-        result[p] = _assemble_page(p, parser.pages[p], matched_fixes)
-
-    expected_fixes = {(p, old) for p, pairs in PAGE_FIXES.items() for old, _ in pairs}
-    unmatched = sorted(expected_fixes - matched_fixes)
-    if unmatched:
-        raise RuntimeError(f"Unmatched PAGE_FIXES entries: {unmatched}")
+        result[p] = _assemble_page(p, parser.pages[p])
     return result
 
 

@@ -1031,6 +1031,7 @@ def write_argument_pages(body, wiki):
         side = sidenotes_page(pg)
         if side:  # \x01 outer, \x02 inner: the sentinels sidenotes_body() resolves
             text = sidenotes_body(text.replace(margin('\x01', '')[:-2], '{{MOUTER|').replace(margin('\x02', '')[:-2], '{{MINNER|'), inner, outer)
+            text = re.sub(r' (\{\{outside (?:R?L|R)\|(?:[^{}]|\{\{[^{}]*\}\})*\}\}[,.;:?!\)])', r'\1', text)
         text = text.replace('\x01', outer).replace('\x02', inner)
         nxt = pages[k + 1].split()[0] if BOOK in ARGUMENT_BREAKS and k + 1 < len(pages) else ''
         foot = footer(CATCHWORDS.get((BOOK, pg), nxt))
@@ -1156,7 +1157,7 @@ def main(argv):
             ital_carry = True
         else:
             ital_carry = False
-        body = end_body(body, b < len(S) and opens_para(S, b, paras))
+        body = end_body(body, (b < len(S) and opens_para(S, b, paras)) or (BOOK == 'titus' and wiki == 627))
         sidenotes = sidenotes_page(wiki)
         if sidenotes:
             body = sidenotes_body(body, side_inner, side_outer)
