@@ -342,6 +342,8 @@ def build_stream(book, ann):
                 ch_note, _, _ = intro['text'].partition('\n\n')
                 note_str = ('{{MOUTER|' + finish(ch_note) + '}}\n') if ch_note else ''
                 title_wiki = note_str + '{{c|{{xx-larger|THE CATHOLIKE}}}}\n{{c|{{x-larger|EPISTLE OF IAMES}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
+            elif BOOK == '1-peter':
+                title_wiki = '{{c|{{xx-larger|THE FIRST EPISTLE}}}}\n{{c|{{x-larger|OF PETER THE APOSTLE.}}}}'
             elif BOOK in ('2-corinthians', '2-thessalonians'):
                 title_wiki = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PAVL TO THE}}}}\n{{c|{{larger|' + CFG.title_end + '}}}}'
             elif BOOK in ('galatians', 'ephesians', 'philippians', 'colossians'):
@@ -481,6 +483,29 @@ def build_stream(book, ann):
             tt_p = tokens_of(p, ch=ch_num, kind='ann')
             tt_p[0]['block'] = True
             S += tt_p
+    elif BOOK == '1-peter':
+        b2 = json.loads((DATA / '2-peter.json').read_text())
+        ch1 = b2['chapters'][0]
+        summary = ch1.get('summary', '')
+        head = '{{c|{{xx-larger|THE SECOND EPISTLE}}}}\n{{c|{{x-larger|OF PETER THE APOSTLE.}}}}\n\n{{c|{{larger|{{sc|Chap. I.}}}}}}'
+        if summary:
+            head += "\n\n{{c|''" + finish(summary) + "''}}"
+        tt_head = tokens_of(head, ch=5, kind='ann')
+        tt_head[0]['block'] = True
+        S += tt_head
+        for v in ch1['verses'][:4]:
+            raw_v = render_verse(v, 1)
+            if v['verse'] == 4:
+                cut_idx = raw_v.index('that by theſe you may be') + len('that by theſe you may be')
+                raw_v = raw_v[:cut_idx]
+            vt = tokens_of(finish(raw_v, dropcap=(v['verse'] == 1), ch=1), ch=5, kind='verse', verse=v['verse'])
+            vt[0]['vstart'] = True
+            for k, t in enumerate(vt):
+                t['w'] = k
+            if v['verse'] == 1:
+                for t in vt[:14]:
+                    t['nopara'] = True
+            S += vt
     tp = ORNAMENTS.get('tailpiece', {}).get(BOOK)
     if tp:  # the fleuron closing the book, after its last annotation
         S[-1]['text'] += f"\n\n{{{{c|[[File:{tp['file']}|{tp['width']}]]}}}}"
@@ -992,6 +1017,8 @@ def main(argv):
                 header = f'{{{{rh||{recto_t}|{printed}}}}}'
             else:
                 header = f'{{{{rh|{printed}||}}}}'
+        elif BOOK == '1-peter' and wiki == 694:
+            header = f'{{{{rh|{printed}|{{{{sc|the second epistle.}}}}|{cha}}}}}'
         elif n == 0:
             fc = (cha if BOOK == 'mark' else cha.replace('CHA.', 'CHAP.')) if CFG.first_head_cha else ''
             header = f'{{{{rh|{fc}||{printed}}}}}' if wiki % 2 else f'{{{{rh|{printed}||{fc}}}}}'

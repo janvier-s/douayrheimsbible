@@ -50,7 +50,9 @@ ROLE_OVERRIDES = {('mark', '16/3'): 'luke-argument', ('mark', 'argument/pdf114')
                   ('c', 'pdf623'): 'titus',
                   ('d', 'pdf668'): 'james-argument',
                   ('d', 'pdf669'): 'james',
-                  ('d', 'pdf670'): 'james'}
+                  ('d', 'pdf670'): 'james',
+                  ('d', 'pdf682'): '1-peter-argument',
+                  ('d', 'pdf695'): '2-peter'}
 PDF_OF = {('mark', '16/3'): 161, ('mark', 'argument/pdf114'): 114}
 
 

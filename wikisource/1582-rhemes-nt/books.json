@@ -311,5 +311,19 @@
       "THE EPISTLE",
       "OF S. IAMES."
     ]
+  },
+  "1-peter": {
+    "first": 682,
+    "last": 694,
+    "ornaments": false,
+    "golden": false,
+    "ocr": "transkribus",
+    "title_end": "THE APOSTLE.",
+    "argument_page": 682,
+    "scripture_pages": 12,
+    "running": [
+      "THE FIRST EPISTLE",
+      "OF S. PETER."
+    ]
   }
 }
